@@ -5,27 +5,27 @@
     "ano": 2026,
     "cargo": "GOVERNADOR",
     "uf": "PA",
-    "sqCandidato": "140002538631",
-    "slug": "cleber-rabelo",
-    "nomeUrna": "CLEBER RABELO",
+    "sqCandidato": "140002554108",
+    "slug": "well-macedo",
+    "nomeUrna": "WELL MACEDO",
     "partido": "PSTU",
-    "arquivoNome": "2026PA140002538631_01.pdf",
-    "arquivoNoPacote": "PA/2026PA140002538631_01.pdf",
+    "arquivoNome": "2026PA140002554108_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002554108_01.pdf",
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
-      "documentoId": "PA:140002538631:01",
+      "documentoId": "PA:140002554108:01",
       "fonte": {
-        "arquivoNome": "2026PA140002538631_01.pdf",
-        "arquivoNoPacote": "PA/2026PA140002538631_01.pdf",
+        "arquivoNome": "2026PA140002554108_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002554108_01.pdf",
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -601,164 +601,149 @@
     }
   ],
   "resumo": {
-    "texto": "O programa propõe o fim da escala 6×1 sem redução de salários e de direitos. O plano prevê a redução da jornada de trabalho para 36 horas sem redução de salários. Na segurança pública, o programa propõe a desmilitarização da PM com a unificação das polícias em uma única instituição de caráter civil. O programa propõe a reestatização da COSANPA com a retomada do controle público do saneamento. O plano prevê água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais. Na moradia, o plano propõe a construção de moradias públicas para as famílias trabalhadoras. O plano prevê a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica. O programa propõe o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
+    "texto": "O documento informa que 80% da extensão territorial do Pará é coberta pelo bioma amazônico, conforme o dado territorial registrado na fonte. Em 2025, a economia paraense cresceu 4,51%, conforme a informação econômica registrada no documento oficial consultado. Cerca de 56,5% dos trabalhadores paraenses atuam na informalidade, conforme o percentual de trabalhadores informado no documento. No primeiro trimestre de 2026, o rendimento médio no Pará foi de R$ 2.528, conforme o indicador de renda registrado na fonte. Em 2023, o Pará ocupou o 7º lugar nacional em violência com morte, conforme a posição indicada no documento. O Pará aparece como o segundo estado brasileiro com maior índice de conflitos no campo, atrás do Maranhão, segundo a informação registrada na fonte. Também foram registradas 21 disputas severas pelo acesso e uso da água no Pará, conforme o dado sobre acesso e uso da água registrado no documento.",
     "frases": [
       {
-        "texto": "O programa propõe o fim da escala 6×1 sem redução de salários e de direitos.",
+        "texto": "O documento informa que 80% da extensão territorial do Pará é coberta pelo bioma amazônico, conforme o dado territorial registrado na fonte.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
+            "documentoId": "PA:140002554108:01",
+            "pagina": 1,
+            "trecho": "tem 80% de sua extensão coberta pelo bioma amazônico."
+          }
+        ]
+      },
+      {
+        "texto": "Em 2025, a economia paraense cresceu 4,51%, conforme a informação econômica registrada no documento oficial consultado.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
+            "pagina": 1,
+            "trecho": "Em 2025 a economia paraense teve um crescimento de 4,51%"
+          }
+        ]
+      },
+      {
+        "texto": "Cerca de 56,5% dos trabalhadores paraenses atuam na informalidade, conforme o percentual de trabalhadores informado no documento.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
+            "pagina": 2,
+            "trecho": "com cerca de 56, 5% de trabalhadores atuando nas condições precárias do trabalho informal."
+          }
+        ]
+      },
+      {
+        "texto": "No primeiro trimestre de 2026, o rendimento médio no Pará foi de R$ 2.528, conforme o indicador de renda registrado na fonte.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
             "pagina": 3,
-            "trecho": "Fim da escala 6×1 sem redução de salários e direitos"
+            "trecho": "O rendimento médio no estado foi de R$ 2.528 no primeiro trimestre de 2026"
           }
         ]
       },
       {
-        "texto": "O plano prevê a redução da jornada de trabalho para 36 horas sem redução de salários.",
+        "texto": "Em 2023, o Pará ocupou o 7º lugar nacional em violência com morte, conforme a posição indicada no documento.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 3,
-            "trecho": "Redução da jornada de trabalho para 36hs, sem redução dos salários"
+            "documentoId": "PA:140002554108:01",
+            "pagina": 4,
+            "trecho": "violência com morte no estado continua alta com o estado ocupando o 7º lugar nacional em 2023"
           }
         ]
       },
       {
-        "texto": "Na segurança pública, o programa propõe a desmilitarização da PM com a unificação das polícias em uma única instituição de caráter civil.",
+        "texto": "O Pará aparece como o segundo estado brasileiro com maior índice de conflitos no campo, atrás do Maranhão, segundo a informação registrada na fonte.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 7,
-            "trecho": "Desmilitarização da PM, outras polícias e guardas municipais, com a unificação das\npolícias em uma única instituição de caráter civil"
+            "documentoId": "PA:140002554108:01",
+            "pagina": 6,
+            "trecho": "O estado aparece como segundo com maior índice de conflitos no campo no Brasil, atrás apenas do Maranhão."
           }
         ]
       },
       {
-        "texto": "O programa propõe a reestatização da COSANPA com a retomada do controle público do saneamento.",
+        "texto": "Também foram registradas 21 disputas severas pelo acesso e uso da água no Pará, conforme o dado sobre acesso e uso da água registrado no documento.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 9,
-            "trecho": "reestatizar a COSANPA, com a retomada do controle público integral do sistema de\nsaneamento do Estado do Pará"
-          }
-        ]
-      },
-      {
-        "texto": "O plano prevê água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 9,
-            "trecho": "garanta água gratuita\npara famílias desempregadas e aquelas que sobrevivem dos programas sociais"
-          }
-        ]
-      },
-      {
-        "texto": "Na moradia, o plano propõe a construção de moradias públicas para as famílias trabalhadoras.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 11,
-            "trecho": "construir um amplo\nprograma estadual de habitação pública, garantindo moradias dignas para as famílias\ntrabalhadoras"
-          }
-        ]
-      },
-      {
-        "texto": "O plano prevê a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 13,
-            "trecho": "suspensão de grandes projetos econômicos\nque ameaçam os territórios, os rios e a floresta amazônica"
-          }
-        ]
-      },
-      {
-        "texto": "O programa propõe o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 27,
-            "trecho": "Garantia do pagamento integral do Piso Salarial Nacional do Magistério para todos os\nprofissionais da educação básica"
+            "documentoId": "PA:140002554108:01",
+            "pagina": 6,
+            "trecho": "onde o Pará é líder nacional, registrando 21 disputas severas pelo acesso e uso da água."
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "trabalho-e-renda",
-        "titulo": "Trabalho, emprego e renda",
-        "descricao": "Conjunto de propostas do programa para trabalho, emprego e renda, como o fim da escala 6×1 sem redução de salários.",
+        "id": "bioma-amazonico",
+        "titulo": "Bioma amazônico",
+        "descricao": "O documento registra a cobertura do bioma amazônico em 80% da extensão do Pará.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
+            "documentoId": "PA:140002554108:01",
+            "pagina": 1,
+            "trecho": "tem 80% de sua extensão coberta pelo bioma amazônico."
+          }
+        ]
+      },
+      {
+        "id": "economia",
+        "titulo": "Economia",
+        "descricao": "A economia do estado cresceu 4,51% em 2025.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
+            "pagina": 1,
+            "trecho": "Em 2025 a economia paraense teve um crescimento de 4,51%"
+          }
+        ]
+      },
+      {
+        "id": "trabalho-informal",
+        "titulo": "Trabalho informal",
+        "descricao": "O documento informa a participação de cerca de 56,5% de trabalhadores paraenses na informalidade.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
+            "pagina": 2,
+            "trecho": "com cerca de 56, 5% de trabalhadores atuando nas condições precárias do trabalho informal."
+          }
+        ]
+      },
+      {
+        "id": "rendimento-medio",
+        "titulo": "Rendimento médio",
+        "descricao": "O rendimento médio estadual foi de R$ 2.528 no primeiro trimestre de 2026.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002554108:01",
             "pagina": 3,
-            "trecho": "Fim da escala 6×1 sem redução de salários e direitos"
-          },
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 3,
-            "trecho": "Redução da jornada de trabalho para 36hs, sem redução dos salários"
+            "trecho": "O rendimento médio no estado foi de R$ 2.528 no primeiro trimestre de 2026"
           }
         ]
       },
       {
-        "id": "seguranca-publica",
-        "titulo": "Segurança pública",
-        "descricao": "Proposta de desmilitarização da PM, com unificação das polícias em uma instituição de caráter civil.",
+        "id": "violencia-com-morte",
+        "titulo": "Violência com morte",
+        "descricao": "O Pará ocupou o 7º lugar nacional em violência com morte em 2023.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 7,
-            "trecho": "Desmilitarização da PM, outras polícias e guardas municipais, com a unificação das\npolícias em uma única instituição de caráter civil"
+            "documentoId": "PA:140002554108:01",
+            "pagina": 4,
+            "trecho": "violência com morte no estado continua alta com o estado ocupando o 7º lugar nacional em 2023"
           }
         ]
       },
       {
-        "id": "saneamento-publico",
-        "titulo": "Saneamento básico",
-        "descricao": "Proposta de reestatização da COSANPA, com retomada do controle público do saneamento no estado.",
+        "id": "conflitos-no-campo",
+        "titulo": "Conflitos no campo",
+        "descricao": "O estado aparece em segundo lugar no índice brasileiro de conflitos no campo.",
         "evidencias": [
           {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 9,
-            "trecho": "reestatizar a COSANPA, com a retomada do controle público integral do sistema de\nsaneamento do Estado do Pará"
-          }
-        ]
-      },
-      {
-        "id": "moradia",
-        "titulo": "Moradia",
-        "descricao": "Proposta de construção de moradias públicas para as famílias trabalhadoras, por meio de programa estadual de habitação.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 11,
-            "trecho": "construir um amplo\nprograma estadual de habitação pública, garantindo moradias dignas para as famílias\ntrabalhadoras"
-          }
-        ]
-      },
-      {
-        "id": "amazonia-e-meio-ambiente",
-        "titulo": "Amazônia e meio ambiente",
-        "descricao": "Proposta de suspensão de grandes projetos econômicos que ameaçam os territórios, os rios e a floresta amazônica.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 13,
-            "trecho": "suspensão de grandes projetos econômicos\nque ameaçam os territórios, os rios e a floresta amazônica"
-          }
-        ]
-      },
-      {
-        "id": "educacao-basica",
-        "titulo": "Educação básica",
-        "descricao": "Proposta de pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica.",
-        "evidencias": [
-          {
-            "documentoId": "PA:140002538631:01",
-            "pagina": 27,
-            "trecho": "Garantia do pagamento integral do Piso Salarial Nacional do Magistério para todos os\nprofissionais da educação básica"
+            "documentoId": "PA:140002554108:01",
+            "pagina": 6,
+            "trecho": "O estado aparece como segundo com maior índice de conflitos no campo no Brasil, atrás apenas do Maranhão."
           }
         ]
       }
@@ -766,457 +751,434 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
-    "generatedAt": "2026-08-27T12:03:39.015Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T19:44:18.341Z"
   },
   "julgamento": {
-    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-27T12:08:40.890Z",
+    "judgedAt": "2026-08-29T19:48:45.695Z",
     "verdicts": [
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a proposta de fim da escala 6×1 sem redução de salários e direitos."
+        "reason": "A evidência sustenta integralmente a cobertura de 80% da extensão do Pará pelo bioma amazônico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "O número presente na afirmação, 6×1, aparece literalmente na evidência."
+        "reason": "O percentual de 80% está literalmente sustentado."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza indevida."
+        "reason": "A redação descreve o dado documental sem elogio, crítica, promoção ou certeza adicional."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
+        "reason": "A afirmação trata de um único dado territorial sobre o bioma amazônico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e é compatível com a mesma chave eleitoral indicada."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:1:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:1:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação: fim da escala 6×1 e preservação de salários e direitos."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente a redução da jornada para 36 horas sem redução dos salários."
+        "reason": "A evidência sustenta integralmente o crescimento de 4,51% da economia paraense em 2025."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "O número 36 horas aparece literalmente na evidência, ainda que abreviado como 36hs."
+        "reason": "O ano de 2025 e o percentual de 4,51% estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e não acrescenta juízo de valor."
+        "reason": "A redação relata o indicador econômico sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
+        "reason": "A afirmação trata de um único indicador de crescimento econômico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:2:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:2:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre integralmente a redução para 36 horas e a manutenção dos salários."
+        "reason": "A evidência cobre o período, o objeto e o percentual afirmados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência contém a desmilitarização da PM e a unificação das polícias em instituição civil."
+        "reason": "A evidência e o contexto da página sustentam integralmente o percentual de trabalhadores paraenses na informalidade."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "O percentual de cerca de 56,5% está literalmente sustentado, apesar do espaço tipográfico no decimal da fonte."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação apenas descreve a proposta sem tom promocional ou crítico."
+        "reason": "A redação descreve o percentual de informalidade sem incorporar juízo elogioso, crítico ou promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma proposta coerente de reorganização policial na área de segurança pública."
+        "reason": "A afirmação trata de uma única área coerente, a informalidade laboral."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:3:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:3:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre as cláusulas materiais da afirmação: desmilitarização da PM e unificação das polícias em instituição civil."
+        "reason": "A evidência e a página citada cobrem o percentual, os trabalhadores e a informalidade no Pará."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta a reestatização da COSANPA e a retomada do controle público do saneamento."
+        "reason": "A evidência sustenta integralmente o valor, o período e o indicador de rendimento médio no Pará."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "O valor de R$ 2.528 e o primeiro trimestre de 2026 estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e não contém elogio, crítica ou promoção."
+        "reason": "A redação relata o indicador sem elogio, crítica, certeza adicional ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente na área de saneamento."
+        "reason": "A afirmação trata de um único indicador de renda."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:4:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:4:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a reestatização da COSANPA e a retomada do controle público do saneamento."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente água gratuita para famílias desempregadas e para as que sobrevivem de programas sociais."
+        "reason": "A evidência sustenta integralmente a posição nacional do Pará em violência com morte em 2023."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+        "reason": "O ano de 2023 e a posição de 7º lugar estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem juízo valorativo adicional."
+        "reason": "A redação informa a posição registrada sem reproduzir avaliações ou certezas do documento."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta tarifária coerente."
+        "reason": "A afirmação trata de um único indicador de segurança pública."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento informado e corresponde à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:5:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:5:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação sobre gratuidade e público beneficiário."
+        "reason": "A evidência cobre o estado, o indicador, a posição nacional e o ano."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta a proposta de habitação pública voltada às famílias trabalhadoras."
+        "reason": "A evidência sustenta integralmente a posição do Pará e a precedência do Maranhão."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, quantidades, prazos ou percentuais."
+        "reason": "A posição ordinal de segundo lugar está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e não acrescenta avaliação elogiosa ou crítica."
+        "reason": "A redação descreve a classificação documental sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, habitação pública para famílias trabalhadoras."
+        "reason": "A afirmação trata de uma única área coerente, conflitos no campo."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:6:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:6:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a proposta de habitação pública e seu público-alvo material, as famílias trabalhadoras."
+        "reason": "A evidência cobre a posição brasileira, o tema dos conflitos e a referência ao Maranhão."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz a suspensão de grandes projetos econômicos que ameaçam territórios, rios e a floresta amazônica."
+        "reason": "A evidência sustenta integralmente o registro de 21 disputas severas pelo acesso e uso da água no Pará."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "A quantidade de 21 disputas está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação resume a proposta sem acrescentar adjetivação promocional ou crítica."
+        "reason": "A redação relata o dado e preserva a qualificação documental de disputas severas sem acrescentar juízo."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente na área ambiental."
+        "reason": "A afirmação trata de uma única área coerente, disputas pelo acesso e uso da água."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento indicado e corresponde à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:7:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:frase:7:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre integralmente a suspensão e os três alvos materiais citados: territórios, rios e floresta amazônica."
+        "reason": "A evidência cobre a quantidade, a natureza das disputas, o objeto e o estado."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica."
+        "reason": "A evidência sustenta integralmente a cobertura de 80% da extensão do Pará pelo bioma amazônico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+        "reason": "O percentual de 80% está literalmente sustentado."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e sem adjetivação valorativa."
+        "reason": "A redação descreve o dado documental sem elogio, crítica, promoção ou certeza adicional."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente sobre remuneração na educação básica."
+        "reason": "A afirmação trata de um único tema territorial, a cobertura do bioma amazônico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:frase:8:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:bioma-amazonico:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre o pagamento integral do piso e o grupo mencionado, os profissionais da educação básica."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "As evidências mostram propostas da área de trabalho e renda, incluindo explicitamente o fim da escala 6×1 sem redução de salários."
+        "reason": "A evidência sustenta integralmente o crescimento de 4,51% da economia paraense em 2025."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "O número 6×1 citado na afirmação aparece literalmente nas evidências."
+        "reason": "O percentual de 4,51% e o ano de 2025 estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é classificatória e descritiva, sem elogio, crítica ou certeza promocional."
+        "reason": "A redação relata o indicador econômico sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma área temática única e coerente, trabalho, emprego e renda."
+        "reason": "A afirmação trata de um único indicador econômico."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "As evidências pertencem ao documento informado e à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:trabalho-e-renda:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:economia:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "As evidências cobrem o enquadramento temático e o exemplo material citado, o fim da escala 6×1 sem redução de salários."
+        "reason": "A evidência cobre o objeto, o percentual e o período afirmados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta a proposta de desmilitarização da PM e de unificação das polícias em instituição civil."
+        "reason": "A evidência e o contexto da página sustentam integralmente a participação de trabalhadores paraenses na informalidade."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "O percentual de cerca de 56,5% está literalmente sustentado, apesar do espaço tipográfico no decimal da fonte."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação apenas descreve a proposta na área de segurança pública."
+        "reason": "A redação descreve o percentual de informalidade sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área temática coerente, segurança pública."
+        "reason": "A afirmação trata de uma única área coerente, trabalho informal."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:seguranca-publica:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:trabalho-informal:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre os elementos materiais da afirmação: desmilitarização da PM e unificação em instituição civil."
+        "reason": "A evidência e a página citada cobrem o percentual, os trabalhadores e a informalidade no Pará."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta a reestatização da COSANPA e a retomada do controle público do saneamento estadual."
+        "reason": "A evidência sustenta integralmente o valor e o período do rendimento médio estadual."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "O valor de R$ 2.528 e o primeiro trimestre de 2026 estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e sem juízo de valor adicional."
+        "reason": "A redação relata o indicador sem elogio, crítica, certeza adicional ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, saneamento básico."
+        "reason": "A afirmação trata de um único indicador de renda."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:saneamento-publico:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:rendimento-medio:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre integralmente a reestatização da COSANPA e a retomada do controle público do saneamento."
+        "reason": "A evidência cobre o indicador, o âmbito estadual, o valor e o período."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta o programa estadual de habitação pública voltado a moradias para famílias trabalhadoras."
+        "reason": "A evidência sustenta integralmente a posição nacional do Pará em violência com morte em 2023."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
+        "reason": "A posição de 7º lugar e o ano de 2023 estão literalmente sustentados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação resume a proposta de forma descritiva, sem elogio ou crítica."
+        "reason": "A redação informa a posição registrada sem reproduzir avaliações ou certezas do documento."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área temática coerente, moradia."
+        "reason": "A afirmação trata de um único indicador de segurança pública."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao documento listado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:moradia:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:violencia-com-morte:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre o programa estadual de habitação pública e a destinação às famílias trabalhadoras."
+        "reason": "A evidência cobre o estado, o indicador, a posição nacional e o ano."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:suporte",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente a proposta de suspensão dos grandes projetos econômicos com esses impactos."
+        "reason": "A evidência sustenta integralmente o segundo lugar do Pará no índice brasileiro de conflitos no campo."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:numeros",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, quantidades, percentuais ou prazos."
+        "reason": "A posição ordinal de segundo lugar está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:neutralidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é classificatória e descritiva, sem adjetivação promocional ou crítica."
+        "reason": "A redação descreve a classificação documental sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:mistura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área temática coerente, Amazônia e meio ambiente."
+        "reason": "A afirmação trata de uma única área coerente, conflitos no campo."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:identidade",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+        "reason": "A chave eleitoral, o estado e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:amazonia-e-meio-ambiente:documentos:PA:140002538631:01:cobertura",
+        "id": "2026:GOVERNADOR:PA:140002554108:tema:conflitos-no-campo:documentos:PA:140002554108:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre integralmente a suspensão e os três elementos materiais citados: territórios, rios e floresta amazônica."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta o pagamento integral do piso salarial nacional do magistério para os profissionais da educação básica."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não contém números, percentuais, prazos ou quantidades."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação resume a proposta de forma neutra e descritiva."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação trata de uma única área temática coerente, educação básica."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:identidade",
-        "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e à mesma identidade eleitoral."
-      },
-      {
-        "id": "2026:GOVERNADOR:PA:140002538631:tema:educacao-basica:documentos:PA:140002538631:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre integralmente a proposta e o grupo beneficiário mencionados na afirmação."
+        "reason": "A evidência cobre o âmbito brasileiro, o tema dos conflitos no campo e a posição afirmada."
       }
     ]
   },
   "ingestao": {
-    "identityKey": "2026:GOVERNADOR:PA:140002538631",
+    "identityKey": "2026:GOVERNADOR:PA:140002554108",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
-      "PA:140002538631:01"
+      "PA:140002554108:01"
     ],
     "modelos": {
       "generator": {
-        "name": "Alibaba Qwen",
-        "version": "qwen-code-cli-0.21.12",
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 1
       },
       "judge": {
-        "name": "OpenAI GPT",
-        "version": "codex-cli-gpt-5.4",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-judge-v2",
-        "attempts": 1
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 39613,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14486,
+          "reasoning_output_tokens": 182
+        }
       }
     },
     "eval": {
@@ -1234,11 +1196,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
     "sourceSha256": "5d33c3d22959b0ef2443f4b37c6af475e33356ec5a620f76a5ef00b4c16954fe",
     "extractedTextSha256": "13ad2a199b1bce12cbcd56c0dd3cec5d3481bc81ddf9975e057622c3371680ad",
     "documentCount": 1,
-    "documentSetSha256": "55f939026054994f860c769ac5d6f2b5d06aed7f25f8889bc03f4986e242b965",
-    "contentSha256": "d4adeb77d16e5f9a91a6840486861d83d4cb42665411d23dfdf74a0d2ba57612"
+    "documentSetSha256": "abd82043f46c446fee044db65dd97c3d5409b142afbb865d22f08edbcb9d281d",
+    "contentSha256": "c02368e0fe35bf160cd99dfdd52bcad2476446291129f31def29408fb71b1dc0"
   }
 }

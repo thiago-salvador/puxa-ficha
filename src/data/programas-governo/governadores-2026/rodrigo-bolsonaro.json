@@ -7,14 +7,14 @@
     "uf": "RN",
     "sqCandidato": "200002546756",
     "slug": "rodrigo-bolsonaro",
-    "nomeUrna": "RODRIGO BOLSONARO",
+    "nomeUrna": "RODRIGO DE BOLSONARO",
     "partido": "AGIR",
     "arquivoNome": "2026RN200002546756_01.pdf",
     "arquivoNoPacote": "RN/2026RN200002546756_01.pdf",
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -83,7 +83,7 @@
     }
   ],
   "resumo": {
-    "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos. Na saúde pública, o programa propõe ampliar o sistema de entrega de medicamentos de alto e baixo custo. Na infraestrutura, o programa prevê a construção da terceira ponte em Natal. No desenvolvimento rural, o programa propõe a criação de um programa para formar cooperativas voltadas à produção de hortifrutigranjeiros. Na segurança pública, o programa prevê duas Penitenciárias máximas do RN. Na educação, o programa prevê a construção de novas escolas. Na educação, o programa prevê alimentação de qualidade para crianças, jovens e adultos nas escolas nos períodos da manhã, tarde e noite. Na infraestrutura aeroportuária, o programa prevê a reativação do Aeroporto Augusto Severo para voos domésticos.",
+    "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos. O documento prevê a ampliação do sistema de entrega de medicamentos de alto e baixo custo. Na infraestrutura aeroportuária, o programa propõe a reativação do Aeroporto Augusto Severo para voos domésticos. Na segurança pública, o programa prevê concurso público para 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais. Na educação, o programa prevê a construção de novas escolas. Na política salarial educacional, o programa prevê aumento salarial de 10% para os professores a partir de março de 2027. Para profissionais recém-formados, o programa prevê oportunidade de emprego por processo seletivo e avaliação de currículo. O plano prevê a criação de um Novo Banco do RN voltado para o crescimento do RN.",
     "frases": [
       {
         "texto": "Na saúde pública, o programa prevê a construção de laboratórios de análises clínicas no estado em todas as regiões Polos.",
@@ -91,47 +91,37 @@
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 1,
-            "trecho": "Proposta de construção de laboratórios de\nanálises clínicas no estado em todas as regiões Polos."
+            "trecho": "Proposta de construção de laboratórios de análises clínicas no estado em todas as regiões Polos."
           }
         ]
       },
       {
-        "texto": "Na saúde pública, o programa propõe ampliar o sistema de entrega de medicamentos de alto e baixo custo.",
+        "texto": "O documento prevê a ampliação do sistema de entrega de medicamentos de alto e baixo custo.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 1,
-            "trecho": "Ampliar o sistema de entrega de\nmedicamentos de alto e baixo custo"
+            "trecho": "Ampliar o sistema de entrega de medicamentos de alto e baixo custo"
           }
         ]
       },
       {
-        "texto": "Na infraestrutura, o programa prevê a construção da terceira ponte em Natal.",
+        "texto": "Na infraestrutura aeroportuária, o programa propõe a reativação do Aeroporto Augusto Severo para voos domésticos.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
-            "pagina": 2,
-            "trecho": "Construção da terceira ponte em Natal;"
+            "pagina": 1,
+            "trecho": "Reativação do Aeroporto Augusto Severo para voos domésticos"
           }
         ]
       },
       {
-        "texto": "No desenvolvimento rural, o programa propõe a criação de um programa para formar cooperativas voltadas à produção de hortifrutigranjeiros.",
+        "texto": "Na segurança pública, o programa prevê concurso público para 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 2,
-            "trecho": "Criação de um programa para formar\ncooperativas voltadas à produção de hortifrutigranjeiros;"
-          }
-        ]
-      },
-      {
-        "texto": "Na segurança pública, o programa prevê duas Penitenciárias máximas do RN.",
-        "evidencias": [
-          {
-            "documentoId": "RN:200002546756:01",
-            "pagina": 2,
-            "trecho": "Duas Penitenciárias máximas do RN;"
+            "trecho": "Concurso público: 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais;"
           }
         ]
       },
@@ -141,41 +131,51 @@
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 2,
-            "trecho": "Construção de novas escolas"
+            "trecho": "Construção de novas escolas e reformas das antigas;"
           }
         ]
       },
       {
-        "texto": "Na educação, o programa prevê alimentação de qualidade para crianças, jovens e adultos nas escolas nos períodos da manhã, tarde e noite.",
+        "texto": "Na política salarial educacional, o programa prevê aumento salarial de 10% para os professores a partir de março de 2027.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 2,
-            "trecho": "Alimentação de Qualidade para crianças, jovens e adultos nas escolas\n(manhã, tarde e noite);"
+            "trecho": "Aumento salarial de 10% para os professores a partir de março de 2027;"
           }
         ]
       },
       {
-        "texto": "Na infraestrutura aeroportuária, o programa prevê a reativação do Aeroporto Augusto Severo para voos domésticos.",
+        "texto": "Para profissionais recém-formados, o programa prevê oportunidade de emprego por processo seletivo e avaliação de currículo.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
-            "pagina": 1,
-            "trecho": "Reativação do Aeroporto Augusto Severo para voos domésticos"
+            "pagina": 3,
+            "trecho": "Oportunidade de emprego para profissionais recém-formados, tanto a nível técnico como superior, por processo seletivo e avaliação de currículo"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a criação de um Novo Banco do RN voltado para o crescimento do RN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002546756:01",
+            "pagina": 2,
+            "trecho": "Novo Banco do RN voltado para o crescimento do RN;"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "laboratorios-clinicos",
-        "titulo": "Laboratórios clínicos",
-        "descricao": "Construção de laboratórios de análises clínicas nas regiões Polos.",
+        "id": "laboratorios-de-analises",
+        "titulo": "Laboratórios de análises clínicas",
+        "descricao": "Construção de laboratórios de análises clínicas no estado.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 1,
-            "trecho": "Proposta de construção de laboratórios de\nanálises clínicas no estado em todas as regiões Polos."
+            "trecho": "Proposta de construção de laboratórios de análises clínicas no estado em todas as regiões Polos."
           }
         ]
       },
@@ -187,43 +187,31 @@
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 1,
-            "trecho": "Ampliar o sistema de entrega de\nmedicamentos de alto e baixo custo"
+            "trecho": "Ampliar o sistema de entrega de medicamentos de alto e baixo custo"
           }
         ]
       },
       {
-        "id": "terceira-ponte",
-        "titulo": "Terceira ponte",
-        "descricao": "Construção de uma terceira ponte em Natal.",
+        "id": "aeroporto-augusto-severo",
+        "titulo": "Aeroporto Augusto Severo",
+        "descricao": "Reativação do Aeroporto Augusto Severo para voos domésticos.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
-            "pagina": 2,
-            "trecho": "Construção da terceira ponte em Natal;"
+            "pagina": 1,
+            "trecho": "Reativação do Aeroporto Augusto Severo para voos domésticos"
           }
         ]
       },
       {
-        "id": "cooperativas-rurais",
-        "titulo": "Cooperativas rurais",
-        "descricao": "Criação de programa para formar cooperativas de hortifrutigranjeiros.",
+        "id": "concurso-publico-seguranca",
+        "titulo": "Concurso público",
+        "descricao": "Concurso público para policiais militares, policiais civis e policiais penais.",
         "evidencias": [
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 2,
-            "trecho": "Criação de um programa para formar\ncooperativas voltadas à produção de hortifrutigranjeiros;"
-          }
-        ]
-      },
-      {
-        "id": "penitenciarias",
-        "titulo": "Penitenciárias",
-        "descricao": "Previsão de duas Penitenciárias máximas no RN.",
-        "evidencias": [
-          {
-            "documentoId": "RN:200002546756:01",
-            "pagina": 2,
-            "trecho": "Duas Penitenciárias máximas do RN;"
+            "trecho": "Concurso público: 10 mil policiais militares, 5 mil policiais civis, 2 mil policiais penais;"
           }
         ]
       },
@@ -235,7 +223,7 @@
           {
             "documentoId": "RN:200002546756:01",
             "pagina": 2,
-            "trecho": "Construção de novas escolas"
+            "trecho": "Construção de novas escolas e reformas das antigas;"
           }
         ]
       }
@@ -244,439 +232,409 @@
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
     "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T19:30:30.904Z"
+    "generatedAt": "2026-08-29T14:51:12.205Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T19:32:41.178Z",
+    "judgedAt": "2026-08-29T19:15:45.490Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a construção dos laboratórios no estado e em todas as regiões Polos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de proposta única e coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de infraestrutura laboratorial."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:1:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre toda a cláusula."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho sustenta integralmente."
+        "reason": "A evidência sustenta literalmente a ampliação da entrega de medicamentos de alto e baixo custo."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a previsão documental sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única e coerente."
+        "reason": "A afirmação aborda uma única proposta coerente de entrega de medicamentos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:2:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa da cláusula."
+        "reason": "A evidência cobre a ampliação, o sistema de entrega e as duas categorias de custo."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta literalmente a reativação do aeroporto para voos domésticos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Número 'terceira' corresponde ao texto."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação apresenta a proposta sem elogio, crítica ou certeza de realização."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única."
+        "reason": "A afirmação trata de uma única proposta aeroportuária."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:3:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula totalmente coberta."
+        "reason": "A evidência cobre o aeroporto, a reativação e a destinação a voos domésticos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta integralmente o concurso e as três quantidades por categoria."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "Os números 10 mil, 5 mil e 2 mil aparecem literalmente na evidência com as mesmas categorias."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta e suas quantidades sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única e coerente."
+        "reason": "As três categorias integram a mesma proposta coerente de concurso para segurança pública."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:4:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre o concurso, todas as categorias e todas as quantidades afirmadas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta diretamente a construção de novas escolas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Número 'duas' confere com o texto."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única."
+        "reason": "A afirmação trata de uma única proposta de infraestrutura escolar."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:5:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta integralmente o aumento, o percentual, os beneficiários e o início previsto."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "O percentual de 10% e a data de março de 2027 estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação relata a previsão documental sem elogio, crítica ou garantia de execução."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única."
+        "reason": "A afirmação trata de uma única proposta coerente de política salarial."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:6:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre todas as cláusulas materiais, inclusive percentual, público e data."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta o público, a oportunidade de emprego e os dois mecanismos de seleção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números relevantes divergentes."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva."
+        "reason": "A redação descreve a previsão sem elogio, crítica, promoção ou certeza de contratação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única."
+        "reason": "A afirmação aborda uma única proposta coerente de acesso ao emprego."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:7:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "No contexto de propostas do plano, a indicação de um novo banco sustenta sua criação e a finalidade declarada."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação atribui ao plano a finalidade declarada, sem endossá-la nem garantir resultados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Proposta única."
+        "reason": "A afirmação trata de uma única proposta de instituição financeira e sua finalidade."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:frase:8:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre o novo banco e sua finalidade de crescimento do RN."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta diretamente a construção de laboratórios de análises clínicas no estado."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação resume a proposta sem elogio, crítica, promoção ou certeza."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "O tema contém uma única proposta coerente de infraestrutura laboratorial."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-clinicos:documentos:RN:200002546756:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:laboratorios-de-analises:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre integralmente a construção, o tipo de laboratório e o âmbito estadual."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta literalmente a ampliação descrita."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação resume a medida sem elogio, crítica, promoção ou certeza."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "O tema trata de uma única proposta coerente de entrega de medicamentos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:medicamentos:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre a ampliação, a entrega e as categorias de alto e baixo custo."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência corresponde literalmente à afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Número confere."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém avaliação, promoção ou certeza."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "O tema contém uma única proposta aeroportuária."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:terceira-ponte:documentos:RN:200002546756:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:aeroporto-augusto-severo:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre integralmente o aeroporto, a reativação e os voos domésticos."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta o concurso para todas as três categorias mencionadas."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, promoção ou certeza."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "As categorias pertencem à mesma proposta coerente de concurso para segurança pública."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:cooperativas-rurais:documentos:RN:200002546756:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002546756:tema:concurso-publico-seguranca:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:suporte",
-        "verdict": "yes",
-        "reason": "Suportado integralmente."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:numeros",
-        "verdict": "yes",
-        "reason": "Número confere."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:neutralidade",
-        "verdict": "yes",
-        "reason": "Redação neutra."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:mistura",
-        "verdict": "yes",
-        "reason": "Tema único."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:identidade",
-        "verdict": "yes",
-        "reason": "Chave e documento correspondem."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002546756:tema:penitenciarias:documentos:RN:200002546756:01:cobertura",
-        "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre o concurso e todas as categorias policiais mencionadas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:suporte",
         "verdict": "yes",
-        "reason": "Suportado integralmente."
+        "reason": "A evidência sustenta literalmente a construção de novas escolas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação resume a proposta sem elogio, crítica, promoção ou certeza."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "O tema contém uma única proposta coerente de infraestrutura escolar."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave RN:200002546756 coincide entre a identidade eleitoral, o documento informado e a evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002546756:tema:novas-escolas:documentos:RN:200002546756:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:RN:200002546756",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -687,53 +645,19 @@
         "name": "OpenAI Luna",
         "version": "gpt-5.6-luna-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 1,
-        "uso": {
-          "input_tokens": 20770,
-          "cached_input_tokens": 6912,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 3528,
-          "reasoning_output_tokens": 2387
-        }
+        "attempts": 2
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 21576,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 21594,
-          "output_tokens_details": {
-            "thinking_tokens": 492
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 21576,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 21594,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 21576,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 21576
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.3195054
+          "input_tokens": 35678,
+          "cached_input_tokens": 16128,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13836,
+          "reasoning_output_tokens": 143
         }
       }
     },
@@ -752,11 +676,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T19:33:03Z",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
     "sourceSha256": "816c9f3af3cdee39b896cff9e55a56368e26bfd05701386c998451044e03ab4c",
     "extractedTextSha256": "f5319d36ccf0308e635b7966d899bad6950db004e98c928d26b7252bcf845643",
     "documentCount": 1,
-    "documentSetSha256": "d8108b57e0f2f1c2bfa58b6e01676e44045f9ea2cc4b185a8353bf9a81f28cfc",
-    "contentSha256": "6938270efd91e713e7b628692ef390d79bbc8b9c72954ae705d21c6443874364"
+    "documentSetSha256": "96a127fa5769c551ae052c8d87675fac83c203c2c323ff8eb86a03dd51f7f7ed",
+    "contentSha256": "e8b02ca0f285823151dd83b1fd8fbface4105a5d57fad0d2c2f4c4dcdd97e74a"
   }
 }

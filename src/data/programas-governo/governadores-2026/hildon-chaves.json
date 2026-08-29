@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,43 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
-      },
-      "extracao": {
-        "extractionVersion": "programa-governo-extracao-v2",
-        "method": "pdftotext-pagewise-with-ocr-fallback",
-        "sourceSha256": "3ced457d9d60a97be34150457a414b46fa1dcbb8e133e6ea5114f1cd05cdd8d5",
-        "extractedTextSha256": "e4307b9e44db64e13f14cc14f0d037cae923128e323edcf97b90a85c2a03d3e2",
-        "paginas": 1,
-        "secoes": [
-          {
-            "id": "ao-egregio-tribunal-regional-eleitoral-de-rondonia",
-            "titulo": "Ao Egrégio Tribunal Regional Eleitoral de Rondônia.",
-            "nivel": 1,
-            "paginaInicial": 1,
-            "paginaFinal": 1,
-            "origem": "pdftotext",
-            "conteudo": "Ao Egrégio Tribunal Regional Eleitoral de Rondônia.\nExcelentíssimo Senhor Juiz Relator - Guilherme Ribeiro Baldan\n\nProcesso nº 0600500-88.2026.6.22.0000\n\nHILDON DE LIMA CHAVES, já qualificado nos autos, por intermédio de\nseus advogados, vem, respeitosamente, à presença de Vossa Excelência, requerer a\njuntada do Plano de Governo.\nPede deferimento.\nPorto Velho/RO, 08 de agosto de 2026.\n\nIgor Habib Ramos Fernandes\nOAB/RO 11.002\n\n1"
-          }
-        ],
-        "pageMap": [
-          {
-            "pagina": 1,
-            "origem": "pdftotext",
-            "textSha256": "e4307b9e44db64e13f14cc14f0d037cae923128e323edcf97b90a85c2a03d3e2"
-          }
-        ]
-      }
-    },
-    {
-      "documentoId": "RO:220002542916:02",
-      "fonte": {
-        "arquivoNome": "2026RO220002542916_02.pdf",
-        "arquivoNoPacote": "RO/2026RO220002542916_02.pdf",
-        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
-        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
-        "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -2006,142 +1970,198 @@
           }
         ]
       }
+    },
+    {
+      "documentoId": "RO:220002542916:02",
+      "fonte": {
+        "arquivoNome": "2026RO220002542916_02.pdf",
+        "arquivoNoPacote": "RO/2026RO220002542916_02.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "3ced457d9d60a97be34150457a414b46fa1dcbb8e133e6ea5114f1cd05cdd8d5",
+        "extractedTextSha256": "e4307b9e44db64e13f14cc14f0d037cae923128e323edcf97b90a85c2a03d3e2",
+        "paginas": 1,
+        "secoes": [
+          {
+            "id": "ao-egregio-tribunal-regional-eleitoral-de-rondonia",
+            "titulo": "Ao Egrégio Tribunal Regional Eleitoral de Rondônia.",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Ao Egrégio Tribunal Regional Eleitoral de Rondônia.\nExcelentíssimo Senhor Juiz Relator - Guilherme Ribeiro Baldan\n\nProcesso nº 0600500-88.2026.6.22.0000\n\nHILDON DE LIMA CHAVES, já qualificado nos autos, por intermédio de\nseus advogados, vem, respeitosamente, à presença de Vossa Excelência, requerer a\njuntada do Plano de Governo.\nPede deferimento.\nPorto Velho/RO, 08 de agosto de 2026.\n\nIgor Habib Ramos Fernandes\nOAB/RO 11.002\n\n1"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "e4307b9e44db64e13f14cc14f0d037cae923128e323edcf97b90a85c2a03d3e2"
+          }
+        ]
+      }
     }
   ],
   "resumo": {
-    "texto": "O plano propõe expandir a digitalização dos serviços públicos por meio de plataformas eletrônicas, inteligência artificial, computação em nuvem, integração de sistemas e atendimento digital ao cidadão. Na área de turismo, propõe desenvolver uma plataforma digital integrada com inteligência artificial, múltiplos idiomas e informações sobre atrativos, roteiros, hospedagem, gastronomia, eventos e serviços durante as vinte e quatro horas. O plano propõe políticas públicas para proteção, conservação e uso racional dos recursos hídricos, com monitoramento permanente dos mananciais e recuperação de Áreas de Preservação Permanente. Para a saúde materno-infantil, propõe utilizar indicadores de pré-natal, gestação de risco, prematuridade, mortalidade materna e infantil e capacidade neonatal para reorganizar o atendimento no Estado. Na infraestrutura rodoviária, propõe inventariar 100% da malha rodoviária e das pontes estaduais, com base georreferenciada sobre condições, tráfego, criticidade econômica e riscos estruturais. Na gestão ambiental, propõe atualizar os processos de licenciamento por meio da digitalização dos sistemas, simplificação administrativa, reforço das equipes técnicas e redução dos prazos de análise.",
+    "texto": "O plano de governo abrange os 52 municípios de Rondônia. O plano de governo está organizado em quatorze eixos. Na área de integridade, o programa propõe consolidar o Programa Estadual de Integridade e Combate à Corrupção. Em ações de cidadania, o programa propõe expandir as ações itinerantes de cidadania. Na segurança, o programa propõe implantar células avançadas de inteligência e barreiras tecnológicas em pontos estratégicos das rotas de drogas e armas. Na saúde, a construção do Novo Hospital e Pronto-Socorro de alta complexidade será prioridade do governo proposto. Na educação, o programa propõe criar a Faculdade do Governo para levar oportunidades aos jovens dos 52 municípios de Rondônia. O programa também propõe ampliar a utilização da telemedicina para aumentar o acesso a atendimentos especializados.",
     "frases": [
       {
-        "texto": "O plano propõe expandir a digitalização dos serviços públicos por meio de plataformas eletrônicas, inteligência artificial, computação em nuvem, integração de sistemas e atendimento digital ao cidadão.",
+        "texto": "O plano de governo abrange os 52 municípios de Rondônia.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 123,
-            "trecho": "Expandir a digitalização dos serviços públicos mediante utilização de plataformas eletrônicas, inteligência artificial, computação em nuvem, integração de sistemas e ampliação do atendimento digital ao cidadão."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 2,
+            "trecho": "ABRANGÊNCIA\n\n52 municípios"
           }
         ]
       },
       {
-        "texto": "Na área de turismo, propõe desenvolver uma plataforma digital integrada com inteligência artificial, múltiplos idiomas e informações sobre atrativos, roteiros, hospedagem, gastronomia, eventos e serviços durante as vinte e quatro horas.",
+        "texto": "O plano de governo está organizado em quatorze eixos.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 110,
-            "trecho": "Desenvolver uma plataforma digital integrada com recursos de inteligência artificial, disponível em múltiplos idiomas, reunindo informações sobre atrativos, roteiros, hospedagem, gastronomia, eventos, serviços turísticos e orientações aos visitantes durante as vinte e quatro horas do dia."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 17,
+            "trecho": "O Plano de Governo está organizado em quatorze eixos."
           }
         ]
       },
       {
-        "texto": "O plano propõe políticas públicas para proteção, conservação e uso racional dos recursos hídricos, com monitoramento permanente dos mananciais e recuperação de Áreas de Preservação Permanente.",
+        "texto": "Na área de integridade, o programa propõe consolidar o Programa Estadual de Integridade e Combate à Corrupção.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 115,
-            "trecho": "Implantar políticas públicas destinadas à proteção, conservação e uso racional dos recursos hídricos, promovendo monitoramento permanente dos mananciais, recuperação das Áreas de Preservação Permanente (APPs)"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 19,
+            "trecho": "Consolidar o Programa Estadual de Integridade e Combate à Corrupção"
           }
         ]
       },
       {
-        "texto": "Para a saúde materno-infantil, propõe utilizar indicadores de pré-natal, gestação de risco, prematuridade, mortalidade materna e infantil e capacidade neonatal para reorganizar o atendimento no Estado.",
+        "texto": "Em ações de cidadania, o programa propõe expandir as ações itinerantes de cidadania.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 131,
-            "trecho": "Utilizar os indicadores de pré-natal, gestação de risco, prematuridade, mortalidade materna e infantil e capacidade neonatal para reorganizar o fluxo de atendimento da gestante e do recém-nascido em todo o Estado."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 20,
+            "trecho": "Expandir as ações itinerantes de cidadania"
           }
         ]
       },
       {
-        "texto": "Na infraestrutura rodoviária, propõe inventariar 100% da malha rodoviária e das pontes estaduais, com base georreferenciada sobre condições, tráfego, criticidade econômica e riscos estruturais.",
+        "texto": "Na segurança, o programa propõe implantar células avançadas de inteligência e barreiras tecnológicas em pontos estratégicos das rotas de drogas e armas.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 133,
-            "trecho": "Construir base georreferenciada contendo a condição das rodovias e pontes estaduais, volume e natureza do tráfego, criticidade econômica, riscos estruturais e importância de cada corredor"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 24,
+            "trecho": "Implantar células avançadas de inteligência e barreiras tecnológicas (leitoras de placas - OCR e portais de monitoramento) em pontos estratégicos de rota de drogas e armas"
           }
         ]
       },
       {
-        "texto": "Na gestão ambiental, propõe atualizar os processos de licenciamento por meio da digitalização dos sistemas, simplificação administrativa, reforço das equipes técnicas e redução dos prazos de análise.",
+        "texto": "Na saúde, a construção do Novo Hospital e Pronto-Socorro de alta complexidade será prioridade do governo proposto.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 115,
-            "trecho": "Promover a atualização dos processos de licenciamento ambiental mediante digitalização dos sistemas, simplificação dos procedimentos administrativos, reforço das equipes técnicas e redução dos prazos para análise dos processos"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 37,
+            "trecho": "Por isso, a construção do Novo Hospital e Pronto-Socorro\nde alta complexidade será prioridade do nosso Governo."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe criar a Faculdade do Governo para levar oportunidades aos jovens dos 52 municípios de Rondônia.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542916:01",
+            "pagina": 48,
+            "trecho": "vamos criar a Faculdade do Governo, um programa que levará\noportunidades aos jovens dos 52 municípios de Rondônia."
+          }
+        ]
+      },
+      {
+        "texto": "O programa também propõe ampliar a utilização da telemedicina para aumentar o acesso a atendimentos especializados.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002542916:01",
+            "pagina": 39,
+            "trecho": "Ampliar a utilização da telemedicina"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "servicos-publicos-digitais",
-        "titulo": "Serviços públicos digitais",
-        "descricao": "Expansão da digitalização e do atendimento digital ao cidadão.",
+        "id": "abrangencia-territorial",
+        "titulo": "Abrangência territorial",
+        "descricao": "O plano de governo abrange os 52 municípios de Rondônia.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 123,
-            "trecho": "Expandir a digitalização dos serviços públicos mediante utilização de plataformas eletrônicas, inteligência artificial, computação em nuvem, integração de sistemas e ampliação do atendimento digital ao cidadão."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 2,
+            "trecho": "ABRANGÊNCIA\n\n52 municípios"
           }
         ]
       },
       {
-        "id": "turismo-digital",
-        "titulo": "Turismo digital",
-        "descricao": "Desenvolvimento de plataforma integrada para informações turísticas.",
+        "id": "estrutura-do-plano",
+        "titulo": "Estrutura do plano",
+        "descricao": "O plano de governo está organizado em quatorze eixos.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 110,
-            "trecho": "Desenvolver uma plataforma digital integrada com recursos de inteligência artificial, disponível em múltiplos idiomas, reunindo informações sobre atrativos, roteiros, hospedagem, gastronomia, eventos, serviços turísticos e orientações aos visitantes durante as vinte e quatro horas do dia."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 17,
+            "trecho": "O Plano de Governo está organizado em quatorze eixos."
           }
         ]
       },
       {
-        "id": "recursos-hidricos",
-        "titulo": "Recursos hídricos",
-        "descricao": "Proteção, conservação, uso racional e monitoramento dos recursos hídricos.",
+        "id": "integridade-publica",
+        "titulo": "Integridade pública",
+        "descricao": "O programa propõe consolidar o Programa Estadual de Integridade e Combate à Corrupção.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 115,
-            "trecho": "Implantar políticas públicas destinadas à proteção, conservação e uso racional dos recursos hídricos, promovendo monitoramento permanente dos mananciais, recuperação das Áreas de Preservação Permanente (APPs)"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 19,
+            "trecho": "Consolidar o Programa Estadual de Integridade e Combate à Corrupção"
           }
         ]
       },
       {
-        "id": "saude-materno-infantil",
-        "titulo": "Saúde materno-infantil",
-        "descricao": "Uso de indicadores para reorganização do atendimento materno-infantil.",
+        "id": "acoes-de-cidadania",
+        "titulo": "Ações de cidadania",
+        "descricao": "O programa propõe expandir as ações itinerantes de cidadania.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 131,
-            "trecho": "Utilizar os indicadores de pré-natal, gestação de risco, prematuridade, mortalidade materna e infantil e capacidade neonatal para reorganizar o fluxo de atendimento da gestante e do recém-nascido em todo o Estado."
+            "documentoId": "RO:220002542916:01",
+            "pagina": 20,
+            "trecho": "Expandir as ações itinerantes de cidadania"
           }
         ]
       },
       {
-        "id": "infraestrutura-rodoviaria",
-        "titulo": "Infraestrutura rodoviária",
-        "descricao": "Inventário georreferenciado de rodovias e pontes estaduais.",
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O programa propõe implantar células avançadas de inteligência e barreiras tecnológicas em pontos estratégicos das rotas de drogas e armas.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 133,
-            "trecho": "Construir base georreferenciada contendo a condição das rodovias e pontes estaduais, volume e natureza do tráfego, criticidade econômica, riscos estruturais e importância de cada corredor"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 24,
+            "trecho": "Implantar células avançadas de inteligência e barreiras tecnológicas (leitoras de placas - OCR e portais de monitoramento) em pontos estratégicos de rota de drogas e armas"
           }
         ]
       },
       {
-        "id": "licenciamento-ambiental",
-        "titulo": "Licenciamento ambiental",
-        "descricao": "Atualização dos processos e redução dos prazos de análise.",
+        "id": "atendimento-em-saude",
+        "titulo": "Atendimento em saúde",
+        "descricao": "A construção do Novo Hospital e Pronto-Socorro de alta complexidade será prioridade do governo proposto.",
         "evidencias": [
           {
-            "documentoId": "RO:220002542916:02",
-            "pagina": 115,
-            "trecho": "Promover a atualização dos processos de licenciamento ambiental mediante digitalização dos sistemas, simplificação dos procedimentos administrativos, reforço das equipes técnicas e redução dos prazos para análise dos processos"
+            "documentoId": "RO:220002542916:01",
+            "pagina": 37,
+            "trecho": "Por isso, a construção do Novo Hospital e Pronto-Socorro\nde alta complexidade será prioridade do nosso Governo."
           }
         ]
       }
@@ -2150,379 +2170,439 @@
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
     "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T23:37:46.019Z"
+    "generatedAt": "2026-08-29T14:54:44.181Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T23:40:23.062Z",
+    "judgedAt": "2026-08-29T19:20:19.586Z",
     "verdicts": [
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a proposta."
+        "reason": "A página citada informa a abrangência de 52 municípios e identifica Rondônia."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 52 municípios está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra, sem juízo de valor."
+        "reason": "A redação descreve objetivamente a abrangência, sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente de digitalização."
+        "reason": "A afirmação trata apenas da abrangência territorial do plano."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral de Rondônia."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:1:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+        "reason": "A evidência e a página cobrem a abrangência, a quantidade e o estado."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a proposta descrita."
+        "reason": "A evidência reproduz integralmente a informação afirmada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "\"vinte e quatro horas\" está literalmente na evidência."
+        "reason": "A quantidade de quatorze eixos está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a estrutura do documento sem valoração."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de turismo digital."
+        "reason": "A afirmação aborda somente a estrutura do plano."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:2:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
         "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A proposta aparece literalmente no eixo de cidadania e combate à corrupção."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do documento."
+        "reason": "A redação atribui a proposta ao programa sem elogio, crítica ou certeza de execução."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única área coerente (recursos hídricos)."
+        "reason": "A afirmação contém uma única proposta coerente de integridade pública."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:3:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais cobertas."
+        "reason": "A página cobre a área temática, a natureza de proposta e a ação de consolidação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a proposta."
+        "reason": "A proposta está explicitamente registrada na página citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem juízo de valor ou promessa de êxito."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única área coerente (saúde materno-infantil)."
+        "reason": "A afirmação trata de uma única proposta na área de cidadania."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:4:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais cobertas."
+        "reason": "A evidência e o contexto da página cobrem integralmente a proposta."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "A página 133 citada contém o título 'INVENTARIAR 100% DA MALHA RODOVIÁRIA E DAS PONTES ESTADUAIS' e o trecho detalha a base georreferenciada."
+        "reason": "A evidência sustenta integralmente os meios, locais estratégicos e rotas mencionados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "O percentual '100%' consta literalmente no título da página 133 citada."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação relata a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente de infraestrutura rodoviária."
+        "reason": "Células de inteligência e barreiras tecnológicas integram uma única proposta de segurança."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:5:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais cobertas."
+        "reason": "Todas as cláusulas materiais são cobertas pela evidência."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a proposta."
+        "reason": "A evidência sustenta literalmente a construção, a alta complexidade e a prioridade."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação atribui a prioridade ao governo proposto, sem endosso ou crítica."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente de licenciamento ambiental."
+        "reason": "A afirmação trata de uma única proposta hospitalar na área da saúde."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:6:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais cobertas."
+        "reason": "Todas as cláusulas materiais estão expressamente cobertas."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência sustenta integralmente a criação, o público, a finalidade e a abrangência."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 52 municípios está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta e sua finalidade sem elogio ou certeza externa."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação reúne elementos de uma única proposta educacional coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:servicos-publicos-digitais:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:7:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência sustenta a ampliação e a página citada explicita o aumento do acesso especializado."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve proposta e finalidade sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A finalidade está diretamente ligada à única proposta de telemedicina."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:turismo-digital:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:frase:8:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "A evidência e o texto integral da página cobrem a ação e sua finalidade."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A página citada informa a abrangência de 52 municípios e identifica Rondônia."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 52 municípios está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "O título temático e a descrição são objetivos e não valorativos."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação trata apenas da abrangência territorial."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:recursos-hidricos:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:abrangencia-territorial:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "A evidência e a página cobrem a abrangência, a quantidade e o estado."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência reproduz integralmente a informação afirmada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de quatorze eixos está literalmente sustentada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "O título temático e a descrição da estrutura não contêm valoração."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação aborda somente a estrutura do plano."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:saude-materno-infantil:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:estrutura-do-plano:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A proposta aparece literalmente no eixo correspondente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "O título e a redação descrevem a proposta sem valoração ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação contém uma única proposta coerente de integridade pública."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:infraestrutura-rodoviaria:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:integridade-publica:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "A página cobre o tema, a natureza de proposta e a ação de consolidação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:suporte",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A proposta está explicitamente registrada na página citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:numeros",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "O título e a redação descrevem a proposta sem juízo de valor."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:mistura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação trata de uma única proposta na área de cidadania."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:identidade",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento correspondem."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002542916:tema:licenciamento-ambiental:documentos:RO:220002542916:02:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:acoes-de-cidadania:documentos:RO:220002542916:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas do resumo cobertas pela evidência."
+        "reason": "A evidência e o contexto da página cobrem integralmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente os meios, locais estratégicos e rotas mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O título e a redação relatam a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos mencionados integram uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:seguranca-publica:documentos:RO:220002542916:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais são cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a construção, a alta complexidade e a prioridade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação atribui a prioridade ao governo proposto, sem endosso ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta hospitalar na área da saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002542916:tema:atendimento-em-saude:documentos:RO:220002542916:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão expressamente cobertas."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:RO:220002542916",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -2537,58 +2617,16 @@
         "attempts": 1
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 27861,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 25482,
-          "output_tokens_details": {
-            "thinking_tokens": 1171
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 27861,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 25482,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 27861,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 27861
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.3879104
-        }
-      },
-      "geracaoMultipassagem": {
-        "planejador": "multipassagem-v3",
-        "limiteBytes": 180000,
-        "passagens": 2,
-        "passagensCacheadas": 0,
-        "chamadasGeracao": 2,
-        "retriesPassagem": 0,
-        "chamadasSintese": 1,
-        "retriesSintese": 0,
-        "fingerprint": "7d16e7a3c221a1907a481fcc5501355fdd8679456fe2c7e531687ed2f604cfda",
-        "promptVersoes": {
-          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
-          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+          "input_tokens": 38800,
+          "cached_input_tokens": 7936,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15000,
+          "reasoning_output_tokens": 237
         }
       }
     },
@@ -2607,11 +2645,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T23:44:51.998Z",
-    "sourceSha256": "3ced457d9d60a97be34150457a414b46fa1dcbb8e133e6ea5114f1cd05cdd8d5",
-    "extractedTextSha256": "e4307b9e44db64e13f14cc14f0d037cae923128e323edcf97b90a85c2a03d3e2",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "65f628f8540d61ddf34792bc54702e4e63833600835b99ec6f2466d2a1fc3ad4",
+    "extractedTextSha256": "6c96ddbd983dd3cc7ce74bdeac37def66f851133955c899fb3dac8c8b1718ad9",
     "documentCount": 2,
-    "documentSetSha256": "2304c0a5a7d9bfcb32f2529d1095dfd5d631a72507971f91303852e603231bc2",
-    "contentSha256": "f16047a9b0791088a0c6f2d0c8b163986a8bc3e561aa60fe46a95b0d394e4c5e"
+    "documentSetSha256": "10b0e49485cbdbe99be22247f19f41738920125d1f2858a41d971c53f5e1210f",
+    "contentSha256": "4e931bb1751497eb4e5312a1feb024611065db7d7fb5ef4a654b27e9796ed17b"
   }
 }

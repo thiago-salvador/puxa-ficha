@@ -1,0 +1,1375 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AL",
+    "sqCandidato": "20002553350",
+    "slug": "jhc",
+    "nomeUrna": "JHC",
+    "partido": "PSDB",
+    "arquivoNome": "2026AL20002553350_01.pdf",
+    "arquivoNoPacote": "AL/2026AL20002553350_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AL:20002553350:01",
+      "fonte": {
+        "arquivoNome": "2026AL20002553350_01.pdf",
+        "arquivoNoPacote": "AL/2026AL20002553350_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "014a6e4fdb624cbdbf0fa0bff8c1c3cc69f94588edbad970e5b00d9400e6717b",
+        "extractedTextSha256": "a66748f42f473b2674d4f3f4d0deddf126fddd9a1c9fd219a34ae9f656e9bddd",
+        "paginas": 53,
+        "secoes": [
+          {
+            "id": "alagoas",
+            "titulo": "ALAGOAS",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "ALAGOAS\n\nGIGANTE\n\nDO SERTÃO\n\nAO LITORAL\n\nUM SÓ FUTURO\n\ngigante\n\nALAGOAS\n\nPLANO\n\nDE GOVERNO\n\nALAGOAS\n\n2027 ~ 2030"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nCarta aberta ao povo alagoano ........................................................................................................................................\n\n3\n\nApresentação .................................................................................................................................................................................................\n\n5\n\nDiagnóstico ........................................................................................................................................................................................................\n\n9\n\nPlano de governo ......................................................................................................................................................................................\n\n13\n\nEixo A | Alagoas que cuida ..........................................................................................................................................................\n\n17\n\nPropostas | Saúde ..................................................................................................................................................................................... 17\nPropostas | Educação ......................................................................................................................................................................... 21\nPropostas | Primeira Infância, Assistência e Proteção Social ............................................ 23\nEixo B | Alagoas segura .................................................................................................................................................................... 25\nPropostas | Segurança ...................................................................................................................................................................... 25\nEixo C | Alagoas produtiva e oportunidades .................................................................................................\n\n28\n\nPropostas | Trabalho, Empreendedorismo e Desenvolvimento Produtivo ....... 28\nPropostas | Cultura, Esporte e Turismo ................................................................................................................. 32\nEixo D | Alagoas disruptiva .........................................................................................................................................................\n\n35\n\nPropostas | Infraestrutura, Trasnporte e Logística ............................................................................ 35\nPropostas | Energia ................................................................................................................................................................................ 39\nPropostas | Governo DIgital e Gestão por Resultados ................................................................... 39\nEixo E | Alagoas pra viver melhor ....................................................................................................................................... 41\nPropostas | Meio Ambiente ........................................................................................................................................................ 41\nPropostas | Água e Saneamento ....................................................................................................................................... 42\nPropostas | Habitação e Cidade ......................................................................................................................................... 44\nEixo F | Alagoas transparente ................................................................................................................................................ 47\nPropostas .............................................................................................................................................................................................................. 47\nEixo G | Alagoas para todos ........................................................................................................................................................ 49\nPropostas ............................................................................................................................................................................................................... 49\nFontes ........................................................................................................................................................................................................................... 52\n\ngigante\n\nALAGOAS\n\nDO SERTÃO AO LITORAL, UM SÓ FUTURO"
+          },
+          {
+            "id": "a",
+            "titulo": "a",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "a\nt\nr\ne\nb\na\ncarta alagoano\nao povo\n\nA você que ama Alagoas e trabalha\ntodos os dias pelo nosso estado\n\nEle é gigante. Gigante na força de quem acorda cedo para trabalhar, na\ncoragem das mães e dos pais que sustentam suas famílias com muito\nsuor, nos jovens que querem oportunidade e perspectiva de vida, nos\nservidores que cuidam da população e trabalham para prestar o melhor\nserviço público, em quem empreende, planta, pesca, ensina, atende,\nproduz e mantém viva a esperança em cada canto do nosso estado.\nEste plano nasce de uma certeza: Alagoas pertence a seu povo. Alagoas\nnão tem dono. O tempo da política feita para poucos precisa ficar para\ntrás. O Estado precisa estar a serviço das pessoas, chegando com\nrespeito, presença e resultado a todos os municípios, do sertão ao litoral.\nGovernar é cuidar. É ouvir antes de decidir. É prometer com\nresponsabilidade e entregar com trabalho. É fazer bem o que já deu\ncerto, corrigir o que precisa melhorar e ter coragem para mudar a\nperspectiva quando a vida real mostra outro caminho.\nQueremos um governo que devolva vida às cidades, aos bairros, aos\npovoados e às comunidades. Um governo que enxergue o impacto\neconômico de cada ação. Além disso, que consiga enxergar o valor que\nnão cabe apenas nos números: a praça ocupada, a escola funcionando\nmelhor e em tempo integral, a estrada que aproxima comunidades, o\nserviço público que chega a quem mais precisa, a família que volta a\nacreditar que é possível melhorar de vida."
+          },
+          {
+            "id": "os-dados-os-estudos-e-as-evidencias-vao-orientar-nossas-escolhas",
+            "titulo": "Os dados, os estudos e as evidências vão orientar nossas escolhas.",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Os dados, os estudos e as evidências vão orientar nossas escolhas.\nEntretanto, o centro de tudo será sempre o bem-estar das pessoas. O\nnúmero precisa servir à vida. Concreto sem gente é a mesma coisa que\ncorpo sem alma. A gestão precisa chegar na porta de casa. O resultado\nprecisa ser sentido por quem mais precisa.\nEste é um chamado para construir uma Alagoas que cuida das pessoas,\nque é segura e cidadã, que gera oportunidade para o seu povo, que é\ndisruptiva, sustentável e, principalmente, bem governada. Uma Alagoas\nque respeita sua história, rompe com velhas práticas e abre caminho\npara um futuro comum.\nDo sertão ao litoral, somos um só povo. E juntos vamos fazer de Alagoas\num estado verdadeiramente gigante.\nUm abraço amigo,\n\nJHC"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "Página 5",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nAPRESENTAÇÃO\nAlagoas Gigante: do sertão ao litoral, um só futuro.\n\nAlagoas Gigante é uma visão de futuro para o estado inteiro. Nasce da\nideia de que Alagoas precisa crescer olhando para as pessoas,\nrespeitando cada território e fazendo o desenvolvimento chegar onde a\nvida acontece: na casa das famílias, nas escolas, nos postos de saúde,\nnas estradas, nos bairros, nos povoados, nas comunidades rurais, nas\ncidades grandes e pequenas.\nAlagoas tem uma força enorme. Tem cultura, natureza, juventude,\nprodução, turismo, criatividade, gente trabalhadora e municípios com\nvocações diferentes. O papel do governo é transformar essa força em\nvida melhor: mais oportunidade, mais cuidado, mais segurança, mais\nrenda, mais dignidade e mais presença do Estado.\nO desenvolvimento precisa ser sentido pelas pessoas. Ele aparece\nquando o atendimento de saúde chega mais perto, quando a escola\nacolhe e ensina melhor, quando a água chega com regularidade, quando\na estrada permite escoar a produção, quando a moradia dá segurança à\nfamília, quando o pequeno negócio recebe apoio, quando a juventude\nenxerga futuro onde nasceu e quando o poder público trata cada\ncidadão com respeito.\nIsso só poderá ser feito se Alagoas for governada por inteiro.\nGovernar Alagoas por inteiro significa conhecer as diferenças do estado\ne agir a partir delas. Maceió e a Região Metropolitana têm desafios\npróprios. O Agreste, a Zona da Mata, o Sertão, o Litoral Norte e o Litoral\nSul - cada região tem urgências, vocações e oportunidades que\nprecisam ser tratadas com a seriedade e a responsabilidade que os\ncidadãos alagoanos merecem.\nOs 102 municípios do nosso estado fazem parte deste plano. As políticas\npúblicas precisam chegar a todos eles, bem como políticas setoriais e\nprioritárias a populações vulneráveis e regiões historicamente\nabandonadas pelo Executivo.\n\n5"
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "Página 6",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nMuitos problemas que afetam a vida das pessoas dependem de\ncooperação: saúde, educação, assistência social, segurança pública,\nsaneamento, habitação, mobilidade, segurança hídrica, desenvolvimento\nurbano, proteção ambiental e geração de oportunidades. Resolvê-los é\numa tarefa de grande magnitude, que depende também da capacidade\nde articulação do Governo do Estado.\nAo fim e ao cabo, o objetivo é colocar o povo alagoano no centro das\ndecisões, garantindo dignidade, proteção e qualidade de vida para que o\nalagoano possa construir seu pŕoprio caminho.\nPara isso, este Plano de Governo propõe uma gestão baseada em escuta,\nplanejamento, tecnologia e entrega, sem abrir mão do equilíbrio nas\ncontas públicas e uma atuação transparente junto à sociedade\nalagoana.\nQueremos uma Alagoas em que as pessoas encontrem serviços públicos\nmais próximos, mais humanos e eficientes. Um estado em que as\ncrianças tenham condições de aprender e se desenvolver; os jovens\npossam estudar, trabalhar e permanecer em sua terra; as mulheres\nvivam com autonomia e proteção; que as famílias em situação de\nvulnerabilidade recebam apoio para reconstruir caminhos; e os idosos\nsejam tratados com cuidado e respeito.\nQueremos uma economia mais forte e mais distribuída pelo território.\nUma economia que gere oportunidade no interior, valorize quem produz\nno campo e no mar, fortaleça o turismo com renda local, apoie pequenos\nnegócios, invista em inovação aplicada a problemas reais e tenha\ninfraestrutura para aproximar regiões.\nQueremos cidades mais organizadas, bairros mais cuidados,\ncomunidades rurais apoiadas e um ambiente natural protegido como\npatrimônio de todos e base do nosso desenvolvimento. Alagoas pode\ncrescer preservando suas riquezas, qualificando seus serviços e\nabrindo novas oportunidades para sua população.\nQueremos um governo que funcione de verdade. Um governo sem o\nranço da política, que coopere com todos os municípios, dialogue com a\nUnião, mobilize parceiros, cuide das contas públicas, valorize os\nservidores, tome decisões com base em critérios claros e preste contas\nà sociedade de cada centavo utilizado.\n\n6"
+          },
+          {
+            "id": "pagina-7",
+            "titulo": "Página 7",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nAlagoas Gigante é isso: um projeto para fazer o estado avançar com os\npés no chão, o olhar no futuro e o coração voltado para as pessoas.\nDo sertão ao litoral, um só futuro."
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "Página 8",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nDIAGNÓSTICO\nAlagoas não é um estado sem riqueza. É um estado onde a riqueza circula em\npouco espaço e alcança pouca gente. O cruzamento dos indicadores oficiais\ndos 102 municípios com a escuta feita nas regiões mostra sempre a mesma\nfigura: serviço, investimento e oportunidade concentrados em uma faixa do\nterritório, e distância cobrando caro de quem vive fora dela.\nA leitura foi estruturada também a partir de um conjunto de estudos técnicos\nencomendados especialmente para este plano, produzidos por professores,\ngestores, pesquisadores e especialistas reconhecidos nacionalmente; esses\ntrabalhos comporão a coletânea ALAGOAS: Estratégias para uma Nova\nEconomia, organizada por Alexandre Manoel, Antonio Carvalho e Silva Neto e\nArnóbio Cavalcanti, com apresentação de Ana Paula Vescovi, ex-secretária do\nTesouro Nacional e ex-secretária-executiva do Ministério da Fazenda, e\nprefácio de Mansueto Almeida, ex-secretário do Tesouro Nacional.\nA concentração aparece na saúde, com 93 dos 102 municípios sem leito de UTI\ndo SUS. Aparece na economia, com a administração pública como setor\ndominante em 38 municípios e mediana de apenas 3,44% de participação da\nindústria no valor adicionado. Aparece na cultura, com os sete equipamentos\nestaduais todos na capital. Aparece no saneamento, com mediana de 63,6% de\nperda da água produzida e atendimento rural de água em 30,6%. E aparece na\nviolência, com 592 dos 948 crimes violentos letais de 2025 ocorrendo fora de\nMaceió, alcançando 85 municípios.\nHá também o que já melhora e precisa continuar. O Ideb 2025 subiu em 88 dos\n102 municípios nos anos iniciais. A movimentação aeroportuária cresceu 38,7%\nentre 2021 e 2024. O esforço fiscal estadual em ciência é o 4º do país. Alagoas\ntem nota B+ na Capacidade de Pagamento do Tesouro Nacional. São bases\nsobre as quais se constrói, e não pontos de chegada.\nHá uma frase que se repete nas conversas pelo interior de Alagoas, dita de\nmuitas maneiras diferentes: aqui a gente sempre precisa ir a outro lugar. Ir a\nMaceió para fazer um exame. Ir a Arapiraca para resolver um problema no\n\nbanco. Ir para São Paulo atrás de trabalho. Levar a produção para longe\nporque não há onde comercializar perto.\nEm Alagoas, 41 municípios estão a mais de 20 quilômetros do ponto de\n\n8"
+          },
+          {
+            "id": "pagina-9",
+            "titulo": "Página 9",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nsaúde de referência. A rede materno-infantil mostra o mesmo desenho\ncom um custo ainda mais alto: 8 das 10 regiões de saúde não têm leito\nobstétrico de alto risco, e o estado inteiro dispõe de 68 leitos dessa\nnatureza. Em 2023 foram registrados 32 óbitos maternos. Cada um\ndeles é, também, um trajeto. A saúde mental repete o padrão: Alagoas\ntem 7 CAPS, e 42 municípios não têm nenhum.\nE há um indicador que mede, de uma vez só, presença do Estado e\nproteção de crianças: a cobertura vacinal. Pela leitura federal do\nMinistério da Saúde para 2024, apenas 11 dos 102 municípios alagoanos\natingem a meta de 95% nas nove vacinas do calendário da criança, e 4\nmunicípios não atingem a meta em nenhuma delas. Quarenta e sete\nmunicípios ficam abaixo de 95% na pentavalente. A vacina mais crítica é\na febre amarela, com 72,2% no estado e 28 municípios abaixo de 70%.\nCobertura vacinal baixa é a antessala de surtos evitáveis.\nNa economia, a desigualdade se expressa numa análise da\nadministração pública como setor dominante em 38 municípios, com\nmediana de 34,2%, chegando a 68,9% em Palestina, 63,2% em Carneiros e\n60,8% em Senador Rui Palmeira. Por outro lado, a mediana é de apenas\n3,44% de participação da indústria no valor adicionado - o que significa\nque, na maioria dos municípios de Alagoas, a indústria praticamente não\nexiste. O PIB por habitante é de R$ 11,72 mil, o 22º entre as 27 unidades da\nfederação.\nMunicípios cuja economia depende do salário do funcionalismo e do\nbenefício social indicam ausência de base produtiva instalada. E a\nconsequência aparece no indicador mais duro que Alagoas carrega: o\nnível de ocupação é de 46,5%, o menor do Brasil, e a taxa de participação\nna força de trabalho é de 51,2%, também a menor. Menos da metade da\npopulação em idade de trabalhar está ocupada, e quase metade das\npessoas sequer procura trabalho. A informalidade alcança 42,6%.\nA pauta exportadora conta a mesma história pelo lado de fora. Alagoas\nexportou US$ 900,8 milhões em 2024, menos de 0,3% do total brasileiro,\nconcentrada em açúcar e minério de cobre. Quando o preço do açúcar\ncaiu, no primeiro semestre de 2026, a balança comercial estadual foi\npara um déficit de US$ 240,9 milhões. Um estado que depende de duas\ncommodities está sempre a uma safra de distância de um problema\nfiscal.\n\n9"
+          },
+          {
+            "id": "pagina-10",
+            "titulo": "Página 10",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nA educação alagoana também segue refém de um atraso histórico.\nAlagoas tem a maior taxa de analfabetismo do país, com 14,2%. Quarenta\ne quatro municípios não têm nenhuma biblioteca pública. Apenas 25%\ndas escolas alagoanas dispõem de quadra de esportes, contra uma\nmédia nacional de 36,2% das escolas públicas. O abandono no ensino\nmédio tem mediana municipal de 3,1% e chega a 15,1% em Olivença. A\nreprovação chega a 18,7% em São Brás. Como nos demais serviços\npúblicos, a desigualdade no acesso à educação é gritante.\nNão é diferente com a segurança pública. A violência letal alagoana se\ninteriorizou, e o desenho institucional da segurança pública não\nacompanhou essa transformação. Segundo o Atlas da Violência 2026,\ncom dados de 2024, Alagoas é o estado do Brasil onde uma pessoa negra\nmais corre risco de ser assassinada: o risco é 23,3 vezes maior que o de\numa pessoa não negra. Foram 1.121 homicídios de pessoas negras, taxa de\n48,9 por 100 mil, contra 19 homicídios de pessoas não negras, taxa de 2,1\npor 100 mil. Num estado em que 69,9% da população é negra, esse\nnúmero não é um recorte estatístico: é a descrição de quem morre.\nA violência contra a mulher segue em alta. Entre 2024 e 2025, os\nfeminicídios tiveram alta de 36,3%, acompanhada de crescimento de\n61,4% na violência psicológica, de 43,8% na perseguição e de 12,6% no\ndescumprimento de medidas protetivas. A rede especializada de\nproteção continua concentrada, e a mulher do interior que procura\najuda encontra um sistema que não funciona.\nO saneamento é a política em que Alagoas mais se distancia do país, e\nele falha em quatro pontos ao mesmo tempo, a começar pela cobertura:\n68,1% de água por rede geral (21º lugar entre todos os estados\nbrasileiros); 34,1% de esgotamento adequado (18)º; 43,3% de domicílios\ncom fossa rudimentar ou buraco, (22º). A mediana municipal de\ndomicílios com esgotamento adequado é de 17%, e 46 municípios estão\nabaixo de 10%.\nFalha também na eficiência: a mediana municipal de perdas na\ndistribuição é de 63,6%, com Teotônio Vilela em 96,9%, Limoeiro de Anadia\nem 94,8% e Igreja Nova em 90,2%. Mais da metade da água tratada em\nAlagoas não chega a ninguém. Falha no campo: o atendimento rural de\nágua tem mediana municipal de 30,6%, contra 81,1% na área urbana, e\nmunicípios como Flexeiras, Campo Alegre, Canapi, Atalaia, Satuba e Boca\nda Mata aparecem com 0%. E falha na medição: 74 municípios não\n\n10"
+          },
+          {
+            "id": "pagina-11",
+            "titulo": "Página 11",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nreportam dados de esgoto ao SINISA. Uma política que não se mede não\nse corrige.\nEm paralelo, a drenagem urbana quase não existe fora das maiores\ncidades. Apenas 43 dos 102 municípios reportam alguma rede pluvial,\ncom mediana de 16,7% das vias. A conta chega em forma de enchente:\nQuebrangulo com 17,7% da população impactada, Murici com 11,7%, Poço\ndas Trincheiras com 11,1%, União dos Palmares com 7,1%. A coleta seletiva\né praticamente inexistente, e a coleta rural de resíduos tem mediana de\n39,1%.\nAlagoas reúne, num território pequeno, quase todos os riscos climáticos\nbrasileiros: seca estrutural no semiárido, inundação e deslizamento na\nZona da Mata e na Região Metropolitana, erosão costeira no litoral e\ndegradação do Complexo Estuarino Lagunar Mundaú-Manguaba, que é\nao mesmo tempo ecossistema, fonte de renda pesqueira e\ncartão-postal.\nA base de proteção é frágil. Das 96 unidades de conservação registradas\nno estado, 79 são de jurisdição estadual, das quais 76 são reservas\nparticulares. Alagoas não tem nenhuma unidade de conservação da\nclasse Parque Estadual, e apenas 11,66% do território está protegido.\nDuas promessas de criação de parque estadual foram feitas por\ngestões anteriores e não cumpridas. No semiárido, 22.828 famílias rurais\ndo Cadastro Único estão sem acesso à água, e o Canal do Sertão segue\nsendo uma promessa.\nO Índice Brasil de Inovação e Desenvolvimento de 2025, do INPI, deixa\nclara a situação de Alagoas quando o assunto é Ciência e\nDesenvolvimento. O estado ocupa a 25ª posição entre 27 unidades da\nfederação, com score de 0,1483 contra média nacional de 0,296, e é o 8ª\ndentre os 9 estados do Nordeste. O pior resultado é justamente em\ncapital humano, onde Alagoas é a última do país. Ou seja, o gargalo\nalagoano da inovação está na ausência de qualificação e estrutura\nprodutiva. A concentração se repete: entre 2020 e 2024, Maceió\nrespondeu por 62% dos depósitos de marca do estado, e 84 dos 102\nmunicípios não registraram um único depósito de patente nos últimos\n25 anos.\nEsse cenário mostra uma realidade única, ainda que expressa em\nmúltiplas áreas: em Alagoas, o Estado chega pouco, chega tarde e chega\ndesigual.\n\n11"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "Página 13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nPLANO DE GOVERNO\nAlagoas Gigante: do sertão ao litoral, um só futuro.\nEste documento começou com uma pergunta feita às pessoas: o que\nAlagoas precisa fazer para melhorar a vida de quem vive aqui? A partir\ndessa escuta, realizada ao longo de meses por meio de visitas in loco,\nredes sociais e diálogo com lideranças locais em todo o estado,\npudemos transformar demandas reais em propostas concretas, com\nbase em dados, território, competência pública e capacidade de entrega.\nOs 102 municípios de Alagoas estão contemplados neste documento.\nCada política do Alagoas Gigante utiliza o recorte territorial adequado à\nnatureza do problema local e critérios públicos de priorização. Assim\nsendo, o Plano de Governo se organiza em 7 eixos principais que\nabrangem diversas áreas da administração pública.\nEIXO\n\nÁREAS\n\nA\n\nALAGOAS QUE CUIDA\n\nSaúde, Educação, Primeira Infância, e\nAssistência e Proteção Social\n\nB\n\nALAGOAS SEGURA\n\nSegurança pública\n\nC\n\nALAGOAS PRODUTIVA E DE\nOPORTUNIDADES\n\nTrabalho, Empreendedorismo e\nDesenvolvimento Produtivo; Turismo,\nEsporte e Cultura\n\nD\n\nALAGOAS DISRUPTIVA\n\nInfraestrutura, Transporte e Logística;\nEnergia; Governo Digital e Gestão por\nResultados\n\nE\n\nALAGOAS PARA VIVER MELHOR\n\nMeio Ambiente; Água e Saneamento;\nCidades e Habitação\n\nF\n\nALAGOAS TRANSPARENTE\n\nTransparência e Combate à Corrupção\n\nG\n\nALAGOAS PARA TODOS\n\nJuventude, PCD, Terceira Idade,\nMulheres, Igualdade Racial e Povos\nTradicionais\n\nSÍNTESE DAS PROPOSTAS\n1. Recuperar a cobertura vacinal. Hoje 11 dos 102 municípios atingem a\nmeta de 95% nas nove vacinas do calendário da criança, e 4 não atingem\n\n13"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "Página 14",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nem nenhuma. A frente IMUNIZA ALAGOAS quer ampliar a capacidade de\nimunização da rede estadual;\n2. Levar solução regional de saúde mental aos 42 municípios sem CAPS,\ncom CAPS regionais, equipes itinerantes e retaguarda de leito em\nhospital geral;\n3. Publicar o Padrão Escola Gigante e o percentual de escolas que o\natendem, com acompanhamento anual por município e território;\n4. Implantar CREAS regionais, partindo de uma linha de base de zero\nunidades em funcionamento no estado, e instituir o Piso Alagoano do\nSUAS com regra pública de cofinanciamento;\n5. Reduzir a taxa de crimes em cada uma das quatro RISPs (Regiões\nIntegradas de Segurança Pública), com Territórios da Paz definidos por\ncritério técnico publicado;\n6. Reduzir a taxa de feminicídio e interiorizar delegacias e serviços\nespecializados;\n7. Reduzir as perdas de água na distribuição, ampliar o esgotamento\nsanitário e fiscalizar com eficácia a atuação das concessionárias;\n8. Criar os primeiros parques estaduais de Alagoas;\n9. Gerar empregos e trabalho. Hoje Alagoas tem uma das menores taxas\nde participação na força de trabalho e ocupação do país, com 46,5% e\n51,2% por meio do compromisso ALAGOAS TRABALHA; de apenas 46,5%;\npor meio do compromisso ALAGOAS TRABALHA, estimularemos\na produção e a criação de postos de trabalho nos 102 municípios do\nestado;\n10. Melhorar a nota B+ na Capacidade de Pagamento e reduzir a relação\nentre dívida consolidada e receita corrente líquida, hoje em 86,90%, a\nmaior do Nordeste;\n11. Prover Matadouros Públicos nas microrregiões do Estado;\n12. Implantar Escolas Técnicas Estaduais (ETECs), as primeiras da\nhistória de Alagoas;\n\n14"
+          },
+          {
+            "id": "pagina-15",
+            "titulo": "Página 15",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\n13. Auditar contratos das concessionárias de água e abastecimento\ne ampliar fiscalização sobre sua execução;\n14. Criação do Gabinete do Povo no Sertão e no Agreste, de onde o\ngoverno irá atuar ao longo do mandato, aproximando as demandas\npopulares do executivo estadual;\n15. Criação da Controladoria Autônoma Anticorrupção para ampliar\na transparência e o combate a desvios.;\n16. Acabar com a politização da fila da Saúde estadual: acesso com\ntransparência e impessoalidade;\n17. Realizar estudos para execução de ramal ferroviário integrado\nà Transnordestina;\n18. Ampliar o bônus-conclusão para alunos que concluam o Ensino\nMédio;\n19. Alagoas Mais Competitiva. Uma política tributária estadual para\natrair investimentos e tornar o estado mais competitivo.\n\n15"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "Página 17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO A\n\nALAGOAS QUE CUIDA\n\nEste eixo trata do que acompanha a pessoa: nascer com segurança,\ncrescer com estímulo e proteção, aprender na idade certa, ser atendida\nquando adoece e ter amparo quando precisar. A criança que não é\nacompanhada no pré-natal chega pior à creche; a que não é\nalfabetizada no tempo certo abandona o ensino médio; a família que é\natendida cinco vezes por políticas públicas que não se falam permanece\nno mesmo lugar. Por isso, a gestão integrada de casos, a busca ativa e o\ncofinanciamento com padrão de qualidade atravessam todas as áreas\nque dizem respeito a essa dimensão: Saúde, Educação, Primeira\nInfância e Assistência e Proteção Social. Todas elas têm, em comum, a\nfamília como unidade de referência.\n\nPROPOSTAS\nSAÚDE\nO Plano de Governo propõe organizar a atenção especializada em rede\nregional, com regulação transparente e percurso acompanhado do\npedido até a alta, para que o alagoano do interior não dependa de viajar\nà capital para ser atendido. Mais do que isso: vamos acabar com a\npolitização das filas da saúde, isto é, com as “carteiradas”, assim como\nfizemos em Maceió. O objetivo das propostas é garantir que todo\nalagoano tenha acesso a atendimento de saúde no tempo certo e o\nmais perto possível de onde vive, reduzindo filas, deslocamentos até a\ncapital e desigualdades entre a capital e o interior. A prioridade é\norganizar a rede estadual a partir das regiões de saúde, levando\nespecialistas, exames, cirurgias, medicamentos e profissionais para\nmais perto da população e criando mecanismos transparentes de\nregulação e acompanhamento - afinal, o acesso à saúde é um direito de\ntodo alagoano, e não um privilégio concedido por políticos clientelistas.\nA estratégia também enfrenta gargalos específicos que hoje\ncomprometem a continuidade do cuidado, como baixa cobertura\nvacinal, dificuldade de fixação de profissionais no interior, demora no\ntratamento do câncer, fragilidades da atenção materno-infantil e\ninsuficiência da rede territorial de saúde mental.\nO Saúde da Gente Alagoana será o eixo central dessa agenda, com polos\nregionais de especialidades, mutirões de exames e cirurgias, regulação\núnica e transparente, ampliação da Telessaúde e transporte sanitário\nregional. O Remédio em Casa garantirá a entrega de medicamentos de\n\n17"
+          },
+          {
+            "id": "pagina-18",
+            "titulo": "Página 18",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nuso continuado e ampliará os pontos de retirada. O Imuniza Alagoas\norganizará a recuperação das coberturas vacinais com busca ativa,\nvacinação itinerante e metas por município. Uma política estadual de\nforça de trabalho em saúde buscará atrair e fixar médicos e outros\nprofissionais no interior, articulando incentivos, formação e residências\nregionais. Na oncologia, o Estado passará a acompanhar o percurso\ncompleto do paciente, do diagnóstico ao primeiro tratamento, com\ntempo de espera medido e publicado. O Alagoas de Mãe para Mãe\nestruturará uma rede materno-infantil regionalizada, vinculando cada\ngestante à maternidade de referência e garantindo assistência ao\nparto, ao pós-parto e ao recém-nascido. A agenda se completa com uma\nnova política de saúde mental, baseada em CAPS regionais, equipes\nitinerantes, atenção à crise, cuidado infantojuvenil e ampliação da rede\npara dependência química, além de a criação de uma política inovadora\nde prevenção de zoonoses, saúde animal atendimento veterinário\npúblico com o SUS Animal voltado à população de baixa renda, para\nbichos de companhia, e aos rebanhos de micro e pequenos produtores\nrurais.\n\n1\nSaúde da Gente Alagoana: vai regionalizar a atenção especializada em\nAlagoas para garantir que consultas, exames e cirurgias aconteçam\nmais perto de onde as pessoas vivem, reduzindo filas e a necessidade de\ndeslocamento até Maceió. O programa prevê a implantação de polos\nregionais de especialidades, com consultas, exames de apoio\ndiagnóstico e cirurgias eletivas; a realização de mutirões de exames e\ncirurgias para enfrentar as filas acumuladas; e a criação de uma\nregulação estadual única e transparente, com critérios auditáveis e\nacompanhamento público da fila.\n\n2\nAmpliação da Telessaúde e do Transporte Sanitário Regional, com\nexpansão das teleconsultas, do telediagnóstico e das teleinterconsultas para conectar pacientes e profissionais do interior a\nespecialistas\nda\nrede\nestadual,\nreduzindo\ndeslocamentos\ndesnecessários e acelerando diagnósticos e encaminhamentos. A\niniciativa será integrada a um sistema regional de transporte sanitário\neletivo, com frota adequada, rotas regulares, escalas definidas e\norganização por regiões de saúde, garantindo o deslocamento de\n\n18"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "Página 19",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\npacientes que precisem realizar consultas, exames, tratamentos e\nprocedimentos fora de seus municípios, com prioridade para áreas mais\ndistantes dos polos de atendimento especializado.\n\n3\nRemédio em Casa. O programa levará medicamentos de uso continuado\ndiretamente à residência de pacientes com maior dificuldade de\ndeslocamento, especialmente idosos, pessoas com deficiência,\npacientes com doenças crônicas e moradores de áreas mais distantes\ndos\ncentros\nurbanos.\nParalelamente,\nampliará\nos\npontos\ndescentralizados de retirada em unidades de saúde e equipamentos\npúblicos, com integração à assistência farmacêutica estadual,\nacompanhamento dos estoques e organização periódica das entregas,\neliminando a distância como barreira para o acesso aos medicamentos\ne reduzindo interrupções no tratamento por falta de transporte,\ndeslocamentos longos ou dificuldade de acesso às unidades de\ndispensação.\n\n4\nImuniza Alagoas, para a recuperação da cobertura vacinal. Trata-se de\num pacto estadual de recuperação vacinal com sala de situação por\nmunicípio, busca ativa integrada entre escola, unidade básica de saúde\ne Cadastro Único, vacinação itinerante em áreas rurais e de difícil\nacesso, apoio logístico e cadeia de frio, meta anual por imunizante e\npainel público de cobertura municipal.\n\n5\nAmpliação do número de médicos no interior: política estadual de\natração, provimento, fixação e formação, com dimensionamento por\nregião de saúde, seleção permanente, incentivo de interiorização,\nresidências médicas e multiprofissionais nos polos regionais, formação\nde especialistas e vínculo com prazo de permanência declarado.\n\n6\nTratamento contra o câncer com tempo medido. Ampliação do acesso ao\ntratamento oncológico organizada por percurso: rastreamento,\nconfirmação diagnóstica, habilitação de serviços de referência,\nradioterapia, quimioterapia e cirurgia oncológica, com acompanhamento\npúblico do tempo entre o diagnóstico e o início do primeiro tratamento.\n\n19"
+          },
+          {
+            "id": "pagina-20",
+            "titulo": "Página 20",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\n7\nAlagoas de Mãe para Mãe. Implementação de rede materno-infantil\nregionalizada para que nenhuma gestante de risco tenha de procurar\nleito em outra região que não a sua, com criação de protocolo estadual\nde pré-natal vinculando a gestante à maternidade de referência\ne garantia de plantão médico e obstétrico nas maternidades do interior,\nalém de linha de cuidado para a mulher no pós-parto e o recém-nascido.\n\n8\nSaúde Mental: garantir cuidado em saúde mental de base territorial e\nregional em todo o estado, com atenção à crise e sem estigma, com a\nimplementação de uma rede de CAPS regionais e equipes itinerantes de\natendimento psicossocial, além do estabelecimento de urgência\npsiquiátrica e leitos de saúde mental em unidades hospitalares. Também\nserá expandida a atenção especializada infantojuvenil e o apoio\npsicossocial à escola, com apoio a famílias cuidadoras, reinserção social\nde pacientes pelo trabalho e campanha permanente contra o estigma,\nbem como a ampliação do cuidado em rede para a dependência química.\n\n9\nFila Única e Transparente da Saúde. Acabar com a “carteirada” e garantir\nque ninguém passe na frente por influência política, amizade ou\nindicação. Consultas, exames e cirurgias reguladas pelo Estado terão\nfila única, critérios técnicos e ordem de prioridade claramente definidos,\ncom acompanhamento pelo cidadão e mecanismos permanentes de\nauditoria. Casos urgentes continuarão tendo prioridade por razões\nmédicas, nunca por privilégio. O objetivo é assegurar que o acesso à\nsaúde pública seja decidido pela necessidade de cada paciente, e não\npor quem ele conhece.\n\n10\nSUS Animal. Estratégia estadual de saúde animal para regionalizar\no atendimento veterinário público e fortalecer a prevenção de zoonoses\nem Alagoas. O programa implantará serviços veterinários em\ncidades-polo do interior, com prioridade para famílias de baixa renda,\ne organizará castramóveis regionais em parceria com os municípios.\nO programa também irá atender micro e pequenos produtores rurais,\npara que os rebanhos possam ser acompanhados e tratados.\n\n20"
+          },
+          {
+            "id": "pagina-21",
+            "titulo": "Página 21",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nPROPOSTAS\nEDUCAÇÃO\nO objetivo das propostas é garantir que toda criança alagoana aprenda\nna idade certa, que nenhum estudante avance acumulando defasagens\ne que a escola pública prepare os jovens para continuar estudando,\ntrabalhar e construir seu futuro em Alagoas. O estado ainda tem a maior\ntaxa de analfabetismo do Brasil e, em 2025, o ensino médio da rede\nestadual alcançou Ideb de 4,2, abaixo da média do Brasil, de 4,3. Esses\nindicadores revelam desafios que começam na alfabetização,\natravessam a aprendizagem ao longo da educação básica e chegam à\ndificuldade de conectar a escola às oportunidades de formação e\ntrabalho. A estratégia, por isso, combina alfabetização na idade certa,\ncombate ao analfabetismo de jovens e adultos, recomposição da\naprendizagem, valorização dos professores e transformação do ensino\nmédio, aproximando formação técnica, universidade e mercado de\ntrabalho.\nA Alfabetização na Idade Certa organizará a colaboração com os\nmunicípios, com avaliação de fluência, formação de professores,\nmaterial didático estruturado e reforço da EJA, incluindo busca ativa de\npessoas não alfabetizadas pelo CadÚnico. O Ler para Valer ampliará\nbibliotecas e salas de leitura nas escolas, enquanto uma política de\nrecomposição da aprendizagem oferecerá apoio aos alunos com\ndefasagem. O Escola Gigante dará um salto de qualidade no ensino\nmédio estadual, com expansão do tempo integral e da educação\ntécnica, climatização, conectividade, laboratórios, bibliotecas, idiomas,\nrobótica, projeto de vida e preparação para o Enem. A bolsa de\nconclusão será ampliada, e a política de valorização dos professores\ncombinará formação permanente, melhores condições de trabalho e\nrecomposição dos quadros por concurso público. O Alagoas para o\nFuturo fechará essa trilha conectando os cursos técnicos às vocações\neconômicas de cada região, com estágio, aprendizagem profissional e\numa plataforma de acesso ao primeiro emprego para jovens,\nespecialmente os que vivem no interior.\n\n11\nAlfabetização na Idade Certa em colaboração com os municípios,\ngarantindo que toda criança seja alfabetizada na idade certa e\nerradicando o analfabetismo de Alagoas. Para isso, serão usadas\n\n21"
+          },
+          {
+            "id": "pagina-22",
+            "titulo": "Página 22",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nferramentas para a avaliação estadual de fluência, capacitação\nespecífica, além da disponibilização de material didático estruturado,\ncom busca ativa de não alfabetizados pelo Cadastro Único e mais\ninvestimentos no EJA (Educação de Jovens e Adultos).\n\n12\nPrograma Ler Para Valer: mais bibliotecas e salas de leitura por todo\no estado, com implementação de espaços públicos escolares dedicados\nà prática adequada de leitura para todas as idades, garantindo acervo\natualizado, ambientes adequados e acesso a livros físicos e digitais.\nO programa também promoverá clubes de leitura, rodas literárias, feiras\nde livros, atividades de contação de histórias e formação de mediadores\nde leitura, transformando as bibliotecas em espaços permanentes de\naprendizagem, convivência e incentivo ao hábito da leitura.\n\n13\nRecomposição da aprendizagem, com apoio pedagógico intensivo aos\nestudantes dos anos iniciais do ensino fundamental que apresentam\ndefasagens em leitura, escrita e matemática, a partir de avaliações\nperiódicas para identificar as dificuldades de cada aluno. O programa\noferecerá\nreforço\nescolar,\nmateriais\npedagógicos\nespecíficos\ne formação continuada para professores, com metas de aprendizagem\npor etapa e monitoramento permanente dos resultados, garantindo que\nnenhuma criança avance de ano sem dominar as competências\nessenciais para continuar aprendendo.\n\n14\nPrograma Escola Gigante. Ensino médio integral e conectado ao futuro,\npara promover um salto de qualidade na rede estadual de ensino,\nampliando a oferta de educação em tempo integral. As unidades terão\ninfraestrutura de ponta, com salas climatizadas, internet de alta\nvelocidade, laboratórios, bibliotecas, espaços esportivos e ambientes de\ninovação, além de aulas de idiomas, robótica, tecnologia, projeto de vida\ne preparação para o ENEM.\n\n15\nExpansão da bolsa do Ensino Médio. Ampliação da bolsa ao estudante\nque concluir o Ensino Médio. O objetivo é fortalecer o incentivo\nà permanência na escola, reduzindo o abandono escolar, especialmente\n\n22"
+          },
+          {
+            "id": "pagina-23",
+            "titulo": "Página 23",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nentre jovens em situação de vulnerabilidade, além de oferecer um apoio\nfinanceiro adicional no momento de transição para o ensino superior,\na formação profissional e o ingresso no mercado de trabalho.\n\n16\nValorização de professores.\nPolítica permanente de formação\ncontinuada, atualização pedagógica e qualificação profissional,\narticulada às necessidades de cada etapa e modalidade de ensino.\nA iniciativa também garantirá melhores condições de trabalho,\nestrutura adequada nas escolas e suporte pedagógico aos docentes,\nalém da recomposição gradual dos quadros por meio de concursos\npúblicos,\nreduzindo\na\ndependência\nde\nvínculos\ntemporários\ne assegurando profissionais suficientes para atender todas as regiões\ndo estado.\n\n17\nCriação de Escolas Técnicas Estaduais (ETECs): oferta de cursos\ntécnicos de Ensino Médio, definida pela vocação econômica de cada\nregião, articulação com empresas para estágio e contrato de\naprendizagem e criação de uma plataforma pública de intermediação\npara a conquista do primeiro emprego. Paralelamente, haverá conexão\ndos cursos com cadeias produtivas ligadas ao Alagoas Produz, Sertão\nque Produz, Alagoas Potência, Alagoas Lab, turismo e logística.\n\nPROPOSTAS\nPRIMEIRA INFÂNCIA, ASSISTÊNCIA\nE PROTEÇÃO SOCIAL\nO objetivo das propostas é garantir que toda criança alagoana\nde 0 a 6 anos comece a vida com saúde, vínculo, nutrição, estímulo\ne proteção, independentemente do município onde nasce. Alagoas tem\n139.600 crianças de 0 a 3 anos cadastradas no CadÚnico, e o Criança\nFeliz atende apenas 14,27% delas, 23ª posição entre as 27 unidades\nda federação. O passivo estadual de 40 mil vagas de creche não\nconcluídas mostra a distância entre promessa e entrega na educação\ninfantil. É na primeira infância que o investimento público tem o maior\nretorno documentado; e é nela que a omissão custa mais caro, porque\na desvantagem acumulada nessa fase acompanha a pessoa pela vida\ninteira.\n\n23"
+          },
+          {
+            "id": "pagina-24",
+            "titulo": "Página 24",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nO Gigantinhos Alagoas será a principal iniciativa dessa agenda, com\ncofinanciamento de creches, projeto de referência, padrões de\nqualidade, pactuação de metas de vaga com os municípios e transição\npedagógica. O Alagoas de Mãe para Mãe cuidará do começo da vida:\npré-natal, parto seguro, puerpério e interiorização de obstetras e\nneonatologistas. O Saúde da Gente Alagoana organizará a atenção\npediátrica especializada e a linha de cuidado do autismo. O Fome Nunca\nMais dará prioridade às famílias com crianças pequenas na busca ativa\nda segurança alimentar. O Alagoas Acolhe ampliará a cobertura do\nCriança Feliz e o acompanhamento das famílias pelos CRAS. O Ler pra\nValer consolidará o ciclo com a alfabetização na idade certa nos anos\niniciais.\n\n18\nPrograma Gigantinhos Alagoas, com cofinanciamento estadual para\nampliar a oferta de vagas em creches nos municípios, por meio de\naporte por vaga criada, projetos arquitetônicos padronizados,\nassistência técnica para obras e licitações e formação continuada\nde professores e gestores da educação infantil.\n\n19\nPrograma Fome Nunca Mais. Expansão da política de segurança\nalimentar para o interior de Alagoas, por meio da implantação de\nrestaurantes populares e cozinhas comunitárias, fortalecimento do PAA\nestadual com compra de alimentos da agricultura familiar e criação de\nbancos de alimentos. O programa também garantirá alimentação\nescolar durante o recesso e ações de educação alimentar, com\nprioridade para famílias em insegurança alimentar grave, população em\nsituação de rua e estudantes da rede pública.\n\n20\nPrograma Alagoas Acolhe. Integração da rede de proteção social para\nlocalizar famílias invisíveis, proteger pessoas em situação de risco e\nampliar a autonomia das famílias mais vulneráveis de Alagoas. O\nprograma prevê busca ativa e atualização do CadÚnico, implantação de\nCREAS regionais, ampliação de Centros POP e Centros-Dia e criação do\nPiso Alagoano do SUAS, com repasses regulares aos municípios. Também\nintegrará assistência, saúde, educação, habitação e trabalho em uma\njornada única de acompanhamento por família, com prioridade para\npopulação em situação de rua, pessoas com deficiência, idosos e\nfamílias em situação de pobreza e extrema pobreza\n\n24"
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "Página 25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO B\n\nALAGOAS SEGURA\n\nEste eixo trata da proteção da vida e do direito de viver com segurança\nem qualquer território de Alagoas. A violência mudou de lugar e de\ndinâmica, mas a resposta do Estado nem sempre acompanhou essa\ntransformação: onde falta prevenção, o jovem fica mais exposto ao\nrecrutamento pelo crime; onde faltam investigação e perícia, a\nresponsabilização não acontece; onde a mulher em situação de\nviolência não encontra proteção, renda e moradia, romper o ciclo da\nagressão se torna ainda mais difícil. Por isso, integração das forças de\nSegurança, inteligência, definição técnica de territórios prioritários,\nprevenção social e fortalecimento da investigação atravessam todas as\npolíticas desta dimensão.\n\nPROPOSTAS\nSEGURANÇA\nO objetivo das propostas é garantir segurança em todo o território\nalagoano, enfrentando a interiorização do crime organizado, integrando\nEstado e municípios e fortalecendo a capacidade de prevenção,\ninvestigação e resposta das forças de segurança. Em 2025, 592 dos 948\ncrimes violentos letais registrados em Alagoas ocorreram fora de\nMaceió, alcançando 85 municípios, enquanto os feminicídios passaram\nde 22 para 30 casos entre 2024 e 2025, uma alta de 36,3%. A estratégia\nparte do princípio de que segurança pública exige presença territorial,\ninteligência, tecnologia, investigação qualificada e prevenção social,\nmas também políticas específicas para grupos mais expostos à\nviolência, especialmente as mulheres, com proteção que vá além da\nresposta policial.\nO Força Alagoas será o eixo de integração da política de segurança, com\ngestão pelas quatro Regiões Integradas de Segurança Pública,\ncompartilhamento de dados entre Estado e municípios e atuação\nprioritária nos Territórios da Paz. O Olho Vivo ampliará e integrará\ncâmeras, dados e inteligência, enquanto a Academia de Formação das\nForças de Segurança estabelecerá padrões de capacitação para\npoliciais, bombeiros e guardas municipais. A agenda inclui ainda\nrecomposição de efetivos, equipamentos, viaturas, fortalecimento da\nperícia e da Polícia Científica e o Recomeço, voltado à ressocialização e\nà redução da reincidência no sistema prisional. O Elas sem Medo\norganizará uma frente própria de enfrentamento à violência contra a\n\n25"
+          },
+          {
+            "id": "pagina-26",
+            "titulo": "Página 26",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nmulher, com delegacias e serviços especializados regionalizados,\ncasas-abrigo, patrulhamento e monitoramento de medidas protetivas,\nacesso à justiça e uma trilha de autonomia econômica para que\nnenhuma mulher permaneça exposta à violência por falta de proteção\nou independência financeira.\n\n1\nPrograma Força Alagoas. Parceria permanente entre Estado e\nmunicípios para integrar as forças de segurança e ampliar a capacidade\nde enfrentamento ao crime organizado, especialmente no interior. O\nprograma criará um Gabinete de Gestão Integrada de caráter técnico,\npromoverá o compartilhamento de dados entre as forças estaduais e\nmunicipais e estabelecerá protocolos, metas e responsabilidades por\nregião. Também prevê uma Academia de Formação das Forças de\nSegurança, com capacitação padronizada para policiais, bombeiros e\nguardas municipais, além de apoio aos municípios com equipamentos,\nviaturas, integração de sistemas e fortalecimento da perícia e da Polícia\nCientífica\n\n2\nOlho Vivo. Implantação de uma rede estadual integrada de\nvideomonitoramento, inteligência e análise de dados para prevenir\ncrimes, identificar suspeitos e ampliar a capacidade de resposta das\nforças de segurança. Câmeras estaduais e municipais serão\nconectadas\na\ncentros\nintegrados\nde\nmonitoramento,\ncom\ncompartilhamento de imagens e informações em tempo real e expansão\nprioritária para municípios e territórios com maior incidência criminal. O\nprograma também utilizará tecnologia e análise de dados para orientar\no patrulhamento, a investigação e o cumprimento de mandados, tendo a\nCentral Integrada de Monitoramento de Maceió como modelo.\n\n3\nRecomeço. Política estadual de ressocialização para reduzir a\nreincidência criminal e impedir que o sistema prisional continue\nfuncionando como espaço de recrutamento pelo crime organizado. O\nprograma ampliará educação, saúde, qualificação profissional e\noportunidades de trabalho para pessoas privadas de liberdade,\ncombinadas com inteligência penitenciária e melhoria da infraestrutura\ndas unidades. Para quem deixa o sistema prisional, haverá\n\n26"
+          },
+          {
+            "id": "pagina-27",
+            "titulo": "Página 27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nacompanhamento do egresso, regularização documental, apoio para\ningresso no mercado de trabalho e ações de reinserção social, com\nmonitoramento permanente das taxas de reincidência.\n\n4\nPrograma Territórios da Paz. Concentração da presença do Estado nos\nbairros e municípios que apresentam os maiores índices de violência\nletal, definidos periodicamente por critérios estatísticos públicos. Cada\nterritório terá plano de ação, metas, prazo e responsável, reunindo\ninteligência, policiamento, investigação, perícia e videomonitoramento\ncom políticas de prevenção social. Escola, esporte, cultura, juventude,\niluminação pública, assistência social, qualificação e emprego atuarão\nde forma integrada para recuperar territórios vulneráveis e impedir o\navanço das facções, com prioridade para o interior.\n\n5\nPrograma Elas sem Medo. Rede estadual integrada de prevenção e\nenfrentamento à violência contra a mulher, com proteção que funcione\nem todas as regiões de Alagoas e não dependa do deslocamento até a\ncapital. O programa ampliará o número e o horário de atendimento - para\n24 horas por dia - das Delegacias da Mulher no interior, além de criar\ncasas-abrigo e acolhimento sigiloso, patrulhas de proteção e\nmonitoramento de medidas protetivas, com protocolo único de\navaliação de risco entre segurança, saúde e assistência social. Também\ngarantirá orientação jurídica e acompanhamento dos casos e criará\numa trilha de autonomia econômica, com prioridade no Banco da Mulher\nAlagoana, qualificação profissional e acesso ao trabalho para mulheres\nque precisam romper o ciclo de violência e reconstruir suas vidas com\nindependência.\n\n27"
+          },
+          {
+            "id": "pagina-28",
+            "titulo": "Página 28",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO C\n\nALAGOAS PRODUTIVA E DE OPORTUNIDADES\n\nTrabalho, renda e desenvolvimento econômico são o centro deste eixo,\nque enfrenta um dos problemas estruturais mais graves de Alagoas:\nfalta trabalho para uma parcela grande demais da população. No\nprimeiro trimestre de 2026, o nível de ocupação no estado foi de apenas\n46,5%. A subutilização da força de trabalho alcançou 26,1%, e cerca de 121\nmil alagoanos procuravam emprego sem encontrar. Mesmo entre quem\ntrabalha, permanece o desafio da qualidade da ocupação:\naproximadamente 506 mil trabalhadores estavam na informalidade,\ndiante de 361 mil empregados com carteira assinada no setor privado, e\no rendimento médio do trabalho era de R$ 2.536. O desafio de Alagoas,\nportanto, não é simplesmente fazer a economia crescer: é criar mais\ntrabalho, elevar a renda e fazer as oportunidades chegarem a todas as\nregiões do estado. Diante desse cenário, o Plano Governo apresenta a\nseguir propostas nas áreas de Trabalho, Empreendedorismo e\nDesenvolvimento Produtivo, bem como Turismo, Esporte e Cultura todas com um denominador comum: a geração de oportunidades para\ntodos os alagoanos.\n\nPROPOSTAS\nTRABALHO, EMPREENDEDORISMO\nE DESENVOLVIMENTO PRODUTIVO\nO objetivo das propostas é fazer o crescimento econômico chegar à\nvida das pessoas na forma de trabalho, renda e oportunidade em todos\nos 102 municípios de Alagoas. Para isso, não basta atrair grandes\ninvestimentos: é preciso facilitar a vida de quem empreende, apoiar\nquem produz no campo, ampliar o acesso ao crédito, fortalecer\npequenos negócios e cooperativas e levar indústria e novas cadeias\nprodutivas para além da Região Metropolitana. A estratégia parte das\nvocações de cada território, sendo a atenção às mulheres parte central\ndessa agenda: Alagoas já possui mais de 96 mil negócios liderados por\nmulheres, mas ainda há desigualdade no acesso a financiamento,\norientação\ne\nredes\nde\napoio\ncapazes\nde\ntransformar\nempreendedorismo em renda e autonomia.\nNesse sentido, o Alagoas Trabalha, que dará unidade ao eixo e\nestabelecerá metas de ocupação, emprego formal e renda para os 102\nmunicípios. O Empreende Alagoas facilitará a abertura, formalização e\n\n28"
+          },
+          {
+            "id": "pagina-29",
+            "titulo": "Página 29",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\ncrescimento dos pequenos negócios, enquanto o Banco da Mulher\nAlagoana levará crédito, capacitação e acompanhamento às mulheres\nque empreendem. Para criar empregos em maior escala e interiorizar\ninvestimentos, o Alagoas Potência organizará a política industrial a\npartir das vocações de cada região. No campo, o Alagoas que Produz\nestruturará assistência técnica, crédito, agroindustrialização e acesso\na mercados em todo o estado, enquanto o Sertão que Produz terá uma\nestratégia específica para transformar as cadeias produtivas do\nsemiárido em renda e atividade econômica permanente, aliado ao\nprojeto de irrigação planejado pelo Irriga Alagoas. Somado a isso, o\ngoverno do Estado fará, com o Alagoas Competitiva, uma nova política\ntributária, de modo a atrair investimentos para ampliar a capacidade\nprodutiva da economia alagoana.\n\n1\nEmpreende Alagoas. Simplificação do ambiente de negócios para tornar\nmais rápido, fácil e digital abrir, formalizar e fazer crescer uma empresa\nem qualquer município de Alagoas. O programa digitalizará serviços,\nreduzirá etapas e prazos de abertura e licenciamento, apoiará as\nprefeituras na modernização dos processos, realizará mutirões de\nformalização de MEIs e oferecerá capacitação e educação\nempreendedora. Também ampliará a participação dos pequenos\nnegócios nas compras públicas, fortalecerá cooperativas, feiras livres e\neconomia solidária e criará uma rede de apoio especialmente voltada\naos empreendedores informais e pequenos negócios do interior.\n\n2\nAlagoas Trabalha. Estratégia estadual para fazer as políticas de\nqualificação, emprego, empreendedorismo, crédito e atração de\ninvestimentos convergirem para um objetivo comum: aumentar o\nnúmero de alagoanos trabalhando e gerar oportunidades em todos os\n102 municípios do estado. O programa terá painel de emprego e\nocupação por município, metas específicas de geração de empregos\nformais fora da Região Metropolitana, intermediação de mão de obra e\nacompanhamento da subutilização e da renda do trabalho em cada\nterritório.\n\n3\nCriação do Banco da Mulher Alagoana. Ampliação do acesso das\n\n29"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "Página 30",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nmulheres ao crédito produtivo com orientação, capacitação e\nacompanhamento para transformar financiamento em renda e\nautonomia econômica. O programa levará pontos de atendimento e\nequipes ao interior, oferecerá crédito orientado, apoiará a formalização\ndos negócios e garantirá mentoria. Mulheres chefes de família, inscritas\nno CadÚnico e em processo de saída de situações de violência terão\nprioridade, com uma porta específica de atendimento articulada ao\nprograma Elas sem Medo.\n\n4\nPrograma Alagoas Potência. Política de industrialização e atração de\ninvestimentos para levar desenvolvimento, emprego e produção para\nalém da Região Metropolitana, com prioridade para o Sertão e o Agreste.\nO Estado irá rever a atual política tributária, para tornar Alagoas mais\ncompetitiva no Nordeste. O programa criará polos e distritos industriais\nno interior, estabelecerá uma política transparente de incentivos, com\ncontrapartidas em emprego, investimento, inovação e compras locais e\ndesenvolverá cadeias produtivas de acordo com a vocação de cada\nterritório.\n\n5\nPrograma Alagoas que Produz. Política estadual de desenvolvimento\nrural adaptada às diferentes vocações produtivas de cada região de\nAlagoas, com foco em renda, produtividade e acesso a mercado para\nagricultores familiares, pequenos e médios produtores. O programa\nampliará a assistência técnica e extensão rural, facilitará o acesso a\ncrédito, insumos, tecnologia e mecanização, fortalecerá cooperativas e\ncompras públicas e apoiará a agroindustrialização e a agregação de\nvalor às cadeias produtivas. Também organizará a produção até a\ncomercialização, com centros regionais de distribuição, certificação de\norigem, apoio à exportação, retomada de perímetros irrigados e políticas\nespecíficas para pesca, aquicultura e economia do mar.\n\n6\nPrograma Sertão que Produz. Estratégia especial de desenvolvimento\nprodutivo para o semiárido alagoano, fortalecendo cadeias adaptadas\nao território e fazendo a produção gerar mais renda dentro da própria\nregião. O programa apoiará a ovinocaprinocultura, bovinocultura,\navicultura e produção leiteira, com assistência técnica, melhoramento\n\n30"
+          },
+          {
+            "id": "pagina-31",
+            "titulo": "Página 31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\ngenético, sanidade, crédito e tecnologia. Também implantará uma rede\nregional de abatedouros com inspeção sanitária, ampliará a adesão ao\nSIE e ao SUSAF e incentivará pequenas agroindústrias, cooperativas,\nbeneficiamento e compras públicas, conectando a produção do Sertão\nao mercado e reduzindo a dependência econômica dos municípios em\nrelação ao setor público.\n\n7\nRede de Matadouros Públicos Regionais. Implantação de uma rede de\nmatadouros públicos no interior de Alagoas para garantir abate com\ninspeção sanitária, acessível aos pequenos criadores, permitindo que a\nprodução animal acesse o mercado formal e acabando com a rede\nclandestina existente. As unidades serão distribuídas por polos\nregionais.\n\n8\nRamal Alagoas da Transnordestina. Articulação estadual para viabilizar\nestudo que indique as possibilidades de conexão ferroviária de Alagoas\ncom a Transnordestina, criando um corredor de cargas capaz de ligar as\nregiões produtoras do estado aos grandes mercados nacionais.\n\n9\nIrriga Alagoas. Alagoas tem um enorme potencial para a agricultura\nirrigada. Porém, ao contrário de outros estados do Nordeste, que\nexploram com grandes resultados as possibilidades oferecidas a partir\ndas águas do São Francisco, Alagoas subutiliza a capacidade da bacia\nhidrográfica da região. Por isso, é necessário criar um projeto de\nirrigação para as microrregiões que sejam banhadas pelo Velho Chico. A\nestratégia será fortalecida por um planejamento logístico para o\nescoamento eficiente das cargas articulada aos aeroportos regionais,\npermitindo que parte da produção seja transportada com mais\neficiência e agilidade, diminuindo os custos e aumentando a\ncompetitividade.\n\n10\nPrograma Alagoas de Ponta a Ponta. Estratégia estadual para\ninteriorizar o turismo e transformar o crescimento do fluxo de\nvisitantes em emprego e renda para mais municípios de Alagoas. O\nprograma irá estruturar novos destinos e rotas no interior, com\npotencial ainda pouco explorado, investindo em sinalização, acessos,\n\n31"
+          },
+          {
+            "id": "pagina-32",
+            "titulo": "Página 32",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\ninfraestrutura, qualificação de guias e serviços, turismo comunitário e\nde natureza, gastronomia e promoção dos destinos. A carteira de Planos\nde Desenvolvimento Integrado do Turismo Sustentável Alagoas 2030\nreunirá projetos turísticos já estudados, com estágio, custo,\nresponsável e fonte de financiamento identificados, para transformar\nplanejamento em obras e investimentos e fazer com que quem chega ao\nlitoral também conheça e gere renda no interior.\n\n11\nInternacionalização e Exportações. Estratégia estadual para inserir\nmais empresas e produtos alagoanos nos mercados internacionais,\ndiversificar a pauta exportadora e reduzir a dependência de poucas\ncommodities. O programa articulará promoção comercial, qualificação\nexportadora, adequação sanitária e de qualidade, atração de\ninvestimentos e apoio à abertura de novos mercados e destinos.\n\n12\nAlagoas Mais Competitiva. Uma política tributária estadual para deixar\no estado mais competitivo, com simplificação de procedimentos\ne criação de incentivos para estimular a geração de empregos,\na chegada de investimentos e o desenvolvimento de cadeias produtivas\nestratégicas.\nA\npolítica\nterá\ntratamento\ndiferenciado\npara\nempreendimentos que se instalem no interior do estado.\n\nPROPOSTAS\nCULTURA, ESPORTE E TURISMO\nCultura, esporte e turismo não podem mais ser oportunidades\nconcentradas em poucos territórios: é preciso que elas alcancem\ntambém o interior, as periferias e as comunidades com menor acesso a\nequipamentos e atividades. A inclusão acontece também quando uma\ncriança encontra uma quadra, uma biblioteca ou uma atividade cultural\nperto de casa; quando um jovem consegue transformar talento em\nprofissão; quando uma manifestação tradicional gera renda para quem\na mantém viva; ou quando uma vocação local se converte em turismo,\neconomia criativa e novos negócios. A proposta é usar essas políticas\nnão apenas como entretenimento, mas como instrumentos de\npertencimento, formação, desenvolvimento local e ampliação de\noportunidades.\n\n32"
+          },
+          {
+            "id": "pagina-33",
+            "titulo": "Página 33",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nO Alagoas de Ponta a Ponta ampliará o turismo para além do litoral já\nconsolidado, estruturando novos destinos e distribuindo melhor a renda\ngerada pelo setor. O Cultura por Todo Canto levará programação,\nformação e apoio à produção cultural ao interior e às periferias,\nenquanto o Parque Biblioteca criará espaços permanentes de leitura,\ncultura, convivência e economia criativa. O Areninhas Alagoas ampliará\no acesso ao esporte e ao lazer com formação e equipamentos\ncomunitários multiuso. E o Alagoas Lab conectará universidades,\nciência, inovação e empresas, abrindo caminhos para novos negócios e\nempregos de maior qualificação. Juntos, esses programas formam uma\npolítica de inclusão que usa cultura, esporte, turismo e conhecimento\npara ocupar territórios, revelar talentos, fortalecer identidades e\ntransformar oportunidades em trabalho e renda.\n\n13\nPrograma Cultura por Todo Canto. Política estadual para descentralizar\no acesso à cultura, fortalecer a economia criativa e levar equipamentos,\nprogramação e oportunidades para além de Maceió. O programa\nimplantará e qualificará espaços culturais no interior, criará editais\nregionalizados e descentralizados, apoiará a formalização e a\nprofissionalização de artistas e trabalhadores da cultura e fortalecerá\ncircuitos de cultura popular, patrimônio histórico e economia criativa.\n\n14\nParques-Biblioteca. Implantação de uma rede estadual de bibliotecas e\nparques-biblioteca em territórios de maior vulnerabilidade, combinando\nacervo, leitura, estudo, cultura, robótica, formação e convivência em\nespaços públicos de qualidade. A iniciativa terá como referência a\nexperiência exitosa do Parque-Biblioteca de Maceió.\n\n15\nAlagoas Lab. Estratégia estadual para transformar o investimento\npúblico em ciência, tecnologia e inovação em empresas, empregos e\nserviços públicos melhores. O programa criará uma base permanente de\nindicadores de CT&I, regulamentará a política estadual de inovação,\nfortalecerá os Núcleos de Inovação Tecnológica e implantará ambientes\ne distritos de inovação conectando universidades, pesquisadores,\nstartups, empresas e governo. Também lançará desafios públicos para\ndesenvolver e testar soluções para problemas do Estado, ampliará a\nformação em tecnologia, inteligência artificial e economia digital e\n\n33"
+          },
+          {
+            "id": "pagina-34",
+            "titulo": "Página 34",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nestimulará áreas como bioeconomia, química verde e economia azul. A\niniciativa fortalecerá os investimentos em pesquisa aplicada,\npós-graduação, permanência estudantil, infraestrutura e formação de\ncapital humano, de modo a reverter a 25ª posição de Alagoas no Índice\nBrasil de Inovação e Desenvolvimento de 2025.\n\n16\nAreninhas Alagoas. Implantação de uma rede estadual de espaços\nesportivos comunitários multiuso, inspirada no modelo das Areninhas\nde Maceió, com estrutura de qualidade e programação permanente\nperto de onde as pessoas vivem. O programa priorizará territórios sem\nequipamentos esportivos, especialmente no interior, e combinará novas\narenas com a reforma de quadras, campos e ginásios existentes,\nnúcleos de iniciação esportiva, esporte no contraturno escolar, apoio ao\nparadesporto e incentivo aos atletas de base por meio de bolsa e\ncalendário estadual de competições. A proposta parte de um cenário em\nque apenas 25% das escolas alagoanas dispõem de quadra esportiva e\naproveitará como referência a experiência da capital, que expandiu\nespaços de esporte e lazer para todas as grotas da cidade.\n\n34"
+          },
+          {
+            "id": "pagina-35",
+            "titulo": "Página 35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO D\n\nALAGOAS DISRUPTIVA\n\nEste eixo trata das condições que permitem ao Estado transformar\nplanejamento em resultado. Não há desenvolvimento econômico sem\nestradas, logística e energia; não há acesso adequado aos serviços\npúblicos quando comunidades permanecem isoladas ou quando o\ntransporte é caro e desarticulado; e nenhuma política se sustenta sem\nplanejamento, recursos, servidores preparados e capacidade de\nmanutenção. O desafio de Alagoas não é apenas construir mais, mas\ndefinir prioridades com critérios técnicos, integrar investimentos,\npreparar projetos antes de anunciá-los e garantir que aquilo que for\nentregue continue funcionando. Isso exige fortalecer, ao mesmo tempo,\na infraestrutura que conecta o território e a capacidade do próprio\nEstado de planejar, executar, acompanhar e prestar contas. A seguir,\napresentamos propostas nas áreas de Infraestrutura, Transporte e\nLogística, Energia e Governo Digital e Gestão por Resultados.\n\nPROPOSTAS\nINFRAESTRUTURA, TRANSPORTE E LOGÍSTICA\nO objetivo das propostas é fazer a infraestrutura de Alagoas funcionar\ncomo uma rede capaz de conectar pessoas, serviços e produção em\ntodo o território. O Alagoas em Frente começará pelo diagnóstico da\nmalha rodoviária, definido por critérios técnicos onde recuperar,\nconservar e ampliar estradas, pontes e acessos; o Alagoas Vida no\nTrânsito usará os dados de acidentes para identificar trechos críticos e\nconcentrar neles intervenções capazes de reduzir mortes e feridos; o\nAlagoas em Rota conectará polos produtivos, agroindústrias e\npequenos produtores aos principais corredores de escoamento, ao\nporto, aeroporto, ferrovia e rotas interestaduais; e o Alagoas se Move\norganizará a mobilidade entre municípios e modais para reduzir o tempo\ne o custo dos deslocamentos de trabalhadores e estudantes, junto com\no Rapidão Alagoas e o Rede Geladão, para modernizar o transporte\npúblico, bem como o Vai Estudante, que irá criar o Passe Livre Estadual.\nJá o Visão Alagoas reunirá essas prioridades em uma carteira única e\npública de investimentos, mostrando o que precisa de projeto,\nfinanciamento, licenciamento ou execução. Juntos, os programas\nestabelecem uma trilha para a infraestrutura estadual: identificar os\ngargalos, definir prioridades por evidências, preparar os projetos,\n\n35"
+          },
+          {
+            "id": "pagina-36",
+            "titulo": "Página 36",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\ngarantir recursos, executar e conservar as obras, integrar os diferentes\nmeios de transporte e medir se cada investimento efetivamente reduziu\ndistâncias, aumentou a segurança e melhorou a circulação de pessoas\ne mercadorias em Alagoas.\n\n1\nPrograma Alagoas em Frente. Política estadual de recuperação,\nmanutenção e segurança da malha rodoviária, com prioridade definida\npor levantamento técnico da condição de cada trecho antes da\nexecução de novas obras. O programa realizará um inventário detalhado\ndas rodovias estaduais, ampliará recuperação e recapeamento, adotará\ncontratos de conservação por desempenho e executará pontes,\npassagens molhadas e pavimentação de acessos a cidades, povoados e\ndistritos. A prioridade será garantir ligações seguras e permanentes\npara o interior, especialmente para comunidades rurais, transporte\nescolar, transporte sanitário e escoamento da produção.\n\n2\nAlagoas Vida no Trânsito. Política estadual de segurança viária para\nreduzir mortes e feridos graves nas rodovias e travessias urbanas de\nAlagoas. O programa criará um mapa estadual de trechos críticos a\npartir dos registros de acidentes e concentrará nesses locais\nintervenções de engenharia, reforço de sinalização, travessias urbanas\ne escolares seguras, fiscalização e integração com o atendimento\npré-hospitalar. As campanhas educativas também serão orientadas\npelo perfil real dos acidentes, e cada intervenção terá seus resultados\nacompanhados antes e depois da execução, permitindo medir\nefetivamente a redução da letalidade no trânsito.\n\n3\nPrograma Alagoas em Rota. Estratégia estadual de logística para reduzir\no custo do transporte e conectar as regiões produtoras de Alagoas aos\nprincipais corredores de escoamento, ao porto, ao aeroporto, à ferrovia\ne às rotas interestaduais. O programa estruturará a Rota da Produção,\ncom corredores logísticos e acessos viários aos polos produtivos e\nagroindústrias, além de terminais e centros de consolidação de cargas\npara facilitar o escoamento dos pequenos produtores. Também manterá\numa agenda permanente com a União, agências reguladoras e\nconcessionárias para enfrentar gargalos no Porto de Maceió, no\nAeroporto Zumbi dos Palmares e na malha ferroviária, além de ampliar\n\n36"
+          },
+          {
+            "id": "pagina-37",
+            "titulo": "Página 37",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nsoluções de logística agropecuária e infraestrutura pesqueira e náutica\nde pequeno porte.\n\n4\nVisão Alagoas. Criação de um portfólio único, público e atualizado dos\nprojetos de infraestrutura que Alagoas pretende viabilizar até 2030,\nsubstituindo anúncios isolados por planejamento, prioridade e\ntransparência. A carteira reunirá projetos de rodovias, corredores\nlogísticos, acessos produtivos, pontes e travessias, infraestrutura\nturística\ne\nagrícola,\nmobilidade,\ntransporte\nintermunicipal,\nconectividade digital e integração entre porto, aeroporto, ferrovia e\nrodovias. Cada projeto terá território, estágio de desenvolvimento, custo\nou faixa de custo, fonte possível de recursos, órgão responsável,\npróximo passo e prazo indicativo, com classificação entre projeto a\nelaborar, licenciamento, captação, PPP ou concessão e execução\npública. A carteira será publicada no Painel Alagoas Gigante e revisada\nanualmente, permitindo acompanhar o que está pronto para sair do\npapel, o que ainda precisa de projeto ou financiamento e quais\ninvestimentos são efetivamente prioritários para o desenvolvimento do\nestado.\n\n5\nPrograma Alagoas se Move. Criar uma política estadual de mobilidade\nintegrada,\narticulando\ntransporte\nintermunicipal,\ntransporte\ncomplementar,\nsistemas\nmunicipais\ne\nos\nnovos\ncorredores\nestruturantes. Na Região Metropolitana de Maceió, a proposta inclui a\nimplantação do Bilhete Único Metropolitano, avançando na integração\nfísica, operacional e tarifária dos serviços. O programa também\nmodernizará a regulação do transporte complementar, estabelecerá\npadrões de qualidade, manutenção, acessibilidade e segurança e\nfortalecerá a fiscalização e a transparência tarifária. O planejamento da\nrede será orientado por uma matriz origem-destino de passageiros e\npor dados de oferta, frequência, demanda e desempenho, permitindo\nque novas linhas, integrações e investimentos sejam definidos a partir\ndos deslocamentos reais da população.\n\n6\nRapidão Alagoas. Implantar três grandes corredores estruturantes de\ntransporte coletivo para reorganizar a mobilidade na Região\nMetropolitana de Maceió. O Rapidão Norte-Sul conectará Marechal\n\n37"
+          },
+          {
+            "id": "pagina-38",
+            "titulo": "Página 38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nDeodoro, Maceió e Paripueira, articulando o litoral Sul, a capital e o litoral\nNorte. O Rapidão Metropolitano estruturará a conexão entre Rio Largo,\nSatuba, Messias e Maceió. E o Rapidão Via Expressa transformará a Via\nExpressa em eixo de transporte coletivo e conexão entre os demais\ncorredores. A rede será acompanhada pela implantação e requalificação\nde terminais e pontos de integração e pela reorganização das linhas\nalimentadoras. As tecnologias utilizadas em cada trecho — como BRT,\nBRS, faixas exclusivas ou outras soluções — serão definidas de acordo\ncom estudos de demanda, capacidade, tempo de viagem e viabilidade\ntécnica e econômico-financeira.\n\n7\nRede Geladão. Criar uma política de modernização da frota de\ntransporte coletivo, ampliando progressivamente a presença de\nveículos climatizados, acessíveis, seguros e eficientes. A primeira etapa\nserá direcionada à Região Metropolitana de Maceió e a Arapiraca,\narticulada aos novos corredores do Rapidão Alagoas e à integração\npromovida pelo Alagoas Se Move. Além da climatização, o programa\nestabelecerá padrões de manutenção preventiva, acessibilidade e\nacompanhamento das condições dos veículos, estimulará a renovação\ndas frotas mais antigas e poderá incorporar tecnologias de maior\neficiência energética e menor emissão. Nos sistemas municipais, a\nparticipação estadual será realizada por cooperação, financiamento,\nincentivo ou outros instrumentos compatíveis com as competências de\ncada ente.\n\n8\nVai Estudante. Criar o Passe Livre Estudantil Estadual, reduzindo o custo\ndo deslocamento para estudantes que dependem do transporte\ncoletivo para acessar escolas, cursos técnicos, universidades e outras\ninstituições de ensino. O benefício será integrado, sempre que possível,\naos sistemas de bilhetagem e às políticas municipais já existentes,\nevitando sobreposição e permitindo complementaridade entre os\nbenefícios. Na Região Metropolitana, será articulado ao Bilhete Único\nMetropolitano e à integração promovida pelo Alagoas Se Move. O acesso\nserá simplificado por meio da integração com registros educacionais e\nbases públicas para comprovação de matrícula e elegibilidade, e a\nimplantação será acompanhada de modelagem financeira e operacional\npara garantir sustentabilidade ao programa.\n\n38"
+          },
+          {
+            "id": "pagina-39",
+            "titulo": "Página 39",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nPROPOSTAS\nENERGIA\nEnergia não é apenas infraestrutura: é condição para produzir mais,\natrair investimentos, reduzir custos e criar empregos. A proposta é\ntransformar o potencial energético de Alagoas em uma vantagem\ncompetitiva para o desenvolvimento, conectando fontes renováveis,\ninovação e política industrial. O Energia para Crescer cumprirá esse\npapel.\n\n9\nEnergia para Crescer. Estratégia estadual para transformar a energia\nem vantagem competitiva para a industrialização, a geração de\nempregos e a interiorização do desenvolvimento em Alagoas. O\nprograma estimulará a expansão das fontes renováveis, com energia\nsolar para pequenos produtores, biodigestores no Canal do Sertão e\natração de fabricantes de componentes fotovoltaicos e sistemas de\narmazenamento\nde\nenergia.\nTambém\napoiará\npesquisa\ne\ndesenvolvimento de baterias, conectando inovação e indústria. Os\nincentivos serão direcionados às vocações produtivas de cada território\ne terão contrapartidas mensuráveis em investimento, empregos,\nsalários, compras de fornecedores locais e inovação, com prioridade\npara o Sertão e o Agreste e para a formação de uma economia de baixo\ncarbono.\n\nPROPOSTAS\nGOVERNO DIGITAL E GESTÃO POR RESULTADOS\nGovernar melhor também significa permitir que a população saiba onde\no dinheiro público está sendo aplicado, o que foi prometido e qual\nresultado chegou a cada município. A proposta é usar tecnologia, dados\ne transparência para transformar planejamento em acompanhamento\npermanente da execução. O Painel Alagoas Gigante organizará os\ncompromissos do governo, enquanto o Gente que Faz cumprirá o papel\nde inovar na gestão dos recursos humanos.\n\n10\nPainel Alagoas Gigante. Modelo estadual de gestão por resultados para\ntransformar cada compromisso de governo em meta pública,\nterritorializada e acompanhada pela população. O painel mostrará, para\ncada programa, a linha de base, a meta até 2030, os marcos anuais, o\n\n39"
+          },
+          {
+            "id": "pagina-40",
+            "titulo": "Página 40",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nórgão responsável, o território atendido e, quando validado, o orçamento\nou a fonte de recursos. O acompanhamento seguirá o ciclo prometido,\niniciado, em execução, entregue e resultado alcançado, com indicadores\npor município e região, transparência sobre repasses e obras e\nintegração com serviços digitais.\n\n11\nGabinete do Povo. Criação de estruturas permanentes de governo no\nAgreste e no Sertão, onde o governo vai funcionar ao longo do mandato,\naproximando o Executivo estadual das demandas de quem vive no\ninterior. O Gabinete do Povo realizará agendas regulares com prefeitos,\nlideranças comunitárias, entidades da sociedade civil, trabalhadores e\nempreendedores, além de acompanhar de perto obras, serviços e\nprogramas estaduais em cada região. As demandas recebidas serão\nregistradas, encaminhadas aos órgãos responsáveis e terão prazos e\nrespostas acompanhados pelo governo, garantindo que a presença do\nEstado no interior não se limite a visitas ou eventos, mas faça parte\npermanente da rotina de gestão e tomada de decisões - é o braço\nterritorial do Painel Alagoas Gigante.\n\n12\nPrograma Gente que Faz. Política estadual de fortalecimento da\ncapacidade humana do governo para garantir que os serviços públicos\ntenham equipes suficientes, qualificadas e distribuídas de acordo com\nas necessidades de cada território. O programa fará o dimensionamento\nda força de trabalho por órgão e por região, fortalecerá a Escola de\nGoverno com formação técnica e de lideranças e ampliará a mobilidade\ninterna baseada em competências. Também incluirá transformação\ndigital dos processos de trabalho, saúde e saúde mental do servidor e\ngestão de desempenho institucional.\n\n40"
+          },
+          {
+            "id": "pagina-41",
+            "titulo": "Página 41",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO E\n\nALAGOAS PARA VIVER MELHOR\n\nEste eixo trata das condições básicas que fazem uma cidade, um bairro\nou uma comunidade serem lugares dignos para viver. Em Alagoas, cerca\nde 357 mil domicílios ainda têm inadequação no abastecimento de água\ne 251 mil não contam com esgotamento sanitário adequado, enquanto o\ndéficit habitacional alcança aproximadamente 103 mil moradias, entre\náreas urbanas e rurais. Ao mesmo tempo, milhares de famílias vivem em\nterritórios expostos a enchentes, secas, erosão costeira e outros\neventos extremos cada vez mais frequentes. O desafio é enfrentar\nessas carências de forma integrada: não há moradia digna sem\nsaneamento, não há segurança hídrica sem proteção ambiental e não há\ndesenvolvimento urbano sustentável sem preparar as cidades para um\nclima que já mudou. Abaixo, portanto, estão as propostas de Meio\nAmbiente, Água e Saneamento e Cidades e Habitação.\n\nPROPOSTAS\nMEIO AMBIENTE\nAlagoas precisa transformar sua riqueza ambiental em proteção,\nqualidade de vida e desenvolvimento sustentável. O estado convive ao\nmesmo tempo com degradação de ecossistemas, erosão costeira,\nenchentes, secas e baixa capacidade de reciclagem, enquanto ainda\npossui uma estrutura pública de conservação muito limitada: das 79\nunidades de conservação de jurisdição estadual, 76 são RPPNs —\nreservas particulares — e Alagoas não possui hoje nenhum Parque\nEstadual. A estratégia deste eixo combina três frentes: recuperar e\ngerar renda com o patrimônio natural por meio do Alagoas Verde;\npreparar cidades e comunidades para os efeitos das mudanças\nclimáticas com o Alagoas Adapta; e criar a primeira rede de parques\nestaduais abertos à população com o Alagoas Tem Parque.\n\n1\nPrograma Alagoas Verde. Política estadual de recuperação ambiental e\neconomia verde para proteger os ecossistemas de Alagoas e\ntransformar conservação em qualidade de vida, renda e novas\noportunidades. O programa atuará na recuperação do Complexo\nLagunar Mundaú-Manguaba, manguezais, rios, nascentes e matas\nciliares, no enfrentamento da erosão costeira e na ampliação da coleta\n\n41"
+          },
+          {
+            "id": "pagina-42",
+            "titulo": "Página 42",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nseletiva e da coleta de resíduos no meio rural. Também fortalecerá\ncatadores, economia circular, bioeconomia e empregos verdes, ampliará\na captação de financiamento climático e revisará instrumentos como o\nICMS Ecológico para estimular os municípios a conservar seu\npatrimônio natural.\n\n2\nAlagoas Clima. Estratégia estadual para preparar cidades e\ncomunidades para enchentes, secas, ondas de calor e outros efeitos\ndas mudanças climáticas. O programa criará o Plano Estadual de\nAdaptação Climática, com mapas municipais de risco, sistemas de\nalerta, fortalecimento da Defesa Civil e planos de contingência\npactuados com os municípios. Também organizará a drenagem por\nbacias hidrográficas, ampliará arborização e conforto térmico urbano e\nintegrará o risco climático às decisões sobre obras, licenciamento e uso\ndo solo, além de estruturar respostas permanentes aos ciclos de seca\nno semiárido.\n\n3\nPrograma Alagoas Tem Parque. Criação e consolidação da primeira rede\nde parques estaduais de Alagoas, ampliando a proteção ambiental e\ngarantindo áreas naturais públicas abertas à visitação, ao lazer e à\neducação ambiental. O programa terá como prioridade a criação do\nprimeiro Parque Estadual de Alagoas, na Serra das Mãos, em Traipu, além\nda consolidação do mosaico do Horto, em Maceió, da criação de um\nnúcleo de proteção integral na Serra da Caiçara, em Maravilha, e do\nestudo para proteção da Serra da Taborda, em São José da Tapera. As\náreas contarão com trilhas, mirantes, centros de visitantes e programas\nde educação ambiental, estimulando também o turismo de natureza e a\ngeração de renda para as comunidades do entorno.\n\nPROPOSTAS\nÁGUA E SANEAMENTO\nGarantir água para todos exige enfrentar dois problemas diferentes e\ncomplementares: fazer a água chegar e garantir que ela seja\ndistribuída, coletada e tratada adequadamente. Em Alagoas, apenas\n66,4% dos domicílios de Alagoas são atendidos por rede de\nabastecimento de água. É o 5º pior estado do Brasil em coleta de esgoto,\ncom apenas 22,3% da população atendida por rede de coleta, índice que\n\n42"
+          },
+          {
+            "id": "pagina-43",
+            "titulo": "Página 43",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\ncai para 3,3% no campo. A estratégia deste eixo, portanto, atua em duas\nfrentes: a Operação Água e Esgoto cuidará da universalização do\nsaneamento, das ligações das casas, do tratamento e da redução das\nperdas; e o Água que Não Falta garantirá a segurança hídrica, ampliando\nreservação, adutoras, poços, dessalinizadores e fazendo a água do\nCanal do Sertão chegar efetivamente às comunidades e à produção.\n\n4\nOperação Água e Esgoto. Estratégia estadual para ampliar o acesso à\nágua tratada e ao esgotamento sanitário, garantindo que a\ninfraestrutura chegue efetivamente às casas e que o meio rural tenha\nsoluções próprias. O programa subsidiará ligações intradomiciliares\npara famílias de baixa renda, ampliará a coleta e o tratamento de esgoto,\nimplantará uma política permanente de redução de perdas na\ndistribuição e desenvolverá sistemas de saneamento rural com gestão\ncomunitária e assistência técnica. Também realizará auditoria das\nconcessões de água e esgoto, fortalecerá a regulação, estruturará\nblocos microrregionais e organizará projetos e captação de recursos\npara acelerar a universalização do saneamento em Alagoas.\n\n5\nPrograma Água que Não Falta. Esta será uma estratégia estadual de\nsegurança hídrica para garantir disponibilidade de água durante todo o\nano, especialmente no semiárido e nas áreas sujeitas à escassez. O\nprograma ampliará adutoras, sistemas estruturantes e reservação,\nlevará a água do Canal do Sertão até comunidades e propriedades por\nmeio da última milha e criará uma estrutura própria de gestão do canal.\nTambém implantará um programa permanente de perfuração,\nrecuperação e manutenção de poços e dessalinizadores, fortalecerá a\ngestão e a outorga dos recursos hídricos e organizará ações\npermanentes de convivência com a seca, separando a política de\nsegurança hídrica das ações de saneamento.\n\n6\nAuditoria das Concessões de Água e Esgoto. Realização de uma\nauditoria independente e integral dos contratos das concessionárias de\nabastecimento de água e esgotamento sanitário em Alagoas, para\nverificar se os compromissos assumidos na concessão estão sendo\nefetivamente cumpridos. A auditoria examinará investimentos\nrealizados e previstos, metas de universalização, expansão das redes,\n\n43"
+          },
+          {
+            "id": "pagina-44",
+            "titulo": "Página 44",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nredução de perdas, qualidade e continuidade do abastecimento, coleta e\ntratamento de esgoto, estrutura tarifária, reajustes, cobrança por\nserviços efetivamente prestados e aplicação de penalidades previstas\nnos contratos. Os resultados serão publicados de forma acessível, por\nmunicípio e concessionária, com indicação das obrigações cumpridas,\natrasadas ou não executadas e das providências exigidas pelo poder\npúblico.\n\nPROPOSTAS\nHABITAÇÃO E CIDADE\nMorar bem não é apenas ter uma casa: é viver em um lugar com\ninfraestrutura, segurança, serviços públicos e condições de enfrentar\nchuvas e outros riscos urbanos. Em Alagoas, a habitação concentra o\nmaior passivo de promessas não comprovadas do conjunto analisado,\nenquanto a infraestrutura urbana permanece profundamente desigual:\n59 dos 102 municípios não possuem nenhuma rede de drenagem pluvial\nreportada. Os impactos já aparecem em municípios como Quebrangulo,\nMurici, Poço das Trincheiras e União dos Palmares, onde parcelas\nsignificativas da população foram atingidas por enchentes. Ao mesmo\ntempo, experiências de urbanização integrada das periferias\npermanecem concentradas principalmente em Maceió, sem uma\npolítica estadual que alcance as demais cidades.\nA estratégia será organizada pelo Alagoas, Meu Lugar Gigante, que\nintegrará as políticas para transformar os territórios onde as pessoas\njá vivem. O Morar Melhor enfrentará déficit, precariedade habitacional,\ninsegurança da posse, aluguel excessivo e moradia em área de risco; o\nMinha Periferia no Grau levará urbanização integrada, infraestrutura e\nserviços às grotas, periferias e bairros vulneráveis; o Cidades\nPreparadas apoiará drenagem, prevenção de riscos e planejamento\nurbano; e a Rede de Cidades Alagoanas organizará investimentos e\nserviços públicos a partir das relações reais entre municípios e regiões.\nA lógica é simples: não basta construir casas - é preciso transformar\nbairros, preparar cidades e planejar o território para que morar em\nAlagoas signifique viver com dignidade, segurança e acesso a\noportunidades.\n\n7\nAlagoas, Meu Lugar Gigante. Estratégia estadual para melhorar o lugar\nonde as pessoas já vivem, integrando habitação, urbanização de\n\n44"
+          },
+          {
+            "id": "pagina-45",
+            "titulo": "Página 45",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nperiferias, prevenção de riscos e planejamento das cidades. O programa\narticulará produção e melhoria habitacional, regularização fundiária,\ndrenagem, contenção de encostas, espaços públicos, equipamentos\nurbanos e apoio técnico aos municípios. A proposta organizará essas\nações de forma territorial, priorizando comunidades vulneráveis, áreas\nde risco e cidades com menor capacidade de planejamento e execução.\n\n8\nPrograma Morar Melhor. Política estadual de habitação para enfrentar\nnão apenas a falta de moradia, mas também a precariedade das casas,\na insegurança da posse e o peso excessivo do aluguel sobre a renda das\nfamílias. O programa combinará produção de novas moradias, melhoria\nhabitacional, regularização fundiária, locação social e reassentamento\nde famílias que vivem em áreas de risco. O Estado também apoiará os\nmunicípios na Reurb, oferecendo cadastro, projetos, trabalho social e\narticulação jurídica para acelerar a entrega dos títulos de propriedade.\n\n9\nPrograma Minha Periferia no Grau. Política estadual de urbanização\nintegrada para transformar grotas, periferias e bairros vulneráveis,\nlevando para o interior e outras cidades a experiência de urbanismo\nsocial desenvolvida em Maceió. Cada território receberá um plano\nconstruído a partir de suas necessidades, combinando pavimentação,\ndrenagem, contenção de encostas, acessibilidade, melhoria das\nmoradias, regularização fundiária, saneamento, espaços públicos,\nequipamentos e serviços. A intervenção física será acompanhada de\ntrabalho social e ações de desenvolvimento local, para transformar a\nperiferia sem retirar de lá quem a construiu.\n\n10\nPrograma Cidades Preparadas. Estratégia estadual de apoio aos\nmunicípios para preparar as cidades para enchentes, alagamentos,\nocupações de risco e os efeitos das mudanças climáticas. O programa\napoiará projetos de drenagem e macrodrenagem, contenção de\nencostas, mapeamento de áreas de risco, cadastro territorial e\nelaboração ou atualização de instrumentos de planejamento urbano.\nTambém criará assistência técnica permanente para que municípios de\nmenor capacidade administrativa consigam elaborar projetos, captar\nrecursos e antecipar problemas urbanos em vez de agir apenas depois\ndas emergências.\n\n45"
+          },
+          {
+            "id": "pagina-46",
+            "titulo": "Página 46",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\n11\nRede de Cidades Alagoanas. Política estadual de planejamento\nterritorial para organizar Alagoas como uma rede de cidades\nconectadas e complementares, definindo quais serviços, equipamentos\ne investimentos devem estar em cada região de acordo com os\ndeslocamentos e as funções exercidas pelos municípios. O programa\nfortalecerá polos regionais, regiões metropolitanas e centralidades do\ninterior, apoiará a cooperação entre municípios e organizará a\nlocalização de hospitais, escolas, equipamentos públicos, infraestrutura\ne transporte a partir de uma lógica regional. O objetivo é fazer o\nplanejamento ultrapassar os limites administrativos de cada município\ne aproximar os serviços de onde as pessoas realmente vivem e circulam.\n\n46"
+          },
+          {
+            "id": "pagina-47",
+            "titulo": "Página 47",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO F\n\nALAGOAS TRANSPARENTE\n\nO objetivo das propostas é garantir que o Estado funcione com regras\nclaras, controle e responsabilidade no uso do dinheiro público. A\nControladoria Estadual Anticorrupção fortalecerá a prevenção, a\ninvestigação e a responsabilização de irregularidades, com autonomia\ntécnica, proteção a denunciantes e fiscalização permanente de\ncontratos e grandes gastos. O Contas Abertas completará essa agenda\nao dar transparência às finanças estaduais, avaliar benefícios fiscais e\ndespesas, controlar o endividamento e mostrar onde e com que\nresultado cada recurso público é aplicado. Juntas, as iniciativas\nestabelecem uma trilha simples: prevenir desvios, fiscalizar com\nindependência, abrir as contas, avaliar o gasto e garantir que cada real\npúblico seja usado com responsabilidade e resultado.\n\nPROPOSTAS\n1\nCriação da Controladoria Estadual Anticorrupção. Criação de uma\ninstituição autônoma e permanente para prevenir, investigar e\nenfrentar a corrupção na administração pública estadual, com\nindependência técnica em relação ao governo de plantão. A\nControladoria terá mandato fixo para sua direção, critérios técnicos de\nnomeação, orçamento próprio e garantias contra interferência política,\nalém de competência para realizar auditorias, investigar irregularidades,\nfiscalizar contratos e repasses, acompanhar a evolução patrimonial de\nagentes públicos nos limites da lei e conduzir processos de\nresponsabilização de empresas. Também manterá canais protegidos de\ndenúncia, programas de integridade e prevenção, análise de riscos em\ngrandes contratos e um painel público de auditorias, recomendações e\nprovidências adotadas.\n\n2\nContas Abertas. Programa estadual de responsabilidade fiscal,\ntransparência e qualidade do gasto para garantir que Alagoas preserve\nsua capacidade de investir e sustentar serviços públicos ao longo do\ntempo. A proposta instituirá uma programação fiscal plurianual com\ntrajetória da dívida, regras para novas operações de crédito e controle\n\n47"
+          },
+          {
+            "id": "pagina-48",
+            "titulo": "Página 48",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nde despesas permanentes, previdência, pessoal e restos a pagar; criará\num inventário público dos incentivos e benefícios fiscais, condicionando\nsua renovação a prazo, contrapartidas e avaliação de resultados; e\nimplantará uma revisão anual dos gastos para identificar desperdícios,\nsobreposições e programas de baixo desempenho, de modo a executar\nos recursos públicos com transparência e medir o impacto de cada real\ngasto. O Estado também organizará uma carteira pública de projetos\nprontos para financiamento, priorizará a conclusão de obras\nparalisadas, dará transparência às PPPs e concessões e oferecerá apoio\ntécnico aos municípios para melhorar arrecadação, gestão fiscal e\nclassificação na CAPAG.\n\n48"
+          },
+          {
+            "id": "pagina-49",
+            "titulo": "Página 49",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nEIXO G\n\nALAGOAS PARA TODOS\n\nEste eixo reúne políticas que não cabem dentro de uma única secretaria\nporque atravessam praticamente todas as áreas de governo. Juventude,\nMulheres, Igualdade Racial, Pessoas Idosas, Pessoas com Deficiência,\nPovos Tradicionais e Direitos Humanos têm necessidades específicas\nque aparecem na saúde, na educação, no trabalho, na segurança, na\nmobilidade, na habitação, na cultura e no acesso aos serviços públicos.\nTratar essas agendas de forma isolada reduz sua capacidade de\nproduzir resultados. Por isso, a transversalidade será um princípio em\nseu conjunto, mas em especial no caso de cada uma dessas populações\ne políticas públicas.\n\nPROPOSTAS\n1\nPrograma Juventude Alagoana. Estratégia integrada para garantir que o\njovem alagoano encontre um caminho da escola para o trabalho, com\nacesso à cultura, esporte, tecnologia e proteção contra a violência. A\nagenda articulará o Escola Gigante, com permanência no ensino médio,\nidiomas, robótica, projeto de vida e preparação para o Enem; o Alagoas\nPorta pro Futuro, com formação técnica ligada às vocações regionais,\nestágio, aprendizagem e primeiro emprego; o Alagoas Lab, com formação\ndigital e inteligência artificial; o Cultura por Todo Canto, ampliando\noportunidades culturais nas periferias e no interior; e o Arena Alagoas,\ncom esporte comunitário, iniciação esportiva e atividades no\ncontraturno. O objetivo é fazer com que educação, formação\nprofissional e oportunidades deixem de funcionar separadamente e\nformem uma trilha contínua de autonomia para os jovens em todas as\nregiões de Alagoas.\n\n2\nPrograma Mulheres Alagoanas. Conjunto de ações que visa garantir que\na política para as mulheres esteja presente em todas as áreas do\ngoverno, da proteção contra a violência à saúde, trabalho, renda, campo,\neducação e acesso a oportunidades. A agenda terá três programas\ndedicados: o Elas sem Medo, com prevenção da violência, acolhimento,\nproteção e acesso à justiça; o Banco da Mulher Alagoana, com crédito\n\n49"
+          },
+          {
+            "id": "pagina-50",
+            "titulo": "Página 50",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\norientado, formalização, mentoria e autonomia econômica; e o Alagoas\nde Mãe para Mãe, voltado ao pré-natal, parto seguro, puerpério e cuidado\nmaterno-infantil. A estratégia também atravessará o Saúde da Gente\nAlagoana, com atenção especializada e rastreamentos; o Alagoas que\nProduz e o Sertão que Produz, ampliando crédito e acesso à terra para\nmulheres rurais; e o Alagoas Porta pro Futuro, estimulando qualificação\ne inserção feminina em ocupações de maior remuneração. Assim, a\npolítica para mulheres deixa de ser responsabilidade de uma única\npasta e passa a orientar as decisões e os serviços de todo o governo.\n\n3\nIgualdade Racial. Enfrentamento integrado ao racismo e às\ndesigualdades raciais e violações de direitos com ações concretas,\nmetas públicas e responsabilidade definida em todas as áreas do\ngoverno. O Alagoas Acolhe ampliará documentação, acesso a direitos e\nproteção contra violações; o Elas sem Medo terá papel ativo no\natendimento às mulheres negras em situação de violência. Na educação,\no Escola Gigante e o Ler pra Valer fortalecerão a educação para as\nrelações étnico-raciais e o enfrentamento ao racismo nas escolas. O\nCultura por Todo Canto valorizará a memória, a cultura negra e\nquilombola, incluindo o Memorial da Igualdade Racial Zumbi dos\nPalmares, enquanto o Alagoas, Meu Lugar Gigante apoiará regularização\nfundiária e melhorias urbanas em territórios negros, quilombolas e\nperiféricos.\n\n4\nAlagoas Inclusiva. Estratégia\ntransversal\npara\ngarantir\nque\nacessibilidade e inclusão das pessoas com deficiência façam parte do\ndesenho das políticas públicas desde a origem, e não como adaptação\nposterior. O Alagoas Acolhe será o principal executor da agenda, com\nampliação de Centros-Dia, acolhimento, apoio às famílias cuidadoras e\nacesso a direitos e ao BPC. O Escola Gigante fortalecerá o atendimento\neducacional especializado, as salas de recursos multifuncionais e as\nequipes qualificadas; o Saúde da Gente Alagoana organizará o\natendimento especializado e a linha de cuidado do autismo; o Alagoas se\nMove incorporará acessibilidade ao transporte, terminais e informação\nao usuário; o Alagoas, Meu Lugar Gigante garantirá acessibilidade em\ncalçadas, espaços urbanos e melhorias habitacionais; e o Alagoas Porta\npro Futuro ampliará qualificação, aprendizagem e inserção produtiva\ninclusivas.\n\n50"
+          },
+          {
+            "id": "pagina-51",
+            "titulo": "Página 51",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\n5\nAlagoas 60+: Envelhecimento Digno. Estratégia estadual para garantir\nque envelhecer em Alagoas signifique viver com autonomia, cuidado,\nmobilidade, convivência e acesso aos serviços públicos. O Alagoas\nAcolhe será o principal executor da agenda, ampliando Centros de\nConvivência, Centros-Dia, acolhimento, acesso à Carteira da Pessoa\nIdosa e ações de prevenção e enfrentamento à violência. O Saúde da\nGente Alagoana organizará uma linha de cuidado integral da pessoa\nidosa, com atenção especializada e estrutura hospitalar adequada; o\nAlagoas se Move atuará na acessibilidade, gratuidade e conforto do\ntransporte intermunicipal; e o Alagoas, Meu Lugar Gigante incorporará\ncalçadas, espaços públicos e moradias adaptadas. O Arena Alagoas\noferecerá atividades físicas para pessoas com 60 anos ou mais,\nenquanto o Cultura por Todo Canto ampliará a programação cultural e\nas oportunidades de convivência, bem como incentivará a valorização\ndos mestres da cultura popular.\n\n6\nAlagoas dos Povos e Comunidades Tradicionais. Garantia de direitos dos\npovos indígenas, comunidades quilombolas, pescadores artesanais,\nciganos, assentados e demais comunidades tradicionais de Alagoas. O\nAlagoas Acolhe ampliará documentação, acesso a direitos, segurança\nalimentar e proteção social; a Operação Água e Esgoto e o Água que Não\nFalta levarão soluções de abastecimento e saneamento adequadas às\ncaracterísticas de cada território; e o Alagoas que Produz fortalecerá\npesca artesanal, piscicultura, maricultura, cooperativas e outras\natividades produtivas tradicionais. O Alagoas em Rota apoiará\ninfraestrutura pesqueira e náutica de pequeno porte, enquanto o\nCultura por Todo Canto valorizará o patrimônio indígena, quilombola e\ntradicional e promoverá cooperação com a Fundação Cultural Palmares\ne o IPHAN. O Alagoas Verde completará essa agenda com recuperação de\nmanguezais, lagoas e outros ecossistemas dos quais essas\ncomunidades dependem.\n\n51"
+          },
+          {
+            "id": "pagina-52",
+            "titulo": "Página 52",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "A L AG O A S G I G A N T E | D O S E R TÃO AO L I T O RA L , U M S Ó F U T U R O | P L A N O D E G O V E R N O 2 0 2 7 ~ 2 0 3 0\n\nNOSSAS REDES\njhcdopovo\ntiojhc\njhc\n\nFOTOS\nJonathan Lins\n\njonlins\n\nFONTES\nIBGE (Censo 2022, PNAD Contínua, Produção\nAgrícola Municipal, Pesquisa Pecuária Municipal,\nValor Adicionado Bruto municipal, SIDRA);\n\nTesouro Nacional (Capacidade de Pagamento dos\nEstados, prévia da CAPAG municipal, SICONFI, DCA\ne RREO);\n\nDATASUS (SIM, SINASC, SIH, SIA) e CNES;\n\nINPI (Índice Brasil de Inovação e Desenvolvimento,\nIBID, e microdados BADEPI de marcas, patentes e\nprogramas de computador);\n\nMinistério da Saúde, painel Cobertura Vacinal do\nCalendário Nacional por residência, alimentado\npela Rede Nacional de Dados em Saúde;\n\nPesquisa CNT de Rodovias 2024;\n\nSEVISA/SESAU, Nota Informativa nº 30/2025, e\nRelatório Anual de Gestão 2024;\n\nPrograma\n2024;\n\nNacional\n\nde\n\nTransparência\n\nINEP (Censo Escolar, Ideb 2023 e 2025, Saeb, taxas\nde rendimento);\n\nSistema Nacional de Bibliotecas Públicas;\n\nPública\n\nSebrae;\nSINISA e Sistema Nacional de Informações sobre\nSaneamento;\n\nInstituto do Meio Ambiente de Alagoas;\n\nCadastro Único, VISDATA e rede SUAS;\n\nARSAL, DER/AL e DETRAN/AL;\n\nNovo CAGED;\n\nPlanos de Desenvolvimento Integrado do Turismo\nSustentável das regiões Grande Maceió, Costa\ndos Corais, Caminho das Águas e Cânion do São\nFrancisco;\n\nMDIC e ComexStat;\nSINESP e bases estaduais de segurança pública;\n\nPortal estadual de dados abertos;\nNEAC/SSP-AL, boletins anuais de CVLI;\nSeplag/SINC.\nAtlas da Violência 2026 e Anuário Brasileiro de\nSegurança Pública 2026 (Ipea e Fórum Brasileiro\nde Segurança Pública);\n\n52"
+          },
+          {
+            "id": "gigante",
+            "titulo": "gigante",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "gigante\n\nALAGOAS\n\n2026 © Alagoas Gigante | Do Sertão ao Litoral, um só futuro\nPlano de Governo JHC | 2027 ~ 2030"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "c35054cc6233c2d1ab39322bae867ecc1c57bc258c55a952b8e60ca0c8103fe0"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c18275f28a4f0d61229ff382ce39002de96e136881150de3dff8914aa4a8c71d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "9ed4ce8f0e7ab4d35bc3af18faa43b120b7c98f04cc8eb5b785f76e6bcd4e46d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d7e906bf6bf35aabd88b808f81a950fc30e75668f17b5379e8ce7ee561c64bfc"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "7653e2aedc97c9d25a18988fbe4448e8d9d83db09edf501841402c58f14b9236"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "56ef8bb9d451ed5a233ad68ebfffdbb5dcd631b24a07d62c69414cb37f348a3c"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "ef9b6d9db7c1bfb420c31529fa59eb955d3f03015cc1279ecc6a47512d5efc4b"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "9055db74c155994cff0bfe14ae761d794fa9717a3e7f301fa75d00bcd645e3f7"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "c67dee8f3e3a70ff133656feed4ef49b0f3b4254febe87192d0d62d17750462d"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "e148e9e6aefa51db87a9a4d63f2e93236f82b9d6f37354a82bead360fd90d490"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "5e7cc135fa4982ef7b547f113d25f41785f411d91ac3a92b5ed376f5fef2f09d"
+          },
+          {
+            "pagina": 12,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "9d381ae3f6df5bdf8e2d2793c3edfa63f9d6d84747b0d4754c6b8fac987e40b6"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "934b63f9b1c45c16ac6bbc9460791fab547a3676ef036cf4e3b2a18a1da00ef0"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d4d20044f88f4f7f6e2a4ee9d29397d3d9aced82b0fa12790a0fa6c434929e22"
+          },
+          {
+            "pagina": 16,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "e7448870e92ab1a51458dc6651e439688bf4c8169443e9f5bd879e68efffed46"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "392a326bce1fc537371d40fb9c772697f3b9c5cdebdc32371a573ee5f38d0a14"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "780b0317b192f1289e0b380eac099085586731ddc63981afbe63abecea11dbc6"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "bbc52bf5b2cf1a2edf76fc1604a4ebe6843fe342dccedb2e9742f28894b61064"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "3611217f214b6802c1358f9d393d97336d4fba48e19456a7bbd0bd1fff2e0ea3"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "b3ae98e84a34c54319555a05cf1eb2ffe872df6cd02f783e8f565cdfe4474546"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "6c9a5cc858e2383a2560551db4bfee5382cc2108fe2bd8a777b34f8523505d60"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "4a515f9c85c14eb6be3fca318fadcff6ae34d5c6493ae053254c808f5584ca23"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "cb936c77aa9e6f21ea97e8d9f5752193a348559fc6fa763345799835c0734b0d"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "ea46e76976baed13dbfe662158abe23c1108921cc4ae5fcd075f55f111595b57"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "7580d9cde6aaaaa32f1c10dafc0d8ec0abfd28c3ac658cce044c422407dfa74b"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "a75de13cc14daa95912adeaf33d78683f7eee083f18de113960ddc789247369b"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "eda6cd2144e99696e266ea124f4ec3f2ef6f05ddff7a5ce43fb90f6d4e0bf26d"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "42b1155bb3f51991e89ebafc1879a0a35b934f38d55ef651586a56d9b129acd1"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "d511af03d5d1823efa9ae8b43b0cb646265eacd6a8e2d3654f880efc03032043"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "88bc1115999308979ca7dee4e6dc940b8900b4ebcb295ff304748a259a44a944"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "d2628263febd0805d9b47cc7c3c8cb74b5f8ef70b5c96dd395f66830c4ae1f62"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "0fa583572e1d421caf8dfe2bc901edb3fe53baf09fc74735731a53043c602dee"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "a693af0d6e4f58add11c1932fb44b7fbdaf30411a865ebc9d54583d5c55e6f5d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "03957482745e6fa099dd83b181cf899c0dc255539b31534672963defd24f0a5a"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "533327e6bfc721ac7fc49b0c38e3409253d871b631d09d87ed6260cdcad6fbe3"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "c1b30ccf8acd0f0d2cb1995f701ea34690578ff93e0a70c1c2e6c0dc768d5e08"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "002075205385afbff0a00b1dd6dfdaa89a38f292bb2b2d91d9f1ffe603d7f973"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "1c153d6d1b14a824a479a0c71d5b293e9f61a095632960795606e31267505986"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "6c88fd1a1bab6fb6cb1f04812ad03a14d6bf66c547068f0589e48ed570ea448f"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "7263bb1775aaa4aa995cbe7530baf83cc67ec3b94abe7c89e8f913fa3263a3b2"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "be1132f5ef77cbf4b37a8147b5169c4b9d5ce56a30c10ed87735ec1d3e030065"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "117f696c853a67ca6272585ca94e74efad4b25b8523caa8a1c5f98500f66aa91"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "b88d1d5ee0919843c4ebe582b9b4b2c1420a7fee1904a503b77980db64666525"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "2b989a7dc98f70877bb59870fec932d017e1993c0f066c5f28ca8134232e57d3"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "091d312b526939eda1912dc735051f49318b834fb0d35c2e1f791f907eecf14f"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "96e8058fa829244ff9c430760c913f3264b8f6f307b64c557663b7969af692e5"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "0005557751160eab614897e2c53e310eb8cf55c1ea84c2f27d534c63b8f67202"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "84f646e4d2bc84670075d26334ae43d84cab76d44ccb133c87b58fa4fab0e800"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "82f6eea22b519ae9ea7f17964ea247d119e1cf0b38939d38c6c9ce0d0828ff69"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "64be11b4b332458b35b1da2d59049e819448482bd97c5d1fa31e80d0f7e05168"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "f291d1274fbd6bf8791629ac539967965cf5f8864bfd15a50b0625d92508c311"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Saúde da Gente Alagoana prevê polos regionais de especialidades para aproximar consultas, exames e cirurgias dos locais de moradia em Alagoas. O plano prevê expansão das teleconsultas para conectar pacientes do interior a especialistas da rede estadual de saúde. O Imuniza Alagoas propõe recuperar a cobertura vacinal por meio de busca ativa, vacinação itinerante e painel público por município. O plano propõe Escolas Técnicas Estaduais com cursos técnicos de Ensino Médio definidos pela vocação econômica de cada região. O Olho Vivo prevê uma rede estadual integrada de videomonitoramento para prevenir crimes, identificar suspeitos e ampliar a resposta das forças de segurança. A Operação Água e Esgoto propõe ampliar o acesso à água tratada por meio de infraestrutura destinada às casas e ao meio rural. As propostas integram áreas de saúde, educação, segurança, saneamento, formação profissional e imunização previstas no documento oficial.",
+    "frases": [
+      {
+        "texto": "O Saúde da Gente Alagoana prevê polos regionais de especialidades para aproximar consultas, exames e cirurgias dos locais de moradia em Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 18,
+            "trecho": "O programa prevê a implantação de polos regionais de especialidades, com consultas, exames de apoio diagnóstico e cirurgias eletivas;"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê expansão das teleconsultas para conectar pacientes do interior a especialistas da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 18,
+            "trecho": "Ampliação da Telessaúde e do Transporte Sanitário Regional, com expansão das teleconsultas, do telediagnóstico e das teleinterconsultas para conectar pacientes e profissionais do interior a especialistas da rede estadual,"
+          }
+        ]
+      },
+      {
+        "texto": "O Imuniza Alagoas propõe recuperar a cobertura vacinal por meio de busca ativa, vacinação itinerante e painel público por município.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 19,
+            "trecho": "Imuniza Alagoas, para a recuperação da cobertura vacinal. Trata-se de um pacto estadual de recuperação vacinal com sala de situação por município, busca ativa integrada entre escola, unidade básica de saúde e Cadastro Único, vacinação itinerante em áreas rurais e de difícil acesso, apoio logístico e cadeia de frio, meta anual por imunizante e painel público de cobertura municipal."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe Escolas Técnicas Estaduais com cursos técnicos de Ensino Médio definidos pela vocação econômica de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 23,
+            "trecho": "Criação de Escolas Técnicas Estaduais (ETECs): oferta de cursos técnicos de Ensino Médio, definida pela vocação econômica de cada região,"
+          }
+        ]
+      },
+      {
+        "texto": "O Olho Vivo prevê uma rede estadual integrada de videomonitoramento para prevenir crimes, identificar suspeitos e ampliar a resposta das forças de segurança.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 26,
+            "trecho": "Olho Vivo. Implantação de uma rede estadual integrada de videomonitoramento, inteligência e análise de dados para prevenir crimes, identificar suspeitos e ampliar a capacidade de resposta das forças de segurança."
+          }
+        ]
+      },
+      {
+        "texto": "A Operação Água e Esgoto propõe ampliar o acesso à água tratada por meio de infraestrutura destinada às casas e ao meio rural.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 43,
+            "trecho": "Operação Água e Esgoto. Estratégia estadual para ampliar o acesso à água tratada e ao esgotamento sanitário, garantindo que a infraestrutura chegue efetivamente às casas e que o meio rural tenha soluções próprias."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Regionalização de consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 18,
+            "trecho": "O programa prevê a implantação de polos regionais de especialidades, com consultas, exames de apoio diagnóstico e cirurgias eletivas;"
+          }
+        ]
+      },
+      {
+        "id": "telesssaude",
+        "titulo": "Telessaúde",
+        "descricao": "Expansão das teleconsultas para pacientes do interior.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 18,
+            "trecho": "Ampliação da Telessaúde e do Transporte Sanitário Regional, com expansão das teleconsultas, do telediagnóstico e das teleinterconsultas para conectar pacientes e profissionais do interior a especialistas da rede estadual,"
+          }
+        ]
+      },
+      {
+        "id": "cobertura-vacinal",
+        "titulo": "Cobertura vacinal",
+        "descricao": "Recuperação da cobertura vacinal por município.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 19,
+            "trecho": "Imuniza Alagoas, para a recuperação da cobertura vacinal. Trata-se de um pacto estadual de recuperação vacinal com sala de situação por município, busca ativa integrada entre escola, unidade básica de saúde e Cadastro Único, vacinação itinerante em áreas rurais e de difícil acesso, apoio logístico e cadeia de frio, meta anual por imunizante e painel público de cobertura municipal."
+          }
+        ]
+      },
+      {
+        "id": "ensino-tecnico",
+        "titulo": "Ensino técnico",
+        "descricao": "Criação de Escolas Técnicas Estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 23,
+            "trecho": "Criação de Escolas Técnicas Estaduais (ETECs): oferta de cursos técnicos de Ensino Médio, definida pela vocação econômica de cada região,"
+          }
+        ]
+      },
+      {
+        "id": "videomonitoramento",
+        "titulo": "Videomonitoramento",
+        "descricao": "Implantação de rede estadual integrada de videomonitoramento.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 26,
+            "trecho": "Olho Vivo. Implantação de uma rede estadual integrada de videomonitoramento, inteligência e análise de dados para prevenir crimes, identificar suspeitos e ampliar a capacidade de resposta das forças de segurança."
+          }
+        ]
+      },
+      {
+        "id": "agua-tratada",
+        "titulo": "Água tratada",
+        "descricao": "Ampliação do acesso à água tratada nas casas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 43,
+            "trecho": "Operação Água e Esgoto. Estratégia estadual para ampliar o acesso à água tratada e ao esgotamento sanitário, garantindo que a infraestrutura chegue efetivamente às casas e que o meio rural tenha soluções próprias."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:20:27.096Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:23:44.013Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma polos regionais com consultas, exames e cirurgias, alinhado ao objetivo de aproximação declarado no texto da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma expansão das teleconsultas conectando pacientes do interior a especialistas estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (telessaúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência menciona busca ativa, vacinação itinerante e painel público de cobertura municipal, como afirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (imunização)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a criação de ETECs com cursos definidos pela vocação econômica regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (ETECs)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência reproduz quase literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (Olho Vivo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma ampliação do acesso à água tratada com infraestrutura para casas e soluções rurais."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a regionalização de consultas, exames e cirurgias."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (saúde regional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma expansão das teleconsultas para pacientes do interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (telessaúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma recuperação da cobertura vacinal com abordagem por município."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (vacinação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a criação das ETECs."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (ensino técnico)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a implantação da rede integrada de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (segurança/videomonitoramento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma ampliação do acesso à água tratada com chegada da infraestrutura às casas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única (saneamento/água tratada)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material resumida."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AL:20002553350",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AL:20002553350:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28027,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 23626,
+          "output_tokens_details": {
+            "thinking_tokens": 300
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28027,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23626,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 28027,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28027
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.369371
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "014a6e4fdb624cbdbf0fa0bff8c1c3cc69f94588edbad970e5b00d9400e6717b",
+    "extractedTextSha256": "a66748f42f473b2674d4f3f4d0deddf126fddd9a1c9fd219a34ae9f656e9bddd",
+    "documentCount": 1,
+    "documentSetSha256": "6f10b5f0452daf1dff6bed481f36697ae94567a92de96cb695922c436aca1c3d",
+    "contentSha256": "219ec7824671ad074dd94e7c6cb1bd974b1ee59e4d41bf73381a5eaecc517546"
+  }
+}

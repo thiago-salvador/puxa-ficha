@@ -8,7 +8,7 @@
 // Uso:
 //   node scripts/data/programas-governo-governadores-2026-wave-consolidado.mjs \
 //     --ondas-dir=<dir> \
-//     --inventory=<scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json> \
+//     --inventory=<scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json> \
 //     [--regiao=norte] [--estrito]
 //
 // --regiao restringe o escopo a uma onda (contagem de UFs da regiao).

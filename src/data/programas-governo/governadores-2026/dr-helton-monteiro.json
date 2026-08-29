@@ -1,0 +1,1262 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SE",
+    "sqCandidato": "260002547415",
+    "slug": "dr-helton-monteiro",
+    "nomeUrna": "DR. HELTON",
+    "partido": "PSOL",
+    "arquivoNome": "2026SE260002547415_01.pdf",
+    "arquivoNoPacote": "SE/2026SE260002547415_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SE:260002547415:01",
+      "fonte": {
+        "arquivoNome": "2026SE260002547415_01.pdf",
+        "arquivoNoPacote": "SE/2026SE260002547415_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "7d421f29b19c1654ae6c53764e29d10c29580b5d163500d6d978b140e50c0cc2",
+        "extractedTextSha256": "f3d764dd03bcd14a37a62d7c4e0872153175bd32d9257c62ec2477ebc7e3e124",
+        "paginas": 47,
+        "secoes": [
+          {
+            "id": "programa-de",
+            "titulo": "PROGRAMA DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PROGRAMA DE\nGOVERNO\n2026\nMARIA\nDR. HELTON\nIZALTINA\nCandidato ao Governo-SE\nCondidata a Vice-\nGovernadora/SE\nCORAGEM\nPARA ENFRENTAR\nOS PODEROSOS\nPSOL REDE"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n01\n\n02\n\n03\n\nIntrodução\nPelo Direito ao Futuro\n\n01\n\nCom Lula para Derrotar o Bolsonarismo\n\n02\n\nPor um Congresso do Povo\n\n03\n\nChegou a hora de viver bem\n\n05\n\nBrasil\nsoberano:\nconstruir agora o lugar\nno futuro\nCoragem para combater privilégios\n\n07\n\nO Brasil é de quem trabalha\n\n09\n\nPlanejamento para enfrentar a crise climática\n\n11\n\nInteligência para defender a vida\n\n12\n\nA cidade pertence a quem vive nela\n\n14\n\n08\n\nEIXO 1 — DESENVOLVIMENTO\nECONÔMICO, EMPREGO E RENDA\nProposta 01: Plano de Obras\nPúblicas e Geração de Emprego\n\n17\n\nProposta 02: Sergipe Mais Renda\n\n17\n\nProposta 03: Restaurantes Populares\ne Lavanderias Comunitárias\n\n17\n\nProposta 04: Crédito para quem produz\n\n17\n\nProposta 05: Sergipe DigitalInclusão e Tecnologia\n\n17\n\nProposta 06: Concurso Público\ne Valorização do Servidor\n\n18\n\nProposta\n07:\nEconomia\nSolidária\ne\nCooperativismo\nProposta 08: Redução da\nJornada\nno\nServiço\nPúblico\nProposta 09: Pesca Artesanal\n\n18\n\nProposta 10: Reestatização da DESO\n\n18\n\n18\n18\n\nEIXO 2 — EDUCAÇÃO\nProposta 11: Alfabetização na Idade Certa\n\n20\n\nProposta 12: Escola em Tempo\nIntegral com Qualidade\n\n20\n\nProposta 13: Valorização dos Professores\n\n21"
+          },
+          {
+            "id": "sumario-2",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n\n04\n\n05\n\nProposta 14:Educação Inclusiva de Verdade\n\n21\n\nProposta 15: Universidade Estadual de Sergipe\n\n21\n\nProposta\n16:\nEducação\ndo\nCampo, Quilombola e Indígena\n\n22\n\nEIXO 3 — SAÚDE PÚBLICA\nProposta 17: Atenção Primária\nFortalecida e Sem Terceirização\n\n27\n\nProposta 18: Fim das Organizações\nSociais e Desprivatização da Saúde\n\n27\n\nProposta 19: Redução das\nFilas de Cirurgias e Exames\n\n28\n\nProposta 20: Saúde Mental como Prioridade\n\n28\n\nProposta 21: Farmácia Popular Estadual\n\n28\n\nProposta 22: Hospital Veterinário\nPúblico de Sergipe\n\n28\n\nProposta 23: Valorização dos Profissionais\nda Saúde / Saúde do trabalhadores\n\n28\n\nProposta 24: Saúde das crianças\ne adultos neurodivergentes\n\n29\n\nProposta 25: Saúde Integral às populações\nem condição de vulnerabilidade\n\n29\n\nProposta 26: Saúde Integral às\npessoas com Deficiência\n\n29\n\nProposta 27: Coragem pra cuidar\nde quem cuidou da gente\n\n30\n\nEIXO 4 — MORADIA, MOBILIDADE E\nINFRAESTRUTURA\nProposta 28: Programa Minha Casa Sergipe\n\n31\n\nProposta 29: Mobilidade Ativa e Tarifa\nZero no Transporte Metropolitano\n\n31\n\nProposta 30: Saneamento\nSaúde: Esgoto para Todos\n\n32\n\né\n\nProposta 31: Água para Todos\nno Campo e na Cidade\n\n32\n\nProposta 32: Sergipe Iluminado\n\n32"
+          },
+          {
+            "id": "sumario-3",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n06\n\n07\n\nEIXO 5 — MEIO AMBIENTE, SUSTENTABILIDADE\nE TRANSIÇÃO ENERGÉTICA\nProposta 33: Sergipe Solar:\nLiderança em Energia Limpa\n\n33\n\nProposta 34: Resíduos Sólidos:\nReciclagem que Gera Renda\n\n33\n\nProposta 35: Proteção dos Manguezais\ne Comunidades Tradicionais\n\n33\n\nProposta 36: Sergipe Verde\n\n33\n\nProposta 37: Educação Ambiental\nem Todas as Escolas\n\n34\n\nProposta 38: Incentivo a agroecologia\ne Sergipe sem agrotóxico\n\n34\n\nEIXO 6 — SEGURANÇA PÚBLICA\nE DIREITOS HUMANOS\nProposta 39: Polícia\nPrevenção e Proximidade\n\n08\n\n09\n\nCidadã\n\n/\n\n35\n\nProposta 40: Desencarceramento e\nReinserção Social\n\n35\n\nProposta 41: Política de Drogas\ncomo Questão de Saúde\n\n35\n\nEIXO 7 — DIREITOS DAS MULHERES,\nIGUALDADE RACIAL E DIVERSIDADE\nProposta\n42:\nSergipe\nsem\nFeminicídio / Basta de Misoginia\n\n36\n\nProposta 43: Igualdade Racial em\nTodas as Políticas\n\n36\n\nProposta\n44:\nSergipe\nda\nDiversidade: Direitos LGBTQIA+\n\n36\n\nProposta\n45:\nPovos\nIndígenas,\nQuilombolas e Comunidades Tradicionais\n\n36\n\nEIXO 8 — DEFENDER A INFÂNCIA,\nADOLESCÊNCIA E JUVENTUDE\nProposta 46: O FUTURO PRECISA DE\nCUIDADO AGORA\n\n37"
+          },
+          {
+            "id": "sumario-4",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\n10\n\n11\n\n12\n\nEIXO 9 — AGRICULTURA FAMILIAR E\nSEGURANÇA ALIMENTAR\nProposta 47: Sergipe Agroecológico\n\n39\n\nEIXO 10 — CULTURA E\nTURISMO\nProposta\n48: CULTURA-SE\n\n40\n\nProposta 49: Sergipe dos Destinos\n\n40\n\nEIXO 11 — PARTICIPAÇÃO POPULAR E\nGESTÃO DEMOCRÁTICA\nProposta 50: Governo Aberto: Orçamento\nParticipativo e Controle Social\n\n42"
+          },
+          {
+            "id": "ha-momentos-em-que-o-relogio-da-historia-acelera-as-geracoes-que-vivem",
+            "titulo": "Há momentos em que o relógio da história acelera. As gerações que vivem",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Há momentos em que o relógio da história acelera. As gerações que vivem\nesses momentos não têm o privilégio de assistir às mudanças pela janela. São\nconvocadas a assumir o protagonismo e ter coragem de definir o seu futuro.\nNós somos uma dessas gerações.\nVivemos uma época em que a inteligência artificial transforma o trabalho, a\nemergência climática ameaça as condições de muitas comunidades, as guerras\nvoltam ao centro da atenção mundial, a riqueza se concentra como nunca e a\nextrema direita tenta convencer milhões de pessoas de que o medo é o único\ncaminho possível. Ao mesmo tempo, nunca houve tantas possibilidades diante\ndo Brasil. Temos um povo criativo, gigante, uma das maiores biodiversidades\ndo planeta, uma matriz energética privilegiada, universidades públicas capazes\nde produzir conhecimento de ponta, uma cultura admirada em todo o mundo\ne uma geração inteira disposta a construir um país soberano e com justiça social.\nPor isso, o futuro ainda não está escrito. Ele será resultado de uma disputa.\nDurante muito tempo disseram ao povo brasileiro que política era apenas\nadministrar crises e cortar direitos. Esperar oportunidades que nunca chegavam\npara a maioria. Nós recusamos essa ideia. A política existe para ampliar as\npossibilidades de viver bem para a classe trabalhadora e para a juventude. Existe\npara fazer com que uma mãe tenha mais tempo para seus filhos. Para que um\njovem possa sonhar. Para que trabalhar garanta dignidade e não apenas\nsobrevivência. Para que envelhecer deixe de ser motivo de receio. Para que a\nriqueza produzida por milhões seja compartilhada por milhões.\nEssa é a verdadeira disputa do nosso\ntempo. A disputa é entre um mundo\norganizado para proteger privilégios de\numa\npequena\nminoria\ne\noutro\norganizado para ampliar direitos e\noportunidades. Entre uma economia que\ntransforma tudo em mercadoria e uma\ndemocracia capaz de colocar a vida no\ncentro das decisões; entre quem acredita\nque o futuro pertence a poucos e quem\nsabe que ele só fará sentido se pertencer à\nmaioria do povo brasileiro.\nÉ por isso que o PSOL apresenta este manifesto. Não como um catálogo de\npromessas eleitorais. Mas como um convite para imaginar o Brasil que podemos\nconstruir juntos.\n\n01"
+          },
+          {
+            "id": "um-brasil-onde-viver-bem-deixe-de-ser-privilegio-onde-a-democracia-volte",
+            "titulo": "Um Brasil onde viver bem deixe de ser privilégio. Onde a democracia volte a",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Um Brasil onde viver bem deixe de ser privilégio. Onde a democracia volte a\nproduzir esperança. Onde a ciência, a tecnologia e a riqueza nacional estejam a\nserviço dos interesses do povo brasileiro. Onde o trabalho devolva dignidade e\ntambém tempo para viver. Onde nossas cidades pertençam a quem as habita.\nOnde o desenvolvimento caminhe ao lado da justiça social e da justiça climática.\nÉ por isso que somos socialistas e ecossocialistas. Para fazer da política um\ninstrumento para viver bem. Porque o maior patrimônio de uma nação não é\nsó o tamanho de sua economia, é a esperança do seu povo.\nChamamos esse projeto de direito ao futuro.\nPorque acreditamos que nenhuma criança deveria nascer com seu destino\ndeterminado pelo CEP, pela cor da pele, pelo gênero ou pela renda da família.\nPorque acreditamos que nenhuma geração pode ser condenada a viver pior do\nque a anterior. E porque acreditamos que o futuro não é um privilégio para\npoucos. É um direito que precisa ser conquistado pela democracia, organizado\npela política e compartilhado pelo povo brasileiro. É essa a missão da nossa\ngeração. E é para ela que este manifesto foi escrito.\n\nA democracia não é apenas o direito de escolher governos. É o direito de um\npovo definir o seu futuro e ter o poder real de decidir os rumos do Brasil.\nFoi por isso que milhões de brasileiras e brasileiros fizeram da eleição de 2022\nmuito mais do que uma disputa entre dois candidatos. Aquela eleição se\ntransformou numa escolha entre dois projetos de país: de um lado, a\ndemocracia; do outro, o autoritarismo. De um lado, a esperança; do outro, o\nmedo e a violência. Fomos às ruas, convencemos familiares, conversamos nas\nfilas dos ônibus, nos locais de trabalho, nas universidades e nas periferias.\nElegemos Lula porque compreendemos que havia algo maior em jogo, a\nesperança de impedir que o Brasil continuasse caminhando para o abismo.\nVencemos e livramos o país de um pesadelo.\nVoltamos a ter comida no prato e vacina no\nbraço. Finalmente, pudemos fazer justiça por\nMarielle Franco e Anderson Gomes. Mas a\nhistória nunca termina na noite da apuração.\nAgora temos a missão de vencer novamente.\nMesmo depois de derrotar Bolsonaro nas\nurnas,\nainda\nprecisamos\nderrotar\no\nbolsonarismo como projeto de poder.\n\n02"
+          },
+          {
+            "id": "derrotar-a-cultura-do-odio-da-mentira-e-que",
+            "titulo": "Derrotar a cultura do ódio, da mentira e que",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Derrotar a cultura do ódio, da mentira e que\ntenta justificar desigualdades e preconceitos\ncomo destino, enquanto protege os privilégios\nde uma pequena elite que não aceita tratar\nempregada\ndoméstica\ncomo\numa\ntrabalhadora com direitos e dignidades, ver\npessoas negras andando de avião e tem nojo de\nmortadela. Esse projeto de violência\npermanece organizado em governos estaduais,\nem setores do Congresso Nacional, em grupos\neconômicos que lucram com a desigualdade e\nem redes de desinformação que transformam\no medo em algoritmo e mercadoria política.\nO governo Lula herdou um Estado desmontado e uma tentativa de golpe que\ndeixou claro até onde a extrema direita estava disposta a chegar para impedir a\nvontade popular. Reconstruir políticas públicas, recuperar a capacidade de planejamento\ndo Estado e devolver dignidade ao povo brasileiro tornaram-se tarefas urgentes. É por\nisso que seguimos ao lado de Lula novamente em 2026. Sabemos que ainda há\nmuito para reconstruir e transformar no Brasil e que isso não será possível se a\nextrema direita voltar a ocupar o Palácio do Planalto.\nEm 2026, temos como missão virar de vez essa página da história. Estamos ao\nlado de Lula na tarefa histórica de impedir o retorno do pesadelo bolsonarista.\nNão apenas derrotando os seus candidatos nas suas diversas versões, mas\ntambém o seu projeto que transformou a violência política de gênero e raça em\nmétodo, o privilégio em regra e a desigualdade em destino. Derrotando, assim,\nquem despreza a ciência e destrói os serviços públicos, quem ataca a cultura e os\nartistas, quem nega a emergência climática e aceita um Brasil subordinado aos\ninteresses das grandes potências, incapaz de decidir soberanamente seu próprio\ndestino.\nEm 2026, vamos defender o Brasil com S de soberania e isso começa livrando\no país do retrocesso, mas também significa comprometimento para transformar\nos sonhos do povo brasileiro em realidade, garantindo o direito de viver bem. É\npor isso que a batalha decisiva de 2026 também será para mudar radicalmente o\nCongresso Nacional e criar as condições para produzir mudanças reais na vida\ndas pessoas.\n\nNenhum presidente governa sozinho. O golpe de 2016 entregou ao Congresso\nNacional um enorme poder para decidir o destino do país e sabotar o programa\nvitorioso nas urnas. A pergunta que importa é simples: senão pelo povo, a\nserviço de quem esse poder tem sido exercido?\n\n03"
+          },
+          {
+            "id": "quando-chegou-a-hora-de-proteger-o-orcamento-secreto-escolheram-se",
+            "titulo": "Quando chegou a hora de proteger o orçamento secreto, escolheram se",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Quando chegou a hora de proteger o orçamento secreto, escolheram se\nbeneficiar de bilhões de reais que transformaram a política em um balcão de\nnegócios. Quando chegou a hora de ampliar sua própria impunidade, correram\npara votar a PEC da blindagem. Quando chegou a hora de cobrar mais dos\nbilionários, dos grandes bancos e das plataformas de apostas, encontraram todas\nas desculpas possíveis. Mas quando o assunto é reduzir o custo de vida, proteger\nquem trabalha, fortalecer o SUS, investir na educação pública ou ampliar\ndireitos, sempre dizem que falta dinheiro ou que não é o momento. Não é falta\nde recursos. É excesso de privilégios e de concentração de poder.\nNão são episódios isolados. São sintomas de um Congresso inimigo do povo,\nque representa, em grande medida, os interesses do sistema financeiro, do\nlatifúndio, das grandes corporações e daqueles que transformaram a política em\num mercado de favores. Existem parlamentares comprometidos com o povo,\nque travam batalhas diárias, mas são minoria em uma estrutura construída para\nconservar o poder dos que sempre mandaram.\nPor isso, nossa tarefa em 2026 não é apenas reeleger Lula. É construir um\nCongresso que esteja a serviço da maioria do povo brasileiro. Um Congresso\nque enfrente privilégios em vez de protegê-los. Que taxe bilionários em vez de\ncortar direitos. Que fortaleça a ciência em vez do obscurantismo. Que enfrente a\nemergência climática em vez de negá-la. Que coloque a riqueza do Brasil a\nserviço da maioria, e não dos acionistas de sempre. A disputa de 2026 não é\napenas sobre quem ocupará a Presidência da República. É sobre as condições do\nexercício da vontade popular. Se continuarmos elegendo um Congresso\ncomprometido com os interesses de poucos, a democracia permanecerá\naprisionada pela chantagem permanente do andar de cima.\nSe o povo brasileiro decidir ocupar também esse espaço, abriremos um novo\nciclo da nossa história. Um ciclo em que a política deixará de administrar\ndesigualdades para começar, finalmente, a superá-las. Esse é o compromisso do\nPSOL. Estar ao lado de Lula para derrotar definitivamente o bolsonarismo. E ao\nlado do povo para construir uma nova maioria no Congresso Nacional capaz de\ntransformar o Brasil.\n\nPrecisamos de uma bancada do\npovo para assegurar o fim imediato\nda escala 6×1, porque sabemos que\nseis dias de trabalho para um de\ndescanso é regime de exaustão, não\nde direitos e o povo precisa de\ntempo para viver.\n\nPara defender que criança não é mãe\ne os direitos reprodutivos das\nmulheres, transformar as conquistas\nda comunidade LGBTQIAPNI+ em\nlei e defender a vida e os direitos do\npovo negro.\n\n04"
+          },
+          {
+            "id": "para-colocar-as-mulheres-e-o-cuidado",
+            "titulo": "Para colocar as mulheres e o cuidado",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Para colocar as mulheres e o cuidado\nno centro da política, porque sem\nreconhecer quem sustenta a vida em\nseu cotidiano, o país continuará\nfingindo\nprogresso\nenquanto\nreproduz desigualdade.\n\nPara garantir que o nome social das\npessoas trans e o casamento\nigualitário não dependa de quem o\npresidente vai nomear para o STF.\n\nPara fazer um combate real ao\nracismo estrutural e à violência contra\na população negra, porque não existe\ndemocracia enquanto a juventude\nnegra\ncontinua\nsendo\nalvo\npreferencial da bala e da prisão.\n\nPara ser capaz de realizar a defesa\ninegociável do meio ambiente, dos\nterritórios e dos povos originários,\ncom a consciência de que a crise\nclimática já chegou e quem a sente\nprimeiro é sempre o povo pobre.\n\nNão queremos apenas representação simbólica, queremos maioria legislando\ncom coragem. O povo brasileiro já derrotou ditaduras, venceu a fome, ampliou\ndireitos e reconstruiu a democracia. Sempre que acreditou na força da política,\nse transformou em um gigante capaz de mudar a história. Agora, chegou a\nnossa vez.\n\nToda geração recebe uma missão da história. A nossa não é apenas fazer a\neconomia crescer. É fazer a vida melhorar no que mais importa para as pessoas.\nDurante muito tempo nos ensinaram que economia era um assunto para\nespecialistas. Foi assim que o neoliberalismo criou falsos dogmas. Nos disseram\nque governar era administrar crises. Cortar gastos. Equilibrar planilhas. Que a\neconomia acontecia nas bolsas de valores e nas reuniões de banqueiros.\nEnquanto isso, a economia verdadeira acontecia em outro lugar: na cozinha de\nquem faz contas antes de ir ao supermercado, no trabalhador que sai de casa\nantes do amanhecer e volta quando os filhos já estão dormindo, na jovem que\ndesiste da universidade porque não consegue pagar o transporte, na aposentada\nque escolhe entre comprar remédios ou completar a feira do mês.\n\n0"
+          },
+          {
+            "id": "o-verdadeiro-sucesso-de-uma-nacao-esta-na-tranquilidade-com-que-seu-povo",
+            "titulo": "O verdadeiro sucesso de uma nação está na tranquilidade com que seu povo",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "O verdadeiro sucesso de uma nação está na tranquilidade com que seu povo\nconsegue viver bem. É por isso que queremos reorganizar as prioridades do\nBrasil. Não a partir dos interesses do mercado financeiro. Mas a partir da vida\ncotidiana das pessoas. Queremos construir uma economia organizada para\nviver bem, a partir de três pilares fundamentais: segurança para pagar as contas,\ntempo para viver e esperança de que nossos filhos viverão melhor do que nós.\nViver bem é chegar ao fim do mês sem o peso\ndas dívidas. É encher a geladeira, sem medo de\nnão conseguir pagar o aluguel. É ter tempo para\nbrincar com os filhos, visitar os pais, encontrar\nos amigos, estudar, descansar e amar. É\ncaminhar pela cidade sem medo, respirar um ar\nmais limpo, sem ter medo da próxima enchente\nou da seca. É envelhecer com dignidade e olhar\npara a juventude acreditando, sinceramente, que ela viverá um país melhor do\nque nós. Viver bem significa comida de qualidade no prato, ter vida além do\ntrabalho, ter direito à moradia digna, poder viver sem medo e amar quem quiser.\nIsso não é utopia, é um projeto de país. Somos um povo que trabalha duro e merece\nser feliz. Afinal, o Brasil nunca foi um país pobre, foi um país onde a riqueza e as\noportunidades sempre foram distribuídas de forma profundamente desigual.\nNós produzimos alimentos para o mundo inteiro, mas convivemos com a\ninsegurança alimentar. Produzimos ciência, energia, cultura, tecnologia e\nriqueza, mas ainda lutamos para dar a milhões de brasileiros a tranquilidade de\nviver com dignidade.\nEles tentaram nos convencer de que a exaustão era virtude. Que passar horas\nno transporte era o preço inevitável do progresso. Que o aluguel, a comida, a\nconta de luz e os remédios ficariam cada vez mais caros e isso seria normal. Mas\nao longo do tempo, foi crescendo algo que nenhuma estatística consegue medir:\no direito de imaginar uma vida melhor. O povo brasileiro aprendeu a lutar pelo\nseu destino, mas merece viver bem e isso significa muito mais do que apenas\nsobreviver. E é quando o desejo encontra a esperança que a história volta a se\nmover. Por isso, queremos um Brasil medido por aquilo que realmente\nimporta: pelo tempo que uma mãe conquista para estar com seus filhos, pela\ntranquilidade de quem tem segurança alimentar e moradia digna, pela\nconfiança de uma juventude que acredita que vale a pena construir seu futuro,\npela vida que a riqueza do país torna possível.\nO nosso compromisso é construir uma economia que funcione para quem\nvive do próprio trabalho. Uma economia que reduza o custo de viver bem,\naumente o salário mínimo acima da inflação, acabe com os privilégios dos\nsuper-ricos, fortaleça os serviços públicos, reindustrialize o país, invista em\nciência e tecnologia e transforme o crescimento econômico em bem-estar para\na maioria.\n\n06"
+          },
+          {
+            "id": "o-nosso-compromisso-e-com-o-combate-a-fome-e-a-reducao-das",
+            "titulo": "O nosso compromisso é com o combate à fome e a redução das",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "O nosso compromisso é com o combate à fome e a redução das\ndesigualdades, por meio dos programas de transferência de renda, assistência,\nprevidência social e tributação progressiva. Viver bem é garantir saúde com o\nfortalecimento do SUS, é investimento em educação pública, ciência e\nuniversidades. É garantir que os povos indígenas e comunidades tradicionais\ntenham direito ao territóro. É garantir a proteção dos ecossistemas, sua\nbiodiversidade e o acesso equilibrado aos bens comuns da natureza.\n\nA história não espera por quem chega atrasado. Em poucas décadas, a\ninteligência artificial, a robótica, a computação quântica, a biotecnologia, os data\ncenters, o processamento de dados e a transição energética estão reorganizando\na economia mundial. O futuro já começou. A pergunta é: qual será o lugar do\nBrasil nele?\nNenhum país verdadeiramente soberano pode depender da tecnologia\nproduzida por outros, entregar seus dados aos grandes oligopólios das\nplataformas digitais ou continuar exportando riquezas naturais para importar\nprodutos de alto valor agregado. A disputa internacional já não acontece apenas\npelos territórios, mas pelo conhecimento, pelos algoritmos, pelos minerais\nestratégicos, pela energia, pelos dados e pela capacidade de inovação.\nO Brasil reúne condições extraordinárias para ser protagonista de um novo\nciclo histórico. Somos uma potência ambiental, energética e científica.\nPossuímos uma das maiores biodiversidades do planeta, universidades e centros\nde pesquisa reconhecidos internacionalmente, um parque industrial que ainda\npode ser reconstruído e reservas estratégicas de minerais essenciais para a\neconomia do futuro, como as terras raras. Mas durante séculos exportamos\nriquezas naturais e importamos tecnologia pronta. Essa história não pode se\nrepetir com os minerais estratégicos, com a inteligência artificial nem com a\neconomia ligada à transição energética.\nDefendemos um Brasil com S capaz de fazer a gestão\nsoberana dos seus recursos naturais, produzindo\ntecnologias como patrimônios estratégicos para o povo\nbrasileiro, tendo como objetivos o bem comum e o\nequilíbrio ambiental. Da mesma forma, os dados\nproduzidos diariamente por milhões de brasileiros devem\nser tratados como patrimônio estratégico e não como\nmercadorias. Não podemos aceitar que a economia digital\nseja controlada por plataformas estrangeiras ou que nossos\ndados circulem sem a devida privacidade.\n\n07"
+          },
+          {
+            "id": "o-brasil-pode-ser-um-protagonista-mas-nao-pode-cair-nas-maos-de-falsos",
+            "titulo": "O Brasil pode ser um protagonista, mas não pode cair nas mãos de falsos",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "O Brasil pode ser um protagonista, mas não pode cair nas mãos de falsos\npatriotas. Na luta por soberania, é necessário enfrentar o rentismo interno e o\nimperialismo externo. E isso não se faz com neutralidade. Não há paz possível\ncom os inimigos da pátria que levantam a bandeira dos Estados Unidos no dia\nda independência do Brasil e que continuam de joelhos perante Trump\npedindo intervenção no Brasil para anistiar Bolsonaro e os golpistas.\nO nosso compromisso é com a defesa de uma política nacional de soberania\ndigital com a regulação democrática das plataformas digitais desenvolvendo\nparâmetros democráticos para o uso de dados e da inteligência artificial. Com a\nconstrução de um novo ciclo: reindustrializar o país com base na inovação,\nfortalecer as universidades públicas, retomar o controle pelo Estado de setores\nestratégicos (como energia, água, minerais), ampliar os investimentos em\nciência e tecnologia, apoiar empresas nacionais estratégicas, como a criação da\nTerrabrás, e fazer do Estado um indutor da transformação econômica. A\nreversão das privatizações é condição de soberania. Nenhum país que hoje\nlidera a economia mundial abriu mão do planejamento público em setores\nestratégicos. O Brasil também não pode. A transição ecológica é central para\nesse projeto, com ela é possível produzir energia limpa, proteger a Amazônia e\nos demais biomas e gerar empregos qualificados.\n\nO Brasil não é um país pobre. É um país desigual\nonde os privilégios custam caro demais para a\nmaioria do povo brasileiro. Enquanto milhões de\nfamílias fazem contas para comprar comida, pagar\no aluguel, usar transporte público ou abastecer o\ncarro, uma pequena parcela da sociedade continua\nprotegida por um sistema que socializa sacrifícios e\nconcentra benefícios, que é organizado para\nconcentrar riquezas e o poder.\nÉ essa lógica que encarece a vida de quem trabalha. Enquanto faltam recursos\npara reduzir o custo do transporte, universalizar as creches, fortalecer o SUS,\ninvestir em educação, cultura e ciência, nunca falta espaço para benefícios\ntributários e isenções fiscais para as maiores empresas do país, para lucros\nextraordinários dos grandes bancos ou para um mercado de apostas que\ntransforma o desespero de milhões em um negócio bilionário.\n\n08"
+          },
+          {
+            "id": "e-isso-que-gera-privilegio-toda-vez-que-a-trabalhadora-e-o-trabalhador-p",
+            "titulo": "É isso que gera privilégio toda vez que a trabalhadora e o trabalhador paga",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "É isso que gera privilégio toda vez que a trabalhadora e o trabalhador paga\nimposto quando entra no supermercado, enquanto quem vive de grandes\nfortunas consegue contribuir proporcionalmente menos. Privilégio é quando\numa professora financia o Estado toda vez que compra arroz, feijão ou gás de\ncozinha, mas os bancos anunciam juros e lucros bilionários ano após ano sem\nque isso se traduza em mais investimentos para o país. Privilégio é quando\nempresas de apostas transformam o endividamento e a esperança de milhões\nem um negócio extremamente lucrativo, enquanto comunidades inteiras\nconvivem com a falta de equipamentos públicos, esporte, cultura e\noportunidades para a juventude.\nEssa conta precisa mudar de endereço. A riqueza produzida pelo povo\nbrasileiro deve financiar direitos e a possibilidade de viver bem. Toda\ndemocracia precisa responder a uma pergunta simples: quem paga a conta do\ndesenvolvimento? Nós acreditamos que ela não pode continuar recaindo sobre\nquem acorda cedo para fazer este país funcionar.\nO nosso compromisso é com a coragem para defender a taxação dos BBBs:\nbilionários, bancos e bets, as plataformas de apostas. Defender uma tributação\nverdadeiramente progressiva, capaz de reduzir o peso dos impostos sobre o\nconsumo e financiar transporte público, educação, saúde, cultura, ciência e\npolíticas que ofereçam tempo, renda e tranquilidade às famílias brasileiras.\nO nosso compromisso é com a democratização da\ncomunicação e isso significa regulamentar as Big Techs e\nenfrentar a concentração de poder dos monopólios da\nmídia. Essa é a mesma coragem necessária para enfrentar\nos privilégios e a concentração de poder político, acabando\ncom o orçamento secreto, fortalecendo medidas de à corrupção e estímulo da\nparticipação popular: democracia direta e transparência na gestão pública são\nestratégicos. É preciso acabar com os privilégios de quem especula, a\nconcentração de poder do rentismo no Brasil. É nessa direção que o PSOL\ndefende o fim do arcabouço fiscal, e as regras limitadoras de investimentos\npúblicos.\n\nO povo brasileiro acorda antes do sol nascer e movimenta o país graças à\nenergia e ao suor de quem dirige o ônibus, amassa o pão, ensina, cuida, limpa,\nergue pontes e edifícios, faz a indústria produzir, faz entrega por meio de\naplicativo e abre o comércio. São milhões de trabalhadoras e trabalhadores\ndispostos a fazer qualquer sacrifício para fazer valer seu sonho de uma vida\nmelhor.\nO trabalho deve servir à vida digna. Não o contrário. Durante muito tempo\ndisseram à classe trabalhadora que trabalhar até a exaustão era sinônimo de\nmérito. Nós recusamos essa lógica.\n\n09"
+          },
+          {
+            "id": "o-progresso-so-faz-sentido-quando-melhora-a-vida-de-quem-produz-a-riquez",
+            "titulo": "O progresso só faz sentido quando melhora a vida de quem produz a riqueza",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "O progresso só faz sentido quando melhora a vida de quem produz a riqueza\ndo país. Nenhuma sociedade será verdadeiramente democrática enquanto\nmilhões de pessoas continuarem vivendo apenas para trabalhar e o salário não\nseja suficiente para pagar as contas no fim do mês.\nO tempo também é uma riqueza. E hoje ele é distribuído de maneira\nprofundamente desigual. A tecnologia deveria significar menos jornadas\nexaustivas e mais produtividade. No entanto, a inteligência artificial, os\naplicativos e as novas tecnologias correm o risco de ampliar os lucros sem\nrepartir seus benefícios com quem trabalha. Queremos fazer a escolha oposta. A\ntecnologia precisa libertar as pessoas, não abandona-las sem proteção. O\ncrescimento econômico precisa significar salários maiores, jornadas menores e\nmais tempo livre.\nPara as mulheres, especialmente as mulheres\nnegras e para todas as pessoas responsáveis pelo\ntrabalho doméstico e de cuidados, um dia de\ndescanso quase nunca significa descanso de verdade.\nQuando termina um trabalho, começa outra jornada:\npreparar a comida, limpar a casa, cuidar das crianças,\ndos idosos e de quem precisa de atenção. Um\ntrabalho indispensável para a sociedade, mas\nhistoricamente invisibilizado, desvalorizado e\ndistribuído de forma profundamente desigual.\nÉ por isso que defender o fim da escala 6×1 e a redução da jornada de trabalho\né muito mais do que uma pauta trabalhista. É defender o direito de viver.\nQueremos um país onde o trabalho permita construir uma família, estudar,\ndescansar, viver sua religiosidade, ouvir uma música que você gosta, dançar,\ncuidar da saúde, assistir uma série ou um jogo de futebol, brincar com as\ncrianças e estar com quem se ama. Um país que proteja os trabalhadores de\naplicativos, enfrente a precarização das relações de trabalho, fortaleça a\nnegociação coletiva e amplie direitos em vez de transformá-los em mercadoria.\nO nosso compromisso é com o fim da escala 6×1, a\nvalorização permanente dos salários acima da inflação, a\nproteção dos trabalhadores de aplicativos, a redução das\njornadas exaustivas e uma nova agenda nacional de\ndireitos para o trabalho do século XXI. Porque o Brasil\npertence a quem acorda cedo para fazê-lo acontecer. E\nquem trabalha merece tempo para viver. O nosso\ncompromisso é com trabalho digno, salário com\nvalorização real, igualdade salarial entre homens e\nmulheres, negros e brancos e com políticas de geração\nde emprego e valorização do trabalho doméstico e do\ncuidado.\n\n10"
+          },
+          {
+            "id": "somos-um-pais-com-grandes-reservas-de-agua-terras-ferteis-e-uma-exuberan",
+            "titulo": "Somos um país com grandes reservas de água, terras férteis e uma exuberante",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Somos um país com grandes reservas de água, terras férteis e uma exuberante\nbeleza natural. Nossas florestas e biodiversidade convivem há milhares de anos\ncom povos que resistem à exploração e ensinam formas de vida em equilíbrio\ncom a natureza. Da imensidão da Amazônia, da Mata Atlântica e do Cerrado, da\nCaatinga aos Pampas, existe um país de riqueza natural única, sustentado por\numa relação profunda entre seus povos e territórios. Isso é um patrimônio do\npovo brasileiro e das gerações que virão.\nAgora, esse equilíbrio está ameaçado. A emergência climática deixou de ser\numa previsão para se tornar parte do cotidiano. Não vamos esquecer que as\nenchentes destruíram vidas e cidades no Rio Grande do Sul, em Pernambuco,\nBahia e São Paulo, ao mesmo tempo que a seca vitimou povos amazônicos.\nNem dos desastres ambientais causados pela Vale e mineradoras.\nA crise climática bate à porta dos mais pobres e chega\nprimeiro às periferias alagadas, às cidades que enfrentam\nondas de calor cada vez mais intensas, às famílias que\nperdem suas casas nas enchentes, aos agricultores e\nribeirinhos atingidos pelas secas prolongadas e aos\ntrabalhadores que enfrentam temperaturas extremas para\ngarantir o sustento. Os primeiros a sentir os impactos dessa\ndestruição são aqueles que menos contribuíram para ela. Povos indígenas,\nquilombolas, comunidades tradicionais, trabalhadores do campo e populações\ndas periferias urbanas enfrentam o racismo socioambiental, a perda de\nterritórios, a ameaça aos seus modos de vida e os efeitos de uma crise que atinge\nde forma desigual quem historicamente protegeu e preservou a natureza. A\ninjustiça climática tem endereço e classe social. Por isso, enfrentar a crise\nclimática significa proteger a natureza e as pessoas. Justiça climática é justiça\nsocial.\nMas a raiz dessa crise é outra: não se trata de uma fatalidade da natureza, mas\ndo resultado das políticas econômicas que colocam o lucro acima da vida. O\nBrasil reúne todas as condições para liderar a transição ecológica mundial.\nPodemos produzir energia limpa, recuperar áreas degradadas, fortalecer a\nagricultura familiar, colocar comida na mesa barata e sem agrotóxicos, ampliar o\ntransporte público de baixa emissão e criar milhões de empregos de qualidade\nligados à transição ecológica.\nMas isso exige planejamento. Não existe transição verdadeira se ela for\nsubordinada ao mercado. Precisamos de um Estado capaz de coordenar\ninvestimentos, preparar nossas cidades para eventos climáticos extremos,\nproteger os biomas brasileiros e gerar empregos.\n\n11"
+          },
+          {
+            "id": "esse-e-um-debate-de-modelo-de-desenvolvimento-o-que-defendemos-e-uma",
+            "titulo": "Esse é um debate de modelo de desenvolvimento. O que defendemos é uma",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Esse é um debate de modelo de desenvolvimento. O que defendemos é uma\ntransição ecológica justa, que rompa com a lógica de exploração predatória, com\na dependência fóssil, proteja nossos biomas, respeite os povos indígenas e\ncomunidades tradicionais, fortaleça a produção de base agroecológica, garanta\ncidades preparadas para os eventos extremos cada vez mais frequentes e garanta\ntrabalho digno em uma economia comprometida com a vida e a preservação\nambiental.\nO nosso compromisso é com o desmatamento zero, com a defesa de um\nplano nacional de adaptação climática, com investimentos públicos destinados\nà prevenção de desastres, reflorestamento, recuperação dos biomas, transporte\nlimpo, energia renovável, articulando desenvolvimento econômico, geração de\nempregos e justiça climática. Porque não existe prosperidade possível em um\nplaneta em colapso. O compromisso de uma bancada do povo é dar voz à\nnecessidade da reforma agrária agroecológica, do direito à cidade, da defesa\nda terra, do teto, do trabalho e da comida na mesa para quem constrói o país\ncom as próprias mãos.\n\nNenhuma mãe cria um filho para enterrá-lo. Cada vida carrega uma história,\nafetos, uma parte da sua comunidade e possibilidades de futuro. Mas ainda\nvivemos em um país onde algumas vidas são tratadas como se valessem menos:\njovens negros e pobres das periferias estão entre as principais vítimas da\nviolência, mulheres são assassinadas por serem mulheres e pessoas\nLGBTQIAPN+ enfrentam diariamente a violência motivada pelo ódio e pela\nintolerância. Nenhuma família deveria aprender a conviver com o feminicídio,\no racismo e a LGBTfobia como se isso fosse parte da rotina.\nNo entanto, milhões de brasileiros vivem entre o receio da\nviolência e a falsa promessa de que mais armas e mais ódio\nresolverão o problema da violência, que é justamente\nconsequência de escolhas políticas erradas. Por isso, é preciso\nter firmeza para dizer que a crise da segurança pública\nbrasileira não será enfrentada com falsas soluções. Mais armas,\nencarceramento em massa ou redução da maioridade penal\nnão produzem mais segurança. Pelo contrário: aprofundam\num modelo que criminaliza a pobreza, fortalece ciclos de violência e\ntransforma territórios negros e populares em espaços permanentes de conflito.\nEssa lógica produziu mais mortes, fortaleceu organizações criminosas,\naprofundou o encarceramento em massa e deixou as periferias presas entre o\ncrime organizado e a violência estatal. Quem mais morre continua sendo o\npovo pobre, a juventude negra, as mulheres vítimas de feminicídio e as\ncomunidades abandonadas pelo poder público.\n\n12"
+          },
+          {
+            "id": "nos-recusamos-essa-falsa-escolha-entre-autoritarismo-e-abandono-a-segura",
+            "titulo": "Nós recusamos essa falsa escolha entre autoritarismo e abandono. A segurança",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Nós recusamos essa falsa escolha entre autoritarismo e abandono. A segurança\npública que defendemos coloca a defesa da vida no centro da política. Isso\nsignifica enfrentar o crime organizado com inteligência, investigação,\ncooperação e capacidade do Estado de atingir suas estruturas de poder e\nfinanciamento. O Brasil precisa superar uma política que concentra sua força\nsobre as populações mais vulneráveis e avançar para um modelo capaz de\ndesarticular redes criminosas onde mais importa: nas suas fontes de recursos e\nnas redes que permitem sua expansão e influência.\nÉ investigação qualificada para combater o crime organizado e as milícias. É\nintegração entre as polícias e valorização dos profissionais da segurança. É\neducação, cultura, esporte e oportunidades para a juventude antes que o crime\norganize o território. É uma política nacional de enfrentamento ao feminicídio,\nprotegendo mulheres antes que a violência se torne irreversível. Quem governa\npelo medo transforma a violência em instrumento político. Quem governa para\no povo protege a vida.\nO crime organizado não tem seus centros de poder localizados nas periferias.\nEle se estrutura a partir de economias ilegais que movimentam recursos, se\nalimentam de redes de lavagem de dinheiro, corrupção e relações de poder que\natravessam diferentes setores da sociedade, principalmente as elites. Enquanto\ncomunidades negras e populares sofrem com operações violentas e mortes em\nmassa, estruturas criminosas ampliam sua atuação, disputam mercados e\nbuscam espaços dentro das instituições.\nA política de guerra às drogas, mantida há décadas, não trouxe segurança. Ao\ncontrário, produziu encarceramento em massa, fortaleceu organizações\ncriminosas e atingiu principalmente a juventude negra e as populações\nperiféricas, sem enfrentar as economias ilegais que sustentam o crime\norganizado. A questão das drogas precisa ser tratada como um tema de saúde\npública, com políticas de prevenção, cuidado, tratamento e redução de danos,\nsubstituindo uma lógica de punição e abandono por uma política pública capaz\nde proteger vidas e enfrentar os impactos sociais relacionados ao uso\nproblemático de substâncias.\nA classificação de organizações criminosas brasileiras como “narcoterroristas”,\ndefendida pela extrema direita trumpista, não contribui para enfrentar o\nproblema e ainda ameaça a soberania brasileira ao abrir caminho para\nintervenções e soluções impostas de fora. O combate ao crime organizado deve\nser conduzido pelo Estado brasileiro, com inteligência, responsabilidade e\ncompromisso com a proteção da vida.\nO Brasil também vive uma epidemia de violência contra as mulheres. O\nfeminicídio é a expressão mais brutal de uma sociedade marcada pelo\nmachismo, pelo patriarcado e pela tentativa de controlar os corpos, as escolhas e\nas vidas das mulheres.\n\n13"
+          },
+          {
+            "id": "mulheres-continuam-sendo-assassinadas-por-serem-mulheres-muitas-vezes",
+            "titulo": "Mulheres continuam sendo assassinadas por serem mulheres, muitas vezes",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Mulheres continuam sendo assassinadas por serem mulheres, muitas vezes\ndentro de suas próprias casas e por pessoas com quem mantinham relações de\nafeto. Cada feminicídio é uma vida interrompida e uma denúncia da falha do\nEstado em garantir proteção, autonomia e segurança.\nO avanço da cultura de ódio, do autoritarismo e da desvalorização dos direitos\nhumanos fortalecida pelo bolsonarismo agravou um ambiente de tolerância à\nviolência de gênero e à discriminação. Enfrentar os feminicídios exige\nfortalecer a rede pública de proteção, ampliar serviços especializados, garantir\nmedidas protetivas, promover políticas de prevenção e construir uma sociedade\nbaseada na igualdade.\nA violência contra a população LGBTQIAPN+ também revela os limites de\numa sociedade que ainda convive com a intolerância e a exclusão. Os crimes de\nódio e assassinatos seguem acometendo a vida de pessoas da comunidade, em\nespecial das pessoas trans. Embora avanços importantes tenham sido\nconquistados, como o casamento e o nome social, o Brasil ainda possui poucos\ndireitos LGBTQIAPN+ assegurados em lei, e a criminalização de condutas\ndiscriminatórias, embora necessária, não é suficiente para proteger pessoas\nvulnerabilizadas. Pessoas LGBTQIAPN+ seguem sendo expulsas das casas de\nsuas famílias, seguem sendo o foco do pânico moral alastrado pela extrema\ndireita. A garantia de uma vida segura exige políticas públicas permanentes,\neducação para a diversidade e contra o bullying, moradia, assistência e políticas\nde saúde para todas as pessoas, combate à discriminação e um Estado\ncomprometido com a dignidade de todas as pessoas.\nO nosso compromisso é com uma política nacional de\nsegurança baseada em inteligência, investigação, prevenção\ne coordenação entre União, estados e municípios, voltada ao\ncombate às milícias e ao crime organizado; políticas\npermanentes de enfrentamento ao ao feminicídio e à\nviolência contra mulheres; valorização dos profissionais da\nsegurança pública; controle rigoroso das armas e\ninvestimentos sociais capazes de valorizar os territórios por\nmeio de quem vive neles. Porque nenhuma democracia será completa\nenquanto o medo continuar determinando quem pode viver, circular e sonhar.\n\nAs cidades de hoje roubam horas do nosso tempo no trânsito. Roubam o\nconvívio entre pais e filhos. Roubam o descanso de quem atravessa a cidade\npara trabalhar. Roubam o direito de caminhar com segurança, respirar um ar\nmais limpo, brincar em uma praça ou simplesmente encontrar os amigos sem\nque isso custe uma parte enorme do orçamento familiar.\n\n1"
+          },
+          {
+            "id": "o-brasil-e-feito-justamente-no-chao-das-cidades-onde-se-produzem-encontr",
+            "titulo": "O Brasil é feito justamente no chão das cidades, onde se produzem encontros,",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "O Brasil é feito justamente no chão das cidades, onde se produzem encontros,\nmemórias, trabalho, cultura e sonhos. Mas para milhões de brasileiras e\nbrasileiros, viver a cidade ainda é uma experiência marcada pela desigualdade.\nO bairro onde se mora, a renda que se tem e o preço da passagem definem\nquanto tempo sobra para viver, conviver participar da vida urbana.\nPor isso, a mobilidade não é apenas uma questão de deslocamento: é uma\ncondição para exercer direitos. Quando trabalhadores e trabalhadoras passam\nhoras no transporte público, quando jovens deixam de acessar oportunidades,\nquando famílias precisam escolher entre pagar a passagem ou outras\nnecessidades básicas, a própria cidade se torna mais desigual. Há décadas, o\ntransporte coletivo é submetido à lógica do lucro, transformando um direito\nessencial em mercadoria.\nA cidade não pode continuar sendo organizada para\nos carros, para a especulação imobiliária ou para\nquem transforma o solo urbano em mercadoria. Ela\nprecisa voltar a ser organizada para as pessoas. O\ndireito à cidade significa morar perto das\noportunidades, acessar cultura, lazer, educação e\nsaúde, deslocar-se rapidamente e ocupar os espaços\npúblicos como lugares de convivência e\ndemocracia.\nNenhuma família deveria escolher entre pagar a passagem ou comprar\ncomida. Por isso, a tarifa zero é muito mais do que uma política de transporte. É\numa política para viver bem. Uma cidade onde as pessoas circulam sem\nbarreiras econômicas é uma cidade onde o trabalho, o estudo, a cultura e a\ncidadania deixam de depender da renda.\nO direito à cidade também exige enfrentar a crise da moradia, recuperar os\ncentros urbanos para quem vive neles, ampliar áreas verdes, fortalecer os\nequipamentos públicos de bairro e colocar o planejamento urbano acima da\nespeculação imobiliária. As cidades brasileiras precisam voltar a ser lugares onde\nvale a pena viver.\nNosso compromisso é com a defesa da tarifa zero no\ntransporte coletivo, um grande programa nacional de\nmoradia digna e requalificação dos centros urbanos,\nque controle o preço dos aluguéis e garanta\ninvestimentos em mobilidade sustentável, parques e\náreas verdes, equipamentos públicos de bairro e\nplanejamento urbano voltado para reduzir o tempo\nde deslocamento e ampliar a qualidade de vida.\nPorque a cidade não pertence aos mapas nem ao\nmercado. Pertence às pessoas que todos os dias lhe\ndão vida.\n\n1"
+          },
+          {
+            "id": "apresentamos-a-sociedade-sergipana-um-projeto-de-transformacao-estrutura",
+            "titulo": "Apresentamos à sociedade sergipana um projeto de transformação estrutural,",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Apresentamos à sociedade sergipana um projeto de transformação estrutural,\npautado na justiça social, na eficiência pública e na dignidade humana. Este\ndocumento sintetiza 50 propostas fundamentais para retirar Sergipe da\nestagnação e construir um estado que cuida, de fato, de quem vive, trabalha e\nsonha aqui.\n\nEIXO 1: DESENVOLVIMENTO\nECONÔMICO, EMPREGO E RENDA\nNos últimos anos em Sergipe a lógica de crescimento econômico é sinônimo\nde prosperidade que deve ser instituído a qualquer custo. O resultado, como\ndemonstra a história, é o aumento da concentração de renda, da riqueza e do\npoder político e a permanência de um desemprego estrutural.\nO PSOL defende o conceito de desenvolvimento econômico sustentável e\nnão apenas crescimento, uma vez que as atividades econômicas devem levar em\nconta a sustentabilidade ambiental, a qualidade de vida e o incremento de\niniciativas tecnológicas voltadas para a melhoria das condições de trabalho e de\nvida.\nEm termos macroeconômicos, Sergipe, assim como os demais estados da\nFederação, tem um baixo grau de resolução a nível local, historicamente\ndependendo de iniciativas no âmbito federal para o seu desenvolvimento.\nApesar dessa realidade, é plenamente possível tomar iniciativas voltadas para o\nfortalecimento da economia pública segundo uma lógica inclusiva e equânime,\nvisando os que mais necessitam e os trabalhadores.\nA promoção de uma redistribuição espacial da riqueza favorece uma melhor\ndistribuição da própria população, muito concentrada na região metropolitana,\no que permitiria um melhor enfrentamento da poluição e das graves\ndificuldades com o transporte urbano típicos das grandes cidades e capitais.\nA negação da responsabilidade de governar é visivelmente crescente em\nSergipe, nos últimos 10 anos, promoveram uma total ausência de planejamento\nde políticas públicas que interviessem na realidade do nosso povo. Uma\nverdadeira farra de privatizações para empresas que comumente pagam baixos\nsalários, desrespeitam os direitos trabalhistas e agridem o meio ambiente\nNós do PSOL ressaltamos a importância dos povos\nQuilombolas, dos povos originários e das comunidades\ntradicionais para o desenvolvimento do nosso Estado.\n\n1"
+          },
+          {
+            "id": "eixo-1-desenvolvimento-economico-emprego-e-renda",
+            "titulo": "EIXO 1: DESENVOLVIMENTO ECONÔMICO, EMPREGO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1: DESENVOLVIMENTO ECONÔMICO, EMPREGO E RENDA\nA agricultura familiar, extrativismo vegetal, a pesca, o artesanato, são essenciais\npara geração emprego e renda e abastecimento do nosso mercado interno, além\nserem traços de nossa cultura e de nossa ancestralidade. No nosso governo\ncombateremos o trabalho semiescravo, o desrespeito à legislação trabalhista e o\ndesmatamento, o uso de agrotóxico e a poluição dos nossos rios.\n\nPlano de Obras Públicas e Geração de Emprego:\nCriar programa estadual de obras públicas que integre moradia popular,\ninfraestrutura urbana e equipamentos comunitários, gerando milhares\nde empregos diretos e movimentando a economia local nos 75\nmunicípios de Sergipe. Obras que o povo precisa, feitas por mão de obra\nsergipana.\n\nSergipe Mais Renda:\nInstituir programa estadual de renda mínima que complemente o Bolsa\nFamília para famílias com crianças pequenas e mulheres chefes de\nfamília monoparental. Nenhum sergipano deve viver com menos da\nmetade do salário mínimo enquanto o Estado arrecada bilhões.\n\nRestaurantes Populares e Lavanderias Comunitárias:\nConstruir restaurantes populares em todos os municípios com mais de\n50 mil habitantes e lavanderias comunitárias públicas nas periferias,\nreduzindo o custo de vida da classe trabalhadora e aliviando a dupla e\ntripla jornada de trabalho doméstico das mulheres.\n\nCrédito para Quem Produz:\nCriar linhas de crédito especiais pelo Desenvolve-SE para micro e\npequenos negócios, com taxas reduzidas e carência estendida,\npriorizando empreendimentos liderados por mulheres, pessoas negras,\njovens e iniciativas de economia solidária.\n\nSergipe Digital-Inclusão e Tecnologia\nLevar internet banda larga gratuita a todas as escolas públicas, praças e\ncentros comunitários do estado, e criar polos de tecnologia nas periferias\ncom incubadoras de startups, priorizando jovens negros e de\ncomunidades periféricas.\n\n17"
+          },
+          {
+            "id": "eixo-1-desenvolvimento-economico-emprego-e-renda-2",
+            "titulo": "EIXO 1: DESENVOLVIMENTO ECONÔMICO, EMPREGO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1: DESENVOLVIMENTO ECONÔMICO, EMPREGO E RENDA\n\nConcurso Público e Valorização do Servidor:\nRealizar concursos públicos em todas as áreas essenciais — saúde,\neducação, segurança e assistência social —, recompor as perdas salariais\ndos servidores, garantir planos de carreira dignos e substituir\ncontratações temporárias por vínculos efetivos. Servidor valorizado é\nserviço público de qualidade.\n\nEconomia Solidária e Cooperativismo:\nFortalecer cooperativas de produção, artesanato, catadores de recicláveis\ne agricultura familiar por meio de assessoria técnica, espaços públicos de\ncomercialização e compras governamentais, gerando trabalho e renda\npara quem está fora do mercado formal.\nPromover a reforma agrária numa perspectiva antilatifundiária e\nantimonocultura, orientada à produção de alimentos de base\nagroecológica para o mercado interno, com uso de sementes crioulas,\npreservação ambiental e promoção da saúde e da autonomia dos povos\ndo campo e das populações tradicionais.\n\nRedução da Jornada no Serviço Público:\nImplementar jornada de 30 horas semanais para servidores estaduais,\nsem redução salarial, como forma de gerar mais empregos públicos,\nmelhorar a qualidade de vida de quem serve e ampliar o atendimento à\npopulação.\n\nPesca Artesanal:\nValorizar a pesca artesanal e as comunidades pesqueiras em todo o\nestado, oferecendo tecnologia e incentivando a formação de\ncooperativas.\n\nReestatização da DESO:\nReestatizar a Companhia de Saneamento de Sergipe (Deso), garantindo\no acesso universal e de qualidade à água e ao esgotamento sanitário\ncomo direito da população sergipana.\n\n18"
+          },
+          {
+            "id": "eixo-2-educacao",
+            "titulo": "EIXO 2: EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2: EDUCAÇÃO\nOs professores e demais profissionais da área educacional, tanto do ensino\nprivado como da rede pública, enfrentam cotidianamente um processo de\nprecarização e sucateamento da educação, além de abusos das instâncias\ngovernamentais, que vão desde o desvio de função até a retaliação por\nparticipação nos seus movimentos reivindicatórios.\nO estado de Sergipe continua sem assegurar a atualização anual do valor\nnominal do piso salarial nacional dos profissionais do magistério público, como\nvencimento inicial do nível médio, cumprindo os índices de escalonamentos\ndos níveis e classe da carreira, sem perdas dos direitos assegurados no estatuto e\nno plano de carreira do magistério público.\nImportante ressaltar que o déficit de investimentos na infraestrutura e na\nconservação dos prédios escolares em nosso Estado, não assegura condições\ndignas para o trabalho docente dificultando o processo de ensinoaprendizagem.\nEste quadro se agrava quando as escolas não possuem internet banda larga nas\nescolas e o transporte escolar não atendem as exigências de segurança do código\nnacional de trânsito representando risco à segurança dos estudantes.\nEm análise realizada pelo SINTESE no ano de 2025, identificou que\nalimentação escolar foi servida regularmente, mas não houve cumprimento do\ncardápio e em atendimento às diretrizes nacionais; avaliou que o conselho de\nalimentação escolar (CAE) não funciona regularmente, não havendo garantia de\nacesso às escolas públicas do acompanhamento do processo licitatório e do\nrecebimento prévio dos documentos fiscais e contábeis da prestação de contas;\nsem publicação da prestação de contas da alimentação escolar; e o mais grave,\nnão cumpre as normas do FNDE e da vigilância sanitária para o\narmazenamento e a manipulação dos alimentos, além de apenas algumas\nescolas do sistema público de ensino possuírem refeitório para os alunos.\nNo governo do Psol implementaremos de forma efetiva\na Gestão Democrática nas escolas públicas, respeitando as\ncompetências do conselho de educação, ampliando a\nparticipação do controle social, com o efetiva a\nparticipação do sindicato, discentes e seus responsáveis\nnas políticas públicas na educação.\nEm Sergipe as aposentadas e aposentados, infelizmente, não têm nada a\ncomemorar. O confisco dos 14% começou em abril de 2022, quando o então\ngovernador Belivaldo Chagas, consegui aprovar na Assembleia Legislativa de\nSergipe sua cruel reforma da previdência. Seguiu até junho 2024 e só parou\ndevido a luta e a pressão que as professoras aposentadas fizeram, com atos e\nmobilização em todo o estado.\n\n19"
+          },
+          {
+            "id": "eixo-2-educacao-2",
+            "titulo": "EIXO 2: EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2: EDUCAÇÃO\nDesde 2024 as aposentadas cobram do Governo de Sergipe, aquilo que lhes foi\nretirado de forma indevida. Inclusive o próprio Supremo Tribunal Federal tem\no entendimento de que o confisco dos 14% foi inconstitucional.\nSerá compromisso de nosso governo, a devolução imediata do foi confiscado\nindevidamente dos professores e professoras aposentadas, e retomada da\ncarreira do magistério estadual.\nNão satisfeito em fechar a negociação de forma unilateral e, após um ano de\naudiências, não cumprir com sua palavra de apresentar proposta às pautas das\nprofessoras e professores da Rede Estadual. O Governo do Estado não cumpre\ncom o mínimo de investimento na educação determinado por Lei.\nÉ imperativo apurar a subexecução orçamentária e a aplicação indevida dos\nrecursos vinculados à educação pelo Governo do Estado de Sergipe durante a\ngestão de Fábio Mitidieri. Os elevados montantes que deixaram de ser investidos\nna educação pública sergipana exigem uma investigação rigorosa por parte dos\nórgãos de controle. As autoridades competentes precisam exigir explicações e\nresponsabilizar os gestores pelo descumprimento da vinculação constitucional.É\ndever do Estado garantir o cumprimento integral da legislação e a destinação\nimediata desses recursos ao seu fim precípuo: a valorização e o fortalecimento\nda educação pública em Sergipe.\nUrge a construção de outro modelo de Educação e Universidade que se\nrelacione com o cotidiano da população, pois, além do fortalecimento do setor\nprivado no ensino básico e superior como política dos governos, percebe-se\nclaramente que os currículos, modelos pedagógicos, produção de ciência e\ntecnologia e a extensão universitária estão pautados pelos interesses dos lucros\ndo empresariado e da manutenção de privilégios. O resultado é uma educação\ntratada como mercadoria voltada para atender as demandas do mercado e não\ndos interesses do povo.\n\nAlfabetização na Idade Certa:\nInclusão e Tecnologia Levar internet banda larga gratuita a todas as\nescolas públicas, praças e centros comunitários do estado, e criar polos de\ntecnologia nas periferias com incubadoras de startups, priorizando\njovens negros e de comunidades periféricas.\n\nEscola em Tempo Integral com Qualidade:\n\nAmpliar progressivamente a rede de escolas de tempo integral, com\ninfraestrutura adequada — laboratórios, quadras esportivas, bibliotecas,\nsalas climatizadas, alimentação de qualidade. Não adianta ampliar o\ntempo sem melhorar o espaço e o conteúdo.\n\n2"
+          },
+          {
+            "id": "eixo-2-educacao-3",
+            "titulo": "EIXO 2: EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2: EDUCAÇÃO\n\nValorização dos Professores:\nA devolução imediata do foi confiscado indevidamente dos professores\ne professoras aposentadas, e retomada da carreira do magistério\nestadual, conforme decisão do STF. Pagamento do piso salarial\nnacional sem atrasos, garantir plano de carreira atrativo e criar\nprogramas de formação continuada gratuita para todos os docentes e\nprofissionais da educação da rede estadual.\nConcurso Público de Verdade, com a convocação de todos aprovados\ndo concurso em vigência, incluindo aqueles que estão no cadastro de\nreserva, para suprir déficit no quadro do magistério em Sergipe.\nAvaliação da possibilidade de ampliar o cadastro de reserva.\n\nEducação Inclusiva de Verdade:\nEstruturar a rede para atender estudantes com deficiência com\nprofissionais concursados (Apoio I e II, intérpretes de Libras), salas de\nrecursos multifuncionais em todas as escolas, transporte adaptado,\nmateriais pedagógicos específicos e formação continuada para toda a\ncomunidade escolar.\nImplantaremos a educação inclusiva de crianças neurodivergentes em\nSergipe,uma escola pública acolhedora, acessível e adaptada à\ndiversidade, com diagnóstico precoce, formação continuada de\nprofessores, contratação de profissionais de apoio, criação de Salas de\nAcolhimento Sensorial e Planos de Desenvolvimento Individual em\ntodas as unidades escolares, além de apoio às famílias, combate ao\ncapacitismo e garantia de financiamento público adequado,\nassegurando o direito de aprender, conviver e se desenvolver com\ndignidade.\n\nUniversidade Estadual de Sergipe:\nCriar a Universidade Estadual de Sergipe, com campus em Aracaju e\npolos no interior, voltada para as demandas do desenvolvimento\nsergipano, com reserva de vagas para negros, indígenas, quilombolas e\nestudantes de escolas públicas.\nImplementar Cursinhos Populares e Acesso ao Ensino Superior,\nampliando parcerias com universidades e apoiar cursinhos prévestibulares populares em todas as regiões do estado, com bolsas de\nestudo, material didático e preparação para o ENEM, garantindo que\njovens de baixa renda tenham as mesmas oportunidades de ingressar\nno ensino superior.\n\n21"
+          },
+          {
+            "id": "eixo-2-educacao-4",
+            "titulo": "EIXO 2: EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2: EDUCAÇÃO\n\nEducação do Campo, Quilombola e Indígena:\nReabrir e manter escolas no campo, com currículos específicos que\nvalorizem a cultura, o trabalho e o modo de vida das comunidades\nrurais, quilombolas, ribeirinhas e indígenas. Educação que respeita a\nhistória e o território de cada comunidade.\n\n2"
+          },
+          {
+            "id": "eixo-3-saude-publica",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nA SAÚDE NÃO É MERCADORIA: HOSPITAIS\nCOM FUNCIONAMENTO DA INTEGRA EM\nTODO ESTADO DE SERGIPE\nDurante os últimos 10 anos de gestão do governo do Estado de Sergipe foram\npriorizadas a concentração dos equipamentos de saúde na região\nmetropolitana, o financiamento público privado, as parcerias com as\nFundações e OSS’s, A terceirização que vem ocorrendo no serviço público de\nsaúde, indica a renúncia do Estado à sua responsabilidade social e, ao mesmo\ntempo, revela a relações público-privado, com a transferência de altas somas\nde recursos públicos para instituições privadas, sem qualquer avaliação,\nplanejamento, supervisão ou controle de como esse recurso é utilizado e de\nquais serviços e por quem e em quais condições estão sendo prestados. Ou\nseja, as terceirizações não provam ser a melhor opção, pois não há estudos\nsobre a situação nem antes nem depois da contratação das OSs; não há\ncontrole nem avaliação dos contratos e dos serviços; não há participação dos\nconselhos de saúde ou, quando há, são desconsiderados; não há critérios\nobjetivos para a classificação das entidades como organizações sociais; e não há\ncontrole financeiro no repasse de recursos, o que é agravado pelo fato de a\nlegislação definir que as OSs não precisam fazer licitação para contratar pessoal\nou para a compra de bens.\n\nCONCURSO PUBLICO DE VERDADE E RESPEITO\nA TODOS OS DIREITOS TRABALHISTAS\nConseguinte, nessas Terceirizações existe um processo\nde generalização da precarização do trabalho, associado à\ndiminuição do número de funcionários públicos com a\nsua substituição crescente por funcionários terceirizados\ne não estatutários; à subordinação dos funcionários\npúblicos que ainda permanecem à gestão privada, como\né o caso das Fundações, submetidos a piores condições\nde trabalho; e o crescente número de trabalhadores\nterceirizados com contratos precários, e, mesmo quando\nceletistas, sem vínculo permanente ou tendo seus direitos sistematicamente\ndesrespeitados. Dessa maneira, funcionários públicos estatutários, celetistas,\ntemporários são todos atingidos pela precarização, mesmo que de forma\nhierarquizada.\n\n2"
+          },
+          {
+            "id": "eixo-3-saude-publica-2",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\n\nA redução do efetivo de funcionários públicos estatutários, a quebra de\ndireitos, a exemplo das reformas da previdência, a desvalorização salarial, a\ndesqualificação e desmoralização da sua função e a sua submissão a formas de\ngestão privadas, somadas ao processo de terceirização constituem a força\nmaior de uma ofensiva que tem por objetivo a extinção desse segmento de\ntrabalhadores, pois a sua existência — enquanto força de trabalho vivo — é a\núnica garantia para se manter algum caráter público de bens necessários à\nreprodução social dos trabalhadores em geral, como saúde. Ao final, os\nmaiores acometidos com essa transferência de responsabilidade e ausência de\ngestão, são os trabalhadores da saúde, submetidos a contratos precários, sem\ngarantias de férias, 13º, licença-maternidade ou estabilidade, e, SOBRETUDO,\na POPULAÇÃO SERGIPANA, que sofre com rotatividade de profissionais,\ndescontinuidade nos serviços e um atendimento, cada vez mais fragilizado.\n\nATENÇÃO PRIMÁRIA DEVE TER PARCERIA\nDO GOVERNO DO ESTADO\nSabemos ainda, que a Atenção Primária tem o\npotencial de prevenir 80% de agravos em saúde\nnuma população, evitando inclusive gastos\nexorbitantes com a Média e Alta Complexidade,\nesta que envolve grandes centros hospitalares,\ncom maior necessidade de recursos, de maior\naporte tecnológico e financeiro.\nSe historicamente vivemos o desmonte do SUS desde seu surgimento, a\nAtenção Básica segue em detrimento do modelo hospitalocêntrico, que gera\nmais lucros, e que foi intensificado na pandemia, com abertura de centenas\nde leitos de enfermaria e UTIs, sem aproveitamento da Atenção Básica.\nInclusive, a própria Organização Mundial de Saúde orienta no sentido de\nhaver mais investimento em unidades de saúde não hospitalares.\nHoje, com a mudança do estilo de vida e perfil endêmico da população,\npercebe-se um fenômeno mundial de doenças crônicas sendo a principal\ncausa de procura por atendimento hospitalar. Ou seja, é justamente a falta de\nprevenção que tem drenado os recursos da saúde e a melhor forma de mudar\nessa situação é dando a devida atenção para a Atenção Primária à Saúde.\nPorém, apesar disso, nada é feito para otimizar os gastos com saúde.\n\n2"
+          },
+          {
+            "id": "eixo-3-saude-publica-3",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nVACINAS SALVAM VIDAS\nOutro aspecto importante que merece destaque é a queda da\ncobertura vacinal em todo o país. Desde 2016, os pais estão\nlevando cada vez menos suas crianças para fazer as vacinas de\nrotina. A Organização Mundial de Saúde e o Programa\nEstadual de Imunização consideram 4 vacinas como\nindicadores para cobertura vacinal, a Pentavalente, a\nPneumocócica, a Tríplice Viral e a Poliomielite.\nEm todas elas há uma constante queda nas taxas de vacinação no Estado de\nSergipe. Nesses últimos dois anos, ficou muito nítido para todos a importância\nde corrigir esse problema. O Brasil já foi referência mundial nesse aspecto, e\nchegamos ao ponto de reviver um surto de sarampo, doença considerada\nerradicada.\n\nRESPEITO A SAÚDE MENTAL\nA Rede de Atenção Psicossocial (RAPS) também foi uma conquista das mais\nrecentes em saúde, estabelecida como política pública nacional apenas em\n2011. Apesar de Sergipe ter sido vanguarda no campo da saúde mental, em\numa perspectiva antimanicomial, o que vemos hoje é um cenário de\ncrescente precarização da Rede. A má qualidade da infraestrutura dos\nserviços, com destaque para o sucateamento dos Centros de Atenção\nPsicossocial (CAPS), assim como a insuficiência da quantidade de\nprofissionais e de condições dignas de trabalho tem sido a realidade cotidiana\nem nosso Estado, principalmente diante do processo de intensificação do\nsofrimento e adoecimento psíquicos pós pandemia. A ineficiência se estende\nhá um único hospital de referência em urgência psiquiatria no Estado com\nnúmero reduzido de profissionais, com alas superlotadas, infraestrutura\nprecárias, além contratos precários de profissionais e constastes atrasos\nsalarias.\n\nMÃES ATIPICAS, CRIANÇAS E\nADULTOS NEURODIVERGENTES\nO Ministério da Saúde anunciou a inclusão da atenção a\npessoas com Transtorno do Espectro Autista (TEA) na\nPolítica Nacional de Saúde da Pessoa com Deficiência\n(PNSPD). A partir da medida, haverá aporte de 20% nos\nrecursos mensais dos Centros Especializados em\nReabilitação (CER) que atendem modalidades intelectuais,\nincluindo o TEA.\n\n2"
+          },
+          {
+            "id": "eixo-3-saude-publica-4",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nEm Sergipe existe uma rede subdimensionada com profissionais sem a\nformação e treinamentos necessários para cuidar da saúde da pessoa com\ndeficiência. Nas grades de formação dos profissionais, há muito pouco contato\ncom a questão da deficiência, com a pessoa com deficiência, com as\nespecificidades de saúde da pessoa com deficiência.\nEsse tratamento no SUS deve ser multiprofissional. Inicialmente, pacientes\ncom suspeita de TEA devem ser atendidos na Unidade Básica de Saúde (UBS)\nda região em que residem. Após avaliação da equipe de Atenção Primária, se\nnecessário, os casos são direcionados para a Atenção Especializada em\nReabilitação.\nNessa fase, são identificadas as necessidades e potencialidades de cada\npaciente, levando em consideração, inclusive, contextos de vida e familiar. A\npartir dessas informações é definido um Projeto Terapêutico Singular (PTS)\nque vai determinar o planejamento da reabilitação, os objetivos terapêuticos e\nindicar o uso de recursos e metodologias mais apropriados.\nA análise da efetivação dos direitos fundamentais de crianças e adolescentes\nneurodivergentes no Brasil evidencia um cenário ambíguo: por um lado, o\npaís possui um arcabouço legal relativamente avançado, com leis e políticas\nque reconhecem o direito à inclusão, à acessibilidade e ao atendimento\nespecializado; por outro, verifica-se uma lacuna significativa entre a legislação\ne sua implementação prática, especialmente nas esferas locais.\nOs dados e estudos analisados demonstram que as barreiras enfrentadas por\nesse grupo vão além da infraestrutura física das instituições. Desigualdades\nregionais, ausência de políticas públicas consistentes, despreparo das equipes\npedagógicas, escassez de recursos humanos e materiais, bem como barreiras\natitudinais, ainda comprometem de forma profunda a garantia da equidade\nno acesso à educação, saúde e convivência social.\nDiante disso, neste cenário o Estado de Sergipe deve ser ativo e propositivo\nnas para implementação de políticas, articulado e comprometido com a\ninclusão, capaz de garantir às crianças e adolescentes neurodivergentes não\napenas o acesso, mas também a permanência e o sucesso em ambientes\ninclusivos e acessíveis. Nós do PSOL defendemos que as políticas públicas\nsejam monitoradas com base em dados concretos e alinhadas às demandas\nreais dessa população, com participação efetiva dos sujeitos neurodivergentes e\nde suas famílias na construção dessas políticas com a promoção da\nneurodiversidade como valor social demanda, portanto, uma profunda\ntransformação nas práticas institucionais e culturais, alicerçada no respeito à\ndignidade humana e na construção de uma sociedade verdadeiramente\ninclusiva.\n\n2"
+          },
+          {
+            "id": "eixo-3-saude-publica-5",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nSAÚDE DO IDOSO\nSergipe envelhece. Segundo o IBGE, 16,8% da população\nsergipana terá mais de 60 anos em 2026. No entanto, a rede\npública estadual ainda opera sob lógica hospitalocêntrica,\nfragmentada e insuficiente para responder às demandas\ncrônicas, de reabilitação e de cuidado integral dessa população. A\nsubexecução orçamentária na saúde e a ausência de uma política\nestadual estruturada aprofundam as desigualdades de acesso.\n\nAtenção Primária Fortalecida e Sem Terceirização:\nO Governo do Estado fará parcerias com Municípios, para investir e\nampliar maciçamente nas equipes de Saúde da Família, com efetiva\nimplementação do piso Nacional e do plano de carreira dos\nprofissionais de saúde, para que a atenção primária tenha equipes\nmultiprofissionais completas e horário estendido de funcionamento.\nColaborar na promoção políticas públicas que garantam o acesso e\npromoção dos direitos da saúde da mulher, das juventudes, da\npopulação do campo, população em situação de rua, quilombolas,\nindígenas, LGBTQIAPN+, população negra e pessoas com deficiência;\nfortalecer formação de profissionais de saúde na interpretação de libras,\npara consultas e atendimentos; defender a universalização do acesso ao\nsaneamento básico e provimento de água potável; criar programas de\nresidência uniprofissional e multiprofissional em instituições públicas\ndo estado e em consonância com os princípios e diretrizes da educação\npermanente em saúde; Fortalecer e ampliar o programa nacional de\nimunização. Tudo com gestão pública, concurso público e fim das\nterceirizações.\n\nFim das Organizações Sociais e\nDesprivatização da Saúde:\n\nNosso governo vai enfrentar de frente o modelo de privatização da\nsaúde pública em Sergipe. Vamos retirar as Organizações Sociais (OS)\nda gestão das unidades de saúde em Sergipe. A saúde não pode ser\ntratada como mercadoria. Realizaremos auditoria nas contas públicas\nno setor da saúde, verificando, em particular, a relação do governo com\nas OSs, ampliando a transparência, participação popular e com real\ncontrole social; o hospital do câncer foi um sonho e uma conquista do\npovo sergipano e deve estar sob gerencia direta do estado.\n\n27"
+          },
+          {
+            "id": "eixo-3-saude-publica-6",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nRedução das Filas de Cirurgias e Exames:\n\nA saúde não pode ser tratada de forma curativa, em atos esporádicos e\nfestivos explorando a carência da população com intuito de promoção\ndo governo. No governo do Psol os exames, as consultas especializadas\ne cirurgias eletivas serão realizados de forma planejada, regionalizada e\nde constante, com a reestruturação da infraestrutura dos Hospitais\nRegionais e parcerias com as Prefeituras reorganizando o fluxo de\natendimento de forma equânime e com fiscalização dos Ministérios\nPúblicos evitando possíveis apadrinhamentos e favorecimentos\nexplorando a carência por demanda da população.\nHospitais Regionais com efetivo funcionamento: Reestruturar e\ngarantir resolutividade nos hospitais regionais de Sergipe, para que a\npopulação de cada região tenha acesso a atendimento especializado\nsem precisar viajar centenas de quilômetros até Aracaju.\n\nSaúde Mental como Prioridade:\nAmpliar a rede de CAPS (adulto, infantojuvenil e álcool/drogas) em\ntodas as regiões, com equipes multidisciplinares, leitos de acolhimento,\nprogramas de prevenção ao suicídio e atendimento humanizado.\nCuidar da mente é cuidar da vida.\n\nFarmácia Popular Estadual:\n\nCriar um programa estadual de distribuição gratuita de medicamentos\nessenciais para hipertensão, diabetes, asma, saúde mental e doenças\ncrônicas, complementando o programa federal. Remédio na mão de\nquem precisa é direito, não favor.\n\nHospital Veterinário Público de Sergipe:\nConstruir e equipar o Hospital Veterinário Público, em parceria com a\nUFS, para atender animais de famílias de baixa renda, com castração,\nvacinação e tratamento clínico. Cuidado com os animais é também\npolítica de saúde pública.\n\nValorização dos Profissionais da Saúde /\nSaúde do trabalhadores:\n\nRealizar concursos públicos, incorporar os profissionais da Fundação\nHospitalar de Saúde ao quadro efetivo do Estado, pagar o piso da\nenfermagem e garantir condições dignas de trabalho em todas as\nunidades.\n\n28"
+          },
+          {
+            "id": "eixo-3-saude-publica-7",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\nConvocar todos os profissionais que estão no cadastro de reserva no\nconcurso da SES, e analisar a ampliação do cadastro de reserva para imediato\nsuprimento do déficit de profissionais em todo Estado. Reestruturação\nimediata das carreiras de todos os profissionais da saúde, e em nosso governo\nhaverá diálogo permanentes com as categorias e sindicatos da saúde,\nrespeitando os trabalhadores como sujeitos de transformação social. Saúde\npública de qualidade deve ser construída de forma coletiva com participação\npopular e com quem está na ponta atendendo a população. Ampliar a\nestruturação da Vigilância em Saúde, com fortalecimento da Vigilância em\nSaúde do Trabalhador, a fim de garantir ações prioritárias de Vigilância em\nAmbientes e Processos de Trabalho em locais de trabalho dos profissionais\nde saúde, sejam estes público ou privados, com participação ativa dos\ntrabalhadores e de suas representações, de maneira contínua e sistemática, de\nmodo a garantir ambientes e processos de trabalho saudáveis;\n\nSaúde das crianças e adultos neurodivergentes:\n\nImplementar uma rede de atendimento as pessoas neurodivergentes\nem todas as regiões, com equipes multidisciplinares, com acolhimento\ne programas de suporte a mães atípicas.\n\nSaúde Integral às populações\ncondição de vulnerabilidade:\n\nem\n\nImplementar a Política Estadual de Saúde da População Negra, da\npopulação LGBTQIA+, da População Indigena, da Mulher, Atenção à\nda População Ribeirinha. No governo do Psol faremos um\nplanejamento voltado aos princípios do SUS, de forma equânime, ou\nseja, a saúde deve ser direcionada aos que mais necessitam, e que estão\nmais vulneráveis e ausentes de políticas públicas de saúde, com\nparticipação efetiva destas populações.\n\nSaúde Integral às pessoas com Deficiência:\n\nCriar uma política de Saúde Funcional em todo o Estado, de forma a\narticular Atenção primaria à saúde, a média e a alta complexidade em\nprol do Direito à Saúde da Pessoa com Deficiência, com Centros de\nReabilitação Regionais Especializados de Atenção Integral para PCD;\n\n29"
+          },
+          {
+            "id": "eixo-3-saude-publica-8",
+            "titulo": "EIXO 3: SAÚDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3: SAÚDE PÚBLICA\n\nCoragem pra cuidar de quem cuidou da gente:\nAtenção Primária como Centro do Cuidado ao Idoso:\n• Implantar a Linha de Cuidado da Pessoa Idosa em\n100% das 417 UBS de Sergipe até 2028.\n• Capacitação de 100% das equipes de ESF em avaliação\nmultidimensional do idoso; SAD em todos os 75\nmunicípios; Caderneta do Idoso 100% digital.\n\nRede Especializada e Regionalizada:\n• Inaugurar 5 Centros de Referência do Idoso - CRI nas\nmacrorregiões até 2029.\n• Criar 15 novos ambulatórios de Geriatria nos hospitais\nregionais; Reduzir em 50% o tempo de espera por\nconsulta com especialista em 4 anos. Cuidado e\nProteção Social\n• Zerar a fila do BPC para idosos e criar o Programa\nEstadual do Cuidador.\n• Formar 5 mil cuidadores familiares até 2030\n• Implementar fluxo único de denúncia e atendimento\nde violência contra a pessoa idosa.\n\nEnvelhecimento Ativo e Cidades Acessíveis:\n• Ter 60 municípios certificados como \"Cidade Amiga\ndo Idoso\" até 2030.\n• Investir R$ 50 milhões em acessibilidade, transporte e\nAcademias da Saúde 60+.\n\nFinanciamento e Controle Social\n• Aplicar os 12% constitucionais na saúde + auditoria dos\nrecursos não investidos.\n• Conselho Estadual do Idoso com poder sobre 5% do\norçamento da saúde.\n\n3"
+          },
+          {
+            "id": "eixo-4-moradia-mobilidade",
+            "titulo": "EIXO 4: MORADIA, MOBILIDADE",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4: MORADIA, MOBILIDADE\nE INFRAESTRUTURA\n\nPrograma Minha Casa Sergipe:\nCriar um programa habitacional estadual que\ncomplemente o Minha Casa Minha Vida federal,\ncom construção de unidades para famílias de até\ndois salários mínimos, regularização fundiária e\nurbanização de comunidades, com contrato\nprioritariamente em nome da mulher.\nAmpliar e criar estudos de mapeamento de prédios e terrenos\nabandonados, de modo que sirvam de diagnóstico para embasar\npropostas de reestruturação de prédios a fim de que sirvam de\nmoradia popular para famílias em situação de vulnerabilidade social.\nAmpliar o custeio público das contas de luz e água de famílias em\nvulnerabilidade social cadastradas no CADúnico com a perspectiva\nda gratuidade;\nCriar redes Wi-Fi públicas que contemplem os bairros periféricos;\nUniversalizar o acesso à habitação de qualidade para todas as\nfamílias, através da promoção política de moradia social por\nprodução estatal em caráter emergencial, focando em manter as\nfamílias no mesmo local ou melhor, através da readequação para\nmoradia de imóveis em áreas centrais.\nA regularização fundiária ampla e irrestrita. Contra a política de\nremoção das ocupações populares e a criminalização de seus\nmoradores;\nDestinar terras públicas para habitação de interesse social.\nInstituir o aluguel social para famílias em situação de vulnerabilidade\ne criar mecanismos legais para que imóveis abandonados e que não\ncumprem função social sejam destinados à moradia popular,\naplicando o Estatuto das Cidades.\n\nMobilidade Ativa eTarifa Zero no\nTransporte Metropolitano:\nImplementar o passe livre no transporte público da Grande Aracaju e\nexpandir progressivamente para as regiões metropolitanas do interior,\ncom a criação de uma empresa pública de transporte, frota sustentável,\ncirculação 24h e controle social.\n\n3"
+          },
+          {
+            "id": "eixo-4-moradia-mobilidade-e-infraestrutura",
+            "titulo": "EIXO 4: MORADIA, MOBILIDADE E INFRAESTRUTURA",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4: MORADIA, MOBILIDADE E INFRAESTRUTURA\n\nSaneamento é Saúde: Esgoto para Todos:\nUniversalizar a coleta e o tratamento de esgoto em todos os 75\nmunicípios sergipanos — hoje cerca de 77% da população não tem\nacesso a esse direito básico. Com gestão pública, controle social e defesa\nda DESO 100% estatal contra qualquer tentativa de privatização.\n\nÁgua para Todos no Campo e na Cidade:\nGarantir acesso universal à água potável em todo o estado, com\nproteção de nascentes, recuperação de matas ciliares, construção de\ncisternas no semiárido e programas de reuso de água. Água é direito\nhumano, não mercadoria.\n\nSergipe Iluminado:\nSubstituir toda a iluminação pública dos prédios e equipamentos do\nestado por LED, reduzindo custos e consumo de energia, e implantar\niluminação adequada em comunidades rurais, quilombolas e indígenas.\n\n3"
+          },
+          {
+            "id": "eixo-5-meio-ambiente-sustentabilidade",
+            "titulo": "EIXO 5: MEIO AMBIENTE, SUSTENTABILIDADE",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5: MEIO AMBIENTE, SUSTENTABILIDADE\nE TRANSIÇÃO ENERGÉTICA\n\nSergipe Solar: Liderança em Energia Limpa:\nCriar um programa estadual de incentivo à energia solar fotovoltaica\nem prédios públicos, residências populares e pequenas empresas, com\nlinhas de crédito e instalação gratuita para famílias de baixa renda.\nSergipe tem sol o ano todo — que essa energia gere emprego,\neconomia e sustentabilidade.\n\nResíduos Sólidos: Reciclagem que Gera Renda:\nImplementar a coleta seletiva em todos os municípios, com apoio às\ncooperativas de catadores, usinas de compostagem e erradicação dos\nlixões. Lixo tratado como recurso gera emprego, renda e protege o\nmeio ambiente.\n\nProteção dos Manguezais e\nComunidades Tradicionais:\nCriar reservas extrativistas estaduais para proteger o modo de vida das\ncatadoras de mangaba, pescadores artesanais, marisqueiras e\nquilombolas. Fiscalização efetiva contra a carcinicultura predatória e\nnovos crimes ambientais como o derramamento de óleo de 2019.\nA Efetiva Recuperação de nossos Rios, articulando com a União e os\nmunicípios um plano emergencial de despoluição, desassoreamento e\nrecomposição da mata ciliar de nossos rios, com participação ativa das\ncomunidades ribeirinhas.\n\nSergipe Verde:\nCriar Parques Ecológicos Regionais com Jardins Botânicos,\nsementeiras, centros de educação ambiental, parque infantil, área de\nlazer, atividades desportivas, ciclovias, trilhas ecológicas, unidade de\ntriagem de animais silvestres, escola de alfabetização ambiental, entre\noutras. Apoiar políticas de proteção e desenvolvimento das populações\nindígenas, quilombolas e ribeirinhas, para que sejam garantidas a\npropriedade de seus territórios, suas tradições e melhoria das condições\nde vida. Ampliar os percentuais relativos ao ICMS Socioambiental para\nas unidades de conservação e para o adequado tratamento dos resíduos\nsólidos.\n\n3"
+          },
+          {
+            "id": "eixo-5-meio-ambiente-sustentabilidade-2",
+            "titulo": "EIXO 5: MEIO AMBIENTE, SUSTENTABILIDADE",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5: MEIO AMBIENTE, SUSTENTABILIDADE\nE TRANSIÇÃO ENERGÉTICA\nElaborar e implementar um Plano de desenvolvimento e recuperação do\nmeio ambiente, que inclua recomposição da cobertura vegetal, a recuperação\nde rios, lagoas, restingas, além de outros sistemas. Complementar e\naperfeiçoar a legislação Estadual para que contemple a proteção ambiental,\ncom forte taxação e penalidades às empresas destruidoras do meio ambiente.\nCriar polos industriais para incentivo às empresas produtoras de\nmercadorias ambientalmente amigáveis, que utilizam energias renováveis,\ntecnologias limpas e promovam boas condições de trabalho. Programa de\nreflorestamento dos biomas nativos — Mata Atlântica e Caatinga — com\nplantio de mudas nativas em áreas degradadas, nascentes e margens de rios,\nenvolvendo escolas, comunidades e mutirões populares.\n\nEducação Ambiental em Todas as Escolas:\n\nIncluir a educação ambiental como tema transversal em toda a rede\nestadual de ensino, com hortas escolares, compostagem, coleta seletiva\ne projetos práticos de sustentabilidade que formem cidadãos\nconscientes desde a infância, implantação efetiva de medidas para a\npreservação da biodiversidade;\n\nIncentivo a agroecologia e Sergipe sem agrotóxico:\nExigir e estruturar os organismos de fiscalização do meio ambiente\npara que exerçam seu papel com maior rigor, monitorando o uso de\nagrotóxicos e adubos químicos e as contaminações decorrentes no\nmeio ambiente, nos lençóis freáticos e nos cursos d’água. Criar, de\nimediato, zonas livres de agrotóxicos no Estado, para o\ndesenvolvimento da agroecologia. Proibir, de imediato, a aplicação de\nagrotóxicos por via aérea em todo o Estado. Traçar um plano de\ndesenvolvimento econômico e tecnológico de promoção da\nagroecologia, tendo por meta banir o uso de agrotóxicos no Estado, em\num prazo inicialmente projetado de 5 anos.\n\n3"
+          },
+          {
+            "id": "eixo-6-seguranca-publica-e",
+            "titulo": "EIXO 6: SEGURANÇA PÚBLICA E",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6: SEGURANÇA PÚBLICA E\nDIREITOS HUMANOS\n\nPolícia Cidadã / Prevenção e Proximidade:\n\nReorientar a política de segurança para a prevenção, com\npoliciamento comunitário, câmeras nos uniformes, inteligência e\ninvestigação qualificada, valorização salarial de todos os profissionais\nda segurança e treinamento permanente em direitos humanos.\nInstituir um Plano Estadual de Segurança Pública com objetivos e\nmetas de curto, médio e longo prazo, assegurando a integração com\noutras políticas, tais quais lazer, cultura, educação, habitação, saúde,\ncom foco na redução da vulnerabilidade da população negra,\nindígena, quilombola, LGBTQ+, adolescentes, jovens e mulheres.\nGarantir um programa de assistência social e acompanhamento\npsicológico para os(as) servidores(as) da segurança pública e suas\nfamílias.\nSergipe reduziu os homicídios ao menor nível histórico em 2026 —\nvamos consolidar e aprofundar essa queda com foco nas causas reais\nda violência: emprego, educação, oportunidades para a juventude\nnegra das periferias e prevenção ao invés de apenas repressão.\n\nDesencarceramento e Reinserção Social:\nReduzir a população prisional com políticas de alternativas penais,\naudiência de custódia efetiva e programas reais de reinserção social e\nprofissional para egressos do sistema prisional. Prender mais não\nresolve — ressocializar, sim.\nCombater à Tortura e às Violações de Direitos, fortaleceremos o\nMecanismo Estadual de Combate à Tortura, garantir condições\ndignas nos presídios e unidades socioeducativas e apurar com rigor\ntoda denúncia de violação de direitos humanos.\n\nPolítica de Drogas como Questão de Saúde:\nSubstituir a abordagem bélica e punitivista por uma política de\nredução de danos, com tratamento digno e acolhimento para\nusuários, fim da criminalização da pobreza e foco na saúde pública,\nnão na polícia.\n\n3"
+          },
+          {
+            "id": "eixo-7-direitos-das-mulheres",
+            "titulo": "EIXO 7: DIREITOS DAS MULHERES,",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7: DIREITOS DAS MULHERES,\nIGUALDADE RACIAL E DIVERSIDADE\n\nSergipe sem Feminicídio / Basta de Misoginia:\n\nCriar um plano estadual integrado de combate à violência contra a\nmulher, com delegacias especializadas funcionando 24 horas,\nimplantação da Casa da Mulher Brasileira, patrulha Maria da Penha,\ncasas de acolhimento, capacitação de profissionais e campanhas\neducativas permanentes em todo Estado de Sergipana. Fiscalizar a\nimplementação da política que prevê a obrigatoriedade de salário\nigual para trabalho igual independente de gênero. Dar apoio logístico\ne buscar formas de incentivos às organizações de atuação política de\nmulheres. Promover ampla discussão com a sociedade para instituir\nações concretas para pôr um fim à discriminação de gênero. Ampliar\nos Centros de Referência da Mulher, regionalizados em todo o\nestado que devem ter seus representantes escolhidos pela\ncomunidade e não pelo governo. Chega de ver mulheres morrendo\npor omissão do Estado.\n\nIgualdade Racial em Todas as Políticas:\n\nImplementar a Lei 10.639/03 em todas as escolas da rede estadual,\ncriar cotas em concursos públicos estaduais, fortalecer a economia\nnegra com crédito e assessoria técnica, e garantir políticas de\nreparação para a população negra Sergipana. A desigualdade tem cor\ne o Estado precisa agir.\n\nSergipe da Diversidade: Direitos LGBTQIA+:\n\nCriar Fundo Público de financiamento para os equipamentos de\ncombate à LGBTfobia no estado, (Centro Estadual de Combate a\nHomofobia). Criar e ampliar os Centro de referência e Casas de\nAcolhimento LBGT do litoral ao Sertão. Implantar o Ambulatório\nTrans Estadual, garantir o uso do nome social em todas as\nrepartições públicas e escolas, e combater a LGBTfobia com\ncampanhas educativas e formação de profissionais.\n\nPovos Indígenas, Quilombolas e\nComunidades Tradicionais:\n\nGarantir a demarcação e proteção dos territórios, políticas específicas\nde saúde e educação, respeito ao modo de vida tradicional e\nparticipação direta das comunidades nas decisões que afetam seus\nterritórios.\n\n3"
+          },
+          {
+            "id": "eixo-8-defender-a-infancia",
+            "titulo": "EIXO 8: DEFENDER A INFÂNCIA,",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 8: DEFENDER A INFÂNCIA,\nADOLESCÊNCIA E JUVENTUDE\n\nO FUTURO PRECISA DE CUIDADO AGORA:\n• Fortalecer os conselhos paritários de juventude;\n• Implantar políticas públicas específicas para a juventude do campo;\n• Lutar pelo fim da violência contra a juventude e contra a redução da\nmaioridade Penal;\n• Criar um programa de apoio ao desenvolvimento infantil no Estado,\nde forma a articular os diferentes níveis de complexidade do SUS,\nampliar os serviços e dar assistência às crianças com equipes\nmultiprofissionais e infraestrutura necessária;\n• Garantir acompanhamento pedagógico na rede de ensino para todas\nas crianças com deficiência, assegurando a presença de profissionais\ncomo auxiliares do desenvolvimento infantil e agentes de apoio ao\ndesenvolvimento escolar especial (ADDE e ADI), além de outros(as)\nprofissionais que atuem com atendimento profissional especializado;\n• Garantir que todos os municípios de Sergipe tenham espaços de\npromoção da saúde infantojuvenil com creches, berçários, pré-escolas\ne brinquedotecas espalhadas de forma a construir um mapa do\nbrincar garantindo cobertura em todo estado;\n• Construir brinquedotecas públicas para promover a saúde infantil\natravés do brincar e do estímulo a arte e a cultura;\n• Estruturar ações voltadas à promoção do desenvolvimento infantil na\nAtenção Básica a partir do fortalecimento de vínculos familiares e\ncomunitários;\n• Garantir a alimentação e nutrição de crianças na primeira infância\ncom o fortalecimento do PNAE e da agricultura familiar;\n• Valorizar a cultura popular e a diversidade cultural de cada território,\nde forma a manter viva as tradições e os modos de vida das\ncomunidades mantendo o elo entre as diferentes gerações;\n• Combater o trabalho infantil através da atuação em diversas frentes,\ncomo: luta contra o desemprego no estado, fomento à universalização\ndo ensino infantil público e de qualidade e promoção da\nresponsabilização jurídica e social das empresas onde se comprove a\nocorrência de trabalho infantil nas suas cadeias produtivas;\n\n37"
+          },
+          {
+            "id": "eixo-8-defender-a-infancia-2",
+            "titulo": "EIXO 8: DEFENDER A INFÂNCIA,",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 8: DEFENDER A INFÂNCIA,\nADOLESCÊNCIA E JUVENTUDE\n• Lutar pela erradicação da violência sexual contra crianças e adolescentes,\npelo fim da gravidez na infância e adolescência, pelo fim da exploração\nsexual e turismo sexual no campo e nas cidades;\n• Fortalecer estratégias de permanência da juventude no campo através\nde trabalho, renda e acesso a políticas públicas;\n• Impedir a superlotação das unidades socioeducativas e garantir a\nconvivência familiar e comunitária de adolescentes e jovens em\nprivação e restrição de liberdade;\n• Assegurar o direito à vida, à liberdade e o acesso a serviços e políticas\npúblicas a adolescentes e jovens que sofrem ameaças de morte, durante\no cumprimento da medida socioeducativa ou no momento posterior;\n• Garantir que o período de internação provisória de adolescentes e\njovens a quem se atribui a prática de atos infracionais obedeça aos\nprincípios da excepcionalidade, brevidade e respeito à condição peculiar\nde pessoa em desenvolvimento;\n• Ampliar as oportunidades para desenvolvimento educacional de\nadolescentes em atendimento socioeducativo, a partir dos seus\ninteresses e qualificar e tornar seguro seu ingresso no mercado de\ntrabalho;\n• Superar as desigualdades e violência de gênero impostas a meninas\ncisgênero e transgênero, além de garantir sua liberdade e\nautodeterminação de gênero e sexualidade;\n• Garantir que a atuação dos profissionais no sistema socioeducativo seja\nbaseada em práticas pedagógicas, cuidadores e ressocializadoras, sem\nqualquer vinculação com a segurança pública;\n• Garantir apoio e acesso a políticas públicas para adolescentes e jovens\nnos momentos posteriores ao cumprimento de medidas\nsocioeducativas restritivas e privativas de liberdade;\n• Aumentar os recursos destinados à política estadual de atendimento\nsocioeducativo, utilizando as fontes previstas na legislação.\n\n3"
+          },
+          {
+            "id": "eixo-9-agricultura-familiar",
+            "titulo": "EIXO 9: AGRICULTURA FAMILIAR",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 9: AGRICULTURA FAMILIAR\nE SEGURANÇA ALIMENTAR\nSergipe Agroecológico:\n• Reforma Agrária: Promover a reforma agrária numa perspectiva\nantilatifundiária e antimonocultura, orientada à produção de alimentos de\nbase agroecológica para o mercado interno, com uso de sementes crioulas,\npreservação ambiental e promoção da saúde e da autonomia dos povos do\ncampo e das populações tradicionais.\n• Comida Saudável na Mesa do Povo: Fortalecer a agricultura familiar com\nassistência técnica, crédito, sementes crioulas e certificação orgânica.\nGarantir que a merenda escolar e as compras públicas do estado priorizem\nalimentos agroecológicos dos pequenos produtores sergipanos. Apoiar as\nhortas urbanas e as feiras livres como espaços de alimento saudável e\ngeração de renda.\n• Implementar a Reforma Agrária Popular em Sergipe, de forma a\ndemocratizar o acesso à terra, garantindo terra para quem nela trabalha e\ncomida sem veneno;\n• Ampliar o PAA e o PNAE em todos os municípios de Sergipe, de forma a\ngarantir a fornecimento de alimentos nas creches, escolas e hospitais com\nalimento local e sem veneno;\n• Ampliar a produção e o acesso a alimentos agroecológicos e de agricultura\nfamiliar através da implementação e ampliação das feiras agroecológicas e\nfeiras de agricultura familiar em todo o Estado;\n• Desenvolver programas de pesquisa e extensão de produção e convivência,\ncom projetos de construção de cisternas e bioáguas, para garantir o direito à\nágua e estimular a produção agroecológica das famílias camponesas;\n• Efetivar a Política Estadual de Segurança Alimentar e Nutricional, de forma\nintersetorial, com ações imediatas de enfrentamento à fome, além de um\nplanejamento a médio e longo prazo para superar a fome no nosso Estado;\n• Construir restaurantes populares nos municípios do Estado, fortalecer e\nampliar as cozinhas comunitárias nos bairros e periferias, para garantir a\nsegurança alimentar, escoamento da produção agroecológica e geração de\nrenda;\n• Assegurar a defesa e a produção dos territórios pesqueiros artesanais;\n• Criar a Política Estadual de Redução de Agrotóxicos em Sergipe;\n• Plano emergencial de Combate a Seca no Sertão Sergipano em auxilio aos\npequenos agricultores.\n\n3"
+          },
+          {
+            "id": "eixo-10-cultura-e-turismo",
+            "titulo": "EIXO 10: CULTURA E TURISMO",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 10: CULTURA E TURISMO\n\nCULTURA-SE:\nA cultura em Sergipe parte da superação da escassez e da valorização\ndas experiências dos próprios trabalhadores da cultura como base\npara construir o futuro. Propomos a criação de uma Rede e de um\nFórum Estadual de Cultura Popular com gestão democrática e\nparticipativa, garantindo autonomia na produção e transmissão das\nmanifestações culturais. O plano inclui fomento direto aos fazedores\nde cultura, criação e revitalização de espaços como bibliotecas,\nmuseus, teatros, centros culturais e rádios públicas, feiras, festivais e\ncircuitos culturais permanentes para além do calendário tradicional,\nalém de escolas públicas de idiomas, formação de público, economia\nsolidária na cadeia da cultura e políticas específicas para povos\nindígenas, quilombolas e tradicionais. Também defendemos a\nprofissionalização dos trabalhadores da cultura com concursos\npúblicos, preservação do patrimônio, intercâmbio cultural e inclusão\nda cultura sergipana no currículo das escolas, assegurando acesso\nuniversal aos bens culturais como direito e não como mercadoria.\n\nSergipe dos Destinos:\n• Criar a Rede Estadual de Turismo de Base Comunitária até 2028.\n• Fórum Sergipano de TBC: com assento obrigatório para\npescadores, quilombolas, indígenas, artesãos, guias locais e\nmulheres. Poder de decisão sobre investimento e roteiros.\n• Mapeamento de Potencialidades: inventariar, junto às\ncomunidades, trilhas, praias, sítios históricos, saberes e festas em\ntodos os 75 municípios.\n• Selos \"Destino de Base Comunitária\": certificação estadual para\niniciativas que respeitem critérios socioambientais.\n\nINFRAESTRUTURA E SERVIÇOS PARA QUEM RECEBE\n• Casas do Turista Comunitárias: em cada polo turístico, espaços de\nacolhimento, comercialização de artesanato e gestão dos roteiros,\nadministrados pelas associações locais.\n• Saneamento, acesso e energia: levar água, coleta de lixo e internet\npara comunidades do litoral, ilhas e sertão que recebem turistas.\n\n4"
+          },
+          {
+            "id": "eixo-10-cultura-e-turismo-2",
+            "titulo": "EIXO 10: CULTURA E TURISMO",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 10: CULTURA E TURISMO\n• Transporte Público Integrado: linhas turísticas intermunicipais baratas\nconectando Aracaju aos polos do TBC, com prioridade para vans e\ncooperativas locais.\n\nCAPACITAÇÃO, TRABALHO DIGNO E RENDA\n• Formar 5 mil trabalhadores e trabalhadoras do turismo até 2030.\n• Escola Pública de Turismo Comunitário: cursos gratuitos de guia local,\ncozinha tradicional sergipana, hospitalidade, gestão, idiomas e\nmarketing digital. Prioridade para jovens e mulheres.\n• Programa Sergipe Sabores e Saberes: financiamento para restaurantes\ncomunitários, pousadas familiares, roteiros de pesca artesanal, turismo\nrural e experiências nos engenhos.\n• Profissionalização: criação de categoria e concurso para Agente de\nTurismo Comunitário, com piso salarial.\nROTEIROS INTEGRADOS E RESPEITO AO MEIO AMBIENTE\n• Lançar grandes circuitos de TBC integrados até 2029.\n• Circuito Cânions e Velho Chico: Canindé, Poço Redondo e Porto da\nFolha com turismo de base comunitária ribeirinha.\n• Circuito Mangue e Mar do Norte: Pirambu, Pacatuba e Brejo Grande\ncom roteiros de desova de tartarugas e culinária caiçara.\n• Circuito Engenhos e Cultura do Agreste: Propriá, Lagarto e Itabaiana\ncom turismo rural e festas populares.\n• Circuito Litoral Sul e Mata Atlântica: Estância, Santa Luzia e Indiaroba\ncom trilhas e turismo de base indígena e quilombola.\n• Código Sergipano de Turismo Responsável: lei estadual para limitar\ncapacidade de carga, proibir privatização de praias e garantir preservação.\n\nPROMOÇÃO E COMERCIALIZAÇÃO JUSTA\n• Criar uma Plataforma Digital \"Viva Sergipe Comunitário\": site e app do\nGoverno para venda direta, sem atravessadores, dos roteiros e produtos\ndas comunidades.\n• Calendário Estadual de Festivais Comunitários: apoiar financeiramente\nfestas fora da alta temporada para gerar renda o ano todo.\n• Intercâmbio Nacional: levar grupos de Sergipe para feiras e trazer turistas\nde outros estados via convênios com universidades e movimentos sociais.\n• Turismo de Base Comunitária Transformar as belezas naturais de\nSergipe — do litoral norte ao sertão, dos cânions do São Francisco às\npraias do litoral sul — em fonte de renda para as comunidades locais,\ncom capacitação, infraestrutura e roteiros integrados que respeitem o\nmeio ambiente e a cultura tradicional.\n\n4"
+          },
+          {
+            "id": "eixo-11-participacao-popular",
+            "titulo": "EIXO 11: PARTICIPAÇÃO POPULAR",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 11: PARTICIPAÇÃO POPULAR\nE GESTÃO DEMOCRÁTICA\n\nGoverno Aberto:\nControle Social:\n\nOrçamento\n\nParticipativo\n\ne\n\nCriar o Orçamento Participativo Estadual, com consultas públicas\npresenciais e digitais para definir prioridades de investimento.\nFortalecer os conselhos estaduais com poder deliberativo, garantir\ntransparência total dos gastos públicos e criar canais permanentes de\ndiálogo entre o governo e os movimentos sociais.\n\nCOMUNICAÇÃO PÚBLICA:\n• Definir com a Secretaria de Comunicação o fortalecimento, no\ngoverno de diretrizes baseadas nos princípios da Comunicação\nPública, tendo como prioridade levar a população informações sobre\nseus direitos e promoção dos mecanismos e instrumentos de estado\nmais que propaganda de realizações de gestão.\n• Discutir com os demais poderes do estado, inspirando-se no Projeto\nde Lei da Deputada Estadual Linda Brasil, a implementação de uma\npolítica estadual de comunicação pública com os seguintes objetivos:\n• Tratar a informação que sai das instituições de forma Plural:\nGarantir acesso livre, inclusivo e diversificado aos dados\npúblicos para toda a população sergipana com linguagem\nsimples que abarque todos tipos de público.\n• Independência Política: Proibir o uso de canais públicos para\nfins de autopromoção pessoal de autoridades ou influência\npartidária.\n• Participação Social: Fomentar ferramentas que permitam ao\ncidadão atuar de forma ativa na criação de políticas públicas.\n• Concurso público para a Funsecom para os quadros.\n• Fazer o sistema de Comunicação da Aperipê funcionar com\nmaior incentivo à produção local, com investimentos\njornalismo, debates e programas em parceria com\nsecretarias de cultura e educação que façam o sergipano ver\ne conhecer ainda mais seu território, suas produções e\ncontribua com a movimentação da economia da cultura.\n\n4"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "77303a202ad2428ebc64da02c903e591c2a42ed347079b7d1644752847f6629c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "f03eb1a73429724d5b2d193575712b8cacf0840a560490c1ed4e9b36987bab98"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "3e64c7c4624b5133ea060563ab2c81307f4466ae7dfffcfd8438f164a5caf21b"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b8c3b120b18d1a12779263fc92815df886cfe784bbb0abd92fe8bcf8f65902be"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "53981d4ac1bad241bafd46104c0f424c7e9db421cb70d51335411791a2a8d2e2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "88493d024738efb8c62d97386bb1dc8960f879f62cbf9ee550c9a6a03361edb0"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "e3307434f00eb6e4ab7f6824a374f4fe66766f50d37e0d6143f3060fd3127806"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "60250cfef962091a4fd23dddf8cfc2f5360ee7f82a8a618f405289b86449a44d"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "a0c9892b1368e726f8ebe401db4afec39de1bbc638ff11881500386de8fa8a8f"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "ce4ad1e75a1ed894a06b4bf4e65b48b53f70e3d857f71a6f860258e08925cb1c"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "24482d39057967bc85d79dd56028fe8bd688f94d451227f6cbefe5cb1546d9d0"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "9ccba1bc5b9697e1c589787204520a99324c882d0cfbe7f5938c77aa78987aca"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "c024e6413307d40a64237d4d516f3f49315df3a5f975069bb120878d63525532"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "951750c7470c3ad649324e65a8d099d06c22bc2f433827a139d131d2679bf6a9"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "0d10ef0ba79017b7830c9ad67da786b6e5fb8c5a56c400e32b0671d33b27755f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e3823cc9c6a1771931c3a106ccd3abdc2787f63aacd7586c64f3c0e8f71da7ed"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "9be473fb71896e05c837b9e7d1d79e8fbde5cfb4d0476763c4f9f56f2aadcfb8"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "ef000e7f616f796fc0a2f54b9875b50fabefee3f6cb5c9b88b4cff07692284da"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "e605504a27b0862b104059742d56cfd22a2f99186343f9fdeb04f7d3ba427bbb"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "089751cce6bc1318dc9da262421dd59e7d975494ec8c83fe7378bf7f9976fb53"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "0b09038de9dffa8afb39a1a4e5c64452f6895e8a8153be8375f9196ae52bd1e5"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "57664f41b2af9e5ced96c8fb159750598fd6b584ba6e19b032bf3327c8d2b183"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "849f91e97269584f67382dac21b99ae2f0e8678effe8256803f1a23305861e3e"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "5808c0f87676e88fb639505bcef4433a8790c809d99704623d4db1c047866bd3"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "24e0946d52b0b34663682669335a202eff09c67ce26c18f8f2adcad031642b17"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "1cd351f28c3f0630973fe9489d1ab7bf27da439109d8a0a270f5bb1b14c49b90"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "84afdfcd854c7dcc0bf8593a2afe3a5c49a5a4b353dfa51b4d3ed60bdc096691"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "e648fb7c3249394f64f7b8b9b0f6119be4a2cba6e85e29a6f8399c3a1af50863"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "8c079ffd7a5d2b30aa14698646599055675235720636f9b0c77667cfd0ffd8fe"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "6b1fd5b00b9d6cab4459b56b330b6b559764e1e9c857012e41c642a4ef420653"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "f334b40fac34d77a2ea7c125512e4ec6c12afe68bd74fd483e955c2f1ea49f7a"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "0a981195dd751f84f41737b9e39cbd9d522fd0a3eb8d0ab2e14f647898f719b9"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "4be3f2af8a97a14ca300aaf3aba968cd6cfd3dc7324028f7a78523e506a33b77"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "eb5c5c5bf5493477e3f59a7aa0dc42b3f4dbb9bb77a736959e13ede9afa053cb"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "84ab55b372dab6457ade0bbfed5029abcc675dbe1dec2686b06cea24b71e2a00"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "9a879c114ac1d9db7d90d877fe797ec9a4ef08e28c932bbf8c285aa42825ef3d"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "30f495b111c54c3e1aad158517910bb9d65acbcb2c3566b5f90534da416478c0"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "13b124f5a53e40521446910f68b14fdc76c4ceb679cfcfdd6828499dc65e962a"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "064503fa270f814faad4f3a47dbcf8975d1a51319954392fcc44cf6379772b2d"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "268a5d7a8994ad65a0133201f819db1b8319b236eb9732b78a33c06e3a24a65b"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "d6b3d5f3fa408dbb0b8560e39fadd96a2dc843e3751144fd604c4e1e1ac9fa6f"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "6357052d7762ed2e3fdada417ed040489584cca9395c5f7e1d05eaf33d60d512"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "61d574a3073df370e173c5658c62c1a2a55cf3257c18696d8201a5bf19546a44"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "4ad04ad86849456db371a2df9045103c7614d33ef20b3f9dceddf878329334c1"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "da4158abf67ffa6adb50bbc3f9cfde5539c54194ff7236174a2643ca625cd87e"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "88f2cee8fe051b54a9850f18ac337ff7cf3292a7f66cec14bcf19b47e4a74821"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "d0c5d518e310d0b294d58736f5f7120160d8dfbe534acd6da18dee9617ef5f9f"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários. O programa prevê instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas. O programa prevê levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado. O programa prevê implementar jornada de 30 horas semanais para servidores estaduais, sem redução salarial. O programa prevê universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos. O programa prevê ampliar a rede de CAPS em todas as regiões, com equipes multidisciplinares, leitos de acolhimento, programas de prevenção ao suicídio e atendimento humanizado. O programa prevê garantir acesso universal à água potável em todo o estado, com proteção de nascentes.",
+    "frases": [
+      {
+        "texto": "O programa prevê criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê implementar jornada de 30 horas semanais para servidores estaduais, sem redução salarial.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 23,
+            "trecho": "Implementar jornada de 30 horas semanais para servidores estaduais, sem redução salarial"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 37,
+            "trecho": "Universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê ampliar a rede de CAPS em todas as regiões, com equipes multidisciplinares, leitos de acolhimento, programas de prevenção ao suicídio e atendimento humanizado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 33,
+            "trecho": "Ampliar a rede de CAPS (adulto, infantojuvenil e álcool/drogas) em todas as regiões, com equipes multidisciplinares, leitos de acolhimento, programas de prevenção ao suicídio e atendimento humanizado"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê garantir acesso universal à água potável em todo o estado, com proteção de nascentes.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 37,
+            "trecho": "Garantir acesso universal à água potável em todo o estado, com proteção de nascentes"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "obras-publicas",
+        "titulo": "Obras públicas",
+        "descricao": "O programa prevê obras públicas integradas a moradia popular.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Criar programa estadual de obras públicas que integre moradia popular, infraestrutura urbana e equipamentos comunitários"
+          }
+        ]
+      },
+      {
+        "id": "renda-minima",
+        "titulo": "Renda mínima",
+        "descricao": "O programa prevê renda mínima estadual para famílias com crianças pequenas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Instituir programa estadual de renda mínima que complemente o Bolsa Família para famílias com crianças pequenas"
+          }
+        ]
+      },
+      {
+        "id": "inclusao-digital",
+        "titulo": "Inclusão digital",
+        "descricao": "O programa prevê internet gratuita em espaços públicos educacionais.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 22,
+            "trecho": "Levar internet banda larga gratuita a todas as escolas públicas, praças e centros comunitários do estado"
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "O programa prevê universalização da coleta de esgoto nos municípios sergipanos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 37,
+            "trecho": "Universalizar a coleta e o tratamento de esgoto em todos os 75 municípios sergipanos"
+          }
+        ]
+      },
+      {
+        "id": "saude-mental",
+        "titulo": "Saúde mental",
+        "descricao": "O programa prevê ampliação da rede de CAPS nas regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002547415:01",
+            "pagina": 33,
+            "trecho": "Ampliar a rede de CAPS (adulto, infantojuvenil e álcool/drogas) em todas as regiões"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T15:00:19.045Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:28:14.062Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação e todos os componentes descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta integrada de obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:1:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação do programa e todas as áreas materiais enumeradas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de renda mínima estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:2:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a instituição estadual, a complementação do Bolsa Família e o público indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a oferta, a gratuidade, a abrangência e os locais citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade abrangente expressa por “todas” está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de acesso gratuito à internet."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:3:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre banda larga, gratuidade, totalidade e cada categoria de local citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a jornada, o público e a ausência de redução salarial."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A jornada de 30 horas semanais está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada no serviço público."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:4:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a universalização da coleta e do tratamento nos municípios indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 75 municípios está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de esgotamento sanitário."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:5:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre universalização, coleta, tratamento e abrangência nos 75 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação, a abrangência e todos os recursos descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A abrangência expressa por “todas as regiões” está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "Todos os elementos pertencem à mesma proposta coerente de ampliação da rede de CAPS."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:6:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais e todos os componentes enumerados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o acesso universal, a abrangência estadual e a proteção de nascentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A abrangência total expressa na afirmação está literalmente sustentada pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de acesso e proteção hídrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:frase:7:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o recorte sobre obras públicas integradas a moradia popular."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação temática descreve a proposta sem elogio, crítica, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente no tema de obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:obras-publicas:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as duas cláusulas materiais do recorte temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o programa estadual de renda mínima e o público descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação temática descreve a proposta sem elogio, crítica, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente no tema de renda mínima."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:renda-minima:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a natureza estadual da renda mínima e o público indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta internet gratuita em escolas públicas, que são os espaços educacionais descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação temática descreve a proposta sem elogio, crítica, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente no tema de inclusão digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:inclusao-digital:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a gratuidade da internet e sua oferta em escolas públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o recorte sobre universalização da coleta de esgoto."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação temática descreve a proposta sem elogio, crítica, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente no tema de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saneamento:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a universalização, a coleta de esgoto e a abrangência municipal indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a ampliação da rede de CAPS em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação temática descreve a proposta sem elogio, crítica, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente no tema de saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002547415:tema:saude-mental:documentos:SE:260002547415:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ampliação da rede de CAPS e sua abrangência regional."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SE:260002547415",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SE:260002547415:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 35838,
+          "cached_input_tokens": 7936,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13288,
+          "reasoning_output_tokens": 307
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "7d421f29b19c1654ae6c53764e29d10c29580b5d163500d6d978b140e50c0cc2",
+    "extractedTextSha256": "f3d764dd03bcd14a37a62d7c4e0872153175bd32d9257c62ec2477ebc7e3e124",
+    "documentCount": 1,
+    "documentSetSha256": "f749756d93890a8a69d30598ec964ae0cb6b63343919ac32dae13b42e9c99847",
+    "contentSha256": "dbf092bb59a8017e9480a51ba1457a615ea83abb9aa816b8e9c85bf9acae6a70"
+  }
+}

@@ -1,0 +1,988 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "GO",
+    "sqCandidato": "90002550707",
+    "slug": "luciana-amorim",
+    "nomeUrna": "LUCIANA AMORIM",
+    "partido": "UP",
+    "arquivoNome": "2026GO90002550707_01.pdf",
+    "arquivoNoPacote": "GO/2026GO90002550707_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "GO:90002550707:01",
+      "fonte": {
+        "arquivoNome": "2026GO90002550707_01.pdf",
+        "arquivoNoPacote": "GO/2026GO90002550707_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "c62a13d368ad4101401c9cfd43a675adae6094bbbba14b22be9bc904a2fe21b3",
+        "extractedTextSha256": "f8768e0916fc0e181a688045f25f052d784e0ab1bbeace7bfb74da9788353842",
+        "paginas": 25,
+        "secoes": [
+          {
+            "id": "80",
+            "titulo": "80",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "80\nLuciana\nAmorim\nVice Caymmi Henrique"
+          },
+          {
+            "id": "sumario",
+            "titulo": "Sumário",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Sumário\n03\n\n04\n05\n\n07\n\n03\n\n09\n10\n11\n\n13\n15\n16\n\nINTRODUÇ ÃO\nPROCESSO ELEITORAL\nMOVIMENTOS APOIADORES\nQUEM SÃO OS CANDIDATOS?\n\nPROPOSTAS DE GOVERNO\nEMPREGO E RENDA\nDESENVOLVIMENTO AGRÁRIO\nDIREITO À CIDADE E INFRAESTRUTURA\nEDUCAÇÃO\nCULTURA\nFIM DA DISCRIMINAÇ ÃO DAS\nMULHERES; DIREITOS IGUAIS; FIM DO\nRACISMO E DA DISCRIMINAÇÃO DOS\nNEGROS\n\n19\n20\n21\n22\n\nSEGURANÇ A PÚBLICA\nSAÚDE\nPCDs\nPROPOSTAS GERAIS"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "introducao",
+            "titulo": "Introdução",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Introdução\n\nEsta carta programa tem como finalidade apresentar as propostas de\ngoverno desenvolvidas pela militância e apoiadores da Unidade\nPopular ao Governo de Goiás, sendo um acúmulo coletivo da atuação\ndos Movimentos Sociais que compõem a Unidade Popular e das\nplenárias e grupos de trabalho voltados à construção da tática e\nprograma eleitoral do partido.\nNossa plataforma é, sobretudo, um contraponto às gestões anteriores\ndo Governo de nosso estado, cuja centralidade sempre foi a de gerir\nGoiás de acordo com os interesses da elite goiana, transformando o\npoder público em seu próprio gabinete de negócios.\nAcreditamos que o estado e a direção política dele devem pertencer\nàqueles que realmente o constroem: os de baixo, a classe que\ntrabalha, que produz, mas que, infelizmente, é privada da sua plena\ncapacidade de decidir sobre o seu próprio futuro.\nVotar a cada quatro anos não é sinônimo de vida política, e muito\nmenos de democracia. Por isso, defendemos o “poder popular”: o\nexercício diário da vida política dos trabalhadores em seus locais de\ntrabalho, estudo, moradia, defendendo um programa socialista para\no estado. Esse é o eixo da leitura que se segue.\n\n03"
+          },
+          {
+            "id": "goias-e-um-dos-estados-mais-ricos-do-brasil-mas-nosso-povo-vive-na",
+            "titulo": "Goiás é um dos estados mais ricos do Brasil, mas nosso povo vive na",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Goiás é um dos estados mais ricos do Brasil, mas nosso povo vive na\npobreza!\nO Brasil é um país rico em terras férteis, petróleo, ouro, minérios, água e imensas\nriquezas naturais. Assim como nosso país, o estado de Goiás é um dos estados\nmais ricos, tendo boa parte das terras férteis a nível nacional, além das famosas\nterras raras e toda a biodiversidade do cerrado.\nMas como pode um estado ser tão rico e diverso e nosso povo viver na pobreza?\nNosso estado ainda carrega uma herança política oriunda das elites de Goiás,\npertecentes ás familias escravocratas, que concentram terras, matam\ncamponeses,trabalhadores e através do agronegócio invadem terras indigenas e\nquilombolas, desta forma influênciando a séculos na politica estadual.\nSegundo dados do IBGE os 20% com mais dinheiro no estado concentram cerca\nde 51,5% de toda a renda gerada, mostrando um grande abismo em relação aos\nmais pobres. Essa contradição aumenta ainda mais no campo. Os conflitos de\nterra em Goiás envolvendo a expansão do agronegócio, a mineração e disputas\npor territórios tradicionais, afetam milhares de famílias camponesas, indígenas e\nquilombolas.\nDados recentes da Comissão Pastoral da Terra apontam dezenas de ocorrências\nanuais em várias regiões do estado, afetando diretamente 2.973 famílias em 26\nmunicípios. Enquanto os grandes latifundiários aumentam suas riquezas, o povo\npobre e trabalhador perde o direito à vida.\nSe existe a violência no campo, existe também a violência na cidade, onde junto\ncom diversos governos municipais, o governo estadual destrói casas e moradias\nnas áreas periféricas das cidades, não tendo nenhum tipo de política mais\nmassiva que atenda as famílias em situação de fome e sem habitação popular.\nSó no estado existem contabilizados no ano de 2026, mais de 4800 pessoas em\nsituação de rua.\nEnquanto o governo estadual públicamente usa o discurso que o agronegócio\nsustenta o estado,o que se vê diariamente é oposto. Milhares de famílias não tem\no que comer e passam fome. Com esse regime social, trabalhadores do campo e\nda cidade ainda vivem em regimes análogos a escravidão e não tem direito a\nterra e moradia\nNesse mesmo caminho da desiguladade e ataques aos direitos sociais da\npopulação, ás elites no estado tentam aumentar ainda mais os privilégios dos\nempresários e banqueiros, estes amigos de Caiado e Daniel Villela, privatizando\na Saneago, uma importante empresa pública de saneamento básico e\n04"
+          },
+          {
+            "id": "distribuicao-de-agua-para-a-populacao-goiana-assim-como-foi-feito-em-out",
+            "titulo": "distribuição de água para a população goiana. Assim como foi feito em outros",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "distribuição de água para a população goiana. Assim como foi feito em outros\nestados a privatização aumentou a conta de água e precarizou o serviço de\nabastecimento de água e esgoto para o povo pobre.\nNa saúde não é diferente, com OSs nos hospitais estaduais, atrasando salário de\ntrabalhadores na área, além da péssima gestão desses hospitais em todo o\nestado, levando a população mais pobre a morrer nas filas esperando\natendimento. Ou seja a escolha de tentar privatizar serviços estratégicos, é\nescolher deixar o povo trabalhador sem acesso ao básico para conseguir\nsobreviver.\nNa educação estadual, com adoecimento de uma parcela dos profissionais de\neducação, onde a política do governo do estado e sua secretaria é perseguir e\natacar a carreira dos profissionais de educação e sucatear o ensino nas escolas.\nEm outubro de 2024, o governo Caiado aprovou um plano de carreira, que na\nprática criou diversos retrocessos para a categoria, ampliando a perseguição aos\nservidores da educação estadual.\nAlém disso nosso estado não é um estado seguro para as mulheres. O grupo\npolítico de Caiado e Daniel, se orgulham em dizer que o estado de Goiás é o\nestado mais seguro do país. Será mesmo? Em 2026, Goiás totaliza um\nfeminicídio a cada 6 dias, sendo no ano de 2025 um total de 59 feminicídios e\n214 tentativas. Para fins de comparação, só no primeiro semestre de 2026 ouve\num aumento de 22 para 47 casos de feminicídio, um aumento de 113,6% em\nrelação ao mesmo período no ano passado.\nNão é possível construir um país e um estado mais justo enquanto uma minoria\ncontrola toda a riqueza que é produzida pela classe trabalhadora, onde os bancos\nlucram bilhões e a classe trabalhadora tem uma jornada de trabalho de\nexploração e esses se enriquecem às custas de seu trabalho.\nPara mudar essa realidade, a Unidade Popular pelo Socialismo apresenta suas\ncandidaturas e propostas para às eleições de 2026. Trabalhadores, operários,\nprofessores, servidores públicos e estudantes que conhecem a vida do povo\nporque fazem parte dela e lutam todos dias contra o capitalismo, enfrentando o\nfascismo, denunciando os crimes do imperialismo em nosso país, na luta para\nconstrução de um Brasil e uma Goiás socialistas.\nAbaixo o imperialismo e viva o socialismo!\n\n04"
+          },
+          {
+            "id": "movimentos-apoiadores",
+            "titulo": "Movimentos Apoiadores",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Movimentos Apoiadores\nA articulação da candidatura pela Unidade Popular é uma iniciativa\nconjunta de diversos movimentos que se organizam em torno das\nprincipais lutas sociais que estão hoje sendo travadas no nosso\nEstado: pela educação, pelos direitos das mulheres, pelos direitos dos\ntrabalhadores(as) da cidade e do campo, pelo direito à moradia e\npelos direitos da juventude.\nPela pauta da educação universitária, somos apoiados pelo\nMovimento Correnteza, um movimento nacional de estudantes\norganizados em universidades públicas e privadas na luta por suas\npautas específicas, destacando, no apoio à candidatura, que a\neducação no Brasil tem sido pauta de segunda ordem, e que vivemos\nnum processo de destruição da educação, com universidades\npúblicas sendo sucateadas e universidades privadas cobrando\nmensalidades abusivas.\nNo âmbito da questão das mulheres, o Movimento de Mulheres Olga\nBenário destaca-se no nosso campo de apoio, por levantar\nnacionalmente a bandeira da emancipação feminina, construindo\nlutas por mais creches, casas de referência e apoio, e apontando\nsempre como saída para as contradições impostas pelo sistema\ncapitalista às mulheres a necessidade de construção do socialismo.\nTambém entre os apoiadores, apresentamos o Movimento Luta de\nClasses (MLC), uma articulação nacional de trabalhadores e\ntrabalhadoras que se colocam na linha de frente da luta sindicalizada,\norganizando segmentos da classe operária em suas diversas\nreivindicações, propagandeando politicamente que somente através\nda construção do socialismo será possível garantir o pleno emprego\ne a valorização do(a) trabalhador(a).\n05"
+          },
+          {
+            "id": "em-consonancia-com-uma-das-principais-bandeiras-do-nosso",
+            "titulo": "Em consonância com uma das principais bandeiras do nosso",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Em consonância com uma das principais bandeiras do nosso\nprograma – a reforma urbana – somos apoiados pelo Movimento de\nLuta nos Bairros, Vilas e Favelas (MLB), um movimento nacional em\ndefesa do constitucionalizado direito à moradia, pela reforma urbana\ne pelo socialismo. Lembramos que a reforma urbana é capaz de\nreduzir a fome, a desigualdade, o desemprego e diversas injustiças.\n\n05"
+          },
+          {
+            "id": "desde-2013-esses-setores-organizados-e-insatisfeitos-com-a-falta-de",
+            "titulo": "Desde 2013, esses setores organizados e insatisfeitos com a falta de",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Desde 2013, esses setores organizados e insatisfeitos com a falta de\nrepresentatividade política dos velhos partidos e da corrupta política\ntradicional, se articularam em torno do programa da Unidade Popular\npelo Socialismo, que visa findar as injustiças do Brasil e da nossa\nregião, e, de forma consequente, pautar como saída imediata para a\ncrise o investimento no povo, a reversão das retiradas de direitos e a\nmelhoria dos serviços públicos. Porém, não se resolve os problemas\ndo povo brasileiro somente com política de gabinete, mas com\nmobilização, organização e luta nas ruas do nosso país, pois são\nnestes espaços, e dessa forma, que historicamente a classe\ntrabalhadora se constituiu enquanto sujeito político consciente e capaz\nde decidir seus próprios rumos.\nO povo é a nossa força e a nossa voz, e é para as ruas que devemos\nlevar o embate contra os retrocessos, a níveis federal, estadual e\nmunicipal, que ameaçam a nação. Por isso, convidamos todos e todas\nque se dispõem à luta e a construir um projeto socialista para o país\na comporem os nossos movimentos e fortalecerem a luta por um\nestado que esteja nas mãos daqueles que verdadeiramente o\nconstroem.\n\n06"
+          },
+          {
+            "id": "quem-sao-os-candidatos",
+            "titulo": "Quem são os candidatos?",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Quem são os candidatos?\n\nCandidata ao Governo do Estado, Luciana Amorim, 54 anos, é natural de\nAnápolis, é vice presidente estadual da UP, coordenadora estadual do movimento\nde mulheres Olga Benário – GO. Luta pelo socialismo, pelos direitos da classe\ntrabalhadora, das mulheres e da juventude. Participou recentemente das\nmobilizações contra a privatização da Saneago, da luta das mulheres contra o\nfeminicídio em Goiás. Luciana é servidora pública da Justiça Federal de Goiás, já\nfoi candidata a vice-prefeita em 2024, à vice-governadora em 2022, e irá disputar\no governo pela primeira vez.\nCandidato a vice - governador CAYMMI HENRIQUE, 37 anos, nasceu em Goiânia\ne é trabalhador de Callcenters desde os 19 anos. Formado em direito e estudante\nde pós-graduação, Caymmi integra as fileiras da Unidade Popular desde 2023 e\nluta pela democracia proletária, pelo poder popular e pelo socialismo, faz parte do\nMovimento Luta de Classes (MLC-GO) e da Frente Negra Revolucionária (FNR).\nÉ candidato pela primeira vez em Goiás por nosso partido.\n\n07"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "emprego-e-renda",
+            "titulo": "Emprego e Renda",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Emprego e Renda\n1-Criação de frentes emergenciais de trabalho, nos bairros pobres e interiores\nde todo o estado, com obras de infraestrutura em saneamento, manutenção\ne construção de postos de saúde e moradias populares para a geração de\nmilhares de empregos;\n2-Garantia de auxílio emergencial, de forma permanente, até a completa\noferta de emprego para a população goiana;\n3-Reestatização da CELG e interrupção do processo de privatização da\nSANEAGO;\n4-Estímulo à construção de redes de economia local e solidária: apoio às\norganizações de feiras agroecológicas, de artesanato e de pequenos\nprodutores locais de bens e serviços, de modo a favorecer a cultura de apoio\nmútuo e descentralizado dentro das comunidades/bairros;\n5-Garantir a proteção do mercado de trabalho da mulher, mediante incentivos\nespecíficos nos termos da lei;\n6-Implementação, de forma emergencial, do passe livre para as pessoas\nem situação de desemprego;\n7- Criação do salário mínimo Goiano e aumento de 100% dele comparado\na média nacional\n\n09"
+          },
+          {
+            "id": "desenvolvimento-agrario",
+            "titulo": "Desenvolvimento Agrário",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Desenvolvimento Agrário\n7-Prioridade à fiscalização e combate aos modos de trabalho análogos à\nescravidão, em especial na zona rural;\n8- Defesa irrestrita da agrigultura familiar e fortalecimento da política de\ninvestimento e proteção a esse setor.\n9-Realizar ações discriminatórias nas terras do Cerrado goiano para\nregularizar e retirá-las das mãos dos grileiros, entregando-as a cooperativas\nrurais, formadas por pequenos produtores e trabalhadores sem-terra;\n10-Universalizar a assistência técnica e extensão rural, capacitação aos\nagricultores(as) na perspectiva agroecológica, crédito e políticas de\ncomercialização para as famílias assentadas e pequenos proprietários(as)\nrurais;\n11-Consolidar e avançar na reforma agrária, na demarcação de terras\nindígenas e quilombolas e na delimitação de parques nacionais e áreas\nprotegidas, garantindo a integridade da paisagem e do espaço físico,\neconômico e social. Reforma agrária já!\n\n10"
+          },
+          {
+            "id": "direito-a-cidade-e-infraestrutura",
+            "titulo": "Direito à Cidade e Infraestrutura",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Direito à Cidade e Infraestrutura\n12-Estruturar as cidades a partir do planejamento territorial, da política\nhabitacional e da mobilidade urbana com investimentos massivos\nespecialmente nas periferias urbanas e assentamentos precarizados. O\nPlanejamento Urbano Integrado proporciona segurança e qualidade de vida.\nÉ fundamental oferecer moradias próximas às oportunidades de trabalho e\neducação. Criação de um plano estadual de acompanhamento ás pessoas\nem situação de rua e no combate a qualquer tipo de violência a essa\npopulação.\n13-Implementação dos Centros de Referência do Esporte regionalizados;\n14- Auditoria de todos os contratos a nível estadual com as empresas de\ntransporte público coletivo, subsidios e afins;\n15-Reestatização de todos os meios de transporte coletivo;\n16-Passe livre irrestrito para os estudantes no transporte coletivo;\n17-Investir na ampliação e qualificação da rede ferroviária e hidroviária para\na maior integração do território estadual e nacional;\n\n11"
+          },
+          {
+            "id": "18-recuperacao-de-imoveis-vazios-para-destinacao-a-moradia-e",
+            "titulo": "18-Recuperação de imóveis vazios para destinação à moradia e",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "18-Recuperação de imóveis vazios para destinação à moradia e\nequipamentos comunitários;\n19-Construir lavanderias coletivas e restaurantes populares para ás pessoas\nem situação de fome e desemprego;\n20-Incentivar a agricultura urbana e o extrativismo vegetal em áreas urbanas,\nutilizando-se da exploração de terrenos públicos ociosos;\n22-Garantia de moradia digna, saneamento e coleta de lixo para todas as\nfamílias goianas; destinar os imóveis abandonados para resolver o déficit\nhabitacional; construção de um programa massivo de habitação popular.\nInterrupção imediata das remoções feitas contra ás familias que não tem onde\nmorar. Reforma Urbana já\n\n12"
+          },
+          {
+            "id": "educacao",
+            "titulo": "Educação",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Educação\n21-Efetivar um plano estadual da Escola Básica Integral;\n22-Realização de um novo Concurso Público a fim de suprir o déficit de\nprofissionais da educação em Goiás;\n23-Desmilitarização e interrupção do processo de militarização dos Colégios\nEstaduais;\n24-Reestruturação, com maior investimento financeiro, da Universidade\nEstadual de Goiás – UEG, defesa da carreira docente e dos técnicos da\nuniversidade.\n25-Lançamento de programa de erradicação do analfabetismo no estado,\nenvolvendo redes e mobilizadores populares ligados aos movimentos sociais\ne educacionais;\n26-Política Estadual de Educação, Ciência e Tecnologia: ampliar a rede de\nescolas públicas de ensino fundamental, médio, técnico (COTECs e Escolas\ndo Futuro), em especial nas periferias das grandes cidades e no interior do\nestado;\n27-Integração do Ensino Técnico com Centros de Serviços à população;\n\n13"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "Página 17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "28-Ampliar as instituições de pesquisa e integrá-las aos programas de pósgraduação, com especial atenção à Fundação de Amparo à Pesquisa do\nEstado de Goiás - FAPEG. Ampliar o número de bolsas de pesquisa nos\ncursos de graduação, pós-graduação;\n29-Garantia de creche, educação infantil em tempo integral e serviços\nespecíficos para o contraturno escolar para todas as crianças e\nadolescentes, em especial para as/os filhas/os de mães que estudam e\ntrabalham a noite (não escolar);\n30-Promover o ensino da Língua Brasileira de Sinais nos Colégios\nEstaduais;\n31-Ampliação da rede de Educação de Jovens e Adultos –EJA e Ampliação e\nmelhoramento das Escolas Rurais;\n32- Garantia de um plano de carreira para os trabalhadores da educação no estado\nde Goiás;\n33-Promover a educação sexual nas escolas: oferecer às crianças e\nadolescentes uma educação sexual que garanta o cuidado com a saúde, o\ncombate à violência sexual e à pedofilia, e que promova respeito à\ndiversidade sexual;\n34-Fortalecimento e incentivo às Organizações Estudantis, resguardando sua\nautonomia. Defesa da criação de grêmios estudantis e respeito a lei do\ngrêmio livre;\n\n14"
+          },
+          {
+            "id": "cultura",
+            "titulo": "Cultura",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Cultura\n32Fortalecimento dos equipamentos culturais de memória em Goiás,\ncomo museus e centros culturais, com ampliação do investimento em toda\na cadeia museológica com formação, equipamentos e ferramentas;\n33Criação de centros educativos de arte comunitária regionalizados,\ncom o estudo de música, teatro, dança, artes plásticas e audiovisual de\nforma pública, gratuita e de qualidade;\n34Realização anual do Festival de Cultura Goiana, para a ampla\npromoção da cultura popular local e valorização dos artistas e\ntrabalhadores da cultura do estado;\n35Realização de concursos estaduais anuais, com etapas\nmunicipais, de música, dança, gastronomia, artes plásticas, teatro, escrita\ne audiovisual;\n36Criação do Circuito Cultural Goiano como um programa estadual\nque visa promover a difusão das manifestações artísticas e culturais de\nGoiás de forma descentralizada, promovendo o acesso da população à\ndiversidade de manifestações culturais e artísticas por todo o estado.\n\n15"
+          },
+          {
+            "id": "fim-da-discriminacao-das-mulheres-direitos-iguais-fim-do-racismo-e-da",
+            "titulo": "Fim da discriminação das mulheres; direitos iguais; fim do racismo e da",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Fim da discriminação das mulheres; direitos iguais; fim do racismo e da\ndiscriminação ao povo negro\n37- Firme combate à exploração sexual de mulheres e crianças;\n38- Legalização do aborto, para garantir saúde pública para todas;\n39- Firme punição aos infratores;\n40- Lutar contra todas as manifestações LGBTfóbicas;\n41-Política de reparação histórica e cultural, alterando nome de ruas,\nmonumentos que cultuam figuras de escravistas, ditadores e genocidas.\nNo seu lugar, devemos levantar nomes de heróis e heroínas explorados e\noprimidos;\n42-Programa de ampliação das vagas nos setores públicos para a população\nnegra;\n43-Garantia de ensino de história da cultura afro-brasileira;\n44-Combate à violência de Estado e ao perfilamento racial;\n45-Promover o debate sobre a política de planejamento familiar desde a\nperspectiva e a necessidade da mulher. Valorização e garantia de direitos\nàs mulheres que se dedicam ao trabalho doméstico;\n\n16"
+          },
+          {
+            "id": "46-enfrentar-a-lgbtfobia-criacao-de-programas-de-estimulo-a-capacitacao",
+            "titulo": "46-Enfrentar a LGBTfobia: criação de programas de estímulo à capacitação",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "46-Enfrentar a LGBTfobia: criação de programas de estímulo à capacitação\nprofissional e inserção no mercado de trabalho; formulação de políticas de\nsaúde e seguridade social específica à parcela dessa população vítima de\nviolências físicas, psicológica e sexual;\n47-Fim de qualquer discriminação religiosa, de raça ou sexo; plena garantia à\nliberdade religiosa;\n48-Defender um maior investimento em políticas públicas para mulheres;\n49-Fomentar e auxiliar na criação de Secretarias Municipais de Políticas para\nas Mulheres. Com orçamento próprio e autonomia para trabalhar\ncoletivamente com a comunidade para garantir melhorias e mudanças na vida\ndas mulheres;\n50-Criar os conselhos populares de mulheres para promover um amplo\ndebate da realidade específica nos bairros e comunidades;\n51-Combater todas as formas de violência de gênero realizando ações\nsocioeducativas que esclareçam a população sobre o direito das mulheres,\ngarantindo capacitação continuada sobre gênero para a prevenção das\nviolências domésticas, visando o público escolar de todas as faixas etárias,\nprofissionais do serviço público e a comunidade em geral. Para isso garantir a\naplicação da lei Maria da Penha (11.340/2006), que no artigo 8º prevê a\npromoção de estudos, pesquisas, levantamentos de dados estatísticos\nreferentes à violência doméstica de gênero, possibilitando um\ndiagnóstico/mapa das violências no município que contribuam com a\ncampanha;\n\n17"
+          },
+          {
+            "id": "52-criar-o-programa-estadual-de-agentes-multiplicadores",
+            "titulo": "52-Criar o Programa Estadual de Agentes Multiplicadores",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "52-Criar o Programa Estadual de Agentes Multiplicadores\npara a Defesa dos Direitos da Mulher em parceria com os\nmovimentos de mulheres, movimento populares, entidades\nclassistas;\n53-Promover políticas para a inserção de mulheres trans e\ntravestis no mercado de trabalho, garantindo às mesmas\nemprego e inserção na sociedade;\n54-Ampliar e garantir o acesso à justiça e à assistência\njurídica gratuita às mulheres em situação de violência e\nvulnerabilidade, entre outras demandas, com a ampliação\nda Assistência Jurídica em parceria com as universidades e\nescritórios modelos de advocacia;\n55-Implementar\nCentros\nde\nReferência/Defesa\ne\nConvivência/Integrado para Mulheres que visem o\natendimento multi/transdisciplinar de mulheres (cis, trans e\ntravestis) principalmente, mas não exclusivamente, em\nsituação de violência doméstica e/ou de gênero, sem\nrestrições territoriais. Com equipe técnica especializada para\npsicológicos, assistências sociais e orientações jurídicas,\nbem como espaços coletivos e de convivência, com\nreflexões temáticas, espaços terapêuticos, educação em\ndireitos e oficinas socioeducativas e/ou geração de renda\ncom profissionais capacitadas;\n56-Implementar Delegacias especiais para as mulheres com\natendimento 24 horas e fins de semana, qualificando os\n18"
+          },
+          {
+            "id": "profissionais-da-area-de-seguranca-publica-para-realizar-os",
+            "titulo": "profissionais da área de segurança pública para realizar os",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "profissionais da área de segurança pública para realizar os\natendimentos com a perspectiva humanizada com as\nvítimas;\n\n19"
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "Segurança pública",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Segurança pública\n57-Combate ao crime organizado com as forças de inteligência do estado;\ndefesa de camera nas fardas da Polícia Militar em todo o estado;\n58-Interromper o processo de militarização das Guardas Civis\nMetropolitanas;\n60-Divulgação de dados relacionados a ocorrências atendidas pelas\nPolícias, com divulgação do perfil das pessoas envolvidas;\n61-Melhoria das condições carcerárias, voltadas à reintegralização do\nindivíduo encarcerado à sociedade;\n6 2 - D e s m i l i t a r i z a ç ã o d a p o l í c i a m i l i t a r . Fim de qualquer\nrepressão aos movimentos sociais;\n\n20"
+          },
+          {
+            "id": "saude",
+            "titulo": "Saúde",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Saúde\n63- Construção de Centros Regionais de Saúde de Especialização Médica;\n64- Interiorização das Unidades de Pronto Atendimento – UPA;\n65- Implementação de Rede de Centros de Saúde da Família em todo o\nestado;\n66- Distribuição de absorventes nas Unidades Básicas de Saúde, escolas e\nunidades prisionais;\n67- Em defesa do Sistema Único de Sáude (SUS). Pelo fim das organizações\nsociais na saúde do estado;\n68- Garantir o acesso ao pré-natal de qualidade, com promoção de\neducação em direitos para pessoas gestantes, preenchimento adequado\ne informado do Plano de Parto, para resguardar e garantir as decisões da\npessoa gestante no pré/peri/pós parto, bem como orientações sobre as\nformas de violência obstétrica, a fim de preveni-las; ampliação das\nmaternidades e criação das casas de parto humanizadas; capacitação\ncontinuada para as equipes de saúde com foco na autonomia e\nprotagonismo das pessoas gestantes e parturientes; campanhas\neducativas para a comunidade em geral sobre direitos sexuais e\nreprodutivos, parto humanizado, fluxos de atendimentos, as formas de\nviolência obstétrica e como denunciá-las/pedir ajuda.\n\n21"
+          },
+          {
+            "id": "pcds",
+            "titulo": "PCDs",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PCDs\n69- Implementação da educação inclusiva nos Colégios Estaduais,\ncom a contratação de profissionais exclusivos e capacitados para o\nacompanhamento de alunos com deficiência e neuro atípicos;\n70- Implementação regional dos Centros de Reabilitação;\n71- Apoiar os municípios em seus planos de acessibilidade\n72- Combate ao capacitismo e a toda forma de opressão a pessoas com\ndeficiência e a pessoas neurodivergentes\n\nPropostas Gerais da UP – Goiás para o estado e a nível nacional\n1- Pelo fim da escala 6x1 sem redução de salários\n2- Obrigatoriedade de todos os políticos usarem os SUS\n3- Combate a qualquer tipo de discriminação a população muçulmana e árabe\nem nosso estado. Pelo fim da xenofobia. Palestina livre!\n4- Em defesa das terras indígenas e quilombolas no estado\n5- Defesa dos migrantes no estado de Goiás.\n6- Juventude quer viver! Emprego, moradia e acesso a educação para a\njuventude periférica no estado.\n7- Criação de uma empresa pública para gerir às terras raras. Contra o\nentreguismo das nossas riquezas ao imperialismo estadunidense\n8- Prisão para todos os corruptos e corruptores\n\n22"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "6091632deac31bf3a8d3289ee1e19e2d6461d274c9727f7afac47965928b1872"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d2ff1e39eabeba1c46375600cd72459d90274b843e3e26a6c9bc1fa91109320f"
+          },
+          {
+            "pagina": 3,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "b6b0034e33914b731354cc416da430ebdaafde4ecd92a0ab0c3001a5c430d54f"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "b9027df7789a201ee63e5193080d760852ee1baffa4ffcc7dd5dbef7ef5e3a20"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "d56940f82cb323d24dd0da9c31b7fae5d66e5ee10507d416d304ee967ea8d9b5"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "a2bc085b979d3e84dc5793f300f7c17c71aa98c005a06b17ffa7b7e438d211b0"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a1302a07093ae3de376b48460ca690ef09c16bb7bfd2e7a53e1b840d0471d9c2"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "1532c34489f0d20bf8c94d8bf78ca7a3f46982e5107dfd4781b5ac6280e0c304"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "1b9407fbc24790a35ba9ae99ee8395475193173244d1c641d6176530c53a00fc"
+          },
+          {
+            "pagina": 11,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "b7b491a8fe8a0ac8ae59eac54861600550585140e3b6415299ba9a6b6ded8a8d"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "b6284ea27578bbd10a28cf96bc7088b955d4a2921fdf3626824843699058600b"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "9f09dd6ac4a12afd9ea1401700385cd3b12fa9afcf90dee1c6e94cb79dbf6d47"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "c1f819c803c0741959fbb50e0565db0bc902667317c10f3ec5b8511c939a407a"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "35e4894f2349b8fbf6b90dbdd90469a3201f41ac3e69dc6c97ec845fe674e0c3"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "49011b59616167c5e11c6df7377709b7234f77ca0a535159c0cfe21bba0e6504"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "f6c3354b2c87764ed8e56b91f4fca7b8b7121f175834292ac1a1fedbab1186f8"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "20edc445049470f4c3b5efee1539301a5aca7a32d801dc9b3f6b24513efa4589"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "a42c8f7917d8ecf1ebfd279e4df80637c56c782ec35c29661f653e0a096e00b2"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "4391218be102a5ba84226b1498ae45bdf0d8ea783f2783572b8defe5ebc2bb5e"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "8509be89c3b93d855a261fb46a9929126bd3459e83e07fa308fa1d5270b7f375"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "b63cf4cbbe7ad2a9baf7824b6eee31a69355ad63e0e544878070dbc4be797f73"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "f0dd328cd6e53eb8c557197b51d9fad8295050e5f9e281c761a2dde6566fba30"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "b605b5be3e0798e478d7a382c42aa4d992b8dc8dc5d8ab4a3d149d5748ec788a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na área de emprego, o programa prevê a criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento. No desenvolvimento agrário, apresenta a defesa irrestrita da agrigultura familiar e o fortalecimento da política de investimento e proteção a esse setor. Para o direito à cidade, prevê a recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários. Na educação, propõe efetivar um plano estadual da Escola Básica Integral. Na cultura, estabelece a criação de centros educativos de arte comunitária regionalizados, com o estudo de música, teatro, dança, artes plásticas e audiovisual de forma pública, gratuita e de qualidade. Na segurança pública, propõe o combate ao crime organizado com as forças de inteligência do estado. Na saúde, prevê a implementação de Rede de Centros de Saúde da Família em todo o estado.",
+    "frases": [
+      {
+        "texto": "Na área de emprego, o programa prevê a criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 12,
+            "trecho": "Criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento agrário, apresenta a defesa irrestrita da agrigultura familiar e o fortalecimento da política de investimento e proteção a esse setor.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 13,
+            "trecho": "Defesa irrestrita da agrigultura familiar e fortalecimento da política de investimento e proteção a esse setor."
+          }
+        ]
+      },
+      {
+        "texto": "Para o direito à cidade, prevê a recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 15,
+            "trecho": "Recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe efetivar um plano estadual da Escola Básica Integral.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 16,
+            "trecho": "Efetivar um plano estadual da Escola Básica Integral;"
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, estabelece a criação de centros educativos de arte comunitária regionalizados, com o estudo de música, teatro, dança, artes plásticas e audiovisual de forma pública, gratuita e de qualidade.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 18,
+            "trecho": "Criação de centros educativos de arte comunitária regionalizados, com o estudo de música, teatro, dança, artes plásticas e audiovisual de forma pública, gratuita e de qualidade;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, propõe o combate ao crime organizado com as forças de inteligência do estado.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 23,
+            "trecho": "Combate ao crime organizado com as forças de inteligência do estado;"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê a implementação de Rede de Centros de Saúde da Família em todo o estado.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 24,
+            "trecho": "Implementação de Rede de Centros de Saúde da Família em todo o estado;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "emprego",
+        "titulo": "Emprego",
+        "descricao": "Frentes emergenciais de trabalho em bairros pobres e interiores.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 12,
+            "trecho": "Criação de frentes emergenciais de trabalho, nos bairros pobres e interiores de todo o estado, com obras de infraestrutura em saneamento"
+          }
+        ]
+      },
+      {
+        "id": "desenvolvimento-agrario",
+        "titulo": "Desenvolvimento agrário",
+        "descricao": "Defesa da agricultura familiar.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 13,
+            "trecho": "Defesa irrestrita da agrigultura familiar e fortalecimento da política de investimento e proteção a esse setor."
+          }
+        ]
+      },
+      {
+        "id": "direito-cidade",
+        "titulo": "Direito à cidade",
+        "descricao": "Destinação de imóveis vazios à moradia.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 15,
+            "trecho": "Recuperação de imóveis vazios para destinação à moradia e equipamentos comunitários;"
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "Plano estadual da Escola Básica Integral.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 16,
+            "trecho": "Efetivar um plano estadual da Escola Básica Integral;"
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Rede de Centros de Saúde da Família.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002550707:01",
+            "pagina": 24,
+            "trecho": "Implementação de Rede de Centros de Saúde da Família em todo o estado;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:43:56.338Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:45:55.579Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Nao ha numeros na afirmacao a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação meramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (emprego)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:1:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidencia cobre integralmente a clausula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (desenvolvimento agrário)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:2:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (direito à cidade)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:3:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:4:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:5:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (segurança pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:6:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:frase:7:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:emprego:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Escopo restrito da afirmação plenamente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:desenvolvimento-agrario:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Escopo restrito da afirmação plenamente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:direito-cidade:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Escopo restrito da afirmação plenamente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:educacao:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Escopo restrito da afirmação plenamente coberto."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002550707:tema:saude:documentos:GO:90002550707:01:cobertura",
+        "verdict": "yes",
+        "reason": "Escopo restrito da afirmação plenamente coberto."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:GO:90002550707",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "GO:90002550707:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 27308,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3152,
+          "reasoning_output_tokens": 2065
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21058,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19627,
+          "output_tokens_details": {
+            "thinking_tokens": 421
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21058,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19627,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21058,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21058
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.29710640000000005
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "c62a13d368ad4101401c9cfd43a675adae6094bbbba14b22be9bc904a2fe21b3",
+    "extractedTextSha256": "f8768e0916fc0e181a688045f25f052d784e0ab1bbeace7bfb74da9788353842",
+    "documentCount": 1,
+    "documentSetSha256": "13dd24b2c1690bdba7ee7ac894bff5472c9a85e49f98328b6dc6596bd0d3961d",
+    "contentSha256": "14cdcf85b548a42161157e8993b239136239677211b982078cfe371c1332caf8"
+  }
+}

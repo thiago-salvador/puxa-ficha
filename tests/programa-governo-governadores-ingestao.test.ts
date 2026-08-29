@@ -203,7 +203,12 @@ function modelConfig(): ProgramaGovernoModelsConfig {
   }
 }
 
-function hermeticModels(documentoId: string, observations: string[], firstVerdict: "yes" | "no" | "unknown" = "yes") {
+function hermeticModels(
+  documentoId: string,
+  observations: string[],
+  firstVerdict: "yes" | "no" | "unknown" = "yes",
+  config: ProgramaGovernoModelsConfig = modelConfig(),
+) {
   let generatorAttempts = 0
   const runner: ProgramaGovernoModelProcessRunner = async (command, _args, rawInput) => {
     observations.push(command)
@@ -238,7 +243,7 @@ function hermeticModels(documentoId: string, observations: string[], firstVerdic
       stderr: "",
     }
   }
-  return createProgramaGovernoModelAdapters(modelConfig(), runner)
+  return createProgramaGovernoModelAdapters(config, runner)
 }
 
 test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
@@ -251,12 +256,25 @@ test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
     "--repair-guidance=Preservar a cláusula literal.",
     "--repair-facts-limit=6",
     "--multipassagem-limite-bytes=90000",
+    "--generator-only",
+    "--generator-checkpoint-dir=private-checkpoints",
   ])
   assert.deepEqual(parsed.ufs, ["AC", "AM", "PI"])
   assert.equal(parsed.forceFacts, true)
   assert.equal(parsed.repairGuidance, "Preservar a cláusula literal.")
   assert.equal(parsed.repairFactsLimit, 6)
   assert.equal(parsed.multipassagemLimiteBytes, 90_000)
+  assert.equal(parsed.generatorOnly, true)
+  assert.ok(parsed.generatorCheckpointDir?.endsWith("private-checkpoints"))
+  const resume = parseProgramaGovernoGovernadoresArgs([
+    "--ufs=AM", "--inventory=fixtures/inventory.json", "--archive-dir=fixtures/archives", "--output-dir=fixtures/output",
+    "--resume-generator-checkpoint=private-checkpoints/AM-40000000000.generator.json",
+  ])
+  assert.ok(resume.resumeGeneratorCheckpoint?.endsWith("AM-40000000000.generator.json"))
+  assert.throws(() => parseProgramaGovernoGovernadoresArgs([
+    "--ufs=AM", "--inventory=i", "--archive-dir=a", "--output-dir=o", "--generator-only",
+    "--resume-generator-checkpoint=x.json",
+  ]), /mutuamente exclusivos/)
   assert.throws(() => parseProgramaGovernoGovernadoresArgs(["--ufs=XX"]), /use --ufs/)
   assert.throws(() => parseProgramaGovernoGovernadoresArgs([
     "--ufs=AM",
@@ -272,6 +290,168 @@ test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
     "--output-dir=fixtures/output",
     "--repair-facts-limit=7",
   ]), /repair-facts-limit/)
+})
+
+test("generator-only persiste checkpoint privado, sem julgamento, e resume sem chamar generator", async () => {
+  const uf = "AM"
+  const sq = "40000000000"
+  const archive = Buffer.from("archive-AM")
+  const pdf = Buffer.from("pdf-generator-checkpoint")
+  const doc = document(uf, sq, 1, pdf)
+  const item = candidate(uf, sq, {
+    slug: "checkpoint-teste",
+    perfilEstado: "vinculado",
+    fonteEstado: "documento_oficial_encontrado",
+    estadoInventario: "documento_oficial_encontrado",
+    documentoIds: [doc.id],
+  })
+  const source = inventory([item], [doc], new Map([[uf, archive]]))
+  const files = new Map<string, string>()
+  const observations: string[] = []
+  const adapters = {
+    readText: async (file: string) => {
+      if (file === "/inventory.json") return JSON.stringify(source)
+      const value = files.get(file)
+      if (value === undefined) throw new Error(`arquivo ausente ${file}`)
+      return value
+    },
+    readBytes: async () => archive,
+    extractArchiveEntry: async () => pdf,
+    extractPdf: async (bytes: Buffer, filename: string) => extraction(bytes, filename.endsWith("_01.pdf") ? "parte-1" : "parte-2"),
+    ensureDir: async () => undefined,
+    writeText: async (file: string, value: string) => { files.set(file, value) },
+    rename: async (from: string, to: string) => {
+      const value = files.get(from)
+      if (value === undefined) throw new Error(`temporario ausente ${from}`)
+      files.set(to, value)
+    },
+    now: () => "2026-08-29T12:00:00.000Z",
+  }
+  const first = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    generatorOnly: true, generatorCheckpointDir: "/private-checkpoints",
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  const checkpointPath = "/private-checkpoints/AM-40000000000.generator.json"
+  assert.equal(first.records[0]?.ingestao.eval?.completo, false)
+  assert.equal(first.records[0]?.julgamento, undefined)
+  assert.equal(first.records[0]?.ingestao.modelos?.judge, undefined)
+  assert.equal(files.has(checkpointPath), true)
+  const checkpoint = JSON.parse(files.get(checkpointPath)!) as {
+    kind: string
+    identityKey: string
+    source: { sqCandidato: string }
+    documentHashes: Array<{ sourceSha256: string }>
+    generatorInputSha256: string
+    summarySha256: string
+    contract: { promptVersion: string }
+  }
+  assert.equal(checkpoint.kind, "programa-governo-generator-checkpoint")
+  assert.equal(checkpoint.identityKey, item.chave)
+  assert.equal(checkpoint.source.sqCandidato, sq)
+  assert.equal(checkpoint.documentHashes[0].sourceSha256, doc.sha256)
+  assert.match(checkpoint.generatorInputSha256, /^[a-f0-9]{64}$/u)
+  assert.match(checkpoint.summarySha256, /^[a-f0-9]{64}$/u)
+  assert.equal(checkpoint.contract.promptVersion, PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION)
+  assert.equal(observations.filter((command) => command === "generator-mock").length, 2)
+
+  observations.length = 0
+  const resumed = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  assert.equal(resumed.records[0]?.julgamento?.verdicts.length, (6 + 4) * 6)
+  assert.equal(resumed.records[0]?.ingestao.eval?.completo, true)
+  assert.deepEqual(observations, ["judge-mock"])
+})
+
+test("resume generator-only rejeita checkpoint stale antes de chamar qualquer modelo", async () => {
+  const uf = "AM"
+  const sq = "40000000001"
+  const archive = Buffer.from("archive-AM-stale")
+  const pdf = Buffer.from("pdf-generator-checkpoint-stale")
+  const doc = document(uf, sq, 1, pdf)
+  const item = candidate(uf, sq, {
+    slug: "checkpoint-stale-teste",
+    perfilEstado: "vinculado",
+    fonteEstado: "documento_oficial_encontrado",
+    estadoInventario: "documento_oficial_encontrado",
+    documentoIds: [doc.id],
+  })
+  const source = inventory([item], [doc], new Map([[uf, archive]]))
+  const files = new Map<string, string>()
+  const observations: string[] = []
+  const adapters = {
+    readText: async (file: string) => file === "/inventory.json" ? JSON.stringify(source) : files.get(file) ?? (() => { throw new Error(`arquivo ausente ${file}`) })(),
+    readBytes: async () => archive,
+    extractArchiveEntry: async () => pdf,
+    extractPdf: async (bytes: Buffer) => extraction(bytes, "parte-1"),
+    ensureDir: async () => undefined,
+    writeText: async (file: string, value: string) => { files.set(file, value) },
+    rename: async (from: string, to: string) => { files.set(to, files.get(from)!) },
+    now: () => "2026-08-29T12:00:00.000Z",
+  }
+  await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    generatorOnly: true, generatorCheckpointDir: "/private-checkpoints-stale",
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  const checkpointPath = "/private-checkpoints-stale/AM-40000000001.generator.json"
+  const baseline = files.get(checkpointPath)!
+  const stale = JSON.parse(files.get(checkpointPath)!) as {
+    documentHashes: Array<{ sourceSha256: string }>
+  }
+  stale.documentHashes[0].sourceSha256 = "0".repeat(64)
+  files.set(checkpointPath, `${JSON.stringify(stale)}\n`)
+  observations.length = 0
+  const result = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  assert.equal(result.records[0]?.ingestao.eval?.completo, false)
+  assert.match(result.records[0]?.ingestao.erro ?? "", /documentos ou hashes divergentes/)
+  assert.deepEqual(observations, [])
+
+  const summaryStale = JSON.parse(baseline) as { summary: { texto: string } }
+  summaryStale.summary.texto = summaryStale.summary.texto.replace("palavra1", "palavra-adulterada")
+  files.set(checkpointPath, `${JSON.stringify(summaryStale)}\n`)
+  observations.length = 0
+  const summaryResult = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  assert.match(summaryResult.records[0]?.ingestao.erro ?? "", /resumo stale/)
+  assert.deepEqual(observations, [])
+
+  const contractStale = JSON.parse(baseline) as { contract: { instructionsSha256: string } }
+  contractStale.contract.instructionsSha256 = "0".repeat(64)
+  files.set(checkpointPath, `${JSON.stringify(contractStale)}\n`)
+  observations.length = 0
+  const contractResult = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  assert.match(contractResult.records[0]?.ingestao.erro ?? "", /contrato ou evidencias stale/)
+  assert.deepEqual(observations, [])
+
+  files.set(checkpointPath, baseline)
+  observations.length = 0
+  const inputResult = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    repairGuidance: "orientacao diferente para a mesma entrada",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations), adapters })
+  assert.match(inputResult.records[0]?.ingestao.erro ?? "", /input efetivo divergente/)
+  assert.deepEqual(observations, [])
+
+  const alteredModelConfig = modelConfig()
+  alteredModelConfig.generator.version = "sonnet-test-altered"
+  files.set(checkpointPath, baseline)
+  observations.length = 0
+  const modelResult = await ingestProgramaGovernoGovernadores({
+    ufs: [uf], inventoryPath: "/inventory.json", archiveDir: "/archives", outputDir: "/output",
+    resumeGeneratorCheckpoint: checkpointPath,
+  }, { models: hermeticModels(doc.id, observations, "yes", alteredModelConfig), adapters })
+  assert.match(modelResult.records[0]?.ingestao.erro ?? "", /modelo divergente/)
+  assert.deepEqual(observations, [])
 })
 
 test("importador contabiliza as 27 UFs por identidade composta e materializa perfil ausente", async () => {
@@ -357,7 +537,9 @@ test("ingere todos os documentos sequenciais com hash, paginas, modelos separado
   assert.deepEqual(observations, ["generator-mock", "generator-mock", "judge-mock"])
   assert.equal(record.ingestao.modelos?.generator.attempts, 2)
   assert.equal(record.ingestao.modelos?.generator.name, "Anthropic Claude")
-  assert.equal(record.ingestao.modelos?.judge.name, "OpenAI GPT")
+  const judgeMetadata = record.ingestao.modelos?.judge
+  assert.ok(judgeMetadata)
+  assert.equal(judgeMetadata.name, "OpenAI GPT")
   assert.equal(record.julgamento?.promptVersion, "programa-governo-governadores-judge-v2")
   assert.deepEqual(record.ingestao.eval?.dimensoes, PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS)
   assert.equal(record.julgamento?.verdicts.length, (6 + 4) * 6)

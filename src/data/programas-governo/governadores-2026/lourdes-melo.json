@@ -1,0 +1,784 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002553722",
+    "slug": "lourdes-melo",
+    "nomeUrna": "LOURDES MELO",
+    "partido": "PCO",
+    "arquivoNome": "2026PI180002553722_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002553722_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002553722:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002553722_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002553722_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+        "extractedTextSha256": "7038fd8efdf79b7e62b89ce8f3eb90ee1275ddb2cd68b534d17c617fac2bca18",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "programa-de-luta-eleicoes-2026",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\nPROGRAMA DO PCO - ELEIÇÕES 2026\n\nPor salário, trabalho e terra\nRevolução, governo operário e comunismo\n\nO PCO não participa das eleições para fazer promessas\nPara o Partido da Causa Operária, as eleições são uma tribuna (e apenas mais uma) de propaganda\ndas reivindicações fundamentais da população explorada, principalmente o socialismo e o governo\noperário, e para defender a organização dos trabalhadores, pois as conquistas do povo trabalhador\nnão virão pelo voto, pelo discurso demagógico dos políticos da burguesia, mas pela luta do povo\ntrabalhador e de suas organizações.\nPara o PCO, as eleições são um terreno secundário da luta da classe operária e dos explorados, que\nsó podem conquistar seus objetivos fundamentais por meio da sua organização e mobilização\nrevolucionárias.\nPara nós, a participação da classe operária e do partido operário nas eleições é obrigatória como\nparte do desenvolvimento político das massas, que somente podem superar o atual regime político,\nque é uma ditadura dos bancos e do grande capital da cidade e do campo (latifundiários) contra a\nimensa maioria do povo, por meio da experiência prática.\nApresentamos nas eleições o mesmo programa de luta que defendemos nas lutas gerais dos\nexplorados, um programa próprio da classe trabalhadora, visando sua emancipação da escravidão do\ncapitalismo, por meio da revolução e da conquista de um governo próprio dos trabalhadores, um\ngoverno das organizações operárias, camponesas e de todos os setores explorados.\nO abstencionismo eleitoral é uma política sectária.\nA abstenção no atual processo eleitoral, por mais fraudulento que seja, equivaleria a abandonar a\nluta para arrancar os trabalhadores e a juventude da influência nefasta da política burguesa e de\ncolaboração de classes; significa não lutar para superar ilusões no mecanismo parlamentar e na\ncrença absurda de que é possível transformar minimamente a vida do povo trabalhador por meio de\neleições fraudulentas e controladas pelas alas mais reacionárias do grande capital.\nNosso Partido comparece às eleições tendo como lema central a defesa da Revolução, do Governo\nOperário e do Comunismo."
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-2",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\nPontos centrais do nosso programa de luta\n\n01\n\nParar o roubo dos salários\n\nA inflação, a cassação dos direitos trabalhistas e os juros exorbitantes vêm corroendo ininterruptamente o\nsalário do trabalhador brasileiro, por isso é necessário um reajuste imediato dos salários e uma política de\nproteção dos vencimentos dos trabalhadores diante da inflação.\n• Reposição integral de 100% das perdas salariais; aumento emergencial de 50% de todos os salários\n• Escala móvel dos salários, diante da escalada da inflação: aumento automático toda vez que o custo de vida\ndo trabalhador subir 3%\n• Salário mínimo vital suficiente para atender às necessidades do trabalhador e de sua família (que hoje não\npoderia ser menor que R$7.500), deliberado pelas organizações operárias\n• Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação\nde caos atual\n• Anulação de todas as dívidas dos trabalhadores com o sistema financeiro.\n\n02\n\nReduzir a jornada e acabar com o desemprego\n\nA burguesia tem criado mecanismos para que, diante do medo do desemprego, os trabalhadores aceitem a\nredução de qualquer garantia trabalhista que ainda lhes resta. Para acabar com o desemprego e gerar milhões\nde novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários.\n• Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais):\ntrabalhar menos para que todos trabalhem\n• Proibição das demissões; ocupação e controle dos trabalhadores sobre as empresas que demitam ou\nameacem fechar\n• Salário-desemprego igual ao último salário recebido para todos os trabalhadores demitidos\n• Proibição de despejos e cortes de serviços essenciais (como água, luz, gás etc.) para todos os\ndesempregados\n• Passe livre nos transportes para desempregados e trabalhadores da economia informal."
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-3",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\n03\n\nRevogar todas as \"reformas\" do golpe de 2016\n\nNão bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a\ncabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com\ndireitos iguais para todos os trabalhadores.\n• Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos\ntrabalhadores\n• Em defesa das aposentadorias e pensões confiscadas com a reforma da Previdência\n• Revogar todas as \"reformas\" contra os trabalhadores da ativa e aposentados, em todos os níveis (federal,\nestadual e municipal)\n• Aposentadoria, no máximo, aos 25 anos de trabalho para as mulheres e 30 anos para os homens\n• Cobrança das dívidas das grandes empresas com a Previdência, se necessário, com a tomada do controle\ndessas empresas pelo Estado\n• Imposto sobre as grandes fortunas para garantir os recursos necessários para as aposentadorias e pensões\n• Reajuste das aposentadorias e pensões, com reposição de 100% das perdas\n• Fim dos privilégios de oficiais militares, juízes e familiares\n• Gestão dos trabalhadores sobre os fundos previdenciários.\n\n04\n\nCancelar as privatizações e a destruição da economia nacional\n\nTodo o País sofre horrores por conta da entrega das empresas estatais ou do seu sucateamento, iniciada na\nfamigerada era FHC. É preciso cancelar a venda do patrimônio do povo brasileiro e reestatizar todas as\nempresas entregues ao capital estrangeiro por verdadeiros lesa-pátria. E colocar toda a riqueza natural do\nBrasil e tudo o que foi construído com o suor dos trabalhadores a serviço do próprio povo.\n• Unificar os trabalhadores das estatais para barrar com greves e ocupações as privatizações dos Correios,\nPetrobrás, CEF etc.\n• Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)\n• Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos\nos seus postos de direção pelos trabalhadores\n• Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos\ntubarões internacionais\n• Colocar a riqueza do petróleo a serviço das necessidades do povo brasileiro, destinando-a à saúde e\neducação públicas, construção de moradias populares, obras de infraestrutura etc.\n• Redução imediata do preço dos combustíveis em 50%. Fim da política de paridade com o dólar\n• Não à entrega das terras raras: criação de empresa estatal que controle sua exploração, comandada pelos\ntrabalhadores, para garantir o uso dessas riquezas em favor do povo."
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-4",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\n05\n\nFim da destruição dos serviços públicos e dos ataques ao funcionalismo\n\nO ataque aos serviços públicos é parte fundamental da destruição da vida de todo o povo. É preciso lutar\ncontra essa política de toda a direita e defender os direitos do funcionalismo, lutar contra a terceirização e o\ncorte nos gastos públicos.\n• Não ao fim da estabilidade dos servidores públicos\n• Mais verbas para a saúde e educação e demais serviços essenciais\n• Fim do teto de gastos e da Lei de Responsabilidade Fiscal\n• Abaixo o congelamento de gastos públicos decretado no governo Temer\n• Contra as terceirizações; estabilidade imediata para todos os servidores contratados precariamente, com\nisonomia de direitos e salários\n• Pela realização de concursos públicos periódicos para repor o quadro de servidores.\n\n06\n\nReforma Agrária com expropriação do latifúndio e demarcação das terras\ndos índios\n\nO latifúndio mata de fome e de bala milhares de brasileiros. É urgente a luta pelo fim dos latifúndios e o direito\nà terra para todos que nela trabalham; o fim da perseguição e a garantia das terras e condições dignas de vida\npara os índios\n• Assentamento imediato dos milhões de sem-terra acampados em todo o País\n• Demarcação e posse da terra para todos os índios das retomadas; expulsão dos latifundiários que invadiram\nas terras dos índios\n• Ocupar o latifúndio para garantir terra para quem nela more e trabalhe, e a produção de alimentos para\ntoda a classe trabalhadora\n• Punição dos latifundiários e outros responsáveis pelo assassinato dos trabalhadores e lideranças da luta\npela terra\n• Direito de autodefesa e armamento para os trabalhadores do campo e índios\n\n07\n\nFim da especulação, moradia para todos\n\nÉ preciso acabar com a especulação imobiliária, com os gigantescos lucros de um reduzido grupo de grandes\nproprietários, enquanto milhões não têm sequer onde morar.\n• Expropriação dos imóveis vagos dos especuladores do mercado imobiliário\n• Proibição de despejos e desocupações\n• Elaboração de um plano nacional de construção de milhões de moradias populares, para garantir habitação\ndigna para a população e gerar milhões de empregos, sob o controle dos trabalhadores."
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-5",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\n08\n\nBarrar a destruição da educação e conquistar ensino público, gratuito e de\nqualidade\n\nA educação deve ser garantida para todo o povo. Para isso, é preciso lutar pelo fim da política de destruição do\nensino público levada adiante pelos tubarões do ensino privado e seus lacaios nos governos.\n• Abaixo a ditadura nas escolas e a perseguição aos professores e estudantes; eleição direta de todos os\npostos de gestão\n• Mais verbas para a educação; verbas públicas somente para o ensino público\n• Revogação de todas as \"reformas\" do regime golpista contra a educação e o ensino público\n• Fim dos vestibulares. Livre ingresso nas universidades\n• Piso salarial nacional dos professores de, pelo menos, R$8,5 mil\n• Escolas e Universidades sob o controle da comunidade escolar: eleição dos diretores e de todos os postos\nde direção nas escolas; governo tripartite (estudantes, professores e funcionários) nas Universidades\n• Jornada de trabalho dos professores de no máximo 30 horas semanais\n• Estatização do ensino pago\n• Abaixo a censura; fim da proibição do uso de celulares nas escolas.\n\n09\n\nFim do lucro com a doença: saúde pública e gratuita, sob o controle dos\ntrabalhadores\n\nA destruição sistemática do SUS e o avanço da privatização da saúde aumentam o sofrimento e as mortes,\nenquanto geram gigantescos lucros dos mercadores dos planos de saúde, hospitais e empresas. É preciso lutar\npelo fim da política de destruição da saúde pública pelos mercadores da doença e seus governos.\n• Mais verbas para a saúde pública. Não pode haver limite nos gastos para salvar a vida do povo\n• Plano de emergência para construção de hospitais e postos de saúde em todo o País\n• Volta do programa Mais Médicos e validação imediata de todos os diplomas de médicos brasileiros e\nestrangeiros residentes no País\n• Abertura imediata de centenas de cursos de medicina, enfermagem etc. com livre acesso (sem vestibular!)\nnas universidades públicas, para suprir a falta de profissionais\n• Piso salarial de R$8 mil para os profissionais da saúde.\n\n10\n\nAbaixo a repressão. Liberdade de expressão e direito de autodefesa\n\nÉ preciso acabar com a cassação dos direitos democráticos de todo o povo, com a verdadeira ditadura que é o\ncontrole dos meios de comunicação por meia dúzia de famílias e com o massacre do povo negro, dos jovens e\ntrabalhadores, com as mais de seis mil mortes por ano provocadas pela polícia em todo o País, em uma\nverdadeira guerra contra o povo pobre.\n• Dissolução da polícia militar e de todo o aparato repressivo\n• Direito de autodefesa dos trabalhadores da cidade e do campo\n• Formar comitês de autodefesa dos trabalhadores da cidade, do campo e das comunidades de índios"
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-6",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\n• Acabar com a ditadura do \"PIG\" (\"Partido da Imprensa Golpista\"): cancelamento da concessão da Rede\nGlobo (e dos demais grandes meios de comunicação) por crimes contra o País. Estatização das empresas,\nsob o controle dos trabalhadores\n• Fim de todo tipo de censura, liberdade irrestrita de expressão, na imprensa, na Internet, nas ruas etc.\nAbaixo a “Lei Felca”\n• Quebra do monopólio na Internet pelas grandes empresas privadas de telecomunicações. Internet gratuita\npara toda a população\n• Liberdade irrestrita de expressão; abaixo a censura.\n\n11\n\nFim da ditadura dos bancos e da expropriação do povo\n\nO Brasil tem os maiores juros reais do mundo. Os bancos roubam todos os dias o povo e ficam com quase 50%\ndos recursos arrecadados em impostos, que fazem falta para a saúde, educação, moradia etc. Culpa da\nfraudulenta dívida pública, que já foi paga várias vezes.\n• Imediata redução das taxas de juros;\n• Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores\n• Fim da “independência” do Banco Central\n• Cancelamento das dívidas externa e interna com os bancos e grandes credores\n• Fim dos impostos sobre o consumo e os salários. Imposto somente sobre os ganhos dos capitalistas e\ngrandes fortunas.\n\n12\n\nAbaixo a ditadura do Judiciário e fim do regime antidemocrático\n\nVivemos em uma ditadura. O povo, acuado sob a ameaça da violência policial e empresarial, não tem mais\ndireito a se expressar nem a lutar por seus interesses.\n• Direito irrestrito de greve, contra todo tipo de intervenção do Estado nos sindicatos\n• Liberdade total de organização política e partidária. Partidos sob o exclusivo controle dos seus filiados;\ncancelamento das leis restritivas (\"ficha limpa\", \"cláusula de barreira\" etc.)\n• Acabar com a ditadura do Judiciário, que atua acima dos demais poderes e pisoteia a vontade popular e a\nConstituição\n• Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com\nmandatos revogáveis."
+          },
+          {
+            "id": "programa-de-luta-eleicoes-2026-7",
+            "titulo": "PROGRAMA DE LUTA · ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE LUTA · ELEIÇÕES 2026\n\n13\n\nFora o imperialismo da Amazônia e da América Latina\n\nA ingerência estrangeira na Amazônia deve ser veementemente combatida; é preciso que o próprio País\ndefenda o seu território e o desenvolva.\n• Não à internacionalização da Amazônia e a toda a política de ingerência do imperialismo na região\n• Defesa da soberania e da unidade nacional, com o controle das organizações populares e dos índios sobre\nas riquezas do território amazônico e da sua exploração em benefício do povo\n• Em defesa de Cuba, Nicarágua e Venezuela. Todo apoio à luta do povo boliviano contra o regime ditatorial.\nAbaixo a ingerência dos EUA e da OEA; fora o imperialismo da América Latina.\n\n14\n\nEm defesa do futebol, do carnaval e de todas as manifestações da cultura\npopular\n\nPara a burguesia e a direita e seus partidos, o povo não tem direito à festa, não tem direito à confraternização.\nSó ao trabalho e à opressão pela corja capitalista.\n• Contra a política da direita de atacar sistematicamente todas as manifestações culturais do povo, como o\ncarnaval, o samba e o futebol, garantir os recursos públicos necessários para o acesso à cultura e ao\nesporte, pondo fim aos monopólios do setor\n• Fim da perseguição às torcidas organizadas. Controle dos clubes pelos torcedores e pelos trabalhadores do\nsetor\n• Pesados investimentos na cultura popular, patrocínio público das festas populares, sob o controle das\norganizações populares e dos trabalhadores do setor.\n\n15\n\nAbaixo a política de conciliação. Por um governo dos trabalhadores\n\nA crise capitalista avança e a burguesia prepara uma ofensiva ainda mais dura contra o povo depois das\neleições. No futuro governo, seja qual for o eleito, virão pesados ataques contra a maioria da população. É\npreciso preparar a mobilização popular, o enfrentamento e a derrota dessa ofensiva.\n• Nenhum apoio aos golpistas e neoliberais. Abaixo a política de conciliação. Ruptura da aliança com os\npartidos golpistas e inimigos das reivindicações dos trabalhadores\n• Defender os povos que se levantam em todo o mundo contra o imperialismo, de armas nas mãos e pelos\nmeios que sejam necessários, como a Palestina, o Irã e a Rússia\n• Por um governo das organizações operárias e camponesas, sem patrões e sem golpistas.\n\nPartido da Causa Operária — PCO\nSão Paulo, agosto de 2026"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "ee89b995be9d73ab0f65bb078936e48e5ae56520734ed0100d9a99a0d9a6b49b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "adec9948b23b233516bcb90d70da478ab098105cb2384cfc7ae5f8eb3ec879ac"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "7b953e2912c5d60ee9dadac272562247d1b5bb40cc5b1d8b719d326358639da6"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "87045674ce36e726554156727e6593b4de55394ffeb991083913aee2527156bb"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "861a7b949d136b57b76f04a1609f2460936daf87e5090badf71ea8d97017aca2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "70f11e70222b20b5594dab6930f064b88a8512dabdb832bee4136d1e3be955ad"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b02716c89d54923f7daac9da61b1448f89103ae6692c0bddf1e525f6d0dd7dcf"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "No campo salarial, o programa propõe a reposição integral de 100% das perdas salariais, estabelecendo que a recomposição alcance a totalidade das perdas. Quanto à jornada, o programa propõe o limite máximo de 35 horas semanais, definido como sete horas diárias distribuídas em cinco dias por semana. Na política de privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, abrangendo todas as privatizações que já foram realizadas. Para o setor petrolífero, o programa propõe a nacionalização do petróleo e uma Petrobrás 100% estatal. Na educação, o programa propõe mais verbas para a educação, com a proposta expressa em termos de ampliação das verbas educacionais. O programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, indicando que a medida se aplica aos acampados. Na habitação, o programa propõe a elaboração de um plano nacional para construir milhões de moradias populares, com abrangência nacional para essa construção. O programa propõe o fim dos vestibulares, com a proposta expressa de encerrar os vestibulares.",
+    "frases": [
+      {
+        "texto": "No campo salarial, o programa propõe a reposição integral de 100% das perdas salariais, estabelecendo que a recomposição alcance a totalidade das perdas.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 2,
+            "trecho": "Reposição integral de 100% das perdas salariais"
+          }
+        ]
+      },
+      {
+        "texto": "Quanto à jornada, o programa propõe o limite máximo de 35 horas semanais, definido como sete horas diárias distribuídas em cinco dias por semana.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 2,
+            "trecho": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)"
+          }
+        ]
+      },
+      {
+        "texto": "Na política de privatizações, o programa propõe o cancelamento de todas as privatizações realizadas, abrangendo todas as privatizações que já foram realizadas.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 3,
+            "trecho": "Cancelamento de todas as privatizações realizadas"
+          }
+        ]
+      },
+      {
+        "texto": "Para o setor petrolífero, o programa propõe a nacionalização do petróleo e uma Petrobrás 100% estatal.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 3,
+            "trecho": "Nacionalização do petróleo, Petrobrás 100% estatal"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe mais verbas para a educação, com a proposta expressa em termos de ampliação das verbas educacionais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 5,
+            "trecho": "Mais verbas para a educação"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o assentamento imediato dos milhões de sem-terra acampados em todo o País, indicando que a medida se aplica aos acampados.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 4,
+            "trecho": "Assentamento imediato dos milhões de sem-terra acampados em todo o País"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, o programa propõe a elaboração de um plano nacional para construir milhões de moradias populares, com abrangência nacional para essa construção.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 4,
+            "trecho": "Elaboração de um plano nacional de construção de milhões de moradias populares"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o fim dos vestibulares, com a proposta expressa de encerrar os vestibulares.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 5,
+            "trecho": "Fim dos vestibulares"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "politica-salarial",
+        "titulo": "Política salarial",
+        "descricao": "Reposição integral de 100% das perdas salariais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 2,
+            "trecho": "Reposição integral de 100% das perdas salariais"
+          }
+        ]
+      },
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Jornada máxima de 35 horas semanais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 2,
+            "trecho": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais)"
+          }
+        ]
+      },
+      {
+        "id": "privatizacoes",
+        "titulo": "Privatizações",
+        "descricao": "Cancelamento de todas as privatizações realizadas.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 3,
+            "trecho": "Cancelamento de todas as privatizações realizadas"
+          }
+        ]
+      },
+      {
+        "id": "petroleo-estatal",
+        "titulo": "Petróleo e Petrobrás",
+        "descricao": "Nacionalização do petróleo e Petrobrás 100% estatal.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 3,
+            "trecho": "Nacionalização do petróleo, Petrobrás 100% estatal"
+          }
+        ]
+      },
+      {
+        "id": "verbas-para-educacao",
+        "titulo": "Verbas para educação",
+        "descricao": "Mais verbas para a educação.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 5,
+            "trecho": "Mais verbas para a educação"
+          }
+        ]
+      },
+      {
+        "id": "moradias-populares",
+        "titulo": "Moradias populares",
+        "descricao": "Plano nacional para construir milhões de moradias populares.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002553722:01",
+            "pagina": 4,
+            "trecho": "Elaboração de um plano nacional de construção de milhões de moradias populares"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T19:38:45.443Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:43:19.231Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a reposição de 100% das perdas salariais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 100% está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata somente da reposição das perdas salariais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:1:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a reposição integral, o percentual e a totalidade das perdas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o limite de 35 horas, com 7 horas diárias em 5 dias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "As quantidades de 35 horas semanais, 7 horas diárias e 5 dias estão literalmente sustentadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta de jornada sem juízo de valor ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:2:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais relativas ao limite semanal e à distribuição diária."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o cancelamento de todas as privatizações realizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata somente do cancelamento das privatizações realizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:3:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a única cláusula material e sua abrangência total."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a nacionalização do petróleo e a Petrobrás 100% estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 100% está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve as propostas sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "As duas medidas pertencem à mesma área coerente de política petrolífera estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:4:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre ambas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de ampliar as verbas para a educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem avaliação, elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata somente da ampliação de verbas educacionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:5:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o assentamento imediato dos milhões de sem-terra acampados no País."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade genérica “milhões” está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e seu público sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de assentamento dos sem-terra acampados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:6:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a medida, sua imediatidade, o público e a abrangência territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o plano nacional de construção de milhões de moradias populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade genérica “milhões” está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:7:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o plano, a abrangência nacional, a construção e a quantidade indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de fim dos vestibulares."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata somente da proposta de encerrar os vestibulares."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:frase:8:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz e sustenta integralmente a proposta apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 100% está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o conteúdo documental sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta de política salarial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:politica-salarial:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a reposição, o percentual e o objeto das perdas salariais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta explicitamente a jornada máxima de 35 horas semanais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 35 horas semanais está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:jornada-de-trabalho:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o limite máximo semanal afirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz e sustenta integralmente a proposta apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta sobre privatizações."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:privatizacoes:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o cancelamento e a abrangência de todas as privatizações realizadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz e sustenta integralmente as duas medidas apresentadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 100% está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume as propostas sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "As medidas pertencem à mesma área coerente de petróleo e controle estatal da Petrobrás."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:petroleo-estatal:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a nacionalização e o caráter 100% estatal da Petrobrás."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz e sustenta integralmente a proposta apresentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas específicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta sobre verbas educacionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:verbas-para-educacao:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o plano nacional para construir milhões de moradias populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade genérica “milhões” está literalmente presente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente sobre moradias populares."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002553722:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002553722:tema:moradias-populares:documentos:PI:180002553722:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o plano nacional, a construção e a quantidade de moradias populares."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002553722",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002553722:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36870,
+          "cached_input_tokens": 2816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14910,
+          "reasoning_output_tokens": 156
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+    "extractedTextSha256": "7038fd8efdf79b7e62b89ce8f3eb90ee1275ddb2cd68b534d17c617fac2bca18",
+    "documentCount": 1,
+    "documentSetSha256": "5b1c760e48c8417f564d3219535b99f55abecc46574214b7df5cc479142c7455",
+    "contentSha256": "2cff831d1d04663e260a3ec2b73532e5569ffc7eddfbe80b986055575ebed465"
+  }
+}

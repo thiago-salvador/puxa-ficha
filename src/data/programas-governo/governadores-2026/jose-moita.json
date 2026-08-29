@@ -1,0 +1,745 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PA",
+    "sqCandidato": "140002551357",
+    "slug": "jose-moita",
+    "nomeUrna": "JOSÉ MOITA",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026PA140002551357_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002551357_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PA:140002551357:01",
+      "fonte": {
+        "arquivoNome": "2026PA140002551357_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002551357_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0f178c87c8f689c1333b8c6c661802188f8d759866505ed223e5bdaaf268a8f8",
+        "extractedTextSha256": "939b88592166d8240f96b8a14efb3d12ca4a9c798a9337d193a46a41e4da8a77",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "justica-eleitoral-tribunal",
+            "titulo": "JUSTIÇA ELEITORAL — TRIBUNAL",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "JUSTIÇA ELEITORAL — TRIBUNAL\nSUPERIOR ELEITORAL (TSE)\nELEIÇÕES GERAIS 2026 — GOVERNO DO ESTADO\nDO PARÁ\n\nPLANO DE GOVERNO 2027–2030\nPARÁ DE TODOS NÓS: DESENVOLVIMENTO, INCLUSÃO,\nSUSTENTABILIDADE E GOVERNANÇA\n•\n•\n\nCandidatura: Governo do Estado do Pará\nPartido: Partido DEMOCRATA — nº 35\n\n•\n\nPeríodo Constitucional de Gestão: 1º de Janeiro de 2027 a 31 de\nDezembro de 2030\n\n•\n\nDocumento: Proposta de Plano de Governo apresentada para fins de\nregistro de candidatura, nos termos da legislação eleitoral vigente.\n\n•\n\nÂmbito de Aplicação: 144 Municípios / 13 Regiões de Integração (RIs)\n\nMENSAGEM AO POVO PARAENSE E DIRETRIZES\nGERAIS\nO Estado do Pará vive um momento decisivo de sua história. Com dimensões\ncontinentais, riqueza socioambiental inestimável e uma população vocacionada\nao trabalho, o nosso Estado exige um modelo de gestão pública moderno,\níntegro e eficiente, capaz de unir a responsabilidade fiscal ao desenvolvimento\nhumano e econômico.\nEste Plano de Governo (2027–2030), apresentado à Justiça Eleitoral e à\nsociedade paraense em cumprimento ao art. 11, § 1º, IX, da Lei nº 9.504/1997,\nconsolida uma visão estratégica de futuro fundada em sete pilares interligados.\nO objetivo central desta proposta é construir um Estado mais seguro, próspero,\njusto e sustentável, onde a eficiência administrativa se traduza em serviços\npúblicos de excelência na capital, no interior, nos campos e nas águas.\n┌────────────────────────────────────────────────────────\n─────────────────┐\n│\nMATRIZ ESTRATÉGICA DE GOVERNO\n│\n└────────────────────────────────────┬───────────────────\n─────────────────┘\n│\n┌─────────────────────────────────┼──────────────────────\n───────────┐\n▼\n▼\n▼\n┌─────────────────────────┐\n┌─────────────────────────┐\n┌─────────────────────────┐"
+          },
+          {
+            "id": "pagina-2",
+            "titulo": "│",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "│\n\nGESTÃO E FISCAL\n\n││\n\nSERVIÇOS ESSENCIAIS │ │ DESENVOLVIMENTO &\n\nEIXO\nI:\nRESPONSABILIDADE\nFISCAL,\nEFICIÊNCIA E MODERNIZAÇÃO DA GESTÃO\nA sustentabilidade das contas públicas e a modernização da máquina\nadministrativa são as pré-condições para a garantia de investimentos contínuos\nem saúde, educação e segurança.\n•\n\n1. Rigor Fiscal e Capacidade de Investimento (Nota CAPAG \"A\"):\nManter a gestão orçamentária alinhada à Lei de Responsabilidade Fiscal\n(LRF), assegurando o selo de Capacidade de Pagamento (CAPAG A)\njunto à Secretaria do Tesouro Nacional (STN) para atração de\nfinanciamentos estruturantes.\n\n•\n\n2. Reavaliação de Incentivos Fiscais: Implementar a Cláusula de\nDesempenho Social e Econômico em todas as isenções do ICMS,\ncondicionando benefícios tributários à geração comprovada de empregos\nlocais, industrialização e preservação ambiental.\n\n•\n\n3. Programa Pará 100% Digital: Unificar os serviços estaduais no portal\núnico GovPará, eliminando o uso de papel, reduzindo custos burocráticos\ne encurtando prazos de atendimento ao cidadão e ao empreendedor.\n\n•\n\n4. Central Unificada de Compras e Orçamento Base Zero (OBZ):\nPadronizar editais e centralizar as atas de registro de preços do Estado,\naplicando o método de Orçamento Base Zero no custeio administrativo\npara gerar economia de no mínimo 12% nas despesas continuadas.\n\n•\n\n5. Transparência Regionalizada e Rastreio de Obras: Reestruturar o\nPortal da Transparência com recortes específicos por município e criar o\npainel Obras Transparentes, com geolocalização e acompanhamento\nfísico-financeiro em tempo real.\n\n•\n\n6. Redução da Carga Tributária: Viabilidade da redução da alíquota do\nICMS que atualmente é 19% para 15%, combinando com o controle de\ngastos e redução da máquina estatal.\n\n•\n\n7. Reformulação no Teto do Simples Estadual: Equiparação do Limite\ndo Simples Estadual ao Limite do Simples Federal, atualmente o Teto do\nSimples Estadual é R$ 3.600.000,00, com a Equiparação o valor será R$\n4.800.000,00, uma forma de desburocratizar e incentivar as Empresas\nPequenas e Médias.\n\nEIXO II: SEGURANÇA PÚBLICA, DEFESA SOCIAL\nE VALORIZAÇÃO PROFISSIONAL"
+          },
+          {
+            "id": "revisao-e-consolidacao-do-plano-estadual-de-seguranca-publica-e-defesa",
+            "titulo": "Revisão e consolidação do Plano Estadual de Segurança Pública e Defesa",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Revisão e consolidação do Plano Estadual de Segurança Pública e Defesa\nSocial (PESPDS/PA), alinhando repressão qualificada ao crime organizado,\ninteligência integrada e forte prevenção social.\n•\n\n8. Inteligência Integrada e CICC nas 13 RISPs: Consolidação dos\nCentros Integrados de Comando e Controle nas 13 Regiões de\nIntegração, unificando os bancos de dados da Polícia Militar, Polícia Civil,\nSEAP, Bombeiros, Perícia e Guardas Municipais.\n\n•\n\n9. Fortalecimento do Policiamento Fluvial e Territorial: Expansão\ndas Bases Flutuantes de Segurança equipadas com lanchas blindadas e\ndrones térmicos nas rotas estratégicas do narcotráfico e da pirataria na\nCalha Norte, Marajó e Baixo Tocantins.\n\n•\n\n10. Valorização e Saúde Mental dos Servidores da Segurança:\nDescentralização da atenção psicossocial com núcleos de apoio à saúde\nmental em todas as sedes regionais das RISPs, visando reduzir a\nvitimização e o estresse da tropa.\n\n•\n\n11. Pacto Estadual para o Fortalecimento e a Valorização dos\nProfissionais da Segurança Pública: com previsão de reajuste salarial\ne critérios estaduais para promoção, entre outras ações.\n\n•\n\n12. Uso de Tecnologia e Transparência Policial: Implantação gradual\nde câmeras corporais (bodycams) associada à capacitação contínua em\nuso progressivo da força.\n\n•\n\n13. Controle Prisional e Programa \"Egresso Produtivo\": Manutenção\nda ordem interna nas unidades prisionais da SEAP e concessão de\nincentivos fiscais para empresas que contratarem egressos capacitados\ndo sistema penitenciário.\n\n•\n\n14. Consolidação do Territórios pela Paz (TerPaz / UsiPaz):\nExpansão das Usinas da Paz para os municípios polo do interior com\nmaior vulnerabilidade social, integrando segurança, cultura, esporte e\ncidadania.\n\nEIXO III: SAÚDE PÚBLICA UNIVERSAL, ATENÇÃO\nBÁSICA E PREVENÇÃO\nConstrução de uma rede de saúde resolutiva que atenda com dignidade a\ncomplexa geografia paraense, fortalecendo os municípios na Atenção Primária\ne descentralizando o atendimento especializado.\n•\n\n15. Pacto de Cofinanciamento da Atenção Primária: Transferência\ndireta de recursos estaduais aos 144 municípios que atingirem metas de\ncobertura da Estratégia Saúde da Família (ESF), vacinação infantil e\nacompanhamento de pré-natal."
+          },
+          {
+            "id": "pagina-4",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n16. Rede \"Telessaúde Pará\": Conectividade via satélite em 100% das\nUnidades Básicas de Saúde (UBSs) municipais para teleconsultorias em\ntempo real entre médicos da ponta e especialistas de centros de\nreferência.\n\n•\n\n17. Programa \"Saúde da Família Fluvial e Ribeirinha\": Ampliação da\nfrota de Unidades Básicas de Saúde Fluviais (UBSFs) equipadas com\nexames laboratoriais rápidos, ultrassom e atendimento médico nas calhas\ndos rios.\n\n•\n\n19. Programa \"Mãe e Criança Paraense\": Linha de cuidado integral\ncom reforço no transporte aeromédico e náutico de urgência para\ngestantes de alto risco e ampliação de leitos de UTI Neonatal no interior.\n\n•\n\n20. Fila Única Transparente do SUS: Plataforma digital auditável para\nregulação de consultas, exames e cirurgias eletivas, garantindo ordem\ncronológica e critérios exclusivamente clínicos.\n\n•\n\n21. Gestão por Desempenho nas Organizações Sociais (OSs):\nCondicionamento de repasses às OSs hospitalares ao cumprimento\nrigoroso de metas de qualidade, tempo de espera e resolução clínica.\n\nEIXO\nIV:\nEDUCAÇÃO\nDE\nEXCELÊNCIA,\nFORMAÇÃO TÉCNICA E VALORES CÍVICOS\nTransformação da educação pública paraense promovendo a alfabetização na\nidade certa, a capacitação profissional conectada ao mercado e o resgate da\ncidadania no ambiente escolar.\n•\n\n22. Pacto Estadual \"Pará Alfabetizado\": Garantia de 100% das\ncrianças alfabetizadas até o final do 2º ano do Ensino Fundamental,\napoiado pela distribuição de material estruturado e pelo incentivo\nfinanceiro do ICMS Educação.\n\n•\n\n23. Universalização do Ensino Médio Técnico e Vocacional: Dobrar\nas vagas de cursos técnicos integrados ao Ensino Médio, adaptando os\ncurrículos às vocações regionais (Bioeconomia no Marajó,\nMineração/Agro no Sul, TI e Logística na RMB).\n\n•\n\n24. Parceria Estratégica com o Sistema S e IFPA: Utilização\ncompartilhada de laboratórios e estrutura do SENAI, SENAC, SENAR,\nSEBRAE e IFPA para formação técnica e inserção no programa Primeiro\nEmprego Técnico.\n\n•\n\n25. Formação Cidadã e Escolas Cívico-Pedagógicas: Inclusão de\nconteúdos transversais de civismo, ética e responsabilidade comunitária,\njuntamente com a expansão do modelo de gestão compartilhada com as\nforças de segurança em áreas de alta vulnerabilidade."
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n26. Infraestrutura e Conectividade Escolar: Garantia de internet de\nalta velocidade, climatização de 100% das salas de aula e energia solar\nfotovoltaica nas escolas rurais e ribeirinhas.\n\nEIXO V: DESENVOLVIMENTO ECONÔMICO,\nINFRAESTRUTURA LOGÍSTICA E EMPREGO\nFORMAL\nPromover o crescimento econômico diversificado, combatendo a informalidade\npor meio da industrialização local, do fortalecimento das microempresas e\nEmpresas de Pequeno Porte e da modernização logística.\n•\n\n27. Atração de Investimentos e Industrialização (InvestPará 2.0):\nAtuação em modelo de balcão único para atração de empresas, exigindo\ncomo contrapartida dos incentivos fiscais o processamento local de\nmatérias-primas (mineral e agrícola) e a contratação de no mínimo 80%\nde mão de obra local.\n\n•\n\n28. Apoio às MPEs e Fundo Garante Pará: Expansão das linhas de\ncrédito do Banpará com juros reduzidos para pequenos negócios e\ncriação de fundo aval público para fornecer garantias bancárias a\nmicroempreendedores.\n\n•\n\n29. REDESIM Pará e Licenciamento Expresso: Integração de órgãos\nestaduais para garantir a abertura e o licenciamento ambiental de\nempresas de baixo risco em até 48 horas.\n\n•\n\n30. Plano de Infraestrutura Logística e Concessões (InfraPará):\nPavimentação de mais de 1.000 km de rodovias estaduais (PAs),\nconcessões de eixos rodoviários estratégicos e erradicação de 100% das\npontes de madeira nas PAs.\n\n•\n\n31. Modernização da Malha Fluvial e Portuária: Sinalização,\ndragagem e balizamento de hidrovias prioritárias (Tocantins, Tapajós,\nCapim e Amazonas) e construção de 30 novos Terminais Hidroviários de\nCargas e Passageiros.\n\nEIXO\nVI:\nMEIO\nRESPONSABILIDADE E\nRURAL SUSTENTÁVEL\n\nAMBIENTE\nCOM\nDESENVOLVIMENTO\n\nCompatibilizar a preservação da Floresta Amazônica e dos recursos hídricos\ncom o crescimento da agropecuária legal, a segurança jurídica no campo e o\navanço da bioeconomia.\n•\n\n32. Desmatamento Ilegal Zero e Fiscalização Remota: Uso de\nmonitoramento por satélite de alta resolução com alertas em tempo real e"
+          },
+          {
+            "id": "integracao-das-forcas-policiais-para-combate-continuo-a-crimes",
+            "titulo": "integração das forças policiais para combate contínuo a crimes",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "integração das forças policiais para combate contínuo a crimes\nambientais.\n•\n\n33. Aceleração da Regularização Ambiental e Fundiária\n(CAR/ITERPA): Validação em massa do Cadastro Ambiental Rural (CAR)\npor inteligência artificial e entrega de 50.000 títulos de propriedade a\npequenos e médios produtores pelo ITERPA.\n\n•\n\n34. Pagamento por Serviços Ambientais (PSA Pará): Consolidação\ndo Fundo Estadual de PSA e do mercado de carbono jurisdicional para\nremunerar financeiramente produtores, ribeirinhos e povos tradicionais\nque preservam a floresta.\n\n•\n\n35. Agropecuária de Baixo Carbono (Plano ABC+): Linhas de\nfinanciamento para recuperação de 1,5 milhão de hectares de pastagens\ndegradadas e implementação do sistema de rastreabilidade bovina\nindividualizada (ADEPARÁ).\n\n•\n\n36. Fortalecimento da Agricultura Familiar e Bioeconomia:\nExpansão dos Sistemas Agroflorestais (SAFs Açaí/Cacau/Espécies\nNativas), assistência técnica renovada pela EMATER e garantia de\ncompras públicas locais (PNAE/PAA) da agricultura familiar.\n\n•\n\n37. Desburocratização da Emissão de Títulos de Terras:\nAperfeiçoamento do REURB e descentralização dos Registros via\nPrefeituras Municipais.\n\nEIXO\nVII:\nINFRAESTRUTURA\nSOCIAL,\nMOBILIDADE, FAMÍLIA E PACTO MUNICIPALISTA\nGarantir que as políticas públicas fortaleçam as comunidades, promovam a\nautonomia das famílias e respeitem a capacidade federativa dos 144 municípios.\n•\n\n38. Mobilidade e Integração Ribeirinha (\"Navega Pará\"): Concessão\nde subsídios fiscais para linhas hidroviárias sociais e aquisição de lanchas\nescolares e ambulâncias náuticas para atender o Marajó e as ilhas.\n\n•\n\n39. Saneamento e Habitação Resiliente: Aceleração das metas do\nMarco Legal do Saneamento para levar água tratada a 90% da população\nurbana/rural e expansão do programa Sua Casa Ribeirinha, adaptado\ncom palafitas ecológicas e captação de água da chuva.\n\n•\n\n40. Proteção Integral à Família e Primeira Infância: Programa Família\nProtegida, integrando assistência, qualificação e saúde para criar planos\nindividuais de autonomia financeira para núcleos vulneráveis.\n\n•\n\n41. Fortalecimento da Sociedade Civil (MROSC Simplificado):\nDesburocratização da Lei de Parcerias (Lei 13.019/2014) para apoio"
+          },
+          {
+            "id": "direto-a-associacoes-comunitarias-entidades-religiosas-e-cooperativas",
+            "titulo": "direto a associações comunitárias, entidades religiosas e cooperativas",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "direto a associações comunitárias, entidades religiosas e cooperativas\nlocais.\n•\n\n42. Escritório Técnico \"Pró-Municípios\": Estrutura pública estadual de\nengenharia e projetos para elaboração gratuita de projetos executivos\npara prefeituras de pequeno porte (abaixo de 50 mil hab.), garantindo\nacesso a recursos federais e internacionais.\n\nMATRIZ SÍNTESE DE INDICADORES E METAS\n(2027–2030)\nÁrea\nEstratégica\n\nIndicador\nDesempenho\n\nde Situação Atual\n(Estimada)\n\nMeta\n2030\n\nFinal\n\naté\n\nGestão Fiscal\n\nCapacidade\nPagamento\n(CAPAG/STN)\n\nde\n\nNota B / A\n\nManter / Atingir\nCAPAG A\n\nSegurança\nPública\n\nTaxa de Mortes\nViolentas\nIntencionais (MVI)\n\nEm\nredução\nprogressiva\n\n< 20 por 100 mil\nhabitantes\n\nSaúde\n\nCobertura\nde\nTelessaúde\ne\nAtenção Básica\n\nParcial\n\n100% das UBSs\nconectadas / ESF\n≥ 88%\n\nEducação\n\nAlfabetização\nao\nfinal do 2º ano do\nEns. Fund.\n\n~50%\n\n≥\n90%\ndas\ncrianças\nalfabetizadas\n\nEmprego\nRenda\n\ne Empregos Formais\nGerados (CAGED)\n\nVariação\nsazonal\n\n+200.000\nnovos\npostos formais\n\nMeio Ambiente\n\nDesmatamento\nIlegal no Estado\n\nEm\ndesaceleração\n\nRedução de 100%\ndo Desmatamento\nIlegal\n\nRegularização\n\nTítulos Fundiários\nRegistrados\n(ITERPA)\n\nBaseline atual\n\n+50.000\ntítulos\nentregues\n\nInfraestrutura\n\nPontes de Madeira\nem\nRodovias\nEstaduais\n\nMúltiplas\nestruturas\n\n0% (Substituição\n100%\npor\nconcreto/aço)"
+          },
+          {
+            "id": "area",
+            "titulo": "Área",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Área\nEstratégica\n\nIndicador\nDesempenho\n\nSaneamento\n\nAcesso à\nPotável\nPopulação\n\nde Situação Atual\n(Estimada)\nÁgua\nna\n\nAbaixo\nda\nmédia nacional\n\nMeta\n2030\n\nFinal\n\naté\n\n≥\n90%\ncobertura\nurbana/polo\n\nde\n\nCONSIDERAÇÕES FINAIS\nEste Plano de Governo não se limita a um conjunto de intenções; trata-se de um\ncompromisso de gestão e responsabilidade social assumido com cada\ncidadão paraense. Com planejamento rigoroso, respeito aos cofres públicos,\nousadia tecnológica e sensibilidade com as pessoas, o Estado do Pará avançará\nde forma sustentável para se consolidar como referência de prosperidade,\ncidadania e qualidade de vida em toda a Amazônia.\nBelém (PA), 13 de agosto de 2026.\nJosé Lucivaldo Moita\nCandidato ao Governo\n\nRuth Helena F. Reis\nVice-governador\n\nPaulo Sezar Moraes Rodrigues\nPresidente do Partido"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "61426f72a2f746081ee4a0e77853db6228b3b742a3090d4b9c59912ca4fefc5e"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "4476ae821b070fd9669076916946a8b33e6a2c0dbd40d1d1956f18b56aa0de91"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "05b08435ef2564524a68c29d337019d5c5b8bad4e68754461f9671d843ab297e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2ba22b58f45c87b63527acf57e85aa3e80aecbae5a0b1dfc4a1f944e46e31708"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "19ee6913cfb3b5ae01a67ffb221def0e3e2710eb177eb155200890adb938aaea"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "0f05e1ba5173061c80d5248530015a135a111f458362c00c1cc6f279dbda3e4c"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "95ed7b3d5a121ee019badb311c73ab8d3d621ef496fb8f2c69038c404a9ae543"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ed621ca4bdb9599ac37743687b3d47bcbdd974878735ef97557009f62e1fd47a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê unificar os serviços estaduais no portal único GovPará, eliminando o uso de papel, reduzindo custos burocráticos, encurtando prazos de atendimento ao cidadão. No eixo de segurança, o documento propõe a consolidação dos Centros Integrados de Comando e Controle nas 13 Regiões de Integração, com unificação de bancos de dados institucionais. Na saúde, o programa prevê conectividade via satélite em 100% das Unidades Básicas de Saúde municipais para teleconsultorias em tempo real com especialistas. Na educação, o plano propõe dobrar as vagas de cursos técnicos integrados ao Ensino Médio, adaptando currículos às vocações regionais. Na política ambiental, o documento prevê monitoramento por satélite de alta resolução com alertas em tempo real para combate contínuo a crimes ambientais. No saneamento, o plano prevê levar água tratada a 90% da população urbana/rural por meio da aceleração das metas do Marco Legal do Saneamento.",
+    "frases": [
+      {
+        "texto": "O plano prevê unificar os serviços estaduais no portal único GovPará, eliminando o uso de papel, reduzindo custos burocráticos, encurtando prazos de atendimento ao cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 2,
+            "trecho": "Unificar os serviços estaduais no portal único GovPará"
+          }
+        ]
+      },
+      {
+        "texto": "No eixo de segurança, o documento propõe a consolidação dos Centros Integrados de Comando e Controle nas 13 Regiões de Integração, com unificação de bancos de dados institucionais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 3,
+            "trecho": "Centros Integrados de Comando e Controle nas 13 Regiões de Integração"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê conectividade via satélite em 100% das Unidades Básicas de Saúde municipais para teleconsultorias em tempo real com especialistas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 4,
+            "trecho": "Unidades Básicas de Saúde (UBSs) municipais"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano propõe dobrar as vagas de cursos técnicos integrados ao Ensino Médio, adaptando currículos às vocações regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 4,
+            "trecho": "cursos técnicos integrados ao Ensino Médio"
+          }
+        ]
+      },
+      {
+        "texto": "Na política ambiental, o documento prevê monitoramento por satélite de alta resolução com alertas em tempo real para combate contínuo a crimes ambientais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 5,
+            "trecho": "monitoramento por satélite de alta resolução com alertas em tempo real"
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, o plano prevê levar água tratada a 90% da população urbana/rural por meio da aceleração das metas do Marco Legal do Saneamento.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 6,
+            "trecho": "água tratada a 90% da população"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "portal-digital",
+        "titulo": "Portal digital",
+        "descricao": "Unificação dos serviços estaduais no GovPará.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 2,
+            "trecho": "Unificar os serviços estaduais no portal único GovPará"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-integrada",
+        "titulo": "Segurança integrada",
+        "descricao": "Consolidação dos centros integrados de comando.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 3,
+            "trecho": "Centros Integrados de Comando e Controle nas 13 Regiões de Integração"
+          }
+        ]
+      },
+      {
+        "id": "telessaude",
+        "titulo": "Telessaúde",
+        "descricao": "Conectividade das unidades básicas municipais.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 4,
+            "trecho": "Unidades Básicas de Saúde (UBSs) municipais"
+          }
+        ]
+      },
+      {
+        "id": "ensino-tecnico",
+        "titulo": "Ensino técnico",
+        "descricao": "Ampliação dos cursos técnicos integrados.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 4,
+            "trecho": "cursos técnicos integrados ao Ensino Médio"
+          }
+        ]
+      },
+      {
+        "id": "fiscalizacao-ambiental",
+        "titulo": "Fiscalização ambiental",
+        "descricao": "Monitoramento ambiental por satélite.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 5,
+            "trecho": "monitoramento por satélite de alta resolução com alertas em tempo real"
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Expansão do acesso à água tratada.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551357:01",
+            "pagina": 6,
+            "trecho": "água tratada a 90% da população"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:35:06.625Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:52:03.954Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 2 confirma integralmente a proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, apenas reporta o conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (portal digital)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:1:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 3 confirma a consolidação e a unificação de bancos de dados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 13 está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:2:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 4 confirma conectividade via satélite em 100% das UBSs para teleconsultorias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 100% está sustentado no texto original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de telessaúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:3:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 4 confirma dobra de vagas e adaptação curricular às vocações regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "'Dobrar' está literalmente sustentado no texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação técnica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:4:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Páginas 5-6 confirmam o monitoramento por satélite com alertas para combate a crimes ambientais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:5:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais do trecho cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 6 confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual 90% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:frase:6:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:portal-digital:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no resumo a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:seguranca-integrada:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no resumo a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:telessaude:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência (dobra de vagas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no resumo a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:ensino-tecnico:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no resumo a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:fiscalizacao-ambiental:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números no resumo a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento correto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551357:tema:saneamento:documentos:PA:140002551357:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo cobre a cláusula essencial do trecho."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PA:140002551357",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PA:140002551357:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22943,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19944,
+          "output_tokens_details": {
+            "thinking_tokens": 1142
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22943,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19944,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22943,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22943
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3094584
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "0f178c87c8f689c1333b8c6c661802188f8d759866505ed223e5bdaaf268a8f8",
+    "extractedTextSha256": "939b88592166d8240f96b8a14efb3d12ca4a9c798a9337d193a46a41e4da8a77",
+    "documentCount": 1,
+    "documentSetSha256": "7605065e3ffba4557cbfb2fe7e167330a9cd34e05264be45ac164362220be3fb",
+    "contentSha256": "c1ff3478334df1bf72fa89e2097f216493578cd74bb1880baa0b128d504099bf"
+  }
+}

@@ -1,0 +1,720 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AL",
+    "sqCandidato": "20002553745",
+    "slug": "renan-filho",
+    "nomeUrna": "RENAN FILHO",
+    "partido": "MDB",
+    "arquivoNome": "2026AL20002553745_01.pdf",
+    "arquivoNoPacote": "AL/2026AL20002553745_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AL:20002553745:01",
+      "fonte": {
+        "arquivoNome": "2026AL20002553745_01.pdf",
+        "arquivoNoPacote": "AL/2026AL20002553745_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e5db82b2ef6452635a30ccbc0d01d04cd628b1efeab88c466aab1fad8457949d",
+        "extractedTextSha256": "15cfc0289c4f9d8955a9e64531a38345f286dd6cba9897dcde7f1f59f6496999",
+        "paginas": 3,
+        "secoes": [
+          {
+            "id": "plano-de-governo-2027-2030",
+            "titulo": "PLANO DE GOVERNO 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO 2027-2030\nPara Alagoas avançar com oportunidades e prosperidade para todos\nMISSÃO 1: CUIDAR DAS PESSOAS, PARA GERAR BEM-ESTAR\nODS 1. ERRADICAÇÃO DA POBREZA\nODS 2. FOME ZERO\nODS 3. BOA SAÚDE E BEM-ESTAR\nODS 4. EDUCAÇÃO DE QUALIDADE\nODS 5. IGUALDADE DE GÊNERO\nODS 16. PAZ, JUSTIÇA E INSTITUIÇÕES FORTES\n1. Ampliar a rede hospitalar do Estado, com foco em serviços para cuidados da mulher, tratamento oncológico,\nortopédico, traumas, hemodiálise e urgências\n2. Criar uma frota de ambulâncias, específica para a Central de Regulação de Leitos do Estado, para agilizar a\ntransferência de pacientes das UPAs para os hospitais.\n3. Ampliar a integração de operações de órgãos de segurança pública com SAMU, Detran, Defesa Civil e Guarda\nMunicipal, para pronto atendimento de ocorrências.\n4. Implantar Delegacias 24h da Mulher, do Idoso e da Pessoa com Deficiência, em regionais de segurança pública,\npara funcionar como central de flagrantes.\n5. Criar programa de valorização profissional para os integrantes da segurança pública.\n6. Ampliar a cobertura aérea de combate ao crime.\n7. Expandir o cofinanciamento estadual de municípios para serviços continuados nos Centros de Referência de\nAssistência Social –CRAS/PAIF e nos Centros de Referência Especializados de Assistência Social – CREAS/PAEFI.\n8. Implantar Centro de Referência de Assistência Social – CRAS para comunidade dos Povos Indígenas e\nQuilombolas.\n9. Expandir a interiorização da Rede de Restaurantes Populares do Estado.\n10. Desenvolver um sistema interoperacional para percurso da rota crítica de mulheres em situação de violência.\n11. Apoiar os municípios na criação ou no fortalecimento de seus organismos de políticas para as mulheres e na\norganização das redes locais de atendimento.\n12. Desenvolver ações de prevenção e enfrentamento à misoginia e a violência, inclusive no ambiente digital.\n13. Criar academias públicas ao ar livre em municípios, com sistema de gestão digital para controle e orientação de\natividades por educadores físicos à população.\n14. Criar Centros Regionais de Desenvolvimento Esportivo em parceria com municípios, para oferecer treinamento\nespecializado, avaliação física, preparação esportiva, acompanhamento técnico, equipamentos, capacitação\nprofissional e encaminhamento de talentos.\n\nMISSÃO 2: ECONOMIA INOVADORA, PARA GERAÇÃO DE EMPREGO E RENDA\nODS 8. EMPREENDEDORISMO E CRESCIMENTO ECONÔMICO\nODS 9. INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA\nODS 10. REDUÇÃO DAS DESIGUALDADES"
+          },
+          {
+            "id": "15-criar-o-programa-educacao-ia-de-educacao-digital-e-inteligencia-artif",
+            "titulo": "15. Criar o Programa Educação IA de educação digital e inteligência artificial, desenvolvimento de competências",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "15. Criar o Programa Educação IA de educação digital e inteligência artificial, desenvolvimento de competências\ndigitais e uso ético das tecnologias emergentes no processo educacional, garantindo ambiente digital de\naprendizagem nas escolas da rede estadual de educação.\n16. Implantar o programa Escola da Hora Tech, destinado à manutenção de laboratórios, aquisição de insumos,\nexecução de práticas pedagógicas e fortalecimento da oferta de cursos técnicos.\n17. Instituir o Programa Mãe Estudante: Espaço Afeto, em apoio à amamentação e permanência escolar das\nestudantes mãe.\n18. Combater o analfabetismo na idade adulta.\n19. Transformar o Jaraguá no bairro de inovação, com incentivos fiscais.\n20. Criar um programa de residência tecnológica.\n21. Criar um programa estruturante e de longo prazo para o turismo da região dos Quilombos.\n22. Criar uma política de desenvolvimento da economia criativa, de forma a ajudar quem produz criatividade a\ntransformar talento em renda.\n23. Implantar Polo de Comércio e Serviços Corporativos na Região Metropolitana.\n24. Fomentar o empreendedorismo de mães e famílias atípicas.\n25. Criar um amplo programa de qualificação profissional, integrado às necessidades do mercado, com foco no\ndesenvolvimento de carreiras.\n26. Eliminar barreiras burocráticas, para simplificação da jornada do empreendedor, de todos os portes.\n27. Fortalecer a agricultura familiar alagoana através da expansão da assistência técnica e extensão rural, da\ndisponibilização de crédito acessível e desburocratizado, do fornecimento de insumos e equipamentos que\nfacilitem e tornem a produção mais eficiente;\n28. Estimular a produção de alimentos orgânicos e agroecológicos e apoiar sua comercialização através de feiras da\nagricultura familiar em todo estado;\n29. Ampliar programas que fomentem a produção e comercialização de alimentos através da agricultura familiar,\ncomo PAA (Programa de aquisição de alimentos), Fomento Rural, PNAE, executados diretamente pelo governo\ndo estado ou em parceria com o Governo Federal;\n30. Ampliar acesso a sistemas simplificados de irrigação (kits de irrigação de baixo custo, por gotejamento e\nmicroaspersão) para pequenas propriedades, ampliando programas já em curso no estado;\n31. Fomentar a ampliação da área de cultivo de grãos (milho, feijão, soja, etc) com foco em segurança alimentar e\nração animal, reduzindo dependência de importação de outros estados;\n32. Fortalecer a cadeia produtiva da fruticultura, apoiando a expansão da produção, o processo de beneficiamento\ne a comercialização;\n33. Apoiar a cadeia produtiva do leite buscando aumentar a produção para que atenda a crescente demanda por\nmatéria prima impulsionada pela instalação em Alagoas de grandes laticínios;\n34. Expandir programas de melhoramento genético com a capacitação de produtores em inseminação artificial,\ndoação de sêmen ou transferência de embriões de animais com genética diferenciada;\n35. Estruturar programa estadual de fomento à pesca e aquicultura, com distribuição de alevinos e ração,\nassistência técnica sanitária e nutricional, linha de crédito para infraestrutura de produção e comercialização;\n36. Fomentar a consolidação e expansão da cadeia produtiva da carcinicultura em Alagoas por meio de medidas\nestratégicas de desburocratização, incentivo fiscal e atualização de legislação regulatória, incluindo a emissão\nde outorga para uso de água salobra (salinidade superior a 0,5%)\n37. Desenvolver uma política de modernização do setor sucroenergético voltada à ampliação do mercado de açúcar\ne etanol de baixa emissão, com indústrias e fornecedores, visando a conquista de novos mercados de maior\nvalor agregado (exportação) e a plena integração às políticas de CBios e RenovaBio."
+          },
+          {
+            "id": "missao-3-transformacao-ecologica",
+            "titulo": "MISSÃO 3: TRANSFORMAÇÃO ECOLÓGICA",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "MISSÃO 3: TRANSFORMAÇÃO ECOLÓGICA\nODS 7. ENERGIA ACESSÍVEL E LIMPA\nODS 12. CONSUMO E PRODUÇÃO SUSTENTÁVEIS\nODS 13. COMBATE ÀS ALTERAÇÕES CLIMÁTICAS\nODS 14. VIDA DEBAIXO D’ÁGUA\nODS 15. VIDA SOBRE A TERRA\n38. Criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental, com a\nparticipação de municípios, comunidades tradicionais, povos indígenas, agricultores familiares, universidades,\nempresas, organizações sociais, conselhos e comitês de bacias hidrográficas.\n39. Criar o Programa de Restauração Florestal e Combate à Desertificação.\n40. Incentivar a Pesquisa, desenvolvimento e inovação (PD&I) para frentes de descarbonização e economia de baixo\ncarbono.\n41. Fomentar a produção dos Planos de Manejo de Unidades de Conservação Estaduais.\n42. Criar o Plano “Passagem silvestre”, para garantir a circulação segura de animais ao longo das rodovias de\nAlagoas.\n43. Investir em energias renováveis (solar) na rede pública.\n44. Criar o Sistema Estadual de Gestão Ambiental Integrada.\n\nMISSÃO 4: INFRAESTRUTURA REGIONALIZADA\nODS 6. ÁGUA LIMPA E SANEAMENTO\nODS 9. INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA\nODS 11. CIDADES E COMUNIDADES SUSTENTÁVEIS\n45. Ampliar rodovias duplicadas na Região Metropolitana e no interior do estado.\n46. Realizar estudo para implantar um terminal rodoviário e de transbordo metropolitano de passageiros,\nintegrado às rodoviárias de Maceió e das cidades metropolitanas.\n47. Criar um programa de construção e recuperação de pontes.\n48. Incluir os povoados no programa Minha Cidade Linda.\n49. Implantar Programa de Endereçamento Postal, para as áreas de interesse social.\n50. Articular junto ao Governo Federal a construção de 5 mil casas do programa Minha Casa Minha Vida.\n\nMISSÃO 5: ESTADO DIGITAL E EFICIENTE\nODS 9. INDÚSTRIA, INOVAÇÃO E INFRAESTRUTURA\nODS 16. PAZ, JUSTIÇA E INSTITUIÇÕES FORTES\nODS 17. PARCERIAS EM PROL DAS METAS\n51. Intensificar a transformação digital no Poder Executivo.\n52. Criar uma política estruturada de Governança de Dados do Estado.\n53. Implementar uma Política de Cidadania Digital."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "329c5529163ee270da928a39cf581371d5c663a99f18cb1dcfb9783f9e832837"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "73b37f0226fbabd5c3acd28668a527c0f63a21af41d98b2f7a794af878b3b9af"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "55755a4f5c108988594e81dbcb6d84a899df6614a2052bc310002e814120ed53"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano de governo prevê o Programa Educação IA para educação digital, inteligência artificial, desenvolvimento de competências digitais, uso ético das tecnologias emergentes no processo educacional, ambiente digital de aprendizagem nas escolas da rede estadual de educação. O programa Escola da Hora Tech propõe manutenção de laboratórios, aquisição de insumos, execução de práticas pedagógicas, fortalecimento da oferta de cursos técnicos. O Programa Mãe Estudante: Espaço Afeto prevê apoio à amamentação, permanência escolar das estudantes mães. O documento propõe combater o analfabetismo na idade adulta. O plano prevê criar um programa de residência tecnológica. Na área ambiental, o plano prevê criar o Programa de Restauração Florestal e Combate à Desertificação. O plano prevê investir em energias renováveis (solar) na rede pública. O documento propõe criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental.",
+    "frases": [
+      {
+        "texto": "O plano de governo prevê o Programa Educação IA para educação digital, inteligência artificial, desenvolvimento de competências digitais, uso ético das tecnologias emergentes no processo educacional, ambiente digital de aprendizagem nas escolas da rede estadual de educação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Criar o Programa Educação IA de educação digital e inteligência artificial, desenvolvimento de competências digitais e uso ético das tecnologias emergentes no processo educacional, garantindo ambiente digital de aprendizagem nas escolas da rede estadual de educação."
+          }
+        ]
+      },
+      {
+        "texto": "O programa Escola da Hora Tech propõe manutenção de laboratórios, aquisição de insumos, execução de práticas pedagógicas, fortalecimento da oferta de cursos técnicos.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Implantar o programa Escola da Hora Tech, destinado à manutenção de laboratórios, aquisição de insumos, execução de práticas pedagógicas e fortalecimento da oferta de cursos técnicos."
+          }
+        ]
+      },
+      {
+        "texto": "O Programa Mãe Estudante: Espaço Afeto prevê apoio à amamentação, permanência escolar das estudantes mães.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Instituir o Programa Mãe Estudante: Espaço Afeto, em apoio à amamentação e permanência escolar das estudantes mãe."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe combater o analfabetismo na idade adulta.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Combater o analfabetismo na idade adulta."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê criar um programa de residência tecnológica.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Criar um programa de residência tecnológica."
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, o plano prevê criar o Programa de Restauração Florestal e Combate à Desertificação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 3,
+            "trecho": "Criar o Programa de Restauração Florestal e Combate à Desertificação."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê investir em energias renováveis (solar) na rede pública.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 3,
+            "trecho": "Investir em energias renováveis (solar) na rede pública."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 3,
+            "trecho": "Criar a “Agenda 21 de Alagoas”, para orientar políticas públicas de desenvolvimento ambiental"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-digital",
+        "titulo": "Educação digital",
+        "descricao": "O tema trata da educação digital, da inteligência artificial e do uso ético de tecnologias emergentes no processo educacional.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Criar o Programa Educação IA de educação digital e inteligência artificial, desenvolvimento de competências digitais e uso ético das tecnologias emergentes no processo educacional"
+          }
+        ]
+      },
+      {
+        "id": "permanencia-escolar",
+        "titulo": "Permanência escolar",
+        "descricao": "O tema trata do apoio à amamentação para estudantes mães.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Instituir o Programa Mãe Estudante: Espaço Afeto, em apoio à amamentação e permanência escolar das estudantes mãe."
+          }
+        ]
+      },
+      {
+        "id": "formacao-tecnologica",
+        "titulo": "Formação tecnológica",
+        "descricao": "O tema trata da residência tecnológica como proposta de formação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 2,
+            "trecho": "Criar um programa de residência tecnológica."
+          }
+        ]
+      },
+      {
+        "id": "restauracao-ambiental",
+        "titulo": "Restauração ambiental",
+        "descricao": "O tema trata da restauração florestal associada ao combate à desertificação.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 3,
+            "trecho": "Criar o Programa de Restauração Florestal e Combate à Desertificação."
+          }
+        ]
+      },
+      {
+        "id": "energia-renovavel",
+        "titulo": "Energia renovável",
+        "descricao": "O tema trata do investimento em energia solar na rede pública.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553745:01",
+            "pagina": 3,
+            "trecho": "Investir em energias renováveis (solar) na rede pública."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:21:54.889Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:24:08.799Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente ao texto da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único programa/área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:1:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente, único programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:2:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Único programa coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:3:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:4:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:5:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente, contexto ambiental confirmado pela seção Missão 3."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:6:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:7:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:frase:8:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Os três elementos citados constam na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:educacao-digital:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todos os elementos citados na afirmação estão cobertos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:permanencia-escolar:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas do tema cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:formacao-tecnologica:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:restauracao-ambiental:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:suporte",
+        "verdict": "yes",
+        "reason": "Suportado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553745:tema:energia-renovavel:documentos:AL:20002553745:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura total."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AL:20002553745",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AL:20002553745:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 23247,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2753,
+          "reasoning_output_tokens": 1552
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23845,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 21700,
+          "output_tokens_details": {
+            "thinking_tokens": 622
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23845,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21700,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 23845,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23845
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.329938
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "e5db82b2ef6452635a30ccbc0d01d04cd628b1efeab88c466aab1fad8457949d",
+    "extractedTextSha256": "15cfc0289c4f9d8955a9e64531a38345f286dd6cba9897dcde7f1f59f6496999",
+    "documentCount": 1,
+    "documentSetSha256": "d2e42394f27bd31ca7d196e074d85e18cbd56d043046c867a077e6539d46cd9d",
+    "contentSha256": "c4ba4e811eed11f31e8b6a00cdd1a0d32e01718fb717c33f841bbc3db4d8959b"
+  }
+}

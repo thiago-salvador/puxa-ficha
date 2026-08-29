@@ -1,0 +1,1373 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002553982",
+    "slug": "rico-pinheiro",
+    "nomeUrna": "RICO PINHEIRO",
+    "partido": "PRTB",
+    "arquivoNome": "2026DF70002553982_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002553982_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002553982:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002553982_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002553982_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ac857a986d18f82fb3f912425d36f8ec347c75c8b67ef1257425fa3880da0cb2",
+        "extractedTextSha256": "9219e744ca7e29ab66aae4247210665a02bbd3b24acb7b66c6429c8acd0490d5",
+        "paginas": 3,
+        "secoes": [
+          {
+            "id": "tribunal-regional-eleitoral-do-distrito-federal",
+            "titulo": "Tribunal Regional Eleitoral do Distrito Federal",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Tribunal Regional Eleitoral do Distrito Federal\nPJe - Processo Judicial Eletrônico\n\n18/08/2026\n\nNúmero: 0600018-45.2026.6.07.0005\nClasse: FILIAÇÃO PARTIDÁRIA\nÓrgão julgador: 005ª ZONA ELEITORAL DE BRASÍLIA DF\nÚltima distribuição : 15/07/2026\nValor da causa: R$ 0,00\nAssuntos: Filiação Partidária - Lista Especial\nSegredo de Justiça? NÃO\nJustiça gratuita? NÃO\nPedido de liminar ou antecipação de tutela? NÃO\nPartes\n\nAdvogados\n\nALDERICO DA SILVA PINHEIRO FILHO (REQUERENTE)\nTACIANO EL HAOULI (ADVOGADO)\nCHAUKI EL HAOULI (ADVOGADO)\nLUIZ EDUARDO DE SOUSA NETO (ADVOGADO)\nPARTIDO RENOVADOR TRABALHISTA BRASILEIRO PRTB - NACIONAL (REQUERIDO)\nRODNEY ROCHA MIRANDA (ADVOGADO)\nOutros participantes\nPROMOTOR ELEITORAL DO DF E TERRITÓRIOS (FISCAL\nDA LEI)\nDocumentos\nId.\n\nData da\nAssinatura\n\n122370340 04/08/2026\n14:31\n\nDocumento\n\nDecisão\n\nTipo\nDecisão"
+          },
+          {
+            "id": "tribunal-regional-eleitoral-do-df",
+            "titulo": "TRIBUNAL REGIONAL ELEITORAL DO DF",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "TRIBUNAL REGIONAL ELEITORAL DO DF\nCARTÓRIO DA 5ª ZONA ELEITORAL\nQuadra 07, AR 01, Sobradinho - Brasília - DF\n(61) 3048-4581 / 4582 - ce5df@tre-df.gov.br\n\nFILIAÇÃO PARTIDÁRIA (12554) Nº 0600018-45.2026.6.07.0005 / 005ª ZONA ELEITORAL DE\nBRASÍLIA DF\nREQUERENTE: ALDERICO DA SILVA PINHEIRO FILHO\nREPRESENTANTE DO REQUERENTE: TACIANO EL HAOULI - DF68521, CHAUKI EL\nHAOULI - DF13865\nREQUERIDO: PARTIDO RENOVADOR TRABALHISTA BRASILEIRO - PRTB - NACIONAL\nREPRESENTANTE DO REQUERIDO: RODNEY ROCHA MIRANDA - ES30277\n\nDECISÃO\nTrata-se de requerimento fomrulado ALDERICO DA SILVA PINHEIRO FILHO\ncom fundamentado no art. 19, § 2º, da Lei nº 9.096/95.\nO requerente alega ter se filiado ao PRTB em 04/04/2026, mas que, por circunstâncias alheias à\nsua vontade e à da agremiação, o registro não foi inserido tempestivamente no sistema\nFILIA/TSE. Sustenta que a omissão decorreu do bloqueio das credenciais de acesso do partido\naos sistemas da Justiça Eleitoral, situação que só foi regularizada em junho de 2026 (id.\n122367283).\nO pedido foi instruído com cópia da Ficha de Filiação Partidária assinada digitalmente em\n04/04/2026 (id. 122367287), documentos de identificação (ids. 122367285 e 122367286) e\ncópia da decisão proferida pelo Tribunal de Justiça do Distrito Federal e Territórios (TJDFT)\nnos autos do AI nº 0751259-50.2025.8.07.0000, datada de 11/03/2026, que restabeleceu a\npresidência de Leonardo Alves de Araújo (id. 122367289).\nO PRTB apresentou manifestação de concordância integral com o pedido, confirmando a\nfiliação do requerente em 04/04/2026 e reiterando que a ausência de lançamento no sistema\noficial se deu exclusivamente pela indisponibilidade de senhas institucionais perante o Tribunal\nSuperior Eleitoral (TSE), cuja liberação ocorreu apenas em 16/06/2026 (id. 122369167).\nÉ relatório.\nDecido.\nA questão restringe-se à verificação de desídia ou omissão administrativa apta a autorizar a\ninclusão da filiação partidária fora do prazo regulamentar, nos termos do art. 19, § 2º, da Lei nº\n9.096/95 e do art. 11, § 2º, da Resolução TSE nº 23.596/2019.\nA documentação juntada aos autos demonstram que o requerente cumpriu as formalidades\ninternas para o ingresso na agremiação em 04/04/2026, data-limite para o preenchimento da\ncondição de elegibilidade relativa à filiação partidária para o pleito de 2026. A Ficha de Filiação\n\nEste documento foi gerado pelo usuário 240.***.***-25 em 18/08/2026 14:41:06\nNúmero do documento: 26080414310867100000115304925\nhttps://pje1g-df.tse.jus.br/pje/Processo/ConsultaDocumento/listView.seam?x=26080414310867100000115304925\nAssinado eletronicamente por: CLARISSA BRAGA MENDES - 04/08/2026 14:31:08\n\nNum. 122370340 - Pág. 1"
+          },
+          {
+            "id": "apresentada-id-122367287-atesta-o-vinculo-bilateral-estabelecido-entre-o",
+            "titulo": "apresentada, id. 122367287, atesta o vínculo bilateral estabelecido entre o eleitor e o partido.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "apresentada, id. 122367287, atesta o vínculo bilateral estabelecido entre o eleitor e o partido.\nA impossibilidade de processamento desse registro no sistema FILIA/TSE decorreu de severa\ndisputa pela liderança nacional do PRTB. Conforme se extrai da decisão do TJDFT proferida\nem 11/03/2026 id. 81968519, foi reconhecida a necessidade de restabelecer o acesso do grupo\nliderado por Leonardo Alves de Araújo aos sistemas partidários. Todavia, a Certidão do SGIP,\nid. 122367288, comprova que a anotação da comissão executiva nacional e a consequente\nliberação de credenciais só foram efetivadas pela Secretaria de Tecnologia da Informação do\nTSE em 16/06/2026.\nPortando ficou demonstrado que a ausência de registro tempestivo não decorreu de desídia do\neleitor ou de má-fé da agremiação, mas de uma impossibilidade material transitória decorrente\nde impasse administrativo-judicial no processamento das anotações partidárias junto o Tribunal\nSuperior Eleitoral.\nO TSE tem consolidado entendimento de que, em sede de procedimento específico (§ 2º do art.\n19 da Lei nº 9.096/95), a ficha de filiação, quando corroborada por outros elementos de\nconvicção e pelo reconhecimento expresso da própria agremiação, é prova idônea para\ncomprovar o vínculo partidário preexistente (AgR-REspEl nº 0600052-17, Rel. Min. Sérgio\nBanhos, DJe 18/06/2021).\nNo caso em exame, a manifestação de concordância do partido, id. 122369167, somada\nao conjunto probatório coligido aos autos evidencia de forma inequívoca a regularidade do\nprocedimento, o que afasta qualque indício de fraude ou de retroação indevida.\nAnte o exposto, DETERMINO a inclusão, no sistema FILIA, da filiação partidária de\nALDERICO DA SILVA PINHEIRO FILHO ao PARTIDO RENOVADOR TRABALHISTA\nBRASILEIRO – PRTB, com data de retrativa a 04 de abril de 2026.\nIntime-se.\nPublique-se.\nApós, remeta-se ao Ministério Público Eleitoral. Nada vindo aos autos, arquive-se.\n\nEste documento foi gerado pelo usuário 240.***.***-25 em 18/08/2026 14:41:06\nNúmero do documento: 26080414310867100000115304925\nhttps://pje1g-df.tse.jus.br/pje/Processo/ConsultaDocumento/listView.seam?x=26080414310867100000115304925\nAssinado eletronicamente por: CLARISSA BRAGA MENDES - 04/08/2026 14:31:08\n\nNum. 122370340 - Pág. 2"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "d8877d1f2984023a7e70b271f62c4d039b2ed7bb48b82c1da2c66f234f635252"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ac1aa1b7bbb0c40f37a7dfdbe0d3c4b8fc918d53435b738298041fd2b5b29abe"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "6a6c0738de9b69e0fc3d5e16fd4b9f78a4b96842a5c83ded1c25ae94eb0bb758"
+          }
+        ]
+      }
+    },
+    {
+      "documentoId": "DF:70002553982:02",
+      "fonte": {
+        "arquivoNome": "2026DF70002553982_02.pdf",
+        "arquivoNoPacote": "DF/2026DF70002553982_02.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "d90f42f6b2d1a12a08e9832af978a30c6c39789b630e5632610466cd60167228",
+        "extractedTextSha256": "b955b3b80b1281b99c8d081f66453b2c630dd0800b285388546e67a11f27c05b",
+        "paginas": 42,
+        "secoes": [
+          {
+            "id": "plano",
+            "titulo": "PLANO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO\nDE\nGOVERNO\nDISTRITO FEDERAL\nRICO PINHEIRO - 28\nPRTB - PARTIDO RENOVADOR TRABALHISTA BRASILEIRO\nGESTÃO 2027 A 2030\nBRASILEIR®"
+          },
+          {
+            "id": "2",
+            "titulo": "2",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "2\nINTRODUÇÃO: O COMPROMISSO COM O FUTURO DO DISTRITO FEDERAL\nSetenta anos após a ousadia de sua fundação, Brasília vive um momento\ndecisivo de sua história. Planejada para ser a capital da integração nacional e o\nsímbolo da modernidade brasileira, o Distrito Federal transformou-se em uma\nmetrópole complexa, dinâmica e vibrante. Contudo, esse crescimento também\nescancarou contradições históricas: a distância entre o Plano Piloto e as Regiões\nAdministrativas (RAs) traduz-se em desigualdades no acesso a serviços\nessenciais, na oferta de empregos qualificados, na qualidade da mobilidade\nurbana e na garantia de direitos fundamentais.\nO Plano de Governo 2027–2030 do nosso Governador RICO PINHEIRO nasce\nda convicção de que o Distrito Federal não pode continuar sendo gerido por\nsoluções paliativas ou por promessas desconectadas da realidade fiscal e\noperacional do Estado. Este documento apresenta um diagnóstico preciso e\npropostas estruturantes baseadas em parâmetros reais, combinando\nresponsabilidade fiscal severa, inovação tecnológica, preservação ambiental e,\nsobretudo, justiça para nossa gente.\nNosso compromisso central é construir um Distrito Federal onde a qualidade de\nvida, a segurança e a oportunidade de prosperar não dependam da Região\nAdministrativa em que o cidadão reside. Para isso, a gestão pública 2027–2030\nserá guiada por eixos transversais de transformação.\nEste Plano de Governo, elaborado em estrita conformidade com a Lei nº\n9.504/1997, não é um rol de intenções genéricas, mas um contrato de gestão\ncom metas quantificáveis, prazos e indicadores claros de desempenho.\nConvidamos a população do Distrito Federal — dos pioneiros aos jovens que\nsonham com o primeiro emprego, dos feirantes aos empreendedores da\ntecnologia — a conhecer as diretrizes que transformarão Brasília na capital da\ninovação, da dignidade e da prosperidade compartilhada.\n\nRico Pinheiro\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "3",
+            "titulo": "3",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "3\n\n1.\n\nECONOMIA E PROSPERIDADE\n\nDinamização Empresarial, Emprego e Desburocratização\nSuperar a rigidez burocrática é uma das premissas centrais desta gestão. Ao\nconsolidar um ecossistema business-friendly com simpliﬁcação regulatória e\nautomação de processos, o nosso Governo estabelecerá as condições necessárias\npara atrair capital privado, estimular o ambiente de investimentos e acelerar a\nformalização da força de trabalho no DF.\n\n\nCriação, Revisão e Modernização dos Polos Econômicos: Dinamizar as\náreas de desenvolvimento econômico (ADEs) espalhadas pelas Regiões\nAdministrativas (RAs), dotando-as de infraestrutura básica (iluminação,\npavimento, ﬁbra ótica, transporte) e segurança jurídica imobiliária\n(regularização fundiária de lotes comerciais/industriais.\n\n\n\nVálvula de Descomplicação Fiscal e Licenciamento: Implementar o\nlicenciamento simpliﬁcado e automático para atividades de baixo e médio\nrisco e criar uma política clara de incentivos ﬁscais (revisão de regimes de\nICMS e ISS) alinhada à Reforma Tributária nacional.\n\n\n\nCriação do Hub de Atração de Investimentos (DF Investment Agency):\nEstruturar uma agência dedicada a \"estruturar e divulgar\" o DF para vários\nsegmentos comerciais e industriais como tradings, multinacionais, centros\nde distribuição logística e multinacionais de tecnologia, aproveitando a\ncentralidade geográﬁca e o modal aéreo do Aeroporto de Brasília, criando\num modal estruturado para a criação de um porto\n\nAgronegócio e Agrotecnologia (Agtech)\nEmbora o Distrito Federal possua uma área territorial pequena, dispõe uma das\nagriculturas mais produtivas por hectare do Brasil, com destaque para grãos,\nhortifrúti, avicultura e cafeicultura irrigada. Isso prova que, quando unimos\ntecnologia, trabalho e vocação, o Distrito Federal não tem limites. O nosso\ncompromisso é valorizar o produtor rural, do pequeno agricultor familiar que\nabastece as feiras e a merenda escolar ao grande produtor de grãos e cafés\nespeciais. Vamos desburocratizar as licenças rurais, reforçar a segurança no\ncampo, garantir abastecimento de água e energia limpa e transformar o Distrito\nFederal em uma referência nacional de agrotecnologia e eficiência no\nagronegócio\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "4\n\n\nTransformação em Hub de Tecnologia Agrícola: Unir a força de pesquisa\nda Embrapa (sediada em Brasília), da UnB e do PAD-DF para consolidar o DF\ncomo um cluster de Agtechs (startups de biotecnologia, manejo de precisão\ne irrigação inteligente).\n\n\n\nInfraestrutura Logística e Industrialização: Criar incentivos para o\nprocessamento e agroindustrialização local da produção regional\n(agregando valor aos grãos e proteínas antes da saída do DF) e fortalecer a\nlogística de escoamento via multimodalidade com o entorno do Goiás e\nMinas Gerais.\n\n\n\nFortalecimento da Agricultura Familiar e Cinturão Verde: Garantir apoio\ntécnico (Emater-DF), crédito facilitado e ampliação das compras públicas\n(PAA e PNAE) para a agricultura familiar que abastece a mesa da população\ndo DF.\n\nInovação, Tecnologia e Matriz de Dados\nA modernização do Distrito Federal exige uma mudança de paradigma na relação\nentre o Estado e quem produz. A nossa prioridade é promover a transição de um\nmodelo burocrático e travado para um ambiente genuinamente business-friendly\nágil, seguro e atrativo para novos investimentos. Ao desmaterializar processos e\nsimpliﬁcar a vida de quem empreende, criamos o cenário ideal para atrair capital\nprivado, dinamizar a economia local e acelerar a formalização da nossa força de\ntrabalho.\n\n\nParque Tecnológico de Brasília (BioTIC): Acelerar a ocupação efetiva do\nBioTIC, transformando-o em um ecossistema real de biotecnologia,\ninteligência artiﬁcial, govtechs (startups de soluções para gestão pública) e\ntelecomunicações.\n\n\n\nBrasília como Sandbox Regulatório e Cidade Inteligente: Transformar a\ncapital em um laboratório aberto (living lab) para testes de novas tecnologias\nurbanas (mobilidade elétrica, redes 5G/6G, sistemas de energia solar\ndistribuída e governança digital).\n\n\n\nQualiﬁcação para o Futuro: Parcerias estratégicas entre o Sistema S\n(Seni/Senai, Senac), FAP-DF e universidades para capacitação massiva da\njuventude periférica em programação, análise de dados e tecnologia.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "5",
+            "titulo": "5",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "5\nEconomia Criativa, Cultura e Design\nNossa Brasília é Cidade Criativa do Design pela UNESCO e possui uma identidade\narquitetônica, musical e cultural única. Esse patrimônio imaterial e urbano é um\nativo econômico poderoso que será impulsionado pela Economia Criativa e pelo\nTurismo de Eventos, Negócios e Arquitetura. Vamos fomentar as indústrias do\naudiovisual, das artes, da gastronomia e do design brasiliense, criando um\necossistema que atrai turismo de alto valor agregado, gera empregos para a\njuventude e projeta a imagem e a cultura do DF para o Brasil e para o mundo.\n\n\nPolo de Economia Criativa e Audiovisual: Incentivar a indústria\ncinematográﬁca e de games com editais estruturados via Fundo de Apoio à\nCultura (FAC) e criação de um Film Commission forte para atrair produções\nnacionais e internacionais para o DF.\n\n\n\nRevitalização de Espaços e Zonas Criativas: Reabilitar centros culturais e\nincentivar distritos de inovação/design no Plano Piloto e nas demais RAs\n(como Taguatinga, Ceilândia e Gama), conectando gastronomia,\narquitetura, artesanato e moda local.\n\nTurismo (Negócios, Eventos, Cívico e Ecológico)\nO turismo é uma das rotas mais rápidas para a geração de empregos diretos no\nsetor de serviços, com capacidade imediata de absorver jovens no primeiro\nemprego e proﬁssionais de diferentes níveis de qualiﬁcação.\nCom a maior densidade hoteleira e gastronômica do Centro-Oeste e um dos\nmelhores aeroportos do país, nosso Governo atuará de forma decisiva para mitigar\na ociosidade dos ﬁnais de semana e feriados. Nossa estratégia combinará a\ncaptação ostensiva de grandes congressos, feiras internacionais, feiras de\nagronegócio e eventos esportivos à consolidação de rotas permanentes de turismo\ncívico, arquitetônico, ecológico e cultural.\nDessa forma, ao integrar o ambiente business-friendly, o agronegócio de precisão,\na economia do conhecimento e a força do turismo e da cultura, o Distrito Federal\nconstruirá uma matriz econômica diversiﬁcada, resiliente e inclusiva — capaz de\ngerar emprego, renda e oportunidades em todas as Regiões Administrativas.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "6",
+            "titulo": "6",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "6\n\n\nTurismo de Eventos e Negócios (MICE): Estruturar uma agenda\npermanente de congressos, feiras internacionais e eventos corporativos,\naproveitando a rede hoteleira instalada e a infraestrutura do Centro de\nConvenções Ulysses Guimarães e do Mané Garrincha.\n\n\n\nTurismo Cívico, Arquitetônico e Cultural: Criar rotas integradas e parcerias\ncom escolas e operadoras do país para resgatar o turismo pedagógico/cívico\nnas sedes dos poderes, museus e monumentos tombados.\n\n\n\nEcoturismo e Turismo Rural: Explorar as cachoeiras, trilhas, parques\necológicos e vinícolas/fazendas turísticos do Cerrado na zona rural do DF\n(como na Região do Jardim Botânico, Sobradinho, Planaltina e Brazlândia).\n\n\n\nAtração de modalidades esportivas nacionais e internacionais: Atrair\neventos nacionais e internacionais esportivos para o DF, de maneira anual,\ncriando, em parceria com as universidades e centros de treinamento a\natração de jovens da periferia e a descoberta de talentos nas mais diversas\nmodalidades esportivas e sociais.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "7",
+            "titulo": "7",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "7\n\n2.\n\nSAÚDE E PROTEÇÃO SOCIAL\n\nA saúde pública e a rede de proteção social representam o compromisso mais\nfundamental de um Estado com a dignidade da sua população, exigindo do Distrito\nFederal a superação deﬁnitiva de gargalos históricos como ﬁlas prolongadas,\ndescontinuidade na atenção primária e desarticulação do acolhimento\nassistencial. Para reestruturar e humanizar essa rede, a nossa proposta de\nreformulação neste segmento integrará de forma ﬂuida e contínua com o\nProntuário Eletrônico Uniﬁcado e a regulação inteligente ao estabelecimento de\nmetas rigorosas de redução do tempo de espera e à presença física fortalecida do\nEstado nos bairros.\nDessa forma, ao aliar a precisão da tecnologia de regulação e o rigor do\nacompanhamento de metas à descentralização de postos de saúde e centros de\nassistência social nas Regiões Administrativas de maior vulnerabilidade, o nosso\nGoverno assume o compromisso de garantir um atendimento preventivo,\nresolutivo, ágil e humanizado, assegurando que o cuidado à vida e a proteção às\nfamílias estejam presentes onde a população mais precisa.\nSaúde Pública: Descentralização, Tecnologia e Redução de Filas\nA superação das deﬁciências na saúde pública do Distrito Federal exige\ncompreender que o grande gargalo do setor não é apenas a falta de orçamento, mas\na gestão de processos, a ﬁxação de proﬁssionais e a eﬁciência operacional. Para\nenfrentar essa realidade, sob nossa gestão, a reorganização do sistema integrará a\nautomação de ﬂuxos administrativos e a otimização da escala médica ao\ncumprimento rigoroso de metas de desempenho e à descentralização da atenção\nprimária nos territórios de maior demanda. Dessa forma, ao aliar a modernização\nda gestão de insumos e prontuários ao incentivo para ﬁxação de médicos e equipes\nmultidisciplinares nas periferias, o nosso Governo transformará recursos\nﬁnanceiros em entregas reais, garantindo que o tempo de atendimento seja\nreduzido, os leitos e consultas sejam plenamente aproveitados e o cidadão\nencontre um serviço público de saúde ágil, resolutivo e presente no seu próprio\nbairro.\n\n\nZero Fila de Exames e Cirurgias Eletivas: Implementar um mutirão\ncontínuo via Telessaúde para triagem e contratação complementar da rede\nprivada e ﬁlantrópica nos horários ociosos (noites e ﬁnais de semana) para\nzerar a ﬁla de exames de imagem e cirurgias de média complexidade.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "8",
+            "titulo": "8",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "8\n\n\nFortalecimento das UBSs e Estratégia Saúde da Família (ESF): Elevar a\ncobertura da atenção primária de forma regionalizada (foco em Ceilândia,\nSamambaia, Planaltina, Sol Nascente/Pôr do Sol e Recanto das Emas),\ntransformando as UBSs em centros de resolutividade preventiva para evitar\na lotação desnecessária das Unidades de Pronto Atendimento (UPAs).\n\n\n\nFixação e Valorização dos Proﬁssionais de Saúde: Criar planos de carreira\natrativos e incentivos de ﬁxação territorial para médicos, enfermeiros e\nespecialistas em RAs mais distantes do Plano Piloto.\n\nPrimeira Infância: O Ciclo de Desenvolvimento (0 a 6 Anos)\nInvestir na Primeira Infância é a política social e econômica de maior retorno sobre\no investimento no longo prazo, constituindo a base estratégica para a redução das\ndesigualdades e para o desenvolvimento humano no Distrito Federal. Para\nconsolidar essa transformação, a nossa atuação conectará o monitoramento\nintegral de saúde e nutrição nos primeiros mil dias de vida à contratualização de\nmetas entre as redes de assistência, saúde e educação, além da descentralização\nde creches e centros de referência diretamente nas comunidades mais vulneráveis.\nAssim, ao combinar a inteligência de dados para o acompanhamento do\ndesenvolvimento infantil e o rigor de indicadores de cobertura vacinal e creche com\na presença física de equipamentos públicos nos bairros, o nosso Governo assegura\num ambiente de proteção, estímulo e dignidade desde o nascimento, garantindo\nque o cuidado na infância se traduza em progresso social, equidade e prosperidade\npara toda a sociedade no futuro.\n\n\nUniversalização das Creches (Cartão Creche + Parcerias Múltiplas):\nExtinguir a ﬁla de espera por vagas em creches públicas no DF até o ﬁnal do\nmandato. Expandir o programa Cartão Creche, criando simultaneamente\nincentivos ﬁscais para empresas que construam ou ﬁnanciem creches\ncomunitárias nas RAs com maior déﬁcit demográﬁco.\n\n\n\nPrograma \"Nossa Infância DF\" (Integração Saúde + Educação +\nAssistência): Criar uma carteira uniﬁcada de acompanhamento do\ndesenvolvimento infantil desde o pré-natal na UBS até a entrada na préescola. O programa deve monitorar vacinação, nutrição, estímulo cognitivo\ne combate à violência doméstica.\n\n\n\nEspaços de Brincar e Parques Infantis Inclusivos: Implantação de praças\ne parques infantis adaptados para crianças PcD em todas as 35 Regiões\nAdministrativas do DF.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "9",
+            "titulo": "9",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "9\nPessoas com Deﬁciência (PcD): Acessibilidade e Autonomia\n\n\nTransporte Acessível e Passe Livre Simpliﬁcado: Reformular o processo\nde concessão e renovação do Passe Livre para PcD, eliminando as perícias\nmédicas repetitivas para deﬁciências irreversíveis ou crônicas.\n\n\n\nCentro de Referência e Reabilitação em Polos Regionais: Criar Centros\nEspecializados em Reabilitação (CER IV) regionalizados (ex: Zonas Norte,\nSul e Oeste), evitando que pacientes precisem se deslocar obrigatoriamente\naté a Rede Sarah ou Centros do Plano Piloto para terapias contínuas\n(ﬁsioterapia, fonoaudiologia, terapia ocupacional e psicologia).\n\n\n\nInclusão Produtiva e Cota de Trabalho no GDF: Incentivos ﬁscais via\nISS/IPTU para empresas privadas instaladas nas ADEs que contratarem e\ncapacitarem trabalhadores PcD acima do percentual legal, além do\ncumprimento rigoroso das cotas em concursos públicos e contratos\nterceirizados do GDF.\n\nIdosos: Longevidade Ativa e Proteção Social\nO Distrito Federal enfrenta um processo acelerado de envelhecimento\npopulacional, exigindo uma transição profunda na rede de cuidados para responder\nao aumento das doenças crônicas e às novas demandas por autonomia e\nacolhimento da terceira idade. Para estruturar essa nova dinâmica de atenção, o\nsistema público em nossa gestão integrará o monitoramento preditivo de saúde e a\ntelemedicina especializada ao cumprimento de metas rigorosas de atendimento\ndomiciliar e à descentralização de centros de convivência e cuidados paliativos em\ntodas as Regiões Administrativas.\nDessa forma, ao associar a tecnologia para a gestão continuada de prontuários\nidosos e a busca ativa de vulnerabilidades à oferta de equipes multidisciplinares e\nsuporte assistencial nos bairros, o Governo do Distrito Federal garante um\nenvelhecimento ativo, seguro e digno, consolidando uma rede de proteção\nqualiﬁcada e humanizada perto da residência de cada cidadão.\n\n\nRede de Centros de Convivência e \"Creches para Idosos\" (Centros Dia):\nImplementar Centros de Acolhimento Diurno para idosos em\nvulnerabilidade social ou com grau leve de dependência. Isso permite que a\nfamília trabalhe durante o dia enquanto o idoso recebe acompanhamento\nmédico, nutricional, atividades cognitivas e sociais.\n\n\n\nFortalecimento das ILPIs (Instituições de Longa Permanência): Firmar\nconvênios estruturados e ﬁscalizados com entidades ﬁlantrópicas para\nexpandir as vagas públicas em ILPIs, garantindo dignidade aos idosos sem\nsuporte familiar.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "10",
+            "titulo": "10",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "10\n\n\nPrograma Acompanhante de Idosos (PAI): Equipes multidisciplinares\nitinerantes ligadas às UBSs para atendimento domiciliar periódico a idosos\nacamados ou com mobilidade reduzida.\n\nProteção e Autonomia da Mulher\nO enfrentamento ao feminicídio e a garantia de autonomia ﬁnanceira são as duas\nprioridades centrais para as políticas públicas das mulheres no Distrito Federal,\nexigindo um combate severo e multifacetado à violência aliado à criação de\noportunidades reais de renda. Para consolidar essa proteção integral, o Estado sob\nnossa gestão integrará os bancos de dados de segurança e assistência em um\necossistema de monitoramento preventivo por inteligência artiﬁcial, atrelado a\nmetas rígidas de redução de reincidência e tempo de resposta e à descentralização\nde Casas da Mulher Brasileira, centros de acolhimento e programas de capacitação\ne microcrédito em todas as Regiões Administrativas.\nDessa forma, ao associar a tecnologia de inteligência e o rigor do cumprimento de\nindicadores de proteção à presença territorial de equipamentos de suporte\nﬁnanceiro e jurídico no próprio bairro, o nosso Governo rompe o ciclo da violência\ndoméstica e capacita as mulheres para a independência, garantindo dignidade,\nintegridade física e prosperidade econômica em cada comunidade.\n\n\nRede Integrada de Proteção à Mulher e Enfrentamento ao Feminicídio:\nIntegração em tempo real entre a Secretaria de Segurança Pública (SSP-DF),\nPolícia Civil, Tribunal de Justiça e Assistência Social. Fortalecimento da\nPatrulha Maria da Penha com tecnologia de monitoramento de agressores e\nexpansão das Casas Abrigo em locais sigilosos.\n\n\n\nAutonomia Financeira e Empreendedorismo Feminino: Criar uma linha de\ncrédito especial com juros subsidiados e capacitação do Sebrae para\nmulheres chefes de família e vítimas de violência doméstica que queiram\nempreender.\n\n\n\nAmpliação das Casas da Mulher Brasileira: Instalar unidades funcionais\nda Casa da Mulher Brasileira nas maiores RAs (Ceilândia, Samambaia,\nPlanaltina e Sobradinho), concentrando acolhimento psicológico,\nassistência jurídica, delegacia especializada e apoio social no mesmo\nespaço.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "11",
+            "titulo": "11",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "11\nAssistência Social: Eﬁciência e Combate à Extrema Pobreza\nA rede socioassistencial do Distrito Federal, representada prioritariamente pelos\nCRAS e CREAS, sofre com uma grave sobrecarga de atendimento e ﬁlas físicas de\nespera, impondo barreiras inaceitáveis ao acesso de famílias vulneráveis aos seus\ndireitos básicos. Para reverter esse cenário de desassistência, o fortalecimento da\nproteção social sob nossa gestão integrará a modernização digital dos\nagendamentos e o cadastramento único automatizado à estipulação de metas\nestritas de tempo máximo de espera e à ampliação física e descentralizada das\nunidades socioassistenciais e equipes itinerantes nos territórios de maior risco.\nDessa forma, ao associar a tecnologia para a eliminação das ﬁlas presenciais e o\nacompanhamento rigoroso dos prazos de concessão de benefícios à presença\npermanente do Estado nas Regiões Administrativas periféricas, o nosso Governo\nrestaura assim a eﬁciência do sistema, assegurando acolhimento célere, digno e\nresolutivo a quem mais precisa.\n\n\nDigitalização e Agendamento Inteligente nos CRAS: Fim das ﬁlas de\nmadrugada na porta dos CRAS através da implementação de agendamento\nmulticanal (aplicativo, telefone 156 e balcões comunitários em\nadministrações regionais).\n\n\n\nCartão Prato Cheiro e Benefícios Sociais Sem Interrupção:\nAutomatização do recadastramento de benefícios de transferência de renda\n(como o Cartão Prato Cheio e DF Social) usando cruzamento de dados\nautomatizado para evitar a interrupção abrupta do benefício para famílias\nque mantêm os critérios de elegibilidade.\n\n\n\nInclusão Produtiva (Porta de Saída dos Programas Sociais): Vinculação\ndos programas assistenciais a cursos de qualiﬁcação técnica (via\nSenai/Senac/Instituto Federal) e encaminhamento prioritário para vagas de\nemprego captadas pelo Agência Trabalhador do DF.\n\nProteção e Bem-Estar Animal em Brasília e no Distrito Federal\nBrasília e as demais regiões administrativas do Distrito Federal enfrentam desaﬁos\nrelacionados ao abandono, à negligência, à reprodução descontrolada e à falta de\natendimento veterinário para cães e gatos. Esses problemas afetam diretamente o\nbem-estar dos animais, sobrecarregam organizações não governamentais e\nprotetores independentes e podem gerar impactos na saúde pública.\nDe acordo com estudo sobre políticas públicas para cães e gatos no Distrito\nFederal, estima-se que aproximadamente 1,5 milhão de animais integrem as\nfamílias do DF. Dados do Instituto de Pesquisa e Estatística do Distrito Federal\ntambém indicam que 55% dos domicílios do Distrito Federal possuem animais de\nestimação, sendo os cães encontrados em 45,8% das residências.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "12",
+            "titulo": "12",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "12\nApesar da dimensão da população animal no DF, ainda não existe um censo oﬁcial,\natualizado e abrangente que informe com precisão quantos animais vivem em\nsituação de abandono nas ruas de Brasília e das demais regiões administrativas.\nPor isso, nosso plano de governo propõe a realização de um Censo Distrital de\nAnimais em Situação de Rua, com levantamento por região, identiﬁcação das áreas\nde maior abandono e atualização periódica dos dados.\nA ausência de números oﬁciais não diminui a gravidade do problema observado\ndiariamente nas ruas e nem o trabalho realizado por ONGs, abrigos e protetores\nindependentes. O poder público precisa assumir sua responsabilidade e fortalecer\nas iniciativas já existentes, garantindo recursos, estrutura e parcerias para ações de\nalimentação, vacinação, atendimento veterinário, castração, identiﬁcação,\nacolhimento e adoção responsável.\nEste plano também propõe campanhas permanentes de educação sobre guarda\nresponsável, combate ao abandono e prevenção aos maus-tratos. As políticas\npúblicas deverão priorizar animais em situação de rua, doentes, feridos, idosos,\nvítimas de violência e aqueles sob os cuidados de famílias em situação de\nvulnerabilidade social.\nO objetivo é construir um Distrito Federal mais responsável e comprometido com a\nproteção animal, com ações baseadas em dados reais, transparência, ﬁscalização\ne respeito à vida. Dessa forma, Brasília poderá avançar no controle populacional\nético, na redução do abandono e na garantia de dignidade aos animais.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "13",
+            "titulo": "13",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "13\n\n3.\n\nEDUCAÇÃO E FUTURO\n\nO Distrito Federal possui uma rede com mais de 470 mil estudantes no ensino\npúblico fundamental e médio, além de uma parcela signiﬁcativa de jovens fora do\nmercado de trabalho e da sala de aula, exigindo uma resposta pública urgente para\nsuperar a desarticulação educacional e a exclusão social. Para enfrentar essa\nrealidade e garantir um futuro de oportunidades, a transformação da educação\npública sob nossa gestão irá integrar a inovação digital das salas de aula e\nplataformas de formação técnica conectadas às demandas do mercado de\ntrabalho ao estabelecimento de metas rigorosas de redução da evasão escolar e à\ndescentralização de centros de qualiﬁcação proﬁssional, polos de inclusão digital\ne complexos esportivos comunitários em todas as Regiões Administrativas.\nDessa forma, ao associar a tecnologia para o aprendizado prático e o\nmonitoramento contínuo de permanência estudantil ao investimento direto na\ninfraestrutura escolar e esportiva no próprio bairro, o Governo do Distrito Federal\nresgata a juventude das periferias, conectando a sala de aula à economia do\nconhecimento, ao esporte e ao primeiro emprego qualiﬁcado.\nEducação Básica: Aprendizagem na Idade Certa e Tempo Integral\nA prioridade será a recuperação de aprendizagem, com foco central no domínio\npleno de Português e Matemática, aliada à expansão sustentável e planejada da\nrede física e pedagógica do Distrito Federal. Para consolidar esse avanço, a nossa\nestão educacional integrará plataformas de ensino adaptativo por inteligência\nartiﬁcial e diagnósticos de aprendizagem em tempo real à contratualização de\nmetas rígidas de proﬁciência e equidade por coordenação regional, associando\nesse esforço à construção e reforma descentralizada de escolas e creches nos\nbairros de maior crescimento populacional.\nDessa forma, ao unir a precisão da tecnologia pedagógica e a cobrança contínua\npor resultados acadêmicos à presença territorial de infraestruturas escolares\nmodernas perto da residência de cada família, o Governo do Distrito Federal supera\nas defasagens de aprendizado, garante a permanência dos alunos e assegura um\npadrão de excelência educacional em todas as Regiões Administrativas.\n\n\nUniversalização da Alfabetização no 2º Ano do Ensino Fundamental:\nImplementar um regime de colaboração contínua com avaliações de\ndesempenho bimestrais e boniﬁcação por metas alcançadas pelas escolas\nque garantirem a alfabetização plena de todas as crianças até os 7 anos de\nidade.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "14",
+            "titulo": "14",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "14\n\n\nExpansão da Educação em Tempo Integral com Foco Pedagógico e\nesportivo: Expandir as Escolas de Tempo Integral no DF, superando o\nmodelo que funciona apenas como \"guarda de alunos\". O contraturno deve\nser estruturado com reforço de aprendizagem, robótica, idiomas, artes e\nesportes.\n\n\n\nModernização da Infraestrutura Física e Conectividade: Programa de\nreforma permanente das escolas das RAs com maior índice de\nvulnerabilidade (goteiras, banheiros, quadras poliesportivas cobertas) e\ngarantia de Wi-Fi de alta velocidade e dispositivos individuais\n(tablets/chromebooks) para alunos do Ensino Fundamental II e Médio.\n\n\n\nValorização dos Proﬁssionais da Educação: Formação continuada com\nfoco em metodologias ativas e uso de tecnologia em sala de aula, além de\npolíticas de atenção à saúde mental e segurança dos professores e gestores\nescolares.\n\n\n\nParcerias com as escolas técnicas e universidades do DF para que os\nalunos que concluírem o ensino médio possam ingressar automaticamente\nnestas instituições.\n\nEnsino Técnico e Tecnológico: Conexão Direta com o Mercado de Trabalho\nO Ensino Médio no Distrito Federal sob nossa gestão oferecerá caminhos reais de\nempregabilidade, superando a atual centralização da oferta de ensino técnico em\npoucas unidades, como a Escola Técnica de Brasília (ETB) e os Institutos Federais.\nPara democratizar o acesso à formação proﬁssional, a reestruturação dessa etapa\neducacional integrará plataformas de ensino híbrido especializado, simulações\nvirtuais de ambiente de trabalho e parcerias tecnológicas com o setor produtivo à\ndeﬁnição de metas estritas de inserção de formandos no mercado de trabalho\nformal.\nParalelamente, o plano promoverá a descentralização do ensino técnico por meio\ndo aproveitamento da infraestrutura escolar existente nos bairros e da expansão de\npolos de formação proﬁssional em todas as Regiões Administrativas.\nDessa forma, ao associar a tecnologia instrucional e o rigor do acompanhamento\nde métricas de empregabilidade à presença territorial de cursos voltados às\nvocações econômicas locais, o nosso Governo aproxima a juventude periférica do\nprimeiro emprego qualiﬁcado, garantindo renda, autonomia e oportunidades no\npróprio território onde vivem.\n\n\nRede de Institutos Técnicos do DF (Ampliação dos IEDB): Expansão do\nInstituto de Educação, Ciência e Tecnologia do DF (IEDB) com unidades em\nRAs estratégicas (como Ceilândia, Samambaia, Planaltina, Santa Maria,\nRecanto das Emas e Sol Nascente).\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "15",
+            "titulo": "15",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "15\n\n\n\n\nCursos Alinhados às Vocações da Economia Local: Integração da grade\nde cursos técnicos com as necessidades do setor produtivo do DF e das\nADEs:\no\n\nDesenvolvimento de Software, Programação e Análise de Dados;\n\no\n\nAgrotecnologia e Gestão Agrícola (para o agropolo do PAD-DF e\nBrazlândia);\n\no\n\nLogística, Comércio Exterior e Operação de Supply Chain;\n\no\n\nGastronomia, Hotelaria e Gestão de Turismo.\n\nParceria Estratégica com o Sistema S (Senai, Senac, Senar):\nContratualização de vagas em cursos técnicos de nível médio diretamente\nnas estruturas do Sistema S para alunos da rede pública, otimizando o uso\ndo dinheiro público sem necessidade de erguer novas estruturas físicas\nonde já existem laboratórios de ponta.\n\nJuventude: Primeiro Emprego, Economia Digital e Cidadania\nA política de juventude no Distrito Federal irá atuar como uma ponte direta e\neﬁciente entre a escola e a autonomia ﬁnanceira, superando o isolamento que\nfrequentemente afasta os jovens do mercado de trabalho e do empreendedorismo.\nPara construir esse caminho de transição, a atuação em nossa gestão integrará a\ncapacitação em competências digitais, programação e novas tecnologias ao\nestabelecimento de metas rigorosas de concessão de bolsas, estágios e\nmicrocrédito, aliada à descentralização de incubadoras de projetos, espaços\ncoworking e centros de formação proﬁssional nas Regiões Administrativas\nperiféricas.\nDessa forma, ao associar a inovação tecnológica e o acompanhamento direto dos\nindicadores de inclusão produtiva à presença de equipamentos de suporte e\nmentoria no próprio bairro, o nosso Governo garantirá que o aprendizado em sala\nde aula se converta em oportunidade real de trabalho, renda e protagonismo para a\njuventude brasiliense.\n\n\nPrograma \"Primeiro Emprego no DF\": Concessão de incentivos ﬁscais\n(dedução ou isenção de tributos locais) para empresas do DF que\ncontratarem jovens de 16 a 24 anos egressos da rede pública de ensino para\no seu primeiro contrato formal de trabalho.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "16",
+            "titulo": "16",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "16\n\n\nModernização dos Centros de Juventude: Reformular e ampliar os Centros\nde Juventude nas RAs vulneráveis, transformando-os em hubs de inovação\ncomunitária. Os locais devem oferecer cursos de produção audiovisual,\nedição de vídeo, criação de conteúdo digital, programação básica e\nempreendedorismo.\n\n\n\nSaúde Mental e Prevenção: Implementação de núcleos multiproﬁssionais\nde apoio psicológico voltados aos jovens nas escolas públicas e nos Centros\nde Juventude, atuando no combate à depressão, ansiedade e ideação\nsuicida.\n\nEsporte: Inclusão Social, Saúde e Alto Rendimento\nO esporte no Distrito Federal atua em duas frentes fundamentais: como ferramenta\nde prevenção primária contra a violência e como polo de formação de novos\natletas. Para potencializar esse duplo impacto, a nossa política pública de esportes\nintegrará o monitoramento digital do desempenho e da frequência dos jovens a\nprogramas sociais ao cumprimento de metas claras de formação de talentos e\nredução dos índices de vulnerabilidade juvenil.\nEssa estrutura será impulsionada pela descentralização e revitalização de\ncomplexos esportivos, Centros Olímpicos e Paralímpicos (COPs) e praças da\njuventude em todas as Regiões Administrativas. Dessa forma, ao unir o uso de\ntecnologia na gestão de modalidades e talentos ao acompanhamento rigoroso de\nmetas de impacto comunitário e à oferta de infraestrutura esportiva de qualidade\nnos bairros, o Governo do Distrito Federal transforma a prática esportiva em um\ncanal contínuo de cidadania, inclusão social e oportunidade de alto rendimento\npara os jovens das periferias.\n\n\nRevitalização dos Centros Olímpicos e Paralímpicos (COPs):\nReestruturação física, manutenção preventiva contínua e ampliação das\nmodalidades oferecidas nos 12 COPs existentes no DF (como Ceilândia,\nSamambaia, Santa Maria, Estrutural, São Sebastião, entre outros). Garantir\ncontratação regular de proﬁssionais de educação física e ﬁsioterapeutas.\n\n\n\nPrograma \"Atleta do Futuro\" nas Escolas: Conectar o esporte escolar às\nfederações esportivas. Realização dos Jogos Escolares do DF de forma\ndescentralizada e contínua, servindo como vitrine para descoberta de\ntalentos e concessão da Bolsa Atleta DF.\n\n\n\nEsporte Comunitário e Vilas Esportivas nas RAs: Reforma e cobertura de\nquadras poliesportivas em praças públicas, iluminação em LED para uso\nnoturno e instalação de academias ao ar livre adaptadas inclusive para a\nterceira idade e pessoas com deﬁciência.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "17",
+            "titulo": "17",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "17\n\n\nApoio ao Esporte Paralímpico: Consolidar o DF como referência nacional\nno esporte adaptado, garantindo acessibilidade plena em todos os COPs e\nequipamentos esportivos públicos, além de apoio logístico para atletas em\ncompetições nacionais e internacionais.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "18",
+            "titulo": "18",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "18\n\n4.\n\nSEGURANÇA E ORDEM PÚBLICA\n\nO Distrito Federal sob nossa gestão irá alinhar a valorização das forças policiais, o\nuso intensivo de tecnologia e inteligência integrada e uma forte atuação preventiva\nterritorial para garantir a segurança pública e a paz social em todas as regiões.\nPara estruturar essa política de proteção do cidadão, a gestão pública integrará o\ncercamento digital com reconhecimento facial e análise preditiva ao cumprimento\nde metas rigorosas de redução do tempo de resposta do socorro e diminuição dos\níndices de criminalidade violenta, atreladas à valorização proﬁssional do efetivo.\nEssa estratégia será potencializada pela descentralização do policiamento\ncomunitário de proximidade e pelo fortalecimento das instalações das forças de\nsegurança nos bairros e periferias.\nDessa forma, ao associar a tecnologia de ponta e o rigor do acompanhamento de\nresultados à presença física constante das forças policiais nas Regiões\nAdministrativas, o Governo do Distrito Federal constrói um ambiente de ordem,\nprevenção e tranquilidade, assegurando a integridade e a liberdade do cidadão\nbrasiliense.\nInteligência, Tecnologia e Integração de Forças\nA segurança pública moderna não se faz apenas com presença ostensiva, mas com\na antecipação de cenários e a integração de dados em tempo real, exigindo do\nDistrito Federal um modelo analítico e preventivo capaz de neutralizar ameaças\nantes que elas se concretizem.\nPara consolidar essa arquitetura de inteligência, o sistema de proteção pública sob\no nosso comando integrará plataformas de análise preditiva, cercamento digital e\ncompartilhamento de dados entre as polícias e órgãos de ﬁscalização ao\ncumprimento de metas estritas de tempo de atendimento e redução contínua de\nmancha criminal por setorização. Essa estrutura será operacionalizada por meio da\ndescentralização de bases comunitárias e Centros Integrados de Operações com\natuação direta nas Regiões Administrativas de maior criticidade.\nDessa forma, ao associar a alta tecnologia de processamento de dados e a\ncobrança contínua por resultados de combate ao crime à presença ostensiva e\npreventiva nos bairros, o Governo do Distrito Federal transforma a gestão de\nsegurança em um sistema dinâmico, ágil e resolutivo, garantindo a proteção da\npopulação e a ordem pública no DF.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "19",
+            "titulo": "19",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "19\n\n\n\n\nCriação do Centro Integrado de Inteligência do DF (CIINT-DF):\no\n\nUniﬁcação efetiva das áreas de inteligência da PMDF, PCDF, CBMDF,\nDetran-DF, SEAPE (sistema penitenciário) e órgãos federais (PF, PRF\ne ABIN).\n\no\n\nFoco na desarticulação do crime organizado, lavagem de dinheiro,\ntráﬁco de drogas e receptação de cargas nas divisas do DF com o\nEntorno (Goiás e Minas Gerais).\n\nMuralha Digital e Cercamento Eletrônico Inteligente:\no\n\n\n\nExpansão da rede de câmeras de monitoramento com tecnologia de\nreconhecimento facial (para localização de foragidos da justiça) e\nLPR (leitura de placas) em 100% das entradas/saídas do DF,\nrodovias distritais (DFs), acessos a RAs e áreas de grande circulação\n(estações de metrô e rodoviárias).\n\nAnálise Preditiva de Manchas Criminais:\no\n\nAlgoritmos de inteligência artiﬁcial aplicados aos dados de\nocorrências da PCDF e chamados do 190/193 para direcionar o\npatrulhamento preventivo da PMDF de forma dinâmica para as \"áreas\nquentes\" (hotspots) em dias e horários críticos.\n\nSegurança Ostensiva, Polícia Judiciária e Valorização Proﬁssional\nO Distrito Federal conta com corporações de excelência técnica, como a Polícia\nMilitar e a Polícia Civil, mas que enfrentam sérios gargalos de efetivo decorrentes\nde aposentadorias aceleradas e da defasagem no ﬂuxo de recomposição\nviabilizado pelo Fundo Constitucional do Distrito Federal (FCDF).\nPara superar essa vulnerabilidade operacional, a reestruturação das forças\nintegrará a otimização tecnológica de processos administrativos, alocando o maior\nnúmero possível de policiais no trabalho ostensivo e investigativo das ruas, à\nestipulação de metas rigorosas para o planejamento contínuo de concursos\npúblicos e recomposição do efetivo.\nEssa gestão eﬁciente será combinada à distribuição descentralizada do efetivo\npolicial com base na mancha criminal especíﬁca de cada Região Administrativa.\nDessa forma, ao associar a automação e inteligência de dados ao rigor no\ncumprimento dos cronogramas de recomposição das tropas e à presença\nostensiva reforçada nos bairros, o Governo do Distrito Federal valoriza os seus\nservidores, fortalece o braço operacional das corporações e devolve a sensação de\nsegurança para a vida diária do cidadão.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "20",
+            "titulo": "20",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "20\n\n\nRecomposição de Efetivo e Concursos Regulares:\no\n\n\n\nRecomposição Salarial e Paridade do Fundo Constitucional:\no\n\n\n\nCronograma previsível de concursos públicos e chamamento de\naprovados para a PMDF e PCDF para recompor o quadro operacional\ndas RAs que mais cresceram (como Sol Nascente/Pôr do Sol, Itapoã,\nJardins Mangueiral, Planaltina e Ceilândia).\n\nGestão política ativa junto ao Governo Federal para manutenção,\nproteção e atualização contínua do Fundo Constitucional (FCDF),\ngarantindo valorização salarial, assistência à saúde e equipamentos\nde proteção individual (EPIs) de última geração para os policiais e\nbombeiros.\n\nModernização e Abertura de Delegacias (PCDF):\no\n\nGarantia de funcionamento 24 horas de todas as Delegacias\nCircunscricionais (DPs) nas Regiões Administrativas, eliminando o\nfechamento noturno por falta de pessoal.\n\no\n\nExpansão da Delegacia Eletrônica e uso de inteligência artiﬁcial no\npré-atendimento para otimizar o tempo do cidadão ao registrar\nocorrências.\n\nPrevenção Primária, Comunitária e Enfrentamento a Violência Doméstica.\nA prevenção primária reduz a necessidade do uso da força e incide diretamente\nsobre as causas sociais da violência, exigindo do Distrito Federal uma atuação\narticulada que intervenha nos fatores de vulnerabilidade antes da eclosão do crime.\nPara consolidar essa abordagem preventiva, o ecossistema de proteção pública\nintegrará a análise preditiva de dados sociais e manchas de criminalidade ao\ncumprimento de metas rigorosas de iluminação pública, ocupação de espaços\nurbanos degradados e atendimento a jovens em risco.\nEssa estratégia será potencializada pela descentralização de programas\ncomunitários, projetos sociais e estruturas de segurança preventiva diretamente\nnas Regiões Administrativas de maior vulnerabilidade.\nDessa forma, ao associar a inteligência de dados e o acompanhamento contínuo\nde metas de redução de risco social à presença física de serviços públicos e\npatrulhamento comunitário nos bairros, o Governo do Distrito Federal transforma a\nprevenção em um pilar estruturante da paz social, garantindo segurança com\ncidadania e oportunidades para toda a população.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "21",
+            "titulo": "21",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "21\nCombate Severo ao Feminicídio e Violência de Gênero:\n\n\nIntegração total entre o sistema de Justiça, PCDF e Polícia Militar no\nacompanhamento das Medidas Protetivas de Urgência (MPUs).\n\n\n\nAquisição e disponibilização massiva de dispositivos de alerta (botões de\npânico móveis) e tornozeleiras eletrônicas com rastreamento ativo em\ntempo real para agressores enquadrados na Lei Maria da Penha.\n\nRevitalização e Fortalecimento dos CONSEGs:\n\n\nReestruturação dos Conselhos Regionais de Segurança Pública (CONSEGs),\ngarantindo reuniões mensais deliberativas entre os comandantes de\nbatalhões, delegados titulares, administradores regionais e lideranças\ncomunitárias.\n\nDefesa Civil e Gestão de Riscos Climáticos/Ambientais\nO Corpo de Bombeiros Militar do DF (CBMDF) e a Subsecretaria de Defesa Civil\n(SEDEC-DF) desempenham papel crucial na proteção contra eventos extremos de\nseca e chuva no Planalto Central.\nSistema de Alerta Precoce e Gestão de Desastres:\no\n\nModernização dos radares meteorológicos e criação do Alertas DF\nvia SMS, WhatsApp e Cell Broadcast para emitir avisos\ngeorreferenciados de tempestades, enxurradas e granizo\ndiretamente nos celulares da população afetada.\n\nPlano Estruturante contra Enxurradas e Alagamentos:\no\n\nMapeamento contínuo e atualização das áreas de risco de\ndesabamento e enxurrada (como Tesourinhas do Plano Piloto, áreas\nde Ceilândia, Samambaia e Vicente Pires).\n\no\n\nExecução de obras de micro e macrodrenagem (bacias de\ncontenção) em articulação com a Novacap e Secretarias de Obras.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "22",
+            "titulo": "22",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "22\nPlano Integrado de Prevenção e Combate a Incêndios Florestais (PPCIF):\no\n\nReforço do efetivo do CBMDF e brigadas comunitárias durante o\nperíodo de estiagem (maio a outubro) para proteção da cobertura\nvegetal do Cerrado, Parques Ecológicos e Áreas de Preservação\nPermanente (APPs).\n\no\n\nUso de drones térmicos para detecção precoce de focos de incêndio\nno Parque Nacional de Brasília e Unidades de Conservação do DF.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "23",
+            "titulo": "23",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "23\n\n5.\n\nMOBILIDADE E INFRAESTRUTURA\n\nNossa proposta propõe a modernização do transporte sobre trilhos e pneus, a\nqualiﬁcação das rodovias e um choque de infraestrutura em drenagem e\nsaneamento, estruturando os eixos vitais do desenvolvimento e da qualidade de\nvida no Distrito Federal. Para impulsionar esse salto urbano, a gestão pública\nintegrará sistemas inteligentes de monitoramento de tráfego, telemetria de frotas e\nsensoriamento preditivo de redes pluviométricas ao cumprimento de metas\nrigorosas de redução do tempo de deslocamento, pontualidade do transporte\npúblico e eliminação de pontos críticos de alagamento.\nEssa atuação estratégica será materializada pela descentralização de obras\nestruturantes, expansão do VLT, ampliação das vias do BRT e intervenções de micro\ne macrodrenagem diretamente nos bairros e Regiões Administrativas que\nacumulam déﬁcits históricos. Dessa forma, ao associar a tecnologia de gestão\nurbana e a cobrança ﬁrme por prazos e resultados à presença física de máquinas,\nobras e melhorias nos territórios, o Governo do Distrito Federal garante mobilidade\nágil, segurança hídrica e infraestrutura de excelência para o cotidiano da\npopulação.\nMobilidade, Metrô e VLT (Eletromobilidade e Trilhos)\nA solução para o gargalo do trânsito do Distrito Federal passa obrigatoriamente pela\nexpansão do transporte de alta e média capacidade sobre trilhos, superando a\ndependência histórica do modal rodoviário e garantindo uma mobilidade rápida e\nsustentável. Para concretizar esse avanço estrutural, a modernização do sistema\nintegrará a bilhetagem inteligente uniﬁcada, o controle operacional automatizado\nde frotas e a sincronização em tempo real dos modais alimentadores ao\ncumprimento de metas rigorosas de redução do tempo de viagem e aumento do\nconforto dos passageiros.\nEssa transformação será viabilizada pela descentralização dos eixos de transporte,\nacelerando a expansão das linhas do Metrô-DF até Ceilândia, Samambaia e Asa\nNorte, aliada à implementação do VLT na EPTG e na W3. Dessa forma, ao associar\na gestão tecnológica do tráfego e o rigor na execução de metas operacionais à\nentrega de obras físicas e expansão de trilhos nos bairros de maior densidade, o\nGoverno do Distrito Federal oferece uma alternativa pública eﬁciente, humana e\nprevisível, retirando milhares de veículos das rodovias e devolvendo tempo de vida\nao cidadão.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "24",
+            "titulo": "24",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "24\nExpansão e Modernização do Metrô-DF:\n\n\nEixo Ceilândia e Samambaia: Efetivar a expansão física dos trilhos e a\nconstrução das novas estações prometidas nas expansões de Ceilândia e\nSamambaia.\n\n\n\nAvanço do Metrô na Asa Norte: Iniciar a primeira fase da expansão da linha\nrumo à Asa Norte (alcançando o HRAN e a UnB), conectando os polos\nacadêmicos e hospitalares do DF.\n\n\n\nRedução do Tempo de Espera (Headway): Aquisição de novas\ncomposições (trens) e sinalização digital (CBTC) para diminuir o tempo de\nespera nas estações nos horários de pico.\n\nImplantação do VLT (Veículo Leve sobre Trilhos):\n\n\nProjeto prioritário para o eixo Aeroporto Internacional – W3 Sul – W3 Norte:\nmodal limpo e silencioso para revitalizar o comércio da W3, aliviar o tráfego\nde ônibus centrais e atender turistas e trabalhadores do eixo monumental.\n\nBilhetagem Única e Aplicativo Uniﬁcado de Mobilidade:\n\n\nIntegração tarifária real (ônibus urbano, BRT, Metrô e VLT) com um único\ncartão/QR Code digital no celular, garantindo transbordo sem pagamento de\nnova tarifa dentro da janela temporal.\n\nSistema de Ônibus (BRT), Trânsito e Rodovias (DER-DF / Detran)\nO sistema de transporte público rodoviário precisa de maior ﬂuidez nas vias\nexpressas e regularidade nos horários, superando a imprevisibilidade que impacta\ndiariamente a rotina do trabalhador do Distrito Federal. Para garantir essa eﬁciência\noperacional, a modernização do modal integrará o monitoramento por GPS em\ntempo real da frota, a gestão semafórica inteligente e a priorização eletrônica em\nfaixas exclusivas ao cumprimento de metas rigorosas de pontualidade, frequência\ne índice de satisfação do usuário por linha.\nEssa estratégia será fortalecida pela descentralização da infraestrutura, com a\nexpansão de corredores exclusivos de BRT, reforma de terminais e instalação de\nabrigos inteligentes diretamente nas Regiões Administrativas periféricas. Dessa\nforma, ao associar a inteligência de dados na gestão do tráfego e o controle estrito\nde metas contratuais com as concessionárias à entrega de vias qualiﬁcadas e\npontos estruturados nos bairros, o nosso Governo assegurará um transporte\npúblico previsível, rápido e digno para toda a população.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "25",
+            "titulo": "25",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "25\n\n\n\n\n\n\nConsolidação e Expansão da Rede BRT:\no\n\nBRT Norte: Implementação do corredor exclusivo de ônibus ligando\nPlanaltina, Sobradinho ao Plano Piloto (pelo Eixo Norte/Saída Norte).\n\no\n\nBRT Oeste e Sul: Aprimoramento da operação do BRT Sul\n(Gama/Santa Maria) e conclusão do BRT Oeste (Sol\nNascente/Ceilândia/Taguatinga via Hélio Prates e EPTG).\n\nMelhorias Estruturais nas Rodovias Distritais (DER-DF):\no\n\nDuplicação e Pavimentação de DFs Críticas: Duplicação das\nrodovias distritais de grande ﬂuxo agroindustrial e comunitário (como\nDF-001, DF-180, DF-250 e DF-140).\n\no\n\nFaixas Exclusivas para Transporte Público: Ampliação das faixas\ndedicadas a ônibus em todas as rodovias de ligação entre as RAs\n(EPTG, EPCL/Estrutural, EPEN).\n\nTrânsito Seguro, Educativo e Desgargalhado (Detran-DF):\no\n\nEngenharia de Tráfego Inteligente: Semáforos atuados pelo tempo\nreal do ﬂuxo de veículos nas tesourinhas, eixões e acessos a\nTaguatinga, Águas Claras e Vicente Pires.\n\no\n\nPassarelas de Pedestres e Acessibilidade: Iluminação em LED,\ncâmeras de segurança e rampas acessíveis em 100% das passarelas\nde pedestres nas rodovias distritais.\n\nObras de Infraestrutura Urbana e Drenagem Pluvial\nO crescimento populacional do Distrito Federal exige obras que previnam o colapso\nurbano nos períodos de chuvas intensas, superando a vulnerabilidade histórica de\nvias e bairros diante de enchentes e alagamentos recorrentes. Para estruturar uma\nresposta deﬁnitiva e resiliente, a nossa gestão de infraestrutura integrará o\nsensoriamento climático preditivo e o mapeamento digital de áreas de risco ao\ncumprimento de metas rigorosas de manutenção preventiva e execução de obras\nde micro e macrodrenagem.\nEssa atuação será viabilizada pela descentralização de intervenções físicas, com a\nimplantação de bacias de contenção, ampliação da rede de galerias e\npavimentação permeável diretamente nas Regiões Administrativas mais afetadas\npelos temporais.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "26",
+            "titulo": "26",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "26\nDessa forma, ao associar a tecnologia de monitoramento hídrico e o rigor no\ncumprimento de prazos de obras à presença permanente de equipes de\ninfraestrutura nos bairros, o Governo do Distrito Federal protege a vida, preserva o\npatrimônio das famílias e garante um desenvolvimento urbano seguro, sustentável\ne preparado para o clima.\n\n\n\n\nPlano Diretor de Drenagem Pluvial (Combate a Alagamentos):\no\n\nDrenagem do Plano Piloto (Drenar DF): Continuidade e expansão\ndas bacias de contenção e túneis de drenagem para eliminar\nalagamentos nas quadras da Asa Sul e Asa Norte e na L2.\n\no\n\nMacrodrenagem nas RAs em Consolidação: Obras estruturantes\nde captação de águas pluviais em locais vulneráveis como Vicente\nPires, Sol Nascente/Pôr do Sol, Arniqueira, Samambaia e Itapoã\nantes da pavimentação asfáltica.\n\nManutenção Preventiva de Viadutos, Pontes e Tesourinhas:\no\n\n\n\nPlano permanente de auditoria técnica, recuperação estrutural e\nimpermeabilização de viadutos, pontes (como as Pontes do Lago\nParanoá) e tesourinhas para evitar colapsos estruturais.\n\nPavimentação de Qualidade e Asfalto Sustentável:\no\n\nSubstituição progressiva da operação \"tapa-buracos\" pela\nrecomposição profunda do pavimento com asfalto emborrachado\n(maior durabilidade) em vias de tráfego pesado.\n\nSaneamento Básico: Água, Esgoto e Gestão de Resíduos (CAESB / SLU)\nO Distrito Federal atingiu excelentes índices no abastecimento de água tratada,\nmas ainda enfrenta desaﬁos complexos na universalização da coleta e tratamento\nde esgoto em áreas informais, além de gargalos estruturais na gestão de resíduos\nsólidos.\nPara sanar esses passivos socioambientais, a política sanitária da nossa gestão\nintegrará o monitoramento por sensores inteligentes da qualidade da água e do\neﬂuente, o mapeamento preditivo de vazamentos e a rastreabilidade digital de\nresíduos ao cumprimento de metas rigorosas de cobertura e atendimento a\npopulações em situação de vulnerabilidade.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "27",
+            "titulo": "27",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "27\nEssa atuação será acelerada pela descentralização de obras saneadoras, com a\nexpansão de redes coletoras de esgoto e estações compactas de tratamento em\nassentamentos e regiões em regularização, aliada ao fortalecimento dos\ncomplexos de reciclagem e triagem em diversas Regiões Administrativas. Dessa\nforma, ao associar a inovação tecnológica no manejo sanitário e a cobrança\ncontínua por indicadores de universalização à entrega de infraestrutura física e\ninclusão socioprodutiva de catadores nos territórios, o Governo do Distrito Federal\ngarante saúde pública, preservação dos recursos hídricos e sustentabilidade para\ntodo o território.\n\n\n\n\nSegurança Hídrica e Universalização do Esgotamento (CAESB):\no\n\nUniversalização Antecipada do Saneamento: Cumprimento das\nmetas do Marco Legal do Saneamento, garantindo 99% de\natendimento de água potável e 90%+ de coleta e tratamento de\nesgoto em 100% das RAs (com atenção especial aos assentamentos\nregularizados).\n\no\n\nConclusão de Grandes Sistemas de Captação: Garantia de\noperação plena do Sistema Produtor Corumbá IV para assegurar a\nsustentabilidade hídrica do DF e do Entorno pelos próximos 30 anos.\n\nGestão de Resíduos Sólidos e Logística Reversa (SLU):\no\n\nFortalecimento da Coleta Seletiva: Expansão da coleta seletiva\npara 100% das quadras e RAs, com ampliação de contratos e apoio\nestrutural (galpões e equipamentos) para as Cooperativas de\nCatadores de Recicláveis.\n\no\n\nConstrução de Novos Ecopontos (Papa-Lixo): Instalação de\nunidades de transbordo e ecopontos em todas as RAs para coibir o\ndescarte irregular de entulho da construção civil e móveis velhos em\nterrenos públicos.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "28",
+            "titulo": "28",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "28\n\n6.\n\nCIDADE, HABITAÇÃO E MEIO AMBIENTE\n\nNosso plano de governo alinha o direito à moradia digna, a justiça territorial entre\nas Regiões Administrativas e uma sustentabilidade ambiental rigorosa,\ntransformando a gestão habitacional e fundiária do Distrito Federal em um vetor de\nigualdade e desenvolvimento ordenado. Para viabilizar essa integração urbana, a\npolítica de desenvolvimento territorial integrará o cadastramento fundiário por\ngeoprocessamento em alta resolução e o monitoramento em tempo real do uso do\nsolo à ﬁxação de metas estritas para a entrega de escrituras, provisão de lotes\nurbanizados e redução do déﬁcit habitacional.\nEssa estratégia será operacionalizada pela descentralização de frentes de\nregularização e produção habitacional, assegurando que os novos bairros e\nconjuntos populares nas Regiões Administrativas periféricas já nasçam dotados de\ninfraestrutura completa, drenagem, áreas verdes preservadas e acesso a serviços\npúblicos essenciais. Dessa forma, ao associar a inteligência territorial e o rigor no\ncumprimento de prazos de regularização à presença permanente do Estado nas\ncomunidades historicamente desassistidas, o Governo do Distrito Federal garante\nsegurança jurídica, combate o parcelamento irregular e constrói cidades\nsustentáveis e inclusivas para todos os brasilienses.\nHabitação de Interesse Social e Combate ao Déﬁcit Habitacional (CODHAB)\nA política habitacional do nosso governo irá superar a simples entrega de lotes sem\ninfraestrutura, focando no desenvolvimento de empreendimentos completos e\nplenamente integrados à malha urbana do Distrito Federal.\nPara romper com o modelo de expansão desordenada e periférica, a gestão urbana\ne habitacional integrará o planejamento inteligente de cidades, com mapeamento\ncadastral georreferenciado e análise de viabilidade de serviços, ao cumprimento de\nmetas rigorosas de tempo para regularização, dotando as áreas de saneamento\nbásico, drenagem, pavimentação, iluminação pública e transporte coletivo.\nEssa transformação será viabilizada pela execução descentralizada de projetos de\nhabitação de interesse social nas diversas Regiões Administrativas, assegurando\nque os novos conjuntos já nasçam acompanhados da oferta de creches, escolas,\npostos de saúde, parques e espaços de convivência comunitária.\nDessa forma, ao associar a tecnologia no planejamento territorial e o rigor no\ncumprimento de prazos de entrega à construção de bairros estruturados e\ninclusivos, o Governo do Distrito Federal garante segurança jurídica, dignidade e\nverdadeira qualidade de vida para as famílias que mais precisam.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "29",
+            "titulo": "29",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "29\n\n\n\n\nReestruturação e Escala na CODHAB:Diversiﬁcação de Modelos Habit\no\n\nacionais: Priorizar a construção de prédios de habitação de interesse\nsocial (HIS) em áreas consolidadas e com infraestrutura existente\n(proximidade de transporte público, UBSs e escolas), evitando o\nespraiamento urbano para áreas distantes sem serviços.\n\no\n\nAluguel Social e Subsídio para Famílias de Baixa Renda: Criar\nprogramas de locação social subsidiada pelo GDF para famílias em\nsituação de extrema vulnerabilidade, idosos e mulheres vítimas de\nviolência, garantindo moradia imediata enquanto aguardam a\ncontemplação deﬁnitiva.\n\nProjetos Arquitetônicos com Assistência Técnica Gratuita (ATHIS):\no\n\nAplicação efetiva da Lei de Assistência Técnica para Habitação de\nInteresse Social (Lei nº 11.888/2008), garantindo que arquitetos e\nengenheiros contratados pelo GDF elaborem projetos gratuitos de\nreforma e construção para famílias com renda de até 3 saláriosmínimos nas RAs mais vulneráveis.\n\nRegularização Fundiária com Dignidade Urbana (Terracap / SEDUH)\nAceleração da Reurb-S (Social) e Reurb-E (Especíﬁca):\n\n\nMutirão permanente para regularização de setores consolidados há\ndécadas (como trechos de Sol Nascente/Pôr do Sol, Arniqueira, Vicente\nPires, Planaltina, Fercal e São Sebastião).\n\n\n\nEscritura na Mão: Simpliﬁcação burocrática entre Terracap, SEDUH e\nCartórios de Registro de Imóveis para emissão e entrega direta de títulos de\npropriedade.\n\nEnfrentamento Rigoroso ao Parcelamento Clandestino:\n\n\nFortalecimento da ﬁscalização preventiva (DF Legal) com monitoramento\npor imagens de satélite em tempo real e drones para barrar novas\ninvasões e a atuação de grileiros em áreas de preservação ambiental ou\náreas públicas antes do adensamento.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "30",
+            "titulo": "30",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "30\nUrbanismo, Redução das Desigualdades entre RAs e Novo PDOT\nO Plano Diretor de Ordenamento Territorial (PDOT) é o instrumento central para\ndeﬁnir o futuro do uso do solo no Distrito Federal, devendo harmonizar o\ncrescimento urbano, a preservação ambiental e o desenvolvimento econômico\nsustentável. Para assegurar uma gestão territorial eﬁciente e inclusiva, a revisão e\naplicação do PDOT em nossa gestão integrará o monitoramento georreferenciado\npor satélite e plataformas digitais de zoneamento dinâmico à estipulação de metas\nrigorosas de regularização fundiária, contenção de invasões e destinação de áreas\npara habitação de interesse social.\nEssa estratégia será fortalecida pela descentralização do debate urbanístico e da\ngestão do solo, garantindo a escuta ativa das comunidades e a implantação de\ninfraestrutura estruturante diretamente em todas as Regiões Administrativas.\nDessa forma, ao associar a tecnologia de inteligência territorial e o rigor no\ncumprimento dos diretrizes planejadas à atuação presencial do Estado no\nordenamento das periferias e áreas de expansão, o Governo do Distrito Federal\nprotege os recursos hídricos, combate o parcelamento irregular e constrói um DF\njusto, integrado e sustentável.\n\n\nAprovação e Implementação do Novo PDOT:\no\n\n\n\nPrograma \"RA com Vida\" (Descentralização de Investimentos Públicos):\no\n\n\n\nAtualização do PDOT com participação popular efetiva em todas as\nRAs, deﬁnindo claramente os limites de expansão urbana, áreas de\nproteção de mananciais e zonas destinadas ao desenvolvimento\neconômico descentralizado.\n\nFim da disparidade de zeladoria urbana entre o Plano Piloto e as\ndemais RAs. Criação de um orçamento próprio e fortalecido para as\nAdministrações Regionais, garantindo autonomia para pequenas\nobras, calçadas acessíveis, iluminação LED e praças públicas.\n\nRevitalização de Centros Urbanos Tradicionais:\no\n\nProjetos de requaliﬁcação urbana, fachadismo e espaço do pedestre\nnos centros comerciais de RAs históricas como Taguatinga,\nCeilândia, Gama, Sobradinho e Planaltina.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "31",
+            "titulo": "31",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "31\nPreservação do Cerrado, Parques e Recarga de Aqüíferos (IBRAM / SEMARH)\n\n\nCriação e Fortalecimento de Unidades de Conservação (UCs):\no\n\n\n\nProteção das Áreas de Recarga do Aqüífero e Nascentes:\no\n\n\n\nDelimitação rígida e desintrusão de Áreas de Preservação\nPermanente (APPs) e zonas de recarga de aquíferos (como a Bacia do\nDescoberto e Bacia do Torto/Santa Maria), impedindo o avanço do\nasfalto sobre áreas vitais para o abastecimento de água do DF.\n\nReﬂorestamento e Arborização Urbana Resiliente:\no\n\n\n\nImplementação efetiva e estruturação de plano de manejo para os\nParques Ecológicos das RAs, transformando-os em espaços\nestruturados para lazer da população e preservação ambiental.\n\nPrograma \"Cerrado Vivo\": Plantio massivo de espécies nativas do\nCerrado (ipês, cagaitas, baru, pequis) nas RAs e ao longo das\nrodovias distritais, combinando sombreamento urbano, beleza\npaisagística e retenção de água no solo.\n\nCombate a Queimadas e Educação Ambiental:\no\n\nBrigadas permanentes de prevenção de incêndios ﬂorestais no\nIBRAM em parceria com o Corpo de Bombeiros durante o período de\nseca prolongada.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "32",
+            "titulo": "32",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "32\n\n7.\n\nGESTÃO, ORÇAMENTO E GOVERNO DIGITAL\n\nNosso plano de governo alinha responsabilidade ﬁscal severa, inovação\ntecnológica aplicada à gestão e transparência pública ativa com uso de Inteligência\nArtiﬁcial, estabelecendo um novo padrão de eﬁciência, ética e controle dos\nrecursos públicos no Distrito Federal. Para consolidar essa governança moderna, a\nadministração pública integrará sistemas de auditoria preditiva por IA, automação\nde processos ﬁscais e painéis de dados abertos em tempo real à estipulação de\nmetas rigorosas de equilíbrio das contas, contenção de gastos administrativos e\notimização do gasto público.\nEssa estratégia será potencializada pela descentralização e democratização do\nacesso aos serviços digitais do governo, garantindo que o cidadão de qualquer\nRegião Administrativa possa acompanhar a aplicação dos impostos, solicitar\nserviços e ﬁscalizar contratos diretamente pelo celular. Dessa forma, ao associar a\nalta tecnologia de monitoramento orçamentário e a cobrança contínua por\nresultados e metas ﬁscais ao livre acesso às informações governamentais na\nponta, o Governo do Distrito Federal garante higidez ﬁnanceira, combate o\ndesperdício e devolve cada centavo arrecadado em serviços públicos de excelência\npara a população.\nGestão de Contas Públicas, Equilíbrio Fiscal e Eﬁciência do Gasto (SEFAZ-DF)\nA sustentabilidade das políticas públicas de saúde, educação e segurança\ndepende de uma arrecadação justa e da alocação racional dos recursos do\norçamento distrital, garantindo a solidez ﬁnanceira necessária para sustentar os\ninvestimentos essenciais no longo prazo.\nPara assegurar esse equilíbrio ﬁscal e social, a gestão orçamentária integrará o\ncruzamento inteligente de dados tributários, o combate à sonegando por meio de\nInteligência Artiﬁcial e a análise preditiva de receitas ao cumprimento de metas\nrigorosas de contenção de desperdícios, eﬁciência do gasto e ampliação da\ncapacidade de investimento próprio.\nEssa estratégia será fortalecida pela descentralização e regionalização da\nexecução orçamentária, garantindo que os investimentos sejam distribuídos de\nforma equitativa e transparente diretamente nas Regiões Administrativas com\nmaiores déﬁcits sociais e de infraestrutura.\nDessa forma, ao associar a tecnologia na gestão das ﬁnanças públicas e o rigor no\ncumprimento de metas ﬁscais à aplicação transparente e justa dos recursos nos\nbairros, o Governo do Distrito Federal maximiza o valor de cada real arrecadado,\nprotege os serviços essenciais e garante um futuro de desenvolvimento\nautossustentável para a capital.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "33",
+            "titulo": "33",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "33\n\n\nRevisão Qualitativa e Gastos com Custeio (Comitê de Qualidade do\nGasto):\no\n\n\n\n\n\nCriação de um programa contínuo de Revisão de Gastos (Spending\nReview) focado no enxugamento de contratos de custeio\nadministrativo (aluguéis de imóveis, energia elétrica, frota de veículos\ne terceirizações repetitivas), redirecionando a economia diretamente\npara os serviços ponta (saúde e educação).\n\nModernização da Arrecadação e Combate à Sonegação Fiscal:\no\n\nUso de Machine Learning e análise de Big Data pela Secretaria de\nFazenda para cruzamento de dados ﬁscais e combate à sonegação,\nsem aumento da carga tributária sobre o contribuinte que cumpre\nsuas obrigações.\n\no\n\nAmpliação e facilitação de programas de transação ﬁscal (REFAZ)\nvoltados para a regularização do pequeno empreendedor e\nrecuperação de dívida ativa.\n\nGovernança do Fundo Constitucional (FCDF):\no\n\nDefesa intransigente do Fundo Constitucional junto aos órgãos\nfederais e ao Congresso Nacional, mantendo a previsibilidade ﬁscal\ne o investimento na segurança pública, saúde e educação.\n\nGoverno Digital, IA Centrada no Cidadão e Automação de Processos\nA transformação digital não se resume a colocar formulários na internet, mas a\nreimaginar os serviços públicos a partir da experiência do cidadão e do servidor,\ndesburocratizando processos e tornando a relação com o Estado mais ágil,\nhumana e resolutiva.\nPara consolidar essa mudança de paradigma, a gestão pública sob nossa direção\nintegrará plataformas omnichannel com inteligência artiﬁcial, automação de ﬂuxos\nde trabalho e interoperabilidade de bases de dados ao cumprimento de metas\nrigorosas de redução do tempo de atendimento e eliminação de exigências\npresenciais desnecessárias.\nEssa estratégia será potencializada pela descentralização e inclusão digital,\nlevando pontos de atendimento tecnológico e capacitação contínua de servidores\ndiretamente a todas as Regiões Administrativas.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "34",
+            "titulo": "34",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "34\nDessa forma, ao associar a inovação tecnológica no desenho das rotinas\nadministrativas e o controle de metas focado na satisfação do usuário à presença\nsimpliﬁcada e acessível dos serviços nos bairros, o Governo do Distrito Federal\nvaloriza o funcionalismo público, combate a burocracia e devolve eﬁciência e\nrespeito ao cotidiano do cidadão brasiliense.\nPlataforma Uniﬁcada \"DF na Mão\":\n\n\nConsolidação de todos os serviços prestados pelo GDF em um aplicativo\núnico e de navegação intuitiva (integrando consultas de saúde na rede\npública, emissão de IPVA/IPTU, boletins de ocorrência, serviços do Na Hora\ne agendamentos).\n\nUso Ético e Prático de Inteligência Artiﬁcial na Gestão:\n\n\nTriagem e Atendimento Cidadão: Implementação de agentes virtuais\nbaseados em IA generativa para responder a dúvidas e encaminhar\ndemandas no aplicativo e WhatsApp, funcionando 24h por dia e reduzindo\nﬁlas presenciais.\n\n\n\nAnálise Preditiva de Demandas Públicas: Modelos preditivos para\nantecipar a falta de medicamentos em farmácias de alto custo, prever\ngargalos em UTIs hospitalares e mapear necessidades de manutenção de\nvias urbanas.\n\nLicenciamento Simpliﬁcado e Agilidade no Setor Produtivo:\n\n\nAprovação automatizada por IA para projetos arquitetônicos padronizados\nde baixo risco e emissão imediata de licenças de funcionamento para\nmicros e pequenas empresas, desburocratizando o ambiente de negócios\nno DF.\n\nTransparência Ativa, Dados Abertos e Combate à Corrupção (CGDF)\nA transparência irá além do cumprimento formal da Lei de Acesso à Informação\n(LAI), oferecendo dados em linguagem simples, clara e inteligível para que todo\ncidadão consiga ﬁscalizar e entender a aplicação dos recursos públicos.\nPara tornar o controle social simples e acessível, a governança pública integrará\nportais intuitivos alimentados por Inteligência Artiﬁcial, visualizações gráﬁcas\namigáveis e relatórios em linguagem simples ao cumprimento de metas rigorosas\nde tempo de resposta a solicitações e atualização contínua de bases operacionais.\nEssa estratégia será potencializada pela descentralização do acesso à informação,\npromovendo oﬁcinas de cidadania ﬁscal e disponibilizando canais diretos de\nconsulta simpliﬁcada nas administrações regionais de cada Região Administrativa.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "35",
+            "titulo": "35",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "35\nDessa forma, ao associar a tecnologia na tradução e organização de dados públicos\ne a cobrança contínua pelo rigor no tempo e na qualidade das respostas à oferta de\nferramentas inclusivas nos territórios, o Governo do Distrito Federal fortalece a\nintegridade, aproxima a população da gestão e transforma a transparência em um\ninstrumento vivo de cidadania no DF.\n\n\n\n\nNovo Portal da Transparência do DF com IA:\no\n\nReestruturação do Portal da Transparência para uma versão com\nLinguagem Simples (Plain Language) e ferramentas visuais\ndinâmicas, permitindo que qualquer cidadão compreenda o destino\ndo dinheiro público, contratos e obras na sua Região Administrativa.\n\no\n\nInclusão de um assistente de consulta em linguagem natural: o\ncidadão poderá perguntar ao portal \"Quanto foi gasto com obras na\nCeilândia em 2026?\" e obter respostas diretas e relatórios resumidos.\n\nRadar Anticorrupção e Auditoria Automatizada (Controladoria-Geral):\no\n\n\n\nMonitoramento automatizado de licitações e contratos em tempo\nreal para identiﬁcação preventiva de inconsistências (como preços\nacima da média de mercado, fracionamento indevido de despesas e\nvínculos suspeitos entre licitantes).\n\nParticipação Cidadã no Orçamento (Orçamento Participativo Digital):\no\n\nCriação do sistema de votação e consulta digital para que moradores\nde cada RA possam opinar diretamente sobre prioridades de\ninvestimento local durante a elaboração da Lei Orçamentária Anual\n(LOA).\n\nDesburocratização dos Serviços Presenciais e Modernização do Na Hora\nMesmo com o avanço do digital, o atendimento presencial deve manter excelência\ne acolhimento para a população não digitalizada, garantindo que nenhum cidadão\ndo Distrito Federal seja excluído pelo avanço tecnológico.\nPara assegurar esse pilar de cidadania e respeito, a gestão de atendimento ao\npúblico integrará sistemas inteligentes de triagem, gestão uniﬁcada de ﬁlas e\nagendamento simpliﬁcado ao cumprimento de metas rigorosas de tempo máximo\nde espera, padrão de civilidade e resolução de demandas no primeiro contato.\nEssa abordagem será operacionalizada pela descentralização e ampliação do\nalcance das unidades do Na Hora e postos itinerantes, levando infraestrutura\nmoderna e servidores capacitados para a escuta qualiﬁcada diretamente a todas\nas Regiões Administrativas.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "36",
+            "titulo": "36",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "36\nDessa forma, ao associar a tecnologia na otimização da retaguarda administrativa\ne o rigor no monitoramento do padrão de atendimento à oferta de pontos físicos\nhumanizados e acolhedores nos bairros, o Governo do Distrito Federal garante\ninclusão plena, protege a dignidade dos mais vulneráveis e assegura um Estado\nverdadeiramente acessível a todos os brasilienses.\n\n\nReestruturação e Expansão do Sistema \"Na Hora\":\no\n\n\n\nAmpliação das unidades do Na Hora em RAs populacionais que\nainda não dispõem de cobertura completa, com agendamento 100%\ndigital e sem ﬁlas de espera presencial superior a 15 minutos.\n\nInclusão Digital nas Unidades Ativas:\no\n\nInstalação de Pontos de Inclusão Digital (PID) com computadores,\ninternet gratuita e monitores capacitados no Na Hora e nas\nAdministrações Regionais para auxiliar idosos e cidadãos sem\nacesso à internet no uso dos serviços governamentais digitais.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "37",
+            "titulo": "37",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "37\n\n8.\n\nBRASÍLIA CAPITAL DO BRASIL\n\nNosso plano de governo posiciona Brasília não apenas como a capital\nadministrativa da União, mas como a Capital da Inovação, da Diplomacia\nEconômica, do Agronegócio Tecnológico e da Transição Ecológica do Brasil,\nprojetando o Distrito Federal como um polo de liderança econômica, cientíﬁca e\nambiental.\nPara impulsionar esse novo posicionamento estratégico, a gestão pública integrará\necossistemas de inovação aberta, inteligência de dados aplicada à bioeconomia e\nplataformas digitais de atração de investimentos ao cumprimento de metas\nrigorosas de geração de emprego de alta qualiﬁcação, desburocratização de novos\nnegócios e eﬁciência no ecossistema produtivo.\nEssa transformação será materializada pela descentralização de parques\ntecnológicos, polos de inovação agropecuária e arranjos produtivos locais em\ndiversas Regiões Administrativas, conectando vocações regionais à rede de\nembaixadas e mercados internacionais.\nDessa forma, ao associar a alta tecnologia na gestão do desenvolvimento\neconômico e a cobrança ﬁrme por resultados ao fortalecimento direto da\ninfraestrutura produtiva nos territórios, o Governo do Distrito Federal diversiﬁca sua\nmatriz econômica, gera oportunidades reais e lidera a agenda de desenvolvimento\nsustentável do país.\nA Nova Vocação Econômica: Ciência, Tecnologia e Economia do Conhecimento\nBrasília possui uma densidade altíssima de mestres, doutores, universidades de\nexcelência e startups. A transição da dependência do funcionalismo público para\numa economia baseada no conhecimento é o caminho estrutural para a geração de\nempregos qualiﬁcados para a juventude, transformando o capital intelectual da\ncapital em riqueza e oportunidades reais.\nPara acelerar esse novo ciclo de desenvolvimento, a gestão pública integrará\nmecanismos de transferência tecnológica, hubs digitais de inovação e fomento à\neconomia criativa ao cumprimento de metas rigorosas de atração de capital de\nrisco, incubação de empresas e retenção de talentos locais.\nEssa transformação será impulsionada pela descentralização de centros de\ninovação e parques tecnológicos integrados às Regiões Administrativas,\naproximando a produção acadêmica das vocações produtivas e das demandas\nsociais de cada comunidade.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "38",
+            "titulo": "38",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "38\nDessa forma, ao associar a tecnologia na conexão entre academia, mercado e\ngoverno com a cobrança ﬁrme por resultados na geração de novos negócios nos\nterritórios, o Governo do Distrito Federal impulsiona o empreendedorismo jovem,\ndiversiﬁca sua matriz econômica e consolida Brasília como a verdadeira Capital do\nConhecimento e da Inovação.\n\n\n\n\nPolo Tecnológico do DF (BioTIC) como Hub Internacional:\no\n\nConsolidação do BioTIC como o ecossistema deﬁnitivo de inovação\ndo Centro-Oeste, focando em parcerias estratégico-privadas nas\náreas de Inteligência Artiﬁcial, Biotecnologia, Saúde,\nCibersegurança e Agritech.\n\no\n\nCriação do programa \"Brasília Tech Capital\", concedendo\nincentivos ﬁscais condicionados (ISS e IPTU diferenciados) e\nsegurança jurídica (sandboxes regulatórios) para a atração de centros\nde P&D de multinacionais e aceleradoras de deep techs.\n\nCentro Nacional de Serviços de Alta Agregada e Finanças:\no\n\nEstímulo ao adensamento do setor de serviços avançados:\nconsultorias globais, tecnologia ﬁnanceira (Fintechs), advocacia\nempresarial de grande porte, data centers de alta segurança e\narbitragem internacional.\n\nAtração de Investimentos, Concessões e parcerias Público-Privadas (PPPDF)\nPara impulsionar grandes obras de infraestrutura sem comprometer o caixa do\nDistrito Federal, a nossa Secretaria de Desenvolvimento Econômico e a Terracap\nirão atuar com foco na estruturação de projetos bancáveis (bankable), atraindo\ninvestimento privado estratégico e garantindo a sustentabilidade ﬁnanceira das\nconcessões e Parcerias Público-Privadas (PPPs).\nPara viabilizar esse modelo de ﬁnanciamento estruturado, a gestão de ativos e\nprojetos integrará plataformas digitais de inteligência de mercado, modelagem\nﬁnanceira preditiva e matrizes transparentes de alocação de riscos ao\ncumprimento de metas rigorosas de rentabilidade social, atração de capital externo\ne execução nos prazos pactuados.\nEssa estratégia será operacionalizada pela descentralização dos investimentos,\ndirecionando os aportes privados para obras prioritárias de mobilidade,\nsaneamento, logística e equipamentos públicos distribuídos pelas diversas\nRegiões Administrativas.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "39",
+            "titulo": "39",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "39\nDessa forma, ao associar a inovação na engenharia ﬁnanceira e a cobrança\ncontínua pelo rigor no cumprimento de metas de projetos à viabilização de\ninvestimentos privados nas periferias e eixos estruturantes, o Governo do Distrito\nFederal transforma ativos imobiliários e vocações econômicas em obras concretas,\nmodernizando a capital sem endividar as futuras gerações.\nEstruturação da Agência \"Invest Brasília\":\n\n\nModernização da agência de promoção de investimentos com modelo de\ngovernança privado/público, atuando como one-stop shop (balcão único)\npara grandes investidores nacionais e estrangeiros — do primeiro contato ao\nlicenciamento ambiental e urbanístico simpliﬁcado.\n\nHub Logístico das Américas e Centro Integrado de Cargas:\n\n\nPotencialização da localização geográﬁca do DF para consolidá-lo como o\nmaior nó logístico multimodal do Centro-Oeste.\n\n\n\nIntegração do Aeroporto Internacional de Brasília (que já é o melhor hub de\npassageiros do país) com zonas de processamento de exportação,\nentrepostos aduaneiros e a malha rodoviária/ferroviária regional para o\nescoamento de produtos de alto valor agregado (fármacos, eletrônicos e\nbens perecíveis).\n\nParcerias Público-Privadas Estratégicas:\n\n\nConcessões e PPPs estruturadas pela Terracap e Secretarias para a\nmodernização do Autódromo Internacional, centro de convenções, parques\necológicos urbanos e expansão do modal ferroviário regional (Trem\nIntercidades Brasília-Goiânia).\n\nRelações Institucionais, Diplomacia Econômica e Inserção Global\nRelações Institucionais, Diplomacia Econômica e Inserção Global devem deixar de\nser atuações meramente protocolares para se tornarem um motor ativo de atração\nde investimentos, promoção de exportações e cooperação internacional para o\nDistrito Federal.\nPara projetar Brasília no cenário global, a gestão governamental integrará\nplataformas inteligentes de inteligência de mercado, mapeamento de\noportunidades em comércio exterior e cooperação descentralizada ao\ncumprimento de metas rigorosas de atração de capital estrangeiro, diversiﬁcação\nda pauta exportadora e captação de ﬁnanciamentos internacionais para\ninfraestrutura verde e inovação.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "40",
+            "titulo": "40",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "40\nEssa estratégia será operacionalizada pela descentralização dos impactos\neconômicos, conectando a presença do corpo diplomático sediado na capital às\ncadeias produtivas locais, parques tecnológicos e polos agroindustriais\ndistribuídos pelas Regiões Administrativas.\nDessa forma, ao associar a tecnologia na prospecção de negócios e o\nacompanhamento ﬁrme de resultados diplomáticos à integração direta do\nempresariado local com os mercados globais, o Governo do Distrito Federal\ntransforma sua vocação internacional em empregos qualiﬁcados, renda e\ndesenvolvimento sustentável na ponta.\n\n\n\n\nParadiplomacia e Diplomacia Comercial Distrital:\no\n\nCriação do programa de Paradiplomacia e Cooperação\nInternacional, aproximando o GDF diretamente dos corpos\ndiplomáticos para atração de fundos verdes internacionais,\ntecnologia de cidades inteligentes (smart cities) e acordos bilaterais\nde comércio.\n\no\n\nOrganização do \"Brasília Global Business Forum\", um fórum anual\nﬁxo na agenda do DF para conectar governadores, diplomatas,\nfundos de investimento multilaterais (BID, Banco Mundial, NDB) e\nCEOs globais.\n\nPacto Institucional com a União e Entidades da RIDE:\no\n\nLiderança na RIDE (Região Integrada de Desenvolvimento do DF e\nEntorno): Assumir o protagonismo institucional na coordenação de\npolíticas públicas consorciadas entre o DF e os municípios do\nEntorno (Goiás e Minas Gerais) em transporte público, saúde de alta\ncomplexidade e segurança de divisas.\n\no\n\nSintonia com o Governo Federal e Congresso: Articulação\npermanente para proteção da autonomia orçamentária do DF (Fundo\nConstitucional), captação de recursos de emendas e atração de\nfundos de desenvolvimento regional.\n\nDesenvolvimento Estratégico Sustentável: Turismo de Eventos, Negócios e\nAgroTech\nA vocação do Distrito Federal extrapola a burocracia, apoiando-se em setores\ndinamizadores que geram empregos de forma rápida, inclusiva e sustentável, como\no comércio, os serviços, o turismo de eventos, a construção civil e a economia\ncriativa.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "41",
+            "titulo": "41",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "41\n\nPara impulsionar esses pilares econômicos, a gestão pública integrará a\nsimpliﬁcação e digitalização de licenças, sistemas de inteligência ﬁscal para\ndesonerar quem produz e plataformas de qualiﬁcação proﬁssional conectadas em\ntempo real às demandas do mercado laboral, vinculando a atuação governamental\na metas rigorosas de redução do desemprego e tempo médio para abertura de\nempresas.\nEssa estratégia ganha escala por meio da descentralização de polos de\ndesenvolvimento local, incentivos aos micros e pequenos empreendedores e\nrequaliﬁcação dos centros comerciais e feiras populares diretamente nas Regiões\nAdministrativas.\nDessa forma, ao associar a tecnologia na desburocratização de processos e a\ncobrança contínua por resultados ao fomento direto dos negócios nos bairros, o\nGoverno do Distrito Federal valoriza a força de trabalho local, estimula a autonomia\nﬁnanceira das famílias e constrói uma economia forte, diversiﬁcada e vibrante em\ntodo o território.\n\n\n\n\nTurismo Cívico, Cultural, de Eventos e Arquitetura:\no\n\nBrasília Capital dos Eventos e Negócios: Captação de congressos\ninternacionais, feiras de negócios, eventos esportivos e festivais\nculturais para preencher a ocupação hoteleira nos ﬁnais de semana\ne feriados.\n\no\n\nFortalecimento do Turismo Arquitetônico e Ecológico: Valorização\ndo título de Patrimônio Cultural da Humanidade (UNESCO)\nintegrando rotas de arquitetura moderna ao turismo de natureza no\nCerrado (cachoeiras, Parques Nacionais e turismo de aventura no\nQuadrilátero Cruls).\n\nAgroindústria de Precisão e Tecnologia (AgroTech):\no\n\nO DF tem uma das produções agrícolas por hectare de maior\nprodutividade e tecnologia do país (grãos, fruticultura irrigada e\nagricultura orgânica).\n\no\n\nIncentivo ao adensamento das feiras e eventos agropecuários (como\na PAD-DF / Expoabrigo) para posicionar Brasília como o centro de\nexcelência em tecnologia e bioinsumos para o agronegócio do\nCerrado.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          },
+          {
+            "id": "42",
+            "titulo": "42",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "42\n\n9.\n\nPOST SCRIPTUM\n\nTudo o que foi detalhado ao longo deste plano de governo converge para um único\ncompromisso central: transformar o Distrito Federal em um modelo de\neﬁciência, justiça social e desenvolvimento sustentável que impacte, na\nprática, a vida diária das pessoas.\nA modernização da infraestrutura, a revolução do transporte sobre trilhos e pneus,\no saneamento nas áreas vulneráveis, a inteligência ﬁscal, a transparência via IA e o\nnovo posicionamento global de Brasília não são promessas abstratas ou discursos\ntécnicos de gabinete. São metas mensuráveis, ancoradas na responsabilidade\nﬁscal, na inovação tecnológica e no trabalho presente em cada uma das Regiões\nAdministrativas.\nSuperar a dependência histórica do funcionalismo e o modelo de expansão urbana\ndesordenada é urgente. O futuro do DF não se constrói com soluções paliativas,\nmas com planejamento bancável, coragem para promover mudanças\nestruturais e presença permanente do Estado onde o cidadão mais precisa.\nEsta é a visão de futuro que propomos: uma capital justa, inovadora, segura e\npróspera para todos os brasilienses.\n\nPLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "928e1a843dd8cca7b7b681165164d7c7dcd45790b2a29d80154d75bd6e5bf356"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "b17ce9c85fdf49d499d8078db00e6ea224a610bf868e8b4cfcbda28f3516d9d6"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "efdf20523998d4571e821450dc98b4aa30c21557e89de622a8468b0052604596"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "83ca5df3d10d6adf08b81b0279db24d4d711ca92f6c5f60b19e7159d88f7270e"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "9e0ea6ee0d2a3b9dcaeb3eaa6af08bed8ead373fbfee969fefaec8636c206938"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "89c9dd59b0a5988a0b5b664bde582a6e2c7996e7804d846595120d6f652097cc"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "52fc976584038f5664b72ca9cc47e95fa05129d0d0323f463b699e5fce0009a7"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "d6775ea627c6f83b3290701eee11e78fb9e44fc19697d176a30f26a71e5ed95f"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "eadf2dd88c46a98e1ec862a3e8d2a0d3ae1e07aed6697f73cdc1b12f1137c09b"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "8737eb6bb57140f1315dadc23e7bf811ca6ab36a46bee326b29a923a9cb0250f"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "62d7606a18574b41fe820696236100b5095ceba848cdfa20cf0539d868ee0aa9"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "b1c9b557a1b44956c668b5430a1c717fe7299f85c653ec686850133e0b30335b"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "52d81dc8c9883bb25f87f31cfd7793a2916d8012eedc5d2cf3ca7e3ed0989484"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "817fa18c55f687ddd7a7118571c034edbd5c309d4aaa6e604e0874d97acf88f8"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "d136d4bb9bc10b386170cfb8b570304e1644d55374f218e2b1b957734670211c"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "770b1c2fa128efca35b8cb5da59fbd49b66a61ab7f6ba072e9e812c6adbcf050"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "73d3c26cfdc8f6d6636b57a12ecc5683c6468027ad1d84f4671e40cc80593b06"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "a41bcfcc45e57472771df2c326c38e9aa0ec3d81710e9e8314e504c1529be66d"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "79a44d68717082dd70cb26af0e2c781e63ca360a8f2af8cb79ed8b7841c58f2e"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "7c14cf9b5e845f6cd4a0b144a3aedf6776f6155a696f685b95fecd5cf8cf35dc"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "240bce805b0f52d9895f32c55d49b9ebe4995d70a702b46f313adfd6f2c6cf94"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "447b368e56c2c8237b497eaea14e57f95d4dd87ccd192389ddf8eae258fe84f1"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "1875096c7d798a7dca8138be155176b2d131edf8826f1ac2bf9f1592f490a2b4"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "0c994c14d4e8c4656dc6aefbcb3b734ba4b393e07c35288de2732f09755a824b"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "ca81d84ee01e582c25309c0eff2bba9a63bdc0b89a40c15cb022ecc19c16a599"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "127bbb50c4e58bc4350fd3e36a87c653ef5bda3c90da064fb8e95d2030ad8d1f"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "2682ca7b3d676ad4a585a999ad56116457354d368088f8d4248efc2e39d1a9f1"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "bd5526401bd43b7946007b54c7d96923caf8b8793f16addfe8a17c6b3e2d81d2"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "f7b006ab9f8b7e9e24e3531701aea0ce32aaa5995edebf9ce435de2931f41b8d"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "bbaced99b239b52b9d1988893d36fe14429c4faaec9cb87a3b84ade4abaaee68"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c71c639087cd9979e1843250e39e89b4eb7aff30bc72c8e8f472f3aa864751a2"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "16907450c79ee87660f2c659c178bf3fad2fb2989aa7214404158ef53ba68f65"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "7a714de91d2d26cc62bf32474c1d33501e439b30c030bf2eafeb40db404f7a5a"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "4d3aada977bb4036b06278d8d17042367114dd9898c9a0b447e53ca71f51980a"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "8157629110e1007050ab4cacdfbecf8ef0ecf2ecbf101152c62d2f1c78d08316"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "784f6507d45a69a3e335090397f4ce87c6da72a83c76b346f0a55f0e8e835bd5"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "bf717862e2d66134cde8f896400503ceb8c93fb60b3ecaf874cd41389026bd58"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "4c34bef576e13f7e82c5727e480418e1b6d9f81b49069c8ea6da767a079da306"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "a2f09cb89e04c405fb76bdf9d84ca8272986fc378451aa3d84d9c850d55efbb7"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "efe1ba9f54a3e1b9eaed73933399b941a0d8bd5ce13eaee1632db44da80a6fc0"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "f6d3df3442530f07063079e1c8cf7d01d34f1a98ff2ea641f4cd0e59bd6f04de"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "b4cad08de6c42fe704e455bb0eedbc531104e8056d86d96d02cf2797bbe731d9"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O documento apresenta propostas estruturantes para a gestão do Distrito Federal no período de 2027–2030, conforme seu plano oficial de governo. O plano prevê a dinamização das áreas de desenvolvimento econômico nas Regiões Administrativas mediante infraestrutura básica. O plano propõe consolidar o Distrito Federal como um cluster de Agtechs com pesquisa aplicada a startups de biotecnologia, manejo de precisão e irrigação inteligente. Na saúde pública, prevê elevar a cobertura da atenção primária de forma regionalizada. Para a primeira infância, propõe universalizar as creches por meio do Cartão Creche e de parcerias múltiplas. Na mobilidade, prevê a implantação do VLT no eixo Aeroporto Internacional – W3 Sul – W3 Norte. Na gestão pública, propõe consolidar os serviços prestados pelo GDF em um aplicativo único. Na transparência pública, prevê monitoramento automatizado de licitações e contratos em tempo real.",
+    "frases": [
+      {
+        "texto": "O documento apresenta propostas estruturantes para a gestão do Distrito Federal no período de 2027–2030, conforme seu plano oficial de governo.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 2,
+            "trecho": "PLANO DE GOVERNO | RICO PINHEIRO – DISTRITO FEDERAL 2027-2030"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê a dinamização das áreas de desenvolvimento econômico nas Regiões Administrativas mediante infraestrutura básica.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 3,
+            "trecho": "Dinamizar as áreas de desenvolvimento econômico (ADEs) espalhadas pelas Regiões Administrativas (RAs), dotando-as de infraestrutura básica"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe consolidar o Distrito Federal como um cluster de Agtechs com pesquisa aplicada a startups de biotecnologia, manejo de precisão e irrigação inteligente.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 4,
+            "trecho": "Unir a força de pesquisa da Embrapa (sediada em Brasília), da UnB e do PAD-DF para consolidar o DF como um cluster de Agtechs (startups de biotecnologia, manejo de precisão e irrigação inteligente)."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, prevê elevar a cobertura da atenção primária de forma regionalizada.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 8,
+            "trecho": "Elevar a cobertura da atenção primária de forma regionalizada"
+          }
+        ]
+      },
+      {
+        "texto": "Para a primeira infância, propõe universalizar as creches por meio do Cartão Creche e de parcerias múltiplas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 8,
+            "trecho": "Universalização das Creches (Cartão Creche + Parcerias Múltiplas)"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, prevê a implantação do VLT no eixo Aeroporto Internacional – W3 Sul – W3 Norte.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 24,
+            "trecho": "Projeto prioritário para o eixo Aeroporto Internacional – W3 Sul – W3 Norte"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, propõe consolidar os serviços prestados pelo GDF em um aplicativo único.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 34,
+            "trecho": "Consolidação de todos os serviços prestados pelo GDF em um aplicativo único"
+          }
+        ]
+      },
+      {
+        "texto": "Na transparência pública, prevê monitoramento automatizado de licitações e contratos em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 35,
+            "trecho": "Monitoramento automatizado de licitações e contratos em tempo real"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "economia-regional",
+        "titulo": "Economia regional",
+        "descricao": "O plano prevê infraestrutura básica para áreas de desenvolvimento econômico nas Regiões Administrativas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 3,
+            "trecho": "Dinamizar as áreas de desenvolvimento econômico (ADEs) espalhadas pelas Regiões Administrativas (RAs), dotando-as de infraestrutura básica"
+          }
+        ]
+      },
+      {
+        "id": "agrotecnologia",
+        "titulo": "Agrotecnologia",
+        "descricao": "O plano propõe consolidar um cluster de Agtechs no Distrito Federal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 4,
+            "trecho": "para consolidar o DF como um cluster de Agtechs (startups de biotecnologia, manejo de precisão e irrigação inteligente)."
+          }
+        ]
+      },
+      {
+        "id": "atencao-primaria",
+        "titulo": "Atenção primária",
+        "descricao": "O plano prevê a elevação regionalizada da cobertura da atenção primária.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 8,
+            "trecho": "Elevar a cobertura da atenção primária de forma regionalizada"
+          }
+        ]
+      },
+      {
+        "id": "primeira-infancia",
+        "titulo": "Primeira infância",
+        "descricao": "O plano propõe a universalização das creches por meio do Cartão Creche.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 8,
+            "trecho": "Universalização das Creches (Cartão Creche + Parcerias Múltiplas)"
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-sobre-trilhos",
+        "titulo": "Mobilidade sobre trilhos",
+        "descricao": "O plano prevê a implantação do VLT no eixo Aeroporto Internacional – W3 Sul – W3 Norte.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 24,
+            "trecho": "Projeto prioritário para o eixo Aeroporto Internacional – W3 Sul – W3 Norte"
+          }
+        ]
+      },
+      {
+        "id": "governo-digital",
+        "titulo": "Governo digital",
+        "descricao": "O plano propõe reunir serviços do GDF em um aplicativo único.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002553982:02",
+            "pagina": 34,
+            "trecho": "Consolidação de todos os serviços prestados pelo GDF em um aplicativo único"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:39:44.069Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:42:09.968Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "O título e o texto da página 2 confirmam se tratar do plano de governo 2027-2030 com propostas estruturantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "O período 2027-2030 está literalmente sustentado no trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o documento de forma factual, sem elogio ou crítica adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única ideia coerente: apresentação geral do plano de governo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e documento pertencem à mesma chave eleitoral DF:70002553982."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:1:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a afirmação geral sobre o documento e período."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números ou prazos na afirmação, não havendo contradição."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (ADEs/infraestrutura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:2:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única: agrotecnologia/Agtechs."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:3:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: saúde/atenção primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:4:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: primeira infância/creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:5:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação, sob o título 'Implantação do VLT'."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: mobilidade/VLT."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:6:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: governo digital/aplicativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:7:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: transparência/anticorrupção."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:frase:8:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente: economia regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:economia-regional:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: agrotecnologia."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:agrotecnologia:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: saúde/atenção primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:atencao-primaria:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: primeira infância."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:primeira-infancia:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: mobilidade sobre trilhos."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:mobilidade-sobre-trilhos:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:mistura",
+        "verdict": "yes",
+        "reason": "Área única: governo digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002553982:tema:governo-digital:documentos:DF:70002553982:02:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002553982",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002553982:01",
+      "DF:70002553982:02"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 44726,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3706,
+          "reasoning_output_tokens": 2390
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 29265,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23973,
+          "output_tokens_details": {
+            "thinking_tokens": 452
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 29265,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23973,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 29265,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 29265
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3796874
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "ac857a986d18f82fb3f912425d36f8ec347c75c8b67ef1257425fa3880da0cb2",
+    "extractedTextSha256": "9219e744ca7e29ab66aae4247210665a02bbd3b24acb7b66c6429c8acd0490d5",
+    "documentCount": 2,
+    "documentSetSha256": "782620871bb9e5b0e899e1b961e7411088b0e718f1abd6e3f3f11b8169922d88",
+    "contentSha256": "a3255dd6dd25fafe13b19698f2c2a7bc9e6a9045826a4c56c29263459d9d0d9b"
+  }
+}

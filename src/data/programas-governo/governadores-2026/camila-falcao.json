@@ -1,0 +1,785 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PE",
+    "sqCandidato": "170002537320",
+    "slug": "camila-falcao",
+    "nomeUrna": "PROFESSORA CAMILA",
+    "partido": "UP",
+    "arquivoNome": "2026PE170002537320_01.pdf",
+    "arquivoNoPacote": "PE/2026PE170002537320_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PE:170002537320:01",
+      "fonte": {
+        "arquivoNome": "2026PE170002537320_01.pdf",
+        "arquivoNoPacote": "PE/2026PE170002537320_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "be2bd27896589c390b04d04ce233997a8e74e335f6f5a88023f6cbf255a85e9f",
+        "extractedTextSha256": "dcba0ba610905a37bee99a972bf82955bf262af621f84cb7911766f25e0867cd",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "o-socialismo-renasce-na-up-nas-lutas-do-povo-por-mudanca-de-verdade",
+            "titulo": "O socialismo renasce na UP, nas lutas do povo por mudança de verdade!",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "O socialismo renasce na UP, nas lutas do povo por mudança de verdade!\n\nA Unidade Popular pelo Socialismo (UP) é um partido de esquerda que nasceu com\no apoio de 1,2 milhão de pessoas para lutar pelos direitos da classe trabalhadora,\ndos mais pobres, contra o feminicídio, o machismo e o genocídio do povo preto e\npobre das periferias. Lutamos por uma sociedade livre da exploração capitalista e\ndas guerras imperialistas. Lutamos para poder construir o socialismo. Não\nrecebemos apoio financeiro de empresários, banqueiros ou governos. Somos\nfinanciados exclusivamente por doações de filiados e apoiadores.\n\nPlano de governo para Pernambuco\nA prioridade da UP é reverter a lógica de mercado nos serviços essenciais e\ncombater a precarização dos serviços públicos e da vida do povo pobre e\ntrabalhador do nosso estado.\n\nFim e reversão das privatizações: Suspensão imediata do processo de privatização\ndo metrô do Recife e da concessão/venda da Compesa, restabelecendo o controle\n100% público e realizar o processo de reestatização da CELPE, fim do contrato com\na NeoEnergia.\n​\nSaneamento para o estado: A partir do bloqueio da concessão da Compesa, investir\nno saneamento básico e construir um serviço que apoie toda a população de\nPernambuco.\n\nCombate à violência de gênero: Expansão urgente do funcionamento das\nDelegacias da Mulher para 24h (atualmente apenas 7 das 15 existentes funcionam\nde forma ininterrupta no estado), com reforço de viaturas, efetivo e aparato\npsicológico/jurídico.\n\nCuidados com a infância: Ampliação da rede de creches e melhoria da\ninfraestrutura para as creches sucateadas, da capital ao sertão, garantindo vagas\nem tempo integral com profissionais habilitados para atendimento às crianças\ntípicas e atípicas."
+          },
+          {
+            "id": "reforma-urbana-e-moradia-alocacao-de-recursos-publicos-diretamente-para",
+            "titulo": "Reforma Urbana e Moradia: Alocação de recursos públicos diretamente para",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Reforma Urbana e Moradia: Alocação de recursos públicos diretamente para\nmovimentos populares de moradia, combatendo o déficit habitacional e retirando\nfamílias de áreas de alto risco ambiental.\n\nValorização do Trabalho: Apoio institucional irrestrito ao fim da escala 6x1 e defesa\nde aumento de 100% do salário mínimo para recuperar o poder de compra da\npopulação.\n\nGarantia de 10% do PIB do nosso estado para a educação estadual. Todas as\nescolas com merenda de qualidade e profissionais da educação valorizados; Fim\ndas terceirizações e privatizações na saúde. Valorização dos profissionais. Respeito\nao Piso da enfermagem e jornada de 30h.\n\nParticipação popular no orçamento público\nEm vez de destinar bilhões para o pagamento da dívida pública aos banqueiros ou\ngastar milhões em propagandas e shows, o governo estadual priorizará conselhos\npopulares formados por trabalhadores e movimentos como o Movimento nos\nBairros, Vilas e Favelas (MLB) e o Movimento Luta de Classes (MLC) para deliberar\nsobre investimentos em saneamento, transporte e creches.\nVamos investir na ampliação da UPE, reforma das escolas com merenda de\nqualidade e professores e funcionários valorizados. Ampliar a atenção médica de\nhospitais e postos de saúde e valorizar os profissionais.\n\nNossas candidatas e candidatos vem da luta do povo, para construir um\ngoverno do povo\nNossas candidaturas e nossas campanhas estão comprometidas com as causas\npopulares, com a mudança na vida do povo para derrotar o monstro da inflação e\ndo endividamento. Assegurar moradia, alimentação, educação e emprego decentes\npara a classe que trabalha.\nNas nossas campanhas não tem espaço para quem se alia a empreiteiros, donos de\nbancos e que promovem privatizações de bens públicos. A UP é o único partido\ncujo programa não faz conciliação com a burguesia. O diferencial está em pautar"
+          },
+          {
+            "id": "uma-ruptura-com-o-modelo-de-exploracao-capitalista-organizando-o-povo",
+            "titulo": "uma ruptura com o modelo de exploração capitalista, organizando o povo",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "uma ruptura com o modelo de exploração capitalista, organizando o povo\ndiretamente nas ruas, fábricas e local de moradia.\n\nInvestimentos para todo o estado\nFim\n\ndos\n\nconsórcios\n\nprivados\n\nregionalizados.\n\nExtinção\n\nde\n\nconsórcios\n\nintermunicipais de saneamento e água desenhados para entregar os serviços à\niniciativa privada.\n\nOrçamento Regional Participativo: Criação de assembleias populares por todas as\nmacrorregiões do estado (Sertão Pernambucano; São Francisco Pernambucano;\nAgreste Pernambucano; Mata Pernambucana; Metropolitana do Recife), avançando\npara as assembleias populares em todas as 19 microrregionais do Estado,\ndescentralizando os recursos que historicamente ficam concentrados na Região\nMetropolitana do Recife.\n\nInfraestrutura Estatal: Criação de frentes públicas de trabalho regionalizadas para\ngerenciar e executar obras estruturais, gerando emprego nas próprias localidades.\n\nFortalecimento da economia em todo o estado\nCombate à Exploração no Trabalho: O polo têxtil e o comércio do Agreste sofrem\nseveramente com jornadas exaustivas e informalidade. A prioridade é combater a\nescala 6x1, com aumento de 100% do salário mínimo e realizar fiscalizações\nrigorosas nas confecções e comércios para garantir o pagamento de FGTS, horas\nextras e fornecimento de EPIs.\n\nApoio Direto ao Pequeno Produtor: Romper com o financiamento direcionado ao\nagronegócio e as grandes agroindústrias. Os recursos estaduais e o crédito devem\nser canalizados para a agricultura familiar e para garantir infraestrutura digna\n(cobertura, segurança, saneamento) para feirantes e pequenos comerciantes locais.\nA agricultura deve visar a Soberania Alimentar, estimulando a produção para o\nabastecimento local e os mercados públicos, combatendo a fome e o agronegócio\nexportador. Articular para o Instituto Agronômico de Pernambuco (IPA) também ter"
+          },
+          {
+            "id": "responsabilidade-na-assistencia-tecnica-e-extensao-rural-ater-para-os-pe",
+            "titulo": "responsabilidade na Assistência Técnica e Extensão Rural (ATER) para os pequenos",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "responsabilidade na Assistência Técnica e Extensão Rural (ATER) para os pequenos\nagricultores, as comunidades quilombolas, indígenas e cooperativas populares.\n\nSaúde Pública\nFortalecimento do SUS: Como partido que possui em suas bases trabalhadoras do\nSUS, especialmente na enfermagem, a UP defende o fim do repasse de verbas\npúblicas para organizações sociais privadas (OSs) que gerenciam a saúde.\n\nInfraestrutura no Interior: Direcionar a receita do estado para a construção e\naparelhamento de hospitais regionais de especialidades no Agreste, incluindo\nterapias para crianças atípicas, estancando a necessidade de deslocamento forçado\nde pacientes até a capital.\n\nInteriorização de Profissionais: Garantir a contratação de médicos, enfermeiros e\nequipes técnicas por meio de concursos públicos estatutários com salários dignos,\nfixando os profissionais no interior do estado.\n\nPolíticas públicas de apoio à saúde da população LGBTI+: ampliação do acesso de\nProfilaxia Pré Exposição (PREP) e Pós Exposição para a população de travestis e\ntransexuais (PEP) e educação em direitos humanos para profissionais da saúde.\n\nCombater a seca no Agreste e Sertão\nEstatização total da COMPESA: Interrupção imediata da entrega da companhia de\nágua a consórcios privados. Para a UP, a água é um direito humano e sua\nprivatização encarece as tarifas e exclui a população de baixa renda.\nUniversalização Pública do Saneamento: Investimento massivo de recursos diretos\ndo Estado na ampliação de redes de distribuição e adutoras para o interior.\n\nInfraestrutura de Convivência: Implementação de programas estatais para a\nconstrução de cisternas, pequenos barreiros e sistemas de irrigação voltados\nexclusivamente para os assentamentos da reforma agrária e produtores da\nagricultura familiar, combatendo os efeitos da especulação e do coronelismo da\nágua."
+          },
+          {
+            "id": "transporte-de-qualidade-publico-e-gratuito",
+            "titulo": "Transporte de qualidade, público e gratuito",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Transporte de qualidade, público e gratuito\nExtinção do modelo de concessões de rodovias e cobrança de pedágios, que\noneram o custo de vida e o escoamento da produção de pequenos agricultores e\nfeirantes.\n\nCriação de Frentes Estatais de Trabalho: Realização de obras de recuperação\nasfáltica e manutenção das estradas do interior através do fortalecimento do\nDepartamento de Estradas de Rodagem (DER) público. Isso viabiliza a contratação\nde trabalhadores desempregados das próprias regiões afetadas, garantindo\ndireitos trabalhistas e salários justos.\n\nPolíticas públicas para a Juventude do Interior\nEducação Pública e Acessível: Luta contra o sucateamento das escolas públicas e\nexpansão de vagas na universidade pública no interior.\n\nGeração de Emprego Digno: Fomentar postos de trabalho formais por meio de\ninvestimentos estatais em habitação popular (Reforma Urbana) e saneamento.\n\nRedução da Jornada: A campanha pelo fim da escala 6x1 com aumento de 100% do\nsalário mínimo e a redução da jornada de trabalho sem redução salarial visam\ngarantir que o jovem trabalhador tenha tempo livre para estudar, acessar o ensino\nsuperior e viver plenamente em sua cidade natal, sem precisar migrar por pura\nsobrevivência.\n\nDinheiro para financiar as transformações que o estado precisa!\nO dinheiro público existe, mas é drenado para enriquecer banqueiros e grandes\nempreiteiras, enquanto o povo sofre sem creches, hospitais ou moradia.\nÉ preciso ser radical para impedir absurdos como o fato de as mulheres serem\nassassinadas por feminicídio; de que famílias percam a vida em deslizamentos\nprevisíveis de encostas; ou que trabalhadores fiquem exaustos e adoeçam por\nburnout devido a escalas desumanas."
+          },
+          {
+            "id": "organizar-a-classe-trabalhadora-para-governar-o-proprio-destino-e-para-a",
+            "titulo": "Organizar a classe trabalhadora para governar o próprio destino é, para a UP, a",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Organizar a classe trabalhadora para governar o próprio destino é, para a UP, a\núnica saída real e justa.\n\nFORTALECER O PROGRAMA NACIONAL DA UNIDADE POPULAR\n1.​ Controle social de todos os monopólios e consórcios capitalistas e dos meios\nde produção nos setores estratégicos da economia; planificação da\neconomia para atender às necessidades da população e acabar com as\ndesigualdades regionais e sociais.\n2.​ Nacionalização do sistema bancário e controle popular do sistema\nfinanceiro.\n3.​ Fim da espoliação imperialista sobre a economia nacional; estancamento da\nsangria de nossos recursos para o exterior, pondo fim às remessas de lucros,\ndividendos, pagamento de royalties e pagamentos da dívida externa;\nanulação dos acordos e dívidas do Estado com os capitalistas estrangeiros,\nque foram contraídos contra a soberania e os interesses dos trabalhadores;\ngarantia de total independência econômica do Brasil frente aos países\nimperialistas, em particular ao imperialismo norte-americano; transferência\ndo comércio exterior para os órgãos do Estado.\n4.​ Reestatização das estatais privatizadas; fim dos leilões do petróleo; revisão\ndas concessões dos portos, aeroportos e estradas brasileiras entregues a\nempresas privadas.\n5.​ Garantia de emprego e trabalho obrigatórios para todas as pessoas adultas\ncapazes de trabalhar; proibição da exploração do trabalho infantil;\n6.​ Reforma agrária popular; nacionalização da terra e fim do monopólio\nprivado da terra.\n7.​ Anulação dos impostos extorsivos cobrados do povo; imposto sobre as\ngrandes fortunas e progressivo. Quem ganha mais, paga mais.\n8.​ Estatização de todos os meios de transporte coletivo.\n9.​ Educação pública e gratuita para todos e em todos os níveis; fim do lucro na\neducação. Garantia de livre acesso do povo à universidade e/ou cursos\ntécnicos profissionalizantes; fim do vestibular, vestibulinho ou qualquer\nprocesso seletivo."
+          },
+          {
+            "id": "10-democratizacao-dos-meios-de-comunicacao-com-a-socializacao-de-todos-o",
+            "titulo": "10.​Democratização dos meios de comunicação, com a socialização de todos os",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "10.​Democratização dos meios de comunicação, com a socialização de todos os\ngrandes canais de televisão, jornais e rádios; garantia a todos os cidadãos de\nacesso aos meios de comunicação;\n11.​Ampla liberdade de expressão e organização para os trabalhadores e o\npovo; fim das doações de capitalistas para campanhas eleitorais;\n12.​Justiça: juízes e tribunais eleitos pelo povo;\n13.​Fim da discriminação das mulheres; direitos iguais; fim do racismo e da\ndiscriminação dos negros; firme combate à exploração sexual de mulheres e\ncrianças; pela descriminalização e legalização do aborto; lutar contra todas\nas manifestações lgbtfóbicas; firme punição aos infratores.\n14.​Fim de qualquer discriminação religiosa, de raça ou sexo; plena garantia à\nliberdade religiosa;\n15.​Defesa e proteção do meio ambiente e da natureza; proibição da destruição\nde florestas; estabelecimento do controle popular sobre a Amazônia e\nexpulsão de todos os monopólios estrangeiros da região;\n16.​Demarcação e posse imediata de todas as terras indígenas; garantia de\nescolas diferenciadas para os indígenas e incentivo e apoio às línguas\nindígenas; defesa da cultura e dos direitos dos povos originários;\n17.​Garantia de saúde pública e gratuita para todos; fim da exploração dos\nplanos de saúde privados;\n18.​Defesa e incentivo à cultura nacional e popular; nacionalização de todas as\ncompanhias gravadoras de música e produtoras de filmes;\n19.​Jornada de trabalho: redução para seis horas para todos os trabalhadores e\naumento geral dos salários;\n20.​Estabelecimento de lei garantindo o descanso em dias festivos, domingos e\nferiados para os trabalhadores, excetuando os setores essenciais;\n21.​Garantia de moradia digna, saneamento e coleta de lixo para todas as\nfamílias brasileiras; destinar os imóveis abandonados para resolver o déficit\nhabitacional; realização de uma profunda reforma urbana;\n22.​Julgamento, prisão e confisco dos bens de todos os corruptos;\n23.​Apoio à luta de todos os povos e países pela libertação da dominação\ncapitalista e da espoliação imperialista; defesa da soberania, independência\ne autodeterminação dos povos."
+          },
+          {
+            "id": "24-pelo-fim-da-policia-militar-fim-de-qualquer-repressao-aos-movimentos",
+            "titulo": "24.​Pelo fim da polícia militar; fim de qualquer repressão aos movimentos",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "24.​Pelo fim da polícia militar; fim de qualquer repressão aos movimentos\nsociais;\n25.​Punição exemplar para os torturadores e assassinos da ditadura, revisão\nimediata da Lei da Anistia; todo apoio à luta pela Memória, Verdade e\nJustiça."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "5f5640551b436cd23375199569968797ec85d6c7f1bbbd08d9843d959a619df1"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "608291b0df978632070ec329b60487486ddb0127e7ad1575a62f6e9b32d3509e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "3a4c841bbe6233641fe5c4e6cbcd6647a3bfe07a801dea6cde11bffef3a484d5"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "f03fe18f72a2c2c63f29ef4335337296a72634bd014edd582e3580b43a334683"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "12cad3a1cd41d0173c143435fee1837f141b1627fa086ffe8e10c4082802b5f7"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "a37638475d3d36a04fe1a08655e8c170f5fde27d45daeceaa5af8e44f04900bb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "8574ca4ab3656b052f648bfa19cc54bfec26f5f24f1483826efc7ae6ef8d0a62"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "9869bba927baf1d8fb7c10749758e0667bcc2bca6e961536e957c356d3ac160d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a suspensão imediata do processo de privatização do metrô do Recife como medida de atendimento público. O programa propõe no eixo de saneamento investir no saneamento básico a partir do bloqueio da concessão da Compesa. O programa prevê a expansão urgente do funcionamento das Delegacias da Mulher para 24h como medida de atendimento contínuo. O programa propõe a ampliação da rede de creches com vagas em tempo integral para atendimento às crianças. O programa prevê a criação de assembleias populares por todas as macrorregiões do estado dentro da proposta de orçamento regional participativo. O programa propõe a construção de hospitais regionais de especialidades no Agreste conforme a seção sobre infraestrutura no interior do estado. O programa prevê garantir a contratação de médicos, enfermeiros e equipes técnicas por meio de concursos públicos estatutários, fixando profissionais no interior do estado.",
+    "frases": [
+      {
+        "texto": "O programa prevê a suspensão imediata do processo de privatização do metrô do Recife como medida de atendimento público.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Suspensão imediata do processo de privatização do metrô do Recife"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe no eixo de saneamento investir no saneamento básico a partir do bloqueio da concessão da Compesa.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "A partir do bloqueio da concessão da Compesa, investir no saneamento básico"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a expansão urgente do funcionamento das Delegacias da Mulher para 24h como medida de atendimento contínuo.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Expansão urgente do funcionamento das Delegacias da Mulher para 24h"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a ampliação da rede de creches com vagas em tempo integral para atendimento às crianças.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Ampliação da rede de creches"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a criação de assembleias populares por todas as macrorregiões do estado dentro da proposta de orçamento regional participativo.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 3,
+            "trecho": "Criação de assembleias populares por todas as macrorregiões do estado"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a construção de hospitais regionais de especialidades no Agreste conforme a seção sobre infraestrutura no interior do estado.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 4,
+            "trecho": "construção e aparelhamento de hospitais regionais de especialidades no Agreste"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê garantir a contratação de médicos, enfermeiros e equipes técnicas por meio de concursos públicos estatutários, fixando profissionais no interior do estado.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 4,
+            "trecho": "Garantir a contratação de médicos, enfermeiros e equipes técnicas por meio de concursos públicos estatutários com salários dignos, fixando os profissionais no interior do estado"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "privatizacao-metro",
+        "titulo": "Privatização do metrô",
+        "descricao": "Suspensão do processo de privatização do metrô do Recife.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Suspensão imediata do processo de privatização do metrô do Recife"
+          }
+        ]
+      },
+      {
+        "id": "saneamento-basico",
+        "titulo": "Saneamento básico",
+        "descricao": "Investimento em saneamento básico após o bloqueio da concessão da Compesa.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "A partir do bloqueio da concessão da Compesa, investir no saneamento básico"
+          }
+        ]
+      },
+      {
+        "id": "delegacias-da-mulher",
+        "titulo": "Delegacias da Mulher",
+        "descricao": "Expansão do funcionamento das Delegacias da Mulher para 24h.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Expansão urgente do funcionamento das Delegacias da Mulher para 24h"
+          }
+        ]
+      },
+      {
+        "id": "rede-de-creches",
+        "titulo": "Rede de creches",
+        "descricao": "Ampliação da rede de creches.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 1,
+            "trecho": "Ampliação da rede de creches"
+          }
+        ]
+      },
+      {
+        "id": "assembleias-populares",
+        "titulo": "Assembleias populares",
+        "descricao": "Criação de assembleias populares nas macrorregiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 3,
+            "trecho": "Criação de assembleias populares por todas as macrorregiões do estado"
+          }
+        ]
+      },
+      {
+        "id": "hospitais-regionais",
+        "titulo": "Hospitais regionais",
+        "descricao": "Construção de hospitais regionais de especialidades no Agreste.",
+        "evidencias": [
+          {
+            "documentoId": "PE:170002537320:01",
+            "pagina": 4,
+            "trecho": "construção e aparelhamento de hospitais regionais de especialidades no Agreste"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:42:03.134Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T17:03:57.586Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a suspensão imediata do processo de privatização do metrô do Recife."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre o metrô."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:1:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula sobre o metrô está integralmente coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente, saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:2:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "O único número (24h) está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:3:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "O texto completo da página 1 menciona ampliação da rede de creches garantindo vagas em tempo integral para atendimento às crianças."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única, creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:4:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta pelo texto completo da página."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente, inclusive o contexto de Orçamento Regional Participativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única, orçamento participativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:5:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde à seção 'Infraestrutura no Interior', sustentando a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única, saúde/infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:6:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única, interiorização de profissionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:frase:7:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:privatizacao-metro:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:saneamento-basico:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 24h está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:delegacias-da-mulher:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:rede-de-creches:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:assembleias-populares:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PE:170002537320:tema:hospitais-regionais:documentos:PE:170002537320:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PE:170002537320",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PE:170002537320:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 21485,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21251,
+          "output_tokens_details": {
+            "thinking_tokens": 884
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 21485,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21251,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 21485,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 21485
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3155104
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "be2bd27896589c390b04d04ce233997a8e74e335f6f5a88023f6cbf255a85e9f",
+    "extractedTextSha256": "dcba0ba610905a37bee99a972bf82955bf262af621f84cb7911766f25e0867cd",
+    "documentCount": 1,
+    "documentSetSha256": "a1b3a81a7bc80426dd986f105bff42c0d7a5c462c7d71cfca9826443ed9ea9b7",
+    "contentSha256": "e72f6aca61b7fadecd6fd1644aa4cdd075facf354de4c3e1630a4e2109ec4873"
+  }
+}

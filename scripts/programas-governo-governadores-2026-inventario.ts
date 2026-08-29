@@ -8,7 +8,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
-import { basename, join, resolve } from "node:path";
+import { basename, join, relative, resolve } from "node:path";
 
 import { parse } from "csv-parse/sync";
 
@@ -21,6 +21,7 @@ const CANDIDATOS_RECURSO_URL =
   "https://dadosabertos.tse.jus.br/dataset/candidatos-2026/resource/7748de82-a23b-47c4-9ec1-35535d945e5b";
 const CANDIDATOS_PACOTE_URL =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip";
+const DEFAULT_PROFILE_SNAPSHOT = "data/candidate-roster-active-20260829.json";
 const UFS = [
   "AC",
   "AL",
@@ -83,17 +84,16 @@ const RECURSOS_PROPOSTA: Record<(typeof UFS)[number], string> = {
 
 type Raw = Record<string, string>;
 
-interface ChapaSnapshot {
-  cargo_titular: string;
-  uf: string | null;
-  titular: {
-    sq_candidato: string | null;
-    nome_completo: string;
-    nome_urna: string;
-    partido_sigla: string;
-    perfil_slug: string | null;
-    vinculo_perfil_status: string;
-  };
+interface CrosswalkProfile {
+  profile_slug: string;
+  office: string;
+  uf: string;
+  canonical_registration_sq: string | null;
+  registration_sqs: string[];
+  names: string[];
+  parties: string[];
+  statuses: string[];
+  publication_status: "active" | "quarantine_duplicate_active";
 }
 
 interface Documento {
@@ -110,6 +110,7 @@ interface Documento {
   paginas: number;
   textoExtraidoBytes: number;
   textoExtraidoCaracteres: number;
+  textoExtraidoSha256: string;
   textoEstado: "extraivel" | "requer_ocr";
   candidaturaAtual: boolean;
 }
@@ -117,6 +118,7 @@ interface Documento {
 interface ProgramaArgs {
   candidateArchive: string;
   proposalDir: string;
+  profileSnapshot: string;
   collectedAt: string;
   output: string;
   write: boolean;
@@ -140,10 +142,13 @@ function parseArgs(): ProgramaArgs {
   return {
     candidateArchive: resolve(candidateArchive),
     proposalDir: resolve(proposalDir),
+    profileSnapshot: resolve(
+      value("--profile-snapshot") ?? DEFAULT_PROFILE_SNAPSHOT,
+    ),
     collectedAt,
     output: resolve(
       value("--output") ??
-        "scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json",
+        "scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json",
     ),
     write: process.argv.includes("--write"),
   };
@@ -211,19 +216,37 @@ function readCandidateRows(archivePath: string): Raw[] {
   );
 }
 
-function profileCrosswalk(): Map<string, ChapaSnapshot> {
-  const snapshot = JSON.parse(
-    readFileSync(resolve("data/chapas-2026-tse-20260815.json"), "utf8"),
-  ) as { chapas: ChapaSnapshot[] };
+function profileCrosswalk(snapshotPath: string): Map<string, CrosswalkProfile> {
+  const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
+    metadata: {
+      active_registration_count: number;
+      active_profile_count: number;
+      unresolved_count: number;
+    };
+    profiles: CrosswalkProfile[];
+  };
+  if (snapshot.profiles.length !== snapshot.metadata.active_profile_count)
+    throw new Error("crosswalk e metadata divergem em perfis ativos");
+  const allRegistrations = snapshot.profiles.flatMap(
+    (profile) => profile.registration_sqs,
+  );
+  if (allRegistrations.length !== snapshot.metadata.active_registration_count)
+    throw new Error("crosswalk e metadata divergem em inscrições ativas");
+  const profiles = snapshot.profiles.filter(
+    (profile) => profile.office === "Governador",
+  );
+  if (snapshot.metadata.unresolved_count !== 0)
+    throw new Error("crosswalk contém inscrições sem mapeamento");
+  const registrations = profiles.flatMap((profile) => profile.registration_sqs);
+  if (new Set(registrations).size !== registrations.length)
+    throw new Error("crosswalk contém SQ de inscrição duplicada");
   return new Map(
-    snapshot.chapas
-      .filter(
-        (row) =>
-          row.cargo_titular === "Governador" &&
-          row.titular.sq_candidato &&
-          row.titular.perfil_slug,
-      )
-      .map((row) => [candidateKey(row.uf as string, row.titular.sq_candidato as string), row]),
+    profiles.flatMap((profile) =>
+      profile.registration_sqs.map((sq) => [
+        candidateKey(profile.uf, sq),
+        profile,
+      ] as const),
+    ),
   );
 }
 
@@ -273,6 +296,7 @@ function inspectPdf(
     paginas: pages,
     textoExtraidoBytes: Buffer.byteLength(normalizedText, "utf8"),
     textoExtraidoCaracteres: normalizedText.length,
+    textoExtraidoSha256: sha256(normalizedText),
     textoEstado: normalizedText.length >= 200 ? "extraivel" : "requer_ocr",
   };
 }
@@ -296,7 +320,15 @@ function main(): void {
     throw new Error(`Node 24 obrigatório; atual ${process.versions.node}`);
   }
   const candidateBytes = readFileSync(args.candidateArchive);
-  const candidates = readCandidateRows(args.candidateArchive);
+  const allCandidates = readCandidateRows(args.candidateArchive);
+  const crosswalk = profileCrosswalk(args.profileSnapshot);
+  const candidates = allCandidates.filter((row) =>
+    crosswalk.has(candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
+  );
+  if (candidates.length !== crosswalk.size)
+    throw new Error(
+      `crosswalk e pacote TSE divergem: crosswalk=${crosswalk.size}; pacote=${candidates.length}`,
+    );
   const candidateKeys = new Set(
     candidates.map((row) => candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
   );
@@ -404,7 +436,51 @@ function main(): void {
     documentsByCandidate.set(key, values);
   }
 
-  const crosswalk = profileCrosswalk();
+  const profileSnapshotLabel = relative(resolve("."), args.profileSnapshot);
+  const resolvedAmbiguityByKey = new Map<
+    string,
+    { canonical: boolean; slug: string }
+  >();
+  for (const rows of groups.values()) {
+    if (rows.length < 2) continue;
+    const profiles = rows.map((row) =>
+      crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
+    );
+    const linkedSlugs = profiles.map((profile) => profile?.profile_slug ?? null);
+    const uniqueSlugs = new Set(linkedSlugs.filter(Boolean));
+    const documentSignatures = rows.map((row) =>
+      JSON.stringify(
+        (
+          documentsByCandidate.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO)) ??
+          []
+        )
+          .map(({ textoExtraidoSha256 }) => textoExtraidoSha256)
+          .sort(),
+      ),
+    );
+    const documentsEquivalent =
+      documentSignatures.every((signature) => signature !== "[]") &&
+      new Set(documentSignatures).size === 1;
+    const profile = profiles[0];
+    if (
+      uniqueSlugs.size !== 1 ||
+      !documentsEquivalent ||
+      !profile ||
+      profile.publication_status !== "active" ||
+      !profile.canonical_registration_sq
+    )
+      continue;
+    const slug = [...uniqueSlugs][0] as string;
+    const canonicalSq = rows
+      .map(({ SQ_CANDIDATO }) => SQ_CANDIDATO)
+      .sort((a, b) => a.localeCompare(b, "pt-BR"))[0];
+    for (const row of rows) {
+      resolvedAmbiguityByKey.set(candidateKey(row.SG_UF, row.SQ_CANDIDATO), {
+        canonical: row.SQ_CANDIDATO === canonicalSq,
+        slug,
+      });
+    }
+  }
   const inventario = candidates.map((row) => {
     const key = candidateKey(row.SG_UF, row.SQ_CANDIDATO);
     const documents = (documentsByCandidate.get(key) ?? []).sort(
@@ -414,21 +490,40 @@ function main(): void {
     if (
       previous &&
       (previous.uf !== row.SG_UF ||
-        normalize(previous.titular.nome_completo) !==
-          normalize(row.NM_CANDIDATO) ||
-        previous.titular.partido_sigla !== row.SG_PARTIDO)
+        (!previous.names.some(
+          (name) => normalize(name) === normalize(row.NM_CANDIDATO),
+        ) &&
+          !previous.names.some(
+            (name) => normalize(name) === normalize(row.NM_URNA_CANDIDATO),
+          )) ||
+        !previous.parties.includes(row.SG_PARTIDO))
     ) {
       throw new Error(
         `${row.SQ_CANDIDATO}: vínculo local diverge da identidade TSE atual`,
       );
     }
     const ambiguity = ambiguousGroupByKey.get(key);
-    const slug = previous?.titular.perfil_slug ?? null;
-    const perfilEstado = slug ? "vinculado" : "perfil_local_ausente";
+    const ambiguityResolution = resolvedAmbiguityByKey.get(key);
+    const slug = ambiguity
+      ? ambiguityResolution?.canonical
+        ? ambiguityResolution.slug
+        : null
+      : previous?.publication_status === "active" &&
+          previous.canonical_registration_sq === row.SQ_CANDIDATO
+        ? previous.profile_slug
+        : null;
+    const perfilEstado = slug
+      ? "vinculado"
+      : ambiguity
+        ? "alias_duplicidade_oficial"
+        : "perfil_local_ausente";
     const fonteEstado = documents.length
       ? "documento_oficial_encontrado"
       : "sem_documento_oficial";
-    const identidadeEstado = ambiguity ? "duplicidade_oficial" : "confirmada";
+    const identidadeEstado =
+      !ambiguity || ambiguityResolution?.canonical
+        ? "confirmada"
+        : "duplicidade_oficial";
     const estadoInventario = ambiguity
       ? "duplicidade_oficial"
       : perfilEstado === "perfil_local_ausente"
@@ -446,19 +541,22 @@ function main(): void {
       numero: row.NR_CANDIDATO,
       slug,
       perfilEstado,
-      perfilVinculoFonte: slug ? "data/chapas-2026-tse-20260815.json" : null,
+      perfilVinculoFonte: slug ? profileSnapshotLabel : null,
       identidadeEstado,
-      grupoAmbiguidade: ambiguity?.id ?? null,
+      grupoAmbiguidade:
+        identidadeEstado === "duplicidade_oficial" ? ambiguity?.id : null,
       alternativasOficiais:
-        ambiguity?.alternatives.map((alternative) => ({
-          sqCandidato: alternative.SQ_CANDIDATO,
-          sqColigacao: alternative.SQ_COLIGACAO,
-          nomeCompleto: alternative.NM_CANDIDATO,
-          nomeUrna: alternative.NM_URNA_CANDIDATO,
-          partido: alternative.SG_PARTIDO,
-          situacaoCodigo: alternative.CD_SITUACAO_CANDIDATURA,
-          situacao: alternative.DS_SITUACAO_CANDIDATURA,
-        })) ?? [],
+        identidadeEstado === "duplicidade_oficial"
+          ? (ambiguity?.alternatives.map((alternative) => ({
+              sqCandidato: alternative.SQ_CANDIDATO,
+              sqColigacao: alternative.SQ_COLIGACAO,
+              nomeCompleto: alternative.NM_CANDIDATO,
+              nomeUrna: alternative.NM_URNA_CANDIDATO,
+              partido: alternative.SG_PARTIDO,
+              situacaoCodigo: alternative.CD_SITUACAO_CANDIDATURA,
+              situacao: alternative.DS_SITUACAO_CANDIDATURA,
+            })) ?? [])
+          : [],
       fonteEstado,
       estadoInventario,
       documentoIds: documents.map((document) => document.id),
@@ -482,6 +580,17 @@ function main(): void {
   const profilesLinked = inventario.filter(
     (row) => row.perfilEstado === "vinculado",
   ).length;
+  const profilesMissing = inventario.filter(
+    (row) => row.perfilEstado === "perfil_local_ausente",
+  ).length;
+  const duplicateAliases = inventario.filter(
+    (row) => row.perfilEstado === "alias_duplicidade_oficial",
+  ).length;
+  const uniqueProfiles = new Set(
+    candidates.map(
+      (row) => crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO))?.profile_slug,
+    ),
+  ).size;
   const candidatesWithDocuments = inventario.filter(
     (row) => row.documentoIds.length > 0,
   ).length;
@@ -498,6 +607,8 @@ function main(): void {
       candidatosPacoteSha256: sha256(candidateBytes),
       candidatosPacoteIntegridadeZip: "valida",
       candidatosGeradoEm: generations[0],
+      perfisSnapshotArquivo: profileSnapshotLabel,
+      perfisSnapshotSha256: sha256(readFileSync(args.profileSnapshot)),
       frequenciaDeclaradaPeloCatalogo: "4 vezes ao dia",
       coleta: {
         metodo: "playwright_catalogo_recurso",
@@ -509,12 +620,14 @@ function main(): void {
     medicoes: {
       ufs: UFS.length,
       candidaturasOficiais: inventario.length,
+      perfisUnicos: uniqueProfiles,
       gruposLogicos: groups.size,
       gruposAmbiguos: [...groups.values()].filter((rows) => rows.length > 1)
         .length,
       linhasEmGruposAmbiguos: ambiguousGroupByKey.size,
       perfisLocaisVinculados: profilesLinked,
-      perfisLocaisAusentes: inventario.length - profilesLinked,
+      perfisLocaisAusentes: profilesMissing,
+      aliasesDuplicidadeOficial: duplicateAliases,
       pacotes: pacotes.length,
       documentosTotais: documentos.length,
       documentosDeCandidaturasAtuais: currentDocuments.length,

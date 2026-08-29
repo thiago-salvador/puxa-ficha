@@ -1,0 +1,1554 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RN",
+    "sqCandidato": "200002550223",
+    "slug": "carlos-jararaca",
+    "nomeUrna": "CARLOS JARARACA",
+    "partido": "DC",
+    "arquivoNome": "2026RN200002550223_01.pdf",
+    "arquivoNoPacote": "RN/2026RN200002550223_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RN:200002550223:01",
+      "fonte": {
+        "arquivoNome": "2026RN200002550223_01.pdf",
+        "arquivoNoPacote": "RN/2026RN200002550223_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "c6f849db688885dda9319db5f6a03d81d3194be4b5dd29197b0cb4babfd822ae",
+        "extractedTextSha256": "d4b515e35615c3a2328ab24696a92865e78e3523ddd89a931341a4f71b7ce393",
+        "paginas": 65,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nCARLOS JARARACA 27 – VICE PASTOR JÚLIO\n\nELEIÇÕES 2026\n“Um Novo Caminho para o Rio Grande do Norte”\n\nAPRESENTAÇÃO\nO Rio Grande do Norte reúne condições privilegiadas para alcançar um novo\npatamar de desenvolvimento. O Estado possui importantes recursos naturais,\npotencial energético, vocação turística, capacidade produtiva, riqueza cultural e\numa população empreendedora. Apesar disso, ainda enfrenta problemas\nestruturais que limitam seu crescimento e comprometem a qualidade dos serviços\npúblicos.\nEntre os principais desaﬁos estão a baixa capacidade de investimento, as\ndiﬁculdades de gestão, a precariedade de parte da infraestrutura, as desigualdades\nregionais, os problemas de segurança pública e as deﬁciências nas áreas de saúde\ne educação.\nEste Plano de Governo parte de uma premissa simples: o Estado precisa funcionar\nmelhor para que a vida das pessoas possa melhorar.\nA proposta é construir uma administração moderna, eﬁciente, transparente e\nresponsável, com planejamento, equilíbrio ﬁscal e foco permanente na entrega de\nresultados.\n1"
+          },
+          {
+            "id": "nao-se-trata-de-aprofundar-divisoes-politicas-ou-reproduzir-a-logica-da",
+            "titulo": "Não se trata de aprofundar divisões políticas ou reproduzir a lógica da polarização.",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Não se trata de aprofundar divisões políticas ou reproduzir a lógica da polarização.\nO Rio Grande do Norte precisa superar disputas que pouco contribuem para a\nsolução de seus problemas e concentrar esforços naquilo que efetivamente\nimporta: melhorar a vida da população.\nO Governo do Estado deverá atuar em parceria com os municípios, o Governo\nFederal, o setor produtivo, as universidades, as instituições da sociedade civil e\ntodos aqueles que possam contribuir para o desenvolvimento do Rio Grande do\nNorte.\nO compromisso é governar para todos os potiguares.\n\nNOSSA VISÃO\nTransformar o Rio Grande do Norte em um Estado mais eﬁciente, inovador e\ncompetitivo, capaz de gerar oportunidades, atrair investimentos, criar empregos e\npromover desenvolvimento econômico com responsabilidade social e ambiental.\n\nNOSSA MISSÃO\nConstruir um governo moderno, transparente, digital e eﬁciente, próximo da\npopulação e orientado pela melhoria dos serviços públicos, pela geração de\noportunidades e pela utilização responsável dos recursos públicos.\n\nNOSSOS VALORES\n\n\nRespeito à Constituição e às leis;\n\n\n\nDefesa da Democracia;\n\n\n\nÉtica na Administração Pública;\n\n\n\nTransparência;\n\n\n\nEﬁciência administrativa;\n\n\n\nResponsabilidade ﬁscal;\n\n\n\nDesenvolvimento sustentável;\n\n\n\nValorização das pessoas;\n\n\n\nInovação;\n\n\n\nParticipação da sociedade.\n2"
+          },
+          {
+            "id": "principios-do-governo",
+            "titulo": "PRINCÍPIOS DO GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PRINCÍPIOS DO GOVERNO\nA atuação do Governo do Estado será organizada a partir de cinco pilares\nestratégicos:\nI – Estado eﬁciente;\nII – Desenvolvimento econômico;\nIII – Justiça social;\nIV – Segurança e qualidade de vida;\nV – Governança orientada por resultados.\nAs políticas públicas deverão ser planejadas, executadas e avaliadas com base em\nmetas e indicadores objetivos, permitindo acompanhar o desempenho do Governo\ne veriﬁcar os resultados efetivamente entregues à população.\n\nDIAGNÓSTICO DO RIO GRANDE DO NORTE\nO Rio Grande do Norte enfrenta desaﬁos que exigem planejamento, capacidade de\nexecução e decisões de longo prazo.\nEntre os principais problemas estão:\n\n\nCrescimento econômico inferior ao potencial do Estado;\n\n\n\nElevada dependência de recursos transferidos pela União;\n\n\n\nBaixa capacidade de investimento público;\n\n\n\nDeﬁciências na infraestrutura estadual;\n\n\n\nDesigualdades entre as diferentes regiões do Estado;\n\n\n\nNecessidade de modernização da Administração Pública;\n\n\n\nBaixa capacidade de inovação em parte da estrutura governamental;\n\n\n\nDeﬁciências na prestação de serviços públicos;\n\n\n\nFragilidades na infraestrutura logística;\n\n\n\nNecessidade de ampliar a competitividade da economia potiguar.\n\nAo mesmo tempo, o Estado possui vantagens competitivas que ainda podem ser\nmelhor aproveitadas.\n\n3"
+          },
+          {
+            "id": "entre-as-principais-oportunidades-estao",
+            "titulo": "Entre as principais oportunidades estão:",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Entre as principais oportunidades estão:\n\n\nEnergia eólica;\n\n\n\nEnergia solar;\n\n\n\nPetróleo e gás;\n\n\n\nMineração;\n\n\n\nTurismo;\n\n\n\nEconomia do mar;\n\n\n\nAgricultura irrigada;\n\n\n\nFruticultura;\n\n\n\nEconomia criativa;\n\n\n\nTecnologia;\n\n\n\nEconomia digital;\n\n\n\nPorto-Indústria;\n\n\n\nComércio exterior.\n\nO desaﬁo do Governo será criar as condições necessárias para transformar essas\npotencialidades em investimentos, empregos, renda e desenvolvimento para todas\nas regiões do Estado.\n\nEIXOS ESTRATÉGICOS\nO Plano de Governo está estruturado em dez eixos:\n1. Governo Eﬁciente\n2. Desenvolvimento Econômico\n3. Saúde de Qualidade\n4. Educação para o Futuro\n5. Segurança Pública Integrada\n6. Infraestrutura e Mobilidade\n7. Desenvolvimento Regional\n8. Transformação Digital\n9. Sustentabilidade Ambiental\n4"
+          },
+          {
+            "id": "10-gestao-orientada-por-resultados",
+            "titulo": "10. Gestão Orientada por Resultados",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "10. Gestão Orientada por Resultados\n\nMODELO DE GOVERNANÇA\nO Governo do Estado adotará um modelo de gestão baseado em planejamento,\neﬁciência administrativa, transparência e avaliação permanente dos resultados.\nEntre as principais diretrizes estão:\n\n\nPlanejamento estratégico;\n\n\n\nGestão por metas e indicadores;\n\n\n\nAmpliação do Governo Digital;\n\n\n\nUso responsável de Inteligência Artiﬁcial e novas tecnologias na\nAdministração Pública;\n\n\n\nTransparência ativa;\n\n\n\nAmpliação das políticas de dados abertos;\n\n\n\nDesburocratização dos serviços públicos;\n\n\n\nFortalecimento dos mecanismos de controle interno;\n\n\n\nMonitoramento permanente das políticas públicas;\n\n\n\nAvaliação dos resultados e correção de ações que não estejam alcançando\nos objetivos estabelecidos.\n\nCada secretaria deverá trabalhar com metas claras, indicadores de desempenho e\nmecanismos de acompanhamento, permitindo que a sociedade conheça as\nprioridades do Governo e acompanhe a execução das políticas públicas.\nA administração estadual deverá substituir a lógica de simplesmente executar\ndespesas pela lógica de planejar, executar, medir e entregar resultados.\n\nCOMPROMISSO COM O CIDADÃO\nO Governo que propomos deve ser capaz de ouvir a população, identiﬁcar\nproblemas, estabelecer prioridades, executar políticas públicas e prestar contas\ndos resultados alcançados.\nEste Plano de Governo apresenta um projeto baseado em responsabilidade,\nplanejamento e capacidade de execução. Mais do que formular promessas, o\n\n5"
+          },
+          {
+            "id": "objetivo-e-estabelecer-diretrizes-para-uma-administracao-capaz-de-enfren",
+            "titulo": "objetivo é estabelecer diretrizes para uma administração capaz de enfrentar os",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "objetivo é estabelecer diretrizes para uma administração capaz de enfrentar os\nproblemas do Estado e aproveitar suas oportunidades.\nO Rio Grande do Norte precisa voltar a crescer, ampliar sua capacidade de\ninvestimento, gerar empregos, atrair novos negócios, melhorar seus serviços\npúblicos e recuperar a conﬁança da população na Administração Pública.\nPara isso, o Governo atuará com diálogo, responsabilidade ﬁscal, transparência e\nfoco permanente em resultados, colocando o interesse público acima de disputas\npolíticas e ideológicas.\nO compromisso é construir um Rio Grande do Norte mais justo, moderno, inovador,\ncompetitivo e preparado para o futuro.\n\n2. DESENVOLVIMENTO\nCOMPETITIVIDADE\n\nECONÔMICO,\n\nGERAÇÃO\n\nDE\n\nEMPREGOS\n\nE\n\nO Rio Grande do Norte não pode se conformar com uma economia que cresce\nabaixo de suas possibilidades. O Estado possui recursos naturais, localização\nestratégica, capacidade produtiva e setores econômicos com enorme potencial de\nexpansão. O desaﬁo está em transformar essas vantagens em investimento,\nprodução, emprego e renda.\nA política de desenvolvimento econômico do próximo Governo terá como ponto de\npartida a compreensão de que o Estado não gera riqueza sozinho. Cabe ao poder\npúblico criar as condições para que quem produz possa produzir mais, quem\ndeseja investir encontre segurança e quem procura emprego encontre\noportunidades.\nIsso exige menos burocracia, infraestrutura adequada, segurança jurídica,\nqualiﬁcação proﬁssional, equilíbrio ﬁscal e uma relação mais eﬁciente entre\nGoverno e setor produtivo. Exige também reconhecer que cada região do Rio\nGrande do Norte possui características próprias e precisa encontrar seu espaço\ndentro de uma estratégia estadual de desenvolvimento.\n\n2.1 UM AMBIENTE MELHOR PARA QUEM PRODUZ\nO Governo trabalhará para tornar o Rio Grande do Norte um Estado mais atrativo\npara empreendedores e investidores. A abertura e regularização de empresas\ndeverão ser cada vez mais simples e digitais, com integração entre os órgãos\npúblicos e redução de etapas desnecessárias.\n6"
+          },
+          {
+            "id": "nesse-contexto-sera-implantado-o-rn-mais-competitivo-programa-destinado",
+            "titulo": "Nesse contexto, será implantado o RN Mais Competitivo, programa destinado à",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Nesse contexto, será implantado o RN Mais Competitivo, programa destinado à\nmelhoria permanente do ambiente de negócios. A iniciativa reunirá medidas de\ndesburocratização, digitalização dos serviços públicos, estímulo à inovação e\narticulação entre as instituições responsáveis pelo desenvolvimento econômico.\nA relação do Estado com o setor produtivo também deverá mudar. Em vez de uma\nAdministração Pública distante, burocrática e excessivamente concentrada em\nprocedimentos, será buscada uma atuação mais próxima, capaz de identiﬁcar\nobstáculos e construir soluções dentro dos limites da legislação.\n\n2.2 EMPREGO: QUALIFICAR PARA AS OPORTUNIDADES QUE ESTÃO SURGINDO\nNão basta anunciar a chegada de novos investimentos. É preciso garantir que os\npotiguares estejam preparados para ocupar os postos de trabalho que serão\ncriados.\nOs programas estaduais de qualiﬁcação proﬁssional deverão ser orientados pelas\nnecessidades reais de cada região e de cada cadeia produtiva. Para isso, o Governo\nestabelecerá parcerias com universidades, institutos federais, Sistema S,\nempresas e demais instituições de formação proﬁssional.\nA estratégia dará atenção especial à entrada dos jovens no mercado de trabalho, à\ninclusão de pessoas com deﬁciência e à permanência de trabalhadores com mais\nde 50 anos na atividade produtiva.\nTambém haverá espaço para quem escolhe empreender. Pequenos negócios,\ntrabalhadores autônomos, proﬁssionais da economia criativa e empreendedores\ndigitais fazem parte da economia real do Estado e precisam encontrar um ambiente\nmenos burocrático para crescer.\n\n2.3 UM ESTADO COM DIFERENTES VOCAÇÕES\nO Rio Grande do Norte não é economicamente homogêneo. Cada região possui\nrecursos, atividades produtivas e características próprias. O Governo deverá\nreconhecer essas diferenças e formular políticas que aproveitem as vocações\nlocais.\nEntre as prioridades estarão:\nSeridó: fortalecimento das cadeias produtivas ligadas à indústria, mineração,\nagropecuária, turismo e economia criativa.\nOeste e Alto Oeste: incentivo à produção agrícola, fruticultura, comércio, serviços\ne atividades capazes de gerar novas oportunidades de trabalho.\n7"
+          },
+          {
+            "id": "vale-do-acu-ampliacao-da-producao-agricola-e-agroindustrial-com-atencao",
+            "titulo": "Vale do Açu: ampliação da produção agrícola e agroindustrial, com atenção",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Vale do Açu: ampliação da produção agrícola e agroindustrial, com atenção\nespecial à irrigação, infraestrutura e agregação de valor.\nMato Grande: aproveitamento do potencial agrícola, energético e turístico da\nregião.\nAgreste Potiguar: apoio à agricultura familiar, ao comércio e às pequenas\natividades produtivas.\nRegião Metropolitana de Natal: consolidação como principal polo estadual de\nserviços, turismo, tecnologia, inovação e economia criativa.\nA política de desenvolvimento regional deverá buscar maior equilíbrio territorial,\npermitindo que o crescimento econômico seja distribuído por todo o Estado.\n\n2.4 TURISMO: UMA INDÚSTRIA QUE O ESTADO JÁ POSSUI\nO turismo representa uma das maiores vantagens competitivas do Rio Grande do\nNorte. Praias, patrimônio histórico, cultura, gastronomia, religiosidade e belezas\nnaturais formam um conjunto que pode gerar muito mais emprego e renda.\nO Governo deverá ampliar a promoção do Estado nos mercados nacional e\ninternacional e trabalhar em conjunto com os municípios para melhorar a estrutura\nnecessária à atividade turística.\nA estratégia não ﬁcará limitada ao turismo de sol e praia. O Estado também possui\ncondições para desenvolver o turismo religioso, cultural, esportivo, ecológico e de\nnegócios.\nA qualiﬁcação dos trabalhadores do setor será outra prioridade. Um destino\nturístico competitivo depende não apenas de suas paisagens, mas da qualidade\ndos serviços oferecidos ao visitante.\n\n2.5 ENERGIA: TRANSFORMAR VANTAGEM NATURAL EM DESENVOLVIMENTO\nO Rio Grande do Norte já ocupa posição de destaque na produção de energia eólica\ne possui grande potencial para geração solar. Também mantém atividade relevante\nnos setores de petróleo e gás.\nEssa condição precisa produzir mais efeitos sobre a economia local.\nA política estadual buscará estimular novos investimentos, desenvolver\nfornecedores potiguares, ampliar a qualiﬁcação de mão de obra e aproximar\nempresas, universidades e centros de pesquisa. O objetivo é fazer com que uma\nparcela cada vez maior da cadeia de valor permaneça no próprio Estado.\n8"
+          },
+          {
+            "id": "o-governo-tambem-acompanhara-o-desenvolvimento-de-novas-tecnologias",
+            "titulo": "O Governo também acompanhará o desenvolvimento de novas tecnologias",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "O Governo também acompanhará o desenvolvimento de novas tecnologias\nenergéticas, incluindo projetos relacionados ao hidrogênio de baixa emissão de\ncarbono e a outras alternativas associadas à transição energética.\n\n2.6 PRODUZIR MAIS NO CAMPO\nA produção rural tem papel fundamental na economia potiguar e deve ser tratada\nde acordo com a diversidade existente no Estado.\nA agricultura familiar precisa ter acesso a assistência técnica, crédito, tecnologia,\nágua e mercados. Ao mesmo tempo, o agronegócio deve encontrar condições para\nampliar sua produção e sua participação nos mercados nacional e internacional.\nA expansão da infraestrutura hídrica e da irrigação eﬁciente será fundamental,\nespecialmente em regiões onde a disponibilidade de água limita a produção. O\nGoverno também apoiará cooperativas e associações de produtores, buscando\nmelhorar a capacidade de comercialização e agregar valor à produção.\nPesca artesanal e aquicultura integrarão essa política, com atenção à\nmodernização das atividades, à qualiﬁcação proﬁssional e à sustentabilidade dos\nrecursos naturais.\n\n2.7 CONHECIMENTO COMO FATOR DE COMPETITIVIDADE\nO Rio Grande do Norte possui universidades, institutos de pesquisa e proﬁssionais\nqualiﬁcados. O desaﬁo é aproximar esse conhecimento das necessidades\nconcretas da economia.\nO Governo estimulará parcerias entre instituições de ensino, centros de pesquisa e\nempresas, apoiando parques tecnológicos, incubadoras e startups e incentivando\nprojetos de pesquisa aplicada.\nA inovação não deve ser tratada como assunto restrito às empresas de tecnologia.\nEla pode melhorar a agricultura, a indústria, a saúde, o turismo, a administração\npública e praticamente todas as atividades econômicas.\n\n2.8 INFRAESTRUTURA: A BASE DO DESENVOLVIMENTO\nNenhuma estratégia econômica será suﬁciente se o Estado não conseguir oferecer\ncondições adequadas para transportar pessoas e mercadorias, garantir acesso à\nágua e conectar empresas e consumidores.\n\n9"
+          },
+          {
+            "id": "a-recuperacao-e-manutencao-da-malha-rodoviaria-estadual-sera-uma-priorid",
+            "titulo": "A recuperação e manutenção da malha rodoviária estadual será uma prioridade",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "A recuperação e manutenção da malha rodoviária estadual será uma prioridade\npermanente, assim como a melhoria da logística e da infraestrutura hídrica.\nA conectividade digital também será tratada como infraestrutura essencial. Internet\nde qualidade deixou de ser um diferencial e passou a ser condição básica para\nestudar, trabalhar, empreender e prestar serviços.\nProjetos estruturantes deverão ser desenvolvidos em articulação com o Governo\nFederal, municípios e iniciativa privada, buscando ampliar a capacidade de\ninvestimento do Estado sem comprometer seu equilíbrio ﬁnanceiro.\n\n2.9 CRESCER SEM PERDER O CONTROLE DAS CONTAS\nNão existe política de desenvolvimento sustentável quando o Estado perde a\ncapacidade de pagar suas contas e investir.\nPor isso, a expansão econômica deverá caminhar junto com responsabilidade\nﬁscal. O Governo buscará melhorar a eﬁciência da arrecadação dentro dos limites\nda legislação, combater desperdícios e direcionar os recursos disponíveis para\náreas e projetos que produzam maior retorno para a população.\nTambém será necessário ampliar a capacidade de captação de recursos, utilizando\nconvênios, parcerias institucionais e operações de crédito quando legalmente\nautorizadas e ﬁnanceiramente sustentáveis.\nA regra será simples: cada real público deverá ser tratado como recurso da\npopulação e aplicado de acordo com uma prioridade clara.\n\n2.10 UMA NOVA POSIÇÃO PARA O RIO GRANDE DO NORTE\nO objetivo deste eixo não é apenas fazer a economia crescer em números. É criar\nas condições para que o crescimento seja percebido na vida das pessoas.\nAo longo do mandato, o Governo buscará aumentar a participação do setor privado\nna geração de investimentos e empregos, fortalecer as cadeias produtivas\nexistentes, estimular novas atividades econômicas e reduzir as diferenças entre as\nregiões.\nO Rio Grande do Norte possui condições para ocupar uma posição mais relevante\nna economia nordestina. Para isso, será necessário combinar liberdade para\nempreender, capacidade de planejamento do Estado, investimento em\ninfraestrutura, qualiﬁcação proﬁssional, inovação e responsabilidade ﬁscal.\n\n10"
+          },
+          {
+            "id": "mais-do-que-esperar-que-as-oportunidades-aparecam-o-governo-devera-traba",
+            "titulo": "Mais do que esperar que as oportunidades apareçam, o Governo deverá trabalhar",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Mais do que esperar que as oportunidades apareçam, o Governo deverá trabalhar\npara criá-las e para que os potiguares estejam preparados para aproveitá-las.\n\nPerfeito. Aqui vale deixar a saúde com uma linguagem um pouco mais humana e\nconcreta, porque o tema pede isso. Mantive a maior parte em texto corrido e usei\nlistas somente em alguns pontos, para destacar prioridades sem transformar o\ncapítulo inteiro em uma sequência de tópicos.\n\n3. SAÚDE: CUIDAR DAS PESSOAS COM EFICIÊNCIA, HUMANIZAÇÃO E\nINOVAÇÃO\n\n3.1 UMA SAÚDE PÚBLICA QUE FUNCIONE PARA QUEM PRECISA\nA saúde será uma das prioridades permanentes do Governo do Estado. O objetivo\né fazer com que o cidadão encontre atendimento no momento em que precisa, com\nqualidade, respeito e segurança.\nO Rio Grande do Norte precisa enfrentar problemas conhecidos pela população:\nﬁlas prolongadas, demora na realização de exames e cirurgias, diﬁculdades de\nacesso a determinadas especialidades e sobrecarga de unidades hospitalares.\nEnfrentar essas questões exigirá melhorar a gestão, organizar a rede de\natendimento e utilizar melhor os recursos já disponíveis.\nA atuação estadual será articulada com os municípios, respeitando as\nresponsabilidades de cada ente dentro do Sistema Único de Saúde (SUS). O\nGoverno deverá exercer plenamente seu papel de coordenação regional, apoio\ntécnico e fortalecimento da rede estadual.\nAs principais metas serão:\n\n\nreduzir o tempo de espera por consultas, exames e cirurgias;\n\n\n\nampliar a oferta de serviços especializados;\n\n\n\nmelhorar a estrutura e o funcionamento dos hospitais estaduais;\n\n\n\nvalorizar os proﬁssionais de saúde;\n\n\n\nmodernizar a gestão;\n\n\n\nutilizar tecnologia para facilitar o acesso da população aos serviços.\n11"
+          },
+          {
+            "id": "3-2-regionalizacao-levar-o-atendimento-para-mais-perto-das",
+            "titulo": "3.2 REGIONALIZAÇÃO: LEVAR O ATENDIMENTO PARA MAIS PERTO DAS",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "3.2 REGIONALIZAÇÃO: LEVAR O ATENDIMENTO PARA MAIS PERTO DAS\nPESSOAS\nO cidadão que mora no interior não pode depender, sempre que necessitar de um\natendimento especializado, de uma viagem até Natal. A concentração excessiva\ndos serviços na capital aumenta os custos para as famílias, sobrecarrega a rede e\ndiﬁculta o acesso.\nO Governo fortalecerá as regiões de saúde, buscando distribuir de maneira mais\nadequada a oferta de especialidades e organizar os ﬂuxos entre municípios e\nunidades estaduais.\nO planejamento regional levará em consideração indicadores epidemiológicos,\ndemanda da população, capacidade instalada e características de cada região. A\nintegração entre hospitais estaduais e unidades municipais será estimulada dentro\ndas competências previstas no SUS.\nA regionalização não signiﬁca simplesmente construir novas unidades. Signiﬁca\norganizar melhor a rede que já existe e identiﬁcar onde cada serviço deve estar\ndisponível.\n\n3.3 UMA REDE HOSPITALAR MAIS MODERNA\nOs hospitais estaduais precisam oferecer condições adequadas tanto para os\npacientes quanto para os proﬁssionais que trabalham neles.\nSerá implantado um programa permanente de modernização da rede hospitalar,\ncom planejamento das intervenções conforme a necessidade e a capacidade de\ncada unidade.\nEntre as prioridades estarão:\n\n\nrecuperação e modernização da infraestrutura física;\n\n\n\nrenovação gradual de equipamentos;\n\n\n\ninformatização dos serviços;\n\n\n\nmelhoria dos processos internos;\n\n\n\nfortalecimento da segurança do paciente;\n\n\n\nadoção de protocolos assistenciais;\n\n\n\ngestão hospitalar baseada em indicadores de desempenho.\n\n12"
+          },
+          {
+            "id": "a-melhoria-da-estrutura-devera-vir-acompanhada-de-uma-gestao-mais-pro-ss",
+            "titulo": "A melhoria da estrutura deverá vir acompanhada de uma gestão mais proﬁssional.",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "A melhoria da estrutura deverá vir acompanhada de uma gestão mais proﬁssional.\nNão basta possuir equipamentos modernos se eles não estiverem disponíveis,\nfuncionando e inseridos em uma rede organizada.\n\n3.4 MENOS ESPERA, MAIS ATENDIMENTO\nUma das maiores preocupações de quem depende do SUS é a demora para\nconseguir uma consulta especializada, realizar um exame ou passar por uma\ncirurgia.\nO Governo implantará um plano estadual de enfrentamento das ﬁlas, com\nacompanhamento permanente da demanda e dos tempos de espera.\nA regulação será aprimorada e as listas deverão ser informatizadas, permitindo\nmaior controle sobre a oferta e a demanda. Os critérios de atendimento deverão ser\ntransparentes, respeitando as prioridades clínicas estabelecidas pelos\nproﬁssionais responsáveis.\nTambém serão buscadas alternativas para ampliar a realização de exames\nespecializados e cirurgias eletivas, inclusive por meio de parcerias previstas na\nlegislação e de melhor aproveitamento da capacidade instalada da própria rede\npública.\nFila menor não se resolve apenas aumentando o número de procedimentos. É\npreciso saber onde está o gargalo, quanto tempo cada paciente espera e por que\nestá esperando.\n\n3.5 SAÚDE DIGITAL E USO INTELIGENTE DA TECNOLOGIA\nA transformação digital pode melhorar a experiência do paciente e, ao mesmo\ntempo, dar ao gestor informações mais precisas para tomar decisões.\nSerá desenvolvido um programa estadual de saúde digital, buscando integrar\ninformações e reduzir a fragmentação dos dados existentes na rede.\nEntre as iniciativas previstas estão:\n\n\nprontuário eletrônico integrado, observadas as normas de proteção de\ndados;\n\n\n\nagendamento digital;\n\n\n\ntelemedicina, dentro das normas aplicáveis;\n\n\n\nteleconsultorias para apoio aos proﬁssionais;\n13"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "\n\npainéis de acompanhamento dos principais indicadores;\n\n\n\nutilização de dados para planejamento e gestão.\n\nA tecnologia deverá ser utilizada para facilitar o acesso, reduzir burocracias e apoiar\no trabalho dos proﬁssionais — nunca para substituir o atendimento humano\nquando ele for necessário.\n\n3.6 URGÊNCIA E EMERGÊNCIA\nA urgência e a emergência exigem rapidez, organização e capacidade de resposta.\nPequenos atrasos em um ﬂuxo mal planejado podem produzir consequências\nrelevantes para o atendimento.\nO Governo trabalhará na modernização das portas de entrada hospitalares e na\nintegração dos serviços estaduais, buscando melhorar a comunicação entre as\nunidades e organizar os ﬂuxos assistenciais.\nTambém serão priorizadas a qualiﬁcação permanente das equipes, a revisão dos\nprotocolos e a preparação da rede para situações que exijam resposta rápida e\ncoordenada.\n\n3.7 MEDICAMENTOS: GARANTIR QUE O TRATAMENTO CHEGUE AO PACIENTE\nA assistência farmacêutica precisa ser tratada também como uma questão de\ngestão. Falhas no planejamento, armazenamento ou distribuição podem\ncomprometer tratamentos e gerar desperdício de recursos públicos.\nO Estado aperfeiçoará os processos de aquisição, armazenamento e distribuição\ndos medicamentos sob sua responsabilidade, com maior integração das\ninformações e acompanhamento dos estoques.\nAs ações incluirão:\n\n\nmodernização do controle de estoques;\n\n\n\nplanejamento de compras conforme a demanda;\n\n\n\nintegração da logística;\n\n\n\nredução de perdas e desperdícios;\n\n\n\nmaior transparência na distribuição.\n\n14"
+          },
+          {
+            "id": "3-8-saude-da-mulher",
+            "titulo": "3.8 SAÚDE DA MULHER",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "3.8 SAÚDE DA MULHER\nA atenção à saúde da mulher será fortalecida ao longo de todas as fases da vida,\ncom prioridade para prevenção, diagnóstico precoce e assistência adequada.\nO Governo buscará ampliar o acesso aos exames preventivos, fortalecer a\nassistência materna e incentivar um pré-natal de qualidade, além de aprimorar o\natendimento relacionado ao climatério e a outras necessidades especíﬁcas.\nTambém serão reforçadas as ações de prevenção e diagnóstico precoce dos\nprincipais tipos de câncer que atingem as mulheres.\n\n3.9 CRIANÇAS E ADOLESCENTES\nCuidar da saúde desde os primeiros anos de vida é uma das formas mais eﬁcientes\nde prevenir problemas futuros.\nA política estadual dará atenção à redução da mortalidade infantil, ao\nfortalecimento da assistência neonatal e à vacinação, além do acompanhamento\ndo desenvolvimento das crianças.\nTambém serão consideradas as necessidades de crianças e adolescentes com\ndoenças crônicas e condições de saúde que demandem acompanhamento\nespecializado, incluindo doenças raras.\n\n3.10 ENVELHECIMENTO COM SAÚDE E AUTONOMIA\nO aumento da expectativa de vida exige que o sistema de saúde esteja preparado\npara atender uma população cada vez mais idosa.\nO Estado fortalecerá políticas de cuidado integral, prevenção e acompanhamento\ndas doenças crônicas, além de incentivar ações voltadas ao envelhecimento ativo.\nA assistência especializada deverá ser qualiﬁcada para lidar com as necessidades\npróprias dessa fase da vida, buscando preservar não apenas a saúde, mas também\na autonomia e a qualidade de vida da pessoa idosa.\n\n3.11 SAÚDE MENTAL\nA saúde mental deve ser tratada como parte integrante da saúde pública. O\nGoverno fortalecerá a Rede de Atenção Psicossocial e buscará melhorar a\narticulação entre os serviços especializados e a atenção oferecida nos municípios.\n\n15"
+          },
+          {
+            "id": "a-estrategia-tera-como-base-o-cuidado-humanizado-a-prevencao-e-a-promoca",
+            "titulo": "A estratégia terá como base o cuidado humanizado, a prevenção e a promoção da",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "A estratégia terá como base o cuidado humanizado, a prevenção e a promoção da\nsaúde mental, com capacitação dos proﬁssionais e integração dos diferentes\npontos de atendimento.\nO Estado também atuará em parceria com os municípios dentro das competências\nestabelecidas pelo SUS, buscando evitar que pessoas em sofrimento psíquico\nﬁquem sem acompanhamento adequado.\n\n3.12 PROFISSIONAIS DE SAÚDE: QUEM CUIDA TAMBÉM PRECISA SER CUIDADO\nNenhuma política de saúde funciona sem proﬁssionais preparados e em condições\nadequadas de trabalho. Médicos, enfermeiros, técnicos, agentes, ﬁsioterapeutas,\npsicólogos, farmacêuticos e os demais trabalhadores da área estão na linha de\nfrente do atendimento à população.\nA valorização proﬁssional será tratada não apenas como uma questão\nremuneratória, mas também como investimento na qualidade do serviço público.\nO Governo buscará:\n\n\nampliar programas de educação permanente;\n\n\n\noferecer oportunidades de qualiﬁcação;\n\n\n\nmelhorar as condições de trabalho;\n\n\n\nfortalecer a segurança nos ambientes de saúde;\n\n\n\naperfeiçoar a gestão das equipes e das unidades.\n\nAs políticas de gestão por desempenho institucional, quando adotadas, deverão\nrespeitar a legislação e considerar as características próprias de cada serviço.\n\n3.13 GESTÃO, TRANSPARÊNCIA E RESPONSABILIDADE\nA saúde pública movimenta grande volume de recursos e envolve uma estrutura\ncomplexa. Por isso, precisa de planejamento, controle e acompanhamento\npermanente.\nA Secretaria de Estado da Saúde Pública deverá trabalhar com metas e indicadores\ncapazes de mostrar onde os recursos estão sendo aplicados e quais resultados\nestão sendo alcançados.\nA gestão será orientada por:\n\n\nplanejamento estratégico;\n16"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "\n\nmonitoramento de indicadores;\n\n\n\ntransparência ativa;\n\n\n\nfortalecimento do controle interno;\n\n\n\navaliação periódica das políticas públicas;\n\n\n\nprestação de contas à sociedade.\n\nA prioridade será fazer com que a gestão da saúde deixe de ser medida apenas pelo\nvolume de recursos empregados e passe a ser avaliada principalmente pelo serviço\nefetivamente entregue à população.\n\n3.14 O RESULTADO QUE QUEREMOS ENTREGAR\nAo ﬁnal do mandato, o objetivo é ter uma rede estadual mais organizada, moderna\ne integrada, com menor tempo de espera, hospitais melhor estruturados, maior\noferta de serviços especializados e atendimento mais próximo da população do\ninterior.\nMais do que ampliar estruturas, a proposta é fazer a rede funcionar melhor.\nUma saúde pública eﬁciente precisa combinar gestão, tecnologia, estrutura e\nproﬁssionais valorizados, mas não pode perder aquilo que deve estar no centro de\ntodo o sistema: a pessoa que procura atendimento e precisa ser tratada com\nrespeito, dignidade e eﬁciência.\n\n4. EDUCAÇÃO, CIÊNCIA, TECNOLOGIA E INOVAÇÃO\n\n4.1 EDUCAÇÃO COMO BASE PARA O FUTURO\nA educação será tratada como uma das principais prioridades do Governo do\nEstado. É por meio dela que se amplia a capacidade das pessoas, se reduzem\ndesigualdades e se criam as condições para o desenvolvimento econômico e\nsocial.\nO desaﬁo do Rio Grande do Norte não é apenas garantir que o aluno esteja na\nescola, mas assegurar que ele aprenda, permaneça estudando e encontre, ao ﬁnal\nde sua formação, condições para seguir seus estudos, ingressar no mercado de\ntrabalho ou empreender.\n17"
+          },
+          {
+            "id": "para-isso-sera-necessario-fortalecer-a-rede-estadual-melhorar-a-infraest",
+            "titulo": "Para isso, será necessário fortalecer a rede estadual, melhorar a infraestrutura das",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Para isso, será necessário fortalecer a rede estadual, melhorar a infraestrutura das\nescolas, valorizar os proﬁssionais da educação e incorporar novas tecnologias ao\nprocesso de ensino.\nA política educacional será articulada às áreas de ciência, tecnologia, inovação e\nformação proﬁssional. A escola deve preparar o estudante não apenas para as\nproﬁssões que existem hoje, mas também para um mercado de trabalho que está\nem constante transformação.\nEntre as prioridades do Governo estarão:\n melhorar os indicadores de aprendizagem;\n reduzir a evasão e o abandono escolar;\n valorizar os proﬁssionais da educação;\n ampliar o ensino técnico e proﬁssionalizante;\n modernizar a infraestrutura das escolas;\n expandir o acesso às tecnologias digitais;\n estimular a ciência, a pesquisa e a inovação.\n\n4.2 VALORIZAÇÃO DE QUEM ENSINA\nNão existe educação pública de qualidade sem professores e proﬁssionais da\neducação preparados, respeitados e em boas condições de trabalho.\nA valorização proﬁssional será tratada de forma ampla, envolvendo formação,\ndesenvolvimento de carreira, condições adequadas para o exercício da função e\nmelhoria dos ambientes escolares.\nO Governo buscará ampliar programas de formação continuada e aperfeiçoamento\npedagógico, aproximando a capacitação das necessidades concretas encontradas\nnas salas de aula.\nTambém serão estimuladas iniciativas de desenvolvimento proﬁssional e de\ncompartilhamento de boas práticas entre as escolas da rede estadual.\nA gestão democrática das unidades de ensino será fortalecida nos limites da\nlegislação, com incentivo à participação da comunidade escolar e ao diálogo entre\ngestores, professores, estudantes e famílias.\n\n4.3 ESCOLAS MELHORES, AMBIENTES MELHORES PARA APRENDER\n18"
+          },
+          {
+            "id": "a-estrutura-fisica-da-escola-interfere-diretamente-na-experiencia-de-alu",
+            "titulo": "A estrutura física da escola interfere diretamente na experiência de alunos e",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "A estrutura física da escola interfere diretamente na experiência de alunos e\nproﬁssionais. Por isso, será implantado um programa permanente de recuperação,\nmanutenção e modernização da rede estadual.\nAs intervenções deverão considerar as necessidades especíﬁcas de cada unidade,\npriorizando segurança, acessibilidade, conforto e condições adequadas de\naprendizagem.\nEntre as ações previstas estão:\n reforma e manutenção das unidades;\n ampliação da acessibilidade;\n modernização dos laboratórios;\n fortalecimento e expansão das bibliotecas;\n melhoria da conectividade;\n implantação gradual de salas de aula digitais.\n\nA modernização não será entendida apenas como construção ou reforma de\nprédios. Uma escola moderna precisa também estar conectada, equipada e\npreparada para utilizar novos recursos pedagógicos.\n\n4.4 EDUCAÇÃO EM TEMPO INTEGRAL\nA ampliação da educação em tempo integral será buscada de maneira planejada e\nsustentável, considerando as necessidades de cada região e a capacidade\norçamentária do Estado.\nO tempo adicional na escola deve representar mais do que simplesmente\naumentar a permanência do aluno. A proposta é utilizar esse período para ampliar\nexperiências e desenvolver diferentes competências.\nAs escolas poderão trabalhar atividades complementares relacionadas a:\n\n\nesporte e cultura;\n\n\n\nciência e tecnologia;\n\n\n\neducação ambiental;\n\n\n\nempreendedorismo;\n\n\n\ncidadania;\n\n\n\nprojetos de desenvolvimento pessoal e social.\n19"
+          },
+          {
+            "id": "a-expansao-sera-acompanhada-de-planejamento-pedagogico-e-adequacao-da",
+            "titulo": "A expansão será acompanhada de planejamento pedagógico e adequação da",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "A expansão será acompanhada de planejamento pedagógico e adequação da\ninfraestrutura, evitando que o modelo seja implantado sem que a escola tenha\ncondições de oferecer uma jornada ampliada com qualidade.\n\n4.5 ENSINO TÉCNICO E PROFISSIONALIZANTE\nA educação precisa dialogar com a realidade econômica do Estado. O\nfortalecimento do ensino técnico e proﬁssionalizante será, portanto, uma das\nprincipais estratégias para aproximar os jovens das oportunidades de trabalho.\nA oferta de cursos deverá considerar as vocações econômicas de cada região e as\nnecessidades identiﬁcadas pelo setor produtivo.\nO Governo buscará ampliar parcerias com universidades, institutos federais,\nSistema S, empresas e outras instituições de formação proﬁssional.\nTambém serão estimulados:\nCursos conectados à economia regional: formação relacionada às atividades\nprodutivas existentes e aos novos investimentos de cada região.\nFormação tecnológica: cursos voltados às áreas de tecnologia, inovação,\nindústria, energia e serviços digitais.\nEmpreendedorismo juvenil: desenvolvimento de conhecimentos que permitam\nao estudante compreender oportunidades de negócio e desenvolver projetos\npróprios.\nA intenção é fazer com que a escola seja também uma porta de entrada para o\nmundo do trabalho, sem transformar a educação em simples preparação\nproﬁssional.\n\n4.6 INCLUSÃO DIGITAL E A ESCOLA DO FUTURO\nA transformação tecnológica está mudando a forma como as pessoas estudam,\ntrabalham e se comunicam. A escola pública precisa acompanhar essa\ntransformação.\nO Governo ampliará a conectividade das escolas estaduais e estimulará o uso\npedagógico das ferramentas digitais. Professores deverão receber formação para\nutilizar esses recursos de maneira adequada, enquanto os estudantes serão\npreparados para desenvolver competências digitais e utilizar a tecnologia com\nresponsabilidade.\n\n20"
+          },
+          {
+            "id": "tambem-serao-estudadas-solucoes-para-ampliar-o-uso-de-plataformas",
+            "titulo": "Também serão estudadas soluções para ampliar o uso de plataformas",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Também serão estudadas soluções para ampliar o uso de plataformas\neducacionais, recursos digitais e ferramentas de apoio à aprendizagem.\nA tecnologia deverá ser entendida como instrumento para melhorar o ensino, e não\ncomo substituta do professor.\n\n4.7 CIÊNCIA, PESQUISA E INOVAÇÃO\nO Rio Grande do Norte possui universidades, instituições de pesquisa e\nproﬁssionais capazes de produzir conhecimento em áreas estratégicas. O desaﬁo\né aproximar essa produção das necessidades do Estado.\nO Governo fortalecerá os mecanismos estaduais de apoio à pesquisa e buscará\nampliar a cooperação entre universidades, centros de pesquisa, empresas e\nAdministração Pública.\nSerão incentivados projetos cientíﬁcos e tecnológicos capazes de gerar soluções\npara problemas concretos do Estado, especialmente nas áreas relacionadas às\nsuas principais vocações econômicas.\nTambém serão apoiados ambientes de inovação, incubadoras e startups, criando\nmelhores condições para que ideias desenvolvidas no Rio Grande do Norte possam\nse transformar em produtos, serviços e novos negócios.\n\n4.8 EDUCAÇÃO PARA O EMPREENDEDORISMO\nO empreendedorismo será trabalhado como uma forma de desenvolver autonomia,\ncriatividade e capacidade de resolver problemas.\nOs estudantes poderão ter contato, de acordo com a etapa de ensino, com\nconhecimentos básicos relacionados a:\n educação ﬁnanceira;\n planejamento e gestão;\n inovação;\n economia criativa;\n cooperativismo;\n sustentabilidade.\n\nA proposta não é transformar todos os estudantes em empresários. É oferecer\nferramentas para que compreendam melhor o funcionamento da economia,\n21"
+          },
+          {
+            "id": "saibam-tomar-decisoes-e-estejam-preparados-para-diferentes-caminhos",
+            "titulo": "saibam tomar decisões e estejam preparados para diferentes caminhos",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "saibam tomar decisões e estejam preparados para diferentes caminhos\nproﬁssionais.\n\n4.9 UMA ESCOLA QUE INCLUA TODOS\nA educação pública deve garantir condições para que todos os estudantes possam\naprender e permanecer na escola.\nA política de educação inclusiva será fortalecida para atender estudantes com\ndeﬁciência, transtornos do desenvolvimento e altas habilidades, respeitando a\nlegislação e as necessidades individuais.\nIsso exigirá investimentos em formação proﬁssional, acessibilidade e recursos\npedagógicos adequados, além do fortalecimento do apoio especializado.\nA inclusão não deve ser medida apenas pela matrícula. O objetivo é garantir\nparticipação, aprendizagem, permanência e desenvolvimento.\n\n4.10 CULTURA, ESPORTE E CIDADANIA\nA escola também é espaço de convivência, formação cultural e desenvolvimento\nde valores.\nO Governo apoiará projetos que aproximem os estudantes de atividades esportivas\ne culturais, além de iniciativas relacionadas à educação ambiental, participação\nestudantil, direitos humanos, cidadania e voluntariado.\nEssas atividades deverão complementar o processo pedagógico e contribuir para\numa formação mais ampla, estimulando disciplina, responsabilidade, criatividade,\nconvivência e participação social.\n\n4.11 GESTÃO EDUCACIONAL ORIENTADA POR RESULTADOS\nA Secretaria de Estado da Educação deverá utilizar dados para identiﬁcar\nproblemas, acompanhar resultados e direcionar melhor os recursos públicos.\nO planejamento educacional será acompanhado por indicadores de\naprendizagem, frequência, evasão, conclusão e desempenho das unidades, entre\noutros dados relevantes.\nTambém serão fortalecidos:\n planejamento estratégico;\n\n22"
+          },
+          {
+            "id": "avaliacao-periodica-das-politicas-educacionais",
+            "titulo": " avaliação periódica das políticas educacionais;",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": " avaliação periódica das políticas educacionais;\n transparência na aplicação dos recursos;\n utilização de dados para tomada de decisão;\n cooperação com os municípios.\n\nEssa cooperação deverá respeitar o regime de colaboração estabelecido pela\nConstituição, reconhecendo as responsabilidades próprias de cada ente\nfederativo.\nA gestão por resultados não signiﬁca reduzir a educação a números. Os indicadores\ndevem servir para identiﬁcar onde estão os problemas e orientar as decisões\nnecessárias para enfrentá-los.\n\n4.12 O RESULTADO QUE QUEREMOS ALCANÇAR\nAo ﬁnal do mandato, a meta é consolidar uma rede estadual mais estruturada,\ninclusiva e preparada para os desaﬁos do futuro.\nIsso signiﬁca melhorar a aprendizagem, reduzir o abandono escolar, ampliar a\neducação em tempo integral de forma responsável, fortalecer o ensino técnico e\naproximar a escola das novas tecnologias e das oportunidades do mercado de\ntrabalho.\nAo mesmo tempo, o Estado deverá criar um ambiente mais favorável à pesquisa, à\nciência e à inovação, aproximando universidades, empresas e poder público.\nInvestir em educação é preparar o Rio Grande do Norte para competir no presente\ne construir o seu futuro. É garantir que cada estudante tenha mais condições de\naprender, escolher seu caminho e participar do desenvolvimento do Estado.\n\n5. SEGURANÇA PÚBLICA, DEFESA SOCIAL E SISTEMA PENITENCIÁRIO\n\n5.1 SEGURANÇA COMO DEVER DO ESTADO E DIREITO DO CIDADÃO\nSegurança pública é um direito fundamental e uma das responsabilidades mais\nimportantes do poder público. O cidadão precisa ter a conﬁança de que poderá\ntrabalhar, estudar, circular e viver com sua família sem estar permanentemente\nexposto à violência.\nO Governo do Estado atuará no fortalecimento das instituições de segurança, na\nintegração entre as forças policiais, no combate ao crime organizado e na\n23"
+          },
+          {
+            "id": "prevencao-da-violencia-a-estrategia-sera-baseada-em-planejamento-intelig",
+            "titulo": "prevenção da violência. A estratégia será baseada em planejamento, inteligência,",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "prevenção da violência. A estratégia será baseada em planejamento, inteligência,\ntecnologia e presença efetiva do Estado.\nA política de segurança também deverá ser construída em cooperação com os\nmunicípios, a União e as instituições que integram o sistema de justiça, respeitando\nas competências estabelecidas pela Constituição e pela legislação.\nEntre as prioridades estarão a redução dos índices de criminalidade, o\nfortalecimento das forças de segurança, a valorização dos proﬁssionais, a\nmodernização das estruturas e a ampliação do uso de inteligência e tecnologia.\n\n5.2 INTEGRAÇÃO DAS FORÇAS DE SEGURANÇA\nO combate à criminalidade exige que as instituições trabalhem de maneira\ncoordenada. Polícia Militar, Polícia Civil, Corpo de Bombeiros Militar, Instituto\nTécnico-Cientíﬁco de Perícia (ITEP) e Polícia Penal possuem funções distintas, mas\nfazem parte de uma mesma estratégia de proteção da sociedade.\nO Governo buscará aperfeiçoar a comunicação e a cooperação entre esses órgãos,\nevitando a fragmentação de informações e esforços.\nTambém será ampliada, dentro das competências legais, a cooperação com órgãos\nfederais, municípios e demais instituições do sistema de justiça.\n\n5.3 INTELIGÊNCIA, TECNOLOGIA E INFORMAÇÃO\nO uso inteligente da tecnologia será uma das principais ferramentas para\nmodernizar a segurança pública.\nO Estado buscará ampliar a capacidade de monitoramento e análise de\ninformações, utilizando dados para orientar o policiamento, identiﬁcar padrões de\ncriminalidade e direcionar recursos para os locais onde eles sejam mais\nnecessários.\nEntre as iniciativas previstas estão:\n ampliação do videomonitoramento em áreas estratégicas;\n modernização dos sistemas de comunicação;\n integração de bases de informação, observada a legislação aplicável;\n utilização de ferramentas de análise de dados;\n fortalecimento dos centros integrados de monitoramento;\n\n24"
+          },
+          {
+            "id": "modernizacao-dos-recursos-empregados-pela-inteligencia-policial",
+            "titulo": " modernização dos recursos empregados pela inteligência policial.",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": " modernização dos recursos empregados pela inteligência policial.\n\nA tecnologia deverá servir ao trabalho dos proﬁssionais, permitindo que as forças\nde segurança atuem de maneira mais rápida, coordenada e eﬁciente.\n\n5.4 VALORIZAÇÃO DOS PROFISSIONAIS DE SEGURANÇA\nNenhuma política de segurança será eﬁciente sem proﬁssionais preparados e em\ncondições adequadas para exercer suas funções.\nO Governo buscará ampliar a formação e a capacitação continuada, melhorar as\ncondições de trabalho e modernizar equipamentos de proteção e instrumentos\nutilizados pelas forças de segurança.\nTambém serão desenvolvidas ações voltadas à saúde e ao bem-estar dos\nservidores, considerando as características e os riscos próprios da atividade\npolicial e de defesa social.\nA gestão por resultados institucionais poderá ser utilizada como ferramenta de\nplanejamento e avaliação, sempre observando a legislação vigente e as\nparticularidades de cada órgão.\n\n5.5 POLÍCIA MILITAR\nA Polícia Militar terá papel central na prevenção e no enfrentamento da\ncriminalidade por meio do policiamento ostensivo e da preservação da ordem\npública.\nO Governo buscará aperfeiçoar o planejamento operacional, utilizando indicadores\nde criminalidade e informações territoriais para deﬁnir a distribuição do efetivo e o\nemprego dos recursos.\nTambém serão priorizadas a modernização da frota, a renovação de equipamentos,\na incorporação de novas tecnologias ao patrulhamento e a capacitação\npermanente dos policiais militares.\nA presença policial deverá ser orientada pela realidade de cada região, buscando\nmaior eﬁciência no emprego do efetivo disponível.\n\n5.6 POLÍCIA CIVIL E INVESTIGAÇÃO CRIMINAL\n\n25"
+          },
+          {
+            "id": "o-enfrentamento-da-criminalidade-nao-termina-com-a-ocorrencia-policial-a",
+            "titulo": "O enfrentamento da criminalidade não termina com a ocorrência policial. A",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "O enfrentamento da criminalidade não termina com a ocorrência policial. A\ninvestigação é fundamental para identiﬁcar autores, desarticular organizações\ncriminosas e garantir que os crimes sejam devidamente apurados.\nA Polícia Civil será fortalecida com investimentos em estrutura, tecnologia e\ninteligência investigativa. O Governo buscará também melhorar os ﬂuxos internos\ne a gestão dos inquéritos e procedimentos policiais.\nA atuação da Polícia Civil será integrada às demais instituições, especialmente à\nperícia oﬁcial, permitindo maior agilidade na produção e utilização das provas\nnecessárias à investigação.\n\n5.7 SISTEMA PENITENCIÁRIO E POLÍCIA PENAL\nO sistema penitenciário precisa garantir segurança, disciplina e condições\nadequadas para o cumprimento das penas, sem perder de vista a ﬁnalidade de\nreintegração social prevista na legislação.\nO Governo trabalhará para melhorar a infraestrutura das unidades prisionais,\nfortalecer a segurança interna e aperfeiçoar a gestão penitenciária.\nTambém serão incentivados programas de educação, capacitação proﬁssional e\nreintegração social das pessoas privadas de liberdade, de acordo com as normas\naplicáveis.\nO fortalecimento da Polícia Penal será acompanhado da modernização dos\nprocedimentos e das estruturas necessárias ao desempenho de suas funções.\n\n5.8 ITEP E PERÍCIA OFICIAL\nUma investigação eﬁciente depende de uma perícia capaz de produzir informações\ntécnicas com qualidade e dentro de prazos adequados.\nO Instituto Técnico-Cientíﬁco de Perícia será fortalecido por meio da modernização\nde laboratórios, renovação de equipamentos e capacitação permanente de seus\nproﬁssionais.\nTambém serão buscadas medidas para aumentar a eﬁciência na produção de\nlaudos e fortalecer tanto a perícia criminal quanto a perícia médico-legal.\n\n5.9 CORPO DE BOMBEIROS E DEFESA CIVIL\n\n26"
+          },
+          {
+            "id": "a-protecao-da-populacao-nao-se-limita-ao-combate-a-criminalidade-o-estad",
+            "titulo": "A proteção da população não se limita ao combate à criminalidade. O Estado",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "A proteção da população não se limita ao combate à criminalidade. O Estado\ntambém precisa estar preparado para responder a incêndios, acidentes,\nenchentes, secas, deslizamentos e outros eventos capazes de ameaçar vidas e\npatrimônios.\nO Corpo de Bombeiros Militar terá sua capacidade operacional fortalecida, com\ninvestimentos em equipamentos, viaturas, capacitação e estrutura.\nA política estadual de proteção e defesa civil será integrada às ações de prevenção\ne resposta a desastres, com maior articulação com os municípios.\n\n5.10 PREVENÇÃO DA VIOLÊNCIA\nO enfrentamento da violência não pode depender exclusivamente da atuação\npolicial. A prevenção também passa por políticas capazes de ampliar\noportunidades, especialmente para crianças, adolescentes e jovens em situação\nde vulnerabilidade.\nO Governo buscará atuar em conjunto com municípios e instituições da sociedade\npara estimular iniciativas nas áreas de esporte, cultura, qualiﬁcação proﬁssional,\ninclusão social e mediação de conﬂitos.\nA prevenção deverá ser direcionada prioritariamente às regiões e grupos onde os\nindicadores apontem maior exposição à violência.\n\n5.11 SEGURANÇA NO CAMPO\nA população rural também precisa estar protegida. Distâncias maiores, menor\npresença de serviços públicos e características próprias do território exigem\nestratégias especíﬁcas de policiamento.\nO Governo fortalecerá o planejamento operacional nas áreas rurais, utilizando\ntecnologia e integração entre as forças de segurança para melhorar a capacidade\nde resposta.\nA atuação será desenvolvida em diálogo com comunidades rurais, produtores e\nmunicípios, respeitando as competências legais do Estado.\n\n5.12 GESTÃO POR RESULTADOS\nA política de segurança será acompanhada por indicadores capazes de mostrar\nonde os problemas estão concentrados e quais ações estão produzindo\nresultados.\n27"
+          },
+          {
+            "id": "os-orgaos-estaduais-deverao-trabalhar-com-planejamento-estrategico-metas",
+            "titulo": "Os órgãos estaduais deverão trabalhar com planejamento estratégico, metas",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Os órgãos estaduais deverão trabalhar com planejamento estratégico, metas\ninstitucionais e avaliação periódica, permitindo corrigir estratégias quando\nnecessário.\nA população também deverá ter acesso a informações sobre os principais\nindicadores de segurança, ampliando a transparência e o controle social.\nMais do que aumentar números de operações ou equipamentos, a avaliação deverá\nconsiderar aquilo que realmente interessa: redução da criminalidade, maior\ncapacidade de investigação, resposta mais rápida e melhoria da proteção oferecida\nà população.\n\n5.13 O RESULTADO QUE QUEREMOS ALCANÇAR\nAo ﬁnal do mandato, o objetivo é consolidar uma política de segurança pública mais\nintegrada, proﬁssional e moderna, capaz de utilizar melhor os recursos disponíveis\ne responder com maior eﬁciência aos diferentes tipos de criminalidade.\nIsso signiﬁca fortalecer as polícias, a perícia, o Corpo de Bombeiros e a Polícia\nPenal; investir em inteligência e tecnologia; melhorar as condições de trabalho dos\nproﬁssionais; modernizar o sistema penitenciário e ampliar as ações de prevenção.\nA segurança pública será tratada como uma política permanente de Estado,\nbaseada em planejamento, integração e responsabilidade, com uma ﬁnalidade que\nnão pode ser perdida de vista: proteger a vida, preservar a ordem pública e garantir\nao cidadão o direito de viver com segurança.\n\n6.INFRAESTRUTURA, LOGÍSTICA, MOBILIDADE E RECURSOS HÍDRICOS\n\n6.1 INFRAESTRUTURA COMO BASE DO DESENVOLVIMENTO\nInfraestrutura não é apenas uma área de atuação do Governo. É uma condição para\nque as demais políticas públicas e atividades econômicas possam funcionar. Uma\nestrada em boas condições reduz custos de transporte, uma rede hídrica adequada\ngarante segurança para a população e para a produção, e uma conexão digital de\nqualidade amplia as oportunidades de trabalho, educação e negócios.\nO Rio Grande do Norte precisa superar gargalos históricos de infraestrutura e\nutilizar os investimentos públicos de maneira mais estratégica. O Governo deverá\nconcentrar recursos em projetos capazes de produzir impacto econômico e social,\n28"
+          },
+          {
+            "id": "levando-em-consideracao-as-necessidades-de-cada-regiao-e-a-capacidade",
+            "titulo": "levando em consideração as necessidades de cada região e a capacidade",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "levando em consideração as necessidades de cada região e a capacidade\nﬁnanceira do Estado.\nOs investimentos serão planejados com critérios técnicos, transparência,\nsustentabilidade e responsabilidade ﬁscal. A prioridade não será simplesmente\nrealizar mais obras, mas realizar as obras certas, nos lugares certos e com\ncapacidade de manutenção ao longo do tempo.\nEntre os objetivos centrais estarão a melhoria da malha rodoviária, o fortalecimento\nda logística, a ampliação da segurança hídrica, a expansão da conectividade e o\napoio à modernização das estruturas portuárias e aeroportuárias, sempre em\narticulação com os órgãos responsáveis.\n\n6.2 RODOVIAS ESTADUAIS E MOBILIDADE REGIONAL\nA condição das rodovias estaduais afeta diretamente a vida da população e a\neconomia potiguar. Para quem mora no interior, a estrada é muitas vezes o principal\nmeio de acesso a hospitais, escolas, centros comerciais e serviços públicos. Para\no setor produtivo, representa o caminho entre a produção e o mercado consumidor.\nSerá implantado um Programa Permanente de Recuperação e Conservação das\nRodovias Estaduais, baseado não apenas na recuperação de trechos deteriorados,\nmas também na manutenção preventiva.\nAs intervenções deverão considerar o ﬂuxo de veículos, a importância econômica\ndas regiões atendidas, a circulação de pessoas e o nível de deterioração de cada\ntrecho. A sinalização e a segurança viária também serão tratadas como parte\nintegrante da política rodoviária.\nA mobilidade regional será planejada de forma integrada, buscando melhorar a\nligação entre os municípios e os principais centros urbanos e polos produtivos do\nEstado. O Governo também estudará alternativas para aperfeiçoar o transporte\nintermunicipal dentro de suas competências.\n\n6.3 SEGURANÇA HÍDRICA: ÁGUA COMO PRIORIDADE\nPara um Estado marcado pelo semiárido, a água não pode ser tratada apenas como\nresposta emergencial às secas. Segurança hídrica exige planejamento\npermanente, manutenção da infraestrutura existente e capacidade de antecipar\nperíodos de escassez.\n\n29"
+          },
+          {
+            "id": "o-governo-fortalecera-a-gestao-dos-recursos-hidricos-e-buscara-garantir",
+            "titulo": "O Governo fortalecerá a gestão dos recursos hídricos e buscará garantir maior",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "O Governo fortalecerá a gestão dos recursos hídricos e buscará garantir maior\nconﬁabilidade aos sistemas de abastecimento, especialmente nas regiões mais\nvulneráveis.\nA política estadual deverá integrar abastecimento humano, produção agrícola,\natividade econômica e preservação dos recursos naturais. Também será ampliado\no monitoramento da disponibilidade e da qualidade da água, permitindo decisões\nmais rápidas em períodos de estiagem.\nA infraestrutura hídrica existente deverá receber atenção permanente. Canais,\nadutoras, reservatórios, sistemas de abastecimento e demais estruturas sob\nresponsabilidade estadual precisam funcionar de forma adequada antes que uma\nsituação de emergência se estabeleça.\n\n6.4 CONVIVÊNCIA COM A SECA\nO semiárido faz parte da realidade do Rio Grande do Norte e exige políticas que não\ndependam exclusivamente de medidas emergenciais.\nO Estado trabalhará na prevenção dos efeitos da estiagem e no fortalecimento da\ncapacidade de resposta dos municípios, especialmente daqueles mais\nvulneráveis.\nSerão estimuladas ações de recuperação e ampliação dos sistemas de\nabastecimento sob responsabilidade estadual, apoio técnico às administrações\nmunicipais e planejamento antecipado para períodos de escassez.\nA gestão eﬁciente da água deverá estar associada à adoção de tecnologias que\nreduzam perdas e permitam seu uso mais racional, especialmente na agricultura e\nem atividades econômicas que dependem diretamente desse recurso.\n\n6.5 INFRAESTRUTURA PARA A NOVA ECONOMIA\nA expansão dos setores de energia e tecnologia também exige infraestrutura\nadequada. O crescimento da geração eólica e solar, da produção de petróleo e gás\ne de novas atividades relacionadas à transição energética dependerá de estruturas\ncapazes de acompanhar esses investimentos.\nO Governo atuará institucionalmente para facilitar a implantação dos projetos\nnecessários, respeitando as competências dos órgãos responsáveis e a legislação\naplicável.\n\n30"
+          },
+          {
+            "id": "tambem-serao-acompanhadas-as-oportunidades-relacionadas-ao-hidrogenio-de",
+            "titulo": "Também serão acompanhadas as oportunidades relacionadas ao hidrogênio de",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Também serão acompanhadas as oportunidades relacionadas ao hidrogênio de\nbaixa emissão de carbono e a outras tecnologias energéticas que possam\ncontribuir para a diversiﬁcação da economia potiguar.\n\n6.6 PORTOS, AEROPORTOS E INTEGRAÇÃO LOGÍSTICA\nA localização do Rio Grande do Norte oferece uma oportunidade que precisa ser\nmelhor aproveitada. A proximidade com mercados internacionais e a posição\ngeográﬁca do Estado podem contribuir para ampliar o comércio exterior e atrair\nnovos investimentos.\nO Governo buscará atuar junto à União, municípios, operadores e iniciativa privada\npara defender investimentos e melhorias nas estruturas portuárias e aeroportuárias\ndo Estado.\nA estratégia será voltada à integração dos diferentes modais de transporte,\naproximando rodovias, portos, aeroportos e polos produtivos.\nO objetivo é reduzir custos logísticos e tornar o Estado mais competitivo para\nempresas que produzem, comercializam ou exportam seus produtos.\n\n6.7 CONECTIVIDADE DIGITAL\nA infraestrutura do século XXI também passa pelas redes de comunicação. O\nacesso à internet de qualidade inﬂuencia diretamente a educação, a saúde, o\ntrabalho, os negócios e a prestação de serviços públicos.\nO Governo incentivará a expansão da conectividade para regiões ainda pouco\natendidas, apoiando a implantação de redes de alta velocidade e buscando reduzir\nas desigualdades digitais entre áreas urbanas e rurais.\nTambém será modernizada a infraestrutura tecnológica utilizada pela própria\nAdministração Pública, criando condições para ampliar os serviços digitais e\nestimular o desenvolvimento da economia digital.\n\n6.8 OBRAS PÚBLICAS COM PLANEJAMENTO E CONTROLE\nUma obra pública não pode ser planejada apenas no momento de sua contratação.\nAntes de iniciar um projeto, o Estado precisa conhecer sua necessidade, seu custo,\nsua capacidade de execução e os recursos necessários para sua manutenção.\nA gestão das obras estaduais será orientada por planejamento físico e ﬁnanceiro,\nacompanhamento dos cronogramas e transparência dos contratos.\n31"
+          },
+          {
+            "id": "tambem-sera-fortalecida-a-scalizacao-com-utilizacao-de-indicadores-capaz",
+            "titulo": "Também será fortalecida a ﬁscalização, com utilização de indicadores capazes de",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Também será fortalecida a ﬁscalização, com utilização de indicadores capazes de\nidentiﬁcar atrasos, alterações de custos e problemas de execução.\n\n6.9 INFRAESTRUTURA PARA REDUZIR DESIGUALDADES REGIONAIS\nOs investimentos estaduais deverão considerar não apenas o tamanho da obra,\nmas o impacto que ela produz na vida da população.\nA deﬁnição de prioridades deverá levar em conta fatores como população\nbeneﬁciada, importância econômica, integração regional, redução de\ndesigualdades e sustentabilidade.\nIsso permitirá direcionar investimentos para áreas onde uma estrada recuperada,\num sistema de abastecimento ou uma conexão digital possa representar uma\nmudança signiﬁcativa para a população e para a economia local.\n\n6.10 SUSTENTABILIDADE E RESPONSABILIDADE NA EXECUÇÃO\nToda obra de infraestrutura deve considerar seus impactos ambientais desde a fase\nde planejamento. O crescimento econômico não pode ocorrer à custa da utilização\nirresponsável dos recursos naturais.\nOs projetos estaduais observarão a legislação ambiental aplicável e buscarão\nincorporar critérios de eﬁciência energética, redução de desperdícios, uso racional\nda água e sustentabilidade sempre que técnica e economicamente viáveis.\n\n6.11 GESTÃO E RESULTADOS\nA política de infraestrutura será acompanhada por metas, indicadores e\ncronogramas que permitam veriﬁcar o andamento dos investimentos e os\nresultados alcançados.\nA sociedade deverá ter acesso às principais informações sobre as obras, seus\ncustos, prazos e estágio de execução. O controle interno será fortalecido e as\ndecisões de investimento deverão estar vinculadas ao planejamento estratégico do\nEstado.\nA gestão da infraestrutura deverá seguir uma lógica simples: planejar antes de\ncontratar, acompanhar durante a execução e avaliar depois da entrega.\n\n6.12 O RESULTADO QUE QUEREMOS ALCANÇAR\n32"
+          },
+          {
+            "id": "ao-nal-do-mandato-a-meta-e-entregar-um-rio-grande-do-norte-com-rodovias",
+            "titulo": "Ao ﬁnal do mandato, a meta é entregar um Rio Grande do Norte com rodovias em",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Ao ﬁnal do mandato, a meta é entregar um Rio Grande do Norte com rodovias em\nmelhores condições, maior segurança hídrica, logística mais eﬁciente e\nconectividade ampliada.\nMais do que um conjunto de obras isoladas, o objetivo é construir uma\ninfraestrutura capaz de integrar as regiões, reduzir custos para quem produz,\nmelhorar o acesso da população aos serviços e criar condições para a chegada de\nnovos investimentos.\nA infraestrutura será tratada como instrumento de desenvolvimento econômico e\nsocial, com planejamento de longo prazo, responsabilidade ﬁscal, transparência e\ncompromisso com a população.\n\n7. TRANSFORMAÇÃO DIGITAL, INOVAÇÃO, MODERNIZAÇÃO DO ESTADO E\nGOVERNO INTELIGENTE\n\n7.1 UM ESTADO PREPARADO PARA O SÉCULO XXI\nO Rio Grande do Norte precisa de uma Administração Pública compatível com a\nrealidade de uma sociedade cada vez mais digital, conectada e dinâmica. A\ntransformação digital será tratada como uma política transversal, capaz de\nmelhorar a prestação dos serviços públicos, reduzir burocracias e tornar o Estado\nmais eﬁciente.\nA tecnologia, entretanto, não será vista como um ﬁm em si mesma. Seu papel será\nfacilitar a vida do cidadão, melhorar a gestão dos recursos públicos e oferecer\nmelhores condições para que o Governo tome decisões baseadas em informações\nconﬁáveis.\nA modernização administrativa também deverá aproximar o Estado da população.\nServiços mais simples, atendimento digital, informações acessíveis e processos\nmais rápidos são instrumentos para reconstruir a relação de conﬁança entre\ncidadão e poder público.\n\n7.2 GOVERNO DIGITAL E DESBUROCRATIZAÇÃO\nSerá implantado o Programa Governo Digital RN, com o objetivo de transformar\ngradualmente a relação do cidadão com a Administração Pública estadual.\n\n33"
+          },
+          {
+            "id": "a-prioridade-sera-permitir-que-o-maior-numero-possivel-de-servicos-de-co",
+            "titulo": "A prioridade será permitir que o maior número possível de serviços de competência",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "A prioridade será permitir que o maior número possível de serviços de competência\nestadual possa ser acessado de forma simples, segura e digital, sem que a\npopulação precise enfrentar deslocamentos ou procedimentos desnecessários.\nO programa deverá contemplar:\n ampliação dos serviços públicos digitais;\n integração entre sistemas administrativos;\n atendimento eletrônico ao cidadão;\n expansão do protocolo e dos processos digitais;\n redução progressiva do uso de documentos físicos;\n modernização dos procedimentos internos.\n\nA digitalização será acompanhada por uma política permanente de\ndesburocratização. Processos antigos deverão ser revisados para identiﬁcar\nexigências desnecessárias, etapas redundantes e procedimentos que possam ser\nsimpliﬁcados.\nA modernização dos processos deverá respeitar a legalidade e a segurança jurídica,\nmas sem utilizar a burocracia como justiﬁcativa para manter procedimentos que já\nnão atendem às necessidades da população.\n\n7.3 GESTÃO BASEADA EM DADOS\nUm governo moderno precisa conhecer seus problemas antes de deﬁnir suas\nsoluções. Por isso, o Estado ampliará o uso de dados e indicadores como\ninstrumentos de planejamento, acompanhamento e avaliação das políticas\npúblicas.\nAs secretarias deverão trabalhar com informações conﬁáveis e atualizadas,\npermitindo identiﬁcar gargalos, acompanhar metas e avaliar se os recursos\npúblicos estão produzindo os resultados esperados.\nSerão desenvolvidos mecanismos de monitoramento e painéis estratégicos de\ngestão, além da integração de informações entre os diferentes órgãos estaduais,\nsempre observadas as normas de proteção de dados.\n\n7.4 INTELIGÊNCIA ARTIFICIAL A SERVIÇO DO ESTADO\n\n34"
+          },
+          {
+            "id": "a-inteligencia-arti-cial-podera-ser-utilizada-como-ferramenta-de-apoio-a",
+            "titulo": "A inteligência artiﬁcial poderá ser utilizada como ferramenta de apoio à",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "A inteligência artiﬁcial poderá ser utilizada como ferramenta de apoio à\nAdministração Pública, especialmente em atividades que envolvam grande volume\nde informações, análise de dados e tarefas repetitivas.\nO Governo estudará aplicações em áreas como:\n atendimento e orientação ao cidadão;\n análise de informações administrativas;\n planejamento governamental;\n apoio à ﬁscalização;\n organização e gestão documental;\n identiﬁcação de gargalos e oportunidades de melhoria.\n\nA adoção dessas tecnologias será acompanhada de critérios de segurança,\ntransparência e supervisão humana. A inteligência artiﬁcial deverá apoiar a decisão\nadministrativa, e não substituir a responsabilidade dos agentes públicos.\n\n7.5 SEGURANÇA DA INFORMAÇÃO E PROTEÇÃO DE DADOS\nQuanto maior a digitalização dos serviços públicos, maior também será a\nresponsabilidade do Estado na proteção das informações sob sua guarda.\nO Governo fortalecerá a governança de dados e a segurança cibernética, buscando\nproteger sistemas, bases de informações e serviços essenciais contra acessos\nindevidos, ataques e interrupções.\nTambém serão adotadas medidas para capacitação dos servidores, gestão de\nriscos, planos de continuidade dos serviços digitais e adequação às normas de\nproteção de dados pessoais.\n\n7.6 INOVAÇÃO DENTRO DO GOVERNO\nA inovação não deve estar restrita às empresas de tecnologia. O próprio Estado\nprecisa criar condições para testar novas formas de prestar serviços, solucionar\nproblemas e utilizar melhor os recursos disponíveis.\nSerá estimulada uma cultura de melhoria contínua na Administração Pública,\npermitindo que servidores e gestores apresentem soluções para problemas\nconcretos e compartilhem experiências bem-sucedidas.\n\n35"
+          },
+          {
+            "id": "nesse-processo-o-governo-podera-desenvolver-laboratorios-de-inovacao-e",
+            "titulo": "Nesse processo, o Governo poderá desenvolver laboratórios de inovação e",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Nesse processo, o Governo poderá desenvolver laboratórios de inovação e\nestabelecer parcerias com universidades, centros de pesquisa, empresas e\ninstituições especializadas.\n\n7.7 GOVERNO ABERTO E TRANSPARÊNCIA\nA modernização do Estado também signiﬁca tornar as informações públicas mais\nacessíveis.\nO Governo ampliará a transparência ativa e buscará facilitar o acesso da sociedade\na dados, indicadores, contratos, programas e resultados da Administração Pública,\nobservadas as hipóteses legais de sigilo e proteção de dados.\nA participação social será fortalecida por meio do aperfeiçoamento dos canais de\ncomunicação e dos mecanismos de controle social.\nTransparência não deve signiﬁcar apenas disponibilizar grandes volumes de\ndocumentos. É preciso apresentar informações de forma compreensível,\npermitindo que o cidadão saiba onde o dinheiro está sendo aplicado, quais metas\nforam estabelecidas e quais resultados foram alcançados.\n\n7.8 SERVIDOR PÚBLICO PREPARADO PARA UM NOVO ESTADO\nA transformação administrativa depende, antes de tudo, das pessoas que fazem o\nEstado funcionar.\nPor isso, serão ampliadas as oportunidades de capacitação dos servidores em\náreas diretamente relacionadas às novas necessidades da Administração Pública.\nA formação poderá abranger:\n transformação digital;\n gestão pública;\n liderança;\n planejamento estratégico;\n gestão de projetos;\n atendimento ao cidadão;\n inovação;\n análise e utilização de dados.\n\n36"
+          },
+          {
+            "id": "a-modernizacao-nao-sera-feita-contra-o-servidor-publico-mas-com-o-servid",
+            "titulo": "A modernização não será feita contra o servidor público, mas com o servidor",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "A modernização não será feita contra o servidor público, mas com o servidor\npúblico. O objetivo é oferecer ferramentas e conhecimento para que os\nproﬁssionais possam trabalhar com mais eﬁciência e entregar melhores serviços à\npopulação.\n\n7.9 ECOSSISTEMA POTIGUAR DE TECNOLOGIA E INOVAÇÃO\nO Rio Grande do Norte possui universidades, institutos de pesquisa, empresas,\nstartups e proﬁssionais capazes de contribuir para a construção de soluções\ntecnológicas.\nO Governo atuará como articulador desse ecossistema, aproximando a produção\ncientíﬁca das necessidades do setor público e da economia estadual.\nA intenção é estimular projetos que possam gerar novas empresas, empregos\nqualiﬁcados e soluções para problemas concretos do Estado, fortalecendo a\nposição do Rio Grande do Norte na economia do conhecimento.\n\n7.10 EFICIÊNCIA E QUALIDADE NA ADMINISTRAÇÃO\nA modernização digital será acompanhada por uma revisão mais ampla dos\nmétodos de gestão do Estado.\nAs secretarias deverão trabalhar com planejamento, metas e acompanhamento de\nresultados. Processos administrativos serão avaliados de forma contínua,\nbuscando reduzir desperdícios, melhorar a produtividade e direcionar os recursos\npara as áreas prioritárias.\nA eﬁciência será compreendida não apenas como redução de custos, mas como a\ncapacidade de entregar mais e melhores serviços com os recursos disponíveis.\n\n7.11 UMA NOVA RELAÇÃO ENTRE ESTADO E CIDADÃO\nA transformação digital deverá produzir uma mudança concreta na experiência da\npopulação com o poder público.\nO cidadão não deve precisar conhecer a estrutura interna do Governo para\nconseguir acessar um serviço. A Administração é que deve organizar seus\nprocessos para facilitar esse acesso.\nNesse sentido, o Estado buscará construir serviços mais simples, integrados e\ncentrados nas necessidades do usuário, combinando atendimento digital com\n37"
+          },
+          {
+            "id": "alternativas-presenciais-para-aqueles-que-ainda-nao-possuem-acesso-ou",
+            "titulo": "alternativas presenciais para aqueles que ainda não possuem acesso ou",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "alternativas presenciais para aqueles que ainda não possuem acesso ou\nfamiliaridade com as novas tecnologias.\n\n7.12 O RESULTADO QUE QUEREMOS ALCANÇAR\nAo ﬁnal do mandato, a meta é construir uma Administração Pública estadual mais\nmoderna, digital, segura e orientada por resultados.\nO cidadão deverá encontrar serviços mais acessíveis, processos menos\nburocráticos e informações mais transparentes. O Governo, por sua vez, deverá\ncontar com melhores instrumentos para planejar, acompanhar e avaliar suas\npolíticas.\nA tecnologia será utilizada para aproximar o Estado da população, melhorar a\nqualidade dos serviços e fortalecer a capacidade de gestão.\nUm Estado inteligente não é aquele que simplesmente utiliza mais tecnologia. É\naquele que utiliza tecnologia, informação e inovação para resolver melhor os\nproblemas das pessoas.\n\n8. DESENVOLVIMENTO SOCIAL, COMBATE À POBREZA E PROMOÇÃO DA\nCIDADANIA\n\n8.1 DESENVOLVIMENTO SOCIAL COMO CAMINHO PARA A AUTONOMIA\nO desenvolvimento de um Estado não pode ser medido apenas pelo crescimento\nda economia. É preciso veriﬁcar se esse crescimento chega às famílias, amplia\noportunidades e melhora concretamente as condições de vida da população.\nO Governo atuará para reduzir situações de pobreza e vulnerabilidade, fortalecer a\nproteção social e criar condições para que as famílias possam conquistar maior\nautonomia. A política social deverá combinar proteção para quem precisa de apoio\nimediato com oportunidades para quem pode avançar por meio do trabalho, da\nqualiﬁcação e da geração de renda.\nA atuação estadual será desenvolvida em cooperação com municípios, União e\nsociedade civil, respeitando as competências constitucionais de cada ente. O\nobjetivo será evitar a fragmentação das políticas públicas e aproximar áreas como\nassistência social, educação, saúde, qualiﬁcação proﬁssional e geração de\noportunidades.\n38"
+          },
+          {
+            "id": "entre-as-prioridades-estarao",
+            "titulo": "Entre as prioridades estarão:",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Entre as prioridades estarão:\n redução da pobreza e da vulnerabilidade social;\n fortalecimento da rede estadual de assistência;\n inclusão produtiva e geração de renda;\n proteção de crianças, adolescentes e idosos;\n inclusão das pessoas com deﬁciência;\n fortalecimento da participação cidadã.\n\n8.2 ASSISTÊNCIA SOCIAL E INCLUSÃO PRODUTIVA\nO Governo apoiará o fortalecimento do Sistema Único de Assistência Social (SUAS),\nespecialmente por meio da cooperação técnica com os municípios. A atuação\nestadual deverá contribuir para qualiﬁcar a gestão, integrar informações e\nfortalecer a rede de proteção social.\nA assistência social precisa ser capaz de identiﬁcar situações de vulnerabilidade e\nencaminhar as famílias para as políticas públicas adequadas. Ao mesmo tempo,\ndeve existir uma estratégia para que aqueles que tenham condições de superar a\nsituação de vulnerabilidade encontrem caminhos para a autonomia.\nNesse sentido, serão fortalecidas ações de inclusão produtiva, aproximando\npolíticas sociais das oportunidades de trabalho e geração de renda.\nPoderão ser priorizadas iniciativas relacionadas a:\n qualiﬁcação proﬁssional;\n empreendedorismo;\n economia solidária;\n cooperativismo;\n apoio aos pequenos negócios;\n integração com programas de emprego e formação proﬁssional.\n\nA proposta é transformar a política social em uma ponte entre a proteção\nnecessária no presente e as oportunidades capazes de mudar a realidade das\nfamílias no futuro.\n\n8.3 PROTEÇÃO À INFÂNCIA E À ADOLESCÊNCIA\n39"
+          },
+          {
+            "id": "a-protecao-de-criancas-e-adolescentes-sera-tratada-como-prioridade-perma",
+            "titulo": "A proteção de crianças e adolescentes será tratada como prioridade permanente.",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "A proteção de crianças e adolescentes será tratada como prioridade permanente.\nO Governo fortalecerá a articulação com os municípios e demais instituições\nresponsáveis pela garantia dos direitos da infância e da adolescência.\nSerão apoiadas ações de prevenção à violência, fortalecimento das redes de\nproteção e promoção da convivência familiar e comunitária.\nA política estadual também deverá considerar a importância da educação, do\nesporte, da cultura e da inclusão social como instrumentos de prevenção de\nsituações de vulnerabilidade.\n\n8.4 JUVENTUDE E OPORTUNIDADES\nA juventude precisa encontrar no Estado oportunidades para estudar, trabalhar,\nempreender e participar da vida pública.\nO Governo incentivará políticas que aproximem os jovens da qualiﬁcação\nproﬁssional, da tecnologia, do esporte, da cultura e do mercado de trabalho.\nA inclusão digital e o estímulo ao empreendedorismo também serão utilizados\ncomo ferramentas para ampliar as possibilidades de inserção proﬁssional e\nparticipação social.\n\n8.5 ENVELHECIMENTO E VALORIZAÇÃO DA PESSOA IDOSA\nO envelhecimento da população exige planejamento de longo prazo. O Estado\ndeverá fortalecer a rede de proteção à pessoa idosa e estimular políticas que\npromovam autonomia, participação social e qualidade de vida.\nSerão apoiadas iniciativas de envelhecimento ativo e ações de prevenção e\npromoção da saúde em articulação com as demais políticas públicas.\nMais do que ampliar a proteção, é necessário reconhecer a pessoa idosa como\nparte ativa da sociedade, valorizando sua experiência, autonomia e participação\ncomunitária.\n\n8.6 INCLUSÃO E ACESSIBILIDADE\nA inclusão das pessoas com deﬁciência será incorporada de forma transversal às\npolíticas públicas estaduais.\nO Governo buscará ampliar a acessibilidade dos serviços públicos e apoiar\nmedidas que favoreçam a inclusão educacional, proﬁssional e social.\n40"
+          },
+          {
+            "id": "tambem-serao-fortalecidas-acoes-voltadas-ao-atendimento-especializado-a",
+            "titulo": "Também serão fortalecidas ações voltadas ao atendimento especializado, à",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Também serão fortalecidas ações voltadas ao atendimento especializado, à\nautonomia e à participação social, observando as normas de acessibilidade e os\ndireitos assegurados pela legislação.\n\n8.7 IGUALDADE DE OPORTUNIDADES\nO desenvolvimento social exige que as pessoas tenham condições reais de\nconstruir seus próprios caminhos.\nO Governo promoverá políticas orientadas pela igualdade de oportunidades, pela\ndignidade da pessoa humana e pelo respeito à cidadania, combatendo situações\nde discriminação e exclusão dentro das competências do Estado.\nA prioridade será garantir que os serviços públicos estejam disponíveis de maneira\njusta e que fatores econômicos ou sociais não sejam obstáculos permanentes ao\nacesso a direitos e oportunidades.\n\n8.8 SEGURANÇA ALIMENTAR E COMBATE À FOME\nO combate à insegurança alimentar será integrado às demais políticas de\ndesenvolvimento social e econômico.\nO Governo atuará em cooperação com municípios e União para fortalecer\niniciativas de segurança alimentar, ao mesmo tempo em que apoiará políticas\ncapazes de ampliar a produção e a geração de renda no campo.\nA agricultura familiar, os mercados locais e as iniciativas de produção e distribuição\nde alimentos poderão contribuir para aproximar quem produz de quem precisa,\nfortalecendo simultaneamente a economia local e a segurança alimentar.\n\n8.9 HABITAÇÃO E MELHORIA DAS CONDIÇÕES DE MORADIA\nO Governo buscará ampliar sua participação institucional nas políticas\nhabitacionais desenvolvidas em parceria com a União, municípios e instituições\nﬁnanceiras.\nSerão apoiados projetos destinados à melhoria das condições de moradia,\nurbanização e regularização fundiária quando cabível, especialmente em áreas\nonde a precariedade habitacional esteja associada a situações de vulnerabilidade.\nA atuação estadual deverá priorizar a articulação e a coordenação de esforços,\nbuscando ampliar a capacidade de execução dos programas habitacionais no\nterritório potiguar.\n41"
+          },
+          {
+            "id": "8-10-cidadania-e-participacao-social",
+            "titulo": "8.10 CIDADANIA E PARTICIPAÇÃO SOCIAL",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "8.10 CIDADANIA E PARTICIPAÇÃO SOCIAL\nUma democracia forte depende de uma população que possa acompanhar,\nquestionar e participar das decisões públicas.\nO Governo fortalecerá os instrumentos de diálogo com a sociedade, ampliando os\ncanais pelos quais o cidadão possa apresentar demandas, sugestões e críticas.\nSerão valorizados os conselhos estaduais, conferências, ouvidorias e plataformas\ndigitais de participação, além dos mecanismos de transparência e controle social.\nA participação popular deverá ser compreendida como instrumento de melhoria da\ngestão pública, e não apenas como mecanismo formal de consulta.\n\n8.11 DESENVOLVIMENTO HUMANO\nAs políticas sociais serão planejadas de forma integrada. Uma família em situação\nde vulnerabilidade pode precisar simultaneamente de assistência, acesso à saúde,\npermanência dos ﬁlhos na escola, qualiﬁcação proﬁssional e oportunidade de\ntrabalho.\nPor isso, o Governo buscará aproximar as diferentes áreas da Administração\nPública e evitar que o cidadão precise percorrer estruturas distintas para encontrar\nsoluções para problemas que estão relacionados entre si.\nO objetivo ﬁnal é romper ciclos de vulnerabilidade e ampliar a autonomia das\npessoas, oferecendo condições para que cada família possa construir uma\ntrajetória de desenvolvimento.\n\n8.12 O RESULTADO QUE QUEREMOS ALCANÇAR\nAo ﬁnal do mandato, a meta é consolidar uma política de desenvolvimento social\nmais integrada, eﬁciente e voltada à autonomia das pessoas.\nO Governo buscará reduzir situações de vulnerabilidade, ampliar oportunidades de\ntrabalho e qualiﬁcação, fortalecer a proteção de crianças e idosos, promover a\ninclusão das pessoas com deﬁciência e ampliar os espaços de participação\ncidadã.\nA política social será orientada por uma ideia central: proteger quem precisa, criar\noportunidades para quem pode avançar e garantir que todos tenham condições de\nconstruir uma vida com dignidade e autonomia.\n42"
+          },
+          {
+            "id": "esse-compromisso-sera-conduzido-com-responsabilidade-scal-e-ciencia",
+            "titulo": "Esse compromisso será conduzido com responsabilidade ﬁscal, eﬁciência",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Esse compromisso será conduzido com responsabilidade ﬁscal, eﬁciência\nadministrativa, cooperação entre os entes federativos e respeito à Constituição.\n\n9. MEIO AMBIENTE, DESENVOLVIMENTO\nCLIMÁTICAS E ECONOMIA VERDE\n\nSUSTENTÁVEL,\n\nMUDANÇAS\n\n9.1 UM MODELO DE DESENVOLVIMENTO QUE PRESERVE E PRODUZA\nO Rio Grande do Norte possui características ambientais que representam não\napenas um patrimônio a ser preservado, mas também uma importante vantagem\neconômica. O litoral, os diferentes ecossistemas, os recursos naturais e o enorme\npotencial para geração de energia renovável colocam o Estado diante de uma\noportunidade: conciliar crescimento econômico, geração de empregos e\npreservação ambiental.\nA política ambiental do Governo será orientada pelo princípio do desenvolvimento\nsustentável, buscando equilíbrio entre proteção dos recursos naturais, atividade\neconômica e qualidade de vida.\nA preservação ambiental não será tratada como obstáculo ao desenvolvimento. Ao\ncontrário, deverá ser incorporada à estratégia econômica do Estado, estimulando\ninvestimentos em tecnologias limpas, energias renováveis, produção sustentável,\neconomia circular e atividades capazes de gerar valor com menor impacto\nambiental.\n\n9.2 MODERNIZAÇÃO DA GESTÃO AMBIENTAL\nA política ambiental precisa ser eﬁciente tanto na ﬁscalização quanto na prestação\nde serviços ao cidadão e aos empreendedores.\nO Governo modernizará os órgãos estaduais responsáveis pela gestão ambiental,\nampliando a utilização de ferramentas digitais, aperfeiçoando processos e\nfortalecendo a capacidade técnica dos servidores.\nA modernização buscará reduzir burocracias que não tenham justiﬁcativa técnica,\nsem ﬂexibilizar as exigências ambientais estabelecidas em lei.\n\n9.3 LICENCIAMENTO COM SEGURANÇA E RESPONSABILIDADE\n43"
+          },
+          {
+            "id": "o-licenciamento-ambiental-precisa-oferecer-seguranca-juridica-para-quem",
+            "titulo": "O licenciamento ambiental precisa oferecer segurança jurídica para quem deseja",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "O licenciamento ambiental precisa oferecer segurança jurídica para quem deseja\ninvestir e, ao mesmo tempo, garantir que os impactos ambientais sejam\ndevidamente avaliados.\nO Governo buscará tornar os procedimentos mais eﬁcientes e previsíveis,\nutilizando tecnologia e padronização de processos para reduzir atrasos e melhorar\na capacidade de análise dos órgãos responsáveis.\nA simpliﬁcação administrativa não signiﬁcará redução da proteção ambiental. O\nobjetivo será eliminar etapas desnecessárias e melhorar a qualidade das análises,\ngarantindo transparência tanto para o empreendedor quanto para a sociedade.\n\n9.4 RECURSOS HÍDRICOS E SEGURANÇA AMBIENTAL\nA água será tratada como um dos principais ativos estratégicos do Rio Grande do\nNorte. Em um Estado que convive historicamente com períodos de estiagem,\npreservar os recursos hídricos signiﬁca proteger a população, a produção e o\npróprio desenvolvimento econômico.\nA gestão deverá considerar o uso racional da água, a recuperação de bacias\nhidrográﬁcas, a preservação de mananciais e o planejamento para períodos de\nescassez.\nAs políticas ambientais serão articuladas às ações de segurança hídrica, evitando\nque a gestão da água seja tratada de maneira isolada das demais políticas públicas.\n\n9.5 BIODIVERSIDADE E PATRIMÔNIO NATURAL\nA proteção da biodiversidade potiguar será conciliada com o uso responsável dos\nrecursos naturais e com as atividades econômicas desenvolvidas no território.\nO Governo fortalecerá a proteção das unidades de conservação estaduais e apoiará\nações de recuperação de áreas degradadas, pesquisa cientíﬁca e educação\nambiental.\nA preservação da fauna, da ﬂora e dos ecossistemas deverá estar associada ao\nconhecimento cientíﬁco, permitindo que decisões públicas sejam tomadas com\nbase em informações técnicas e nas características especíﬁcas de cada região.\n\n9.6 ECONOMIA VERDE E NOVAS OPORTUNIDADES\nA transição para uma economia mais sustentável representa uma oportunidade\nconcreta para o Rio Grande do Norte. O Estado já possui vantagens relevantes no\n44"
+          },
+          {
+            "id": "setor-de-energias-renovaveis-e-pode-avancar-na-construcao-de-novas-cadei",
+            "titulo": "setor de energias renováveis e pode avançar na construção de novas cadeias",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "setor de energias renováveis e pode avançar na construção de novas cadeias\nprodutivas relacionadas à economia verde.\nSerão estimuladas atividades relacionadas a:\n energias renováveis;\n bioeconomia;\n economia circular;\n tecnologias limpas;\n produção sustentável;\n reaproveitamento de resíduos;\n inovação ambiental.\n\nO objetivo é transformar sustentabilidade em oportunidade econômica, atraindo\ninvestimentos e criando empregos qualiﬁcados.\n\n9.7 MUDANÇAS CLIMÁTICAS E RESILIÊNCIA\nOs efeitos das mudanças climáticas exigem que o Estado esteja preparado para\neventos extremos, períodos de estiagem, chuvas intensas e outros fenômenos\ncapazes de afetar cidades, produção e infraestrutura.\nO Governo fortalecerá o planejamento de riscos e buscará ampliar a capacidade de\nprevenção e resposta, em articulação com municípios, Defesa Civil e demais\nórgãos responsáveis.\nA adaptação climática deverá fazer parte do planejamento das políticas públicas,\nespecialmente em obras de infraestrutura, gestão hídrica, planejamento urbano e\nproteção ambiental.\n\n9.8 EDUCAÇÃO AMBIENTAL\nA preservação ambiental também depende da formação de uma cultura de\nresponsabilidade.\nO Governo apoiará ações de educação ambiental em parceria com escolas,\nuniversidades, municípios e organizações da sociedade civil. A abordagem deverá\nestimular o uso consciente dos recursos naturais, a redução do desperdício, o\nconsumo responsável e a preservação dos ecossistemas.\n\n45"
+          },
+          {
+            "id": "a-educacao-ambiental-devera-aproximar-a-populacao-dos-problemas-concreto",
+            "titulo": "A educação ambiental deverá aproximar a população dos problemas concretos de",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "A educação ambiental deverá aproximar a população dos problemas concretos de\ncada região, mostrando que pequenas mudanças de comportamento também\ncontribuem para a conservação dos recursos naturais.\n\n9.9 RESÍDUOS SÓLIDOS E ECONOMIA CIRCULAR\nA gestão adequada dos resíduos é um desaﬁo ambiental, urbano e econômico. O\nEstado atuará em cooperação com os municípios para fortalecer soluções de\ndestinação adequada, coleta seletiva e reciclagem.\nTambém serão apoiadas iniciativas que valorizem o trabalho das cooperativas de\nreciclagem e estimulem o reaproveitamento de materiais.\nA lógica deverá avançar gradualmente de um modelo baseado apenas no descarte\npara outro que priorize redução, reutilização, reciclagem e aproveitamento\neconômico dos resíduos.\n\n9.10 ENERGIAS RENOVÁVEIS E TRANSIÇÃO ENERGÉTICA\nO Rio Grande do Norte já ocupa posição de destaque na geração de energia eólica\ne possui grande potencial para expansão da energia solar e desenvolvimento de\nnovas tecnologias.\nO Governo buscará criar condições para que o Estado avance também na cadeia\nprodutiva associada a esses setores, atraindo investimentos, estimulando\npesquisa e inovação e qualiﬁcando mão de obra.\nTambém serão acompanhadas as oportunidades relacionadas ao hidrogênio de\nbaixa emissão de carbono e a outras tecnologias que possam contribuir para a\ntransição energética.\nO objetivo não será apenas produzir energia, mas ampliar a capacidade do Estado\nde participar das etapas de maior valor agregado dessa nova economia.\n\n9.11 PROTEÇÃO E DESENVOLVIMENTO DO LITORAL\nO litoral potiguar representa um dos principais patrimônios naturais e econômicos\ndo Estado. Praias, dunas, manguezais, falésias e demais ecossistemas costeiros\nprecisam ser protegidos para que continuem cumprindo suas funções ambientais\ne sustentando atividades como turismo e pesca.\n\n46"
+          },
+          {
+            "id": "o-governo-apoiara-acoes-de-monitoramento-ambiental-conservacao-dos",
+            "titulo": "O Governo apoiará ações de monitoramento ambiental, conservação dos",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "O Governo apoiará ações de monitoramento ambiental, conservação dos\necossistemas e planejamento sustentável da ocupação territorial, observadas as\ncompetências legais de cada ente.\nO turismo sustentável será incentivado como forma de conciliar a valorização do\nlitoral com sua preservação para as próximas gerações.\n\n9.12 UMA POLÍTICA AMBIENTAL BASEADA EM RESULTADOS\nA política ambiental estadual será acompanhada por indicadores que permitam\navaliar a evolução da qualidade ambiental, da gestão dos recursos naturais e da\nefetividade das ações desenvolvidas.\nA integração entre os órgãos estaduais será fortalecida, assim como a\ntransparência das informações ambientais e os mecanismos de participação da\nsociedade.\nA ﬁscalização deverá ser orientada por critérios técnicos e capacidade de resposta,\nconcentrando esforços onde existam maiores riscos ambientais.\n\n9.13 O RESULTADO QUE QUEREMOS ALCANÇAR\nAo ﬁnal do mandato, o objetivo é consolidar uma política ambiental moderna,\nintegrada ao desenvolvimento econômico e capaz de responder aos desaﬁos\nclimáticos e ambientais do Rio Grande do Norte.\nO Estado deverá avançar na proteção de seus recursos naturais, na segurança\nhídrica, na gestão de resíduos, na preservação da biodiversidade e na preparação\npara eventos climáticos extremos.\nAo mesmo tempo, deverá aproveitar suas vantagens competitivas em energias\nrenováveis, tecnologias limpas e economia verde para atrair investimentos, gerar\nempregos e desenvolver novas atividades econômicas.\nO Rio Grande do Norte pode crescer sem abrir mão de seu patrimônio natural. A\nsustentabilidade será tratada não apenas como dever ambiental, mas como\nestratégia de desenvolvimento, inovação e competitividade para as próximas\ndécadas.\n\n47"
+          },
+          {
+            "id": "10-agricultura-pecuaria-pesca-aquicultura-e-desenvolvimento",
+            "titulo": "10. AGRICULTURA, PECUÁRIA, PESCA, AQUICULTURA E DESENVOLVIMENTO",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "10. AGRICULTURA, PECUÁRIA, PESCA, AQUICULTURA E DESENVOLVIMENTO\nRURAL\n\n10.1 DESENVOLVIMENTO RURAL COMO ESTRATÉGIA DE CRESCIMENTO\nO desenvolvimento do campo será tratado como parte essencial da estratégia\neconômica do Rio Grande do Norte. A agricultura, a pecuária, a pesca, a aquicultura\ne a agroindústria possuem capacidade de gerar emprego, renda, segurança\nalimentar e desenvolvimento regional, especialmente no interior do Estado.\nO Governo buscará criar melhores condições para quem produz, combinando\nassistência técnica, infraestrutura, acesso à tecnologia, segurança hídrica e\nestímulo à agregação de valor. A política rural deverá considerar as características\nde cada região e apoiar tanto a agricultura familiar quanto os produtores de maior\nescala.\n\n10.2 AGRICULTURA FAMILIAR E PRODUÇÃO LOCAL\nA agricultura familiar terá papel relevante na política de desenvolvimento rural,\nespecialmente pela sua capacidade de movimentar a economia dos municípios e\ngarantir a produção de alimentos.\nO Estado ampliará o apoio técnico aos produtores e incentivará sua organização em\ncooperativas e associações. Também serão estimuladas ações de capacitação,\nadoção de práticas sustentáveis e melhoria dos canais de comercialização.\nMais do que produzir, é necessário garantir que o produtor tenha condições de\nvender sua produção, acessar novos mercados e obter maior retorno pelo seu\ntrabalho.\n\n10.3 AGRONEGÓCIO E COMPETITIVIDADE\nO Rio Grande do Norte possui produtores e cadeias produtivas com capacidade de\ncompetir em mercados nacionais e internacionais. O papel do Governo será criar\num ambiente mais favorável à expansão dessas atividades, sem substituir a\niniciativa privada.\nA modernização tecnológica será incentivada por meio da aproximação entre\nprodutores, universidades, centros de pesquisa e empresas. Agricultura de\nprecisão, mecanização, monitoramento climático e novas técnicas de produção\npoderão aumentar a produtividade e reduzir custos.\n48"
+          },
+          {
+            "id": "o-fortalecimento-das-cadeias-produtivas-tambem-sera-fundamental-para-amp",
+            "titulo": "O fortalecimento das cadeias produtivas também será fundamental para ampliar a",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "O fortalecimento das cadeias produtivas também será fundamental para ampliar a\nparticipação do setor agropecuário na economia estadual.\n\n10.4 ÁGUA, IRRIGAÇÃO E CONVIVÊNCIA COM O SEMIÁRIDO\nA escassez hídrica é uma das principais limitações ao desenvolvimento rural\npotiguar. Por isso, a política agrícola estará diretamente articulada às ações de\nsegurança hídrica e convivência com o semiárido.\nO Governo incentivará sistemas de irrigação mais eﬁcientes, tecnologias de\nmonitoramento e técnicas de produção adaptadas às condições climáticas do\nEstado. Também será priorizada a recuperação e manutenção da infraestrutura\nhídrica de competência estadual.\nA meta é fazer com que cada unidade de água disponível produza mais, reduzindo\ndesperdícios e aumentando a capacidade de produção das regiões rurais.\n\n10.5 PECUÁRIA E SANIDADE ANIMAL\nA pecuária possui importância econômica e cultural em diversas regiões do Rio\nGrande do Norte. O Governo apoiará a modernização do setor, o aprimoramento da\nsanidade animal e a melhoria da produtividade.\nSerão fortalecidas ações relacionadas ao melhoramento genético, à assistência\ntécnica e à qualiﬁcação dos produtores, contemplando cadeias como\nbovinocultura, caprinocultura, ovinocultura, suinocultura e avicultura.\nA sanidade animal será tratada como elemento estratégico para a abertura de\nmercados e para a valorização da produção potiguar.\n\n10.6 PESCA, AQUICULTURA E ECONOMIA DO MAR\nA posição geográﬁca do Rio Grande do Norte oferece uma vantagem que ainda pode\nser mais bem aproveitada: a economia do mar. A pesca, a aquicultura e a\ncarcinicultura possuem potencial para gerar renda, empregos e novas\noportunidades de negócios.\nO Governo apoiará a modernização das atividades, a qualiﬁcação dos produtores e\na adoção de práticas sustentáveis. Também buscará estimular a agregação de valor\naos produtos pesqueiros e aquícolas, fortalecendo sua inserção nos mercados. O\nobjetivo é transformar o potencial marítimo do Estado em uma cadeia econômica\ncada vez mais estruturada e competitiva.\n49"
+          },
+          {
+            "id": "10-7-agroindustria-e-agregacao-de-valor",
+            "titulo": "10.7 AGROINDÚSTRIA E AGREGAÇÃO DE VALOR",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "10.7 AGROINDÚSTRIA E AGREGAÇÃO DE VALOR\nUm dos grandes desaﬁos do desenvolvimento rural é fazer com que o Estado não\nseja apenas produtor de matéria-prima. Quanto maior a capacidade de transformar\na produção dentro do próprio território, maior será o potencial de geração de\nemprego e renda.\nO Governo estimulará a instalação e expansão de agroindústrias, especialmente\naquelas capazes de aproveitar vocações produtivas regionais. A industrialização da\nprodução agrícola e pecuária poderá reduzir perdas, ampliar mercados e aumentar\no valor recebido pelos produtores.\nEssa estratégia também contribuirá para interiorizar investimentos e criar novas\noportunidades fora da Região Metropolitana de Natal.\n\n10.8 COOPERATIVISMO E ACESSO A MERCADOS\nO fortalecimento das cooperativas e associações rurais será utilizado como\ninstrumento de organização da produção e ampliação da capacidade de\nnegociação dos produtores.\nO Estado apoiará iniciativas de capacitação, melhoria da gestão e acesso a\nmercados, buscando aproximar os produtores de compradores, empresas e novas\noportunidades comerciais.\nA cooperação entre produtores pode reduzir custos, facilitar o acesso a\nequipamentos e insumos e aumentar a capacidade de inserção da produção\npotiguar em mercados mais competitivos.\n\n10.9 TECNOLOGIA E INFRAESTRUTURA NO CAMPO\nA modernização do campo dependerá cada vez mais da conectividade e do acesso\nà informação. O Governo incentivará a expansão da internet nas áreas rurais e o uso\nde ferramentas digitais que permitam acompanhar clima, produção, preços e\ncondições de mercado.\nTambém serão priorizadas ações voltadas à infraestrutura necessária ao\nescoamento da produção, dentro das competências estaduais. Estradas em\nmelhores condições, conectividade e logística eﬁciente são fatores essenciais para\nreduzir custos e aumentar a competitividade do produtor potiguar.\n\n50"
+          },
+          {
+            "id": "10-10-um-novo-ciclo-de-desenvolvimento-rural",
+            "titulo": "10.10 UM NOVO CICLO DE DESENVOLVIMENTO RURAL",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "10.10 UM NOVO CICLO DE DESENVOLVIMENTO RURAL\nO Governo trabalhará para construir um ambiente rural mais produtivo, tecnológico\ne integrado às novas oportunidades da economia. Agricultura familiar e\nagronegócio, produção tradicional e inovação, pesca e aquicultura, pecuária e\nagroindústria deverão fazer parte de uma mesma estratégia de desenvolvimento.\nAo ﬁnal do mandato, a meta é ampliar a produtividade, fortalecer as cadeias\nprodutivas, estimular a agroindustrialização e aumentar a capacidade de geração\nde emprego e renda no interior.\nO campo potiguar não deve ser visto apenas como espaço de produção, mas como\num dos motores do desenvolvimento do Estado. Investir em quem produz é investir\nna economia, na segurança alimentar e no futuro das regiões que sustentam grande\nparte da identidade e da riqueza do Rio Grande do Norte.\n\n10.11 RESULTADOS A ALCANÇAR\nAo ﬁnal do mandato, o objetivo é consolidar um setor rural mais produtivo,\ncompetitivo e sustentável, com melhores condições de trabalho e maior\ncapacidade de geração de emprego e renda.\nEspera-se avançar na modernização da agricultura e da pecuária, fortalecer a\nagricultura familiar, ampliar a agroindustrialização, estimular a pesca e a\naquicultura, melhorar a infraestrutura de apoio à produção e ampliar o acesso dos\nprodutores à tecnologia e à assistência técnica.\nO resultado pretendido é fazer do desenvolvimento rural um dos motores da\neconomia potiguar, fortalecendo as cadeias produtivas do interior, agregando valor\nà produção e criando novas oportunidades para quem vive e trabalha no campo.\n\n11. TURISMO, CULTURA, ECONOMIA CRIATIVA E DESENVOLVIMENTO\nREGIONAL\n\n11.1 TURISMO COMO MOTOR DE DESENVOLVIMENTO\nO turismo é uma das principais vocações econômicas do Rio Grande do Norte. O\nEstado reúne litoral, patrimônio histórico, manifestações culturais, gastronomia,\npaisagens naturais e diferentes possibilidades de experiências turísticas. O desaﬁo\n\n51"
+          },
+          {
+            "id": "e-transformar-esse-potencial-em-mais-visitantes-maior-permanencia-geraca",
+            "titulo": "é transformar esse potencial em mais visitantes, maior permanência, geração de",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "é transformar esse potencial em mais visitantes, maior permanência, geração de\nempregos e renda em todas as regiões.\nO Governo atuará para fortalecer a promoção do destino, melhorar a infraestrutura\nde apoio e ampliar a integração entre municípios, setor privado e demais agentes\nda cadeia turística.\n\n11.2 PROGRAMA DESTINO RIO GRANDE DO NORTE\nSerá estruturado um programa permanente de promoção turística do Estado, com\natuação nos mercados nacional e internacional e articulação com empresas do\nsetor.\nEntre as prioridades estarão:\n fortalecimento da marca turística do Rio Grande do Norte;\n campanhas de promoção em mercados estratégicos;\n articulação com companhias aéreas, operadores e agências de turismo;\n incentivo à interiorização dos ﬂuxos turísticos;\n participação em feiras e eventos nacionais e internacionais.\n\n11.3 DIVERSIFICAÇÃO DA OFERTA TURÍSTICA\nO Rio Grande do Norte não deve depender de um único segmento turístico. A\nestratégia estadual buscará ampliar e diversiﬁcar a oferta, valorizando as\ncaracterísticas de cada região.\nSerão estimulados segmentos como turismo de sol e praia, ecológico, de aventura,\nreligioso, histórico e cultural, gastronômico, rural, esportivo, de eventos e negócios,\nalém de novas possibilidades relacionadas ao turismo cientíﬁco e educacional.\n\n11.4 INFRAESTRUTURA E QUALIFICAÇÃO\nA competitividade turística depende também da qualidade dos serviços oferecidos\nao visitante. O Governo buscará melhorar a infraestrutura de apoio ao turismo,\nobservadas as competências estaduais, e estimular a qualiﬁcação dos\nproﬁssionais do setor.\n\n52"
+          },
+          {
+            "id": "serao-priorizadas-acoes-relacionadas-a-sinalizacao-turistica-acessibilid",
+            "titulo": "Serão priorizadas ações relacionadas à sinalização turística, acessibilidade,",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "Serão priorizadas ações relacionadas à sinalização turística, acessibilidade,\nmelhoria dos acessos, atendimento ao visitante, formação proﬁssional, idiomas,\nhotelaria, gastronomia e empreendedorismo.\n\n11.5 CULTURA, IDENTIDADE E ECONOMIA CRIATIVA\nA cultura potiguar representa um patrimônio que deve ser preservado, valorizado e\ntambém reconhecido como fonte de oportunidades. Música, literatura, artes\ncênicas, audiovisual, artesanato, gastronomia e manifestações tradicionais fazem\nparte da identidade do Estado e movimentam uma cadeia econômica que alcança\nmilhares de pessoas.\nA política cultural buscará descentralizar oportunidades e ampliar o acesso à\nprodução cultural, levando iniciativas para além da Região Metropolitana de Natal.\n\n11.6 PATRIMÔNIO E MANIFESTAÇÕES CULTURAIS\nO Governo fortalecerá ações de preservação do patrimônio histórico e cultural,\nvalorizando as tradições e manifestações que formam a identidade potiguar.\nSerão apoiadas iniciativas relacionadas às artes, à música, ao teatro, à dança, ao\naudiovisual e à literatura, além da circulação de produções culturais entre\ndiferentes regiões do Estado.\n\n11.7 ECONOMIA CRIATIVA\nA economia criativa será tratada como um setor capaz de gerar renda,\nempreendedorismo e novas oportunidades para os potiguares.\nO Governo incentivará empreendedores e iniciativas nas áreas de artesanato,\ndesign, moda, audiovisual, música, gastronomia, jogos digitais e outras atividades\ncriativas, buscando aproximar cultura, tecnologia e mercado.\nO objetivo é permitir que talentos locais encontrem condições para transformar\nconhecimento e criatividade em atividade econômica sustentável.\n11.8 ARTESANATO E GASTRONOMIA\nO artesanato e a gastronomia serão valorizados como elementos da identidade\npotiguar e como produtos capazes de ampliar a experiência turística.\nO Estado apoiará a capacitação de artesãos, a participação em feiras, a promoção\ncomercial e o acesso a novos mercados. Na gastronomia, serão estimulados\n53"
+          },
+          {
+            "id": "festivais-roteiros-e-iniciativas-que-valorizem-ingredientes-e-receitas-t",
+            "titulo": "festivais, roteiros e iniciativas que valorizem ingredientes e receitas tradicionais do",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "festivais, roteiros e iniciativas que valorizem ingredientes e receitas tradicionais do\nRio Grande do Norte.\n\n11.9 EVENTOS E DESENVOLVIMENTO REGIONAL\nO calendário de eventos será utilizado como instrumento de movimentação\neconômica e descentralização do turismo. Festivais culturais, eventos esportivos,\nfeiras, congressos, festivais gastronômicos e manifestações tradicionais podem\ncontribuir para aumentar o ﬂuxo de visitantes e movimentar hotéis, restaurantes,\ncomércio e serviços.\nO Governo buscará fortalecer o calendário estadual e apoiar iniciativas capazes de\natrair visitantes durante todo o ano, reduzindo a concentração da atividade turística\nem determinados períodos.\n\n11.10 REGIONALIZAÇÃO DO TURISMO\nCada região possui características próprias que podem ser transformadas em\nprodutos turísticos. O Governo estimulará a criação de roteiros integrados entre\nmunicípios, fortalecendo destinos que ainda possuem pouca inserção no mercado\nturístico.\nA estratégia deverá considerar as vocações do litoral, do Seridó, do Oeste, do Alto\nOeste, do Agreste, do Vale do Açu e das demais regiões, valorizando patrimônio,\nnatureza, gastronomia, religiosidade e tradições locais.\n\n11.11 TURISMO SUSTENTÁVEL\nO crescimento da atividade turística deverá ocorrer de maneira compatível com a\npreservação ambiental e cultural. A exploração dos atrativos naturais deverá\nrespeitar a legislação e a capacidade de cada território, evitando que o crescimento\neconômico comprometa justamente os recursos que tornam o Estado atrativo. O\nturismo sustentável será, portanto, tratado como estratégia de longo prazo,\nconciliando conservação, geração de renda e qualidade de vida das comunidades\nlocais.\n\n11.12 GESTÃO E RESULTADOS\nA política estadual de turismo e cultura será acompanhada por planejamento,\nindicadores e avaliação periódica. O Governo buscará medir resultados como ﬂuxo\n54"
+          },
+          {
+            "id": "turistico-geracao-de-empregos-movimentacao-economica-distribuicao-region",
+            "titulo": "turístico, geração de empregos, movimentação econômica, distribuição regional",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "turístico, geração de empregos, movimentação econômica, distribuição regional\ndos visitantes e alcance das políticas culturais.\nA atuação será construída em cooperação com municípios, iniciativa privada,\ninstituições culturais e sociedade civil, com transparência na aplicação dos\nrecursos e avaliação permanente das ações.\nAo ﬁnal do mandato, a meta é consolidar o Rio Grande do Norte como destino\nturístico cada vez mais competitivo, diversiﬁcado e sustentável, ao mesmo tempo\nem que a cultura e a economia criativa ganham maior espaço na geração de\noportunidades.\nTurismo e cultura serão tratados como instrumentos de desenvolvimento\neconômico, valorização da identidade potiguar e integração das diferentes regiões\ndo Estado.\n\n12. GESTÃO PÚBLICA, REFORMA ADMINISTRATIVA, TRANSPARÊNCIA E\nRESPONSABILIDADE FISCAL\n\n12.1 UM ESTADO MAIS EFICIENTE E RESPONSÁVEL\nO Governo do Estado será orientado pelos princípios constitucionais da legalidade,\nimpessoalidade, moralidade, publicidade e eﬁciência, aliados ao compromisso\ncom a responsabilidade ﬁscal e a boa gestão dos recursos públicos.\nA Administração Pública precisa estar a serviço da população. Isso signiﬁca reduzir\ndesperdícios, melhorar processos, fortalecer as instituições e garantir que os\nrecursos arrecadados retornem à sociedade na forma de serviços públicos de\nqualidade.\nGovernar com responsabilidade também signiﬁca estabelecer prioridades. O\nEstado não poderá assumir compromissos incompatíveis com sua capacidade\nﬁnanceira, nem permitir que despesas permanentes comprometam investimentos\nnecessários ao desenvolvimento.\n\n12.2 REFORMA E MODERNIZAÇÃO DA ADMINISTRAÇÃO\nO Governo promoverá uma revisão da estrutura administrativa do Poder Executivo,\nbuscando eliminar sobreposições, simpliﬁcar processos e melhorar a coordenação\nentre órgãos e entidades.\n55"
+          },
+          {
+            "id": "a-reforma-sera-baseada-em-estudos-tecnicos-e-analise-de-impacto-respeita",
+            "titulo": "A reforma será baseada em estudos técnicos e análise de impacto, respeitando a",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "A reforma será baseada em estudos técnicos e análise de impacto, respeitando a\nConstituição, a legislação vigente, os direitos dos servidores públicos e as\ncompetências da Assembleia Legislativa.\nA modernização administrativa não será tratada apenas como redução de\nestruturas. O objetivo principal será construir um Estado mais ágil, capaz de tomar\ndecisões com maior rapidez e entregar melhores resultados à população.\n\n12.3 PLANEJAMENTO E GESTÃO POR RESULTADOS\nO planejamento governamental será integrado ao ciclo orçamentário, aproximando\nas metas deﬁnidas no Plano Plurianual, na Lei de Diretrizes Orçamentárias e na Lei\nOrçamentária Anual das prioridades efetivamente executadas pelo Governo.\nCada área da Administração deverá trabalhar com objetivos claros, indicadores de\ndesempenho e mecanismos periódicos de avaliação. Dessa forma, será possível\nidentiﬁcar o que está funcionando, corrigir políticas ineﬁcientes e direcionar\nrecursos para iniciativas que apresentem melhores resultados.\nA gestão pública deixará de ser avaliada apenas pelo volume de recursos gastos e\npassará a considerar, principalmente, aquilo que foi efetivamente entregue à\npopulação.\n\n12.4 RESPONSABILIDADE FISCAL E QUALIDADE DO GASTO\nO equilíbrio das contas públicas será uma condição indispensável para a execução\ndo programa de governo. O Estado deverá observar rigorosamente a Lei de\nResponsabilidade Fiscal e demais normas aplicáveis à gestão ﬁnanceira e\norçamentária.\nA política ﬁscal buscará compatibilizar receitas e despesas, controlar o\ncrescimento dos gastos, administrar de forma responsável a dívida pública e\npreservar a capacidade de investimento do Estado.\nAo mesmo tempo, o Governo trabalhará para qualiﬁcar a arrecadação dentro dos\nlimites legais, combater desperdícios e revisar despesas de baixo retorno social. A\nprioridade será fazer mais com os recursos disponíveis, preservando os\ninvestimentos estratégicos para o futuro do Rio Grande do Norte.\n\n56"
+          },
+          {
+            "id": "12-5-compras-publicas-e-eficiencia-dos-contratos",
+            "titulo": "12.5 COMPRAS PÚBLICAS E EFICIÊNCIA DOS CONTRATOS",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "12.5 COMPRAS PÚBLICAS E EFICIÊNCIA DOS CONTRATOS\nAs contratações públicas serão planejadas e acompanhadas de forma mais\nrigorosa, com utilização das ferramentas previstas na legislação, especialmente na\nLei nº 14.133/2021. O Governo buscará ampliar a transparência dos processos,\naperfeiçoar o planejamento anual de compras e utilizar mecanismos digitais que\nreduzam custos e aumentem a eﬁciência. A gestão dos contratos também será\norientada por resultados, com ﬁscalização adequada da execução e avaliação da\nqualidade dos bens e serviços recebidos pelo Estado.\n\n12.6 TRANSPARÊNCIA, CONTROLE E INTEGRIDADE\nA conﬁança da população nas instituições depende de transparência e capacidade\nde controle. O Governo ampliará a divulgação de informações sobre receitas,\ndespesas, contratos, obras, programas e resultados das políticas públicas.\nO Portal da Transparência e os canais de acesso à informação serão continuamente\naperfeiçoados, com incentivo à publicação de dados em formatos acessíveis e\núteis para o controle social. Também serão fortalecidos os mecanismos de controle\ninterno, gestão de riscos, auditoria e integridade, além da cooperação institucional\ncom os órgãos de controle.\n\n12.7 SERVIDORES, INOVAÇÃO E CAPACIDADE INSTITUCIONAL\nNenhuma modernização administrativa será sustentável sem servidores\npreparados para executá-la. O Governo investirá na formação continuada, na\nmelhoria dos ambientes de trabalho e na atualização das competências\nnecessárias à Administração Pública contemporânea.\nA inovação será incorporada ao cotidiano da gestão, com estímulo à transformação\ndigital, ao uso responsável de inteligência artiﬁcial, à simpliﬁcação de processos e\nà utilização de dados para apoiar decisões.\nA valorização do servidor estará associada à construção de instituições mais\nproﬁssionais, eﬁcientes e capazes de responder às necessidades da população.\n\n12.8 COOPERAÇÃO ENTRE ESTADO E MUNICÍPIOS\nO desenvolvimento do Rio Grande do Norte exige uma atuação coordenada entre\nos diferentes níveis de governo. O Estado fortalecerá a cooperação com os\nmunicípios, respeitando sua autonomia e as competências estabelecidas pela\nConstituição.\n57"
+          },
+          {
+            "id": "serao-ampliadas-iniciativas-de-apoio-tecnico-capacitacao-compartilhament",
+            "titulo": "Serão ampliadas iniciativas de apoio técnico, capacitação, compartilhamento de",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "Serão ampliadas iniciativas de apoio técnico, capacitação, compartilhamento de\nsoluções tecnológicas e planejamento regional, especialmente em áreas nas quais\na integração entre municípios e Estado possa produzir melhores resultados. A\ncooperação federativa será utilizada para ampliar a capacidade de execução das\npolíticas públicas e evitar a fragmentação de esforços e recursos.\n\n12.9 RESULTADOS A ALCANÇAR\nAo ﬁnal do mandato, o objetivo é entregar uma Administração Pública mais\nmoderna, eﬁciente, transparente e ﬁnanceiramente equilibrada.\nEspera-se reduzir desperdícios, melhorar a qualidade do gasto público, acelerar\nprocessos administrativos, ampliar a transparência e fortalecer os mecanismos de\ncontrole e integridade.\nO resultado pretendido é um Estado com maior capacidade de planejamento e\ninvestimento, servidores mais preparados, serviços públicos mais eﬁcientes e\ninstituições capazes de responder com agilidade às necessidades da população.\nA boa gestão será tratada como instrumento de desenvolvimento: quanto mais\neﬁciente for o Estado na utilização dos recursos públicos, maior será sua\ncapacidade de investir, prestar serviços de qualidade e melhorar concretamente a\nvida dos potiguares.\n\n13. PLANO ESTRATÉGICO RN 2050\nUma Visão de Futuro para o Rio Grande do Norte\n\n13.1 VISÃO DE LONGO PRAZO\nO desenvolvimento do Rio Grande do Norte não pode estar limitado aos ciclos\neleitorais. Grandes transformações econômicas, sociais e ambientais exigem\nplanejamento, continuidade e capacidade de antecipar desaﬁos.\nPor isso, o Governo iniciará a construção do Plano Estratégico RN 2050, reunindo\nPoder Público, municípios, universidades, setor produtivo e sociedade civil em\ntorno de uma agenda de longo prazo para o Estado.\nA proposta é estabelecer objetivos que ultrapassem governos e mandatos, criando\numa referência permanente para orientar investimentos, políticas públicas e\n58"
+          },
+          {
+            "id": "decisoes-estrategicas-o-rn-2050-devera-funcionar-como-instrumento-de",
+            "titulo": "decisões estratégicas. O RN 2050 deverá funcionar como instrumento de",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "decisões estratégicas. O RN 2050 deverá funcionar como instrumento de\ncontinuidade administrativa e de construção de políticas de Estado.\n\n13.2 MISSÃO\nPlanejar o futuro do Rio Grande do Norte a partir de conhecimento técnico,\ninovação, responsabilidade ﬁscal e participação social, criando condições para\nque o Estado seja mais competitivo, sustentável, integrado e preparado para as\ntransformações das próximas décadas.\n\n13.3 GRANDES OBJETIVOS PARA 2050\nO RN 2050 terá como horizonte a construção de um Estado capaz de aproveitar\nplenamente suas vantagens naturais, econômicas e humanas. Entre os objetivos\nestratégicos estão a liderança nacional em energias renováveis, o desenvolvimento\ndo hidrogênio de baixa emissão de carbono, o fortalecimento da infraestrutura\nlogística e da economia do mar, a expansão do turismo sustentável e a\nconsolidação de um ambiente favorável à inovação, ao empreendedorismo e aos\ninvestimentos.\nTambém serão estabelecidas metas de longo prazo para educação, saúde,\nsegurança, segurança hídrica, inclusão social, transformação digital e qualidade da\ngestão pública.\n\n13.4 EIXOS ESTRUTURANTES\nO planejamento de longo prazo será organizado em grandes áreas de atuação,\npermitindo que diferentes políticas públicas sejam articuladas em torno de\nobjetivos comuns.\nI – Desenvolvimento Econômico, com fortalecimento da indústria, comércio,\nserviços, turismo, agronegócio, mineração, petróleo e gás, economia do mar e\nenergias renováveis.\nII – Capital Humano, com investimentos permanentes em educação, qualiﬁcação\nproﬁssional, ciência, tecnologia e inovação.\nIII – Infraestrutura e Logística, contemplando rodovias, recursos hídricos,\nconectividade, infraestrutura produtiva e integração entre as diferentes regiões do\nEstado.\n\n59"
+          },
+          {
+            "id": "iv-sustentabilidade-com-protecao-ambiental-adaptacao-as-mudancas",
+            "titulo": "IV – Sustentabilidade, com proteção ambiental, adaptação às mudanças",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "IV – Sustentabilidade, com proteção ambiental, adaptação às mudanças\nclimáticas, uso racional dos recursos naturais e expansão da economia verde.\nV – Governança, com modernização administrativa, transparência, integridade,\ngoverno digital e gestão orientada por resultados.\nVI – Desenvolvimento Regional, buscando reduzir desigualdades e ampliar as\noportunidades econômicas e sociais no interior do Estado.\nVII – Inclusão Social, com políticas voltadas à redução da pobreza, promoção da\ncidadania e ampliação das oportunidades.\nVIII – Segurança Pública, fortalecendo as instituições, a inteligência, a prevenção e\no uso de tecnologia.\nIX – Saúde e Qualidade de Vida, com modernização da rede pública, regionalização\ndos serviços e melhoria dos indicadores de saúde.\nX – Inovação e Transformação Digital, estimulando pesquisa, inteligência artiﬁcial,\neconomia digital e novas tecnologias.\n\n13.5 PLANEJAMENTO BASEADO EM EVIDÊNCIAS\nAs decisões estratégicas do Estado deverão ser sustentadas por informações\nconﬁáveis e avaliações periódicas. O planejamento utilizará indicadores\nsocioeconômicos, estudos técnicos, dados estatísticos, avaliações de impacto e\ncontribuições de universidades, centros de pesquisa e instituições especializadas.\nA intenção é substituir decisões improvisadas por políticas públicas capazes de\ndemonstrar seus resultados e corrigir seus rumos quando necessário.\n\n13.6 CONSELHO ESTRATÉGICO RN 2050\nO Governo proporá a criação de um Conselho Estratégico RN 2050, destinado a\nacompanhar a execução do planejamento de longo prazo e promover o diálogo\nentre diferentes setores da sociedade.\nO espaço poderá reunir representantes do setor produtivo, universidades,\nmunicípios, instituições de pesquisa e organizações da sociedade civil,\ncontribuindo com análises, propostas e acompanhamento dos principais\nindicadores do Estado, sempre respeitadas as competências legais de cada\ninstituição.\n\n60"
+          },
+          {
+            "id": "13-7-desenvolvimento-regional-integrado",
+            "titulo": "13.7 DESENVOLVIMENTO REGIONAL INTEGRADO",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "13.7 DESENVOLVIMENTO REGIONAL INTEGRADO\nO RN 2050 partirá do princípio de que o desenvolvimento do Estado precisa\nconsiderar as características próprias de cada território. As políticas públicas não\ndevem tratar de maneira uniforme regiões que possuem vocações econômicas,\ndesaﬁos sociais e condições ambientais distintas.\nNesse sentido, o planejamento estadual contemplará estratégias especíﬁcas para:\n\n\nRegião Metropolitana de Natal, com foco em serviços, tecnologia, inovação,\nturismo, infraestrutura urbana e economia digital;\n\n\n\nOeste Potiguar, fortalecendo sua produção agropecuária, atividade mineral,\nindústria, comércio e serviços;\n\n\n\nAlto Oeste, com estímulo à produção rural, aos pequenos negócios, à\nagroindústria e à integração regional;\n\n\n\nSeridó, valorizando sua tradição produtiva, mineração, indústria, turismo,\ncultura e economia criativa;\n\n\n\nVale do Açu, com atenção especial à fruticultura irrigada, agroindústria,\nrecursos hídricos e logística;\n\n\n\nAgreste, fortalecendo o comércio, a produção rural, os serviços e a integração\ncom a Região Metropolitana;\n\n\n\nMato Grande, aproveitando seu potencial agropecuário, energético, turístico e\nlogístico;\n\n\n\nLitoral Norte, com incentivo ao turismo, à economia do mar, à pesca, à\naquicultura e às atividades relacionadas às energias renováveis;\n\n\n\nLitoral Sul, conciliando turismo, preservação ambiental, desenvolvimento\nimobiliário responsável e atividades econômicas locais;\n\n\n\nTrairi, estimulando a produção agropecuária, o turismo, o comércio e a\nintegração entre os municípios;\n\n\n\nPotengi, ampliando oportunidades para a agricultura, pecuária, agroindústria e\npequenos negócios;\n\n\n\nCentral Potiguar, fortalecendo a economia regional, a produção rural, a\nmineração, o turismo e a integração logística.\n\nO objetivo será criar condições para que cada região desenvolva suas próprias\nvocações sem perder a integração com o restante do Estado.\n\n61"
+          },
+          {
+            "id": "13-8-indicadores-estrategicos",
+            "titulo": "13.8 INDICADORES ESTRATÉGICOS",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "13.8 INDICADORES ESTRATÉGICOS\nO acompanhamento do RN 2050 será realizado por meio de indicadores capazes\nde demonstrar a evolução do Estado em áreas como crescimento econômico,\ngeração de empregos, educação, saúde, segurança pública, infraestrutura,\nsustentabilidade, transformação digital, competitividade e qualidade da gestão.\nEsses indicadores deverão ser atualizados e avaliados periodicamente, permitindo\nidentiﬁcar avanços, corrigir deﬁciências e estabelecer novas prioridades.\n\n13.9 COOPERAÇÃO INSTITUCIONAL\nNenhum projeto de longo prazo para o Rio Grande do Norte será executado de forma\nisolada. O Governo buscará fortalecer a cooperação com a Assembleia Legislativa,\nmunicípios, Governo Federal, universidades, instituições de pesquisa, setor\nprodutivo e organizações da sociedade civil.\nA articulação institucional será especialmente importante na execução de projetos\nestruturantes que ultrapassem a capacidade ﬁnanceira ou administrativa de um\núnico ente federativo.\n\n13.10 RESULTADOS A ALCANÇAR\nAo iniciar a construção do Plano Estratégico RN 2050, o Governo pretende\nestabelecer uma nova forma de pensar o desenvolvimento do Rio Grande do Norte:\ncom planejamento, continuidade, responsabilidade e visão de longo prazo.\nO principal resultado esperado é criar uma agenda estratégica capaz de orientar\ndecisões públicas para além de um único mandato, permitindo maior estabilidade\nna execução de projetos, melhor direcionamento dos investimentos e maior\nintegração entre as diferentes regiões do Estado.\nO legado pretendido não será apenas a realização de obras ou a criação de\nprogramas, mas a construção de uma cultura permanente de planejamento, capaz\nde preparar o Rio Grande do Norte para as próximas décadas e deixar às futuras\ngerações um Estado mais desenvolvido, competitivo, sustentável, integrado e\npreparado para novos desaﬁos.\n\n14. CARTA DE COMPROMISSOS COM O POVO DO RIO GRANDE DO NORTE\nEste Plano de Governo representa o compromisso público de nossa candidatura\ncom o povo do Rio Grande do Norte.\n62"
+          },
+          {
+            "id": "assumimos-o-compromisso-de-governar-com-responsabilidade-transparencia",
+            "titulo": "Assumimos o compromisso de governar com responsabilidade, transparência,",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "Assumimos o compromisso de governar com responsabilidade, transparência,\ndiálogo, planejamento e foco em resultados, sempre colocando o interesse público\nacima de interesses particulares.\n\n1. GOVERNAR PARA TODOS\nRespeitar a Constituição, as leis, as instituições e a autonomia dos Poderes,\nmantendo diálogo permanente com a sociedade e tratando todos os potiguares\ncom igualdade e respeito.\n2. RESPONSABILIDADE COM O DINHEIRO PÚBLICO\nAdministrar os recursos do Estado com planejamento, equilíbrio e transparência,\ncombatendo desperdícios e priorizando investimentos capazes de gerar resultados\nconcretos para a população.\n3. SERVIÇOS PÚBLICOS DE QUALIDADE\nTrabalhar para melhorar a saúde, a educação, a segurança pública e os demais\nserviços essenciais, com gestão eﬁciente, valorização dos proﬁssionais e avaliação\npermanente dos resultados.\n4. DESENVOLVIMENTO E OPORTUNIDADES\nCriar condições para atrair investimentos, fortalecer o empreendedorismo,\nestimular a inovação, gerar empregos e ampliar as oportunidades econômicas em\ntodas as regiões do Rio Grande do Norte.\n5. UM ESTADO MODERNO E TRANSPARENTE\nModernizar a administração pública, ampliar os serviços digitais, reduzir a\nburocracia, fortalecer a transparência e garantir ao cidadão maior acesso às\ninformações e aos serviços do Estado.\n6. DESENVOLVIMENTO COM RESPONSABILIDADE\nPromover o crescimento econômico de forma sustentável, valorizando os recursos\nnaturais, as energias renováveis, a agricultura, o turismo, a indústria, a economia\ncriativa e as demais vocações do Estado.\n7. DESENVOLVIMENTO EM TODAS AS REGIÕES\nTrabalhar para reduzir desigualdades regionais e garantir que o desenvolvimento\nalcance a Região Metropolitana, o interior e todas as diferentes regiões do Rio\nGrande do Norte, respeitando suas vocações e potencialidades.\n8. PLANEJAMENTO, DIÁLOGO E RESULTADOS\n63"
+          },
+          {
+            "id": "construir-uma-cultura-permanente-de-planejamento-avaliacao-e-prestacao-d",
+            "titulo": "Construir uma cultura permanente de planejamento, avaliação e prestação de",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "Construir uma cultura permanente de planejamento, avaliação e prestação de\ncontas, ouvindo municípios, servidores, setor produtivo, universidades e sociedade\ncivil.\n\nCONSIDERAÇÕES FINAIS\nO Rio Grande do Norte possui todas as condições para iniciar um novo ciclo de\ndesenvolvimento econômico, social e institucional.\nAo longo deste Plano de Governo apresentamos propostas fundamentadas na\nresponsabilidade ﬁscal, na boa governança, na eﬁciência administrativa, na\ninovação e no compromisso permanente com a melhoria da qualidade de vida da\npopulação.\nNosso projeto político nasce da convicção de que o Estado pode oferecer serviços\npúblicos melhores, estimular o crescimento econômico, reduzir desigualdades\nregionais e ampliar as oportunidades para todos.\nNossa atuação será orientada pelos princípios constitucionais da legalidade,\nimpessoalidade, moralidade, publicidade e eﬁciência, promovendo uma gestão\ntransparente, técnica e comprometida com resultados.\nRespeitamos a pluralidade de ideias existente na sociedade brasileira.\n\nEntendemos que o desenvolvimento do Rio Grande do Norte depende da\ncapacidade de unir pessoas em torno de objetivos comuns, valorizando o diálogo,\na cooperação institucional e a construção de soluções práticas para os desaﬁos do\nEstado.\nNosso governo não será deﬁnido por disputas ideológicas.\nSerá deﬁnido pela capacidade de entregar resultados concretos à população.\nPretendemos construir uma administração pública moderna, eﬁciente, inovadora e\npreparada para os desaﬁos das próximas décadas, fortalecendo a conﬁança da\nsociedade nas instituições públicas.\nAo ﬁnal deste mandato, queremos que o povo potiguar reconheça um governo que\nplanejou, executou, prestou contas e deixou um legado de desenvolvimento,\nresponsabilidade e respeito aos recursos públicos.\nEste Plano de Governo representa um compromisso com o presente e com o futuro\ndo Rio Grande do Norte.\n\n64"
+          },
+          {
+            "id": "mais-do-que-um-conjunto-de-propostas-ele-expressa-uma-visao-de-estado-ba",
+            "titulo": "Mais do que um conjunto de propostas, ele expressa uma visão de Estado baseada",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "Mais do que um conjunto de propostas, ele expressa uma visão de Estado baseada\nem planejamento, inovação, responsabilidade ﬁscal, desenvolvimento\nsustentável, inclusão social e valorização das pessoas.\nCom diálogo, trabalho, seriedade e compromisso público, construiremos um Rio\nGrande do Norte mais forte, mais competitivo, mais próspero e preparado para as\nfuturas gerações.\n\nMensagem do Candidato:\n“Apresento este Plano de Governo com humildade, responsabilidade e profundo\nrespeito ao povo potiguar.\nNão ofereço promessas impossíveis. Apresento um compromisso de trabalho,\nplanejamento e dedicação integral ao desenvolvimento do nosso Estado.\nQuero governar ouvindo as pessoas, valorizando os servidores públicos,\nfortalecendo os municípios, apoiando quem produz, cuidando de quem mais\nprecisa e preparando o Rio Grande do Norte para um futuro de prosperidade.\nAcredito que é possível construir um Estado mais eﬁciente, mais moderno, mais\njusto e com oportunidades para todos.\nConvido cada cidadã e cada cidadão a participar desta caminhada. Juntos,\npodemos escrever um novo capítulo da história do Rio Grande do Norte.”\n\nCarlos Jararaca\nCandidato ao Governo do Estado do Rio Grande do Norte – Eleições 2026\n\n65"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "86507cdb413c497bcf936958b2bb01f882daccd18bbadf681c1169d9ac0cd528"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "03e05840c33acfcafc8acde611d82e81704a89f83c784a704724908cdf8f5ff0"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e0fda1f71faf528c983e25f17cffb14f97f7a297cde262be8da2eb602aafbd50"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "51142a0d8c89d59c0d845c555bde26570f49a3183fdf3fcaf039e9bf338f9915"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ec77a837603bfab30946a98228587632ac12aa094d0dd2913a81f03aeabd1c18"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c575e53dfefa4c88a7bc7d36a517e769382feffd9672583147c481b8a98747e1"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "bf0f697d6f9c69b99a0d5c8add3c3fbe57577541d31c1749b978c539195e6447"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "322b70c4a6bdde161c9c9694bce59f6b046dfca8c25f08716a50d1da255621a7"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "34338ffccf30208635e79dda069aeaf56d7499853aa5735a4e99bc02d4361bdd"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "5bb92e92ce4fc9a30759b4e73bbe1d4fd415419e2c91e00d107fe6663eccd622"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "fe277948115da2f7099d0ebcb52054095f1a96d5cd23bef796f5f140ab71b48e"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "bb15af2f0c4e48437885f9a5a6f2fbab150827dae3d924a18f06570e4a8d650e"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "39ae40393cf300ad7f80c81294698e1d72d5dc6d1e45e0e3017dc715eb2d1117"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "2c7fa9b7a4110e2cedf4ecbe9c8793183cf31f8d324086530b798fe914c71f08"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "705a47596a9b20ba3819d5c9a6350a2dfa0e1021b19a0daa294379fe8b7b90d2"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "42365d83e0b25c842c6375cfc0fdbec91742dfb01a6b20d164a6de2dafb9dfe3"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "8843fb80b1554a3326162bcd8057dea69331b8dc49ee4055f981d627e61431c1"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "20544fba649fd7232e1f83068707c1bbacc563e4ce20a2b34338440df4031b9a"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "738117b89aa860409edf37875a3cbfc37cd15fe8010f9199965f8865346de025"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "c2b5a69f7f6e2afb3bcad8b35bafc068566ab67907a7906f4370b3c54ad78a16"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "7bf8f146fcbf0a80911307e4eb9819669192c6378d5c780a7dd56afa9bb4d6f4"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "637b367bf0f8f56e53c0a366b75f9e9940afbe80ce3eb6657060d4c9a07bc5ff"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "8abac67224c469ce17e8da3f451e73762a1734f11eb2ee9000ce1d5a4c46f978"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "9bbcd53807240b9d1b56f4f8b94a602ee32d65930654b9eeec62d4ef267a60b1"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "77cdb2e6c70f9c0922a064a333e66a14d906130f5b40eef987ad1321a92df9c1"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "af0f41955444d006870cad1364b2955aff3b3a1360d52375781664a29bc86cee"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "20676e4f87ead476e837488fab01beaabeafbfd48122b26407e13f6f3166dd9e"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "48a41a549f42cded7634927b38e63d6e9063fd1886b33fa25c9ff1ab5a40bd40"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "fb5bd47a136159ea04942441db4e49858396d82d1df04f5e44503caef8c61281"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "28ee2fa0072d1d9a5acb7122f7b45ab92f6d8eff13d1c55d286498a0041c1071"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "06bedeb9aafe386d9d59b14b8802419c5b63720c19b0e409c9c0a25ce93c2d32"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e04077d8023e22e0ce54bd28bf89c8041a87d085db460d5635d7dcf076d4cea6"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "36f23cbfad41262cbd68e8206767a5bad05db379e7d377caad363bfe6213130f"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "3f5856a374bab919323212a63f018003f7a6a74b4167ae1300933c879b9cf395"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "6b5bc188d21dbd100a853dcbda19650372413f9b0ca79e95d15208cb8b4b6d2b"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "3542ecf2ee3a5dcdddde0604757e949607a3039736101d3bbc735322ec54a60c"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "e704010d31a129cb0d053edc676a2fbc8bcfc535a32982723bb0879d1d1599c6"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "342de532051bf35ddeb5c9e4d05e85c2c97e51118216c584c6142b5a66dd8e5a"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "d9effd6c8c93d5091855540e2e6692b33f59ef28748d417fa80268b7acc56967"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "1b58572d48e335bf2ecd954b17bb2a11151d7e99e60f52a758f3810e7b107766"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "a8bcdbd9a3072379ab99b9ee0fecb38ae8d04f566a65389ee66ec1e1f94dc3ac"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "11fc10d39f30ab75af18ca3bb3e1d9c88a7b084b2ca8f86d119f5c0809cd0dbe"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "eab5208257ba5a8d3e49781bdeda1e281ed134373e9156af518a68083feb0024"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "92ce16ccb02bf6d659cb8eab9a8a9786028f29994879a8d3d0d12a62d1d8e8a5"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "c342613881b078fc9be91b38b65107a239e909d69892d4dfc9351b8084082e95"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "2609469dad157299b999d1f1d404bb08179ce662411c3fbe0eb83e6aaef7352d"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "20c9860bad0b4383200c864e4455e718d2449e5f8433556dc65e97511f9816e9"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "e78a67362dfa780cae5ae2304de4683ca7382fb3fa9bd85a298915bc6eb7471c"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "23dca649be1fd31603316e44f1dd59b465027ead2a04aea48142851b251fa1f6"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "0ddd7d9d8e14785ee12f8313dd9b7f2eb0d37db0ec6e0173a0daac8b2baae676"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "1bc909d77b43e60d0bc7a4399d81ef67d87e2cc53089c21f3adf21161f4324bc"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "4d47f3ad9fc8eff5fe29bce91c1f6f76792378cf18ae7983b4eab60d727ce884"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "354fcaa9383f0acaa655f127db115f58365e10ee27d79afa21fa89f5967ee556"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "c85996113b7f17295e052b68b97f8253f232dc9d85df0511351b3ff4d3ff9ec2"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "6911b87d6bebedb451e60e85408397fc54cc52af9bdd7e5989f920d0ea789b6c"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "cbed6f8c8b9d8a4ce93b876bd8cc6fe563836e763c290fe3eb755255eb8dc519"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "215b689586f81fe2ee41bed668217bcd2374ae77d7fd233d26c2d3428d2b60a1"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "b04367cbc4866648a7c32af63fe7db3c40c1db6c095bc31bb53c0f83538dd4e4"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "486d61e2a9c979cabfcd2c81a59ae6b9c81d31eee0c3f0635c62c92d2981c467"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "f2865aa79d4bbdc71f1bb6a1826ae08b57c50016bc92b66940350a02eba2c11c"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "6039f8cacaad6a5205d1b2dbe398af39bd5f9d185da331fe77a1789d31393ff0"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "c51b0d758e972f53c202c850d0e409fad3aa33bff80f6199b45d7e7119e19b45"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "43510fe5f583d1920ac28faff6e059bdd58e4c8bead9563610ab85c85f11913b"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "837ee9cb9076358787358efe139b8ad9cea6ec35505255eb7be1072e9e626519"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "c9373ca8f79c0a79c381a848316a26a4f84058ba02e22424dba8a61afd5b42ca"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê que as políticas públicas sejam planejadas, executadas e avaliadas com base em metas e indicadores objetivos. Também prevê a implantação do RN Mais Competitivo, destinado à melhoria permanente do ambiente de negócios. Os programas estaduais de qualificação profissional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva. Na saúde, o programa prevê a implantação de um programa permanente de modernização da rede hospitalar. Prevê ainda a implantação de um plano estadual de enfrentamento das filas na saúde. Também prevê o desenvolvimento de um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede. O programa prevê a implantação do Programa Governo Digital RN. A inteligência artificial poderá ser utilizada como ferramenta de apoio à Administração Pública.",
+    "frases": [
+      {
+        "texto": "O programa prevê que as políticas públicas sejam planejadas, executadas e avaliadas com base em metas e indicadores objetivos.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 3,
+            "trecho": "As políticas públicas deverão ser planejadas, executadas e avaliadas com base em metas e indicadores objetivos"
+          }
+        ]
+      },
+      {
+        "texto": "Também prevê a implantação do RN Mais Competitivo, destinado à melhoria permanente do ambiente de negócios.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 7,
+            "trecho": "será implantado o RN Mais Competitivo, programa destinado à melhoria permanente do ambiente de negócios."
+          }
+        ]
+      },
+      {
+        "texto": "Os programas estaduais de qualificação profissional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 7,
+            "trecho": "Os programas estaduais de qualiﬁcação proﬁssional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa prevê a implantação de um programa permanente de modernização da rede hospitalar.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 12,
+            "trecho": "Será implantado um programa permanente de modernização da rede hospitalar"
+          }
+        ]
+      },
+      {
+        "texto": "Prevê ainda a implantação de um plano estadual de enfrentamento das filas na saúde.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 13,
+            "trecho": "O Governo implantará um plano estadual de enfrentamento das ﬁlas"
+          }
+        ]
+      },
+      {
+        "texto": "Também prevê o desenvolvimento de um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 13,
+            "trecho": "Será desenvolvido um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a implantação do Programa Governo Digital RN.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 33,
+            "trecho": "Será implantado o Programa Governo Digital RN"
+          }
+        ]
+      },
+      {
+        "texto": "A inteligência artificial poderá ser utilizada como ferramenta de apoio à Administração Pública.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 35,
+            "trecho": "A inteligência artiﬁcial poderá ser utilizada como ferramenta de apoio à Administração Pública"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "planejamento-publico",
+        "titulo": "Planejamento público",
+        "descricao": "Metas e indicadores objetivos orientam o planejamento, a execução e a avaliação das políticas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 3,
+            "trecho": "As políticas públicas deverão ser planejadas, executadas e avaliadas com base em metas e indicadores objetivos"
+          }
+        ]
+      },
+      {
+        "id": "ambiente-de-negocios",
+        "titulo": "Ambiente de negócios",
+        "descricao": "O RN Mais Competitivo é previsto como programa voltado à melhoria permanente do ambiente de negócios.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 7,
+            "trecho": "será implantado o RN Mais Competitivo, programa destinado à melhoria permanente do ambiente de negócios."
+          }
+        ]
+      },
+      {
+        "id": "qualificacao-regional",
+        "titulo": "Qualificação regional",
+        "descricao": "A qualificação profissional deve considerar as necessidades de cada região e cadeia produtiva.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 7,
+            "trecho": "Os programas estaduais de qualiﬁcação proﬁssional deverão ser orientados pelas necessidades reais de cada região e de cada cadeia produtiva."
+          }
+        ]
+      },
+      {
+        "id": "modernizacao-hospitalar",
+        "titulo": "Modernização hospitalar",
+        "descricao": "O programa prevê uma iniciativa permanente de modernização da rede hospitalar.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 12,
+            "trecho": "Será implantado um programa permanente de modernização da rede hospitalar"
+          }
+        ]
+      },
+      {
+        "id": "transformacao-digital",
+        "titulo": "Transformação digital",
+        "descricao": "O programa prevê saúde digital, Governo Digital RN e uso de inteligência artificial como apoio à Administração Pública.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002550223:01",
+            "pagina": 13,
+            "trecho": "Será desenvolvido um programa estadual de saúde digital, buscando integrar informações e reduzir a fragmentação dos dados existentes na rede."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T19:43:28.748Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:47:46.616Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a previsão descrita na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a previsão documental sem elogio, crítica, promoção ou certeza externa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única diretriz coerente de planejamento e avaliação de políticas públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:1:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre planejamento, execução, avaliação, metas e indicadores objetivos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação, o nome do programa e sua finalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta e sua finalidade, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único programa e de sua finalidade direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:2:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a implantação e a finalidade permanente mencionadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A afirmação corresponde integralmente ao conteúdo da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a diretriz documental sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única diretriz coerente de qualificação profissional regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:3:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre programas estaduais, qualificação profissional, regiões e cadeias produtivas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação permanente e a modernização da rede hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apresenta a proposta de forma descritiva e sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única iniciativa na área hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:4:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência, situada na seção de saúde, sustenta a implantação do plano estadual de enfrentamento das filas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único plano na área da saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:5:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto da página cobrem implantação, caráter estadual, filas e área da saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta e seus dois objetivos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e seus objetivos sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único programa e de objetivos diretamente relacionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:6:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre desenvolvimento, âmbito estadual, saúde digital, integração e redução da fragmentação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a implantação e o nome do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas relata a previsão documental, sem avaliação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:7:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência corresponde integralmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve uma possibilidade prevista no documento sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único uso coerente de inteligência artificial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:frase:8:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a possibilidade, a tecnologia e sua função de apoio."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente que metas e indicadores fundamentam as três etapas mencionadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a diretriz sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente de planejamento público orientado por resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:planejamento-publico:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre metas, indicadores, planejamento, execução e avaliação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta o nome, a natureza e a finalidade permanente do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o programa e sua finalidade sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de um único programa na área de ambiente de negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:ambiente-de-negocios:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a orientação regional e por cadeia produtiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a diretriz sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação permanece em uma única área coerente de qualificação profissional regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:qualificacao-regional:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre qualificação profissional, necessidades regionais e cadeias produtivas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A expressão resumida 'iniciativa' é integralmente sustentada pelo programa permanente citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a iniciativa sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única iniciativa de modernização hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral, o documento informado e o documento da evidência coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:modernizacao-hospitalar:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre previsão, permanência e modernização da rede hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta saúde digital, e as páginas citadas 33 e 35 sustentam, respectivamente, Governo Digital RN e inteligência artificial como apoio à Administração Pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação enumera previsões documentais sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:mistura",
+        "verdict": "yes",
+        "reason": "As três iniciativas pertencem à área coerente de transformação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento coincidem em todas as evidências e páginas citadas relevantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002550223:tema:transformacao-digital:documentos:RN:200002550223:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e as páginas citadas cobrem as três cláusulas materiais: saúde digital, Governo Digital RN e inteligência artificial como apoio."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RN:200002550223",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RN:200002550223:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36228,
+          "cached_input_tokens": 15104,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13896,
+          "reasoning_output_tokens": 169
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "c6f849db688885dda9319db5f6a03d81d3194be4b5dd29197b0cb4babfd822ae",
+    "extractedTextSha256": "d4b515e35615c3a2328ab24696a92865e78e3523ddd89a931341a4f71b7ce393",
+    "documentCount": 1,
+    "documentSetSha256": "9058d00c0641c39d1fce2a3aceebe7d48a1d879a8edcea95d7dca27d823d0937",
+    "contentSha256": "6c30badb19f880a19edcd86fe310e149ebd40b56c9d34271206ea1831e4eaa4a"
+  }
+}

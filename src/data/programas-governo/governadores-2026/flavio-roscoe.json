@@ -1,0 +1,953 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002550834",
+    "slug": "flavio-roscoe",
+    "nomeUrna": "FLÁVIO ROSCOE",
+    "partido": "PL",
+    "arquivoNome": "2026MG130002550834_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002550834_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002550834:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002550834_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002550834_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "931269924b24f7f287a72c433f80fbb0a126d09fd6dab3d24d74047272b49548",
+        "extractedTextSha256": "f6c87f1029ec258c0ce3cf8eeec7b44b1e5ddf07b55687ebc28c8627491c3f66",
+        "paginas": 20,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nFlávio Roscoe Nogueira\n“Minas que Produz, Minas que Cuida”\n\nMinas Gerais, agosto de 2026"
+          },
+          {
+            "id": "sumario",
+            "titulo": "SUMÁRIO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO\nSumário Executivo\nParte I — Diagnóstico de Minas Gerais em 2026\n1.1 Situação fiscal 1.2 CFEM e sonegação mineral 1.3 Segurança pública e sistema prisional\n1.4 Saúde 1.5 Educação 1.6 Desigualdade regional 1.7 Habitação e saneamento\n1.8 Ambiente de negócios e competitividade 1.9 Comércio exterior e agronegócio\n1.10 Inovação e economia do conhecimento 1.11 Mulheres e violência de gênero 1.12 Primeira infância\nParte II — Os Doze Eixos de Governo\nEixo 1 Equilíbrio Fiscal e Combate à Sonegação · Eixo 2 Segurança Pública e Sistema Prisional\nEixo 3 Saúde · Eixo 4 Educação · Eixo 5 Ambiente de Negócios e Tributação\nEixo 6 Meio Ambiente e Sustentabilidade · Eixo 7 Energia e Minerais Estratégicos\nEixo 8 Trabalho, Renda e Inclusão · Eixo 9 Infraestrutura, Habitação e Desigualdade Regional\nEixo 10 Mulheres, Primeira Infância e Agenda Social · Eixo 11 Inovação e Economia do Conhecimento\nEixo 12 Comércio Exterior e Relações Federativas\nParte III — Fontes Consultadas"
+          },
+          {
+            "id": "sumario-executivo",
+            "titulo": "SUMÁRIO EXECUTIVO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO EXECUTIVO\nMinas Gerais entra em 2026 diante de um paradoxo que qualquer candidato a governar o estado precisa\nenfrentar de frente, sem discurso pronto. Por um lado, é o estado que mais gera emprego formal,\nproporcionalmente, no Brasil — o desemprego caiu para 3,8% no quarto trimestre de 2025, o menor\níndice da série histórica iniciada em 2012 (Sedese-MG). Lidera a exportação de café do país, responde\npor 45% de toda a arrecadação nacional de royalties minerais (CFEM) e tem em Belo Horizonte o quarto\necossistema de tecnologia que mais cresce no mundo, segundo o Dealroom.co Global Tech Ecosystem\nIndex 2025. Por outro lado, fechou 2025 com o pior resultado de caixa entre os 27 estados brasileiros —\ndéficit de R$ 11,3 bilhões, segundo o Tesouro Nacional —, carrega uma dívida total que já passa de R$ 200\nbilhões, tem um déficit de mais de 22 mil vagas no sistema prisional, falta moradia para 556 mil famílias\ne mantém, entre o Norte de Minas e o Triângulo, um fosso de renda comparável ao que separa o\nsemiárido nordestino do Sul do país.\nO PIB mineiro cresceu 1,4% em 2025 e recuou 0,5% no primeiro trimestre de 2026 — sinal de que o fôlego\nrecente já dá mostras de esgotamento. A indústria segue como a espinha dorsal da economia do estado:\nresponde por 27,5% do PIB, emprega mais de 1,3 milhão de pessoas, cerca de 22% dos empregos formais\nmineiros, e paga 23% da massa salarial. Na cadeia mineral, que ganha nova relevância com a transição\nenergética global, cada emprego direto na extrativa puxa outros dezenove na economia ao redor.\nEste plano parte de uma premissa distinta da que orientou o debate público mineiro nos últimos anos:\nMinas não precisa de mais desregulamentação para crescer — já cresce, e cresce mais que a média do\npaís em setores estratégicos. O que falta é um Estado capaz de captar de forma justa a riqueza que essa\neconomia já produz e devolvê-la à população em segurança, saúde, moradia e oportunidade, sem sufocar\nquem gera emprego pelo caminho. É esse o fio condutor das doze frentes de atuação apresentadas neste\ndocumento.\nParte dessa conta não fecha por falta de arrecadação, e sim por arrecadação mal cobrada e por gasto mal\ndirecionado. Estudo do Sindifisco-MG estima que Minas pode ter deixado de recolher até R$ 22,65\nbilhões em CFEM — o royalty sobre a exploração mineral — só entre 2019 e 2025, dos quais R$ 6,25\nbilhões já estão reconhecidos em dívida ativa e ainda não foram cobrados com a energia que a situação\nfiscal do estado exige. Fechar essa lacuna, mais do que criar tributo novo, é o primeiro compromisso\ndeste plano.\nUm governo Flávio Roscoe vai tratar a recuperação fiscal e a cobrança de CFEM sonegado não como pauta\ntécnica de segundo plano, mas como a principal fonte de recursos novos para saúde, segurança e\nhabitação nos quatro anos de mandato — sem subir imposto para quem já paga em dia.\n\nO Custo Brasil, na escala mineira\nO chamado Custo Brasil — o conjunto de entraves de infraestrutura, burocracia, insegurança jurídica e\ncrédito caro que penaliza quem produz no país, estimado em R$ 1,7 trilhão por ano, ou 19,5% do PIB"
+          },
+          {
+            "id": "nacional-tem-uma-traducao-muito-concreta-em-minas-e-a-distancia-entre-se",
+            "titulo": "nacional — tem uma tradução muito concreta em Minas: é a distância entre ser o estado com o quarto",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "nacional — tem uma tradução muito concreta em Minas: é a distância entre ser o estado com o quarto\necossistema de tecnologia mais dinâmico do mundo e, ao mesmo tempo, o pior caixa entre os 27 estados\nbrasileiros. Reduzir essa distância é o compromisso central deste plano de governo."
+          },
+          {
+            "id": "parte-i-diagnostico-de-minas-gerais-em-2026",
+            "titulo": "PARTE I. DIAGNÓSTICO DE MINAS GERAIS EM 2026",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PARTE I. DIAGNÓSTICO DE MINAS GERAIS EM 2026\nAntes de propor, é preciso medir. As doze frentes de atuação apresentadas na Parte II deste plano nascem\ndo diagnóstico abaixo, construído a partir de dados oficiais e de fontes técnicas independentes, listadas\nao final do documento. Onde o dado é discutível — porque a metodologia varia, porque a fonte é parcial\nou porque o próprio governo atual apresenta números conflitantes —, isso é dito com a mesma clareza\ncom que se apontam os avanços reais que Minas teve nos últimos anos.\n\n1.1 Situação fiscal\nIndicador\n\nValor\n\nFonte\n\nDéficit de caixa em 2025\n\nR$ 11,30 bilhões — pior do Brasil\n\nTesouro Nacional, fev/2026\n\nDívida total do estado (dez/2025)\n\nR$ 201,09 bi (+63% desde 2019)\n\nSEF-MG\n\nDívida líquida / RCL\n\n48,22% (teto da LRF: 49%)\n\nSEF-MG, jan/2026\n\nDespesa com pessoal / RCL\n\n48,22% (limite prudencial: 46,55%)\n\nSEF-MG\n\nSuperávit contábil de 2025\n\nR$ 1,108 bi, mas com déficit de caixa\n\nSEF-MG\n\nServiço da dívida pago em 2025\n\nR$ 6,57 bi (+73% sobre 2024)\n\nSEF-MG\n\nO ponto mais delicado desse quadro é o descasamento entre o resultado contábil e a liquidez real: Minas\nfechou 2025 em superávit no papel e em déficit no caixa, ao mesmo tempo em que colou no teto de\ngasto com pessoal permitido pela Lei de Responsabilidade Fiscal. A adesão ao Propag alonga a dívida com\na União, mas não resolve, por si só, esse descasamento estrutural entre o que o orçamento formalmente\ndiz e o dinheiro que efetivamente existe em caixa no fim do exercício.\n\n1.2 CFEM e sonegação mineral\nMinas concentra 45% de toda a arrecadação nacional de CFEM — o royalty pago pela exploração de\nrecursos minerais — e é, ao mesmo tempo, o estado onde a distância entre o que deveria ser recolhido\ne o que efetivamente entra no caixa público é mais estudada e mais criticada. Segundo levantamento do\nSindicato dos Auditores Fiscais da Receita Estadual de Minas Gerais (Sindifisco-MG), a sonegação e a\nelisão fiscal na cadeia mineral podem ter custado ao estado até R$ 22,65 bilhões entre 2019 e 2025, dos\nquais R$ 6,25 bilhões já estão reconhecidos em dívida ativa — ou seja, o próprio estado já admite que o\nvalor é devido, mas ainda não o cobrou com a força necessária.\nEsse é o ponto de partida do Eixo 1 deste plano: antes de qualquer discussão sobre novo tributo, Minas\nprecisa cobrar, com rigor técnico e sem excepcionalidade para nenhum setor, o que já é devido hoje.\n\n1.3 Segurança pública e sistema prisional\nIndicador\n\nValor\n\nFonte\n\nCrimes violentos, 2022-2025\n\n-29,1% (18.791 → 13.317)\n\nSejusp-MG\n\nHomicídios em BH, 2024-2025\n\n-15,48% (142 vítimas), de base já alta\n\nSejusp-MG\n\nHomicídios em MG, 2024-2025\n\n-14,2% (3.124 → 2.698; taxa\n14,7→12,6/100 mil)\n\nSejusp-MG"
+          },
+          {
+            "id": "indicador",
+            "titulo": "Indicador",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Indicador\n\nValor\n\nFonte\n\nTráfico de drogas, 2024-2025\n\n+41,7% em MG vs. +18,5% no país\n\nMPMG\n\nDéficit de vagas no sistema prisional\n\n22.357 a 24.076 vagas\n\nMPMG/TCE-MG; Anuário Bras.\nSeg. Pública\n\nUnidades prisionais superlotadas\n\n66,8% (149 de 223)\n\nSenappen/MJSP\n\nA queda geral da violência é um resultado real e precisa ser reconhecido como tal. Mas a média estadual\nesconde dois problemas que exigem tratamento próprio: o colapso do sistema prisional, com déficit que\ncresceu 63,6% em um único ano, e a concentração da alta de homicídios e de tráfico em Belo Horizonte,\nna direção contrária à tendência do interior.\n\n1.4 Saúde\nIndicador\n\nValor\n\nFonte\n\nInvestimento em saúde, 2025\n\nR$ 11,8 bi — recorde histórico\n\nSES-MG\n\nMortalidade materna, 2019→2025\n\n44,3 → 32,9 óbitos/100 mil nascidos vivos\n\nSES-MG\n\nPré-natal adequado, 2019→2025\n\n38% → 60% das gestantes\n\nSES-MG\n\nCobertura vacinal, 2025\n\n2ª maior do país; 16,4 milhões de doses\n\nSES-MG\n\nA saúde é, hoje, a área em que a gestão estadual tem os melhores resultados a apresentar — e é preciso\nreconhecer isso com honestidade, em vez de fingir que o quadro é de caos. O que falta não é vontade, é\ntransparência regional: não existe, hoje, dado público sobre o tempo de espera por cirurgia eletiva\nseparado por macrorregião de saúde. Sem esse número, não há como saber se o Norte de Minas espera\nna fila tanto quanto a Região Metropolitana — e essa lacuna de informação já é, em si, uma proposta de\ngoverno.\n\n1.5 Educação\nIndicador\n\nValor\n\nFonte\n\nAlfabetização aos 7 anos, ranking\nnacional\n\n7ª → 3ª posição (2023→2024)\n\nInep/SEE-MG\n\nInvestimento em educação, 2024\n\nR$ 19,2 bi — recorde histórico\n\nSEE-MG\n\nIdeb Anos Iniciais, rede pública,\n2019→2023\n\nestagnado em 5,7 — entre os que pioraram\n\nInep, Todos Pela Educação\n\nIdeb Ensino Médio, rede estadual,\n2019→2023\n\n3,9→4,1 no fluxo, mas 4,54→4,45 na\naprendizagem\n\nInep, Todos Pela Educação\n\nProficiência Simave 2025, 1ª série do\nEM — Português\n\n252,3 pontos; 67,3% abaixo do nível\nrecomendado\n\nSEE-MG, Portal das Avaliações\n\nProficiência Simave 2025, 1ª série do\nEM — Matemática\n\n244,9 pontos; 90,1% abaixo do nível\nrecomendado\n\nSEE-MG, Portal das Avaliações\n\nMinas alfabetiza bem as crianças de 7 anos — é hoje referência nacional nisso — e, ainda assim, está\nentre os estados que pioraram no indicador de aprendizagem do Ideb, tanto nos anos iniciais quanto no\nensino médio, no mesmo período. Isso quer dizer uma coisa simples: o ganho na alfabetização inicial não\nestá se sustentando ao longo da trajetória escolar. É esse hiato — entre alfabetizar bem no início e formar\nbem no fim — que o Eixo 4 deste plano se propõe a enfrentar.\nO Simave 2025 confirma esse hiato com números concretos: na 1ª série do Ensino Médio, 67,3% dos\nestudantes ficam abaixo do nível recomendado em Língua Portuguesa e 90,1% ficam abaixo do"
+          },
+          {
+            "id": "recomendado-em-matematica-apenas-3-1-e-1-3-respectivamente-alcancam-o-ni",
+            "titulo": "recomendado em Matemática — apenas 3,1% e 1,3%, respectivamente, alcançam o nível avançado. Os",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "recomendado em Matemática — apenas 3,1% e 1,3%, respectivamente, alcançam o nível avançado. Os\nmapas por regional do Simave 2025 mostram ainda que essa defasagem não se distribui de forma\nuniforme pelo estado: as regionais do Norte de Minas, do Jequitinhonha e do Mucuri concentram as\npiores proficiências em Português e Matemática, tanto no 7º ano quanto na 1ª série do Ensino Médio,\nno mesmo recorte territorial já identificado como o de maior desigualdade de renda na seção 1.6 — o\nque confirma que a desigualdade educacional e a desigualdade regional mineira são, em boa medida, o\nmesmo problema visto por ângulos diferentes.\n\n1.6 Desigualdade regional\nIndicador\n\nValor\n\nFonte\n\nParticipação da Região Central no PIB\nestadual\n\n46,6%, com cerca de um terço da\npopulação\n\nUFMG/Cedeplar\n\nÍndice de Gini, Norte de Minas\n\n0,583 — patamar comparável ao Nordeste\n\nUFMG/Cedeplar\n\nPobreza, Jequitinhonha/Mucuri vs.\nTriângulo\n\n24,79% vs. 5,27% dos domicílios\n\nIBGE/Fundação João Pinheiro\n\nMinas Gerais tem, dentro de si, duas economias que quase não se falam: uma região central que\nconcentra quase metade do PIB com um terço da população, e um Norte, Jequitinhonha e Mucuri com\nnível de desigualdade que a literatura acadêmica compara ao do semiárido nordestino. Nenhum plano\nde governo para Minas está completo sem tratar essa distância como problema de Estado, não como\nfatalidade geográfica.\n\n1.7 Habitação e saneamento\nIndicador\n\nValor\n\nFonte\n\nDéficit habitacional de MG, 2022\n\n556 mil domicílios — 2º maior do Brasil\n\nFundação João Pinheiro\n\nCrescimento do déficit, 2016-2022\n\n+30% (3x a média nacional de 9,86%)\n\nFundação João Pinheiro\n\nPerfil dos afetados pelo déficit\n\n62,6% chefiadas por mulheres; 74,5% até\nR$ 2.850/mês\n\nFundação João Pinheiro\n\nImóveis desocupados em MG, 2022\n\n~1,2 milhão — mais que o dobro do déficit\n\nIBGE, cit. Fundação João\nPinheiro\n\nConsumo de água por setor em MG\n\nAgropecuária 72%; abastecimento 15%;\nindústria 9%\n\nIgam\n\nMinas tem, ao mesmo tempo, um déficit habitacional que cresce três vezes mais rápido que a média\nnacional e um estoque de imóveis vazios que é o dobro desse déficit — sinal de que o problema não é só\nfalta de construção, é também especulação e má distribuição do estoque já existente. Qualquer política\nhabitacional que ignore esse segundo dado está atacando só a metade do problema.\n\n1.8 Ambiente de negócios e competitividade\nO Ranking de Competitividade dos Estados 2025, do Centro de Liderança Pública (CLP), em parceria com\na B3, a Economist Intelligence Unit e a Tendências Consultoria, ajuda a qualificar onde Minas realmente\nperde terreno. São Paulo lidera o ranking geral desde a primeira edição. Minas está entre os três melhores\ndo país no pilar Educação, ao lado de São Paulo e Santa Catarina — o que confirma que o problema\neducacional mineiro é de aprendizagem ao longo do tempo, não de acesso ou alfabetização inicial. No\nSudeste, Minas e Espírito Santo dividem posições de destaque, mas é o Espírito Santo que se sobressai"
+          },
+          {
+            "id": "especificamente-em-solidez-fiscal-exatamente-o-pilar-em-que-minas-esta-m",
+            "titulo": "especificamente em solidez fiscal, exatamente o pilar em que Minas está mais atrás. Santa Catarina lidera",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "especificamente em solidez fiscal, exatamente o pilar em que Minas está mais atrás. Santa Catarina lidera\nsegurança pública e capital humano; o Paraná, sustentabilidade ambiental e eficiência da máquina\npública; o Rio Grande do Sul, inovação.\nA leitura mais honesta desse ranking é a seguinte: Minas não compete mal em educação, nem em geração\nde emprego. Compete mal, de forma comprovada e mensurada por instituição independente, em solidez\nfiscal. É por isso que o equilíbrio das contas públicas está tratado neste plano como o Eixo 1 — o carrochefe —, e não como um apêndice técnico ao final do documento.\n\n1.9 Comércio exterior, agronegócio e o tarifaço americano\nO agronegócio mineiro exportou entre US$ 19,8 e 19,9 bilhões em 2025, recorde da série histórica\niniciada em 1997, com o café respondendo por 57,1% dessa receita (Seapa-MG/Diário do Comércio). Só\nentre janeiro e abril de 2026, Minas exportou US$ 14,2 bilhões, com superávit comercial de US$ 8 bilhões\nno período. O tarifaço americano de 2025 — tarifas de até 50% sobre produtos brasileiros — isentou o\ncafé verde, principal item mineiro de exportação aos Estados Unidos, mas atingiu em cheio segmentos\nonde Minas responde por quase toda a exportação nacional, como sebo bovino, disjuntores de baixa\ntensão, ardósia trabalhada, magnesita e materiais refratários.\nNo primeiro semestre de 2025, Minas respondeu por 80,5% de todo o café brasileiro exportado aos\nEstados Unidos — o estado mais exposto do país a esse item específico da tarifa, mesmo que o produto\ntenha ficado isento na versão final da medida. Ainda assim, Minas destina apenas 11% de suas\nexportações totais aos EUA, proporção menor que a do Espírito Santo (28,6%) ou de São Paulo (19%) —\nmas relevante em valor absoluto, dado o tamanho da economia mineira.\n\n1.10 Inovação e economia do conhecimento\nBelo Horizonte é o quarto ecossistema de tecnologia que mais cresce no mundo e o primeiro da América\nLatina na categoria “Rising Stars” do Global Tech Ecosystem Index 2025 (Dealroom.co), ao lado de cidades\ncomo Lagos, Istambul, Pune e Mumbai. O San Pedro Valley, criado a partir de 2011 no bairro São Pedro,\né hoje referência nacional em conectar startups à indústria. O Minas Summit 2025 reuniu mais de dez mil\nparticipantes e movimentou R$ 70 milhões em negócios. É um ativo que a política pública estadual ainda\ntrata como curiosidade, não como eixo de desenvolvimento — e é isso que este plano corrige, dedicando\na esse tema um eixo próprio.\n\n1.11 Mulheres e violência de gênero\nIndicador\n\nValor\n\nFonte\n\nFeminicídios em MG, 2025\n\n177 casos (+4,4% sobre 2024)\n\nAnuário Bras. Segurança\nPública 2026\n\nPosição de MG no ranking nacional\n\n2º estado com mais casos do país\n\nidem, cit. TVC Paracatu\n\nMortes femininas totais, 2024→2025\n\n350 → 306 (-12,9%)\n\nAnuário Bras. Segurança\nPública 2026\n\nMedidas protetivas solicitadas, janout/2025\n\n54.824 (média de 5.482/mês)\n\nPolícia Civil de MG, cit. ALMG\n\nDelegacias especializadas (Deams) em\nMG\n\n70, além do programa “PCMG Por Elas”\n\nGoverno de MG / PCMG"
+          },
+          {
+            "id": "minas-reduziu-a-violencia-letal-contra-mulheres-em-termos-gerais-e-ao-me",
+            "titulo": "Minas reduziu a violência letal contra mulheres em termos gerais e, ao mesmo tempo, é o segundo estado",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Minas reduziu a violência letal contra mulheres em termos gerais e, ao mesmo tempo, é o segundo estado\ndo país em número absoluto de feminicídios, categoria que segue subindo mesmo com uma rede de\nproteção relativamente robusta — 70 delegacias especializadas e quase 55 mil medidas protetivas\nsolicitadas em dez meses. A leitura mais provável é que a rede identifica bem o risco, mas ainda falha em\nevitar o desfecho fatal quando o ciclo de violência já está em estágio avançado — e é exatamente essa\nfase do problema que uma nova política precisa mirar.\n\n1.12 Primeira infância e educação infantil\nIndicador\n\nValor\n\nFonte\n\nEscolarização de 0 a 3 anos, MG vs.\nBrasil\n\n34% vs. 39% de média nacional\n\nMEC/Gaepe-Brasil, cit. O\nTempo\n\nFila de espera por vaga em creche\n\n2ª maior do Brasil em números absolutos\n\nGaepe-Brasil / Todos Pela\nEducação\n\nMunicípios sem nenhuma creche\npública\n\n55 municípios\n\nCenso Escolar 2024 (Inep)\n\nMunicípios sem vagas suficientes (0-6\nanos)\n\n94% dos municípios mineiros\n\nMPMG, Projeto Crescer Juntos\n\nA gestão da creche é constitucionalmente municipal, e o estado já repassou R$ 1,2 bilhão a 163\nmunicípios desde 2021 para a construção de 194 novas unidades. Mesmo assim, o gargalo se concentra\nexatamente onde a cooperação técnica e financeira do estado é mais necessária: nos municípios\npequenos, sem orçamento próprio para resolver o problema sozinhos — o mesmo recorte territorial que\naparece na desigualdade regional descrita na seção 1.6."
+          },
+          {
+            "id": "parte-ii-os-doze-eixos-de-governo",
+            "titulo": "PARTE II. OS DOZE EIXOS DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PARTE II. OS DOZE EIXOS DE GOVERNO\nOs eixos abaixo não são compartimentos estanques: o equilíbrio fiscal financia a segurança, a segurança\nviabiliza o investimento, e o investimento só gera renda ampla se vier acompanhado de redução da\ndesigualdade regional. Cada eixo traz o diagnóstico que o sustenta — remetendo às seções da Parte I —\ne as propostas concretas que um governo Flávio Roscoe se compromete a executar.\n\nEixo 1 — Equilíbrio Fiscal e Combate à Sonegação\nMinas tem, hoje, o pior caixa entre os 27 estados brasileiros e pode ter deixado de arrecadar até R$ 22,65\nbilhões em CFEM sonegada entre 2019 e 2025, dos quais R$ 6,25 bilhões já estão em dívida ativa\nreconhecida (seções 1.1 e 1.2). O desequilíbrio fiscal nos estados brasileiros, em geral, tem quatro causas\nrecorrentes: endividamento elevado, crescimento da despesa com pessoal e previdência, baixa\ncapacidade de investimento e rigidez orçamentária. Em Minas, a adesão ao Propag melhora o perfil da\ndívida com a União, mas não resolve, isoladamente, nenhuma dessas quatro causas.\nEsse desequilíbrio não é problema só do governo: pressiona por aumento de imposto, reduz investimento\nem infraestrutura e tecnologia, piora a qualidade dos serviços públicos e encarece o crédito para\nempresas e famílias mineiras. Um governo Flávio Roscoe vai tratar a recuperação fiscal como précondição para tudo o mais, e não como discurso de campanha a ser esquecido no primeiro ano de\nmandato.\n\nCompromissos deste eixo:\n●\n\nTrazer a despesa com pessoal de volta ao limite prudencial de 46,55% da Receita Corrente\nLíquida — hoje em 48,22%, colado no teto legal de 49%.\n\n●\n\nInstituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25\nbilhões já reconhecidos em dívida ativa e ainda não cobrados.\n\n●\n\nPublicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado\norçamentário — para que superávit contábil e déficit de caixa nunca mais coexistam sem que a\npopulação saiba.\n\n●\n\nCriar um comitê fiscal independente, com participação de universidades mineiras (UFMG, entre\noutras) e do Tribunal de Contas, para auditar trimestralmente a execução orçamentária e\npublicar parecer técnico acessível ao cidadão — nos moldes do que já existe em países com\nconselhos fiscais independentes, mas ainda inexistente em qualquer estado brasileiro.\n\nEixo 2 — Segurança Pública e Sistema Prisional\nA violência em geral caiu em Minas, mas dois problemas específicos crescem sob essa média favorável:\no colapso do sistema prisional — déficit de 22 a 24 mil vagas, 66,8% das unidades superlotadas, 40% das\nvagas sob interdição judicial — e a concentração de homicídios e tráfico em Belo Horizonte, na direção\ncontrária ao restante do estado (seção 1.3). A esse quadro se soma o retrato da violência de gênero\ndescrito na seção 1.11: Minas é o segundo estado do país em feminicídios, mesmo com uma rede de\nproteção relativamente estruturada."
+          },
+          {
+            "id": "compromissos-deste-eixo",
+            "titulo": "Compromissos deste eixo:",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos deste eixo:\n●\n\nPlano de emergência para o déficit prisional, combinando ampliação de vagas com parcerias\npúblico-privadas de gestão, sem repetir os erros de superlotação que hoje geram interdição\njudicial em dois terços das unidades.\n\n●\n\nReversão da alta específica de homicídios e tráfico em Belo Horizonte, com policiamento\norientado por dados e integração entre as polícias Civil e Militar na capital.\n\n●\n\nAmpliação da rede de proteção à mulher com foco no momento de maior risco — o ciclo\navançado de violência que hoje antecede a maioria dos feminicídios — e não só na porta de\nentrada da denúncia.\n\n●\n\nCriar, dentro da Polícia Civil, um protocolo de reavaliação obrigatória de risco a cada 30 dias\npara vítimas com medida protetiva ativa, com prioridade de acompanhamento para os casos\nclassificados como risco extremo — hoje a medida protetiva é concedida, mas não há\nreavaliação periódica sistemática do risco enquanto ela está em vigor.\n\nEixo 3 — Saúde\nA saúde mineira tem, hoje, investimento recorde e avanços reais e mensuráveis: queda da mortalidade\nmaterna, ampliação do pré-natal adequado, cobertura vacinal entre as duas maiores do país (seção 1.4).\nO problema não é a falta de resultado, é a falta de um dado essencial — não existe informação pública\nsobre o tempo de espera por cirurgia eletiva separada por macrorregião de saúde, o que impede saber\nse o Norte de Minas espera tanto quanto a Região Metropolitana.\n\nCompromissos deste eixo:\n●\n\nPublicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame\nde diagnóstico — o primeiro passo para tratar a desigualdade de acesso como problema\nmensurável, não como impressão.\n\n●\n\nAmpliar a cobertura de atenção primária no Norte, no Jequitinhonha e no Mucuri, hoje as\nregiões com pior indicador de acesso a serviços básicos de saúde.\n\n●\n\nManter a trajetória de queda da mortalidade materna, com meta explícita de levar o indicador\nabaixo de 25 óbitos por 100 mil nascidos vivos até o final do mandato.\n\n●\n\nCriar um painel público único, acessível pelo aplicativo do estado, em que qualquer mineiro\npossa consultar a fila de cirurgia eletiva do seu hospital de referência em tempo real — hoje\nessa informação existe internamente na SES-MG, mas não é disponibilizada ao cidadão de\nforma consolidada.\n\nEixo 4 — Educação\nMinas subiu da sétima para a terceira posição no ranking nacional de alfabetização aos 7 anos e, no\nmesmo período, está entre os estados que pioraram no Ideb dos anos iniciais e do ensino médio (seção\n1.5). O Simave 2025 dá a medida exata desse hiato na 1ª série do Ensino Médio: 67,3% dos estudantes\nabaixo do recomendado em Português e 90,1% abaixo do recomendado em Matemática, com as piores\nproficiências concentradas justamente nas regionais do Norte, do Jequitinhonha e do Mucuri — o mesmo\nrecorte da desigualdade regional tratada na seção 1.6."
+          },
+          {
+            "id": "um-diagnostico-de-causas-dessa-baixa-aprendizagem-elaborado-com-apoio-te",
+            "titulo": "Um diagnóstico de causas dessa baixa aprendizagem, elaborado com apoio técnico da Fundação da Cide",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Um diagnóstico de causas dessa baixa aprendizagem, elaborado com apoio técnico da Fundação da Cide\n(FDG), organiza o problema em quatro frentes que se retroalimentam: fragilidade no regime de\ncolaboração entre estado e municípios; falhas de organização e planejamento na rede, com excesso de\nprogramas paralelos e formação deficitária de gestores escolares; problemas de qualidade da educação\nem sala de aula, da oferta insuficiente de tempo integral à estrutura física inadequada de muitas escolas;\ne uma política de valorização docente que ainda falha na formação inicial e no plano de cargos e salários.\nEste eixo responde a cada uma dessas quatro frentes.\n\nQualidade da educação\nO objetivo é melhorar a aprendizagem com equidade em todas as etapas, com prioridade para o Ensino\nFundamental 2 e o Ensino Médio, fortalecendo a orientação para o projeto de vida e ampliando a\neducação empreendedora e em tempo integral. O principal instrumento de gestão para isso é a Gestão\npara Resultados Pedagógicos (GRP): um modelo que identifica e ataca as causas de cada problema de\naprendizagem, com metas claras, planos de ação, monitoramento contínuo, correção de rota e registro\ndas práticas que funcionam, sempre com participação da comunidade escolar. É a partir da GRP que se\ntorna possível identificar, escola por escola, onde recompor aprendizagem é mais urgente — com foco\ndeclarado na redução das desigualdades — e fortalecer especificamente o ensino de Língua Portuguesa\ne Matemática no Ensino Fundamental 2, etapa em que a defasagem começa a se consolidar.\nDentro dessa mesma frente, três compromissos complementam o modelo de gestão: fortalecer a\neducação em tempo integral, hoje insuficiente diante da demanda; fortalecer a educação inclusiva, para\nestudantes com deficiência e necessidades específicas; e ampliar a rede de ensino profissionalizante,\npriorizando municípios de baixo IDH e forte presença industrial, com trilhas formativas flexíveis — do\ncurso rápido à formação técnica completa — construídas em parceria com sindicatos patronais e arranjos\nprodutivos locais, e com oferta híbrida para alcançar municípios mais distantes dos grandes centros.\n\nValorização dos profissionais da educação\nFortalecer a carreira docente passa por valorização profissional, formação continuada e melhores\ncondições de trabalho — não como discurso, mas como política de bem-estar do educador que se reflete\ndiretamente na qualidade da aprendizagem. As linhas de ação são a formação continuada de docentes\npela Academia Cide; a ampliação de programas de desenvolvimento de lideranças escolares, com gestão\nde competências voltada especificamente para liderança; a ampliação da formação de mestres e\ndoutores dentro da rede, de forma equitativa e inclusiva e com foco na solução de problemas reais da\nescola; o fortalecimento do processo de seleção de diretores, para que a direção escolar deixe de ser\ncargo apenas político e passe a exigir competência de gestão comprovada; a atualização do plano de\ncarreira docente; e o fortalecimento de programas de saúde e bem-estar dos profissionais da educação,\nárea historicamente negligenciada nas políticas de valorização docente.\n\nTecnologia e Inovação\nA transformação digital da educação mineira ainda é desigual: parte da rede tem acesso pleno a\nplataformas e equipamentos, e parte segue com baixo letramento tecnológico, tanto de estudantes\nquanto de professores. O objetivo é universalizar o acesso à internet de alta velocidade nas escolas\nestaduais, ampliar o uso de plataformas digitais de aprendizagem, disponibilizar recursos tecnológicos a\nestudantes e professores e formar os profissionais da rede em metodologias ativas e tecnologias"
+          },
+          {
+            "id": "educacionais-tambem-atraves-da-academia-cide-de-modo-que-a-tecnologia-de",
+            "titulo": "educacionais, também através da Academia Cide — de modo que a tecnologia deixe de ser vantagem de",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "educacionais, também através da Academia Cide — de modo que a tecnologia deixe de ser vantagem de\nquem já tinha estrutura e passe a reduzir, e não a ampliar, a desigualdade entre regionais.\n\nRegime de colaboração com os municípios\nBoa parte da defasagem educacional mineira nasce fora da governança direta do estado: municípios\npequenos, sem orçamento e sem corpo técnico próprio, carregam responsabilidades educacionais que\nnão conseguem cumprir sozinhos. Fortalecer o regime de colaboração significa assistência técnica\npermanente, formação continuada, compartilhamento de boas práticas entre redes e apoio direto à\ngestão educacional municipal, com dois compromissos objetivos: implementar um programa de\ncooperação técnica que insira os municípios nos próprios sistemas de avaliação e gestão do estado — em\nvez de deixá-los de fora dos indicadores que orientam a política estadual — e dar continuidade ao apoio\na políticas de alfabetização já em curso, como o Compromisso Nacional Criança Alfabetizada (CNCA), sem\ndescontinuidade a cada troca de gestão.\n●\n\nCriar um índice mineiro de continuidade da aprendizagem, medido a cada dois anos, que\nacompanhe a mesma coorte de estudantes da alfabetização ao nono ano — hoje o Ideb mede\npontos fixos da trajetória escolar, mas não acompanha a mesma turma ao longo do tempo, o\nque impede saber se o ganho na alfabetização de fato se sustenta para os mesmos alunos mais\nadiante.\n\nEixo 5 — Ambiente de Negócios e Tributação\nO Ranking de Competitividade dos Estados 2025 confirma o que a seção 1.8 já mostra: Minas está bem\nposicionada em educação e mal posicionada em solidez fiscal. Isso recomenda enquadrar este eixo como\n“crescer sem repetir o erro fiscal”, e não como desregulamentação por desregulamentação — qualquer\nbenefício tributário concedido aqui precisa estar amarrado a geração ou manutenção comprovada de\nemprego formal, e não ser tratado como renúncia isolada.\nA substituição tributária, técnica de arrecadação e combate à sonegação que se tornou padrão no ICMS\nmineiro, foi útil quando o estado não tinha como cruzar dados de venda em tempo real. Hoje, com nota\nfiscal eletrônica, Sped e cruzamento com dados federais e de cartões de crédito, boa parte da justificativa\noriginal perdeu força — e o instrumento passou a pesar mais sobre o capital de giro das empresas do que\nsobre a sonegação que deveria combater. Rio de Janeiro e São Paulo já vêm reduzindo gradualmente o\nuso da substituição tributária, movimento que se soma à chegada do novo Imposto sobre Bens e Serviços\nem 2027. Minas precisa revisar esse regime com um grupo de trabalho que inclua sociedade civil e\nmonitore o que os demais estados já estão fazendo — não para abandonar o controle fiscal, mas para\nmodernizá-lo.\nNo crédito acumulado de ICMS, o Regulamento vigente (Decreto nº 48.589/2023, Anexo III) impõe um\nlimite mensal global de transferência, exige pagamento mínimo em moeda corrente e condiciona a\noperação à apresentação de Certidão Negativa de Débitos — uma combinação que, na prática, retém\nindefinidamente créditos que a própria empresa já pagou ao longo da cadeia produtiva, comprometendo\ncaixa e competitividade. A proposta é ampliar o limite mensal de transferência, dispensar a exigência de\nCND para essa finalidade específica e agilizar a análise dos projetos de expansão de empreendimento que\nhoje dependem desse crédito para sair do papel."
+          },
+          {
+            "id": "um-problema-mais-estrutural-aparece-no-comercio-exterior-minas-nao-tem-p",
+            "titulo": "Um problema mais estrutural aparece no comércio exterior: Minas não tem porto marítimo e seu",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Um problema mais estrutural aparece no comércio exterior: Minas não tem porto marítimo e seu\naeroporto ainda não movimenta cargueiros no volume de São Paulo ou do Rio de Janeiro, o que obriga\nboa parte da indústria mineira a desembaraçar importações em outros estados. Hoje isso pode significar\nperda do diferimento do ICMS sobre matéria-prima e bens de capital, mesmo quando a mercadoria segue\npara uso em Minas. A alternativa de trânsito aduaneiro interno é lenta e cara, e a liberação ainda depende\nde conferência manual em boa parte dos casos. A proposta é tornar regra geral o diferimento do ICMS\nna importação de matéria-prima e ativo imobilizado independentemente do estado onde ocorre o\ndesembaraço, com liberação automática da carga — alinhando Minas ao que já fazem São Paulo, Rio de\nJaneiro, Paraná e Pernambuco.\n●\n\nCriar um selo estadual de “empresa cumpridora”, renovável anualmente, que dê acesso\nfacilitado a crédito de ICMS e regimes especiais para empresas com histórico comprovado de\nregularidade fiscal e manutenção de emprego — hoje o tratamento tributário é uniforme para\nbons e maus pagadores, o que trata igual quem não é igual.\n\nEixo 6 — Meio Ambiente e Sustentabilidade\nMinas administra 586,5 mil quilômetros quadrados e 853 municípios — território maior que o de diversos\npaíses — com desafios que vão do combate à degradação ambiental à segurança hídrica e alimentar. O\nlicenciamento ambiental mineiro hoje soma mais de 800 atos normativos só dentro do Sistema Estadual\nde Meio Ambiente (Sisema), regulando mais de 40 tipos de autorização, com conflitos frequentes entre\nsi e com a legislação federal — o que gera insegurança jurídica tanto para o empreendedor quanto para\nquem fiscaliza.\nA Lei Geral de Licenciamento Ambiental (Lei Federal nº 15.190/2025), aprovada após mais de duas\ndécadas de tramitação no Congresso Nacional, é uma oportunidade de reorganizar essa colcha de\nretalhos normativa em Minas. A proposta é adequar a legislação estadual — Lei nº 21.972/2016, Lei nº\n20.922/2014 e os decretos e deliberações normativas correlatos — ao novo marco federal, prevendo\nmanifestação não vinculante dos municípios no processo, licença por adesão e compromisso para\nempreendimentos de menor porte e potencial poluidor, exigência de nexo de causalidade real entre\nimpacto ambiental e condicionante impostas, e redução dos prazos de análise. Ao mesmo tempo, é\npreciso consolidar e revisar os mais de 800 atos normativos do Sisema e criar termos de referência\nespecíficos por atividade produtiva, hoje inexistentes — o que reduziria a margem de interpretação\ndivergente entre analistas e daria mais previsibilidade a quem investe.\nNa matriz energética, o Brasil já teve 97% de geração renovável entre 1970 e 1994; hoje está perto de\n89%, com avanço das termelétricas fósseis. Simplificar o licenciamento de novas usinas hidrelétricas, sem\nabrir mão do rigor ambiental, é parte do caminho para retomar esse protagonismo, ao lado da energia\nsolar e eólica que já colocam Minas na vanguarda nacional. Outro ponto pouco discutido é a regularização\nfundiária das unidades de conservação: em 2013, menos de 30% das áreas de posse pública das unidades\nmineiras estava com a situação fundiária resolvida, e o custo dessa pendência recai sobre os proprietários\ndentro dessas áreas e sobre empreendedores que precisam doar terras como compensação ambiental,\nmas enfrentam preços inflados por vendedores que sabem da urgência da compra. Regulamentar a\nparticipação do empreendedor como interveniente pagador em processos de desapropriação — com o"
+          },
+          {
+            "id": "valor-arbitrado-pelo-judiciario-e-nao-negociado-sob-pressao-resolve-os-d",
+            "titulo": "valor arbitrado pelo Judiciário, e não negociado sob pressão — resolve os dois lados do problema ao",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "valor arbitrado pelo Judiciário, e não negociado sob pressão — resolve os dois lados do problema ao\nmesmo tempo.\n●\n\nInstituir um cadastro público único de condicionantes ambientais por bacia hidrográfica,\npermitindo que qualquer cidadão acompanhe, pela internet, se as compensações ambientais\nprometidas por grandes empreendimentos foram de fato cumpridas — hoje esse\nacompanhamento existe, mas está disperso entre processos individuais de difícil acesso ao\npúblico em geral.\n\nEixo 7 — Energia e Minerais Estratégicos\nEste eixo se conecta diretamente ao Eixo 1: a mesma cadeia mineral que deve ser incentivada para atrair\ninvestimento futuro é a que precisa estar sob fiscalização rigorosa do CFEM que já é devido hoje —\nincentivo e cobrança precisam caminhar juntos, não em direções opostas.\nMinas responde por 30% da produção mineral brasileira, é líder global em nióbio, tem as maiores reservas\nde grafite e silício do país e é o único estado produtor de lítio — exatamente os insumos que a transição\nenergética e digital está tornando estratégicos para veículos elétricos, turbinas eólicas, painéis solares e\nsemicondutores. O problema é que a maior parte dessa produção ainda sai do estado em estado bruto,\nsem agregar valor, emprego qualificado ou receita tributária proporcional. A proposta é uma Política\nEstadual de Incentivo à Cadeia Produtiva de Minerais Críticos e Estratégicos — lítio, nióbio, grafite, terrasraras, manganês, cobalto, níquel e titânio, entre outros —, combinando linha de crédito, modernização\nlogística para exportação e apoio regulatório à expansão sustentável da indústria de transformação\nmineral, para que Minas deixe de exportar apenas a matéria-prima e passe a capturar parte do valor\nagregado dessa cadeia.\nA expansão acelerada da energia solar em Minas — hoje o maior polo do país — já exige instrumentos\nmodernos de segurança energética para evitar desperdício de geração e sobrecarga da rede em horários\nde pico. Sistemas de armazenamento de energia em baterias (BESS) reduzem esse desperdício, aliviam a\npressão tarifária nos horários de maior consumo e permitem instalar novas usinas mesmo em regiões\nonde a rede elétrica já está saturada. Uma política estadual específica de incentivo ao BESS pode\ntransformar Minas também em polo de indústria de baterias e reciclagem, não só de geração — mas isso\nexige segurança jurídica e celeridade administrativa que hoje não existem para esse tipo de\nempreendimento.\n●\n\nDestinar uma fração da futura arrecadação adicional de CFEM — a que resultar da fiscalização\nreforçada prevista no Eixo 1 — a um fundo estadual de royalties mineral vinculado\nexclusivamente a infraestrutura nos municípios produtores, com prestação de contas pública\ntrimestral: quem convive com o impacto ambiental e social da mineração precisa ver o retorno\nfinanceiro chegar antes, e não depois, do fim da vida útil da mina.\n\nEixo 8 — Trabalho, Renda e Inclusão\nMinas já registra a menor taxa de desemprego da sua série histórica — 3,8% no quarto trimestre de 2025\n—, o que muda a pergunta central da política de emprego estadual: não é mais como gerar vagas, é como\ngarantir a qualidade e a distribuição regional desse emprego formal, em articulação direta com o Eixo 9."
+          },
+          {
+            "id": "dois-programas-especificos-merecem-estrutura-propria-o-primeiro-e-um-cad",
+            "titulo": "Dois programas específicos merecem estrutura própria. O primeiro é um Cadastro Estadual de",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Dois programas específicos merecem estrutura própria. O primeiro é um Cadastro Estadual de\nProfissionais 50+, integrado ao SINE estadual e a bases federais, para enfrentar a escassez de mão de\nobra qualificada em setores que hoje descartam, por padrão de contratação, trabalhadores experientes\nque ainda têm capacidade produtiva plena — o cadastro permite mapear competências e aproximar\noferta e demanda, em vez de deixar esse contingente simplesmente fora do radar das empresas que mais\nprecisam de qualificação técnica. O segundo é um Banco de Trabalhadores com Deficiência, também\nvinculado ao SINE, que ajude as empresas a cumprir a cota legal de contratação com informação\norganizada, e não apenas com fiscalização — hoje o maior obstáculo ao cumprimento da cota não é a\nfalta de vontade da empresa, é a dificuldade de encontrar candidatos qualificados e disponíveis.\n●\n\nAmpliar o cadastro 50+ e o Banco de Trabalhadores com Deficiência para incluir também mães\nsolo em retorno ao mercado de trabalho após licença-maternidade estendida ou período de\ncuidado infantil — outro grupo com alta empregabilidade potencial e baixa visibilidade nos\ncanais de recolocação profissional hoje disponíveis no estado.\n\nEixo 9 — Infraestrutura, Saneamento, Habitação e Desigualdade Regional\nAs seções 1.6 e 1.7 já mostram o quadro: déficit habitacional de 556 mil domicílios crescendo três vezes\nmais rápido que a média nacional, desigualdade regional comparável ao Nordeste no caso do Norte de\nMinas, e uma malha rodoviária em recuperação — a proporção de rodovias em estado ruim caiu de 22,1%\npara 13,4% entre 2022 e 2025, segundo o DER-MG, o que precisa ser reconhecido como avanço real antes\nde qualquer crítica.\nInfraestrutura não é fim em si mesma — é o que permite que saneamento, transporte, energia e\ntelecomunicações cheguem a quem produz e a quem consome, reduzindo custo logístico e perda de\nmercadoria no caminho. O Brasil como um todo convive com estradas saturadas e em más condições, o\nque eleva preço para o consumidor final e reduz a margem de quem produz. Em Minas, a resposta passa\npor continuar ampliando a malha rodoviária e avançar de forma mais decidida na expansão ferroviária e\ndutoviária, hoje muito atrás do potencial de escoamento que o estado tem.\n●\n\nPriorizar, dentro do orçamento de infraestrutura, uma cota mínima anual vinculada às regiões\nde menor renda per capita do estado — Norte, Jequitinhonha e Mucuri — para que a melhoria\nda malha rodoviária e o combate ao déficit habitacional não repitam o padrão histórico de\nconcentração de investimento na Região Central. Sem essa vinculação orçamentária explícita, a\ndesigualdade regional descrita na seção 1.6 tende a se reproduzir a cada novo ciclo de obras.\n\nEixo 10 — Mulheres, Primeira Infância e Agenda Social\nAs seções 1.11 e 1.12 mostram dois problemas que, à primeira vista, parecem distantes, mas\ncompartilham a mesma raiz: Minas é o segundo estado do país em feminicídios, mesmo com rede de\nproteção estruturada, e tem a segunda maior fila de espera por creche do Brasil, com cobertura de 0 a 3\nanos abaixo da média nacional e 55 municípios sem nenhuma creche pública. Em ambos os casos, a\npolítica pública existe, mas não alcança quem mais precisa dela na ponta.\n\nCompromissos deste eixo:"
+          },
+          {
+            "id": "pagina-17",
+            "titulo": "●",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "●\n\nReduzir o número de feminicídios, com foco no acompanhamento de casos já classificados\ncomo risco extremo — não apenas na expansão do número de delegacias especializadas, que já\nsão 70 no estado.\n\n●\n\nAmpliar crédito e capacitação para empreendedorismo feminino no interior, onde o acesso a\nlinhas de financiamento hoje é mais restrito que na Região Metropolitana.\n\n●\n\nPriorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade\npública, antes de ampliar a oferta onde já existe rede mínima instalada.\n\n●\n\nCriar um programa de transporte escolar específico para crianças de 0 a 3 anos em municípios\npequenos, permitindo que uma única creche regional atenda mais de um município vizinho sem\nexigir que cada prefeitura pequena construa a sua própria unidade do zero — hoje a exigência\nimplícita de creche própria por município é uma das razões pelas quais municípios pequenos,\nsem orçamento, seguem sem nenhuma vaga pública.\n\nEixo 11 — Inovação e Economia do Conhecimento\nBelo Horizonte é o quarto ecossistema de tecnologia que mais cresce no mundo e o primeiro da América\nLatina, com o San Pedro Valley como referência nacional desde 2011 (seção 1.10). É um ativo que a\npolítica pública mineira ainda trata como fenômeno espontâneo do setor privado, quando poderia ser\ntratado como vetor de política industrial e de geração de emprego qualificado no interior do estado, não\nsó na capital.\n\nCompromissos deste eixo:\n●\n\nConsolidar Minas como um dos principais polos de inovação do interior do Brasil, e não apenas\nda Região Metropolitana de Belo Horizonte.\n\n●\n\nCriar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior —\ncomo o Sul de Minas, o Triângulo e a região de Ipatinga —, conectando startups locais às\nindústrias já instaladas nessas regiões, hoje concentradas em conhecimento técnico que\nraramente se transforma em empresa de tecnologia própria.\n\nEixo 12 — Comércio Exterior e Relações Federativas\nA seção 1.9 mostra a exposição concreta de Minas ao tarifaço americano: recorde de exportação do\nagronegócio (US$ 19,8-19,9 bi em 2025), superávit comercial de US$ 8 bi só no início de 2026, mas\nvulnerabilidade real em segmentos industriais específicos — magnesita, ardósia, disjuntores — onde\nMinas responde por quase toda a exportação brasileira. Esse episódio concreto e recente, com tarifas de\naté 50% impostas pelos Estados Unidos em 2025, expôs algo que a política comercial mineira nunca havia\nprecisado enfrentar: a dependência de decisões unilaterais de um único parceiro comercial em setores\nonde não há alternativa de mercado equivalente.\n\nCompromissos deste eixo:\n●\n\nDiversificar os mercados de destino das exportações mineiras, reduzindo a exposição a decisões\nunilaterais de política comercial de qualquer parceiro específico.\n\n●\n\nCriar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura\npermanente de monitoramento de risco comercial internacional, com relatório trimestral\npúblico sobre a exposição de cada setor exportador mineiro a mudanças tarifárias ou"
+          },
+          {
+            "id": "regulatorias-dos-principais-parceiros-hoje-esse-tipo-de-alerta-chega-ao",
+            "titulo": "regulatórias dos principais parceiros — hoje esse tipo de alerta chega ao setor produtivo apenas",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "regulatórias dos principais parceiros — hoje esse tipo de alerta chega ao setor produtivo apenas\ndepois que a tarifa já foi anunciada, quando o espaço de negociação e adaptação já é muito\nmenor."
+          },
+          {
+            "id": "parte-iii-fontes-consultadas",
+            "titulo": "PARTE III. FONTES CONSULTADAS",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PARTE III. FONTES CONSULTADAS\nAs propostas deste plano têm como base técnica estudos e diagnósticos setoriais sobre tributação, meio\nambiente, energia, relações trabalhistas e educação no ambiente de negócios mineiro, com\nfundamentação normativa e justificativa detalhadas em cada eixo correspondente. As fontes abaixo\nforam consultadas entre janeiro e agosto de 2026, com dados oficiais dos órgãos públicos citados.\nFiscal: Tesouro Nacional — Relatório de Gestão Fiscal dos Estados (fev/2026); Secretaria de Estado de\nFazenda de MG (SEF-MG) — Boletim Estadual da Dívida; Assembleia Legislativa de MG (ALMG), Comissão\nde Fiscalização Financeira e Orçamentária.\nMineração e CFEM: Agência Nacional de Mineração (ANM); Observatório da Mineração; Associação\nBrasileira dos Municípios Mineradores (AMIG Brasil); Sindicato dos Auditores Fiscais da Receita Estadual\nde MG (Sindifisco-MG); Sindifer.\nSegurança e sistema prisional: Secretaria de Estado de Justiça e Segurança Pública de MG (Sejusp-MG);\nMinistério Público de MG (MPMG); Anuário Brasileiro de Segurança Pública 2026 (Fórum Brasileiro de\nSegurança Pública); Senappen/Ministério da Justiça e Segurança Pública.\nMulheres e violência de gênero: Anuário Brasileiro de Segurança Pública 2026; Polícia Civil de MG;\nAssembleia Legislativa de MG (ALMG), Comissão de Defesa dos Direitos da Mulher.\nPrimeira infância e educação infantil: Ministério da Educação (MEC) e Gaepe-Brasil, estudo “Retrato da\nEducação Infantil no Brasil”; Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep),\nCenso Escolar da Educação Básica 2024; Ministério Público de MG (MPMG), Projeto Crescer Juntos; Todos\nPela Educação; Secretaria de Estado de Educação de MG (SEE-MG); ALMG, Comissão de Educação.\nSaúde: Secretaria de Estado de Saúde de MG (SES-MG).\nEducação: Inep; Secretaria de Estado de Educação de MG (SEE-MG); Todos Pela Educação.\nDesigualdade regional: Fundação João Pinheiro (FJP); UFMG/Cedeplar; Assembleia Legislativa de MG.\nHabitação e água: Fundação João Pinheiro; Instituto Mineiro de Gestão das Águas (Igam); Comitê da\nBacia Hidrográfica do Rio São Francisco (CBHSF).\nCompetitividade e ambiente de negócios: Centro de Liderança Pública (CLP) — Ranking de\nCompetitividade dos Estados 2025, em parceria com B3, Economist Intelligence Unit e Tendências\nConsultoria.\nComércio exterior: Secretaria de Estado da Agricultura, Pecuária e Abastecimento de MG (Seapa-MG);\nSecretaria de Estado de Desenvolvimento Econômico de MG (Sede-MG); Ministério do Desenvolvimento,\nIndústria, Comércio e Serviços (MDIC).\nInovação: Dealroom.co — Global Tech Ecosystem Index 2025; San Pedro Valley; Instituto Euvaldo Lodi\n(IEL/MG)."
+          },
+          {
+            "id": "emprego-e-economia-secretaria-de-estado-de-desenvolvimento-social-de-mg",
+            "titulo": "Emprego e economia: Secretaria de Estado de Desenvolvimento Social de MG (Sedese-MG); IBGE;",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Emprego e economia: Secretaria de Estado de Desenvolvimento Social de MG (Sedese-MG); IBGE;\nFundação João Pinheiro (contas regionais)."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "c0cff635f8c6d7bb035a816906a0ea66eedd7ac813d2e2d5b5caab2e4dd8ed18"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "f94e219d66f579f05543eaa5d38aafbc771a0f2c87843f884de3bf4a73fb8959"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "21c69f0e4bca6866d9b31973fbddfbb317815c3e2dd57b347d90b0e680bec06d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2e01b50ddae12ba35bc60b1922657dec8d57cd30492bdb0772e30bef21efdce0"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "76817ee08258b528343da64cf0ea091d0f08f1b8dd3f4787635cd104197f40c0"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "c7792165ab65d4b1d4eeac37ebd742c292eb0b260d7d5c392b0462e2a2e2187a"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "c028aa3f4d61fc19b8abf7ce4efaf37ddcc67fe42df7564114f13162b8f1d6df"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a8bee2a257ba95819baa9855e06fe1cbb13829a0fb50fd626e60bbabd428f045"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "966c8a53e8843167ed8d9ac3d588c25749cbbb630b610b93ecaed752ecc93be7"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f7065f5ee8d00f6bcb3a42e7a14918fab7ff9edbd13c7b57bf7901846651b044"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "a37edc857140d366e8d476f1fc13e7460b16d195a605494e59e7f2e984f36d7b"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "00e2a0c485c9966badeb50609417d9aa4fca56a83b20540d34facfad7fe57a1c"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "72288eb6e169b0701e016100b7e96ece6ecd0005aef66a73af137828f7a1271b"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "b046490a89e3ec99e73f0f4db79677a68425f6adf34e8dee5f40d73cf448d8bd"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "128800517f7aaa497bd5fbcb1d6bb4b1c1645850c1d698ca28a29cce257124a1"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "c1e7ecd1d8cc190a886f72ca0de8d3f952c377ea315dc0b2fe01bd30403a3446"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "2688137342268a2a2e680e84aabaa08999827eacb566979f18866dbd30baaf84"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "5c828cfdaed78977328b64fbebff9ca0068d2f3e0a2533b4180d951922eabe83"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "727e1afe49b8d634a45bc077d62ff970ed055a531ae936d59c9f8dd248272380"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "64d173de38fcfa23bb7b6350cc26ef3b133e4af5142277f6a810da77c611dc68"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário. O programa propõe instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa. O programa prevê publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico. O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais. O programa prevê priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública. O programa propõe criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior. O programa prevê criar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura permanente de monitoramento de risco comercial internacional.",
+    "frases": [
+      {
+        "texto": "O programa prevê publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 10,
+            "trecho": "Publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 10,
+            "trecho": "Instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 11,
+            "trecho": "Publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico"
+          }
+        ]
+      },
+      {
+        "texto": "O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 12,
+            "trecho": "O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 17,
+            "trecho": "Priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 17,
+            "trecho": "Criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura permanente de monitoramento de risco comercial internacional.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 17,
+            "trecho": "Criar, dentro da Secretaria de Estado de Desenvolvimento Econômico, uma estrutura permanente de monitoramento de risco comercial internacional"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "transparencia-fiscal",
+        "titulo": "Transparência fiscal",
+        "descricao": "A proposta trata da publicação periódica da posição de caixa do Tesouro estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 10,
+            "trecho": "Publicar mensalmente a posição de caixa do Tesouro estadual, separada do resultado orçamentário"
+          }
+        ]
+      },
+      {
+        "id": "fiscalizacao-cfem",
+        "titulo": "Fiscalização de CFEM",
+        "descricao": "A proposta trata da fiscalização de valores de CFEM reconhecidos em dívida ativa.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 10,
+            "trecho": "Instituir força-tarefa permanente de fiscalização de CFEM, com prioridade para os R$ 6,25 bilhões já reconhecidos em dívida ativa"
+          }
+        ]
+      },
+      {
+        "id": "transparencia-saude",
+        "titulo": "Transparência em saúde",
+        "descricao": "A proposta trata da publicação do tempo de espera por serviços de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 11,
+            "trecho": "Publicar, por macrorregião de saúde, o tempo médio de espera por cirurgia eletiva e por exame de diagnóstico"
+          }
+        ]
+      },
+      {
+        "id": "conectividade-educacional",
+        "titulo": "Conectividade educacional",
+        "descricao": "A proposta trata do acesso à internet de alta velocidade nas escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 12,
+            "trecho": "O objetivo é universalizar o acesso à internet de alta velocidade nas escolas estaduais"
+          }
+        ]
+      },
+      {
+        "id": "vagas-de-creche",
+        "titulo": "Vagas de creche",
+        "descricao": "A proposta trata da expansão de vagas de creche em municípios sem unidade pública.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 17,
+            "trecho": "Priorizar a expansão de vagas de creche nos 55 municípios que hoje não têm nenhuma unidade pública"
+          }
+        ]
+      },
+      {
+        "id": "inovacao-regional",
+        "titulo": "Inovação regional",
+        "descricao": "A proposta trata da criação de núcleos regionais do San Pedro Valley.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002550834:01",
+            "pagina": 17,
+            "trecho": "Criar núcleos regionais do San Pedro Valley em pelo menos três polos industriais do interior"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:29:04.641Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:41:05.000Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Periodicidade mensal está sustentada literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de transparência fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:1:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor de R$ 6,25 bilhões sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do compromisso."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:2:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:3:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:4:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Número de 55 municípios sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:5:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Quantidade 'pelo menos três' sustentada literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única de inovação regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:6:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:frase:7:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema descrito é sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-fiscal:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente para claim temático amplo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:fiscalizacao-cfem:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente para claim temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:transparencia-saude:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:conectividade-educacional:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:vagas-de-creche:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:suporte",
+        "verdict": "yes",
+        "reason": "Tema sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002550834:tema:inovacao-regional:documentos:MG:130002550834:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura suficiente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002550834",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002550834:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26203,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22241,
+          "output_tokens_details": {
+            "thinking_tokens": 359
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26203,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22241,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26203,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26203
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3478624
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "931269924b24f7f287a72c433f80fbb0a126d09fd6dab3d24d74047272b49548",
+    "extractedTextSha256": "f6c87f1029ec258c0ce3cf8eeec7b44b1e5ddf07b55687ebc28c8627491c3f66",
+    "documentCount": 1,
+    "documentSetSha256": "a7f90d867363a92bc7ed3967d3f1a2e1f51a954344b00f3d6795012d55fde532",
+    "contentSha256": "5ab3cca9828db17c89459c5046711ab001ae2401dc49c9701bd886743824ea80"
+  }
+}

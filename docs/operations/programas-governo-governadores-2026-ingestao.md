@@ -4,14 +4,14 @@
 
 O importador transforma o inventário oficial e os ZIPs estaduais do TSE em registros server-only para revisão. Ele nunca escreve `aprovado`. Uma candidatura sai como `em_revisao`, `perfil_local_ausente`, `sem_documento_oficial` ou `falha_de_extracao`.
 
-A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`. O `SQ_CANDIDATO` oficial pode ter 11 ou 12 dígitos. Nome, partido e slug não substituem a identidade eleitoral, mas integram o fingerprint que invalida uma decisão humana stale.
+A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`, derivada de `data/candidate-roster-active-20260829.json` por `profiles.registration_sqs`. O `SQ_CANDIDATO` oficial pode ter 11 ou 12 dígitos. Nome, partido e slug não substituem a identidade eleitoral, mas integram o fingerprint que invalida uma decisão humana stale. Perfis `quarantine_duplicate_active`, como Laudicério Aguiar, não recebem `canonical_registration_sq` inventada nem entram na fila publicável; inscrições terminais fora do crosswalk, como Cleber Rabelo e Pedro Brito, permanecem fora da superfície.
 
 ## Comando
 
 Executar com Node 24:
 
 ```bash
-npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
+npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
 ```
 
 Os quatro argumentos de escopo e arquivos são obrigatórios:

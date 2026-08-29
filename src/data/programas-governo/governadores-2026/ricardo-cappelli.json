@@ -1,0 +1,1312 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002551557",
+    "slug": "ricardo-cappelli",
+    "nomeUrna": "CAPPELLI",
+    "partido": "PSB",
+    "arquivoNome": "2026DF70002551557_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002551557_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002551557:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002551557_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002551557_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0578d5eed2c77e1002fd2a4ea967aac4eff78bd29b82b7bcfea0dc55a28cc31c",
+        "extractedTextSha256": "b5fdc15e790b9173bae5919b3336a671ea5329b21ebb0b4c9eeac5d108612459",
+        "paginas": 48,
+        "secoes": [
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nPLANO DE GOVERNO\nCandidatura ao Governo do Distrito Federal\nELEIÇÕES 2026\nPROPOSTAS DEFENDIDAS PELO CANDIDATO - DOCUMENTO PARA REGISTRO DE\nCANDIDATURA\n\nCandidato a governador: Ricardo Garcia Cappelli (Ricardo Cappelli)\nCandidata a vice-governadora: Sofia Cravalho\nPartido/Federação: PSB – Partido Socialista Brasileiro\nPeríodo de governo: 2027–2030\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 1"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-2",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nAPRESENTAÇÃO\nEste Plano de Governo apresenta as diretrizes, os compromissos e as propostas da\ncandidatura de Ricardo Cappelli ao Governo do Distrito Federal para o período de 2027 a\n2030.\nPara fins de registro de candidatura, o documento consolida as propostas defendidas\npelo candidato, nos termos da legislação eleitoral, organizando 40 propostas prioritárias nos\n15 eixos estratégicos, sem afastar os diagnósticos, diretrizes, metas, resultados esperados e\ncondicionantes técnicos, jurídicos, fiscais e orçamentários que fundamentam o programa.\nO documento foi elaborado a partir da análise dos principais desafios econômicos,\nsociais, ambientais, territoriais e administrativos enfrentados pelo Distrito Federal e incorpora,\nde forma específica, o diagnóstico do desenvolvimento econômico e da situação fiscal\nprojetada para a transição de governo.\nO Distrito Federal reúne elevada renda média, forte capacidade institucional,\nuniversidades e centros de pesquisa de excelência e um mercado consumidor relevante. Ao\nmesmo tempo, apresenta profundas desigualdades entre as Regiões Administrativas,\ndependência expressiva da administração pública, informalidade, concentração das\noportunidades no centro e restrições de acesso ao crédito, à infraestrutura produtiva e aos\nserviços de cuidado.\nA transição para 2027 poderá ocorrer sob pressão financeira relevante. Estimativas\ntécnicas apontam compromissos acumulados e riscos de caixa que exigirão verificação\nindependente, priorização de pagamentos, revisão de despesas e implantação responsável\nde novos programas. O diagnóstico não será utilizado como justificativa para paralisar o\ngoverno, mas como ponto de partida para recuperar capacidade de planejamento, proteger\nos serviços essenciais e direcionar recursos para iniciativas com maior retorno social e\neconômico.\nNosso compromisso é construir um governo democrático, responsável, transparente e\neficiente, orientado para a redução das desigualdades, a geração de oportunidades e a\nmelhoria concreta da qualidade de vida da população. O desenvolvimento será promovido\ncom responsabilidade fiscal, implementação gradual, metas verificáveis, avaliação de\nresultados e articulação com o Governo Federal, instituições financeiras, universidades, setor\nprodutivo e sociedade civil.\nAs propostas aqui apresentadas constituem as diretrizes fundamentais que orientarão\na elaboração dos instrumentos oficiais de planejamento do governo, especialmente o Plano\nPlurianual — PPA, a Lei de Diretrizes Orçamentárias — LDO e a Lei Orçamentária Anual —\nLOA.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 2"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-3",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n1. VISÃO DE FUTURO\nConstruir um Distrito Federal mais justo, desenvolvido, seguro, sustentável e\nintegrado, capaz de transformar sua elevada capacidade econômica e institucional em\noportunidades para todas as Regiões Administrativas.\nO Governo do Distrito Federal atuará para reduzir a dependência excessiva da\neconomia em relação à folha pública e aos contratos governamentais, fortalecendo uma\neconomia baseada na criação de valor, na inovação, no trabalho, no empreendedorismo, na\nprodução local e na diversificação das atividades econômicas.\nEssa transformação será conduzida com responsabilidade fiscal. O equilíbrio das\ncontas públicas, a proteção dos serviços essenciais e a recuperação da capacidade de\ninvestimento serão condições para um desenvolvimento duradouro, socialmente inclusivo e\nterritorialmente equilibrado.\n2. PRINCÍPIOS DO GOVERNO\nA atuação do GDF será orientada pelos seguintes princípios:\n• respeito à Constituição e às instituições democráticas;\n• responsabilidade fiscal, transparência orçamentária e equilíbrio intertemporal das contas\npúblicas;\n• proteção dos serviços públicos essenciais e dos direitos da população;\n• transparência, integridade e combate à corrupção;\n• eficiência, qualidade do gasto e avaliação permanente de resultados;\n• redução das desigualdades sociais e territoriais;\n• participação social e diálogo permanente;\n• promoção dos direitos humanos;\n• sustentabilidade ambiental;\n• inovação, transformação digital e uso responsável de dados;\n• desenvolvimento econômico baseado na criação de valor, no trabalho e na produção local;\n• valorização dos servidores públicos, com planejamento da força de trabalho;\n• cooperação com o Governo Federal, demais entes públicos, universidades e setor\nprodutivo;\n• implementação gradual das políticas, de acordo com a capacidade fiscal e operacional;\n• monitoramento e avaliação das políticas públicas.\n3. DIAGNÓSTICO GERAL DO DF\nO Distrito Federal apresenta importantes potencialidades econômicas, sociais,\nculturais, territoriais e ambientais. Possui alta renda média, expressivo orçamento público,\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 3"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-4",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nconcentração de capital humano qualificado, universidades e centros de pesquisa,\ncapacidade financeira institucional e localização estratégica no território nacional.\nEssas potencialidades convivem, entretanto, com um paradoxo estrutural: o DF está\nentre as unidades da Federação de maior PIB per capita e renda média do trabalho, mas\ntambém apresenta forte concentração de renda e profundas desigualdades entre as Regiões\nAdministrativas. As oportunidades de emprego qualificado, crédito, inovação e acesso a\nserviços permanecem concentradas nas áreas centrais, enquanto grande parcela da\npopulação enfrenta informalidade, baixa renda, deslocamentos longos e pouca infraestrutura\nde apoio à atividade econômica.\nA economia distrital permanece excessivamente dependente da administração\npública, de sua folha de pagamentos e de seus contratos. Esse modelo oferece estabilidade\na determinados segmentos, mas limita a diversificação produtiva, restringe a escala dos\npequenos negócios e amplia a vulnerabilidade da cidade a crises fiscais e administrativas. O\ndesafio é promover a transição de uma economia concentrada na repartição de recursos\npúblicos para uma economia de criação de valor, na qual o Estado atue como planejador,\ncoordenador e indutor do desenvolvimento.\nA situação fiscal exige atenção imediata. Estudo técnico apresentado à candidatura\nestima que o DF poderá encerrar 2026 com pressão financeira entre R$ 4,56 bilhões e R$\n8,37 bilhões, com cenário central de R$ 6,86 bilhões, antes de eventuais frustrações\nadicionais de receita. A estimativa reúne caixa negativo herdado, despesas de exercícios\nanteriores, ampliação orçamentária sem receita nova plenamente assegurada e despesas\nempenhadas que podem permanecer sem pagamento. Trata-se de estimativa de passivo\nimplícito, a ser validada por auditoria de transição, e não de reconhecimento automático de\nnova dívida formal.\nTambém existem riscos de arrecadação, especialmente relacionados ao desempenho\ndo ICMS e às transferências federais. A reserva de contingência não deve ser confundida com\ndisponibilidade efetiva de caixa. Portanto, a execução do programa de governo dependerá de\ndiagnóstico financeiro preciso, programação de desembolso, revisão de contratos e despesas,\nrecuperação de receitas, captação de recursos externos e implantação gradual das iniciativas.\nEntre os principais problemas identificados estão:\n• desigualdades entre Regiões Administrativas;\n• concentração territorial da renda, do emprego qualificado e dos serviços;\n• dependência excessiva da economia em relação ao setor público;\n• desemprego, informalidade, baixa renda e reduzido acesso ao crédito;\n• insuficiência de infraestrutura para pequenos negócios e cadeias produtivas locais;\n• dificuldades de acesso a serviços de saúde;\n• deficiências na aprendizagem e na infraestrutura educacional;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 4"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-5",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• insegurança e presença do crime organizado;\n• insuficiência de infraestrutura urbana e logística;\n• dificuldades de mobilidade e transporte entre as Regiões Administrativas;\n• vulnerabilidade social de famílias e comunidades;\n• pressão fiscal, compromissos acumulados e baixa capacidade imediata de investimento;\n• necessidade de modernização da administração pública;\n• desafios ambientais e climáticos;\n• necessidade de diversificação e fortalecimento da economia.\nO governo proposto enfrentará esses problemas por meio de políticas integradas,\nmetas mensuráveis, priorização territorial, cooperação federativa, participação da sociedade\ne compatibilização permanente entre compromissos, capacidade fiscal e resultados.\n4. MARCAS CENTRAIS DO PROGRAMA\nAs marcas centrais traduzem compromissos políticos de fácil identificação pública.\nCada uma será convertida em programa governamental, com linha de base, metas anuais,\nórgão responsável, estimativa de impacto, fonte de financiamento e acompanhamento\npúblico. Sua implantação observará as competências constitucionais do Distrito Federal, a\nlegislação eleitoral, a Lei Orgânica, a responsabilidade fiscal e os instrumentos de\nplanejamento e orçamento.\n4.1 BORA DF\nApoiar a implantação do Bora DF, um aplicativo de viagens que faça a conexão entre\nmotoristas e passageiros cobrando taxas menores dos motoristas e preços menores dos\npassageiros. O aplicativo será administrado por uma cooperativa de motoristas e será apoiado\npelo governo através de investimento para a sua estruturação, publicidade para sua\ndivulgação e articulação institucional com os órgãos públicos. O programa incluirá também a\nimplantação de pontos de apoio para os motoristas nas cidades.\n4.2 A CASA É SUA — registro e escritura para quem mora\nAcelerar a regularização fundiária e reduzir os custos documentais para famílias,\narticulando titulação, urbanização, saneamento, endereçamento e acesso aos serviços\npúblicos. As entregas dependerão da situação jurídica e ambiental de cada área, da legislação\nurbanística e da atuação coordenada de Codhab, Terracap, cartórios, administrações\nregionais e demais órgãos competentes. O objetivo é reduzir drasticamente o percentual de\n32,6% de imóveis próprios no DF sem escritura, acelerando as regularizações pelo menor\nvalor legal possível.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 5"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-6",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n4.3 FILA ZERO — acesso mais rápido à saúde\nReduzir drasticamente as filas de consultas, exames e cirurgias por meio de auditoria\nda demanda, fila única transparente, prioridade clínica, telessaúde, ampliação regional da\ncapacidade pública, melhor regulação e contratação complementar quando necessária.\n4.4 MAIOR SALÁRIO — valorização dos professores\nGarantir aos professores o maior salário do Brasil através de uma trajetória fiscalmente\nsustentável, associada a carreira estruturada, concursos, formação continuada, condições de\ntrabalho e saúde ocupacional.\n4.5 TOLERÂNCIA ZERO — firmeza contra o crime, proteção às pessoas\nAdotar política de segurança firme, integrada e orientada por inteligência, com\nprioridade ao combate às organizações criminosas, aos crimes violentos, à violência contra\nmulheres, crianças, pessoas idosas e grupos vulneráveis. Tolerância Zero significa aplicação\nefetiva da lei, investigação, prevenção, proteção às vítimas, controle e respeito integral aos\ndireitos e garantias constitucionais.\n4.6 ATÉ 1 HORA — menos tempo no transporte\nReorganizar a rede para reduzir o tempo dos deslocamentos entre terminais,\nrodoviárias e polos de emprego e serviços, com linhas expressas e alimentadoras, corredores\nprioritários, integração física e tarifária. A referência de até uma hora será perseguida por\ncorredores e trajetos tecnicamente definidos, após estudos de origem e destino.\n4.7 BANCO DO POVO\nEstruturar programa de crédito produtivo orientado para pequenos, médios e\nmicroempreendedores individuais, com juros subvencionados dentro dos limites legais,\ngarantias facilitadas, educação financeira, assistência técnica e acompanhamento da\nsobrevivência do negócio.\n\n5. EIXOS ESTRATÉGICOS\nO Plano de Governo está organizado nos seguintes eixos:\n1. Saúde;\n2. Educação;\n3. Segurança Pública;\n4. Desenvolvimento Econômico, Emprego, Renda e Banco do Povo;\n5. Desenvolvimento Social e Combate à Pobreza;\n6. Infraestrutura, Mobilidade e Transportes;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 6"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-7",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n7. Habitação, Regularização Fundiária, Saneamento e Desenvolvimento Urbano;\n8. Agricultura e Desenvolvimento Rural;\n9. Meio Ambiente, Resíduos Sólidos e Sustentabilidade;\n10. Cultura, Patrimônio, Economia Criativa e Turismo;\n11. Esporte e Lazer;\n12. Ciência, Tecnologia e Inovação;\n13. Direitos Humanos, Igualdade, Cidadania e Políticas para a Pessoa Idosa;\n14. Gestão Pública, Transparência e Responsabilidade Fiscal;\n15. Desenvolvimento Regional e Relação com as Regiões Administrativas.\nOs 15 eixos a seguir preservam os diagnósticos, objetivos, diretrizes, metas e\nresultados esperados construídos ao longo da elaboração técnica do programa. Para fins de\napresentação eleitoral e clareza das prioridades, suas ações foram consolidadas em 40\npropostas numeradas de forma contínua, com maior concentração em saúde, educação,\nsegurança, mobilidade, habitação e gestão fiscal, sem excluir as demais políticas públicas.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 7"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-8",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.1 SAÚDE\nDiagnóstico\nA rede pública de saúde do Distrito Federal reúne ampla capacidade instalada, mas\nenfrenta desigualdades territoriais, fragmentação dos serviços, filas prolongadas, sobrecarga\ndas urgências, falhas de abastecimento, infraestrutura degradada, insuficiência e distribuição\ninadequada de profissionais, contratos pouco orientados a resultados e sistemas de\ninformação que ainda não se comunicam adequadamente. A resposta exige reorganizar a\nrede como um sistema regional integrado, com a Atenção Primária como porta de entrada e\ncoordenadora do cuidado.\nNa Atenção Primária, o DF dispõe de 176 Unidades Básicas de Saúde, 649 Equipes\nde Saúde da Família e 331 Equipes de Saúde Bucal, das quais apenas 221 possuem\ncomposição adequada. Embora a cobertura potencial seja estimada em 80%, a cobertura\nefetiva pode estar próxima de 70%, deixando mais de 900 mil pessoas sem acesso regular e\nresolutivo, especialmente nas Regiões Administrativas de maior vulnerabilidade. Itapoã,\nParanoá e São Sebastião, por exemplo, têm mais de 92% da população sem plano de saúde.\nA rede também opera parcialmente em imóveis cedidos, alugados ou em comodato e possui\nconcentração excessiva de equipes em determinadas UBS.\nA atenção especializada e hospitalar apresenta demanda reprimida por consultas,\nexames, cirurgias, reabilitação e saúde mental. A ausência de regulação integrada, o\ncancelamento de procedimentos, a baixa rotatividade de leitos e a insuficiência de atenção\ndomiciliar ampliam o sofrimento dos usuários e pressionam as emergências. O abastecimento\nde medicamentos e insumos, a manutenção predial e tecnológica, a gestão de contratos e o\nplanejamento da força de trabalho precisam ser tratados como componentes essenciais da\nqualidade assistencial.\nDiante da situação fiscal, a expansão será gradual, priorizada por vulnerabilidade,\nimpacto sanitário e capacidade de financiamento. As metas físicas mais expressivas serão\nvalidadas por estudos de necessidade, projetos executivos, disponibilidade de pessoal e\nfontes sustentáveis, com aproveitamento dos programas e recursos do Ministério da Saúde.\nObjetivo\nGarantir atendimento público digno, resolutivo, regionalizado e próximo da população,\nfortalecendo a Atenção Primária, reduzindo filas, reorganizando urgências e integrando toda\na rede de saúde, com valorização dos profissionais, inovação, transparência e\nresponsabilidade fiscal.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 8"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-9",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nMarcas prioritárias\n• SAÚDE PERTO DE QUEM MAIS PRECISA — ampliar e reestruturar a Atenção Primária,\ncom equipes completas, UBS adequadas, cuidado odontológico, ações multiprofissionais\ne prioridade aos territórios mais vulneráveis.\n• MENOS FILA, MAIS SAÚDE — reduzir as filas de consultas, exames e cirurgias por meio\nde regulação clínica, telessaúde, ampliação regional da atenção especializada e melhor\nuso da capacidade pública e complementar.\n• SAÚDE TEM PRESSA — desafogar as portas de urgência, organizar fluxos rápidos,\nampliar a atenção domiciliar e melhorar o tempo de resposta do SAMU.\nPropostas prioritárias\n1. FILA ZERO - fila única, transparente e com prioridade clínica. Auditar a demanda\nreprimida e implantar fila única integrada para consultas, exames, cirurgias e reabilitação, com\nprotocolos de prioridade clínica, comunicação digital, busca ativa para reduzir faltas,\nampliação de turnos, mutirões quando necessários e contratação complementar regulada\nquando a capacidade pública não for suficiente. A redução das filas será medida por tempo\nde espera, estoque de procedimentos e produção por região de saúde.\n2. SAÚDE PERTO DE QUEM MAIS PRECISA - Atenção Primária como coordenadora do\ncuidado. Ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família, completar\nequipes de saúde bucal e multiprofissionais, reorganizar a territorialização segundo\nvulnerabilidade, qualificar UBS e integrar promoção, prevenção, condições crônicas, saúde\nmental, reabilitação e vigilância.\n3. SAÚDE TEM PRESSA - urgência, emergência, leitos e SAMU mais resolutivos.\nOrganizar fluxos rápidos para casos de menor gravidade, qualificar a classificação de risco,\nintegrar UBS, UPAs e hospitais, melhorar a gestão clínica de leitos, ampliar atenção domiciliar\ne modernizar a regulação, a frota e as bases do SAMU, com metas públicas de tempo de\nresposta.\n4. Medicamentos, tecnologia e saúde digital. Reorganizar a cadeia de medicamentos e\ninsumos com previsão de demanda, rastreabilidade e estoques de segurança; ampliar entrega\ndomiciliar para públicos elegíveis; integrar prontuários e sistemas; e disponibilizar plataforma\npública para agendamento, confirmação, receitas, histórico assistencial, acompanhamento de\nfilas e ouvidoria.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 9"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-10",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5. Rede pública qualificada, profissionais valorizados e atenção especializada regional.\nDimensionar a força de trabalho, convocar concursos vigentes e realizar novos concursos\nconforme necessidade e capacidade fiscal, ampliar residências e educação permanente,\nrecuperar infraestrutura e equipamentos e organizar policlínicas, CAPS, reabilitação,\noncologia, trauma, saúde mental e demais especialidades em redes regionais integradas.\nMetas e resultados esperados\n• ampliar a cobertura real da Estratégia Saúde da Família para 85% até 2030;\n• reduzir em 20% as internações por condições sensíveis à Atenção Primária;\n• reduzir em 30% a presença de pacientes classificados como verdes e azuis nas\nemergências;\n• alcançar cobertura de Saúde Bucal equivalente a 75% das ESF e cobertura\nmultiprofissional de até 90%;\n• reduzir em até 70% a fila de cirurgias eletivas em 24 meses, após auditoria e validação da\nlinha de base;\n• reduzir em 15% o tempo médio de internação e ampliar a atenção domiciliar;\n• diminuir faltas, cancelamentos e tempos de espera por meio de regulação integrada e\ncomunicação digital;\n• assegurar maior regularidade no abastecimento de medicamentos, materiais e insumos;\n• melhorar o tempo de resposta do SAMU e a fluidez das urgências;\n• fortalecer a saúde mental, a reabilitação, a vigilância e a capacidade laboratorial;\n• ampliar transparência, segurança do paciente, satisfação dos usuários e eficiência do\ngasto.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 10"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-11",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.2 EDUCAÇÃO\nDiagnóstico\nO Distrito Federal dispõe de uma rede educacional experiente, profissionais\nqualificados, instituições de conhecimento e elevada capacidade de financiamento.\nEntretanto, essas condições ainda não se transformaram, de maneira suficiente, em\naprendizagem, permanência escolar e igualdade de oportunidades. Os resultados médios\nescondem diferenças profundas entre Regiões Administrativas, etapas de ensino, turnos e\ngrupos de estudantes.\nOs principais desafios são a alfabetização abaixo do potencial do DF; a queda de\ndesempenho nos anos finais e no ensino médio; a evasão, especialmente no ensino médio\nnoturno e na EJA; a fila por creches; a baixa cobertura da educação integral; a oferta ainda\nlimitada de educação profissional; a dependência de contratos temporários; e as deficiências\nde segurança, acessibilidade, conectividade e conservação das escolas. A política\neducacional precisa, portanto, converter recursos em resultados, começando pelos territórios\ne estudantes que mais precisam.\nObjetivo\nGarantir educação pública de qualidade, inclusiva, integral e territorialmente\nequilibrada, fazendo da aprendizagem, da valorização dos profissionais e da formação para a\ncidadania, a universidade e o trabalho pilares do desenvolvimento do Distrito Federal.\nDiretrizes\n• equidade territorial, com prioridade para escolas e estudantes em maior vulnerabilidade;\n• aprendizagem acompanhada por avaliações formativas, tutoria e apoio pedagógico, sem\nrankings punitivos;\n• expansão com qualidade, pessoal, alimentação, infraestrutura, acessibilidade e custeio\nassegurados;\n• valorização profissional, estabilidade das equipes e formação continuada;\n• integração entre educação, saúde, cultura, esporte, assistência social, ciência e\ndesenvolvimento econômico;\n• gestão baseada em metas públicas, participação social, proteção de dados e\nresponsabilidade fiscal.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 11"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-12",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nPropostas prioritárias\n6. MAIOR SALÁRIO - valorização responsável do magistério. Tornar a remuneração inicial\ndo magistério do Distrito Federal a maior do Brasil, fortalecendo a carreira, a formação\ncontinuada, a saúde do trabalhador, o tempo de planejamento pedagógico e as condições de\nexercício profissional.\n7. Brasília Aprende, Cuida e Avança - alfabetização na idade certa e recuperação das\naprendizagens. Garantir alfabetização até o final do 2º ano e recomposição das\naprendizagens com avaliação diagnóstica, materiais coerentes com o currículo, bibliotecas\nativas, tutoria, formação prática e apoio intensivo às escolas e estudantes de maior\nvulnerabilidade, com meta de 100% das crianças alfabetizadas ao final do 2º ano até 2030.\n8. Fila Zero de Creche e Escola Viva o Dia Inteiro. Atender progressivamente toda a\ndemanda validada por creche até 2030 e ampliar educação em tempo integral com qualidade,\npessoal, alimentação, cultura, esporte, ciência, tecnologia e infraestrutura, priorizando\nterritórios de maior déficit e vulnerabilidade.\n9. Professor em sala desde o primeiro dia e escola digna. Planejar reposições, concursos,\nnomeações e lotação com critérios transparentes para reduzir a dependência de contratos\ntemporários e impedir turmas sem professor; executar plano plurianual de segurança,\nacessibilidade, conectividade, conforto climático, manutenção e recuperação das escolas.\n10. Juventude, trabalho e futuro - educação profissional, EJA e UnDF. Expandir educação\nprofissional e sua articulação com o ensino médio e a EJA, reduzir abandono no ensino médio\nnoturno e fortalecer a UnDF com expansão responsável, assistência estudantil, carreira\ndocente, infraestrutura e cursos conectados às vocações econômicas, tecnológicas, sociais e\nculturais do Distrito Federal.\nMetas prioritárias para 2030\n• alcançar 100% das crianças alfabetizadas ao final do 2º ano;\n• atender 100% da demanda validada por creche;\n• alcançar 35% dos estudantes e 50% das escolas com educação em tempo integral;\n• ampliar para 30 mil as matrículas na educação profissional;\n• articular 25% das matrículas da EJA à educação profissional;\n• reduzir em pelo menos 50% o abandono no primeiro ano do ensino médio noturno;\n• ampliar para 1.500 as vagas anuais de ingresso na UnDF;\n• assegurar a todas as escolas o pacote essencial de dignidade, segurança, acessibilidade\ne conectividade;\n• tornar a remuneração inicial do magistério do DF a maior país, mediante trajetória\nfiscalmente sustentável.\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 12"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-13",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nResultados esperados\n• melhoria consistente da alfabetização e da aprendizagem em todas as etapas;\n• redução das desigualdades educacionais entre territórios e grupos de estudantes;\n• ampliação do acesso à creche e à educação integral com padrão de qualidade;\n• diminuição da evasão, da distorção idade-série e das interrupções de trajetória;\n• maior estabilidade, valorização e bem-estar dos profissionais da educação;\n• escolas mais seguras, inclusivas, acessíveis, conectadas e adequadas ao aprendizado;\n• expansão da educação profissional e superior ligada ao desenvolvimento do Distrito\nFederal;\n• maior transparência, eficiência orçamentária e capacidade de execução da política\neducacional.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 13"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-14",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.3 SEGURANÇA PÚBLICA\nDiagnóstico\nO Distrito Federal dispõe de forças de segurança qualificadas e de financiamento\nconstitucional diferenciado, mas enfrenta crimes violentos, crimes patrimoniais, violência\ncontra mulheres, crianças e pessoas idosas, expansão de mercados ilícitos, golpes digitais,\ndesafios no sistema prisional e desigualdade territorial na sensação de segurança. A resposta\nexige integração operacional, inteligência, investigação, presença territorial e políticas de\nprevenção.\nA segurança pública não se resume ao patrulhamento. Iluminação, urbanização,\nescola, assistência social, prevenção ao uso abusivo de álcool e drogas, proteção às vítimas\ne reinserção social integram uma política efetiva. O uso de tecnologia deve observar\nlegalidade, finalidade, proteção de dados, controle e avaliação de resultados.\nObjetivo\nReduzir crimes e violências, aumentar a capacidade de investigação e resposta,\nproteger as vítimas e tornar as Regiões Administrativas mais seguras, com atuação integrada,\nprofissional e constitucionalmente responsável.\nDiretrizes\n• integração das forças, inteligência e investigação orientadas por evidências;\n• proteção prioritária às vítimas e aos grupos mais vulneráveis;\n• prevenção territorial e articulação com políticas sociais e urbanas;\n• valorização, saúde e qualificação dos profissionais;\n• tecnologia com governança, controle, proteção de dados e avaliação;\n• metas públicas, controle externo e respeito aos direitos fundamentais.\nPropostas prioritárias\n11. TOLERÂNCIA ZERO - firmeza contra o crime com respeito à Constituição. Combater\norganizações criminosas, homicídios, roubos, furtos, receptação, tráfico de armas e drogas e\ncrimes digitais por meio de inteligência, investigação, análise financeira e ações territoriais\nintegradas, com metas públicas e absoluto respeito aos direitos e garantias fundamentais.\n12. Proteção integral às mulheres, crianças, pessoas idosas e demais vítimas\nvulneráveis. Integrar segurança, saúde, assistência social e sistema de justiça, ampliar\navaliação de risco, acompanhamento de medidas protetivas, atendimento especializado,\nacolhimento e canais acessíveis de denúncia, com prioridade aos casos de maior risco e\nprevenção permanente.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 14"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-15",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n13. Mais investigação, perícia, inteligência e sistema prisional seguro. Fortalecer\ncapacidade investigativa e pericial, gestão de evidências e inteligência financeira; combater a\natuação de organizações criminosas a partir dos presídios; e ampliar educação, trabalho,\nsaúde, alternativas penais juridicamente cabíveis e acompanhamento de egressos para\nreduzir reincidência.\n14. Segurança territorial, profissionais valorizados e tecnologia com controle. Planejar\nefetivos e concursos conforme necessidade e capacidade fiscal, modernizar viaturas,\ncomunicação e equipamentos, fortalecer saúde ocupacional e formação e usar iluminação,\nvideomonitoramento e demais tecnologias com base legal, proteção de dados, supervisão\nhumana e avaliação de resultados.\nMetas para 2030\n• reduzir os crimes violentos e patrimoniais a partir de linha de base territorial validada;\n• ampliar a elucidação dos crimes prioritários e reduzir o tempo de resposta às vítimas;\n• assegurar protocolos integrados em todas as regiões de segurança;\n• publicar indicadores semestrais de criminalidade, investigação, proteção e reincidência.\nResultados esperados\n• maior segurança nos territórios e no transporte público;\n• resposta mais rápida e acolhedora às vítimas;\n• aumento da capacidade de investigação e desarticulação de organizações criminosas;\n• maior integração, transparência e confiança nas instituições.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 15"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-16",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.4 DESENVOLVIMENTO ECONÔMICO, EMPREGO, RENDA E BANCO DO POVO\nDiagnóstico\nO Distrito Federal combina elevada renda média com forte desigualdade territorial. A\neconomia permanece concentrada na administração pública, nos serviços associados à renda\ndo funcionalismo e nos contratos governamentais. Esse padrão limita a diversificação\nprodutiva e mantém pequenos negócios, trabalhadores autônomos e empreendedores das\nRegiões Administrativas com pouco acesso a crédito, tecnologia, infraestrutura e mercado.\nAs Regiões Administrativas apresentam realidades distintas. Algumas concentram\ncapital humano, universidades, serviços especializados e capacidade de investimento; outras\npossuem mercados consumidores relevantes e forte presença comercial; e as regiões mais\nvulneráveis enfrentam pobreza, informalidade, infraestrutura precária e baixa capacidade de\ngeração de renda. Por isso, uma política uniforme não produzirá resultados adequados.\nA política de desenvolvimento adotará uma abordagem territorial e gradual. As áreas\nde maior renda funcionarão como polos de inovação, conhecimento e investimento. As\nregiões de desenvolvimento médio receberão instrumentos de crédito, formalização,\ncapacitação e infraestrutura produtiva. Nas áreas de maior vulnerabilidade, as ações\neconômicas serão integradas às políticas sociais, educacionais e de cuidado.\nA situação fiscal limita a criação imediata de grandes estruturas custeadas\nexclusivamente pelo Tesouro. As iniciativas serão implantadas por etapas, mediante\nreaproveitamento de imóveis públicos, parcerias, linhas de crédito com governança de risco,\ncompras públicas, recursos federais e avaliação prévia de impacto orçamentário.\nObjetivo\nPromover a transição para uma economia de criação de valor, mais diversificada,\ninovadora e territorialmente equilibrada, capaz de gerar empregos, elevar a renda, fortalecer\npequenos negócios e reduzir a dependência excessiva da economia distrital em relação ao\nsetor público.\nDiretrizes\n• inovação situada, conectando universidades e centros de pesquisa aos problemas\nprodutivos das Regiões Administrativas;\n• crédito democrático, com instrumentos adequados à realidade dos pequenos negócios e\nmecanismos prudentes de avaliação e acompanhamento;\n• territórios de prosperidade, com infraestrutura compartilhada para empreender, produzir e\ncomercializar;\n• economia do cuidado como condição para ampliar a participação das mulheres no trabalho\ne no empreendedorismo;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 16"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-17",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• gestão pública indutora, utilizando compras, regulação, dados e simplificação\nadministrativa para estimular a produção local;\n• implantação por fases, com projetos-piloto, avaliação e expansão condicionada a\nresultados e disponibilidade fiscal.\nPropostas prioritárias\n15. BANCO DO POVO - crédito produtivo para pequenos, médios e MEIs. Estruturar\ncrédito produtivo orientado para pequenos, médios e microempreendedores individuais, com\njuros subvencionados dentro dos limites legais, garantias facilitadas, fundos garantidores,\neducação financeira, assistência técnica e acompanhamento da sobrevivência do negócio.\n16. Territórios de Prosperidade e diversificação econômica. Implantar política distrital de\ndesenvolvimento econômico e territorial com polos de inovação, infraestrutura compartilhada,\nincubação, qualificação e apoio produtivo nas Regiões Administrativas, fortalecendo\ntecnologia, economia criativa, saúde, logística, alimentos, agricultura, turismo, serviços\nespecializados, economia verde e atividades industriais de maior valor agregado.\n17. Empresa sem fila, compras locais e acesso a mercados. Digitalizar abertura e\nlicenciamento de empresas, reduzir exigências redundantes, ampliar a participação\njuridicamente adequada de micro e pequenas empresas, cooperativas e agricultura familiar\nnas compras públicas e conectar qualificação profissional, crédito, inovação e intermediação\nde trabalho às vocações de cada território.\nResultados esperados\n• aumento da formalização e da sobrevivência dos pequenos negócios;\n• ampliação responsável do acesso ao crédito produtivo;\n• geração de empregos e renda nas próprias Regiões Administrativas;\n• redução das desigualdades econômicas territoriais;\n• maior integração entre universidades, empresas, governo e comunidades;\n• aumento da participação de fornecedores locais nas compras públicas;\n• fortalecimento das cadeias produtivas estratégicas;\n• redução do tempo e do custo para abertura e funcionamento de empresas;\n• crescimento da produtividade e da arrecadação decorrente da expansão sustentável da\natividade econômica.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 17"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-18",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.5 DESENVOLVIMENTO SOCIAL E COMBATE À POBREZA\nDiagnóstico\nA elevada renda média do Distrito Federal convive com pobreza, insegurança\nalimentar, desemprego, moradia precária, desproteção de pessoas em situação de rua e\ndiferenças acentuadas entre as Regiões Administrativas. A rede do Sistema Único de\nAssistência Social precisa ampliar cobertura, capacidade técnica e integração com saúde,\neducação, habitação, trabalho e segurança alimentar.\nFamílias chefiadas por mulheres, crianças na primeira infância, pessoas com\ndeficiência, pessoas idosas, jovens sem trabalho e estudo, migrantes e população em\nsituação de rua demandam acompanhamento continuado, e não apenas benefícios isolados.\nA política social será territorial, baseada em busca ativa, cadastro qualificado, referência\nfamiliar e portas de saída construídas com inclusão produtiva e acesso a direitos.\nObjetivo\nReduzir a pobreza e a insegurança alimentar, proteger famílias e indivíduos em risco\ne integrar renda, cuidado, serviços e inclusão produtiva em trajetórias sustentáveis de\nautonomia.\nDiretrizes\n• centralidade da família, do território e dos direitos;\n• fortalecimento do SUAS e valorização de suas equipes;\n• prioridade à primeira infância e às situações de maior risco;\n• integração entre proteção social, saúde, educação, moradia e trabalho;\n• busca ativa, dados protegidos e acompanhamento continuado;\n• participação social, transparência e avaliação.\nPropostas prioritárias\n18. Proteção social integrada e DF sem fome. Fortalecer CRAS, CREAS, centros de\nconvivência e acolhimento, integrar cadastros com proteção de dados e articular restaurantes\ncomunitários, cozinhas solidárias, bancos de alimentos, compras da agricultura familiar e\nacompanhamento das famílias em insegurança alimentar grave.\n19. Primeira infância, cuidado, população em situação de rua e inclusão produtiva.\nIntegrar creche, saúde, assistência e proteção na primeira infância; apoiar cuidadores;\npriorizar mulheres responsáveis pelo domicílio; estruturar abordagem, documentação, saúde,\nacolhimento, moradia e trabalho para a população em situação de rua; e conectar famílias\nvulneráveis à qualificação, emprego, economia solidária e Banco do Povo.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 18"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-19",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nMetas para 2030\n• ampliar a cobertura dos serviços socioassistenciais nos territórios prioritários;\n• reduzir a insegurança alimentar grave e a desproteção de famílias acompanhadas;\n• garantir acompanhamento individual às pessoas em situação de rua e às famílias de maior\nrisco;\n• publicar indicadores territoriais de atendimento, permanência e autonomia.\nResultados esperados\n• redução da pobreza extrema e da fome;\n• maior proteção de crianças, mulheres, pessoas idosas e pessoas com deficiência;\n• atendimento mais integrado e menos burocrático;\n• aumento da inclusão produtiva e da autonomia das famílias.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 19"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-20",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.6 INFRAESTRUTURA, MOBILIDADE E TRANSPORTES\nDiagnóstico\nA mobilidade do Distrito Federal continua marcada por longos deslocamentos, forte\ndependência do transporte rodoviário, baixa integração entre modais, intervalos irregulares e\nconcentração de empregos e serviços no Plano Piloto. As Regiões Administrativas mais\ndistantes suportam maior tempo e custo de viagem, especialmente nos eixos sul, norte e\noeste, onde o crescimento urbano e populacional não foi acompanhado, na mesma\nvelocidade, por sistemas de transporte coletivo de alta capacidade.\nO Distrito Federal já acumulou estudos, projetos e investimentos que apontam uma\ndireção consistente para a mobilidade: integração entre metrô, BRT, ônibus alimentadores,\ntecnologia de informação e mobilidade ativa. O programa Circula Brasília, concebido como\npolítica de Estado, já estruturava uma rede integrada com Expresso Sul, Expresso Norte,\nexpansão do Metrô-DF, integração tarifária, centro de controle operacional e informação em\ntempo real. Parte dessas soluções avançou; outra parte precisa ser retomada, atualizada e\nexecutada com prioridade territorial.\nTrês gargalos exigem decisão estruturante. No eixo sul, Gama e Santa Maria\nconcentram grande demanda e dependem essencialmente do transporte rodoviário, apesar\nda existência do corredor do Expresso Sul. No eixo norte, Planaltina, Arapoanga, Mestre\nd’Armas, Sobradinho e a região dos condomínios enfrentam deslocamentos longos pela BR020; a ampliação da capacidade da rodovia cria oportunidade para implantação de transporte\ncoletivo expresso e segregado. No eixo oeste, Ceilândia e Samambaia já estão inseridas na\nrede metroviária, mas precisam da expansão efetiva das linhas e estações planejadas.\nA estratégia do governo será, portanto, combinar obras estruturantes de alta\ncapacidade com reorganização imediata da operação. Metrô e BRT serão tratados como\nespinha dorsal; linhas alimentadoras reduzirão o tempo de acesso às estações e terminais; o\nprograma Até 1 Hora orientará metas de tempo nos principais corredores entre Regiões\nAdministrativas, terminais e polos de emprego e serviços.\nObjetivo\nReduzir o tempo e o custo dos deslocamentos e construir uma rede integrada de\ntransporte público de alta capacidade, com expansão do metrô, implantação de corredores\nexpressos, integração operacional e tarifária, tecnologia, acessibilidade e planejamento\nterritorial.\nDiretrizes\n• prioridade ao transporte público coletivo e aos corredores de alta capacidade;\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 20"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-21",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• metrô e BRT como espinha dorsal da rede, conectados por linhas alimentadoras e\nintegração tarifária;\n• redução mensurável do tempo de deslocamento e dos intervalos, com referência do\nprograma Até 1 Hora para corredores e trajetos definidos tecnicamente;\n• acessibilidade universal, segurança, enfrentamento ao assédio e melhoria de terminais e\nparadas;\n• implantação por etapas, com estudos de demanda, projetos executivos, licenciamento,\nfinanciamento, transparência e responsabilidade fiscal.\nPropostas prioritárias\n20. ATÉ 1 HORA - rede de transporte orientada ao tempo do passageiro. Reorganizar\nlinhas, corredores e conexões para reduzir os tempos de viagem entre terminais, rodoviárias\ne polos de emprego e serviços, com linhas expressas e alimentadoras, integração física e\ntarifária, intervalos programados e metas públicas de velocidade, regularidade e tempo de\ndeslocamento. A referência de até uma hora será aplicada aos corredores e trajetos\ntecnicamente definidos.\n21. Metrô Gama-Santa Maria. Estruturar a implantação de solução metroviária de alta\ncapacidade para o eixo Gama-Santa Maria, integrada ao Expresso Sul e à rede alimentadora,\niniciando por estudos de demanda, definição de traçado e tecnologia, projetos, licenciamento,\nmodelagem financeira e captação de recursos.\n22. Expresso Norte - BRT/ônibus expresso pela BR-020 até Planaltina. Implantar corredor\nde transporte coletivo de alta capacidade no eixo norte, articulado à ampliação da BR-020,\natendendo Planaltina, Arapoanga, Mestre d’Armas, Sobradinho e região dos condomínios,\ncom faixas ou infraestrutura prioritária, terminais, linhas alimentadoras, integração tarifária e\nconexão rápida ao Plano Piloto.\n23. Expansão do Metrô-DF - Ceilândia e Samambaia. Retomar e concluir a expansão de\nSamambaia e retirar do papel a expansão de Ceilândia, com novas vias e estações,\nmodernização de energia, sinalização, comunicação e controle e planejamento do material\nrodante necessário, condicionando cronogramas a projetos, contratos e financiamento\nsustentáveis.\n24. BORA DF\nApoiar a implantação do Bora DF, um aplicativo de viagens que faça a conexão entre\nmotoristas e passageiros cobrando taxas menores dos motoristas e preços menores dos\npassageiros. O aplicativo será administrado por uma cooperativa de motoristas e será apoiado\npelo governo através de investimento para a sua estruturação, publicidade para sua\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 21"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-22",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\ndivulgação e articulação institucional com os órgãos públicos. O programa incluirá também a\nimplantação de pontos de apoio para os motoristas nas cidades.\n\nMetas para 2030\n• colocar em execução o projeto estruturante do Metrô Gama–Santa Maria, com etapas de\nengenharia, licenciamento, financiamento e obras compatíveis com o cronograma técnico\naprovado;\n• implantar o corredor Expresso Norte/BR-020 com operação prioritária de ônibus expresso\nou BRT entre Planaltina, Sobradinho e o Plano Piloto, atendendo Arapoanga, Mestre\nd’Armas e região dos condomínios;\n• concluir e colocar em operação a expansão de Samambaia prevista nos projetos e\ncontratos tecnicamente válidos;\n• avançar materialmente na expansão de Ceilândia, com projeto atualizado, contratação e\nexecução das etapas previstas para novas vias e estações;\n• reduzir o tempo médio de viagem e os intervalos nos três eixos prioritários, com metas\npúblicas definidas após a atualização da matriz origem-destino;\n• elevar a regularidade, a velocidade comercial e a satisfação dos usuários do transporte\ncoletivo.\nResultados esperados\n• redução dos tempos de deslocamento casa-trabalho;\n• retomada da expansão efetiva do Metrô-DF e melhor aproveitamento dos investimentos já\nrealizados;\n• maior integração entre metrô, BRT, ônibus alimentadores, bicicleta e caminhada;\n• redução da superlotação, dos intervalos excessivos e da irregularidade;\n• transporte público mais previsível, seguro, acessível e transparente;\n• melhor conexão das Regiões Administrativas aos polos de emprego, educação, saúde e\nserviços.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 22"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-23",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.7 HABITAÇÃO, REGULARIZAÇÃO FUNDIÁRIA, SANEAMENTO E\nDESENVOLVIMENTO URBANO\nDiagnóstico\nO Distrito Federal apresenta bons indicadores médios de abastecimento de água e\nesgotamento sanitário, mas ainda convive com desigualdades territoriais, perdas de água,\nocupações sem atendimento adequado, fragilidades na drenagem, poluição de córregos e\nlagos e baixa integração entre saneamento, habitação, regularização fundiária e uso do solo.\nNas áreas vulneráveis e rurais, muitas famílias dependem de soluções precárias ou não\nconvencionais.\nA expansão urbana, a impermeabilização do solo e os eventos climáticos extremos\naumentam os riscos de escassez hídrica, enchentes e contaminação ambiental. O\nsaneamento será tratado como política de saúde, justiça social, desenvolvimento urbano e\nproteção dos ecossistemas.\nObjetivo\nUniversalizar, com qualidade e equidade, os serviços de água, esgoto, drenagem e\nmanejo de resíduos, integrando-os à habitação, à regularização fundiária, à saúde pública e\nà adaptação climática.\nDiretrizes\n• manutenção da Caesb como empresa pública, eficiente, transparente e comprometida com\no reinvestimento na infraestrutura sanitária;\n• prioridade às áreas de regularização de interesse social, ocupações de baixa renda e\nterritórios rurais;\n• planejamento de longo prazo, controle social e decisões técnicas;\n• segurança hídrica, redução de perdas, reúso e proteção de mananciais;\n• integração entre saneamento, habitação, PDOT, ZEE-DF, saúde e meio ambiente;\n• responsabilidade fiscal e expansão por metas verificáveis.\nPropostas prioritárias\n25. A CASA É SUA - registro e escritura para quem mora. Acelerar a regularização\nfundiária e reduzir os custos documentais para as famílias, com mutirões integrados entre\nCodhab, Terracap, cartórios e administrações regionais. Acelerar a regularização pelo menor\nvalor legal possível.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 23"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-24",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n26. Saneamento para todos e Caesb pública e eficiente. Universalizar progressivamente\nágua e esgoto, priorizando ARIS, ocupações de baixa renda e núcleos rurais; oferecer\nligações e melhorias sanitárias para famílias em extrema pobreza conforme critérios públicos;\nimplementar a tarifa social; reduzir perdas; ampliar tratamento; e manter a Caesb pública,\neficiente, transparente e voltada ao reinvestimento.\n27. Habitação, urbanização, drenagem e prevenção de alagamentos. Integrar produção\nhabitacional, melhoria de moradias, regularização fundiária, saneamento, iluminação,\ntransporte e equipamentos públicos; atualizar e executar o plano de drenagem, priorizando\nmanutenção da rede, retenção e infiltração na origem e intervenções nas áreas críticas de\nalagamento.\n28. Desenvolvimento urbano ordenado, acessível e resiliente. Vincular novos\nparcelamentos, empreendimentos e equipamentos à infraestrutura e ao transporte coletivo,\nobservar PDOT, ZEE-DF e proteção ambiental, ampliar acessibilidade de calçadas e espaços\npúblicos e adotar planejamento urbano orientado à redução das desigualdades territoriais e à\nadaptação climática.\nResultados esperados\n• universalização progressiva e redução das desigualdades de acesso;\n• maior segurança hídrica e redução das perdas de água;\n• diminuição da poluição das águas e dos riscos sanitários;\n• menor ocorrência de alagamentos e maior resiliência urbana;\n• fortalecimento do controle social e da transparência do setor.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 24"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-25",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.8 AGRICULTURA E DESENVOLVIMENTO RURAL\nDiagnóstico\nA área rural do Distrito Federal é estratégica para a segurança alimentar, a geração\nde renda, a proteção dos mananciais e a diversificação econômica. Agricultores familiares,\ncooperativas, médios produtores e agroindústrias enfrentam desafios de regularização,\ncrédito, assistência técnica, água, energia, estradas, armazenamento, conectividade e acesso\na mercados.\nA expansão produtiva precisa respeitar as áreas de recarga, o Zoneamento EcológicoEconômico, a disponibilidade hídrica e a defesa sanitária. A Emater-DF, a Secretaria de\nAgricultura, a Ceasa-DF, a Embrapa e as organizações de produtores formam uma base\ninstitucional que deve atuar de modo integrado.\nObjetivo\nFortalecer a produção rural sustentável, elevar a renda no campo, ampliar a oferta de\nalimentos saudáveis e integrar agricultura, ciência, logística, turismo rural, segurança hídrica\ne compras públicas.\nDiretrizes\n• valorização da agricultura familiar e das cooperativas;\n• inovação, produtividade e agregação de valor;\n• segurança hídrica, conservação do solo e proteção dos mananciais;\n• infraestrutura e conectividade rural;\n• sanidade, rastreabilidade e qualidade dos alimentos;\n• integração entre produção, alimentação escolar e mercados locais.\nPropostas prioritárias\n29. Campo forte, sustentável e conectado aos mercados. Fortalecer Emater-DF,\nagricultura familiar, cooperativas e agroindústrias com assistência técnica, crédito, seguro,\ninovação, regularização, estradas rurais, internet, água e saneamento; ampliar compras\npúblicas de alimentos locais; proteger nascentes e áreas de recarga; estimular irrigação\neficiente, agroecologia, turismo rural e defesa agropecuária sob a abordagem Saúde Única.\nMetas para 2030\n• ampliar o número de produtores atendidos por assistência técnica e compras públicas;\n• melhorar a infraestrutura das rotas rurais prioritárias;\n• elevar a eficiência hídrica e a proteção de nascentes e áreas de recarga;\n• aumentar a formalização e o valor agregado da produção local.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 25"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-26",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nResultados esperados\n• maior renda e produtividade sustentável no campo;\n• alimentos locais mais presentes nos equipamentos públicos;\n• menor vulnerabilidade climática e sanitária;\n• melhor logística, conectividade e qualidade de vida rural.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 26"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-27",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.9 MEIO AMBIENTE, RESÍDUOS SÓLIDOS E SUSTENTABILIDADE\nDiagnóstico\nO Distrito Federal precisa ampliar a proteção dos recursos hídricos, enfrentar incêndios\ne eventos climáticos extremos e superar a baixa cobertura da coleta seletiva e da reciclagem.\nA expansão urbana e o consumo crescente pressionam o Aterro Sanitário, aumentam a\ngeração de resíduos e exigem políticas permanentes de redução, reaproveitamento,\ncompostagem e inclusão produtiva dos catadores.\nObjetivo\nPromover desenvolvimento sustentável, segurança hídrica e climática e uma economia\ncircular que reduza resíduos, recupere materiais e gere trabalho e renda.\nPropostas prioritárias\n30. DF resiliente - segurança hídrica, clima e proteção ambiental. Atualizar e executar\npolíticas de clima e segurança hídrica, proteger mananciais, áreas de recarga, unidades de\nconservação e bacias, fortalecer prevenção e resposta a incêndios, secas e enchentes e\nintegrar meio ambiente, saneamento, defesa civil, saúde e planejamento urbano.\n31. Resíduo é recurso - coleta seletiva, catadores e economia circular. Universalizar\nprogressivamente coleta seletiva e triagem, priorizar contratação e qualificação das\ncooperativas de catadores, ampliar compostagem de orgânicos, logística reversa e reciclagem\nda construção civil, reduzir descartáveis e diminuir o volume destinado ao aterro sanitário.\nResultados esperados\n• ampliação da coleta seletiva e da recuperação de recicláveis;\n• redução do volume encaminhado ao aterro sanitário;\n• valorização e aumento da renda dos catadores;\n• melhoria da limpeza urbana e redução do descarte irregular;\n• maior proteção dos mananciais e resiliência climática.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 27"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-28",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.10 CULTURA, PATRIMÔNIO, ECONOMIA CRIATIVA E TURISMO\nDiagnóstico\nO Distrito Federal possui produção cultural intensa, diversa e reconhecida\nnacionalmente, com presença expressiva nas artes, no audiovisual, na música, no teatro, na\ndança, na literatura, nas culturas populares e urbanas, no patrimônio e nas atividades da\neconomia criativa. Essa vitalidade convive, porém, com forte concentração territorial dos\nequipamentos e da programação, manutenção insuficiente dos espaços, burocracia no\nfomento, fragilidade de algumas cadeias produtivas e baixa integração entre cultura,\neducação, turismo, tecnologia e desenvolvimento econômico.\nA Secretaria de Cultura e Economia Criativa dispõe de orçamento próprio limitado,\nconcentrado em pessoal, administração, manutenção de equipamentos e ações institucionais.\nO Fundo de Apoio à Cultura - FAC constitui o principal instrumento de financiamento direto e\ndeve ser preservado, descentralizado e aperfeiçoado. A Lei de Incentivo à Cultura opera por\nrenúncia de ICMS e ISS, mas ainda apresenta escala reduzida e concentração de\npatrocinadores e projetos.\nA gestão de milhares de projetos, somada à complexidade do CEAC, dos editais, das\nreadequações e das prestações de contas, exige reforço da SUFIC e do CAFAC,\nprocedimentos proporcionais ao risco, informatização e maior transparência sobre seleção,\ncontratação, pagamento, execução e resultados. O controle público deve assegurar a correta\naplicação dos recursos sem transformar a burocracia em barreira para artistas, produtores,\ncoletivos e organizações culturais.\nA rede pública reúne equipamentos de grande relevância, como o Teatro Nacional\nCláudio Santoro, o Cine Brasília, o Museu Nacional da República, o Museu de Arte de Brasília,\no Centro Cultural Três Poderes, a Biblioteca Nacional de Brasília, o Centro de Dança, a Casa\ndo Cantador, o Centro Cultural Renato Russo, o Complexo Cultural de Samambaia, o Cine\nItapuã e os espaços de Planaltina. Entretanto, a oferta permanece concentrada no Plano\nPiloto e muitas Regiões Administrativas não dispõem de equipamento cultural público\nestruturado, manutenção regular ou programação continuada.\nBrasília também reúne atributos turísticos singulares: patrimônio mundial, arquitetura\ne urbanismo modernistas, diversidade cultural, calendário cívico, diplomático e de eventos,\ngastronomia, turismo rural, áreas naturais, produção criativa e posição estratégica no CentroOeste. Esse potencial ainda é explorado de maneira fragmentada, com pouca articulação\nentre promoção turística, cultura, patrimônio, economia criativa, mobilidade, hotelaria,\ncomércio, embaixadas, aeroporto e destinos da RIDE.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 28"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-29",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nObjetivo\nDemocratizar o acesso à cultura, fortalecer os mecanismos de financiamento,\npreservar e ativar o patrimônio, valorizar artistas e trabalhadores, estruturar as cadeias da\neconomia criativa e transformar a cultura e o turismo em instrumentos de identidade,\ndesenvolvimento, inclusão, trabalho e renda em todas as Regiões Administrativas.\nDiretrizes\n• cultura como direito, identidade, memória e atividade econômica;\n• descentralização territorial, diversidade, acessibilidade e ações afirmativas;\n• continuidade, transparência, simplificação e avaliação dos mecanismos de fomento;\n• preservação, manutenção preventiva, ocupação pública e uso sustentável do patrimônio e\ndos equipamentos;\n• valorização do trabalho artístico, técnico e produtivo e fortalecimento das cadeias da\neconomia criativa;\n• integração entre cultura, turismo, educação, ciência, tecnologia, desenvolvimento\neconômico e relações internacionais;\n• implantação gradual, aproveitamento das estruturas existentes e responsabilidade fiscal.\nPropostas prioritárias\n32. Cultura em todo o DF - FAC democrático e economia criativa. Preservar o FAC,\npublicar calendário anual de editais, regionalizar recursos, simplificar CEAC e prestações de\ncontas com controle proporcional ao risco, ampliar a Lei de Incentivo, fortalecer Pontos de\nCultura e Conexão Cultura e apoiar formação, formalização, crédito, Distritos Criativos e\nacesso a mercados para artistas e empreendedores.\n33. Patrimônio vivo, audiovisual e Brasília destino. Recuperar e programar equipamentos\nculturais, concluir a recuperação do Teatro Nacional, profissionalizar o Cine Brasília, fortalecer\nFestival de Brasília, Film Commission, Polo Audiovisual, Orquestra e Rádio Cultura, preservar\npatrimônio material e imaterial e integrar calendário, arquitetura, gastronomia, eventos,\nturismo rural, embaixadas, aeroporto e RIDE para aumentar circulação e permanência de\nvisitantes.\nResultados esperados\n• maior execução, regularidade, descentralização e transparência do FAC e da Lei de\nIncentivo;\n• redução da burocracia e dos prazos de seleção, contratação, pagamento e prestação de\ncontas;\n• recuperação, reabertura, acessibilidade e programação regular dos equipamentos\nculturais;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 29"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-30",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• ampliação da oferta cultural e audiovisual nas Regiões Administrativas;\n• fortalecimento da Orquestra, da Rádio Cultura, do Festival de Brasília e das cadeias\ncriativas;\n• aumento da formação, formalização, circulação, trabalho e renda na economia criativa;\n• maior preservação e ativação do patrimônio material e imaterial;\n• crescimento do fluxo turístico, da permanência dos visitantes e da integração do turismo\ncom a economia local.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 30"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-31",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.11 ESPORTE E LAZER\nDiagnóstico\nO Distrito Federal possui tradição esportiva, população jovem, clima favorável às\natividades ao ar livre e uma rede formada por centros olímpicos e paralímpicos, estádios,\nginásios, quadras escolares, parques, pistas, campos e equipamentos comunitários. Apesar\ndesse patrimônio, a oferta permanece desigual entre as Regiões Administrativas, muitos\nespaços apresentam manutenção insuficiente, faltam programação regular e profissionais, e\na política esportiva ainda é pouco integrada à educação, à saúde, à assistência social, à\nsegurança e ao desenvolvimento urbano.\nCrianças e jovens de áreas vulneráveis encontram barreiras para acessar iniciação\nesportiva, materiais, transporte e competições. Pessoas com deficiência, pessoas idosas,\nmulheres e populações de baixa renda enfrentam limitações adicionais de acessibilidade,\nsegurança e oferta adequada. O esporte de rendimento carece de planejamento contínuo,\napoio técnico e critérios transparentes, enquanto clubes, associações, federações, projetos\nsociais e atletas convivem com fragmentação dos programas e dificuldade de acesso ao\nfomento.\nO lazer também precisa ser reconhecido como direito e componente da qualidade de\nvida. Parques, praças, quadras e espaços públicos devem receber manutenção, iluminação,\nacessibilidade e atividades regulares. A política deve superar a concentração em grandes\neventos e combinar esporte educacional, participação comunitária, saúde, inclusão,\nrendimento, formação profissional e ocupação segura dos territórios.\nObjetivo\nDemocratizar o acesso ao esporte e ao lazer, assegurar equipamentos seguros e\nacessíveis, ampliar a prática regular de atividades físicas e utilizar o esporte como instrumento\nde educação, saúde, inclusão, convivência, prevenção da violência, desenvolvimento humano\ne geração de oportunidades.\nDiretrizes\n• esporte e lazer como direitos sociais e políticas permanentes de Estado;\n• prioridade ao esporte educacional, comunitário e inclusivo;\n• descentralização territorial e acesso gratuito ou socialmente orientado;\n• integração com educação, saúde, assistência social, segurança, cultura e urbanismo;\n• acessibilidade, igualdade de gênero, proteção de crianças e adolescentes e respeito à\ndiversidade;\n• valorização dos profissionais, atletas, paratletas, organizações e iniciativas comunitárias;\n• planejamento, transparência, manutenção preventiva e avaliação de resultados.\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 31"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-32",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nPropostas prioritárias\n34. Esporte e lazer para todas as idades e territórios. Recuperar e programar Centros\nOlímpicos e Paralímpicos, quadras, campos, ginásios, parques e praças; ampliar esporte\neducacional, comunitário, feminino, para pessoas idosas e paradesportivo; apoiar talentos e\natletas com critérios públicos; integrar atividade física à saúde e prevenção da violência; e\nexigir legado social e econômico dos grandes eventos.\nResultados esperados\n• aumento da prática regular de atividades físicas e esportivas em todas as faixas etárias;\n• ampliação do esporte educacional, comunitário, feminino, para pessoas idosas e\nparadesportivo;\n• recuperação, acessibilidade e maior ocupação dos equipamentos públicos;\n• redução das desigualdades territoriais de acesso ao esporte e ao lazer;\n• fortalecimento da saúde, da convivência, da proteção social e da prevenção da violência;\n• apoio mais transparente e efetivo a atletas, paratletas, profissionais e projetos sociais;\n• crescimento da economia e do turismo esportivo, com legado permanente para a\npopulação.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 32"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-33",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.12 CIÊNCIA, TECNOLOGIA E INOVAÇÃO\nDiagnóstico\nO Distrito Federal reúne um dos mais relevantes sistemas de conhecimento do país,\ncom universidades, institutos federais, centros de pesquisa, laboratórios públicos, fundações\nde apoio, órgãos federais, empresas de tecnologia e profissionais altamente qualificados.\nEssa base científica convive, entretanto, com baixa transformação do conhecimento em novos\nprodutos, serviços, processos, empresas, empregos qualificados e soluções para os\nproblemas das Regiões Administrativas.\nA economia distrital permanece fortemente dependente da administração pública e\ndos serviços associados ao gasto governamental. A ciência, a tecnologia e a inovação devem\ncontribuir para diversificar essa estrutura, elevar a produtividade e formar cadeias produtivas\nde maior conteúdo tecnológico. Para isso, é necessário aproximar a FAPDF, a UnB, o IFB, a\nUnDF, a Embrapa, a Fiocruz, demais instituições científicas e tecnológicas, empresas,\ncooperativas, startups e organizações da sociedade.\nOs recursos destinados à pesquisa e à inovação ainda são frequentemente dispersos\nem iniciativas pouco conectadas a estratégias produtivas, compras públicas, demandas\nempresariais e oportunidades de mercado. A política pública precisa preservar a pesquisa\nbásica e a autonomia científica, mas também orientar parte relevante dos investimentos para\nmissões capazes de gerar serviços tecnológicos, propriedade intelectual, produção,\nfaturamento, exportações, modernização de empresas e melhoria dos serviços públicos.\nO Distrito Federal possui vantagens para desenvolver setores portadores de futuro,\nespecialmente tecnologia da informação, biotecnologia aplicada à saúde, à agricultura e à\npecuária, serviços laboratoriais e tecnológicos, processamento de biomassa, combustíveis\navançados de aviação, economia digital e soluções para governo. O Aeroporto Internacional\nde Brasília, a proximidade com a produção de etanol do Centro-Oeste e a concentração de\ninstituições científicas criam oportunidades que dependem de estudos técnicos, modelagem\nfinanceira, segurança jurídica, articulação tributária e cooperação com a União e o setor\nprivado.\nA transformação digital do GDF também avançou de forma fragmentada, com sistemas\npouco interoperáveis, dependência de fornecedores, bases de dados isoladas e riscos\nrelacionados à segurança cibernética, à proteção de dados e ao uso inadequado de\ninteligência artificial. O desafio é combinar política industrial e tecnológica, inovação\nempresarial, inclusão digital e modernização segura do Estado.\nObjetivo\nPromover a convergência entre ciência, tecnologia, inovação e desenvolvimento\neconômico por meio do Plano Nova Indústria DF, orientado por missões, setores portadores\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 33"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-34",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nde futuro, metas e indicadores, articulando pesquisa, serviços tecnológicos, formação\nprofissional, atração de investimentos, produção de alto valor agregado e modernização dos\nserviços públicos.\nDiretrizes\n• orientar a política de ciência, tecnologia e inovação para missões econômicas, sociais,\nambientais e territoriais, preservando a pesquisa básica e a autonomia científica;\n• aproveitar as capacidades do sistema de inovação do DF para diversificar a economia e\nreduzir gradualmente sua dependência do setor público;\n• priorizar tecnologia da informação, biotecnologia para saúde, agricultura e pecuária,\nserviços tecnológicos e laboratoriais, processamento de biomassa e combustíveis\navançados de aviação;\n• integrar FAPDF, universidades, institutos de pesquisa, empresas, cooperativas, startups,\nSistema S, BRB e instituições de desenvolvimento;\n• transformar conhecimento em inovação efetiva, medida por novos produtos, serviços,\nprocessos, faturamento, produtividade, empregos e impacto público;\n• distribuir investimentos e polos tecnológicos pelas Regiões Administrativas, vinculando-os\naos Territórios de Prosperidade e às vocações locais;\n• ampliar inclusão digital, proteção de dados, segurança cibernética, interoperabilidade e\nuso responsável da inteligência artificial;\n• submeter incentivos, carreiras, centros de pesquisa, plantas industriais e grandes projetos\na estudos jurídicos, fiscais, ambientais e de viabilidade.\nPropostas prioritárias\n35. Planalto do Silício - ciência, tecnologia e produção de alto valor. Elaborar e executar\nplano orientado por missões para tecnologia da informação, biotecnologia em saúde e\nagropecuária, serviços tecnológicos e laboratoriais, biomassa e combustíveis sustentáveis de\naviação; orientar parte dos recursos da FAPDF para projetos cooperativos; atrair centros de\nP&D e plantas de alta tecnologia; apoiar startups, cooperativas, Inova Talentos DF e formação\ntecnológica.\n36. GDF Digital - dados, inteligência artificial e segurança cibernética. Integrar serviços\npúblicos em plataforma acessível, adotar padrões de interoperabilidade e portabilidade,\nassegurar governança pública dos dados, fortalecer segurança cibernética e estabelecer\nregras para uso responsável de inteligência artificial, com supervisão humana, avaliação de\nriscos e vieses, proteção de dados e direito de contestação em decisões que afetem direitos.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 34"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-35",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nMetas para 2030\n• elaborar, aprovar e iniciar a execução do projeto Planalto do Silício, com missões, projetos\ne indicadores públicos;\n• ampliar o volume de recursos externos captados para pesquisa, inovação, serviços\ntecnológicos e plantas produtivas;\n• aumentar o número de projetos cooperativos entre instituições científicas, empresas,\ncooperativas e órgãos públicos;\n• ampliar serviços laboratoriais e tecnológicos disponíveis no DF e reduzir contratações\nexternas evitáveis;\n• apoiar a instalação ou expansão de centros de P&D e unidades produtivas de alta\ntecnologia mediante projetos com viabilidade comprovada;\n• ampliar a contratação de mestres, doutores, tecnólogos e profissionais especializados em\nprojetos de inovação;\n• elevar a participação de empresas e cooperativas locais em programas de inovação e\ncompras públicas tecnológicas;\n• implantar governança distrital de dados, inteligência artificial e segurança cibernética;\n• concluir estudos e modelagem da cadeia de combustível sustentável de aviação,\ncondicionando eventual implantação à viabilidade técnica, econômica, ambiental e fiscal.\nResultados esperados\n• consolidação do Distrito Federal como polo nacional de tecnologia da informação,\nbiotecnologia, serviços tecnológicos e pesquisa aplicada;\n• maior transformação do conhecimento científico em produtos, serviços, processos,\nempresas, faturamento e empregos qualificados;\n• diversificação da economia e redução gradual da dependência do setor público;\n• formação de polos tecnológicos e industriais distribuídos pelas Regiões Administrativas;\n• aumento da produtividade e da capacidade inovadora de empresas, cooperativas e\ntrabalhadores;\n• maior integração entre instituições científicas, governo, setor produtivo e comunidades;\n• fortalecimento da capacidade institucional do GDF para planejar e executar políticas de\nciência, tecnologia e inovação;\n• serviços públicos digitais mais simples, seguros, acessíveis e orientados ao cidadão;\n• novas cadeias produtivas de maior valor agregado, com empregos mais resilientes e\nmelhor remunerados.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 35"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-36",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.13 DIREITOS HUMANOS, IGUALDADE, CIDADANIA E POLÍTICAS PARA A PESSOA\nIDOSA\nDiagnóstico\nO Distrito Federal passa por uma rápida transição demográfica. O crescimento da\npopulação com 60 anos ou mais exige que o envelhecimento deixe de ser tratado por ações\nisoladas e passe a orientar, de forma transversal, as políticas de saúde, assistência social,\nhabitação, mobilidade, segurança, cultura, trabalho e planejamento urbano.\nPersistem insuficiência de Centros-Dia e de vagas em Instituições de Longa\nPermanência para Pessoas Idosas, fragilidade da atenção domiciliar, baixa integração entre\nos serviços, pouca proteção aos cuidadores familiares, barreiras de acessibilidade e\ncrescimento das situações de violência, abandono, golpes, negligência e isolamento social. O\nenvelhecimento também produz desafios relacionados à autonomia, prevenção de quedas,\ndemências, cuidados paliativos, polifarmácia, moradia adaptada e segurança de renda.\nO governo tratará o envelhecimento como política de Estado, respeitando o Estatuto\nda Pessoa Idosa, fortalecendo o controle social e evitando a multiplicação de estruturas\nconcorrentes. A prioridade será integrar serviços existentes, ampliar a rede de cuidados e\nassegurar resposta pública efetiva às pessoas idosas em situação de risco ou dependência.\nObjetivo\nGarantir envelhecimento digno, saudável, protegido, participativo e com autonomia,\nestruturando uma Política Distrital Integrada para o Envelhecimento e os Cuidados, com\nprioridade às pessoas idosas em situação de vulnerabilidade, dependência, violência,\nabandono ou ausência de apoio familiar.\nDiretrizes\n• envelhecimento como tema transversal de governo e componente do planejamento de\nlongo prazo;\n• preservação da autonomia, da capacidade funcional, da convivência familiar e comunitária\ne da tomada de decisão apoiada;\n• cuidado compartilhado entre Estado, família e comunidade, com apoio efetivo aos\ncuidadores;\n• prevenção da violência, do abandono, da discriminação etária e da exploração patrimonial\ne financeira;\n• prioridade territorial, acessibilidade, participação social, transparência e responsabilidade\nfiscal;\n• integração entre SUS, SUAS, segurança pública, justiça, habitação, mobilidade, cultura,\nesporte e desenvolvimento econômico.\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 36"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-37",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nPropostas prioritárias\n37. Direitos para todos e DF para Todas as Idades. Fortalecer políticas específicas para\nmulheres, igualdade racial, pessoas com deficiência, população LGBTQIA+, crianças,\nadolescentes, povos e comunidades tradicionais e demais grupos sujeitos a discriminação;\ninstituir política integrada de envelhecimento e cuidados, com Centros-Dia regionalizados,\natenção domiciliar, apoio a cuidadores, regulação de acolhimento, prevenção de quedas e\ndemências, enfrentamento à violência e acessibilidade urbana e digital.\nMetas e resultados esperados\n• instituir plano quadrienal, orçamento temático e painel público de indicadores no primeiro\nano;\n• ampliar progressivamente Centros-Dia e vagas de acolhimento conforme diagnóstico\nterritorial e capacidade fiscal;\n• eliminar a ausência de resposta institucional às pessoas idosas em risco que aguardam\nacolhimento;\n• reduzir o tempo de resposta às denúncias e ampliar o acompanhamento efetivo dos casos;\n• assegurar avaliação multidimensional às pessoas idosas identificadas como frágeis e\nampliar a atenção domiciliar;\n• reduzir internações evitáveis e ocorrências relacionadas a quedas e uso inadequado de\nmedicamentos;\n• capacitar progressivamente todas as equipes públicas que atendem diretamente pessoas\nidosas;\n• adaptar equipamentos públicos prioritários e ampliar a inclusão digital, a convivência e a\nparticipação social.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 37"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-38",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.14 GESTÃO PÚBLICA, TRANSPARÊNCIA E RESPONSABILIDADE FISCAL\nDiagnóstico\nO próximo governo poderá receber uma situação financeira marcada por\ncompromissos acumulados, insuficiência de caixa e risco de frustração de receitas.\nEstimativas técnicas apontam pressão central próxima de R$ 6,86 bilhões, podendo variar\nconforme o comportamento da arrecadação e a confirmação das obrigações. A dimensão\nexata deverá ser apurada por auditoria de transição, conciliação contábil, financeira e\npatrimonial e divulgação transparente dos resultados.\nA resposta não poderá se limitar a cortes lineares, que prejudicam serviços essenciais\ne investimentos de alto impacto. Será necessário combinar disciplina fiscal, revisão de\ndespesas, gestão de passivos, melhoria da arrecadação, eficiência administrativa e retomada\nseletiva da capacidade de investimento.\nObjetivo\nRecuperar a capacidade de planejamento e investimento do Distrito Federal,\nassegurar a continuidade dos serviços essenciais e construir uma administração moderna,\níntegra, eficiente, transparente e orientada para resultados.\nPropostas prioritárias\n38. Contas em ordem - recuperação e sustentabilidade fiscal. Realizar auditoria de\ntransição, publicar a situação fiscal recebida e instituir plano 2027-2030 para liquidez, gestão\nde passivos e recuperação da capacidade de investimento; implantar programação financeira,\nrevisar despesas, contratos, benefícios e subsídios, melhorar arrecadação e dívida ativa e\nimpedir novos programas permanentes sem impacto e fonte de custeio.\n39. Governo eficiente, transparente e que entrega. Vincular prioridades ao PPA, LDO e\nLOA, profissionalizar compras e contratos, fortalecer integridade, controle interno e gestão de\nriscos, planejar a força de trabalho e valorizar servidores, digitalizar serviços e publicar\norçamento, contratos, pagamentos, obras, metas e resultados em linguagem acessível,\ninclusive por Região Administrativa.\nResultados esperados\n• conhecimento público e confiável da situação financeira recebida;\n• redução gradual dos passivos sem cobertura;\n• maior previsibilidade de pagamentos e execução orçamentária;\n• proteção dos serviços essenciais;\n• aumento da eficiência do gasto e da arrecadação;\n• recuperação progressiva da capacidade de investimento;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 38"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-39",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• maior transparência e confiança na gestão das contas públicas.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 39"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-40",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n5.15 DESENVOLVIMENTO REGIONAL E RELAÇÃO COM AS REGIÕES\nADMINISTRATIVAS\nDiagnóstico\nAs Regiões Administrativas apresentam diferenças profundas de renda, emprego,\ninfraestrutura, mobilidade, serviços, equipamentos culturais e esportivos e acesso ao crédito.\nA centralização das decisões e a fragilidade técnica de algumas administrações regionais\ndificultam o planejamento territorial e a execução coordenada das políticas.\nO desenvolvimento regional não será um eixo residual, mas o método de\nimplementação de todo o plano. Cada política deverá indicar territórios prioritários, metas por\nregião e mecanismos de participação e transparência.\nObjetivo\nReduzir desigualdades territoriais e organizar a presença do governo nas Regiões\nAdministrativas por meio de planejamento, participação, capacidade técnica e carteiras\npúblicas de investimentos.\nDiretrizes\n• prioridade aos territórios de maior vulnerabilidade;\n• planos territoriais integrados e baseados em indicadores;\n• participação comunitária e pactos regionais;\n• fortalecimento técnico e transparência das administrações regionais;\n• integração entre RAs próximas e com a RIDE;\n• monitoramento de investimentos e resultados por território.\nPropostas prioritárias\n40. Governo nas RAs - desenvolvimento territorial e redução das desigualdades.\nElaborar planos territoriais para todas as Regiões Administrativas, com diagnóstico, carteira\npública de projetos, critérios de prioridade, pactos entre territórios vizinhos, fortalecimento\ntécnico das administrações regionais e painel de investimentos, serviços e indicadores,\ndirecionando recursos conforme vulnerabilidade, déficit de infraestrutura, urgência social e\npotencial econômico.\nMetas para 2030\n• todas as RAs com diagnóstico, plano territorial e carteira pública de projetos;\n- Implantar orçamento participativo por RA;\n• redução progressiva das diferenças de acesso a serviços essenciais;\n• fortalecimento da capacidade técnica das administrações regionais;\n• painel territorial atualizado e participação regular da população.\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 40"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-41",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\nResultados esperados\n• investimentos mais transparentes e coerentes com as necessidades locais;\n• melhor coordenação entre políticas e órgãos;\n• maior capacidade de execução e manutenção urbana;\n• redução das desigualdades entre as Regiões Administrativas.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 41"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-42",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n6. PRIORIDADES DOS PRIMEIROS 100 DIAS\nNos primeiros 100 dias de governo serão adotadas, entre outras, as seguintes\nmedidas:\n• realizar auditoria administrativa, financeira, contábil, contratual e patrimonial do GDF;\n• publicar relatório de situação fiscal e plano inicial de recuperação, com cenários de caixa,\nriscos e prioridades de pagamento;\n• implantar programação financeira emergencial, protegendo serviços essenciais e\nimpedindo a formação de novos passivos sem cobertura;\n• revisar obras paralisadas, contratos prioritários, créditos suplementares, despesas de\nexercícios anteriores e restos a pagar;\n• apresentar plano emergencial da saúde com auditoria das filas, reorganização da\nregulação, diagnóstico de estoques e contratos, recomposição prioritária das equipes de\nAtenção Primária e plano de fluidez das urgências;\n• publicar o Censo da Verdade da Educação, com linhas de base de aprendizagem, fila de\ncreche, tempo integral, força de trabalho, infraestrutura, conectividade e orçamento;\niniciar o plano de alfabetização, tutoria e alerta de frequência; e apresentar o mapa\nterritorial de expansão de creches, educação integral, educação profissional e reformas\nprioritárias;\n• estabelecer plano integrado de segurança pública;\n• instituir o Programa Distrital de Desenvolvimento Econômico e Territorial;\n• selecionar os projetos-piloto de inovação territorial, crédito produtivo e infraestrutura\nempreendedora, com custos, parceiros, metas e fontes de financiamento definidos;\n• iniciar a simplificação digital de abertura, licenciamento e funcionamento de empresas;\n• apresentar proposta de compras públicas de proximidade e inovação, observada a\nlegislação;\n• criar mesa permanente de diálogo com as Regiões Administrativas;\n• instituir sistema de monitoramento físico, financeiro e territorial das metas governamentais;\n• ampliar os mecanismos de transparência pública;\n• preparar a integração das propostas deste plano ao Plano Plurianual, à LDO e à LOA.\n• realizar diagnóstico financeiro e operacional da política cultural, do FAC, da Lei de\nIncentivo, dos equipamentos, do patrimônio e dos projetos em execução;\n• iniciar inventário dos equipamentos culturais e publicar calendário preliminar de editais e\nmedidas de simplificação do fomento.\n• apresentar plano de modernização do FAC e da LIC, inventário preliminar dos\nequipamentos e modelagem para reabertura integral do Teatro Nacional, com\nprioridades, custos e fontes de financiamento.\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 42"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-43",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• realizar diagnóstico integrado da situação do saneamento, da segurança hídrica, da\ndrenagem e dos resíduos sólidos, com prioridades por território;\n• iniciar a revisão do Plano Distrital de Saneamento Básico, do Plano de Gestão Integrada\nde Resíduos Sólidos e do Plano Distrital de Drenagem;\n• publicar plano emergencial de manutenção da drenagem e prevenção de alagamentos nas\náreas críticas;\n• instituir mesa de governança com Caesb, SLU, Novacap, Adasa, Defesa Civil,\nadministrações regionais e sociedade civil;\n• apresentar programa inicial de universalização da coleta seletiva e fortalecimento das\ncooperativas de catadores.\n• realizar auditoria operacional da mobilidade, publicar dados de demanda, intervalos, frota,\ncontratos e obras; apresentar plano emergencial de regularidade do transporte; e definir\na carteira territorial de expansão do metrô, BRT, corredores, linhas alimentadoras,\nterminais e ciclovias;\n• instituir o Comitê Intersetorial do Envelhecimento e iniciar a elaboração participativa do\nPlano Distrital dos Direitos da Pessoa Idosa;\n• publicar diagnóstico territorial do envelhecimento, com serviços existentes, demanda por\nCentros-Dia, atenção domiciliar e vagas de acolhimento;\n• realizar censo das pessoas idosas que aguardam acolhimento e regulamentar o fluxo\nemergencial de proteção às vítimas de violência;\n• fortalecer a equipe técnica do Conselho dos Direitos da Pessoa Idosa e implantar versão\ninicial do painel público de serviços, vagas, orçamento e indicadores;\n• iniciar projeto-piloto de Centro-Dia e apresentar plano de ampliação da atenção domiciliar\ne de apoio aos cuidadores.\n• realizar inventário dos equipamentos esportivos e de lazer, publicar diagnóstico de\nfuncionamento dos Centros Olímpicos e Paralímpicos e apresentar plano emergencial de\nmanutenção, acessibilidade e programação territorial;\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 43"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-44",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n7. FINANCIAMENTO DAS PROPOSTAS\nAs propostas serão implementadas de acordo com a disponibilidade orçamentária e\nfinanceira, respeitando a Constituição Federal, a Lei Orgânica do Distrito Federal, a Lei de\nResponsabilidade Fiscal e as demais normas aplicáveis.\nA prioridade inicial será assegurar os serviços essenciais, conhecer e organizar os\npassivos, recuperar previsibilidade de caixa e iniciar projetos de baixo custo, alto impacto e\ncapacidade demonstrativa.\nProgramas que criem despesa continuada somente avançarão após estimativa de\nimpacto orçamentário-financeiro, indicação de fonte de custeio e demonstração de\ncompatibilidade com o PPA, a LDO e a LOA. Metas financeiras expressivas apresentadas em\ndocumentos\n\npreliminares\n\nserão\n\nsubmetidas\n\nà\n\nvalidação\n\ntécnica\n\ne\n\npoderão\n\nser\n\nredimensionadas, escalonadas ou financiadas por fontes não dependentes do Tesouro.\nAs principais fontes de financiamento poderão incluir:\n• recursos do orçamento do GDF, obtidos por priorização e revisão de despesas;\n• melhoria da arrecadação, recuperação de créditos e redução da sonegação;\n• transferências constitucionais e legais;\n• convênios, contratos e programas com a União;\n• fundos constitucionais e setoriais;\n• emendas parlamentares;\n• operações de crédito autorizadas e vinculadas a projetos sustentáveis;\n• concessões, parcerias público-privadas e contratos de desempenho;\n• recursos e linhas do BRB, respeitadas sua governança, capacidade financeira e regras\nprudenciais;\n• parcerias com bancos públicos, cooperativas de crédito, fundos garantidores e instituições\nde desenvolvimento;\n• recursos de organismos nacionais e internacionais;\n• investimentos privados, contrapartidas e cooperação com universidades e setor produtivo;\n• recursos vinculados ao Fundo de Apoio à Cultura, incentivo fiscal, transferências federais,\nemendas, patrocínios e cooperação cultural;\n• reaproveitamento de imóveis, equipamentos e estruturas públicas existentes.\nNenhuma proposta será executada sem avaliação prévia de sua viabilidade jurídica,\ntécnica, orçamentária, financeira, social e ambiental. A expansão dos projetos-piloto\ndependerá dos resultados alcançados, da capacidade operacional e da sustentabilidade\nfiscal.\n• reinvestimento de resultados das empresas públicas do setor em infraestrutura sanitária e\nexpansão do atendimento, observadas as regras legais e de governança;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 44"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-45",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• recursos federais de saneamento, habitação, desenvolvimento urbano, recursos hídricos,\ndefesa civil e gestão de resíduos;\n• receitas tarifárias, fundos setoriais e operações de crédito destinadas a projetos\nestruturados, sem comprometer a sustentabilidade financeira das empresas públicas;\n• logística reversa, responsabilidade compartilhada dos grandes geradores e parcerias para\neconomia circular.\n• Fundo dos Direitos da Pessoa Idosa, doações incentivadas, emendas parlamentares e\nparcerias com a União para assistência social, saúde, acessibilidade e cuidados;\n• recursos do SUS e do SUAS destinados à atenção domiciliar, reabilitação, acolhimento,\nCentros-Dia, proteção social e vigilância;\n• parcerias com universidades, instituições filantrópicas e organizações da sociedade civil,\nmediante metas, transparência, fiscalização e avaliação de resultados.\n• recursos federais, distritais, emendas, fundos, patrocínios e parcerias destinados à cultura,\npatrimônio, turismo, esporte e lazer, com contrapartidas públicas, transparência e\navaliação de resultados;\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 45"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-46",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n8. GOVERNANÇA, MONITORAMENTO E AVALIAÇÃO\nO governo implantará um sistema integrado de acompanhamento das propostas, com:\n• definição de responsáveis por cada programa e projeto;\n• estabelecimento de metas, indicadores e linha de base;\n• acompanhamento físico, financeiro, fiscal e territorial;\n• publicação de custos, fontes de recursos, cronogramas e resultados;\n• avaliação de impacto das principais políticas;\n• monitoramento específico dos projetos-piloto de desenvolvimento econômico;\n• revisão, ampliação ou encerramento de iniciativas conforme evidências;\n• gestão permanente de riscos fiscais e operacionais;\n• participação dos órgãos de controle e da sociedade;\n• publicação de relatórios anuais de execução e de situação fiscal.\nAs prioridades deste Plano de Governo serão incorporadas aos instrumentos legais de\nplanejamento e orçamento do Distrito Federal. A governança deverá assegurar que decisões\nde expansão de programas sejam compatíveis com resultados comprovados e disponibilidade\nfinanceira.\n8.1 NOTA DE CONFORMIDADE E IMPLEMENTAÇÃO\nEste documento consolida as propostas defendidas pelo candidato ao Governo do\nDistrito Federal para instrução do pedido de registro, em conformidade com o art. 11, § 1º, IX,\nda Lei nº 9.504/1997, sem prejuízo dos demais documentos e procedimentos exigidos pela\nJustiça Eleitoral e pelo sistema CANDex para as Eleições 2026.\nAs propostas deste plano constituem diretrizes políticas para o mandato 2027–2030.\nSua execução observará a Constituição Federal, a Lei Orgânica do Distrito Federal, a\nlegislação eleitoral e administrativa, a Lei de Responsabilidade Fiscal, a Lei nº 4.320/1964, as\nnormas setoriais e os instrumentos de planejamento e orçamento.\nMedidas que dependam de lei, autorização da Câmara Legislativa, cooperação da\nUnião, decisão de órgão regulador, projeto executivo, licenciamento, contratação ou parceria\nserão encaminhadas pelos instrumentos juridicamente adequados. Metas com linha de base\nainda não confirmada serão validadas nos primeiros 100 dias e poderão ser escalonadas sem\nalteração de seu objetivo público.\nReferências normativas gerais\n• Constituição da República Federativa do Brasil de 1988, especialmente os direitos sociais,\nas competências do Distrito Federal e os princípios da administração pública;\n• Lei Orgânica do Distrito Federal e legislação distrital setorial vigente;\n• Lei Complementar nº 101/2000 e Lei nº 4.320/1964;\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 46"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-47",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n• Lei nº 9.504/1997 e resoluções do Tribunal Superior Eleitoral aplicáveis às Eleições de\n2026;\n• PPA, LDO, LOA, planos distritais, normas dos sistemas nacionais e recomendações dos\nórgãos de controle.\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 47"
+          },
+          {
+            "id": "plano-de-governo-do-distrito-federal-2027-2030-48",
+            "titulo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO DO DISTRITO FEDERAL 2027-2030\n\n9. COMPROMISSO FINAL\nEste Plano de Governo representa o compromisso da candidatura com uma\nadministração democrática, eficiente, transparente, socialmente responsável e fiscalmente\nsustentável.\nNossa proposta é enfrentar, ao mesmo tempo, a desigualdade territorial e a restrição\nfiscal. O Distrito Federal não precisa escolher entre responsabilidade e desenvolvimento:\nprecisa gastar melhor, recuperar sua capacidade de investimento e direcionar o poder público\npara criar oportunidades onde elas são mais necessárias.\nGovernaremos com diálogo, planejamento, transparência e participação social. A\nimplantação será gradual, com prioridades claras, proteção dos serviços essenciais, projetos\navaliados e compromisso permanente com resultados.\nBrasília, agosto de 2026.\nRicardo Cappelli\nCandidato a Governador do Distrito Federal\nSofia Carvalho\nCandidata a Vice-Governadora\nPartido Socialista Brasileiro - PSB\n\nPlano de Governo - Registro de Candidatura - Eleições 2026 | Página 48"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "102af69ea9154a06c8eca08cf12862fd5a1ca5e328ce88ebdd4cbc70d2bf4d20"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "6f4ce0302074e0cfeab9e4064e3788f67b2215636f1076745e990b1ae1dd70dc"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "90a2b7c99a10a3e209589b41e510f908a597bacf735a3104e6a859bb8141dc4c"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c9ef68da4a809b650455dadb0b7eb4c276ea12d5fe121204cad6e35683834bed"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "95121add226275b3173ab4db7d570bee4f63b7448b55a2c7e3559327b29ece91"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "58881b112f69604132379f2ddd93d6297f3c2ff130a81cc94dd46f5dbb2c6269"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "f41fc8046476967d9288d0a31de94bf17e9f906ddb736d419512a94cc54ab15c"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "c5397dbba2ec427d8d6597dfb402dd67f385923f33dcca4a2b8eb4f3c3cff9df"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "d338a3a0cfbab50d3e5e664e68e25424ac8c17361fd9bf7cb0b3013e36830987"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "28681a685068d3eb812a2b94b07615f8d23172162f487c49dfef2396cb21c21b"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "86faaa9e201dc15c492f9b0d0f2487f7ddaae7c1a14db506321b95c2a13ebff2"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "d0ea15f9fc741bf9cbc6d9250fa5acde2689e5ddb0839f61dc8dfb2bf24924a7"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "d306af28433eecaa104da6cc805f9d8227ee4bcd404c1316967a9f6cb63ed165"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "bb440d8c972dca534de27eaeb1776149eb1d59b8a52036fc3e061113da32d817"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "f3968364eba77ee0e2bbf37e95e5d9936ff34059b4a43de8012495c86a75a19c"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "996dec3a2e87cb601e16829602f8c9ed2bffb1fab0f46db2db17ba5da5543189"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "2802da87275581f920c968f49af4895c951f57f29f58627642cf79ee51b83fc5"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "d30f96dc840ee260f1380cba7f0fe3f44b33ec065bb1bd19bcc02b32c852c5db"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "fb883b2dc75485272f3d103910a42ae27e7bbe620e648a1feed2359081b5f81f"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "2ad5c50ec4953e718d5d135779322225259a38a64edfd92abf1a6ee719844d3c"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "447714891ad905643692b0a1843b61281d1b387199da6412a41633d28c643708"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "68c0a6165c9f0f5fa6a5ae22387c9e6a5f9df846814a3d3b3b439e6ae45ebfea"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "da29a8773c5c13274cc2e420cdf9e2623eceab31e175dbcb4a2950546f720848"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "75c23c3ec1c11cc1fdbf046aa9139585d30168d15ecf3cbb5410442db50b39c9"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "490acaa500a545d754c0133c6e33184d56bd9db469f43932118e521f72486567"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "2d77252e3c9f4e4aa22ffa19ad74cf0e141a5e2574d7605f9b0d4b7bf0dc6449"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "a5c138d1a9ff4769620766215de8f214dd8858dfaaaab3fc9d3de590f6ee7b15"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "e9e7a59543dcb69bc8f2583e450d8c6505a45fe9d4affb66137e26cea7eae762"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "e2a73f4b5f005c3b5685e42a66a0dc9b698106115b46ac65be8443b1aa1fe2ed"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "ee94a50ba31b4554ae435b346a92bfe534cf17e0602cbe63aebecb605ec717e3"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "1d88ad07401b50350a76a34095efe961eea23992b34e23c626812ac997c44445"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "363880bc8c429946a4a56bedc9d43c63c429a7224e90ed9e05fe1c7908f29ae5"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "917e15398d661faecb94ba6cbb865c3c0f2d569288bdff276955f7b737defa75"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "1993daa7fb3d23ba27c59748451f6695ab7229605f78bc36df267ce263b96f36"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "6a717b2e12d1b912fb50e5dccbd2900ce82b90930f6dfb7b9d8a732eebce935d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "5e98ac9dc133a457025b3e812c4cd92a3349ab848f05961fc289514ecfac6009"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "c151e7b6d420bc07faf20c6559ea2c858e0ab0b939b3389f9d30f57849a8919e"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "4ed62054553c41d5272f56177c6e8521773365a926e6dd88f62434f8495b03c1"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "34497ddadb116123bb287b04d49f0586534653ae6c8351d2751fd5238da76ed0"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "c974231eadaa22633068b1456ddf803316e16d43e3aeda7968e0f5a294f8b375"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "938b643f73e215842ccb72539c125b71af2331381843a1a69eb8d7e51b4cf24c"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "1f4e7b705d5e64050a89d07505b83ff8374d3dc1db690b94f8e46b124551d681"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "e0101e4a1f72a99abb5b0f7b309585ce4a9b0d4db0819b5acebd23a3966b1180"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "abc5dfc0e15ebd1715316fd8d41335fd0cc3fbd4100fa60da3a3e4bba2f4cd24"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "3bb9ec699a542012eeed9daa802910e34ee9e96f44348cbdb53ed642a2f76a60"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "b42eb07eee28f91a9829250cb577ce6a071de3f95d33d99b3da13043283b0285"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "c5274cc8425efa1ee3acb003be83f6ae023cf2ddda5f9c06aee36e94bf13eadd"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "4b3142e0bc9244bf16fa8ef89effea8064b637379c88e49353d65611a97697ef"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê fila única integrada para consultas, exames, cirurgias e reabilitação, com protocolos de prioridade clínica, comunicação digital e busca ativa para reduzir faltas. O programa propõe ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família conforme a vulnerabilidade territorial, com equipes de saúde bucal e multiprofissionais. Na educação, o programa planeja expandir a educação profissional em articulação com o ensino médio e a Educação de Jovens e Adultos. No desenvolvimento econômico, o programa propõe estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais, com garantias facilitadas e educação financeira. Na mobilidade, o programa propõe implantar corredor de transporte coletivo de alta capacidade no eixo norte, articulado à ampliação da BR-020. Na transformação digital, o programa prevê integrar serviços públicos em plataforma acessível, com padrões de interoperabilidade e portabilidade, governança pública dos dados e segurança cibernética.",
+    "frases": [
+      {
+        "texto": "O programa prevê fila única integrada para consultas, exames, cirurgias e reabilitação, com protocolos de prioridade clínica, comunicação digital e busca ativa para reduzir faltas.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 9,
+            "trecho": "fila única integrada para consultas, exames, cirurgias e reabilitação"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família conforme a vulnerabilidade territorial, com equipes de saúde bucal e multiprofissionais.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 9,
+            "trecho": "Ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa planeja expandir a educação profissional em articulação com o ensino médio e a Educação de Jovens e Adultos.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 12,
+            "trecho": "Expandir educação profissional e sua articulação com o ensino médio e a EJA"
+          }
+        ]
+      },
+      {
+        "texto": "No desenvolvimento econômico, o programa propõe estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais, com garantias facilitadas e educação financeira.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 17,
+            "trecho": "Estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, o programa propõe implantar corredor de transporte coletivo de alta capacidade no eixo norte, articulado à ampliação da BR-020.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 21,
+            "trecho": "Implantar corredor de transporte coletivo de alta capacidade no eixo norte"
+          }
+        ]
+      },
+      {
+        "texto": "Na transformação digital, o programa prevê integrar serviços públicos em plataforma acessível, com padrões de interoperabilidade e portabilidade, governança pública dos dados e segurança cibernética.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 34,
+            "trecho": "Integrar serviços\npúblicos em plataforma acessível, adotar padrões de interoperabilidade e portabilidade"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "fila-integrada-saude",
+        "titulo": "Fila integrada de saúde",
+        "descricao": "Organização de uma fila integrada para procedimentos de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 9,
+            "trecho": "fila única integrada para consultas, exames, cirurgias e reabilitação"
+          }
+        ]
+      },
+      {
+        "id": "atencao-primaria",
+        "titulo": "Atenção Primária",
+        "descricao": "Ampliação gradual da cobertura efetiva da Estratégia Saúde da Família.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 9,
+            "trecho": "Ampliar gradualmente a cobertura efetiva da Estratégia Saúde da Família"
+          }
+        ]
+      },
+      {
+        "id": "educacao-profissional",
+        "titulo": "Educação profissional",
+        "descricao": "Expansão da educação profissional articulada ao ensino médio e à EJA.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 12,
+            "trecho": "Expandir educação profissional e sua articulação com o ensino médio e a EJA"
+          }
+        ]
+      },
+      {
+        "id": "credito-produtivo",
+        "titulo": "Crédito produtivo",
+        "descricao": "Estruturação de crédito produtivo orientado para empreendedores.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 17,
+            "trecho": "Estruturar crédito produtivo orientado para pequenos, médios e microempreendedores individuais"
+          }
+        ]
+      },
+      {
+        "id": "corredor-expresso-norte",
+        "titulo": "Corredor expresso norte",
+        "descricao": "Implantação de corredor de transporte coletivo no eixo norte.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 21,
+            "trecho": "Implantar corredor de transporte coletivo de alta capacidade no eixo norte"
+          }
+        ]
+      },
+      {
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "Integração de serviços públicos em plataforma acessível.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002551557:01",
+            "pagina": 34,
+            "trecho": "Integrar serviços\npúblicos em plataforma acessível"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:36:24.814Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:38:32.378Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 9 traz literalmente fila única integrada com protocolos de prioridade clínica, comunicação digital e busca ativa para reduzir faltas."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (fila única de saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem ao mesmo documento e chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:1:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação constam no texto da página 9."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 9 detalha ampliação gradual da ESF, equipes de saúde bucal e multiprofissionais e territorialização por vulnerabilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de atenção primária."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência da mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:2:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pelo texto da página 9."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Texto da página 12 confirma exatamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente (educação profissional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:3:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 17 confirma crédito produtivo com garantias facilitadas e educação financeira."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de crédito produtivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:4:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela página 17."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 21 confirma corredor no eixo norte articulado à ampliação da BR-020."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:5:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela página 21."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 34 confirma integralmente a proposta, incluindo governança de dados e segurança cibernética."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única de transformação digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:frase:6:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela página 34."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Página 9 confirma fila única integrada para procedimentos de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:fila-integrada-saude:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:atencao-primaria:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:educacao-profissional:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:credito-produtivo:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:corredor-expresso-norte:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002551557:tema:servicos-digitais:documentos:DF:70002551557:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002551557",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002551557:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 42426,
+          "cached_input_tokens": 14080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3497,
+          "reasoning_output_tokens": 2370
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 23974,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20506,
+          "output_tokens_details": {
+            "thinking_tokens": 759
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 23974,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20506,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 23974,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 23974
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3202754
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "0578d5eed2c77e1002fd2a4ea967aac4eff78bd29b82b7bcfea0dc55a28cc31c",
+    "extractedTextSha256": "b5fdc15e790b9173bae5919b3336a671ea5329b21ebb0b4c9eeac5d108612459",
+    "documentCount": 1,
+    "documentSetSha256": "90e4f71c51c8407cb5d9997ce35b2af9561bde599ab708528a97ea13433242d4",
+    "contentSha256": "4529764023b4683e4cbf5f47517d66f0d053f80962ab7788235dc31b1c99c4a2"
+  }
+}

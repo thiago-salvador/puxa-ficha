@@ -1,0 +1,814 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RR",
+    "sqCandidato": "230002552060",
+    "slug": "rosi-aires",
+    "nomeUrna": "ROSI AIRES",
+    "partido": "PSOL",
+    "arquivoNome": "2026RR230002552060_01.pdf",
+    "arquivoNoPacote": "RR/2026RR230002552060_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RR:230002552060:01",
+      "fonte": {
+        "arquivoNome": "2026RR230002552060_01.pdf",
+        "arquivoNoPacote": "RR/2026RR230002552060_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "944f94444990130a27c4b894baa58da3dfd43eb082bf3bd124ef297f864229d6",
+        "extractedTextSha256": "d671731e14bcd61338518ab19b38b63ffb8f17c97e4befb5c0c1d35ec76bd2d6",
+        "paginas": 12,
+        "secoes": [
+          {
+            "id": "programa-de-governo-eleicoes-2026",
+            "titulo": "PROGRAMA DE GOVERNO – ELEIÇÕES 2026",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO – ELEIÇÕES 2026\n\nRosi Aires (PSOL) – Governadora\nLúcia Patamona (PSOL) – Vice-governadora\n\nCOLIGAÇÃO RORAIMA DA ESPERANÇA\nFederação PSOL – REDE\nFederação Brasil da Esperança – PT, PcdoB e PV\nRoraima 2026\n\n1"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nEste Programa de Governo é fruto de um amplo debate entre o coletivo da\nFederação PSOL REDE em Roraima e da Federação Brasil da Esperança – PT,\nPcdoB e PV, construído a partir das contribuições de filiados, movimentos sociais,\nlideranças indígenas, trabalhadores e trabalhadoras, juventude e comunidades\ntradicionais. Ele sintetiza a visão estratégica da esquerda para o Estado de\nRoraima, com base na superação do capitalismo, no ecossocialismo, na\ndemocracia radical e no combate a todas as formas de opressão.\nRoraima é Amazônia, é fronteira, é diversidade, é juventude, é cultura e é\nresistência. Defendemos um projeto de desenvolvimento sustentável, portanto\necossocialista, com justiça social, participação popular e respeito aos territórios.\nRoraima precisa de um governo presente, humano, transparente e capaz de cuidar\ndas pessoas, proteger seus territórios, valorizar seus servidores e transformar\nsuas riquezas em oportunidades reais para a população.\nNossa candidatura é um chamado à construção coletiva de um novo ciclo\npolítico: com diálogo, coragem, responsabilidade e compromisso com quem mais\nprecisa. Rejeitamos a política de conciliação de classes e lutamos pela superação\ndo capitalismo, que em sua fase neoliberal mata – seja pela superexploração, por\nguerras ou pelo desvalor das vidas negras, indígenas, mulheres, jovens e pobres.\n\nDefendemos o povo. Defendemos a vida.\n\n2"
+          },
+          {
+            "id": "1-educacao-revolucao-democratica-autonomia-e",
+            "titulo": "1. EDUCAÇÃO: REVOLUÇÃO DEMOCRÁTICA, AUTONOMIA E",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1. EDUCAÇÃO: REVOLUÇÃO DEMOCRÁTICA, AUTONOMIA E\nVALORIZAÇÃO\nDiagnosticamos que a educação em Roraima sofre com a falta de gestão\ndemocrática, descumprimento da LDB, imposição de escolas militarizadas sem\nconsulta à comunidade, estrutura precária, falta de bibliotecas e laboratórios,\nalém da precarização do trabalho docente.\nPropostas Prioritárias:\n•\n\nFim das Escolas Militarizadas e Gestão Democrática: Revogar o modelo\nde escolas militarizadas, considerado ilegal, imoral e gerador de violência e\nassédio. Implementar a eleição direta para diretores e fortalecer os\nconselhos escolares, grêmios estudantis e a participação comunitária na\nconstrução do Projeto Político-Pedagógico, em cumprimento à LDB.\n\n•\n\nValorização dos Professores e Servidores: Promover a valorização\nprofissional com formação continuada consistente (que não\nsobrecarregue), planos de carreira, saúde mental e condições dignas de\ntrabalho. Combater a terceirização na educação, apontada como foco de\ncorrupção. Incorporar gratificações de incentivo à docência e aos\ncuidadores.\n\n•\n\nAmpliação da UERR: Encerrar o ciclo de corrupção perpetuado pelos\ngovernos de direita que destruíram a UERR. Criação de novos campi no\ninterior do Estado. Criação do Centro Indígena da UERR no munícipio do\nUiramutã e garantir parceria com Governo Federal para implementar\nunidade federal da Universidade Indígena na cidade de Pacaraima.\n\n•\n\nEscola Pública de Qualidade e Acolhedora: Reformar e equipar as\nescolas com infraestrutura adequada (climatização, acessibilidade,\nlaboratórios de ciências e informática, bibliotecas, internet). Implementar\no programa \"Escola Aberta\", utilizando os espaços nos fins de semana e à\nnoite para esporte, cultura, cursos profissionalizantes e lazer da\ncomunidade.\n\n•\n\nCurrículo e Inclusão: Garantir o cumprimento do PNLD com a escolha de\nlivros pelos professores. Incluir no currículo disciplinas como Música e\nTeatro. Assegurar temas transversais como educação ambiental, violência\ncontra a mulher, educação sexual para prevenção de abusos, racismo e\nLGBTfobia. Expandir o ensino em tempo integral com foco em diversidade\nétnica/racial e inclusão, e implementar o ensino bilíngue\n(português/espanhol).\n\n3"
+          },
+          {
+            "id": "pagina-4",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nEducação Profissional e Tecnológica: Criar cursos profissionalizantes\nterritorializados, alinhados às vocações regionais como bioeconomia,\nturismo, tecnologia, agroindústria, logística e comércio exterior,\nfortalecendo a conexão com a UFRR, IFRR e a Universidade Estadual de\nRoraima (UERR). Estimular a pesquisa aplicada e a inovação.\n\n•\n\nEducação Indígena e do Campo: Apoiar Projetos Político-Pedagógicos\npróprios, com uso de línguas maternas, material bilíngue, transporte\nescolar adequado e formação de professores indígenas. Garantir\nverdadeiramente a infraestrutura adequada nas comunidades.\n\n•\n\nCriança e Juventude: Garantir o direito à educação de qualidade e\nemancipatória. Construir políticas de permanência na escola, combater o\nabuso sexual infantil, o trabalho infantil e violências psicológicas.\nFortalecer o Conselho Municipal da Criança e do Adolescente e criar o\nConselho Estadual da Juventude participativo.\n\n2. SAÚDE PÚBLICA: CUIDADO, PREVENÇÃO E\nTRANSPARÊNCIA\nDenunciamos o estado vergonhoso da saúde em Roraima, com falta de UPA's,\nhospitais no interior sem equipamentos, ausência de atenção primária efetiva, e\num sistema que privilegia clínicas particulares em detrimento do investimento\npúblico. A pandemia escancarou a precariedade das políticas de saúde e a falta\nde preparo do estado.\nPropostas Prioritárias:\n•\n\nRedução de Filas e Interiorização: Implantar mutirões permanentes de\nconsultas, exames e cirurgias eletivas. Criar policlínicas regionais no sul do\nestado e na zona oeste de Boa Vista para reduzir deslocamentos. Ampliar a\nestratégia de saúde da família para cobertura universal.\n\n•\n\nNovos Hospitais: Construção do Hospital Indígena no Uiramutã e garantir\na construção da Maternidade no Pintolândia que está em impasse pela não\ncapacidade do poder público de resolver democraticamente a\ndesocupação do terreno.\n\n•\n\nValorização dos Profissionais: Implementar planos de carreira, formação,\nsegurança no trabalho e melhoria das condições de infraestrutura e\nsuprimentos para os profissionais da saúde. Garantir Equipamentos de\nProteção Individual (EPIs) e novos concursos públicos.\n\n4"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nSaúde Mental e CAPS: Quadriplicar o atendimento do CAPS no Estado de\nmaneira ampliada, com foco no tratamento de abuso de substâncias e\nproblemas psicológicos, criando uma rede de cuidado pós-pandemia para\natender o sofrimento psíquico de estudantes, professores, policiais e\nservidores.\n\n•\n\nTransparência e Regulação: Criar um painel público de filas para\nconsultas, exames e cirurgias. Combater a corrupção na gestão da saúde e\nrevisar convênios com clínicas particulares. Fortalecer o controle social\npelo Conselho Estadual de Saúde.\n\n•\n\nSaúde Indígena e de Fronteira: Atuar de forma cooperativa com a União e\nos DSEIs para garantir vigilância, nutrição, saneamento, logística\nhumanitária e proteção contra violência para os povos indígenas e\nmigrantes.\n\n•\n\nAtenção Primária e Endemias: Ampliar a estratégia de saúde da família,\nfortalecer a vigilância epidemiológica para dengue, malária, zika e\nChikungunya.\n\n3. SEGURANÇA PÚBLICA CIDADÃ E PREVENÇÃO À VIOLÊNCIA\nRoraima é dominada pela extrema direita, o que reflete na corrupção e na\nviolência. Denunciamos o braço político do crime organizado e a necessidade de\numa polícia cidadã, com inteligência e respeito aos direitos humanos.\nPropostas Prioritárias:\n•\n\nInteligência e Prevenção: Implementar a obrigatoriedade de câmera\ncorporal nos policiais e em todas as viaturas. Fazer a inteligência policial\nfuncionar para prender e reprimir o crime sem matar inocentes,\ncombatendo a violência policial e o extermínio da juventude negra,\nindígena e periférica. Criar um programa estadual de redução de mortes da\npopulação negra e indígena.\n\n•\n\nPoliciamento Comunitário: Criar postos de policiamento preventivo e\ncomunitário nos territórios, fortalecendo a integração entre Polícia Militar,\nPolícia Civil e a comunidade. Investir em protocolos de ação integrada em\nbairros vulneráveis.\n\n•\n\nProteção às Mulheres: Regionalizar as Delegacias Especializadas e\nampliar a Patrulha Maria da Penha. Aderir ao programa do Governo Federal\nde geolocalização dos homens que ameaçam as vítimas. Garantir abrigos\nseguros, atendimento 24h e programas de autonomia financeira para\n\n5"
+          },
+          {
+            "id": "mulheres-em-situacao-de-violencia-criar-o-programa-estadual-mulher",
+            "titulo": "mulheres em situação de violência. Criar o Programa Estadual Mulher",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "mulheres em situação de violência. Criar o Programa Estadual Mulher\nSegura e Autônoma.\n•\n\nJuventude e Egressos: Criar programas integrados de prevenção à\nviolência nos territórios vulneráveis, com esporte, cultura e\nprofissionalização. Implementar políticas de inclusão para egressos do\nsistema socioeducativo e prisional, com bolsas de estágio e apoio para\ningresso no mercado de trabalho.\n\n•\n\nValorização dos Servidores de Segurança: Carreira, formação\ncontinuada, equipamentos, saúde mental, apoio às famílias e corregedoria\nindependente.\n\n4. CULTURA, JUVENTUDE, IDENTIDADE E ECONOMIA CRIATIVA\nRoraima precisa parar de gastar fortunas com shows por dois anos e investir em\nescolas de música e equipamentos culturais permanentes. A cultura é\ndesenvolvimento, pertencimento, prevenção à violência e geração de renda.\nPropostas Prioritárias:\n•\n\nEscolas de Música e Museus: Construir escolas de música de verdade\ncom concursos públicos para professores. Reformar e reabrir os museus,\nincluindo a criação do Museu do Genocídio Indígena da Amazônia, com\nescolas de música integradas ao seu espaço.\n\n•\n\nPontos de Cultura e Vale-Cultura: Implementar Pontos de Cultura em\ntodos os territórios com editais simplificados. Criar o Vale-Cultura para\njovens da cidade e do campo, garantindo acesso a livros, cinema, teatro e\nmúsica.\n\n•\n\nFestivais e Economia Criativa: Apoiar o calendário de festivais de cultura\nindígena, popular e migrante. Fomentar o audiovisual, a literatura e o\nartesanato como geradores de renda e identidade. Criar editais de\nprodução local e formar parcerias com escolas e universidades.\n\n•\n\nEsporte nos Territórios: Promover jogos escolares, campeonatos\nintermunicipais, esporte indígena, ciclismo, canoagem, futebol\ncomunitário e atividades ao ar livre. Manter e ampliar vilas e complexos\nesportivos regionais.\n\n•\n\nSistema Estadual de Cultura: Plano estadual, conselho fortalecido,\neditais descentralizados, economia criativa, memória material e imaterial e\ncalendário cultural regional.\n\n6"
+          },
+          {
+            "id": "5-democracia-transparencia-e-combate-a-corrupcao",
+            "titulo": "5. DEMOCRACIA, TRANSPARÊNCIA E COMBATE À CORRUPÇÃO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "5. DEMOCRACIA, TRANSPARÊNCIA E COMBATE À CORRUPÇÃO\nDenunciamos que Roraima é o penúltimo estado em transparência e que a elite\nlocal se beneficia de acordos com o governo estadual, refletido em mais de 20\noperações da Polícia Federal nos últimos anos.\nPropostas Prioritárias:\n•\n\nAuditoria e Transparência: Realizar uma auditoria geral no governo de\nDenarium. Publicar o Diário Oficial diariamente e melhorar o portal da\ntransparência com dados de contratos, obras, filas, licenças ambientais e\nindicadores sociais. Criar portal de metas do governo com monitoramento\npúblico.\n\n•\n\nOrçamento Participativo e Controle Social: Dividir o estado em regiões\nadministrativas para audiências públicas e orçamento participativo.\nReestruturar os conselhos estaduais (juventude, mulheres, indígenas,\nLGBT+, cultura, segurança alimentar e meio ambiente). Fortalecer\nouvidorias e corregedorias para proteger denunciantes de irregularidades.\n\n•\n\nGestão Democrática e Modernização: Criar um escritório de projetos\nestratégicos para captar recursos federais e internacionais. Modernizar a\ngestão pública com governo digital, simplificação de serviços e combate à\nburocracia.\n\n6. TRABALHO, EMPREGO, RENDA E DESENVOLVIMENTO\nSUSTENTÁVEL\nCom a interligação energética e a posição fronteiriça, Roraima pode iniciar um\nnovo ciclo de desenvolvimento, combinando segurança jurídica, regularização,\ninfraestrutura, inclusão produtiva e fortalecimento da economia popular.\nPropostas Prioritárias:\n•\n\nPlano Roraima Trabalho para Bem Viver: Metas de primeiro emprego,\nqualificação profissional, estágio, aprendizagem e apoio ao\nempreendedorismo popular.\n\n•\n\nEconomia Solidária e Cooperativismo: Criar incubadoras de\ncooperativas, centrais de comercialização e assistência técnica para\ntrabalhadores urbanos, produtores rurais, catadores, artesãos, indígenas e\nmigrantes. Capitalizar o Banco do Povo/Fomento à Economia Popular para\nmicrocrédito produtivo orientado.\n\n7"
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nAgricultura Familiar e Produção de Alimentos: Fortalecer crédito,\nassistência técnica, mecanização apropriada, irrigação eficiente,\nsementes, agroecologia, piscicultura, pesca artesanal e beneficiamento\nlocal. Ampliar compras públicas da agricultura familiar para merenda\nescolar, hospitais, presídios e equipamentos de assistência social.\n\n•\n\nDistrito Industrial Sustentável e ZPE: Estruturar áreas industriais com\nenergia estável, licenciamento seguro, saneamento, logística, qualificação\ne prioridade a pequenas indústrias, agroindústria, alimentos e serviços de\nexportação.\n\n•\n\nTurismo de Base Local: Estruturar circuitos turísticos internos, culturais,\nindígenas, de natureza, esporte de aventura, gastronomia, artesanato e\nintegração com Guiana, Venezuela e Amazonas.\n\n•\n\nBioeconomia e Tecnologia: Fomentar startups, pesquisa aplicada e\ncadeias sustentáveis em cosméticos, fitoterápicos, alimentos regionais,\nbioinsumos, madeira legal rastreada, energia solar e soluções para\nfronteira.\n\n7. MEIO AMBIENTE, CLIMA E SANEAMENTO\nRoraima deve crescer protegendo a Amazônia, os rios, as áreas de preservação\npermanente, a biodiversidade e as comunidades indígenas que são protetores do\nterritório. Investir no saneamento como política de saúde, meio ambiente,\ndignidade e desenvolvimento.\nPropostas Prioritárias:\n•\n\nPlano Estadual de Desenvolvimento de Baixo Carbono: Metas de\nredução do desmatamento, restauração, prevenção a queimadas e\nrecuperação de áreas degradadas.\n\n•\n\nFiscalização e Combate ao Garimpo Ilegal: Fortalecer a fiscalização\nambiental, monitoramento por satélite, combate ao garimpo ilegal,\ngrilagem, retirada de madeira ilegal e poluição por mercúrio.\n\n•\n\nSaneamento Universal: Promover a universalização do saneamento com\nfoco em água, esgoto, resíduos sólidos e drenagem. Priorizar soluções\ndescentralizadas para comunidades do campo, indígenas e regiões de\nbaixa densidade.\n\n•\n\nResíduos Sólidos e Catadores: Criar política de coleta seletiva, logística\nreversa, cooperativas, compostagem e encerramento progressivo de lixões,\ncom inclusão socioeconômica dos catadores.\n8"
+          },
+          {
+            "id": "pagina-9",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nControle de Agrotóxicos e Proteção da Saúde: Ampliar fiscalização,\neducação, rastreabilidade e incentivo à produção orgânica e\nagroecológica, com atenção à proteção de rios, escolas e comunidades.\n\n•\n\nFEMARH forte e descentralizada: Ampliar fiscalização, licenciamento\ntransparente, educação ambiental, monitoramento e presença territorial\ndo órgão ambiental.\n\n8. POVOS ORIGINÁRIOS: TERRITÓRIO, CULTURA E AUTONOMIA\nRoraima deve ser referência nacional em respeito aos povos indígenas, suas\nlínguas, culturas, territórios e modos de vida, com cooperação federativa.\nPropostas Prioritárias:\n•\n\nInstância estadual permanente de diálogo com organizações indígenas,\nrespeitando autonomia, representatividade e protocolos próprios de\nconsulta.\n\n•\n\nApoio à educação escolar indígena, formação de professores indígenas,\nmaterial didático bilíngue e fortalecimento das línguas maternas.\n\n•\n\nCombate ao garimpo ilegal, aliciamento, exploração sexual, tráfico,\ncontaminação por mercúrio e violência em territórios indígenas.\n\n•\n\nPromoção de economia indígena sustentável, artesanato, turismo\ncomunitário, cadeias da sociobiodiversidade e proteção cultural.\n\n•\n\nProtocolo de proteção a crianças, adolescentes e mulheres indígenas\ncontra violência, exploração sexual e tráfico.\n\n9. POLÍTICA PARA AS MULHERES: AUTONOMIA, SEGURANÇA E\nIGUALDADE\nRoraima apresenta uma das maiores taxas de feminicídio do país. É urgente uma\npolítica estadual articulada e transversal.\nPropostas Prioritárias:\n•\n\nCriar o Programa Estadual Mulher Segura e Autônoma, integrando\nsegurança pública, saúde, assistência social, educação, Defensoria,\nMinistério Público, Judiciário e municípios.\n\n•\n\nAmpliar a rede de acolhimento, casas de passagem e atendimento\npsicossocial às vítimas de violência doméstica, sexual e patrimonial.\n\n9"
+          },
+          {
+            "id": "pagina-10",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nImplantar protocolo estadual de atendimento humanizado em delegacias,\nhospitais e unidades escolares, com prioridade para mulheres indígenas,\nmigrantes, negras, ribeirinhas, mulheres com deficiência e mulheres do\ncampo.\n\n•\n\nFortalecer políticas de geração de renda, qualificação profissional, acesso\nao crédito, compras públicas e cooperativas lideradas por mulheres.\n\n•\n\nCriar política habitacional prioritária para mulheres chefes de família, em\narticulação com Minha Casa, Minha Vida e movimentos sociais.\n\n10. MORADIA POPULAR E REGULARIZAÇÃO FUNDIÁRIA\nO déficit habitacional na Região Norte é proporcionalmente elevado, e Roraima\naparece entre os estados com maior proporção de déficit em relação ao total de\ndomicílios.\nPropostas Prioritárias:\n•\n\nCriar o Programa de Moradia com contrapartida, destinado a subsidiar\nfinanciamentos habitacionais vinculados ao Programa Minha Casa, Minha\nVida, beneficiando famílias de baixa e média renda.\n\n•\n\nGarantir a regularização fundiária dos lotes urbanos e moradias com\natenção à titularidade para as mulheres, incentivar o atendimento\nprioritário às mulheres em situação de violência e mulheres chefes de\nfamília.\n\n•\n\nAmpliar, aperfeiçoar e implementar o Programa integrado de Urbanização\nde Favelas e Assentamentos Precários, envolvendo a regularização e a\nimplantação de infraestrutura (saneamento, drenagem, iluminação\npública, conectividade).\n\n11. Migração, Refúgio e Apátridas\nReconhecer a migração como um direito humano e garantir acolhimento,\nintegração e autonomia. A proteção dos direitos de migrantes e refugiados deve\nfortalecer os serviços públicos, combater a exploração do trabalho e promover\numa sociedade mais democrática, diversa, solidária e inclusiva.\n\nPropostas Prioritárias:\n\n10"
+          },
+          {
+            "id": "pagina-11",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "•\n\nRealizar o encerramento da Operação Acolhida: em diálogo com o\nGoverno Federal, realizar o serviço de encerramento da Operação Acolhida\nnos moldes atuais, transformando a ação em política pública contínua\ncom gestão federal-estadual e municipal junto às Organizações da\nSociedade Civil e Agências Internacionais.\n• Instituir uma Política Estadual para Migrantes, Refugiados e Apátridas,\n\nintegrada às áreas de saúde, assistência social, educação, trabalho,\nhabitação, cultura e segurança pública, em consonância com a Política\nNacional de Migrações, Refúgio e Apatridia.\n\n• Criar um Centro Estadual de Referência para Migrantes e Refugiados,\ninspirado em experiências implementadas em outros estados, oferecendo\norientação jurídica, regularização documental, encaminhamento para\nserviços públicos, apoio psicossocial, cursos de português e mediação\nintercultural.\n• Implantar um Conselho Estadual de Direitos dos Migrantes, Refugiados e\nApátridas, com participação efetiva da sociedade civil, universidades,\norganismos internacionais e representantes eleitos das próprias\ncomunidades migrantes, garantindo o controle social das políticas\npúblicas.\n• Desenvolver programas permanentes de inserção laboral,\nempreendedorismo e qualificação profissional, articulando o Sistema\nNacional de Emprego (SINE), instituições de ensino, cooperativas e setor\nprodutivo para ampliar o acesso ao trabalho digno.\n• Fortalecer o ensino de português como língua de acolhimento, sem\ndesvalorizar os idiomas e culturas de origem, promovendo educação\nintercultural e respeito à diversidade.\n• Ampliar o acesso à saúde por meio da qualificação dos profissionais do\nSUS para o atendimento intercultural, fortalecimento da atenção\npsicossocial, prevenção da violência e atendimento especializado às\npopulações em situação de maior vulnerabilidade.\n• Desenvolver políticas específicas para mulheres migrantes, crianças,\nadolescentes, idosos, pessoas LGBTQIA+, pessoas com deficiência, povos\nindígenas transfronteiriços e vítimas de violência, exploração e tráfico de\npessoas.\n• Combater a xenofobia, o racismo e todas as formas de discriminação\nmediante campanhas educativas, formação de servidores públicos e\nações permanentes nas escolas, universidades e meios de comunicação.\n\n11"
+          },
+          {
+            "id": "apoiar-iniciativas-culturais-esportivas-e-comunitarias-que-fortalecam-a",
+            "titulo": "• Apoiar iniciativas culturais, esportivas e comunitárias que fortaleçam a",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "• Apoiar iniciativas culturais, esportivas e comunitárias que fortaleçam a\nintegração entre migrantes e comunidades de acolhida, valorizando a\ndiversidade cultural como patrimônio social.\n• Criar um sistema estadual de produção de dados e monitoramento das\nmigrações, permitindo que as políticas públicas sejam planejadas com\nbase em evidências e nas necessidades reais da população.\n• Estabelecer cooperação permanente com municípios, Governo Federal,\nuniversidades, Defensoria Pública, Ministério Público, organizações da\nsociedade civil e organismos internacionais para ampliar a capacidade de\nresposta do Estado.\n• Garantir que todas as políticas públicas estaduais sejam acessíveis\nindependentemente da nacionalidade, observando os princípios\nconstitucionais da universalidade, da dignidade da pessoa humana, da\nigualdade e da não discriminação.\n\n12"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "66227db8ef87a9826254ec75c4db6d9be26465745d3b791474327e646efc5fad"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "903b6041e64e9f243f76df01e0a1f8abbb4e909076d60fe688401c433810b35b"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "8918225723b8f8d09df0d2e8d34709273f2e3f4dad9d38092e7fc0ea0df34836"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "d0025dc97525b2e4f3d37b6713e69b03a9664db6e0dcf6ed61aec5fe18c81b4b"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c1a9f23dc1b3e07bf81839d254c1f496c2c6a19db4e170f3deef0a913eb2a412"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "a78d391eacb3b51bdc4af466e07b765b34f5c18ae8dddbf063c03a9e5fed91ac"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "0d112bbf2ea51bc316dcd4abf6b7afc9d839ae8bc85c952a9d6c719ae117fecc"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "de54c7cf8a10aa4de9e2c1f8249fee30390b90a9b60ffbb85bade2778475572e"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "7d7fef255e42640a38a5b9f22836ae0d6db389502ec03929288bab03b419e449"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "17a5ac52e2ef0195b058a9da92c7291eb76f3aeba23d0ee4c1bf981dd854cb7d"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "4d8d406724d2e121d03e3b3fbd4c65217fc80e6d0d6a9b49b2893a416d496335"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "5f0d11d1b473c714744a58b2455fd96c809eecb349bda2fc4920ad6e1cb4512d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na educação, o programa prevê a eleição direta para diretores das escolas estaduais, em cumprimento à LDB. O programa propõe a criação de novos campi da UERR no interior do Estado. Na saúde pública, o programa planeja criar policlínicas regionais no sul do estado para reduzir deslocamentos. O programa prevê um painel público de filas para consultas, exames e cirurgias. Na política ambiental, o programa propõe fortalecer a fiscalização ambiental, com monitoramento por satélite e combate ao garimpo ilegal. Para a população migrante, o programa prevê criar um Centro Estadual de Referência para Migrantes e Refugiados, com orientação jurídica, regularização documental e encaminhamento para serviços públicos. O programa também prevê instituir um Conselho Estadual de Direitos dos Migrantes, Refugiados e Apátridas, com participação da sociedade civil.",
+    "frases": [
+      {
+        "texto": "Na educação, o programa prevê a eleição direta para diretores das escolas estaduais, em cumprimento à LDB.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 3,
+            "trecho": "Implementar a eleição direta para diretores e fortalecer os conselhos escolares, grêmios estudantis e a participação comunitária na construção do Projeto Político-Pedagógico, em cumprimento à LDB."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a criação de novos campi da UERR no interior do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 3,
+            "trecho": "Criação de novos campi no interior do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde pública, o programa planeja criar policlínicas regionais no sul do estado para reduzir deslocamentos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 4,
+            "trecho": "Criar policlínicas regionais no sul do estado e na zona oeste de Boa Vista para reduzir deslocamentos."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê um painel público de filas para consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 5,
+            "trecho": "Criar um painel público de filas para consultas, exames e cirurgias."
+          }
+        ]
+      },
+      {
+        "texto": "Na política ambiental, o programa propõe fortalecer a fiscalização ambiental, com monitoramento por satélite e combate ao garimpo ilegal.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 8,
+            "trecho": "Fortalecer a fiscalização ambiental, monitoramento por satélite, combate ao garimpo ilegal, grilagem, retirada de madeira ilegal e poluição por mercúrio."
+          }
+        ]
+      },
+      {
+        "texto": "Para a população migrante, o programa prevê criar um Centro Estadual de Referência para Migrantes e Refugiados, com orientação jurídica, regularização documental e encaminhamento para serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 11,
+            "trecho": "Criar um Centro Estadual de Referência para Migrantes e Refugiados, inspirado em experiências implementadas em outros estados, oferecendo orientação jurídica, regularização documental, encaminhamento para serviços públicos, apoio psicossocial, cursos de português e mediação intercultural."
+          }
+        ]
+      },
+      {
+        "texto": "O programa também prevê instituir um Conselho Estadual de Direitos dos Migrantes, Refugiados e Apátridas, com participação da sociedade civil.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 11,
+            "trecho": "Implantar um Conselho Estadual de Direitos dos Migrantes, Refugiados e Apátridas, com participação efetiva da sociedade civil, universidades, organismos internacionais e representantes eleitos das próprias comunidades migrantes, garantindo o controle social das políticas públicas."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "gestao-escolar",
+        "titulo": "Gestão escolar",
+        "descricao": "Eleição direta para diretores das escolas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 3,
+            "trecho": "Implementar a eleição direta para diretores e fortalecer os conselhos escolares, grêmios estudantis e a participação comunitária na construção do Projeto Político-Pedagógico, em cumprimento à LDB."
+          }
+        ]
+      },
+      {
+        "id": "ensino-superior",
+        "titulo": "Ensino superior",
+        "descricao": "Criação de novos campi da UERR no interior do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 3,
+            "trecho": "Criação de novos campi no interior do Estado."
+          }
+        ]
+      },
+      {
+        "id": "atendimento-regional",
+        "titulo": "Atendimento regional",
+        "descricao": "Criação de policlínicas regionais no sul do estado.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 4,
+            "trecho": "Criar policlínicas regionais no sul do estado e na zona oeste de Boa Vista para reduzir deslocamentos."
+          }
+        ]
+      },
+      {
+        "id": "transparencia-na-saude",
+        "titulo": "Transparência na saúde",
+        "descricao": "Criação de painel público de filas para consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 5,
+            "trecho": "Criar um painel público de filas para consultas, exames e cirurgias."
+          }
+        ]
+      },
+      {
+        "id": "fiscalizacao-ambiental",
+        "titulo": "Fiscalização ambiental",
+        "descricao": "Fortalecimento da fiscalização ambiental.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 8,
+            "trecho": "Fortalecer a fiscalização ambiental, monitoramento por satélite, combate ao garimpo ilegal, grilagem, retirada de madeira ilegal e poluição por mercúrio."
+          }
+        ]
+      },
+      {
+        "id": "referencia-migratoria",
+        "titulo": "Referência migratória",
+        "descricao": "Criação de centro estadual para migrantes e refugiados.",
+        "evidencias": [
+          {
+            "documentoId": "RR:230002552060:01",
+            "pagina": 11,
+            "trecho": "Criar um Centro Estadual de Referência para Migrantes e Refugiados, inspirado em experiências implementadas em outros estados, oferecendo orientação jurídica, regularização documental, encaminhamento para serviços públicos, apoio psicossocial, cursos de português e mediação intercultural."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:55:47.726Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:24:06.831Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a eleição direta para diretores e o cumprimento à LDB no contexto da educação estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de gestão escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:1:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a eleição direta, o contexto educacional e a referência à LDB."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência, inserida na seção de ampliação da UERR da página citada, sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de expansão do ensino superior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:2:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto da página cobrem a criação, os novos campi, a UERR e a localização no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação de policlínicas no sul do estado para reduzir deslocamentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de atendimento regional em saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:3:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do painel público e todas as modalidades de atendimento citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de transparência das filas de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:4:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o fortalecimento da fiscalização, o monitoramento por satélite e o combate ao garimpo ilegal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem à mesma proposta coerente de fiscalização ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:5:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do centro e os três serviços mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "Os serviços citados integram uma única proposta coerente de centro de referência migratória."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:6:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação do centro, o público atendido e todos os serviços mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a implantação do conselho e a participação da sociedade civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de participação institucional na política migratória."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:frase:7:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação, a denominação do conselho e a participação da sociedade civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a eleição direta para diretores no contexto da gestão das escolas estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta de gestão escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:gestao-escolar:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência aparece na seção de ampliação da UERR e sustenta a criação de novos campi no interior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta coerente de expansão do ensino superior."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:ensino-superior:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto da página cobrem integralmente a proposta temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação de policlínicas regionais no sul do estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta coerente de atendimento regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:atendimento-regional:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do painel e todas as modalidades citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta coerente de transparência na saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:transparencia-na-saude:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o fortalecimento da fiscalização ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta de fiscalização ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:fiscalizacao-ambiental:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do centro estadual para migrantes e refugiados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação apresenta uma única proposta coerente de referência migratória."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RR:230002552060:tema:referencia-migratoria:documentos:RR:230002552060:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a criação do centro, seu caráter estadual e o público indicado."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RR:230002552060",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RR:230002552060:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 37613,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15165,
+          "reasoning_output_tokens": 290
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "944f94444990130a27c4b894baa58da3dfd43eb082bf3bd124ef297f864229d6",
+    "extractedTextSha256": "d671731e14bcd61338518ab19b38b63ffb8f17c97e4befb5c0c1d35ec76bd2d6",
+    "documentCount": 1,
+    "documentSetSha256": "6172ba75e89583bdb296de1d183d1705239e2e3e8d661f9e4806a833114686fc",
+    "contentSha256": "c125466878f42cf3609f213718b72bdefb3b53c7a8b97589ff9387af6ba7dd68"
+  }
+}

@@ -22,7 +22,7 @@ before(async () => {
   programaModule = await import("../src/data/programas-governo-2026")
 })
 const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
-const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-28.json") as {
+const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-29.json") as {
   items: Array<{ outcome: string; slug: string | null }>
 }
 

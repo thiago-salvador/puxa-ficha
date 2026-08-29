@@ -9,6 +9,7 @@ import type {
 } from "../src/lib/programa-governo"
 import {
   PROGRAMA_GOVERNO_EVAL_DIMENSIONS,
+  assertProgramaGovernoModelSeparation,
   assertProgramaGovernoSingleScope,
   assessProgramaGovernoJudgeVerdicts,
   buildProgramaGovernoJudgeClaims,
@@ -312,6 +313,13 @@ test("approval is deterministic and rejects stale content or identity", () => {
     arquivoNoPacote: "SP/2026SP000000000002_01.pdf",
   }))
   assert.throws(() => prepareProgramaGovernoApproval(otherCandidate, decision), /decisao stale em identityKey/u)
+})
+
+test("separa familias Luna e Sol quando o metadata inclui o provedor", () => {
+  const record = evaluatedRecord()
+  record.geracao!.model = "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5"
+  record.julgamento!.model = "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5"
+  assert.doesNotThrow(() => assertProgramaGovernoModelSeparation(record))
 })
 
 test("approval refuses unknown and incomplete Eval", () => {

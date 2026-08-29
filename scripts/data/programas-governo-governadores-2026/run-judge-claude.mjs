@@ -7,6 +7,23 @@ const CLAUDE_BIN = process.env.PF_CLAUDE_CLI ?? "claude"
 const MODELO = process.env.PF_CLAUDE_JUDGE_MODEL ?? "sonnet"
 const TIMEOUT_MS = Number(process.env.PF_CLAUDE_TIMEOUT_MS ?? 900_000)
 const MAX_BUDGET_USD = process.env.PF_CLAUDE_MAX_BUDGET_USD ?? "5"
+const MAX_ERRO_STDOUT = 500
+
+function resumirStdoutErro(stdout) {
+  const cortado = stdout.trim()
+  if (!cortado) return ""
+  try {
+    const estruturado = JSON.parse(cortado)
+    const diagnostico = {}
+    for (const chave of ["is_error", "subtype", "type", "stop_reason", "terminal_reason", "api_error_status", "result", "error"]) {
+      const valor = estruturado[chave]
+      if (["boolean", "number", "string"].includes(typeof valor)) diagnostico[chave] = valor
+    }
+    return `stdout estruturado: ${JSON.stringify(diagnostico).slice(0, MAX_ERRO_STDOUT)}`
+  } catch {
+    return `stdout: ${cortado.replace(/[\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").slice(0, MAX_ERRO_STDOUT)}`
+  }
+}
 
 function lerStdin() {
   return new Promise((resolvePromise, rejectPromise) => {
@@ -48,7 +65,11 @@ function chamarClaude(promptTexto, schema) {
     child.on("close", (code) => {
       clearTimeout(timer)
       if (code === 0 && stdout.trim()) resolvePromise({ stdout, stderr })
-      else rejectPromise(new Error(`claude saiu com ${code}: ${stderr.slice(-500)}`))
+      else {
+        const diagnosticoStdout = resumirStdoutErro(stdout)
+        const diagnosticoStderr = stderr.slice(-500)
+        rejectPromise(new Error(`claude saiu com ${code}: ${diagnosticoStderr}${diagnosticoStdout ? ` ${diagnosticoStdout}` : ""}`))
+      }
     })
     child.stdin.end(promptTexto)
   })

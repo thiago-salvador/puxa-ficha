@@ -1,0 +1,1390 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PA",
+    "sqCandidato": "140002551943",
+    "slug": "gal-leite",
+    "nomeUrna": "GAL LEITE",
+    "partido": "UP",
+    "arquivoNome": "2026PA140002551943_01.pdf",
+    "arquivoNoPacote": "PA/2026PA140002551943_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PA:140002551943:01",
+      "fonte": {
+        "arquivoNome": "2026PA140002551943_01.pdf",
+        "arquivoNoPacote": "PA/2026PA140002551943_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PA.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "456493d79251836437029bd18083a4274e3d2189e9644d167a081c4bb965f388",
+        "extractedTextSha256": "7b7c05378db5f0a93d5f4fdbffdfbcde5490a82bb6d0cc695071f8204a077fbf",
+        "paginas": 56,
+        "secoes": [
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-up",
+            "titulo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO - UP",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO - UP\nAO GOVERNO DO PARÁ - ELEIÇÕES 2026\nA história do Pará é marcada pelas lutas do nosso povo. Da Cabanagem, que\nfoi uma das maiores revoltas populares da história brasileira, às resistências\nindígenas e quilombolas, passando pelas greves operárias, pela organização dos\ncamponeses e pela luta por terra e reforma agrária, as classes oprimidas\nenfrentaram a exploração, a concentração da riqueza e as injustiças sociais que são\nconsequências do modo de produção capitalista.\nEssa história continua no presente: na resistência dos povos indígenas,\nquilombolas e comunidades tradicionais em defesa de seus territórios; na luta dos\ntrabalhadores por emprego, melhores salário e direitos; nas ocupações por terra e\nmoradia e no enfrentamento aos grandes projetos do capital que exploram nossas\nriquezas enquanto geram pobreza, desigualdades e impactos sociais e ambientais\npara nossa população.\nEm 2026, os povos indígenas do Tapajós deram mais uma demonstração da\nforça da organização popular ao ocupar o terminal da Cargill, em Santarém, contra a\nprivatização de rios amazônicos, enfrentando os interesses da multinacional\nestrangeira. E após mais de um mês de resistência e mobilização, conquistaram a\nrevogação do decreto que incluía as hidrovias dos rios Tapajós, Madeira e Tocantins\nno Programa Nacional de Desestatização. A vitória dos povos indígenas mostra que\nas grandes lutas populares do Pará não pertencem apenas ao passado.\nO Pará é o 12º estado do país com maior PIB em 2023, no entanto, na\ncontramão disso, o estado ocupa a 27ª, ou seja, a última posição no Índice de\nProgresso Social (IPS) em pesquisa desenvolvida pelo Instituto Imazon. Esse índice\ncompreende que o Pará apresenta as piores condições para se viver no âmbito de\n12 indicadores sociais: acesso à alimentação, saúde, moradia, saneamento,\nsegurança, educação, internet, saúde, qualidade ambiental, direitos individuais,\ninclusão social, liberdades pessoais e ensino superior. Outra questão apresentada\npela pesquisa, é que entre as 20 cidades com o IPS mais baixo do país, 11 estão no\nestado do Pará, evidenciando uma profunda contradição entre as riquezas\nproduzidas em nosso estado e o difícil acesso a melhores condições de vida.\nPortanto, apesar do Pará ser rico em minérios, energia, florestas, rios, terras\ne na força de trabalho de seu povo, essa riqueza é apropriada por grandes grupos"
+          },
+          {
+            "id": "economicos-e-enviada-para-fora-enquanto-milhoes-de-paraenses-convivem-co",
+            "titulo": "econômicos e enviada para fora, enquanto milhões de paraenses convivem com",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "econômicos e enviada para fora, enquanto milhões de paraenses convivem com\nproblemas históricos de moradia, saneamento, saúde, educação, transporte,\nemprego e acesso à terra.\nNesse cenário, nosso programa nasce dessa contradição e se alimenta da\nhistória de lutas do povo paraense. Da coragem dos cabanos às lutas populares do\npresente, afirmamos que as riquezas do Pará devem servir, antes de tudo, ao seu\npovo. Construir um novo projeto para o Estado significa enfrentar privilégios, ampliar\ndireitos, fortalecer os serviços públicos, defender a Amazônia e colocar\ntrabalhadores, juventude, mulheres e povos tradicionais no centro das decisões\nsobre o futuro do Pará. As lutas do passado nos deixaram um caminho. As lutas do\npresente colocam diante de nós uma tarefa: organizar a força do povo para\ntransformar o Pará e avançar na luta pelo Socialismo."
+          },
+          {
+            "id": "desenvolvimento-economico-e-desigualdade-social",
+            "titulo": "DESENVOLVIMENTO ECONÔMICO E DESIGUALDADE SOCIAL",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO ECONÔMICO E DESIGUALDADE SOCIAL\nA riqueza do Pará deve servir ao seu povo\nO Pará é um estado de enormes riquezas e profundas desigualdades. Nosso\nterritório produz minérios, energia, produtos agrícolas e florestais que movimentam\nbilhões e abastecem mercados nacionais e internacionais, sendo atualmente o 5º\nmaior exportador do Brasil e tendo o 3º maior saldo comercial entre todos os\nestados brasileiros, atrás somente do Mato Grosso e Minas Gerais, com um\nsuperávit de US$ 21,5 bilhões.\nAo mesmo tempo, grande parte da população paraense enfrenta baixos\nsalários, desemprego, moradia precária e dificuldades de acesso à saúde,\neducação, saneamento, transporte e outros direitos básicos. Em que 58,5% dos\ntrabalhadores paraenses estão na informalidade, segunda maior proporção do\nBrasil. Essa contradição não é resultado da falta de riquezas, mas da forma desigual\ncomo elas são produzidas, apropriadas e distribuídas.\nA desigualdade social não pode ser compreendida como consequência de\nescolhas individuais ou como um problema que será resolvido apenas pelo\ncrescimento econômico. Ela está ligada a uma estrutura econômica que concentra a\npropriedade, a terra e a riqueza nas mãos de poucos, enquanto a maioria da\npopulação depende da venda de sua força de trabalho para sobreviver. No Pará,\nessa realidade assume características ainda mais profundas diante de um modelo\neconômico historicamente baseado na exploração intensiva dos recursos naturais e\nna exportação de commodities.\nMineração, agronegócio, grandes projetos de infraestrutura e produção de\nenergia avançam sobre o território paraense, mas a riqueza gerada nem sempre se\ntransforma em melhores condições de vida para quem vive e trabalha aqui. Muitas\ncomunidades convivem diretamente com os impactos sociais e ambientais dessas\natividades sem participar de maneira proporcional dos benefícios econômicos\nproduzidos.\nEnfrentar a desigualdade exige, portanto, enfrentar suas causas, ou seja,\nreduzir os privilégios dos grandes grupos econômicos que historicamente se\nbeneficiam da exploração do território amazônico. Para nós, construir um Pará\nmenos desigual não significa administrar melhor a pobreza, mas transformar as\nestruturas que produzem a desigualdade. Nosso horizonte é uma sociedade"
+          },
+          {
+            "id": "socialista-na-qual-a-economia-esteja-subordinada-as-necessidades-humanas",
+            "titulo": "socialista, na qual a economia esteja subordinada às necessidades humanas e a",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "socialista, na qual a economia esteja subordinada às necessidades humanas e a\nriqueza produzida coletivamente seja utilizada para garantir uma vida digna a todos.\nO Pará precisa deixar de ser território de exploração para poucos e se tornar uma\nterra de direitos, dignidade e poder para seu povo.\nPropostas:\n1)​ Criar\n\nmecanismos\n\nde\n\nparticipação\n\ndos\n\ntrabalhadores\n\nno\n\nplanejamento econômico: Instituir conselhos regionais e setoriais\ncom participação de sindicatos, movimentos populares, povos\nindígenas,\n\nquilombolas, agricultores familiares, universidades e\n\ncomunidades\n\npara\n\ndiscutir\n\nprioridades\n\nde\n\ninvestimento\n\ne\n\ndesenvolvimento.\n2)​ Fortalecer\n\nempresas\n\npúblicas,\n\nreestatizar\n\nas\n\nempresas\n\nprivatizadas (como as de energia e água) e ampliar a atuação\nestatal na economia: Defender estatais e serviços públicos e ampliar\na capacidade do Estado de planejar investimentos. Reestatizar a\nCOSANPA e a CELPA. O interesse público deve prevalecer em\ndetrimento da busca pelo lucro privado.\n3)​ Garantir controle popular sobre os grandes projetos: Grandes\nProjetos, ainda que estatais, de mineração, portos, hidrovias, ferrovias,\nenergia e agricultura, com grandes impactos territoriais, devem estar\nsubmetidos a rigoroso controle ambiental e social, transparência e\nparticipação efetiva das populações atingidas, respeitando também o\ndireito à consulta pública dos povos e comunidades tradicionais.\n4)​ Criar frentes emergenciais de trabalho, um programa de emprego\ne obras públicas: Utilizar investimento público para gerar empregos\ncom contratação direta, na construção de moradias populares,\nescolas, hospitais, creches, sistemas de saneamento, infraestrutura\nurbana e recuperação ambiental, priorizando municípios com maior\ndesemprego e vulnerabilidade.\n5)​ Acabar com as terceirizações dentro do setor público: Com a\nampliação dos concursos públicos substituindo gradativamente as\ncontratações temporárias, inclusive em cargos públicos colocados em\nextinção, mas necessários para uma adequada prestação de serviços"
+          },
+          {
+            "id": "a-populacao-auxiliar-de-copa-e-cozinha-auxiliar-de-servicos-gerais",
+            "titulo": "à população (auxiliar de copa e cozinha, auxiliar de serviços gerais,",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "à população (auxiliar de copa e cozinha, auxiliar de serviços gerais,\nagentes de portaria etc.), parando de terceirizar esse serviço para as\nempresas privadas que lucram em cima do serviço público.\n6)​ Investir no turismo ecológico e sustentável, respeitando os ciclos\nnaturais e reduzindo o impacto ambiental da circulação de pessoas em\náreas de proteção e conservação ambiental, fortalecendo os\ntrabalhadores locais e preservando as belas paisagens do estado.\n7)​ Auditoria e Controle Popular do Banpará: Realizar auditoria\nimediata das operações do Banpará, especialmente em casos de\naportes em um fundo de investimento administrado por uma empresa\ninvestigada no caso Banco Master, adotando medidas de controle\nsocial sobre a gestão financeira para garantir que o patrimônio público\nnão seja usado para favorecer elites.\n8)​ Viabilizar incentivos econômicos à produção e escoamento de\nalimentos de origem vegetal, de agricultura familiar, economia\nsolidária e agroecológica/agroflorestal, facilitando sua certificação,\nfomentando a comercialização em feiras e possibilitando, assim, o\nacesso da população aos produtos.\n9)​ Qualidade de Vida e Trabalho aos Trabalhadores de Aplicativo:\nInstalar centros de apoio com infraestrutura básica (banheiros, água\npotável, área de descanso e carregamento de veículos elétricos) para\nmotoristas e entregadores. Fornecer assessoria técnica e jurídica para\nque motoristas e entregadores se organizem de forma autogestionada,\nsuperando a subordinação algorítmica."
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nA vida e a dignidade humana são inegociáveis\nA violência e a insegurança atingem principalmente quem vive e trabalha nas\nperiferias urbanas, no campo e nos territórios mais desassistidos pelo poder público.\nGarantir segurança significa reconhecer que o povo trabalhador tem direito de viver,\ntrabalhar, estudar e circular sem medo e que cabe ao Estado assegurar esse direito.\nNão compreendemos a violência como algo à parte das profundas\ndesigualdades existentes no Pará e das contradições do capitalismo. As poucas\noportunidades para a juventude, o desemprego, a precariedade dos serviços\npúblicos e a desigualdade social criam condições que favorecem diferentes formas\nde violência. Existe, portanto, uma dimensão econômica do crime que precisa ser\nenfrentada, pois o crime organizado não se sustenta apenas na pobreza: ele\nmovimenta mercados muito lucrativos, como o tráfico de drogas e armas, garimpo\nilegal, exploração ilegal de madeira, grilagem, contrabando e lavagem de dinheiro.\nO capitalismo transforma praticamente tudo em possibilidade de acumulação\ne lucro, e atividades criminosas também se articulam a essa lógica. Grandes\norganizações criminosas necessitam de redes financeiras, empresas, patrimônio e\nmecanismos de lavagem de dinheiro para transformar recursos obtidos ilegalmente\nem riqueza aparentemente legal. Por isso, uma política de segurança que atue\nsomente sobre aqueles que estão na ponta do crime jamais atingirá toda a estrutura\nque o mantém funcionando. É necessário seguir o caminho do dinheiro, investigar\nos financiadores, combater a lavagem de dinheiro e atingir economicamente as\norganizações criminosas.\nNo Pará, essa questão assume características particulares. A imensidão\nterritorial e a exploração de recursos naturais fazem com que diferentes redes\ncriminosas possam se relacionar com o garimpo ilegal, desmatamento, grilagem,\ntráfico de drogas, armas e outros mercados ilícitos. Combater essas estruturas\nexige inteligência, investigação e integração das instituições públicas, atingindo não\napenas seus braços armados, mas principalmente seus dirigentes, financiadores e\nestruturas econômicas.\nAo mesmo tempo, enfrentar o crime não pode significar criminalizar a\npobreza, como segue ocorrendo a exemplo dos inúmeros casos de violência\npolicial, onde a letalidade recai principalmente sobre a juventude negra e periférica."
+          },
+          {
+            "id": "assim-uma-politica-consequente-de-seguranca-deve-tambem-garantir-direito",
+            "titulo": "Assim, uma política consequente de segurança deve também garantir direitos à",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Assim, uma política consequente de segurança deve também garantir direitos à\npopulação das periferias.\nDefendemos uma segurança pública comunitária, orientada pela proteção da\nvida, pelo respeito aos direitos humanos e pelo controle democrático das forças de\nsegurança. Queremos um Estado forte diante das organizações criminosas e das\nestruturas\n\neconômicas\n\ncapitalistas\n\nque\n\nlucram\n\ncom\n\na\n\nilegalidade,\n\nmas\n\ncomprometido com a garantia de direitos para o povo.\nConstruir segurança é, portanto, enfrentar tanto a violência cotidiana quanto\nàs condições sociais e econômicas que a reproduzem. É atacar o poder econômico\ndo crime e, ao mesmo tempo, construir uma sociedade menos desigual, na qual a\nvida e a dignidade estejam acima do lucro.\nPropostas:\n1)​ Reduzir o uso da força letal por meio de protocolos claros, câmeras\ncorporais (com transparência e auditoria independente) e punição\nefetiva de abusos. Proibir abordagem ostensiva em escolas, festas e\neventos comunitários sem justificativa grave.\n2)​ Inteligência contra o crime organizado: Desmantelar finanças das\nfacções (lavagem de dinheiro, tráfico de armas) via integração\nfederal-estadual, em vez da lógica de \"guerra\" que só desloca o\nproblema.\n3)​ Criar Conselho Estadual de Segurança Cidadã: com 50% de\nrepresentantes da sociedade civil (movimentos negros, favelas,\ndireitos humanos) para fiscalizar e propor políticas.\n4)​ Desmilitarização da Polícia: Contribuir com as discussões à nível\nFederal sobre desmilitarização das polícias.\n5)​ Criar Conselhos Comunitários de Segurança: com a participação\nde grupos de moradores e líderes de um mesmo bairro ou cidade que\ndiscutirão problemas de segurança, as ações das forças de\nsegurança, buscando soluções para melhorar a vida na comunidade.\nCom democracia na sua composição, visando o controle social, a\nfiscalização e acompanhamento das políticas de segurança pública;\n6)​ Ouvidoria Única Independente: Órgão externo para fiscalizar a\nconduta de agentes de segurança com participação popular;"
+          },
+          {
+            "id": "administracao-publica",
+            "titulo": "ADMINISTRAÇÃO PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "ADMINISTRAÇÃO PÚBLICA\nDemocratização e transparência institucional\n​\n\nO Estado não deve funcionar como instrumento de proteção dos privilégios\n\nde uma minoria nem como espaço de transferência dos recursos públicos para\ninteresses privados. A administração pública deve estar a serviço da maioria da\npopulação, garantindo direitos, planejando o desenvolvimento e utilizando os\nrecursos do Estado para enfrentar as desigualdades sociais e regionais do Pará.\n​\n\nÉ preciso combater a falácia de que reduzir a estrutura estatal, privatizar os\n\nserviços e transferir responsabilidades ao mercado é uma modernização. Quando\nserviços essenciais são tratados prioritariamente como mercadoria, o direito da\npopulação passa a depender de sua capacidade de pagar. Saúde, educação,\nassistência social, segurança, saneamento e demais serviços fundamentais devem\nser fortalecidos como um dever do Estado.\n​\n\nIsso exige também valorizar quem faz o serviço público funcionar.\n\nServidores públicos não devem ser tratados como problema fiscal, mas como\ntrabalhadores indispensáveis para garantir os direitos da população. Defendemos\nconcursos públicos, formação permanente, condições adequadas de trabalho,\nvalorização das carreiras e combate à precarização, às terceirizações utilizadas\npara substituir funções permanentes e ao uso político da máquina pública.\n​\n\nÉ necessário enfrentar privilégios, corrupção e desperdícios dentro do\n\nEstado entendendo que defender o serviço público não significa defender uma\nadministração sem controle mas, pelo contrário, significa ampliar a transparência,\nfortalecer os mecanismos de fiscalização e garantir que cada recurso público seja\nutilizado em benefício da coletividade.\n​\n\nQueremos\n\nque\n\nos\n\ntrabalhadores,\n\nsindicatos,\n\nmovimentos\n\nsociais,\n\ncomunidades tradicionais, juventude e organizações populares participem da\ndefinição das prioridades do governo com conselhos populares, orçamento\nparticipativo e mecanismos permanentes de consulta. Também é necessário"
+          },
+          {
+            "id": "enfrentar-as-profundas-desigualdades-territoriais-do-nosso-estado-um-pro",
+            "titulo": "enfrentar as profundas desigualdades territoriais do nosso estado. Um projeto",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "enfrentar as profundas desigualdades territoriais do nosso estado. Um projeto\npopular deve fortalecer a presença do Estado no interior, levando servidores,\nequipamentos, serviços e capacidade administrativa aos municípios e comunidades\nhistoricamente desassistidos.\n​\n\nDessa forma, nossa concepção de administração pública parte, portanto, de\n\numa escolha política: um Estado forte diante dos interesses econômicos poderosos\ne democrático diante do povo. Forte para defender o patrimônio público, enfrentar\nprivilégios e garantir direitos; democrático para permitir que a população participe\ndas decisões e fiscalize aqueles que governam.\n​\n\nPropostas:\n1)​ Auditoria da Dívida Pública do Pará: Revisão dos contratos financeiros que\nsangram o orçamento para enriquecer bancos. Rompimento de todos os\ncontratos firmados com o Estado genocida de Israel.\n2)​ Interiorização da administração estadual: Descentralizar serviços e\nestruturas administrativas atualmente concentrados em Belém, fortalecendo\nunidades regionais do Estado e garantindo presença permanente do poder\npúblico no Marajó, Baixo Amazonas, Tapajós, Xingu, Carajás, Nordeste\nParaense e demais regiões.\n3)​ Recomposição do quadro de funcionários do Governo: realização de\nconcursos públicos em todas as áreas que possuem déficit de funcionários,\npriorizando saúde e educação.\n4)​ Corte Radical de Cargos Comissionados: Realização de novos concursos\npúblicos e redução de no mínimo 30% das indicações políticas, privilegiando\nservidores de carreira.\n5)​ Transparência radical do orçamento público: Criar instrumentos simples\npara que qualquer cidadão consiga saber quanto o Estado arrecada, de onde\nvêm os recursos, quanto gasta, com quem gasta e quais empresas recebem\ndinheiro público. Disponibilizar contratos, obras, benefícios fiscais e execução\norçamentária em linguagem acessível.\n6)​ Combate à corrupção e ao patrimonialismo: Fortalecer corregedorias,\nauditorias, controladorias e mecanismos de fiscalização. Criar políticas"
+          },
+          {
+            "id": "especificas-contra-nepotismo-favorecimento-empresarial-superfaturamento",
+            "titulo": "específicas contra nepotismo, favorecimento empresarial, superfaturamento e",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "específicas contra nepotismo, favorecimento empresarial, superfaturamento e\nutilização eleitoral da estrutura administrativa.\n7)​ Fortalecimento da capacidade técnica do Estado: Reconstruir equipes\npúblicas de engenharia, planejamento, tecnologia, fiscalização, elaboração\nde projetos e gestão. O Estado não deve depender de consultorias privadas\npara formular e executar suas próprias políticas.\n8)​ Tecnologia pública e soberania digital: Ampliar a infraestrutura tecnológica\nestadual e desenvolver sistemas públicos que reduzam a dependência de\ngrandes empresas privadas de tecnologia. A digitalização deve simplificar\nserviços sem excluir quem não possui acesso adequado à internet.\n9)​ Compras públicas para desenvolver a economia popular: Utilizar o poder\nde compra do governo para fortalecer agricultura familiar, cooperativas,\npequenos produtores e empreendimentos da economia solidária, dentro dos\ninstrumentos permitidos pela legislação.\n10)​Democratização das decisões dentro do serviço público: Ampliar a\nparticipação dos servidores na formulação das políticas dos órgãos em que\ntrabalham.\n\nQuem\n\nexecuta\n\ndiariamente\n\numa\n\npolítica\n\nconhecimento que deve participar de seu planejamento.\n\npública\n\npossui"
+          },
+          {
+            "id": "educacao-nao-e-mercadoria",
+            "titulo": "EDUCAÇÃO NÃO É MERCADORIA",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO NÃO É MERCADORIA\nConhecimento é direito do povo!\n​\n\nEmbora o atual governo alegue que houveram avanços na educação\n\ndurante os últimos anos, nenhum indicador isolado pode esconder as profundas\ndesigualdades que atravessam a educação paraense. É preciso garantir condições\nconcretas para que cada criança e jovem tenha acesso, permaneça estudando e\naprenda com dignidade.\n​\n\nEm um estado marcado por enormes distâncias e desigualdades territoriais,\n\nestudar pode significar enfrentar falta de transporte, longos deslocamentos,\ndificuldades de acesso à internet e diferenças de infraestrutura entre as escolas.\nEssas barreiras atingem com maior força a população pobre, os moradores das\nperiferias, do campo, das ilhas e das comunidades indígenas, quilombolas e\nribeirinhas.\n​\n\nSe não bastasse, para piorar, em 2024, o governo de Helder Barbalho\n\nsancionou uma lei que substituía as aulas presenciais do Sistema Modular de\nEnsino (SOME) e do Sistema Modular de Ensino Indígena (SOMEI) por\ntransmissões de vídeo nas comunidades, além de realizar um profundo ataque ao\nestatuto do magistério. Em resposta a esse ataque, os povos indígenas ocuparam a\nSEDUC durante um mês, luta que foi fortalecida pela greve dos professores e o\ngrande apoio popular, obrigando o governo a recuar, impondo uma vitória histórica\ndos povos contra os interesses dos monopólios da educação privada e das\noligarquias locais.\n​\n\nEsses ataques não acontecem por acaso. São fruto dessa sociedade\n\ncapitalista, na qual as oportunidades de uma criança são determinadas pelas\ncondições econômicas de sua família. Enquanto as elites podem comprar educação,\ntecnologia, cursos e preparação para disputar as melhores oportunidades, os filhos\nda classe trabalhadora dependem da educação pública, que é sistematicamente\nprecarizada pelos governos."
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "​",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "​\n\nAdemais, não existe educação pública de qualidade sem valorização de\n\nquem trabalha nela. Professores, técnicos e demais trabalhadores da educação não\npodem ser tratados como despesa a ser reduzida, como o governo vem fazendo\ncom as políticas de terceirização e de contratos temporários, em detrimento do\nconcurso público.\n​\n\nTambém rejeitamos uma concepção de educação limitada à formação de\n\nmão de obra barata para atender às necessidades dos grandes empreendimentos\neconômicos instalados em nosso território. Nossa juventude tem direito à formação\nprofissional e ao emprego, mas também à ciência, arte, filosofia, história, cultura e\npensamento crítico. A educação deve permitir compreender por que um estado tão\nrico continua convivendo com tanta desigualdade e oferecer instrumentos para\ntransformar essa realidade.\n​\n\nPara o ensino superior, compreendemos que o papel do Governo do Pará é\n\nfortalecer a UEPA, ao contrário do que fez o governo Helder Barbalho que utilizou a\nexpansão da Universidade somente como propaganda, enquanto não garantiu\nfinanciamento, infraestrutura e servidores públicos efetivos para sustentar sua\nexpansão. A UEPA permanece dependente das decisões orçamentárias do governo\nestadual, o que limita sua capacidade de planejar expansão, pesquisa, assistência\nestudantil, infraestrutura e valorização dos trabalhadores.\n​\n\nQueremos uma educação profundamente ligada à realidade amazônica\n\ncompreendendo nossa história, nossas lutas e os conflitos sociais que são\nconsequências do modelo de exploração capitalista. Nossa luta é por uma educação\npública, gratuita, laica, democrática, inclusiva e socialmente referenciada, da\neducação básica à educação superior.\nPropostas:\n1)​ Educação pública e gratuita para todos e em todos os níveis: Fim do\nlucro na educação; garantia de livre acesso do povo as universidades e/ou\ncursos técnicos profissionalizantes.\n2)​ Recuperar e modernizar a infraestrutura das escolas estaduais: Realizar"
+          },
+          {
+            "id": "diagnostico-publico-da-situacao-de-todas-as-unidades-e-executar-um",
+            "titulo": "diagnóstico público da situação de todas as unidades e executar um",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "diagnóstico público da situação de todas as unidades e executar um\nprograma\n\nestadual\n\nde\n\nrecuperação\n\ndas\n\nescolas,\n\ngarantindo\n\nsalas\n\nclimatizadas onde necessário, água potável, saneamento, bibliotecas,\nlaboratórios, quadras, espaços culturais, acessibilidade, internet de qualidade\ne condições adequadas de alimentação escolar.\n3)​ Garantir Democracia nas Escolas: Garantir liberdade e incentivar a\norganização estudantil, cumprindo a Lei do Grêmio Livre. Eleição direta para\ndiretores escolares. Pleno funcionamento dos conselhos escolares. Combate\nao assédio moral.\n4)​ Realizar concursos públicos e combater a precarização: Instituir\ncalendário permanente de concursos para professores, técnicos e demais\ntrabalhadores da Rede de Educação Estadual e da UEPA, substituindo\nprogressivamente contratos temporários e terceirizações. Garantir carreira,\nformação e valorização salarial aos trabalhadores da educação.\n5)​ Universalizar as salas de atendimento especializado e banheiros com\nacessibilidade nas escolas públicas do Estado.\n6)​ Ampliar as políticas de combate ao racismo nas escolas. Garantindo a\nplena aplicação da lei 10.639 que exige o ensino de História da África e\nafro-brasileira, assim como a conscientização para a importância do combate\nao preconceito racial. Realizar formação continuada sobre o tema para os\ntrabalhadores da educação.\n7)​ Programa de proteção a pessoas LGBTTIA+ nas escolas, com\ncampanhas de conscientização e formação de programas de acolhimento\npara o público nas instituições de ensino públicas.\n8)​ Educação sexual nas escolas para ensinar as crianças até 12 anos a se\nproteger de agressores e adolescentes a partir dos 15 anos sobre os riscos\ndas IST’s e da gravidez na adolescência.\n9)​ Combater o assédio sexual nas escolas: Criar protocolo de combate ao\nassédio sexual, com canais seguros de denúncias e acolhimento. Garantir a\nformação continuada para todos os trabalhadores em educação para\nprevenção de casos de assédio.\n10)​Garantir educação presencial aos povos indígenas, quilombolas,\nribeirinhos e populações do campo: Fortalecer o SOME, o SOMEI e as\nmodalidades\n\nespecíficas\n\nde\n\neducação,\n\nrejeitando\n\na\n\nsubstituição"
+          },
+          {
+            "id": "indiscriminada-de-professores-presenciais-por-ensino-remoto-ou-televisio",
+            "titulo": "indiscriminada de professores presenciais por ensino remoto ou televisionado",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "indiscriminada de professores presenciais por ensino remoto ou televisionado\ncomo política de redução de custos. Tecnologia deve complementar o\nprofessor, nunca substituí-lo.\n11)​Criar um grande programa de permanência escolar:Enfrentar abandono e\nevasão não apenas dentro da escola, mas também suas causas sociais.\nAmpliar alimentação escolar, transporte terrestre e fluvial, assistência\nestudantil e políticas articuladas de proteção social.\n12)​Valorizar a arte-educação: Realização de concurso para professores de\nartes com formação em teatro, dança, artes visuais e música para diversificar\na oferta de ensino de artes na escola.\n13)​Construir um programa de assistência psicológica para professores e\nalunos, com profissionais concursados e lotados nas instituições escolares,\nnos termos da Lei federal 13.935/2019.\n14)​Garantir o cumprimento e ampla divulgação da norma 8 do Programa\nNacional de Alimentação Escolar (PNAE), que assegura aos estudantes\ncom hábitos alimentares vegetarianos o fornecimento de alimento adequado\nà sua opção ou condição, garantindo em todas as refeições possibilidades de\numa alimentação vegetal completa e balanceada nutricionalmente;\n15)​Fortalecer a UEPA e garantir financiamento permanente: Estabelecer por\nlei o percentual mínimo de 5% do orçamento do estado para o ensino\nsuperior, garantindo maior estabilidade e previsibilidade orçamentária,\nfortalecendo sua autonomia administrativa, acadêmica e financeira. A\nexpansão da UEPA para o interior deverá ser acompanhada de orçamento,\nservidores, laboratórios, bibliotecas, assistência estudantil, pesquisa e\nextensão."
+          },
+          {
+            "id": "direito-a-cidade",
+            "titulo": "DIREITO À CIDADE",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "DIREITO À CIDADE\nNenhuma família sem casa! Nenhuma casa sem infraestrutura!\n​\n\nA moradia é um dos problemas mais graves enfrentados pela população\n\nparaense. Segundo a Fundação João Pinheiro, em 2023 o Pará tinha um déficit\nhabitacional de aproximadamente 326,7 mil domicílios. E o problema não se resume\nà falta de casas. Em 2022, 84,1% dos domicílios urbanos duráveis do estado\napresentavam algum tipo de inadequação habitacional.\n​\n\nNa Grande Concentração Urbana de Belém, os números mostram uma\n\nsituação ainda mais grave. Segundo o Censo 2022 do IBGE, 1.117.763 pessoas\nviviam em favelas e comunidades urbanas, o equivalente a 57,1% da população. É\na maior proporção entre as grandes concentrações urbanas do país, muito acima da\nmédia brasileira de 8,1%.\n​\n\nEsses números são resultado de décadas de crescimento das cidades sem\n\nque o direito à moradia acompanhasse as necessidades da população. O povo\ntrabalhador levantou bairros inteiros, muitas vezes por conta própria, enquanto\nfaltavam\n\nsaneamento,\n\ndrenagem,\n\ntransporte,\n\nregularização\n\nfundiária\n\ne\n\nequipamentos públicos. Ao mesmo tempo, a terra urbana se valorizou e virou fonte\nde lucro e especulação.\n​\n\nNão faltam apenas casas. O problema está também na forma como a terra\n\ne a cidade são apropriadas. Enquanto milhares de famílias gastam boa parte da\nrenda com aluguel ou vivem em áreas precárias, existem terrenos e imóveis\nsubutilizados ou mesmo completamente abandonados. Os sucessivos governos não\nenfrentaram esse problema na dimensão necessária, nem construíram uma política\nde habitação popular capaz de responder ao tamanho do déficit existente.\n​\n\nÉ preciso enfrentar a especulação imobiliária e fazer valer a função social\n\nda propriedade. Realizaremos um levantamento do patrimônio imobiliário do Estado\ncom o objetivo de identificar terrenos e imóveis públicos sem uso ou subutilizados e\ndestinar os que forem adequados para serem incluídos em programas de habitação"
+          },
+          {
+            "id": "popular-tambem-deve-apoiar-os-municipios-na-utilizacao-dos-instrumentos",
+            "titulo": "popular. Também deve apoiar os municípios na utilização dos instrumentos legais",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "popular. Também deve apoiar os municípios na utilização dos instrumentos legais\ncontra a propriedade urbana ociosa.\n​\n\nAo mesmo tempo, é necessário reconhecer a legitimidade histórica da luta\n\ndos movimentos populares de moradia e das ocupações urbanas e rurais. Em vez\nde criminalizar famílias sem-teto, realizar despejos ou tratar ocupações como caso\nde polícia. A prioridade deve ser a negociação, a regularização fundiária e a\nurbanização. Quando não houver condições de permanência, é obrigação do poder\npúblico garantir reassentamento digno.\n​\n\nTambém não basta entregar uma casa. Moradia digna é casa com água,\n\nesgoto, drenagem, energia, transporte público, escola, saúde, lazer e acesso ao\ntrabalho. Construir conjuntos habitacionais cada vez mais distantes, sem serviços\npúblicos e transporte adequado, é empurrar os trabalhadores para longe e\nreproduzir a segregação urbana.\n​\n\nDefendemos um programa estadual massivo de habitação popular,\n\nexecutado diretamente pelo poder público e com participação dos movimentos\npopulares, combinando construção de novas moradias, urbanização das periferias,\nregularização fundiária e aproveitamento de terrenos e imóveis públicos para\nhabitação de interesse social. Nenhuma família sem casa. Nenhuma casa sem\ninfraestrutura. Nenhum terreno vazio enquanto houver trabalhador sem moradia.\nPropostas:\n1)​ Criar um grande Programa Estadual de Habitação Popular. Ampliar a\nconstrução de moradias populares financiadas diretamente pelo Governo do\nEstado, por meio da Cohab, priorizando famílias de baixa renda, mulheres\nchefes de família, pessoas com deficiência e moradores de áreas de risco.\n2)​ Ampliar o orçamento estadual para habitação. Garantir recursos\npermanentes para construção, reforma, urbanização e regularização de\nmoradias\n\npopulares,\n\nreduzindo\n\na\n\ndependência\n\nde\n\nprogramas\n\ne\n\nfinanciamentos federais.\n3)​ Fortalecer a Cohab. Garantir orçamento, servidores, estrutura e capacidade"
+          },
+          {
+            "id": "tecnica-para-que-a-companhia-de-habitacao-do-estado-do-para-execute",
+            "titulo": "técnica para que a Companhia de Habitação do Estado do Pará execute",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "técnica para que a Companhia de Habitação do Estado do Pará execute\ndiretamente políticas habitacionais em todo o estado.\n4)​ Criar um Banco Estadual de Terras e Imóveis Públicos. Realizar um\nlevantamento de todo o patrimônio imobiliário do Estado, identificando\nimóveis vazios, abandonados, subutilizados e terrenos sem destinação, com\ndivulgação pública dessas informações, e destiná-los à habitação popular.\n5)​ Ampliar a regularização fundiária. Criar uma política permanente de\nregularização das áreas estaduais ocupadas por famílias de baixa renda,\ngarantindo segurança da posse, titulação e urbanização, com fortalecimento\nda atuação da Cohab e do Iterpa.\n6)​ Urbanizar ocupações e periferias populares. Ampliar investimentos\nestaduais em saneamento, drenagem, pavimentação e iluminação. Realizar\nobras de contenção de áreas de risco, ampliar a oferta de transporte e\nserviços públicos nas periferias e comunidades populares, levando em conta\na adaptação das cidades às mudanças climáticas, com projetos que incluam\na redução das temperaturas nos centros urbanos, o tratamento adequado de\nesgotos, o destino adequado do lixo e a otimização de recursos como água e\nenergia.\n7)​ Garantir uma política habitacional adequada à realidade amazônica.\nDesenvolver\n\nprogramas\n\nespecíficos\n\npara\n\npopulações\n\nribeirinhas,\n\nquilombolas, indígenas, extrativistas e comunidades rurais, respeitando as\ncaracterísticas territoriais, culturais e ambientais de cada região do Pará.\n8)​ Nenhum reassentamento sem moradia digna. Garantir que famílias\nremovidas por obras estaduais, grandes projetos ou intervenções urbanas\nrecebam previamente uma solução habitacional adequada, priorizando o\nreassentamento próximo ao território onde vivem e trabalham.\n9)​ Combater despejos e remoções forçadas. Fortalecer a mediação de\nconflitos fundiários envolvendo famílias de baixa renda, articulando\nDefensoria Pública, Iterpa, Cohab, municípios e movimentos populares,\npriorizando negociação, regularização e soluções habitacionais antes de\nqualquer remoção.\n10)​Fortalecer o aluguel social emergencial. Garantir auxílio temporário às\nfamílias atingidas por enchentes, incêndios, desabamentos, obras públicas e\noutras situações que impeçam a permanência na moradia, vinculando o"
+          },
+          {
+            "id": "beneficio-a-busca-de-uma-solucao-habitacional-definitiva",
+            "titulo": "benefício à busca de uma solução habitacional definitiva.",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "benefício à busca de uma solução habitacional definitiva.\n11)​Construir\n\nmoradia\n\ncom\n\ninfraestrutura.\n\nTodo conjunto habitacional\n\nconstruído ou financiado pelo Estado deverá ser acompanhado de\nsaneamento, transporte, escolas, creches, unidades de saúde, áreas de lazer\ne demais serviços públicos necessários, e ser realizado com estudos\nambientais, buscando maior conforto térmico, arborização e economia de\nágua e energia. Combater a construção de conjuntos isolados e distantes dos\nlocais de trabalho e dos serviços públicos.\n12)​Priorizar a autogestão e os movimentos populares de moradia. Criar\nlinhas estaduais de financiamento, cessão de terrenos e assistência técnica\npara cooperativas, associações comunitárias e movimentos populares\ndesenvolverem projetos habitacionais com participação direta das famílias.\n13)​Garantir assistência técnica pública e gratuita para habitação popular.\nManter equipes de arquitetos, engenheiros, assistentes sociais e outros\nprofissionais para atender gratuitamente famílias de baixa renda em projetos\nde construção, reforma, ampliação e regularização das moradias.\n14)​Combater a especulação imobiliária e formar reservas públicas de\nterras. Utilizar os instrumentos legais disponíveis para aquisição e, nos casos\nlegalmente cabíveis, desapropriação de áreas destinadas à habitação\npopular e equipamentos públicos. A política estadual de moradia não pode\nficar subordinada aos preços e interesses do mercado imobiliário.\n15)​Garantir participação e controle popular sobre a política habitacional.\nGarantir a participação efetiva dos movimentos de moradia, associações de\nmoradores, sindicatos e comunidades na definição das prioridades da política\nhabitacional, na fiscalização dos recursos, na escolha das áreas destinadas\naos programas e no acompanhamento das obras.\n16)​Elaborar projetos para a implantação e modernização de restaurantes\npúblicos populares, segundo as diretrizes do programa Restaurantes\nPopulares, do Ministério da Cidadania, propondo a inserção de refeição\nvegetariana estrita no cardápio destes restaurantes, garantindo em todas as\nrefeições possibilidades de uma alimentação vegetal completa balanceada\nnutricionalmente;\n17)​Incentivar campanhas que promovam a adoção animal responsável e\ndesestimulem o comércio de animais (domésticos, silvestres, nativos ou"
+          },
+          {
+            "id": "exoticos-e-a-pratica-dos-crimes-de-maus-tratos-e-abandono-apresentar",
+            "titulo": "exóticos) e a prática dos crimes de maus tratos e abandono. Apresentar",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "exóticos) e a prática dos crimes de maus tratos e abandono. Apresentar\nprojetos de castração gratuita de animais, além de atendimento especializado\npara emergências e tratamentos diversos, se comprometendo com a criação\ne progressiva ampliação de redes públicas de atendimento veterinário.\nConcomitantemente, promover políticas públicas de atenção à saúde física e\nemocional de protetores que rotineiramente resgatam e socorrem animais em\nvulnerabilidade."
+          },
+          {
+            "id": "transporte-e-direito-do-povo",
+            "titulo": "TRANSPORTE É DIREITO DO POVO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "TRANSPORTE É DIREITO DO POVO\nPor um Pará integrado, público e acessível\n​\n\nO Pará tem grandes distâncias, rios, ilhas e extensas áreas rurais. Nesse\n\nterritório, o transporte determina as condições para chegar ao trabalho, à escola, ao\nhospital e aos serviços públicos. Somente os terminais hidroviários de Belém\nmovimentaram 890.263 passageiros em 2025, em mais de 8 mil operações. O\ntransporte fluvial é fundamental para ligar a capital às ilhas, Barcarena, Marajó e\noutras regiões. Deve ser tratado como serviço essencial, com embarcações\nseguras, terminais adequados, linhas regulares e tarifas acessíveis. Linhas\nrodoviárias e hidroviárias socialmente necessárias devem existir mesmo quando\nnão forem lucrativas.\n​\n\nO BRT Metropolitano, entregue em outubro de 2025, foi um avanço para a\n\nRegião Metropolitana de Belém, mas a operação do BRT foi concedida à iniciativa\nprivada, mantendo o transporte submetido à lógica do retorno econômico. Mesmo\napós a inauguração, usuários enfrentam longas esperas e superlotação,\nespecialmente no Terminal de Marituba. Não basta ter estrutura: é preciso prioridade\npara colocá-la a serviço da população. Transporte público não pode ser política de\nevento, vitrine de governo ou fonte de lucro privado.\n​\n\nEm agosto de 2025 começou a cobrança de pedágios nas estradas\n\nconcedidas à Rota do Pará, com tarifa inicial de R$12,00 para automóveis em\npraças da PA-150, PA-252 e Alça Viária. Em março de 2026, após fiscalização\napontar problemas de manutenção, o Estado suspendeu a cobrança em cinco\npraças da PA-150. Além de atingir motoristas, o pedágio entra nos custos de ônibus,\nalimentos e mercadorias, afetando trabalhadores e pequenos produtores.\n​\n\nTransporte é direito, não mercadoria. O Estado deve assumir maior\n\nresponsabilidade pelo planejamento, financiamento e oferta dos serviços. Também é\npreciso enfrentar a desigualdade entre a Região Metropolitana e o interior,\ngarantindo sistemas adequados às suas realidades, integrando rodovias e hidrovias."
+          },
+          {
+            "id": "pagina-21",
+            "titulo": "​",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "​\n\nNa Região Metropolitana, o BRT deve ser o início de uma rede pública mais\n\nampla. Estudo do Ministério das Cidades e do BNDES apontou projetos para\nampliar em 22 quilômetros a rede de BRT da Grande Belém. Defendemos a\nredução das tarifas e o avanço em direção à tarifa zero, com maior financiamento\npúblico e contribuição das grandes empresas e empreendimentos que dependem\ndiariamente do deslocamento dos trabalhadores.\n​\n\nO Pará precisa de um sistema estadual público e integrado de transportes,\n\narticulando rodovias, hidrovias e transporte metropolitano, com investimento público,\ntarifas populares, acessibilidade e participação popular. Transportar pessoas não\npode ser apenas um negócio. A riqueza produzida no Pará deve garantir o direito de\nir e vir do povo, e não transformar estradas, rios e transportes em fontes de lucro\nprivado.\nPropostas:\n1)​ Construir um Sistema Estadual Público e Integrado de Transportes. Criar\num Plano Estadual de Mobilidade e Integração Territorial, articulando\ntransporte rodoviário, hidroviário e metropolitano e estabelecendo metas para\natender às necessidades de cada região do Pará.\n2)​ Ampliar a participação direta do Estado no transporte público. Tratar o\ntransporte como serviço público essencial, fortalecendo o planejamento,\nfinanciamento e prestação direta dos serviços pelo poder público, reduzindo a\ndependência de operadores privados.\n3)​ Criar uma Empresa Pública Estadual de Transporte e uma Rede\nEstadual Pública de Transporte Hidroviário. Estruturar uma empresa\ncapaz de operar diretamente linhas rodoviárias, hidroviárias e metropolitanas\nestratégicas, principalmente onde o serviço privado seja insuficiente ou não\nexista por falta de interesse comercial. Implantar linhas públicas de transporte\nhidroviário regulares, adquirir embarcações seguras e acessíveis e garantir\natendimento ao Marajó, ilhas, comunidades ribeirinhas e demais regiões\nonde os rios são a principal via de deslocamento. Uma comunidade não pode\nficar isolada porque uma rota não oferece lucro às empresas privadas.\n4)​ Combater novas privatizações e concessões das rodovias estaduais."
+          },
+          {
+            "id": "interromper-a-transferencia-de-rodovias-estrategicas-para-exploracao-pri",
+            "titulo": "Interromper a transferência de rodovias estratégicas para exploração privada",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Interromper a transferência de rodovias estratégicas para exploração privada\ne priorizar investimento público na recuperação, manutenção e ampliação da\nmalha estadual.\n5)​ Revisar as concessões rodoviárias e os pedágios. Realizar auditoria\npública dos contratos, tarifas, investimentos, obrigações e taxas de retorno\ndas concessionárias, buscando os instrumentos jurídicos para revisão ou\nretomada pública quando o interesse coletivo justificar. Nenhum novo\npedágio sem debate público e transparência sobre seus impactos.\n6)​ Construir e recuperar terminais hidroviários públicos. Garantir estruturas\nadequadas para embarque e desembarque, com cobertura, banheiros,\niluminação, segurança e acessibilidade, integradas aos demais meios de\ntransporte.\n7)​ Ampliar o direito dos estudantes ao transporte. Simplificar o acesso aos\nbenefícios\n\nexistentes\n\ne\n\navançar\n\npara\n\na\n\ngratuidade\n\ndo\n\ntransporte\n\nintermunicipal para estudantes da rede pública.\n8)​ Expandir o BRT e avançar para uma operação pública. Ampliar\ncorredores, terminais, estações e linhas alimentadoras e garantir frota\nsuficiente em circulação e frequência adequada, combatendo as longas\nesperas e a superlotação. Avançar para maior operação direta pelo poder\npúblico, colocando a qualidade do serviço acima da lógica do lucro privado.\n9)​ Ampliar a frota pública e de baixa emissão. Investir em ônibus elétricos e\noutras tecnologias menos poluentes, garantindo também estrutura pública\npara manutenção e recarga.\n10)​Integrar os transportes e criar um Bilhete Único. Implantar terminais\nintermodais e avançar na integração física e tarifária entre embarcações,\nônibus intermunicipais e transporte metropolitano, permitindo conexões com\nmenor custo para o usuário.\n11)​Criar um programa permanente de recuperação das rodovias estaduais.\nGarantir manutenção preventiva e priorizar também as estradas utilizadas por\ncomunidades rurais, agricultores familiares e pequenos produtores, e não\napenas os grandes corredores econômicos e de exportação.\n12)​Garantir acessibilidade. Ônibus, embarcações, terminais, estações e\ndemais estruturas de transporte devem ser plenamente acessíveis às\npessoas com deficiência, idosos e pessoas com mobilidade reduzida."
+          },
+          {
+            "id": "13-fortalecer-a-fiscalizacao-publica-do-transporte-ampliar-a-capacidade",
+            "titulo": "13)​Fortalecer a fiscalização pública do transporte. Ampliar a capacidade da",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "13)​Fortalecer a fiscalização pública do transporte. Ampliar a capacidade da\nARTRAN\n\npara\n\nfiscalizar\n\nsegurança,\n\nconservação\n\ndos\n\nveículos\n\ne\n\nembarcações, cumprimento dos horários, frequência das linhas, tarifas e\ndireitos dos passageiros.\n14)​Garantir transparência das tarifas, contratos e empresas. Toda proposta\nde reajuste deve apresentar publicamente as planilhas de custos. Empresas\nque exploram serviços públicos devem divulgar receitas, despesas, número\nde passageiros, subsídios recebidos e demais informações necessárias à\nfiscalização popular, a qual deve ser ampliada, garantindo a criação e\nfortalecimento de espaços com participação de trabalhadores, estudantes,\npessoas com deficiência, comunidades ribeirinhas, sindicatos e usuários nas\ndecisões sobre tarifas, linhas, horários, contratos e investimentos.\n15)​Combater monopólios privados no transporte. Impedir que uma empresa\nou pequeno grupo empresarial controle permanentemente rotas essenciais e\nampliar a atuação direta do Estado quando necessária para garantir a\ncontinuidade, qualidade e preço acessível dos serviços.\n16)​Colocar a infraestrutura logística a serviço da população. O Pará possui\ngrandes corredores utilizados para transportar minérios, grãos e outras\nmercadorias. Os investimentos estaduais não podem servir prioritariamente\naos interesses da mineração, do agronegócio e das grandes empresas. A\ninfraestrutura deve atender primeiro às necessidades da população e garantir\nbenefícios concretos às comunidades e municípios atravessados pelos\ngrandes projetos."
+          },
+          {
+            "id": "saude-para-todos",
+            "titulo": "SAÚDE PARA TODOS",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE PARA TODOS\nSaúde pública, com controle popular\n​\n\nA saúde pública no Pará não atende às necessidades da população, é\n\nmarcada pela insuficiência de profissionais, pelas dificuldades de acesso à atenção\nespecializada, entrega da administração às Organizações Sociais (OS), e\ndesigualdade entre a capital e o interior. Essa situação não é por acaso, enquanto a\npopulação sofre com a falta de acesso à saúde, existem empresários da saúde que\ncrescem seus lucros, planos de saúde caros, redes particulares e Organizações\nSociais.\n​\n\nÉ preciso inverter essa lógica. Saúde não é mercadoria e os recursos\n\npúblicos precisam fortalecer prioritariamente uma rede integralmente pública,\ngratuita e universal, controlada socialmente pelos trabalhadores e usuários do SUS.\nIsso exige o combate às Organizações Sociais (OSs), às Parcerias Público-Privadas\n(PPPs), às terceirizações e às demais formas de privatização da saúde pública. As\nOrganizações Sociais recebem recursos públicos e assumem a administração de\nhospitais e serviços do SUS por meio de contratos de gestão, transferindo para\nentidades privadas funções que deveriam ser executadas diretamente pelo Estado.\n​\n\nÉ fundamental romper com uma política que transfere a gestão e os\n\nrecursos públicos para entidades privadas. Os hospitais públicos devem ser\nadministrados pelo poder público, com servidores concursados, financiamento\nadequado, transparência e participação dos trabalhadores e usuários nas decisões.\nNossa perspectiva é a construção de um SUS 100% público, estatal e gratuito, no\nqual o dinheiro destinado à saúde permaneça integralmente a serviço da população.\n​\n\nAlém disso, é fundamental acabar com as causas do adoecimento. Não\n\nexiste saúde plena onde exista fome, desemprego, trabalho precarizado, falta de\nsaneamento, moradia inadequada, contaminação ambiental e jornadas exaustivas.\nPor isso, defender o SUS significa também enfrentar o modelo capitalista que\nproduz doenças enquanto transforma hospitais, planos de saúde, medicamentos e\nserviços médicos em fontes de lucro para as empresas."
+          },
+          {
+            "id": "pagina-25",
+            "titulo": "​",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "​\n\nNossa tarefa é construir um sistema que alcance as periferias de Belém, as\n\ncomunidades ribeirinhas, indígenas, quilombolas e os municípios mais distantes do\nestado. A riqueza produzida pelo povo paraense deve financiar a vida e a saúde de\nquem trabalha, e não os lucros de grandes grupos econômicos.\nPropostas:\n1)​ Combate às Organizações Sociais e retomada da gestão pública direta\nda saúde: Romper com o modelo de gestão da saúde por Organizações\nSociais (OS) e estabelecer um processo de retomada, pelo Estado, da\nadministração direta dos hospitais e demais unidades públicas hoje\nentregues a essas entidades. Os recursos destinados às OS devem ser\ndirecionados ao fortalecimento da estrutura própria do SUS, e os serviços\nessenciais devem ser prestados diretamente pelo Estado com transparência,\nfiscalização e controle popular. Defendemos hospitais públicos administrados\npelo poder público, e não a transferência da responsabilidade estatal para\norganizações privadas.\n2)​ Concurso público e fim da precarização do trabalho: Substituir\nprogressivamente vínculos terceirizados e temporários por trabalhadores\nconcursados. Realizar concursos periódicos para médicos, enfermeiros,\ntécnicos, psicólogos, assistentes sociais e demais categorias, garantindo\ncarreira, salários e condições dignas de trabalho.\n3)​ Interiorização dos profissionais de saúde: Criar uma carreira estadual de\nsaúde voltada à interiorização, com incentivos financeiros, moradia funcional\ne condições adequadas de trabalho para garantir profissionais nas regiões\ncom maior déficit.\n4)​ Fortalecimento da saúde no interior: Ampliar hospitais regionais,\npoliclínicas, laboratórios e centros de diagnóstico, garantindo consultas\nespecializadas, exames e cirurgias nas próprias regiões de saúde. A\npopulação dos interiores não pode continuar percorrendo centenas de\nquilômetros para conseguir tratamento.\n5)​ Fortalecimento da atenção básica: Ampliar o financiamento estadual da\natenção primária, fortalecendo postos de saúde, equipes de Saúde da\nFamília, vacinação, prevenção e acompanhamento das comunidades."
+          },
+          {
+            "id": "6-medicamento-e-direito-nao-mercadoria-fortalecer-a-assistencia",
+            "titulo": "6)​ Medicamento é direito, não mercadoria: Fortalecer a assistência",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "6)​ Medicamento é direito, não mercadoria: Fortalecer a assistência\nfarmacêutica pública e garantir estoque regular de medicamentos essenciais\ne de alto custo. Defender o fortalecimento dos laboratórios públicos e,\nquando necessário, a quebra de patentes para garantir o acesso da\npopulação.\n7)​ Saúde mental pública e comunitária: Expandir CAPS e demais serviços\npúblicos de saúde mental, especialmente no interior e nas periferias,\ngarantindo equipes multidisciplinares e políticas de prevenção ao suicídio e\natenção às pessoas com problemas relacionados ao uso de álcool e outras\ndrogas.\n8)​ Saúde integral da mulher: Expandir maternidades, pré-natal, atendimento\nginecológico e planejamento reprodutivo. Ampliar diagnóstico e tratamento de\ncâncer de mama e colo do útero e garantir atendimento integral às mulheres\nvítimas de violência.\n9)​ Saúde para povos indígenas, quilombolas, ribeirinhos e comunidades\ntradicionais: Garantir estruturas e equipes adequadas às particularidades\nterritoriais e culturais da Amazônia, ampliando unidades fluviais, equipes\nitinerantes e atendimento permanente às comunidades mais distantes.\n10)​Transporte sanitário para a realidade amazônica: Criar uma rede estadual\nintegrada de transporte sanitário terrestre, fluvial e aeromédico, articulada\naos hospitais regionais e adequada às características geográficas do Pará.\n11)​Fim das filas intermináveis: Implantar fila estadual única, pública e\ntransparente para consultas, exames e cirurgias, permitindo que a população\nacompanhe sua posição e o tempo de espera. Ampliar a capacidade da rede\npública para reduzir as filas.\n12)​Saneamento também é saúde: Universalizar água potável, coleta e\ntratamento de esgoto e manejo adequado de resíduos, priorizando periferias,\ncomunidades rurais e municípios com os piores indicadores sociais.\n13)​Defesa da saúde do trabalhador: Fortalecer os CEREST e ampliar a\nfiscalização das condições de trabalho, especialmente em atividades com\nelevada exposição a acidentes, produtos químicos, agrotóxicos, mineração e\natividades portuárias.\n14)​Controle popular da saúde: Fortalecer os Conselhos de Saúde e criar\nmecanismos para participação direta dos trabalhadores do SUS e usuários"
+          },
+          {
+            "id": "na-fiscalizacao-dos-contratos-orcamento-e-definicao-das-prioridades-de",
+            "titulo": "na fiscalização dos contratos, orçamento e definição das prioridades de",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "na fiscalização dos contratos, orçamento e definição das prioridades de\ninvestimento.\n15)​Mais dinheiro público para a saúde pública: Ampliar progressivamente os\ninvestimentos estaduais no SUS. Os recursos públicos destinados à saúde\ndevem fortalecer prioritariamente a rede estatal, seus trabalhadores,\nequipamentos e serviços.\n\nCULTURA"
+          },
+          {
+            "id": "popular-acessivel-e-democratica",
+            "titulo": "Popular, acessível e democrática",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Popular, acessível e democrática\n​\n\nO Pará possui uma das formações culturais mais ricas e diversas do Brasil:\n\ndos povos indígenas às comunidades tradicionais, do carimbó ao tecnomelody, dos\nmestres e mestras de cultura popular às aparelhagens, a cultura paraense foi\nconstruída fundamentalmente pela criatividade e resistência do nosso povo.\nEntretanto, toda essa riqueza contrasta com as condições materiais enfrentadas por\ngrande parte de quem efetivamente produz cultura no nosso Estado, que por vezes\nenfrenta a instabilidade, informalidade e ausência de direitos trabalhistas apesar de\nmovimentar a economia, produzir identidade e gerar riqueza.\n​\n\nDe fato, não há uma política pública permanente para a cultura paraense,\n\nque sobrevive a partir de uma lógica fortemente baseada em incentivos, grandes\neventos, projetos e inúmeros editais - muitos dos quais estabelecem vínculos entre\no Estado e a iniciativa privada para o financiamento dos projetos. É importante\nressaltar que festivais, shows e editais têm sua importância, mas uma política\ncultural pública não pode depender fundamentalmente de grandes eventos,\ncalendários comemorativos ou mesmo da escolha por parte de empresários de\nquais projetos e artistas “merecem” visibilidade ou não.\n​\n\nDessa forma, defendemos que a cultura paraense não pode estar\n\nsubordinada aos interesses do capital nem servir apenas como vitrine institucional\ndos governos. Nosso projeto de governo aponta para uma cultura popular,\ndemocrática, descentralizada e financiada pelo poder público, com participação\nefetiva de quem faz arte e cultura todos os dias no Pará. É preciso democratizar o\nacesso aos recursos públicos, reduzir barreiras burocráticas e impedir que grandes\nempresas, produtores ou grupos economicamente estruturados concentrem o\nfinanciamento destinado à cultura.\n​\n\nIsso significa enfrentar também a concentração territorial da infraestrutura\n\ncultural, garantindo que as políticas culturais cheguem em todas as regiões do\nEstado. Equipamentos culturais como bibliotecas, teatros, cinemas públicos, centros\nculturais, escolas de artes e espaços comunitários precisam fazer parte da\ninfraestrutura permanente dos municípios. Entendemos assim que cultura é um"
+          },
+          {
+            "id": "direito-social-e-instrumento-de-formacao-consciencia-e-emancipacao-do-po",
+            "titulo": "direito social e instrumento de formação, consciência e emancipação do povo e,",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "direito social e instrumento de formação, consciência e emancipação do povo e,\nportanto, o Estado deve garantir as condições materiais para que o povo possa\nproduzir e acessar cultura independentemente de sua renda ou de onde vive.\n​\n\nTambém é importante pautar a valorização direta dos trabalhadores da\n\ncultura. Mestres e mestras de cultura popular, músicos, artesãos, técnicos,\nescritores, produtores, cenógrafos, coletivos culturais etc. precisam ter políticas\npermanentes de financiamento, formação e proteção social para continuarem\ncontribuindo com a cultura paraense. Da mesma forma, é fundamental colocar no\ncentro do nosso programa a defesa das culturas indígenas, quilombolas, ribeirinhas,\ncaboclas, negras e periféricas, combatendo sua transformação em simples\nmercadoria turística. As línguas indígenas, as festas tradicionais, o carimbó, os\ncordões de pássaros, as aparelhagens e demais manifestações populares são\npatrimônio vivo dos povos que os produzem e devem ser valorizados.\n​\n\nNossa perspectiva é substituir uma política cultural concentrada em grandes\n\neventos e ações temporárias por uma política pública permanente, descentralizada\ne com os trabalhadores da cultura no centro, pois a riqueza cultural do Pará\npertence ao seu povo, que deve possuir os meios materiais para produzi-la, bem\ncomo preservar, transformar e transmitir às próximas gerações. Para isso, é\nnecessário democratizar não só o acesso à cultura, mas o poder decisório\nPropostas:\n1)​ Democratizar os editais públicos: Simplificar inscrições, prestar assistência\ntécnica gratuita e definir critérios que garantam oportunidades para pequenos\nprodutores, artistas independentes, coletivos periféricos e grupos do interior,\nevitando a concentração dos recursos entre aqueles com mais recursos.\n2)​ Descentralizar os investimentos em cultura: Estabelecer critérios de\ndistribuição regional dos recursos, garantindo investimentos permanentes em\ntodas as regiões do Pará.\n3)​ Criar uma rede estadual de equipamentos culturais permanentes:\nImplantar e recuperar bibliotecas, teatros, cinemas populares, centros\nculturais, museus, escolas de arte e espaços para apresentações nos"
+          },
+          {
+            "id": "municipios-e-periferias-garantindo-acesso-gratuito-ou-a-precos-populares",
+            "titulo": "municípios e periferias, garantindo acesso gratuito ou a preços populares.",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "municípios e periferias, garantindo acesso gratuito ou a preços populares.\n4)​ Defender\n\no\n\npatrimônio\n\nhistórico\n\ne\n\ncultural\n\nparaense:\n\nGarantir\n\ninvestimento público permanente na conservação de prédios históricos,\nmuseus, arquivos, sítios arqueológicos e patrimônio material e imaterial,\nimpedindo abandono, descaracterização ou apropriação privada.\n5)​ Criar um programa estadual de valorização dos trabalhadores da\ncultura:\n\nGarantir\n\nbolsas\n\npermanentes,\n\napoio\n\nà\n\ntransmissão\n\nde\n\nconhecimentos e condições para manutenção das atividades dos mestres e\nmestras de cultura popular paraense. Desenvolver uma política de\nvalorização e seguridade social para trabalhadores do setor artístico-cultural.\n6)​ Fortalecer a cultura popular paraense e os povos tradicionais: Criar\nprogramas\n\nconstruídos\n\nconjuntamente\n\ncom\n\ncomunidades\n\nindígenas,\n\nquilombolas e ribeirinhas para garantir recursos para preservação de suas\nlínguas, conhecimentos, manifestações artísticas, memória e tradições,\nrespeitando sua autonomia e fortalecendo a cultura popular paraense.\n7)​ Defender\n\ne\n\nfortalecer\n\nos\n\nespaços\n\nculturais\n\nindependentes\n\ne\n\ncomunitários: Criar financiamento continuado voltado a Pontos e Pontões\nde Cultura, coletivos, associações, espaços culturais comunitários, grupos\nartísticos\n\netc.\n\npara\n\nmanutenção,\n\naluguel,\n\nreforma,\n\nequipamentos e\n\nprogramação.\n8)​ Garantir acesso popular ao fazer cultural: Criar rede para democratização\ndo fazer cultural de forma integrada ao Mapa Cultural, com concurso público\npara que agentes culturais já atuantes realizem cursos de formação nas\ndiversas linguagens artísticas e manifestações culturais.\n9)​ Democratizar a comunicação e a produção audiovisual: Fortalecer rádios\ncomunitárias, produções audiovisuais independentes e iniciativas populares\nde comunicação, criando estruturas públicas de produção, formação e\ncirculação de conteúdo paraense.\n10)​Transparência total dos gastos culturais: Publicar nos portais oficiais do\ngoverno, em linguagem e formato acessível, os valores destinados a eventos,\nartistas, produtoras, contratos, patrocínios, obras e editais.\nPESSOAS COM DEFICIÊNCIA"
+          },
+          {
+            "id": "direitos-acessibilidade-e-emancipacao",
+            "titulo": "Direitos, acessibilidade e emancipação",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Direitos, acessibilidade e emancipação\n​\n\nPara as pessoas com deficiência, direitos garantidos formalmente ainda\n\nconvivem com barreiras concretas no transporte, nas escolas, no trabalho, nos\nserviços de saúde, nos prédios públicos, nas cidades e no acesso à cultura, esporte\ne lazer. De acordo com o Observatório de Direitos Humanos do Pará, a população\nde pessoas com deficiência é estimada em 813 mil, equivalente a 9,5% da\npopulação estadual. Por isso, a política para pessoas com deficiência não pode ser\ntratada como uma questão secundária, assistencialista ou restrita a benefícios.\n​\n\nNo\n\nPará,\n\nas\n\ndistâncias\n\nterritoriais,\n\na\n\nconcentração\n\nde\n\nserviços\n\nespecializados em Belém, as dificuldades de transporte e a precariedade da\ninfraestrutura de muitos municípios aprofundam as barreiras enfrentadas pelas\npessoas com deficiência. Regionalizar as políticas significa levar profissionais,\ndiagnóstico,\n\nreabilitação,\n\ntecnologias\n\nassistivas\n\ne\n\nserviços\n\nespecializados\n\npermanentemente para diferentes regiões do Pará. Nós da Unidade Popular\nentendemos que é a sociedade que precisa ser transformada para garantir\nigualdade material, pois a acessibilidade não é favor, caridade ou privilégio: é um\ndireito e uma responsabilidade do Estado.\n​\n\n“Nada sobre nós sem nós” é a palavra de ordem que deve orientar a política\n\nestadual de Pessoas com Deficiência, garantindo que suas organizações participem\ndiretamente da construção, implementação e avaliação das políticas públicas.\nNossa proposta é construir um Pará plenamente acessível, no qual saúde,\neducação, transporte, trabalho, cultura, esporte, moradia e participação política\nsejam direitos efetivamente garantidos. Isso exige planejamento, orçamento público,\nservidores concursados, serviços regionalizados e controle popular.\nPropostas:\n1.​ Garantir orçamento permanente para as políticas das pessoas com\ndeficiência: Assegurar recursos próprios e crescentes no orçamento\nestadual e efetivar o Fundo Estadual dos Direitos da Pessoa com Deficiência.\n2.​ Criar uma Rede Estadual de Centros de Referência da Pessoa com"
+          },
+          {
+            "id": "deficiencia-implantar-servicos-regionalizados-de-orientacao-assistencia",
+            "titulo": "Deficiência: Implantar serviços regionalizados de orientação, assistência",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Deficiência: Implantar serviços regionalizados de orientação, assistência\nsocial, apoio às famílias, encaminhamento para saúde, educação, trabalho,\ntecnologias assistivas e garantia de direitos.\n3.​ Criar uma rede pública estadual de acesso às tecnologias assistivas:\nGarantir acesso gratuito, por meio do SUS e das políticas estaduais\ncompetentes, a cadeiras de rodas, próteses, órteses, aparelhos auditivos,\nrecursos de comunicação e outras tecnologias assistivas, além de\nmanutenção e substituição quando necessárias.\n4.​ Garantir educação inclusiva com estrutura pública: Toda escola estadual\ndeve possuir condições materiais para inclusão: acessibilidade arquitetônica,\nmobiliário adequado, Atendimento Educacional Especializado, materiais\nacessíveis, Libras, Braille e tecnologias assistivas.\n5.​ Garantir profissionais de apoio nas escolas estaduais: Realizar\nplanejamento para assegurar profissionais em quantidade compatível com as\nnecessidades\n\ndos\n\nestudantes,\n\nevitando\n\ntransferir\n\nàs\n\nfamílias\n\na\n\nresponsabilidade que pertence ao estado.\n6.​ Fortalecer a inclusão na UEPA. Garantir acessibilidade integral nos campi,\nprocessos seletivos acessíveis, tecnologias assistivas, intérpretes de Libras,\nmateriais adaptados e políticas de permanência para estudantes com\ndeficiência.\n7.​ Ampliar a presença das PcDs no serviço público estadual: Fiscalizar\nrigorosamente o cumprimento das cotas nos concursos, garantir provas\nacessíveis, adaptações razoáveis e condições adequadas de trabalho após a\nposse.\n8.​ Criar programa estadual de trabalho e renda para PcDs: Utilizar SINE,\nescolas técnicas, programas estaduais de qualificação e outras estruturas\npúblicas para formação profissional e encaminhamento ao emprego, com\nacompanhamento posterior da inclusão no trabalho.\n9.​ Tornar plenamente acessíveis os prédios estaduais: Realizar auditoria de\nacessibilidade em escolas, hospitais, delegacias, secretarias, equipamentos\nculturais e demais imóveis estaduais e estabelecer prazo para adequação.\n10.​Garantir acessibilidade no transporte intermunicipal: Fiscalizar ônibus,\nterminais, embarcações e serviços de transporte submetidos à competência\nestadual, garantindo embarque, desembarque e deslocamento seguro das"
+          },
+          {
+            "id": "pessoas-com-deficiencia",
+            "titulo": "pessoas com deficiência.",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "pessoas com deficiência.\n11.​Garantir acessibilidade no transporte fluvial: Considerando a realidade\namazônica, terminais hidroviários, embarcações e estruturas administradas\nou reguladas pelo Estado devem possuir condições adequadas para pessoas\ncom deficiência e mobilidade reduzida.\n12.​Garantir proteção contra violência e capacitismo: Capacitar policiais civis,\nmilitares, profissionais da saúde, educação e assistência social para\natendimento adequado e criar protocolos estaduais para identificação,\nregistro e encaminhamento de situações de violência contra PcDs.\n13.​Criar um Observatório Estadual dos Direitos das Pessoas com\nDeficiência: Produzir e publicar dados sobre educação, saúde, trabalho,\nrenda, violência, transporte, moradia e acesso aos serviços públicos,\ndiscriminados por município, tipo de deficiência, gênero, raça/cor e faixa\netária.\n14.​Fortalecer o Conselho Estadual dos Direitos da Pessoa com Deficiência:\nGarantir estrutura, autonomia, transparência e participação efetiva das\npessoas com deficiência e de suas organizações na fiscalização das políticas\nestaduais.\n15.​Garantir o princípio “Nada sobre nós sem nós”: Nenhuma política\nestadual destinada às pessoas com deficiência deve ser formulada sem sua\nparticipação direta. PcDs devem participar da elaboração do orçamento, dos\nplanos, das políticas e da avaliação dos serviços.\n\nMULHERES"
+          },
+          {
+            "id": "pela-igualdade-de-genero-e-pelo-fim-da-violencia-contra-as-mulheres",
+            "titulo": "Pela igualdade de gênero e pelo fim da violência contra as mulheres",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Pela igualdade de gênero e pelo fim da violência contra as mulheres\n\nDesde a tipificação da Lei do Feminicídio, em março de 2015, ao menos\n13.703 mulheres foram assassinadas só pelo fato de serem mulheres, segundo o\núltimo relatório do Fórum Brasileiro de Segurança Pública (FBSP) de 2026. Ainda\nsegundo o FBSP, 63 mulheres foram assassinadas em 2025 no Pará, nos\nposicionando como o oitavo estado brasileiro que mais teve casos de feminicídio no\nano passado. Além disso, entre os anos 2024 e 2025, os casos de violência contra\nmulheres subiram 76% no Pará. E mais: foram 123 vítimas de violência sexual, das\nquais 62,8% eram menores de 17 anos.\nOs municípios de Marabá e Parauapebas lideraram os casos de violência\ncontra mulheres em 2025 e Belém e Itaituba, os de feminicídios. Apenas no primeiro\ntrimestre, foram registrados 17 casos de feminicídios no Pará, números que podem\nestar subestimados em pelo menos 10 vezes mais do que os apresentados devido à\ngrande subnotificação desses casos. Trata-se, portanto, de uma experiência de vida\ncom medo e insegurança para qualquer mulher paraense.\nEm contrapartida, as políticas públicas de combate à violência contra a\nmulher no Pará ainda são insuficientes, a exemplo do baixo número de Delegacias\nEspecializadas em Atendimento às Mulheres (DEAMs) que não contempla nem 15%\ndos 144 municípios do Estado: em todo o Pará temos apenas 21 DEAMs, com\napenas 5 delas funcionando 24h por dia.\nÉ por isso que nosso programa de governo defende a construção de um\nEstado no qual as mulheres possam viver seguras dentro de casa e nas ruas. O\nGoverno tem a responsabilidade maior sobre a vida de seu povo, e assim cabe a ele\ngarantir justiça social, acolhimento e gerar oportunidades na promoção de uma vida\ndigna para as mais de 4 milhões de mulheres paraenses.\nA realidade das mulheres no nosso país demonstra que, mesmo trabalhando\nfora de casa, elas ainda são responsáveis por grande parte das tarefas domésticas,\ndos cuidados com os filhos e, muitas vezes, dos idosos. De acordo com os dados\ndivulgados por estudo da Organização Internacional do Trabalho (OIT), em parceria\ncom o Ministério do Desenvolvimento e Assistência Social, Família e Combate à\nFome (MDS), em 2025, as mulheres realizam 9,8 horas por semana de serviços"
+          },
+          {
+            "id": "domesticos-a-mais-que-os-homens-o-cenario-piora-gravemente-quando-se-tra",
+            "titulo": "domésticos a mais que os homens, o cenário piora gravemente quando se trata das",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "domésticos a mais que os homens, o cenário piora gravemente quando se trata das\nmulheres negras, que trabalham 22,4 horas a mais que os homens.\nConciliar os horários de trabalho com as demandas dos filhos e da casa\ntorna-se um grande desafio, principalmente, em um contexto cultural que poucos\nhomens dividem essas tarefas com suas companheiras, e, além disso, mais de 11\nmilhões de mães solo chefiam suas famílias, sem qualquer tipo de rede de apoio\n(IBGE).\nOs dados da Organização Internacional do Trabalho – OIT mostram que a\nparticipação feminina no trabalho informal supera a masculina em muitos dos países\nem desenvolvimento. Isso quer dizer que a força de trabalho feminina está nos\npostos de emprego com mais vulnerabilidade, a exemplo das faxineiras e diaristas.\nO Brasil é o país com a maior população de empregados domésticos do\nmundo, são sete milhões de pessoas, em sua maioria de mulheres, negras e de\nbaixa escolaridade, 35% sendo diaristas, sem contrato de trabalho, muitas vezes\nprivadas dos seus direitos trabalhistas, como férias, 13º salário e pagamento de\nhora extra, situação essa que só se agravou nos últimos anos, é o que afirma os\ndados do IBGE. As mulheres também estão na linha de frente na proteção à saúde.\nNo Brasil, cerca de 85% das enfermeiras são mulheres. Além das jornadas\nexaustivas, elas ainda são obrigadas a trabalhar com a escassez de equipamentos\nde proteção, sem os quais acabam por colocar em risco à própria saúde e a de seus\nfamiliares. Por isso, precisamos ter um governo do estado que acolha todas as\nmulheres, das jovens às idosas, as mulheres portadoras de deficiência, as mulheres\nnegras, as pobres e as mulheres trans.\nVamos dialogar com essas mulheres, entender suas necessidades, atuando\nem conjunto com outras secretarias (saúde, educação, habitação, segurança\npública) para que os nossos objetivos comuns sejam alcançados, ou seja, a\npromoção da igualdade entre mulheres e homens. Por isso, a Unidade Popular\nconclama as mulheres a lutarem pelos seus direitos, por igualdade e contra essa\nepidemia de feminicídios e outras formas de violência.\n\nPropostas:"
+          },
+          {
+            "id": "1-ampliar-o-numero-de-deams-no-estado-e-garantir-que-todas-as-delegacias",
+            "titulo": "1)​ Ampliar o número de DEAMs no Estado e garantir que todas as delegacias",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "1)​ Ampliar o número de DEAMs no Estado e garantir que todas as delegacias\nfuncionem 24 horas com todos os serviços necessários para um atendimento\nhumanizado e qualitativo, qualificando os profissionais da área de segurança\npública para realizar os atendimentos de forma humanizada.\n2)​ Fortalecer a presença das mulheres nas diversas etapas dos processos\nde democracia participativa. Nossa gestão vai ser paritária nas Pastas do\nExecutivo; cargos de direção em secretarias, autarquias entre outros.\nPromovendo a igualdade de direitos e a promoção de mulheres nas decisões\npolíticas do Pará.\n3)​ Ampliar e garantir o acesso à justiça e à assistência jurídica gratuita às\nmulheres em situação de violência e suas demandas, também com os filhos,\ncom a ampliação da Assistência Jurídica em parceria com as universidades e\nescritórios modelos de advocacia.\n4)​ Gerar renda. Realizar parcerias com escolas profissionalizantes para\noferecer cursos e oficinas gratuitos de qualificação profissional para mulheres\nvítimas de violência e em situação de vulnerabilidade social.\n5)​ Priorizar a participação feminina nas ações do QUALIFICA PARÁ. Criar\nmais cursos e vagas para mulheres em situação de vulnerabilidade social,\npriorizando as que possuem algum tipo de deficiência.\n6)​ Criar o Programa de Brigadistas de Proteção à Criança e ao\nAdolescente. Instituir equipes multiprofissionais que farão ações recorrentes\nnos bairros populares de variados municípios e comunidades tradicionais\npara impulsionar a conscientização acerca do enfrentamento à exploração\nsexual de crianças e adolescentes.\n7)​ Estabelecer a rede institucional de proteção à infância e à adolescência.\nArticular várias secretarias entre si, conjuntamente com outros órgãos\ncompetentes, como Conselho Tutelar, Ordem dos Advogados do Brasil e as\ndefensorias públicas, para enfrentar à exploração sexual de crianças e\nadolescentes.\n8)​ Garantir a proteção do mercado de trabalho para a mulher, mediante\nincentivos específicos nos termos da lei; bem como proibir a diferença de\nsalários, de exercício de funções e de critério de admissão por motivo de\ngênero, maternidade, idade, cor, orientação sexual ou estado civil."
+          },
+          {
+            "id": "9-desenvolver-amplas-campanhas-publicitarias-e-institucionais-junto-a",
+            "titulo": "9)​ Desenvolver amplas campanhas publicitárias e institucionais junto à",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "9)​ Desenvolver amplas campanhas publicitárias e institucionais junto à\nsociedade para divulgação das leis de proteção à mulher, especialmente dos\ndireitos das trabalhadoras. Dessa maneira, desenvolver ações e programas\npermanentes de combate à discriminação de mulheres negras, trans,\nindígenas, quilombolas, ciganas, imigrantes e de pessoas com deficiência no\nmercado de trabalho.\n10)​Incentivar o combate ao trabalho análogo à escravidão com ênfase nas\nmulheres, especialmente as negras.\n11)​Estabelecer Curso de Formação de Igualdade de Gênero (CUFIG). Todos\nos servidores públicos estaduais ao tomarem posse\n\nem suas funções,\n\nindependentemente dos cargos, deverão, obrigatoriamente, realizar esse\ncurso com no mínimo, 24 horas de aulas, antes da lotação definitiva.\n12)​Sanções a empresas que não adotarem ao CUFIG. Definir que, para\nutilização de benefícios fiscais, acesso a programas sociais, acesso a crédito\nsubsidiado, utilização de espaços públicos, aprovação em licitações, as\nempresas com mais de 50 funcionários deverão garantir treinamento mínimo\nanual de 24 horas de CUFIG para todo o seu quadro de funcionários.\nAssegurar que toda e qualquer empresa conveniada ou contratada pelos\nórgãos públicos deverá apresentar, para fins de continuidade dos contratos\nfirmados, documentos comprobatórios de CUFIG realizados por entidade\npública ou privada de no mínimo, 24 horas anuais.\n13)​Criar o Selo de Igualdade de Gênero nos órgãos públicos e privados com\nexigências formais e ações concretas que avancem na luta contra o\nmachismo e o patriarcado.\n14)​Construir o Congresso Estadual pelos Direitos e Igualdade de Gênero\nIncluir nas políticas estaduais de combate à violência, junto ao Conselho\nEstadual de Mulheres, a criação de um Congresso com participação dos\nmovimentos sociais com a finalidade de criar o Estatuto da Igualdade em\nforma de carta orientadora para mobilização da sociedade.\n15)​Ceder espaços públicos em desuso para Centros de Formação e\nAcolhimento às mulheres como espaço livre, organizado pelos movimentos\nsociais de luta das mulheres."
+          },
+          {
+            "id": "16-ampliar-as-casas-abrigo-e-casa-de-passagem-para-vitimas-de-violencia",
+            "titulo": "16)​Ampliar as Casas Abrigo e Casa de Passagem para vítimas de violência",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "16)​Ampliar as Casas Abrigo e Casa de Passagem para vítimas de violência\ndoméstica, desburocratizando o acesso. Se necessário, realizar convênios\ncom entidades sem fins lucrativos.\n17)​Garantir\n\nassistência\n\nfinanceira\n\npara\n\nmulheres\n\nem\n\nsituação\n\nde\n\nvulnerabilidade, vítimas de violência doméstica, de até 12 meses.\n18)​Estabelecer Comissões Internas de Combate à Violência de Gênero em\ntodas as instituições, públicas e privadas, com eleição e garantia de\nestabilidade de no mínimo 2 anos para as eleitas.\n19)​Construir lavanderias e restaurantes públicos, com prioridade às regiões\nmais vulneráveis do estado, a fim de que mulheres e meninas possam se\ndesvencilhar do trabalho de cuidados com as suas famílias.\n20)​Exoneração\n\nde\n\nservidores\n\npúblicos\n\nque\n\nforem,\n\napós\n\nadministrativo, condenados por violências a meninas e mulheres.\n\nprocesso"
+          },
+          {
+            "id": "lgbtia",
+            "titulo": "LGBTIA+",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "LGBTIA+\nPela diversidade sexual e de gênero, contra a violência!\nO Pará é o 4º Estado mais perigoso para a população LGBTIA+ no Brasil, e\nquase 2% da população paraense se autodeclara da população LGBTIA+,\nrevelando que grande parte dos residentes paraenses da comunidade são afetados\ne de acordo com pesquisas sobre a empregabilidade de pessoas trans, quase 70%\nda população trans já sofreram algum tipo de violência no trabalho, além de quase\n60% já ter perdido oportunidades de trabalho por conta da sua identidade de\ngênero.\nAdemais, o relatório “Trabalho, Emprego e Renda Trans” apresenta dados\nrelevantes para o entendimento da desigualdade por identidade de gênero como um\nproblema restrito ao reconhecimento, revelando que cerca de 40% da população\ntrans paraense possui renda familiar mensal inferior a R$ 1.200,00, inferior a um\nsalário mínimo, revelando a precariedade econômica e material que parte da\npopulação LGBTIA+ vive no Estado.\nAlém disso, em 10 anos (2013-2023), ocorreram quase 400 crimes violentos\nenvolvendo motivações LGBTfóbicas no Pará, em sua maioria, direcionado a\npopulação LGBTIA+ negra e pobre do Estado, e esse problema não se restringe ao\nPará, pois o Brasil vem há consecutivos anos sendo um exemplo negativo sobre a\nviolência contra essa parcela da população.\nDados apontam a questão estrutural da violência contra LGBTIA+ no Brasil,\nonde em uma década, os casos de violência acumulados contra a comunidade\ntiveram um crescimento de 212%, e a vitimização maior se dá por pessoas jovens,\nentre 15-29 anos, principalmente as que não são brancas, e esses dados revelam\nque grande parte das violências ocorrem dentro do ambiente familiar ou escolar,\nprecarizando também as relações educacionais e a vida cotidiana da população em\nmuitos aspectos, tais questões foram reveladas pela pesquisa do Instituto de\nPesquisa em Economia Aplicada (IPEA) juntamente com o Fórum Brasileiro de\nSegurança Pública (FBSP).\nNesse sentido, é necessário compreender a questão da violência,\ninsegurança e precarizações que a população LGBTIA+ é submetida como um\nproblema histórico do capitalismo, inclusive, ligado a colonização, que desde o"
+          },
+          {
+            "id": "periodo-colonial-criminaliza-reprime-e-violenta-as-populacoes-dissidente",
+            "titulo": "período colonial criminaliza, reprime e violenta as populações dissidentes da",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "período colonial criminaliza, reprime e violenta as populações dissidentes da\ncisheteronormativade.\nExemplos históricos como o de Tibyra Tupinambá do Maranhão, assassinado\npela colonização por sua questão de gênero e sexualidade, ou o conhecido caso do\nCasamento de Inacha, ocorrido em 1967 em Cametá, onde ocorreu um casamento\nhomoafetivo, e logo após as autoridades locais terem ciência do ocorrido,\nprenderam, violentaram e sumiram com o casal.\nDestarte, para se combater a LGBTI+fobia no Pará, é necessário romper com\nas ideologias que sustentam esses preconceitos, ou seja, romper com o\npensamento colonial, elitista e racista que sustenta essa lógica, e economicamente,\na lógica do capital, que prioriza certos corpos adequados à norma em detrimento\ndos corpos dissidentes, para aumentar a exploração do trabalho e manter a classe\ntrabalhadora com baixos salários e trabalhos cada vez mais precarizada, afetando\nsobretudo a população LGBTIA+.\nPortanto, nosso programa para o povo LGBTIA+ no Pará é pensado a partir\ndas lutas da comunidade em prol de sua vida, saúde, segurança, empregabilidade e\neducação, para combater as desigualdades e preconceitos estruturais e construir\njunto ao movimento LGBTIA e suas organizações, formas práticas de superar o\nquadro de violência e descriminação que ocorrem no Estado.\nPropostas:\n1)​ Instituir políticas transversais com orçamento próprio voltadas para a\npopulação LGBTIA+, com metas, indicadores e atuação integrada entre\nsaúde, educação, segurança, assistência social, trabalho e direitos humanos,\npara garantir a atuação multifatorial das secretarias do Estado no combate à\nLGBTfobia.\n2)​ Criação de Centros Estaduais de Referência LGBTIA+, que sejam\nespaços voltados para o acolhimento psicossocial, habitacional, serviços de\nsaúde, orientações jurídicas e direcionamentos para o serviço público,\ninstituindo pelo menos um Centro de Referência por regiões geográficas\nimediatas e intermediárias do Estado.\n3)​ Criação de programa de apoio à pessoas LGBTIA+ em situação de\nvulnerabilidade social, com espaços de acolhimento temporário à pessoas\nexpulsas de casa, vítimas de violência ou em situação de vulnerabilidade"
+          },
+          {
+            "id": "socio-economica-articulando-com-politicas-de-empregabilidade-formacao",
+            "titulo": "sócio-econômica, articulando com políticas de empregabilidade, formação",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "sócio-econômica, articulando com políticas de empregabilidade, formação\nprofissional e moradia específicas para as pessoas da comunidade.\n4)​ Institucionalizar políticas específicas voltadas para a população trans,\ntravesti e não-binária paraense, priorizando acesso à saúde, emprego,\nmoradia, assistência social e combate a violência, incluindo cotas e outras\nações afirmativas para pessoas trans nos concursos públicos do Estado e\nnas Universidades Estaduais.\n5)​ Criar programas educacionais nas escolas, universidades, espaços de\nsaúde e outros setores públicos estatais, para a garantia de formações\npedagógicas de servidores públicos nas escolas, universidades, hospitais e\ndemais serviços públicos, com a finalidade de combater a LGBTfobia\ninstitucional nestes espaços.\n6)​ Articular com a Secretaria de Estado de Assistência Social, Trabalho,\nEmprego e Renda, políticas específicas de empregabilidade LGBTIA+,\nvoltadas para a capacitação profissional e técnica, garantia de primeiro\nemprego, políticas de desenvolvimento econômico para combater a\ndiscriminação no mercado de trabalho, com prioridade para travestis,\npessoas trans e LGBTIA+ em situação de vulnerabilidade.\n7)​ Garantir respeito ao nome social em todo o serviço público estadual,\natravés de desburocratização do processo de retificação documental nos\ncartórios e instituições civis responsáveis. Assegurar que escolas, hospitais,\ndelegacias, órgãos administrativos e demais serviços respeitem identidade de\ngênero e nome social, com responsabilização administrativa em casos de\ndiscriminação.\n8)​ Implementar integralmente a política estadual de saúde LGBT no SUS,\nregionalizando e ampliando o atendimento à população LGBT, com atenção\nespecializada à população trans para além da região metropolitana de Belém,\nutilizando\n\nhospitais\n\nregionais\n\ne\n\npoliclínicas\n\nestaduais.\n\nGarantindo\n\natendimento humanizado e livre de discriminação, formação permanente dos\ntrabalhadores da saúde e fortalecimento da atenção à saúde mental, com\nacompanhamento psicológico e psiquiátrico, especialmente para jovens\nexpulsos de casa e vítimas de violência.\n9)​ Garantir uma educação pública estadual livre de LGBTfobia, com\nprotocolos de prevenção e enfrentamento à discriminação e à violência,"
+          },
+          {
+            "id": "acolhimento-e-acompanhamento-pedagogico-e-psicossocial-de-estudantes",
+            "titulo": "acolhimento e acompanhamento pedagógico e psicossocial de estudantes",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "acolhimento e acompanhamento pedagógico e psicossocial de estudantes\nLGBT, especialmente em situações de vulnerabilidade e evasão escolar, além\nde formação permanente de professores, gestores e equipes pedagógicas\npara promoção dos direitos humanos e da permanência estudantil.\n10)​Criar protocolo estadual de enfrentamento aos crimes LGBTfóbicos,\npadronizando o registro, a investigação e o atendimento às vítimas pelas\nPolícias Civil, com equipes ou unidades especializadas da Polícia Civil e\ncomunitária, além de referências regionais para garantir atendimento\nqualificado em todo o estado.\n11)​Fortalecer o enfrentamento institucional à LGBTfobia, com produção e\npublicação regular de dados sobre a violência LGBTfóbica, formação\nobrigatória das forças estaduais de segurança em direitos da população\nLGBT e combate à discriminação, além de canais seguros de denúncia e\nmecanismos de apuração e responsabilização de servidores que pratiquem\nLGBTfobia.\n12)​Garantir\n\natenção\n\nà\n\nsaúde\n\ndas\n\nmulheres\n\nlésbicas,\n\nbissexuais,\n\nincorporando as demandas dessa parcela das mulheres aos serviços\nespecializados de saúde e enfrentamento à violência, garantindo atendimento\nadequado e combate à invisibilidade dessas populações.\n13)​ Fortalecer o Conselho Estadual da Diversidade Sexual e de Gênero.\nGarantir estrutura, orçamento e participação efetiva da sociedade civil, a\npartir de mobilizações de base e momentos de escuta coletiva com os\ncoletivos, organizações e instituições civis que tratam da pauta LGBTIA+,\nfortalecendo seu papel de fiscalização e formulação das políticas estaduais.\n14)​ Criar a Ouvidoria Estadual da População LGBTIA+, com estrutura própria\ne presença regionalizada, destinada a receber denúncias de LGBTfobia e\nviolações de direitos, orientar e encaminhar vítimas à rede pública de\nproteção, acompanhar a resposta dos órgãos responsáveis e fiscalizar a\nqualidade dos serviços públicos prestados à população LGBTIA+. A\nOuvidoria deverá produzir relatórios periódicos sobre as violações recebidas,\nidentificar padrões de discriminação institucional, recomendar medidas\ncorretivas aos órgãos estaduais e promover a participação da sociedade civil\nna formulação e fiscalização das políticas públicas LGBTIA+."
+          },
+          {
+            "id": "meio-ambiente",
+            "titulo": "MEIO AMBIENTE",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "MEIO AMBIENTE\nPreservar a natureza é preservar a vida! Defender o meio ambiente é enfrentar\no modelo de exploração capitalista\n​\n\nO Pará está no centro de uma das maiores contradições do nosso tempo.\n\nSomos parte fundamental da Amazônia, possuímos uma extraordinária diversidade\nde florestas, rios, espécies e povos tradicionais e, ao mesmo tempo, convivemos\nhistoricamente com desmatamento, queimadas, mineração, garimpo, grilagem,\ncontaminação dos rios, conflitos fundiários e expansão de grandes projetos\neconômicos sobre os territórios.\n​\n\nHá diversos anos, o Pará vem sendo um dos Estados mais violentos contra\n\nas populações camponesas, indígenas, quilombolas, ribeirinhas e etc. e por isso,\nem 2025 tornou-se o 2º Estado no ranking nacional de Conflitos no Campo, de\nacordo com a Comissão Pastoral da Terra (CPT). Ademais, vários desses conflitos\nsão, para além dos conflitos de terra, também conflitos por água e recursos naturais,\nque ocupam uma grande porcentagem nessa estatística.\n​\n\nA questão ambiental no Pará não pode ser separada da questão social. A\n\ndestruição da natureza não acontece porque toda a sociedade utiliza igualmente os\nrecursos naturais. Ela está profundamente relacionada à forma como a terra, os\nminérios, a floresta, a água e a energia são apropriados economicamente. Enquanto\ngrandes empreendimentos retiram de forma violenta e predatória enormes riquezas\ndo território paraense, comunidades inteiras ainda convivem com pobreza, ausência\nde saneamento, dificuldade de acesso à água potável e insegurança.\n​\n\nAdemais, os números mostram a dimensão histórica do problema. Segundo o\n\nMapBiomas Alerta, entre 2019 e 2024 o Pará acumulou aproximadamente 1,98\nmilhão de hectares de vegetação nativa desmatada, a maior área entre todos os\nestados brasileiros no período. São quase 20 mil km², dimensão suficiente para\ndemonstrar que não estamos diante de ocorrências isoladas, mas de uma questão\nestrutural sobre o modelo de ocupação e exploração econômica do território\nparaense.\n​\n\nOutrossim, as queimadas tornam a situação ainda mais grave. Entre 1985 e\n\n2023, Pará, Mato Grosso e Maranhão concentraram juntos 46% de toda a área\nqueimada no Brasil. Em 2024, a Amazônia enfrentou uma situação excepcional: o"
+          },
+          {
+            "id": "bioma-registrou-a-maior-area-queimada-de-sua-serie-historica-15-8-milhoe",
+            "titulo": "bioma registrou a maior área queimada de sua série histórica, 15,8 milhões de",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "bioma registrou a maior área queimada de sua série histórica, 15,8 milhões de\nhectares.\n​\n\nDurante o último governo do Pará, Helder Barbalho vendeu sua imagem\n\ncomo defensor do meio ambiente, sobretudo, por conta do Pará sediar a COP-30,\nporém, a prática política de sua gestão demonstrou o contrário, pois realizou obras\ncomo a Avenida Liberdade em Belém, que cortou áreas de proteção ambiental,\ngerando desmatamento e perda da biodiversidade, poluição de bacias hidrográficas\nalém de prejudicar comunidades quilombolas e ribeirinhas que foram atingidas pela\nobra.\n​\n\nJader Barbalho, Senador do MDB e pai do ex-governador Helder Barbalho,\n\nlevou ao senado federal a demanda de redução em 40% da Floresta Nacional de\nJamanxim, transformando essa extensão em uma Área de Proteção Ambiental\n(APA), na tentativa de dificultar multas e amplia as possibilidades de uso e de\nexploração econômica da área, que irá intensificar as pressões relacionadas ao\ndesmatamento, além de grilagem das terras, à exploração ilegal de madeira e à\nperda de cobertura florestal, impactando a fauna.\n​\n\nAlém disso, a exploração mineral corresponde a quase 75% da pauta de\n\nexportação do estado do Pará, tornando evidente a influência do poder\neconômico-político da mineração sobre as decisões do governo, e vimos no último\nperíodo que esse mesmo governo nada fez para acabar com os problemas\nambientais de vários municípios paraenses, tais como os de Barcarena,\nParauapebas, Canaã dos Carajás, Marabá, dentre vários outros que sofrem\ndiretamente com os impactos dos grandes projetos de mineração.\n​\n\nAlém da mineração, todos os grandes projetos de exploração que chegam no\n\nPará — tais como da soja, dendê, agropecuária, garimpo, dentre outros — tornam\nos territórios que as comunidades tradicionais vivem em uma grande zona de\nsacrifício, pois os territórios indígenas, quilombolas, camponeses, ribeirinhos são os\nmais afetados por esses grandes investimentos econômicos do capital. O\nagro-hidro-mineronegócio é um grande projeto de morte e racismo ambiental às\ncomunidades do Pará.\n​\n\nA contradição aparece também na aposta do governo Helder no mercado de\n\ncarbono. Em 2024, o Pará anunciou uma operação vinculada à Coalizão LEAF que\npoderia alcançar cerca de US$180 milhões em créditos pela redução do\ndesmatamento. Entretanto, 38 organizações indígenas e comunitárias questionaram"
+          },
+          {
+            "id": "o-processo-denunciando-a-ausencia-de-consulta-adequada-o-que-levou-o-est",
+            "titulo": "o processo, denunciando a ausência de consulta adequada, o que levou o Estado a",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "o processo, denunciando a ausência de consulta adequada, o que levou o Estado a\nanunciar uma etapa mais ampla de consultas antes da conclusão da operação.\nPara uma perspectiva socialista, somos contrários à transformação da\nfloresta, do carbono, da biodiversidade e dos serviços ambientais em mercadorias\nfinanceiras. A preservação da Amazônia não pode depender da compra de créditos\npor grandes empresas que seguem poluindo em outras partes do mundo, mas da\ngarantia das condições materiais para que os povos que historicamente protegem a\nfloresta possam permanecer em seus territórios, com direitos assegurados.\nAdemais, a questão da natureza no Pará não pode ser encarada como um\nmero debate sobre “os recursos naturais”, pois para os povos amazônicos, os rios,\nos solos, a floresta e toda sua biodiversidade não é apenas um recurso, mas sim,\nfonte de vida, cultura, alimentação, ou mesmo da sua perspectiva de mundo. O\nsistema capitalista tenta dessensibilizar a população e a afastá-la da natureza, pois\nsua economia política pautada na exploração da natureza para gerar lucros para a\nburguesia.\nOs povos indígenas e quilombolas possuem outra relação com a natureza,\nsendo exemplos de bem-viver e de uma relação harmônica com a natureza, pois\nconseguem conviver em consonância com ela, sem tentar explorar, mas sim,\nentendendo-a como parte fundamental de sua existência, e demonstram para toda a\nsociedade que é possível construir uma outra relação com o meio ambiente.\nFalar sobre a natureza é falar sobre as sociedades que dela vivem, e nesse\ncontexto, os camponeses e agricultores familiares cumprem um papel central no\ndebate ambiental. A agricultura familiar produz a maior parte dos grãos que chegam\nàs mesas dos paraenses, mesmo que o agronegócio se venda como a grande\nsalvação do país.\nO pequeno agricultor que produz alimentos para sobreviver não pode ser\ncolocado no mesmo nível dos grandes proprietários e grupos econômicos\nresponsáveis pela concentração de terras e pela expansão da fronteira\nagropecuária, os grandes latifundiários e empresários do agronegócio que são os\nreais culpados dos problemas ambientais.\nPor isso, defendemos a agricultura familiar, seja ela urbana ou campesina,\ncomo estratégia de enfrentamento à fome e como forma de enfrentamento às\nmudanças climáticas, tendo em vista que a crise climática também é fortalecida\npelos grandes projetos de exploração econômica."
+          },
+          {
+            "id": "especificamente-nas-questoes-de-mudanca-climatica-entende-se-que-ela-ira",
+            "titulo": "Especificamente nas questões de mudança climática, entende-se que ela irá",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Especificamente nas questões de mudança climática, entende-se que ela irá\nafetar de forma gravíssima o Pará. Secas extremas, enchentes, ondas de calor,\nincêndios florestais e alterações no regime dos rios atingem principalmente quem\npossui menos recursos para se proteger. A crise climática possui classe social:\nquem possui dinheiro compra refrigeração, água, moradia adequada e proteção;\ntrabalhadores pobres, povos tradicionais e moradores das periferias ficam mais\nexpostos aos desastres climáticos.\nEnquanto os grandes empresários e grandes donos de terra acumulam\nriquezas e destroem a natureza, tentando se tornarem os donos da natureza, muitos\npovos lutam para garantir que ela seja acessada, e a partir das terras, possuem\noutra limitação. É necessário soberania e autonomia para que o povo do Pará possa\ndecidir acerca da natureza.\nNossa natureza e meio ambiente não estão à venda. Nem a floresta, nem os\nrios, nem os minérios, nem o carbono podem ser tratados simplesmente como\nmercadorias. Um governo socialista deve colocar a proteção ambiental sob controle\npopular, enfrentar os interesses econômicos responsáveis pela destruição e garantir\nque as riquezas do Pará sejam utilizadas para melhorar a vida daqueles que vivem\ne trabalham neste território.\nPropostas:\n1)​ Desmatamento zero e combate aos crimes ambientais. Estabelecer o\ndesmatamento\n\nilegal\n\nzero\n\ncomo\n\nobjetivo\n\nestratégico,\n\na\n\npartir\n\ndo\n\nfortalecimento da fiscalização permanente contra desmatamento, queimadas\ncriminosas, grilagem, tráfico de madeira e demais crimes ambientais, com\nprioridade\n\npara\n\na\n\nresponsabilização\n\nde\n\ngrandes\n\ndesmatadores\n\ne\n\nempreendimentos econômicos.\n2)​ Fortalecer os órgãos ambientais e a fiscalização pública. Realizar\nconcursos e ampliar equipes, infraestrutura e presença regional da SEMAS,\nITERPA e demais órgãos ambientais, garantindo capacidade técnica e\nautonomia para fiscalização, licenciamento e proteção da natureza em sua\nforma integral.\n3)​ Licenciamento ambiental sob controle público e popular. Garantir\nautonomia técnica, transparência e participação social nos processos de\nlicenciamento,\n\nimpedindo\n\nflexibilizações\n\npara\n\nfavorecer\n\ngrandes"
+          },
+          {
+            "id": "empreendimentos-e-assegurando-consulta-livre-previa-e-informada-aos",
+            "titulo": "empreendimentos e assegurando consulta livre, prévia e informada aos",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "empreendimentos e assegurando consulta livre, prévia e informada aos\npovos indígenas, quilombolas e comunidades tradicionais afetadas.\n4)​ Responsabilizar os grandes agentes da destruição ambiental. Fortalecer\nmultas, embargos, compensações e mecanismos de recuperação integral\ndos danos causados por grandes empresas e proprietários, condicionando\nincentivos fiscais, financiamentos e benefícios estaduais ao cumprimento das\nobrigações ambientais.\n5)​ Combater a grilagem e democratizar o acesso à terra. Integrar a política\nambiental e fundiária para identificar fraudes, sobreposições e ocupações\nilegais, impedir a apropriação privada de terras públicas e priorizar a\nregularização de territórios coletivos, comunidades tradicionais e agricultura\nfamiliar.\n6)​ Recuperar a floresta e gerar trabalho e renda. Criar um grande programa\nestadual de recuperação de áreas degradadas, nascentes, matas ciliares e\nÁreas de Preservação Permanente, com espécies nativas e geração de\nempregos públicos, cooperativos e comunitários na produção de mudas,\nreflorestamento e fortalecimento de agroflorestas. Cuidar da natureza\ntambém é um processo de geração de renda para o povo.\n7)​ Fortalecer a agricultura familiar e a agroecologia. Ampliar assistência\ntécnica, crédito, infraestrutura e compras públicas para agricultores\nfamiliares, sistemas agroflorestais e produção agroecológica, diferenciando\npequenos produtores dos grandes agentes responsáveis pela devastação em\nescala empresarial.\n8)​ Proteger rios, nascentes e corpos d’água. A partir da criação de uma\npolítica estadual de proteção das águas, com monitoramento permanente da\nqualidade dos rios, combate à contaminação por mineração, indústria e\nesgoto, recuperação de nascentes e igarapés e defesa do caráter público dos\nrecursos hídricos.\n9)​ Prevenir e combater queimadas e incêndios florestais. Criar brigadas\nestaduais permanentes e brigadas comunitárias remuneradas e organizadas\npelas comunidades, com a finalidade de ampliar monitoramento por satélite,\nequipamentos e bases operacionais e fortalecer a prevenção e o combate\naos incêndios nas regiões mais vulneráveis."
+          },
+          {
+            "id": "10-preparar-o-para-para-as-mudancas-climaticas-elaborar-planos-regionais",
+            "titulo": "10)​Preparar o Pará para as mudanças climáticas. Elaborar planos regionais",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "10)​Preparar o Pará para as mudanças climáticas. Elaborar planos regionais\nde adaptação para secas, enchentes, ondas de calor, incêndios e outros\neventos extremos, fortalecendo a Defesa Civil, sistemas de alerta e\ninfraestrutura urbana, com prioridade para periferias, populações pobres e\ncomunidades tradicionais.\n11)​Proteger e ampliar as áreas de conservação. Garantindo o orçamento,\nservidores, infraestrutura, planos de manejo e fiscalização para as unidades\nde conservação estaduais, visando à ampliação de áreas protegidas quando\nnecessário à conservação da biodiversidade, das águas e dos modos de vida\ntradicionais.\n12)​Rejeitar a mercantilização da natureza e fortalecer quem preserva.\nRomper com a centralidade dos mercados de carbono e da financeirização\nda natureza, impedindo que qualquer empresa poluidora ou devastadora\npossa receber investimentos estatais no Pará, garantindo a transparência e\ncontrole público sobre mecanismos existentes e destinando recursos\ndiretamente a povos indígenas, quilombolas, ribeirinhos, extrativistas,\nagricultores familiares e demais comunidades que preservam a floresta.\n13)​Construir uma transição ecológica com empregos e ciência pública.\nEstabelecendo uma política estadual de transição ecológica baseada em\ninvestimento público em agroecologia, recuperação ambiental, saneamento,\nreciclagem, tecnologias ambientais e economia solidária, fortalecendo a\nUEPA, a pesquisa científica amazônica e as cooperativas de catadores.\n14)​Garantir participação popular e transparência ambiental. Democratizar a\npolítica ambiental por meio da divulgação acessível de dados sobre licenças,\ndesmatamento, multas, queimadas e qualidade da água; fortalecer o\nConselho Estadual de Meio Ambiente; e criar mecanismos de auditoria e\nacompanhamento popular dos grandes empreendimentos e das políticas\nambientais.\n15)​ A natureza é um sujeito de direitos. Garantir para as terras, águas e\nflorestas amazônicas os direitos à vida com saúde, manutenção, abundância\ne capacidade de reprodução de seus ciclos. Fortalecimento entre a relação\ndos órgãos públicos com os povos tradicionais amazônicos para a garantia e\nfiscalização integral dos direitos da natureza e suas aplicações."
+          },
+          {
+            "id": "16-pleitear-projetos-contrarios-a-utilizacao-de-fogos-de-artificio-e-art",
+            "titulo": "16)​Pleitear projetos contrários à utilização de fogos de artifício e artefatos",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "16)​Pleitear projetos contrários à utilização de fogos de artifício e artefatos\npirotécnicos com efeitos sonoros ruidosos, como estouros e estampidos,\nvalendo-se da aplicação de multas, haja vista a constatada grave perturbação\naos animais, enfermos, idosos e outros.\n17)​Promover\n\na\n\ncriação,\n\nmanutenção\n\ne\n\nproteção de Unidades de\n\nConservação, funcionando como relevante refúgio da vida silvestre,\npreservação da biodiversidade e regulação do clima.\n18)​ Impulsionar a criação e manutenção de hortas comunitárias, baseadas\nem tecnologia agroecológica, nos espaços urbanos ociosos, inclusive com a\ncessão de terrenos públicos, além de incentivar hortas domiciliares, incluindo\nbenefícios fiscais, e a criação de cinturões verdes, na busca de promover a\nsoberania alimentar da cidade.\n19)​Propor leis restritivas ao cultivo de transgênicos e à utilização de\nagrotóxicos, evitando expor a população ao consumo de alimentos não\ncomprovadamente seguros e que representam ameaças à biodiversidade e\nao meio ambiente.\n20)​Punições severas a todos os agentes de poluição e destruição da\nnatureza. Empresas e projetos que causarem impacto ambiental significativo\npara a natureza deverão financiar políticas de reflorestamento, manejo\necológico, empregabilidade e infraestrutura nas localidades afetadas por suas\nações."
+          },
+          {
+            "id": "etnico-racial",
+            "titulo": "ÉTNICO-RACIAL",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "ÉTNICO-RACIAL\nLutar contra o racismo e por igualdade racial é lutar contra o capitalismo\nO racismo no Brasil está enraizado nas estruturas de poder, incluindo no\nEstado. Nosso passado de escravidão deixou várias marcas em nossa sociedade,\nfazendo com que pessoas racializadas tenham menos acesso à educação, à saúde,\nà moradia, etc.. Uma política de gestão voltada para o povo deve ter consciência\ndos atrasos que existem, avançar em políticas de promoção de igualdade e\ncombater os crimes e comportamentos ligados à discriminação racial.\nNo Pará, segundo a Secretaria de Segurança Pública, foram registrados 611\ncasos de injúria racial e racismo em 2025, um relativo crescimento com relação ao\nano anterior, que registrou 583 casos. A tendência é que esse número seja ainda\nmaior em 2026, que até junho já registrava 370 novas ocorrências do tipo. Essa\ncrescente demonstra duas questões: a primeira é que não podemos falar de\nracismo como algo do passado, ele está associado a práticas nocivas cotidianas e\nprecisa ter políticas mais eficazes; a segunda é que não está dado que o número de\nregistro de ocorrências traduz a realidade das ações de cunho racista, esta podendo\nser muito maior, já que, para esse tipo de crime, existe um histórico grande de\nsubnotificação ou de mudança na tipificação penal no registro da ocorrência.\nQuando falamos em racismo, não estamos restringindo o debate à população\nnegra. É preciso entender que os povos indígenas e comunidades tradicionais\ntambém sofrem com esta opressão; sendo marginalizados e tendo acesso restrito a\npolíticas sociais e oportunidades. Estas restrições se dão devido não a uma política\nestruturada para cercear direitos dessas parcelas, mas justamente pela falta de\npolítica para incluí-las, desconsiderando a marginalização histórica que tornou\nessas populações mais empobrecidas.\nHoje, a promoção de igualdade racial está sob a responsabilidade da\nSecretaria de Igualdade Racial e Direitos Humanos (SEIRDH), juntamente com o\nConselho Estadual de Política de Promoção de Igualdade Racial (CONEPPIR).\nEstes órgãos, implementam o Plano de Promoção de Igualdade Racial do Estado,\nque infelizmente vem sendo pouco priorizado e não constrói políticas claras\nabordando a temática. Além disso, o CONEPPIRD é um órgão de indicados do\npoder executivo estadual, o que não democratiza a participação de entidades da"
+          },
+          {
+            "id": "sociedade-civil-ligadas-ao-combate-a-opressao-racial-precisamos-de-um",
+            "titulo": "sociedade civil ligadas ao combate à opressão racial. Precisamos de um",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "sociedade civil ligadas ao combate à opressão racial. Precisamos de um\nCONEPPIRD com membros eleitos pelo povo.\nCerca de 69% da população paraense, no último censo etnico-racial do IBGE\nem 2022, declarou-se parda, a maior porcentagem de pardos em um estado\nBrasileiro. Isso demonstra uma grande racialização e miscigenação do nosso povo,\no que gera uma urgência ainda maior na promoção de políticas de igualdade racial.\nPara além disso, o Pará possui a 4ª maior população quilombola do Brasil (135.603\npessoas), com destaque para os municípios de Abaetetuba (14.526 pessoas) e\nBaião (12.857 pessoas). A população indígena também precisa ser destacada.\nHoje, em nosso estado, 80.908 indígenas resistem, divididos em 222 grupos, povos\nou etnias e falando cerca de 126 línguas.\nNossa responsabilidade é construir um programa que destaque não somente\na opressão que esses povos e comunidades vivem hoje em nosso estado, mas de\norganizar eixos e estruturas governamentais que apresentem o caráter de\nresistência e que promovam políticas de igualdade sérias, coerentes e radicais, a\nfim de auxiliar no processo da construção de uma sociedade que enfim se veja livre\ndessas opressões e na qual todos tenham acesso aos direitos que para muitos foi\nnegado por anos.\nPropostas:\n1.​ Fortalecer a Secretaria de Igualdade Racial e Direitos Humanos,\naumentando o contingente de servidores públicos concursados com\nespecializações na área étnico-racial;\n2.​ Eleição para o Conselho Estadual de Política de Promoção de Igualdade\nRacial, garantindo a participação de uma gama de entidades que\nrepresentam a luta dos povos e comunidades tradicionais;\n3.​ Construção de um Plano de Promoção de Igualdade Racial do Estado\nanual. Este plano deve conter os principais elementos da política pública de\npromoção da igualdade racial no estado, levando em consideração a\ndiversidade étnica e articulando com entidades da sociedade civil de forma\ndireta e democrática;\n4.​ Co-oficializar as línguas indígenas no Estado. Garantindo que em\nespaços oficiais do Estado sejam respeitadas as línguas originárias,\nproduzindo também documentos oficiais de acordo com as demandas dos"
+          },
+          {
+            "id": "povos-tais-como-relatorios-materiais-didaticos-pareceres-e-decisoes",
+            "titulo": "povos, tais como relatórios, materiais didáticos, pareceres e decisões",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "povos, tais como relatórios, materiais didáticos, pareceres e decisões\npolíticas\n\ndo\n\ngoverno,\n\ndemocratizando\n\no acesso à informação nas\n\ncomunidades.\n5.​ Criação de um programa estadual de assistência aos povos. Garantindo\nque comunidades indígenas e quilombolas, em contexto urbano ou rural,\npossam ter suas demandas atendidas de forma especializada, com\norientações jurídicas e assistência social, além de garantir a ouvidoria com os\npovos para demandas de saúde e educacionais. O programa deve produzir\ndados socioeconômicos sobre as comunidades, e políticas públicas\nespecíficas para combater o racismo nos espaços públicos e administrativos.\n6.​ Implementação da disciplina de Estudos Sobre a Cultura Afro-Brasileira\ne Africana e Cultura dos Povos Indígenas em todas as escolas\nestaduais a partir do 5º ano do ensino fundamental até o 3º ano do ensino\nmédio, conforme a legislação federal;\n7.​ Realizar cursos de formação periódicos para profissionais da área de\nsegurança pública, a fim de especializar e assegurar profissionalismo no\nmomento do registro das ocorrências ligadas a crimes de cunho racial;\n8.​ Realizar cursos de letramento racial nos órgãos públicos, promovidos e\npensados pela SEIRDH junto ao CONEPPIRD;\n9.​ Valorizar centros culturais, museus populares e manifestações e\nsaberes ancestrais dos povos e comunidades através da promoção de\npolíticas públicas que insiram essas manifestações e espaços de cultura no\nroteiro turístico e educacional do estado."
+          },
+          {
+            "id": "esporte-e-direito-do-povo",
+            "titulo": "ESPORTE É DIREITO DO POVO:",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "ESPORTE É DIREITO DO POVO:\nPOR UMA POLÍTICA PÚBLICA, POPULAR E DESCENTRALIZADA\nNossas propostas para a área de esporte partem do princípio de que o este\nnão deve ser tratado como um privilégio financeiro, mas como condição básica\ntambém de lazer, saúde e prevenção de doenças. O acesso a equipamentos de\nestrutura que promovam práticas esportivas e de lazer deve ser incentivado pelo\nEstado, assim como as demais áreas essenciais de educação, saúde e cultura.\nPromover o acesso a esportes é garantir as condições materiais necessárias à\nqualidade de vida de crianças, jovens, trabalhadores, idosos e pessoas com\ndeficiência,\n\nde\n\nforma\n\ngratuita\n\ne\n\npróximo\n\naos\n\nseus\n\nlocais de moradia,\n\ndescentralizando investimentos, que muitas vezes são alocados prioritariamente na\ncapital.\nEm nosso estado a desigualdade de investimentos públicos deve ser tratada\ncom atenção, considerando a diversidade cultural e econômica de uma região\nterritorialmente grande como o Pará. Vemos ainda que projetos de esportes, são\nconcentrados no centro de Belém e devemos estender esses investimentos às\nperiferias urbanas, aos municípios do interior, comunidades rurais, ribeirinhas,\nindígenas e quilombolas, pois cada comunidade possui demandas próprias e que\ndevem ser planejadas e fiscalizadas constantemente junto ao povo.\nNo ano de 2025, segundo a Agência Pará, foram aplicados R$59,5 milhões\npela Secretaria de Estado de Esporte e Lazer (SEEL) em programas, competições,\nobras, infraestrutura esportiva e apoio a atletas. Portanto, há recurso público\ndestinado ao setor, mas ainda é pouco. Nesse sentido, é dever do governo ampliar\ne fazer uma gestão do recurso de forma que atenda o todo da população e não\napenas o concentre em determinadas regiões ou a um modelo de política esportiva\nque privilegia determinados setores. Uma política socialista para o esporte não pode\nser avaliada principalmente pela existência de grandes arenas, eventos ou\nresultados de atletas de alto rendimento. Seu principal indicador deve ser quantas\ncrianças, jovens e trabalhadores possuem acesso gratuito e permanente à prática\nesportiva em seus próprios territórios.\nOutro ponto a ser abordado são os programas de incentivo ao esporte, que\nno ano de 2026 destinou 980 vagas gratuitas para modalidades no Programa\nTalentos Esportivos. As vagas, porém, concentradas em polos construídos e"
+          },
+          {
+            "id": "reformados-na-capital-do-estado-sendo-eles-mangueirinho-mangueirao-e-par",
+            "titulo": "reformados na capital do estado, sendo eles: Mangueirinho, Mangueirão e Parque",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "reformados na capital do estado, sendo eles: Mangueirinho, Mangueirão e Parque\nOlímpico do Mangueirão. No mesmo ano, o Programa Bolsa Talento destinou quase\nR$2 milhões para 193 atletas e técnicos de 18 modalidades. Os investimentos\nnesses programas são essenciais, mas devemos tratar o incentivo ao esporte para\nalém de modalidades específicas de competições de alto rendimento, a fim de atuar\ncomo prática de inclusão social, saúde preventiva, diversão e desenvolvimento\nhumano: um modelo popular de acesso ao esporte.\nEsse acesso também deve ser construído dentro das escolas públicas, com\nboas estruturas de quadras esportivas, interligação entre o espaço e a comunidade\ndo entorno, tendo a possibilidade de uso nos períodos em que não haja atividades\nescolares. Nosso modelo de gestão esportiva, interliga ações de educação e saúde\ncom a prática do esporte, além de pensar na promoção de atividades para toda a\ncomunidade. O esporte é um meio de socializar e conscientizar a juventude e os\ntrabalhadores, auxiliando assim, o desenvolvimento de cidadãos mais saudáveis e\ndignos.\nPropostas:\n1.​ Criar uma Rede Estadual Pública de Esporte e Lazer. Estruturar uma\npolítica permanente que articule escolas estaduais, ginásios, estádios,\nparques, praças esportivas, UEPA, usinas da paz e demais equipamentos\npúblicos, garantindo atividades gratuitas e regulares para a população.\n2.​ Interiorizar o Programa Talentos Esportivos. Transformar o programa em\numa política verdadeiramente estadual, criando pólos permanentes nas\ndiferentes\n\nregiões\n\ndo\n\nPará.\n\nAtualmente,\n\no\n\nprograma\n\npossui\n\nforte\n\nconcentração de suas atividades em equipamentos de Belém. A expansão\ndeve priorizar municípios e regiões com menor acesso a equipamentos\nesportivos.\n3.​ Criar um Fundo Estadual de Esporte e Lazer. Garantir recursos\npermanentes no orçamento estadual para esporte de base, comunitário,\nescolar,\n\namador,\n\nfeminino, paralímpico e de alto rendimento, com\n\ntransparência e controle social.\n4.​ Criar o programa “Esporte no Bairro”. Financiar núcleos permanentes e\ngratuitos nas periferias urbanas e comunidades utilizando quadras, praças,"
+          },
+          {
+            "id": "escolas-e-outros-equipamentos-publicos-com-profissionais-de-educacao",
+            "titulo": "escolas e outros equipamentos públicos, com profissionais de educação",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "escolas e outros equipamentos públicos, com profissionais de educação\nfísica e oferta de diferentes modalidades.\n5.​ Abrir as escolas estaduais para as comunidades. Utilizar quadras e\ninstalações esportivas das escolas, nos fins de semana e horários sem aula,\npara atividades gratuitas organizadas pelo poder público, garantindo\nprofissionais, manutenção e segurança.\n6.​ Fortalecer os Jogos Escolares Paraenses. Ampliar modalidades, etapas\nregionais e participação dos municípios, garantindo transporte seguro,\nalimentação, hospedagem, equipamentos e condições adequadas aos\nestudantes.\n7.​ Ampliar e atualizar o Bolsa Talento. Aumentar número de beneficiários e\nvalores das bolsas e garantir regularidade e transparência anual dos editais.\n8.​ Garantir esporte gratuito para pessoas com deficiência. Todos os\nprogramas estaduais devem incluir modalidades paralímpicas e atividades\nadaptadas, com acessibilidade integral dos equipamentos.\n9.​ Criar\n\numa\n\npolítica\n\nestadual\n\npara\n\no\n\nesporte\n\nfeminino.\n\nGarantir\n\nfinanciamento específico para equipes, competições e atletas mulheres,\nenfrentando a desigualdade histórica de investimentos entre esporte\nmasculino e feminino.\n10.​Criar programas esportivos adequados à realidade amazônica. Valorizar\ncanoagem, natação, remo e outras práticas relacionadas aos rios, além de\nmanifestações\n\nesportivas\n\ne\n\ncorporais\n\ndas\n\ncomunidades\n\nindígenas,\n\nquilombolas e tradicionais.\n11.​Criar programa estadual de esporte para idosos. Expandir o Vida Ativa\npara o interior. Atualmente, o próprio Estado informa que o programa atende\ncerca de 2 mil idosos em núcleos localizados em Belém e Ananindeua. A\npolítica deve alcançar progressivamente todas as regiões.\n12.​Integrar esporte e saúde pública. Criar programas conjuntos entre SEEL e\nSESPA para atividade física, prevenção de doenças e promoção da saúde,\ncom prioridade para bairros populares e municípios com menor acesso às\npolíticas esportivas.\n13.​Valorizar os profissionais do esporte. Garantir concursos públicos e\nampliar a presença de professores de educação física e outros profissionais"
+          },
+          {
+            "id": "qualificados-nos-programas-permanentes-do-estado-combatendo-a",
+            "titulo": "qualificados nos programas permanentes do Estado, combatendo a",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "qualificados nos programas permanentes do Estado, combatendo a\nprecarização e a dependência excessiva de contratos temporários.\n14.​Garantir\n\nuso\n\npopular\n\ndos\n\ngrandes\n\nequipamentos\n\nestaduais. O\n\nMangueirão e outros equipamentos não devem servir apenas a grandes\njogos, shows e eventos. Criar calendário permanente de atividades\nesportivas gratuitas, visitas escolares e projetos comunitários.\n15.​Transparência total do orçamento do esporte. Publicar contratos,\nconvênios, patrocínios, gastos com eventos, reformas e apoio financeiro,\npermitindo saber quanto o Estado investe no Mangueirão e grandes\ncompetições e quanto chega diretamente às comunidades e atletas.\n16.​Criar Conselhos Populares de Esporte e Lazer. Atletas, professores,\nestudantes, trabalhadores, pessoas com deficiência, entidades esportivas e\ncomunidades devem participar da definição das prioridades e da fiscalização\ndos recursos."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6692edb1b2847e8deae5d65ce3b28738e1b5c5c2b72b7190c928196ab70ac626"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "18b7db0c08f7a949e6f514573b6bfdc5418a84aa8fce35704129cd57d94db482"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "a0a0486a3a52a29a7c674bca01ff2e3707c0bda8aecf4b26fb567349b84eb203"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "bb9d07b11c6e9de10a1f865bfed637d30f1764e9a036118e06e6705fc2aa1c59"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e9fc5b7ecbdf9d6d7a38465fd44e08c6fd970480095e0c0dcbedb639803fd40c"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "64b7a7644f93c0acebc562b46f8dd2795f3500db404e82382fd572566d151277"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b6f396a8140dbf6b46f98ecb5ed3859a7f3233c6138b59456c99df93c034b10a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "659d2a126f5efa1513febeca55ef0327586dfc7fb2826f71118d260127baa881"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "85de442a09a7f9a5ea64a8ffae2c43301f3fd826a8844d84e719b08739d04570"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "f8be70d0f03aaf45816425ea194ef87a0c50e3e946d8d2ee6898e5198b9a41b2"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "3d70412c16fbb9c0b2ca069a419df6db61137e0781807849424ae840c53c5980"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "3c974244f4352580b8ff84d13868ddfb47a5d292a20ddde0555d03bb85cd9d89"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "13d2a2a73c4900c87ad45298d16c8c40a05f93332c75cbde7bacf351ddd62e97"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "489a54a9988b8cb1bcaeda0e960b30351409ac4d150004349e4a534caef2b8ae"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "34aa76f20fea269f176d43abcf14542e25ccf23a48ed34d7654feb35856375fe"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "758c5d93efa20fe0ae748ec3e567dbedac145eaeda6fe4474f1b6fb97427e17b"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "4d8c29e437fd9d5d6045476b1db51c8ce563f2429ad19e020aa3f5a3aebed704"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "b79c8e5535712b0dc91bbb81a40003c150a95e94118c700b2ea266c124161a21"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "6c39948d0b8ba041cc13e2bade26536dc219da00278dff44d1ee12d8dda1eba7"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "8d9bf5cf2374c7e57c17d88d0967128c6aa32c589fe11f2299727cfaf0ad2060"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "76d81cc050a226fb1928bfef417de007289f3a113509420fca7b2c3a682113ce"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "f3f35b1e4ef4569e70f8052a5e6bf43921a70d626dc4d6d274fca0ef15eaa0d5"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "6c1c73975e57d417c8ec79d618389e6929c5f54d13facb85906be8892a01705b"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "c25e801def085152a089c33aa183c85cce54ea9e663b9cb8aad420c5da2946b9"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "a7e515e2e15062c7489b73e5649362a9621c6d831d8a056af0e073ba0f90057c"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "45ee312e313ca3fd4f98ef159bed090c280482d68de3cff38b4662ee07352b6e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "94a8616376ac2357316900bfd902cbb5a2d0ebbd345301030f0850e47b35d65e"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "4ee28e3609f86cd6ca7028f042898cbe37d9da431123749b383f5960693fd80c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "7c1773f9f96b5460c46b6e2324f27fbadb1ee9ebe5181884f258e19834328251"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "9ed3353392ad61cbe625cefe99643b64737256098d2fd0b883666c100e354b8d"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "d334f8400c8c4421ca57a605ebebb2e72763c9836b7807f06d30379a2347233e"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "40ca4bd154874ef295982419a30cff0693a0f110d750e60f08eb12be8f741d8d"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "1adea1cb931f446918ee839113f25ee1685c77842c40d456808eefeb1d491601"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "7fbce2a33d689841df6d24086b494a1a7569eb8613d9377f9e404da737bba6db"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "13fe7abf3b9a1e40a0566452ad1c57ccd084ac7a869f11ce34efdd2cad60a284"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "e0842207f0998a5b44911d4ffdeca8b95b4fc5180cc5937298a05ed8257a63e9"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "919610f1a41af42668448bdc259dd467185eaaa4873ecd7fb25ca4a96d561664"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "281b7e8677748552167abe582d13c71dad0915363013bf560e7e50a56b83e3c7"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "7cc9b7b4f0e12d055562bde462590f6d719bd9ac97e40fd05de4364fc81b9244"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "7993ff8f8c87a0b628a243a88fb4c1863e8e5f7604203983b346f8dd0076d79a"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "df7795d4f0ed9a855e017f78ba5de34a304a3e0893e6504e9adba8df90b933cf"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "dceae69a324e546e8b9710afe8527a51ecfaa3f378c7377a5b8f82739cf5c08d"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "95d76f1cff42d24cae5e5e6f6cde694e687c05592a96b9df192109101c663d25"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "69d52aefd4d723a4fa1f9c54aa6c2bfe546969799f4580c319b7264a4ec6cf63"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "015a65c4adb1c4b0fb67af835514cfe3dfe19065d55a2e7a440575c9f007ab23"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "ed927b3e2e1a3c04e65935d34ba70f08585023526af8c48b5bf9c63bfca406d5"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "62e21f2a649e8202a62e122ad053704897c4e1eb08c22428a779740a08c98bdc"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "48adaf2379733506521d7e4ade0d5d60fd71160d5d8b77794e4787ca5a877787"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "1e5c6b5ae69fd95ae180fbbf7e94772464c4b2c6b742ae7d0f8f7e9a382e98fd"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "6c1b81df7f082c0ceaab1e331db6c41194b642904c3cb51e01000af6f571219f"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "bcbd49b37964333428cfe27986c95a94329a5cfdce933a4570dbf763b06c16c0"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "23785fc6ce0379248debef5f7e169d556df1f8d7d7a2f3235637b43ee1604090"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "5299f3eaacf8c09d47041886b2017f0d96febef76d2279ca7d8383794de606d0"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "28db4024321d819b8077797298d46a891a14fd0fff1c3893fc8d9051eb04e88f"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "b4e2251701d56491f53b3013bdfd240a9ffb332b7c18b14abae37387e4936817"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "55a925bcad51dd86e7ac6246973ff3e27801ea33128f0130f89339a191c85095"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe conselhos regionais e setoriais com participação de sindicatos, movimentos populares, povos indígenas, quilombolas, agricultores familiares, universidades e comunidades para discutir prioridades de investimento e desenvolvimento. O programa prevê a reestatização da COSANPA e da CELPA como parte da ampliação da atuação estatal na economia. O programa propõe um programa de emprego com contratação direta na construção de moradias populares, priorizando municípios com maior desemprego e vulnerabilidade. O programa prevê uma rede estadual pública de transporte hidroviário, com linhas regulares para comunidades ribeirinhas. O programa propõe uma fila estadual única, pública e transparente para consultas, exames e cirurgias, permitindo acompanhar a posição e o tempo de espera. O programa prevê um Banco Estadual de Terras e Imóveis Públicos destinado à habitação popular.",
+    "frases": [
+      {
+        "texto": "O programa propõe conselhos regionais e setoriais com participação de sindicatos, movimentos populares, povos indígenas, quilombolas, agricultores familiares, universidades e comunidades para discutir prioridades de investimento e desenvolvimento.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Instituir conselhos regionais e setoriais\ncom participação de sindicatos, movimentos populares, povos\nindígenas,\n\nquilombolas, agricultores familiares, universidades e\n\ncomunidades\n\npara\n\ndiscutir\n\nprioridades\n\nde\n\ninvestimento\n\ne\n\ndesenvolvimento."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê a reestatização da COSANPA e da CELPA como parte da ampliação da atuação estatal na economia.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Reestatizar a\nCOSANPA e a CELPA. O interesse público deve prevalecer em\ndetrimento da busca pelo lucro privado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe um programa de emprego com contratação direta na construção de moradias populares, priorizando municípios com maior desemprego e vulnerabilidade.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Criar frentes emergenciais de trabalho, um programa de emprego\ne obras públicas: Utilizar investimento público para gerar empregos\ncom contratação direta, na construção de moradias populares,\nescolas, hospitais, creches, sistemas de saneamento, infraestrutura\nurbana e recuperação ambiental, priorizando municípios com maior\ndesemprego e vulnerabilidade."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê uma rede estadual pública de transporte hidroviário, com linhas regulares para comunidades ribeirinhas.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 21,
+            "trecho": "Rede\nEstadual Pública de Transporte Hidroviário. Estruturar uma empresa\ncapaz de operar diretamente linhas rodoviárias, hidroviárias e metropolitanas\nestratégicas, principalmente onde o serviço privado seja insuficiente ou não\nexista por falta de interesse comercial. Implantar linhas públicas de transporte\nhidroviário regulares, adquirir embarcações seguras e acessíveis e garantir\natendimento ao Marajó, ilhas, comunidades ribeirinhas e demais regiões"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe uma fila estadual única, pública e transparente para consultas, exames e cirurgias, permitindo acompanhar a posição e o tempo de espera.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 26,
+            "trecho": "Implantar fila estadual única, pública e\ntransparente para consultas, exames e cirurgias, permitindo que a população\nacompanhe sua posição e o tempo de espera."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê um Banco Estadual de Terras e Imóveis Públicos destinado à habitação popular.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 17,
+            "trecho": "Criar um\nBanco Estadual de Terras e Imóveis Públicos. Realizar um\nlevantamento de todo o patrimônio imobiliário do Estado, identificando\nimóveis vazios, abandonados, subutilizados e terrenos sem destinação, com\ndivulgação pública dessas informações, e destiná-los à habitação popular."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "participacao-economica",
+        "titulo": "Participação econômica",
+        "descricao": "Participação social no planejamento econômico estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Instituir conselhos regionais e setoriais\ncom participação de sindicatos, movimentos populares, povos\nindígenas,\n\nquilombolas, agricultores familiares, universidades e\n\ncomunidades"
+          }
+        ]
+      },
+      {
+        "id": "empresas-publicas",
+        "titulo": "Empresas públicas",
+        "descricao": "Reestatização da COSANPA e da CELPA.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Reestatizar a\nCOSANPA e a CELPA."
+          }
+        ]
+      },
+      {
+        "id": "emprego-publico",
+        "titulo": "Emprego público",
+        "descricao": "Geração de empregos por contratação direta.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 4,
+            "trecho": "Utilizar investimento público para gerar empregos\ncom contratação direta"
+          }
+        ]
+      },
+      {
+        "id": "transporte-hidroviario",
+        "titulo": "Transporte hidroviário",
+        "descricao": "Rede estadual pública de transporte hidroviário.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 21,
+            "trecho": "Rede\nEstadual Pública de Transporte Hidroviário."
+          }
+        ]
+      },
+      {
+        "id": "fila-de-saude",
+        "titulo": "Fila de saúde",
+        "descricao": "Fila estadual para consultas, exames e cirurgias.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 26,
+            "trecho": "Implantar fila estadual única, pública e\ntransparente para consultas, exames e cirurgias"
+          }
+        ]
+      },
+      {
+        "id": "terras-publicas",
+        "titulo": "Terras públicas",
+        "descricao": "Destinação de imóveis públicos à habitação popular.",
+        "evidencias": [
+          {
+            "documentoId": "PA:140002551943:01",
+            "pagina": 17,
+            "trecho": "Banco Estadual de Terras e Imóveis Públicos."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:36:09.223Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T18:43:14.196Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a criação dos conselhos, os participantes enumerados e sua finalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de participação no planejamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:1:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada vincula expressamente a reestatização das duas empresas à ampliação da atuação estatal na economia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem endossá-la, criticá-la ou assegurar sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne elementos de uma única proposta coerente sobre empresas públicas e atuação estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:2:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho e a página citada cobrem a reestatização das duas empresas e sua inserção na ampliação estatal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o programa de emprego, a contratação direta, as moradias populares e a prioridade indicada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apresenta a proposta sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de geração de emprego por obras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:3:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a rede pública, as linhas hidroviárias regulares e o atendimento às comunidades ribeirinhas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de transporte hidroviário público."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:4:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente todas as características e funcionalidades atribuídas à fila estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de gestão da fila de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:5:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a criação do banco e a destinação de seus imóveis e terrenos à habitação popular."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de política fundiária habitacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:frase:6:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação do banco e sua finalidade habitacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho e a página citada sustentam a participação social por conselhos no planejamento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única área coerente de participação econômica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:participacao-economica:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho e o contexto da página cobrem a participação social e seu vínculo com o planejamento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a reestatização da COSANPA e da CELPA."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre empresas públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:empresas-publicas:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a geração de empregos mediante contratação direta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de geração de emprego."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:emprego-publico:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a geração de empregos e o meio de contratação indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz literalmente a proposta de rede estadual pública de transporte hidroviário."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de transporte hidroviário."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:transporte-hidroviario:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a fila estadual para consultas, exames e cirurgias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de fila de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:fila-de-saude:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a fila estadual e todos os tipos de atendimento enumerados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:suporte",
+        "verdict": "yes",
+        "reason": "Embora o trecho isolado seja abreviado, a página citada determina expressamente a destinação dos imóveis públicos à habitação popular."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de destinação habitacional de imóveis públicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PA:140002551943:tema:terras-publicas:documentos:PA:140002551943:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho, complementado pelo texto da página citada, cobre a natureza pública dos imóveis e sua destinação habitacional."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PA:140002551943",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PA:140002551943:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 37728,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14610,
+          "reasoning_output_tokens": 172
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "456493d79251836437029bd18083a4274e3d2189e9644d167a081c4bb965f388",
+    "extractedTextSha256": "7b7c05378db5f0a93d5f4fdbffdfbcde5490a82bb6d0cc695071f8204a077fbf",
+    "documentCount": 1,
+    "documentSetSha256": "1798ec22ae8b0a87ddcbeef2c61482cccf90dcfae6cb1edc81b21a391974deb5",
+    "contentSha256": "4e2c3b90cad484bf7cba3015a31b3a1e9f39b81d872bd93712a865c9d5297506"
+  }
+}

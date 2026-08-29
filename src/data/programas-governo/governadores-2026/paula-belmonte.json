@@ -1,0 +1,1366 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "DF",
+    "sqCandidato": "70002552965",
+    "slug": "paula-belmonte",
+    "nomeUrna": "PAULA BELMONTE",
+    "partido": "PSDB",
+    "arquivoNome": "2026DF70002552965_01.pdf",
+    "arquivoNoPacote": "DF/2026DF70002552965_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "DF:70002552965:01",
+      "fonte": {
+        "arquivoNome": "2026DF70002552965_01.pdf",
+        "arquivoNoPacote": "DF/2026DF70002552965_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_DF.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "2c335a951e9b7334e9dd2e9a396aff13a65c3672a5a5ddb3a0b187b2ee87b26e",
+        "extractedTextSha256": "840d3620d2d77c4cc17f48c1bdd623c94f3bc00e7e9d218deb4f7fa776415c3a",
+        "paginas": 52,
+        "secoes": [
+          {
+            "id": "e-hora-de",
+            "titulo": "É hora de",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "É hora de\ncuidar das\npessoas\nPLANO DE GOVERNO PARA O\nDISTRITO FEDERAL 2027 - 2030\n\nVICE: JUIZ EVERARDO"
+          },
+          {
+            "id": "2",
+            "titulo": "2",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "2"
+          },
+          {
+            "id": "indice",
+            "titulo": "Índice",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Índice\nBRASÍLIA COMEÇA PELAS PESSOAS\n\n5\n\n4 PRIORIDADES\n5 COMPROMISSOS\n\n7\n\nUM PLANO QUE NASCE DA ESCUTA\n\n9\n\n4 PRIORIDADES\n\n10\n\nCUIDAR DAS PESSOAS\n\n11\n\nCUIDAR DA CIDADE\n\n13\n\nCUIDAR DA TRANSPARÊNCIA\n\n15\n\nCUIDAR DA GESTÃO\n\n17\n\n5 COMPROMISSOS\n\n19\n\n3"
+          },
+          {
+            "id": "educacao-que-cuida",
+            "titulo": "EDUCAÇÃO QUE CUIDA",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO QUE CUIDA\n\n20\n\nSAÚDE QUE CUIDA\n\n27\n\nSEGURANÇA CUIDADOSA\n\n38\n\nTRANSPORTE CUIDADOSO\n\n43\n\nGOVERNO QUE CUIDA\n\n48\n\n4"
+          },
+          {
+            "id": "brasilia-comeca",
+            "titulo": "Brasília começa",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Brasília começa\npelas pessoas\nUMA HISTÓRIA QUE VIROU PROPÓSITO\nAntes de ocupar qualquer cargo público, eu sou filha de Luís Antonio e Aurora,\nesposa de Luís Felipe e, sobretudo, mãe de Júlia, Felipe, Rafael, Arthur, Luís Arthur e\nHeitor. Sou mãe de seis filhos e foi dentro da minha própria família que vivi a\nexperiência que mudou definitivamente a maneira como passei a enxergar a vida e o\nmeu papel na sociedade.\nA perda de um filho me colocou diante de uma dor que nenhuma mãe deveria\nconhecer. Mas também despertou em mim uma necessidade profunda de\ntransformar essa dor em propósito. Foi assim que comecei a me envolver mais\ndiretamente com a defesa das crianças, das famílias e das pessoas que muitas vezes\nprecisam do Estado e não encontram nele o cuidado que deveriam receber.\nFoi esse caminho que me levou à política.\nEntrei na vida pública porque entendi que cuidar também é participar, fiscalizar,\ncobrar e ter coragem para mudar aquilo que não funciona. Fui deputada federal, sou\ndeputada distrital e, ao longo dessa trajetória, conheci Brasília de uma maneira\nainda mais profunda. Conheci suas potencialidades, mas também as dificuldades\nenfrentadas diariamente por quem depende dos serviços públicos.\nVi mães esperando atendimento para seus filhos. Famílias tentando conseguir uma\nvaga na escola. Mulheres buscando proteção. Trabalhadores passando horas no\ntransporte. Empreendedores enfrentando uma burocracia que muitas vezes parece\ntrabalhar contra quem produz. E vi também quanto dinheiro público pode ser\ndesperdiçado quando faltam planejamento, eficiência, transparência e\nresponsabilidade.\nTudo isso reforçou uma convicção que carrego comigo: governar é cuidar das\npessoas.\nE cuidar é fazer o governo funcionar.\nÉ fazer a saúde chegar antes que a doença se agrave. É oferecer uma educação\ncapaz de dar às nossas crianças oportunidades para construir o próprio futuro. É\ngarantir segurança para que as famílias vivam sem medo. É respeitar o tempo de\nquem trabalha. É acolher quem precisa do Estado e criar caminhos para que essa\npessoa reconquiste sua autonomia.\n5"
+          },
+          {
+            "id": "cuidar-tambem-e-gerar-emprego-apoiar-quem-empreende-e-criar-oportunidade",
+            "titulo": "Cuidar também é gerar emprego, apoiar quem empreende e criar oportunidades",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar também é gerar emprego, apoiar quem empreende e criar oportunidades\npara que as pessoas possam caminhar com as próprias pernas.\nE cuidar é tratar o dinheiro público com respeito. Cada real administrado pelo\ngoverno pertence à população. Quando há desperdício, privilégio ou corrupção, o\nque se perde não é apenas dinheiro. É uma consulta que deixa de acontecer, uma\nescola que deixa de melhorar, uma viatura que não chega às ruas, uma\noportunidade que desaparece.\nAgora, ao apresentar este plano de governo, assumo um compromisso com Brasília:\nas pessoas estarão no centro das nossas decisões.\nNão apresentamos apenas uma relação de obras, programas e projetos.\nApresentamos uma forma de governar. Uma forma de olhar para cada decisão e\nperguntar: o que isso vai mudar na vida das pessoas?\nBrasília tem recursos, talentos e todas as condições para ser uma cidade melhor. O\nque precisamos é colocar as prioridades no lugar certo e fazer o governo chegar a\nquem precisa dele.\nFoi o cuidado que me trouxe até aqui.\nE é cuidando das pessoas que quero governar Brasília.\n\nPaula Belmonte\n\n6"
+          },
+          {
+            "id": "prioridades",
+            "titulo": "Prioridades",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Prioridades\nCompromissos\n\nVISÃO DE GOVERNO TRANSFORMA CUIDADO EM AÇÃO\nEste Plano de Governo parte de uma escolha clara: colocar as pessoas no centro das\ndecisões. Para transformar esse princípio em ação, o programa foi estruturado em 4\nprioridades e 5 compromissos, com foco em melhorar a qualidade dos serviços\npúblicos por meio de uma gestão mais eficiente, tecnológica e voltada para as pessoas.\nAs prioridades representam os valores e as diretrizes que orientam a nossa atuação. Elas\nfuncionam como princípios de governo, influenciando a formulação, a implementação e\na avaliação das políticas públicas em todas as áreas.\nAs quatro prioridades que orientam o plano são:\nPESSOAS: Colocar a população no centro das decisões e políticas públicas.\nCIDADE: Promover o desenvolvimento urbano e melhorar a infraestrutura.\nTRANSPARÊNCIA: Fortalecer a prestação de contas e o acesso às\ninformações públicas.\nGESTÃO: Modernizar a administração pública para torná-la mais eficiente.\nOs compromissos, por sua vez, traduzem esses princípios em resultados concretos. Eles\nrepresentam as principais transformações pretendidas em áreas estratégicas, indicando\ncomo as políticas públicas podem ser organizadas para melhorar a prestação de\nserviços, ampliar oportunidades e responder às necessidades da sociedade.\n\n7"
+          },
+          {
+            "id": "com-base-nesses-pilares-o-documento-apresenta-cinco-compromissos-princip",
+            "titulo": "Com base nesses pilares, o documento apresenta cinco compromissos principais:",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Com base nesses pilares, o documento apresenta cinco compromissos principais:\nEDUCAÇÃO INTEGRAL: Ampliar a oferta de ensino em tempo integral,\nproporcionando maior qualidade na educação, apoio às famílias e um ambiente\nque contribua para o desenvolvimento completo de crianças e adolescentes.\nSAÚDE SEM FILAS: Fortalecer a atenção básica, integrar os prontuários\neletrônicos e reorganizar os fluxos de atendimento para reduzir o tempo de\nespera e diminuir a sobrecarga das unidades de emergência.\nSEGURANÇA INTELIGENTE: Utilizar tecnologia, monitoramento por câmeras e\nintegração entre as forças de segurança para prevenir e combater a\ncriminalidade de forma mais eficiente.\nTRANSPORTE PÚBLICO EFICIENTE: Modernizar e ampliar o sistema de\ntransporte coletivo, integrar a bilhetagem entre ônibus e metrô, revisar\ncontratos de concessão e adotar soluções tecnológicas para oferecer um\nserviço mais acessível, confiável e de melhor qualidade.\nGOVERNO DIGITAL E TRANSPARENTE: Digitalizar os serviços públicos, ampliar a\ntransparência, fortalecer a governança, valorizar os servidores públicos e\ncombater a corrupção, aproximando o Estado da população e aumentando a\neficiência da administração.\n\n8"
+          },
+          {
+            "id": "um-plano-que",
+            "titulo": "Um plano que",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Um plano que\nnasce da escuta\nEste Plano de Governo é resultado de escuta, estudo, experiência e construção\ncoletiva. Mais do que um documento elaborado para uma eleição, ele reúne aquilo\nque Brasília nos mostrou ao longo dos anos e as soluções construídas por muitas\npessoas que conhecem, estudam e vivem os desafios do Distrito Federal.\nForam realizadas mais de 100 reuniões para discutir prioridades, problemas e\ncaminhos para Brasília. Paula Belmonte reuniu especialistas, acadêmicos,\nestudiosos, estudantes, profissionais de diferentes áreas, candidatos do PSDB com\natuação nos temas debatidos e, principalmente, pessoas da comunidade que\nconhecem, na prática, a realidade dos serviços públicos e das diferentes regiões do\nDistrito Federal.\nMas a construção deste plano começou muito antes dessas reuniões; é resultado\ndas andanças de Paula por Brasília e da escuta ativa que marca sua trajetória\npolítica. Ao longo dos anos, ela percorreu Regiões Administrativas, visitou unidades\nde saúde, foi a escolas, conversou com moradores, trabalhadores, empreendedores,\nlideranças comunitárias, professores, profissionais da saúde, servidores públicos,\njovens, mulheres e famílias. Ouviu problemas, conheceu experiências que\nfuncionam e recebeu sugestões de quem vive todos os dias a realidade da cidade.\nEssa escuta também aconteceu no exercício dos mandatos de deputada federal e\ndeputada distrital. Fiscalizações, visitas, agendas legislativas e audiências públicas\npermitiram conhecer de perto problemas que muitas vezes não aparecem nos\nrelatórios oficiais.\nPor isso, este não é um plano construído apenas a partir de diagnósticos técnicos.\nOs dados ajudam a mostrar onde estão os problemas. A escuta das pessoas ajuda a\nentender como esses problemas afetam a vida real. E o planejamento aponta os\ncaminhos para enfrentá-los.\nAs páginas a seguir apresentam uma síntese das prioridades, compromissos e\nprincipais ações que serão implementadas no Governo Paula Belmonte. Elas estão\norganizadas a partir de uma ideia simples que orienta todo o plano: governar é\ncuidar das pessoas e fazer a vida delas melhorar.\nCuidar significa garantir que o Estado funcione quando alguém precisa dele. Significa\ncuidar das pessoas, da gestão, do dinheiro público e da cidade. E significa transformar\nescuta em ação, com responsabilidade, planejamento, transparência e resultado.\n9"
+          },
+          {
+            "id": "4",
+            "titulo": "4",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "ocr",
+            "conteudo": "4\nPrioridades\n→ Cuidar das pessoas\n→ Cuidar das cidades\n→ Cuidar da transparência\n→ Cuidar da gestão\nPaula Belmonte 7"
+          },
+          {
+            "id": "cuidar-das",
+            "titulo": "Cuidar das",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar das\npessoas\nE PROMOVER DESENVOLVIMENTO SOCIAL\nCuidar das pessoas é colocar o cidadão no centro das decisões e garantir que o\nEstado esteja presente nos momentos em que ele mais precisa. É criar condições\npara que cada pessoa possa desenvolver capacidades, ter oportunidades e viver\ncom dignidade, independentemente do lugar onde nasceu ou da condição social.\nEssa prioridade reúne as políticas de desenvolvimento social, com atenção especial\nà primeira infância, às famílias em situação de vulnerabilidade, às mulheres, às\npessoas com deficiência, às pessoas idosas e à população em situação de rua.\nO cuidado precisa acompanhar as diferentes fases da vida, atuando não apenas\nquando o problema já aconteceu, mas também na prevenção, na proteção e na\nconstrução da autonomia. Isso significa integrar políticas públicas, aproximar os\nserviços das pessoas e construir caminhos para que situações de vulnerabilidade\npossam ser superadas.\nCuidar das pessoas é garantir proteção para quem precisa, oportunidades para\nquem busca avançar e condições para que cada cidadão construa o próprio futuro.\n\nCOMO VAMOS CUIDAR\nFORTALECER A PROTEÇÃO À PRIMEIRA INFÂNCIA E ÀS FAMÍLIAS\nPriorizar os primeiros anos de vida, ampliando a rede de cuidado e proteção às\ncrianças e apoiando as famílias para que tenham condições de cuidar, trabalhar e\nconstruir seu futuro. A primeira infância será tratada de forma transversal,\narticulando desenvolvimento social, saúde, educação e proteção.\n\nPROTEGER AS MULHERES E AMPLIAR SUA AUTONOMIA\nIntegrar políticas de proteção, qualificação, emprego, empreendedorismo e\ngeração de renda, com atenção especial às mulheres em situação de\nvulnerabilidade e vítimas de violência. O objetivo é fazer com que a proteção do\nEstado também abra caminhos para a independência econômica.\n\nCONSTRUIR POLÍTICA INTEGRADA PARA PESSOAS EM SITUAÇÃO DE RUA\nArticular assistência social, saúde, saúde mental, tratamento da dependência\nquímica, qualificação profissional, habitação e segurança, fortalecendo também as\nparcerias com entidades da sociedade civil que já atuam no acolhimento, cuidado e\n11"
+          },
+          {
+            "id": "recuperacao-de-pessoas-em-situacao-de-vulnerabilidade-cada-pessoa-precis",
+            "titulo": "recuperação de pessoas em situação de vulnerabilidade. Cada pessoa precisa ser",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "recuperação de pessoas em situação de vulnerabilidade. Cada pessoa precisa ser\nacompanhada a partir de sua realidade, com uma trajetória de acolhimento,\ntratamento, reconstrução de vínculos, qualificação e reinserção social.\nO Estado não precisa fazer tudo sozinho, mas precisa coordenar a rede,\nestabelecer critérios, acompanhar os resultados e apoiar quem já realiza um\ntrabalho sério nos territórios.\n\nAMPLIAR A INCLUSÃO E A PROTEÇÃO DAS PESSOAS COM DEFICIÊNCIA\nGarantir acesso aos serviços públicos, acessibilidade e oportunidades, articulando\npolíticas de educação, saúde, qualificação, trabalho e inclusão social. O cuidado\ndeve considerar também as pessoas neuroatípicas e suas famílias, garantindo\nsuporte ao longo das diferentes fases da vida.\n\nCUIDAR DOS IDOSOS E PROMOVER ENVELHECIMENTO COM DIGNIDADE\nPreparar Brasília para o envelhecimento da população, fortalecendo políticas de\nproteção, convivência, autonomia e inclusão das pessoas idosas e articulando a\nrede social às políticas de saúde e cuidado.\n\nTRANSFORMAR ASSISTÊNCIA EM OPORTUNIDADE DE AUTONOMIA\nFortalecer a proteção social para quem precisa, mas conectar os programas sociais\na oportunidades de qualificação, trabalho, empreendedorismo e geração de renda.\nA política social precisa acolher na vulnerabilidade e criar caminhos para que as\npessoas possam superá-la.\n\nAPROXIMAR O ESTADO DE QUEM MAIS PRECISA\nIntegrar informações e serviços para identificar situações de vulnerabilidade e\npermitir uma atuação mais rápida do poder público. Em vez de obrigar a pessoa a\npercorrer diferentes órgãos em busca de ajuda, o governo deve organizar sua rede\npara acompanhar cada família e encaminhá-la aos serviços de que necessita.\n\n12"
+          },
+          {
+            "id": "cuidar-da",
+            "titulo": "Cuidar da",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar da\ncidade\nE GARANTIR MORADIA, DESENVOLVIMENTO\nURBANO E SUSTENTABILIDADE\nCuidar da cidade é cuidar do lugar onde as pessoas constroem suas vidas. É garantir\nque Brasília cresça de forma organizada, sustentável e capaz de oferecer moradia,\ninfraestrutura, qualidade urbana e um meio ambiente protegido para as próximas\ngerações. Essa prioridade reúne as políticas de habitação, regularização,\ndesenvolvimento urbano, planejamento territorial, saneamento, meio ambiente,\npreservação dos recursos naturais e cuidado com os espaços públicos.\nNa habitação, enfrentar o déficit habitacional, ampliar o acesso à moradia digna,\npromover regularização responsável e combater a ocupação irregular e a grilagem.\nNo desenvolvimento urbano, significa planejar o crescimento da cidade,\naproximando moradia, emprego, serviços e infraestrutura e evitando que a\nexpansão desordenada aumente desigualdades e prejudique a qualidade de vida.\nNo meio ambiente, conciliar desenvolvimento e preservação, proteger nascentes,\nmananciais, parques e áreas verdes, cuidar da água e buscar soluções sustentáveis\npara o crescimento do Distrito Federal.\n\nCOMO VAMOS CUIDAR\nAMPLIAR O ACESSO À MORADIA DIGNA\nEnfrentar o déficit habitacional do Distrito Federal com uma política permanente de\nprodução e oferta de moradias, utilizando de forma estratégica os instrumentos da\nCodhab e da Terracap e priorizando as famílias que mais precisam. A política\nhabitacional precisa ir além da entrega de unidades. Moradia digna significa ter\nacesso a infraestrutura, transporte, escola, saúde, comércio, emprego e serviços\npúblicos. Habitação e planejamento urbano precisam caminhar juntos.\n\nACELERAR A REGULARIZAÇÃO FUNDIÁRIA COM RESPONSABILIDADE\nAgilizar os processos de regularização, garantindo segurança jurídica às famílias e\npermitindo que áreas consolidadas recebam infraestrutura e serviços adequados.\nRegularizar não significa estimular novas ocupações. Ao mesmo tempo em que o\ngoverno precisa enfrentar o passivo existente, deverá combater a grilagem e\nimpedir novas ocupações irregulares, protegendo o patrimônio público e o\nplanejamento da cidade.\n13"
+          },
+          {
+            "id": "planejar-a-cidade-e-aproximar-moradia-emprego-e-servicos",
+            "titulo": "PLANEJAR A CIDADE E APROXIMAR MORADIA, EMPREGO E SERVIÇOS",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANEJAR A CIDADE E APROXIMAR MORADIA, EMPREGO E SERVIÇOS\nOrientar a expansão urbana a partir das necessidades das pessoas e da capacidade\nde cada território. O planejamento urbano deve aproximar moradia, trabalho,\ncomércio, educação, saúde, lazer e transporte, criando regiões mais completas e\nreduzindo desigualdades entre o centro e as demais áreas do Distrito Federal.\n\nLEVAR O CUIDADO URBANO A TODAS AS REGIÕES ADMINISTRATIVAS\nGarantir que infraestrutura e qualidade urbana não sejam privilégios das áreas\ncentrais. As Regiões Administrativas precisam receber atenção permanente para\nmanutenção dos espaços públicos, iluminação, calçadas, praças, parques, vias,\ndrenagem e demais estruturas que fazem parte da vida cotidiana.\n\nPROTEGER A ÁGUA E OS RECURSOS NATURAIS DO DISTRITO FEDERAL\nPreservar nascentes, mananciais, córregos, áreas de recarga e demais recursos\nnaturais estratégicos para garantir segurança hídrica e qualidade de vida. O\ncrescimento urbano precisa respeitar a capacidade ambiental do território.\nDesenvolvimento e preservação não são objetivos opostos: uma cidade que\ncompromete seus recursos naturais compromete o próprio futuro.\n\nPROTEGER PARQUES, ÁREAS VERDES E O PATRIMÔNIO AMBIENTAL\nFortalecer a preservação e a recuperação das áreas verdes, parques e unidades de\nconservação, ampliando a integração à vida das comunidades. Os espaços verdes\ndevem ser protegidos, mas também precisam ser seguros, acessíveis e utilizados\npela população para convivência, esporte, lazer e qualidade de vida.\n\nTRANSFORMAR RESÍDUOS EM DESENVOLVIMENTO E RENDA\nModernizar a gestão de resíduos, ampliar a coleta seletiva, a reciclagem e o\nreaproveitamento de materiais e fortalecer cooperativas e trabalhadores da\nreciclagem. Lixo é dinheiro quando existe gestão, tecnologia e uma cadeia\nprodutiva capaz de transformar resíduos em valor. O que hoje é descartado pode\nvoltar à economia como matéria-prima, energia, novos produtos, empregos e renda.\n\nPREPARAR BRASÍLIA PARA AS MUDANÇAS CLIMÁTICAS\nIncorporar adaptação climática ao planejamento urbano, com atenção à drenagem,\náreas de risco, arborização, períodos de seca, ondas de calor, incêndios e eventos\nextremos.Uma cidade preparada precisa antecipar riscos e proteger principalmente\nas populações e territórios mais vulneráveis aos efeitos das mudanças do clima.\n\nMELHORAR O SANEAMENTO E CUIDAR DOS RIOS E CÓRREGOS\nAvançar na infraestrutura de saneamento e na recuperação de áreas degradadas,\nenfrentando fontes de poluição e protegendo os cursos d'água do Distrito Federal.\nMeio ambiente, saneamento, fiscalização e qualidade de vida precisam ser tratados\nconjuntamente.\n14"
+          },
+          {
+            "id": "cuidar-da-2",
+            "titulo": "Cuidar da",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar da\ntransparência\nE PROTEGER O DINHEIRO PÚBLICO\nCuidar da transparência é garantir que cada cidadão possa saber como o governo\ndecide, contrata, gasta e entrega resultados. O dinheiro público pertence à\npopulação e precisa ser protegido com responsabilidade, integridade e controle.\nEssa prioridade reúne políticas de transparência, dados abertos, controle,\nintegridade, auditoria, fiscalização e prevenção e combate à corrupção, ampliando\no acesso às informações e fortalecendo os mecanismos de acompanhamento dos\natos do governo.\nA lógica será agir antes que o dinheiro público seja perdido. O controle não pode\ncomeçar apenas depois que uma irregularidade acontece. Tecnologia, cruzamento\nde dados, auditorias e mecanismos de transparência serão utilizados para\nidentificar riscos, prevenir desvios e permitir uma atuação rápida diante de indícios\nde irregularidades.\nO Gabinete também deverá contribuir para criar uma cultura de integridade em toda\na administração, fazendo com que prevenção e combate à corrupção sejam\nresponsabilidades permanentes do governo e estejam presentes nas decisões,\ncontratos e políticas públicas.\nCuidar da transparência é proteger o dinheiro das pessoas: prevenir desperdícios e\ndesvios, combater a corrupção e garantir que cada recurso público chegue aonde\nrealmente precisa chegar.\n\nCOMO CUIDAR\nCRIAR O GABINETE DE COMBATE À CORRUPÇÃO\nCriar uma estrutura permanente e estratégica, diretamente ligada à governança do\ngoverno, para atuar na prevenção e no combate à corrupção, identificar riscos,\nacompanhar contratos e gastos públicos e articular os órgãos responsáveis por\ncontrole, auditoria, integridade e transparência.\nO Gabinete deverá trabalhar com inteligência, cruzamento de dados e mecanismos\nde prevenção para identificar indícios de irregularidades e permitir que o Estado aja\nantes que o prejuízo aconteça. Combater a corrupção também é impedir que ela\naconteça.\n\n15"
+          },
+          {
+            "id": "implantar-politica-permanente-de-integridade",
+            "titulo": "IMPLANTAR POLÍTICA PERMANENTE DE INTEGRIDADE",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "IMPLANTAR POLÍTICA PERMANENTE DE INTEGRIDADE\nFazer da integridade uma responsabilidade de todo o governo, estabelecendo\nmecanismos de prevenção, avaliação de riscos e controle nos órgãos, empresas\npúblicas e demais estruturas da administração. As áreas com maior volume de\nrecursos, contratos ou riscos deverão ter acompanhamento reforçado. A proteção\ndo dinheiro público precisa começar antes da contratação e continuar até a entrega\ndo serviço à população.\n\nAMPLIAR A TRANSPARÊNCIA DOS CONTRATOS E GASTOS PÚBLICOS\nFacilitar o acesso da população às informações sobre contratos, licitações, compras,\nobras, convênios e execução do orçamento, apresentando os dados de forma\nsimples, acessível e atualizada. Mais do que disponibilizar documentos, o governo\nprecisa permitir que o cidadão saiba quanto está sendo gasto, com quem, para quê\ne qual resultado está sendo entregue.\n\nUSAR TECNOLOGIA E INTELIGÊNCIA PARA PROTEGER O DINHEIRO PÚBLICO\nIntegrar bases de dados e utilizar ferramentas tecnológicas para identificar padrões,\ninconsistências, sobrepreços, duplicidades e outros sinais de risco na utilização dos\nrecursos públicos. A mesma capacidade de análise de dados utilizada para melhorar os\nserviços públicos também deve ser utilizada para prevenir desperdícios, fraudes e desvios.\n\nFORTALECER AUDITORIAS E O CONTROLE DOS GRANDES CONTRATOS\nAmpliar o acompanhamento dos contratos de maior impacto financeiro e das áreas\nmais sensíveis do governo, com auditorias, indicadores de desempenho e avaliação\npermanente dos serviços entregues. O controle não deve se limitar a verificar se o\ndinheiro foi formalmente gasto de maneira correta. É preciso avaliar se aquilo que\nfoi contratado foi efetivamente entregue e se produziu resultado para a população.\n\nDAR TRANSPARÊNCIA AOS RESULTADOS DO GOVERNO\nEstabelecer metas e indicadores para as principais políticas públicas e permitir que\na população acompanhe sua execução. Transparência também é prestar contas do\nque foi prometido, do que foi feito, de quanto custou e do resultado alcançado.\n\nPROTEGER O PATRIMÔNIO PÚBLICO\nFortalecer os mecanismos de controle sobre imóveis, terrenos, empresas públicas e\ndemais ativos pertencentes ao Distrito Federal, garantindo que decisões\nenvolvendo o patrimônio da população sejam tomadas com transparência, critérios\ntécnicos e demonstração do interesse público.\n\nMELHORAR A QUALIDADE DO GASTO E COMBATER DESPERDÍCIOS\nRevisar despesas, contratos e processos para identificar desperdícios e\noportunidades de economia, direcionando os recursos para as políticas e serviços que\nefetivamente chegam às pessoas. Economizar não é deixar de cuidar. É impedir que o\ndinheiro seja desperdiçado para que ele possa chegar aonde realmente faz diferença.\n\n16"
+          },
+          {
+            "id": "cuidar-da-gestao",
+            "titulo": "Cuidar da gestão",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Cuidar da gestão\nE CRIAR CONDIÇÕES PARA O\nDESENVOLVIMENTO ECONÔMICO\nCuidar da gestão é fazer o governo funcionar melhor para que Brasília também\ncresça e gere oportunidades. Uma administração eficiente, moderna e menos\nburocrática reduz custos, melhora os serviços públicos e cria um ambiente mais\nfavorável para quem trabalha, empreende, produz e gera empregos.\nEssa prioridade reúne as políticas de desenvolvimento econômico, trabalho e\nempreendedorismo, com simplificação de processos, digitalização dos serviços e\nmelhor utilização dos recursos públicos.\nBrasília precisa aproveitar sua capacidade de produzir conhecimento, tecnologia e\ninovação, diversificar sua economia, atrair investimentos, apoiar quem empreende e\ncriar oportunidades de trabalho e renda nas diferentes regiões.\nCuidar da gestão é fazer o Estado funcionar melhor, facilitar a vida das pessoas e\ncriar as condições para Brasília gerar mais desenvolvimento, empregos e renda.\n\nCOMO VAMOS CUIDAR\nSIMPLIFICAR A VIDA DE QUEM EMPREENDE\nReduzir burocracias, simplificar processos, licenças e autorizações e integrar os\nórgãos envolvidos na abertura e no funcionamento das empresas. Quem quer\ntrabalhar, investir e gerar emprego precisa encontrar no governo um facilitador, e\nnão uma sucessão de obstáculos.\n\nAPOIAR OS PEQUENOS NEGÓCIOS E O EMPREENDEDORISMO\nCriar melhores condições para micro e pequenos empreendedores, trabalhadores\nautônomos e negócios locais crescerem, com acesso a crédito, qualificação,\nsimplificação e apoio para ampliar sua capacidade de gerar emprego e renda.\n\nDESENVOLVER AS VOCAÇÕES ECONÔMICAS DE CADA REGIÃO\nBrasília não tem uma única economia. Cada região possui características, atividades\ne potencialidades próprias. A política de desenvolvimento econômico deverá\nidentificar e fortalecer essas vocações, aproximando qualificação profissional,\ninfraestrutura, crédito e oportunidades das realidades de cada território.\n17"
+          },
+          {
+            "id": "atrair-empresas-e-novos-investimentos-para-brasilia",
+            "titulo": "ATRAIR EMPRESAS E NOVOS INVESTIMENTOS PARA BRASÍLIA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "ATRAIR EMPRESAS E NOVOS INVESTIMENTOS PARA BRASÍLIA\nCriar um ambiente mais seguro, simples e previsível para quem deseja investir no\nDistrito Federal, com regras claras, segurança jurídica, menos burocracia e uma\natuação coordenada do governo para atrair empresas e gerar empregos.\n\nTRANSFORMAR BRASÍLIA NO VALE DO SILÍCIO BRASILEIRO\nAproveitar a presença de universidades, centros de pesquisa, empresas,\nprofissionais altamente qualificados e a vocação de Brasília para a tecnologia e a\ninovação para transformar conhecimento em desenvolvimento econômico. O\nobjetivo é fazer do Distrito Federal um polo nacional de tecnologia e inovação,\ncapaz de atrair empresas, estimular startups e novos negócios, aumentar a\nprodutividade e gerar empregos qualificados e renda.\nBrasília tem condições de se tornar o Vale do Silício brasileiro, conectando conhecimento,\nempreendedorismo, investimento e poder público para criar um ambiente onde novas\nideias possam se transformar em empresas, empregos e oportunidades.\n\nINVESTIR NA ECONOMIA VERDE E EM NOVAS OPORTUNIDADES DE\nDESENVOLVIMENTO\nEstimular atividades econômicas ligadas à sustentabilidade, à inovação e ao uso\nresponsável dos recursos naturais, fazendo da agenda ambiental também uma\noportunidade para gerar novos negócios, empregos e renda.\nLixo também é dinheiro quando existe gestão, tecnologia e uma cadeia produtiva\ncapaz de transformar resíduos em valor. Ampliar a reciclagem, o reaproveitamento e\na economia circular, fortalecendo cooperativas e estimulando empresas e soluções\ninovadoras capazes de transformar aquilo que hoje é descartado em matéria-prima,\nenergia, produtos e novas oportunidades econômicas.\n\nAPROXIMAR QUALIFICAÇÃO PROFISSIONAL DE OPORTUNIDADES DE TRABALHO\nArticular Educação e Desenvolvimento Econômico para que a formação técnica e\nprofissional esteja conectada às demandas reais do mercado e às vocações\neconômicas das regiões. A qualificação precisa ajudar as pessoas a encontrarem\ntrabalho, melhorarem sua renda ou criarem o próprio negócio.\n\nMELHORAR A QUALIDADE DO GASTO PÚBLICO\nPlanejar melhor, estabelecer prioridades, acompanhar resultados e avaliar se o dinheiro\ngasto pelo governo está efetivamente produzindo benefícios para a população.\nEficiência não é apenas gastar menos. É fazer cada recurso público entregar mais.\n\n18"
+          },
+          {
+            "id": "5",
+            "titulo": "5",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "ocr",
+            "conteudo": "5\nCompromissos\n→ Educação que cuida\n→ Saúde que cuida\n→ Segurança cuidadosa\n→ Transporte cuidadoso\n→ Governo que cuida\nPaula Belmonte 71"
+          },
+          {
+            "id": "educacao",
+            "titulo": "Educação",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Educação\nque cuida\nTODA CRIANÇA E TODO JOVEM MERECEM A\nOPORTUNIDADE DE DESENVOLVER SEU POTENCIAL\n\nO DESAFIO\nA escola pública precisa garantir aprendizagem, mas seu papel vai além. A escola\ntambém é espaço de proteção, desenvolvimento e oportunidades. Para muitas famílias,\nespecialmente aquelas cujos responsáveis precisam trabalhar o dia inteiro, saber que\nos filhos estão em ambiente seguro, aprendendo, bem alimentados, praticando\nesportes e desenvolvendo novas habilidades também é uma forma de cuidado.\nO Distrito Federal enfrenta desafios importantes de aprendizagem, permanência e\ndesigualdade entre escolas e regiões. Há estudantes que avançam de etapa\nacumulando dificuldades de leitura, escrita e matemática, enquanto outros deixam\nde frequentar a escola sem que a rede consiga agir a tempo. Recompor a\naprendizagem, identificar precocemente quem está ficando para trás e enfrentar a\nevasão escolar precisam fazer parte da mesma estratégia de cuidado. A escola\nprecisa acompanhar a trajetória de cada estudante e agir antes que uma dificuldade\nse transforme em abandono.\nTambém existem obstáculos dentro da própria estrutura da rede. Em abril de 2026,\n15.565 professores temporários estavam em atividade na Secretaria de Educação,\nevidenciando a necessidade de fortalecer o quadro permanente e dar mais\nestabilidade às equipes escolares. Diretores e gestores também enfrentam\nburocracia e limitações para administrar recursos e resolver necessidades\ncotidianas. O Programa de Descentralização Administrativa e Financeira (PDAF),\ncriado para dar autonomia às escolas, passou a ser operacionalizado por meio do\nCartão PDAF, cujo modelo tem sido alvo de reclamações dos próprios gestores. A\nlimitação a fornecedores credenciados restringe as opções de contratação, pode\nelevar preços e reduz a capacidade de negociação das escolas, tornando mais lenta\ne onerosa a solução de demandas simples.\nA ausência de uma política permanente de manutenção faz com que gestores\nescolares vivam em busca de emendas para conseguir recursos destinados a\nreformas, manutenção e melhorias básicas das unidades. Diretores que deveriam\n\n20"
+          },
+          {
+            "id": "concentrar-esforcos-na-gestao-pedagogica-e-no-funcionamento-da-escola-ac",
+            "titulo": "concentrar esforços na gestão pedagógica e no funcionamento da escola acabam",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "concentrar esforços na gestão pedagógica e no funcionamento da escola acabam\nrecorrendo a gabinetes para viabilizar intervenções que precisam fazer parte do\nplanejamento e do orçamento permanente da educação.\nA infraestrutura também revela o tamanho do desafio. Apenas 30% das escolas\npúblicas do Distrito Federal têm refeitório. Há unidades que precisam de melhorias\nem bibliotecas, laboratórios, quadras, banheiros, cozinhas, espaços de convivência\ne acessibilidade. Uma escola que pretende receber o estudante por mais tempo\nprecisa oferecer condições adequadas para aprender, se alimentar, praticar\nesportes, conviver e se desenvolver. Não existe Educação Integral de qualidade sem\numa escola preparada para a jornada integral.\nA distribuição das escolas pelo território também precisa ser revista. Todos os anos,\nmilhares de estudantes dependem do transporte escolar para chegar a escolas\ndistantes de suas casas, enquanto o Distrito Federal destina quase R$ 1 bilhão a\nesse serviço. O transporte escolar é indispensável onde não houver alternativa,\nespecialmente nas áreas rurais e em situações específicas, mas não pode substituir\no planejamento e a expansão da rede pública. O ideal é que a criança estude perto\nde onde mora. Isso reduz deslocamentos, fortalece o vínculo com a comunidade\nescolar, aproxima as famílias da escola e devolve tempo à infância.\nO cuidado também precisa alcançar quem necessita de apoio específico. Educação\ninclusiva não deve ser apenas garantir matrícula. Exige acessibilidade, profissionais\npreparados, recursos pedagógicos adequados e acompanhamento capaz de\nassegurar participação, aprendizagem e permanência aos estudantes com\nnecessidades educacionais específicas. Segurança, saúde emocional, convivência\nrespeitosa e cultura de paz também precisam fazer parte do cotidiano escolar.\nAmpliar a Educação Integral, portanto, exige muito mais do que aumentar o tempo\nde permanência do estudante. É preciso fazer esse tempo valer a pena. Profissionais\nqualificados e valorizados, alimentação de qualidade, escolas bem cuidadas,\nesporte, cultura, tecnologia, idiomas, formação profissional e preparação para o\nmercado de trabalho precisam compor uma jornada que desenvolva crianças e\njovens por inteiro e também dê mais tranquilidade às famílias.\n\nNOSSO COMPROMISSO\nCuidar pela educação é garantir que cada criança e cada jovem,\nindependentemente de onde nasceu, de sua realidade ou de suas necessidades,\ntenha condições de aprender, desenvolver o potencial e construir o próprio futuro.\nUma educação que cuida também aproxima a escola da vida das famílias. Sempre\nque houver demanda que justifique a expansão da rede, a prioridade será criar\nvagas e construir escolas mais perto de onde os estudantes vivem, reduzindo\ndeslocamentos desnecessários e o tempo gasto diariamente no transporte escolar.\n\n21"
+          },
+          {
+            "id": "uma-educacao-que-cuida-comeca-pela-aprendizagem-garante-alfabetizacao-no",
+            "titulo": "Uma educação que cuida começa pela aprendizagem. Garante alfabetização no",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Uma educação que cuida começa pela aprendizagem. Garante alfabetização no\ntempo certo, identifica dificuldades e oferece apoio para que nenhum estudante\nfique para trás ou abandone a escola. Também cuida da saúde e do\ndesenvolvimento dos alunos, com alimentação de qualidade, nutritiva e adequada a\ncada etapa da vida. Reconhece que cada criança aprende de uma forma e pode\nprecisar de cuidados diferentes. Por isso, a inclusão de estudantes neuroatípicos,\npessoas com deficiência e alunos com necessidades educacionais específicas deve\ngarantir não apenas o acesso à escola, mas condições reais para aprender,\nparticipar, conviver e se desenvolver.\nUma educação que cuida também promove cultura de paz, valoriza professores e\nprofissionais da educação e dá autonomia e condições aos gestores para cuidar de cada\nunidade. A escola precisa estar preparada para ensinar, alimentar, acolher e proteger.\nA Educação Integral será uma das principais estratégias para ampliar essa proteção\ne as oportunidades. Mais tempo na escola com aprendizagem, alimentação de\nqualidade, esporte, cultura, tecnologia, idiomas e formação profissional. Uma\njornada capaz de desenvolver crianças e jovens por inteiro e, ao mesmo tempo, dar\nmais segurança às famílias e melhores condições para que mães e responsáveis\npossam trabalhar, estudar, se qualificar ou empreender.\n\nCOMO VAMOS CUIDAR\n1. AMPLIAR A EDUCAÇÃO INTEGRAL COM QUALIDADE\nExpandir gradualmente a Educação Integral, começando pelas regiões de maior\nvulnerabilidade e preparando as escolas para receber os estudantes durante todo o\ndia. A jornada ampliada deve combinar aprendizagem com esporte, cultura, leitura,\ntecnologia, idiomas e desenvolvimento de habilidades e talentos. Mais tempo na\nescola também significa mais proteção para crianças e jovens e mais tranquilidade\npara as famílias, que precisam trabalhar, estudar, se qualificar ou empreender.\n\n2. GARANTIR ALFABETIZAÇÃO E RECOMPOR A APRENDIZAGEM\nFortalecer a alfabetização no tempo certo e criar uma estratégia de recomposição\nda aprendizagem, com avaliação diagnóstica, reforço e acompanhamento dos\nestudantes que apresentam dificuldades. A aprendizagem será acompanhada ao\nlongo de toda a trajetória escolar para identificar defasagens antes que se\nacumulem. Cuidar também é perceber quem está ficando para trás e agir a tempo.\n\n3. ENFRENTAR A EVASÃO E ACOMPANHAR CADA ESTUDANTE\nFortalecer o acompanhamento da frequência e a busca ativa para identificar faltas\n\n22"
+          },
+          {
+            "id": "e-situacoes-de-risco-de-abandono-integrar-escola-familia-e-rede-de-prote",
+            "titulo": "e situações de risco de abandono. Integrar escola, família e rede de proteção para",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "e situações de risco de abandono. Integrar escola, família e rede de proteção para\ncompreender as causas da ausência e construir respostas para garantir a\npermanência ou o retorno do estudante.\n\n4. GARANTIR UMA EDUCAÇÃO VERDADEIRAMENTE INCLUSIVA\nPreparar a rede para acolher as diferentes formas de aprender e as necessidades de\ncada estudante, com atenção especial às pessoas neuroatípicas, com deficiência e\ncom necessidades educacionais específicas.\nAmpliar a acessibilidade física, pedagógica e tecnológica, fortalecer o atendimento\neducacional especializado, qualificar profissionais e garantir os apoios necessários\npara que inclusão signifique muito mais do que matrícula: signifique aprender,\nparticipar, conviver e se desenvolver.\nIntegrar Educação, Saúde e Assistência Social para identificar precocemente\nnecessidades de desenvolvimento e neurodesenvolvimento e facilitar o acesso das\nfamílias à avaliação, ao diagnóstico, às terapias e ao acompanhamento\nespecializado, respeitando as atribuições de cada política pública.\n\n5. GARANTIR ALIMENTAÇÃO ESCOLAR DE QUALIDADE\nTratar a alimentação como parte do desenvolvimento e da aprendizagem,\ngarantindo refeições nutritivas, equilibradas, seguras e adequadas às diferentes\nfaixas etárias e necessidades alimentares dos estudantes. Fortalecer o\nacompanhamento da qualidade dos alimentos, das compras ao preparo e à\ndistribuição, e melhorar a infraestrutura de cozinhas e refeitórios. A expansão da\nEducação Integral será acompanhada das condições necessárias para oferecer\nalimentação de qualidade durante toda a jornada.\n\n6. DAR MAIS AUTONOMIA A DIRETORES E GESTORES\nReformular o Programa de Descentralização Administrativa e Financeira (PDAF) e o\nCartão PDAF, reduzindo entraves, ampliando as possibilidades de contratação e\ndevolvendo às escolas maior capacidade de negociação e decisão, sempre com\ntransparência, controle e prestação de contas. A gestão precisa ter recursos e\ninstrumentos para resolver problemas cotidianos com agilidade e concentrar seus\nesforços na aprendizagem e no funcionamento da unidade.\n\n7. CONSTRUIR ESCOLAS PERTO DE CASA\nMapear as regiões com maior demanda por transporte escolar e falta de vagas\npróximas às residências dos estudantes, utilizando essas informações para orientar\na expansão da rede pública e a construção de novos prédios escolares.\nPriorizar a criação de vagas nas regiões em que o deslocamento diário de grande\nnúmero de estudantes revela uma demanda permanente por escolas. O transporte\nescolar deixará de ser tratado como substituto para a ausência de unidades de\n23\nensino. A escola precisa estar mais perto da criança, da família e da comunidade."
+          },
+          {
+            "id": "8-criar-uma-politica-permanente",
+            "titulo": "8. CRIAR UMA POLÍTICA PERMANENTE",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "8. CRIAR UMA POLÍTICA PERMANENTE\nMODERNIZAÇÃO E EXPANSÃO DA REDE ESCOLAR\n\nDE\n\nMANUTENÇÃO,\n\nEstabelecer planejamento e recursos regulares para a manutenção preventiva e\ncorretiva das unidades, priorizando problemas de infraestrutura que afetam\ndiretamente a aprendizagem, a segurança e o bem-estar dos estudantes.\nConstruir refeitórios em todas as escolas públicas do Distrito Federal, equipar\ncozinhas, reformar banheiros, parquinhos e quadras e ampliar bibliotecas, espaços\nde convivência e estruturas de acessibilidade. Também destinar e adaptar\nambientes para laboratórios de ciências, tecnologia e inovação, cozinhas\nexperimentais, salas sensoriais, oficinas, atividades culturais, formação profissional\ne outras experiências de aprendizagem que ultrapassem a sala de aula tradicional. A\ninfraestrutura escolar precisa acompanhar uma educação mais integral, prática e\nconectada ao futuro.\nAlém de recuperar e modernizar as unidades existentes, ampliar a rede física nos\nterritórios em que a falta de vagas obriga estudantes a percorrer longas distâncias\npara estudar. A construção de novas escolas será orientada pela demanda de cada\nregião, pelo crescimento populacional e pelos fluxos de transporte escolar,\naproximando a escola da casa das famílias.\nEmendas parlamentares poderão ampliar investimentos, mas não substituir a\nresponsabilidade permanente do governo pela manutenção, modernização e\nexpansão da rede escolar.\n\n9. VALORIZAR PROFISSIONAIS E FORTALECER O QUADRO PERMANENTE\nSubstituir gradualmente professores temporários por concursados, fortalecendo o\nquadro permanente, dando mais estabilidade às equipes e garantindo continuidade\naos projetos pedagógicos.\nInvestir em formação continuada, melhores condições de trabalho e fortalecimento\ndos profissionais e equipes de apoio que fazem parte da rotina escolar, ampliando a\narticulação com a UnDF para formação e aperfeiçoamento dos profissionais da rede.\n\n10. FORTALECER A CULTURA DE PAZ, INTEGRIDADE E RESPEITO\nFortalecer e ampliar para todas as escolas do Distrito Federal a Política Distrital Na\nMoral – Educação para a Integridade, desenvolvida a partir da iniciativa do\nMinistério Público do Distrito Federal e Territórios (MPDFT), estimulando ética,\ncidadania, responsabilidade, respeito e participação dos estudantes.\n\n24"
+          },
+          {
+            "id": "integrar-a-cultura-de-paz-ao-cotidiano-das-escolas-com-prevencao-da-viol",
+            "titulo": "Integrar a cultura de paz ao cotidiano das escolas, com prevenção da violência,",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Integrar a cultura de paz ao cotidiano das escolas, com prevenção da violência,\nmediação de conflitos, convivência respeitosa, proteção e atenção à saúde\nemocional dos estudantes e profissionais.\n\n11. CONECTAR O ENSINO MÉDIO AO FUTURO PROFISSIONAL\nFortalecer a formação técnica e profissional no Ensino Médio, aproximando\neducação, qualificação, ensino superior e mercado de trabalho. Ampliar a\narticulação com a Universidade do Distrito Federal (UnDF), a Universidade de\nBrasília (UnB), o Instituto Federal de Brasília (IFB) e instituições de formação\nprofissional, além de estimular tecnologia, inovação e empreendedorismo.\nFortalecer a UnDF como instrumento estratégico de formação, pesquisa e\ndesenvolvimento do DF, aproximando a universidade das necessidades da rede\npública e das vocações econômicas de Brasília. A universidade deve contribuir para\nformar profissionais nas áreas em que o DF mais precisa, produzir conhecimento\naplicado aos desafios da cidade e ampliar as oportunidades para os jovens\ncontinuarem estudando.\nA UnDF também deverá participar do ecossistema de inovação, aproximando\nuniversidade, pesquisa, setor produtivo e governo e ajudando a transformar\nconhecimento em desenvolvimento, novos negócios e empregos qualificados.\n\n12. INTEGRAR ESCOLA, ESPORTE, CULTURA E COMUNIDADE\nAproveitar os equipamentos públicos existentes nas regiões, conectando escolas a\ncentros esportivos, culturais, bibliotecas, parques e outros espaços da comunidade.\nFortalecer os Centros Interescolares de Línguas e ampliar o acesso dos estudantes a\nidiomas, esporte, cultura e atividades que complementem sua formação.\n\n13. CUIDAR DA SAÚDE BUCAL DESDE A INFÂNCIA\nAmpliar a presença de profissionais de saúde nas escolas, incluindo atendimento\nodontológico preventivo, com dentistas e equipes de saúde bucal atuando de forma\narticulada à rede pública de saúde.\n\nRESULTADOS ESPERADOS\nUma rede pública capaz de reduzir desigualdades e garantir que a realidade social,\no lugar onde o estudante mora ou suas necessidades individuais não determinem a\nqualidade da educação e das oportunidades que receberá.\nMais crianças e jovens aprendendo no tempo certo, com melhoria da\nalfabetização, redução das defasagens de aprendizagem e acompanhamento\nde quem precisa de apoio e recomposição.\nRedução da evasão escolar, com identificação precoce dos estudantes em risco\ne atuação integrada para garantir sua permanência ou retorno à escola.\n25"
+          },
+          {
+            "id": "ampliacao-da-educacao-integral-com-qualidade-especialmente-nas-regioes-d",
+            "titulo": "Ampliação da Educação Integral com qualidade, especialmente nas regiões de",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Ampliação da Educação Integral com qualidade, especialmente nas regiões de\nmaior vulnerabilidade, garantindo mais aprendizagem, proteção e\noportunidades para crianças e jovens e mais tranquilidade para as famílias.\nMais estudantes estudando perto de casa, com expansão da rede pública nas\nregiões com déficit de vagas, reduzindo deslocamentos desnecessários e o\ntempo gasto no transporte escolar.\nEscolas mais bem cuidadas, modernas e preparadas para uma educação\nintegral, com refeitórios, cozinhas adequadas, bibliotecas, laboratórios, quadras,\nparquinhos, espaços de convivência, salas sensoriais, acessibilidade e\nambientes destinados a diferentes experiências de aprendizagem.\nAlimentação escolar de qualidade, com refeições nutritivas, seguras e\nadequadas às diferentes faixas etárias e necessidades dos estudantes, servidas\nem espaços apropriados.\nUma escola verdadeiramente inclusiva, garantindo condições de aprendizagem,\nparticipação, convivência e desenvolvimento para estudantes neuroatípicos,\npessoas com deficiência e alunos com necessidades educacionais específicas.\nDiretores e gestores com mais autonomia, menos burocracia e instrumentos\neficientes para administrar recursos e resolver as necessidades das unidades,\nsem depender da busca permanente por emendas parlamentares para\ndemandas básicas.\nMais professores concursados e equipes escolares mais estáveis, reduzindo\ngradualmente a dependência de contratos temporários e garantindo\ncontinuidade aos projetos pedagógicos.\nEscolas mais seguras, acolhedoras e comprometidas com uma cultura de paz,\nfortalecendo ética, respeito, integridade, prevenção da violência, convivência e\ncuidado com a saúde emocional da comunidade escolar.\nMais oportunidades para os jovens construírem o próprio futuro, com formação\ntécnica e profissional, tecnologia, inovação, idiomas, esporte e cultura e maior\nconexão entre Ensino Médio, qualificação e mercado de trabalho.\nFamílias mais próximas da vida escolar, com escolas inseridas nas comunidades\ne uma rede capaz de acompanhar a trajetória de cada estudante e agir quando\nsurgirem dificuldades.\n\n26"
+          },
+          {
+            "id": "saude-que-cuida",
+            "titulo": "Saúde que cuida",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Saúde que cuida\nCUIDAR DAS PESSOAS É GARANTIR\nATENDIMENTO NO TEMPO CERTO\n\nO DESAFIO\nO maior desafio da saúde pública não começa na porta do hospital. Começa muito\nantes, quando uma pessoa não consegue ter acompanhamento regular, prevenir\numa doença, realizar um exame no tempo certo ou encontrar atendimento perto de\ncasa. Quando o cuidado chega tarde, um problema que poderia ser acompanhado\nna Unidade Básica de Saúde (UBS) acaba chegando à Unidade de Pronto\nAtendimento (UPA) ou ao hospital.\nHoje, cerca de 1 milhão de moradores do Distrito Federal ainda não têm o cadastro\nna Atenção Primária. A rede também enfrenta déficit de equipes da Estratégia Saúde\nda Família, profissionais de acolhimento e equipes multiprofissionais, além da\nnecessidade de ampliar e recuperar a estrutura das UBSs. O resultado é uma porta\nde entrada que ainda não consegue acompanhar toda a população como deveria.\nEssa fragilidade repercute em todo o sistema. Sem acompanhamento contínuo,\nprevenção e diagnóstico precoce, na atenção básica, aumenta a procura por UPAs e\nhospitais, crescem as filas e os serviços de urgência e emergência acabam\nabsorvendo demandas que poderiam ter sido resolvidas antes. Fortalecer a Atenção\nPrimária é cuidar antes que a doença se agrave e, ao mesmo tempo, permitir que os\ndemais níveis de atenção cumpram melhor sua função.\nMas o problema da saúde não termina no primeiro atendimento. Muitas vezes, o\npaciente consegue entrar no sistema e passa a enfrentar uma nova dificuldade:\npercorrer a rede fragmentada, buscando consultas, exames, especialistas, cirurgias,\ntratamentos e reabilitação sem conseguir acompanhar com clareza o próprio caminho.\nO SUS foi concebido para funcionar de outra forma: como uma rede integrada de\ncuidado, em que cada nível de atenção tem uma função e todos trabalham de\nmaneira articulada. A Atenção Primária, por meio das UBSs e das equipes de Saúde\nda Família, deve ser a base dessa rede e a principal referência do cidadão. É onde\nacontecem prevenção, vacinação, acompanhamento das famílias, controle de\ndoenças crônicas, consultas e os cuidados mais frequentes.\nQuando surge uma situação que não pode esperar, entra a urgência e emergência,\ncom UPAs e demais serviços preparados para o atendimento imediato. A rede de\natenção psicossocial, incluindo os CAPS, também precisa estar articulada aos demais\n27"
+          },
+          {
+            "id": "servicos-para-garantir-cuidado-em-saude-mental-e-atencao-as-pessoas-com",
+            "titulo": "serviços para garantir cuidado em saúde mental e atenção às pessoas com",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "serviços para garantir cuidado em saúde mental e atenção às pessoas com\nproblemas relacionados ao uso de álcool e outras drogas.\nQuando o caso exige exames, especialistas ou tratamentos que ultrapassam a\ncapacidade da Atenção Primária, o paciente segue para a atenção especializada,\ncom policlínicas, ambulatórios, centros especializados e serviços de reabilitação.\nNos casos que exigem internação, cirurgia ou estrutura complexa, entra a atenção\nhospitalar. E os hospitais e serviços de referência devem concentrar os casos de alta\ncomplexidade, que dependem de equipes altamente especializadas, tecnologia\navançada e tratamentos específicos.\nO problema começa quando essas partes não conversam. Quando a Atenção Primária não\nfunciona, as UPAs ficam sobrecarregadas. Quando a atenção especializada não responde, as\nfilas aumentam. Quando consultas e exames demoram, doenças se agravam. Quando não há\nintegração das informações, o paciente precisa encontrar sozinho o próximo caminho dentro\ndo sistema. A saúde precisa funcionar como uma linha contínua de cuidado: prevenir,\nacolher, diagnosticar, encaminhar, tratar, reabilitar e continuar acompanhando.\n\n28"
+          },
+          {
+            "id": "uma-rede-que-acompanha-as-pessoas",
+            "titulo": "UMA REDE QUE ACOMPANHA AS PESSOAS",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "UMA REDE QUE ACOMPANHA AS PESSOAS\nO desafio do Distrito Federal é fazer essa estrutura funcionar de maneira\nverdadeiramente integrada. O cidadão não pode carregar a responsabilidade de\nfazer o sistema conversar. É a rede que precisa acompanhar o cidadão.\nA tecnologia será fundamental para essa transformação. Prontuário eletrônico\nintegrado, regulação, Saúde Digital e compartilhamento seguro das informações\nprecisam conectar diferentes pontos da rede. O profissional que recebe o paciente\nprecisa conhecer o histórico dele, e a equipe responsável pelo acompanhamento\nprecisa saber o que aconteceu quando ele passou por outro serviço.\nA fila também precisa fazer parte dessa integração. O encaminhamento para um\nespecialista, exame, cirurgia ou tratamento não pode significar o início de uma\nespera sem informação. A jornada do paciente precisa ser acompanhada do\nprimeiro atendimento até a conclusão do cuidado, com critérios claros de\nprioridade, transparência e gestão permanente das filas.\nOutro desafio é aproximar o atendimento de quem tem maior dificuldade de chegar\naos serviços. Pessoas idosas, com deficiência, doenças crônicas, limitações de\nmobilidade ou que necessitam de cuidado contínuo precisam de uma rede capaz de\nchegar mais perto de suas casas. Nem todo cuidado precisa acontecer dentro de um\nhospital, de uma UPA ou mesmo de uma UBS.\nO envelhecimento da população, inclusive, exige que a rede esteja preparada para\nnecessidades específicas da pessoa idosa. Doenças crônicas, perda de mobilidade,\nnecessidade de reabilitação e condições que exigem acompanhamento de\ndiferentes especialidades demandam um cuidado integrado, capaz de acompanhar\no idoso perto de casa e oferecer atendimento especializado quando necessário.\nO DF dispõe de uma grande estrutura de saúde e de profissionais qualificados, mas\nprecisa integrar serviços, organizar pessoal, garantir abastecimento, acompanhar\nresultados e fazer os recursos chegarem com eficiência à ponta.\nA gestão da saúde também exige enfrentar os problemas do Instituto de Gestão\nEstratégica de Saúde do Distrito Federal (IGES-DF). Criado com a promessa de dar\nmais agilidade e eficiência ao atendimento, o modelo precisa ser submetido a maior\ncontrole, transparência e avaliação de resultados. A autonomia de gestão não pode\nsignificar menos fiscalização sobre contratos, compras, gastos e qualidade dos\nserviços prestados à população.\nO desafio, portanto, não é apenas construir mais unidades ou oferecer mais\nconsultas. É fazer a rede funcionar como uma rede e garantir que cada pessoa\nreceba o cuidado adequado, no lugar certo e no tempo certo.\n29"
+          },
+          {
+            "id": "nosso-compromisso",
+            "titulo": "NOSSO COMPROMISSO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "NOSSO COMPROMISSO\nCuidar pela saúde é fazer o atendimento chegar antes que a doença se agrave e garantir\nque ninguém se perca no caminho quando precisar do sistema. A Atenção Primária será\nfortalecida como base dessa transformação. Mais equipes de Saúde da Família, UBSs\nestruturadas, atendimento multiprofissional, prevenção, acompanhamento de doenças\ncrônicas e cuidado mais próximo das pessoas e das comunidades. A saúde precisa\nchegar antes da doença e estar perto de onde as pessoas vivem.\nO cuidado continuará depois da primeira consulta. A rede será organizada para\nacompanhar a trajetória de cada paciente, conectando Atenção Primária, urgência e\nemergência, saúde mental, exames, especialistas, reabilitação, hospitais e serviços\nde alta complexidade. Cada nível de atenção cumprirá sua função, mas nenhum\nfuncionará isoladamente.\nTecnologia, prontuário eletrônico e Saúde Digital serão instrumentos para conectar\nessa rede, organizar as filas e garantir continuidade ao atendimento. Quando houver\nnecessidade de avançar para outro nível de atenção, o paciente será encaminhado e\nacompanhado, sem precisar recomeçar sua trajetória a cada serviço que procurar.\nO cuidado será organizado de acordo com as diferentes fases da vida. O\natendimento domiciliar será fortalecido para pessoas idosas, com deficiência,\ndoenças crônicas ou limitações de mobilidade que necessitem de cuidado\ncontínuo. Para a população idosa, a rede será estruturada para integrar Atenção\nPrimária, acompanhamento domiciliar, especialistas, reabilitação e atendimento\nhospitalar, garantindo continuidade ao cuidado\nUma saúde que cuida previne, acolhe, acompanha e resolve. Cuida perto de casa\nquando é possível, garante atendimento especializado no tempo certo quando é\nnecessário e acompanha cada pessoa durante toda a sua jornada.\n\nCOMO VAMOS CUIDAR\n1. FORTALECER A ATENÇÃO PRIMÁRIA\nAmpliar a cobertura da Atenção Primária e da Estratégia Saúde da Família,\nfortalecendo as UBSs como principal referência de cuidado para cada pessoa e família.\nExpandir e completar as equipes, incluindo as equipes de saúde bucal e os\nprofissionais multiprofissionais, para ampliar a capacidade de prevenção, diagnóstico\nprecoce, acompanhamento e resolução dos problemas mais frequentes.\n\n30"
+          },
+          {
+            "id": "a-proximidade-das-equipes-com-as-familias-tambem-sera-utilizada-para-ide",
+            "titulo": "A proximidade das equipes com as famílias também será utilizada para identificar",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "A proximidade das equipes com as famílias também será utilizada para identificar\nvulnerabilidades, conectando a Atenção Primária às demais políticas de proteção.\nAmpliar e modernizar a rede de UBSs de acordo com as necessidades de cada\nterritório, aproximando o atendimento de onde as pessoas vivem. A saúde precisa\nchegar antes da doença e estar perto de casa.\n\n2. ORGANIZAR A JORNADA DO PACIENTE E INTEGRAR TODA A REDE\nImplantar uma lógica de acompanhamento que conecte Atenção Primária, SAMU,\nurgência e emergência, CAPS, exames, especialistas, reabilitação, hospitais e\nserviços de alta complexidade. Cada serviço terá uma função dentro da rede, mas\ntodos precisam compartilhar informações e garantir continuidade ao atendimento.\nFortalecer a integração entre SAMU, UBSs, UPAs, hospitais e centrais de regulação.\nNos casos atendidos pelo SAMU que não exijam internação, a rede deverá garantir,\nquando necessário, a continuidade do acompanhamento.\n\n3. USAR A SAÚDE DIGITAL PARA CONECTAR O CUIDADO\nImplantar um prontuário eletrônico integrado, acessível aos diferentes níveis da\nrede, reunindo histórico clínico, exames, medicamentos, encaminhamentos e\ninformações necessárias à continuidade do cuidado.\nAmpliar os serviços de Saúde Digital para aproximar especialistas da Atenção\nPrimária, reduzir deslocamentos e acelerar diagnósticos e atendimentos, sem\nsubstituir o atendimento presencial quando ele for necessário.\n\n4. ORGANIZAR AS FILAS E GARANTIR ATENDIMENTO NO TEMPO CERTO\nIntegrar e qualificar a regulação de consultas, exames, procedimentos e cirurgias,\ncom critérios transparentes de prioridade e acompanhamento permanente da\ndemanda e da capacidade de atendimento. O paciente precisa saber que está na\nfila, qual é a situação do seu encaminhamento e ser chamado de acordo com\ncritérios clínicos claros. A gestão precisa identificar gargalos e atuar sobre eles,\nampliando capacidade onde houver maior demanda.\n\n5. AMPLIAR O ACESSO A ESPECIALISTAS, EXAMES E REABILITAÇÃO\nFortalecer a atenção especializada, ampliando a capacidade das policlínicas,\nambulatórios, centros especializados e serviços de diagnóstico e reabilitação.\nOrganizar a oferta de especialistas e exames de acordo com a demanda real de cada\nregião e integrar esse atendimento às UBSs.\n\n6. ESTRUTURAR CUIDADO DO CÂNCER, DA PREVENÇÃO AO TRATAMENTO\nOrganizar a linha de cuidado oncológico para que a pessoa com suspeita ou\ndiagnóstico de câncer seja acompanhada durante toda a sua jornada, da prevenção\ne do diagnóstico precoce ao tratamento, à reabilitação e aos cuidados paliativos.\n\n31"
+          },
+          {
+            "id": "fortalecer-a-atencao-primaria-para-identificar-sinais-de-alerta-e-garant",
+            "titulo": "Fortalecer a Atenção Primária para identificar sinais de alerta e garantir",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Fortalecer a Atenção Primária para identificar sinais de alerta e garantir\nencaminhamento rápido dos casos suspeitos. Criar fluxos prioritários para exames e\nconfirmação diagnóstica, reduzindo o tempo entre a suspeita da doença, o\ndiagnóstico e o início do tratamento.\nIntegrar UBSs, regulação, serviços de diagnóstico e unidades especializadas para\ngarantir continuidade entre consultas, exames, cirurgia, quimioterapia, radioterapia\ne demais tratamentos necessários. No câncer, o tempo também é parte do cuidado.\n\n7. FORTALECER A URGÊNCIA E A EMERGÊNCIA\nOrganizar UPAs, emergências hospitalares e demais serviços de urgência para que\nestejam preparados para atender quem realmente precisa de cuidado imediato,\ncom fluxos claros entre esses serviços e os demais níveis da rede.\nIntegrar SAMU, UPAs, emergências hospitalares e centrais de regulação, utilizando\ntecnologia, protocolos e planejamento territorial para reduzir o tempo de resposta e\ndirecionar cada paciente ao serviço adequado.\nApós o atendimento de urgência, pacientes que necessitem de continuidade do\ncuidado deverão ser encaminhados para acompanhamento na Atenção Primária,\natenção especializada ou rede hospitalar. A porta da urgência não pode ser o\ncomeço e o fim do atendimento.\n\n8. FAZER OS HOSPITAIS CUMPRIREM SUA FUNÇÃO DENTRO DA REDE\nFortalecer a rede hospitalar para internações, cirurgias e tratamentos de maior\ncomplexidade, articulando os hospitais às demais unidades do SUS.\nMelhorar a gestão de leitos, centros cirúrgicos, exames, equipes e fluxos\nhospitalares, reduzindo cancelamentos, tempo de espera e permanências\ndesnecessárias. Os hospitais precisam estar disponíveis para quem necessita de\ncuidado hospitalar, enquanto demandas que podem ser resolvidas em outros níveis\ndevem encontrar resposta antes de chegar à emergência.\n\n9. CRIAR O HOSPITAL DO IDOSO E ESTRUTURAR UMA REDE DE CUIDADO\nPARA O ENVELHECIMENTO\nImplantar o Hospital do Idoso como referência especializada, integrado às UBSs,\nequipes de Saúde da Família, atendimento domiciliar, serviços especializados,\nreabilitação e rede hospitalar. A unidade será preparada para atender às\nnecessidades próprias do envelhecimento, com atenção geriátrica e integração das\nespecialidades, tratamento e recuperação da pessoa idosa.\n\n32"
+          },
+          {
+            "id": "o-cuidado-com-o-idoso-nao-comecara-no-hospital-o-hospital-do-idoso-sera",
+            "titulo": "O cuidado com o idoso não começará no hospital. O Hospital do Idoso será a",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "O cuidado com o idoso não começará no hospital. O Hospital do Idoso será a\nreferência especializada quando a complexidade exigir, dentro de uma rede que\nacompanha a pessoa antes, durante e depois do atendimento hospitalar.\n\n10. LEVAR O CUIDADO PARA DENTRO DE CASA\nFortalecer o atendimento domiciliar para pessoas idosas, com deficiência, doenças\ncrônicas, limitações de mobilidade e quem necessita de acompanhamento\ncontínuo. Integrar o cuidado domiciliar às equipes da Atenção Primária, aos\nhospitais e aos serviços de reabilitação, permitindo acompanhamento após altas\nhospitalares e evitando deslocamentos e internações desnecessárias.\n\n11. FORTALECER A SAÚDE MENTAL E A REDE DE ATENÇÃO\nPSICOSSOCIAL\nAmpliar e qualificar a Rede de Atenção Psicossocial, fortalecendo CAPS e a integração\ncom Atenção Primária, urgência e emergência, assistência social e rede hospitalar.\nGarantir cuidado continuado para pessoas em sofrimento psíquico e para aquelas\ncom problemas relacionados ao uso de álcool e outras drogas, evitando que famílias\nprecisem percorrer diferentes serviços sem encontrar uma resposta integrada.\n\n12. CUIDAR DAS MULHERES EM TODAS AS FASES DA VIDA\nFortalecer a atenção integral à saúde da mulher, da prevenção e do acompanhamento\nginecológico ao pré-natal, parto, puerpério, climatério e envelhecimento. Ampliar o\ndiagnóstico precoce e o acesso a exames e tratamentos, especialmente para cânceres\nde mama e colo do útero, e integrar os serviços de saúde à rede de proteção das\nmulheres em situação de violência.\n\n13. CUIDAR DA GESTAÇÃO, DA INFÂNCIA E DO DESENVOLVIMENTO\nFortalecer o pré-natal, a assistência ao parto e ao puerpério e o acompanhamento da\ncriança desde os primeiros dias de vida, integrando maternidades, pediatria,\nvacinação e Atenção Primária.\nGarantir acompanhamento do crescimento e desenvolvimento infantil, com\nidentificação precoce de alterações e encaminhamento para avaliação e cuidado\nespecializado quando necessário.\n\n14. VALORIZAR PROFISSIONAIS E ORGANIZAR A FORÇA DE TRABALHO\nPlanejar a distribuição dos profissionais de acordo com as necessidades de cada\nregião e de cada nível de atenção, reduzindo vazios assistenciais e equipes\nincompletas.\n\n33"
+          },
+          {
+            "id": "valorizar-os-servidores-investir-em-formacao-continuada-e-garantir-condi",
+            "titulo": "Valorizar os servidores, investir em formação continuada e garantir condições",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Valorizar os servidores, investir em formação continuada e garantir condições\nadequadas de trabalho. Nenhuma estrutura de saúde funciona sem quem cuida das\npessoas todos os dias.\n\n15. GARANTIR MEDICAMENTOS, INSUMOS E ABASTECIMENTO\nAprimorar planejamento, compras, estoques e distribuição para reduzir a falta de\nmedicamentos e insumos nas unidades.\nUtilizar tecnologia e integração de dados para antecipar necessidades, acompanhar\nestoques e reduzir desperdícios. Receber uma prescrição e não encontrar o\nmedicamento necessário também é uma interrupção do cuidado.\n\n16. GARANTIR TRANSPARÊNCIA, CONTROLE E RESULTADOS NA GESTÃO\nDA SAÚDE E DO IGES-DF\nRealizar uma auditoria ampla no IGES-DF, avaliando contratos, compras, despesas,\nprocessos de contratação, indicadores assistenciais e resultados entregues à\npopulação.\nAmpliar a transparência e os mecanismos permanentes de controle e fiscalização,\ncom divulgação acessível de informações sobre contratos, fornecedores, gastos,\nmetas e desempenho das unidades administradas pelo Instituto.\nA gestão da saúde será orientada por indicadores e resultados, permitindo\ncomparar recursos utilizados, capacidade instalada e atendimento efetivamente\nentregue à população. Autonomia administrativa precisa vir acompanhada de\nresponsabilidade, transparência e controle.\n\n17.PREVENIR A VIOLÊNCIA CONTRA A MULHER PELA REDE DE SAÚDE\nIntegrar a Atenção Primária à política de prevenção à violência doméstica e ao\nfeminicídio, preparando equipes de Saúde da Família e agentes comunitários de\nsaúde para reconhecer sinais de violência, acolher com segurança e acionar os\nserviços especializados e a rede de proteção quando necessário.\nA presença dos profissionais de saúde nos territórios e dentro das casas permite ao\nEstado estar próximo de mulheres que muitas vezes ainda não chegaram a uma\ndelegacia ou a um serviço especializado. Visitas domiciliares, consultas e o\nacompanhamento das famílias podem ajudar a identificar situações de risco e\npermitir uma atuação mais precoce.\n\n34"
+          },
+          {
+            "id": "18-garantir-cuidado-as-pessoas-com-deficiencia-e-as-pessoas",
+            "titulo": "18.GARANTIR CUIDADO ÀS PESSOAS COM DEFICIÊNCIA E ÀS PESSOAS",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "18.GARANTIR CUIDADO ÀS PESSOAS COM DEFICIÊNCIA E ÀS PESSOAS\nNEUROATÍPICAS\nOrganizar linha de cuidado para pessoas com deficiência e pessoas neuroatípicas,\nintegrando Atenção Primária, diagnóstico, atendimento especializado, terapias,\nreabilitação, saúde mental e acompanhamento multiprofissional.\nAmpliar a capacidade de identificação precoce de alterações do desenvolvimento e\ndo neurodesenvolvimento, garantindo encaminhamento e acompanhamento para\ncrianças e adolescentes com sinais de autismo, TDAH e outras condições que\ndemandem avaliação e cuidado especializado.\nIntegrar Saúde, Educação e Assistência Social para que informações e necessidades\nidentificadas na escola, na UBS ou no acompanhamento das famílias resultem em\natendimento e suporte adequados, evitando que as famílias precisem percorrer\nsozinhas diferentes serviços em busca de diagnóstico, terapias e acompanhamento.\nGarantir acessibilidade física e comunicacional nos serviços de saúde e qualificar\nprofissionais para um atendimento inclusivo, respeitando as diferentes\nnecessidades de cada pessoa.\n\nUMA REDE, UMA JORNADA, UMA PESSOA\nDa UBS ao atendimento especializado, da UPA ao hospital, do atendimento domiciliar à alta\ncomplexidade, a lógica é a mesma: cada pessoa acompanhada durante toda a jornada de cuidado.\n\nA PESSOA\nNO CENTRO\nATENÇÃO PRIMÁRIA\n\nSAÚDE DIGITAL\n\nREGULAÇÃO\n\nA base do cuidado. Acolhe,\nprevine, acompanha e\nresolve a maior parte dos\nproblemas de saúde.\n\nConecta informações\ne serviços. Prontuário integrado,\ntelemedicina e inovação para\naproximar e agilizar.\n\nOrganiza o caminho\ne o acesso. Define\nprioridades, acompanha filas\ne garante transparência.\n\nREDE INTEGRADA DE CUIDADO\n\nUBS\nUnidade\nBásica\nde Saúde\n\nUPA\n\nCAPS\n\nUrgência /\nEmergência\n\nSaúde Mental\ne Atenção\nPsicossocial\n\nCONTINUIDADE DO CUIDADO\n\nESPECIALISTAS\nConsultas, exames e\ntratamentos\nespecializados\n\nREABILITAÇÃO\n\nHOSPITAIS\n\nALTA COMPLEXIDADE\n\nReabilitação\nfísica\ne funcional\n\nInternações,\ncirurgias e\ntratamentos\n\nCasos raros e\ntratamentos de alta\ntecnologia\n\nDa prevenção ao tratamento, do atendimento domiciliar à alta\ncomplexidade, sem deixar o paciente se perder entre os serviços.\n\n35"
+          },
+          {
+            "id": "resultados-esperados",
+            "titulo": "RESULTADOS ESPERADOS",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "RESULTADOS ESPERADOS\nUma rede pública de saúde mais próxima, integrada e resolutiva, capaz de cuidar\ndas pessoas antes que a doença se agrave e acompanhá-las durante toda a jornada,\ngarantindo atendimento no lugar certo e no tempo certo.\nMais pessoas acompanhadas pela Atenção Primária, com ampliação da\ncobertura da Estratégia Saúde da Família, equipes mais completas, UBSs\nestruturadas e maior capacidade de prevenção, diagnóstico precoce e\nresolução dos problemas mais frequentes. Uma rede mais próxima das pessoas,\ncapaz de acompanhar cada paciente ao longo da vida e evitar que problemas\nsimples se transformem em casos mais graves.\nUma rede verdadeiramente integrada, conectando Atenção Primária, SAMU,\nUPAs, CAPS, especialistas, reabilitação, hospitais e alta complexidade.\nMenos tempo perdido entre uma etapa e outra do atendimento, com prontuário\neletrônico integrado, Saúde Digital e informações acompanhando o paciente ao\nlongo de sua jornada.\nFilas mais transparentes e atendimento mais rápido, com critérios clínicos claros\nde prioridade, acompanhamento dos encaminhamentos e gestão permanente\nda demanda por consultas, exames, procedimentos e cirurgias.\nMais acesso a especialistas, exames e reabilitação, com oferta organizada de\nacordo com a demanda de cada região e integração do atendimento\nespecializado às UBSs.\nDiagnóstico e tratamento mais rápidos para o câncer, com uma linha de cuidado\nque acompanhe o paciente da prevenção e do diagnóstico precoce ao\ntratamento, reabilitação e cuidados paliativos.\nUrgências e emergências mais resolutivas, com SAMU, UPAs, hospitais e\nregulação trabalhando de forma integrada para reduzir o tempo de resposta e\nencaminhar cada pessoa ao serviço adequado.\nHospitais mais eficientes e disponíveis para quem realmente precisa de cuidado\nhospitalar, com melhor gestão de leitos, centros cirúrgicos, exames e equipes, e\nredução de cancelamentos e esperas desnecessárias.\n\n36"
+          },
+          {
+            "id": "uma-rede-preparada-para-cuidar-do-envelhecimento-com-atencao-primaria",
+            "titulo": "Uma rede preparada para cuidar do envelhecimento, com Atenção Primária,",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Uma rede preparada para cuidar do envelhecimento, com Atenção Primária,\natendimento domiciliar, especialistas, reabilitação, rede hospitalar e o Hospital\ndo Idoso funcionando de maneira integrada.\nMais cuidado em saúde mental, com CAPS e Rede de Atenção Psicossocial\narticulados à Atenção Primária, urgência e emergência, assistência social e\nhospitais.\nMais cuidado com as mulheres em todas as fases da vida, ampliando prevenção,\nacompanhamento, diagnóstico precoce e acesso a exames e tratamentos e\nconectando a saúde à rede de proteção contra a violência.\nGestantes e crianças acompanhadas desde o pré-natal, com assistência ao parto\ne puerpério, vacinação, acompanhamento do crescimento e identificação\nprecoce de alterações no desenvolvimento.\nProfissionais mais valorizados e equipes mais bem distribuídas, reduzindo vazios\nassistenciais e garantindo melhores condições para quem cuida das pessoas.\nMaior disponibilidade de medicamentos e insumos, com planejamento, controle\nde estoques e uso de tecnologia para reduzir faltas e desperdícios.\nMais transparência, controle e eficiência na gestão da saúde e do IGES-DF, com\nauditoria, fiscalização, indicadores e avaliação dos resultados efetivamente\nentregues à população.\nUma rede de saúde mais preparada para ajudar a prevenir a violência doméstica\ne o feminicídio, utilizando a proximidade das equipes de Saúde da Família e dos\nagentes comunitários para identificar sinais de risco, acolher e conectar\nmulheres à rede de proteção.\nMais acesso ao cuidado para pessoas com deficiência e pessoas neuroatípicas,\ncom identificação precoce de alterações do desenvolvimento e do\nneurodesenvolvimento, acesso a diagnóstico, terapias, reabilitação e\nacompanhamento multiprofissional, além de maior integração entre Saúde,\nEducação e Assistência Social.\n\n37"
+          },
+          {
+            "id": "seguranca",
+            "titulo": "Segurança",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Segurança\ncuidadosa\nTODA FAMÍLIA TEM O DIREITO DE VIVER SEM MEDO\n\nO DESAFIO\nSegurança é poder viver a cidade com tranquilidade. Cuidar das pessoas também é\ngarantir presença do Estado para prevenir a violência, proteger quem está em risco\ne responder com rapidez quando uma ocorrência acontece.\nO Distrito Federal tem uma das melhores estruturas de segurança pública do País,\nmas enfrenta um desafio crescente para manter a capacidade operacional diante da\nredução dos efetivos, do aumento da complexidade da criminalidade e da\nnecessidade de maior integração entre as forças de segurança.\nA solução não é apenas contratar mais policiais. É garantir presença do Estado,\ninteligência, integração e capacidade de resposta.\nA segurança pública depende de profissionais valorizados, estrutura adequada e\natuação integrada entre as forças policiais, de trânsito, perícia, sistema prisional e\nDefesa Civil. Os dados evidenciam que o Distrito Federal enfrenta importantes\ndéficits de efetivo em praticamente todas essas áreas, comprometendo a\ncapacidade operacional do Estado e a prestação dos serviços à população. Valorizar\ne dar condições a quem protege é também cuidar da segurança das pessoas.\n\nDESAFIOS QUE EXIGEM ATENÇÃO\nFEMINICÍDIO\n\n+27%\nÉ O CRIME QUE MAIS CRESCE\nE PREOCUPA A POPULAÇÃO\nExige uma atenção e um\npreparo específico das Forças\nde Segurança do DF\n\nPESSOAS EM SITUAÇÃO DE RUA\n\n3.521\n\nPESSOAS\nEM SITUAÇÃO\nDE RUA\n\n+19,8%\ndesde 2022\n\nPesquisas apontam que é\numa das maiores\npreocupações e percepções\nde insegurança pela\npopulação do DF\n\nCRIMES VIOLENTOS\nLETAIS INTENCIONAIS\n\nVOLTA\nA SUBIR\nAPÓS 12 ANOS DE QUEDA\nPreocupa que o indicador\nretorne aos patamares antigos\njá enfrentados no DF\n\n38"
+          },
+          {
+            "id": "esses-desafios-mostram-que-seguranca-publica-nao-se-faz-apenas-com-polic",
+            "titulo": "Esses desafios mostram que Segurança Pública não se faz apenas com polícia. A",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Esses desafios mostram que Segurança Pública não se faz apenas com polícia. A\nprevenção da violência exige integração também com Saúde, Educação e\nAssistência Social. No enfrentamento à violência doméstica, por exemplo, um\nagente de saúde que entra na casa de uma família pode ser uma das primeiras\npresenças do Estado capaz de identificar uma situação de risco. O Estado precisa\nestar preparado para reconhecer esses sinais e fazer a rede de proteção funcionar\nantes que a violência se agrave.\nA maior questão da Segurança Pública não é apenas aumentar o número de policiais\nnas ruas. É fortalecer a capacidade operacional do Estado, integrar as Forças de\nSegurança e utilizar inteligência, tecnologia e gestão para prevenir a violência,\nresponder com rapidez às ocorrências e ampliar a sensação de segurança.\n\nNOSSO COMPROMISSO\nA Segurança Pública é um direito fundamental e condição indispensável para a\nqualidade de vida, o desenvolvimento econômico e o fortalecimento das\ncomunidades. Mais do que combater a criminalidade, uma política moderna de\nsegurança deve proteger as pessoas, prevenir a violência e garantir que todos\npossam viver, trabalhar e circular pela cidade com tranquilidade.\nO compromisso com uma Segurança Inteligente pressupõe integrar tecnologia,\nplanejamento, presença do Estado e atuação coordenada das instituições públicas.\nO objetivo é fortalecer a prevenção, ampliar a capacidade de resposta das forças de\nsegurança e construir uma cidade mais segura, organizada e preparada para\nenfrentar os desafios da violência.\nO fortalecimento da segurança também passa pelo sistema prisional. Valorizar e\nqualificar a Polícia Penal, ampliar a inteligência penitenciária e utilizar tecnologia\npara aumentar o controle das unidades serão medidas importantes para impedir que\norganizações criminosas continuem articulando crimes de dentro dos presídios.\nA integração entre a inteligência policial e a inteligência penitenciária permitirá\nacompanhar a atuação das organizações criminosas dentro e fora do sistema\nprisional, contribuindo para desarticular suas estruturas e proteger a população.\n\nCOMO VAMOS CUIDAR\n1. MURALHA DIGITAL\nInvestir em tecnologia para ampliar a capacidade de prevenção e resposta da\nSegurança Pública do Distrito Federal. Hoje, as câmeras da Secretaria de Segurança,\ndo Departamento de Estradas de Rodagem (DER), do Detran e do Metrô operam de\nforma fragmentada, sem uma central única de inteligência capaz de cruzar essas\ninformações em tempo real.\n\n39"
+          },
+          {
+            "id": "ampliar-tambem-o-uso-de-inteligencia-artificial-e-integrar-os-bancos-de",
+            "titulo": "Ampliar também o uso de Inteligência Artificial e integrar os bancos de dados,",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Ampliar também o uso de Inteligência Artificial e integrar os bancos de dados,\nutilizando recursos de reconhecimento facial para apoiar o trabalho das forças de\nsegurança e aumentar a capacidade do Estado de proteger as pessoas.\nCom essa base integrada, a plataforma poderá atuar em três frentes simultâneas:\nNa captura de foragidos, o cruzamento automático com o Banco Nacional de\nMedidas Penais e Prisões (BNMP) permitirá alertas direcionados à viatura mais\npróxima, com informações que tornem a abordagem mais rápida e segura;\nNo acolhimento humanitário, a tecnologia poderá auxiliar na localização de\nidosos, pessoas com Alzheimer, crianças e outras pessoas desaparecidas;\nNa prevenção, permitirá identificar situações de risco em áreas prioritárias,\ncomo os centros das Regiões Administrativas e o entorno das escolas,\norientando a presença e a atuação das forças de segurança.\nNa proteção patrimonial, a leitura de placas poderá ajudar a identificar veículos\nroubados ou clonados e possíveis rotas de fuga. O Distrito Federal tem vantagem\nestrutural para essa estratégia por ser geograficamente compacto, facilitando o\ncercamento tecnológico.\nA experiência na Câmara dos Deputados também permitirá buscar recursos do\nFundo Nacional de Segurança Pública para ampliar os investimentos em tecnologia.\nA Muralha Digital não substituirá as estratégias específicas de enfrentamento aos\ncrimes, mas será uma infraestrutura capaz de aumentar a capacidade do Estado de\nprevenir, identificar riscos e responder com mais rapidez.\nNo enfrentamento ao feminicídio, o cruzamento de dados e o monitoramento\nterritorial poderão ajudar a identificar com maior rapidez agressores foragidos ou\nem violação de medida protetiva. No atendimento às pessoas em situação de rua, a\ntecnologia poderá auxiliar na identificação. E no combate ao homicídio e ao\nlatrocínio, o cerco veicular inteligente e a leitura de placas ajudarão a identificar\ndeslocamentos e orientar com maior precisão o policiamento.\nA integração de dados e o uso de inteligência também ampliarão a capacidade de\nenfrentamento ao crime organizado, permitindo identificar padrões de atuação,\nconexões entre ocorrências, deslocamentos e redes criminosas.\n\n2. FORTALECER E INTEGRAR AS FORÇAS DE SEGURANÇA\nAs corporações operam com déficit de efetivo, escalas exaustivas e discussões salariais\n\n40"
+          },
+          {
+            "id": "que-desgastam-profissionais-e-comprometem-a-capacidade-de-resposta-do-es",
+            "titulo": "que desgastam profissionais e comprometem a capacidade de resposta do Estado. O",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "que desgastam profissionais e comprometem a capacidade de resposta do Estado. O\nprimeiro passo será recompor efetivos com previsibilidade e responsabilidade fiscal,\ngarantindo concursos para as Polícias Militar e Civil e o Corpo de Bombeiros.\nInvestir em investigação, perícia, tecnologia e qualificação profissional é fundamental\npara que o Estado não apenas responda à ocorrência, mas consiga identificar autores,\nproduzir provas e aumentar a capacidade de resolução dos crimes.\nCuidar de quem cuida da segurança da população também será uma prioridade. A\nsaúde dos profissionais será tratada como questão de gestão, com atenção aos\nafastamentos e aos casos de suicídio nas categorias, e não como um problema\nexclusivamente individual.\nOutro pilar será a integração das Forças. Hoje, Polícia Militar, Polícia Civil, Corpo de\nBombeiros, Polícia Penal e Detran operam com canais e dados próprios. O\ncompartilhamento de informações e o planejamento conjunto entre as Forças\npermitirão que a resposta seja coordenada e não fragmentada por corporação.\nA integração e a especialização também precisam acompanhar as novas formas de\ncriminalidade. Golpes, fraudes eletrônicas, invasões de contas e outros crimes\npraticados no ambiente digital passaram a fazer parte da rotina das famílias. Ampliar\na capacidade de prevenção e investigação dos crimes cibernéticos, com\nprofissionais especializados, inteligência digital, tecnologia e perícia, será parte da\nestratégia de proteção da população.\nOutra integração importante será entre Distrito Federal e Goiás. Por meio da criação de um\nGabinete de Gestão Integrada Metropolitana, serão associados canais de comunicação e\ninteligência com as Forças de Segurança de Goiás, enfrentando o crime itinerante e os\nproblemas que ultrapassam as fronteiras administrativas do Distrito Federal.\nO terceiro passo será ampliar a integração para além da Segurança Pública.\nFeminicídio, pessoas em situação de rua e crimes violentos exigem respostas que\ntambém envolvam Saúde, Educação e Assistência Social. A atuação integrada\ndeverá alcançar ainda os órgãos responsáveis pela infraestrutura urbana,\niluminação, zeladoria e fiscalização, como CEB Ipes, Novacap e DF Legal, entre\noutros que impactam diretamente a proteção da população.\n\nRESULTADOS ESPERADOS\nUma segurança pública mais integrada, inteligente e preparada para prevenir a\nviolência, proteger as pessoas e responder com mais rapidez, fazendo o Estado\nchegar a quem precisa, onde e quando precisa. O resultado será uma Brasília em que\nas pessoas possam viver, trabalhar, estudar e circular com mais tranquilidade, porque\nencontram um Estado presente, integrado e preparado para prevenir, proteger e agir.\n41"
+          },
+          {
+            "id": "maior-capacidade-de-prevencao-e-resposta-com-tecnologia-inteligencia",
+            "titulo": "Maior capacidade de prevenção e resposta, com tecnologia, Inteligência",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Maior capacidade de prevenção e resposta, com tecnologia, Inteligência\nArtificial, câmeras e bancos de dados trabalhando de forma integrada.\nRespostas rápidas e seguras às ocorrências, com informações compartilhadas,\nplanejamento conjunto e maior integração entre as Forças de Segurança.\nMais capacidade para localizar foragidos e pessoas desaparecidas,\nespecialmente crianças, idosos, pessoas com Alzheimer e outros grupos\nvulneráveis, utilizando tecnologia e cruzamento de informações.\nMais segurança nas Regiões Administrativas e no entorno das escolas, com\nidentificação de situações de risco e uso de dados para orientar a presença e a\natuação das Forças.\nMaior capacidade de enfrentamento ao feminicídio e aos Crimes Violentos\nLetais Intencionais, utilizando inteligência, monitoramento territorial e\nintegração para identificar riscos e orientar a atuação do Estado.\nMais proteção ao patrimônio e maior capacidade de combate a veículos\nroubados ou clonados, com cercamento tecnológico, leitura de placas e\nidentificação de possíveis rotas de fuga.\nEfetivos recompostos de forma planejada e profissionais mais valorizados, com\natenção também à saúde e às condições de trabalho de quem atua diariamente\nna proteção da população.\nForças de segurança integradas, compartilhando informações e planejando\nconjuntamente as ações para superar respostas fragmentadas.\nMaior integração entre o DF e Goiás, com comunicação e inteligência\ncompartilhadas para enfrentar crimes que ultrapassam as fronteiras.\nMaior capacidade de enfrentamento ao crime organizado, utilizando\ninteligência, tecnologia, integração de dados e monitoramento territorial para\nantecipar riscos e orientar com maior precisão as Forças de Segurança.\nUma rede pública mais preparada para prevenir situações de violência e\nvulnerabilidade, articulando Segurança, Saúde, Educação e Assistência Social.\n\n42"
+          },
+          {
+            "id": "transporte",
+            "titulo": "Transporte",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Transporte\ncuidadoso\nTODO CIDADÃO TEM O DIREITO DE IR E VIR EM\nSEGURANÇA, DIGNIDADE E DE FORMA EFICIENTE.\n\nO DESAFIO\nMobilidade é parte da vida das pessoas. O tempo gasto para chegar ao trabalho,\nlevar os filhos à escola, acessar um serviço de saúde ou voltar para casa é tempo que\ndeixa de ser vivido com a família, dedicado ao descanso, ao estudo ou a outras\natividades. Cuidar da mobilidade é cuidar do tempo, da segurança e da qualidade\nde vida das pessoas.\nA mobilidade do Distrito Federal foi marcada, no último governo, pelo investimento\nem obras rodoviárias que priorizaram, em sua maioria, o transporte individual. Ao\nmesmo tempo, não houve investimento significativo na expansão do metrô, que\nvem se deteriorando e perdendo passageiros.\nA política de priorização do carro contribuiu para que, nos últimos dez anos, a frota\nde veículos crescesse em ritmo muito superior ao da população. Com esse\ncrescimento, congestionamentos tornam-se inevitáveis, porque não há ampliação\nda rede viária capaz de absorver continuamente o aumento do número de veículos.\nA principal resposta para esse cenário passa pelo investimento em um transporte\npúblico de qualidade, integrado e capaz de oferecer dignidade nos deslocamentos\ndiários. Uma mobilidade melhor impacta não apenas o tempo de cada pessoa, mas\ntambém o desenvolvimento econômico, a saúde, a educação, a segurança e o meio\nambiente.\nOutro problema grave está no atual modelo de contratação das empresas de ônibus.\nHoje, o usuário paga o equivalente a 30% do custo do transporte e o governo\nassume os outros 70%. O problema não está nas gratuidades, mas em um contrato\nque transferiu ao poder público o risco da demanda: perder passageiros não reduz a\nreceita das empresas e aumenta o custo para o governo. Com isso, enfraqueceu-se\num princípio fundamental da concessão: a qualidade do serviço precisa fazer parte\ndos incentivos do sistema.\nAo mesmo tempo, os ônibus representam cerca de 90% da demanda do transporte\npúblico. Sem ônibus, a cidade para. Por isso, qualquer política de mobilidade\nprecisa reconhecer esse modal como parte central do sistema. A solução não é\napenas colocar mais ônibus nas ruas, mas aperfeiçoar o modelo que define quanto o\n\n43"
+          },
+          {
+            "id": "estado-paga-o-que-exige-em-troca-e-como-sao-distribuidas-as-responsabili",
+            "titulo": "Estado paga, o que exige em troca e como são distribuídas as responsabilidades",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Estado paga, o que exige em troca e como são distribuídas as responsabilidades\nquando o serviço não funciona adequadamente.\nCuidar da mobilidade exige contratos bem desenhados, alternativas reais ao ônibus,\ninvestimento em transporte de maior capacidade e obras que priorizem quem utiliza\no transporte coletivo. Acima de tudo, exige olhar para a viagem pela perspectiva de\nquem a faz todos os dias: da porta de casa até o destino e de volta para casa.\n\nNOSSO COMPROMISSO\nA mobilidade urbana influencia diretamente a qualidade de vida da população. O\nacesso ao trabalho, à educação, à saúde e aos serviços públicos depende de um\nsistema de transporte eficiente, integrado e acessível. Reduzir o tempo de\ndeslocamento significa ampliar oportunidades, aumentar a produtividade e\ndevolver às pessoas tempo para viver.\nUma política pública de mobilidade deve priorizar o cidadão, promovendo um\nsistema de transporte coletivo confiável, seguro e sustentável, articulado ao\nplanejamento urbano e apoiado pelo uso de tecnologia para ampliar a eficiência\noperacional e a qualidade do serviço.\nO compromisso é fazer da mobilidade um instrumento de cuidado: menos tempo\nesperando, menos tempo no trânsito e mais tempo para a vida.\n\nCOMO VAMOS CUIDAR\n1. EXPANDIR O METRÔ E FORTALECER CORREDORES ESTRUTURANTES\nInvestir no sistema ferroviário é fundamental para transportar grandes volumes de\npassageiros e atender às longas distâncias percorridas diariamente pela população.\nO Metrô precisa voltar a ser uma alternativa real, eficiente e confiável para quem se\ndesloca pelo Distrito Federal.\nPara fortalecer os corredores estruturantes da cidade, serão consideradas as\nseguintes expansões:\nCriação da linha do metrô na Asa Norte, com expansão para atender Taquari,\nGrande Colorado, Sobradinho, Mestre d’Armas e Planaltina;\nExpansão da linha de Ceilândia, chegando ao Setor O, Sol Nascente e à região\npróxima à divisa com Águas Lindas (GO);\n\n44"
+          },
+          {
+            "id": "derivacao-de-uma-linha-a-partir-da-estacao-asa-sul-atendendo-candangolan",
+            "titulo": "Derivação de uma linha a partir da Estação Asa Sul, atendendo Candangolândia,",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Derivação de uma linha a partir da Estação Asa Sul, atendendo Candangolândia,\nNúcleo Bandeirante, Park Way, Gama e Santa Maria, seguindo em direção à BR040 e à região próxima à divisa com Valparaíso (GO).\nExpandir o metrô também significa cuidar do sistema que já existe. Será necessário\nadquirir novos trens para substituir aqueles que chegaram ao fim da vida útil e\nrecuperar os que ainda podem ser revitalizados. Com isso, será possível reduzir o\nintervalo entre os trens e ampliar a capacidade de atendimento enquanto as novas\nexpansões são executadas.\n\n2. INTEGRAR DE VERDADE O SISTEMA DE TRANSPORTE PÚBLICO\nUm sistema fragmentado não resolve o problema da mobilidade do Distrito Federal.\nAs pessoas não utilizam modais isolados: elas precisam completar uma viagem. Por\nisso, ônibus, BRT, metrô e outros modais precisam funcionar de maneira integrada.\nO primeiro passo será unificar o sistema de bilhetagem de todo o transporte público.\nÔnibus, BRT, metrô e qualquer novo modal deverão fazer parte do mesmo sistema. A\nintegração facilitará a utilização pelo passageiro e permitirá maior transparência\nsobre contratos, tarifas e concessionários envolvidos na operação.\nO cidadão não utiliza um modal isolado. Ele precisa de uma viagem completa, da\nporta de casa até o destino. Isso significa pensar o deslocamento como uma jornada\núnica, com integração física, tarifária e operacional entre ônibus, BRT, metrô e\ndemais modais, reduzindo o tempo de espera, as conexões desnecessárias e o\ntempo total de deslocamento.\n\n3.PLANEJAR A MOBILIDADE A PARTIR DA JORNADA DAS PESSOAS\nCuidar da mobilidade é cuidar da jornada inteira do usuário: do momento em que a\npessoa sai de casa até chegar ao destino, com segurança, previsibilidade e\ndignidade. Isso passa por cuidar da malha viária, das calçadas e travessias, garantir\nacessibilidade, iluminação e segurança nos caminhos, melhorar pontos de ônibus e\nterminais, conectar ciclovias e organizar a integração entre ônibus, BRT, metrô,\ntáxis, transporte por aplicativo e outros meios de deslocamento. Cada parte precisa\nfuncionar e estar conectada à seguinte.\n\n4.CUIDAR DO ÚLTIMO QUILÔMETRO\nA viagem não termina quando a pessoa desce do ônibus, do BRT ou do metrô.\nMuitas vezes, ainda existe um trecho entre a estação, o terminal ou a parada e o\ndestino final. É o chamado último quilômetro, uma etapa que precisa fazer parte do\nplanejamento da mobilidade.\nFacilitar esse trecho significa ampliar as possibilidades de conexão com outros\nmeios de deslocamento, como bicicletas, patinetes, táxis e transporte por aplicativo,\nalém de garantir calçadas acessíveis e caminhos seguros para quem segue a pé.\n45"
+          },
+          {
+            "id": "estacoes-e-terminais-precisam-funcionar-como-pontos-de-conexao-entre-dif",
+            "titulo": "Estações e terminais precisam funcionar como pontos de conexão entre diferentes",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Estações e terminais precisam funcionar como pontos de conexão entre diferentes\nmodais, com infraestrutura adequada para embarque e desembarque,\nbicicletários e integração com bicicletas e patinetes compartilhados. A tecnologia\ntambém poderá ajudar o cidadão a planejar essas conexões e escolher a melhor\nforma de completar a viagem.\nCuidar do último quilômetro é garantir que a pessoa não tenha apenas como\nchegar perto do seu destino, mas consiga completar sua jornada com segurança,\nfacilidade e menos tempo perdido.\n\n5. INTEGRAR O TRANSPORTE POR APLICATIVO À MOBILIDADE URBANA\nAutorizar o uso das faixas exclusivas por veículos de transporte por aplicativo,\ncom regras de circulação e monitoramento que preservem a prioridade do\ntransporte coletivo.\n\n6. MODERNIZAR A EXPERIÊNCIA DE QUEM UTILIZA O TRANSPORTE PÚBLICO\nUtilizar a tecnologia para facilitar a vida do usuário será uma premissa da gestão.\nAmpliar a disponibilidade de internet e garantir informações em tempo real sobre\nrotas, horários e linhas, além de oferecer ferramentas digitais capazes de calcular\nmelhores trajetos considerando tempo e custo.\n\n7. PLANEJAR A MOBILIDADE OLHANDO PARA A REGIÃO INTEGRADA\nA mobilidade não termina nos limites administrativos do Distrito Federal. O Entorno\npossui cerca de 1,2 milhão de habitantes e, segundo os dados utilizados pela\nequipe, aproximadamente 250 mil pessoas se deslocam diariamente para o DF. Essa\nrealidade precisa ser considerada no planejamento da mobilidade.\nEmbora as linhas interestaduais não sejam de responsabilidade direta do Governo\ndo Distrito Federal, as pessoas que atravessam diariamente essa fronteira fazem\nparte da dinâmica da cidade. O planejamento do sistema precisa considerar esses\ndeslocamentos e sua relação com os demais modais e corredores de transporte.\n\n8. REVISAR A GESTÃO DO SISTEMA E FORTALECER A TRANSPARÊNCIA\nPromover uma revisão responsável da concessão da Rodoviária do Plano Piloto, por\nmeio de auditoria independente completa, avaliando aspectos operacionais,\nfinanceiros e contratuais. O objetivo é garantir transparência, qualidade dos\nserviços e cumprimento das obrigações assumidas pelos concessionários, fazendo\ncom que a gestão do sistema esteja a serviço de quem o utiliza todos os dias e\nfortalecendo a confiança da população no transporte público.\n\n46"
+          },
+          {
+            "id": "revisar-os-contratos-das-empresas-de-onibus-e-a-tarifa-tecnica-paga-as-o",
+            "titulo": "Revisar os contratos das empresas de ônibus e a tarifa técnica paga às operadoras",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Revisar os contratos das empresas de ônibus e a tarifa técnica paga às operadoras\ndas bacias do sistema de transporte público do DF, garantindo mais transparência,\nequilíbrio dos contratos e controle dos gastos públicos.\n\nRESULTADOS ESPERADOS\nUma mobilidade mais integrada, eficiente e pensada a partir da jornada das pessoas,\nreduzindo o tempo perdido nos deslocamentos e garantindo mais segurança,\nprevisibilidade e qualidade de vida.\nRedução do tempo total de deslocamento, com uma rede mais integrada e\nmenos tempo de espera e de conexão entre os diferentes meios de transporte.\nTransporte público mais confiável e eficiente, com metrô fortalecido, integração\nentre ônibus, BRT e demais modais e maior previsibilidade para quem depende\ndo sistema todos os dias.\nAmpliação da capacidade e do alcance do metrô, com expansão para novas\nregiões, renovação dos trens e redução dos intervalos entre as viagens.\nMelhores condições para toda a jornada, com atenção à malha viária, calçadas,\ntravessias, acessibilidade, iluminação, pontos de ônibus, terminais e ciclovias.\nMais alternativas para completar o último quilômetro, conectando estações,\nterminais e paradas a bicicletas, patinetes, táxis, transporte por aplicativo e\ndeslocamentos a pé.\nMais agilidade para o transporte por aplicativo, com utilização regulamentada\ndas faixas exclusivas, preservando a prioridade do transporte coletivo.\nMais informação e previsibilidade para o usuário, com acesso a rotas, horários,\nlinhas e melhores trajetos em tempo real.\nPlanejamento da mobilidade integrado ao Entorno, considerando\ndeslocamentos diários entre a região metropolitana e o Distrito Federal.\n\nos\n\nMais transparência, eficiência e controle dos gastos com o transporte público,\ncom auditoria, revisão dos contratos das empresas de ônibus e da tarifa técnica\ne maior cobrança pela qualidade dos serviços prestados.\n\n47"
+          },
+          {
+            "id": "governo",
+            "titulo": "Governo",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Governo\nque cuida\nTOLERÂNCIA ZERO À CORRUPÇÃO E O\nCIDADÃO NO CENTRO DAS DECISÕES\n\nO DESAFIO\nO Distrito Federal tem uma das maiores rendas per capita do País, arrecadação\nprópria robusta e conta com os recursos do Fundo Constitucional. Em 2026, o\norçamento chega a R$ 74,4 bilhões. Poucos governos no País dispõem de tantos\nrecursos por habitante. E, mesmo assim, falta muito para o cidadão.\nGrande parte do orçamento está comprometida com despesas de pessoal e custeio,\nenquanto apenas 2,67% são destinados a investimentos. O Distrito Federal também\nenfrenta uma situação fiscal que reduz sua capacidade de reagir a crises e realizar\nnovos investimentos. Sua nota de capacidade de pagamento junto ao Tesouro\nNacional é C, o que impede operações de crédito com garantia da União. Um\ngoverno que gasta praticamente tudo o que arrecada perde capacidade de planejar\no futuro e de responder quando uma crise acontece.\nA situação do BRB tornou o problema mais evidente. Um banco com mais de 60 anos\nde história foi colocado em risco por decisões de gestão. Independentemente da\nsolução a ser construída, a crise demonstra o custo que decisões tomadas sem\ngovernança, controle e transparência podem impor ao patrimônio público.\nCorrupção, desperdício e má gestão não são problemas abstratos de contabilidade.\nCada real desviado ou desperdiçado é dinheiro que deixa de chegar à saúde, à\neducação, à segurança, à mobilidade e às pessoas que precisam do Estado. Por isso,\ngestão pública não é apenas um tema administrativo neste plano. É a condição para\nque todos os outros compromissos sejam cumpridos.\nO Distrito Federal precisa enfrentar quatro desafios centrais:\nCombater e prevenir a corrupção;\nAumentar a eficiência da administração pública;\nProteger e recuperar o BRB sem comprometer desenvolvimento do DF;\nReduzir e reorganizar a estrutura do governo.\n\n48"
+          },
+          {
+            "id": "nosso-compromisso-2",
+            "titulo": "NOSSO COMPROMISSO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "NOSSO COMPROMISSO\nPara colocar o cidadão no centro das políticas públicas, o serviço público precisa ser\nsimples, acessível, integrado e capaz de resolver as demandas das pessoas com\nagilidade, respeito e transparência.\nNosso compromisso é reorganizar a administração pública para que o governo\nfuncione de forma mais eficiente, integrada e digital. A tecnologia será utilizada para\nsimplificar processos, reduzir burocracias, melhorar a jornada do cidadão nos\nserviços públicos e ampliar a transparência.\nTambém vamos melhorar a gestão do orçamento para recuperar a capacidade de\ninvestimento do Distrito Federal. Vamos fazer mais com uma máquina mais enxuta e\ndirecionar os recursos economizados para aquilo que chega à vida das pessoas:\nsaúde, educação, segurança e mobilidade.\nA transformação digital não poderá deixar ninguém para trás. Os serviços deverão\nestar disponíveis no ambiente digital, mas o atendimento presencial e assistido será\npreservado para quem precisa. Todos os serviços possíveis no digital. Nenhum\ncidadão deixado para trás. E o combate à corrupção não será apenas discurso. Será\nestrutura permanente de Estado.\n\nCOMO VAMOS CUIDAR\n1. TORNAR A MÁQUINA PÚBLICA MAIS ENXUTA E COORDENADA\nReduzir o número de secretarias para menos da metade da estrutura atual, já no\nprimeiro ato de governo, e realizar uma revisão da estrutura administrativa nos\nprimeiros 100 dias, eliminando sobreposições de competências e contratos\nduplicados entre órgãos.\nCumprir a Lei nº 4.858/2012, garantindo que ao menos metade dos cargos em\ncomissão seja ocupada por servidores efetivos, e instituir um plano de força de trabalho\npara que as nomeações sejam orientadas pelas necessidades reais de cada área.\n\n2. GARANTIR UMA TRANSPARÊNCIA QUE O CIDADÃO ENTENDA\nDisponibilizar dados públicos em formato aberto e linguagem compreensível.\nTransparência é permitir que qualquer cidadão consiga encontrar, compreender e\nacompanhar o que o governo faz.\nCriar um painel público de obras, com etapa, prazo, responsável e valor atualizado, e\nampliar a transparência sobre contratos, emendas, cargos comissionados e\nexecução orçamentária, garantindo uma trilha de rastreamento acessível.\n49"
+          },
+          {
+            "id": "dar-transparencia-a-situacao-do-brb-e-do-patrimonio-do-distrito-federal",
+            "titulo": "Dar transparência à situação do BRB e do patrimônio do Distrito Federal, com",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "Dar transparência à situação do BRB e do patrimônio do Distrito Federal, com\nauditoria independente e divulgação dos resultados.\n\n3.CONSTRUIR UM GOVERNO INTEGRADO E DIGITAL DE VERDADE\nIntegrar os sistemas do Governo do Distrito Federal para que os órgãos públicos\nconversem entre si. O cidadão não pode continuar sendo o mensageiro do governo.\nAdotar o princípio de que o governo pergunta uma vez só: uma informação já\nfornecida pelo cidadão a um órgão público não deverá ser exigida novamente por\noutro.\nAntes de digitalizar os serviços, simplificar processos e eliminar etapas\ndesnecessárias. Aqui, vale ressaltar que digitalizar não significa transformar papel\nem formulário eletrônico; significa utilizar a tecnologia para facilitar a vida das\npessoas.\nGarantir atendimento presencial e assistido em todas as Regiões Administrativas\npara quem não possui acesso ou autonomia digital e permitir o acompanhamento\neletrônico das solicitações, com prazo de resposta visível ao cidadão.\n\n4. PLANEJAR O ORÇAMENTO E GOVERNAR POR RESULTADOS\nEnfrentar as despesas de exercícios anteriores, estabelecendo metas de redução\nano a ano, e recuperar gradualmente a capacidade de investimento do DF. Vincular\norçamento, planejamento e resultado, estabelecendo metas públicas, indicadores e\navaliações periódicas para cada área do governo. Garantir o cumprimento dos\ninvestimentos obrigatórios em áreas essenciais, especialmente saúde e educação.\nNão basta saber quanto o governo gastou. É preciso saber o que esse dinheiro\nentregou para a população.\n\n5. TER UMA OUVIDORIA E UM ATENDIMENTO QUE RESPONDAM\nEstabelecer prazo para resposta às manifestações dos cidadãos e divulgar o índice\nde cumprimento de cada órgão. Utilizar as manifestações recebidas pela Ouvidoria\ncomo instrumento permanente de avaliação e melhoria dos serviços e avançar na\nintegração dos canais de atendimento, permitindo que o cidadão tenha um\nhistórico único de suas demandas.\n\n6. GARANTIR PARTICIPAÇÃO CIDADÃ PERMANENTE\nInstitucionalizar canais de escuta qualificada para que a população participe do\nplanejamento, da execução e da avaliação das políticas públicas. Ampliar a\nprestação de contas em formato acessível, dar transparência à agenda do governo e\ngarantir devolutiva às demandas apresentadas pela população.\n\n50"
+          },
+          {
+            "id": "resultados-esperados-2",
+            "titulo": "RESULTADOS ESPERADOS",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "RESULTADOS ESPERADOS\nUm governo mais enxuto, eficiente, transparente e próximo das pessoas, capaz de\nrecuperar sua capacidade de investimento, proteger o dinheiro público e entregar\nserviços mais simples e melhores para o cidadão.\nEstrutura administrativa reduzida a menos da metade, com os recursos\neconomizados direcionados aos serviços que chegam à população.\nRecuperação gradual da capacidade de investimento do Distrito Federal.\nRedução consistente das despesas de exercícios anteriores e melhoria da\nsituação de caixa.\nServiços públicos digitais e integrados, com atendimento presencial e assistido\ngarantido a quem precisa.\nTransparência compreensível e verificável sobre contratos, obras, patrimônio\npúblico e execução orçamentária.\nMecanismos permanentes de prevenção e detecção de irregularidades, atuando\nantes que o dinheiro público seja perdido.\nOuvidoria com respostas dentro dos prazos e utilização efetiva das\nmanifestações dos cidadãos para corrigir e melhorar os serviços.\n\n51"
+          },
+          {
+            "id": "um-governo-que-cuida-respeita-as",
+            "titulo": "Um governo que cuida respeita as",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Um governo que cuida respeita as\npessoas, protege cada real do dinheiro\npúblico e faz o Estado funcionar para\nquem mais importa: o cidadão. É um\ngoverno que combate a corrupção,\nelimina desperdícios, reduz a burocracia\ne transforma eficiência em resultado.\nPorque cada recurso bem aplicado\nsignifica mais saúde, mais educação,\nmais segurança, mais mobilidade e mais\nqualidade de vida. No fim, governar bem\né isso: fazer o dinheiro público voltar\npara as pessoas em forma de cuidado.\"\n\nPaula Belmonte\n\nVICE: JUIZ EVERARDO"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "804526d6ddd7b6d19d888ea236d7efa7dd39563c8bf6f305e26f4a639a15c4f2"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0d6614899f19b82b740c07f3ce93bf0039e9109f8dbe296a36aab4b6fc7f73f1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "546bedfdee6c53fa03bec5a0165b34e0185506569c425c07529db5562525bfa1"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "363297924ffb3101bad4e71c1ce9af652814fab60fbcb127e132fdf61e82cef7"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "0357636fa778f87e5600e2a10602faa68e815095b5049fb4670afa2c59e77443"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "d098049be381682ce13630d5b1d665cfcad10b9b931af7028aa2f0772e18ab86"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "0338cab0fcc867096fd6418ec4411b9ddb07e5e6c53fccb79ff62ee6372447c5"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "b559c7eb0d3c17710672e4f5881bb43d2d3c5ef8bae2499aa3bf045201356160"
+          },
+          {
+            "pagina": 10,
+            "origem": "ocr",
+            "textSha256": "7cb7dce0e0ca0f4d0a1fd5507ed3c99b4f256002fadc2334a9f09c5568c9312f"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "09664dee64fc4b856a1abf0f9bb9fa598f87a6112f7f92106dfae4aed7c35738"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "a6413dfe5eef1a26b942299ce0f49152a466c310a36a7c513a6e5485c271ef20"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "9c382c78441f79547cd9ba38f0c02034a02ea4404b73989c946a3da6f844fc15"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "cc9b8b95fa82b63518e48b174b173556378a8d78b6bab209ebb871ccae7f68f8"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "52a89af842aa27544a7d01545826cbd357df05c3fe5fef1959c46a23c937b840"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "23765cad5c919e24ae9b3799932182b87e20a207d26f22be2ba6c91e78c5f50a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "1bca8ebae0ebcf5282ba23994830eec7bec277b98c5bee46ed94e7413aca9ec4"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "31fc7eb3f68e17d1952628df58e16f154902d364e120b7e711951eb10655a11f"
+          },
+          {
+            "pagina": 19,
+            "origem": "ocr",
+            "textSha256": "4bf77e30d1a362f3ca13286f327605b188a8459b152b99e746dd0b93d1d45c85"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "887b364d3f1f9bc04c781b82cd1ad8c043b58b842b4d8773faf3522fb7248b82"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9f5eacdd9ad3ab1ed0894cded9ceb2baaedd09617d72a8063cc88fe1bdc49dbf"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "f0a6bc7ba8f9c9d7ace5d48d7589d9e82f7e9595cc3b0054ccd92d5ec68fe766"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "092a403708fb5f20c634f06fc0fb65bfd4c928bfcc9eb9e94f40aa2ef3f79743"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "7224c672ddcb86abd1c66e9806e9f2dc0f9d7492dc39a60ecb97237e65145bd9"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "6183814350dcc2a98bf863da16c41c198b7f78660592183f34da2142fd15ead3"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "09e145a3589367e1d961e7c642d7312837490a321c4b11070095450ffa7989a4"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "0d8fde1f00f3b436ed4861ba97e11ff0eb8b44e357854d6f8b7dfac0283d0893"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "4576b4cdfb04e160644549b2703d85ff0ced6d4f24f41eb4199274b396790905"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "38fb8401aa2843c386df343e14efc83b5f0a3a11e869ef1b9b7e845877855036"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "3504875f1a529be219421e6bfd9948a4645305e2b3bc462916fa16cf631dfb8e"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "c26d92343da41368063d684a386835adcbf0502f30340732ec924c4fcdb88f3f"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "cc19d1ce20692a0c6792e18f0ba48af9cf53bcf0e9ef67ddc43a670e8794c5f5"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "3b3218e54a0478cc10f0eae0b30ee6a7d98755afef1b42bf4c20c42e657f3628"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "55eb89e9b6ea28398c9e91c0d0e3ca5ac41b46e10fbd5a0f2ecedee5e8f11dd7"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "4fa2026fa9ed262942b7dbd1f76d491e27efec5d1b1b2a635c0d8d8c3eeeebd0"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "ca772a4ba10552e3f102b3a5bcab726e2af3a74d670929c4324a084bfafbf601"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "66edc16b4c1c60b0632fc4b8dc4e40723879152441cfabfb547739a41385cc51"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "02a40318e4f3d3c2424e9b2b037962d3c419de80cd74fea19bcfa7bcb33b1f25"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "444ba3e51c25f141d80600cef3e9886948390a1464c3b5c96e2cc8dd2202bd11"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "798492faf8daaf002b5345f0d47c9a878be19a5e82b44b54124d73a6829e29fd"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "73b34e0e02a11df170e0a17424381d45021f13a06a0f546ea29c1cb2959db277"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "ccd7b4d5096c014621383a8b5488ce911542f655c9b27a21e1c8fba40de22415"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "5f98c085bb52f52eecf753cd6e96fa39760c59cbc32ed2d62c07e45df4341cf0"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "d83daf96e3a79e7da44eea47ebf0f6ceef820e3268a068808f4b3fe51594b25c"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "022f163bfcc7da43c263012bd8355f3734604811b71ddf621cba364b22795b77"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "d15ffd9630a8bcd3aabe4274f0396f1677c529d1ff77ea83b3eb039e9c874996"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "0610197e377b14fd81df893bb03400c78593b43dbf63a35feec36aa6e321295b"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "ba8cf7fb037511fd99c60c00526a10d3aad8ef522c17e38becc3027bd85bc38d"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "7adff4afdedc5cf25fc19600a4c58dc850ac2f693ce358a78a1ec6f6bab839ba"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "7344b72efd804a0ad8e2bc006373fdc81110ef1549e852c6b5b8777e2524075c"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "7df183ed47ef02211a90f9733f9ff1334f082ef27a845d1f748a202d4877c0fd"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "29065f7109ffab044101c938129457b8fbf0ff9c20d69a902d7cb4d4236ff629"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê colocar a população no centro das decisões e políticas públicas, como diretriz para a atuação governamental. Na educação, o programa propõe ampliar gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade. Na saúde, o programa planeja implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede. Na mobilidade, o programa propõe investir no sistema ferroviário para transportar grandes volumes de passageiros. Na gestão pública, o programa prevê integrar os sistemas do Governo do Distrito Federal para conectar os órgãos públicos. Na transparência, o programa propõe criar uma estrutura permanente e estratégica para atuar na prevenção e no combate à corrupção. Na habitação, o programa prevê enfrentar o déficit habitacional com uma política permanente de produção e oferta de moradias.",
+    "frases": [
+      {
+        "texto": "O programa prevê colocar a população no centro das decisões e políticas públicas, como diretriz para a atuação governamental.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 7,
+            "trecho": "PESSOAS: Colocar a população no centro das decisões e políticas públicas."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe ampliar gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 22,
+            "trecho": "Expandir gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade e preparando as escolas para receber os estudantes durante todo o dia."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa planeja implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 31,
+            "trecho": "Implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede, reunindo histórico clínico, exames, medicamentos, encaminhamentos e informações necessárias à continuidade do cuidado."
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade, o programa propõe investir no sistema ferroviário para transportar grandes volumes de passageiros.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 44,
+            "trecho": "Investir no sistema ferroviário é fundamental para transportar grandes volumes de passageiros e atender às longas distâncias percorridas diariamente pela população."
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, o programa prevê integrar os sistemas do Governo do Distrito Federal para conectar os órgãos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 50,
+            "trecho": "Integrar os sistemas do Governo do Distrito Federal para que os órgãos públicos conversem entre si."
+          }
+        ]
+      },
+      {
+        "texto": "Na transparência, o programa propõe criar uma estrutura permanente e estratégica para atuar na prevenção e no combate à corrupção.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 15,
+            "trecho": "Criar uma estrutura permanente e estratégica, diretamente ligada à governança do governo, para atuar na prevenção e no combate à corrupção, identificar riscos, acompanhar contratos e gastos públicos e articular os órgãos responsáveis por controle, auditoria, integridade e transparência."
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, o programa prevê enfrentar o déficit habitacional com uma política permanente de produção e oferta de moradias.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 13,
+            "trecho": "Enfrentar o déficit habitacional do Distrito Federal com uma política permanente de produção e oferta de moradias, utilizando de forma estratégica os instrumentos da Codhab e da Terracap e priorizando as famílias que mais precisam."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Ampliação gradual da Educação Integral nas regiões de maior vulnerabilidade.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 22,
+            "trecho": "Expandir gradualmente a Educação Integral, começando pelas regiões de maior vulnerabilidade e preparando as escolas para receber os estudantes durante todo o dia."
+          }
+        ]
+      },
+      {
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "Implantação de prontuário eletrônico integrado na rede de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 31,
+            "trecho": "Implantar um prontuário eletrônico integrado, acessível aos diferentes níveis da rede, reunindo histórico clínico, exames, medicamentos, encaminhamentos e informações necessárias à continuidade do cuidado."
+          }
+        ]
+      },
+      {
+        "id": "transporte-ferroviario",
+        "titulo": "Transporte ferroviário",
+        "descricao": "Investimento no sistema ferroviário para o transporte de passageiros.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 44,
+            "trecho": "Investir no sistema ferroviário é fundamental para transportar grandes volumes de passageiros e atender às longas distâncias percorridas diariamente pela população."
+          }
+        ]
+      },
+      {
+        "id": "integracao-governamental",
+        "titulo": "Integração governamental",
+        "descricao": "Integração dos sistemas do Governo do Distrito Federal.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 50,
+            "trecho": "Integrar os sistemas do Governo do Distrito Federal para que os órgãos públicos conversem entre si."
+          }
+        ]
+      },
+      {
+        "id": "combate-corrupcao",
+        "titulo": "Combate à corrupção",
+        "descricao": "Criação de estrutura permanente para prevenção e combate à corrupção.",
+        "evidencias": [
+          {
+            "documentoId": "DF:70002552965:01",
+            "pagina": 15,
+            "trecho": "Criar uma estrutura permanente e estratégica, diretamente ligada à governança do governo, para atuar na prevenção e no combate à corrupção, identificar riscos, acompanhar contratos e gastos públicos e articular os órgãos responsáveis por controle, auditoria, integridade e transparência."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:40:38.546Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:42:53.533Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretriz de colocar população no centro."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única diretriz coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:1:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma expansão gradual começando pelas regiões vulneráveis."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:2:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma implantação do prontuário eletrônico integrado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:3:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma o investimento ferroviário e sua finalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de mobilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:4:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a proposta de integração de sistemas."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de integração digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:5:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a criação da estrutura de combate à corrupção."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de combate à corrupção."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:6:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a política permanente de produção e oferta de moradias."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:frase:7:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a ampliação gradual nas regiões de maior vulnerabilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de educação integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:educacao-integral:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a implantação do prontuário eletrônico integrado."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de saúde digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:saude-digital:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma o investimento ferroviário para transporte de passageiros."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de transporte ferroviário."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:transporte-ferroviario:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a integração dos sistemas do governo."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de integração governamental."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:integracao-governamental:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a criação da estrutura permanente de combate à corrupção."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta de combate à corrupção."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:DF:70002552965:tema:combate-corrupcao:documentos:DF:70002552965:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:DF:70002552965",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "DF:70002552965:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 135195,
+          "cached_input_tokens": 95488,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3951,
+          "reasoning_output_tokens": 2155
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27063,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22291,
+          "output_tokens_details": {
+            "thinking_tokens": 457
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27063,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22291,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27063,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27063
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3522274
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "2c335a951e9b7334e9dd2e9a396aff13a65c3672a5a5ddb3a0b187b2ee87b26e",
+    "extractedTextSha256": "840d3620d2d77c4cc17f48c1bdd623c94f3bc00e7e9d218deb4f7fa776415c3a",
+    "documentCount": 1,
+    "documentSetSha256": "c80f1636ab95fa264351efde5260798710bd8c5740ad82d265fef5ec46fe9681",
+    "contentSha256": "0f45a9981b351cf26261e02b38617d496b950192ad9d033ab1d2d632a8509e3e"
+  }
+}

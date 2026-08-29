@@ -1,0 +1,948 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002551740",
+    "slug": "cabo-daciolo",
+    "nomeUrna": "CABO DACIOLO",
+    "partido": "MOBILIZA",
+    "arquivoNome": "2026AM40002551740_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002551740_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002551740:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002551740_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002551740_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "2f17be0dde9e89825fb460a136f9767f46af95f802027ff5b61a40331d02242d",
+        "extractedTextSha256": "3c855f58ca34b306648caeb9a33aafe6beb368bbe9e23b18c6456a2bfc2b46ae",
+        "paginas": 28,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE GOVERNO\nCABO DACIOLO - GOVERNO DO ESTADO DO AMAZONAS\n2027-2030\n33 PROGRAMAS PARA TORNAR O AMAZONAS\nGIGANTE PELA PRÓPRIA NATUREZA"
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nCABO DACIOLO - GOVERNO DO ESTADO DO AMAZONAS\n\n2027-2030\n\n33 PROGRAMAS PARA TORNAR O AMAZONAS\nGIGANTE PELA PRÓPRIA NATUREZA\nAMOR, ORDEM E PROGRESSO\n“O amor por princípio, a ordem por base, e o progresso por fim.”\nAuguste Comte\n\nART. 6º DA CONSTITUIÇÃO FEDERAL\nDireitos sociais como fundamento do compromisso de governo.\n\n“Clame a mim e eu responderei e lhe direi coisas grandiosas e insondáveis que você não\nconhece.”\nJeremias 33:3 - NVI"
+          },
+          {
+            "id": "1-apresentacao",
+            "titulo": "1. APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "1. APRESENTAÇÃO\nO Amazonas tem dimensões continentais, uma rede de rios que organiza a vida e a economia,\ngrandes áreas de floresta e realidades muito diferentes entre Manaus, as cidades do interior e\nas comunidades mais isoladas. Governar esse Estado exige partir dessa realidade, e não tentar\nencaixá-lo em modelos pensados para outros lugares.\nNossa geografia não pode ser tratada apenas como dificuldade. Ela precisa orientar a forma\ncomo o Governo se organiza, onde investe e como entrega seus serviços. Manaus continuará\nsendo a capital e o centro administrativo do Estado, mas o cidadão do interior não pode ser\nobrigado a viajar para a capital sempre que precisar resolver uma demanda pública, buscar\natendimento especializado ou acessar uma oportunidade.\n\nA própria Constituição do Amazonas aponta a regionalização das ações administrativas como\ninstrumento para buscar equilíbrio no desenvolvimento, com respeito à autonomia dos\nmunicípios. É dessa ideia que parte este Plano: aproximar o Governo das pessoas e usar as\ndiferenças do território como critério de planejamento.\n\nO ESTADO PRECISA CHEGAR ATÉ ONDE O CIDADÃO ESTÁ.\nIsso significa interiorizar serviços, fortalecer educação e saúde, ampliar segurança, criar\noportunidades de trabalho e empreendedorismo, apoiar cultura e esporte, investir em ciência e\ntecnologia e proteger o patrimônio natural do Amazonas. Significa também valorizar quem\nmantém o Estado funcionando todos os dias: professores, policiais, profissionais de saúde,\nservidores administrativos e todas as demais categorias do serviço público.\nCinco princípios orientam o conjunto das propostas: presença do Estado; descentralização;\n\nvalorização do servidor; desenvolvimento com proteção; ciência, tecnologia e\noportunidade.\n\nPOR UM AMAZONAS GIGANTE PELA PRÓPRIA NATUREZA!"
+          },
+          {
+            "id": "eixo-1",
+            "titulo": "EIXO 1",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1\nEDUCAÇÃO INTEGRAL E OPORTUNIDADE PARA A JUVENTUDE\nPROGRAMA 1 - AMAZONAS EDUCAÇÃO INTEGRAL\nEducação integral não será tratada apenas como aumento do tempo do aluno dentro da escola. A\nproposta é ampliar, de forma permanente e planejada, a oferta de tempo integral na rede estadual,\ncom prioridade para o interior e com uma jornada que combine aprendizagem, esporte, cultura,\nciência, tecnologia e formação profissional.\n\nA política terá como referência experiências brasileiras de educação integral, inclusive princípios\nassociados ao trabalho de Darcy Ribeiro, sempre adaptados às condições territoriais, culturais e\nsociais do Amazonas. A expansão poderá aproveitar estruturas existentes quando isso fizer sentido\ne prever novas unidades onde a demanda, a capacidade instalada e a logística demonstrarem\nnecessidade.\n\nO planejamento deverá mapear a oferta existente, identificar municípios ainda sem atendimento\nestadual em tempo integral, acompanhar matrículas e capacidade das unidades e estabelecer\nmetas progressivas por região. Alimentação, permanência escolar, recomposição da aprendizagem,\nprevenção da evasão e uso complementar do Centro de Mídias farão parte do desenho da política.\nNas comunidades indígenas, do campo, das águas e das florestas, a expansão respeitará as\nespecificidades educacionais, culturais e territoriais, com diálogo e consulta sempre que o\nordenamento jurídico exigir.\n\nPROGRAMA 2 - META IDEB AMAZONAS\nMelhorar a aprendizagem exige olhar para cada escola e não apenas para a média estadual. O Ideb\nserá um dos indicadores utilizados, ao lado de outros dados de permanência, fluxo, aprendizagem e\nconclusão.\n\nA rede trabalhará com metas estaduais e regionais, diagnóstico por escola, reforço e recomposição\nde aprendizagem, formação continuada de professores, prevenção da evasão, fortalecimento do\nEnsino Médio e transparência dos resultados. As escolas com maior dificuldade deverão receber\napoio prioritário, com acompanhamento frequente e plano de melhoria adequado à sua realidade.\n\nPROGRAMA 3 - CNH JOVEM AMAZONAS\nO Estado instituirá, por lei específica e com planejamento orçamentário, programa para custear a\nprimeira Carteira Nacional de Habilitação de jovens residentes no Amazonas que concluírem o\nEnsino Médio. A iniciativa manterá todas as exigências nacionais de habilitação, como idade,\naptidão, formação, exames e provas.\nFontes vinculadas à política de trânsito somente serão usadas quando a legislação permitir e para\nos públicos por ela abrangidos. Um atendimento mais amplo dependerá de fonte orçamentária\nprópria e juridicamente disponível."
+          },
+          {
+            "id": "eixo-2",
+            "titulo": "EIXO 2",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2\nSAÚDE DO SERVIDOR E FORTALECIMENTO DA CAPACIDADE\nPÚBLICA\nPROGRAMA 4 - HSPA - HOSPITAL DO SERVIDOR PÚBLICO DO AMAZONAS\nO HSPA será o eixo de uma política permanente de assistência à saúde do servidor. Como\nreferência para a formulação da proposta, dados oficiais divulgados pelo Governo do Amazonas em\n3 de novembro de 2025 indicavam mais de 120 mil pessoas entre servidores ativos, aposentados e\npensionistas, sendo 79.283 servidores ativos.\n\nA proposta não se resume a construir um hospital em Manaus. O desenho é de rede: um HSPA\nCentral na capital, polos regionais onde houver demanda, centros integrados por instrumentos\njurídicos adequados, unidades satélites para consultas, prevenção, exames, regulação, reabilitação\ne telemedicina e, quando necessário, uma rede complementar contratada dentro da lei.\n\nA existência dos doze polos administrativos deste Plano não significa a construção automática de\ndoze hospitais. Porte e localização dependerão de usuários, distância, rede disponível, logística,\ncapacidade assistencial e custo.\nBeneficiários, autonomia dos Poderes e financiamento\n\nA política será estruturada inicialmente no âmbito do Poder Executivo. A inclusão de servidores do\nLegislativo, Judiciário, Ministério Público, Defensoria, Tribunal de Contas ou outros órgãos com\nautonomia administrativa e financeira dependerá de adesão, convênio ou outro instrumento\njuridicamente adequado.\nSaúde e previdência serão tratadas como políticas distintas. Recursos vinculados ao RPPS não\nfinanciarão o HSPA. Para os militares estaduais, será respeitado o Sistema de Proteção Social\npróprio. A integração com estruturas do SUS não poderá retirar acesso da população nem criar\nprioridade indevida: exigirá pactuação, definição de responsabilidades e financiamento compatível.\n\nRECURSO PREVIDENCIÁRIO NÃO FINANCIARÁ O HSPA.\n\nPROGRAMA 5 - SAÚDE DO SERVIDOR E FORTALECIMENTO DA GESTÃO\nPÚBLICA\nA capacidade própria do Estado será ampliada de forma gradual, reduzindo a dependência de\noperadoras privadas como única porta de assistência. A transição não poderá interromper\ntratamento nem retirar cobertura antes de existir alternativa segura. Durante a implantação, a rede\nprivada poderá continuar atuando de maneira complementar onde for necessária.\n\nREDUZIR A DEPENDÊNCIA -> AMPLIAR A CAPACIDADE PRÓPRIA -> MANTER\nCOMPLEMENTAÇÃO QUANDO NECESSÁRIA\nSAÚDE PÚBLICA COM GESTÃO DIRETA E TRANSIÇÃO RESPONSÁVEL\nO Governo revisará contratos de terceirização, gestão e prestação complementar de serviços de\nsaúde. A decisão sobre manter, substituir ou internalizar um serviço será tomada depois de\nexaminar legalidade, custo, qualidade, resultados assistenciais, pessoal disponível, capacidade\npública de absorção, obrigações contratuais, eventuais indenizações, impacto financeiro e\ncontinuidade do atendimento.\nA gestão direta será ampliada onde demonstrar melhor resultado para o interesse público. Cargos e\nempregos permanentes necessários à expansão da estrutura observarão a regra constitucional do\nconcurso, sem prejuízo das hipóteses legais de contratação temporária."
+          },
+          {
+            "id": "eixo-3",
+            "titulo": "EIXO 3",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3\nVALORIZAÇÃO DO SERVIDOR\nPROGRAMA 6 - SERVIDOR VALORIZADO\nValorização do servidor não pode ser reduzida a uma única medida salarial. O Governo manterá\nagenda permanente para carreiras, condições de trabalho, saúde ocupacional, capacitação,\nrecomposição de quadros e desenvolvimento profissional.\nAs datas-base e eventuais perdas remuneratórias serão analisadas com transparência, respeitando\niniciativa legislativa, disponibilidade orçamentária e responsabilidade fiscal. O objetivo é planejar a\npolítica de pessoal com previsibilidade e sem promessas que não possam ser sustentadas ao longo\ndo mandato.\n\nPROGRAMA 7 - PREVIDÊNCIA SEGURA\nA previdência estadual terá diagnóstico atuarial atualizado e linguagem compreensível. Receitas,\ndespesas, patrimônio, contribuições, benefícios, projeções e resultados atuariais deverão ser\napresentados de forma clara para servidores e sociedade.\nO passivo atuarial será tratado pelo que é: uma obrigação previdenciária de longo prazo. Não será\nconfundido com dívida bancária vencida nem usado de forma alarmista."
+          },
+          {
+            "id": "eixo-4",
+            "titulo": "EIXO 4",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4\nSEGURANÇA PÚBLICA\nPROGRAMA 8 - RECOMPOSIÇÃO DOS EFETIVOS\nA Polícia Militar, a Polícia Civil, o Corpo de Bombeiros Militar e a Polícia Penal terão planejamento plurianual de\nrecomposição de efetivos. Serão observados o direito subjetivo à nomeação quando existente, a utilização\njuridicamente possível de concursos vigentes e a realização de novos concursos conforme necessidade e\ncapacidade financeira.\nO dimensionamento de pessoal levará em conta município, região, fronteira e vulnerabilidade operacional.\nFormação, inteligência, tecnologia, equipamentos, infraestrutura e meios de atuação fluvial também farão\nparte dessa recomposição; aumentar o número de profissionais sem melhorar a capacidade de trabalho não\nresolve o problema de segurança do Amazonas.\n\nPROGRAMA 9 - VALORIZAÇÃO DOS MILITARES ESTADUAIS E DA POLÍCIA PENAL\nA agenda dos militares estaduais reunirá carreira, data-base, auxílio-fardamento, capacitação, equipamentos,\nsaúde, condições de trabalho, recomposição do efetivo e habitação. O Corpo de Bombeiros Militar será\ncontemplado expressamente nessa agenda, assim como a Polícia Penal, respeitados os regimes jurídicos\npróprios de cada instituição. Cada medida remuneratória ou de carreira seguirá a iniciativa competente, o\norçamento e as regras fiscais.\n\nPROGRAMA 10 - MORADIA DO PROFISSIONAL DE SEGURANÇA\nSerá estruturado programa habitacional para profissionais da segurança, utilizando instrumentos como\nfinanciamento, programas estaduais e federais, conjuntos residenciais e áreas públicas juridicamente\ndisponíveis. O programa contemplará expressamente integrantes do Corpo de Bombeiros Militar e da Polícia\nPenal. Qualquer destinação de patrimônio observará interesse público, avaliação, regras urbanísticas e\nambientais, critérios impessoais, autorização legislativa quando exigida e procedimento regular de seleção.\n\nNão haverá distribuição discricionária de patrimônio público.\n\nPROGRAMA 11 - MODERNIZAÇÃO INSTITUCIONAL DA POLÍCIA MILITAR\nO foco será fortalecer especialização, inteligência, presença territorial e eficiência operacional.\n\nSistema penitenciário e ressocialização\nA política de segurança também incluirá o sistema penitenciário. Gestão de vagas, segurança das unidades,\neducação, qualificação, trabalho prisional, monitoração, atenção ao egresso e reinserção social serão tratados\ncomo partes de uma mesma estratégia: cumprir a pena com segurança e reduzir a reincidência. A execução\nexigirá articulação entre segurança, Justiça, educação, trabalho e assistência social, respeitando as atribuições\nde cada instituição.\n\nMANAUS E REGIÃO METROPOLITANA\nNo âmbito da recomposição dos efetivos, Manaus e os municípios da Região Metropolitana terão planejamento\ncompatível com densidade populacional, dinâmica criminal e demanda operacional. Policiamento territorial,\ninvestigação, inteligência, presença em áreas de maior vulnerabilidade e integração entre Polícia Militar, Polícia\nCivil e demais instituições serão dimensionados de forma específica, sem reduzir a presença necessária no\ninterior."
+          },
+          {
+            "id": "eixo-5",
+            "titulo": "EIXO 5",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5\nAMAZÔNIA PROTEGIDA\nPROGRAMA 12 - FORTALECIMENTO DO BATALHÃO DE POLICIAMENTO AMBIENTAL\nO Batalhão de Policiamento Ambiental (BPAmb), unidade especializada já existente na Polícia Militar do Amazonas\ne subordinada ao Comando de Policiamento Ambiental (CPAmb), será estruturado e fortalecido para ampliar sua\npresença e capacidade de atuação em todo o território estadual.\nNa proteção ambiental, a Polícia Militar pode prevenir condutas lesivas, lavrar autos de infração, aplicar medidas e\nsanções administrativas nos casos autorizados pela legislação, desenvolver educação ambiental e atuar por\ndelegação ou convênio quando cabível. Toda atuação sancionatória observará competência, tipificação, motivação,\ncontraditório, ampla defesa e direito de recurso.\n\nO IPAAM continuará responsável por suas atribuições próprias, especialmente licenciamento, autorizações e análise\ntécnica dos processos ambientais.\n\nSegurança, ciência e tecnologia\nO BPAmb reunirá três capacidades. A primeira é operacional: policiamento ambiental, fluvial e rural, patrulhamento de\nrios, lagos, floresta, áreas de fronteira e apoio a operações especializadas. A segunda é técnica: uma rede técnica de\ncooperação poderá integrar engenheiros, biólogos, geólogos, agrônomos, veterinários e especialistas de outros órgãos,\nsem transformar esses profissionais em militares. A terceira é tecnológica: drones, satélites, georreferenciamento,\nsensores, comunicação por satélite, aeronaves, embarcações e sistemas de inteligência territorial, sempre submetidos\nà regulamentação aplicável.\n\nO uso de inteligência artificial terá finalidade pública, controle humano, auditabilidade e proteção de dados. Nenhuma\nsanção será aplicada exclusivamente por decisão algorítmica.\n\nCIAT - Centro de Inteligência Ambiental e Territorial\nSerá criado o CIAT. O CIAT organizará, dentro dos limites legais e dos acordos de compartilhamento necessários, dados\nambientais, imagens de satélite, informações geográficas e policiais, denúncias, histórico de queimadas e\ndesmatamento, dados meteorológicos, navegação e informações operacionais. O objetivo é transformar informação\ndispersa em capacidade real de prevenção e resposta.\n\nÁguas, florestas, recursos minerais e cidadão amazônico\nA atuação incluirá combate a garimpo e mineração ilegais, contaminação, pesca predatória, transporte irregular,\ndesmatamento clandestino, queimadas criminosas, invasões e exploração ilícita de recursos naturais. No setor mineral,\no Estado combaterá ilícitos sem pretender assumir titularidade ou competência regulatória que pertença à União.\nA fiscalização será acompanhada de orientação. Ribeirinhos, pescadores, agricultores, comunidades tradicionais,\npequenos produtores, empreendedores e transportadores que buscam regularização não serão tratados da mesma\nforma que agentes que exploram deliberadamente os recursos por meios ilegais.\n\nImplantação em etapas\nA primeira etapa concentrará lei, regulamentação, capacitação, CIAT, rede técnica, mapeamento e equipamentos\niniciais. A segunda ampliará bases fluviais, comunicação, embarcações, tecnologia e integração de sistemas. A terceira\nconsolidará a presença territorial e ajustará a expansão aos resultados medidos."
+          },
+          {
+            "id": "eixo-6",
+            "titulo": "EIXO 6",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6\nFRONTEIRA SEGURA\nPROGRAMA 13 - TRÍPLICE FRONTEIRA SEGURA\nSerá elaborado projeto para uma nova estrutura estadual integrada de segurança próxima à tríplice\nfronteira. A prioridade é reforçar a presença contra narcotráfico, organizações criminosas, crimes\nambientais e ilícitos fluviais, combinando patrulhamento, inteligência e cooperação institucional.\n\nA localização só será definida depois de estudo operacional, fundiário, ambiental, logístico, de\ncomunicação e acesso. Se a área atingir terra indígena, unidade de conservação, imóvel federal ou\noutro território submetido a regime jurídico especial, serão respeitadas integralmente as\ncompetências, consultas e autorizações exigíveis.\n\nPACTO FEDERAL PELA TRÍPLICE FRONTEIRA\nO Governo do Amazonas buscará presença federal permanente e cooperação mais intensa com\nPolícia Federal, Forças Armadas, Receita Federal e órgãos ambientais federais. O Governador não\ncomandará instituições federais; sua responsabilidade será articular, pactuar e cobrar uma atuação\ncompatível com a importância estratégica da fronteira amazonense."
+          },
+          {
+            "id": "eixo-7",
+            "titulo": "EIXO 7",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 7\nAMAZONAS DESCENTRALIZADO\nPROGRAMA 14 - GOVERNO PRESENTE NAS CALHAS\nO Amazonas será administrado com uma lógica mais próxima do território. Para fins deste Plano, doze polos de referência, organizados\npor calhas e áreas territoriais, servirão ao planejamento, à logística, à organização de serviços e à distribuição de investimentos. Esses\npolos não substituem bacias hidrográficas oficiais, regiões de saúde, divisões do IBGE ou outras regionalizações técnicas.\n\nOS DOZE POLOS, SUAS CALHAS E MUNICÍPIOS\nCALHA DO ALTO SOLIMÕES - Polos: Tabatinga e Atalaia do Norte\n\nAmaturá; Atalaia do Norte; Benjamin Constant; Santo Antônio do Içá; São Paulo de Olivença; Tabatinga; Tonantins. 7 municípios.\n\nCALHA DO MÉDIO SOLIMÕES - Polo: Tefé\n\nAlvarães; Fonte Boa; Japurá; Jutaí; Maraã; Tefé; Uarini. 7 municípios.\n\nCALHA DO JURUÁ - Polo: Eirunepé\n\nCarauari; Eirunepé; Envira; Guajará; Ipixuna; Itamarati; Juruá. 7 municípios.\n\nCALHA DO PURUS - Polo: Boca do Acre\n\nBeruri; Boca do Acre; Canutama; Lábrea; Pauini; Tapauá. 6 municípios.\n\nCALHA DO MADEIRA - Polo: Humaitá\n\nApuí; Borba; Humaitá; Manicoré; Nova Olinda do Norte; Novo Aripuanã. 6 municípios.\n\nCALHA DO RIO NEGRO - Polo: São Gabriel da Cachoeira\n\nBarcelos; Santa Isabel do Rio Negro; São Gabriel da Cachoeira. 3 municípios.\n\nCALHA DO BAIXO SOLIMÕES - Polo: Coari\n\nAnamã; Anori; Caapiranga; Coari; Codajás. 5 municípios.\n\nREGIÃO METROPOLITANA - Polos: Manaus, Itacoatiara e Manacapuru\n\nAutazes; Careiro; Careiro da Várzea; Iranduba; Itacoatiara; Itapiranga; Manacapuru; Manaquiri; Manaus; Novo Airão; Presidente Figueiredo; Rio Preto da\nEva; Silves. 13 municípios.\n\nCALHA DO BAIXO AMAZONAS - Polo: Parintins\n\nBarreirinha; Boa Vista do Ramos; Maués; Nhamundá; Parintins; São Sebastião do Uatumã; Urucará; Urucurituba. 8 municípios.\nTOTAL: 62 MUNICÍPIOS - 12 POLOS.\n\nATALAIA DO NORTE - POLO E MUNICÍPIO-PILOTO DA DESCENTRALIZAÇÃO GOVERNAMENTAL\nAtalaia do Norte será adotado como município-piloto para demonstrar, na prática, o modelo de descentralização defendido neste Plano. A\nescolha considera sua condição de município de fronteira com o Peru, o difícil acesso, a inserção no Vale do Javari, o IDHM de 0,450 na\nreferência de 2010 - historicamente entre os mais baixos do Brasil - e o grave contexto de violência, criminalidade e vulnerabilidade\nterritorial documentado na região. O território também ficou marcado pelos assassinatos do indigenista Bruno Pereira e do jornalista Dom\nPhillips, em 2022.\nO Governo do Estado levará a Atalaia do Norte uma experiência integrada de presença governamental em todas as áreas de competência\nestadual, incluindo segurança pública, educação, saúde, cidadania, assistência social, qualificação profissional, produção sustentável,\ninfraestrutura, conectividade, Defesa Civil, proteção ambiental e atendimento administrativo. A atuação será articulada com Município, União\ne instituições competentes e respeitará os direitos, a participação e a consulta dos povos indígenas sempre que juridicamente exigidas.\nATALAIA DO NORTE SERÁ A PROVA DE QUE DESCENTRALIZAR É FAZER O GOVERNO CHEGAR AONDE ELE MAIS FAZ FALTA.\n\nPACs Regionais\nOs PACs funcionarão de quatro formas: atendimento presencial, digital assistido, protocolo regional e ações itinerantes. O objetivo não é trocar\num balcão distante por um aplicativo inacessível. Serviços digitais serão ampliados, mas o atendimento presencial e assistido continuará\ndisponível para quem precisa.\nDIGITALIZAR NÃO PODE SIGNIFICAR ABANDONAR.\nCada polo terá uma Carta Única de Serviços com órgão responsável, documentos, requisitos, etapas, prazos, agendamento, protocolo,\nacompanhamento e canais de reclamação. Acessibilidade física, digital e comunicacional, atendimento prioritário e respeito às particularidades\nlinguísticas e culturais serão incorporados desde o desenho do serviço.\n\nServiços que poderão ser descentralizados\n\nIdentificação e cidadania: Carteira de Identidade Nacional, atualização e segunda via, CIPTEA, documentos estaduais da pessoa com deficiência,\npasse intermunicipal, orientação de registro civil e serviços realizados por parceria competente."
+          },
+          {
+            "id": "detran-am-habilitacao-renovacao-mudanca-ou-adicao-de-categoria-biometria",
+            "titulo": "Detran-AM: habilitação, renovação, mudança ou adição de categoria, biometria, CNH Jovem,",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Detran-AM: habilitação, renovação, mudança ou adição de categoria, biometria, CNH Jovem,\n\nlicenciamento, CRLV-e, transferência, débitos, multas, taxas, protocolos e vistorias onde houver\ncapacidade técnica.\nSEFAZ, JUCEA e Procon: cadastros, certidões, regularização e orientação tributária; serviços de\n\nregistro mercantil; reclamações, mediação, orientação e fiscalização quando juridicamente cabível.\nTrabalho, crédito e desenvolvimento: serviços vinculados ao Sine, qualificação, vagas,\n\nencaminhamento, primeiro emprego e atendimento da AFEAM para crédito e apoio empresarial.\nAssistência social e habitação: programas estaduais, orientação, encaminhamento, políticas\n\npara idosos e pessoas com deficiência, cadastro habitacional, regularização, documentação e\nacompanhamento. Os PACs não substituirão CRAS, CREAS nem serviços municipais.\nServidor e previdência: Amazonprev, vida funcional, protocolos, saúde, capacitação,\n\naposentadoria, pensão, recadastramento, prova de vida e requerimentos.\nIPAAM e saúde: orientação, licenciamento e protocolos ambientais; informação, regulação\n\nadministrativa, teleatendimento, acompanhamento e HSPA para seus beneficiários.\nProtocolo, Ouvidoria e acesso à informação: peticionamento, digitalização, acompanhamento,\n\nreclamações, denúncias, solicitações, sugestões e pedidos de informação.\nPortos e navegação: serviços de competência estadual referentes a equipamentos sob gestão\n\nestadual ou atribuições regularmente delegadas. Competências constitucionais e regulatórias\nfederais serão preservadas. Órgãos de outros entes somente integrarão os PACs por instrumento de\ncooperação e com respeito à sua autonomia.\n\nSE O SERVIÇO PODE IR ATÉ O CIDADÃO, O CIDADÃO NÃO PRECISA IR ATÉ\nMANAUS.\nGoverno digital e desburocratização\nA descentralização virá acompanhada de processos mais simples. Sistemas deverão conversar\nentre si, prazos serão acompanhados e documentos repetidos serão progressivamente eliminados.\nQuando o Estado já possuir determinada informação e puder utilizá-la legalmente, o cidadão não\ndeverá ser obrigado a apresentá-la novamente. A digitalização será instrumento de acesso, nunca\njustificativa para excluir quem não tem conectividade ou familiaridade tecnológica.\nMANAUS: CAPITAL FORTE EM UM ESTADO DESCENTRALIZADO\n\nDescentralizar o Amazonas não significa enfraquecer Manaus. A capital continuará sendo o\nprincipal centro administrativo, econômico, industrial, científico e logístico do Estado. A política de\nregionalização buscará reduzir deslocamentos desnecessários do interior até Manaus e, ao mesmo\ntempo, fortalecer a capacidade da capital de exercer funções estratégicas que atendem todo o\nAmazonas.\nDESCENTRALIZAR O AMAZONAS NÃO SIGNIFICA ENFRAQUECER MANAUS."
+          },
+          {
+            "id": "eixo-8",
+            "titulo": "EIXO 8",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 8\nESPORTE E JUVENTUDE\nPROGRAMA 15 - VILAS OLÍMPICAS DAS CALHAS\nCada um dos doze polos terá uma Vila Olímpica de referência, com implantação escalonada\nconforme viabilidade técnica, fundiária, financeira e orçamentária. Os polos previstos são\nTabatinga, Atalaia do Norte, Tefé, Eirunepé, Boca do Acre, Humaitá, São Gabriel da Cachoeira,\nCoari, Manaus, Manacapuru, Itacoatiara e Parintins.\n\nAs unidades poderão reunir atletismo, futebol, futsal, basquete, voleibol, artes marciais, natação,\nesporte paralímpico, formação de atletas e atividades comunitárias. Sempre que for mais eficiente,\nestruturas existentes serão aproveitadas e qualificadas em vez de simplesmente construir novas\ninstalações."
+          },
+          {
+            "id": "eixo-9",
+            "titulo": "EIXO 9",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 9\nECONOMIA, CIÊNCIA E TECNOLOGIA\nPROGRAMA 16 - AMAZONAS POTÊNCIA CIENTÍFICA E TECNOLÓGICA\nO Amazonas precisa ampliar a complexidade tecnológica da sua economia. O Estado atuará como articulador,\ninvestidor em formação e infraestrutura, parceiro de pesquisa e indutor de novos negócios em áreas como\nmotores, semicondutores, chips, componentes eletrônicos, engenharia, pesquisa aplicada e tecnologias\namazônicas.\n\nA atuação estadual não pretende substituir nem alterar unilateralmente o regime tributário federal da Zona\nFranca de Manaus. O objetivo é aproveitar melhor esse ativo, desenvolver fornecedores, aumentar conteúdo\ntecnológico local e aproximar ciência, formação profissional e produção.\n\nCIÊNCIA DE ALTO NÍVEL NO AMAZONAS\nO Governo buscará cooperação com UEA, universidades, institutos federais, centros de pesquisa, IME, ITA e\ninstituições científicas nacionais e internacionais. A meta é ampliar laboratórios, formação avançada, intercâmbio,\nprogramas de engenharia, pesquisa e atração de pesquisadores.\nNenhuma unidade federal será prometida como se pudesse ser criada por decisão unilateral do Estado. A\nestratégia será construir cooperação institucional e oferecer condições para projetos de alto nível chegarem e\npermanecerem no Amazonas.\n\nPROGRAMA 17 - PONTE MANACAPURU-MANAQUIRI E CORREDOR COMPLEMENTAR DE\nACESSO À BR-319\nO Governo do Estado promoverá os estudos de viabilidade técnica, econômica e ambiental e os projetos de engenharia\nnecessários à implantação de uma ligação rodoviária permanente sobre o rio Solimões entre Manacapuru e Manaquiri. A\ndiretriz territorial inicial considera, na margem de Manacapuru, a Comunidade Bela Vista, tendo como referência o\nRamal do Cemitério; e, na margem de Manaquiri, a Comunidade Barro Alto. A localização exata das cabeceiras e o eixo\ndefinitivo da ponte serão estabelecidos pelos estudos de campo, de navegação e pelos projetos de engenharia.\n\nA solução deverá ser integrada aos acessos terrestres existentes e aos que venham a ser implantados ou melhorados.\nNo lado de Manacapuru, a Comunidade Bela Vista é alcançada pelo corredor da AM-070, com acesso pelo Ramal Bela\nVista a partir do km 55 da rodovia. No lado de Manaquiri, Barro Alto integra a malha rural vinculada ao corredor da\nAM-354. Essa configuração permitirá estruturar uma alternativa rodoviária de acesso à BR-319, aproveitando a ligação\njá existente entre Manaus e Manacapuru e criando um novo eixo de conexão com o sul do Estado.\n\nENGENHARIA, NAVEGAÇÃO E RESILIÊNCIA LOGÍSTICA\nA definição do empreendimento será precedida de Estudo de Viabilidade Técnica, Econômica e Ambiental (EVTEA) e de\nlevantamentos topográficos, geodésicos, batimétricos, hidrológicos, hidrossedimentológicos e geotécnicos. Serão avaliados o\ncomportamento do canal, correntes, erosão e estabilidade das margens, regime de cheias e vazantes, navegação, demanda\nde tráfego, acessos, desapropriações, interferências, custos de implantação, operação e manutenção e impactos\nsocioambientais. O projeto deverá prever vãos e gabaritos compatíveis com a navegação, soluções de fundação adequadas\nàs condições do Solimões e parâmetros de segurança para o tráfego de cargas e veículos pesados.\nA ponte será tratada como infraestrutura econômica e logística de caráter regional, destinada a ampliar a redundância do\nsistema de transportes, reduzir a dependência de travessias por balsa, melhorar a previsibilidade do deslocamento de pessoas\ne cargas e criar uma rota adicional para o escoamento da produção e o acesso à BR-319. A implantação dependerá de\nviabilidade técnica, econômica, ambiental e fiscal, de previsão nos instrumentos de planejamento e orçamento, do\nlicenciamento ambiental pelo órgão competente, do parecer da Autoridade Marítima e das demais autorizações aplicáveis à\nnavegação e aos bens da União. O Estado atuará em articulação com a União, os Municípios envolvidos e os demais órgãos\ncompetentes. Havendo impacto sobre povos indígenas ou comunidades tradicionais, serão observados os direitos de\nparticipação e os procedimentos de consulta juridicamente aplicáveis. Eventual integração formal da ligação ao sistema\nrodoviário federal dependerá dos procedimentos próprios da esfera federal."
+          },
+          {
+            "id": "eixo-10",
+            "titulo": "EIXO 10",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 10\nAMAZONAS NO BRASIL\nPROGRAMA 18 - GRANDES PROJETOS NACIONAIS\nO Amazonas precisa disputar de maneira permanente recursos e projetos nacionais. O Governo\norganizará uma capacidade técnica de captação, elaboração e acompanhamento de propostas\njunto à União nas áreas de infraestrutura, educação, saúde, segurança, ciência, tecnologia,\nhabitação, saneamento, esporte, meio ambiente e logística.\n\nTRAZER PARA O AMAZONAS OS PROJETOS NACIONAIS."
+          },
+          {
+            "id": "eixo-11",
+            "titulo": "EIXO 11",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 11\nRESPONSABILIDADE FISCAL E TRANSPARÊNCIA\nPROGRAMA 19 - RAIO-X DAS CONTAS DO AMAZONAS\nNos primeiros 100 dias, o Governo apresentará um Raio-X fiscal, financeiro e patrimonial do Estado.\nA proposta é simples: antes de assumir novos compromissos, a população precisa saber com\nclareza quanto o Amazonas arrecada, quanto gasta, o que deve, quanto possui em caixa e quais\nobrigações já estão contratadas para os anos seguintes.\n\nOs indicadores apresentados adotam como data de referência o primeiro quadrimestre de 2026.\n\nOrçamento, dívida e caixa\nA LOA 2026 estimou receita e fixou despesa total em R$ 38.053.480.000,00, sendo cerca de R$\n\n37,643 bilhões nos Orçamentos Fiscal e da Seguridade Social e R$ 410,366 milhões no Orçamento\nde Investimento das estatais.\nEm abril de 2026, a Dívida Consolidada estava em R$ 10.435.946.773,20 e a Dívida Consolidada\n\nLíquida em R$ 5.977.228.202,78. A relação DCL/RCL ajustada era de 20,65%, diante de limite\n\nformal de 200%. Os financiamentos somavam aproximadamente R$ 10,212 bilhões, dos quais R$\n5.696.754.624,66 internos e R$ 4.515.272.582,92 externos.\nA disponibilidade bruta de caixa registrada era de R$ 4.914.414.652,69. Consideradas as\n\ndeduções fiscais do demonstrativo, a disponibilidade apurada era de R$ 4.428.378.578,84.\n\nPessoal e serviço da dívida\nA Despesa Total com Pessoal do Executivo somava R$ 11.193.926.840,03, equivalente a 38,71%\n\nda RCL ajustada. O próprio demonstrativo indicava 44,10% para alerta, 46,55% para limite\nprudencial e 49% para limite máximo. Existir espaço formal não significa autorização automática\npara contratações ou reajustes; a folha precisa ser projetada para os anos seguintes.\nDe janeiro a abril de 2026, o RREO registrava aproximadamente R$ 351,75 milhões em juros e\n\nencargos. O levantamento técnico também identificou cerca de R$ 422,22 milhões em\n\namortizações no período. O Raio-X mostrará essas parcelas separadamente, junto com novas\ncontratações e estoque remanescente.\n\nJUROS + AMORTIZAÇÃO + NOVAS CONTRATAÇÕES + ESTOQUE\nREMANESCENTE\nPrevidência, precatórios e restos a pagar\nO demonstrativo fiscal indicava R$ 8.032.375.483,47 como passivo atuarial. Esse número será\n\napresentado como indicador previdenciário de longo prazo, não como dívida bancária vencida.\n\nNo mapa judicial de referência 2025, a linha do Estado do Amazonas apresentava saldo devedor\napós pagamento de R$ 1.787.895.372,90 e novos precatórios expedidos no exercício de R$\n584.914.785,70. Como o documento lista determinadas entidades separadamente, esses valores\n\nnão serão apresentados como se representassem automaticamente a soma de todo o setor público\nestadual.\n\nRestos a pagar serão divididos entre processados e não processados. No fim de abril de 2026, o\nsaldo total a pagar indicado nas categorias demonstradas era de aproximadamente R$ 336,1\n\nmilhões.\nContrato por contrato\nO Estado publicará inventário de operações de crédito e contratos de longo prazo com credor,\ncontrato, valor original, desembolsos, saldo, moeda, juros, indexador, spread, prazo, carência,\nfinalidade, garantias, amortização e custo futuro. Informações protegidas por sigilo legal serão\ntratadas como exceção; a regra será transparência compreensível."
+          },
+          {
+            "id": "autorizacao-contratacao-desembolso-saldo-devedor",
+            "titulo": "AUTORIZAÇÃO ≠ CONTRATAÇÃO ≠ DESEMBOLSO ≠ SALDO DEVEDOR",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "AUTORIZAÇÃO ≠ CONTRATAÇÃO ≠ DESEMBOLSO ≠ SALDO DEVEDOR\nBanco do Brasil - Contrato 40/00032-X: R$ 1.140.000.000,00; assinatura em 28/04/2025; prazo\n\nde 120 meses; remuneração CDI + 1,16% ao ano; finalidade: despesas de capital.\nPROSAI Parintins - BID: valor total de US$ 87,5 milhões, dos quais US$ 70 milhões de\n\nfinanciamento e US$ 17,5 milhões de contrapartida estadual.\nPRO-SUSTENTÁVEL III - BIRD: a Lei Estadual nº 7.299/2025 autorizou operação externa de até\n\nUS$ 585 milhões para reestruturação de dívidas internas. Autorização legal não será confundida\ncom contratação ou desembolso efetivo.\nPROHABISCAP: em 2026, a SEFAZ abriu chamada pública para avaliar operação interna com\n\ngarantia da União de R$ 1,462 bilhão, destinada a fundos de infraestrutura, habitação, Região\nMetropolitana, garantia de PPP e amortização de dívida. O valor não será somado automaticamente\nà dívida enquanto não houver contratação e desembolso.\nPADEAM, PROSAMIN+, PROFISCO e outras operações serão consideradas no Raio-X das Contas\ncom base nos contratos, saldos e situações oficialmente comprovados, sem apresentar valores\nhistóricos como se correspondessem automaticamente ao saldo devedor atual.\n\nAuditoria da reestruturação\nToda substituição de dívida deverá comparar custo antigo e custo novo: juros, prazo, câmbio,\nindexadores, garantias, valor presente e risco financeiro. A reestruturação só poderá ser\napresentada como economia quando essa economia estiver demonstrada.\n\nDÍVIDA ANTIGA -> CUSTO ANTIGO -> DÍVIDA NOVA -> CUSTO NOVO ->\nECONOMIA EFETIVA\nCinco perguntas antes de uma nova dívida\n1\n\nQuanto será tomado?\n\n2\n\nDe quem?\n\n3\n\nA qual custo e prazo?\n\n4\n\nPara quê?\n\n5\n\nO que ficará para o Amazonas depois que a dívida estiver paga?"
+          },
+          {
+            "id": "eixo-12",
+            "titulo": "EIXO 12",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 12\nAGRO FORTE - O AMAZONAS TAMBÉM É AGRO\nPROGRAMA 20 - AGRO FORTE\nO setor primário amazonense reúne agricultura familiar, pesca, piscicultura, agroextrativismo,\npecuária, manejo sustentável, bioeconomia, agroindústria e turismo rural. O AGRO FORTE parte da\ndiversidade regional para organizar uma política que ajude o produtor a produzir, beneficiar e\nvender mais, sem tratar preservação e desenvolvimento como objetivos incompatíveis.\n\nPRODUZIR MAIS, AGREGAR VALOR E GERAR RENDA COM BAIXO IMPACTO\nAMBIENTAL.\nOs instrumentos de fomento terão critérios públicos e impessoais, transparência, previsão\norçamentária e respeito às regras ambientais, sanitárias, fundiárias, eleitorais e de contratação\npública. Em ano eleitoral, qualquer entrega ou cessão subsidiada de bens, insumos ou benefícios\nseguirá rigorosamente as limitações legais aplicáveis, sem uso promocional ou clientelista.\n\nPILAR 1 - GESTÃO E GOVERNANÇA\n1. Plano Estadual de Desenvolvimento da Zona Rural. Planejamento participativo e\nregionalizado com produtores, pescadores, associações, cooperativas, colônias, sindicatos,\nconselhos, municípios, universidades e instituições científicas. Vocação econômica, logística,\nsegurança alimentar, insumos e sustentabilidade orientarão as prioridades.\n2. Fortalecimento dos Conselhos. Reforço dos espaços estaduais de participação ligados ao\n\nsetor primário, pesca, aquicultura, desenvolvimento rural sustentável e produção orgânica.\n3. Fórum Anual de Desenvolvimento Rural. Encontro permanente entre Estado, municípios,\n\nprodutores, organizações e centros de pesquisa para alinhar metas e execução.\n4. Regularização fundiária e ambiental. O Estado acelerará procedimentos sobre terras de sua\n\ntitularidade e prestará apoio técnico e documental nos demais casos. Áreas federais ou submetidas\na regime especial dependerão da atuação dos órgãos competentes. CAR, regularização ambiental e\nlicenciamento receberão apoio dentro das atribuições estaduais.\nPILAR 2 - FORTALECIMENTO INSTITUCIONAL E CAPACITAÇÃO\n5. IDAM forte no interior. Mais capacidade técnica, frota terrestre e fluvial, assistência, extensão\n\nrural, elaboração de projetos, orientação para crédito e transferência de tecnologia.\n6. Política Estadual de Pesca. Fortalecimento do atendimento técnico, produtivo, social e\n\ninstitucional a pescadores e suas organizações.\n7. ADS - Produzir e vender. Expansão de feiras, comercialização, compras públicas legalmente\n\nadmitidas, beneficiamento, agregação de valor e organização das cadeias produtivas.\n8. Formação de extensionistas rurais. Parcerias com UEA e CETAM para formar profissionais\n\ncapazes de aproximar ciência, tecnologia e produtor, especialmente na agricultura familiar.\n9. Defesa sanitária. Vigilância, inspeção e defesa animal e vegetal para proteger consumidor,\n\nprodutor e acesso aos mercados.\nPILAR 3 - INOVAÇÃO, TECNOLOGIA E CONECTIVIDADE\n10. ATER Digital. Plataforma online e, quando possível, offline para acompanhamento técnico,\n\ngestão da produção, informações de mercado, vídeos orientativos, balcão de oportunidades e\ncontato entre produtor e extensionista, com proteção de dados.\n11. Conexão Rural. Expansão de conectividade por contratação pública, infraestrutura, parcerias\n\ne integração com programas federais e prestadoras autorizadas. Startups e soluções de inteligência\nartificial voltadas à produção, logística, gestão e bioeconomia poderão ser apoiadas.\nPILAR 4 - COMERCIALIZAÇÃO, ESCOAMENTO E MERCADO"
+          },
+          {
+            "id": "12-calendario-agricola-de-compras-governamentais-planejamento-regional-d",
+            "titulo": "12. Calendário agrícola de compras governamentais. Planejamento regional da produção e",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "12. Calendário agrícola de compras governamentais. Planejamento regional da produção e\ndas compras públicas conforme safra, disponibilidade, logística e vocação produtiva.\n13. PROSAFRA. Estudo de programa de aquisição em período de safra para reduzir perdas,\n\nampliar mercados, apoiar escoamento e enfrentar impactos climáticos, sem prometer fixação\nadministrativa de preço de mercado.\n14. Central de abastecimento e entrepostos. Estudo de revitalização da estrutura de\n\nabastecimento em Iranduba, integrando armazenamento, comercialização, beneficiamento,\nagroindústria e logística metropolitana.\n15. Expoagro e eventos regionais. Uso de feiras e eventos como instrumentos de venda,\n\ncapacitação, acesso a crédito e tecnologia e atração de investimento.\nPILAR 5 - INFRAESTRUTURA, MÁQUINAS E INSUMOS\n16. Equipamentos e insumos produtivos. Acesso por cessão de uso, financiamento, doação\n\npara finalidade de interesse social, doação com encargo quando juridicamente cabível ou outros\ninstrumentos legais. Beneficiários serão escolhidos por critérios públicos, objetivos e fiscalizáveis.\n17. Compras coletivas de insumos. Apoio à organização de produtores para reduzir custos e\n\nmelhorar a logística de aquisição.\n18. Mecanização sem novo desmatamento. Máquinas e hora-máquina em áreas já abertas ou\n\nantropizadas juridicamente aptas à produção, respeitando APP, Reserva Legal, CAR, PRA,\nembargos, licenciamento e demais limitações. Área antropizada não será considerada\nautomaticamente regular.\n19. Estradas vicinais produtivas. Recuperação e manutenção dentro das competências\n\nestaduais e por cooperação municipal quando necessário, priorizando escoamento e acesso às\npropriedades.\nPILAR 6 - CADEIAS PRODUTIVAS E SUSTENTABILIDADE\n20. Sistemas Agroflorestais. Incentivo a SAFs em áreas juridicamente aptas e tecnicamente\n\nadequadas, combinando culturas, espécies florestais e frutíferas, meliponicultura e recuperação\nprodutiva de áreas degradadas.\n21. Mandioca Forte. Mecanização, casas de farinha mais higiênicas e eficientes, produção de\n\nfécula e tapioca, agregação de valor e aproveitamento seguro de subprodutos.\n22. Piscicultura Amazonense. Recuperação de viveiros e implantação de novos tanques em\n\náreas aptas, com assistência técnica, alevinagem, beneficiamento e comercialização.\nLicenciamento, outorga de água, domínio do corpo hídrico e defesa sanitária serão observados\nquando exigidos.\n23. Agricultura agroecológica, orgânica e plantas medicinais. Apoio técnico, certificação\nquando aplicável, comercialização e acesso a compras públicas.\n24. Milho e insumos regionais. Estudo de cultivo tecnicamente orientado para consumo e\n\nprodução de ração, buscando reduzir custos da piscicultura, avicultura, suinocultura e\novinocaprinocultura.\n25. Turismo rural e de base comunitária. Integração entre produção, gastronomia, cultura,\n\nnatureza, pesca esportiva e economia criativa. Projetos que afetem diretamente povos indígenas ou\ncomunidades tradicionais respeitarão os direitos de participação e consulta juridicamente exigidos.\n\nPILAR 7 - AGROINDÚSTRIA E AGREGAÇÃO DE VALOR\n26. Fábricas de ração comercial. Estímulo ao investimento privado, respeitando registro,\n\nfabricação e controle sanitário.\n27. Ração regional e economia circular. Pesquisa e unidades regionais para aproveitamento\n\nseguro de insumos e subprodutos da mandioca, pescado e processamento de alimentos, após\nvalidação técnica e sanitária."
+          },
+          {
+            "id": "28-beneficiamento-do-pescado-apoio-a-estruturas-de-salga-defumacao-filet",
+            "titulo": "28. Beneficiamento do pescado. Apoio a estruturas de salga, defumação, filetagem, cortes,",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "28. Beneficiamento do pescado. Apoio a estruturas de salga, defumação, filetagem, cortes,\n\nconservação e produtos de maior valor agregado.\n29. Abatedouros e inspeção. Apoio a implantação ou adequação em polos estratégicos quando\n\nestudos demonstrarem necessidade, sempre sob serviço oficial de inspeção compatível com o\nmercado de destino e observando regras estaduais e federais aplicáveis.\n30. Fábricas de gelo. Estudo de unidades em polos estratégicos para reduzir perdas na\n\nconservação de pescado e outros perecíveis.\nLicenciamento, cadeias prioritárias e bioeconomia florestal\n\nO Governo buscará procedimentos ambientais mais previsíveis, orientativos e eficientes dentro da\ncompetência estadual. Simplificar burocracia não significa eliminar exigência ambiental.\n\nA política respeitará a vocação de cada território. Entre as cadeias possíveis estão mandioca, açaí,\nabacaxi, citros, banana, cupuaçu, maracujá, mamão, hortaliças, guaraná, juta, malva, cacau, café,\ncana-de-açúcar, grãos, bovinos, bubalinos, suínos, ovinos, caprinos, aves, pescado, borracha,\ncastanha-do-brasil, óleos vegetais e sistemas agroflorestais.\nNa bioeconomia florestal, serão estimuladas cadeias como borracha, castanha-do-brasil, andiroba,\ncopaíba, murumuru, buriti e outros produtos não madeireiros, com foco em beneficiamento,\nfinanciamento, comercialização e agregação de valor.\n\nO AGRO FORTE buscará transformar produção sustentável em emprego, renda e permanência\neconômica no interior, com metas definidas a partir de critérios técnicos e territoriais.\n\nTRANSFORMAR PRODUÇÃO SUSTENTÁVEL EM EMPREGO, RENDA E\nPERMANÊNCIA DO HOMEM NO INTERIOR."
+          },
+          {
+            "id": "eixo-13",
+            "titulo": "EIXO 13",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 13\nSAÚDE PARA TODOS\nPROGRAMA 21 - AMAZONAS SAÚDE REGIONALIZADA E CONECTADA\nA saúde da população precisa ser organizada para que a distância até Manaus deixe de ser parte do tratamento. O Estado fortalecerá a\nmédia e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como\nreferência complementar de presença administrativa e logística.\nHospitais e unidades regionais serão fortalecidos de acordo com capacidade e demanda. A prioridade será ampliar diagnóstico, cirurgias\neletivas, leitos e especialidades que hoje obrigam pacientes a viajar, além de estruturar transporte sanitário, referência e\ncontrarreferência e pactuação com municípios e União.\nFilas, tempo de espera e resolutividade serão acompanhados por região. O objetivo não é apenas abrir vagas, mas saber se o paciente\nestá conseguindo chegar ao serviço certo no tempo adequado.\n\nREDE REGIONAL, DIAGNÓSTICO E CAPACIDADE RESOLUTIVA\nA expansão da rede estadual seguirá critérios de população atendida, perfil epidemiológico, distância, demanda reprimida, capacidade\ninstalada, disponibilidade de profissionais, logística e custo de manutenção. Em vez de repetir estruturas completas onde não houver escala\nassistencial, o Estado organizará hospitais de referência, policlínicas, centros diagnósticos e serviços especializados com funções definidas para\ncada região.\nSerão ampliados, conforme necessidade comprovada, serviços de imagem, análises clínicas, cardiologia diagnóstica, endoscopia, mamografia e\noutros exames cuja ausência provoque deslocamentos evitáveis. Equipamento novo só será incorporado quando houver equipe, manutenção,\ninsumos, conectividade e custeio compatíveis com seu funcionamento.\n\nESPECIALISTAS, TELEMEDICINA E REGULAÇÃO\nTelemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não\nprecisam acontecer. O Centro de Mídias em Saúde e outras ferramentas poderão conectar unidades locais a centros de referência.\nA regulação deverá ser mais transparente e integrada, permitindo acompanhar fluxos, prioridades clínicas, exames e encaminhamentos.\nTecnologia não substitui profissional nem leito; serve para organizar melhor o acesso ao que já existe e orientar onde a rede precisa crescer.\nA política de especialistas combinará provimento, formação, educação permanente, apoio remoto e incentivos juridicamente cabíveis para\nfixação no interior. A expansão ocorrerá sobre necessidades assistenciais demonstradas, sem transferir ao Estado responsabilidades municipais\nde atenção primária nem desorganizar equipes já existentes.\n\nCIRURGIAS, FILAS E CONTINUIDADE DO CUIDADO\nCirurgias eletivas, consultas especializadas e exames terão metas de redução de espera, acompanhamento público de desempenho e busca\nativa de pacientes que perderam contato com a rede. Mutirões poderão ser utilizados para atacar estoques de demanda, mas não substituirão\na oferta regular. O paciente deverá sair do procedimento com seguimento, retorno e referência definidos, evitando que a fila apenas mude de\n\nlugar.\n\nURGÊNCIA, EMERGÊNCIA E TRANSPORTE SANITÁRIO\nA rede de urgência será organizada por níveis de capacidade, com protocolos de estabilização, transferência e referência regional. A remoção\nde pacientes será estruturada por critérios clínicos e regulatórios, utilizando transporte terrestre, fluvial ou aéreo conforme distância, gravidade\ne condições operacionais. Ambulância, embarcação ou aeronave sem regulação, equipe e destino assistencial definido não será tratada como\nsolução isolada.\n\nDOENÇAS CRÔNICAS, ONCOLOGIA E REABILITAÇÃO\nHipertensão, diabetes, doenças cardiovasculares, renais e outras condições crônicas terão linhas de cuidado articuladas entre atenção primária\nmunicipal e serviços estaduais de referência. Na oncologia, o Estado fortalecerá diagnóstico precoce, estadiamento, acesso regulado ao\ntratamento, acompanhamento regional e teleapoio, reduzindo atrasos entre suspeita, confirmação diagnóstica e início do cuidado.\nA reabilitação será integrada à rede para pessoas após AVC, trauma, cirurgia, amputação ou perda funcional, com fisioterapia, terapia\nocupacional e demais cuidados conforme necessidade. O objetivo é reduzir incapacidade evitável e impedir que a alta hospitalar encerre o\ntratamento antes da recuperação possível.\n\nMEDICAMENTOS, HEMORREDE E VIGILÂNCIA\nA assistência farmacêutica estadual terá programação de compras, gestão de estoques, rastreabilidade e transparência para reduzir\n\ndesabastecimentos dos medicamentos sob responsabilidade do Estado. A Hemorrede será fortalecida na coleta, processamento,\narmazenamento, distribuição e segurança transfusional, com planejamento compatível com as distâncias e a sazonalidade do Amazonas.\nA vigilância em saúde orientará prioridades com base em dados epidemiológicos e ambientais. Doenças transmissíveis, arboviroses, malária,\neventos climáticos extremos, qualidade da água e outros riscos próprios do território amazônico serão enfrentados com integração entre\nvigilância, assistência, laboratório, municípios e órgãos competentes.\n\nPROGRAMA 22 - MULHER, CRIANÇA E SAÚDE MENTAL\nLinhas de cuidado materno-infantil, gestação de alto risco, atenção neonatal e pediátrica serão reforçadas, com especial atenção ao interior.\nA saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio,\ncuidado continuado e apoio às famílias, dentro das responsabilidades do SUS.\nA atenção à mulher abrangerá prevenção e diagnóstico oportuno dos cânceres de mama e do colo do útero, assistência à gestação de risco,\nparto seguro, puerpério e continuidade do cuidado. Na infância, a rede deverá integrar atenção neonatal, pediatria especializada, diagnóstico\nprecoce, reabilitação e acompanhamento de crianças com condições crônicas ou deficiência.\nNa saúde mental, a expansão de capacidade será acompanhada de articulação entre CAPS, urgência, hospitais gerais, atenção básica,\nassistência social e rede de proteção. Internação será utilizada quando clinicamente indicada, com continuidade do cuidado após a alta e\natenção específica a crianças, adolescentes, pessoas em crise e situações de risco de suicídio."
+          },
+          {
+            "id": "eixo-14",
+            "titulo": "EIXO 14",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 14\nEMPREGO, RENDA, EMPREENDEDORISMO E DESENVOLVIMENTO\nECONÔMICO\nPROGRAMA 23 - TRABALHO, RENDA E EMPREENDEDORISMO\nO desafio do Amazonas não é apenas reduzir desemprego; é aumentar renda e transformar\nocupações precárias em oportunidades produtivas. Qualificação, intermediação de mão de obra,\nprimeiro emprego e requalificação profissional serão planejados de acordo com as cadeias que\nrealmente contratam em cada região.\nCETAM, UEA, Sine e programas de formação deverão atuar de forma coordenada. Cursos serão\nacompanhados também pelo que acontece depois: quantos alunos conseguiram trabalho, quanto\ntempo demoraram e em que setores. Estágio, aprendizagem, primeiro emprego, reinserção\nprofissional e interiorização de oportunidades serão prioridades.\n\nEMPREENDE AMAZONAS\nQuem quer empreender precisa de mais do que crédito. O Estado organizará uma jornada integrada\npara MEIs, micro e pequenas empresas, autônomos, cooperativas e negócios inovadores,\nconectando formalização, capacitação, crédito responsável, gestão, tecnologia, acesso a mercado e\nexpansão.\n\nAFEAM, JUCEA, Sine, CETAM, UEA e órgãos de desenvolvimento deverão atuar de maneira mais\narticulada, com atendimento regional e digital assistido. O crédito será acompanhado de\norientação, porque financiamento sem planejamento pode virar endividamento improdutivo.\n\nPROGRAMA 24 - ZONA FRANCA, INDÚSTRIA E NOVAS MATRIZES\nA Zona Franca de Manaus continuará sendo defendida como patrimônio econômico estratégico do\nAmazonas. Ao mesmo tempo, o Estado trabalhará para que mais empresas locais participem das\ncadeias do Polo Industrial e para que conhecimento, tecnologia e renda gerados em Manaus criem\nmais oportunidades no próprio Estado.\nFornecedores locais, formação técnica, pesquisa e desenvolvimento, indústria 4.0, componentes e\ninsumos, serviços tecnológicos, bioindústria e exportação terão atenção específica. A diversificação\neconômica será construída para complementar a Zona Franca, e não para enfraquecê-la.\n\nMANAUS INDUSTRIAL, TECNOLÓGICA E EMPREENDEDORA\nManaus será tratada como centro industrial, tecnológico e logístico estratégico para todo o Estado.\nO Governo buscará ampliar a competitividade do ambiente produtivo, aproximar empresas do Polo\nIndustrial de fornecedores locais, universidades, centros de pesquisa, startups e formação\nprofissional e incentivar inovação, digitalização e novos negócios que também criem\nencadeamentos econômicos com o interior."
+          },
+          {
+            "id": "eixo-15",
+            "titulo": "EIXO 15",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 15\nCULTURA, ECONOMIA CRIATIVA E TURISMO\nPROGRAMA 25 - CULTURA VIVA AMAZONAS\nA cultura será tratada como direito, identidade e trabalho. O Amazonas já possui uma produção\ncultural reconhecida; o desafio é garantir formação, circulação, equipamentos, financiamento e\nmercado para que artistas e produtores consigam transformar talento em atividade sustentável.\nA política deverá alcançar música, boi-bumbá, artes cênicas, dança, literatura, audiovisual,\nartesanato, patrimônio, gastronomia, design, moda e produção digital, sem concentrar\noportunidades apenas em Manaus ou nos grandes eventos. Editais continuarão sendo importantes,\nmas interiorização, calendário regional e circulação também precisam virar rotina.\n\nPROGRAMA 26 - TURISMO DO AMAZONAS O ANO INTEIRO\nO turismo amazonense será trabalhado como uma cadeia econômica completa. Natureza, pesca\nesportiva, aventura, gastronomia, cultura, eventos, turismo fluvial, científico, de negócios e de base\ncomunitária podem gerar renda em diferentes partes do Estado, desde que existam acesso,\nqualificação, saneamento, conectividade, segurança, informação e promoção.\n\nParintins demonstra a capacidade que cultura e turismo têm de movimentar uma economia local. A\nestratégia será usar essa experiência como referência de escala, sem copiar o mesmo modelo, e\ndesenvolver outros destinos e calendários nos doze polos ao longo do ano."
+          },
+          {
+            "id": "eixo-16",
+            "titulo": "EIXO 16",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 16\nINFRAESTRUTURA, LOGÍSTICA, HABITAÇÃO E SANEAMENTO\nPROGRAMA 27 - AMAZONAS LOGÍSTICA INTEGRADA\nNo Amazonas, infraestrutura não pode ser pensada apenas como rodovia. O planejamento estadual\nserá multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais,\nrodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada\nregião.\n\nAs prioridades serão definidas considerando população, produção, acesso a saúde e educação,\nturismo, segurança e vulnerabilidade climática. Obras de competência federal ou municipal serão\nbuscadas por cooperação, convênios e articulação. O Estado não prometerá executar sozinho aquilo\nque juridicamente pertence a outro ente.\nMANAUS COMO NÓ LOGÍSTICO DO AMAZONAS\n\nManaus terá tratamento específico como principal ponto de conexão entre a produção industrial, a\nnavegação regional, os portos e terminais, o transporte aéreo e os corredores rodoviários\nmetropolitanos. O Estado atuará nas infraestruturas de sua competência e buscará cooperação\ncom União e Município para melhorar acessos, integração modal, circulação de cargas e conexão\nentre a capital e o interior.\n\nPROGRAMA 28 - MORADIA, URBANIZAÇÃO E SANEAMENTO\nA política habitacional combinará construção de moradias, regularização fundiária urbana, melhoria\nhabitacional, urbanização e reassentamento quando famílias estiverem em áreas de risco. O\nobjetivo é distinguir quem precisa de uma casa nova de quem pode permanecer onde vive se\nhouver segurança jurídica e infraestrutura.\nNo saneamento, o Estado atuará na governança regional, no planejamento e na estruturação da\nexpansão de água potável, esgotamento sanitário e resíduos sólidos. Soluções urbanas, rurais,\nribeirinhas e isoladas não serão tratadas como se fossem iguais. Drenagem, mobilidade e\nadaptação climática deverão ser pensadas junto com habitação e saneamento, respeitando as\ncompetências municipais e o marco legal do setor.\nMANAUS: URBANIZAÇÃO, IGARAPÉS E ÁREAS DE RISCO\n\nNa capital, a política estadual priorizará, dentro de suas competências e em cooperação com o\nMunicípio e a União quando necessário, regularização fundiária, urbanização de áreas vulneráveis,\ndrenagem, saneamento, recuperação de áreas degradadas e reassentamento de famílias expostas\na risco quando a permanência segura não for possível. Intervenções em igarapés deverão integrar\nhabitação, saneamento, mobilidade, recuperação ambiental e prevenção de novas ocupações de\nrisco."
+          },
+          {
+            "id": "eixo-17",
+            "titulo": "EIXO 17",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 17\nPROTEÇÃO SOCIAL E INCLUSÃO\nPROGRAMA 29 - PROTEÇÃO SOCIAL COM PORTA DE SAÍDA\nA assistência social protegerá quem precisa, mas também será conectada a documentação,\nsegurança alimentar, qualificação, emprego, empreendedorismo, moradia e acesso aos demais\nserviços. Para famílias que têm condições de alcançar autonomia econômica, o Estado deve ajudar\na construir esse caminho em vez de manter políticas isoladas que não conversam entre si.\n\nPROGRAMA 30 - MULHER PROTEGIDA E INDEPENDENTE\nO enfrentamento à violência contra a mulher será combinado com acolhimento, orientação,\narticulação da rede de proteção e autonomia econômica. No interior, a política utilizará estruturas\nregionais, atendimento remoto quando adequado e cooperação com municípios, segurança pública,\nJustiça e demais instituições competentes.\n\nProteção e independência financeira precisam caminhar juntas. Uma mulher que depende\neconomicamente do agressor enfrenta barreiras adicionais para romper o ciclo de violência.\n\nPROGRAMA 31 - INFÂNCIA, IDOSOS E PESSOAS COM DEFICIÊNCIA\nCrianças e adolescentes, idosos e pessoas com deficiência terão políticas próprias quando\nnecessário, mas suas necessidades também deverão aparecer dentro de saúde, educação, esporte,\ncultura, transporte, trabalho e assistência. Acessibilidade física, digital e comunicacional será\nrequisito para os novos serviços estaduais."
+          },
+          {
+            "id": "eixo-18",
+            "titulo": "EIXO 18",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 18\nPOVOS DO AMAZONAS\nPROGRAMA 32 - POVOS INDÍGENAS E COMUNIDADES TRADICIONAIS\nA diversidade de povos indígenas, ribeirinhos, extrativistas e demais comunidades tradicionais é\nparte estrutural do Amazonas. O Estado não tratará realidades diferentes como se fossem um único\ngrupo e não reduzirá essa agenda a uma ressalva jurídica em outros programas.\nDentro das competências estaduais, serão fortalecidos acesso a educação, média e alta\ncomplexidade em saúde, documentação, cultura, produção sustentável, conectividade, transporte,\nDefesa Civil e demais serviços públicos. Nos temas de competência da União ou submetidos a\nregimes territoriais específicos, a atuação será por cooperação, com respeito aos direitos\nterritoriais, participação e consulta quando juridicamente exigidas."
+          },
+          {
+            "id": "eixo-19",
+            "titulo": "EIXO 19",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 19\nRESILIÊNCIA CLIMÁTICA E DEFESA CIVIL\nPROGRAMA 33 - AMAZONAS RESILIENTE E DEFESA CIVIL PRESENTE\nSecas, cheias, incêndios, erosão, ondas de calor e outros eventos extremos já afetam\nabastecimento, transporte, produção, saúde e vida cotidiana. Por isso, risco climático será\nincorporado ao planejamento de infraestrutura, educação, saúde, saneamento e logística.\n\nObras estaduais deverão considerar cenários de risco e critérios de resiliência. Reconstruir\nrepetidamente uma estrutura vulnerável ao mesmo evento é desperdício de dinheiro público e não\npode ser tratado como normalidade.\n\nDEFESA CIVIL PRESENTE\nA Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e\nrecuperação, articuladas às políticas de adaptação climática. Mapeamento de risco, monitoramento\nhidrometeorológico, alertas, planos de contingência e logística preventiva de água, alimentos,\nmedicamentos e insumos serão ampliados.\nOs municípios receberão apoio para preparação diante de estiagens, cheias e incêndios. Defesa\nCivil, saúde, segurança, meio ambiente, infraestrutura, produção e assistência social deverão\ntrabalhar com protocolos integrados, priorizando comunidades isoladas e rotas críticas de\nabastecimento.\nCORPO DE BOMBEIROS E DEFESA CIVIL EM TODO O AMAZONAS\nA interiorização do Corpo de Bombeiros Militar será organizada como uma rede estadual de resposta a emergências. A\nexpansão de quartéis, grupamentos, pelotões, bases avançadas e estruturas operacionais observará população\natendida, distância, isolamento territorial, histórico de ocorrências, riscos ambientais, tempo de resposta, logística e\ncapacidade regional. O objetivo será reduzir progressivamente as áreas dependentes de longos deslocamentos para\nreceber atendimento especializado.\n\nRESPOSTA MULTIRRISCO E SALVAMENTO\nO Corpo de Bombeiros terá capacidade ampliada para combate a incêndios urbanos e florestais, salvamento aquático,\nterrestre e em altura, busca e resgate, acidentes com veículos e embarcações, atendimento pré-hospitalar e apoio às\npopulações atingidas por desastres. Equipamentos, viaturas, embarcações, comunicação, proteção individual e\nformação especializada acompanharão a expansão do efetivo e das unidades.\n\nBOMBEIROS DOS RIOS E DA FLORESTA\nA realidade amazônica exige capacidade própria para rios, lagos, comunidades ribeirinhas e grandes distâncias. Bases\ne meios fluviais poderão ser posicionados em áreas estratégicas, com embarcações adequadas para salvamento,\nresgate, transporte de equipes e combate a incêndios. Nos períodos críticos de queimadas, secas e estiagens, poderão\nser mobilizadas bases temporárias, brigadas especializadas e equipes regionais de pronta resposta.\n\nPREVENÇÃO, BRIGADAS E COMUNIDADES PREPARADAS\nO Estado ampliará a formação de brigadistas, servidores municipais, voluntários e agentes comunitários, inclusive em\ncomunidades indígenas, ribeirinhas e isoladas, sob protocolos técnicos. Essa capacidade local servirá como primeira\nresposta e prevenção, sem substituir a presença profissional do Corpo de Bombeiros.\n\nDEFESA CIVIL E BOMBEIROS: UMA REDE DE PROTEÇÃO\nDefesa Civil e Corpo de Bombeiros trabalharão com protocolos conjuntos, comunicação interoperável, mapas de risco,\nalertas antecipados, exercícios simulados, planos de contingência, logística humanitária e compartilhamento de\ninformações. A Defesa Civil concentrará prevenção, preparação, monitoramento, coordenação e recuperação; o Corpo\nde Bombeiros reforçará a resposta operacional especializada.\n\nPREVENÇÃO CONTRA INCÊNDIO E SEGURANÇA\nAnálise de projetos, vistorias, regularização de edificações, fiscalização de sistemas de segurança contra incêndio e\npânico e atuação em eventos de grande público serão modernizadas e progressivamente interiorizadas, com\nprocedimentos mais previsíveis, transparentes e acessíveis."
+          },
+          {
+            "id": "diretriz-juridica-e-de-governabilidade",
+            "titulo": "DIRETRIZ JURÍDICA E DE GOVERNABILIDADE",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "DIRETRIZ JURÍDICA E DE GOVERNABILIDADE\nEste Plano foi organizado para que compromisso político e capacidade de execução caminhem\njuntos. Nenhuma proposta será tratada como licença para ignorar competências constitucionais,\nautonomia dos municípios, autonomia de outros Poderes, iniciativa legislativa, direitos\nfundamentais ou regras fiscais.\nA implementação observará a Constituição Federal, a Constituição do Amazonas, PPA, LDO e LOA,\nresponsabilidade fiscal, licitações e contratos, legislação patrimonial, proteção de dados, normas\nambientais, direitos dos servidores e continuidade dos serviços públicos. Conforme a matéria,\npoderão ser utilizados lei, emenda constitucional estadual, decreto, regulamento, convênio, acordo\nde cooperação, contrato, concessão ou parceria juridicamente admissível.\n\nProgramas que dependam de União, municípios, órgãos autônomos ou instituições federais serão\nconstruídos por cooperação, e não apresentados como decisões unilaterais do Governador. Medidas\ncom impacto permanente de despesa ou pessoal terão implantação condicionada ao planejamento\norçamentário e aos limites fiscais.\nProgramas que envolvam concessão, distribuição ou subsídio individualizável de bens, valores ou\nbenefícios observarão também as restrições da legislação eleitoral, especialmente nos anos de\neleição.\n\nVISÃO INTEGRADA\nOs doze polos deste Plano servirão de referência para aproximar políticas de Governo: PACs,\nesporte, educação, segurança, proteção ambiental, HSPA, saúde regionalizada, emprego e qualificação,\nempreendedorismo, cultura e turismo, infraestrutura e logística, habitação e saneamento, proteção\nsocial, povos indígenas e comunidades tradicionais e resiliência climática.\n\nIsso não significa obrigar todas as secretarias a usar exatamente o mesmo polo ou a mesma\ninfraestrutura. Quando estudo técnico demonstrar solução melhor, a política setorial poderá adotar\noutra organização territorial. A regionalização é um instrumento para reduzir distância e coordenar\no Estado, não uma camisa de força burocrática.\n\nCONCEITO-SÍNTESE\nO Amazonas não precisa escolher entre preservação e desenvolvimento. Precisa desenvolver\nprotegendo aquilo que o torna único. Precisa transformar natureza, conhecimento, indústria, rios,\nfloresta, localização estratégica e população em forças de desenvolvimento.\nDesenvolvimento também significa saúde acessível, trabalho digno, empreendedorismo, cultura\nviva, turismo, infraestrutura, moradia, saneamento, proteção social e capacidade de enfrentar\nextremos climáticos. A riqueza produzida no Amazonas precisa gerar mais oportunidades para\nquem vive no Amazonas.\n\nO cidadão do interior não é quem está longe do Governo.\n\nÉ O GOVERNO QUE ESTÁ LONGE DELE.\n\nNosso compromisso será inverter essa lógica.\nPOR UM AMAZONAS GIGANTE PELA PRÓPRIA NATUREZA!"
+          },
+          {
+            "id": "proverbios-29-2-nvt",
+            "titulo": "PROVÉRBIOS 29:2 NVT",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PROVÉRBIOS 29:2 NVT\n\nQUANDO OS JUSTOS GOVERNAM, O POVO SE ALEGRA\n\nTODA HONRA E GLÓRIA SEJA DADA A YHWH!!!"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "f057c77b60a82586fa791e35997ba29a99963a72c2d70b0189bc123b30a94244"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "cc4f6486e6667e1e6f6f93130edfd3cf5c94302767da77d0cfcf4fec1e93876d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "26b9977f56785638dc44ecdebe14b05d95ba1add4dc097f2508686c2d3af42c7"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "2c5bf2d40ada849408328010e3e2638df0ccdbeaeaa2c8919d83020243a65a4c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "640fd5a74bee45b932e6de83843ce7d22775a8aa93f9736eb7569daa99fed04d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "660958da448bdd939c11f7c9da78cd216c1b63978c281537974b8edbdca4be24"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "48280d9271f20694686f0a572c4ef624a7012f7e1c4a166a5766a66384fa2a15"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "47ceeebe58d999ba259e2809f0eca650afcef37a8124876bb45ddc36858fa937"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "a5af3a8c709925d3de3048d98d2cb92d32d97715af25051f19fccdbc4f4c3aa4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "083be31d7e0e49254259dfaf31cd263a8265db631d5b65d0a54aaeb2561ab4a5"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "24f45abf58991a53c3baadbc52f20691e88e74029dc2ae17cece416ac46371e9"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "c306bd14adaad8718e4a29a35965e07881649c7aec19f0dac219d857907294ac"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "0ea9d2b2cee8fcacaeb4f625581b6bf7a44e41c78359d8ae0bcbe921c1a04231"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "533cfed419e93971f19e078f2255a80c1ed52852573c8c5ac6e01351b5897c0d"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "6f4f9b4c2a505168bbfe836fe001ffc145504993625512152e3361efc0a3b861"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "6564e5c2fd4bf5bc8f2168d5ee03fd9f76a31c86d3a7bfa97c330f0c590dbc38"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "13395a92e987c16e36407742d6c05f240077082964c1fed92b2897e7600a00af"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "42835099d07cbca5c90c7ec68e04153367250bd9e08683a6d219b62ade90ecdf"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "ed8267d099a7baea55d87b038dd4d426cae19e2de3344b4eac46480cdcb81a8d"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "87b2db8f9fb6256aed47e3a879653a06eb304c85132e6095f2b6372774f8e8ad"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "52bf7a536eb9df72b747f091dcc7e90e14e9c7c1b54bd7b8ddf4e25e6bcc5b40"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "461454d1a69787b15d44c35921ca2688474343bb2ac79bf94ab589645649c7a2"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "2af282185966285e06e33e90fbaeb2ce636aabf2027e607eb2cade54d1061aea"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "2df90f6c711579b5fce751526dcefbda8a05b11feb62b7432e8719bde35a0cc1"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "ae22fda0a8d84b40c54a0ee4e7d7e516687729b078dd96f3633d63dd3dafa668"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "a3f8ca1885349f1bacec68efedbedfb753f8ce424212e5e1ac4c417ec96bc041"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "bec2b0a3a444f6978a5c6869c1b94658bf6cd27e773c209952db7a1419a30b62"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "25896245f1a381964e3c55523babb531893c62b30d4564b40f8f68d1d9a5ee4d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística. Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer. A cultura será tratada como direito, identidade e trabalho. O planejamento estadual será multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais, rodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada região. A saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio, cuidado continuado e apoio às famílias, dentro das responsabilidades do SUS. A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática.",
+    "frases": [
+      {
+        "texto": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 20,
+            "trecho": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística."
+          }
+        ]
+      },
+      {
+        "texto": "Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 20,
+            "trecho": "Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer."
+          }
+        ]
+      },
+      {
+        "texto": "A cultura será tratada como direito, identidade e trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 22,
+            "trecho": "A cultura será tratada como direito, identidade e trabalho."
+          }
+        ]
+      },
+      {
+        "texto": "O planejamento estadual será multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais, rodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 23,
+            "trecho": "O planejamento estadual será multimodal: rios, portos e terminais, embarcações, aeroportos e aeródromos regionais, rodovias, vicinais, pontes e conectividade precisam ser combinados conforme a realidade de cada região."
+          }
+        ]
+      },
+      {
+        "texto": "A saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio, cuidado continuado e apoio às famílias, dentro das responsabilidades do SUS.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 20,
+            "trecho": "A saúde mental terá ampliação progressiva da capacidade dos CAPS e serviços equivalentes, atendimento em crise, prevenção do suicídio, cuidado continuado e apoio às famílias, dentro das responsabilidades do SUS."
+          }
+        ]
+      },
+      {
+        "texto": "A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 26,
+            "trecho": "A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-regionalizada",
+        "titulo": "Saúde regionalizada",
+        "descricao": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 20,
+            "trecho": "O Estado fortalecerá a média e a alta complexidade no interior, respeitando a regionalização própria do SUS e usando os doze polos deste Plano como referência complementar de presença administrativa e logística."
+          }
+        ]
+      },
+      {
+        "id": "telemedicina",
+        "titulo": "Telemedicina",
+        "descricao": "Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 20,
+            "trecho": "Telemedicina será usada para aproximar especialistas dos profissionais e pacientes do interior, apoiar diagnóstico e evitar viagens que não precisam acontecer."
+          }
+        ]
+      },
+      {
+        "id": "cultura",
+        "titulo": "Cultura",
+        "descricao": "A cultura será tratada como direito, identidade e trabalho.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 22,
+            "trecho": "A cultura será tratada como direito, identidade e trabalho."
+          }
+        ]
+      },
+      {
+        "id": "defesa-civil",
+        "titulo": "Defesa Civil",
+        "descricao": "A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002551740:01",
+            "pagina": 26,
+            "trecho": "A Defesa Civil será fortalecida nas ações de prevenção, mitigação, preparação, resposta e recuperação, articuladas às políticas de adaptação climática."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:25:58.043Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:27:56.198Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'doze polos' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do plano, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:1:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:2:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: cultura."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:3:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: logística/infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:4:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:5:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: defesa civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:frase:6:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal com rótulo temático adicional não altera o conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'doze polos' sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente: saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:saude-regionalizada:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:telemedicina:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: cultura."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:cultura:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente: defesa civil."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002551740:tema:defesa-civil:documentos:AM:40002551740:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002551740",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002551740:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 36772,
+          "cached_input_tokens": 2816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2583,
+          "reasoning_output_tokens": 1413
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24092,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19150,
+          "output_tokens_details": {
+            "thinking_tokens": 374
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24092,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19150,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24092,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24092
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.30644940000000004
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "2f17be0dde9e89825fb460a136f9767f46af95f802027ff5b61a40331d02242d",
+    "extractedTextSha256": "3c855f58ca34b306648caeb9a33aafe6beb368bbe9e23b18c6456a2bfc2b46ae",
+    "documentCount": 1,
+    "documentSetSha256": "2b10c41dea1eb0e972adca08c3a7e4e336b1b3a3def19ed5ccfd3794a784a4b6",
+    "contentSha256": "2ac15f445d4d57050efde1970462d3c913ba10a74b2796ca400ae3a0d81240df"
+  }
+}

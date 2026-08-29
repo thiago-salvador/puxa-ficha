@@ -1,0 +1,897 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002552296",
+    "slug": "cleitinho",
+    "nomeUrna": "CLEITINHO AZEVEDO",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": "2026MG130002552296_01.pdf",
+    "arquivoNoPacote": "MG/2026MG130002552296_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MG:130002552296:01",
+      "fonte": {
+        "arquivoNome": "2026MG130002552296_01.pdf",
+        "arquivoNoPacote": "MG/2026MG130002552296_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e8b42dd72ffe80300eff68c10c7785066d13c42aa0f3db4e1748f679478b377f",
+        "extractedTextSha256": "50bcf1805d6c7e234050e3cd4c4dc604324831bb4757d9a7ad68162b1dac9631",
+        "paginas": 16,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nO POVO PRIMEIRO!\n\nGOVERNADOR\n\nCleitinho\nVICE\n\nFalcão"
+          },
+          {
+            "id": "carta-ao-mineiro",
+            "titulo": "CARTA AO MINEIRO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "CARTA AO MINEIRO\n\nMinas Gerais\nprecisa de um governo que tenha\numa prioridade: as pessoas.\nUm governo que enxergue cada decisão pelo impacto que ela produz na\nvida dos mineiros. Que trabalhe para melhorar a saúde, garantir segurança,\noferecer educação de qualidade, recuperar as rodovias e criar\noportunidades para quem vive, trabalha e empreende em nosso estado.\nO governo existe para servir às pessoas. Por isso, serviço público de\nqualidade não pode ser promessa. Precisa ser uma obrigação permanente\nde quem governa.\nMinas Gerais tem gente trabalhadora, riquezas, capacidade produtiva e\npotencial para crescer. O que precisamos é de uma administração que\ncoloque os recursos a serviço da população, que faça o Estado funcionar e\nque tenha coragem para enfrentar desperdícios, privilégios e ineficiências.\nEm um Estado com severas restrições fiscais, será preciso fazer mais com\nmenos. Isso significa administrar melhor, cortar onde é possível cortar, usar a\ninovação para ampliar a capacidade de entrega, estabelecer prioridades e\ncobrar resultados. O mineiro não pode pagar duas vezes: primeiro com seus\nimpostos e depois com a falta de serviços públicos.\nTambém significa fortalecer os municípios, que estão na linha de frente e\nmuitas vezes assumem responsabilidades que são do Estado. Quem está na\nbase deve ser ouvido e valorizado dentro do governo estadual. A gestão será\nde fora para dentro, com menos Estado e mais municípios.\nEste plano parte de uma convicção: governar é melhorar a vida das\npessoas. Cada recurso, cada decisão e cada política pública devem\nresponder a uma pergunta: como isso melhora a vida do mineiro?\nÉ com esse compromisso que queremos recuperar a capacidade do Estado\nde cuidar, proteger, educar, investir e criar oportunidades.\nUm governo que trabalha para as pessoas. Um Estado que entrega\nresultados. O POVO PRIMEIRO!\n\nCleitinho Azevedo\n\nLuís Eduardo Falcão"
+          },
+          {
+            "id": "principios",
+            "titulo": "PRINCÍPIOS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "PRINCÍPIOS\n\nPrincípios INEGOCIÁVEIS\nO dinheiro é do povo, não do governo.\n\nTodo gasto público precisa ter justificativa, transparência e resultado. O\nmineiro tem o direito de saber onde e como seu dinheiro está sendo aplicado.\nTolerância zero com a corrupção e com o uso do recurso público para\ninteresses particulares. Transparência será regra absoluta, com o dinheiro do\npovo voltando para o povo.\n\nMinas Gerais não é uma só.\n\nAs políticas públicas precisam considerar as diferentes realidades,\nnecessidades e potencialidades. Regionalizar é essencial para entregar\nresultado e os representantes do governo precisam estar presentes no interior.\n\nToda cobrança exige uma contrapartida.\n\nO Estado não cobra por serviço que não presta — princípio que orienta as\nposições deste plano sobre pedágio, tarifa de esgoto e taxas administrativas.\n\nCorta-se primeiro em cima.\n\nServiços essenciais, carreira de servidores ou programas sociais não podem\nser afetados por redução no orçamento. Os cortes são na estrutura política e\nadministrativa do governo. Sem privilégios e desperdícios de dinheiro público.\n\nServidor público é parceiro.\n\nCombate ao desperdício não se confunde com desmonte de carreira; crítica\nao privilégio não se confunde com desprezo pelo serviço público.\n\nA lei vale para todos, começando por quem governa.\n\nControle interno independente, corregedorias atuantes, cooperação irrestrita\ncom os órgãos de controle e com o Ministério Público, apuração sem\nconsideração de vínculo político.\n\nSimplificar é respeitar o povo.\n\nA burocracia é violência silenciosa contra quem tem menos tempo, dinheiro e\nacesso. Cada exigência eliminada devolve tempo e dignidade às pessoas.\n\nCleitinho Azevedo\n\nLuís Eduardo Falcão"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nMETODOLOGIA DE\nPARTICIPAÇÃO SOCIAL\nE GOVERNANÇA\nTRANSPARENTE\nA governança pública e a participação social serão pilares permanentes\nda gestão estadual, fortalecendo a transparência, o diálogo e a\nconstrução conjunta das políticas públicas.\nOs Fóruns Regionais de Gestão Pública serão institucionalizados com\nencontros semestrais em cada região de Minas Gerais, reunindo\nprefeitos, vereadores e representantes do Governo do Estado para ouvir\nas demandas locais, definir prioridades e acompanhar a execução das\nsoluções construídas em conjunto.\nA gestão por resultados será fortalecida por meio da criação da Sala de\nMonitoramento da Gestão, com acompanhamento mensal das\nprincipais entregas de cada secretaria, suas metas, cronogramas e\nindicadores.\nOs resultados serão apresentados periodicamente à Governadoria,\nfortalecendo a cultura de execução, prestação de contas e solução\nrápida de entraves.\nA transformação digital será ampliada com a integração dos órgãos\nestaduais, a digitalização dos serviços públicos e a simplificação dos\nprocessos administrativos.\nO objetivo é reduzir custos, aumentar a produtividade e tornar a relação\ndo cidadão e do setor produtivo com o Estado mais simples, rápida e\neficiente.\n\n4"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-2",
+            "titulo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO\n\n10 EIXOS ESTRATÉGICOS DE GOVERNO\nPÁGINAS\n\n1.Um governo a serviço das pessoas\n\n6\n\n2.Cuidar de Minas é cuidar da saúde dos mineiros\n\n7\n\n3.Segurança Pública forte e inteligente\n\n8\n\n4.Educação que prepara para o futuro\n\n9\n\n5.Impulsionar a economia e a gerar emprego\n\n10\n\n6.Infraestrutura para viver e conectar\n\n11\n\n7.O Agro forte para Minas crescer\n\n12\n\n8.Minas que acolhe e transforma vidas\n\n13\n\n9.Desenvolver e garantir o futuro dos mineiros\n\n14\n\n10. Valorizar a cultura, o turismo e a identidade mineira\n\n15"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-3",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nUm governo a serviço\ndas pessoas\n1. Renegociação da Dívida com a União: Atuação firme junto ao Governo Federal\npara renegociar a dívida estadual e criar um fundo de retorno de recursos para\ninvestimentos em logística e infraestrutura em Minas Gerais.\n2. IPVA Progressivo: Analisar a implantação de alíquotas proporcionais ao valor\nde mercado do veículo, reduzindo ou isentando a tributação para veículos\npopulares e garantindo justiça fiscal.\n3. Revisão das Renúncias Fiscais: Avaliação técnica rigorosa de todos os\nincentivos fiscais do Estado, mantendo apenas aqueles que comprovem\ngeração continuada de empregos, investimentos e arrecadação.\n4. Estrutura Administrativa Enxuta: Redução drástica de cargos comissionados\nsem função técnica, eliminação de privilégios no topo da pirâmide\ngovernamental e corte de gastos supérfluos.\n5. Revisão Integral das Despesas Públicas: Eliminação de contratos\nsuperestimados, despesas desnecessárias e sobreposições administrativas\npara direcionar recursos aos serviços essenciais.\n6. Orçamento Base Zero: Adoção do modelo como instrumento permanente de\ngestão, exigindo justificativa técnica periódica para a manutenção de cada\ngasto estatal.\n7. Gestão por Resultados e Metas: Implantação de indicadores claros de\ndesempenho para todas as secretarias, assegurando transparência, eficiência\ne cobrança contínua de resultados. Os Secretários devem estar no interior,\nconhecendo os problemas de perto, para encontrar soluções mais eficientes.\n8. Fortalecimento das Estruturas Regionais e Atendimento Municipal: Criação de\nestrutura fixa na organização governamental para atendimento direto a\nprefeitos e vereadores, oferecendo cooperação técnica contínua.\n9. Fóruns Regionais de Gestão Pública: Institucionalização de encontros\nfrequentes em todas as regiões mineiras para ouvir demandas locais, pactuar\nprioridades e acompanhar a execução das políticas estaduais.\n10. Valorização dos Servidores e Diálogo Permanente: Tratamento dos servidores\npúblicos como parceiros fundamentais, preservando carreiras, promovendo\ncapacitação e combatendo desperdícios sem desmonte do serviço público.\n\n6"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-4",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nCuidar de Minas é cuidar\nda saúde dos mineiros\n1. Tabela Mineira de Procedimentos Estratégicos: Complementação do\nfinanciamento federal para expandir exames, consultas especializadas e\ncirurgias eletivas na rede estadual, reduzindo o tempo de espera.\n2. Conclusão e Operação dos Hospitais Regionais: Buscar garantir o\nfuncionamento pleno dos cinco hospitais regionais em Teófilo Otoni,\nGovernador Valadares, Divinópolis, Sete Lagoas e Conselheiro Lafaiete.\n3. Programa Reativar Minas: Diagnóstico e recuperação funcional de leitos,\nmaternidades, UTIs e centros cirúrgicos subutilizados em todas as regiões\ndo Estado.\n4. Fortalecimento da Atenção Primária à Saúde: Apoio aos municípios para\nconstrução, ampliação e modernização de Unidades Básicas de Saúde\n(UBS), substituindo imóveis alugados. Implementação de protocolos clínicos\natualizados, exames rápidos e suporte por teleassistência para resolver\ndemandas na própria comunidade.\n5. Rede Mineira de Urgência e Emergência: Fortalecer a integração entre\nSAMU, UPAs, hospitais, portas de urgência, regulação e transporte sanitário,\ncom protocolos regionais e definição clara das referências assistenciais.\n6. Transparência na Assistência Farmacêutica: Disponibilização de sistema\ndigital para consulta prévia do estoque de medicamentos antes do\ndeslocamento do cidadão até a farmácia pública.\n7. Jornada do Cuidado Digital: Acompanhamento transparente do histórico,\nconsultas, exames, encaminhamentos e procedimentos pelo próprio\npaciente em plataforma integrada.\n8. Rede Mineira de Saúde Digital e Telessaúde: Expansão da telessaúde e\nintegração progressiva dos sistemas de informação entre Estado e\nmunicípios para qualificar o atendimento.\n9. Saúde Mental e Fortalecimento da RAPS: Ampliação do cuidado preventivo,\nhumanizado e comunitário na Rede de Atenção Psicossocial, com apoio\ncontínuo às famílias.\n10. Valorização do Complexo Fhemig, Hemoninas e Funed: Implantação do\nComplexo Hospitalar Padre Eustáquio, fortalecimento da Funed em pesquisa\ne inovação, e capacitação contínua das equipes de saúde.\n\n7"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-5",
+            "titulo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO\n\nSegurança Pública forte\ne inteligente\n1. Policiamento Ostensivo e Territorial: Ampliação da presença física das\nforças de segurança, com atuação orientada por dados e reforço do\npoliciamento nas áreas de maior incidência criminal e nas regiões rurais.\n2. Criação do Comando de Inteligência: Unificação das bases de dados da\nPolícia Militar, da Polícia Civil, do Corpo de Bombeiros, da Defesa Civil e do\nSistema Prisional em uma plataforma tecnológica integrada.\n3. Descapitalização do Crime Organizado: Combate à estrutura financeira\ndas facções criminosas, com foco no enfrentamento à lavagem de dinheiro\ne na interdição das rotas de tráfico no território mineiro.\n4. Prioridade Absoluta no Combate ao Feminicídio: Expansão das delegacias\nespecializadas, fortalecimento da Patrulha de Proteção à Mulher e\nampliação do monitoramento eletrônico de agressores por meio de\ntornozeleiras.\n5. Programa Educacional de Proteção à Mulher (PEPROM): Implementar\nportfólio de serviço prevendo ações educativas junto ao ensino\nfundamental e médio, em escolas públicas e privadas, com objetivo de\nprevenir violência contra a mulher.\n6. Reestruturação do Plantão Digital: Implantar o Plantão Digital Audiovisual\ne Descentralizado, eliminando a redigitação, reduzindo burocracias e\nagilizando o atendimento da Polícia Civil.\n7. Fortalecimento da Perícia Técnica e Redução de Inquéritos: Investimento\ncontínuo em estrutura, pessoal e tecnologia para conferir maior celeridade\ne resolutividade às investigações criminais, reduzindo o tempo de\ntramitação dos inquéritos.\n8. Recomposição Salarial e dos Efetivos: Valorização dos profissionais de\nsegurança pública, com recomposição salarial contínua e realização\nperiódica de concursos públicos.\n9. Modernização do Sistema Prisional e Socioeducativo: Fortalecimento da\nPolícia Penal, separação dos custodiados de acordo com seus perfis e\nampliação das oportunidades de trabalho e estudo como instrumentos de\nreinserção social.\n10. Expansão do Corpo de Bombeiros e da Defesa Civil: Ampliação da\npresença no interior, com mapeamento preventivo permanente das áreas\nde risco e elaboração de planos regionais de contingência.\n\n8"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-6",
+            "titulo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO | CLEITINHO E FALCÃO\n\nEducação que\nprepara para o futuro\n1. Recomposição da Aprendizagem, Alfabetização e Educação Especial: Foco\nna alfabetização na idade certa e na recomposição da aprendizagem, com\natenção especial aos estudantes em situação de vulnerabilidade\neducacional, bem como suporte técnico continuado aos municípios para\nelevação do desempenho nos anos finais e ensino médio. Fortalecimento da\neducação inclusiva para estudantes com deficiências e neurodivergentes,\ngarantindo o Atendimento Educacional Especializado (AEE) e profissionais de\napoio.\n2. Busca Ativa e Combate à Evasão Escolar: Atuação integrada com a\nassistência social e conselhos tutelares para identificar, resgatar e manter\njovens vulneráveis na escola.\n3. Expansão e Modernização da Educação em Tempo Integral: Reformulação da\nmatriz curricular com educação financeira, empreendedorismo, cidadania e\ncompetências práticas para a vida.\n4. Ensino de Tecnologia e Inteligência Artificial: Incorporação de aulas de\ntecnologia, programação, robótica e inteligência artificial na rede pública\nestadual.\n5. Reestruturação do Programa Trilhas de Futuro: Alinhamento da oferta de\ncursos técnicos e profissionais às reais vocações econômicas e demandas do\nmercado de trabalho de cada região para buscar reduzir a evasão.\n6. Infraestrutura Escolar Renovada: Reforma de prédios públicos escolares com\nimplantação de laboratórios, bibliotecas, quadras de esportes e espaços de\ninovação.\n7. Videomonitoramento e Segurança Escolar: Instalação de sistemas de\nmonitoramento integrados às forças de segurança e protocolos de prevenção\ne resposta à violência nas escolas.\n8. Transporte e alimentação escolar: Fortalecer a colaboração com os\nmunicípios para garantir transporte seguro, regular e adequado, e assegurar\nmerenda nutritiva, com valorização da agricultura familiar e combate ao\ndesperdício e melhoria das cozinhas e do acompanhamento nutricional.\n9. Plano Plurianual de Carreira e Valorização Docente: Concursos públicos\nregulares, redução da carga burocrática sobre os professores e programa de\natenção à saúde mental dos educadores.\n10. Apoio às Universidades Estaduais (UEMG e Unimontes): Previsibilidade\norçamentária para a expansão do ensino superior, da pesquisa aplicada e da\nformação docente no interior.\n\n9"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-7",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nImpulsionar a economia\ne gerar emprego\n1. Ambiente de Negócios Simples e Digital: Expansão da REDESIM + Livre e do Minas\nLivre para Crescer, com apoio técnico do Sebrae para modernizar legislações\nmunicipais e fortalecer as Salas Mineiras do Empreendedor.\n2. Programa Exporta Mais Minas: Preparação técnica e comercial de pequenas e\nmédias empresas para o mercado internacional, oferecendo consultoria,\nadequação de produtos e prospecção de compradores via Minas Business\nConnection.\n3. Inovação Acessível e Compete Minas: Ampliação dos editais do Compete Minas\ncom metas regionalizadas, procedimentos simplificados e maior integração entre\nstartups, microempresas, universidades e APLs.\n4. Atração de Investimentos com Capilaridade Regional: Presença de agentes\nregionais da Invest Minas em todas as macrorregiões e estabelecimento de\nmetas de atração voltadas a municípios de pequeno e médio porte.\n5. Infraestrutura Energética e de Gás: Plano Estadual de Infraestrutura Energética\npara eliminar gargalos de energia trifásica da Cemig e expandir a rede de gás\nnatural da Gasmig nos polos produtivos regionais.\n6. Mineração do Futuro: Desenvolver uma cadeia de maior valor agregado para\nterras raras e minerais estratégicos, fomentando inovação e pesquisa. Incentivar\no aproveitamento de rejeitos, garantir uma mineração mais segura e preparar as\nregiões mineradoras para diversificar sua economia no futuro.\n7. Desenvolvimento Regional, APLs e Codemge: Reposicionamento da Codemge e\ngovernanças regionais para financiar infraestrutura, feiras e fortalecimento de\nArranjos Produtivos Locais (APLs) e regularização pela Cohab.\n8. Conectividade Aérea Regional e Internacional: Política de incentivos a voos\nregionais e internacionais condicionada a metas objetivas de frequência, rotas e\nfiscalização do cumprimento pelas companhias aéreas.\n9. BDMG Forte, Sustentável e Descentralizado: Expansão do crédito para micro e\npequenas empresas, criação de linhas para novas empresas e fortalecimento da\nrede de correspondentes no interior.\n10. Governança e Parceria com o Setor Produtivo: Agenda permanente de\nformulação e avaliação de políticas públicas em conjunto com Sebrae, Fiemg,\nFecomércio, FCDL, associações comerciais e cooperativas.\n\n10"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-8",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nInfraestrutura para viver\ne conectar\n1. Priorização de Investimentos Públicos sem Novos Pedágios: Foco em\ninvestimentos diretos do orçamento e captação federal em vez de novas\ncobranças de pedágio em rodovias estaduais.\n2. Fiscalização Rigorosa dos Contratos Vigentes: Acompanhamento rígido do\ncumprimento de metas, cronogramas de obras e padrões de qualidade em\nconcessões rodoviárias.\n3. Reajuste Tarifário Vinculado à Entrega de Obras: Vinculação estrita de\nqualquer reajuste nas tarifas de pedágio à prévia conclusão das\nintervenções e obras contratadas.\n4. Defesa dos Usuários em Rodovias Federais: Atuação junto à União para\nrevisão tarifária e criação de descontos para moradores das cidades\nafetadas por praças de pedágio.\n5. Fortalecimento do DER-MG: Recomposição de equipes e estrutura\noperacional para execução contínua de pavimentação e manutenção\nfuncional da malha rodoviária estadual.\n6. Apoio aos Municípios nas Estradas Vicinais: Auxílio técnico e financeiro\npara conservação de estradas rurais, pontes e vias de escoamento agrícola\ne transporte escolar.\n7. Painel Público Digital de Obras: Disponibilização transparente de\ninformações sobre contratos, prazos, valores e percentuais de execução de\nobras públicas rodoviárias.\n8. Novo Marco da Mobilidade Urbana Metropolitana: Melhorar a qualidade do\ntransporte regional com fiscalização por desempenho, integração tarifária,\nfísica e operacional, além de destravar as obras do Rodoanel Metropolitano\nou redirecionar seus recursos para obras rodoviárias estratégicas, caso\npersistam impedimentos.\n9. Metrô-BH: Fiscalização estrita da concessão para garantir prazos e\ninvestimentos na Linha 1 e na implantação da Linha 2.\n10. Conectividade Digital e Infraestrutura Intermodal: Expansão do sinal 5G\npara o interior e zonas rurais, integrada à modernização de aeroportos\nregionais e malha ferroviária.\n\n11"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-9",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nO Agro forte para\nMinas crescer\n1. Simplificação e Digitalização dos Processos: Criar um ambiente digital\núnico para centralizar licenças, documentos, certidões e inspeções,\neliminando exigências duplicadas e garantindo acompanhamento online,\nmais agilidade e transparência aos processos.\n2. Segurança hídrica, irrigação e sustentabilidade: Incentivar o uso eficiente\nda água, ampliar a irrigação e os reservatórios, fortalecer polos irrigados\ncomo Jaíba e Vale do Picão e estimular práticas sustentáveis, como\nrecuperação de pastagens.\n3. Programa Minas Rural Empreendedor: Ação coordenada pela Emater-MG\npara prestar assistência técnica, apoio à gestão e inovação nas pequenas\npropriedades rurais.\n4. Compras Institucionais da Agricultura Familiar: Incentivo à aquisição de\ngêneros alimentícios do pequeno produtor local para abastecer escolas,\nhospitais e redes públicas.\n5. Programa de Sucessão Rural e Juventude no Campo: Capacitação em\nagricultura digital, gestão e empreendedorismo para fixação e valorização\ndos jovens na atividade rural.\n6. Agregação de Valor e Regularização da Agroindústria Artesanal:\nSimplificação sanitária para produtos regionais e expansão de selos de\nqualidade e origem gastronômica.\n7. Crédito Facilitado e Defesa Agropecuária: Oferta de linhas de crédito\nsubsidiado via BDMG e preservação do elevado status sanitário mineiro\npara abertura de mercados.\n8. Eletrificação e Energia Renovável Rural: Expansão da rede elétrica trifásica\ne fomento à instalação de painéis solares e biodigestores nas propriedades\nrurais.\n9. Tolerância Zero a Invasões de Terra: Rigor absoluto na aplicação da lei para\nproteção do direito de propriedade com acionamento imediato das forças\nde segurança.\n10. Patrulha Rural Digital e Sustentabilidade Hídrica: Ampliação do\ngeorreferenciamento para coibir crimes no campo, aliada ao fomento da\nirrigação eficiente e proteção de nascentes.\n\n12"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-10",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nMinas que acolhe e\ntransforma vidas\n1. Índice Mineiro de Vulnerabilidade Familiar: Alocação de recursos e apoio do\nEstado priorizando os municípios com maiores indicadores de carência social e\neconômica.\n2. Fortalecimento das Redes da Assistência Social: Integração do CRAS, CREAS e\nequipamentos comunitários aos serviços públicos estaduais de saúde e\neducação.\n3. Segurança Alimentar e Nutricional: Apoio a bancos de alimentos, cozinhas\nsolidárias e parcerias com a agricultura familiar para combate direto à fome.\n4. Regularização Fundiária Urbana (Reurb): Suporte técnico e jurídico aos\nmunicípios para aceleração da entrega de títulos de propriedade a famílias de\nbaixa renda.\n5. Qualificação Profissional Alinhada ao Mercado: Cursos gratuitos regionais\ndesenvolvidos em cooperação com empresas locais para rápida inserção no\nmercado de trabalho.\n7. Formação Digital e Primeiro Emprego para Jovens: Programas de capacitação\nem tecnologia, dados e programação voltados para jovens das periferias e do\ninterior.\n8. Rede Estadual de Proteção e Acolhimento às Mulheres: Expansão das casasabrigo, suporte psicológico, orientação jurídica e reserva de vagas de emprego.\n9. Letramento Racial e Enfrentamento às Discriminações: Implementação de\nprogramas de promoção do respeito à diversidade e criação do Observatório\nMineiro da Igualdade.\n10. Inclusão da Pessoa com Deficiência e Parceria com APAEs: Ampliação do\nsuporte financeiro e técnico às APAEs e entidades filantrópicas especializadas.\n11. Prevenção e Tratamento das Dependências e Apostas: Ampliação da rede\npsicossocial de atendimento a dependentes químicos e programas de\nprevenção à dependência de jogos e apostas eletrônicas.\n\n13"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-11",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nDesenvolver e garantir o\nfuturo dos mineiros\n1. Aceleração das Metas do Marco Legal do Saneamento: Universalização do\nabastecimento de água potável e do esgotamento sanitário, priorizando\nregiões mais deficitárias.\n2. Regulação e Fiscalização Rígida da Copasa: Fortalecimento institucional da\nArsae-MG para cobrança contínua de qualidade, metas e tarifas justas nos\nserviços prestados.\n3. Coleta Seletiva e Consórcios Intermunicipais de Resíduos: Fomento à\ndestinação adequada de resíduos sólidos e ampliação da reciclagem via\nconsórcios regionais.\n4. Fiscalização Transparente de Barragens de Mineração: Acompanhamento\nrigoroso e diário da segurança de estruturas e do descomissionamento de\nbarragens a montante.\n5. Licenciamento Ambiental Moderno e Célere: Digitalização e simplificação\nde processos ambientais sem redução do rigor técnico ou da proteção\necológica.\n6. Monitoramento Tecnológico Integrado de Riscos: Uso de dados em tempo\nreal para prevenção de desastres e respostas ágeis a situações de\nemergência ambiental.\n7. Política Estadual de Adaptação Climática: Apoio estruturado às prefeituras\npara enfrentamento de enchentes, secas severas, tempestades e\nresfriamento urbano.\n8. Planos Municipais de Prevenção e Alerta Precoce: Apoio técnico para\nelaboração de mapeamentos de risco e instalação de redes de alerta\nmeteorológico.\n9. Recuperação Hídrica e Proteção de Nascentes: Programas estaduais de\nreflorestamento, dragagem regionalizada de cursos d'água e restauração\nde bacias hídricas.\n10. Atração de Investimentos para a Economia Verde: Fomento a projetos\nprivados de energia renovável, eficiência energética, baixo carbono e\nreciclagem.\n\n14"
+          },
+          {
+            "id": "plano-de-governo-cleitinho-e-falcao-12",
+            "titulo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO| CLEITINHO E FALCÃO\n\nValorizar a cultura, o turismo\ne a identidade mineira\n1. Descentralização dos Recursos da Cultura: Destinação prioritária de\nverbas estaduais para artistas, coletivos e projetos dos municípios do\ninterior de Minas.\n2. Editais Culturalmente Regionalizados e Simplificados: Processos de\nseleção desburocratizados que reconhecem as vocações culturais\nespecíficas de cada território.\n3. Mecanismo de Reconhecimento aos Municípios: Valorização das cidades\nque investem na preservação do patrimônio e produzem manifestações\nculturais comunitárias.\n4. Apoio Técnico e Financeiro ao Patrimônio Histórico: Ações estaduais de\nrestauração e preservação de acervos, monumentos e centros históricos\nmineiros.\n5. Fomento ao Artesanato e Gastronomia Tradicional: Apoio a artesãos e\nprodutores culinários tradicionais como ativos de identidade, trabalho e\nrenda.\n6. Expansão do Turismo Social: Criação de programas que aproximam\nfamílias de menor renda do patrimônio cultural, histórico e natural do\nEstado.\n7. Estruturação de Roteiros Turísticos Regionais: Apoio aos municípios para\nintegrar atrações ecológicas, históricas, religiosas e gastronômicas.\n8. Capacitação Profissional para o Setor de Turismo: Cursos de qualificação\ntécnica para trabalhadores de hotéis, restaurantes, receptivos e serviços\nturísticos.\n9. Infraestrutura Básica nos Circuitos Turísticos: Investimento em\nsinalização, acessibilidade e centros de atendimento ao turista nos\nmunicípios vocacionados.\n10. Promoção de Festivais e Eventos Comunitários: Incentivo a eventos locais,\nfeiras tradicionais e festejos populares que impulsionem a economia e a\nmemória mineira.\n\n15"
+          },
+          {
+            "id": "governador",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNADOR\n\nCleitinho\nVICE\n\nFalcão"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "bd6d4909c8262534d2551486b2e000b629b467342a8a676e77ff15564c522761"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "edaf309bcf42a0d5ea7e345bb6e2664249fe4a4914f69b49e57854d7018b6af1"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f517e5991e1b427df2023659e7ae350636d85e49f8e6ea892dd4571c540b064d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "cf979880e32207b4bcf1ce51641df0ff81cf854c425646fb43bb3ea1ceadff13"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "93a2efecf12cec2076ba3ea5e18744b08cd6d42dbb7b7a23630e6c9f9e85a343"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "a2ed06e602335f4d071c3feb227af6fd4ffa54be5509df2191963d974214591b"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "e65d5b94137527f6518dd39eb43197c7d91dedfb09d437656b44a46a59c1e93a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "834c97fe4b2d30cee53666b1d25dc9930b44359ebf413487a4872ad92713b5c1"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "66443515940f25e4408ec9e9e396a834b555a3f47122c7555eb6c6b451e1a117"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "198bbe3b361b496777bad839744350ab287e207b2700620be9b9c07ede66d1f9"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "9c2a6b090746eefd41946ad881cf9697cbc6f83afaa4487c689d27646eea5b63"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "b325a4156aa6d0212058204a3f6525d73625f53c446b02220faee1ac419462f9"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "c053f1bf655ee0b708507731cc7c797acb8bf0ae555724887f39469c13f32b07"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "7ac70120375d3cab63237c144c33b9e5c7e6d022fe440cd140d6566be8a40084"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "4bca81f6ab9a24265cd71de201a2908877372fe40087b8ec17424a744af5de9f"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "e65970fc879fbcf83741908f2fb65c9ab69a5c5f9d2e333a6fd30de00d3c0b13"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê a criação da Sala de Monitoramento da Gestão para acompanhar mensalmente as principais entregas de cada secretaria. Também propõe a digitalização dos serviços públicos para simplificar processos administrativos e facilitar a relação com o Estado. Na saúde, prevê a expansão da telessaúde para qualificar o atendimento oferecido à população. Na segurança pública, propõe a unificação das bases de dados em uma plataforma tecnológica integrada. Na educação, prevê a incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual. Na infraestrutura, propõe um painel público digital de obras com informações sobre contratos, prazos, valores e execução. No meio ambiente, prevê o uso de dados em tempo real para prevenir desastres e responder a emergências ambientais.",
+    "frases": [
+      {
+        "texto": "O plano prevê a criação da Sala de Monitoramento da Gestão para acompanhar mensalmente as principais entregas de cada secretaria.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 4,
+            "trecho": "A gestão por resultados será fortalecida por meio da criação da Sala de Monitoramento da Gestão, com acompanhamento mensal das principais entregas de cada secretaria, suas metas, cronogramas e indicadores."
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe a digitalização dos serviços públicos para simplificar processos administrativos e facilitar a relação com o Estado.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 4,
+            "trecho": "A transformação digital será ampliada com a integração dos órgãos estaduais, a digitalização dos serviços públicos e a simplificação dos processos administrativos."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê a expansão da telessaúde para qualificar o atendimento oferecido à população.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 7,
+            "trecho": "Rede Mineira de Saúde Digital e Telessaúde: Expansão da telessaúde e integração progressiva dos sistemas de informação entre Estado e municípios para qualificar o atendimento."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, propõe a unificação das bases de dados em uma plataforma tecnológica integrada.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 8,
+            "trecho": "Unificação das bases de dados da Polícia Militar, da Polícia Civil, do Corpo de Bombeiros, da Defesa Civil e do Sistema Prisional em uma plataforma tecnológica integrada."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê a incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 9,
+            "trecho": "Incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, propõe um painel público digital de obras com informações sobre contratos, prazos, valores e execução.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 11,
+            "trecho": "Disponibilização transparente de informações sobre contratos, prazos, valores e percentuais de execução de obras públicas rodoviárias."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, prevê o uso de dados em tempo real para prevenir desastres e responder a emergências ambientais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 14,
+            "trecho": "Uso de dados em tempo real para prevenção de desastres e respostas ágeis a situações de emergência ambiental."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "monitoramento-gestao",
+        "titulo": "Monitoramento da gestão",
+        "descricao": "O plano prevê acompanhamento mensal das entregas das secretarias por meio de uma sala de monitoramento.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 4,
+            "trecho": "A gestão por resultados será fortalecida por meio da criação da Sala de Monitoramento da Gestão, com acompanhamento mensal das principais entregas de cada secretaria, suas metas, cronogramas e indicadores."
+          }
+        ]
+      },
+      {
+        "id": "digitalizacao-servicos",
+        "titulo": "Digitalização de serviços",
+        "descricao": "O plano propõe digitalização dos serviços públicos para simplificar processos administrativos.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 4,
+            "trecho": "A transformação digital será ampliada com a integração dos órgãos estaduais, a digitalização dos serviços públicos e a simplificação dos processos administrativos."
+          }
+        ]
+      },
+      {
+        "id": "telessaude",
+        "titulo": "Telessaúde",
+        "descricao": "O plano prevê expansão da telessaúde para qualificar o atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 7,
+            "trecho": "Rede Mineira de Saúde Digital e Telessaúde: Expansão da telessaúde e integração progressiva dos sistemas de informação entre Estado e municípios para qualificar o atendimento."
+          }
+        ]
+      },
+      {
+        "id": "inteligencia-seguranca",
+        "titulo": "Inteligência em segurança",
+        "descricao": "O plano propõe integração das bases de dados das instituições de segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 8,
+            "trecho": "Unificação das bases de dados da Polícia Militar, da Polícia Civil, do Corpo de Bombeiros, da Defesa Civil e do Sistema Prisional em uma plataforma tecnológica integrada."
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-educacao",
+        "titulo": "Tecnologia na educação",
+        "descricao": "O plano prevê aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 9,
+            "trecho": "Incorporação de aulas de tecnologia, programação, robótica e inteligência artificial na rede pública estadual."
+          }
+        ]
+      },
+      {
+        "id": "riscos-ambientais",
+        "titulo": "Riscos ambientais",
+        "descricao": "O plano prevê dados em tempo real para prevenção de desastres e resposta a emergências ambientais.",
+        "evidencias": [
+          {
+            "documentoId": "MG:130002552296:01",
+            "pagina": 14,
+            "trecho": "Uso de dados em tempo real para prevenção de desastres e respostas ágeis a situações de emergência ambiental."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:29:42.425Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:43:28.942Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a criação da sala e o acompanhamento mensal."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "O único elemento numérico/temporal, 'mensal', está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de gestão."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento coincidem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:1:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma digitalização e simplificação de processos, condizente com o objetivo de facilitar a relação com o Estado citado na mesma página."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:2:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma expansão da telessaúde para qualificar o atendimento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área/proposta coerente (saúde/telessaúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:3:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma exatamente a unificação das bases em plataforma integrada."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (segurança pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:4:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação, texto quase idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (tecnologia na educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:5:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde ao item 'Painel Público Digital de Obras', confirmando contratos, prazos, valores e execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação, apenas categorias de informação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (transparência de obras)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:6:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão presentes na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde quase literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (riscos ambientais)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:frase:7:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "'Mensal' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:monitoramento-gestao:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:digitalizacao-servicos:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:telessaude:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integração/unificação das bases de dados das instituições de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:inteligencia-seguranca:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:tecnologia-educacao:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência corresponde exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:mistura",
+        "verdict": "yes",
+        "reason": "Área/proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MG:130002552296:tema:riscos-ambientais:documentos:MG:130002552296:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MG:130002552296",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MG:130002552296:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27067,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23690,
+          "output_tokens_details": {
+            "thinking_tokens": 517
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27067,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23690,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27067,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27067
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3666724
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "e8b42dd72ffe80300eff68c10c7785066d13c42aa0f3db4e1748f679478b377f",
+    "extractedTextSha256": "50bcf1805d6c7e234050e3cd4c4dc604324831bb4757d9a7ad68162b1dac9631",
+    "documentCount": 1,
+    "documentSetSha256": "cd604087170115b71e376de47abecef473e809768cefd2d08c5cf5126608306c",
+    "contentSha256": "ecd1b37baa2c4c5c8e295cfdfa0faad6daa88b10b953c4eabd5449efe8d9a1d7"
+  }
+}

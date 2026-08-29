@@ -2,33 +2,37 @@
 
 ## Resultado da coleta
 
-O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agosto de 2026, 19:30:36. O arquivo versionado é `scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json`.
+O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de agosto de 2026, 12:30:35. O arquivo versionado é `scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json`.
 
 | Medida                                       |         Resultado |
 | -------------------------------------------- | ----------------: |
 | UFs                                          |                27 |
-| Linhas oficiais de candidaturas a governador |               198 |
-| Grupos lógicos                               |               197 |
+| Linhas oficiais de candidaturas a governador |               196 |
+| Perfis únicos no crosswalk                   |               195 |
+| Grupos lógicos                               |               195 |
 | Grupos oficialmente ambíguos                 | 1 grupo, 2 linhas |
-| Perfis locais vinculados por SQ_CANDIDATO    |               148 |
-| Perfis locais ausentes                       |                50 |
+| Perfis locais vinculados por SQ_CANDIDATO    |               194 |
+| Perfis locais ausentes                       |                 0 |
+| Alias de duplicidade oficial                 |                 2 |
 | Pacotes estaduais                            |                27 |
 | PDFs nos pacotes                             |               212 |
-| PDFs ligados à coorte atual                  |               206 |
-| PDFs sem candidatura atual                   |                 6 |
-| Candidaturas com PDF                         |               193 |
+| PDFs ligados à coorte atual                  |               204 |
+| PDFs sem candidatura atual                   |                 8 |
+| Candidaturas com PDF                         |               191 |
 | Ausências explícitas de PDF                  |                 5 |
-| Páginas da coorte atual                      |            11.087 |
-| Texto extraído da coorte atual               |  21.874.177 bytes |
+| Páginas da coorte atual                      |            11.056 |
+| Texto extraído da coorte atual               |  21.850.086 bytes |
 | PDFs atuais que requerem OCR                 |                 5 |
 
 ## Fontes e integridade
 
 - Catálogo primário: [Candidatos 2026, Dados Abertos do TSE](https://dadosabertos.tse.jus.br/dataset/candidatos-2026).
-- Cadastro: `consulta_cand_2026.zip`, 3.137.612 bytes, SHA-256 `3bb3dc3e4bc8b0bb36553ec03d5b0f25d34a3821af74176648ed4b76a1ee779b`.
-- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 276.739.049 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
+- Cadastro: `consulta_cand_2026.zip`, 3.139.062 bytes, SHA-256 `eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27`.
+- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 278.446.551 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
 - Um PDF individual não tem URL oficial independente no catálogo. Por isso, a proveniência correta é a URL do pacote mais `arquivoNoPacote`, nunca uma URL inventada.
 - O acesso direto do shell à CDN respondeu HTTP 403. O navegador Playwright conseguiu obter os arquivos pelos links do catálogo. Isso prova apenas disponibilidade por esse transporte. A integridade de conteúdo foi verificada separadamente com teste de cada ZIP, assinatura PDF, páginas e SHA-256 de pacote e documento.
+
+O crosswalk canônico é `data/candidate-roster-active-20260829.json`. Ele registra 209 inscrições ativas, 208 perfis titulares e zero inscrições sem mapeamento no universo geral. Para este inventário, o recorte de governador tem 196 inscrições e 195 perfis únicos. `profiles.registration_sqs` é a fonte da associação por `UF + SQ_CANDIDATO`; `canonical_registration_sq` só é usado quando preenchido e publicável.
 
 ## Cobertura por UF
 
@@ -39,15 +43,15 @@ O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agos
 | AM  |            7 |             7 |             0 |          14 |           0 |          1.839 |
 | AP  |            5 |             5 |             0 |           5 |           0 |            166 |
 | BA  |            7 |             7 |             0 |           7 |           0 |            408 |
-| CE  |            9 |             8 |             1 |           8 |           1 |            304 |
+| CE  |            8 |             7 |             1 |           8 |           1 |            304 |
 | DF  |           11 |            11 |             0 |          12 |           0 |            896 |
 | ES  |            5 |             5 |             0 |           5 |           1 |            353 |
 | GO  |            6 |             6 |             0 |           7 |           0 |            359 |
 | MA  |            8 |             8 |             0 |           8 |           1 |            682 |
-| MG  |           11 |            10 |             1 |          10 |           0 |            433 |
+| MG  |           11 |            10 |             1 |          10 |           0 |            456 |
 | MS  |            8 |             8 |             0 |           8 |           0 |            269 |
 | MT  |            7 |             7 |             0 |           7 |           0 |            420 |
-| PA  |            7 |             7 |             0 |           7 |           0 |            314 |
+| PA  |            6 |             6 |             0 |           7 |           1 |            314 |
 | PB  |            6 |             6 |             0 |           6 |           0 |            161 |
 | PE  |            8 |             8 |             0 |           8 |           1 |            318 |
 | PI  |           11 |            11 |             0 |          11 |           1 |            388 |
@@ -66,7 +70,7 @@ O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agos
 
 | UF  | Candidatura     | Partido      | SQ_CANDIDATO   | Perfil local |
 | --- | --------------- | ------------ | -------------- | ------------ |
-| CE  | Vera Lúcia      | NOVO         | `60002553922`  | ausente      |
+| CE  | Vera Lúcia      | NOVO         | `60002553922`  | vinculado    |
 | MG  | Ben Mendes      | MISSÃO       | `130002544411` | vinculado    |
 | RJ  | Eduardo Paes    | PSD          | `190002543380` | vinculado    |
 | RJ  | Garotinho       | REPUBLICANOS | `190002550196` | vinculado    |
@@ -76,16 +80,16 @@ Ausência significa que nenhum arquivo com o SQ_CANDIDATO atual foi encontrado n
 
 ## Ambiguidade atual
 
-O cadastro oficial contém duas linhas de MT para Laudicerio Aguiar Machado, AGIR, com o mesmo número e SQ_COLIGACAO distintos:
+O crosswalk mantém Laudicério Aguiar em `quarantine_duplicate_active`, com duas inscrições oficiais ativas e sem `canonical_registration_sq`. O cadastro contém duas linhas de MT para Laudicerio Aguiar Machado, AGIR, com o mesmo número e SQ_COLIGACAO distintos:
 
 - `110002553937`, SQ_COLIGACAO `110001801468`, nome de urna `SARGENTO LAUDICÉRIO (LAU)`.
 - `110002554073`, SQ_COLIGACAO `110001801510`, nome de urna `SARGENTO LAUDICÉRIO`.
 
-As duas linhas, seus dois PDFs e os campos de identidade brutos permanecem no inventário com `identidadeEstado=duplicidade_oficial`. Nenhuma delas recebe estado de sucesso ou vínculo por aproximação até resolução em fonte TSE atual.
+Os dois PDFs têm texto extraído integralmente idêntico, SHA-256 `2641361633f792d511c2bd2b62f99c807858a6760afda2b97e71336cbb78d7d7`. O inventário preserva as duas linhas como `duplicidade_oficial`, sem inventar SQ canônica, sem gerar um segundo programa e sem sobrescrever uma ficha existente.
 
 ## Arquivos sem candidatura atual
 
-Todos os seis arquivos foram preservados. Eles não são vinculados por nome ou por histórico:
+Todos os oito arquivos foram preservados. Eles não são vinculados por nome ou por histórico. Os PDFs de `CE:60002540336` (Pedro Brito) e `PA:140002538631` (Cleber Rabelo) permanecem órfãos porque os perfis terminais estão fora da superfície pública:
 
 | Documento                      | Páginas |     Bytes | SHA-256                                                            |
 | ------------------------------ | ------: | --------: | ------------------------------------------------------------------ |
@@ -95,8 +99,18 @@ Todos os seis arquivos foram preservados. Eles não são vinculados por nome ou 
 | `PE/2026PE170002540338_01.pdf` |      66 |   894.225 | `cee039360efea5a9a11be2624b3f8aa23e384eb17ba8100d664b93ba5bb44f6c` |
 | `PI/2026PI180002533958_01.pdf` |       3 |    26.771 | `3dcc283f0f19d8982176f404a73258e2240d657597e5649cd38d1e652bdd5765` |
 | `RJ/2026RJ190002543534_01.pdf` |       3 |   130.166 | `bf6565aa3f42fa13d6889c5f898343f7c1d7b12b80e06d81efe7dcc10f2e548f` |
+| `CE/2026CE60002540336_01.pdf` |      14 |   317.295 | `568bb550c05849199955152fd4e5de5adcccb8d4f0bdaa6109db3c27ae83990e` |
+| `PA/2026PA140002538631_01.pdf` |      40 |   596.567 | `5d33c3d22959b0ef2443f4b37c6af475e33356ec5a620f76a5ef00b4c16954fe` |
 
 O antigo SQ de Elizeu Aguiar, PI `180002533958`, é um desses arquivos. A linha atual é `180002549920`, possui seu próprio PDF e está confirmada separadamente.
+
+## Auditoria e promoção dos registros publicados
+
+O detector `scripts/audit/audit-programas-governo-governadores-publicados.ts` compara todos os registros publicados contra o inventário atual por identidade eleitoral, nome de urna, partido, conjunto documental e hash SHA-256 da fonte. Após a revisão dos 54 alvos (47 ausentes e 7 stale), a auditoria passou com 189 registros aprovados em 27 UFs, 2.406 claims e 14.436 itens de Eval.
+
+O manifesto canônico `docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-29.json` registra 194 perfis publicáveis: 189 programas aprovados e cinco perfis com `sem_documento_oficial`, sem `human_review_required`. As duas inscrições oficiais de Laudicério permanecem excluídas em `quarantine_duplicate_active`; os registros terminais de Cleber Rabelo e Pedro Brito foram removidos da superfície e preservados em backup datado.
+
+O fingerprint de cada aprovação cobre identidade, fontes, documentos ordenados, hashes, extrações, resumo, generator e judge. O writer canônico fez readback dos 54 arquivos aplicados e guardou os registros anteriores em backup antes da troca. A publicação continua fail-closed: ausência oficial não vira programa vazio e duplicidade não recebe SQ canônica inventada.
 
 ## Reprodutibilidade
 

@@ -1,0 +1,1434 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "ES",
+    "sqCandidato": "80002552682",
+    "slug": "pazolini",
+    "nomeUrna": "LORENZO PAZOLINI",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": "2026ES80002552682_01.pdf",
+    "arquivoNoPacote": "ES/2026ES80002552682_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "ES:80002552682:01",
+      "fonte": {
+        "arquivoNome": "2026ES80002552682_01.pdf",
+        "arquivoNoPacote": "ES/2026ES80002552682_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "c1e92e41340af2f42a7d4d1945ca88a1664f5d603f21c91116b34381b78965d4",
+        "extractedTextSha256": "221e2d0fc763f3c7a6d2e3e3c7eccf365cb24533a97d995eb459958733ea649d",
+        "paginas": 54,
+        "secoes": [
+          {
+            "id": "um-novo-ciclo-de-paz-e-prosperidade",
+            "titulo": "UM NOVO CICLO DE PAZ E PROSPERIDADE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "UM NOVO CICLO DE PAZ E PROSPERIDADE\nPARA O ESPÍRITO SANTO"
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "uma-mesma-direcao-quatro-dimensoes-de-um-novo-tempo",
+            "titulo": "UMA MESMA DIREÇÃO. QUATRO DIMENSÕES DE UM NOVO TEMPO.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "UMA MESMA DIREÇÃO. QUATRO DIMENSÕES DE UM NOVO TEMPO.\nEspírito Santo das Pessoas • é tempo de cuidar.\nEspírito Santo Competitivo • é tempo de prosperar.\nEspírito Santo Sustentável • é tempo de cuidar do presente e do futuro.\nEspírito Santo que entrega • é tempo de entregar resultados."
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original-2",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          },
+          {
+            "id": "indice",
+            "titulo": "Índice",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Índice\nÉ TEMPO DE PAZ\n\n6\n\nUm novo ciclo, um novo tempo.\n\n9\n\nPaz e prosperidade para todos os capixabas.\n\n9\n\nA PAZ GANHA FORMA NAS ENTREGAS DESTE PROGRAMA.\n\n10\n\nÉ TEMPO DE CUIDAR\n\n11\n\nÉ TEMPO DE EDUCAR\n\n13\n\nÉ TEMPO DE PROTEGER\n\n18\n\nÉ TEMPO DE CUIDAR DA SAÚDE\n\n21\n\nÉ TEMPO DE ACOLHER\n\n24\n\nÉ TEMPO DE VIVER MELHOR\n\n27\n\nÉ TEMPO DE PROSPERAR\n\n29\n\nÉ TEMPO DE CRESCER\n\n31\n\nÉ TEMPO DE FORTALECER QUEM PRODUZ\n\n34\n\nÉ TEMPO DE VALORIZAR O QUE É NOSSO\n\n36\n\nÉ TEMPO DE INOVAR\n\n38\n\nÉ TEMPO DE AVANÇAR\n\n40\n\nÉ TEMPO DE CUIDAR DO PRESENTE E DO FUTURO\n\n42\n\nÉ TEMPO DE VIVER COM DIGNIDADE\n\n44\n\nÉ TEMPO DE PRESERVAR\n\n46\n\nÉ TEMPO DE ENTREGAR RESULTADOS\n\n49\n\nÉ TEMPO DE GOVERNAR COM ÉTICA E RESULTADO\n\n50\n\nÉ TEMPO DE SIMPLIFICAR\n\n52"
+          },
+          {
+            "id": "paz-trabalha-e-confia",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nÉ TEMPO DE PAZ\nÉ tempo de paz traduz o projeto apresentado nestas páginas\npara a vida das pessoas. Paz é viver com segurança, ter acesso a\ncuidado, aprender, trabalhar, encontrar oportunidades e sentir que\no desenvolvimento chega ao cotidiano de cada família e de cada\nregião do Espírito Santo.\nEste documento apresenta nossas ideias para a construção de um\nestado próspero e justo. Uma construção que será feita a muitas\nmãos, com as pessoas e para as pessoas. É por acreditar que o\ndiálogo é fundamental para esta construção coletiva, sobretudo o\ndiálogo estabelecido diretamente com aqueles que mais precisam\nda ação do estado, que submetemos este programa de governo ao\ndebate público.\nAo povo do Espírito Santo digo que meu compromisso fundamental\né trabalhar diuturnamente para devolver aos capixabas o direito\nde sonhar. Sonhar com um futuro sem medo; sonhar com um\nfuturo próspero para nossos filhos; sonhar com igualdade de\noportunidades para todos;\nindependentemente de cor, gênero ou religião, idade, origem ou\nideais, que cada um possa sonhar com uma vida mais saudável,\nfeliz e próspera.\nQuero destacar a urgência que o tempo em que vivemos nos\n\n6"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nimpõe. Para a maioria dos capixabas, o que alguns espalham como\nprogresso, ainda não chegou nas suas casas, nas suas vidas. Ao\ncontrário, enquanto para uns poucos tudo vai muito bem, para a\nmaioria silenciosa, que trabalha de sol a sol, que acorda antes do\nraiar do dia, para preparar a casa, embarcar no Transcol e chegar a\ntempo no trabalho, e na volta, já ao escurecer, enfrenta tribulações\ne cansaço, os benefícios deste dito progresso não chegam.\nO trabalho é árduo, os salários são baixos, a esperança é curta. É\npara esta gente valorosa e trabalhadora, que cada um a seu modo,\nenfrenta os desafios da vida, que vamos dedicar o melhor de nossos\nesforços, com a razão e, principalmente, com o coração.\nNão podemos esperar o distante amanhã. O futuro começa hoje,\ne começa agora. Não basta que apenas alguns se beneficiem do\nprogresso. Das margens do Itabapoana ao belo Riacho Doce, das\nplanícies do Norte às encostas das montanhas capixabas, das alturas\ndo Caparaó ao agito da metrópole, é preciso que os benefícios do\nprogresso cheguem a todos.\nE, por isso, convido todos os capixabas para se juntarem nesta\ncaminhada e fazermos do Espírito Santo um lugar melhor para se\nviver e ser feliz.\nBora Espírito Santo!!! Viva o Brasil!!!\nLorenzo Pazolini\n\n7"
+          },
+          {
+            "id": "paz-trabalha-e-confia-2",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n8"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-2",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nUM NOVO CICLO, UM NOVO\nTEMPO.\nPAZ E PROSPERIDADE PARA TODOS OS CAPIXABAS.\n\nIntrodução\nO compromisso que abre este documento ganha aqui a forma de um plano de ação.\nEste Programa de Governo organiza, em bases concretas, o caminho para transformar\na vontade de servir o povo capixaba em resultados que se sintam no cotidiano de cada\nfamília, em cada região do Espírito Santo.\nUm governo se mede pela coerência entre o que promete e o que executa. Por isso, este\nprograma parte da convicção de que crescimento econômico, inclusão social, cuidado\nambiental e eficiência do Estado não são objetivos concorrentes, mas dimensões de um\nmesmo projeto de desenvolvimento, interdependentes e igualmente necessárias.\nO Espírito Santo tem vocação, talento e recursos naturais que ainda não se traduziram\nplenamente em qualidade de vida para sua gente. Tem também uma capacidade histórica\nde superação e reinvenção. Cabe ao poder público organizar essa energia coletiva, com\ncompetência técnica e compromisso ético, para que cada investimento, cada política\npública e cada parceria com os municípios produzam avanços reais e duradouros.\nÉ esse o fio condutor das páginas seguintes. Um Estado que cuida das pessoas, que\ncompete e gera empregos de qualidade, que se desenvolve em equilíbrio com suas\nriquezas naturais, e que entrega, com honestidade e eficiência, aquilo que promete.\nQuatro dimensões de uma só direção, construída para durar além de um mandato e\npertencer, de fato, a todo capixaba.\n\n9"
+          },
+          {
+            "id": "paz-trabalha-e-confia-3",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nA PAZ GANHA FORMA\nNAS ENTREGAS DESTE\nPROGRAMA.\nCuidar das pessoas. Criar oportunidades. Desenvolver com responsabilidade. Fazer o\ngoverno funcionar. Em cada uma dessas dimensões, paz deixa de ser apenas uma palavra\ne passa a representar aquilo que o cidadão deve sentir na prática, no cotidiano e em\ntodas as regiões do Espírito Santo.\n\n10"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-3",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nI - Espírito Santo das Pessoas\n\nÉ TEMPO DE CUIDAR\nPaz começa pelas pessoas. Ela se sente na segurança da família, na escola que abre\ncaminhos, na saúde que cuida, na proteção de quem mais precisa e nas oportunidades\nde viver com mais qualidade. Cuidar das pessoas é colocar o cidadão no centro das\ndecisões e fazer as políticas públicas chegarem à vida real.\nMelhorar a qualidade de vida dos moradores do Espírito Santo é um dos objetivos\ncentrais de nosso programa de governo. E não há nada que afete mais a qualidade de\nnossas vidas do que a insegurança. A começar pela insegurança física e patrimonial, mas\nnão só. A insegurança alimentar, quando uma pessoa acorda de manhã sem saber se terá\ncomida suficiente para si ou para seus filhos é uma dor que atravessa a alma. O exemplo\nde Vitória, com o Banco de Alimentos, o Cartão Vix+ Cidadania e o Restaurante Popular,\nmostra que podemos fazer mais pelas famílias vulneráveis, especialmente na primeirainfância, na juventude e pelos idosos.\nA segurança pública é uma prioridade inquestionável. Em Vitória, fortalecendo a guarda\ne utilizando com inteligência a tecnologia, combatemos a criminalidade violenta e\nreduzimos o feminicídio, tornando nossas políticas públicas exemplo para o Brasil. No\nGoverno do Estado, com a integração de nossas forças policiais, faremos muito mais.\nMas segurança não se faz apenas com policiamento. Uma das estratégias mais eficazes\npara garantir a segurança pública de forma sustentável é o investimento em educação.\nEm especial, em educação pública de qualidade em tempo integral.\nPor fim, qualidade de vida é saúde, é vida saudável e feliz. Da mesma forma que em\nVitória acabamos com as filas de exames e consultas especializadas, transformando a\n\n11"
+          },
+          {
+            "id": "paz-trabalha-e-confia-4",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\ncidade naquela com melhor acesso à saúde do país, assim faremos em todo o estado,\napoiando, intensamente, os municípios capixabas. Vida saudável também é esporte e\nlazer. E foi por pensar assim que Vitória se tornou a capital em que mais se pratica\nesportes no Brasil. Uma experiência que queremos levar para cada um dos 78 municípios\ndo estado.\nA integração entre os pilares de Segurança, Saúde, Educação, Esporte, Lazer, Cultura\ne Assistência será a tônica para elevar a qualidade de vida em todo o Espírito Santo,\npara todos os capixabas. Colocar o cidadão no centro da gestão pública é unir o uso\nresponsável dos recursos públicos com a empatia e sensibilidade aos problemas reais\ndas pessoas.\n\n12"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-4",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\n1.1 Educação\n\nÉ TEMPO DE EDUCAR\nPaz é olhar para os filhos e enxergar futuro. Educação de qualidade amplia oportunidades,\nprotege trajetórias e prepara crianças e jovens para construir seus próprios caminhos.\nNeste plano, a paz também se constrói dentro da escola, com aprendizagem, acolhimento,\nsegurança e perspectiva de futuro.\nDesafios\nA educação capixaba enfrenta hoje um desafio estrutural, já que apenas 8% dos estudantes\ndo Ensino Médio atingem aprendizado adequado em Língua Portuguesa e Matemática,\ncom déficit ainda mais crítico nesta última disciplina. Esse quadro se agrava diante da\ndesigualdade racial, que apresenta um hiato de 8,9 pontos percentuais entre estudantes\npretos, pardos e indígenas e seus pares brancos e amarelos, e da desigualdade territorial,\nconsiderando que a taxa de conclusão do Ensino Médio no Estado (70%) permanece\n10 pontos percentuais abaixo da média do Sudeste (80%). No IDEB do Ensino Médio, o\nEspírito Santo, que já foi o primeiro entre os estados brasileiros, retrocedeu para terceiro.\nA esses gargalos somam-se a perda de atratividade da carreira docente entre os jovens e\no crescimento dos desafios de saúde mental e violência no ambiente escolar.\nEmbora os municípios tenham atuação prioritária na Educação Infantil e no Ensino\nFundamental, o Estado tem papel estratégico na construção de uma política educacional\narticulada em todo o território capixaba. Por isso, fortaleceremos o regime de colaboração\nentre Estado e municípios, respeitando a autonomia dos sistemas de ensino e oferecendo\napoio técnico, pedagógico e financeiro, especialmente aos territórios que mais necessitam.\nSabemos que não há Ensino Médio de qualidade sem uma base sólida construída desde a\n\n13"
+          },
+          {
+            "id": "paz-trabalha-e-confia-5",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nprimeira infância e os anos iniciais do Ensino Fundamental. Ainda hoje, no Espírito Santo,\n23% das crianças chegam ao final do 2º ano sem estarem alfabetizadas. Por isso, vamos\nser parceiros dos municípios, oferecendo apoio técnico, pedagógico e financeiro para\ngarantir a alfabetização e a aprendizagem com qualidade até o final do 2º ano, fortalecer\nas aprendizagens em Língua Portuguesa e Matemática, ampliar o acesso à creche para\nas famílias que mais precisam e apoiar a recomposição das aprendizagens ao longo do\nEnsino Fundamental.\nA educação especial receberá atenção prioritária na nossa gestão. A política deverá\ncombinar equidade e altas expectativas de aprendizagem, reconhecendo que estudantes\ndiferentes podem necessitar de apoios diferentes para que todos tenham assegurado\no direito de aprender, desenvolver autonomia e participar plenamente da vida escolar.\nFaremos isso com uma gestão orientada por evidências, com monitoramento da\naprendizagem, da permanência e das desigualdades educacionais e prestação de contas\nà sociedade, porque cada real investido em educação deve se traduzir em resultado\nconcreto na vida das crianças e dos adolescentes e jovens capixabas e na confiança das\nfamílias.\nDiretrizes Estratégicas\nPara transformar o Espírito Santo em referência nacional em aprendizagem com\nequidade assegurando que toda criança tenha seu direito à aprendizagem garantido\ndesde a primeira infância, todo jovem conclua a trajetória escolar com projeto de vida e\ntoda escola seja um espaço seguro e acolhedor estabelecem-se as seguintes diretrizes:\n• Alfabetização e Aprendizagem com Qualidade e Ampliação do Atendimento\nà Primeira Infância: Faremos da alfabetização uma prioridade permanente da\npolítica educacional estadual, em colaboração com os municípios, fortalecendo\no regime de colaboração para garantir a alfabetização e a aprendizagem com\nqualidade até o final do 2º ano do Ensino Fundamental, envolvendo suporte ao\nprofessor (avaliação da aprendizagem, materiais, jogos pedagógicos e formação\ncontinuada) e às equipes gestoras para a aprendizagem; apoio técnico-financeiro\ne formação de alfabetizadores para os municípios; apoio aos municípios para\nampliação da oferta de creche e pré-escola com foco nas famílias mais vulneráveis.\n• Ensino Fundamental com Aprendizagem e Fortalecimento dos Anos Finais:\n\n14"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-5",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nFortalecer a aprendizagem ao longo de todo o Ensino Fundamental, com ações\nde recomposição das aprendizagens, metodologias pedagógicas adequadas\nàs necessidades dos estudantes e uso de plataformas tecnológicas como\nferramentas de apoio ao professor para personalizar o ensino; fortalecer os\nanos finais do Ensino Fundamental, com estratégias específicas para essa etapa,\nacompanhamento das aprendizagens, apoio às transições e ações de prevenção\ndo abandono escolar.\n• Ensino Médio com Aprendizagem, Equidade e Projeto de Futuro: Garantir que\nos jovens concluam o Ensino Médio com aprendizagem adequada, consolidando\na implementação do “Novo Ensino Médio”; ampliar escolas com educação\nintegral em tempo integral, com qualidade e intencionalidade pedagógica,\npriorizando territórios vulneráveis; fortalecer as ações de construção do\nProjeto de Vida e orientação profissional, com apoio de ferramentas digitais,\nfeiras de profissões e mentorias, com a mediação do professor, ampliando as\npossibilidades de continuidade dos estudos e de inserção qualificada no mundo\ndo trabalho. Fortalecer a Educação de Jovens e Adultos (EJA), ampliando acesso,\npermanência e conclusão da Educação Básica, com busca ativa, organização\npedagógica adequada e articulação com a educação profissional e o mundo do\ntrabalho.\n• Educação Especial, Inclusão e Aprendizagem para Todos: Fortalecer a política\nestadual de Educação Especial na perspectiva da educação inclusiva, assegurando\nacesso, permanência, participação e aprendizagem dos estudantes público da\nEducação Especial, incluindo estudantes com altas habilidades ou superdotação e\nassegurando a oferta de educação bilíngue para estudantes surdos, com atenção\nàs necessidades específicas de cada estudante. Ampliar e qualificar o Atendimento\nEducacional Especializado (AEE), com profissionais capacitados, recursos\nde acessibilidade, tecnologias assistivas e materiais pedagógicos adequados;\ninstituir estratégias de acompanhamento individualizado, articuladas ao trabalho\nrealizado na sala de aula comum, com avaliação contínua das aprendizagens e\ndefinição dos apoios necessários; fortalecer a formação dos professores e das\nequipes gestoras para práticas pedagógicas inclusivas e para a diversificação das\nestratégias de ensino; garantir apoio técnico às redes municipais, especialmente\naos municípios com menor capacidade de atendimento especializado; ampliar a\n15"
+          },
+          {
+            "id": "paz-trabalha-e-confia-6",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\narticulação intersetorial entre Educação, Saúde e Assistência Social e fortalecer\na participação das famílias na construção dos percursos educacionais.\n• Educação Profissional e Ciências para o futuro: Integrar ensino médio, tecnologia\ne formação técnica às vocações econômicas regionais, com trilhas de formação\ncomo Programação, Energias Renováveis e Agrotech, ampliando a capacidade\nde adaptação às transformações do mundo do trabalho e aos desafios das\nmudanças climáticas. Fortalecer parcerias com instituições de ensino superior,\ninstitutos de pesquisa e setor produtivo para o desenvolvimento de pesquisas e\nprojetos envolvendo estudantes da rede estadual, com fornecimento de bolsas\nde estudo para estimular o engajamento e a iniciação científica.\n• Escola Segura, Acolhedora e Protetora: Implantar o sistema estadual de prevenção\ne acompanhamento das violências; fortalecer a rede de proteção ao estudante,\ncom ações de promoção da convivência, prevenção das violências, proteção\ne identificação de vulnerabilidades e prevenção do abandono escolar, usando\nanálise de dados para apoiar as equipes de gestão e tutoria em uma abordagem\nhumanizada e precoce; estabelecer protocolo específico de avaliação e manejo\nde ameaças, com canal de notificação e equipe profissional especializada.\n• Valorização Docente e Gestão Escolar: Tornar a carreira docente mais atrativa,\nvalorizando os profissionais da educação por meio da melhoria das condições de\ntrabalho, remuneração, carreira, reconhecimento e desenvolvimento profissional.\nFortalecer a formação continuada vinculada às necessidades reais das crianças e\ndos estudantes e às práticas das escolas, ampliar as condições de planejamento\ne colaboração entre os profissionais e implementar ações de promoção da saúde\nmental e do bem-estar. Fortalecer a liderança pedagógica das equipes gestoras,\ncom critérios técnicos de seleção, formação, acompanhamento e apoio contínuo\naos diretores, orientando a gestão para a aprendizagem, a equidade e a melhoria\ndas escolas.\n• Gestão, Monitoramento e equidade: Plano de inclusão digital para universalizar\no acesso à internet de alta velocidade e capacitar alunos e professores para\no uso pedagógico das ferramentas; instituir painel público de indicadores de\naprendizagem, permanência e equidade, com acompanhamento sistemático dos\n\n16"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-6",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nresultados e apoio técnico às redes e escolas para orientar a tomada de decisão\ne a correção de rotas; implementar políticas focalizadas nos territórios e grupos\nque apresentem maiores desigualdades educacionais.\n• Modernização da Infraestrutura Escolar: Instituir programa permanente de\nmodernização da infraestrutura física das escolas estaduais, com climatização\ne conforto térmico, melhoria de banheiros, cozinhas e refeitórios, acessibilidade,\nlaboratórios, quadras, iluminação, conectividade e manutenção contínua,\npriorizando unidades e territórios com maiores déficits estruturais.\n• Inclusão de mais uma refeição na merenda escolar: ampliar a alimentação escolar\ncom a oferta de mais uma refeição aos estudantes da rede estadual, seguindo\na experiência já realizada em Vitória. Uma alimentação adequada ajuda o aluno\na permanecer bem durante a jornada escolar, favorecendo a concentração, o\naprendizado e o aproveitamento das aulas.\n\nFontes de Referência: INEP/MEC (IDEB 2023 e Saeb 2023); MEC/CNCA (ICA 2025); Todos Pela Educação. Panorama de Dados\nEducacionais ES (2026); IBGE/PNAD-C (2025); Censo Escolar (2025); SEDU-ES (dados de Tempo Integral, 2025).\n\n17"
+          },
+          {
+            "id": "paz-trabalha-e-confia-7",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n1.2 Segurança Pública\n\nÉ TEMPO DE PROTEGER\nPaz é viver sem medo. É poder trabalhar, circular, cuidar da família e proteger o patrimônio\ncom a confiança de que o Estado atua com inteligência, integração e capacidade de\nresposta. Segurança é uma das formas mais diretas de fazer a paz chegar ao cotidiano\ndas pessoas.\nDesafios\nA despeito da retração no volume absoluto de homicídios obtido pelas forças policiais\ncapixaba, tendência observada desde 2010, o estado enfrenta uma perda de competividade\nnacional no pilar de Segurança Pública do ranking do Centro de Lideranças Públicas\n(CLP), onde passou a ocupar a 23ª posição, sendo considerado um dos estados mais\nviolentos do Brasil.\nNa comparação nacional, a taxa de mortes violentas permanece acima da média (Brasil,\n20,8; Espírito Santo, 23,9) e a Taxa de esclarecimento de Homicídios chega a 58%. No\nSistema Prisional, o déficit é de 6.141 vagas (com mais de 25 mil presos para 19 mil vagas)\ne mais de 8 mil presos aguardam julgamento (33% do total).\nE os problemas não se restringem às grandes cidades. No interior, a criminalidade tem\nsido uma preocupação seja na área urbana, seja para quem vive e trabalha no campo.\nEste cenário revela que a atual gestão governamental falhou em estruturar respostas\nrápidas contra crimes patrimoniais, furtos e crimes virtuais de alta escala. Atuando de\nforma integrada, aplicaremos a capacidade analítica e de investigação das nossas forças\npoliciais para combater a corrupção, fraudes fiscais e roubos ao patrimônio privado.\nNosso propósito é trabalhar com uma agenda moderna de Segurança Pública, que\navance da repressão qualificada para uma segurança preditiva e integrada. Isto significa\ntrabalhar com inteligência policial, câmeras, análise territorial, policiamento baseados em\nevidências, prevenção juvenil, combate ao crime organizado e integração com educação,\nassistência social e urbanismo. É hora de unir forças, integrar instituições e trabalhar com\ninteligência para construir um estado com mais justiça e paz para todos.\n\n18"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-7",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nDiretrizes Estratégicas\nPara reverter o atual diagnóstico e guiar as ações governamentais no horizonte deste\nprograma de governo, temos como princípios fundamentais o respeito à vida humana,\nao patrimônio público e à propriedade privada, desdobrando-os nas seguintes diretrizes\nde trabalho:\n• Plano de Modernização e Reengenharia Prisional: Promover a expansão de\ninfraestruturas prisionais modernas, que garantam a ampliação de programas\nde ressocialização, educação e trabalho para os presos condenados, visando\nquebrar o ciclo de reincidência; modernizar o sistema socioeducativo;\n• Assistência às Vítimas de Violência: Instituir política estadual de atendimento\nintegrado às vítimas e familiares de vítimas de crimes violentos, corrigindo o\ndesequilíbrio onde o Estado hoje foca apenas no autor do delito.\n• Reestruturação Administrativa e Valorização Policial: Modernizar a estrutura\nadministrativa, priorizando a atuação policial em atividades finalísticas, valorizar\no profissional de segurança pública e criar um programa de saúde mental dos\nservidores das forças policiais.\n• Estruturação do Combate ao Crime Organizado e Corrupção: Estruturar as\nunidades de combate ao crime organizado, à corrupção e lavagem de dinheiro,\ndotando-as de capacitação e ferramentas tecnológicas avançadas; Instituir\nForças-tarefa multi-institucionais.\n• Implantar o Sistema Estadual de Videomonitoramento: expandir a rede atual\nde câmeras públicas e integrar câmeras privadas, com operação apoiada por\ninteligência artificial e capacidade de realizar reconhecimento de criminosos\ne veículos suspeitos em tempo real; integrar ao sistema o monitoramento de\ntornozeleiras eletrônicas, botões de pânico e outros dispositivos de segurança,\npermitindo a atuação antecipada e preventiva das forças policiais.\n• Modernização e Fortalecimento da Investigação Criminal: Elevar a taxa de\nesclarecimento de homicídios, mediante investimentos em inteligência policial,\nperícia técnica forense e fortalecimento das Delegacias de Homicídios e Proteção\nà Pessoa (DHPPs).\n\n19"
+          },
+          {
+            "id": "paz-trabalha-e-confia-8",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n• Articulação com o Judiciário e Celeridade Processual: Pactuar junto ao Tribunal\nde Justiça, Ministério Público e Defensoria Pública a otimização das audiências\nde custódia e a aceleração dos julgamentos dos presos provisórios, reduzindo o\npercentual de encarceramento preventivo.\n• Gestão de Ocorrências baseada em evidências: Utilizar ferramentas de\ngeoprocessamento e inteligência analítica para orientar o patrulhamento ostensivo\nnas manchas criminais de maior vulnerabilidade e responder rapidamente às\nocorrências nas cidades e no campo.\n• Segurança Rural: Estruturar política estadual de segurança rural, com\npatrulhamento orientado por inteligência, uso de tecnologia, integração com\nprodutores e entidades locais e resposta qualificada a furtos e roubos de\nmáquinas, equipamentos, animais e produção agrícola, fortalecendo a presença\ndas forças de segurança no campo.\n• Criar Força-Tarefa para diagnóstico, combate e prevenção aos crimes\neletrônicos: Mapear os crimes eletrônicos que vitimizam, sobretudo, a população\nvulnerável, como idosos e adolescentes; dotar as forças policiais de ferramentas\ne tecnologias capazes de identificar e coibir práticas delituosas por este meio;\nEstruturação do Centro de Combate aos Crimes Virtuais; realizar operações\nvisando identificação, busca e captura dos elementos criminosos.\n• Enfrentamento ao Feminicídio: Agenda integrada de preservação da vida e\ncombate à violência contra a mulher; apoiar a expansão do modelo “Casa Rosa”,\njá implantado em Vitória, para os municípios polo e de grande porte.\n\nFontes de Referência: Fórum Brasileiro de Segurança Pública (Anuário 2025) | Instituto Sou da Paz (2023) | Ranking de\nCompetitividade dos Estados (CLP, 2025).\n\n20"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-8",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\n1.3 Saúde\n\nÉ TEMPO DE CUIDAR DA\nSAÚDE\nPaz é saber que o cuidado está presente quando a saúde pede atenção. Significa reduzir\nesperas, aproximar serviços das pessoas, cuidar da saúde física e emocional e fazer a\nrede funcionar de forma mais humana, regionalizada, moderna e eficiente.\nDesafios\nO sistema de saúde do Espírito Santo enfrenta pressões estruturais agravadas por\ntendências demográficas e epidemiológicas. O envelhecimento populacional e o\ncrescimento das doenças crônicas não transmissíveis (hipertensão, diabetes, doenças\ncardiovasculares) impõem demanda crescente por atendimento contínuo e reabilitação.\nA mortalidade evitável, especialmente materno-infantil e por causas cardiovasculares,\nainda persiste em níveis acima do desejável, exigindo fortalecimento da prevenção e do\nrastreamento precoce.\nAs filas por consultas especializadas, exames, procedimentos e cirurgias eletivas\npermanecem como o principal gargalo percebido pela população, com regulação\nfragmentada e ausência de transparência pública. A rede hospitalar apresenta\nequipamentos obsoletos e leitos insuficientes em regiões estratégicas, enquanto\na concentração de serviços de alta complexidade na Grande Vitória aprofunda as\ndesigualdades regionais. As regiões Norte, Sul e Central do estado carecem de centros\nde diagnóstico (tomografia, ressonância) e ambulatórios especializados.\nA saúde mental emerge como crise silenciosa. A cobertura insuficiente da Rede de\nAtenção Psicossocial (CAPS) e a ausência de equipes de saúde mental na Atenção\nPrimária convivem com o crescimento de suicídios e sofrimento emocional entre jovens\ne trabalhadores. A integração entre saúde, educação e assistência social é incipiente,\ncom escolas sem suporte multiprofissional para bullying, violência e gravidez precoce.\nPopulações vulneráveis, incluindo pessoas em situação de rua e com deficiência, enfrentam\nbarreiras de acesso e acolhimento, refletindo iniquidades históricas. A governança do\n\n21"
+          },
+          {
+            "id": "paz-trabalha-e-confia-9",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nSUS sofre com regionalização frágil, cofinanciamento estadual pouco induzido por\nresultados e baixa digitalização (prontuário eletrônico não integrado, regulação manual),\ncomprometendo a eficiência e o monitoramento.\nDiretrizes Estratégicas\nPara construir um SUS moderno, regionalizado, humano, digital e eficiente, estabelecemse as seguintes diretrizes:\n• Redução de Filas de espera para consultas e exames e Regulação Inteligente:\nImplantar Central Estadual Integrada de Regulação com painel público de\ntransparência e regulação digital em tempo real; ampliar oferta de exames,\nprocedimentos, consultas e cirurgias eletivas com mutirões regionais e\nteleconsultas especializadas; instituir credenciamento permanente para consultas\ne exames.\n• Redução da Mortalidade Evitável: Fortalecer a Rede Materno-Infantil com\npré-natal qualificado; instituir programa estadual de prevenção cardiovascular\ne rastreamento ampliado de câncer (mama, colo de útero, próstata); ampliar\ncobertura vacinal e monitorar óbitos evitáveis.\n• Equidade e Inclusão em Saúde: Ampliar acesso em regiões vulneráveis com\npolíticas específicas para populações vulneráveis, garantindo acolhimento\nhumanizado e serviços adaptados.\n• Rede Capixaba de Atenção ao Autismo, Neurodiversidade e Famílias\nAtípicas: Estruturar rede regional multiprofissional para diagnóstico precoce,\nacompanhamento e terapias de pessoas com TEA e deficiência intelectual,\nintegrada à saúde, educação e assistência social; qualificar profissionais;\nfortalecer a inclusão escolar; oferecer orientação e apoio às famílias e cuidadores;\ne organizar a transição para a vida adulta, a qualificação e a inclusão no trabalho.\n• Saúde Mental e Cuidado Emocional: Ampliar a Rede de Atenção Psicossocial\ncom CAPS em 100% dos municípios-polo e equipes de saúde mental na Atenção\nPrimária; instituir programa estadual de prevenção ao suicídio, saúde mental\nnas escolas, telepsicologia e cuidado emocional do trabalhador; aprimorar\na política estadual de prevenção e cuidado em álcool, drogas e dependência\n22"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-9",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nquímica visando maior efetividade no acolhimento, tratamento e recuperação\ndos pacientes.\n• Consultório nas Escolas: Implantar equipes multiprofissionais itinerantes\n(psicólogos,\n\nassistentes\n\nsociais,\n\ndentistas)\n\nnas\n\nescolas\n\nestaduais\n\npara\n\natendimento psicológico e social, combate ao bullying e violência, prevenção da\ngravidez precoce, saúde bucal e atualização vacinal, integrando saúde, educação\ne assistência social.\n• Modernização Hospitalar e Tecnológica: Instituir programa estadual de\nrenovação de equipamentos, ampliação de leitos estratégicos (UTI, cuidados\npaliativos) e implantação do prontuário eletrônico integrado em toda a rede;\npromover hospitais inteligentes e digitais; Concluir a obra do Hospital Geral de\nCariacica; Concluir as obras do Complexo de Saúde Norte, em São Mateus; Iniciar\na construção do novo Hospital Infantil Estadual.\n• Assistência Farmacêutica e Acesso a Medicamentos: Ampliar a disponibilidade\ne facilitar o acesso aos medicamentos, com gestão de estoques em tempo real e\ntransparência sobre disponibilidade.\n• Enfrentamento às Doenças Crônicas e Envelhecimento: Estruturar linha estadual\nde cuidado para hipertensão e diabetes com centros regionais; criar programa\nde envelhecimento saudável com ampliação da reabilitação e promoção de\nalimentação saudável e atividade física.\n• Regionalização, Desconcentração Tecnológica e Redução de Desigualdades:\nFortalecer as regiões de saúde (Norte, Central, Sul e Metropolitana) com\nplanejamento integrado e CIR atuantes; descentralizar serviços especializados\ne\n\ndiagnósticos\n\n(tomografia,\n\nressonância,\n\nultrassonografia)\n\ncom\n\ncentros\n\nregionais, telelaudos e laboratórios modernos; reorganizar fluxos para reduzir a\nconcentração na capital.\n• Cofinanciamento Estadual Baseado em Resultados: Instituir cofinanciamento\nestadual para Atenção Primária e ambulatórios regionais, inclusive para a saúde\nbucal, com incentivos para regiões de maior vulnerabilidade e financiamento\natrelado a desempenho e cumprimento de metas.\n\n23"
+          },
+          {
+            "id": "paz-trabalha-e-confia-10",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nFontes de Referência: Plano Estadual de Saúde (vigente); dados do SUS/ES (SIA, SIH, sistemas de regulação); IBGE (projeções\npopulacionais e envelhecimento); DATASUS (indicadores de mortalidade e cobertura); diretrizes do Ministério da Saúde para\nRAPS, equidade e regionalização.\n\n1.4 Assistência Social e Cidadania\n\nÉ TEMPO DE ACOLHER\nPaz é viver com dignidade e ter apoio para atravessar os momentos de maior\nvulnerabilidade. É garantir proteção, cuidado e caminhos para a autonomia, colocando\nas políticas sociais a serviço de quem mais precisa da presença do Estado.\nDesafios\nO Espírito Santo combina avanços relativos com vulnerabilidades estruturais expressivas.\nNa segurança alimentar, 13,5% dos domicílios enfrentam insegurança (3,5% moderada/\ngrave), com contingente ainda significativo. A taxa de pobreza, segundo dados da PNAD\n(2024), alcança 19,2% da população, sendo a maior entre os estados do Sul, Sudeste\ne Centro-Oeste. No cuidado à pessoa, 111 mil idosos vivem sozinhos e 2.200 estão\ninstitucionalizados em abrigos e casas de repouso, evidenciando a urgência de políticas\nde suporte domiciliar e comunitário. A população em situação de rua soma 6.927 pessoas\n(MPES), sem respostas contínuas e em escala. A violência contra a mulher persiste, exigindo\nintegração efetiva entre segurança, justiça, saúde e assistência. Transversalmente, a\ngovernança é fragmentada. Dados são fragmentados, a coordenação intersetorial é frágil\ne o monitoramento de resultados é reativo, comprometendo a efetividade das políticas.\n\n24"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-10",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nDiretrizes Estratégicas\nPara consolidar um modelo de desenvolvimento social integrado, com o objetivo\ncentral de reduzir a pobreza e a extrema pobreza, orientado por dados e focalizado nas\npopulações mais vulneráveis, estabelecem-se as seguintes diretrizes:\n• Segurança Alimentar e Agricultura Familiar: Identificar famílias vulneráveis com\nSistema de Triagem de Risco de Insegurança Alimentar (TRIA-SUAS); estruturar\nrede de Bancos de Alimentos e Cozinhas Solidárias; ampliar compras diretas da\nagricultura familiar; apoiar a criação de Restaurante Popular nos Municípios.\n• Política Integrada de Cuidados, com foco nos idosos, pessoas com deficiência\ne primeira-infância: Implementar modelo centrado na pessoa articulando\nassistência social e saúde; expandir cuidado domiciliar e teleassistência;\nadaptar moradias para autonomia; estruturar linhas de cuidado para pessoas\ncom deficiência (tecnologia assistiva, inclusão produtiva e apoio a cuidadores);\nImplantação do Programa Vila do Idoso, uma forma de garantir que o idoso\nmantenha sua independência e privacidade, mas em um ambiente protegido,\nadaptado e com suporte especializado.\n• Proteção Integral de Crianças e Adolescentes: Estruturar agenda intersetorial\nde prevenção, identificação e atendimento a situações de violência sexual, abuso\ndentro de casa, exploração, desaparecimento, aliciamento digital, cyberbullying,\nautomutilação e riscos no ambiente online, integrando escola, saúde, assistência\nsocial, Conselhos Tutelares e segurança pública.\n• Enfrentamento à Violência contra a Mulher: Reforçar rede intersetorial de\natendimento (saúde, segurança e justiça); ampliar casas-abrigo e moradia\nsegura; promover a oferta de cuidado infantil para viabilizar inserção produtiva;\nconsolidar campanhas educativas com base no Observatório de Dados.\n• Autonomia e Oportunidades para as Mulheres: Ampliar a política para mulheres\npara além do enfrentamento à violência, integrando qualificação profissional,\nemprego, empreendedorismo, acesso a crédito e ações de saúde da mulher ao\nlongo de todas as fases da vida, fortalecendo autonomia e independência.\n• Inclusão Produtiva (programa CRESCER): ações sequenciais e harmônicas para\n\n25"
+          },
+          {
+            "id": "paz-trabalha-e-confia-11",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nproteger, desenvolver e incluir as pessoas, via empreendedorismo e mercado de\ntrabalho, visando a conquista da autonomia e emancipação social;\n• Redução da População em Situação de Rua: Implementar Moradia Primeiro\ncom acompanhamento intensivo; ampliar documentação civil, atenção à saúde\nmental, qualificação profissional flexível para inclusão no mundo do trabalho e\nlocação social/aluguel social; apoio técnico e instrumental aos municípios com\nintegração setorial e federativa.\n• Governança, Dados e Monitoramento: Instituir Comitê Intersetorial permanente;\nimplantar sistemas interoperáveis entre cadastros; desenvolver painéis de\nindicadores com alertas de risco; ampliar pagamentos digitais e tecnologias de\ngestão; monitorar continuamente pobreza, renda, permanência escolar, acesso à\nsaúde e isolamento de idosos.\n• Carteira de Identidade: Garantir o acesso a vagas de atendimento e emissão\nrápida de carteira de identidade para a população;\n\nFontes de Referência: IBGE/PNAD – IJSN (segurança alimentar); MPES (população em situação de rua); dados institucionais\nda Secretaria de Mulheres e Observatório de Dados; Censo SUAS e registros setoriais.\n\n26"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-11",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\n1.5 Esporte e Lazer\n\nÉ TEMPO DE VIVER MELHOR\nPaz também é saúde, convivência, inclusão e qualidade de vida. O esporte e o lazer\ncriam oportunidades, revelam talentos e ajudam a construir comunidades mais ativas,\nintegradas e saudáveis em todas as regiões do Espírito Santo.\nDesafios\nPara consolidar o esporte e o lazer como vetores estratégicos de saúde, inclusão social\ne formação de talentos no Espírito Santo, o Estado precisa superar o atual cenário de\ndependência excessiva dos recursos orçamentários públicos e baixa atração de patrocínio\nprivado. A chave para destravar esse potencial reside no fortalecimento institucional e\nna modernização da Lei de Incentivo ao Esporte Capixaba (LIEC), substituindo critérios\nsubjetivos por mecanismos transparentes e objetivos que deem segurança jurídica ao\ninvestidor e ampliem o financiamento do setor.\nNo campo territorial, a democratização do acesso exige o enfrentamento da histórica\nassimetria na distribuição de infraestrutura, hoje concentrada na Região Metropolitana da\nGrande Vitória. É imperioso investir na modernização e ampliação de espaços esportivos\nno interior, criando condições adequadas para a retenção de talentos locais e garantindo\nque os 78 municípios disponham de equipamentos esportivos de qualidade.\nA transformação da política estadual de esportes depende de superar a centralização\nadministrativa por meio de uma governança verdadeiramente integrada. A articulação\ncontínua entre o governo estadual, a rede escolar, as federações, os clubes e as\ncomunidades permitirá alinhar o esporte educacional e comunitário ao alto rendimento,\ngarantindo que a prática esportiva cumpra seu papel transformador na vida dos capixabas.\n\n27"
+          },
+          {
+            "id": "paz-trabalha-e-confia-12",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nDiretrizes Estratégicas\nPara universalizar o acesso ao esporte, descentralizar políticas, promover inclusão social\ne fortalecer a gestão em todas as regiões, estabelecem-se as seguintes diretrizes:\n• Universalização do Acesso e Redução de Desigualdades: Garantir oferta de\nprática esportiva em 100% dos municípios capixabas, ampliando o número\nde modalidades ofertadas (atualmente 25) e priorizando regiões com menor\ninfraestrutura.\n• Expansão e Modernização da Infraestrutura Esportiva: Investir na construção e\nreforma de equipamentos públicos, com prioridade para regiões com déficit de\nespaços. Assegurar manutenção contínua e acessibilidade universal.\n• Descentralização da Gestão e Fortalecimento Municipal: Descentralizar recursos,\nprogramas e eventos, fortalecendo prefeituras por meio de cooperação técnica\ne financeira. Instituir polos regionais de desenvolvimento esportivo (Norte, Sul,\nOeste e Metropolitano) para coordenar ações e reduzir a centralização na Grande\nVitória.\n• Fomento ao Talento e Integração das Políticas: Implementar sistema estadual\nde identificação e acompanhamento de talentos em todas as regiões, integrando\nesporte educacional, de participação e de rendimento em uma política única.\n• Praça Inclusiva: Criar programa de apoio aos municípios para implantação de\npraças e espaços públicos, baseados em desenho universal, estabelecendo\nrequisitos técnicos e financiamento por edital ou transferência.\n• Diversificação de Fontes de Financiamento: Estimular parcerias com iniciativa\nprivada, universidades e OSCIPs, ampliando a utilização da LIEC com critérios\nobjetivos e transparentes.\nFontes de Referência: Sesport (dados de programas e modalidades); TCE-ES e IJSN\n(investimento em infraestrutura); Lei de Incentivo ao Esporte Capixaba (LIEC). Última\natualização: maio/2026.\n\n28"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-12",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nII - Espírito Santo Competitivo\n\nÉ TEMPO DE PROSPERAR\nPaz também é ter trabalho, renda e oportunidade de construir o futuro. Um Espírito\nSanto competitivo cria condições para quem produz, empreende, investe e trabalha,\nespalhando desenvolvimento pelas regiões e preparando o Estado para uma nova\nrealidade econômica.\nO Espírito Santo vem perdendo terreno em relação aos demais estados do país quando se\ntrata de Competitividade de sua economia. Segundo o Ranking do Centro de Lideranças\nPúblicas, nos últimos anos o estado caiu de 5º (CLP, 2020) para 7º lugar (CLP, 2025)\nem competitividade entre os 27 Estados do país. O desempenho é ainda pior em áreas\ncríticas para o futuro do estado, como Capital Humano (10º), Inovação (11º) e Potencial\ndo Mercado (18º).\nDuas iniciativas legislativas em nível federal trouxeram graves prejuízos à economia do\nEspírito Santo. A Resolução 13/2012 do Senado Federal, que, praticamente, extinguiu\no FUNDAP em 2012 e com ele parte significativa das atividades ligadas ao comércio\ninternacional do estado. Já em 2023, a Reforma Tributária, que começou a tramitar\na partir de um Projeto de Emenda Constitucional em 2019, foi aprovada por meio da\nEmenda Constitucional 132/2023 e consolidou um modelo em que o Espírito Santo é um\ndos estados com a maior perda de receita e consequentemente com os maiores riscos à\nsua economia.\nCom a Reforma Tributária, é fundamental que o ES seja capaz de competir sem depender\nde incentivos fiscais. Neste sentido, torna-se imperioso reverter a tendência recente de\nqueda e posicionar o estado como um dos mais competitivos do país. Só assim seremos\ncapazes de resgatar os sonhos e esperanças dos capixabas em um futuro próspero para\n\n29"
+          },
+          {
+            "id": "paz-trabalha-e-confia-13",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\ntodos, não só para alguns.\nO desenvolvimento econômico começa pela liberdade para empreender e com um\nambiente de negócios ético e republicano. O exemplo de Vitória, que desburocratizou a\nmáquina, simplificou processos e se tornou referência nacional como cidade inteligente\ne competitiva, mostra o caminho. Além disto, desenvolver a infraestrutura logística,\ntecnológica e social é essencial para criar condições que permitam as empresas capixabas\navançarem em inovação e produtividade. No Governo do Estado, faremos o mesmo para\nos 78 municípios, levando segurança jurídica, tributação justa e agilidade para quem gera\nempregos, desde o pequeno comerciante até as grandes indústrias.\n\n30"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-13",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\n2.1 Economia, Emprego e Renda\n\nÉ TEMPO DE CRESCER\nPaz é trabalhar e encontrar oportunidades para seguir em frente. Uma economia forte\nsustenta empregos, renda, investimentos e os recursos necessários para melhorar os\nserviços públicos. Crescer, aqui, significa fazer o desenvolvimento chegar às pessoas e às\ndiferentes regiões do Espírito Santo.\nDesafios\nO desenvolvimento econômico, com geração de emprego e renda, é a base sobre a\nqual se constroem as demais conquistas de um Estado. Sem uma economia forte, não\nhá recursos para investir em segurança, educação e saúde. Por isso, pensar o futuro\neconômico do Espírito Santo exige coragem para encarar os desafios que se aproximam.\nO primeiro é a previsão de queda na produção de petróleo e gás natural, atividade que\nsustenta parte importante da arrecadação e atividade industrial no estado. Outro desafio\né o limite para a expansão da extração de minério de ferro em Minas Gerais, pós desastres\nde Mariana e Brumadinho, reduzindo o fluxo de minério em direção às indústrias e portos\ndedicados no Espírito Santo. Outra questão importante é a perda de competitividade do\nsetor atacadista e de importação com a reforma tributária, que elimina benefícios fiscais\nque por anos atraíram empresas para o Espírito Santo.\nPor outro lado, há também oportunidades. O Espírito Santo tem base industrial, portuária,\nlogística, energética e exportadora. Possui um agronegócio forte e um povo trabalhador.\nRecursos Naturais e Culturais que devem ser reconhecidos e valorizados.\nA vocação portuária capixaba pode ser atualizada com portos “sem papéis”, melhor\nintegração ferroviária e rodoviária, agilidade aduaneira, segurança cibernética e serviços\n\n31"
+          },
+          {
+            "id": "paz-trabalha-e-confia-14",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nespecializados de comércio exterior. Devemos sair de uma logística apenas “de passagem”,\npara uma logística de inteligência, processamento, serviços e integração global.\nO setor empresarial deve ser incentivado a modernizar suas plantas, investir em tecnologia\ne inovação e no desenvolvimento do capital humano, em parceria com governo, academia\ne terceiro setor. A busca por competitividade, qualidade e produtividade deve ser a tônica\nda moderna economia capixaba.\nEste novo impulso para a economia capixaba não deve ficar concentrado na Grande\nVitória. É preciso combinar educação profissional, polos de tecnologia, crédito, compras\npúblicas inovadoras e apoio a startups no interior, conectando vocações regionais à\ncapacidades sistêmicas, para a fazer um Espírito Santo moderno, digital, mais verde e\npróspero.\nDiretrizes Estratégicas\n• Fortalecer\n\na\n\nProdutividade\n\ne\n\nCompetitividade\n\nEmpresarial:\n\nApoiar\n\na\n\nmodernização da empresas, facilitando o acesso à crédito para inovação e\ntecnologia; estabelecer parcerias com federações, academia e terceiro setor\npara preparar o trabalhador para as novas demandas do século XXI; Incentivar\na adoção de modernas práticas de gestão e uso de tecnologia pelas empresas;\nInstituir o Conselho Estratégico para a Transição Tributária, composto por\nrepresentantes do governo e do setor privado, com atribuição de formular e\nimplementar medidas de transição para o novo sistema tributário, visando e\ncompetitividade setorial e a preservação dos empregos.\n• Atração de investimentos com parcerias e foco nos estados próximos:\nPosicionar o Espírito Santo como um destino seguro para a terceirização de\nserviços e produção próxima aos grandes mercados, como Rio de Janeiro,\nSão Paulo, Bahia e Minas Gerais e do Centro-oeste; Consolidar a infraestrutura\nportuária como uma porta de entrada e saída eficiente, reduzindo os custos de\ntransporte e logística; Prospectar parcerias com potências emergentes (como\nas do bloco BRICS) que buscam alternativas ao domínio das rotas comerciais\ntradicionais e novas bases de suprimento de alimentos e minerais estratégicos;\n• Desenvolvimento e atração de empresas de base tecnológica: Estabelecer\n\n32"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-14",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nprograma de competitividade para empresas, com especialização inteligente\nem setores que o Espírito Santo tenha vantagens competitivas; Criar Sandbox\nregulatório para os setores definidos; promover o desenvolvimento do mercado de\ncapitais privados; articular a atração de operações âncora com novo mecanismo\nadequado à reforma tributária;\n• Reduzir o Custo Espírito Santo: Ações integradas para ampliar o respeito aos\ncontratos; modernização legislativa para garantir a liberdade econômica; ampliar\ntransparência e fortalecer o combate a corrupção; aumentar a eficiência da\nmáquina pública; trabalhar em conjunto com os municípios para a simplificação\ntributária e licenciamentos para atividades agropecuárias, industriais e demais\nsetores; adotar a aprovação por decurso de prazo.\n• Desenvolvimento Regional: Realizar diagnóstico socioeconômico para cada\numa das regiões do Estado; instituir o Fundo para Desenvolvimento Regional\nEquilibrado, com o objetivo de viabilizar investimentos e novos empreendimentos\nnas microrregiões do interior situadas fora da área de atuação da SUDENE;\npromover eventos regionais de inovação, com desafios, hackathons e feira\nnegócios com startups; incentivar a implantação de hubs regionais de inovação.\n• Recuperação e Desenvolvimento Sustentável do Vale do Rio Doce: Fortalecer a\natuação do Estado na recuperação ambiental, social e econômica dos territórios\nimpactados pelo desastre de Mariana, assegurando governança integrada\ne eficiente com a União, Minas Gerais, municípios e comunidades atingidas;\npriorizar a recuperação dos recursos hídricos e ecossistemas, a segurança das\npopulações, a atração de investimentos para o desenvolvimento das atividades\nprodutivas locais e a aplicação eficiente e transparente dos recursos de reparação,\ntransformando a reconstrução do Rio Doce em uma agenda permanente de\nretomada econômica e desenvolvimento sustentável.\n• Fundo Soberano: o Fundo Soberano será tratado de forma íntegra, ética,\nrepublicana e transparente, sem privilégios a nenhuma pessoa ou empresa; a\nseleção das empresas apoiadas será feita por licitação pública com ampla\nconcorrência, aberta a todos que quiserem acompanhar; a preservação e\nvalorização do patrimônio público será princípio essencial do Fundo.\n\n33"
+          },
+          {
+            "id": "paz-trabalha-e-confia-15",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n2.2 Agricultura, Aquicultura e Pesca\n\nÉ TEMPO DE FORTALECER\nQUEM PRODUZ\nPaz no campo é ter condições para produzir, trabalhar e prosperar. Infraestrutura, água,\nenergia, conectividade, crédito, tecnologia e segurança jurídica fortalecem quem gera\nalimento, emprego, renda e desenvolvimento no interior capixaba.\nDesafios\nO Agronegócio constitui eixo fundamental do dinamismo econômico e social do Espírito\nSanto. Com forte vocação exportadora e grande relevância no interior capixaba, o setor\nimpulsiona a geração de empregos e o desenvolvimento regional. Para consolidar esse\nprotagonismo, o Estado deve atuar como parceiro estratégico e indutor de eficiência,\nassegurando segurança jurídica, respeito à propriedade privada e um ambiente de\nnegócios propício ao investimento, ao crédito e ao cooperativismo.\nEntretanto, a expansão do setor lida com gargalos estruturais, incluindo a vulnerabilidade\na eventos climáticos extremos, volatilidade de preços e barreiras sanitárias. A essas\nquestões somam-se a desigualdade regional de produtividade e deficiências na\ninfraestrutura viária e de armazenagem, que oneram a produção. Vencer tais desafios\nexige um governo funcional e orientado a resultados, focado na modernização logística,\nna segurança hídrica e na conectividade rural.\nPautada na responsabilidade e na inovação, nossa proposta promove uma convergência\nentre o setor público, produtores, cooperativas e centros de pesquisa. Ao simplificar\nexigências burocráticas e priorizar investimentos de alto impacto, construiremos um\nambiente produtivo moderno, competitivo e sustentável.\n\n34"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-15",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nDiretrizes Estratégicas\n• Infraestrutura para o agronegócio: recuperar e ampliar estradas rurais; Ampliar\na conectividade rural e disponibilidade de Energia; Avançar em Infraestrutura\nHídrica e Proteção dos Mananciais; Incentivar Investimentos em energia renovável\ne modernização da matriz energética; Modernizar e Profissionalizar a gestão da\nCEASA.\n• Fortalecimento da Agricultura Familiar e Cooperativismo: Facilitar o Acesso\nao crédito; Apoio à estruturação de cooperativas e associações; Ampliar e\nsimplificar a compra de alimentos da Agricultura Familiar nas diversas secretarias\ndo Governo (Educação, Saúde, Gestão, etc).\n• Pesquisa, inovação e extensão rural: Desenvolvimento e difusão de tecnologias\nadaptadas às condições locais; Capacitação e formação de capital humano;\nApoio a incorporação de práticas como mecanização, irrigação eficiente, drones\ne plataformas digitais; Expansão do agronegócio com incentivo à inovação\ntecnológica e sustentabilidade.\n• Agroindustrialização Regional e Agregação de Valor: Apoiar produtores,\ncooperativas e associações na transformação e no beneficiamento da produção,\ncom assistência técnica, tecnologia, acesso a crédito e mercados, estimulando\ncadeias como frutas e polpas, leite e derivados, café de maior valor agregado e\noutras vocações regionais, para gerar renda e manter mais valor econômico no\ninterior.\n• Apoiar o desenvolvimento da aquicultura e pesca: Apoiar a criação de\ncooperativas; Financiar a modernização das atividades relacionadas à aquicultura\ne pesca; desburocratizar e digitalizar as concessões de licenças, registros e\nautorizações;\n\n35"
+          },
+          {
+            "id": "paz-trabalha-e-confia-16",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n2.3 Turismo, Cultura e Economia Criativa\n\nÉ TEMPO DE VALORIZAR O\nQUE É NOSSO\nPaz também é pertencimento. É reconhecer nossa cultura, nossas paisagens, nossa\nhistória e nossa criatividade como patrimônio e como oportunidade. Valorizar o Espírito\nSanto é transformar identidade, turismo e cultura em desenvolvimento, emprego e renda\npara as regiões.\nDesafios\nO Espírito Santo tem 400 quilômetros de litoral, serras, cachoeiras, patrimônio cultural\ne uma culinária própria. Poucos estados brasileiros reúnem tanta diversidade de\nexperiências em um território tão pequeno. Ainda assim, o turismo capixaba está longe\nde alcançar o tamanho que poderia ter.\nO setor responde por cerca de 8% do PIB estadual, e ocupa apenas a 13ª posição entre os\nestados brasileiros em participação do turismo no total de empregos, atrás de estados\ncom potencial natural e cultural parecido ou menor. A informalidade e a pulverização\nem pequenos negócios, embora mostrem a capilaridade do setor, também revelam a\nnecessidade de qualificação e profissionalização.\nO mesmo vale para a economia criativa. Cultura não pode ficar concentrada na\nGrande Vitória. Bibliotecas, teatros, Arranjos Produtivos, grupos e produtores culturais\nespalhados pelo interior são também motor de renda e emprego. Valorizar o patrimônio\nmaterial e imaterial, e levar turismo e cultura a todos os municípios do estado é o caminho\npara transformar nossos ativos naturais e culturais em desenvolvimento econômico e\n\n36"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-16",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\noportunidades de emprego e renda para os capixabas.\nDiretrizes Estratégicas\n• Turismo como Vetor de Competitividade: Estruturar e qualificar os principais\ndestinos e experiências turísticas do estado, transformando ativos naturais\ne culturais em produtos turísticos comercializáveis e sustentáveis; Criar um\nambiente favorável para investimentos privados e uma governança integrada\ncapaz de coordenar o desenvolvimento turístico em todo o território estadual;\nPromover e fortalecer o turismo rural; Desenvolver a marca turística Espírito\nSanto, ampliando a visibilidade estadual e atraindo novos fluxos de visitantes\nnacionais e internacionais.\n• Desenvolvimento da Economia Criativa: Estímulo à Arranjos Produtivos Locais\n(APL’s) de bens e serviços culturais como núcleos de geração de renda e\noportunidades; Qualificação técnica e em gestão para gestores e produtores\nculturais; Linhas de fomento para empreendimentos de base criativa; Valorizar,\npromover e qualificar o Artesanato Capixaba, como mecanismo de identidade,\ngeração de renda e criação de valor; Promover o turismo cultural como elemento\nde inovação, renda e emprego.\n• Descentralizar a produção e circulação cultural: Parcerias com os municípios e\na iniciativa privada para democratizar e ampliar o financiamento ao setor; Ofertar\ncursos técnicos de Artes e Cultura em parceria com a Secretaria de Educação;\nExpandir e qualificar as bibliotecas municipais, com apoio técnico e financeiro;\nPromover a cultura nas cidades, com a circulação de eventos e a realização de\nespetáculos com artistas locais, nacionais e internacionais;\n• Preservação, Valorização e qualificação do patrimônio material e imaterial:\nincentivar parcerias com a iniciativa privada para recuperação e preservação do\npatrimônio cultural; desenvolver o Cais das Artes como “Porta de Saída” para\napresentar a cultura capixaba ao Brasil e ao Mundo e “Porta de Entrada” para\nexposições e espetáculos nacionais e internacionais; valorizar a diversidade\ncultural capixaba;\n\n37"
+          },
+          {
+            "id": "paz-trabalha-e-confia-17",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n2.4 Ciência, Tecnologia e Inovação\n\nÉ TEMPO DE INOVAR\nPaz é olhar para o futuro com confiança. Ciência, tecnologia e inovação ampliam a\nprodutividade, abrem novas oportunidades profissionais e ajudam o Espírito Santo a\ntransformar conhecimento e vocações regionais em desenvolvimento.\nPromover a difusão tecnológica orientada pela demanda empresarial, sustentada por\ntransferência prática de conhecimento, apoiada em capacitação contínua e ambientes\nregionais de inovação, além de contar com investimentos privados e monitoramento de\nresultados econômicos.\nDesafios\nO Espírito Santo ocupa um modesto 11º lugar no ranking de inovação do CLP (2025)\nentre os Estados brasileiros. Em particular, preocupa a baixa posição em Patentes\nregistradas (12ª colocação) e em Estrutura de Apoio à Inovação (21º lugar). Na busca\npelo Desenvolvimento Sustentável, não podemos nos contentar com este desempenho.\nO fortalecimento do sistema de Ciência, Tecnologia e Inovação (CT&I), com foco em\nresultados, é essencial para alcançarmos patamares mais elevados de desenvolvimento.\nO estado enfrenta gargalos relevantes decorrentes da baixa integração entre a pesquisa\ncientífica e o mercado, somada à insuficiência de mecanismos de incentivo ao investimento\nprivado na área. Converter o conhecimento em inovação aplicada e valor econômico é a\npremissa central desta agenda. Para equacionar esses desafios, nossa proposta orientase pela difusão tecnológica impulsionada pelas demandas do setor produtivo e ancorada\nnas vocações regionais consolidadas, como logística, rochas ornamentais, agronegócio\ne a cadeia de petróleo e gás, associada ao aproveitamento sustentável do potencial da\nEconomia Azul — ou seja, transformando o nosso mar e litoral em fontes de inovação,\n\n38"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-17",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nenergia limpa e geração de renda.\nO plano prioriza conectar a produção científica às cadeias industriais e agroindustriais,\nestimulando a adoção de tecnologias emergentes, como Inteligência Artificial, Robótica,\nBiotecnologia e Internet das Coisas (IoT). Neste contexto, o investimento privado deve\nassumir um papel de crescente importância. Para tanto, a ação coordenada entre os\nsistemas de ensino e pesquisa e os ecossistemas regionais de inovação é fundamental.\nDiretrizes Estratégicas\n• Fomento à inovação aplicada às vocações regionais e economia azul: Estimular\no ecossistema de Ciência, Tecnologia e Inovação (CT&I) focado em setores onde\no estado já possui liderança, como logística, rochas ornamentais, agronegócio\n(café e fruticultura) e exploração de petróleo e gás; promover a exploração\nsustentável do espaço marítimo através da “economia azul” para gerar novas\nfrentes de emprego e renda;\n• Articular o desenvolvimento coordenado entre educação, ciência, tecnologia\ne talentos, fortalecendo a formação, atração e retenção de capital humano\nqualificado e ampliando a conexão entre instituições de ensino, centros de\npesquisa e o setor produtivo.\n• Promover a integração efetiva entre a inovação científica e a inovação industrial\ne agroindustrial; fomentar o desenvolvimento de produtos e serviços com base\ntecnológica, em especial em tecnologias emergentes como Inteligência Artificial,\nRobótica, Biotecnologia e Internet das Coisas (IoT’s).\n• Qualificação profissional voltada para a economia digital e aprendizado\ncontínuo: Alinhar o ensino técnico e superior às demandas setoriais, considerando\na evolução da inteligência artificial e da automação, para gerar empregos\nqualificados; promover o aprendizado ao longo da vida (lifelong learning),\ncapacitando trabalhadores para as novas profissões criadas pela transformação\ndigital e Inteligência Artificial.\n\n39"
+          },
+          {
+            "id": "paz-trabalha-e-confia-18",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n2.5 Infraestrutura e Mobilidade\n\nÉ TEMPO DE AVANÇAR\nPaz é poder ir e vir com segurança, dignidade e eficiência. Infraestrutura conecta pessoas\ne regiões, reduz distâncias, melhora a mobilidade e cria as condições para o Espírito\nSanto produzir, competir e crescer.\nDesafios\nA modernização da infraestrutura de transportes e a eficiência da mobilidade urbana\nconstituem pilares indispensáveis para o desenvolvimento econômico do Espírito Santo,\natuando diretamente na atração de investimentos, na competitividade empresarial e na\ngeração de emprego e renda. Contudo, a consolidação do Estado como um hub logístico\nexige superar gargalos estruturais e reforçar a integração entre os modais portuário,\nferroviário, aeroviário e rodoviário.\nA segurança viária impõe-se como outro desafio crucial. Dados do Atlas da Violência\n(2026) revelam que, em 2024, o Espírito Santo registrou 933 mortes no trânsito — um\ncrescimento de 20,5% em relação a 2019. Esse indicador reforça a urgência de priorizar\na segurança viária no planejamento, operação e modernização das rede de transportes\nterrestre em nosso estado.\nNa dimensão metropolitana, o desafio passa pela modernização e manutenção dos\nterminais do Transcol, garantindo acessibilidade e conforto, bem como a qualificação\nnos meios e na infraestrutura de transporte. O planejamento metropolitano não pode ser\ntratado de forma fragmentada. A agenda exige governança coordenada entre todos os\nmunicípios da Grande Vitória para integrar os modais rodoviário, aquaviário, cicloviário\ne a micromobilidade de curta distância. A Adoção de Parcerias Público-Privadas (PPPs)\n\n40"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-18",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\ne incentivo a soluções sustentáveis são elementos importantes para alcançarmos um\nsistema de mobilidade eficiente, seguro e alinhado ao futuro do Estado.\nDiretrizes Estratégicas\n• Modernização e adensamento da infraestrutura logística multimodal: Investir na\nampliação da capacidade e da qualidade da malha rodoviária estadual, incluído\nduplicação de gargalos críticos e integração com portos e ferrovias; promover a\nrealização de Parcerias Públicos Privadas para a modernização da infraestrutura;\n• Promover a segurança no trânsito: planejar e realizar ações educativas e\nfiscalizatórias; mapear pontos críticos e atuar em cooperação com municípios e\ngoverno federal, quando for o caso para realizar intervenções e ações operacionais\npara aumentar a segurança viária.\n• Fomentar ações para desenvolvimento dos aeroportos regionais, viabilizando a\nampliação do uso para transporte de cargas e passageiros; promover a expansão\nda oferta de voos internacionais de cargas e passageiros no Aeroporto de Vitória;\n• Articular para mitigar gargalos logísticos nacionais e para garantir investimentos\ncríticos, como as BR 101 e BR 262, e a Estrada de Ferro EF 118, visando consolidar\no ES como um hub competitivo de comércio exterior.\n• Mobilidade Metropolitana com foco no passageiro: Modernizar os terminais do\nTranscol, dotando-os de infraestrutura adequada para garantia de acessibilidade\ne conforto aos passageiros, tratando com respeito o usuário e cuidando de\nsua adequada manutenção; Trabalhar de forma coordenada com TODOS os\nmunicípios da Grande Vitória para a melhoria e integração do transporte coletivo,\nem seus diversos modais, como rodoviário, aquaviário e cicloviário; Avançar na\nmodernização da infraestrutura para a mobilidade metropolitana; aperfeiçoar\no monitoramento do transporte coletivo por indicadores de tempo de espera,\nfrequência, lotação, pontualidade, segurança em pontos e terminais, utilizando\ninteligência artificial para melhorar o tempo e disponibilidade.\n• Promover a utilização de meios de transporte mais sustentáveis e eficientes;\nIncentivar a micromobilidade responsável e sustentável para os trajetos de curta\ndistância e “última milha”.\n41"
+          },
+          {
+            "id": "paz-trabalha-e-confia-19",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nIII - Espírito Santo Sustentável\n\nÉ TEMPO DE CUIDAR DO\nPRESENTE E DO FUTURO\nPaz é viver bem hoje e preservar as condições para que as próximas gerações também\nvivam bem. Água, saneamento, habitação, cidades organizadas, proteção ambiental e\ncapacidade de enfrentar riscos climáticos fazem parte de um desenvolvimento que cuida\ndas pessoas e do território.\nApesar do potencial hídrico e costeiro do Estado, o Espírito Santo ainda convive com\ndesigualdades estruturais no acesso a serviços básicos. Mais de 26% dos domicílios\ncapixabas não têm abastecimento de água pela rede geral e apenas 57% da população\nconta com Rede Coletora de Esgoto (SINISA/2024). As perdas de água no sistema de\ndistribuição superam 40%, evidenciando um grave problema de gestão. Com isso, parte\nexpressiva da população segue sem acesso à água tratada e sem coleta de esgoto,\nsobretudo no interior e nas periferias urbanas, evidenciando que universalizar serviços\nbásicos continua sendo condição de justiça ambiental.\nAo mesmo tempo, o litoral capixaba enfrenta uma dupla oportunidade e vulnerabilidade\nclimática. Entre 2015 e 2024, o Espírito Santo registrou 1.191 desastres, sendo boa parte\ndeles inundações e chuvas intensas responsáveis pela maioria dos óbitos, exigindo defesa\ncivil fortalecida e planejamento de adaptação. Por outro lado, o mesmo mar que ameaça\ntambém abre caminho: especialistas apontam o trecho entre Rio de Janeiro e Espírito\nSanto como rota estratégica para a energia eólica offshore, permitindo converter décadas\nde experiência em óleo e gás em uma nova matriz energética limpa e regenerativa.\nDiante desse cenário, o Espírito Santo Sustentável assume como conceito central\n\n42"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-19",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nmobilizar e coordenar governo, municípios, setor privado e sociedade civil para acelerar\na transição ecológica e a economia regenerativa, integrando meio ambiente, saneamento,\nhabitação, infraestrutura urbana, resíduos sólidos e economia circular a uma estratégia\núnica de desenvolvimento regional, urbano, rural e da economia do mar.\n\n43"
+          },
+          {
+            "id": "paz-trabalha-e-confia-20",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n3.1 Urbanismo, Saneamento e Habitação\n\nÉ TEMPO DE VIVER COM\nDIGNIDADE\nPaz começa dentro de casa e continua no bairro onde a vida acontece. Moradia segura,\nágua tratada, esgoto, planejamento urbano e segurança jurídica sobre o próprio lar são\ncondições essenciais para uma vida com dignidade.\nDesafios\nQualidade de vida também se mede pelo lugar onde se mora. Uma casa segura, um\nbairro planejado, água tratada e esgoto correndo por baixo da rua. São coisas simples,\nmas que definem a diferença entre viver com dignidade ou sobreviver às dificuldades do\ndia a dia.\nO Censo 2022 do IBGE revela um retrato que exige atenção. No Espírito Santo, 598 mil\npessoas vivem em favelas e comunidades urbanas, o equivalente a 15,6% da população\n— proporção maior que a do Rio de Janeiro (13,3%) e mais que o dobro da de São Paulo\n(8,2%). Quase 49 dos 78 municípios capixabas têm favelas ou comunidades urbanas\nem seu território. O problema não é só a ausência de infraestrutura básica, que muitas\nvezes chega. O problema é a informalidade. Milhares de famílias vivendo sem segurança\njurídica sobre a própria moradia, muitas vezes em áreas de risco. Promover regularização\nfundiária não pode ser exceção, tem que virar política contínua, com entrega de títulos\ne integração de assentamentos informais à cidade formal. Habitação social e locação\nsocial com aluguel compatível com a renda das famílias também precisam sair do papel.\nE os municípios não podem enfrentar sozinhos o desafio de planejar seu crescimento.\nA cooperação intermunicipal e apoio técnico do Estado podem fazer a diferença entre\n\n44"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-20",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\ncidades organizadas e cidades que crescem na base da improvisação.\nIsso passa também por saneamento básico de qualidade, com uma Cesan comprometida\ncom o interesse público, e por centros históricos requalificados, que preservam a memória\ne a identidade de cada cidade capixaba, consolidando um modelo de desenvolvimento\nurbano que une o cuidado com a saúde pública à valorização da nossa cultura.\nDiretrizes Estratégicas\n• Requalificação de Centros Históricos e recuperação da história das localidades:\nApoiar técnica e financeiramente a requalificação dos Centros Históricos dos\nmunicípios; Fomentar a preservação da memória e identidade das cidades e\ncomunidades capixabas.\n• Planejamento Urbano para o crescimento: Apoiar a cooperação intermunicipal\npara o planejamento da política habitacional e urbana; apoiar tecnicamente\nconsórcios e municípios na elaboração, execução e captação recursos para\nprojetos habitacionais e urbanísticos;\n• Habitação Social e Cidadã: promover a regularização fundiária e a construção\nde imóveis de interesse social; incentivo a locação social com valor do aluguel\ncondizente à renda familiar; apoiar os municípios na criação de programas\nhabitacionais nos moldes do “Casa Feliz e Segura”, implantado em Vitória.\n• Regularização Fundiária como política de Estado: Estabelecer ações continuadas\npara entrega dos títulos e integração de assentamentos informais às ocupações\nformais.\n• Saneamento Básico: Promover Choque ético e de gestão da Cesan, garantindo\nque a direção da Empresa esteja comprometida com o interesse público e\ncapacitada para expandir a infraestrutura básica de saneamento nos municípios\ncapixabas; fortalecer e garantir a independência da Agência Reguladora de\nServiços Públicos; apoiar os municípios não atendidos pela Cesan na expansão\nda cobertura de água e esgoto.\n\n45"
+          },
+          {
+            "id": "paz-trabalha-e-confia-21",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n3.2 Meio Ambiente e Sustentabilidade\n\nÉ TEMPO DE PRESERVAR\nPaz é cuidar da água, da terra, das riquezas naturais e da segurança das famílias diante\ndos desafios ambientais. Preservar e desenvolver caminham juntos quando planejamento,\ntecnologia e responsabilidade transformam sustentabilidade em proteção e oportunidade.\nDesafios\nNas áreas ambiental e de recursos hídricos, o Espírito Santo possui desde 2003 com\nprogramas de Pagamento por Serviços Ambientais (PSA), recuperação florestal e gestão\nde bacias. A estrutura técnica dos órgãos estaduais e a capilaridade do sistema agrícola\nsão ativos relevantes para a sustentabilidade produtiva.\nPor outro lado, persistem gargalos estruturais, como fragmentação entre políticas\nambientais, agrícolas, hídricas e de defesa civil; baixa integração de bases de dados e\nplanejamento territorial; licenciamento burocrático; e gestão desigual das estruturas\nmunicipais. A ausência de plataforma unificada de inteligência territorial impede o\nmonitoramento integrado e a decisão baseada em evidências.\nAmeaças externas se intensificam: eventos climáticos extremos pressionam infraestrutura\nhídrica e urbana; escassez hídrica compromete abastecimento, agricultura e energia;\npressão urbana sobre áreas sensíveis amplia riscos de desastres e perdas econômicas.\nO cenário oferece oportunidades, como a integração entre meio ambiente, agricultura\ne recursos hídricos pode gerar ganhos de escala; a economia verde abre novas frentes\nde financiamento; modernização tecnológica com IA pode reduzir custos e acelerar\nprocessos. O desafio central é transformar programas setoriais em política estadual\ncoordenada que concilie preservação, desenvolvimento e proteção das famílias capixabas.\n\n46"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-21",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nDiretrizes Estratégicas\n• Estruturar programa permanente de reservação com ampliação de barragens\npúblicas e incentivo a pequenas barragens rurais; integrar AGERH, SEAG,\nINCAPER e Comitês de Bacia; priorizar recuperação de nascentes, conservação\nde solo e ampliação da infiltração em regiões críticas.\n• Conservação da biodiversidade e dos recursos naturais, com proteção da fauna\nsilvestre; restauração da cobertura florestal com foco nas matas ciliares, mananciais\ne conectividade de fragmentos; e prestação de serviços ecossistêmicos;\n• Bem-Estar Animal e Controle de Zoonoses: Fortalecer o apoio aos municípios para\ncastração, vacinação, prevenção e controle de zoonoses, resgate, acolhimento\ntemporário, adoção responsável e atendimento veterinário voltado especialmente\na famílias em situação de vulnerabilidade, articulando meio ambiente, saúde\npública e proteção animal; Fortalecer as ações estaduais visando a convivência\nharmoniosa entre animais domésticos e humanos, como regulamentação, ações\neducativas, atendimento de urgência e emergência e controle populacional.\n• Integração Meio Ambiente + Agricultura Sustentável: Criar governança\nterritorial integrada envolvendo SEAMA, IEMA, SEAG, INCAPER, IDAF, AGERH e\nmunicípios; Expandir PSA (Pagamento por Serviços Ambientais), reflorestamento\ne recuperação ambiental produtiva; fortalecer agricultura regenerativa e\nconservação do solo; integrar regularização ambiental, assistência técnica e\ncrédito sustentável.\n• Modernização da Gestão Ambiental e Licenciamento: Digitalizar processos e\nintegrar sistemas de licenciamento, regularização e monitoramento; implantar\ngestão por indicadores ambientais integrados; fortalecer municipalização com\napoio técnico e capacitação.\n• Resiliência Climática: Integrar corpo de bombeiros, defesa civil, infraestrutura,\ndrenagem e adaptação climática; implantar sistema integrado de monitoramento\nclimático e hidrológico; Suporte às práticas de cidades sustentáveis e humanas,\ncom obras preventivas à deslizamentos e enchentes e fomento a implantação de\nsoluções baseadas na natureza.\n\n47"
+          },
+          {
+            "id": "paz-trabalha-e-confia-22",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n• Protocolo Estadual de Emergência Climática: Criar protocolo permanente El\nNino / La Nina e outros eventos relacionados a mudanças climáticas, com níveis\nde alerta e ações previamente definidas para agricultura, abastecimento de água,\nsaúde, defesa civil, escolas, infraestrutura e assistência social.\n• Plataforma Estadual de Inteligência Territorial e IA: Integrar bases ambientais,\nagrícolas, hídricas, climáticas e fundiárias com IA para licenciamento,\nmonitoramento, prevenção de desastres, planejamento, fiscalização e gestão por\nindicadores; implantar ferramentas de IA para triagem de processos, cruzamento\nde informações, detecção de inconsistências e automação de fluxos.\n• Estratégia de Sustentabilidade: Consolidar política para redução de emissões,\natração de investimentos sustentáveis e transição energética; estruturar ambiente\nregulatório para Pagamento por Serviços Ambientais (PSA) e valorização da\nconservação florestal; integrar reflorestamento, recuperação de nascentes e\nagricultura regenerativa à geração de créditos e serviços ecossistêmicos.\n\nFontes de Referência: Documentos institucionais (SEAMA, IEMA, AGERH, SEAG, INCAPER, IDAF); programas de PSA e\nrecuperação florestal; Comitês de Bacia; dados de monitoramento climático e hídrico.\n\n48"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-22",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nIV – Espírito Santo que entrega\n\nÉ TEMPO DE ENTREGAR\nRESULTADOS\nPaz também é confiar que o governo funciona. É ver recursos públicos tratados com\nresponsabilidade, serviços chegando com qualidade, obras avançando e decisões\norientadas pelo interesse das pessoas. Um Estado que entrega transforma planejamento\nem resultado.\nO Espírito Santo conta com um quadro de servidores qualificados, dispostos a entregar\nserviços públicos de qualidade aos capixabas. Entretanto, se a liderança não estabelece\na direção correta e os gestores são incapazes de colocar o interesse público em primeiro\nlugar, todo este talento é desperdiçado. Nosso foco será liderar de forma estratégica,\npara fazer o Espírito Santo um estado mais justo, competitivo e que oferta serviços de\nqualidade aos moradores, visitantes e empreendedores. Nossos gestores terão como\nprincípios basilares a ética, a eficácia e eficiência na condução dos negócios de Estado.\nO ES é apenas o 8º colocado entre os 27 estados em Eficiência da Máquina Pública\n(Ranking CLP), tendo perdido posições em Custo do Executivo/PIB e em Qualidade\nda Informação Contábil e Fiscal. Ou seja, manter o governo se tornou mais caro para\no cidadão e a confiabilidade das informações financeiras piorou. Quando se fala em\nInovação, o Espírito Santo fica em 11º lugar, também no ranking CLP.\nÉ preciso nos anteciparmos ao desafio da reforma tributária, que a partir de 2029 começa\na impactar fortemente as receitas estaduais, e reduzir o custo da máquina pública para\no cidadão, ao passo em devemos qualificar o apoio aos municípios capixabas para a\npromover o desenvolvimento regional inclusivo.\n\n49"
+          },
+          {
+            "id": "paz-trabalha-e-confia-23",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\nNosso objetivo é termos um governo digitalmente avançado, que custe menos ao cidadão\ne que oferte serviços públicos com qualidade e rapidez. As obras devem ser entregues\nno prazo e com o custo controlado. Vamos concluir as obras inacabadas e avançar em\nobras vitais para o futuro do Espírito Santo.\n\n4.1 Governança, Gestão e Estratégia\n\nÉ TEMPO DE GOVERNAR\nCOM ÉTICA E RESULTADO\nPaz é saber que o interesse público vem em primeiro lugar. Gestão responsável,\ntransparência, integridade, planejamento e eficiência criam confiança e transformam o\ndinheiro público em melhores serviços e entregas para a sociedade.\nDesafios\nA propaganda oficial exalta o equilíbrio das contas, mas a verdade é que manter o\ngoverno capixaba ficou mais caro para o cidadão sem que o serviço público melhorasse\nna ponta. Ocupamos uma tímida 8ª posição em eficiência administrativa e a qualidade\ndas nossas informações financeiras despencou. Nos últimos anos, a falta de transparência\nreal e de uma política robusta de integridade abriu espaço para casos de corrupção que\nenvergonham o estado e contaminam as relações público-privadas. Dinheiro público não\npode ser gasto para manter privilégios ou desperdícios. Precisamos cortar na carne os\ngastos desnecessários, cobrar metas de desempenho de cada secretaria e criar uma\nrelação republicana com os 78 municípios, baseada em critérios técnicos, e não na troca\nde favores políticos.\nDiretrizes Estratégicas\n• Combate à Corrupção, Controle e Transparência: Transformação da Secretaria de\nControle e Transparência (SECONT) em Controladoria-Geral do Estado, visando\n\n50"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-23",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\nadequar às melhores práticas internacionais; Prevenção e Combate à Corrupção\nem primeiro lugar; Transparência como valor e não escolha, garantindo elevados\npadrões de integridade; Todo o trabalho da Controladoria-Geral será público;\nParticipação Cidadã nas decisões de Controle.\n• Blindar as decisões do Estado contra tráfico de influência, favorecimentos e\nconflitos de interesse: Instituir regras de integridade para contratos, fundos,\nconcessões, parcerias e investimentos públicos, com declaração obrigatória\nde vínculos familiares, societários ou profissionais com agentes públicos,\nimpedimento de participação em decisões quando houver conflito de interesse\ne transparência sobre reuniões e relações entre representantes do governo e\nempresas interessadas.\n• Planejamento e Gestão: Orientar as iniciativas estratégicas em consonância\ncom o planejamento de longo prazo e a Visão de Estado; Planejamento e\nOrçamento por resultados, com alocação de recursos vinculada a metas de\ndesempenho e entregas à sociedade; cortar gastos ineficientes, com eliminação\nde desperdícios e privilégios; modernizar a Gestão de Pessoas, valorizando e\nreconhecendo a excelência no serviço público; Desenvolvimento de Lideranças\npara a Transformação do Estado.\n• Parcerias com o setor privado e o terceiro setor: Acelerar a estruturação e\nexecução de parcerias para a modernização e melhoria da infraestrutura e dos\nserviços públicos;\n• Tributação e Finanças: Revisão permanente do gasto e modernização da receita\nsem aumentar a carga tributária; Gestão Fiscal e Tributária Inteligente – Facilitar\na vida do contribuinte, digitalizando e automatizando documentos, pagamentos\ne restituições; Formulação estratégica e Gestão Intensiva da Transição Tributária;\ninstituir comitê permanente para modelar efeitos fiscais e econômicos da reforma\ntributária.\n• Cooperação federativa: Estado indutor e parceiro dos 78 municípios, com\ntransferências republicanas, transparência e assistência técnica; Cooperação\ncom Estados com interesses comuns, como Minas Gerais e os estados do CentroOeste.\n\n51"
+          },
+          {
+            "id": "paz-trabalha-e-confia-24",
+            "titulo": "PAZ, TRABALHA E CONFIA",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "PAZ, TRABALHA E CONFIA\n\n• Agenda Estratégica: Defesa vigorosa e permanente dos interesses do Espírito\nSanto em todas as instâncias nacionais e regionais, articulando junto às diversas\ninstâncias da União para viabilizar, em especial, a duplicação da BR-262, da BR259 e da BR-101, a ampliação da malha ferroviária no Espírito Santo, a remoção\ndos gargalos logísticos e a viabilização de portos e sua integração logística, entre\noutros.\n\n4.2 Tecnologia e Inovação na Gestão\n\nÉ TEMPO DE SIMPLIFICAR\nPaz também é resolver a vida com mais facilidade. Um governo digital, inteligente e\nacessível usa tecnologia para reduzir burocracia, ganhar tempo, melhorar serviços,\nampliar a transparência e facilitar a relação das pessoas e das empresas com o Estado.\nDesafios\nResolver a vida no balcão do governo ainda é um teste de paciência. O Espírito Santo\nestá apenas no 12º lugar em oferta de serviços públicos digitais (ABEP-TIC, 2025),\nmuito atrás de estados com menos recursos. Essa lentidão obriga o cidadão a lidar com\npapeladas, processos travados e sistemas que simplesmente não conversam entre si.\nA máquina pública ignora ferramentas de Inteligência Artificial que poderiam acelerar\ndecisões banais e agilizar compras. O exemplo de Vitória, que em cinco anos alcançou o\nprimeiro lugar como Cidade mais Inteligente, Conectada e Humana do país (Ranking CSC,\n2025), é inspiração para a transformação que desejamos para o Espírito Santo e cada\num dos seus municípios. Um governo digital de verdade precisa ser simples, acessível\npelo celular e capaz de desatar os nós da burocracia que travam o desenvolvimento das\nnossas cidades.\nDiretrizes Estratégicas\n\n52"
+          },
+          {
+            "id": "programa-de-governo-lorenzo-pazolini-24",
+            "titulo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO | LORENZO PAZOLINI\n\n• Governo digital e inteligente: Promover a transformação digital inclusiva\ne sustentável, garantindo que todos os serviços públicos sejam acessíveis de\nforma integrada e segura, com foco na eficiência administrativa, transparência,\nparticipação cidadã e redução de desigualdades.\n• Modernização Administrativa: Implementar a Centralização de Compras e\nContratos, migrando da lógica de insumos para a contratualização de resultados;\npromover a simplificação organizacional; reduzir a rigidez administrativa, com\nestruturas flexíveis e decisões mais ágeis.\n• Inovação das políticas públicas: Realizar Compras Públicas de Soluções\nInovadoras; implantar Laboratórios Vivos (Living Labs) de políticas e serviços\npúblicos; Criar Sandbox Regulatório para facilitar inovação; acelerar a adoção\nde Inteligência Artificial como ferramenta para aumento da produtividade e\neficiência nas políticas e serviços públicos.\n• Cidades Inteligentes: Apoiar a utilização de tecnologia e dados para prestação\nde serviços públicos e tomada de decisões, a integração vertical de sistemas e\na alfabetização digital da população, como base para construção de cidades\ninteligentes, humanas e conectadas; promover o fomento à formulação e\nimplementação de Soluções Baseadas na Natureza como resposta aos desafios\nambientais.\n\n53"
+          },
+          {
+            "id": "pazolini",
+            "titulo": "Pazolini",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "ocr",
+            "conteudo": "Pazolini\nGOVERNADOR\nVICE ELIANE LEAL\n10\nTEMPOdePAZ"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6aca179d5d250ef59c7a452084fb7d0cc3bdf59a3dad83c139276cc82bbcc5ec"
+          },
+          {
+            "pagina": 2,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "93ad04ec6c2584579e78c714098af87d5d5ee77751b15b75236ae02d6c094e52"
+          },
+          {
+            "pagina": 4,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "15ec8407ab3f892519259aa545863259bd7a5e199189b0f8322a61ebc6f552c4"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "3a7eb8808dec563a0bf7e2286b52ad4eee7b5821386d8d5a58eb792d67bb13cf"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "416e107246d2da9a87c73f74c2d9b9225c6d2a13f6ea4f7aeaa56824855cd035"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f0ec4c7450c29cd990d15f62d6b7edd895f61f40ec39408162c41e5229574d9a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e31f560f46de7abd3ad20cfdd0ed797d557f80b1954335cea442b6b9dbeeca0f"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "62bd6cfaef1597db2cfb6837c7a535e0ac6fca547e497ae8193d3cac0da21a14"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2db657210d45f739e666a69bf450bea1cfeca0aa36266c549c151679655e3c0e"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "6f18b1c09c59fae6217f9d18579fe0b9a38e95e8e7d05a5944a69ffaa10d98b7"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "ee304568dea0d0f84ce06803d2ce01e7a9bd0be85df28254d26afd6cde0a30c0"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "776b78237b45330f4e0c94b61f5664fa36c1e43878169038f19869c1d4328ed7"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "75c6590f7b653cd150b20b73a658f06ffcca70179defa0405eb4ea1df8b499ce"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "09653904bdfb449065a4c7ff8bfaa7ddaf3e34558f0e14de0e490b6c72faa7e1"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "d49ebb88e071e31c2c562c8914a7a2f22b8756cd42b508f84e92532fe795712f"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "eb974a2fbbf81f9a51976032b82896009f476129d508ba465a82155b18996ea2"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "6bdada0826c1b0c94b11f7a80a7cf28452b164e96cc53b23f3627c51f78b8bf8"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "8153d6306121e5ff8b62ce48538086e72394ace2dfde36b6cf7257350b439dcd"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "9f923c7a21b13f101d8fc6ede107af733db33a3368d72426446c7f963a7cd888"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "5a680f718dde6b93924fc1235e4e1b5e2d70b03ee26990b49bb211152dc9b2f7"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "944aac320b50dde5733a19785a5cbaedea9345a11081170352323499d3e7723f"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "81b27faea9ec93acdfac6985d6778de1b99627310e5e4064ea6fa6bd97c8eeca"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "6902c199ff868561833891edf15d5aa6e258f3f90e5ac93b5dc58a0fc4e1cd3d"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "4a2908df05b39649a4e1d917cc21deb5cda852ee14d137e3a059578887b292ab"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "c52fac35841478dc18cb0a525cf73e791c04bb6dd745ae9329b27909d0fb3632"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "5d920884e9eaebb2fcfaaaa5127b02a6612e47e9b67c9ef1fc2945fb9699a864"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "ba5de116ca47f2227587b7d93de23ea80c92cde8dc82b921a1e47d37053469f7"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "d41e642d8d8ecc69120dd35652084d7f2bda55a4671e507f75fc2de077de32d2"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "5e67710120596167b159fe995164e297dcb3fecb4f7d50c45a6c0ccfd56d0fc7"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "908afbef2f96e9b3f4e949d669e8f3e4edbec5e1e0327c5ad77d335da9d06ee9"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "8bf5b3569de3871c72e7ba56586e1db4f5b6985a529b4475f2b6278ff4f3aa61"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "481e38519f0188fa1d405d72192b1b9f8a9b231ee053e5f88c4d72241fcd7c93"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "acd3f0a1c5f9f3bdda9836f4ab75c088a5e4fb79dfa423dc97e42dfe2a6dfd6d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "c6dd63d199d0eeca10d766c23c6af2fab1768ea523084b6f59f4a5d501237000"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "50ccbd7fb0b7411c561f1ada4916be339ed050a90a9ce63c8d6876361662bf6c"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "04d6330e07ae22c267eac26f0809e2a28da30dec4374b56a9af2f45b2ff7a387"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "536a905460d3465b1c5b9da79d198aa39ef0410492f101102c86699aed6221dc"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "bfb59d912d737b9b131d1681bc4c58214cddab9e7d666201e0cef21fca485e63"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "0b07fb749766370a9b33d3b489617c4c0410a527e6fc79c5266f49d4e36289e4"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "2de751e24a6e712367967eb9eaf18b04f9f995875708aa7109eb123ffd9a6649"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "b775ce12e142717498f25ee1bb1d671fbcbd005541b0e939196dd91e15a23c5b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "04fa15babe418b5d5ed5e017f1e0e55a489a046def859a57f0a04045e380b7da"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "627680ef810c0267748ae90a9343e4983a5dfc7c29983d05efc05c147d9ad0f2"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "3c5d1eadd11c419e2a54131f1edec0d80c31574dd9e7251a8eb686372068cb17"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "bb4d88228719decde728454c17bf8db56d8d0998b6fc5dcae0b23a71633c6a1d"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "09807e25b96e76e9d18777449f21d043a72e9bd0d32a511801d13a5e1211509e"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "9997aee77a31ba2a3f803ab27759c28de56f336cfff610012cb8835500b2d77e"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "d96870c8383cddade378f96c1b8a86a60ee4009279786690bc4e01b6e19a05f8"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "2b3cee5f43ee649074af2821ac37865f946e251187bdbd7a7d9cc18ecaad5ba3"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "12ecbd0b0e271c21da810f8280ecf431e6caacba8c73019fce8f358372486807"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "cbcc3cf72f1f22bc28de4e30a0cca0c37e1446b829065873b41e3f1bb5db4af1"
+          },
+          {
+            "pagina": 54,
+            "origem": "ocr",
+            "textSha256": "7558dec86d57a7cadd15e163175bb55f2ac2f8453e04a1e570ed617bd38f7eb0"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa apresenta um plano de ação para transformar a vontade de servir o povo capixaba em resultados cotidianos. Na educação, prevê apoio técnico, pedagógico e financeiro aos municípios para garantir a alfabetização até o final do 2º ano do Ensino Fundamental. Na segurança pública, propõe integrar câmeras privadas à rede pública com operação apoiada por inteligência artificial. Na saúde, planeja implantar uma Central Estadual Integrada de Regulação com painel público de transparência. Na habitação, propõe ações continuadas de regularização fundiária para entregar títulos. No meio ambiente, prevê uma Plataforma Estadual de Inteligência Territorial e IA para integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias. Na mobilidade metropolitana, planeja modernizar os terminais do Transcol para garantir acessibilidade e conforto aos passageiros. Na gestão pública, propõe tornar os serviços públicos acessíveis de forma integrada e segura.",
+    "frases": [
+      {
+        "texto": "O programa apresenta um plano de ação para transformar a vontade de servir o povo capixaba em resultados cotidianos.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 9,
+            "trecho": "O compromisso que abre este documento ganha aqui a forma de um plano de ação."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê apoio técnico, pedagógico e financeiro aos municípios para garantir a alfabetização até o final do 2º ano do Ensino Fundamental.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 14,
+            "trecho": "oferecendo apoio técnico, pedagógico e financeiro para garantir a alfabetização e a aprendizagem com qualidade até o final do 2º ano"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, propõe integrar câmeras privadas à rede pública com operação apoiada por inteligência artificial.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 19,
+            "trecho": "Implantar o Sistema Estadual de Videomonitoramento: expandir a rede atual de câmeras públicas e integrar câmeras privadas, com operação apoiada por inteligência artificial"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, planeja implantar uma Central Estadual Integrada de Regulação com painel público de transparência.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 22,
+            "trecho": "Implantar Central Estadual Integrada de Regulação com painel público de transparência"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, propõe ações continuadas de regularização fundiária para entregar títulos.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 45,
+            "trecho": "Estabelecer ações continuadas para entrega dos títulos e integração de assentamentos informais às ocupações formais."
+          }
+        ]
+      },
+      {
+        "texto": "No meio ambiente, prevê uma Plataforma Estadual de Inteligência Territorial e IA para integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 48,
+            "trecho": "Plataforma Estadual de Inteligência Territorial e IA: Integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias"
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade metropolitana, planeja modernizar os terminais do Transcol para garantir acessibilidade e conforto aos passageiros.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 41,
+            "trecho": "Modernizar os terminais do Transcol, dotando-os de infraestrutura adequada para garantia de acessibilidade e conforto aos passageiros"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão pública, propõe tornar os serviços públicos acessíveis de forma integrada e segura.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 53,
+            "trecho": "garantindo que todos os serviços públicos sejam acessíveis de forma integrada e segura"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "Apoio estadual à alfabetização municipal.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 14,
+            "trecho": "oferecendo apoio técnico, pedagógico e financeiro para garantir a alfabetização e a aprendizagem com qualidade até o final do 2º ano"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Videomonitoramento integrado.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 19,
+            "trecho": "Implantar o Sistema Estadual de Videomonitoramento: expandir a rede atual de câmeras públicas e integrar câmeras privadas"
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Regulação estadual de atendimentos.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 22,
+            "trecho": "Implantar Central Estadual Integrada de Regulação com painel público de transparência"
+          }
+        ]
+      },
+      {
+        "id": "sustentabilidade",
+        "titulo": "Sustentabilidade",
+        "descricao": "Integração territorial de dados ambientais.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 48,
+            "trecho": "Plataforma Estadual de Inteligência Territorial e IA: Integrar bases ambientais, agrícolas, hídricas, climáticas e fundiárias"
+          }
+        ]
+      },
+      {
+        "id": "gestao-digital",
+        "titulo": "Gestão digital",
+        "descricao": "Acesso integrado aos serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002552682:01",
+            "pagina": 53,
+            "trecho": "garantindo que todos os serviços públicos sejam acessíveis de forma integrada e segura"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:43:16.432Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:45:34.003Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho da página 9 confirma que o documento organiza um plano de ação para transformar o compromisso em resultados cotidianos."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos ou percentuais a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento, sem elogio, crítica ou promoção adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente, a introdução geral do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave eleitoral e documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:1:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "A única cláusula material da afirmação é coberta integralmente pelo trecho citado."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma literalmente o apoio técnico, pedagógico e financeiro e o objetivo até o final do 2º ano."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "O único número/prazo citado (2º ano) está literalmente sustentado pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação puramente descritiva, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata exclusivamente da área de educação/alfabetização, tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:2:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais (tipo de apoio, alvo, prazo) estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta integralmente a proposta de integração de câmeras privadas à rede pública com IA."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números ou quantidades na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:3:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas pelo trecho."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra e factual da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Correspondência exata de chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:4:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula material única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta a proposta de ações continuadas de regularização fundiária para entrega de títulos."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação puramente descritiva e neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:5:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho corresponde literalmente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:6:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as bases citadas (ambientais, agrícolas, hídricas, climáticas, fundiárias) estão cobertas literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho corresponde exatamente à afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de mobilidade metropolitana."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:7:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho sustenta literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre gestão pública digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:frase:8:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre integralmente a cláusula única da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma o apoio estadual à alfabetização em parceria com municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Resumo sem números não requer verificação numérica."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro e factual do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de educação/alfabetização."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:educacao:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo curto coberto integralmente pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma o sistema de videomonitoramento integrado proposto."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de videomonitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:seguranca-publica:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo curto coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma a central estadual de regulação de atendimentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de regulação em saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:saude:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo curto coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma a integração territorial de bases de dados ambientais e correlatas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de sustentabilidade/plataforma territorial."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:sustentabilidade:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo curto coberto integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho confirma o acesso integrado aos serviços públicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Resumo neutro do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema coerente de gestão digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002552682:tema:gestao-digital:documentos:ES:80002552682:01:cobertura",
+        "verdict": "yes",
+        "reason": "Resumo curto coberto integralmente."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:ES:80002552682",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "ES:80002552682:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 83207,
+          "cached_input_tokens": 54784,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3000,
+          "reasoning_output_tokens": 1471
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26466,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22324,
+          "output_tokens_details": {
+            "thinking_tokens": 635
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26466,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22324,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26466,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26466
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3495854
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "c1e92e41340af2f42a7d4d1945ca88a1664f5d603f21c91116b34381b78965d4",
+    "extractedTextSha256": "221e2d0fc763f3c7a6d2e3e3c7eccf365cb24533a97d995eb459958733ea649d",
+    "documentCount": 1,
+    "documentSetSha256": "e0c48dff96433311127040447e3f369bccc428699c1339a9701992b3c6d75df6",
+    "contentSha256": "55408d8e96042f3af4db1f7590294903a2172a9706b944fb4b35116ca13a312a"
+  }
+}
