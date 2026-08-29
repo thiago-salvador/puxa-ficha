@@ -122,6 +122,19 @@ test("manifest publishes only governor records accepted by the canonical approva
   assert.equal(programaModule.programasGoverno2026Manifesto.getBySlug(unpublished), null)
 })
 
+test("Pedro Abib publica seis fatos com grupos de evidência distintos", async () => {
+  const record = await programaModule.programasGoverno2026Manifesto.loadBySlug("pedro-abib")
+  assert.equal(record?.estado, "aprovado")
+  assert.equal(record?.resumo?.frases.length, 6)
+
+  const evidenceGroups = record?.resumo?.frases.map(({ evidencias }) => JSON.stringify(evidencias)) ?? []
+  assert.equal(new Set(evidenceGroups).size, 6)
+  assert.deepEqual(
+    record?.resumo?.frases.flatMap(({ evidencias }) => evidencias.map(({ pagina }) => pagina)),
+    [21, 27, 29, 31, 35, 39],
+  )
+})
+
 test("manifest lookup is lazy and validates the full identity only when loading", async () => {
   let loads = 0
   const identidade = structuredClone(lulaRecord.fonte)
