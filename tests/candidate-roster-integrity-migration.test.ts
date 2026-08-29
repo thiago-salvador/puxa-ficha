@@ -94,6 +94,8 @@ test("remediação e readback cobrem o gate mínimo inteiro", () => {
   );
   assert.match(rollback, /rollback recusado/i);
   assert.match(rollback, /curadoria posterior à forward/);
+  assert.match(rollback, /FROM public\.candidatos FOR UPDATE/);
+  assert.match(rollback, /FROM public\.chapas_2026 FOR UPDATE/);
   const proof = readFileSync(
     "scripts/audit/prove-candidate-roster-integrity.ts",
     "utf8",

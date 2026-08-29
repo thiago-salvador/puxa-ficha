@@ -103,6 +103,24 @@ test("mesmo slug em cargo ou UF divergente não aprova a reconciliação", () =>
   assert.equal(report.stale_public.length, 1);
 });
 
+test("reconciliação normaliza caixa e acentos nas chaves de identidade", () => {
+  const report = reconcilePublicRoster(
+    [
+      {
+        ...fixture.candidacies[1],
+        profile_slug: "josé-estevão",
+        uf: "pá",
+      },
+    ],
+    [{ slug: "JOSE-ESTEVAO", office: "Governador", uf: "PA" }],
+  );
+
+  assert.equal(report.status, "ok");
+  assert.equal(report.missing_public.length, 0);
+  assert.equal(report.stale_public.length, 0);
+  assert.equal(report.identity_mismatches.length, 0);
+});
+
 test("seleciona a vice vigente e rejeita titular como própria vice", () => {
   assert.deepEqual(selectCurrentVice("140002554108", fixture.well_vices), {
     status: "resolved",

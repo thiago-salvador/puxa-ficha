@@ -1,9 +1,19 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { randomUUID } from "node:crypto";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
 import {
   classifyOfficialCandidacy,
   selectCurrentVice,
+  validateActiveProfileCrosswalk,
 } from "../../src/lib/candidate-publication-integrity";
 import {
   collectCandidateVices,
@@ -39,6 +49,51 @@ function optionalArgument(name: string): string | null {
       .find((item) => item.startsWith(prefix))
       ?.slice(prefix.length) ?? null
   );
+}
+
+export function publishArtifactsAtomically(
+  artifacts: Array<{ path: string; content: string }>,
+): void {
+  const transactionId = randomUUID();
+  const staged: Array<{ path: string; temporary: string }> = [];
+  try {
+    for (const artifact of artifacts) {
+      mkdirSync(dirname(artifact.path), { recursive: true });
+      const temporary = `${artifact.path}.${transactionId}.tmp`;
+      writeFileSync(temporary, artifact.content, { flag: "wx" });
+      staged.push({ path: artifact.path, temporary });
+    }
+  } catch (error) {
+    for (const artifact of staged) rmSync(artifact.temporary, { force: true });
+    throw error;
+  }
+
+  const published: Array<{ path: string; backup: string | null }> = [];
+  try {
+    for (const artifact of staged) {
+      const backup = existsSync(artifact.path)
+        ? `${artifact.path}.${transactionId}.bak`
+        : null;
+      if (backup) renameSync(artifact.path, backup);
+      try {
+        renameSync(artifact.temporary, artifact.path);
+      } catch (error) {
+        if (backup) renameSync(backup, artifact.path);
+        throw error;
+      }
+      published.push({ path: artifact.path, backup });
+    }
+  } catch (error) {
+    for (const artifact of published.reverse()) {
+      rmSync(artifact.path, { force: true });
+      if (artifact.backup) renameSync(artifact.backup, artifact.path);
+    }
+    for (const artifact of staged) rmSync(artifact.temporary, { force: true });
+    throw error;
+  }
+  for (const artifact of published) {
+    if (artifact.backup) rmSync(artifact.backup, { force: true });
+  }
 }
 
 async function main(): Promise<void> {
@@ -116,7 +171,9 @@ async function main(): Promise<void> {
       parties: [...new Set(rows.map((row) => row.party))].sort(),
       statuses: [...new Set(rows.map((row) => row.status))].sort(),
       publication_status:
-        rows.length === 1 ? "active" : "quarantine_duplicate_active",
+        rows.length === 1
+          ? ("active" as const)
+          : ("quarantine_duplicate_active" as const),
     }))
     .sort(
       (left, right) =>
@@ -124,9 +181,12 @@ async function main(): Promise<void> {
         (left.uf ?? "").localeCompare(right.uf ?? "") ||
         left.profile_slug.localeCompare(right.profile_slug),
     );
+  const checkedAt = new Date().toISOString();
+  const generationId = randomUUID();
   const output = {
     metadata: {
-      checked_at: new Date().toISOString(),
+      checked_at: checkedAt,
+      generation_id: generationId,
       source: DIVULGACAND_BASE,
       election_id: ELECTION_ID_2026,
       source_urls: collected.sources,
@@ -140,12 +200,14 @@ async function main(): Promise<void> {
     slates,
   };
 
-  mkdirSync(dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  const artifacts = [
+    { path: outputPath, content: `${JSON.stringify(output, null, 2)}\n` },
+  ];
   if (activeOutputPath) {
     const activeCrosswalk = {
       metadata: {
-        checked_at: output.metadata.checked_at,
+        checked_at: checkedAt,
+        generation_id: generationId,
         source: DIVULGACAND_BASE,
         election_id: ELECTION_ID_2026,
         active_registration_count: active.length,
@@ -155,12 +217,17 @@ async function main(): Promise<void> {
       },
       profiles: activeProfiles,
     };
-    mkdirSync(dirname(activeOutputPath), { recursive: true });
-    writeFileSync(
-      activeOutputPath,
-      `${JSON.stringify(activeCrosswalk, null, 2)}\n`,
-    );
+    validateActiveProfileCrosswalk(activeProfiles, {
+      activeRegistrationCount: active.length,
+      activeProfileCount: activeProfiles.length,
+      unresolvedCount: unresolved.length,
+    });
+    artifacts.push({
+      path: activeOutputPath,
+      content: `${JSON.stringify(activeCrosswalk, null, 2)}\n`,
+    });
   }
+  publishArtifactsAtomically(artifacts);
   console.log(
     JSON.stringify(
       {
@@ -190,7 +257,12 @@ async function main(): Promise<void> {
   );
 }
 
-void main().catch((error: unknown) => {
-  console.error(error instanceof Error ? error.message : String(error));
-  process.exitCode = 1;
-});
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(resolve(process.argv[1])).href
+) {
+  void main().catch((error: unknown) => {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+  });
+}

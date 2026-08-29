@@ -58,7 +58,7 @@ const allowed = [
   /^supabase\/rollback\/20260828025037_chapas_2026_tse_20260827\.rollback\.sql$/,
   /^tests\/chapas-2026-20260827\.test\.ts$/,
   /^src\/lib\/candidate-publication-integrity\.ts$/,
-  /^tests\/(candidate-publication-integrity|candidate-roster-active-snapshot|candidate-roster-integrity-migration|divulgacand-current)\.test\.ts$/,
+  /^tests\/(candidate-publication-integrity|candidate-roster-active-snapshot|candidate-roster-artifact-publication|candidate-roster-integrity-migration|divulgacand-current)\.test\.ts$/,
   /^tests\/fixtures\/divulgacand-candidate-integrity-2026\.json$/,
   /^supabase\/migrations\/20260829030000_candidate_roster_publication_integrity\.sql$/,
   /^supabase\/migrations\/20260829030001_candidate_roster_publication_integrity_schema\.sql$/,

@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
+import {
+  validateActiveProfileCrosswalk,
+  type ActiveProfileCrosswalkEntry,
+} from "../src/lib/candidate-publication-integrity";
+
 const snapshot = JSON.parse(
   readFileSync("data/candidate-roster-active-20260829.json", "utf8"),
 ) as {
@@ -27,6 +32,11 @@ test("crosswalk canônico fecha o universo ativo e explicita duplicidades", () =
     new Set(snapshot.profiles.map((row) => row.profile_slug)).size,
     208,
   );
+  validateActiveProfileCrosswalk(snapshot.profiles, {
+    activeRegistrationCount: snapshot.metadata.active_registration_count,
+    activeProfileCount: snapshot.metadata.active_profile_count,
+    unresolvedCount: snapshot.metadata.unresolved_count,
+  });
 
   const quarantine = snapshot.profiles.filter(
     (row) => row.publication_status === "quarantine_duplicate_active",
@@ -47,11 +57,31 @@ test("crosswalk canônico fecha o universo ativo e explicita duplicidades", () =
       },
     ],
   );
-  assert.ok(
-    snapshot.profiles
-      .filter((row) => row.publication_status === "active")
-      .every(
-        (row) => row.canonical_registration_sq === row.registration_sqs[0],
+  assert.equal(
+    snapshot.profiles.filter((row) => row.publication_status === "active")
+      .length,
+    207,
+  );
+});
+
+test("crosswalk rejeita estado de publicação fora do contrato", () => {
+  const invalid = structuredClone(snapshot.profiles) as Array<
+    Omit<ActiveProfileCrosswalkEntry, "publication_status"> & {
+      publication_status: string;
+    }
+  >;
+  invalid[0].publication_status = "unknown";
+
+  assert.throws(
+    () =>
+      validateActiveProfileCrosswalk(
+        invalid as ActiveProfileCrosswalkEntry[],
+        {
+          activeRegistrationCount: snapshot.metadata.active_registration_count,
+          activeProfileCount: snapshot.metadata.active_profile_count,
+          unresolvedCount: snapshot.metadata.unresolved_count,
+        },
       ),
+    /estado inválido/,
   );
 });
