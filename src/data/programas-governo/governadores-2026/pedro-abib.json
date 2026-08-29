@@ -615,125 +615,139 @@
     }
   ],
   "resumo": {
-    "texto": "O plano informa que, durante os dois meses de pré-campanha, foram visitados 40 municípios. O registro das visitas indica uma abrangência de 40 municípios ao longo do período de dois meses de pré-campanha. O plano informa que aproximadamente 76% da malha rodoviária estadual de Rondônia não é pavimentada. A malha rodoviária estadual de Rondônia é descrita no plano como tendo aproximadamente 76% de sua extensão sem pavimentação. O plano organiza a transição econômica de Rondônia em oito frentes estruturantes, apresentadas como orientação das políticas propostas na Seção 05. As oito frentes estruturantes constituem a forma indicada pelo plano para organizar a transição econômica de Rondônia e orientar as políticas propostas na Seção 05. O plano relaciona as oito frentes estruturantes à organização da transição econômica de Rondônia e à orientação das políticas propostas na Seção 05.",
+    "texto": "Entre as medidas de organização administrativa, o plano propõe criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance. Na área educacional, o plano prevê ampliar o número de vagas em escolas em tempo integral, indicando essa expansão como medida prevista no documento. Na área da saúde, o plano propõe universalizar os serviços de telemedicina na rede estadual, registrando essa universalização como uma diretriz apresentada. Na área de segurança urbana, o plano prevê adotar estruturas urbanas de prevenção ao crime com iluminação, conforme a formulação apresentada. No campo cultural e econômico, o plano propõe criar a Política Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e Economia Criativa. No campo da pesquisa, o plano prevê criar rubrica orçamentária própria e específica para pesquisa, apresentando essa rubrica como medida orçamentária prevista.",
     "frases": [
       {
-        "texto": "O plano informa que, durante os dois meses de pré-campanha, foram visitados 40 municípios.",
+        "texto": "Entre as medidas de organização administrativa, o plano propõe criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 4,
-            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+            "pagina": 21,
+            "trecho": "Criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance com a atribuição de:"
           }
         ]
       },
       {
-        "texto": "O registro das visitas indica uma abrangência de 40 municípios ao longo do período de dois meses de pré-campanha.",
+        "texto": "Na área educacional, o plano prevê ampliar o número de vagas em escolas em tempo integral, indicando essa expansão como medida prevista no documento.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 4,
-            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+            "pagina": 27,
+            "trecho": "viii) Ampliar o número de vagas em escolas em tempo integral:"
           }
         ]
       },
       {
-        "texto": "O plano informa que aproximadamente 76% da malha rodoviária estadual de Rondônia não é pavimentada.",
+        "texto": "Na área da saúde, o plano propõe universalizar os serviços de telemedicina na rede estadual, registrando essa universalização como uma diretriz apresentada.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 13,
-            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+            "pagina": 29,
+            "trecho": "xi) Universalizar os serviços de telemedicina na rede estadual de"
           }
         ]
       },
       {
-        "texto": "A malha rodoviária estadual de Rondônia é descrita no plano como tendo aproximadamente 76% de sua extensão sem pavimentação.",
+        "texto": "Na área de segurança urbana, o plano prevê adotar estruturas urbanas de prevenção ao crime com iluminação, conforme a formulação apresentada.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 13,
-            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+            "pagina": 31,
+            "trecho": "x) Adotar estruturas urbanas de prevenção ao crime - iluminação"
           }
         ]
       },
       {
-        "texto": "O plano organiza a transição econômica de Rondônia em oito frentes estruturantes, apresentadas como orientação das políticas propostas na Seção 05.",
+        "texto": "No campo cultural e econômico, o plano propõe criar a Política Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e Economia Criativa.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 14,
-            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+            "pagina": 35,
+            "trecho": "xxii) Criar a Politica Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e\nEconomia Criativa:"
           }
         ]
       },
       {
-        "texto": "As oito frentes estruturantes constituem a forma indicada pelo plano para organizar a transição econômica de Rondônia e orientar as políticas propostas na Seção 05.",
+        "texto": "No campo da pesquisa, o plano prevê criar rubrica orçamentária própria e específica para pesquisa, apresentando essa rubrica como medida orçamentária prevista.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 14,
-            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
-          }
-        ]
-      },
-      {
-        "texto": "O plano relaciona as oito frentes estruturantes à organização da transição econômica de Rondônia e à orientação das políticas propostas na Seção 05.",
-        "evidencias": [
-          {
-            "documentoId": "RO:220002551251:01",
-            "pagina": 14,
-            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+            "pagina": 39,
+            "trecho": "i) Criar rubrica orçamentária própria e especifica para pesquisa no"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "pre-campanha",
-        "titulo": "Pré-campanha",
-        "descricao": "Registro de visitas realizadas durante os dois meses de pré-campanha.",
+        "id": "organizacao-administrativa",
+        "titulo": "Organização administrativa",
+        "descricao": "Criação de coordenação no âmbito do Gabinete do Governador.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 4,
-            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+            "pagina": 21,
+            "trecho": "Criar, no âmbito do Gabinete do Governador, a Coordenação de Projetos Estruturais e Compliance com a atribuição de:"
           }
         ]
       },
       {
-        "id": "municipios-visitados",
-        "titulo": "Municípios visitados",
-        "descricao": "Visitas informadas em 40 municípios.",
+        "id": "educacao-integral",
+        "titulo": "Educação integral",
+        "descricao": "Ampliação de vagas em escolas em tempo integral.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 4,
-            "trecho": "Visitamos 40 municipios nos dois meses de pré-campanha"
+            "pagina": 27,
+            "trecho": "viii) Ampliar o número de vagas em escolas em tempo integral:"
           }
         ]
       },
       {
-        "id": "malha-rodoviaria",
-        "titulo": "Malha rodoviária",
-        "descricao": "Situação de pavimentação da malha rodoviária estadual.",
+        "id": "telemedicina-estadual",
+        "titulo": "Telemedicina estadual",
+        "descricao": "Universalização dos serviços de telemedicina na rede estadual.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 13,
-            "trecho": "Rondônia possui aproximadamente 76% de sua malha rodoviária estadual sem pavimentação"
+            "pagina": 29,
+            "trecho": "xi) Universalizar os serviços de telemedicina na rede estadual de"
           }
         ]
       },
       {
-        "id": "transicao-economica",
-        "titulo": "Transição econômica",
-        "descricao": "Organização da transição econômica em oito frentes estruturantes.",
+        "id": "prevencao-urbana",
+        "titulo": "Prevenção urbana",
+        "descricao": "Adoção de estruturas urbanas de prevenção ao crime com iluminação.",
         "evidencias": [
           {
             "documentoId": "RO:220002551251:01",
-            "pagina": 14,
-            "trecho": "Oito frentes estruturantes que organizam a transição econômica de Rondônia e orientam todas as politicas propostas na Seção 05."
+            "pagina": 31,
+            "trecho": "x) Adotar estruturas urbanas de prevenção ao crime - iluminação"
+          }
+        ]
+      },
+      {
+        "id": "economia-criativa",
+        "titulo": "Economia criativa",
+        "descricao": "Criação de política estadual com edital anual de fomento.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 35,
+            "trecho": "xxii) Criar a Politica Estadual de Apoio à Economia Criativa, com edital anual de fomento, integrada à Superintendência de Cultura e\nEconomia Criativa:"
+          }
+        ]
+      },
+      {
+        "id": "orcamento-de-pesquisa",
+        "titulo": "Orçamento de pesquisa",
+        "descricao": "Criação de rubrica orçamentária própria e específica para pesquisa.",
+        "evidencias": [
+          {
+            "documentoId": "RO:220002551251:01",
+            "pagina": 39,
+            "trecho": "i) Criar rubrica orçamentária própria e especifica para pesquisa no"
           }
         ]
       }
@@ -742,342 +756,372 @@
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
     "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T23:41:35.148Z"
+    "generatedAt": "2026-08-29T03:04:37.874Z"
   },
   "julgamento": {
     "model": "Anthropic Claude@claude-sonnet-5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T23:43:28.597Z",
+    "judgedAt": "2026-08-29T03:06:42.878Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência afirma literalmente o mesmo fato."
+        "reason": "Evidência confirma literalmente a criação da coordenação citada."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Número 40 e prazo de dois meses estão literalmente sustentados."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação apenas descreve o fato, sem juízo de valor."
+        "reason": "Redação descritiva, sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta/fato coerente sobre visitas."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Claim e evidência pertencem à mesma chave e documento informado."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:1:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a única cláusula material do claim."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho original."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Números coincidem com a evidência."
+        "reason": "Não há números específicos na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do dado."
+        "reason": "Redação neutra e descritiva."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única sobre visitas de pré-campanha."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:2:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a cláusula material."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "Evidência confirma literalmente a diretriz."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Percentual 76% literalmente sustentado."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição factual sem juízo de valor."
+        "reason": "Redação neutra e descritiva."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único sobre infraestrutura rodoviária."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento informado."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:3:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre toda a cláusula material do claim."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel ao texto."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Número consistente com evidência."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Redação neutra e descritiva."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:4:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre toda a afirmação."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho corresponde quase literalmente à afirmação."
+        "reason": "Evidência confirma literalmente a proposta completa."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Número 'oito' e 'Seção 05' sustentados literalmente."
+        "reason": "'Anual' sustentado literalmente pela evidência."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do conteúdo."
+        "reason": "Redação neutra e descritiva."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área única e coerente."
+        "reason": "Trata de uma única proposta coerente na área de economia criativa."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:5:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a cláusula material."
+        "reason": "Evidência cobre integralmente todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Números sustentados literalmente."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Sem juízo de valor."
+        "reason": "Redação neutra e descritiva."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
         "id": "2026:GOVERNADOR:RO:220002551251:frase:6:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:suporte",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel."
+        "reason": "Evidência confirma a criação da coordenação citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:numeros",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Números literalmente sustentados."
+        "reason": "Não há números na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Neutro."
+        "reason": "Redação neutra e descritiva."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:mistura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:identidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:frase:7:documentos:RO:220002551251:01:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:organizacao-administrativa:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa da afirmação."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:suporte",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta o resumo temático."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:numeros",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Prazo de dois meses sustentado literalmente."
+        "reason": "Não há números na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Redação neutra e descritiva."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:mistura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área única e coerente."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:identidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:pre-campanha:documentos:RO:220002551251:01:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:educacao-integral:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa do resumo temático."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:suporte",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado pela evidência."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:numeros",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Número 40 sustentado."
+        "reason": "Não há números na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Neutro."
+        "reason": "Redação neutra e descritiva."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:mistura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área única."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:identidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:municipios-visitados:documentos:RO:220002551251:01:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:telemedicina-estadual:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobertura completa."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:suporte",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo temático sustentado pela evidência."
+        "reason": "Evidência confirma literalmente a medida."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:numeros",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números no claim; não conflita com evidência."
+        "reason": "Não há números na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Redação neutra e descritiva."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:mistura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área única sobre infraestrutura."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:identidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:malha-rodoviaria:documentos:RO:220002551251:01:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:prevencao-urbana:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre o resumo temático."
+        "reason": "Evidência cobre integralmente a cláusula citada."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:suporte",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado literalmente pela evidência."
+        "reason": "Evidência confirma literalmente a política e o edital."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:numeros",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:numeros",
         "verdict": "yes",
-        "reason": "Número 'oito' sustentado."
+        "reason": "'Anual' sustentado literalmente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:neutralidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Redação neutra e descritiva."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:mistura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:mistura",
         "verdict": "yes",
-        "reason": "Área única e coerente."
+        "reason": "Trata de uma única proposta coerente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:identidade",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "Documento e chave eleitoral correspondem exatamente."
       },
       {
-        "id": "2026:GOVERNADOR:RO:220002551251:tema:transicao-economica:documentos:RO:220002551251:01:cobertura",
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:economia-criativa:documentos:RO:220002551251:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente o resumo temático."
+        "reason": "Evidência cobre integralmente as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a medida."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:identidade",
+        "verdict": "yes",
+        "reason": "Documento e chave eleitoral correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RO:220002551251:tema:orcamento-de-pesquisa:documentos:RO:220002551251:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula citada."
       }
     ]
   },
@@ -1104,11 +1148,11 @@
         "attempts": 1,
         "uso": {
           "input_tokens": 2,
-          "cache_creation_input_tokens": 19222,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 18387,
+          "cache_creation_input_tokens": 26922,
+          "cache_read_input_tokens": 0,
+          "output_tokens": 20467,
           "output_tokens_details": {
-            "thinking_tokens": 633
+            "thinking_tokens": 231
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -1116,37 +1160,37 @@
           },
           "service_tier": "standard",
           "cache_creation": {
-            "ephemeral_1h_input_tokens": 19222,
+            "ephemeral_1h_input_tokens": 26922,
             "ephemeral_5m_input_tokens": 0
           },
           "inference_geo": "not_available",
           "iterations": [
             {
               "input_tokens": 2,
-              "output_tokens": 18387,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 19222,
+              "output_tokens": 20467,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 26922,
               "cache_creation": {
                 "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 19222
+                "ephemeral_1h_input_tokens": 26922
               },
               "type": "message"
             }
           ],
           "speed": "standard",
-          "cost_usd": 0.2765044
+          "cost_usd": 0.33274400000000004
         }
       },
       "geracaoMultipassagem": {
         "planejador": "multipassagem-v3",
         "limiteBytes": 180000,
         "passagens": 1,
-        "passagensCacheadas": 0,
-        "chamadasGeracao": 1,
+        "passagensCacheadas": 1,
+        "chamadasGeracao": 0,
         "retriesPassagem": 0,
         "chamadasSintese": 1,
         "retriesSintese": 0,
-        "fingerprint": "0deec340a7c9db6689eb06c766db57f42d8b9748db7c881c05c2aa0c0032cef2",
+        "fingerprint": "3245f3c53cc5ad0e08fb6478c2d3402f15e4fe1793bde32f2d7364da9a65a993",
         "promptVersoes": {
           "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
           "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
@@ -1168,11 +1212,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T23:44:51.998Z",
+    "reviewedAt": "2026-08-29T03:09:12.046Z",
     "sourceSha256": "ec9d80a9fbd5601272a4160e37899639e7f9feecd481a6badffd60846537c916",
     "extractedTextSha256": "89bb27915362594973b37ccf6058c8848d7a431184f0614be0a497486123a646",
     "documentCount": 1,
     "documentSetSha256": "b20d138f062a07207de458398b0c52cee192ac888e88057b2c33fbcfe698584c",
-    "contentSha256": "6eaea1e297e03d13061276482ef19f8374a79e76b60ca9f8fed62f7ceb08f330"
+    "contentSha256": "5fa94352210ed4c68cc18e1784ff23c432abd9696b8ee6104fbcd08fde204f9e"
   }
 }

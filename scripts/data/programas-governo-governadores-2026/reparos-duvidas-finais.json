@@ -138,7 +138,8 @@
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "strategy": "fatos",
-      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Só sintetize depois de validar literalmente cada documento, página e trecho."
+      "guidance": "A lista FATOS contém exatamente seis fatos conferidos visualmente no PDF oficial. Devolva exatamente seis frases, cada uma usando um único fatoId e cada fatoId uma única vez. Não combine áreas, não corrija nem reescreva evidências e mantenha redação factual neutra entre 120 e 180 palavras.",
+      "factLimit": 6
     },
     {
       "uf": "RS",
