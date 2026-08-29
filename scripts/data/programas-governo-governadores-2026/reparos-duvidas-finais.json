@@ -64,7 +64,7 @@
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "strategy": "fatos",
-      "guidance": "Extraia fatos por página antes da síntese. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
+      "guidance": "Extraia fatos por página antes da síntese. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
     },
     {
       "uf": "PB",
@@ -100,7 +100,7 @@
       "nomeUrna": "SAMUEL DE MATTOS",
       "partido": "PSTU",
       "strategy": "fatos",
-      "guidance": "Não reutilize a resposta anterior. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
+      "guidance": "Não reutilize a resposta anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
     },
     {
       "uf": "RN",
@@ -136,7 +136,7 @@
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "strategy": "fatos",
-      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
+      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
     },
     {
       "uf": "RS",
