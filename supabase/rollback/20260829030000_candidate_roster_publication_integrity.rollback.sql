@@ -7,6 +7,12 @@ ALTER TABLE public.candidatos
 DO $$
 DECLARE forward_at timestamptz;
 BEGIN
+  -- O rollback é raro e deliberado. Bloqueia o pequeno universo eleitoral
+  -- inteiro antes do guard para impedir curadoria concorrente entre a leitura
+  -- da assinatura e os UPDATEs restauradores abaixo.
+  PERFORM 1 FROM public.candidatos FOR UPDATE;
+  PERFORM 1 FROM public.chapas_2026 FOR UPDATE;
+
   SELECT ultima_atualizacao INTO forward_at
   FROM public.candidatos WHERE slug='cleber-rabelo';
   IF NOT EXISTS (

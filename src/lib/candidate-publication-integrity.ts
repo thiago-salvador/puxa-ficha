@@ -39,6 +39,13 @@ export interface ProfileAdmissionInput {
   verificacao_campos: Record<string, unknown> | null;
 }
 
+export interface ActiveProfileCrosswalkEntry {
+  profile_slug: string;
+  canonical_registration_sq: string | null;
+  registration_sqs: string[];
+  publication_status: "active" | "quarantine_duplicate_active";
+}
+
 const normalize = (value: string | null | undefined) =>
   stripAccents(value ?? "")
     .trim()
@@ -82,35 +89,46 @@ export function reconcilePublicRoster(
   const unresolved = official.filter(
     (row) => classifyOfficialCandidacy(row) === "review_required",
   );
-  const publishedBySlug = new Map(published.map((row) => [row.slug, row]));
+  const publishedBySlug = new Map(
+    published.map((row) => [normalize(row.slug), row]),
+  );
   const activeBySlug = new Map<string, OfficialCandidacy[]>();
 
   for (const row of active) {
     if (!row.profile_slug) continue;
-    const rows = activeBySlug.get(row.profile_slug) ?? [];
+    const slug = normalize(row.profile_slug);
+    const rows = activeBySlug.get(slug) ?? [];
     rows.push(row);
-    activeBySlug.set(row.profile_slug, rows);
+    activeBySlug.set(slug, rows);
   }
 
   const activeSlugs = new Set(activeBySlug.keys());
   const missingPublic = active.filter(
     (row) => {
       if (!row.profile_slug) return true;
-      const profile = publishedBySlug.get(row.profile_slug);
-      return !profile || profile.office !== row.office || profile.uf !== row.uf;
+      const profile = publishedBySlug.get(normalize(row.profile_slug));
+      return (
+        !profile ||
+        normalize(profile.office) !== normalize(row.office) ||
+        normalize(profile.uf) !== normalize(row.uf)
+      );
     },
   );
   const stalePublic = published.filter((profile) => {
-    const officialRows = activeBySlug.get(profile.slug) ?? [];
+    const officialRows = activeBySlug.get(normalize(profile.slug)) ?? [];
     return !officialRows.some(
-      (row) => row.office === profile.office && row.uf === profile.uf,
+      (row) =>
+        normalize(row.office) === normalize(profile.office) &&
+        normalize(row.uf) === normalize(profile.uf),
     );
   });
   const identityMismatches = active.filter((row) => {
     if (!row.profile_slug) return false;
-    const profile = publishedBySlug.get(row.profile_slug);
+    const profile = publishedBySlug.get(normalize(row.profile_slug));
     return Boolean(
-      profile && (profile.office !== row.office || profile.uf !== row.uf),
+      profile &&
+        (normalize(profile.office) !== normalize(row.office) ||
+          normalize(profile.uf) !== normalize(row.uf)),
     );
   });
   const duplicateActiveMappings = Object.fromEntries(
@@ -134,6 +152,72 @@ export function reconcilePublicRoster(
     unresolved_official: unresolved,
     duplicate_active_mappings: duplicateActiveMappings,
   };
+}
+
+export function validateActiveProfileCrosswalk(
+  profiles: readonly ActiveProfileCrosswalkEntry[],
+  expected: {
+    activeRegistrationCount: number;
+    activeProfileCount: number;
+    unresolvedCount: number;
+  },
+): void {
+  if (expected.unresolvedCount !== 0) {
+    throw new Error(
+      `crosswalk recusado: ${expected.unresolvedCount} inscrição(ões) sem resolução`,
+    );
+  }
+  if (profiles.length !== expected.activeProfileCount) {
+    throw new Error(
+      `crosswalk recusado: ${profiles.length} perfis para ${expected.activeProfileCount} esperados`,
+    );
+  }
+
+  const registrations = new Set<string>();
+  for (const profile of profiles) {
+    if (
+      profile.publication_status !== "active" &&
+      profile.publication_status !== "quarantine_duplicate_active"
+    ) {
+      throw new Error(
+        `crosswalk recusado: estado inválido em ${profile.profile_slug}`,
+      );
+    }
+    if (profile.registration_sqs.length === 0) {
+      throw new Error(
+        `crosswalk recusado: ${profile.profile_slug} sem inscrição oficial`,
+      );
+    }
+    for (const sq of profile.registration_sqs) {
+      if (registrations.has(sq)) {
+        throw new Error(`crosswalk recusado: inscrição duplicada ${sq}`);
+      }
+      registrations.add(sq);
+    }
+    if (
+      profile.publication_status === "active" &&
+      (profile.registration_sqs.length !== 1 ||
+        profile.canonical_registration_sq !== profile.registration_sqs[0])
+    ) {
+      throw new Error(
+        `crosswalk recusado: inscrição canônica inválida em ${profile.profile_slug}`,
+      );
+    }
+    if (
+      profile.publication_status === "quarantine_duplicate_active" &&
+      (profile.registration_sqs.length < 2 ||
+        profile.canonical_registration_sq !== null)
+    ) {
+      throw new Error(
+        `crosswalk recusado: quarentena inválida em ${profile.profile_slug}`,
+      );
+    }
+  }
+  if (registrations.size !== expected.activeRegistrationCount) {
+    throw new Error(
+      `crosswalk recusado: ${registrations.size} inscrições para ${expected.activeRegistrationCount} esperadas`,
+    );
+  }
 }
 
 export function selectCurrentVice(
