@@ -1,8 +1,10 @@
 -- Rollback somente de dados do backfill estrito da issue #138.
--- Remove somente as quatro linhas Camara cujo payload oficial abaixo coincide.
+-- Remove somente as quatro linhas Camara cujo payload canonico completo abaixo coincide.
 -- Nunca remove as quatro linhas Senado homonimas nem altera o schema scoped.
 -- Um rollback de schema, se algum dia autorizado, deve ser arquivo separado e
 -- condicionado ao rollback coordenado dos writers e a zero colisoes.
+
+BEGIN;
 
 DO $precondition$
 DECLARE
@@ -21,8 +23,7 @@ BEGIN
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
     AND fonte = 'Camara'
-    AND proposicao_id_api IN ('123202', '123149', '123094', '121483')
-    AND metadata->>'backfill_issue' = '138';
+    AND proposicao_id_api IN ('123202', '123149', '123094', '121483');
   SELECT count(*) INTO senado_alvos
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
@@ -64,7 +65,9 @@ WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
   AND fonte = 'Camara' AND proposicao_id_api = '123202'
   AND tipo = 'EMC' AND numero = '188' AND ano = 2003
   AND ementa = 'Adita o art. 1º da PEC dando nova redação ao § 9º do art. 201 da Constituição Federal.'
-  AND metadata->>'backfill_issue' = '138';
+  AND situacao IS NULL AND url_inteiro_teor = 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145667'
+  AND tema IS NULL AND destaque = FALSE AND destaque_motivo IS NULL AND coverage_id IS NULL
+  AND metadata = '{}'::jsonb;
 
 -- @write tabela=projetos_lei ref=123149 campos=delete
 DELETE FROM public.projetos_lei
@@ -72,7 +75,9 @@ WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
   AND fonte = 'Camara' AND proposicao_id_api = '123149'
   AND tipo = 'EMC' AND numero = '163' AND ano = 2003
   AND ementa = 'Acrescentem-se, no art. 1º da PEC, as seguintes disposições aos arts. 40 e 42 da Constituição Federal, promovendo-se, em conseqüência, as seguintes modificações no art. 2º da PEC, relativamente ao caput do art. 8º da Emenda Constitucional nº 20, de 15 de dezembro de 1998:'
-  AND metadata->>'backfill_issue' = '138';
+  AND situacao IS NULL AND url_inteiro_teor = 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145577'
+  AND tema IS NULL AND destaque = FALSE AND destaque_motivo IS NULL AND coverage_id IS NULL
+  AND metadata = '{}'::jsonb;
 
 -- @write tabela=projetos_lei ref=123094 campos=delete
 DELETE FROM public.projetos_lei
@@ -80,7 +85,9 @@ WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
   AND fonte = 'Camara' AND proposicao_id_api = '123094'
   AND tipo = 'EMC' AND numero = '143' AND ano = 2003
   AND ementa = 'Modifica os arts. 37, 40, 42, 48, 96, 142 e 149 da Constituição Federal, o art. 8º da Emenda Constitucional nº 20, de 15 de dezembro de 1998, e dá outras providências.'
-  AND metadata->>'backfill_issue' = '138';
+  AND situacao IS NULL AND url_inteiro_teor = 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145483'
+  AND tema IS NULL AND destaque = FALSE AND destaque_motivo IS NULL AND coverage_id IS NULL
+  AND metadata = '{}'::jsonb;
 
 -- @write tabela=projetos_lei ref=121483 campos=delete
 DELETE FROM public.projetos_lei
@@ -88,7 +95,9 @@ WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
   AND fonte = 'Camara' AND proposicao_id_api = '121483'
   AND tipo = 'EMC' AND numero = '89' AND ano = 2003
   AND ementa = 'Altera o Sistema Tributário Nacional e dá outras providências.'
-  AND metadata->>'backfill_issue' = '138';
+  AND situacao IS NULL AND url_inteiro_teor = 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=143048'
+  AND tema IS NULL AND destaque = FALSE AND destaque_motivo IS NULL AND coverage_id IS NULL
+  AND metadata = '{}'::jsonb;
 
 DO $postcondition$
 BEGIN
@@ -125,3 +134,5 @@ BEGIN
   END IF;
 END
 $postcondition$;
+
+COMMIT;

@@ -53,15 +53,18 @@ describe("identidade de proposição por fonte, issue #138", () => {
     assert.match(BACKFILL, /camara_total <> 1849/i)
     assert.match(BACKFILL, /senado_total <> 230/i)
     assert.match(BACKFILL, /payload exato das 4 linhas Senado/i)
+    assert.match(BACKFILL, /camara_exato <> 4/i)
+    assert.match(BACKFILL, /https:\/\/www\.camara\.leg\.br\/proposicoesWeb\/prop_mostrarintegra\?codteor=145667/)
     assert.match(BACKFILL, /set_config\('pf\.issue_138_backfill_apply', 'true', false\)/)
     assert.match(BACKFILL, /54370000952\/2006-48/)
     assert.match(BACKFILL, /texto da Comissão,  em relação/)
     assert.match(BACKFILL, /total_candidato <> 2079/i)
-    assert.match(BACKFILL, /autoria_principal_verificada.*false/i)
+    assert.match(BACKFILL, /payload segue exatamente o writer canonico/i)
+    assert.match(BACKFILL, /'\{\}'::jsonb/)
   })
 
-  test("rollback de dados exige payload marcado, protege Senado e preserva o schema novo", () => {
-    assert.match(ROLLBACK, /metadata->>'backfill_issue' = '138'/i)
+  test("rollback de dados exige payload completo, protege Senado e preserva o schema novo", () => {
+    assert.match(ROLLBACK, /metadata = '\{\}'::jsonb/i)
     assert.match(ROLLBACK, /fonte = 'Camara'/i)
     assert.match(ROLLBACK, /fonte = 'Senado'/i)
     assert.match(ROLLBACK, /indice scoped ausente/i)

@@ -2,6 +2,8 @@
 -- This file is schema-only. The bounded Ronaldo Caiado backfill is prepared in
 -- migrations-pendentes and is intentionally not part of the DDL replay.
 
+BEGIN;
+
 DO $precondition$
 DECLARE
   old_definition text;
@@ -75,3 +77,5 @@ BEGIN
   END IF;
 END
 $verification$;
+
+COMMIT;

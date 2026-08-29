@@ -70,7 +70,8 @@ function temEmentaPropria(tipo: string | null | undefined): boolean {
 }
 
 function normalizarFonte(fonte: string | null | undefined): string {
-  return (fonte ?? "").trim().toLowerCase()
+  const normalizada = (fonte ?? "").trim().toLowerCase()
+  return normalizada === "câmara" ? "camara" : normalizada
 }
 
 export interface ProposicaoAgrupada {
