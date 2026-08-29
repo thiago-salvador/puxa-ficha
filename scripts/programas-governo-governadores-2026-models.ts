@@ -739,7 +739,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/fatos-passagem`,
         PROGRAMA_GOVERNO_FATOS_SCHEMA,
-        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS, input.repairGuidance),
+        PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
         { identityKey: input.identityKey, documentos: input.documentos },
         (value) => {
           const fatosBrutos = validarFatosBrutos(value)

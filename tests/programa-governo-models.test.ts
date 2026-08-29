@@ -272,7 +272,7 @@ test("valida evidência literal antes de encerrar e tenta novamente com feedback
   assert.match(retry.instructions, /evidencia\[0\]/)
 })
 
-test("propaga orientação de reparo aprovada no gerador e no fluxo por fatos", async () => {
+test("aplica orientação de reparo apenas na geração e na síntese, sem contaminar a extração literal", async () => {
   const guidance = "Preserve o verbo literal da fonte e divida cada cláusula em um claim atômico."
   const requests: Array<{ promptVersion: string; instructions: string; input: Record<string, unknown> }> = []
   const adapters = createProgramaGovernoModelAdapters(config(), async (_command, _args, rawInput) => {
@@ -326,10 +326,12 @@ test("propaga orientação de reparo aprovada no gerador e no fluxo por fatos", 
   })
 
   assert.equal(requests.length, 3)
-  for (const request of requests) {
-    assert.match(request.instructions, /orientação de reparo aprovada/iu)
-    assert.match(request.instructions, /Preserve o verbo literal/)
-  }
+  assert.match(requests[0].instructions, /orientação de reparo aprovada/iu)
+  assert.match(requests[0].instructions, /Preserve o verbo literal/)
+  assert.doesNotMatch(requests[1].instructions, /orientação de reparo aprovada/iu)
+  assert.doesNotMatch(requests[1].instructions, /Preserve o verbo literal/)
+  assert.match(requests[2].instructions, /orientação de reparo aprovada/iu)
+  assert.match(requests[2].instructions, /Preserve o verbo literal/)
 })
 
 test("falha depois de maxAttempts quando a evidência continua divergente", async () => {

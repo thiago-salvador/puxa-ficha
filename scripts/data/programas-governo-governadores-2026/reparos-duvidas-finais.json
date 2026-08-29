@@ -64,7 +64,7 @@
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "strategy": "fatos",
-      "guidance": "Extraia fatos por página antes da síntese. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
+      "guidance": "Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis. O texto total deve ter entre 120 e 180 palavras."
     },
     {
       "uf": "PB",
@@ -100,7 +100,7 @@
       "nomeUrna": "SAMUEL DE MATTOS",
       "partido": "PSTU",
       "strategy": "fatos",
-      "guidance": "Não reutilize a resposta anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
+      "guidance": "Não reutilize a resposta anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis. O texto total deve ter entre 120 e 180 palavras."
     },
     {
       "uf": "RN",
@@ -136,7 +136,7 @@
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "strategy": "fatos",
-      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis."
+      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Selecione de seis a oito fatos materialmente distintos e use exatamente um fato por frase. Não repita o mesmo fato, span ou proposta em frases diferentes; não tente usar todos os fatos disponíveis. O texto total deve ter entre 120 e 180 palavras."
     },
     {
       "uf": "RS",
