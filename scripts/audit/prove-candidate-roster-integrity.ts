@@ -11,8 +11,10 @@ import { createClient } from "@supabase/supabase-js";
 const CONTAINER = `pf-candidate-integrity-${process.pid}`;
 const IMAGE =
   "postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317";
-const MIGRATION =
-  "supabase/migrations/20260829030000_candidate_roster_publication_integrity.sql";
+const MIGRATIONS = [
+  "supabase/migrations/20260829030000_candidate_roster_publication_integrity.sql",
+  "supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql",
+];
 const READBACK =
   "supabase/readback/20260829030000_candidate_roster_publication_integrity.readback.sql";
 const ROLLBACK =
@@ -206,7 +208,9 @@ async function main(): Promise<void> {
     );
     await waitForPostgres();
     psql(bootstrapSql(state.candidates, state.slates));
-    psql(readFileSync(MIGRATION, "utf8"));
+    for (const migration of MIGRATIONS) {
+      psql(readFileSync(migration, "utf8"));
+    }
     psql(readFileSync(READBACK, "utf8"));
     const forward = JSON.parse(
       psql(`SELECT json_build_object(
@@ -233,9 +237,13 @@ async function main(): Promise<void> {
         WHERE cargo_disputado IN ('Presidente','Governador') AND COALESCE(btrim(cor_raca),'')=''),
       'social_missing',(SELECT count(*) FROM public.candidatos_publico
         WHERE cargo_disputado IN ('Presidente','Governador') AND
+          (redes_sociais IS NULL OR redes_sociais::text IN ('{}','[]','null'))),
+      'social_missing_slugs',(SELECT COALESCE(json_agg(slug ORDER BY slug),'[]'::json)
+        FROM public.candidatos_publico
+        WHERE cargo_disputado IN ('Presidente','Governador') AND
           (redes_sociais IS NULL OR redes_sociais::text IN ('{}','[]','null')))
     );`),
-    ) as Record<string, number>;
+    ) as Record<string, number | string[]>;
     if (
       forward.header_count !== 208 ||
       forward.cleber_public !== 0 ||
@@ -264,7 +272,7 @@ async function main(): Promise<void> {
       );
     }
     console.log(
-      `CANDIDATE_ROSTER_INTEGRITY_PROOF_PASS header=208 cleber=0 well_ready=1 well_vice=SEU_ALEX required_missing=0 verification_missing=0 gender_missing=0 civil_status_missing=0 race_missing=0 social_missing=${forward.social_missing} rollback=ok`,
+      `CANDIDATE_ROSTER_INTEGRITY_PROOF_PASS header=208 cleber=0 well_ready=1 well_vice=SEU_ALEX required_missing=0 verification_missing=0 gender_missing=0 civil_status_missing=0 race_missing=0 social_missing=${forward.social_missing} social_missing_slugs=${JSON.stringify(forward.social_missing_slugs)} rollback=ok`,
     );
   } finally {
     spawnSync("docker", ["rm", "-f", CONTAINER], { stdio: "ignore" });

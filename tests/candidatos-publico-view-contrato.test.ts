@@ -326,6 +326,10 @@ describe("contrato da view candidatos_publico", () => {
       // excluindo identidade_status='duplicidade_oficial'.
       "20260828025028_chapas_2026_quarentena_schema.sql",
       "20260828025037_chapas_2026_tse_20260827.sql",
+      // Integridade do roster: curadoria e schema ficam separados. A segunda
+      // view afetada é chapas_2026_publico, não candidatos_publico.
+      "20260829030000_candidate_roster_publication_integrity.sql",
+      "20260829030001_candidate_roster_publication_integrity_schema.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

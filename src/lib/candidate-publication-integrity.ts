@@ -1,3 +1,5 @@
+import { stripAccents } from "./strip-accents";
+
 export type OfficialCandidacyState = "active" | "terminal" | "review_required";
 
 export interface OfficialCandidacy {
@@ -36,9 +38,7 @@ export interface ProfileAdmissionInput {
 }
 
 const normalize = (value: string | null | undefined) =>
-  (value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+  stripAccents(value ?? "")
     .trim()
     .toLowerCase();
 
