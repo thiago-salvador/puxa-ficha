@@ -32,6 +32,15 @@ function argument(name: string, fallback: string): string {
   );
 }
 
+function optionalArgument(name: string): string | null {
+  const prefix = `--${name}=`;
+  return (
+    process.argv
+      .find((item) => item.startsWith(prefix))
+      ?.slice(prefix.length) ?? null
+  );
+}
+
 async function main(): Promise<void> {
   const snapshotPath = resolve(
     argument("snapshot", "data/chapas-2026-tse-20260827.json"),
@@ -39,6 +48,10 @@ async function main(): Promise<void> {
   const outputPath = resolve(
     argument("out", "output/data-freshness/divulgacand-current.json"),
   );
+  const activeOutputArgument = optionalArgument("active-out");
+  const activeOutputPath = activeOutputArgument
+    ? resolve(activeOutputArgument)
+    : null;
   const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
     chapas: SnapshotSlate[];
   };
@@ -82,6 +95,35 @@ async function main(): Promise<void> {
   const unresolved = records.filter(
     (row) => row.classification === "review_required",
   );
+  const activeByProfile = new Map<string, typeof active>();
+  for (const row of active) {
+    if (!row.profile_slug) {
+      throw new Error(`titular ativo sem perfil mapeado: ${row.sq_candidato}`);
+    }
+    const current = activeByProfile.get(row.profile_slug) ?? [];
+    current.push(row);
+    activeByProfile.set(row.profile_slug, current);
+  }
+  const activeProfiles = [...activeByProfile.entries()]
+    .map(([profileSlug, rows]) => ({
+      profile_slug: profileSlug,
+      office: rows[0].office,
+      uf: rows[0].uf,
+      canonical_registration_sq:
+        rows.length === 1 ? rows[0].sq_candidato : null,
+      registration_sqs: rows.map((row) => row.sq_candidato).sort(),
+      names: [...new Set(rows.map((row) => row.name))].sort(),
+      parties: [...new Set(rows.map((row) => row.party))].sort(),
+      statuses: [...new Set(rows.map((row) => row.status))].sort(),
+      publication_status:
+        rows.length === 1 ? "active" : "quarantine_duplicate_active",
+    }))
+    .sort(
+      (left, right) =>
+        left.office.localeCompare(right.office) ||
+        (left.uf ?? "").localeCompare(right.uf ?? "") ||
+        left.profile_slug.localeCompare(right.profile_slug),
+    );
   const output = {
     metadata: {
       checked_at: new Date().toISOString(),
@@ -100,10 +142,30 @@ async function main(): Promise<void> {
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  if (activeOutputPath) {
+    const activeCrosswalk = {
+      metadata: {
+        checked_at: output.metadata.checked_at,
+        source: DIVULGACAND_BASE,
+        election_id: ELECTION_ID_2026,
+        active_registration_count: active.length,
+        active_profile_count: activeProfiles.length,
+        unresolved_count: unresolved.length,
+        source_urls: collected.sources,
+      },
+      profiles: activeProfiles,
+    };
+    mkdirSync(dirname(activeOutputPath), { recursive: true });
+    writeFileSync(
+      activeOutputPath,
+      `${JSON.stringify(activeCrosswalk, null, 2)}\n`,
+    );
+  }
   console.log(
     JSON.stringify(
       {
         output: outputPath,
+        active_crosswalk: activeOutputPath,
         official_total: records.length,
         active_total: active.length,
         terminal: terminal.map((row) => ({

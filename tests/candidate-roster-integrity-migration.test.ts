@@ -2,10 +2,15 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-const migration = readFileSync(
+const dataMigration = readFileSync(
   "supabase/migrations/20260829030000_candidate_roster_publication_integrity.sql",
   "utf8",
 );
+const schemaMigration = readFileSync(
+  "supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql",
+  "utf8",
+);
+const migration = `${dataMigration}\n${schemaMigration}`;
 const readback = readFileSync(
   "supabase/readback/20260829030000_candidate_roster_publication_integrity.readback.sql",
   "utf8",
@@ -36,6 +41,18 @@ test("candidatura terminal sai da superfície sem apagar o histórico", () => {
   assert.match(migration, /status = 'removido'/);
   assert.match(migration, /publicavel = false/);
   assert.doesNotMatch(migration, /DELETE FROM public\.candidatos/i);
+});
+
+test("curadoria e schema permanecem em migrations estruturalmente separadas", () => {
+  assert.doesNotMatch(
+    dataMigration,
+    /\b(ALTER TABLE|CREATE OR REPLACE VIEW|GRANT SELECT|COMMENT ON VIEW)\b/i,
+  );
+  assert.doesNotMatch(
+    schemaMigration,
+    /\b(INSERT\s+INTO|UPDATE\s+|DELETE\s+FROM|MERGE\s+INTO)\b/i,
+  );
+  assert.equal(schemaMigration.includes("@write"), false);
 });
 
 test("view pública aceita somente chapas com identidade confirmada", () => {
