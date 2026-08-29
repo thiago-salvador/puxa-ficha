@@ -31,6 +31,12 @@ describe("identidade de proposição por fonte, issue #138", () => {
     assert.match(DDL, /HAVING count\(\*\) > 1/i)
     assert.match(DDL, /DROP CONSTRAINT IF EXISTS uq_projetos_lei_candidato_proposicao/i)
     assert.match(DDL, /CREATE UNIQUE INDEX IF NOT EXISTS uq_projetos_lei_candidato_fonte_proposicao/i)
+    assert.ok(
+      DDL.indexOf("CREATE UNIQUE INDEX IF NOT EXISTS uq_projetos_lei_candidato_fonte_proposicao") <
+        DDL.indexOf("DROP CONSTRAINT IF EXISTS uq_projetos_lei_candidato_proposicao"),
+      "a chave nova precisa existir antes da remoção da antiga",
+    )
+    assert.match(DDL, /indexdef ILIKE '%\(candidato_id, fonte, proposicao_id_api\)%'/i)
     assert.doesNotMatch(DDL, /^\s*(INSERT|UPDATE|DELETE)\b/im)
   })
 
@@ -43,16 +49,23 @@ describe("identidade de proposição por fonte, issue #138", () => {
     assert.match(BACKFILL, /ON CONFLICT \(candidato_id, fonte, proposicao_id_api\) DO NOTHING/gi)
     assert.doesNotMatch(BACKFILL, /ON CONFLICT[\s\S]*DO UPDATE/i)
     assert.match(BACKFILL, /esperado baseline de 1845 Camara/i)
+    assert.match(BACKFILL, /esperado baseline total de 2075/i)
     assert.match(BACKFILL, /camara_total <> 1849/i)
-    assert.match(BACKFILL, /senado_total <> 4/i)
+    assert.match(BACKFILL, /senado_total <> 230/i)
+    assert.match(BACKFILL, /payload exato das 4 linhas Senado/i)
+    assert.match(BACKFILL, /set_config\('pf\.issue_138_backfill_apply', 'true', false\)/)
+    assert.match(BACKFILL, /54370000952\/2006-48/)
+    assert.match(BACKFILL, /texto da Comissão,  em relação/)
+    assert.match(BACKFILL, /total_candidato <> 2079/i)
+    assert.match(BACKFILL, /autoria_principal_verificada.*false/i)
   })
 
-  test("rollback exige payload marcado, protege Senado e só restaura a chave antiga sem colisões", () => {
+  test("rollback de dados exige payload marcado, protege Senado e preserva o schema novo", () => {
     assert.match(ROLLBACK, /metadata->>'backfill_issue' = '138'/i)
     assert.match(ROLLBACK, /fonte = 'Camara'/i)
     assert.match(ROLLBACK, /fonte = 'Senado'/i)
-    assert.match(ROLLBACK, /GROUP BY candidato_id, proposicao_id_api/i)
-    assert.match(ROLLBACK, /DROP INDEX IF EXISTS public\.uq_projetos_lei_candidato_fonte_proposicao/i)
-    assert.match(ROLLBACK, /ADD CONSTRAINT uq_projetos_lei_candidato_proposicao/i)
+    assert.match(ROLLBACK, /indice scoped ausente/i)
+    assert.doesNotMatch(ROLLBACK, /DROP INDEX/i)
+    assert.doesNotMatch(ROLLBACK, /ADD CONSTRAINT/i)
   })
 })

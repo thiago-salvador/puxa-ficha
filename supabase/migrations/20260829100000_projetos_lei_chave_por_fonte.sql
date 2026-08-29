@@ -33,14 +33,16 @@ BEGIN
 END
 $precondition$;
 
-ALTER TABLE public.projetos_lei
-  DROP CONSTRAINT IF EXISTS uq_projetos_lei_candidato_proposicao;
-
 -- A unique index (em vez de um UNIQUE parcial) permite que o PostgREST infira
 -- a chave do upsert. PostgreSQL continua permitindo varias linhas sem ID, como
 -- deve: NULL nao identifica uma proposicao.
 CREATE UNIQUE INDEX IF NOT EXISTS uq_projetos_lei_candidato_fonte_proposicao
   ON public.projetos_lei (candidato_id, fonte, proposicao_id_api);
+
+-- A chave nova existe antes da remocao da antiga. Assim, durante a transicao,
+-- nenhum writer que ja usa o conflito composto fica sem alvo de inferencia.
+ALTER TABLE public.projetos_lei
+  DROP CONSTRAINT IF EXISTS uq_projetos_lei_candidato_proposicao;
 
 DO $verification$
 BEGIN
@@ -52,6 +54,16 @@ BEGIN
       AND indexname = 'uq_projetos_lei_candidato_fonte_proposicao'
   ) THEN
     RAISE EXCEPTION 'projetos_lei_source_key: indice da chave composta ausente';
+  END IF;
+  IF NOT EXISTS (
+    SELECT 1
+    FROM pg_indexes
+    WHERE schemaname = 'public'
+      AND tablename = 'projetos_lei'
+      AND indexname = 'uq_projetos_lei_candidato_fonte_proposicao'
+      AND indexdef ILIKE '%(candidato_id, fonte, proposicao_id_api)%'
+  ) THEN
+    RAISE EXCEPTION 'projetos_lei_source_key: indice nao cobre a chave do ON CONFLICT composto';
   END IF;
   IF EXISTS (
     SELECT 1
