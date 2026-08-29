@@ -361,7 +361,7 @@ function estimarPassagens(
 }
 
 export function planejarFilaProgramaGovernoGovernadores(
-  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes">,
+  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes" | "forceFacts">,
   inventory: ProgramaGovernoGovInventory,
 ): ProgramaGovernoGovFilaItem[] {
   assertInventoryScope(inventory, options.ufs)
@@ -394,6 +394,8 @@ export function planejarFilaProgramaGovernoGovernadores(
     const totalPaginas = documentos.reduce((acumulado, documento) => acumulado + documento.paginas, 0)
     const bytesTextoExtraidos = documentos.reduce((acumulado, documento) => acumulado + documento.textoExtraidoBytes, 0)
     const estimativa = estimarPassagens(documentos, limite, candidate.chave)
+    const fatosForcados = options.forceFacts === true && !estimativa.multipassagem
+    const usaPipelineFatos = options.forceFacts === true || estimativa.multipassagem
     const usaModelos = candidate.fonteEstado === "documento_oficial_encontrado"
       && candidate.identidadeEstado === "confirmada"
       && candidate.perfilEstado === "vinculado"
@@ -414,11 +416,11 @@ export function planejarFilaProgramaGovernoGovernadores(
       totalPaginas,
       bytesTextoExtraidos,
       bytesEntradaEstimados: estimativa.bytesEntrada,
-      multipassagem: estimativa.multipassagem,
+      multipassagem: usaPipelineFatos,
       passagensPlanejadas: estimativa.passagens,
       chaveCacheDir: createHash("sha256").update(candidate.chave).digest("hex").slice(0, 16),
       usaModelos,
-      custoEstimado: Number((estimativa.passagens + totalPaginas / 300).toFixed(3)),
+      custoEstimado: Number((estimativa.passagens + (fatosForcados ? 1 : 0) + totalPaginas / 300).toFixed(3)),
     }
   })
 }
