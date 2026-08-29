@@ -147,7 +147,7 @@ export const PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS = [
 
 export const PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS = [
   "Produza um resumo factual e neutro do programa oficial com 120 a 180 palavras, seis a oito frases e quatro a seis temas, usando EXCLUSIVAMENTE os fatos listados em FATOS dentro do input.",
-  "Cada frase referencia os fatoIds que a sustentam; cada tema referencia ao menos um fatoId. Nao invente numeros nem contexto externo.",
+  "Cada frase referencia os fatoIds que a sustentam, e um mesmo fatoId nunca pode aparecer em mais de uma frase; cada tema referencia ao menos um fatoId. Nao invente numeros nem contexto externo.",
   "Restricoes mecanicas: o campo 'texto' tem 120 a 180 palavras e cada frase de 'frases.texto' aparece verbatim dentro dele; cada frase e cada tema trata de UMA unica area coerente, sem juntar propostas independentes nem com fatoIds diferentes.",
   "As evidencias dos fatoIds escolhidos devem sustentar todas as clausulas da frase; se um fato combinado nao cobre tudo, divida em duas frases ou remova a clausula.",
   "Redacao estritamente descritiva: proibido usar 'apenas', 'somente', 'so', 'meramente' ou qualquer palavra de enfase avaliativa; use verbos neutros como prevê, propoe, planeja.",

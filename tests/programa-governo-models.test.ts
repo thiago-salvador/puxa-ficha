@@ -281,10 +281,10 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     if (envelope.promptVersion.endsWith("/fatos-passagem")) {
       return {
         stdout: JSON.stringify({
-          fatos: [{
-            texto: "A fonte prevê uma medida administrativa.",
+          fatos: Array.from({ length: 6 }, (_, index) => ({
+            texto: `A fonte prevê a medida administrativa ${index + 1}.`,
             evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: "Trecho literal." }],
-          }],
+          })),
         }),
         stderr: "",
       }
@@ -298,7 +298,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
           texto,
           frases: Array.from({ length: 6 }, (_, index) => ({
             texto: palavras.slice(index * 8, index * 8 + 8).join(" "),
-            fatoIds: [fatoIds[0]],
+            fatoIds: [fatoIds[index]],
           })),
           temas: Array.from({ length: 4 }, (_, index) => ({
             id: `tema-${index + 1}`,

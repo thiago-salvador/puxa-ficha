@@ -319,7 +319,8 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
   if (!Array.isArray(frases) || !Array.isArray(temas)) throw new Error("multipassagem: frases/temas ausentes")
   const fatosPorId = new Map(fatos.map((fato) => [fato.id, fato]))
   const cobertura = new Set<string>()
-  const verificarEvidencia = (item: unknown, caminho: string) => {
+  const fatosUsadosEmFrases = new Set<string>()
+  const verificarEvidencia = (item: unknown, caminho: string, impedirReusoEntreFrases = false) => {
     if (!item || typeof item !== "object") throw new Error(`multipassagem: ${caminho} invalido`)
     const raw = item as Record<string, unknown>
     const referencias = referenciaFatoIds(raw)
@@ -330,10 +331,14 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
       const id = referenciaId(referencia)
       const fato = fatosPorId.get(id)
       if (!fato) throw new Error(`multipassagem: ${caminho} referencia fato desconhecido ${id}`)
+      if (impedirReusoEntreFrases && fatosUsadosEmFrases.has(id)) {
+        throw new Error(`multipassagem: reutiliza fato ${id} entre frases`)
+      }
+      if (impedirReusoEntreFrases) fatosUsadosEmFrases.add(id)
       cobertura.add(fato.id)
     }
   }
-  for (const frase of frases as unknown[]) verificarEvidencia(frase, "frases[]")
+  for (const frase of frases as unknown[]) verificarEvidencia(frase, "frases[]", true)
   for (const tema of temas as unknown[]) verificarEvidencia(tema, "temas[]")
   if (cobertura.size === 0) throw new Error("multipassagem: nenhum fato referenciado")
 }
