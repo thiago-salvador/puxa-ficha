@@ -56,13 +56,13 @@ async function main(): Promise<void> {
     chapas: SnapshotSlate[];
   };
   const profileBySq = new Map<string, string>();
-  const ambiguous = new Map<string, string>();
+  const ambiguous = new Map<string, string | null>();
 
   for (const slate of snapshot.chapas) {
     if (slate.titular.perfil_slug) {
       profileBySq.set(slate.titular.sq_candidato, slate.titular.perfil_slug);
     }
-    if (slate.identidade_status === "duplicidade_oficial" && slate.uf) {
+    if (slate.identidade_status === "duplicidade_oficial") {
       ambiguous.set(slate.titular.sq_candidato, slate.uf);
     }
   }

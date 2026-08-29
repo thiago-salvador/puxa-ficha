@@ -52,7 +52,7 @@ interface RawCandidate {
 interface RawVice {
   sq_CANDIDATO?: string | number;
   nm_URNA?: string;
-  situacaoVice?: number;
+  situacaoVice?: number | string;
 }
 
 function recordsFromPayload(payload: unknown): RawCandidate[] {
@@ -91,11 +91,17 @@ export function sanitizeCandidateList(
 export function sanitizeVices(payload: unknown): OfficialVice[] {
   if (!payload || typeof payload !== "object") return [];
   const raw = payload as { vices?: RawVice[] };
-  return (raw.vices ?? []).map((vice) => ({
-    sq_candidato: nonEmpty(vice.sq_CANDIDATO, "SQ da vice"),
-    name: nonEmpty(vice.nm_URNA, "nome de urna da vice"),
-    situacao_vice: Number(vice.situacaoVice),
-  }));
+  return (raw.vices ?? []).map((vice) => {
+    const status = Number(vice.situacaoVice);
+    if (!Number.isInteger(status) || status < 0) {
+      throw new Error("DivulgaCand com situação da vice inválida");
+    }
+    return {
+      sq_candidato: nonEmpty(vice.sq_CANDIDATO, "SQ da vice"),
+      name: nonEmpty(vice.nm_URNA, "nome de urna da vice"),
+      situacao_vice: status,
+    };
+  });
 }
 
 function listUrl(
@@ -186,10 +192,11 @@ export async function collectCurrentOfficialCandidacies(
 
 export async function collectCandidateVices(
   sqCandidato: string,
-  uf: string,
+  uf: string | null,
   fetchImpl: FetchLike = fetch,
 ) {
-  const url = `${DIVULGACAND_BASE}/buscar/2026/${uf}/${ELECTION_ID_2026}/candidato/${sqCandidato}`;
+  const scope = uf ?? "BR";
+  const url = `${DIVULGACAND_BASE}/buscar/2026/${scope}/${ELECTION_ID_2026}/candidato/${sqCandidato}`;
   return {
     vices: sanitizeVices(await fetchJsonWithRetry(url, fetchImpl)),
     source: url,

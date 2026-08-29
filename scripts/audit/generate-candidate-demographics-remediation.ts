@@ -55,6 +55,15 @@ async function main(): Promise<void> {
   if (!url || !serviceKey) {
     throw new Error("SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes");
   }
+  let parsedUrl: URL;
+  try {
+    parsedUrl = new URL(url);
+  } catch {
+    throw new Error("SUPABASE_URL inválida");
+  }
+  if (parsedUrl.protocol !== "https:") {
+    throw new Error("SUPABASE_URL exige HTTPS");
+  }
 
   const client = createClient(url, serviceKey, {
     auth: { persistSession: false },

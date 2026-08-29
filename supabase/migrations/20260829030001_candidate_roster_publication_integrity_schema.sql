@@ -8,6 +8,8 @@ ALTER TABLE public.candidatos
     OR cargo_disputado NOT IN ('Presidente','Governador')
     OR (
       COALESCE(btrim(foto_url),'')<>''
+      AND COALESCE(btrim(partido_sigla),'')<>''
+      AND COALESCE(btrim(situacao_candidatura),'')<>''
       AND COALESCE(btrim(biografia),'')<>''
       AND COALESCE(btrim(naturalidade),'')<>''
       AND data_nascimento IS NOT NULL

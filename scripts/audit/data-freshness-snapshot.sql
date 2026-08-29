@@ -64,6 +64,8 @@ WITH candidacies AS (
 ), public_profiles AS (
   SELECT jsonb_build_object(
     'slug', c.slug,
+    'partido_sigla', c.partido_sigla,
+    'situacao_candidatura', c.situacao_candidatura,
     'office', c.cargo_disputado,
     'uf', c.estado,
     'foto_url', c.foto_url,

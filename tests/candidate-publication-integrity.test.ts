@@ -87,6 +87,22 @@ test("detecta duas inscrições oficiais ativas ligadas ao mesmo perfil", () => 
   assert.equal(report.status, "review_required");
 });
 
+test("mesmo slug em cargo ou UF divergente não aprova a reconciliação", () => {
+  const official = [
+    {
+      ...fixture.candidacies[1],
+      profile_slug: "well-macedo",
+    },
+  ];
+  const report = reconcilePublicRoster(official, [
+    { slug: "well-macedo", office: "Presidente", uf: null },
+  ]);
+  assert.equal(report.status, "review_required");
+  assert.equal(report.identity_mismatches.length, 1);
+  assert.equal(report.missing_public.length, 1);
+  assert.equal(report.stale_public.length, 1);
+});
+
 test("seleciona a vice vigente e rejeita titular como própria vice", () => {
   assert.deepEqual(selectCurrentVice("140002554108", fixture.well_vices), {
     status: "resolved",
@@ -104,6 +120,8 @@ test("seleciona a vice vigente e rejeita titular como própria vice", () => {
 test("perfil novo vazio falha no gate de admissão com campos e procedência explícitos", () => {
   const report = analyzeProfileAdmission({
     slug: "well-macedo",
+    partido_sigla: null,
+    situacao_candidatura: null,
     foto_url: null,
     biografia: null,
     naturalidade: null,
@@ -118,6 +136,8 @@ test("perfil novo vazio falha no gate de admissão com campos e procedência exp
 
   assert.equal(report.ready, false);
   assert.deepEqual(report.missing_fields, [
+    "partido_sigla",
+    "situacao_candidatura",
     "foto_url",
     "biografia",
     "naturalidade",
@@ -133,6 +153,8 @@ test("perfil novo vazio falha no gate de admissão com campos e procedência exp
 test("perfil com valor ou vazio confirmado em todas as frentes pode ser admitido", () => {
   const report = analyzeProfileAdmission({
     slug: "perfil-pronto",
+    partido_sigla: "PSTU",
+    situacao_candidatura: "aguardando julgamento",
     foto_url: "https://divulgacandcontas.tse.jus.br/foto.jpg",
     biografia: "Biografia factual sustentada pelas fontes declaradas.",
     naturalidade: "Belém (PA)",

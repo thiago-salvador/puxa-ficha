@@ -53,6 +53,30 @@ function psql(sql: string): string {
   return result.stdout.trim();
 }
 
+function psqlMustFail(sql: string, expected: RegExp): void {
+  const result = spawnSync(
+    "docker",
+    [
+      "exec",
+      "-i",
+      CONTAINER,
+      "psql",
+      "-U",
+      "postgres",
+      "-d",
+      "postgres",
+      "-Atq",
+      "-v",
+      "ON_ERROR_STOP=1",
+    ],
+    { input: sql, encoding: "utf8" },
+  );
+  const output = `${result.stderr}\n${result.stdout}`;
+  if (result.status === 0 || !expected.test(output)) {
+    throw new Error(`falha esperada não ocorreu: ${output.slice(-2000)}`);
+  }
+}
+
 async function waitForPostgres(): Promise<void> {
   for (let attempt = 0; attempt < 60; attempt++) {
     const ready = spawnSync(
@@ -74,6 +98,14 @@ async function readSafeProductionState(): Promise<{
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceKey)
     throw new Error("SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes");
+  let parsedUrl: URL;
+  try {
+    parsedUrl = new URL(url);
+  } catch {
+    throw new Error("SUPABASE_URL inválida");
+  }
+  if (parsedUrl.protocol !== "https:")
+    throw new Error("SUPABASE_URL exige HTTPS");
   const client = createClient(url, serviceKey, {
     auth: { persistSession: false },
   });
@@ -81,6 +113,7 @@ async function readSafeProductionState(): Promise<{
     "id",
     "slug",
     "cargo_disputado",
+    "partido_sigla",
     "status",
     "situacao_candidatura",
     "publicavel",
@@ -145,7 +178,7 @@ function bootstrapSql(
 CREATE ROLE anon NOLOGIN;
 CREATE ROLE authenticated NOLOGIN;
 CREATE TABLE public.candidatos (
-  id uuid PRIMARY KEY, slug text UNIQUE NOT NULL, cargo_disputado text,
+  id uuid PRIMARY KEY, slug text UNIQUE NOT NULL, cargo_disputado text, partido_sigla text,
   status text, situacao_candidatura text, publicavel boolean,
   foto_url text, biografia text, naturalidade text, data_nascimento date,
   formacao text, profissao_declarada text, genero text, estado_civil text,
@@ -220,6 +253,7 @@ async function main(): Promise<void> {
       'well_vice',(SELECT count(*) FROM public.chapas_2026_publico WHERE titular_slug='well-macedo' AND vice_nome_urna='SEU ALEX'),
       'required_missing',(SELECT count(*) FROM public.candidatos_publico
         WHERE cargo_disputado IN ('Presidente','Governador') AND (
+          COALESCE(btrim(partido_sigla),'')='' OR COALESCE(btrim(situacao_candidatura),'')='' OR
           COALESCE(btrim(foto_url),'')='' OR COALESCE(btrim(biografia),'')='' OR
           COALESCE(btrim(naturalidade),'')='' OR data_nascimento IS NULL OR
           COALESCE(btrim(formacao),'')='' OR COALESCE(btrim(profissao_declarada),'')=''
@@ -254,11 +288,26 @@ async function main(): Promise<void> {
       forward.gender_missing !== 0 ||
       forward.civil_status_missing !== 0 ||
       forward.race_missing !== 0
+      || forward.social_missing !== 11
     ) {
       throw new Error(
         `readback comportamental divergiu: ${JSON.stringify(forward)}`,
       );
     }
+    psqlMustFail(
+      `BEGIN;
+       ALTER TABLE public.candidatos DROP CONSTRAINT candidatos_publicacao_minima_2026_check;
+       UPDATE public.candidatos SET verificacao_campos=NULL WHERE slug='well-macedo';
+       ${readFileSync(READBACK, "utf8")}`,
+      /ficha pública abaixo do gate mínimo/,
+    );
+    psqlMustFail(
+      `BEGIN;
+       UPDATE public.candidatos SET ultima_atualizacao=clock_timestamp() + interval '1 second'
+       WHERE slug='well-macedo';
+       ${readFileSync(ROLLBACK, "utf8")}`,
+      /curadoria posterior à forward/,
+    );
     psql(readFileSync(ROLLBACK, "utf8"));
     const rollback = JSON.parse(
       psql(`SELECT json_build_object(

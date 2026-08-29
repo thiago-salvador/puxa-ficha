@@ -54,6 +54,17 @@ test("normaliza vices e preserva o código que decide vigência", () => {
       { sq_candidato: "140002554109", name: "SEU ALEX", situacao_vice: 1 },
     ],
   );
+  assert.throws(
+    () => sanitizeVices({ vices: [{ sq_CANDIDATO: 1, nm_URNA: "X" }] }),
+    /situação da vice inválida/,
+  );
+  assert.throws(
+    () =>
+      sanitizeVices({
+        vices: [{ sq_CANDIDATO: 1, nm_URNA: "X", situacaoVice: "x" }],
+      }),
+    /situação da vice inválida/,
+  );
 });
 
 test("coleta falha fechada se qualquer UF vier vazia", async () => {

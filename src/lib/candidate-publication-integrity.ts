@@ -25,6 +25,8 @@ export interface OfficialVice {
 
 export interface ProfileAdmissionInput {
   slug: string;
+  partido_sigla: string | null;
+  situacao_candidatura: string | null;
   foto_url: string | null;
   biografia: string | null;
   naturalidade: string | null;
@@ -80,7 +82,7 @@ export function reconcilePublicRoster(
   const unresolved = official.filter(
     (row) => classifyOfficialCandidacy(row) === "review_required",
   );
-  const publishedSlugs = new Set(published.map((row) => row.slug));
+  const publishedBySlug = new Map(published.map((row) => [row.slug, row]));
   const activeBySlug = new Map<string, OfficialCandidacy[]>();
 
   for (const row of active) {
@@ -92,9 +94,25 @@ export function reconcilePublicRoster(
 
   const activeSlugs = new Set(activeBySlug.keys());
   const missingPublic = active.filter(
-    (row) => !row.profile_slug || !publishedSlugs.has(row.profile_slug),
+    (row) => {
+      if (!row.profile_slug) return true;
+      const profile = publishedBySlug.get(row.profile_slug);
+      return !profile || profile.office !== row.office || profile.uf !== row.uf;
+    },
   );
-  const stalePublic = published.filter((row) => !activeSlugs.has(row.slug));
+  const stalePublic = published.filter((profile) => {
+    const officialRows = activeBySlug.get(profile.slug) ?? [];
+    return !officialRows.some(
+      (row) => row.office === profile.office && row.uf === profile.uf,
+    );
+  });
+  const identityMismatches = active.filter((row) => {
+    if (!row.profile_slug) return false;
+    const profile = publishedBySlug.get(row.profile_slug);
+    return Boolean(
+      profile && (profile.office !== row.office || profile.uf !== row.uf),
+    );
+  });
   const duplicateActiveMappings = Object.fromEntries(
     [...activeBySlug.entries()].filter(([, rows]) => rows.length > 1),
   );
@@ -111,6 +129,7 @@ export function reconcilePublicRoster(
     published_profiles: published.length,
     missing_public: missingPublic,
     stale_public: stalePublic,
+    identity_mismatches: identityMismatches,
     terminal_official: terminal,
     unresolved_official: unresolved,
     duplicate_active_mappings: duplicateActiveMappings,
@@ -142,6 +161,8 @@ export function selectCurrentVice(
 }
 
 const REQUIRED_PROFILE_FIELDS = [
+  "partido_sigla",
+  "situacao_candidatura",
   "foto_url",
   "biografia",
   "naturalidade",

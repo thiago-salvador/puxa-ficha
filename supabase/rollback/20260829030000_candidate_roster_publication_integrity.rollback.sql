@@ -5,7 +5,10 @@ ALTER TABLE public.candidatos
 
 -- Rollback conservador sobre a assinatura exata desta forward migration.
 DO $$
+DECLARE forward_at timestamptz;
 BEGIN
+  SELECT ultima_atualizacao INTO forward_at
+  FROM public.candidatos WHERE slug='cleber-rabelo';
   IF NOT EXISTS (
     SELECT 1 FROM public.candidatos
     WHERE slug='cleber-rabelo' AND status='removido' AND publicavel=false
@@ -19,6 +22,19 @@ BEGIN
       AND foto_url='https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/140002554108/PA'
   ) THEN
     RAISE EXCEPTION 'rollback recusado: ficha de Well Macedo divergiu da forward';
+  END IF;
+  IF EXISTS (
+    SELECT 1
+    FROM public.candidatos c
+    WHERE c.id IN (
+      SELECT DISTINCT titular_candidato_id FROM public.chapas_2026
+      WHERE titular_candidato_id IS NOT NULL
+    )
+      AND c.publicavel=true
+      AND c.status<>'removido'
+      AND c.ultima_atualizacao IS DISTINCT FROM forward_at
+  ) THEN
+    RAISE EXCEPTION 'rollback recusado: existe curadoria posterior à forward';
   END IF;
 END $$;
 
