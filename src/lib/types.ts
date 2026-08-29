@@ -208,6 +208,8 @@ export interface VotacaoChave {
   casa: 'Câmara' | 'Senado';
   tema: string;
   impacto_popular: string;
+  /** Fonte nominal da votação, quando a linha foi auditada (camara ou senado). */
+  fonte?: string | null;
   /** ID da proposição na Câmara ou Senado, usado para link e explicação de fonte. Null quando não disponível. */
   proposicao_id?: string | null;
 }
@@ -286,7 +288,7 @@ export interface ProjetoLei {
   destaque: boolean;
   destaque_motivo: string | null;
   fonte: string;
-  /** ID da proposição na API da Câmara ou Senado, usado para audit, dedupe ou link de fonte. */
+  /** Chave da proposição na fonte: sempre interpretar junto com `fonte`. */
   proposicao_id_api?: string | null;
   /** Etiqueta de cobertura da autoria parlamentar verificada (slug+orgao+janela). Espelha COMPLETE_PARLAMENTAR_AUTHORSHIP_COVERAGE. */
   coverage_id?: string | null;

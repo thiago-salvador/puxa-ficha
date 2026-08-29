@@ -429,7 +429,7 @@ async function ingestAutorias(
     // Contar tentativa como sucesso escondia escrita perdida (issue #138).
     const { error: upsertError } = await supabase
       .from("projetos_lei")
-      .upsert(row, { onConflict: "candidato_id,proposicao_id_api" })
+      .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
     if (upsertError) {
       recusados++
       if (!primeiroErro) primeiroErro = upsertError.message

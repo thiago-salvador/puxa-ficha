@@ -665,7 +665,7 @@ async function ingestProjetos(
     outcome.tentado++
     const { error: upsertError } = await supabase
       .from("projetos_lei")
-      .upsert(row, { onConflict: "candidato_id,proposicao_id_api" })
+      .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
 
     if (upsertError) {
       outcome.falhou++
