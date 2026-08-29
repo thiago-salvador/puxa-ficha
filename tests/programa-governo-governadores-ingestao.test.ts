@@ -341,6 +341,8 @@ test("generator-only persiste checkpoint privado, sem julgamento, e resume sem c
     identityKey: string
     source: { sqCandidato: string }
     documentHashes: Array<{ sourceSha256: string }>
+    generatorInputSha256: string
+    summarySha256: string
     contract: { promptVersion: string }
   }
   assert.equal(checkpoint.kind, "programa-governo-generator-checkpoint")
@@ -535,7 +537,9 @@ test("ingere todos os documentos sequenciais com hash, paginas, modelos separado
   assert.deepEqual(observations, ["generator-mock", "generator-mock", "judge-mock"])
   assert.equal(record.ingestao.modelos?.generator.attempts, 2)
   assert.equal(record.ingestao.modelos?.generator.name, "Anthropic Claude")
-  assert.equal(record.ingestao.modelos?.judge.name, "OpenAI GPT")
+  const judgeMetadata = record.ingestao.modelos?.judge
+  assert.ok(judgeMetadata)
+  assert.equal(judgeMetadata.name, "OpenAI GPT")
   assert.equal(record.julgamento?.promptVersion, "programa-governo-governadores-judge-v2")
   assert.deepEqual(record.ingestao.eval?.dimensoes, PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS)
   assert.equal(record.julgamento?.verdicts.length, (6 + 4) * 6)

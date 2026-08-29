@@ -343,7 +343,14 @@ export function assertProgramaGovernoDocumentSetMatchesSource(
 
 export function assertProgramaGovernoModelSeparation(record: ProgramaGovernoPipelineRecord): void {
   if (!record.geracao?.model || !record.julgamento?.model) throw new Error(`${record.fonte.slug}: metadados de gerador ou judge ausentes`)
-  const family = (model: string) => model.trim().split(/\s+/u)[0].toLocaleLowerCase("pt-BR")
+  // Model metadata is serialized as "Provider Family@version". Comparing only
+  // the first whitespace-delimited token collapses OpenAI Luna and OpenAI Sol
+  // into the same family, which incorrectly rejects the Codex-only pipeline.
+  // Keep the legacy first-token fallback for metadata without the family form.
+  const family = (model: string) => {
+    const normalized = model.trim()
+    return (normalized.includes("@") ? normalized.split("@", 1)[0] : normalized.split(/\s+/u)[0]).toLocaleLowerCase("pt-BR")
+  }
   if (family(record.geracao.model) === family(record.julgamento.model)) {
     throw new Error(`${record.fonte.slug}: judge deve usar familia diferente do gerador`)
   }
