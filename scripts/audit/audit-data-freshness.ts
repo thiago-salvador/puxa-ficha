@@ -86,13 +86,38 @@ function writeJson(path: string, value: unknown): void {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-function readCurrentOfficial(path: string): OfficialCandidacy[] {
+function readCurrentOfficial(path: string): {
+  records: OfficialCandidacy[];
+  checkedAt: string | null;
+} {
   const parsed = JSON.parse(readFileSync(path, "utf8")) as
-    OfficialCandidacy[] | { records?: OfficialCandidacy[] };
+    | OfficialCandidacy[]
+    | { records?: OfficialCandidacy[]; metadata?: { checked_at?: string } };
   const records = Array.isArray(parsed) ? parsed : parsed.records;
   if (!Array.isArray(records))
     throw new Error("snapshot DivulgaCand não contém records[]");
-  return records;
+  return {
+    records,
+    checkedAt: Array.isArray(parsed) ? null : parsed.metadata?.checked_at ?? null,
+  };
+}
+
+function oldestEvidence(
+  left: SourceEvidence,
+  right: SourceEvidence,
+): SourceEvidence {
+  const values = [left.checked_at, right.checked_at];
+  if (values.some((value) => !value)) {
+    return { source_id: "tse-current", checked_at: null };
+  }
+  const invalid = values.find((value) => !Number.isFinite(Date.parse(value!)));
+  if (invalid) return { source_id: "tse-current", checked_at: invalid };
+  return {
+    source_id: "tse-current",
+    checked_at: values.sort(
+      (a, b) => Date.parse(a!) - Date.parse(b!),
+    )[0]!,
+  };
 }
 
 function attachPublishedProfiles(
@@ -169,6 +194,10 @@ async function main(): Promise<void> {
     source_id: "tse-current",
     checked_at: null,
   };
+  let divulgacandEvidence: SourceEvidence = {
+    source_id: "tse-current",
+    checked_at: null,
+  };
 
   try {
     if (options.officialSnapshot) {
@@ -219,15 +248,35 @@ async function main(): Promise<void> {
     }
 
     if (options.currentOfficialSnapshot) {
-      currentOfficial = readCurrentOfficial(options.currentOfficialSnapshot);
+      const currentSnapshot = readCurrentOfficial(
+        options.currentOfficialSnapshot,
+      );
+      currentOfficial = currentSnapshot.records;
+      divulgacandEvidence = {
+        source_id: "tse-current",
+        checked_at: currentSnapshot.checkedAt,
+      };
+      const currentSource = monitoredRegistry.find(
+        (entry) => entry.source_id === "tse-current",
+      );
+      if (!currentSource) throw new Error("registry sem tse-current");
       source.divulgacand = {
-        status: "fresh",
+        status: evaluateSourceFreshness(
+          currentSource,
+          divulgacandEvidence,
+          options.now,
+        ).status,
         mode: "versioned_snapshot",
         path: options.currentOfficialSnapshot,
+        checked_at: currentSnapshot.checkedAt,
       };
     } else {
       const current = await collectCurrentOfficialCandidacies();
       currentOfficial = current.records;
+      divulgacandEvidence = {
+        source_id: "tse-current",
+        checked_at: generatedAt,
+      };
       source.divulgacand = {
         status: "fresh",
         mode: "live_official",
@@ -235,6 +284,7 @@ async function main(): Promise<void> {
         sources: current.sources,
       };
     }
+    tseEvidence = oldestEvidence(tseEvidence, divulgacandEvidence);
   } catch (error) {
     const attempts = error instanceof OfficialSourceError ? error.attempts : [];
     const message = error instanceof Error ? error.message : String(error);

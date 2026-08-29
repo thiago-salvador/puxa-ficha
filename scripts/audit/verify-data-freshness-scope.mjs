@@ -12,6 +12,12 @@ const status = execFileSync(
   ["status", "--porcelain", "--untracked-files=all"],
   { encoding: "utf8" },
 );
+execFileSync("git", [
+  "fetch",
+  "--no-tags",
+  "origin",
+  "main:refs/remotes/origin/main",
+]);
 const committed = execFileSync(
   "git",
   ["diff", "--name-only", "origin/main...HEAD"],

@@ -7,13 +7,14 @@ BEGIN
     SELECT 1 FROM public.candidatos_publico
     WHERE cargo_disputado IN ('Presidente','Governador')
       AND (
-        COALESCE(btrim(foto_url),'')='' OR COALESCE(btrim(biografia),'')='' OR
+      COALESCE(btrim(partido_sigla),'')='' OR COALESCE(btrim(situacao_candidatura),'')='' OR
+      COALESCE(btrim(foto_url),'')='' OR COALESCE(btrim(biografia),'')='' OR
         COALESCE(btrim(naturalidade),'')='' OR data_nascimento IS NULL OR
         COALESCE(btrim(formacao),'')='' OR COALESCE(btrim(profissao_declarada),'')='' OR
         COALESCE(btrim(genero),'')='' OR COALESCE(btrim(estado_civil),'')='' OR
         COALESCE(btrim(cor_raca),'')='' OR
-        NOT (verificacao_campos ? 'candidate_registration') OR
-        NOT (verificacao_campos ? 'candidate_complement')
+        NOT (COALESCE(verificacao_campos,'{}'::jsonb) ? 'candidate_registration') OR
+        NOT (COALESCE(verificacao_campos,'{}'::jsonb) ? 'candidate_complement')
       )
   ) THEN
     RAISE EXCEPTION 'readback: existe ficha pública abaixo do gate mínimo';

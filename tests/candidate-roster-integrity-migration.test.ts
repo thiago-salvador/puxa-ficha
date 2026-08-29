@@ -65,6 +65,8 @@ test("view pública aceita somente chapas com identidade confirmada", () => {
 test("remediação e readback cobrem o gate mínimo inteiro", () => {
   for (const field of [
     "foto_url",
+    "partido_sigla",
+    "situacao_candidatura",
     "biografia",
     "naturalidade",
     "data_nascimento",
@@ -91,6 +93,13 @@ test("remediação e readback cobrem o gate mínimo inteiro", () => {
     /DROP CONSTRAINT IF EXISTS candidatos_publicacao_minima_2026_check/,
   );
   assert.match(rollback, /rollback recusado/i);
+  assert.match(rollback, /curadoria posterior à forward/);
+  const proof = readFileSync(
+    "scripts/audit/prove-candidate-roster-integrity.ts",
+    "utf8",
+  );
+  assert.match(proof, /psqlMustFail/);
+  assert.match(proof, /verificacao_campos=NULL/);
 });
 
 test("remediação demográfica cobre todas as lacunas sem persistir PII", () => {

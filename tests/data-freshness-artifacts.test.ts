@@ -49,6 +49,8 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
       slug: record.profile_slug,
       office: record.office,
       uf: record.uf,
+      partido_sigla: "AAA",
+      situacao_candidatura: "deferido",
       foto_url: "https://example.test/foto.jpg",
       biografia: "Biografia factual verificada.",
       naturalidade: "Cidade (UF)",
@@ -71,7 +73,10 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
         collection_evidence: collectionEvidence,
       }),
     );
-    writeFileSync(currentOfficial, JSON.stringify({ records: currentRecords }));
+    writeFileSync(
+      currentOfficial,
+      JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }),
+    );
     execFileSync(
       process.execPath,
       [
@@ -119,6 +124,81 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.match(summary, /Estado: \*\*ok\*\*/);
     assert.match(summary, /Próximas ações recomendadas/);
     assert.match(summary, /Nenhuma ação corretiva necessária/);
+
+    writeFileSync(
+      currentOfficial,
+      JSON.stringify({
+        metadata: { checked_at: "2020-01-01T00:00:00.000Z" },
+        records: currentRecords,
+      }),
+    );
+    const staleOut = join(work, "stale-out");
+    const staleResult = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${published}`,
+        "--official-snapshot=data/chapas-2026-tse-20260815.json",
+        `--current-official-snapshot=${currentOfficial}`,
+        `--out=${staleOut}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.equal(staleResult.status, 1);
+    const staleDiff = JSON.parse(
+      readFileSync(join(staleOut, "diff.json"), "utf8"),
+    );
+    assert.equal(staleDiff.status, "review_required");
+    assert.ok(
+      staleDiff.freshness.some(
+        (item: { source_id: string; status: string }) =>
+          item.source_id === "tse-current" && item.status === "stale",
+      ),
+    );
+
+    const incompletePublished = join(work, "published-incomplete.json");
+    writeFileSync(
+      currentOfficial,
+      JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }),
+    );
+    writeFileSync(
+      incompletePublished,
+      JSON.stringify({
+        records,
+        public_profiles: publicProfiles.map((profile, index) =>
+          index === 0 ? { ...profile, genero: null } : profile,
+        ),
+        collection_evidence: collectionEvidence,
+      }),
+    );
+    const incompleteOut = join(work, "incomplete-out");
+    const incompleteResult = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${incompletePublished}`,
+        "--official-snapshot=data/chapas-2026-tse-20260815.json",
+        `--current-official-snapshot=${currentOfficial}`,
+        `--out=${incompleteOut}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.equal(incompleteResult.status, 1);
+    const incompleteDiff = JSON.parse(
+      readFileSync(join(incompleteOut, "diff.json"), "utf8"),
+    );
+    assert.equal(incompleteDiff.status, "review_required");
+    assert.ok(
+      incompleteDiff.profile_admission.profiles.some(
+        (profile: { ready: boolean }) => !profile.ready,
+      ),
+    );
   } finally {
     rmSync(work, { recursive: true, force: true });
   }
@@ -219,6 +299,8 @@ test("fonte manual vencida vira dívida sem abrir incidente", () => {
       slug: record.profile_slug,
       office: record.office,
       uf: record.uf,
+      partido_sigla: "AAA",
+      situacao_candidatura: "deferido",
       foto_url: "https://example.test/foto.jpg",
       biografia: "Biografia factual verificada.",
       naturalidade: "Cidade (UF)",
@@ -241,7 +323,10 @@ test("fonte manual vencida vira dívida sem abrir incidente", () => {
         collection_evidence: collectionEvidence,
       }),
     );
-    writeFileSync(currentOfficial, JSON.stringify({ records: currentRecords }));
+    writeFileSync(
+      currentOfficial,
+      JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }),
+    );
     const result = spawnSync(
       process.execPath,
       [

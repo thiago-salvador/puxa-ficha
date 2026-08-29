@@ -120,6 +120,9 @@ test("vínculos reaproveitam 44 fichas exatas e criam somente duas", () => {
       "naturalidade",
       "formacao",
       "profissao_declarada",
+      "genero",
+      "estado_civil",
+      "cor_raca",
       "biografia",
       "foto_url",
     ]) {
