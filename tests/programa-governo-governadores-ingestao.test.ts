@@ -12,6 +12,7 @@ import {
   ingestProgramaGovernoGovernadores,
   parseProgramaGovernoGovernadoresArgs,
   runProgramaGovernoGovernadoresCli,
+  selecionarFatosParaSinteseDeReparo,
   type ProgramaGovernoGovInventory,
   type ProgramaGovernoGovInventoryCandidate,
   type ProgramaGovernoGovInventoryDocument,
@@ -45,6 +46,18 @@ const UFS = [
   "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO",
 ] as const
 const DATASET_URL = "https://dadosabertos.tse.jus.br/dataset/candidatos-2026"
+
+test("reparo reduz a síntese a seis fatos distribuídos e distintos", () => {
+  const fatos = Array.from({ length: 12 }, (_, index) => ({
+    id: `fato-${index + 1}`,
+    texto: `Fato ${index + 1}`,
+    evidencias: [{ documentoId: "doc-1", pagina: index + 1, trecho: `Trecho ${index + 1}` }],
+  }))
+  assert.deepEqual(
+    selecionarFatosParaSinteseDeReparo(fatos).map(({ id }) => id),
+    ["fato-1", "fato-3", "fato-5", "fato-8", "fato-10", "fato-12"],
+  )
+})
 
 function sha256(value: Buffer | string): string {
   return createHash("sha256").update(value).digest("hex")

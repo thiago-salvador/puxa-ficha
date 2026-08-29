@@ -669,6 +669,13 @@ export function validarFatosCacheadosProgramaGoverno(
   return fatosValidados.length === fatos.length ? fatosValidados : null
 }
 
+export function selecionarFatosParaSinteseDeReparo(
+  fatos: readonly ProgramaGovernoFato[],
+): ProgramaGovernoFato[] {
+  if (fatos.length <= 6) return [...fatos]
+  return Array.from({ length: 6 }, (_, index) => fatos[Math.round(index * (fatos.length - 1) / 5)])
+}
+
 async function gerarResumoProgramaGovernoMultipassagem(params: {
   identityKey: string
   nomeUrna: string
@@ -799,9 +806,12 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   if (fatosLiterais.length === 0) {
     throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
   }
+  const fatosParaSintese = params.repairGuidance
+    ? selecionarFatosParaSinteseDeReparo(fatosLiterais)
+    : fatosLiterais
   const sintese = await sintetizarDeFatos.call(modelos, {
     identityKey,
-    fatos: fatosLiterais,
+    fatos: fatosParaSintese,
     ...(params.repairGuidance ? { repairGuidance: params.repairGuidance } : {}),
   })
   if (sintese.metadata.promptVersion !== metrics.promptVersoes.sinteseFatos) {
