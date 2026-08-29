@@ -163,6 +163,7 @@ export type ProgramaGovernoGovCliOptions = {
   multipassagemLimiteBytes?: number
   forceFacts?: boolean
   repairGuidance?: string
+  repairFactsLimit?: number
   sqCandidato?: string
   planOnly?: boolean
   faseDir?: string
@@ -241,6 +242,11 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
   )) {
     throw new Error("--repair-guidance deve ter entre 1 e 2000 caracteres, sem controles")
   }
+  const rawRepairFactsLimit = valueArg(argv, "--repair-facts-limit")
+  const repairFactsLimit = rawRepairFactsLimit === undefined ? undefined : Number(rawRepairFactsLimit)
+  if (repairFactsLimit !== undefined && repairFactsLimit !== 6) {
+    throw new Error("--repair-facts-limit deve ser 6")
+  }
   return {
     ufs: ufs.sort(),
     inventoryPath: resolve(inventoryPath),
@@ -250,6 +256,7 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
     ...(multipassagemLimiteBytes !== undefined ? { multipassagemLimiteBytes } : {}),
     ...(argv.includes("--force-fatos") ? { forceFacts: true } : {}),
     ...(repairGuidance !== undefined ? { repairGuidance } : {}),
+    ...(repairFactsLimit !== undefined ? { repairFactsLimit } : {}),
     ...(argv.includes("--plan-only") ? { planOnly: true } : {}),
     ...(valueArg(argv, "--models-config") ? { modelsConfigPath: resolve(valueArg(argv, "--models-config")!) } : {}),
     ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
@@ -671,9 +678,10 @@ export function validarFatosCacheadosProgramaGoverno(
 
 export function selecionarFatosParaSinteseDeReparo(
   fatos: readonly ProgramaGovernoFato[],
+  limite = 6,
 ): ProgramaGovernoFato[] {
-  if (fatos.length <= 6) return [...fatos]
-  return Array.from({ length: 6 }, (_, index) => fatos[Math.round(index * (fatos.length - 1) / 5)])
+  if (fatos.length <= limite) return [...fatos]
+  return Array.from({ length: limite }, (_, index) => fatos[Math.round(index * (fatos.length - 1) / (limite - 1))])
 }
 
 async function gerarResumoProgramaGovernoMultipassagem(params: {
@@ -688,6 +696,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   adapters: ProgramaGovernoGovIngestionAdapters
   limiteBytes: number
   repairGuidance?: string
+  repairFactsLimit?: number
 }): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics; metadata: { promptVersion: string } }> {
   const { identityKey, extracted, modelos, adapters } = params
   const extrairFatos = modelos.extrairFatosPassagem
@@ -721,6 +730,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
         promptVersion: params.promptVersion,
       }),
       repairGuidance: params.repairGuidance ?? null,
+      repairFactsLimit: params.repairFactsLimit ?? null,
     })),
     promptVersoes: {
       fatosPassagem: `${params.promptVersion}/fatos-passagem`,
@@ -738,6 +748,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       modelo: { name: modelos.generator.name, version: modelos.generator.version },
       promptVersion: params.promptVersion,
       repairGuidance: params.repairGuidance ?? null,
+      repairFactsLimit: params.repairFactsLimit ?? null,
       planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
       limiteBytes,
       indice: plano.indice,
@@ -806,8 +817,8 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   if (fatosLiterais.length === 0) {
     throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
   }
-  const fatosParaSintese = params.repairGuidance
-    ? selecionarFatosParaSinteseDeReparo(fatosLiterais)
+  const fatosParaSintese = params.repairFactsLimit
+    ? selecionarFatosParaSinteseDeReparo(fatosLiterais, params.repairFactsLimit)
     : fatosLiterais
   const sintese = await sintetizarDeFatos.call(modelos, {
     identityKey,
@@ -976,6 +987,7 @@ async function ingestCandidate(
   multipassagemLimiteBytes: number,
   forceFacts: boolean,
   repairGuidance?: string,
+  repairFactsLimit?: number,
   faseDir?: string,
   extractCacheDir?: string,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
@@ -1044,6 +1056,7 @@ async function ingestCandidate(
         adapters,
         limiteBytes: multipassagemLimiteBytes,
         repairGuidance,
+        repairFactsLimit,
       })
       generated = {
         output: multipass.output,
@@ -1217,6 +1230,7 @@ export async function ingestProgramaGovernoGovernadores(
       options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
       options.forceFacts === true,
       options.repairGuidance,
+      options.repairFactsLimit,
       options.faseDir ? resolve(options.faseDir) : undefined,
       options.extractCacheDir ? resolve(options.extractCacheDir) : undefined,
     )

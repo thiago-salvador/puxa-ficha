@@ -249,11 +249,13 @@ test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
     "--output-dir=fixtures/output",
     "--force-fatos",
     "--repair-guidance=Preservar a cláusula literal.",
+    "--repair-facts-limit=6",
     "--multipassagem-limite-bytes=90000",
   ])
   assert.deepEqual(parsed.ufs, ["AC", "AM", "PI"])
   assert.equal(parsed.forceFacts, true)
   assert.equal(parsed.repairGuidance, "Preservar a cláusula literal.")
+  assert.equal(parsed.repairFactsLimit, 6)
   assert.equal(parsed.multipassagemLimiteBytes, 90_000)
   assert.throws(() => parseProgramaGovernoGovernadoresArgs(["--ufs=XX"]), /use --ufs/)
   assert.throws(() => parseProgramaGovernoGovernadoresArgs([
@@ -263,6 +265,13 @@ test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
     "--output-dir=fixtures/output",
     "--multipassagem-limite-bytes=0",
   ]), /multipassagem-limite-bytes/)
+  assert.throws(() => parseProgramaGovernoGovernadoresArgs([
+    "--ufs=AM",
+    "--inventory=fixtures/inventory.json",
+    "--archive-dir=fixtures/archives",
+    "--output-dir=fixtures/output",
+    "--repair-facts-limit=7",
+  ]), /repair-facts-limit/)
 })
 
 test("importador contabiliza as 27 UFs por identidade composta e materializa perfil ausente", async () => {

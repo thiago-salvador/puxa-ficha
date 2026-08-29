@@ -27,11 +27,12 @@ const uf = get("--ufs=")
 const sqCandidato = get("--sq-candidato=")
 const inventory = get("--inventory=")
 const repairGuidance = get("--repair-guidance=")
+const repairFactsLimit = get("--repair-facts-limit=")
 const forceFacts = args.includes("--force-fatos")
 const slug = output.split("/").pop()
 const mode = process.env.FAKE_MODE || "${mode}"
 const delay = slug === "quota" ? 1 : Number(process.env.FAKE_DELAY || 30)
-await appendFile(process.env.FAKE_EVENTS, JSON.stringify({ event: "start", slug, at: Date.now(), repairGuidance, forceFacts }) + "\\n")
+await appendFile(process.env.FAKE_EVENTS, JSON.stringify({ event: "start", slug, at: Date.now(), repairGuidance, repairFactsLimit, forceFacts }) + "\\n")
 await new Promise((resolve) => setTimeout(resolve, delay))
 const blocked = mode === "blocked" || (mode === "mixed" && slug === "blocked")
 const quota = mode === "quota" && slug === "quota"
@@ -123,12 +124,14 @@ test("propaga estratégia por fatos e orientação específica para o CLI canôn
     sqCandidato: "40002535267",
     strategy: "fatos",
     guidance,
+    factLimit: 6,
   }])
   assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
   const events = (await readFile(f.events, "utf8")).trim().split("\n").map(JSON.parse)
   const start = events.find((event) => event.event === "start")
   assert.equal(start.forceFacts, true)
   assert.equal(start.repairGuidance, guidance)
+  assert.equal(start.repairFactsLimit, "6")
 })
 
 test("mudança de orientação invalida checkpoint aprovado e reprocessa fail-closed", async () => {
@@ -167,4 +170,7 @@ test("plano final materializa exatamente as 17 orientações aprovadas", async (
   assert.equal(cases.length, 17)
   assert.equal(new Set(cases.map(({ slug }) => slug)).size, 17)
   assert.ok(cases.every(({ strategy, guidance }) => strategy === "fatos" && guidance.length > 30))
+  assert.deepEqual(cases.filter(({ factLimit }) => factLimit === 6).map(({ slug }) => slug).sort(), [
+    "otaviano-pivetta", "pedro-abib", "samuel-de-mattos",
+  ])
 })

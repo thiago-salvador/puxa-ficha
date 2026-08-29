@@ -79,6 +79,7 @@ export function validateCases(value) {
     const sqCandidato = String(candidate.sqCandidato ?? "").trim()
     const strategy = candidate.strategy === undefined ? undefined : String(candidate.strategy).trim()
     const guidance = candidate.guidance === undefined ? undefined : String(candidate.guidance).trim()
+    const factLimit = candidate.factLimit === undefined ? undefined : Number(candidate.factLimit)
     if (!UF.test(uf) || !SAFE_SLUG.test(slug) || !SQ.test(sqCandidato)) {
       throw new Error(`cases[${index}] exige uf, slug e sqCandidato validos`)
     }
@@ -92,6 +93,9 @@ export function validateCases(value) {
     )) {
       throw new Error(`cases[${index}].guidance invalida`)
     }
+    if (factLimit !== undefined && factLimit !== 6) {
+      throw new Error(`cases[${index}].factLimit deve ser 6`)
+    }
     const key = `${uf}:${sqCandidato}:${slug}`
     if (seen.has(key)) throw new Error(`cases duplicado: ${key}`)
     seen.add(key)
@@ -101,6 +105,7 @@ export function validateCases(value) {
       sqCandidato,
       ...(strategy ? { strategy } : {}),
       ...(guidance ? { guidance } : {}),
+      ...(factLimit ? { factLimit } : {}),
     }
   })
 }
@@ -126,6 +131,7 @@ function candidateFingerprint(candidate) {
   return createHash("sha256").update(JSON.stringify({
     strategy: candidate.strategy ?? null,
     guidance: candidate.guidance ?? null,
+    factLimit: candidate.factLimit ?? null,
   })).digest("hex")
 }
 
@@ -281,6 +287,7 @@ function childArguments(options, candidate, output) {
   if (options.faseDir) args.push(`--fase-dir=${options.faseDir}`)
   if (candidate.strategy === "fatos") args.push("--force-fatos")
   if (candidate.guidance) args.push(`--repair-guidance=${candidate.guidance}`)
+  if (candidate.factLimit) args.push(`--repair-facts-limit=${candidate.factLimit}`)
   return args
 }
 
@@ -334,6 +341,7 @@ async function processOne(options, candidate, progress, progressPath) {
   item.caseFingerprint = candidateFingerprint(candidate)
   item.strategy = candidate.strategy
   item.guidance = candidate.guidance
+  item.factLimit = candidate.factLimit
   item.reason = result.error || result.code !== 0
     ? `${classification.reason}; processo=${result.error ?? `exit ${result.code}`}`
     : classification.reason
