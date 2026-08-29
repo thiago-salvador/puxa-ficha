@@ -130,8 +130,8 @@ async function readSafeProductionState(): Promise<{
   if (slateResult.error)
     throw new Error(`leitura segura de chapas: ${slateResult.error.message}`);
   return {
-    candidates: candidateResult.data as SafeCandidate[],
-    slates: slateResult.data as SafeSlate[],
+    candidates: candidateResult.data as unknown as SafeCandidate[],
+    slates: slateResult.data as unknown as SafeSlate[],
   };
 }
 
