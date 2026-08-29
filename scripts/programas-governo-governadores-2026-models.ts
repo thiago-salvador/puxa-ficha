@@ -206,7 +206,7 @@ export const PROGRAMA_GOVERNO_SINTESE_FATOS_SCHEMA = {
         required: ["texto", "fatoIds"],
         properties: {
           texto: { type: "string" },
-          fatoIds: { type: "array", minItems: 1, items: { type: "string" } },
+          fatoIds: { type: "array", minItems: 1, maxItems: 1, items: { type: "string" } },
         },
       },
     },
@@ -756,11 +756,17 @@ export function createProgramaGovernoModelAdapters(
     },
     async sintetizarDeFatos(input) {
       if (!input.fatos.length) throw new Error("sintese-fatos: nenhum fato recebido")
+      const mapaFixo = input.repairGuidance && input.fatos.length === 6
+        ? ` Mapa obrigatorio de referencias, sem troca nem repeticao: ${input.fatos.map((fato, index) => `frase ${index + 1}=${fato.id}`).join(", ")}.`
+        : ""
+      const orientacaoSintese = input.repairGuidance
+        ? `${input.repairGuidance}${mapaFixo}`
+        : undefined
       const result = await runStructured(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fatos`,
         PROGRAMA_GOVERNO_SINTESE_FATOS_SCHEMA,
-        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS, input.repairGuidance),
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS, orientacaoSintese),
         { identityKey: input.identityKey, FATOS: input.fatos },
         (value) => normalizarSinteseFatos(value, input.fatos),
         runner,

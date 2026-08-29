@@ -339,6 +339,8 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
   assert.doesNotMatch(requests[1].instructions, /Preserve o verbo literal/)
   assert.match(requests[2].instructions, /orientação de reparo aprovada/iu)
   assert.match(requests[2].instructions, /Preserve o verbo literal/)
+  assert.match(requests[2].instructions, /frase 1=fato-1/)
+  assert.match(requests[2].instructions, /frase 6=fato-6/)
 })
 
 test("falha depois de maxAttempts quando a evidência continua divergente", async () => {
