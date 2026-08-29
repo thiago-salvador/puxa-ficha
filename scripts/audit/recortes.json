@@ -380,6 +380,13 @@
       "ate": "20260829030000",
       "allowlist": "scripts/audit/allowlist-candidate-roster-integrity-20260829.json",
       "divida": null
+    },
+    {
+      "nome": "candidate-registration-state-20260829",
+      "desde": "20260829030002",
+      "ate": "20260829030002",
+      "allowlist": "scripts/audit/allowlist-candidate-registration-state-20260829.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
