@@ -64,7 +64,7 @@
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "strategy": "fatos",
-      "guidance": "Extraia fatos por página antes da síntese. Use somente fatos com trecho literal contínuo validado e não reaproveite a geração anterior."
+      "guidance": "Extraia fatos por página antes da síntese. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
     },
     {
       "uf": "PB",
@@ -100,7 +100,7 @@
       "nomeUrna": "SAMUEL DE MATTOS",
       "partido": "PSTU",
       "strategy": "fatos",
-      "guidance": "Não reutilize a resposta anterior. Extraia fatos atômicos com evidência literal e sintetize somente os fatos que passarem integralmente pela validação de documento, página e trecho."
+      "guidance": "Não reutilize a resposta anterior. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
     },
     {
       "uf": "RN",
@@ -136,7 +136,7 @@
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "strategy": "fatos",
-      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Só sintetize depois de validar literalmente cada documento, página e trecho."
+      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Cada frase da síntese deve usar um fato materialmente distinto; não repita o mesmo fato, span ou proposta em frases diferentes. Se não houver seis fatos distintos, falhe fechado em vez de preencher com paráfrases repetidas."
     },
     {
       "uf": "RS",
