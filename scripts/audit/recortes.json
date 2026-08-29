@@ -145,9 +145,7 @@
       "divida": {
         "motivo": "Saneamento dos 9 marcadores #NULO# residuais. Escreve em patrimonio/bens_descricao_marcador, campo que nenhuma allowlist existente cobre. Autorização não registrada.",
         "congelado_em": "2026-08-09",
-        "arquivos": [
-          "20260808032540_marcadores_tse_residuais_patrimonio.sql"
-        ],
+        "arquivos": ["20260808032540_marcadores_tse_residuais_patrimonio.sql"],
         "violacoes_sha256": "c5cc26124d2da02d53c3d0ba6b08716fa338d54a359a53a326e18a6b5bcff7ad",
         "violacoes": 2
       }
@@ -374,6 +372,13 @@
       "desde": "20260828025028",
       "ate": "20260828025037",
       "allowlist": "scripts/audit/allowlist-chapas-20260827.json",
+      "divida": null
+    },
+    {
+      "nome": "candidate-roster-integrity-20260829",
+      "desde": "20260829030000",
+      "ate": "20260829030000",
+      "allowlist": "scripts/audit/allowlist-candidate-roster-integrity-20260829.json",
       "divida": null
     }
   ],

@@ -1,0 +1,63 @@
+{
+  "_comentario": "Autoriza o recorte sistêmico de integridade do roster: despublica uma candidatura terminal, completa somente lacunas oficiais, normaliza a procedência e resolve sete substituições de vice. A migration preserva histórico, usa COALESCE para não sobrescrever curadoria e mantém ambiguidade em quarentena.",
+  "recorte": "candidate-roster-integrity-20260829",
+  "migration": "20260829030000_candidate_roster_publication_integrity.sql",
+  "fonte": "TSE DivulgaCandContas atual e Dados Abertos 2026, com artefatos sanitizados versionados em data/divulgacand-vices-20260828.json e data/tse-candidate-demographics-remediation-20260829.json.",
+  "coorte": ["cleber-rabelo"],
+  "fora_por_construcao": {
+    "_comentario": "Laudicério Aguiar permanece fora da view de chapas por duplicidade oficial ativa. Redes sociais ausentes não são inferidas.",
+    "slugs": ["laudicerio-aguiar"]
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "cleber-rabelo",
+      "campos": [
+        "status",
+        "situacao_candidatura",
+        "publicavel",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "candidatos",
+      "ref": "integridade-publicacao-20260829",
+      "campos": [
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "naturalidade",
+        "biografia",
+        "foto_url",
+        "redes_sociais",
+        "fonte_dados",
+        "verificacao_campos",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 15
+    },
+    {
+      "tabela": "candidatos",
+      "ref": "integridade-demografica-20260829",
+      "campos": ["genero", "estado_civil", "cor_raca", "ultima_atualizacao"],
+      "max_registros": 79
+    },
+    {
+      "tabela": "candidatos",
+      "ref": "integridade-procedencia-20260829",
+      "campos": ["verificacao_campos", "ultima_atualizacao"],
+      "max_registros": 208
+    },
+    {
+      "tabela": "chapas_2026",
+      "ref": "divulgacand-vices-20260828",
+      "campos": ["identidade_status"],
+      "max_registros": 14
+    }
+  ]
+}

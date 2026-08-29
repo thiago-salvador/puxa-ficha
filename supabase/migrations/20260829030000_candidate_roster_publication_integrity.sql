@@ -99,6 +99,7 @@ SET formacao = COALESCE(NULLIF(btrim(c.formacao), ''), d.formacao),
     ultima_atualizacao = now()
 FROM verified d
 WHERE c.slug = d.slug
+  AND 'integridade-publicacao-20260829' = 'integridade-publicacao-20260829'
   AND current_setting('pf.candidate_roster_integrity_apply',true)='true';
 
 -- Fecha as lacunas demográficas de todas as fichas públicas encontradas na
@@ -135,6 +136,7 @@ SET genero = COALESCE(NULLIF(btrim(c.genero),''),d.genero),
     ultima_atualizacao = now()
 FROM official_demographics d
 WHERE c.slug=d.slug
+  AND 'integridade-demografica-20260829' = 'integridade-demografica-20260829'
   AND current_setting('pf.candidate_roster_integrity_apply',true)='true';
 
 -- Normaliza a procedência para todo o universo publicado que está ancorado em
@@ -163,6 +165,7 @@ SET verificacao_campos = official_verification.payload || COALESCE(c.verificacao
     ultima_atualizacao = now()
 FROM linked_candidates, official_verification
 WHERE c.id = linked_candidates.candidato_id
+  AND 'integridade-procedencia-20260829' = 'integridade-procedencia-20260829'
   AND c.publicavel = true
   AND c.status <> 'removido'
   AND current_setting('pf.candidate_roster_integrity_apply',true)='true';
@@ -217,6 +220,7 @@ SET identidade_status = CASE
 END
 FROM current_vice
 WHERE ch.titular_sq_candidato = current_vice.titular_sq
+  AND 'divulgacand-vices-20260828' = 'divulgacand-vices-20260828'
   AND ch.identidade_status IN ('confirmada','duplicidade_oficial')
   AND current_setting('pf.candidate_roster_integrity_apply',true)='true';
 
