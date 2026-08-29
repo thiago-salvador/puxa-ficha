@@ -70,7 +70,7 @@ jobs:
           node-version: "24"
           cache: "npm"
       - run: npm ci
-      - name: Health check remoto (falha em mismatch ou not_found)
+      - name: Health check remoto (falha em mismatch, not_found ou error)
         run: npm run audit:ids-cohort:gate
 
   public-surface:

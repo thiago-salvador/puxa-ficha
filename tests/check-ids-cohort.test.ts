@@ -7,6 +7,7 @@ import {
   extractSenadoIdentity,
   namesLookCompatible,
   parseCliArgs,
+  shouldFailGate,
 } from "../scripts/check-ids-cohort"
 
 // Fase 2.3 (2026-04-16): unit tests para o health check remoto de IDs.
@@ -277,4 +278,19 @@ test("parseCliArgs: timeouts e retries numericos", () => {
   const opts = parseCliArgs(["--timeout-ms=5000", "--max-retries=0"])
   assert.equal(opts.timeoutMs, 5000)
   assert.equal(opts.maxRetries, 0)
+})
+
+// O gate precisa permanecer fail-closed quando uma fonte nao respondeu apos
+// os retries. Sem esse caso, o job pode ficar verde sem validar parte da
+// coorte, como ocorreu no run 33276655204.
+test("shouldFailGate: erro residual da fonte reprova o gate", () => {
+  assert.equal(shouldFailGate({ ok: 50, error: 1 }), true)
+  assert.equal(shouldFailGate({ ok: 50, mismatch: 1 }), true)
+  assert.equal(shouldFailGate({ ok: 50, not_found: 1 }), true)
+})
+
+test("shouldFailGate: somente ok e skipped nao reprovam", () => {
+  assert.equal(shouldFailGate({ ok: 50 }), false)
+  assert.equal(shouldFailGate({ skipped: 3 }), false)
+  assert.equal(shouldFailGate({ ok: 50, skipped: 3 }), false)
 })

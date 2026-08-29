@@ -12,8 +12,9 @@
  *   - error       : falha de rede / timeout / shape inesperado.
  *
  * **Nao escreve em DB. Nao altera seed.** So emite relatorio em texto (stdout)
- * e opcionalmente JSON (`--json` ou `--output=PATH`). Sem CI gate nesta
- * sessao (Fase 2.3 relatorio informativo).
+ * e opcionalmente JSON (`--json` ou `--output=PATH`). O modo `--fail-on-mismatch`
+ * tambem funciona como gate fail-closed: qualquer mismatch, not_found ou erro
+ * depois das tentativas configuradas reprova a execucao.
  *
  * Contrato de match (ver curadoria interna, Fluxo 1):
  *   - Usar `normalizeForMatch` (NFD + strip combining + UPPER + trim), igual
@@ -37,7 +38,7 @@
  *   --skip-remote          pula chamadas HTTP (contrato-only, util em CI)
  *   --timeout-ms=N         default 15000
  *   --max-retries=N        default 2
- *   --fail-on-mismatch     exit 1 se houver mismatch/not_found (util p/ gate futuro)
+ *   --fail-on-mismatch     exit 1 se houver mismatch/not_found/error
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs"
@@ -288,6 +289,16 @@ export function parseCliArgs(argv: string[]): CliOptions {
   return opts
 }
 
+/**
+ * Define o contrato do gate remoto. Um relatorio com erro nao prova que a
+ * coorte esta correta: a fonte nao respondeu mesmo depois dos retries. Por
+ * isso, qualquer erro residual reprova, enquanto checks skipped continuam
+ * informativos e nao sao confundidos com falha de fonte.
+ */
+export function shouldFailGate(summary: Partial<Record<CheckStatus, number>>): boolean {
+  return (summary.mismatch ?? 0) > 0 || (summary.not_found ?? 0) > 0 || (summary.error ?? 0) > 0
+}
+
 function loadSeed(): CandidatoConfig[] {
   const path = resolve(process.cwd(), "data/candidatos.json")
   return JSON.parse(readFileSync(path, "utf-8"))
@@ -459,8 +470,7 @@ async function runCli() {
     console.log(formatHuman(results, summary))
   }
 
-  const hasHardFailure = (summary.mismatch ?? 0) + (summary.not_found ?? 0) > 0
-  if (opts.failOnMismatch && hasHardFailure) process.exit(1)
+  if (opts.failOnMismatch && shouldFailGate(summary)) process.exit(1)
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
