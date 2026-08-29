@@ -330,6 +330,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     identityKey: "2026:GOVERNADOR:PI:180002549920",
     fatos: facts.output,
     repairGuidance: guidance,
+    requireDistinctSentenceFacts: true,
   })
 
   assert.equal(requests.length, 3)

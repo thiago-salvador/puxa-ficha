@@ -171,6 +171,6 @@ test("plano final materializa exatamente as 17 orientações aprovadas", async (
   assert.equal(new Set(cases.map(({ slug }) => slug)).size, 17)
   assert.ok(cases.every(({ strategy, guidance }) => strategy === "fatos" && guidance.length > 30))
   assert.deepEqual(cases.filter(({ factLimit }) => factLimit === 6).map(({ slug }) => slug).sort(), [
-    "otaviano-pivetta", "pedro-abib", "samuel-de-mattos",
+    "otaviano-pivetta", "samuel-de-mattos",
   ])
 })

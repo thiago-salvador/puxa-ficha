@@ -824,6 +824,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
     identityKey,
     fatos: fatosParaSintese,
     ...(params.repairGuidance ? { repairGuidance: params.repairGuidance } : {}),
+    ...(params.repairFactsLimit ? { requireDistinctSentenceFacts: true } : {}),
   })
   if (sintese.metadata.promptVersion !== metrics.promptVersoes.sinteseFatos) {
     throw new Error(`multipassagem: prompt de sintese stale ${sintese.metadata.promptVersion}`)

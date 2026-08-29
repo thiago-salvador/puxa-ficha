@@ -127,6 +127,7 @@ export type ProgramaGovernoModelAdapters = {
   sintetizarDeFatos?(input: {
     identityKey: string
     repairGuidance?: string
+    requireDistinctSentenceFacts?: boolean
     fatos: ProgramaGovernoFato[]
   }): Promise<{ output: ProgramaGovernoResumo; metadata: ProgramaGovernoModelMetadata }>
 }
@@ -766,7 +767,7 @@ export function createProgramaGovernoModelAdapters(
         PROGRAMA_GOVERNO_SINTESE_FATOS_SCHEMA,
         instructionsWithRepairGuidance(PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS, input.repairGuidance),
         { identityKey: input.identityKey, FATOS: input.fatos },
-        (value) => normalizarSinteseFatos(value, input.fatos, Boolean(input.repairGuidance)),
+        (value) => normalizarSinteseFatos(value, input.fatos, input.requireDistinctSentenceFacts === true),
         runner,
       )
       return result

@@ -138,8 +138,7 @@
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "strategy": "fatos",
-      "guidance": "Não reutilize a resposta anterior. A lista FATOS contém exatamente seis fatos. Devolva exatamente seis frases, com 20 a 28 palavras cada. Use exatamente um fatoId por frase e use cada um dos seis fatoIds uma única vez. O texto deve ser a concatenação literal dessas seis frases e ter entre 120 e 180 palavras.",
-      "factLimit": 6
+      "guidance": "Reprocesse por fatos atômicos e não reutilize a síntese anterior. Só sintetize depois de validar literalmente cada documento, página e trecho."
     },
     {
       "uf": "RS",
