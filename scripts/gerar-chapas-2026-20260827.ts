@@ -33,18 +33,13 @@ const OLD_SHA = "c3d13ae50f95024f43046acb4458a4420a620e86526fed665f9e60c8dc6068d
 const BASELINE_EXTRA_SHA = "ce38ca330d9c9c2550dbd6bca1cb55f17e436e29d9b64d3d8623096977afa4c4"
 const BASELINE_EXTRA_SNAPSHOT_AT = "2026-08-16T18:05:40.516249Z"
 const PROFILE_SOURCE_MARKER = "TSE consulta_cand 2026; snapshot 27/08/2026 12:30:35"
-// O consulta_cand preserva os dois vices da UP. O DivulgaCand REST resolveu a
-// vigência em 15/08: Cris Damasio tem situacaoVice=1 e Marcelo Pereira,
-// situacaoVice=3 (substituído). A prova por SQ está no recorte congelado de SP.
-const VICE_VIGENTE_POR_TITULAR_SQ = new Map([
-  ["250002544912", "250002552372"],
-])
 const ZIP_LOCAL = resolve(process.cwd(), "output/pf-reverificacao-20260809/sources/consulta_cand_2026.zip")
 const WORK = resolve(process.cwd(), ".tmp/chapas-2026-20260827")
 const SNAPSHOT_PATH = resolve(process.cwd(), "data/chapas-2026-tse-20260827.json")
 const OLD_SNAPSHOT_PATH = resolve(process.cwd(), "data/chapas-2026-tse-20260815.json")
 const CANDIDATOS_PATH = resolve(process.cwd(), "data/candidatos.json")
 const PROFILE_LINKS_PATH = resolve(process.cwd(), "data/tse-profile-links-20260827.json")
+const VICE_RESOLUTIONS_PATH = resolve(process.cwd(), "data/divulgacand-vices-20260828.json")
 const SCHEMA_MIGRATION_PATH = resolve(
   process.cwd(),
   "supabase/migrations/20260828025028_chapas_2026_quarentena_schema.sql",
@@ -134,11 +129,25 @@ interface ProfileLink {
   partido_nome: string
   data_nascimento: string
   exists_production: boolean
+  naturalidade?: string
+  formacao?: string
+  profissao_declarada?: string
+  genero?: string
+  estado_civil?: string
+  cor_raca?: string
+  biografia?: string
+  foto_url?: string
+  redes_sociais?: Record<string, unknown>
 }
 
 interface ProfileLinksSnapshot {
   metadata: { source_sha256: string }
   links: ProfileLink[]
+}
+
+interface ViceResolutionsSnapshot {
+  metadata: { election_id: string; checked_at: string }
+  resolutions: Array<{ titular_sq: string; current_vice_sq: string }>
 }
 
 function normalize(value: string): string {
@@ -281,6 +290,7 @@ function gerarChapas(
   anterior: Snapshot,
   candidatos: Candidato[],
   profileLinks: Map<string, ProfileLink>,
+  viceVigentePorTitularSq: ReadonlyMap<string, string>,
 ): Chapa[] {
   const oldBySq = new Map(
     anterior.chapas
@@ -316,7 +326,7 @@ function gerarChapas(
     const combinations = groups.flatMap((group) =>
       group.vices.map((vice) => ({ sq: group.sq, titular: group.titulares[0], vice })),
     )
-    const viceVigenteSq = VICE_VIGENTE_POR_TITULAR_SQ.get(titularRow.SQ_CANDIDATO)
+    const viceVigenteSq = viceVigentePorTitularSq.get(titularRow.SQ_CANDIDATO)
     const combinationsVigentes = viceVigenteSq
       ? combinations.filter((item) => item.vice.SQ_CANDIDATO === viceVigenteSq)
       : combinations
@@ -523,7 +533,33 @@ function profilePayloadRow(profile: ProfileLink): string {
     profile.cargo,
     profile.uf,
     isoDate(profile.data_nascimento),
+    profile.naturalidade ?? null,
+    profile.formacao ?? null,
+    profile.profissao_declarada ?? null,
+    profile.genero ?? null,
+    profile.estado_civil ?? null,
+    profile.cor_raca ?? null,
+    profile.biografia ?? null,
+    profile.foto_url ?? null,
+    JSON.stringify(profile.redes_sociais ?? {}),
   ].map(sql).join(", ")})`
+}
+
+function assertNewProfileComplete(profile: ProfileLink): void {
+  const required = [
+    "naturalidade",
+    "formacao",
+    "profissao_declarada",
+    "genero",
+    "estado_civil",
+    "cor_raca",
+    "biografia",
+    "foto_url",
+  ] as const
+  const missing = required.filter((field) => !profile[field]?.trim())
+  if (missing.length > 0) {
+    throw new Error(`perfil novo ${profile.slug} abaixo do gate de admissão: ${missing.join(", ")}`)
+  }
 }
 
 function gerarSchemaMigration(): string {
@@ -554,6 +590,7 @@ function gerarMigration(chapas: Chapa[], profileLinks: ProfileLink[]): string {
   const linked = chapas.filter((row) => row.titular.perfil_slug).length
   const reviews = chapas.filter((row) => row.titular.vinculo_perfil_status === "revisao_identidade").length
   const newProfiles = profileLinks.filter((profile) => !profile.exists_production)
+  newProfiles.forEach(assertNewProfileComplete)
   const newProfileSlugs = newProfiles.map((profile) => sql(profile.slug)).join(", ")
   return `-- Atualiza a fotografia oficial de 15/08 para o pacote gerado em 27/08/2026.
 DO $$
@@ -586,20 +623,24 @@ BEGIN
   PERFORM set_config('pf.chapas_20260827_apply','true',true);
 END $$;
 
-${newProfiles.map((profile) => `-- @write tabela=candidatos slug=${profile.slug} campos=slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,estado,data_nascimento,status,situacao_candidatura,publicavel,fonte_dados,verificacao_campos,ultima_atualizacao`).join("\n")}
+${newProfiles.map((profile) => `-- @write tabela=candidatos slug=${profile.slug} campos=slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,estado,data_nascimento,naturalidade,formacao,profissao_declarada,genero,estado_civil,cor_raca,biografia,foto_url,redes_sociais,status,situacao_candidatura,publicavel,fonte_dados,verificacao_campos,ultima_atualizacao`).join("\n")}
 INSERT INTO public.candidatos
   (slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,
-   estado,data_nascimento,status,situacao_candidatura,publicavel,fonte_dados,
+   estado,data_nascimento,naturalidade,formacao,profissao_declarada,genero,
+   estado_civil,cor_raca,biografia,foto_url,redes_sociais,status,situacao_candidatura,publicavel,fonte_dados,
    verificacao_campos,ultima_atualizacao)
 SELECT p.slug,p.nome_completo,p.nome_urna,p.partido_sigla,p.partido_atual,
-       p.cargo_disputado,p.estado,p.data_nascimento::date,'candidato',
+       p.cargo_disputado,p.estado,p.data_nascimento::date,p.naturalidade,p.formacao,
+       p.profissao_declarada,p.genero,p.estado_civil,p.cor_raca,p.biografia,p.foto_url,
+       p.redes_sociais::jsonb,'candidato',
        'pedido de registro no TSE; código oficial -3 (#NE) no snapshot de 27/08/2026',
        true,ARRAY[${sql(PROFILE_SOURCE_MARKER)},${sql(SOURCE_URL)}],
-       '{"candidate_registration":"2026-08-27"}'::jsonb,${sql(EXTRACTED_AT)}::timestamptz
+       '{"candidate_registration":"2026-08-27","candidate_complement":"2026-08-27"}'::jsonb,${sql(EXTRACTED_AT)}::timestamptz
 FROM (VALUES
 ${newProfiles.map(profilePayloadRow).join(",\n")}
 ) AS p(slug,nome_completo,nome_urna,partido_sigla,partido_atual,cargo_disputado,
-       estado,data_nascimento)
+       estado,data_nascimento,naturalidade,formacao,profissao_declarada,genero,
+       estado_civil,cor_raca,biografia,foto_url,redes_sociais)
 WHERE current_setting('pf.chapas_20260827_apply',true)='true';
 
 -- @write tabela=chapas_2026 ref=snapshot-20260827 chave=${OLD_SHA} campos=payload
@@ -743,8 +784,20 @@ async function main(): Promise<void> {
   if (profileLinks.size !== profileLinksSnapshot.links.length) {
     throw new Error("vínculos de perfil contêm SQ_CANDIDATO duplicado")
   }
+  const viceResolutions = JSON.parse(
+    readFileSync(VICE_RESOLUTIONS_PATH, "utf8"),
+  ) as ViceResolutionsSnapshot
+  if (viceResolutions.metadata.election_id !== "20322002026") {
+    throw new Error("resoluções de vice pertencem a outra eleição")
+  }
+  const viceVigentePorTitularSq = new Map(
+    viceResolutions.resolutions.map((row) => [row.titular_sq, row.current_vice_sq]),
+  )
+  if (viceVigentePorTitularSq.size !== viceResolutions.resolutions.length) {
+    throw new Error("resoluções de vice contêm titular duplicado")
+  }
   const rows = await lerLinhas(await obterZip())
-  const chapas = gerarChapas(rows, anterior, candidatos, profileLinks)
+  const chapas = gerarChapas(rows, anterior, candidatos, profileLinks, viceVigentePorTitularSq)
   if (chapas.length < 190) throw new Error(`esperava ao menos 190 chapas, vieram ${chapas.length}`)
   const titularSqs = new Set(chapas.map((chapa) => chapa.titular.sq_candidato).filter(Boolean))
   const linksNaoUsados = [...profileLinks.keys()].filter((sq) => !titularSqs.has(sq))

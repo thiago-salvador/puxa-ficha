@@ -61,6 +61,24 @@ WITH candidacies AS (
   ) AS item
   FROM collection_rows log
   GROUP BY log.fonte, log.execution_id
+), public_profiles AS (
+  SELECT jsonb_build_object(
+    'slug', c.slug,
+    'office', c.cargo_disputado,
+    'uf', c.estado,
+    'foto_url', c.foto_url,
+    'biografia', c.biografia,
+    'naturalidade', c.naturalidade,
+    'data_nascimento', c.data_nascimento,
+    'formacao', c.formacao,
+    'profissao_declarada', c.profissao_declarada,
+    'genero', c.genero,
+    'estado_civil', c.estado_civil,
+    'cor_raca', c.cor_raca,
+    'verificacao_campos', c.verificacao_campos
+  ) AS profile
+  FROM public.candidatos_publico c
+  WHERE c.cargo_disputado IN ('Presidente', 'Governador')
 )
 SELECT jsonb_build_object(
   'generated_at', now(),
@@ -68,5 +86,6 @@ SELECT jsonb_build_object(
   -- candidatura oficial precisa constar na auditoria. DISTINCT evita contar o
   -- mesmo titular duas vezes quando o TSE publica duas combinações de vice.
   'records', COALESCE((SELECT jsonb_agg(DISTINCT record) FROM candidacies), '[]'::jsonb),
+  'public_profiles', COALESCE((SELECT jsonb_agg(profile) FROM public_profiles), '[]'::jsonb),
   'collection_evidence', COALESCE((SELECT jsonb_agg(item) FROM evidence), '[]'::jsonb)
 );

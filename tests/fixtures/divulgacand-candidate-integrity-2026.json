@@ -1,0 +1,41 @@
+{
+  "source": "TSE DivulgaCandContas, consulta em 2026-08-28",
+  "candidacies": [
+    {
+      "sq_candidato": "140002538631",
+      "profile_slug": "cleber-rabelo",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "CLEBER RABELO",
+      "status": "Renúncia"
+    },
+    {
+      "sq_candidato": "140002554108",
+      "profile_slug": "well-macedo",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "WELL MACEDO",
+      "status": "Aguardando julgamento"
+    },
+    {
+      "sq_candidato": "50002553337",
+      "profile_slug": "jose-estevao",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "ESTÊVÃO",
+      "status": "Indeferido em prazo recursal ou com recurso"
+    }
+  ],
+  "well_vices": [
+    {
+      "sq_candidato": "140002538632",
+      "name": "WELL MACEDO",
+      "situacao_vice": 3
+    },
+    {
+      "sq_candidato": "140002554109",
+      "name": "SEU ALEX",
+      "situacao_vice": 1
+    }
+  ]
+}

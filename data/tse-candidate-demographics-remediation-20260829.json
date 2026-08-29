@@ -1,0 +1,643 @@
+{
+  "metadata": {
+    "generated_at": "2026-08-29T10:44:47.831Z",
+    "source_file": "consulta_cand_2026_BRASIL.csv",
+    "source_sha256": "48854b1a906780d74513fc49817f75b6afa886b1f91c39e54cb77540b73c7fe3",
+    "pii_policy": "somente slug, SQ_CANDIDATO e campos públicos de gênero, estado civil e raça/cor",
+    "record_count": 79
+  },
+  "records": [
+    {
+      "slug": "alexandre-kalil",
+      "sq_candidato": "130002539775",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "andre-luis",
+      "sq_candidato": "100002544076",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "andre-marinho",
+      "sq_candidato": "190002537524",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "araceli-lemos",
+      "sq_candidato": "140002542386",
+      "genero": "FEMININO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "aroldo-felix",
+      "sq_candidato": "50002544692",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ataides-oliveira",
+      "sq_candidato": "270002548412",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "augusto-cury",
+      "sq_candidato": "280002551547",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["cor_raca"]
+    },
+    {
+      "slug": "ben-mendes",
+      "sq_candidato": "130002544411",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "breno-barcelar",
+      "sq_candidato": "80002541012",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "cadu-xavier",
+      "sq_candidato": "200002534001",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "camila-falcao",
+      "sq_candidato": "170002537320",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "carlos-machado",
+      "sq_candidato": "250002550913",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "clariana-barao",
+      "sq_candidato": "280002552484",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["cor_raca"]
+    },
+    {
+      "slug": "coronel-busnello",
+      "sq_candidato": "190002544120",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "cyro-garcia",
+      "sq_candidato": "190002540198",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "dario-barbosa",
+      "sq_candidato": "200002542481",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "dr-furlan",
+      "sq_candidato": "30002530014",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "sq_candidato": "260002547415",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "edmilson-costa",
+      "sq_candidato": "280002551975",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["cor_raca"]
+    },
+    {
+      "slug": "elisson-ferreira",
+      "sq_candidato": "70002551298",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "elizeu-aguiar",
+      "sq_candidato": "180002549920",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "emanuel-cacho",
+      "sq_candidato": "260002551712",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "eudo-raffael",
+      "sq_candidato": "10002549500",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "fabio-mitidieri",
+      "sq_candidato": "260002542491",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "francisco-jurity",
+      "sq_candidato": "180002548565",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "sq_candidato": "130002549557",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "gelson-merisio",
+      "sq_candidato": "240002548628",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "geraldo-carvalho",
+      "sq_candidato": "180002537422",
+      "genero": "MASCULINO",
+      "estado_civil": "SEPARADO(A) JUDICIALMENTE",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "sq_candidato": "180002549970",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "gustavo-henrique",
+      "sq_candidato": "180002550421",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "henrique-areas",
+      "sq_candidato": "130002552308",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "huggo-leonardo",
+      "sq_candidato": "60002540417",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "indira-xavier",
+      "sq_candidato": "130002547874",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "isael-munduruku",
+      "sq_candidato": "40002550776",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "INDÍGENA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "sq_candidato": "170002541258",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "jose-roberto-arruda",
+      "sq_candidato": "70002552586",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "juliete-pantoja",
+      "sq_candidato": "190002547272",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "kiko-caputo",
+      "sq_candidato": "70002547775",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "lais-chaud",
+      "sq_candidato": "240002550544",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "laudicerio-aguiar",
+      "sq_candidato": "110002554073",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "lenilda-luna",
+      "sq_candidato": "20002539642",
+      "genero": "FEMININO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "lourdes-melo",
+      "sq_candidato": "180002553722",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "luan-monteiro",
+      "sq_candidato": "190002552513",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "lucia-santos",
+      "sq_candidato": "180002544216",
+      "genero": "FEMININO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "lucien-rezende",
+      "sq_candidato": "120002532257",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "luis-cesar-bueno",
+      "sq_candidato": "90002545476",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "luiz-franca",
+      "sq_candidato": "160002551353",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "marcelo-brigadeiro",
+      "sq_candidato": "240002544118",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "marcus-sodre",
+      "sq_candidato": "240002541913",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "mauricio-coelho",
+      "sq_candidato": "110002553058",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "sq_candidato": "110002544985",
+      "genero": "FEMININO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "orleans-brandao",
+      "sq_candidato": "100002543869",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "patrus-ananias",
+      "sq_candidato": "130002550464",
+      "genero": "MASCULINO",
+      "estado_civil": "VIÚVO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "pedro-abib",
+      "sq_candidato": "220002551251",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "priscila-voigt",
+      "sq_candidato": "210002533355",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "rafael-duda",
+      "sq_candidato": "130002546802",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "rafaell-milas",
+      "sq_candidato": "110002543953",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ralf-zimmer",
+      "sq_candidato": "240002552157",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ravenna-castro",
+      "sq_candidato": "180002548388",
+      "genero": "FEMININO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "rejane-oliveira",
+      "sq_candidato": "210002541367",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "renan-hallais",
+      "sq_candidato": "170002540337",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "renato-gomes",
+      "sq_candidato": "120002549681",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "sq_candidato": "70002551557",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ricardo-marques",
+      "sq_candidato": "260002549466",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "rico-pinheiro",
+      "sq_candidato": "70002553982",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "roberio-paulino",
+      "sq_candidato": "200002546757",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "roberto-cidade",
+      "sq_candidato": "40002541741",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "samuel-costa",
+      "sq_candidato": "220002550927",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "sandro-alex",
+      "sq_candidato": "160002549553",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "santiago-belizario",
+      "sq_candidato": "180002549995",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "serley-leal",
+      "sq_candidato": "60002533729",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "thor-dantas",
+      "sq_candidato": "10002550719",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "tulio-lopes",
+      "sq_candidato": "130002544122",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "well-macedo",
+      "sq_candidato": "140002554108",
+      "genero": "FEMININO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PRETA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "william-siri",
+      "sq_candidato": "190002536162",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "wilson-grassi-junior",
+      "sq_candidato": "280002548139",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["cor_raca"]
+    },
+    {
+      "slug": "witer-naves",
+      "sq_candidato": "270002539187",
+      "genero": "MASCULINO",
+      "estado_civil": "DIVORCIADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "sq_candidato": "150002540204",
+      "genero": "MASCULINO",
+      "estado_civil": "SOLTEIRO(A)",
+      "cor_raca": "PARDA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    },
+    {
+      "slug": "ze-batista",
+      "sq_candidato": "60002549967",
+      "genero": "MASCULINO",
+      "estado_civil": "CASADO(A)",
+      "cor_raca": "BRANCA",
+      "missing_fields": ["genero", "estado_civil", "cor_raca"]
+    }
+  ]
+}
