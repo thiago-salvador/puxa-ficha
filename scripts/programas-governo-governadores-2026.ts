@@ -124,7 +124,7 @@ export type ProgramaGovernoGovIngestionRecord = Omit<ProgramaGovernoRegistro, "j
     documentosInventario: string[]
     modelos: null | {
       generator: { name: string; version: string; promptVersion: string; attempts: number }
-      judge: { name: string; version: string; promptVersion: string; attempts: number }
+      judge?: { name: string; version: string; promptVersion: string; attempts: number }
       geracaoMultipassagem?: {
         planejador: string
         limiteBytes: number
@@ -168,6 +168,9 @@ export type ProgramaGovernoGovCliOptions = {
   planOnly?: boolean
   faseDir?: string
   extractCacheDir?: string
+  generatorOnly?: boolean
+  generatorCheckpointDir?: string
+  resumeGeneratorCheckpoint?: string
 }
 
 export type ProgramaGovernoGovIngestionAdapters = {
@@ -247,6 +250,18 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
   if (repairFactsLimit !== undefined && repairFactsLimit !== 6) {
     throw new Error("--repair-facts-limit deve ser 6")
   }
+  const generatorOnly = argv.includes("--generator-only")
+  const generatorCheckpointDir = valueArg(argv, "--generator-checkpoint-dir")
+  const resumeGeneratorCheckpoint = valueArg(argv, "--resume-generator-checkpoint")
+  if (generatorOnly && resumeGeneratorCheckpoint) {
+    throw new Error("--generator-only e --resume-generator-checkpoint sao mutuamente exclusivos")
+  }
+  if (resumeGeneratorCheckpoint !== undefined && resumeGeneratorCheckpoint.trim() === "") {
+    throw new Error("--resume-generator-checkpoint exige um caminho")
+  }
+  if (generatorCheckpointDir !== undefined && generatorCheckpointDir.trim() === "") {
+    throw new Error("--generator-checkpoint-dir exige um caminho")
+  }
   return {
     ufs: ufs.sort(),
     inventoryPath: resolve(inventoryPath),
@@ -262,6 +277,9 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
     ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
     ...(valueArg(argv, "--fase-dir") ? { faseDir: resolve(valueArg(argv, "--fase-dir")!) } : {}),
     ...(valueArg(argv, "--extract-cache-dir") ? { extractCacheDir: resolve(valueArg(argv, "--extract-cache-dir")!) } : {}),
+    ...(generatorOnly ? { generatorOnly: true } : {}),
+    ...(generatorCheckpointDir !== undefined ? { generatorCheckpointDir: resolve(generatorCheckpointDir) } : {}),
+    ...(resumeGeneratorCheckpoint !== undefined ? { resumeGeneratorCheckpoint: resolve(resumeGeneratorCheckpoint) } : {}),
   }
 }
 
@@ -975,6 +993,181 @@ async function gravarFase(
   await adapters.rename(temporario, destino)
 }
 
+const GENERATOR_CHECKPOINT_VERSION = 1 as const
+const GENERATOR_CONTRACT_VERSION = "programa-governo-governadores-generator-contract-v1" as const
+
+type ProgramaGovernoGeneratorCheckpoint = {
+  version: typeof GENERATOR_CHECKPOINT_VERSION
+  kind: "programa-governo-generator-checkpoint"
+  identityKey: string
+  identity: Pick<ProgramaGovernoGovInventoryCandidate, "ano" | "cargo" | "uf" | "sqCandidato" | "slug" | "nomeUrna" | "partido">
+  source: ProgramaGovernoFonte
+  documents: ProgramaGovernoDocumento[]
+  documentHashes: Array<{ documentoId: string; sourceSha256: string; extractedTextSha256: string; paginas: number }>
+  generatorInputSha256: string
+  summary: ProgramaGovernoResumo
+  summarySha256: string
+  generation: {
+    name: string
+    version: string
+    promptVersion: string
+    model: string
+    generatedAt: string
+    attempts: number
+  }
+  contract: {
+    version: typeof GENERATOR_CONTRACT_VERSION
+    promptVersion: string
+    instructionsSha256: string
+    schemaSha256: string
+    modelConfigSha256: string
+    evidenceSha256: string
+  }
+  createdAt: string
+}
+
+function jsonSha256(value: unknown): string {
+  return sha256(JSON.stringify(value))
+}
+
+function generatorContract(models: ProgramaGovernoModelAdapters, promptVersion: string, summary: ProgramaGovernoResumo) {
+  return {
+    version: GENERATOR_CONTRACT_VERSION,
+    promptVersion,
+    instructionsSha256: jsonSha256(PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS),
+    schemaSha256: jsonSha256(PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA),
+    modelConfigSha256: jsonSha256(models.generator),
+    evidenceSha256: jsonSha256([
+      ...summary.frases.flatMap(({ evidencias }) => evidencias),
+      ...summary.temas.flatMap(({ evidencias }) => evidencias),
+    ]),
+  } as const
+}
+
+function documentHashes(documents: readonly ProgramaGovernoDocumento[]) {
+  return documents.map((document) => ({
+    documentoId: document.documentoId,
+    sourceSha256: document.extracao.sourceSha256,
+    extractedTextSha256: document.extracao.extractedTextSha256,
+    paginas: document.extracao.paginas,
+  }))
+}
+
+function generatorInputSha256(
+  input: ProgramaGovernoGeneratorInput,
+  strategy: { forceFacts: boolean; repairFactsLimit?: number; multipassagemLimiteBytes: number; multipassagem: boolean },
+): string {
+  return jsonSha256({
+    input,
+    strategy: {
+      forceFacts: strategy.forceFacts,
+      repairFactsLimit: strategy.repairFactsLimit ?? null,
+      multipassagemLimiteBytes: strategy.multipassagemLimiteBytes,
+      multipassagem: strategy.multipassagem,
+    },
+  })
+}
+
+function checkpointPath(pathValue: string, candidate: ProgramaGovernoGovInventoryCandidate): string {
+  return pathValue.endsWith(".json")
+    ? resolve(pathValue)
+    : resolve(pathValue, `${candidate.uf}-${candidate.sqCandidato}.generator.json`)
+}
+
+async function writeGeneratorCheckpoint(
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  destination: string,
+  checkpoint: ProgramaGovernoGeneratorCheckpoint,
+): Promise<void> {
+  await adapters.ensureDir(resolve(destination, ".."))
+  const temporary = `${destination}.tmp-${process.pid}`
+  await adapters.writeText(temporary, `${JSON.stringify(checkpoint, null, 2)}\n`)
+  await adapters.rename(temporary, destination)
+}
+
+async function readGeneratorCheckpoint(
+  adapters: ProgramaGovernoGovIngestionAdapters,
+  destination: string,
+): Promise<ProgramaGovernoGeneratorCheckpoint> {
+  const value = JSON.parse(await adapters.readText(destination)) as Partial<ProgramaGovernoGeneratorCheckpoint>
+  if (value.version !== GENERATOR_CHECKPOINT_VERSION || value.kind !== "programa-governo-generator-checkpoint") {
+    throw new Error("generator checkpoint: versao ou tipo invalido")
+  }
+  if (!value.identityKey || !value.source || !Array.isArray(value.documents) || !Array.isArray(value.documentHashes) || !value.generatorInputSha256 || !value.summary || !value.summarySha256 || !value.generation || !value.contract) {
+    throw new Error("generator checkpoint: campos obrigatorios ausentes")
+  }
+  return value as ProgramaGovernoGeneratorCheckpoint
+}
+
+function assertGeneratorCheckpointCurrent(
+  checkpoint: ProgramaGovernoGeneratorCheckpoint,
+  candidate: ProgramaGovernoGovInventoryCandidate,
+  source: ProgramaGovernoFonte,
+  documents: readonly ProgramaGovernoDocumento[],
+  models: ProgramaGovernoModelAdapters,
+  expectedPromptVersion: string,
+  expectedGeneratorInputSha256: string,
+): void {
+  const identity = {
+    ano: candidate.ano,
+    cargo: candidate.cargo,
+    uf: candidate.uf,
+    sqCandidato: candidate.sqCandidato,
+    slug: candidate.slug,
+    nomeUrna: candidate.nomeUrna,
+    partido: candidate.partido,
+  }
+  if (checkpoint.identityKey !== candidate.chave || JSON.stringify(checkpoint.identity) !== JSON.stringify(identity)) {
+    throw new Error("generator checkpoint: identidade divergente")
+  }
+  if (checkpoint.generatorInputSha256 !== expectedGeneratorInputSha256) {
+    throw new Error("generator checkpoint: input efetivo divergente")
+  }
+  if (checkpoint.summarySha256 !== jsonSha256(checkpoint.summary)) {
+    throw new Error("generator checkpoint: resumo stale")
+  }
+  if (JSON.stringify(checkpoint.source) !== JSON.stringify(source)) throw new Error("generator checkpoint: fonte divergente")
+  if (JSON.stringify(checkpoint.documentHashes) !== JSON.stringify(documentHashes(documents))) {
+    throw new Error("generator checkpoint: documentos ou hashes divergentes")
+  }
+  if (checkpoint.documents.length !== documents.length || checkpoint.documents.some((document, index) => JSON.stringify(document) !== JSON.stringify(documents[index]))) {
+    throw new Error("generator checkpoint: evidencia documental divergente")
+  }
+  if (checkpoint.generation.promptVersion !== expectedPromptVersion) throw new Error("generator checkpoint: prompt stale")
+  if (
+    checkpoint.generation.name !== models.generator.name
+    || checkpoint.generation.version !== models.generator.version
+    || checkpoint.generation.model !== `${models.generator.name}@${models.generator.version}`
+  ) {
+    throw new Error("generator checkpoint: modelo divergente")
+  }
+  const contract = generatorContract(models, expectedPromptVersion, checkpoint.summary)
+  if (
+    checkpoint.contract.version !== GENERATOR_CONTRACT_VERSION
+    || checkpoint.contract.promptVersion !== contract.promptVersion
+    || checkpoint.contract.instructionsSha256 !== contract.instructionsSha256
+    || checkpoint.contract.schemaSha256 !== contract.schemaSha256
+    || checkpoint.contract.modelConfigSha256 !== contract.modelConfigSha256
+    || checkpoint.contract.evidenceSha256 !== contract.evidenceSha256
+  ) {
+    throw new Error("generator checkpoint: contrato ou evidencias stale")
+  }
+  assertLiteralEvidence(checkpoint.summary, documents)
+  const record = {
+    version: 1,
+    estado: "em_revisao",
+    fonte: source,
+    documentos: [...documents],
+    resumo: checkpoint.summary,
+    geracao: {
+      promptVersion: checkpoint.generation.promptVersion,
+      model: checkpoint.generation.model,
+      generatedAt: checkpoint.generation.generatedAt,
+    },
+  } satisfies ProgramaGovernoRegistro
+  assertProgramaGovernoRegistro(record)
+}
+
 async function ingestCandidate(
   candidate: ProgramaGovernoGovInventoryCandidate,
   inventory: ProgramaGovernoGovInventory,
@@ -991,6 +1184,9 @@ async function ingestCandidate(
   repairFactsLimit?: number,
   faseDir?: string,
   extractCacheDir?: string,
+  generatorOnly = false,
+  generatorCheckpointDir?: string,
+  resumeGeneratorCheckpoint?: string,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
   const profileMissing = candidate.perfilEstado !== "vinculado" || candidate.slug === null
   if (candidate.fonteEstado !== "documento_oficial_encontrado" || documents.length === 0) {
@@ -1036,66 +1232,150 @@ async function ingestCandidate(
     if (!models) throw new Error("configuracao de generator e judge ausente")
     const expectedPrompts = programaGovernoExpectedPromptVersions(source)
     const entradaCompleta = generatorInput(candidate.chave, extracted, repairGuidance)
-    await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
-    let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
-    let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
-    if (forceFacts || envelopeExcedeLimite(
+    const multipassagem = forceFacts || envelopeExcedeLimite(
       PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
       PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
       entradaCompleta,
       multipassagemLimiteBytes,
-    )) {
-      const multipass = await gerarResumoProgramaGovernoMultipassagem({
-        identityKey: candidate.chave,
-        nomeUrna: candidate.nomeUrna,
-        partido: candidate.partido,
-        documentosHashes: documents.map(({ sha256 }) => sha256),
-        extracted,
-        promptVersion: expectedPrompts.generatorPromptVersion,
-        cacheDir: passagensCacheDir,
-        modelos: models,
-        adapters,
-        limiteBytes: multipassagemLimiteBytes,
-        repairGuidance,
-        repairFactsLimit,
-      })
+    )
+    const inputSha256 = generatorInputSha256(entradaCompleta, {
+      forceFacts,
+      repairFactsLimit,
+      multipassagemLimiteBytes,
+      multipassagem,
+    })
+    let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
+    let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
+    let checkpointGeneratedAt: string | undefined
+    if (resumeGeneratorCheckpoint) {
+      const checkpoint = await readGeneratorCheckpoint(adapters, checkpointPath(resumeGeneratorCheckpoint, candidate))
+      assertGeneratorCheckpointCurrent(checkpoint, candidate, source, extracted, models, expectedPrompts.generatorPromptVersion, inputSha256)
       generated = {
-        output: multipass.output,
+        output: checkpoint.summary,
         metadata: {
-          name: models.generator.name,
-          version: models.generator.version,
-          promptVersion: expectedPrompts.generatorPromptVersion,
-          attempts: Math.min(2, multipass.metrics.retriesPassagem + multipass.metrics.retriesSintese + 1),
+          name: checkpoint.generation.name,
+          version: checkpoint.generation.version,
+          promptVersion: checkpoint.generation.promptVersion,
+          attempts: checkpoint.generation.attempts,
         },
       }
-      metricasMultipassagem = multipass.metrics
+      checkpointGeneratedAt = checkpoint.generation.generatedAt
     } else {
-      generated = await models.generate(entradaCompleta)
-      if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
-        throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+      await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
+      if (multipassagem) {
+        const multipass = await gerarResumoProgramaGovernoMultipassagem({
+          identityKey: candidate.chave,
+          nomeUrna: candidate.nomeUrna,
+          partido: candidate.partido,
+          documentosHashes: documents.map(({ sha256 }) => sha256),
+          extracted,
+          promptVersion: expectedPrompts.generatorPromptVersion,
+          cacheDir: passagensCacheDir,
+          modelos: models,
+          adapters,
+          limiteBytes: multipassagemLimiteBytes,
+          repairGuidance,
+          repairFactsLimit,
+        })
+        generated = {
+          output: multipass.output,
+          metadata: {
+            name: models.generator.name,
+            version: models.generator.version,
+            promptVersion: expectedPrompts.generatorPromptVersion,
+            attempts: Math.min(2, multipass.metrics.retriesPassagem + multipass.metrics.retriesSintese + 1),
+          },
+        }
+        metricasMultipassagem = multipass.metrics
+      } else {
+        generated = await models.generate(entradaCompleta)
+        if (generated.metadata.promptVersion !== expectedPrompts.generatorPromptVersion) {
+          throw new Error(`generator prompt stale: ${generated.metadata.promptVersion}`)
+        }
       }
     }
     assertLiteralEvidence(generated.output, extracted)
-    await gravarFase(adapters, faseDir, candidate, "gerador.concluido", {
-      multipassagem: metricasMultipassagem ? metricasMultipassagem.passagens > 1 : false,
-      passagens: metricasMultipassagem?.passagens ?? 1,
-      chamadasGeracao: metricasMultipassagem
-        ? metricasMultipassagem.chamadasGeracao + metricasMultipassagem.chamadasSintese
-        : generated.metadata.attempts,
-    })
+    const geracao = {
+      promptVersion: generated.metadata.promptVersion,
+      model: `${generated.metadata.name}@${generated.metadata.version}`,
+      generatedAt: checkpointGeneratedAt ?? adapters.now(),
+    }
     const draft: ProgramaGovernoRegistro = {
       version: 1,
       estado: "em_revisao",
       fonte: source,
       documentos: extracted,
       resumo: generated.output,
-      geracao: {
-        promptVersion: generated.metadata.promptVersion,
-        model: `${generated.metadata.name}@${generated.metadata.version}`,
-        generatedAt: adapters.now(),
-      },
+      geracao,
     }
     assertProgramaGovernoRegistro(draft)
+    if (generatorOnly) {
+      if (!generatorCheckpointDir) throw new Error("generator-only exige diretorio de checkpoint privado")
+      const checkpoint: ProgramaGovernoGeneratorCheckpoint = {
+        version: GENERATOR_CHECKPOINT_VERSION,
+        kind: "programa-governo-generator-checkpoint",
+        identityKey: candidate.chave,
+        identity: {
+          ano: candidate.ano,
+          cargo: candidate.cargo,
+          uf: candidate.uf,
+          sqCandidato: candidate.sqCandidato,
+          slug: candidate.slug,
+          nomeUrna: candidate.nomeUrna,
+          partido: candidate.partido,
+        },
+        source,
+        documents: extracted,
+        documentHashes: documentHashes(extracted),
+        generatorInputSha256: inputSha256,
+        summary: generated.output,
+        summarySha256: jsonSha256(generated.output),
+        generation: {
+          name: generated.metadata.name,
+          version: generated.metadata.version,
+          promptVersion: generated.metadata.promptVersion,
+          model: geracao.model,
+          generatedAt: geracao.generatedAt,
+          attempts: generated.metadata.attempts,
+        },
+        contract: generatorContract(models, expectedPrompts.generatorPromptVersion, generated.output),
+        createdAt: adapters.now(),
+      }
+      await writeGeneratorCheckpoint(adapters, checkpointPath(generatorCheckpointDir, candidate), checkpoint)
+      await gravarFase(adapters, faseDir, candidate, "gerador.concluido", {
+        checkpoint: checkpointPath(generatorCheckpointDir, candidate),
+        multipassagem: metricasMultipassagem ? metricasMultipassagem.passagens > 1 : false,
+        passagens: metricasMultipassagem?.passagens ?? 1,
+        chamadasGeracao: metricasMultipassagem
+          ? metricasMultipassagem.chamadasGeracao + metricasMultipassagem.chamadasSintese
+          : generated.metadata.attempts,
+      })
+      return {
+        version: 1,
+        estado: "em_revisao",
+        fonte: source,
+        documentos: extracted,
+        resumo: generated.output,
+        geracao,
+        ingestao: {
+          ...baseIngestion(candidate, inventory, "modelos", "generator-only: julgamento pendente"),
+          modelos: {
+            generator: generated.metadata,
+            ...(metricasMultipassagem ? { geracaoMultipassagem: metricasMultipassagem } : {}),
+          },
+          eval: { completo: false, blockers: 1, dimensoes: PROGRAMA_GOVERNO_GOV_EVAL_DIMENSIONS },
+        },
+      }
+    }
+    if (!resumeGeneratorCheckpoint) {
+      await gravarFase(adapters, faseDir, candidate, "gerador.concluido", {
+        multipassagem: metricasMultipassagem ? metricasMultipassagem.passagens > 1 : false,
+        passagens: metricasMultipassagem?.passagens ?? 1,
+        chamadasGeracao: metricasMultipassagem
+          ? metricasMultipassagem.chamadasGeracao + metricasMultipassagem.chamadasSintese
+          : generated.metadata.attempts,
+      })
+    }
     const claims = judgeItems(candidate.chave, generated.output)
     await gravarFase(adapters, faseDir, candidate, "julgamento.iniciado")
     const judged = await models.judgeClaims({ claims, paginasCitadas: citedPages(claims, extracted) })
@@ -1234,6 +1514,13 @@ export async function ingestProgramaGovernoGovernadores(
       options.repairFactsLimit,
       options.faseDir ? resolve(options.faseDir) : undefined,
       options.extractCacheDir ? resolve(options.extractCacheDir) : undefined,
+      options.generatorOnly === true,
+      options.generatorCheckpointDir
+        ? resolve(options.generatorCheckpointDir)
+        : options.generatorOnly === true
+          ? resolve(options.outputDir, ".generator-checkpoints")
+          : undefined,
+      options.resumeGeneratorCheckpoint ? resolve(options.resumeGeneratorCheckpoint) : undefined,
     )
     const ufDir = resolve(options.outputDir, candidate.uf)
     await adapters.ensureDir(ufDir)
@@ -1317,7 +1604,7 @@ export async function runProgramaGovernoGovernadoresCli(
     models = createProgramaGovernoModelAdapters(config)
   }
   const result = await ingestProgramaGovernoGovernadores(options, { ...dependencies, models: models ?? null })
-  if (result.blockers.length > 0) {
+  if (result.blockers.length > 0 && options.generatorOnly !== true) {
     throw new Error(`ingestao materializou ${result.blockers.length} bloqueio(s); consulte manifesto-ingestao.json`)
   }
   return result
