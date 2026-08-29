@@ -120,6 +120,34 @@ process.stdout.write(${JSON.stringify([
   assert.match(resultado.stderr, /PF_MODEL_USAGE=.*"input_tokens":21/u)
 })
 
+test("runner do generator Luna permite elevar o esforço sem trocar o modelo", async () => {
+  const fakeCli = fixturePath("pf-fake-codex-luna-high.mjs")
+  const script = `#!/usr/bin/env node
+const args=process.argv.slice(2)
+for (const esperado of ['gpt-5.6-luna','model_reasoning_effort="high"']) {
+  if (!args.includes(esperado)) { console.error('arg ausente: '+esperado); process.exit(2) }
+}
+process.stdin.resume()
+process.stdout.write(${JSON.stringify([
+    JSON.stringify({ type: "item.completed", item: { type: "agent_message", text: '{"ok":true}' } }),
+    JSON.stringify({ type: "turn.completed", usage: { input_tokens: 1, output_tokens: 1 } }),
+    "",
+  ].join("\n"))})
+`
+  await writeFile(fakeCli, script)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_CODEX_LUNA,
+    {
+      PF_CODEX_CLI: fakeCli,
+      PF_CODEX_TIMEOUT_MS: "15000",
+      PF_CODEX_REASONING_EFFORT: "high",
+    },
+    ENVELOPE,
+  )
+  assert.equal(resultado.code, 0, resultado.stderr)
+})
+
 test("runner do judge Claude usa modo mínimo e devolve structured_output", async () => {
   const fakeCli = fixturePath("pf-fake-claude-judge.mjs")
   const script = `#!/usr/bin/env node
