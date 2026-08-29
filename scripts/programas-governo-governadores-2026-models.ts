@@ -53,6 +53,8 @@ export type ProgramaGovernoGovEvalDimension = (typeof PROGRAMA_GOVERNO_GOV_EVAL_
 
 export type ProgramaGovernoModelCommand = {
   name: string
+  /** Stable provider model ID used by an explicit separation policy. */
+  modelId?: string
   version: string
   command: string
   args?: string[]
@@ -61,6 +63,11 @@ export type ProgramaGovernoModelCommand = {
 }
 
 export type ProgramaGovernoModelsConfig = {
+  /**
+   * `family` keeps the legacy cross-family gate. `codex-only` explicitly
+   * permits the two distinct Codex model IDs used by this pipeline.
+   */
+  separationPolicy?: "family" | "codex-only"
   generator: ProgramaGovernoModelCommand
   judge: ProgramaGovernoModelCommand
 }
@@ -398,6 +405,7 @@ function runnerFamily(config: ProgramaGovernoModelCommand): string | null {
 
 function assertCommand(config: ProgramaGovernoModelCommand, path: string): void {
   stringValue(config.name, `${path}.name`)
+  if (config.modelId !== undefined) stringValue(config.modelId, `${path}.modelId`)
   stringValue(config.version, `${path}.version`)
   stringValue(config.command, `${path}.command`)
   if (config.args && !config.args.every((arg) => typeof arg === "string")) throw new Error(`${path}.args: invalido`)
@@ -429,6 +437,33 @@ function assertCommand(config: ProgramaGovernoModelCommand, path: string): void 
   const familiaDeclarada = modelFamily(config.name)
   if (familiaRunner && familiaRunner !== familiaDeclarada) {
     throw new Error(`${path}.command: runner da familia ${familiaRunner} diverge do nome ${config.name}`)
+  }
+}
+
+function assertCodexOnlyPolicy(config: ProgramaGovernoModelsConfig): void {
+  if (config.separationPolicy === undefined || config.separationPolicy === "family") return
+  if (config.separationPolicy !== "codex-only") {
+    throw new Error(`separationPolicy invalida: ${String(config.separationPolicy)}`)
+  }
+
+  const generatorId = config.generator.modelId?.trim().toLocaleLowerCase("pt-BR")
+  const judgeId = config.judge.modelId?.trim().toLocaleLowerCase("pt-BR")
+  if (generatorId !== "gpt-5.6-luna" || judgeId !== "gpt-5.6-sol") {
+    throw new Error("politica codex-only exige IDs de modelo distintos: gpt-5.6-luna e gpt-5.6-sol")
+  }
+  if (!config.generator.version.toLocaleLowerCase("pt-BR").includes(generatorId)
+    || !config.judge.version.toLocaleLowerCase("pt-BR").includes(judgeId)) {
+    throw new Error("politica codex-only exige que a versao declare o modelId correspondente")
+  }
+
+  for (const [role, command] of [["generator", config.generator], ["judge", config.judge]] as const) {
+    const commandText = [command.command, ...(command.args ?? [])].join(" ").toLocaleLowerCase("pt-BR")
+    if (!commandText.includes("codex")) {
+      throw new Error(`${role}.command: politica codex-only exige runner Codex`)
+    }
+    if (/(?:claude|opencode|qwen|deepseek|glm)/u.test(commandText)) {
+      throw new Error(`${role}.command: Codex sem fallback externo`)
+    }
   }
 }
 
@@ -699,7 +734,9 @@ export function createProgramaGovernoModelAdapters(
 ): ProgramaGovernoModelAdapters {
   assertCommand(config.generator, "generator")
   assertCommand(config.judge, "judge")
-  if (modelFamily(config.generator.name) === modelFamily(config.judge.name)) {
+  assertCodexOnlyPolicy(config)
+  const codexOnly = config.separationPolicy === "codex-only"
+  if (!codexOnly && modelFamily(config.generator.name) === modelFamily(config.judge.name)) {
     throw new Error("generator e judge devem usar familias diferentes")
   }
   if (runnerReal(config.generator) === runnerReal(config.judge)) {

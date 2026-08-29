@@ -26,6 +26,30 @@ function config(): ProgramaGovernoModelsConfig {
   }
 }
 
+function codexOnlyConfig(): ProgramaGovernoModelsConfig {
+  return {
+    separationPolicy: "codex-only",
+    generator: {
+      name: "OpenAI Luna",
+      modelId: "gpt-5.6-luna",
+      version: "gpt-5.6-luna-medium@codex-cli-v5",
+      command: "node",
+      args: ["run-generator-codex-luna.mjs"],
+      timeoutMs: 1_000,
+      maxAttempts: 1,
+    },
+    judge: {
+      name: "OpenAI Sol",
+      modelId: "gpt-5.6-sol",
+      version: "gpt-5.6-sol-medium@codex-cli-v5",
+      command: "node",
+      args: ["run-judge-codex-sol.mjs"],
+      timeoutMs: 1_000,
+      maxAttempts: 1,
+    },
+  }
+}
+
 function summary(themeIds = ["saude", "educacao", "seguranca", "economia"]): unknown {
   const evidence = [{ documentoId: "PI:180002549920:01", pagina: 1, trecho: "Trecho oficial." }]
   const frases = Array.from({ length: 6 }, (_, index) => ({
@@ -74,6 +98,31 @@ test("recusa tentativas fracionárias e aliases da mesma família", () => {
   sameFamily.generator.name = "GPT-5.4"
   sameFamily.judge.name = "OpenAI o3"
   assert.throws(() => createProgramaGovernoModelAdapters(sameFamily), /familias diferentes/)
+})
+
+test("politica codex-only aceita Luna e Sol por IDs distintos", () => {
+  assert.doesNotThrow(() => createProgramaGovernoModelAdapters(codexOnlyConfig()))
+
+  const mesmaLuna = codexOnlyConfig()
+  mesmaLuna.judge.name = "OpenAI Luna"
+  mesmaLuna.judge.modelId = "gpt-5.6-luna"
+  mesmaLuna.judge.version = "gpt-5.6-luna-medium@codex-cli-v5"
+  assert.throws(() => createProgramaGovernoModelAdapters(mesmaLuna), /IDs de modelo distintos/iu)
+
+  const mesmoSol = codexOnlyConfig()
+  mesmoSol.generator.name = "OpenAI Sol"
+  mesmoSol.generator.modelId = "gpt-5.6-sol"
+  mesmoSol.generator.version = "gpt-5.6-sol-medium@codex-cli-v5"
+  mesmoSol.generator.args = ["run-generator-codex-sol.mjs"]
+  assert.throws(() => createProgramaGovernoModelAdapters(mesmoSol), /IDs de modelo distintos/iu)
+
+  const fallbackExterno = codexOnlyConfig()
+  fallbackExterno.judge.args = ["run-judge-codex-sol.mjs", "--fallback=opencode"]
+  assert.throws(() => createProgramaGovernoModelAdapters(fallbackExterno), /Codex sem fallback externo/iu)
+
+  const generatorExterno = codexOnlyConfig()
+  generatorExterno.generator.args = ["run-generator-claude.mjs"]
+  assert.throws(() => createProgramaGovernoModelAdapters(generatorExterno), /politica codex-only exige runner Codex|Codex sem fallback externo/iu)
 })
 
 test("generator retenta quando resumo viola limite mecânico e informa o erro", async () => {
