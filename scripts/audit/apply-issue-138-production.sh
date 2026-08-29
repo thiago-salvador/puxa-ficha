@@ -49,7 +49,7 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 ddl_version=20260829100000
 backfill_version=20260829100100
-previous_version=20260829030001
+previous_version=20260829030002
 ddl=("$ROOT/supabase/migrations/${ddl_version}_"*.sql)
 backfill=("$ROOT/supabase/migrations-pendentes/${backfill_version}_"*.sql)
 ddl_rollback=("$ROOT/supabase/rollback/${ddl_version}_"*.rollback.sql)

@@ -4,6 +4,8 @@ import { resolve } from "node:path";
 import {
   analyzeProfileAdmission,
   reconcilePublicRoster,
+  validateActiveProfileCrosswalk,
+  type ActiveProfileCrosswalkEntry,
   type OfficialCandidacy,
   type ProfileAdmissionInput,
   type PublicCandidateSummary,
@@ -36,10 +38,20 @@ interface PublishedSnapshot {
   collection_evidence?: SourceEvidence[];
 }
 
+interface ActiveProfileCrosswalkSnapshot {
+  metadata: {
+    active_registration_count: number;
+    active_profile_count: number;
+    unresolved_count: number;
+  };
+  profiles: ActiveProfileCrosswalkEntry[];
+}
+
 interface CliOptions {
   published: string;
   officialSnapshot: string | null;
   currentOfficialSnapshot: string | null;
+  activeProfileCrosswalk: string;
   out: string;
   now: Date;
 }
@@ -53,7 +65,7 @@ function parseArgs(args: string[]): CliOptions {
   const published = values.get("published");
   if (!published) {
     throw new Error(
-      "uso: --published=<snapshot.json> [--official-snapshot=<snapshot.json>] [--current-official-snapshot=<snapshot.json>]",
+      "uso: --published=<snapshot.json> [--official-snapshot=<snapshot.json>] [--current-official-snapshot=<snapshot.json>] [--active-profile-crosswalk=<snapshot.json>]",
     );
   }
   const nowValue = values.get("now");
@@ -68,9 +80,30 @@ function parseArgs(args: string[]): CliOptions {
     currentOfficialSnapshot: values.get("current-official-snapshot")
       ? resolve(values.get("current-official-snapshot") as string)
       : null,
+    activeProfileCrosswalk: resolve(
+      values.get("active-profile-crosswalk") ??
+        "data/candidate-roster-active-20260829.json",
+    ),
     out: resolve(values.get("out") ?? "reports/data-freshness"),
     now,
   };
+}
+
+function readActiveProfileCrosswalk(
+  path: string,
+): ActiveProfileCrosswalkSnapshot {
+  const snapshot = JSON.parse(
+    readFileSync(path, "utf8"),
+  ) as ActiveProfileCrosswalkSnapshot;
+  if (!snapshot.metadata || !Array.isArray(snapshot.profiles)) {
+    throw new Error("crosswalk ativo não contém metadata e profiles[]");
+  }
+  validateActiveProfileCrosswalk(snapshot.profiles, {
+    activeRegistrationCount: snapshot.metadata.active_registration_count,
+    activeProfileCount: snapshot.metadata.active_profile_count,
+    unresolvedCount: snapshot.metadata.unresolved_count,
+  });
+  return snapshot;
 }
 
 function readPublished(path: string): PublishedSnapshot {
@@ -366,9 +399,13 @@ async function main(): Promise<void> {
     published.records,
   );
   const publicProfiles = published.public_profiles ?? [];
+  const activeProfileCrosswalk = readActiveProfileCrosswalk(
+    options.activeProfileCrosswalk,
+  );
   const publicationIntegrity = reconcilePublicRoster(
     currentOfficialWithProfiles,
     publicProfiles.map(({ slug, office, uf }) => ({ slug, office, uf })),
+    activeProfileCrosswalk.profiles,
   );
   const profileAdmission = {
     snapshot_present: Array.isArray(published.public_profiles),
@@ -419,6 +456,7 @@ async function main(): Promise<void> {
     generated_at: generatedAt,
     official,
     current_official: currentOfficialWithProfiles,
+    active_profile_crosswalk: activeProfileCrosswalk,
     published: published.records,
     public_profiles: publicProfiles,
   });

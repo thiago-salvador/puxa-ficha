@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   apply:
-    name: Roster 30000, 30001, ledger e readback
+    name: Roster 30000, 30001, 30002, ledger e readback
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -55,3 +55,5 @@ jobs:
         run: npm run audit:candidate-integrity:prove
       - name: Aplicar roster fechado e validar readback
         run: bash scripts/audit/apply-candidate-roster-integrity-production.sh
+      - name: Estruturar estado residual e validar readback
+        run: bash scripts/audit/apply-candidate-registration-state-production.sh

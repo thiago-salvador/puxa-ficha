@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   rollback:
-    name: Rollback coordenado roster 30000 e 30001
+    name: Rollback coordenado roster 30002, 30000 e 30001
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -45,5 +45,7 @@ jobs:
           node-version: 24
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Executar rollback coordenado e readback
+      - name: Reverter estado residual e validar readback
+        run: bash scripts/audit/rollback-candidate-registration-state-production.sh
+      - name: Executar rollback coordenado do roster e readback
         run: bash scripts/audit/rollback-candidate-roster-integrity-production.sh
