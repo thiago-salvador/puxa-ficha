@@ -354,7 +354,7 @@ test("falha depois de maxAttempts quando a evidência continua divergente", asyn
   assert.equal(requests.length, 2)
 })
 
-test("fatos fora do recorte acionam tentativa corretiva", async () => {
+test("fato com trecho não literal aciona tentativa corretiva", async () => {
   const source = config()
   source.generator.maxAttempts = 2
   let chamadas = 0
@@ -364,7 +364,7 @@ test("fatos fora do recorte acionam tentativa corretiva", async () => {
       stdout: JSON.stringify({
         fatos: [{
           texto: "Proposta literal.",
-          evidencias: [{ documentoId: "doc-1", pagina: chamadas === 1 ? 99 : 1, trecho: "Trecho literal." }],
+          evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: chamadas === 1 ? "Trecho corrigido pelo modelo." : "Trecho literal." }],
         }],
       }),
       stderr: "",

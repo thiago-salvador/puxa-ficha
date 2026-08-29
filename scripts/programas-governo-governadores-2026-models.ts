@@ -4,6 +4,7 @@ import path from "node:path"
 import judgeSchema from "./prompts/programa-governo-governadores-judge-v2.schema.json"
 import type { ProgramaGovernoEvidencia, ProgramaGovernoResumo } from "../src/lib/programa-governo"
 import {
+  filtrarFatosLiterais,
   substituirEvidenciasFato,
   validarResultadoProgramaGovernoMultipassagem,
   type ProgramaGovernoDocumentoEntradaMultipassagem,
@@ -769,7 +770,6 @@ export function createProgramaGovernoModelAdapters(
       )
     },
     extrairFatosPassagem(input) {
-      const porDocumento = new Map(input.documentos.map((documento) => [documento.documentoId, documento.paginas]))
       return runStructured(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/fatos-passagem`,
@@ -778,11 +778,9 @@ export function createProgramaGovernoModelAdapters(
         { identityKey: input.identityKey, documentos: input.documentos },
         (value) => {
           const fatosBrutos = validarFatosBrutos(value)
-          const fatosValidos = fatosBrutos.filter((fato) => fato.evidencias.every((evidencia) =>
-            evidencia.documentoId && porDocumento.get(evidencia.documentoId)?.some((pagina) => pagina.pagina === evidencia.pagina)
-          ))
-          if (fatosBrutos.length > 0 && fatosValidos.length === 0) {
-            throw new Error("fatos-passagem: todas as evidencias ficaram fora do recorte solicitado")
+          const fatosValidos = filtrarFatosLiterais(fatosBrutos, input.documentos)
+          if (fatosValidos.length !== fatosBrutos.length) {
+            throw new Error(`fatos-passagem: ${fatosBrutos.length - fatosValidos.length} fato(s) contem evidencia nao literal ou fora do recorte`)
           }
           return fatosValidos
         },
