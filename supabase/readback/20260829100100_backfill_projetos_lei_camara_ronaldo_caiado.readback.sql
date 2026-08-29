@@ -6,6 +6,7 @@ DO $assert$
 DECLARE
   camara_total integer;
   camara_emc_2003 integer;
+  camara_exato integer;
   senado_total integer;
   senado_exato integer;
   total_candidato integer;
@@ -21,6 +22,30 @@ BEGIN
     AND tipo = 'EMC'
     AND ano = 2003
     AND proposicao_id_api IN ('123202', '123149', '123094', '121483');
+  WITH expected(proposicao_id_api, tipo, numero, ano, ementa, situacao, url_inteiro_teor, tema, destaque, destaque_motivo, coverage_id, metadata) AS (
+    VALUES
+      ('123202', 'EMC', '188', 2003, 'Adita o art. 1º da PEC dando nova redação ao § 9º do art. 201 da Constituição Federal.', NULL, 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145667', NULL, FALSE, NULL, NULL, '{}'::jsonb),
+      ('123149', 'EMC', '163', 2003, 'Acrescentem-se, no art. 1º da PEC, as seguintes disposições aos arts. 40 e 42 da Constituição Federal, promovendo-se, em conseqüência, as seguintes modificações no art. 2º da PEC, relativamente ao caput do art. 8º da Emenda Constitucional nº 20, de 15 de dezembro de 1998:', NULL, 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145577', NULL, FALSE, NULL, NULL, '{}'::jsonb),
+      ('123094', 'EMC', '143', 2003, 'Modifica os arts. 37, 40, 42, 48, 96, 142 e 149 da Constituição Federal, o art. 8º da Emenda Constitucional nº 20, de 15 de dezembro de 1998, e dá outras providências.', NULL, 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=145483', NULL, FALSE, NULL, NULL, '{}'::jsonb),
+      ('121483', 'EMC', '89', 2003, 'Altera o Sistema Tributário Nacional e dá outras providências.', NULL, 'https://www.camara.leg.br/proposicoesWeb/prop_mostrarintegra?codteor=143048', NULL, FALSE, NULL, NULL, '{}'::jsonb)
+  )
+  SELECT count(*) INTO camara_exato
+  FROM expected e
+  JOIN public.projetos_lei p
+    ON p.proposicao_id_api = e.proposicao_id_api
+   AND p.tipo = e.tipo
+   AND p.numero = e.numero
+   AND p.ano = e.ano
+   AND p.ementa = e.ementa
+   AND p.situacao IS NOT DISTINCT FROM e.situacao
+   AND p.url_inteiro_teor IS NOT DISTINCT FROM e.url_inteiro_teor
+   AND p.tema IS NOT DISTINCT FROM e.tema
+   AND p.destaque = e.destaque
+   AND p.destaque_motivo IS NOT DISTINCT FROM e.destaque_motivo
+   AND p.coverage_id IS NOT DISTINCT FROM e.coverage_id
+   AND p.metadata IS NOT DISTINCT FROM e.metadata
+  WHERE p.candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
+    AND p.fonte = 'Camara';
   SELECT count(*) INTO senado_total
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
@@ -54,7 +79,7 @@ BEGIN
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid;
 
-  IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR senado_total <> 230
+  IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 230
      OR senado_exato <> 4 OR total_candidato <> 2079
      OR camara_total - 1845 <> 4 THEN
     RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, EMC_2003=%, Senado=%, Senado_exato=%, total=%, delta_camara=%)',

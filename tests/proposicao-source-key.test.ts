@@ -16,6 +16,10 @@ const ROLLBACK = readFileSync(
   join(ROOT, "supabase", "rollback", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.rollback.sql"),
   "utf8",
 )
+const READBACK = readFileSync(
+  join(ROOT, "supabase", "readback", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql"),
+  "utf8",
+)
 
 describe("identidade de proposição por fonte, issue #138", () => {
   test("o contrato de ingestão usa a chave composta nos dois órgãos", () => {
@@ -70,5 +74,14 @@ describe("identidade de proposição por fonte, issue #138", () => {
     assert.match(ROLLBACK, /indice scoped ausente/i)
     assert.doesNotMatch(ROLLBACK, /DROP INDEX/i)
     assert.doesNotMatch(ROLLBACK, /ADD CONSTRAINT/i)
+  })
+
+  test("readback exige os quatro payloads Câmara exatos além das contagens", () => {
+    assert.match(READBACK, /camara_exato integer/i)
+    assert.match(READBACK, /SELECT count\(\*\) INTO camara_exato/i)
+    assert.match(READBACK, /camara_exato <> 4/i)
+    assert.match(READBACK, /codteor=145667/)
+    assert.match(READBACK, /metadata IS NOT DISTINCT FROM e\.metadata/i)
+    assert.match(READBACK, /'\{\}'::jsonb/)
   })
 })

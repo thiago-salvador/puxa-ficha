@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "reversible": true,
+  "change": "issue-138-proposicao-source-key",
+  "approval": {
+    "kind": "named-remote-write",
+    "status": "required-before-execution",
+    "required_approver": "Thiago Salvador",
+    "required_environment": "production",
+    "execution": "manual-workflow-dispatch-only"
+  },
+  "scope": {
+    "project_ref": "wskpzsobvqwhnbsdsmok",
+    "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+    "proposicao_ids": ["123202", "123149", "123094", "121483"],
+    "sources": ["Camara", "Senado"]
+  },
+  "rollback": {
+    "kind": "compensating-migration",
+    "artifact": "scripts/audit/rollback-issue-138-production.sh",
+    "workflow": ".github/workflows/rollback-issue-138-production.yml",
+    "schema_policy": "preserve-scoped-index-and-triple-key-writers",
+    "schema_rollback_artifact": "supabase/rollback/20260829100000_projetos_lei_chave_por_fonte.rollback.sql",
+    "schema_rollback_approval": "separate-named-approval-after-code-rollback-and-zero-collisions"
+  },
+  "verification": {
+    "checks": [
+      "main-top-sha-and-clean-checkout",
+      "fixed-production-project-url",
+      "advisory-transaction-lock",
+      "ddl-backfill-ledger-idempotency-hashes",
+      "exact-senate-and-camara-payload-readback",
+      "rollback-readback-preserves-schema"
+    ]
+  }
+}
