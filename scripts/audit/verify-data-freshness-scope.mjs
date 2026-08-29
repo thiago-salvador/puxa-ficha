@@ -58,6 +58,7 @@ const allowed = [
   /^supabase\/rollback\/20260829030000_candidate_roster_publication_integrity\.rollback\.sql$/,
   /^docs\/plans\/2026-08-28-candidate-roster-integrity\.md$/,
   /^scripts\/audit\/allowlist-chapas-20260827\.json$/,
+  /^scripts\/audit\/allowlist-candidate-roster-integrity-20260829\.json$/,
   /^scripts\/audit\/falhas-replay-linear\.json$/,
   /^scripts\/audit\/lib\/migrations-classificacao\.ts$/,
   /^scripts\/audit\/recortes\.json$/,
