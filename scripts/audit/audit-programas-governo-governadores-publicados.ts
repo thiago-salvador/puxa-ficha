@@ -93,7 +93,9 @@ async function main(): Promise<void> {
       if (!hashesMatch) reasons.push("document_hash")
     }
     if (reasons.length) {
-      staleRecords.push({ slug: record.fonte.slug, identityKey: key, reasons })
+      const slug = record.fonte.slug
+      assert(slug, `${key}: registro stale sem slug`)
+      staleRecords.push({ slug, identityKey: key, reasons })
       continue
     }
     const current = byUf.get(record.fonte.uf) ?? []
