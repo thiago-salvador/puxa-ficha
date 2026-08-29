@@ -43,7 +43,15 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
+          cache: npm
+      - name: Instalar dependências para a prova canônica
+        run: npm ci
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
+      - name: Provar apply, readback e rollback em PostgreSQL 17 descartável
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run audit:candidate-integrity:prove
       - name: Aplicar roster fechado e validar readback
         run: bash scripts/audit/apply-candidate-roster-integrity-production.sh
