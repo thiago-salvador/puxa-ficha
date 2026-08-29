@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "source": "TSE DivulgaCandContas",
+    "election_id": "20322002026",
+    "checked_at": "2026-08-28",
+    "rule": "situacaoVice 3 é substituída; exatamente uma alternativa não 3 pode ser publicada"
+  },
+  "resolutions": [
+    { "titular_sq": "60002553922", "current_vice_sq": "60002553983" },
+    { "titular_sq": "120002549681", "current_vice_sq": "120002554133" },
+    { "titular_sq": "140002554108", "current_vice_sq": "140002554109" },
+    { "titular_sq": "190002550196", "current_vice_sq": "190002554226" },
+    { "titular_sq": "260002549466", "current_vice_sq": "260002554132" },
+    { "titular_sq": "250002548080", "current_vice_sq": "250002554211" },
+    { "titular_sq": "250002544912", "current_vice_sq": "250002552372" }
+  ]
+}

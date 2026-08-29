@@ -123,6 +123,21 @@
       "partido_sigla": "PSTU",
       "partido_nome": "PARTIDO SOCIALISTA  DOS TRABALHADORES UNIFICADO",
       "data_nascimento": "23/03/1980",
+      "naturalidade": "Belém (PA)",
+      "formacao": "Superior incompleto",
+      "profissao_declarada": "Comunicólogo",
+      "genero": "Feminino",
+      "estado_civil": "Solteiro(a)",
+      "cor_raca": "Preta",
+      "biografia": "Well Macedo é candidata ao Governo do Pará pelo PSTU nas eleições de 2026. Declarou ao TSE a ocupação de comunicólogo e escolaridade superior incompleta.",
+      "foto_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/140002554108/PA",
+      "redes_sociais": {
+        "instagram": {
+          "url": "https://www.instagram.com/wellmacedo/",
+          "username": "wellmacedo",
+          "followers": null
+        }
+      },
       "exists_production": false
     },
     {
@@ -507,6 +522,15 @@
       "partido_sigla": "PRTB",
       "partido_nome": "PARTIDO RENOVADOR TRABALHISTA BRASILEIRO",
       "data_nascimento": "16/02/1980",
+      "naturalidade": "Macapá (AP)",
+      "formacao": "Superior completo",
+      "profissao_declarada": "Economista",
+      "genero": "Masculino",
+      "estado_civil": "Casado(a)",
+      "cor_raca": "Branca",
+      "biografia": "Rico Pinheiro é candidato ao Governo do Distrito Federal pelo PRTB nas eleições de 2026. Declarou ao TSE a ocupação de economista e escolaridade superior completa.",
+      "foto_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/70002553982/DF",
+      "redes_sociais": {},
       "exists_production": false
     },
     {

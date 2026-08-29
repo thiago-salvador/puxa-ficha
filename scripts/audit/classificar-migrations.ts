@@ -11,57 +11,63 @@
  *   npx tsx scripts/audit/classificar-migrations.ts --quebras  # só as que quebram
  */
 
-import { createHash } from "node:crypto"
-import { readFileSync, readdirSync } from "node:fs"
-import { join } from "node:path"
+import { createHash } from "node:crypto";
+import { readFileSync, readdirSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { join, resolve } from "node:path";
 import {
   classificarMigration,
   resumir,
   type ClassificacaoMigration,
-} from "./lib/migrations-classificacao"
-import { RETIDAS_PADRAO } from "./lib/ledger-guard"
+} from "./lib/migrations-classificacao";
+import { RETIDAS_PADRAO } from "./lib/ledger-guard";
 
-export const DIR_MIGRATIONS = "supabase/migrations"
-export const CAMINHO_MANIFESTO_SCHEMA = "scripts/audit/schema-replay-substituicoes.json"
+export const DIR_MIGRATIONS = "supabase/migrations";
+export const CAMINHO_MANIFESTO_SCHEMA =
+  "scripts/audit/schema-replay-substituicoes.json";
 
 export interface OrigemSchemaSeparada {
-  arquivo: string
-  sha256: string
-  objetos: string[]
+  arquivo: string;
+  sha256: string;
+  objetos: string[];
 }
 
 export interface ManifestoSchemaReplay {
-  _comentario?: string
-  schema_dump_sha256: string
-  substituto: string
-  origens: OrigemSchemaSeparada[]
+  _comentario?: string;
+  schema_dump_sha256: string;
+  substituto: string;
+  origens: OrigemSchemaSeparada[];
 }
 
 export interface ClassificacaoComReplaySchema extends ClassificacaoMigration {
   /** Entra no replay do schema atual, sem curadoria aplicada nem migrations retidas. */
-  replaySchema: boolean
+  replaySchema: boolean;
 }
 
-export function listarArquivosDeMigration(dir: string = DIR_MIGRATIONS): string[] {
+export function listarArquivosDeMigration(
+  dir: string = DIR_MIGRATIONS,
+): string[] {
   return readdirSync(dir)
     .filter((nome) => nome.endsWith(".sql"))
-    .sort()
+    .sort();
 }
 
-export function classificarTodas(dir: string = DIR_MIGRATIONS): ClassificacaoMigration[] {
+export function classificarTodas(
+  dir: string = DIR_MIGRATIONS,
+): ClassificacaoMigration[] {
   return listarArquivosDeMigration(dir).map((arquivo) =>
-    classificarMigration(arquivo, readFileSync(join(dir, arquivo), "utf8"))
-  )
+    classificarMigration(arquivo, readFileSync(join(dir, arquivo), "utf8")),
+  );
 }
 
 export function carregarManifestoSchema(
-  caminho: string = CAMINHO_MANIFESTO_SCHEMA
+  caminho: string = CAMINHO_MANIFESTO_SCHEMA,
 ): ManifestoSchemaReplay {
-  return JSON.parse(readFileSync(caminho, "utf8")) as ManifestoSchemaReplay
+  return JSON.parse(readFileSync(caminho, "utf8")) as ManifestoSchemaReplay;
 }
 
 function sha256(conteudo: string): string {
-  return createHash("sha256").update(conteudo).digest("hex")
+  return createHash("sha256").update(conteudo).digest("hex");
 }
 
 /**
@@ -73,36 +79,47 @@ function sha256(conteudo: string): string {
 export function validarManifestoSchema(
   todas: readonly ClassificacaoMigration[],
   dir: string = DIR_MIGRATIONS,
-  manifesto: ManifestoSchemaReplay = carregarManifestoSchema()
+  manifesto: ManifestoSchemaReplay = carregarManifestoSchema(),
 ): void {
-  const porArquivo = new Map(todas.map((m) => [m.arquivo, m]))
+  const porArquivo = new Map(todas.map((m) => [m.arquivo, m]));
   if (!/^[a-f0-9]{64}$/.test(manifesto.schema_dump_sha256)) {
-    throw new Error("manifesto sem SHA-256 canônico do pg_dump de schema")
+    throw new Error("manifesto sem SHA-256 canônico do pg_dump de schema");
   }
-  const substituto = porArquivo.get(manifesto.substituto)
-  if (!substituto) throw new Error(`substituto de schema ausente: ${manifesto.substituto}`)
-  if (substituto.classe !== "schema" || substituto.mista || !substituto.temDdlPersistente) {
-    throw new Error(`substituto precisa ser DDL puro: ${manifesto.substituto}`)
+  const substituto = porArquivo.get(manifesto.substituto);
+  if (!substituto)
+    throw new Error(`substituto de schema ausente: ${manifesto.substituto}`);
+  if (
+    substituto.classe !== "schema" ||
+    substituto.mista ||
+    !substituto.temDdlPersistente
+  ) {
+    throw new Error(`substituto precisa ser DDL puro: ${manifesto.substituto}`);
   }
 
-  const sqlSubstituto = readFileSync(join(dir, manifesto.substituto), "utf8")
-  const vistas = new Set<string>()
+  const sqlSubstituto = readFileSync(join(dir, manifesto.substituto), "utf8");
+  const vistas = new Set<string>();
   for (const origem of manifesto.origens) {
-    if (vistas.has(origem.arquivo)) throw new Error(`origem duplicada: ${origem.arquivo}`)
-    vistas.add(origem.arquivo)
-    const classificada = porArquivo.get(origem.arquivo)
-    if (!classificada) throw new Error(`origem separada ausente: ${origem.arquivo}`)
-    if (!classificada.mista) throw new Error(`origem deixou de ser mista: ${origem.arquivo}`)
+    if (vistas.has(origem.arquivo))
+      throw new Error(`origem duplicada: ${origem.arquivo}`);
+    vistas.add(origem.arquivo);
+    const classificada = porArquivo.get(origem.arquivo);
+    if (!classificada)
+      throw new Error(`origem separada ausente: ${origem.arquivo}`);
+    if (!classificada.mista)
+      throw new Error(`origem deixou de ser mista: ${origem.arquivo}`);
 
-    const sqlOrigem = readFileSync(join(dir, origem.arquivo), "utf8")
+    const sqlOrigem = readFileSync(join(dir, origem.arquivo), "utf8");
     if (sha256(sqlOrigem) !== origem.sha256) {
-      throw new Error(`origem aplicada foi reescrita: ${origem.arquivo}`)
+      throw new Error(`origem aplicada foi reescrita: ${origem.arquivo}`);
     }
-    if (origem.objetos.length === 0) throw new Error(`origem sem objetos declarados: ${origem.arquivo}`)
+    if (origem.objetos.length === 0)
+      throw new Error(`origem sem objetos declarados: ${origem.arquivo}`);
     for (const objeto of origem.objetos) {
-      const marcador = objeto.split(/[.:]/).at(-1)
+      const marcador = objeto.split(/[.:]/).at(-1);
       if (!marcador || !sqlSubstituto.includes(marcador)) {
-        throw new Error(`objeto ${objeto} ausente do substituto ${manifesto.substituto}`)
+        throw new Error(
+          `objeto ${objeto} ausente do substituto ${manifesto.substituto}`,
+        );
       }
     }
   }
@@ -110,37 +127,39 @@ export function validarManifestoSchema(
 
 export function classificarTodasComReplaySchema(
   dir: string = DIR_MIGRATIONS,
-  manifesto: ManifestoSchemaReplay = carregarManifestoSchema()
+  manifesto: ManifestoSchemaReplay = carregarManifestoSchema(),
 ): ClassificacaoComReplaySchema[] {
-  const todas = classificarTodas(dir)
-  validarManifestoSchema(todas, dir, manifesto)
-  const origensSeparadas = new Set(manifesto.origens.map((o) => o.arquivo))
+  const todas = classificarTodas(dir);
+  validarManifestoSchema(todas, dir, manifesto);
+  const origensSeparadas = new Set(manifesto.origens.map((o) => o.arquivo));
   return todas.map((m) => ({
     ...m,
     replaySchema:
       m.temDdlPersistente &&
       !origensSeparadas.has(m.arquivo) &&
       !RETIDAS_PADRAO.some((versao) => m.arquivo.startsWith(`${versao}_`)),
-  }))
+  }));
 }
 
 function main() {
-  const args = process.argv.slice(2)
-  const todas = classificarTodasComReplaySchema()
+  const args = process.argv.slice(2);
+  const todas = classificarTodasComReplaySchema();
 
   if (args.includes("--json")) {
-    console.log(JSON.stringify({ resumo: resumir(todas), migrations: todas }, null, 2))
-    return
+    console.log(
+      JSON.stringify({ resumo: resumir(todas), migrations: todas }, null, 2),
+    );
+    return;
   }
 
   if (args.includes("--quebras")) {
     for (const m of todas.filter((c) => c.replay === "quebra_sem_guard")) {
-      console.log(m.arquivo)
+      console.log(m.arquivo);
     }
-    return
+    return;
   }
 
-  const r = resumir(todas)
+  const r = resumir(todas);
   console.log(
     [
       `total                       : ${r.total}`,
@@ -158,8 +177,8 @@ function main() {
       `  previstas como quebra     : ${r.quebram}`,
       `  primeira quebra prevista  : ${r.primeiraQuebra ?? "nenhuma"}`,
       `  posicao dela na ordem     : ${r.limpasAteAPrimeiraQuebra}`,
-    ].join("\n")
-  )
+    ].join("\n"),
+  );
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) main()
+if (resolve(process.argv[1] ?? "") === fileURLToPath(import.meta.url)) main();
