@@ -2,7 +2,7 @@
 
 ## Resultado da coleta
 
-O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agosto de 2026, 19:30:36. O arquivo versionado é `scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json`.
+O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de agosto de 2026, 12:30:35. O arquivo versionado é `scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json`.
 
 | Medida                                       |         Resultado |
 | -------------------------------------------- | ----------------: |
@@ -10,23 +10,24 @@ O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agos
 | Linhas oficiais de candidaturas a governador |               198 |
 | Grupos lógicos                               |               197 |
 | Grupos oficialmente ambíguos                 | 1 grupo, 2 linhas |
-| Perfis locais vinculados por SQ_CANDIDATO    |               148 |
-| Perfis locais ausentes                       |                50 |
+| Perfis locais vinculados por SQ_CANDIDATO    |               197 |
+| Perfis locais ausentes                       |                 0 |
+| Alias de duplicidade oficial                 |                 1 |
 | Pacotes estaduais                            |                27 |
 | PDFs nos pacotes                             |               212 |
 | PDFs ligados à coorte atual                  |               206 |
 | PDFs sem candidatura atual                   |                 6 |
 | Candidaturas com PDF                         |               193 |
 | Ausências explícitas de PDF                  |                 5 |
-| Páginas da coorte atual                      |            11.087 |
-| Texto extraído da coorte atual               |  21.874.177 bytes |
+| Páginas da coorte atual                      |            11.110 |
+| Texto extraído da coorte atual               |  21.986.975 bytes |
 | PDFs atuais que requerem OCR                 |                 5 |
 
 ## Fontes e integridade
 
 - Catálogo primário: [Candidatos 2026, Dados Abertos do TSE](https://dadosabertos.tse.jus.br/dataset/candidatos-2026).
-- Cadastro: `consulta_cand_2026.zip`, 3.137.612 bytes, SHA-256 `3bb3dc3e4bc8b0bb36553ec03d5b0f25d34a3821af74176648ed4b76a1ee779b`.
-- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 276.739.049 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
+- Cadastro: `consulta_cand_2026.zip`, 3.139.062 bytes, SHA-256 `eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27`.
+- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 278.446.551 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
 - Um PDF individual não tem URL oficial independente no catálogo. Por isso, a proveniência correta é a URL do pacote mais `arquivoNoPacote`, nunca uma URL inventada.
 - O acesso direto do shell à CDN respondeu HTTP 403. O navegador Playwright conseguiu obter os arquivos pelos links do catálogo. Isso prova apenas disponibilidade por esse transporte. A integridade de conteúdo foi verificada separadamente com teste de cada ZIP, assinatura PDF, páginas e SHA-256 de pacote e documento.
 
@@ -44,7 +45,7 @@ O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agos
 | ES  |            5 |             5 |             0 |           5 |           1 |            353 |
 | GO  |            6 |             6 |             0 |           7 |           0 |            359 |
 | MA  |            8 |             8 |             0 |           8 |           1 |            682 |
-| MG  |           11 |            10 |             1 |          10 |           0 |            433 |
+| MG  |           11 |            10 |             1 |          10 |           0 |            456 |
 | MS  |            8 |             8 |             0 |           8 |           0 |            269 |
 | MT  |            7 |             7 |             0 |           7 |           0 |            420 |
 | PA  |            7 |             7 |             0 |           7 |           0 |            314 |
@@ -66,7 +67,7 @@ O recorte foi medido em 26 de agosto de 2026 sobre a geração TSE de 25 de agos
 
 | UF  | Candidatura     | Partido      | SQ_CANDIDATO   | Perfil local |
 | --- | --------------- | ------------ | -------------- | ------------ |
-| CE  | Vera Lúcia      | NOVO         | `60002553922`  | ausente      |
+| CE  | Vera Lúcia      | NOVO         | `60002553922`  | vinculado    |
 | MG  | Ben Mendes      | MISSÃO       | `130002544411` | vinculado    |
 | RJ  | Eduardo Paes    | PSD          | `190002543380` | vinculado    |
 | RJ  | Garotinho       | REPUBLICANOS | `190002550196` | vinculado    |
@@ -81,7 +82,7 @@ O cadastro oficial contém duas linhas de MT para Laudicerio Aguiar Machado, AGI
 - `110002553937`, SQ_COLIGACAO `110001801468`, nome de urna `SARGENTO LAUDICÉRIO (LAU)`.
 - `110002554073`, SQ_COLIGACAO `110001801510`, nome de urna `SARGENTO LAUDICÉRIO`.
 
-As duas linhas, seus dois PDFs e os campos de identidade brutos permanecem no inventário com `identidadeEstado=duplicidade_oficial`. Nenhuma delas recebe estado de sucesso ou vínculo por aproximação até resolução em fonte TSE atual.
+Os dois PDFs têm texto extraído integralmente idêntico, SHA-256 `2641361633f792d511c2bd2b62f99c807858a6760afda2b97e71336cbb78d7d7`. O inventário consolida deterministicamente a menor SQ como registro canônico da ficha `laudicerio-aguiar`; a outra linha permanece como `alias_duplicidade_oficial`, sem gerar um segundo programa nem sobrescrever a mesma ficha.
 
 ## Arquivos sem candidatura atual
 

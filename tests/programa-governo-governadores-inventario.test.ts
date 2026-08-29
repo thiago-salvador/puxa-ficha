@@ -13,23 +13,24 @@ test("inventaria a coorte oficial atual de governador nas 27 UFs", () => {
     gruposLogicos: 197,
     gruposAmbiguos: 1,
     linhasEmGruposAmbiguos: 2,
-    perfisLocaisVinculados: 148,
-    perfisLocaisAusentes: 50,
+    perfisLocaisVinculados: 197,
+    perfisLocaisAusentes: 0,
+    aliasesDuplicidadeOficial: 1,
     pacotes: 27,
     documentosTotais: 212,
     documentosDeCandidaturasAtuais: 206,
     documentosSemCandidaturaAtual: 6,
     candidaturasComDocumento: 193,
     candidaturasSemDocumento: 5,
-    paginasCandidaturasAtuais: 11087,
+    paginasCandidaturasAtuais: 11110,
     paginasDocumentosOrfaos: 229,
-    pdfBytesCandidaturasAtuais: 268215277,
+    pdfBytesCandidaturasAtuais: 269922779,
     pdfBytesDocumentosOrfaos: 4098087,
-    pacoteBytesTotais: 276739049,
-    textoExtraidoBytesCandidaturasAtuais: 21874177,
+    pacoteBytesTotais: 278446551,
+    textoExtraidoBytesCandidaturasAtuais: 21986975,
     documentosTextoExtraivel: 201,
     documentosRequeremOcr: 5,
-    inventarioPayloadBytes: 346768,
+    inventarioPayloadBytes: 368864,
   });
 });
 
@@ -66,25 +67,28 @@ test("preserva as cinco ausências e os seis documentos órfãos", () => {
   assert.deepEqual(elizeu?.documentoIds, ["PI:180002549920:01"]);
 });
 
-test("mantém a duplicidade oficial de MT como não resolvida", () => {
-  const ambiguous = inventory.candidaturas.filter(
-    (candidate) => candidate.identidadeEstado === "duplicidade_oficial",
+test("consolida a duplicidade de Laudicério quando os documentos são equivalentes", () => {
+  const laudicerio = inventory.candidaturas.filter((candidate) =>
+    candidate.nomeUrna.includes("LAUDICÉRIO"),
   );
+  const canonical = laudicerio.find(
+    (candidate) => candidate.sqCandidato === "110002553937",
+  );
+  const alias = laudicerio.find(
+    (candidate) => candidate.sqCandidato === "110002554073",
+  );
+
+  assert.equal(canonical?.identidadeEstado, "confirmada");
+  assert.equal(canonical?.slug, "laudicerio-aguiar");
+  assert.equal(canonical?.perfilEstado, "vinculado");
+  assert.deepEqual(canonical?.documentoIds, ["MT:110002553937:01"]);
+  assert.equal(alias?.identidadeEstado, "duplicidade_oficial");
+  assert.equal(alias?.slug, null);
+  assert.equal(alias?.perfilEstado, "alias_duplicidade_oficial");
   assert.deepEqual(
-    ambiguous.map((candidate) => candidate.sqCandidato),
+    alias?.alternativasOficiais.map(({ sqCandidato }) => sqCandidato),
     ["110002553937", "110002554073"],
   );
-  assert.equal(
-    new Set(ambiguous.map((candidate) => candidate.grupoAmbiguidade)).size,
-    1,
-  );
-  for (const row of ambiguous) {
-    assert.equal(row.slug, null);
-    assert.deepEqual(
-      row.alternativasOficiais.map(({ sqCandidato }) => sqCandidato),
-      ["110002553937", "110002554073"],
-    );
-  }
 });
 
 test("contabiliza separadamente as oito partes distintas do pacote de Omar Aziz", () => {
@@ -100,7 +104,7 @@ test("contabiliza separadamente as oito partes distintas do pacote de Omar Aziz"
   });
   assert.deepEqual(
     documents.map(({ paginas }) => paginas),
-    [243, 262, 211, 215, 274, 49, 83, 215],
+    [274, 211, 243, 215, 262, 49, 83, 215],
   );
   assert.equal(
     documents.reduce((sum, document) => sum + document.paginas, 0),
@@ -120,7 +124,7 @@ test("contabiliza separadamente as oito partes distintas do pacote de Omar Aziz"
 test("registra proveniência de pacote e integridade sem confundir transporte com prova", () => {
   assert.equal(
     inventory.fonte.candidatosPacoteSha256,
-    "3bb3dc3e4bc8b0bb36553ec03d5b0f25d34a3821af74176648ed4b76a1ee779b",
+    "eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27",
   );
   assert.deepEqual(inventory.fonte.coleta, {
     metodo: "playwright_catalogo_recurso",
@@ -132,7 +136,10 @@ test("registra proveniência de pacote e integridade sem confundir transporte co
 
 test("vincula candidatura e documento pela chave composta UF + SQ", async () => {
   const source = await readFile(
-    new URL("../scripts/programas-governo-governadores-2026-inventario.ts", import.meta.url),
+    new URL(
+      "../scripts/programas-governo-governadores-2026-inventario.ts",
+      import.meta.url,
+    ),
     "utf8",
   );
   assert.match(source, /candidateKey\(document\.uf, document\.sqCandidato\)/);
@@ -140,9 +147,39 @@ test("vincula candidatura e documento pela chave composta UF + SQ", async () => 
   assert.doesNotMatch(source, /documentsBySq/);
 });
 
+test("usa o crosswalk atual e não deixa programa oficial sem ficha", async () => {
+  const source = await readFile(
+    new URL(
+      "../scripts/programas-governo-governadores-2026-inventario.ts",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const candidaturasComPrograma = inventory.candidaturas.filter(
+    (candidate) =>
+      candidate.documentoIds.length > 0 &&
+      candidate.perfilEstado !== "alias_duplicidade_oficial",
+  );
+
+  assert.match(source, /chapas-2026-tse-20260827\.json/);
+  assert.doesNotMatch(source, /chapas-2026-tse-20260815\.json/);
+  assert.equal(inventory.medicoes.perfisLocaisAusentes, 0);
+  assert.equal(inventory.medicoes.aliasesDuplicidadeOficial, 1);
+  assert.equal(
+    candidaturasComPrograma.every(
+      (candidate) =>
+        candidate.perfilEstado === "vinculado" && Boolean(candidate.slug),
+    ),
+    true,
+  );
+});
+
 test("falha explicitamente quando pdftotext encerra com erro", async () => {
   const source = await readFile(
-    new URL("../scripts/programas-governo-governadores-2026-inventario.ts", import.meta.url),
+    new URL(
+      "../scripts/programas-governo-governadores-2026-inventario.ts",
+      import.meta.url,
+    ),
     "utf8",
   );
   assert.match(source, /pdftotext falhou/);

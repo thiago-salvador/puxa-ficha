@@ -8,7 +8,7 @@ import {
   writeFileSync,
 } from "node:fs";
 import { tmpdir } from "node:os";
-import { basename, join, resolve } from "node:path";
+import { basename, join, relative, resolve } from "node:path";
 
 import { parse } from "csv-parse/sync";
 
@@ -21,6 +21,7 @@ const CANDIDATOS_RECURSO_URL =
   "https://dadosabertos.tse.jus.br/dataset/candidatos-2026/resource/7748de82-a23b-47c4-9ec1-35535d945e5b";
 const CANDIDATOS_PACOTE_URL =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip";
+const DEFAULT_PROFILE_SNAPSHOT = "data/chapas-2026-tse-20260827.json";
 const UFS = [
   "AC",
   "AL",
@@ -110,6 +111,7 @@ interface Documento {
   paginas: number;
   textoExtraidoBytes: number;
   textoExtraidoCaracteres: number;
+  textoExtraidoSha256: string;
   textoEstado: "extraivel" | "requer_ocr";
   candidaturaAtual: boolean;
 }
@@ -117,6 +119,7 @@ interface Documento {
 interface ProgramaArgs {
   candidateArchive: string;
   proposalDir: string;
+  profileSnapshot: string;
   collectedAt: string;
   output: string;
   write: boolean;
@@ -140,10 +143,13 @@ function parseArgs(): ProgramaArgs {
   return {
     candidateArchive: resolve(candidateArchive),
     proposalDir: resolve(proposalDir),
+    profileSnapshot: resolve(
+      value("--profile-snapshot") ?? DEFAULT_PROFILE_SNAPSHOT,
+    ),
     collectedAt,
     output: resolve(
       value("--output") ??
-        "scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json",
+        "scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json",
     ),
     write: process.argv.includes("--write"),
   };
@@ -211,10 +217,10 @@ function readCandidateRows(archivePath: string): Raw[] {
   );
 }
 
-function profileCrosswalk(): Map<string, ChapaSnapshot> {
-  const snapshot = JSON.parse(
-    readFileSync(resolve("data/chapas-2026-tse-20260815.json"), "utf8"),
-  ) as { chapas: ChapaSnapshot[] };
+function profileCrosswalk(snapshotPath: string): Map<string, ChapaSnapshot> {
+  const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
+    chapas: ChapaSnapshot[];
+  };
   return new Map(
     snapshot.chapas
       .filter(
@@ -223,7 +229,10 @@ function profileCrosswalk(): Map<string, ChapaSnapshot> {
           row.titular.sq_candidato &&
           row.titular.perfil_slug,
       )
-      .map((row) => [candidateKey(row.uf as string, row.titular.sq_candidato as string), row]),
+      .map((row) => [
+        candidateKey(row.uf as string, row.titular.sq_candidato as string),
+        row,
+      ]),
   );
 }
 
@@ -273,6 +282,7 @@ function inspectPdf(
     paginas: pages,
     textoExtraidoBytes: Buffer.byteLength(normalizedText, "utf8"),
     textoExtraidoCaracteres: normalizedText.length,
+    textoExtraidoSha256: sha256(normalizedText),
     textoEstado: normalizedText.length >= 200 ? "extraivel" : "requer_ocr",
   };
 }
@@ -404,7 +414,45 @@ function main(): void {
     documentsByCandidate.set(key, values);
   }
 
-  const crosswalk = profileCrosswalk();
+  const profileSnapshotLabel = relative(resolve("."), args.profileSnapshot);
+  const crosswalk = profileCrosswalk(args.profileSnapshot);
+  const resolvedAmbiguityByKey = new Map<
+    string,
+    { canonical: boolean; slug: string }
+  >();
+  for (const rows of groups.values()) {
+    if (rows.length < 2) continue;
+    const linkedSlugs = rows.map(
+      (row) =>
+        crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO))?.titular
+          .perfil_slug ?? null,
+    );
+    const uniqueSlugs = new Set(linkedSlugs.filter(Boolean));
+    const documentSignatures = rows.map((row) =>
+      JSON.stringify(
+        (
+          documentsByCandidate.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO)) ??
+          []
+        )
+          .map(({ textoExtraidoSha256 }) => textoExtraidoSha256)
+          .sort(),
+      ),
+    );
+    const documentsEquivalent =
+      documentSignatures.every((signature) => signature !== "[]") &&
+      new Set(documentSignatures).size === 1;
+    if (uniqueSlugs.size !== 1 || !documentsEquivalent) continue;
+    const slug = [...uniqueSlugs][0] as string;
+    const canonicalSq = rows
+      .map(({ SQ_CANDIDATO }) => SQ_CANDIDATO)
+      .sort((a, b) => a.localeCompare(b, "pt-BR"))[0];
+    for (const row of rows) {
+      resolvedAmbiguityByKey.set(candidateKey(row.SG_UF, row.SQ_CANDIDATO), {
+        canonical: row.SQ_CANDIDATO === canonicalSq,
+        slug,
+      });
+    }
+  }
   const inventario = candidates.map((row) => {
     const key = candidateKey(row.SG_UF, row.SQ_CANDIDATO);
     const documents = (documentsByCandidate.get(key) ?? []).sort(
@@ -423,12 +471,24 @@ function main(): void {
       );
     }
     const ambiguity = ambiguousGroupByKey.get(key);
-    const slug = previous?.titular.perfil_slug ?? null;
-    const perfilEstado = slug ? "vinculado" : "perfil_local_ausente";
+    const ambiguityResolution = resolvedAmbiguityByKey.get(key);
+    const slug = ambiguity
+      ? ambiguityResolution?.canonical
+        ? ambiguityResolution.slug
+        : null
+      : (previous?.titular.perfil_slug ?? null);
+    const perfilEstado = slug
+      ? "vinculado"
+      : ambiguity
+        ? "alias_duplicidade_oficial"
+        : "perfil_local_ausente";
     const fonteEstado = documents.length
       ? "documento_oficial_encontrado"
       : "sem_documento_oficial";
-    const identidadeEstado = ambiguity ? "duplicidade_oficial" : "confirmada";
+    const identidadeEstado =
+      !ambiguity || ambiguityResolution?.canonical
+        ? "confirmada"
+        : "duplicidade_oficial";
     const estadoInventario = ambiguity
       ? "duplicidade_oficial"
       : perfilEstado === "perfil_local_ausente"
@@ -446,19 +506,22 @@ function main(): void {
       numero: row.NR_CANDIDATO,
       slug,
       perfilEstado,
-      perfilVinculoFonte: slug ? "data/chapas-2026-tse-20260815.json" : null,
+      perfilVinculoFonte: slug ? profileSnapshotLabel : null,
       identidadeEstado,
-      grupoAmbiguidade: ambiguity?.id ?? null,
+      grupoAmbiguidade:
+        identidadeEstado === "duplicidade_oficial" ? ambiguity?.id : null,
       alternativasOficiais:
-        ambiguity?.alternatives.map((alternative) => ({
-          sqCandidato: alternative.SQ_CANDIDATO,
-          sqColigacao: alternative.SQ_COLIGACAO,
-          nomeCompleto: alternative.NM_CANDIDATO,
-          nomeUrna: alternative.NM_URNA_CANDIDATO,
-          partido: alternative.SG_PARTIDO,
-          situacaoCodigo: alternative.CD_SITUACAO_CANDIDATURA,
-          situacao: alternative.DS_SITUACAO_CANDIDATURA,
-        })) ?? [],
+        identidadeEstado === "duplicidade_oficial"
+          ? (ambiguity?.alternatives.map((alternative) => ({
+              sqCandidato: alternative.SQ_CANDIDATO,
+              sqColigacao: alternative.SQ_COLIGACAO,
+              nomeCompleto: alternative.NM_CANDIDATO,
+              nomeUrna: alternative.NM_URNA_CANDIDATO,
+              partido: alternative.SG_PARTIDO,
+              situacaoCodigo: alternative.CD_SITUACAO_CANDIDATURA,
+              situacao: alternative.DS_SITUACAO_CANDIDATURA,
+            })) ?? [])
+          : [],
       fonteEstado,
       estadoInventario,
       documentoIds: documents.map((document) => document.id),
@@ -482,6 +545,12 @@ function main(): void {
   const profilesLinked = inventario.filter(
     (row) => row.perfilEstado === "vinculado",
   ).length;
+  const profilesMissing = inventario.filter(
+    (row) => row.perfilEstado === "perfil_local_ausente",
+  ).length;
+  const duplicateAliases = inventario.filter(
+    (row) => row.perfilEstado === "alias_duplicidade_oficial",
+  ).length;
   const candidatesWithDocuments = inventario.filter(
     (row) => row.documentoIds.length > 0,
   ).length;
@@ -498,6 +567,8 @@ function main(): void {
       candidatosPacoteSha256: sha256(candidateBytes),
       candidatosPacoteIntegridadeZip: "valida",
       candidatosGeradoEm: generations[0],
+      perfisSnapshotArquivo: profileSnapshotLabel,
+      perfisSnapshotSha256: sha256(readFileSync(args.profileSnapshot)),
       frequenciaDeclaradaPeloCatalogo: "4 vezes ao dia",
       coleta: {
         metodo: "playwright_catalogo_recurso",
@@ -514,7 +585,8 @@ function main(): void {
         .length,
       linhasEmGruposAmbiguos: ambiguousGroupByKey.size,
       perfisLocaisVinculados: profilesLinked,
-      perfisLocaisAusentes: inventario.length - profilesLinked,
+      perfisLocaisAusentes: profilesMissing,
+      aliasesDuplicidadeOficial: duplicateAliases,
       pacotes: pacotes.length,
       documentosTotais: documentos.length,
       documentosDeCandidaturasAtuais: currentDocuments.length,

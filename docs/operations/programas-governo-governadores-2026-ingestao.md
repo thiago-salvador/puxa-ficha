@@ -11,7 +11,7 @@ A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`. O `SQ_
 Executar com Node 24:
 
 ```bash
-npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-26.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
+npx -y -p node@24 -c 'node --conditions react-server --import tsx scripts/programas-governo-governadores-2026.ts --ufs=AC,AM --inventory=scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json --archive-dir=/caminho/para/zips --output-dir=/caminho/server-only --models-config=/caminho/modelos.json --cache-dir=/caminho/cache-passagens'
 ```
 
 Os quatro argumentos de escopo e arquivos são obrigatórios:

@@ -10,7 +10,7 @@ import { dirname, join, relative, resolve } from "node:path";
 
 const ROOT = resolve(import.meta.dirname, "../..");
 const DATA_DIR = join(ROOT, "scripts/data/programas-governo-governadores-2026");
-const INVENTORY_PATH = join(DATA_DIR, "inventario-2026-08-26.json");
+const INVENTORY_PATH = join(DATA_DIR, "inventario-2026-08-29.json");
 const SCALE_PATH = join(DATA_DIR, "escala-2026-08-26.json");
 const UFS = new Set(
   "AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(
@@ -152,7 +152,11 @@ function assertInventory(inventory: Inventory): void {
     candidateSqs.add(candidate.sqCandidato);
     assert.equal(
       candidate.perfilEstado,
-      candidate.slug ? "vinculado" : "perfil_local_ausente",
+      candidate.slug
+        ? "vinculado"
+        : candidate.identidadeEstado === "duplicidade_oficial"
+          ? "alias_duplicidade_oficial"
+          : "perfil_local_ausente",
     );
     assert.equal(
       candidate.fonteEstado,
@@ -260,7 +264,8 @@ function assertInventory(inventory: Inventory): void {
   );
   assert.equal(
     inventory.medicoes.perfisLocaisVinculados +
-      inventory.medicoes.perfisLocaisAusentes,
+      inventory.medicoes.perfisLocaisAusentes +
+      inventory.medicoes.aliasesDuplicidadeOficial,
     inventory.candidaturas.length,
   );
   assert.equal(
