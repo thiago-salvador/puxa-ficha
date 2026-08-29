@@ -1,0 +1,1274 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AC",
+    "sqCandidato": "10002550719",
+    "slug": "thor-dantas",
+    "nomeUrna": "THOR DANTAS",
+    "partido": "PSB",
+    "arquivoNome": "2026AC10002550719_01.pdf",
+    "arquivoNoPacote": "AC/2026AC10002550719_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AC:10002550719:01",
+      "fonte": {
+        "arquivoNome": "2026AC10002550719_01.pdf",
+        "arquivoNoPacote": "AC/2026AC10002550719_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "62dbde8571931aa70d7505caf58a95551849491a4cc42e42c818c410cdf141e1",
+        "extractedTextSha256": "c3495c4f34ead00beee7fe7026457e1f877776863e1c4c4ca73557da38434d5b",
+        "paginas": 42,
+        "secoes": [
+          {
+            "id": "plano-de",
+            "titulo": "PLANO DE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "ocr",
+            "conteudo": "PLANO DE\nOVERN\nDOR\nTHOR\nGOVERNO\nDANTAS E\nVICE SOCORRO RODRIGUES\nFrente Ampla pelo Acre:\nPRA CUIDAR BEM\nPSB, PODEMOS, PT, PCdoB e PV\nAGOSTO 2026\nPACRE\nPSB 40 podemos\nV Partido Verde\nMELHOR PARA\nPACRE"
+          },
+          {
+            "id": "p-l-an-o-d-e-g-o-ver-n-o-2-0-2-7-2-0-3-0",
+            "titulo": "P L AN O D E G O VER N O 2 0 2 7 –2 0 3 0",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "P L AN O D E G O VER N O 2 0 2 7 –2 0 3 0\n\nSumário\nApresentação\n\n3\n\nIntrodução: um Estado f orte para sustentar as prioridades\n\n4\n\nComo ler este Plano\n\n10\n\nEIXO 1\n\nSaúde para cuidar das pessoas\n\n12\n\nEIXO 2\n\nEmprego, renda e economia\n\n18\n\nEIXO 3\n\nInf raestrutura para o desenvolvimento\n\n24\n\nEIXO 4\n\nSegurança e proteção da vida\n\n30\n\nEIXO 5\n\nEducação e desenvolvimento humano\n\n35\n\nFontes e notas das evidências\n\n41\n\nPlano organizado em cinco eixos integrados, sustentados por gestão pública, governança, inovação, ética,\ntransparência e compromisso com resultados.\n\nPÁG INA 2"
+          },
+          {
+            "id": "ap-r-esen-t-ac-ao",
+            "titulo": "AP R ESEN T AÇ ÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "AP R ESEN T AÇ ÃO\n\nMensagem de Thor Dantas\nO Acre que queremos começa por um governo que cuida\nO Acre é a nossa casa. É onde construímos nossas famílias, nossas amizades, nosso trabalho e os sonhos\nque desejamos deixar para as próximas gerações. Conheço a força do nosso povo e também as dificuldades\nque tantas pessoas enfrentam todos os dias para conseguir atendimento de saúde, estudar, trabalhar,\nproduzir, viver com segurança e chegar aos serviços públicos. Apresento este Plano de Governo com a\nconvicção de que o Acre pode voltar a acreditar em si mesmo e construir um futuro melhor para todos.\nGovernar é assumir responsabilidade pela vida concreta das pessoas. Não basta anunciar boas ideias. É\npreciso planejar, reunir equipes competentes, cuidar dos recursos públicos, coordenar o Estado, dialogar\ncom os municípios e transformar compromissos em resultados. Por isso, nosso governo reconstruirá a\ncapacidade do poder público de agir com seriedade, sensibilidade e eficiência. Teremos um Estado forte não\npelo excesso de estruturas ou de burocracia, mas por sua capacidade de garantir direitos, enfrentar\ndesigualdades, induzir o desenvolvimento e estar presente onde as pessoas mais precisam.\nEste Plano está organizado em cinco eixos que se completam: Saúde para Cuidar das Pessoas; Emprego,\nRenda e Economia; Infraestrutura para o Desenvolvimento; Segurança e Proteção da Vida; e Educação e\nDesenvolvimento Humano para Transformar Vidas. Eles expressam as prioridades do nosso governo para\n2027–2030. Cada compromisso será sustentado por uma gestão pública íntegra, profissional, inovadora e\ntransparente, capaz de planejar, executar, acompanhar e prestar contas.\nVamos governar o Acre como um só governo, com uma só direção estratégica e com todas as áreas\ntrabalhando juntas. Vamos valorizar os servidores, respeitar quem pensa diferente, ouvir a sociedade e\nrecuperar a confiança nas instituições. Cada recurso público deverá produzir benefício público. Cada\nprograma terá objetivos, responsáveis, prazos e resultados acompanhados pela população.\nEste não é apenas um documento de propostas. É um compromisso com um modo de governar: próximo,\nhonesto, competente e voltado para resultados. Com união, trabalho e esperança, vamos cuidar bem do\nAcre e abrir um novo ciclo de desenvolvimento, dignidade e oportunidades.\n\nT hor Dantas\n\nCandidato a Governador do Acre\n\nPÁG INA 3"
+          },
+          {
+            "id": "i-n-t-r-o-d-uc-ao",
+            "titulo": "I N T R O D UÇ ÃO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "I N T R O D UÇ ÃO\n\nUm Estado forte para sustentar as prioridades\ndo Acre\n\nCinco eixos prioritários para transformar o Acre\nO Governo Thor Dantas terá uma missão central entre 2027 e 2030: reconstruir a capacidade do Estado de\ncuidar das pessoas, criar oportunidades, proteger o território e conduzir o Acre para um futuro\neconomicamente viável, ambientalmente equilibrado e socialmente justo. Um Estado forte é aquele que\ntransforma decisões em serviços públicos de qualidade e chega a todos os municípios, às comunidades\nrurais, ribeirinhas e indígenas e às pessoas que mais precisam.\nA força do Estado não será medida pelo tamanho da máquina administrativa. Será medida por sua\ncapacidade de liderar, planejar, coordenar, executar, avaliar e aprender. Um governo forte define\nprioridades claras, organiza o orçamento em torno delas, valoriza seus servidores, estabelece parcerias,\nusa dados para decidir, acompanha a execução e corrige rumos sempre que necessário. É assim que a\nadministração pública volta a fazer diferença na vida das pessoas.\nO Acre já demonstrou que pode avançar mesmo com recursos limitados quando há direção política,\ncapacidade técnica, integração entre políticas e mobilização da sociedade. O desafio agora é recuperar essa\ncapacidade de realização. O planejamento precisa voltar a orientar as decisões; projetos estratégicos devem\nter continuidade; contratos, investimentos e serviços precisam ser acompanhados; e a tecnologia deve\nsimplificar a relação entre o cidadão e o governo, sem excluir quem tem menor acesso digital.\nOs cinco eixos deste Plano constituem a agenda prioritária do governo. A gestão pública, a governança e a\ninovação não serão apresentadas como um sexto eixo isolado. Elas formarão a base comum que sustentará\ntodos os eixos, assegurando que saúde, economia, infraestrutura, segurança e educação funcionem para\ntodas as pessoas de maneira integrada, com responsabilidade fiscal, equidade territorial, participação\nsocial e compromisso permanente com resultados.\nO ponto de partida exige franqueza. No Índice de Transparência e Governança Pública de 2025, da\nTransparência Internacional – Brasil, o Governo do Acre obteve 50,3 pontos em 100 e ficou na 25ª posição\nentre os 27 governos estaduais. As maiores fragilidades estavam em participação social, governança de\ndados, transparência financeira e administração pública. Dados administrativos reunidos pelas equipes\ntambém indicam baixa capacidade de execução de investimentos e aquisições e forte pressão previdenciária\nsobre o orçamento. Esses números deverão ser validados na transição, mas já mostram que reconstruir a\ncapacidade de governar é condição para realizar qualquer prioridade.\n\nPÁG INA 4"
+          },
+          {
+            "id": "por-isso-a-gestao-comecara-com-diagnostico-institucional-reorganizacao-d",
+            "titulo": "Por isso, a gestão começará com diagnóstico institucional, reorganização do planejamento, revisão da",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Por isso, a gestão começará com diagnóstico institucional, reorganização do planejamento, revisão da\ncarteira de obras e projetos, aprimoramento e fiscalização de compras e contratos, integração das bases de\ndados e negociação responsável dos passivos do Estado. A transformação digital será acompanhada de\nproteção de dados, acessibilidade e atendimento presencial, para que a inovação reduza barreiras em vez\nde criar novas exclusões.\n\nNossa visão de futuro\nEm 2030, queremos um Acre que tenha recuperado a confiança em sua própria capacidade de construir o\nfuturo. Um estado em que a população encontre atendimento digno e no tempo certo; em que o trabalho,\na produção sustentável e o conhecimento gerem renda; em que estradas, cidades, energia, saneamento e\nconectividade aproximem pessoas e oportunidades; em que a segurança proteja a vida e os direitos; e em\nque a educação prepare crianças, jovens e adultos para participar plenamente da sociedade e do\ndesenvolvimento.\nEssa visão exige um governo presente em todo o território e capaz de articular Estado, municípios, União,\nuniversidades, instituições de pesquisa, setor produtivo, organizações sociais e comunidades. Governar\nserá construir confiança, coordenar esforços e mobilizar o Acre em torno de um projeto comum.\nDesenvolvimento e cuidado caminharão juntos: crescimento econômico com inclusão, aumento da\nprodução com respeito ao meio ambiente, modernização da gestão pública com valorização humana e\neficiência com democracia.\nAo final da gestão, o cidadão deverá reconhecer um Estado mais simples, acessível e resolutivo; uma\nadministração que valoriza nos servidores públicos o conhecimento, a capacidade, a dedicação, a\ncooperação, oferecendo condições dignas de trabalho e remuneração; nos municípios, um parceiro\npermanente; e na sociedade, um governo que informa, escuta, explica suas escolhas e responde com\nresultados.\n\nPrincípios do governo\nCuidado com as pessoas. A dignidade, a segurança, o tempo e as necessidades concretas das pessoas\norientarão as decisões do governo.\nDemocracia, diálogo e participação. O governo ouvirá a sociedade, respeitará a diversidade e\nfortalecerá conselhos, fóruns da sociedade civil, ouvidorias e espaços de controle social.\nEquidade e enfrentamento das desigualdades. Políticas, recursos e serviços darão atenção especial a\nquem enfrenta maiores barreiras econômicas, sociais, raciais, territoriais, geracionais, de gênero ou\ndecorrentes de deficiência.\n\nPÁG INA 5"
+          },
+          {
+            "id": "presenca-em-todo-o-acre-o-planejamento-partira-dos-territorios-fortalece",
+            "titulo": "Presença em todo o Acre. O planejamento partirá dos territórios, fortalecerá o interior, se orientará",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Presença em todo o Acre. O planejamento partirá dos territórios, fortalecerá o interior, se orientará\npela regionalização e buscará superar as desigualdades de acesso entre a capital, as cidades, o campo,\nas florestas e os rios.\nDesenvolvimento adequado. O governo conciliará produção, trabalho e inovação com conservação,\nrecuperação ambiental e preparação para as mudanças climáticas.\nResponsabilidade fiscal e justiça no uso dos recursos. As prioridades serão compatíveis com a\ncapacidade financeira do Estado, os custos de manutenção e as fontes de financiamento, protegendo o\ninteresse público e buscando a máxima eficiência da gestão pública.\nValorização do serviço público. Servidores qualificados, respeitados, valorizados e comprometidos\nsão indispensáveis para que direitos e políticas cheguem à população.\nInovação com inclusão. Dados, ciência e tecnologia serão usados para simplificar e melhorar os\nserviços públicos, decisões e ampliar direitos, com acessibilidade, segurança e proteção de dados.\nÉtica, integridade e transparência. A prevenção da corrupção, a gestão de riscos, a prestação de contas\ne o acesso público à informação serão deveres permanentes.\nGestão orientada à entrega de serviços à população. Programas terão objetivos, metas, responsáveis,\ncustos, prazos e indicadores, sempre avaliados pelo impacto real na vida das pessoas.\n\nGoverno Único: um só governo, todas as áreas a serviço das pessoas\nGoverno Único é o compromisso de superar a fragmentação administrativa e fazer com que todas as\nsecretarias, autarquias, fundações e empresas públicas atuem como partes de um mesmo projeto. Para o\ncidadão, o Estado é um só. Por isso, problemas que atravessam várias áreas não podem ser empurrados de\num órgão para outro, nem enfrentados por iniciativas isoladas que disputam recursos, repetem esforços ou\ndeixam vazios de atendimento.\nSob a liderança do governador, o Governo Único estabelecerá prioridades comuns para todo o mandato.\nPlanejamento, orçamento, gestão de pessoas, investimentos, compras, contratos, dados e comunicação\nserão coordenados para servir aos cinco eixos. Cada prioridade estratégica contará com responsabilidade\ndefinida, participação dos órgãos envolvidos, cronograma, recursos identificados e acompanhamento\nperiódico. Quando um resultado depender de várias áreas, elas compartilharão a responsabilidade por sua\nentrega.\nEsse método também orientará a relação com os municípios. O Estado será republicano. Respeitará as\natribuições de cada ente, oferecerá apoio técnico, fortalecerá pactuações regionais e buscará soluções\nconsorciadas quando forem mais eficientes. A cooperação com o Governo Federal, universidades, setor\nprodutivo e sociedade civil será organizada em torno de objetivos públicos claros, sem substituir a\nresponsabilidade estatal nem confundir interesses privados com o interesse coletivo.\n\nPÁG INA 6"
+          },
+          {
+            "id": "o-governo-unico-sera-sustentado-por-uma-agenda-estrategica-do-mandato-um",
+            "titulo": "O Governo Único será sustentado por uma Agenda Estratégica do mandato, um Comitê Estratégico de",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "O Governo Único será sustentado por uma Agenda Estratégica do mandato, um Comitê Estratégico de\nGoverno, a reconstrução do Sistema Estadual de Planejamento, um Escritório Estadual de Projetos\nEstratégicos e um Painel Público de Metas e Resultados. Esses instrumentos permitirão integrar\nplanejamento e orçamento, acompanhar os projetos prioritários, antecipar riscos, solucionar entraves e\ninformar à população o que está sendo feito em cada região.\nA base comum dos cinco eixos terá cinco compromissos permanentes:\nLiderar e coordenar. O governador e o Comitê Estratégico organizarão prioridades comuns, articulação\nfederativa e solução de entraves que dependam de várias áreas.\nPlanejar e executar. Planejamento, orçamento, projetos, compras, contratos e manutenção serão\nintegrados, com carteira de investimentos tecnicamente preparada e compatível com a capacidade\nfiscal.\nValorizar servidores e inovar. A Escola de Governo, laboratórios de inovação e formação permanente\nampliarão competências, cooperação, saúde no trabalho e uso responsável de dados e inteligência\nartificial.\nSimplificar e incluir. O Acre Digital reunirá serviços e informações, com acessibilidade física,\ncomunicacional e digital, Libras, Comunicação Aumentativa e Alternativa e alternativas presenciais em\ntodos os territórios.\nPrestar contas e aprender. Metas, custos, prazos, riscos e resultados serão públicos; avaliações e\nescuta social apoiarão correções de rumo e melhoria contínua.\n\nÉtica, eficiência, transparência e resultados\nÉtica pública significa governar exclusivamente em favor do interesse coletivo. A gestão fortalecerá a\nControladoria-Geral do Estado, a integridade institucional, a prevenção de conflitos de interesse, a gestão\nde riscos, o controle interno e os mecanismos de responsabilização. Compras, contratos, convênios e\nparcerias serão planejados, fiscalizados e avaliados com critérios públicos, protegendo os recursos e a\ncontinuidade dos serviços.\nEficiência significará fazer melhor, no tempo certo e com uso responsável dos recursos. O governo revisará\nprocessos, reduzirá burocracias desnecessárias, atualizará os modelos de compras e contratos, qualificará a\ngestão de projetos e ampliará a capacidade de captar e executar recursos. A transformação digital facilitará\no acesso aos serviços e integrará bases de dados, mas será acompanhada de alternativas presenciais e\napoio a quem enfrenta barreiras tecnológicas.\nTransparência será uma prática ativa. A população terá acesso a informações compreensíveis sobre\norçamento, contratos, filas, obras, metas, prazos e resultados. O Painel Público de Metas e Resultados\npermitirá acompanhar as prioridades do governo. Ouvidorias regionais, canais digitais, conselhos e\n\nPÁG INA 7"
+          },
+          {
+            "id": "processos-de-escuta-assegurarao-participacao-social-e-resposta-as-demand",
+            "titulo": "processos de escuta assegurarão participação social e resposta às demandas dos diferentes territórios e",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "processos de escuta assegurarão participação social e resposta às demandas dos diferentes territórios e\ngrupos da sociedade.\nResultados serão avaliados pelo que muda na vida das pessoas, e não apenas pelo volume de atividades\nexecutadas. Cada programa prioritário deverá identificar beneficiários, desigualdades a enfrentar, alcance\nterritorial, custo total, fonte de financiamento, responsabilidades, prazos, riscos e indicadores. Avaliações\nperiódicas apoiarão a correção de rumos e a melhoria contínua das políticas públicas.\n\nNO S PRIMEIRO S 100 DIAS\nO governo realizará diagnóstico institucional da administração; instituirá o Comitê Estratégico e o\nEscritório Estadual de Projetos; revisará a carteira de obras e investimentos; iniciará o Plano de\nAtualização da Gestão Pública e a simplificação administrativa; estruturará o Painel Público de\nMetas e Resultados; apresentará estratégia para a situação previdenciária e os passivos que\nrestringem o investimento; enfrentará problemas críticos com as entregas mais necessárias e\nurgentes para a população.\n\nOs cinco eixos prioritários\nOs cinco eixos traduzem a visão de futuro em prioridades concretas. Eles não funcionarão como\ncompartimentos separados. Saúde depende de saneamento, educação, segurança alimentar, proteção\nsocial e boas estradas; emprego depende de conhecimento, infraestrutura, crédito e segurança; educação\ndepende de proteção, cultura, conectividade e condições dignas de vida. O Governo Único organizará essas\nrelações e fará convergir esforços e recursos com equidade entre os diversos grupos sociais.\nEixo 1 — Saúde para cuidar das pessoas\nReconstruir e fortalecer o SUS acreano, valorizar quem cuida, organizar e reduzir filas, regionalizar a\nassistência e preparar a rede para emergências e novos riscos. A gestão integrada aproximará atenção\nprimária, hospitais, vigilância, regulação, saúde digital, redes de proteção social com atenção especial com\nas pessoas com deficiência, altas habilidades, discriminadas e condições de vulnerabilidade. Sempre com\nparticipação e controle social; e parceria com os municípios.\nEixo 2 — Emprego, renda e economia\nTransformar as potencialidades do Acre em trabalho, renda e oportunidades, promovendo produção\nsustentável, agregação de valor, pequenos, médios e grandes negócios, inovação e acesso a mercados. O\nEstado exercerá liderança estratégica, reduzirá entraves e coordenará crédito, assistência técnica, ciência,\ninfraestrutura e formação profissional, junto com o setor produtivo e as instituições de Ensino e Pesquisa. A\nintegração destas ações serão viabilizadas pela retomada das Zonas Especiais de Desenvolvimento (ZEDs).\n\nPÁG INA 8"
+          },
+          {
+            "id": "eixo-3-inf-raestrutura-para-o-desenvolvimento",
+            "titulo": "Eixo 3 — Inf raestrutura para o Desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Eixo 3 — Inf raestrutura para o Desenvolvimento\nPlanejar, construir, conservar e ampliar uma infraestrutura capaz de assegurar tanto acesso aos serviços\nbásicos quanto suporte ao setor produtivo, integrar o território durante todo o ano, melhorar as cidades,\nampliar saneamento e moradia e conectar o Acre ao futuro, à América do Sul e novos mercados. Projetos\nterão planejamento de longo prazo, manutenção, sustentabilidade, resiliência climática e presença do\npoder público.\nEixo 4 — Segurança e Proteção da Vida\nProteger a vida, enfrentar o crime organizado com inteligência, valorizar e articular as instituições de\nsegurança, prevenir violências e fortalecer a proteção social e os direitos fundamentais, incluindo o direito\nao trabalho e renda. Segurança, justiça, educação, saúde, cultura, desenvolvimento econômico, assistência\nsocial e Defesa Civil atuarão de forma coordenada, com atenção especial às pessoas e territórios mais\nvulneráveis do ponto de vista socioeconômico e ambiental, por meio de Zonas de Atendimento Prioritário\n(ZAPs).\nEixo 5 — Educação e Desenvolvimento Humano para T ransf ormar Vidas\nGarantir aprendizagem com qualidade e equidade, valorizar profissionais, assegurar escolas dignas e\npreparar as novas gerações para o futuro do Acre. Educação será tratada como projeto permanente de\nEstado, articulada à cultura, ao esporte, à ciência, à tecnologia, à formação profissional técnica e\ntecnológica, à proteção e formação integral para a vida e ao desenvolvimento de cada território e\ncomunidade.\n\nO compromisso que une os cinco eixos\nCuidar bem do Acre exige prioridades claras e capacidade de realizá-las. O Governo Thor Dantas reunirá\ndireção política, competência técnica, participação da sociedade civl, articulação com os demais poderes e\nresponsabilidade pública para que cada eixo avance de forma integrada. Um Estado forte e eficiente será o\nsustentáculo dessa transformação, capaz de proteger direitos, corrigir desigualdades, apoiar quem produz,\ncuidar do patrimônio comum e entregar resultados em todas as regiões do Acre.\n\nPÁG INA 9"
+          },
+          {
+            "id": "g-uia-d-e-l-eit-ura",
+            "titulo": "G UIA D E L EIT URA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "G UIA D E L EIT URA\n\nComo ler este Plano\nEste Plano organiza as contribuições de dezesseis grupos temáticos, agrupados nos cinco eixos prioritários,\nem linguagem simples, propostas consistentes, viáveis e baseadas em evidências. O texto delimita\nresponsabilidades, evita repetições e torna visíveis as prioridades que orientarão o Governo do Acre entre\n2027 e 2030.\nCada eixo apresenta diagnóstico, visão de futuro, cinco compromissos estratégicos, ações prioritárias,\nmedidas para os primeiros 100 dias e proposta-síntese. As evidências selecionadas dimensionam problemas\ne justificam prioridades; as linhas de base e as metas anuais serão atualizadas na preparação de Planos\nEstratégicos, programas e orçamento, com fontes, conceitos e métodos publicados.\n\nPrincípios transversais\nOs princípios transversais não constituem um capítulo separado nem uma lista de intenções. Eles\nfuncionam como critérios obrigatórios para formular, financiar, executar e avaliar todas as políticas do\ngoverno. Cada programa deverá demonstrar como contribui para esses princípios e publicar resultados que\npermitam seu acompanhamento.\nPrincípio\n\nAplicação obrigatória\n\nCuidado com as\npessoas\n\nAvaliar políticas pelo efeito concreto na vida, na dignidade, no tempo e na segurança das\npessoas.\n\nRedução e\n\nPriorizar quem enfrenta maiores barreiras econômicas, sociais, territoriais, geracionais, raciais\n\nenfrentamento\ndas\ndesigualdades\n\ne de gênero.\n\nFortalecimento\n\nPlanejar por territórios, descentralizar capacidades e reduzir a concentração excessiva de\n\ndo interior\n\nserviços e oportunidades na capital.\n\nDesenvolvimento\nadequado\n\nConciliar produção, inclusão, conservação, recuperação ambiental e uso inteligente e\nresponsável dos recursos naturais.\n\nResponsabilidade\n\nCompatibilizar compromissos com orçamento, custos de manutenção, capacidade de pessoal\n\nfiscal\n\ne fontes de financiamento.\n\nPÁG INA 10"
+          },
+          {
+            "id": "eficiencia-e",
+            "titulo": "Eficiência e",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Eficiência e\ntransparência\n\nDefinir metas, responsáveis, custos, prazos e resultados, com informações públicas e controle\nsocial.\n\nTransformação\ndigital\n\nUsar dados e tecnologias para ampliar acesso e qualidade, promover cidadania e\ndesenvolvimento, protegendo informações e evitando exclusões.\n\nValorização dos\nservidores\n\nFortalecer carreiras, remuneração, formação, condições de trabalho, saúde e capacidade\ntécnica do Estado.\n\nDiversidade\n\nGarantir atendimento sem discriminação e considerar diferenças de raça, etnia, gênero, idade,\ndeficiência, orientação sexual e modo de vida.\n\nPovos indígenas\ne populações\n\nRespeitar e valorizar direitos, territórios, consulta, participação, conhecimentos e formas\npróprias de organização.\n\ntradicionais\nAdequação às\nmudanças\nclimáticas\n\nPreparar políticas, serviços e investimentos para enchentes, secas, calor, fumaça, incêndios e\noutros riscos climáticos.\n\nAcessibilidade e\ncomunicação\ninclusiva\n\nAplicar desenho universal, eliminar barreiras físicas, digitais e comunicacionais e assegurar\nLibras, Comunicação Aumentativa e Alternativa e atendimento adequado às diferentes\nnecessidades.\n\nDireitos digitais\ne proteção de\n\nAmpliar serviços e integração de dados com segurança, privacidade, transparência algorítmica\ne alternativas para quem enfrenta exclusão digital.\n\ndados\n\nTeste transversal para cada programa\nAntes de ser incorporado ao orçamento, cada programa deverá responder: quem será beneficiado e quem\nainda corre risco de não inclusão; quais desigualdades (sociais, raciais, de gênero, geracionais, territoriais,\ndecorrentes de deficiência e situações críticas) reduzirá; como chegará ao interior; qual será seu custo total,\nfonte de financiamento e custo de manutenção; como valorizará os servidores; quais dados e tecnologias\nutilizará e protegerá; como garantirá acessibilidade, participação, diversidade e direitos dos povos e\ncomunidades nos territórios; e como enfrentará riscos ambientais e mudanças climáticas.\n\nPÁG INA 11"
+          },
+          {
+            "id": "01",
+            "titulo": "01",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "01\nEIXO 1\n\nSaúde para cuidar das pessoas\nAtendimento digno, no tempo certo e em todas as regiões do Acre."
+          },
+          {
+            "id": "e-i-xo-1-s-au-d-e",
+            "titulo": "E I XO 1 · S AÚ D E",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "E I XO 1 · S AÚ D E\n\nSaúde para cuidar das pessoas\nAtendimento digno, no tempo certo e em todas as regiões do Acre.\n\nDiagnóstico\nA saúde está entre as maiores preocupações da população acreana. Dificuldade de acesso à rede básica e a\nespecialistas, filas para consultas, exames e cirurgias, sobrecarga hospitalar e desigualdade na distribuição\ndos serviços comprometem o atendimento e aumentam o sofrimento das famílias. Em 2023, a Estratégia\nSaúde da Família alcançava 79,8% da população, cobertura relevante que ainda precisa se converter em\nações efetivas, com continuidade do cuidado e acesso resolutivo em todo o território.\nAs distâncias, a dispersão populacional e as condições de acesso das comunidades rurais, das florestas, dos\nrios e indígenas exigem uma rede regionalizada e soluções diferenciadas. A concentração da assistência\nespecializada restrita à Rio Branco e Cruzeiro do Sul obriga muitas pessoas a percorrer longos trajetos e\nrevela vazios assistenciais no interior.\nVerifica-se indicadores críticos em todas as regiões de saúde do estado. A mortalidade materna atingiu taxa\nde 82,7 em 2024, muito acima da taxa nacional, que foi de 56,4 (MS/SVSA/DATASUS). A cobertura vacinal\ninfantil está abaixo de 70% na maioria dos municípios, frente à meta de 95%. Em abril de 2026 havia mais de\n87 mil consultas especializadas reprimidas no sistema de regulação, entre novas consultas e retornos\nclínicos, com destaque para neuropediatria, otorrinolaringologia e urologia.\nVazios assistenciais são identificados em todas as três regiões. A atenção primária apresenta desempenho\ncrítico: acompanhamento de hipertensos em apenas 4% e diabéticos em 2% em municípios do interior. A\ngravidez na adolescência chega a 26,6% no Juruá/Tarauacá. Doenças como dengue, hanseníase e sífilis\ncongênita permanecem com transmissão ativa, exigindo intervenção estrutural e operacional.\nA rede pública possui profissionais qualificados e experiências que podem sustentar sua recuperação, mas\nprecisa reconstruir a capacidade de planejamento, regulação, financiamento, manutenção e avaliação. Em\nfevereiro de 2026, o CNES (Cadastro Nacional de Estabelecimentos de Saúde) registrava 1.614 leitos no\nestado, dos quais 1.470 vinculados ao SUS, representando 1,8 leitos/1.000 habitantes. Esse número está\nmuito abaixo dos parâmetros recomendados, assim como também está abaixo o numero de médicos\n(1,7/1.000 habitantes). Esse estoque precisa ser analisado também por especialidade, localização\n(capital/interior), funcionamento e demanda. Contratações terceirizadas, com transparência, precisam ser\navaliadas com foco nos resultados assistenciais e serviços essenciais.\n\nPÁG INA 13"
+          },
+          {
+            "id": "a-cooperacao-com-municipios-governo-federal-universidades-e-organizacoes",
+            "titulo": "A cooperação com municípios, Governo Federal, Universidades e organizações sociais, associada à",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "A cooperação com municípios, Governo Federal, Universidades e organizações sociais, associada à\ntelessaúde e à integração das informações, pode ampliar o acesso e a resolutividade. O desafio é fazer o\nSUS funcionar como uma única rede, integrada e regionalizada, próxima das pessoas e orientada por\nnecessidades diferentes em cada território, onde cada pessoa, mesmo nos lugares mais distantes tenham\numa porta de entrada acessível e uma trajetória resolutiva.\n\nVisão de futuro\nAté 2030, o Acre terá uma rede estadual de saúde organizada, integrada e regionalizada, com atendimento\nhumanizado, profissionais valorizados e acesso mais rápido e resolutivo a consultas, exames, cirurgias e\ncuidados especializados.\nA atenção primária, os hospitais, a vigilância e a saúde digital atuarão de forma coordenada. A população\nsaberá onde procurar atendimento, quanto tempo deverá esperar e quais resultados o governo está\nentregando em cada região.\n\nCompromissos estratégicos\n1 Reconst ruir a gest ão e a governança do SUS\nRecuperar a capacidade da Secretaria de Saúde de planejar, regular, contratar, monitorar e prestar contas,\ncom responsabilidade fiscal, transparência e integração entre Estado, municípios, trabalhadores,\nprestadores e controle social.\nPrincipais ações\nReorganizar o planejamento, a regulação e a avaliação da rede estadual, fortalecendo a gestão eficiente.\nImplantar metas objetivas de atendimento, qualidade, custos e resultados dos indicadores de saúde\nque importam para a população.\nAtualizar e reorganizar a gestão administrativa, de estoques, compras e manutenção, garantindo que\nnão haja descontinuidade e desabastecimento nas unidades de saúde.\nFortalecer o SUS no Acre, apoiando técnica e financeiramente os municípios na gestão de sua rede, com\npactuação de resultados, em colaboração com o governo federal e participação das organizações\nsociais.\nRevisar contratos e custos, observando o interesse público e preservando a continuidade da assistência.\n\nPÁG INA 14"
+          },
+          {
+            "id": "2-valorizar-quem-cuida-das-pessoas",
+            "titulo": "2 Valorizar quem cuida das pessoas",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "2 Valorizar quem cuida das pessoas\nRecompor equipes, melhorar as condições de trabalho e criar oportunidades de formação e carreira, com\natenção especial à permanência de profissionais no interior.\nPrincipais ações\nRealizar concursos públicos e estabelecer parcerias para, pelo menos, dobrar o número de profissionais\nda saúde, conforme diagnóstico de necessidade e capacidade fiscal.\nAtualizar carreiras e políticas remuneratórias por meio de diálogo permanente com as categorias\nprofissionais.\nCriar incentivos para provimento e fixação de profissionais no interior em especial em áreas de difícil\natração.\nFortalecer e ampliar a formação de especialistas no Estado por meio das residências médicas e\nmultiprofissionais, com foco nas especialidades prioritárias para o atendimento da população.\nInstituir um programa de qualificação e formação permanente para todos os profissionais.\nFortalecer as políticas de cuidado com a saúde dos trabalhadores.\n\n3 Ampliar o acesso e enfrent ar as filas\nOrganizar a oferta especializada de acordo com as necessidades da população, tornando as filas\ntransparentes, reduzindo esperas e aproximando o cuidado de quem vive no interior.\nPrincipais ações\nAuditar e unificar as informações sobre filas de consultas, exames e cirurgias valorizando e qualificando\nos mecanismos de regulação, com estabelecimento de metas de redução do tempo de espera para\nconsultas, retornos, exames e cirurgias para todas as especialidade e procedimentos.\nQualificar e aumentar a resolutividade da atenção primária nos municípios em parceria com as\nPrefeituras, pactuando o alcance de metas para todos os indicadores básicos de saúde.\nDuplicar a oferta própria e contratada, de leitos e profissionais, com foco na resolutividade e\natendimento com equidade considerando os diversos grupos sociais.\nExpandir as estratégias de telemedicina e telessaúde, incluindo teleagendamento, telediagnóstico,\nteleconsulta, telemonitoramento, unidades móveis de saúde, com universalização do prontuário\neletrônico integrado, e apoio a quem enfrenta barreiras digitais.\n\nPÁG INA 15"
+          },
+          {
+            "id": "recuperar-modernizar-e-qualificar-o-funcionamento-de-todas-as-unidades-e",
+            "titulo": "Recuperar, modernizar e qualificar o funcionamento de todas as unidades estaduais, ampliando e",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Recuperar, modernizar e qualificar o funcionamento de todas as unidades estaduais, ampliando e\nexpandindo suas capacidades de atendimento.\nViabilizar a criação do Hospital Universitário Federal.\n\n4 Regionalizar e cuidar com equidade\nFortalecer as redes regionais e assegurar atenção adequada às mulheres, crianças, juventudes, pessoas\nidosas, população negra, indígenas, pessoas com deficiência, população LGBTQIAPN+ e comunidades\ntradicionais.\nPrincipais ações\nRevisar e fortalecer o desenho de nossa regionalização, estruturando a regional de Tarauacá-Envira,\nfortalecendo a regional do Purus, qualificando a regional do alto Acre como fronteira internacional e\nsedimentando a regional do Juruá, como segundo maior polo do Estado.\nAmpliar os serviços especializados no interior, através da regionalização, e regular e cofinanciar o\ntransporte de pacientes (transporte sanitário) com os municípios.\nEstabelecer estratégias territoriais específicas para áreas remotas.\nFortalecer e qualificar a saúde da mulher, materno-infantil, de adolescentes e juventudes, do idoso,\npopulação negra, indígenas e pessoas com deficiência, resolvendo seus principais gargalos.\nQualificar o cuidado intercultural, antirracista e sem discriminação, com acessibilidade física e\ncomunicacional, Libras e Comunicação Aumentativa e Alternativa.\n\n5 Preparar a saúde para emergências e novos riscos\nIntegrar vigilância, assistência, pesquisa científica, meio ambiente e Defesa Civil para responder a\nepidemias, eventos climáticos e emergências sanitárias, reduzindo também os impactos ambientais da\nprópria rede de saúde.\nPrincipais metas e ações\nAtualizar o Plano Estadual de Preparação para Emergências em Saúde.\nCriar equipe estadual de resposta rápida para apoio aos municípios.\nFortalecer as vigilâncias epidemiológica, sanitária e ambiental.\n\nPÁG INA 16"
+          },
+          {
+            "id": "adequar-a-totalidade-das-unidades-de-saude-coleta-de-residuos-e-abasteci",
+            "titulo": "Adequar a totalidade das unidades de saúde, coleta de resíduos e abastecimento de insumos de acordo",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Adequar a totalidade das unidades de saúde, coleta de resíduos e abastecimento de insumos de acordo\ncom as necessidades locais e riscos climáticos e ambientais.\nDobrar as ações permanentes de vacinação, prevenção e promoção da saúde.\n\nPRIMEIRO S 100 DIAS\nRealizar auditoria da situação financeira, assistencial e contratual da saúde.\nInstalar uma sala de situação para organizar, qualificar e reduzir as filas, no mínimo, pela metade.\nImplantar plano emergencial de redução dos tempos de espera.\nDefinir unidades prioritárias para recuperação e manutenção imediata.\nRetomar a pactuação permanente com os municípios.\nInstalar mesa de valorização dos trabalhadores do SUS.\nAtualizar o planejamento regional e o plano de emergências sanitárias.\n\nP R O P O S T A- S Í N T E S E\n\nReconstruir o SUS acreano para garantir atendimento digno e no tempo certo. Valorizar os\nprofissionais, organizar e reduzir as filas. Fortalecer os hospitais e as redes regionais e levar\ncuidado de qualidade a todas as regiões do Acre em parceria com as Prefeituras.\n\nPÁG INA 17"
+          },
+          {
+            "id": "02",
+            "titulo": "02",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "02\nEIXO 2\n\nEmprego, renda e economia\nProduzir mais, agregar valor e distribuir oportunidades."
+          },
+          {
+            "id": "e-i-xo-2-e-c-o-n-o-m-i-a",
+            "titulo": "E I XO 2 · E C O N O M I A",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "E I XO 2 · E C O N O M I A\n\nEmprego, renda e economia\nProduzir mais, agregar valor e distribuir oportunidades.\n\nDiagnóstico\nO Acre possui biodiversidade, áreas produtivas, conhecimento científico, milhares de pequenos negócios e\nposição estratégica na fronteira com Peru e Bolívia. Esses ativos ainda não se transformam, na escala\nnecessária, em empregos de qualidade, renda e oportunidades para a população.\nEm 2023, o PIB do Acre chegou a R$ 26,3 bilhões e cresceu 14,7% em volume, o maior avanço entre os\nestados naquele ano. A expansão, porém, ainda convive com elevada dependência da administração\npública, que respondeu por 38,5% do valor adicionado, e baixa industrialização, representando 8,0%.\nAs exportações revelam uma transformação significativa na estrutura produtiva do Estado, tendo somado\naproximadamente US$ 62,3 milhões só no primeiro semestre de 2026. Parte importante da produção\nagropecuária, extrativista e florestal, no entanto, ainda deixa o estado com pouca ou nenhuma\ntransformação, reduzindo o valor agregado que permanece no Acre e limitando a expansão de empregos e\nserviços industriais, tecnológicos e comerciais.\nAs barreiras não atingem todos da mesma forma. Pequenos produtores, cooperativas, microempresas e\nempreendedores, mulheres, juventude, povos indígenas e comunidades tradicionais, população negra e\npessoas com deficiência enfrentam diferentes dificuldades de crédito, assistência técnica, regularização,\nconectividade, energia, infraestrutura, logística e acesso a mercados.\nA concentração territorial também é marcante: Rio Branco respondeu por 49,3% do PIB estadual em 2023,\ne Rio Branco e Cruzeiro do Sul, juntos, por 59,5%. Políticas de inovação, bioeconomia e inclusão produtiva\nsofrem descontinuidade, enquanto o conhecimento produzido pelas instituições de pesquisa ainda gera\npoucos negócios e soluções comerciais. Uma política de desenvolvimento justa deverá combinar critérios\neconômicos, territoriais e sociais, acessibilidade e participação para que o crescimento e as oportunidades\nalcancem a todo(a)s.\nO desafio é combinar aumento da produtividade de uma base econômica diversificada com forte\ninvestimento em industrialização, aliados a conservação da floresta, recuperação ambiental, turismo,\neconomia criativa, serviços e transformação digital. Isso exige planejamento estável, segurança jurídica,\nexecução eficiente dos investimentos e cooperação entre governo, trabalhadores, setor produtivo,\nuniversidades, institutos de pesquisa e comunidades.\n\nPÁG INA 19"
+          },
+          {
+            "id": "visao-de-futuro",
+            "titulo": "Visão de futuro",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Visão de futuro\nAté 2030, o Acre será referência amazônica em produção sustentável, bioeconomia, inovação e agregação\nde valor. A economia será mais diversificada, produtiva, com pequenos negócios e cooperativismo\nfortalecidos, agropecuária de baixo carbono, indústria local, turismo, serviços tecnológicos e exportação.\nO crescimento deverá gerar trabalho digno, reduzir desigualdades de território, gênero, raça, geração e\ndeficiência e criar oportunidades no interior. Preservar a floresta, enfrentar riscos climáticos e produzir\nmelhor nas áreas já abertas serão partes do mesmo projeto de desenvolvimento.\n\nCompromissos estratégicos\n1 Ampliar a produt ividade com equilíbrio ambient al e social\nFortalecer cadeias produtivas atuais e emergentes, combinando produtividade, conservação, segurança\nalimentar e valorização dos conhecimentos das comunidades.\nPrincipais ações\nImplantar programa de regularização fundiária e ambiental, certificação cartográfica e apoio ao\ndesenvolvimento rural de baixo carbono.\nPromover a assistência técnica própria e contratada, mecanização adequada, créditos facilitados e\ngestão adequada dos investimentos.\nRecuperar áreas degradadas e estimular a expansão da agricultura de precisão, pecuária intensiva,\nintegração lavoura-pecuária-floresta e sistemas agroflorestais.\nFortalecer o Sistema Estadual de Pagamento por Serviços Ambientais (SISA), a estruturação do\nmercado de carbono com rastreabilidade e certificação.\n\n2 Indust rializar e agregar valor no Acre\nApoiar o beneficiamento e a transformação da produção dentro do estado, ampliando empregos, renda,\nqualidade sanitária e acesso a mercados.\nPrincipais ações\nRevitalizar polos de beneficiamento nos vales do Juruá, Purus e Alto Acre.\n\nPÁG INA 20"
+          },
+          {
+            "id": "apoiar-micro-e-pequenas-agroindustrias-cooperativas-e-arranjos-produtivo",
+            "titulo": "Apoiar micro e pequenas agroindústrias, cooperativas e arranjos produtivos.",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Apoiar micro e pequenas agroindústrias, cooperativas e arranjos produtivos.\nAmpliar certificação, integração ao sistema nacional de inspeção sanitária e adequação a protocolos de\nexportação.\nIncentivar e atrair investimentos para processamento de alimentos, carnes, grãos e produtos florestais.\nApoiar a economia criativa (arte, cultura, comunicação, inovação), o turismo étnico-ambiental e as\nexportações de produtos acreanos para novos mercados.\n\n3 Fort alecer pequenos negócios e inclusão produt iva\nFacilitar crédito, gestão, formalização, digitalização e acesso a mercados para microempresas, produtores,\ncooperativas e trabalhadores por conta própria.\nPrincipais ações\nCriar programa integrado de fortalecimento de MEIs, microempresas e cooperativas.\nArticular crédito orientado, garantias e capital de giro com instituições financeiras.\nAmpliar compras públicas da agricultura familiar e pequenos negócios nos limites legais.\nInteriorizar atendimento empresarial e produtivo acessível para mulheres, juventudes, população\nnegra, pessoas com deficiência, povos indígenas e comunidades tradicionais.\nIntegrar qualificação, assistência social, cuidado, acessibilidade e oportunidades de trabalho digno para\nfamílias e grupos em situação de vulnerabilidade.\n\n4 T ransformar conheciment o em inovação e t rabalho\nConectar educação profissional, ciência, pesquisa, tecnologia, empresas e necessidades dos territórios,\napoiando tanto negócios inovadores quanto a modernização de setores tradicionais.\nPrincipais ações\nCriar uma política permanente com secretaria de Estado dedicada a ciência, tecnologia e inovação\naplicada ao desenvolvimento.\nOrganizar fundo estadual único para pesquisa, inovação e bioeconomia, após revisão dos instrumentos\nexistentes.\nApoiar pesquisa aplicada na geração de produtos, patentes, negócios e inovação aberta em parceria\ncom Universidades, institutos de pesquisa e indústria especializada.\n\nPÁG INA 21"
+          },
+          {
+            "id": "qualificar-trabalhadores-e-gestores-para-industria-comercio-turismo-cons",
+            "titulo": "Qualificar trabalhadores e gestores para indústria, comércio, turismo, construção, serviços e economia",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Qualificar trabalhadores e gestores para indústria, comércio, turismo, construção, serviços e economia\ndigital em parceria com Universidades, Institutos Federais e Sistema S.\nImplantar o Programa Acre Inovador com aceleração, inteligência de mercado e apoio à exportação.\n\n5 Planejar e execut ar o desenvolviment o\nRecuperar a capacidade do Estado e de seus servidores de coordenar investimentos com responsabilidade\nfiscal, simplificar processos, preparar projetos e pactuar prioridades com municípios, Governo Federal,\ntrabalhadores e setor produtivo.\nPrincipais ações\nOrganizar um plano estadual de obras e projetos, através de uma unidade de gestão que acompanhe\ncustos e prazos desde a elaboração técnica à conclusão.\nCriar uma carteira permanente de projetos estruturantes (banco de projetos) que inclua estudos prévios\nde engenharia, viabilidade, licenciamento e estimativas de custos, compatíveis com o orçamento,\nagilizando submissão e aprovação.\nFortalecer equipes técnicas, valorizar o planejamento e buscar governança com setor produtivo,\ntrabalhadores, sociedade civil, Universidades e comunidade.\nSimplificar licenciamentos e atendimento, integrando os sistemas, reduzindo o tempo para abrir e\nregularizar negócios, sem prejuízo das exigências sociais e ambientais.\nArticular conectividade, energia e logística necessárias às cadeias produtivas.\nMonitorar publicamente execução, trabalho digno, renda, emissões e distribuição dos benefícios por\nterritório, gênero, raça, idade e deficiência, respeitada a proteção de dados.\n\nPRIMEIRO S 100 DIAS\nInstalar a Governança Intersetorial do Desenvolvimento.\nCriar mesa permanente com trabalhadores, setor produtivo e movimentos sociais.\nApresentar plano emergencial de crédito, assistência e simplificação para pequenos negócios.\nConcluir revisão dos fundos e instrumentos estaduais de bioeconomia e inovação.\nOrganizar carteira inicial de projetos produtivos para captação de recursos.\nPactuar com o Governo Federal agenda para BR-364, energia, conectividade e comércio exterior.\n\nPÁG INA 22"
+          },
+          {
+            "id": "p-r-o-p-o-s-t-a-s-i-n-t-e-s-e",
+            "titulo": "P R O P O S T A- S Í N T E S E",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "P R O P O S T A- S Í N T E S E\n\nFazer a riqueza gerar trabalho e renda para quem vive no Acre. Produzir melhor, transformar\nprodutos dentro do estado. Fortalecer pequenos negócios. Unir ciência e economia e fazer\nda floresta e das áreas já abertas bases de um desenvolvimento equilibrado e justo.\n\nPÁG INA 23"
+          },
+          {
+            "id": "03",
+            "titulo": "03",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "03\nEIXO 3\n\nInfraestrutura para o\nDesenvolvimento\nConectar pessoas, territórios e oportunidades."
+          },
+          {
+            "id": "e-i-xo-3-i-n-f-r-ae-s-t-r-u-t-u-r-a",
+            "titulo": "E I XO 3 · I N F R AE S T R U T U R A",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "E I XO 3 · I N F R AE S T R U T U R A\n\nInfraestrutura para o Desenvolvimento\nConectar pessoas, territórios e oportunidades.\n\nDiagnóstico\nEstradas, ramais, pontes, hidrovias, aeroportos, água, saneamento, habitação, energia, conectividade e\ninfraestrutura urbana determinam a qualidade de vida e a capacidade de desenvolvimento de um estado\namazônico com 164,2 mil km². A precariedade e a manutenção irregular desses sistemas isolam\ncomunidades, encarecem a produção e dificultam o acesso a serviços públicos.\nO Estado enfrenta problemas graves na qualidade das suas vias, no abastecimento de água, no tratamento\nde esgoto, na gestão dos resíduos, na qualidade das linhas de transmissão e na cobertura de\nconectividade. Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo e nenhum\ntrecho classificado como ótimo. As condições do pavimento elevam em 71% o custo operacional do\ntransporte. Desperdício superior a 25 milhões de litros de diesel com custo de R$ 153 milhões e aumento\ndesnecessário das emissões de gases de efeito estufa.\nO problema não decorre apenas da falta de recursos. A ausência de planejamento integrado, projetos\npreparados, manutenção permanente e coordenação entre Estado, municípios e Governo Federal reduz a\nqualidade dos investimentos, favorece obras fragmentadas ou paralisadas e limita a captação de recursos\nnacionais e internacionais.\nAs cidades convivem com problemas de abastecimento de água, esgoto, resíduos, drenagem, mobilidade,\nhabitação e arborização. No interior, ramais, pontes, rodovias, portos, aeródromos, energia e internet\nprecisam responder às condições amazônicas e permanecer funcionais durante todo o ano. Mâncio Lima\nfica a 664,9 km de Rio Branco pela referência rodoviária, enquanto Jordão, Marechal Thaumaturgo, Porto\nWalter e Santa Rosa do Purus têm acesso somente aéreo e fluvial — diferenças que exigem padrões de\nserviço e custos territoriais próprios.\nA posição fronteiriça e a conexão com o Pacífico oferecem oportunidades para comércio, turismo e\nintegração regional. Aproveitá-las exige infraestrutura logística, aduaneira e digital, com sustentabilidade,\ntransparência e benefícios concretos para produtores, trabalhadores e comunidades.\nUm amplo processo de diagnóstico das condições de infraestrutura do Estado precisa ser feito, com\natualização de indicadores e estabelecimento de metas e os investimentos e respostas precisam deixar de\nepisódicas para tornarem-se políticas permanentes.\n\nPÁG INA 25"
+          },
+          {
+            "id": "visao-de-futuro-2",
+            "titulo": "Visão de futuro",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Visão de futuro\nAté 2030, o Acre terá uma política permanente de infraestrutura, organizada por territórios e sustentada\npor manutenção, carteira de projetos e cooperação federativa. Ramais, rodovias, pontes, hidrovias e\naeroportos apoiarão o direito de ir e vir, o transporte escolar, a saúde, a produção econômica e a integração\nregional.\nCidades serão mais acessíveis, arborizadas e resilientes, e comunidades terão melhores condições de\nmobilidade, água, saneamento, energia e conectividade. Cada investimento deverá apresentar prioridade,\nresponsabilidade, prazo, fonte de recursos e resultado esperado.\n\nCompromissos estratégicos\n1 Planejar, execut ar e cuidar do pat rimônio público\nReconstruir a capacidade do Estado e valorizar suas equipes técnicas para planejar investimentos, preparar\nprojetos, executar obras e manter a infraestrutura com responsabilidade fiscal e transparência.\nPrincipais ações\nRealizar diagnóstico aprofundado dos principais gargalos de infraestrutura do Estado.\nIncluir os projetos de infraestrutura no plano estadual de obras e projetos e na carteira de projetos\nestruturantes, com estudos prévios de viabilidade e acompanhamento de custos e prazos.\nPriorizar conclusão, recuperação e manutenção antes de novas expansões sem planejamento.\nFortalecer equipes técnicas e cooperação com municípios e Governo Federal.\nAdotar critérios territoriais, sociais, econômicos, ambientais, climáticos e de desenho universal, com\nconsulta a municípios, comunidades, setor produtivo, grupos afetados e sociedade civil organizada.\n\n2 Garant ir int egração t errit orial durant e t odo o ano\nImplantar manutenção regionalizada e contínua de ramais, rodovias estaduais e pontes, articulada aos\nmodais fluvial e aéreo e às necessidades do setor produtivo e da população do interior do estado, incluindo\npovos indígenas e comunidades tradicionais.\n\nPÁG INA 26"
+          },
+          {
+            "id": "principais-acoes",
+            "titulo": "Principais ações",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações\nAtualizar o diagnóstico de ramais, pontes e rodovias estaduais com participação das comunidades e\nimplantar um programa permanente e regionalizado de manutenção.\nPriorizar rotas utilizadas pela produção, transporte escolar e atendimento de saúde.\nRecuperar a infraestrutura portuária, canais de navegação e aeródromos do interior, com acessibilidade,\nsegurança e soluções adequadas aos povos e comunidades atendidos.\nArticular com o Governo Federal e concessionárias a modernização da rede de energia, viabilizando\nampliação da infraestrutura de alta potência (trifásica) e incentivando novas conexões e tecnologias\n(sistemas fotovoltaicos).\nPactuar com o Governo Federal a recuperação e manutenção permanente da BR-364 e das demais\nestruturas federais.\n\n3 Const ruir cidades est rut uradas, verdes e resilient es\nApoiar os municípios em intervenções urbanas integradas, acessíveis e preparadas para enchentes, secas,\ncalor e outros efeitos das mudanças climáticas.\nPrincipais ações\nPlanejar, juntamente com os municípios, sistemas viários urbanos, transporte coletivo, calçadas\nacessíveis, travessias seguras e iluminação pública, considerando mulheres, crianças, pessoas idosas e\ncom deficiência.\nPriorizar macrodrenagem, fundos de vale e recuperação de áreas degradadas.\nAmpliar parques, praças, matas ciliares e arborização urbana.\nApoiar projetos municipais com equipes técnicas multidisciplinares.\nIntegrar infraestrutura urbana, prevenção de desastres e Defesa Civil.\n\n4 Ampliar água, esgot o, resíduos e moradia digna\nArticular soluções adequadas às diferentes realidades municipais, com baixo custo de operação, segurança\nhídrica e sustentabilidade.\n\nPÁG INA 27"
+          },
+          {
+            "id": "principais-acoes-2",
+            "titulo": "Principais ações",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações\nExpandir a rede de fornecimento de água, reduzindo perdas e modernizando captação, tratamento e\ndistribuição.\nAmpliar coleta e tratamento de esgoto com tecnologias adequadas aos municípios.\nEstruturar soluções regionais e consorciadas para resíduos sólidos.\nFortalecer reciclagem, logística reversa, economia circular e inclusão digna, segura e remunerada de\ncatadoras e catadores.\nRetomar um programa de habitação social, com prioridade para famílias em risco ou vulnerabilidade,\nchefiadas por mulheres, com pessoas idosas ou com deficiência em parceria com os programas do\nGoverno Federal, com soluções amazônicas, reduzindo o déficit habitacional e fortalecendo o setor da\nConstrução Civil.\n\n5 Conect ar o Acre ao fut uro e à América do Sul\nExpandir conectividade e infraestrutura de fronteira para melhorar serviços, negócios, integração regional e\nacesso aos mercados do Pacífico.\nPrincipais ações\nCoordenar e implantar um plano estadual de conectividade de alta velocidade para cidades,\ncomunidades rurais e equipamentos públicos, envolvendo redundância de rede e soluções híbridas\ncom satélites de baixa órbita (LEO) e fibra óptica (Programa Norte Conectado).\nElaborar projetos logísticos e produtivos vinculados à Estrada do Pacífico e às Rotas de Integração SulAmericana, visando escalar o potencial do estado para as exportações.\nModernizar a infraestrutura e otimizar os serviços aduaneiros nos pontos de fronteira e viabilizar um\nrecinto alfandegado do tipo Porto Seco integrado a Zona de Processamento e Exportação do Acre\n(ZPE/AC), reduzindo custos operacionais e garantindo agilidade, segurança e eficiência nas operações de\ndespacho aduaneiro e comércio exterior.\nViabilizar a internacionalização dos aeroportos de Rio Branco e Cruzeiro do Sul e fomentar a\nimplantação de rotas aéreas regionais com países andinos, facilitando turismo, negócios e transporte de\ncargas comerciais.\nIntegrar pequenos produtores, cooperativas, turismo e empresas às oportunidades do comércio\nregional e internacional, com salvaguardas sociais, ambientais e benefícios para os territórios de\nfronteira.\n\nPÁG INA 28"
+          },
+          {
+            "id": "primeiro-s-100-dias",
+            "titulo": "PRIMEIRO S 100 DIAS",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "PRIMEIRO S 100 DIAS\nReorganizar a coordenação estadual da infraestrutura.\nAtualizar o diagnóstico de obras paralisadas, rodovias, pontes, ramais, aeródromos, sistemas de\nágua, esgoto, resíduos e conectividade.\nPublicar plano de retomada e manutenção das estruturas prioritárias.\nIniciar ações emergenciais nos pontos críticos de ramais e rodovias estaduais.\nInstalar agenda permanente de projetos em parceria com os municípios.\nCriar painel público de acompanhamento das principais obras.\nApresentar carteira inicial de projetos para captação de recursos federais e internacionais,\nincluindo saneamento, habitação, mobilidade, conectividade, energia elétrica, infraestrutura verde\ne integração regional.\n\nP R O P O S T A- S Í N T E S E\n\nTratar infraestrutura como cuidado e desenvolvimento. Manter ramais, estradas e pontes,\nmelhorar água e saneamento. Apoiar iniciativas municipais de cidades mais seguras e\narborizadas. Ampliar internet e energia e conectar o Acre às oportunidades da América do\nSul.\n\nPÁG INA 29"
+          },
+          {
+            "id": "04",
+            "titulo": "04",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "04\nEIXO 4\n\nSegurança e Proteção da Vida\nFirmeza contra o crime, prevenção da violência e garantia de\ndireitos."
+          },
+          {
+            "id": "e-i-xo-4-s-e-g-u-r-an-c-a",
+            "titulo": "E I XO 4 · S E G U R AN Ç A",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "E I XO 4 · S E G U R AN Ç A\n\nSegurança e Proteção da Vida\nFirmeza contra o crime, prevenção da violência e garantia de direitos.\n\nDiagnóstico\nA violência e a sensação de insegurança afetam famílias, trabalhadores, comerciantes e comunidades em\ntodas as regiões do Acre. Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil;\nem 2025, foram registrados 14 feminicídios. A presença de organizações criminosas, os crimes contra a vida\ne o patrimônio, a violência contra mulheres e o recrutamento de jovens exigem resposta firme, permanente\ne coordenada.\nA fronteira com Peru e Bolívia aumenta os desafios relacionados ao tráfico, contrabando, crimes ambientais\ne circulação de armas. O sistema prisional também precisa deixar de reproduzir a organização do crime e\nampliar oportunidades de educação, trabalho e reinserção para reduzir a reincidência.\nA repressão é indispensável, mas não é suficiente. Saúde mental, pobreza, abandono escolar, falta de\noportunidades, racismo, discriminação e fragilidade das redes de proteção se combinam nos territórios\nmais vulneráveis. Segurança pública exige inteligência e integração das ações policiais, valorização\nprofissional, combate combinado com prevenção e presença efetiva do Estado no território que deve\ntrabalhar articulando educação, saúde, proteção social, cultura, esporte, lazer e geração de emprego,\nrenda e oportunidades.\n\nVisão de futuro\nAté 2030, o Acre terá uma política de segurança avançada, enérgica, integrada e orientada por inteligência,\ncom forças valorizadas, capacidade de enfrentar organizações criminosas e atuação coordenada nos\nterritórios e nas fronteiras.\nA proteção da vida unirá repressão qualificada, prevenção, assistência social, garantia de direitos e\noportunidades. Mulheres, crianças, jovens e comunidades vulneráveis contarão com cuidados, esporte,\nlazer, cultura e redes de proteção social mais próximas, rápidas, eficazes e respeitosas.\n\nPÁG INA 31"
+          },
+          {
+            "id": "compromissos-estrategicos",
+            "titulo": "Compromissos estratégicos",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos estratégicos\n1 Enfrent ar o crime organizado com int eligência\nGarantir que as Polícias Militar, Civil e Penal trabalhem articuladas e coordenadas por um Sistema\nIntegrado de Segurança gerido pela Secretaria de Estado de Segurança. Trabalhar com inteligência policial\ne em colaboração com as forças federais. Valorizar investigação da polícia técnica e atuação territorializada\nbuscando redução dos crimes de homicídio, feminicídio e tráfico, porte ilegal de armas e danos ao\npatrimônio e meio ambiente.\nPrincipais ações\nImplantar governança integrada de segurança e inteligência.\nFortalecer investigação, perícia, análise criminal e tecnologia.\nPactuar agenda permanente de fronteiras com o Governo Federal e países vizinhos fortalecendo o\nGEFRON.\nDefinir metas territoriais de redução de homicídios e crimes violentos.\nAmpliar transparência, controle, protocolos de uso da força e canais de denúncia.\n\n2 Valorizar e modernizar as inst it uições de segurança\nRecompor capacidades, melhorar carreiras e cuidar da saúde dos profissionais da polícia, perícia, sistema\nprisional, Corpo de Bombeiros e Defesa Civil.\nPrincipais ações\nPlanejar recomposição de efetivos conforme necessidade e capacidade fiscal.\nAtualizar formação, equipamentos, comunicação e infraestrutura.\nFortalecer saúde física e mental e prevenção do adoecimento profissional.\nModernizar unidades e sistemas de informação integrados.\nAprimorar gestão, corregedorias e reconhecimento do bom desempenho.\n\nPÁG INA 32"
+          },
+          {
+            "id": "3-fort-alecer-prot-ecao-social-e-direit-os-humanos",
+            "titulo": "3 Fort alecer prot eção social e direit os humanos",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "3 Fort alecer prot eção social e direit os humanos\nConsolidar o SUAS (Sistema Único de Assistência Social) e coordenar política e redes territorializadas de\napoio e proteção para pessoas e comunidades expostas à pobreza, violência, abandono e violações de\ndireitos, com financiamento responsável e resultados transparentes.\nPrincipais ações\nAmpliar cofinanciamento, apoio técnico e vigilância socioassistencial no interior.\nIntegrar superação da pobreza, segurança alimentar, moradia, qualificação e renda.\nFortalecer atendimento a pessoas com deficiência, idosas, em situação de rua e de outras\nvulnerabilidades.\nImplantar protocolos antirracistas e de atendimento sem discriminação.\nFortalecer políticas de direitos para população LGBTQIAPN+, migrantes e egressos do sistema prisional.\n\n4 Prot eger mulheres, crianças e juvent udes\nOrganizar respostas rápidas à violência de gênero, sexual e doméstica e impedir o recrutamento de crianças\ne jovens pelo crime.\nPrincipais ações\nCriar patrulha integrada para mulheres com medidas protetivas.\nInteriorizar atendimento especializado, humanizado e acessível às vítimas, com Libras, comunicação\nalternativa e protocolos sem discriminação.\nImplantar o Programa Jovem Protegido nos territórios mais violentos.\nIntegrar escola, saúde, assistência, cultura, esporte e oportunidades de trabalho.\nFortalecer prevenção ao feminicídio, violência sexual, racismo e discriminações.\n\n5 Prot eger t errit órios, comunidades e a população em emergências\nArticular os sistemas de Defesa Civil, proteção ambiental, direitos indígenas e mediação de conflitos para\nreduzir riscos e assegurar presença do Estado.\n\nPÁG INA 33"
+          },
+          {
+            "id": "principais-acoes-3",
+            "titulo": "Principais ações",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Principais ações\nFortalecer Defesa Civil, Corpo de Bombeiros, Pelotão Florestal, alertas acessíveis, monitoramento e\nresposta a enchentes, secas, calor, fumaça, incêndios e outros desastres.\nCriar mecanismos de prevenção e mediação de conflitos territoriais.\nInstituir governança de proteção dos povos indígenas e comunidades tradicionais.\nGarantir consulta, participação social e respeito às identidades e modos de vida.\nIntegrar planos territoriais, ambientais e de proteção às políticas estaduais de prevenção à violência e\nenfrentamento ao racismo.\n\nPRIMEIRO S 100 DIAS\nImplantar o Gabinete Integrado de Segurança Pública.\nPublicar diagnóstico territorial da violência e plano de ação imediato.\nCriar a Patrulha Integrada de Proteção às Mulheres.\nIniciar o Programa Jovem Protegido nos territórios prioritários.\nPactuar agenda de fronteiras, inteligência e sistema prisional com o Governo Federal.\nApresentar protocolo antirracista para os agentes públicos.\nInstalar instância de proteção dos povos indígenas e comunidades tradicionais.\nAtualizar o plano estadual de prevenção e resposta a desastres e riscos climáticos, com protocolos\npara pessoas e territórios mais vulneráveis.\n\nP R O P O S T A- S Í N T E S E\n\nEnfrentar o crime com firmeza e inteligência. Valorizar as Forças de segurança. Prevenir a\nviolência contra grupos vulneráveis. Proteger mulheres e jovens. Fortalecer a assistência\nsocial e garantir que o Estado esteja presente onde a vida corre mais risco.\n\nPÁG INA 34"
+          },
+          {
+            "id": "eixo-5",
+            "titulo": "EIXO 5",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 5\n\n05\n\nEducação e Desenvolvimento\nHumano para Transformar\nVidas\nAprender, participar e construir o futuro do Acre."
+          },
+          {
+            "id": "e-i-xo-5-e-d-u-c-ac-ao",
+            "titulo": "E I XO 5 · E D U C AÇ ÃO",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "E I XO 5 · E D U C AÇ ÃO\n\nEducação e Desenvolvimento Humano para\nTransformar Vidas\n\nAprender, participar e construir o futuro do Acre.\n\nDiagnóstico\nA educação acreana reúne experiências, profissionais e instituições capazes de sustentar um novo ciclo de\ndesenvolvimento. Em 2024, a educação básica somava 248.340 matrículas iniciais, distribuídas por uma\nrede de 1.516 estabelecimentos. A escala e a dispersão dessa rede tornam indispensáveis planejamento,\ncolaboração e apoio diferenciado, enquanto persistem desigualdades de aprendizagem, atraso escolar,\nabandono e dificuldades para alfabetizar todas as crianças no tempo adequado.\nOs desafios atingem com maior intensidade estudantes pobres, do campo, indígenas, ribeirinhos, pessoas\ncom deficiência e quem vive em áreas de difícil acesso. Transporte, conectividade, água, saneamento,\nmanutenção e disponibilidade de profissionais condicionam o direito de aprender em cada território.\nProfessores e demais trabalhadores precisam de carreiras valorizadas, formação continuada, saúde e\nmelhores condições de trabalho. As escolas também devem ser seguras, inclusivas, democráticas e\npreparadas para enfrentar violência, discriminação e sofrimento emocional.\nA educação precisa dialogar com as transformações do século XXI e com as potencialidades do Acre. Em\n2024, havia 8.906 matrículas na educação profissional; no ensino superior, eram 17.807 matrículas em 2023.\nCiência, cultura, inteligência artificial, formação profissional, bioeconomia, sustentabilidade e saberes\namazônicos devem integrar um projeto construído em colaboração com os municípios e orientado por\ndados.\n\nVisão de futuro\nAté 2030, o Acre terá uma educação pública orientada pelo direito de aprender, com alfabetização no\ntempo adequado, recuperação das aprendizagens, redução das desigualdades, orientada para o trabalho e\ncom apoio para que crianças, jovens e adultos ingressem, permaneçam e concluam seus estudos.\nAs escolas serão seguras, inclusivas, conectadas e acolhedoras, com profissionais valorizados. Educação,\nciência, cultura e trabalho estarão articulados ao desenvolvimento sustentável de cada território.\n\nPÁG INA 36"
+          },
+          {
+            "id": "compromissos-estrategicos-2",
+            "titulo": "Compromissos estratégicos",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos estratégicos\n1 Garant ir o direit o à educação com equidade\nColocar o direito de aprender no centro das redes e sistemas de ensino. Acesso, permanência, trajetória\nregular e aprendizado adequado a cada estudante é o objetivo deste Plano.\nPrincipais ações\nPactuar alfabetização no tempo adequado com os 22 municípios.\nImplantar avaliação diagnóstica e política permanente de recuperação das aprendizagens.\nAmpliar busca ativa, correção de fluxo e prevenção do abandono.\nReorganizar a Educação de Jovens e Adultos de acordo com seus públicos.\nGarantir respostas diferenciadas para campo, floresta, rios, povos indígenas e comunidades\ntradicionais, com participação das comunidades e respeito às línguas, culturas, identidades e\nconhecimentos próprios.\n\n2 Valorizar profissionais e fort alecer as escolas\nReconhecer professores, gestores, técnicos e funcionários como base da qualidade, com carreira, formação,\nsaúde e condições adequadas de trabalho.\nPrincipais ações\nAssegurar os direitos conquistados nas carreiras e políticas remuneratórias.\nRealizar concurso para docentes e ampliar o percentual de professores efetivos.\nCriar incentivos para permanência em áreas de difícil acesso.\nImplantar formação inicial e continuada articulada às necessidades das escolas.\nCriar programa de saúde física e mental dos trabalhadores.\nAmpliar autonomia escolar com acompanhamento e apoio técnico, recursos e transparência.\n\nPÁG INA 37"
+          },
+          {
+            "id": "3-assegurar-escolas-dignas-inclusivas-e-prot-et-oras-em-t-odas-as",
+            "titulo": "3 Assegurar escolas dignas, inclusivas e prot et oras em t odas as",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "3 Assegurar escolas dignas, inclusivas e prot et oras em t odas as\ncomunidades\n\nEscolas com infraestrutura e insumos indispensáveis, acessibilidade, participação da comunidade e cultura\nde paz, respeitando diferenças e protegendo estudantes e profissionais da educação.\nPrincipais ações\nRecuperar, construir e manter escolas com garantia de água potável, saneamento, energia, mobiliário e\ninsumos adequados.\nExpandir com qualidade a educação especial inclusiva, desenho universal, acessibilidade física, digital e\ncomunicacional e tecnologias assistivas.\nImplantar política de cultura de paz, saúde mental e prevenção das violências.\nFortalecer gestão democrática, conselhos, grêmios e participação das famílias.\nAmpliar artes, leitura, esporte, direitos humanos, educação antirracista e respeito à diversidade sexual e\nde gênero.\n\n4 Preparar as novas gerações para o fut uro do Acre\nIntegrar ciência, tecnologia, educação profissional, cultura e saberes amazônicos, aproximando a escola\ndas oportunidades e desafios de cada território.\nPrincipais ações\nUniversalizar conectividade educacional e ampliar laboratórios e recursos digitais.\nFormar professores e estudantes para uso responsável de inteligência artificial e tecnologia.\nAmpliar educação integral, técnica e profissional articulada às vocações regionais.\nPromover a criação de escolas em regime da alternância em comunidades de produção familiar,\nespecialmente com Educação Profissional Técnica e Tecnológica.\nFortalecer iniciação científica e resolução de problemas amazônicos.\nIntegrar educação ambiental e climática, bioeconomia e sustentabilidade ao currículo.\n\nPÁG INA 38"
+          },
+          {
+            "id": "5-fazer-da-educacao-um-projet-o-permanent-e-de-est-ado",
+            "titulo": "5 Fazer da educação um projet o permanent e de Est ado",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "5 Fazer da educação um projet o permanent e de Est ado\nConsolidar planejamento de longo prazo, regime de colaboração, participação social, responsabilidade no\nfinanciamento e gestão transparente orientada por dados.\nPrincipais ações\nAtualizar e implementar o Plano Estadual de Educação, em parceria com a União e os municípios,\nvinculado ao orçamento.\nRealizar em regime de colaboração matrículas, transporte, formação de professores.\nImplantar sistema integrado de planejamento, monitoramento e avaliação.\nIntegrar educação com cultura, saúde, assistência, esporte, ambiente e economia, tratando o\ndesenvolvimento humano como aprendizagem, proteção, participação, convivência e autonomia ao\nlongo da vida.\nInstituir pacto permanente pela educação com metas públicas e participação social.\n\nPRIMEIRO S 100 DIAS\nInstalar sala de situação para diagnosticar e avaliar a situação física de todas as escolas.\nRealizar a Operação Emergencial para assegurar condições de funcionamento das escolas no\nprimeiro dia letivo.\nAplicar avaliação diagnóstica e iniciar planos de recuperação das aprendizagens.\nInstalar mesa permanente de valorização dos profissionais.\nApresentar plano de formação e programa de saúde dos trabalhadores.\nLançar o plano de conectividade e inovação educacional.\nIniciar o fortalecimento da educação do campo, indígena, especial e de jovens e adultos.\nInstalar comitê estratégico e iniciar revisão participativa do Plano Estadual de Educação.\n\nPÁG INA 39"
+          },
+          {
+            "id": "p-r-o-p-o-s-t-a-s-i-n-t-e-s-e-2",
+            "titulo": "P R O P O S T A- S Í N T E S E",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "P R O P O S T A- S Í N T E S E\n\nColocar a aprendizagem no centro do governo. Garantir escolas dignas, seguras e\nconectadas. Valorizar os profissionais. Reduzir desigualdades e preparar crianças, jovens e\nadultos para construir um Acre mais justo, sustentável e cheio de oportunidades.\n\nPÁG INA 40"
+          },
+          {
+            "id": "r-ef-er-en-c-i-as",
+            "titulo": "R EF ER ÊN C I AS",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "R EF ER ÊN C I AS\n\nFontes e notas das evidências\nOs números abaixo sustentam os diagnósticos, mas não substituem a linha de base que deverá ser\natualizada antes da definição das metas. Dados de 2026 retratam a disponibilidade registrada no período\nindicado; números de 2022 a 2025 permitem comparações apenas quando mantidos conceito, cobertura e\nmétodo.\nGestão pública e governança: Índice de Transparência e Governança Pública, Transparência Internacional – Brasil,\nedição 2025. Informações administrativas sobre execução de investimentos, aquisições e situação previdenciária\nconstam das contribuições temáticas recebidas e deverão ser confirmadas na transição com dados oficiais e\nmetodologia publicada.\nInfraestrutura: indicadores sobre rodovias, saneamento, conectividade e transparência dos investimentos constam da\ncontribuição temática específica. Antes da fixação de metas, deverão ser atualizados e conciliados com DNIT,\nDERACRE, SNIS/SINISA, Anatel, órgãos estaduais e demais fontes oficiais pertinentes.\nEixo 1 — Saúde: Cobertura da Estratégia Saúde da Família: MS/SAPS/e-Gestor Atenção Básica, 2023. Leitos existentes:\nMS/DATASUS/CNES, atualização de fevereiro de 2026; o cadastro não comprova, isoladamente, disponibilidade\noperacional.\nEixo 2 — Emprego, renda e economia: PIB estadual, crescimento real e composição setorial: IBGE/Contas Regionais e\nSEPLAN, 2023. Participação municipal no PIB: IBGE/PIB dos Municípios e SEPLAN, 2023; valores de 2022 e 2023 estão\nsujeitos à revisão.\nEixo 3 — Infraestrutura: Área territorial: IBGE/Censo Demográfico 2022. Distâncias e condições de acesso:\nDNIT/DERACRE; as distâncias rodoviárias não representam o tempo efetivo de deslocamento e quatro municípios\ndependem de acesso aéreo e fluvial.\nEixo 4 — Segurança e proteção: Composição racial e população indígena: IBGE/Censo 2022. Homicídios de jovens:\nSinesp/MJSP, 2024, conforme compilação temática recebida. Feminicídios: registros de segurança pública de 2025,\nconforme compilação temática sobre as mulheres; o indicador deve ser acompanhado com protocolo estável de\nclassificação.\nEixo 5 — Educação: Matrículas, estabelecimentos e educação profissional: MEC/INEP/Censo Escolar, 2024; um\nestudante pode possuir mais de uma matrícula. Ensino superior: MEC/INEP/DEAES, 2023.\n\nPÁG INA 41"
+          },
+          {
+            "id": "coor-d-en-acao",
+            "titulo": "COOR D EN AÇÃO:",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "COOR D EN AÇÃO:\nBinho Marques\nOsvaldo Leal\nGabriel Gelpke\n\nPÁG INA 42"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "ocr",
+            "textSha256": "ffbd48b0f13e4f32a6eaff2659d06468108c757558f7ebca2c8597c5737fff8d"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ff5d627afd4a7b03bdbefeb5492af769f6dfc089087a2c5c9a01c11f7c0fc638"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "157594dc4b5fb534e0b2f6c15ab70322e297ad4c522e73d2d5ccbb5440b5ad9d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "86b80ea37f7ccaf3dc5c9a72da0bf50ccee40441c8e541214564932ceb6807c6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e7711c294658005d0e94fb243a1a03d563c3903cbefc91fa35ce8835ac561312"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "12ed841a849a16a47f7f87f0c43e690c64e775ec73d86cc78a354fc204f707b6"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "8d96946ebbea69a26172135d50949e25591145c30e825bc4914fb3bf1881bf88"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "68f19771956d34e6a3082d71e1e733219c248ecfdc82e38ab1ef6c597bf5bc08"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "2a9a1c80b7676d6e023daa9ef7c063a14cfc015ea6f7fb0f2bc76a1380cbb6b4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "37c65341a38c5914d3b1a83248b8cf23273a43936b250a6e6ef6e5b5704e0c9d"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "c4b8d35285cfa2c46681593443075251ac76fb83883caccf2b011da555f2613e"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "4d94f72d0a7c5486af5088451c026d939467880a59aff19894ccdbb57b521f03"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "1b73f7bf2c4574c9fc5547e6d4ac8d2a6e2bb3a807ced097adb2a49ff4a3a339"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "9e0b623869642b1edb5f9e2f2644acef7fde8a9e7f08c90bc624b2e8afdb665a"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "528e044ffab697387049dc08609905f0e78abca3eba593f13372cfa55199a007"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "963a52509f4391ca4ce3ceaa6400ba1ede8802251df177d4b418be4535eb3ce2"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "2bfafaa045631919ce073050f4f29e0317433a243d9167dcf1d99a33b6c761b1"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "90acecf99b0fbd8ae8c12f1cd8f7df7292adeaf56e9c59f4e3d818696504d2ca"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "a5664dc356a053d01c1f1a61bbf01cd15c58d2fa3438cedc8513e43a05fe3c44"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "1687e0c26fdf245ed55985cdc1d0e45dee410f3a9e94b71fefdffd4d34be70ab"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "79c6044395555f2026b3e44d317b15be5de6206c7c4b09195846ca0c90f6d957"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "6b1878770a02a0c6445d43201fe8f0af558e224a1659fbd9ad2d0c06c8fc2189"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "81b031f157c91907ca5f7333e3ed15eef3a5f0708dbfc4499901ae99caa3c135"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "1c34663ffeb834874a0240936d24a50e5dcf36b8cc294a9e2575443f96c8b34b"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "21dc968bb9093d59a3ee5cffe6991022f7e7e2e1d52b2ae371059f74c101441c"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "59fd6905bafebfbfd2157d43926ef742c6d9d5548d400763106f4c3b478df424"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "73fe17ccb7389aea85d092c25910cd0929fe37bb70995ca4198ac9c6422a3269"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "2c48c12d26ab8ee49418a431bd8ed00c1670e8b37218fbae03176ba8a1a5bf7c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "424f2bc364c216cdbfcb1a74948a041212f1ea2e442b56200578be01c774772e"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "2b5f3f072b1d3a464a312f60036ce9fc4d2a0675295f9095051bf6127b717b06"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "3f1af4ba4586037f056c921f585e782ec3573a2e5ef24ceb9bee60035d2fe2bf"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "e42f37c75c3c3c88c900b7f6bf24da26d0b33f46d65587e2e52c49abca01a88b"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "2997b207d9c884b11852ea0f7525d492eebbea7c557d3574db5f0c1d8ba46fae"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "8b0f36e78b9a2c68a72f634c621a3b40053d053efd1bd36da1feccca25399a77"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "f42eba6e10d5e4f9da6e10e7c49b6fcdc11c147be3060da0cfe15b9a577d046d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "6dc08b76516cbe070cef5b400422aa27355b5c94bbf6bd363c317ace2538582e"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "4a5c352905d57a365f95c5271610ce73187a117c12ae6b9f348b7007101487cb"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "ddd106ebfa06a01b2d5f3e36ef1fb072353ff1ffb5c9990a3cc8587a4a25c6a2"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "12ead284811a54f3faa0d0eb1506d187157887a8e285194ec7eb320b4a14ef2b"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "f3ec5a05778c856948d249facf5dde07b391c96ef46c2b37a8cbbd92b7494c06"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "001505866f2ec0ef486519e4b5e57025f51c82e216ff4807331ea83cd04b85ba"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "fd1367f2b9d0f6e6c630a9ea72193aad7086880c5f1904f30c0f09554ed5c195"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população, conforme o dado registrado para esse ano. Em abril de 2026, havia mais de 87 mil consultas especializadas reprimidas no sistema de regulação, conforme o registro daquele período. Em fevereiro de 2026, o CNES registrava 1.614 leitos no estado, de acordo com o dado informado para aquele mês. Em 2023, o PIB do Acre chegou a R$ 26,3 bilhões, conforme o valor indicado no levantamento. As exportações do Acre somaram aproximadamente US$ 62,3 milhões no primeiro semestre de 2026, segundo o valor informado. Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo, conforme a classificação apresentada. As condições do pavimento elevam em 71% o custo operacional do transporte, segundo o indicador registrado no documento. Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil, conforme o registro.",
+    "frases": [
+      {
+        "texto": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população, conforme o dado registrado para esse ano.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população"
+          }
+        ]
+      },
+      {
+        "texto": "Em abril de 2026, havia mais de 87 mil consultas especializadas reprimidas no sistema de regulação, conforme o registro daquele período.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em abril de 2026 havia mais de\n87 mil consultas especializadas reprimidas no sistema de regulação"
+          }
+        ]
+      },
+      {
+        "texto": "Em fevereiro de 2026, o CNES registrava 1.614 leitos no estado, de acordo com o dado informado para aquele mês.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em\nfevereiro de 2026, o CNES (Cadastro Nacional de Estabelecimentos de Saúde) registrava 1.614 leitos no\nestado"
+          }
+        ]
+      },
+      {
+        "texto": "Em 2023, o PIB do Acre chegou a R$ 26,3 bilhões, conforme o valor indicado no levantamento.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 19,
+            "trecho": "Em 2023, o PIB do Acre chegou a R$ 26,3 bilhões"
+          }
+        ]
+      },
+      {
+        "texto": "As exportações do Acre somaram aproximadamente US$ 62,3 milhões no primeiro semestre de 2026, segundo o valor informado.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 19,
+            "trecho": "As exportações revelam uma transformação significativa na estrutura produtiva do Estado, tendo somado\naproximadamente US$ 62,3 milhões só no primeiro semestre de 2026"
+          }
+        ]
+      },
+      {
+        "texto": "Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo, conforme a classificação apresentada.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 25,
+            "trecho": "Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo"
+          }
+        ]
+      },
+      {
+        "texto": "As condições do pavimento elevam em 71% o custo operacional do transporte, segundo o indicador registrado no documento.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 25,
+            "trecho": "As condições do pavimento elevam em 71% o custo operacional do\ntransporte"
+          }
+        ]
+      },
+      {
+        "texto": "Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil, conforme o registro.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 31,
+            "trecho": "Em 2024, a taxa de homicídios de jovens de 15 a 29 anos foi de 37,6 por 100 mil"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "atencao-basica",
+        "titulo": "Atenção básica",
+        "descricao": "A Estratégia Saúde da Família alcançava 79,8% da população em 2023.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em 2023, a Estratégia Saúde da Família alcançava 79,8% da população"
+          }
+        ]
+      },
+      {
+        "id": "consultas-especializadas",
+        "titulo": "Consultas especializadas",
+        "descricao": "Havia mais de 87 mil consultas especializadas reprimidas no sistema de regulação em abril de 2026.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em abril de 2026 havia mais de\n87 mil consultas especializadas reprimidas no sistema de regulação"
+          }
+        ]
+      },
+      {
+        "id": "leitos-hospitalares",
+        "titulo": "Leitos hospitalares",
+        "descricao": "O CNES registrava 1.614 leitos no estado em fevereiro de 2026.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 13,
+            "trecho": "Em\nfevereiro de 2026, o CNES (Cadastro Nacional de Estabelecimentos de Saúde) registrava 1.614 leitos no\nestado"
+          }
+        ]
+      },
+      {
+        "id": "exportacoes",
+        "titulo": "Exportações",
+        "descricao": "As exportações somaram aproximadamente US$ 62,3 milhões no primeiro semestre de 2026.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 19,
+            "trecho": "As exportações revelam uma transformação significativa na estrutura produtiva do Estado, tendo somado\naproximadamente US$ 62,3 milhões só no primeiro semestre de 2026"
+          }
+        ]
+      },
+      {
+        "id": "rodovias",
+        "titulo": "Rodovias",
+        "descricao": "Quase 80% das rodovias encontravam-se em estado ruim ou péssimo.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002550719:01",
+            "pagina": 25,
+            "trecho": "Quase 80% das rodovias do Acre encontram-se em estado ruim ou péssimo"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:17:35.268Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:19:47.468Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente o dado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual e ano coincidem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve o dado, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta/dado sobre atenção básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave eleitoral e documento correspondem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:1:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Número e período coincidem com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do dado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente (consultas especializadas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:2:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente o dado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Número e mês coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (leitos hospitalares)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:3:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente o valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor e ano coincidem exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do dado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (PIB)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:4:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o valor e período."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor e período coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A frase da claim é neutra, apenas relata o número."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (exportações)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:5:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do diagnóstico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (rodovias)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:6:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (custo do pavimento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:7:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Taxa e ano coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (segurança/homicídios)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:frase:8:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual e ano coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (atenção básica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:atencao-basica:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Número e período coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (consultas especializadas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:consultas-especializadas:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Número e mês coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (leitos)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:leitos-hospitalares:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o valor e período."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor e período coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A claim é neutra, apenas relata o número (sem os adjetivos do documento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (exportações)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:exportacoes:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do diagnóstico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único (rodovias)."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002550719:tema:rodovias:documentos:AC:10002550719:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula material coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AC:10002550719",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AC:10002550719:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24825,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21919,
+          "output_tokens_details": {
+            "thinking_tokens": 128
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24825,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21919,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24825,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24825
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3379464
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 2,
+        "retriesSintese": 1,
+        "fingerprint": "623b437ff2e2eb1e822b5dc507daa4d29477cc16a86816069a8a3b11201c6c08",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:21:42.718Z",
+    "sourceSha256": "62dbde8571931aa70d7505caf58a95551849491a4cc42e42c818c410cdf141e1",
+    "extractedTextSha256": "c3495c4f34ead00beee7fe7026457e1f877776863e1c4c4ca73557da38434d5b",
+    "documentCount": 1,
+    "documentSetSha256": "25feb94645a631685f05c95ec83bc48f63bff39f181c0464787cff3fd21f42d8",
+    "contentSha256": "5f2452dad7af0eebb828cfbaeae790e90d97cf13e82608cbbd6c3a527645c5af"
+  }
+}

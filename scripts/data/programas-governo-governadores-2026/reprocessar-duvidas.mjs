@@ -4,7 +4,7 @@
 // a ingestão continua sendo o CLI canônico. Este arquivo apenas isola cada
 // candidatura, conserva checkpoints e fecha a fila quando a cota/autorização
 // deixa de ser confiável.
-import { randomUUID } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { spawn } from "node:child_process"
 import { access, mkdir, readFile, readdir, rename, stat, writeFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path"
@@ -77,13 +77,36 @@ export function validateCases(value) {
     const uf = String(candidate.uf ?? "").trim().toUpperCase()
     const slug = String(candidate.slug ?? "").trim()
     const sqCandidato = String(candidate.sqCandidato ?? "").trim()
+    const strategy = candidate.strategy === undefined ? undefined : String(candidate.strategy).trim()
+    const guidance = candidate.guidance === undefined ? undefined : String(candidate.guidance).trim()
+    const factLimit = candidate.factLimit === undefined ? undefined : Number(candidate.factLimit)
     if (!UF.test(uf) || !SAFE_SLUG.test(slug) || !SQ.test(sqCandidato)) {
       throw new Error(`cases[${index}] exige uf, slug e sqCandidato validos`)
+    }
+    if (strategy !== undefined && strategy !== "fatos") {
+      throw new Error(`cases[${index}].strategy deve ser fatos`)
+    }
+    if (guidance !== undefined && (
+      guidance.length === 0
+      || guidance.length > 2_000
+      || /[\u0000-\u001f\u007f]/u.test(guidance)
+    )) {
+      throw new Error(`cases[${index}].guidance invalida`)
+    }
+    if (factLimit !== undefined && factLimit !== 6) {
+      throw new Error(`cases[${index}].factLimit deve ser 6`)
     }
     const key = `${uf}:${sqCandidato}:${slug}`
     if (seen.has(key)) throw new Error(`cases duplicado: ${key}`)
     seen.add(key)
-    return { uf, slug, sqCandidato }
+    return {
+      uf,
+      slug,
+      sqCandidato,
+      ...(strategy ? { strategy } : {}),
+      ...(guidance ? { guidance } : {}),
+      ...(factLimit ? { factLimit } : {}),
+    }
   })
 }
 
@@ -102,6 +125,14 @@ async function exists(path) {
 
 function candidateKey(candidate) {
   return `${candidate.uf}:${candidate.sqCandidato}:${candidate.slug}`
+}
+
+function candidateFingerprint(candidate) {
+  return createHash("sha256").update(JSON.stringify({
+    strategy: candidate.strategy ?? null,
+    guidance: candidate.guidance ?? null,
+    factLimit: candidate.factLimit ?? null,
+  })).digest("hex")
 }
 
 function candidateDir(options, candidate) {
@@ -187,7 +218,13 @@ function classifyArtifact(record, candidate) {
 function initialProgress(cases) {
   return {
     version: 1,
-    cases: cases.map((candidate) => ({ ...candidate, key: candidateKey(candidate), status: "pending", attempts: 0 })),
+    cases: cases.map((candidate) => ({
+      ...candidate,
+      key: candidateKey(candidate),
+      caseFingerprint: candidateFingerprint(candidate),
+      status: "pending",
+      attempts: 0,
+    })),
     quota: { frozen: false, reason: null },
     summary: { pass: 0, blocked: 0, failed: 0, pending: cases.length },
     updatedAt: new Date().toISOString(),
@@ -248,6 +285,9 @@ function childArguments(options, candidate, output) {
   if (options.cacheDir) args.push(`--cache-dir=${options.cacheDir}`)
   if (options.extractCacheDir) args.push(`--extract-cache-dir=${options.extractCacheDir}`)
   if (options.faseDir) args.push(`--fase-dir=${options.faseDir}`)
+  if (candidate.strategy === "fatos") args.push("--force-fatos")
+  if (candidate.guidance) args.push(`--repair-guidance=${candidate.guidance}`)
+  if (candidate.factLimit) args.push(`--repair-facts-limit=${candidate.factLimit}`)
   return args
 }
 
@@ -298,6 +338,10 @@ async function processOne(options, candidate, progress, progressPath) {
   // A valid blocked record is useful terminal evidence even when the CLI
   // exits 1 because its own fail-closed gate reports blockers.
   item.status = classification.status
+  item.caseFingerprint = candidateFingerprint(candidate)
+  item.strategy = candidate.strategy
+  item.guidance = candidate.guidance
+  item.factLimit = candidate.factLimit
   item.reason = result.error || result.code !== 0
     ? `${classification.reason}; processo=${result.error ?? `exit ${result.code}`}`
     : classification.reason
@@ -326,7 +370,13 @@ export async function runDriver(argv = process.argv.slice(2)) {
   for (const candidate of cases) {
     const entry = progress.cases.find((item) => item.key === candidateKey(candidate))
     const artifact = await loadRecord(options, candidate)
-    if (isPass(artifact.record, candidate)) {
+    const currentFingerprint = candidateFingerprint(candidate)
+    if (
+      entry.status === "pass"
+      && entry.caseFingerprint === currentFingerprint
+      && entry.artifactPath === artifact.path
+      && isPass(artifact.record, candidate)
+    ) {
       entry.status = "pass"
       entry.reason = "Eval completo (retomado)"
       entry.artifactPath = artifact.path
@@ -335,7 +385,9 @@ export async function runDriver(argv = process.argv.slice(2)) {
       // motivo para transformar uma dúvida numa conclusão permanente.
       const previousStatus = entry.status
       entry.status = "pending"
-      entry.reason = previousStatus === "pass" ? "artefato completo ausente; retomada fail-closed" : "retomada de caso nao concluido"
+      entry.reason = previousStatus === "pass"
+        ? "checkpoint ou artefato divergente; retomada fail-closed"
+        : "retomada de caso nao concluido"
       entry.artifactPath = null
     }
   }

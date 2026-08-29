@@ -1,12 +1,12 @@
 {
   "version": 1,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-08-28T20:17:16Z",
+  "reviewedAt": "2026-08-29T01:23:32.855Z",
   "decisionBasis": "Publicar somente registros que passassem a mesma cadeia canonica de aprovacao usada nos presidenciaveis; excecoes permanecem fora do manifesto publico.",
   "counts": {
     "unavailable": 54,
-    "approved": 127,
-    "human_review_required": 17
+    "approved": 144,
+    "human_review_required": 0
   },
   "items": [
     {
@@ -154,14 +154,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:GO:90002540993",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "GO",
       "slug": "daniel-vilela",
       "sqCandidato": "90002540993",
       "nomeUrna": "DANIEL VILELA",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:GO:90002545476",
@@ -275,14 +275,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MS:120002532257",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MS",
       "slug": "lucien-rezende",
       "sqCandidato": "120002532257",
       "nomeUrna": "LUCIEN REZENDE",
       "partido": "PSOL",
       "sourceState": "em_revisao",
-      "reason": "lucien-rezende: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002553937",
@@ -330,14 +330,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002551480",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "MT",
       "slug": "otaviano-pivetta",
       "sqCandidato": "110002551480",
       "nomeUrna": "OTAVIANO PIVETTA",
       "partido": "REPUBLICANOS",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MT:110002543953",
@@ -704,25 +704,25 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002538692",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "efraim-filho",
       "sqCandidato": "150002538692",
       "nomeUrna": "EFRAIM FILHO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "efraim-filho: Eval tem 6 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002551789",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PB",
       "slug": "lucas-ribeiro",
       "sqCandidato": "150002551789",
       "nomeUrna": "LUCAS RIBEIRO",
       "partido": "PP",
       "sourceState": "em_revisao",
-      "reason": "lucas-ribeiro: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PB:150002540204",
@@ -858,14 +858,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002537422",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PI",
       "slug": "geraldo-carvalho",
       "sqCandidato": "180002537422",
       "nomeUrna": "GERALDO CARVALHO",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "geraldo-carvalho: Eval tem 3 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PI:180002549970",
@@ -979,14 +979,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002535255",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RN",
       "slug": "alysson-bezerra",
       "sqCandidato": "200002535255",
       "nomeUrna": "ALLYSON",
       "partido": "UNIÃO",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RN:200002547826",
@@ -1144,25 +1144,25 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002544107",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "mailza-assis",
       "sqCandidato": "10002544107",
       "nomeUrna": "MAILZA ASSIS",
       "partido": "PP",
       "sourceState": "em_revisao",
-      "reason": "mailza-assis: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002550719",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AC",
       "slug": "thor-dantas",
       "sqCandidato": "10002550719",
       "nomeUrna": "THOR DANTAS",
       "partido": "PSB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AC:10002544015",
@@ -1199,14 +1199,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002535267",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "AM",
       "slug": "gilberto-vasconcelos",
       "sqCandidato": "40002535267",
       "nomeUrna": "GILBERTO VASCONCELOS",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "gilberto-vasconcelos: Eval tem 2 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:AM:40002550776",
@@ -1408,36 +1408,36 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002542916",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "hildon-chaves",
       "sqCandidato": "220002542916",
       "nomeUrna": "HILDON CHAVES",
       "partido": "UNIÃO",
       "sourceState": "em_revisao",
-      "reason": "hildon-chaves: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002541939",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "marcos-rogerio",
       "sqCandidato": "220002541939",
       "nomeUrna": "MARCOS ROGÉRIO",
       "partido": "PL",
       "sourceState": "em_revisao",
-      "reason": "marcos-rogerio: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002551251",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RO",
       "slug": "pedro-abib",
       "sqCandidato": "220002551251",
       "nomeUrna": "PEDRO ABIB",
       "partido": "MDB",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RO:220002550927",
@@ -1617,14 +1617,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:ES:80002551833",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "ES",
       "slug": "helder-salomao",
       "sqCandidato": "80002551833",
       "nomeUrna": "HELDER SALOMÃO",
       "partido": "PT",
       "sourceState": "em_revisao",
-      "reason": "helder-salomao: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:ES:80002552172",
@@ -1925,14 +1925,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:SP:250002544912",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "SP",
       "slug": "vivian-mendes",
       "sqCandidato": "250002544912",
       "nomeUrna": "VIVIAN MENDES",
       "partido": "UP",
       "sourceState": "em_revisao",
-      "reason": "vivian-mendes: Eval tem 18 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PR:160002550997",
@@ -1991,14 +1991,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:PR:160002548010",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "PR",
       "slug": "samuel-de-mattos",
       "sqCandidato": "160002548010",
       "nomeUrna": "SAMUEL DE MATTOS",
       "partido": "PSTU",
       "sourceState": "em_revisao",
-      "reason": "registro.resumo: deve ser um objeto"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:PR:160002549553",
@@ -2079,14 +2079,14 @@
     },
     {
       "identityKey": "2026:GOVERNADOR:RS:210002533355",
-      "outcome": "human_review_required",
+      "outcome": "approved",
       "uf": "RS",
       "slug": "priscila-voigt",
       "sqCandidato": "210002533355",
       "nomeUrna": "PRISCILA VOIGT",
       "partido": "UP",
       "sourceState": "em_revisao",
-      "reason": "priscila-voigt: Eval tem 4 bloqueio(s)"
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:RS:210002541367",

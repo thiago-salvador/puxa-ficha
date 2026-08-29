@@ -1,0 +1,1134 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PB",
+    "sqCandidato": "150002551789",
+    "slug": "lucas-ribeiro",
+    "nomeUrna": "LUCAS RIBEIRO",
+    "partido": "PP",
+    "arquivoNome": "2026PB150002551789_01.pdf",
+    "arquivoNoPacote": "PB/2026PB150002551789_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PB:150002551789:01",
+      "fonte": {
+        "arquivoNome": "2026PB150002551789_01.pdf",
+        "arquivoNoPacote": "PB/2026PB150002551789_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "7ab813ec9da9f7158d7c5a7fa307a67c029904b11b6e29bd64c257b10e524f7f",
+        "extractedTextSha256": "5d5fd70dc76f224498bbd4ce6f8746e8032e163931f72df39745df10ae01efcc",
+        "paginas": 32,
+        "secoes": [
+          {
+            "id": "agora",
+            "titulo": "AGORA,",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "AGORA,\nÉ DAQUI\nPRA MELHOR.\n\nGOVERNADOR\n\nVICE Drª LIGIA"
+          },
+          {
+            "id": "minhas",
+            "titulo": "Minhas",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Minhas\namigas e\nmeus amigos,\n\nescrevo esta carta olhando\npara cada rosto, cada casa,\ncada estrada, cada escola,\ncada hospital, cada praça,\ncada roçado, cada comércio,\ncada\nindústria,\ncada\ncomunidade que carrega nos\nombros a força e a esperança\ndeste Estado. Conheço a\nParaíba que acorda cedo, que\ntrabalha muito, que enfrenta\nos desafios e não perde a\ncoragem de sonhar. É para o\npovo que constrói a Paraíba\ntodos os dias que apresento\neste programa de governo:\ncomo um compromisso de\nvida, de responsabilidade\npública e de amor por esta\nterra. As diretrizes deste Plano\nde Governo estão alicerçadas\nem sete eixos:\n\nEixo 1:\nSegurança Pública, Justiça e Proteção da Vida;\nEixo 2:\nDesenvolvimento Humano Integral e Bem-Estar Social;\nEixo 3:\nMulheres, Diversidade, Direitos\nHumanos e Equidade;\nEixo 4:\nEconomia Produtiva, Inovação e\nTrabalho;\nEixo 5:\nGovernança Digital e Gestão\nPública Moderna;\nEixo 6:\nDesenvolvimento\nInteriorização\n\nTerritorial\n\ne\n\nEixo 7:\nInfraestrutura, Mobilidade e Sustentabilidade Ambiental, atrelados aos Objetivos do Desenvolvimento Sustentável (ODS) da\nONU contribuindo para Agenda\n2030 e na convicção de que a\nParaíba precisa ser cuidada por\ninteiro."
+          },
+          {
+            "id": "a-forca-da-paraiba-esta-em-todos-os-seus-territorios-no-litoral-competit",
+            "titulo": "A força da Paraíba está em todos os seus territórios: no Litoral competitivo, no",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A força da Paraíba está em todos os seus territórios: no Litoral competitivo, no\nAgreste empreendedor, no Brejo acolhedor, no Cariri resiliente, no Curimataú\npromissor, no Seridó inovador e no Sertão produtivo. Governar a Paraíba é\nreconhecer cada vocação, reduzir desigualdades, ouvir os municípios, valorizar\nservidores e fazer o Estado chegar aonde a vida acontece. Peço a você que\nleia este plano com o entusiasmo de quem recebe e lê um convite. Se você\nacredita que a Paraíba merece mais presença, mais futuro, mais dignidade e\nmais oportunidade, caminhe comigo. No dia da eleição, peço seu voto, sua\nconfiança e sua esperança para construirmos juntos uma Paraíba por inteiro —\na Paraíba do povo, da coragem e do futuro.\n\nPra frente,\nsempre!\nVinculação aos Objetivos do Desenvolvimento Sustentável\nO Plano de Governo para a Paraíba foi estruturado em sete eixos, alinhados\naos Objetivos do Desenvolvimento Sustentável (ODS) da Organização das\nNações Unidas (ONU), incluindo o compromisso com a igualdade étnico-racial,\ne aos princípios da Agenda Mundial 2030."
+          },
+          {
+            "id": "e-i-xo",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n1\n\nSEGURANÇA PÚBLICA,\nJUSTIÇA E PROTEÇÃO\nDA VIDA"
+          },
+          {
+            "id": "incluir-a-paraiba-na-rede-nacional",
+            "titulo": "incluir a Paraíba na Rede Nacional",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "incluir a Paraíba na Rede Nacional\nde Observatórios de Segurança;\ncombater o crime organizado com\ninteligência, tecnologia e presença\nterritorial; reformar delegacias,\nampliar unidades especializadas e\nmelhorar os espaços de trabalho;\noferecer cursos de aperfeiçoamento em investigação, inteligência, perícia, direitos humanos e\nnovas tecnologias; e fortalecer as\nações do Departamento Estadual\nde Trânsito da Paraíba (DETRAN\nPB).\n\nAs propostas deste eixo constroem uma segurança moderna e\nintegrada: fortalecem a inteligência policial e penitenciária, ampliam o monitoramento tecnológico, articulam Polícia Militar, Polícia\nCivil, Polícia Penal, Bombeiros,\nDefesa Civil, Sistema prisional e\nSAMU, e órgãos federais, reorganizam o sistema prisional como\nponto estratégico de enfrentamento ao crime organizado e\ninvestem na dignidade de quem\nprotege a população. Ao mesmo\ntempo, reconhecem que combater a violência exige proteger mulheres, enfrentar o racismo e a\ndiscriminação, cuidar da saúde\nfísica e mental dos profissionais,\nampliar as ações do Estado para\nemergências e reforçar a prevenção em política permanente. As\npropostas estão alinhadas aos\nODS 4, 5, 9, 10, 16 e 18.\n\n\u0017 Fortalecer a inteligência e a\ntecnologia com integração operacional por meio da implantação\nde novos Centros Integrados de\nComando e Controle (CICC), com\nmonitoramento\ntecnológico,\ncâmeras inteligentes e drones;\n\n\u0017 Enfrentar a violência contra as\nmulheridades com proteção integral, investindo no treinamento\nespecializado das forças policiais e\n05\n\nPLANO DE GOVERNO\n\n\u0017 Ampliar a proteção civil e a\ncapacidade de resposta a emergências, integrando as ações dos\nBombeiros, da Defesa Civil e dos\nÓrgãos Ambientais; ampliar o\nsocorro aeromédico com um helicóptero equipado com UTI aérea e\nintegrado ao Corpo de Bombeiros;\ne construir a nova sede da Academia de Bombeiro Militar, fortalecendo-a como instituição de\nensino."
+          },
+          {
+            "id": "das-equipes-para-o-atendimento",
+            "titulo": "das equipes para o atendimento",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "das equipes para o atendimento\nhumanizado; ampliar as Delegacias da Mulher com equipes multidisciplinares; fortalecer programas de proteção às mulheres,\ncomo a Patrulha Maria da Penha,\no Antes que Aconteça, as Salas\nLilás, o SOS Mulher, entre outros;\nimplantar serviços de acolhimento emergencial com medidas\nespecíficas de proteção imediata;\ne interiorizar a proteção por meio\nde novas bases regionais, protocolos de avaliação de risco e monitoramento digital de reincidências.\n\n\u0017 Construir uma nova instalação\n\npara o Instituto de Polícia Científica da Paraíba (IPC), com laboratórios modernos, uma cadeia de\ncustódia digital e integração com\nbancos de dados nacionais.\n\n\u0017 Reorganizar o sistema prisional\n\ncom controle, disciplina e inteligência integrada; transferir presídios de áreas urbanas, destinando\nos espaços à criação de parques e\nequipamentos sociais; implantar\nunidade prisional com modelo\nRDD; criar grupos especializados\nno monitoramento de penas alternativas; implantar Complexos\nIndustriais Penais voltados ao\ntrabalho e ao estudo dos apenados; ampliar as políticas de ressocialização; e reduzir a reincidência\ncomo estratégia de segurança.\n\n\u0017 Combater os crimes de ódio e\n\na violência discriminatória, interiorizando a Delegacia Especializada de Crimes Homofóbicos,\nRaciais e de Intolerância (DECHRADI); produzir dados territorializados sobre crimes de ódio; e\nrealizar campanhas públicas para\nreduzir a subnotificação.\n\n\u0017 Fortalecer a segurança territo-\n\nPLANO DE GOVERNO\n\nrial e promover ambientes protegidos por meio da implementação\ndo modelo de Prevenção Criminal\npelo Design Ambiental, com diagnósticos técnicos, inventários ambientais e requalificação de espa-\n\n\u0017 Valorizar os profissionais da\n\nsegurança com formação, ampliação da infraestrutura, política\nremuneratória e fortalecimento\ndas ações de saúde por meio da\nPoinsp.\n\n06"
+          },
+          {
+            "id": "acos-publicos-criar-protocolos-de",
+            "titulo": "aços públicos; criar protocolos de",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "aços públicos; criar protocolos de\ninteração comunitária para a prevenção de riscos ambientais e a\npromoção da segurança.\n\nPLANO DE GOVERNO\n\n07"
+          },
+          {
+            "id": "e-i-xo-2",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n2\n\nDESENVOLVIMENTO\nHUMANO INTEGRAL\nE BEM-ESTAR SOCIAL"
+          },
+          {
+            "id": "2-1-saude",
+            "titulo": "2.1. Saúde",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "2.1. Saúde\n\nFortalecer os Programas Especiais do Governo como o Opera\nParaíba, com novas modalidades\nde cirurgias e exames de média e\nalta complexidade; o Paraíba\ncontra o Câncer; o Coração Paraibano; e o Saúde Digital, com\nprontuário eletrônico e Telessaúde T5 — teleconsultoria, telediagnóstico, telemonitoramento, telerregulação e teleducação —, modernizando o parque tecnológico\ne incentivando a pesquisa aplicada à telecirurgia e às tecnologias\nassistivas\n\n\u0017Promover Políticas Públicas\n\n\u0017 Fortalecer a saúde materna\n\nA Paraíba que cuida é a mesma\nque ensina, celebra, brinca,\nacolhe e se move. Uma terra\nonde saúde é direito vivo, educação é caminho de libertação,\ncultura e lazer são pertencimentos, e juventude e esporte são\nforça de futuro. As ações se\nalinham especialmente aos ODS\n3, 4,8,10,11.\n\n\u0017Consolidar o Centro Estadual\nde Regulação Hospitalar.\n\u0017Aprimorar a Rede de Apoio\nInstitucional para a qualificação e\no matriciamento gerencial de\ntrabalhadores e gestores do SUS\n(REAPQUALI) com foco na regionalização para organização da\nrede de atenção à saúde.\n\n\u0017 Garantir as ações de Vigilância\nem Saúde por meio do fortalecimento dos pilares: Vigilância Epidemiológica (PVE), com preparação para emergências epidemio-\n\n\u0017Fortalecer os Programas Espe09\n\nPLANO DE GOVERNO\n\npor meio da Rede Paraíba Mãe\nSegura, ampliando o diagnóstico\nprecoce de fatores de risco, a\nclassificação e a reclassificação de\nrisco e aperfeiçoando a assistência obstétrica; reduzir a mortalidade materna por meio de medidas de enfrentamento; e ampliar\no acesso, a regulação para hospitais de referência e o transporte\nseguro.\n\nvoltadas à atenção primária e à\natenção especializada."
+          },
+          {
+            "id": "acoes-de-prevencao-ao-suicidio",
+            "titulo": "ações de prevenção ao suicídio;",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "ações de prevenção ao suicídio;\nintegrar a saúde mental à atenção\nprimária; expandir os ambulatórios regionais; e implantar o teleatendimento. Criar o Complexo\nIntegrado de Saúde Mental e\nBem-Estar, com hospital de transição, ampliação do atendimento\nambulatorial e oferta de práticas\nintegrativas e complementares\ncomo componentes da rede.\nImplantar, ainda, uma política\nestadual de prevenção e cuidado\nrelacionados ao vício em apostas\non-line, com atendimento aos usuários e seus familiares.\n\nção para emergências epidemiológicas e climáticas; Vigilância\nSanitária (PVS), com fiscalização\nde produtos e serviços; Vigilância\nAmbiental (PVA); e Vigilância em\nSaúde do Trabalhador.\n\n\u0017 Reforçar a Assistência Farma-\n\ncêutica com a ampliação da Farmácia Especializada e da Farmácia Clínica.\n\n\u0017 Ampliar a parceria com o Pro-\n\ngrama Agora Tem Especialistas e\nexpandir o Programa de Residências Médicas e Multiprofissionais,\ncom a inclusão de novas especialidades, a fim de fortalecer a força\nde trabalho, mapear vazios assistenciais e implantar incentivos à\nfixação de profissionais.\n\n\u0017 Valorizar e qualificar os profis-\n\nsionais da saúde\n\n\u0017 Garantir atenção integral à\ncriança e ao adolescente; intensificar as campanhas de vacinação;\ncriar um novo Centro de Referência para Imunobiológicos Especiais\n(CRIE) em Campina Grande; e ampliar serviços de cuidados paliativos.\n\n\u0017 Fortalecer as ações de Saúde\n\nPLANO DE GOVERNO\n\nMental, ampliando a Rede de\nAtenção Psicossocial com novos\nCAPS III — Centros de Atenção\nPsicossocial que oferecem atendimento 24 horas, inclusive no período noturno — e CAPS AD, especializados no atendimento a pessoas que fazem uso prejudicial de\nálcool e outras drogas. Promover\n\n\u0017 Implantar o Programa Paraíba\n\nAmiga da Pessoa Idosa para\ngarantir atenção integral a esse\n10"
+          },
+          {
+            "id": "publico-ampliar-a-politica-estadual-de-atencao-integral-a",
+            "titulo": "público; ampliar a Política Estadual de Atenção Integral à",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "público; ampliar a Política Estadual de Atenção Integral à\nPessoa Idosa; e criar Centros\nRegionais Integrados de Atenção\nao Idoso (CRIAI), a fim de articular ações de saúde, assistência\nsocial, mobilidade, acessibilidade e atividades físicas e culturais.\nGarantir, ainda, o funcionamento\ndo Centro de Assistência Avançada em Traumatologia do Idoso\n(CAATI) em todos os hospitais de\ntraumatologia do Estado da\nParaíba; ampliar o Programa\nCidade Madura; e, por meio da\nEscola de Saúde Pública da\nParaíba, viabilizar a capacitação\nde cuidadores.\n\n\u0017 Criar a Nova Escola de Saúde\n\nPública da Paraíba para ampliar\nas residências médicas e multiprofissionais, oferecer educação\ncontinuada presencial e a distância e viabilizar cursos de especialização lato sensu.\n\n\u0017 Garantir atenção integral à\ncriança e ao adolescente por meio\ndo acompanhamento do desenvolvimento, da cobertura vacinal,\nda prevenção de doenças e da\nintegração entre saúde, educação\ne assistência social.\n\u0017 Implementar políticas públicas\nvoltadas à saúde animal e ao meio\nambiente, fundamentadas\nno\nconceito de Saúde Única (do\ninglês, One Health).\n\n\u0017 Fortalecer as ações de saúde\n\nvoltadas às pessoas em situação\nde vulnerabilidade, com a ampliação de ambulatórios especializados que ofereçam hormonioterapia,\nacompanhamento\nmultiprofissional,\natenção\nà\nsaúde mental, cuidados preventivos e respeito ao nome social.\n\n\u0017 Concluir e equipar os Hospitais\n\n\u0017 Fortalecer a Rede de Trans-\n\nplantes de Tecidos e Órgãos.\n\n11\n\nPLANO DE GOVERNO\n\nda Mulher de Campina Grande, de\nSousa e o Hospital de Trauma do\nSertão"
+          },
+          {
+            "id": "2-2-educacao",
+            "titulo": "2.2. Educação",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "2.2. Educação\n\n\u0017 Modernizar\n\na logística de\nentrega de materiais escolares e\nde distribuição da alimentação\nescolar.\n\n\u0017 Garantir Políticas Públicas de\n\nEducação, fortalecendo a permanência escolar para que cada\nestudante permaneça, aprenda e\nconclua sua trajetória com apoio\npedagógico contínuo, programas\nde busca ativa, reforço escolar\nestruturado, tutoria acadêmica e\nintegração entre escola, família e\nrede de proteção social.\n\n\u0017 Fortalecer a Educação de\n\nJovens e Adultos (EJA), ampliando a oferta, integrando a formação profissional e garantindo a\nalfabetização de adultos e a inclusão de pessoas com deficiência.\n\n\u0017 Expandir o ensino médio e o\n\nensino técnico e profissional, ampliando a Escola Cidadã Integral\n(ECI) e a Escola Integral Cidadã\nTécnica (ECIT).\n\n\u0017 Valorizar os profissionais da\n\neducação por meio da ampliação\nda formação continuada, do\nfortalecimento das carreiras, da\npromoção da saúde mental, da\ngarantia de ambientes seguros,\nda oferta de apoio psicossocial e\ndo incentivo à inovação pedagógica. Ampliar o quadro de professores a partir das necessidades\neducacionais.\n\n\u0017 Fortalecer a Universidade\nEstadual da Paraíba, assegurando\na autonomia, ampliar investimentos em ensino, pesquisa, extensão, inovação, formação de professores e integração com escolas\nestaduais.\n\nPLANO DE GOVERNO\n\n\u0017 Ampliar os incentivos à exce-\n\n\u0017 Criação do Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício\nde transporte público gratuito.\n\nlência acadêmica e o Programa\nConexão Mundo.\n\n\u0017 Modernizar a infraestrutura\nescolar e ampliar as Salas do\nAmanhã Digital\n12"
+          },
+          {
+            "id": "2-3-cultura-e-lazer",
+            "titulo": "2.3. Cultura e Lazer",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "2.3. Cultura e Lazer\n\n2.4. Juventudes e Esporte\n\n\u0017 Fortalecer a gestão cultural\n\n\u0017 Modernizar a infraestrutura e\n\ncom participação social, fortalecimento dos conselhos e integração\ncom a educação, o turismo e a\neconomia criativa.\n\nampliar os equipamentos esportivos, construir a Arena Esporte\nParaíba e os Campos do Futuro.\n\n\u0017 Valorizar os trabalhadores da\n\nTransversais para a Juventude,\narticulando ações de educação\nem tempo integral, assistência\nsocial, prevenção da criminalidade e inserção no mercado de\ntrabalho.\n\n\u0017 Implementar Políticas Públicas\n\ncultura por meio do aprimoramento da formação, da concessão\nde bolsas e intercâmbio cultural.\n\n\u0017 Ampliar o financiamento e o\n\nfomento cultural por meio do\nfortalecimento dos fundos e\npublicação de editais descentralizados, da criação de linhas específicas para as culturas populares,\nquilombolas, indígenas e periféricas.\n\nvFortalecer os programas estaduais de iniciação esportiva na rede\npública de ensino.\n\n\u0017 Ampliar o ICMS Cultural e\n\n\u0017 Fortalecer o Bolsa Esporte e\n\n\u0017 Expandir o programa Arte na\n\nPatrimonial.\n\nampliar os incentivos para atletas\nde alto rendimento.\n\n\u0017 Integrar os centros estaduais\nde treinamento às universidades\n13\n\nPLANO DE GOVERNO\n\nBagagem.\n\n\u0017 Expandir o apoio ao esporte\namador nas diversas regiões da\nParaíba e garantir a inclusão\nesportiva das populações em situação de vulnerabilidade."
+          },
+          {
+            "id": "para-monitorar-a-saude-fisica-e-o",
+            "titulo": "para monitorar a saúde física e o",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "para monitorar a saúde física e o\ndesempenho dos atletas.\n\n\u0017 Criar programa dedicado à\nformação de paratletas.\n\u0017 Ampliar a articulação e incenti-\n\nvos para atrair eventos do calendário esportivo nacional.\n\n\u0017 Concluir e equipar a Vila Olímpica de Sousa.\n\nPLANO DE GOVERNO\n\n14"
+          },
+          {
+            "id": "e-i-xo-3",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n3\n\nMULHERES, DIVERSIDADE,\nDIREITOS HUMANOS\nE ANIMAL"
+          },
+          {
+            "id": "a-paraiba-precisa-enfrentar-problemas-estruturais-relacionados",
+            "titulo": "A Paraíba precisa enfrentar problemas estruturais relacionados",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "A Paraíba precisa enfrentar problemas estruturais relacionados\nao aumento da violência contra\nas mulheres e grupos vulnerabilizados. É necessário ampliar a\nassistência social e garantir moradia digna.\n\n\u0017 Garantir acolhimento integral\n\nàs mulheres em situação de\nviolência, opressão e\ndesigualdade, expandindo os Centros de Referência da Mulher e\nintegrando delegacias, patrulhas,\nserviços de saúde, assistência\nsocial e órgãos de justiça em\nfluxos únicos de proteção.\n\nEste eixo reúne diretrizes para\nenfrentar esses desafios de\nforma integrada, com políticas\npúblicas voltadas à proteção, à\ninclusão, à redução das desigualdades e à promoção da cidadania. As ações são alinhadas aos\nODS 1, 2, 3, 4, 5, 8, 10, 11, 12, 15 e\n16.\n\n\u0017 Ampliar o uso da tecnologia\n\npara a prevenção da violência\ncontra as mulheres e promover\neducação permanente para a prevenção da violência de gênero.\n\n\u0017 Reforçar políticas estruturantes\nde segurança para as mulheres,\ncom a criação de novas Delegacias\nda Mulher, a ampliação da Patrulha Maria da Penha, o fortalecimento das ações do Programa\n\"Antes que Aconteça\" e a expansão das Salas Lilás.\n\n3.1. Mulheres\n\nPLANO DE GOVERNO\n\n\u0017 Fortalecer a autonomia econômica das mulheres por meio\nda ampliação do acesso ao emprego, à renda e ao crédito, da\noferta de capacitação profissional e da manutenção de espaços\nde comercialização em locais\nestratégicos, valorizando a diversidade da produção das agricultoras e empreendedoras.\n\n\u0017 Implantar centros integrados\n\nde acolhimento, abrigo emergencial e orientação jurídica.\n\n16"
+          },
+          {
+            "id": "3-3-pessoas-com-deficiencia-pcd-transtorno-do",
+            "titulo": "3.3. Pessoas com deficiência (PCD), Transtorno do",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "3.3. Pessoas com deficiência (PCD), Transtorno do\nEspectro Autista (TEA) e\npessoas com altas habilidades/superdotação\n\n3.2. População LGBTQIAPN+\ne Equidade Racial\n\u0017 Consolidar a rede estadual de\nacolhimento à população LGBTQIAPN+, garantindo proteção\nintegral.\n\n\u0017 Instituir a Política Estadual\npara Pessoas com Deficiência\n(PCD), pessoas com Transtorno do\nEspectro Autista (TEA) e pessoas\ncom altas habilidades/superdotação, com ações anticapacitistas.\n\n\u0017 Promover a escolarização, a\nqualificação profissional e a inclusão produtiva da população LGBTQIAPN+.\n\u0017 Instituir o Programa TransCidadania Paraíba, com auxílio\nvinculado à escolarização.\n\n\u0017 Criar polos regionalizados da\n\nFundação Centro Integrado de\nApoio à Pessoa com Deficiência\n(FUNAD), ampliando a cobertura e\na infraestrutura dos Centros Especializados em Reabilitação (CER) e\na oferta de odontologia especializada.\n\n\u0017 Fortalecer a equidade racial e\n\ncombater as desigualdades estruturais.\n\n\u0017 Promover a representativida-\n\nde negra e a valorização da cultura afro-brasileira.\n\n\u0017 Fortalecer a educação inclusi-\n\n\u0017 Fortalecer o Sistema e a Rede\nde Promoção da Igualdade Racial,\ncom a implantação de centros\nregionais e a oferta de atendimento itinerante.\n\n\u0017 Garantir assistência social para\n\nPCD, TEA e pessoas com altas\nhabilidades/superdotação.\n\n17\n\nPLANO DE GOVERNO\n\nva, o esporte e o lazer para PCD,\nTEA e pessoas com altas habilidades/superdotação."
+          },
+          {
+            "id": "3-5-habitacao",
+            "titulo": "3.5. Habitação",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "3.5. Habitação\n\n\u0017 Criar Centrais de Libras ma-\n\ncrorregionalizadas.\n\n\u0017 Ampliar programas habitacionais com foco em famílias de\nbaixa renda, comunidades tradicionais e populações residentes\nem áreas de risco.\n\n\u0017 Fortalecer o emprego e a\n\nrenda para PCD e TEA, ampliando\no acesso ao Programa Empreender PB e fortalecendo parcerias\ncom o Sistema S e instituições de\napoio.\n\n\u0017 Regularizar áreas urbanas e\n\nrurais, garantindo segurança jurídica às famílias, às comunidades\nquilombolas, aos povos indígenas\ne às comunidades ciganas e protegendo territórios vulneráveis\ncontra ocupações irregulares, conflitos fundiários e impactos ambientais.\n\n\u0017 Expandir os Centros de Atendi-\n\nmento ao Autista\n\n3.4. Assistência Social\n\u0017 Ampliar o acesso equitativo\naos serviços do Sistema Único de\nAssistência Social (SUAS), priorizando as famílias em situação de\nmaior vulnerabilidade.\n\n3.6. Proteção aos Animais\n\u0017 Criar a Rede Estadual de Causa\nAnimal, com clínicas veterinárias\npúblicas, hospitais veterinários,\nvacinação, castração, controle de\nzoonoses e campanhas permanentes de educação para a\nguarda responsável, a prevenção\ndo abandono e o combate aos\nmaus-tratos.\n\n\u0017 Implantar novos Centros de\n\nPLANO DE GOVERNO\n\nReferência\nEspecializados\nde\nAssistência Social (CREAS), Centros-Dia e serviços especializados\nem territórios de maior demanda.\n\n18"
+          },
+          {
+            "id": "3-7-direitos-humanos",
+            "titulo": "3.7. Direitos Humanos",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "3.7. Direitos Humanos\n\u0017 Integrar as políticas de direitos humanos às áreas de segurança, saúde, educação e assistência social, assegurando atendimento humanizado e não\ndiscriminatório.\n\u0017 Garantir proteção aos grupos\nvulneráveis e combater todas as\nformas de discriminação, ampliando os canais de denúncia,\nacolhimento e proteção às\nvítimas de violações, com equipes especializadas, monitoramento territorial e uso de novas\ntecnologias.\n\nPLANO DE GOVERNO\n\n19"
+          },
+          {
+            "id": "e-i-xo-4",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n4\n\nECONOMIA PRODUTIVA,\nINOVAÇÃO E TRABALHO\n\n20"
+          },
+          {
+            "id": "4-2-industria-e-comercio",
+            "titulo": "4.2 Indústria e Comércio",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "4.2 Indústria e Comércio\n\nEste eixo propõe uma economia\nmais moderna, inovadora e competitiva, capaz de impulsionar a\nindústria, fortalecer a agropecuária, expandir o turismo, dinamizar\nos polos regionais de desenvolvimento e valorizar as cadeias produtivas locais. As propostas estão\nalinhadas aos ODS 2, 4, 8, 9, 10,\n11, 12, 13, 14, 15 e 17.\n\n\u0017 Atrair novas plantas industriais\n\npor meio de uma política de\nincentivos fiscais competitiva,\ntransparente e orientada à geração de emprego e renda\n\n\u0017 Promover a integração logística entre as rodovias estaduais de\nescoamento da produção, os\naeroportos e o Porto de Cabedelo\n\n4.1. Polos de Desenvolvimento\n\n\u0017 Consolidar a bioindústria e a\nbioeconomia do setor sucroenergético, instituindo metas estratégicas para a produção de biocombustíveis e promovendo um ambiente tributário estável e competitivo para o etanol.\n\n\u0017 Consolidar e ampliar o Programa Estadual de Polos de Desenvolvimento\n\u0017 Criar o Polo Estadual Farmo-\n\n\u0017 Criar três distritos industriais\nna Região Metropolitana de João\nPessoa.\n\nquímico, integrando pesquisa,\ninovação e produção industrial.\n\n\u0017 Modernizar e fortalecer o am-\n\ndo\nTerminal\nLogístico Rodoviário de Cargas\n\n\u0017 Fortalecer o Polo Tecnológico\n\nde Campina Grande\n\n21\n\nPLANO DE GOVERNO\n\n\u0017 Implantação\n\nbiente de negócios paraibano"
+          },
+          {
+            "id": "4-3-agropecuaria-e-agricultura-familiar",
+            "titulo": "4.3 . Agropecuária e Agricultura Familiar",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "4.3 . Agropecuária e Agricultura Familiar\n\nde startups, hubs de inovação e\nincubadoras, bem como qualificando talentos por meio da\nformação técnica, científica e\ndigital.\n\n\u0017 Apoiar a agricultura familiar, a\n\npecuária leiteira, a caprinovinocultura, a avicultura e a carcinicultura, por meio da assistência técnica continuada.\n\n\u0017 Consolidar o Centro Interna-\n\ncional de Computação e Tecnologias Quânticas (CIQUANTA) como\npolo de excelência, promovendo\na atração científica, o desenvolvimento de softwares de alta segurança, a instalação de novos\ndatacenters e a ampliação da\nconectividade por fibra óptica.\n\n\u0017 Fortalecer as cadeias produti-\n\nvas estratégicas e a agroindústria\npara estimular o processamento\nagroindustrial de produtos locais\n(como abacaxi, caju, mandioca,\nmilho, feijão e algodão colorido),\nagregando valor por meio da\nsimplificação das certificações\nsanitárias estaduais.\n\n\u0017 Fortalecer a interiorização da\n\nciência e da tecnologia por meio\nda consolidação do Complexo\nCientífico do Sertão\n\n\u0017 Fortalecer o Programa Esta-\n\n4.4. Ciência, Tecnologia e\nEcossistema de Inovação\n\ndual de Bolsas de Mestrado, Doutorado e Pós-Doutorado\n\nPLANO DE GOVERNO\n\n\u0017 Articular e criar novas fontes\n\nde fomento à pesquisa, ao\ndesenvolvimento e à inovação\naplicada entre as universidades\npúblicas estaduais (UEPB) e\nfederais e as empresas do\nEstado, apoiando o ecossistema\n22"
+          },
+          {
+            "id": "4-5-turismo-sustentavel-e",
+            "titulo": "4.5. Turismo sustentável e",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "4.5. Turismo sustentável e\nInteriorizado\n\n\u0017 Integrar empreendedores a\nfeiras, eventos e redes de negócios e fortalecer a exportação de\nprodutos regionais.\n\n\u0017 Diversificar a oferta turística\npor meio de rotas culturais, gastronômicas, científicas, religiosas\ne de natureza.\n\u0017 Interiorizar o turismo por meio\n\ndo fortalecimento de polos regionais e da integração com a cultura, a agroindústria e as cadeias\nprodutivas locais.\n\n\u0017 Qualificar a mão de obra por\n\nmeio de cursos técnicos alinhados às demandas do mercado de\ntrabalho.\n\n\u0017 Construir o Centro de Convenções do Sertão e o Museu da\nArqueologia\n\n\u0017 Estimular o empreendedorismo tecnológico, apoiar startups\npor meio de incubação e aceleração e integrar tecnologias aos\nsetores tradicionais da economia.\n23\n\nPLANO DE GOVERNO\n\n4.6 Empreendedorismo"
+          },
+          {
+            "id": "e-i-xo-5",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n5\n\nGOVERNANÇA DIGITAL E\nGESTÃO PÚBLICA\nMODERNA"
+          },
+          {
+            "id": "torando-os-riscos-psicossociais",
+            "titulo": "torando os riscos psicossociais.",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "torando os riscos psicossociais.\n\nO Eixo 5 parte do princípio de que\na governança pública consiste em\ntransformar recursos em resultados, dados em decisões responsáveis e serviços em direitos\nacessíveis à população. Assim, as\npropostas expressam o compromisso com uma Paraíba mais\neficiente, ética, conectada e preparada para o futuro, em alinhamento aos ODS 8, 9, 16 e 17.\n\n\u0017 Capacitar os servidores para a\n\nera digital por meio de formação\ncontínua em tecnologia, gestão\ndigital e análise de dados.\n\n5.2 Sustentabilidade Fiscal\ne Contencioso Tributário\n\u0017 Preparar a Paraíba para a\n\ntransição decorrente da Reforma\nTributária.\n\n5.1. Servidores Públicos\n\u0017 Atualizar a Política de Gestão\n\n\u0017 Modernizar os serviços tributários e a inteligência fiscal\n\nde Pessoas, realizar concursos\npúblicos, promover reajustes\nsalariais fiscalmente sustentáveis\ne modernizar carreiras.\n\n\u0017 Modernização\n\nda Gestão,\nTransparência Ativa e Transformação Digital\n\n\u0017 Implantar mecanismos de monitoramento de desempenho, da\ngestão patrimonial eficiente e do\nfortalecimento da capacidade\ninstitucional na gestão pública\n\n\u0017 Promover a saúde e o bem-estar dos servidores, monitoran25\n\nPLANO DE GOVERNO\n\n\u0017 Ampliar o perfil da Escola de\nServiço Público da Paraíba\n(ESPEP) com foco na capacitação\ntecnológica de servidores, na inovação no setor público e na liderança digital."
+          },
+          {
+            "id": "fortalecer-o-acesso-a-informa",
+            "titulo": "\u0017 Fortalecer o acesso à informa-",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "\u0017 Fortalecer o acesso à informa-\n\nção por meio de melhorias permanentes no Portal da Transparência\n\n\u0017 Expandir o programa Paraíba\n\nDigital\n\n\u0017 Fortalecer\no\nOrçamento\nDemocrático Estadual (ODE), ampliando a participação social e a\ntransparência na definição das\nprioridades de investimento.\n\nPLANO DE GOVERNO\n\n26"
+          },
+          {
+            "id": "e-i-xo-6",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n6\n\nDESENVOLVIMENTO\nTERRITORIAL E\nINTERIORIZAÇÃO"
+          },
+          {
+            "id": "6-2-cadeias-produtivas",
+            "titulo": "6.2. Cadeias Produtivas",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "6.2. Cadeias Produtivas\n\nAs propostas pactuadas neste\neixo apontam para um Estado\nque não concentra oportunidades, mas as espalha como rios de\nfuturo pelo Litoral, Brejo, Agreste,\nCariri, Curimataú, Seridó e Sertão.\nUm Estado que abre estradas,\naproxima serviços, fortalece os\nmunicípios, protege as comunidades vulneráveis e transforma\nobras em dignidade concreta\npara a vida das pessoas. Esse\ncompromisso está diretamente\nalinhado aos ODS 2, 6, 7, 8, 9 e 11.\n\n\u0017 Integrar universidades, escolas\n\ntécnicas e setores produtivos para\nqualificar os os Arranjos Produtivos Locais (APLs).\n\n\u0017 Consolidar as cadeias produti-\n\nvas ligadas à agropecuária, à\nindústria, ao turismo, ao comércio\ne aos serviços, ampliando a competitividade regional e a geração\nde renda.\n\n\u0017 Consolidar o Plano Estadual de\nDesenvolvimento Sustentável dos\nPovos Tradicionais, garantindo a\nparticipação social de lideranças\nindígenas, quilombolas, ciganas e\nde povos de terreiro na formulação de políticas públicas de segurança alimentar.\n\n6.1. Infraestrutura Regional\n\u0017 Fortalecer polos produtivos\npara integrar a Paraíba e ampliar\nas oportunidades de desenvolvimento em todas as regiões.\nPLANO DE GOVERNO\n\n\u0017 Reduzir as vulnerabilidades\nem áreas severamente afetadas\npor estiagens cíclicas, enchentes\nrepentinas e desertificação ambiental.\n\n28"
+          },
+          {
+            "id": "e-i-xo-7",
+            "titulo": "E I XO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "E I XO\n\n7\n\nINFRAESTRUTURA,\nMOBILIDADE E\nSUSTENTABILIDADE\nAMBIENTAL"
+          },
+          {
+            "id": "pagina-30",
+            "titulo": "\u0017",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "\u0017\n\nAs propostas são alinhadas aos\nODS 1, 3, 4, 7, 10, 11, 14, 15 e 16. As\npropostas pactuadas para o Eixo\n7 reafirmam o compromisso de\nconcluir grandes obras estruturantes, ampliar a segurança hídrica, modernizar a mobilidade\nurbana e regional, fortalecer o\nsaneamento básico, expandir as\nenergias renováveis, proteger a\nCaatinga e preparar o Estado para\nos desafios das mudanças climáticas. Assim, as ações deste eixo\nunem planejamento, investimento\ne coragem política para fazer da\nParaíba um território mais justo,\nmais verde, mais moderno, mais\nresiliente e mais preparado para\nenfrentar os desafios do presente\ne construir um futuro com dignidade. As propostas estão alinhadas aos ODS 1, 3, 4, 7, 10, 11, 14, 15\ne 16.\n\nmento de esgoto, expandir o\nacesso à água tratada e fortalecer sistemas de monitoramento\npara reduzir as perdas na distribuição.\n\n\u0017 Promover consórcios públicos\n\nregionais para a gestão integrada de resíduos sólidos.\n\n\u0017 Expandir a infraestrutura para\n\nsegurança hídrica com a conclusão do plano Novas Adutoras,\ncom destaque para a conclusão\ndos ramais Cariri e Curimataú, e\ndo Programa de Construção de\nBarragens\n\n7.3. Infraestrutura\nMobilidade Urbana\n\npara\n\n\u0017 Execução de novos lotes do\n\nPLANO DE GOVERNO\n\nPrograma Travessias Urbanas\n\n7.2. Infraestrutura para Segurança Hídrica e Saneamento\n\n\u0017 Criar o Programa Estrada\n\nSegura, com pavimentação completa, expansão da malha rodoviária e priorização de corredores\nlogísticos.\n\n\u0017 \u0003 Ampliar a coleta e o trata30"
+          },
+          {
+            "id": "7-5-infraestrutura-para-mineracao",
+            "titulo": "7.5. Infraestrutura para Mineração",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "7.5. Infraestrutura para Mineração\n\n\u0017 Implantação de mais de 800\n\nkm de novas rodovias e requalificação de mais de 200 km de\nrodovias existentes\n\n\u0017 Atualizar o inventário mineral\n\npor meio de prospecção geológica e do mapeamento de minerais estratégicos.\n\n\u0017 Apoiar\n\nos municípios na\nelaboração de planos de mobilidade urbana inclusiva.\n\n7.6. Energia Renovável,\nGás e Eletricidade\n\n7.4. Infraestrutura para o\nPorto de Cabedelo\n\n\u0017 Implementar o Programa de\n\n\u0017 Ampliação do Dique do Porto\n\nEficiência Energética em prédios\npúblicos.\n\nde Cabedelo\n\n\u0017 Transformar o Porto de Cabedelo em uma rota regular de\nexportação de açúcar e produtos\nda bioeconomia\n\n31\n\nPLANO DE GOVERNO\n\n\u0017 Integrar o Porto de Cabedelo\nàs cadeias produtivas do setor\nsucroenergético."
+          },
+          {
+            "id": "governador",
+            "titulo": "GOVERNADOR",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "GOVERNADOR\n\nVICE Drª LIGIA"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "0181b8822e435b7c96a1f6d074919c9971c6548fe87c991f22978cc48c0347d9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "7beb8a0e7fb2b03510dc6d4801550e0520ea445e3ae07d2f0de25d6c483b1f83"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e9c95b036b174498b19fd21fa7a2f9c3c382b0e937384a19448fd7a9df9a97a1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0d1c80555428458d02c6901d8ddb2d16387bebbe4ebd8487bff527e0899e3373"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c8220eac52e40524698833de3566e23de377c71a43ef5dfb9fb3b7c9439b6090"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cfd949515309682ad37eacd10ddb7a47b4418cdc90d4a37d249854b348137936"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b5b61afaaffee66d8719a09a0bff937e5da49ce2d3f238ec6b8ccaeb68f1f665"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "fc0e565081c5b6d00db94a8fe953c2add9f48c17e64bbe8656da5c5ac4e7b1b5"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "8093399f1b72461045080ad3b7ac9058a422b27d2cb38658f350ff6b3bcc2330"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "fa5493175e29153f804c2ab44096903f38092005a7724b81d05c20b8e35242ae"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "263e99297c3be222ab794328f9a1551af721596d4dd4bc1ade64c34c1e76a250"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "f18e54420b91d2428c6fb47dd9ced568c63952a5257268e00f8db2d8be82932a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "a63a46b0af11c04aa56e92064433384bf93c4a992e582ed35a9161a8eb9a7e1c"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "41dcab7b30774e1814ef96baf5375572b23aa13734dba2009e60e9f5dcd1c6c8"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "370f933c97efc6b7853ac05c844040d219467aae6b1d079ea5f99fcac8786020"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "afd69a8eaa091abb0835d0046b5f0e3ee6749a108dfd1f7cad9d4af2b5474339"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "84332ed7e7b2edd1e9a38b4d32a77c135b56ef955828fe6718ba71d3898d4b1b"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "939ca2d48bda2992479bda144166800e77258ba7ffaec4d5af22946f0c848b87"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "253f1fe40b3f76184b05ac1aa50bfda4f90078627c6d3302d60781e0fa57b8de"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "aeab28af1a2f8368ca305ba1eb9b4b9df4b125090a482a1486e470d24bc59fe2"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "450da92ebd6c8b3f49ac93f341d050f0c167ec827c9fab568bfb3c50e1dd3a2f"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "fe07b69939b37f170f3edca39a15a4aef4818ce9d15f55a1eaef016122ee13cf"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "8eceeb8c593fd54e7406c9a60f4201fc13e60bddb18a46d2a99ddbdf62af521a"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "bb03c30721308921193fa0f84d74fc1109d63bd1d09b2a72d6596905216a9453"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9a8ab3de679098ef86fb90db6833307b1ed7684a0d97712aa637a932efdd2c89"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "f33c0ebc939e67d46f477409dc9590ebf7fcf15723fd81cf203dfa42647cf176"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "e7766340d243f54457713dca361eebb02202703ab0a9165eeb39a16ce4aff554"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "f57d618ae75c7719211ad13368e215fb2e8f630194a66f52eb5ea32fa5126c6c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "ae51140de46605fae559d7331c17d2743cb836f2a30f2833ad942ecd4f177252"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "2b9b3d04527f9ebd6f40a64dad158b173fed17d884ad34b78635fb421942d3d0"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "98fb603f8583305ed5f2d0e78f5b2aefc5a67cb3c05f34ab47332b724f7ec482"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "f661edee3720a8549c84e55fb17e45a7753013a7b18aba60225ea0c909c52960"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê incluir a Paraíba na Rede Nacional de Observatórios de Segurança. O programa prevê implantar novos Centros Integrados de Comando e Controle (CICC), com monitoramento tecnológico, câmeras inteligentes e drones. O programa prevê ampliar o socorro aeromédico com um helicóptero equipado com UTI aérea e integrado ao Corpo de Bombeiros. O programa prevê construir uma nova instalação para o Instituto de Polícia Científica da Paraíba (IPC). O programa prevê criar o Complexo Integrado de Saúde Mental e Bem-Estar. O programa prevê criar um novo Centro de Referência para Imunobiológicos Especiais (CRIE) em Campina Grande. O programa prevê criar o Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício de transporte público gratuito. O programa prevê criar a Rede Estadual de Causa Animal.",
+    "frases": [
+      {
+        "texto": "O programa prevê incluir a Paraíba na Rede Nacional de Observatórios de Segurança.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "incluir a Paraíba na Rede Nacional\nde Observatórios de Segurança;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê implantar novos Centros Integrados de Comando e Controle (CICC), com monitoramento tecnológico, câmeras inteligentes e drones.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "implantação\nde novos Centros Integrados de\nComando e Controle (CICC), com\nmonitoramento\ntecnológico,\ncâmeras inteligentes e drones;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê ampliar o socorro aeromédico com um helicóptero equipado com UTI aérea e integrado ao Corpo de Bombeiros.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "ampliar o\nsocorro aeromédico com um helicóptero equipado com UTI aérea e\nintegrado ao Corpo de Bombeiros;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê construir uma nova instalação para o Instituto de Polícia Científica da Paraíba (IPC).",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 6,
+            "trecho": "Construir uma nova instalação\n\npara o Instituto de Polícia Científica da Paraíba (IPC),"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar o Complexo Integrado de Saúde Mental e Bem-Estar.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 10,
+            "trecho": "Criar o Complexo\nIntegrado de Saúde Mental e\nBem-Estar,"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar um novo Centro de Referência para Imunobiológicos Especiais (CRIE) em Campina Grande.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 10,
+            "trecho": "criar um novo Centro de Referência para Imunobiológicos Especiais\n(CRIE) em Campina Grande;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar o Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício de transporte público gratuito.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 12,
+            "trecho": "Criação do Passe Livre Universitário, estendendo aos estudantes do ensino superior o benefício\nde transporte público gratuito."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê criar a Rede Estadual de Causa Animal.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 18,
+            "trecho": "Criar a Rede Estadual de Causa\nAnimal,"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "observatorios-seguranca",
+        "titulo": "Observatórios de segurança",
+        "descricao": "Inclusão da Paraíba na Rede Nacional de Observatórios de Segurança.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "incluir a Paraíba na Rede Nacional\nde Observatórios de Segurança;"
+          }
+        ]
+      },
+      {
+        "id": "comando-controle",
+        "titulo": "Comando e controle",
+        "descricao": "Implantação de novos Centros Integrados de Comando e Controle com recursos de monitoramento.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "implantação\nde novos Centros Integrados de\nComando e Controle (CICC), com\nmonitoramento\ntecnológico,\ncâmeras inteligentes e drones;"
+          }
+        ]
+      },
+      {
+        "id": "socorro-aeromedico",
+        "titulo": "Socorro aeromédico",
+        "descricao": "Ampliação do socorro aeromédico com helicóptero equipado com UTI aérea.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 5,
+            "trecho": "ampliar o\nsocorro aeromédico com um helicóptero equipado com UTI aérea e\nintegrado ao Corpo de Bombeiros;"
+          }
+        ]
+      },
+      {
+        "id": "instituto-policia-cientifica",
+        "titulo": "Polícia científica",
+        "descricao": "Construção de nova instalação para o Instituto de Polícia Científica da Paraíba.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 6,
+            "trecho": "Construir uma nova instalação\n\npara o Instituto de Polícia Científica da Paraíba (IPC),"
+          }
+        ]
+      },
+      {
+        "id": "saude-mental",
+        "titulo": "Saúde mental",
+        "descricao": "Criação do Complexo Integrado de Saúde Mental e Bem-Estar.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551789:01",
+            "pagina": 10,
+            "trecho": "Criar o Complexo\nIntegrado de Saúde Mental e\nBem-Estar,"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:31:20.297Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:33:34.084Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência cita literalmente a inclusão da Paraíba na Rede Nacional de Observatórios de Segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve a proposta sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:1:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a única cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:2:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 'um helicóptero' está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:3:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números relevantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:4:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:5:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números relevantes além de 'um' que corresponde ao texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:6:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:7:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:frase:8:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:observatorios-seguranca:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:comando-controle:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números conflitantes."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:socorro-aeromedico:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:instituto-policia-cientifica:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551789:tema:saude-mental:documentos:PB:150002551789:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PB:150002551789",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PB:150002551789:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24618,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22122,
+          "output_tokens_details": {
+            "thinking_tokens": 509
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24618,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22122,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24618,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24618
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3395644
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "df29de4e0148b8e97a72d392a361b2a2f40841150d8cdbe55cc74af9ecf55a1f",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:35:45.824Z",
+    "sourceSha256": "7ab813ec9da9f7158d7c5a7fa307a67c029904b11b6e29bd64c257b10e524f7f",
+    "extractedTextSha256": "5d5fd70dc76f224498bbd4ce6f8746e8032e163931f72df39745df10ae01efcc",
+    "documentCount": 1,
+    "documentSetSha256": "bfde6c5bf3a761ad8fdb652af2a1bde08bc026ad8a4a12d07f872823a527d777",
+    "contentSha256": "4dca412cce84dbba06a25b96681b5891dd05b1d9f90d912c6ef7af8c37ab85fe"
+  }
+}

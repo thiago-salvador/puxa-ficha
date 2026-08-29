@@ -1,0 +1,1010 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AM",
+    "sqCandidato": "40002535267",
+    "slug": "gilberto-vasconcelos",
+    "nomeUrna": "GILBERTO VASCONCELOS",
+    "partido": "PSTU",
+    "arquivoNome": "2026AM40002535267_01.pdf",
+    "arquivoNoPacote": "AM/2026AM40002535267_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AM:40002535267:01",
+      "fonte": {
+        "arquivoNome": "2026AM40002535267_01.pdf",
+        "arquivoNoPacote": "AM/2026AM40002535267_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AM.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "ef372dbb4f3dd92de436642f04d31fc73cbbde726d43fd057079c0700397a1c4",
+        "extractedTextSha256": "90b16159f95583e2dfbf1e37b7a2867d9128a05851a61a9bf90eb6dcefc26dde",
+        "paginas": 23,
+        "secoes": [
+          {
+            "id": "partido-socialista-dos-trabalhadores-unificado-pstu",
+            "titulo": "PARTIDO SOCIALISTA DOS TRABALHADORES UNIFICADO – PSTU",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PARTIDO SOCIALISTA DOS TRABALHADORES UNIFICADO – PSTU\n\nPrograma de Governo – Amazonas 2026\nPara romper com as engrenagens do sistema\nUma alternativa socialista e revolucionária para o Amazonas\n\nManaus – 2026"
+          },
+          {
+            "id": "programa-de-governo-amazonas-2026",
+            "titulo": "Programa de Governo – Amazonas 2026",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Programa de Governo – Amazonas 2026\nCandidatura do Partido Socialista dos Trabalhadores Unificado (PSTU)\nDocumento apresentado à sociedade amazonense como\nbase programática para a construção de um governo\ncomprometido com os interesses da classe trabalhadora,\ndos povos indígenas, quilombolas e todos setores\noprimidos.\n\nManaus – 2026"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nEste programa nasce da necessidade de oferecer uma alternativa real à crise social,\neconômica e ambiental que atinge o Amazonas e o conjunto do país. Diante do\naprofundamento das desigualdades, da precarização do trabalho e da degradação ambiental\nda Amazônia, defendemos a construção de um projeto que rompa com a lógica de\ndependência e exploração que sustenta o atual modelo de desenvolvimento aplicado em\nnosso estado e no país.\nMais do que um conjunto de propostas, este programa expressa os laços que temos com a\nnossa classe, com todas as frações oprimidas, assim como constitui um compromisso\npolítico com a transformação da sociedade. Ele está fundamentado na luta por um governo\nda classe trabalhadora, apoiado na mobilização popular de todos os estratos explorados e\noprimidos e orientado para garantir direitos, enfrentar os privilégios da burguesia e\nreorganizar a economia em função das necessidades da maioria da população."
+          },
+          {
+            "id": "sumario",
+            "titulo": "Sumário",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Sumário\nIntrodução ............................................................................................................................. 5\n\n1.\n\n2. A crise do capitalismo, a dependência e a necessidade de transformação social .................................. 5\n3. Reorganização da economia: do plano nacional à realidade amazonense ............................................ 6\n4. Classes sociais, poder e organização política ................................................................................. 6\nConteúdo Programático .................................................................................................................. 7\nI – Desenvolvimento e reorganização da economia do Estado do Amazonas ........................................... 7\n1.\n\nReorientação do modelo econômico regional ......................................................................... 7\n\n2.\n\nCiência, tecnologia e desenvolvimento regional ...................................................................... 7\n\n3.\n\nEnergia, recursos naturais e soberania ambiental.................................................................... 7\n\n4.\n\nIntegração regional e preservação da Amazônia ...................................................................... 8\n\nII – Propostas mínimas por melhores condições de vida ...................................................................... 8\n1. Trabalho e Salário ................................................................................................................... 8\nTrabalhadores de aplicativos e plataformas .................................................................................... 9\n2. Direitos, Serviços Públicos e Melhores Condições de Vida ............................................................ 9\nSaúde ................................................................................................................................ 10\nPessoas com Deficiências (PCD) ............................................................................................. 10\nEducação ............................................................................................................................ 11\nCultura ................................................................................................................................ 12\nMoradia .............................................................................................................................. 13\nTransporte Público ............................................................................................................... 13\n3. Meio Ambiente ..................................................................................................................... 13\n4. Terra para quem nela vive e trabalha ........................................................................................ 14\n5. Segurança Pública ................................................................................................................ 15\nIII – Combate às opressões............................................................................................................ 16\nNegros e negras....................................................................................................................... 17\nMulheres. ................................................................................................................................ 18\nLGBTIs ................................................................................................................................... 19\nPovos Indígenas ...................................................................................................................... 20\nImigrantes e refugiados............................................................................................................. 21\nJuventude e perspectiva de futuro .............................................................................................. 21\nIV – Um governo socialista da classe trabalhadora ............................................................................ 23\nConsiderações finais .................................................................................................................... 23"
+          },
+          {
+            "id": "programa-de-governo",
+            "titulo": "PROGRAMA DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO\n1. Introdução\nAs eleições deste ano ocorrem sob o aprofundamento da crise do capitalismo mundial. Trata-se de uma\ncrise estrutural que intensifica os conflitos entre as principais potências, expressando-se em guerras por\nterritórios, mercados e pelo controle de matérias-primas estratégicas para os novos ciclos tecnológicos.\nNesse cenário, ampliam-se os mecanismos de dominação sobre os países periféricos, especialmente na\nAmérica Latina, onde se verificam intervenções diretas e indiretas por parte do imperialismo, com destaque\npara o papel dos Estados Unidos. O governo deste país utiliza de meios diplomáticos, econômicos e militares\npara controlar a região.\nOs impactos desse processo recaem diretamente sobre a classe trabalhadora, que enfrenta o aumento da\nexploração, a retirada de direitos e a precarização das condições de vida. Ao mesmo tempo, aprofundamse os laços de dependência econômica, política e tecnológica, limitando a soberania nacional e\nsubordinando cada vez mais os países periféricos às dinâmicas do capital internacional, como vimos\nacontecer com a Venezuela recentemente.\nDiante disso, não é possível formular um plano de governo estadual desconectado dessa realidade mais\nampla. A crise do capitalismo mundial e a condição dependente do país se reproduzem em escala regional,\nmoldando as possibilidades e os limites do desenvolvimento nos diferentes estados. No caso do Amazonas,\nessas determinações assumem formas específicas, articuladas à sua inserção subordinada na economia\nnacional e internacional.\nNosso programa, portanto, parte da compreensão de que a realidade estadual é expressão particular de\numa totalidade mais ampla. As propostas aqui apresentadas estão mediadas por essa relação entre o geral\ne o particular, o que implica reconhecer que sua plena realização está vinculada a transformações estruturais\nno plano nacional e internacional. Ainda assim, é possível e necessário apontar medidas concretas que\nenfrentem, desde já, as contradições existentes.\n2. A crise do capitalismo, a dependência e a necessidade de transformação social\nA crise estrutural do capitalismo se manifesta na intensificação da exploração do trabalho, na destruição\nambiental e na incapacidade de garantir condições dignas de vida à maioria da população. No Brasil, essa\ncrise se combina com a condição histórica de dependência, resultando em um padrão de desenvolvimento\nsubordinado e desigual.\nNo Amazonas, essa dinâmica se expressa de forma particular. A estrutura econômica regional, moldada\nprincipalmente pela intervenção estatal centrada na Zona Franca de Manaus, combinada em menor escala\ncom a indústria extrativa e, mais recentemente, com o crescimento das economias ilicitas (sobretudo como\nrota do narcotráfico), reproduz as contradições do capitalismo dependente: concentração de riqueza,\nempobrecimento, violência, subordinação tecnológica e vulnerabilidade frente às oscilações do mercado\ninternacional. Nesse sentido, a atuação do Estado tem sido historicamente orientada para garantir as\ncondições de acumulação do capital e reprodução de uma burgueia regional em detrimento das\nnecessidades da grande maioria da população – a classe trabalhadora.\nEm vista disso, ao nosso ver, a real superação dessas contradições não pode se dar por meio de reformas\nsuperficiais. Se faz necessária uma transformação profunda desse modelo acima descrito e de suas bases\neconômicas e sociais, que passa necessariamente – em última instância, pela superação do capitalismo e\npela construção de uma sociedade socialista.\n5"
+          },
+          {
+            "id": "isso-implicam-medidas-que-vao-alem-dos-limites-do-estado-do-amazonas-pro",
+            "titulo": "Isso implicam medidas que vão além dos limites do Estado do Amazonas, propriamente, ou seja: retirar dos",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Isso implicam medidas que vão além dos limites do Estado do Amazonas, propriamente, ou seja: retirar dos\ngrandes grupos econômicos o controle dos setores estratégicos e colocá-los sob controle social. A\nestatização sob controle dos trabalhadores de áreas como energia, mineração, sistema financeiro e grandes\nindústrias é parte desse processo, assim como a reversão das privatizações. O que só pode ser feito como\nparte de mudanças nacionais profundas.\nO controle público do sistema financeiro permite direcionar os recursos para as necessidades sociais\ncoletivas, rompendo com a lógica especulativa propria do capitalismo. Medidas como a suspensão do\npagamento da dívida pública aos grandes credores e a construção de um planejamento econômico\ndemocrático, presidido pela classe trabalhadora e seus organismos de poder (conselhos populares), são\nfundamentais para viabilizar essa transição.\n3. Reorganização da economia: do plano nacional à realidade amazonense\nO enfrentamento da dependência estrutural exige a reorganização da economia nacional sob o controle\noperário e popular, recolocando o Estado como agente central do desenvolvimento. Isso implica combater\na desindustrialização por meio de investimento estatal direto, proteção da indústria nacional e controle da\nmovimentação de capitais, impedindo a fuga de recursos e a especulação – conforme vem sendo defendido\npelo nosso candidato a presidência da República.\nA política tributária deve ser progressiva, com taxação das grandes fortunas, lucros e dividendos, ao mesmo\ntempo em que se reduz a carga sobre o consumo popular. Paralelamente, é fundamental a nacionalização\ndos recursos naturais estratégicos e o fortalecimento do papel do Estado, cuja gestão deve se basear no\npoder operário e popular.\nNo Amazonas, essas diretrizes assumem contornos específicos. A economia regional, fortemente\nestruturada em torno da Zona Franca de Manaus, revela os limites de um modelo dependente, com baixa\nintegração produtiva e reduzida autonomia tecnológica.1 Seu funcionamento condicionado a incentivos\nfiscais e a decisões externas torna a economia local, e o desenvolvimento do Estado limitado e vulnerável.\nDiante disso, é necessário reorientar o modelo econômico regional, com investimento público, fortalecimento\nda produção local, integração entre indústria e ciência, estatização de setores estratégicos sob controle dos\ntrabalhadores e bloqueio de projetos empresariais predatórios. O que não pode ser feito sem que se\ndesenvolva uma força social organizada capaz de derrotar as burguesias nacionais e regionais que se\nnutrem desse modelo dependente.\n4. Classes sociais, poder e organização política\nAs transformações propostas esbarram nos limites do atual regime político, marcado pela subordinação do\nEstado aos interesses do grande capital. No Amazonas, essa realidade se expressa no controle dos\ninstrumentos de poder por elites políticas e econômicas subordinadas ao capital nacional e internacional.\nDe outro lado, a classe operária, os trabalhadores da cidade e do campo, os povos indígenas e as\ncomunidades tradicionais, que estão historcimante à margem do poder, enfrentam exploração, opressão,\nexpropriação e marginalização.\n\nO Polo Industrial (com mais de 400 empresas), mesmo com a aplicação do Processo Produtivo Básico (PPB),\ncomo o objetivo de aumenar o índíce de nacionalização, permanece como um enclave conscentrado\nfundamentalmente na Capítal do Estado – Manaus.\n1\n\n6"
+          },
+          {
+            "id": "diante-disso-a-questao-do-poder-torna-se-central-a-transformacao-social",
+            "titulo": "Diante disso, a questão do poder torna-se central. A transformação social exige romper com essa",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Diante disso, a questão do poder torna-se central. A transformação social exige romper com essa\nsubordinação, fortalecendo a organização independente da classe trabalhadora, a construção de conselhos\npopulares e um governo operário e popular apoiado na mobilização social.\n\nConteúdo Programático\n\nI – Desenvolvimento e reorganização da economia do Estado do Amazonas\nA reorganização da economia amazonense deve estar vinculada a um projeto nacional de desenvolvimento\nsoberano, capaz de romper com a dependência econômica e tecnológica que subordina o país aos\ninteresses do grande capital. Isso implica retirar dos grandes grupos econômicos o controle dos setores\nestratégicos — como energia, mineração, sistema financeiro e indústria — e colocá-los sob controle\noperário, orientando a produção para as necessidades da população. Embora essas transformações\ndependam de mudanças nacionais profundas, elas estabelecem o horizonte para superar um modelo\nbaseado na apropriação privada da riqueza e avançar em direção a um planejamento econômico\ndemocrático, com participação dos trabalhadores.\nEsse processo exige enfrentar os limites do modelo da Zona Franca de Manaus, que, apesar de seu peso\nindustrial, opera como um enclave dependente de incentivos fiscais, cadeias produtivas externas e\nexploração da força de trabalho. A baixa integração com a economia regional, a limitada internalização\ntecnológica e a incapacidade de dinamizar o interior contrastam com a riqueza gerada, que não se traduz\nem desenvolvimento social proporcional: persistem o desemprego, a informalidade e a precarização.\nSuperar esse modelo implica subordinar a economia regional aos interesses da população trabalhadora,\npromovendo diversificação produtiva, integração territorial e sustentabilidade.\n1. Reorientação do modelo econômico regional\n•\n\nDefender uma nova política industrial para o Amazonas, articulada a um projeto nacional de\nsoberania produtiva, superando a dependência tecnológica e ampliando a integração entre\nindústria, ciência e produção local.\n\n•\n\nCondicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos,\ntransferência tecnológica, formação profissional e integração com cadeias produtivas regionais.\n\n2. Ciência, tecnologia e desenvolvimento regional\n•\n\nAmpliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre\nuniversidades, institutos de pesquisa e setores produtivos estratégicos.\n\n•\n\nDesenvolver formas produtivas baseadas nos conhecimentos amazônicos e no uso sustentável da\nbiodiversidade, evitando sua apropriação privada.\n\n•\n\nPromover a interiorização do desenvolvimento econômico, reduzindo a concentração produtiva em\nManaus.\n\n3. Energia, recursos naturais e soberania ambiental\n•\n\nDefender a retomada do controle público dos setores estratégicos — energia, petróleo, gás e\nmineração — como parte de um projeto nacional, com medidas como a reestatização da Refinaria\n7"
+          },
+          {
+            "id": "do-amazonas-reman-da-distribuicao-de-energia-e-dos-servicos-de-abastecim",
+            "titulo": "do Amazonas (REMAN), da distribuição de energia e dos serviços de abastecimento de água,",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "do Amazonas (REMAN), da distribuição de energia e dos serviços de abastecimento de água,\ngarantindo gestão pública com controle operário e voltada às necessidades da população.\n•\n\nCombater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica\nesteja subordinada aos interesses sociais e à preservação ambiental.\n\n•\n\nRejeitar a privatização dos bens comuns, como rios e florestas.\n\n4. Integração regional e preservação da Amazônia\n•\n\nConstruir uma política de infraestrutura voltada às necessidades sociais e ambientais, e não aos\ninteresses de grandes empreendimentos predatórios.\n\n•\n\nGarantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à\nrealidade amazônica.\n\n•\n\nFortalecer formas de desenvolvimento que respeitem os territórios indígenas, quilombolas, as áreas\nde preservação e comunidades tradicionais.\n\nII – Propostas mínimas por melhores condições de vida\n1. Trabalho e Salário\nNo Amazonas, o setor de serviços constitui hoje o principal responsável pela geração de empregos formais,\nabsorvendo grande parte da força de trabalho tanto na capital quanto no interior. Mas é importante ressaltar\nque esse protagonismo gira em torno do Polo Industrial incentivado – que é o núcleo dinâmico da economia\nestadual. Por outro lado, essa indústria incentivada, que é parte de um projeto de desenvolvimento, deveria\nirradiar crescimento, estruturando cadeias produtivas e impulsionando outros setores. No entanto, não é\nisso que ocorre, uma vez que opera como um enclave produtivo, dependente de insumos importados e\npouco articulado a uma base regional, diminuindo essa pretensa capacidade de dinamização regional.\nDessa forma, ainda que haja expansão dos serviços, nota-se a prevalência de baixos salários e crescimento\nda informalidade tanto na capital quanto no interior.\nEssa realidade expressa a forma como o capital organiza a produção para ampliar a extração de mais-valor,\ncombinando incentivos estatais, fragmentação produtiva e precarização das relações de trabalho. O\ncrescimento do setor de serviços, longe de indicar autonomia econômica, ocorre de forma subordinada,\nmuitas vezes vinculado às demandas indiretas da indústria e marcado por ocupações de baixa remuneração\ne alta rotatividade2. Nesse contexto, a terceirização e a pejotização — em franca expansão — cumprem\npapel central ao reduzir custos, enfraquecer a organização sindical e aumentar a vulnerabilidade dos\ntrabalhadores. Por isso persiste a informalidade crescente, baixos salários e desvalorização contínua da\nforça de trabalho.\nDiante desse quadro, a luta pela criação de postos de trabalho formais, pelo fim das terceirizações e da\npejotização, e pela elevação dos salários se afirma como parte essencial das reivindicações da classe\ntrabalhadora no estado. Essas pautas se articulam com a luta nacional pela redução da jornada para 36\nhoras semanais, apontando para a necessidade de reconfiguração do modelo produtivo em favor da\nvalorização do trabalho. Trata-se, portanto, não apenas de disputar melhores condições imediatas, mas de\nafirmar outro padrão de desenvolvimento, capaz de superar a lógica de enclave, fortalecer a articulação\nentre setores produtivos e ampliar direitos, renda e dignidade para a maioria da população.\n\nA título de exemplo: “ O setor de Serviços foi o maior empregador no Amazonas em 2025. Foram 149.219\nadmissões. No entanto, o volume de desligamentos também foi o maior: 144.253.” (Cf. Portal Estado Político,\n2026)\n2\n\n8"
+          },
+          {
+            "id": "pagina-9",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\n•\n•\n•\n\n•\n•\n\nApoiar a luta pelo fim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem\ndemissões\nApoiar a luta pela redução da jornada de trabalho para 36hs, sem redução dos salários e sem\nflexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego). Trabalhar\nmenos para que todos trabalhem!\nFortalecer a luta pelo aumento de 100% no salário mínimo, rumo ao salário mínimo necessário,\ncalculado pelo DIEESE\nBolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver\npleno emprego.\nApoiar Plano nacional de obras públicas voltado à geração de empregos, universalização do\nsaneamento básico, construção de escolas, hospitais, creches, infra estrutura ambiental, entre\noutras obras necessárias e respeitadoras do meio ambiente.\nFortalecer a luta pela revogação da Reforma Trabalhista.\nApoiar a luta pela revogação da lei das terceirizações. Fim da terceirização, salário igual para\ntrabalho igual e direitos para todos os trabalhadores. Incorporação dos trabalhadores terceirizados\nno quadro efetivo do serviço público e realização de concurso público para novas contratações\n\nTrabalhadores de aplicativos e plataformas\nA expansão das plataformas digitais transformou completamente o mercado de trabalho. Milhões de\ntrabalhadores passaram a depender de aplicativos para obter renda. Os aplicativos, porém, transferem todos\nos riscos da atividade econômica aos trabalhadores, não há transparência em seus algorítimos e não\nqualquer possuem controle público. Defendemos aqui as reivindicações atuais dos trabalhadores de\naplicativos, surgidas em suas lutas:\n•\n•\n•\n•\n•\n•\n\nReconhecimento do vínculo empregatício\nGarantia de todos os direitos: previdência, férias, 13º, descanso remunerado, seguro contra\nacidentes, licença-maternidade e proteção social efetiva.\nRegulamentação sem direitos é fraude! Não ao PLP 152 que legaliza a precarização!\nContra jornadas exaustivas! Piso salarial para carga horária mínima logada de 36 horas e\nremuneração mínima por corrida/entrega ou serviço prestado para jornadas menores que 36 horas\nFiscalização pública das condições de trabalho nas plataformas digitais. Contra as punições\narbitrárias!\nTransparência dos algoritmos, com obrigação das empresas informarem sobre os critérios de\ndistribuição de corridas, bloqueios e remuneração, que devem ser submetidos à fiscalização\npública e ao controle dos trabalhadores.\n\n2. Direitos, Serviços Públicos e Melhores Condições de Vida\nA luta por serviços públicos de qualidade leva a um confronto direto com a forma como a riqueza é\napropriada e distribuída na sociedade.\nOs direitos sociais e os serviços públicos fazem parte das condições de vida da classe trabalhadora. Não\nsão áreas separadas, mas dimensões de uma mesma realidade: determinam quanto custa viver, em que\ncondições a população trabalha, se desloca, se reproduz e envelhece.\nSão também o principal instrumento de garantia de direitos — e, por isso, um dos terrenos centrais de\ndisputa na sociedade.\n\n9"
+          },
+          {
+            "id": "hoje-esses-direitos-sao-atacados-por-um-modelo-que-transforma-tudo-em-me",
+            "titulo": "Hoje, esses direitos são atacados por um modelo que transforma tudo em mercadoria. A privatização, as",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Hoje, esses direitos são atacados por um modelo que transforma tudo em mercadoria. A privatização, as\nParcerias Público Privadas (PPPs,) a precarização e o subfinanciamento transferem recursos públicos para\ngrandes empresas, enquanto a população paga mais caro por serviços piores.\nA crise ambiental e urbana agrava esse cenário: secas, enchentes, falta de saneamento, aumento do custo\nde vida e expansão desordenada das cidades recaem diretamente sobre os trabalhadores.\nPor isso, a luta por direitos e serviços públicos de qualidade é também parte da disputa sobre quem controla\nos recursos, o território e a organização da sociedade. É resultado de um modelo que subordina tudo aos\ninteresses do capital.\nSaúde\nA crise do SUS expressa diretamente esse conflito: garantir saúde pública universal implica enfrentar os\nmecanismos que drenam recursos e subordinam o sistema à lógica privada. No Amazonas a universalização\ndo atendimento à saúde é ainda muito mais complexa. A grande extensão territorial, a fragmentação\npopulacional, as precárias condições de infraestrutura na maioria dos seus municípios e a concentração de\natendimento de média e alta complexidade na Capital impõe um imenso desafio ao poder público. Por isso\nse tem superlotação em hospitais, concentração de atendimento na Capital, falta de profissionais\nespecializados e hospitais no interior e indicadores de saúde frágeis. Tudo isso agravado com a aplicação\nda política neoliberal de privatização com alto custo para o poder público.3\n•\n•\n•\n\n•\n•\n•\n\nFortalecimento do SUS no estado.\nRealização de concursos públicos\nFim da privatização da gestão hospitalar: acabar com as PPPs, e com a contratação de\nOrganizações Sociais de Saúde (OSS) para gerir a saúde pública. Fim dos trabalhos terceirizado\ne voluntário (este, ainda não estrutural).\nAcabar com as cooperativas – todos os cargos devem ser supridos por concursos públicos;\nEleições diretas para diretores de Unidades de Saúde e hospitais\nControle social, a partir das organizações dos trabalhadores e segmentos profissionais de\nprofissionais de saúde\n\nPessoas com Deficiências (PCD)\nA situação das pessoas com deficiência no Brasil — e de forma ainda mais acentuada no Amazonas —\nevidencia uma contradição central: embora exista um arcabouço legal relativamente amplo, os direitos\npermanecem parcialmente efetivados e desigualmente distribuídos no território4. No Amazonas, em\nparticular, fatores como grandes distâncias, concentração de serviços em Manaus e limitações de\ninfraestrutura aprofundam essa realidade, fazendo com que o acesso à educação, saúde, mobilidade e\ntrabalho seja restrito, sobretudo para quem vive no interior e nas periferias urbanas. Assim, a deficiência\nnão pode ser compreendida isoladamente, mas como parte de um quadro mais amplo de desigualdade\nsocial e territorial.\n\nA título de exemplo: “Entre os anos de 2019 e 2022 foram realizados os pagamentos dos contratos da Parceria\nPúblico-Privada (PPP) com investimento total de R$ 407,2 milhões para o Hospital Delphina Aziz e da Central\nde Material Esterilizado (CME)”. (Cf. Mensagem Governamental – Relatório de Atividades, 2023)\n4\nO marco legal dos direitos das pessoas com deficiência no Brasil compreende a Constituição Federal de\n1988, a Convenção sobre os Direitos das Pessoas com Deficiência (com status constitucional) e a Lei\nBrasileira de Inclusão da Pessoa com Deficiência (Lei nº 13.146/2015), complementadas pela Lei nº\n8.213/1991 e pela Lei Orgânica da Assistência Social (Lei nº 8.742/1993). No Estado do Amazonas, destacamse a Constituição do Estado do Amazonas e legislação infraconstitucional correlata.\n3\n\n10"
+          },
+          {
+            "id": "nesse-contexto-o-nosso-programa-nao-parte-da-criacao-abstrata-de-novos-d",
+            "titulo": "Nesse contexto, o nosso programa não parte da criação abstrata de novos direitos, mas da transformação",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Nesse contexto, o nosso programa não parte da criação abstrata de novos direitos, mas da transformação\nconcreta das condições de acesso e permanência, enfrentando os limites materiais que impedem sua\nrealização. Isso implica superar o caráter formal ou assistencial das políticas e avançar para uma perspectiva\nde universalização, continuidade e presença territorial, garantindo que as pessoas com deficiência tenham\nnão apenas proteção legal, mas condições reais de autonomia e participação social.\n•\n\n•\n•\n•\n•\n•\n•\n\nGarantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua\nimplementação nos municípios, por meio de financiamento, apoio técnico e exigência de critérios\nde acessibilidade nos repasses públicos.\nAmpliar e estruturar a educação inclusiva, assegurando condições materiais, formação docente e\npolíticas de permanência, superando o caráter ainda formal da inclusão\nFortalecer e fiscalizar as políticas de trabalho e renda, garantindo o cumprimento das cotas e\nampliando programas de inserção produtiva, hoje insuficientes diante da exclusão existente\nExpandir e descentralizar a rede de saúde e reabilitação, garantindo acesso contínuo no interior e\nreduzindo a concentração dos serviços em Manaus\nAmpliar e adaptar os sistemas de mobilidade e transporte, incluindo modais intermunicipais e\nfluviais, ainda marcados por baixa acessibilidade\nSuperar o caráter exclusivamente assistencial da proteção social, avançando para políticas que\ngarantam autonomia, vida independente e acesso à moradia adequada\nAmpliar os mecanismos de participação política das pessoas com deficiência, fortalecendo\ninstâncias de decisão e enfrentando o capacitismo estrutural presente nas instituições\n\nEducação\nGarantir uma educação pública de qualidade exige romper com a lógica que subordina a formação humana\ne o conhecimento exclusivamente às necessidades do mercado. No Brasil, observa-se o avanço de\ninteresses empresariais sobre a educação básica, por meio de institutos, fundações e organizações que\npassam a influenciar políticas públicas, currículos e formas de gestão, criando mecanismos de transferência\nde recursos públicos para modelos orientados pela lógica da eficiência empresarial. Nesse contexto,\naprofunda-se uma desigualdade educacional em que os setores privilegiados têm acesso a uma formação\nampla e crítica, enquanto a juventude trabalhadora é submetida a escolas com menor estrutura e currículos\ncada vez mais reduzidos, voltados à adaptação ao trabalho precário.\nNo Amazonas, essa realidade assume características próprias, pois a precarização educacional5 se articula\ncom a condição histórica de dependência da região e com um modelo de desenvolvimento que não\ntransforma a riqueza produzida na Amazônia em direitos sociais para sua população. Enfrentar a crise do\nensino médio exige uma política estadual comprometida com a formação integral da juventude, com escolas\nestruturadas, valorização dos professores, fortalecimento da educação indígena, ribeirinha e neurodiversa,\nampliação da educação científica, técnica e cultural, garantindo que os jovens se tornem sujeitos críticos\ncapazes de vislumbrar um novo projeto de sociedade, e não apenas força de trabalho submetida às\nnecessidades do mercado.\n•\n•\n\nRealizar auditória na Secretaria de Educação\nAmpliação do investimento público estadual.\n\n“O Amazonas aparece entre os estados com pior desempenho do país em duas áreas diretamente ligadas à\natuação do governo estadual. O Ranking de Competitividade dos Estados 2025 coloca o Amazonas na 24ª\nposição em Educação e aparece na última colocação nacional em Infraestrutura, no 27ª lugar” (Cf. Portal Rios\nde Notícia, 2026).\n5\n\n11"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n•\n•\n•\n•\n•\n•\n\nRealização de concursos públicos para suprir as necessidades do setor.\nValorizar os profissionais da educação.\nContratar psicólogos, assistentes sociais escolares,Intérpretes de Libras, profissionais de\nacessibilidade e mediadores educacionais\nExpansão da rede de ensino para cumprir o critério da quantidade adequada de alunos (as) por\nsala\nAmpliação dos Centros de Ensinos Estaduais Integrais (CETIs)\nPelo fim das escolas militares\nEleições diretas para diretores de escolas.\nControle social feito pela comunidade escolar (professores, técnicos, profissionais da educação e\nalunos) pelas entidades representativas dos trabalhadores (as) da educação, pelos grêmios livres\nestudantis e pelas associações de pais e mestres.\n\nCultura\nO modelo atual de política cultural no Amazonas é marcado por baixa prioridade orçamentária, centralização\ne descontinuidade. Em um orçamento estadual de cerca de R$ 31,4 bilhões, os investimentos diretos em\ncultura — como editais que somam aproximadamente R$ 10,7 milhões — representam menos de 0,05% do\ntotal. Esse quadro revela uma política baseada em eventos e grandes espetáculos concentrados na capital,\nenquanto a produção cultural cotidiana permanece invisibilizada. A cultura aparece como vitrine em\nmomentos específicos, sem estrutura permanente que sustente sua presença na vida social.\nA lógica dos editais, embora apresentada como democrática, aprofunda essa fragilidade ao impor\ncompetição, burocracia e descontinuidade, financiando poucos e excluindo a maioria. Coletivos de bairros,\nperiferias, interior, povos indígenas e ribeirinhos ficam à margem ou são forçados a se adequar a formatos\ninstitucionais alheios às suas práticas. Assim, a cultura deixa de ser reconhecida como parte orgânica da\nvida das classes trabalhadoras e passa a ser tratada como produto episódico, subordinado à lógica do\nespetáculo e da visibilidade.\nAo nosso ver, a cultura deve ser tratada como expressão viva da vida social, vinculada ao trabalho, ao\nterritório e às formas concretas de existência da população. Isso implica reconhecer seus sujeitos como\ntrabalhadores, garantir base material contínua para a produção cultural e assegurar que as políticas culturais\nsejam organizadas a partir dos territórios onde a população vive, com presença permanente nos bairros,\nperiferias e interior, e não concentradas em ações centralizadas e episódicas .Isso significa deslocar a\ncultura do lugar de ornamento para o centro da vida social, articulando-a com educação, juventude e\norganização comunitária, e estruturando políticas permanentes que sustentem sua reprodução no cotidiano.\n•\n•\n•\n•\n•\n•\n•\n•\n\nAmpliação do orçamento da cultura (meta mínima de 2% do orçamento estadual)6\nFinanciamento público contínuo, reduzindo a centralidade dos editais competitivos\nApoio direto e permanente a coletivos culturais de bairros, interior e comunidades tradicionais\nCriação de redes e equipamentos culturais descentralizados e autogeridos\nReconhecimento dos trabalhadores da cultura com políticas de renda e infraestrutura\nIntegração entre cultura, educação e políticas de juventude\nFomento à produção cultural periférica, indígena, ribeirinha e de matriz africana na Amazônia\nCriação de rede pública de circulação cultural no estado\n\n“Se o Amazonas destinasse, por exemplo, 2% do seu orçamento estadual de 2025 (cerca de R$ 31,4 bilhões)\npara a cultura, isso significaria algo em torno de R$ 628 milhões anuais exclusivamente para o setor ...” (Cf.\nPortal Cultura Norte, 2025)\n6\n\n12"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\nApoio à produção cultural crítica, fortalecendo diversidade e expressão social\nDemocracia: Conselhos Populares com os trabalhadores envolvidos diretamente com cultura e arte.\n\nMoradia\nO Amazonas possui um déficit habitacional estimado entre 120 à 140 mil moradias em todo o Estado, com\nmaior concentração na Capital. Como se trata de uma responsabilidade compartilhada (União, Estado e\nMunicípio), observa-se, por exemplo, que, em comparação com a União, o Estado tem investido quase nada\nnessa área – bem menos de 1% do orçamento (Cf. LOAS 2022). Em 2023, o governo estadual criou um\nprograma de moradia próprio denominado “Amazonas meu lar”, cuja maior parte do financiamento foi\ndestinada pelo Governo Federal e representou o beneficiamento diretamente de moradia para apenas 8,5\nmil famílias. Ou seja, muito longe de impactar a necessidade da população.\n•\n\n•\n•\n•\n\nPrograma estadual de habitação popular, que contemple: a) Efetivação (com participação da União\ne os munícipios) de um plano de obras públicas para construção de casas populares com objetivo\nde reverter o déficit habitacional,.b) Apoio técnico e financeiro aos municípios na desapropriação de\nimóveis desocupados e com dívidas com o poder público para fins de moradia popular e criação de\nespaços culturais.\nRegularização fundiária.\nUrbanização de periferias, com legalização das ocupações\nControle operario: Conselho popular por bairros para deliberar, planejar e efetivar a moradia\npopular e as obras de urbanização.\n\nTransporte Público\nA grande maioria dos municípios não possui sistema formal de transporte urbano rodoviário. Manaus, com\nmais de 2 milhões de habitantes, tem um sistema de transporte urbano com uma demanda de 400 a 500 mil\npassageiros por dia – e funciona como uma concessão do Município a empresas privadas. Já municípios,\ncom população de porte intermediário, como Parintins, Itacoatiara e Manacapuru contam com algum tipo de\ntransporte, mas não possuem uma rede estruturada de ônibus urbano. Quanto ao transporte intermunicipal,\napenas 11 municípios têm ligação por via terrestre. A grande extensão territorial, a baixa densidade\npopulacional urbana e a falta de ligação terrestre, constitui uma particularidade do Estado em termos de\nmobilidade e de escoamento de produtos. Os deslocamentos são feitos por avião e majoritariamente por\nmeio fluvial de vários níveis. O que impõe uma particularidade complexa – onde o poder público atua como\nregulador e fiscalizador. Nesse sentido, defendemos:\n•\n\n•\n•\n•\n\nDe forma imediata: que se faça uma auditoria no transporte urbano da Capital. E enquanto\npermanecer o sistema de concessão, modificar o contrato para que o controle da bilhetagem fique\ncom o poder público.\nAtuação direta do poder público para: expansão e melhoria do transporte público em suas diferentes\nmodalidades e diferentes níveis.\nEstatização (em compartilhamento com os municípios – sobretudo a Capital)do transporte urbano\nrodoviário.\nRedução imediata das tarifas, rumo a tarifa zero.\n\n3. Meio Ambiente\nA crise ambiental expressa o esgotamento do próprio sistema e modelo de produção, mostrando que não é\npossível garantir condições de vida dignas sem enfrentar os interesses econômicos que sustentam a\ndestruição ambiental.\n13"
+          },
+          {
+            "id": "novo-relatorio-do-programa-das-nacoes-unidas-para-o-meio-ambiente-pnuma",
+            "titulo": "Novo relatório do Programa das Nações Unidas para o Meio Ambiente (PNUMA) reforça o avanço acelerado",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Novo relatório do Programa das Nações Unidas para o Meio Ambiente (PNUMA) reforça o avanço acelerado\nda crise climática e o fracasso iminente das metas estabelecidas no Acordo de Paris. Mesmo que todos os\ncompromissos atualmente assumidos pelos países sejam integralmente cumpridos, a temperatura média\nglobal deve aumentar entre 2,5°C e 2,9°C até o fim do século – um patamar considerado extremamente\nperigoso por cientistas.\nIsso significaria cruzar vários pontos de não retorno, tornando o aquecimento global incontrolável. Um\nmundo acima de 2°C seria varrido por pandemias, cidades costeiras destruídas, florestas colapsadas e\nextensas áreas continentais impossíveis de serem habitadas pelos humanos devido ao calor extremo.\nAgronegócio, mineradoras e petroleiras aprofundam a crise ambiental, a qual se converte em secas,\nenchentes, tornados, incêndios e desastres ambientais como os de Mariana e Brumadinho, que recaem\nsobre os trabalhadores e a população mais vulnerável. A expansão da fronteira agrícola já destruiu metade\ndo Cerrado, ameaça o Pantanal e pressiona cada vez mais a Amazônia.\nO Amazonas, cuja ocupação econômica da segunda metade do Século XX (ditada pelo regime militar) se\ndeu, em maior escala, por um tipo de modalidade empresarial ´caracterizada como um enclave, sem\nnecessidade de matéria prima regional, preservou a maior parte de sua cobertura vegetal. No entanto, isso\nnão significa que não exista degradação ambiental. A indústria extrativa (gás e minério), a penetração do\nagronegócio pelo Sul do Estado, o garimpo ilegal, as estradas e a própria indústria da Zona Franca, levam\na degradação dos rios e igarapés, a contaminação das águas com mercúrio, ao desmatamento, a invasão\ndas Terras Indígenas (TI) e das reservas de preservação (RESEX e RDS).\n•\n•\n•\n•\n\nBloquear a expansão do agronegócio, do garimpo ilegal e Combater ao desmatamento.\nFortalecimento da fiscalização ambiental do Estado. Com maior estruturação e maior controle\nsocial sobre Instituto de Proteção Ambiental do Amazonas (IPAAM) .\nApoio às reservas e economia sustentável, como as RESEX e RDS, em compartilhamento com\ninstituições universitárias e organização das comunidades ribeirinhas;\nInvestir na recuperação dos rios e dos igarapés degradados por dejetos e por falta de saneamento\nbásicos\n\n4. Terra para quem nela vive e trabalha\nO que molda a economia de larga escala no Amazonas é a Zona Franca de Manaus, seguida de forma\ncomplementar pela indústria extrativa (extração de gás, petróleo e minério). E, como parte do avanço da\nfronteira agrícola, a extração de madeira, o agronegócio ligado a soja, a pecuária e campos de pastagens\ntêm se estendido desde o Sul do Estado – em conflitos permanentes com grupos indígenas, pequenos\nproprietários7 e com os limites de áreas de conservação.\nEntretanto, o Estado mais extenso da federação, não se resume a isso. No Amazonas não se desenvolveu\no agronegócio clássico, como ocorreu no Sudeste ou Centro Oeste; nem mesmo foi ocupado pela indústria\nextrativa mínero-metalurgica e pela agropecuaria de exportação, com a mesma extensão com que se deu\nno Estado do Pará. O que se tem aqui é na verdade um grande mosaico com distintas atividades produtivas\nintermediárias e diferentes formas sociais de acesso à terra e aos recursos naturais, geralmente de\nsubsistência ou destinadas a um mercado local – ligadas a processos históricos de sua ocupação.\nUm estudo feito pela Embrapa mostra que “...a agricultura familiar corresponde a 86,9% dos\nestabelecimentos agropecuários, ocupando 44% da área no estado, tendo como principal cultivo a\nmandioca. Evidenciou também que “a agricultura é desenvolvida em pequenas áreas (43,82% dos\nestabelecimentos familiares possuem área de até 5 ha). São atividades que se caracterizam pelo “baixo\n7\n\nCf. Massacre no Sul do Amazonas: três mortos, mandantes soltos, Portal Amazônia Real, 2026\n\n14"
+          },
+          {
+            "id": "acesso-as-acoes-publicas-como-orientacao-tecnica-89-28-dos-estabelecimen",
+            "titulo": "acesso às ações públicas como orientação técnica (89,28% dos estabelecimentos declararam não a",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "acesso às ações públicas como orientação técnica (89,28% dos estabelecimentos declararam não a\nreceberem) e a energia elétrica (43% dos estabelecimentos familiares ainda não possuem energia\nelétrica).”8 Ao lado dessa atividade produtiva de subsistência, se observa também o extrativismo vegetal\n(Açaí, óleos e pescado) realizado pelas conhecidas populações tradicionais que opera em pequena escala\nde comércio regional.\nDiferente dos grandes projetos de ocupação induzidos, acima descritos, que se beneficiam de incentivos\nmilionários, essas atividades produtivas – de grande importância social – carecem de um conjunto de\npolíticas públicas, tais como: financiamento, formação técnica, incentivo a produção, transporte para\nescoamento dos produtos – estímulo a uma estratégia de desenvolvimento rural e de sustentabilidade\ncalcada na especificidade da realidade amazônica.\n•\n•\n•\n•\n•\n•\n•\n\nBloquear o avanço do agronegócio no Sul do Amazonas\nRegularização fundiária rural.\nFinanciamento e apoio técnico à agricultura familiar e às atividades extrativistas das comunidades\ntradicionais.\nEletrificação rural e formas de geração de energia adequadas ao clima e à realidade amazônica.\nIncentivo à agroecologia, com apoio técnico das universidades e criação de um mercado\ninstitucional (escolas, e instituições públicas).\nTransporte fluvial estatal direcionado ao escoamento dos produtos\nControle social dos lagos de pesca, pelas comunidades ribeirinhas com apoio do Estado.\n\n5. Segurança Pública\nA crise da segurança pública também está ligada às condições materiais de vida e à forma como a sociedade\né organizada, revelando que as forças de repressão são efetivamente pensadas para defender a segurança\ndo sistema e do capital.\nO povo pobre e da periferia, principalmente a juventude negra e as mulheres, é o que mais sofre com a falta\nde segurança pública. Está sob o jugo de milícias e facções ou de intervenções letais do Estado, através de\nchacinas e todo tipo de violência contra um sem número de inocentes, seja por parte da PM ou através de\nOperações de Garantia de Lei e Ordem sob comando das Forças Armadas.\nO Amazonas figura nos relatórios de segurança pública como um dos Estados mais violentos. Com o\nagravante de ter se tornado – pela sua situação geográfica – rota internacional das economias ilícitas e, sua\nCapital, o epicentro de distribuição de drogas e lavagem de dinheiro. Esse cenário, aliado ao baixo apoio de\npolítica públicas para geração de trabalho, ao desemprego estrutural e a falta de perspectiva para a\njuventude, constitui a base de reprodução da marginalização e da violência - onde indígenas, jovens das\ncomunidades ribeirinhas e das periferias dos centros urbanos são capturados pelo tráfico e presas fáceis do\nsistema repressivo.\nCombate aos grandes negócios ilegais\n•\n\n•\n\nCriar e fortalecer núcleos estaduais de inteligência financeira, em articulação com órgãos federais,\npara monitorar movimentações suspeitas e apoiar investigações sobre lavagem de dinheiro e\nenriquecimento ilícito – expropriação de todo dinheiro sem origem legal comprovada\nAmpliar a atuação das polícias civil e científica na investigação de crimes econômicos, garantindo\nestrutura, autonomia e transparência\n\nCf. SILVA, L. de J. de S.; OLIVEIRA, A. L. A. de; SANTOS, A. C. dos; ALVES, J. G. Agricultura famíliar no estado\ndo Amazonas: um panorama a partir do censo agropecuário 2017. EMBRAPA, 2023\n8\n\n15"
+          },
+          {
+            "id": "pagina-16",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "•\n•\n\nImplementar políticas estaduais de tratamento e atenção integral à saúde, com ampliação da rede\npública de tratamento para dependência química (CAPS AD, equipes territoriais, acolhimento)\nApoiar a luta pela descriminalização das drogas e revogação da Lei de Drogas, para efetivamente\ncombater e acabar com o narcotráfico, juntamente com políticas públicas de prevenção, tratamento\ne redução de danos.\n\nEnfrentamento à violência armada e proteção das comunidades\n•\n•\n•\n•\n•\n•\n\nEstimular a população a se auto-organizar para garantir sua própria segurança, seja diante do crime\norganizado e da criminalidade em geral, seja diante da violência do Estado através de suas polícias.\nCriar mecanismos independentes de investigação de violência policial, com participação social e\ntransparência\nPunição a todos os envolvidos em crimes de ódio. Agravamento nos casos em que estes crimes\nforem praticados por agentes de estados\nPunição exemplar para tortura, execuções, desaparecimentos forçados, chacinas e demais crimes\npraticados por agentes do Estado, responsabilizando também seus comandantes militares e civis.\nCombater o tâfico e seus braços armados, as milicias e os grupos paramilitares\nFortalecer políticas de proteção a testemunhas e lideranças comunitárias ameaçadas\n\nDemocratização e controle social da segurança pública\n•\n•\n•\n\n•\n\n•\n•\n•\n\nRegulamentar e garantir instâncias de participação popular no controle das polícias – conselhos\npopulares com poder deliberativo.\nFortalecer a transparência e o controle externo da atividade policial, com dados públicos sobre\noperações, letalidade e denúncias.\nIncorporação de câmeras corporais para todos os agentes de segurança pública, com gravação\nininterrupta e armazenamento das imagens sob controle de órgãos civis, garantindo acesso às\ngravações quando houver processo legal.\nApoiar o debate nacional sobre o direito de organização e sindicalização dos policiais. Fim dos\nabusos e do desrespeito que caracterizam o tratamento dos policiais dentro das instituições de\nsegurança pública, com controle popular sobre essas instituições.\nFortalecer a formação policial para combater o racismo, o machismo e a LGBTfobia\nCriar protocolos estaduais obrigatórios contra violência institucional, com responsabilização efetiva\nde agentes envolvidos em abusos\nAtuar politicamente pela unificação das polícias em uma única instituição de caráter civil, com\neleição de comandantes e delegados pela população e mandatos revogáveis.\n\nIII – Combate às opressões\nA unidade e a emancipação da classe trabalhadora não são possíveis sem o combate à toda opressão. Não\npode ser livre quem oprime o outro. As opressões cumprem o papel de dividir a classe trabalhadora e permitir\nníveis mais altos de exploração.\nO Amazonas é um estado pluriétnico racial. Os traços indígenas e negros estão por toda parte. Seja\ncomunidades quilombolas ou comunidades indígenas em plenos centros urbanos. Seja por remanescentes\nincorporados como força de trabalho na indústria, no comércio e nos serviços. É parte da nossa classe e\nsomos todos explorados submetidos a opressão e discriminação. Opressão que se estende de forma mais\naguda às mulheres e às LGBTIs.\n\n16"
+          },
+          {
+            "id": "negros-e-negras",
+            "titulo": "Negros e negras",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Negros e negras\nO mundo mudou, a posição do Brasil na ordem mundial se transformou e a própria classe trabalhadora\npassou por profundas alterações — e, nesse processo, a situação da população negra, que compõe a\nmaioria do proletariado brasileiro, também foi diretamente impactada. Longe de permanecer inalterado, o\ntrabalhador negro foi um dos segmentos mais atingidos pela reestruturação capitalista das últimas décadas,\nmarcada pela precarização, informalidade e exclusão. Nesse contexto, uma política baseada apenas na\nreparação histórica — como se as condições atuais decorressem exclusivamente dos 380 anos de\nescravidão e de sua abolição — revela-se insuficiente para enfrentar as determinações concretas e\ncontemporâneas dessa desigualdade.\nA extrema direita nega os impactos da escravidão porque é contra qualquer política pública. Já a esquerda\nlulista e institucional se apega à Reparação de forma esvaziada: joga todos os problemas do povo negro\npara o passado, isentando seus próprios governos que aprofundaram a desigualdade racial, e reduz\nReparação a ações afirmativas ou assistencialismo, sem tocar na grande propriedade privada.\nNosso programa para negros e negras parte do reconhecimento da reparação histórica, mas não se limita\na ela: propõe um programa de transição voltado ao enfrentamento das estruturas que mantêm a\ndesigualdade racial no presente. Isso implica medidas como:\nNo campo e nos territórios tradicionais\n•\n\nAtuar na defesa da regularização e titulação dos territórios quilombolas, articulando políticas\nestaduais de apoio técnico, jurídico e administrativo às comunidades, além de pressionar os órgãos\nfederais responsáveis pela efetivação desses direitos.\n\n•\n\nFortalecer políticas estaduais de proteção aos territórios indígenas e quilombolas, combatendo\ninvasões, crimes ambientais e atividades econômicas ilegais que ameaçam essas populações.\nAmpliar programas estaduais de apoio à agricultura familiar, quilombola e indígena, com assistência\ntécnica, compras públicas, incentivo à produção sustentável e articulação para que o crédito público\nseja direcionado às comunidades tradicionais, e não prioritariamente ao agronegócio.\n\n•\n\nNo mundo do trabalho e na geração de direitos\n•\n\n•\n\n•\n\nImplementar políticas estaduais de valorização do trabalho e combate à precarização,\nespecialmente no serviço público estadual, garantindo igualdade salarial, condições dignas de\ntrabalho e enfrentamento às desigualdades raciais.\nAtuar politicamente pela redução da jornada de trabalho, pelo fim da escala 6x1 e das terceirizações,\nmedidas que dependem de legislação nacional, mas que podem ser defendidas e impulsionadas\npelo Estado.\nFortalecer a fiscalização das relações de trabalho em parceria com órgãos competentes,\ncombatendo práticas discriminatórias e situações de exploração que atingem majoritariamente\ntrabalhadores negros.\n\nNa educação, cultura e combate ao racismo\n•\n\n•\n\nGarantir a implementação efetiva da Lei nº 10.639/2003 e da Lei nº 11.645/2008 na rede estadual\nde ensino, assegurando o ensino da história e cultura afro-brasileira e indígena, com formação\ncontinuada de professores e produção de materiais pedagógicos.\nManter e ampliar políticas de ações afirmativas nas instituições estaduais, especialmente no ensino\nsuperior público e nos concursos estaduais, fortalecendo a presença da população negra nos\nespaços de formação e decisão.\n\n17"
+          },
+          {
+            "id": "pagina-18",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n\nCriar políticas permanentes de valorização das culturas negras e periféricas, combatendo a\ncriminalização de manifestações como funk, batalhas de rima e outras expressões culturais\npopulares.\nFortalecer políticas de combate ao racismo religioso, garantindo proteção e respeito às religiões de\nmatriz africana.\n\nNa segurança pública e justiça\n•\n\n•\n•\n\nImplementar políticas de enfrentamento ao racismo institucional nas forças de segurança, com\nformação permanente, controle externo, transparência e responsabilização de agentes envolvidos\nem práticas racistas ou violência institucional.\nReduzir a letalidade policial e combater violações de direitos humanos, fortalecendo mecanismos\nindependentes de investigação e controle da atuação das forças de segurança.\nAtuar pela revisão nacional da política de drogas, pela desmilitarização das polícias e pelo fim do\nencarceramento em massa, pautas que exigem mudanças legislativas federais, mas que podem ser\ndefendidas pelo Estado.\n\nDemocratização econômica e combate às desigualdades históricas\n•\n\n•\n\nApoiar políticas nacionais de tributação das grandes fortunas e enfrentamento da concentração de\nriqueza, defendendo um modelo econômico comprometido com a redução das desigualdades\nsociais e raciais.\nCriar mecanismos estaduais de combate à discriminação racial nas relações de trabalho e nos\nserviços públicos, com canais de denúncia, fiscalização e punição administrativa.\n\nMulheres\nA opressão das mulheres cumpre um papel funcional no capitalismo: divide a classe trabalhadora, rebaixa\nsalários e amplia a exploração. Por isso, não será superada por políticas pontuais ou dentro dos limites do\nsistema. Ao mesmo tempo, não desaparecerá automaticamente com a luta econômica: exige medidas\nconcretas, mobilização e auto-organização das mulheres trabalhadoras, ligadas à luta de toda a classe\ntrabalhadora.\nNo Amazonas, a condição das mulheres expressa de forma aguda a articulação entre opressão de gênero,\nexploração econômica e desigualdades regionais. Em um estado marcado por forte informalidade e pela\nconcentração de empregos nos setores mais precarizados — especialmente nos serviços —, as mulheres\nsão maioria nas ocupações de menor remuneração, com maior rotatividade e menor proteção social. No\ninterior, essa situação se agrava com o isolamento geográfico, o acesso limitado a políticas públicas e a\nsobrecarga do trabalho doméstico e de cuidado não remunerado. Ao mesmo tempo, os índices de violência\ncontra a mulher permanecem elevados, refletindo não apenas relações desiguais de poder, mas também a\nfragilidade das políticas de proteção e atendimento.\nEssa realidade evidencia o caráter estrutural da opressão das mulheres no estado, que se combina com o\nracismo — atingindo de forma ainda mais dura mulheres negras, indígenas e migrantes — e reforça\nmecanismos de rebaixamento salarial e intensificação da exploração do trabalho. Assim como no plano\ngeral, essa opressão não será superada por medidas isoladas ou paliativas. Exige políticas concretas de\nenfrentamento à violência, ampliação do acesso ao trabalho formal e aos direitos sociais, além do\nfortalecimento da organização e da autonomia das mulheres trabalhadoras, articuladas à luta mais ampla\nda classe trabalhadora por condições dignas de vida e trabalho.\nBasta de feminicídio e violência contra as mulheres!\n\n18"
+          },
+          {
+            "id": "pagina-19",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nProteção real para as mulheres: delegacias especializadas 24h, casas-abrigo e rede de\natendimento conforme a demanda, com recursos garantidos pelo Estado e sob controle das\ntrabalhadoras e da população;\nPunição efetiva aos agressores, com garantia de proteção às vítimas;\nCampanhas massivas de combate à violência nas escolas, locais de trabalho e meios de\ncomunicação;\nOrganização de comissões de mulheres nos locais de trabalho, estudo e moradia para prevenir e\nenfrentar a violência;\nEmprego, renda e moradia como condição concreta para romper ciclos de violência;\nCombate às ideologias misóginas e responsabilização das plataformas que lucram com a\ndisseminação do ódio contra as mulheres.\nPor emprego, salário digno e direitos para as mulheres!\nSalário igual para trabalho igual;\nCombate à desigualdade salarial e à superexploração das mulheres, especialmente das mulheres\nnegras;\nGarantia de direitos para todas as trabalhadoras (aposentadoria, licença maternidade, auxíliodoença, etc.), independentemente do vínculo empregatício;\nProteção social (aposentadoria, licença maternidade, auxílio-doença, etc.) para todas: formais,\ninformais e desempregadas;\n\nLGBTIs\nNo capitalismo, a sexualidade é moldada pela necessidade da reprodução da força de trabalho e da família\ntradicional. O gênero é aprisionado nesse modelo dominante de organização da sexualidade e da família,\nem que o desconforto entre o sexo/fenótipo biológico e o gênero social é taxado como doença e pessoas\ntrans e não-binárias são tratadas como pessoas de segunda categoria, desumanizadas.\nO Estado nega direitos básicos à população LGBTI+ e é cúmplice da brutal violência que as LGBTI+ sofrem\ncotidianamente. A burguesia se aproveita da LGBTIfobia para relegá-los aos postos de trabalho mais\nprecários e com menores salários, quando não estão compondo as fileiras do exército industrial de reserva\nno subemprego ou na prostituição.\nNo Amazonas, a população LGBTI+ vive sob forte marginalização, marcada pela violência, pela\ndiscriminação e pela precarização do trabalho. Travestis, mulheres trans e pessoas não-binárias, em\nespecial, são empurradas para a informalidade ou para atividades extremamente precarizadas, com acesso\nlimitado à saúde, à educação e ao mercado formal. A LGBTIfobia, combinada ao racismo e às desigualdades\nregionais, aprofunda sua exclusão e naturaliza a violência cotidiana.9\nEssa realidade expressa como o padrão dominante de sexualidade e gênero segue operando como\nmecanismo de controle e exploração. No estado, isso se traduz na negação de direitos e na ausência de\npolíticas efetivas de proteção e inclusão. Enfrentar esse quadro exige garantir acesso ao trabalho digno, à\nrenda, à saúde e à educação, articulando a luta contra a LGBTIfobia com a luta mais ampla da classe\ntrabalhadora por igualdade de direitos e condições de vida.\n➢ Vidas LGBTI+ importam: basta de violência e criminalização da LGBTfobia já! Casas-abrigo e proteção\npara vítimas de violência!\n• Direito ao nome social, sem burocracia e sem taxas!\n\nCf. LIMA, Michele Pires. Crimes, violências e população LGBT no Amazonas, Revista Brasileira de Segurança\nPública, V. 20, nº 2, p. 12-33, mai. 2026.- .\n9\n\n19"
+          },
+          {
+            "id": "pagina-20",
+            "titulo": "•",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "•\n\n•\n•\n•\n•\n\nInvestimento na saúde especializada para pessoas LGBTI+. Direito à terapia hormonal e à cirurgia\nde redesignação pelo SUS, com acompanhamento adequado. Políticas de prevenção de Infecções\nSexualmente Transmissíveis (ISTs) e tratamento para pessoas com HIV, especialmente nas\nperiferias.\nContra a patologização das identidades LGBTI+: não às “curas gays”! Educação sexual nas escolas\ne fim do financiamento de comunidades terapêuticas e manicômios.\nPelo direito de existir, contra o apartheid trans! Trabalho, direitos, renda e dignidade! Cotas trans\nnas universidades e concursos públicos, rumo ao pleno emprego!\nPor banheiros multigênero em órgãos públicos e o direito de pessoas trans e não binárias usarem\no banheiro em que se sintam seguras.\nEmprego, qualificação profissional e políticas públicas para travestis e transexuais que queiram sair\nda prostituição.\n\nPovos Indígenas\nAo lado da escravidão, houve no Brasil um genocídio indígena. A luta que derrubou a ditadura conquistou a\nreserva das terras indígenas como forma de impedir esse extermínio, inscrevendo esse direito na\nConstituição de 1988 — direito que, como tantos outros, permanece incompleto. Na prática, mineradoras,\nmadeireiras, o agronegócio e grandes proprietários, apoiados por seus jagunços e pela omissão — quando\nnão ação direta — do Estado, seguem avançando sobre esses territórios. Apropriam-se da terra,\ncontaminam rios e solos, promovem massacres e impõem instrumentos como o Marco Temporal, que\nfunciona como um bloqueio à demarcação e à própria sobrevivência dos povos indígenas.\nNo Amazonas, onde se concentra a maior população indígena do país, essa ofensiva assume caráter ainda\nmais brutal. Em meio à pressão permanente de invasores e à expansão predatória da fronteira econômica,\npovos originários resistem para manter seus territórios e modos de vida. Ao mesmo tempo, nas cidades,\nenfrentam o racismo, o preconceito e a negação de sua identidade, sendo empurrados para a invisibilidade.\nO estado revela, assim, de forma concentrada, uma contradição profunda: de um lado, a riqueza histórica,\ncultural e territorial dos povos indígenas; de outro, a continuidade de um modelo de exploração que ameaça\nsua existência física e social.\nGarantia e Proteção dos Territórios Indígenas\n•\n•\n•\n\nApoiar a luta pela demarcação, homologação e proteção das terras indígenas.\nIntensificar a fiscalização contra invasões, garimpo ilegal e desmatamento. Fora a Potássio do Brasil\ndas Terras Muras!!\nFortalecer órgãos de proteção territorial com participação indígena.\n\nSaúde Indígena Diferenciada\n•\n•\n•\n\nReforçar o subsistema de saúde indígena com ampliação dos DSEIs10.\nGarantir acesso à saúde de qualidade, respeitando práticas tradicionais.\nImplementar políticas específicas para indígenas em áreas urbanas.\n\nEducação Indígena Intercultural\n•\n•\n\n10\n\nReforçar os programas já existentes na UEA, relativos à formação, tais como: educação bilíngue e\nintercultural nas aldeias, formação e valorização de professores indígenas ;\nCombater o racismo e promover a cultura indígena nas escolas urbanas.\n\nDistritos Sanitários Especiais indígenas\n\n20"
+          },
+          {
+            "id": "trabalho-e-renda",
+            "titulo": "Trabalho e Renda",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Trabalho e Renda\n•\n•\n\nApoiar atividades econômicas tradicionais próprios de sua reprodução social\nGarantir acesso ao emprego formal respeitando suas identidades culturais.\n\nMoradia e Direitos Urbanos\n•\n•\n\nDesenvolver políticas habitacionais específicas para indígenas nas cidades.\nGarantir reconhecimento e acesso a direitos sociais fora das aldeias.\n\nParticipação Política e Autonomia\n•\n•\n•\n\nGarantir consulta prévia em projetos que afetem territórios indígenas.\nParticipação nos Conselhos Populares enquanto órgãos de poder e decisões\nDireito de organização de autodefesa em situações concretas de ameaças ou invasões de seus\nterritórios\n\nCombate à Violência e Racismo\n•\n•\n•\n\nImplementar políticas de proteção às lideranças indígenas.\nCombater a discriminação, o preconceito e todas as formas de racismo .\nGarantir segurança nas comunidades e áreas urbanas.\n\nImigrantes e refugiados\nA crise migratória recente expõe uma nova face das desigualdades sociais no Amazonas. Haitianos e\nvenezuelanos chegam em busca de sobrevivência, fugindo da fome, da crise econômica e da violação de\ndireitos, mas encontram acolhimento insuficiente, ausência de políticas estruturadas e forte precariedade.\nApesar das diferenças no status jurídico – Venezuelanos (refugiados) e haitianos (imigrantes) —, ambos\nenfrentam barreiras à integração e são facilmente empurrados para a informalidade e o abandono.\nInseridos nos setores mais precarizados da economia, esses trabalhadores ocupam empregos instáveis e\nmal remunerados, tornando-se ainda mais vulneráveis à exploração, agravada pela discriminação, pelo\nracismo e pela xenofobia. Diante disso, é necessário romper com essa lógica e construir uma política pública\nde acolhimento e integração baseada em direitos, com garantia de documentação, acesso à moradia, saúde\ne educação, além de qualificação profissional e inserção digna no mercado de trabalho.\nAo mesmo tempo, é preciso enfrentar a exploração e a discriminação, por meio de:\n•\n•\n\nCombate à informalidade e às práticas abusivas no trabalho, com fiscalização efetiva;\nDireito imediato à nacionalidade: garantia de direitos iguais para trabalhadores brasileiros e\nestrangeiros;\n• Implementação de políticas de combate ao racismo e à xenofobia, com campanhas públicas e ações\ninstitucionais;\n• Fortalecimento de redes de acolhimento com participação das próprias comunidades migrantes;\n• Criação de mecanismos que impeçam que a inserção desses trabalhadores seja utilizada para\naprofundar a precarização geral.\n➢ A classe trabalhadora é uma só, seja brasileira, seja estrangeira\n\nJuventude e perspectiva de futuro\nA juventude brasileira enfrenta enormes desafios. Milhões de jovens convivem com o desemprego, a\nprecarização do trabalho, as dificuldades de acesso à educação, a violência, a exclusão social e a falta de\nperspectivas. Ao mesmo tempo, as novas gerações já vivem os impactos de transformações tecnológicas,\n21"
+          },
+          {
+            "id": "economicas-e-ambientais-em-curso-nas-quais-o-avanco-da-automacao-da-inte",
+            "titulo": "econômicas e ambientais em curso, nas quais o avanço da automação, da inteligência artificial e das",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "econômicas e ambientais em curso, nas quais o avanço da automação, da inteligência artificial e das\nmudanças climáticas tende a redefinir profundamente suas condições de vida.\nNo Amazonas, essas contradições assumem formas mais agudas, marcadas pelas particularidades da\nrealidade amazônica. Em um estado com população majoritariamente jovem — concentrada nas faixas entre\n15 e 29 anos — o desemprego, a informalidade e a precarização se combinam com desigualdades no\nacesso à educação, sobretudo no ensino médio. No interior, a dispersão territorial, as dificuldades de\ntransporte e a insuficiência de infraestrutura educacional intensificam a evasão escolar e restringem as\npossibilidades de formação e inserção social.\nInserida nesse contexto, a juventude amazonense também se encontra no epicentro das transformações\nque articulam reestruturação produtiva e disputas sobre os recursos naturais da região. As mudanças\ntecnológicas tendem a aprofundar a exclusão de jovens já marcados por desigualdades educacionais11,\nenquanto as mudanças climáticas e a expansão de atividades econômicas predatórias afetam diretamente\nsuas condições de vida, especialmente entre jovens indígenas, ribeirinhos e das periferias urbanas. Dessa\nforma, seus desafios ultrapassam a inserção no trabalho e envolvem o direito à educação, ao território e à\nconstrução de um futuro que rompa com as desigualdades históricas da Amazônia.\nAssim, um programa próprio para a juventude amazonense precisaria incorporar, além das pautas gerais,\nelementos como: direito ao território e à permanência nas comunidades, políticas de circulação (transporte\nfluvial, conectividade), valorização de identidades afro-indígenas e caboclas, fortalecimento de redes\nculturais locais, e construção de alternativas econômicas que não subordinem a juventude à destruição\nambiental ou ao trabalho precário urbano. Em síntese, trata-se de um projeto que articule juventude, território\ne futuro, reconhecendo que, na Amazônia, essas dimensões são inseparáveis.\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n\nIntegração entre ensino médio, formação técnica e saberes locais (tradicionais, comunitários)\nIncentivo à produção cultural, científica e tecnológica juvenil\nAcesso à internet e inclusão digital como direito básico\nCombate à precarização e ao trabalho informal imposto\nUrbanização de bairros periféricos com infraestrutura e equipamentos públicos\nAcesso à cultura, esporte e lazer como política permanente\nEnfrentamento à violência (inclusive policial) que atinge a juventude (Apoiar a luta pela revogação\nda Lei Antidrogas)\nEspaços públicos seguros e apropriáveis pela juventude\nProteção de modos de vida de jovens indígenas, ribeirinhos e tradicionais\nAlternativas econômicas à exploração predatória\nAcesso a serviços de saúde nas periferias e no interior\nEducação sexual e reprodutiva\nPolíticas específicas para juventude negra, indígena, LGBTQIA+ e periférica\nIncentivo à auto-organização e ao protagonismo juvenil, a começar por Grêmios livres, centros\nacadêmicos e outras formas organizativas relacionadas a cultura, a arte, à música, etc.\nParticipação nos Conselhos Populares – órgãos com poder de decisão deliberativo.\n\n“Dos 271.287 estudantes de 13 a 17 anos no Amazonas, apenas 37,6% possuem computador ou notebook\nem casa, o equivalente a 102 mil alunos, segundo pesquisa do IBGE (...) divulgada nesta quarta-feira (25). O\nlevantamento mostra diferenças relevantes no acesso a recursos entre estudantes das redes pública e\nprivada. Entre os alunos matriculados em escolas públicas, o percentual de acesso a computador é de 34,1%,\nenquanto entre estudantes da rede privada chega a 87,9%” (Cf. Amazonas Atual, 2026).\n11\n\n22"
+          },
+          {
+            "id": "iv-um-governo-socialista-da-classe-trabalhadora",
+            "titulo": "IV – Um governo socialista da classe trabalhadora",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "IV – Um governo socialista da classe trabalhadora\nNosso governo não se propõe a gerir o Estado burguês, mas a superá-lo por meio da organização e\nmobilização da classe trabalhadora. Defendemos um governo dos trabalhadores, baseado na democracia\noperária, sustentado por conselhos populares nos locais de trabalho, moradia e estudo, com representantes\neleitos e com mandatos revogáveis a qualquer momento. É a classe trabalhadora, organizada de forma\nindependente, que deve decidir os rumos da sociedade, rompendo com a lógica de conciliação com a\nburguesia e com os limites da democracia representativa.\nNosso programa aponta para a ruptura com o capitalismo, com a expropriação dos grandes meios de\nprodução, dos bancos e dos setores estratégicos da economia, colocando-os sob controle dos trabalhadores\ne a serviço das necessidades sociais. Defendemos um planejamento econômico democrático, sustentado\npela mobilização permanente e articulado a uma perspectiva internacionalista. A luta contra o racismo, o\nmachismo e a LGBTfobia é parte inseparável desse processo, pois não há emancipação real sem enfrentar\ntodas as formas de opressão que estruturam a sociedade capitalista.\nConsiderações finais\nO presente programa parte da compreensão de que a realidade do Amazonas não pode ser analisada de\nforma isolada, mas como expressão concreta de uma totalidade marcada pela crise estrutural do capitalismo\ne pela dependência econômica, tecnológica e política do Brasil. Nesse sentido, as propostas aqui\napresentadas articulam medidas imediatas — voltadas à melhoria das condições de vida da população —\ncom transformações de caráter estrutural, apontando para a necessidade de reorganizar a economia, o\nEstado e as relações sociais em novas bases. A superação das desigualdades históricas, da exploração do\ntrabalho e da destruição ambiental na região exige mudanças profundas que não se limitam ao âmbito local,\nmas se vinculam a um projeto mais amplo de transformação nacional.\nAo mesmo tempo, este não é um programa fechado. Ele se apresenta como um ponto de partida para o\ndebate com a classe trabalhadora, a juventude, os povos indígenas, quilombolas, mulheres, negros e\nnegras, LGBTI+, imigrantes, PCDs e demais setores populares do Amazonas. Ao longo da campanha, será\nfundamental incorporar novas contribuições, experiências e demandas concretas que emergem das lutas e\nda realidade vivida pela população. É nesse processo coletivo, de diálogo e construção política, que o\nprograma poderá se fortalecer, se aprofundar e se tornar uma ferramenta efetiva de organização e\ntransformação social.\n\n23"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "9a1c8a58dd562f531dfa805a8a8f8a2032af8d00087e632201922208708c2ae7"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "1b8a7f3b4d2551c51bbca81e1941ad20327bc2fe538cfe137a892524709e864b"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "fdfd6a4ba1fb90939c4948234e002282d796afa66e16f59f69e31371af828af5"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "0383702251a071d7f2546f336f53abd876f8a3c639a4a4acda24c4a11b4d5d46"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "47a57f78519ffbe24053e790716a89895a27ff667457eadd4e9a24fe67a2825d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "0065567207583e8da09a11bf9d1abdfc1e2e376838fcbf89e8b56cac22d276cb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "971e77bbb838c2231df387413395500c73f23689d4c6c259a13220584b84f93a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a3ffcee3d6da9661c33b0811102778e11964afcede9a09cf4f925f0321914fe7"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "8269e2c11b557c6aac92cd59a16f6d61ed12684794b8da0e488882904254fad9"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "7a382f2f62f7b703adbee7af17abc126662f017d1f62ff3aa497e3c16c6bf543"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "daef6197abe89328afd6be16799c45c2febaa7212449eabcdd3bc0f96e2b9467"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "b36394443a6a043325fac287a82a83458984de5b1882ff90e20d544aaa29b2b0"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "45974babbde15c980dd00443051c91e73060c61c2e88788445943490ed7a5120"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "81d6ae86a8e686d63c255246dffc8eeef346d5c432bd9894bfb4533a5062938a"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "2a90b684134ac56ebab14cb0bf51c6d6f51307aa9fef0eb1d5f8331e28dd46ce"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "38f353f3809423167f38dfeee0b7e00f03eccc0a52a0db32b2f7ad97be7ba132"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "e410ce727cb3b51dbbd27be730550a5a7bae6dd5e6d6e38a73a591999e074d70"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "9534638b348d109d823e600482bf14c0424c439338c160a86b945e1cc1e1178a"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "a719250ae44ca3a05f34b0d262a4e2c49c5155b548fa930fe4b19e77e1b1b641"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "98494f32999b52f803a06f294cf01ce72214b24633b66af5fcd31f75dfea8f9a"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "633b0889a08819a5a0d2343f6f5d2c440ecb8cff9e3fb234b903dff0318f1c1e"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "bf3a9a95b6d59422ccea7afddf2cee9f12d75557421bd22ad436dc6a4c74a7a8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "e3643c4e15e46c8f6cb5b76fb96b4fcf4743dd0d3eb6d69340d3b92770e4738e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos. O programa propõe ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos. O programa propõe combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental. O programa propõe garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica. O programa apoia a luta pela redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos. O programa propõe o fortalecimento do SUS no estado. O programa propõe garantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua implementação nos municípios.",
+    "frases": [
+      {
+        "texto": "O programa propõe condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 7,
+            "trecho": "Condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos, transferência tecnológica, formação profissional e integração com cadeias produtivas regionais."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 7,
+            "trecho": "Ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 8,
+            "trecho": "Combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 8,
+            "trecho": "Garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica."
+          }
+        ]
+      },
+      {
+        "texto": "O programa apoia a luta pela redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 9,
+            "trecho": "Apoiar a luta pela redução da jornada de trabalho para 36hs, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego)."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o fortalecimento do SUS no estado.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 10,
+            "trecho": "Fortalecimento do SUS no estado."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe garantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua implementação nos municípios.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 11,
+            "trecho": "Garantir acessibilidade universal nos serviços e equipamentos do Estado e induzir sua implementação nos municípios, por meio de financiamento, apoio técnico e exigência de critérios de acessibilidade nos repasses públicos."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "empregos-zfm",
+        "titulo": "Empregos na ZFM",
+        "descricao": "Condicionamento dos incentivos públicos às empresas da ZFM à geração de empregos dignos.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 7,
+            "trecho": "Condicionar os incentivos públicos às empresas da ZFM à geração de empregos dignos, transferência tecnológica, formação profissional e integração com cadeias produtivas regionais."
+          }
+        ]
+      },
+      {
+        "id": "pesquisa-e-inovacao",
+        "titulo": "Pesquisa e inovação",
+        "descricao": "Ampliação dos investimentos públicos em pesquisa e inovação.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 7,
+            "trecho": "Ampliar investimentos públicos em pesquisa e inovação, fortalecendo a articulação entre universidades, institutos de pesquisa e setores produtivos estratégicos."
+          }
+        ]
+      },
+      {
+        "id": "recursos-naturais",
+        "titulo": "Recursos naturais",
+        "descricao": "Combate à exploração predatória dos recursos naturais.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 8,
+            "trecho": "Combater a exploração predatória dos recursos naturais, assegurando que a riqueza amazônica esteja subordinada aos interesses sociais e à preservação ambiental."
+          }
+        ]
+      },
+      {
+        "id": "eletrificacao-renovavel",
+        "titulo": "Eletrificação renovável",
+        "descricao": "Garantia de eletrificação universal do interior com energias renováveis.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 8,
+            "trecho": "Garantir a eletrificação universal do interior com energias renováveis e tecnologias adequadas à realidade amazônica."
+          }
+        ]
+      },
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Apoio à redução da jornada de trabalho para 36 horas.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 9,
+            "trecho": "Apoiar a luta pela redução da jornada de trabalho para 36hs, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego)."
+          }
+        ]
+      },
+      {
+        "id": "fortalecimento-do-sus",
+        "titulo": "Fortalecimento do SUS",
+        "descricao": "Fortalecimento do SUS no estado.",
+        "evidencias": [
+          {
+            "documentoId": "AM:40002535267:01",
+            "pagina": 10,
+            "trecho": "Fortalecimento do SUS no estado."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:19:52.628Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:22:13.831Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação nem na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre incentivos à ZFM."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:1:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula citada na afirmação está integralmente coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:2:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente sobre recursos naturais."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:3:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:4:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 36 horas está sustentado literalmente ('36hs')."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:5:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas citadas na afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre saúde/SUS."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:6:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho literal confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única sobre acessibilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:frase:7:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula citada integralmente coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra em formato de rótulo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:empregos-zfm:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:pesquisa-e-inovacao:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:recursos-naturais:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:eletrificacao-renovavel:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 36 horas está sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:jornada-de-trabalho:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:suporte",
+        "verdict": "yes",
+        "reason": "Resumo fiel ao trecho original."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AM:40002535267:tema:fortalecimento-do-sus:documentos:AM:40002535267:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula do resumo coberta pela evidência."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AM:40002535267",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AM:40002535267:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28485,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 23066,
+          "output_tokens_details": {
+            "thinking_tokens": 417
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28485,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 23066,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28485,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28485
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3667414
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "2557b58b200977be56d5e7949455eac4c951336551ae9365af4f06a31b5b2629",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:24:46.422Z",
+    "sourceSha256": "ef372dbb4f3dd92de436642f04d31fc73cbbde726d43fd057079c0700397a1c4",
+    "extractedTextSha256": "90b16159f95583e2dfbf1e37b7a2867d9128a05851a61a9bf90eb6dcefc26dde",
+    "documentCount": 1,
+    "documentSetSha256": "82a8538a1fb8bf14ba32b0c05f4415dffb9ad959c233deb2c1393a2229a1203a",
+    "contentSha256": "b8009c9007d59699e34ecdd4afa5c8054308015280539a6a3757b321555fa5c9"
+  }
+}

@@ -161,6 +161,9 @@ export type ProgramaGovernoGovCliOptions = {
   modelsConfigPath?: string
   cachePassagensDir?: string
   multipassagemLimiteBytes?: number
+  forceFacts?: boolean
+  repairGuidance?: string
+  repairFactsLimit?: number
   sqCandidato?: string
   planOnly?: boolean
   faseDir?: string
@@ -226,12 +229,34 @@ export function parseProgramaGovernoGovernadoresArgs(argv: readonly string[]): P
   if (sqCandidato !== undefined && !/^\d{11,12}$/u.test(sqCandidato.trim())) {
     throw new Error("--sq-candidato deve ser o SQ_CANDIDATO oficial de 11 ou 12 digitos")
   }
+  const rawMultipassagemLimite = valueArg(argv, "--multipassagem-limite-bytes")
+  const multipassagemLimiteBytes = rawMultipassagemLimite === undefined ? undefined : Number(rawMultipassagemLimite)
+  if (multipassagemLimiteBytes !== undefined && (!Number.isInteger(multipassagemLimiteBytes) || multipassagemLimiteBytes < 1_024)) {
+    throw new Error("--multipassagem-limite-bytes deve ser um inteiro de pelo menos 1024")
+  }
+  const repairGuidance = valueArg(argv, "--repair-guidance")?.trim()
+  if (repairGuidance !== undefined && (
+    repairGuidance.length === 0
+    || repairGuidance.length > 2_000
+    || /[\u0000-\u001f\u007f]/u.test(repairGuidance)
+  )) {
+    throw new Error("--repair-guidance deve ter entre 1 e 2000 caracteres, sem controles")
+  }
+  const rawRepairFactsLimit = valueArg(argv, "--repair-facts-limit")
+  const repairFactsLimit = rawRepairFactsLimit === undefined ? undefined : Number(rawRepairFactsLimit)
+  if (repairFactsLimit !== undefined && repairFactsLimit !== 6) {
+    throw new Error("--repair-facts-limit deve ser 6")
+  }
   return {
     ufs: ufs.sort(),
     inventoryPath: resolve(inventoryPath),
     archiveDir: resolve(archiveDir),
     outputDir: resolve(outputDir),
     ...(sqCandidato !== undefined ? { sqCandidato: sqCandidato.trim() } : {}),
+    ...(multipassagemLimiteBytes !== undefined ? { multipassagemLimiteBytes } : {}),
+    ...(argv.includes("--force-fatos") ? { forceFacts: true } : {}),
+    ...(repairGuidance !== undefined ? { repairGuidance } : {}),
+    ...(repairFactsLimit !== undefined ? { repairFactsLimit } : {}),
     ...(argv.includes("--plan-only") ? { planOnly: true } : {}),
     ...(valueArg(argv, "--models-config") ? { modelsConfigPath: resolve(valueArg(argv, "--models-config")!) } : {}),
     ...(valueArg(argv, "--cache-dir") ? { cachePassagensDir: resolve(valueArg(argv, "--cache-dir")!) } : {}),
@@ -343,7 +368,7 @@ function estimarPassagens(
 }
 
 export function planejarFilaProgramaGovernoGovernadores(
-  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes">,
+  options: Pick<ProgramaGovernoGovCliOptions, "ufs" | "sqCandidato" | "multipassagemLimiteBytes" | "forceFacts">,
   inventory: ProgramaGovernoGovInventory,
 ): ProgramaGovernoGovFilaItem[] {
   assertInventoryScope(inventory, options.ufs)
@@ -376,6 +401,8 @@ export function planejarFilaProgramaGovernoGovernadores(
     const totalPaginas = documentos.reduce((acumulado, documento) => acumulado + documento.paginas, 0)
     const bytesTextoExtraidos = documentos.reduce((acumulado, documento) => acumulado + documento.textoExtraidoBytes, 0)
     const estimativa = estimarPassagens(documentos, limite, candidate.chave)
+    const fatosForcados = options.forceFacts === true && !estimativa.multipassagem
+    const usaPipelineFatos = options.forceFacts === true || estimativa.multipassagem
     const usaModelos = candidate.fonteEstado === "documento_oficial_encontrado"
       && candidate.identidadeEstado === "confirmada"
       && candidate.perfilEstado === "vinculado"
@@ -396,11 +423,11 @@ export function planejarFilaProgramaGovernoGovernadores(
       totalPaginas,
       bytesTextoExtraidos,
       bytesEntradaEstimados: estimativa.bytesEntrada,
-      multipassagem: estimativa.multipassagem,
+      multipassagem: usaPipelineFatos,
       passagensPlanejadas: estimativa.passagens,
       chaveCacheDir: createHash("sha256").update(candidate.chave).digest("hex").slice(0, 16),
       usaModelos,
-      custoEstimado: Number((estimativa.passagens + totalPaginas / 300).toFixed(3)),
+      custoEstimado: Number((estimativa.passagens + (fatosForcados ? 1 : 0) + totalPaginas / 300).toFixed(3)),
     }
   })
 }
@@ -534,9 +561,14 @@ function assertLiteralEvidence(
   }
 }
 
-function generatorInput(identityKey: string, documents: readonly ProgramaGovernoDocumento[]): ProgramaGovernoGeneratorInput {
+function generatorInput(
+  identityKey: string,
+  documents: readonly ProgramaGovernoDocumento[],
+  repairGuidance?: string,
+): ProgramaGovernoGeneratorInput {
   return {
     identityKey,
+    ...(repairGuidance ? { repairGuidance } : {}),
     documentos: documents.map((document) => ({
       documentoId: document.documentoId,
       paginas: document.extracao.secoes.map((section) => ({
@@ -644,6 +676,14 @@ export function validarFatosCacheadosProgramaGoverno(
   return fatosValidados.length === fatos.length ? fatosValidados : null
 }
 
+export function selecionarFatosParaSinteseDeReparo(
+  fatos: readonly ProgramaGovernoFato[],
+  limite = 6,
+): ProgramaGovernoFato[] {
+  if (fatos.length <= limite) return [...fatos]
+  return Array.from({ length: limite }, (_, index) => fatos[Math.round(index * (fatos.length - 1) / (limite - 1))])
+}
+
 async function gerarResumoProgramaGovernoMultipassagem(params: {
   identityKey: string
   nomeUrna: string
@@ -655,6 +695,8 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   modelos: ProgramaGovernoModelAdapters
   adapters: ProgramaGovernoGovIngestionAdapters
   limiteBytes: number
+  repairGuidance?: string
+  repairFactsLimit?: number
 }): Promise<{ output: ProgramaGovernoResumo; metrics: ProgramaGovernoMultipassagemMetrics; metadata: { promptVersion: string } }> {
   const { identityKey, extracted, modelos, adapters } = params
   const extrairFatos = modelos.extrairFatosPassagem
@@ -668,7 +710,7 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
     limiteBytes,
     instructions: PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS,
     schema: PROGRAMA_GOVERNO_FATOS_SCHEMA,
-    criarInput: (docs) => ({ identityKey, documentos: docs }),
+    criarInput: (docs) => ({ identityKey, documentos: docs, ...(params.repairGuidance ? { repairGuidance: params.repairGuidance } : {}) }),
   })
   const subDiretorio = resolve(params.cacheDir, createHash("sha256").update(identityKey).digest("hex").slice(0, 16))
   await adapters.ensureDir(subDiretorio)
@@ -681,11 +723,15 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
     retriesPassagem: 0,
     chamadasSintese: 0,
     retriesSintese: 0,
-    fingerprint: calcularFingerprintProgramaGovernoPassagens(planos, {
-      name: modelos.generator.name,
-      version: modelos.generator.version,
-      promptVersion: params.promptVersion,
-    }),
+    fingerprint: sha256(JSON.stringify({
+      passagens: calcularFingerprintProgramaGovernoPassagens(planos, {
+        name: modelos.generator.name,
+        version: modelos.generator.version,
+        promptVersion: params.promptVersion,
+      }),
+      repairGuidance: params.repairGuidance ?? null,
+      repairFactsLimit: params.repairFactsLimit ?? null,
+    })),
     promptVersoes: {
       fatosPassagem: `${params.promptVersion}/fatos-passagem`,
       sinteseFatos: `${params.promptVersion}/sintese-fatos`,
@@ -701,6 +747,8 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
       documentosHashes: params.documentosHashes,
       modelo: { name: modelos.generator.name, version: modelos.generator.version },
       promptVersion: params.promptVersion,
+      repairGuidance: params.repairGuidance ?? null,
+      repairFactsLimit: params.repairFactsLimit ?? null,
       planejador: PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_PLANNER_VERSION,
       limiteBytes,
       indice: plano.indice,
@@ -734,7 +782,11 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
     } catch {
       // cache miss ou corrompido: reexecuta apenas esta passagem
     }
-    const resultado = await extrairFatos.call(modelos, { identityKey, documentos: plano.documentos })
+    const resultado = await extrairFatos.call(modelos, {
+      identityKey,
+      documentos: plano.documentos,
+      ...(params.repairGuidance ? { repairGuidance: params.repairGuidance } : {}),
+    })
     if (resultado.metadata.promptVersion !== metrics.promptVersoes.fatosPassagem) {
       throw new Error(`multipassagem: prompt de fatos stale ${resultado.metadata.promptVersion}`)
     }
@@ -765,7 +817,15 @@ async function gerarResumoProgramaGovernoMultipassagem(params: {
   if (fatosLiterais.length === 0) {
     throw new Error(`multipassagem: nenhum fato literal sobreviveu das ${planos.length} passagem(oes)`)
   }
-  const sintese = await sintetizarDeFatos.call(modelos, { identityKey, fatos: fatosLiterais })
+  const fatosParaSintese = params.repairFactsLimit
+    ? selecionarFatosParaSinteseDeReparo(fatosLiterais, params.repairFactsLimit)
+    : fatosLiterais
+  const sintese = await sintetizarDeFatos.call(modelos, {
+    identityKey,
+    fatos: fatosParaSintese,
+    ...(params.repairGuidance ? { repairGuidance: params.repairGuidance } : {}),
+    ...(params.repairFactsLimit ? { requireDistinctSentenceFacts: true } : {}),
+  })
   if (sintese.metadata.promptVersion !== metrics.promptVersoes.sinteseFatos) {
     throw new Error(`multipassagem: prompt de sintese stale ${sintese.metadata.promptVersion}`)
   }
@@ -926,6 +986,9 @@ async function ingestCandidate(
   adapters: ProgramaGovernoGovIngestionAdapters,
   passagensCacheDir: string,
   multipassagemLimiteBytes: number,
+  forceFacts: boolean,
+  repairGuidance?: string,
+  repairFactsLimit?: number,
   faseDir?: string,
   extractCacheDir?: string,
 ): Promise<ProgramaGovernoGovIngestionRecord> {
@@ -972,11 +1035,11 @@ async function ingestCandidate(
   try {
     if (!models) throw new Error("configuracao de generator e judge ausente")
     const expectedPrompts = programaGovernoExpectedPromptVersions(source)
-    const entradaCompleta = generatorInput(candidate.chave, extracted)
+    const entradaCompleta = generatorInput(candidate.chave, extracted, repairGuidance)
     await gravarFase(adapters, faseDir, candidate, "gerador.iniciado")
     let generated: { output: ProgramaGovernoResumo; metadata: { name: string; version: string; promptVersion: string; attempts: number } }
     let metricasMultipassagem: ProgramaGovernoMultipassagemMetrics | undefined
-    if (envelopeExcedeLimite(
+    if (forceFacts || envelopeExcedeLimite(
       PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
       PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
       entradaCompleta,
@@ -993,6 +1056,8 @@ async function ingestCandidate(
         modelos: models,
         adapters,
         limiteBytes: multipassagemLimiteBytes,
+        repairGuidance,
+        repairFactsLimit,
       })
       generated = {
         output: multipass.output,
@@ -1164,6 +1229,9 @@ export async function ingestProgramaGovernoGovernadores(
       adapters,
       options.cachePassagensDir ? resolve(options.cachePassagensDir) : resolve(options.outputDir, ".cache-passagens"),
       options.multipassagemLimiteBytes ?? PROGRAMA_GOVERNO_GOV_MULTIPASSAGEM_LIMITE_BYTES,
+      options.forceFacts === true,
+      options.repairGuidance,
+      options.repairFactsLimit,
       options.faseDir ? resolve(options.faseDir) : undefined,
       options.extractCacheDir ? resolve(options.extractCacheDir) : undefined,
     )

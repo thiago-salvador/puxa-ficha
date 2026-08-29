@@ -143,6 +143,36 @@ test("substitui evidencias dos fatos referenciados e falha fechado", () => {
   assert.throws(() => substituirEvidenciasFato(desconhecido, fatos), /fato desconhecido/)
   assert.throws(() => validarResultadoProgramaGovernoMultipassagem(desconhecido, fatos), /desconhecido/)
 
+  const fatoReutilizado = {
+    texto: "resumo",
+    frases: [
+      { texto: "primeira frase", fatos: ["f-1-1"] },
+      { texto: "segunda frase", fatos: ["f-1-1"] },
+    ],
+    temas: base.temas,
+  }
+  assert.throws(
+    () => validarResultadoProgramaGovernoMultipassagem(fatoReutilizado, fatos, { impedirReusoEntreFrases: true }),
+    /reutiliza fato f-1-1 entre frases/,
+  )
+
+  const fatosComMesmaEvidencia = [
+    fatos[0],
+    { ...fatos[0], id: "f-1-2", texto: "outro rótulo para o mesmo span" },
+  ]
+  const evidenciaReutilizada = {
+    texto: "resumo",
+    frases: [
+      { texto: "primeira frase", fatos: ["f-1-1"] },
+      { texto: "segunda frase", fatos: ["f-1-2"] },
+    ],
+    temas: base.temas,
+  }
+  assert.throws(
+    () => validarResultadoProgramaGovernoMultipassagem(evidenciaReutilizada, fatosComMesmaEvidencia, { impedirReusoEntreFrases: true }),
+    /reutiliza evidencia entre frases/,
+  )
+
   const semReferencia = {
     texto: "resumo",
     frases: [{ texto: "resumo fr" }],

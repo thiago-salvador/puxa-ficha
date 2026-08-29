@@ -1,0 +1,840 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RS",
+    "sqCandidato": "210002533355",
+    "slug": "priscila-voigt",
+    "nomeUrna": "PRISCILA VOIGT",
+    "partido": "UP",
+    "arquivoNome": "2026RS210002533355_01.pdf",
+    "arquivoNoPacote": "RS/2026RS210002533355_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RS:210002533355:01",
+      "fonte": {
+        "arquivoNome": "2026RS210002533355_01.pdf",
+        "arquivoNoPacote": "RS/2026RS210002533355_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "63661f8ce376bac8b76e986ffe8a2031e25bf1ce078e137bb0686116b63637cc",
+        "extractedTextSha256": "8bbb4fd87043bf826a4d14426cb9ce0f16976ab1617f6a21d0e787262341dd51",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-up-para-o-governo-do",
+            "titulo": "​PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO (UP) PARA O GOVERNO DO​",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "​PROGRAMA DA UNIDADE POPULAR PELO SOCIALISMO (UP) PARA O GOVERNO DO​\n​ESTADO DO RIO GRANDE DO SUL (RS)​\n​A​ ​Unidade​ ​Popular​ ​(UP),​ ​o​ ​partido​ ​antifascista​ ​do​ ​Brasil,​ ​partido​ ​da​ ​esquerda​\n​revolucionária,​ ​legalmente​​existente​​a​​partir​​de​​dezembro​​de​​2019,​​disputará​​as​​eleições​\n​gerais de 2026, em todos os cargos no Rio Grande do Sul.​\n​A​ ​UP​​é​​construída​​por​​vários​​movimentos​​sociais,​​como​​o​​Movimento​​de​​Luta​​dos​\n​Bairros,​​Vilas​​e​​Favelas​​(MLB),​​o​​Movimento​​de​​Mulheres​​Olga​​Benario,​​o​​Movimento​​Luta​\n​de​ ​Classes​ ​(MLC),​ ​a​ ​Frente​ ​Negra​ ​Revolucionária​ ​(FNR),​ ​o​ ​Movimento​ ​Correnteza,​ ​que​\n​organiza​ ​os​ ​estudantes​ ​universitários,​ ​e​ ​o​ ​Movimento​ ​Rebele-se,​ ​que​ ​organiza​ ​os​\n​estudantes​ ​secundaristas,​ ​e​ ​a​ ​União​ ​da​ ​Juventude​ ​Rebelião​ ​(UJR),​ ​que​ ​organiza​ ​a​\n​juventude​ ​para​ ​lutar​ ​pelo​ ​socialismo.​ ​Logo,​ ​é​ ​composta​ ​de​ ​militantes​ ​de​ ​movimentos​\n​populares​ ​e​ ​de​ ​trabalhadores​ ​e​ ​trabalhadoras​ ​de​ ​grande​ ​atuação​ ​nas​ ​suas​ ​respectivas​\n​áreas​ ​e​ ​territórios.​ ​Seus​ ​candidatos​ ​são​ ​desses​ ​setores​ ​e​ ​representarão​ ​essas​ ​lutas​ ​nos​\n​seus mandatos.​\n​A​ ​UP​ ​não​ ​tem​​o​​objetivo​​de​​apenas​​eleger​​candidatos​​para​​a​​atuação​​parlamentar​\n​ou​ ​governamental​ ​dentro​ ​de​ ​gabinetes​ ​fechados,​ ​longe​ ​das​ ​ruas​ ​e​ ​das​ ​lutas​ ​da​ ​classe​\n​trabalhadora.​​A​​atuação​​desses​​parlamentares​​eleitos​​deve​​ser​​revolucionária,​​continuar​​e​\n​ampliar​ ​os​ ​movimentos​ ​e​ ​lutas​ ​que​ ​constroem,​ ​dar​ ​apoio​ ​a​ ​outros,​ ​estimular​ ​a​\n​participação​ ​popular​ ​e​ ​dos​ ​trabalhadores​ ​sempre,​ ​incluindo​ ​as​ ​lutas​​do​​povo​​negro,​​dos​\n​povos indígenas, quilombolas e da comunidade LGBTIA+.​\n​Queremos​ ​ter​ ​governadores​ ​(as),​ ​senadores​ ​(as)​ ​e​ ​deputados​ ​(as)​ ​que​ ​estejam​\n​presentes​ ​nas​ ​periferias,​ ​que​ ​pisem​ ​no​ ​chão​ ​das​ ​ocupações,​ ​que​ ​atendam​ ​as​\n​reivindicações​ ​dos​ ​trabalhadores,​ ​que​ ​estimulem​ ​a​ ​construção​ ​de​ ​casas​ ​populares,​ ​que​\n​ouçam​​os​​movimentos​​sindicais,​​operários​​e​​demais​​organizações​​populares.​​Dessa​​forma,​\n​compreendemos​​que​​a​​Presidência​​da​​República​​deve​​atuar​​nesta​​política​​revolucionária​​e​\n​popular​ ​ao​ ​invés​ ​de​ ​restringir​ ​sua​ ​atuação​ ​no​​Palácio​​do​​Planalto,​​em​​reuniões​​fechadas​\n​com os ministros e recebendo grandes capitalistas e banqueiros.​\n​Este​ ​programa​ ​é​ ​fruto​ ​de​ ​debates​ ​e​ ​discussões​ ​de​ ​centenas​ ​de​ ​companheiros​ ​e​\n​companheiras,​​filiados​​e​​aliados,​​de​​todos​​os​​níveis,​​com​​propostas​​para​​o​​governo​​do​​Rio​"
+          },
+          {
+            "id": "grande-do-sul-para-ser-amplamente-discutido-e-divulgado-junto-a-populaca",
+            "titulo": "​Grande​​do​​Sul,​​para​​ser​​amplamente​​discutido​​e​​divulgado,​​junto​​à​​população,​​nas​​praças,​",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "​Grande​​do​​Sul,​​para​​ser​​amplamente​​discutido​​e​​divulgado,​​junto​​à​​população,​​nas​​praças,​\n​ruas, avenidas, becos, vielas, zonas rurais e em todos os rincões do estado.​\n​Avaliamos​ ​que​ ​o​ ​governo​ ​atual​ ​do​ ​Rio​ ​Grande​ ​do​ ​Sul​ ​está​ ​entregue​ ​à​ ​elite​ ​de​\n​bilionários​ ​e​ ​de​ ​grandes​ ​empresários​ ​ricos​ ​deste​ ​estado,​ ​uma​ ​pequena​ ​parcela​ ​da​\n​sociedade​ ​que​ ​atua​ ​para​ ​retirar​ ​direitos​ ​da​ ​grande​ ​maioria,​ ​dos​ ​trabalhadores​ ​e​\n​trabalhadoras​ ​gaúchos.​ ​Por​ ​isso,​ ​na​ ​prática,​ ​são​ ​os​ ​grandes​ ​monopólios,​ ​os​ ​donos​ ​das​\n​grandes​ ​empresas,​ ​as​ ​multinacionais,​ ​o​ ​agronegócio​ ​e​ ​os​ ​banqueiros​ ​que​ ​governam​ ​o​\n​estado​​do​​Rio​​Grande​​do​​Sul,​​empobrecendo​​a​​população​​de​​um​​dos​​estados​​mais​​ricos​​do​\n​país.​\n​A​ ​economia​ ​no​ ​Rio​ ​Grande​ ​do​ ​Sul​ ​está​ ​entregue​ ​aos​ ​interesses​ ​dos​ ​grandes​\n​monopólios,​ ​de​ ​poderosas​ ​empresas​ ​multinacionais​ ​e​ ​do​ ​agronegócio​ ​que,​ ​através​ ​da​\n​exploração​​do​​trabalho​​do​​povo​​gaúcho​​e​​da​​dominação​​sob​​a​​política​​do​​estado,​​extraem​\n​as​ ​nossas​ ​riquezas​ ​e​ ​garantem​ ​seu​ ​domínio​ ​econômico.​ ​Para​ ​favorecer​ ​a​ ​instalação​ ​e​ ​o​\n​avanço​ ​de​ ​empreendimentos​ ​de​ ​empresas​ ​como​ ​estas,​ ​o​ ​governo​ ​tudo​ ​faz:​ ​descumpre​\n​normas​ ​ambientais,​ ​altera​ ​centenas​ ​de​ ​pontos​ ​do​ ​código​ ​ambiental,​ ​tudo​ ​em​ ​defesa​ ​da​\n​aplicação​​de​​um​​discurso​​neoliberal.​​Enquanto​​isso,​​na​​fábrica​​e​​na​​linha​​de​​produção,​​é​​o​\n​trabalho​​do​​operário,​​do​​trabalhador​​e​​da​​trabalhadora,​​que​​gera​​o​​lucro​​dos​​patrões​​e​​dos​\n​donos​ ​da​ ​empresa.​ ​Esse​ ​lucro​ ​é​ ​roubado​ ​do​ ​trabalhador​ ​pelos​ ​patrões,​ ​nosso​ ​trabalho​\n​suado​​nos​​é​​tomado,​​enquanto​​recebemos​​um​​salário​​de​​miséria​​e​​vemos​​o​​preço​​de​​tudo​\n​subir.​​Enquanto​​isso,​​os​​donos​​das​​empresas​​e​​seus​​acionistas​​enriquecem​​cada​​vez​​mais​​e​\n​vivem no luxo com a riqueza gerada pelo trabalhador.​\n​Para​​manter​​os​​privilégios​​das​​grandes​​empresas​​e​​do​​agronegócio,​​o​​Estado​​do​​Rio​\n​Grande​​do​​Sul​​abriu​​mão​​de​​arrecadar​​cerca​​de​​R$1​​bilhão​​de​​reais​​por​​mês​​com​​isenções​\n​(e​​renúncias)​​fiscais​​de​​empresas,​​o​​que​​equivale​​a​​aproximadamente​​25%​​da​​arrecadação​\n​do​ ​ICMS​ ​no​ ​estado.​ ​A​ ​maioria​ ​dessas​ ​empresas​ ​são​ ​do​ ​ramo​ ​industrial.​ ​Com​ ​tal​\n​arrecadação,​ ​seria​ ​possível​ ​aumentar​ ​o​ ​financiamento​ ​da​ ​educação​ ​e​ ​saúde​ ​estadual.​\n​Enquanto​ ​isso,​ ​quanto​ ​mais​ ​pobre​ ​o​ ​trabalhador,​ ​maior​ ​é​ ​o​ ​percentual​​de​​imposto​​pago​\n​em comparação à sua renda.​\n​Também​ ​no​ ​nosso​ ​estado​ ​opera​ ​a​ ​AEL​ ​Sistemas,​ ​subsidiária​ ​da​ ​Elbit​ ​Systems,​ ​a​"
+          },
+          {
+            "id": "maior-empresa-privada-de-tecnologia-militar-de-israel-que-atua-diretamen",
+            "titulo": "​maior​​empresa​​privada​​de​​tecnologia​​militar​​de​​Israel,​​que​​atua​​diretamente​​no​​genocídio​",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "​maior​​empresa​​privada​​de​​tecnologia​​militar​​de​​Israel,​​que​​atua​​diretamente​​no​​genocídio​\n​do​ ​povo​ ​palestino​ ​por​ ​parte​ ​do​ ​estado​ ​sionista​ ​de​ ​Israel,​​matando​​milhares​​de​​crianças,​\n​mães​ ​e​ ​famílias​ ​palestinas​ ​em​ ​prol​ ​do​ ​lucro.​ ​A​ ​Elbit​ ​Systems​ ​é​ ​uma​ ​das​ ​principais​\n​fornecedoras​ ​de​ ​drones​ ​armados,​ ​munições​ ​e​ ​tecnologias​ ​de​ ​vigilância​ ​utilizadas​ ​pelas​\n​Forças​​de​​Defesa​​de​​Israel​​contra​​o​​povo​​palestino.​​Hoje​​o​​governo​​estadual​​mantém​​uma​\n​parceria​ ​com​ ​esta​ ​empresa​ ​assassina​ ​que​ ​opera​ ​em​ ​solo​ ​gaúcho​ ​e​ ​também​ ​se​ ​beneficia​\n​dessa​​farra​​de​​privilégios​​para​​os​​empresários,​​enquanto​​lucra​​com​​a​​morte​​de​​crianças​​e​\n​famílias na Palestina.​\n​Enquanto​ ​mantém​ ​esta​ ​lógica​ ​de​ ​submissão​ ​aos​ ​ricos​ ​e​ ​ao​ ​capital​ ​estrangeiro,​ ​o​\n​governo​ ​flexibilizou​ ​uma​ ​série​ ​de​ ​leis​ ​ambientais,​ ​o​ ​que​​causou​​os​​desastres​​ambientais​\n​dos​​últimos​​anos,​​sendo​​o​​maior​​deles​​a​​enchente​​que​​destruiu​​o​​estado​​do​​Rio​​Grande​​do​\n​Sul​ ​em​ ​2024.​ ​Enquanto​ ​os​ ​políticos​ ​da​ ​burguesia​ ​negociam​ ​com​ ​grandes​ ​empresários​​o​\n​financiamento​ ​de​ ​suas​ ​campanhas​ ​eleitorais,​ ​para​ ​depois​​poderem​​entregar​​para​​eles​​as​\n​riquezas​​do​​Estado,​​vemos​​as​​chuvas​​aumentarem,​​novos​​desastres​​naturais​​acontecerem,​\n​e​​fica​​escancarada​​a​​despreparação​​do​​Governo​​Estadual​​para​​lidar​​com​​a​​possibilidade​​de​\n​uma nova enchente.​\n​Mais​​de​​6,3​​milhões​​de​​pessoas​​sofreram​​impactos​​diretos​​ou​​indiretos​​da​​tragédia​\n​de​ ​2024​ ​(como​ ​falta​ ​de​ ​água,​ ​luz,​ ​isolamento​ ​ou​ ​perda​ ​de​ ​renda).​​O​​número​​de​​pessoas​\n​desalojadas​​e​​em​​abrigos​​chegou​​a​​quase​​600​​mil,​​em​​478​​municípios,​​quase​​96%​​de​​todo​\n​o​ ​território​ ​gaúcho.​ ​Quase​ ​19​ ​mil​ ​casas​ ​foram​ ​consideradas​ ​inabitáveis​ ​depois​ ​da​\n​enchente.​ ​Cerca​ ​de​ ​35​ ​a​ ​40%​ ​dos​ ​atingidos​ ​na​ ​região​ ​metropolitana​ ​de​ ​Porto​ ​Alegre​\n​estavam​ ​em​ ​cidades​ ​com​ ​sistemas​ ​de​ ​proteção​ ​que​ ​falharam.​ ​Pouco​ ​tempo​ ​antes​ ​da​\n​enchente,​ ​o​ ​governo​ ​de​ ​Eduardo​ ​Leite​ ​defendia​ ​o​ ​discurso​ ​de​ ​investir​ ​em​\n​empreendimentos​ ​comerciais​ ​no​ ​Cais​ ​Mauá​ ​e​ ​o​ ​fim​ ​do​ ​muro​ ​que​ ​segurou​ ​por​ ​dias​ ​as​\n​águas​ ​do​ ​Guaíba.​ ​Também​ ​foi​ ​esse​ ​o​ ​governo​ ​que​ ​cortou​ ​mais​ ​de​ ​400​​pontos​​do​​código​\n​ambiental​ ​antes​ ​das​ ​enchentes​ ​de​ ​2024,​ ​possibilitando​ ​medidas​ ​como​ ​o​\n​autolicenciamento​ ​por​ ​parte​ ​das​ ​empresas.​ ​Medidas​ ​como​ ​essa​ ​tiveram​ ​consequência​\n​direta nas enchentes e na destruição da vida das famílias gaúchas.​\n​Desde​​então,​​quase​​nada​​foi​​feito​​pelo​​governo​​do​​estado.​​No​​quesito​​da​​habitação,​\n​foram​ ​entregues​ ​menos​ ​de​​200​​casas​​definitivas,​​o​​que​​faz​​com​​que​​centenas​​de​​famílias​"
+          },
+          {
+            "id": "ainda-tenham-de-morar-em-moradias-temporarias-e-abrigos-sem-condicoes-di",
+            "titulo": "​ainda​ ​tenham​ ​de​ ​morar​ ​em​ ​moradias​ ​temporárias​ ​e​ ​abrigos,​ ​sem​ ​condições​ ​dignas​ ​de​",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "​ainda​ ​tenham​ ​de​ ​morar​ ​em​ ​moradias​ ​temporárias​ ​e​ ​abrigos,​ ​sem​ ​condições​ ​dignas​ ​de​\n​moradia.​ ​Em​ ​abril​ ​de​ ​2026,​ ​2​ ​anos​ ​depois​ ​da​ ​enchente,​ ​526​ ​famílias​ ​ainda​ ​estavam​ ​em​\n​módulos​ ​e​ ​moradias​ ​temporárias​ ​do​ ​governo.​ ​No​​aspecto​​da​​defesa​​contra​​novas​​cheias,​\n​também​ ​quase​ ​nada​ ​foi​ ​feito.​ ​Na​ ​verdade,​ ​nesse​ ​caso​ ​também​ ​o​ ​governo​ ​atual​ ​prefere​\n​cumprir​ ​com​ ​seus​ ​compromissos​ ​com​ ​os​ ​ricos​ ​em​ ​vez​ ​de​ ​defender​​o​​povo​​contra​​novas​\n​enchentes,​​com​​planos​​de​​destinar​​cerca​​de​​R$200​​milhões​​do​​fundo​​de​​reconstrução​​para​\n​subsidiar juros de grandes empreendimentos privados e hotéis de luxo na Serra Gaúcha.​\n​Também​ ​tem​ ​participado​ ​do​ ​grande​ ​lobby​ ​em​ ​defesa​ ​da​ ​instalação​ ​de​ ​uma​ ​nova​\n​planta​ ​da​ ​CMPC​ ​Celulose​ ​na​ ​cidade​ ​da​ ​Barra​ ​do​ ​Ribeiro,​ ​na​ ​região​ ​metropolitana,​ ​que​\n​passou​ ​por​ ​cima​ ​de​ ​uma​ ​série​ ​de​ ​regulamentações​ ​ambientais​ ​e,​​na​​realidade,​​vai​​gerar​\n​diversas​ ​consequências​ ​ambientais​ ​graves​ ​à​ ​região​ ​e​ ​ao​ ​estado.​ ​Tudo​ ​isso​ ​enquanto​\n​ambientalistas​​e​​especialistas​​anunciam​​previsões​​de​​novos​​fenômenos​​climáticos​​graves​\n​para​​o​​nosso​​estado​​nos​​próximos​​meses.​​Mais​​uma​​vez,​​o​​governo​​entregue​​aos​​interesses​\n​dos ricos prioriza o lucro acima da vida do povo trabalhador!​\n​A​ ​lógica​ ​do​ ​lucro​ ​máximo​ ​está​ ​também​ ​por​ ​trás​​da​​política​​privatista​​do​​governo​\n​atual,​ ​de​ ​Eduardo​ ​Leite​ ​(PSD),​ ​que​ ​transforma​ ​direitos​ ​fundamentais​ ​da​ ​população​ ​em​\n​mercadorias.​ ​Dessa​ ​forma,​ ​o​ ​governo​ ​privatizou,​ ​no​ ​último​ ​período,​ ​empresas​ ​estatais​\n​essenciais,​ ​como​ ​a​ ​CORSAN​ ​e​ ​a​ ​CEEE,​ ​usando​ ​como​ ​justificativa​ ​para​ ​a​ ​privatização​ ​a​\n​dívida​ ​do​ ​estado.​ ​A​ ​CEEE-D​ ​(braço​ ​de​ ​distribuição​ ​da​ ​empresa)​ ​foi​ ​vendida​ ​ao​ ​grupo​\n​Equatorial​ ​a​ ​preço​ ​de​ ​banana,​ ​por​ ​somente​ ​R$100​​mil.​​Já​​a​​CORSAN,​​empresa​​estatal​​de​\n​saneamento,​​foi​​vendida​​ao​​grupo​​Aegea,​​pelo​​preço​​de​​R$4,15​​bilhões,​​sendo​​que​​tinha​​o​\n​valor​ ​estimado​ ​em​ ​mais​ ​de​ ​R$8​ ​bilhões.​ ​Hoje​ ​essas​ ​empresas​ ​atuam​ ​como​ ​empresas​\n​privadas,​​ou​​seja,​​com​​o​​objetivo​​de​​gerar​​lucro,​​em​​vez​​de​​garantir​​direitos​​fundamentais​\n​ao​ ​povo,​ ​e​ ​causam​ ​prejuízos​ ​crescentes​ ​às​ ​famílias​ ​gaúchas,​ ​que​ ​pagam​ ​valores​\n​exorbitantes nas suas contas enquanto sofrem com falta de água e de energia elétrica.​\n​A​ ​educação​ ​também​ ​entrou​​na​​mira​​do​​governo​​privatista​​atual,​​com​​o​​projeto​​da​\n​PPP​​da​​educação,​​que​​visava​​entregar​​à​​iniciativa​​privada​​e​​a​​gestão​​da​​grande​​burguesia​\n​97​ ​escolas​ ​estaduais​​em​​um​​leilão​​na​​Bolsa​​de​​Valores.​​Graças​​à​​luta​​e​​a​​mobilização​​dos​\n​estudantes,​ ​das​ ​famílias,​ ​pais​ ​e​ ​a​ ​comunidade​ ​escolar​ ​gaúcha,​ ​e​ ​aos​ ​professores​ ​e​\n​funcionários das escolas, o leilão foi suspenso.​"
+          },
+          {
+            "id": "o-atual-governo-mantem-e-aprofunda-uma-politica-de-arrocho-salarial-e-de",
+            "titulo": "​O​ ​atual​ ​governo​ ​mantém​ ​e​ ​aprofunda​ ​uma​ ​política​ ​de​ ​arrocho​ ​salarial​ ​e​ ​de​",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "​O​ ​atual​ ​governo​ ​mantém​ ​e​ ​aprofunda​ ​uma​ ​política​ ​de​ ​arrocho​ ​salarial​ ​e​ ​de​\n​sucateamento​ ​para​ ​os​ ​servidores​ ​públicos​ ​estaduais,​ ​com​ ​reformas,​ ​confiscos​ ​na​\n​aposentadoria​​e​​na​​previdência​​e​​ataques​​ao​​IPE.​​Essa​​postura​​do​​governo​​de​​verdadeira​\n​afronta​​aos​​interesses​​e​​direitos​​dos​​trabalhadores​​foi​​amplamente​​denunciada​​por​​vários​\n​atos​ ​e​ ​mobilizações​ ​realizados​ ​pelos​ ​sindicatos​ ​que​ ​representam​ ​as​ ​categorias​ ​dos​\n​servidores​ ​do​ ​estado.​ ​Enquanto​ ​para​ ​os​ ​grandes​ ​empresários​ ​e​​o​​agronegócio​​a​​postura​\n​do​ ​governo​ ​é​ ​de​ ​privilégios​​e​​flexibilização,​​para​​os​​servidores​​do​​estado​​e​​professores​​a​\n​postura​ ​é​ ​de​ ​utilizar​ ​a​ ​burocracia​ ​contra​ ​o​ ​trabalhador,​ ​desrespeitando​ ​direitos​​básicos,​\n​sucateando​​o​​serviço​​público,​​aumentando​​a​​exploração​​do​​trabalhador​​e​​prejudicando​​o​\n​serviço​​para​​a​​população.​​Em​​suma,​​piora​​nas​​condições​​de​​vida​​para​​a​​grande​​maioria​​e​\n​privilégios para uma minoria.​\n​Vivemos​ ​em​ ​nosso​ ​estado​ ​uma​ ​verdadeira​ ​epidemia​ ​de​ ​feminicídios​ ​e​ ​casos​ ​de​\n​violência​ ​contra​ ​a​ ​mulher,​ ​como​ ​acontece​ ​por​ ​todo​ ​o​ ​país.​ ​Até​ ​o​ ​momento,​ ​já​ ​foram​\n​registradas​​em​​2026​​25196​​vítimas​​de​​violência​​contra​​a​​mulher​​em​​nosso​​estado.​​O​​Rio​\n​Grande​​do​​Sul​​concentra​​38,8%​​das​​mortes​​por​​feminicídio​​de​​toda​​a​​região​​Sul​​do​​país,​​e​\n​teve​ ​uma​ ​das​ ​maiores​ ​taxas​ ​de​ ​crescimento​ ​no​ ​último​ ​período,​ ​de​ ​11,1%​ ​entre​ ​2024​ ​e​\n​2025,​ ​totalizando​​80​​mortes​​confirmadas.​​Isso​​é​​um​​reflexo​​da​​sociedade​​capitalista,​​que​\n​coloca​ ​as​ ​mulheres​ ​como​ ​propriedade​ ​do​ ​homem.​ ​É​ ​muito​ ​comum​ ​homens​ ​preferirem​\n​verem​​suas​​ex-companheiras​​mortas​​do​​que​​sem​​eles​​e​​sendo​​felizes,​​tudo​​isso​​é​​fruto​​da​\n​ideologia​ ​burguesa​ ​e​ ​patriarcal,​ ​de​ ​um​ ​sistema​ ​econômico​ ​falido​ ​em​ ​que​ ​não​ ​dá​\n​perspectiva de vida para as mulheres e garante do lucro máximo para os ricos.​\n​No​ ​momento​ ​em​ ​que​ ​14,8%​ ​da​ ​população​ ​se​​encontra​​em​​insegurança​​alimentar​\n​(que​​nada​​mais​​é​​do​​que​​um​​nome​​bonito​​para​​a​​fome)​​ou​​seja,​​1,7​​milhão​​de​​pessoas,​​fica​\n​mais​​claro​​para​​todos​​que​​isso​​é​​resultado​​da​​divisão​​de​​classes​​no​​sistema​​capitalista,​​em​\n​que​​poucos​​acumulam​​imensas​​riquezas,​​enquanto​​a​​maioria​​da​​população​​encontra-se​​na​\n​miséria,​​ou​​à​​beira​​da​​miséria.​​Os​​trabalhadores​​e​​o​​povo​​brasileiro,​​no​​geral,​​precisam​​de​\n​um partido revolucionário.​\n​Além​ ​disso,​ ​a​ ​prática​ ​demonstra​ ​que​ ​a​ ​tentativa​ ​de​ ​conciliar​ ​um​ ​programa​ ​de​\n​esquerda​​voltado​​para​​atender​​aos​​interesses​​do​​povo​​com​​os​​interesses​​da​​burguesia​​que​"
+          },
+          {
+            "id": "financia-diversas-candidaturas-de-direita-e-as-ditas-de-esquerda-nao-fun",
+            "titulo": "​financia​ ​diversas​ ​candidaturas,​ ​de​ ​direita​ ​e​ ​as​ ​ditas​​de​​esquerda,​​não​​funcionou​​e​​nunca​",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "​financia​ ​diversas​ ​candidaturas,​ ​de​ ​direita​ ​e​ ​as​ ​ditas​​de​​esquerda,​​não​​funcionou​​e​​nunca​\n​fuincionará.​ ​As​ ​pequenas​ ​conquistas​ ​da​ ​classe​ ​trabalhadora​ ​sob​ ​esses​ ​governos​​vão​​por​\n​água​ ​abaixo,​ ​da​ ​mesma​ ​forma​ ​que​ ​foram​ ​as​ ​casas​ ​e​ ​os​ ​bens​ ​dos​​trabalhadores​​gaúchos,​\n​assim que estala uma nova crise do capitalismo ou que se elege um governo de direita.​\n​Nesse​​sentido,​​o​​nosso​​programa​​contém​​propostas​​para​​transformar​​nosso​​estado​​em​​um​\n​lugar​ ​de​ ​soberania​ ​popular​ ​e​ ​de​ ​avanço​ ​para​ ​os​ ​trabalhadores​ ​e​ ​as​ ​trabalhadoras​ ​da​\n​cidade e do campo.​\n​Nosso​ ​programa​ ​é​ ​o​ ​único​ ​que​ ​não​ ​se​ ​propõe​ ​a​ ​gerenciar​ ​um​ ​sistema​ ​econômico​\n​falido,​​o​​capitalismo,​​mas​​sim,​​propõe​​um​​novo​​sistema​​econômico​​para​​o​​Rio​​Grande​​e​​para​\n​o​​Brasil.​​Um​​sistema​​econômico​​onde​​o​​povo​​seja​​dono​​do​​produto​​do​​seu​​próprio​​trabalho,​\n​em​​que​​o​​social​​esteja​​em​​primeiro​​lugar,​​onde​​possamos​​ser​​livres​​e​​plenamente​​felizes:​​o​\n​Socialismo.​\n​Defendemos​:​\n​1.​ ​Reversão​​das​​privatizações​​das​​empresas​​públicas,​​como​​a​​CEEE,​​a​​Corsan,​​a​​SulGás​\n​e​​todas​​as​​outras​​com​​atividades​​privatizadas/terceirizadas/parceirizadas​​em​​todas​\n​as​​áreas.​​Concursos​​públicos​​e​​contratação​​direta​​pelo​​estado​​com​​o​​fim​​do​​lucro​​dos​\n​grande​ ​empresários,​ ​investimento​ ​em​ ​infraestrutura​ ​e​ ​diminuição​ ​do​ ​valor​ ​das​\n​tarifas;​\n​2.​ ​Defesa​ ​contra​ ​as​ ​enchentes​ ​e​ ​reforma​ ​urbana.​ ​Construção​ ​e​ ​desenvolvimento​ ​de​\n​estruturas​ ​de​ ​defesas​ ​nas​ ​cidades​ ​e​ ​a​ ​nível​ ​de​ ​estado​ ​contra​ ​cheias​ ​e​ ​inundações,​\n​bem​ ​como​ ​o​ ​fortalecimento​ ​e​ ​a​ ​reconstrução​ ​das​ ​estruturas,​ ​diques​ ​e​ ​sistemas​ ​de​\n​defesa​ ​destruídos​ ​nas​ ​últimas​​cheias.​​Construção​​e​​entrega​​de​​moradias​​definitivas​\n​para​ ​todas​ ​famílias​ ​atingidas​ ​pelas​ ​enchentes​ ​e​ ​ainda​ ​não​ ​contempladas​ ​pelo​\n​governo,​ ​incluindo​ ​as​ ​famílias​​que​​hoje​​estão​​em​​moradias​​temporárias.​​Criação​​de​\n​frentes​ ​emergenciais​ ​de​ ​trabalho​ ​para​ ​realização​ ​de​ ​obras​ ​públicas​ ​a​ ​partir​ ​das​\n​cidades​ ​e​ ​bairros​ ​pobres​ ​e​ ​com​ ​menor​ ​infraestrutura,​ ​implementação​ ​de​\n​saneamento​ ​básico,​ ​construção​ ​de​ ​postos​ ​de​ ​saúde,​ ​hospitais,​ ​escolas,​ ​calçamento,​\n​reativação​ ​de​ ​parques​ ​industriais​ ​abandonados​ ​e​ ​adequação​ ​das​ ​casas​ ​afetadas​\n​pelas​ ​enchentes.​ ​Essa​ ​ação​ ​deve​ ​ser​ ​feita​ ​sem​ ​as​ ​empreiteiras,​ ​com​ ​recurso​ ​do​\n​estado​ ​em​ ​parceria​ ​com​ ​as​ ​universidades​ ​e​ ​com​ ​técnicos​ ​populares​ ​dispostos​ ​a​\n​contribuir com o seu povo;​\n​3.​ ​Investimento​ ​massivo​ ​na​ ​UERGS​ ​e​ ​construção​ ​de​ ​novas​ ​unidades​ ​em​ ​todas​ ​as​\n​cidades​ ​polo​ ​do​ ​estado.​ ​Fortalecimento​ ​da​ ​Fapergs,​ ​como​ ​forma​ ​de​ ​incentivar​ ​e​\n​valorizar​ ​a​ ​produção​ ​de​​ciência​​no​​ensino​​superior​​do​​RS.​​Garantia​​de​​aplicação​​da​"
+          },
+          {
+            "id": "lei-de-0-5-da-receita-liquida-dos-impostos-estaduais-para-a-ampliacao-do",
+            "titulo": "​lei​​de​​0,5%​​da​​receita​​líquida​​dos​​impostos​​estaduais​​para​​a​​ampliação​​do​​acesso​​às​",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "​lei​​de​​0,5%​​da​​receita​​líquida​​dos​​impostos​​estaduais​​para​​a​​ampliação​​do​​acesso​​às​\n​universidades;​\n​4.​ ​Garantia​ ​de​ ​investimento​ ​massivo​ ​na​ ​educação​ ​estadual.​ ​Não​ ​permitir​ ​a​\n​militarização​​das​​escolas,​​bem​​como​​sua​​privatização​​e​​as​​PPPs.​​Garantia​​de​​eleição​\n​direta​​para​​diretores​​das​​escolas,​​valorização​​dos​​professores​​e​​demais​ ​profissionais​\n​da​​educação​​e​​saúde,​​abertura​​de​​concurso​​público​​e​​convocação​​dos​​aprovados​​nos​\n​concursos​ ​anteriores.​ ​Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​escolares.​\n​Obrigatoriedade​ ​para​ ​todos​ ​os​ ​políticos​ ​eleitos​ ​do​ ​estado​ ​que​ ​tenham​ ​seus​ ​filhos​\n​matriculados na escola pública;​\n​5.​ ​Garantia​ ​de​ ​investimento​ ​massivo​ ​na​ ​saúde​ ​estadual.​​Valorização​​dos​​profissionais​\n​da​ ​saúde,​​abertura​​de​​concurso​​público​​e​​convocação​​dos​​aprovados​​nos​​concursos​\n​anteriores.​ ​Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​do​ ​SUS​ ​em​ ​todos​ ​os​\n​municípios​​do​​estado.​​Obrigatoriedade​​para​​que​​todos​​os​​políticos​​eleitos​​do​​estado​\n​e​​suas​ ​famílias​ ​usem​ ​o​ ​SUS.​ ​Fim​ ​da​ ​destinação​ ​do​ ​recurso​ ​público​ ​para​ ​planos​\n​privados.​\n​6.​ ​Implementação​ ​de​ ​real​ ​politica​ ​de​ ​combate​ ​à​ ​violência​ ​contra​ ​as​ ​mulheres​ ​e​ ​as​\n​crianças,​ ​implementação​ ​de​ ​delegacias​ ​24h​ ​em​ ​todas​ ​as​ ​regiões​ ​e​ ​no​ ​máximo​ ​de​\n​cidades​ ​do​ ​estado,​ ​politica​ ​de​ ​moradia​ ​e​ ​emprego​ ​para​ ​mulheres​ ​vítimas​ ​de​\n​violência.​ ​Fortalecimento​ ​das​ ​casas​ ​de​ ​referência​ ​voltadas​ ​para​ ​os​ ​direitos​ ​das​\n​mulheres;​\n​7.​ ​Proibição​ ​de​ ​operações​ ​militares​ ​em​ ​vilas​ ​e​ ​favelas.​ ​Desmilitarização​ ​da​ ​Brigada​\n​Militar.​​Punição​​exemplar​​para​​os​​policiais​​que​​tiverem​​praticado​​crime​​de​​tortura​​e​\n​execuções.​ ​Focar​ ​o​ ​combate​ ​ao​ ​crime​ ​organizado​ ​combatendo​ ​os​ ​ricos​ ​que​ ​o​\n​financiam.​ ​Como​ ​governadora,​ ​lutar​ ​para​ ​a​ ​implementação​ ​da​ ​desmilitarização​ ​a​\n​nível​ ​nacional.​ ​Realizar​ ​uma​ ​grande​ ​campanha​ ​pelo​ ​direito​ ​à​ ​memória,​ ​verdade,​\n​justiça​​e​​reparação​​às​​vítimas​​de​​tortura​​e​​assassinatos​​pela​​violência​​de​​estado,​​em​\n​especial durante a Ditadura Militar Fascista de 1964;​\n​8.​ ​Reforma​ ​agrária​ ​popular,​ ​do​ ​monopólio​ ​privado​ ​sobre​ ​as​ ​terras.​ ​Defendemos​ ​a​\n​redistribuição​ ​das​ ​terras​ ​do​ ​Rio​ ​Grande​ ​do​ ​Sul,​ ​o​ ​fortalecimento​ ​da​ ​agricultura​\n​familiar,​ ​a​ ​produção​ ​de​ ​alimentos​ ​para​ ​suprir​ ​as​ ​necessidades​ ​do​ ​povo​ ​gaúcho​ ​e​\n​combater​ ​a​ ​fome​ ​que​ ​assola​ ​1,7​ ​milhão​ ​de​ ​pessoas​ ​no​ ​estado.​ ​Investimento​ ​na​\n​pequena​ ​produção​ ​no​ ​campo,​ ​desapropriação​ ​e​ ​titulação​ ​de​ ​terras​ ​para​ ​os​\n​camponeses​ ​pobres.​ ​Criação​ ​de​ ​mercados​ ​populares​ ​que​ ​garantam​ ​venda​ ​dos​\n​alimentos​​a​​preços​​reduzidos,​​com​​objetivo​​de​​acabar​​com​​a​​fome​​no​​estado.​​Fim​​das​\n​isenções​​e​​dos​​benefícios​​fiscais​​aos​​latifundiários​​do​​agronegócio.​​Regulamentação​\n​do uso indiscriminado de agrotóxicos;​\n​9.​ ​Lutar​​como​​governadora​​para​​que​​a​​nível​​nacional​​seja​​aprovado​​o​​fim​​da​​escala​​6x1,​\n​a​​redução​​da​​jornada​​de​​trabalho,​​o​​aumento​​de​​100%​​no​​salário-mínimo,​​bem​​como​\n​a​​revogação​​das​​reformas​​trabalhista​​e​​da​​previdência.​​Reverter​​todos​​os​​retrocessos​"
+          },
+          {
+            "id": "implementados-pelos-ultimos-governos-nas-carreiras-dos-servidores-public",
+            "titulo": "​implementados​ ​pelos​ ​últimos​ ​governos​ ​nas​ ​carreiras​ ​dos​ ​servidores​ ​públicos​ ​do​",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "​implementados​ ​pelos​ ​últimos​ ​governos​ ​nas​ ​carreiras​ ​dos​ ​servidores​ ​públicos​ ​do​\n​estado;​\n​10.​​Reestatização​ ​de​ ​todos​ ​os​ ​meios​ ​de​ ​transportes​ ​coletivos​ ​do​ ​estado.​ ​Garantia​ ​do​\n​passe​ ​livre​ ​aos​ ​estudantes​ ​e​ ​aos​ ​trabalhadores,​ ​respeitando​ ​o​ ​direito​ ​de​ ​acesso​ ​à​\n​cidade;​\n​11.​​Controle​ ​social​ ​de​ ​todos​ ​os​ ​monopólios​ ​e​ ​consórcios​ ​capitalistas​ ​e​ ​dos​ ​meios​ ​de​\n​produção​ ​nos​ ​setores​ ​estratégicos​ ​da​ ​economia;​ ​planificação​ ​da​ ​economia​ ​para​\n​atender​ ​às​ ​necessidades​ ​da​ ​população​ ​e​ ​acabar​ ​com​ ​as​ ​desigualdades​ ​regionais​ ​e​\n​sociais.​ ​Anulação​ ​dos​ ​impostos​ ​extorsivos​ ​cobrados​ ​do​ ​povo;​ ​imposto​ ​sobre​ ​as​\n​grandes fortunas e progressivo;​\n​12.​​Auditoria​ ​e​ ​suspensão​ ​da​ ​dívida​ ​pública​ ​do​ ​estado,​ ​com​ ​redirecionamento​ ​deste​\n​recurso às áreas sociais, como educação, transporte, alimentação e moradia.​"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "0cfb212104ea1550443023eb3e751228174a0e16db98e820ae8d27fb851dfd8c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "e9b9bd8b45be417dbd7381e9989619ac0c6cbe9086dfab660d41c77eb6a7f4a9"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "685818fa54dbbeb2bf18471e85346d9032b2d5d06ef53a1aa30cec5f7ce46524"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "5c6c5a3b7bb620bf3b2ba50c250611c84c62e0b758249cb2b03e51d94237547d"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "23411a5f8e5a17b06ed42e5b1c7385affaff0ea8765fe5e526777d1bd9e1e4cb"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "76e9c0cafad561162d2abe9c0792d04e89a7440ab6e0c7ea14eb6ea166287243"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "44972458a2eb55c077eb5d4e4540e9b9d135eb4102c35d0849f7400f45c17936"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "5fc5ce9fb34a73ce11ec86172e141869d2a9b4917cbed899d9a77a0ade38072e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na área das empresas públicas, o programa defende a reversão das privatizações das empresas públicas. No âmbito do serviço público, o programa defende concursos públicos. Como resposta às cheias e inundações, o programa propõe a construção e o desenvolvimento de estruturas de defesa nas cidades e em nível de estado. Na política habitacional para as enchentes, o programa propõe a construção e entrega de moradias definitivas para todas as famílias atingidas e ainda não contempladas pelo governo. O programa propõe investimento massivo na UERGS. Nas atividades escolares, o programa defende contratação direta em 100% das atividades escolares. Nas atividades do SUS, o programa defende contratação direta em 100% das atividades do SUS em todos os municípios do estado. Sobre a dívida pública estadual, o programa propõe auditoria e suspensão da dívida pública do estado.",
+    "frases": [
+      {
+        "texto": "Na área das empresas públicas, o programa defende a reversão das privatizações das empresas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Reversão​​das​​privatizações​​das​​empresas​​públicas"
+          }
+        ]
+      },
+      {
+        "texto": "No âmbito do serviço público, o programa defende concursos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Concursos​​públicos"
+          }
+        ]
+      },
+      {
+        "texto": "Como resposta às cheias e inundações, o programa propõe a construção e o desenvolvimento de estruturas de defesa nas cidades e em nível de estado.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Construção​ ​e​ ​desenvolvimento​ ​de​ ​estruturas​ ​de​ ​defesas​ ​nas​ ​cidades​ ​e​ ​a​ ​nível​ ​de​ ​estado​ ​contra​ ​cheias​ ​e​ ​inundações"
+          }
+        ]
+      },
+      {
+        "texto": "Na política habitacional para as enchentes, o programa propõe a construção e entrega de moradias definitivas para todas as famílias atingidas e ainda não contempladas pelo governo.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Construção​​e​​entrega​​de​​moradias​​definitivas​ ​para​ ​todas​ ​famílias​ ​atingidas​ ​pelas​ ​enchentes​ ​e​ ​ainda​ ​não​ ​contempladas​ ​pelo​ ​governo"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe investimento massivo na UERGS.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Investimento​ ​massivo​ ​na​ ​UERGS"
+          }
+        ]
+      },
+      {
+        "texto": "Nas atividades escolares, o programa defende contratação direta em 100% das atividades escolares.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 7,
+            "trecho": "Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​escolares"
+          }
+        ]
+      },
+      {
+        "texto": "Nas atividades do SUS, o programa defende contratação direta em 100% das atividades do SUS em todos os municípios do estado.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 7,
+            "trecho": "Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​do​ ​SUS​ ​em​ ​todos​ ​os​ ​municípios​​do​​estado"
+          }
+        ]
+      },
+      {
+        "texto": "Sobre a dívida pública estadual, o programa propõe auditoria e suspensão da dívida pública do estado.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 8,
+            "trecho": "Auditoria​ ​e​ ​suspensão​ ​da​ ​dívida​ ​pública​ ​do​ ​estado"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "empresas-publicas",
+        "titulo": "Empresas públicas",
+        "descricao": "Reversão das privatizações das empresas públicas.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Reversão​​das​​privatizações​​das​​empresas​​públicas"
+          }
+        ]
+      },
+      {
+        "id": "concursos-publicos",
+        "titulo": "Concursos públicos",
+        "descricao": "Defesa de concursos públicos.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Concursos​​públicos"
+          }
+        ]
+      },
+      {
+        "id": "defesa-contra-inundacoes",
+        "titulo": "Defesa contra inundações",
+        "descricao": "Construção e desenvolvimento de estruturas contra cheias e inundações.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Construção​ ​e​ ​desenvolvimento​ ​de​ ​estruturas​ ​de​ ​defesas​ ​nas​ ​cidades​ ​e​ ​a​ ​nível​ ​de​ ​estado​ ​contra​ ​cheias​ ​e​ ​inundações"
+          }
+        ]
+      },
+      {
+        "id": "moradias-definitivas",
+        "titulo": "Moradias definitivas",
+        "descricao": "Construção e entrega de moradias para famílias atingidas pelas enchentes ainda não contempladas pelo governo.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 6,
+            "trecho": "Construção​​e​​entrega​​de​​moradias​​definitivas​ ​para​ ​todas​ ​famílias​ ​atingidas​ ​pelas​ ​enchentes​ ​e​ ​ainda​ ​não​ ​contempladas​ ​pelo​ ​governo"
+          }
+        ]
+      },
+      {
+        "id": "contratacao-escolar",
+        "titulo": "Atividades escolares",
+        "descricao": "Contratação direta em 100% das atividades escolares.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 7,
+            "trecho": "Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​escolares"
+          }
+        ]
+      },
+      {
+        "id": "contratacao-no-sus",
+        "titulo": "Atividades do SUS",
+        "descricao": "Contratação direta em 100% das atividades do SUS nos municípios do estado.",
+        "evidencias": [
+          {
+            "documentoId": "RS:210002533355:01",
+            "pagina": 7,
+            "trecho": "Contratação​ ​direta​ ​em​ ​100%​ ​das​ ​atividades​ ​do​ ​SUS​ ​em​ ​todos​ ​os​ ​municípios​​do​​estado"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:43:33.056Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:46:01.888Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente à proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento consistentes."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:1:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma defesa de concursos públicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:2:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal com a evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:3:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula plenamente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência direta com o texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área habitacional única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:4:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:5:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual 100% sustentado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:6:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:7:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:frase:8:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:empresas-publicas:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:concursos-publicos:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:defesa-contra-inundacoes:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:moradias-definitivas:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-escolar:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:suporte",
+        "verdict": "yes",
+        "reason": "Correspondência literal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:numeros",
+        "verdict": "yes",
+        "reason": "Percentual sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:RS:210002533355:tema:contratacao-no-sus:documentos:RS:210002533355:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RS:210002533355",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RS:210002533355:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 28002,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 24448,
+          "output_tokens_details": {
+            "thinking_tokens": 678
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 28002,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 24448,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 28002,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 28002
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.37972340000000004
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "98319f88e256f21b312cc5c72055898d7dd3ff90decd9d725601b0e8d4d5ce29",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:47:43.035Z",
+    "sourceSha256": "63661f8ce376bac8b76e986ffe8a2031e25bf1ce078e137bb0686116b63637cc",
+    "extractedTextSha256": "8bbb4fd87043bf826a4d14426cb9ce0f16976ab1617f6a21d0e787262341dd51",
+    "documentCount": 1,
+    "documentSetSha256": "577dfe876d7006cce047ebdd95988b89b3295cc99de8dc2dab9d8a2667c34352",
+    "contentSha256": "973c0573655db9045be8bb2fba6974eca5ee9e8a46cc0135007dc673805f2a85"
+  }
+}

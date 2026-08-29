@@ -75,6 +75,7 @@ export type ProgramaGovernoModelMetadata = {
 
 export type ProgramaGovernoGeneratorInput = {
   identityKey: string
+  repairGuidance?: string
   documentos: Array<{
     documentoId: string
     paginas: Array<{ pagina: number; origem: string; texto: string }>
@@ -120,12 +121,21 @@ export type ProgramaGovernoModelAdapters = {
   }>
   extrairFatosPassagem?(input: {
     identityKey: string
+    repairGuidance?: string
     documentos: ProgramaGovernoDocumentoEntradaMultipassagem[]
   }): Promise<{ output: ProgramaGovernoFato[]; metadata: ProgramaGovernoModelMetadata }>
   sintetizarDeFatos?(input: {
     identityKey: string
+    repairGuidance?: string
+    requireDistinctSentenceFacts?: boolean
     fatos: ProgramaGovernoFato[]
   }): Promise<{ output: ProgramaGovernoResumo; metadata: ProgramaGovernoModelMetadata }>
+}
+
+function instructionsWithRepairGuidance(instructions: string, repairGuidance?: string): string {
+  const guidance = repairGuidance?.trim()
+  if (!guidance) return instructions
+  return `${instructions}\nOrientação de reparo aprovada pelo revisor humano: ${guidance}`
 }
 
 export const PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS = [
@@ -138,7 +148,7 @@ export const PROGRAMA_GOVERNO_FATOS_INSTRUCTIONS = [
 
 export const PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS = [
   "Produza um resumo factual e neutro do programa oficial com 120 a 180 palavras, seis a oito frases e quatro a seis temas, usando EXCLUSIVAMENTE os fatos listados em FATOS dentro do input.",
-  "Cada frase referencia os fatoIds que a sustentam; cada tema referencia ao menos um fatoId. Nao invente numeros nem contexto externo.",
+  "Cada frase referencia os fatoIds que a sustentam. Um mesmo fatoId ou a mesma evidencia (documentoId, pagina e trecho) nunca pode aparecer em mais de uma frase; cada tema referencia ao menos um fatoId. Nao invente numeros nem contexto externo.",
   "Restricoes mecanicas: o campo 'texto' tem 120 a 180 palavras e cada frase de 'frases.texto' aparece verbatim dentro dele; cada frase e cada tema trata de UMA unica area coerente, sem juntar propostas independentes nem com fatoIds diferentes.",
   "As evidencias dos fatoIds escolhidos devem sustentar todas as clausulas da frase; se um fato combinado nao cobre tudo, divida em duas frases ou remova a clausula.",
   "Redacao estritamente descritiva: proibido usar 'apenas', 'somente', 'so', 'meramente' ou qualquer palavra de enfase avaliativa; use verbos neutros como prevê, propoe, planeja.",
@@ -239,7 +249,11 @@ function validarFatosBrutos(value: unknown): ProgramaGovernoFato[] {
   return fatos
 }
 
-function normalizarSinteseFatos(raw: unknown, fatos: readonly ProgramaGovernoFato[]): ProgramaGovernoResumo {
+function normalizarSinteseFatos(
+  raw: unknown,
+  fatos: readonly ProgramaGovernoFato[],
+  impedirReusoEntreFrases = false,
+): ProgramaGovernoResumo {
   if (!isObject(raw)) throw new Error("sintese-fatos: objeto esperado")
   const mapaFatos = new Map(fatos.map((fato) => [fato.id, fato]))
   const resolver = (referencia: unknown, caminho: string) => {
@@ -277,7 +291,7 @@ function normalizarSinteseFatos(raw: unknown, fatos: readonly ProgramaGovernoFat
       }
     }),
   }
-  validarResultadoProgramaGovernoMultipassagem(normalizado, fatos)
+  validarResultadoProgramaGovernoMultipassagem(normalizado, fatos, { impedirReusoEntreFrases })
   const resultado = substituirEvidenciasFato(normalizado, fatos) as unknown as ProgramaGovernoResumo
   validateSummary(resultado)
   return resultado
@@ -707,7 +721,7 @@ export function createProgramaGovernoModelAdapters(
         generator,
         PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
         PROGRAMA_GOVERNO_GOV_GENERATOR_SCHEMA,
-        PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS,
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS, input.repairGuidance),
         input,
         (value) => validateGeneratorOutput(value, input),
         runner,
@@ -751,9 +765,9 @@ export function createProgramaGovernoModelAdapters(
         generator,
         `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fatos`,
         PROGRAMA_GOVERNO_SINTESE_FATOS_SCHEMA,
-        PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS,
+        instructionsWithRepairGuidance(PROGRAMA_GOVERNO_SINTESE_FATOS_INSTRUCTIONS, input.repairGuidance),
         { identityKey: input.identityKey, FATOS: input.fatos },
-        (value) => normalizarSinteseFatos(value, input.fatos),
+        (value) => normalizarSinteseFatos(value, input.fatos, input.requireDistinctSentenceFacts === true),
         runner,
       )
       return result

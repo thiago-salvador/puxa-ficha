@@ -85,13 +85,25 @@ test("checkpoint pós-revisão confirma a aprovação humana da coorte", async (
 })
 
 test("server-only manifest retains the unique national approved cohort", () => {
-  const approvedGovernors = governorPublication.items.filter(({ outcome }) => outcome === "approved").length
+  const approvedGovernorSlugs = governorPublication.items
+    .filter(({ outcome }) => outcome === "approved")
+    .map(({ slug }) => slug)
+    .filter((slug): slug is string => Boolean(slug))
+    .sort()
+  const approvedGovernors = approvedGovernorSlugs.length
   const expectedTotal = 13 + approvedGovernors
   assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(({ slug }) => slug)).size, expectedTotal)
   assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "PRESIDENTE").length, 13)
   assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "GOVERNADOR").length, approvedGovernors)
+  assert.deepEqual(
+    programaModule.programasGoverno2026Identidades
+      .filter(({ cargo }) => cargo === "GOVERNADOR")
+      .map(({ slug }) => slug)
+      .sort(),
+    approvedGovernorSlugs,
+  )
   for (const identidade of programaModule.programasGoverno2026Identidades) {
     assert.equal(identidade.ano, 2026)
     assert.ok(identidade.slug)

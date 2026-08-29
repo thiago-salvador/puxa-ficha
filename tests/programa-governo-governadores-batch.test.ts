@@ -271,6 +271,14 @@ test("plan-only deriva fila do inventario com passagens planejadas e filtro por 
   assert.equal(pequeno.multipassagem, false)
   assert.equal(pequeno.passagensPlanejadas, 1)
   assert.ok(grande.custoEstimado > pequeno.custoEstimado)
+  const pequenoForcado = planejarFilaProgramaGovernoGovernadores({
+    ufs: [ufA],
+    sqCandidato: sq2,
+    forceFacts: true,
+  }, source)[0]
+  assert.equal(pequenoForcado.multipassagem, true)
+  assert.equal(pequenoForcado.passagensPlanejadas, 1)
+  assert.ok(pequenoForcado.custoEstimado > pequeno.custoEstimado)
   assert.equal(grande.usaModelos, true)
   assert.equal(itens.find((item) => item.uf === ufB)!.usaModelos, false)
   assert.equal(grande.chaveCacheDir, sha256(grande.chave).slice(0, 16))

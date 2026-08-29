@@ -8,6 +8,7 @@ import test from "node:test"
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url))
 const DRIVER = join(ROOT, "scripts/data/programas-governo-governadores-2026/reprocessar-duvidas.mjs")
+const FINAL_REPAIRS = join(ROOT, "scripts/data/programas-governo-governadores-2026/reparos-duvidas-finais.json")
 const NODE = process.execPath
 
 async function fixture(cases, mode = "pass") {
@@ -25,10 +26,13 @@ const output = get("--output-dir=")
 const uf = get("--ufs=")
 const sqCandidato = get("--sq-candidato=")
 const inventory = get("--inventory=")
+const repairGuidance = get("--repair-guidance=")
+const repairFactsLimit = get("--repair-facts-limit=")
+const forceFacts = args.includes("--force-fatos")
 const slug = output.split("/").pop()
 const mode = process.env.FAKE_MODE || "${mode}"
 const delay = slug === "quota" ? 1 : Number(process.env.FAKE_DELAY || 30)
-await appendFile(process.env.FAKE_EVENTS, JSON.stringify({ event: "start", slug, at: Date.now() }) + "\\n")
+await appendFile(process.env.FAKE_EVENTS, JSON.stringify({ event: "start", slug, at: Date.now(), repairGuidance, repairFactsLimit, forceFacts }) + "\\n")
 await new Promise((resolve) => setTimeout(resolve, delay))
 const blocked = mode === "blocked" || (mode === "mixed" && slug === "blocked")
 const quota = mode === "quota" && slug === "quota"
@@ -110,4 +114,63 @@ test("checkpoint final é JSON válido e não deixa temporário de escrita atôm
   assert.equal(snapshot.cases[0].status, "pass")
   const files = await readdir(join(f.root, "output"))
   assert.equal(files.some((name) => name.endsWith(".tmp")), false)
+})
+
+test("propaga estratégia por fatos e orientação específica para o CLI canônico", async () => {
+  const guidance = "Use o verbo combater e não aumente a intensidade da proposta."
+  const f = await fixture([{
+    uf: "AM",
+    slug: "gilberto-vasconcelos",
+    sqCandidato: "40002535267",
+    strategy: "fatos",
+    guidance,
+    factLimit: 6,
+  }])
+  assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
+  const events = (await readFile(f.events, "utf8")).trim().split("\n").map(JSON.parse)
+  const start = events.find((event) => event.event === "start")
+  assert.equal(start.forceFacts, true)
+  assert.equal(start.repairGuidance, guidance)
+  assert.equal(start.repairFactsLimit, "6")
+})
+
+test("mudança de orientação invalida checkpoint aprovado e reprocessa fail-closed", async () => {
+  const firstGuidance = "Use somente o trecho literal da primeira revisão."
+  const secondGuidance = "Use a orientação corrigida da segunda revisão."
+  const candidate = {
+    uf: "RN",
+    slug: "alysson-bezerra",
+    sqCandidato: "200002535255",
+    strategy: "fatos",
+    guidance: firstGuidance,
+  }
+  const f = await fixture([candidate])
+  assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
+  const first = await progress(f.root)
+  const firstFingerprint = first.cases[0].caseFingerprint
+
+  await writeFile(f.casesPath, JSON.stringify({
+    cases: [{ ...candidate, guidance: secondGuidance }],
+  }))
+  assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
+
+  const events = (await readFile(f.events, "utf8")).trim().split("\n").map(JSON.parse)
+  const starts = events.filter((event) => event.event === "start")
+  assert.equal(starts.length, 2)
+  assert.equal(starts[1].repairGuidance, secondGuidance)
+  const second = await progress(f.root)
+  assert.equal(second.cases[0].attempts, 2)
+  assert.notEqual(second.cases[0].caseFingerprint, firstFingerprint)
+})
+
+test("plano final materializa exatamente as 17 orientações aprovadas", async () => {
+  const { validateCases } = await import(DRIVER)
+  const source = JSON.parse(await readFile(FINAL_REPAIRS, "utf8"))
+  const cases = validateCases(source)
+  assert.equal(cases.length, 17)
+  assert.equal(new Set(cases.map(({ slug }) => slug)).size, 17)
+  assert.ok(cases.every(({ strategy, guidance }) => strategy === "fatos" && guidance.length > 30))
+  assert.deepEqual(cases.filter(({ factLimit }) => factLimit === 6).map(({ slug }) => slug).sort(), [
+    "otaviano-pivetta", "samuel-de-mattos",
+  ])
 })

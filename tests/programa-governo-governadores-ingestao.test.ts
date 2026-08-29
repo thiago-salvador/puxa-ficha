@@ -12,6 +12,7 @@ import {
   ingestProgramaGovernoGovernadores,
   parseProgramaGovernoGovernadoresArgs,
   runProgramaGovernoGovernadoresCli,
+  selecionarFatosParaSinteseDeReparo,
   type ProgramaGovernoGovInventory,
   type ProgramaGovernoGovInventoryCandidate,
   type ProgramaGovernoGovInventoryDocument,
@@ -45,6 +46,18 @@ const UFS = [
   "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO",
 ] as const
 const DATASET_URL = "https://dadosabertos.tse.jus.br/dataset/candidatos-2026"
+
+test("reparo reduz a síntese a seis fatos distribuídos e distintos", () => {
+  const fatos = Array.from({ length: 12 }, (_, index) => ({
+    id: `fato-${index + 1}`,
+    texto: `Fato ${index + 1}`,
+    evidencias: [{ documentoId: "doc-1", pagina: index + 1, trecho: `Trecho ${index + 1}` }],
+  }))
+  assert.deepEqual(
+    selecionarFatosParaSinteseDeReparo(fatos).map(({ id }) => id),
+    ["fato-1", "fato-3", "fato-5", "fato-8", "fato-10", "fato-12"],
+  )
+})
 
 function sha256(value: Buffer | string): string {
   return createHash("sha256").update(value).digest("hex")
@@ -234,9 +247,31 @@ test("CLI exige UFs, inventario, arquivos e saida explicitamente", () => {
     "--inventory=fixtures/inventory.json",
     "--archive-dir=fixtures/archives",
     "--output-dir=fixtures/output",
+    "--force-fatos",
+    "--repair-guidance=Preservar a cláusula literal.",
+    "--repair-facts-limit=6",
+    "--multipassagem-limite-bytes=90000",
   ])
   assert.deepEqual(parsed.ufs, ["AC", "AM", "PI"])
+  assert.equal(parsed.forceFacts, true)
+  assert.equal(parsed.repairGuidance, "Preservar a cláusula literal.")
+  assert.equal(parsed.repairFactsLimit, 6)
+  assert.equal(parsed.multipassagemLimiteBytes, 90_000)
   assert.throws(() => parseProgramaGovernoGovernadoresArgs(["--ufs=XX"]), /use --ufs/)
+  assert.throws(() => parseProgramaGovernoGovernadoresArgs([
+    "--ufs=AM",
+    "--inventory=fixtures/inventory.json",
+    "--archive-dir=fixtures/archives",
+    "--output-dir=fixtures/output",
+    "--multipassagem-limite-bytes=0",
+  ]), /multipassagem-limite-bytes/)
+  assert.throws(() => parseProgramaGovernoGovernadoresArgs([
+    "--ufs=AM",
+    "--inventory=fixtures/inventory.json",
+    "--archive-dir=fixtures/archives",
+    "--output-dir=fixtures/output",
+    "--repair-facts-limit=7",
+  ]), /repair-facts-limit/)
 })
 
 test("importador contabiliza as 27 UFs por identidade composta e materializa perfil ausente", async () => {

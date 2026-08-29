@@ -1,0 +1,1334 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MT",
+    "sqCandidato": "110002551480",
+    "slug": "otaviano-pivetta",
+    "nomeUrna": "OTAVIANO PIVETTA",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": "2026MT110002551480_01.pdf",
+    "arquivoNoPacote": "MT/2026MT110002551480_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MT:110002551480:01",
+      "fonte": {
+        "arquivoNome": "2026MT110002551480_01.pdf",
+        "arquivoNoPacote": "MT/2026MT110002551480_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "0be1d52602122bfbc44f6a0a8908b61b5e7db96524f6212b532fe93fc8039aec",
+        "extractedTextSha256": "5e366ded40f3e79cf3c45fb0b10dbcb270de66d7f7488e87bcd8a2e60eeffbbe",
+        "paginas": 49,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nO caminho para\nMato Grosso seguir\nprosperando:\nGestão eficiente\na serviço do povo."
+          },
+          {
+            "id": "plano-de-governo-2",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nCarta ao Cidadão Matogrossense\nQuerida matogrossense, querido matogrossense,\n\nde títulos de regularização fundiária e no apoio direto à agricultura\n\nMato Grosso é a terra do trabalho. É o estado construído por quem\n\nfamiliar.\n\nacorda cedo e transforma o esforço diário em desenvolvimento e\n\nSei que o trabalho está longe de acabar e que administrar de\n\nsuperação. Foi essa força que me trouxe até aqui, em 1982, na boleia\n\nverdade não combina com acomodação. Continuar essa gestão\n\nde um caminhão, e que me ensinou que não existem fórmulas\n\nsignifica impor mais ritmo, corrigir o que precisa de ajuste e exigir\n\nmágicas na vida nem na política: o que muda o destino de uma\n\nmais eficiência em cada área.\n\ncomunidade é o trabalho sério, o respeito ao dinheiro público e a\ncapacidade de fazer.\n\nO nosso compromisso para os próximos anos é claro: levar a\neficiência do Estado para dentro de cada um dos 142 municípios,\n\nA verdadeira política não se mede por discursos bonitos, promessas\n\ndo maior ao menor. Vamos reforçar a parceria com as prefeituras\n\nvazias ou ideologias distantes do dia a dia. Ela se mede por aquilo\n\npara melhorar a vida nas cidades; consolidar a saúde mais perto\n\nque denomino de fazimento: a capacidade de planejar, economizar\n\ndas pessoas; combater o crime organizado com tolerância zero;\n\ne entregar obras e serviços que funcionam de verdade, na ponta. O\n\ngarantir que as nossas mulheres sejam respeitadas e protegidas e\n\ndinheiro do imposto que você paga não pertence ao governo, ele\n\nassegurar que a nossa juventude aprenda uma profissão e encontre\n\né seu. E a única forma justa de devolver esse recurso à sociedade\n\noportunidade de trabalho.\n\né gerando o lucro social: o asfalto garantido na porta da sua casa; a\nescola pública que ensina e exige de verdade; a consulta ou cirurgia\n\nNão acredito em governo que atrapalha quem quer produzir,\n\nsem fila e perto de casa; a segurança que devolve a paz às nossas\n\nempreender ou trabalhar. O papel do Estado é ser um parceiro\n\nfamílias.\n\nfirme, desburocratizar, dar segurança jurídica e cuidar com rigor\n\nNos últimos anos, ao lado do governador Mauro Mendes,\n\nextremo daqueles que mais precisam da mão pública.\n\nrecuperamos as contas do Estado, zeramos a gastança desnecessária\ne devolvemos a capacidade de investimento público. Arrumamos a\n\nÉ com essa franqueza, com o compromisso da palavra dada e com\n\ncasa e provamos que é possível governar com responsabilidade fiscal\n\na disposição de quem sempre viveu do trabalho que apresento a\n\ne olhar humano. Concluímos obras esperadas há décadas, tiramos\n\nvocês este Plano de Governo. Aqui não há promessas irrealizáveis,\n\nprojetos históricos do papel, conectamos regiões e provamos o valor\n\nmas compromissos responsáveis, metas claras e a determinação\n\ndo trabalho do mato-grossense.\n\nde seguir fazendo de Mato Grosso o melhor lugar do Brasil para se\nviver, trabalhar e criar os nossos filhos.\n\nEssas conquistas são percebidas no dia a dia, seja na oferta de\nempregos, no salto de qualidade da educação pública, no volume\n\nVamos em frente, com trabalho, respeito e fazimento.\n\nrecorde de investimentos em infraestrutura e logística, na entrega\n\nOtaviano Pivetta"
+          },
+          {
+            "id": "plano-de-governo-3",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nDe onde viemos e para onde vamos\nEntender o atual momento de Mato Grosso requer olhar para as\n\n“fazimento” - a priorização absoluta da entrega concreta sobre a\n\norigens da virada que reconectou o Estado ao crescimento e planejar,\n\nretórica política - voltado à obtenção do “lucro social”, isto é, o retorno\n\ncom clareza, as ações que consolidarão um legado definitivo de\n\ntangível do recurso público na melhoria efetiva da vida do cidadão.\n\nprosperidade.\n\nSob essa premissa, o Governo de Mato Grosso promoveu uma\n\nO ponto de partida dessa trajetória recente remonta a um período\n\nprofunda\n\nsombrio da administração pública mato-grossense.\n\ndesperdícios e resgatou a credibilidade institucional do Estado,\n\nEntre 2011 e 2018, apesar da pujança e da vocação empreendedora\n\nalcançando a Nota A de Capacidade de Pagamento da Secretaria\n\nde seu setor produtivo, o Estado foi submetido a uma sucessão\n\ndo Tesouro Nacional e convertendo o déficit histórico na maior taxa\n\nde crises éticas e de gestão. Marcado por esquemas sistêmicos de\n\nde investimento público do país.\n\ncorrupção, escândalos diários, ineficiência administrativa e grave\n\nEntre 2019 e 2026, essa disciplina administrativa traduziu-se em\n\nirresponsabilidade fiscal, o Poder Executivo entrou em colapso.\n\num volume sem precedentes de entregas estruturantes em todas\n\nA falta de dinheiro travou o Estado. Os salários dos servidores\n\nas regiões. O Estado destinou dezenas de bilhões de reais em\n\natrasaram, dívidas milionárias com prefeituras e empresas\n\ninvestimentos diretos, viabilizando a pavimentação e recuperação\n\ncontratadas se acumularam e obras vitais foram abandonadas. Na\n\nde mais de sete mil quilômetros de rodovias estaduais. Em dois atos\n\nponta, a população sofreu com greves nos hospitais, ambulâncias\n\nhistóricos, assumiu a concessão da BR-163 (Nova Rota do Oeste) e\n\nsem combustível, escolas de lata e viaturas policiais paradas. O\n\no foi pioneiro ao na implantação da primeira ferrovia estadual do\n\nGoverno havia se tornado um obstáculo ao crescimento, cobrando\n\nBrasil.\n\nimpostos sem devolver os serviços básicos de que o cidadão\n\nNa educação pública, Mato Grosso saltou posições nos índices\n\nprecisava.\n\nnacionais de qualidade por meio de investimentos em infraestrutura\n\nA virada de chave começou em 2019, quando Mauro Mendes e\n\nescolar, tecnologia, jornada integral e valorização dos profissionais.\n\nOtaviano Pivetta assumiram a condução do Estado.\n\nNa saúde, Mato Grosso iniciou uma revolução: a descentralização\n\nA trajetória de Pivetta traz consigo a marca da rigidez gerencial,\n\natendeu a pleitos históricos com a construção de 4 (quatro) hospitais\n\nda cobrança firme por resultados, objetividade e foco total na\n\nregionais; o combate às filas por exames e cirurgias foi intensificado\n\nentrega de obras e serviços. Oriundo do agronegócio e precursor\n\ncom o programa Fila Zero; o Saúde Digital foi expandido e o\n\nda modernização de Lucas do Rio Verde, cidade que projetou\n\nmatogrossense ganhou o hospital público mais moderno do país,\n\nnacionalmente como modelo de excelência em gestão pública,\n\no Hospital Central, após mais de 30 (trinta) anos de obras paradas.\n\neducação e infraestrutura ao longo de três mandatos como prefeito,\n\nSimultaneamente, o fortalecimento das forças de segurança, o\n\nPivetta consolidou no governo estadual a aplicação do conceito de\n\napoio à habitação de interesse social, a aceleração da regularização\n\nreestruturação\n\nfiscal,\n\ncortou\n\ndespesas,\n\ncombateu"
+          },
+          {
+            "id": "plano-de-governo-4",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nfundiária e a implementação de programas socioassistenciais, como\n\ninfraestrutura rural e vicinal para o escoamento da pequena e média\n\no Ser Família, mitigaram desigualdades e estruturaram uma rede\n\nprodução; pelo acesso contínuo ao saneamento básico e água\n\nde proteção em todos os 142 municípios.\n\ntratada; e pela ampliação das políticas de proteção e autonomia\n\nEsses avanços nos serviços públicos foram acompanhados por uma\n\nfinanceira das mulheres e populações vulneráveis.\n\nexpressiva evolução nos principais indicadores socioeconômicos do\n\nEmbora o Estado já atue ativamente no enfrentamento de cada uma\n\nEstado.\n\ndessas pautas, a dimensão territorial e a velocidade do crescimento\n\nNo mercado de trabalho, Mato Grosso alcançou a condição de pleno\n\neconômico mato-grossense exigem a evolução permanente das\n\nemprego, registrando uma das menores taxas de desocupação\n\nrespostas governamentais.\n\ndo país, situada em torno de 2,3% a 3,0%. A expansão da atividade\n\nÉ a partir dessa leitura da realidade que se projeta o rumo dos\n\neconômica traduziu-se na evolução do Produto Interno Bruto\n\npróximos anos. Sob a liderança de Otaviano Pivetta, o projeto para o\n\n(PIB) estadual, que superou a marca dos R$ 270 bilhões, em 2025,\n\nperíodo de 2027 a 2030 consolida a transição da reconstrução fiscal\n\nconsolidando um crescimento real médio anual muito acima da\n\ne física para a fase de presença inteligente e ganho de eficiência\n\nmédia nacional.\n\nsocial e tecnológica. Na prática, isso marca uma mudança de\n\nO fortalecimento da renda per capita, a ampliação das redes\n\npatamar no Governo do Estado.\n\nsocioassistenciais e Programas como o Ser Família permitiram que,\n\nSe o primeiro ciclo de gestão foi dedicado a arrumar a casa, quitar\n\nno período de 2019 a 2024, 309 mil mato-grossenses deixassem a\n\ndívidas antigas, resgatar as finanças e erguer grandes obras, o\n\ncondição de pobreza, de acordo com dados do IBGE.\n\npróximo passo é garantir que toda essa estrutura funcione com\n\nEntretanto, o avanço alcançado até aqui não encerra o compromisso\n\nexcelência na vida do cidadão: usar a tecnologia, a inovação e o\n\ncom a população, mas estabelece um novo patamar de exigências.\n\nplanejamento integrado para cortar burocracias, acabar de vez com\n\nA análise detalhada das demandas coletadas em todo o Mato\n\nas filas na saúde, modernizar a segurança pública e fazer com que os\n\nGrosso indica que, embora a malha viária e os equipamentos\n\nserviços do Estado cheguem com agilidade, facilidade e qualidade\n\npúblicos de grande porte tenham avançado significativamente,\n\nreal na ponta.\n\nainda permanecem desafios cruciais.\n\nTrata-se também de consolidar o Estado Parceiro, um governo\n\nA população clama pela descentralização da saúde para o interior;\n\ndesburocratizado, de tolerância zero com o crime, que garante\n\npela eliminação do tempo de espera para cirurgias e exames; pelo\n\nsegurança jurídica e liberdade para quem produz e empreende. Um\n\ncombate às facções criminosas; pelo fortalecimento da atenção\n\nestado que impulsiona a agregação de valor e a industrialização das\n\nbásica e especializada nos polos municipais; pela ampliação de\n\nnossas riquezas com sustentabilidade e que firma um verdadeiro\n\nvagas na educação infantil e nas creches; pelo apoio continuado à\n\nPacto Municipalista, trabalhando lado a lado com as prefeituras para"
+          },
+          {
+            "id": "plano-de-governo-5",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nMetodologia e visão de futuro: gestão por\nresultados, fazimento e lucro social.\nlevar pavimentação, mobilidade urbana, saneamento e habitação\ndiretamente para a vida dos 142 municípios mato-grossenses.\nEste Plano de Governo não é uma coletânea de promessas\nirrealizáveis ou discursos vazios, mas um conjunto de compromissos\nresponsáveis, metas claras e ações mensuráveis. A garantia do\nseu sucesso reside no próprio método de governar: o fazimento, a\ngestão por resultados, a disciplina com o dinheiro público e a busca\nincessante pelo lucro social.\nAo assumir compromissos transparentes e impor ritmo e eficiência a\ncada área da administração, busca-se fortalecer o pacto do Governo\ncom quem trabalha, produz e constrói o futuro do nosso Estado. Com\nresponsabilidade, planejamento rigoroso e determinação, Mato\nGrosso seguirá avançando no caminho da prosperidade, da justiça\nsocial e do desenvolvimento, consolidando-se como o melhor lugar\ndo Brasil para se viver, trabalhar e criar nossas famílias.\n\nA visão administrativa e a metodologia de governo de Otaviano\nPivetta alicerçam-se em uma cultura estritamente orientada por\nresultados, estruturada em torno do lema do Fazimento e da busca\npermanente pelo Lucro Social.\nLonge de constituírem teorias acadêmicas, estas expressões\ntraduzem a retórica e a prática do gestor. Esse modelo mental e\noperacional tem suas raízes fincadas na trajetória de vida de Pivetta\ne foi gradualmente lapidado ao longo dos três mandatos à frente da\nPrefeitura de Lucas do Rio Verde, consolidando-se, posteriormente,\nna administração estadual.\nNesse arranjo metodológico, o termo Fazimento funciona como\na engrenagem de ação, enquanto o Lucro Social figura como a\nfinalidade fundamental e o resultado almejado da máquina pública.\nO Fazimento sintetiza uma postura pragmática, proativa e\ndesburocratizada, centrada na execução acelerada de obras de\ninfraestrutura, logística e ampliação de serviços essenciais, avesso\nao discurso político ornamental e ao debate ideológico abstrato\nque nada entrega. Essa abordagem é impulsionada por um modelo\nrigoroso de cobrança por metas, em que a gestão exige eficiência\ncontínua e inconformismo diante de índices insuficientes,\nassociando-se diretamente a uma forte articulação municipalista\nvoltada à descentralização dos investimentos públicos.\nPor sua vez, o conceito de Lucro Social traduz o retorno concreto dos\nimpostos arrecadados em forma de bem-estar, qualidade de vida\ne melhoria dos indicadores socioeconômicos da população. Tratase do dividendo público gerado pela eficiência governamental,\npremissa sob a qual cada real investido pelo Estado deve se\ntransformar em entregas palpáveis.\nA integração entre a cultura do Fazimento e a meta do Lucro Social"
+          },
+          {
+            "id": "plano-de-governo-6",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nEixos estratégicos (5 pilares do governo)\naponta para um modelo de gestão que passa a direcionar seus\n\nO nosso Plano de Governo para o período de 2027 a 2030 é estruturado\n\nesforços para o que mais importa ao cidadão: a entrega célere de\n\nsobre cinco eixos estratégicos, a saber: Pilar 1 - Saúde Próxima,\n\nserviços públicos de qualidade e o destravamento de investimentos\n\nEducação Libertadora, Apoio Social e Desenvolvimento Humano;\n\nque geram emprego, renda e infraestrutura regional. Dessa forma, o\n\nPilar 2 - Segurança Firme, Tolerância Zero e Ordem Pública; Pilar 3\n\nsucesso das políticas públicas deixa de ser medido pela quantidade\n\n- Proteção à Mulher, Apoio à Maternidade e Autonomia Financeira\n\nde promessas ou pela retórica governamental e passa a ser aferido\n\nFeminina; Pilar 4 - Produção Sustentável, Agregação de Valor e\n\nestritamente pela capacidade de entrega e pela efetividade do\n\nLogística Estruturante; Pilar 5 - O Estado Parceiro: Gestão Eficiente,\n\ndividendo social devolvido à sociedade.\n\nValorização do Servidor, Desburocratização e Pacto Municipalista.\n\nAs bases de um Estado próspero já foram consolidadas e o futuro\n\nEssa estrutura foi pensada a partir da síntese elaborada entre a\n\nque almejamos se fundamenta no amplo compartilhamento\n\ntrajetória pessoal do gestor e as demandas de consolidação do\n\ndessa prosperidade. Nossa força reside na união entre gestão\n\ndesenvolvimento socioeconômico do Estado de Mato Grosso.\n\neficiente e compromisso com o povo. Queremos um Mato Grosso\n\nA fundamentação dessas diretrizes apoia-se em dois conceitos\n\nque seja referência em transparência, inovação, sustentabilidade\n\ncentrais: o Fazimento e o Lucro Social.\n\ne, sobretudo, no cuidado com os mais vulneráveis. Um Estado que\n\nA arquitetura do plano responde à necessidade metodológica\n\nvaloriza sua natureza, sua cultura e sua gente. O caminho é claro:\n\nde evitar a dispersão de recursos e garantir a rastreabilidade das\n\ngovernar com ética, investir com responsabilidade e acreditar no\n\nmetas governamentais. A dinâmica dos pilares baseia-se em\n\npoder transformador do trabalho. Mato Grosso seguirá prosperando,\n\numa cadeia causal contínua: a desburocratização e a governança\n\nporque sua maior riqueza é o seu povo.\n\nparceira operadas pelo Estado criam o ambiente de segurança\njurídica e eficiência logística necessários para alavancar a produção\nsustentável e a agregação de valor econômico. Por conseguinte,\na pujança do setor produtivo expande a base arrecadatória sem a\nnecessidade de elevação da carga tributária, gerando os recursos\nindispensáveis para o financiamento da ordem pública e da\nsegurança, da consolidação dos serviços fundamentais de saúde e\neducação e da proteção integral às vulnerabilidades humanas e de\ngênero.\nAnalisando a função de cada componente da matriz programática,\nverifica-se que o Pilar 1 (Saúde Próxima, Educação Libertadora, Apoio"
+          },
+          {
+            "id": "plano-de-governo-7",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nSocial e Desenvolvimento Humano) desempenha o papel de garantir\n\ndesenvolvimento econômico. Sua função consiste no combate\n\no desenvolvimento integral do capital humano, o fortalecimento da\n\nintransigente às facções criminosas e ao crime organizado por\n\ncidadania e a equidade no acesso aos direitos sociais básicos. Sua\n\nmeio da inteligência policial, da expansão do cerco tecnológico e do\n\njustificativa fundamenta-se na necessidade de descentralizar o\n\nfortalecimento da presença ostensiva nas regiões de fronteira e no\n\natendimento médico de alta e média complexidade, extinguindo as\n\nespaço rural, além do controle rigoroso da questão carcerária, com\n\nfilas represadas de exames e cirurgias.\n\no isolamento absoluto das lideranças criminosas e a ampliação do\n\nNa educação, o pilar objetiva elevar os índices de aprendizagem\n\nsistema prisional.\n\npor meio da alfabetização na idade certa, do fortalecimento do\n\nA instituição do Pilar 3, dedicado exclusivamente à Proteção à\n\nensino técnico profissionalizante e da expansão do tempo integral,\n\nMulher, Apoio à Maternidade e Autonomia Financeira, constitui\n\nincorporando o esporte e a cultura como eixos pedagógicos de\n\numa escolha política deliberada, justificada pela complexidade\n\nformação cidadã, disciplina e inclusão.\n\ne gravidade das assimetrias de gênero e da violência doméstica\n\nNa assistência social e no desenvolvimento humano, o pilar consolida\n\nna realidade estadual. A formulação de um eixo autônomo para a\n\na rede de proteção e autonomia socioeconômica articulada pelo\n\ntemática feminina decorre do diagnóstico de que o enfrentamento\n\nprograma Ser Família, ao mesmo tempo em que utiliza o esporte\n\nà violência contra a mulher não pode ser diluído como uma pauta\n\ne as manifestações culturais como instrumentos estratégicos de\n\nsecundária genérica da segurança pública ou da assistência social,\n\nocupação saudável da juventude, prevenção de vulnerabilidades\n\nsob o risco de perder a eficácia, o foco orçamentário e a mensuração\n\ne fortalecimento do sentimento de pertencimento e identidade\n\nde resultados.\n\nmato-grossense.\n\nA necessidade de um pilar próprio fundamenta-se na natureza\n\nParalelamente, a garantia da moradia digna e a segurança da posse\n\nmultidimensional do problema, que exige intervenções articuladas e\n\ndo imóvel consolidam-se como extensões diretas do apoio social e\n\ntransversais do Estado. Dessa forma, o Pilar 3 integra uma estratégia\n\ndo desenvolvimento humano. Ao viabilizar o acesso à casa própria\n\ncompleta que abrange desde a repressão qualificada, mediante a\n\ne acelerar a entrega gratuita de títulos de propriedade, o Estado\n\nexpansão da Patrulha Maria da Penha, o funcionamento 24 horas\n\nassegura a proteção integral da família, transformando o direito ao\n\ndas delegacias especializadas e o monitoramento tecnológico com\n\nteto em cidadania, patrimônio e alicerce para a superação definitiva\n\nbotões de emergência, até a emancipação econômica e social da\n\nda pobreza.\n\nmulher.\n\nO Pilar 2 (Segurança Firme, Tolerância Zero e Ordem Pública)\n\nEssa emancipação é buscada por meio de qualificações profissionais\n\nresponde à premissa de que a inviolabilidade do cidadão é\n\ndirecionadas, linhas de crédito facilitadas para empreendedoras e\n\npressuposto indispensável para o exercício da liberdade e o\n\nchefes de família, bem como do cofinanciamento estadual com os"
+          },
+          {
+            "id": "plano-de-governo-8",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nmunicípios para a ampliação drástica de vagas em creches e pré-\n\nas prefeituras para viabilizar obras de mobilidade, pavimentação\n\nescolas, medida indispensável para assegurar a inserção feminina\n\nurbana e saneamento básico.\n\nno mercado de trabalho.\nAdicionalmente,opilarestabelecelinhasdecuidadodedicadasàsaúde\n\nPilar 1: Saúde Próxima, Educação Libertadora, Apoio Social e\n\npreventiva da mulher e incentiva a ampliação da representatividade\n\nHabitação.\n\nfeminina nos quadros decisórios da administração pública. Trata-se,\nportanto, de uma resposta estrutural pautada na evidência de que\n\n1.1. Eixo de Entrega: O estado onde a educação forma cidadãos.\n\nnenhum indicador de crescimento econômico é suficiente se não\n\nEntre 2019 e 2026, Mato Grosso vivenciou uma verdadeira revolução\n\nfor acompanhado pela garantia da integridade física, da liberdade,\n\nna educação pública estadual. Ao assumirmos a gestão, o diagnóstico\n\nda igualdade de oportunidades e da dignidade de todas as mulheres\n\nda rede escolar revelava baixos índices de aprendizagem, estruturas\n\nmato-grossenses.\n\nfísicas precárias (quem não se lembra das escolas de lata?),\n\nO Pilar 4 (Produção Sustentável, Agregação de Valor e Logística\n\ndescontinuidade pedagógica e o estado ocupando a 22ª posição no\n\nEstruturante) assume a missão de promover a transição da matriz\n\nranking nacional do IDEB, no ensino médio.\n\neconômica mato-grossense do patamar primário de exportador\n\nDiante dessa realidade, sob a liderança direta de Otaviano Pivetta,\n\npara o de polo agroindustrial processador de commodities. Esse pilar\n\naplicou-se a filosofia do fazimento: planejamento rigoroso, respeito\n\njustifica-se pela urgência em ampliar a infraestrutura rodoviária e\n\naos recursos públicos e execução proativa, transformado impostos\n\nferroviária, garantir a segurança energética no meio rural, conferir\n\nem lucro social, materializado em salas de aula preparadas para\n\nagilidade ao licenciamento ambiental com suporte em tecnologia\n\nformar cidadãos capacitados, éticos e prontos para as oportunidades\n\ne monitoramento rigoroso e estruturar a assistência técnica\n\nde Mato Grosso.\n\ncontinuada para a consolidação da agricultura familiar.\n\nO divisor de águas dessa trajetória foi a criação do programa\n\nPor fim, o Pilar 5 (Estado Parceiro: Gestão Eficiente, Valorização\n\nestratégico EducAção 10 Anos, com a meta ousada de colocar a\n\ndo Servidor, Desburocratização e Pacto Municipalista) atua como\n\neducação mato-grossense entre as mais bem avaliadas do país. A\n\no núcleo operacional da governança estadual. A sua função é\n\npartir do EducAção 10 Anos, a rede estadual protagonizou o maior\n\nreduzir o custo de transação da máquina pública e promover\n\navanço educacional do Brasil, saltando do 22º lugar para a 8ª posição\n\no desenvolvimento diretamente no espaço urbano dos 142\n\nnacional no IDEB do Ensino Médio, além de alcançar destaque de\n\nmunicípios. Fundamenta-se na austeridade fiscal, no controle\n\nvice-liderança na região Centro-Oeste.\n\nrigoroso dos gastos correntes, na transformação digital dos serviços\n\nEssa evolução pedagógica veio acompanhada de um plano sem\n\nao cidadão e na celebração de convênios desburocratizados com\n\nprecedentes de modernização física e tecnológica das unidades"
+          },
+          {
+            "id": "plano-de-governo-9",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nde ensino. O Governo do Estado promoveu a construção e a\n\nAssim, ao integrar planejamento sério, investimentos estruturantes\n\nreforma geral de centenas de escolas em todos os polos regionais,\n\ne eficiência na gestão, Mato Grosso provou que a educação pública\n\neliminando estruturas antigas e garantindo ambientes climatizados,\n\nde excelência é a ferramenta mais poderosa para formar cidadãos\n\nacolhedores e equipados.\n\npreparados, reduzir desigualdades e garantir o futuro próspero do\n\nForam distribuídos mais de 169 mil Chromebooks para estudantes,\n\nnosso estado.\n\ncerca de 27 mil notebooks para professores e instaladas mais de\n10 mil Smart TVs de 65 polegadas na rede estadual. Além disso, a\n\nPropostas\n\nentrega gratuita de uniformes completos e materiais didáticos\n\nAcesso,\n\npadronizados eliminou desigualdades históricas, oferecendo aos\n\nfortalecimento da Formação Profissional e Tecnológica – FPT;\n\nalunos da escola pública insumos equivalentes aos do ensino\n\nestágios e assistência ao estudante vulnerável).\n\nPermanência\n\ne\n\nFormação\n\nProfissional\n\n(Foco\n\nno\n\nprivado.\nA valorização profissional e o fortalecimento do ambiente escolar\n\nAmpliação do Programa de Educação Profissional e Tecnológica\n\ntambém foram pilares essenciais desse ciclo. Mato Grosso instituiu\n\nem parceria com o Sistema S e Órgãos. O Governo de Mato Grosso\n\na Gratificação Anual por Eficiência e Resultado, assegurando o\n\nestá investindo mais de R$ 99 milhões para qualificar e preparar\n\npagamento do 14º e 15º salários aos profissionais da educação\n\ndiretamente mais de 23 mil estudantes da rede pública estadual\n\nque atingem as metas de desempenho, frequência e gestão.\n\npara as oportunidades do mercado de trabalho. Essa iniciativa\n\nParalelamente, atendeu-se a uma forte demanda da sociedade por\n\njá é uma realidade e combina formações técnicas em setores\n\ndisciplinas, valores e cultura de paz com a ampliação de escolas\n\nestratégicos da indústria, comércio e serviços através de parcerias\n\nmilitares Tiradentes e cívico-militares, que figuram hoje entre os\n\nativas com o SENAI, SENAC, IFMT e SECITECI. A proposta integra\n\nmelhores índices de desempenho do estado, somada à oferta de\n\nainda a valorização das vocações regionais com o fomento direto e\n\nensino em tempo integral e ao fortalecimento do ensino técnico e\n\ncontínuo às Escolas do Campo Integral Agrícolas.\n\nprofissionalizante integrado às vocações econômicas regionais.\nNo que diz respeito à primeira infância, o Estado consolidou um\n\nInserção no Mercado de Trabalho e Estágios:\n\nRegime de Colaboração com os municípios mato-grossenses,\n\nPrograma\n\napoiando as prefeituras na construção de creches. A logística de\n\nEXPOESTUDANTIL para estudantes do Ensino Médio.\n\nacesso às escolas no meio rural também recebeu atenção prioritária\n\nPrograma de Aprendizagem Profissional: Cotas de aprendizagem\n\ncom a renovação da frota por meio da entrega de mais de 1.305\n\nem empresas privadas.\n\nônibus escolares.\n\nPrograma Decolando: Formação em Piloto Civil para a juventude,\n\nJovem\n\nTalento:\n\nEstágio\n\nprofissional\n\ne\n\nfeira"
+          },
+          {
+            "id": "plano-de-governo-10",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nem parceria com SETASC e SESP.\nFormação Complementar e Educação Financeira:\nInclusão, Cidadania e Permanência Estudantil:\nProjeto EducArte: Expansão das oficinas de Música, Teatro, Artes\nBolsas PROINQ: Concessão de bolsas de ação afirmativa para acesso\n\nVisuais e Dança no contraturno escolar.\n\nde estudantes quilombolas ao ensino superior via UFMT.\n\nProjeto Aprender Valor: Parceria com o Banco Central para educação\n\nProjeto Horta Escolar: Ampliação do repasse para implementação e\n\nfinanceira em 180 escolas da rede.\n\nmanutenção de hortas em 300 unidades de ensino.\nRepasse e reformulação do Programa de Alimentação Escolar.\n\nProjeto “Anti-Bets”: a) Conscientizar, nas escolas, os estudantes\nsobre os malefícios das apostas eletrônicas (bets) que prejudicam\n\nGestão Pedagógica, Recomposição e Avaliação (Programas de\n\no desenvolvimento das pessoas e da sociedade; b) Encaminhar\n\nrecomposição da aprendizagem, inteligência artificial pedagógica\n\nproposta, por meio da bancada federal de Mato Grosso, para extinção\n\ne preparação para o ensino superior)\n\ndas bets; c) realizar campanhas educativas governamentais contra\na “epidemia das bets”.\n\nPlataformas de Aprendizagem e IA:\nValorização Profissional e Gestão de Pessoas (Reconhecimento do\nRecomposição via IA (Plataforma LETRUS): Correção de redação e\n\nservidor público, capacitações contínuas, tecnologia de gestão e\n\nescrita guiada por Inteligência Artificial para estudantes do Ensino\n\nincentivos por produtividade).\n\nFundamental e Médio.\nGamificação em Matemática (Plataforma MATIFIC): Plataforma\n\nRemuneração e Incentivos por Desempenho\n\ninterativa para alunos do 5º ao 9º ano do Ensino Fundamental.\n\nManutenção do 14º e 15º salários.\nGratificação GR Plus: Premiação adicional para gestores e\n\nExames, Olimpíadas e Preparatórios:\n\nprofissionais de destaque.\nMassa Salarial e Bolsas: Manutenção do pagamento de remuneração\n\nProjeto Pré-ENEM Digit@l: Oferta de curso preparatório, presencial\n\nda rede e pagamento de bolsas de aperfeiçoamento/interiorização.\n\ne digital, para 20 mil alunos do Ensino Médio e EJA.\n1ª Olimpíada de Matemática de MT: Competição pedagógica\n\nFormação Continuada e Capacitação Executiva:\n\nestadual para 319 mil alunos em parceria com a UNEMAT.\n\nMBA em Autismo: Curso de pós-graduação lato sensu voltado para"
+          },
+          {
+            "id": "plano-de-governo-11",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\n3 mil profissionais atuantes na Educação Especial.\n\nPlano de Governo\n\n2027 - 2030\n\ncreches e transporte escolar)\n\nPacto pela Digitalização: Formação de competências digitais.\nCapacitação em Educação Empreendedora e MEG-Educação.\n\nInfraestrutura Física:\nConstrução de Colégios Estaduais Integrados (CEI): Edificação de\n\nSeleções, Concursos e Modernização Organizacional:\n\nunidades escolares modernas e completas (ex.: CEI Zélia Costa com\n\nConcurso Público: Realização para provimento efetivo de vagas na\n\nR$ 24,09 milhões).\n\nrede estadual.\n\nReformas, Ampliações e Quadras Poliesportivas: Obras em\nandamento e novas licitações para climatização integral, coberturas\n\nTecnologia, Inovação e Escolas Militares (Conectividade, atualização\n\nde quadras esportivas e acessibilidade na rede estadual.\n\ndo Parque Tecnológico e consolidação das Escolas Cívico-Militares).\nExpansão do Modelo Militar e Cívico-Militar:\n\nRegime de Colaboração e Municipalismo:\n\nUniversalização das Escolas Militares: Meta de ampliação do modelo\n\nTransporte Escolar Rural e Fluvial: Repasse aos municípios para\n\nde gestão integrada com forças de segurança (Polícia Militar e\n\ntransporte escolar e custeio de transporte fluvial específico em\n\nBombeiros) para atingir até 263 unidades.\n\nmunicípios com comunidades ribeirinhas.\n\nEstruturação de Bandas: Repasse para aquisição e manutenção de\n\nPremiação do Programa Alfabetiza MT: Repasse e premiação\n\ninstrumentos musicais nas escolas militares.\n\nfinanceira às escolas e municípios que atingirem as metas de\nalfabetização de crianças até o 2º ano do Ensino Fundamental.\n\nModernização Digital e Conectividade no Ambiente Escolar:\n\nCofinanciamento de Creches Municipais: Apoio técnico e repasse\n\nInclusão Digital: Aquisição de 23.000 novos Chromebooks.\n\nfinanceiro via regime de colaboração para expansão de vagas em\n\nInternet de Alta Velocidade: Expansão de antena de internet via\n\nEducação Infantil.\n\nsatélite STARLINK para 125 escolas rurais/remotas.\nEduca.AI - Data Lake Educacional (Novo): Plataforma de Inteligência\n\nEnsino Superior\n\nArtificial para análise preditiva de evasão e desempenho estudantil.\n\n- Programa de Turmas Especiais e Itinerantes no Interior: Oferta de\n\nDesenvolvimento do novo Sistema de Gestão Educacional e\n\ncursos temporários e sob demanda de Graduação e Pós-Graduação\n\ncontratação de serviços de internet de alta capacidade para escolas.\n\n(especializações, residências, MBA, mestrados e doutorados)\nvoltados às vocações econômicas dos municípios do interior,\n\nInfraestrutura Escolar e Parcerias Municipalistas (Modernização\n\nevitando a evasão dos talentos.\n\ndos prédios públicos e cooperação direta com os municípios para\n\n- Pós-Graduação Aplicada ao Desenvolvimento Regional: Criação"
+          },
+          {
+            "id": "plano-de-governo-12",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nde mestrados e doutorados profissionais focados nas necessidades\nestratégicas do Estado (logística, biotecnologia, gestão pública e\n\n1.2. Eixo de Entrega: O Estado onde a saúde pública funciona e\n\nagregação de valor à produção primária).\n\nestá perto do cidadão.\n\n- Polos Regionais de Inovação Agroindustrial: Implantação de\necossistemas de incubadoras de startups e extensão tecnológica\n\nAo assumirmos a gestão estadual, o setor de saúde enfrentava uma\n\nnos campi para conectar a pesquisa ao agronegócio, agroindústria\n\ngrave crise fiscal, com obras paralisadas há décadas, atrasos de\n\ne comércio.\n\nquase um ano nos repasses aos municípios e um vazio assistencial\n\n- Expansão do Programa Verticaliza: Articulação do Ensino Médio\n\nno interior.\n\ntécnico da SEDUC com o Ensino Superior (cursos de tecnologia\n\nDiante desse cenário, a administração estadual organizou as contas\n\ne outras áreas), permitindo o aproveitamento de créditos e uma\n\ne colocou em prática a diretriz de descentralizar e regionalizar\n\nformação mais rápida para o mercado de trabalho.\n\nos serviços, garantindo que a saúde pública funcione com alta\n\n- Transição Energética e Bionegócios: Oferta de especializações e\n\nqualidade e esteja cada vez mais perto de onde o cidadão vive.\n\nprojetos de extensão voltados a energias renováveis (solar, biomassa\n\nA consolidação dessa nova rede de atendimento teve seu marco\n\ne biogás) para a zona rural e distritos industriais.\n\nsimbólico com a conclusão e inauguração do Hospital Central do\n\n- Permanência e Inclusão Estudantil: Ampliação de bolsas de\n\nEstado, em Cuiabá, encerrando 34 anos de paralisação e abandono\n\npermanência, auxílio-moradia, alimentação e transporte para\n\ndas obras. O projeto original, da década de 1990, foi ampliado de 9 mil\n\nestudantes em situação de vulnerabilidade socioeconômica.\n\npara 32 mil metros quadrados de área construída, transformando o\n\n- Ações Itinerantes de Saúde e Assistência Social: Mobilização de\n\nhospital num equipamento de altíssima complexidade, dotado de\n\nalunos e professores das áreas de saúde e ciências humanas em\n\n287 leitos (96 exclusivos de UTI) e centro cirúrgico com suporte para\n\nmutirões de atendimento preventivo, apoio psicológico e assistência\n\nprocedimentos robóticos e hemodinâmica.\n\njurídica em periferias e no interior.\n\nPara assegurar padrões internacionais de eficiência administrativa\n\n- Formação e Atenção aos Povos Indígenas: Ampliação dos\n\ne clínica, com atendimento 100% gratuito pelo SUS, a administração\n\nprogramas de educação específicos para povos indígenas (formação\n\ndo Hospital foi confiada à Sociedade Beneficente Israelita Brasileira\n\nde professores e cursos de graduação específicos.\n\nHospital Albert Einstein, abrindo as portas da unidade à população\n\n- Transferência Tecnológica e Agricultura Familiar: Apoio e acesso\n\nno início de 2026.\n\nfacilitado da agricultura familiar e negócios verdes às tecnologias\n\nSimultaneamente, para atacar a raiz da dependência em relação à\n\ndesenvolvidas pela universidade.\n\nRegião Metropolitana, o Governo do Estado financiou e executou\na construção simultânea de quatro novos hospitais regionais"
+          },
+          {
+            "id": "plano-de-governo-13",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nestratégicos no interior: em Juína, Confresa, Tangará da Serra e Alta\n\nem até quatro vezes, os valores pagos pelo Governo Federal.\n\nFloresta.\n\nToda essa engrenagem migrou para o Sistema Regula MT, permitindo\n\nEssa estratégia já se tornou realidade com a entrega do Hospital\n\na regulação integrada de vagas, leitos e salas cirúrgicas em tempo\n\nEstadual do Alto Tapajós, em Alta Floresta, inaugurado em março\n\nreal, direcionando o paciente para a unidade geograficamente mais\n\nde 2026 com 162 leitos totais (40 de UTI). Ao mesmo tempo, as obras\n\npróxima.\n\navançaram aceleradamente para entrega dos hospitais regionais\n\nAdemais, reconhecendo as grandes distâncias territoriais do estado,\n\nde Juína, Confresa e Tangará da Serra.\n\no programa Saúde Digital MT aproximou a medicina especializada\n\nEm paralelo, o governo promoveu a modernização e expansão da\n\nda Atenção Primária nos 142 municípios mato-grossenses. Em\n\nrede existente em Cáceres, Colíder, Sinop, Sorriso e Rondonópolis. E\n\nparceria com o Ministério da Saúde e o Hospital Albert Einstein,\n\ntambém fez o retrofit de unidades especializadas como a Escola de\n\no Projeto TeleAmes passou a oferecer teleconsultas em 12\n\nSaúde Pública, o Centro Logístico de Abastecimento (CELAD), o MT\n\nespecialidades médicas estratégicas, conectando diretamente o\n\nHemocentro, o CERMAC, o CRIDAC, o Centro de Atenção Psiquiátrica\n\npaciente, o médico da Unidade Básica de Saúde e os especialistas\n\nAdauto Botelho e a Santa Casa e o Hospital Metropolitano.\n\ndo Einstein. Entre 2023 e 2026, essa infraestrutura digital viabilizou\n\nComo resultado direto desse esforço de ampliação física, entre\n\na emissão de mais de 637 mil telediagnósticos à distância; cerca\n\n2019 e 2025, a estrutura pública estadual vinculada ao SUS saltou\n\nde 17,7 mil teleconsultas especializadas e mais de 17,4 mil suporte\n\nde 539 para 937 leitos clínicos (+73,8%) e de 302 para 664 leitos de\n\ntécnicos por teleconsultoria a médicos e enfermeiros da atenção\n\nUTI (+119,8%). Isso garantiu o maior piso assistencial e intensivo da\n\nbásica, cadastrando 3.543 estabelecimentos e capacitando 2.620\n\nhistória de Mato Grosso.\n\nprofissionais da ponta.\n\nPara que essa expansão estrutural se traduzisse em agilidade\n\nEsse pilar tecnológico e assistencial foi sustentado por um rigoroso\n\ne redução efetiva do tempo de espera do cidadão, a gestão\n\ncompromisso fiscal e de cooperação com os municípios. De 2019 a\n\nreestruturou os mecanismos de regulação e financiamento\n\n2025, o Estado repassou R$ 4,94 bilhões diretamente às prefeituras\n\nassistencial. O Programa Fila Zero na Cirurgia foi criado em 2023\n\npara o custeio da atenção básica, UPAs, farmácias e leitos locais,\n\nem parceria com prefeituras, consórcios intermunicipais e hospitais\n\ndemonstrando que o equilíbrio das contas públicas e a gestão por\n\nfilantrópicos. Ele viabilizou mais de 667 mil procedimentos eletivos\n\nresultados são os caminhos definitivos para entregar uma saúde\n\nno estado até 2026, reduzindo o tempo médio de espera por uma\n\neficiente, humana e presente em todo o território mato-grossense.\n\ncirurgia de 77 para 44 dias.\n\nFinalmente, no que diz respeito ao Atendimento Pré-Hospitalar\n\nEsse avanço foi impulsionado pela edição da inovadora Tabela SUS\n\n(APH), por meio da consolidação do modelo integrado entre o\n\nMato Grosso, por meio da qual o Estado passou a complementar,\n\nSAMU e o Corpo de Bombeiros, o Estado expandiu a sua capacidade"
+          },
+          {
+            "id": "plano-de-governo-14",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\noperacional de 64 para 89 equipes de resgate e socorro móvel,\n\nPlano de Governo\n\n2027 - 2030\n\nAmpliação e habilitação da rede de transplante\n\ngarantindo a cobertura e a proteção direta de mais de 3 milhões\nde pessoas em Mato Grosso. Essa ampliação estrutural fortaleceu a\n\nMédia Complexidade e Diagnóstico.\n\nprontidão do atendimento de urgência e emergência e consolidou\n\nRegionalização das consultas com especialistas, exames avançados\n\no compromisso de levar o socorro rápido e de alta qualidade\n\ne urgência pré-hospitalar.\n\ndiretamente às diferentes regiões do estado.\n\nImplantar 8 Centros Regionais de Diagnóstico com equipamentos\nde imagem e laboratório para descentralizar exames complexos: em\n\nPropostas\n\nCáceres, Alta Floresta, Tangará da Serra, Juína, Confresa, Hospital\n\n“Juntos pela Saúde Plena” - Atenção Primária: Parceria com os 142\n\nCentral, Água Boa e Ribeirão Cascalheira.\n\nmunicípios para fortalecer a porta de entrada do SUS.\n\nTelessaúde e Saúde Digital MT: Ampliação do telediagnóstico e\n\nUniversalização da Estratégia Saúde da Família (ESF) e Saúde Bucal\n\nteleconsulta para especialidades médicas nos municípios do interior.\n\nCofinanciamento estadual atrelado a metas de desempenho e\ncobertura\n\nNova Rede Hospitalar Regional: “Avançar, Concluir e Consolidar”.\n\nTecnologia no posto: exames na hora, laudos digitais e telemedicina.\n\nEntrega das grandes obras e gestão de alta performance para a\n\nAtendimento Domiciliar e Cuidados Continuados: implantação do\n\nrede terciária.\n\nprograma Melhor em Casa no âmbito estadual.\n\nEntrega e operação dos Hospitais Regionais de Juína, Tangará da\nSerra e Confresa; Fase 2 do Hospital Central, em Cuiabá (gestão\n\n“A Saúde na Palma da Mão”: Regulação, Fila Zero e Tecnologia.\n\nde excelência Albert Einstein); Unidade de Cuidados Paliativos/\n\nEliminar filas cegas, unificar a jornada do paciente e integrar o\n\nTransição (Hub Santa Casa)\n\nhistórico médico em todo o estado.\n\nNovos Projetos de Hospitais: Pronto-Socorro/Hospital em Várzea\n\nUnificação da fila de regulação do estado e municípios por meio do\n\nGrande, Barra do Garças, Rondonópolis, Pontes e Lacerda.\n\nRegula MT.\nProntuário Único Estadual para que o médico veja o histórico do\n\nRede Santa Casa de Cuidado Integral\n\npaciente em qualquer município.\n\nGarantir a desospitalização digna, a transição assistencial e a atenção\n\nAviso ativo automático aos pacientes (WhatsApp/SMS).\n\npsicossocial e de neurodesenvolvimento com equidade territorial,\n\nEvolução do Fila Zero\n\ntendo a Santa Casa de Cuiabá como instituição coordenadora e Hub\n\nNormatizar e institucionalizar a Tabela SUS/MT\n\nCentral de desospitalização estadual.\n\nAmpliar o Credenciamento de serviços suplementares ao SUS\n\nImplantar Unidade de Cuidados Paliativos e Transição na estrutura"
+          },
+          {
+            "id": "plano-de-governo-15",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nda Santa Casa, como etapa intermediária humanizada antes do\n\n1.3. Eixo de Entrega: O Estado onde o esporte e a cultura formam\n\nretorno definitivo ao lar.\n\ncidadãos e movimentam as nossas cidades.\n\nAtenção Psicossocial.\n\nEntre 2019 e 2026, a gestão estadual promoveu uma verdadeira\n\nFormar Equipes Multiprofissionais Regionalizadas de controle,\n\nrevolução na forma de planejar e executar as políticas de esporte e\n\navaliação\n\ncultura em Mato Grosso.\n\ne\n\nmonitoramento\n\nde\n\ndoenças\n\npsicossociais\n\ne\n\nneurodesenvolvimento, sob supervisão técnico-clínica do complexo\n\nNo acumulado desse período, foram aplicados mais de R$ 1,5\n\nda Santa Casa.\n\nbilhão no setor, sendo quase R$ 900 milhões direcionados às ações\n\nFortalecer a Linha de Cuidado do Autismo e Neurodesenvolvimento\n\nculturais e mais de R$ 600 milhões aos programas esportivos.\n\ne expandir a rede de CAPS no interior.\n\nNo esporte, a atuação governamental se estruturou para amparar,\n\nFinanciar e construir Residências Terapêuticas e Casas-Lar para\n\ndesde a iniciação desportiva nas escolas, até a alta performance\n\npacientes psiquiátricos crônicos egressos de longas internações.\n\nem nível internacional. O Programa Olimpus MT destinou milhões\n\nDirecionar\n\nSaúde\n\nde reais para garantir a sustentabilidade financeira de atletas e\n\nSocioeducativa e fortalecimento do suporte psicossocial na Atenção\n\ntreinadores. Além da concessão continuada de cerca de 25 mil\n\nPrimária.\n\nBolsas Atleta, o Estado inovou e disponibilizou mais de 3,3 mil Bolsas\n\nações\n\nintegradas\n\npara\n\nSaúde\n\nPrisional,\n\nTécnico, dando o devido reconhecimento à figura do treinador.\nAtenção Pré-Hospitalar (SAMU + Bombeiros)\n\nAssim, não perdemos os nossos talentos para outros centros e os\n\nImplementar a Política Estadual das Urgências e Emergências\n\nprofissionais, do interior e da capital, foram valorizados. E além disso,\n\n– atingir 100% de cobertura estadual de APH Móvel até 2028,\n\na instituição do Prêmio Olímpico foi um grande incentivo para os\n\nadaptando o modelo (SAMU ou Bombeiros) às características de\n\nrepresentantes mato-grossenses nos Jogos de Paris 2024.\n\ncada região.\n\nParalelamente, o fortalecimento da base do ecossistema esportivo\n\nAmpliação das Centrais de Regulação de Urgência (CRU) – SAMU e/\n\nfoi viabilizado pela descentralização dos Jogos Escolares e Estudantis\n\nou CIOSP (Centro Integrado de Operações de Segurança Pública),\n\nem 10 regiões esportivas, mobilizando milhares de alunos e servindo\n\nfortalecendo a rede já estruturada.\n\ncomo mecanismo de inclusão social e descoberta de novos talentos.\n\nImplementação da rede de educação permanente em APH\n\nEssa presença estatal no território traduziu-se ainda na melhoria\n\nFortalecimento dos Consórcios Intermunicipais com apoio estadual\n\nda infraestrutura comunitária e escolar, com a entrega de 48 novas\n\nde custeio\n\nquadras poliesportivas na rede estadual de ensino, dezenas de\noutras em execução e a formalização de convênios diretos com"
+          },
+          {
+            "id": "plano-de-governo-16",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nos municípios para a edificação e revitalização de ginásios, praças\n\nPlano de Governo\n\n2027 - 2030\n\ne desenvolvimento regional.\n\nesportivas, estádios e pistas de caminhada.\nNa cultura, o investimento recorde permitiu abandonar repasses\n\nPropostas\n\npontuais e consolidar um modelo de fomento transparente,\n\nEsporte\n\ncontínuo e democratizado via edital público pelo Fundo Estadual\n\nInfância Esportiva: projetos sociais e escolas ofertando iniciação\n\nde Cultura (Funcultura) e mecanismos descentralizados.\n\nesportiva, tirando as crianças das ruas e colocando-as em quadras,\n\nA descentralização foi fixada como compromisso ético, assegurando\n\ncampos, piscinas e tatames.\n\na cota de 60% dos recursos para os municípios do interior e 40% para a\n\nEconomia do Esporte: apoio à prospecção e realização de eventos\n\nRegião Metropolitana, além da destinação de verbas exclusivas para\n\nesportivos nacionais e internacionais.\n\na preservação de culturas tradicionais, povos indígenas, quilombolas,\n\nExcelência Esportiva: Incentivo através de bolsas esportivas,\n\nmatriz africana, grupos urbanos e populações vulneráveis.\n\nlocomoção e ajuda de custo para participação em competições\n\nO fomento à leitura e às artes visuais também avançou de\n\nnacionais e internacionais.\n\nforma expressiva, ao mesmo tempo em que a gestão investiu na\n\nSua Praça Esportiva: Ampliação da oferta de espaços esportivos\n\nsalvaguarda do patrimônio histórico e no apoio ao turismo cultural,\n\ne de lazer através de programa de incentivo à revitalização de\n\npatrocinando obras emblemáticas como o restauro da Casa Barão,\n\nequipamentos e doação de academias ao ar livre, playgrounds,\n\na edificação do Congódromo em Vila Bela da Santíssima Trindade, a\n\npisos modulares e gramados sintéticos às prefeituras municipais.\n\nconstrução de Centros de Eventos e a estruturação de orlas fluviais\n\nEsporte 100 Limites: Incentivo à realização de competições\n\ne praças preparadas para festivais em diversos municípios (Santo\n\nparadesportivas; apoio aos atletas classificados para competições\n\nAntônio do Leverger, Cáceres, São Félix do Araguaia, Barão de\n\nnacionais e internacionais; além da construção e manutenção de\n\nMelgaço e Luciara).\n\ncentros de referência esportiva para pessoas com deficiência.\n\nA construção de grandes equipamentos como o Parque Novo\n\nEsporte para todos: Realização de festivais e competições esportivas\n\nMato Grosso, a modernização da Arena Pantanal e a criação de\n\npara idosos, indígenas, quilombolas e outras comunidades\n\nespaços para feiras e eventos no interior estabeleceram um circuito\n\ntradicionais do estado.\n\npermanente de atração de grandes competições esportivas,\n\nInteligência Esportiva: Realização de cursos e formações para\n\nfestivais e shows. Esse calendário contínuo tem dinamizado o\n\natletas, técnicos, árbitros e gestores.\n\ncomércio local, a rede hoteleira e o setor de gastronomia, provando\n\nMapa do Esporte: Sistema informatizado onde atletas, técnicos,\n\nque o investimento em esporte e cultura não é apenas uma entrega\n\nárbitros, clubes, escolas, centros de treinamento e espaços\n\nsocial, mas uma engrenagem eficaz de geração de emprego, renda\n\nesportivos disponíveis à população sejam registrados para promover"
+          },
+          {
+            "id": "plano-de-governo-17",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\no encontro entre a oferta e a demanda.\n\ne reformar bibliotecas, conchas acústicas e pequenos teatros\n\nSustentabilidade Esportiva: Desenvolvimento de políticas de\n\nmunicipais que estão abandonados ou subutilizados no interior do\n\nincentivo ao investimento privado no esporte, atreladas a uma\n\nestado.\n\nconsultoria de imagem e mídia para desenvolver as marcas das\n\nArte e Cultura nas Escolas (Programa de Vivência): Integrar artistas\n\nentidades e atletas, tornando-os mais atrativos a patrocinadores.\n\ne mestres da cultura popular ao ambiente escolar da rede estadual,\n\nEsportes Eletrônicos: Incentivar o ingresso de Mato Grosso no circuito\n\npromovendo oficinas regulares que complementem o currículo\n\nde eventos e competições de E-sports para fomentar a modalidade\n\ntradicional.\n\nque mais cresce em número de jogadores e investimentos privados.\n\nDesburocratização\n\ndos\n\nInstrumentos\n\nJurídicos\n\n(Editais\n\nSimplificados): Incluir a adoção da linguagem simples em todos\nCultura\n\nos instrumentos de seleção pública da cultura e a simplificação da\n\nCultura do Tamanho de Mato Grosso. Descentralização do Fomento:\n\nburocracia.\n\nGarantir que os recursos dos editais de cultura não fiquem\n\nPotencializar os Equipamentos Públicos de Cultura: Requalificar\n\nconcentrados apenas na capital ou nos grandes polos.\n\nequipamentos culturais públicos (museus e centros culturais),\n\nRespeito e Valorização das Culturas Tradicionais:\n\nPrograma\n\nespecífico de fomento e proteção para as manifestações culturais\nde povos indígenas, quilombolas e comunidades ribeirinhas do\nPantanal, Araguaia e Amazônia mato-grossense, garantindo a\npreservação da memória e a geração de renda através do artesanato\ne do turismo de base comunitária.\nCriação do ACERVO MT: Plataforma digital pública dedicada\na digitalizar, preservar e distribuir obras de autores, músicos e\ncineastas mato-grossenses.\nMicrocrédito para a Economia Criativa: Linha de crédito com juros\nsubsidiados, via DesenvolveMT, voltada especificamente para\npequenos empreendedores do setor cultural (artesãos, designers,\nprodutores de eventos, músicos e desenvolvedores de mídias\ndigitais).\nModernização dos Equipamentos Culturais do Interior: Mapear\n\nampliando o investimento na programação e na oferta de serviços."
+          },
+          {
+            "id": "plano-de-governo-18",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\n1.4. Eixo de Entrega: O Estado onde os vulneráveis encontram\n\ndoméstica sob medidas protetivas.\n\napoio do governo.\n\nPara garantir que a proteção pública funcione como uma ponte\npara a autonomia e a dignidade humana, o Estado associou as\n\nA reorganização rigorosa das contas públicas e o resgate da\n\nações de transferência de renda à qualificação profissional por\n\ncapacidade\n\ndirecionar\n\nmeio do Programa SER Família Capacita. Em parceria com o SENAI-\n\nvolumes inéditos de recursos ao eixo estratégico “O Estado onde\n\nMT, a SECITECI e as prefeituras, a iniciativa ofertou mais de 50 mil\n\nos vulneráveis encontram apoio do setor público”. Mato Grosso\n\nvagas gratuitas em cursos profissionalizantes alinhados às vocações\n\nsuperou a lógica assistencialista pontual e estruturou uma rede\n\neconômicas regionais, registrando mais de 26 mil matrículas\n\npermanente e unificada de cidadania em cooperação direta com\n\nefetuadas e assegurando prioridade de acesso aos beneficiários\n\nos 142 municípios mato-grossenses.\n\ndo SER Família, mulheres em situação de vulnerabilidade, jovens e\n\nO pilar central dessa mudança foi a consolidação do Programa SER\n\ngrupos prioritários.\n\nFamília que evoluiu da resposta emergencial no período crítico\n\nEssa articulação entre acolhimento e inserção produtiva acelerou\n\nda pandemia da COVID-19, quando atendeu 142.050 famílias e\n\na emancipação socioeconômica das famílias em um contexto\n\ndistribuiu mais de 1,038 milhão de cestas básicas. Agora ele garante\n\nregional de mercado de trabalho aquecido.\n\ntransferência direta de renda via cartão magnético, vinculada ao\n\nA sustentabilidade das entregas na ponta foi viabilizada pelo\n\nacompanhamento técnico contínuo nos Centros de Referência de\n\nfortalecimento institucional do Sistema Único de Assistência Social\n\nAssistência Social (CRAS).\n\n(SUAS) no âmbito do Pacto Municipalista. O Governo do Estado\n\nPara responder às necessidades específicas de cada ciclo de vida\n\ngarantiu o repasse contínuo de R$ 101 milhões de reais anuais\n\ne situação de risco, o SER Família foi estruturado em modalidades\n\ndo Fundo Estadual de Assistência Social (FEAS) para os Fundos\n\nespecializadas: o SER Família, focado nas famílias em extrema\n\nMunicipais de Assistência Social, além de descentralizar incentivos\n\npobreza; o SER Família Criança, que alcançou mais de 37 mil\n\nde até R$ 300 mil por município para a reforma, ampliação e\n\nfamílias com suporte socioeducativo e contou com a implantação\n\nmodernização tecnológica dos CRAS e CREAS.\n\nde uma unidade modelo de atendimento no contraturno escolar\n\nComo resultado desse esforço integrado entre responsabilidade\n\nem Poconé; o SER Família Idoso e o SER Família Inclusivo, voltados\n\nfiscal, presença estatal e fomento ao desenvolvimento, dados do\n\nao custeio de medicamentos, nutrição e cuidados especiais para\n\nIBGE apontam que aproximadamente 309 mil mato-grossenses\n\nidosos e pessoas com deficiência; o SER Família Indígena, com\n\ndeixaram a condição de pobreza entre 2019 e 2024, demonstrando\n\nabordagem intercultural adaptada; e o SER Família Mulher, focado\n\na efetividade de um governo parceiro que ampara os vulneráveis e\n\nno amparo financeiro e auxílio-moradia para vítimas de violência\n\ncria caminhos reais para a prosperidade de toda a sociedade.\n\nde\n\ninvestimento\n\npróprio\n\npermitiram"
+          },
+          {
+            "id": "plano-de-governo-19",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nidentifica vulnerabilidades (educação, saúde, assistência social, etc.)\nPropostas\n\ne realiza os devidos encaminhamentos.\nEscola que Protege o Bairro: Implementação de programas de\n\nPrograma de Transferência de Renda “Cartão Ser Família”.\n\neducação ambiental e ecopontos em escolas estaduais como\n\nManutenção e aprimoramento do programa\n\nferramenta de ocupação da juventude e prevenção primária à\n\nAcompanhamento mensal sistemático das famílias assistidas,\n\ncriminalidade.\n\narticulado às políticas de qualificação e emprego.\n\nAtuação preventiva e baseada na presença ativa do Estado no\n\nOferta compulsória/direcionada de cursos de capacitação técnica,\n\nterritório; Integração efetiva das políticas públicas e ocupação\n\nqualificação profissional e encaminhamento prioritário ao mercado\n\nqualificada do contraturno escolar; Redução da evasão escolar,\n\nde trabalho formal.\n\ndiminuição do recrutamento pelo crime organizado e fortalecimento\n\nMeta de Superação da Vulnerabilidade: Alcançar a autonomia\n\ndos vínculos familiares e comunitários.\n\nfinanceira e retirar do estado de vulnerabilidade socioeconômica\naté 30% dos atendidos pelo programa de transferência de renda.\n\nPessoas Idosas\nRede de Proteção: Fortalecimento dos Conselhos Tutelares,\n\nPrograma Ser Família Criança: Criação de 10 novos polos do\n\nConselhos de Direitos da Criança e do Adolescente e ampliação dos\n\nprograma para atendimento no contraturno escolar.\n\nCentros de Referência em Direitos Humanos (CRDH).\nPolíticas para Idosos: Construção de 10 Institutos de Longa\n\nPrograma Estadual “Territórios de Proteção: Transformando\n\nPermanência para Idosos (ILPI), 10 Vilas do Idoso e 10 Centros de\n\nTerritórios Vulneráveis em Territórios Protetivos” - Conceito e\n\nConvivência do Idoso (CCI).\n\nObjetivo: Estratégia da Política Estadual de Proteção Integral\nde Crianças e Adolescentes de Mato Grosso que visa organizar\n\nRestaurantes Pratos Populares: Ampliação e descentralização dos\n\ne integrar a Rede de Proteção nos territórios mais vulneráveis.\n\nRestaurantes Pratos Populares para ofertar refeições nutritivas e\n\nAssegurar o acompanhamento contínuo, a redução de fatores de\n\nacessíveis a populações periféricas.\n\nrisco e a ampliação de oportunidades antes que ocorram violações\nde direitos.\n\nFortalecimento do Cofinanciamento Estadual aos 142 Municípios\n\nEsporte e Lazer (Porta de Entrada): Atividades esportivas e de lazer\n\nAporte Anual Global: Garantia e fortalecimento do cofinanciamento\n\nno contraturno escolar como estratégia principal de atração e\n\nestadual repassado pelo Fundo Estadual de Assistência Social\n\nengajamento. Enquanto a criança participa das atividades, a equipe\n\n(FEAS) aos 142 municípios de Mato Grosso."
+          },
+          {
+            "id": "plano-de-governo-20",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nAporte financeiro estadual de até R$ 300.000,00 (trezentos mil\n\n1.5. O Estado onde a moradia digna e o título do seu imóvel são uma\n\nreais) destinado para reformas, adequações físicas, ampliação e\n\nrealidade.\n\naquisição de equipamentos modernos para o Centro de Referência\nde Assistência Social (CRAS), reconhecido como a porta de entrada\n\nEntre 2019 e 2026, a gestão estadual colocou em prática a diretriz de\n\nprincipal da Assistência Social no território municipal.\n\nenfrentar o déficit habitacional e garantir o direito à moradia como\npressupostos indispensáveis para a cidadania, a dignidade humana\n\nEducação Financeira, Defesa do Consumidor e Segurança Alimentar:\n\ne o combate à vulnerabilidade social em Mato Grosso.\n\nCombate ao Superendividamento e às BETs.\n\nNo âmbito do acesso à casa própria, o Governo viabilizou mais de\n\nAções de educação financeira integradas entre o Procon-MT e o\n\n40 mil moradias populares por meio do programa SER Família\n\nTribunal de Justiça de Mato Grosso (TJMT) para prevenção de dívidas\n\nHabitação e da concessão de subsídios estaduais diretos, incluindo\n\ne proteção ao consumo consciente.\n\na entrega de unidades habitacionais a custo zero para famílias em\n\nPrograma de Prevenção e Retrogressão do Superendividamento\n\nsituação de extrema pobreza.\n\n(Foco em Idosos e Aposentados): Estruturar uma plataforma e\n\nReconhecendo que a segurança habitacional é essencial para\n\nforça-tarefa permanente (parceria Procon-MT, Defensoria Pública\n\na quebra de ciclos de violência, Mato Grosso inovou em âmbito\n\ne TJMT) para mutirões de conciliação e renegociação de dívidas\n\nnacional ao criar o SER Família Mulher. A iniciativa tornou o Estado\n\nde aposentados e pensionistas, combatendo tarifas abusivas de\n\no primeiro do país a conceder auxílio-moradia direto no valor de\n\ninstituições financeiras e concessionárias de serviços públicos\n\nR$ 600,00 mensais para mulheres vítimas de violência doméstica\n\nDescentralização dos Procons: Apoio estrutural e financeiro para\n\namparadas por medidas protetivas de urgência, destinando mais\n\nimplementação de Procons Municipais.\n\nde R$ 6,3 milhões para beneficiar diretamente mais de 1.700 famílias\n\nCampanhas de Prevenção e Combate aos Danos da Dependência\n\nem momentos críticos de vulnerabilidade.\n\nDigital e Apostas Eletrônicas (Bets).\n\nParalelamente, a garantia do direito à propriedade e a segurança\n\nFiscalização e Regulação Transparente de Concessionárias de\n\njurídica foram impulsionadas por ações massivas de regularização\n\nServiços Essenciais: Reforçar a atuação das agências reguladoras\n\nfundiária. Em parceria com os municípios, o Governo do Estado —\n\nestaduais\n\nsocial,\n\npor meio do INTERMAT e do programa MT Produtivo — entregou\n\nestabelecendo metas rigorosas de qualidade, transparência em\n\ngratuitamente mais de 22 mil títulos fundiários urbanos e rurais,\n\nreajustes e canais diretos de reclamação para os usuários do\n\nconvertendo a posse informal em patrimônio legal, cidadania e\n\ntransporte intermunicipal, energia e saneamento\n\ndignidade para as famílias mato-grossenses.\n\n(AGER-MT)\n\ncom\n\nparticipação\n\ne\n\ncontrole"
+          },
+          {
+            "id": "plano-de-governo-21",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPropostas\n\nPlano de Governo\n\n2027 - 2030\n\npassado e implementou um modo de agir baseado em inteligência\nqualificada, integração de forças e sufocamento financeiro do\n\nHabitação Social e Construção de Moradias\n\ncrime, além de modernização completa do arsenal, da frota e do\n\nConstrução de mais 60 mil novas casas populares por meio do\n\necossistema pericial.\n\nPrograma SER Família Habitação, com foco na concessão de\n\nNo centro dessa transformação, o programa Vigia Mais MT\n\nsubsídios estaduais e entrega de unidades habitacionais a custo\n\ndemocratizou o acesso à segurança por meio do maior cercamento\n\nzero para famílias em situação de extrema vulnerabilidade.\n\ndigital da história do Estado, conectando prefeituras, rodovias,\n\nLar MT Mulher (Habitação Faixa Zero): Construção de casas populares\n\nescolas e o setor produtivo a uma central unificada no Ciosp que\n\ne loteamentos gratuitos direcionadas prioritariamente às mulheres\n\nhoje opera milhares de câmeras em tempo real, resultando em\n\nchefes de família em situação de extrema vulnerabilidade, com a\n\ncentenas de prisões imediatas e na recuperação contínua de\n\nidentificação e realocação daquelas que vivem em locais indignos\n\nveículos roubados.\n\nsem os serviços públicos básicos.\n\nParalelamente, na faixa de fronteira com a Bolívia, os investimentos\nestaduais contínuos garantiram um prejuízo acumulado bilionário\n\nEmissão e Entrega Gratuitas de Títulos: Expansão da regularização\n\nao crime organizado.\n\nfundiária urbana e rural por meio do INTERMAT e do programa MT\n\nNas unidades prisionais, o Governo do Estado tomou de volta o\n\nProdutivo, garantindo a entrega e o registro cartorário gratuitos\n\ncontrole total dos presídios com a ampliação de vagas, obras de\n\nde títulos de propriedade para famílias vulneráveis e pequenos\n\nexpansão, tecnologias de varredura e o rigoroso isolamento das\n\nprodutores.\n\nlideranças faccionais, impedindo que ordens para crimes externos\nfossem emitidas do interior das celas. Essa mesma firmeza na\n\nPilar 2: Segurança Firme, Tolerância Zero e Ordem Pública.\n\nrepressão foi combinada com a responsabilidade social no sistema\nsocioeducativo, que teve seu quadro profissional ampliado\n\n2.1. Eixo de Entrega: O Estado onde o cidadão tem paz e o crime é\n\ne\n\ncombatido com firmeza.\n\nmultidisciplinar e qualificação de jovens, além do fortalecimento\n\ninfraestruturas\n\ntotalmente\n\nreformadas\n\ncom\n\natendimento\n\ndas redes de proteção à mulher e combate à violência doméstica\nPara superar o diagnóstico inicial, que apontava para o avanço das\n\nde forma transversal entre segurança e assistência social.\n\nfacções criminosas nos bairros, a ameaça patrimonial no campo,\no avanço do narcotráfico pela fronteira e o déficit estrutural nos\npresídios, a gestão estadual abandonou a postura reativa do\n\nPropostas"
+          },
+          {
+            "id": "plano-de-governo-22",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nCriação e Fortalecimento de Tropas/Unidades Especializadas:\n\nidentificação de autores de crimes sexuais em série.\n\nCriação do Batalhão Rural da PMMT: Estabelecimento do\n\nPolícia no Lugar Certo, na Hora Certa: Inteligência artificial a serviço\n\npatrulhamento rural estruturado e focado no acolhimento e\n\nda otimização do policiamento ostensivo.\n\nproteção ao homem do campo.\nFortalecimento do Patrulhamento Tático: Ampliação da Força\n\nOperação “Sossego da Comunidade” e Integração Fiscalizatória:\n\nTática e do Batalhão ROTAM em todas as Regiões Integradas de\n\nInstituir um protocolo integrado de fiscalização e combate à poluição\n\nSegurança Pública como primeira resposta contra facções.\n\nsonora urbana, articulando a Polícia Militar, o Corpo de Bombeiros,\n\nCombate à Facção no Interior:\n\na Polícia Civil e as fiscalizações de meio ambiente/posturas dos\n\nCriação de delegacias regionais especializadas no combate ao crime\n\nmunicípios.\n\norganizado.\nEstrangulamento financeiro/lideranças no interior, preservando o\n\n2.2. Eixo de Entrega: O Estado onde o presídio não é “escritório do\n\natendimento ordinário de furtos e roubos nas delegacias locais.\n\ncrime” e o preso produz para se reinserir na sociedade.\n\nDelegado 24 Horas em Todo o Estado: Implantação de Delegacia\nVirtual nos 142 municípios, garantindo atendimento imediato de\n\nA gestão estadual assumiu o controle do sistema prisional,\n\ndelegado sem necessidade de deslocamento de viaturas ou viagens\n\ntransformando a realidade de unidades que antes sofriam com a\n\nlongas.\n\nsuperpopulação e a interferência externa.\nImplementou-se uma política de tolerância zero com a indisciplina\n\nCercamento Tecnológico, Inteligência e Presença Territorial:\n\ninterna, investimentos pesados em segurança máxima e a\n\nVigia Mais Fronteiras e Divisas: Expansão do cercamento digital\n\nerradicação da ociosidade dos detentos.\n\nnas divisas estaduais e na faixa de fronteira com leitura de placas e\n\nNo acumulado de 2019 a 2026, Mato Grosso realizou a maior expansão\n\nalertas em tempo real no Ciosp.\n\nde vagas prisionais de sua história, com o aporte de R$ 375 milhões\n\nA Porteira da Fazenda no 190: Integração das propriedades rurais ao\n\nque resultou na entrega de 7.796 novas vagas.\n\nsistema 190 via câmeras com energia solar e alertas via satélite.\n\nO Estado adotou metodologias modernas de construção com\n\nOlhos no Céu: Emprego de drones de observação para patrulhamento\n\nmonoblocos pré-moldados e concreto celular usinado, acelerando\n\ncontínuo da fronteira e grandes centros urbanos.\n\nobras estruturantes como a entrega do Raio 8 (Segurança Máxima)\ne do Raio 6 (com 432 vagas e celas automatizadas) na Penitenciária\n\nSistemas de Informação, Genética e Modernização Investigativa:\n\nCentral do Estado (PCE). A presença e a autoridade estatal foram\n\nAmpliação do banco de DNA para cruzamento genético e\n\nconsolidadas por meio de constantes operações de revista interna,"
+          },
+          {
+            "id": "plano-de-governo-23",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nculminando na apreensão de milhares de celulares e chips, centenas\n\nPlano de Governo\n\n2027 - 2030\n\ncustos de escolta, com isolamento tecnológico absoluto.\n\nde armas brancas e até drones.\nAlém da disciplina firme e do isolamento das lideranças faccionadas,\n\nRecomposição Continuada e Qualificação do Efetivo: Planejamento\n\nMato Grosso tornou-se referência nacional em ressocialização pelo\n\nde concursos públicos periódicos para a Polícia Penal e para as\n\ntrabalho. A ocupação laboral de reeducandos registrou um salto\n\nequipes do Sistema Socioeducativo, garantindo a proporção\n\nexpressivo de 700%, subindo de 814 em 2018 e chegando a até\n\nadequada de efetivo e o fortalecimento contínuo da categoria.\n\n5.596 trabalhadores em 2024 e 4.428 em 2025 e mais de 450 órgãos\npúblicos e empresas privadas.\n\nPilar 3: Proteção à Mulher, Apoio à Maternidade e Autonomia\n\nTodo esse avanço estrutural foi respaldado pela valorização da\n\nFinanceira\n\ncarreira, com a nomeação de quase 1.400 novos profissionais para o\nsistema penitenciário e socioeducativo.\n\n3.1. Eixo de Entrega: O Estado onde as mulheres são respeitadas\ne protegidas.\n\nPropostas\nA dignidade, a vida e a integridade de cada mulher mato-grossense\nImplantação dos Parques Fabris Prisionais: Construção de galpões\n\nsão valores inegociáveis que precisam ser defendidos com prioridade\n\nindustriais nas áreas externas dos grandes estabelecimentos penais,\n\nabsoluta e coragem. Não podemos aceitar com naturalidade\n\nexpandindo a parceria com o setor privado para zerar a ociosidade\n\nque nosso Estado conviva com estatísticas dolorosas de violência\n\ne garantir que 100% dos presos aptos trabalhem e aprendam uma\n\ndoméstica e de gênero, a maioria praticada no ambiente familiar sob\n\nprofissão.\n\nmotivações fúteis como sentimento de posse ou inconformismo.\nCada uma dessas tragédias, em que a esmagadora maioria das\n\nIsolamento Tecnológico Absoluto: Universalização de bloqueadores\n\nvítimas não contava com medida protetiva vigente, representa\n\nde sinal de celular, internet e radiocomunicação com varredura\n\numa dor irreparável para as famílias e uma exigência de resposta\n\nautomatizada nas principais unidades de regime fechado do Estado.\n\nimediata do Poder Público.\nA dimensão e a gravidade dessa realidade exigem uma mudança\n\nExpansão Regional dos Raios de Segurança Máxima: Construção\n\nde postura.\n\nde novos módulos estaduais de custódia diferenciada e segurança\n\nO enfrentamento à violência contra a mulher não pode mais ser\n\nmáxima no interior do Estado (nos moldes do Raio 8 da PCE),\n\ntratado de forma dispersa, como uma pauta menor e genérica\n\ndescentralizando o isolamento de lideranças criminosas e reduzindo\n\ndiluída entre a segurança pública e a assistência social. Por essa razão,"
+          },
+          {
+            "id": "plano-de-governo-24",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nassumimos o compromisso de dedicar um pilar estratégico próprio\n\nMT expandindo a oferta de microcrédito e estimulando negócios\n\ne autônomo em nosso Plano de Governo, voltado exclusivamente\n\nliderados por mulheres.\n\nà Proteção à Mulher, Apoio à Maternidade e Autonomia Financeira\n\nNa saúde, a interiorização da alta complexidade e o programa Fila\n\nFeminina.\n\nZero viabilizaram um crescimento superior a 300% na realização\n\nEntre 2019 e 2026, a Patrulha Maria da Penha vivenciou uma\n\nde procedimentos médicos eletivos e exames preventivos vitais,\n\nexpansão histórica, saltando de apenas 2 unidades em 2018 para 41\n\namparados pelas entregas do novo Lacen e do Hospital Estadual\n\nunidades operacionais ativas, cobrindo as mais diversas regiões e\n\ndo Alto Tapajós, além das obras dos hospitais regionais de Juína,\n\ngarantindo que as medidas protetivas de urgência deferidas pela\n\nConfresa e Tangará da Serra.\n\nJustiça sejam cumpridas com rigor.\n\nPara assegurar a permanência das mães no mercado de trabalho,\n\nEssa infraestrutura foi potencializada pela modernização das\n\nfirmamos a cooperação e o cofinanciamento direto com os\n\nDelegacias Especializadas de Defesa da Mulher (DDM), inclusive no\n\nmunicípios para a ampliação e construção de creches.\n\ninterior, ao mesmo tempo em que a implementação do Botão do\n\nAvançamos muito, mas a constatação de que a violência de gênero\n\nPânico e o acionamento emergencial por geolocalização reduziram\n\nainda persiste renova o nosso dever de aperfeiçoar os mecanismos\n\ndrasticamente o tempo de resposta policial.\n\nde busca ativa, inteligência preventiva e presença do Estado. O\n\nA apuração policial dos casos de feminicídio em Mato Grosso\n\ntrabalho realizado até aqui estabeleceu as bases sólidas sobre as\n\nalcançou índice de resolução de 100% em investigações conduzidas\n\nquais continuaremos construindo um Mato Grosso onde todas as\n\npela Polícia Civil.\n\nmulheres tenham a liberdade e as condições para viver com plena\n\nSabendo que o rompimento do ciclo de violência passa\n\nsegurança e perspectiva de futuro.\n\nobrigatoriamente pela independência e pela segurança habitacional,\nMato Grosso inovou em âmbito nacional ao criar o Programa SER\n\nO que está sendo feito: Ações em andamento.\n\nFamília Mulher. Tornando-se o primeiro estado do país a conceder\num auxílio-moradia direto de R$ 600,00 mensais para mulheres\n\nO que será feito de novo: Compromissos novos, modernizações, uso\n\nvítimas de violência amparadas por medidas protetivas, destinando\n\nde tecnologia e ampliação de metas para o próximo ciclo de gestão.\n\nmais de R$ 6,3 milhões para beneficiar, diretamente, mais de 1.700\nPropostas\n\nfamílias em momentos críticos de vulnerabilidade.\nPara\n\nque\n\nessa\n\nproteção\n\nalcance\n\nas\n\ncomunidades\n\nrurais,\n\nassentamentos, áreas ribeirinhas e terras indígenas, colocamos\n\nGovernança, Liderança e Fortalecimento Institucional.\n\nem circulação a Van Rosa levando atendimento psicossocial e\n\nRepresentatividade na Administração: Meta é alcançar 50% de\n\norientação jurídica até as localidades mais isoladas.\nFortalecemos a Linha Mulher Empreendedora do Desenvolve"
+          },
+          {
+            "id": "plano-de-governo-25",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nmulheres nos cargos de chefia e liderança da administração pública\n\nagressores/vítimas sob medidas protetivas.\n\nestadual.\n\nMonitoramento automático de chamadas de emergência (190) com\n\nApoio à estruturação dos Organismos de Políticas para as Mulheres\n\nindicativo de violência que não geraram Boletim de Ocorrência\n\n(OPMs) nos Municípios: Realização de transferência financeira para\n\nimediato, mapeando reincidências para orientar visitas preventivas\n\nque os municípios criem instâncias governamentais encarregadas\n\nda Patrulha Maria da Penha antes da escalada da agressão.\n\nde planejar, coordenar, gerir e articular as políticas públicas voltadas\n\nHumanização e Adequação dos Serviços Periciais e IMLs para\n\nàs mulheres.\n\nAtendimento a Vítimas de Violência Sexual: Adequar a estrutura dos\n\nAtuação\n\nTransversal\n\ne\n\nDiagnóstico:\n\nImplementação\n\nde\n\nInstitutos Médico-Legais (IMLs) e Unidades Periciais de Mato Grosso\n\nacompanhamento por indicadores da condição da mulher, além da\n\npara integrá-los formalmente à rede de atendimento humanizado\n\nmanutenção do Portal Mulher MT.\n\nàs vítimas de violência sexual e doméstica, garantindo acolhimento\n\nConscientização Científica e Masculinidades: Formação de grupos\n\nmédico, psicológico e pericial privativo, contínuo e sem revitimização.\n\nreflexivos para servidores públicos masculinos como medida\npreventiva contra a violência e incentivo a pesquisas científicas com\nrecorte de gênero.\n\nRede Itinerante: Fortalecer e regionalizar a Rede Estadual Itinerante\nde Proteção às Mulheres (com equipes multidisciplinares e suporte\n\nProteção Integral e Enfrentamento à Violência\n\nda Van Rosa) para atendimento no campo, florestas e águas.\n\nIntegração Operacional e Tecnologia: Acolhimento virtual imediato\n\nMonitoramento\n\nvia Delegacia Virtual 24h, avaliação técnica de risco, perícias por\n\nde agressores/vítimas sob medidas protetivas e inteligência da\n\ntelemedicina e fortalecimento do cercamento tecnológico (Vigia\n\nSegurança Pública para monitorar chamadas sem BO formalizado\n\nMais MT) integrado ao Botão do Pânico, .garantindo oitivas remotas\n\npara prevenção de reincidências.\n\ne\n\nResponsabilização:\n\nFiscalização\n\neletrônica\n\nimediatas e solicitação de medidas protetivas sem necessidade de\ndeslocamento entre municípios.\n\nHabitação Social e Suporte de Urgência\n\nAmpliação da Rede de Proteção: Expandir a Patrulha Maria da\n\nPrograma Lar MT Mulher (Habitação Faixa Zero): Construção de\n\nPenha, as Delegacias Especializadas de Defesa da Mulher (DDM)\n\ncasas populares gratuitas voltadas para mulheres chefes de família\n\ne criar novas unidades da Casa da Mulher Brasileira nos principais\n\nem situação de extrema vulnerabilidade.\n\npolos.\n\nAuxílio-Aluguel / SER Família Mulher: Concessão emergencial de\n\nRede Itinerante: Fortalecer e regionalizar a Rede Estadual Itinerante\n\nauxílio-moradia (atualmente R$ 600,00) para vítimas de violência\n\nde Proteção às Mulheres (com equipes multidisciplinares e suporte\n\ndoméstica sob medidas protetivas de urgência.\n\nda Van Rosa) para atendimento no campo, florestas e águas.\n\nInclusão no Apoio Habitacional Geral: Subsídios diferenciados na\n\nMonitoramento e Responsabilização: Fiscalização eletrônica de\n\naquisição de casa própria voltados para mulheres cuidadoras e"
+          },
+          {
+            "id": "plano-de-governo-26",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nmães atípicas.\n\nàs necessidades epidemiológicas femininas no orçamento da saúde.\n\nAutonomia Econômica, Trabalho e Empreendedorismo.\n\nEducação e Prevenção:\n\nAcesso ao Crédito: Ampliação em 50% dos recursos da Linha Mulher\n\nConteúdo obrigatório de prevenção da violência e igualdade para\n\nEmpreendedora (Desenvolve MT) e parceria com o Sebrae/MT para\n\n100% dos estudantes da rede estadual.\n\nfundos garantidores (como o FAMPE Mulher).\n\nProgramas para prevenção da evasão escolar de meninas por\n\nApoio às Chefes de Família: Fortalecimento do Programa Estadual\n\ngravidez precoce ou responsabilidades de cuidado.\n\nMulher Chefe de Família e o Programa de Inserção Produtiva,\n\nAmpliação do acesso e permanência feminina na educação\n\nassegurando prioridade de vagas de emprego em empresas\n\nprofissional, tecnológica e superior (com foco nas carreiras STEM\n\ncontratadas pelo Estado ou beneficiadas por incentivos fiscais.\n\ne liderança), além de programas de alfabetização para mulheres\n\nCuidado e Igualdade Salarial: Instituição do Mapa Estadual da\n\nadultas/idosas.\n\nEconomia do Cuidado para diagnosticar e reintegrar mulheres fora\ndo mercado devido ao trabalho de cuidado não remunerado.\n\nComunicação\n\nMulheres do Campo e Comunidades Tradicionais: Ações direcionadas\n\nGarantir a veiculação continuada dos canais estaduais e nacionais\n\nde assistência técnica, acesso ao crédito e ampliação da emissão de\n\nde denúncia (Ligue 180, Botão do Pânico e canais da Patrulha Maria\n\ndocumentos civis para populações rurais, indígenas, quilombolas e\n\nda Penha) em programações de rádio estaduais, órgãos públicos\n\nribeirinhas.\n\nde atendimento direto ao cidadão e terminais de transporte\nintermunicipal.\n\nMaternidade, Saúde e Educação\n\nInclusão e Acessibilidade no Acolhimento à Violência: Adaptar\n\nApoio à Maternidade e Educação Infantil: Regime de colaboração\n\ne modernizar os canais estaduais de emergência, denúncia e\n\ncom municípios para ampliação de vagas em creches de tempo\n\nacolhimento à mulher para garantir atendimento prioritário,\n\nintegral e pré-escolas, permitindo a conciliação entre maternidade,\n\nhumanizado e 100% acessível às mulheres com deficiência auditiva\n\nestudos e trabalho.\n\ne visual vítimas de violência doméstica e familiar em Mato Grosso.\n\nSaúde Integral e Preventiva:\nLinha de cuidado voltada à saúde da mulher para redução do tempo\nde espera em exames preventivos, mamografias, diagnóstico e\ntratamento do câncer de mama.\nExpansão dos atendimentos em saúde mental para mães atípicas,\ncuidadoras e mulheres em situação de vulnerabilidade/violência.\nProtocolos de atendimento humanizado na rede do SUS e atenção"
+          },
+          {
+            "id": "plano-de-governo-27",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nPilar 4: Produção Sustentável, Industrialização, Emprego e\n\nnos focos de calor.\n\nLogística Estruturante\n\nParalelamente ao combate firme das ilegalidades, o Estado\nacelerou a regularização e a celeridade dos processos ambientais.\n\n4.1. Eixo de Entrega: O Estado onde se produz de forma sustentável\n\nA criação do CAR Digital 2.0 substituiu análises manuais lentas por\n\ne inovadora.\n\num fluxo automatizado e geoespacial que já promoveu a validação\nde milhares de Cadastros Ambientais Rurais e viabilizou milhares de\n\nMato Grosso provou ao Brasil e ao mundo que é plenamente possível\n\nTermos de Compromisso do Programa de Regularização Ambiental.\n\nconciliar a alta produtividade agropecuária com a preservação\n\nNa esfera do licenciamento, a Licença Ambiental Simplificada (LAC)\n\nrigorosa e a valorização de seus ativos ambientais.\n\nreduziu o prazo médio de emissão para até dois dias úteis, enquanto\n\nCom 60% de seu território mantido sob cobertura vegetal nativa\n\no licenciamento trifásico teve seu tempo de análise técnica\n\npreservada e 100% da área estadual monitorada em tempo real por\n\nreduzido em 78,7%, eliminando gargalos históricos com total rigor e\n\nsensoriamento remoto, o Governo do Estado aliou modernização\n\nresponsabilidade ambiental.\n\ntecnológica, eficiência administrativa e tolerância zero no combate\n\nO compromisso em converter penalidades em restauração efetiva\n\naos crimes ambientais.\n\nviabilizou o Mutirão de Conciliação Ambiental - unindo o Poder\n\nO Poder Executivo alocou mais de R$ 454 milhões diretamente nas\n\nExecutivo, o Ministério Público e o Tribunal de Justiça -, iniciativa\n\nestruturas de prevenção e combate aos ilícitos. Esse rigor garantiu\n\nque garantiu a recuperação direta de mais de 10,1 mil hectares\n\na Mato Grosso a liderança nacional em fiscalização e regularidade\n\ndegradados.\n\nambiental (RAD 2025). Nos últimos 4 anos, 91,7% de toda a área\n\nAo unir tecnologia de ponta, rigor fiscalizatório, desburocratização e\n\ndesmatada no Estado ocorreu dentro da legalidade — mediante\n\nmetas ousadas, Mato Grosso estabeleceu as bases de uma produção\n\nautorização prévia dos órgãos ambientais — ou foi prontamente\n\nverde, inovadora e sustentável.\n\nautuada e fiscalizada, índice que alcançou 93% em 2025.\n\nO Estado demonstra, na prática, que a preservação dos seus\n\nComo resultado desse esforço continuado, o Estado ostenta uma\n\necossistemas é o alicerce mais seguro para a prosperidade contínua,\n\nredução histórica de aproximadamente 87% no desmatamento\n\na atração de investimentos e o desenvolvimento de toda a sociedade\n\nem relação ao pico de 2004, além de uma nova queda de 25% nos\n\nmato-grossense.\n\nalertas recentes do DETER (2025/2026).\nA atuação integrada e estratégica entre a SEMA-MT, o Batalhão de\n\nPropostas\n\nEmergências Ambientais do Corpo de Bombeiros Militar, a Defesa\nCivil, a Polícia Militar e a Polícia Civil culminou na redução de 78,15%\n\nModernização e Automação Ambiental"
+          },
+          {
+            "id": "plano-de-governo-28",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nAnálise Automatizada do CAR: Implementar a análise automatizada\ndo Cadastro Ambiental Rural (CAR) nos municípios para acelerar a\n\nPromover a utilização sustentável das Unidades de Conservação do\n\nregularização ambiental dos imóveis rurais e permitir foco técnico\n\nEstado através do incentivo ao ecoturismo;\n\nem casos mais complexos.\nTransformação Digital e Celeridade: Ampliar a digitalização,\n\nApoiar iniciativas de uso sustentável da floresta, como mecanismo\n\nautomação e uso de novas tecnologias para reduzir a burocracia,\n\nde redução dos índices de desmatamento.\n\ncustos e tempo de resposta aos processos ambientais para o cidadão\ne o empreendedor.\n\nFortalecer a política estadual de prevenção e combate aos incêndios\n\nAssistência ao Produtor: Condicionar o suporte e a assistência\n\nflorestais ampliando o monitoramento, a capacidade operacional, o\n\ntécnica a pequenos e médios produtores rurais ao cumprimento\n\nuso de inteligência e novas tecnologias, a atuação integrada entre\n\ndas normas ambientais.\n\nos órgãos públicos e o apoio aos municípios e produtores rurais na\nprevenção do fogo.\n\nBioeconomia, Clima e Tecnologias Verdes.\nPrograma Estadual de Bioeconomia e Clima: Articular instituições de\n\nImplantação do plano Pantanal Resiliente ao Fogo, estruturando o\n\npesquisa, setor produtivo e órgãos ambientais, de forma integrada,\n\nmanejo integrado do fogo, manutenção permanente de aceiros e\n\na iniciativas já consolidadas como o Programa REM MT.\n\nbrigadas operacionais de pronta resposta.\n\nTecnologias de Baixo Carbono: Fomentar o desenvolvimento e a\nadoção de bioinsumos, energias renováveis, eficiência energética e\n\n4.2. Eixo de Entrega: O estado onde as pessoas encontram\n\nsistemas produtivos sustentáveis.\n\noportunidades e prosperam.\n\nProteção aos Biomas mato-grossenses: Apoiar a biotecnologia\nvoltada ao aproveitamento sustentável dos recursos do Cerrado,\n\nAo reorganizar as contas do Estado e resgatar a capacidade de\n\nPantanal e Amazônia.\n\ninvestimento próprio, o Governo criou um ambiente de estabilidade\n\nInternacionalização da Produção Verde: Projetar Mato Grosso como\n\ne crescimento que levou o Produto Interno Bruto (PIB) estadual\n\nreferência global em rastreabilidade, tecnologias verdes e créditos\n\na ultrapassar R$ 270 bilhões em 2025, sustentando taxas de\n\nde carbono sob a marca Made in Mato Grosso.\n\nexpansão econômica acima da média nacional e conduzindo o\nestado à condição de pleno emprego, com os menores índices de\n\nFortalecer a política de regularização ambiental e fundiária das\n\ndesocupação do país, situados entre 2,2% e 3,0%.\n\nunidades de conservação do Estado;\n\nNo entanto, sabendo que a verdadeira prosperidade não se mede"
+          },
+          {
+            "id": "plano-de-governo-29",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\napenas por indicadores, mas pela efetiva melhoria da qualidade de\n\n3.568 cartões do Fundo de Apoio à Agricultura Familiar, garantindo\n\nvida nos municípios, a administração estadual estruturou frentes\n\ncrédito desburocratizado direto na ponta.\n\ndecisivas para garantir que o desenvolvimento econômico se\n\nO resultado combinado do crescimento econômico, da capacitação\n\ntraduzisse em inclusão, autonomia e elevação da renda das famílias\n\nprofissional e do apoio direto aos produtores rurais refletiu-se em\n\nmato-grossenses.\n\numa redução histórica da pobreza e da desigualdade.\n\nPara vencer o gargalo da escassez de mão de obra, o Governo do\n\nSegundo dados do IBGE, entre 2019 e 2024, mais de 309 mil mato-\n\nEstado integrou a Secretaria de Estado de Assistência Social e\n\ngrossenses deixaram a condição de pobreza.\n\nCidadania (SETASC), a Secretaria de Estado de Ciência, Tecnologia e\n\nEsse avanço fez Mato Grosso ser reconhecido como o segundo\n\nInovação (SECITECI) e o SENAI-MT no lançamento do programa SER\n\nestado menos desigual do Brasil e conquistar o primeiro lugar na\n\nFamília Capacita.\n\nRegião Centro-Oeste no Prêmio Brasil Sem Fome.\n\nCom mais de 50 mil vagas ofertadas em 2.5 mil turmas\ndescentralizadas por todo o estado, a iniciativa levou qualificação\n\nEsse avanço fez Mato Grosso ser reconhecido como o 2º estado\n\nprofissional gratuita em 75 profissões sob medida para as demandas\n\nmenos desigual do Brasil e conquistar o 1º lugar na Região Centro-\n\nprodutivas regionais.\n\nOeste no Prêmio Brasil Sem Fome. Ao garantir trabalho, qualificação,\n\nEssa mesma visão de inclusão produtiva e fortalecimento da\n\nterra e teto, a gestão provou que o papel do Estado Parceiro é abrir\n\neconomia local impulsionou o maior volume de investimento\n\ncaminhos e oferecer as ferramentas necessárias para que cada\n\npúblico da história de Mato Grosso direcionado à agricultura familiar.\n\nmato-grossense possa prosperar com o fruto do seu próprio esforço.\n\nPor meio da Secretaria de Estado de Agricultura Familiar (SEAF-MT)\ne da EMPAER-MT, foram aplicados R$ 817 milhões para modernizar\n\nPropostas\n\no trabalho no campo e garantir renda diária a quem produz\nalimentos. Esse esforço entregou mais de 8.415 máquinas e patrulhas\n\nGeração de Emprego, Trabalho e Qualificação Profissional\n\nmecanizadas; 61 mil toneladas de calcário para recuperação do solo;\n\nRegionalizada.\n\n1,23 milhão de mudas frutíferas e florestais; além de 497 kits de\n\nOferta de cursos técnicos e de capacitação profissional desenhados\n\nirrigação e 4.500 barracas de feira. Para fortalecer a bacia leiteira, o\n\nsob medida para as vocações econômicas de cada microrregião.\n\nEstado distribuiu mais de 36 mil doses de sêmen, 4.807 embriões\n\nFoco estratégico nas demandas locais de Agricultura/Agronegócio,\n\nde alto padrão genético, 991 resfriadores e 550 ordenhadeiras,\n\nComércio, Inovação, Tecnologia, Serviços e Economia Criativa.\n\nadequando a produção familiar às normas sanitárias.\n\nCapilaridade e parceria direta com a SECITECI para alcance nos 142\n\nEssa infraestrutura no campo foi consolidada pela distribuição de\n\nmunicípios mato-grossenses."
+          },
+          {
+            "id": "plano-de-governo-30",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\ncontratantes.\nModernização da Rede de Escolas Técnicas Estaduais (ETEs):\nExpansão da rede de Escolas Técnicas Estaduais.\n\nAgricultura Familiar, Inclusão Produtiva Rural e Desenvolvimento\n\nEquipamento e modernização de laboratórios, oficinas e áreas\n\ndo Campo\n\nde eletromecânica, eletrônica e agroindústria, de acordo com a\n\nAssistência Técnica e Extensão Rural (ATER):\n\nvocação regional.\n\nParceria direta com os municípios na execução dos serviços de ATER,\n\nConsolidação das ETEs como centros regionais integrados de\n\ndisponibilizando veículos, integração de sistemas e cooperação\n\neducação, inovação e desenvolvimento.\n\ntécnica.\n\nImplantação de espaços de inovação nas ETEs articulados como\npolos regionais do Parque Tecnológico.\n\nMecanização, Infraestrutura Rural e Irrigação:\nFornecimento\n\ne\n\ndisponibilização\n\nde\n\nmáquinas,\n\ntratores,\n\nQualidade, Permanência e Empregabilidade:\n\nimplementos, equipamentos e veículos aos municípios para\n\nInstituição da Política Estadual de Educação Profissional e\n\natendimento dos agricultores familiares.\n\nTecnológica (marco legal).\n\nDisponibilização de maquinários para manutenção de estradas\n\nImplantação do Sistema Estadual de Avaliação da Educação\n\nvicinais rurais.\n\nProfissional (monitoramento de evasão e empregabilidade dos\n\nIncentivo à mecanização agrícola de pequeno porte adequada às\n\negressos).\n\ncadeias produtivas.\n\nConsolidação do Programa de Assistência Estudantil como política\n\nAmpliação do acesso a sistemas de irrigação e criação de linhas de\n\npermanente de permanência.\n\ncrédito específicas para aquisição de equipamentos de irrigação.\n\nInclusão de Inteligência Artificial, Automação, Empreendedorismo\ne Educação Financeira no currículo dos cursos.\n\nAcesso a Mercados, Agregar Valor e Comercialização:\n\nAmpliação de oportunidades de estágio, prática profissional e\n\nCriação e disponibilização do Marketplace SEAF para comercialização\n\nvisitas técnicas.\n\ndireta.\nConstrução e reforma de feiras livres nos municípios, com entrega\n\nConexão com o Mercado:\n\nde barracas e infraestrutura.\n\nImplantação e expansão das Feiras do Empreendedor, Emprego\n\nRegularização e expansão de agroindústrias familiares via ampliação\n\ne Renda nos polos regionais para aproximação direta entre\n\ndo Serviço de Inspeção Agroindustrial de Pequeno Porte (SIAPP) e\n\ntrabalhadores, qualificação, microempreendedores e empresas\n\ncrédito subsidiado."
+          },
+          {
+            "id": "plano-de-governo-31",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nAções de agregação de valor, marcas coletivas e identificação\n\nagricultores familiares.\n\ngeográfica, com apoio a concursos do queijo e do café, FEAFTUR,\n\nIntegração dos espaços de inovação das Escolas Técnicas,\n\nPAA e PNAE.\n\nincubadoras e aceleradoras sob a governança do Parque Tecnológico.\n\nFomento às cooperativas e associações de agricultura familiar.\nPesquisa Aplicada, Bionegócios e Transferência Tecnológica:\nCrédito, Desburocratização e Fomento Rural:\n\nFomento a programas de pesquisa aplicada direcionados ao\n\nLinha de crédito simplificada com juros subsidiados via Fundo de\n\nagronegócio de precisão, biotecnologia, bioeconomia e superação\n\nApoio à Agricultura Familiar (FUNDAAF), vinculada ao Cadastro de\n\nde gargalos produtivos.\n\nAgricultor Familiar (CAF).\n\nEstruturação\n\nLinhas de crédito exclusivas e direcionadas para os jovens rurais,\n\ntecnológica para transformar pesquisas acadêmicas em patentes,\n\nincentivando sua permanência no campo.\n\ncultivares, softwares e novos produtos agroindustriais.\n\nde\n\nprogramas\n\nde\n\naceleração\n\ne\n\ntransferência\n\nApoio e acesso facilitado da agricultura familiar e negócios verdes/\nRegularização Fundiária, Ambiental e Dados:\n\ncomunitários às tecnologias desenvolvidas pelo Parque Tecnológico\n\nRegularização fundiária de pequenas propriedades com entrega de\n\ne universidades parceiras (como a UNEMAT).\n\ntítulos e registro cartorário gratuitos pelo MT Produtivo.\nElaboração do Cadastro Ambiental Rural (CAR) e Planos de\n\nEmpreendedorismo Inovador, Startups e GovTechs:\n\nRecuperação Ambiental (PRA) para a agricultura familiar.\n\nCriação de trilha estadual de apoio ao empreendedorismo inovador\n\nFortalecimento do Sistema Estadual Integrado da Agricultura\n\n(da ideação à aceleração), apoiando startups e deep techs.\n\nFamiliar (SEIAF) com banco de dados oficial (SAF e SIGSEAF) e\n\nInstituição de ambiente regulatório facilitado (sandbox) para\n\nvinculação do repasse do Índice da Agricultura Familiar (IAF) ao\n\nvalidação de tecnologias.\n\ncumprimento de metas e indicadores.\n\nAtração de centros de P&D de empresas nacionais e internacionais\npara o Parque Tecnológico.\n\nEcossistema de Ciência, Inovação e Integração Universitária.\n\nIncubação de GovTechs aplicadas à modernização dos serviços\n\nAmbientes Regionais de Inovação:\n\npúblicos, especialmente saúde e educação.\n\nConsolidação do Parque Tecnológico de MT e implantação de polos\n\nFormação da juventude em Inteligência Artificial, programação e\n\nregionais de inovação nos principais centros econômicos do interior.\n\ntecnologias digitais.\n\nImplantação de laboratórios abertos (FabLabs) e espaços de\nprototipagem\n\nacessíveis\n\na\n\nestudantes,\n\nempreendedores\n\ne\n\nFomento ao Desenvolvimento Científico e Formação de Talentos\n(FAPEMAT)"
+          },
+          {
+            "id": "plano-de-governo-32",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nBolsas e Fixação de Pesquisadores:\n\nDesenvolvimento Rural de Mato Grosso (PRODER) expandiu-se,\n\nCriação do Programa Estadual de Formação Avançada em Ciência,\n\nenquanto o PROALMAT alavancou a cadeia produtiva do algodão e\n\nTecnologia e Inovação (bolsas de iniciação científica, mestrado,\n\nda indústria têxtil.\n\ndoutorado e pós-doutorado).\n\nTodo esse rearranjo foi acompanhado por uma ampla política de\n\nApoio à criação de programas de pós-graduação no interior e\n\nalívio fiscal que desonerou a população e a produção, reduzindo\n\ninstituição de mecanismos de fixação de doutores no Estado.\n\nimpostos sobre o diesel, gasolina, energia elétrica, carnes e isentando\n\nLinha afirmativa de bolsas e editais para pesquisadoras com apoio à\n\ntotalmente os produtos da cesta básica e medicamentos de alta\n\nmaternidade e ao retorno à carreira científica.\n\ncomplexidade.\n\nLinha de fomento a pesquisas com povos indígenas, quilombolas e\n\nEssa segurança jurídica e previsibilidade regulatória destravaram\n\ncomunidades tradicionais com repartição de benefícios.\n\no ciclo de investimentos privados, fazendo com que mais de 2.700\nnovas plantas industriais fossem abertas no Estado apenas no ano\n\n4.3. Eixo de Entrega: O Estado que transforma a produção do\n\nde 2025.\n\ncampo em indústria, emprego e futuro.\n\nO\n\nmaior\n\nsímbolo\n\ndessa\n\ntransformação\n\nagroindustrial\n\né\n\na\n\nconsolidação de Mato Grosso como o polo líder nacional em etanol\nEste é um eixo fundamental para fazer a transição definitiva de um\n\nde milho e transição energética. O grão de milho, que antes deixava\n\nmodelo focado na exportação de matéria-prima bruta para uma\n\no Estado sem processamento e sob altos custos de frete, passou\n\neconomia moderna, industrializada e geradora de valor dentro do\n\na ser transformado localmente em energia limpa, biogás, óleo de\n\nnosso território.\n\nmilho e ração proteica de alta qualidade (DDGS) para a pecuária,\n\nO alicerce desse processo de industrialização fundamentou-se\n\nestimando-se uma produção de 8,4 milhões de metros cúbicos de\n\nna corajosa reorganização dos incentivos fiscais estaduais. Com a\n\netanol para o ciclo de 2026/2027.\n\nmoralização dos benefícios, o novo Programa de Desenvolvimento\n\nEsse avanço estendeu-se também ao esmagamento da soja,\n\nIndustrial e Comercial de Mato Grosso (PRODEIC) passou a canalizar\n\nampliação da rede de frigoríficos, fomento ao setor mineral, manejo\n\nos incentivos fiscais diretamente para quem investe, produz e gera\n\nflorestal e a um pacote robusto de R$ 237 milhões em linhas de\n\npostos de trabalho no Estado.\n\ncrédito e R$ 392 milhões em garantias do fundo MT Garante para\n\nCom\n\nsubmódulos\n\nvoltados\n\npara\n\na\n\nindústria\n\nalimentícia,\n\nfortalecer micro, pequenas e médias empresas.\n\nbiocombustíveis, mineração, reciclagem e setores fabris, o PRODEIC\n\nPara que a produção industrializada chegue aos mercados globais\n\nsaltou de 591 empresas, enquadradas em 2020, para 1.778, em 2025.\n\ncom competitividade, o Estado realizou entregas históricas no setor\n\nNa mesma linha de fortalecimento regional, o Programa de\n\nlogístico. O início da implantação da Primeira Ferrovia Estadual do"
+          },
+          {
+            "id": "plano-de-governo-33",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nBrasil, a Ferrovia Senador Vicente Emílio Vuolo, viabilizada por R$ 15\n\npotencializando as vocações regionais e fomentando atividades\n\nbilhões em investimentos 100% privados, representa um marco na\n\nnestas regiões que se integrem às indústrias presentes no Estado,\n\nintegração multimodal, conectando Rondonópolis até Cuiabá, Nova\n\ncomo a geração de biomassa.\n\nMutum e Lucas do Rio Verde, já registrando trechos avançados e a\n\nApoio a Micro, Pequenas e Médias Empresas: Expansão da oferta\n\nprojeção de 180 mil empregos diretos e indiretos.\n\nde linhas de crédito e avais de garantia através do Desenvolve\n\nDo mesmo modo, após três décadas de paralisação burocrática,\n\nMT e do fundo MT Garante para fortalecer pequenos e médios\n\na gestão estadual investiu R$ 51,3 milhões de recursos próprios\n\nempreendimentos industriais.\n\npara inaugurar a infraestrutura da Zona de Processamento de\nExportação (ZPE) de Cáceres. Com benefícios tributários e cambiais\n\nTransição Energética e Biocombustíveis\n\npara indústrias voltadas ao comércio exterior e operações no\n\nExpansão da Cadeia do Etanol de Milho e Soja: Incentivo à ampliação\n\npolo hidroviário do Rio Paraguai, a ZPE de Cáceres já conta com\n\nde usinas para transformação do grão em etanol, biogás, óleo e\n\nindústrias ativas exportando madeira sustentável para o mercado\n\nração proteica de alta qualidade (DDGS).\n\ninternacional.\n\nIncentivo às Cadeias de Proteína e Manejo: Expansão da rede de\nfrigoríficos, fomento ao setor mineral sustentável e fortalecimento\n\nPropostas\n\nda indústria do manejo florestal sustentável.\n\nFortalecimento dos Programas e Instrumentos de Industrialização\n\nIntegração Logística e Comércio Exterior para a Indústria\n\nAperfeiçoamento dos Incentivos Fiscais Regulados: Manutenção e\n\nPolo de Exportação na ZPE de Cáceres: Consolidação da\n\nconsolidação do PRODEIC (com foco em submódulos da indústria\n\ninfraestrutura da Zona de Processamento de Exportação (ZPE) de\n\nalimentícia, biocombustíveis, mineração, reciclagem e setores\n\nCáceres, utilizando benefícios tributários/cambiais para atração de\n\nfabris), PRODER e PROALMAT, condicionando os benefícios à\n\nindústrias voltadas ao comércio exterior e integração com a hidrovia\n\ngeração direta de empregos, investimentos e processamento em\n\ndo Rio Paraguai.\n\nterritório mato-grossense.\n\nAproveitamento de Logística Multimodal: Integração dos polos\n\nEstímulo à criação de polo têxtil em Mato Grosso, com o\n\nindustriais à malha de transporte de alta capacidade, alavancando os\n\ndesenvolvimento da cadeia do algodão, desde a produção de fios\n\nterminais da Primeira Ferrovia Estadual (conectando Rondonópolis,\n\naté a indústria de confecções.\n\nCuiabá, Nova Mutum e Lucas do Rio Verde).\n\nDesenvolvimento Regional: estímulo à geração de oportunidades\nde negócios nas regiões menos desenvolvidas do Estado,\n\n4.4. Eixo de Entrega: O Estado que conecta regiões por meio da"
+          },
+          {
+            "id": "plano-de-governo-34",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\ninfraestrutura e da grande logística.\n\nPlano de Governo\n\n2027 - 2030\n\nA nossa capacidade de gestão foi além das obras convencionais\ne assumiu o pioneirismo nacional ao destravar grandes modais\n\nA transformação viária e logística vivenciada entre 2019 e 2026 é a\n\nlogísticos. O Governo do Estado assumiu o controle da BR-\n\ndemonstração prática e incontestável de como o respeito ao dinheiro\n\n163, encerrando anos de paralisação e entregando mais de 230\n\npúblico, a disciplina fiscal e a aplicação rigorosa do Fazimento se\n\nquilômetros de pistas duplicadas que trouxeram segurança e\n\nconvertem em melhorias na vida do cidadão.\n\nsalvaram vidas no corredor mais importante de grãos do país.\n\nAo assumirmos a gestão, o estado enfrentava o isolamento de\n\nParalelamente, viabilizamos o contrato, sob regime de autorização,\n\ndiversas comunidades. Estradas de terra atoladas na chuva e\n\nda Primeira Ferrovia Estadual do Brasil. Assim, integramos o\n\ncentenas de pontes precárias de madeira colocavam em risco\n\ntransporte de grandes volumes com a malha rodoviária para\n\no transporte de passageiros, o direito de ir e vir das famílias e o\n\nbaratear custos e modernizar o perfil produtivo mato-grossense.\n\nescoamento da produção rural. Com o saneamento das contas\npúblicas, ampliamos a capacidade de arrecadação própria e\n\nO que está sendo feito: Ações em andamento.\n\ntransformamos MT no maior polo de investimento em infraestrutura\ndo país, direcionando mais de R$ 28 bilhões em recursos estaduais\n\nO que será feito de novo: Compromissos novos, modernizações, uso\n\npara intervenções estruturantes que integraram, de ponta a ponta,\n\nde tecnologia e ampliação de metas para o próximo ciclo de gestão.\n\ntodas as nossas regiões.\nEssa virada de chave atingiu a marca histórica de mais de 7 mil\n\nPropostas\n\nquilômetros de rodovias estaduais pavimentadas ou completamente\nrestauradas, dobrando, em apenas sete anos, a malha asfaltada\n\nPrimeira Ferrovia Estadual e Transporte Multimodal\n\nconstruída ao longo de quase três séculos no estado.\n\nConsolidação e Expansão Ferroviária: Garantir o prosseguimento\n\nMais do que números, esse asfalto novo aproximou a saúde pública\n\nda implantação da Ferrovia Senador Vicente Emílio Vuolo (Primeira\n\ndo interior, permitiu que o transporte escolar e as ambulâncias\n\nFerrovia Estadual do Brasil).\n\ncirculassem sem interrupções e reduziu o custo do frete.\n\nIntegração Multimodal: Conectar a malha ferroviária diretamente\n\nPara perenizar essa integração viária, atuamos firme na substituição\n\nde Rondonópolis até Cuiabá, Nova Mutum e Lucas do Rio Verde,\n\nsistemática de gargalos críticos, eliminando travessias antigas com\n\nintegrando o transporte de grandes volumes com a malha rodoviária\n\na entrega de mais de 991 pontes definitivas de concreto e centenas\n\npara reduzir fretes e modernizar o perfil produtivo.\n\nde aduelas, garantindo trafegabilidade contínua e suporte com\nsegurança ao tráfego de carga pesada.\n\nCorredores Rodoviários Federais e Concessões"
+          },
+          {
+            "id": "plano-de-governo-35",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nConsolidação da BR-163 (Nova Rota do Oeste): Dar continuidade às\n\nda produção e o direito de ir e vir das comunidades.\n\nobras de duplicação (com mais de 230 km já entregues), manutenção\n\nDisponibilização de Maquinário: Fornecer tratores, máquinas e\n\ne modernização do principal corredor de escoamento de grãos do\n\npatrulhas mecanizadas aos municípios para a manutenção contínua\n\nEstado e do país.\n\ndas vias rurais.\n\nPrograma de Pavimentação e Restauração de Rodovias Estaduais\n\nSegurança Energética no Meio Rural (Programa MT Trifásico)\n\n(MTs)\n\nDar continuidade à substituição das antigas e insuficientes redes\n\nAmpliação e Manutenção da Malha Asfaltada: Dar prosseguimento\n\nmonofásicas por linhas trifásicas.\n\nao programa de pavimentação e restauração de trechos em eixos\n\nEstabilidade e Diversificação no Campo: Atuar junto à concessionária\n\nde integração.\n\nde energia para mitigar as oscilações de voltagem e assim permitir\n\nConclusão de Corredores Estratégicos: Finalização dos trechos\n\na instalação de sistemas de irrigação, câmaras de resfriamento\n\nremanescentes das rodovias estaduais.\n\ne secadores de grãos, garantindo energia contínua e estável para\n\nPadrão Definitivo e Conectividade Regional: Priorizar a pavimentação\n\nassentamentos, pequenos/médios produtores e agroindústrias.\n\nnos eixos que conectam as regiões Noroeste, Nordeste e Sudoeste\naos grandes corredores de exportação, eliminando atoleiros no\ninverno e reduzindo os custos logísticos.\nSubstituição de Pontes e Infraestrutura Definitiva\nEliminação de Pontes de Madeira: Substituir de forma integral e\nsistemática as pontes de madeira remanescentes por estruturas\ndefinitivas de concreto e aduelas pré-moldadas.\nGarantia de Trafegabilidade Contínua: Estruturar as travessias para\nsuportar o tráfego de carga pesada sem interrupções e garantir o\nfluxo contínuo do transporte escolar e de ambulâncias.\nApoio às Estradas Vicinais e Malha Rural\nSuporte à Pequena e Média Produção: Estruturar e manter a\ninfraestrutura rural e as estradas vicinais para garantir o escoamento"
+          },
+          {
+            "id": "plano-de-governo-36",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nPilar 5: O Estado Parceiro: Gestão Eficiente, Valorização do\n\nútil. Nos processos sujeitos ao licenciamento trifásico tradicional, a\n\nServidor, Desburocratização e Pacto Municipalista.\n\npadronização de checagens territoriais acelerou as análises técnicas\nem 78,7%, demonstrando que proteção ambiental e eficiência\n\n5.1. Eixo de Entrega: O Estado que não atrapalha e que é parceiro\n\nadministrativa não são objetivos incompatíveis.\n\nde quem empreende.\n\nA mesma mudança ocorreu nos serviços públicos digitais.\nImplantada em 2022, a Plataforma Unificada de Governo Digital já\n\nAo assumirmos o Governo do Estado, em 2019, Mato Grosso\n\nreúne mais de 1,58 milhão de usuários cadastrados, ultrapassa 143\n\nenfrentava não apenas o colapso das contas públicas, mas também\n\nmilhões de acessos e disponibiliza quase 400 serviços pelo Portal de\n\num modelo administrativo lento, fragmentado e distante de quem\n\nServiços e pelo aplicativo MT Cidadão.\n\nprecisa produzir, investir ou simplesmente resolver uma demanda\n\nA implementação da transferência digital de veículos no DETRAN\n\ncotidiana.\n\ndestravou serviços cotidianos, comprovando que a eficiência\n\nProcessos demorados, duplicidade de exigências cadastrais, excesso\n\nadministrativa e o rigor fiscalizatório podem e devem caminhar\n\nde documentos e exigências de alvarás e licenças consumiam tempo,\n\njuntos. Além deste serviço, podemos ainda citar a renovação de\n\nelevavam custos e represavam investimentos e oportunidades.\n\nCNH, rematrícula e transferência escolar, emissão de documentos,\n\nA recuperação fiscal permitiu reorganizar o Estado, mas foi a mudança\n\nagendamento de atendimentos e outros serviços que passaram a\n\nde postura que abriu caminho para uma nova relação com o setor\n\nser realizados de forma mais simples, segura e acessível.\n\nprodutivo: um governo que fiscaliza com responsabilidade, garante\n\nA modernização também alcançou o atendimento presencial. O\n\nsegurança jurídica e protege o interesse público, sem transformar a\n\nGanha Tempo ampliou a oferta integrada de serviços estaduais,\n\nburocracia em obstáculo para quem trabalha corretamente.\n\nfederais e municipais e realizou mais de 1,4 milhão de atendimentos,\n\nEssa modernização institucional refletiu-se em entregas concretas\n\nsomente em 2025, com elevado índice de aprovação dos usuários.\n\nno âmbito do licenciamento ambiental e da simplificação\n\nO cidadão e o empreendedor passaram a encontrar, em um\n\ntributária e cadastral. Operada pela Secretaria de Estado de\n\núnico espaço, serviços que antes exigiam diferentes órgãos, filas e\n\nMeio Ambiente, a transição das análises manuais para fluxos de\n\ndeslocamentos.\n\ndados integrados promoveu um avanço histórico na celeridade\n\nPara tornar a comunicação pública mais compreensível, foi\n\nprocessual. A implementação da Licença Ambiental Simplificada\n\nimplantada a Política de Linguagem Simples, aproximando as\n\n(LAC/LAS) reduziu o tempo médio de emissão de licenças para\n\ninformações, orientações e serviços da realidade de quem precisa\n\nempreendimentos de baixo impacto ambiental em 99,5%, fazendo\n\nutilizá-los. Ao mesmo tempo, a regulamentação da Lei Geral de\n\ncom que o prazo despencasse de vários meses para apenas um dia\n\nProteção de Dados no Poder Executivo fortaleceu a segurança, a"
+          },
+          {
+            "id": "plano-de-governo-37",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\ngovernança e o uso responsável das informações pessoais.\nO Estado também transformou suas compras em uma porta\n\nPropostas\n\nde oportunidades para o setor privado, tornando mais simples,\ndigital e acessível a participação das empresas nos processos de\n\nDesburocratização, Liberdade Econômica e Serviços Digitais (Estado\n\ncontratação. Com o cadastro de forma digital e o autoatendimento,\n\nParceiro).\n\nmais de 6.600 novos fornecedores passaram a integrar o mercado\n\nTransformação Digital Plena e Interoperabilidade (Governo na\n\nde compras governamentais, ampliando a competição e criando\n\nPalma da Mão):\n\nnovas oportunidades de negócios com o Governo do Estado. Mais\n\nPrincípio “O Estado não pede duas vezes”: Impedir que órgãos\n\nfornecedores, mais concorrência, mais eficiência e mais economia\n\nestaduais solicitem documentos, certidões ou laudos que o próprio\n\npara os cofres públicos. Uma política de compras que beneficia o\n\nPoder Executivo já possui em seus bancos de dados e possam ser\n\nGoverno, fortalece as empresas e transforma recursos públicos em\n\nlegalmente compartilhados.\n\nmelhores resultados para a sociedade.\n\nConta Digital Única e Login Unificado: permitir que cidadãos e\n\nNo ambiente econômico, a reformulação do modelo de adesão\n\nempresas tenham acesso digital integrado aos serviços estaduais\n\naos programas de incentivos fiscais como o PRODEIC, PRODER e\n\nutilizando o MT Login e conectado à conta gov.br, para simplificar\n\nPROALMAT, aliado à atuação da Desenvolve MT e do MT Garante,\n\nportais e evitar a criação de novas senhas e cadastros.\n\nampliou a segurança dos investimentos, o acesso ao crédito e a\n\nGanha Tempo Multicanal e Móvel: Integrar unidades presenciais\n\ncapacidade de expansão do setor produtivo. O resultado direto\n\ne itinerantes, aplicativo, portal, totens de autoatendimento e\n\ndesse ecossistema desburocratizado foi a atração de 2.727 novas\n\natendimento digital assistido, ampliando a presença do Estado no\n\nindústrias, apenas entre janeiro e outubro de 2025, e a manutenção\n\ninterior.\n\ndo estado no patamar do pleno emprego formal.\n\nOferta de Serviços Digitais: ampliar a digitalização e redesenhar\n\nNo entanto, a eliminação das travas burocráticas é um processo\n\nos serviços estaduais de maior demanda, reduzindo etapas,\n\ncontínuo que requer um Estado parceiro exige para evoluir\n\ndocumentos, deslocamentos, custos e tempo de espera ao cidadão.\n\npermanentemente. É com base nessa realidade que o Plano de\n\nCriar o Programa Cidadão Digital MT desenvolvendo competências\n\nGoverno 2027-2030 estabelece a expansão da transformação\n\ndigitais básicas na população; oferecer formação prática sobre\n\ndigital integrada entre todas as secretarias e autarquias estaduais.\n\nserviços públicos digitais e recursos de tecnologia, com prioridade\n\nO compromisso é garantir que o Estado siga leve, transparente e\n\npara idosos, pessoas em vulnerabilidade, pessoas das áreas rurais,\n\nágil, respeitando o tempo de quem trabalha e gerando o verdadeiro\n\ncomunidades tradicionais e pequenos municípios.\n\nlucro social em forma de empregos, renda e desenvolvimento."
+          },
+          {
+            "id": "plano-de-governo-38",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nInteligência Artificial e Serviços Proativos:\n\nConsolidar uma política permanente de inovação pública orientada\n\nAvisos Preventivos Automáticos: Evoluir a IA governamental\n\na problemas e resultados, integrando servidores e órgãos estaduais\n\npara alertar preventivamente o cidadão/empreendedor sobre o\n\ne disseminando soluções aos municípios.\n\nvencimento de licenças, certidões e prazos tributários, oferecendo\n\nFortalecer a Infraestrutura Pública Digital estadual, permanecendo\n\norientação para regularização ou a renovação em um clique.\n\nsegura e integrada, modernizando os sistemas corporativos\n\nIntimação no Celular: Digitalização de intimações e notificações via\n\nprioritários e assegurando confiabilidade e preservação dos\n\naplicativo (área de segurança), liberando efetivo policial de tarefas\n\ndocumentos digitais.\n\nburocráticas.\nFortalecer a governança estadual de dados, implantar serviços\nproativos e assegurar uso responsável de inteligência artificial no\n\n5.2. Eixo de Entrega: O Estado onde o governo respeita o dinheiro\n\ngoverno\n\npúblico.\n\nAmbiente de Negócios e Incentivos Fiscais:\n\nTodos se lembram do período em que a irresponsabilidade financeira\n\nConsolidação do PRODEIC, PRODER e PROALMAT: Manter e\n\ne a incompetência colapsaram as contas públicas, resultando em\n\naprimorar os incentivos tributários atrelados à geração de empregos,\n\natrasos de salários, fornecedores sem receber, repasses da saúde\n\ninvestimentos e processamento industrial no estado.\n\nbloqueados para os municípios e serviços essenciais paralisados na\n\nApoio a PMEs através do Desenvolve MT e MT Garante: Expandir o\n\nponta.\n\nacesso a linhas de crédito e avais de garantia para micro, pequenas\n\nOrganizar a casa, cortar desperdícios e resgatar a higidez fiscal foram\n\ne médias empresas.\n\npassos indispensáveis para provar que a disciplina orçamentária é a\núnica forma sustentável de proteger as pessoas e honrar cada real\n\nInovação e Gestão de Riscos:\n\npago em impostos. Essa postura permitiu alcançar a nota máxima\n\nImplantar o Programa Estado Simples: Revisão contínua de\n\nde capacidade de pagamento da Secretaria do Tesouro Nacional, o\n\nprocessos, formulários, exigências, autorizações e normas para\n\nselo Capag AAA, mantido de forma inédita e sustentada. Ainda mais\n\neliminar redundâncias e burocracia desnecessária.\n\nimportante, abriu espaço para um volume histórico de investimentos\n\nInovação Aberta: Promover parcerias com universidades, startups e\n\npúblicos e obras estruturantes em todo o Estado.\n\nempresas para a solução de desafios públicos, por meio de projetos\n\nTiramos projetos do papel, pavimentamos rodovias decisivas para\n\npilotos controlados em ambiente regulado para experimentação de\n\na integração regional, construímos novos hospitais regionais,\n\nsoluções públicas.\n\nerguemos prédios escolares modernos e levamos melhorias"
+          },
+          {
+            "id": "plano-de-governo-39",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nurbanas diretamente para a vida das pessoas. Essa capacidade\n\nEstado e seus fornecedores.\n\nde realização demonstrou o poder do trabalho sério e permitiu\n\nNa gestão da frota estadual, o aperfeiçoamento do controle do\n\ndevolver à sociedade o dividendo do desenvolvimento em forma de\n\nabastecimento proporcionou economia anual superior a R$ 9\n\ninfraestrutura física e dignidade.\n\nmilhões. Esses resultados demonstram uma convicção: gastar\n\nA pontualidade no pagamento de servidores, aposentados e\n\nmenos só representa eficiência quando o serviço continua\n\npensionistas proporcionou estabilidade financeira e valorização\n\nfuncionando - e funcionando melhor.\n\ndo seu trabalho, refletindo-se diretamente em maior dedicação\n\nEssa solidez e maturidade fiscal tornaram-se pilares vitais diante\n\ne eficiência no atendimento ao cidadão. Para os fornecedores e\n\ndo cenário nacional da reforma tributária. Diante da transição da\n\nempresas contratadas, o recebimento em dia assegurou a saúde\n\narrecadação da origem para o destino, que impõe desafios à receita\n\nfinanceira dos negócios, incentivou novos investimentos e gerou\n\ndos estados produtores, a higidez das contas estaduais garante ao\n\nempregos, além de baratear o custo das compras públicas ao atrair\n\nEstado liquidez, autonomia e margem financeira. Sem transferir a\n\nparcerias mais competitivas e confiáveis para o Estado.\n\nconta para o bolso do contribuinte ou do produtor rural, Mato Grosso\n\nA regularidade absoluta nos repasses às prefeituras restabeleceu a\n\ncontorna as perdas potenciais da reforma tributária por meio do\n\ncredibilidade institucional e cada município mato-grossense passou\n\nrigor do planejamento fiscal, do adensamento agroindustrial e do\n\na ser enxergado como parceiro estratégico no desenvolvimento\n\ncombate incessante ao desperdício.\n\nregional.\n\nAo projetar os rumos de Mato Grosso para o período de 2027 a 2030,\n\nO respeito ao dinheiro público também passou a ser demonstrado\n\neste plano de governo parte exatamente da sólida linha de base\n\npor economias concretas. Entre 2019 e 2026, as licitações\n\nconstruída pela cultura do Fazimento e pela responsabilidade fiscal.\n\nconduzidas pelo Estado produziram economia superior a R$ 392\n\nO diagnóstico das demandas identificadas nas diferentes regiões\n\nmilhões, resultado do aprimoramento das pesquisas de preços,\n\ndo Estado revela que os gargalos de infraestrutura, saúde,\n\nda ampliação da competição, da negociação e do planejamento\n\nsaneamento e educação infantil só puderam ser enfrentados - e\n\ndas contratações, bem como da credibilidade construída com o\n\ncontinuarão a ser equacionados - porque o governo manteve a\n\npagamento dos fornecedores em dia. Desde 2022, a análise técnica\n\ncapacidade financeira de investir com recursos próprios. O respeito\n\nde 582 processos de aquisição de bens e serviços de tecnologia\n\nao dinheiro do contribuinte continua sendo a garantia de que cada\n\nda informação gerou economia superior a R$ 175 milhões. A\n\nmeta apresentada para os próximos quatro anos possui viabilidade\n\nimplantação do planejamento anual das contratações, integrado\n\norçamentária, transparência e foco no resultado final.\n\nao Portal Nacional de Contratações Públicas, também ampliou a\n\nDessa forma, ao honrar o legado de superação do ciclo 2019-\n\ntransparência, a previsibilidade e a segurança das relações entre o\n\n2026, reafirma-se o compromisso inegociável de governar com"
+          },
+          {
+            "id": "plano-de-governo-40",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\neficiência, mantendo as contas ajustadas, eliminando burocracias e\nassegurando que todo o esforço de arrecadação do povo trabalhador\n\nGovernança Tributária e Transição para o IBS / CBS\n\nde Mato Grosso continue a se traduzir em mais desenvolvimento,\n\nDefesa Técnica no Comitê Gestor do IBS: Manter atuação permanente\n\njustiça social e qualidade de vida em todos os cantos do Estado.\n\ne qualificada de fiscais e procuradores do Estado no Comitê Gestor\ndo Imposto sobre Bens e Serviços (IBS) para assegurar o cálculo\ncorreto das quotas de arrecadação de Mato Grosso, a proteção da\n\nPropostas\n\nbase de cálculo histórica e a homologação ágil dos saldos credores\nacumulados de ICMS.\n\nRigor Fiscal, Austeridade e Gestão do Custeio Futuro:\n\nSuporte Técnico de Transição aos 142 Municípios: Expandir a\n\nPreservação da CAPAG A e Saúde Fiscal: Manter a disciplina\n\nassistência técnica da Sefaz-MT para orientar e capacitar as\n\norçamentária, a nota máxima de Capacidade de Pagamento junto\n\nadministrações municipais na modernização de seus Códigos\n\nà Secretaria do Tesouro Nacional (Capag A) e o equilíbrio financeiro\n\nTributários e no planejamento da transição do ISS para o IBS,\n\nde longo prazo.\n\nevitando perdas abruptas de receita e garantindo a autonomia dos\n\nPlanejar com rigor orçamentário o custeio operacional e de\n\nmunicípios.\n\nmanutenção permanente de cada nova grande obra entregue\n\nInteligência Fiscal e Combate à Sonegação: Combater fraudes\n\n(hospitais, escolas, eixos viários e prédios públicos) para impedir\n\ntributárias e a concorrência desleal motivada pela sonegação.\n\nque o investimento crie passivos. E assegurar seu funcionamento\ncontinuado sem comprometer as contas estaduais.\n\nGestão Patrimonial Estratégica e Compras Inteligentes:\n\nOtimização Continuada dos Gastos Correntes: Impor eficiência\n\nPrograma Patrimônio que Gera Valor: Mapear, gerir e dar\n\noperacional diária, cortando desperdícios e despesas acessórias\n\ndestinação integrada a imóveis estaduais ociosos ou subutilizados,\n\npara garantir que a máquina pública não volte a se fechar sobre si\n\ntransformando-os em fontes de receita ou reduzindo custos de\n\nmesma.\n\nmanutenção, locação e deterioração.\n\nEnfrentamento Estratégico da Reforma Tributária (Plano MT 2033):\n\nGestão Integrada e Inteligente da Frota: Consolidar a política de\n\nNeutralizar os impactos da transição da arrecadação da origem para\n\ngestão de veículos como ativo estratégico do Estado, avaliando\n\no destino por meio do adensamento das cadeias agroindustriais\n\ncustos totais de operação, manutenção e mobilidade.\n\n(agregando valor local aos grãos), atração populacional e estímulo\n\nGestão de Contratos por Indicadores de Desempenho: Aprimorar\n\nao consumo interno, sem elevar a carga tributária do cidadão ou do\n\nos padrões de qualidade e métricas nas compras e contratos\n\nsetor produtivo.\n\nde serviços públicos, avaliando fornecedores estritamente pelas"
+          },
+          {
+            "id": "plano-de-governo-41",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nentregas e pelo impacto gerado na ponta.\nAo assumirmos a gestão do Estado, em 2019, o cenário do\nGovernança Digital, IA e Controle Interno Preventivo:\n\nfuncionalismo público mato-grossense era um reflexo das\n\nFortalecimento do CIRA e Recuperação de Ativos: Manter o\n\ncontas estaduais: salários atrasados, décimo terceiro pendente,\n\ncombate firme a desvios e ilícitos administrativos em cooperação\n\nparcelamentos e uma profunda insegurança financeira que\n\ninterinstitucional (CIRA), convertendo recursos recuperados em\n\npreocupava e desmotivava os trabalhadores e paralisava a prestação\n\ninvestimentos com custos e cronogramas monitorados.\n\ndos serviços públicos essenciais na ponta.\n\nTransparência Ativa pelo Portal do Tesouro: Aperfeiçoar e expandir\n\nCiente de que nenhuma política pública, obra estruturante ou\n\nas ferramentas de transparência ativa para permitir a fiscalização\n\ntransformação social se viabiliza sem o empenho direto dos\n\nsocial ampla de cada real arrecadado, dos fluxos de caixa e da\n\nhomens e mulheres que dedicam suas vidas ao serviço público, a\n\nexecução do orçamento.\n\nreorganização fiscal do Estado teve como prioridade imediata o\nresgate do respeito, da previsibilidade e da dignidade do servidor.\n\nAlinhamento\n\ndo\n\nPlanejamento\n\nOrçamentário\n\ne\n\nResultados\n\nA consolidação do equilíbrio das contas permitiu restabelecer a\n\n(Sugestões Contextuais SEPLAG)\n\npontualidade absoluta no pagamento da folha salarial e assegurar\n\nCarteira Estadual de Projetos Estratégicos: Implementar ambiente\n\na concessão e quitação da Revisão Geral Anual (RGA), além de\n\nde governança com os custos, prazos, riscos e benefícios dos\n\npromover a correção das defasagens acumuladas nos cargos\n\nprincipais projetos do Estado.\n\ncomissionados. Como resultado dessa política de recomposição e\n\nAgenda Estadual de Avaliação de Políticas Públicas: Institucionalizar\n\nganho real, Mato Grosso concedeu aos seus servidores um reajuste\n\na avaliação periódica do impacto dos programas estaduais de maior\n\nacumulado (composto) de 33%. Esse índice coloca o Estado bem\n\norçamento para decidir pelo aprimoramento, manutenção ou\n\nacima da média nacional entre os entes federativos (que ficou em\n\ndescontinuidade de ações ineficientes.\n\n25,3%) e supera o percentual de recomposição concedido pela União\n\nRede Mato-Grossense de Apoio aos Municípios: Disponibilizar\n\n(27%), posicionando Mato Grosso entre as unidades da Federação\n\na capacidade técnica do Estado (modelos de gestão, projetos\n\nque mais valorizaram seus servidores públicos no país.\n\npadronizados e compras consorciadas) aos 142 municípios, gerando\n\nEsse compromisso com a valorização estendeu-se ao fortalecimento\n\nganho de escala e reduzindo custos em obras e serviços locais.\n\ndo quadro efetivo do Estado, viabilizando a nomeação de 9.479\nnovos servidores aprovados em concursos públicos para recompor\n\n5.3. Eixo de Entrega: O Estado onde os funcionários públicos são\n\ne oxigenar áreas estratégicas da administração.\n\nvalorizados e respeitados.\n\nParalelamente,\n\nimplementaram-se\n\navanços\n\nnormativos"
+          },
+          {
+            "id": "plano-de-governo-42",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nhumanizados, como a flexibilização do usufruto e parcelamento\n\nimplantadas, inclusive com módulo integrado ao sistema de gestão\n\nde férias e licenças-prêmio com recebimento do subsídio e\n\nde pessoas e comunicação de acidentes de trabalho. Programas\n\ngratificações. A licença-prêmio pôde ser usufruída com redução\n\nessenciais de atenção à saúde física e mental foram expandidos\n\ntemporária de jornada. Houve a regulamentação do teletrabalho\n\noferecendo psicoterapias, atendimentos médicos online, bem\n\npara servidores com dependentes ou com deficiência. E também\n\ncomo protocolos de prevenção ao risco de suicídio, além de suporte\n\nhouve a concessão de incentivos específicos, a exemplo dos auxílios\n\npsicossocial em situações de ansiedade, depressão e luto. O\n\nde alimentação, fardamento, internet e aquisição de computadores\n\nPrograma de Educação para Aposentadoria (PEA) passou a oferecer\n\npara os profissionais da segurança pública e da educação.\n\norientação e apoio para uma transição mais segura e planejada.\n\nPara além do reconhecimento financeiro, a gestão estruturou\n\nNa Segurança Pública, experiência e a prontidão das forças policiais\n\numa política permanente de valorização profissional alicerçada no\n\nfoi valorizada com a regulamentação de jornadas extraordinárias,\n\ndesempenho, no bem-estar e na qualificação contínua.\n\ngratificações, abono de permanência e a criação da Atividade\n\nInstituiu-se a nova Política de Avaliação de Desempenho e\n\nVoluntária de Natureza Militar e da Prestação por Tarefa por Tempo\n\nProdutividade, acompanhada da concessão de prêmios por\n\nCerto, que permitem o aproveitamento temporário e voluntário da\n\nresultados e do pagamento da Gratificação Anual por Eficiência\n\nexperiência de militares da reserva remunerada.\n\n- inclusive para os profissionais da educação, equivalente ao 14º e\n\nInvestir na inteligência e na capacidade técnica do servidor foi\n\n15º salários aos profissionais da educação, reconhecendo o mérito\n\noutro pilar central do ciclo 2019–2026. A Escola de Governo de Mato\n\ne a dedicação individual e coletiva para melhorar a qualidade dos\n\nGrosso foi reestruturada e credenciada para ofertar cursos próprios\n\nserviços públicos.\n\nde Pós-Graduação Lato Sensu. Entre janeiro de 2019 e julho de 2026,\n\nA inovação deixou de ser um discurso abstrato e passou a produzir\n\nrealizou 1.092 cursos e emitiu mais de 90 mil certificados. A primeira\n\nresultados. O Laboratório de Inovação do Governo de Mato Grosso\n\nespecialização em Gestão Pública com foco na Eficiência formou 38\n\ne o Sistema Central de Inovação em Práticas Públicas capacitaram\n\nservidores em 2024. E em 2026, foram iniciadas três novas turmas\n\nmais de 6.600 servidores. O Programa Acelera Gov.MT já apoiou\n\ncom 120 vagas nas áreas de gestão pública, governança e governo\n\nmais de 60 projetos. As três edições do Prêmio de Eficiência e\n\ndigital. Outro grande avanço foi a institucionalização da atividade de\n\nInovação receberam 914 práticas, com participação de mais de três\n\ninstrutoria, ampliando a participação de profissionais qualificados\n\nmil servidores. Somente as soluções finalistas contribuíram para\n\nna formação e capacitação dos servidores.\n\neconomias e aumento de receitas superiores a R$ 722 milhões.\n\nA formação passou a dialogar diretamente com a inovação por meio\n\nNo campo da saúde e qualidade de vida do servidor, perícia médica\n\ndo Programa Gestão do Conhecimento. 151 pesquisas desenvolvidas\n\nfoi modernizada e novas rotinas de saúde ocupacional foram\n\npor servidores foram apresentadas entre 2022 e 2025, aproximando"
+          },
+          {
+            "id": "plano-de-governo-43",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\na qualificação acadêmica dos desafios concretos da Administração\nPública. Ao mesmo tempo, foram ampliados os programas de estágio\n\nRemuneração, Recomposição e Previsibilidade Fiscal\n\npara estudantes do ensino técnico e da pós-graduação, implantada\n\nGarantia da Revisão Geral Anual - RGA: Assegurar a concessão\n\na Residência Técnica e criado o Meninas que Transformam, abrindo\n\nanual da Revisão Geral Anual (RGA), observadas as condições legais\n\nnovas portas de aprendizagem e contribuindo para a formação de\n\ne orçamentárias, visando a preservação do poder aquisitivo dos\n\njovens mato-grossenses.\n\nservidores públicos.\n\nPor fim, a transformação digital da administração estadual\n\nSegurança e pontualidade da folha: Manter o pagamento dos\n\nmodernizou a gestão de pessoas e desburocratizou a vida funcional\n\nservidores dentro do calendário oficial, com previsibilidade,\n\ndo servidor.\n\ntransparência, integridade e controle permanente sobre o\n\nNa folha de pagamento, a evolução para o Sistema Estadual de\n\nprocessamento da folha.\n\nAdministração de Pessoas (SEAP NG), a integração com o eSocial\n\nDiálogo e valorização das carreiras: Fortalecer o diálogo institucional\n\ne a previdência complementar, a incorporação de novos órgãos e\n\nsobre remuneração, desenvolvimento, condições de trabalho\n\ncentralização de verbas e outros pagamentos ampliaram a agilidade,\n\ne aperfeiçoamento das carreiras, considerando a natureza, a\n\nsegurança da informação e o alcance do processamento.\n\ncomplexidade e as responsabilidades de cada função e respeitando\n\nTodas essas entregas comprovam que o respeito ao servidor deixou\n\nas condições constitucionais, legais e fiscais.\n\nde ser uma promessa abstrata e se tornou uma política concreta de\ngoverno. Valorizar quem serve ao Estado é fortalecer a capacidade\n\nIncentivos e Bonificação por Desempenho:\n\npública de planejar, inovar e entregar resultados. É garantir que a\n\nManutenção do pagamento do 14º e 15º salários para profissionais\n\nescola ensine, que a saúde acolha, que a segurança proteja e que\n\nda Educação.\n\nos serviços cheguem com qualidade à população mato-grossense.\n\nPagamento da Gratificação GR Plus direcionada a gestores e\nprofissionais de destaque.\n\nPropostas\n\nContinuidade e custeio das Gratificações por Resultados e Eficiência.\nPrêmio de Inovação e Resultado.\n\nLançamento do Currículo Gov.MT e do Banco de Talentos:\ninstrumentos voltados ao conhecimento das competências\nexistentes no serviço público e ao apoio às ações de desenvolvimento\n\nGestão Estratégica, RH Digital e Eficiência da Folha:\n\nprofissional, sempre com critérios objetivos e respeito às regras\n\nConsolidar a Gestão de Pessoas Digital e Integrada, mediante a\n\nlegais de provimento e movimentação.\n\nmodernização e a integração dos sistemas corporativos. Ampliar,"
+          },
+          {
+            "id": "plano-de-governo-44",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nno Portal do Servidor, a oferta de serviços e informações sobre a\n\nfutevôlei e beach tênis).\n\nvida funcional, com automação de processos, acompanhamento de\n\nImplementação do Programa ERA: Aquisição de balanças de\n\nsolicitações e atendimento digital apoiado por Inteligência Artificial.\n\nbioimpedância para acompanhamento da saúde dos profissionais.\n\nFortalecer a diversidade, a inclusão e a liderança feminina no\nserviço público, ampliando oportunidades de desenvolvimento,\n\nCapacitação, Desenvolvimento de Talentos e Escola de Governo:\n\ncapacitação, mentoria e participação em funções estratégicas.\n\nFortalecer a política permanente de formação e desenvolvimento\n\nConsolidar o Programa Folha Inteligente MT, modernizando\n\ndos servidores por meio da Escola de Governo. Ampliar a oferta\n\nprocessos, sistemas e integrações da folha de pagamento e também\n\nde capacitação ligada às prioridades de governo e às agendas\n\nfortalecendo a governança.\n\nestratégicas e transversais do Estado, bem como aos programas\nestruturantes, como o Liderança Pública MT.\n\nSaúde, Bem-Estar e Qualidade de Vida do Servidor:\n\nPromover o acesso à formação avançada, à pós-graduação, à\n\nConsolidar o Programa Saúde e Bem-Estar do Servidor como política\n\npesquisa aplicada e à gestão do conhecimento, convertendo seus\n\nestadual de saúde ocupacional e qualidade de vida no trabalho,\n\nresultados em subsídios à inovação e ao aperfeiçoamento das\n\nintegrando ações presenciais e on-line de promoção da saúde\n\npolíticas públicas.\n\nfísica e mental, acompanhamento psicossocial e retorno seguro ao\n\nEstender, por meio de cooperação, as ações formativas aos\n\ntrabalho.\n\nmunicípios, contribuindo para o fortalecimento da gestão pública\n\nEspaço e Programa Saúde e Bem-Estar do Servidor: Implementar\n\nem todo o Estado.\n\ncomo centro de referência para ampliar a capilaridade e a\ncoordenação das ações, facilitando o acesso a atividades de\n\nFormação, Valorização e Gestão no Setor da Educação.\n\npromoção da saúde, prevenção de adoecimentos e incentivo\n\nRealização de Concurso Público: Efetivação de concurso público\n\na hábitos saudáveis. Expectativa de redução de afastamentos\n\npara provimento de vagas na rede estadual, incluindo aditivo de\n\nevitáveis, fortalecimento de uma cultura institucional de valorização\n\ncontrato para realização e solenidade de recepção/posse dos novos\n\ndo servidor e de ambientes laborais mais saudáveis e produtivos.\n\ndocentes.\n\nAprimoramento do MT Saúde: Fortalecimento e expansão do plano\nde saúde dos servidores estaduais.\n\nProgramas de Formação Continuada Docente:\n\nAções de Qualidade de Vida e Promoção Social:\n\nExecução do Pacto pela Digitalização (competências digitais).\n\nRealização dos Jogos dos Servidores e da Corrida da Educação.\n\nOferta de MBA em Autismo para 3 mil profissionais da Educação\n\nManutenção de espaços esportivos (ex.: CT Pantanal para vôlei,\n\nEspecial."
+          },
+          {
+            "id": "plano-de-governo-45",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nCapacitação em Educação Empreendedora e implementação do\n\nNa infraestrutura e mobilidade urbana, essa aliança se materializou\n\nMEG -Educação em parceria com o SEBRAE.\n\ncom quase R$ 5 bilhões em convênios firmados diretamente com\n\nEventos formativos periódicos: Semana Pedagógica, Simpósio de\n\nas prefeituras, viabilizando a transformação da realidade viária\n\nQualificação e Pesquisa e Convenção Gestão Escolar Conectada.\n\ndas nossas cidades. Foram celebrados quase quinhentos acordos\n\nCapacitação especializada em ferramentas digitais e Inteligência\n\nvoltados exclusivamente para o asfalto urbano, garantindo o fim\n\nArtificial pedagógica (TEACH-IA e MENTOR-IA).\n\nda poeira e da lama na porta das famílias mato-grossenses com\n\nReestruturação Prática dos PAEs: Reorganização e fortalecimento\n\nmilhares de quilômetros de pavimentação nova e restauração de\n\ndos Profissionais de Apoio Escolar (PAEs), garantindo contratação\n\nvias antigas.\n\nágil, capacitação técnica prévia e diretrizes claras de atuação.\n\nEssa renovação do espaço urbano veio acompanhada pelo\n\nAções de Conscientização e Clima Organizacional\n\nprograma MT Iluminado que modernizou a iluminação pública em\n\nPrograma de Conscientização sobre Masculinidades: Instituição de\n\nmais de 130 municípios com a distribuição e instalação de centenas\n\ngrupos reflexivos para servidores públicos do sexo masculino como\n\nde milhares de luminárias de LED, aumentando a segurança nas\n\nação preventiva, de discussão e informação sobre masculinidades e\n\nruas e reduzindo os custos de energia para as administrações locais.\n\nprevenção da violência doméstica.\n\nA presença do Estado nos municípios também avançou por meio\nda transformação digital. A Plataforma Unificada de Governo Digital\n\n5.4. Eixo de Entrega: O Estado parceiro dos municípios para\n\npassou a reunir quase 400 serviços públicos acessíveis pelo Portal\n\nmelhorar as cidades.\n\nde Serviços e pelo aplicativo MT Cidadão, alcançando mais de 1,5\nmilhão de usuários cadastrados e centenas de milhões de acessos.\n\nO verdadeiro desenvolvimento de Mato Grosso só é completo\n\nServiços como transferência veicular, renovação de CNH, rematrícula\n\nquando chega à porta da casa de cada cidadão. Nenhum Estado se\n\ne transferência escolar, Carteira do Autista, agendamento de\n\ndesenvolve de verdade se as suas cidades estiverem abandonadas,\n\natendimentos e acesso a informações públicas passaram a poder\n\ne essa foi a premissa que guiou a transformação de Mato Grosso a\n\nser realizados sem que o cidadão precisasse viajar até a capital ou\n\npartir de 2019.\n\npercorrer diferentes órgãos.\n\nOrientados pela busca obstinada do lucro social, descentralizamos\n\nCom o Projeto Mais Infovia MT, foi iniciada a construção de uma\n\ninvestimentos\n\nde\n\nrede segura de comunicação destinada a conectar mais de duas\n\nparceria permanente com os municípios de todas as regiões,\n\nmil unidades públicas e ampliar o acesso à internet com wi-fi\n\nindependentemente do seu tamanho, localização ou capacidade\n\npúblico nos 142 municípios. Mais de mil pontos de conexão já foram\n\nadministrativa.\n\nentregues, inclusive com a implantação de redes públicas de wi-fi\n\nbilionários\n\ne\n\nconstruímos\n\numa\n\nrelação"
+          },
+          {
+            "id": "plano-de-governo-46",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nem localidades do interior, criando a infraestrutura necessária para\n\nmédica e devolvendo a dignidade ao atendimento de saúde da\n\nque serviços estaduais funcionem com maior estabilidade e rapidez\n\npopulação.\n\nmesmo nas regiões mais distantes.\n\nNa educação e na atenção à infância, estabelecemos um inédito\n\nEssa aproximação também ocorreu pelo fortalecimento da\n\nregime de colaboração com as prefeituras, reorganizando a\n\nrede Ganha Tempo, que reúne, em um mesmo espaço, serviços\n\ninfraestrutura escolar mato-grossense. Para garantir a frequência\n\nestaduais, federais e municipais. Somente em 2025, foram\n\ne a segurança dos estudantes que vivem nas zonas rurais, distritos\n\nrealizados mais de 1,4 milhão de atendimentos, com índice\n\ne comunidades mais distantes, o Governo do Estado repassou mais\n\nsuperior a 99% de avaliações positivas. A integração entre órgãos e\n\nde R$ 1,2 bilhão para a gestão local do transporte escolar e renovou\n\nprefeituras reduziu deslocamentos, concentrou serviços e facilitou\n\nmais de 70% da frota circulante com a doação direta de mais de 1,3\n\no acesso da população à documentação, à defesa do consumidor, à\n\nmil ônibus zero quilômetro.\n\nintermediação de emprego e a outros direitos essenciais.\n\nAlém disso, aportes financeiros estaduais permitiram a construção\n\nA parceria municipal também ganhou inteligência e capacidade de\n\ne ampliação de creches e Centros Municipais de Educação Infantil\n\nplanejamento. A implantação do Índice de Condição e Qualidade\n\nem dezenas de cidades.\n\nde Vida dos Municípios, da Plataforma Geodados, do Portal Dados\n\nNo âmbito social, garantimos o cofinanciamento anual contínuo de\n\nMT e do Anuário Estatístico Digital passou a oferecer informações\n\nR$101 milhões repassados pelo Fundo Estadual de Assistência Social\n\neconômicas, sociais, territoriais e ambientais para conhecer as\n\naos 142 municípios, além de apoios estruturais para o fortalecimento\n\ndiferentes realidades locais, orientar investimentos e formular\n\ndas redes físicas dos CRAS e CREAS.\n\npolíticas públicas mais aderentes às necessidades de cada região.\n\nNa segurança pública, a presença do Estado nas cidades deu um\nsalto tecnológico com o programa Vigia Mais MT, que repassou\n\nA parceria com os municípios foi expandida com a mesma\n\nmilhares de câmeras de videomonitoramento aos municípios. A\n\nintensidade para a saúde pública. A conclusão e inauguração do\n\niniciativa permitiu ampliar o cercamento digital de vias urbanas,\n\nHospital Central de Mato Grosso, somada ao avanço das obras e\n\nproteger o entorno das escolas e fortalecer a atuação integrada\n\nentregas dos Hospitais Regionais em Alta Floresta, Juína, Confresa,\n\ndas forças policiais locais e das redes de proteção, inclusive nas\n\nTangará da Serra e Rondonópolis, está criando um cinturão de alta\n\nações da Patrulha Maria da Penha. Essa presença constante\n\ne média complexidade no interior.\n\ndemonstrou que a eficiência administrativa e a austeridade fiscal\n\nAo mesmo tempo, o programa Fila Zero e as ferramentas de Saúde\n\nnão são fins em si mesmas, mas ferramentas indispensáveis para\n\nDigital ampliaram consultas especializadas, exames e cirurgias\n\nfazer o serviço público funcionar onde a vida acontece: dentro dos\n\neletivas das unidades municipais, descentralizando a regulação\n\nmunicípios. Esse legado de entregas concretas consolida o ponto"
+          },
+          {
+            "id": "plano-de-governo-47",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\nde partida para o novo ciclo de planejamento 2027–2030, no qual a\n\nConservação viária focada na transferência automatizada de\n\nexperiência acumulada do Fazimento sustentará o avanço contínuo\n\ninsumos (como lama asfáltica e emulsões) associada ao treinamento\n\nda qualidade de vida em cada canto de Mato Grosso.\n\ntécnico das equipes municipais, prevenindo o desgaste precoce.\nPrograma Cidade Limpa e Ordenada: Doação/aquisição de\n\nPropostas\n\nequipamentos para limpeza urbana (tratores, roçadeiras, caminhõescaçamba, varredeiras mecânicas) e transferência automatizada de\n\nParceria Institucional e Modelo de Coinvestimento\n\ninsumos.\n\nConsolidação do Modelo de Coinvestimento: Manter e expandir as\nparcerias por convênios diretos para obras de infraestrutura local,\n\nApoio ao Saneamento e à Coleta de Lixo: Ajudar os municípios\n\ncom as 142 prefeituras, eliminando burocracias de repasse.\n\na resolverem, juntos, o problema da água, do esgoto e do lixo. A\n\nFortalecer a capacidade de planejamento, estruturação de projetos\n\nmeta é garantir aterros sanitários adequados e levar água, além de\n\ne gestão dos municípios mediante cooperação voluntária e soluções\n\ntratamento de esgoto para toda a população.\n\ncompartilhadas, por meio da criação da Rede Mato-Grossense de\nPlanejamento e Gestão Municipal. Disponibilização de suporte\n\nCidades Inteligentes, Iluminação e Segurança Integrada:\n\ntécnico, escritórios de estruturação de projetos, painéis, dados e\n\nUniversalização do MT Iluminado: Finalizar a substituição integral\n\nsoluções digitais estaduais para elevar a capacidade técnica das\n\nda iluminação pública dos municípios por tecnologia de lâmpadas\n\nadministrações municipais, reduzindo custos e qualificando as\n\nLED.\n\ndecisões necessárias.\n\nExpansão do Vigia Mais MT Integrado: Ampliar o envio e a\n\nNúcleos Regionais de Entrega: Institucionalizar núcleos transversais\n\ninstalação de câmeras de videomonitoramento às prefeituras para\n\nde governança nas microrregiões do Estado para monitorar o\n\no cercamento digital urbano, aplicando inteligência preditiva aos\n\ncumprimento de metas de saúde, segurança e educação pactuadas\n\ndados gerados.\n\nentre o Estado e os consórcios intermunicipais.\n\nIntegração Digital com Ações Fiscais e de Segurança: Integrar o\nvolume de dados do cercamento digital e das câmeras a algoritmos\n\nInfraestrutura Urbana, Mobilidade e Zeladoria:\n\npreditivos de inteligência fiscal e combate ao crime organizado.\n\nExpansão da Mobilidade Urbana e Pavimentação: Financiar e\nexpandir obras de pavimentação urbana, drenagem de águas\n\nConectividade e Serviços na Ponta:\n\npluviais, recapeamento e construção de calçadas.\n\nInclusão Digital e Conectividade no Interior: Expandir a infraestrutura\n\nPrograma Sustentável de Manutenção Urbana (Zeladoria Local):\n\nde fibra óptica instalada nas rodovias concessionadas para as escolas"
+          },
+          {
+            "id": "plano-de-governo-48",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030\n\nPlano de Governo\n\n2027 - 2030\n\ne postos de saúde, otimizando o Telessaúde e a proteção eletrônica.\n\num instrumento temporário de serviço, cujo único propósito é\n\nRede de Apoio para Compras Consorciadas: Transferir capacidade\n\ndevolver o imposto arrecadado em valor concreto e dignidade para\n\ntécnica aos municípios para viabilizar padronizações de projetos\n\na população.\n\ne compras em consórcio, gerando ganhos de escala e redução de\n\nAo selar este pacto, reafirma-se que a responsabilidade fiscal, o rigor\n\ncustos operacionais.\n\nadministrativo e a sobriedade na condução das ações estaduais\nserão os pilares garantidores da sustentabilidade de Mato Grosso.\n\n5. Compromisso de Transparência e Prestação de Contas\n\nCom fé em Deus, o respeito absoluto às instituições republicanas e a\ntotal confiança na capacidade do nosso povo, este encerramento se\n\nO encerramento deste Plano de Governo assinala o momento\n\nconsolida como um compromisso solene de trabalho ininterrupto e\n\nem que cada proposta apresentada deixa de ser uma intenção\n\nfidelidade aos anseios de toda a sociedade mato-grossense.\n\nde planejamento e se converte em um contrato de gestão com a\nsociedade de Mato Grosso.\nA legitimidade de um projeto público reside na capacidade\nde transformar diretrizes estratégicas em entregas concretas,\nassegurando que o compromisso de transparência e prestação de\ncontas permaneça ativo ao longo de toda a execução governamental.\nInspirado pelas melhores metodologias de governança adotadas\npor estados de elevada aprovação popular, o modelo aqui pactuado\nestabelece a prestação de contas como norma permanente. Mais\ndo que divulgar atos oficiais, a gestão pública assumirá o dever\nde franquear ao cidadão o acompanhamento direto, em tempo\nreal e via plataformas digitais integradas, de cada etapa física,\norçamentária e financeira dos investimentos estaduais.\nEsta postura reflete diretamente a assinatura da liderança de\nOtaviano Pivetta: pragmática, austera e focada na “cobrabilidade”\ncontínua.\nSem espaço para retóricas estéreis ou vaidades políticas, a\nadministração operará sob a premissa de que o poder público é"
+          },
+          {
+            "id": "plano-de-governo-49",
+            "titulo": "Plano de Governo",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo\n\n2027 - 2030"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "2254271e53cad1a6aaadc1bf39c3a13aed8e2d52617dd638da5a530fcb388771"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "8740de7a1df582b28dfdcf7f0428b93ff4105d4408b60bdded7f5453fb92bced"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e5303b6f2e6f76b9c44e49a3d41c339be940cd12cc7d6dd8e894cfcfc8bd45f2"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "7d24213aac0819eba7da7dff5fae7631aeddb5f5fc6bb3003df4bbf82b906083"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c860d57f1bd409386b6c6fe609cc6d766fa45297f935af0eba3220ef83c26799"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "bd8b54f1853ef719df1e13884670d4e7295682748ea74387b03b861cf608c993"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "ab645d78b76a8ee4153f9ad2d39c0a86d3bde20deb5fb82a67a7592dce57eb16"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "3db97449c9bf192709308f8693a0f04b550662191f6a6df38b2d9ca0935cd7d8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "b0fa6ae7d2190b0aabb7e921cb817e7fb2f6ae43ca671fdcb5e140d3a4b818c4"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "c98b536aafec751a6261a9077f8d8f23ddc21eaa45f06c13e1684bee38b6185e"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "d15653481198f750e8f4dae24c8853d0f40ca7f03d7964b5d9f996ad22564de4"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "d315da515445cd7de8e6e0bf482fc6f8da45afb52114de100f1bc69c36ee44f9"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "dcc19e0db91abd076e0102ad9aedce94a5c6f513f4c7a417298cf44a535040eb"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "3fba096f1950a482599dd5cdbfcc1c01fb01e573abd4c1b209348fea0f1e26ab"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "407871247185646b746704c6e7e016aee140cb07de6212f0d00afbbf51d21a18"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "effef1bfd503f829eb0243369d8ca4bdd79fc0e35aa44fb1a510e4705400141f"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "43b4a0751d50e2040c5b4dfaf6fc4806ea58b14b23a5a419efcbec01da5a4220"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "dd319b14c0f1d66c146018ab47381cef7a7ac7a2e36dcf6fda2bdd4293117100"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "63a16991af43a48c70e80fc328440ee4e488865cf95c1cea422f9274b9decd24"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "79b2631b23fe2350b9132d08569dba8bf8152b86f5c6895436ac344e2957b7da"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "7c29a6b52542084bb45cf32df7d63087ce839a898547328daa631c3e0cd45a40"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "9df0f0f3e3e43cdd1afa863a9f436ea8cc46860d84d8217e85b4ea9e4d5dffb8"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "f416bda823ff5706a3ca38feed6c2eb50d014de9f67a27378194d4bbe8caa8f2"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "a3a2a4955bd27505656865c59e5a69ee0352e0dfc9c0a0315443ea15108a7a1b"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "9ff6d58e5a8080037bb03eddd78585172c577e3045d026cc6fcd888468d98325"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "aa235e2bcb0555c8dd5848407cf7264f848bc496687937cbf93f66ac594fe58a"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "46f16447aebb3a32fa2102332c367c96a6c2f01e3084d025f41da6eca49ec485"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "f4b101638ce37ec27622fb9a4f436c3c54e4778fdd073f12ac7efd7b55f47b24"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "784011ae31aaddde36a53a4bae23ca0bbd4f8862cce6c5af90ba20f8deef0402"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "9b73c92cf98c9a5718e7307e8972f22f1c1a317f002cac08b1dc9be2f68188b6"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "22f63a462fe57ba3f648d976150c2d01bc5988d2488bc8446590cecbd1f5b507"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "3156625aba0635c31a45ff5cfc7d672526528c441d6c6e24b996d83714df318a"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "29e226ecd8379bc28d56da8f7f7515634bace39f28fac92c437fbfa0b9d58e4d"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "13ecb7e991618c9b180239d62af29ed7e23de92c4b124b89b247ad07dd75596e"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "2c46a3e244ee9e0862d60d76009bc53aff12ad52519f8bca97f94edd00a220f4"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "1e6bc624313ab847d4b3cb6df926dbdbf1f1c9bdffb58c34dfc6250af2451cb7"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "59e4fa09a704f7887714269034f5d5d2b2fecb230ab860d0d5202be2e6958575"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "d0cfe74fa1080a7ea417e4d7e397fa65ca68784082ff16ef75cb01175900bc53"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "3c17be1801aa0e14215bd78e73e76e1f2c3242da16fe15d59c87692e933b9dd5"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "957e667c5e96c7d980c1a6bf2e8799d50fb53593174fb9caa3544f8ec2c26904"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "bf37a6b49062477349c5ddb34fe383fa0e572264cdb7984a6449ae7192e6f158"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "67bb9cb50b293ac435d19297cd5068645068f80274f70b3f354e42ea5909c413"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "562f5a63da881dbf3618d2947fca93ba7b03d53ff83094ffce4fd4b221f9846f"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "42456792c6db0aeae89771555acf422a45196d4260d2805d117ef29a895a0668"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "6c6610d5bcad6bf0d2a1e951335ca92c5459fc518ac764b42665dc829ec03d66"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "6d66c9efd5ffaafacbddea23a1eee9202338d19aa71a6a548a0062e6dfda7eeb"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "cbd7b0b7eef6c6a59627e60a1278dd40625708f8a7645558fb78d7938262f6dc"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "fc6a83816c2fde9a2b62efe83618f4c093bb79c0d98917a29e38207faf5d066f"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "383ed46d5b76b43793fd19869356e54e1f5f35099ee706b42d5aba4a7a02a204"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano apresenta cinco pilares estratégicos, identificados como eixos estratégicos do governo no documento oficial que reúne as propostas do programa. Na área de inclusão digital, o plano propõe a aquisição de 23.000 novos Chromebooks, conforme a medida registrada no documento oficial do programa. Na educação militar, o plano estabelece atingir até 263 unidades de escolas militares, meta apresentada no documento oficial do programa. O plano estabelece, como meta temporal e territorial, atingir 100% de cobertura estadual de APH Móvel até 2028 no programa oficial. Na habitação, o plano propõe a construção de mais 60 mil novas casas populares, conforme a proposta registrada no documento oficial do programa. Na gestão ambiental, o plano propõe implementar a análise automatizada do Cadastro Ambiental Rural, medida descrita no documento oficial do programa.",
+    "frases": [
+      {
+        "texto": "O plano apresenta cinco pilares estratégicos, identificados como eixos estratégicos do governo no documento oficial que reúne as propostas do programa.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 6,
+            "trecho": "Eixos estratégicos (5 pilares do governo)"
+          }
+        ]
+      },
+      {
+        "texto": "Na área de inclusão digital, o plano propõe a aquisição de 23.000 novos Chromebooks, conforme a medida registrada no documento oficial do programa.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 11,
+            "trecho": "Inclusão Digital: Aquisição de 23.000 novos Chromebooks."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação militar, o plano estabelece atingir até 263 unidades de escolas militares, meta apresentada no documento oficial do programa.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 11,
+            "trecho": "para atingir até 263 unidades."
+          }
+        ]
+      },
+      {
+        "texto": "O plano estabelece, como meta temporal e territorial, atingir 100% de cobertura estadual de APH Móvel até 2028 no programa oficial.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 15,
+            "trecho": "– atingir 100% de cobertura estadual de APH Móvel até 2028,"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, o plano propõe a construção de mais 60 mil novas casas populares, conforme a proposta registrada no documento oficial do programa.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 21,
+            "trecho": "Construção de mais 60 mil novas casas populares"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão ambiental, o plano propõe implementar a análise automatizada do Cadastro Ambiental Rural, medida descrita no documento oficial do programa.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 28,
+            "trecho": "Análise Automatizada do CAR: Implementar a análise automatizada"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "pilares-estrategicos",
+        "titulo": "Pilares estratégicos",
+        "descricao": "O plano apresenta cinco pilares estratégicos como eixos estratégicos do governo.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 6,
+            "trecho": "Eixos estratégicos (5 pilares do governo)"
+          }
+        ]
+      },
+      {
+        "id": "inclusao-digital",
+        "titulo": "Inclusão digital",
+        "descricao": "O plano propõe adquirir 23.000 novos Chromebooks.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 11,
+            "trecho": "Inclusão Digital: Aquisição de 23.000 novos Chromebooks."
+          }
+        ]
+      },
+      {
+        "id": "educacao-militar",
+        "titulo": "Educação militar",
+        "descricao": "O plano estabelece atingir até 263 unidades de escolas militares.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 11,
+            "trecho": "para atingir até 263 unidades."
+          }
+        ]
+      },
+      {
+        "id": "aph-movel",
+        "titulo": "APH Móvel",
+        "descricao": "O plano estabelece atingir 100% de cobertura estadual de APH Móvel até 2028.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 15,
+            "trecho": "– atingir 100% de cobertura estadual de APH Móvel até 2028,"
+          }
+        ]
+      },
+      {
+        "id": "casas-populares",
+        "titulo": "Casas populares",
+        "descricao": "O plano propõe construir mais 60 mil novas casas populares.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 21,
+            "trecho": "Construção de mais 60 mil novas casas populares"
+          }
+        ]
+      },
+      {
+        "id": "cadastro-ambiental-rural",
+        "titulo": "Cadastro Ambiental Rural",
+        "descricao": "O plano propõe implementar a análise automatizada do Cadastro Ambiental Rural.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002551480:01",
+            "pagina": 28,
+            "trecho": "Análise Automatizada do CAR: Implementar a análise automatizada"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T00:53:18.452Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T00:55:15.421Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma 5 pilares/eixos estratégicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número cinco confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tema coerente: estrutura de pilares."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência correspondem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:1:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a medida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 23.000 confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta específica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:2:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação simples."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a meta de 263 unidades no contexto de escolas militares."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 263 confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:3:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "100% e 2028 confirmados literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (APH Móvel)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:4:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 60 mil confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (habitação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:5:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a medida sobre o CAR."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única (gestão ambiental/CAR)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:frase:6:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma 5 pilares/eixos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número cinco confirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:pilares-estrategicos:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a medida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:inclusao-digital:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a meta no contexto de escolas militares."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 263 confirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:educacao-militar:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "100% e 2028 confirmados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:aph-movel:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Número confirmado."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:casas-populares:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a medida."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002551480:tema:cadastro-ambiental-rural:documentos:MT:110002551480:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MT:110002551480",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MT:110002551480:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 24548,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19186,
+          "output_tokens_details": {
+            "thinking_tokens": 525
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 24548,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19186,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 24548,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 24548
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3094874
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "e496a72bc060a4eb427c2e645f14bb82dcc5c20694a6728b5c74db4d013f0b64",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T01:23:32.855Z",
+    "sourceSha256": "0be1d52602122bfbc44f6a0a8908b61b5e7db96524f6212b532fe93fc8039aec",
+    "extractedTextSha256": "5e366ded40f3e79cf3c45fb0b10dbcb270de66d7f7488e87bcd8a2e60eeffbbe",
+    "documentCount": 1,
+    "documentSetSha256": "01375d9d0872983a3d6d5c85cbccbb73ca50a1e4d2f266b8679cd8acde8660ad",
+    "contentSha256": "5a4ea309e1b7825f026efd8ca850a5bd6938f5818054b65a0f53b4eee20a70a6"
+  }
+}

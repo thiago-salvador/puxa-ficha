@@ -1,0 +1,784 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002532257",
+    "slug": "lucien-rezende",
+    "nomeUrna": "LUCIEN REZENDE",
+    "partido": "PSOL",
+    "arquivoNome": "2026MS120002532257_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002532257_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002532257:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002532257_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002532257_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b00c08377c13dc283f8293bb682ee418c29a380966ba4a3a673673cc71653478",
+        "extractedTextSha256": "e8954e0c5d57226cefa5cca32a863e56028d94af7db9130b04002a366f77e4cb",
+        "paginas": 10,
+        "secoes": [
+          {
+            "id": "o-partido-socialismo-e-liberdade-psol-e-rede-sustentabilidade-em-mato",
+            "titulo": "O Partido Socialismo e Liberdade (PSOL) e REDE Sustentabilidade, em Mato",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "O Partido Socialismo e Liberdade (PSOL) e REDE Sustentabilidade, em Mato\nGrosso do Sul, foca sua estratégia para as eleições de 2026 em três pilares\ncentrais: a sustentação da base aliada para a reeleição do presidente Lula, o\nfortalecimento de candidaturas legislativas alinhadas a pautas trabalhistas e a\nmobilização popular contra a jornada de trabalho na escala 6x1.\nA atuação dos partidos no estado reflete uma articulação nacional voltada para\no enfrentamento de setores conservadores e a defesa de direitos sociais.\nO Debate sobre o Fim da Escala 6x1\nA mobilização contra a jornada de seis dias de trabalho por um de descanso é\numa das bandeiras de maior apelo popular do PSOL, e da federação PSOLREDE\nArticulação de base: O partido utiliza os diretórios estaduais para coletar\nassinaturas e pressionar os deputados federais da bancada de MS.\nConscientização regional: Debates públicos evidenciam o impacto da jornada na\nsaúde mental e física dos trabalhadores do comércio e serviços locais.\nPressão no Congresso: A estratégia visa constranger parlamentares de partidos\nde direita e centro-direita que resistem à alteração na CLT.\nFortalecimento da Esquerda em MS\nHistoricamente dominado por forças ligadas ao agronegócio e ao\nconservadorismo, Mato Grosso do Sul apresenta um cenário desafiador para a\nesquerda.\nFederação PSOL-REDE: A aliança partidária busca otimizar o tempo de TV e os\nrecursos do fundo eleitoral para ampliar a bancada progressista.\nFoco no Legislativo: A prioridade é eleger deputados estaduais na Assembleia\nLegislativa (ALEMS) e representantes na Câmara dos Deputados.\nPautas prioritárias: Defesa dos direitos dos povos indígenas, sustentabilidade\nambiental (com foco no Pantanal e Cerrado) e valorização dos servidores\npúblicos.\nApoio à Reeleição de Lula\nO PSOL e a REDE atuam como um ator estratégico na construção do palanque\nda federação de esquerda no estado.\nUnidade democrática: A Federação PSOL-REDE para criar um contrapeso ao\nconservadorismo regional.\nDefesa de investimentos: Divulgação das obras e programas federais do\ngoverno Lula direcionados a MS, como o avanço das rotas bioceânicas e\nprogramas de moradia e saúde.\nCombate ao extremismo: Contraposição direta às narrativas das alas\nbolsonaristas que possuem forte influência na política sul-mato-grossense."
+          },
+          {
+            "id": "plano-de-governo-psol-mato-grosso-do-sul-2026",
+            "titulo": "Plano de Governo PSOL – Mato Grosso do Sul 2026",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Plano de Governo PSOL – Mato Grosso do Sul 2026\n\nSaúde em Primeiro Lugar:\nCuidar das Pessoas, fortalecer o SUS\nNosso compromisso é construir um Mato Grosso do Sul onde a saúde pública\nseja tratada como direito fundamental e prioridade absoluta. Um governo popular\nprecisa colocar as pessoas no centro das decisões, fortalecendo o SUS,\nvalorizando os trabalhadores da saúde e garantindo atendimento digno em todas\nas regiões do estado.\nFortalecimento do SUS\nVamos ampliar os investimentos na saúde pública estadual, fortalecendo o\nSistema Único de Saúde como instrumento de acesso universal, gratuito e de\nqualidade para toda a população sul-mato-grossense.\n* Mais Médicos para Mato Grosso do Sul\nDefendemos a ampliação do programa Mais Médicos, garantindo profissionais\nem regiões afastadas, periferias urbanas, comunidades indígenas e municípios\nque sofrem com a falta de atendimento médico.\n* Saúde em Casa\nCriaremos o programa Saúde em Casa, levando atendimento humanizado até a\nresidência da população idosa, pessoas com deficiência e pacientes com\ndificuldade de locomoção.\nO programa contará com:\nUTIs móveis;\nequipes multidisciplinares;\nacompanhamento domiciliar;\natendimento preventivo e emergencial.\n* Regionalização da Saúde\nVamos descentralizar os serviços de saúde, fortalecendo hospitais regionais e\nunidades especializadas para evitar que pacientes precisem se deslocar longas\ndistâncias em busca de atendimento.\nNosso objetivo é garantir:\n•atendimento mais rápido;\n* redução das filas;\n* mais acesso a exames e cirurgias;\n* estrutura adequada em todas as regiões do estado."
+          },
+          {
+            "id": "valorizacao-dos-servidores-da-saude",
+            "titulo": "* Valorização dos Servidores da Saúde",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "* Valorização dos Servidores da Saúde\nNenhum sistema público funciona sem trabalhadores valorizados. Nosso\ngoverno irá:\n* garantir melhores salários;\n* promover planos de carreira;\n* melhorar as condições de trabalho;\n* investir em equipamentos e infraestrutura adequados;\n* assegurar jornadas dignas e respeito aos profissionais da saúde.\n* Formação e Capacitação Permanente\n* Investiremos na qualificação contínua dos profissionais da saúde, com cursos,\nespecializações e programas de atualização permanente, fortalecendo um\natendimento cada vez mais humano, eficiente e moderno.\n\nPLANO DE GOVERNO PSOL 2026\n\nEDUCAÇÃO\n\nNós do PSOL entendemos que a educação é a base de tudo e um direito\nfundamental da população. Por isso, defendemos uma política educacional\npública, gratuita, inclusiva e de qualidade, que valorize estudantes, profissionais\nda educação e toda a comunidade escolar.\n\nNOSSAS PROPOSTAS PARA EDUCAÇÃO:\n* EDUCAÇÃO EM PERIUDO INTEGRAL, garantindo mais oportunidades de\naprendizagem, cultura, esporte, lazer e alimentação adequada para crianças e\njovens.\n* VALORIZACAO DOS PROFESSORES E SERVIDORES ADMINISTRATIVOS\ncom melhores condições de trabalho, formação continuada e respeito aos\ndireitos da categoria.\nREALIZACAO DE CONCURSOS PUBLICOS, para suprir a falta de profissionais\nna rede de ensino, garantindo estabilidade e qualidade no aten…\n\nPlano de Governo PSOL 2026\nCultura"
+          },
+          {
+            "id": "nos-do-psol-entendemos-que-a-cultura-e-fundamental-para-a-vida-do-ser",
+            "titulo": "Nós do PSOL entendemos que a cultura é fundamental para a vida do ser",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Nós do PSOL entendemos que a cultura é fundamental para a vida do ser\nhumano, para a construção da identidade do povo e para o fortalecimento da\ncidadania. Diante disso, defendemos a construção de um projeto cultural amplo,\ndemocrático e acessível para toda a população sul-mato-grossense.\nNosso compromisso é valorizar os artistas e trabalhadores da cultura do estado,\ngarantindo mais incentivo, oportunidades e reconhecimento para aqueles que\nmantêm viva a diversidade cultural de Mato Grosso do Sul.\nPropomos a criação de um calendário cultural estadual permanente, organizado\nem parceria com os municípios, movimentos culturais e artistas locais,\npermitindo que apresentações, festivais, feiras e eventos culturais aconteçam\ndurante todo o ano, fortalecendo a economia criativa e ampliando o acesso da\npopulação à cultura.\nTambém defendemos o fortalecimento das políticas públicas de incentivo à\ncultura regional, respeitando as diferentes manifestações culturais do estado,\nincluindo a cultura indígena, afro-brasileira, pantaneira, sertaneja, urbana e\nperiférica.\n\nO PSOL acredita que o poder público deve atuar em parceria com os municípios\npara promover a cultura local, descentralizando investimentos e garantindo que\nos recursos cheguem também às cidades do interior, bairros periféricos e\ncomunidades tradicionais.\n\nAlém disso trabalharemos para:\n* ampliar os editais públicos de incentivo à cultura.\n* garantir transparência e democratização no acesso aos recursos culturais\n* incentivar a formação artística e cultural para jovens.\n* apoiar espaços culturais independentes;\n* promover a cultura como instrumento de inclusão social, educação e geração\nde renda.\n\nA cultura não pode ser tratada como privilégio para poucos. Cultura é direito,\nidentidade, memória e desenvolvimento social. Seremos um governo que esteja\ndo lado do povo, venha pra nosso lado.\n\nPlano de governo PSOL 2026"
+          },
+          {
+            "id": "esporte",
+            "titulo": "Esporte",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Esporte\n\nNós do PSOL entendemos que o esporte é fundamental na vida das pessoas,\nespecialmente para a juventude, sendo uma ferramenta de inclusão social,\nsaúde, educação, cultura e cidadania. Nesse sentido, apresentamos uma\nproposta comprometida com a democratização do acesso ao esporte em todas\nas idades e em todas as regiões do estado.\n\nDefendemos a ampliação de investimentos públicos em infraestrutura esportiva,\ncom a construção, reforma e manutenção de quadras, campos, ginásios, pistas\ne centros esportivos comunitários, garantindo acesso gratuito e de qualidade à\npopulação.\n\nNosso plano prevê a criação de programas permanentes de incentivo ao esporte\nde base, escolar e universitário, fortalecendo a formação de atletas e\npromovendo atividades esportivas como parte da educação integral. Também\npropomos políticas específicas para inclusão de mulheres, pessoas com\ndeficiência, população LGBTQIA+, idosos e comunidades periféricas no\nesporte.\n\nO PSOL defende o fortalecimento de projetos sociais esportivos, em parceria\ncom escolas, universidades, associações de bairro e movimentos populares,\nutilizando o esporte como instrumento de prevenção à violência, combate às\ndesigualdades e promoção da saúde física e mental.\n\nAlém disso, queremos valorizar profissionais da educação física e demais\ntrabalhadores do esporte, garantindo condições dignas de trabalho e ampliando\noportunidades de formação e capacitação.\n\nPor fim, defendemos transparência e controle social nos investimentos\nesportivos, priorizando o acesso popular ao esporte em vez de benefícios\nconcentrados apenas no esporte de alto rendimento, queremos governar para\ntodos, ou seja, governar para o povo, venha para o nosso lado.\n\nPLANO DE GOVERNO PSOL 2026\n\nSegurança Pública"
+          },
+          {
+            "id": "como-e-de-conhecimento-de-todos-mato-grosso-do-sul-e-um-estado-que-faz",
+            "titulo": "Como é de conhecimento de todos, Mato Grosso do Sul é um estado que faz",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Como é de conhecimento de todos, Mato Grosso do Sul é um estado que faz\nfronteira com outros países, o que exige políticas sérias e eficientes de proteção\ndas fronteiras, combate ao crime organizado e fortalecimento da segurança\npública. Entretanto, nos últimos anos, os índices de violência e a avaliação da\nsegurança pública no estado não têm apresentado resultados satisfatórios. Pelo\nterceiro ano consecutivo, Mato Grosso do Sul aparece acima da 15ª posição no\nranking nacional de violência e criminalidade, demonstrando a necessidade de\nmudanças estruturais na política de segurança.\n\nNós do PSOL defendemos uma política de segurança pública baseada na\ninteligência, na prevenção e no respeito aos direitos humanos. Entendemos que\no atual modelo, centrado apenas na repressão e na chamada “guerra às drogas”,\nfracassou. Nas últimas décadas, o que vimos foi o aumento do encarceramento\nde jovens negros e periféricos, enquanto os grandes financiadores e chefes do\ntráfico seguem protegidos por privilégios econômicos e estruturas de poder.\n\nNosso governo irá priorizar o combate ao crime organizado por meio de\ninvestigação qualificada, integração das forças de segurança e cooperação com\nórgãos federais e internacionais nas regiões de fronteira. Defendemos\ninvestimentos em tecnologia, inteligência policial e valorização dos profissionais\nda segurança pública, com melhores condições de trabalho, formação\ncontinuada e políticas de saúde mental para os agentes.\n\nTambém propomos ampliar políticas sociais nas periferias, com investimentos\nem educação, esporte, cultura, geração de emprego e assistência social, porque\nacreditamos que segurança pública se constrói com oportunidades e redução\ndas desigualdades.\n\nO PSOL defende ainda o fortalecimento de políticas de prevenção à violência\ncontra as mulheres, combate ao feminicídio, proteção às populações indígenas\ne enfrentamento ao racismo estrutural presente nas abordagens policiais e no\nsistema de justiça criminal.\n\nNossa proposta é construir uma segurança pública eficiente, humana e\ndemocrática, que proteja a população sem criminalizar a pobreza e que enfrente\nos verdadeiros responsáveis pela violência e pelo crime organizado, queremos\ngovernar com o povo, venha para o nosso lado.\n\nPLANO DE GOVERNO PSOL 2026\nGeração de Emprego e Renda"
+          },
+          {
+            "id": "nos-ultimos-anos-mato-grosso-do-sul-passou-por-um-intenso-processo-de",
+            "titulo": "Nos últimos anos, Mato Grosso do Sul passou por um intenso processo de",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Nos últimos anos, Mato Grosso do Sul passou por um intenso processo de\nexpansão do setor da celulose, especialmente na região da costa leste do\nestado, conhecida como “Vale da Celulose”. A instalação de grandes indústrias\ngerou centenas de empregos, principalmente durante a construção das fábricas,\nmovimentando a economia dos municípios envolvidos e ampliando a\narrecadação local.\n\nEntretanto, esse modelo de desenvolvimento também levanta importantes\nquestionamentos. As grandes multinacionais recebem bilhões em incentivos e\nisenções fiscais concedidos pelo Estado e pelos municípios, enquanto muitas\ncidades continuam enfrentando problemas históricos como desigualdade social,\nbaixos salários, falta de infrae…\n\nPLANO DE GOVERNO PSOL 2026.\n\nHabitação\n\nNas últimas décadas, Mato Grosso do Sul não avançou de forma significativa\nna redução do déficit habitacional. Milhares de famílias ainda vivem sem acesso\nà moradia digna, enfrentando aluguel caro, ocupações precárias e falta de\ninfraestrutura básica. Isso acontece mesmo diante dos avanços da tecnologia na\nconstrução civil, como as casas modulares, que já demonstram ser uma\nalternativa moderna, rápida, segura e acessível para a habitação popular.\n\nNós do PSOL entendemos que moradia é um direito fundamental e que falta\nvontade política do poder público para enfrentar o problema habitacional no\nestado. Nosso projeto de governo propõe uma política habitacional ampla,\npopular e integrada, garantindo dignidade para as famílias trabalhadoras.\n\nDefendemos a criação de um programa estadual de habitação popular em\nparceria com os 79 municípios de Mato Grosso do Sul, priorizando famílias de\nbaixa renda, mulheres chefes de família, população em situação de\nvulnerabilidade, indígenas, quilombolas e pessoas com deficiência.\n\nNosso governo irá investir na construção de moradias populares utilizando novas\ntecnologias da construção civil, como modelos modulares e sustentáveis,"
+          },
+          {
+            "id": "garantindo-mais-agilidade-reducao-de-custos-conforto-e-seguranca-para-as",
+            "titulo": "garantindo mais agilidade, redução de custos, conforto e segurança para as",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "garantindo mais agilidade, redução de custos, conforto e segurança para as\nfamílias.\n\nTambém propomos ampliar programas de regularização fundiária, urbanização\nde bairros periféricos e acesso à infraestrutura básica, como água, energia,\nsaneamento, pavimentação, transporte público e áreas de lazer.\n\nO PSOL defende ainda políticas de aluguel social para famílias em situação de\nemergência e o fortalecimento de programas de mutirão habitacional com\nparticipação das comunidades e movimentos sociais.\n\nNosso compromisso é construir uma política habitacional que coloque a\ndignidade humana acima da especulação imobiliária, garantindo que toda família\nsul-mato-grossense tenha direito a uma moradia segura, acessível e de\nqualidade, vamos governar com o povo, venha para o nosso lado.\n\nPlano de Governo PSOL – Mato Grosso do Sul 2026\n\n* Saúde Humanizada e Inclusiva.\n\nNosso governo irá promover uma parceria política com o governo federal, para\npromover saúde pública que respeite a diversidade, combata desigualdades e\ngaranta atendimento digno para:\n\n* população indígena;\n\n* população negra;\n\nmulheres;\n\n* população LGBTQIA+;\n\npessoas com deficiência;"
+          },
+          {
+            "id": "moradores-das-periferias-e-do-campo",
+            "titulo": "moradores das periferias e do campo.",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "moradores das periferias e do campo.\n\nUm Governo para as Pessoas\n\nAcreditamos que governar é cuidar. Por isso, nossa prioridade será garantir\ndignidade, acesso e qualidade de vida para quem mais precisa. Um Mato Grosso\ndo Sul mais justo começa com uma saúde pública forte, humana e acessível\npara todas e todos, queremos trabalhar a saúde com o coração venha para o\nnosso lado.\n\nPlano de Governo PSOL 2026\n\nMeio Ambiente\n\nNós, do PSOL, entendemos que o meio ambiente é fundamental para a nossa\nsubsistência e para a qualidade de vida da população. Por isso, defendemos a\npreservação dos ecossistemas brasileiros, da biodiversidade e da flora nativa.\n\nO Pantanal, um dos maiores e mais importantes biomas do mundo, vem sofrendo\nhá décadas com a devastação ambiental e com queimadas de grande proporção.\nEsses problemas causam graves prejuízos à fauna, à flora e ao equilíbrio\necológico da região.\n\nNosso compromisso é fortalecer as políticas de proteção ambiental, ampliar a\nfiscalização contra o desmatamento e as queimadas ilegais, promover a\nrecuperação de áreas degradadas e incentivar o desenvolvimento sustentável,\nconciliando a preservação da natureza com a geração de emprego e renda para\nas comunidades locais.\n\nMato Grosso do Sul vem sendo ocupado por grandes indústrias de celulose,\nespecialmente na região leste do estado. O abastecimento dessas fábricas com\nsua principal matéria-prima, a madeira proveniente de extensas plantações de\neucalipto, tem provocado impactos ambientais significativos. Entre eles, destacase o aumento da mortalidade de animais silvestres nas rodovias, em razão do\nintenso tráfego de caminhões utilizados para o transporte da produção.\nPassou da hora de o poder público agir com firmeza diante desses desafios.\nTambém nos preocupam as atividades das mineradoras na região de Corumbá,"
+          },
+          {
+            "id": "que-operam-ha-decadas-no-municipio-defendemos-maior-transparencia",
+            "titulo": "que operam há décadas no município. Defendemos maior transparência,",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "que operam há décadas no município. Defendemos maior transparência,\nfiscalização rigorosa e monitoramento permanente dos impactos ambientais\ncausados pela mineração, garantindo que a exploração econômica dos recursos\nnaturais ocorra com responsabilidade ambiental e respeito às comunidades\nlocais.\n\nO PSOL defenderá a criação de políticas públicas voltadas à proteção da fauna\nsilvestre, ao fortalecimento dos órgãos de fiscalização ambiental, à recuperação\nde áreas degradadas e à promoção de um modelo de desenvolvimento\nsustentável que preserve as riquezas naturais de Mato Grosso do Sul para as\nfuturas gerações.\n\nNADA DEVA TRANSPARECER IMPOSSIVEL DE MUDAR, BASTA VOTAR 50."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6eed28a817f0310b56021df1d1688790191d62d87723f6d37313e07cb02096f1"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "2db1eaf3d8212cf909f0e750a42b076e065b9f6b2dd56cb72896180b2a85ab48"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "bf4a63712d5f60b2bad67e8558eba4f673c560d19fceb7a4f190a5c59e79c746"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "ba9a312af029696bec5b8d342166fd9e3396203248cd1e42d5896fcaad8d532c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "cdca8a84a1bf363857e405fbecba482aae5a539eabeb10985bb3f5818786d83f"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "2e370f33292941ea22bbef42d5c475cd6659bb8798883729bc26f85c76be6ec7"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "160edc15c7bda26a20ae56dc6bdc8e1c05246661a8273a5cd60538a4f6499ec8"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "633555dfca41d29e415950a3f4a8448775bbb41a20c837dee9e110534f61dd2f"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "25ce8616561c133cd722c6eca74ec93626efc785a70edda4dd349e341ba52409"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "79f631fa369d959dfe394d08c5da7408090491d40547a95fbb668bc66d3a1ea3"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa defende a ampliação do Mais Médicos em Mato Grosso do Sul, incluindo regiões afastadas, periferias urbanas e comunidades indígenas. O programa propõe o Saúde em Casa, com atendimento na residência de idosos, pessoas com deficiência e pacientes com dificuldade de locomoção. O Saúde em Casa contará com UTIs móveis, conforme previsão apresentada no programa oficial. O programa prevê descentralizar serviços de saúde, fortalecendo hospitais regionais e unidades especializadas para evitar deslocamentos longos em busca de atendimento. O programa prevê qualificação contínua dos profissionais da saúde, mediante cursos, especializações e programas de atualização permanente. Na cultura, o programa propõe calendário estadual permanente organizado com municípios, movimentos culturais e artistas locais. O programa defende ampliar editais públicos de incentivo à cultura, conforme a proposta cultural apresentada. No esporte, o programa prevê programas permanentes de incentivo às modalidades de base, escolar e universitária.",
+    "frases": [
+      {
+        "texto": "O programa defende a ampliação do Mais Médicos em Mato Grosso do Sul, incluindo regiões afastadas, periferias urbanas e comunidades indígenas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "Defendemos a ampliação do programa Mais Médicos, garantindo profissionais em regiões afastadas, periferias urbanas, comunidades indígenas e municípios que sofrem com a falta de atendimento médico."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe o Saúde em Casa, com atendimento na residência de idosos, pessoas com deficiência e pacientes com dificuldade de locomoção.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "Criaremos o programa Saúde em Casa, levando atendimento humanizado até a residência da população idosa, pessoas com deficiência e pacientes com dificuldade de locomoção."
+          }
+        ]
+      },
+      {
+        "texto": "O Saúde em Casa contará com UTIs móveis, conforme previsão apresentada no programa oficial.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "O programa contará com: UTIs móveis;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê descentralizar serviços de saúde, fortalecendo hospitais regionais e unidades especializadas para evitar deslocamentos longos em busca de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "Vamos descentralizar os serviços de saúde, fortalecendo hospitais regionais e unidades especializadas para evitar que pacientes precisem se deslocar longas distâncias em busca de atendimento."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê qualificação contínua dos profissionais da saúde, mediante cursos, especializações e programas de atualização permanente.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 3,
+            "trecho": "Investiremos na qualificação contínua dos profissionais da saúde, com cursos, especializações e programas de atualização permanente"
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, o programa propõe calendário estadual permanente organizado com municípios, movimentos culturais e artistas locais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 4,
+            "trecho": "Propomos a criação de um calendário cultural estadual permanente, organizado em parceria com os municípios, movimentos culturais e artistas locais"
+          }
+        ]
+      },
+      {
+        "texto": "O programa defende ampliar editais públicos de incentivo à cultura, conforme a proposta cultural apresentada.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 4,
+            "trecho": "ampliar os editais públicos de incentivo à cultura."
+          }
+        ]
+      },
+      {
+        "texto": "No esporte, o programa prevê programas permanentes de incentivo às modalidades de base, escolar e universitária.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 5,
+            "trecho": "Nosso plano prevê a criação de programas permanentes de incentivo ao esporte de base, escolar e universitário"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "atendimento-medico",
+        "titulo": "Atendimento médico",
+        "descricao": "Ampliação do programa Mais Médicos em Mato Grosso do Sul, com atuação prevista em regiões afastadas, periferias urbanas e comunidades indígenas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "Defendemos a ampliação do programa Mais Médicos, garantindo profissionais em regiões afastadas, periferias urbanas, comunidades indígenas e municípios que sofrem com a falta de atendimento médico."
+          }
+        ]
+      },
+      {
+        "id": "saude-domiciliar",
+        "titulo": "Saúde domiciliar",
+        "descricao": "Criação do programa Saúde em Casa para atendimento residencial de grupos especificados no programa.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 2,
+            "trecho": "Criaremos o programa Saúde em Casa, levando atendimento humanizado até a residência da população idosa, pessoas com deficiência e pacientes com dificuldade de locomoção."
+          }
+        ]
+      },
+      {
+        "id": "politica-cultural",
+        "titulo": "Política cultural",
+        "descricao": "Criação de um calendário cultural estadual permanente em parceria com municípios, movimentos culturais e artistas locais.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 4,
+            "trecho": "Propomos a criação de um calendário cultural estadual permanente, organizado em parceria com os municípios, movimentos culturais e artistas locais"
+          }
+        ]
+      },
+      {
+        "id": "esporte-de-base",
+        "titulo": "Esporte de base",
+        "descricao": "Criação de programas permanentes de incentivo ao esporte de base, escolar e universitário.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002532257:01",
+            "pagina": 5,
+            "trecho": "Nosso plano prevê a criação de programas permanentes de incentivo ao esporte de base, escolar e universitário"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-28T23:24:55.016Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-28T23:27:01.069Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade eleitoral e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:1:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:2:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa das cláusulas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:3:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única coberta integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:4:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:5:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:6:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:7:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:frase:8:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:atendimento-medico:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:saude-domiciliar:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:politica-cultural:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade coincide."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002532257:tema:esporte-de-base:documentos:MS:120002532257:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002532257",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002532257:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 22805,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 20781,
+          "output_tokens_details": {
+            "thinking_tokens": 133
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 22805,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 20781,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 22805,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 22805
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3169304
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 2,
+        "retriesSintese": 1,
+        "fingerprint": "707f05e56007f5a9312a4cbc5c32f510b4900406a44f398d26da600201a2f724",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-28T23:27:51.573Z",
+    "sourceSha256": "b00c08377c13dc283f8293bb682ee418c29a380966ba4a3a673673cc71653478",
+    "extractedTextSha256": "e8954e0c5d57226cefa5cca32a863e56028d94af7db9130b04002a366f77e4cb",
+    "documentCount": 1,
+    "documentSetSha256": "da9158eee5abe01789ba3e2389e5cd0223d587ffdf65344b4e4b0c5ae8a9b360",
+    "contentSha256": "b23c4c5e07e0413cbb65a53ee7725bba140491a930bcab3562522133c628dd1b"
+  }
+}

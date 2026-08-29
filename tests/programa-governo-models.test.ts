@@ -272,6 +272,76 @@ test("valida evidência literal antes de encerrar e tenta novamente com feedback
   assert.match(retry.instructions, /evidencia\[0\]/)
 })
 
+test("aplica orientação de reparo apenas na geração e na síntese, sem contaminar a extração literal", async () => {
+  const guidance = "Preserve o verbo literal da fonte e divida cada cláusula em um claim atômico."
+  const requests: Array<{ promptVersion: string; instructions: string; input: Record<string, unknown> }> = []
+  const adapters = createProgramaGovernoModelAdapters(config(), async (_command, _args, rawInput) => {
+    const envelope = JSON.parse(rawInput) as { promptVersion: string; instructions: string; input: Record<string, unknown> }
+    requests.push(envelope)
+    if (envelope.promptVersion.endsWith("/fatos-passagem")) {
+      return {
+        stdout: JSON.stringify({
+          fatos: Array.from({ length: 6 }, (_, index) => ({
+            texto: `A fonte prevê a medida administrativa ${index + 1}.`,
+            evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: `Trecho literal ${index + 1}.` }],
+          })),
+        }),
+        stderr: "",
+      }
+    }
+    if (envelope.promptVersion.endsWith("/sintese-fatos")) {
+      const fatoIds = (envelope.input.FATOS as Array<{ id: string }>).map(({ id }) => id)
+      const texto = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
+      const palavras = texto.split(" ")
+      return {
+        stdout: JSON.stringify({
+          texto,
+          frases: Array.from({ length: 6 }, (_, index) => ({
+            texto: palavras.slice(index * 8, index * 8 + 8).join(" "),
+            fatoIds: [fatoIds[index]],
+          })),
+          temas: Array.from({ length: 4 }, (_, index) => ({
+            id: `tema-${index + 1}`,
+            titulo: `Tema ${index + 1}`,
+            descricao: "Descrição factual.",
+            fatoIds: [fatoIds[0]],
+          })),
+        }),
+        stderr: "",
+      }
+    }
+    return { stdout: JSON.stringify(summary()), stderr: "" }
+  })
+
+  await adapters.generate({ ...generatorInput(), repairGuidance: guidance })
+  const facts = await adapters.extrairFatosPassagem!({
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    documentos: [{
+      documentoId: "doc-1",
+      paginas: [{
+        pagina: 1,
+        origem: "fixture",
+        texto: Array.from({ length: 6 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
+      }],
+    }],
+    repairGuidance: guidance,
+  })
+  await adapters.sintetizarDeFatos!({
+    identityKey: "2026:GOVERNADOR:PI:180002549920",
+    fatos: facts.output,
+    repairGuidance: guidance,
+    requireDistinctSentenceFacts: true,
+  })
+
+  assert.equal(requests.length, 3)
+  assert.match(requests[0].instructions, /orientação de reparo aprovada/iu)
+  assert.match(requests[0].instructions, /Preserve o verbo literal/)
+  assert.doesNotMatch(requests[1].instructions, /orientação de reparo aprovada/iu)
+  assert.doesNotMatch(requests[1].instructions, /Preserve o verbo literal/)
+  assert.match(requests[2].instructions, /orientação de reparo aprovada/iu)
+  assert.match(requests[2].instructions, /Preserve o verbo literal/)
+})
+
 test("falha depois de maxAttempts quando a evidência continua divergente", async () => {
   const source = config()
   source.generator.maxAttempts = 2

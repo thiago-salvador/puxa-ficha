@@ -1,0 +1,844 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PR",
+    "sqCandidato": "160002548010",
+    "slug": "samuel-de-mattos",
+    "nomeUrna": "SAMUEL DE MATTOS",
+    "partido": "PSTU",
+    "arquivoNome": "2026PR160002548010_01.pdf",
+    "arquivoNoPacote": "PR/2026PR160002548010_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-26T15:35:53Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PR:160002548010:01",
+      "fonte": {
+        "arquivoNome": "2026PR160002548010_01.pdf",
+        "arquivoNoPacote": "PR/2026PR160002548010_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-26T15:35:53Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "39f615d15098992aec25fa4706cae5e7e5b6e75334cf233e98111089c6e5d8cb",
+        "extractedTextSha256": "f6ac31974bc88dee106b38bb64d384737c966a3f2fa4616a8db2bd4163059e3b",
+        "paginas": 14,
+        "secoes": [
+          {
+            "id": "programa-de-governo-do-pstu-parana",
+            "titulo": "PROGRAMA DE GOVERNO DO PSTU - PARANÁ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO DO PSTU - PARANÁ\nO PSTU apresenta um programa socialista para o Paraná e para o Brasil. Diante da conjuntura atual, faz-se necessário\nexplicitar que tipo de socialismo e comunismo defendemos, uma vez que, nos últimos anos, o tema voltou ao centro do\ndebate político de maneira inusitada — e até mesmo cômica.\n\nA visão da direita e da extremadireita\nProclamam aos quatro ventos que o comunismo é a principal ameaça ao país. Para eles, o comunismo estaria infiltrado\nem todas as organizações de esquerda que governaram boa parte dos países capitalistas nas últimas décadas (no Brasil,\npor cerca de 17 dos últimos 23 anos, via PT). Estaria presente, ainda, nas teorias dominantes das ciências humanas, nas\nuniversidades, nos meios de comunicação de massa, em organismos internacionais como a ONU e — pasmem — até na\natuação de grandes bilionários e do capital financeiro internacional.\n\nA visão da esquerda da ordem\nEntre os grupos dominantes da própria esquerda, no Brasil e no mundo, o comunismo estaria morto e enterrado. Não\npassaria de um \"fantasma do século passado\", ressuscitado como arma retórica e instrumental pela extrema-direita.\nA contradição do debate: Para uns, o comunismo é onipresente; para outros, inexistente. No entanto, há algo em comum\nnessas duas perspectivas: nenhuma delas diz claramente o que é, a que projeto serve ou o que pretende, de fato, fazer.\nPara ambos os campos, a culpa é sempre e unicamente do adversário. Os problemas diários enfrentados pela população\nseriam fruto exclusivo do grupo oposto, reduzindo a política a uma disputa rasa: o único objetivo da esquerda passou a\nser \"derrotar a direita\" — e a conversa se encerra aí — enquanto o único objetivo da direita é \"derrotar a esquerda\", a\nquem rotula de comunista. É como se não houvesse problemas estruturais a superar.\n\nO Socialismo que Defendemos\nNosso programa parte da realidade concreta do estado e do país para responder de imediato às necessidades básicas da\nclasse trabalhadora, apontando caminhos na direção do socialismo. Queremos que os trabalhadores — aqueles que de\nfato produzem toda a riqueza — tenham o direito de se apropriar dela, colocando os grandes meios de produção e a\ntecnologia desenvolvidos coletivamente a serviço de toda a população, e não da acumulação de uma minoria.\nO socialismo que defendemos não se reduz a palavras ao vento: precisa se materializar em medidas econômicas, políticas\ne sociais concretas.\n\nNão defendemos os modelos\nde Cuba, China ou\nVenezuela\n\nSolidariedade\ninternacionalista\n\nPoder popular\n\nDestacamos nossa solidariedade\n\ndefendemos que a classe\n\nA única coisa que esses países têm\n\nao povo venezuelano contra a\n\ntrabalhadora governe no dia a dia\n\nde socialista é o nome dos\n\ninterferência dos Estados Unidos.\n\npor meio de conselhos populares.\n\npartidos que comandam suas\n\nQuem deve decidir os rumos\n\nApresentamos este programa para\n\nditaduras capitalistas.\n\ndaquele país são seus próprios\n\ngovernar com e para a classe\n\ntrabalhadores.\n\ntrabalhadora.\n\nAssim como no Brasil e no Paraná,"
+          },
+          {
+            "id": "1-fundamentos-e-realidade",
+            "titulo": "1. FUNDAMENTOS E REALIDADE",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1. FUNDAMENTOS E REALIDADE\nSOCIOECONÔMICA DO PARANÁ\n\n1.1 Apresentação, Declaração de\nPrincípios e Independência de\nClasse\nEste programa de governo representa uma alternativa de independência de classe para as trabalhadoras e os\ntrabalhadores paranaenses. Diante de governos estaduais e federais que atuam como verdadeiros balcões de negócios\npara banqueiros, grandes empreiteiras e o agronegócio, construímos uma candidatura a serviço da mobilização popular e\nda reorganização socialista da sociedade.\nO Estado não é um árbitro neutro entre as classes sociais; é um instrumento de dominação encarregado de preservar a\nordem capitalista e a propriedade privada. As instituições burguesas (o Judiciário, o Legislativo e os governos) garantem\numa aparência de normalidade à exploração cotidiana. Por isso, a transformação da realidade não virá de alianças com o\ngrande capital nem de reformas superficiais na estrutura estatal, mas da ação direta e organizada da própria classe\ntrabalhadora.\n\n1.2 Dependência Econômica,\nFormação Histórica e a Ilusão da\nPropaganda Oficial\nA crise vivenciada pela população paranaense é inseparável da condição de dependência do capitalismo brasileiro. O\nsubdesenvolvimento não constitui um estágio temporário de atraso, mas a forma de inserção subordinada do país no\nsistema imperialista mundial, onde a riqueza gerada pelo trabalho é expropriada pela burguesia nacional e pelo capital\nestrangeiro.\nO país é levado a expandir a exploração predatória de recursos naturais e humanos para compensar o déficit tecnológico\nde sua indústria, reforçando sua posição subordinada nas cadeias globais de valor. Nesse quadro:\nO trabalho de maior\n\nOs trabalhadores de menor\n\nA destruição dos serviços\n\nqualificação tem sua\n\nrenda mergulham em\n\npúblicos, a falta de creches, o\n\nremuneração comprimida,\n\ncondições tão precárias que as\n\ncolapso da saúde, o\n\naproximando-se dos pisos\n\nfronteiras entre o trabalho\n\nencarecimento da moradia, o\n\nsalariais e gerando um\n\nformal e o informal se tornam\n\nenvelhecimento populacional e\n\nnivelamento social por baixo.\n\ncada vez mais tênues.\n\na informalidade crescente\nsobrecarregam as famílias com\no peso da sobrevivência social.\n\nEnquanto o governo estadual gasta milhões de reais em publicidade para vender a ilusão de um \"Paraná moderno e\npróspero\", a realidade do povo é marcada por transporte público lotado, postos de trabalho degradantes, salários de\nmiséria e sucateamento dos serviços públicos.\n\nOs Dados da Real Contradição Paranaense\n\nR$2.762\n\n22%\n\n2º\n\nRenda per capita real\n\nCrescimento do PIB\n\nCusto de vida\n\nRenda per capita domiciliar real da\n\nO PIB do Paraná cresceu 22% acima da\n\nO Paraná é o segundo estado mais\n\npopulação (PNAD), enquanto o PIB per\n\nmédia nacional em 2025,\n\ncaro para se viver no Brasil (R$ 780,00\n\ncapita teórico deveria ser de R$\n\nconsolidando-se como a 4ª maior\n\nacima da média nacional).\n\n64.300,00.\n\neconomia do país (mais de 6% do PIB\nnacional).\n\nTrês despesas básicas engolem mais de 70% do orçamento familiar: Alimentação / Supermercado (31%), Contas de água,\nluz e internet (23%) e Moradia (20%).\n\n1.3 A Condição da Classe\nTrabalhadora, a Juventude e a\nIlusão do \"Empreendedorismo\"\nA maioria da população trabalhadora do Paraná vive sob forte arrocho salarial e vulnerabilidade:\n\nMassa Salarial Rebaixada\n\nAdoecimento da Juventude\n\nDados do IBGE mostram que 31% dos paranaenses\n\nA juventude é empurrada para os postos de trabalho\n\nocupados recebem até um salário mínimo e 38%\n\nmais precários e insalubres, gerando um surto de\n\nganham entre um e dois salários mínimos. Ou seja,\n\nadoecimento físico e mental.\n\n69% da população ocupada sobrevive com até R$\n3.000,00 mensais.\n\nTecnologia contra o Trabalhador\n\nEsmagamento dos Pequenos Negócios\n\nSob o capitalismo, os avanços tecnológicos — que\n\nA ideologia liberal do \"empreendedorismo\" rui diante\n\ndeveriam reduzir a jornada de trabalho — são\n\nda realidade de mercado. Em 2025, das mais de 300\n\nconvertidos em instrumentos de demissão, arrocho\n\nmil empresas abertas no Paraná, 175.370 fecharam as\n\nsalarial e intensificação da exploração.\n\nportas, sendo 98,2% micro e pequenos negócios\n(73,8% MEIs e 24,4% MPEs). Embora representem 98%\ndas empresas do estado e 30% do faturamento, os\npequenos negócios são sufocados pela concorrência\npredatória dos grandes monopólios.\n\n1.4 A Concentração do Capital: Os\n2% que Controlam o Paraná\nQuando propomos a expropriação dos meios de produção, referimo-nos especificamente aos grandes conglomerados\nque monopolizam a economia paranaense:\n\nDomínio de Mercado\n\nLucros Bilionários\n\nMonopólios Estratégicos\n\nApenas 2% das empresas\n\nApenas cinco empresas (Copel,\n\nAgronegócio: Coamo, Lar, C.Vale,\n\nconcentram 70% de tudo o que é\n\nKlabin, Coamo, Sanepar e Rumo)\n\nCopacol, Cocamar; Papel e\n\nproduzido e faturado no território\n\nacumularam um lucro líquido de\n\nCelulose: Klabin; Automotivo e\n\nestadual.\n\nR$ 12,78 bilhões em 2025. As 50\n\nIndústria de Base: Renault, Volvo,\n\nmaiores empresas do estado\n\nElectrolux, Bosch; Energia,\n\nlucraram cerca de R$ 25 bilhões no\n\nInfraestrutura e Combustíveis:\n\nmesmo período — o equivalente a\n\nCopel, Sanepar, Rumo, REPAR;\n\nquase 30% de todo o orçamento\n\nGrande Varejo: Grupo Muffato,\n\npúblico do Estado do Paraná para\n\nRede Condor, Grupo Boticário.\n\n2026 (R$ 81,6 bilhões)."
+          },
+          {
+            "id": "2-saude-100-publica-gratuita-e-estatal",
+            "titulo": "2. SAÚDE 100% PÚBLICA, GRATUITA E ESTATAL",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "2. SAÚDE 100% PÚBLICA, GRATUITA E ESTATAL\n\n2.1 A Importância Vital da Saúde e a\nFarsa da Propaganda Oficial\nA saúde é a condição primária para a sobrevivência da classe trabalhadora. Sem ela, o trabalhador perde a capacidade de\nexercer sua função e, sob o capitalismo, fica impossibilitado de garantir o sustento do próprio lar. Embora os\ntrabalhadores formais contem com o auxílio-doença, o benefício frequentemente demora meses para ser liberado e paga\nvalores muito inferiores aos salários habituais. A situação é ainda mais dramática para os 30% de trabalhadores\nparanaenses que estão na informalidade (dados do IBGE), totalmente desprotegidos de qualquer cobertura previdenciária\nem momentos de enfermidade.\nTanto na capital quanto no interior, a população enfrenta o colapso do Sistema Único de Saúde (SUS), revelando o abismo\nentre a realidade vivida nas UPAs e hospitais e a propaganda do governo estadual:\n\nGargalo nos Exames\nEspecializados\n\nFilas Intermináveis em\nEspecialidades\n\nLevantamentos do Conselho\n\nO Ministério Público do Paraná\n\nRepresamento de\nCirurgias e Retenção em\nUPAs\n\nRegional de Medicina do Paraná\n\n(MPPR) registra esperas médias\n\nMais de 200 mil paranaenses\n\n(CRM-PR) apontam que o tempo\n\nde 8 a 14 meses por consultas\n\naguardam na fila de cirurgias\n\nmédio de espera para exames\n\nem Neurologia, Ortopedia,\n\neletivas. Procedimentos\n\ncomo ressonâncias magnéticas,\n\nCardiologia, Oncologia e\n\nortopédicos de alta\n\ntomografias, colonoscopias,\n\nOftalmologia.\n\ncomplexidade (próteses de\n\nendoscopias e cateterismos varia\n\nquadril e joelho) e cirurgias\n\nde 6 a 18 meses.\n\nvasculares chegam a demorar\nentre 1 e 3 anos, segundo a\nSecretaria de Estado da Saúde\n(SESA). Fiscalizações do Coren-PR\ne do MPPR revelam que\npacientes graves permanecem\nde 3 a 7 dias internados em\ncorredores e salas de\nemergência de UPAs aguardando\na liberação de leitos pela Central\nde Regulação.\n\n2.2 O Sucateamento Programado e\na Privatização via FUNEAS e\nConsórcios\nO caos na saúde pública não é fruto de incompetência administrativa, mas de uma política deliberada de sucateamento\npara favorecer os negócios privados. O governo estadual promoveu um acelerado processo de terceirização e\ndesfinanciamento da rede própria:\n\nEntrega da Rede\nHospitalar à FUNEAS\n\nRotatividade e Contratos\nPrecários\n\nDos 24 hospitais estaduais do\n\nA contratação por regimes\n\nDesigualdade e\nDesassistência no\nInterior\n\nParaná, apenas 6 permanecem\n\ntemporários (PSS, PJs e CLT)\n\nCuritiba concentra 43% de\n\nsob administração direta do\n\npela FUNEAS rompe a\n\ntodos os médicos do estado\n\nExecutivo. As outras 18\n\ncontinuidade de tratamentos\n\n(média de 8,83 médicos por mil\n\nunidades foram transferidas\n\nestratégicos em UTIs, oncologia\n\nhabitantes), enquanto no\n\npara a FUNEAS (Fundação\n\ne pediatria. O déficit na saúde\n\ninterior esse número despenca\n\nEstatal de Atenção em Saúde\n\npública estadual ultrapassa\n\npara 2,16 médicos por mil\n\ndo Paraná), uma fundação\n\n3.500 profissionais, segundo o\n\nhabitantes. Para mascarar o\n\npública de direito privado\n\nSindSaúde-PR.\n\nabandono, governos municipais\n\nutilizada como manobra\n\ne estaduais recorrem aos\n\njurídica para precarizar a\n\n\"consórcios de saúde\" —\n\ngestão e as relações de\n\nintermediários que funcionam\n\ntrabalho.\n\ncomo balcões de compra de\ncotas em clínicas privadas,\ndrenando recursos públicos\nsem resolver o problema.\n\n2.3 A Crise na Saúde Mental e a\nFarra das Comunidades\nTerapêuticas Privadas\nDiante de uma grave crise de saúde mental que gerou mais de 2,55 milhões de atendimentos na rede pública em 2025\n(um aumento de 19%), o governo do estado atua na contramão da Reforma Psiquiátrica e do modelo antimanicomial.\nEnquanto os Centros de Atenção Psicossocial (CAPS) operam sucateados e com equipes desfalcadas, o governo estadual\ninstituted o repasse direto de R$ 10 milhões por ano para financiar vagas em Comunidades Terapêuticas (CTs) privadas e\nconfessionais. Trata-se do desvio deliberado de verbas públicas da saúde e da assistência social para financiar entidades\nde caráter religioso e de isolamento, em vez de consolidar uma rede territorial, pública e comunitária.\n\n2.4 Responsabilidade Fiscal x\nLucros Recordes dos Planos de\nSaúde\nA justificativa oficial para a falta de investimentos sociais é a manutenção da \"responsabilidade fiscal\" (reforçada no plano\nfederal pelo Arcabouço Fiscal). Esse mecanismo limita o orçamento da saúde pública para assegurar o pagamento de\njuros da dívida a banqueiros e conceder isenções tributárias aos bilionários.\n\nIsenções vs. Investimento\n\nA Máfia dos Planos Privados\n\nEm 2025, o governo estadual aplicou apenas R$ 7,95\n\nO sucateamento do SUS empurra a população\n\nbilhões em saúde, enquanto concedeu mais de R$ 17\n\ntrabalhadora ao sacrifício financeiro para pagar planos\n\nbilhões em isenções fiscais a grandes empresários (o\n\nprivados, impulsionando os lucros das operadoras, que\n\nequivalente a 25% da arrecadação estadual).\n\nalcançaram o recorde de R$ 24,4 bilhões de lucro\nlíquido em 2025 (um salto de 120% em relação a 2024).\n\n2.5 Nossas Propostas para um SUS\n100% Público, Estatal e sob\nControle dos Trabalhadores\nPara garantir o direito universal à saúde e eliminar o balcão de negócios das operadoras privadas, propomos romper com\na dívida pública, taxar os super-ricos e expropriar as grandes redes hospitalares e de diagnósticos privados, integrando-as\na um sistema único sob gestão dos trabalhadores:\n1. Estatização e Fim das Terceirizações: Defesa do SUS 100% público, universal, gratuito e estatal. Extinção da FUNEAS,\ndas Organizações Sociais (OSs), das Parcerias Público-Privadas (PPPs) e dos consórcios privados, reestatizando todos\nos hospitais e serviços. Proibição irrestrita da transferência de leitos e recursos públicos para planos de saúde e\noperadoras privadas.\n2. Plano de Obras Públicas e Formação Acadêmica: Expropriação dos grandes complexos hospitalares privados e\nconstrução de novas UPAs, Unidades Básicas e Hospitais Regionais para suprir o déficit de atendimento. Destinação de\n100% das vagas nas universidades estaduais (UEL, UEM, UEPG, UNICENTRO, UNIOESTE, UNESPAR) para estudantes\negressos da rede pública, ampliando e incentivando cursos da área da saúde com dedicação prioritária ao interior do\nestado.\n3. Concurso Público e Carreira Única: Realização de concursos públicos imediatos para suprir o déficit de mais de 3.500\nprofissionais. Incorporação de todos os trabalhadores terceirizados e temporários à rede estadual com plano de\ncargos, carreiras e salários unificado.\n4. Saúde Mental Antimanicomial: Fim absoluto dos repasses públicos a Comunidades Terapêuticas privadas e\nconfessionais. Redirecionamento integral de verbas para a ampliação do investimento público nos CAPS, no Serviço de\nResidências Terapêuticas e em Centros de Convivência públicos.\n5. Saúde e Direitos Reprodutivos das Mulheres: Garantia de aborto legal, seguro e gratuito pelo SUS, sem interferência\nreligiosa ou de setores reacionários. Aplicação do princípio: \"Educação sexual para decidir, contraceptivo para não\nengravidar, aborto legal e seguro para não morrer\".\n6. Saúde Especializada LGBTI+: Atendimento especializado pelo SUS, incluindo acesso imediato à terapia hormonal e à\ncirurgia de redesignação sexual com acompanhamento multiprofissional adequado. Ampliação das políticas de\nprevenção e tratamento de IST/HIV nas periferias e combate à patologização ou às ditas \"curas gays\".\n7. Atendimento Integral às Pessoas com Deficiência (PcD): Assistência médica, terapêutica e de reabilitação gratuita,\nacessível e de alta qualidade em toda a rede SUS para as pessoas com deficiência.\n8. Saneamento e Soberania Farmacêutica: Integração da saúde pública às políticas de saneamento básico e\ndistribuição de água potável. Produção estatal direta de medicamentos e insumos médicos estratégicos."
+          },
+          {
+            "id": "3-seguranca-publica-sob-controle-da",
+            "titulo": "3. SEGURANÇA PÚBLICA SOB CONTROLE DA",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "3. SEGURANÇA PÚBLICA SOB CONTROLE DA\nCLASSE TRABALHADORA\n3.1 A Violência Capitalista e a Dupla Opressão sobre os\nTrabalhadores\nA população trabalhadora convive diariamente com múltiplas formas de violência: desde aquelas resultantes do\ndesespero e da miséria social até assaltos, feminicídios, violência contra as mulheres, atuação do crime organizado\n(tráfico, facções e milícias) e a violência sistemática praticada pelo próprio Estado contra os bairros periféricos, a\njuventude negra e os movimentos populares.\nEssa realidade não se reduz a um problema de \"falta de policiamento\", mas deriva da própria crise e decadência do\ncapitalismo. O Estado não atua como um juiz neutro entre as classes sociais: ele é um instrumento de dominação\nburguesa. A Polícia Militar e o conjunto do aparato repressivo não foram concebidos para proteger o povo trabalhador,\nmas para preservar a propriedade privada e garantir a ordem capitalista. Historicamente, reprimem greves, despejam\nocupações urbanas e rurais, perseguem ativistas e transformam as periferias em territórios sob intervenção militar\npermanente, enquanto os grandes criminosos colarinho-branco permanecem impunes.\nA classe trabalhadora fica, assim, encurralada entre duas forças destrutivas:\n\nO Crime Organizado\n\nA Repressão Estatal\n\nFacções, mafiosos e milícias que operam como\n\nGovernos que respondem aos problemas sociais com\n\nempresas capitalistas ilegais, dominando territórios,\n\nencarceramento em massa, truculência e execuções,\n\nimpondo o terror e acumulando fortunas.\n\npreservando intactos os grandes interesses\neconômicos e a corrupção que sustentam a\ncriminalidade organizada.\n\n3.2 A Farsa da \"Guerra às Drogas\" e o Negócio do Crime\nO crime organizado atua rigorosamente focado no lucro. Bilhões de reais circulam livremente através da lavagem de\ndinheiro e da cumplicidade do sistema financeiro, de grandes empresários e de setores corrompidos do Estado.\nA \"guerra às drogas\" é uma farsa estrutural. Décadas de política abertamente repressiva não reduziram o consumo e\ntampouco enfraqueceram as facções; pelo contrário, fortaleceram o narcotráfico, superlotaram as prisões com jovens\npobres e converteram bairros operários em campos de guerra. Além disso, essa lógica alimenta a corrupção policial: a\nligação entre setores das corporações e a criminalidade não reflete meros desvios individuais, mas os imensos interesses\nfinanceiros envolvidos no mercado ilegal.\n\n3.3 A Situação da Base Policial e a Falência do Modelo\nParanaense\nDiferentemente dos seus altos comandos, a base das instituições policiais (soldados e agentes) provém da própria classe\ntrabalhadora, embora seja separada dela e adestrada para reprimir suas lutas. Submetidos a baixos salários, jornadas\nexaustivas e assédio, esses trabalhadores sofrem com a privação de direitos democráticos fundamentais.\nA falência desse modelo reflete-se com gravidade no Estado do Paraná:\n\nEscalada da Letalidade\nPolicial\n\nDistorção do Orçamento\nPúblico\n\nEpidemia de Suicídios nas\nCorporações\n\nSegundo o Anuário Brasileiro de\n\nEm 2025, Ratinho Jr. destinou R$\n\nDesde 2017, o suicídio é a\n\nSegurança Pública de 2025, as\n\n6,4 bilhões à Segurança Pública\n\nprincipal causa de morte entre\n\nforças policiais foram\n\n(13,7% do orçamento do estado)\n\nagentes de segurança pública no\n\nresponsáveis por 400 mortes em\n\n— valor superior aos\n\nParaná. Sob a gestão Ratinho Jr.,\n\n2024 (18,4% do total de mortes\n\ninvestimentos em Ciência,\n\n44 policiais tiraram a própria vida,\n\nviolentas do estado). Em 2025,\n\nTecnologia e Ensino Superior e em\n\nenquanto 5 morreram em serviço.\n\nforam 413 mortes por intervenção\n\nInfraestrutura. Mais recursos para\n\npolicial, totalizando mais de 2.700\n\na repressão geraram mais mortes,\n\npessoas mortas ao longo dos sete\n\nsem afetar o poder do crime\n\nanos do governo Ratinho Jr. (uma\n\norganizado.\n\nmédia superior a uma execução\npor dia).\n\nConvergência das Políticas Burguesas\nEnquanto o governo Ratinho Jr. estimula a letalidade com o discurso reacionário do \"bandido bom é bandido morto\",\no governo Lula/PT, ao encaminhar a PEC da Segurança Pública, fortalece o aparato repressivo sem combater as\ncausas econômicas e sociais da violência.\n\n3.4 Diretrizes e Propostas Imediatas para a Segurança Pública\nLutamos desde já por medidas imediatas que garantam direitos democráticos, coíbam a violência policial e coloquem o\naparato sob controle popular, caminhando para o objetivo estratégico de dissolução das instituições policiais burguesas e\nconstrução de um sistema baseado na auto-organização da classe trabalhadora:\n1. Desmilitarização e Unificação das Polícias: Fim da Polícia Militar e reversão da militarização das demais polícias e\nguardas municipais. Unificação das polícias em uma instituição única de caráter civil, desvinculada do Exército,\norganizada em carreira única e submetida ao controle popular.\n2. Comando Popular, Eleição e Revogabilidade: Eleição direta de comandantes e delegados pela população\ntrabalhadora, com mandatos revogáveis e fiscalização permanente por Conselhos Populares.\n3. Direitos Democráticos para a Base Policial: Direito irrestrito de organização e sindicalização para os policiais. Fim da\nJustiça Militar, eliminação das prisões administrativas e revogação dos regulamentos disciplinares herdados da\nditadura.\n4. Câmeras Corporais sob Controle Civil: Obrigatoriedade do uso de câmeras corporais por todos os agentes de\nsegurança, com gravação ininterrupta e armazenamento gerido por órgãos civis com acesso franqueado às\ninvestigações.\n5. Ataque aos Interesses Financeiros do Crime e Confisco de Bens: Fim das operações militares espetaculares nas\nperiferias e foco na inteligência contra o \"andar de cima\". Investigação, confisco de bens e punição rigorosa de\nbanqueiros, empresários, políticos e corruptos envolvidos na lavagem de dinheiro de facções, milícias e negócios\nilícitos.\n6. Combate Implacável às Milícias: Expulsão imediata de agentes públicos ligados a grupos paramilitares. Dissolução\ndos batalhões e estruturas milicanizadas no aparelho de Estado e proibição definitiva de que os envolvidos voltem a\nexercer cargos públicos.\n7. Responsabilização do Sistema Financeiro Digital: Exigência de responsabilidade e mecanismos de prevenção contra\nfraudes por parte de bancos, fintechs e plataformas digitais, garantindo a restituição imediata dos valores desviados\nda população em golpes e fraudes eletrônicas.\n8. Fim da \"Guerra às Drogas\": Descriminalização total das drogas e revogação da atual Lei de Drogas, tratando o\nconsumo através de políticas públicas estatais de saúde, prevenção e redução de danos.\n9. Fim da Impunidade para Crimes do Estado: Punição exemplar para torturas, execuções, desaparecimentos forçados\ne chacinas cometidos por agentes públicos, responsabilizando civil e criminalmente também os seus comandantes.\n10. Despenalização da Pobreza: Aplicação de penas alternativas para crimes patrimoniais decorrentes de desespero\nsocial, associada a políticas de garantia de empregos, habitação, educação, cultura e saúde.\n11. Combate às Opressões: Punição rigorosa para crimes de racismo, machismo, feminicídio e LGBTfobia, com penas\nagravadas quando cometidos por agentes estatais.\n12. Direito e Estímulo à Autodefesa dos Trabalhadores: Incentivo e apoio à auto-organização das comunidades\nperiféricas para proteger suas vidas contra a criminalidade e contra a violência ilegal do Estado. A organização da\nautodefesa deve dialogar continuamente com a base dos policiais e integrantes das Forças Armadas para que se unam\naos trabalhadores contra os exploradores e em defesa de suas reivindicações comuns."
+          },
+          {
+            "id": "4-reforma-agraria-ampla-sob-o",
+            "titulo": "4. REFORMA AGRÁRIA AMPLA, SOB O",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "4. REFORMA AGRÁRIA AMPLA, SOB O\nCONTROLE DOS TRABALHADORES E POVOS\nDA FLORESTA\n\nA questão agrária e a luta pela terra\nno Brasil\n4.1 A Questão Agrária e as Raízes Históricas da Violência no\nCampo\nA estrutura fundiária brasileira é pautada por uma histórica concentração da propriedade rural, cujas raízes remontam à\nLei de Terras de 1850. Promulgada duas semanas após a proibição do tráfico transatlântico de escravizados, essa lei\nestabeleceu a compra monetária como única via legal de acesso às terras públicas (devolutas). O objetivo do Estado\nburguês foi explícito: impedir que ex-escravizados, indígenas, camponeses pobres e futuros imigrantes constituíssem\npequenas propriedades, preservando a terra sob o domínio absoluto dos grandes latifundiários.\nMais de um século e meio depois, o Estado brasileiro — sob sucessivas gestões governamentais — continua priorizando\nos interesses do agronegócio exportador e da grande propriedade rural em detrimento da reforma agrária, da\ndemarcação de terras indígenas e quilombolas e do apoio aos pequenos e médios produtores. O campo vive uma\npermanente escalada de conflitos e violência, resultante da expansão desenfreada do agronegócio sobre o Cerrado, a\nAmazônia e a Região Sul, promovendo o encurralamento e a expulsão de comunidades tradicionais e institucionalizando a\nrepressão por meio de milícias rurais e paramilitares privadas.\nA dimensão dessa barbárie é revelada pelos dados oficiais do relatório Conflitos no Campo Brasil 2025 (Comissão Pastoral\nda Terra - CPT):\n\nConflitos Fundiários e\nAssassinatos\n\nViolência Sistêmica\n\nTrabalho Escravo Rural\n\nOs conflitos envolvem ameaças de\n\nForam registrados 159 casos de\n\nForam registrados 1.593 conflitos\n\nmorte, atuação de pistoleiros,\n\ntrabalho análogo à escravidão no\n\nno campo em 2025, dos quais\n\nexpulsões violentas, destruição de\n\ncampo, resultando no resgate de\n\n1.286 foram disputas diretas por\n\nlavouras e moradias, incêndios\n\n1.991 trabalhadores submetidos a\n\nterra (75% do total). O relatório\n\ncriminosos e contaminação em\n\ncondições degradantes de\n\ncontabilizou 26 assassinatos em\n\nmassa por agrotóxicos.\n\nsuperexploração no país. O\n\nconflitos agrários, destes, 2 no\n\nParaná registrou 62 pessoas\n\nParaná — sendo que fazendeiros\n\nresgatadas de condições análogas\n\ne ruralistas foram apontados\n\nàs de escravo em 2025 — uma\n\ncomo autores diretos ou\n\nalta de 44% em relação às 43\n\nmandantes em 77% dos casos (20\n\nocorrências registradas em 2024.\n\nhomicídios).\n\n4.2 A Falácia dos Governos Burgueses\nA violência no campo não se trata de um desvio \"anormal\", mas da dinâmica de funcionamento do agronegócio e do\npróprio Estado burguês. Utiliza-se abertamente a burocracia estatal (juízes e Polícia Militar), somada ao uso de milícias\nrurais, pistoleiros e empresas privadas de segurança (frequentemente compostas por ex-policiais), para reprimir\ncamponeses, indígenas e quilombolas.\nO Governo Lula abandonou a desapropriação por interesse social para adotar a \"compra de terras\" como principal\nmecanismo de mediação (segundo a própria diretoria do INCRA). Na prática, essa política transfere recursos públicos para\nindenizar latifundiários detentores de terras ociosas e fraudadas, em vez de puni-los.\nO Plano Safra 2026/2027 destinou a cifra recorde de R$ 525,1 bilhões ao agronegócio exportador, enquanto reservou\napenas R$ 85,2 bilhões ao PRONAF (agricultura familiar). Auditorias (CPI/PUC-Rio) revelam que quase 75% dos agricultores\nfamiliares enfrentam barreiras burocráticas e não conseguem acessar o PRONAF. Do crédito liberado, 68% é concentrado\nno Sul/Sudeste e 67% é abocanhado pelas monoculturas de exportação (soja, milho e café), deixando desassistidos\ncamponeses, mulheres agricultoras e quilombolas das regiões Norte e Nordeste.\n\n4.3 Reprimarização Nacional e a Realidade do Agronegócio no\nParaná\nEm vez de garantir alimentos na mesa da população, o modelo agrário atual aprofunda a reprimarização da pauta\nexportadora brasileira, subordinando a economia nacional às oscilações das commodities no mercado financeiro global e\nmantendo milhões de trabalhadores sob insegurança alimentar.\nNo Paraná, a disputa por terra atinge frontalmente os povos Guarani, Kaingang e Xetá, além de áreas quilombolas,\nassentamentos e agricultores familiares. Embora o estado ostente o título de 3º maior exportador do agronegócio\n(gerando US$ 13,29 bilhões em exportações de soja, trigo, carne de frango e madeira), a prosperidade do setor fica\nconcentrada nas mãos de grandes grupos econômicos e das mega cooperativas (como Coamo, Copacol, Frimesa e\nCocamar, ligadas ao sistema OCEPAR). Essas organizações operam como grandes empresas privadas capitalistas,\nafastando o pequeno produtor das tomadas de decisão e impondo sua hegemonia sobre a produção e a comercialização.\n\n4.4 Autonomia Produtiva, Soberania Alimentar e Direitos dos\nTrabalhadores Rurais\nOs pequenos e médios produtores são responsáveis pela produção da maior parte dos alimentos consumidos no Brasil,\nmas encontram-se subordinados às cadeias do agronegócio, que determinam preços, insumos e custos, apropriando-se\nda mais-valia e transferindo todos os riscos aos trabalhadores.\nAo mesmo tempo, os trabalhadores assalariados do campo (permanentes e temporários) enfrentam a superexploração:\nsalários médios significativamente inferiores aos urbanos (frequentemente colados ao salário mínimo), contaminação por\nagrotóxicos, informalidade e terceirização irrestrita, que abre margem para o trabalho escravo.\nPara enfrentar o agronegócio, defender a soberania alimentar e garantir o direito de quem produz, propomos:\n\nI. Expropriação do Agronegócio e Fim do Latifúndio\nExpropriação das Grandes Propriedades e\n\nCorte dos Subsídios ao Grande Agronegócio: Fim\n\nEmpresas do Agronegócio: Retirada do controle da\n\nimediato dos repasses bilionários do Plano Safra aos\n\nprodução do grande capital, dos monopólios e das\n\nlatifundiários, redirecionando a totalidade dos\n\nmultinacionais, sem indenização aos grandes grupos\n\nrecursos estatais para a produção de alimentos pela\n\ne sob a gestão direta dos trabalhadores rurais e da\n\nagricultura familiar e reforma agrária.\n\ncidade.\nDemarcação de Terras Indígenas e Quilombolas:\n\nInfraestrutura Completa nos Assentamentos:\n\nGarantia da posse definitiva dos territórios\n\nGarantia de condições reais de vida nos\n\nancestrais dos povos originários e comunidades\n\nassentamentos rurais, com moradia digna,\n\ntradicionais, derrotando categoricamente o Marco\n\nabastecimento de água, energia, estradas para\n\nTemporal e qualquer tentativa de esbulho\n\nescoamento da produção, saúde e educação pública\n\npossessório.\n\nno campo.\n\nII. Autonomia Produtiva, Transição Agroecológica e Soberania Alimentar\nPrioridade Absoluta à\n\nCrédito Público Direto e\n\nRegulação do Mercado\n\nProdução de Alimentos\n\nDesburocratizado: Concessão\n\nInterno e Preços Mínimos:\n\nBásicos: Orientação da\n\nde financiamento público sem\n\nProteção do mercado popular\n\nprodução rural para o\n\nintermediação de bancos\n\ncom a fixação de preços\n\nabastecimento do mercado\n\nprivados, com taxa de juros\n\nmínimos para a agricultura\n\ninterno com alimentos\n\nsubsidiada/zero, isenção de\n\nfamiliar, recuperação dos\n\nsaudáveis, diversificados, livres\n\nimpostos, seguro agrícola\n\nestoques reguladores da\n\nde transgênicos e agrotóxicos.\n\nestatal e anistia das dívidas dos\n\nCONAB e garantia de compras\n\npequenos produtores.\n\npúblicas (para alimentação\nescolar, hospitais públicos e\nprogramas de assistência\nsocial).\n\nIndustrialização Camponesa e Tecnologia\n\nRedes Locais de Resistência e Cooperativismo\n\nNacional: Incentivo ao processamento e à\n\nSolidário: Fortalecimento de cooperativas populares\n\nagroindustrialização da produção pelas próprias\n\nque permitam aos pequenos produtores disputar e\n\nfamílias e associações camponesas.\n\ncontrolar não apenas a produção, mas a circulação e\n\nDesenvolvimento de tecnologia nacional própria\n\na definição do que se produz.\n\npara maquinários (tratores e colheitadeiras) e\ninsumos agrícolas biológicos sob controle público,\nproduzidos em parcerias com universidades\npúblicas e institutos de pesquisa.\n\nIII. Direitos Plenos para os Assalariados do Campo\nEquiparação e Plenitude de Direitos Trabalhistas:\n\nPunição Exemplar e Expropriação por Trabalho\n\nGarantia de direitos plenos para os assalariados\n\nEscravo: Fiscalização rigorosa das propriedades\n\nrurais iguais aos dos trabalhadores urbanos, com\n\nrurais e expropriação imediata, sem indenização,\n\nlimite de jornada, descanso semanal, aposentadoria\n\ndas empresas e fazendas onde for constatado\n\ne fim da informalidade e da terceirização no campo.\n\ntrabalho análogo à escravidão, destinando-as aos\ntrabalhadores resgatados.\n\nCondições de Trabalho e Saúde: Exigência de\n\nEducação e Valorização da Cultura Camponesa:\n\nequipamentos de proteção individual (EPIs),\n\nErradicação do analfabetismo no campo, garantia de\n\ninfraestrutura de segurança e acompanhamento\n\nescolas públicas estruturadas no meio rural e\n\nmédico contínuo para os trabalhadores rurais.\n\nvalorização dos saberes locais e tradicionais.\n\nIV. Direito e Estímulo à Autodefesa no Campo\nOrganização da Autodefesa dos Trabalhadores\n\nA organização da autodefesa deve dialogar\n\ndo Campo: Garantia e estímulo à auto-organização\n\ncontinuamente com a base dos trabalhadores para\n\ne autodefesa de camponeses, indígenas e\n\ndefender suas vidas e reivindicações comuns.\n\nquilombolas para enfrentar a violência dos\nruralistas, a ação de pistoleiros e milícias privadas,\nbem como a repressão do próprio Estado,\ngarantindo o direito fundamental de permanecer e\nresistir na terra."
+          },
+          {
+            "id": "5-combate-as-opressoes",
+            "titulo": "5. Combate às Opressões",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "5. Combate às Opressões\n5.1 A Função Social e Econômica das Opressões no\nCapitalismo\nA unidade e a emancipação da classe trabalhadora são impossíveis sem o combate irrestrito a todas as formas de\nopressão. Não pode ser livre o povo que oprime outro. No modo de produção capitalista, o racismo, o machismo, a\nLGBTfobia, a xenofobia e o capacitismo não são meros preconceitos individuais ou desvios morais, mas mecanismos que\ncumprem o papel de dividir os trabalhadores, rebaixar os salários globais, precarizar postos de trabalho e ampliar as\ntaxas de exploração e mais-valia.\n\n5.2 Opressão Racial, Exploração e Reparação Histórica\nA população negra representa a maioria absoluta do proletariado brasileiro e o setor mais terrivelmente atingido pela\nreestruturação capitalista, terceirização e precarização das últimas décadas. A política de Reparação deve combinar as\nquestões históricas da escravidão e da abolição sem reparação com os problemas que se intensificaram nos últimos 30\nanos, frutos da nova inserção do Brasil na divisão internacional do trabalho e da decadência do país.\n\nRacismo no Paraná\n\nSegurança Pública e Extermínio\n\nO Paraná figura entre os estados com maior registro\n\nA política de segurança atua de forma seletiva,\n\nde violência racial do país. Segundo o Anuário\n\ncriminalizando a juventude negra periférica. Um\n\nBrasileiro de Segurança Pública, foram registradas\n\nsímbolo dessa lógica ocorreu em Curitiba, onde um\n\n4.142 ocorrências de racismo e injúria racial no Paraná\n\njovem negro trabalhador ficou preso por dois dias\n\nentre 2023 e 2024, números que ainda ocultam uma\n\napenas por portar dinheiro da empresa para efetuar\n\nmassiva subnotificação causada pela descrença nas\n\num pagamento.\n\ninstituições públicas (apenas 20,3% da população\nacredita que denúncias de racismo têm\nencaminhamento legal).\n\nTerritórios Quilombolas\n\nMulheres Negras\n\nNo campo paranaense, as comunidades quilombolas\n\nOcupam o patamar mais agudo da superexploração.\n\nenfrentam a lentidão proposital do Estado na\n\nRepresentam cerca de 62% do público carcerário\n\ndemarcação e titulação de suas terras para favorecer a\n\nfeminino e 62% das vítimas de feminicídio. No Paraná,\n\nexpansão, a grilagem e a especulação do agronegócio.\n\nonde representam cerca de 35% da população\nfeminina, respondem por percentual equivalente dos\nfeminicídios, sofrendo o impacto combinado de raça,\nclasse e gênero.\n\nPrograma de Transição e Pautas para o Paraná\nTitulação e Expropriação do Latifúndio: Titulação\n\nDireitos Trabalhistas: Fim da escala 6x1, redução da\n\nimediata e definitiva de todos os territórios\n\njornada para 30h (escala 4x3) sem redução salarial,\n\nquilombolas paranaenses com assistência técnica e\n\nfim da terceirização e da \"pejotização\", e\n\ninfraestrutura. Expropriação imediata e sem\n\nequiparação salarial imediata entre trabalhadores\n\nindenização de todas as fazendas do agronegócio\n\nnegros e brancos.\n\nque avançam sobre terras quilombolas e indígenas,\nalém da expropriação dos bens de bilionários\nherdeiros de famílias escravocratas.\nPunição ao Racismo Patronal: Punição severa (com\n\nSegurança e Justiça Popular: Desmilitarização da\n\nmultas de caráter confiscatório ou expropriação) de\n\nPolícia Militar, unificação das polícias sob controle\n\nempresas e emprepregadores que estimulem ou\n\ndos trabalhadores, revogação da Lei de Drogas,\n\ntolerem o racismo no local de trabalho.\n\ndesencarceramento em massa e fim da privatização\nde presídios (como o modelo de PPPs prisionais\nimplementado no Paraná).\n\nRedirecionamento Financeiro: Obrigatoriedade para\n\nEducação e Cultura: Aplicação efetiva das Leis\n\nque instituições como o Banco do Brasil e órgãos de\n\n10.639/03 e 11.645/08 na rede estadual do Paraná,\n\nfomento estaduais destinem suas verbas e créditos\n\nampliação e manutenção das cotas raciais nas\n\nà agricultura familiar e às comunidades quilombolas,\n\nuniversidades estaduais (UEL, UEM, UEPG,\n\ne não ao agronegócio.\n\nUNIOESTE, UNICENTRO, UNESPAR) e concursos\npúblicos, e combate à criminalização de\nmanifestações culturais periféricas (funk e batalhas\nde rima).\n\n5.3 Luta das Mulheres: Emancipação, Trabalho de Cuidado e\nCombate à Misoginia\nO capitalismo apropria-se do trabalho doméstico e de cuidado não pago, desempenhado majoritariamente pelas\nmulheres, para rebaixar os custos de reprodução da força de trabalho e inflar os lucros dos grandes capitalistas.\n\nEpidemia de Feminicídios\n\nViolência Sexual\n\nEm 2025, o Brasil registrou 2.151 feminicídios\n\nForam registrados mais de 5.800 casos de violência\n\nconsumados e 4.755 tentativas. No Paraná, o Monitor\n\nsexual contra mulheres no Paraná em 2025, em um\n\nde Feminicídios da Universidade Estadual de Londrina\n\ncenário nacional de 83 mil estupros (um a cada seis\n\n(UEL) contabilizou 355 casos de feminicídio em 2025\n\nminutos).\n\n(122 assassinatos consumados e 233 tentativas).\n\nDesmonte e Omissões do Estado no Paraná\nAusência de Estrutura\n\nInsuficiência do Auxílio\n\nAusteridade Orçamentária:\n\nMunicipal: Mais de 90% dos\n\nEstadual: Programas como o\n\nEnquanto o governo federal\n\nmunicípios do Paraná não\n\nAuxílio Social Mulher\n\nexecutou apenas R$ 0,33 por\n\npossuem Plano Municipal de\n\nParanaense garantem apenas\n\nmulher/ano em 2025 para\n\nPolíticas para as Mulheres e a\n\nmeio salário mínimo por 12\n\ncumprir as metas do Arcabouço\n\nimensa maioria das cidades\n\nmeses — valor insuficiente para\n\nFiscal, o Estado do Paraná\n\nnão conta com Delegacias\n\ncustear moradia, alimentação e\n\nconcede bilhões em incentivos\n\nEspecializadas de Atendimento\n\ntransporte, forçando as vítimas\n\nfiscais a grandes empresas e ao\n\nà Mulher (DEAM) operando de\n\na permanecerem\n\nagronegócio enquanto nega\n\nforma presencial 24 horas.\n\neconomicamente dependentes\n\norçamento para creches,\n\nde seus agressores.\n\nhabitação e casas-abrigo.\n\nReivindicações Fundamentais e Propostas para o Paraná\nInstalação de Delegacias da Mulher 24h e\n\nDestinação obrigatória de verbas do orçamento do\n\npresenciais em todas as comarcas do Paraná e\n\nEstado do Paraná para os municípios implantarem e\n\ncriação de casas-abrigo e centros de referência\n\nmanterem equipamentos de proteção sob controle\n\nregionais.\n\npopular e das trabalhadoras.\n\nReformulação do Auxílio Social Mulher Paranaense e\n\nPlano estadual de obras públicas para a construção\n\ndo Programa Recomeço, garantindo renda digna,\n\nmassiva de creches e escolas públicas em tempo\n\nmoradia, transporte e estabilidade no emprego para\n\nintegral em todos os bairros e periferias.\n\nque as vítimas rompam o ciclo de violência.\nCriação de lavanderias públicas e restaurantes\n\nLegalização, descriminalização e garantia do aborto\n\npopulares (anexos aos Armazéns da Família) e\n\nseguro e gratuito pelo SUS.\n\nserviços públicos estaduais de apoio e cuidado a\nidosos e PCDs, retirando essa sobrecarga invisível do\nombro das mulheres.\nEducação sexual para a igualdade de gênero e\n\nLicença parental de 1 ano compartilhada entre os\n\nprevenção da violência na rede de ensino do Paraná,\n\nresponsáveis.\n\ncombate às ideologias misóginas e controle\npopular/fiscalização das plataformas digitais que\nlucram com o ódio contra as mulheres.\n\nMulheres Negras: Na Base da Exploração e da Opressão\nAs mulheres negras expressam de forma mais brutal a combinação entre exploração de classe e opressões. São maioria\nno trabalho precário, no desemprego e entre as vítimas da violência estatal e do feminicídio. Essa realidade é produto\ndireto da formação histórica do país e da permanência do racismo no capitalismo brasileiro.\nPrioridade de acesso ao emprego, renda e políticas\n\nCombate à superexploração das trabalhadoras\n\npúblicas para mulheres negras.\n\nnegras.\n\nGarantia de direitos às trabalhadoras domésticas.\n\nEnfrentamento ao genocídio da população negra,\nque atinge diretamente as mulheres como vítimas e\ncomo mães.\n\n5.4 LGBTIs - Contra a Violência e pelo Direito de Existir\nNo capitalismo, a sexualidade é moldada pela necessidade da reprodução da força de trabalho e da família tradicional. O\ngênero é aprisionado nesse modelo heteronormativo, em que a disforia entre o sexo/fenótipo biológico e o gênero social\né taxado como doença e pessoas trans e não-binárias são tratadas como pessoas de segunda categoria, desumanizadas.\nO Estado nega direitos básicos à população LGBTI+ e é cúmplice da brutal violência que as LGBTI+ sofrem cotidianamente.\nA burguesia se aproveita da LGBTIfobia para relegá-los aos postos de trabalho mais precários e com menores salários,\nquando não estão compondo as fileiras do exército industrial de reserva no subemprego ou na prostituição.\nDefendemos um programa que enfrente a violência, garanta acesso ao trabalho e à renda, à saúde e à educação,\nassegure direitos sociais plenos e combata todas as formas de discriminação, unificando a luta da população LGBTI+ com\na luta de toda a classe trabalhadora.\n\nViolência Extrema no\nEstado\n\nSubnotificação e Cotidiano\n\nMarginalização Econômica\n\nEstima-se mais de 2.200\n\nAdultos LGBTQIAPN+ possuem\n\nO Paraná situa-se historicamente\n\nocorrências anuais de violência\n\n15% mais chances de viver na\n\nentre os estados mais violentos\n\nLGBTfóbica no Paraná (agressões,\n\nextrema pobreza em comparação\n\ndo país para pessoas\n\nameaças, abusos sexuais e\n\na pessoas cisgênero e\n\nLGBTQIAPN+, ocupando\n\ndiscriminações). Pessoas trans\n\nheterossexuais.\n\nfrequentemente a 3ª ou 4ª\n\nenfrentam cotidiana recusa de\n\nposição nacional em assassinatos\n\natendimento no transporte,\n\nde pessoas trans e travestis.\n\nviolência institucional nas\ndelegacias, desrespeito\nsistemático ao nome social na\nrede de saúde/educação e\nexpulsão dos ambientes escolares\ne do mercado formal de trabalho.\n\nEixo de Luta e Propostas para o Paraná\nImplantação de casas de\n\nDireito ao nome social, sem\n\nGarantia do uso e instalação de\n\nacolhimento e abrigo públicas e\n\nburocracia e sem taxas!\n\nbanheiros multigênero nos\n\nregionalizadas no Paraná para\n\nórgãos públicos estaduais e\n\njovens LGBTQIAPN+ expulsos\n\nmunicipais do Paraná.\n\nde casa ou em situação de\nrisco.\nInvestimento na saúde\n\nContra a patologização das\n\nCriação de cotas trans nas\n\nespecializada para pessoas\n\nidentidades LGBTI+: não às\n\nuniversidades estaduais\n\nLGBTI+. Direito à terapia\n\n\"curas gays\"! Educação sexual\n\nparanaenses, nos concursos\n\nhormonal e à cirurgia de\n\nnas escolas e fim do\n\npúblicos estaduais/municipais e\n\nredesignação pelo SUS, com\n\nfinanciamento de comunidades\n\nestabilidade no emprego para\n\nacompanhamento adequado.\n\nterapêuticas e manicômios.\n\npessoas trans.\n\nProgramas estaduais de qualificação e inserção no mercado formal voltados para travestis e transexuais que\nqueiram sair da prostituição.\n\n5.5 Defesa Intransigente dos Povos Indígenas\nO modelo de ocupação econômica do estado foi construído sobre a ruína demográfica dos povos originários: o que já foi\numa população estimada em mais de 150 mil indígenas no século XVII foi violentamente reduzida por sucessivos ciclos de\nextermínio e expulsão, culminando hoje em pouco mais de 30 mil pessoas no território paranaense. Essa drástica\nretração não é obra do acaso, mas o resultado direto de um projeto que transformou florestas de araucária e terras\ntradicionais em latifúndios voltados à monocultura e à exportação. Hoje, o avanço contínuo do agronegócio e a pressão\npela mercantilização da terra mantêm os povos Kaingang, Guarani e Xokleng confinados em pequenas ilhas geográficas,\nsufocados por cercas e forçados a lutar cotidianamente pelo direito sagrado de existir em seu próprio chão.\n\nDéficit Territorial\n\nPrecarização do Atendimento Público\n\nApesar dessa presença ancestral, existem apenas 17\n\nFaltam saneamento básico e água potável nas aldeias\n\nterras indígenas demarcadas no estado do Paraná.\n\nparanaenses. As escolas itinerantes e indígenas sofrem\n\nCerca de 45% dos indígenas vivem nesses territórios\n\ncom infraestrutura precária e falta de professores das\n\nregularizados, enquanto a maioria enfrenta extrema\n\npróprias comunidades, forçando o deslocamento de\n\ninsegurança jurídica, expulsões, degradação ambiental\n\nestudantes para áreas urbanas onde sofrem racismo.\n\ne violência perpetrada pelo latifúndio e milícias rurais.\n\nPrograma de Transição para os Povos Originários\nDemarcação e homologação\n\nDesintrusão (expulsão)\n\nReconhecimento do direito à\n\nimediata de todas as terras\n\nimediata de grileiros,\n\norganização e autodefesa dos\n\nindígenas no Paraná. Rejeição\n\nmadeireiros e garimpeiros, com\n\npovos indígenas para\n\ntotal à tese do Marco Temporal.\n\napoio do fortalecimento dos\n\ngarantirem seus territórios.\n\nórgãos ambientais (IBAMA,\nICMBio e FUNAI).\nConstrução e estruturação de escolas públicas\n\nGarantia de saneamento, água potável e\n\ninterculturais e bilíngues nas aldeias paranaenses,\n\natendimento médico gratuito gerido pelas próprias\n\ngarantindo concurso público para professores\n\ncomunidades.\n\nindígenas e permanência dos estudantes nas\nuniversidades (UEL, UEM, UFPR, etc.) com auxílio\nestudantil adequado.\n\n5.6 Imigrantes: Contra a Xenofobia e a Superexploração\nA migração é fruto direto das crises econômicas, guerras e exploração imperialista. A xenofobia atua como ferramenta da\nburguesia para dividir a classe trabalhadora nacional e estrangeira, impondo a esta última piores salários e condições\ndegradantes.\n\nO Paraná no Cenário\nMigratório\n\nInserção Insegura e\nPrecária\n\nBarreiras e Violações\n\nO Paraná é o 4º estado do Brasil\n\nTrabalhadores vindos do Haiti,\n\nde diplomas estaduais, barreiras\n\ncom maior número de solicitações\n\nVenezuela, Bolívia, Cuba e países\n\nlinguísticas, fraudes trabalhistas,\n\nde refúgio (foram 4.672 novos\n\nafricanos concentram-se nas\n\nassédio moral e casos de trabalho\n\npedidos registrados\n\nfunções mais precarizadas da\n\nanálogo à escravidão no comércio\n\nrecentemente).\n\nindústria e do comércio\n\ne no agronegócio paranaense.\n\nparanaense (linhas de produção\n\nPesquisas com o ACNUR indicam\n\nde frigoríficos, limpeza,\n\nque mais de 41% dos refugiados\n\natendentes).\n\njá sofreram discriminação direta\n\nEnfrentam lentidão na revalidação\n\nno país.\nRegularização migratória rápida, desburocratizada e\n\nAgilização na revalidação de diplomas de nível\n\ngratuita, assegurando igualdade de direitos sociais,\n\ntécnico e superior pelas universidades estaduais do\n\ntrabalhistas e civis.\n\nParaná.\n\nAmpliação do quadro de Auditores-Fiscais do\n\nAcesso irrestrito dos imigrantes e refugiados à\n\nTrabalho no estado para combater o trabalho\n\nsaúde (SUS), educação, habitação popular e cursos\n\nescravo, o tráfico de pessoas e a exploração da mão\n\ngratuitos de língua portuguesa.\n\nde obra migrante.\n\n5.7 Acessibilidade e Direitos das Pessoas com Deficiência\n(PCD)\nMais de 18 milhões de pessoas com deficiência no Brasil (e centenas de milhares no Paraná) são discriminadas e\nmarginalizadas por uma estrutura social capitalista que molda a cidade, os transportes e o trabalho exclusivamente para a\nextração máxima de lucro e produtividade.\nAcessibilidade Universal\n\nInclusão Escolar e Sensibilidade\n\nEmprego, Cotas e Saúde:\n\nObrigatória: Adequação\n\nAuditiva: Garantia de\n\nAmpliação das cotas de\n\narquitetônica (elevadores,\n\nintérpretes de LIBRAS em todos\n\nemprego para PCDs nos\n\nrampas, pisos táteis) bancada\n\nos níveis da rede pública de\n\nconcursos estaduais e nas\n\npelo Estado e grandes\n\nensino do Paraná (da educação\n\nempresas privadas, combate à\n\nempresas nos serviços\n\ninfantil às universidades) e nas\n\ndiscriminação laboral e garantia\n\npúblicos, no transporte\n\ntransmissões de meios de\n\nde assistência médica\n\ncoletivo, nos bancos e nos\n\ncomunicação. Criação de salas\n\nespecializada gratuita no SUS.\n\ngrandes centros comerciais do\n\nde descompressão e espaços\n\nParaná.\n\nde abafamento de ruídos para\nautistas e pessoas com\nsensibilidade auditiva em todas\nas escolas públicas e espaços\ncoletivos."
+          },
+          {
+            "id": "6-reforma-urbana-socialista-e-7-justica",
+            "titulo": "6. REFORMA URBANA SOCIALISTA E 7. JUSTIÇA",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "6. REFORMA URBANA SOCIALISTA E 7. JUSTIÇA\nAMBIENTAL\n6.1 A Função Social da Terra Urbana e a Crise da Habitação no\nCapitalismo\nO Paraná precisa de uma revolução urbana. A questão da moradia revela de forma direta o conflito entre o direito à vida e\na lógica da propriedade privada e da especulação. Enquanto milhões de trabalhadores vivem em moradias precárias ou\ncomprometem grande parte da sua renda com aluguel, enormes áreas urbanas permanecem subutilizadas ou destinadas\nà especulação imobiliária.\nMilhares de imóveis permanecem vazios ou abandonados nas regiões centrais, ao mesmo tempo em que a população\ntrabalhadora é empurrada para as periferias, enquanto o capital se apropriou das melhores áreas e transformou o\nespaço urbano em ativo financeiro.\nOs bancos e as grandes construtoras tratam a terra e a moradia como mercadoria e fonte de lucro, enquanto a classe\ntrabalhadora depende do território como condição de vida, de moradia e de reprodução social. O resultado são grandes\ncidades profundamente marcadas pela desigualdade, segregação e violência, onde a maioria da nossa classe — negra,\nperiférica e migrante — não tem acesso a serviços básicos como moradia, lazer, transporte, educação e saúde.\nO direito à cidade e à moradia digna para todos só pode ser plenamente garantido com a superação do capitalismo e a\nconstrução de uma sociedade em que o território deixe de ser mercadoria e passe a servir à vida.\n\n6.2 A Realidade do Déficit Habitacional e da Especulação no\nParaná\nFavelização e Segregação\n\nContradição Absurda\n\nO Censo IBGE apontou que 442.100 pessoas vivem em\n\nSegundo a Cohapar, o déficit habitacional atinge cerca\n\n636 comunidades urbanas/favelas no Paraná. Em\n\nde 500 mil famílias. Em contrapartida, existem mais de\n\nCuritiba, são 122.695 moradores em 166 comunidades,\n\n540 mil imóveis vagos e fechados no Paraná. Existem\n\nrepresentando cerca de 7% da população da capital\n\nmais casas sem gente do que gente sem casa,\n\nsubmetida à precariedade e à falta de saneamento.\n\nmantidas trancadas exclusivamente por fundos e\nespeculadores no aguardo de valorização.\n\nFila da Cohapar e Insegurança\n\nDescaso Governamental\n\nA fila por moradia na Cohapar conta com 240.188\n\nO governo estadual de Ratinho Jr. demonstra total\n\nfamílias ativas, enquanto 135.143 famílias residem em\n\nalinhamento com a especulação. No orçamento do\n\nocupações precárias e 75.170 habitam áreas sem\n\nestado, destina-se proporcionalmente quase R$ 1,00\n\nsegurança jurídica ou infraestrutura.\n\nem publicidade e propaganda para cada R$ 1,50\ninvestido em moradia de baixa renda.\n\n6.3 Princípios do Planejamento Urbano Ecológico e Socialista\nA superação do caos urbano exige vincular a luta pela moradia à consciência ecológica e à superação da propriedade\nprivada dos meios de produção e da terra.\nÉ necessário romper com o imperativo capitalista de crescimento ilimitado e mercantil. A economia e a política urbana\ndevem priorizar o valor de uso sobre o valor de troca. Isso significa adotar um decrescimento das atividades predatórias e\ninúteis — como a expansão de condomínios de luxo, resorts e megaprojetos voltados ao rentismo — para direcionar\nterras, materiais de construção e orçamento público à garantia do bem-estar, saúde e convivência da classe trabalhadora.\n\n6.4 Programa de Ação e Reivindicações Fundamentais\n1. Direito à Terra, Moradia e Fim da Repressão\nMorar é um Direito: Afirmação\n\nProibição de Despejos: Fim\n\nRegularização e Urbanização:\n\nde que casa é para morar, não\n\nimediato e irrestrito de todos\n\nRegularização fundiária\n\npara especular. Enquanto a\n\nos despejos e reintegrações de\n\nimediata com doação de títulos\n\nmoradia for um privilégio, a\n\nposse contra famílias sem\n\nde posse para famílias de baixa\n\nocupação organizada de\n\nalternativa habitacional.\n\nrenda em territórios\n\nterrenos e prédios\n\nconsolidados, acompanhada da\n\nabandonados é um direito\n\ninstalação de saneamento\n\nlegítimo de autodefesa da\n\nbásico, água encanada, energia\n\nclasse trabalhadora.\n\nelétrica, iluminação pública,\npostos de saúde e centros\nculturais.\n\n2. Expropriação, Uso Social da Terra e Combate à Especulação\nExpropriação Sem\n\nIPTU Progressivo e\n\nControle Social de Aluguéis:\n\nIndenização: Estatização e\n\nCompulsoriedade: Aplicação\n\nCongelamento e controle\n\nexpropriação imediata, sem\n\nrigorosa de alíquotas\n\npúblico dos preços de aluguel\n\nindenização, de todos os\n\nprogressivas de IPTU e\n\nurbano para impedir que a\n\nprédios e terrenos urbanos\n\nnotificação compulsória para\n\ninflação imobiliária\n\nabandonados, ociosos ou com\n\nimóveis vazios.\n\ncomprometa a renda familiar\n\ndívidas crônicas de IPTU,\n\nEstabelecimento de prazos\n\ndos trabalhadores.\n\nconvertendo-os em habitação\n\ncurtos para a tomada pública\n\nsocial gratuita para as famílias\n\ndesses bens em caso de\n\nvulneráveis. Serão\n\ndescumprimento da função\n\nresguardados os pequenos\n\nsocial da propriedade.\n\nproprietários que possuem\nimóveis de locação como\ncomplemento de renda de\nsobrevivência.\n\n3. Obras Públicas, Autogestão e Controle Popular\nEmpresa Pública de Edificação: Construção\n\nPlanejamento Urbano Democrático:\n\nmassiva de moradias populares e infraestrutura por\n\nReformulação dos Planos Diretores municipais com\n\nempresa pública de obras sob controle direto dos\n\na instituição de Conselhos Populares deliberativos.\n\ntrabalhadores.\n\nAs prioridades de investimento público, transporte,\nsaneamento e equipamentos urbanos devem ser\nsoberanamente decididas pelo povo organizado em\nassembleias de bairro.\n\n7.1 A Crise Climática e Ecológica como Expressão da\nAcumulação Capitalista\nA crise ambiental contemporânea não resulta de escolhas individuais ou da falta de conscientização da população, mas do\nesgotamento do próprio modo de produção capitalista e da sua busca insaciável pelo lucro. Relatórios do Programa das\nNações Unidas para o Meio Ambiente (PNUMA) indicam que, mesmo com o cumprimento integral dos acordos\ninternacionais, a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século, aproximando a humanidade\nde pontos de não retorno ecológicos e tornando o aquecimento global irreversível.\nNo capitalismo, as grandes petroleiras, mineradoras e o agronegócio expandem seus lucros por meio da devastação dos\nbiomas, contaminação dos rios, desmatamento e emissões maciças de gases de efeito estufa. Enquanto a receita\npermanece concentrada nas mãos da burguesia, os custos ambientais e humanos (secas, enchentes, deslizamentos e\ntragédias como as de Mariana e Brumadinho) são socializados e jogados sobre as costas da classe trabalhadora.\nNo Brasil, o agronegócio é responsável por cerca de 75% das emissões nacionais de gases de efeito estufa, ligadas ao uso\nda terra, agropecuária e desmatamento. A expansão da fronteira agrícola já destruiu cerca de metade do Cerrado,\ndevasta o Pantanal e avança sobre a Amazônia, ameaçando os povos originários e a biodiversidade.\nA extrema direita e o bolsonarismo não escondem que desejam destruir a floresta, liberar agrotóxicos proibidos e acabar\nde vez com os povos originários; ao mesmo tempo, os governos ditos progressistas continuam governando com e para o\ngrande agronegócio e mineradoras, autorizando a exploração de petróleo na Margem Equatorial enquanto o Congresso\naprova projetos de devastação e a tese do Marco Temporal. É preciso enfrentar o agronegócio e os governos capitalistas,\ndefendendo o fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da agroecologia e a aceleração\nda demarcação de terras indígenas e territórios quilombolas.\n\n7.2 Devastação Ambiental, Especulação e Negócios no Estado\ndo Paraná\nAceleração do Desmatamento da Mata\nAtlântica\nDados do MapBiomas apontam que a destruição da\n\nAlertas do BNDES\nEntre 2023 e 2026, foram registrados 2.136 alertas\nativos de desmatamento ilegal no Paraná.\n\nvegetação nativa no estado subiu de 430 hectares em\n2024 para 684 hectares em 2025, um salto de 59,2%\nem apenas um ano. O município de São José dos\nPinhais liderou o desmatamento (188 ha), seguido por\nCerro Azul (32 ha) e Campo Largo (29 ha),\nimpulsionado pela expansão imobiliária e de\ninfraestrutura.\n\nLicenciamento Ambiental para a Elite\n\nGrandes Obras e Privatização\n\nO governo estadual de Ratinho Jr. utiliza o Instituto\n\nProjetos estaduais e municipais — como as obras do\n\nÁgua e Terra (IAT) para favorecer empreendimentos\n\nNovo Inter 2 em Curitiba (que removem árvores\n\nprivados de grande porte. Exemplo emblemático é o\n\nadultas e áreas verdes consolidadas), a engorda da\n\nTayayá Porto Rico Residence & Resort (ligado à família\n\norla de Matinhos e a expansão portuária/rodoviária\n\ndo governador em São Pedro do Paraná), que obteve\n\nno Litoral — geram destruição ecológica e graves\n\nlicença para instalação em Área de Preservação\n\nimpactos biológicos e oceanográficos.\n\nPermanente (APP) às margens do Rio Paraná, em\n\nAdicionalmente, o governo aliena áreas públicas com\n\ndescumprimento direto ao Código Florestal.\n\nvegetação nativa (como antigos terrenos da Copel)\npara o mercado imobiliário, em vez de destiná-las à\ncriação de parques urbanos.\n\n7.3 A Ditadura do Rodoviarismo e a \"Burguesia do Asfalto\"\nA crise ambiental nas cidades brasileiras está intrinsecamente ligada ao modelo de urbanização capitalista e à\nconsolidação do transporte rodoviário. A partir da década de 1950, sob o lema \"governar é abrir estradas\", o Estado\nbrasileiro subordinou a mobilidade nacional ao capital multinacional automobilístico e às grandes petroleiras,\nabandonando a malha ferroviária.\nEsse processo consolidou a \"burguesia do asfalto\": uma fração da classe dominante (empreiteiras e construtoras de obras\npesadas) cuja reprodução depende da contínua expansão e recapeamento da malha viária. O cimento asfáltico, derivado\ndo resíduo pesado do refino do petróleo, transforma a baixa durabilidade dos pavimentos em um mecanismo perpétuo\nde transferência de recursos dos orçamentos públicos municipais e estaduais para grupos privados.\nO asfalto não é apenas uma opção técnica de pavimentação, mas um pilar de sustentação econômica da burguesia das\nempreiteiras e do complexo petrolífero, gerando cidades insustentáveis, quentes e impermeabilizadas.\n\n7.4 Programa Socialista de Transição para o Meio Ambiente e\nUrbanismo\n1. Enfrentamento ao Agronegócio e Transição Agroecológica\nFim dos Subsídios ao\n\nDemarcação e Proteção:\n\nAgroecologia e Banimento de\n\nCapitalismo Agrário: Corte\n\nAceleração da titulação e\n\nAgrotóxicos: Banimento total\n\nimediato de todos os créditos\n\ndemarcação de todas as terras\n\nde agrotóxicos proibidos no\n\npúblicos, subsídios e isenções\n\nindígenas e quilombolas no\n\nexterior, proibição da\n\nfiscais estaduais e federais para\n\nParaná e no Brasil.\n\npulverização aérea e\n\no grande agronegócio.\n\nredirecionamento de créditos e\nterras estatais para a\nagricultura familiar ecológica e\npara a reforma agrária popular.\n\n2. Prevenção de Desastres e Defesa Civil Popular\nMapeamento e Planos Anticrise: Elaboração de\n\nDefesa Civil Sob Controle Comunitário:\n\nplanos municipais e estaduais de prevenção contra\n\nOrganização de comitês populares de defesa civil\n\nenchentes, enxurradas e deslizamentos de terra em\n\ncom sistemas de alerta antecipado, rotas de fuga e\n\náreas de risco urbano.\n\npreparação prévia de equipamentos públicos (como\nescolas e ginásios) dotados de infraestrutura para\nacolhimento digno em situações de emergência.\n\n3. Planejamento Urbano Ecológico e Tecnologias Sustentáveis\nPoder Deliberativo às\n\nSubstituição da\n\nReflorestamento e Parques\n\nPeriferias: Gestão das\n\nPavimentação Antiecológica:\n\nPopulares: Programas\n\nintervenções urbanas por meio\n\nFim do uso indiscriminado do\n\nmassivos de arborização e\n\nde Conselhos de Bairro\n\nasfalto petrolífero. Aplicação de\n\nreflorestamento urbano,\n\ncompostos por trabalhadores,\n\nsoluções normatizadas (NBR\n\ngarantindo a preservação das\n\ndecidindo os projetos de\n\n16416), tais como pavimento de\n\nmatas ciliares e rios urbanos, e\n\nurbanismo e soluções\n\nconcreto poroso, blocos\n\nconvertendo terrenos públicos\n\nambientais locais.\n\nintertravados e asfalto\n\nem parques e áreas de\n\ndrenante, que permitem a\n\nconvivência nas periferias.\n\ninfiltração da água no lençol\nfreático e reduzem as\ntemperaturas de superfície em\naté 5 °C."
+          },
+          {
+            "id": "8-mobilidade-urbana-transporte",
+            "titulo": "8. MOBILIDADE URBANA, TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "8. MOBILIDADE URBANA, TRANSPORTE\nPÚBLICO E ESTATIZAÇÃO\n\nCHEGA DE LUCRO COM O\nSOFRIMENTO DE QUEM\nDEPENDE DO TRANSPORTE!\n8.1. A Rotina de Exaustão e Precarização no Transporte\nPúblico\nA vida dos trabalhadores brasileiros é marcada pela rotina diária de exaustão imposta pela precariedade do transporte\npúblico. Horas gastas em deslocamentos, em condições insalubres e inseguras, impactam diretamente a saúde física e\nmental, a produtividade e a qualidade de vida.\n\nFilas e ônibus lotados\n\nDemora e atrasos\n\nDesperdício de tempo e exposição a riscos.\n\nImpacto na jornada de trabalho e na vida pessoal.\n\nTarifas abusivas\n\nFalta de segurança\n\nAumento do custo de vida e diminuição do poder de\n\nAssaltos, acidentes e exposição à violência.\n\ncompra.\n\nAmbiente insalubre\n\nAcesso restrito\n\nVeículos sujos, mal ventilados e sem manutenção\n\nLimitação da mobilidade para pessoas com\n\nadequada.\n\ndeficiência ou em áreas periféricas.\n\n8.2. O Negócio da Mobilidade: Oligopólios Familiares,\nSubsídios Públicos e Conivência Estatal\nO transporte público no Brasil é historicamente dominado por oligopólios familiares que concentram o controle de frotas\ne linhas. Essas empresas, muitas vezes, operam com modelos de gestão arcaicos e foco exclusivo no lucro, em detrimento\nda qualidade do serviço.\nApesar de serem privadas, essas empresas dependem massivamente de subsídios públicos (isentando-as de impostos,\nrepassando valores por passageiro transportado ou por quilômetro rodado) e da conivência do Estado. Bilhões de reais\nsão desviados anualmente dos cofres públicos para sustentar um modelo falido que não atende às necessidades da\npopulação.\nA lógica é perversa: quanto mais o serviço piora, menos passageiros pagantes utilizam, o que \"justifica\" novos subsídios\nou aumento de tarifas para as empresas manterem seu lucro, formando um ciclo vicioso de precarização e dependência.\n\n8.3. A Farsa da Tarifa Zero sob Gestão Privada e a Crítica à\nProposta do PSOL\nA \"tarifa zero\" defendida por setores do PSOL e alguns movimentos sociais, quando aplicada dentro da lógica atual de\ngestão privada, pode se tornar uma armadilha. Se as empresas continuarem a gerir o sistema, o custo para a sociedade\nserá ainda maior, com o Estado bancando integralmente o lucro de capitalistas que pouco ou nada investem em\nmelhorias.\nA verdadeira tarifa zero só é possível e justa sob a gestão pública e direta do transporte, com o sistema integrado a outras\npolíticas sociais e urbanas, sem a intermediação de empresários que se apropriam do dinheiro público para seus\ninteresses privados.\n\n8.4. Programa Socialista para o Transporte: Tarifa Zero Real,\nEstatização e Controle Operário\n1\n\nEstatização Imediata e\nTotal\n\n2\n\n3\n\nTarifa Zero Real\nImplementação da tarifa zero\n\nControle Operário e\nPopular\n\nConfisco das empresas de\n\nem todos os modais de\n\nGestão da empresa pública de\n\nônibus e metrô, sem\n\ntransporte público, financiada\n\ntransporte por um conselho\n\nindenização, e criação de uma\n\npor impostos progressivos\n\neleito pelos trabalhadores do\n\nempresa pública de transporte,\n\nsobre grandes fortunas, lucros\n\nsetor, usuários e\n\ncom gestão democrática e\n\nbancários e imóveis ociosos, e\n\nrepresentantes de movimentos\n\ntransparente.\n\npela realocação dos subsídios\n\nsociais, garantindo que as\n\natualmente destinados às\n\ndecisões priorizem a qualidade\n\nempresas privadas.\n\ndo serviço e as necessidades da\npopulação.\n\n4\n\nRevisão da Malha e Expansão\n\n5\n\nIntegração e Intermodalidade\n\nReplanejamento das rotas e horários para atender\n\nCriação de um sistema integrado de transporte,\n\nde fato as periferias e bairros com menor acesso, e\n\nconectando ônibus, metrôs, trens e modais\n\nexpansão da frota com veículos modernos,\n\nalternativos (ciclovias, teleféricos), facilitando o\n\nacessíveis e não poluentes.\n\ndeslocamento e reduzindo o tempo de viagem."
+          },
+          {
+            "id": "9-trabalhadores-de-aplicativos-e",
+            "titulo": "9. TRABALHADORES DE APLICATIVOS E",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "9. TRABALHADORES DE APLICATIVOS E\nPLATAFORMAS\n\nCONTRA A EXPLORAÇÃO\nALGORÍTMICA E PELA GARANTIA\nINTEGRAL DE DIREITOS!\n9.1. A Precarização e a Transferência de Riscos nas\nPlataformas Digitais\nNo modelo de negócio das plataformas digitais, os trabalhadores são formalmente tratados como \"parceiros\" ou\n\"empreendedores\", descaracterizando o vínculo empregatício e isentando as empresas de qualquer responsabilidade\ntrabalhista. Isso resulta em jornadas exaustivas, remuneração imprevisível, ausência de segurança social (como férias, 13º\nsalário, seguro-desemprego, previdência), e a necessidade de arcar com todos os custos operacionais (combustível,\nmanutenção do veículo, internet, etc.). A gestão por algoritmos, por sua vez, impõe metas inatingíveis, penaliza por baixas\navaliações e pode desligar trabalhadores sem justificativa, exercendo um controle ainda mais opressivo do que as\nrelações de trabalho tradicionais.\n\n9.2. Pauta de Reivindicações e Programa de Luta\nPara reverter esse quadro de exploração, propomos uma pauta de reivindicações e um programa de luta que garantam\ndignidade e direitos aos trabalhadores de aplicativos e plataformas:\n\n1\n\nReconhecimento do\nVínculo Empregatício\n\n2\n\nRemuneração Digna e\nTransparente\n\n3\n\nCondições de Trabalho\nSeguras e Saudáveis\n\nExigir o reconhecimento legal\n\nEstabelecimento de um valor\n\nAs plataformas devem ser\n\ndo vínculo de emprego entre\n\nmínimo por hora trabalhada ou\n\nresponsáveis por fornecer\n\ntrabalhadores e plataformas,\n\npor entrega/corrida, que cubra\n\nequipamentos de segurança\n\ngarantindo todos os direitos\n\nos custos operacionais e\n\n(capacetes, coletes), seguro\n\ntrabalhistas previstos na CLT e\n\ngaranta uma remuneração\n\ncontra acidentes e doenças\n\nem convenções coletivas.\n\njusta, além de transparência\n\nocupacionais, e apoio\n\ntotal nos cálculos das tarifas e\n\npsicológico. Fim das metas\n\nbônus.\n\nabusivas e controle algorítmico\nque impulsionam jornadas\nperigosas.\n\n4\n\nFim do Desligamento Arbitrário e\nControle Sindical\n\n5\n\nEstatização e Controle Público das\nPlataformas\n\nProibição do desligamento de trabalhadores sem\n\nEm última instância, defender a estatização das\n\njusta causa e sem direito à defesa. Fortalecimento\n\nplataformas digitais de transporte e entregas,\n\nda organização sindical da categoria para negociar\n\ntransformando-as em serviços públicos sob controle\n\ncoletivamente com as plataformas e garantir a\n\npopular e dos trabalhadores, priorizando o bem-\n\nparticipação dos trabalhadores na definição das\n\nestar social e a qualidade do serviço, em detrimento\n\npolíticas e regras de trabalho.\n\ndo lucro privado."
+          },
+          {
+            "id": "10-soberania-digital",
+            "titulo": "10. SOBERANIA DIGITAL",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "10. SOBERANIA DIGITAL\n\nPELA CONSTRUÇÃO DE UMA\nINFRAESTRUTURA DIGITAL\nPÚBLICA, NACIONAL E SOB\nCONTROLE DOS\nTRABALHADORES!\n10.1. Dependência Tecnológica, Monopólios Estrangeiros e a\nDefesa da Celepar\nA dependência tecnológica de empresas estrangeiras e a dominação de monopólios globais no setor digital representam\numa ameaça direta à soberania nacional e à capacidade de um Estado de formular e implementar políticas públicas\nautônomas. No Brasil, observamos um processo contínuo de privatização e sucateamento de empresas públicas de\ntecnologia, como a Celepar (Companhia de Tecnologia da Informação e Comunicação do Paraná), que são essenciais para\na autonomia digital do país. A Celepar, com seu histórico de desenvolvimento de sistemas críticos para o governo e a\nsociedade paranaense, precisa ser defendida e fortalecida como um bastião da tecnologia pública nacional.\nA lógica de mercado imposta pelos grandes players internacionais não visa o interesse público, mas sim a maximização de\nlucros e a coleta massiva de dados, que se tornam uma commodity valiosa. Essa captura de dados e a centralização do\ncontrole de infraestruturas digitais em mãos privadas e estrangeiras criam vulnerabilidades estratégicas, permitindo a\ninterferência externa e o uso dessas informações para fins que podem ser contrários aos interesses da população.\nÉ imperativo reverter essa tendência e proteger as empresas públicas de tecnologia, que são patrimônio do povo. A\ndefesa da Celepar e de outras instituições similares é parte integrante da luta pela soberania digital, garantindo que o\ndesenvolvimento e a gestão das ferramentas tecnológicas estejam a serviço da sociedade e sob controle democrático.\n\n10.2. Janela Histórica e Tecnologia Pública Nacional\nVivemos uma janela histórica crucial para a construção de uma infraestrutura digital pública e nacional. A crescente\nconscientização sobre a importância da privacidade dos dados, a segurança cibernética e a autonomia tecnológica abre\ncaminho para propostas que antes poderiam ser consideradas radicais. A crise sanitária global, por exemplo, demonstrou\na urgência de ter sistemas de informação robustos e sob controle estatal para a gestão de crises, distribuição de vacinas e\ncoordenação de ações de saúde pública, sem depender de soluções de mercado que podem falhar ou priorizar interesses\ncomerciais.\nA tecnologia pública nacional não se trata apenas de desenvolver software e hardware, mas de construir um ecossistema\ndigital que seja resiliente, inclusivo e que sirva aos interesses estratégicos do país. Isso implica investir em pesquisa e\ndesenvolvimento, formar profissionais qualificados, fomentar o uso de software livre e código aberto, e criar plataformas\ndigitais que atendam às necessidades específicas da população brasileira, desde serviços governamentais até ferramentas\nde comunicação e educação.\nEssa construção deve ser um projeto de Estado, não de governo, transcendendo os mandatos e garantindo a\ncontinuidade das políticas de longo prazo. A tecnologia, vista como um bem público, deve ser acessível a todos e gerida de\nforma transparente, com a participação ativa da sociedade civil e dos trabalhadores do setor.\n\n10.3. Diretrizes para uma Infraestrutura Digital sob Controle\ndos Trabalhadores\nPara efetivar a soberania digital e construir uma infraestrutura que sirva ao povo, propomos as seguintes diretrizes:\n\n1\n\nEstatização e\nFortalecimento das\nEmpresas de Tecnologia\nPública\n\n2\n\nDesenvolvimento e Uso\nde Software Livre e\nCódigo Aberto\n\n3\n\nInfraestrutura de Rede e\nArmazenamento Pública\nConstruir e gerir uma\n\nAdotar o software livre e o\n\ninfraestrutura própria de rede\n\nReverter privatizações e\n\ncódigo aberto como padrão em\n\nde dados (banda larga) e\n\nfortalecer empresas como a\n\ntodas as esferas do governo,\n\narmazenamento em nuvem,\n\nCelepar, Prodesp, Serpro e\n\npromovendo a transparência, a\n\ngarantindo que dados sensíveis\n\nDataprev, dotando-as de\n\nsegurança e a autonomia\n\ne comunicações estratégicas\n\nrecursos e autonomia para\n\ntecnológica. Incentivar a\n\nnão transitem por servidores\n\ndesenvolver e gerir as\n\ncomunidade de\n\nou cabos sob controle\n\ninfraestruturas digitais do\n\ndesenvolvedores e o\n\nestrangeiro.\n\nEstado, sem a intermediação\n\nconhecimento compartilhado.\n\ndo capital privado.\n\n4\n\n7\n\nControle Social e\nParticipativo\n\n5\n\nEducação Digital e\nInclusão Tecnológica\n\n6\n\nEstabelecer conselhos de\n\nPromover políticas massivas de\n\nFomento à Pesquisa e\nDesenvolvimento\nNacional\n\ngestão das empresas e\n\neducação digital e inclusão\n\nInvestir maciçamente em\n\nplataformas digitais públicas,\n\ntecnológica, capacitando a\n\npesquisa e desenvolvimento de\n\ncom a participação de\n\npopulação para o uso\n\ntecnologias digitais no Brasil,\n\ntrabalhadores, usuários,\n\nconsciente e crítico das\n\ndesde o hardware até soluções\n\nmovimentos sociais e\n\nferramentas digitais e\n\navançadas de inteligência\n\nespecialistas, assegurando que\n\nreduzindo o abismo digital.\n\nartificial, criando uma base\n\nas decisões atendam ao\n\ntecnológica autônoma e\n\ninteresse público e não a\n\ngerando empregos\n\nlógicas de mercado.\n\nqualificados.\n\nRegulamentação e Fiscalização de Plataformas Privadas\nRegulamentar de forma rigorosa as plataformas digitais privadas, impondo limites à coleta de dados, garantindo a\nneutralidade da rede, combatendo a desinformação e assegurando direitos trabalhistas e do consumidor,\nenquanto se constrói alternativas públicas robustas."
+          },
+          {
+            "id": "11-soberania-e-ruptura-com-o",
+            "titulo": "11. SOBERANIA E RUPTURA COM O",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "11. SOBERANIA E RUPTURA COM O\nIMPERIALISMO\n\nPELA DEFESA DA SOBERANIA\nNACIONAL, RUPTURA COM O\nCAPITAL IMPERIALISTA E\nCONTROLE POPULAR DAS\nRIQUEZAS!\n11.1. O Parasitismo Imperialista Ocidental e a Fuga de Capitais\nA dominação imperialista ocidental, em especial dos Estados Unidos e das potências europeias, se expressa pela extração\npermanente de excedentes das economias periféricas e dependentes. Por meio do controle financeiro, tecnológico e\ncomercial, essas nações drenam riquezas produzidas internamente, repatriando lucros, impondo juros abusivos e\nsubordinando economias inteiras à lógica do capital internacional. Esse mecanismo bloqueia o desenvolvimento\nautônomo e mantém países como o Brasil presos a uma posição subordinada na divisão internacional do trabalho.\nA fuga de capitais é uma das formas mais evidentes desse parasitismo. Grandes conglomerados e setores da burguesia\nassociada transferem recursos para o exterior, desvalorizando a moeda nacional, pressionando o câmbio, encarecendo\nimportações estratégicas e enfraquecendo a capacidade do Estado de planejar o desenvolvimento. O resultado é a\ncombinação entre dependência externa, vulnerabilidade financeira e aprofundamento da desigualdade social.\n\n11.2. A Ilusão do Capital Chinês e a Desindustrialização\nEmbora se apresente como alternativa ao imperialismo ocidental, o capital chinês também opera segundo a lógica da\nexpansão dos lucros e da apropriação de ativos já existentes. Em vez de construir novas capacidades produtivas nacionais\nde forma soberana, muitas vezes compra empresas, participa de fusões e aquisições e ocupa setores já estruturados,\nreforçando a dependência e a inserção subordinada do país nas cadeias globais de valor.\nO caso da BYD ilustra bem esse movimento: o que se apresenta como investimento produtivo pode significar, na prática, a\nocupação de espaços deixados por empresas fragilizadas, sem romper com a lógica da desindustrialização. Quando esse\ncapital entra em setores estratégicos, pode aprofundar o sucateamento da cadeia industrial local, deslocar fornecedores\nnacionais, apropriar-se dos lucros gerados internamente e inundar o mercado com produtos que comprimem ainda mais\na produção doméstica.\nAssim, a dependência em relação ao capital chinês não representa soberania, mas uma nova forma de subordinação. O\npaís perde capacidade de decisão sobre sua estrutura produtiva, enquanto vê avançar a desnacionalização de setores\nestratégicos e o enfraquecimento do parque industrial.\n\n11.3. Diretrizes do Programa Socialista de Soberania Nacional\n1\n\nControle nacional das\nriquezas naturais e\nestratégicas\nDomínio público sobre energia,\nmineração, telecomunicações,\nfinanças e infraestrutura.\n\n2\n\nEnfrentamento aos\nmonopólios estrangeiros\ne às frações internas\nassociadas ao capital\ninternacional\nRegulação rigorosa, taxação\n\n3\n\nReestatização de setores\nestratégicos privatizados\nReconstrução da capacidade do\nEstado de planejar, investir e\ncoordenar o desenvolvimento\nnacional.\n\nprogressiva e impedimento da\nremessa abusiva de lucros ao\nexterior.\n\n4\n\nFortalecimento da indústria nacional e da ciência pública\nInvestimento em pesquisa, tecnologia, emprego qualificado e substituição da dependência por uma base produtiva\nsoberana."
+          },
+          {
+            "id": "12-governo-dos-trabalhadores-atraves",
+            "titulo": "12. GOVERNO DOS TRABALHADORES ATRAVÉS",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "12. GOVERNO DOS TRABALHADORES ATRAVÉS\nDE CONSELHOS POPULARES\n\nPOR UM PODER POPULAR DA\nCLASSE TRABALHADORA, SEM\nCONCILIAÇÃO E COM\nDEMOCRACIA DIRETA!\n12.1. A Natureza do Estado Capitalista e o Caráter do\nPrograma\nPara a construção de um governo dos trabalhadores e trabalhadoras, é fundamental compreender que o Estado\ncapitalista não é neutro. Ele é, por sua própria natureza, um instrumento de dominação de classe, concebido para\ndefender os interesses da burguesia e do capital. Sua estrutura, suas leis, suas instituições – da polícia ao judiciário, dos\nbancos centrais aos organismos reguladores – operam para manter a propriedade privada dos meios de produção e a\nexploração do trabalho.\nUm programa verdadeiramente socialista não pode ter como objetivo a simples ocupação ou reforma desse Estado, mas\nsim a sua superação. Nossa meta não é conciliar as classes, mas instaurar o poder da classe trabalhadora. Isso implica em\numa ruptura com as ilusões de um Estado democrático burguês que serviria igualmente a todos, e a construção de um\nnovo tipo de poder baseado na auto-organização popular.\n\n12.2. O Sujeito Social da Transformação e a Independência de\nClasse\nA transformação revolucionária só pode ser impulsionada pela classe trabalhadora, seus aliados e os setores populares\noprimidos, atuando de forma autônoma e independente de todos os partidos e frações da burguesia. As lutas devem se\norganizar a partir dos locais de trabalho, das comunidades, dos movimentos sociais, e não através de alianças que diluam\no programa ou submetam os interesses da classe à lógica da ordem vigente.\nA independência de classe é a condição para que os conselhos populares, ou outras formas de auto-organização, possam\nemergir como verdadeiras instituições de poder. Sem essa independência, qualquer iniciativa de base corre o risco de ser\ncooptada, instrumentalizada e esvaziada de seu potencial transformador pelas forças que buscam preservar o sistema\ncapitalista.\n\n12.3. Ruptura com a Conciliação e Controle Operário da\nEconomia\nUm governo dos trabalhadores não pode ser um governo de conciliação de classes. Isso significa a ruptura com a ideia de\nque é possível gerir o capitalismo de forma \"justa\" ou \"humanizada\". A conciliação de classes leva invariavelmente à\nmanutenção da exploração e à subordinação aos interesses do grande capital. A expropriação da burguesia dos setores\nestratégicos da economia, sob controle popular, é um passo fundamental.\nO controle operário e popular da economia não é apenas um slogan, mas um imperativo para garantir que a produção e a\ndistribuição de riquezas atendam às necessidades da maioria, e não à lógica do lucro privado. Isso significa que as\ndecisões sobre o que, como e para quem produzir devem ser tomadas pelos próprios trabalhadores e comunidades,\natravés de seus conselhos, e não por gestores ou proprietários que visam apenas a maximização do capital.\n\n12.4. A Estrutura dos Conselhos Populares para Governar o\nParaná\nA proposta de governo dos trabalhadores através de conselhos populares no Paraná implica a construção de uma nova\ninstitucionalidade, radicalmente democrática e participativa. Esta estrutura deve se apoiar em três pontos principais:\n\n1\n\nOrganização nos\nBairros e Locais de\nTrabalho\nRealização de assembleias\npopulares periódicas nos\nbairros e nos locais de trabalho\npara discutir, planejar e\ndeliberar diretamente sobre\nobras, serviços públicos,\norçamento e desenvolvimento\nurbano.\n\n2\n\nConselhos Populares\nExecutivos\nEleição de delegados com\n\nPlanificação\nEconômica\nDemocrática\n\nmandatos revogáveis a\n\nSubmissão de toda a produção\n\nqualquer tempo pela base e\ncom remuneração\nrigorosamente limitada ao\nsalário médio de uma\nprofessora da rede pública\nestadual, eliminando qualquer\nprivilégio ou regalia política.\n\n3\n\ne dos recursos do estado do\nParaná a um plano econômico\ndisciplinado, transparente e\nsob controle popular,\ngarantindo que a riqueza\ngerada sirva exclusivamente\npara elevar a qualidade de vida\ndo povo trabalhador.\n\nEssa estrutura visa assegurar a democracia direta, o controle popular das decisões e a subordinação de todas as\ninstâncias do poder aos interesses da classe trabalhadora e da população oprimida do Paraná."
+          },
+          {
+            "id": "13-internacionalismo-unir-os-trabalhadores-de",
+            "titulo": "13. Internacionalismo: Unir os Trabalhadores de",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "13. Internacionalismo: Unir os Trabalhadores de\nTodo o Mundo\n\nTRABALHADORES DE TODO O\nMUNDO, UNINDO-SE CONTRA O\nIMPERIALISMO E PELA\nLIBERTAÇÃO DOS POVOS\nOPRIMIDOS!\n13.1. O Capitalismo como Sistema Mundial de Exploração\nOs trabalhadores e trabalhadoras do Paraná sentem diretamente os impactos das crises e reestruturações do capitalismo\nmundial. As decisões tomadas nos centros do poder econômico internacional repercutem sobre os empregos, os salários,\nos preços dos alimentos, o custo da energia, o endividamento das famílias e a precarização das condições de vida em\nnosso estado. Nenhuma luta local pode ser compreendida fora dessa dinâmica global de exploração.\nO capitalismo é um sistema mundial de exploração que subordina povos e nações inteiras às necessidades de\nacumulação do capital. Monopólios transnacionais dominam a economia global, controlando cadeias produtivas,\ncomércio, finanças, tecnologia e recursos estratégicos, impondo suas condições aos países dependentes e ampliando a\ndesigualdade entre centros imperialistas e periferias submetidas.\n\n13.2. Solidariedade Internacionalista e Luta Anti-imperialista\nA solidariedade internacionalista é um princípio fundamental da luta da classe trabalhadora. Ela significa reconhecer que\na opressão sofrida por povos submetidos à guerra, à ocupação, ao saque e à dominação imperialista é parte da mesma\nordem capitalista que explora os trabalhadores em cada país. Por isso, nossa posição é de apoio ativo às lutas dos povos\noprimidos e de enfrentamento a todas as formas de agressão imperialista.\n\n1\n\nSolidariedade\nInternacionalista e\nAnti-imperialista\nApoio firme ao Irã e seu povo\ncontra as agressões dos\n\n2\n\nApoio Incondicional\nà Causa Palestina\nDefesa intransigente da\n\nRuptura de Relações\ncom o Estado\nSionista\n\nlibertação do povo palestino —\n\nExigência de ruptura imediata\n\nPalestina livre, do rio ao mar!\n\n3\n\nde todas as relações\n\nEstados Unidos e de Israel, e\n\ndiplomáticas, econômicas,\n\nsolidariedade ao povo\n\nmilitares e culturais do Brasil\n\nucraniano contra a invasão e\n\ncom o Estado de Israel, em\n\ndominação promovidas pela\n\nrepúdio às agressões e em\n\nRússia de Putin.\n\ndefesa dos direitos\nfundamentais do povo\npalestino."
+          },
+          {
+            "id": "15-um-chamado-a-acao-e-a-construcao-de-uma",
+            "titulo": "15. Um Chamado à Ação e à Construção de uma",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "15. Um Chamado à Ação e à Construção de uma\nDireção Revolucionária\n\nORGANIZAR A CLASSE\nTRABALHADORA, UNIFICAR AS\nLUTAS E CONSTRUIR UMA\nALTERNATIVA REVOLUCIONÁRIA!\n15.1. Programa como Guia para o Enfrentamento Concreto\nNosso programa não é um conjunto de dogmas, mas um guia vivo para a ação, forjado nas lutas concretas da classe\ntrabalhadora e dos povos oprimidos. Ele oferece as ferramentas teóricas e estratégicas necessárias para compreender a\ndinâmica do capitalismo em sua fase atual e para identificar os pontos de ruptura que podem impulsionar a\ntransformação revolucionária. Cada ponto programático visa não apenas denunciar as mazelas do sistema, mas também\napontar caminhos para a superação da exploração e da opressão.\nEste programa se destina a ser um instrumento de unificação das diversas frentes de luta, da defesa dos direitos sociais à\nresistência contra o imperialismo, passando pela batalha ambiental e pela emancipação das identidades oprimidas. É\natravés da sua difusão e apropriação coletiva que poderemos construir uma consciência de classe capaz de mobilizar e\norganizar as massas, convertendo a indignação em força transformadora e a solidariedade em ação política efetiva.\n\n15.2. A Necessidade Histórica de uma Direção Revolucionária\nA história nos mostra que grandes transformações sociais não ocorrem espontaneamente, mas exigem a existência de\numa direção revolucionária consciente e organizada. Esta direção deve ser capaz de articular as demandas imediatas com\nos objetivos estratégicos de longo prazo, construindo pontes entre as lutas parciais e a luta pela totalidade social. Sua\nfunção é educar, organizar e liderar a classe trabalhadora, enfrentando as manobras do capital e as limitações do\nreformismo.\nConstruir uma direção revolucionária significa mais do que apenas ter ideias corretas; significa ter a capacidade de\nimplementá-las, de se enraizar nas bases, de aprender com os erros e de se adaptar às novas realidades sem perder os\nprincípios. É um processo contínuo de formação de quadros, de construção de unidade na diversidade e de\nfortalecimento das organizações de base, sempre com o horizonte da emancipação humana e da construção de uma\nsociedade socialista como meta final."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "d93c9d12eab067bff88d1f19890db49a61463e372440f0a0c80064321578cecc"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c10a4c19d12ae243cf360deedf4001f15b97ed7eeba845c0050251aa246da70d"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "054e9ca566eff58360274c11cdb56bc375b4ee05d497b2df6c58768041a0824d"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "c049051274f25f1825375a00abba42dc67160e798a7ab9895c0760dd211345f6"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "c075704fda40d6f0fead6bdcda408e6d0e448211acafaf60613159cf1364ed0a"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "88649b82fb51e772de97a966350fc1a16ece45531f1f3d8ec055ff89963ae5f9"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "6ea28b734a35e44ef18744e9d56bff08bc1e4147ae182dbb70e7bb3845ac041d"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f2f6fa8104ea7d913bfb328afe9018e555f5cb787b5eecec6b716173b24b59bb"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "5e58e51885477d3cd284848b0cecf0eac1250ae857f196d6c1182fc0b206969c"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "9c5e57707c679ef37852a093528c146e854cefdb58840d543b8ff062880fa1a0"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "a478e7c38ecd853d9a6ffaf866a007f2f0e1d730b27affd096365bc8f9e0b243"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "8350350f82a8f0e635bf3d7b48eb775927226cf0ec2c755ee5c0b1941ee18f2a"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "2f65cec15f78598475aef5a5829815cc41dade765e625fa25407feddc4cd46fa"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "d9cc3e61a729311a8049b016213138d4677141141388fc6f11f0878c397294f9"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial. O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto. O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado. O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto. Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século. No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
+    "frases": [
+      {
+        "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 1,
+            "trecho": "Não defendemos os modelos\nde Cuba, China ou\nVenezuela"
+          }
+        ]
+      },
+      {
+        "texto": "O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 2,
+            "trecho": "O Estado não é um árbitro neutro entre as classes sociais;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 3,
+            "trecho": "Defesa do SUS 100% público, universal, gratuito e estatal."
+          }
+        ]
+      },
+      {
+        "texto": "O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 4,
+            "trecho": "fortaleceram o narcotráfico"
+          }
+        ]
+      },
+      {
+        "texto": "Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 7,
+            "trecho": "a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século"
+          }
+        ]
+      },
+      {
+        "texto": "No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 7,
+            "trecho": "vegetação nativa no estado subiu de 430 hectares em\n2024 para 684 hectares em 2025"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "modelos-internacionais",
+        "titulo": "Modelos internacionais",
+        "descricao": "Posição do programa sobre os modelos de Cuba, China e Venezuela.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 1,
+            "trecho": "Não defendemos os modelos\nde Cuba, China ou\nVenezuela"
+          }
+        ]
+      },
+      {
+        "id": "estado-e-classes",
+        "titulo": "Estado e classes sociais",
+        "descricao": "Afirmação sobre a neutralidade do Estado entre as classes sociais.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 2,
+            "trecho": "O Estado não é um árbitro neutro entre as classes sociais;"
+          }
+        ]
+      },
+      {
+        "id": "sus-publico",
+        "titulo": "SUS público",
+        "descricao": "Proposta de defesa do SUS público, universal, gratuito e estatal.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 3,
+            "trecho": "Defesa do SUS 100% público, universal, gratuito e estatal."
+          }
+        ]
+      },
+      {
+        "id": "politica-repressiva",
+        "titulo": "Política repressiva",
+        "descricao": "Afirmação sobre a relação entre política repressiva e narcotráfico.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 4,
+            "trecho": "fortaleceram o narcotráfico"
+          }
+        ]
+      },
+      {
+        "id": "temperatura-global",
+        "titulo": "Temperatura global",
+        "descricao": "Projeção apresentada para a elevação da temperatura global até o final do século.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 7,
+            "trecho": "a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século"
+          }
+        ]
+      },
+      {
+        "id": "vegetacao-nativa",
+        "titulo": "Vegetação nativa",
+        "descricao": "Informação sobre a destruição da vegetação nativa no Paraná.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 7,
+            "trecho": "vegetação nativa no estado subiu de 430 hectares em\n2024 para 684 hectares em 2025"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T00:54:15.379Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T00:56:15.384Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve o conteúdo, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tópico coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve o conteúdo do documento sem julgamento adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único tópico coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "O número 100% está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve a proposta sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho no contexto da 'guerra às drogas' repressiva sustenta a relação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve o conteúdo do documento sem adicionar juízo próprio."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (segurança pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Faixa numérica está literalmente sustentada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve dado citado sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (clima)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Números e anos estão literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descreve dado sem juízo de valor adicional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (meio ambiente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a descrição do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema, sem juízo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número é citado na redação do claim, e a evidência é consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente (saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a relação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente (segurança pública)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a projeção descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos no claim, mas a evidência é coerente com o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente (clima)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a informação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número específico no claim, evidência é consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente (meio ambiente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PR:160002548010",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PR:160002548010:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 34582,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 19633,
+          "output_tokens_details": {
+            "thinking_tokens": 484
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 34582,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 19633,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 34582,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 34582
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3616454
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "370d4db00860412caf9f44f73d828b924f8009bd4f136f00e9b95549b4ef657e",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T01:23:32.855Z",
+    "sourceSha256": "39f615d15098992aec25fa4706cae5e7e5b6e75334cf233e98111089c6e5d8cb",
+    "extractedTextSha256": "f6ac31974bc88dee106b38bb64d384737c966a3f2fa4616a8db2bd4163059e3b",
+    "documentCount": 1,
+    "documentSetSha256": "1b1b5a8d49f5fdfb31361a19ddb5ae66e192da5dc5d62c9c6d8c85240e14f9d1",
+    "contentSha256": "80000850614194da0e3f8937811804dbe1e419a4988350d0222b3aadb691a8f2"
+  }
+}
