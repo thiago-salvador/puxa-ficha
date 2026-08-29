@@ -237,30 +237,30 @@
     }
   ],
   "resumo": {
-    "texto": "O programa afirma que 69% da população ocupada sobrevive com até R$ 3.000,00 mensais, registrando esse percentual e esse limite financeiro em sua formulação. O dado apresentado relaciona 69% da população ocupada à sobrevivência com renda de até R$ 3.000,00 mensais, conforme a redação do programa. O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, mantendo essas quatro características na descrição da proposta. A defesa do SUS é formulada pelo programa como defesa de um sistema 100% público, universal, gratuito e estatal, sem alteração desses termos. O programa propõe a reestatização de setores estratégicos privatizados, indicando essa medida com a expressão utilizada em sua formulação. A reestatização proposta pelo programa se dirige a setores estratégicos privatizados, conforme a descrição apresentada no documento.",
+    "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial. O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto. O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado. O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto. Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século. No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
     "frases": [
       {
-        "texto": "O programa afirma que 69% da população ocupada sobrevive com até R$ 3.000,00 mensais, registrando esse percentual e esse limite financeiro em sua formulação.",
+        "texto": "O programa declara que não defende os modelos de Cuba, China ou Venezuela, conforme formulação registrada em seu texto oficial.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 2,
-            "trecho": "69% da população ocupada sobrevive com até R$\n3.000,00 mensais."
+            "pagina": 1,
+            "trecho": "Não defendemos os modelos\nde Cuba, China ou\nVenezuela"
           }
         ]
       },
       {
-        "texto": "O dado apresentado relaciona 69% da população ocupada à sobrevivência com renda de até R$ 3.000,00 mensais, conforme a redação do programa.",
+        "texto": "O programa afirma que o Estado não é um árbitro neutro entre as classes sociais, segundo a formulação apresentada em seu texto.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
             "pagina": 2,
-            "trecho": "69% da população ocupada sobrevive com até R$\n3.000,00 mensais."
+            "trecho": "O Estado não é um árbitro neutro entre as classes sociais;"
           }
         ]
       },
       {
-        "texto": "O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, mantendo essas quatro características na descrição da proposta.",
+        "texto": "O programa propõe a defesa do SUS 100% público, universal, gratuito e estatal, conforme descrito no documento programático oficial apresentado.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
@@ -270,53 +270,65 @@
         ]
       },
       {
-        "texto": "A defesa do SUS é formulada pelo programa como defesa de um sistema 100% público, universal, gratuito e estatal, sem alteração desses termos.",
+        "texto": "O programa afirma que a política repressiva fortaleceu o narcotráfico, registrando essa relação entre a política e o narcotráfico em seu texto.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 3,
-            "trecho": "Defesa do SUS 100% público, universal, gratuito e estatal."
+            "pagina": 4,
+            "trecho": "fortaleceram o narcotráfico"
           }
         ]
       },
       {
-        "texto": "O programa propõe a reestatização de setores estratégicos privatizados, indicando essa medida com a expressão utilizada em sua formulação.",
+        "texto": "Sobre o clima, o programa afirma que a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 11,
-            "trecho": "Reestatização de setores\nestratégicos privatizados"
+            "pagina": 7,
+            "trecho": "a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século"
           }
         ]
       },
       {
-        "texto": "A reestatização proposta pelo programa se dirige a setores estratégicos privatizados, conforme a descrição apresentada no documento.",
+        "texto": "No Paraná, o programa informa que a destruição da vegetação nativa subiu de 430 hectares em 2024 para 684 hectares em 2025.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 11,
-            "trecho": "Reestatização de setores\nestratégicos privatizados"
+            "pagina": 7,
+            "trecho": "vegetação nativa no estado subiu de 430 hectares em\n2024 para 684 hectares em 2025"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "renda-populacao-ocupada",
-        "titulo": "Renda da população ocupada",
-        "descricao": "O programa apresenta a proporção da população ocupada associada à sobrevivência com até R$ 3.000,00 mensais.",
+        "id": "modelos-internacionais",
+        "titulo": "Modelos internacionais",
+        "descricao": "Posição do programa sobre os modelos de Cuba, China e Venezuela.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 1,
+            "trecho": "Não defendemos os modelos\nde Cuba, China ou\nVenezuela"
+          }
+        ]
+      },
+      {
+        "id": "estado-e-classes",
+        "titulo": "Estado e classes sociais",
+        "descricao": "Afirmação sobre a neutralidade do Estado entre as classes sociais.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
             "pagina": 2,
-            "trecho": "69% da população ocupada sobrevive com até R$\n3.000,00 mensais."
+            "trecho": "O Estado não é um árbitro neutro entre as classes sociais;"
           }
         ]
       },
       {
         "id": "sus-publico",
         "titulo": "SUS público",
-        "descricao": "O programa propõe a defesa de um SUS 100% público.",
+        "descricao": "Proposta de defesa do SUS público, universal, gratuito e estatal.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
@@ -326,26 +338,38 @@
         ]
       },
       {
-        "id": "sus-universal-gratuito-estatal",
-        "titulo": "Características do SUS",
-        "descricao": "O programa propõe a defesa de um SUS universal, gratuito e estatal.",
+        "id": "politica-repressiva",
+        "titulo": "Política repressiva",
+        "descricao": "Afirmação sobre a relação entre política repressiva e narcotráfico.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 3,
-            "trecho": "Defesa do SUS 100% público, universal, gratuito e estatal."
+            "pagina": 4,
+            "trecho": "fortaleceram o narcotráfico"
           }
         ]
       },
       {
-        "id": "reestatizacao-setores-estrategicos",
-        "titulo": "Reestatização de setores",
-        "descricao": "O programa propõe a reestatização de setores estratégicos privatizados.",
+        "id": "temperatura-global",
+        "titulo": "Temperatura global",
+        "descricao": "Projeção apresentada para a elevação da temperatura global até o final do século.",
         "evidencias": [
           {
             "documentoId": "PR:160002548010:01",
-            "pagina": 11,
-            "trecho": "Reestatização de setores\nestratégicos privatizados"
+            "pagina": 7,
+            "trecho": "a temperatura global poderá subir entre 2,5 °C e 2,9 °C até o final do século"
+          }
+        ]
+      },
+      {
+        "id": "vegetacao-nativa",
+        "titulo": "Vegetação nativa",
+        "descricao": "Informação sobre a destruição da vegetação nativa no Paraná.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002548010:01",
+            "pagina": 7,
+            "trecho": "vegetação nativa no estado subiu de 430 hectares em\n2024 para 684 hectares em 2025"
           }
         ]
       }
@@ -353,313 +377,373 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T23:34:44.536Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T00:54:15.379Z"
   },
   "julgamento": {
     "model": "Anthropic Claude@claude-sonnet-5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T23:36:27.386Z",
+    "judgedAt": "2026-08-29T00:56:15.384Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho da página 2 confirma literalmente o percentual e o valor citados."
+        "reason": "Trecho reproduz literalmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "69% e R$3.000,00 conferem exatamente com o documento."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação apenas descreve o dado sem juízo de valor."
+        "reason": "Redação apenas descreve o conteúdo, sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de um único dado coerente sobre renda da população ocupada."
+        "reason": "Trata de um único tópico coerente."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Chave eleitoral e documento correspondem exatamente à evidência."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:1:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula do percentual e valor."
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Reformulação equivalente ao trecho original, integralmente sustentada."
+        "reason": "Trecho reproduz literalmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Números idênticos ao documento."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do dado, sem adjetivação."
+        "reason": "Descreve o conteúdo do documento sem julgamento adicional."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Único tema tratado: renda da população ocupada."
+        "reason": "Trata de um único tópico coerente."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento consistentes."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:2:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a afirmação."
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho da página 3 confirma exatamente as quatro características citadas."
+        "reason": "Trecho reproduz literalmente a proposta."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "O único número, 100%, está sustentado literalmente."
+        "reason": "O número 100% está literalmente sustentado."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição objetiva da proposta, sem juízo de valor."
+        "reason": "Descreve a proposta sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (SUS)."
+        "reason": "Trata de uma única proposta coerente (saúde)."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento consistentes com a evidência."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:3:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as quatro características estão cobertas pela evidência."
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Reformulação fiel ao trecho original."
+        "reason": "Trecho no contexto da 'guerra às drogas' repressiva sustenta a relação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "O percentual 100% está sustentado."
+        "reason": "Não há números na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra, apenas descritiva."
+        "reason": "Descreve o conteúdo do documento sem adicionar juízo próprio."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "Trata de uma única área coerente (segurança pública)."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente com evidência."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:4:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente os termos citados."
+        "reason": "Evidência cobre a cláusula material da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Expressão idêntica ao trecho da página 11."
+        "reason": "Trecho reproduz literalmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "Faixa numérica está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "Descreve dado citado sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Único tema tratado: reestatização."
+        "reason": "Trata de uma única área coerente (clima)."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade e documento consistentes."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:5:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a cláusula citada."
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Reformulação fiel ao trecho original."
+        "reason": "Trecho reproduz literalmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números presentes."
+        "reason": "Números e anos estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Descreve dado sem juízo de valor adicional."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de um único tema coerente."
+        "reason": "Trata de uma única área coerente (meio ambiente)."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente."
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:frase:6:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a afirmação."
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado literalmente pelo trecho."
+        "reason": "Evidência sustenta a descrição do tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Números consistentes com o documento."
+        "reason": "Não há números envolvidos."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição objetiva do tema."
+        "reason": "Descrição neutra do tema, sem juízo."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "Tópico único e coerente."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente com a evidência."
+        "reason": "Chave e documento correspondem."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:renda-populacao-ocupada:documentos:PR:160002548010:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:modelos-internacionais:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente o dado tema."
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta o tema descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números envolvidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:estado-e-classes:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado pelo trecho da página 3."
+        "reason": "Evidência sustenta a proposta descrita."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "100% consta literalmente."
+        "reason": "Nenhum número é citado na redação do claim, e a evidência é consistente."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição objetiva."
+        "reason": "Descrição neutra do tema."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Único tema coerente."
+        "reason": "Tópico único e coerente (saúde)."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente."
+        "reason": "Chave e documento correspondem."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-publico:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a cláusula tratada."
+        "reason": "Cobre a cláusula material do tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado pelo trecho da página 3."
+        "reason": "Evidência sustenta a relação descrita."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "Não há números envolvidos."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição objetiva."
+        "reason": "Descrição neutra do tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Único tema coerente."
+        "reason": "Tópico único e coerente (segurança pública)."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente."
+        "reason": "Chave e documento correspondem."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:sus-universal-gratuito-estatal:documentos:PR:160002548010:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:politica-repressiva:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente as características citadas."
+        "reason": "Cobre a cláusula material do tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:suporte",
         "verdict": "yes",
-        "reason": "Sustentado pelo trecho da página 11."
+        "reason": "Evidência sustenta a projeção descrita."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "Não há números específicos no claim, mas a evidência é coerente com o tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "Descrição neutra do tema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:mistura",
         "verdict": "yes",
-        "reason": "Único tema coerente."
+        "reason": "Tópico único e coerente (clima)."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade consistente."
+        "reason": "Chave e documento correspondem."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002548010:tema:reestatizacao-setores-estrategicos:documentos:PR:160002548010:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:temperatura-global:documentos:PR:160002548010:01:cobertura",
         "verdict": "yes",
-        "reason": "Cobre integralmente a proposta citada."
+        "reason": "Cobre a cláusula material do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a informação descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:numeros",
+        "verdict": "yes",
+        "reason": "Nenhum número específico no claim, evidência é consistente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:mistura",
+        "verdict": "yes",
+        "reason": "Tópico único e coerente (meio ambiente)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002548010:tema:vegetacao-nativa:documentos:PR:160002548010:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobre a cláusula material do tema."
       }
     ]
   },
@@ -675,7 +759,7 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 1
       },
@@ -686,11 +770,11 @@
         "attempts": 1,
         "uso": {
           "input_tokens": 2,
-          "cache_creation_input_tokens": 23011,
+          "cache_creation_input_tokens": 34582,
           "cache_read_input_tokens": 1062,
-          "output_tokens": 16466,
+          "output_tokens": 19633,
           "output_tokens_details": {
-            "thinking_tokens": 395
+            "thinking_tokens": 484
           },
           "server_tool_use": {
             "web_search_requests": 0,
@@ -698,25 +782,25 @@
           },
           "service_tier": "standard",
           "cache_creation": {
-            "ephemeral_1h_input_tokens": 23011,
+            "ephemeral_1h_input_tokens": 34582,
             "ephemeral_5m_input_tokens": 0
           },
           "inference_geo": "not_available",
           "iterations": [
             {
               "input_tokens": 2,
-              "output_tokens": 16466,
+              "output_tokens": 19633,
               "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 23011,
+              "cache_creation_input_tokens": 34582,
               "cache_creation": {
                 "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 23011
+                "ephemeral_1h_input_tokens": 34582
               },
               "type": "message"
             }
           ],
           "speed": "standard",
-          "cost_usd": 0.27509740000000005
+          "cost_usd": 0.3616454
         }
       },
       "geracaoMultipassagem": {
@@ -728,7 +812,7 @@
         "retriesPassagem": 0,
         "chamadasSintese": 1,
         "retriesSintese": 0,
-        "fingerprint": "330656eeb88a380b38a5fb1b751c6aab85a06021b4eb1cef12f3d2630ca2f8a1",
+        "fingerprint": "370d4db00860412caf9f44f73d828b924f8009bd4f136f00e9b95549b4ef657e",
         "promptVersoes": {
           "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
           "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
@@ -750,11 +834,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T23:40:32.069Z",
+    "reviewedAt": "2026-08-29T01:23:32.855Z",
     "sourceSha256": "39f615d15098992aec25fa4706cae5e7e5b6e75334cf233e98111089c6e5d8cb",
     "extractedTextSha256": "f6ac31974bc88dee106b38bb64d384737c966a3f2fa4616a8db2bd4163059e3b",
     "documentCount": 1,
     "documentSetSha256": "1b1b5a8d49f5fdfb31361a19ddb5ae66e192da5dc5d62c9c6d8c85240e14f9d1",
-    "contentSha256": "33cc39a866473065e45d23a7352d4e0946a0bb791ca8fcc43e19c49b64b38ec5"
+    "contentSha256": "80000850614194da0e3f8937811804dbe1e419a4988350d0222b3aadb691a8f2"
   }
 }
