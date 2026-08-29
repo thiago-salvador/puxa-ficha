@@ -3,7 +3,6 @@ import test from "node:test"
 
 import {
   createProgramaGovernoModelAdapters,
-  PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION,
   type ProgramaGovernoModelsConfig,
 } from "../scripts/programas-governo-governadores-2026-models"
 
@@ -282,7 +281,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     if (envelope.promptVersion.endsWith("/fatos-passagem")) {
       return {
         stdout: JSON.stringify({
-          fatos: Array.from({ length: 12 }, (_, index) => ({
+          fatos: Array.from({ length: 6 }, (_, index) => ({
             texto: `A fonte prevê a medida administrativa ${index + 1}.`,
             evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: `Trecho literal ${index + 1}.` }],
           })),
@@ -290,12 +289,23 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
         stderr: "",
       }
     }
-    if (envelope.promptVersion.endsWith("/sintese-fato-unitario")) {
-      const fato = envelope.input.FATO as { id: string }
+    if (envelope.promptVersion.endsWith("/sintese-fatos")) {
+      const fatoIds = (envelope.input.FATOS as Array<{ id: string }>).map(({ id }) => id)
+      const texto = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
+      const palavras = texto.split(" ")
       return {
         stdout: JSON.stringify({
-          frase: Array.from({ length: 20 }, (_, index) => `${fato.id}-palavra${index + 1}`).join(" "),
-          titulo: `Tema ${fato.id}`,
+          texto,
+          frases: Array.from({ length: 6 }, (_, index) => ({
+            texto: palavras.slice(index * 8, index * 8 + 8).join(" "),
+            fatoIds: [fatoIds[index]],
+          })),
+          temas: Array.from({ length: 4 }, (_, index) => ({
+            id: `tema-${index + 1}`,
+            titulo: `Tema ${index + 1}`,
+            descricao: "Descrição factual.",
+            fatoIds: [fatoIds[0]],
+          })),
         }),
         stderr: "",
       }
@@ -311,7 +321,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
       paginas: [{
         pagina: 1,
         origem: "fixture",
-        texto: Array.from({ length: 12 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
+        texto: Array.from({ length: 6 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
       }],
     }],
     repairGuidance: guidance,
@@ -322,20 +332,13 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     repairGuidance: guidance,
   })
 
-  assert.equal(requests.length, 8)
+  assert.equal(requests.length, 3)
   assert.match(requests[0].instructions, /orientação de reparo aprovada/iu)
   assert.match(requests[0].instructions, /Preserve o verbo literal/)
   assert.doesNotMatch(requests[1].instructions, /orientação de reparo aprovada/iu)
   assert.doesNotMatch(requests[1].instructions, /Preserve o verbo literal/)
-  const sinteses = requests.slice(2)
-  assert.deepEqual(sinteses.map(({ promptVersion }) => promptVersion), Array(6).fill(`${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fato-unitario`))
-  assert.deepEqual(sinteses.map(({ input }) => (input.FATO as { id: string }).id), [
-    "fato-1", "fato-3", "fato-5", "fato-8", "fato-10", "fato-12",
-  ])
-  for (const request of sinteses) {
-    assert.match(request.instructions, /orientação de reparo aprovada/iu)
-    assert.match(request.instructions, /Preserve o verbo literal/)
-  }
+  assert.match(requests[2].instructions, /orientação de reparo aprovada/iu)
+  assert.match(requests[2].instructions, /Preserve o verbo literal/)
 })
 
 test("falha depois de maxAttempts quando a evidência continua divergente", async () => {
@@ -354,7 +357,7 @@ test("falha depois de maxAttempts quando a evidência continua divergente", asyn
   assert.equal(requests.length, 2)
 })
 
-test("fato com trecho não literal aciona tentativa corretiva", async () => {
+test("fatos fora do recorte acionam tentativa corretiva", async () => {
   const source = config()
   source.generator.maxAttempts = 2
   let chamadas = 0
@@ -364,7 +367,7 @@ test("fato com trecho não literal aciona tentativa corretiva", async () => {
       stdout: JSON.stringify({
         fatos: [{
           texto: "Proposta literal.",
-          evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: chamadas === 1 ? "Trecho corrigido pelo modelo." : "Trecho literal." }],
+          evidencias: [{ documentoId: "doc-1", pagina: chamadas === 1 ? 99 : 1, trecho: "Trecho literal." }],
         }],
       }),
       stderr: "",
