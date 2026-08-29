@@ -206,6 +206,33 @@ process.exit(7)
   }
 })
 
+test("runner Claude inclui diagnóstico estruturado sanitizado quando CLI sai com erro", async () => {
+  const fakeCli = fixturePath("pf-fake-claude-judge-erro-estruturado.mjs")
+  await writeFile(fakeCli, `#!/usr/bin/env node
+process.stdin.resume()
+process.stdout.write(JSON.stringify({
+  is_error: true,
+  result: 'limite mensal atingido' + 'x'.repeat(2000),
+  session_id: 'NAO_DEVE_VAZAR_SESSION_ID',
+  structured_output: { input: 'NAO_DEVE_VAZAR_PAYLOAD' },
+}))
+process.stderr.write('stderr preservado')
+process.exit(7)
+`)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(
+    RUNNER_CLAUDE,
+    { PF_CLAUDE_CLI: fakeCli, PF_CLAUDE_TIMEOUT_MS: "15000" },
+    ENVELOPE,
+  )
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /saiu com 7/u)
+  assert.match(resultado.stderr, /stderr preservado/u)
+  assert.match(resultado.stderr, /limite mensal atingido/u)
+  assert.doesNotMatch(resultado.stderr, /NAO_DEVE_VAZAR/u)
+  assert.ok(resultado.stderr.length < 700, `diagnóstico não limitado: ${resultado.stderr.length}`)
+})
+
 test("runners Qwen e Codex encerram por timeout com erro controlado", async () => {
   const fakeCli = fixturePath("pf-fake-model-timeout.mjs")
   await writeFile(fakeCli, "#!/usr/bin/env node\nprocess.on('SIGTERM',()=>process.exit(0)); process.stdin.resume(); setInterval(()=>{},1000)\n")
