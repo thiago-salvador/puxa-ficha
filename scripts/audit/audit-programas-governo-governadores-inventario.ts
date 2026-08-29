@@ -31,6 +31,8 @@ interface Candidate {
   cargo: string;
   uf: string;
   sqCandidato: string;
+  nomeUrna: string;
+  partido: string;
   slug: string | null;
   perfilEstado: string;
   identidadeEstado: string;
@@ -126,6 +128,16 @@ function assertInventory(inventory: Inventory): void {
     inventory.medicoes.candidaturasOficiais,
   );
   assert.equal(inventory.medicoes.ufs, 27);
+  assert.equal(
+    inventory.medicoes.perfisUnicos,
+    195,
+    "crosswalk canônico tem 195 perfis de governador",
+  );
+  assert.equal(
+    inventory.fonte.perfisSnapshotArquivo,
+    "data/candidate-roster-active-20260829.json",
+  );
+  assert.match(String(inventory.fonte.perfisSnapshotSha256), SHA256);
 
   const candidateKeys = new Set<string>();
   const candidateSqs = new Set<string>();
@@ -181,6 +193,17 @@ function assertInventory(inventory: Inventory): void {
       assert.deepEqual(candidate.alternativasOficiais, []);
     }
   }
+  const laudicerio = inventory.candidaturas.filter(
+    (candidate) =>
+      candidate.sqCandidato === "110002553937" ||
+      candidate.sqCandidato === "110002554073",
+  );
+  assert.equal(laudicerio.length, 2);
+  assert.equal(laudicerio.every((candidate) => candidate.slug === null), true);
+  assert.equal(
+    laudicerio.every((candidate) => candidate.identidadeEstado === "duplicidade_oficial"),
+    true,
+  );
 
   const documents = new Map<string, DocumentRow>();
   for (const document of inventory.documentos) {

@@ -7,20 +7,21 @@ O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de 
 | Medida                                       |         Resultado |
 | -------------------------------------------- | ----------------: |
 | UFs                                          |                27 |
-| Linhas oficiais de candidaturas a governador |               198 |
-| Grupos lógicos                               |               197 |
+| Linhas oficiais de candidaturas a governador |               196 |
+| Perfis únicos no crosswalk                   |               195 |
+| Grupos lógicos                               |               195 |
 | Grupos oficialmente ambíguos                 | 1 grupo, 2 linhas |
-| Perfis locais vinculados por SQ_CANDIDATO    |               197 |
+| Perfis locais vinculados por SQ_CANDIDATO    |               194 |
 | Perfis locais ausentes                       |                 0 |
-| Alias de duplicidade oficial                 |                 1 |
+| Alias de duplicidade oficial                 |                 2 |
 | Pacotes estaduais                            |                27 |
 | PDFs nos pacotes                             |               212 |
-| PDFs ligados à coorte atual                  |               206 |
-| PDFs sem candidatura atual                   |                 6 |
-| Candidaturas com PDF                         |               193 |
+| PDFs ligados à coorte atual                  |               204 |
+| PDFs sem candidatura atual                   |                 8 |
+| Candidaturas com PDF                         |               191 |
 | Ausências explícitas de PDF                  |                 5 |
-| Páginas da coorte atual                      |            11.110 |
-| Texto extraído da coorte atual               |  21.986.975 bytes |
+| Páginas da coorte atual                      |            11.056 |
+| Texto extraído da coorte atual               |  21.850.086 bytes |
 | PDFs atuais que requerem OCR                 |                 5 |
 
 ## Fontes e integridade
@@ -31,6 +32,8 @@ O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de 
 - Um PDF individual não tem URL oficial independente no catálogo. Por isso, a proveniência correta é a URL do pacote mais `arquivoNoPacote`, nunca uma URL inventada.
 - O acesso direto do shell à CDN respondeu HTTP 403. O navegador Playwright conseguiu obter os arquivos pelos links do catálogo. Isso prova apenas disponibilidade por esse transporte. A integridade de conteúdo foi verificada separadamente com teste de cada ZIP, assinatura PDF, páginas e SHA-256 de pacote e documento.
 
+O crosswalk canônico é `data/candidate-roster-active-20260829.json`. Ele registra 209 inscrições ativas, 208 perfis titulares e zero inscrições sem mapeamento no universo geral. Para este inventário, o recorte de governador tem 196 inscrições e 195 perfis únicos. `profiles.registration_sqs` é a fonte da associação por `UF + SQ_CANDIDATO`; `canonical_registration_sq` só é usado quando preenchido e publicável.
+
 ## Cobertura por UF
 
 | UF  | Candidaturas | Com documento | Sem documento | PDFs atuais | PDFs órfãos | Páginas atuais |
@@ -40,7 +43,7 @@ O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de 
 | AM  |            7 |             7 |             0 |          14 |           0 |          1.839 |
 | AP  |            5 |             5 |             0 |           5 |           0 |            166 |
 | BA  |            7 |             7 |             0 |           7 |           0 |            408 |
-| CE  |            9 |             8 |             1 |           8 |           1 |            304 |
+| CE  |            8 |             7 |             1 |           8 |           1 |            304 |
 | DF  |           11 |            11 |             0 |          12 |           0 |            896 |
 | ES  |            5 |             5 |             0 |           5 |           1 |            353 |
 | GO  |            6 |             6 |             0 |           7 |           0 |            359 |
@@ -48,7 +51,7 @@ O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de 
 | MG  |           11 |            10 |             1 |          10 |           0 |            456 |
 | MS  |            8 |             8 |             0 |           8 |           0 |            269 |
 | MT  |            7 |             7 |             0 |           7 |           0 |            420 |
-| PA  |            7 |             7 |             0 |           7 |           0 |            314 |
+| PA  |            6 |             6 |             0 |           7 |           1 |            314 |
 | PB  |            6 |             6 |             0 |           6 |           0 |            161 |
 | PE  |            8 |             8 |             0 |           8 |           1 |            318 |
 | PI  |           11 |            11 |             0 |          11 |           1 |            388 |
@@ -77,16 +80,16 @@ Ausência significa que nenhum arquivo com o SQ_CANDIDATO atual foi encontrado n
 
 ## Ambiguidade atual
 
-O cadastro oficial contém duas linhas de MT para Laudicerio Aguiar Machado, AGIR, com o mesmo número e SQ_COLIGACAO distintos:
+O crosswalk mantém Laudicério Aguiar em `quarantine_duplicate_active`, com duas inscrições oficiais ativas e sem `canonical_registration_sq`. O cadastro contém duas linhas de MT para Laudicerio Aguiar Machado, AGIR, com o mesmo número e SQ_COLIGACAO distintos:
 
 - `110002553937`, SQ_COLIGACAO `110001801468`, nome de urna `SARGENTO LAUDICÉRIO (LAU)`.
 - `110002554073`, SQ_COLIGACAO `110001801510`, nome de urna `SARGENTO LAUDICÉRIO`.
 
-Os dois PDFs têm texto extraído integralmente idêntico, SHA-256 `2641361633f792d511c2bd2b62f99c807858a6760afda2b97e71336cbb78d7d7`. O inventário consolida deterministicamente a menor SQ como registro canônico da ficha `laudicerio-aguiar`; a outra linha permanece como `alias_duplicidade_oficial`, sem gerar um segundo programa nem sobrescrever a mesma ficha.
+Os dois PDFs têm texto extraído integralmente idêntico, SHA-256 `2641361633f792d511c2bd2b62f99c807858a6760afda2b97e71336cbb78d7d7`. O inventário preserva as duas linhas como `duplicidade_oficial`, sem inventar SQ canônica, sem gerar um segundo programa e sem sobrescrever uma ficha existente.
 
 ## Arquivos sem candidatura atual
 
-Todos os seis arquivos foram preservados. Eles não são vinculados por nome ou por histórico:
+Todos os oito arquivos foram preservados. Eles não são vinculados por nome ou por histórico. Os PDFs de `CE:60002540336` (Pedro Brito) e `PA:140002538631` (Cleber Rabelo) permanecem órfãos porque os perfis terminais estão fora da superfície pública:
 
 | Documento                      | Páginas |     Bytes | SHA-256                                                            |
 | ------------------------------ | ------: | --------: | ------------------------------------------------------------------ |
@@ -96,8 +99,29 @@ Todos os seis arquivos foram preservados. Eles não são vinculados por nome ou 
 | `PE/2026PE170002540338_01.pdf` |      66 |   894.225 | `cee039360efea5a9a11be2624b3f8aa23e384eb17ba8100d664b93ba5bb44f6c` |
 | `PI/2026PI180002533958_01.pdf` |       3 |    26.771 | `3dcc283f0f19d8982176f404a73258e2240d657597e5649cd38d1e652bdd5765` |
 | `RJ/2026RJ190002543534_01.pdf` |       3 |   130.166 | `bf6565aa3f42fa13d6889c5f898343f7c1d7b12b80e06d81efe7dcc10f2e548f` |
+| `CE/2026CE60002540336_01.pdf` |      14 |   317.295 | `568bb550c05849199955152fd4e5de5adcccb8d4f0bdaa6109db3c27ae83990e` |
+| `PA/2026PA140002538631_01.pdf` |      40 |   596.567 | `5d33c3d22959b0ef2443f4b37c6af475e33356ec5a620f76a5ef00b4c16954fe` |
 
 O antigo SQ de Elizeu Aguiar, PI `180002533958`, é um desses arquivos. A linha atual é `180002549920`, possui seu próprio PDF e está confirmada separadamente.
+
+## Auditoria de registros publicados
+
+O detector `scripts/audit/audit-programas-governo-governadores-publicados.ts` compara todos os registros publicados contra o inventário atual por identidade eleitoral, nome de urna, partido, conjunto documental e hash SHA-256 da fonte. Nesta reconciliação, sem alterar registros públicos, foram encontrados:
+
+| Registro | Divergência |
+| --- | --- |
+| `acm-neto` | hash do documento |
+| `cleber-rabelo` | identidade fora do crosswalk canônico, terminal |
+| `gabriel-azevedo` | hash do documento |
+| `hildon-chaves` | hash do documento |
+| `omar-aziz` | hash do documento |
+| `pedro-brito` | identidade fora do crosswalk canônico, terminal |
+| `rodrigo-bolsonaro` | nome de urna (`RODRIGO DE BOLSONARO` no crosswalk, `RODRIGO BOLSONARO` no registro) |
+| `sergio-moro-gov-pr` | hash do documento |
+| `vivian-mendes` | hash do documento |
+| manifesto de publicação | cobertura ainda baseada no universo anterior |
+
+O comando é fail-closed e agrega todos os alvos stale antes de retornar status não zero. A lista é diagnóstico para preparação de revisão; não autoriza generator, judge, promoção ou alteração da superfície pública.
 
 ## Reprodutibilidade
 

@@ -21,7 +21,7 @@ const CANDIDATOS_RECURSO_URL =
   "https://dadosabertos.tse.jus.br/dataset/candidatos-2026/resource/7748de82-a23b-47c4-9ec1-35535d945e5b";
 const CANDIDATOS_PACOTE_URL =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip";
-const DEFAULT_PROFILE_SNAPSHOT = "data/chapas-2026-tse-20260827.json";
+const DEFAULT_PROFILE_SNAPSHOT = "data/candidate-roster-active-20260829.json";
 const UFS = [
   "AC",
   "AL",
@@ -84,17 +84,16 @@ const RECURSOS_PROPOSTA: Record<(typeof UFS)[number], string> = {
 
 type Raw = Record<string, string>;
 
-interface ChapaSnapshot {
-  cargo_titular: string;
-  uf: string | null;
-  titular: {
-    sq_candidato: string | null;
-    nome_completo: string;
-    nome_urna: string;
-    partido_sigla: string;
-    perfil_slug: string | null;
-    vinculo_perfil_status: string;
-  };
+interface CrosswalkProfile {
+  profile_slug: string;
+  office: string;
+  uf: string;
+  canonical_registration_sq: string | null;
+  registration_sqs: string[];
+  names: string[];
+  parties: string[];
+  statuses: string[];
+  publication_status: "active" | "quarantine_duplicate_active";
 }
 
 interface Documento {
@@ -217,22 +216,37 @@ function readCandidateRows(archivePath: string): Raw[] {
   );
 }
 
-function profileCrosswalk(snapshotPath: string): Map<string, ChapaSnapshot> {
+function profileCrosswalk(snapshotPath: string): Map<string, CrosswalkProfile> {
   const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
-    chapas: ChapaSnapshot[];
+    metadata: {
+      active_registration_count: number;
+      active_profile_count: number;
+      unresolved_count: number;
+    };
+    profiles: CrosswalkProfile[];
   };
+  if (snapshot.profiles.length !== snapshot.metadata.active_profile_count)
+    throw new Error("crosswalk e metadata divergem em perfis ativos");
+  const allRegistrations = snapshot.profiles.flatMap(
+    (profile) => profile.registration_sqs,
+  );
+  if (allRegistrations.length !== snapshot.metadata.active_registration_count)
+    throw new Error("crosswalk e metadata divergem em inscrições ativas");
+  const profiles = snapshot.profiles.filter(
+    (profile) => profile.office === "Governador",
+  );
+  if (snapshot.metadata.unresolved_count !== 0)
+    throw new Error("crosswalk contém inscrições sem mapeamento");
+  const registrations = profiles.flatMap((profile) => profile.registration_sqs);
+  if (new Set(registrations).size !== registrations.length)
+    throw new Error("crosswalk contém SQ de inscrição duplicada");
   return new Map(
-    snapshot.chapas
-      .filter(
-        (row) =>
-          row.cargo_titular === "Governador" &&
-          row.titular.sq_candidato &&
-          row.titular.perfil_slug,
-      )
-      .map((row) => [
-        candidateKey(row.uf as string, row.titular.sq_candidato as string),
-        row,
-      ]),
+    profiles.flatMap((profile) =>
+      profile.registration_sqs.map((sq) => [
+        candidateKey(profile.uf, sq),
+        profile,
+      ] as const),
+    ),
   );
 }
 
@@ -306,7 +320,15 @@ function main(): void {
     throw new Error(`Node 24 obrigatório; atual ${process.versions.node}`);
   }
   const candidateBytes = readFileSync(args.candidateArchive);
-  const candidates = readCandidateRows(args.candidateArchive);
+  const allCandidates = readCandidateRows(args.candidateArchive);
+  const crosswalk = profileCrosswalk(args.profileSnapshot);
+  const candidates = allCandidates.filter((row) =>
+    crosswalk.has(candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
+  );
+  if (candidates.length !== crosswalk.size)
+    throw new Error(
+      `crosswalk e pacote TSE divergem: crosswalk=${crosswalk.size}; pacote=${candidates.length}`,
+    );
   const candidateKeys = new Set(
     candidates.map((row) => candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
   );
@@ -415,18 +437,16 @@ function main(): void {
   }
 
   const profileSnapshotLabel = relative(resolve("."), args.profileSnapshot);
-  const crosswalk = profileCrosswalk(args.profileSnapshot);
   const resolvedAmbiguityByKey = new Map<
     string,
     { canonical: boolean; slug: string }
   >();
   for (const rows of groups.values()) {
     if (rows.length < 2) continue;
-    const linkedSlugs = rows.map(
-      (row) =>
-        crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO))?.titular
-          .perfil_slug ?? null,
+    const profiles = rows.map((row) =>
+      crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
     );
+    const linkedSlugs = profiles.map((profile) => profile?.profile_slug ?? null);
     const uniqueSlugs = new Set(linkedSlugs.filter(Boolean));
     const documentSignatures = rows.map((row) =>
       JSON.stringify(
@@ -441,7 +461,15 @@ function main(): void {
     const documentsEquivalent =
       documentSignatures.every((signature) => signature !== "[]") &&
       new Set(documentSignatures).size === 1;
-    if (uniqueSlugs.size !== 1 || !documentsEquivalent) continue;
+    const profile = profiles[0];
+    if (
+      uniqueSlugs.size !== 1 ||
+      !documentsEquivalent ||
+      !profile ||
+      profile.publication_status !== "active" ||
+      !profile.canonical_registration_sq
+    )
+      continue;
     const slug = [...uniqueSlugs][0] as string;
     const canonicalSq = rows
       .map(({ SQ_CANDIDATO }) => SQ_CANDIDATO)
@@ -462,9 +490,13 @@ function main(): void {
     if (
       previous &&
       (previous.uf !== row.SG_UF ||
-        normalize(previous.titular.nome_completo) !==
-          normalize(row.NM_CANDIDATO) ||
-        previous.titular.partido_sigla !== row.SG_PARTIDO)
+        (!previous.names.some(
+          (name) => normalize(name) === normalize(row.NM_CANDIDATO),
+        ) &&
+          !previous.names.some(
+            (name) => normalize(name) === normalize(row.NM_URNA_CANDIDATO),
+          )) ||
+        !previous.parties.includes(row.SG_PARTIDO))
     ) {
       throw new Error(
         `${row.SQ_CANDIDATO}: vínculo local diverge da identidade TSE atual`,
@@ -476,7 +508,10 @@ function main(): void {
       ? ambiguityResolution?.canonical
         ? ambiguityResolution.slug
         : null
-      : (previous?.titular.perfil_slug ?? null);
+      : previous?.publication_status === "active" &&
+          previous.canonical_registration_sq === row.SQ_CANDIDATO
+        ? previous.profile_slug
+        : null;
     const perfilEstado = slug
       ? "vinculado"
       : ambiguity
@@ -551,6 +586,11 @@ function main(): void {
   const duplicateAliases = inventario.filter(
     (row) => row.perfilEstado === "alias_duplicidade_oficial",
   ).length;
+  const uniqueProfiles = new Set(
+    candidates.map(
+      (row) => crosswalk.get(candidateKey(row.SG_UF, row.SQ_CANDIDATO))?.profile_slug,
+    ),
+  ).size;
   const candidatesWithDocuments = inventario.filter(
     (row) => row.documentoIds.length > 0,
   ).length;
@@ -580,6 +620,7 @@ function main(): void {
     medicoes: {
       ufs: UFS.length,
       candidaturasOficiais: inventario.length,
+      perfisUnicos: uniqueProfiles,
       gruposLogicos: groups.size,
       gruposAmbiguos: [...groups.values()].filter((rows) => rows.length > 1)
         .length,

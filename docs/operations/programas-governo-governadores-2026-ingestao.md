@@ -4,7 +4,7 @@
 
 O importador transforma o inventário oficial e os ZIPs estaduais do TSE em registros server-only para revisão. Ele nunca escreve `aprovado`. Uma candidatura sai como `em_revisao`, `perfil_local_ausente`, `sem_documento_oficial` ou `falha_de_extracao`.
 
-A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`. O `SQ_CANDIDATO` oficial pode ter 11 ou 12 dígitos. Nome, partido e slug não substituem a identidade eleitoral, mas integram o fingerprint que invalida uma decisão humana stale.
+A associação usa somente a chave `2026:GOVERNADOR:<UF>:<SQ_CANDIDATO>`, derivada de `data/candidate-roster-active-20260829.json` por `profiles.registration_sqs`. O `SQ_CANDIDATO` oficial pode ter 11 ou 12 dígitos. Nome, partido e slug não substituem a identidade eleitoral, mas integram o fingerprint que invalida uma decisão humana stale. Perfis `quarantine_duplicate_active`, como Laudicério Aguiar, não recebem `canonical_registration_sq` inventada nem entram na fila publicável; inscrições terminais fora do crosswalk, como Cleber Rabelo e Pedro Brito, permanecem fora da superfície.
 
 ## Comando
 
