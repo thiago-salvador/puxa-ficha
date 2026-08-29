@@ -1,0 +1,792 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002552498",
+    "slug": "danilo-soares",
+    "nomeUrna": "DANILO SOARES",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026CE60002552498_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002552498_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002552498:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002552498_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002552498_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "b9b60bd40c93675592114905a1f2fded5b72cbe159873db0453e071ba569cf3d",
+        "extractedTextSha256": "f5c4a36aa32491f27823ebc759781775ecf6fbc5ff931d6ffdbacb827a2a297c",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nCeará · 2026\nO Ceará inteiro.\n\nDanilo Soares Sousa\nCandidatura ao Governo do Estado do Ceará\nPartido Democrata · Eleições 2026"
+          },
+          {
+            "id": "1-a-tese-o-ceara-inteiro",
+            "titulo": "1 · A tese: o Ceará inteiro",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1 · A tese: o Ceará inteiro\nTodo plano precisa de uma ideia que o organize. A deste é simples: as políticas do Ceará\nsão pensadas a partir da capital, e as demais regiões recebem o que sobra. Não é retórica, é o que\nos dados oficiais mostram.\nO Ceará tem 184 municípios organizados em 14 regiões de planejamento. A Grande\nFortaleza concentra 63,7% de todo o PIB do estado (IPECE, 2025), e as outras onze regiões, onde vive\nboa parte do povo, dividem uma fração do restante.\nE isso aparece no bolso das pessoas. Em 2024, a renda por pessoa no Ceará foi de cerca\nde R$ 1.210 por mês, a segunda pior do Brasil (IBGE). Dentro do estado, a renda média da Grande\nFortaleza (R$ 2.609) é quase o dobro da do Cariri (R$ 1.570), e os vinte municípios de menor renda,\ntodos no interior, vivem com menos de um salário mínimo. Produzir muito e distribuir mal: é esse o\nnó que este plano quer enfrentar.\nNão se trata de opor interior e capital. Fortaleza também tem o seu “interior esquecido”\nnas periferias. Trata-se de um princípio de justiça: o Estado deve chegar com a mesma seriedade a\nquem vive perto e a quem vive longe do centro do poder.\nInteriorizar não é de esquerda nem de direita\nLevar saúde, escola técnica, emprego e segurança para onde o cearense de fato vive não é bandeira\nideológica, é gestão e é justiça territorial. Esta candidatura se coloca no centro que entrega: preservar\no que deu certo, corrigir o que falha e distribuir melhor pelo território o que hoje se concentra na\ncapital.\n\n2 · Como ler este plano\nO plano se apoia em quatro eixos: saúde, desenvolvimento, educação e segurança. Todos\ncom o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado.\nCada proposta é apresentada em três perguntas, sempre na mesma ordem, para que\nqualquer cidadão possa cobrar:\n• O problema — com dado oficial e verificável.\n• A meta — onde queremos chegar, de forma concreta.\n• Como se cobra — o indicador público que mede se cumprimos."
+          },
+          {
+            "id": "eixo-1-saude-que-chega-a-todas-as-regioes",
+            "titulo": "EIXO 1 · Saúde que chega a todas as regiões",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 1 · Saúde que chega a todas as regiões\nNenhuma desigualdade é mais cruel do que a da saúde. Em boa parte do interior, adoecer significa\nviajar horas até Fortaleza atrás de um especialista, de um exame ou de uma cirurgia. O Estado avançou\nna última década, o Programa Mais Acesso a Especialistas, as policlínicas regionais e o Telessaúde são\npassos reais, mas o mapa da saúde ainda é desenhado a partir da capital.\n1.1 · Especialista perto de casa\nProblema. O interior não segura médicos: falta estrutura, isolamento profissional e\ncarreira atrativa. O resultado é a viagem à capital para o que deveria ser resolvido na região.\nMeta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior\ncarência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas.\nComo se cobra. Número de especialistas fixados por região e razão de médicos por mil\nhabitantes.\n1.2 · Fila única, transparente e com prazo\nProblema. A fila da saúde é o problema que mais aflige o cearense, e o menos\ntransparente. Quando existe prazo público, o cidadão deixa de ser refém do balcão.\nMeta. Central de regulação com painel público em tempo real e prazo máximo por\nprocedimento, com a mesma régua para capital e interior.\nComo se cobra. Tempo médio de espera por consulta, exame e cirurgia, publicado por\nmacrorregião.\n1.3 · Atenção primária forte\nProblema. Cerca de 80% dos problemas de saúde se resolvem na atenção básica. Quando\nela é fraca, o hospital lota com o que poderia ser evitado, e no interior isso vira viagem e sofrimento.\nMeta. Expandir o Telessaúde para as unidades básicas do interior e reforçar as equipes\nde saúde da família, com foco em diabetes, hipertensão e saúde materno-infantil.\nComo se cobra. Cobertura de Telessaúde nas UBS do interior; redução da mortalidade\ninfantil; internações por causas evitáveis."
+          },
+          {
+            "id": "eixo-2-desenvolvimento-que-fixa-o-cearense-na-sua-terra",
+            "titulo": "EIXO 2 · Desenvolvimento que fixa o cearense na sua terra",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 2 · Desenvolvimento que fixa o cearense na sua terra\nO maior drama econômico do interior tem nome: êxodo. O jovem qualificado vai embora\nporque não há emprego que o segure. E não há emprego, em muitas regiões, porque a economia local\nproduz matéria-prima barata, não valor agregado, e depende demais do setor público.\nA dependência sufoca. No Sertão dos Crateús, quase 63% dos empregos formais estão\nna administração pública. Sem emprego privado, restam ao jovem o concurso ou a mudança. Onde\nhá indústria, a renda sobe (Eusébio, Horizonte, Maracanaú); onde só há agricultura e emprego público,\na renda fica no chão.\n2.1 · Agregar valor onde se produz\nProblema. O interior vende o couro, o leite, a fruta e o grão in natura e vê o valor — e o\nemprego — ficarem em outro lugar.\nMeta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios\nprodutores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária\nproporcional ao risco.\nComo se cobra. Número de agroindústrias operantes; empregos formais gerados fora da\nadministração pública, por região.\n2.2 · Incentivo com contrapartida\nProblema. O Ceará atrai grandes investimentos, mas os empregos de melhor\nremuneração muitas vezes vão para não residentes, e a cadeia de valor não se enraíza no território.\nMeta. Manter a atração de investimento como motor, mas condicionar incentivos a\ncontrapartidas verificáveis: emprego local, qualificação de cearenses e encadeamento com\nfornecedores regionais.\nComo se cobra. Percentual de mão de obra local nos projetos incentivados;\ninvestimentos industriais efetivados fora da Grande Fortaleza.\n2.3 · Água como base da produção\nProblema. No semiárido, sem segurança hídrica não há renda no campo. E a dependência\ndo carro-pipa historicamente vira instrumento de troca política, não solução.\nMeta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas\nbarragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção.\nComo se cobra. Comunidades com autonomia hídrica; redução da dependência de carropipa; renda das famílias atendidas.\n2.4 · Indústria onde o Ceará precisa dela\nPROPOSTA-ÂNCORA. O Ceará sabe atrair indústria, mas não sabe distribuí-la. A Grande\nFortaleza concentra 75,4% do Valor Adicionado da Indústria do estado. Em dez das quatorze regiões,"
+          },
+          {
+            "id": "o-emprego-depende-fortemente-do-setor-publico-sem-industria-privada-o-jo",
+            "titulo": "o emprego depende fortemente do setor público. Sem indústria privada, o jovem só tem concurso ou",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "o emprego depende fortemente do setor público. Sem indústria privada, o jovem só tem concurso ou\nmudança e, no entanto, é justamente nessas regiões que a mão de obra está mais disponível.\nO que o Ceará já provou. Quando o setor calçadista foi atraído para o interior nos anos\n1990, transformou regiões: hoje o Ceará fabrica um em cada três calçados do Brasil, com Sobral como\nmaior polo do país. Indústria no interior funciona e fixa gente na terra, mas essa interiorização parou\nnos polos de sempre. O Fundo de Desenvolvimento Industrial (FDI) já tem, em lei, a missão de\ninteriorizar; na prática, a concentração continua.\nMeta. Fazer da localização da indústria uma decisão de política pública — dirigindo a\natração para as regiões de maior mão de obra ociosa e menor densidade industrial, com logística\npreparando o terreno.\nO que fazemos:\n• Incentivo escalonado por região. Quem se instala na Grande Fortaleza recebe o benefício\npadrão do FDI; quem vai para regiões de baixa densidade recebe o incentivo máximo, regra\npública, não negociação caso a caso.\n• A indústria certa para cada lugar. Dirigir a atração para cadeias cuja matéria-prima já está na\nregião, agroindústria e beneficiamento de couro nos sertões, fruta no Jaguaribe, calçados em\nnovas cidades.\n• Logística casada com a atração. Distritos com terreno pronto, corredores pavimentados e\nportos secos regionais (a exemplo do Porto Seco de Quixeramobim), com planejamento\nindustrial e logístico andando juntos.\n• Contrapartida de emprego local. Todo incentivo vinculado a metas verificáveis de contratação\nde trabalhadores da região.\n• Qualificação casada com a vaga. Formar a mão de obra local antes da instalação, junto ao\nSistema S e às escolas profissionalizantes.\nComo se cobra. Plantas instaladas fora da Grande Fortaleza; empregos industriais gerados no interior;\npercentual de mão de obra local; km de corredores pavimentados; evolução das regiões de menor\ndensidade industrial no VAB da Indústria do estado."
+          },
+          {
+            "id": "eixo-3-educacao-que-forma-para-a-vida-e-para-ficar",
+            "titulo": "EIXO 3 · Educação que forma para a vida — e para ficar",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 3 · Educação que forma para a vida — e para ficar\nO Ceará é referência nacional em alfabetização e nos anos iniciais — um patrimônio\nconstruído em décadas, no regime de colaboração com os municípios, que não se joga fora. Nossa\nposição é clara: preservar o que deu certo e corrigir o que falha. E o que falha aparece com força no\ninterior, na transição para o ensino médio e na desconexão entre a escola e a possibilidade de\nconstruir a vida sem precisar ir embora.\n3.1 · Ensino técnico com a cara de cada região\nProblema. Um currículo técnico pensado para a capital, replicado sem adaptação, não\nconversa com a economia local, e não fixa o jovem.\nMeta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura\ne agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri;\nenergias renováveis no Litoral Oeste.\nComo se cobra. Percentual de egressos do ensino técnico inseridos no mercado local;\ncursos alinhados à vocação regional.\n3.2 · Valorizar o professor e enfrentar a evasão no ensino médio\nProblema. O legado educacional cearense depende do professor — e a evasão no ensino\nmédio ameaça justamente o que temos de melhor.\nMeta. Combinar valorização docente com programas de recomposição de aprendizagem\ne permanência na transição para o ensino médio.\nComo se cobra. Taxa de evasão e distorção idade-série no ensino médio; evolução do\nIDEB do ensino médio no interior.\n3.3 · Saúde mental na escola — de alunos e professores\nProblema. O adoecimento mental de estudantes e docentes é uma epidemia silenciosa,\ne no interior encontra ainda menos rede de apoio.\nMeta. Estruturar apoio psicológico regionalizado para escolas, tirando o diagnóstico das\ncostas do professor e criando fluxo entre escola, saúde e assistência social.\nComo se cobra. Estudantes e professores atendidos; clima escolar."
+          },
+          {
+            "id": "eixo-4-seguranca-com-inteligencia-e-prevencao",
+            "titulo": "EIXO 4 · Segurança com inteligência e prevenção",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 4 · Segurança com inteligência e prevenção\nSegurança é a maior angústia do cearense, e este plano a trata com seriedade e equilíbrio\n— nem passar a mão na cabeça do crime, nem transformar o estado num campo de batalha. A\nresposta que funciona combina três frentes: inteligência para asfixiar financeiramente as facções,\nvalorização do policial e prevenção séria da juventude — a peça que quase todos ignoram.\nA violência, antes concentrada na Região Metropolitana, avança sobre o interior e o\nlitoral. Regiões turísticas e cidades do interior já sentem o crescimento das organizações criminosas.\nÉ preciso enxergar essa expansão antes que vire crise, em vez de reagir sempre tarde e só na capital.\n4.1 · Inteligência contra a estrutura financeira do crime\nProblema. Operações de confronto isoladas deslocam o problema, mas não desmontam\na facção. O que enfraquece o crime organizado é atacar seu dinheiro.\nMeta. Priorizar inteligência, investigação financeira e integração de dados entre forças\nestaduais e federais para asfixiar as finanças das facções, em vez da lógica de “guerra”.\nComo se cobra. Ativos criminais recuperados; evolução da taxa de esclarecimento de\nhomicídios.\n4.2 · Prevenção da juventude\nProblema. Onde faltam escola, esporte, cultura e primeiro emprego, a facção recruta. A\nprevenção é a política de segurança mais barata e mais ignorada.\nMeta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis,\noferecendo à juventude uma alternativa concreta ao recrutamento.\nComo se cobra. Jovens atendidos em programas de prevenção; criminalidade juvenil nos\nterritórios prioritários.\n4.3 · Valorizar o policial e a presença do Estado no interior\nProblema. O policial da ponta trabalha sem estrutura, e muitos municípios do interior\nmal veem a presença do Estado.\nMeta. Investir em condições de trabalho, tecnologia e presença territorial permanente,\ncom atenção às regiões historicamente descobertas.\nComo se cobra. Presença policial por região; tempo médio de resposta a ocorrências no\ninterior."
+          },
+          {
+            "id": "o-metodo-um-governo-que-se-deixa-cobrar",
+            "titulo": "O método: um governo que se deixa cobrar",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "O método: um governo que se deixa cobrar\nUma candidatura que se apresenta como nova precisa provar que é diferente também\nna forma de governar. Três compromissos de método atravessam todo este plano:\n• Metas públicas e cobráveis. Cada proposta traz um indicador. O cidadão pode acompanhar, ano\na ano, se o compromisso está sendo cumprido.\n• Olhar territorial. As políticas serão planejadas a partir das 14 regiões, com recursos alocados\nsegundo a necessidade real, não segundo o peso político.\n• Transparência e independência. Sem favor a devolver, este governo pode priorizar o interesse\npúblico e a prestação de contas acima dos acordos de sempre."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "25994496d5e547bdb9a04ba8c44aead60de6f474a87eddac5f2badba59bd93c1"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "f66ebf6d205fcf6bb35066ca65fc064d703f51e469098f58b256cbb0a0263c60"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "73b7ef9e1513d20a40050f48753d88ee0b720721b10aa01d238df52a50ac0567"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "f62ae85bdb6c01976e87344f256c31307ac101fec9984f6967a7314142e4f9ab"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "82972a4dffb5343f0afa1de036e08bb1bd9cd6eb0444e6260ccbba4c863ecd35"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "ecf5172bc96eba46f46288a3d124413ee446809971f745a57feb1d5ba299360f"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "6ce4321eafd3464e14ade7104dcc279ad1882600f986e15b3afaa3da8e9dd16e"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "2077225035a053a5d4b1215545a1babc72761c5953733145bed1de8794492c5a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Todos com o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado. Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas. Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior. Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco. Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção. Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste. Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento.",
+    "frases": [
+      {
+        "texto": "Todos com o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 2,
+            "trecho": "Todos com o mesmo recorte: o que muda para quem vive longe da capital, em qualquer região do estado."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 3,
+            "trecho": "Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 3,
+            "trecho": "Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 4,
+            "trecho": "Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 4,
+            "trecho": "Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 6,
+            "trecho": "Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste."
+          }
+        ]
+      },
+      {
+        "texto": "Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 7,
+            "trecho": "Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "especialistas-regionais",
+        "titulo": "Especialistas regionais",
+        "descricao": "A proposta prevê fixação de especialistas em regiões de maior carência.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 3,
+            "trecho": "Meta. Criar uma bolsa estadual de fixação para especialistas nas regiões de maior carência, vinculada a metas de permanência, e ampliar as residências médicas regionalizadas."
+          }
+        ]
+      },
+      {
+        "id": "regulacao-da-saude",
+        "titulo": "Regulação da saúde",
+        "descricao": "A proposta prevê uma central de regulação com painel público.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 3,
+            "trecho": "Meta. Central de regulação com painel público em tempo real e prazo máximo por procedimento, com a mesma régua para capital e interior."
+          }
+        ]
+      },
+      {
+        "id": "agroindustrias-regionais",
+        "titulo": "Agroindústrias regionais",
+        "descricao": "A proposta prevê apoio a pequenas agroindústrias nos municípios produtores.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 4,
+            "trecho": "Meta. Apoiar pequenas agroindústrias e unidades de beneficiamento nos municípios produtores, respeitando a vocação de cada região, com crédito orientado e simplificação sanitária proporcional ao risco."
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-hidrica",
+        "titulo": "Infraestrutura hídrica",
+        "descricao": "A proposta prevê infraestrutura hídrica permanente em zonas rurais vulneráveis.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 4,
+            "trecho": "Meta. Priorizar infraestrutura hídrica permanente (poços, cisternas, reúso, pequenas barragens) nas zonas rurais mais vulneráveis, com capacitação para que a água vire produção."
+          }
+        ]
+      },
+      {
+        "id": "ensino-profissionalizante",
+        "titulo": "Ensino profissionalizante",
+        "descricao": "A proposta prevê alinhamento das escolas profissionalizantes às vocações regionais.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 6,
+            "trecho": "Meta. Alinhar as escolas profissionalizantes à vocação de cada região: caprinovinocultura e agroindústria nos sertões; fruticultura no Jaguaribe; turismo e hotelaria no Litoral Norte e no Cariri; energias renováveis no Litoral Oeste."
+          }
+        ]
+      },
+      {
+        "id": "prevencao-da-juventude",
+        "titulo": "Prevenção da juventude",
+        "descricao": "A proposta prevê integração de políticas em territórios vulneráveis.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002552498:01",
+            "pagina": 7,
+            "trecho": "Meta. Integrar segurança, educação, assistência e esporte em territórios vulneráveis, oferecendo à juventude uma alternativa concreta ao recrutamento."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:34:27.368Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:37:12.003Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de um único recorte coerente do plano."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:1:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Frase única totalmente coberta pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, apenas reproduz a meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta (fixação de especialistas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:2:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos citados, apenas 'prazo máximo' genérico."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta (regulação da saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:3:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (agroindústrias)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:4:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (infraestrutura hídrica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:5:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente (alinhamento do ensino técnico às vocações regionais)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:6:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente de prevenção da juventude, ainda que combine várias políticas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:frase:7:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (fixação de especialistas)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:especialistas-regionais:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (regulação da saúde)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:regulacao-da-saude:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (agroindústrias)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:agroindustrias-regionais:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (infraestrutura hídrica)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:infraestrutura-hidrica:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área (ensino profissionalizante)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:ensino-profissionalizante:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:suporte",
+        "verdict": "yes",
+        "reason": "Paráfrase fiel da meta descrita na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (prevenção da juventude)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002552498:tema:prevencao-da-juventude:documentos:CE:60002552498:01:cobertura",
+        "verdict": "yes",
+        "reason": "A cláusula central da afirmação está integralmente coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002552498",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002552498:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 24339,
+          "cached_input_tokens": 2816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2612,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27932,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 26232,
+          "output_tokens_details": {
+            "thinking_tokens": 1320
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27932,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 26232,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27932,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27932
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3956544
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "b9b60bd40c93675592114905a1f2fded5b72cbe159873db0453e071ba569cf3d",
+    "extractedTextSha256": "f5c4a36aa32491f27823ebc759781775ecf6fbc5ff931d6ffdbacb827a2a297c",
+    "documentCount": 1,
+    "documentSetSha256": "92c4294926ef74678106807f8f8d7be143a9dd53cd3f3b77ffbdaad0a144733f",
+    "contentSha256": "f4d9df8007925eb495ebdb65da674f27c234688a5808737c4531c988a48f7e4e"
+  }
+}

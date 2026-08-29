@@ -1,0 +1,632 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002548565",
+    "slug": "francisco-jurity",
+    "nomeUrna": "PROFESSOR JURITY",
+    "partido": "DC",
+    "arquivoNome": "2026PI180002548565_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002548565_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002548565:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002548565_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002548565_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "e152f36e4b1b957aba0544655eee11641b97ba47d3a7b3f2b2fc14647582790e",
+        "extractedTextSha256": "b5b5a6a81b753500b1fcc20a874c718cb44aaa7e6b8671503786d9f4e618a86d",
+        "paginas": 2,
+        "secoes": [
+          {
+            "id": "plano-de-governo-resumido",
+            "titulo": "PLANO DE GOVERNO RESUMIDO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO RESUMIDO\nCANDIDATO: FRANCISCO JOSÉ MARTINS JURITI\nCARGO: GOVERNADOR DO ESTADO DO PIAUÍ\nPARTIDO: DEMOCRACIA CRISTÃ - DC 27\nSLOGAN: DEMOCRACIA CRISTÃ 27 - FÉ NO PIAUÍ\n\n1. VISÃO DE GOVERNO\nConstruir um Piauí mais justo, próspero e humano. Um governo de Fé em Deus, na Família e no Povo\nPiauiense, com gestão eficiente, transparente e voltada para quem mais precisa.\n\n2. DIRETRIZES E PROPOSTAS PRIORITÁRIAS\n\nSAÚDE QUE CUIDA\n1. Ampliar e equipar hospitais regionais e UPAs\n2. Fortalecer a Estratégia Saúde da Família nos 224 municípios\n3. Programa de combate às filas de cirurgias e exames\n\nEDUCAÇÃO QUE TRANSFORMA\n1. Escola em tempo integral e ensino técnico em todas as regiões\n2. Valorização dos professores e apoio às universidades estaduais\n3. Programa \"Fé no Futuro\" - bolsas e transporte escolar\n\nSEGURANÇA E PAZ\n1. Reaparelhamento e valorização da Polícia Militar e Civil\n2. Mais policiamento nas cidades e zona rural\n3. Programas de prevenção e combate às drogas\n\nEMPREGO E DESENVOLVIMENTO\n1. Incentivo ao agronegócio, agricultura familiar e indústria\n2. Atração de novas empresas e apoio ao pequeno empreendedor\n3. Obras de infraestrutura: estradas, água, energia e internet\n\nGESTÃO PÚBLICA E ÉTICA"
+          },
+          {
+            "id": "1-transparencia-total-e-portal-da-transparencia-reforcado",
+            "titulo": "1. Transparência total e portal da transparência reforçado",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1. Transparência total e portal da transparência reforçado\n2. Governo digital para desburocratizar serviços\n3. Parceria com prefeitos e respeito aos municípios\n\n3. COMPROMISSO\nGovernar com responsabilidade, ouvindo o povo e cuidando do dinheiro público. Trabalhar para que o Piauí\nvolte a crescer com FÉ, TRABALHO E ESPERANÇA.\n\nTeresina-PI, 27 de Julho de 2026.\nFRANCISCO JOSÉ MARTINS JURITI"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "004748a38450452c67831a9f830166c77ebc36a8734d90394da0e3de5bf4ec5c"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "ca508579f2efb8137867b80824866297b2e289ee116046eda4d77f690acd1295"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe ampliar e equipar hospitais regionais e UPAs, definindo essa medida como uma ação de estrutura e equipamento hospitalar. Também propõe fortalecer a Estratégia Saúde da Família nos 224 municípios, indicando a abrangência municipal dessa ação. O programa propõe um programa de combate às filas de cirurgias e exames, com referência específica a esses dois tipos de atendimento. Na educação, o programa propõe escola em tempo integral como uma medida descrita para o setor. O programa propõe ensino técnico em todas as regiões, estabelecendo abrangência regional para essa oferta. Na segurança, propõe mais policiamento nas cidades e zona rural, contemplando esses dois espaços territoriais. O programa propõe programas de prevenção às drogas, apresentando uma frente específica de prevenção relacionada ao tema.",
+    "frases": [
+      {
+        "texto": "O programa propõe ampliar e equipar hospitais regionais e UPAs, definindo essa medida como uma ação de estrutura e equipamento hospitalar.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Ampliar e equipar hospitais regionais e UPAs"
+          }
+        ]
+      },
+      {
+        "texto": "Também propõe fortalecer a Estratégia Saúde da Família nos 224 municípios, indicando a abrangência municipal dessa ação.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Fortalecer a Estratégia Saúde da Família nos 224 municípios"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe um programa de combate às filas de cirurgias e exames, com referência específica a esses dois tipos de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Programa de combate às filas de cirurgias e exames"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe escola em tempo integral como uma medida descrita para o setor.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Escola em tempo integral"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe ensino técnico em todas as regiões, estabelecendo abrangência regional para essa oferta.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "ensino técnico em todas as regiões"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, propõe mais policiamento nas cidades e zona rural, contemplando esses dois espaços territoriais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Mais policiamento nas cidades e zona rural"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe programas de prevenção às drogas, apresentando uma frente específica de prevenção relacionada ao tema.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Programas de prevenção e combate às drogas"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "hospitais-e-upas",
+        "titulo": "Hospitais e UPAs",
+        "descricao": "Ampliação e equipamento de hospitais regionais e UPAs.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Ampliar e equipar hospitais regionais e UPAs"
+          }
+        ]
+      },
+      {
+        "id": "saude-da-familia",
+        "titulo": "Saúde da Família",
+        "descricao": "Fortalecimento da Estratégia Saúde da Família nos 224 municípios.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Fortalecer a Estratégia Saúde da Família nos 224 municípios"
+          }
+        ]
+      },
+      {
+        "id": "filas-de-cirurgias-e-exames",
+        "titulo": "Filas de cirurgias e exames",
+        "descricao": "Programa de combate às filas de cirurgias e exames.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Programa de combate às filas de cirurgias e exames"
+          }
+        ]
+      },
+      {
+        "id": "escola-em-tempo-integral",
+        "titulo": "Escola em tempo integral",
+        "descricao": "Proposta de escola em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "Escola em tempo integral"
+          }
+        ]
+      },
+      {
+        "id": "ensino-tecnico-regional",
+        "titulo": "Ensino técnico regional",
+        "descricao": "Oferta de ensino técnico em todas as regiões.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002548565:01",
+            "pagina": 1,
+            "trecho": "ensino técnico em todas as regiões"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T19:38:09.975Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:41:56.997Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação e o equipamento de hospitais regionais e UPAs."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de infraestrutura hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:1:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as ações de ampliar e equipar e os dois tipos de estabelecimento citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o fortalecimento da estratégia nos 224 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 224 municípios aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e sua abrangência sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre a Estratégia Saúde da Família."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:2:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre tanto a ação de fortalecimento quanto sua abrangência nos 224 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o programa de combate às filas de cirurgias e exames."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve o conteúdo do documento, sem avaliação ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "Cirurgias e exames integram a mesma proposta coerente de combate às filas de atendimento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:3:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o programa, o combate às filas e os atendimentos de cirurgias e exames."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A página situa a medida na seção de educação e a evidência sustenta a escola em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve de modo neutro a medida apresentada no setor de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:4:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e a seção da página cobrem a medida e sua vinculação ao setor educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o ensino técnico em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e sua abrangência sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ensino técnico regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:5:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a oferta de ensino técnico e sua abrangência em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A página situa a proposta na seção de segurança e a evidência sustenta os dois espaços territoriais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "Cidades e zona rural são âmbitos territoriais da mesma proposta de policiamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:6:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e a seção da página cobrem o policiamento, as cidades, a zona rural e a área de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A prevenção às drogas afirmada está explicitamente incluída na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve de modo neutro a frente de prevenção mencionada no documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, a prevenção relacionada às drogas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:frase:7:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação sobre programas de prevenção às drogas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação e o equipamento de hospitais regionais e UPAs."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne ações e estabelecimentos de uma única proposta hospitalar coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:hospitais-e-upas:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as ações e os estabelecimentos mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o fortalecimento da estratégia nos 224 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A quantidade de 224 municípios aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente sobre a Estratégia Saúde da Família."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:saude-da-familia:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ação, a estratégia e a abrangência de 224 municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o programa de combate às filas de cirurgias e exames."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação reproduz de modo neutro a proposta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "Cirurgias e exames integram a mesma proposta coerente de combate às filas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:filas-de-cirurgias-e-exames:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o programa, as filas, as cirurgias e os exames."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a proposta de escola em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:escola-em-tempo-integral:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente o ensino técnico em todas as regiões."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ensino técnico regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002548565:tema:ensino-tecnico-regional:documentos:PI:180002548565:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o ensino técnico e sua abrangência em todas as regiões."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002548565",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002548565:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 32705,
+          "cached_input_tokens": 2816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 12352,
+          "reasoning_output_tokens": 161
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "e152f36e4b1b957aba0544655eee11641b97ba47d3a7b3f2b2fc14647582790e",
+    "extractedTextSha256": "b5b5a6a81b753500b1fcc20a874c718cb44aaa7e6b8671503786d9f4e618a86d",
+    "documentCount": 1,
+    "documentSetSha256": "fce4faf3b7c504d6adefe69b25f0cced9303669210eb949379474fa5da17b2c2",
+    "contentSha256": "b8ad199c3ceecc794eb8ad8f94dae94bb0c245fe4a5f4df963636f8118c6241a"
+  }
+}

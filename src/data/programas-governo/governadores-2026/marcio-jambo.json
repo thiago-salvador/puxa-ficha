@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AL",
+    "sqCandidato": "20002552502",
+    "slug": "marcio-jambo",
+    "nomeUrna": "MÁRCIO JAMBO",
+    "partido": "DEMOCRATA",
+    "arquivoNome": "2026AL20002552502_01.pdf",
+    "arquivoNoPacote": "AL/2026AL20002552502_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AL:20002552502:01",
+      "fonte": {
+        "arquivoNome": "2026AL20002552502_01.pdf",
+        "arquivoNoPacote": "AL/2026AL20002552502_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AL.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "3ff42d2562fcac3d5e7874b8d685395a78472858d5365cd6531253b114a8396d",
+        "extractedTextSha256": "c8a6689ba8767b2780f54f37bfaa716f4185d73acbb22dfb89e959e8746124d3",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "partido-democrata-35-plano-de-governo-2027-2030",
+            "titulo": "PARTIDO DEMOCRATA 35 PLANO DE GOVERNO 2027–2030",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PARTIDO DEMOCRATA 35 PLANO DE GOVERNO 2027–2030\nMARCIO JAMBO Candidato ao Governo do Estado de Alagoas\nEleições 2026\nAPRESENTAÇÃO O presente Plano de Governo foi elaborado a partir da\nrealidade\neconômica, social, cultural e ambiental do Estado de Alagoas, tendo como finalidade\nestabelecer diretrizes e compromissos para uma gestão moderna, eficiente,\ntransparente e voltada para as necessidades da população. Nossa proposta de\ngoverno nasce do compromisso com o desenvolvimento humano, a valorização das\npessoas e a redução das desigualdades entre as diversas regiões do Estado. Como\ncandidato oriundo do interior de Alagoas, assumimos o compromisso de aproximar\no Governo Estadual de todos os municípios, democratizando as relações\ninstitucionais, fortalecendo o diálogo permanente com prefeitos, vereadores,\n\nDEMOCRATA\n35\n\nlideranças comunitárias, setor produtivo e toda a sociedade civil. Nossa\n\nadministração será fundamentada nos princípios da ética, eficiência, inovação,\ntransparência, responsabilidade fiscal, desenvolvimento sustentável e participação\npopular. Os principais eixos deste Plano de Governo são: ■ Modernização da gestão\npública; ■ Segurança pública baseada em inteligência e tecnologia; ■ Saúde\nhumanizada e eficiente; ■ Educação transformadora; ■ Desenvolvimento econômico\nsustentável; ■ Inclusão social; ■ Mobilidade urbana e rural; ■ Transformação digital; ■\nValorização da cultura e do esporte; ■ Desenvolvimento regional integrado.\n\n1"
+          },
+          {
+            "id": "saude-a-saude-sera-tratada-como-prioridade-absoluta-do-governo-nossa-ges",
+            "titulo": "SAÚDE A saúde será tratada como prioridade absoluta do Governo. Nossa gestão trabalhará",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE A saúde será tratada como prioridade absoluta do Governo. Nossa gestão trabalhará\npara reduzir filas de\natendimento, ampliar o acesso aos serviços especializados, investir em tecnologia e\nfortalecer a prevenção de\ndoenças. Pretendemos construir um sistema de saúde mais eficiente, moderno e humanizado,\ngarantindo\natendimento digno tanto aos alagoanos quanto aos visitantes do Estado. Propostas ■\nConstrução de um novo\nHospital Evangélico para atendimento da população alagoana e dos turistas; ■ Implantação\nde Hospital\nespecializado no atendimento à pessoa idosa; ■ Informatização completa da rede estadual de\nsaúde; ■ Integração\neletrônica dos prontuários médicos; ■ Ampliação do uso da telemedicina; ■ Fortalecimento\nda atenção básica; ■\nAmpliação dos programas preventivos; ■ Prioridade para investimentos em tecnologia\nmédica; ■ Programas\n\nDEMOCRATA\n35\n\npermanentes de promoção da qualidade de vida.\n\nEDUCAÇÃO A educação será o principal instrumento de transformação social e\ndesenvolvimento econômico.\nNossa proposta busca formar cidadãos preparados para os desafios do século XXI,\nvalorizando professores,\nfortalecendo o ensino técnico e incentivando inovação, ciência e empreendedorismo.\nPropostas ■ Ampliação e\nconstrução de Escolas Militares; ■ Revisão do modelo de progressão automática,\nassegurando aprendizagem\nefetiva; ■ Valorização salarial e profissional dos professores; ■ Ampliação do tempo\ndestinado ao planejamento\npedagógico; ■ Implantação de programas de bonificação por desempenho; ■ Expansão das\nEscolas Técnicas\nEstaduais; ■ Criação do Instituto Estadual de Robótica e Inteligência Artificial; ■ Inserção do\nempreendedorismo na\neducação básica; ■ Programa Jovem Aprendiz em parceria com empresas; ■ Incentivo às\náreas de ciência,\ntecnologia e inovação.\n\n2"
+          },
+          {
+            "id": "seguranca-publica-a-seguranca-publica-sera-baseada-em-inteligencia-tecno",
+            "titulo": "SEGURANÇA PÚBLICA A segurança pública será baseada em inteligência, tecnologia,",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA A segurança pública será baseada em inteligência, tecnologia,\nvalorização profissional e\nintegração das forças policiais. O objetivo é combater o crime organizado, reduzir os índices\nde violência e oferecer\nmaior sensação de segurança à população. Propostas ■ Contratação de novos policiais\nmilitares, civis e bombeiros;\n■ Modernização dos equipamentos das forças de segurança; ■ Ampliação do uso de drones,\nmonitoramento\neletrônico e inteligência artificial; ■ Redução do estoque de inquéritos policiais e processos\ninvestigativos em até\ntrês anos; ■ Fortalecimento da Polícia Científica; ■ Ampliação da presença policial em todas\nas regiões do Estado; ■\nImplantação do Programa Pindorama para integração tecnológica da segurança pública.\nDESENVOLVIMENTO SOCIAL O Governo Estadual deve estar presente em todas as regiões\nde Alagoas. Nossa\nproposta é aproximar a administração estadual da população, promovendo inclusão social e\nfortalecimento dos\n\nDEMOCRATA\n35\n\nmunicípios. Propostas ■ Implantação do programa Governo Itinerante, realizando dois dias\nde governo por mês em\ncada região do Estado; ■ Fortalecimento da cooperação entre Estado e municípios; ■ Criação\nde programas de\napoio às famílias de pessoas com Transtorno do Espectro Autista (TEA); ■ Ampliação das\npolíticas públicas de\ninclusão social.\n\n3"
+          },
+          {
+            "id": "esporte-e-lazer-o-esporte-e-instrumento-de-saude-cidadania-e-inclusao-pr",
+            "titulo": "ESPORTE E LAZER O esporte é instrumento de saúde, cidadania e inclusão. Propostas ■",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "ESPORTE E LAZER O esporte é instrumento de saúde, cidadania e inclusão. Propostas ■\nIncentivo a todas as\nmodalidades esportivas; ■ Construção e recuperação de equipamentos esportivos; ■\nProgramas de incentivo ao\nesporte escolar; ■ Ampliação das atividades esportivas para idosos e pessoas com\ndeficiência.\nCULTURA A cultura será valorizada como patrimônio histórico e instrumento de\ndesenvolvimento econômico.\nPropostas ■ Incentivo às manifestações culturais em todas as regiões do Estado; ■\nFortalecimento dos artistas\nlocais; ■ Desenvolvimento do Programa Pindorama voltado para cultura e identidade\nregional; ■ Incentivo ao turismo\ncultural.\nDESENVOLVIMENTO ECONÔMICO O desenvolvimento econômico deverá ocorrer de forma\nsustentável,\npromovendo geração de emprego, renda e oportunidades. Propostas ■ Estudo para criação\ndo Banco do Estado de\n\nDEMOCRATA\n35\n\nAlagoas; ■ Implantação do Programa Pindorama para desenvolvimento regional; ■ Incentivo\nà agricultura familiar e\nao agronegócio; ■ Estímulo à inovação tecnológica; ■ Apoio ao empreendedorismo; ■\nDesburocratização dos\nserviços públicos para atração de investimentos.\n\n4"
+          },
+          {
+            "id": "turismo-alagoas-possui-enorme-potencial-turistico-que-deve-ser-explorado",
+            "titulo": "TURISMO Alagoas possui enorme potencial turístico que deve ser explorado de forma",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "TURISMO Alagoas possui enorme potencial turístico que deve ser explorado de forma\nsustentável. Propostas ■\nIncentivo ao turismo cultural, histórico, ecológico e religioso; ■ Desenvolvimento da\ninfraestrutura turística; ■\nAmpliação das opções de lazer para idosos; ■ Integração entre esporte, turismo e cultura.\nMOBILIDADE URBANA Uma mobilidade eficiente melhora a qualidade de vida e impulsiona o\ndesenvolvimento\neconômico. Propostas ■ Incentivo ao uso da bicicleta em todo o Estado; ■ Expansão da\nmalha cicloviária; ■\nModernização do transporte público; ■ Apoio ao transporte alternativo regulamentado; ■\nInvestimentos na\nmobilidade urbana e rural.\nMODERNIZAÇÃO DA GESTÃO O Governo será conduzido com eficiência, inovação e\ntransparência. Propostas ■\nDigitalização dos serviços públicos; ■ Uso intensivo de tecnologia em toda a administração;\n■ Implantação do\n\nDEMOCRATA\n35\n\nPrograma Pindorama para integração da gestão pública; ■ Simplificação de processos\nadministrativos; ■ Redução\nda burocracia.\n\n5"
+          },
+          {
+            "id": "transformacao-digital-a-tecnologia-sera-utilizada-como-ferramenta-para-a",
+            "titulo": "TRANSFORMAÇÃO DIGITAL A tecnologia será utilizada como ferramenta para aproximar o",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "TRANSFORMAÇÃO DIGITAL A tecnologia será utilizada como ferramenta para aproximar o\nGoverno da\npopulação. Propostas ■ Implantação do Governo Digital; ■ Expansão dos serviços públicos\neletrônicos; ■ Integração\ndos bancos de dados estaduais; ■ Ampliação do Programa Pindorama como plataforma\ntecnológica do Estado.\nPLANEJAMENTO URBANO O crescimento das cidades deve ocorrer de forma organizada,\nsustentável e\nambientalmente responsável. Propostas ■ Incentivo à redução da poluição urbana; ■\nPlanejamento regional\nintegrado; ■ Ampliação das áreas verdes; ■ Desenvolvimento do Programa Pindorama para\nplanejamento territorial.\nHABITAÇÃO A política habitacional buscará ampliar o acesso à moradia digna. Propostas ■\nEstudo para criação de\nlinhas de financiamento habitacional por meio do futuro Banco do Estado; ■ Ampliação das\nparcerias para\n\nDEMOCRATA\n35\n\nconstrução de moradias populares; ■ Regularização fundiária; ■ Implantação do Programa\nPindorama voltado ao\ndesenvolvimento habitacional.\n\n6"
+          },
+          {
+            "id": "consideracoes-finais-este-plano-de-governo-representa-o-compromisso-de-c",
+            "titulo": "CONSIDERAÇÕES FINAIS Este Plano de Governo representa o compromisso de construir um",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "CONSIDERAÇÕES FINAIS Este Plano de Governo representa o compromisso de construir um\nAlagoas mais\nmoderno, seguro, próspero e inclusivo. Nossa gestão buscará promover desenvolvimento\neconômico com\nresponsabilidade social, fortalecer os serviços públicos, valorizar os servidores, incentivar a\ninovação e aproximar o\nGoverno da população. Nosso compromisso é governar para todos os alagoanos,\nrespeitando as diferenças\nregionais, fortalecendo os municípios e promovendo oportunidades para que Alagoas\nalcance um novo ciclo de\ncrescimento, justiça social e desenvolvimento sustentável.\n\nDEMOCRATA\n35\n\n7"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6be94064fdbfca81aec4fa79df28dada12e1fc90b291f33663c74b616c8cab33"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "c0dc9941d691f868ed52902bc183b8e5d64391533f32924eb45215807441bf06"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "a2c71a48773ca75d2b2a5bc88dcf8c2aba1a9d24bdeb9dcfbc935b67a75195a1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "1fc98f5bbb2ad25285af8148e630daeb32b5f7efc37143ce2a064e7394d50d75"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "9c658f48495198e634f8d1564997a59d1763dcabfeabdd228d786e92d4ef92a2"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "bccc2cd26e71d43b51b95f546f1ce34b72ff7d0377ccb04848548e3278762e6f"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "7a815b58e9ddb8721005d694c3c07331750e1014700ada251cdb831aa34bce03"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Na saúde, o plano apresenta a informatização completa da rede estadual de saúde entre as propostas listadas para o setor. No mesmo eixo, o documento registra a integração eletrônica dos prontuários médicos como uma proposta da rede estadual de saúde. Na educação, o programa propõe a expansão das Escolas Técnicas Estaduais, conforme a lista de propostas do eixo educacional. Na segurança pública, o plano prevê a ampliação do uso de drones, monitoramento eletrônico e inteligência artificial, conforme a lista de propostas do setor. Para a mobilidade urbana, o documento propõe a expansão da malha cicloviária, incluída na lista de propostas sobre deslocamento urbano. Na transformação digital, o programa prevê a implantação do Governo Digital, apresentada como a primeira proposta desse eixo.",
+    "frases": [
+      {
+        "texto": "Na saúde, o plano apresenta a informatização completa da rede estadual de saúde entre as propostas listadas para o setor.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Informatização completa da rede estadual de\nsaúde;"
+          }
+        ]
+      },
+      {
+        "texto": "No mesmo eixo, o documento registra a integração eletrônica dos prontuários médicos como uma proposta da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Integração\neletrônica dos prontuários médicos;"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa propõe a expansão das Escolas Técnicas Estaduais, conforme a lista de propostas do eixo educacional.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Expansão das\nEscolas Técnicas\nEstaduais;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o plano prevê a ampliação do uso de drones, monitoramento eletrônico e inteligência artificial, conforme a lista de propostas do setor.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 3,
+            "trecho": "Ampliação do uso de drones,\nmonitoramento\neletrônico e inteligência artificial;"
+          }
+        ]
+      },
+      {
+        "texto": "Para a mobilidade urbana, o documento propõe a expansão da malha cicloviária, incluída na lista de propostas sobre deslocamento urbano.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 5,
+            "trecho": "Expansão da\nmalha cicloviária;"
+          }
+        ]
+      },
+      {
+        "texto": "Na transformação digital, o programa prevê a implantação do Governo Digital, apresentada como a primeira proposta desse eixo.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 6,
+            "trecho": "Implantação do Governo Digital;"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "informatizacao-saude",
+        "titulo": "Informatização da saúde",
+        "descricao": "Proposta de informatização da rede estadual de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Informatização completa da rede estadual de\nsaúde;"
+          }
+        ]
+      },
+      {
+        "id": "prontuarios-medicos",
+        "titulo": "Prontuários médicos",
+        "descricao": "Proposta de integração eletrônica dos prontuários médicos.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Integração\neletrônica dos prontuários médicos;"
+          }
+        ]
+      },
+      {
+        "id": "escolas-tecnicas",
+        "titulo": "Escolas técnicas",
+        "descricao": "Proposta de expansão das Escolas Técnicas Estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 2,
+            "trecho": "Expansão das\nEscolas Técnicas\nEstaduais;"
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-seguranca",
+        "titulo": "Tecnologia na segurança",
+        "descricao": "Proposta de ampliação do uso de recursos tecnológicos na segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 3,
+            "trecho": "Ampliação do uso de drones,\nmonitoramento\neletrônico e inteligência artificial;"
+          }
+        ]
+      },
+      {
+        "id": "malha-cicloviaria",
+        "titulo": "Malha cicloviária",
+        "descricao": "Proposta de expansão da malha cicloviária.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 5,
+            "trecho": "Expansão da\nmalha cicloviária;"
+          }
+        ]
+      },
+      {
+        "id": "governo-digital",
+        "titulo": "Governo Digital",
+        "descricao": "Proposta de implantação do Governo Digital.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002552502:01",
+            "pagina": 6,
+            "trecho": "Implantação do Governo Digital;"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:22:18.793Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:24:09.793Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente a proposta citada."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade e documento correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:1:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:2:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma a proposta no eixo educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:3:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma exatamente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:4:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma proposta no eixo mobilidade urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:5:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma proposta e sua posição como primeiro item da lista do eixo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números literais além da ordem, que está correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:frase:6:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:informatizacao-saude:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:prontuarios-medicos:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:escolas-tecnicas:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Área única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:tecnologia-seguranca:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:malha-cicloviaria:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:suporte",
+        "verdict": "yes",
+        "reason": "Confirmado literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:mistura",
+        "verdict": "yes",
+        "reason": "Proposta única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:identidade",
+        "verdict": "yes",
+        "reason": "Identidade correta."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002552502:tema:governo-digital:documentos:AL:20002552502:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AL:20002552502",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AL:20002552502:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 48442,
+          "cached_input_tokens": 25088,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3871,
+          "reasoning_output_tokens": 2618
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 19932,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 18413,
+          "output_tokens_details": {
+            "thinking_tokens": 208
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 19932,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 18413,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 19932,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 19932
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.2796244
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "3ff42d2562fcac3d5e7874b8d685395a78472858d5365cd6531253b114a8396d",
+    "extractedTextSha256": "c8a6689ba8767b2780f54f37bfaa716f4185d73acbb22dfb89e959e8746124d3",
+    "documentCount": 1,
+    "documentSetSha256": "3d8b2eb996da4584a944755f4fc95531e8fd684c90ca5b61c5cf0640d0da7f0b",
+    "contentSha256": "5ad07b5fa542ac4f47ffbe21bd8d900168918f662fb589533eb35ed8edb4ef7a"
+  }
+}

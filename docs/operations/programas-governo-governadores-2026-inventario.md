@@ -104,24 +104,13 @@ Todos os oito arquivos foram preservados. Eles não são vinculados por nome ou 
 
 O antigo SQ de Elizeu Aguiar, PI `180002533958`, é um desses arquivos. A linha atual é `180002549920`, possui seu próprio PDF e está confirmada separadamente.
 
-## Auditoria de registros publicados
+## Auditoria e promoção dos registros publicados
 
-O detector `scripts/audit/audit-programas-governo-governadores-publicados.ts` compara todos os registros publicados contra o inventário atual por identidade eleitoral, nome de urna, partido, conjunto documental e hash SHA-256 da fonte. Nesta reconciliação, sem alterar registros públicos, foram encontrados:
+O detector `scripts/audit/audit-programas-governo-governadores-publicados.ts` compara todos os registros publicados contra o inventário atual por identidade eleitoral, nome de urna, partido, conjunto documental e hash SHA-256 da fonte. Após a revisão dos 54 alvos (47 ausentes e 7 stale), a auditoria passou com 189 registros aprovados em 27 UFs, 2.406 claims e 14.436 itens de Eval.
 
-| Registro | Divergência |
-| --- | --- |
-| `acm-neto` | hash do documento |
-| `cleber-rabelo` | identidade fora do crosswalk canônico, terminal |
-| `gabriel-azevedo` | hash do documento |
-| `hildon-chaves` | hash do documento |
-| `omar-aziz` | hash do documento |
-| `pedro-brito` | identidade fora do crosswalk canônico, terminal |
-| `rodrigo-bolsonaro` | nome de urna (`RODRIGO DE BOLSONARO` no crosswalk, `RODRIGO BOLSONARO` no registro) |
-| `sergio-moro-gov-pr` | hash do documento |
-| `vivian-mendes` | hash do documento |
-| manifesto de publicação | cobertura ainda baseada no universo anterior |
+O manifesto canônico `docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-29.json` registra 194 perfis publicáveis: 189 programas aprovados e cinco perfis com `sem_documento_oficial`, sem `human_review_required`. As duas inscrições oficiais de Laudicério permanecem excluídas em `quarantine_duplicate_active`; os registros terminais de Cleber Rabelo e Pedro Brito foram removidos da superfície e preservados em backup datado.
 
-O comando é fail-closed e agrega todos os alvos stale antes de retornar status não zero. A lista é diagnóstico para preparação de revisão; não autoriza generator, judge, promoção ou alteração da superfície pública.
+O fingerprint de cada aprovação cobre identidade, fontes, documentos ordenados, hashes, extrações, resumo, generator e judge. O writer canônico fez readback dos 54 arquivos aplicados e guardou os registros anteriores em backup antes da troca. A publicação continua fail-closed: ausência oficial não vira programa vazio e duplicidade não recebe SQ canônica inventada.
 
 ## Reprodutibilidade
 

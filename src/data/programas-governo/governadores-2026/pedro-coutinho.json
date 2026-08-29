@@ -1,0 +1,839 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PB",
+    "sqCandidato": "150002551911",
+    "slug": "pedro-coutinho",
+    "nomeUrna": "PEDRO COUTINHO",
+    "partido": "DC",
+    "arquivoNome": "2026PB150002551911_01.pdf",
+    "arquivoNoPacote": "PB/2026PB150002551911_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PB:150002551911:01",
+      "fonte": {
+        "arquivoNome": "2026PB150002551911_01.pdf",
+        "arquivoNoPacote": "PB/2026PB150002551911_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "efac65da6a7d8571dedf425df6acf039887f0aade01fa8a3658621831a642d45",
+        "extractedTextSha256": "bb520fc1925299e4cab6c46e22f17220ac45b75d94ebf7986f62be30ee002dc6",
+        "paginas": 9,
+        "secoes": [
+          {
+            "id": "carta-programa",
+            "titulo": "CARTA-PROGRAMA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "CARTA-PROGRAMA\n\nPEDRO COUTINHO – Governador\n&\nLENILDA PEREIRA – Vice\n\nDemocracia Cristã – DC – 27\n1"
+          },
+          {
+            "id": "um-novo-pacto-com-a-paraiba",
+            "titulo": "UM NOVO PACTO COM A PARAÍBA",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "UM NOVO PACTO COM A PARAÍBA\n\nAos paraibanos e paraibanas\nMeus amigos e minhas amigas paraibanas, trabalhadores do campo e da cidade,\nprodutores, empreendedores e defensores da liberdade!\nÉ com o coração cheio de esperança e com a responsabilidade de quem conhece a força\nda nossa terra que me apresento a vocês. Sou Pedro Coutinho. Sou professor, mestre em\nhistória, doutorando e evangélico. Acima de tudo, sou um produtor rural que vive o dia\na dia do agronegócio na nossa Zona da Mata. Sei o que é acordar cedo, enfrentar a\nburocracia, pagar impostos abusivos e ver o fruto do nosso suor ser sufocado por um\nEstado gigante, ineficiente e punitivo.\nChegou a hora do liberalismo econômico, do livre mercado e da verdadeira liberdade\nindividual!\nNosso plano para a Paraíba se baseia na redução da máquina e no fortalecimento de\nquem trabalha.\nVamos diminuir o tamanho do Estado para aumentar o tamanho do cidadão! Vamos\nenxugar a estrutura, eliminar privilégios e promover uma política agressiva de\nprivatizações e concessões. O governo não tem que gerenciar empresas; o governo deve\ngarantir a segurança jurídica, a ordem pública e sair do caminho de quem gera emprego\ne renda.\nEsta Carta-Programa não pretende criar um Estado que faça tudo.\nPretende construir um Estado que faça bem aquilo que precisa fazer.\nUm Estado forte na segurança.\nEficiente na saúde.\nTransformador na educação.\nResponsável nas contas públicas.\nParceiro de quem empreende.\nRespeitoso com quem trabalha.\n\n2"
+          },
+          {
+            "id": "solidario-com-quem-precisa",
+            "titulo": "Solidário com quem precisa.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Solidário com quem precisa.\nPedro Coutinho e Lenilda Pereira acreditam que a Paraíba não precisa escolher entre\nliberdade econômica e justiça social.\nPode ter as duas.\nPode ser um Estado que incentive a iniciativa privada e proteja os vulneráveis.\nQue reduza burocracia e melhore os serviços públicos.\nQue diminua impostos e aumente oportunidades.\nQue respeite a família e acolha todos os cidadãos.\nQue combata o crime com firmeza e governe com humanidade.\nQue preserve suas raízes e, ao mesmo tempo, seja protagonista do futuro.\nA Paraíba possui tudo aquilo de que precisa para avançar.\nTemos gente.\nTemos conhecimento.\nTemos recursos.\nTemos vocações.\nTemos história.\nTemos coragem.\nAgora precisamos de um projeto.\nEsta Carta-Programa é a nossa proposta de projeto.\nUm projeto para uma Paraíba mais livre para produzir, mais segura para viver, mais\npreparada para educar, mais responsável para governar e mais solidária para\ncuidar de seu povo.\nPedro Coutinho e Lenilda Pereira - 27\nPara uma Paraíba Livre, Próspera, Justa e Solidária.\n\n3"
+          },
+          {
+            "id": "27-compromissos-para-uma-paraiba-livre-prospera-justa-e",
+            "titulo": "27 COMPROMISSOS PARA UMA PARAÍBA LIVRE, PRÓSPERA, JUSTA E",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "27 COMPROMISSOS PARA UMA PARAÍBA LIVRE, PRÓSPERA, JUSTA E\nSOLIDÁRIA\n\nEIXO I\nLIBERDADE ECONÔMICA, PRODUÇÃO E DESENVOLVIMENTO\n1. Menos impostos e justiça tributária\nRevisar a estrutura tributária estadual para reduzir distorções, simplificar obrigações e\ncriar condições para uma redução responsável da carga tributária, estimulando\nprodução, consumo, investimentos e geração de empregos.\nO cidadão não pode trabalhar cada vez mais para sustentar um Estado cada vez mais\ncaro.\n2. Liberdade para empreender\nTransformar a Paraíba em um dos estados brasileiros mais favoráveis à iniciativa\nprivada, eliminando exigências desnecessárias, reduzindo burocracias e garantindo\nsegurança jurídica para quem deseja abrir, ampliar ou investir em um negócio.\nQuem quer trabalhar deve encontrar portas abertas, não obstáculos.\n3. Programa Paraíba Empreendedora\nCriar uma política estadual permanente de estímulo ao empreendedorismo,\nespecialmente para micro, pequenas e médias empresas, com capacitação, orientação,\nacesso a crédito, inovação e abertura de novos mercados.\nO governo será parceiro de quem produz, sem substituir a iniciativa de quem\nempreende.\n4. AgroParaíba: produção, tecnologia e mercado\nFortalecer simultaneamente a agricultura familiar e o agronegócio, ampliando\nassistência técnica, inovação, mecanização, acesso a mercados e agregação de valor à\nprodução.\nA agricultura paraibana deve deixar de ser apenas fornecedora de matéria-prima e\navançar na direção da agroindústria e das cadeias produtivas de maior valor agregado.\n\n4"
+          },
+          {
+            "id": "5-seguranca-hidrica-para-o-desenvolvimento",
+            "titulo": "5. Segurança hídrica para o desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "5. Segurança hídrica para o desenvolvimento\nImplantar uma política estadual de segurança hídrica de longo prazo, priorizando\nabastecimento humano, produção rural e desenvolvimento econômico.\nO semiárido não será tratado como sentença de pobreza, mas como território de\ninovação, tecnologia e oportunidades.\n6. Infraestrutura para produzir e competir\nAmpliar e modernizar a infraestrutura rodoviária, logística e de conectividade,\npriorizando os corredores que ligam áreas produtoras aos mercados consumidores,\nportos e centros de distribuição.\nUma Paraíba competitiva precisa reduzir o custo de transportar, produzir e\ncomercializar.\n7. Parcerias para acelerar investimentos\nAmpliar concessões e Parcerias Público-Privadas em áreas nas quais a iniciativa privada\npossa contribuir para acelerar investimentos e melhorar serviços.\nO critério será simples: melhor serviço, menor desperdício e maior benefício para o\ncidadão.\n8. Energia renovável como nova fronteira econômica\nTransformar a Paraíba em referência nacional na produção de energia limpa, atraindo\ninvestimentos em fontes solar, eólica e outras tecnologias renováveis, além de estimular\na instalação de indústrias associadas à cadeia energética.\nQueremos transformar nosso sol e nossos ventos em emprego, renda e desenvolvimento.\n9. Turismo como indústria de oportunidades\nTransformar o turismo em uma das principais indústrias da Paraíba, integrando litoral,\nBrejo, Agreste e Sertão em uma estratégia única de promoção turística.\nInvestir em infraestrutura, qualificação profissional, eventos, patrimônio e divulgação\npara transformar visitantes em emprego e renda para os paraibanos.\n\n5"
+          },
+          {
+            "id": "eixo-ii",
+            "titulo": "EIXO II",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "EIXO II\nPESSOAS, LIBERDADE DE ESCOLHA E DIGNIDADE\n10. Voucher Educação: liberdade para escolher\nImplantar progressivamente um Programa Estadual de Voucher Educação, mediante\ncritérios transparentes e legislação específica, permitindo que famílias beneficiárias\npossam escolher instituições de ensino públicas ou privadas credenciadas.\nO financiamento deve acompanhar o estudante, e a qualidade deve ser permanentemente\navaliada.\nAcreditamos que a família deve ter voz na educação de seus filhos.\n11. Valorização de quem ensina\nEstabelecer uma política permanente de valorização dos professores, com formação\ncontinuada, reconhecimento profissional, melhores condições de trabalho e estímulo à\nexcelência pedagógica.\nNão existe educação de qualidade sem professor respeitado e preparado.\n12. Ensino técnico para o emprego do futuro\nExpandir a educação profissionalizante e tecnológica em parceria com empresas,\ninstituições de ensino e setores produtivos.\nO jovem paraibano precisa sair da escola preparado não apenas para procurar emprego,\nmas também para criar oportunidades e empreender.\n13. Saúde eficiente, atendimento digno\nReduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados,\nmodernizando a gestão e utilizando parcerias sempre que produzirem melhores\nresultados.\nO cidadão deve ser atendido pela necessidade, não pela capacidade de esperar.\n14. Primeira infância e proteção da família\nCriar uma política integrada de primeira infância, fortalecendo ações de saúde,\neducação, nutrição e proteção familiar.\nA melhor política social é aquela que começa cedo e ajuda a família a construir um\nfuturo melhor para seus filhos.\n6"
+          },
+          {
+            "id": "15-juventude-com-liberdade-e-oportunidades",
+            "titulo": "15. Juventude com liberdade e oportunidades",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "15. Juventude com liberdade e oportunidades\nCriar uma política estadual voltada à juventude que combine formação profissional,\nempreendedorismo, esporte, cultura, tecnologia e primeiro emprego.\nQueremos que o jovem permaneça na Paraíba porque aqui encontrará oportunidades\npara realizar seus sonhos.\n16. Segurança pública com inteligência e autoridade\nFortalecer as forças de segurança com tecnologia, inteligência, integração entre\ninstituições, valorização profissional e presença efetiva do Estado nas áreas mais\nvulneráveis.\nCombater o crime exige autoridade, planejamento e capacidade operacional.\n17. Guerra ao crime organizado\nCriar uma estratégia permanente de enfrentamento ao tráfico de drogas e às\norganizações criminosas, ampliando inteligência policial, integração de informações e\ncooperação com as forças federais.\nO Estado não pode ser menor que o crime.\nA família paraibana precisa saber que terá um governo firme na defesa de sua\nsegurança.\n18. Segurança nas escolas e proteção da comunidade escolar\nImplantar políticas específicas de segurança escolar, prevenção da violência e proteção\nde alunos, professores e funcionários, articulando educação, segurança, famílias e\ncomunidade.\nA escola deve ser lugar de aprendizado, convivência e esperança.\n\n7"
+          },
+          {
+            "id": "eixo-iii",
+            "titulo": "EIXO III",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EIXO III\nUM ESTADO MODERNO, EFICIENTE E VOLTADO PARA RESULTADOS\n19. Governo digital: menos filas, menos papel, menos burocracia\nDigitalizar progressivamente os serviços públicos estaduais, permitindo que o cidadão\nresolva o maior número possível de demandas sem deslocamentos e sem excesso de\ndocumentos.\nO governo deve caber na palma da mão do cidadão.\n20. Tolerância zero com desperdício e corrupção\nImplantar uma política permanente de controle de despesas, transparência, integridade e\ncombate ao desperdício.\nCada real economizado será um real que poderá retornar à sociedade na forma de\nserviços, investimentos ou redução de custos.\n21. Gestão pública baseada em metas\nTodos os grandes programas estaduais deverão possuir metas, indicadores e\nmecanismos de avaliação.\nO governo será avaliado pelo que entrega, e não pelo número de anúncios que produz.\nResultado será a principal medida da administração Pedro Coutinho e Lenilda\nPereira.\n22. Valorização do servidor público eficiente\nValorizar os servidores públicos, investir em capacitação, modernização das carreiras e\nmelhoria das condições de trabalho, ao mesmo tempo em que serão fortalecidos\ncritérios de mérito, eficiência e qualidade na prestação dos serviços.\nServidor valorizado e cidadão bem atendido devem caminhar juntos.\n23. Ciência, tecnologia e inovação\nAproximar universidades, institutos de pesquisa, empresas e governo para transformar\nconhecimento em produtos, serviços, startups, empregos qualificados e\ndesenvolvimento.\nA Paraíba possui conhecimento de excelência. É hora de transformá-lo em riqueza e\noportunidades.\n8"
+          },
+          {
+            "id": "24-cultura-patrimonio-e-identidade-paraibana",
+            "titulo": "24. Cultura, patrimônio e identidade paraibana",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "24. Cultura, patrimônio e identidade paraibana\nValorizar nossa produção cultural, nossos artistas, escritores, músicos, artesãos,\nmanifestações populares e patrimônio histórico.\nUma Paraíba moderna não precisa abandonar suas raízes.\nAo contrário: deve transformar sua identidade em força cultural, educacional e\neconômica.\n25. Desenvolvimento regional e equilíbrio territorial\nCriar políticas diferenciadas para as vocações econômicas do Litoral, Brejo, Agreste,\nCariri e Sertão, evitando que o desenvolvimento fique concentrado em poucos\nmunicípios.\nCada região deve encontrar no próprio território oportunidades para crescer.\nO Litoral deve dialogar com o mundo; Campina Grande, com a inovação; o Brejo, com\nsua agricultura e turismo; o Agreste, com comércio e serviços; e o Sertão, com suas\nvocações produtivas e potencial energético.\n26. Pacto de desenvolvimento com os municípios\nEstabelecer uma nova relação entre Governo do Estado e municípios, baseada em\nplanejamento, cooperação, metas e respeito à autonomia municipal.\nO Governo Estadual deve ser parceiro dos prefeitos naquilo que beneficia diretamente a\npopulação, sem transformar recursos públicos em instrumento de submissão política.\n27. Liberdade, responsabilidade e solidariedade como política de Estado\nInstituir os três valores que orientam este projeto — liberdade, responsabilidade e\nsolidariedade — como princípios permanentes da administração estadual.\nLiberdade, para que as pessoas possam trabalhar, empreender, escolher e construir seus\npróprios caminhos.\nResponsabilidade, para que o dinheiro público seja tratado com respeito, equilíbrio e\ntransparência.\nSolidariedade, para que ninguém seja abandonado e para que o desenvolvimento\nalcance todas as famílias.\n\n9"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "2ab579f9a7b1aa392bd7c4c418f268a35e200b2bc131c5a7e7ba162dddb41458"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "1ade9a7dc828f8df5dbf766c8bebe8c23a5accfab7e0573077585af1a7fe9d4a"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "0bfc500431db5a25377336322d7bd981669aee1a091b9635189f80710f2cb016"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "01103e9c27494fbd2549081a0d1f5470fddf4c1f46f1cb9f3bd00b5b3afbb3ee"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "278958df62464327c2f55b7db28e0e9678da7b69dc9e543cbfaf509011b73f4d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "2085a055f6eaa6032df0b9aad17aeb68981a0ef16e2e1dd65dabbba30ae94478"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "2735ce5810b0a80ce69544cc091d3282e8d0b5a5152add75a98b63141836df5a"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "a4664adf46d3753e01fad0c19982dbb8333a61fbe249a7f32202a42099c8d306"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "74c9c21ead387ef8eaa449feef002cc2634f4bd597e730527a20d974389bb8fe"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe revisar a estrutura tributária estadual para reduzir distorções e simplificar obrigações. Também prevê transformar a Paraíba em um estado favorável à iniciativa privada, com redução de burocracias. O plano propõe fortalecer a agricultura familiar e o agronegócio por meio de assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor. Prevê uma política estadual de segurança hídrica de longo prazo, priorizando o abastecimento humano. Na educação, propõe implantar progressivamente um Programa Estadual de Voucher Educação, com critérios transparentes e legislação específica. Na saúde, prevê reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados. Na administração pública, propõe digitalizar progressivamente os serviços estaduais para ampliar o atendimento sem deslocamentos. O documento prevê metas, indicadores e mecanismos de avaliação para os grandes programas estaduais.",
+    "frases": [
+      {
+        "texto": "O programa propõe revisar a estrutura tributária estadual para reduzir distorções e simplificar obrigações.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Revisar a estrutura tributária estadual para reduzir distorções, simplificar obrigações e criar condições para uma redução responsável da carga tributária, estimulando produção, consumo, investimentos e geração de empregos."
+          }
+        ]
+      },
+      {
+        "texto": "Também prevê transformar a Paraíba em um estado favorável à iniciativa privada, com redução de burocracias.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Transformar a Paraíba em um dos estados brasileiros mais favoráveis à iniciativa privada, eliminando exigências desnecessárias, reduzindo burocracias e garantindo segurança jurídica para quem deseja abrir, ampliar ou investir em um negócio."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe fortalecer a agricultura familiar e o agronegócio por meio de assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Fortalecer simultaneamente a agricultura familiar e o agronegócio, ampliando assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor à produção."
+          }
+        ]
+      },
+      {
+        "texto": "Prevê uma política estadual de segurança hídrica de longo prazo, priorizando o abastecimento humano.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 5,
+            "trecho": "Implantar uma política estadual de segurança hídrica de longo prazo, priorizando abastecimento humano, produção rural e desenvolvimento econômico."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, propõe implantar progressivamente um Programa Estadual de Voucher Educação, com critérios transparentes e legislação específica.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 6,
+            "trecho": "Implantar progressivamente um Programa Estadual de Voucher Educação, mediante critérios transparentes e legislação específica, permitindo que famílias beneficiárias possam escolher instituições de ensino públicas ou privadas credenciadas."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 6,
+            "trecho": "Reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados, modernizando a gestão e utilizando parcerias sempre que produzirem melhores resultados."
+          }
+        ]
+      },
+      {
+        "texto": "Na administração pública, propõe digitalizar progressivamente os serviços estaduais para ampliar o atendimento sem deslocamentos.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 8,
+            "trecho": "Digitalizar progressivamente os serviços públicos estaduais, permitindo que o cidadão resolva o maior número possível de demandas sem deslocamentos e sem excesso de documentos."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê metas, indicadores e mecanismos de avaliação para os grandes programas estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 8,
+            "trecho": "Todos os grandes programas estaduais deverão possuir metas, indicadores e mecanismos de avaliação."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "estrutura-tributaria",
+        "titulo": "Estrutura tributária",
+        "descricao": "O programa propõe revisar a estrutura tributária estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Revisar a estrutura tributária estadual para reduzir distorções, simplificar obrigações e criar condições para uma redução responsável da carga tributária, estimulando produção, consumo, investimentos e geração de empregos."
+          }
+        ]
+      },
+      {
+        "id": "iniciativa-privada",
+        "titulo": "Iniciativa privada",
+        "descricao": "O programa prevê reduzir burocracias para a iniciativa privada.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Transformar a Paraíba em um dos estados brasileiros mais favoráveis à iniciativa privada, eliminando exigências desnecessárias, reduzindo burocracias e garantindo segurança jurídica para quem deseja abrir, ampliar ou investir em um negócio."
+          }
+        ]
+      },
+      {
+        "id": "agricultura",
+        "titulo": "Agricultura",
+        "descricao": "O programa propõe fortalecer a agricultura familiar e o agronegócio.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 4,
+            "trecho": "Fortalecer simultaneamente a agricultura familiar e o agronegócio, ampliando assistência técnica, inovação, mecanização, acesso a mercados e agregação de valor à produção."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-hidrica",
+        "titulo": "Segurança hídrica",
+        "descricao": "O programa prevê uma política estadual de segurança hídrica.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 5,
+            "trecho": "Implantar uma política estadual de segurança hídrica de longo prazo, priorizando abastecimento humano, produção rural e desenvolvimento econômico."
+          }
+        ]
+      },
+      {
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "O programa propõe um Programa Estadual de Voucher Educação.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 6,
+            "trecho": "Implantar progressivamente um Programa Estadual de Voucher Educação, mediante critérios transparentes e legislação específica, permitindo que famílias beneficiárias possam escolher instituições de ensino públicas ou privadas credenciadas."
+          }
+        ]
+      },
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "O programa prevê reduzir filas na saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002551911:01",
+            "pagina": 6,
+            "trecho": "Reduzir filas e melhorar o acesso a consultas, exames e procedimentos especializados, modernizando a gestão e utilizando parcerias sempre que produzirem melhores resultados."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:39:48.769Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:59:24.659Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a revisão da estrutura tributária, redução de distorções e simplificação de obrigações."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números, prazos ou percentuais na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve a proposta, sem elogio ou crítica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente sobre tributação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:1:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais citadas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a transformação em estado favorável e redução de burocracias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: ambiente de negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:2:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente todos os elementos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: agricultura/agronegócio."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:3:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todos os elementos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma política de longo prazo priorizando abastecimento humano (entre outros)."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: segurança hídrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:4:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material citada, ainda que sejam mencionadas outras prioridades adicionais no texto original."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a implantação progressiva com critérios transparentes e legislação específica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente na área de educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:5:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:6:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a digitalização progressiva e o atendimento sem deslocamentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: administração pública digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:7:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única questão coerente: gestão por metas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:frase:8:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta de revisão tributária."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: tributação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:estrutura-tributaria:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a redução de burocracias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: ambiente de negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:iniciativa-privada:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: agricultura."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:agricultura:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: segurança hídrica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:seguranca-hidrica:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: educação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:educacao:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho confirma diretamente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PB:150002551911:tema:saude:documentos:PB:150002551911:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação simplificada."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PB:150002551911",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PB:150002551911:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26593,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 25992,
+          "output_tokens_details": {
+            "thinking_tokens": 479
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26593,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 25992,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26593,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26593
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3872744000000001
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "efac65da6a7d8571dedf425df6acf039887f0aade01fa8a3658621831a642d45",
+    "extractedTextSha256": "bb520fc1925299e4cab6c46e22f17220ac45b75d94ebf7986f62be30ee002dc6",
+    "documentCount": 1,
+    "documentSetSha256": "b59f1929b9cd9442c4a603781955098f02b51ac5cd1b2f2c7cd36c262430bfea",
+    "contentSha256": "c0d97db7a2872354ce80701edf910ec4279e5a1a7d1fd4dd10302cbf62e1c94e"
+  }
+}

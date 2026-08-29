@@ -1,0 +1,728 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PI",
+    "sqCandidato": "180002549920",
+    "slug": "elizeu-aguiar",
+    "nomeUrna": "ELIZEU AGUIAR",
+    "partido": "NOVO",
+    "arquivoNome": "2026PI180002549920_01.pdf",
+    "arquivoNoPacote": "PI/2026PI180002549920_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PI:180002549920:01",
+      "fonte": {
+        "arquivoNome": "2026PI180002549920_01.pdf",
+        "arquivoNoPacote": "PI/2026PI180002549920_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PI.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "3dcc283f0f19d8982176f404a73258e2240d657597e5649cd38d1e652bdd5765",
+        "extractedTextSha256": "99b583aa9c6b6239849f9d2f51fde6b6731d1d24554d3b60d3c6681ef8f02dc6",
+        "paginas": 3,
+        "secoes": [
+          {
+            "id": "propostas-para-o-desenvolvimento-do-estado-do-piaui",
+            "titulo": "PROPOSTAS PARA O DESENVOLVIMENTO DO ESTADO DO PIAUÍ",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROPOSTAS PARA O DESENVOLVIMENTO DO ESTADO DO PIAUÍ\n\nSEGURANÇA PÚBLICA\nValorização dos profissionais da segurança pública\n• Valorização da Polícia Militar, Polícia Civil, Polícia Penal e demais profissionais da\nsegurança pública.\n• Implantação de políticas permanentes de capacitação, qualificação e valorização\nprofissional.\n• Melhoria das condições de trabalho e da estrutura operacional das corporações.\n\nReestruturação das forças de segurança\n• Modernização da estrutura administrativa e operacional da Polícia Militar.\n• Reforço do efetivo por meio da realização de concursos públicos para Polícia Militar,\nPolícia Civil, Polícia Penal e Perícia Oficial.\n\nCombate ao crime organizado\n• Modernização dos equipamentos utilizados pelas forças de segurança.\n• Ampliação dos investimentos em inteligência policial e tecnologia.\n• Integração entre as forças estaduais e federais no enfrentamento às organizações\ncriminosas.\n\nProteção das divisas do Piauí\n• Implantação de barreiras policiais permanentes nas principais divisas do Estado.\n• Intensificação do combate ao tráfico de drogas, armas e demais atividades\ncriminosas.\n\nECONOMIA E INFRAESTRUTURA\nDesenvolvimento econômico\n• Redução gradual da carga tributária estadual, com destaque para a revisão do ICMS\nem setores estratégicos.\n• Programa de industrialização do Estado.\n• Incentivos fiscais para atração de novas indústrias.\n• Fomento ao empreendedorismo.\n\nFortalecimento do agronegócio\n• Ampliação do acesso ao crédito rural.\n• Incentivo à modernização da produção agrícola.\n• Apoio técnico aos pequenos e médios produtores."
+          },
+          {
+            "id": "gestao-publica-eficiente",
+            "titulo": "Gestão pública eficiente",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Gestão pública eficiente\n• Modernização da administração pública.\n• Redução da burocracia.\n• Transparência e eficiência na aplicação dos recursos públicos.\n\nSegurança hídrica\n• Implantação do Programa Cinturão das Águas do Piauí.\n\nInfraestrutura\n• Grandes obras estruturantes.\n• Construção, recuperação e manutenção das rodovias estaduais.\n• Investimentos em infraestrutura logística.\n\nEDUCAÇÃO\nValorização dos profissionais da educação\n• Valorização dos professores.\n• Formação continuada.\n• Melhoria das condições de trabalho.\n\nModernização das escolas\n• Reforma e ampliação das escolas.\n• Climatização das salas.\n• Modernização de laboratórios.\n• Internet de alta velocidade.\n\nEnsino técnico e profissionalizante\n• Expansão da rede de escolas técnicas.\n• Cursos em Agronegócio, Energias Renováveis, Tecnologia, Turismo, Logística e\nSaúde.\n\nEducação inclusiva\n• Formação de professores.\n• Ampliação da acessibilidade.\n\nCombate ao analfabetismo\n• Programas permanentes de alfabetização."
+          },
+          {
+            "id": "meta-de-erradicar-o-analfabetismo",
+            "titulo": "• Meta de erradicar o analfabetismo.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "• Meta de erradicar o analfabetismo.\n\nSAÚDE\nFortalecimento da rede hospitalar\n• Ampliar, reformar e equipar hospitais regionais.\n• Modernizar equipamentos e ampliar leitos.\n\nRegionalização da saúde\n• Implantar policlínicas.\n• Ampliar especialidades médicas.\n\nRedução das filas\n• Aumentar capacidade de atendimento.\n• Reduzir espera para consultas, exames e cirurgias.\n\nAssistência farmacêutica\n• Modernizar logística de medicamentos.\n• Garantir abastecimento contínuo.\n\nAtenção básica e prevenção\n• Fortalecer atenção primária.\n• Ampliar prevenção e promoção da saúde.\n• Intensificar vacinação e diagnóstico precoce."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "4af5078d2de25cd00abc196e40ead098d6c2cad6d6d2f85ee79394f65d69edd9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "262b7656035a0a4952880748c7647d4df6b7dec32bba18e71a3d12d8cb8cc37e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "dbe8b77e21c657594a5c1f03dfb98fd667c469552a1a5267e679599223e5a9bd"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê políticas permanentes de capacitação, qualificação e valorização profissional para os profissionais da segurança pública estadual. O programa propõe concursos públicos para reforçar o efetivo da Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial. O programa planeja ampliar investimentos em inteligência policial e tecnologia no combate ao crime organizado. Na economia, o programa prevê incentivos fiscais para atrair novas indústrias ao Estado. Na infraestrutura, o programa propõe construção, recuperação e manutenção das rodovias estaduais. Na educação, o programa prevê a expansão da rede de escolas técnicas com cursos em Agronegócio, Energias Renováveis, Tecnologia, Turismo, Logística e Saúde. Na saúde, o programa planeja modernizar a logística de medicamentos para garantir abastecimento contínuo. O programa também prevê ampliar, reformar e equipar hospitais regionais, com modernização de equipamentos e ampliação de leitos.",
+    "frases": [
+      {
+        "texto": "O programa prevê políticas permanentes de capacitação, qualificação e valorização profissional para os profissionais da segurança pública estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Implantação de políticas permanentes de capacitação, qualificação e valorização profissional."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe concursos públicos para reforçar o efetivo da Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Reforço do efetivo por meio da realização de concursos públicos para Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial."
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja ampliar investimentos em inteligência policial e tecnologia no combate ao crime organizado.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Ampliação dos investimentos em inteligência policial e tecnologia."
+          }
+        ]
+      },
+      {
+        "texto": "Na economia, o programa prevê incentivos fiscais para atrair novas indústrias ao Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Incentivos fiscais para atração de novas indústrias."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura, o programa propõe construção, recuperação e manutenção das rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 2,
+            "trecho": "Construção, recuperação e manutenção das rodovias estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o programa prevê a expansão da rede de escolas técnicas com cursos em Agronegócio, Energias Renováveis, Tecnologia, Turismo, Logística e Saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 2,
+            "trecho": "Expansão da rede de escolas técnicas."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, o programa planeja modernizar a logística de medicamentos para garantir abastecimento contínuo.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 3,
+            "trecho": "Modernizar logística de medicamentos."
+          }
+        ]
+      },
+      {
+        "texto": "O programa também prevê ampliar, reformar e equipar hospitais regionais, com modernização de equipamentos e ampliação de leitos.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 3,
+            "trecho": "Ampliar, reformar e equipar hospitais regionais."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "capacitacao-seguranca",
+        "titulo": "Capacitação na segurança",
+        "descricao": "Políticas permanentes de capacitação, qualificação e valorização profissional na segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Implantação de políticas permanentes de capacitação, qualificação e valorização profissional."
+          }
+        ]
+      },
+      {
+        "id": "efetivo-policial",
+        "titulo": "Efetivo policial",
+        "descricao": "Realização de concursos públicos para Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Reforço do efetivo por meio da realização de concursos públicos para Polícia Militar, Polícia Civil, Polícia Penal e Perícia Oficial."
+          }
+        ]
+      },
+      {
+        "id": "industrializacao",
+        "titulo": "Industrialização",
+        "descricao": "Atração de novas indústrias por meio de incentivos fiscais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 1,
+            "trecho": "Incentivos fiscais para atração de novas indústrias."
+          }
+        ]
+      },
+      {
+        "id": "rodovias-estaduais",
+        "titulo": "Rodovias estaduais",
+        "descricao": "Construção, recuperação e manutenção das rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 2,
+            "trecho": "Construção, recuperação e manutenção das rodovias estaduais."
+          }
+        ]
+      },
+      {
+        "id": "escolas-tecnicas",
+        "titulo": "Escolas técnicas",
+        "descricao": "Expansão da rede de escolas técnicas.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 2,
+            "trecho": "Expansão da rede de escolas técnicas."
+          }
+        ]
+      },
+      {
+        "id": "hospitais-regionais",
+        "titulo": "Hospitais regionais",
+        "descricao": "Ampliação, reforma e equipagem de hospitais regionais.",
+        "evidencias": [
+          {
+            "documentoId": "PI:180002549920:01",
+            "pagina": 3,
+            "trecho": "Ampliar, reformar e equipar hospitais regionais."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:45:43.121Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:11:05.241Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência, no contexto da seção de segurança pública, sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de resultado ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de desenvolvimento profissional na segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PI:180002549920:01, compatível com a chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:1:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto da página cobrem todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o reforço do efetivo por concursos nas quatro instituições citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas descreve a proposta, sem avaliação ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne instituições sob uma única proposta coerente de reforço do efetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:2:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o mecanismo, a finalidade e todas as instituições mencionadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho aparece sob o tópico de combate ao crime organizado e sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o plano sem elogio, crítica, promoção ou garantia de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de investimento em inteligência e tecnologia policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:3:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "O trecho e o título contextual da seção cobrem todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente os incentivos fiscais destinados à atração de novas indústrias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem juízo de valor ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de política industrial."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:4:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto econômico da página cobrem todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta descrita."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem avaliação, promoção ou garantia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "As três ações integram uma única proposta coerente sobre rodovias estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:5:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre construção, recuperação, manutenção e o objeto rodovias estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada associa a expansão da rede à lista exata de cursos no mesmo tópico de ensino técnico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve o conteúdo do documento sem avaliação ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A expansão e os cursos compõem uma única proposta coerente de ensino técnico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada pertencem exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:6:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página cobre a expansão e enumera todos os cursos mencionados na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada apresenta a modernização e a garantia de abastecimento contínuo no mesmo tópico de assistência farmacêutica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve os objetivos do documento sem elogio, crítica ou afirmação de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A modernização logística e o abastecimento integram uma única proposta de assistência farmacêutica."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada pertencem exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:7:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página cobre tanto a modernização da logística quanto a garantia de abastecimento contínuo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada traz as duas partes da afirmação em itens consecutivos do fortalecimento da rede hospitalar."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve as propostas sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "Todas as ações pertencem à mesma área coerente de fortalecimento dos hospitais regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada pertencem exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:frase:8:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página cobre ampliação, reforma, equipagem, modernização de equipamentos e ampliação de leitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência, situada na seção de segurança pública, sustenta integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem avaliação, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "O texto trata de uma única proposta coerente de desenvolvimento profissional na segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:capacitacao-seguranca:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e o contexto da página cobrem todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente os concursos para todas as instituições citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem juízo de valor ou garantia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "As instituições estão reunidas sob uma única proposta coerente de concursos para o efetivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:efetivo-policial:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o concurso público e todas as instituições enumeradas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a atração de indústrias por incentivos fiscais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de industrialização."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:industrializacao:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o mecanismo e a finalidade descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação temática."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem avaliação, promoção ou certeza."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "As ações compõem uma única proposta coerente sobre rodovias estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:rodovias-estaduais:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as ações e o objeto mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a proposta afirmada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou garantia."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta sobre a rede de escolas técnicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:escolas-tecnicas:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente as três ações sobre hospitais regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem avaliação, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:mistura",
+        "verdict": "yes",
+        "reason": "As ações integram uma única proposta coerente sobre hospitais regionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PI:180002549920:tema:hospitais-regionais:documentos:PI:180002549920:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre ampliação, reforma, equipagem e o objeto hospitais regionais."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PI:180002549920",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PI:180002549920:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36215,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14749,
+          "reasoning_output_tokens": 278
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "3dcc283f0f19d8982176f404a73258e2240d657597e5649cd38d1e652bdd5765",
+    "extractedTextSha256": "99b583aa9c6b6239849f9d2f51fde6b6731d1d24554d3b60d3c6681ef8f02dc6",
+    "documentCount": 1,
+    "documentSetSha256": "46e875561daf25f108171aa7a974199cae23da71ea213933a9cdaf816072f43c",
+    "contentSha256": "1c6d6c67e043145b3feebb7986302b3297dfbe34fbdf18a25d2c18f9abb6bc24"
+  }
+}

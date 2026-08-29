@@ -1,0 +1,1035 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MS",
+    "sqCandidato": "120002552155",
+    "slug": "delcidio-amaral",
+    "nomeUrna": "DELCIDIO AMARAL",
+    "partido": "PRD",
+    "arquivoNome": "2026MS120002552155_01.pdf",
+    "arquivoNoPacote": "MS/2026MS120002552155_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "MS:120002552155:01",
+      "fonte": {
+        "arquivoNome": "2026MS120002552155_01.pdf",
+        "arquivoNoPacote": "MS/2026MS120002552155_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MS.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "39041016f175f81883560939a222eb0f35a320a4faf2c0236a03c6fa2758ec00",
+        "extractedTextSha256": "6cb99c1968e20d886a4869f3bd86ebf77952db92530e9ef7d8f63c451cc45cc4",
+        "paginas": 26,
+        "secoes": [
+          {
+            "id": "federacao-renovacao-solidaria",
+            "titulo": "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA\n\nPLANO DE GOVERNO\nMATO GROSSO DO SUL\n\nCA N D I DATO AO G OVE R N O\n\nDELCÍDIO AMARAL\nCA N D I DATA A V I C E - G OVE R N A D O R A\n\nMARILIANA SANTOS\n\nE L E I Ç Õ E S — M AT O G R O S S O D O S U L"
+          },
+          {
+            "id": "programa-de-governo",
+            "titulo": "PROGRAMA DE GOVERNO:",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA DE GOVERNO:\n“MS DE TODOS”\nMais do que o nome de uma plataforma, \"MS DE TODOS\" é a\nafirmação central que fazemos a cada cidadão e cidadã sul-matogrossense quando almejamos um futuro de oportunidades para o\ncoletivo. Após 12 anos de um modelo de gestão elitizado, privatista e\nfocado no esvaziamento dos serviços públicos, o nosso estado chegou a\numa encruzilhada histórica.\n“Continuaremos assistindo à concentração de renda e ao\nfavorecimento de grupos restritos, ou teremos a coragem de desenhar um\nfuturo democrático, progressista e socialmente justo?”\nO modelo econômico que governa Mato Grosso do Sul há 12 anos\nexibe sinais claros de esgotamento social. Trata-se de uma visão de Estado\nelitizada, privatista e focada no esvaziamento dos serviços públicos\nessenciais. É uma gestão que governa de costas para a população,\nconvertendo empresas, autarquias, fundações estratégicas em balcões de\nnegócios e favorecendo apenas grupos econômicos restritos e apadrinhados.\nEsse modelo vigente é inerentemente excludente. Ele aprofunda as\ndesigualdades sociais e gera graves desequilíbrios regionais, concentrando a\nrenda e centralizando o desenvolvimento em poucos eixos, enquanto a maioria\ndos nossos 79 municípios é deixada à margem do crescimento.\nA falta de planejamento e a ausência de uma gestão séria e eficiente\ndas nossas riquezas resultaram em uma imensa escassez de investimentos\nonde o povo mais precisa. As desigualdades regionais que marcam o nosso\nmapa carecem de projetos, de programas estruturados e, acima de tudo, de\nVONTADE POLÍTICA.\nO Mato Grosso do Sul exige um novo rumo. A Federação\nRENOVAÇÃO SOLIDÁRIA apresenta-se para o pleito de 2026 com nomes de\nilibada moral e profunda respeitabilidade, prontos para governar para todos, e\nnão para grupos.\nMais do que uma eleição para o Executivo e o Legislativo federal e\nestadual, estamos decidindo o futuro do nosso Estado e do Brasil. Queremos\num Novo Governo: progressista, humanista, com visão de Estado e foco na\nigualdade de oportunidades para quem escolheu esta terra para viver, trabalhar\ne crescer.\nPara isso, uniremos forças para eleger o nosso time completo: o\nGoverno do Estado, os representantes no Senado Federal, os deputados\nfederais e os deputados estaduais. É tempo de renovar com solidariedade e\ncompetência.\nDiante dessa realidade, o nosso projeto apresenta uma alternativa\ndemocrática, progressista e justa. O Mato Grosso do Sul e os seus cidadãos"
+          },
+          {
+            "id": "serao-de-forma-efetiva-e-determinante-a-pauta-central-de-todas-as-discus",
+            "titulo": "serão, de forma efetiva e determinante, a pauta central de todas as discussões",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "serão, de forma efetiva e determinante, a pauta central de todas as discussões\ne ações do nosso Governo.\nEIXO 1: SAÚDE PÚBLICA, UNIVERSAL E DE GESTÃO PÚBLICA\nA saúde é o desafio mais emblemático do nosso projeto.\nResponderemos a ele com a garantia real de resolutividade a partir de 2027.\nO Diagnóstico: O Desmonte da Saúde em MS\nA saúde em Mato Grosso do Sul foi privatizada. Por pura\nincompetência administrativa, o grupo que está no poder há 12 anos abriu mão\nde sua responsabilidade. Entregou nossos hospitais públicos à gestão privada\nde Organizações Sociais (O.S.) e Parcerias Público-Privadas (PPPs). O\nresultado é a precarização do atendimento, a falta de transparência e o\nsofrimento de quem mais precisa. Saúde é direito essencial. Não pode ser\ntratada como mercadoria ou cabide de negócios privados.\nA nossa Carta Maior é clara: “a saúde é direito de todos e dever do\nEstado”. O SUS é um patrimônio humano e universal reconhecido no mundo\ninteiro. Ele precisa ser preservado e aprimorado por um governo comprometido\ncom os invisíveis e os marginalizados pelo atual sistema.\nO modelo atual foca apenas na estrutura hospitalar e ignora a\nprevenção. A cobertura da rede básica de saúde da família no Estado está\nmuito aquém do desejável. Sem postos de saúde eficientes no interior e nos\nbairros, milhares de pessoas superlotam as UPA’s e PAM’s para resolver\nproblemas básicos. É um ciclo caótico que o Governo do Estado tem o dever\nde quebrar.\nA Realidade Demográfica e Epidemiológica\nO governo atual parou no tempo. Uma gestão arcaica e retrógrada que\nnão assimilou o envelhecimento da população e o aumento de doenças\ncrônicas como hipertensão, diabetes, obesidade e a dependência química.\nAlém disso, as violências física, psicológica, sexual e o trânsito violento serão\ntratados por nós como graves problemas de saúde pública, e não apenas de\npolícia.\nChega de promessas vazias. Os planos de governo passados\ntransformaram-se em verdadeiros estelionatos eleitorais. Nosso compromisso é\ncom a verdade e com as seguintes diretrizes práticas:\nDiretrizes de Ação para o Novo Governo\nFortalecimento da Atenção Básica: Ampliar as equipes de Saúde\nda Família e consolidar o programa Saúde na Escola.\n"
+          },
+          {
+            "id": "regionalizacao-de-verdade-fortalecer-a-media",
+            "titulo": "Regionalização de Verdade: Fortalecer a média",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Regionalização de Verdade: Fortalecer a média\ncomplexidade ambulatorial, hospitalar em cada micro e macrorregião.\n\n\ne\n\nalta\n\nHospitais 100% Públicos: Implantar Centros de Referência\nRegional de Atenção Especializada dentro dos Hospitais Regionais, sob\ncontrole direto do Estado e voltados ao cidadão, não ao lucro privado.\n\n\nVigilância Ativa: Fortalecer e modernizar as ações de Vigilância\nEpidemiológica e Sanitária no Estado.\n\n\nValorização dos Profissionais: Profissionalizar a gestão da\nsaúde, criar planos de carreira e implantar uma política de formação continuada\npara os servidores do MS.\n\n\nFim da Caixa-Preta da Privatização: Auditar e rever\nimediatamente todos os contratos de terceirização com O.S. e PPP’s na saúde\nde Mato Grosso do Sul.\n\n\nEIXO 2: SEGURANÇA PÚBLICA – CIDADÃ, HUMANA E PARA\nTODOS\nA segurança pública em Mato Grosso do Sul será exercida sob a ótica\nda cidadania e da responsabilidade social. Segurança não se faz apenas com\nforça, mas com inteligência, prevenção e valorização humana.\nQuadro Atual: 12 Anos de Abandono e Fronteiras Escancaradas\nO grupo político que governa o nosso Estado há 12 anos virou as\ncostas para o Pronasci (Programa Nacional de Segurança Pública com\nCidadania). Recusou-se a integrar as polícias com as políticas sociais. O\nresultado está escancarado nos trágicos indicadores dos Anuários de\nSegurança Pública: Mato Grosso do Sul ostenta índices inaceitáveis de\nfeminicídios e de mortes por intervenção policial. A violência de gênero e\ncontra as minorias virou uma epidemia silenciosa que o atual governo finge não\nver.\nAlém disso, nossa geografia foi desprotegida. São 1.517 quilômetros\nde fronteira com a Bolívia e o Paraguai, além de divisas com cinco estados.\nNossos rios, estradas e espaço aéreo viraram corredores livres para o crime\norganizado. Por falta de investimento do Estado em inteligência, o\nnarcotráfico, o contrabando de armas, o tráfico de pessoas e a entrada de\norganizações criminosas avançam diariamente, roubando a paz das famílias\nsul-mato-grossenses. Não só as facções criminosas, mas também os grandes\ncriminosos de “colarinho branco” que se apoderaram do estado de MS.\nNossa Visão: Inteligência Contra o Crime e Respeito à Vida"
+          },
+          {
+            "id": "nosso-governo-vai-resgatar-a-autoridade-do-estado-atraves-da",
+            "titulo": "Nosso governo vai resgatar a autoridade do Estado através da",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Nosso governo vai resgatar a autoridade do Estado através da\nmodernidade e do respeito aos direitos de todo cidadão, mas não deixando de\ncobrar seus deveres para com a sociedade sul-mato-grossense. Segurança\npública de verdade se antecipa ao crime. Vamos blindar nossas fronteiras\ncobrando a implementação na íntegra do SISFRON, com tecnologia de ponta,\nmonitoramento digital e inteligência integrada, ao mesmo tempo em que\nreestruturamos as polícias reduzindo os seus déficits de pessoal que é o\nmesmo desde 2015, com foco na proteção das pessoas, combater a letalidade\ne salvar vidas.\nA violência nas escolas é um fato odioso e que assistimos nas mídias e\nnas redes sociais, sem qualquer atuação do estado com foco na redução dessa\nviolência. \"A escola deve ser um lugar de paz, futuro e acolhimento, e não\nde medo. O atual governo falhou em criar um ambiente seguro para\nalunos e professores.\"\nOutro ponto prometido por este governo em 2014 e apenas maquiaram\né a polícia rural, para combate aos crimes diversos que ocorrem no campo,\nentre eles o abigeato. \"O crime no campo destrói o suor do pequeno e do\ngrande produtor. O roubo de gado e o vandalismo rural em MS serão\ncombatidos com o rigor da lei e inteligência policial.\"\nDiretrizes de Ação para o Novo Governo\n\n\nPacto de Enfrentamento ao Feminicídio: Criar uma rede estadual viva\nde proteção à mulher, com Patrulhas Maria da Penha integradas e\ndelegacias especializadas nas macrorregiões e preparar os nossos\nagentes nos menores municípios ao atendimento das mulheres em\nsituação de vulnerabilidade e de riscos.\n\n\n\nUso da Tecnologia e Redução da Letalidade: Implementar câmeras\ncorporais nos uniformes policiais e investir também em armas não letais,\nprotegendo tanto o bom policial quanto o cidadão.\n\n\n\nMuralha Digital na Fronteira: Criar o Centro Integrado de Inteligência\nde Fronteira, unindo forças estaduais e federais com monitoramento por\ndrones e satélites nas rotas do crime, como previsto no projeto\nSISFRON.\n\n\n\nAlinhamento com o Pronasci: Retomar a parceria com o Governo\nFederal para articular repressão ao crime com inclusão social de jovens\nem áreas de vulnerabilidade.\n\n\n\nValorização Real dos Policiais: Garantir a profissionalização,\nprogressão de carreira justa, saúde mental e treinamento continuado\npara as Polícias Civil, Militar, Científica e Penal."
+          },
+          {
+            "id": "pagina-6",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "\n\nRecomposição dos Quadros de Pessoal: Garantir a realização de\nconcursos públicos para recomposição dos quadros de profissionais de\nsegurança pública, que mantém ao longo desses 12 (doze) anos o\nmesmo DÉFICIT de 2014, por falta de planejamento e de prioridade na\nsegurança pública.\n\n\n\nCombate aos Crimes contra Minorias: Criar núcleos especializados no\ncombate ao racismo, homofobia e intolerância dentro das estruturas de\nsegurança do Estado.\n\n\n\nCombate aos Crimes Rurais: Estruturar a DELEAGRO com quadro de\npessoal, treinado e especializado para investigar as quadrilhas\norganizadas que atuam em furtos de gado, maquinários e defensivos\nagrícolas.\n\n\n\nPrograma Escola Segura: Recompor o déficit de pessoal para que\npossamos implantar de fato uma Patrulha de Paz Escolar, com foco em\npoliciamento preventivo no entorno das instituições de ensino. Instalar\nbotões do pânico nas escolas com interligação direta a emergência\npolicial.\n\nEIXO 3: EDUCAÇÃO\nJUSTIÇA SOCIAL\n\nDEMOCRÁTICA,\n\nHUMANISTA\n\nE\n\nCOM\n\nA educação é o alicerce do conhecimento, da cidadania e da liberdade.\nSob o nosso governo, ela deixará de ser uma peça de propaganda para se\ntornar uma ferramenta real de emancipação e igualdade para todas as regiões\nde Mato Grosso do Sul.\nO Diagnóstico: O Retrocesso de 12 Anos e a Falácia Oficial\nMato Grosso do Sul pouco avançou na educação nos últimos 12 anos,\ne os indicadores oficiais do MEC comprovam essa triste realidade. A\npropaganda do atual governo sobre o avanço do Ensino Médio é uma\nmentira deslavada, pois sequer atingiu a média nacional. Mais revoltante\nainda foi ouvir do próprio Secretário de Estado de Educação que os índices não\navançaram e se encontram abaixa da média nacional e no caso das escolas\nindígenas o quadro é extremamente pior, porque segundo “muitos alunos vão\nà escola principalmente para se alimentar”.\nEssa declaração cruel expõe o duplo fracasso de uma gestão\narcaica: “falhou na educação e faliu na inclusão social.” Em um estado rico,\npujante e bilionário como o nosso, é inaceitável que o governo culpe a fome\ndos estudantes pela sua própria incompetência administrativa. Enquanto o"
+          },
+          {
+            "id": "governo-atual-governa-apenas-para-os-mais-afortunados-nos-governaremos",
+            "titulo": "governo atual governa apenas para os mais afortunados, nós governaremos",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "governo atual governa apenas para os mais afortunados, nós governaremos\npara a dignidade de todas as famílias.\nA Nossa Visão: Tecnologia, Inclusão e Gestão Democrática\nA educação do século XXI exige inovação. Vamos universalizar o\nacesso à tecnologia digital e aos recursos científicos em todas as escolas,\nintegrando comunidades, pais e mestres. Nosso compromisso é com uma\nescola pública, gratuita, de qualidade social e humanista. Uma escola que\nforme cidadãos críticos, conscientes do meio ambiente e preparados para\no mundo do trabalho, respeitando a diversidade e fortalecendo a\ndemocracia de forma prática, com a participação direta da sociedade.\nPara resgatar a nossa educação, sustentaremos nossa gestão em três\npilares centrais: a democratização da gestão, a democratização do acesso e a\ndemocratização do conhecimento.\nDiretrizes de Ação para o Novo Governo\n\n\nEducação Básica de Qualidade e Segurança Alimentar: Garantir\nmerenda escolar de excelência e nutritiva, tratando a alimentação como\ndireito do estudante e suporte pedagógico, nunca como desculpa para o\nfracasso da gestão.\n\n\n\nGestão Democrática e Participativa: Acabar com as indicações\npolíticas nas escolas; democratizar a administração da educação com a\nescolha direta de diretores pela comunidade escolar.\n\n\n\nValorização Real dos Profissionais da Educação: Além de garantir o\ncumprimento integral do piso nacional do magistério, investir em\nrecomposição do quadro de professores e administrativos, e oferecer\nformação continuada.\n\n\n\nEscola Digital e Inovadora: Identificar se todas as escolas públicas\nestudais dispõe de internet de alta velocidade, laboratórios de\ninformática modernos e ferramentas digitais para alunos e professores.\n\n\n\nEnsino Médio e Profissionalizante Integrado: Reestruturar o Ensino\nMédio com suporte psicopedagógico e fomentar as escolas técnicas\nprofissionalizantes, como por exemplo os Institutos Federais,\nconectando o jovem sul-mato-grossense diretamente ao mercado de\ntrabalho regional.\n\n\n\nPlena Inclusão Social e Escolar: Ampliar de forma real o atendimento\nà educação especial e inclusiva, contratando profissionais de apoio\nqualificados e garantindo acessibilidade em todas as unidades de\nresponsabilidade do estado."
+          },
+          {
+            "id": "pagina-8",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "\n\nFortalecimento do Ensino Superior Estadual: Alavancar a UEMS\n(Universidade Estadual de Mato Grosso do Sul), expandindo cursos\nestratégicos para o interior e fortalecendo a pesquisa, a ciência e a\nextensão.\n\n Autonomia Administrativa e Financeira da UEMS: Garantir a\n\nautonomia da Universidade Estadual que ao longo desses últimos 12\n(doze) anos foi sucateada e consequentemente a sua capacidade de\nprodução técnica e cientifica. Retomar o percentual previsto na Lei\nEstadual nº 2.583/2002.\n Retomar/ampliar o princípio da “liberdade de cátedra”: Garantir\nautonomia para docentes na elaboração e desenvolvimento de seus\nplanos e projetos pedagógicos;\n\n\nCriar um Fórum Permanente de Educação: Observar, estudar,\ndebater e formular propostas para a educação no estado de Mato\nGrosso do Sul.\n\nEIXO 4: CULTURA VIVA – INCLUSIVA, PARTICIPATIVA E DE TODOS\nOS SUL-MATO-GROSSENSES\nA cultura é a alma do nosso povo e o motor da nossa identidade. Sob o\nnosso governo, ela deixará de ser um privilégio de poucos e passará a ser\ntratada como um direito fundamental, alcançando cada trabalhador, jovem e\nartista nos 79 municípios de Mato Grosso do Sul.\nO Diagnóstico: A Cultura das Elites e o Abandono dos Municípios\nO modelo cultural patrocinado pelo grupo político que está no poder há\n12 anos é excludente e elitista. A política de cultura do atual governo se\nresume a grandes festivais isolados e patrocínios para exposições\nagropecuárias que beneficiam apenas o topo da pirâmide social. São eventos\nde camarote, onde 90% da população do nosso Estado não consegue entrar.\nQue política cultural é essa que ignora a periferia, o interior, os povos\noriginários, as comunidades quilombolas e os pequenos produtores de arte? O\natual governo transformou a cultura em balcão de negócios para o agronegócio\ne para os mais favorecidos. O interior foi esquecido, os artistas regionais foram\nsufocados pela burocracia e a identidade do nosso povo foi reduzida a peças\nde propaganda.\nA Nossa Visão: Liberdade, Territorialidade e Desburocratização\nQueremos uma política cultural democrática, feita de baixo para cima,\ncom a participação real da sociedade e dos conselhos deliberativos. Vamos"
+          },
+          {
+            "id": "garantir-a-total-liberdade-de-expressao-e-criacao-guiados-por-principios",
+            "titulo": "garantir a total liberdade de expressão e criação, guiados por princípios",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "garantir a total liberdade de expressão e criação, guiados por princípios\nhumanistas e de combate a qualquer tipo de discriminação.\nA cultura gera emprego, renda e dignidade. Nosso compromisso é\ndescentralizar os recursos, simplificar os editais e fazer o financiamento público\nchegar vivo e sem amarras a cada uma das microrregiões de Mato Grosso do\nSul, valorizando quem cria e quem consome arte.\nDiretrizes de Ação para o Novo Governo\nDescentralização dos Recursos (Cultura nos 79 Municípios):\nCriar o programa Cultura Viva no Interior, garantindo que as verbas e os editais\nestaduais cheguem de forma proporcional a todas as microrregiões do Estado,\ne não apenas aos grandes centros.\n\n\nFomento Desburocratizado e Transparente: Reformular o Fundo\nde Investimentos Culturais (FIC/MS) com regras simples, eliminando as\nbarreiras burocráticas que impedem o pequeno artista da periferia e do interior\nde acessar o financiamento público.\n\n\nCultura Sem Camarote (Acesso Universal): Criar circuitos\nculturais populares, feiras artísticas e festivais públicos nos bairros e periferias,\ngarantindo que os 90% da população hoje excluída tenham direito ao lazer e à\narte gratuita.\n\n\nTransversalidade e Economia Criativa: Integrar a cultura com as\npolíticas de educação, turismo e assistência social, transformando\nmanifestações locais em fontes reais de geração de emprego e renda para a\njuventude.\n\n\nSalvaguarda e Valorização do Patrimônio: Resgatar, proteger e\nestruturar o patrimônio histórico, material e imaterial de Mato Grosso do Sul,\ncom forte valorização das culturas indígenas, fronteiriças, pantaneiras e afrobrasileiras.\n\n\nFortalecimento Institucional: Garantir a gestão democrática e a\nparticipação social ativa na formulação da política cultural do Estado,\nfortalecendo o Conselho Estadual de Cultura e os órgãos reguladores e de\nfiscalização.\n\n\nEIXO 5: ESPORTE E LAZER – CIDADANIA, INCLUSÃO E\nTRANSVERSALIDADE\nO esporte e o lazer são direitos universais e condições fundamentais\nde cidadania. O papel do Estado deixa de ser o de mero repassador\nburocrático de recursos para se tornar o promotor ativo da qualidade de vida,"
+          },
+          {
+            "id": "utilizando-a-tecnologia-e-a-ia-como-ferramentas-de-transparencia-combate",
+            "titulo": "utilizando a tecnologia e a IA como ferramentas de transparência, combate",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "utilizando a tecnologia e a IA como ferramentas de transparência, combate\nao favorecimento político e otimização dos recursos. Esta política é uma\nbarreira social decisiva na proteção de crianças e jovens contra a violência e a\nvulnerabilidade social.\nÉ inadmissível que o estado que já viu o Operário FC ser 3º colocado\nno Campeonato Brasileiro da Série A (1977) e o EC Comercial bater de\nfrente com gigantes nacionais hoje veja seus clubes confinados na Série D. O\n\"apagão\" do futebol sul-mato-grossense passa diretamente pelo abandono da\ninfraestrutura, pela falta de laudos técnicos em dia e pela ausência de pontes\nagressivas com o setor privado.\nFortalecimento Institucional e Participação Social\n\n\nConselho Digital e Controle Social: Implementação de uma plataforma\nde governança participativa para que a sociedade civil fiscalize a\naplicação de verbas em tempo real.\n\n\n\nIA na Escuta Ativa: Uso de algoritmos de processamento de linguagem\nnatural (PLN) para analisar demandas da população sobre infraestrutura\nesportiva nas redes sociais e canais oficiais.\n\n\n\nDesburocratização: Digitalização de editais e processos de fomento,\neliminando o \"balcão de negócios\" e garantindo critérios objetivos de\nseleção.\nFinanciamento Inteligente e Captação de Recursos\n\n\n\nRadar de Convênios Federais: Criação de um sistema automatizado\npara monitorar janelas de oportunidade do Governo Federal, permitindo\nque Mato Grosso do Sul vá além do programa \"Segundo Tempo\" e\nintegre o PELC – Programa Esporte e Lazer da Cidade, Pintando a\nCidadania e Pintando a Liberdade e outras linhas de financiamento.\n\n\n\nRastreabilidade por Blockchain: Aplicação de registros públicos\nimutáveis no repasse de fundos para federações, clubes comunitários e\nmunicípios, assegurando transparência absoluta.\n\n\n\nMatchmaking de Patrocínios: Sistema que conecta atletas e projetos\nlocais a empresas privadas por meio da Lei de Incentivo ao Esporte,\nutilizando IA para identificar afinidades de marca.\nUniversalização do Acesso e Ações Afirmativas\n\n\n\nMapeamento de Vulnerabilidade Social: Cruzamento de dados\ngeográficos e socioeconômicos para direcionar a construção de praças,"
+          },
+          {
+            "id": "quadras-e-complexos-esportivos-nas-regioes-de-maior-vulnerabilidade-e",
+            "titulo": "quadras e complexos esportivos nas regiões de maior vulnerabilidade e",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "quadras e complexos esportivos nas regiões de maior vulnerabilidade e\ncriminalidade.\n\n\nInclusão Guiada por IA: Plataformas de apoio a profissionais de\neducação física com treinos, metodologias adaptadas e ferramentas de\nacessibilidade para pessoas com deficiência (PCD), público LGBT,\nequidade de gênero e igualdade racial.\n\n\n\nAplicativo \"Esporte para Todos\": Agendamento público e transparente\nde quadras, equipamentos e inscrição em escolinhas públicas, evitando\nreservas por favorecimento político.\nPromoção e Projeção do Estado (Cenário Nacional e Internacional)\n\n\n\nBig Data para Detecção de Talentos: Criação de um banco de dados\nunificado de atletas de Mato Grosso do Sul (olímpicos, paralímpicos e\namadores) para monitorar desempenho, marcas e tempos, projetando\ntalentos locais para competições de alto rendimento.\n\n\n\nTurismo Esportivo Inteligente: Calendário integrado com a Secretaria\nde Turismo, usando IA para prever o impacto econômico e hoteleiro de\neventos esportivos realizados no estado (como campeonatos de\necoturismo em Bonito ou Pantanal).\nTransversalidade das Políticas Públicas (Integração Total)\n\n\n\nEsporte + Educação: Plataforma integrada para monitorar a frequência\ne o desempenho escolar dos alunos inseridos em programas esportivos\n(ex: Bolsa Atleta, Segundo Tempo e etc.).\n\n\n\nEsporte + Saúde: Monitoramento de indicadores de sedentarismo e\nsaúde preventiva (redução de filas no SUS através da atividade física na\nterceira idade com o programa Vida Saudável a ser criado).\n\n\n\nEsporte + Meio Ambiente e Ciência: Incentivo a esportes de aventura\nsustentáveis e uso de tecnologias de ciência do esporte (biomecânica e\nfisiologia) em centros de treinamento estaduais.\nRetomada do Futebol de MS: Infraestrutura, Governança e\nParcerias Privadas\n\nO poder público atuará como indutor, recuperando o básico estrutural\npara que os estádios gerem receita e atraiam o torcedor de volta.\nOperação Resgate do Morenão: Conclusão definitiva das obras\nestruturais emergenciais, do novo gramado e do sistema de irrigação do"
+          },
+          {
+            "id": "estadio-morenao-a-meta-e-devolve-lo-ao-futebol-oficial-e-garantir-o",
+            "titulo": "Estádio Morenão. A meta é devolvê-lo ao futebol oficial e garantir o",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Estádio Morenão. A meta é devolvê-lo ao futebol oficial e garantir o\nrecebimento de jogos oficiais de grandes equipes nacionais e internacionais.\nInteriorização dos Laudos: Criação de uma força-tarefa da\nFundesporte junto ao Ministério Público, Corpo de Bombeiros e prefeituras para\ngarantir a liberação permanente com laudos atualizados de praças\nesportivas fundamentais como o Douradão (Dourados), o Arthur Marinho\n(Corumbá), Noroeste (Aquidauana), Adão Neves (Iguatemi), Saraivão\n(Ivinhema), Madrugadão (Três Lagoas), Laertão (Costa Rica), Ninho da Águia\n(Rio Brilhante), Gramadão (São Gabriel do Oeste), Ijair Tomquelsqui – SERC\n(Chapadão do Sul), Aral Moreira (Ponta porã), Vitrotão (Naviraí), Pereirão\n(Bataguassú) e os demais.\nParcerias de Uso Mútuo: Ampliação de acordos de cogestão, a\nexemplo do termo firmado para os estádios Jacques da Luz (Moreninhas) e\nVila Nasser, onde a Federação e o município dividem custos de manutenção\nem troca de investimentos estruturais privados.\nPrograma Empresa Cidadã do Esporte: Isenção fiscal progressiva (via\nICMS) para empresas privadas do agronegócio, comércio e indústria que\ninvestirem diretamente no futebol profissional do estado, tanto no patrocínio de\ncamisas quanto no modelo de Clubes-Empresa (SAF).\nModernização das Arenas (Naming Rights): Incentivo legal para que\nempresas privadas comprem os direitos de nome (naming rights) dos estádios\nmunicipais e estaduais concedidos, aplicando o dinheiro diretamente na\nmodernização de assentos, iluminação de LED e segurança."
+          },
+          {
+            "id": "eixo-6-infraestrutura-e-logistica-modais-de",
+            "titulo": "EIXO 6: INFRAESTRUTURA E LOGÍSTICA – MODAIS DE",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "EIXO 6: INFRAESTRUTURA E LOGÍSTICA – MODAIS DE\nTRANSPORTES COM QUALIDADE ATENDENDO AS DEMANDAS\nDO CIDADÃO E DA ECONOMIA\nPara garantir a capacidade de expansão da nossa economia em nosso\nestado, são imprescindíveis os investimentos em obras de infraestrutura e\nlogística, especialmente os modais de transporte (rodovias, hidrovias, ferrovias,\nportos, aeroportos), bem como em saneamento básico, gás natural, energia\nelétrica e telefonia.\nA Infraestrutura e a Logística do Mato Grosso do Sul deverão estar a\nserviço das pessoas e das suas atividades cotidianas, portanto, sintonizadas\ncom as demandas de seu povo, de sua estrutura econômica e dos agentes de\nseu desenvolvimento humano.\nPara o Mato Grosso do Sul ter um crescimento socioeconômico\nsustentável e para que haja um aumento na competitividade dos produtos sulmato-grossenses, é fundamental aumentar a qualidade e a disponibilidade da\nsua infraestrutura. Assim, reduziremos custos estruturais e aumentaremos a\nrentabilidade de seus empreendimentos, desde o pequeno produtor rural até a\ngrande indústria, hoje fortemente penalizados pelas suas deficiências.\nNaturalmente que parte dessas ações são diretamente sob\nresponsabilidade do Governo do Estado. Contudo, temos claro que, para\natendermos às demandas do nosso setor produtivo, teremos que mobilizar as\nforças políticas do estado em ações convergentes com o objetivo de garantir\nque a União aplique os recursos necessários para a realização de obras de\ninfraestrutura que sejam de sua responsabilidade.\nO Governo Federal realizou grandes investimentos na infraestrutura do\nMato Grosso do Sul e com perspectiva de realização de investimentos ainda\nmaiores. Cabe ao Governo Estadual potencializar estes investimentos e\nrealizar uma efetiva integração do sistema de transportes no Estado, incluindo\num plano conjunto e integrado dos diversos modais de transportes, com ênfase\nnos investimentos públicos, priorizando os corredores por onde são escoados\nbens e serviços integrantes de toda a cadeia produtiva do Estado.\nIremos articular as ações do estado com os investimentos do Governo\nFederal em execução ou previstos para o MS, como a revitalização e\nreconstrução da nossa antiga Estrada de Ferro Noroeste do Brasil, a\ninterligação da Malha Oeste com a Ferronorte e a interligação à rede\nferroviária boliviana, entre outras de suma importância ao desenvolvimento\nde todas as regiões de nosso estado.\nNo entanto, o estado também tem que assumir um papel protagonista e\nindutor nas áreas de infraestrutura e logística, bem como nas áreas de"
+          },
+          {
+            "id": "saneamento-gas-comunicacoes-energia-e-inovacao-tecnologica-garantindo",
+            "titulo": "saneamento, gás, comunicações, energia e inovação tecnológica, garantindo",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "saneamento, gás, comunicações, energia e inovação tecnológica, garantindo\nacessibilidade, mobilidade e velocidade para a produção e a comunicação.\nPara isso, é urgente resgatar os instrumentos de financiamento próprio do\nEstado, garantindo que os recursos arrecadados junto ao setor produtivo\nretornem integralmente em investimentos estruturais.\nNa busca de solucionar essas questões estruturantes, o nosso governo\nirá:\nElaborar o Plano Estadual de Transporte e Logística que dê uma\nvisão integrada e estruturante dos fluxos e demandas com ênfase nos modais\nde transporte Rodoviário, Aquaviário e Aeroviário para se ter uma redução\nsensível nos custos logísticos e de transporte no Mato Grosso do Sul;\n\n\nImplantar novos centros logísticos, através de PPP’s e parcerias\ncom o Governo Federal, para a recepção, armazenamento e distribuição de\ncargas, bem como a criação de “portos secos” onde se terá os serviços de\naduana e vigilância sanitária. Estes centros têm a função fundamental de\nagilizar, reduzir custos e dar segurança aos fluxos de cargas.\n\n\nRodovias e a Nova Governança do FUNDERSUL\nAs rodovias são o meio de transporte mais utilizado em nosso estado\n(federais, estaduais e municipais). A atual infraestrutura do transporte\nrodoviário se mostra insuficiente e inadequada a partir das estradas estaduais\ne municipais, gerando perdas ao setor produtivo sul-mato-grossense devido\naos elevados custos logísticos. Estradas municipais e vicinais representam as\ngrandes extensões dentro dos territórios dos municípios e têm sua manutenção\ncomo responsabilidade unicamente das Prefeituras, cujos orçamentos não\nsuportam tamanha demanda.\nO grande motor financeiro para resolver esse gargalo deveria ser o\nFUNDERSUL. No entanto, hoje o fundo não atende mais aos seus objetivos\noriginais, tendo seus recursos pulverizados e desviados para atendimento a\ninteresses político eleitoreiros de prefeitos e aliados, desamparando o\nprodutor que o financia. Precisamos corrigir essa distorção histórica por meio\nde uma gestão transparente e carimbada.\nPara enfrentar estes desafios e garantir a correta aplicação dos\nrecursos, é fundamental a revitalização das 17 (dezessete) Residências\nRegionais da AGESUL (Agência Estadual de Gestão de Empreendimentos),\nrecompondo e qualificando o corpo funcional e os meios técnicos necessários\npara a execução dos serviços sob sua competência.\nOs gargalos existentes nessas rodovias, além de aumentar o tempo de\ndeslocamento, provocam aumento nos custos de transporte, aumento\ndesnecessário no consumo de combustíveis, perdas ao setor produtivo e"
+          },
+          {
+            "id": "desestimulo-aos-investidores-e-consequentemente-ao-desenvolvimento",
+            "titulo": "desestímulo aos investidores e, consequentemente, ao desenvolvimento",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "desestímulo aos investidores e, consequentemente, ao desenvolvimento\nregional.\nO nosso governo deverá estabelecer, imediatamente, um diálogo aberto\ne amplo com a sociedade sul-mato-grossense por intermédio das entidades\ncomo: FAMASUL; ACRISUL; FECOMERCIO; FIEMS; Associações Comerciais;\nCooperativas de Agricultores; Sindicato dos Transportes; SINPETRO,\nSindicatos Rurais, Representantes da Agricultura Familiar, etc., que\nconjuntamente com os municípios e o Governo do Estado irão elaborar uma\nnova política adequada às realidades locais e às necessidades infraestruturais.\nO agronegócio, a agricultura familiar, a agroindústria e o setor industrial\npossuem grande importância para a nossa economia e, de imediato,\nprecisamos dar respostas aos pleitos desses setores, criando Programas\nespecíficos, visando dar maior agilidade nas obras de infraestrutura de maior\nnecessidade aos setores produtivos.\nPara dotar o estado de melhores condições de transportes rodoviários, o\nnosso Governo irá:\nResgatar a finalidade do FUNDERSUL, garantindo por lei que 100%\ndos seus recursos sejam aplicados exclusivamente na pavimentação,\nmanutenção, sinalização e recuperação de rodovias estaduais e estradas\nvicinais;\n\n\nCriar de FATO o Comitê Gestor Paritário do FUNDERSUL,\nincluindo assentos deliberativos para as entidades representativas do setor\nprodutivo, dando a quem paga a taxa o poder de fiscalizar, auditar e votar quais\nobras são prioritárias para o Estado;\n\n\nDesenvolver um Programa Rodoviário Estadual que vai priorizar a\nexpansão da malha rodoviária existente e deverá contemplar a revisão dos\ntraçados propondo correções geométricas, implantação de melhorias e de\nsinalização, com vistas à segurança no tráfego e à adequação a estes novos\nveículos de cargas muito utilizados na agroindústria e siderurgia;\n\n\nMapear os fluxos de cargas, visando a redução dos custos e de\ntempo e da eliminação de gargalos de escoamento. Como consequência,\naumentará a competitividade do produto com a “Marca Mato Grosso do Sul”;\n\n\nDesenvolver projetos de apoio ao escoamento das safras\nagrícolas com efetiva previsão de recursos para este fim. Para atender as\nRodovias Municipais, o Estado deverá prever a realização de convênios\nestáveis com os Municípios, utilizando fatias regionalizadas do FUNDERSUL;\n\n\nRevitalizar e implantar sinalização da malha rodoviária estadual e\nmunicipal, facilitando o fluxo turístico e o escoamento do setor produtivo;\n"
+          },
+          {
+            "id": "investir-na-pesquisa-para-pavimentacao-com-materiais-alternativos",
+            "titulo": "Investir na pesquisa para pavimentação com materiais alternativos,",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Investir na pesquisa para pavimentação com materiais alternativos,\npois, em experiências anteriores, já se verificou, em alguns casos, ser possível\nreduzir em até 30% o custo da pavimentação;\n\n\nFomentar a recuperação e melhoria das estradas vicinais e\nrurais, com adequados cuidados de drenagem superficial de proteção da via e\na substituição de pontes de madeira por concreto, apoiando técnica e\nfinanceiramente os municípios na realização das obras necessárias, em\nconjunto com o setor produtivo.\n\n\nAeroportos\nO Estado de MS possui uma estrutura aeroportuária bastante deficitária\ne que demanda investimentos para sua melhor operacionalização, segurança\naos usuários e, por fim, para ajudar no processo de desenvolvimento regional.\nCom a revitalização da economia brasileira, surgem novas exigências no\nsetor aeroportuário, com demandas de ampliação e qualificação dos nossos\naeroportos internacionais e regionais. Para tanto, o nosso Governo irá:\nIntensificar ações junto a Secretaria Nacional de Aviação Civil,\npara a execução das obras de ampliação e melhorias nas condições dos\naeroportos regionais, fundamentais para o incremento do setor turístico e o\ndesenvolvimento econômico regional;\n\n\nElaborar programa de incentivos para atrair novas empresas de\nvoos regionais para os diversos municípios do estado;\n\n\nDesenvolver projetos de ampliação e adequações de todos os\naeroportos regionais do estado, para apresentação junto ao PROFAA\n(Programa Federal de Auxílio a Aeroportos).\n\n\nHidrovias e Portos\nO Mato Grosso do Sul possui uma posição geográfica privilegiada,\ncercado por duas das principais hidrovias da América do Sul: a Hidrovia\nParaguai-Paraná e a Hidrovia Paraná-Tietê. No entanto, o potencial do\ntransporte aquaviário em nosso estado ainda é subutilizado devido a gargalos\nestruturais, como a falta de dragagem regular nos rios, a infraestrutura\nportuária desatualizada e a baixa integração com os modais rodoviário e\nferroviário.\nO fortalecimento dos portos sul-mato-grossenses — especialmente nos\npolos de Três Lagoas, Bataguassú, Corumbá, Ladário e Porto Murtinho — é\nfundamental para reduzir drasticamente o custo do frete de grandes volumes,\ncomo grãos, minérios e fertilizantes. Além disso, as hidrovias são pilares\ncentrais para a consolidação da Rota Bioceânica, conectando nossa produção\nde forma rápida e barata aos mercados do Atlântico e do Pacífico."
+          },
+          {
+            "id": "a-consolidacao-desse-modal-passa-obrigatoriamente-por-duas-frentes-de",
+            "titulo": "A consolidação desse modal passa obrigatoriamente por duas frentes de",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "A consolidação desse modal passa obrigatoriamente por duas frentes de\ngrande impacto econômico:\nO Polo Mundial de Celulose na Costa Leste: Onde os complexos\nportuários de Três Lagoas e Bataguassu desempenham papel vital no\nescoamento massivo de celulose, papel e madeira, exigindo infraestrutura\nintermodal moderna e dragagem contínua no Rio Paraná para manter a\ncompetitividade global das nossas indústrias.\nA Rota Bioceânica e a Saída para o Pacífico: O Mato Grosso do Sul\nvive um marco histórico com a conclusão das obras da Ponte Binacional\nda Rota Bioceânica em Porto Murtinho, cuja estrutura principal se uniu\nfisicamente no segundo semestre de 2026. Cabe ao Governo do Estado\natuar com protagonismo absoluto para garantir a entrega rápida das obras\nde acesso rodoviário da BR-267 e o pátio aduaneiro, transformando de vez\no estado no portal de conexão terrestre do Brasil com o mercado asiático\npelos portos do Chile\nPara transformar o potencial hidroviário do estado em realidade\neconômica, o nosso Governo irá:\n\n\nInstituir o Programa Estadual de Desenvolvimento Hidroviário,\nfocado em planejar a expansão da capacidade de carga dos portos\npúblicos e no incentivo à instalação de novos Terminais de Uso Privado\n(TUPs).\n\n\n\nGarantir a plena operação e infraestrutura de suporte para a Ponte\nda Rota Bioceânica, coordenando ações rápidas com o governo federal\npara a conclusão da alça de acesso da BR-267, o contorno de Porto\nMurtinho e a estruturação do Centro Unificado de Fronteira, ativando o\ncorredor logístico internacional para o Pacífico.\n\n\n\nTransformar Porto Murtinho no maior Hub Portuário do CentroOeste, otimizando seus acessos terrestres e investindo em\ninfraestrutura de atracação para dar suporte ao escoamento massivo de\nsafra através da Ponte de Interligação Brasil Paraguai-Argentina-Chile.\n\n\n\nModernizar e ampliar os complexos portuários de Corumbá e\nLadário, integrando-os diretamente à malha ferroviária revitalizada\n(Malha Oeste) para criar um corredor intermodal eficiente de minério de\nferro e manganês.\n\n\n\nFomentar parcerias público-privadas (PPPs) para a criação de\nretroáreas portuárias, oferecendo espaços estruturados para\narmazenagem de grãos, combustíveis e fertilizantes, reduzindo o tempo\nde espera dos navios e barcaças."
+          },
+          {
+            "id": "pagina-18",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "\n\nEstimular o transporte de cabotagem e a integração aduaneira com\nos países vizinhos (Bolívia, Paraguai e Argentina), simplificando trâmites\nfiscais e sanitários nos portos de fronteira para acelerar o comércio\nbilateral.\n\n\n\nImplementar tecnologias de monitoramento digital e gestão de\ntráfego hidroviário, aumentando a segurança da navegação e\ngarantindo previsibilidade para os operadores logísticos que escolherem\nas águas do estado.\nSaneamento Básico, Energia e Telecomunicações\n\nO saneamento básico, além de uma questão de infraestrutura, é\nprincipalmente uma questão de dignidade e saúde pública. Cada real\ninvestido em saneamento economiza quatro reais na saúde pública. O Mato\nGrosso do Sul tem plenas condições de universalizar esses serviços sem abrir\nmão de suas empresas públicas.\nEnquanto senador e relator do orçamento federal, atuamos\nfortemente na garantia de recursos do PAC 1 e PAC 2 do Ministério das\nCidades e da FUNASA, assegurando ao Estado mais de R$ 505 milhões para\nobras de implantação e ampliação dos sistemas de esgoto. Posteriormente,\nnos Programas Avançar Cidades de 2018, 2019 e 2020, foram contratados\nmais R$ 510 milhões. Ou seja, foi mais de R$ 1 bilhão de reais carimbados\npara a SANESUL. Recursos que, por critérios técnicos, eram suficientes\npara atender 80% da população urbana nos 68 municípios sob concessão\nda empresa.\nNo entanto, em 2020, este GOVERNO apresentou uma Parceria\nPúblico-Privada (PPP) de esgoto sob a propaganda de que seriam necessários\nR$ 3 bilhões em 30 anos (sendo R$ 1,5 bilhão nos primeiros 10 anos). Como\nengenheiro, afirmo: “essa conta não fecha”! A Lei Federal estipula a meta\nde universalização em 90% até 2033. Ora, se com os recursos federais que\narticulamos e outros posteriores a nossa saída, já atingiríamos 80%, os 10%\nrestantes equivalem a apenas 80 mil unidades residenciais. É inconcebível e\ninaceitável que o montante contratado para executar os 10% finais seja o\nmesmo utilizado para fazer os primeiros 80%.\nA SANESUL é uma empresa pública sólida, superavitária e com\ntotal capacidade técnica e financeira de executar e universalizar esses\nserviços. Não permitiremos que uma estatal estratégica vire mera\narrecadadora de tarifas para repassar o faturamento do esgoto a um consórcio\nprivado.\nAssim como o saneamento, as matrizes de energia e a infraestrutura de\ntelecomunicações são vetores fundamentais para o desenvolvimento. O Mato"
+          },
+          {
+            "id": "grosso-do-sul-possui-um-potencial-energetico-gigantesco-tanto-hidreletri",
+            "titulo": "Grosso do Sul possui um potencial energético gigantesco, tanto hidrelétrico",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Grosso do Sul possui um potencial energético gigantesco, tanto hidrelétrico\nquanto bioenergético (biogás e biomassa), mas faltou ao Estado atuar na\natração de novos investimentos e na interlocução junto ao Ministério das\nComunicações para extinguir os \"apagões\" digitais no interior.\nNosso governo vai fortalecer as empresas estatais sob o controle\nacionário do Estado, administradas por Contratos de Gestão rígidos, focados\nna eficiência e no atendimento ao cidadão.\nPara resgatar a soberania da nossa infraestrutura e impulsionar o\ndesenvolvimento sustentável, o nosso Governo irá:\nNo Saneamento Básico e Defesa do Patrimônio Público\n\n\nRever e auditar imediatamente os Estudos de Viabilidade Técnica e\nEconômica (EVTE) que balizaram a PPP de esgoto em cada um dos\nmunicípios, respeitando os Contratos de Programa vigentes;\n\n\n\nInvestigar o destino de mais de R$ 300 milhões pagos à\nconcessionária privada, além de auditar os empréstimos bancários\ntomados pelo Estado para realizar obras em municípios onde o\ninvestimento deveria ter sido integralmente feito pela empresa parceira;\n\n\n\nDesenvolver na SANESUL um Programa de Revitalização e\nModernização de seus Sistemas de Tratamento de Água e de Esgotos\nDomésticos, transformando-a novamente em referência nacional de\neficiência pública;\n\n\n\nImplementar o Programa de Redução de Perdas Físicas de Água na\nRede, combatendo o desperdício na distribuição por meio de tecnologias\nde geofonamento e troca de tubulações antigas;\nNa Matriz Energética e Expansão do Gás Natural\n\n\n\nManter o controle da MSGÁS sob a égide do Estado, ampliando os\nramais de distribuição industrial e residencial em Campo Grande e Três\nLagoas, e incentivando o uso pleno do gás natural na região de\nCorumbá;\n\n\n\nRetomar os estudos de viabilidade para expansão do gasoduto e do\nsistema de distribuição de Gás Natural para as demais regiões e polos\nagroindustriais do estado;\n\n\n\nCriar o Programa Estadual de Incentivo às Fontes Alternativas de\nEnergia, fomentando a instalação de cooperativas de energia solar,\nusinas eólicas e pequenas centrais geradoras de energia limpa;\n\n\n\nIncentivar a instalação de novas Usinas Termelétricas (UTEs) a\nbiomassa, utilizando os subprodutos e resíduos da agroindústria"
+          },
+          {
+            "id": "bagaco-de-cana-e-do-setor-florestal-madeireiro-resolvendo-um-passivo",
+            "titulo": "(bagaço de cana) e do setor florestal/madeireiro, resolvendo um passivo",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "(bagaço de cana) e do setor florestal/madeireiro, resolvendo um passivo\nambiental histórico;\n\n\nCriar o Programa Estadual de Produção de Biodiesel, articulado de\nforma intersecretarial, promovendo a produção sustentável com foco na\nagricultura familiar, inclusão social e geração de emprego no campo;\nNas Telecomunicações e Inclusão Digital\n\n\n\nArticular junto ao Ministério das Comunicações e operadoras de\ntelefonia a universalização do sinal 4G e 5G nas rodovias estaduais,\ndistritos isolados e assentamentos rurais, garantindo conectividade para\na segurança, telemedicina e educação de campo;\n\n\n\nImplantar o Cinturão Digital de Mato Grosso do Sul, conectando\ntodas as repartições públicas, escolas estaduais e postos de saúde por\nfibra óptica de alta velocidade;\n\n\n\nCriar incentivos para a atração de indústrias de componentes\ntecnológicos, como fábricas de células fotovoltaicas e equipamentos de\nconectividade para o agronegócio de precisão.\n\nEIXO 7: CIÊNCIA, TECNOLOGIA E INOVAÇÃO A SERVIÇO DO SER\nHUMANO E DO DESENVOLVIMENTO SUSTENTÁVEL\n“Quando se pensa um modelo de desenvolvimento de ciência e\ntecnologia em uma região do país, pensa-se na possibilidade de mudanças que\nauxiliem no avanço da qualidade de vida daqueles que residem nessa região.\nAo mesmo tempo, integram-se essas ações de mudanças ao desenvolvimento\nsustentável, promovendo a harmonia com o meio ambiente, os valores culturais\ne regionais desse mesmo povo.”\nA presente proposta tem como ponto de partida três premissas básicas e\nintegradas: a) o espaço geográfico e o meio ambiente, b) a pessoa humana\ne c) as atividades e o modo de produção da vida humana. Essas diretrizes\nsão as forças orientadoras das ações propostas para o avanço da Ciência,\nTecnologia e Inovação (C&T&I) em Mato Grosso do Sul.\nO Espaço Geográfico e o Meio Ambiente: Precisam ser vistos como\npassíveis da criação de uma rede de interconexões inteligentes. O\nconhecimento científico deve permitir e induzir o desenvolvimento dos\nmunicípios, respeitando as vocações de cada território e os limites ecológicos\nda sustentabilidade.\nA Pessoa Humana: O nosso programa de governo valoriza o homem e\na mulher que fixaram residência dentro do espaço geográfico do nosso Estado,\nsem esquecer a nossa importância geopolítica e a integração transfronteiriça"
+          },
+          {
+            "id": "com-o-paraguai-e-a-bolivia-a-tecnologia-deve-servir-para-emancipar-o-cid",
+            "titulo": "com o Paraguai e a Bolívia. A tecnologia deve servir para emancipar o cidadão,",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "com o Paraguai e a Bolívia. A tecnologia deve servir para emancipar o cidadão,\nnão para excluí-lo.\nAs Atividades e o Modo de Produção: Dirige-se principalmente aos\nmeios produtivos, que serão organizados em cadeias produtoras robustas. Esta\nproposta localiza a aplicação de C&T tomando as Cadeias Produtivas como a\nmediadora — mas não o centro — entre o ser humano e o meio ambiente. É\njustamente nos meios de produção onde as ações humanas oferecem as\ntransformações mais significativas. Elas podem exaurir os recursos naturais ou\npactuar novas formas de coexistência que gerem riqueza sem destruir nossas\nfontes de vida. Isso inclui o fortalecimento dos vários modelos de turismo, a\nexploração mineral responsável e o mercado de carbono ético e inclusivo.\n“Não há mais dúvidas quanto à relação direta entre o conhecimento\ne a capacidade desse mesmo conhecimento tornar-se riqueza para os\npovos que o detêm.”\nNo entanto, formar apenas um \"estoque\" de capacidade científica não\nbasta para enfrentar os problemas reais da sociedade. É preciso localizar,\norganizar e mobilizar os atores do meio científico para formar massa crítica.\nDevemos compreender os recursos necessários e mapear os problemas\nprioritários para alcançar a condição ótima de melhoria social.\nPara isso, o Poder Público assumirá seu papel indutor. O Estado vai\nreunir os agentes do setor científico, a sociedade organizada, os agentes\npúblicos e as forças produtivas para consolidar na gestão estadual uma\nverdadeira cultura de inovação democrática.\nDiretrizes e Ações Estratégicas do nosso Governo\nPara modernizar o Estado com foco no bem-estar social e combater o\nmodelo excludente da atual gestão, o Governo irá:\n\n\nInstituir o Órgão Gestor de C&T&I: Estruturar uma secretaria ou\ncoordenação robusta focada exclusivamente em governar, articular e\nmonitorar os programas de inovação, tecnologia e sustentabilidade\naplicados em todo o território sul-mato-grossense;\n\n\n\nFormalizar Redes de Convênio para Qualificação: Firmar parcerias\nimediatas com Universidades, IFMS e o Sistema S (SENAI, SENAC,\nSENAR, SESI, SEST/SENAT) para a oferta capilarizada de cursos\ntécnicos, de extensão e capacitação profissional, preparando jovens e\nadultos para as reais demandas geradas pelos novos investimentos\neconômicos;\n\n\n\nFomentar a Produção de Matérias-Primas Científicas: Estabelecer\nacordos com institutos de pesquisa e universidades para o\ndesenvolvimento e a disponibilização de insumos, sementes"
+          },
+          {
+            "id": "selecionadas-e-matrizes-tecnologicas-para-cooperativas-associacoes-e",
+            "titulo": "selecionadas e matrizes tecnológicas para cooperativas, associações e",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "selecionadas e matrizes tecnológicas para cooperativas, associações e\na sociedade em geral;\n\n\nImpulsionar o Empreendedorismo de Base Tecnológica:\nDesenvolver programas de capacitação voltados à cultura\nempreendedora e à economia criativa, em cooperação com o Sebrae,\nuniversidades e o IFMS;\n\n\n\nEstimular Incubadoras e Startups Regionais: Criar mecanismos de\nincentivo fiscal e econômico para descentralizar o ecossistema de\ninovação, apoiando projetos inovadores e aceleradoras já em\nandamento nas diversas regiões do Estado;\n\n\n\nImplementar Parques Tecnológicos Regionais: Viabilizar, em\nparceria com a academia e o setor privado, a instalação de Parques\nTecnológicos em polos estratégicos como Três Lagoas, Coxim,\nParanaíba, Corumbá e Campo Grande, criando ambientes favoráveis\npara a atração de empresas de tecnologia e fortalecendo a rede de\ninovação;\n\n\n\nCriar as Bolsas de Incentivo à Pesquisa Aplicada: Instituir por meio\nda FUNDECT editais exclusivos para Iniciação Científica Júnior (ensino\nmédio/técnico), graduação, mestrado, doutorado e pós-doutorado,\ndirecionados especificamente a laboratórios que busquem soluções para\nos gargalos tecnológicos e demandas sociais de Mato Grosso do Sul;\n\n\n\nProteger e Reter a Juventude no Estado: Desenvolver, em conjunto\ncom o Sebrae e o SESI, programas de mentoria, crédito facilitado e\norientação para jovens empreendedores. O estímulo à juventude será a\nprioridade central da gestão, criando oportunidades reais de trabalho\nqualificado para que o jovem permaneça no MS, libertando-o da\ndependência de subempregos sazonais gerados por grandes\nconglomerados favorecidos pelas políticas vigentes.\n\nEIXO 8: TURISMO COMO MATRIZ ECONÔMICA,\nTERRITORIAL E EMANCIPAÇÃO SOCIAL\n\nINCLUSÃO\n\nA institucionalização de uma política pública de turismo em Mato Grosso\ndo Sul justifica-se pelo seu conceito mais amplo: a agregação de valores e\nbenefícios individuais e coletivos para as pessoas e para o meio ambiente.\nAssociamos o seu planejamento e sua execução à necessidade de capacitar\nessa atividade, o turismo como uma matriz econômica indutora, geradora\nde empregos qualificados, distribuição de renda e ganhos sociais,\nambientais, técnico-científicos, culturais e de infraestrutura."
+          },
+          {
+            "id": "com-biomas-exuberantes-alguns-unicos-no-planeta-uma-profusao",
+            "titulo": "Com biomas exuberantes — alguns únicos no planeta —, uma profusão",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Com biomas exuberantes — alguns únicos no planeta —, uma profusão\nde culturas locais e plurinacionais e um riquíssimo acervo patrimonial\nremanescente de diferentes ciclos civilizatórios, nosso Estado abriga, em seus\n79 municípios, atrações capazes de catalisar a atenção de visitantes locais,\nnacionais e internacionais.\nPara cumprir sua função de fomentador, o nosso Governo vai\nreconhecer os operadores do turismo em todos os níveis e mapear as\nmatérias-primas disponíveis, as que estão em exploração e as que podem ser\nexploradas, sempre sob a régua da sustentabilidade e da promoção humana. O\nturismo sul-mato-grossense não se processará sem a participação ativa da\nsociedade e do trade turístico.\n“Em nosso Governo o turismo caminhará em sintonia e\ncorresponsabilidade com as áreas de Meio Ambiente, Cultura, Educação e\nInfraestrutura Logística, quebrando o isolamento das ações públicas.”\nDiretrizes e Ações Estratégicas do Governo\nPara dotar o Estado de uma infraestrutura receptiva robusta e\ndescentralizar os ganhos econômicos do setor, o nosso Governo irá:\n\n\nCumprir com a Proteção dos Patrimônios Consolidados: Garantir na\nplenitude a responsabilidade do Estado pela preservação, proteção e\nmanutenção contínua dos biomas e reservas ecoambientais e\npatrimoniais já consolidados, como o Complexo do Pantanal, o Casario\ndo Porto de Corumbá, as grutas e mananciais de Bonito, a Morada dos\nBaís na capital, entre outros endereços históricos.\n\n\n\nDesenvolver a Plataforma Inteligente do Turismo: Implementar, em\nparceria com as universidades, terceiro setor e conselhos de turismo,\num software próprio de inteligência de dados para identificar, catalogar e\nmanter atualizado o inventário de informações turísticas (endereços,\ndistâncias, eventos, manifestações, infraestrutura logística e atrativos de\ncada localidade), servindo como base técnica para apurar o fluxo, as\ntendências e as sazonalidades do mercado para abastecer os pontos\nestratégicos de circulação.\n\n\n\nFortalecer a Infraestrutura Receptiva nos Municípios: Apoiar e\nincentivar os municípios para que dotem suas cidades de estruturas de\nacolhimento básico, por meio da construção e revitalização de portais de\nentrada, unidades de atendimento e orientação ao turista, sinalização\ndetalhada e padronizada, além da oferta de material educativo e de\nutilidade pública.\n\n\n\nDifundir a Identidade Sul-Mato-Grossense: Mais do que fazer\npropaganda comercial de eventos isolados, utilizar as redes públicas de"
+          },
+          {
+            "id": "difusao-e-campanhas-planejadas-para-divulgar-a-identidade-profunda-do",
+            "titulo": "difusão e campanhas planejadas para divulgar a identidade profunda do",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "difusão e campanhas planejadas para divulgar a identidade profunda do\nEstado, dando a conhecer em todos os territórios os traços humanos,\nambientais, culturais e históricos que compõem o nosso povo;\n\n\nEstruturar Novas Rotas e Circuitos Regionais: Mapear e formalizar\nrotas turísticas específicas para os diferentes perfis de visitação, para\natrair e atender o interesse das preferências da grade de modalidades\nde turismo (Histórico e de Guerra, Aventura, Contemplação, Religioso,\nRural e de Fronteira). Com isso, amplia-se para o Estado inteiro, a todos\nos municípios e a todos os segmentos economicamente potenciais, um\nsistema de inclusão geográfica e territorial que vai conferir unidade no\nprotagonismo, na produção e no retorno dos benefícios constantes da\ncadeia econômica e empreendedora do turismo;\n\n\n\nGarantir a Inclusão Geográfica e Territorial: Integrar os municípios de\nmenor porte à cadeia do turismo regionalizado, garantindo que as fatias\nde investimentos públicos em acessos asfálticos, sinalização e\ncapacitação cheguem a todas as regiões, gerando unidade no\nprotagonismo e no retorno dos benefícios econômicos aos pequenos\nempreendedores e comunidades locais.\n\n\n\nCapacitar e Profissionalizar a Cadeia do Turismo (Prioridade\nAbsoluta): Habilitar gestores de projetos e profissionais para as\natividades factuais do turismo, promovendo a profissionalização\nindispensável de recursos humanos que vão atuar em áreas de\ncomplexidades específicas, como o planejamento, a captação de\nrecursos, execução, prestação de contas e o manuseio das ferramentas\ntecnológicas essenciais à agilidade e à modernização dos sistemas e\nserviços.\n\n\n\nFirmar Parcerias com a Academia e os Setores Laborais: Induzir\nparcerias pré-definidas no planejamento governamental envolvendo as\nuniversidades, instituições de pesquisa e ensino, organizações culturais\ne desportivas, além dos laborais diretamente envolvidos na base da\natividade, como os trabalhadores do artesanato e das redes de\nserviços locais, para receber e oferecer capacitações específicas e\ninformações segundo as necessidades de cada segmento."
+          },
+          {
+            "id": "carta-ao-povo-de-mato-grosso-do-sul-a",
+            "titulo": "CARTA AO POVO DE MATO GROSSO DO SUL: A",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "CARTA AO POVO DE MATO GROSSO DO SUL: A\nRESPOSTA ESTÁ EM NOSSAS MÃOS\nMinhas amigas e meus amigos de Mato Grosso do Sul,\nChegamos ao final deste documento com uma convicção profunda: o\nnosso Estado é gigante, mas foi apequenado por um modelo de gestão que\nescolheu governar para poucos. Ao longo das últimas páginas, apresentamos\nnão apenas um diagnóstico técnico das deficiências que travam a nossa terra,\nmas um conjunto de soluções reais, corajosas e progressistas.\nMato Grosso do Sul é um estado rico, dono de um povo trabalhador, de\nbiomas exuberantes e de uma força econômica inegável. No entanto, há 12\nanos, a nossa população assiste ao avanço de uma política elitista e privatista.\nUma política que transformou direitos essenciais em mercadoria e que\nesvaziou a máquina pública para favorecer grupos econômicos restritos.\nComo engenheiro e homem público que dedicou a vida a entender o\norçamento federal e as necessidades do nosso povo, afirmo a vocês: “essa\nconta não fecha e esse ciclo precisa acabar.”\nNão é aceitável que a SANESUL, uma empresa pública sólida que\ncapitalizamos com mais de meio bilhão de recursos federais durante nossa\natuação no Senado, seja transformada em mera arrecadadora de tarifas para\nenriquecer consórcios privados por meio de uma PPP sem justificativa técnica.\nNão é aceitável que o FUNDERSUL, financiado pelo suor do produtor\nrural, tenha sua finalidade desviada enquanto as estradas vicinais e pontes\ndo interior permanecem intrafegáveis, penalizando desde o assentado da\nagricultura familiar até a grande agroindústria.\nA incompetência desse modelo cobra o seu preço mais alto na vida e na\ndignidade das pessoas. Assistimos à criminosa privatização terceirizada da\nnossa Saúde Pública, que abandonou o cidadão. Falta estrutura básica, faltam\nmédicos especialistas e faltam exames de alta complexidade nas\nmacrorregiões de saúde, obrigando pais e mães de família a se deslocarem por\ncentenas de quilômetros para Campo Grande ou Dourados em busca de um\natendimento que deveria estar perto de suas casas.\nNa Segurança Pública, o déficit de efetivo policial e a falta de\ninvestimentos estruturais deixam nossas fronteiras e bairros vulneráveis.\nSofremos com os índices alarmantes de feminicídio, reflexo de um governo que\nnão protege as suas mulheres nem investe em redes de acolhimento e\nprevenção. Na Educação, o descaso com os nossos professores e com a\nestrutura escolar compromete o futuro das próximas gerações."
+          },
+          {
+            "id": "para-piorar-o-esvaziamento-das-funcoes-tecnicas-abriu-espaco-para",
+            "titulo": "Para piorar, o esvaziamento das funções técnicas abriu espaço para",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "Para piorar, o esvaziamento das funções técnicas abriu espaço para\na degradação moral da máquina pública. O que vemos hoje em Mato\nGrosso do Sul é um governo sitiado por sucessivas operações da Polícia\nFederal e do GAECO. Secretários de Estado e diretores comissionados\nviraram alvos frequentes de investigações de combate à corrupção. É\ninadmissível que os ocupantes do primeiro escalão e cargos de confiança\npareçam ser escolhidos pela sua ficha corrida criminal, e não pela\ncapacidade técnica, ética e profissional.\nNão podemos nos conformar com um Estado que celebra recordes de\nexportação de matéria-prima bruta, mas que vira as costas para a sua\njuventude, empurrando nossos jovens para o subemprego por falta de\ninvestimentos em Ciência, Tecnologia e Inovação. O desenvolvimento não\npode ficar concentrado em poucos eixos geográficos. Ele precisa chegar aos\n79 municípios.\nPor isso, o projeto “MS DE TODOS” não é apenas uma plataforma\neleitoral; é uma convocação pedagógica e democrática. É o resgate de um\nmodo de governar que é sem dúvidas, vitorioso: aquele que coloca o ser\nhumano, a dignidade, a sustentabilidade e a justiça social no centro do\norçamento público.\nNós vamos resgatar a soberania das nossas empresas e serviços\npúblicos. Vamos descentralizar de FATO a saúde, estruturando as\nmacrorregiões com exames e especialidades. Vamos valorizar os professores\nconvocados e repor o quadro de concursados dentro de um planejamento\nconjunto com seus representantes. Reforçar a segurança e combater sem\ntrégua o feminicídio. Vamos governar com transparência, eliminando os\nbalcões de negócios e garantindo que o critério de escolha da nossa equipe\nseja estritamente técnico e de conduta ilibada.\nA pergunta que deixamos ao fechar este plano de governo é simples,\nmas exige coragem: Continuaremos no caminho da exclusão, do\nenriquecimento de grupos e amigos, ou ousaremos trilhar novos rumos?\nA resposta está em nossas mãos. Mato Grosso do Sul tem pressa de ser\nfeliz, pressa de ser justo e pressa de ser de todos nós. Convidamos cada sulmato-grossense a caminhar conosco nessa jornada de reconstrução e\nesperança.\nUm forte abraço,\n\nDELCIDIO DO AMARAL GOMEZ\n\" MS DE TODOS\""
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "3faff6e81c67a4612ebccb57c45121ceda5e9d31e14e8e0bd8ae4fd9c7601e93"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "f83c2ea5fbe1297191c7aa11c6d8d1b0a63d4f5052c305a23ae7e8f88439510f"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "48cddf622e744e3856da8b4c552edaa086f73562f70f3759741453dbe0650128"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "8136b519fab43e349ee71e7a7b4514cd6205317a47e9430087244fb121400a8e"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "49f50c7d1c22025b3e4cae1b2430193371006637815677581a96a18e91e50ffa"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "9715e54b958e65188beffa75203753578e654a5fc79a8770caebbac7dd6d827d"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "b3a3f1060570b2887ca84c01fedaec88f45c0a67be14f4c1b0ed8609f3e4c675"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "3a37c89c5df02569f6cf528627707d2d345874ae93b6ae1a719cb6c404d07ad2"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "1f8caa0676dbb09d9df0a2c80fdd1bb43fe8141e1293885217379b28628fcdcb"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "999df4a8df06f5daaedf5484fffd3aab2778aabeb8e9986eb0ad379ba29e84aa"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "8a6453b58bee609fb32bce1fc87508ca6f6bd1d9bc534a3e8fdd2414b8e64355"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "df564595e5441e5ca086a29e6fe9b510855ae0047103b761e144c34a3bff1be0"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "a7a3f8a3372b6497d421bea2cd0813e66ee90a0b1688cb042078c36be2c8e647"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "b5fc358d822a8daf428b8ca3fdd841b86ae9cfcca662e81417991cbf49b7fe22"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "eb7b4ad15ce8c9c203dc665087315bbc0df6c43c6da26a251041ce5c8edca893"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "0d97600f2c8f20ab54ebef6ef01e29a59d58e1c3f1b3545183d6e34babe21498"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "de91beae42080b079b30b684050bc66a9a6fb129922adb6ac90002bb9ba348a6"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "2f82d98898a7f8ee66623018dbc9bbf3c919f1a818b5ebbd3357c1d2f8f4487b"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "85205f11d7fe3d1307b59e399382716659f4aba52de3a3db562b1313978e4d43"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "ecb3c8a16559bb72d6e2b7a677bddb47e311ed2fc134a0ba46a56a261c39a137"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "11886d49f4c943a27b08eb7c64441a765df5a2092ebbe04158e4c3c7c5f8520c"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "f3aac092bf3365c3cc47d0ecc298a506993f3f354e3748e268b8d5a214080745"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "47808b779c5e95cc965727b2aaa40c5a4856f002e69db03bac79b807f66765ef"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "4560b8d24795ccecd14d84a927baeff6806cc08e8e5a9920ac9afcddda3837f3"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "fe9aaa198d847d0042492e9299de6f5530b880f60fd47e1b07d38b3ce01cdece"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "60e82d0b43588e4bee0e2021d9b89283894117ce3f6a775c8bb69d554037845c"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "A educação do século XXI exige inovação. Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres. A cultura gera emprego, renda e dignidade. A tecnologia deve servir para emancipar o cidadão, não para excluí-lo. O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico. Implantar o Cinturão Digital de Mato Grosso do Sul, conectando todas as repartições públicas, escolas estaduais e postos de saúde por fibra óptica de alta velocidade. Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos, transformando-a novamente em referência nacional de eficiência pública. Criar o Programa Estadual de Incentivo às Fontes Alternativas de Energia, fomentando a instalação de cooperativas de energia solar, usinas eólicas e pequenas centrais geradoras de energia limpa.",
+    "frases": [
+      {
+        "texto": "A educação do século XXI exige inovação.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 7,
+            "trecho": "A educação do século XXI exige inovação."
+          }
+        ]
+      },
+      {
+        "texto": "Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 7,
+            "trecho": "Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres."
+          }
+        ]
+      },
+      {
+        "texto": "A cultura gera emprego, renda e dignidade.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 9,
+            "trecho": "A cultura gera emprego, renda e dignidade."
+          }
+        ]
+      },
+      {
+        "texto": "A tecnologia deve servir para emancipar o cidadão, não para excluí-lo.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 21,
+            "trecho": "A tecnologia deve servir para emancipar o cidadão, não para excluí-lo."
+          }
+        ]
+      },
+      {
+        "texto": "O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 23,
+            "trecho": "O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico."
+          }
+        ]
+      },
+      {
+        "texto": "Implantar o Cinturão Digital de Mato Grosso do Sul, conectando todas as repartições públicas, escolas estaduais e postos de saúde por fibra óptica de alta velocidade.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 20,
+            "trecho": "Implantar o Cinturão Digital de Mato Grosso do Sul, conectando todas as repartições públicas, escolas estaduais e postos de saúde por fibra óptica de alta velocidade"
+          }
+        ]
+      },
+      {
+        "texto": "Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos, transformando-a novamente em referência nacional de eficiência pública.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 19,
+            "trecho": "Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos, transformando-a novamente em referência nacional de eficiência pública"
+          }
+        ]
+      },
+      {
+        "texto": "Criar o Programa Estadual de Incentivo às Fontes Alternativas de Energia, fomentando a instalação de cooperativas de energia solar, usinas eólicas e pequenas centrais geradoras de energia limpa.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 19,
+            "trecho": "Criar o Programa Estadual de Incentivo às Fontes Alternativas de Energia, fomentando a instalação de cooperativas de energia solar, usinas eólicas e pequenas centrais geradoras de energia limpa"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "educacao-digital",
+        "titulo": "Educação digital",
+        "descricao": "O programa propõe ampliar recursos digitais nas escolas.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 7,
+            "trecho": "Vamos universalizar o acesso à tecnologia digital e aos recursos científicos em todas as escolas, integrando comunidades, pais e mestres."
+          }
+        ]
+      },
+      {
+        "id": "cultura-publica",
+        "titulo": "Cultura pública",
+        "descricao": "O documento apresenta a cultura como área de geração de emprego, renda e dignidade.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 9,
+            "trecho": "A cultura gera emprego, renda e dignidade."
+          }
+        ]
+      },
+      {
+        "id": "tecnologia-cidadania",
+        "titulo": "Tecnologia para cidadania",
+        "descricao": "O eixo de ciência, tecnologia e inovação atribui à tecnologia uma função voltada ao cidadão.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 21,
+            "trecho": "A tecnologia deve servir para emancipar o cidadão, não para excluí-lo."
+          }
+        ]
+      },
+      {
+        "id": "turismo-participativo",
+        "titulo": "Turismo participativo",
+        "descricao": "A proposta de turismo prevê participação da sociedade e do trade turístico.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 23,
+            "trecho": "O turismo sul-mato-grossense não se processará sem a participação ativa da sociedade e do trade turístico."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-publico",
+        "titulo": "Saneamento público",
+        "descricao": "O programa prevê modernização dos sistemas de tratamento da SANESUL.",
+        "evidencias": [
+          {
+            "documentoId": "MS:120002552155:01",
+            "pagina": 19,
+            "trecho": "Desenvolver na SANESUL um Programa de Revitalização e Modernização de seus Sistemas de Tratamento de Água e de Esgotos Domésticos"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:31:44.636Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:47:45.886Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 7."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta sem adição de juízo de valor externo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente (educação)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:1:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Afirmação simples totalmente coberta pela evidência única."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 7."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (educação digital)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:2:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 9."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:3:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 21."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única (tecnologia)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:4:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 23."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única (turismo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:5:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a frase."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 20."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única de infraestrutura digital."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:6:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 19."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:7:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Citação literal da página 19."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Citação direta do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única de energia."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:frase:8:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a universalização de tecnologia digital nas escolas."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente (educação digital)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:educacao-digital:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente (cultura)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:cultura-publica:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a função da tecnologia voltada ao cidadão."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente (ciência e tecnologia)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:tecnologia-cidadania:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a participação da sociedade e do trade turístico."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente (turismo)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:turismo-participativo:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o resumo."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do conteúdo do documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área única e coerente (saneamento)."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:MS:120002552155:tema:saneamento-publico:documentos:MS:120002552155:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula principal do resumo temático."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:MS:120002552155",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "MS:120002552155:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26813,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22341,
+          "output_tokens_details": {
+            "thinking_tokens": 471
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26813,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22341,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26813,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26813
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3514414
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "39041016f175f81883560939a222eb0f35a320a4faf2c0236a03c6fa2758ec00",
+    "extractedTextSha256": "6cb99c1968e20d886a4869f3bd86ebf77952db92530e9ef7d8f63c451cc45cc4",
+    "documentCount": 1,
+    "documentSetSha256": "338c259f56c895b3fafd51044619ae87401cd467c5d317b26f0ff8eb6827306d",
+    "contentSha256": "d38c3f312b5eaf9e1994c6bd1ee823bef2fc29e95b0d48d87d44b7554efd2833"
+  }
+}

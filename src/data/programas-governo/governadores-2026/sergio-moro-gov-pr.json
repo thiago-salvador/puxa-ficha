@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,43 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "befba0e36d0277b2adf0a4e96027a61d76dd81744ada6b3599df835009504c13",
+        "extractedTextSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82",
+        "paginas": 1,
+        "secoes": [
+          {
+            "id": "ao-tribunal-regional-eleitoral-do-estado-do-parana",
+            "titulo": "AO TRIBUNAL REGIONAL ELEITORAL DO ESTADO DO PARANÁ.",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "AO TRIBUNAL REGIONAL ELEITORAL DO ESTADO DO PARANÁ.\n\n◼ AUTOS N. 0600788-04.2026.6.16.0000\n\n1.\nSERGIO FERNANDO MORO, adiante denominado como Requerente, por\nintermédio de seu advogado, devidamente constituído, vem à presença de Vossa\nExcelência, com fundamento na legislação aplicável, especialmente no art. 11, §1º, inciso\nIX, da Lei Federal n.º 9.504/97 (Lei das Eleições – LE), para requerer a juntada do\nincluso plano de governo1, com as propostas do candidato.\n2.\n\nRequer-se, assim, que sejam procedidas as anotações e retificações necessárias.\n\n3.\n\nTermos em que pede deferimento.\n\n4.\n\nCuritiba/PR, datado conforme inserção no sistema.\nP.p.\n\n[assinado digitalmente]\n\n1 Anexo – Plano de Governo.\n\n| Página 1 de 1 |"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82"
+          }
+        ]
+      }
+    },
+    {
+      "documentoId": "PR:160002540833:02",
+      "fonte": {
+        "arquivoNome": "2026PR160002540833_02.pdf",
+        "arquivoNoPacote": "PR/2026PR160002540833_02.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -1312,178 +1348,130 @@
           }
         ]
       }
-    },
-    {
-      "documentoId": "PR:160002540833:02",
-      "fonte": {
-        "arquivoNome": "2026PR160002540833_02.pdf",
-        "arquivoNoPacote": "PR/2026PR160002540833_02.pdf",
-        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
-        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
-        "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
-      },
-      "extracao": {
-        "extractionVersion": "programa-governo-extracao-v2",
-        "method": "pdftotext-pagewise-with-ocr-fallback",
-        "sourceSha256": "befba0e36d0277b2adf0a4e96027a61d76dd81744ada6b3599df835009504c13",
-        "extractedTextSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82",
-        "paginas": 1,
-        "secoes": [
-          {
-            "id": "ao-tribunal-regional-eleitoral-do-estado-do-parana",
-            "titulo": "AO TRIBUNAL REGIONAL ELEITORAL DO ESTADO DO PARANÁ.",
-            "nivel": 1,
-            "paginaInicial": 1,
-            "paginaFinal": 1,
-            "origem": "pdftotext",
-            "conteudo": "AO TRIBUNAL REGIONAL ELEITORAL DO ESTADO DO PARANÁ.\n\n◼ AUTOS N. 0600788-04.2026.6.16.0000\n\n1.\nSERGIO FERNANDO MORO, adiante denominado como Requerente, por\nintermédio de seu advogado, devidamente constituído, vem à presença de Vossa\nExcelência, com fundamento na legislação aplicável, especialmente no art. 11, §1º, inciso\nIX, da Lei Federal n.º 9.504/97 (Lei das Eleições – LE), para requerer a juntada do\nincluso plano de governo1, com as propostas do candidato.\n2.\n\nRequer-se, assim, que sejam procedidas as anotações e retificações necessárias.\n\n3.\n\nTermos em que pede deferimento.\n\n4.\n\nCuritiba/PR, datado conforme inserção no sistema.\nP.p.\n\n[assinado digitalmente]\n\n1 Anexo – Plano de Governo.\n\n| Página 1 de 1 |"
-          }
-        ],
-        "pageMap": [
-          {
-            "pagina": 1,
-            "origem": "pdftotext",
-            "textSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82"
-          }
-        ]
-      }
     }
   ],
   "resumo": {
-    "texto": "O documento estrutura propostas setoriais para a administração estadual. No eixo habitacional, prevê “Promoção do acesso à moradia digna por meio da ampliação da oferta habitacional”. Na agricultura, registra “Fortalecimento da agropecuária paranaense por meio da inovação tecnológica”. Na infraestrutura energética, propõe “Ampliação da oferta de energia e gás natural como fatores estratégicos para a competitividade industrial”. Na gestão pública, apresenta “Modernização da administração pública por meio da transformação digital”. Na assistência social, prevê “Fortalecimento das redes de proteção social para atender populações”. Na logística, propõe “Fortalecimento da infraestrutura logística por meio da integração dos modais”. As medidas são apresentadas dentro de cinco pilares temáticos, com referências a desenvolvimento social, desenvolvimento econômico sustentável, cidades e infraestrutura, gestão pública, segurança, justiça e combate à corrupção.",
+    "texto": "O documento organiza as propostas em cinco pilares de governo, apresentados como estrutura para definir prioridades da gestão pública estadual. Na educação, prevê ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, segundo as vocações econômicas regionais. Na saúde, planeja integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede, com uso de análise de dados. Na gestão pública, propõe reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão. Na área ambiental, prevê modernizar e digitalizar o licenciamento com tecnologia e análise por risco, mantendo a proteção ambiental. Na segurança pública, planeja implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial, gerando alertas em tempo real. O plano apresenta essas propostas como ações de governo estadual para diferentes áreas.",
     "frases": [
       {
-        "texto": "No eixo habitacional, prevê “Promoção do acesso à moradia digna por meio da ampliação da oferta habitacional”.",
+        "texto": "O documento organiza as propostas em cinco pilares de governo, apresentados como estrutura para definir prioridades da gestão pública estadual.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 56,
-            "trecho": "Promoção do acesso à moradia digna por meio da ampliação da oferta habitacional"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 11,
+            "trecho": "organizamos nossas propostas em cinco grandes pilares, que estruturam as prioridades da gestão e orientam todas as políticas públicas:"
           }
         ]
       },
       {
-        "texto": "Na agricultura, registra “Fortalecimento da agropecuária paranaense por meio da inovação tecnológica”.",
+        "texto": "Na educação, prevê ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, segundo as vocações econômicas regionais.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 37,
-            "trecho": "Fortalecimento da agropecuária paranaense por meio da inovação tecnológica"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 15,
+            "trecho": "ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, com matérias vinculadas ao ensino técnico, tecnológico e profissionalizante ligados às vocações econômicas de cada região"
           }
         ]
       },
       {
-        "texto": "Na infraestrutura energética, propõe “Ampliação da oferta de energia e gás natural como fatores estratégicos para a competitividade industrial”.",
+        "texto": "Na saúde, planeja integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede, com uso de análise de dados.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 57,
-            "trecho": "Ampliação da oferta de energia e gás natural como fatores estratégicos para a competitividade industrial"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 26,
+            "trecho": "Integrar os sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde, utilizando inteligência artificial e análise de dados"
           }
         ]
       },
       {
-        "texto": "Na gestão pública, apresenta “Modernização da administração pública por meio da transformação digital”.",
+        "texto": "Na gestão pública, propõe reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 70,
-            "trecho": "Modernização da administração pública por meio da transformação digital"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 72,
+            "trecho": "Vamos reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão"
           }
         ]
       },
       {
-        "texto": "Na assistência social, prevê “Fortalecimento das redes de proteção social para atender populações”.",
+        "texto": "Na área ambiental, prevê modernizar e digitalizar o licenciamento com tecnologia e análise por risco, mantendo a proteção ambiental.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 13,
-            "trecho": "Fortalecimento das redes de proteção social para atender populações"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 54,
+            "trecho": "Modernizar e digitalizar o licenciamento com tecnologia e análise por risco, reduzindo prazos e trazendo previsibilidade, preservando a proteção ambiental"
           }
         ]
       },
       {
-        "texto": "Na logística, propõe “Fortalecimento da infraestrutura logística por meio da integração dos modais”.",
+        "texto": "Na segurança pública, planeja implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial, gerando alertas em tempo real.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 57,
-            "trecho": "Fortalecimento da infraestrutura logística por meio da integração dos modais"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 85,
+            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artiﬁcial, capaz de reconhecer pessoas procuradas e veículos suspeitos e gerar alertas em tempo real"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "habitacao",
-        "titulo": "Habitação",
-        "descricao": "Acesso à moradia digna.",
+        "id": "ensino-tempo-integral",
+        "titulo": "Ensino em tempo integral",
+        "descricao": "A proposta prevê ampliar o ensino em tempo integral associado à formação profissional no ensino médio.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 56,
-            "trecho": "Promoção do acesso à moradia digna por meio da ampliação da oferta habitacional"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 15,
+            "trecho": "ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio"
           }
         ]
       },
       {
-        "id": "agricultura",
-        "titulo": "Agricultura",
-        "descricao": "Fortalecimento da agropecuária.",
+        "id": "saude-digital",
+        "titulo": "Saúde digital",
+        "descricao": "A proposta planeja integrar sistemas de informação e prontuários eletrônicos na rede de saúde.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 37,
-            "trecho": "Fortalecimento da agropecuária paranaense por meio da inovação tecnológica"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 26,
+            "trecho": "Integrar os sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde"
           }
         ]
       },
       {
-        "id": "energia",
-        "titulo": "Energia",
-        "descricao": "Oferta de energia e gás natural.",
+        "id": "licenciamento-ambiental",
+        "titulo": "Licenciamento ambiental",
+        "descricao": "A proposta prevê modernizar e digitalizar o licenciamento ambiental com análise por risco.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 57,
-            "trecho": "Ampliação da oferta de energia e gás natural como fatores estratégicos para a competitividade industrial"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 54,
+            "trecho": "Modernizar e digitalizar o licenciamento com tecnologia e análise por risco"
           }
         ]
       },
       {
-        "id": "gestao-publica",
-        "titulo": "Gestão pública",
-        "descricao": "Modernização administrativa.",
+        "id": "videomonitoramento-publico",
+        "titulo": "Videomonitoramento público",
+        "descricao": "A proposta planeja implantar um sistema estadual de videomonitoramento integrado.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 70,
-            "trecho": "Modernização da administração pública por meio da transformação digital"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 85,
+            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas"
           }
         ]
       },
       {
-        "id": "assistencia-social",
-        "titulo": "Assistência social",
-        "descricao": "Proteção social.",
+        "id": "servicos-digitais",
+        "titulo": "Serviços digitais",
+        "descricao": "A proposta propõe reunir os serviços estaduais em um ambiente digital único.",
         "evidencias": [
           {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 13,
-            "trecho": "Fortalecimento das redes de proteção social para atender populações"
-          }
-        ]
-      },
-      {
-        "id": "logistica",
-        "titulo": "Logística",
-        "descricao": "Integração dos modais de transporte.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:01",
-            "pagina": 57,
-            "trecho": "Fortalecimento da infraestrutura logística por meio da integração dos modais"
+            "documentoId": "PR:160002540833:02",
+            "pagina": 72,
+            "trecho": "Vamos reunir os serviços estaduais em um único ambiente digital"
           }
         ]
       }
@@ -1491,380 +1479,350 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna",
-    "generatedAt": "2026-08-28T11:54:04.275Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:47:45.911Z"
   },
   "julgamento": {
-    "model": "DeepSeek@deepseek-v4-flash",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T12:03:37.127Z",
+    "judgedAt": "2026-08-29T19:11:09.406Z",
     "verdicts": [
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência sustenta integralmente que as propostas foram organizadas em cinco pilares que estruturam as prioridades da gestão."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A quantidade de cinco pilares está literalmente sustentada pela evidência."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a organização do documento sem elogio, crítica, promoção ou certeza adicional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de um único aspecto coerente: a estruturação geral das propostas em pilares."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral coincide exatamente com a identidade da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre as cláusulas materiais sobre a organização em cinco pilares e sua função de estruturar prioridades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência sustenta integralmente a ampliação do ensino integral associado à educação profissional e às vocações econômicas regionais."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta educacional sem avaliação positiva, negativa ou promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação reúne componentes de uma única proposta educacional coerente."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence ao documento informado e corresponde exatamente à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência sustenta integralmente a integração dos sistemas e prontuário interoperável em toda a rede, com análise de dados."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta de saúde sem elogio, crítica, promoção ou certeza indevida."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "Os elementos citados integram uma única proposta coerente de infraestrutura digital em saúde."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência está no documento informado e coincide com a chave eleitoral da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todos os sistemas enumerados, o alcance da rede e o uso de análise de dados."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência reproduz integralmente os elementos materiais da proposta descrita."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A referência a um único ambiente digital está literalmente sustentada pela evidência."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação apenas descreve a proposta, sem elogio, crítica ou linguagem promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de centralização digital dos serviços estaduais."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre o ambiente único, o atendimento integrado e a experiência centrada no cidadão."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência sustenta integralmente a modernização, a digitalização, a análise por risco e a preservação da proteção ambiental."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos determinados, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta ambiental sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "Todos os componentes pertencem à mesma proposta de modernização do licenciamento ambiental."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência corresponde exatamente ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a frase citada na página indicada."
+        "reason": "A evidência sustenta integralmente a implantação, a integração das câmeras, o uso de inteligência artificial e os alertas em tempo real."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos quantificados, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou garantia de resultado."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "Todos os elementos integram uma única proposta coerente de videomonitoramento público."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence exatamente ao documento indicado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a ampliação do ensino integral associado à formação profissional no ensino médio."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta de forma neutra, sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de ensino integral com formação profissional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência corresponde ao documento informado e à mesma chave eleitoral da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:habitacao:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a integração dos sistemas de informação e do prontuário eletrônico na rede de saúde."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta de saúde digital sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única área coerente de integração digital da saúde."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence ao documento informado e coincide exatamente com a chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:agricultura:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre a integração dos sistemas, do prontuário eletrônico e seu alcance na rede de saúde."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a modernização e digitalização do licenciamento com análise por risco."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de licenciamento ambiental."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence exatamente ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:energia:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a implantação de um sistema estadual integrado de videomonitoramento."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de resultado."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de videomonitoramento."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência corresponde exatamente ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:gestao-publica:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre a implantação, o caráter estadual e a integração do sistema."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a reunião dos serviços estaduais em um ambiente digital único."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
+        "reason": "A referência a um ambiente digital único está literalmente sustentada pela evidência."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou linguagem promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de centralização digital dos serviços."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
+        "reason": "A evidência pertence exatamente ao documento indicado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:assistencia-social:documentos:PR:160002540833:01:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a afirmação."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades a verificar."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação descreve o documento de forma neutra, sem elogio, crítica, certeza ou promoção."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta/área coerente."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:identidade",
-        "verdict": "yes",
-        "reason": "A chave eleitoral e o documento da afirmação coincidem com os da evidência."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:logistica:documentos:PR:160002540833:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:PR:160002540833",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -1874,32 +1832,21 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 1,
-        "uso": {
-          "input_tokens": 40315,
-          "output_tokens": 4522,
-          "total_tokens": 44837,
-          "input_tokens_details": {
-            "cached_tokens": 0,
-            "cache_write_tokens": 40312
-          },
-          "output_tokens_details": {
-            "reasoning_tokens": 3549
-          }
-        }
+        "attempts": 1
       },
       "judge": {
-        "name": "DeepSeek",
-        "version": "deepseek-v4-flash",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
         "promptVersion": "programa-governo-governadores-judge-v2",
-        "attempts": 2,
+        "attempts": 1,
         "uso": {
-          "prompt_tokens": 14077,
-          "completion_tokens": 19774,
-          "total_tokens": 33851,
-          "prompt_tokens_details": {}
+          "input_tokens": 35408,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 12661,
+          "reasoning_output_tokens": 141
         }
       }
     },
@@ -1918,11 +1865,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
-    "sourceSha256": "e50b047bab00f4942a48fc86cdd5b95806c669e0e8bb89f885c3aee12e71d8dd",
-    "extractedTextSha256": "df40bda9cb3991e3d449a1eccbb3a38fc276d286e50ec23a3e0e5dca323c1bd9",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "befba0e36d0277b2adf0a4e96027a61d76dd81744ada6b3599df835009504c13",
+    "extractedTextSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82",
     "documentCount": 2,
-    "documentSetSha256": "ed1894c1979ed7e6d47b78f86802c31f91c80087e055518e65f7e75ecaf39f81",
-    "contentSha256": "3b4bc55786dd451fc8f61b16e8951acf8632618fb9e211c0decac6c8ce4902c8"
+    "documentSetSha256": "902b0bc849beb663d2e3d5a5f34f88da10d4f8e07d042cb1b8cf389e5a43fb95",
+    "contentSha256": "7ac9c9f16230b7ce57cc4ae365a13b99ebe94485b4d5b00831b9fbc47fb8f8dd"
   }
 }

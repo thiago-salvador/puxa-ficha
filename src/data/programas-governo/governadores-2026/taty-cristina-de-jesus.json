@@ -1,0 +1,798 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "SE",
+    "sqCandidato": "260002550683",
+    "slug": "taty-cristina-de-jesus",
+    "nomeUrna": "TATY  CRISTINA DE JESUS",
+    "partido": "DC",
+    "arquivoNome": "2026SE260002550683_01.pdf",
+    "arquivoNoPacote": "SE/2026SE260002550683_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "SE:260002550683:01",
+      "fonte": {
+        "arquivoNome": "2026SE260002550683_01.pdf",
+        "arquivoNoPacote": "SE/2026SE260002550683_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "24daa37c0fb4c9b80011539a929b2622eb0994b92e1b5057cd8314e5054a3661",
+        "extractedTextSha256": "e84ba5e2ed73766815647a84e2ca2c2e2e0ec7a774e8f2941bf9a6e291c78302",
+        "paginas": 11,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nTATY CRISTINA\n\nGOVERNO DO ESTADO DE SERGIPE\n\n2027–2030\n\nINCLUIR • SERVIR • TRANSFORMAR"
+          },
+          {
+            "id": "1-apresentacao",
+            "titulo": "1. APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "1. APRESENTAÇÃO\n\nSergipe é um estado de grande potencial, com avanços importantes em diferentes\náreas e uma população trabalhadora, criativa e empreendedora. Ao mesmo tempo,\nexistem problemas que continuam presentes na vida cotidiana e exigem novas\nsoluções, melhor gestão, continuidade do que funciona e correção do que ainda não\nentrega o resultado esperado.\n\nEste Plano de Governo apresenta diretrizes para 2027–2030 orientadas por três\nprincípios: INCLUIR, SERVIR e TRANSFORMAR. A proposta é colocar as pessoas no\ncentro das políticas públicas, com responsabilidade fiscal, planejamento, transparência,\nmetas e avaliação de resultados.\n\nPolíticas que funcionam devem ser preservadas e aperfeiçoadas; políticas insuficientes\ndevem ser corrigidas; novas ações devem ser criadas quando houver necessidade,\ncompetência estadual, viabilidade jurídica e capacidade orçamentária.\n\n2. VISÃO DE GOVERNO\n\nConstruir um Sergipe em que crianças, jovens, mulheres, trabalhadores,\nempreendedores, pessoas com deficiência, pessoas atípicas, idosos e famílias tenham\nacesso a oportunidades, serviços públicos de qualidade e condições para desenvolver\nseus projetos de vida.\n\n* INCLUIR: garantir que ninguém seja invisível para o poder público.\n* SERVIR: fazer o Estado funcionar com respeito, eficiência e humanidade.\n* TRANSFORMAR: transformar recursos públicos em oportunidades, serviços e\nresultados.\n3. SAÚDE — CUIDAR COM DIGNIDADE E RESULTADO"
+          },
+          {
+            "id": "a-saude-sera-prioridade-o-estado-possui-politicas-e-avancos-importantes",
+            "titulo": "A saúde será prioridade. O Estado possui políticas e avanços importantes, mas",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "A saúde será prioridade. O Estado possui políticas e avanços importantes, mas\ncontinuam existindo desafios relacionados a filas, regulação, acesso especializado,\natendimento humanizado, distribuição territorial e pressão crescente sobre a rede.\n\n* Diagnóstico inicial da rede estadual e metas públicas de redução de filas.\n* Aperfeiçoar regulação de consultas, exames, cirurgias e leitos.\n* Melhorar a informação ao paciente sobre encaminhamentos e situação na fila,\nrespeitando a legislação e a proteção de dados.\n* Fortalecer saúde da mulher, saúde infantil, saúde mental e atenção às pessoas com\ndeficiência.\n* Fortalecer articulação entre Estado, municípios e rede especializada.\n* Valorizar e qualificar profissionais de saúde.\n* Monitorar indicadores de acesso, tempo de espera, qualidade e satisfação.\n4. EDUCAÇÃO — ESCOLA PARA A VIDA\n\n* Ampliar progressivamente escolas em tempo integral conforme demanda,\ninfraestrutura e capacidade financeira.\n* Fortalecer infraestrutura, climatização, conectividade e ambientes de aprendizagem.\n* Valorizar professores e profissionais da educação.\n* Ampliar educação profissional e tecnológica.\n* Integrar esporte, cultura, música, dança e artes ao ambiente escolar.\n* Fortalecer educação financeira, empreendedorismo e projeto de vida.\n* Melhorar integração entre escola, família e rede de proteção.\n5. ORATÓRIA E COMUNICAÇÃO\n\nCriar política de desenvolvimento da comunicação dos estudantes, respeitando as\ndiretrizes educacionais, com expressão oral, leitura, argumentação, apresentação de\ntrabalhos, escuta, liderança e comunicação digital responsável.\n\n6. EMPREENDEDORISMO E EDUCAÇÃO FINANCEIRA"
+          },
+          {
+            "id": "ampliar-educacao-empreendedora-e-financeira-nas-escolas",
+            "titulo": "* Ampliar educação empreendedora e financeira nas escolas.",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "* Ampliar educação empreendedora e financeira nas escolas.\n* Desenvolver criatividade, planejamento e solução de problemas.\n* Conectar formação escolar às vocações econômicas locais.\n* Oferecer formação prática de gestão para jovens e adultos interessados em\nempreender.\n* Estimular economia criativa, tecnologia e inovação.\n7. CRECHE, PRIMEIRA INFÂNCIA E APOIO ÀS FAMÍLIAS\n\nMuitas famílias precisam trabalhar e, em muitos casos, estudar. O Estado deve atuar\nem regime de colaboração com os municípios para ampliar a oferta de educação\ninfantil e estudar modelos de atendimento em horário ampliado onde houver\ndemanda e viabilidade.\n\n* Ampliar e fortalecer programas estaduais de apoio à educação infantil em parceria\ncom os municípios.\n* Priorizar territórios com déficit de vagas.\n* Estudar horários ampliados conforme a realidade de cada município, com segurança,\nprofissionais qualificados, alimentação e atividades adequadas.\n* Fortalecer atendimento inclusivo para crianças com deficiência e necessidades\nespecíficas.\n* Articular educação infantil com saúde, assistência social e proteção à infância.\nA proposta respeita a competência prioritária dos municípios e busca fortalecer o\nregime de colaboração.\n\n8. INCLUSÃO — SERGIPE PARA TODOS\n\n* Fortalecer atendimento educacional especializado.\n* Ampliar formação de profissionais para atendimento inclusivo.\n* Aprimorar articulação entre saúde, educação e assistência.\n* Ampliar acessibilidade física, comunicacional e digital."
+          },
+          {
+            "id": "fortalecer-esporte-e-cultura-inclusivos",
+            "titulo": "* Fortalecer esporte e cultura inclusivos.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "* Fortalecer esporte e cultura inclusivos.\n* Apoiar famílias e cuidadores.\n* Identificar vazios assistenciais por território.\n9. JUVENTUDE, PRIMEIRO EMPREGO E FUTURO\n\n* Fortalecer programas de primeiro emprego.\n* Ampliar estágios e experiências de formação profissional.\n* Conectar cursos profissionalizantes às vagas disponíveis.\n* Estimular empreendedorismo jovem e economia criativa.\n* Ampliar acesso a esporte, cultura, tecnologia e liderança.\n* Priorizar jovens em territórios com menor acesso a oportunidades.\n10. CURSOS TÉCNICOS E PROFISSIONALIZANTES — SERGIPE PROFISSIONAL\n\n* Mapear demanda de mão de obra por território.\n* Articular escolas, instituições de formação e setor produtivo.\n* Expandir formações em tecnologia, indústria, construção civil, turismo, agricultura,\nenergia, logística, administração, comunicação e economia criativa.\n* Avaliar formações em corte e costura, moda e confecção e outras vocações locais.\n* Integrar formação técnica com educação financeira, comunicação e gestão.\n* Acompanhar conclusão e inserção profissional.\n11. MULHERES E EMPREENDEDORISMO\n\n* Capacitação em gestão financeira, vendas, marketing e planejamento.\n* Facilitar acesso à informação sobre crédito e programas públicos.\n* Fortalecer redes de cooperação empresarial.\n* Apoiar mulheres em situação de vulnerabilidade na construção de autonomia\neconômica.\n* Avaliar e ampliar políticas existentes que apresentem resultados.\n12. ESPORTE E PROFISSIONAIS DE EDUCAÇÃO FÍSICA"
+          },
+          {
+            "id": "ampliar-iniciacao-esportiva-para-criancas-e-jovens",
+            "titulo": "* Ampliar iniciação esportiva para crianças e jovens.",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "* Ampliar iniciação esportiva para crianças e jovens.\n* Valorizar profissionais de Educação Física nas políticas de esporte, prevenção e\npromoção da saúde.\n* Fortalecer modalidades olímpicas, paralímpicas, dança, ginástica, lutas, natação e\noutras práticas.\n* Ampliar equipamentos esportivos e uso comunitário.\n* Estimular identificação e desenvolvimento de talentos.\n13. CULTURA E ARTISTAS SERGIPANOS\n\n* Fortalecer editais transparentes e descentralizados.\n* Ampliar circulação de artistas pelo interior e fora do Estado.\n* Fortalecer música, dança, teatro, audiovisual, literatura, artes visuais e culturas\npopulares.\n* Apoiar formação em gestão e produção cultural.\n* Fortalecer patrimônio histórico e cultural.\n* Integrar cultura, turismo e economia criativa.\n14. TURISMO — SERGIPE COMO DESTINO\n\n* Promover turismo de praia, histórico, cultural, religioso, gastronômico, de natureza e\nde eventos.\n* Integrar municípios em roteiros regionais.\n* Qualificar profissionais do turismo.\n* Fortalecer promoção do destino Sergipe.\n* Apoiar calendário de eventos com planejamento e critérios transparentes.\n* Integrar turismo com artesanato, gastronomia, cultura e economia local.\n* Melhorar infraestrutura turística em parceria com municípios e setor privado.\nTurismo será tratado também como política de geração de emprego e renda,\nconectando hotéis, restaurantes, transporte, guias, artistas, artesãos, produtores\nculturais e comércio."
+          },
+          {
+            "id": "15-economia-emprego-e-desenvolvimento-regional",
+            "titulo": "15. ECONOMIA, EMPREGO E DESENVOLVIMENTO REGIONAL",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "15. ECONOMIA, EMPREGO E DESENVOLVIMENTO REGIONAL\n\n* Apoiar micro, pequenas e médias empresas.\n* Reduzir burocracia dentro das competências estaduais.\n* Fortalecer ambiente de negócios e segurança jurídica.\n* Estimular indústria, agropecuária, turismo, comércio, serviços, tecnologia e economia\ncriativa.\n* Apoiar cadeias produtivas locais.\n* Atrair investimentos com critérios de geração de emprego, renda e desenvolvimento\nsustentável.\n* Estimular oportunidades de emprego em diferentes regiões.\n16. SERGIPE PRODUZ — EMPREGO LOCAL\n\nMapear o que cada região pode produzir, quais profissionais precisa e quais\ninvestimentos podem gerar emprego local.\n\n* Mapear vocações econômicas dos municípios e regiões.\n* Conectar qualificação profissional às demandas reais das empresas.\n* Estimular cadeias produtivas e fornecedores locais dentro da legislação.\n* Fortalecer pequenos negócios.\n* Articular Estado, municípios, instituições de ensino e setor produtivo.\n17. SEGURANÇA PÚBLICA\n\n* Planejar recomposição de efetivo conforme estudos técnicos, aposentadorias, déficit\ne disponibilidade orçamentária.\n* Realizar concursos quando houver necessidade e viabilidade legal e fiscal.\n* Fortalecer formação e valorização das forças de segurança.\n* Investir em inteligência, investigação e integração entre órgãos."
+          },
+          {
+            "id": "fortalecer-prevencao-da-violencia-entre-jovens",
+            "titulo": "* Fortalecer prevenção da violência entre jovens.",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "* Fortalecer prevenção da violência entre jovens.\n* Aprimorar proteção a mulheres, crianças e adolescentes.\n* Ampliar tecnologia e análise criminal.\n18. COMUNICAÇÃO PÚBLICA E CARREIRAS DE COMUNICAÇÃO\n\n* Valorizar comunicação pública profissional, transparente e acessível.\n* Avaliar necessidade de recomposição de equipes e carreiras por instrumentos legais\nadequados.\n* Realizar concursos quando houver necessidade e viabilidade, conforme planejamento\nde pessoal.\n* Ampliar formação de jovens em jornalismo, audiovisual, rádio, fotografia, produção\ndigital, design e comunicação.\n19. RODOVIAS E INFRAESTRUTURA — PROGRAMA RODOVIA SEGURA\n\n* Criar mapa público das condições das rodovias estaduais.\n* Classificar trechos por prioridade técnica.\n* Fortalecer manutenção preventiva.\n* Ampliar sinalização e segurança viária.\n* Priorizar recuperação de trechos com maior impacto social e econômico.\n* Dar transparência a contratos, cronogramas e execução de obras.\n* Priorizar acessos a hospitais, escolas, polos produtivos, municípios e destinos\nturísticos.\n20. AGRICULTURA E DESENVOLVIMENTO RURAL\n\n* Fortalecer assistência técnica e extensão rural.\n* Apoiar agricultura familiar e pequenos produtores.\n* Estimular agregação de valor e processamento local.\n* Melhorar acesso a mercados e informação.\n* Apoiar tecnologias de convivência com o clima e uso eficiente da água."
+          },
+          {
+            "id": "integrar-producao-rural-turismo-e-gastronomia-quando-houver-potencial",
+            "titulo": "* Integrar produção rural, turismo e gastronomia quando houver potencial.",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "* Integrar produção rural, turismo e gastronomia quando houver potencial.\n21. SANEAMENTO, ÁGUA E MEIO AMBIENTE\n\n* Acompanhar metas de universalização de água e esgotamento sanitário.\n* Fiscalizar qualidade e cumprimento de contratos e metas.\n* Proteger recursos hídricos e áreas ambientalmente relevantes.\n* Fortalecer educação ambiental.\n* Estimular economia circular e gestão adequada de resíduos.\n* Integrar sustentabilidade ao turismo, agricultura, indústria e infraestrutura.\n22. GOVERNO DIGITAL, TRANSPARÊNCIA E GESTÃO\n\n* Digitalizar serviços públicos quando aumentar acesso e eficiência.\n* Estabelecer metas e indicadores para programas prioritários.\n* Publicar resultados em linguagem acessível.\n* Combater desperdícios e melhorar planejamento de compras e contratos.\n* Fortalecer controle interno e transparência.\n* Avaliar programas para manter, ampliar, corrigir ou encerrar conforme resultados.\n23. RESPONSABILIDADE FISCAL E EXECUÇÃO\n\nNenhuma proposta será tratada como promessa automática de gasto. Cada programa\ndeverá ser analisado quanto à competência do Estado, impacto financeiro, fonte de\nrecursos, compatibilidade com PPA, LDO e LOA, necessidade de legislação e capacidade\noperacional.\n\nA gestão deverá priorizar políticas de maior impacto social, buscar eficiência do gasto\npúblico, combater desperdícios e ampliar a capacidade de articulação de recursos\nestaduais, federais e outras fontes legalmente disponíveis.\n\n24. PRIMEIROS 100 DIAS"
+          },
+          {
+            "id": "diagnostico-consolidado-de-saude-educacao-seguranca-rodovias-obras-pesso",
+            "titulo": "* Diagnóstico consolidado de saúde, educação, segurança, rodovias, obras, pessoal,",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "* Diagnóstico consolidado de saúde, educação, segurança, rodovias, obras, pessoal,\ncontratos e programas prioritários.\n* Levantamento de filas e gargalos da saúde.\n* Mapa das condições das rodovias estaduais.\n* Mapa de vagas e demanda por educação infantil em colaboração com os municípios.\n* Diagnóstico da oferta de cursos técnicos e demanda de mão de obra.\n* Mapeamento das cadeias produtivas e vocações econômicas regionais.\n* Plano de metas com responsáveis, cronograma, indicadores e estimativa financeira.\n25. COMPROMISSOS CENTRAIS\n\nINCLUIR — para que nenhuma pessoa seja invisível.\n\nSERVIR — para que o poder público esteja a serviço do cidadão.\n\nTRANSFORMAR — para que planejamento, trabalho e recursos públicos produzam\noportunidades e resultados.\n\n26. MENSAGEM FINAL\n\nQuero governar Sergipe reconhecendo o que já deu certo, enfrentando com coragem\naquilo que ainda não funciona suficientemente bem e construindo novas\noportunidades para quem mais precisa.\n\nNão quero um Estado que apenas administre problemas. Quero um Estado que\nprepare pessoas, gere oportunidades, cuide das famílias, valorize quem trabalha e\ntransforme o potencial de Sergipe em desenvolvimento.\n\nMeu compromisso é com um Sergipe em que cada criança possa sonhar, cada jovem\npossa se preparar, cada mulher possa empreender, cada trabalhador possa encontrar\noportunidade, cada pessoa atípica possa ser incluída e cada família possa ser atendida\ncom dignidade."
+          },
+          {
+            "id": "incluir-servir-transformar",
+            "titulo": "INCLUIR • SERVIR • TRANSFORMAR",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "INCLUIR • SERVIR • TRANSFORMAR\n\n27. OBSERVAÇÃO PARA A ASSESSORIA JURÍDICA E TÉCNICA\n\nDocumento preliminar de diretrizes para revisão antes do registro. A assessoria deverá\nvalidar competências administrativas, metas quantitativas, estimativas de custo, fontes\nde financiamento, impacto orçamentário, compatibilidade com PPA/LDO/LOA,\nnecessidade de legislação e demais exigências eleitorais aplicáveis.\n\nPropostas referentes a educação infantil, saúde, segurança, concursos, infraestrutura e\ndemais áreas deverão ser ajustadas ao regime constitucional de competências e ao\nregime de colaboração entre União, Estado e municípios."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "9fa212aaab8edecfe097acb19550331698001b891fff1bdb496bcdad1f027a44"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "6ea4ff23e823f422957ec5cf51fb3dc60c71ec80450743403a3a546feb80546e"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "85a10fe821ae97e7e1491e0af48cdf93e0abae17d6817c200a16ebca4546d95e"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "6a57a1f61e5318eb1a70efdbbb1d64c8e21db9d60f4fb34a1ae4d7999ee3dcd8"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "7f3ebc195c85a05c944894f9b36777132720d9a459bdc9a2134b30e859af81fb"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "db60a9a4497fee288a74627ea27f7aff4cbbdffb61a040da61aac25c5e84c266"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "8a4fcc97816ae56392e94ada23739d45903450784f02ea68743f52465b4eafd0"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "2eea6ff5b3fd57e292193dc72c52c8e10deffebed25cdae78cb8d7cf114fa5e9"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "4e5a0971dd77a16736a4881f540e3cea3ae7478d2c09d368d0fc4ad65601b01c"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "08505214e77cdda9988e79c395e0a1664de3ec70e2d521f431ef61ce17aed004"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "eba79be13b5de6b8259ed3480f7e6a6859a0baf9c7364ace2f7a71d951eb1a1e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "A saúde é apresentada como prioridade no plano de governo. O documento propõe aperfeiçoar a regulação de consultas, exames, cirurgias e leitos. Na educação, o plano prevê ampliar progressivamente as escolas em tempo integral conforme a demanda, a infraestrutura e a capacidade financeira. O plano propõe criar uma política de desenvolvimento da comunicação dos estudantes, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável, respeitando as diretrizes educacionais. Em parceria com os municípios, prevê ampliar e fortalecer programas estaduais de apoio à educação infantil. Para a inserção profissional, prevê fortalecer programas de primeiro emprego. Na infraestrutura rodoviária, propõe criar um mapa público das condições das rodovias estaduais. No saneamento, prevê acompanhar metas de universalização de água e esgotamento sanitário.",
+    "frases": [
+      {
+        "texto": "A saúde é apresentada como prioridade no plano de governo.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "A saúde será prioridade."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe aperfeiçoar a regulação de consultas, exames, cirurgias e leitos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Aperfeiçoar regulação de consultas, exames, cirurgias e leitos."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o plano prevê ampliar progressivamente as escolas em tempo integral conforme a demanda, a infraestrutura e a capacidade financeira.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Ampliar progressivamente escolas em tempo integral conforme demanda, infraestrutura e capacidade financeira."
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe criar uma política de desenvolvimento da comunicação dos estudantes, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável, respeitando as diretrizes educacionais.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Criar política de desenvolvimento da comunicação dos estudantes, respeitando as diretrizes educacionais, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável."
+          }
+        ]
+      },
+      {
+        "texto": "Em parceria com os municípios, prevê ampliar e fortalecer programas estaduais de apoio à educação infantil.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 4,
+            "trecho": "Ampliar e fortalecer programas estaduais de apoio à educação infantil em parceria com os municípios."
+          }
+        ]
+      },
+      {
+        "texto": "Para a inserção profissional, prevê fortalecer programas de primeiro emprego.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 5,
+            "trecho": "Fortalecer programas de primeiro emprego."
+          }
+        ]
+      },
+      {
+        "texto": "Na infraestrutura rodoviária, propõe criar um mapa público das condições das rodovias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 8,
+            "trecho": "Criar mapa público das condições das rodovias estaduais."
+          }
+        ]
+      },
+      {
+        "texto": "No saneamento, prevê acompanhar metas de universalização de água e esgotamento sanitário.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 9,
+            "trecho": "Acompanhar metas de universalização de água e esgotamento sanitário."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude",
+        "titulo": "Saúde",
+        "descricao": "Prioridade declarada para a saúde no plano de governo.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "A saúde será prioridade."
+          }
+        ]
+      },
+      {
+        "id": "regulacao-de-servicos",
+        "titulo": "Regulação de serviços",
+        "descricao": "Aperfeiçoamento da regulação de consultas, exames, cirurgias e leitos.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Aperfeiçoar regulação de consultas, exames, cirurgias e leitos."
+          }
+        ]
+      },
+      {
+        "id": "educacao-em-tempo-integral",
+        "titulo": "Educação em tempo integral",
+        "descricao": "Ampliação progressiva de escolas em tempo integral conforme condições previstas.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Ampliar progressivamente escolas em tempo integral conforme demanda, infraestrutura e capacidade financeira."
+          }
+        ]
+      },
+      {
+        "id": "comunicacao-estudantil",
+        "titulo": "Comunicação estudantil",
+        "descricao": "Criação de política voltada ao desenvolvimento da comunicação dos estudantes.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 3,
+            "trecho": "Criar política de desenvolvimento da comunicação dos estudantes, respeitando as diretrizes educacionais, com expressão oral, leitura, argumentação, apresentação de trabalhos, escuta, liderança e comunicação digital responsável."
+          }
+        ]
+      },
+      {
+        "id": "saneamento",
+        "titulo": "Saneamento",
+        "descricao": "Acompanhamento de metas de universalização de água e esgotamento sanitário.",
+        "evidencias": [
+          {
+            "documentoId": "SE:260002550683:01",
+            "pagina": 9,
+            "trecho": "Acompanhar metas de universalização de água e esgotamento sanitário."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-high@codex-cli-v5",
+    "generatedAt": "2026-08-29T19:50:22.549Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:54:36.276Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência afirma literalmente que a saúde será prioridade."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a prioridade declarada pelo documento sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, a prioridade atribuída à saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:1:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ação e todos os serviços enumerados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação relata a proposta sem avaliação, certeza de resultado ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne componentes da mesma proposta coerente de regulação de serviços de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:2:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ação e todos os quatro objetos materiais mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ampliação progressiva e as três condições indicadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a previsão e suas condições sem elogio, crítica ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de ampliação da educação em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:3:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ampliação progressiva, o tempo integral e todas as condições materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a política, suas modalidades e o respeito às diretrizes educacionais."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "Todos os componentes pertencem à única política coerente de comunicação estudantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:4:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação da política, todos os componentes listados e a condição relativa às diretrizes."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ação, o objeto e a parceria com os municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação relata a previsão do documento sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de apoio estadual à educação infantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:5:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente ampliação, fortalecimento, natureza estadual, educação infantil e parceria municipal."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o fortalecimento de programas de primeiro emprego, cuja finalidade é a inserção profissional."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a previsão sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente ligada ao primeiro emprego."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:6:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ação material de fortalecer programas de primeiro emprego e sua finalidade inerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação do mapa público descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem avaliação, certeza de execução ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de infraestrutura rodoviária."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:7:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a criação, o caráter público e o objeto do mapa."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o acompanhamento das metas nos dois serviços indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a previsão do documento sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "Água e esgotamento sanitário integram a mesma proposta coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:frase:8:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o acompanhamento das metas de água e de esgotamento sanitário."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência declara literalmente que a saúde será prioridade."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume uma declaração do documento sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata exclusivamente da prioridade atribuída à área da saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saude:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a prioridade declarada para a saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o aperfeiçoamento da regulação e todos os serviços enumerados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza de resultado ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "Os elementos pertencem à mesma proposta coerente de regulação de serviços de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:regulacao-de-servicos:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o aperfeiçoamento e todos os quatro serviços materiais mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a ampliação progressiva e especifica as condições referidas na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta e suas condições sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata exclusivamente da ampliação condicionada das escolas em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:educacao-em-tempo-integral:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a ampliação progressiva e todas as condições às quais a afirmação remete."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a criação da política e sua finalidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única política coerente de comunicação estudantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:comunicacao-estudantil:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a criação da política e seu objeto material."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o acompanhamento das metas de universalização indicadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:mistura",
+        "verdict": "yes",
+        "reason": "Água e esgotamento sanitário compõem uma única área coerente de saneamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave eleitoral corresponde à identityKey."
+      },
+      {
+        "id": "2026:GOVERNADOR:SE:260002550683:tema:saneamento:documentos:SE:260002550683:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o acompanhamento das metas relativas à água e ao esgotamento sanitário."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:SE:260002550683",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "SE:260002550683:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-high@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 35421,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13828,
+          "reasoning_output_tokens": 158
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "24daa37c0fb4c9b80011539a929b2622eb0994b92e1b5057cd8314e5054a3661",
+    "extractedTextSha256": "e84ba5e2ed73766815647a84e2ca2c2e2e0ec7a774e8f2941bf9a6e291c78302",
+    "documentCount": 1,
+    "documentSetSha256": "dc6073f086fe349c9a730df8bf26cc15d92d90b34329221be5d772a61423f2b0",
+    "contentSha256": "4da36937e8172527455edea69274bf47aaff7a0ac87fc1dcc8172079d860def7"
+  }
+}

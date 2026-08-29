@@ -1,0 +1,1161 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "AP",
+    "sqCandidato": "30002552017",
+    "slug": "marcos-reategui",
+    "nomeUrna": "DELEGADO MARCOS",
+    "partido": "DC",
+    "arquivoNome": "2026AP30002552017_01.pdf",
+    "arquivoNoPacote": "AP/2026AP30002552017_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "AP:30002552017:01",
+      "fonte": {
+        "arquivoNome": "2026AP30002552017_01.pdf",
+        "arquivoNoPacote": "AP/2026AP30002552017_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AP.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "72fc8c60bb07c74e7bb649cacacb796a49e7da7a9cb888fb3d22bb77b28d3647",
+        "extractedTextSha256": "c9d94bfc0d81bc49dc6186d3f620bc9b0870b730fe4b56a982aa0b560302bd0b",
+        "paginas": 32,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\n\nAMAPÁ\nUM NOVO TEMPO\nDesenvolvimento, dignidade, oportunidades e respeito ao meio ambiente\nPROGRAMA DE GOVERNO\nAmapá\n\nAMAPÁ, UM NOVO TEMPO | 1"
+          },
+          {
+            "id": "sumario-executivo",
+            "titulo": "SUMÁRIO EXECUTIVO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "SUMÁRIO EXECUTIVO\nO Amapá possui riquezas naturais, posição geográfica estratégica, diversidade cultural, potencial\nturístico, capacidade energética e um povo trabalhador. O desafio é transformar essas vantagens em\nemprego, renda, serviços públicos eficientes e qualidade de vida. Este plano apresenta uma proposta\nintegrada para saúde, educação, segurança, proteção das famílias, desenvolvimento econômico,\nagricultura, pesca, energia, turismo, petróleo e gás, infraestrutura, tecnologia, assistência social,\ncultura, esporte, habitação, meio ambiente e gestão pública.\n\nO governo colocará as pessoas no centro das decisões, com metas, prazos,\ntransparência e acompanhamento público.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApresentação e princípios\n1. Saúde - Amapá com Saúde\n2. Educação\n3. Segurança Pública\n4. Delegacia Social\n5. Desenvolvimento Econômico\n6. Agricultura, Pesca e Agroindústria\n7. Economia Verde e Projetos de Carbono\n8. Energia\n9. Turismo\n10. Petróleo, Gás e Novas Oportunidades Energéticas\n11. Infraestrutura, Transportes e Logística\n12. Tecnologia e Inovação\n13. Emprego, Empreendedorismo e Renda\n14. Assistência Social e Proteção das Famílias\n15. Cultura e Economia Criativa\n16. Esporte e Juventude\n17. Habitação, Saneamento e Cidades\n18. Meio Ambiente e Proteção dos Recursos Naturais\n19. Gestão Pública\n20. Projetos Estratégicos\n21. Governança e Acompanhamento\nCompromisso Final\n\nAMAPÁ, UM NOVO TEMPO | 2"
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Amapá possui uma das maiores áreas preservadas do planeta, acesso ao Oceano Atlântico,\nlocalização estratégica na Amazônia, diversidade cultural e recursos capazes de abrir novas frentes de\ndesenvolvimento. Contudo, grande parte desse potencial ainda não se converteu em emprego, renda e\nserviços públicos de qualidade para toda a população.\nNosso compromisso é inaugurar um novo tempo: um Estado que deixe de ser obstáculo e passe a ser\nparceiro de quem trabalha, produz, empreende, estuda e busca uma vida melhor.\n\nO Amapá não precisa escolher entre preservação e desenvolvimento. Precisa planejar,\norganizar, inovar e criar condições para que suas riquezas beneficiem primeiro o\npovo amapaense.\n\nPrincípios do governo\n\n\n\n\n\n\n\n\n\n\nPessoas em primeiro lugar.\nDesenvolvimento econômico com responsabilidade ambiental.\nDefesa da dignidade humana e redução das desigualdades.\nSegurança jurídica para famílias, produtores e investidores.\nValorização do trabalho, do empreendedorismo e dos servidores públicos.\nTecnologia a serviço da população.\nIntegração entre Estado, municípios, União, universidades e iniciativa privada.\nRespeito às comunidades indígenas, quilombolas, ribeirinhas e tradicionais.\nGestão por metas, transparência e participação social.\n\nAMAPÁ, UM NOVO TEMPO | 3"
+          },
+          {
+            "id": "1-saude",
+            "titulo": "1. SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "1. SAÚDE\nAmapá com Saúde - uma rede integrada, humana e moderna\nA saúde será estruturada como uma rede única que conectará prevenção, atendimento básico,\ndiagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade.\n\n1.1 Hospital Universitário integrado à rede\n\n\n\n\n\n\nIntegração institucional do Hospital Universitário à rede estadual.\nAmpliação de atendimentos de média e alta complexidade.\nFortalecimento das UTIs, cirurgias e especialidades.\nIntegração entre ensino, pesquisa e assistência.\nUso do heliponto para transporte de urgência e apoio à rede de transplantes, conforme as normas\nnacionais.\n\n1.2 Hospital de Amor e combate ao câncer\n\n\n\n\n\nConsolidação como referência estadual em prevenção, diagnóstico e tratamento.\nUnidades móveis para mamografias, exames preventivos e rastreamento.\nAmpliação de quimioterapia, radioterapia e atendimento multidisciplinar.\nAcompanhamento psicológico e social às famílias.\n\n1.3 Atendimento regionalizado\n\n\n\n\n\nPolos regionais de diagnóstico e especialidades.\nFortalecimento de hospitais e unidades do interior.\nTransporte sanitário organizado e casas de apoio.\nEquipes itinerantes para comunidades isoladas.\n\n1.4 Redução de filas\n\n\n\n\n\nAuditoria e atualização permanente das filas.\nDivulgação da posição do paciente.\nMutirões programados e ampliação de horários.\nBusca ativa, confirmação prévia e reaproveitamento de vagas canceladas.\n\n1.5 Saúde da mulher, da criança e do adolescente\n\n\n\n\n\n\nPré-natal e cuidado à gestante de risco.\nPrevenção da mortalidade materna e infantil.\nAtendimento ginecológico e planejamento reprodutivo.\nVacinação, pediatria e acompanhamento do desenvolvimento infantil.\nSaúde nas escolas e prevenção da violência.\n\n1.6 Saúde mental, autismo e doenças raras\n\n\n\n\nAmpliação dos centros de atenção psicossocial.\nPrevenção do suicídio e atendimento de depressão e ansiedade.\nTratamento para dependência química e apoio às famílias.\nAMAPÁ, UM NOVO TEMPO | 4"
+          },
+          {
+            "id": "pagina-5",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "\n\nCentros de referência para autismo, deficiência, reabilitação e doenças raras.\n\n1.7 Saúde indígena, ribeirinha e das comunidades isoladas\n\n\n\n\n\nBarcos de atendimento e equipes itinerantes.\nTelemedicina, vacinação e exames preventivos.\nTransporte de urgência e formação de agentes comunitários.\nRespeito aos costumes e diálogo com as comunidades.\n\n1.8 Aplicativo Amapá com Saúde\nSerá implantada uma plataforma digital integrada, disponível por aplicativo, página na internet,\ncentral telefônica e atendimento presencial.\n\n\n\n\n\n\n\nAgendamento e acompanhamento de consultas e exames.\nPosição nas filas de cirurgias e especialidades.\nResultados de exames, receitas digitais e lembretes.\nConsulta de medicamentos e localização de unidades.\nTeleconsultas quando clinicamente indicadas.\nAcompanhamento de transporte sanitário e avaliação do atendimento.\n\n1.9 Prontuário eletrônico e Farmácia Digital\n\n\n\n\n\nHistórico único do paciente, com acesso protegido.\nIntegração de consultas, exames, vacinas, internações e medicamentos.\nControle de estoques e consulta pública da disponibilidade de remédios.\nProteção de dados e preservação do sigilo médico.\n\n1.10 Inteligência aplicada à saúde\n\n\n\n\n\nOrganização de filas e leitos.\nPrevisão de demanda e controle de estoques.\nRedução de faltas e melhoria da distribuição de profissionais.\nDecisões clínicas sempre sob responsabilidade de profissionais habilitados.\n\nAMAPÁ, UM NOVO TEMPO | 5"
+          },
+          {
+            "id": "2-educacao",
+            "titulo": "2. EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "2. EDUCAÇÃO\nConhecimento, profissão e oportunidades\nA escola deverá preparar o estudante para a cidadania, para continuar seus estudos, ingressar no\nmercado de trabalho e empreender.\n\n2.1 Alfabetização e aprendizagem\n\n\n\n\n\nAlfabetização na idade adequada.\nRecuperação da aprendizagem e redução da evasão.\nMelhoria em língua portuguesa, matemática e ciências.\nFormação continuada dos professores.\n\n2.2 Escola em tempo integral\n\n\n\n\nExpansão planejada nas regiões de maior vulnerabilidade.\nAcompanhamento pedagógico, esporte, cultura, tecnologia e alimentação.\nIniciação científica e preparação profissional.\n\n2.3 Ensino técnico e profissionalizante\n\n\n\n\n\n\n\nSaúde, informática, programação, inteligência artificial e robótica.\nCibersegurança, energias renováveis e eletricidade.\nLogística, turismo, hotelaria e gastronomia.\nPesca, aquicultura, agricultura e agroindústria.\nPetróleo e gás, operação portuária e manutenção industrial.\nProdução audiovisual e economia criativa.\n\n2.4 Tecnologia nas escolas\n\n\n\n\n\nInternet de qualidade e laboratórios.\nBibliotecas digitais e plataformas educacionais.\nVideoconferência com universidades e centros de formação.\nFormação tecnológica para professores.\n\n2.5 Universidade do Futuro\n\n\n\n\nCooperação com universidades públicas e privadas.\nAmpliação de cursos ligados às necessidades do Estado.\nFormação em saúde, engenharia, tecnologia, energia, logística, turismo, educação e gestão pública.\n\n2.6 Bolsa de Incentivo Universitário da Saúde\nO Estado apoiará a formação de profissionais em áreas com falta de mão de obra na rede pública.\n\n\n\n\nMedicina, Enfermagem, Odontologia, Farmácia, Fisioterapia e Psicologia.\nTerapia Ocupacional, Fonoaudiologia, Biomedicina, Nutrição e Serviço Social.\nRadiologia, Análises Clínicas, Engenharia Biomédica, Gestão Hospitalar e tecnologias aplicadas à\nsaúde.\nAMAPÁ, UM NOVO TEMPO | 6"
+          },
+          {
+            "id": "o-apoio-podera-cobrir-mensalidades-material-didatico-transporte-alimenta",
+            "titulo": "O apoio poderá cobrir mensalidades, material didático, transporte, alimentação, moradia e estágios,",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "O apoio poderá cobrir mensalidades, material didático, transporte, alimentação, moradia e estágios,\nconforme regulamentação.\n\n2.7 Contrapartida por prestação de serviço\n\n\n\n\n\n\n\nAtuação remunerada na rede pública após a formação e registro profissional.\nContrato legal, salário compatível e todos os direitos assegurados.\nPrioridade para regiões com falta de profissionais.\nCompensação da obrigação pelo tempo de serviço prestado.\nAlternativas de quitação por serviço, pagamento parcelado ou combinação entre ambos.\nQuando houver ressarcimento financeiro, o percentual será razoável, previamente definido e sem\nredução ilegal de salário.\n\n2.8 Medicina e tecnologias da saúde\n\n\n\n\n\nTelemedicina e engenharia clínica.\nDiagnóstico por imagem e análise de dados médicos.\nProntuário eletrônico e aplicativos.\nRobótica médica e manutenção de equipamentos.\n\n2.9 Valorização dos profissionais da educação\n\n\n\n\nFormação continuada e melhores condições de trabalho.\nApoio psicológico e redução da burocracia.\nSegurança nas escolas e participação nas decisões.\n\nAMAPÁ, UM NOVO TEMPO | 7"
+          },
+          {
+            "id": "3-seguranca-publica",
+            "titulo": "3. SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "3. SEGURANÇA PÚBLICA\nPrevenção, inteligência e firmeza contra o crime\nA política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva\ndo Estado.\n\n3.1 Integração das forças\n\n\n\nIntegração entre Polícia Militar, Polícia Civil, Polícia Científica, Polícia Penal e Corpo de Bombeiros.\nCooperação com forças federais, guardas municipais e rede social.\n\n3.2 Centro Integrado de Inteligência\n\n\n\n\nAnálise criminal e compartilhamento de informações.\nCombate a homicídios, tráfico, facções e crimes de fronteira.\nApoio permanente às operações e investigações.\n\n3.3 Tecnologia na investigação\n\n\n\n\nCâmeras em áreas estratégicas e reconhecimento de placas.\nDrones, perícia digital e laboratórios de informática forense.\nUso de tecnologia com respeito às leis e aos direitos fundamentais.\n\n3.4 Polícia Científica\n\n\n\nModernização de laboratórios e equipamentos.\nGenética forense, medicina legal e preservação de provas.\n\n3.5 Fronteiras, rios e sistema prisional\n\n\n\n\n\nBases integradas e patrulhamento fluvial.\nCombate ao tráfico, contrabando e crimes ambientais.\nSeparação de presos conforme periculosidade.\nInteligência penitenciária, trabalho, educação e reinserção.\n\n3.6 Prevenção da violência\n\n\n\n\nEsporte, cultura, escola integral e formação profissional.\nApoio às famílias e recuperação de espaços públicos.\nProgramas para jovens em situação de risco.\n\nAMAPÁ, UM NOVO TEMPO | 8"
+          },
+          {
+            "id": "4-delegacia-social",
+            "titulo": "4. DELEGACIA SOCIAL",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "4. DELEGACIA SOCIAL\nPrograma Estadual de Prevenção da Violência Familiar e Proteção das Pessoas em\nSituação de Vulnerabilidade\nA Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e\narticulador, vinculado à Secretaria de Estado responsável pela assistência social.\n\n4.1 Natureza e limites\nA Delegacia Social não integrará a Polícia Civil e não exercerá investigação criminal, polícia judiciária,\npersecução penal, aplicação de medidas protetivas ou funções reservadas ao Ministério Público, ao\nPoder Judiciário, ao Conselho Tutelar e aos órgãos de segurança.\n\n4.2 Princípios\n\n\n\n\n\n\nDignidade da pessoa humana e proteção da família.\nPrioridade às crianças, adolescentes, mulheres, idosos e pessoas com deficiência.\nPrevenção da violência e atuação multidisciplinar.\nConfidencialidade, integração institucional e respeito aos direitos fundamentais.\nMediação social apenas quando legal, segura e adequada.\n\n4.3 Objetivos\n\n\n\n\n\n\n\nPrevenir a violência doméstica e familiar.\nIdentificar precocemente fatores de risco.\nOrientar e acompanhar famílias.\nEncaminhar situações aos órgãos competentes.\nPromover cultura de paz e produzir dados para aperfeiçoar políticas públicas.\nOferecer formação prática supervisionada aos estudantes participantes.\n\n4.4 Estrutura\n\n\n\n\n\n\n\n\nCoordenação Estadual.\nNúcleos Universitários.\nEquipes Multidisciplinares de Campo.\nConselho Técnico Consultivo.\nRede de Parceiros Institucionais.\nEntidades religiosas e comunitárias conveniadas.\nCanais presenciais, telefônicos e digitais.\n\n4.5 Equipes multidisciplinares\n\n\n\nProfissionais e estudantes supervisionados de Serviço Social, Psicologia, Direito, Pedagogia,\nEnfermagem, Medicina e Terapia Ocupacional.\nEstudantes não substituirão profissionais nem exercerão atividades privativas sem supervisão.\n\n4.6 Atendimento e encaminhamento\n\n\nEscuta inicial e orientação social.\nAMAPÁ, UM NOVO TEMPO | 9"
+          },
+          {
+            "id": "pagina-10",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "\n\n\n\nVisitas técnicas e identificação de fatores de risco.\nEncaminhamento para assistência, saúde, segurança, Conselho Tutelar e Ministério Público.\nComunicação imediata em caso de crime, risco à vida, violência sexual ou ameaça grave.\n\n4.7 Proteção de dados e formação comunitária\n\n\n\n\nProtocolos de confidencialidade e controle de acesso.\nCampanhas, oficinas e formação de lideranças.\nPrevenção da violência nas escolas e divulgação dos canais de denúncia.\n\nAMAPÁ, UM NOVO TEMPO | 10"
+          },
+          {
+            "id": "4-8-governanca-expansao-avaliacao-e-aperfeicoamento-permanente",
+            "titulo": "4.8 GOVERNANÇA, EXPANSÃO, AVALIAÇÃO E APERFEIÇOAMENTO PERMANENTE",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "4.8 GOVERNANÇA, EXPANSÃO, AVALIAÇÃO E APERFEIÇOAMENTO PERMANENTE\n4.8.1 Governança institucional\nA Delegacia Social será administrada segundo princípios de eficiência, integração institucional,\ntransparência, responsabilidade administrativa e melhoria contínua.\nA Secretaria de Estado responsável pela assistência social exercerá a coordenação estratégica do\nprograma, promovendo a articulação entre órgãos públicos, instituições de ensino superior e\norganizações parceiras.\nAs decisões administrativas observarão critérios técnicos e protocolos padronizados, assegurando\nuniformidade de procedimentos nos municípios participantes, sem desconsiderar as necessidades\nregionais.\n\n4.8.2 Planejamento anual\nNo início de cada exercício, a Coordenação Estadual elaborará Plano Anual de Ação contendo:\n\n\n\n\n\n\n\n\n\nmunicípios participantes;\nmetas de expansão;\nnúmero estimado de estudantes e profissionais participantes;\ncalendário de capacitações;\ncronograma das atividades comunitárias;\ncampanhas educativas;\nprioridades regionais;\nmetas de desempenho.\n\nO planejamento poderá ser revisado durante sua execução sempre que mudanças sociais, operacionais\nou orçamentárias justificarem a atualização.\n\n4.8.3 Implantação gradual\nA implantação ocorrerá de forma progressiva. Na primeira etapa, serão priorizados os municípios com\nmaior incidência de violência doméstica e familiar, maior densidade populacional ou maior\nvulnerabilidade social, com base em indicadores públicos e diagnósticos técnicos.\nA expansão observará:\n\n\n\n\n\n\ndisponibilidade de instituições de ensino conveniadas;\nexistência de estrutura mínima de apoio;\ncapacidade operacional da Coordenação Estadual;\ndisponibilidade orçamentária;\nintegração com a rede local de proteção.\n\nO objetivo será ampliar progressivamente a cobertura até alcançar todos os municípios do Estado.\n\n4.8.4 Convênios e cooperação\nA execução do programa poderá ser apoiada por instrumentos de cooperação celebrados, nos termos\nda legislação, com instituições públicas e entidades privadas sem fins lucrativos.\nOs instrumentos poderão contemplar:\n\n\nuniversidades, faculdades e centros universitários;\nAMAPÁ, UM NOVO TEMPO | 11"
+          },
+          {
+            "id": "pagina-12",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "\n\n\n\n\n\nentidades comunitárias;\norganizações religiosas;\nconselhos profissionais;\nfundações e instituições de pesquisa;\norganizações dedicadas à proteção de pessoas em situação de vulnerabilidade.\n\nCada instrumento definirá responsabilidades, metas, mecanismos de acompanhamento, proteção de\ndados, prestação de contas e critérios de avaliação.\n\n4.8.5 Financiamento\nAs despesas do programa correrão por conta de dotações orçamentárias próprias, podendo ser\ncomplementadas por recursos provenientes de:\n\n\n\n\n\n\n\nconvênios;\ntransferências voluntárias;\nfundos públicos;\nemendas parlamentares;\ncooperação técnica nacional e internacional;\ndoações legalmente admitidas.\n\nA execução financeira observará integralmente a legislação orçamentária, fiscal, de parcerias e de\nprestação de contas.\n\n4.8.6 Sistema de monitoramento\nA Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de\nindicadores quantitativos e qualitativos.\nO monitoramento permitirá:\n\n\n\n\n\n\n\nverificar o cumprimento das metas;\nmedir a efetividade das ações preventivas;\nidentificar regiões prioritárias;\naperfeiçoar os protocolos operacionais;\norientar decisões administrativas;\nidentificar falhas e adotar medidas corretivas.\n\n4.8.7 Indicadores de desempenho\nA avaliação anual utilizará, entre outros, os seguintes indicadores:\n\n\n\n\n\n\n\n\n\n\nnúmero de estudantes e profissionais participantes;\ninstituições conveniadas;\nmunicípios atendidos;\nequipes em atividade;\nfamílias acompanhadas;\nvisitas realizadas;\natividades educativas promovidas;\nencaminhamentos efetuados;\npercentual de situações acompanhadas que tiveram encaminhamento concluído, acesso efetivo à\nrede de proteção ou redução técnica do risco identificado;\nAMAPÁ, UM NOVO TEMPO | 12"
+          },
+          {
+            "id": "pagina-13",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "\n\n\n\ntempo médio de resposta aos encaminhamentos;\ngrau de satisfação dos participantes;\nevolução territorial da cobertura do programa.\n\nOs indicadores poderão ser ampliados ou aperfeiçoados por regulamento, com base na experiência\nprática e em estudos técnicos.\n\n4.8.8 Relatório anual\nAo final de cada exercício será elaborado o Relatório Anual da Delegacia Social, contendo:\n\n\n\n\n\n\n\n\n\nresultados alcançados;\ncumprimento das metas;\nindicadores consolidados;\nboas práticas identificadas;\ndificuldades verificadas;\nmedidas corretivas adotadas;\npropostas de aperfeiçoamento;\nplanejamento preliminar do exercício seguinte.\n\nO relatório servirá como instrumento permanente de avaliação, gestão e prestação de contas da política\npública.\n\n4.8.9 Transparência e proteção das pessoas atendidas\nSerão divulgadas periodicamente informações institucionais sobre a execução do programa,\npreservando-se integralmente a identidade das pessoas atendidas e quaisquer dados protegidos por\nsigilo legal.\nA publicidade das ações buscará estimular a participação social, fortalecer a cultura da prevenção e\npermitir o acompanhamento dos resultados, sem exposição das famílias ou das vítimas.\n\n4.8.10 Aperfeiçoamento permanente\nA Delegacia Social adotará processo contínuo de revisão técnica. Protocolos, metodologias, materiais de\ncapacitação e procedimentos administrativos poderão ser atualizados sempre que a experiência\nprática ou novas evidências indicarem necessidade de aperfeiçoamento.\nAs alterações relevantes serão precedidas de estudos técnicos e da manifestação do Conselho Técnico\nConsultivo.\n\n4.8.11 Resultados esperados\nA implementação da Delegacia Social buscará alcançar os seguintes resultados:\n\n\n\n\n\n\n\n\n\nfortalecimento da prevenção como eixo das políticas de proteção familiar;\nampliação da presença comunitária do Estado;\nmaior integração entre assistência social, educação, saúde, sistema de justiça e sociedade civil;\nidentificação precoce de fatores de risco;\nredução gradual da violência intrafamiliar;\nfortalecimento da rede estadual de proteção;\nformação prática de estudantes comprometidos com a cidadania;\nconsolidação de uma cultura de diálogo, respeito e responsabilidade familiar;\nAMAPÁ, UM NOVO TEMPO | 13"
+          },
+          {
+            "id": "pagina-14",
+            "titulo": "",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "\n\nutilização de informações técnicas para orientar novas políticas públicas.\n\n4.8.12 Regulamentação e disposições finais\nA Delegacia Social será implementada por meio de regulamentação própria, que disciplinará sua\norganização administrativa, funcionamento, protocolos operacionais, formação das equipes, proteção\nde dados, mecanismos de supervisão e demais aspectos necessários à execução do programa.\nOs casos administrativos não previstos serão analisados pela Coordenação Estadual, observadas a\nlegislação vigente, as competências dos órgãos envolvidos e as diretrizes estabelecidas neste Plano de\nGoverno.\n\n4.8.13 Compromisso de governo\nA Delegacia Social representa uma mudança de paradigma na atuação do Estado. Em vez de limitar sua\npresença ao momento posterior à violência, o poder público passará a atuar de forma antecipada,\npróxima das famílias e integrada à comunidade.\nNosso compromisso é construir uma rede permanente de prevenção, acolhimento, orientação e\nencaminhamento, capaz de proteger vidas, fortalecer os vínculos familiares e promover uma cultura\nde paz, assegurando que cada cidadão encontre no Estado um parceiro na defesa da dignidade humana\ne da convivência familiar saudável.\n\nAMAPÁ, UM NOVO TEMPO | 14"
+          },
+          {
+            "id": "5-desenvolvimento-economico",
+            "titulo": "5. DESENVOLVIMENTO ECONÔMICO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "5. DESENVOLVIMENTO ECONÔMICO\nDestravar o Amapá\nO crescimento depende de segurança jurídica, infraestrutura, qualificação e uma administração que\nrespeite quem deseja produzir.\n\n5.1 Regularização fundiária\n\n\n\n\nDigitalização e integração de cadastros.\nTitulação de famílias e produtores.\nRedução de conflitos e acesso ao crédito.\n\n5.2 Licenciamento moderno e responsável\n\n\n\n\n\nProcessos digitais e acompanhamento pela internet.\nAnálise por nível de impacto.\nCritérios públicos, orientação prévia e equipes técnicas qualificadas.\nDecisões técnicas, transparentes e dentro da lei.\n\n5.3 Ordenamento territorial\n\n\n\n\nRevisão técnica e participativa.\nRespeito às áreas protegidas, territórios indígenas e comunidades tradicionais.\nCompatibilização entre moradia, produção, infraestrutura e proteção dos recursos naturais.\n\n5.4 Agência de Desenvolvimento\n\n\n\n\nAtração de investimentos e apoio às empresas locais.\nPreparação de projetos e busca de financiamentos.\nAcompanhamento de grandes empreendimentos.\n\n5.5 Compras governamentais locais\n\n\nMaior participação de microempresas, cooperativas, produtores e fornecedores locais, dentro da lei.\n\nAMAPÁ, UM NOVO TEMPO | 15"
+          },
+          {
+            "id": "6-agricultura-pesca-e-agroindustria",
+            "titulo": "6. AGRICULTURA, PESCA E AGROINDÚSTRIA",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "6. AGRICULTURA, PESCA E AGROINDÚSTRIA\nProduzir no Amapá e gerar renda no Amapá\nO Estado fortalecerá a produção local, reduzirá perdas e estimulará a transformação de matéria-prima\nem produtos de maior valor.\n\n6.1 Agricultura familiar\n\n\n\n\nAssistência técnica, sementes, mecanização e irrigação.\nCrédito orientado, armazenamento e transporte.\nCompras públicas e apoio às cooperativas.\n\n6.2 Cadeias produtivas\n\n\n\nAçaí, mandioca, cacau, frutas, hortaliças, pescado, camarão e mel.\nProdutos florestais e pecuária em áreas legalmente autorizadas.\n\n6.3 Agroindústria\n\n\n\n\nCasas de farinha, unidades de polpas e beneficiamento de açaí.\nFrigoríficos, processamento do pescado, óleos e pequenas indústrias.\nCertificação sanitária, embalagens e marcas locais.\n\n6.4 Segurança alimentar e pesca\n\n\n\n\nProdução local para escolas, hospitais e mercados.\nFeiras, centrais de abastecimento e agricultura urbana.\nPesca artesanal, piscicultura, armazenamento e beneficiamento.\n\nAMAPÁ, UM NOVO TEMPO | 16"
+          },
+          {
+            "id": "7-economia-verde-e-projetos-de-carbono",
+            "titulo": "7. ECONOMIA VERDE E PROJETOS DE CARBONO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "7. ECONOMIA VERDE E PROJETOS DE CARBONO\nA floresta preservada gerando valor\nA política estadual buscará transformar a preservação em renda, com regras claras e proteção das\ncomunidades.\n\n7.1 Amapá Carbono Verde\n\n\n\n\nSegurança jurídica, medição confiável e certificação reconhecida.\nTransparência, rastreabilidade e repartição justa das receitas.\nPrevenção de contratos abusivos e controle público.\n\n7.2 Pagamento por serviços ambientais\n\n\n\nBenefícios para agricultores familiares, comunidades tradicionais e projetos de recuperação.\nRespeito à autonomia dos povos indígenas e às exigências de consulta.\n\n7.3 Defesa das comunidades\n\n\n\nInformação clara, contrato compreensível e acompanhamento jurídico.\nDefinição dos riscos, compradores, regras de pagamento e proteção de direitos.\n\n7.4 Bioeconomia\n\n\n\nAlimentos, cosméticos, óleos, fibras, sementes, essências e produtos florestais.\nPesquisa, inovação e agregação de valor no próprio Estado.\n\nAMAPÁ, UM NOVO TEMPO | 17"
+          },
+          {
+            "id": "8-energia",
+            "titulo": "8. ENERGIA",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "8. ENERGIA\nEnergia para produzir, viver e crescer\nO Amapá diversificará suas fontes e ampliará a segurança do fornecimento.\n\n8.1 Energia solar e outras fontes\n\n\n\n\n\nPainéis solares em prédios públicos, escolas e hospitais.\nMiniusinas, geração comunitária e cooperativas de energia.\nBiomassa, biogás, resíduos, sistemas híbridos e armazenamento.\nPesquisa sobre hidrogênio e eficiência energética.\n\n8.2 Projeto Gelo Solar\n\n\n\n\n\nUnidades solares de fabricação de gelo em comunidades pesqueiras e ribeirinhas.\nCâmaras frias, pontos de beneficiamento e treinamento.\nRedução de perdas, custos e desperdício.\nAumento da renda dos pescadores.\n\n8.3 Comunidades isoladas\n\n\nEnergia para iluminação, medicamentos, alimentos, água, comunicação, escolas e pequenos\nnegócios.\n\nAMAPÁ, UM NOVO TEMPO | 18"
+          },
+          {
+            "id": "9-turismo",
+            "titulo": "9. TURISMO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "9. TURISMO\nAmapá, destino Amazônia\nO turismo será tratado como atividade econômica capaz de gerar emprego, renda, circulação de\nrecursos e valorização cultural.\n\n9.1 Segmentos prioritários\n\n\n\n\nEcoturismo, aventura, pesca, ciência, cultura e história.\nTurismo religioso, gastronômico, de eventos e de base comunitária.\nObservação de aves e turismo indígena quando autorizado pelas comunidades.\n\n9.2 Rotas turísticas\n\n\n\n\n\n\nRota do Marco Zero.\nRota Amazônia Atlântica.\nRota dos Grandes Rios.\nRota do Marabaixo e do Batuque.\nRota da Gastronomia, Pesca, Fortalezas e História.\n\n9.3 Infraestrutura e qualificação\n\n\n\n\nAcessos, sinalização, terminais, atracadouros e centros de atendimento.\nInternet, saneamento, segurança e acessibilidade.\nCursos para guias, barqueiros, hotéis, restaurantes, artesãos e produtores de eventos.\n\n9.4 Promoção e calendário\n\n\n\n\nCampanhas nacionais, feiras, operadores e produção audiovisual.\nCalendário estadual divulgado com antecedência.\nIntegração com a Guiana Francesa e o Caribe, respeitadas as competências federais.\n\n9.5 Fórum Permanente de Turismo do Amapá\nO Fórum reunirá governo, municípios, iniciativa privada, trabalhadores, universidades, comunidades e\nentidades do setor para discutir decisões que afetem o turismo.\n\n\n\n\n\n\nPropor prioridades e colaborar com o Plano Estadual de Turismo.\nAcompanhar obras, projetos, calendário e indicadores.\nAvaliar impactos de decisões públicas.\nSugerir formação profissional e promover parcerias.\nGarantir representação regional, reuniões periódicas e divulgação pública das recomendações.\n\nAMAPÁ, UM NOVO TEMPO | 19"
+          },
+          {
+            "id": "10-petroleo-gas-e-novas-oportunidades-energeticas",
+            "titulo": "10. PETRÓLEO, GÁS E NOVAS OPORTUNIDADES ENERGÉTICAS",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "10. PETRÓLEO, GÁS E NOVAS OPORTUNIDADES ENERGÉTICAS\nPreparar o Amapá para uma nova atividade econômica\nA existência de reservas comerciais e a dimensão econômica somente poderão ser confirmadas após\nestudos, perfurações, licenciamento e avaliações técnicas. O Estado deve se preparar sem antecipar\nreceitas que ainda não existem.\n\n10.1 Exploração responsável\n\n\n\n\nCumprimento da legislação e controle ambiental.\nPlanos de emergência e prevenção de acidentes.\nFiscalização, transparência e diálogo com as comunidades.\n\n10.2 Plano Estadual de Petróleo e Gás\n\n\n\n\nMapeamento de oportunidades e preparação de infraestrutura.\nFormação de trabalhadores e atração de fornecedores.\nApoio às empresas locais e planejamento do crescimento.\n\n10.3 Formação de mão de obra\n\n\n\n\nSegurança industrial, mecânica, eletricidade e soldagem.\nInstrumentação, logística, operação portuária e manutenção.\nEnfermagem do trabalho, inspeção, tecnologia da informação e inglês técnico.\n\n10.4 Conteúdo local\n\n\n\nCadastro de profissionais, empresas, cooperativas e fornecedores.\nAmpliação da participação amapaense na cadeia, dentro das regras nacionais.\n\n10.5 Fundo de Desenvolvimento do Futuro\n\n\n\n\nDestinação de parte de eventuais royalties para saúde, educação, ciência, infraestrutura e energia.\nFinanciamento da diversificação econômica e proteção ambiental.\nPortal específico para divulgar receitas, contratos, projetos e resultados.\n\nAMAPÁ, UM NOVO TEMPO | 20"
+          },
+          {
+            "id": "11-infraestrutura-transportes-e-logistica",
+            "titulo": "11. INFRAESTRUTURA, TRANSPORTES E LOGÍSTICA",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "11. INFRAESTRUTURA, TRANSPORTES E LOGÍSTICA\nIntegrar o território e reduzir custos\nA infraestrutura será planejada para conectar pessoas, produção, turismo e mercados.\n\n11.1 Modernização do Porto de Santana\n\n\n\n\n\nMelhoria de acessos, segurança operacional e capacidade.\nDragagem e manutenção quando necessárias.\nNovos terminais, armazenagem, contêineres e integração rodoviária e hidroviária.\nPreparação para exportação e novas cadeias econômicas.\n\n11.2 Distrito logístico\n\n\n\nArmazéns, centros de distribuição, oficinas, transportadoras e áreas industriais.\nApoio aduaneiro e serviços a exportadores.\n\n11.3 Terminais, rodovias e internet\n\n\n\n\nModernização de terminais hidroviários.\nManutenção de rodovias, pontes e estradas vicinais.\nAmpliação de fibra óptica, telefonia e internet em escolas, saúde, produção e turismo.\n\nAMAPÁ, UM NOVO TEMPO | 21"
+          },
+          {
+            "id": "12-tecnologia-e-inovacao",
+            "titulo": "12. TECNOLOGIA E INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "12. TECNOLOGIA E INOVAÇÃO\nPrograma Amapá Digital\nOs serviços públicos deverão ser simples, acessíveis e seguros.\n\n12.1 Governo digital\n\n\n\nProtocolos, licenças, agendamentos, certidões e ouvidoria pelo celular.\nIdentidade digital com proteção de dados.\n\n12.2 Parque de inovação\n\n\n\nIntegração entre universidades, institutos, startups, empresas e escolas.\nApoio a projetos tecnológicos ligados às necessidades do Estado.\n\n12.3 Inteligência na gestão e segurança digital\n\n\n\nAnálise de dados, previsão de demandas e combate a desperdícios.\nProteção de sistemas, backups, resposta a incidentes e formação de servidores.\n\nAMAPÁ, UM NOVO TEMPO | 22"
+          },
+          {
+            "id": "13-emprego-empreendedorismo-e-renda",
+            "titulo": "13. EMPREGO, EMPREENDEDORISMO E RENDA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "13. EMPREGO, EMPREENDEDORISMO E RENDA\nOportunidade para trabalhar e produzir\nO governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos\npequenos negócios.\n\n13.1 Primeiro Emprego Amapaense\n\n\n\nFormação, estágio, aprendizagem e parceria com empresas.\nIncentivos permitidos em lei e acompanhamento dos jovens.\n\n13.2 Crédito e orientação\n\n\n\nFormalização, planejamento, gestão, marketing e vendas digitais.\nAcesso ao crédito e às compras públicas.\n\n13.3 Mulheres empreendedoras e economia popular\n\n\n\nMicrocrédito, redes de comercialização e apoio a cooperativas.\nApoio a artesãos, produtores, catadores, autônomos e negócios comunitários.\n\nAMAPÁ, UM NOVO TEMPO | 23"
+          },
+          {
+            "id": "14-assistencia-social-e-protecao-das-familias",
+            "titulo": "14. ASSISTÊNCIA SOCIAL E PROTEÇÃO DAS FAMÍLIAS",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "14. ASSISTÊNCIA SOCIAL E PROTEÇÃO DAS FAMÍLIAS\nCuidar de quem mais precisa\nA assistência será integrada à saúde, educação, segurança, habitação e trabalho.\n\n14.1 Primeira infância e mulheres\n\n\n\nAcompanhamento familiar, nutrição, vacinação e orientação parental.\nCasas de acolhimento, apoio psicológico, orientação jurídica e autonomia econômica para\nmulheres.\n\n14.2 Pessoas idosas e com deficiência\n\n\n\nCentros de convivência, atendimento domiciliar e prevenção de golpes.\nAcessibilidade, inclusão escolar, formação profissional e apoio aos cuidadores.\n\n14.3 População em situação de rua e segurança alimentar\n\n\n\nAcolhimento, documentação, saúde, tratamento e qualificação.\nRestaurantes populares, cozinhas comunitárias e bancos de alimentos.\n\nAMAPÁ, UM NOVO TEMPO | 24"
+          },
+          {
+            "id": "15-cultura-e-economia-criativa",
+            "titulo": "15. CULTURA E ECONOMIA CRIATIVA",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "15. CULTURA E ECONOMIA CRIATIVA\nValorizar a identidade do Amapá\nA cultura será reconhecida como patrimônio, direito e atividade econômica.\n\n\n\n\n\nValorização do Marabaixo, Batuque, culturas indígena e quilombola.\nEditais para música, teatro, dança, literatura, artes visuais e cultura popular.\nFormação e produção audiovisual.\nApoio a moda, gastronomia, artesanato, design, fotografia e tecnologia criativa.\n\nAMAPÁ, UM NOVO TEMPO | 25"
+          },
+          {
+            "id": "16-esporte-e-juventude",
+            "titulo": "16. ESPORTE E JUVENTUDE",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "16. ESPORTE E JUVENTUDE\nEsporte como saúde, educação e oportunidade\nO esporte será instrumento de inclusão, prevenção da violência e descoberta de talentos.\n\n\n\n\n\nCentros esportivos comunitários e escolinhas.\nJogos escolares, campeonatos e esporte feminino.\nEsporte para pessoas com deficiência.\nBolsa Atleta, formação de treinadores e recuperação de equipamentos.\n\nAMAPÁ, UM NOVO TEMPO | 26"
+          },
+          {
+            "id": "17-habitacao-saneamento-e-cidades",
+            "titulo": "17. HABITAÇÃO, SANEAMENTO E CIDADES",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "17. HABITAÇÃO, SANEAMENTO E CIDADES\nViver com dignidade\nO governo buscará parcerias para ampliar moradia, água, saneamento e planejamento urbano.\n\n\n\n\n\nConstrução e melhoria de moradias.\nRegularização urbana e moradia rural.\nÁgua, esgotamento sanitário, drenagem e resíduos sólidos.\nMobilidade, iluminação, acessibilidade e prevenção de alagamentos.\n\nAMAPÁ, UM NOVO TEMPO | 27"
+          },
+          {
+            "id": "18-meio-ambiente-e-protecao-dos-recursos-naturais",
+            "titulo": "18. MEIO AMBIENTE E PROTEÇÃO DOS RECURSOS NATURAIS",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "18. MEIO AMBIENTE E PROTEÇÃO DOS RECURSOS NATURAIS\nPreservar com ciência, fiscalização e participação\nO patrimônio ambiental será protegido com planejamento, fiscalização e participação das\ncomunidades.\n\n\n\n\n\nCombate ao desmatamento, mineração ilegal e crimes contra rios e fauna.\nRecuperação de áreas degradadas, nascentes e margens.\nEducação ambiental nas escolas e comunidades.\nColeta seletiva, reciclagem, compostagem e apoio aos catadores.\n\nAMAPÁ, UM NOVO TEMPO | 28"
+          },
+          {
+            "id": "19-gestao-publica",
+            "titulo": "19. GESTÃO PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "19. GESTÃO PÚBLICA\nGoverno eficiente, transparente e próximo\nCada secretaria terá metas, indicadores, prazos, responsáveis e relatórios públicos.\n\n19.1 Gestão por metas e revisão de gastos\n\n\n\nRevisão de contratos, aluguéis, compras e estruturas.\nDirecionamento das economias para serviços essenciais.\n\n19.2 Transparência e servidores\n\n\n\nPortal de despesas, obras, contratos, filas e resultados.\nFormação, saúde ocupacional e modernização do trabalho dos servidores.\n\n19.3 Participação social\n\n\nConsultas, audiências, fóruns, reuniões regionais e canais digitais.\n\nAMAPÁ, UM NOVO TEMPO | 29"
+          },
+          {
+            "id": "20-projetos-estrategicos",
+            "titulo": "20. PROJETOS ESTRATÉGICOS",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "20. PROJETOS ESTRATÉGICOS\n1. Amapá com Saúde\n2. Prontuário Eletrônico Estadual\n3. Farmácia Digital\n4. Programa de Redução das Filas\n5. Bolsa de Incentivo Universitário da Saúde\n6. Universidade do Futuro\n7. Delegacia Social\n8. Centro Integrado de Inteligência\n9. Regularização Fundiária\n10. Amapá Carbono Verde\n11. Pagamento por Serviços Ambientais\n12. Projeto Gelo Solar\n13. Energia para Todos\n14. Fórum Permanente de Turismo\n15. Rotas Turísticas do Amapá\n16. Plano Estadual de Petróleo e Gás\n17. Fundo de Desenvolvimento do Futuro\n18. Modernização do Porto de Santana\n19. Distrito Logístico\n20. Amapá Digital\n21. Primeiro Emprego Amapaense\n22. Programa de Agroindústrias Municipais\n23. Rede de Proteção às Mulheres\n24. Centros Regionais de Especialidades\n25. Plano de Metas do Governo\n\nAMAPÁ, UM NOVO TEMPO | 30"
+          },
+          {
+            "id": "21-governanca-e-acompanhamento",
+            "titulo": "21. GOVERNANÇA E ACOMPANHAMENTO",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "21. GOVERNANÇA E ACOMPANHAMENTO\nO plano não será apenas uma relação de promessas. Cada programa deverá possuir diagnóstico,\nobjetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma\nde avaliação.\n\n\n\n\n\nPublicação do que foi iniciado e concluído.\nDivulgação dos recursos utilizados.\nApresentação dos resultados, dificuldades e correções necessárias.\nPrestação de contas periódica à sociedade.\n\nAMAPÁ, UM NOVO TEMPO | 31"
+          },
+          {
+            "id": "compromisso-final",
+            "titulo": "COMPROMISSO FINAL",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "COMPROMISSO FINAL\nAmapá, Um Novo Tempo é um compromisso com um Estado que funcione, respeite as pessoas e\ntransforme suas riquezas em oportunidades.\nNosso objetivo é construir um Amapá que produza mais, gere empregos, proteja sua natureza, valorize\nsuas comunidades e ofereça serviços públicos dignos.\nO petróleo, caso sua viabilidade seja confirmada, deverá financiar o futuro. A floresta preservada\ndeverá gerar benefícios para quem ajuda a protegê-la. O Porto de Santana deverá aproximar o Amapá\ndos mercados. O turismo deverá valorizar nossa cultura, nossos rios, nossa história e nosso povo.\nA tecnologia deverá aproximar o governo do cidadão. A educação deverá abrir caminhos. A saúde\ndeverá acolher e cuidar. A segurança deverá prevenir, proteger e enfrentar o crime. A assistência social\ndeverá chegar antes que a violência destrua famílias.\n\nAMAPÁ, UM NOVO TEMPO\n\nAMAPÁ, UM NOVO TEMPO | 32"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "5f0c39aa8878de7ae40b47d80a9d308d009b25bc298e97b39d1f13026fb7af0d"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "143a1321fa2378b403b204836c7d90a0ced8f130dc2c04b90d78765f380b11d0"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "eb2526249047509eac531cd322f7741f05e4d3aaa7a45efab462ae476d46a0df"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "ba2636b87a37a80dc0de452a2b2c2a1f4c1ce937c98293ac10be781701eea111"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "44509c23d14f75b2158b96678083f268ec700b27af76bea235ad789b142891c8"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "d4ab8a17446785a769b6e19c9fe1817bb01b4f927d7cc6ba8503b6e5a8f1f1b7"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "1b1474fe12e4d15d8a648952a13aeb44d0b4e5abfecb284a9d64dd0a451dadff"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "f9123a0e06a52617f8afdf69058c1b8d96bc3ef85ed357655368e08b30e2add8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "dc06fd0e6f91467614237add723e78bd8161db178c97e6909479862b5e77f9a1"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "143d44a15d36ac35e44b52a48a7180385c8069aeee95d19fdc74ac04c7868835"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "26d3251863cc43da2924ee35ee063e2819073225da929c991a864c3c47b02a37"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "6f55d7f7233c33f897c95db54524fb2983790de9034ee27cecdd8ae9bf7497a5"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "9a50f4429ffbd4f6d57ebacb3a7d1f7e5e38ef5ab4eaea55a9d757d08a601876"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a877c4daed1b20d933b57ecf2247415083ed3c9559f3759644c5ffb55e414554"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "93f69c110efbe578a7ae8b52f280f5be459dc7d4a2fe4ada90ef5f7b4b30a671"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "0b8c0045da0457048cd668455c475aa6edc4a3e3ca42a7b8c0a9f81aa995fc6c"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "57321319e61a724bc9e70c12dbb67d20a6f4a4300d8a0b370a510f77dc619c19"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "71ffa034446292b43ccbee9423031a8cef3a966424b7f6bd30128bd068501db4"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "92554078410efee703b9059455b8270891c55d8af5370bef21f47d29de73527e"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "b7a3442414d97f1c03c24eef76e10195ccc809f787df0ab2a33256f0ef157f15"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "b57dbbebee2d87f49134043be73aad910ea6961abd7b8b8e296bfd52a856cb88"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "daa0b0e0231631f54f0c59cfa9bbcd353948d762931446ea59ca1cbe2515c594"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "43c578be81a230f491ec23e20903867b68f40d5d3a407359abb60e1f83fc0321"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "a5d3e19654ce63dc222bb30974636182fbdf5015e09104b0d67cc0c1bb51d1ba"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "04b8333834557d8967e5e24498f417c1d95f6bed1b3a81dee467008a5214bb62"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "f98e31c0af21ca46b18df2cab919fd69d849dfbf17131ba0fada648b9dbbabe4"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "c208a03a8e63e71486dbf1930d121eb9a6a3a20c9357d2c9ce67fb4f64b34f08"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "1ef21454161a3391d7707d1e50f3995f14d99e8166180f253369df0549198c4c"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "6fbc4f9d262af43935b4dc7b14ac0f9daef737043b5509093bf8258516a5aa56"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "d6eca0f0c8f541c714db7d671c71fa2bdb34be562f3a4ad3b98727f0ae58de33"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "4bbdc948c2c7e315d1d3027385437e0ee0366664361e12d78ece2e24620e9101"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "6473fa5cd613f5382ba60088a22d13fdbee09c991d933cf6229fd410506178cd"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O plano prevê uma rede única de saúde que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade. O plano prevê alfabetização na idade adequada. O plano prevê formação continuada dos professores. A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado. A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social. O governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos pequenos negócios. Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação. A Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de indicadores quantitativos e qualitativos.",
+    "frases": [
+      {
+        "texto": "O plano prevê uma rede única de saúde que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 4,
+            "trecho": "A saúde será estruturada como uma rede única que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê alfabetização na idade adequada.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 6,
+            "trecho": "Alfabetização na idade adequada."
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê formação continuada dos professores.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 6,
+            "trecho": "Formação continuada dos professores."
+          }
+        ]
+      },
+      {
+        "texto": "A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 8,
+            "trecho": "A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado."
+          }
+        ]
+      },
+      {
+        "texto": "A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 9,
+            "trecho": "A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social."
+          }
+        ]
+      },
+      {
+        "texto": "O governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos pequenos negócios.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 23,
+            "trecho": "O governo estimulará a criação de trabalho e renda por meio de formação, crédito e apoio aos pequenos negócios."
+          }
+        ]
+      },
+      {
+        "texto": "Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 31,
+            "trecho": "Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação."
+          }
+        ]
+      },
+      {
+        "texto": "A Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de indicadores quantitativos e qualitativos.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 12,
+            "trecho": "A Coordenação Estadual acompanhará continuamente o desempenho do programa por meio de indicadores quantitativos e qualitativos."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-integrada",
+        "titulo": "Saúde integrada",
+        "descricao": "A saúde é apresentada como uma rede única de atendimento.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 4,
+            "trecho": "A saúde será estruturada como uma rede única que conectará prevenção, atendimento básico, diagnóstico, tratamento, cirurgias, reabilitação, atendimento especializado e alta complexidade."
+          }
+        ]
+      },
+      {
+        "id": "alfabetizacao",
+        "titulo": "Alfabetização",
+        "descricao": "A alfabetização é indicada como eixo educacional.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 6,
+            "trecho": "Alfabetização na idade adequada."
+          }
+        ]
+      },
+      {
+        "id": "formacao-docente",
+        "titulo": "Formação docente",
+        "descricao": "A formação continuada dos professores integra a proposta educacional.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 6,
+            "trecho": "Formação continuada dos professores."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "A política de segurança inclui prevenção.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 8,
+            "trecho": "A política de segurança será organizada sobre prevenção, investigação qualificada e presença efetiva do Estado."
+          }
+        ]
+      },
+      {
+        "id": "delegacia-social",
+        "titulo": "Delegacia Social",
+        "descricao": "A Delegacia Social é descrita como programa preventivo.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 9,
+            "trecho": "A Delegacia Social será um programa permanente de caráter preventivo, educativo, comunitário e articulador, vinculado à Secretaria de Estado responsável pela assistência social."
+          }
+        ]
+      },
+      {
+        "id": "governanca-programatica",
+        "titulo": "Governança programática",
+        "descricao": "O plano define elementos para o acompanhamento dos programas.",
+        "evidencias": [
+          {
+            "documentoId": "AP:30002552017:01",
+            "pagina": 31,
+            "trecho": "Cada programa deverá possuir diagnóstico, objetivo, público atendido, orçamento, fonte de recursos, prazo, órgão responsável, indicador e forma de avaliação."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:22:43.326Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:27:01.105Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho reproduz literalmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números envolvidos, afirmação puramente qualitativa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:1:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de único tópico educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:2:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho corresponde literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tópico educacional coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:3:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tópico de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:4:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único programa coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:5:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Área coerente de emprego e renda."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:6:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tópico de governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:7:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho idêntico."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tópico de monitoramento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:frase:8:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma a caracterização como rede única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:saude-integrada:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa da cláusula única."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o eixo educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:alfabetizacao:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma o tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema educacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:formacao-docente:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma inclusão de prevenção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:seguranca-publica:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma caráter preventivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único programa/tema coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:delegacia-social:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma definição de elementos de acompanhamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:numeros",
+        "verdict": "yes",
+        "reason": "Sem números específicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:mistura",
+        "verdict": "yes",
+        "reason": "Único tema de governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documento coincidem."
+      },
+      {
+        "id": "2026:GOVERNADOR:AP:30002552017:tema:governanca-programatica:documentos:AP:30002552017:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cobertura completa."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:AP:30002552017",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "AP:30002552017:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 26443,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22958,
+          "output_tokens_details": {
+            "thinking_tokens": 378
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 26443,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22958,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 26443,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 26443
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3559514
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "72fc8c60bb07c74e7bb649cacacb796a49e7da7a9cb888fb3d22bb77b28d3647",
+    "extractedTextSha256": "c9d94bfc0d81bc49dc6186d3f620bc9b0870b730fe4b56a982aa0b560302bd0b",
+    "documentCount": 1,
+    "documentSetSha256": "0d31b947e79d4ef4a5ffebda0a4fe44b39244ec200c246a19d6ed9973725a59b",
+    "contentSha256": "40648f36b8c2991539d2ed95d6bcc6e3b7c7c78ad8b9e147d33072049515e509"
+  }
+}

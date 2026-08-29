@@ -1,0 +1,968 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "PR",
+    "sqCandidato": "160002550997",
+    "slug": "tayna-miessa",
+    "nomeUrna": "TAYNÁ MIESSA",
+    "partido": "UP",
+    "arquivoNome": "2026PR160002550997_01.pdf",
+    "arquivoNoPacote": "PR/2026PR160002550997_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "PR:160002550997:01",
+      "fonte": {
+        "arquivoNome": "2026PR160002550997_01.pdf",
+        "arquivoNoPacote": "PR/2026PR160002550997_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PR.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "92a772f5c0e8cc239c215caa0b380ee9c8ed6dadfca507cafb2200267f618d4a",
+        "extractedTextSha256": "671036088aa5157ff9f8a1eec67c568c02845dc510e7e10188280df414fd3d0a",
+        "paginas": 23,
+        "secoes": [
+          {
+            "id": "lutar-para",
+            "titulo": "LUTAR PARA",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "LUTAR PARA\nAVANÇAR O PARANÁ\nNA MÃO DO POVO!\nPrograma político da Unidade\nPopular pelo Socialismo."
+          },
+          {
+            "id": "apresentacao",
+            "titulo": "APRESENTAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "APRESENTAÇÃO\nO Paraná é um estado forjado na resistência do seu povo. Desde as lutas\nabolicionistas que ecoaram nos quilombos e no exemplo de lutadoras como Maria\nÁgueda, passando pela bravura dos trabalhadores rurais e camponeses que\nenfrentaram a exploração latifundiária no norte pioneiro, até os trabalhadores e\ntrabalhadoras que construíram as greves operárias do século XX e os movimentos\npopulares que derrubaram ditaduras e conquistaram a democracia, nossa história é\nmarcada por lutadores e lutadoras que nunca se curvaram.\nHomens e mulheres como os mártires da Guerra do Contestado, da guerrilha de\nPorecatu, as lideranças indígenas e quilombolas que defendem a terra até hoje, os\nsindicalistas, estudantes, camponeses sem terra, mulheres negras, povos originários\ne periferias que organizaram ocupações, marchas e rebeliões contra a fome, a\nviolência e a injustiça. Essas tradições de luta popular não são apenas memória: são o\ncombustível para o presente. Vivemos sob o sistema capitalista que concentra\nriqueza nas mãos de poucos, explora o trabalho, destrói o meio ambiente, mantém a\nmaioria negra e pobre em condições de vulnerabilidade, e usa o Estado para proteger\nprivilégios.\nNo Paraná, isso se manifesta na desigualdade brutal, na precariedade do serviço\npúblico para beneficiar os bilionários, na violência que ceifa principalmente a\njuventude negra, na disputa por terras indígenas e quilombolas, e na submissão da\neconomia aos interesses de grandes empreendimentos que não resolvem os\nproblemas do nosso povo. Não basta administrar melhor o capitalismo. É preciso\ntransformá-lo. Construir o socialismo no Paraná significa colocar o povo no centro\ndas decisões: democratizar a terra, garantir educação e saúde de qualidade para\ntodos, valorizar o trabalho, proteger o meio ambiente com justiça social, promover a\nsoberania popular e combater todas as formas de opressão — de classe, raça, gênero\ne território.\nSignifica um governo que não tema enfrentar os poderosos, que fortaleça os\nmovimentos sociais como sujeitos políticos, que invista maciçamente em políticas\npúblicas universalistas e que avance na organização da economia para servir às\nnecessidades humanas, não ao lucro. Nossa candidatura popular de esquerda nasce\ndessa tradição de luta e da urgência de um projeto socialista para o estado. Não\nprometemos soluções fáceis ou conciliações impossíveis. Propomos um caminho de\nacumulação de forças, de organização popular e de transformação profunda. Porque\no futuro que sonhamos — com a classe trabalhadora no poder — só será construído\npela luta organizada do nosso povo.\nVamos juntos!"
+          },
+          {
+            "id": "desenvolvimento-economico-e-financas-publicas",
+            "titulo": "DESENVOLVIMENTO ECONÔMICO E FINANÇAS PÚBLICAS",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "DESENVOLVIMENTO ECONÔMICO E FINANÇAS PÚBLICAS\nA economia do Paraná é uma das que mais crescem no Brasil atualmente. O aumento\ndo Produto Interno Bruto (PIB) anual frequentemente supera a média nacional . O\nestado ocupa a quarta posição entre as economias estaduais. Com 11.890.517\nhabitantes, segundo o IBGE, o estado tem a quinta maior população do Brasil e a\nmaior da Região Sul. Em seu território, diversas atividades produtivas são\ndesenvolvidas em diferentes sub-regiões. As principais atividades produtivas do\nParaná concentram-se na agricultura, na agroindústria e pecuária; com destaque\npara soja, milho, trigo e feijão; na avicultura e suinocultura, na indústria de\nalimentos e automotiva, e no setor de serviços. As cooperativas agropecuárias\nparanaenses têm uma receita superior a R$21 bilhões, o que representa cerca de 55%\ndo PIB agrícola do estado.\nO setor de comércio e serviços é o principal motor da economia paranaense, com\n42% de participação no PIB, seguido da indústria, com 25%. Segundo dados do\nIPARDES (Instituto Paranaense de Desenvolvimento Econômico e Social), o PIB do\nestado em 2023 foi de R$ 670,9 bilhões, ocupando o posto entre as cinco maiores\neconomias do país.\nÉ nítido o crescimento econômico do nosso estado, mas os resultados da produção\nchegam em migalhas aos que precisam vender a própria força de trabalho para\nsobreviver. Segundo dados do Mapa das Desigualdades da UFPR, a média salarial de\num trabalhador paranaense é de R$800, menos de um salário mínimo. Ainda sobre\nas condições de trabalho no estado, citamos a fonte: “Observa-se também baixa\nparticipação das mulheres e das pessoas pardas e pretas no mercado de trabalho\nformal, reforçando a desigualdade estrutural de gênero e racial no mercado de\ntrabalho. O percentual de pessoas pardas e pretas no mercado formal alcança o\nmáximo de 13,9%, embora essa parcela da população represente quase 25% da\npopulação total no NTCC”. Quase 30% da força produtiva paranaense está\ndesempregada.\nApesar da destacada produção de riquezas, todos esses recursos não são disponíveis\npara a grande maioria: 10% da população mais rica detém uma renda 100 vezes\nmaior que a parcela mais pobre, com 10% mais rico do estado detendo ⅓ dos\nrecursos do estado.\nEm 2025 o rendimento médio mensal do paranaense foi de R$ 3.852, valor acima da\nmédia nacional (de R$ 3.367) e o quinto maior do país, atrás apenas de Distrito\nFederal (R$ 6.492), São Paulo (R$ 4.106), Rio de Janeiro (R$ 4.039) e Santa\nCatarina (R$ 3.900), segundo dados do IBGE (2025).\nAfinal: Por que temos cadeias econômicas, diversidade produtiva, riquezas naturais,\ne mesmo assim temos tantas pessoas desempregadas e/ou em situação de pobreza no"
+          },
+          {
+            "id": "nosso-estado-por-que-milhoes-de-pessoas-sofrem-com-falta-de-moradia-dign",
+            "titulo": "nosso estado? Por que milhões de pessoas sofrem com falta de moradia digna, com",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "nosso estado? Por que milhões de pessoas sofrem com falta de moradia digna, com\nalimentação restrita e insuficiente para ter boa saúde, com limitado acesso a serviços\nmédicos? Essa realidade é imposta pela sociedade que hoje ordena nossas vidas: a\nsociedade capitalista, onde o lucro em detrimento da dignidade humana é a lógica\nfundamental. Todo o funcionamento da economia visa atender interesses de um\npunhado de pessoas já muito ricas, e não para satisfazer o conjunto da população, em\nespecial, os trabalhadores, verdadeiros responsáveis pela geração da imensa riqueza\ndo Paraná!\nQUAL MODELO DE DESENVOLVIMENTO DEFENDEMOS?\nNos últimos anos, os governos do Paraná, prepararam o terreno para o grande\ncapital se instalar e se reproduzir, contando com expressivos incentivos fiscais e carta\nbranca para explorar mais intensamente a força de trabalho paranaense. A verdade é\nque as ações governamentais, que não exigiam contrapartidas das grandes empresas\nbeneficiadas pelos incentivos, transferiram recursos públicos à iniciativa privada,\nenfraquecendo a coordenação estatal capaz de promover os efeitos de encadeamento\ndesejáveis para o território e para a população.\nA venda das riquezas do nosso estado, como a privatização da COPEL, vendida a\npreço de banana para os grandes acionistas, a privatização da SANEPAR e os ataques\ne tentativa de privatização criminosa da CELEPAR são exemplos muito claros de que\nhoje, debaixo do sistema capitalista, os grandes ricos que dirigem o Estado não se\nimportam em resolver verdadeiramente os problemas do povo.\nÉ PRECISO OUTRO MODELO DE DESENVOLVIMENTO\nA Unidade Popular defende um modelo de desenvolvimento que se mobilize a partir\ndas necessidades da população. A estrutura tributária, que hoje pesa na esfera do\nconsumo, deve aumentar a incidência nas grandes rendas e patrimônios, com\nimposto progressivo: quem ganha mais, paga mais! O Estado nacional, soberano\nmonetariamente, deve garantir linhas de financiamento aos Estados subnacionais\nque fomentem o crescimento econômico com distribuição de renda. Um Governo\ncomprometido com sua população garantirá que os resultados do trabalho não serão\napropriados pelas elites dominantes, priorizando assim o atendimento das demandas\ndas massas em detrimento do lucro privado.\nPor isso, propomos:\n1.​ Elaboração das peças orçamentárias (PPA, LDO e LOA) junto à população\natravés de audiências de orçamento participativo. Aprovação efetiva\nsubmetida à população via referendo;"
+          },
+          {
+            "id": "2-atuar-em-foruns-e-frentes-de-governadores-por-novas-regras-fiscais",
+            "titulo": "2.​ Atuar em fóruns e frentes de governadores por novas regras fiscais",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "2.​ Atuar em fóruns e frentes de governadores por novas regras fiscais\nconstitucionais, que permitam o financiamento de projetos estruturantes e\nque autorizem déficit público em ações robustas de combate à pobreza;\n3.​ Taxação das grandes propriedades agrícolas, comerciais e industriais do\nEstado. Tributação progressiva;\n4.​ Criação do Instituto Estadual de Fomento à Inovação Tecnológica;\n5.​ Incentivar a criação do Programa PARANÁ do Futuro, com o objetivo de atrair\nprojetos de tecnologia limpa, criando cooperativas nesse campo;\n6.​ Estabelecer parcerias com as instituições de ensino visando articular\ninvestimentos públicos no setor de Tecnologia de Informação;\n7.​ Conceder bolsas integrais ou parciais de estudos para estudantes egressos do\nensino médio da rede pública, com objetivo de incentivar o desenvolvimento\nde carreiras em cursos de Tecnologia;\n8.​ Acabar com as terceirizações dentro do setor público.\n9.​ Criar frentes de trabalho em diversas ações de infraestrutura;\n10.​Incentivar a instalação de indústrias de tecnologia limpa e reciclagem;\n11.​ Criar o Observatório de Desenvolvimento e Emprego;\n12.​Ampliar a FEIRA DA ECONOMIA SOLIDÁRIA reunindo ações em todos as\ncidades do Estado do Paraná;"
+          },
+          {
+            "id": "seguranca-publica",
+            "titulo": "SEGURANÇA PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA\nSegundo o ATLAS da Violência, organizado pelo Fórum de Segurança Pública\n(2026), o Paraná é o estado mais violento do Sul do país: possui a maior taxa de\nhomicídio da região; com 19 mortes por 100 mil habitantes. A cidade de Paranaguá,\nno litoral paranaense, está entre os 30 municípios mais perigosos, e a mortalidade\npara as mulheres negras cresceu em 5,1% no último ano.\nMesmo abaixo da média nacional, o estado possui números proporcionalmente\nelevados, superiores aos registrados no sul e sudeste do país, que vêm consolidando\numa redução mais acelerada da violência (fonte: Gazeta do Paraná).\nOs principais investimentos do atual governo do estado com o orçamento da\nsegurança pública tem sido na ampliação das estruturas de cadeias, penitenciárias e\ncasas de custódia: o Paraná ocupa o ranking vergonhoso de quarta maior população\ncarcerária do Brasil, 40 mil presos, com uma ocupação 31% a mais do que a\npermitida. Durante o governo Ratinho, a letalidade policial aumentou em 38%,\ntotalizando 2.356 pessoas assassinadas, entre elas, crianças e adolescentes inocentes,\nde origem trabalhadora e de territórios periféricos.\nA principal faixa etária afetada pela violência do Estado é entre 15 e 29 anos, segundo\ndados do Fórum de Segurança pública. A maioria das vítimas é negra, com\nsubnotificação racial escandalosa. Enquanto o Estado investe bilhões em segurança\nostensiva (R$4,3 bilhões em 2023, contra míseros R$603 milhões em assistência\nsocial), as raízes sociais da violência — pobreza, falta de oportunidades, baixos\nincentivos à cultura e esporte, melhores condições de trabalho — são ignoradas. O\nresultado: periferias transformadas em campos de batalha.\nIsso revela um ciclo perverso: violência do Estado contra o povo, e que não resolve o\ncrime organizado e gera mais desconfiança e retaliações. Por fim, roubos e furtos\nainda assolam o dia a dia, com quedas recentes que não escondem o terror diário nas\nruas. A impunidade reina, com facções operando abertamente e o sistema de justiça\nlento. O modelo atual — mais viaturas e tiroteios — falha em prevenir e ressocializar.\nEsta é a dura realidade do Paraná: um estado marcado por sangue, medo e\ndesigualdade. As estatísticas não mentem — o povo paranaense merece muito mais\nque promessas e números maquiados. É urgente desmantelar as redes de corrupção,\ninvestir seriamente em prevenção social, reformar a segurança com transparência e\ndireitos humanos e acabar com a omissão que permite que facções e maus policiais\ndestruam gerações inteiras. Chega de denúncias vazias: a população não aguenta\nmais!\nNesse sentido, propomos:"
+          },
+          {
+            "id": "1-reduzir-o-uso-da-forca-letal-por-meio-de-protocolos-claros-cameras-cor",
+            "titulo": "1.​ Reduzir o uso da força letal por meio de protocolos claros, câmeras corporais",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "1.​ Reduzir o uso da força letal por meio de protocolos claros, câmeras corporais\n(com transparência e auditoria independente) e punição efetiva de abusos.\nProibir abordagem ostensiva em escolas, festas e eventos comunitários sem\njustificativa grave. Priorizar mandados judiciais.\n2.​ Inteligência contra o crime organizado: Desmantelar finanças das facções\n(lavagem de dinheiro, tráfico de armas) via integração federal-estadual, em\nvez da lógica de \"guerra\" que só desloca o problema.\n3.​ Melhoria obrigatória no registro de raça/cor em todas as ocorrências policiais\npara combater o racismo institucional.\n4.​ Expandir justiça restaurativa e socioeducação para jovens infratores (medidas\nem meio aberto com acompanhamento intensivo) em integração com\nSecretaria de Educação, Cultura e Esporte.\n5.​ Criar Conselho Estadual de Segurança Cidadã com 50% de representantes da\nsociedade civil (movimentos negros, favelas, direitos humanos) para fiscalizar\ne propor políticas.\n6.​ Contribuir com as discussões à nível Federal sobre desmilitarização das\nPolícias.\n7.​ Construção de uma equipe de trabalho com os secretários e representantes\ndas áreas de direitos humanos, com responsabilidades específicas no âmbito\nda juventude e dos direitos das mulheres, bem como da área de habitação e\ncultura, representantes da sociedade civil, entidades representativas e\nmovimentos organizados para pensar coletivamente um plano de ação dentro\ndos princípios da participação popular para ser iniciado ainda no primeiro ano\nde gestão nível Federal sobre a desmilitarização das Polícias Estaduais.\n8.​ Atuação efetiva com a equipe de desenvolvimento econômico e assistência\nsocial com o intuito de promover a geração de empregos e cursos\nprofissionalizantes para a população nas áreas mais vulneráveis\neconomicamente e com altos índices de criminalidade;\n9.​ Compromisso com a não criminalização dos movimentos sociais e entidades\nde classe, o combate ao racismo, ao machismo e a LGBTTIA+fobia nas\ncorporações e nas suas ações frente a população;\n10.​Garantir que 100% das pessoas privadas de liberdade analfabetas sejam\nalfabetizados em 1 ano e todos tenham acesso a ensino fundamental/médio +\ncursos profissionalizantes (ex.: construção civil, informática, agricultura)."
+          },
+          {
+            "id": "educacao",
+            "titulo": "EDUCAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "EDUCAÇÃO\nO Paraná conta com 9.975 escolas, sendo 7.350 delas públicas. As instituições\nparticulares operam majoritariamente na zona urbana, enquanto a cobertura rural,\nindígena e quilombola são exclusivamente públicos. Cerca de 116 mil professores na\nrede paranaense distribuídos pelo território, para atender a demanda de mais de 2\nmilhões de estudantes apenas na rede básica de educação.\nAcompanhamos uma piora nas políticas educacionais que o estado tem\nfomentado através de mudanças no perfil das escolas públicas paranaenses após a\naprovação da Lei Federal Nº13.415/2017 de modo rápido e desorganizado. Com a\nimplementação do Novo Ensino Médio que ao alterar o curriculum sem consulta\nprévia aos principais interessados: os estudantes e profissionais educacionais. Além\nda Lei sucatear o ensino ofertado aos estudantes retirando parte significativas de\ncargas horárias à disciplinas basilares na construção crítica dos sujeitos educandos a\nexemplo de sociologia, história, geografia e artes, as mesmas disciplinas são exigidas\nnos vestibulares das universidades estaduais, vale ressaltar que o Paraná é o estado\nbrasileiro com mais redes de universidades públicas, são 7 ao total. Contamos ainda\ncom mais 3 universidades federais e uma rede do Instituto Federal. Sendo assim, a\nreformulação da educação básica desqualifica os estudantes das escolas públicas\nparanaense se estudarem nas universidades estaduais do Paraná.\nO processo de desmontar a educação básica para privatizar cresce quando as\nmudanças educacionais passam a possibilitar que pessoas não aptas, sem formação\nacadêmica possam se tornar educadores de saberes prévios, ignorando a ciência e\ntodo o acúmulo social da temática trabalhadas em sala de aula. Apenas três anos\napós ataque à educação, em 2020 a Lei Estadual nº20.338/2020 sanciona durante a\npandemia da COVID-19 a ampliação da implementação de colégios cívico-militares,\ndessa forma liderando o país com esse modelo educacional. Mas uma vez nossas\nescolas são abertas para pessoas sem preparo prévio e sem qualificação. O aumento\nda violência sexual de menores de idade em zona escolar disparou. Em 2023 casos de\ndenúncia das vítimas de assédio sexual a exemplo de um colégio cívico-militar em\nCornélio Procópio escancaram o que acontece dentro dessas escolas que vendem a\ndisciplina mas a conquistam com o medo, com a subjulgação, com o\nconstrangimento.\n​\nAo voltarmos os olhos para as Universidades Públicas Paranaenses\nobservamos os orçamentos tímidos a políticas de ampliação de vagas, de ampliação\nde quadros docentes e técnicos e na ampliação de permanências estudantis\npermanentes, a exemplo da construção de moradias estudantis, de restaurantes\nuniversitários com ao menos três refeições diárias e sete dias por semana. Mesmo o\nestado do Paraná sendo o 4º estado mais rico do Brasil, seguimos com déficit no\nquadro de funcionários, entretanto com incentivo de professores em regime Processo"
+          },
+          {
+            "id": "seletivo-simplificado-pss-negando-a-esses-profissionais-uma-carreira-e-o",
+            "titulo": "Seletivo Simplificado (PSS), negando a esses profissionais uma carreira e o",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Seletivo Simplificado (PSS), negando a esses profissionais uma carreira e o\ndesenvolvimento de vínculo com a rede de educação do município que atua.\nPor isso, propomos:\n1.​ Fim dos contratos com plataformas digitais pagas e investimento em\nplataformas de servidores criados e gerenciados pelo estado para avaliação e\nintegração da vida dos docentes. Utilizar estruturas das universidades\npúblicas para elaborar, desenvolver e acompanhar a execução ao lado da\nsecretária da educação estadual;\n2.​ Regularização das escolas estaduais cívico-militares, fim do Programa de\nColégios Cívico-Militares; Reestatização da gestão privatizada das escolas\nincluídas no Programa Parceiro da Escola;\n3.​ Passe livre estudantil no transporte público municipal e intermunicipal,\ngarantindo assim o acesso às escolas, universidades e instituições de ensino\npara atividades curriculares e extracurriculares de forma ilimitada;\n4.​ Ampliação do sistema de cotas nas universidades públicas do estado, garantia\nda democratização do acesso à universidade, com o horizonte do fim do\nprocesso do vestibular, que a universidade seja livre para todo o povo;\n5.​ Programa Paranaense de Alimentação Estudantil para as Universidades\nEstaduais, consolidando a construção de restaurantes universitários de preço\nacessível e gratuitos para estudantes de baixa renda;\n6.​ Reajuste salarial dos professores e técnicos administrativos de ensino da rede\nestadual básica e superior; Abertura de concurso público para suprir a\ndemanda do estado.\n7.​ Revogação da LGU e a garantia da autonomia das universidades.\n8.​ Garantia da oferta de turnos noturnos nos colégios estaduais do Paraná,\nampliando o acesso à educação e assegurando aos estudantes o direito de\nestudar em horários compatíveis com sua realidade, além da reabertura das\nturmas de EJA fechadas;\n9.​ Fim da terceirização dos serviços essenciais nas universidades e escolas, pela\nabertura de novos concursos públicos;"
+          },
+          {
+            "id": "moradia",
+            "titulo": "MORADIA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "MORADIA\nA crise habitacional no Estado do Paraná atinge proporções alarmantes. Dados da\nPesquisa de Necessidades Habitacionais (Cohapar, 2023) apontam que cerca de meio\nmilhão de famílias enfrentam a falta de acesso à moradia digna em todo o território\nestadual. Esse número reflete não apenas a falta absoluta de casas, mas também a\nprecariedade extrema, a coabitação forçada e, principalmente, o peso esmagador do\naluguel sobre o orçamento das populações mais vulneráveis. Do total do déficit\nparanaense, nota-se uma forte concentração geográfica: apenas 30 dos 399\nmunicípios do Estado respondem por 64% de toda a demanda por habitação.\nCidades-polo de grande relevância econômica como Londrina (com um déficit\nsuperior a 62 mil moradias), Ponta Grossa, Paranaguá, Umuarama e Cascavel\nencabeçam a lista dos municípios do interior e litoral que mais sofrem com a\nexclusão socioterritorial e o crescimento desordenado. Na capital, Curitiba, o\nproblema ganha contornos de urgência extrema e forte contradição urbana,\nabrigando mais de 90 mil famílias no déficit habitacional e uma fila de espera que\nbeira os 60 mil cadastros. A cidade possui 322 favelas (com mais de 43 mil moradias\nprecárias) e 93 loteamentos irregulares, enquanto mantém mais de 102 mil imóveis\nprivados permanentemente vazios por força da especulação imobiliária, um volume\nde casas sem gente que seria matematicamente suficiente para abrigar todas as\nfamílias sem teto do município.\nNesse sentido, propomos:\n1.​ Ampliar as modalidades de programas estaduais para garantir a entrega de\nmoradias 100% subsidiadas pelo Estado às famílias em extrema\nvulnerabilidade social, visto que a grande maioria ganha até 3 salários\nmínimos e não tem condições de assumir dívidas ou financiamentos bancários\nconvencionais.\n2.​ Estruturar frentes massivas de regularização fundiária focadas nos 30\nmunicípios que concentram 64% do déficit do Estado (como Londrina,\nCascavel, Ponta Grossa e a Região Metropolitana de Curitiba).\n3.​ Criar uma política habitacional integrada e construída em diálogo permanente\ncom os movimentos sociais, garantindo às famílias dos loteamentos\nirregulares e das ocupações consolidadas em todo o Paraná o direito à cidade e\nà permanência em seus territórios. Essa política deve assegurar, de forma\nintegrada, mobilidade urbana, iluminação pública, acesso à saúde e à\neducação, além de equipamentos de lazer, cultura e convivência comunitária.\nA regularização fundiária deve ser utilizada como instrumento de garantia de\ndireitos, priorizando a permanência das famílias em seus locais de origem e\nevitando remoções desnecessárias. A titularidade dos imóveis e a entrega das\nchaves devem priorizar as mulheres, fortalecendo sua autonomia e segurança\nhabitacional e garantindo que o direito à moradia seja acompanhado pelo\nacesso pleno aos serviços públicos e às condições dignas de vida."
+          },
+          {
+            "id": "4-fazer-valer-o-estatuto-das-cidades-desapropriar-imoveis-sem-funcao-soc",
+            "titulo": "4.​ Fazer valer o Estatuto das Cidades: desapropriar imóveis sem função social! O",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "4.​ Fazer valer o Estatuto das Cidades: desapropriar imóveis sem função social! O\nEstatuto das Cidades prevê que prédios sem função social sejam\ndesapropriados. Nos esforçamos para cumprir a lei, mapeando no Estado do\nParaná prédios sem função e, a partir daí, elaborar um banco de moradia,\nvisando doar o prédio ou terreno desapropriado para moradia popular de\nforma gratuita. Garantir a implementação do IPTU progressivo sobre imóveis\nsem função social;\n5.​ Implementar programas governamentais de aluguel social ou locação\nsubsidiada em áreas urbanas já consolidadas, atacando o peso excessivo do\naluguel, que é o principal responsável pelo déficit habitacional paranaense.\n6.​ Incentivar que os municípios com alta arrecadação criem Secretarias de\nHabitação próprias e destinem fatias robustas de seus orçamentos locais para\na construção de moradias, superando a dependência histórica de atuar apenas\ncom verbas repassadas pelos governos Estadual e Federal.\n7.​ Promover um trabalho alinhado entre a Cohapar, movimentos sociais e\nprefeituras, descentralizando as decisões e garantindo que os projetos\nhabitacionais não empurrem as populações de baixa renda para as franjas das\ncidades, mas sim promovam a integração socioespacial.\n8.​ Promover a regularização fundiária de favelas, loteamentos e ocupações\nconsolidadas de forma integral;\n9.​ Criar um programa estadual de assistência técnica para a requalificação\nurbana das favelas, loteamentos, assentamentos rurais, comunidades\ntradicionais e ocupações consolidadas em parceria com as Universidades\npúblicas;\n10.​Entrega de terras públicas para construção de moradia popular. Utilizar os\nterrenos de propriedade do poder público do Estado para a construção de\nhabitações populares, acelerando o processo de resolução do déficit\nhabitacional.\n11.​ Apoio a ocupações, repressão às invasões. Entendemos como legítimas\nocupações de terras sem função social visando chamar a atenção do poder\npúblico. O governo, de caráter popular, será próximo desses processos, dando\nassistência para os assentados ao mesmo tempo em que procura dar\nceleridade à doação do terreno, assim como a construção das casas e\nconstrução de equipamentos públicos. Por outro lado, invasões serão\nexemplarmente punidas com multas e embargos previstos em lei. Entendemos\ninvasão como construção ilegal, com fins de lucro, em terras públicas, assim\ncomo grilagem e outras formas de fraude fundiária.\n12.​Combate à gentrificação. Dar prioridade para moradia popular nas doações de\nterrenos próximos à Prefeitura. Fazer uso do direito à Preempção para\nadquirir prédios, terrenos e casas nos bairros mais centrais e entregar estas\nestruturas para famílias sem teto, enfrentando a tendência de afastar para\nlocais mais distantes os beneficiados por programas de habitação. O objetivo é\nbaixar os preços de aluguéis e de compra e venda de imóveis nas regiões mais\nvalorizadas da cidade."
+          },
+          {
+            "id": "saude",
+            "titulo": "SAÚDE",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "SAÚDE\nO Paraná conta com 525 hospitais (dados do Cadastro Nacional de Estabelecimentos\nde Saúde de junho de 2025), com quase 36% dos estabelecimentos públicos, sendo a\nrede estadual gerenciada pela Sesa (Secretaria de Saúde do Paraná), divididas por\nmacrorregionais leste, oeste, norte e noroeste, que integram dezenas de regionais de\nsaúde locais. Apesar de sermos a quarta maior economia do país, o Paraná é o estado\nque proporcionalmente menos investe na saúde em todo o Brasil, ocupando o 26º\nlugar, ultrapassado por economias menores.\nO monitoramento da rede de saúde no estado desenvolvido pelo mapa das\ndesigualdades da UFPR apresenta uma grande disparidade no Núcleo Territorial\nCentral de Curitiba (NTCC). A taxa de mortalidade em menores de 5 anos por mil\nnascidos vivos varia de 6,8 a 24,2; e a taxa de mortalidade por causas externas\n(violência e acidentes) por 100 mil habitantes varia de 57,7 a 112,8. A Atenção\nPrimária em Saúde (APS) é responsável por resolver cerca de 80% dos problemas de\nsaúde, mas enfrenta sérios entraves no Paraná:\nCobertura insuficiente e desigual: Embora haja crescimento no número de\nequipes de Saúde da Família (ESF), a cobertura efetiva varia significativamente entre\nregiões, com lacunas no interior e em periferias urbanas. Muitos municípios não\nalcançam parâmetros ideais de vínculo populacional (2.000 a 2.750 pessoas por\nequipe), resultando em percentual relevante da população sem acompanhamento\nlongitudinal.\nBaixa resolutividade e sobrecarga: As equipes lidam com alta demanda,\nrotatividade de profissionais e infraestrutura precária, comprometendo a prevenção\ne promoção da saúde.\nPara solucionar problemas de investimento, o Governo do Estado tem investido em\nParcerias Público Privadas (PPPs). O modelo de PPPs, contudo, é problemático por:\nEncarecimento e Riscos ao Erário: As PPPs transferem recursos públicos de\nforma parcelada e garantida ao privado, muitas vezes com custos finais superiores ao\nmodelo direto. Estudos nacionais apontam que, apesar de promessas de eficiência, os\ncontratos geram despesas elevadas de contraprestação e dificuldades de fiscalização.\nAo concentrar recursos em grandes hospitais, as PPPs reforçam o viés\nhospitalocêntrico, sem impacto proporcional na redução de problemas resolvíveis na\nbase do sistema. Milhões de reais anualmente são direcionados a internações por\ninfecções respiratórias/gastrointestinais, complicações de hipertensão/diabetes e\ncondições vacináveis — problemas que uma APS fortalecida conseguiria prevenir ou\ntratar ambulatorialmente com custo muito menor."
+          },
+          {
+            "id": "precarizacao-e-mercantilizacao-ao-transferir-gestao-mesmo-que-parcial-ha",
+            "titulo": "Precarização e Mercantilização: Ao transferir gestão (mesmo que parcial), há",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Precarização e Mercantilização: Ao transferir gestão (mesmo que parcial), há\nriscos de priorização de resultados financeiros em detrimento da integralidade do\ncuidado, vitimando a população que mais precisa e gerando um ciclo vicioso de fraca\natenção básica → mais internações por causas evitáveis → maior pressão hospitalar\n→ justificativa para novos investimentos em alta complexidade e PPPs.\nFalta de Transparência e Governança: Complexidade contratual cria\ndificuldades para a transparência, resultando em denúncias recorrentes de\nsobrepreços, aditivos e fraca participação social. No Paraná, o foco em PPPs\nhospitalares não compensou as lacunas na APS, reforçando a crítica de que o modelo\nprivilegia emergência e urgência em detrimento da assistência integral e preventiva.\nO Paraná apresenta, portanto, diversos problemas no setor, sendo os principais:\nFalta de uma política pública de saúde preventiva efetiva, sucateamento da atenção\nbásica, desigualdade regional e gradual privatização da gestão dos hospitais e\nestabelecimentos públicos. Esse cenário beneficia apenas aos bilionários das redes de\nsaúde privada e da indústria farmacêutica, que lucram com contratos polpudos\nirrigados com dinheiro público e demanda cada vez maior por remédios e\ntratamentos que poderiam ter sido evitados na base.\nNesse sentido, propomos:\n1.​ Criar a coordenadoria de promoção da saúde na gestão administrativa da\nSecretaria Estadual de Saúde.\n2.​ Fim das parcerias público-privadas com planos de saúde e fundações\nprivadas. A redução dos custos com saúde virão não da venda dos hospitais,\nmas da mudança da concepção de investimento, que deve cada vez mais ser\norientada para a saúde preventiva, garantindo que a maior parte das\nocorrências sejam resolvidas na atenção primária, desafogando hospitais e\nleitos, garantindo melhor destino aos investimentos e melhorando\nconsideravelmente a qualidade de vida dos trabalhadores e trabalhadoras,\n3.​ Em conjunto com a Secretaria de Educação, articular a criação de projetos\npermanentes, transversais, nas escolas da rede sobre promoção da saúde.\n4.​ Criar conselhos de Saúde, composto por representações de associações de\nbairros, movimentos populares, movimentos sociais, entidades estudantis,\nsindicatos, para debater e encaminhar ações sobre saúde, em especial nas\ncampanhas preventivas e atendimento primário. Cada conselho se\nencarregará de criar núcleos por bairros.\n5.​ Ultrapassar 95% a cobertura vacinal no Estado.\n6.​ Ampliar a rede de saúde da família, com equipes com suporte profissional e\ninsumos para atender, principalmente, famílias com histórico de diabetes,\nhipertensão arterial e cardiopatias, com foco em reduzir em 25-35% as\ninternações por causas evitáveis."
+          },
+          {
+            "id": "7-expansao-dos-concursos-publicos-para-a-area-da-saude-garantindo-a-entr",
+            "titulo": "7.​ Expansão dos concursos públicos para a área da saúde, garantindo a entrada",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "7.​ Expansão dos concursos públicos para a área da saúde, garantindo a entrada\nde milhares de novos funcionários estáveis.\n8.​ Fortalecer a parceria com Universidades Públicas Estaduais e Federais para\nelaboração e implementação de políticas de saúde preventiva nos municípios\nparanaenses, através do desenvolvimento de orientações teóricas dos\ndeterminantes de saúde e doença; prática da pesquisa ajustada à realidade\nlocal; educação permanente em saúde; integração entre o serviço e o ensino;\nanálise crítica dos serviços e aprendizagem ativa.\n9.​ Investir na valorização das Agentes Comunitárias de Saúde, que são a linha de\nfrente no acompanhamento da saúde familiar e da implementação de uma\npolítica de saúde preventiva.\n10.​Garantir que pelo menos 40-50% dos recursos estaduais de saúde sejam\ndirecionados à atenção básica, com contrapartida municipal.\n11.​ Garantir o acesso a medicações psiquiátricas modernas de forma gratuita pelo\nSUS, substituindo as medicações antigas que trazem uma miríade de efeitos\ncolaterais indesejados.\n12.​Implementar “3ª turno” para as UBS do estado. Ou seja, garantir que tenha\natendimento noturno e aos fins de semanas nos postos de saúde.\n13.​Ampliação do Planejamento Familiar: a UBS junto com associações de bairro,\nescolas, CRAS realizarem palestras, orientações, seminários para\nensinar/orientar sobre o uso de métodos contraceptivos.\n14.​Criação de academias de musculação públicas, tendo em vista o eixo de saúde\npreventiva para combater as incidências de obesidade, diabetes tipo 2 e\nosteoporose em grandes grupos populacionais."
+          },
+          {
+            "id": "cultura",
+            "titulo": "CULTURA",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "CULTURA\nO Paraná soma-se aos outros Estados do país com o baixo financiamento da cultura e\nà falta de atenção à difusão e estruturação de estratégias permanentes de acesso. O\nEstado tem poucos teatros e poucas salas de cinema, concentradas principalmente na\nregião central de Curitiba e de caráter comercial. Os artistas e trabalhadores da\ncultura se vêem reféns de trabalhos precarizados, sem concursos e incentivos parcos\npara a produção cultural, mesmo na capital curitibana, que não abre concursos\npúblicos para a contratação de funcionários para a Secretaria Municipal de Cultura\nhá 30 anos. A Biblioteca Pública do Paraná sofre com o corte de quase metade do seu\norçamento no período curto de 10 anos (de R$22,17 milhões para R$11 milhões,\nmuito abaixo do previsto na última Lei Orçamentária Anual, o LOA). Os livros\ntambém são de difícil acesso, com poucas bibliotecas públicas, falta de campanhas de\ndifusão da produção local e sucateamento das salas de multimeios das Escolas\nPúblicas Estaduais, em um contexto de encarecimento e fechamento acelerado de\nlivrarias nos centros comerciais das cidades.\nNesse sentido, propomos:\n1.​ Realização de plenárias regulares (mensais ou quinzenais) sobre o papel da\narte e da cultura como eixo formador da sociedade, em praças, escolas e\ndemais espaços.\n2.​ Criação de espaços de formação artística em bairros populares, e\ndescentralização das ações artísticas e culturais dos grandes centros.\nValorização da arte pública;\n3.​ Articulação com movimentos culturais organizados e movimentos sociais na\nbusca por integrar pautas e fortalecer ações;\n4.​ Realizar eleição do Secretário de Cultura entre os atores culturais do Estado;\n5.​ Realizar o Congresso Estadual da Cultura Popular para definição de\nprioridades;\n6.​ Construção de uma Editora Pública, voltada à publicação de autores locais,\ncom estratégia de difusão e divulgação.;\n7.​ Realizar anualmente festivais do livro nas principais cidades das regiões\nmetropolitanas do Estado, abrindo espaço para escritores e escritoras locais.\n8.​ Criar fundo estadual de financiamento da cultura indígena, voltado à\nestruturação de projetos de fomento e difusão da produção artística e cultural\ndos povos indígenas paranaenses;\n9.​ Fundar programa de Produtores Culturais Públicos. Os editais voltados para o\ncampo cultural são inacessíveis, excessivamente burocráticos e acabam por\nexcluir os artistas que vivem em regiões mais vulneráveis do Estado, que\npossuem dificuldades na captação de recursos e, muitas vezes, sequer ficam\ninformados dos editais abertos. Com o objetivo de caminhar rumo à\ndemocratização da captação de recursos públicos propomos a criação de um"
+          },
+          {
+            "id": "quadro-de-servidores-da-secretaria-de-cultura-voltados-a-atender-os-pont",
+            "titulo": "quadro de servidores da Secretaria de Cultura voltados a atender os pontos de",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "quadro de servidores da Secretaria de Cultura voltados a atender os pontos de\ncultura e coletivos para informar sobre a abertura de editais, oferecendo\nauxílio e assistência no que for necessário para possibilitar que os grupos\ndaquele espaço possam concorrer.\n10.​Mapear e tombar como patrimônio cultural espaços relevantes para as\ntradições de matriz africana no Paraná. Fazer, junto das comunidades de\npovos de terreiro do Estado, o mapeamento dos locais históricos para as\nreligiosidades de umbanda e candomblé. Tombando esses locais como\npatrimônio histórico do município e protegendo-os de acordo com a legislação\nvigente.\n11.​ Instituição de um Sistema Estadual de Bibliotecas Públicas (SMBP) e\nimplementação do Plano Estadual do Livro e da Leitura (PML).\n12.​Construção de salas de cinema públicas em todos os Municípios, com\nestrutura flexível à quantidade de habitantes. Estas salas terão valor de\nentrada simbólico, voltado apenas ao auxílio da manutenção do sistema.\n13.​Clubes de Cinema nas Escolas: Oficinas de apreciação cinematográfica e\nprodução audiovisual para jovens (parceria SEDUC)."
+          },
+          {
+            "id": "etnico-racial",
+            "titulo": "ÉTNICO-RACIAL",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "ÉTNICO-RACIAL\nO Paraná, diferente do que narrativas tradicionais defendem, é marcado por uma\nforte presença negra: com um índice de quase 30% de autodeclarados pretos e\npardos, nosso estado é o estado mais nnegro da região Sul do Brasil. Abrigamos\ndezenas de comunidades quilombolas reconhecidas que preservam saberes,\nreligiosidade, festividades e a posse tradicional de terras (Delton Aparecido,\nUNESPAR). Apesar da importância da presença negra na construção da história\nparanaense, dados recentes de segurança pública mostram alta nos registros de\ncrimes de racismo, acompanhando debates sobre discriminação em ambientes\ninstitucionais, esportivos e educacionais do estado. De acordo com o Anuário\nBrasileiro de Segurança Pública, o Paraná figura entre os estados com números\nexpressivos de ocorrências de racismo, ocupando o vergonhoso terceiro lugar entre\nos maiores números de boletins de ocorrência por injúria racial.\nO projeto de embranquecimento das grandes elites paranaenses mantém uma lógica\ncolonial: menos de 10% da população preta e parda está no mercado formal, ou seja,\ncom mais direitos trabalhistas; e apesar da diminuição tímida na violência, as\nmulheres são os principais alvos de feminicídio e sofrem com uma alta entre os\nhomicídios praticados no estado. Os negros paranaenses carregam os menores\níndices de escolaridade, com uma taxa de analfabetismo dua vezes maior do que\nentre os brancos (NCST Paraná), e uma alta vulnerabilidade à violência letal, que\natinge proporcionalmente mais a juventude negra, sendo 7 em cada 10 mortes (Rede\nNenhuma Vida a Menos).\nNeste sentido, propomos:\n1.​ Ampliação obrigatória de cotas raciais em todos os níveis (técnico, superior e\npós-graduação) com metas vinculantes por campus e curso, incluindo bônus\nde permanência (moradia estudantil, alimentação, transporte e material\ndidático gratuito para cotistas);\n2.​ Currículo obrigatório de história da África e da diáspora africana em todas as\nescolas públicas, com formação continuada de professores.\n3.​ Política de reparação para famílias de vítimas de violência letal (indenização\ncivil rápida + prioridade em programas habitacionais e geração de emprego\npúblico).\n4.​ Programas de prevenção territorial em periferias, com ênfase em assistência\nsocial, saúde mental e cultura, integrados ao SUS (Política Nacional de Saúde\nIntegral da População Negra).\n5.​ Fortalecimento do Conselho Estadual dos Povos Indígenas. Cumprir e\nexpandir acordos de cooperação com a Funai para demarcação física e\nhomologação de todos os territórios pendentes. Criar um fundo estadual para\naquisição de terras em conflito e mediação de disputas."
+          },
+          {
+            "id": "6-garantir-infraestrutura-agua-saneamento-energia-estradas-e-inclusao-em",
+            "titulo": "6.​ Garantir infraestrutura (água, saneamento, energia, estradas) e inclusão em",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "6.​ Garantir infraestrutura (água, saneamento, energia, estradas) e inclusão em\nprogramas de saúde, educação e assistência com recorte quilombola.\nFortalecer a participação nos conselhos e conferências estaduais. Criar linhas\nde apoio cultural e de preservação de saberes tradicionais;\n7.​ Alocar recursos específicos no PPA com metas raciais e étnicas claras,\nauditáveis anualmente. Criar um Observatório Estadual de Equidade Racial e\nÉtnica com dados desagregados (raça/cor, etnia) em todos os sistemas\ngovernamentais (saúde, educação, segurança, fundiário).\n8.​ Fortalecer conselhos e fóruns com movimentos negros, indígenas e\nquilombolas na formulação, execução e avaliação de políticas. Realizar\nconferências estaduais periódicas."
+          },
+          {
+            "id": "mulheres",
+            "titulo": "MULHERES",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "MULHERES\nOs dados de violência contra a mulher são alarmantes: O Paraná registrou mais de 35\nmil notificações em 2025, segundo dados do Sistema de Informação de Agravos de\nNotificação (SINAN), o que representa 66% dos índices de violência interpessoal\nregistrados no estado. Ao total, mais de ⅓ dos municípios indicaram boletins de\nocorrência por violência sexual.\nO estado do Paraná ocupa o ranking de segundo estado mais perigoso para se ser\nmulher: De acordo com o LESFEM (Laboratório de Estudos de Feminicídio da UEL),\nos registros denunciam um caso de feminicídio por dia; somando os casos tentados e\nconsumados em 2025. Em mais de 70% dos casos consumados, os assassinos são\ncompanheiros ou ex-companheiros, e em 68% dos registros, as mulheres vítimas\ndeixam filhas ou filhos menores de idade (Secretaria da Mulher do estado do\nParaná).\nSer uma mulher trabalhadora paranaense é viver com medo da violência, dentro e\nfora de casa, precisamos construir um Estado no qual as mulheres possam viver\nseguras. O Governo tem a responsabilidade maior sobre a vida de seu povo, deve\ngarantir justiça social, acolhimento e gerar oportunidades na promoção de uma vida\ndigna para as mulheres.\nA realidade das mulheres no nosso país demonstra que, mesmo trabalhando fora de\ncasa, elas ainda são responsáveis por grande parte das tarefas domésticas, dos\ncuidados com os filhos e, muitas vezes, dos idosos. De acordo com os dados\ndivulgados por estudo da Organização Internacional do Trabalho (OIT), em parceria\ncom o Ministério do Desenvolvimento e Assistência Social, Família e Combate à\nFome (MDS), em 2025, as mulheres realizam 9,8 horas por semana de serviços\ndomésticos a mais que os homens, o cenário piora gravemente quando se trata das\nmulheres negras, que trabalham 22,4 horas a mais que os homens. Conciliar os\nhorários de trabalho com as demandas dos filhos e da casa torna-se um grande\ndesafio, principalmente, em um contexto cultural que poucos homens dividem essas\ntarefas com suas companheiras, e, além disso, mais de 11 milhões de mães solo\nchefiam suas famílias, sem qualquer tipo de rede de apoio (IBGE).\nOs dados da Organização Internacional do Trabalho – OIT mostram que a\nparticipação feminina no trabalho informal supera a masculina em muitos dos países\nem desenvolvimento. Isso quer dizer que a força de trabalho feminina está nos postos\nde emprego com mais vulnerabilidade, a exemplo das faxineiras e diaristas. O Brasil\né o país com a maior população de empregados domésticos do mundo, são sete\nmilhões de pessoas, em sua maioria de mulheres, negras e de baixa escolaridade,\n35% sendo diaristas, sem contrato de trabalho, muitas vezes privadas dos seus\ndireitos trabalhistas, como férias, 13º salário e pagamento de hora extra, situação\nessa que só se agravou nos últimos anos, é o que afirma os dados do IBGE. As"
+          },
+          {
+            "id": "mulheres-tambem-estao-na-linha-de-frente-na-protecao-a-saude-no-brasil-c",
+            "titulo": "mulheres também estão na linha de frente na proteção à saúde. No Brasil, cerca de",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "mulheres também estão na linha de frente na proteção à saúde. No Brasil, cerca de\n85% das enfermeiras são mulheres. Além das jornadas exaustivas, elas ainda são\nobrigadas a trabalhar com a escassez de equipamentos de proteção, sem os quais\nacabam por colocar em risco à própria saúde e a de seus familiares.\nPor isso, precisamos ter um governo do estado que acolha todas as mulheres, das\njovens às idosas, as mulheres portadoras de deficiência, as mulheres negras, as\npobres e as mulheres trans. Vamos dialogar com essas mulheres, entender suas\nnecessidades, atuando em conjunto com outras secretarias (saúde, educação,\nhabitação, segurança pública) para que os nossos objetivos comuns sejam\nalcançados, ou seja, a promoção da igualdade entre mulheres e homens. Por isso, a\nUnidade Popular conclama as mulheres a lutarem pelos seus direitos, por igualdade\ne pelo fim da violência!\nNesse sentido, propomos:\n1.​ Garantir delegacias especiais para as mulheres que funcionem 24 horas,\nqualificando os profissionais da área de segurança pública para realizar os\natendimentos com a perspectiva humanizada com as vítimas;\n2.​ Fortalecer a presença das mulheres nas diversas etapas dos processos de\ndemocracia participativa. Nossa gestão vai ser paritária nas Pastas do\nExecutivo; cargos de direção em secretarias, autarquias entre outros.\nPromovendo a igualdade de direitos e a promoção de mulheres nas decisões\npolíticas do Paraná;\n3.​ Ampliar e garantir o acesso à justiça e à assistência jurídica gratuita às\nmulheres em situação de violência e suas demandas, também com os filhos,\ncom a ampliação da Assistência Jurídica em parceria com as universidades e\nescritórios modelos de advocacia;\n4.​ Gerar renda (Parceria com escolas profissionalizantes para oferecer cursos e\noficinas gratuitos de qualificação profissional para mulheres vítimas de\nviolência e em situação de vulnerabilidade social);\n5.​ Priorizar a intermediação de mão-de-obra feminina nas ações do Sistema\nNacional de Emprego – SINE/ CE; criar cursos para mulheres em situação de\nvulnerabilidade social, incluindo as portadoras de deficiências, como\ntrabalhos manuais, artesanais, mecânicas, carpintarias, tecnologias da\ninformação e comunicação com organização de pequenas empresas que\nabsorvam essa mão de obra;\n6.​ Enfrentar à exploração sexual de Crianças e Adolescentes com o trabalho\ntransversal com várias secretarias articuladas a outros órgãos competentes\ncomo conselho tutelar, Ordem dos Advogados do Brasil e as defensorias\npúblicas;\n7.​ Garantir a proteção do mercado de trabalho para a mulher, mediante\nincentivos específicos nos termos da lei; bem como proibir a diferença de"
+          },
+          {
+            "id": "salarios-de-exercicio-de-funcoes-e-de-criterio-de-admissao-por-motivo-de",
+            "titulo": "salários, de exercício de funções e de critério de admissão por motivo de",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "salários, de exercício de funções e de critério de admissão por motivo de\ngênero, maternidade, idade, cor, orientação sexual ou estado civil;\n8.​ Incentivar o combate ao trabalho análogo à escravidão com ênfase nas\nmulheres, especialmente as negras;\n9.​ Estabelecer que todos os SERVIDORES PÚBLICOS ESTADUAIS ao tomarem\nposse em suas funções, independentemente dos cargos, deverão,\nobrigatoriamente, realizar CURSO DE FORMAÇÃO DE IGUALDADE DE\nGÊNERO de no mínimo, 24 horas, antes da sua definitiva lotação;\n10.​Incluir nas POLÍTICAS ESTADUAIS DE COMBATE Á VIOLÊNCIA, junto ao\nCONSELHO ESTADUAL DE MULHERES, a construção de um CONGRESSO\nESTADUAL PELOS DIREITOS E IGUALDADE DE GÊNERO com\nparticipação dos movimentos sociais para criar o ESTATUTO DA\nIGUALDADE como forma de carta orientadora para mobilização da\nsociedade;\n11.​ Criar o PROGRAMA DE BRIGADISTA DA IGUALDADE financiado pelo\ngoverno estadual para ações permanentes nos bairros populares para\nimpulsionar a conscientização;\n12.​Ceder espaços públicos para CENTROS DE FORMAÇÃO E ACOLHIMENTO\nàs mulheres como espaço livre, organizado pelos movimentos sociais de luta\ndas mulheres;\n13.​Ampliar as CASAS ABRIGO e de PASSAGEM para vítimas de violência\ndoméstica, desburocratizando o acesso. Se necessário, realizar convênios com\nentidades sem fins lucrativos;\n14.​Garantir Assistência financeira para mulheres em situação de vulnerabilidade,\nvítimas de violência doméstica, de até 12 meses;\n15.​Construir lavanderias e restaurantes públicos, com prioridade às regiões mais\nvulneráveis do estado, a fim de que mulheres e meninas possam se\ndesvencilhar do trabalho de cuidados com as famílias;\n16.​Exoneração de servidores públicos que forem, após processo administrativo,\ncondenados por violências a meninas e mulheres."
+          },
+          {
+            "id": "transporte",
+            "titulo": "TRANSPORTE",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "TRANSPORTE\nUm dos maiores desafios para uma gestão pública é a oferta de transporte e seu\nacesso com qualidade para a população. Para executar planos de transporte coletivo é\nnecessário pensar o acesso à cidade e mobilidade urbana, a ocupação do território e\nos diferentes modais de transporte.\nO Paraná é um dos mais ricos e importantes estados da Federação, e por isso, conta\ncom uma alta demanda de locomoção. Seguindo a Lei 12.587/12, referente à Política\nNacional de Mobilidade Urbana, devemos considerar primeiramente o art.5\n“acessibilidade universal”, “equidade no uso do espaço público de circulação, vias e\nlogradouros” . A partir daí, é necessário apontar que todas as intervenções nas ruas e\navenidas precisam estar alinhadas ao que essa política orienta.\nPara garantir de fato o direito de ir e vir, é urgente a implantação do Passe – Livre\npara estudantes e desempregados e a redução do preço da passagem associado a\nmelhoria no transporte coletivo nas principais cidades. Além disso, é preciso uma\nredução drástica dos preços das passagens dos ônibus intermunicipais, aumentando\na oferta de várias linhas. É preciso estatizar esse importante setor da economia\nparanaense.\nPor isso, propomos:\n1.​ Redução da tarifa de transporte público garantindo que o gasto com\ntransporte não ultrapasse 5% do salário mínimo. Realizar ações que garantam\nesse valor do transporte;\n2.​ Criação de uma empresa pública de transporte. Objetivo: Oferecer um serviço\nde qualidade e com preço módico a toda população, a garantia do direito de ir\ne vir está acima do lucro, reduzindo a necessidade do uso de carros\nparticulares diminuindo a emissão de gás carbônico e a poluição na cidade,\nalém da geração de empregos a partir de concursos públicos;\n3.​ Passe livre para os estudantes e desempregados durante toda a semana,\nincluindo os domingos e feriados. Objetivos: Garantir o acesso dos estudantes\nà educação e ao lazer; facilitar a vida do trabalhador desempregado na sua\nbusca por emprego. Sem salário, o direito de ir e vir do trabalhador está\nprejudicado. É necessário permitir a sua movimentação na busca por\nemprego;\n4.​ Criação, melhorias e ampliações de terminais de transporte coletivos para\nintegração dos diferentes serviços. Objetivo: Facilitar a circulação na cidade\ngastando menos, aproveitando a geografia e interligando ônibus, metrôs e\ntrens.\n5.​ Ampliação do programa “Bicicleta Popular”, com reforma dos principais\ncentros urbanos do estado para possibilitar melhor deslocamento de ciclistas\n(exemplo: mais ciclofaixas e ciclovias)."
+          },
+          {
+            "id": "pagina-sem-conteudo-textual-no-documento-original",
+            "titulo": "[Página sem conteúdo textual no documento original.]",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "sem-texto",
+            "conteudo": "[Página sem conteúdo textual no documento original.]"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "53ee8d91357bd10cbad9ef8b36d84874594c28f54dad78f52f49fad48d9d90a5"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "febe31d4fbfd40a09b15bb4c62346df7c91c958f398a575b390f2a3a02fdd3a1"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f534e8974b2a23d6acd124a370fe2441529f29bd47a047bb3ca418f2e10f1ac7"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "8a5d292ec58d6ae2c66c5572d2bbd88735d0b4e55879ab2897e526806ad41a2a"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "47842aa10cff3af3ef53bbd4d4feef917a84ac469d26eba950eeec404d49c70d"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "b4d828745ea940c33c5319110df48401f8a6f587897747c78fe3f1a23dd4f449"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "7b32d1b4fec59df1662d7f188fb06aad5dce3b00400385ecc84c8b1a43fae509"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "4602fdf935764035afa138c5ce9651ae6f31b804716ad219e24022638bc0398a"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "e2a496593744232119cd1aebd8e291b86fd63d26e6a753e045ace53ec2ceda36"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "9074a6cb587e538c9c12dec3117b8ec2678f8a3720058e303bc1628b2aaf3843"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "198e20aad7ce25f8e12d36bcbe5c41050cef2b80b4a76aafc467a2dbb1d53bb3"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "660749d760763c0145ca902b121499fa42a43d4bdfa75c3745ab5712de981b4b"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "e0c9e356c6fc2d6f9c9e6deaacc2295c47d4278e1a9915dc076f696467c7ccc8"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "a5b7c1b46c8cd21e5c723d496659e0551d6b95e68be713370783a5c907c2f8eb"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "036da6038e9ff1a707188547929171ce9218fc472510344fac1c869ad363e148"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "b080789abf97297a1069e6fd818bf3ccb39b4ac20511b80801380a320896b879"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "60dc7af71fc0b5779777d975e76807f44380f787f98b8c02a0da08fdfa121bcf"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "874f40cb492ff9b6bc2aaee31c5104b6591b1035e193237beb1d0ff07d846e4f"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "4792a15f5990fb0d141819487665ba280fd90d39bba20dbf1d19fcad4a805efe"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "ad03f8cb37ec83db3ac057cd91d8ecc3fb303d2d2971fb437f89e7916d7b266f"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "f114974df9e05790b4035cbe36a24cdf860af4068f327fb03d570e8ca114b160"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "85d04c701f1db90ac9c43efb9c0d9ba2876778d685004a9bac18a4ed7c6174bd"
+          },
+          {
+            "pagina": 23,
+            "origem": "sem-texto",
+            "textSha256": "5c60c43b602e8fe9b196a197adbfdc3c252bec969bd6ceefc9e01676a62edc6d"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe a elaboração das peças orçamentárias estaduais junto à população, por meio de audiências de orçamento participativo. A proposta prevê taxação progressiva das grandes propriedades agrícolas, comerciais e industriais do Estado. Na segurança pública, o programa propõe reduzir o uso da força letal por meio de protocolos claros, câmeras corporais, transparência e auditoria independente. Na educação, o documento propõe passe livre estudantil no transporte público municipal e intermunicipal para atividades curriculares e extracurriculares. Na moradia, o programa propõe a entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social. Na saúde, a proposta prevê ampliar a rede de saúde da família, com suporte profissional e insumos para famílias com histórico de diabetes, hipertensão arterial e cardiopatias. Na cultura, o documento propõe a construção de salas de cinema públicas em todos os municípios, com entrada de valor simbólico.",
+    "frases": [
+      {
+        "texto": "O programa propõe a elaboração das peças orçamentárias estaduais junto à população, por meio de audiências de orçamento participativo.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 4,
+            "trecho": "Elaboração das peças orçamentárias (PPA, LDO e LOA) junto à população através de audiências de orçamento participativo."
+          }
+        ]
+      },
+      {
+        "texto": "A proposta prevê taxação progressiva das grandes propriedades agrícolas, comerciais e industriais do Estado.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 5,
+            "trecho": "Taxação das grandes propriedades agrícolas, comerciais e industriais do Estado. Tributação progressiva;"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o programa propõe reduzir o uso da força letal por meio de protocolos claros, câmeras corporais, transparência e auditoria independente.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 7,
+            "trecho": "Reduzir o uso da força letal por meio de protocolos claros, câmeras corporais (com transparência e auditoria independente) e punição efetiva de abusos."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o documento propõe passe livre estudantil no transporte público municipal e intermunicipal para atividades curriculares e extracurriculares.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 9,
+            "trecho": "Passe livre estudantil no transporte público municipal e intermunicipal, garantindo assim o acesso às escolas, universidades e instituições de ensino para atividades curriculares e extracurriculares de forma ilimitada;"
+          }
+        ]
+      },
+      {
+        "texto": "Na moradia, o programa propõe a entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 10,
+            "trecho": "Ampliar as modalidades de programas estaduais para garantir a entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, a proposta prevê ampliar a rede de saúde da família, com suporte profissional e insumos para famílias com histórico de diabetes, hipertensão arterial e cardiopatias.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 13,
+            "trecho": "Ampliar a rede de saúde da família, com equipes com suporte profissional e insumos para atender, principalmente, famílias com histórico de diabetes, hipertensão arterial e cardiopatias"
+          }
+        ]
+      },
+      {
+        "texto": "Na cultura, o documento propõe a construção de salas de cinema públicas em todos os municípios, com entrada de valor simbólico.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 16,
+            "trecho": "Construção de salas de cinema públicas em todos os Municípios, com estrutura flexível à quantidade de habitantes. Estas salas terão valor de entrada simbólico"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "orcamento-publico",
+        "titulo": "Orçamento público",
+        "descricao": "O programa propõe participação da população na elaboração das peças orçamentárias estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 4,
+            "trecho": "Elaboração das peças orçamentárias (PPA, LDO e LOA) junto à população através de audiências de orçamento participativo."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O programa propõe medidas para reduzir o uso da força letal.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 7,
+            "trecho": "Reduzir o uso da força letal por meio de protocolos claros, câmeras corporais (com transparência e auditoria independente) e punição efetiva de abusos."
+          }
+        ]
+      },
+      {
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "O programa propõe passe livre estudantil no transporte público municipal e intermunicipal.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 9,
+            "trecho": "Passe livre estudantil no transporte público municipal e intermunicipal"
+          }
+        ]
+      },
+      {
+        "id": "moradia-social",
+        "titulo": "Moradia social",
+        "descricao": "O programa propõe moradias subsidiadas pelo Estado para famílias em extrema vulnerabilidade social.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 10,
+            "trecho": "entrega de moradias 100% subsidiadas pelo Estado às famílias em extrema vulnerabilidade social"
+          }
+        ]
+      },
+      {
+        "id": "saude-da-familia",
+        "titulo": "Saúde da família",
+        "descricao": "O programa propõe ampliar a rede de saúde da família.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 13,
+            "trecho": "Ampliar a rede de saúde da família"
+          }
+        ]
+      },
+      {
+        "id": "cinema-publico",
+        "titulo": "Cinema público",
+        "descricao": "O programa propõe salas de cinema públicas nos municípios.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002550997:01",
+            "pagina": 16,
+            "trecho": "Construção de salas de cinema públicas em todos os Municípios"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:48:49.255Z"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T19:15:38.557Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a elaboração participativa das peças orçamentárias por meio de audiências de orçamento participativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de elaboração participativa do orçamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:1:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a taxação das grandes propriedades indicadas e seu caráter progressivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta tributária coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:2:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a redução do uso da força letal pelos mecanismos enumerados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne mecanismos de uma única proposta coerente de redução da força letal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:3:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a finalidade e todos os mecanismos materiais mencionados."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente o passe livre, os dois âmbitos de transporte e as atividades indicadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de passe livre estudantil."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:4:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a entrega de moradias integralmente subsidiadas pelo Estado ao público indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "O percentual de 100% está literalmente sustentado pela evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de moradia social subsidiada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:5:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a entrega, o subsídio integral, o ente financiador e o público beneficiário."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a ampliação da rede, os recursos e o público descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ampliação da saúde da família."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:6:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a construção das salas em todos os municípios e a entrada de valor simbólico."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de cinema público."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:frase:7:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a participação popular na elaboração das peças orçamentárias."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente, orçamento público participativo."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:orcamento-publico:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a existência de medidas para reduzir o uso da força letal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área e finalidade coerentes de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:seguranca-publica:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o passe livre estudantil nos transportes municipal e intermunicipal."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de educação pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:educacao-publica:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente moradias subsidiadas pelo Estado para o público indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de moradia social."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:moradia-social:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o subsídio estatal, as moradias e o público beneficiário."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a ampliação da rede de saúde da família."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde da família."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:saude-da-familia:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a proposta de salas de cinema públicas nos municípios."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de cinema público."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento PR:160002550997:01, compatível com a mesma chave eleitoral informada."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002550997:tema:cinema-publico:documentos:PR:160002550997:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a proposta temática resumida."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:PR:160002550997",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "PR:160002550997:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 38079,
+          "cached_input_tokens": 7936,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14850,
+          "reasoning_output_tokens": 134
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "92a772f5c0e8cc239c215caa0b380ee9c8ed6dadfca507cafb2200267f618d4a",
+    "extractedTextSha256": "671036088aa5157ff9f8a1eec67c568c02845dc510e7e10188280df414fd3d0a",
+    "documentCount": 1,
+    "documentSetSha256": "5a86364700156c4c4e6779d332a9b4516ca113898a713bf4dd0f2dabd7a182ff",
+    "contentSha256": "cf8547b47008db92875419521b7216b1e31f074972935a5fba8b7d240cc3b725"
+  }
+}

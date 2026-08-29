@@ -1,0 +1,1378 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002540417",
+    "slug": "huggo-leonardo",
+    "nomeUrna": "DELEGADO HUGGO",
+    "partido": "MISSÃO",
+    "arquivoNome": "2026CE60002540417_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002540417_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T11:05:23Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002540417:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002540417_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002540417_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T11:05:23Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "02201be6df173b668c0f4be3dcc58ae70c663569404e346614d0e04bd9976048",
+        "extractedTextSha256": "69f955ee45588110c1a87c260bde3e713adf5e885f5821feef2bc1ce90f13e56",
+        "paginas": 50,
+        "secoes": [
+          {
+            "id": "delegado",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nRETOMAR\nPARA\n\nRECONSTRUIR\n\n1"
+          },
+          {
+            "id": "delegado-2",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCarta ao povo cearense\nO cearense está cansado de ouvir promessas. Eu sei disso porque escuto. Em cada\ncanto deste Estado, a queixa é a mesma: todo governo diz que vai mudar, e a vida de\nquem trabalha continua igual - ou pior. Eu não vou começar esta carta prometendo.\nVou começar explicando quem sou.\nMeu nome é Huggo Leonardo, sou um menino do morro Vicente Pinzón que se\ntornou delegado de polícia, casado há 15 anos, pai de dois meninos, sou filho de\nservidores públicos, neto do Cícero Alfaiate - o maior balaieiro do maracatu Rei de\nPaus. Estou ao lado da Polícia do Ceará todos os dias, e é de lá que vem tudo o que\nsei sobre este Estado. Vejo o policial que enfrenta o turno sem estrutura. Vejo a\nvítima que espera socorro e não é atendida a tempo. Vejo o bairro onde o Estado só\naparece depois que a coisa já deu errado, ou de quatro em quatro anos - em período\neleitoral. Não estou falando de estatística, estou falando do que vejo todos os dias,\nno trabalho que ainda exerço. Foi isso que me trouxe até aqui e que deu nome a este\nplano.\nRetomar para Reconstruir significa exatamente o que está escrito, na ordem em que\nestá escrito. Primeiro, retomar: o Estado precisa voltar a estar presente onde hoje só\nexiste no papel e não na prática - na segurança, na saúde, na escola, no interior que\nfoi esquecido. Isso passa por valorizar quem está na ponta, começando pela própria\npolícia, que segura o Ceará sem o suporte que merece. Depois, reconstruir: com\nplanejamento, com prazo definido e com responsável nomeado para cada entrega.\nSem essa ordem, qualquer promessa é papo de político.\nEste documento foi escrito para ser cobrado. Cada compromisso registrado aqui diz\no que será feito, como será medido e quando será entregue. Não coloquei nada neste\nplano que eu não esteja disposto a responder na frente de qualquer cearense, em\nqualquer cidade, a qualquer momento. Por isso, o meu pedido não é que você\nacredite em mim. Palavra de político, sozinha, não vale nada - e quem diz o\ncontrário está mentindo. Meu pedido é outro: leiam este plano, guardem este plano e\nme cobre este plano. Se eu cumprir, renove sua confiança. Se eu não cumprir,\ncoloque o dedo na minha cara e use este mesmo documento contra mim: É assim\nque eu trabalhei a vida inteira\nEntão, permita-se imaginar um Ceará Glorioso: livre das facções criminosas,\nincentivador da economia, do emprego e da renda, cumpridor da assistência básica\nque garante emancipação para a população. Eu farei isso quando for o próximo\nGovernador do Ceará, eu te peço: Permita-se retomar e reconstruir.\nDelegado Huggo Leonardo\n\n2"
+          },
+          {
+            "id": "delegado-3",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nSUMÁRIO\nPalavras do Delegado Huggo ................................................................................... 2\nQual a nossa Missão? ..................................................................................................... 3\nComo ler este plano? ....................................................................................................... 5\nDiagnóstico geral do Estado ...................................................................................... 7\nPASSO 1: RETOMAR ......................................................................................................... 13\nCompromisso 1: Ceará Seguro ................................................................................ 13\nCompromisso 2: Periferia com Estado .............................................................. 17\nPASSO 2: RECONSTRUIR ............................................................................................... 22\nCompromisso 3: Interior que Produz ................................................................. 22\nCompromisso 4: Escola que Forma para a Vida .......................................... 27\nCompromisso 5: Saúde que Chega na Hora .................................................... 31\nCompromisso 6: Famílias Livres ........................................................................... 36\nCompromisso 7: Base do Desenvolvimento .................................................... 39\nPARTE 3: O MÉTODO ........................................................................................................ 43\nCronograma de Implementação ................................................................................ 49\nEncerramento ........................................................................................................................ 50\n\n3"
+          },
+          {
+            "id": "delegado-4",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nQUAL A NOSSA MISSÃO?\nMissão é o que se aceita quando o trabalho é maior que o cargo. Retomar para\nReconstruir é a tradução cearense dessa missão: um Estado que perdeu território para as facções nas periferias, para o atraso na economia, para a dependência que\naprisiona as famílias, para a falta de infraestrutura - sendo assim, é preciso primeiro\nretomar o estado do Ceará para então reconstruí-lo.\nPara isso, temos Cinco princípios baseados no Livro Amarelo - nosso projeto de país,\nbase programática do Partido Missão, que orientam esta candidatura:\n1. Ciclo completo de polícia: esse é o modelo em que uma única instituição ou\nforça policial é responsável por todas as etapas do atendimento e repressão ao crime:\ndesde o patrulhamento preventivo nas ruas até a investigação formal (polícia\njudiciária) e o encaminhamento do inquérito ao Ministério Público.\n2. Industrialização do agro: O que a nossa terra produz, a nossa indústria\ntransforma. Agregação de valor no interior, emprego onde hoje só há êxodo.\n3. Desfavelização com lei e ordem: Favela não se resolve com muro nem com\ndiscurso: resolve-se retomando o território das facções - tratando o faccionado como\no inimigo que escolheu ser - e entrando logo atrás com saneamento, saúde,\nhabitação e infraestrutura. Primeiro o Estado expulsa o crime. Depois o Estado fica.\n4. Fim do assistencialismo por meio da tecnologia: Programa social sem porta\nde saída é curral eleitoral. Cruzaremos dados, identificaremos capacidades e\nconectaremos cada beneficiário a qualificação, trabalho e renda própria. O êxito de\num programa social se mede pelo número de famílias que deixam de precisar dele.\n5.Força para proteger o que é nosso: Forças estaduais equipadas, treinadas e\ntecnologicamente à altura do inimigo que enfrentam. Estado desarmado diante de\nfacção armada não é neutralidade - é rendição.\n\n4"
+          },
+          {
+            "id": "delegado-5",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCOMO LER ESTE PLANO?\nEste plano não é organizado por secretaria. É organizado por compromissos porque os problemas do cearense não respeitam a divisão de pastas do governo.\nSegurança na periferia é também saneamento e habitação. Renda no interior é\ntambém educação e água. Por isso, cada compromisso reúne tudo o que é preciso\npara entregar um resultado, mesmo que envolva várias áreas ao mesmo tempo.\nOs compromissos seguem os dois movimentos da nossa missão. Primeiro RETOMAR\n- o Estado volta a estar presente no território. Depois RECONSTRUIR - o Estado\nconstrói renda, futuro e autonomia. Fecha com O Método: como este governo se\ndeixa cobrar.\nComo cada compromisso é apresentado\nTodo compromisso responde às mesmas seis perguntas, sempre na mesma ordem,\npara você comparar e cobrar:\nO que está em jogo - o problema real, com dados.\nOnde queremos chegar - a meta, do ponto de partida até o fim do mandato.\nO que vamos fazer - as ações concretas, com o órgão responsável.\nDe onde vem o recurso - a fonte de custeio ou o instrumento (orçamento, PPP,\nconvênio, reforma legal).\nQuando entrega - primeiros 100 dias / 1º ano / mandato completo.\nComo você cobra -o indicador público que mede o progresso.\nOnde encontrar cada tema (Matriz de Transversalidade)\nSe você procura um tema específico - educação, saúde, água, juventude - esta tabela\nmostra em quais compromissos ele aparece. Um mesmo programa pode servir a\nmais de um compromisso; ele é descrito uma vez e referenciado nos demais.\n\n5"
+          },
+          {
+            "id": "delegado-6",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nÁREAS QUE\nATRAVESSAM\n\nPROPOSTAS\n\nSegurança, Justiça,\nSistema Prisional, Gestão\n\nCiclo completo de polícia;\nFusão SSPDS+SAP; Polícia\nPenal; Corregedorias\ninternas, ARCO CE-RJ-ES;\nMega-Presídio\n\nC2 - Periferia com\nEstado\n\nSegurança, Saneamento,\nHabitação, Saúde,\nInfraestrutura urbana\n\nDesfavelização com lei e\nordem; GIRT; Moradia\nDefinitiva + Filtro de\nIntegridade; Ligação de\nesgoto CadÚnico;\nRegularização fundiária\n\nC3 - Interior que\nproduz\n\nAgricultura, Indústria,\nEducação, Trabalho,\nRecursos Hídricos\n\nIndustrialização do agro;\nPNAE 45+; Campo e Escola;\nSegurança Hídrica Rural;\nLeve poços; Ceará Júnior;\nvalorização do tiro desportivo\n\nC4 - Escola que forma\npara a vida\n\nEducação, Segurança\n(prevenção), Saúde\nmental, Trabalho\n\nRecomposição de\naprendizagens; Ceará Cívico;\nSaúde Mental nas Escolas;\nEnsino técnico\nterritorializado\n\nC5 - Saúde que chega\nna hora\n\nSaúde, Saneamento,\nGestão regional\n\nRedução de filas;\nRegionalização; Integração\nsaúde–saneamento; Rede\nMaterno-Infantil; Regulação\nde Urgência; HIAS 2 Iguatu;\nCasas da Mulher Cearense\n\nC6 - Famílias Livres\n\nAssistência social,\nTrabalho, Tecnologia,\nJuventude\n\nPorta de Saída (SPS/IDT);\nFim do assistencialismo por\ndados; Qualificação e renda\n\nC7 - Base do\nDesenvolvimento\n\nRecursos hídricos,\nEnergia, Logística,\nSaneamento, Fiscal\n\nRedução de perdas / Voucher\nÁgua; IPO Cagece;\nPecém/H2V; Rodovias;\nMobilidade\n\nCOMPROMISSO\n\nC1 - Ceará Seguro\n\n6"
+          },
+          {
+            "id": "delegado-7",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nDIAGNÓSTICO GERAL DO ESTADO\nO Ceará inicia um novo ciclo político diante de um cenário paradoxal. Ao mesmo\ntempo em que consolidou avanços importantes em áreas como educação básica,\nequilíbrio fiscal e atração de investimentos, permanece convivendo com desafios\nestruturais que limitam o desenvolvimento econômico, reduzem a competitividade,\naprofundam desigualdades regionais e comprometem a qualidade dos serviços\npúblicos.\nOs principais desafios do Estado podem ser organizados em seis grandes eixos:\nCrescimento econômico abaixo do potencial;\nElevada desigualdade territorial;\nCrise da segurança pública;\nBaixa produtividade e industrialização;\nPressão sobre infraestrutura hídrica e logística;\nNecessidade de modernização da gestão pública.\nEmbora indicadores agregados frequentemente apresentem um Ceará relativamente\nbem posicionado no Nordeste, a realidade regional demonstra diferenças profundas\nentre municípios e territórios. Essa heterogeneidade exige políticas públicas\nterritorializadas, planejadas a partir das vocações e necessidades específicas de\ncada região. Por essa razão, este diagnóstico utiliza a regionalização oficial adotada\npelo Estado do Ceará, garantindo compatibilidade com os instrumentos de\nplanejamento estadual e com as bases estatísticas produzidas pelo IPECE.\n\nSituação Socioeconômica\nPopulação: cerca de 9 milhões de habitantes em 184 municípios, com forte\nconcentração na Região Metropolitana de Fortaleza e esvaziamento do interior\n(envelhecimento, migração de jovens, perda de mão de obra qualificada).\nEconomia: estrutura diversificada (serviços, comércio, indústria de transformação,\nagronegócio adaptado ao semiárido, turismo), com crescimento em energia\nrenovável, hidrogênio verde, logística e economia do mar. Persistem baixa\nprodutividade, informalidade elevada e baixa agregação de valor industrial.\nTrabalho: informalidade alta, baixa qualificação e dificuldade de inserção do\njovem; em muitas regiões o setor público ainda é o maior empregador.\nEducação: referência nacional em alfabetização e ensino fundamental, mas com\nevasão no ensino médio, distorção idade-série e desconexão entre escola e mercado\nde trabalho.\n\n7"
+          },
+          {
+            "id": "delegado-8",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nSaúde: bons equipamentos de referência, porém filas para consultas especializadas,\ndemora em exames e concentração da alta complexidade na capital.\nSegurança: violência entre os principais problemas, com atuação de organizações\ncriminosas, disputa territorial, crimes patrimoniais, violência contra mulheres e\ncomando emanado de dentro do sistema prisional.\nFiscal: histórico consistente de responsabilidade fiscal e capacidade de\ninvestimento acima da média nacional, sob pressão futura de despesas obrigatórias\ne previdência.\nInstitucional: instituições de planejamento consolidadas (IPECE, SEPLAG), com\ndesafios de integração entre secretarias, transformação digital e avaliação por\nresultados.\n\n8"
+          },
+          {
+            "id": "delegado-9",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nDIAGNÓSTICO GERAL DO ESTADO\nO Ceará não é um estado de uma única realidade; ele é um mosaico complexo de\nvocações, culturas e desafios. Por isso, a elaboração de um plano de governo\nestadual não pode ser um exercício de \"copiar e colar\" feito exclusivamente de\ndentro de um gabinete. É aqui que entra a importância vital de um diagnóstico\nminucioso para cada uma das 14 Regiões de Planejamento do estado.\nUm diagnóstico territorializado é a espinha dorsal de uma administração pública\neficiente. Ele permite que a gestão saia do campo das promessas genéricas e passe a\nentender a dor e a potencialidade real de cada localidade. As demandas de\nmobilidade urbana e adensamento da Grande Fortaleza são drasticamente\ndiferentes das necessidades de segurança hídrica no Sertão de Crateús, ou dos\ngargalos para o desenvolvimento universitário e turístico no Cariri.\nAo mapear dados, ouvir lideranças e analisar os indicadores de forma específica\npara cada região, o diagnóstico garante três pilares essenciais para um governo:\nAlocação inteligente de recursos, Impulso às vocações econômicas e Redução de\ndesigualdades históricas.\nEm resumo, construir um plano de governo fatiado pelas 14 Regiões de\nPlanejamento é, antes de tudo, uma questão de técnica e respeito. É a garantia de\nque as políticas públicas enxergam o cidadão cearense exatamente onde ele vive,\noferecendo soluções sob medida para que todo o estado avance de forma integrada.\n\n1. Fortaleza e Região Metropolitana\nA grande Fortaleza se destaca com o principal centro urbano, econômico e logístico\ndo Ceará. Sendo assim, o maior polo econômico, educacional e logístico do estado.\nPossuindo forte vocação para serviços, tecnologia, turismo de negócios e lazer.\nSeus principais desafios são: mobilidade, segurança pública, saneamento, expansão\nurbana, geração de emprego e renda, alta vulnerabilidade social em periferias e\nforte adensamento populacional.\n\n2. Litoral Oeste / Vale do Curu\n\nPossui sua Economia baseada no forte potencial turístico, na pesca, na agricultura,\nna carcinicultura, na fruticultura, na proximidade com o Complexo Industrial e\nPortuário do Pecém e nas energias renováveis.\nSeus desafios perpassam pela infraestrutura logística, o abastecimento hídrico, o\ndesenvolvimento do turismo sustentável, a elevada pobreza em municípios do\ninterior da região e a escassez de recursos hídricos para irrigação.\n9"
+          },
+          {
+            "id": "delegado-10",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n3. Sertão de Sobral\nEssa região é conhecida por ter forte dinamismo industrial (têxtil e calçadista),\ncomercial e educacional, sendo inclusive um destaque nacional no que se refere à\neducação básica de excelência, ainda possui potencial no agronegócio, na indústria\ne na tecnologia.\nTodavia, necessita de uma ampliação da integração logística e inovação, precisa de\nsoluções para a escassez hídrica severa em períodos de seca e apresenta\nnecessidades em relação a disparidades econômicas entre a sede (Sobral) e os\nmunicípios do entorno.\n\n4. Sertão dos Inhamuns\nPredominância da pecuária forte (ovinocaprinocultura), agricultura adaptada ao\nsemiárido, potencial para turismo arqueológico e de observação do bioma caatinga.\nEntretanto, a região é marcada por uma das regiões com menor PIB per capita do\nestado, altos índices de semi-aridez extrema que exigem convivência com a seca\ntecnológica, necessidade de diversificação produtiva e a retenção de jovens.\n\n5. Sertão Central\nEssa região é estratégica para logística e agropecuária, principalmente em relação à\nforte tradição na pecuária de corte/leiteira, agricultura familiar e polo comercial\ncentralizado em Quixadá e Quixeramobim.\nPorém, necessita ampliar questões relacionadas à infraestrutura, a industrialização,\nao aproveitamento mineral, aos severos impactos da seca, solos suscetíveis à\ndesertificação e êxodo rural de jovens em busca de oportunidades.\n\n6. Maciço de Baturité\nO Maciço possui um grande potencial em turismo (ecológico, histórico e rural), além\nde capacidade para agricultura familiar, floricultura e produção orgânica.\nContudo, possui desafios ambientais relevantes devido à preservação da serra, além\nde um relevo acidentado dificultando a instalação de grandes indústrias e alto risco\nde degradação ambiental pelo uso inadequado do solo.\n\n7. Litoral Leste\nPossui uma forte vocação turística litorânea (Canoa Quebrada/Aracati, Beberibe),\num potencial aquícola/pesqueiro e proximidade com o mercado consumidor da\ncapital. Sendo um polo da fruticultura irrigada, da carcinicultura, do petróleo e\nenergias renováveis.\nEntretanto, necessita fortalecer logística e gestão hídrica, ter ações para a\nprevenção do fenômeno da erosão costeira ameaçando a infraestrutura, degradação\nde dunas e especulação imobiliária desordenada.\n10"
+          },
+          {
+            "id": "delegado-11",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n8. Litoral Norte\nEssa parte do litoral possui praias mundialmente famosas (Jericoacoara), turismo\nconsolidado e internacional, pesca extrativista, forte presença de parques de\nenergia eólica e ativos ambientais.\nDentre os desafios, destaca-se a falta de saneamento básico em alguns polos\nturísticos, dificuldade na preservação ambiental diante da forte exploração\nturística, a especulação imobiliária, a desigualdade socioeconômica e a gestão da\nsegurança pública tendo em vista o crescimento das organizações criminosas.\n\n9. Centro Sul\nEssa região possui um forte polo de comércio regional fortalecido em cidades como\nIguatu e Várzea Alegre, com vocação para agropecuária e serviços, possui potencial\nturístico e cultural (patrimônio arquitetônico e açude de Orós). Ainda, essa região\npossui uma posição geográfica estrategicamente conectada e tem forte presença da\nagricultura familiar.\nTodavia, possui debilidades acentuadas como a baixa densidade industrial e alta\ndependência de transferências governamentais, com vulnerabilidade a choques\nclimáticos e a desigualdade social.\n\n10. Vale do Jaguaribe\nO Vale do Jaguaribe é o celeiro produtivo do Ceará, com uma economia forte\nbaseada na agropecuária e fruticultura irrigada. A região possui grande potencial\nde expansão, devido a sua localização e logística. A região possui recursos hídricos\nestratégicos e vocação para o turismo e artesanato\nPorém, tem uma alta dependência do regime de chuvas para o escoamento agrícola\ne vulnerabilidade a secas prolongadas, possui problemas relacionados a serviços\npúblicos e infraestrutura, carece de qualificação de profissionais e inovação.\n\n11. Serra da Ibiapaba\nA Serra da Ibiapaba é uma joia geográfica e cultural no Ceará, famosa pelo clima\nameno e rica biodiversidade. Seus maiores trunfos incluem o ecoturismo, a forte\nagricultura e a rota de turismo rural. A região também é famosa por seus engenhos\nde cachaça premiada, café e horticultura.\nEm contrapartida, os principais desafios envolvem a infraestrutura viária, a\nconservação ambiental e a necessidade de maior visibilidade econômica.\n\n11"
+          },
+          {
+            "id": "delegado-12",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n12. Sertão de Canindé\nA região do Sertão de Canindé tem como grande ponto forte o turismo religioso\nimpulsionado por Canindé, além de forte agropecuária. Possui uma posição\nestratégica, próxima a Capital, proporcionando boa logística de acesso rodoviario\nfacilitando o escoamento de produções e o trânsito de visitantes. Ainda tem forte\nvocação para o cultivo de grãos, oleaginosas e criação de caprinos e bovinos de leite,\nsustentando a base de renda no campo.\nPorém, ainda possuem os desafios centrais, que incluem a economia com pouca\ndiversificação fora da época de romarias e baixo dinamismo econômico dos\nmunicípios menores, além da vulnerabilidade climática, infraestrutura limitada e\nalta dependência econômica do setor de serviços. Ainda, possui demandas\nrelacionadas a baixa renda e a desigualdade, uma vez que a administração pública\ne do setor informal faz com que o Produto Interno Bruto (PIB) per capita da\nmacrorregião seja inferior à média do estado do Ceará.\n\n13. Sertão de Crateús\nO Sertão de Crateús, destaca-se como um importante polo regional de comércio,\neconomia e serviços. Possui uma agropecuária forte e resiliente, a região é destaque\nna produção de feijão em grão e conta com cooperativas estruturadas e\nagroindústrias. Tem uma riqueza ambiental e ecoturismo, tendo assim também uma\nposição estratégica de divisa com o estado do Piauí e forte polo de educação e\nserviços (Crateús).\nEntretanto, tem altos índices de pobreza, dificuldades de interiorização de grandes\nindústrias, severa escassez hídrica e uma cultura empreendedora limitada.\n\n14. Cariri\nÉ o segundo maior pólo urbano do Estado. Possui forte vocação para o comércio,\nserviços, saúde, educação, turismo religioso e indústria. Apresenta elevado potencial\nde integração regional. Tem um potencial Científico e Ecológico, concentra uma das\nmaiores participações no PIB estadual e possui cidades com ótimos índices de\nqualidade de vida (com destaque para o Crato e Juazeiro do Norte).\nEm contrapartida, possui conflitos no uso dos recursos hídricos e degradação\nambiental na região da Chapada do Araripe. Há baixo fomento à cultura regional,\nembora a cultura seja rica (artesanato, folclore, mestres da cultura), há escassez de\nfinanciamento permanente e dificuldade de inserção dos fazedores de cultura no\nmercado formal. Além disso a região é marcada por desigualdade e disparidades\ninternas.\n12"
+          },
+          {
+            "id": "delegado-13",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nPASSO 1: RETOMAR\nO Estado volta a estar presente no território.\nCompromisso 1: Ceará Seguro\nRetomar o território do crime e devolver a segurança ao cearense\nO QUE ESTÁ EM JOGO?\nA segurança pública consome R$ 5,822 bilhões do orçamento de 2026 (R$ 48,2 bi no\ntotal), atrás apenas de saúde e educação. O Ceará vem de uma inflexão positiva queda de 48,7% nos CVLIs em maio de 2026 ante o mesmo mês de 2025, e de 37,2%\nno 1º quadrimestre do ano - mas ainda foi o 4º estado com mais mortes violentas em\n2025, com a disputa territorial entre facções como o Comando Vermelho e o Terceiro\nComando Puro, como principal vetor da violência letal, com comandos emanados de\ndentro do sistema prisional.\nO modelo institucional atual separa a gestão da segurança ostensiva/investigativa\n(SSPDS) da gestão do sistema prisional (SAP), cada uma com secretário, gabinete e\ncoordenadorias próprios - uma duplicidade de 80 a 120 cargos comissionados\n(DAS/DNS) que só mantêm burocracia, não atividade-fim. A Polícia Penal (PPCE,\n~3.700 agentes) ainda não tem autonomia plena, e o controle disciplinar está\ncentralizado em um órgão externo, a CGD (46 cargos comissionados, custo de R$ 8 a\n10 milhões/ano).\n\nONDE QUEREMOS CHEGAR?\nManter e aprofundar a trajetória de queda de CVLI (Crime Violento Letal\nIntencional) e CVP (Crime Violento Patrimonial), partindo da base já alcançada\n(queda de 48,7% em maio/2026 e de 37,2% no 1º quadrimestre).\nRetomar territórios hoje sob domínio de facção e manter presença permanente\ndo Estado.\nUnificar o comando estratégico da segurança e do sistema prisional, eliminando\na duplicidade de 80 a 120 cargos comissionados hoje mantidos só para gestão\nadministrativa.\nElevar a taxa de resolução de disciplina interna e reduzir o tempo médio de\nresposta com corregedorias internas em vez de um órgão externo centralizado.\n\n13"
+          },
+          {
+            "id": "delegado-14",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nO QUE VAMOS FAZER?\n1. Fusão SSPDS + SAP\nCriar a Secretaria de Segurança Pública, Defesa Social e Administração\nPenitenciária (SSP), unificando inteligência policial e penitenciária sob o mesmo\ncomando: 1 Secretário de Estado e 2 Secretários Executivos (Operações Policiais;\nAdministração Penitenciária e Ressocialização).\nUnificar as coordenadorias de meio (RH, TI, Jurídico, Financeiro), eliminando\ncargos redundantes sem perder eficiência.\nGerir de forma complementar o Fundo de Segurança Pública (FSPDS) e o Fundo\nPenitenciário (FUNPEN).\n2. Polícia Penal do Ceará como força de elite (Princípio 5)\nElevar a Polícia Penal (PPCE) a órgão vinculado autônomo, com comando e\norçamento próprios, equiparada institucionalmente à PMCE e à PCCE - hoje\nfunciona apenas como diretoria da SAP, sem independência administrativa e\norçamentária.\nEditar a Lei Orgânica Estadual da Polícia Penal: natureza de órgão permanente\nde segurança pública (Art. 144, CF); porte de arma pleno e aposentadoria\nespecial; carreira em classes (3ª, 2ª, 1ª e Especial) com promoção por antiguidade\ne merecimento; ingresso por concurso de nível superior e formação na AESP.\n3. Controle disciplinar mais rápido e mais próximo\nExtinguir a CGD e instituir corregedorias internas autônomas em cada\ncorporação (PMCE/CBMCE, PCCE, PEFOCE, PPCE), permitindo ritos sumários\npara faltas leves e apuração por quem entende a especificidade técnica de cada\nfunção.\nCriar uma Ouvidoria Geral de Segurança vinculada ao gabinete do Governador,\ngarantindo controle social e isenção.\n4. Força à altura do inimigo\nEquipar, treinar e prover tecnologia às forças estaduais (inteligência,\nmonitoramento, integração de dados).\nFortalecer a PCCE e PMCE no interior com modernização tecnológica.\n5. Cooperação interestadual contra o crime organizado - ARCO CE-RJ-ES\nCriar, em parceria com Rio de Janeiro e Espírito Santo, a Agência de Inteligência\ne Repressão ao Crime Organizado (ARCO CE-RJ-ES): uma unidade operacional e\nde inteligência híbrida para enfrentar as \"franquias criminosas\" que hoje operam\natravés das fronteiras estaduais, com o ES fechando o cerco logístico entre RJ e\nCE.\nFormalização em duas camadas: Protocolo de Intenções assinado pelos três\nGovernadores, seguido de Convênio de Cooperação com Plano de Trabalho\n(cessão de servidores, acesso a dados restritos, metas de produtividade), com\nrateio de custos entre CE (33%), RJ (34%) e ES (33%).\n14"
+          },
+          {
+            "id": "delegado-15",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nGovernança tripartite: Comitê Gestor com os Secretários de Segurança dos três\nestados; Coordenação-Geral rotativa (3 anos por estado); Gabinetes de Crise\nintegrados em Fortaleza, Rio de Janeiro e Vitória, operando 24/7 com\nespelhamento de dados.\nFoco operacional: monitoramento de lideranças presas para neutralizar ordens\nde ataque emitidas de dentro do sistema prisional; agentes infiltrados e\ninterceptação telemática (Lei nº 12.850/2013); malha de alerta precoce que aciona\nos três estados quando há movimentação suspeita em qualquer um deles.\n6. Mega-Presídio de Segurança Máxima \"Antonia Ione Rodrigues da Silva\"\nConstrução de mega-presídio de segurança máxima com capacidade para 50 mil\ninternos, voltado à segregação de lideranças e integrantes de organizações\ncriminosas, com ocupação progressiva e escalonada (1 pavilhão na inauguração,\n6 pavilhões no mês 11 e capacidade total no mês 12).\nMétodo construtivo em concreto pré-moldado e regime de obra 24/7 em 3 frentes\nde trabalho simultâneas, com meta de entrega em 365 dias (12 meses), regulado\npela dispensa de licitação por emergência (Art. 75, VIII, Lei nº 14.133/2021) em\nmodalidade Turn Key.\nRetrofit da unidade de triagem e da infraestrutura administrativa de Itaitinga e\ntreinamento de 6 mil policiais penais para a operação do complexo.\n\nDE ONDE VEM O RECURSO?\nEconomia direta com a fusão SSPDS+SAP (R$ 9 a 15 milhões/ano) e a extinção da\nCGD (R$ 3,3 a 5,3 milhões/ano): total estimado entre R$ 12,3 milhões e R$ 20,3\nmilhões/ano, reinvestida integralmente em modernização das forças de\nsegurança pública.\nRealocação dentro do orçamento da função Segurança (R$ 5,822 bi na LOA 2026,\na maior parte hoje em pessoal) e gestão integrada FSPDS/FUNPEN.\nARCO CE-RJ-ES: dotação orçamentária dos três Tesouros estaduais; pleito de\nrepasses fundo-a-fundo ampliado do Fundo Nacional de Segurança Pública\n(FNSP); recuperação de ativos das facções via Rede Recupera; emendas de\nbancada federal; cooperação técnica internacional (MJSP, Interpol, UNODC).\nMega-Presídio: transferência obrigatória fundo a fundo do Fundo Penitenciário\nNacional (FUNPEN - LC nº 79/1994, Lei nº 13.500/2017 e Portaria MJSP nº\n1.003/2025), que dispõe de saldo disponível estimado em R$ 668,67 milhões para\nnovas contratações em 2026, cobrindo o investimento total de R$ 705 milhões;\ncontrapartida do Tesouro Estadual de 5% (R$ 35,25 milhões); fontes\ncomplementares em emendas de bancada federal (até R$ 200 milhões) e\ncooperação internacional (Bureau of International Narcotics and Law\nEnforcement) para tecnologia de segurança.\n15"
+          },
+          {
+            "id": "delegado-16",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nEnvio à ALECE dos Projetos de Lei da fusão da SSPDS + SAP e da Extinção da\nCGD, além da Lei Orgânica da Polícia Penal.\nAssinatura do Protocolo de Intenções da ARCO CE-RJ-ES pelos três Governadores\ne seleção dos primeiros 75 agentes (25 por estado).\nRegularização do FUNPEN/CE por lei, decreto de emergência do sistema\nprisional e início da mobilização e contratação do Mega-presídio.\n1º ano:\nUnificação física de sedes e sistemas administrativos (SSPDS + SAP)\nInstalação das corregedorias internas e da Ouvidoria Geral específica para cada\nforça de segurança pública e a consequente extinção da CGD.\nIntegração tecnológica dos bancos de dados dos três estados e inauguração dos\nHubs Integrados da ARCO em Fortaleza, Rio de Janeiro e Vitória.\nConclusão da obra e início da ocupação progressiva do Mega-presídio (5 mil\ninternos na inauguração, rumo à capacidade total de 50 mil em até 12 meses).\nMandato completo:\nConsolidação da Polícia Penal como órgão vinculado autônomo.\nOperações de campo conjuntas triangulares da ARCO, Escritórios de Ligação nos\nportos (Pecém, Rio e Vitória/Tubarão) e Centro de Treinamento Integrado\nconsolidado.\nMega-presídio em capacidade total, consolidado como principal instrumento de\nsegregação de lideranças de facções.\nComo você cobra (indicadores)?\nDiminuição dos CVLI e CVP (série mensal, com meta anual).\nTempo médio de resposta a ocorrências.\nTerritórios retomados e mantidos com presença do Estado.\nProcessos disciplinares concluídos e tempo médio de conclusão.\nEconomia anual gerada pela fusão SSPDS+SAP e pela extinção da CGD, e seu\nreinvestimento em tecnologia policial.\nOperações conjuntas da ARCO CE-RJ-ES realizadas e ativos criminais\nrecuperados (veículos, aeronaves, imóveis, valores).\nPercentual de execução física do Mega-Presídio e número de internos\nsegregados por fase de ocupação.\n\n16"
+          },
+          {
+            "id": "delegado-17",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso 2 - Periferia com Estado\nPrimeiro o Estado expulsa o crime, depois o Estado fica.\nO QUE ESTÁ EM JOGO?\nAs periferias da Região Metropolitana e das grandes cidades do interior são os\nterritórios onde o Estado mais falta e o crime mais avança. A favelização cresce, e\nonde falta esgoto, moradia digna e serviço público, a facção ocupa o vazio. O déficit\nhabitacional (234 mil unidades no Estado) e a baixa cobertura de esgoto (44,8% no\nEstado) concentram-se justamente nessas áreas.\nO retrato mais grave dessa ausência de Estado é o deslocamento forçado: dados da\nSSPDS (2025) registram 219 famílias expulsas de suas casas por facções entre\njaneiro de 2024 e setembro de 2025, e o passivo acumulado - somado a eventos\ncríticos como o de julho de 2026 no bairro Vila Velha - ultrapassa 400 famílias\ndespojadas de seus lares. Onde a família sai, o imóvel vira ativo da facção (aluguel\ninformal, base operacional), e o vácuo institucional é ocupado por uma estrutura\nparalela de \"segurança\" e \"justiça\" sumária.\nEste é o compromisso que mais depende de várias áreas ao mesmo tempo. Por isso\nele existe: uma política de periferia feita por secretarias isoladas não funciona.\n\nONDE QUEREMOS CHEGAR?\nRetomar e manter territórios hoje sob domínio de facção (em articulação com o\nCompromisso 1).\nLevar esgoto, água, moradia regularizada e atenção básica de saúde às\ncomunidades retomadas.\nReduzir o déficit habitacional (hoje em 234 mil unidades no Estado) e regularizar\ntítulos de propriedade.\nEmancipar as famílias pelo trabalho e encerrar a lógica das ocupações\nirregulares, garantindo moradia definitiva com ordem institucional.\nCumprir\n\n17"
+          },
+          {
+            "id": "delegado-18",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nO QUE VAMOS FAZER?\n1. Retomada territorial (Princípio 3)\nRetomar o território das facções tratando o faccionado como inimigo de estado\nque escolheu ser, com presença ostensiva permanente - não pontual.\nCriar o Gabinete Integrado de Reconstrução Territorial (GIRT), vinculado\ndiretamente à Casa Civil, para comandar de forma centralizada e simultânea as\nquatro frentes deste compromisso: repressão inteligente (SSPDS/SeInt), jurídicofundiário (PGE, Defensoria, MPCE), habitação e infraestrutura (Secretaria das\nCidades, SEINFRA), assistência social (SPS), saúde (SESA), desenvolvimento\n(SDE) e gestão/controle (SEPLAG, Controladoria) - com Comitê Gestor semanal e\numa Sala de Situação Integrada que georreferencia cada imóvel e família sob\nintervenção.\nO GIRT incorpora a eficiência operacional de experiências internacionais de\nretomada territorial (como o modelo salvadorenho de inteligência integrada e\ncerco territorial), mas rejeita expressamente a suspensão de garantias\nconstitucionais, a prisão sem mandado e o encarceramento em massa: toda\nincursão é precedida de mandado judicial específico, preservando a validade das\nprovas e a individualização das condutas.\nProtocolo de Resposta Rápida (48h): ao ser detectado um novo caso de\nexpulsão, o Estado reage imediatamente com assistência jurídica, social e\ninvestigação policial, impedindo a consolidação do domínio criminoso sobre o\nimóvel.\nQuatro fases de execução: (i) Inteligência e Retomada - mapeamento\ngeorreferenciado e operações de cerco coordenado, com Centro de Inteligência\nIntegrado; (ii) Jurídico-Fundiário - criação de Varas Especializadas em crimes de\nfacção e deslocamento forçado, reduzindo de anos para meses o tempo de\nreintegração de posse; (iii) Reconstrução e Reocupação - Programa \"Minha Casa\nde Volta\" para reforma emergencial de imóveis depredados, com urbanismo\ntático (iluminação LED, praças, câmeras) para inibir o retorno das facções pelo\ndesign ambiental; (iv) Reintegração Social e Econômica - cadastro único\npriorizando famílias expulsas em transferência de renda, capacitação e\nmicrocrédito.\n2. O Estado que fica: saneamento\nPriorizar as comunidades retomadas nas PPPs de esgoto em curso e nas novas a cobertura de esgoto no Estado hoje é de apenas 44,8%, e o Marco Legal do\nSaneamento exige 90% até 2033.\nFinanciar a ligação de esgoto para 745 mil famílias do CadÚnico, tratando\nsaneamento como política de saúde preventiva: redimensionamento de R$ 213\nmilhões/ano do orçamento de saúde preventiva, com investimento de R$ 1,49\nbilhão em 7 anos gerando (pela relação 1:4 do Trata Brasil) uma economia\nprojetada de R$ 5,96 bilhões em gastos hospitalares e medicamentos por doenças\nde veiculação hídrica.\n18"
+          },
+          {
+            "id": "delegado-19",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n3. Moradia definitiva com ordem (Secretaria das Cidades)\nExpandir a habitação de entrada facilitada integrada ao MCMV e a regularização\nfundiária de títulos, dando segurança jurídica às famílias.\nPrograma de Moradia Definitiva: esvaziar movimentos de ocupação (como o MST\ne o MTST) priorizando seus integrantes e as famílias em déficit habitacional real\nnas listas dos próximos conjuntos habitacionais, por remanejamento estratégico acabando com a espera eterna e com o oportunismo político em cima da falta de\nmoradia.\nFiltro de Integridade Habitacional (Tolerância Zero): identificação via CadÚnico e\ninvestigação social; imóvel de uso exclusivo para moradia, com proibição\nabsoluta de venda ou aluguel; fiscalização por revistas periódicas conjuntas das\nSecretarias das Cidades, de Segurança Pública, de Proteção Social e de\nDesenvolvimento Econômico. Em caso de descumprimento, expropriação no\nâmbito cível; em caso de fraude no cadastro, investigação criminal por falsidade\nideológica e inserção de dados falsos nos sistemas públicos, nos termos da lei\npenal.\n4. Porta de saída junto com a moradia\nA moradia entra acompanhada do Programa \"Porta de Saída\" (SPS/IDT detalhado no Compromisso 6): sistema que mapeia cada família beneficiária de\nauxílios e a conecta imediatamente a cursos técnicos, letramento digital e vagas\nde emprego mapeadas - a casa própria como início da emancipação, não como\nfim.\n5. Saúde e infraestrutura urbana na porta\nAtenção básica de saúde e drenagem/urbanização nas áreas retomadas (conecta\naos Compromissos 5 e 7).\n\nDE ONDE VEM O RECURSO?\nPPPs de esgoto (RMF e interior) e recursos federais de habitação (MCMV / Novo\nPAC).\nRedimensionamento de R$ 213 milhões/ano do orçamento de saúde preventiva\npara financiar as ligações de esgoto do CadÚnico (745 mil famílias, R$ 1,49 bi em\n7 anos).\nFundo Estadual de Combate à Pobreza (FECOP), recursos ordinários da SPS e da\nSecretaria das Cidades, e fundos habitacionais.\nRegularização fundiária via órgãos estaduais e convênios municipais.\n\n19"
+          },
+          {
+            "id": "delegado-20",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nGIRT: Tesouro Estadual/FUNDES (operações e inteligência, dotação direta);\nFundo Nacional de Segurança Pública (equipamentos e tecnologia, via convênio\nMJSP); PAC/Minha Casa Minha Vida (reforma e urbanismo, repasse federal);\nleilão de bens apreendidos das facções (Fundo de Reconstrução, via alienação\njudicial); linhas de crédito internacional (BID/CAF) para infraestrutura social.\nInvestimento total estimado em 4 anos: R$ 225 milhões (R$ 25 mi na fase de\nchoque, R$ 40 mi na consolidação, R$ 100 mi na reconstrução e R$ 60 mi na\nsustentabilidade).\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nDefinição das primeiras comunidades-piloto (retomada + pacote de serviços).\nInício das investigações sociais e dos cadastros habitacionais (CadÚnico).\nDecreto de criação do GIRT, instalação da Sala de Situação Integrada e\nmapeamento inicial; operações integradas nos primeiros territórios prioritários\nda RMF.\n1º ano:\nAssinatura/priorização dos contratos de esgoto nas áreas-piloto.\nRemanejamento estratégico das listas habitacionais e início da regularização\nfundiária.\nInstalação das Varas Especializadas; expansão do GIRT para o interior (Sobral,\nMorada Nova, Cariri); início das reformas habitacionais e primeiro relatório\npúblico.\nMandato completo:\nEmancipação e entregas habitacionais sob o novo regime.\nLigação de esgoto concluída para as 745 mil famílias do CadÚnico ao longo de 7\nanos (Chegar a 400 mil residências no 1º mandato).\nReforma de 100% dos imóveis retomados pelo GIRT com entrega de títulos de\npropriedade, inauguração de equipamentos estruturantes (UBS, escolas, creches)\ne transferência da gestão para políticas permanentes.\n\n20"
+          },
+          {
+            "id": "delegado-21",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nComo você cobra (indicadores)?\nComunidades retomadas com presença permanente do Estado.\nLigações de esgoto realizadas em famílias do CadÚnico (meta: 745 mil).\nTítulos de propriedade regularizados e unidades habitacionais entregues sob o\nnovo regime (déficit atual: 234 mil unidades).\nTaxa de Emancipação Social e número de fraudes/irregularidades habitacionais\nautuadas, metrificadas e corrigidas.\nImóveis identificados pelo GIRT reformados e reocupados legalmente (meta:\n100%); redução de novos casos de deslocamento forçado (meta: 90% em 24\nmeses); famílias expulsas inseridas em programas de renda e saúde mental\n(meta: 100%); beneficiários com autonomia financeira via microcrédito (meta:\n50%).\n\n21"
+          },
+          {
+            "id": "delegado-22",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nPASSO II – RECONSTRUIR\nO Estado constrói renda, futuro e autonomia.\nCompromisso 3 - Interior que Produz\nO que a nossa terra produz, a nossa indústria transforma\nO QUE ESTÁ EM JOGO?\nA agricultura familiar é a base social e econômica do interior cearense, não uma\npolítica de nicho: 75,5% dos estabelecimentos agrícolas do Ceará são familiares,\nrespondendo por 39,6% do valor total da produção agropecuária do Estado. O\ninterior sofre com êxodo juvenil, baixa agroindustrialização e insegurança hídrica.\nFalta agregar valor: o agricultor precisa vender mais valor agregado, não apenas\nmais volume de matéria-prima. E falta perspectiva para o jovem - sem ela, ele vai\nembora.\n\nONDE QUEREMOS CHEGAR?\nAumentar a renda média no interior e o número de agroindústrias familiares\noperantes.\nElevar o percentual de compras públicas da agricultura familiar acima do\nmínimo de 45% já exigido pela Lei nº 15.226/2025 para a merenda escolar\n(PNAE).\nFixar jovens e mulheres no campo com plano produtivo real, não\nassistencialismo.\nReduzir a informalidade produtiva com regularização sanitária proporcional ao\nrisco.\n\n22"
+          },
+          {
+            "id": "delegado-23",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nO QUE VAMOS FAZER?\n1. Escola compra do campo (PNAE 45+)\nTratar a merenda escolar como política de renda: elevar e desburocratizar, acima\ndo piso de 45% já previsto em lei, a compra pública local da agricultura familiar,\ncom chamada pública simplificada e logística compartilhada.\nBalizar o planejamento de safra pelo calendário letivo e pela demanda da rede\npública (mercado institucional garantido) - a merenda escolar não é apenas\ndespesa, é a maior política de renda e circulação de dinheiro dentro do próprio\nmunicípio.\n2. Industrialização do agro (Princípio 2)\nCriar a Rede Cearense de Agroindústrias Familiares (unidades de\nbeneficiamento compartilhadas) e o Selo Ceará da Agricultura Familiar\nSustentável.\nSimplificação sanitária proporcional ao risco + crédito orientado (Pronaf\nAgroindústria) para a transição da informalidade ao mercado formal - o\nagricultor familiar precisa vender mais valor agregado, não apenas mais volume\nem matéria-prima.\nPrograma Agro Indústria Ceará (SDE): linha de crédito e incentivo fiscal\nexclusivos para quem processa e industrializa a produção agrícola no próprio\nmunicípio produtor, com meta de ampliar em 20% a instalação de indústrias no\ninterior.\n3. Água e assistência que sustentam a produção\nPlano de Segurança Hídrica Rural (cisternas, reúso, barragens) e Programa\nEstadual de Assistência Técnica Permanente.\nProjeto Leve Poços - autonomia hídrica do semiárido: o carro-pipa hoje\nmantém famílias reféns de gestores locais, sendo usado como moeda política em\nperíodo eleitoral. O Estado financiará integralmente a perfuração e instalação de\npoços autossustentáveis nas zonas rurais de maior vulnerabilidade hídrica,\npriorizando comunidades com histórico de dependência de carro-pipa. A gestão\nda infraestrutura será de responsabilidade exclusiva da própria comunidade - o\nEstado não cria nem administra cooperativas, fomentando o cooperativismo\norgânico local.\nEscola do Campo: capacitação técnica intensiva para que as famílias\nbeneficiadas usem a água para irrigação, manejo de solo e agroecologia de\nsubsistência e venda de excedentes, transformando água em produção e renda não apenas em consumo.\nMonitoramento de Integridade: fiscalização rigorosa da distribuição de carrospipa, reduzindo-a a casos emergenciais extremos e eliminando seu uso como\ninstrumento de barganha eleitoral.\n23"
+          },
+          {
+            "id": "delegado-24",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n4. Logística e mercado\nCentros Regionais de Distribuição (armazéns e câmaras frias), plataforma digital\nde comercialização e plano de logística rural (estradas vicinais).\n5. Juventude, mulher e inovação\nFundo Estadual de Microcrédito Rural Orientado; Programa Mulheres Rurais do\nCeará; Jovem do Campo Empreendedor - fixar a juventude e fortalecer a mulher\nrural com planos de negócio reais, conectividade e mecanização acessível,\nsubstituindo o assistencialismo por autonomia.\nPolítica Estadual de Sucessão Rural Produtiva, com fiscalização do Pronaf\nJovem e Mulher.\nPrograma Ceará Empresa Júnior - Inovação e Empreendedorismo\nUniversitário: fomento ao Movimento Empresa Júnior (MEJ), com foco em\ntransformar o conhecimento acadêmico em soluções de mercado. Quatro eixos: (i)\nfomento direto via FUNCAP para hardware, softwares e espaços de co-working\nnas universidades; (ii) Vouchers de Inovação Pública, em que secretarias e\nprefeituras contratam consultoria das Empresas Juniors - EJs com o Estado e\nMunicípio como garantidor do pagamento; (iii) apoio jurídico e contábil para\nconversão de projetos de EJs em startups, com isenção de taxas estaduais no\nprimeiro CNPJ; (iv) bonificação para EJs do interior (UVA, URCA e polos\nregionais da UECE), mitigando a concentração de oportunidades na Região\nMetropolitana de Fortaleza.\nA escola como centro de desenvolvimento territorial - laboratórios de\nagroecologia e ensino técnico rural (conecta ao Compromisso 4).\n6. Desoneração e valorização do tiro desportivo\nO setor de tiro desportivo está em forte ascensão, mas enfrenta carga tributária\nestadual sufocante (ICMS na casa dos 30%) e falta de padronização no apoio\ninstitucional a clubes de tiro e atiradores (CACs), tratando uma atividade lícita\ncom barreiras financeiras desproporcionais, apenas por divergência ideológica.\nPrograma Estadual de Valorização do Tiro Desportivo: envio imediato de\nProjeto de Lei à Assembleia Legislativa reduzindo a alíquota de ICMS, de 30%\npara 5%, sobre a compra de arma de fogo, munições, acessórios, insumos de\nrecarga e EPI, a fim de estimular o setor econômico, tendo em vista que já há um\nrigor na legislação federal para a prática do tiro desportivo e compra e venda e\narma de fogo, munição e acessórios, além de que, a arrecadação estadual é\nínfima, não sendo significativo para a receita estadual, sendo utilizada apenas\ncomo política ideológica de repressão ao nicho.\nPacto Municipal de Fomento ao Esporte: Recomendação Oficial e minuta de\nProjeto de Lei Padrão enviadas aos 184 municípios para redução do ISS ao piso\nmínimo (2%) ou isenção local sobre a atividade.\n\n24"
+          },
+          {
+            "id": "delegado-25",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nLei estadual de reconhecimento dos clubes de tiro como entidades de utilidade\npública, desonerando a carga tributária para evitar que pessoas do Ceará\ndirijam-se a outros estados para efetuar a comprar de arma de fogo, munição e\nacessórios, por conta da falta de competitividade das empresas estaduais,\ndecorrente da carga tributária excessiva que, além de não fomentar o setor\nempresarial, que gera milhares de emprego e renda e movimenta a economia,\nainda trabalha contra, criando ferramentas estatais de boicote ao referido nicho,\ncom o objetivo de transformar o Ceará em polo de excelência e treinamento\nesportivo, além de trazer investimentos externos, ante os preços mais atrativos\ndos produtos e do mercado aquecido em decorrência disso.\n\nDE ONDE VEM O RECURSO?\nFNE/Banco do Nordeste, FUNCAP, Pronaf Agroindústria e Sistema S.\nRecursos federais (FNDE/PNAE, MDA, PAA) e emendas parlamentares\ndirecionadas à interiorização - o Ceará já demonstrou capacidade de atração de\ncapital internacional para o campo: o Projeto Paulo Freire II garantiu um\nempréstimo de € 92 milhões (R$ 590 milhões) para o combate à extrema pobreza\nrural.\nCeará Júnior: Tesouro Estadual e FUNCAP (Auxílio à Extensão e\nEmpreendedorismo); orçamento da Secretaria de Desenvolvimento Econômico\n(SDE) e da Secretaria da Ciência, Tecnologia e Educação Superior (SECITECE) via\nmodelo de voucher; convênios com FNE/BNB e Sebrae CE; Lei do Bem (Lei nº\n11.196/2005) para investimento privado; emendas parlamentares com diretriz de\ninteriorização.\nFundo Estadual de Microcrédito Rural.\nLeve Poços: orçamento da Secretaria dos Recursos Hídricos (SRH) e da Secretaria\ndo Desenvolvimento Agrário (SDA), convênios federais para o semiárido e\nrealocação de verbas hoje gastas na logística ineficiente e politizada de carrospipa.\nAgro Indústria Ceará: Fundo de Desenvolvimento Industrial (FDI) e crédito com o\nBID para transformação digital.\nTiro desportivo: renúncia fiscal compensada pelo aumento no volume de vendas\ndo setor e estímulo da geração de emprego e renda, através do crescimento da\neconomia, a partir do nicho (efeito Curva de Laffer), sem necessidade de aporte\ndireto do Tesouro.\n\n25"
+          },
+          {
+            "id": "delegado-26",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nPiloto do programa de merenda com compra local e mapeamento diagnóstico\nmunicípio a município.\nMapeamento e início da instalação dos poços do Projeto Leve Poços nas\ncomunidades mais vulneráveis; envio do PL de redução do ICMS do tiro\ndesportivo e das minutas de Recomendação Municipal (Pacto Municipal de\nFomento ao Esporte).\n1º ano:\nAbertura dos primeiros Centros Regionais de Distribuição e lançamento do Selo\nCeará.\nEdital do Ceará Júnior (ciclo de 12 meses: lançamento, seleção, liberação de\nrecursos, execução com mentorias e Demo Day estadual) e do microcrédito rural.\nEdital do Agro Indústria Ceará; implantação dos núcleos de capacitação da\nEscola do Campo nas comunidades atendidas pelo Leve Poços.\nMandato completo:\nRede de agroindústrias familiares consolidada e inversão da curva de êxodo\nrural jovem.\nIndependência hídrica das comunidades atendidas pelo Leve Poços e Ceará\nconsolidado como polo de excelência em tiro desportivo.\nComo você cobra (indicadores)\nVolume (R$) de compras públicas da agricultura familiar executadas, acima do\npiso de 45% do PNAE.\nNúmero de novas agroindústrias familiares operantes e produtos regularizados.\n% de jovens e mulheres com plano produtivo e acesso a microcrédito.\nRenda média no interior.\nEmpresas Juniores fomentadas, vouchers de inovação pública executados e\nprojetos convertidos em startups.\nNúmero de poços autossustentáveis entregues pelo Leve Poços; redução\npercentual do volume de verbas estaduais destinadas a carro-pipa; renda média\nmensal das famílias beneficiadas.\nVolume financeiro (VPL) de novos investimentos industriais no interior;\narrecadação, abertura de novos negócios e municípios aderentes à redução do\nISS no setor de tiro desportivo.\n\n26"
+          },
+          {
+            "id": "delegado-27",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso 4 - Escola que Forma para a Vida\nPassar de ano não basta: tem que aprender.\nO QUE ESTÁ EM JOGO?\nO Ceará é referência nacional em alfabetização e ensino fundamental - 341 Escolas\nde Ensino Médio em Tempo Integral (EEMTIs) ativas e 133 Escolas Estaduais de\nEducação Profissional (EEEPs), com a 3ª melhor média do Ensino Médio do Brasil,\nporém abaixo da média estabelecida pelo IDEB (2023) do Brasil - ou seja as médias\nescondem desafios estruturais: evasão e distorção idade-série concentradas no\nensino médio, uma epidemia silenciosa de saúde mental entre estudantes e\nprofessores, e desconexão entre o currículo e o trabalho local. Onde a\nvulnerabilidade social aperta, o trabalho precoce vira a única saída imediata e o\nabandono cresce. Sem perspectiva no próprio território, a escola vira rota de fuga do\ninterior.\n\nONDE QUEREMOS CHEGAR?\nReduzir a evasão e a distorção idade-série no ensino médio.\nRecompor aprendizagens em leitura, matemática e ciências, sobretudo na\ntransição para o ensino médio.\nGarantir rede de saúde mental para estudantes e professores.\nAlinhar o ensino técnico às vocações econômicas de cada região.\n\nO QUE VAMOS FAZER?\n\n1. Aprender de verdade (recomposição e resultado)\nCiclos bimestrais de intervenção focados na recuperação de lacunas críticas, com\ntutoria (professor mentor) e avaliação formativa contínua.\n2. Ceará Cívico - formação cidadã, liderança e disciplina consciente\nComponente curricular na parte diversificada, com base na BNCC\n(desenvolvimento obrigatório de competências socioemocionais, autogestão e\nprojeto de vida) e na LDB (parte diversificada conforme características\nregionais), sem necessidade de decretos federais: ética e cidadania, liderança e\nprojeto de vida, defesa civil e proteção (primeiros socorros, educação para o\ntrânsito, segurança comunitária), organização e disciplina consciente (gestão de\nrotina, metas, autocontrole).\nO que NÃO é: militarização da gestão escolar, substituição de normas por\nregulamentos militares, disciplina como submissão e punição, ou doutrinação\npolítica/ideológica. A Autonomia pedagógica 100% preservada, sob comando\nabsoluto da SEDUC, com apoio do Corpo de Bombeiros/Defesa Civil, Forças de\nSegurança/PM e universidades e sociedade civil (empreendedorismo social,\npsicologia, proteção social).\n27"
+          },
+          {
+            "id": "delegado-28",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nImplementação, por lei estadual, das disciplinas de\nImplantação progressiva em 3 fases: Fase 1 - projeto-piloto (Ano 1) em escolas de\nFundamental II e Médio em territórios de alta vulnerabilidade, com forte\nacompanhamento da comunidade escolar; Fase 2 - avaliação de frequência,\nclima escolar, indicadores de indisciplina e percepção das famílias antes de\nqualquer expansão; Fase 3 - expansão progressiva por adesão democrática,\npriorizando escolas de tempo integral mediante aprovação prévia do Conselho\nEscolar.\n3. Rede Estadual de Saúde Mental nas Escolas\nPsicólogos regionais acompanhando polos de escolas (tirando o diagnóstico\nclínico das costas do professor), fluxos intersetoriais diretos e desburocratizados\nentre a escola, a Secretaria da Saúde e a Assistência Social (SPS), e rodas de\ncuidado contínuas e preventivas para reconstruir o clima escolar e apoiar a\nsaúde ocupacional dos docentes.\n4. Escola do futuro do interior (ensino técnico e trabalho)\nDiagnóstico regional de cursos: revisar o portfólio técnico das 133 EEEPs para\nalinhá-lo à vocação econômica de cada município; criar trilhas territoriais Escola Técnica Rural (agroecologia, gestão rural, cooperativismo), energias\nrenováveis, logística, turismo.\nParcerias plurais de empregabilidade: SEDUC, Adece, Sistema S e cooperativas\nlocais desenhando juntos estágios reais e inserção produtiva direta.\nEscola Técnica Rural e laboratórios de agroecologia (conecta ao Compromisso 3).\n5. Permanência e acesso\nBolsa Alto Desempenho Estudantil no Ensino Médio, para alunos que\nmantiverem médias escolares acima de 8,5 em todas as disciplinas, a fim de\nestimular a capacidade juvenil no Ensino Médio, melhorando os índices gerais\ndo IDEB, além de fomentar a entrada dos jovens da rede de ensino público nas\nUniversidades Públicas.\nPrograma Escola Conectada (internet de alta velocidade e laboratórios nas\nescolas mais remotas, erradicando a desigualdade tecnológica).\nPlano de Valorização das Escolas do Interior.\nPré-Vestibular Estadual territorializado (aulões regionais, plataformas online e\nsimulados) e ponte de permanência no 1º ano do ensino superior/técnico, com\nmentoria e planos individuais para reduzir a evasão logo na travessia.\nPrograma de gratificações por desempenho e de bolsa-formação para os\ndocentes, de todos os níveis de ensino, que, através de parâmetros estabelecidos\nde acordo com a realidade escolar estrutural de cada região do Ceará, a ser\ndefinida pela SEDUC, melhorar os índices de desempenho dos seus alunos,\nrecebendo em pecúnia bonificação anual, além de subsídios para cursos de pós\ngraduação, dentro e fora do país.\n\n28"
+          },
+          {
+            "id": "delegado-29",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nDE ONDE VEM O RECURSO?\nRegime de colaboração com os municípios (base do Mais Paic, desde 2007);\nFNDE e MEC.\nParcerias com Sistema S, IFCE e universidades (estágios e inserção produtiva).\nEmendas estruturantes para formação docente e tutoria, e para laboratórios e\nlogística - não gasto pulverizado.\n30% do FUNDEB (não vinculado) e Orçamento da Secretaria de Educação (APM).\nConvênios CAPES / MEC (Parcial), Acordos de cooperação internacional, Lei\nestadual de inovação.\nLei específica com metas (bônus por indicador, sem habitualidade).\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nInício da avaliação diagnóstica de aprendizagem na rede (recomposição).\nInstituição da Câmara Técnica da Educação para coordenação intersetorial, com\ndiagnóstico integrado por município cruzando dados de escolas, saúde mental e\nvulnerabilidade.\nLançamento dos editais do Pré-Vestibular Estadual gratuito e regionalizado.\n1º ano:\nConsolidação e lançamento do piloto da Rede Estadual de Saúde Mental em polos\nprioritários do interior, e do piloto do Ceará Cívico.\nCriação do painel público de indicadores integrados para monitoramento\ncontínuo.\nImplementação da Lei específica com metas e desempenho, para professores e\nalunos.\nMandato completo:\nEnsino técnico alinhado às vocações regionais e expansão qualificada do tempo\nintegral (ampliando a base de 341 EEMTIs).\nInvestimentos hiper focados nas escolas do interior para zerar o gap de\ninfraestrutura frente à capital.\nFazer com que o Ceará atinja a meta do IDEB no Ensino Médio (5,2 de acordo com\na meta nacional).\nAumentar o indice de aprovação de alunos egressos da rede pública estadual\ncearense nas Universidades Públicas do Estado e do País.\n\n29"
+          },
+          {
+            "id": "delegado-30",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nComo você cobra (indicadores)?\nFiscalizando a Taxa de evasão e distorção idade-série no ensino médio.\nEvolução por habilidade nas avaliações de aprendizagem (não só aprovação) e\nevolução contínua no IDEB.\nEstudantes e professores atendidos em saúde mental.\n% de egressos do técnico com inserção produtiva e certificação.\n\n30"
+          },
+          {
+            "id": "delegado-31",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso 5 - Saúde que Chega na Hora\nMenos fila, menos espera e atendimento perto de casa - inclusive no interior.\nO QUE ESTÁ EM JOGO?\nO Estado tem bons equipamentos de referência - 13 hospitais próprios (8 na RMF e 5\nno interior), 6 UPAs, o Samu 192 (cobertura de 100% dos municípios exceto a capital),\nHemoce, Lacen e ESP/CE, além do repasse de incentivos a 85 hospitais polo - mas o\ncearense enfrenta filas para consultas especializadas, demora em exames e\nconcentração da alta complexidade na capital, o que penaliza quem vive longe. Em\nfevereiro de 2026, 64 mil pessoas aguardavam regulação, com hospitais como o IJF\noperando sistematicamente acima de 100% da capacidade.\nA isso somam-se: subfinanciamento crônico do teto federal de Média e Alta\nComplexidade (MAC); mortalidade infantil em 10,1 óbitos por 1.000 nascidos vivos\n(queda de 17,6% entre 2011-2025, mas ainda acima da meta de um dígito); baixa\nresolutividade da atenção primária (cobertura de ACS estagnada em 62,18%, com\n17,55% das internações do Estado sendo por Condições Sensíveis à Atenção\nPrimária); interiorização incompleta de hospitais estratégicos (Maciço de Baturité,\nCentro-Sul e HU da UECE); rede de saúde mental insuficiente (mortalidade por\nsuicídio de 8,9/100 mil habitantes); fragilidade na resposta a emergências sanitárias\n(Febre do Oropouche, arboviroses); déficit de especialistas fixados no interior; e\nbaixa capilaridade da vigilância sanitária e de zoonoses (só 71% dos municípios\nexecutam ações essenciais).\nBoa parte da doença que lota o hospital começa na falta de saneamento - por isso\neste compromisso conversa diretamente com os Compromissos 2 e 7.\n\n31"
+          },
+          {
+            "id": "delegado-32",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nONDE QUEREMOS CHEGAR?\n\nINDICADOR\n\nLINHA DE\nBASE\n\nMETA\n2028\n\nMETA\n2030\n\nMortalidade infantil\n(óbitos/1.000 NV)\n\n10,1\n\n9,5\n\n8,5\n\nCobertura de ACS\n\n62,18%\n\n70,0%\n\n85,0%\n\nInternações sensíveis à\natenção primária (ICSAPS)\n\n17,55%\n\n15,8%\n\n13,0%\n\nMortalidade por suicídio\n(/100 mil)\n\n8,9\n\n7,3\n\n6,5\n\nResolutividade regional\n\n<50,0%\n\n65,0%\n\n85,0%\n\nOcupação hospitalar (TOH)\n\n>100%\n\n95,0%\n\n90,0%\n\nAproximar a média e a alta complexidade das regiões, reduzindo a dependência\nda capital.\nFortalecer a atenção básica como porta de entrada resolutiva e acabar com o\npaciente em maca de corredor.\n\nO QUE VAMOS FAZER?\n1. Choque de financiamento - complementação estadual do teto MAC indexada ao\nIPCA-Saúde; ampliação do Programa Cuidar Melhor (ICMS Saúde); captação do PAC\nSaúde e do Programa Agora Tem Especialistas; linha de crédito via BNDES para\ninfraestrutura hospitalar.\n2. Rede materno-infantil (mortalidade de um dígito) - vinculação da gestante à\nmaternidade de referência já na 1ª consulta; expansão do Proexmaes às 5 Regiões de\nSaúde; teste rápido de sífilis e HIV em 100% das UBS; Método Canguru nos hospitais\nregionais.\n32"
+          },
+          {
+            "id": "delegado-33",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n3. Regulação, transparência e redução de filas - Central de Regulação Única\nDigital com painel público em tempo real; tempo máximo de espera por\nprocedimento (ex.: 90 dias para catarata); Programa de Alta Responsável e leitos de\ntransição; unificação das filas municipais e estaduais.\n4. Atenção primária como porta de entrada resolutiva - incentivo suplementar a\nmunicípios com cobertura de ACS ≥ 85%; metas de redução de ICSAPS; consolidação\ndo Ceará Sem Fome + Saúde; Avaliação Multidimensional do Idoso.\n5. Interiorização e complexidade regional - conclusão dos hospitais do Maciço de\nBaturité, do Centro-Sul e do Hospital Universitário da UECE; ampliação de leitos de\nUTI nos 5 hospitais regionais; oncologia e neurocirurgia em todas as regiões.\n6. Saúde mental e rede psicossocial - CAPS III (24h) nas 5 Regiões de Saúde; leitos\nde saúde mental em hospitais gerais regionais; expansão das equipes eMulti na\natenção básica; programa de redução do suicídio.\n7. Regulação de urgência e emergência - Central de Leitos em Tempo Real;\nunificação das centrais SAMU Estadual e Fortaleza; telemedicina em 100% das\nambulâncias; ampliação da Casa de Cuidados para 300 leitos de transição; meta de\nZero Macas em Corredor por mais de 24h.\n8. Vigilância e emergências sanitárias - 5 novas Unidades de Vigilância de\nZoonoses (UVZ) regionais; consolidação do Centro de Inteligência (Cieges-CE);\nVigidesastres em 64 municípios.\n9. Valorização e fixação de profissionais no interior - bolsa de fixação para\nespecialistas; ampliação das residências para 2.000 vagas; unidade móvel de\ntreinamento da ESP/CE.\n10. Interiorização de equipamentos estratégicos (financiado pela Reforma\nAdministrativa)\n11. Criação de Leitos de Retaguarda nas UPAs Estaduais e disponibilização de\nvagas de Leitos de Retaguarda nos Hospitais Filantrópicos conveniados com o\nEstado – A fim de reduzir, e ao longo do processo, acabar com as filas de esperar por\nleito nos corredores da emergência dos Pronto Socorros, desafogando a rede\nestadual quando a Taxa de Ocupação Hospitalar – TOH estiver acima de 95%.\n12. Hospital Infantil Albert Sabin 2 (HIAS 2) - Iguatu: unidade de alta\ncomplexidade pediátrica com 150 leitos, padrão organizacional idêntico ao HIAS\nFortaleza, atendendo as regiões Centro-Sul e Cariri. Investimento total de R$ 260\nmilhões (obra civil, instalações especiais, equipamentos médico-hospitalares,\nmobiliário/TI e supervisão), com inauguração prevista para julho de 2029.\n13. Diretriz já assumida: integrar saúde e saneamento, tratando esgoto como\npolítica de saúde preventiva (relação investimento × economia hospitalar).\n\n33"
+          },
+          {
+            "id": "delegado-34",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nDE ONDE VEM O RECURSO?\nTesouro Estadual, respeitando o piso constitucional de 12% da Receita Corrente\nLíquida (RCL) para a saúde; transferências federais de MAC/APS.\nNovo PAC Saúde (R$ 340 milhões) e Plano de Fortalecimento da Saúde do\ngoverno federal (R$ 362 milhões); Programa Agora Tem Especialistas (R$ 75\nmilhões).\nEconomia gerada pela ampliação do saneamento (menos internações por\ndoenças de veiculação hídrica).\nHIAS 2 (R$ 260 milhões): emendas de bancada federal do Ceará (R$ 100 milhões),\nemendas individuais de deputados/senadores (R$ 60 milhões), Ministério da\nSaúde/Novo PAC Saúde (R$ 50 milhões) e Tesouro Estadual/SESA (R$ 50\nmilhões). Custeio anual de operação: tabela SUS (R$ 60 mi, 38%), Fundo Estadual\nde Saúde (R$ 50 mi, 31%), emendas parlamentares impositivas (R$ 30 mi, 19%) e\nparcela da economia da Reforma Administrativa (R$ 18 mi, 11%).\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nLei de complementação do teto MAC; universalização dos testes rápidos de sífilis\ne HIV; lançamento do sistema digital de regulação com tempos máximos fixados\npara 5 cirurgias prioritárias; instituição do incentivo por cobertura de ACS;\npainel de leitos em tempo real e telemedicina no SAMU; 3 novas UVZs.\nLicitação e conclusão dos projetos e início da obra civil do HIAS 2.\nCriação de Leitos de Retaguarda nas UPAs Estaduais e disponibilização de vagas\nde Leitos de Retaguarda nos Hospitais Filantrópicos conveniados com o Estado.\nCentral de Regulação Única Digital com painel público em tempo real; tempo\nmáximo de espera por procedimento (ex.: 90 dias para catarata); Programa de\nAlta Responsável e leitos de transição; unificação das filas municipais e\nestaduais.\n1º ano:\nContratação da linha BNDES para modernização tecnológica; Método Canguru\nem todos os hospitais regionais; integração de 100% dos hospitais polo ao sistema\nde regulação; redução do ICSAPS para 14%; entrega dos hospitais de Baturité e\nCentro-Sul; CAPS III em todas as regiões; unificação das centrais SAMU e\nexpansão da Casa de Cuidados; 5 UVZs e Vigidesastres em 64 municípios.\nObra civil do HIAS 2 atinge 30%, com início da instalação de equipamentos de\nalta complexidade.\n\n34"
+          },
+          {
+            "id": "delegado-35",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nMandato completo:\nRecalibragem da política de incentivos por desempenho; meta de mortalidade\ninfantil de 8,5/1.000 NV; redução de 70% na fila de espera histórica; atenção\nprimária como ordenadora real do cuidado em 100% do Estado; autossuficiência\nregional em 85% dos procedimentos; cobertura universal de saúde mental na\natenção básica; Meta Zero Macas em Corredor; 2.000 residentes médicos.\nTestes, comissionamento e inauguração do HIAS 2 em julho de 2029.\nComo você cobra (indicadores)?\nTamanho da fila de consultas especializadas e tempo médio de espera de\nexames; cobertura da atenção básica; internações por doenças de veiculação\nhídrica (indicador cruzado com saneamento).\nOs seis indicadores da tabela de metas (mortalidade infantil, cobertura de ACS,\nICSAPS, mortalidade por suicídio, resolutividade regional e ocupação\nhospitalar).\nHIAS 2 entregue com 150 leitos ativos atendendo Centro-Sul e Cariri.\nDiminuição do tempo de espera na fila de Regulação de Vagas para Leitos de UTI\ne de Enfermaria.\nRedução/fim da política de “enfermaria de corredor” nos Pronto Socorros\nEstaduais.\n\n35"
+          },
+          {
+            "id": "delegado-36",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso 6 - Famílias Livres\nO êxito de um programa social se mede pelo número de famílias que deixam de\nprecisar dele.\nO QUE ESTÁ EM JOGO?\nPrograma social sem porta de saída vira curral eleitoral. Hoje falta conectar o\nbenefício à qualificação, trabalho e renda própria - e falta usar tecnologia para\nsaber quem é cada família e do que ela precisa para se emancipar. A informalidade\nelevada e a dificuldade de inserção do jovem tornam a autonomia econômica o\nverdadeiro objetivo da política social.\n\nONDE QUEREMOS CHEGAR?\nAumentar o número de famílias que saem da dependência de programas por\nmeio de renda própria, após a criação de critérios e estatística a serem\ndesenvolvidas em conjunto pelas Secretarias da Proteção Social - SPS, Secretaria\ndo Desenvolvimento Econômico - SDE, Secretaria das Mulheres e Secretaria das\nCidades.\nConectar beneficiários com capacidade produtiva a qualificação e vagas de\ntrabalho.\nReduzir a informalidade e ampliar a inserção do jovem.\n\nO QUE VAMOS FAZER?\nFim do assistencialismo por meio da tecnologia (Princípio 4)\nPrograma Porta de Saída (SPS / IDT): sistema inteligente que mapeia cada\nfamília beneficiária de auxílios e faz a conexão imediata com cursos técnicos,\nletramento digital e vagas de emprego mapeadas.\nCruzar dados (base social + capacidades + oportunidades) para desenhar uma\nporta de saída para cada família.\nVincular benefícios a trilhas de qualificação, intermediação de mão de obra e\napoio ao empreendedorismo.\nFoco na juventude: primeira oportunidade, empreendedorismo e conexão com o\nInterior que Produz (Compromisso 3) e a Escola do Futuro (Compromisso 4). A\nPorta de Saída também acompanha cada entrega habitacional do Compromisso\n2.\nCasas da Mulher Cearense - expansão de 7 para 14 unidades: dobrar a\ncapacidade de atendimento especializado à mulher vítima de violência no\ninterior, com novas unidades em Iguatu, Crateús, Tauá (conclusão), Camocim,\nIcó, Brejo Santo e Baturité. Investimento de R$ 42 milhões na construção das 7\nnovas unidades, com R$ 8,2 milhões/ano para manutenção das 14 unidades em\noperação plena, para que essa rede de apoio insira as mulheres vítimas de\nviolência no mercado de trabalho, dando-lhe autonomia financeira.\n\n36"
+          },
+          {
+            "id": "delegado-37",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nDE ONDE VEM O RECURSO?\n\nGoverno digital e integração de bases estaduais (custo marginal baixo).\nFundo Estadual de Combate à Pobreza (FECOP) e recursos ordinários da SPS, da\nSEMU e da Sec. Cidades.\nSecretaria de Desenvolvimento Econômico, Sistema S e parcerias privadas para\nqualificação e vagas.\nCasas da Mulher e demais equipamentos sociais: economia recorrente de R$\n32,8 milhões/ano gerada pela Reforma Administrativa (unificação e extinção de\nsecretarias sobrepostas - ver Parte III, O Método), que também garante a\nsustentabilidade financeira permanente dos novos equipamentos a partir do 4º\nano.\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nLevantamento dos dados das famílias que fazem parte do CadÚnico e análise\nqualitativa acerca da capacidade de inserção de parte de seu público no mercado\nde trabalho.\nCelebração de Convênios com empresas para absorção e priorização desse\npúblico nas contratações formais.\nInício do planejamento para a Construção das novas Casas da Mulher Cearense.\nPlanejamento e cadastros dos projetos empreendedores para instrumentalização\ndos compromissos 3 e 4, com a juventude do interior\n1º ano:\nInício da inserção de famílias pertencentes ao CadÚnico no mercado de trabalho\nlocal.\nAumento do número de abertura de MEI e Micro Empresas pela juventude, após\nconclusão do Ensino Médio.\nConclusão da Parceria com Empresas Locais de diversos setores para a inserção\ndo público de 18 a 24 anos no mercado de trabalho.\nConstrução de 3 das 7 novas Casas da Mulher Cearense previstas.\nMandato completo:\nRedução do número de famílias que deixaram de depender de programas por\nrenda própria.\nRedução dos índices de extrema pobreza no Estado do Ceará.\nAumento da empregabilidade do público de 18 a 24 anos.\nConstrução de todas as 7 novas Casas da Mulher Cearense e funcionamento\npleno das 14 Casas da Mulher.\n37"
+          },
+          {
+            "id": "delegado-38",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nComo você cobra (indicadores)?\nTaxa de Emancipação Social: número de famílias que deixaram de depender de\nprogramas por renda própria (indicador central).\nPessoas qualificadas e encaminhadas a trabalho.\nJovens em primeira oportunidade ou empreendendo.\nConstrução das 7 novas Casas da Mulher Cearense e Operação plena das 14\nCasas da Mulher.\n\n38"
+          },
+          {
+            "id": "delegado-39",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso 7 - Base do Desenvolvimento\nÁgua, energia, estradas e saneamento: a base física sem a qual nenhum outro\ncompromisso se sustenta.\nO QUE ESTÁ EM JOGO?\nEm junho de 2026, os 144 açudes monitorados pela Cogerh registraram 53,8% da\ncapacidade total, com 33 reservatórios em sangria - mas os Sertões de Crateús e\nCanindé seguem em escassez hídrica severa. As perdas físicas de água na rede da\nCagece estão entre 40% e 50%, o esgoto cobre apenas 44,8% do Estado (a meta do\nMarco Legal é 90% até 2033) e o déficit habitacional chega a 234 mil unidades. No\nPecém, o licenciamento ambiental no Ibama detém cerca de R$ 900 milhões em\ninvestimentos represados, e a malha de transmissão de energia tem gargalos que\nimpedem o escoamento de parques eólicos já concluídos.\nO Ceará tem uma janela histórica: hub de hidrogênio verde no Pecém (carteira de R$\n74,4 bilhões), potencial eólico de 94 GW e solar de 1.363 TWh/ano, e uma agenda de\nuniversalização do saneamento com prazo legal (2033). Falta destravar e financiar\nsem sobrecarregar o Tesouro - a necessidade de capital para saneamento no Ceará é\nestimada em R$ 10 a R$ 15 bilhões, valor que excede a capacidade de investimento\ndireto do Estado sem comprometer saúde e educação.\n\nONDE QUEREMOS CHEGAR?\nReduzir as perdas de água na rede de 45% para 25% e ampliar a cobertura de\nesgoto de 44,8% rumo à meta de 90% do Marco Legal (2033).\nDestravar os cerca de R$ 900 milhões em investimentos retidos por\nlicenciamento no Complexo do Pecém.\nEscoar a energia já contratada (1.400 km de linhas de transmissão pendentes) e\nretomar a cadeia eólica (após demissões na Vestas e na Aeris).\nAvançar em rodovias (déficit de 3.640 km de pavimentação em uma malha de\n11.669 km, dos quais 32,2% não são pavimentados), aeroportos e mobilidade\nurbana.\nCumprir com as metas do Marco Legal do Saneamento Básico.\n\nO QUE VAMOS FAZER?\n1. Segurança hídrica e Voucher Água\nSetorização intensiva e telemetria para reduzir perdas de água tratada em 5% ao\nano; conclusão dos Ramais do Salgado e Apodi; reanálise completa da situação\nda empresa responsável pela implementação da Dessal Ceará; água de reúso\nindustrial no Pecém.\nVoucher Água: subsídio de 10 m³/mês para famílias do CadÚnico, autofinanciado\npela redução de perdas da Cagece de 45% para 25% - dos 248 milhões de m³\nperdidos hoje por ano, a meta recupera 110 milhões de m³, beneficiando 916.667\nfamílias e gerando R$ 550 milhões/ano em receita recuperada.\n39"
+          },
+          {
+            "id": "delegado-40",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\n2. Complexo do Pecém e transição energética\nForça-tarefa para destravar as licenças ambientais no Ibama e acelerar as obras\ndo Berço 11; interlocução com o Governo Federal para a conclusão da\nTransnordestina; diversificação de cargas para agronegócio e combustíveis;\nrestauração da CE-085 (acesso rodoviário ao Complexo), com a criação de\nmoldais de transporte para o escoamento.\nInterlocução com o Governo Federal para a aceleração dos 1.400 km de linhas de\ntransmissão pendentes; programa emergencial de retomada da cadeia eólica;\nregulamentação da eólica offshore; interiorização da geração solar via usinas\ncomunitárias.\n3. Rodovias, aeroportos e mobilidade\nConclusão da Linha Leste do Metrô e expansão da integração tarifária na RMF;\nmanutenção do programa FORtaleCE (R$ 170 milhões) para requalificação\nasfáltica e drenagem urbana.\n4. Saneamento (conecta ao Compromisso 2)\nReanálise, Auditoria e Fiscalização na Execução das PPPs de esgoto já\ncontratadas (Aegea, 2022: R$ 6,2 bilhões em 17 municípios da RMF) e reanálise\ndos contratos das novas PPPs em estruturação (2025-2026: R$ 7 bilhões em 128\nmunicípios), priorizando as comunidades retomadas.\nSubsídio à ligação de esgoto para o CadÚnico (detalhado no Compromisso 2).\n5. IPO da Cagece - capital sem privatizar o controle\nAbertura de capital da Cagece (hoje sociedade de economia mista com 89,58% do\nEstado e 10,42% da Prefeitura de Fortaleza, rating AA-(bra) Fitch, receita líquida\nde R$ 2,1 bi e margem EBITDA de 28,8% em 2025) com controle estatal\npreservado, para captar recursos de universalização da infraestrutura de\nsaneamento e esgoto, sem endividar o Estado.\nEstrutura pós-IPO: Estado do Ceará com 35% a 50% das ações ordinárias + 1\nGolden Share (poder de veto sobre mudança de objeto social, mudança de sede,\nfusão/cisão, alteração de metas de universalização e redução de investimentos\nobrigatórios); investidor âncora de 10% a 15%; free float de 25% a 40%. Oferta\nhíbrida: 60% primária (caixa da empresa para obras) + 40% secundária (Tesouro\nEstadual). Listagem no Nível 2 de Governança da B3, com limite de voto de 5%\npor acionista (poison pill) e conselho de 9 membros (5 indicados pelo Estado, 3\nindependentes, 1 dos empregados).\n\n40"
+          },
+          {
+            "id": "delegado-41",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nValuation de referência: EBITDA projetado de R$ 650 milhões e múltiplo de 8,5x\nEV/EBITDA resultam em valor de mercado de ~R$ 5,5 bilhões (~R$ 29,50 por\nação), com captação estimada de R$ 1,89 bilhão (R$ 1,10 bi de oferta primária +\nR$ 550 mi de oferta secundária + R$ 247 mi de lote suplementar). Os recursos da\noferta primária seriam destinados a R$ 700 mi em obras de esgotamento\nsanitário, R$ 200 mi em modernização de ETAs/ETEs, R$ 130 mi em hidrômetros\ninteligentes e R$ 70 mi em reúso de água.\n\nDE ONDE VEM O RECURSO?\nPPPs, BNDES, financiamentos multilaterais e transferências do Novo PAC.\nReceita tarifária recuperada pela redução de perdas (financia o Voucher Água:\nR$ 550 milhões/ano).\nCapital privado via IPO da Cagece (oferta primária de R$ 1,10 bi e secundária de\nR$ 550 mi), sem onerar o limite de endividamento do Estado.\nInvestimento privado no Pecém (CIPP) e leilões de energia - matriz de\ninvestimentos 2027-2034: Hídrico R$ 1,65 bi (BNDES/Tarifária); Pecém/H2V R$\n21,3 bi (Privado/CIPP); Energia R$ 32,3 bi (Leilões/Privado); Rodovias R$ 4,6 bi\n(Federal/PPP); Saneamento R$ 7,0 bi (Privado/PPP); Habitação R$ 11,3 bi\n(Federal/Estado).\nRecurso financeiro captado, após o IPO da CAGECE.\n\nQUANDO ENTREGA?\nPrimeiros 100 dias:\nForça-tarefa de licenciamento do Pecém e plano de redução de perdas com\ntelemetria.\nRevisão, auditoria e análise de todos os contratos de PPPs com o Estado\nEnvio da Lei de Abertura de capital da Cagece (IPO) que para a ALECE.\nAuditoria e revisão dos contratos da implementação da DESSAL/CEARÁ.\nImplementação de Gabinete de Gestão de Recursos Hídricos para diagnosticar e\ninstrumentalizar meios de diminuir o desperdício atual de água tratada,\nverificando as causas do problema atual.\n1º ano:\nAssinatura/priorização das PPPs de esgoto; aceleração de transmissão e da BR116; reanálise do entrave para a emissão do alvará de construção da Dessal Ceará.\nRedução, pelo menos, de 45 para 40% o desperdício de água tratada.\nAprovação da Lei de Abertura de capital da Cagece e início\ninstrumentalização do seu IPO em Bolsa de Valores.\nInício do Programa “Voucher-Água” para as primeiras famílias do CadÚnico.\n\nda\n\nInício das obras de ligação de esgoto domiciliar à rede dos logradouros.\n41"
+          },
+          {
+            "id": "delegado-42",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nMandato completo:\nAvanço rumo às metas de saneamento de 2033.\nConclusão de ramais hídricos e da Linha Leste.\nConsolidação do Plano Estadual 2030-2050 e expansão de barragens\nsubterrâneas.\nIPO da Cagece concluído e recursos captados para reinvestimento em\nsaneamento público pela empresa.\nImplementação total do Programa “Voucher-Água” para as famílias do CadÚnico.\nAumento da cobertura de esgoto para 60% das residências do Ceará.\nComo você cobra (indicadores)?\n% de perdas de água na rede (meta: de 45% para 25%) e % de cobertura de esgoto\n(meta: 90% até 2033).\nFamílias beneficiadas pelo Voucher Água (meta: 916.667 famílias).\nInvestimentos destravados no Pecém (R$) e km de transmissão energizados.\nkm de rodovia recuperada/duplicada e marcos da mobilidade urbana.\nCaptação total via IPO da Cagece e manutenção do controle estatal (participação\ndo Estado nas ações ordinárias).\n\n42"
+          },
+          {
+            "id": "delegado-43",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nPARTE III - O MÉTODO\nUm Estado que se deixa cobrar.\nLiberal no método, social no resultado\nO método deste governo é simples: menos burocracia para quem produz, mais\ncobrança para quem governa. Menos burocracia inútil, mercado dinâmico, avaliação\nrigorosa e eficiência do gasto público - para entregar renda real no interior,\nsegurança alimentar, permanência estudantil e redução das desigualdades.\n\nGestão orientada a resultados e governo digital.\nAvaliação permanente de políticas públicas com apoio de IPECE e SEPLAG,\norientada por indicadores.\nTransformação digital e integração de bases estaduais (fundamento técnico do\nCompromisso 6 - Famílias Livres).\nSimplificação administrativa e marcos regulatórios eficientes (ex.: simplificação\nsanitária proporcional ao risco).\nRaio-X do Dinheiro Público Cearense (CGE/SEFAZ): plataforma avançada de\ntransparência em tempo real para rastrear despesas de fornecedores e repasses,\ncruzando dados de orçamento estadual e municipal com as ações legislativas,\npara que o cidadão acompanhe com facilidade para onde vai o dinheiro público.\n\nResponsabilidade fiscal e viabilidade orçamentária.\nReforma Administrativa do Executivo: reestruturação do organograma estadual\npara eliminar sobreposição de competências e cargos comissionados de alto\nescalão duplicados, reduzindo o número de órgãos da administração direta de 35\npara 28 (~20% da estrutura de cúpula), com a economia gerada carimbada para\nequipamentos sociais e de saúde (Compromisso 5). Medidas: unificação da\nSecretaria da Pesca e Aquicultura (SPA) com a Secretaria do Desenvolvimento\nAgrário (SDA), formando a SDAPA; extinção da SEPA (Proteção Animal),\nabsorvida pela SEMA como Subsecretaria; fusão da SESPORTE com a SECULT,\nformando a SECEL; transformação da SEJUV em Coordenadoria da Juventude\nna SECITECE; e unificação de SEDIV, SEIR e SEPINCE como coordenadorias na\nSEDIH. A CGD e a possível fusão SSPDS+SAP (tratada no Compromisso 1) são\nmantidas fora desta reforma, por decisão estratégica de preservar a autonomia\ndos órgãos de controle e segurança.\nInstrumentos inovadores de captação com preservação do patrimônio público\n(ex.: IPO da Cagece com Golden Share).\n43"
+          },
+          {
+            "id": "delegado-44",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCompromisso com o equilíbrio fiscal e as regras da Lei de Responsabilidade\nFiscal (LC nº 101/2000).\nConexão explícita do plano com o PPA, a LDO e a LOA do futuro governo.\nEngenharia financeira que combina alavancas - investimento próprio, crédito\nestrutural (FNE/BNB, BNDES, Sistema S) e alavancas federais (FNDE/PNAE,\nMEC, MDA, Novo PAC) - em vez de sobrecarregar o Tesouro.\n\n44"
+          },
+          {
+            "id": "delegado-45",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nQuadro-síntese de custeio das propostas de maior impacto orçamentário:\n\nMEDIDA DA REFORMA\nADMINISTRATIVA\n\nECONOMIA ESTIMADA (ANUAL)\n\nUnificação SDA + SPA (SDAPA)\n\nR$ 6.206.686\n\nExtinção SEPA (absorção pela SEMA)\n\nR$ 5.000.000\n\nFusão SECULT + SESPORTE (SECEL)\n\nR$ 6.000.000\n\nSEJUV (vinculação à SECITECE)\n\nR$ 3.800.000\n\nSEDIV + SEIR + SEPINCE (anexação\npela SEDIH)\n\nR$ 11.800.000\n\nTotal geral de economia recorrente\n\nR$ 32.806.686\n\nEsta economia recorrente financia, a partir do 4º ano, a manutenção das 14 Casas da\nMulher e parte do custeio do HIAS 2 (ver Compromisso 5), com um superávit\nremanescente de R$ 6,57 milhões/ano para novas políticas.\n\n45"
+          },
+          {
+            "id": "delegado-46",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nEm relação à reestruturação das Secretarias vinculadas à área de Segurança\nPública, a economia e nova estrutura passará a ser da seguinte forma, o que\nimplementará o custeio das políticas de segurança apresentada anteriormente:\n\nFONTE DE\nECONOMIA\n\nANTES\n(R$/ANO)\n\nDEPOIS\n(R$/ANO)\n\nECONOMIA\n(R$/ANO)\n\nFusão SSPDS+SAP\n(Cargos)\n\nR$ 22-28 milhões\n\nR$ 10-12 milhões\n\nR$ 6-10 milhões\n\nFusão\nSSPDS+SAP\n(Custeio)\n\nR$ 9-14 milhões\n\nR$ 5-8 milhões\n\nR$ 3-5 milhões\n\nExtinção CGD\n(Cargos/GADC)\n\nR$ 5,3-6 milhões\n\nR$ 3-3,5 milhões\n\nR$ 2,3-3,3\nmilhõe\n\nExtinção CGD\n(Custeio)\n\nR$ 2-3 milhões\n\nR$ 1-1,5 milhão\n\nR$ 1-2 milhões\n\nTotal estimado\n\nR$ 38,3-51 milhões\n\nR$ 19-25\nmilhões\n\nR$ 12,3-20,3\nmilhões\n\n46"
+          },
+          {
+            "id": "delegado-47",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nTabela Comparativa: modelo atual vs. modelo proposto\n\nDIMENSÃO\n\nMODELO ATUAL\n\nMODELO PROPOSTO\n\nEstrutura de comando\n\n2 Secretarias\nindependentes: SSPDS +\nSAP\n\n1 Secretaria Única\n(SSPDSAP) com 1\nSecretário e 2\nExecutivos\n\nÓrgãos vinculados\n\nPMCE, PCCE, Pefoce,\nCBMCE, AESP, SUPESP\n(6 vinculadas)\n\nPMCE, PCCE, Pefoce,\nCBMCE, PPCE, AESP,\nSUPESP (7 vinculadas)\n\nPolícia Penal\n\nDiretoria subordinada à\nSAP, sem autonomia ou\nLei Orgânica\n\nÓrgão vinculado\nautônomo, com\nComando-Geral e Lei\nOrgânica\n\nControle disciplinar\n\nCGD (órgão externo\ncentralizado) com 46\ncargos comissionados\n\n6 Corregedorias Gerais\ninternas especializadas\npor órgão\n\nCoordenação de meio\n\nEstruturas de RH, TI e\nJurídico duplicadas\nentre as pastas\n\nCoordenadorias\nunificadas, eliminando\nsobreposição\nadministrativa\n\nInteligência\n\nInteligência policial e\npenitenciária operando\nseparadamente\n\nSistema de Inteligência\nunificado e integrado à\nestrutura central\n\nGestão de fundos\n\nFSPDS e FUNPEN\ngeridos de forma isolada\n\nGestão complementar e\nintegrada sob a mesma\nsecretaria\n\nControle social\n\nCGD acumula função\ndisciplinar e correicional\n\nOuvidoria Geral de\nSegurança (Gabinete do\nGovernador)\n47"
+          },
+          {
+            "id": "delegado-48",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nGovernança, monitoramento e transparência\nPainel público de indicadores com todas as metas deste plano, atualizado e\naberto ao cidadão.\nPrestação de contas periódica sobre o cumprimento dos compromissos.\nComitê intersetorial e câmaras técnicas para coordenar as políticas transversais\n(substituindo silos por gestão orientada a resultados).\nOuvidoria e instâncias de participação social (conselhos e audiências).\n\nCompromissos transversais a todo o plano\nRegionalização e combate às desigualdades intraestaduais (as 14 Regiões de\nPlanejamento).\nParticipação e controle social da gestão.\nTransparência e integridade pública.\nGoverno digital e eficiência administrativa.\n\n48"
+          },
+          {
+            "id": "delegado-49",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nCronograma de implementação (visão consolidada)\nCada compromisso já traz seus próprios prazos. O quadro abaixo consolida os\nmarcos gerais do governo.\n\nHORIZONTE\n\nPRINCIPAIS MARCOS\n\nPrimeiros\n100 dias\n\nEnvio dos PLs de segurança à ALECE, da Reforma\nAdministrativa e do ICMS do tiro desportivo; decreto de\ncriação do GIRT e mobilização do Mega-Complexo\nPenitenciário (FUNPEN); instalação da Câmara Técnica da\nEducação e do Comitê Intersetorial; diagnóstico de\naprendizagem; piloto da merenda com compra local e\nmapeamento do Leve Poços; força-tarefa de licenciamento do\nPecém; lei de complementação do teto MAC e sistema digital\nde regulação da saúde; conclusão das 7 novas Casas da\nMulher; painel público de indicadores.\n\n1º ano\n\nUnificação administrativa da segurança e corregedorias\ninternas; conclusão do Mega-Complexo Penitenciário e início\nda ocupação progressiva; expansão do GIRT ao interior;\nprimeiros Centros Regionais de Distribuição e edital do Agro\nIndústria Ceará; piloto do Ceará Cívico e da Saúde Mental nas\nEscolas; PPPs de esgoto priorizadas; editais do Pré-Vestibular\ne do microcrédito rural; entrega dos hospitais de Baturité e\nCentro-Sul e obra civil do HIAS 2 a 90%; operação plena das 14\nCasas da Mulher.\n\nMandato\ncompleto\n\nPolícia Penal autônoma; Mega-Complexo Penitenciário em\ncapacidade total; reforma de 100% dos imóveis retomados pelo\nGIRT; rede de agroindústrias familiares consolidada;\nindependência hídrica das comunidades do Leve Poços;\nensino técnico territorializado; avanço às metas de\nsaneamento 2033; inauguração do HIAS 2 (jul/2029) e Meta\nZero Macas em Corredor; famílias emancipadas de programas\nsociais; IPO da Cagece.\n\n49"
+          },
+          {
+            "id": "delegado-50",
+            "titulo": "DELEGADO",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "DELEGADO\n\nHUGGO\nVICE FELIPE MOREIRA\n\nEncerramento\nEste plano foi escrito para ser cobrado. Cada compromisso diz o que será feito, como\nserá medido e quando será entregue e a Matriz de Transversalidade mostra que os\nproblemas do cearense não cabem em uma única secretaria.\nRetomar para Reconstruir é isso: primeiro o Estado volta a estar presente onde só\nexiste no papel; depois reconstrói renda, futuro e autonomia. Não pedimos que você\nacredite. Pedimos que leia, guarde e cobre este plano.\n\nCeará: Retomar para Reconstruir\nDelegado Huggo Leonardo · Felipe Moreira · Partido Missão\n\n50"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "1d0165e7ba38ea58fa471c7b719d658e2ca91170aac64209c0e30f43ce7ce5e9"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "3d12216f0974eb9d918ce41ecdbb94919265dbf48f7e41c7892b6962b80e8f96"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e9b86ea9bad882f48302c764ca763a9c5e8094732f5f17cc824a4e8b7f79e3fd"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "43c03961e1595d54ed650a899b98a4b77007bd97c6d387e23a83c09bb6c27546"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "e5ff6a86cd9eb847402ae490518237821a36d7789077b946362fc0f7e983b6cf"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "926b86eee0deac946dcd028157aac4e3af5d6951fe4a1e3c61c0e8502a16dbdb"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "af5b35fbd46df5ef5ed8d577388b0deb79658e0f0cc673e70da8a0c956e49f33"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "ef36aaaabef18fba39a61917d543f45c26644408c412a1008fdae959c56219e8"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "072d474c1c4bf7fe46be27285a944ac402b5445f180080beb581db950206f142"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "7a227364e08b40e7e2e71ed55f759681cf4114681c88fbdb84855b10b3024209"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6a7788c429bd758f68ba29783dcbacaecc56964866156d8862f825f61a308803"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "956903b2cb9d7c9df59e1133b5097af8f89c138e361a91d9aa94f4cb875e2db4"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "b012b30e22bd03daddf9597721ca11af4dd32fd3834c60dfbe1f3bc34a77ae83"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "5db840ca3947536c4b0cb561eecc51b350296723ab30b44b068cf536873627d5"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "387f0a5485143e7afc935a5e9e918829086ee668e0d6e772ae47205e5f781f38"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "a1e7259ac33710c85c8e817cc49a4b9bc60eead7b9ff5f165e21b41b247a90f1"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "3c3ceb2095721f2c1d8e2c3f3d6b01c7b40b12eefeb513d06e41dfaec1d1d718"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "e4bebe9f9a3126e1fd15d288eb4d586f644b5781f70dad699dff9e0c2609d3ff"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "e257652e2e91e44e1d7e805331e378e6e2cd3a7a5e794ce18cf6fe5724cbdff2"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "6e3ccc93fcd51f6ceae1c8790e97284b923764b461fba41f6cae1716fc10cdc7"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "3d8d1c7e633637f9a19be52eb2cf624c05c8d869e6439023b0569aa33a84a974"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "48f253969f467fc4e5a601d9a456382df95928c345657ca5fa247bd03794b6f5"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "7861be63aa7be2d41fb1e2fe144e0a3bf0c8630a4a248baa6c30d20939e6643c"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "5b82bdc0d7cef5453c4c7ec83a403ad5700fd8fd0f1e3129a253203780b42938"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "8aa253f634fe2366f579f3d9817823e942335ed26301f8e929f3a7d17b12c47f"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "466f56903f0ac62bf06afe9de57f384d3df55ba68a42567fd59c267f582e02d7"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "be2e189abcdb32a3b1290a1374ae4e10533e027143aacb54d57e29115f492fbc"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "e11a18dc9bb55872d62233bcaf98259df37854feb44070ea6691f748e77c6f0f"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "b521fd4c463176d513b1017024c49cc1c5e1c70b4c5634eef495db375a736b9b"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "ad10f38f43bec360bc9d5e6f5fb226b1e1126930100b2493531fe5413364782d"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "7e47e4c1a045c13afd15dfddbb68aeef283ab8a36f608f8c79d6df44f75a38be"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "b612cc250222be427bc1522ff530e47a09d19becf905ed7e2c81ae421eb96f2f"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "215c3d2edbbd6292d09754408d8b3f149e2c04f8b9c73993aabe72da6786bd67"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "0dfdc7efc8a3bd2727a004a9d34e37f081288bba86cd0f52412ab52f99dc5df0"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "c316e411f3ddf3daf9d839b5b5cbe55f62538349886c5c9197855fadf8fde786"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "e266a1ada18e3d3294409d21c5281a244e0cf3252d6c1063e8770d1b2d7b7271"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "2c8a6c19c338f3942ceb1d7b5735100bc5efd4d97a3e18aa4d4d47e9b4f8da78"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "c4f001e93038f5b20e42c3e9b91d8c25a7ad024c378999893738b49e2470b2f8"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "c3edaefa414d730d91b55ecf83c467d85ab116400b5a3cfc4ad9b1c0bf3dcd5d"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "27f9e81c9d4e5143ae16c2084282ee83399c956c3609066ec961d1c4abe9044e"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "0c5444fa4360ccbb63cc0b79dc79bb9c2406bff842eea2eb53fdfbfe15fb3a26"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "548ed9ce01a3e31d72a6f633a81c6e50106efd0ba8d1eddd927a001778b60d61"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "083b5cb1387ac00cac905c0c670bfea896e1e9f0c0f72956c18270ec454ff63b"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "95a2b7580c0f91bc55513b3f67c8299c5d1a420a87f4734631ea012b9cfa1d8d"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "7c8114965c01c17c9bcecb66b7bf0a8b684b40ecd1639c01e2a23ce2a201ea48"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "a0aa65d2ce94431d1e6aae19e2466bf34cea3d9f2068036d70fd33d27f63f965"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "665c2fc7ad9ead8c3a79ed54b31e7aa27e9f57143f6634d712aafea0ea78b7de"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "cdff6d38145116d8dcf473a8b481b5ff23c7bec192f43011e221e7b832c0054f"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "eec743c07aebd68e2a801f11da8ae49fcbaf6d8721c7b0a46ea8672e34013ddc"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "74f6c98aa9ea7112fe458e722db135ba4cfbcb18ee3fb5e4bdc8de4f137d7e5e"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê a criação da Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária, unificando inteligência policial e penitenciária sob o mesmo comando. O documento propõe elevar a Polícia Penal do Ceará a órgão vinculado autônomo, com comando e orçamento próprios. O plano propõe criar o Gabinete Integrado de Reconstrução Territorial, vinculado diretamente à Casa Civil. A política rural prevê elevar a compra pública local da agricultura familiar acima do piso previsto em lei. A política educacional propõe uma Rede Estadual de Saúde Mental nas Escolas. O plano prevê revisar o portfólio técnico das escolas profissionais para alinhá-lo à vocação econômica de cada município. A política de saúde prevê uma Central de Regulação Única Digital com painel público em tempo real. O programa propõe a abertura de capital da Cagece com controle estatal preservado.",
+    "frases": [
+      {
+        "texto": "O programa prevê a criação da Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária, unificando inteligência policial e penitenciária sob o mesmo comando.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 14,
+            "trecho": "Criar a Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária (SSP), unificando inteligência policial e penitenciária sob o mesmo comando"
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe elevar a Polícia Penal do Ceará a órgão vinculado autônomo, com comando e orçamento próprios.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 14,
+            "trecho": "Elevar a Polícia Penal (PPCE) a órgão vinculado autônomo, com comando e orçamento próprios"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe criar o Gabinete Integrado de Reconstrução Territorial, vinculado diretamente à Casa Civil.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 18,
+            "trecho": "Criar o Gabinete Integrado de Reconstrução Territorial (GIRT), vinculado diretamente à Casa Civil"
+          }
+        ]
+      },
+      {
+        "texto": "A política rural prevê elevar a compra pública local da agricultura familiar acima do piso previsto em lei.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 23,
+            "trecho": "elevar e desburocratizar, acima do piso de 45% já previsto em lei, a compra pública local da agricultura familiar"
+          }
+        ]
+      },
+      {
+        "texto": "A política educacional propõe uma Rede Estadual de Saúde Mental nas Escolas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 28,
+            "trecho": "3. Rede Estadual de Saúde Mental nas Escolas"
+          }
+        ]
+      },
+      {
+        "texto": "O plano prevê revisar o portfólio técnico das escolas profissionais para alinhá-lo à vocação econômica de cada município.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 28,
+            "trecho": "revisar o portfólio técnico das 133 EEEPs para alinhá-lo à vocação econômica de cada município"
+          }
+        ]
+      },
+      {
+        "texto": "A política de saúde prevê uma Central de Regulação Única Digital com painel público em tempo real.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 33,
+            "trecho": "Central de Regulação Única Digital com painel público em tempo real"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe a abertura de capital da Cagece com controle estatal preservado.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 40,
+            "trecho": "Abertura de capital da Cagece (hoje sociedade de economia mista com 89,58% do Estado e 10,42% da Prefeitura de Fortaleza, rating AA-(bra) Fitch, receita líquida de R$ 2,1 bi e margem EBITDA de 28,8% em 2025) com controle estatal preservado"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Reorganização institucional da segurança pública.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 14,
+            "trecho": "Criar a Secretaria de Segurança Pública, Defesa Social e Administração Penitenciária (SSP), unificando inteligência policial e penitenciária sob o mesmo comando"
+          }
+        ]
+      },
+      {
+        "id": "policia-penal",
+        "titulo": "Polícia Penal",
+        "descricao": "Autonomia institucional da Polícia Penal do Ceará.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 14,
+            "trecho": "Elevar a Polícia Penal (PPCE) a órgão vinculado autônomo, com comando e orçamento próprios"
+          }
+        ]
+      },
+      {
+        "id": "territorio",
+        "titulo": "Reconstrução territorial",
+        "descricao": "Coordenação estadual de ações territoriais.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 18,
+            "trecho": "Criar o Gabinete Integrado de Reconstrução Territorial (GIRT), vinculado diretamente à Casa Civil"
+          }
+        ]
+      },
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "Compras públicas da agricultura familiar.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 23,
+            "trecho": "elevar e desburocratizar, acima do piso de 45% já previsto em lei, a compra pública local da agricultura familiar"
+          }
+        ]
+      },
+      {
+        "id": "saude-mental-escolar",
+        "titulo": "Saúde mental escolar",
+        "descricao": "Atendimento de saúde mental nas escolas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002540417:01",
+            "pagina": 28,
+            "trecho": "3. Rede Estadual de Saúde Mental nas Escolas"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T11:32:18.310Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T11:34:31.469Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:1:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:2:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:3:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar; evidência menciona 45% mas não é contradita."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:4:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:5:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação (EEEPs são as escolas profissionais)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:6:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:7:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confirma integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar; os presentes na evidência não são contraditos."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:frase:8:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre toda a cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência apoia o resumo temático de reorganização institucional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (segurança pública institucional)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:seguranca-publica:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do resumo temático apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência apoia o resumo temático de autonomia institucional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (Polícia Penal)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:policia-penal:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do resumo temático apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência apoia o resumo temático de coordenação estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (reconstrução territorial)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:territorio:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do resumo temático apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência apoia o resumo temático de compras públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (agricultura familiar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:agricultura-familiar:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do resumo temático apresentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência apoia o resumo temático de atendimento de saúde mental."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente (saúde mental escolar)."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:identidade",
+        "verdict": "yes",
+        "reason": "Chave e documentos correspondem."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002540417:tema:saude-mental-escolar:documentos:CE:60002540417:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a cláusula material do resumo temático apresentado."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002540417",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T11:05:23Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002540417:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 2,
+        "uso": {
+          "input_tokens": 44929,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2244,
+          "reasoning_output_tokens": 1034
+        }
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 27315,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 22092,
+          "output_tokens_details": {
+            "thinking_tokens": 328
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 27315,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 22092,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 27315,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 27315
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.35159440000000003
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "02201be6df173b668c0f4be3dcc58ae70c663569404e346614d0e04bd9976048",
+    "extractedTextSha256": "69f955ee45588110c1a87c260bde3e713adf5e885f5821feef2bc1ce90f13e56",
+    "documentCount": 1,
+    "documentSetSha256": "d52a55fd0cc2082bf815c9fa7cdd6464748f7ecbfeac4a8a828be64f751fe330",
+    "contentSha256": "b7ff37525ccab1d80ba4346267b2284c88cc6d5342b33b44960d135110098ebd"
+  }
+}

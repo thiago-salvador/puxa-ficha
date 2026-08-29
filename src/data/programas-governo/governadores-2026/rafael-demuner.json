@@ -1,0 +1,955 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "ES",
+    "sqCandidato": "80002550832",
+    "slug": "rafael-demuner",
+    "nomeUrna": "RAFAEL DEMUNER",
+    "partido": "UP",
+    "arquivoNome": "2026ES80002550832_01.pdf",
+    "arquivoNoPacote": "ES/2026ES80002550832_01.pdf",
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-29T13:27:45Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "ES:80002550832:01",
+      "fonte": {
+        "arquivoNome": "2026ES80002550832_01.pdf",
+        "arquivoNoPacote": "ES/2026ES80002550832_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_ES.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-08-29T13:27:45Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "fdb7dcc3ff7e430894465a9b1e4a68e16442552da4682f7c796b44229a3e0aef",
+        "extractedTextSha256": "ec1bee987d16c07aba1bd6305e4774a5cf01af2b2ed84e77725a852102f5b031",
+        "paginas": 23,
+        "secoes": [
+          {
+            "id": "programa-e-propostas-da-unidade",
+            "titulo": "PROGRAMA E PROPOSTAS DA UNIDADE",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PROGRAMA E PROPOSTAS DA UNIDADE\nPOPULAR PELO SOCIALISMO (UP) PARA\nO ESTADO DO ESPÍRITO SANTO\n\nVitória, Espírito Santo.\nAgosto de 2026."
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n1. Aumento de 100% do salário-mínimo. Revogação das reformas trabalhista e da Previdência. Redução da\njornada de trabalho, fim da escala 6x1 e jornada de 36 horas semanais ......................................................... 9\n2. Fim do feminicídio e do assédio às mulheres. Salário igual e creche no local de trabalho. Prisão de todos\nos agressores e assassinos das mulheres. .................................................................................................... 10\n3. Suspensão dos pagamentos da dívida pública. Auditoria da Dívida. Nacionalização dos bancos. ............ 12\n4. Reestatização das empresas privatizadas. Criação das frentes emergenciais de trabalho para gerar\nmilhões de empregos; .................................................................................................................................... 12\n5. Anulação dos impostos extorsivos cobrados dos trabalhadores. Taxação das grandes fortunas. Fim dos\nsubsídios fiscais e financeiros aos monopólios. ............................................................................................. 13\n6. Reforma Agrária Popular. Fim do latifúndio. Controle estatal dos preços dos alimentos e controle e\nredução do uso de agrotóxicos. ..................................................................................................................... 13\n7. Educação pública e gratuita para todos e em todos os níveis; fim do lucro na educação. Garantia de livre\nacesso do povo à universidade e/ou cursos técnicos profissionalizantes; fim do vestibular, vestibulinho ou\nqualquer processo seletivo; ............................................................................................................................ 14\n8. Estatização do transporte público: passe-livre para estudantes e trabalhadores ....................................... 16\n9. Moradia digna para todas as famílias brasileiras. Especulação imobiliária é crime! .................................. 16\n10. Fim da submissão do Brasil aos EUA, a China e a todos os países imperialistas – Retomada da base de\nAlcântara e revogação do contrato de entrega das terras raras. .................................................................... 17\n11.Nacionalização dos planos de Saúde. Aumento do Orçamento que permita o funcionamento de 100% da\nsaúde pública (SUS) e obrigatoriedade de todos os políticos usarem o SUS e a Educação públicas. .......... 18\n12. Defesa do meio ambiente. Fim da exploração estrangeira de nossos minérios. ...................................... 18\n13. Combate à corrupção, confisco dos bens dos corruptos e de suas empresas. Expropriação das\nempresas que têm trabalho análogo à escravidão. ........................................................................................ 20\n14. Demarcação das terras indígenas e quilombolas! Defesa das reservas e florestas nacionais. ............... 20\n15. Defesa e incentivo à cultura nacional e popular; nacionalização de todas as companhias gravadoras de\nmúsica e produtoras de filmes. ....................................................................................................................... 20\n16. Punição exemplar para os torturadores e assassinos da ditadura, revisão da lei da Anistia. Luta pelo\ndireito à memória, verdade, justiça e reparação; Desmilitarização das polícias! ............................................ 21\n17. Fim da exploração do homem pelo homem, socialização de todas as grandes empresas. Construção de\numa sociedade socialista. .............................................................................................................................. 23\n18. Combate à LGBTfobia e garantia de direitos à população LGBT ............................................................. 23\n\n2"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-2",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nPROGRAMA DA UNIDADE POPULAR (UP)\nPARA O ESTADO DO ESPÍRITO SANTO\nO nosso estado é estratégico na produção e circulação de riquezas no país, possuindo\npolos de mineração, de siderurgia, de petróleo e gás e um dos maiores portos do Brasil.\nEssa fartura, entretanto, não chega à mesa dos trabalhadores e trabalhadoras capixabas.\nEnquanto os grandes grupos econômicos, de ramos como a mineração, petróleo, gás,\nsiderurgia e celulose lucram bilhões extraindo recursos naturais de nossas terras, o povo\ncapixaba precisa conviver com baixos salários, altíssimo custo de vida e moradia\ninacessível. Os recursos e os frutos do trabalho saem daqui, tornando-se lucro para os\nacionistas de outros países, de outros estados ou então para as grandes famílias do estado.\nNão são destinados para quem trabalha e produz toda essa riqueza. O que sobra para o\ncapixaba é a poluição, o adoecimento e a exploração.\nA especulação imobiliária empurra o preço dos imóveis e dos aluguéis para níveis cada vez\nmais distantes da realidade, deixando muitas famílias sem moradia e tantas outras\nprisioneiras do aluguel. O preço dos alimentos, cada vez mais alto, não acompanha a renda\nda classe trabalhadora. Os serviços públicos são privatizados e se tornam cada dia mais\nprecários.\nSão décadas de um controle das mesmas famílias e grupos econômicos no poder, sem\njamais atacar as raízes dos nossos problemas, porque isso significaria enfrentar os seus\npróprios interesses: os interesses da burguesia. Chega de sermos governados pelas velhas\nfamílias, pelas grandes máfias e pelos conhecidos políticos de sempre, que nunca\nresolveram nossa situação.\nNão nos contentamos em administrar melhor o capitalismo, precisamos superá-lo. O futuro\ncom que sonhamos só será construído pela luta organizada do nosso povo. Por isso, a\nUnidade Popular vem para apresentar uma alternativa à classe trabalhadora que coloque\nseus interesses em primeiro lugar.\nMORADIA\nO principal causador do déficit habitacional e do aumento do preço dos aluguéis é a\nespeculação imobiliária. Essa é uma prática em que especuladores com alto poder\naquisitivo compram terrenos, casas, salas comerciais e afins, visando apenas o lucro a\nlongo prazo. Eles deixam essas propriedades abandonadas, sem cumprir função social (o\nque desrespeita a Constituição Federal de 1988), até que seu valor de mercado aumente e\nesses especuladores lucrem com a venda. Enquanto milhares de pessoas não têm casa,\nmilhões de imóveis seguem sem uso. Este instrumento é utilizado pelos capitalistas para\nvalorizar artificialmente seus imóveis, mesmo que a custo da moradia do povo.\n\n3"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-3",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nA moradia precária também é um problema grave, e demonstra a irresponsabilidade do\nEstado em cumprir com o direito à moradia digna. De acordo com um relatório de 2023\nproduzido pelo Instituto Jones dos Santos Neves (IJSN), o estado do Espírito Santo tem\nmais de 130 mil famílias no déficit habitacional. São, no mínimo, 300 mil pessoas atingidas\npelos altos aluguéis, moradia precária ou coabitação.\nGrande parte da população entra em déficit habitacional devido aos altos aluguéis, que\natingem cerca de 120 mil famílias. Buscar medidas para conter a especulação imobiliária,\nbem como construir moradias populares livres de procedimentos de financiamento que\npossam endividar as famílias é fundamental. Essas medidas, além de dar impulso à\neconomia do estado, pois geram empregos e desafogam o orçamento das famílias,\nassegurando maior estabilidade financeira, também melhorariam suas condições de saúde,\nlazer e educação, pois a realidade é que o povo deixa de usufruir da vida quando tem medo\nde ser despejado. Moradia digna é um passo fundamental no combate às diversas mazelas\nque acometem a classe trabalhadora!\nAlém disso, o Censo aponta que, em 2023, o aluguel disparou em 16%. Esse aumento tem\ncomo consequência direta o aumento na população em situação de rua. O Espírito Santo\npossui cerca de 4,5 mil pessoas em situação de rua, com aproximadamente 1,1 mil desse\ntotal concentradas só na capital.\nFica evidente, portanto, a necessidade de uma profunda reforma urbana no nosso país e\nno nosso estado. Temos a capital com o metro quadrado mais caro do país, e o crescimento\ndo preço dos aluguéis é uma realidade também nos interiores.\nSAÚDE\nO sistema capitalista tem a universalização da mercadoria como uma de suas\ncaracterísticas. Isto é, toda propriedade, bens e serviços deixam de ter fim na sua utilização\ne passam a ter o lucro como finalidade. Isto inclui os serviços essenciais para nossa\nsobrevivência, como a saúde.\nNa fase atual do capitalismo em crise, o imperialismo, direitos conquistados historicamente\npela classe trabalhadora são atacados pelas classes dominantes. Uma dessas conquistas\né o Sistema Único de Saúde (SUS), o maior sistema público e universal de saúde no mundo\nque, ao invés de ser protegido e aprimorado, vem sofrendo com a sua precarização, através\ndas privatizações e dos cortes e limitações orçamentárias de investimento em saúde\nrealizados pelos governos a serviço da burguesia. Ao invés de melhorar o serviço público,\na escolha política dos governantes tem sido entregar o SUS para a péssima gestão privada,\nque não enxerga a saúde como um direito de todos.\nA terceirização de diversos PAs e UPAs (como as de São Pedro, Enseada do Suá, Carapina\ne Riviera da Barra) e dos hospitais estaduais, como o Hospital Estadual Central em Vitória,\no Hospital Estadual Dr. Jayme Santos Neves na Serra e o Hospital Estadual de Urgência e\nEmergência trouxe problemas de superlotação e déficit de funcionários, pois a entrega para\no setor privado implementa uma lógica de lucro acima da qualidade nos serviços essenciais\ne, como consequência, foram registradas mais de 8.417 falhas assistenciais na saúde no\n\n4"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-4",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nEspírito Santo. Portanto, a Unidade Popular assume o compromisso de lutar pelo\nfortalecimento do SUS e contra todas as formas de concessões ao serviço privado.\nMEIO AMBIENTE\nA discussão acerca do meio ambiente está interligada à discussão sobre a saúde. Podemos\ncitar o aumento do volume do pó preto que é solto pelas empresas mineradoras e\nsiderúrgicas, como por exemplo Samarco, ArcelorMittal e Vale, investigadas e apontadas\ncomo as principais causadoras das emissões de complexos industriais na CPI do pó preto\nem 2015, que afeta a população da Grande Vitória e é responsável tanto por problemas\nleves de saúde, como rinite e bronquite, quanto por alterações do sistema nervoso, danos\nirreversíveis nas células do pulmão e câncer. O nível do pó preto aumentou 50% em 2024,\ndemonstrando a falta de compromisso dos governos com o povo e com a natureza, pois\nestes poluentes também afetam o manguezal e as praias da região.\nO descompromisso se revela também na falta de medidas e leis que irão de fato diminuir a\nemissão de complexos industriais; as multas, por exemplo, são irrisórias em comparação\ncom o lucro das empresas.\nAlém disso, devemos lembrar que, em novembro de 2015, ocorreu o maior crime ambiental\ndo nosso país, o rompimento da barragem de Fundão, em Mariana/MG, que despejou cerca\nde 40 milhões de m³ de rejeitos de minério no Rio Doce. Nenhum responsável pelo desastre\nfoi preso ou condenado até hoje, em contrapartida, o povo capixaba está condenado a lidar\ncom a contaminação do Rio Doce, que atingiu a vida de cerca de 2 milhões de pessoas em\ndiversos municípios do estado banhados pelo rio. Agricultores, pescadores, aldeias\nindígenas, artesãos, comerciantes, empreendedores turísticos, marisqueiros, catadores de\ncaranguejos e surfistas que tinham suas atividades econômicas direta ou indiretamente\nrelacionadas à água foram severamente prejudicados. Além disso, a lama impacta a vida e\na saúde de toda a população de atingidos, que hoje tem dificuldade até mesmo de acessar\nágua limpa. A política de indenizações não responde às necessidades dos atingidos, e\nsequer chega para todos que deveriam ser indenizados por esse crime. Isso mostra que o\nlucro das grandes mineradoras segue protegido pelo estado, enquanto o capixaba paga\ncom sua saúde e com a perda da biodiversidade do estado.\nSEGURANÇA PÚBLICA\nPara combater de fato a criminalidade, é necessário acabar com a lógica militarista imediata\ncomo solução de problemas estruturais. Enquanto existirem salários baixos, desemprego e\nempregos precários, o crime organizado sempre irá existir.\nPor outro lado, a polícia militar não tem como objetivo a segurança da população e dos\ntrabalhadores, mas a garantia da propriedade privada dos ricos. Isto fica evidente ao\nvermos que nenhum problema de violência que afeta o nosso estado foi solucionado\nconcretamente. Há narrativas de que o crime no estado está diminuindo, mas a população\nnão sente nenhuma mudança na pele, pelo contrário: a letalidade policial aumentou em\n2024 e 2025, em contramão com a média brasileira. Também vemos o crescimento da\nperseguição aos movimentos sociais e ao povo pobre.\n\n5"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-5",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nAo invés de aumentar a frota policial, devemos expandir o acesso à cultura, educação e\ntrabalho para os trabalhadores, em especial marginalizados e de periferia, para enfraquecer\nas facções criminosas.\nTRABALHO E RENDA\nPara a burguesia lucrar cada vez mais, é preciso expandir a mais-valia que adquire, isto é,\no quanto é extraído do trabalho de seus empregados. O desemprego, a precarização do\ntrabalho, o trabalho informal, os baixos salários e os juros altíssimos possuem essa função\ne são um dos principais problemas que acometem a classe trabalhadora. No Espírito Santo,\na renda média dos capixabas é abaixo da média do Brasil, e o custo de vida no estado é\nmaior do que a média brasileira. Portanto, o povo do nosso estado é um dos que mais têm\ndificuldade de pagar suas contas e, consequentemente, um dos que mais se endividam.\nMULHERES E CRIANÇAS\nMais de um milhão de capixabas vivem na pobreza, cerca de 26% da população, enquanto\naproximadamente 16% sobrevivem em situação de extrema pobreza. Essa realidade atinge\nprincipalmente as mulheres trabalhadoras, as crianças e a juventude. Em 2025, o estado\nregistrou 75 homicídios de mulheres, mais de 26 mil casos de violência doméstica e 2.638\ncasos de estupro, dos quais 1.082 foram estupros de vulnerável. Apesar desse cenário,\nexistem apenas 11 Delegacias Especializadas de Atendimento à Mulher em todo o Espírito\nSanto, e nenhuma funciona 24 horas por dia.\nA mesma desigualdade se expressa na educação. Os municípios mais pobres concentram\nas maiores filas por vagas em creches, atingindo principalmente as famílias inscritas no\nCadastro Único. Centenas de jovens abandonam o ensino médio todos os anos em razão\ndas dificuldades econômicas e da necessidade de trabalhar precocemente. Apenas uma\npequena parcela da juventude capixaba consegue acessar o ensino superior, e um número\nainda menor permanece nas instituições públicas, enfrentando o alto custo da moradia, a\ninsuficiência da assistência estudantil e a necessidade de conciliar trabalho e estudo. Para\na Unidade Popular, garantir direitos às mulheres, às crianças e à juventude significa colocar\no orçamento público a serviço do povo trabalhador.\nEDUCAÇÃO\nNo capitalismo, a educação deixa de ser tratada como um direito fundamental e passa a\nser cada vez mais subordinada à lógica da mercadoria. Essa desigualdade aparece de\nforma concreta no Espírito Santo: enquanto municípios e bairros mais ricos concentram\nmelhores estruturas e condições de ensino, nas regiões mais pobres faltam vagas em\ncreches, professores, equipamentos e condições adequadas para que crianças e jovens\npermaneçam estudando. Essa diferença determina oportunidades profundamente\ndesiguais desde os primeiros anos de vida. No Ensino Médio, a situação se agrava para a\njuventude das periferias, que muitas vezes precisa conciliar estudo e trabalho e enfrenta\nescolas mais precarizadas. Estudo sobre o Novo Ensino Médio no Espírito Santo apontou,\ninclusive, que escolas localizadas nas regiões mais violentas apresentaram taxa de evasão\n20% superior à registrada em áreas mais seguras, demonstrando a relação direta entre\ndesigualdade territorial e abandono escolar.\n\n6"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-6",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nO acesso ao ensino superior também continua sendo privilégio de uma parcela reduzida da\npopulação. Para a juventude trabalhadora, não basta conseguir entrar em uma\nuniversidade: é preciso ter condições de permanecer nela, pagar transporte, alimentação e\nmoradia e, muitas vezes, conciliar os estudos com longas jornadas de trabalho. Defender\numa educação verdadeiramente pública significa garantir que o lugar onde uma pessoa\nnasce, a renda de sua família ou a necessidade de trabalhar não determinem até onde ela\npoderá estudar.\nCULTURA, ESPORTE E LAZER\nA cultura, o esporte e o lazer também são direitos negados à maior parte da classe\ntrabalhadora. A longa jornada de trabalho, aprofundada pela escala 6x1, consome grande\nparte do tempo e da vida dos trabalhadores, deixando pouco espaço para o descanso, a\nconvivência, a prática esportiva e a produção e fruição cultural. Ao mesmo tempo, teatros,\ncentros culturais, espaços esportivos e equipamentos de lazer permanecem concentrados\nprincipalmente nas regiões centrais e nos bairros de maior renda, enquanto as periferias e\nmuitos municípios do interior convivem com a ausência desses espaços.\nEssa desigualdade é reforçada pela própria política cultural do Estado. Grandes eventos e\ngrandes editais recebem prioridade e concentram recursos, enquanto artistas populares,\ngrupos culturais dos bairros, iniciativas comunitárias e atletas que estão começando\nencontram enormes dificuldades para desenvolver seu trabalho. Para a Unidade Popular,\ncultura, esporte e lazer não podem ser privilégios nem mercadorias: devem fazer parte da\nvida cotidiana do povo, com acesso aos equipamentos públicos, incentivo à produção\ncultural popular e condições para que artistas e atletas das periferias e do interior possam\nproduzir, trabalhar e se desenvolver.\nTRANSPORTE PÚBLICO\nCada vez mais a especulação imobiliária empurra a classe trabalhadora para as periferias\ndas cidades. Porém, os empregos, os melhores equipamentos públicos de saúde e\neducação e os locais com melhor acesso ao transporte público estão concentrados nos\ncentros mais desenvolvidos das cidades, justamente de onde a população foi expulsa. Essa\ndinâmica cria uma cidade ao contrário: quem mais precisa de mobilidade urbana é quem\ntem menos acesso a ela.\nO transporte coletivo, mais do que apenas um serviço público, deve ser entendido como\num direito fundamental. É por meio dele que visitamos nossos amigos e familiares, que\nvamos a consultas e atendimentos médicos, que vamos ao trabalho. O transporte público\né uma necessidade, não uma mercadoria para ser explorada. No Espírito Santo, somente\no sistema Transcol transporta cerca de 14 milhões de passageiros por mês, mas o gasto\ncom transporte consome até 18% do salário mínimo, chegando ao custo anual de R$ 3.120\ncom passagens. Por isso, para aliviar o custo de vida sobre as famílias capixabas e garantir\nseus direitos, é urgente a implementação da tarifa zero.\nAinda assim, zerar a tarifa não trará a resolução do problema por completo. Enquanto as\ngrandes empresas de ônibus priorizarem o lucro, haverá pressão para aumento de\npassagem e sucateamento da frota. Por isso, é necessário que o sistema se torne\n\n7"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-7",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\ncompletamente público. Não basta que a gestão fique a cargo da Ceturb, é preciso que a\noperação também seja feita por empresas públicas do estado. Enquanto isso não\nacontecer, a população capixaba permanecerá refém dos interesses das grandes\nempresas privadas de transporte.\nPODER POPULAR E SOBERANIA\nPara, de fato, defender a soberania nacional é preciso romper completamente com os\npaíses imperialistas, com o poder político e econômico da burguesia, e apoiar a luta por\nlibertação nos países dominados pelo sistema capitalista. Isto significa acabar com a\ncondição de miséria e exploração a qual a classe trabalhadora está submetida e,\nnecessariamente, ter a ampla participação do povo nos diversos setores do país, para\nterem soberania de decidirem que os recursos naturais do Brasil deverão ser utilizados para\natender os interesses e as demandas do próprio povo.\nPOR MEMÓRIA, VERDADE E JUSTIÇA\nA impunidade dos crimes da ditadura empresarial-militar de 1964 fortaleceu a extrema\ndireita, permitiu que torturadores fossem tratados como heróis e abriu caminho para novas\nameaças à democracia, como a tentativa de golpe de 8 de janeiro de 2023. No Espírito\nSanto, a luta pela memória, verdade e justiça também é a luta contra o revisionismo\nhistórico, o fascismo e toda tentativa de apagar a resistência do povo brasileiro. Não haverá\ndemocracia plena enquanto os responsáveis pelos crimes da ditadura permanecerem\nimpunes e seus defensores continuarem atacando os direitos do povo.\n\n8"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-8",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nPROPOSTAS\nNosso estado não pode ser pensado separadamente do Brasil e do mundo. O Espírito\nSanto ocupa uma posição estratégica na produção e circulação de riquezas do país,\nconcentrando atividades de mineração, siderurgia, petróleo e gás, celulose, logística e\ngrandes complexos portuários. Entretanto, essa riqueza não é colocada a serviço de quem\ntrabalha. Enquanto grandes grupos econômicos acumulam bilhões, grande parte do povo\ncapixaba enfrenta baixos salários, alto custo de vida, moradia cara, serviços públicos\nprecarizados e os efeitos sociais e ambientais da exploração econômica.\nPor isso, nossas propostas estaduais estão articuladas ao programa nacional da Unidade\nPopular e têm como objetivo imediato melhorar profundamente as condições de vida do\npovo e, ao mesmo tempo, ampliar sua organização e seu controle sobre as riquezas e o\nEstado.\n\n1. Aumento de 100% do salário-mínimo. Revogação das reformas\ntrabalhista e da Previdência. Redução da jornada de trabalho, fim da\nescala 6x1 e jornada de 36 horas semanais\n● Criação do salário-mínimo capixaba de R$ 3.242,00.\n● Redução da jornada dos servidores públicos estaduais e das trabalhadoras e\ntrabalhadores terceirizados contratados pelo Estado para 36 horas semanais, sem\nredução salarial.\n● Política permanente de valorização dos servidores estaduais, com reajustes acima\nda inflação.\n● Abertura de concursos públicos para substituir progressivamente vínculos precários\ne terceirizações nos serviços públicos estaduais.\n● Criação de Frentes Estaduais de Trabalho, empregando diretamente trabalhadores\ndesempregados e subempregados em obras de habitação, saneamento,\nrecuperação ambiental, manutenção de escolas, hospitais, estradas e demais\nequipamentos públicos.\n● Prioridade para contratação de trabalhadores residentes nas regiões onde forem\nrealizadas grandes obras públicas.\n● Política estadual de geração de emprego para a juventude, com formação\nprofissional e integração às frentes de trabalho.\n● Combate ao trabalho análogo à escravidão e fortalecimento da fiscalização, em\narticulação com os órgãos competentes.\n● Apoio às cooperativas de trabalhadores, empreendimentos de economia solidária,\nfeiras populares, pequenos produtores e iniciativas comunitárias.\n\n9"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-9",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Combate à precarização do trabalho por aplicativos e apoio à organização dos\ntrabalhadores do setor.\n● Proibição das bets e sites de aposta, combatendo o endividamento da classe\ntrabalhadora.\n\n2. Fim do feminicídio e do assédio às mulheres. Salário igual e creche\nno local de trabalho. Prisão de todos os agressores e assassinos das\nmulheres.\n● Fortalecimento da Secretaria Estadual das Mulheres, responsável por planejar,\ncoordenar, executar e fiscalizar as políticas públicas para as mulheres no Espírito\nSanto.\n● Estruturar uma rede estadual integrada de enfrentamento à violência contra as\nmulheres, articulando saúde, assistência social, educação, segurança pública,\njustiça, além das universidades e participação dos movimentos populares, com\natendimento territorializado e humanizado.\n● Expandir as Delegacias Especializadas de Atendimento à Mulher, garantindo\nfuncionamento 24 horas, inclusive aos finais de semana e feriados, e ampliar a\ncobertura e os horários dos Institutos Médicos Legais.\n● Implantar a Casa da Mulher Brasileira nas diferentes regiões do Espírito Santo e\nampliar os Centros de Referência, Casas Abrigo e Casas de Passagem, garantindo\nacolhimento, proteção e atendimento psicológico, social e jurídico.\n● Garantir auxílio financeiro emergencial, acesso prioritário à moradia, alimentação,\nassistência social, qualificação profissional e emprego às mulheres vítimas de\nviolência, assegurando condições materiais para romper o ciclo de violência.\n● Garantir transporte público gratuito para mulheres em situação de violência,\nfacilitando o acesso aos serviços de saúde, segurança, justiça e assistência social.\n● Desenvolver uma política permanente de prevenção e combate à violência contra as\nmulheres, com campanhas educativas, formação continuada dos servidores públicos\ne ações nas escolas, comunidades e locais de trabalho, garantindo a aplicação\nefetiva da Lei Maria da Penha.\n● Implementar uma política permanente de combate à violência sexual contra crianças\ne adolescentes, fortalecendo a prevenção, a identificação dos casos, a proteção e a\nrede de atendimento às vítimas.\n● Preservar a memória de Araceli Cabrera Crespo e lutar por justiça, mantendo sua\nhistória como símbolo capixaba da luta contra a violência sexual e em defesa dos\ndireitos das crianças e adolescentes.\n\n10"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-10",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Garantir igualdade salarial entre homens e mulheres, com fiscalização permanente\ndas relações de trabalho e punição às empresas que pratiquem discriminação\nsalarial ou profissional.\n● Criar políticas estaduais de emprego, qualificação profissional e geração de renda\npara as mulheres, com atenção especial às mulheres negras, chefes de família,\nmoradoras das periferias, trabalhadoras rurais, indígenas, quilombolas e demais\ngrupos historicamente explorados.\n● Ampliar a oferta de creches públicas e defender a implantação de creches nos locais\nde trabalho, garantindo às mulheres condições efetivas de trabalhar, estudar e\nparticipar da vida política e social.\n● Implantar restaurantes populares e lavanderias públicas comunitárias, contribuindo\npara socializar o trabalho doméstico e reduzir a sobrecarga que hoje recai\nprincipalmente sobre as mulheres.\n● Fortalecer a atenção integral à saúde da mulher em todas as fases da vida,\ngarantindo saúde sexual e reprodutiva, planejamento reprodutivo, acesso aos\nmétodos contraceptivos, assistência à menopausa e atendimento especializado.\n● Ampliar as maternidades e os centros de parto humanizado, garantindo assistência\npública, segura e respeitosa durante a gestação, o parto e o pós-parto.\n● Garantir o atendimento ao aborto nos casos previstos em lei, ampliando e\nregionalizando os serviços públicos que realizam o procedimento de forma segura,\ndigna e humanizada.\n● Garantir educação sexual nas escolas e nos territórios, articulada às políticas de\nsaúde, educação e assistência social, com acesso à informação, prevenção da\nviolência sexual e dos abusos e orientação sobre saúde sexual e reprodutiva.\n● Criar conselhos, plenárias e mecanismos permanentes de participação das mulheres\nnos municípios e regiões do Espírito Santo, assegurando participação popular direta\nna elaboração, acompanhamento e fiscalização das políticas públicas.\n\n3. Suspensão dos pagamentos da dívida pública. Auditoria da Dívida.\nNacionalização dos bancos.\n● Manutenção do Banestes integralmente público. Proibição de sua privatização.\n● Proibição da utilização do Banestes para exploração de apostas e bets.\n● Fortalecimento do Banestes como instrumento de desenvolvimento econômico\nestadual, e não apenas como banco comercial.\n● Criação de linhas de crédito subsidiadas para pequenos agricultores, cooperativas,\npequenos comerciantes, economia solidária e produção habitacional.\n\n11"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-11",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Prioridade do crédito público para atividades que atendam às necessidades da\npopulação.\n● Ampliação da presença do Banestes nas regiões menos atendidas pelo sistema\nfinanceiro privado.\n● Transparência e controle popular sobre a política de crédito e investimento das\ninstituições financeiras estaduais.\n\n4. Reestatização das empresas privatizadas. Criação das frentes\nemergenciais de trabalho para gerar milhões de empregos;\n● Ampliação de obras públicas com contratação da população local.\n● Plebiscito popular obrigatório antes de qualquer nova privatização de empresa ou\nserviço público estadual.\n● Defesa da reestatização da Escelsa, ES Gás e Codesa.\n● Reversão das PPPs e terceirizações da Cesan.\n● Defesa de uma Cesan 100% pública, responsável por água e saneamento como\ndireitos sociais.\n● Criação de frentes emergenciais de trabalho nos bairros pobres e no interior, com\nobras de infraestrutura, saneamento, manutenção e construção de equipamentos de\nsaúde e moradias populares. Ampliação de obras públicas com contratação da\npopulação local.\n● Auditoria pública e popular dos contratos de concessão e privatização existentes.\nRevisão das concessões de portos, aeroportos e estradas entregues a empresas\nprivadas.\n● Política estadual de recuperação e expansão da indústria. Política estadual para\nagregar valor às matérias-primas produzidas no Espírito Santo, combatendo uma\neconomia baseada somente na extração e exportação.\n● Encampação pelo Estado de plantas industriais em processo de falência judicial ou\nfechamento, com utilização e adequação das fábricas fechadas ou falidas para\ngerenciamento cooperativo entre trabalhadores e em benefício da população.\n● Política industrial ativa e direcionada a setores estratégicos, com financiamento,\nestímulo à contratação, pesquisa, desenvolvimento e transferência de tecnologia.\n● Estímulo às redes de economia local e solidária, com apoio, subsídios e linhas de\ncrédito especiais às feiras agroecológicas, artesanato e pequenos produtores locais\nde bens e serviços.\n\n12"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-12",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n5. Anulação dos impostos extorsivos cobrados dos trabalhadores.\nTaxação das grandes fortunas. Fim dos subsídios fiscais e financeiros\naos monopólios.\n● Isenção de ICMS sobre todos os itens da cesta básica, incluindo carne, café, óleo e\naçúcar.\n● Aumento do imposto de exportação sobre commodities e minérios, priorizando o\nabastecimento do mercado interno e as demandas do povo.\n● Cota mínima obrigatória de produção destinada ao mercado interno, com maior\ntaxação para as empresas que não cumprirem.\n● Redução da carga de impostos indiretos que atinge a população.\n● Criação de impostos progressivos estaduais, fazendo com que quem possui maior\nriqueza pague proporcionalmente mais.\n\n6. Reforma Agrária Popular. Fim do latifúndio. Controle estatal dos\npreços dos alimentos e controle e redução do uso de agrotóxicos.\n● Criação de uma rede de supermercados populares, para garantir a distribuição de\nalimentos a preço baixo.\n● Redução de impostos para comerciantes locais e pequenos agricultores.\n● Garantia de acesso à terra e crédito para aqueles que nela trabalham, com fomento\nàs pequenas culturas, agricultura urbana e agricultura familiar.\n● Regularização das terras agricultáveis e combate à grilagem, com destinação a\ncooperativas rurais formadas por pequenos produtores e trabalhadores sem terra.\n● Universalização da assistência técnica e extensão rural.\n● Capacitação dos agricultores na perspectiva agroecológica.\n● Ampliação do crédito e das políticas de comercialização para famílias assentadas e\npequenos proprietários rurais.\n● Fortalecimento dos bancos de alimentos e dos mercados populares nas periferias.\n● Fortalecimento da agricultura familiar para controlar os preços dos alimentos básicos\ne abastecer as famílias em situação de insegurança alimentar.\n● Prioridade à produção de alimentos e redução progressiva do uso de agrotóxicos.\n\n13"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-13",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n7. Educação pública e gratuita para todos e em todos os níveis; fim do\nlucro na educação. Garantia de livre acesso do povo à universidade e/ou\ncursos técnicos profissionalizantes; fim do vestibular, vestibulinho ou\nqualquer processo seletivo;\n● Esgotamento da lista de espera por vagas em creches públicas em todos os\nmunicípios do Espírito Santo, priorizando as regiões de maior vulnerabilidade social\ne as famílias inscritas no Cadastro Único, garantindo o direito de todas as crianças\nà educação infantil.\n● Garantia de atendimento em período integral nas creches e escolas de educação\ninfantil, incluindo atendimento noturno para filhos de trabalhadores e estudantes.\n● Defesa da educação pública, gratuita, laica, presencial e de qualidade em todos os\nníveis.\n● Ampliação dos investimentos públicos na educação, garantindo infraestrutura\nadequada, valorização dos profissionais da educação e melhoria das condições de\nensino.\n● Defesa da Lei do Grêmio Livre e da gestão democrática das escolas.\n● Combate à militarização das escolas, à perseguição política contra professores,\nestudantes e grêmios estudantis e defesa da liberdade de organização da\ncomunidade escolar. Gestão democrática com eleições de representantes e\ndiretores de escola e participação dos professores na gestão escolar.\n● Combate à privatização da educação pública e fortalecimento de um sistema público\nintegrado entre estado e municípios.\n● Realizar uma Reforma Popular da Educação, construída com a participação de\nprofessores, estudantes, trabalhadores da educação e movimentos populares,\nrevogando o Novo Ensino Médio e todas as políticas que precarizam o ensino\npúblico, valorizando a formação científica, artística, humanística e técnica dos\nestudantes.\n● Defesa da educação do campo, garantindo escolas próximas às comunidades rurais\ne combatendo o fechamento de unidades escolares.\n● Passe-livre estudantil irrestrito no transporte em todo o Espírito Santo.\n● Criação da Universidade Estadual do Espírito Santo, ampliando o acesso da\njuventude trabalhadora ao ensino superior público e gratuito em todas as regiões do\nestado.\n● Trabalhar em conjunto com a União para a ampliação das vagas na UFES, no IFES\ne na educação superior pública, fortalecimento da assistência estudantil, da moradia\nestudantil, da alimentação, do transporte e das bolsas de permanência.\n● Integração entre educação, saúde, assistência social e demais serviços públicos,\nfortalecendo o trabalho conjunto entre escolas, Unidades Básicas de Saúde, CRAS,\n\n14"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-14",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\nCREAS e demais equipamentos públicos para garantir atendimento integral às\ncrianças, adolescentes e suas famílias.\n● Garantia de equipes multiprofissionais nas escolas públicas, com psicólogos,\nassistentes sociais e demais profissionais necessários ao acompanhamento\npedagógico, social e da saúde mental dos estudantes.\n● Realização de formações e ações permanentes nas escolas para combater o\nmachismo, a violência contra as mulheres, a ideologia redpill e a influência da\nextrema direita sobre a juventude, promovendo uma cultura de igualdade,\nsolidariedade e respeito.\n● Ampliação da rede pública de ensino fundamental, médio, técnico e superior,\nespecialmente nas periferias e no interior.\n● Fim das escolas cívico-militares e combate à militarização da educação pública.\n● Criar um programa estadual de erradicação do analfabetismo.\n● Garantia de EJA integrada à Formação Inicial Continuada de trabalhadores.\n● Ampliação das instituições de pesquisa e sua integração aos programas de pósgraduação. Ampliação das bolsas de pesquisa nos cursos de graduação e pósgraduação.\n● Investimento em ciência e tecnologia com participação e controle popular da agenda\nde pesquisa e de seus resultados.\n● Realização de concursos públicos para professores.\n● Restrição do número de estudantes matriculados em sala de aula para 25 alunos e\nampliação do número de escolas.\n● Implantação do Programa de Fortalecimento Integral da Escola, com levantamento\nda infraestrutura das escolas e estabelecimento de prioridades para reformas.\nPrioridade inicial às escolas sem água potável, coleta de lixo e banheiro;\nposteriormente às escolas sem quadras, bibliotecas, espaços de convivência e\nlaboratórios.\n● Ampliação dos recursos estaduais destinados à alimentação escolar. Fortalecimento\ndas parcerias com a agricultura familiar local para o fornecimento de alimentos às\nescolas.\n●\n\nPrograma Estadual de Soberania Alimentar da Família na Escola, com entrega de\ncesta básica mensal a famílias de estudantes em situação de desemprego, com\nalimentos adquiridos da agricultura familiar local. Café da manhã nas escolas.\n\n15"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-15",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n8. Estatização do transporte público: passe-livre para estudantes e\ntrabalhadores\n● Implementar a tarifa zero no transporte público.\n● Aumentar a fiscalização das empresas operadoras do transporte público estadual,\nrealizar licitação imediata de novas empresas idôneas para operar o sistema, até a\nestatização das operações.\n● Interiorização do sistema Transcol.\n● Criação dos ônibus rosa, exclusivos para mulheres, durante os horários de pico.\n● Criação de uma plataforma pública estadual de transporte por aplicativo.\n● Fim dos pedágios no Espírito Santo.\n● Auditoria com participação popular dos contratos de concessão do transporte\nurbano, divulgando os custos reais do sistema e o lucro das empresas.\n\n9. Moradia digna para todas as famílias brasileiras. Especulação\nimobiliária é crime!\n● Combate à especulação imobiliária para reduzir o preço dos aluguéis: taxação de\nimóveis que não cumprirem função social e destinação dessa arrecadação para um\nFundo de Moradia Popular.\n● Dar nova destinação aos imóveis que não cumprirem função social, como previsto\nna Constituição.\n● Regulamentação do auxílio-aluguel estadual no valor mínimo de R$ 1.000.\n● Revitalização de territórios abandonados pelo poder público.\n● Reformar o programa Nossa Casa do Espírito Santo.\n● Reformulação do Programa Morar Legal para favorecer o povo pobre.\n● Ampliação dos programas habitacionais, fortalecimento do Minha Casa Minha Vida\nEntidades e prioridade para mulheres chefes de família.\n● Investimento na produção habitacional, dando prioridade à desapropriação e\nreforma de imóveis em regiões centrais.\n● Urbanização de favelas e áreas precárias, diminuindo a necessidade de realocação\ndas famílias.\n\n16"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-16",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n10. Fim da submissão do Brasil aos EUA, a China e a todos os países\nimperialistas – Retomada da base de Alcântara e revogação do contrato\nde entrega das terras raras.\n● Fim da aquisição de armamentos de Israel. O Espírito Santo não financiará o\nsionismo!\n● Fim da espoliação imperialista sobre a economia nacional.\n● Estancamento da sangria dos recursos nacionais para o exterior.\n● Fim das remessas de lucros e dividendos para o exterior.\n● Fim do pagamento de royalties que submetem a economia nacional aos monopólios\nestrangeiros.\n● Fim dos pagamentos da dívida externa.\n● Anulação dos acordos e dívidas do Estado com os capitalistas estrangeiros que\ntenham sido contraídos contra a soberania e os interesses dos trabalhadores.\n● Garantia da total independência econômica do Brasil frente aos países imperialistas.\n● Transferência do comércio exterior para os órgãos do Estado.\n● Defesa de uma política econômica, inclusive cambial, voltada aos interesses e\nnecessidades da população e à soberania nacional.\n● Garantia da autossuficiência na produção e beneficiamento de combustíveis, com\nretomada das refinarias privatizadas para o controle da Petrobras sob\ngerenciamento estatal e popular.\n● Garantia de aquisição de tecnologias relevantes do exterior com efetiva transferência\nde conhecimentos, diminuindo a dependência tecnológica e os pagamentos externos\nde royalties.\n\n11. Nacionalização dos planos de Saúde. Aumento do Orçamento que\npermita o funcionamento de 100% da saúde pública (SUS) e\nobrigatoriedade de todos os políticos usarem o SUS e a Educação\npúblicas.\n● Encerramento de todos os contratos com Organizações Sociais (OS) e reestatização\nda gestão de todas as unidades de saúde do estado.\n● Execução de um plano de obras públicas, ampliando e regionalizando a rede\nhospitalar, a rede de especialidades médicas e os postos de saúde.\n● Desenvolvimento da pesquisa científica farmacêutica no estado para a produção de\nremédio a baixo custo para a população capixaba.\n\n17"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-17",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Abertura de concursos públicos para substituir terceirizações e quarteirizações na\nsaúde.\n● Recuperação e reestruturação dos hospitais e demais equipamentos estaduais de\nsaúde.\n● Garantia de carga horária e salários adequados aos profissionais da saúde.\n● Fortalecimento do controle social sobre a saúde por meio dos Conselhos Populares.\n\n12. Defesa do meio ambiente. Fim da exploração estrangeira de nossos\nminérios.\n● Maior regulamentação das atividades industriais, visando reduzir os impactos ao\npovo e à natureza.\n● Cumprimento integral do acordo do pó preto.\n● Indenização de todos os atingidos por barragem.\n● Confisco dos bens das empresas que pratiquem crimes ambientais.\n● Criar territórios livres de mineração, impedindo a instalação de novos\nempreendimentos minerários em áreas de interesse ambiental, hídrico, agrícola,\ncultural e comunitário, antes que sua presença gere dependência econômica e\nsocial.\n● Defender a reestatização da Vale, colocando seus recursos, infraestrutura e\nprodução mineral a serviço dos interesses do povo brasileiro e do desenvolvimento\nsoberano do Espírito Santo.\n● Combater a falsa ideia de “mineração sustentável”, denunciando projetos\napresentados como parte da transição energética quando reproduzem destruição\nambiental, exploração do trabalho e apropriação privada dos recursos naturais.\n● Defender o controle popular sobre os recursos minerais estratégicos, como lítio,\nterras raras e outros minerais pertencentes à União, garantindo participação efetiva\nda população sobre sua exploração, destinação e benefícios.\n● Enfrentar o racismo ambiental, assegurando proteção especial aos povos indígenas,\ncomunidades quilombolas, tradicionais, periféricas e demais populações que\nhistoricamente concentram os impactos da mineração e de grandes\nempreendimentos.\n● Proteger as águas capixabas, restringindo atividades minerárias que ameacem rios,\nnascentes, aquíferos, manguezais e o abastecimento humano e estabelecendo\nfiscalização rigorosa sobre consumo, rejeitos e contaminação hídrica.\n\n18"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-18",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Garantir atenção integral à saúde das populações atingidas pela mineração, com\nacompanhamento permanente pelo SUS, vigilância epidemiológica e ambiental e\npolíticas específicas de saúde mental para trabalhadores, famílias e comunidades\nafetadas.\n● Fortalecimento dos órgãos estaduais de pesquisa, fiscalização e conservação\nambiental.\n● Realização de concursos públicos e valorização dos trabalhadores dos setores de\nágua, esgoto e meio ambiente.\n● Aplicação de políticas públicas de proteção dos mananciais e nascentes.\n● Reforço das políticas de despoluição dos rios.\n● Implantação de tecnologias limpas.\n● Fortalecimento da agricultura familiar e das produções orgânicas.\n● Criação de um Programa de Prevenção de Queimadas para as Unidades de\nConservação.\n● Combate à privatização e à terceirização dos órgãos e serviços ambientais.\n● Acesso universal à água e ao saneamento de qualidade.\n\n13. Combate à corrupção, confisco dos bens dos corruptos e de suas\nempresas. Expropriação das empresas que têm trabalho análogo à\nescravidão.\n● Confisco dos bens e cassação dos direitos políticos de corruptos e corruptores após\ncondenação.\n● Redução de salários, vencimentos e benefícios desnecessários dos chefes do\nExecutivo estadual, do Judiciário e dos parlamentares.\n\n14. Demarcação das terras indígenas e quilombolas! Defesa das reservas\ne florestas nacionais.\n● Apoio do Governo do Estado à política de demarcação e posse das terras indígenas.\n● Garantia de escolas diferenciadas para os povos indígenas.\n● Incentivo e apoio às línguas indígenas.\n\n19"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-19",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Defesa da cultura e dos direitos dos povos originários.\n● Controle das atividades extrativistas que agridem ou ameaçam a vida das\npopulações originárias.\n● Aumento da fiscalização das atividades de impacto ambiental.\n● Recuperação e fortalecimento das ações de reconhecimento e apoio aos territórios\nquilombolas.\n● Desenvolvimento das políticas de Reforma Agrária e Reforma Urbana sob a ótica da\nreparação da população negra.\n● Ampliação das vagas nos setores públicos para a população negra.\n● Garantia do ensino de história e cultura afro-indígena-brasileira.\n● Combate à violência de Estado contra a população negra.\n\n15. Defesa e incentivo à cultura nacional e popular, ao esporte e ao lazer\ncomo direitos do povo; nacionalização de todas as companhias\ngravadoras de música e produtoras de filmes.\n● Promover fortalecimento da Secretaria Estadual de Cultura, com incentivo,\ndesburocratização e ampliação dos editais de cultura em articulação com os\nmunicípios, visando também o desenvolvimento de artistas iniciantes.\n● Promover políticas específicas para geração de renda e emprego nas cadeias\nprodutivas culturais e artísticas, visando também a segurança financeira para os\ntrabalhadores da cultura, em especial aos que são moradores de periferia.\nPromoção, fortalecimento e democratização do acesso aos aparelhos públicos\nculturais, como teatros, museus, galerias, centros de convenções e eventos, escolas\nde arte e afins.\n● Ampliação das políticas públicas estaduais de Esporte e Lazer, visando a garantia\ndo direito constitucional ao acesso à saúde, esporte e lazer para toda população\ncapixaba. Criação de programas e polos de orientação ao exercício físico,\nconstrução de academias públicas com professores de educação física\nconcursados, bem como incentivo à construção de outros tipos de equipamentos\nesportivos em regiões com pouco acesso.\n●\n\nAmpliação das políticas públicas estaduais para o esporte de rendimento, com\nconcursos públicos para treinadores esportivos, melhor utilização dos equipamentos\nde esporte já existentes, bem como a construção de novos equipamentos esportivos\nem todo o estado. Ampliação do Programa Bolsa Atleta Capixaba.\n\n● Criação de provedores de conteúdo de domínio público e infraestrutura aberta.\n\n20"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-20",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Democratização dos meios de comunicação, com canais de televisão estaduais,\njornais e rádios estatais e comunitários. Criação de companhias estaduais de\nprodução musical e cinematográfica.\n\n16. Combate à LGBTfobia e garantia de direitos à população LGBT\n● Garantia de acesso à moradia digna para a população LGBT. Criar casas abrigo e\ncasas de referência para acolhimento de pessoas LGBT em situação de rua e/ou em\nsituação de violência. Criar programa de aluguel social bem como criar políticas\nestaduais de emprego, qualificação profissional e geração de renda para pessoas\ntrans, travestis ou LGBTs em situação de vulnerabilidade e/ou que trabalham na\nprostituição. Incentivo à contratação de pessoas LGBTI+.\n● Implementação de cotas para pessoas trans e travestis nos concursos públicos. Criar\numa política de formação continuada dos servidores públicos, abordando gênero,\nrelações étnico-raciais e sexualidade em parceria com grupos de pesquisa\nacadêmica e movimentos sociais, com o objetivo de garantir, promover e fortalecer\nos direitos da população LGBTI+.\n● Campanhas públicas contra a LGBTfobia. Garantia de punição a quem praticar\ncrimes de discriminação e violência contra pessoas LGBT. Formação dos órgãos de\nsegurança pública sobre o tema.\n● Inclusão de informações sobre diversidade nos materiais didáticos e programas\npedagógicos. Campanhas contra a violência e LGBTfobia nos espaços\neducacionais.\n● Ampliação do quadro de profissionais que atuam na saúde LGBT, incluindo\nendocrinologistas, psicólogos e infectologistas, promovendo formações para esses\nprofissionais. Garantia da disponibilidade de medicamentos para tratamento de\nISTs/Aids e tratamento hormonal. Ampliação das vagas para cirurgias do processo\ntransexualizador e tratamento hormonal.\n\n17. Punição exemplar para os torturadores e assassinos da ditadura,\nrevisão da lei da Anistia. Luta pelo direito à memória, verdade, justiça e\nreparação; Desmilitarização das polícias!\n● Defesa da revisão da Lei da Anistia, com punição aos torturadores, assassinos e\ndemais responsáveis pelos crimes cometidos durante a ditadura empresarial-militar.\n● Sem anistia para os responsáveis, financiadores e participantes dos atos golpistas\nde 8 de janeiro de 2023 e de qualquer tentativa de golpe contra a democracia\nbrasileira.\n● Reestruturação e fortalecimento da Comissão Estadual da Memória e Verdade\nOrlando Bonfim, garantindo condições para investigar os crimes da ditadura,\npreservar a memória da resistência capixaba e promover políticas permanentes de\nmemória, verdade, justiça e reparação.\n\n21"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-21",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Abertura, digitalização e ampla divulgação dos documentos da ditadura existentes\nnos arquivos públicos estaduais, garantindo livre acesso à população.\n● Justiça, reparação e reconhecimento às vítimas da ditadura empresarial-militar e\nseus familiares.\n● Preservação dos locais históricos da resistência e da repressão política no Espírito\nSanto e criação do Museu Estadual da Memória da Ditadura.\n● Alteração dos nomes de ruas, avenidas, prédios e demais espaços públicos que\nhomenageiam agentes da ditadura empresarial-militar, substituindo-os por\nreferências à luta do povo brasileiro pela democracia e pela liberdade.\n● Reformulação da formação e do currículo das academias militares e das forças de\nsegurança, incorporando o ensino da Constituição, dos direitos humanos e da\nhistória da ditadura empresarial-militar de 1964, reafirmando seu caráter golpista e\ncombatendo o revisionismo histórico promovido pela extrema direita.\n● Garantia de que a rede pública estadual de ensino trate a ditadura empresarial-militar\nde 1964 de forma crítica e fundamentada na produção historiográfica, reafirmando\nseu caráter golpista, a resistência do povo brasileiro e os crimes cometidos pelo\nregime, combatendo o negacionismo e a desinformação difundidos pela extrema\ndireita.\n● Combate ao negacionismo e às mentiras propagadas pelos grupos fascistas sobre\na ditadura empresarial-militar, por meio de políticas permanentes de educação,\nmemória e divulgação histórica, reafirmando que 1964 foi um golpe contra a\ndemocracia e o povo brasileiro.\n● Proibição da nomeação de militares da ativa para cargos de natureza política no\nGoverno do Estado, fortalecendo o controle civil democrático sobre as instituições\nmilitares e impedindo sua utilização para fins político-partidários.\n● Construção do Museu Estadual da Memória da Ditadura e da Resistência Popular,\npreservando a história da resistência capixaba, homenageando as vítimas da\nrepressão e garantindo que as futuras gerações conheçam os crimes cometidos pela\nditadura empresarial-militar.\n● Criar instrumentos legais que combatam o poder político e econômico de\norganizações criminosas\n● Obrigatoriedade das câmeras policiais corporais em todos os agentes de segurança.\n● Atendimento psicológico para os agentes de segurança.\n● Reorganização da política estadual de segurança pública com participação popular.\n● Resgate do policiamento comunitário.\n● Aumento da eficiência do aparato de inteligência para combate ao crime organizado.\n● Debate sobre a reforma do Sistema Penitenciário.\n\n22"
+          },
+          {
+            "id": "programa-da-unidade-popular-pelo-socialismo-para-o-governo-do-estado-do-22",
+            "titulo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "Programa da Unidade Popular pelo Socialismo para o governo do estado do Espírito Santo (ES).\nAgosto de 2026.\n\n● Avaliação das estruturas físicas e da gestão dos presídios, buscando a recuperação\nsocial e garantindo dignidade às pessoas presas.\n\n18. Fim da exploração do homem pelo homem, socialização de todas as\ngrandes empresas. Construção de uma sociedade socialista.\n● Criar Conselhos Populares nas cidades e bairros para o povo deliberar sobre o uso\nde verbas públicas. Realização de plebiscitos, referendos e consultas públicas.\n● Convocar o povo a governar e controlar socialmente os recursos do país e do estado.\nAmpla liberdade de organização para os trabalhadores!\n\n23"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "37bab5a28f6dd8f32e1fb8ffcb11aecb61321f35e9a0e9a2a171ea1129c35664"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "d34c65dc5089d84caabbe93fbc1a7f08da5921bfdf6a20bf63826a7191ed547a"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "f5dc88fd9d9f5311ca3fd610f0c2583f67bcb16641cf77d88ec21b8afa647488"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "3ffb5f40b32e4b92c53d06f60976af4707448eacc15e62b752f3d57946938aeb"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "f823da0f302424a2c81e34db6f57c1866ed5972163256f83e6a90866b031ec94"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "d56fc46d317b9b96106cc67558d96a80c69d069c16076e86846f25558fee4422"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "41a602e86b9c6426d51785879a941aa32db2653ebbd5b52757a7a423368a927c"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "b918be21a860594d45549a886dd88bcf9094c00c7615d7b3b72ef2ca485fad48"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "cbdd3040a6181d6434b171e5a235735d4bd7f83b8fa0cc88693fed3865e08bf8"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "543b4c34ebcfb82649b1b5b6fc68f6b483a4052fa7845da80a03208967def8a1"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "2f0ba474d5aae06108abf0da5cf6399612313ede756f9959a4ad9903a31fdbe7"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "424b650ee2b69fb3c1cde1694759958aeb0d263a5056a159640178ee75c56797"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "3dc9ca0b2ab3525a4366baac48f3ab0d4f5abb91ec0c76725f887c32d2fd9720"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "3783e988bf4d9e94ca09dbd720fe4409ee6e10e2f10b6f771d604f02c82221ec"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "61ecd2abd7e71ebccfac41c37b247088944aa12bffc130f8a7fe7859257e9eee"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "2bea028ad9fd1dc4b83c8b9ce3e4e717f62764992be2d3d576f9b012f87656c4"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "5c7f21467f9ee7d20c2a23d8089fedb6bd713721e758bf5b557fcdd332b6aabc"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "84fdf4adad960b19f3a194757b689459909febb98c2f5bec438dba277b22cf00"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "59fed071c1bfefa88aa0e5fa06d2bfa9c39e37c3d8c35177c614a9f1ee38f709"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "306b11eabfed41eba2b6924899f00b2daccb6a78d9f03fa00d719ca01f2dd14b"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "99f0ff4227b939472e2e47bbbda42d9e712eea8639e97f167c664f9a349dc370"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "62275fcc52408cc40bfa30ae86cc8b361e5d577dce69edbb29663b5ef429e196"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "dd3adcf33054bc33ce1087c061cca2588abada53e8b49ee47d068191c56a549c"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe criar um salário-mínimo capixaba de R$ 3.242,00, conforme a seção dedicada à valorização do trabalho no Espírito Santo. O documento prevê jornada de 36 horas semanais para servidores públicos estaduais e trabalhadores terceirizados contratados pelo Estado, sem redução salarial. O programa planeja estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres, com atendimento territorializado, humanizado, articulado entre serviços públicos. A proposta inclui criar uma Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público gratuito em todas as regiões do estado. O documento prevê implementar a tarifa zero no transporte público, associada no programa ao custo de vida das famílias capixabas. O programa propõe criar territórios livres de mineração, impedindo novos empreendimentos em áreas de interesse ambiental, hídrico, agrícola, cultural ou comunitário.",
+    "frases": [
+      {
+        "texto": "O programa propõe criar um salário-mínimo capixaba de R$ 3.242,00, conforme a seção dedicada à valorização do trabalho no Espírito Santo.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 9,
+            "trecho": "● Criação do salário-mínimo capixaba de R$ 3.242,00."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê jornada de 36 horas semanais para servidores públicos estaduais e trabalhadores terceirizados contratados pelo Estado, sem redução salarial.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 9,
+            "trecho": "● Redução da jornada dos servidores públicos estaduais e das trabalhadoras e trabalhadores terceirizados contratados pelo Estado para 36 horas semanais, sem redução salarial."
+          }
+        ]
+      },
+      {
+        "texto": "O programa planeja estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres, com atendimento territorializado, humanizado, articulado entre serviços públicos.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 10,
+            "trecho": "● Estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres"
+          }
+        ]
+      },
+      {
+        "texto": "A proposta inclui criar uma Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público gratuito em todas as regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 14,
+            "trecho": "● Criação da Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público e gratuito em todas as regiões do estado."
+          }
+        ]
+      },
+      {
+        "texto": "O documento prevê implementar a tarifa zero no transporte público, associada no programa ao custo de vida das famílias capixabas.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 7,
+            "trecho": "Por isso, para aliviar o custo de vida sobre as famílias capixabas e garantir seus direitos, é urgente a implementação da tarifa zero."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe criar territórios livres de mineração, impedindo novos empreendimentos em áreas de interesse ambiental, hídrico, agrícola, cultural ou comunitário.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 18,
+            "trecho": "● Criar territórios livres de mineração"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "salario-minimo-estadual",
+        "titulo": "Salário-mínimo estadual",
+        "descricao": "Criação de salário-mínimo capixaba.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 9,
+            "trecho": "● Criação do salário-mínimo capixaba de R$ 3.242,00."
+          }
+        ]
+      },
+      {
+        "id": "jornada-de-trabalho",
+        "titulo": "Jornada de trabalho",
+        "descricao": "Redução da jornada para 36 horas semanais.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 9,
+            "trecho": "● Redução da jornada dos servidores públicos estaduais e das trabalhadoras e trabalhadores terceirizados contratados pelo Estado para 36 horas semanais, sem redução salarial."
+          }
+        ]
+      },
+      {
+        "id": "violencia-contra-mulheres",
+        "titulo": "Violência contra mulheres",
+        "descricao": "Estruturação de rede estadual de enfrentamento à violência contra as mulheres.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 10,
+            "trecho": "● Estruturar uma rede estadual integrada de enfrentamento à violência contra as mulheres"
+          }
+        ]
+      },
+      {
+        "id": "ensino-superior-publico",
+        "titulo": "Ensino superior público",
+        "descricao": "Criação da Universidade Estadual do Espírito Santo.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 14,
+            "trecho": "● Criação da Universidade Estadual do Espírito Santo, ampliando o acesso da juventude trabalhadora ao ensino superior público e gratuito em todas as regiões do estado."
+          }
+        ]
+      },
+      {
+        "id": "tarifa-zero",
+        "titulo": "Tarifa zero",
+        "descricao": "Implementação da tarifa zero no transporte público.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 16,
+            "trecho": "● Implementar a tarifa zero no transporte público."
+          }
+        ]
+      },
+      {
+        "id": "territorios-livres-mineracao",
+        "titulo": "Territórios livres de mineração",
+        "descricao": "Criação de territórios livres de mineração.",
+        "evidencias": [
+          {
+            "documentoId": "ES:80002550832:01",
+            "pagina": 18,
+            "trecho": "● Criar territórios livres de mineração"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
+    "generatedAt": "2026-08-29T14:24:22.132Z"
+  },
+  "julgamento": {
+    "model": "Anthropic Claude@claude-sonnet-5",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-08-29T16:31:46.220Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente o valor e a proposta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Valor R$3.242,00 confere literalmente com o texto."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única e coerente sobre salário."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim e evidência pertencem à mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:1:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Número de 36 horas confere literalmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre jornada de trabalho."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:2:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "O trecho da página confirma a rede e, conforme o texto completo da página 10, também confirma atendimento territorializado, humanizado e articulação entre serviços públicos."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única área coerente: enfrentamento à violência contra a mulher."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:3:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página 10 completa cobre todas as cláusulas: territorializado, humanizado, articulado entre serviços."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre ensino superior."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:4:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas materiais cobertas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência associa explicitamente a tarifa zero ao custo de vida das famílias capixabas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de proposta única sobre transporte público."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:5:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusulas cobertas pela evidência da página 7."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "O texto completo da página 18 confirma o impedimento de novos empreendimentos minerários nessas áreas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação descritiva sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de área coerente: meio ambiente/mineração."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:frase:6:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Página 18 completa cobre todas as áreas citadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:salario-minimo-estadual:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Número 36 horas confere."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:jornada-de-trabalho:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta diretamente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:violencia-contra-mulheres:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência sustenta a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:ensino-superior-publico:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confere exatamente com a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:tarifa-zero:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:suporte",
+        "verdict": "yes",
+        "reason": "Evidência confere exatamente com a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação neutra."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único e coerente."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:ES:80002550832:tema:territorios-livres-mineracao:documentos:ES:80002550832:01:cobertura",
+        "verdict": "yes",
+        "reason": "Cláusula única totalmente coberta."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:ES:80002550832",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "ES:80002550832:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1
+      },
+      "judge": {
+        "name": "Anthropic Claude",
+        "version": "claude-sonnet-5",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 2,
+          "cache_creation_input_tokens": 25468,
+          "cache_read_input_tokens": 1062,
+          "output_tokens": 21900,
+          "output_tokens_details": {
+            "thinking_tokens": 1485
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 25468,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "not_available",
+          "iterations": [
+            {
+              "input_tokens": 2,
+              "output_tokens": 21900,
+              "cache_read_input_tokens": 1062,
+              "cache_creation_input_tokens": 25468,
+              "cache_creation": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 25468
+              },
+              "type": "message"
+            }
+          ],
+          "speed": "standard",
+          "cost_usd": 0.3408464
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "sourceSha256": "fdb7dcc3ff7e430894465a9b1e4a68e16442552da4682f7c796b44229a3e0aef",
+    "extractedTextSha256": "ec1bee987d16c07aba1bd6305e4774a5cf01af2b2ed84e77725a852102f5b031",
+    "documentCount": 1,
+    "documentSetSha256": "84678a8d64e0cef0df7ac259adcaba4ce1e4b70b249899e69e9d4a6151679d79",
+    "contentSha256": "31e9c3fd9c1330419de6014f3d5769b22362680c1401799e0aa70a1e8a7f8654"
+  }
+}
