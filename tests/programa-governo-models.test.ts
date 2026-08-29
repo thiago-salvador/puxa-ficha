@@ -282,7 +282,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     if (envelope.promptVersion.endsWith("/fatos-passagem")) {
       return {
         stdout: JSON.stringify({
-          fatos: Array.from({ length: 6 }, (_, index) => ({
+          fatos: Array.from({ length: 12 }, (_, index) => ({
             texto: `A fonte prevê a medida administrativa ${index + 1}.`,
             evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: `Trecho literal ${index + 1}.` }],
           })),
@@ -311,7 +311,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
       paginas: [{
         pagina: 1,
         origem: "fixture",
-        texto: Array.from({ length: 6 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
+        texto: Array.from({ length: 12 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
       }],
     }],
     repairGuidance: guidance,
@@ -330,7 +330,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
   const sinteses = requests.slice(2)
   assert.deepEqual(sinteses.map(({ promptVersion }) => promptVersion), Array(6).fill(`${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fato-unitario`))
   assert.deepEqual(sinteses.map(({ input }) => (input.FATO as { id: string }).id), [
-    "fato-1", "fato-2", "fato-3", "fato-4", "fato-5", "fato-6",
+    "fato-1", "fato-3", "fato-5", "fato-8", "fato-10", "fato-12",
   ])
   for (const request of sinteses) {
     assert.match(request.instructions, /orientação de reparo aprovada/iu)

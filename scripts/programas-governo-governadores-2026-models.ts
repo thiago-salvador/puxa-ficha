@@ -791,10 +791,13 @@ export function createProgramaGovernoModelAdapters(
     },
     async sintetizarDeFatos(input) {
       if (!input.fatos.length) throw new Error("sintese-fatos: nenhum fato recebido")
-      if (input.repairGuidance && input.fatos.length === 6) {
+      if (input.repairGuidance && input.fatos.length >= 6) {
+        const fatosUnitarios = input.fatos.length === 6
+          ? input.fatos
+          : Array.from({ length: 6 }, (_, index) => input.fatos[Math.round(index * (input.fatos.length - 1) / 5)])
         const unidades: Array<{ frase: string; titulo: string }> = []
         const metadados: ProgramaGovernoModelMetadata[] = []
-        for (const [index, fato] of input.fatos.entries()) {
+        for (const [index, fato] of fatosUnitarios.entries()) {
           const result = await runStructured(
             generator,
             `${PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION}/sintese-fato-unitario`,
@@ -812,16 +815,16 @@ export function createProgramaGovernoModelAdapters(
         }
         const bruto = {
           texto: unidades.map(({ frase }) => frase).join(" "),
-          frases: unidades.map(({ frase }, index) => ({ texto: frase, fatoIds: [input.fatos[index].id] })),
+          frases: unidades.map(({ frase }, index) => ({ texto: frase, fatoIds: [fatosUnitarios[index].id] })),
           temas: unidades.map(({ frase, titulo }, index) => ({
             id: `tema-${index + 1}`,
             titulo,
             descricao: frase,
-            fatoIds: [input.fatos[index].id],
+            fatoIds: [fatosUnitarios[index].id],
           })),
         }
         return {
-          output: normalizarSinteseFatos(bruto, input.fatos, true),
+          output: normalizarSinteseFatos(bruto, fatosUnitarios, true),
           metadata: {
             name: generator.name,
             version: generator.version,
