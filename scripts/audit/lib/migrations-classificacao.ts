@@ -401,9 +401,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 87 -> 88 em 28/08/2026: o schema de quarentena expande somente os CHECKs
   // de chapas_2026. Medido no PR #120, run 33136011590: 88 limpas, zero falhas,
   // hash 9b02ad47a26f7ff0724a39ae25916619aebdc3c284a8a3e260ccdf693099167e.
-  // 88 -> 89 em 29/08/2026: gate mínimo de publicação e filtro fail-closed de
+  // 89 -> 90 em 29/08/2026: a identidade por fonte das proposicoes entra no
+  // replay de schema depois do gate mínimo de publicação e filtro fail-closed.
   // chapas entram em migration de schema puro, separada da curadoria do roster.
-  schemaReplayTamanho: 89,
+  schemaReplayTamanho: 90,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

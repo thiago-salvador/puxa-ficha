@@ -1,0 +1,57 @@
+name: Aplicar integridade do roster de candidatos
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    name: Roster 30000, 30001, ledger e readback
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    env:
+      PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      GITHUB_REF: ${{ github.ref }}
+    steps:
+      - name: Validar dispatch manual e SHA fechado
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - name: Instalar dependências para a prova canônica
+        run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Provar apply, readback e rollback em PostgreSQL 17 descartável
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run audit:candidate-integrity:prove
+      - name: Aplicar roster fechado e validar readback
+        run: bash scripts/audit/apply-candidate-roster-integrity-production.sh

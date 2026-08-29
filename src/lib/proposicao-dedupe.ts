@@ -69,6 +69,11 @@ function temEmentaPropria(tipo: string | null | undefined): boolean {
   return SIGLAS_COM_EMENTA_PROPRIA.has(normalizeSiglaTipo(tipo))
 }
 
+function normalizarFonte(fonte: string | null | undefined): string {
+  const normalizada = (fonte ?? "").trim().toLowerCase()
+  return normalizada === "câmara" ? "camara" : normalizada
+}
+
 export interface ProposicaoAgrupada {
   /** Linha escolhida para representar o grupo na lista e no recorte de destaques. */
   representante: ProjetoLei
@@ -117,7 +122,8 @@ export function chaveDeIdentidadeDaProposicao(projeto: ProjetoLei): string | nul
   if (!temEmentaPropria(projeto.tipo)) return null
   const texto = normalizarEmentaParaChave(projeto.ementa)
   if (!texto) return null
-  return `${normalizeSiglaTipo(projeto.tipo)}::${texto}`
+  const fonte = normalizarFonte(projeto.fonte)
+  return `${fonte}::${normalizeSiglaTipo(projeto.tipo)}::${texto}`
 }
 
 function numeroOrdenavel(projeto: ProjetoLei): number {

@@ -34,7 +34,7 @@ if (profiles.length !== 194 || mappings.length !== 3595) {
   throw new Error(`fila inesperada: perfis=${profiles.length}, urls=${mappings.length}`)
 }
 
-const unique = new Set(mappings.map((mapping) => `${mapping.slug}|${mapping.proposicao_id_api}`))
+const unique = new Set(mappings.map((mapping) => `${mapping.slug}|${mapping.fonte}|${mapping.proposicao_id_api}`))
 if (unique.size !== mappings.length) {
   throw new Error(`mapeamentos duplicados: ${mappings.length - unique.size}`)
 }
@@ -57,7 +57,7 @@ CREATE TEMP TABLE _pf_project_urls (
   proposicao_id_api text NOT NULL,
   fonte text NOT NULL,
   public_url text NOT NULL,
-  PRIMARY KEY (slug, proposicao_id_api)
+  PRIMARY KEY (slug, fonte, proposicao_id_api)
 ) ON COMMIT DROP;
 
 -- @write tabela=_pf_project_urls ref=B1-projetos-20260807 campos=slug,proposicao_id_api,fonte,public_url

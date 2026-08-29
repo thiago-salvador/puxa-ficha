@@ -174,6 +174,29 @@ describe("dedupe de autoria legislativa (item 8)", () => {
     assert.equal(chaveDeIdentidadeDaProposicao(projeto({ id: "w", ementa: "  " })), null)
   })
 
+  test("a identidade dedupe respeita a fonte e normaliza Câmara/Camara", () => {
+    const ementa = "Institui uma política pública de segurança e educação"
+    const camara = projeto({ id: "camara", fonte: "Camara", tipo: "PL", ementa })
+    const camaraComAcento = projeto({ id: "camara-acento", fonte: "Câmara", tipo: "PL", ementa })
+    const senado = projeto({ id: "senado", fonte: "Senado", tipo: "PL", ementa })
+
+    assert.equal(
+      chaveDeIdentidadeDaProposicao(camara),
+      chaveDeIdentidadeDaProposicao(camaraComAcento),
+      "grafias equivalentes da Câmara devem compartilhar identidade",
+    )
+    assert.notEqual(
+      chaveDeIdentidadeDaProposicao(camara),
+      chaveDeIdentidadeDaProposicao(senado),
+      "fontes diferentes não podem compartilhar identidade",
+    )
+
+    const grupos = agruparProposicoesPorEmenta([camara, camaraComAcento, senado])
+    assert.equal(grupos.length, 2)
+    assert.equal(grupos.find((grupo) => grupo.representante.fonte === "Senado")?.totalNoGrupo, 1)
+    assert.equal(grupos.find((grupo) => grupo.representante.fonte !== "Senado")?.totalNoGrupo, 2)
+  })
+
   test("a ordem de entrada é preservada", () => {
     const entrada = [
       projeto({ id: "pl", tipo: "PL", numero: "1656", ano: 2015, ementa: EMENTA_PL_1656 }),

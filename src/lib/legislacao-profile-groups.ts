@@ -53,6 +53,17 @@ function normalizeProposicaoId(value: string | null | undefined) {
   return normalized || null
 }
 
+function normalizeSource(value: string | null | undefined) {
+  const normalized = value?.trim().toLowerCase()
+  return normalized === "câmara" ? "camara" : normalized === "senado" ? "senado" : normalized || null
+}
+
+function proposicaoSourceKey(source: string | null | undefined, id: string | null | undefined) {
+  const normalizedId = normalizeProposicaoId(id)
+  if (!normalizedId) return null
+  return `${normalizeSource(source) ?? "unknown"}:${normalizedId}`
+}
+
 function isProjetoLeiAprovado(projeto: ProjetoLei) {
   return projeto.situacao?.trim().toLowerCase() === "aprovado"
 }
@@ -644,10 +655,10 @@ export function groupLegislacaoProfileItems({
     legislacaoMandatoExecutivoTotal ?? legislacaoMandatoExecutivo.length,
     legislacaoMandatoExecutivo.length
   )
-  const authoredProposicaoIds = new Set(
+  const authoredProposicaoKeys = new Set(
     projetosLei
-      .map((projeto) => normalizeProposicaoId(projeto.proposicao_id_api))
-      .filter((id): id is string => id !== null)
+      .map((projeto) => proposicaoSourceKey(projeto.fonte, projeto.proposicao_id_api))
+      .filter((key): key is string => key !== null)
   )
 
   const propostasExecutivo = legislacaoMandatoExecutivo.filter(
@@ -669,8 +680,11 @@ export function groupLegislacaoProfileItems({
   const hasExecutiveInventoryHighlights =
     executivoCount >= LEGISLATION_HIGHLIGHT_MINIMUM && destaquesExecutivo.length > 0
   const votosApenas = votos.filter((voto) => {
-    const proposicaoId = normalizeProposicaoId(voto.votacao?.proposicao_id)
-    return !proposicaoId || !authoredProposicaoIds.has(proposicaoId)
+    const proposicaoKey = proposicaoSourceKey(
+      voto.votacao?.fonte ?? voto.votacao?.casa,
+      voto.votacao?.proposicao_id,
+    )
+    return !proposicaoKey || !authoredProposicaoKeys.has(proposicaoKey)
   })
   const featuredCount = destaquesParlamentares.length + destaquesExecutivo.length
   const totalCount = projetosLei.length + executivoCount + votosApenas.length
