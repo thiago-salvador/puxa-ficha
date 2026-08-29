@@ -122,25 +122,43 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npm run audit:marcadores-tse:gate
 
-  # G6 (validade temporal). O instrumento nasceu em 17/08 e nunca entrou em job,
-  # que e exatamente o diagnostico registrado em Status/ARQUITETURA-DADOS.md e o
-  # que deixou 87 biografias virarem afirmacao vencida em 15/08 sem ninguem ver.
+  # G6 (validade temporal). O instrumento nasceu em 17/08 e agora tem um gate
+  # strict separado, além da fila informativa legada. Isso evita que o backlog
+  # histórico esconda uma regressão nova no job periódico.
   #
-  # POR QUE INFORMATIVO, E NAO BLOQUEANTE: medido em 18/08, ele reprova com 677
+  # A fila informativa continua existindo porque, medido em 18/08, reprova com 677
   # afirmacoes com prazo em 178 das 208 fichas (520 vencidas, 157 sem data de
-  # verificacao). Bloqueante, ele deixaria o CI vermelho de forma permanente, e
-  # este projeto ja tem a licao registrada de que gate que ninguem consegue
-  # atender vira gate desligado: em 09/08 um gate saiu vermelho por construcao e
-  # dois documentos declararam 'allowlist OK' com ele em exit 1.
+  # verificacao). Essa fila continua não bloqueante porque o estoque histórico
+  # pode manter o job vermelho por construção, enquanto o gate strict abaixo
+  # sinaliza regressões com uma saída bloqueante e reproduzível.
   #
   # A falha do job E o alerta, como diz o cabecalho deste arquivo. O numero de
   # achados aparece no log de cada rodada, entao a fila fica visivel e a queda
   # mensuravel.
   #
-  # PRAZO PARA VIRAR BLOQUEANTE: quando a fila cair abaixo de 50 achados, tirar o
-  # continue-on-error. Se em 30/09/2026 ainda estiver informativo, a decisao a
-  # tomar e outra: ou a fila e trabalhavel e alguem assume, ou o gate esta
-  # medindo a coisa errada e precisa ser reescrito.
+  # O gate strict abaixo é a referência bloqueante para a execução periódica;
+  # esta fila permanece informativa para acompanhar o estoque completo sem
+  # confundir backlog histórico com regressão do gate.
+  validade-temporal-strict:
+    name: Validade temporal das afirmações (gate strict)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 9 * * 4'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - name: Gate estrito de afirmações vencidas ou sem data
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run audit:validade-temporal
+
   validade-temporal:
     name: Validade temporal das afirmações (informativo)
     runs-on: ubuntu-latest

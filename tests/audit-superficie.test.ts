@@ -8,6 +8,7 @@ import { describe, it } from "node:test"
 import type { LinhaSuperficie } from "../scripts/audit/audit-superficie"
 import {
   avaliarFotosSuperficie,
+  avaliarFalhasDoGate,
   avaliarIntegridadePartidaria,
   avaliarSuperficie,
   contarFichasPublicas,
@@ -182,6 +183,50 @@ describe("avaliarSuperficie", () => {
     const { dentro, fora } = separarPorCoorte(violacoes, new Set(["lula"]))
     assert.deepEqual(dentro.map((v) => v.slug), ["lula"])
     assert.deepEqual(fora.map((v) => v.slug), ["ficha-legada"])
+  })
+
+  it("strict-all promove violações fora da coorte e avisos a falhas", () => {
+    const legado = fichaIntegra("ficha-legada")
+    legado.pontos_visiveis = 0
+    legado.foto_url = null
+    const violacoes = avaliarSuperficie([legado])
+    const avisos = avaliarFotosSuperficie([legado]).avisos
+    const resultado = avaliarFalhasDoGate(violacoes, avisos, new Set(["lula"]), true)
+
+    assert.deepEqual(resultado.dentro, [])
+    assert.equal(resultado.fora.length, 1)
+    assert.equal(resultado.falhas.length, 1)
+    assert.equal(resultado.avisos.length, 1)
+    assert.equal(resultado.avisos[0]?.regra, "R11_foto_ausente")
+  })
+
+  it("CLI strict-all reprova backlog e aviso nominal fora da coorte", () => {
+    const dir = mkdtempSync(resolve(tmpdir(), "audit-superficie-strict-all-"))
+    const snapshot = resolve(dir, "snapshot.json")
+    const legado = fichaIntegra("ficha-legada")
+    legado.pontos_visiveis = 0
+    legado.foto_url = null
+    writeFileSync(snapshot, JSON.stringify([legado]))
+    try {
+      const result = spawnSync(
+        process.execPath,
+        [
+          "--import",
+          "tsx",
+          "scripts/audit/audit-superficie.ts",
+          `--from-snapshot=${snapshot}`,
+          "--strict-all",
+        ],
+        { cwd: resolve(import.meta.dirname, ".."), encoding: "utf8" },
+      )
+      const output = `${result.stdout}\n${result.stderr}`
+      assert.equal(result.status, 1)
+      assert.match(output, /strict-all/)
+      assert.match(output, /fora da coorte/)
+      assert.match(output, /R11_foto_ausente/)
+    } finally {
+      rmSync(dir, { recursive: true, force: true })
+    }
   })
 
   it("R6-R7 reprovam globalmente, inclusive fora da coorte", () => {
