@@ -320,6 +320,7 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
   const fatosPorId = new Map(fatos.map((fato) => [fato.id, fato]))
   const cobertura = new Set<string>()
   const fatosUsadosEmFrases = new Set<string>()
+  const evidenciasUsadasEmFrases = new Set<string>()
   const verificarEvidencia = (item: unknown, caminho: string, impedirReusoEntreFrases = false) => {
     if (!item || typeof item !== "object") throw new Error(`multipassagem: ${caminho} invalido`)
     const raw = item as Record<string, unknown>
@@ -327,6 +328,7 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
     if (!referencias || referencias.length === 0) {
       throw new Error(`multipassagem: ${caminho} sem fatoId ou fato`)
     }
+    const evidenciasDoItem = new Set<string>()
     for (const referencia of referencias) {
       const id = referenciaId(referencia)
       const fato = fatosPorId.get(id)
@@ -335,8 +337,22 @@ export function validarResultadoProgramaGovernoMultipassagem(resumo: unknown, fa
         throw new Error(`multipassagem: reutiliza fato ${id} entre frases`)
       }
       if (impedirReusoEntreFrases) fatosUsadosEmFrases.add(id)
+      if (impedirReusoEntreFrases) {
+        for (const evidencia of fato.evidencias) {
+          const assinatura = [
+            evidencia.documentoId,
+            String(evidencia.pagina),
+            normalizarEspacos(evidencia.trecho),
+          ].join(":")
+          if (evidenciasUsadasEmFrases.has(assinatura)) {
+            throw new Error(`multipassagem: reutiliza evidencia entre frases ${evidencia.documentoId}:${evidencia.pagina}`)
+          }
+          evidenciasDoItem.add(assinatura)
+        }
+      }
       cobertura.add(fato.id)
     }
+    for (const assinatura of evidenciasDoItem) evidenciasUsadasEmFrases.add(assinatura)
   }
   for (const frase of frases as unknown[]) verificarEvidencia(frase, "frases[]", true)
   for (const tema of temas as unknown[]) verificarEvidencia(tema, "temas[]")

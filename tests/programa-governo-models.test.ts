@@ -283,7 +283,7 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
         stdout: JSON.stringify({
           fatos: Array.from({ length: 6 }, (_, index) => ({
             texto: `A fonte prevê a medida administrativa ${index + 1}.`,
-            evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: "Trecho literal." }],
+            evidencias: [{ documentoId: "doc-1", pagina: 1, trecho: `Trecho literal ${index + 1}.` }],
           })),
         }),
         stderr: "",
@@ -316,7 +316,14 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
   await adapters.generate({ ...generatorInput(), repairGuidance: guidance })
   const facts = await adapters.extrairFatosPassagem!({
     identityKey: "2026:GOVERNADOR:PI:180002549920",
-    documentos: [{ documentoId: "doc-1", paginas: [{ pagina: 1, origem: "fixture", texto: "Trecho literal." }] }],
+    documentos: [{
+      documentoId: "doc-1",
+      paginas: [{
+        pagina: 1,
+        origem: "fixture",
+        texto: Array.from({ length: 6 }, (_, index) => `Trecho literal ${index + 1}.`).join(" "),
+      }],
+    }],
     repairGuidance: guidance,
   })
   await adapters.sintetizarDeFatos!({
