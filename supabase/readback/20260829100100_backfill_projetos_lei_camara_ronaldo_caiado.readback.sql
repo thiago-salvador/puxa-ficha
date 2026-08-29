@@ -82,8 +82,8 @@ BEGIN
   IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 230
      OR senado_exato <> 4 OR total_candidato <> 2079
      OR camara_total - 1845 <> 4 THEN
-    RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, EMC_2003=%, Senado=%, Senado_exato=%, total=%, delta_camara=%)',
-      camara_total, camara_emc_2003, senado_total, senado_exato, total_candidato, camara_total - 1845;
+    RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, Camara_exato=%, EMC_2003=%, Senado=%, Senado_exato=%, total=%, delta_camara=%)',
+      camara_total, camara_exato, camara_emc_2003, senado_total, senado_exato, total_candidato, camara_total - 1845;
   END IF;
 END
 $assert$;
