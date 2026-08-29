@@ -4,7 +4,7 @@
 // a ingestão continua sendo o CLI canônico. Este arquivo apenas isola cada
 // candidatura, conserva checkpoints e fecha a fila quando a cota/autorização
 // deixa de ser confiável.
-import { randomUUID } from "node:crypto"
+import { createHash, randomUUID } from "node:crypto"
 import { spawn } from "node:child_process"
 import { access, mkdir, readFile, readdir, rename, stat, writeFile } from "node:fs/promises"
 import { dirname, join, resolve } from "node:path"
@@ -122,6 +122,13 @@ function candidateKey(candidate) {
   return `${candidate.uf}:${candidate.sqCandidato}:${candidate.slug}`
 }
 
+function candidateFingerprint(candidate) {
+  return createHash("sha256").update(JSON.stringify({
+    strategy: candidate.strategy ?? null,
+    guidance: candidate.guidance ?? null,
+  })).digest("hex")
+}
+
 function candidateDir(options, candidate) {
   return join(options.outputDir, "candidatos", candidate.slug)
 }
@@ -205,7 +212,13 @@ function classifyArtifact(record, candidate) {
 function initialProgress(cases) {
   return {
     version: 1,
-    cases: cases.map((candidate) => ({ ...candidate, key: candidateKey(candidate), status: "pending", attempts: 0 })),
+    cases: cases.map((candidate) => ({
+      ...candidate,
+      key: candidateKey(candidate),
+      caseFingerprint: candidateFingerprint(candidate),
+      status: "pending",
+      attempts: 0,
+    })),
     quota: { frozen: false, reason: null },
     summary: { pass: 0, blocked: 0, failed: 0, pending: cases.length },
     updatedAt: new Date().toISOString(),
@@ -318,6 +331,9 @@ async function processOne(options, candidate, progress, progressPath) {
   // A valid blocked record is useful terminal evidence even when the CLI
   // exits 1 because its own fail-closed gate reports blockers.
   item.status = classification.status
+  item.caseFingerprint = candidateFingerprint(candidate)
+  item.strategy = candidate.strategy
+  item.guidance = candidate.guidance
   item.reason = result.error || result.code !== 0
     ? `${classification.reason}; processo=${result.error ?? `exit ${result.code}`}`
     : classification.reason
@@ -346,7 +362,13 @@ export async function runDriver(argv = process.argv.slice(2)) {
   for (const candidate of cases) {
     const entry = progress.cases.find((item) => item.key === candidateKey(candidate))
     const artifact = await loadRecord(options, candidate)
-    if (isPass(artifact.record, candidate)) {
+    const currentFingerprint = candidateFingerprint(candidate)
+    if (
+      entry.status === "pass"
+      && entry.caseFingerprint === currentFingerprint
+      && entry.artifactPath === artifact.path
+      && isPass(artifact.record, candidate)
+    ) {
       entry.status = "pass"
       entry.reason = "Eval completo (retomado)"
       entry.artifactPath = artifact.path
@@ -355,7 +377,9 @@ export async function runDriver(argv = process.argv.slice(2)) {
       // motivo para transformar uma dúvida numa conclusão permanente.
       const previousStatus = entry.status
       entry.status = "pending"
-      entry.reason = previousStatus === "pass" ? "artefato completo ausente; retomada fail-closed" : "retomada de caso nao concluido"
+      entry.reason = previousStatus === "pass"
+        ? "checkpoint ou artefato divergente; retomada fail-closed"
+        : "retomada de caso nao concluido"
       entry.artifactPath = null
     }
   }

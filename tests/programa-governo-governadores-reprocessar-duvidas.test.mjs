@@ -131,6 +131,35 @@ test("propaga estratégia por fatos e orientação específica para o CLI canôn
   assert.equal(start.repairGuidance, guidance)
 })
 
+test("mudança de orientação invalida checkpoint aprovado e reprocessa fail-closed", async () => {
+  const firstGuidance = "Use somente o trecho literal da primeira revisão."
+  const secondGuidance = "Use a orientação corrigida da segunda revisão."
+  const candidate = {
+    uf: "RN",
+    slug: "alysson-bezerra",
+    sqCandidato: "200002535255",
+    strategy: "fatos",
+    guidance: firstGuidance,
+  }
+  const f = await fixture([candidate])
+  assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
+  const first = await progress(f.root)
+  const firstFingerprint = first.cases[0].caseFingerprint
+
+  await writeFile(f.casesPath, JSON.stringify({
+    cases: [{ ...candidate, guidance: secondGuidance }],
+  }))
+  assert.equal((await f.run([], { FAKE_DELAY: "1" })).code, 0)
+
+  const events = (await readFile(f.events, "utf8")).trim().split("\n").map(JSON.parse)
+  const starts = events.filter((event) => event.event === "start")
+  assert.equal(starts.length, 2)
+  assert.equal(starts[1].repairGuidance, secondGuidance)
+  const second = await progress(f.root)
+  assert.equal(second.cases[0].attempts, 2)
+  assert.notEqual(second.cases[0].caseFingerprint, firstFingerprint)
+})
+
 test("plano final materializa exatamente as 17 orientações aprovadas", async () => {
   const { validateCases } = await import(DRIVER)
   const source = JSON.parse(await readFile(FINAL_REPAIRS, "utf8"))
