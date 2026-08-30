@@ -22,10 +22,17 @@ async function main(): Promise<void> {
   const records = await Promise.all(files.map(async (file) => {
     const record = JSON.parse(await readFile(path.join(RECORDS_DIR, file), "utf8")) as ProgramaGovernoRegistro
     assertProgramaGovernoRegistro(record)
-    if (record.estado !== "aprovado") throw new Error(`${file}: somente registros aprovados entram no manifesto`)
+    if (!["aprovado", "sem_documento_oficial"].includes(record.estado)) {
+      throw new Error(`${file}: estado não publicável no manifesto`)
+    }
     if (record.fonte.cargo !== "GOVERNADOR") throw new Error(`${file}: cargo divergente`)
     if (!record.fonte.slug || file !== `${record.fonte.slug}.json`) throw new Error(`${file}: slug divergente`)
-    if (!record.documentos?.length) throw new Error(`${file}: documentos ausentes`)
+    if (record.estado === "aprovado" && !record.documentos?.length) {
+      throw new Error(`${file}: documentos ausentes`)
+    }
+    if (record.estado === "sem_documento_oficial" && record.documentos !== undefined) {
+      throw new Error(`${file}: ausência oficial não pode carregar documentos`)
+    }
     return record
   }))
 
@@ -43,7 +50,7 @@ async function main(): Promise<void> {
       nomeUrna: fonte.nomeUrna,
       partido: fonte.partido,
     }
-    const documentIds = record.documentos!.map(({ documentoId }) => documentoId)
+    const documentIds = record.documentos?.map(({ documentoId }) => documentoId) ?? []
     const manifesto = toProgramaGovernoManifestoPublico(record)
     return [
       `  ${quoted(fonte.slug)}: {`,
@@ -90,22 +97,23 @@ async function main(): Promise<void> {
     "export function getProgramaGovernoGovernador2026ManifestoEntry(slug: string) {",
     "  if (!isGovernorSlug(slug)) return null",
     "  const entry = entries[slug]",
+    "  const documentos = entry.documentoIds.length > 0 ? entry.documentoIds.map((documentoId, index) => ({",
+    "    documentoId,",
+    "    load: async () => {",
+    "      const record = (await entry.load()).default",
+    "      assertProgramaGovernoRegistro(record)",
+    "      const documento = record.documentos?.[index]",
+    "      if (!documento || documento.documentoId !== documentoId) {",
+    "        throw new Error(`${slug}: documento ${documentoId} ausente ou fora de ordem`)",
+    "      }",
+    "      return { default: documento }",
+    "    },",
+    "  })) : undefined",
     "  return {",
     "    identidade: entry.identidade,",
     "    manifesto: entry.manifesto,",
     "    load: entry.load,",
-    "    documentos: entry.documentoIds.map((documentoId, index) => ({",
-    "      documentoId,",
-    "      load: async () => {",
-    "        const record = (await entry.load()).default",
-    "        assertProgramaGovernoRegistro(record)",
-    "        const documento = record.documentos?.[index]",
-    "        if (!documento || documento.documentoId !== documentoId) {",
-    "          throw new Error(`${slug}: documento ${documentoId} ausente ou fora de ordem`)",
-    "        }",
-    "        return { default: documento }",
-    "      },",
-    "    })),",
+    "    ...(documentos ? { documentos } : {}),",
     "  }",
     "}",
     "",

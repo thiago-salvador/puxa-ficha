@@ -2,8 +2,6 @@
   "schema_version": 1,
   "receipt_set_id": "programas-governo-ausentes:2026-08-30",
   "generated_at": "2026-08-30T19:05:43.502Z",
-  "prior_confirmation_at": "2026-08-30T17:14:00Z",
-  "supersedes_prior_confirmation_with_raw_payloads": true,
   "source_system": "TSE DivulgaCandContas",
   "source_contract": "candidatura.arquivos[].codTipo",
   "program_cod_tipo": "5",
@@ -120,6 +118,7 @@
       "program_files_total": 0
     }
   ],
-  "public_data_changed": false,
-  "receipt_sha256": "ec47a7e50a8283f3db0d2291d4dfc23210498ff23f47949ba79460f5e5b9a2fc"
+  "production_database_changed": false,
+  "public_program_state_ready_for_publish": true,
+  "receipt_sha256": "5b4a96419e7cfb770286c50b33b09e05f5e48ec431bb7589e5e1702a1327bc4e"
 }

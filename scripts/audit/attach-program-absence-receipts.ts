@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
-import { readFileSync, writeFileSync } from "node:fs";
-import { relative, resolve } from "node:path";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
 const TARGET_SQS = new Set([
@@ -93,6 +93,57 @@ export function attachProgramAbsenceReceipts(inventoryPath: string, receiptsPath
   return fixedPointPayload(inventory);
 }
 
+export function buildProgramAbsencePublicRecords(
+  inventoryPath: string,
+  receiptsPath: string,
+): Array<{ slug: string; record: Record<string, unknown> }> {
+  // Reutiliza a validação integral antes de transformar qualquer receipt em estado público.
+  attachProgramAbsenceReceipts(inventoryPath, receiptsPath);
+  const inventory = JSON.parse(readFileSync(inventoryPath, "utf8")) as {
+    fonte: { datasetUrl: string };
+    pacotes: Array<{ uf: string; pacoteUrl: string }>;
+    candidaturas: Array<Record<string, unknown>>;
+  };
+  const receiptSet = JSON.parse(readFileSync(receiptsPath, "utf8")) as {
+    receipts: Array<{ profile_slug: string; sq_candidato: string; checked_at: string }>;
+  };
+  const candidateBySq = new Map(inventory.candidaturas.map((candidate) => [String(candidate.sqCandidato), candidate]));
+  const packageByUf = new Map(inventory.pacotes.map((entry) => [entry.uf, entry.pacoteUrl]));
+  return receiptSet.receipts.map((receipt) => {
+    const candidate = candidateBySq.get(receipt.sq_candidato);
+    if (!candidate || candidate.slug !== receipt.profile_slug
+      || candidate.fonteEstado !== "sem_documento_oficial"
+      || !Array.isArray(candidate.documentoIds) || candidate.documentoIds.length !== 0) {
+      throw new Error(`${receipt.sq_candidato}: candidatura não sustenta estado público sem documento`);
+    }
+    const uf = String(candidate.uf);
+    const pacoteUrl = packageByUf.get(uf);
+    if (!pacoteUrl) throw new Error(`${receipt.sq_candidato}: pacote oficial da UF ausente`);
+    return {
+      slug: receipt.profile_slug,
+      record: {
+        version: 1,
+        estado: "sem_documento_oficial",
+        fonte: {
+          ano: 2026,
+          cargo: "GOVERNADOR",
+          uf,
+          sqCandidato: receipt.sq_candidato,
+          slug: receipt.profile_slug,
+          nomeUrna: candidate.nomeUrna,
+          partido: candidate.partido,
+          arquivoNome: null,
+          arquivoNoPacote: null,
+          pacoteUrl,
+          datasetUrl: inventory.fonte.datasetUrl,
+          pdfOriginalUrl: null,
+          coletadoEm: receipt.checked_at,
+        },
+      },
+    };
+  }).sort((a, b) => a.slug.localeCompare(b.slug, "pt-BR"));
+}
+
 async function main(): Promise<void> {
   const argv = process.argv.slice(2);
   const inventoryFlag = flag(argv, "inventory");
@@ -102,6 +153,14 @@ async function main(): Promise<void> {
   const receiptsPath = resolve(receiptsFlag);
   const out = resolve(flag(argv, "out") ?? inventoryPath);
   writeFileSync(out, attachProgramAbsenceReceipts(inventoryPath, receiptsPath));
+  const recordsDirFlag = flag(argv, "records-dir");
+  if (recordsDirFlag) {
+    const recordsDir = resolve(recordsDirFlag);
+    mkdirSync(recordsDir, { recursive: true });
+    for (const entry of buildProgramAbsencePublicRecords(inventoryPath, receiptsPath)) {
+      writeFileSync(join(recordsDir, `${entry.slug}.json`), `${JSON.stringify(entry.record, null, 2)}\n`);
+    }
+  }
   console.log(`PROGRAM_ABSENCE_RECEIPTS_ATTACHED path=${out}`);
 }
 

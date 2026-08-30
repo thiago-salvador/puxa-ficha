@@ -1,6 +1,6 @@
 # Recibos de programas oficiais ausentes
 
-O conjunto `receipt.json` registra a ausência de arquivo `codTipo 5` em cinco candidaturas a governador de 2026. Ele substitui a confirmação das 17:14 UTC por uma leitura mais recente, feita às 19:05 UTC no runner do data-freshness.
+O conjunto `receipt.json` registra a ausência de arquivo `codTipo 5` em cinco candidaturas a governador de 2026. A prova válida é a leitura das 19:05 UTC no runner do data-freshness, pois ela preserva os payloads brutos e seus hashes. A observação anterior das 17:14 UTC não tinha essa prova material e não é tratada como confirmação substituída.
 
 ## Escopo
 
@@ -16,6 +16,6 @@ Jorginho Mello, SC, SQ 240002537073, é o controle positivo do mesmo contrato: o
 
 ## Resultado
 
-As cinco respostas não contêm `codTipo 5`. Isso prova apenas a ausência de programa oficial no escopo e horário registrados. Não prova ausência universal e não muda nenhum dado público.
+As cinco respostas não contêm `codTipo 5`. Isso prova apenas a ausência de programa oficial no escopo e horário registrados, não ausência universal. O conjunto está pronto para publicar, para cada candidatura, o estado explícito `sem_documento_oficial`, sem resumo, documento ou conteúdo inventado. Nenhuma linha do banco de produção foi alterada e nenhum deploy foi executado por esta evidência.
 
 Fonte do transporte: workflow `33329832043`, executado no SHA `ee5158e253d9c90069cad2a9186ec12fd8acf38c`. O monitor TSE terminou `ok`; a falha geral do run veio do gate de freshness já existente para outra fonte.

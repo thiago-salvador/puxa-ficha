@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "estado": "sem_documento_oficial",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "CE",
+    "sqCandidato": "60002553922",
+    "slug": "vera-lucia-ce",
+    "nomeUrna": "VERA LÚCIA",
+    "partido": "NOVO",
+    "arquivoNome": null,
+    "arquivoNoPacote": null,
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-30T19:05:42.202Z"
+  }
+}

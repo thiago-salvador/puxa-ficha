@@ -77,7 +77,6 @@ export function generateProgramAbsenceReceipts(input: {
   outputPath: string;
   runUrl: string;
   headSha: string;
-  priorCheckedAt: string;
 }): Record<string, unknown> & { receipt_sha256: string } {
   const monitorRaw = readFileSync(input.monitorPath);
   const monitor = JSON.parse(monitorRaw.toString("utf8")) as MonitorReport;
@@ -88,7 +87,6 @@ export function generateProgramAbsenceReceipts(input: {
     throw new Error("run URL inválida");
   }
   if (!/^[a-f0-9]{40}$/.test(input.headSha)) throw new Error("head SHA inválido");
-  if (!Number.isFinite(Date.parse(input.priorCheckedAt))) throw new Error("prior checked_at inválido");
 
   const sourceFor = (sq: string): SourceReceipt => {
     const matches = monitor.sources.filter((source) => source.url.endsWith(`/candidato/${sq}`));
@@ -135,8 +133,6 @@ export function generateProgramAbsenceReceipts(input: {
     schema_version: 1,
     receipt_set_id: "programas-governo-ausentes:2026-08-30",
     generated_at: monitor.generated_at,
-    prior_confirmation_at: input.priorCheckedAt,
-    supersedes_prior_confirmation_with_raw_payloads: true,
     source_system: "TSE DivulgaCandContas",
     source_contract: "candidatura.arquivos[].codTipo",
     program_cod_tipo: "5",
@@ -159,7 +155,8 @@ export function generateProgramAbsenceReceipts(input: {
       program_file_ids: controlPrograms.map((file) => String(file.idArquivo ?? "")),
     },
     receipts,
-    public_data_changed: false,
+    production_database_changed: false,
+    public_program_state_ready_for_publish: true,
   };
   return { ...core, receipt_sha256: sha256(canonicalJson(core)) };
 }
@@ -175,8 +172,7 @@ async function main(): Promise<void> {
   const outputPath = resolve(outputFlag);
   const runUrl = flag(argv, "run-url") ?? "";
   const headSha = flag(argv, "head-sha") ?? "";
-  const priorCheckedAt = flag(argv, "prior-checked-at") ?? "";
-  const receipt = generateProgramAbsenceReceipts({ monitorPath, rawDir, outputPath, runUrl, headSha, priorCheckedAt });
+  const receipt = generateProgramAbsenceReceipts({ monitorPath, rawDir, outputPath, runUrl, headSha });
   writeFileSync(outputPath, `${JSON.stringify(receipt, null, 2)}\n`);
   console.log(JSON.stringify({ out: outputPath, receipts: (receipt.receipts as unknown[]).length, receipt_sha256: receipt.receipt_sha256 }));
 }

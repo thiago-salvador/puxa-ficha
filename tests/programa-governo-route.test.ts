@@ -116,6 +116,26 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
   }
 })
 
+test("cinco candidaturas sem codTipo 5 retornam estado explícito, não 404", async () => {
+  for (const slug of ["vera-lucia-ce", "ben-mendes", "eduardo-paes", "garotinho", "policial-edjane"]) {
+    const resource = await getProgramaGovernoPublicResource(slug)
+    assert.equal(resource.known, true, slug)
+    if (!resource.known) continue
+    assert.equal(resource.manifesto.estado, "sem_documento_oficial", slug)
+    assert.equal(resource.data, null, slug)
+    const handler = createProgramaGovernoGetHandler({
+      rateLimiter: createFixedWindowIpRateLimiter({ namespace: `programa-route-ausente-${slug}`, max: 5, windowMs: 60_000 }),
+      getProgramaGovernoPublicResource: async () => resource,
+    })
+    const response = await handler(request(slug, `203.0.113.${slug.length}`), params(slug))
+    const body = await response.json()
+    assert.equal(response.status, 200, slug)
+    assert.equal(body.estado, "sem_documento_oficial", slug)
+    assert.equal(body.data, null, slug)
+    assert.doesNotMatch(JSON.stringify(body), /Candidatura não encontrada|resumo|secoes/)
+  }
+})
+
 test("manifest identity mismatch fails closed without exposing another candidate", async () => {
   const crossed = approvedRecord()
   crossed.fonte.partido = "PARTIDO-DIVERGENTE"

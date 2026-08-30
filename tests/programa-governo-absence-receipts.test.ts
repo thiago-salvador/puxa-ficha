@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import test from "node:test";
 
-import { attachProgramAbsenceReceipts } from "../scripts/audit/attach-program-absence-receipts";
+import { attachProgramAbsenceReceipts, buildProgramAbsencePublicRecords } from "../scripts/audit/attach-program-absence-receipts";
 import { generateProgramAbsenceReceipts } from "../scripts/audit/generate-program-absence-receipts";
 
 const ROOT = resolve(import.meta.dirname, "..");
@@ -48,7 +48,10 @@ const inventory = JSON.parse(inventoryRaw) as Record<string, unknown> & {
 };
 
 test("prova cinco ausências oficiais com payload bruto e controle positivo", () => {
-  assert.equal(receipt.public_data_changed, false);
+  assert.equal(receipt.production_database_changed, false);
+  assert.equal(receipt.public_program_state_ready_for_publish, true);
+  assert.equal("prior_confirmation_at" in receipt, false);
+  assert.equal("supersedes_prior_confirmation_with_raw_payloads" in receipt, false);
   assert.deepEqual(new Map(receipt.receipts.map((item) => [String(item.sq_candidato), item.profile_slug])), TARGETS);
 
   for (const item of receipt.receipts) {
@@ -81,7 +84,6 @@ test("valida hash semântico e reproduz o receipt set pelo gerador", () => {
       outputPath: RECEIPT_PATH,
       runUrl: "https://github.com/thiago-salvador/puxa-ficha/actions/runs/33329832043",
       headSha: "ee5158e253d9c90069cad2a9186ec12fd8acf38c",
-      priorCheckedAt: "2026-08-30T17:14:00Z",
     }),
     receipt,
   );
@@ -124,10 +126,23 @@ test("recusa receipt set adulterado antes de alterar o inventário", () => {
   }
 });
 
-test("mantém a referência no gerador do inventário e fora da superfície pública", () => {
+test("mantém a referência no gerador do inventário sem tocar o banco", () => {
   const source = readFileSync(join(ROOT, "scripts/programas-governo-governadores-2026-inventario.ts"), "utf8");
   assert.match(source, /DEFAULT_ABSENCE_RECEIPTS/);
   assert.match(source, /recibosSemProgramaOficial/);
   assert.match(source, /reciboSemProgramaOficialId/);
-  assert.equal(receipt.public_data_changed, false);
+  assert.equal(receipt.production_database_changed, false);
+});
+
+test("gera cinco estados públicos sem documento, sem inventar conteúdo", () => {
+  const records = buildProgramAbsencePublicRecords(INVENTORY_PATH, RECEIPT_PATH);
+  assert.deepEqual(records.map((entry) => entry.slug), [...TARGETS.values()].sort((a, b) => a.localeCompare(b, "pt-BR")));
+  for (const entry of records) {
+    assert.equal(entry.record.estado, "sem_documento_oficial");
+    assert.equal("resumo" in entry.record, false);
+    assert.equal("documentos" in entry.record, false);
+    assert.equal("extracao" in entry.record, false);
+    const persisted = JSON.parse(readFileSync(join(ROOT, `src/data/programas-governo/governadores-2026/${entry.slug}.json`), "utf8"));
+    assert.deepEqual(persisted, entry.record);
+  }
 });
