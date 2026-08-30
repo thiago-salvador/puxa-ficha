@@ -18,7 +18,7 @@
     {
       "tabela": "votos_candidato",
       "ref": "destaques-freshness-removidos:2",
-      "campos": ["candidato_id", "votacao_id"],
+      "campos": ["id", "candidato_id", "votacao_id", "voto", "contradicao", "contradicao_descricao", "created_at"],
       "max_registros": 2
     },
     {

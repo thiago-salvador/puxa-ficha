@@ -79,14 +79,18 @@ const pairDetailsMd5 = createHash("md5")
 
 const pairValues = pairs.map((pair) => `  (${[
   sql(pair.pair_key),
-  sql(pair.candidato_id),
+  `${sql(pair.database_row_id)}::uuid`,
+  `${sql(pair.candidato_id)}::uuid`,
   sql(pair.candidate_slug),
-  sql(pair.votacao_id),
+  `${sql(pair.votacao_id)}::uuid`,
   sql(pair.votacao_id_api),
   sql(pair.expectedVote),
+  pair.contradicao_anterior ? "true" : "false",
+  sql(pair.contradicao_descricao_anterior),
+  `${sql(pair.created_at_anterior)}::timestamptz`,
   sql(pair.resultado),
   sql(pair.url),
-  sql(pair.checked_at),
+  `${sql(pair.checked_at)}::timestamptz`,
   sql(pair.payload_sha256),
   sql(pair.detail),
 ].join(", ")})`).join(",\n")
@@ -94,11 +98,15 @@ const pairValues = pairs.map((pair) => `  (${[
 const expectedTable = `
 CREATE TEMP TABLE _destaques_freshness_expected (
   pair_key text PRIMARY KEY,
+  database_row_id uuid NOT NULL UNIQUE,
   candidato_id uuid NOT NULL,
   candidate_slug text NOT NULL,
   votacao_id uuid NOT NULL,
   votacao_id_api text NOT NULL,
   expected_vote text NOT NULL,
+  contradicao_anterior boolean NOT NULL,
+  contradicao_descricao_anterior text,
+  created_at_anterior timestamptz NOT NULL,
   resultado text NOT NULL,
   url text NOT NULL,
   checked_at timestamptz NOT NULL,
@@ -109,6 +117,14 @@ CREATE TEMP TABLE _destaques_freshness_expected (
 INSERT INTO _destaques_freshness_expected VALUES
 ${pairValues};
 `
+
+const expectedCte = `expected (
+  pair_key,database_row_id,candidato_id,candidate_slug,votacao_id,votacao_id_api,
+  expected_vote,contradicao_anterior,contradicao_descricao_anterior,created_at_anterior,
+  resultado,url,checked_at,payload_sha256,detalhe
+) AS (VALUES
+${pairValues}
+)`
 
 const migration = `-- Reconcilia os 154 pares auditados em dupla leitura oficial.
 -- Mantém as 181 linhas sintéticas como histórico append-only e as supersede
@@ -141,7 +157,12 @@ BEGIN
   FROM _destaques_freshness_expected e
   FULL JOIN public.votos_candidato v
     ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
-  WHERE e.pair_key IS NULL OR v.id IS NULL OR v.voto IS DISTINCT FROM e.expected_vote;
+  WHERE e.pair_key IS NULL OR v.id IS NULL
+     OR v.id IS DISTINCT FROM e.database_row_id
+     OR v.voto IS DISTINCT FROM e.expected_vote
+     OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
+     OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
+     OR v.created_at IS DISTINCT FROM e.created_at_anterior;
 
   SELECT count(*) INTO old_receipts
   FROM public.coleta_log
@@ -181,13 +202,17 @@ WHERE vc.id=m.id AND vc.fonte IS NULL AND vc.votacao_id_api IS NULL
   AND m.ref='destaques-freshness-metadata:3'
   AND current_setting('pf.destaques_freshness_apply',true)='true';
 
--- @write tabela=votos_candidato ref=destaques-freshness-removidos:2 campos=candidato_id,votacao_id
+-- @write tabela=votos_candidato ref=destaques-freshness-removidos:2 campos=id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at
 DELETE FROM public.votos_candidato v
 USING _destaques_freshness_expected e
 WHERE e.pair_key IN (${[...REMOVED_PAIR_KEYS].map(sql).join(", ")})
+  AND v.id=e.database_row_id
   AND v.candidato_id=e.candidato_id
   AND v.votacao_id=e.votacao_id
   AND v.voto=e.expected_vote
+  AND v.contradicao IS NOT DISTINCT FROM e.contradicao_anterior
+  AND v.contradicao_descricao IS NOT DISTINCT FROM e.contradicao_descricao_anterior
+  AND v.created_at IS NOT DISTINCT FROM e.created_at_anterior
   AND 'destaques-freshness-removidos:2'='destaques-freshness-removidos:2'
   AND current_setting('pf.destaques_freshness_apply',true)='true';
 
@@ -226,7 +251,14 @@ BEGIN
   FROM _destaques_freshness_expected e
   FULL JOIN public.votos_candidato v
     ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
-  WHERE (e.resultado='encontrado' AND (v.id IS NULL OR v.voto IS DISTINCT FROM e.expected_vote))
+  WHERE (e.resultado='encontrado' AND (
+       v.id IS NULL
+       OR v.id IS DISTINCT FROM e.database_row_id
+       OR v.voto IS DISTINCT FROM e.expected_vote
+       OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
+       OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
+       OR v.created_at IS DISTINCT FROM e.created_at_anterior
+     ))
      OR (e.resultado='sem_achado_no_escopo' AND v.id IS NOT NULL)
      OR e.pair_key IS NULL;
 
@@ -291,14 +323,23 @@ BEGIN
        OR (id='6a6407e5-6164-452b-acc3-bf173ed73e7f'::uuid AND fonte='camara' AND votacao_id_api='2196833-326');
   SELECT count(*) INTO unresolved FROM public.votacoes_chave
     WHERE id IN (${UNRESOLVED_VOTES.map(sql).join(", ")}) AND fonte IS NULL AND votacao_id_api IS NULL;
-  SELECT count(*) INTO bad_receipts FROM public.coleta_log
-    WHERE execucao=${sql(EXECUTION)} AND (
-      detalhe NOT LIKE 'provenance_v1:%'
-      OR executado_em IS DISTINCT FROM ${sql(manifest.checked_at)}::timestamptz
-      OR natureza IS DISTINCT FROM 'coleta'
-      OR resultado NOT IN ('encontrado','sem_achado_no_escopo')
-      OR (escopo='candidato' AND (url IS NULL OR candidato_id IS NULL))
-    );
+  WITH ${expectedCte}
+  SELECT count(*) INTO bad_receipts
+  FROM public.coleta_log l
+  LEFT JOIN expected e ON e.pair_key=l.alvo AND l.escopo='candidato'
+  WHERE l.execucao=${sql(EXECUTION)} AND (
+    l.detalhe NOT LIKE 'provenance_v1:%'
+    OR l.natureza IS DISTINCT FROM 'coleta'
+    OR l.resultado NOT IN ('encontrado','sem_achado_no_escopo')
+    OR (l.escopo='global' AND l.executado_em IS DISTINCT FROM ${sql(manifest.checked_at)}::timestamptz)
+    OR (l.escopo='candidato' AND (
+      e.pair_key IS NULL
+      OR l.executado_em IS DISTINCT FROM e.checked_at
+      OR l.url IS NULL
+      OR l.candidato_id IS NULL
+    ))
+    OR l.escopo NOT IN ('global','candidato')
+  );
   SELECT md5(coalesce(string_agg(detalhe,'' ORDER BY alvo),'')) INTO pair_details_md5
     FROM public.coleta_log WHERE execucao=${sql(EXECUTION)} AND escopo='candidato';
   SELECT count(*) INTO global_details FROM public.coleta_log
@@ -330,6 +371,7 @@ DECLARE
   divergent integer;
   receipts integer;
   bad_receipts integer;
+  mapped_metadata integer;
 BEGIN
   SELECT count(*) INTO ledger FROM supabase_migrations.schema_migrations WHERE version=${sql(VERSION)};
   SELECT count(*) INTO remaining FROM public.votos_candidato;
@@ -337,7 +379,14 @@ BEGIN
   FROM _destaques_freshness_expected e
   FULL JOIN public.votos_candidato v
     ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
-  WHERE (e.resultado='encontrado' AND (v.id IS NULL OR v.voto IS DISTINCT FROM e.expected_vote))
+  WHERE (e.resultado='encontrado' AND (
+       v.id IS NULL
+       OR v.id IS DISTINCT FROM e.database_row_id
+       OR v.voto IS DISTINCT FROM e.expected_vote
+       OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
+       OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
+       OR v.created_at IS DISTINCT FROM e.created_at_anterior
+     ))
      OR (e.resultado='sem_achado_no_escopo' AND v.id IS NOT NULL)
      OR e.pair_key IS NULL;
   SELECT count(*) INTO receipts FROM public.coleta_log WHERE execucao=${sql(EXECUTION)};
@@ -349,19 +398,31 @@ BEGIN
     OR (l.escopo='candidato' AND (e.pair_key IS NULL OR l.detalhe IS DISTINCT FROM e.detalhe))
     OR l.escopo NOT IN ('global','candidato')
   );
-  IF ledger<>1 OR remaining<>152 OR divergent<>0 OR receipts<>155 OR bad_receipts<>0 THEN
-    RAISE EXCEPTION 'rollback destaques freshness recusado ledger=% remaining=% divergent=% receipts=% bad=%', ledger,remaining,divergent,receipts,bad_receipts;
+  SELECT count(*) INTO mapped_metadata
+  FROM public.votacoes_chave vc
+  JOIN (VALUES
+${[...MAPPED_VOTES].map(([id, api]) => `    (${sql(id)}::uuid, ${sql(api)})`).join(",\n")}
+  ) m(id,api) ON m.id=vc.id
+  WHERE vc.fonte='camara' AND vc.votacao_id_api=m.api;
+  IF ledger<>1 OR remaining<>152 OR divergent<>0 OR receipts<>155 OR bad_receipts<>0 OR mapped_metadata<>3 THEN
+    RAISE EXCEPTION 'rollback destaques freshness recusado ledger=% remaining=% divergent=% receipts=% bad=% mapped=%', ledger,remaining,divergent,receipts,bad_receipts,mapped_metadata;
   END IF;
 END
 $precondition$;
 
 -- @write tabela=votacoes_chave ref=rollback-destaques-freshness-metadata:3 campos=fonte,votacao_id_api
 UPDATE public.votacoes_chave SET fonte=null,votacao_id_api=null
-WHERE id IN (${[...MAPPED_VOTES.keys()].map(sql).join(", ")}) AND fonte='camara';
+FROM (VALUES
+${[...MAPPED_VOTES].map(([id, api]) => `  (${sql(id)}::uuid, ${sql(api)})`).join(",\n")}
+) m(id,api)
+WHERE public.votacoes_chave.id=m.id
+  AND public.votacoes_chave.fonte='camara'
+  AND public.votacoes_chave.votacao_id_api=m.api;
 
--- @write tabela=votos_candidato ref=rollback-destaques-freshness-removidos:2 campos=candidato_id,votacao_id,voto
-INSERT INTO public.votos_candidato(candidato_id,votacao_id,voto)
-SELECT candidato_id,votacao_id,expected_vote FROM _destaques_freshness_expected
+-- @write tabela=votos_candidato ref=rollback-destaques-freshness-removidos:2 campos=id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at
+INSERT INTO public.votos_candidato(id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at)
+SELECT database_row_id,candidato_id,votacao_id,expected_vote,contradicao_anterior,contradicao_descricao_anterior,created_at_anterior
+FROM _destaques_freshness_expected
 WHERE pair_key IN (${[...REMOVED_PAIR_KEYS].map(sql).join(", ")});
 
 -- @write tabela=coleta_log ref=rollback-destaques-freshness-proveniencia:155 campos=execucao
@@ -369,19 +430,78 @@ DELETE FROM public.coleta_log WHERE execucao=${sql(EXECUTION)};
 DELETE FROM supabase_migrations.schema_migrations WHERE version=${sql(VERSION)};
 
 DO $postcondition$
-DECLARE restored integer; receipts integer; ledger integer; metadata integer;
+DECLARE restored integer; receipts integer; ledger integer; metadata integer; divergent integer;
 BEGIN
   SELECT count(*) INTO restored FROM public.votos_candidato;
   SELECT count(*) INTO receipts FROM public.coleta_log WHERE execucao=${sql(EXECUTION)};
   SELECT count(*) INTO ledger FROM supabase_migrations.schema_migrations WHERE version=${sql(VERSION)};
   SELECT count(*) INTO metadata FROM public.votacoes_chave
     WHERE id IN (${[...MAPPED_VOTES.keys()].map(sql).join(", ")}) AND fonte IS NULL AND votacao_id_api IS NULL;
-  IF restored<>154 OR receipts<>0 OR ledger<>0 OR metadata<>3 THEN
-    RAISE EXCEPTION 'rollback destaques freshness incompleto restored=% receipts=% ledger=% metadata=%',restored,receipts,ledger,metadata;
+  SELECT count(*) INTO divergent
+  FROM _destaques_freshness_expected e
+  FULL JOIN public.votos_candidato v
+    ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
+  WHERE e.pair_key IS NULL OR v.id IS NULL
+     OR v.id IS DISTINCT FROM e.database_row_id
+     OR v.voto IS DISTINCT FROM e.expected_vote
+     OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
+     OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
+     OR v.created_at IS DISTINCT FROM e.created_at_anterior;
+  IF restored<>154 OR receipts<>0 OR ledger<>0 OR metadata<>3 OR divergent<>0 THEN
+    RAISE EXCEPTION 'rollback destaques freshness incompleto restored=% receipts=% ledger=% metadata=% divergent=%',restored,receipts,ledger,metadata,divergent;
   END IF;
 END
 $postcondition$;
 COMMIT;
+`
+
+const rollbackReadback = `\\set ON_ERROR_STOP on
+SET default_transaction_read_only=on;
+DO $assert$
+DECLARE
+  ledger integer;
+  pairs_count integer;
+  divergent integer;
+  target_receipts integer;
+  old_receipts integer;
+  prior_metadata integer;
+BEGIN
+  SELECT count(*) INTO ledger
+  FROM supabase_migrations.schema_migrations WHERE version=${sql(VERSION)};
+  SELECT count(*) INTO pairs_count FROM public.votos_candidato;
+  WITH ${expectedCte}
+  SELECT count(*) INTO divergent
+  FROM expected e
+  FULL JOIN public.votos_candidato v
+    ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
+  WHERE e.pair_key IS NULL OR v.id IS NULL
+     OR v.id IS DISTINCT FROM e.database_row_id
+     OR v.voto IS DISTINCT FROM e.expected_vote
+     OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
+     OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
+     OR v.created_at IS DISTINCT FROM e.created_at_anterior;
+  SELECT count(*) INTO target_receipts
+  FROM public.coleta_log WHERE execucao=${sql(EXECUTION)};
+  SELECT count(*) INTO old_receipts
+  FROM public.coleta_log
+  WHERE fonte='destaques-votacoes' AND execucao IS DISTINCT FROM ${sql(EXECUTION)};
+  SELECT count(*) INTO prior_metadata
+  FROM public.votacoes_chave
+  WHERE id IN (${[...MAPPED_VOTES.keys(), ...UNRESOLVED_VOTES].map(sql).join(", ")})
+    AND fonte IS NULL AND votacao_id_api IS NULL;
+  IF ledger<>0 OR pairs_count<>154 OR divergent<>0 OR target_receipts<>0
+     OR old_receipts<>181 OR prior_metadata<>5 THEN
+    RAISE EXCEPTION 'rollback readback destaques freshness falhou ledger=% pairs=% divergent=% receipts=% old=% metadata=%',
+      ledger,pairs_count,divergent,target_receipts,old_receipts,prior_metadata;
+  END IF;
+END
+$assert$;
+
+SELECT
+  (SELECT count(*) FROM public.votos_candidato) AS pairs,
+  (SELECT count(*) FROM public.coleta_log WHERE execucao=${sql(EXECUTION)}) AS receipts,
+  (SELECT count(*) FROM public.coleta_log WHERE fonte='destaques-votacoes' AND execucao IS DISTINCT FROM ${sql(EXECUTION)}) AS archived_history,
+  (SELECT count(*) FROM public.votacoes_chave WHERE id IN (${[...MAPPED_VOTES.keys(), ...UNRESOLVED_VOTES].map(sql).join(", ")}) AND fonte IS NULL AND votacao_id_api IS NULL) AS prior_metadata;
 `
 
 const candidates = [...new Map(pairs.map((pair) => [pair.candidato_id, pair.candidate_slug])).entries()]
@@ -405,7 +525,9 @@ CREATE TABLE public.chapas_2026(
 CREATE TABLE public.votacoes_chave(id uuid PRIMARY KEY,titulo text NOT NULL,fonte text,votacao_id_api text);
 CREATE TABLE public.votos_candidato(
   id uuid PRIMARY KEY DEFAULT gen_random_uuid(),candidato_id uuid NOT NULL REFERENCES public.candidatos(id),
-  votacao_id uuid NOT NULL REFERENCES public.votacoes_chave(id),voto text NOT NULL,UNIQUE(candidato_id,votacao_id)
+  votacao_id uuid NOT NULL REFERENCES public.votacoes_chave(id),voto text NOT NULL,
+  contradicao boolean NOT NULL DEFAULT false,contradicao_descricao text,
+  created_at timestamptz NOT NULL DEFAULT now(),UNIQUE(candidato_id,votacao_id)
 );
 CREATE TABLE public.coleta_log(
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,fonte text NOT NULL,escopo text NOT NULL,
@@ -422,8 +544,8 @@ INSERT INTO public.candidatos(id,slug) VALUES
 ${candidates.map(([id, slug]) => `  (${sql(id)},${sql(slug)})`).join(",\n")};
 INSERT INTO public.votacoes_chave(id,titulo,fonte,votacao_id_api) VALUES
 ${votes.map((vote) => `  (${sql(vote.votacao_id)},${sql(vote.titulo)},${sql(vote.fonte_anterior)},${sql(vote.votacao_id_api_anterior)})`).join(",\n")};
-INSERT INTO public.votos_candidato(candidato_id,votacao_id,voto) VALUES
-${pairs.map((pair) => `  (${sql(pair.candidato_id)},${sql(pair.votacao_id)},${sql(pair.expectedVote)})`).join(",\n")};
+INSERT INTO public.votos_candidato(id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at) VALUES
+${pairs.map((pair) => `  (${sql(pair.database_row_id)},${sql(pair.candidato_id)},${sql(pair.votacao_id)},${sql(pair.expectedVote)},${pair.contradicao_anterior ? "true" : "false"},${sql(pair.contradicao_descricao_anterior)},${sql(pair.created_at_anterior)})`).join(",\n")};
 INSERT INTO public.coleta_log(fonte,escopo,alvo,candidato_id,executado_em,resultado,volume,detalhe,url,execucao,natureza)
 SELECT 'destaques-votacoes','candidato','legacy-'||g,null,'2026-08-01 15:00:00+00','indeterminado',0,'sintético legado',null,'legacy:'||g,'coleta'
 FROM generate_series(1,181) g;
@@ -431,6 +553,7 @@ FROM generate_series(1,181) g;
 
 writeFileSync(resolve(ROOT, `supabase/migrations/${VERSION}_destaques_freshness_reconciliation.sql`), migration)
 writeFileSync(resolve(ROOT, `supabase/readback/${VERSION}_destaques_freshness_reconciliation.readback.sql`), readback)
+writeFileSync(resolve(ROOT, `supabase/readback/${VERSION}_destaques_freshness_reconciliation.rollback.readback.sql`), rollbackReadback)
 writeFileSync(resolve(ROOT, `supabase/rollback/${VERSION}_destaques_freshness_reconciliation.rollback.sql`), rollback)
 writeFileSync(resolve(ROOT, EVIDENCE_DIR, "migration-fixture.sql"), fixture)
 

@@ -1,25 +1,22 @@
 \set ON_ERROR_STOP on
-BEGIN;
-
-CREATE TEMP TABLE _destaques_freshness_expected (
-  pair_key text PRIMARY KEY,
-  database_row_id uuid NOT NULL UNIQUE,
-  candidato_id uuid NOT NULL,
-  candidate_slug text NOT NULL,
-  votacao_id uuid NOT NULL,
-  votacao_id_api text NOT NULL,
-  expected_vote text NOT NULL,
-  contradicao_anterior boolean NOT NULL,
-  contradicao_descricao_anterior text,
-  created_at_anterior timestamptz NOT NULL,
-  resultado text NOT NULL,
-  url text NOT NULL,
-  checked_at timestamptz NOT NULL,
-  payload_sha256 text NOT NULL,
-  detalhe text NOT NULL
-) ON COMMIT DROP;
-
-INSERT INTO _destaques_freshness_expected VALUES
+SET default_transaction_read_only=on;
+DO $assert$
+DECLARE
+  ledger integer;
+  pairs_count integer;
+  divergent integer;
+  target_receipts integer;
+  old_receipts integer;
+  prior_metadata integer;
+BEGIN
+  SELECT count(*) INTO ledger
+  FROM supabase_migrations.schema_migrations WHERE version='20260830151500';
+  SELECT count(*) INTO pairs_count FROM public.votos_candidato;
+  WITH expected (
+  pair_key,database_row_id,candidato_id,candidate_slug,votacao_id,votacao_id_api,
+  expected_vote,contradicao_anterior,contradicao_descricao_anterior,created_at_anterior,
+  resultado,url,checked_at,payload_sha256,detalhe
+) AS (VALUES
   ('00b971a6-5f12-4fa3-961f-5806abfd6fb0:274f2ae4-58dc-43bb-b98c-c170b0fb132c', 'e5332616-99e7-4faf-b357-68481ef06a05'::uuid, '00b971a6-5f12-4fa3-961f-5806abfd6fb0'::uuid, 'sandro-alex', '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid, '2123843-93', 'sim', false, null, '2026-08-12T07:54:23.470461+00:00'::timestamptz, 'encontrado', 'https://dadosabertos.camara.leg.br/api/v2/votacoes/2123843-93/votos', '2026-08-30T20:18:46.476Z'::timestamptz, 'd0161aaae590a4b4825463a7672e30e8b9df04c0ca16900cd6d1fda90e007f08', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"00b971a6-5f12-4fa3-961f-5806abfd6fb0:274f2ae4-58dc-43bb-b98c-c170b0fb132c","votacao_id":"274f2ae4-58dc-43bb-b98c-c170b0fb132c","votacao_id_api":"2123843-93","payload_sha256":"d0161aaae590a4b4825463a7672e30e8b9df04c0ca16900cd6d1fda90e007f08","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
   ('00b971a6-5f12-4fa3-961f-5806abfd6fb0:373ebd9f-4793-47c0-a23e-5a660ff2dd14', 'b02468ee-a21e-48cb-9b45-aba9a997fa43'::uuid, '00b971a6-5f12-4fa3-961f-5806abfd6fb0'::uuid, 'sandro-alex', '373ebd9f-4793-47c0-a23e-5a660ff2dd14'::uuid, '340812-195', 'não', false, null, '2026-08-12T07:54:26.182276+00:00'::timestamptz, 'encontrado', 'https://dadosabertos.camara.leg.br/api/v2/votacoes/340812-195/votos', '2026-08-30T20:18:46.429Z'::timestamptz, '57544607b224fca51ea03f354a05a2256c6c55d574731dce2ba650c1a94a67bd', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"00b971a6-5f12-4fa3-961f-5806abfd6fb0:373ebd9f-4793-47c0-a23e-5a660ff2dd14","votacao_id":"373ebd9f-4793-47c0-a23e-5a660ff2dd14","votacao_id_api":"340812-195","payload_sha256":"57544607b224fca51ea03f354a05a2256c6c55d574731dce2ba650c1a94a67bd","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
   ('00b971a6-5f12-4fa3-961f-5806abfd6fb0:6db01176-6e4d-407e-930f-55ccd3e60747', '1927140f-318f-4c61-9ed7-26182be24445'::uuid, '00b971a6-5f12-4fa3-961f-5806abfd6fb0'::uuid, 'sandro-alex', '6db01176-6e4d-407e-930f-55ccd3e60747'::uuid, '14493-503', 'sim', false, null, '2026-08-12T07:54:21.550593+00:00'::timestamptz, 'encontrado', 'https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-503/votos', '2026-08-30T20:18:46.085Z'::timestamptz, '0d8f22bc00643bfeabee6f7e19de75a19e8253f450fb70eed577ed7e638f8caa', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"00b971a6-5f12-4fa3-961f-5806abfd6fb0:6db01176-6e4d-407e-930f-55ccd3e60747","votacao_id":"6db01176-6e4d-407e-930f-55ccd3e60747","votacao_id_api":"14493-503","payload_sha256":"0d8f22bc00643bfeabee6f7e19de75a19e8253f450fb70eed577ed7e638f8caa","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
@@ -173,87 +170,10 @@ INSERT INTO _destaques_freshness_expected VALUES
   ('febc4a12-c352-448a-99dc-671c77e8d57d:e586da0e-3d1e-4f4c-93cd-3c696417f627', '64d90d5c-1683-4de6-ae3e-6bfb8132fc66'::uuid, 'febc4a12-c352-448a-99dc-671c77e8d57d'::uuid, 'wellington-fagundes', 'e586da0e-3d1e-4f4c-93cd-3c696417f627'::uuid, '6377', 'sim', false, null, '2026-08-12T01:11:38.652996+00:00'::timestamptz, 'encontrado', 'https://legis.senado.leg.br/dadosabertos/senador/1173/votacoes.json', '2026-08-30T20:18:47.672Z'::timestamptz, 'eeb5a9e6008019da5c69c2ab65ffeabb79d55c2fc2204ad1c1b420f6eaf21e1f', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"febc4a12-c352-448a-99dc-671c77e8d57d:e586da0e-3d1e-4f4c-93cd-3c696417f627","votacao_id":"e586da0e-3d1e-4f4c-93cd-3c696417f627","votacao_id_api":"6377","payload_sha256":"eeb5a9e6008019da5c69c2ab65ffeabb79d55c2fc2204ad1c1b420f6eaf21e1f","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
   ('ff7f433f-70b4-420c-885d-c0401a901790:7fa2b07b-f390-4d0f-87d5-354a68b1c593', '82d044c0-6fdb-4735-b2f1-ec452d81f68a'::uuid, 'ff7f433f-70b4-420c-885d-c0401a901790'::uuid, 'cleitinho', '7fa2b07b-f390-4d0f-87d5-354a68b1c593'::uuid, '6756', 'sim', false, null, '2026-08-12T01:11:38.652996+00:00'::timestamptz, 'encontrado', 'https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json', '2026-08-30T20:18:48.838Z'::timestamptz, '68c4ef5a9068352670c4154ca2f27c858592bc6a0ab26e7a3aafa9ba7fa50847', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"ff7f433f-70b4-420c-885d-c0401a901790:7fa2b07b-f390-4d0f-87d5-354a68b1c593","votacao_id":"7fa2b07b-f390-4d0f-87d5-354a68b1c593","votacao_id_api":"6756","payload_sha256":"68c4ef5a9068352670c4154ca2f27c858592bc6a0ab26e7a3aafa9ba7fa50847","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
   ('ff7f433f-70b4-420c-885d-c0401a901790:a145eff6-be34-4550-a7d3-8394a899262b', '4dc44967-9027-491b-a9a8-07e0013f4976'::uuid, 'ff7f433f-70b4-420c-885d-c0401a901790'::uuid, 'cleitinho', 'a145eff6-be34-4550-a7d3-8394a899262b'::uuid, '6714', 'não', false, null, '2026-08-12T01:11:38.652996+00:00'::timestamptz, 'encontrado', 'https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json', '2026-08-30T20:18:48.838Z'::timestamptz, 'e0598d54e841441e5bfee73be8dff41f4ffb320fc269026663165aa7ded2b895', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"ff7f433f-70b4-420c-885d-c0401a901790:a145eff6-be34-4550-a7d3-8394a899262b","votacao_id":"a145eff6-be34-4550-a7d3-8394a899262b","votacao_id_api":"6714","payload_sha256":"e0598d54e841441e5bfee73be8dff41f4ffb320fc269026663165aa7ded2b895","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}'),
-  ('ff7f433f-70b4-420c-885d-c0401a901790:e473c35a-fe74-4bd0-b3e9-02604fbe2e9f', '6cfbb61f-271d-45d2-a8a5-90b772b2c458'::uuid, 'ff7f433f-70b4-420c-885d-c0401a901790'::uuid, 'cleitinho', 'e473c35a-fe74-4bd0-b3e9-02604fbe2e9f'::uuid, '6777', 'não', false, null, '2026-08-12T01:11:38.652996+00:00'::timestamptz, 'encontrado', 'https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json', '2026-08-30T20:18:48.838Z'::timestamptz, 'c4f6849e7e0d146b9c0b863029f4470275ebfeb11cce7b13f7c728addba4655b', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"ff7f433f-70b4-420c-885d-c0401a901790:e473c35a-fe74-4bd0-b3e9-02604fbe2e9f","votacao_id":"e473c35a-fe74-4bd0-b3e9-02604fbe2e9f","votacao_id_api":"6777","payload_sha256":"c4f6849e7e0d146b9c0b863029f4470275ebfeb11cce7b13f7c728addba4655b","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}');
-
-DO $precondition$
-DECLARE
-  ledger integer;
-  remaining integer;
-  divergent integer;
-  receipts integer;
-  bad_receipts integer;
-  mapped_metadata integer;
-BEGIN
-  SELECT count(*) INTO ledger FROM supabase_migrations.schema_migrations WHERE version='20260830151500';
-  SELECT count(*) INTO remaining FROM public.votos_candidato;
+  ('ff7f433f-70b4-420c-885d-c0401a901790:e473c35a-fe74-4bd0-b3e9-02604fbe2e9f', '6cfbb61f-271d-45d2-a8a5-90b772b2c458'::uuid, 'ff7f433f-70b4-420c-885d-c0401a901790'::uuid, 'cleitinho', 'e473c35a-fe74-4bd0-b3e9-02604fbe2e9f'::uuid, '6777', 'não', false, null, '2026-08-12T01:11:38.652996+00:00'::timestamptz, 'encontrado', 'https://legis.senado.leg.br/dadosabertos/senador/6337/votacoes.json', '2026-08-30T20:18:48.838Z'::timestamptz, 'c4f6849e7e0d146b9c0b863029f4470275ebfeb11cce7b13f7c728addba4655b', 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","pair_key":"ff7f433f-70b4-420c-885d-c0401a901790:e473c35a-fe74-4bd0-b3e9-02604fbe2e9f","votacao_id":"e473c35a-fe74-4bd0-b3e9-02604fbe2e9f","votacao_id_api":"6777","payload_sha256":"c4f6849e7e0d146b9c0b863029f4470275ebfeb11cce7b13f7c728addba4655b","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","observed_result":"encontrado","reconciled_result":"encontrado","reconciled_by":null}')
+)
   SELECT count(*) INTO divergent
-  FROM _destaques_freshness_expected e
-  FULL JOIN public.votos_candidato v
-    ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
-  WHERE (e.resultado='encontrado' AND (
-       v.id IS NULL
-       OR v.id IS DISTINCT FROM e.database_row_id
-       OR v.voto IS DISTINCT FROM e.expected_vote
-       OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
-       OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
-       OR v.created_at IS DISTINCT FROM e.created_at_anterior
-     ))
-     OR (e.resultado='sem_achado_no_escopo' AND v.id IS NOT NULL)
-     OR e.pair_key IS NULL;
-  SELECT count(*) INTO receipts FROM public.coleta_log WHERE execucao='migration:20260830151500';
-  SELECT count(*) INTO bad_receipts
-  FROM public.coleta_log l
-  LEFT JOIN _destaques_freshness_expected e ON e.pair_key=l.alvo AND l.escopo='candidato'
-  WHERE l.execucao='migration:20260830151500' AND (
-    (l.escopo='global' AND l.detalhe IS DISTINCT FROM 'provenance_v1:{"contract_version":1,"source_id":"destaques-votacoes","comparison_sha256":"0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f","execution_ids":["destaques-votacoes:20260830-run-c","destaques-votacoes:20260830-run-d"],"raw_payload_count":93,"pair_count":154,"confirmed_pair_count":152,"removed_pair_count":2,"evidence_path":"QA/evidencias/2026-08-30-destaques-votacoes","synthetic_history_preserved":181}')
-    OR (l.escopo='candidato' AND (e.pair_key IS NULL OR l.detalhe IS DISTINCT FROM e.detalhe))
-    OR l.escopo NOT IN ('global','candidato')
-  );
-  SELECT count(*) INTO mapped_metadata
-  FROM public.votacoes_chave vc
-  JOIN (VALUES
-    ('e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4'::uuid, '2270789-73'),
-    ('c7a9aef3-9943-47c7-8c30-9659626bace8'::uuid, '2357053-47'),
-    ('6a6407e5-6164-452b-acc3-bf173ed73e7f'::uuid, '2196833-326')
-  ) m(id,api) ON m.id=vc.id
-  WHERE vc.fonte='camara' AND vc.votacao_id_api=m.api;
-  IF ledger<>1 OR remaining<>152 OR divergent<>0 OR receipts<>155 OR bad_receipts<>0 OR mapped_metadata<>3 THEN
-    RAISE EXCEPTION 'rollback destaques freshness recusado ledger=% remaining=% divergent=% receipts=% bad=% mapped=%', ledger,remaining,divergent,receipts,bad_receipts,mapped_metadata;
-  END IF;
-END
-$precondition$;
-
--- @write tabela=votacoes_chave ref=rollback-destaques-freshness-metadata:3 campos=fonte,votacao_id_api
-UPDATE public.votacoes_chave SET fonte=null,votacao_id_api=null
-FROM (VALUES
-  ('e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4'::uuid, '2270789-73'),
-  ('c7a9aef3-9943-47c7-8c30-9659626bace8'::uuid, '2357053-47'),
-  ('6a6407e5-6164-452b-acc3-bf173ed73e7f'::uuid, '2196833-326')
-) m(id,api)
-WHERE public.votacoes_chave.id=m.id
-  AND public.votacoes_chave.fonte='camara'
-  AND public.votacoes_chave.votacao_id_api=m.api;
-
--- @write tabela=votos_candidato ref=rollback-destaques-freshness-removidos:2 campos=id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at
-INSERT INTO public.votos_candidato(id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at)
-SELECT database_row_id,candidato_id,votacao_id,expected_vote,contradicao_anterior,contradicao_descricao_anterior,created_at_anterior
-FROM _destaques_freshness_expected
-WHERE pair_key IN ('538fb04d-8fb4-486f-a7dd-9c78399a6353:7fa2b07b-f390-4d0f-87d5-354a68b1c593', 'a5fa816e-9e3b-40ae-8679-71568bed63da:373ebd9f-4793-47c0-a23e-5a660ff2dd14');
-
--- @write tabela=coleta_log ref=rollback-destaques-freshness-proveniencia:155 campos=execucao
-DELETE FROM public.coleta_log WHERE execucao='migration:20260830151500';
-DELETE FROM supabase_migrations.schema_migrations WHERE version='20260830151500';
-
-DO $postcondition$
-DECLARE restored integer; receipts integer; ledger integer; metadata integer; divergent integer;
-BEGIN
-  SELECT count(*) INTO restored FROM public.votos_candidato;
-  SELECT count(*) INTO receipts FROM public.coleta_log WHERE execucao='migration:20260830151500';
-  SELECT count(*) INTO ledger FROM supabase_migrations.schema_migrations WHERE version='20260830151500';
-  SELECT count(*) INTO metadata FROM public.votacoes_chave
-    WHERE id IN ('e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4', 'c7a9aef3-9943-47c7-8c30-9659626bace8', '6a6407e5-6164-452b-acc3-bf173ed73e7f') AND fonte IS NULL AND votacao_id_api IS NULL;
-  SELECT count(*) INTO divergent
-  FROM _destaques_freshness_expected e
+  FROM expected e
   FULL JOIN public.votos_candidato v
     ON v.candidato_id=e.candidato_id AND v.votacao_id=e.votacao_id
   WHERE e.pair_key IS NULL OR v.id IS NULL
@@ -262,9 +182,25 @@ BEGIN
      OR v.contradicao IS DISTINCT FROM e.contradicao_anterior
      OR v.contradicao_descricao IS DISTINCT FROM e.contradicao_descricao_anterior
      OR v.created_at IS DISTINCT FROM e.created_at_anterior;
-  IF restored<>154 OR receipts<>0 OR ledger<>0 OR metadata<>3 OR divergent<>0 THEN
-    RAISE EXCEPTION 'rollback destaques freshness incompleto restored=% receipts=% ledger=% metadata=% divergent=%',restored,receipts,ledger,metadata,divergent;
+  SELECT count(*) INTO target_receipts
+  FROM public.coleta_log WHERE execucao='migration:20260830151500';
+  SELECT count(*) INTO old_receipts
+  FROM public.coleta_log
+  WHERE fonte='destaques-votacoes' AND execucao IS DISTINCT FROM 'migration:20260830151500';
+  SELECT count(*) INTO prior_metadata
+  FROM public.votacoes_chave
+  WHERE id IN ('e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4', 'c7a9aef3-9943-47c7-8c30-9659626bace8', '6a6407e5-6164-452b-acc3-bf173ed73e7f', '53e42d37-01ac-4713-80a6-3bb83bd8d3ad', '7402411d-1e7f-4122-acbb-50d060aa0856')
+    AND fonte IS NULL AND votacao_id_api IS NULL;
+  IF ledger<>0 OR pairs_count<>154 OR divergent<>0 OR target_receipts<>0
+     OR old_receipts<>181 OR prior_metadata<>5 THEN
+    RAISE EXCEPTION 'rollback readback destaques freshness falhou ledger=% pairs=% divergent=% receipts=% old=% metadata=%',
+      ledger,pairs_count,divergent,target_receipts,old_receipts,prior_metadata;
   END IF;
 END
-$postcondition$;
-COMMIT;
+$assert$;
+
+SELECT
+  (SELECT count(*) FROM public.votos_candidato) AS pairs,
+  (SELECT count(*) FROM public.coleta_log WHERE execucao='migration:20260830151500') AS receipts,
+  (SELECT count(*) FROM public.coleta_log WHERE fonte='destaques-votacoes' AND execucao IS DISTINCT FROM 'migration:20260830151500') AS archived_history,
+  (SELECT count(*) FROM public.votacoes_chave WHERE id IN ('e87490ab-2d4a-48ae-b3f8-dcaf2a171ed4', 'c7a9aef3-9943-47c7-8c30-9659626bace8', '6a6407e5-6164-452b-acc3-bf173ed73e7f', '53e42d37-01ac-4713-80a6-3bb83bd8d3ad', '7402411d-1e7f-4122-acbb-50d060aa0856') AND fonte IS NULL AND votacao_id_api IS NULL) AS prior_metadata;

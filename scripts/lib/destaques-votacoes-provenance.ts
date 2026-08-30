@@ -35,6 +35,7 @@ export interface DestaquesVoteReceipt {
 
 export interface DestaquesPairReceipt {
   pair_key: string
+  database_row_id: string
   candidato_id: string
   candidate_slug: string
   votacao_id: string
@@ -44,6 +45,9 @@ export interface DestaquesPairReceipt {
   checked_at: string
   resultado: DestaquesResult
   voto_anterior: string
+  contradicao_anterior: boolean
+  contradicao_descricao_anterior: string | null
+  created_at_anterior: string
   voto_oficial: string | null
   voto_confere: boolean
   payload_sha256: string
@@ -139,11 +143,23 @@ export function buildDestaquesRunManifest(
       throw new Error(`${source.source_key}: payload bruto não está em raw/*.json.gz`)
     }
   }
+  const distinctSourceUrls = new Set(input.sources.map((source) => source.url))
+  const distinctSourceChecks = new Set(input.sources.map((source) => source.checked_at))
+  if (distinctSourceUrls.size > 1 && distinctSourceChecks.size === 1) {
+    throw new Error("manifesto: fontes distintas não podem compartilhar um único timestamp de execução")
+  }
+  const manifestTimestamp = Date.parse(input.checked_at)
+  const latestSourceTimestamp = Math.max(...input.sources.map((source) => Date.parse(source.checked_at)))
+  if (manifestTimestamp < latestSourceTimestamp) {
+    throw new Error("manifesto: checked_at antecede a última resposta oficial")
+  }
 
   const voteIds = input.votacoes.map((vote) => vote.votacao_id)
   const pairKeys = input.pairs.map((pair) => pair.pair_key)
+  const databaseRowIds = input.pairs.map((pair) => pair.database_row_id)
   if (new Set(voteIds).size !== voteIds.length) throw new Error("manifesto: votação duplicada")
   if (new Set(pairKeys).size !== pairKeys.length) throw new Error("manifesto: par duplicado")
+  if (new Set(databaseRowIds).size !== databaseRowIds.length) throw new Error("manifesto: id de linha duplicado")
   for (const vote of input.votacoes) {
     assertResult(vote.resultado, `votação ${vote.votacao_id}`)
     assertHash(vote.payload_sha256, `votação ${vote.votacao_id}`)
@@ -155,7 +171,13 @@ export function buildDestaquesRunManifest(
     assertResult(pair.resultado, pair.pair_key)
     assertIsoReal(pair.checked_at, pair.pair_key)
     assertHash(pair.payload_sha256, pair.pair_key)
+    if (!/^[a-f0-9-]{36}$/.test(pair.database_row_id)) throw new Error(`${pair.pair_key}: id de linha inválido`)
+    assertIsoReal(pair.created_at_anterior, `${pair.pair_key}: created_at`)
     if (!voteIds.includes(pair.votacao_id)) throw new Error(`${pair.pair_key}: votação ausente`)
+    const matchingSource = input.sources.some(
+      (source) => source.url === pair.url && source.checked_at === pair.checked_at,
+    )
+    if (!matchingSource) throw new Error(`${pair.pair_key}: checked_at não corresponde à resposta oficial usada`)
     if (pair.resultado === "encontrado" && (!pair.voto_oficial || !pair.voto_confere)) {
       throw new Error(`${pair.pair_key}: encontrado sem confirmação do voto`)
     }

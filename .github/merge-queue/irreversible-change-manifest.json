@@ -29,6 +29,15 @@
         "apply_workflow": ".github/workflows/apply-issue-138-production.yml",
         "rollback_artifact": "scripts/audit/rollback-issue-138-production.sh",
         "rollback_workflow": ".github/workflows/rollback-issue-138-production.yml"
+      },
+      {
+        "name": "destaques-freshness-reconciliation",
+        "predecessor": "20260830143500",
+        "versions": ["20260830151500"],
+        "apply_artifact": "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
+        "apply_workflow": ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
       }
     ],
     "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
@@ -52,6 +61,7 @@
       "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
       "ddl-backfill-ledger-idempotency-hashes",
       "exact-senate-and-camara-payload-readback",
+      "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
       "rollback-readback-preserves-schema"
     ]
   }

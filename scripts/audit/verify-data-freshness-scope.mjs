@@ -78,7 +78,7 @@ const allowed = [
   /^supabase\/readback\/20260829030002_candidate_registration_structured_state\.readback\.sql$/,
   /^supabase\/rollback\/20260829030000_candidate_roster_publication_integrity\.rollback\.sql$/,
   /^supabase\/rollback\/20260829030002_candidate_registration_structured_state\.rollback\.sql$/,
-  /^supabase\/(migrations|readback|rollback)\/20260830151500_destaques_freshness_reconciliation(?:\.readback|\.rollback)?\.sql$/,
+  /^supabase\/(migrations|readback|rollback)\/20260830151500_destaques_freshness_reconciliation(?:\.readback|\.rollback|\.rollback\.readback)?\.sql$/,
   /^\.github\/workflows\/(apply|rollback)-candidate-roster-integrity-production\.yml$/,
   /^\.github\/merge-queue\/irreversible-change-manifest\.json$/,
   /^docs\/plans\/2026-08-28-candidate-roster-integrity\.md$/,
