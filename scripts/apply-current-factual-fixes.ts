@@ -88,7 +88,7 @@ export interface CandidateFix {
     tema: string
     impacto_popular: string
     proposicao_id?: string | null
-    voto: "sim" | "não" | "abstenção" | "ausente" | "obstrução"
+    voto: "sim" | "não" | "abstenção" | "ausente" | "obstrução" | "artigo_17"
   }[]
 }
 

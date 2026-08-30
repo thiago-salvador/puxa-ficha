@@ -90,6 +90,7 @@ export function voteGlyph(v: TimelineEvent["vote"]): string {
   if (v === "abstenção") return "Ab"
   if (v === "ausente") return "Au"
   if (v === "obstrução") return "Ob"
+  if (v === "artigo_17") return "17"
   return "?"
 }
 

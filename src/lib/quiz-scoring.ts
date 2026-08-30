@@ -57,6 +57,7 @@ export function normalizeVotoFromApi(raw: string): QuizVotoNormalizado | null {
   if (n === "abstencao" || n === "abstenção") return "abstencao"
   if (n === "ausente") return "ausente"
   if (n === "obstrucao" || n === "obstrução") return "obstrucao"
+  if (n === "artigo_17" || n === "artigo 17") return "artigo_17"
   return null
 }
 
@@ -76,6 +77,7 @@ function votoToAlignNumber(v: QuizVotoNormalizado, direcao: QuizPergunta["direca
       base = 0.3
       break
     case "ausente":
+    case "artigo_17":
       return null
     default:
       return null

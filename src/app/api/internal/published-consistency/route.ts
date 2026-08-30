@@ -8,6 +8,14 @@ import {
   purgeAnalyticsLaunchEventsOlderThan,
 } from "@/lib/analytics-launch-store"
 import {
+  NOTIFICATION_LOG_RETENTION_DAYS,
+  notificationLogRetentionCutoffDate,
+  operationalRetentionEnabled,
+  purgeExpiredQuizShortLinks,
+  purgeNotificationLogsOlderThan,
+  quizShortLinkRetentionCutoffIso,
+} from "@/lib/operational-retention"
+import {
   analyzePublishedConsistency,
   probeAnonLeak,
   type PublishedRow,
@@ -32,8 +40,9 @@ export const maxDuration = 30
  * O tier caro (realidade politica via web) NAO roda aqui; fica na automacao
  * Codex de freshness, fora do caminho de custo do site.
  *
- * Carona de manutenção: este handler também executa o expurgo de retenção de
- * `analytics_launch_events` (90 dias). Ver o bloco no fim da função.
+ * Carona de manutenção: este handler executa a retenção já existente de
+ * `analytics_launch_events`. Os expurgos de `quiz_result_short_links` e
+ * `notification_log` só executam com `PF_OPERATIONAL_RETENTION_ENABLED=1`.
  *
  * Auth: Vercel Cron injeta `Authorization: Bearer <CRON_SECRET>`. Fail-closed.
  */
@@ -128,13 +137,66 @@ export async function GET(req: NextRequest) {
     )
   }
 
+  // Mesma carona, pelo mesmo motivo, para as duas tabelas operacionais que
+  // sobraram sem agendamento: `quiz_result_short_links` (TTL na propria linha) e
+  // `notification_log` (90 dias). Ate aqui elas dependiam de alguem lembrar de
+  // rodar scripts/retencao-operacional.ts a mao, e as duas crescem por uso do
+  // site. `candidate_changes` e `coleta_log` ficam de fora por decisao do dono.
+  //
+  // Sequencial e nao Promise.all: sao tres DELETE com service role no mesmo
+  // banco que a ficha publica usa, e o ganho de alguns milissegundos nao paga
+  // ocupar tres slots do semaforo do Supabase de uma vez.
+  const retencaoOperacionalHabilitada = operationalRetentionEnabled()
+  const expurgoShortLinks = retencaoOperacionalHabilitada
+    ? await purgeExpiredQuizShortLinks(quizShortLinkRetentionCutoffIso())
+    : { status: "desativado" as const }
+  if (expurgoShortLinks.status === "ok") {
+    console.log(
+      `[published-consistency] short_links_retencao ${JSON.stringify({
+        removidos: expurgoShortLinks.removidos,
+      })}`,
+    )
+  } else if (expurgoShortLinks.status === "desativado") {
+    console.log("[published-consistency] short_links_retencao desativada")
+  } else {
+    console.error(
+      `[published-consistency] short_links_retencao_falhou ${JSON.stringify(expurgoShortLinks)}`,
+    )
+  }
+
+  const expurgoNotificationLog = retencaoOperacionalHabilitada
+    ? await purgeNotificationLogsOlderThan(notificationLogRetentionCutoffDate())
+    : { status: "desativado" as const }
+  if (expurgoNotificationLog.status === "ok") {
+    console.log(
+      `[published-consistency] notification_log_retencao ${JSON.stringify({
+        dias: NOTIFICATION_LOG_RETENTION_DAYS,
+        removidos: expurgoNotificationLog.removidos,
+      })}`,
+    )
+  } else if (expurgoNotificationLog.status === "desativado") {
+    console.log("[published-consistency] notification_log_retencao desativada")
+  } else {
+    console.error(
+      `[published-consistency] notification_log_retencao_falhou ${JSON.stringify(
+        expurgoNotificationLog,
+      )}`,
+    )
+  }
+
+  const retencao = {
+    analytics: expurgo,
+    short_links: expurgoShortLinks,
+    notification_log: expurgoNotificationLog,
+  }
+
   if (report.hard.length) {
     console.error(
       `[published-consistency] HARD ${JSON.stringify({ total: report.total, hard: report.hard })}`,
     )
     // 500 => notificacao nativa de falha de cron do Vercel (sem infra extra).
     return NextResponse.json(
-      { ok: false, total: report.total, hard: report.hard, soft: report.soft, expurgo },
+      { ok: false, total: report.total, hard: report.hard, soft: report.soft, expurgo, retencao },
       { status: 500 },
     )
   }
@@ -143,7 +205,7 @@ export async function GET(req: NextRequest) {
     `[published-consistency] ok ${JSON.stringify({ total: report.total, soft: report.soft.length })}`,
   )
   return NextResponse.json(
-    { ok: true, total: report.total, byCargo: report.byCargo, soft: report.soft, expurgo },
+    { ok: true, total: report.total, byCargo: report.byCargo, soft: report.soft, expurgo, retencao },
     { status: 200, headers: { "cache-control": "no-store" } },
   )
 }

@@ -432,3 +432,65 @@ test("fatos fora do recorte acionam tentativa corretiva", async () => {
 })
 
 console.log("PROGRAMAS_MODELS_PASS")
+
+/**
+ * Modelos pinados: nenhum runner pode passar alias flutuante para o CLI.
+ *
+ * `--model sonnet` resolve para o Sonnet que o CLI considerar atual no dia, e
+ * dois runs do mesmo pipeline podiam ser gerados ou julgados por modelos
+ * diferentes sem nada no registro dizer isso. Id completo é o contrato: trocar
+ * de modelo passa a ser mudança deliberada, visível no diff.
+ *
+ * `claude-sonnet-5` confirmado na doc pública de modelos da Anthropic em
+ * 2026-08-30: a família Sonnet 5 não publica snapshot datado, o id já é a versão.
+ */
+const ALIAS_FLUTUANTE = /^(sonnet|opus|haiku|fable|default|latest)$/i
+
+test("nenhum runner de programa de governo usa alias flutuante de modelo", async () => {
+  const { readFileSync, readdirSync } = await import("node:fs")
+  const { fileURLToPath } = await import("node:url")
+
+  const dirRunners = fileURLToPath(
+    new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url),
+  )
+  const fontes = [
+    fileURLToPath(new URL("../scripts/programas-governo-stage.ts", import.meta.url)),
+    ...readdirSync(dirRunners).filter((f) => f.endsWith(".mjs")).map((f) => dirRunners + f),
+  ]
+
+  const achados: string[] = []
+  for (const fonte of fontes) {
+    const src = readFileSync(fonte, "utf-8")
+    // `"--model", "<valor>"` em array de args, que é a forma usada em todos eles.
+    for (const m of src.matchAll(/"--model",\s*"([^"]+)"/g)) {
+      if (ALIAS_FLUTUANTE.test(m[1])) achados.push(`${fonte}: --model "${m[1]}"`)
+    }
+    // Default de env: `process.env.X ?? "<valor>"` numa const de modelo.
+    for (const m of src.matchAll(/MODEL[A-Z_]*\s*=\s*process\.env\.[A-Z_0-9]+\s*\?\?\s*"([^"]+)"/g)) {
+      if (ALIAS_FLUTUANTE.test(m[1])) achados.push(`${fonte}: default "${m[1]}"`)
+    }
+  }
+
+  assert.deepEqual(achados, [], `alias flutuante de modelo:\n${achados.join("\n")}`)
+})
+
+test("o judge Claude e o generator do stage carregam id completo", async () => {
+  const { readFileSync } = await import("node:fs")
+  const { fileURLToPath } = await import("node:url")
+
+  const judge = readFileSync(
+    fileURLToPath(new URL("../scripts/data/programas-governo-governadores-2026/run-judge-claude.mjs", import.meta.url)),
+    "utf-8",
+  )
+  assert.match(judge, /PF_CLAUDE_JUDGE_MODEL \?\? "claude-sonnet-5"/)
+
+  const stage = readFileSync(
+    fileURLToPath(new URL("../scripts/programas-governo-stage.ts", import.meta.url)),
+    "utf-8",
+  )
+  assert.match(stage, /const CLAUDE_GENERATOR_MODEL_ID = "claude-sonnet-5"/)
+  assert.match(stage, /"--model", CLAUDE_GENERATOR_MODEL_ID/)
+  // A metadata do run passa a registrar o id efetivo, não o nome comercial.
+  assert.match(stage, /model: CLAUDE_GENERATOR_MODEL_ID/)
+  assert.doesNotMatch(stage, /model: "Anthropic Claude Sonnet"/)
+})
