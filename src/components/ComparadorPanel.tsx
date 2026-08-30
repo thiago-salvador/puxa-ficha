@@ -324,7 +324,15 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
             aria-label="Lista de candidatos para comparar. Role na horizontal se as colunas não couberem."
             tabIndex={0}
           >
-            <table className="w-full min-w-[44rem] table-auto text-left">
+            {/*
+              A 768px a tabela media 754px num wrapper de 657px: ja rolava, mas
+              `table-auto` starvava a coluna do nome, que quebrava em linhas de
+              2 a 3 letras ("AU / GU / STO / CU / RY"). O piso sobe para 56rem e
+              o nome deixa de quebrar, entao a tabela rola em vez de esmagar. O
+              wrapper acima ja e um `region` focavel com aria-label explicando o
+              scroll, e abaixo de `md` a lista vira cards.
+            */}
+            <table className="w-full min-w-[56rem] table-auto text-left">
               <thead>
                 <tr className="border-b border-border/60">
                   <th className="w-12 pb-3 pr-4">
@@ -415,7 +423,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                               initialsClassName="text-xs"
                             />
                           )}
-                          <span className="font-heading text-[16px] uppercase leading-tight text-foreground">
+                          <span className="whitespace-nowrap font-heading text-[16px] uppercase leading-tight text-foreground">
                             {candidato.nome_urna}
                           </span>
                         </button>
