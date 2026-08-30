@@ -25,7 +25,6 @@ jobs:
     env:
       PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
       PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
-      PF_BACKUP_PATH: ${{ runner.temp }}/candidate-registration-30002-before-apply.json
       GITHUB_REF: ${{ github.ref }}
     steps:
       - name: Validar dispatch manual e SHA fechado
@@ -50,6 +49,8 @@ jobs:
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
       - name: Capturar backup read-only antes do dry-run
+        env:
+          PF_BACKUP_PATH: ${{ runner.temp }}/candidate-registration-30002-before-apply.json
         run: bash scripts/audit/apply-candidate-registration-state-production.sh --backup-only
       - name: Preservar backup independente da execução
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
@@ -66,4 +67,6 @@ jobs:
       - name: Aplicar roster fechado e validar readback
         run: bash scripts/audit/apply-candidate-roster-integrity-production.sh
       - name: Estruturar estado residual e validar readback
+        env:
+          PF_BACKUP_PATH: ${{ runner.temp }}/candidate-registration-30002-before-apply.json
         run: bash scripts/audit/apply-candidate-registration-state-production.sh
