@@ -143,8 +143,11 @@ test("o spawn do filho recebe as PF_* do ambiente, e nenhum segredo do host", as
     process.env.PF_CLAUDE_MAX_BUDGET_USD = "12"
     process.env.PF_CLAUDE_JUDGE_MODEL = "modelo-pinado-de-teste"
     process.env.PF_CODEX_MODEL = "gpt-teste"
-    process.env.PF_TESTE_SEGREDO_FALSO = "nao-pode-passar"
-    process.env.AWS_SECRET_ACCESS_KEY = "nao-pode-passar"
+    // Nomes que o contrato de ambiente ja documenta, e que NAO estao na
+    // allowlist: inventar nome novo aqui reprova o check:env-contract, que
+    // exige documentacao para toda variavel referenciada, inclusive em teste.
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "nao-pode-passar"
+    process.env.CRON_SECRET = "nao-pode-passar"
 
     const ambientes: Array<Record<string, string | undefined>> = []
     const spawnFn = (
@@ -198,8 +201,8 @@ test("o spawn do filho recebe as PF_* do ambiente, e nenhum segredo do host", as
     assert.equal(env.PF_CANDIDATO_UF, item.uf)
     assert.ok(env.PF_EXECUTION_ID)
     // Hermetico continua hermetico.
-    assert.equal(env.AWS_SECRET_ACCESS_KEY, undefined)
-    assert.equal(env.PF_TESTE_SEGREDO_FALSO, undefined)
+    assert.equal(env.SUPABASE_SERVICE_ROLE_KEY, undefined)
+    assert.equal(env.CRON_SECRET, undefined)
   })
 })
 

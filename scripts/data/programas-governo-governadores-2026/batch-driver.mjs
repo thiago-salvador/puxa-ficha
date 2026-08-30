@@ -1011,6 +1011,14 @@ async function disparar(contexto, unidade, inventoryPath) {
         // acima que decide o que passa. Montar o objeto aqui fazia a allowlist
         // filtrar um conjunto que nunca tinha PF_*, e as variaveis documentadas
         // nao chegavam ao filho.
+        //
+        // O acesso e dinamico de proposito e por isso este arquivo esta em
+        // `allowedDynamicPrefixes` de scripts/check-env-contract.mjs, junto de
+        // scripts/merge-queue/adapters.mjs, que faz o mesmo pelo mesmo motivo:
+        // a funcao existe para FILTRAR o ambiente do host, entao ela tem que
+        // receber o ambiente do host. A enumeracao que o contrato quer esta na
+        // allowlist acima, e ha teste que reprova quando ela sai de sincronia
+        // com o que os filhos leem.
         env: construirAmbienteBatch(process.env, {
           ...(contexto.qwenExtraArgs ? { PF_QWEN_EXTRA_ARGS: contexto.qwenExtraArgs } : {}),
           ...(contexto.codexExtraArgs ? { PF_CODEX_EXTRA_ARGS: contexto.codexExtraArgs } : {}),
