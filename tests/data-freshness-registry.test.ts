@@ -118,6 +118,21 @@ test("strict reprova membro requerido sem data ou com data inválida", () => {
   assert.equal(result.negative_claims_allowed, false)
 })
 
+test("strict preserva technical_debt para membro manual vencido sem alterar o operacional fresh", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "knowledge-enrichment")
+  assert.ok(source)
+  const evidence = aggregateSourceEvidence(source, source.collection_source_ids.map((sourceId) => ({
+    source_id: sourceId,
+    checked_at: sourceId === "wikipedia" ? "2020-01-01T00:00:00.000Z" : "2026-08-27T11:00:00.000Z",
+  })))
+  const now = new Date("2026-08-27T12:00:00.000Z")
+
+  assert.equal(evaluateSourceFreshness(source, evidence, now).status, "fresh")
+  const strict = evaluateSourceFreshness(source, evidence, now, { mode: "strict" })
+  assert.equal(strict.status, "technical_debt")
+  assert.deepEqual(strict.stale_source_ids, ["wikipedia"])
+})
+
 test("indeterminado e erro manual viram dívida; erro agendado continua bloqueando", () => {
   const registry = loadFreshnessRegistry()
   const scheduled = registry.find((item) => item.source_id === "camara")

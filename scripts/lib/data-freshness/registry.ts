@@ -186,7 +186,7 @@ export function evaluateSourceFreshness(
   }
   const ageHours = ageHoursForResult(evidence.checked_at) ?? Math.max(0, (now.getTime() - checkedAt) / 3_600_000)
   const stale = source.max_age_hours !== null && ageHours > source.max_age_hours
-  if (!strict && stale && source.refresh_mode !== "scheduled" && source.stale_policy !== "review_required") {
+  if (stale && source.refresh_mode !== "scheduled" && source.stale_policy !== "review_required") {
     return result("technical_debt", ageHours, false)
   }
   if (strict && staleIds.length > 0) return result("stale", ageHours, false)
