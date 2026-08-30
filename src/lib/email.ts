@@ -10,6 +10,49 @@ export interface SendEmailInput {
   html: string
   text?: string
   headers?: Record<string, string>
+  /**
+   * Chave de idempotência da Resend. Quando presente, uma segunda requisição com
+   * a mesma chave não envia um segundo email: a Resend devolve o resultado da
+   * primeira.
+   *
+   * Existe por causa de uma janela real: o `send-digest` tem prazo de 10s no
+   * fetch, e a Resend pode ACEITAR o envio e ainda assim estourar o prazo do
+   * lado de cá. O `catch` trata isso como falha, o log fica `failed`, e a
+   * próxima execução do cron reprocessa o mesmo assinante, agora com o email já
+   * a caminho. Sem chave, o assinante recebe o digest duas vezes.
+   *
+   * Contrato da Resend (docs de 2026-08-30): header `Idempotency-Key`, no
+   * máximo 256 caracteres, expira em 24 horas. A janela de 24h cobre o cron
+   * diário com folga; a chave precisa ser estável entre tentativas e única por
+   * envio lógico.
+   */
+  idempotencyKey?: string
+}
+
+/** Limite da Resend. Estourar não é erro do lado dela: a chave é ignorada. */
+const IDEMPOTENCY_KEY_MAX_LENGTH = 256
+
+/**
+ * Nao exportada de proposito: ninguem fora deste modulo precisa distinguir esta
+ * falha das outras do transporte, e um export sem consumidor e o que o knip
+ * cobra. O que importa e o comportamento, e ele esta travado em
+ * tests/email-idempotency.test.ts: chave longa demais NAO envia.
+ */
+class IdempotencyKeyTooLongError extends Error {}
+
+function idempotencyHeader(key: string | undefined): Record<string, string> {
+  if (!key) return {}
+  const trimmed = key.trim()
+  if (!trimmed) return {}
+  if (trimmed.length > IDEMPOTENCY_KEY_MAX_LENGTH) {
+    // Falha alto em vez de mandar sem chave: enviar sem idempotência quando o
+    // chamador pediu idempotência é exatamente o duplo envio que se quer evitar,
+    // e passaria despercebido.
+    throw new IdempotencyKeyTooLongError(
+      `Idempotency-Key tem ${trimmed.length} caracteres, acima do limite de ${IDEMPOTENCY_KEY_MAX_LENGTH}`,
+    )
+  }
+  return { "Idempotency-Key": trimmed }
 }
 
 interface ResendSendEmailResponse {
@@ -59,6 +102,9 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
   }
 
   const replyToEmail = resolveAlertsReplyToEmail()
+  // Antes do try do fetch de proposito: dentro dele, o catch converteria o erro
+  // tipado em "Resend request failed" generico e a causa real sumiria do log.
+  const idempotency = idempotencyHeader(input.idempotencyKey)
 
   let response: Response
   try {
@@ -69,6 +115,7 @@ export async function sendTransactionalEmail(input: SendEmailInput): Promise<{ i
         "Content-Type": "application/json",
         // Resend blocks requests without User-Agent (403, error 1010). SDKs set this; raw fetch must too.
         "User-Agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)",
+        ...idempotency,
       },
       body: JSON.stringify({
         from: resolveAlertsFromEmail(),

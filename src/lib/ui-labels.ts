@@ -14,6 +14,34 @@ export const FINANCING_BREAKDOWN_KEYS = [
 
 export type FinancingBreakdownKey = (typeof FINANCING_BREAKDOWN_KEYS)[number]
 
+/**
+ * Rampa de cinzas do donut e das legendas de financiamento. Fonte unica: a mesma
+ * constante estava duplicada em ProfileOverview e CandidatoProfileSections, e as
+ * duas copias tinham o piso em `#e5e5e5`, que da 1,3:1 contra o card branco
+ * (`--card: #ffffff`). Na pratica a fatia de "Outras origens" sumia, e um
+ * candidato com 100% nessa origem exibia um donut que parecia estado vazio.
+ *
+ * Regra: toda cor de dado precisa de >= 3:1 contra `#ffffff` (WCAG 1.4.11,
+ * componente grafico nao textual). O piso ficou em `#737373` (4,74:1) e a rampa
+ * inteira e verificada por `tests/financing-donut-contraste.test.ts`.
+ */
+/**
+ * "1 DESTAQUES" aparecia no card do topo da ficha e no widget de embed, que sao
+ * duas superficies publicas em pt-BR, e o comparador ja pluralizava certo
+ * ("1 processo" contra "3 processos"). Fonte unica para as tres.
+ */
+export function formatDestaquesLabel(count: number): string {
+  return count === 1 ? "Destaque" : "Destaques"
+}
+
+export const FINANCING_COLOR_BY_KEY: Record<FinancingBreakdownKey, string> = {
+  fundo_eleitoral: "#0a0a0a",
+  fundo_partidario: "#2e2e2e",
+  pessoa_fisica: "#4a4a4a",
+  recursos_proprios: "#5e5e5e",
+  outros_recursos: "#737373",
+}
+
 const LOWERCASE_CONNECTORS = new Set([
   "a",
   "as",

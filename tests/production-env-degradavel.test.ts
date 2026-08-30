@@ -8,6 +8,7 @@ const KEYS = [
   "SUPABASE_ANON_KEY",
   "SUPABASE_SERVICE_ROLE_KEY",
   "PF_QUIZ_SHORT_LINK_SALT",
+  "PF_ALERTS_IP_SALT",
   "PF_ALERTS_TOKEN_SALT",
   "PF_ALERTS_TOKEN_ENCRYPTION_KEY",
   "RESEND_API_KEY",
@@ -28,6 +29,7 @@ function ambienteCompleto() {
   process.env.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.fake"
   process.env.SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.service"
   process.env.PF_QUIZ_SHORT_LINK_SALT = "quiz-salt-at-least-present-for-test-32chars"
+  process.env.PF_ALERTS_IP_SALT = "alerts-ip-salt-test-32-characters-xxxx"
   process.env.PF_ALERTS_TOKEN_SALT = "alerts-token-salt-test-32-characters-xx"
   process.env.PF_ALERTS_TOKEN_ENCRYPTION_KEY = "11".repeat(32)
   process.env.RESEND_API_KEY = "re_test_fake_key_for_unit_test_only"

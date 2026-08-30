@@ -4,6 +4,7 @@ import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { sanitizeFontePublica } from "@/lib/observacao-publica"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { publicTaxonomyValue } from "@/lib/public-profile-dto"
 import type { Candidato } from "@/lib/types"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
 import { formatDate } from "@/lib/utils"
@@ -68,7 +69,9 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
     {
       key: "occupation",
       label: "Profissão declarada",
-      value: publicText(ficha.profissao_declarada),
+      // Mesmo sanitizador do DTO publico e do hero: QID cru do Wikidata vira
+      // "nao informado" em vez de virar texto exibido ao leitor.
+      value: publicText(publicTaxonomyValue(ficha.profissao_declarada)),
     },
     { key: "genero", label: "Gênero", value: publicText(ficha.genero) },
     { key: "estado-civil", label: "Estado civil", value: publicText(ficha.estado_civil) },

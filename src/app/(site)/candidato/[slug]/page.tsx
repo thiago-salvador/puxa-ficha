@@ -5,6 +5,7 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { buildCandidateMetadataDescription } from "@/lib/ui-labels"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { truncateOnWordBoundary } from "@/lib/text-truncate"
 import { CandidatoFichaView } from "./CandidatoFichaView"
 
 // Bloco 7 do review 2026-04-24: a rota preserva cache nos recursos da ficha,
@@ -36,8 +37,10 @@ export async function generateMetadata({
     }
     return {}
   }
+  // `slice(0, 155) + "..."` cortava no meio da palavra e emendava reticência em
+  // biografia que já cabia inteira ou já terminava em ponto.
   const desc = candidato.biografia
-    ? sanitizePtBrText(candidato.biografia).slice(0, 155) + "..."
+    ? truncateOnWordBoundary(sanitizePtBrText(candidato.biografia), 155)
     : buildCandidateMetadataDescription(candidato.nome_urna, candidato.partido_sigla)
   const partyLabel = formatPartyPublicLabel(candidato.partido_sigla)
   const title = partyLabel
