@@ -13,6 +13,8 @@ ROLLBACK="supabase/rollback/20260829100100_backfill_projetos_lei_camara_ronaldo_
 BACKFILL_ROLLBACK_READBACK="supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.rollback.readback.sql"
 SCHEMA_ROLLBACK="supabase/rollback/20260829100000_projetos_lei_chave_por_fonte.rollback.sql"
 ROLLBACK_READBACK="supabase/readback/20260829100000_projetos_lei_chave_por_fonte.rollback.readback.sql"
+DDL_HASH="sha256:$(shasum -a 256 supabase/migrations/20260829100000_projetos_lei_chave_por_fonte.sql | cut -d' ' -f1)"
+BACKFILL_HASH="sha256:$(shasum -a 256 supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql | cut -d' ' -f1)"
 C="pf-issue-138-forward-readback-$$"
 
 limpar() { docker rm -f "$C" >/dev/null 2>&1 || true; }
@@ -22,7 +24,7 @@ docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres 
   echo "FAIL: docker nao subiu"; exit 1;
 }
 pronto=0
-for _ in $(seq 1 90); do
+for _ in $(seq 1 120); do
   if docker exec "$C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
      docker exec "$C" psql -U postgres -h 127.0.0.1 -d postgres -tAc 'select 1' >/dev/null 2>&1; then
     pronto=1
@@ -30,14 +32,21 @@ for _ in $(seq 1 90); do
   fi
   sleep 1
 done
-[[ "$pronto" == 1 ]] || { echo "FAIL: postgres nao ficou pronto"; exit 1; }
+if [[ "$pronto" != 1 ]]; then
+  echo "FAIL: postgres nao ficou pronto" >&2
+  docker logs "$C" 2>&1 | tail -40 >&2 || true
+  exit 1
+fi
 
 q() { docker exec -i "$C" psql -X -U postgres -d postgres -v ON_ERROR_STOP=1 -qtA "$@"; }
 
 q <<'SQL' >/dev/null
 create extension if not exists "pgcrypto";
 create schema supabase_migrations;
-create table supabase_migrations.schema_migrations(version text primary key);
+create table supabase_migrations.schema_migrations(
+  version text primary key,
+  idempotency_key text not null
+);
 create table public.candidatos(
   id uuid primary key,
   slug text unique not null
@@ -107,6 +116,7 @@ echo "  PASS  preflight antigo"
 echo "F1: DDL scoped e forward readback"
 q < "$DDL" >/dev/null
 q < "$FORWARD_READBACK" >/dev/null
+q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100000', '$DDL_HASH')" >/dev/null
 echo "  PASS  DDL scoped"
 echo "  PASS  forward readback"
 
@@ -124,6 +134,8 @@ echo "  PASS  rollback readback bloqueado no estado forward"
 echo "F3: backfill allowlisted, quatro Camara e Senado intacto"
 q < "$BACKFILL" >/dev/null
 q < "$BACKFILL_READBACK" >/dev/null
+q < "$FORWARD_READBACK" >/dev/null
+q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100100', '$BACKFILL_HASH')" >/dev/null
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Camara' and proposicao_id_api in ('123202','123149','123094','121483')")" == 4 ]] || { echo "FAIL: backfill nao inseriu 4 Camara"; exit 1; }
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado'")" == 231 ]] || { echo "FAIL: Senado foi alterado"; exit 1; }
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID foi alterada"; exit 1; }
@@ -131,8 +143,10 @@ echo "  PASS  backfill 4"
 echo "  PASS  Senado intacto"
 
 echo "R1: rollback e rollback readback separado"
+q -c "delete from supabase_migrations.schema_migrations where version='20260829100100' and idempotency_key='$BACKFILL_HASH'" >/dev/null
 q < "$ROLLBACK" >/dev/null
 q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null
+[[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID nao sobreviveu ao rollback de dados"; exit 1; }
 echo "  PASS  rollback de dados e readback"
 { printf '%s\n' "SET pf.issue_138_schema_rollback_compatibility = 'approved';"; cat "$SCHEMA_ROLLBACK"; } | q >/dev/null
 q < "$ROLLBACK_READBACK" >/dev/null

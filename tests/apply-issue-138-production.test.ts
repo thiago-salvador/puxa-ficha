@@ -50,7 +50,9 @@ test("aplicador da issue 138 e fechado, ordenado e registra rollback por versao"
 
 test("forward readback e harness PG17 separam apply e rollback", () => {
   assert.match(FORWARD_READBACK, /scoped_index <> 1 OR old_constraint <> 0/)
+  assert.match(FORWARD_READBACK, /senado_sem_id <> 1/)
   assert.match(ROLLBACK_READBACK, /scoped_index <> 0 OR old_constraint <> 1/)
+  assert.match(ROLLBACK_READBACK, /senado_sem_id <> 1/)
   assert.match(PG17_HARNESS, /postgres:17@sha256:[a-f0-9]{64}/)
   assert.match(PG17_HARNESS, /preflight antigo/)
   assert.match(PG17_HARNESS, /q < "\$DDL"/)
@@ -71,8 +73,10 @@ test("backfill preserva o registro Senado fora da coorte de quatro IDs", () => {
   assert.match(BACKFILL, /total_candidato <> 2076/)
   assert.match(BACKFILL, /total_candidato <> 2080/)
   assert.match(BACKFILL_READBACK, /senado_total <> 231/)
+  assert.match(BACKFILL_READBACK, /senado_sem_id <> 1/)
   assert.match(BACKFILL_READBACK, /total_candidato <> 2080/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /senado_total <> 231/)
+  assert.match(BACKFILL_ROLLBACK_READBACK, /senado_sem_id <> 1/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /total_candidato <> 2076/)
 })
 
@@ -197,6 +201,18 @@ test("rollback de dados e fechado e o rollback de schema exige compatibilidade e
   assert.match(SCHEMA_ROLLBACK, /alvos Camara=/)
   assert.match(SCHEMA_ROLLBACK, /ADD CONSTRAINT uq_projetos_lei_candidato_proposicao/)
   assert.match(SCHEMA_ROLLBACK, /DROP INDEX public\.uq_projetos_lei_candidato_fonte_proposicao/)
+  assert.match(SCHEMA_ROLLBACK, /pg_advisory_xact_lock\(hashtextextended\('puxa-ficha:issue-138-proposicao-source-key'/)
+  assert.match(SCHEMA_ROLLBACK, /DELETE FROM supabase_migrations\.schema_migrations[\s\S]*20260829100000[\s\S]*idempotency_key/)
+  assert.match(SCHEMA_ROLLBACK, /ledger DDL permaneceu apos rollback/)
+  const schemaBegin = SCHEMA_ROLLBACK.indexOf("BEGIN;")
+  const schemaLock = SCHEMA_ROLLBACK.indexOf("pg_advisory_xact_lock")
+  const schemaDrop = SCHEMA_ROLLBACK.indexOf("DROP INDEX")
+  const ledgerDelete = SCHEMA_ROLLBACK.indexOf("DELETE FROM supabase_migrations.schema_migrations")
+  const ledgerVerify = SCHEMA_ROLLBACK.indexOf("ledger DDL permaneceu apos rollback")
+  const schemaCommit = SCHEMA_ROLLBACK.lastIndexOf("COMMIT;")
+  assert.ok(schemaBegin >= 0 && schemaBegin < schemaLock)
+  assert.ok(schemaLock < schemaDrop && schemaDrop < ledgerDelete)
+  assert.ok(ledgerDelete < ledgerVerify && ledgerVerify < schemaCommit)
   assert.ok(
     SCHEMA_ROLLBACK.indexOf("colisoes cross-source") <
       SCHEMA_ROLLBACK.indexOf("ADD CONSTRAINT uq_projetos_lei_candidato_proposicao"),

@@ -9,6 +9,7 @@ DECLARE
   camara_exato integer;
   senado_total integer;
   senado_exato integer;
+  senado_sem_id integer;
   total_candidato integer;
 BEGIN
   SELECT count(*) INTO camara_total
@@ -75,15 +76,23 @@ BEGIN
    AND p.metadata IS NOT DISTINCT FROM e.metadata
   WHERE p.candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
     AND p.fonte = 'Senado';
+  SELECT count(*) INTO senado_sem_id
+  FROM public.projetos_lei
+  WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
+    AND fonte = 'Senado'
+    AND proposicao_id_api IS NULL
+    AND tipo = 'PL'
+    AND numero = '4444'
+    AND ano = 2015;
   SELECT count(*) INTO total_candidato
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid;
 
   IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 231
-     OR senado_exato <> 4 OR total_candidato <> 2080
+     OR senado_exato <> 4 OR senado_sem_id <> 1 OR total_candidato <> 2080
      OR camara_total - 1845 <> 4 THEN
-    RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, Camara_exato=%, EMC_2003=%, Senado=%, Senado_exato=%, total=%, delta_camara=%)',
-      camara_total, camara_exato, camara_emc_2003, senado_total, senado_exato, total_candidato, camara_total - 1845;
+    RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, Camara_exato=%, EMC_2003=%, Senado=%, Senado_exato=%, Senado_sem_id=%, total=%, delta_camara=%)',
+      camara_total, camara_exato, camara_emc_2003, senado_total, senado_exato, senado_sem_id, total_candidato, camara_total - 1845;
   END IF;
 END
 $assert$;
