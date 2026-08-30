@@ -59,6 +59,7 @@ import {
   formatPublicLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import {
   financiamentoPleitoNotaRodape,
@@ -1696,7 +1697,9 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
       <SectionLabel>Votou sem autoria registrada ({items.length})</SectionLabel>
       <SectionTitle>Votações em legislação</SectionTitle>
       <div className="mt-6 space-y-3">
-        {items.map((voto) => (
+        {items.map((voto) => {
+          const notaDoVoto = formatVoteNote(voto.voto)
+          return (
           <div
             key={voto.id}
             data-pf-voto-card
@@ -1746,20 +1749,31 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                   </p>
                 )}
               </div>
-              <span
-                className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
-                  voto.voto === "sim"
-                    ? "bg-foreground text-background"
-                    : voto.voto === "não"
-                      ? "border border-foreground bg-transparent text-foreground"
-                      : "bg-secondary text-foreground"
-                }`}
-              >
-                {formatVoteBadgeLabel(voto.voto)}
-              </span>
+              <div className="mt-1 flex max-w-[220px] shrink-0 flex-col items-end gap-1.5">
+                <span
+                  className={`rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
+                    voto.voto === "sim"
+                      ? "bg-foreground text-background"
+                      : voto.voto === "não"
+                        ? "border border-foreground bg-transparent text-foreground"
+                        : "bg-secondary text-foreground"
+                  }`}
+                >
+                  {formatVoteBadgeLabel(voto.voto)}
+                </span>
+                {notaDoVoto && (
+                  <span
+                    data-pf-vote-note
+                    className="text-right text-[10px] font-semibold normal-case leading-snug text-muted-foreground"
+                  >
+                    {notaDoVoto}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

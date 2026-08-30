@@ -47,6 +47,7 @@ import {
   formatProcessTypeLabel,
   formatPublicLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import { financiamentoPleitoSubtitulo } from "@/lib/financiamento-pleito-display"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
@@ -588,6 +589,7 @@ function VotesTeaser({
         {votos.slice(0, 4).map((v) => (
           <div key={v.id} className="flex items-start gap-2.5">
             <span
+              title={formatVoteNote(v.voto) || undefined}
               className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${getVotoBadgeClassName(v.voto)}`}
             >
               {formatVoteBadgeLabel(v.voto)}

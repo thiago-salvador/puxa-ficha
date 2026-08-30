@@ -322,6 +322,7 @@ const tokenLabels = {
     transparencia: "Transparência",
   },
   voteBadge: {
+    artigo_17: "Presidiu a sessão (Art. 17)",
     abstencao: "Abstenção",
     ausente: "Ausente",
     nao: "Não",
@@ -329,6 +330,7 @@ const tokenLabels = {
     sim: "Sim",
   },
   voteLegend: {
+    artigo_17: "Presidiu (Art. 17)",
     abstencao: "Abstenção",
     ausente: "Ausente",
     nao: "Contra",
@@ -336,11 +338,16 @@ const tokenLabels = {
     sim: "A favor",
   },
   voteShort: {
+    artigo_17: "Art. 17",
     abstencao: "Abs.",
     ausente: "Aus.",
     nao: "Não",
     obstrucao: "Obs.",
     sim: "Sim",
+  },
+  voteNote: {
+    artigo_17:
+      "Pelo Art. 17 do RICD, quem preside a sessão não vota em votação ostensiva, salvo empate; sua presença conta para o quórum.",
   },
 } as const
 
@@ -449,6 +456,18 @@ export function formatVoteLegendLabel(raw: string | null | undefined): string {
 
 export function formatVoteShortLabel(raw: string | null | undefined): string {
   return resolveTokenLabel(tokenLabels.voteShort, raw, "title")
+}
+
+export function formatVoteNote(raw: string | null | undefined): string {
+  if (!raw) return ""
+  const normalized = normalizeLookupKey(sanitizePtBrText(raw))
+  return (
+    tokenLabels.voteNote[normalized as keyof typeof tokenLabels.voteNote] ??
+    tokenLabels.voteNote[
+      normalized.replace(/ /g, "_") as keyof typeof tokenLabels.voteNote
+    ] ??
+    ""
+  )
 }
 
 export function buildCandidateShareTitle(nome: string, partidoSigla: string | null | undefined): string {
