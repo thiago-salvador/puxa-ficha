@@ -33,6 +33,7 @@ const ENV_KEYS = [
   "SUPABASE_SERVICE_ROLE_KEY",
   "NEXT_PUBLIC_SUPABASE_URL",
   "VERCEL_ENV",
+  "VERCEL",
   "NODE_ENV",
 ] as const
 
@@ -68,6 +69,7 @@ async function enableFileStore() {
   delete process.env.SUPABASE_SERVICE_ROLE_KEY
   delete process.env.NEXT_PUBLIC_SUPABASE_URL
   delete process.env.VERCEL_ENV
+  delete process.env.VERCEL
   mutableEnv.NODE_ENV = "test"
 }
 
@@ -257,14 +259,19 @@ describe("quiz short-link HTTP route", () => {
     assert.equal(limited, 56)
   })
 
-  it("ignora PF_QUIZ_SHORT_LINKS_FILE em producao e nao grava no arquivo", async () => {
+  it("ignora PF_QUIZ_SHORT_LINKS_FILE quando roda na Vercel", async () => {
     // O store de arquivo guarda os links num JSON local com lock em memoria do
-    // processo. Em producao serverless cada invocacao tem filesystem proprio, e
-    // o link gravado numa instancia some. Qualquer valor na env, inclusive um
-    // copiado por engano entre ambientes, trocava o Supabase por isso em silencio.
+    // processo. Todo ambiente da Vercel e serverless: cada invocacao tem
+    // filesystem proprio, e o link gravado numa instancia some. Qualquer valor
+    // na env, inclusive um copiado por engano entre ambientes, trocava o
+    // Supabase por isso em silencio.
+    //
+    // Preview tambem entra: e serverless igual. O que NAO entra e
+    // `NODE_ENV=production` sozinho, que tambem vale para `next start` local e
+    // no CI (ver o teste seguinte).
     for (const producao of [
-      { rotulo: "VERCEL_ENV", aplicar: () => { process.env.VERCEL_ENV = "production" } },
-      { rotulo: "NODE_ENV", aplicar: () => { mutableEnv.NODE_ENV = "production" } },
+      { rotulo: "VERCEL_ENV=production", aplicar: () => { process.env.VERCEL_ENV = "production" } },
+      { rotulo: "VERCEL_ENV=preview", aplicar: () => { process.env.VERCEL_ENV = "preview" } },
     ]) {
       await enableFileStore()
       const arquivo = process.env.PF_QUIZ_SHORT_LINKS_FILE!
@@ -286,15 +293,28 @@ describe("quiz short-link HTTP route", () => {
     }
   })
 
-  it("continua usando o arquivo fora de producao", async () => {
-    await enableFileStore()
-    const arquivo = process.env.PF_QUIZ_SHORT_LINKS_FILE!
+  it("continua usando o arquivo fora da Vercel, inclusive em NODE_ENV=production", async () => {
+    // `next start` local e no CI roda com NODE_ENV=production e sem Supabase: e
+    // exatamente assim que playwright.launch.config.ts exercita o fluxo de short
+    // link. Bloquear por NODE_ENV quebraria esse caminho legitimo.
+    for (const ambiente of [
+      { rotulo: "test", aplicar: () => { mutableEnv.NODE_ENV = "test" } },
+      { rotulo: "production local", aplicar: () => { mutableEnv.NODE_ENV = "production" } },
+      // `vercel env pull` grava VERCEL no .env.local e o Next carrega esse
+      // arquivo em `next dev`: usar VERCEL como sinal desligaria o fixture na
+      // máquina de quem desenvolve.
+      { rotulo: "VERCEL sem VERCEL_ENV", aplicar: () => { process.env.VERCEL = "1" } },
+    ]) {
+      await enableFileStore()
+      const arquivo = process.env.PF_QUIZ_SHORT_LINKS_FILE!
+      ambiente.aplicar()
 
-    const response = await POST(request(VALID_QUERY))
+      const response = await POST(request(VALID_QUERY))
 
-    assert.equal(response.status, 200)
-    const raw = await readFile(arquivo, "utf8")
-    assert.match(raw, /"query_string"/)
+      assert.equal(response.status, 200, `${ambiente.rotulo}: devia usar o arquivo`)
+      const raw = await readFile(arquivo, "utf8")
+      assert.match(raw, /"query_string"/)
+    }
   })
 
   it("returns 503 when no Supabase config or controlled fixture store is available", async () => {

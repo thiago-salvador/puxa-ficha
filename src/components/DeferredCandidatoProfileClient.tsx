@@ -30,8 +30,8 @@ const MOBILE_DEFER_TIMEOUT_MS = 4000
  * O KPI de patrimonio do skeleton usava `Intl.NumberFormat` com `notation:
  * "compact"` e imprimia "189,2 mil", enquanto o card hidratado, logo depois,
  * imprime "R$ 189,2 mil". O leitor via o numero mudar de significado no meio do
- * carregamento. Os dois estados passam a usar `formatCompact`, que e a funcao do
- * card real. Os outros KPIs do skeleton sao contagens e ja saem crus.
+ * carregamento. Os dois estados passam a usar `formatCompact`, que e o mesmo
+ * formatador do card real. Os outros KPIs do skeleton sao contagens e ja saem crus.
  */
 function formatOverviewPatrimonio(value: number | null) {
   if (value === null) return "N/D"

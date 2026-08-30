@@ -167,7 +167,7 @@ export async function CandidatoFichaView({
     }),
     // `publicTaxonomyValue` e o mesmo sanitizador do DTO publico: suprime QID cru
     // do Wikidata (`^Q\d+$`) e normaliza CAIXA ALTA. O hero le `FichaCandidato`
-    // direto, sem passar pelo DTO, e por isso exibia "Q82955" em producao.
+    // direto, sem passar pelo DTO, e por isso exibia "Q82955" no site.
     publicTaxonomyValue(ficha.profissao_declarada),
     ficha.genero ? sanitizePtBrText(ficha.genero) : null,
     ficha.estado_civil ? sanitizePtBrText(ficha.estado_civil) : null,
