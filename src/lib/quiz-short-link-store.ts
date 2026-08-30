@@ -42,11 +42,43 @@ function withFixtureLock<T>(filePath: string, fn: () => Promise<T>): Promise<T> 
   return run
 }
 
+/**
+ * O store de arquivo existe para teste e dev: ele guarda os short-links num JSON
+ * local, com lock em memoria do processo.
+ *
+ * Em producao serverless isso e um modo de falha silencioso: cada invocacao tem
+ * seu proprio filesystem efemero, entao o link gravado numa instancia some ou
+ * nao e visto pela proxima, e o lock em memoria nao coordena nada entre elas.
+ * Qualquer valor na env, inclusive um deixado por engano numa copia de
+ * configuracao entre ambientes, era suficiente para trocar o Supabase por isso.
+ *
+ * Em `VERCEL_ENV=production` ou `NODE_ENV=production` o fixture e ignorado e a
+ * rota volta para o Supabase, que e o comportamento correto. O aviso sai uma vez
+ * por processo para a configuracao errada nao passar despercebida.
+ */
+let avisouFixtureEmProducao = false
+
+function isProductionRuntime() {
+  return (
+    process.env.VERCEL_ENV === "production" || process.env.NODE_ENV === "production"
+  )
+}
+
 function resolveQuizShortLinkFixturePath() {
   const raw = process.env.PF_QUIZ_SHORT_LINKS_FILE?.trim()
   if (!raw) return null
+  if (isProductionRuntime()) {
+    if (!avisouFixtureEmProducao) {
+      avisouFixtureEmProducao = true
+      console.warn(
+        "[quiz-short-link] PF_QUIZ_SHORT_LINKS_FILE ignorada em producao: o store de arquivo nao sobrevive a invocacao serverless. Usando Supabase.",
+      )
+    }
+    return null
+  }
   return path.resolve(raw)
 }
+
 
 function isUniqueViolation(error: unknown) {
   if (!error || typeof error !== "object") return false

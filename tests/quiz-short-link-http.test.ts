@@ -257,6 +257,46 @@ describe("quiz short-link HTTP route", () => {
     assert.equal(limited, 56)
   })
 
+  it("ignora PF_QUIZ_SHORT_LINKS_FILE em producao e nao grava no arquivo", async () => {
+    // O store de arquivo guarda os links num JSON local com lock em memoria do
+    // processo. Em producao serverless cada invocacao tem filesystem proprio, e
+    // o link gravado numa instancia some. Qualquer valor na env, inclusive um
+    // copiado por engano entre ambientes, trocava o Supabase por isso em silencio.
+    for (const producao of [
+      { rotulo: "VERCEL_ENV", aplicar: () => { process.env.VERCEL_ENV = "production" } },
+      { rotulo: "NODE_ENV", aplicar: () => { mutableEnv.NODE_ENV = "production" } },
+    ]) {
+      await enableFileStore()
+      const arquivo = process.env.PF_QUIZ_SHORT_LINKS_FILE!
+      producao.aplicar()
+
+      const response = await POST(request(VALID_QUERY))
+
+      assert.equal(
+        response.status,
+        503,
+        `${producao.rotulo}: sem Supabase configurado, producao tem que responder 503 em vez de cair no arquivo`,
+      )
+      assert.deepEqual(await readJson(response), { error: "Short links unavailable" })
+      await assert.rejects(
+        readFile(arquivo, "utf8"),
+        /ENOENT/,
+        `${producao.rotulo}: o arquivo de fixture nao pode ter sido criado em producao`,
+      )
+    }
+  })
+
+  it("continua usando o arquivo fora de producao", async () => {
+    await enableFileStore()
+    const arquivo = process.env.PF_QUIZ_SHORT_LINKS_FILE!
+
+    const response = await POST(request(VALID_QUERY))
+
+    assert.equal(response.status, 200)
+    const raw = await readFile(arquivo, "utf8")
+    assert.match(raw, /"query_string"/)
+  })
+
   it("returns 503 when no Supabase config or controlled fixture store is available", async () => {
     delete process.env.PF_QUIZ_SHORT_LINKS_FILE
     process.env.PF_QUIZ_SHORT_LINK_SALT = "quiz-short-link-test-salt"
