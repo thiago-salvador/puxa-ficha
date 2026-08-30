@@ -26,6 +26,37 @@ export interface GlobalSearchIndexItem {
   badge?: string | null
 }
 
+function candidateSlugFromSearchHref(href: string): string | null {
+  let pathname = href
+  try {
+    pathname = new URL(href, "https://puxaficha.com.br").pathname
+  } catch {
+    return null
+  }
+
+  const match = pathname.match(/^\/candidato\/([^/]+)\/?$/)
+  return match?.[1] ?? null
+}
+
+/**
+ * Remove itens de candidato que ficaram presos em um índice antigo.
+ *
+ * O índice completo tem cache próprio e pode sobreviver a uma mudança na
+ * coorte publicada. A lista de slugs é a fronteira canônica que o middleware
+ * usa para decidir se uma ficha existe, então o endpoint deve aplicar a mesma
+ * fronteira antes de devolver o payload ao cliente.
+ */
+export function filterGlobalSearchIndexToPublicSlugs(
+  items: readonly GlobalSearchIndexItem[],
+  publicSlugs: readonly string[],
+): GlobalSearchIndexItem[] {
+  const allowed = new Set(publicSlugs)
+  return items.filter((item) => {
+    const slug = candidateSlugFromSearchHref(item.href)
+    return slug === null || allowed.has(slug)
+  })
+}
+
 /** Limite de candidatos na lista principal do palette (busca vazia ou com filtro). */
 export const GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT = 28
 
