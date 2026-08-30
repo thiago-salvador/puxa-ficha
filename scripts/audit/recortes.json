@@ -387,6 +387,13 @@
       "ate": "20260829030002",
       "allowlist": "scripts/audit/allowlist-candidate-registration-state-20260829.json",
       "divida": null
+    },
+    {
+      "nome": "issue-138-proposicao-source-key-20260829",
+      "desde": "20260829100100",
+      "ate": "20260829100100",
+      "allowlist": "scripts/audit/allowlist-issue-138-proposicao-source-key-20260829.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

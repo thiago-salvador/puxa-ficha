@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { existsSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 import test from "node:test"
 
@@ -9,7 +9,7 @@ const ROLLBACK = readFileSync(join(ROOT, "scripts/audit/rollback-issue-138-produ
 const WORKFLOW = readFileSync(join(ROOT, ".github/workflows/apply-issue-138-production.yml"), "utf8")
 const ROLLBACK_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/rollback-issue-138-production.yml"), "utf8")
 const FORWARD_READBACK = readFileSync(join(ROOT, "supabase/readback/20260829100000_projetos_lei_chave_por_fonte.readback.sql"), "utf8")
-const BACKFILL = readFileSync(join(ROOT, "supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"), "utf8")
+const BACKFILL = readFileSync(join(ROOT, "supabase/migrations/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"), "utf8")
 const BACKFILL_READBACK = readFileSync(join(ROOT, "supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql"), "utf8")
 const BACKFILL_ROLLBACK_READBACK = readFileSync(join(ROOT, "supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.rollback.readback.sql"), "utf8")
 const ROLLBACK_READBACK = readFileSync(join(ROOT, "supabase/readback/20260829100000_projetos_lei_chave_por_fonte.rollback.readback.sql"), "utf8")
@@ -23,6 +23,15 @@ const ROSTER_STATE_ROLLBACK = readFileSync(join(ROOT, "scripts/audit/rollback-ca
 const ROSTER_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/apply-candidate-roster-integrity-production.yml"), "utf8")
 const ROSTER_ROLLBACK_WORKFLOW = readFileSync(join(ROOT, ".github/workflows/rollback-candidate-roster-integrity-production.yml"), "utf8")
 const ROSTER_SCHEMA_ROLLBACK = readFileSync(join(ROOT, "supabase/rollback/20260829030001_candidate_roster_publication_integrity_schema.rollback.sql"), "utf8")
+
+test("migration 100100 aplicada vive no diretório canônico e não fica duplicada como pendente", () => {
+  assert.equal(existsSync(join(ROOT, "supabase/migrations/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql")), true)
+  assert.equal(existsSync(join(ROOT, "supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql")), false)
+  assert.match(APPLY, /backfill=\("\$ROOT\/supabase\/migrations\/\$\{backfill_version\}_\"\*\.sql\)/)
+  assert.match(ROLLBACK, /backfill=\("\$ROOT\/supabase\/migrations\/\$\{backfill_version\}_\"\*\.sql\)/)
+  assert.match(PG17_HARNESS, /BACKFILL="supabase\/migrations\/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado\.sql"/)
+  assert.match(PG17_HARNESS, /BACKFILL_HASH=.*supabase\/migrations\/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado\.sql/)
+})
 
 test("aplicador da issue 138 e fechado, ordenado e registra rollback por versao", () => {
   assert.match(APPLY, /ddl_version=20260829100000/)

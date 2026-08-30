@@ -12,7 +12,7 @@ esac
 
 IMG="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
 DDL="supabase/migrations/20260829100000_projetos_lei_chave_por_fonte.sql"
-BACKFILL="supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"
+BACKFILL="supabase/migrations/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"
 FORWARD_READBACK="supabase/readback/20260829100000_projetos_lei_chave_por_fonte.readback.sql"
 BACKFILL_READBACK="supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql"
 ROLLBACK="supabase/rollback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.rollback.sql"
@@ -20,7 +20,7 @@ BACKFILL_ROLLBACK_READBACK="supabase/readback/20260829100100_backfill_projetos_l
 SCHEMA_ROLLBACK="supabase/rollback/20260829100000_projetos_lei_chave_por_fonte.rollback.sql"
 ROLLBACK_READBACK="supabase/readback/20260829100000_projetos_lei_chave_por_fonte.rollback.readback.sql"
 DDL_HASH="sha256:$(shasum -a 256 supabase/migrations/20260829100000_projetos_lei_chave_por_fonte.sql | cut -d' ' -f1)"
-BACKFILL_HASH="sha256:$(shasum -a 256 supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql | cut -d' ' -f1)"
+BACKFILL_HASH="sha256:$(shasum -a 256 supabase/migrations/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql | cut -d' ' -f1)"
 C="pf-issue-138-forward-readback-$$"
 WRAPPER_DIR=""
 CLEANUP_DONE=0

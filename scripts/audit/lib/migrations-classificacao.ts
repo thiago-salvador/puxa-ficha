@@ -128,7 +128,7 @@ const RE_LE_CANDIDATOS = /\b(?:FROM|JOIN|INTO\s+\w+\s+FROM)\s+(?:public\.)?candi
  * nao esta tratando banco vazio, esta reprovando ele.
  */
 export function temGuardDeAusencia(corpo: string): boolean {
-  const abre = /\bIF\b[^;]{0,200}?(?:\bIS\s+NULL\b|=\s*0\b)\s+THEN\b/gi
+  const abre = /\bIF\b[^;]{0,200}?(?:(?:\bIS\s+NULL\b|=\s*0\b)\s+THEN\b|\bNOT\s+EXISTS\s*\([^;]{0,200}\)\s+THEN\b)/gi
   // Tokens do corpo do bloco, com END IF testado ANTES de IF para o "IF" de
   // "END IF" nao abrir nivel fantasma.
   const token = /\bEND\s+IF\b|\bELSIF\b|\bELSE\b|\bIF\b[\s\S]{0,200}?\bTHEN\b|\bRETURN\s*;|\bRAISE\s+EXCEPTION\b/gi

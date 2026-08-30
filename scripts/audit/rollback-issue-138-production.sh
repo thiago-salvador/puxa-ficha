@@ -46,7 +46,7 @@ backfill_version=20260829100100
 rollback=("$ROOT/supabase/rollback/${backfill_version}_"*.rollback.sql)
 readback=("$ROOT/supabase/readback/${backfill_version}_backfill_projetos_lei_camara_ronaldo_caiado.rollback.readback.sql")
 ddl=("$ROOT/supabase/migrations/${ddl_version}_"*.sql)
-backfill=("$ROOT/supabase/migrations-pendentes/${backfill_version}_"*.sql)
+backfill=("$ROOT/supabase/migrations/${backfill_version}_"*.sql)
 [[ ${#ddl[@]} -eq 1 && -f ${ddl[0]} ]] || { echo "FAIL: DDL nao unica" >&2; exit 2; }
 [[ ${#backfill[@]} -eq 1 && -f ${backfill[0]} ]] || { echo "FAIL: backfill nao unico" >&2; exit 2; }
 [[ ${#rollback[@]} -eq 1 && -f ${rollback[0]} ]] || { echo "FAIL: rollback nao unico" >&2; exit 2; }

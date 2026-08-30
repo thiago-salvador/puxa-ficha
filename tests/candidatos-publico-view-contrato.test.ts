@@ -333,6 +333,7 @@ describe("contrato da view candidatos_publico", () => {
       // Correção residual de Pablo Marçal, também sem redefinir a view.
       "20260829030002_candidate_registration_structured_state.sql",
       "20260829100000_projetos_lei_chave_por_fonte.sql",
+      "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

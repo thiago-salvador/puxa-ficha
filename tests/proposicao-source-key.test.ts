@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { existsSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 import test, { describe } from "node:test"
 
@@ -9,7 +9,7 @@ const DDL = readFileSync(
   "utf8",
 )
 const BACKFILL = readFileSync(
-  join(ROOT, "supabase", "migrations-pendentes", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"),
+  join(ROOT, "supabase", "migrations", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"),
   "utf8",
 )
 const ROLLBACK = readFileSync(
@@ -22,6 +22,11 @@ const READBACK = readFileSync(
 )
 
 describe("identidade de proposição por fonte, issue #138", () => {
+  test("a migration aplicada 100100 fica no diretório canônico, sem duplicata pendente", () => {
+    assert.equal(existsSync(join(ROOT, "supabase", "migrations", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql")), true)
+    assert.equal(existsSync(join(ROOT, "supabase", "migrations-pendentes", "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql")), false)
+  })
+
   test("o contrato de ingestão usa a chave composta nos dois órgãos", () => {
     for (const file of ["scripts/lib/ingest-camara.ts", "scripts/lib/ingest-senado.ts"]) {
       const source = readFileSync(join(ROOT, file), "utf8")
