@@ -127,8 +127,22 @@ jobs:
   # SEM SEGREDO, de proposito. Este workflow roda em PR de qualquer fork, e
   # `Settings/AUTOMATIONS_AND_ENVIRONMENTS.md` diz que PR nunca recebe credencial
   # de producao. Todo audit aqui e estatico: le arquivo do repo, nao consulta
-  # Supabase nem rede. Foi por isso que `audit:data-freshness` NAO entrou (ver o
-  # step comentado no fim do job).
+  # Supabase nem rede.
+  #
+  # DOIS GRUPOS FICARAM DE FORA, e por motivos diferentes:
+  #
+  # 1. `audit:data-freshness` exige `--published=<snapshot.json>`, e esse
+  #    snapshot sai de um `psql` com `SUPABASE_DB_URL` (data-freshness-audit.yml).
+  #    Segredo de producao nao entra em PR. Continua no cron das 11:37 UTC.
+  #
+  # 2. Os `*:scope` (`audit:programas-governo:scope`,
+  #    `audit:data-freshness:scope`, `audit:pesquisas:*:scope`) NAO sao auditoria
+  #    de dominio: sao gates de ESCOPO DE BRANCH. Cada um carrega uma allowlist
+  #    de arquivos que a branch daquele workstream pode tocar, e reprova qualquer
+  #    arquivo fora dela. Rodar num job generico faz um PR de UI reprovar por
+  #    tocar um arquivo de UI. Medido: a primeira versao deste job reprovou este
+  #    proprio PR, que so muda `.github/workflows/ci.yml`. Eles continuam sendo
+  #    rodados a mao por quem trabalha naquele recorte.
   audits-de-dominio:
     name: Auditorias de domínio (paths tocados)
     runs-on: ubuntu-latest
@@ -198,21 +212,9 @@ jobs:
         if: steps.recorte.outputs.aplica == 'true'
         run: npm run audit:programas-governo:escala
 
-      - name: Programas de governo (escopo)
-        if: steps.recorte.outputs.aplica == 'true'
-        run: npm run audit:programas-governo:scope
-
       - name: Pesquisas eleitorais (gate)
         if: steps.recorte.outputs.aplica == 'true'
         run: npm run audit:pesquisas:gate
-
-      # Só o escopo. O `audit:data-freshness` completo exige
-      # `--published=<snapshot.json>`, e esse snapshot sai de um `psql` com
-      # `SUPABASE_DB_URL` (ver data-freshness-audit.yml). Segredo de produção não
-      # entra em PR, então ele continua onde está: no cron diário das 11:37 UTC.
-      - name: Frescor dos dados (escopo)
-        if: steps.recorte.outputs.aplica == 'true'
-        run: npm run audit:data-freshness:scope
 
   # A cobertura saiu do `verify` em 18/08/2026, medida antes de mexer: levava 347
   # dos 651 segundos do job, mais da metade, e tem `continue-on-error: true`, ou
