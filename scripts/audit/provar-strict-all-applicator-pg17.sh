@@ -29,6 +29,7 @@ jq -e '.pending | length == 0' "$OUT/apply-plan.json" >/dev/null
 MIGRATION="$OUT/${VERSION}_${BATCH}.proposta.sql"
 READBACK="$OUT/${VERSION}_${BATCH}.readback.sql"
 ROLLBACK="$OUT/${VERSION}_${BATCH}.rollback.sql"
+ROLLBACK_READBACK="$OUT/${VERSION}_${BATCH}.rollback.readback.sql"
 CONTAINER_ID="$(docker run -d --rm -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres "$IMAGE")"
 
 for _ in $(seq 1 60); do
@@ -79,6 +80,7 @@ if q -q < "$READBACK" >/dev/null 2>&1; then
   echo "FAIL: readback aceitou estado anterior" >&2
   exit 1
 fi
+q -q < "$ROLLBACK_READBACK"
 
 before_control="$(q -Atq -c "select row_to_json(c)::text from public.candidatos c where slug='controle'")"
 q -q < "$MIGRATION"
@@ -88,6 +90,18 @@ q -q < "$READBACK"
 [[ "$(q -Atq -c "select count(*) from public.candidatos where slug='teste-p0' and publicavel=false")" == "1" ]]
 [[ "$before_control" == "$(q -Atq -c "select row_to_json(c)::text from public.candidatos c where slug='controle'")" ]]
 
+if q -q < "$ROLLBACK_READBACK" >/dev/null 2>&1; then
+  echo "FAIL: rollback readback aceitou estado aplicado" >&2
+  exit 1
+fi
+
+q -q -c "UPDATE public.candidatos SET partido_sigla='MUD' WHERE slug='teste-p0'"
+if q -q < "$ROLLBACK" >/dev/null 2>&1; then
+  echo "FAIL: rollback aceitou perfil alterado após a migration" >&2
+  exit 1
+fi
+q -q -c "UPDATE public.candidatos SET partido_sigla='TST' WHERE slug='teste-p0'"
+
 q -q -c "UPDATE public.coleta_log SET detalhe=detalhe || 'x' WHERE id=(SELECT min(id) FROM public.coleta_log WHERE execucao='$EXECUTION')"
 if q -q < "$ROLLBACK" >/dev/null 2>&1; then
   echo "FAIL: rollback aceitou receipt adulterado" >&2
@@ -95,10 +109,11 @@ if q -q < "$ROLLBACK" >/dev/null 2>&1; then
 fi
 q -q -c "UPDATE public.coleta_log SET detalhe=left(detalhe,length(detalhe)-1) WHERE execucao='$EXECUTION' AND detalhe LIKE '%x'"
 q -q < "$ROLLBACK"
+q -q < "$ROLLBACK_READBACK"
 
 [[ "$(q -Atq -c "select count(*) from public.coleta_log where execucao='$EXECUTION'")" == "0" ]]
 [[ "$(q -Atq -c "select count(*) from supabase_migrations.schema_migrations where version='$VERSION'")" == "0" ]]
 [[ "$(q -Atq -c "select count(*) from public.candidatos where slug='teste-p0' and publicavel=true")" == "1" ]]
 [[ "$before_control" == "$(q -Atq -c "select row_to_json(c)::text from public.candidatos c where slug='controle'")" ]]
 
-echo "PASS: strict-all actions=3 unpublished=1, readback, rollback fail-closed e controle provados em PostgreSQL 17"
+echo "PASS: strict-all actions=3 unpublished=1, timestamps reais, dependências, readbacks e rollback fail-closed provados em PostgreSQL 17"

@@ -4416,7 +4416,7 @@
     })).filter(item=>item.decisao);
     if(decisoes.length===0){status.textContent='Nada decidido. A ficha continua pendente.';return}
     button.disabled=true;status.textContent='Gravando...';
-    try{const response=await fetch('/revisao',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({schema_version:1,...queue,slug:card.dataset.slug,decisoes})});
+    try{const response=await fetch('/revisao',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({schema_version:1,...queue,slug:card.dataset.slug,decisoes}),signal:AbortSignal.timeout(10_000)});
       const body=await response.json();if(!response.ok)throw new Error(body.error||('HTTP '+response.status));status.textContent='Decisões gravadas no JSONL. Nenhum dado foi aplicado.'}
     catch(error){status.textContent='Falha: '+error.message;button.disabled=false}
   }))</script></body></html>

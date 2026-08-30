@@ -206,6 +206,30 @@ process.exit(7)
   }
 })
 
+test("runners preservam o exit code quando o modelo fecha stdin antes de consumir o envelope", async () => {
+  const fakeCli = fixturePath("pf-fake-model-exit-stdin-fechado.mjs")
+  await writeFile(fakeCli, `#!/usr/bin/env node
+process.stdin.destroy()
+process.stderr.write('modelo encerrou antes do envelope')
+process.exit(7)
+`)
+  await chmod(fakeCli, 0o755)
+  const envelopeGrande = JSON.stringify({
+    ...JSON.parse(ENVELOPE),
+    input: { payload: "x".repeat(2_000_000) },
+  })
+  for (const [runner, env] of [
+    [RUNNER_QWEN, { PF_QWEN_CLI: fakeCli, PF_QWEN_TIMEOUT_MS: "15000" }],
+    [RUNNER_CODEX_LUNA, { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000" }],
+    [RUNNER_CLAUDE, { PF_CLAUDE_CLI: fakeCli, PF_CLAUDE_TIMEOUT_MS: "15000" }],
+  ] as const) {
+    const resultado = await rodarRunner(runner, env, envelopeGrande)
+    assert.notEqual(resultado.code, 0, `runner ${runner} deveria falhar com exit 7`)
+    assert.match(resultado.stderr, /saiu com 7/u)
+    assert.doesNotMatch(resultado.stderr, /Unhandled 'error' event|write EPIPE/u)
+  }
+})
+
 test("runner Claude inclui diagnóstico estruturado sanitizado quando CLI sai com erro", async () => {
   const fakeCli = fixturePath("pf-fake-claude-judge-erro-estruturado.mjs")
   await writeFile(fakeCli, `#!/usr/bin/env node

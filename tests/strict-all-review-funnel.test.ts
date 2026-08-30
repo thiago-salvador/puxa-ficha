@@ -6,7 +6,7 @@ import { join, resolve } from "node:path"
 import { tmpdir } from "node:os"
 import test from "node:test"
 
-import { planStrictAllDecisions } from "../scripts/audit/apply-strict-all-review-decisions"
+import { generateStrictAllSql, planStrictAllDecisions } from "../scripts/audit/apply-strict-all-review-decisions"
 import { buildStrictAllQueue } from "../scripts/audit/generate-strict-all-review-funnel"
 import { slugsSolicitados } from "../scripts/curadoria-processos-lote"
 
@@ -88,6 +88,7 @@ test("HTML não seleciona decisão factual por default", () => {
     const html = readFileSync(join(EVIDENCE, page), "utf8")
     assert.match(html, /<option value="">Pendente, sem default<\/option>/)
     assert.doesNotMatch(html, /<option[^>]+selected/)
+    assert.match(html, /signal:AbortSignal\.timeout\(10_000\)/)
   }
   assert.equal((readFileSync(join(EVIDENCE, "p0.html"), "utf8").match(/<article class="card"/g) ?? []).length, 10)
 })
@@ -129,7 +130,50 @@ test("aplicador mantém pendências, bloqueia dependência e faz R1 superseder a
     }],
   }])
   assert.equal(blocked.actions.length, 0)
-  assert.match(String(blocked.blocked[0]?.reason), /dependente pendente/)
+  assert.match(String(blocked.blocked[0]?.reason), /dependência sem ação factual/)
+
+  const proofQueue = JSON.parse(readFileSync(join(ROOT, "tests/fixtures/strict-all-proof-queue.json"), "utf8"))
+  const proofRecord = JSON.parse(readFileSync(join(ROOT, "tests/fixtures/strict-all-proof-decisions.jsonl"), "utf8").trim().split("\n")[1]!)
+  proofRecord.decisoes.reverse()
+  const resolvedOutOfOrder = planStrictAllDecisions(proofQueue, [proofRecord])
+  assert.equal(resolvedOutOfOrder.blocked.length, 0)
+  assert.deepEqual(resolvedOutOfOrder.actions.map((action) => action.item_id), [
+    "teste-deps:R3:processos-curadoria",
+    "teste-deps:R5:votos",
+  ])
+
+  const r1DependencyProfile = result.profiles.find((candidate) => {
+    const candidateR5 = candidate.decisions.find((item) => item.category === "R5:votos")
+    return candidateR5?.dependencies.length === 1 && candidateR5.dependencies[0]?.endsWith(":R1_selo")
+  })!
+  const dependencyR1 = r1DependencyProfile.decisions.find((item) => item.category === "R1_selo")!
+  const dependentR5 = r1DependencyProfile.decisions.find((item) => item.category === "R5:votos")!
+  const blockedByUnappliedPublication = planStrictAllDecisions(result, [{
+    ...base,
+    slug: r1DependencyProfile.slug,
+    decisoes: [
+      {
+        item_id: dependencyR1.item_id,
+        category: dependencyR1.category,
+        decisao: "publicar_com_evidencia",
+        evidence_url: "https://example.test/selo",
+        evidence_checked_at: "2026-08-30T18:01:00Z",
+        evidence_sha256: "d".repeat(64),
+      },
+      {
+        item_id: dependentR5.item_id,
+        category: dependentR5.category,
+        decisao: "recibo_nao_aplicabilidade",
+        evidence_url: "https://example.test/votos",
+        evidence_checked_at: "2026-08-30T18:02:00Z",
+        evidence_sha256: "e".repeat(64),
+        escopo: "identidade, fonte e período conferidos",
+      },
+    ],
+  }])
+  assert.equal(blockedByUnappliedPublication.actions.length, 0)
+  assert.equal(blockedByUnappliedPublication.blocked.length, 2)
+  assert.ok(blockedByUnappliedPublication.blocked.some((item) => item.item_id === dependentR5.item_id))
 
   const r1Profile = result.profiles.find((candidate) =>
     candidate.decisions.some((item) => item.category === "R1_selo") && candidate.decisions.length > 1,
@@ -161,6 +205,28 @@ test("aplicador mantém pendências, bloqueia dependência e faz R1 superseder a
       escopo: "identidade, fonte e período conferidos",
     }],
   }]), /evidência HTTPS/)
+
+  assert.throws(() => planStrictAllDecisions(result, [{
+    ...base,
+    recebido_em: "2026-08-30T18:00:00",
+    decisoes: [],
+  }]), /recebido_em deve ser um horário real com fuso/)
+})
+
+test("SQL usa horários reais, guards exatos e rollback com readback próprio", () => {
+  const proofQueue = JSON.parse(readFileSync(join(ROOT, "tests/fixtures/strict-all-proof-queue.json"), "utf8"))
+  const proofRecords = readFileSync(join(ROOT, "tests/fixtures/strict-all-proof-decisions.jsonl"), "utf8")
+    .trim().split("\n").map((line) => JSON.parse(line))
+  const plan = planStrictAllDecisions(proofQueue, proofRecords)
+  const generated = generateStrictAllSql(proofQueue, plan.actions, "20260830170000", "strict-all-proof")
+
+  assert.doesNotMatch(generated.migration, /T12:00:00Z/)
+  assert.match(generated.migration, /2026-08-30T18:00:00Z/)
+  assert.match(generated.readback, /l\.executado_em='2026-08-30T18:00:00Z'::timestamptz/)
+  assert.match(generated.rollback, /CREATE TEMP TABLE _strict_all_expected/)
+  assert.match(generated.rollback, /c\.nome_urna=e\.nome_urna/)
+  assert.match(generated.rollbackReadback, /SET default_transaction_read_only=on/)
+  assert.match(generated.rollbackReadback, /ledger<>0 OR receipts<>0/)
 })
 
 async function freePort(): Promise<number> {

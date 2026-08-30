@@ -71,6 +71,12 @@ function chamarClaude(promptTexto, schema) {
         rejectPromise(new Error(`claude saiu com ${code}: ${diagnosticoStderr}${diagnosticoStdout ? ` ${diagnosticoStdout}` : ""}`))
       }
     })
+    child.stdin.on("error", (error) => {
+      // O processo pode encerrar antes de consumir todo o envelope. Nesse caso
+      // o `close` acima preserva o exit code real; EPIPE nao pode derrubar o
+      // runner antes de o diagnostico do modelo ser emitido.
+      if (error.code !== "EPIPE") rejectPromise(new Error(`claude erro de stdin: ${error.message}`))
+    })
     child.stdin.end(promptTexto)
   })
 }
