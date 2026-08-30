@@ -696,6 +696,35 @@ describe("alerts HTTP routes", () => {
   })
 
   describe("POST /api/alerts/verify", () => {
+    it("returns 429 after the per-IP window is exhausted, before touching the database", async () => {
+      // O verify era a unica rota de mutacao de alertas sem teto por IP: 120 req/min,
+      // mesmo namespace/limite das irmas. O contador roda depois do CSRF e antes do
+      // body, entao o excedente nao chega a consultar alert_subscribers.
+      const fixture = new AlertsRouteFixture()
+      const handler = createVerifyHandler(createDeps(fixture))
+      const headers = { "x-forwarded-for": "203.0.113.44" }
+      const payload = { token: "VerifyTokenFlood001", manageToken: "ManageTokenFlood001" }
+
+      for (let i = 0; i < 120; i += 1) {
+        const allowed = await handler(
+          fixture.request("/api/alerts/verify", { body: payload, headers }),
+        )
+        assert.equal(allowed.status, 410)
+      }
+
+      const blocked = await handler(
+        fixture.request("/api/alerts/verify", { body: payload, headers }),
+      )
+
+      assert.equal(blocked.status, 429)
+      assert.deepEqual(await readJson(blocked), {
+        error: "Too many requests",
+        reason: "muitas_tentativas",
+      })
+      assert.match(blocked.headers.get("retry-after") ?? "", /^\d+$/)
+      assert.equal(fixture.apiExits.at(-1)?.reason, "rate_limited")
+    })
+
     it("rejects invalid payload", async () => {
       const fixture = new AlertsRouteFixture()
       const handler = createVerifyHandler(createDeps(fixture))
