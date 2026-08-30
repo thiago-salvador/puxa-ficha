@@ -2,6 +2,7 @@ import { getCandidatoMetadataResource } from "@/lib/api"
 import { buildEditorialOg, dynamicOgImageCacheHeaders } from "@/lib/og"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
+import { truncateOnWordBoundary } from "@/lib/text-truncate"
 
 export async function GET(
   _request: Request,
@@ -35,7 +36,9 @@ export async function GET(
     eyebrow: partyLabel ? `${partyLabel} · ${cargoLabel}` : cargoLabel,
     title: ficha.nome_urna,
     subtitle:
-      ficha.biografia?.slice(0, 170) ??
+      // Sem corte em limite de palavra a imagem social saía terminando em
+      // "ministro do Tur"; mesmo helper da meta description.
+      (ficha.biografia ? truncateOnWordBoundary(ficha.biografia, 170) : null) ??
       `Ficha pública de ${ficha.nome_urna} com dados disponíveis sobre patrimônio, processos, votações e financiamento quando houver fonte estruturada.`,
     meta: "Dados públicos · não é recomendação de voto",
   })

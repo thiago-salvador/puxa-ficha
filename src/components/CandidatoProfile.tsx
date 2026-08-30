@@ -78,6 +78,7 @@ import {
 import {
   fixedCopy,
   formatAttentionCategoryLabel,
+  formatDestaquesLabel,
   formatProcessStatusLabel,
   formatProcessSummaryLabel,
   formatProcessTypeLabel,
@@ -459,7 +460,10 @@ export function CandidatoProfile({
       label: "Legislação",
       dataCount: legislacaoGroups.navigationCount + Math.max(0, projetosLeiTotal - projetosLei.length),
     },
-    alertas: { label: "Destaques", dataCount: destaques.totalExibido },
+    alertas: {
+      label: formatDestaquesLabel(destaques.totalExibido),
+      dataCount: destaques.totalExibido,
+    },
   }
 
   const tabDefs: { id: CandidatoProfileNavTabId; label: string; dataCount: number }[] =
@@ -744,7 +748,7 @@ export function CandidatoProfile({
             */}
             <StatCard
               value={destaques.totalExibido}
-              label="Destaques"
+              label={formatDestaquesLabel(destaques.totalExibido)}
               icon={Sparkles}
               dataValueAttr="data-pf-overview-destaques"
               dataRawValue={destaques.totalExibido}

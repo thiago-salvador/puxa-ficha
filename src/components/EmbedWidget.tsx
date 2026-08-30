@@ -8,7 +8,7 @@ import { SITE_ORIGIN } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
-import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
+import { formatCargoDisputadoPublicLabel, formatDestaquesLabel } from "@/lib/ui-labels"
 import { processosOverviewDisplay } from "@/lib/processos-display"
 
 function MetaLine({ ficha }: { ficha: FichaCandidato }) {
@@ -132,7 +132,7 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
         />
         {pontos.length > 0 ? (
           <StatRow
-            label="Destaques"
+            label={formatDestaquesLabel(pontos.length)}
             value={pontos.length}
             sub="Destaques editoriais públicos"
           />

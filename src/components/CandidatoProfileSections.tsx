@@ -50,6 +50,7 @@ import {
 } from "@/lib/financiamento-eleicoes"
 import type { PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
 import {
+  FINANCING_COLOR_BY_KEY,
   type FinancingBreakdownKey,
   formatFinanciamentoEleicaoEstadoLabel,
   formatFinancingLabel,
@@ -375,13 +376,9 @@ interface SuggestAction {
   go: () => void
 }
 
-const FINANCING_COLORS: Record<FinancingBreakdownKey, string> = {
-  fundo_eleitoral: "#0a0a0a",
-  fundo_partidario: "#525252",
-  pessoa_fisica: "#a3a3a3",
-  recursos_proprios: "#d4d4d4",
-  outros_recursos: "#e5e5e5",
-}
+// Fonte unica em src/lib/ui-labels.ts: a copia local desta paleta era o segundo
+// lugar onde o piso de contraste podia divergir.
+const FINANCING_COLORS: Record<FinancingBreakdownKey, string> = FINANCING_COLOR_BY_KEY
 
 const PROJECT_STATUS_BADGES: Record<
   string,
