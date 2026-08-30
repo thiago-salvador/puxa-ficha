@@ -38,6 +38,9 @@
  *   --skip-remote          pula chamadas HTTP (contrato-only, util em CI)
  *   --timeout-ms=N         default 15000
  *   --max-retries=N        default 2
+ *   --pace-ms=N            default 250; minimo entre requests ao mesmo host
+ *   --circuit-failures=N   default 4; abre o circuito apos falhas consecutivas
+ *   --circuit-cooldown-ms=N default 30000
  *   --fail-on-mismatch     exit 1 se houver mismatch/not_found/error
  */
 
@@ -82,6 +85,7 @@ export interface CheckResult {
   reasons: string[]
   http_status?: number
   error?: string
+  error_info?: ErrorTelemetry
 }
 
 export interface ReportShape {
@@ -199,49 +203,365 @@ export function classifyMatch(
 
 // ── HTTP (isolado) ────────────────────────────────────────────────
 
+export interface ErrorTelemetry {
+  kind: "timeout" | "network" | "http" | "parse" | "circuit_open"
+  name: string
+  message: string
+  attempts?: number
+  code?: string
+  cause?: {
+    name: string
+    message: string
+    code?: string
+  }
+}
+
 interface FetchOutcome {
   status: "ok" | "not_found" | "error"
   http_status?: number
   body?: unknown
   error?: string
+  error_info?: ErrorTelemetry
 }
 
-async function fetchJsonWithRetry(
-  url: string,
-  timeoutMs: number,
-  maxRetries: number,
-): Promise<FetchOutcome> {
-  let lastErr: string | undefined
-  for (let attempt = 0; attempt <= maxRetries; attempt++) {
-    const controller = new AbortController()
-    const timer = setTimeout(() => controller.abort(), timeoutMs)
-    try {
-      const res = await fetch(url, { headers: { Accept: "application/json" }, signal: controller.signal })
-      if (res.status === 404) return { status: "not_found", http_status: 404 }
-      if (res.status === 429) {
-        const retryAfter = Number(res.headers.get("retry-after") ?? 0)
-        const waitMs = retryAfter > 0 ? retryAfter * 1000 : 2000 * (attempt + 1)
-        await new Promise((r) => setTimeout(r, Math.min(waitMs, 10_000)))
-        continue
-      }
-      if (!res.ok) {
-        lastErr = `HTTP ${res.status}`
-        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)))
-        continue
-      }
-      const body = await res.json()
-      return { status: "ok", http_status: res.status, body }
-    } catch (err) {
-      lastErr = err instanceof Error ? err.message : String(err)
-      if (attempt < maxRetries) {
-        await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)))
-        continue
-      }
-    } finally {
-      clearTimeout(timer)
+type Sleep = (ms: number) => Promise<void>
+type FetchImpl = typeof fetch
+
+interface HostCircuit {
+  generation: number
+  consecutiveFailures: number
+  openUntil: number
+  lastRequestAt?: number
+  /** O cooldown desta indisponibilidade ja foi consumido por uma tentativa half-open. */
+  cooldownWaited: boolean
+  halfOpen: boolean
+  cooldownPromise?: Promise<void>
+}
+
+export interface RemoteFetchClientOptions {
+  timeoutMs: number
+  maxRetries: number
+  paceMs?: number
+  circuitFailureThreshold?: number
+  circuitCooldownMs?: number
+  fetchImpl?: FetchImpl
+  sleep?: Sleep
+  now?: () => number
+}
+
+const DEFAULT_PACE_MS = 250
+const DEFAULT_CIRCUIT_FAILURE_THRESHOLD = 4
+const DEFAULT_CIRCUIT_COOLDOWN_MS = 30_000
+const MAX_TIMEOUT_MS = 120_000
+const MAX_RETRIES = 10
+const MAX_PACE_MS = 60_000
+const MAX_CIRCUIT_FAILURE_THRESHOLD = 100
+const MAX_CIRCUIT_COOLDOWN_MS = 300_000
+
+function sleepMs(ms: number): Promise<void> {
+  return new Promise((resolveSleep) => setTimeout(resolveSleep, ms))
+}
+
+function boundedNumber(value: number | undefined, fallback: number, min: number): number {
+  return Number.isFinite(value) ? Math.max(min, value as number) : fallback
+}
+
+function sanitizeErrorText(value: unknown): string {
+  const text = typeof value === "string" ? value : String(value)
+  return text
+    .replace(/https?:\/\/[^\s)]+/gi, "<redacted-url>")
+    .replace(/([?&](?:token|key|secret|password|authorization|api[_-]?key)=)[^&\s]+/gi, "$1<redacted>")
+    .slice(0, 240)
+}
+
+function errorPart(value: unknown): { name: string; message: string; code?: string } {
+  if (value instanceof Error) {
+    const code = (value as Error & { code?: unknown }).code
+    return {
+      name: value.name || "Error",
+      message: sanitizeErrorText(value.message || "unknown"),
+      ...(typeof code === "string" ? { code: sanitizeErrorText(code) } : {}),
     }
   }
-  return { status: "error", error: lastErr ?? "unknown" }
+  return { name: "UnknownError", message: sanitizeErrorText(value) }
+}
+
+function captureError(err: unknown, kind: ErrorTelemetry["kind"], attempts?: number): ErrorTelemetry {
+  const primary = errorPart(err)
+  const rawCause = err && typeof err === "object" && "cause" in err ? (err as { cause?: unknown }).cause : undefined
+  const cause = rawCause === undefined ? undefined : errorPart(rawCause)
+  return { kind, ...primary, ...(attempts === undefined ? {} : { attempts }), ...(cause ? { cause } : {}) }
+}
+
+function isAbortError(err: unknown): boolean {
+  return err !== null && typeof err === "object" && "name" in err && (err as { name?: unknown }).name === "AbortError"
+}
+
+function formatError(info: ErrorTelemetry): string {
+  const code = info.code ? `/${info.code}` : ""
+  const cause = info.cause ? ` cause=${info.cause.name}${info.cause.code ? `/${info.cause.code}` : ""}` : ""
+  return `${info.kind}:${info.name}${code}:${info.message}${cause}`
+}
+
+function isRetryableStatus(status: number): boolean {
+  return status === 408 || status === 425 || status === 429 || status >= 500
+}
+
+/**
+ * Cliente HTTP read-only com pacing por host, retries apenas para falhas
+ * transientes e circuit breaker. O breaker reduz uma tempestade durante uma
+ * indisponibilidade, mas cada chamada interrompida continua sendo `error`:
+ * falha da fonte nunca vira sucesso nem `skipped`.
+ */
+export class RemoteFetchClient {
+  private readonly circuits = new Map<string, HostCircuit>()
+  private readonly paceTails = new Map<string, Promise<void>>()
+  private readonly fetchImpl: FetchImpl
+  private readonly sleep: Sleep
+  private readonly now: () => number
+  private readonly paceMs: number
+  private readonly circuitFailureThreshold: number
+  private readonly circuitCooldownMs: number
+
+  constructor(private readonly options: RemoteFetchClientOptions) {
+    this.fetchImpl = options.fetchImpl ?? fetch
+    this.sleep = options.sleep ?? sleepMs
+    this.now = options.now ?? Date.now
+    this.paceMs = boundedNumber(options.paceMs, DEFAULT_PACE_MS, 0)
+    this.circuitFailureThreshold = boundedNumber(
+      options.circuitFailureThreshold,
+      DEFAULT_CIRCUIT_FAILURE_THRESHOLD,
+      1,
+    )
+    this.circuitCooldownMs = boundedNumber(options.circuitCooldownMs, DEFAULT_CIRCUIT_COOLDOWN_MS, 0)
+  }
+
+  private async pace(host: string): Promise<void> {
+    const previous = this.paceTails.get(host) ?? Promise.resolve()
+    let release!: () => void
+    const current = new Promise<void>((resolveRelease) => {
+      release = resolveRelease
+    })
+    this.paceTails.set(host, current)
+    await previous
+    try {
+      const circuit = this.circuits.get(host) ?? {
+        generation: 0,
+        consecutiveFailures: 0,
+        openUntil: 0,
+        cooldownWaited: false,
+        halfOpen: false,
+      }
+      const elapsed = circuit.lastRequestAt === undefined ? this.paceMs : this.now() - circuit.lastRequestAt
+      const waitMs = Math.max(0, this.paceMs - elapsed)
+      if (waitMs > 0) await this.sleep(waitMs)
+      circuit.lastRequestAt = this.now()
+      this.circuits.set(host, circuit)
+    } finally {
+      release()
+      if (this.paceTails.get(host) === current) this.paceTails.delete(host)
+    }
+  }
+
+  private markSuccess(host: string): void {
+    const circuit = this.circuits.get(host) ?? {
+      generation: 0,
+      consecutiveFailures: 0,
+      openUntil: 0,
+      cooldownWaited: false,
+      halfOpen: false,
+    }
+    circuit.generation++
+    circuit.cooldownPromise = undefined
+    circuit.consecutiveFailures = 0
+    circuit.openUntil = 0
+    circuit.cooldownWaited = false
+    circuit.halfOpen = false
+    this.circuits.set(host, circuit)
+  }
+
+  private markFailure(host: string): void {
+    const circuit = this.circuits.get(host) ?? {
+      generation: 0,
+      consecutiveFailures: 0,
+      openUntil: 0,
+      cooldownWaited: false,
+      halfOpen: false,
+    }
+    circuit.generation++
+    circuit.cooldownPromise = undefined
+    circuit.consecutiveFailures++
+    if (circuit.halfOpen || circuit.consecutiveFailures >= this.circuitFailureThreshold) {
+      circuit.openUntil = this.now() + this.circuitCooldownMs
+      circuit.halfOpen = false
+    }
+    this.circuits.set(host, circuit)
+  }
+
+  async get(url: string): Promise<FetchOutcome> {
+    const host = new URL(url).host
+    const circuit = this.circuits.get(host)
+    let halfOpenProbe = false
+    if (circuit?.halfOpen) {
+      const info: ErrorTelemetry = {
+        kind: "circuit_open",
+        name: "CircuitOpen",
+        message: `host=${host} half_open_probe_in_flight`,
+      }
+      return { status: "error", error: formatError(info), error_info: info }
+    }
+    if (circuit && circuit.openUntil > this.now()) {
+      if (!circuit.cooldownWaited) {
+        if (circuit.cooldownPromise) {
+          await circuit.cooldownPromise
+          const info: ErrorTelemetry = {
+            kind: "circuit_open",
+            name: "CircuitOpen",
+            message: `host=${host} half_open_probe_in_flight`,
+          }
+          return { status: "error", error: formatError(info), error_info: info }
+        }
+        const generation = circuit.generation
+        const cooldownPromise = this.sleep(circuit.openUntil - this.now()).then(() => {
+          if (
+            this.circuits.get(host) !== circuit ||
+            circuit.generation !== generation ||
+            circuit.cooldownPromise !== cooldownPromise
+          ) {
+            return
+          }
+          circuit.openUntil = 0
+          circuit.cooldownWaited = true
+          circuit.halfOpen = true
+          circuit.cooldownPromise = undefined
+          this.circuits.set(host, circuit)
+        })
+        circuit.cooldownPromise = cooldownPromise
+        this.circuits.set(host, circuit)
+        await cooldownPromise
+        const refreshedAfterCooldown = this.circuits.get(host)
+        if (
+          refreshedAfterCooldown?.generation === generation &&
+          refreshedAfterCooldown.cooldownPromise === undefined &&
+          refreshedAfterCooldown.halfOpen
+        ) {
+          halfOpenProbe = true
+        } else if (
+          refreshedAfterCooldown?.halfOpen ||
+          refreshedAfterCooldown?.cooldownPromise ||
+          (refreshedAfterCooldown?.openUntil ?? 0) > this.now()
+        ) {
+          const info: ErrorTelemetry = {
+            kind: "circuit_open",
+            name: "CircuitOpen",
+            message: `host=${host} cooldown_invalidated`,
+          }
+          return { status: "error", error: formatError(info), error_info: info }
+        }
+      } else {
+        const info: ErrorTelemetry = {
+          kind: "circuit_open",
+          name: "CircuitOpen",
+          message: `host=${host} cooldown_ms=${circuit.openUntil - this.now()}`,
+        }
+        return { status: "error", error: formatError(info), error_info: info }
+      }
+    } else if (circuit && circuit.openUntil > 0 && circuit.openUntil <= this.now()) {
+      // Transicao sincronizada para half-open na fronteira exata do cooldown.
+      circuit.openUntil = 0
+      circuit.cooldownWaited = true
+      circuit.halfOpen = true
+      this.circuits.set(host, circuit)
+      halfOpenProbe = true
+    }
+
+    let lastInfo: ErrorTelemetry | undefined
+    for (let attempt = 0; attempt <= this.options.maxRetries; attempt++) {
+      await this.pace(host)
+      const refreshedCircuit = this.circuits.get(host)
+      const refreshedNow = this.now()
+      if (!halfOpenProbe && refreshedCircuit) {
+        if (refreshedCircuit.halfOpen || refreshedCircuit.cooldownPromise || refreshedCircuit.openUntil > refreshedNow) {
+          const info: ErrorTelemetry = {
+            kind: "circuit_open",
+            name: "CircuitOpen",
+            message: `host=${host} blocked_after_pacing`,
+          }
+          return { status: "error", error: formatError(info), error_info: info }
+        }
+        if (refreshedCircuit.openUntil > 0 && refreshedCircuit.openUntil <= refreshedNow) {
+          refreshedCircuit.openUntil = 0
+          refreshedCircuit.cooldownWaited = true
+          refreshedCircuit.halfOpen = true
+          this.circuits.set(host, refreshedCircuit)
+          halfOpenProbe = true
+        }
+      }
+      const controller = new AbortController()
+      const timer = setTimeout(() => controller.abort(), this.options.timeoutMs)
+      try {
+        const res = await this.fetchImpl(url, {
+          headers: { Accept: "application/json" },
+          signal: controller.signal,
+        })
+        if (res.status === 404) {
+          this.markSuccess(host)
+          return { status: "not_found", http_status: 404 }
+        }
+        if (!res.ok) {
+          lastInfo = {
+            kind: "http",
+            name: "HttpError",
+            message: `status=${res.status}`,
+            code: String(res.status),
+            attempts: attempt + 1,
+          }
+          if (!isRetryableStatus(res.status)) {
+            this.markSuccess(host)
+            break
+          }
+          if (attempt >= this.options.maxRetries) break
+          const retryAfterSeconds = Number(res.headers.get("retry-after") ?? 0)
+          const retryAfterMs = Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0 ? retryAfterSeconds * 1000 : 0
+          await this.sleep(Math.min(retryAfterMs || 500 * 2 ** attempt, 10_000))
+          continue
+        }
+        let body: unknown
+        try {
+          body = await res.json()
+        } catch (err) {
+          if (isAbortError(err)) throw err
+          lastInfo = captureError(err, "parse", attempt + 1)
+          this.markSuccess(host)
+          break
+        }
+        this.markSuccess(host)
+        return { status: "ok", http_status: res.status, body }
+      } catch (err) {
+        lastInfo = captureError(
+          err,
+          isAbortError(err) ? "timeout" : "network",
+          attempt + 1,
+        )
+        if (attempt >= this.options.maxRetries) break
+        await this.sleep(Math.min(500 * 2 ** attempt, 8_000))
+      } finally {
+        clearTimeout(timer)
+      }
+    }
+
+    const info = lastInfo ?? {
+      kind: "network" as const,
+      name: "UnknownError",
+      message: "unknown",
+    }
+    const isTransient =
+      info.kind === "network" ||
+      info.kind === "timeout" ||
+      (info.kind === "http" && isRetryableStatus(Number(info.code)))
+    if (isTransient) this.markFailure(host)
+    return { status: "error", error: formatError(info), error_info: info }
+  }
 }
 
 // ── CLI ────────────────────────────────────────────────────────────
@@ -254,7 +574,18 @@ interface CliOptions {
   skipRemote: boolean
   timeoutMs: number
   maxRetries: number
+  paceMs: number
+  circuitFailureThreshold: number
+  circuitCooldownMs: number
   failOnMismatch: boolean
+}
+
+function parseBoundedInteger(raw: string, flag: string, min: number, max: number): number {
+  const value = Number(raw)
+  if (!Number.isFinite(value) || !Number.isInteger(value) || value < min || value > max) {
+    throw new Error(`${flag} deve ser um inteiro finito entre ${min} e ${max}`)
+  }
+  return value
 }
 
 export function parseCliArgs(argv: string[]): CliOptions {
@@ -266,6 +597,9 @@ export function parseCliArgs(argv: string[]): CliOptions {
     skipRemote: false,
     timeoutMs: 15_000,
     maxRetries: 2,
+    paceMs: DEFAULT_PACE_MS,
+    circuitFailureThreshold: DEFAULT_CIRCUIT_FAILURE_THRESHOLD,
+    circuitCooldownMs: DEFAULT_CIRCUIT_COOLDOWN_MS,
     failOnMismatch: false,
   }
   for (const raw of argv) {
@@ -283,8 +617,27 @@ export function parseCliArgs(argv: string[]): CliOptions {
     } else if (raw.startsWith("--only=")) {
       const v = raw.slice("--only=".length)
       if (v === "camara" || v === "senado") opts.only = v
-    } else if (raw.startsWith("--timeout-ms=")) opts.timeoutMs = Number(raw.slice("--timeout-ms=".length))
-    else if (raw.startsWith("--max-retries=")) opts.maxRetries = Number(raw.slice("--max-retries=".length))
+    } else if (raw.startsWith("--timeout-ms=")) {
+      opts.timeoutMs = parseBoundedInteger(raw.slice("--timeout-ms=".length), "--timeout-ms", 1, MAX_TIMEOUT_MS)
+    } else if (raw.startsWith("--max-retries=")) {
+      opts.maxRetries = parseBoundedInteger(raw.slice("--max-retries=".length), "--max-retries", 0, MAX_RETRIES)
+    } else if (raw.startsWith("--pace-ms=")) {
+      opts.paceMs = parseBoundedInteger(raw.slice("--pace-ms=".length), "--pace-ms", 1, MAX_PACE_MS)
+    } else if (raw.startsWith("--circuit-failures=")) {
+      opts.circuitFailureThreshold = parseBoundedInteger(
+        raw.slice("--circuit-failures=".length),
+        "--circuit-failures",
+        1,
+        MAX_CIRCUIT_FAILURE_THRESHOLD,
+      )
+    } else if (raw.startsWith("--circuit-cooldown-ms=")) {
+      opts.circuitCooldownMs = parseBoundedInteger(
+        raw.slice("--circuit-cooldown-ms=".length),
+        "--circuit-cooldown-ms",
+        1,
+        MAX_CIRCUIT_COOLDOWN_MS,
+      )
+    }
   }
   return opts
 }
@@ -315,6 +668,7 @@ async function checkOne(
   id: number,
   seed: CheckResult["seed"],
   opts: CliOptions,
+  client: RemoteFetchClient,
 ): Promise<CheckResult> {
   if (opts.skipRemote) {
     return {
@@ -331,7 +685,7 @@ async function checkOne(
     source === "camara"
       ? `${CAMARA_API_BASE}/deputados/${id}`
       : `${SENADO_API_BASE}/senador/${id}`
-  const outcome = await fetchJsonWithRetry(url, opts.timeoutMs, opts.maxRetries)
+  const outcome = await client.get(url)
   if (outcome.status === "not_found") {
     return {
       slug,
@@ -354,6 +708,7 @@ async function checkOne(
       remote: null,
       reasons: [`fetch_error:${outcome.error ?? "unknown"}`],
       error: outcome.error,
+      error_info: outcome.error_info,
     }
   }
   const remote =
@@ -417,6 +772,13 @@ async function runCli() {
   let senadoCount = 0
   let skippedCount = 0
   const results: CheckResult[] = []
+  const client = new RemoteFetchClient({
+    timeoutMs: opts.timeoutMs,
+    maxRetries: opts.maxRetries,
+    paceMs: opts.paceMs,
+    circuitFailureThreshold: opts.circuitFailureThreshold,
+    circuitCooldownMs: opts.circuitCooldownMs,
+  })
 
   for (const c of items) {
     const seedShape: CheckResult["seed"] = {
@@ -426,12 +788,12 @@ async function runCli() {
     }
     if ((opts.only === null || opts.only === "camara") && c.ids?.camara != null) {
       camaraCount++
-      const r = await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts)
+      const r = await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts, client)
       results.push(r)
     }
     if ((opts.only === null || opts.only === "senado") && c.ids?.senado != null) {
       senadoCount++
-      const r = await checkOne(c.slug, "senado", c.ids.senado, seedShape, opts)
+      const r = await checkOne(c.slug, "senado", c.ids.senado, seedShape, opts, client)
       results.push(r)
     }
     // Candidatos sem camara/senado sao skipped silenciosamente (nao e gap do
