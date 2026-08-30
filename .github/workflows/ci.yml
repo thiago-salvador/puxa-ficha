@@ -110,14 +110,109 @@ jobs:
           NEXT_PUBLIC_SITE_URL: http://localhost:3000
         run: npm run build
 
+  # H1 do master-review de 2026-08-28: os gates `audit:*` de dominio nao rodam em
+  # PR nenhum. O `verify` roda `npm test`, que cobre boa parte dos testes de
+  # dominio, mas os audits de integridade, escala e escopo so rodam no cron
+  # seguinte, ou seja DEPOIS do merge. Um PR que quebra um invariante desses
+  # passa com CI verde e a deteccao chega no dia seguinte.
+  #
+  # Job proprio e nao steps no `verify` por dois motivos: nao entra no caminho
+  # critico de quem mexe em UI, e o recorte por path fica visivel num lugar so.
+  #
+  # RECORTE. Os paths abaixo foram medidos no repo, nao copiados do relatorio: os
+  # dados de programas de governo vivem em `src/data/programas-governo*` e
+  # `scripts/data/programas-governo*`, e os de pesquisas nao vivem em arquivo
+  # nenhum (estao no banco), entao o gatilho de pesquisas e o codigo e os scripts.
+  #
+  # SEM SEGREDO, de proposito. Este workflow roda em PR de qualquer fork, e
+  # `Settings/AUTOMATIONS_AND_ENVIRONMENTS.md` diz que PR nunca recebe credencial
+  # de producao. Todo audit aqui e estatico: le arquivo do repo, nao consulta
+  # Supabase nem rede.
+  #
+  # DOIS GRUPOS FICARAM DE FORA, e por motivos diferentes:
+  #
+  # 1. `audit:data-freshness` exige `--published=<snapshot.json>`, e esse
+  #    snapshot sai de um `psql` com `SUPABASE_DB_URL` (data-freshness-audit.yml).
+  #    Segredo de producao nao entra em PR. Continua no cron das 11:37 UTC.
+  #
+  # 2. Os `*:scope` (`audit:programas-governo:scope`,
+  #    `audit:data-freshness:scope`, `audit:pesquisas:*:scope`) NAO sao auditoria
+  #    de dominio: sao gates de ESCOPO DE BRANCH. Cada um carrega uma allowlist
+  #    de arquivos que a branch daquele workstream pode tocar, e reprova qualquer
+  #    arquivo fora dela. Rodar num job generico faz um PR de UI reprovar por
+  #    tocar um arquivo de UI. Medido: a primeira versao deste job reprovou este
+  #    proprio PR, que so muda `.github/workflows/ci.yml`. Eles continuam sendo
+  #    rodados a mao por quem trabalha naquele recorte.
+  audits-de-dominio:
+    name: Auditorias de domínio (paths tocados)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          # Precisa do histórico para comparar com a base do PR.
+          fetch-depth: 0
+
+      # O classificador é código puro, versionado e testado. Ele cobre todos os
+      # consumidores de programas e pesquisas pelo marcador do domínio, em vez
+      # de depender de uma lista parcial de diretórios.
+      - name: Validar classificador do recorte
+        run: node --test tests/ci-domain-audit-paths.test.mjs
+
+      - name: Decidir se os audits se aplicam a este diff
+        id: recorte
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            echo "base indisponível; roda por precaução"
+            echo "aplica=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MUDADOS="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          APLICA="$(printf '%s\n' "$MUDADOS" | node scripts/audit/ci-domain-audit-paths.mjs)"
+          printf '%s\n' "$MUDADOS"
+          echo "aplica=$APLICA" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.recorte.outputs.aplica == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm ci
+
+      # Integridade dos registros de programa de governo e do inventário.
+      - name: Programas de governo (integridade)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo
+
+      - name: Programas de governo (inventário dos governadores)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:governadores
+
+      - name: Programas de governo (escala)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:escala
+
+      - name: Pesquisas eleitorais (gate)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:pesquisas:gate
+
   # A cobertura saiu do `verify` em 18/08/2026, medida antes de mexer: levava 347
-  # dos 651 segundos do job, mais da metade, e tem `continue-on-error: true`, ou
-  # seja nao pode reprovar nada. O comando roda a suite inteira uma SEGUNDA vez
+  # dos 651 segundos do job, mais da metade. O comando roda a suite inteira uma SEGUNDA vez
   # com --test-concurrency=1, serial, o que explica ser quase o dobro do step
-  # `Test`. Ninguem podia mergear enquanto um numero informativo era calculado.
-  # Em job proprio ela roda em paralelo e sai do caminho critico.
+  # `Test`. Em job proprio ela roda em paralelo e sai do caminho critico. Em
+  # 30/08/2026 os thresholds foram medidos localmente em Node 24: statements
+  # 54,40%, branches 79,20%, functions 83,67% e lines 54,39%. Como todos ficam
+  # acima dos pisos versionados, a cobertura passa a bloquear regressao real.
   cobertura:
-    name: Cobertura (informativa)
+    name: Cobertura (bloqueante)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -133,11 +228,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Thresholds do c8.config.json, que existiam mas nunca eram executados em
-      # lugar nenhum. Informativa por decisao de 2026-08-04: reporta queda de
-      # cobertura sem derrubar o CI. Avaliar promover a bloqueante.
+      # Thresholds do c8.config.json sao contrato de merge, nao telemetria.
       - name: Cobertura
-        continue-on-error: true
         run: npm run test:coverage:raw
 
   # O unico teste que pegaria a regressao de CSP de 03/08 (PR #71, nonce

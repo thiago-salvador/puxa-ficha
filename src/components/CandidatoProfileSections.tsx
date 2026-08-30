@@ -50,6 +50,7 @@ import {
 } from "@/lib/financiamento-eleicoes"
 import type { PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
 import {
+  FINANCING_COLOR_BY_KEY,
   type FinancingBreakdownKey,
   formatFinanciamentoEleicaoEstadoLabel,
   formatFinancingLabel,
@@ -58,6 +59,7 @@ import {
   formatPublicLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import {
   financiamentoPleitoNotaRodape,
@@ -375,13 +377,9 @@ interface SuggestAction {
   go: () => void
 }
 
-const FINANCING_COLORS: Record<FinancingBreakdownKey, string> = {
-  fundo_eleitoral: "#0a0a0a",
-  fundo_partidario: "#525252",
-  pessoa_fisica: "#a3a3a3",
-  recursos_proprios: "#d4d4d4",
-  outros_recursos: "#e5e5e5",
-}
+// Fonte unica em src/lib/ui-labels.ts: a copia local desta paleta era o segundo
+// lugar onde o piso de contraste podia divergir.
+const FINANCING_COLORS: Record<FinancingBreakdownKey, string> = FINANCING_COLOR_BY_KEY
 
 const PROJECT_STATUS_BADGES: Record<
   string,
@@ -1699,7 +1697,9 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
       <SectionLabel>Votou sem autoria registrada ({items.length})</SectionLabel>
       <SectionTitle>Votações em legislação</SectionTitle>
       <div className="mt-6 space-y-3">
-        {items.map((voto) => (
+        {items.map((voto) => {
+          const notaDoVoto = formatVoteNote(voto.voto)
+          return (
           <div
             key={voto.id}
             data-pf-voto-card
@@ -1749,20 +1749,31 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                   </p>
                 )}
               </div>
-              <span
-                className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
-                  voto.voto === "sim"
-                    ? "bg-foreground text-background"
-                    : voto.voto === "não"
-                      ? "border border-foreground bg-transparent text-foreground"
-                      : "bg-secondary text-foreground"
-                }`}
-              >
-                {formatVoteBadgeLabel(voto.voto)}
-              </span>
+              <div className="mt-1 flex max-w-[220px] shrink-0 flex-col items-end gap-1.5">
+                <span
+                  className={`rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
+                    voto.voto === "sim"
+                      ? "bg-foreground text-background"
+                      : voto.voto === "não"
+                        ? "border border-foreground bg-transparent text-foreground"
+                        : "bg-secondary text-foreground"
+                  }`}
+                >
+                  {formatVoteBadgeLabel(voto.voto)}
+                </span>
+                {notaDoVoto && (
+                  <span
+                    data-pf-vote-note
+                    className="text-right text-[10px] font-semibold normal-case leading-snug text-muted-foreground"
+                  >
+                    {notaDoVoto}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )

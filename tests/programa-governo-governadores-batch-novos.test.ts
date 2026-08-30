@@ -118,6 +118,94 @@ test("fila stale é rejeitada antes de resolver Node ou fazer spawn", async () =
   })
 })
 
+test("o spawn do filho recebe as PF_* do ambiente, e nenhum segredo do host", async () => {
+  // A allowlist de construirAmbienteBatch existia, mas a chamada passava um
+  // objeto montado a mao com PATH, HOME, TMPDIR e USER. O conjunto filtrado
+  // nunca continha PF_*, entao PF_CLAUDE_MAX_BUDGET_USD e PF_CLAUDE_JUDGE_MODEL,
+  // documentadas em Settings/AUTOMATIONS_AND_ENVIRONMENTS.md, nao chegavam ao
+  // filho e o judge rodava com os defaults sem aviso.
+  await withTempDir("pf-env-batch-", async (root) => {
+    const runDir = path.join(root, "run")
+    const inventoryPath = path.join(root, "inventory.json")
+    const filaDir = path.join(runDir, "fila")
+    const item = fixtureItem("MA", "100000000003")
+    await mkdir(filaDir, { recursive: true })
+    await writeFile(inventoryPath, JSON.stringify(fixtureInventory([item])))
+    await writeFile(path.join(filaDir, "fila.ndjson"), `${JSON.stringify(item)}\n`)
+    const d = await driver()
+    const fingerprint = d.calcularFingerprintFila([item], "multipassagem-v3")
+    await writeFile(
+      path.join(filaDir, "manifesto.json"),
+      JSON.stringify({ plannerVersion: "multipassagem-v3", fingerprint }),
+    )
+
+    const anterior = { ...process.env }
+    process.env.PF_CLAUDE_MAX_BUDGET_USD = "12"
+    process.env.PF_CLAUDE_JUDGE_MODEL = "modelo-pinado-de-teste"
+    process.env.PF_CODEX_MODEL = "gpt-teste"
+    // Nomes que o contrato de ambiente ja documenta, e que NAO estao na
+    // allowlist: inventar nome novo aqui reprova o check:env-contract, que
+    // exige documentacao para toda variavel referenciada, inclusive em teste.
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "nao-pode-passar"
+    process.env.CRON_SECRET = "nao-pode-passar"
+
+    const ambientes: Array<Record<string, string | undefined>> = []
+    const spawnFn = (
+      _bin: string,
+      _args: string[],
+      opcoes: { env?: Record<string, string | undefined> },
+    ) => {
+      ambientes.push(opcoes?.env ?? {})
+      const child = fakeChild()
+      void (async () => {
+        const registroPath = path.join(
+          runDir, "candidatos", item.chaveCacheDir, "registros", item.uf, `${item.slug}.json`,
+        )
+        await mkdir(path.dirname(registroPath), { recursive: true })
+        await writeFile(registroPath, JSON.stringify({
+          version: 1,
+          estado: "perfil_local_ausente",
+          fonte: { ano: 2026, cargo: "GOVERNADOR", uf: item.uf, sqCandidato: item.sqCandidato },
+          ingestao: { identityKey: item.chave },
+        }))
+        child.emit("close", 0)
+      })()
+      return child
+    }
+
+    try {
+      await d.executarBatch({
+        runDir,
+        inventoryPath,
+        workDir: root,
+        archiveDir: root,
+        filaPath: path.join(filaDir, "fila.ndjson"),
+        planejarItensFn: async () => [item],
+        node24Resolver: async () => process.execPath,
+        spawnFn: spawnFn as unknown as NonNullable<Parameters<DriverModule["executarBatch"]>[0]["spawnFn"]>,
+        pollMs: 1,
+      })
+    } finally {
+      for (const chave of Object.keys(process.env)) {
+        if (!(chave in anterior)) delete process.env[chave]
+      }
+      Object.assign(process.env, anterior)
+    }
+
+    assert.equal(ambientes.length, 1, "esperava exatamente um spawn de filho")
+    const env = ambientes[0]
+    assert.equal(env.PF_CLAUDE_MAX_BUDGET_USD, "12")
+    assert.equal(env.PF_CLAUDE_JUDGE_MODEL, "modelo-pinado-de-teste")
+    assert.equal(env.PF_CODEX_MODEL, "gpt-teste")
+    // Injetadas pelo driver, continuam chegando.
+    assert.equal(env.PF_CANDIDATO_UF, item.uf)
+    assert.ok(env.PF_EXECUTION_ID)
+    // Hermetico continua hermetico.
+    assert.equal(env.SUPABASE_SERVICE_ROLE_KEY, undefined)
+    assert.equal(env.CRON_SECRET, undefined)
+  })
+})
+
 test("lease atômico permite somente uma execução e um spawn", async () => {
   await withTempDir("pf-lease-", async (root) => {
     const runDir = path.join(root, "run")
@@ -243,6 +331,82 @@ test("ambiente do batch preserva controles necessários e remove segredos do hos
     PF_CODEX_CLI: "/bin/codex",
     PF_EXECUTION_ID: "exec-1",
   })
+})
+
+test("allowlist deixa passar os controles documentados do judge", async () => {
+  // A allowlist so vale se o ambiente REAL chegar nela. A chamada montava a mao
+  // um objeto de quatro chaves (PATH, HOME, TMPDIR, USER), entao PF_* nunca
+  // entrava no conjunto filtrado e o orcamento e o modelo do judge
+  // documentados em Settings/AUTOMATIONS_AND_ENVIRONMENTS.md eram descartados.
+  const d = await driver()
+  const filtrado = d.construirAmbienteBatch({
+    PATH: "/bin",
+    PF_CLAUDE_MAX_BUDGET_USD: "12",
+    PF_CLAUDE_JUDGE_MODEL: "claude-modelo-pinado",
+    PF_CLAUDE_CLI: "/bin/claude",
+    PF_CLAUDE_TIMEOUT_MS: "900000",
+    PF_CODEX_MODEL: "gpt-5.6-luna",
+    PF_JUDGE_MODEL: "gpt-5.4",
+    PF_OPENCODE_GO: "/tmp/opencode-go.mjs",
+    AWS_SECRET_ACCESS_KEY: "segredo",
+    GITHUB_TOKEN: "segredo",
+    SUPABASE_SERVICE_ROLE_KEY: "segredo",
+  })
+  assert.deepEqual(filtrado, {
+    PATH: "/bin",
+    PF_CLAUDE_MAX_BUDGET_USD: "12",
+    PF_CLAUDE_JUDGE_MODEL: "claude-modelo-pinado",
+    PF_CLAUDE_CLI: "/bin/claude",
+    PF_CLAUDE_TIMEOUT_MS: "900000",
+    PF_CODEX_MODEL: "gpt-5.6-luna",
+    PF_JUDGE_MODEL: "gpt-5.4",
+    PF_OPENCODE_GO: "/tmp/opencode-go.mjs",
+  })
+})
+
+test("allowlist cobre toda PF_* que algum filho realmente lê", async () => {
+  const { readFileSync, readdirSync } = await import("node:fs")
+  const { fileURLToPath } = await import("node:url")
+  const d = await driver()
+
+  const dirRunners = fileURLToPath(
+    new URL("../scripts/data/programas-governo-governadores-2026/", import.meta.url),
+  )
+  const fontes = [
+    fileURLToPath(new URL("../scripts/programas-governo-stage.ts", import.meta.url)),
+    ...readdirSync(dirRunners)
+      .filter((f) => f.endsWith(".mjs"))
+      .map((f) => dirRunners + f),
+  ]
+  const lidas = new Set<string>()
+  for (const fonte of fontes) {
+    for (const m of readFileSync(fonte, "utf-8").matchAll(/process\.env\.(PF_[A-Z_0-9]+)/g)) {
+      lidas.add(m[1])
+    }
+  }
+
+  // Injetadas pelo proprio driver como `extras`, nao vem do ambiente do host.
+  const injetadas = new Set([
+    "PF_EXECUTION_ID",
+    "PF_CANDIDATO_CHAVE",
+    "PF_CANDIDATO_SQ",
+    "PF_CANDIDATO_UF",
+    "PF_CANDIDATO_REGIAO",
+    "PF_MODEL_TELEMETRY_PATH",
+    "PF_QWEN_EXTRA_ARGS",
+    "PF_CODEX_EXTRA_ARGS",
+  ])
+
+  const doAmbiente = [...lidas].filter((nome) => !injetadas.has(nome)).sort()
+  const entrada = Object.fromEntries(doAmbiente.map((nome) => [nome, "valor"]))
+  const filtrado = d.construirAmbienteBatch(entrada)
+  const descartadas = doAmbiente.filter((nome) => !(nome in filtrado))
+
+  assert.deepEqual(
+    descartadas,
+    [],
+    `estas PF_* são lidas por um filho mas a allowlist descarta: ${descartadas.join(", ")}`,
+  )
 })
 
 test("rampa ignora terminais históricos e começa em 3", async () => {
