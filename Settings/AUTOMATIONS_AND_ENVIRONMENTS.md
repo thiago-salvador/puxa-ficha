@@ -85,6 +85,7 @@ segura.
 | `PF_EXPECTED_DEPLOY_SHA`, `PF_EXPECTED_SHA` | SHA esperado nos readbacks e applies | Obrigatórias somente para os scripts que as leem; ausência aborta o gate correspondente. | Operador ou workflow |
 | `PF_PUBLIC_SITE_URL`, `PF_PUBLIC_ORIGIN`, `PF_URL_PARA_VALIDAR` | Alvo de readbacks HTTP | Opcionais ou obrigatórias conforme o script; fallbacks e validações ficam no próprio gate. | Operador local |
 | `PF_OUTPUT_DIR` | Diretório de evidência do readback | Opcional, cai para o diretório datado do script. | Operador local |
+| `PF_BACKUP_PATH` | Caminho do backup read-only anterior ao apply ou rollback da migration 30002 | Obrigatória nos workflows fechados da issue 138. O workflow aponta para `runner.temp`; o artefato é validado antes de qualquer mutação e preservado pelo GitHub Actions. | Workflow de produção |
 | `PF_REPLAY_POSTGRES_IMAGE` | Override diagnóstico da imagem usada no replay efêmero | Opcional. Ausente ou vazia, preserva o digest Postgres 17 fixado pelos scripts; não usar tag móvel como `postgres:17-alpine`. | Operador local |
 | `PF_ENV_FILE` | Arquivo carregado por utilitário Python | Opcional, aponta para um arquivo local de ambiente; nunca deve ser versionado com valores. | Operador local |
 
