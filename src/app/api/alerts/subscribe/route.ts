@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import {
   ALERT_VERIFICATION_EMAIL_COOLDOWN_MS,
+  applyAlertsNoStoreHeaders,
   alertBodyStringField,
   buildAlertDeleteDataUrl,
   buildAlertManageAccessEmail,
@@ -22,6 +23,7 @@ import {
   normalizeAlertEmail,
   normalizeCandidateSlug,
 } from "@/lib/alerts"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-honeypot"
 import {
   readAlertManageTokenCookie,
@@ -379,7 +381,12 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         const nextManageToken = createAlertToken()
         const manageTokenHash = hashAlertToken(nextManageToken)
         const manageTokenCiphertext = encryptAlertManageToken(nextManageToken)
-        const manageUrl = buildAlertManageUrl(nextManageToken)
+        // O link de gestao carrega o candidato que a pessoa pediu para seguir.
+        // Antes, este ramo mandava o email e ia embora sem criar a inscricao, e
+        // a UI promete o contrario: a pessoa abria o link e o candidato nao
+        // estava la. Quem efetiva o follow e /alertas/acesso, depois de validar
+        // o token contra um assinante real.
+        const manageUrl = buildAlertManageUrl(nextManageToken, candidate.slug)
         const deleteDataUrl = buildAlertDeleteDataUrl(nextManageToken)
         const accessEmail = buildAlertManageAccessEmail({
           candidateName: candidate.nome_urna,
@@ -666,4 +673,13 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
   }
 }
 
-export const POST = createSubscribeHandler()
+const subscribeHandler = createSubscribeHandler()
+
+export async function POST(req: NextRequest) {
+  if (!isAlertsEmailFeatureEnabled()) {
+    return applyAlertsNoStoreHeaders(
+      NextResponse.json({ error: "Alerts email feature disabled" }, { status: 503 }),
+    )
+  }
+  return subscribeHandler(req)
+}

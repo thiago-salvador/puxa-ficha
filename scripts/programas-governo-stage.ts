@@ -33,6 +33,19 @@ const legacySourcesPath = resolve(repository, "scripts/data/programas-governo-pr
 const legacyDataDir = resolve(repository, "src/data/programas-governo/presidencia-2026")
 const legacyLocalDir = resolve(repository, ".codex-local/programas-governo-presidencia-2026")
 
+/**
+ * Id completo do modelo, nao o alias `"sonnet"` do CLI. O alias resolve para o
+ * Sonnet que o CLI considerar atual no dia, entao dois runs do mesmo pipeline
+ * podiam usar modelos diferentes sem nada no registro dizer isso, e um resumo
+ * gerado hoje nao seria reproduzivel amanha.
+ *
+ * Confirmado na doc publica de modelos da Anthropic em 2026-08-30: o id atual e
+ * `claude-sonnet-5`, sem sufixo de data. A familia Sonnet 5 nao publica snapshot
+ * datado; o id ja E a versao. Trocar de modelo aqui e mudanca deliberada de
+ * pipeline, e aparece no diff.
+ */
+const CLAUDE_GENERATOR_MODEL_ID = "claude-sonnet-5"
+
 export const PROGRAMA_GOVERNO_GENERATOR_PROMPT_VERSION = "programa-governo-resumo-v1" as const
 export const PROGRAMA_GOVERNO_JUDGE_PROMPT_VERSION = "programa-governo-judge-v2" as const
 export const PROGRAMA_GOVERNO_GOV_GENERATOR_PROMPT_VERSION = "programa-governo-governadores-generator-v1" as const
@@ -526,7 +539,7 @@ async function generateSummary(
     try {
       const result = await runProcess(
         "claude",
-        ["-p", "--model", "sonnet", "--output-format", "json", "--json-schema", schema, "--max-turns", "3", "--no-session-persistence", "--disable-slash-commands", "--tools", "", "--setting-sources", ""],
+        ["-p", "--model", CLAUDE_GENERATOR_MODEL_ID, "--output-format", "json", "--json-schema", schema, "--max-turns", "3", "--no-session-persistence", "--disable-slash-commands", "--tools", "", "--setting-sources", ""],
         input,
         { cwd: tmpdir(), timeoutMs: 10 * 60 * 1000 },
       )
@@ -538,7 +551,9 @@ async function generateSummary(
         resumo: envelope.structured_output,
         geracao: {
           promptVersion: programaGovernoExpectedPromptVersions(record.fonte).generatorPromptVersion,
-          model: "Anthropic Claude Sonnet",
+          // Id efetivo, nao o nome comercial: "Anthropic Claude Sonnet" nao
+          // permite saber, meses depois, qual modelo gerou aquele resumo.
+          model: CLAUDE_GENERATOR_MODEL_ID,
           generatedAt: new Date().toISOString(),
         },
       }

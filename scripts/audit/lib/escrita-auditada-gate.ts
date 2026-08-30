@@ -471,6 +471,16 @@ export const EXCECOES_DE_RUNTIME: readonly ExcecaoDeclarada[] = [
       "Envio do digest: marca notification_log e alert_subscribers a cada disparo. A auditoria do envio é o próprio notification_log, que existe para isso.",
   },
   {
+    arquivo: "app/(site)/alertas/acesso/route.ts",
+    motivo:
+      "Efetiva em alert_subscriptions o follow que o próprio titular pediu, depois de o manage token ser validado contra um assinante real. O rastro é o mesmo do subscribe: o link chegou no e-mail dele e foi ele que abriu.",
+  },
+  {
+    arquivo: "lib/operational-retention.ts",
+    motivo:
+      "Retenção de quiz_result_short_links e notification_log no cron diário. Mesma natureza da retenção de analytics_launch_events logo abaixo: rotação de log operacional por política fixa, não escrita editorial. A trilha é o log do próprio cron.",
+  },
+  {
     arquivo: "lib/analytics-launch-store.ts",
     motivo:
       "Telemetria de tráfego em analytics_launch_events, gerada pelo visitante. Instrumentar isto transformaria a trilha de operador em log de acesso.",

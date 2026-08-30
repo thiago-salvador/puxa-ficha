@@ -1513,6 +1513,99 @@ describe("alerts HTTP routes", () => {
       assert.equal(chainedRequests[0]?.authorization, `Bearer ${CRON_SECRET}`)
     })
 
+    it("nao pula assinante quando uma conta some entre duas paginas", async () => {
+      // O lote paginava por deslocamento numerico sobre order(created_at, id).
+      // Entre uma pagina e a seguinte existe uma chamada HTTP encadeada, e nessa
+      // janela o /api/alerts/delete-data pode apagar um assinante: todo mundo
+      // depois dele anda uma posicao para tras, e o primeiro da pagina seguinte
+      // e PULADO. Ele nao recebe o digest do dia, e `processed` continua batendo,
+      // entao nada no log denuncia.
+      const assinantes = ["a", "b", "c", "d"].map((sufixo, indice) =>
+        seedSubscriber({
+          id: `sub_race_${sufixo}`,
+          email: `race-${sufixo}@example.com`,
+          manageToken: `ManageTokenRace${sufixo.toUpperCase()}001`,
+          verifyToken: `VerifyTokenRace${sufixo.toUpperCase()}001`,
+          verified: true,
+          verified_at: "2026-04-09T10:00:00.000Z",
+          verify_token_hash: null,
+          created_at: `2026-04-0${indice + 1}T10:00:00.000Z`,
+        }),
+      )
+      const fixture = new AlertsRouteFixture({
+        candidatos_publico: [seedCandidate()],
+        alert_subscribers: assinantes,
+        alert_subscriptions: assinantes.map((assinante, indice) => ({
+          id: `asub_race_${indice}`,
+          subscriber_id: assinante.id,
+          candidato_id: "cand_lula",
+        })),
+        candidate_changes: [
+          {
+            id: "chg_race_1",
+            candidato_id: "cand_lula",
+            titulo: "Nova atualização editorial",
+            descricao: "Texto curto da mudança.",
+            created_at: "2026-04-10T12:00:00.000Z",
+          },
+        ],
+      })
+
+      // O encadeamento roda de verdade, mas dirigido pelo teste: cada pagina e
+      // executada com os parametros que a rota escolheu para a seguinte.
+      let proximaBusca: string | null = null
+      const buscas: string[] = []
+      const handler = createSendDigestHandler({
+        ...createDeps(fixture),
+        afterResponse: (callback: () => Promise<void> | void) => {
+          void callback()
+        },
+        fetchImpl: async (input: string | URL | Request) => {
+          proximaBusca = new URL(String(input)).search
+          return new Response(JSON.stringify({ ok: true }), { status: 200 })
+        },
+      })
+
+      await handler(buildDigestRequest(fixture, "?limit=1"))
+
+      let apagouNaJanela = false
+      for (let pagina = 0; pagina < 10 && proximaBusca; pagina += 1) {
+        const busca: string = proximaBusca
+        buscas.push(busca)
+        proximaBusca = null
+        if (!apagouNaJanela) {
+          apagouNaJanela = true
+          // Exatamente a corrida do achado: o PRIMEIRO da fila, ja processado,
+          // some no intervalo entre a pagina 1 e a 2.
+          const tabela = fixture.getTable("alert_subscribers")
+          tabela.splice(tabela.findIndex((linha) => linha.id === "sub_race_a"), 1)
+        }
+        await handler(
+          fixture.request(`/api/alerts/send-digest${busca}`, {
+            headers: { authorization: `Bearer ${CRON_SECRET}` },
+          }),
+        )
+      }
+
+      const enviados = fixture.emails.map((email) =>
+        Array.isArray(email.to) ? email.to[0] : email.to,
+      )
+      assert.deepEqual(
+        [...enviados].sort(),
+        [
+          "race-a@example.com",
+          "race-b@example.com",
+          "race-c@example.com",
+          "race-d@example.com",
+        ],
+        `algum assinante foi pulado; páginas: ${buscas.join(" ")}`,
+      )
+      assert.ok(
+        buscas.every((busca) => busca.includes("after=")),
+        `página encadeada sem cursor de keyset: ${buscas.join(" ")}`,
+      )
+    })
+
     it("chains against the canonical origin in production even when invoked via *.vercel.app", async () => {
       // Mesmo bug do news/refresh (incidente 2026-08-04): em producao o cron
       // chega pela URL do deployment atras do Vercel SSO, e encadear contra ela
