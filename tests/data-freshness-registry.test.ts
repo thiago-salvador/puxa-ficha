@@ -5,6 +5,7 @@ import test from "node:test"
 import {
   aggregateSourceEvidence,
   evaluateSourceFreshness,
+  evaluateSourceFreshnessStrict,
   loadFreshnessRegistry,
   selectLatestSourceEvidence,
 } from "../scripts/lib/data-freshness/registry"
@@ -69,6 +70,81 @@ test("família usa a evidência mais recente e registra aliases ausentes como d�
   assert.equal(missing.checked_at, "2026-08-27T11:00:00.000Z")
   assert.equal(missing.debt_count, 2)
   assert.deepEqual(missing.missing_source_ids, ["camara-proposicoes", "destaques-votacoes"])
+})
+
+test("modo strict avalia cada membro, expõe a data mais antiga e não mascara membro vencido", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
+    { source_id: "camara-proposicoes", checked_at: "2026-08-17T11:00:00.000Z" },
+    { source_id: "destaques-votacoes", checked_at: "2026-08-27T10:00:00.000Z" },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.equal(result.checked_at, "2026-08-27T11:00:00.000Z")
+  assert.equal(result.oldest_checked_at, "2026-08-17T11:00:00.000Z")
+  assert.equal(result.age_hours, 241)
+  assert.deepEqual(result.stale_source_ids, ["camara-proposicoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
+test("modo operacional preserva o agregado mais recente, enquanto strict evita fresh com membro vencido", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const evidence = aggregateSourceEvidence(source, [
+    { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
+    { source_id: "camara-proposicoes", checked_at: "2026-08-17T11:00:00.000Z" },
+    { source_id: "destaques-votacoes", checked_at: "2026-08-27T10:00:00.000Z" },
+  ])
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  assert.equal(evaluateSourceFreshness(source, evidence, now).status, "fresh")
+  assert.equal(evaluateSourceFreshness(source, evidence, now, { strict: true }).status, "stale")
+})
+
+test("strict reprova membro requerido sem data ou com data inválida", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: now.toISOString() },
+    { source_id: "camara-proposicoes", checked_at: null },
+    { source_id: "destaques-votacoes", checked_at: "não-é-data" },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.deepEqual(result.stale_source_ids, ["camara-proposicoes", "destaques-votacoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
+test("strict bloqueia família scheduled quando falta um membro requerido", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: now.toISOString() },
+    { source_id: "destaques-votacoes", checked_at: now.toISOString() },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.deepEqual(result.stale_source_ids, ["camara-proposicoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
+test("strict preserva technical_debt para membro manual vencido sem alterar o operacional fresh", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "knowledge-enrichment")
+  assert.ok(source)
+  const evidence = aggregateSourceEvidence(source, source.collection_source_ids.map((sourceId) => ({
+    source_id: sourceId,
+    checked_at: sourceId === "wikipedia" ? "2020-01-01T00:00:00.000Z" : "2026-08-27T11:00:00.000Z",
+  })))
+  const now = new Date("2026-08-27T12:00:00.000Z")
+
+  assert.equal(evaluateSourceFreshness(source, evidence, now).status, "fresh")
+  const strict = evaluateSourceFreshness(source, evidence, now, { mode: "strict" })
+  assert.equal(strict.status, "technical_debt")
+  assert.deepEqual(strict.stale_source_ids, ["wikipedia"])
 })
 
 test("indeterminado e erro manual viram dívida; erro agendado continua bloqueando", () => {

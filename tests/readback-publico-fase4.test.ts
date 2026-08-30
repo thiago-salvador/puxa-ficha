@@ -22,6 +22,14 @@ const supabaseCaPath = resolve(root, "scripts/audit/certs/supabase-root-2021.crt
 const expectedSha = "0123456789abcdef0123456789abcdef01234567"
 const canonicalDatabaseUrl =
   "postgresql://postgres:fixture@db.wskpzsobvqwhnbsdsmok.supabase.co:5432/postgres"
+const manifestVersions = [
+  "20260809070000", "20260810085000", "20260810090000", "20260810090100",
+  "20260810090200", "20260810093000", "20260810094000", "20260810120000",
+  "20260810120500", "20260810120600", "20260810121000", "20260810122000",
+  "20260810123000", "20260810124000", "20260811100000", "20260811100100",
+  "20260811101000", "20260811101100", "20260811101200", "20260811102000",
+  "20260811102100", "20260812123000", "20260812124000", "20260812125000",
+]
 
 type RunResult = ReturnType<typeof spawnSync>
 
@@ -34,12 +42,21 @@ function executable(path: string, source: string): void {
   chmodSync(path, 0o755)
 }
 
-function runRunner(overrides: Record<string, string | undefined> = {}): RunResult & { calls: string } {
+function runRunner(overrides: Record<string, string | undefined> = {}): RunResult & { calls: string; ledger: string } {
   const fixture = mkdtempSync(join(tmpdir(), "pf-fase4-runner-"))
   const bin = join(fixture, "bin")
   const calls = join(fixture, "calls.log")
   spawnSync("mkdir", ["-p", bin], { encoding: "utf8" })
   writeFileSync(calls, "")
+  const manifestPath = join(fixture, "ledger-manifest.json")
+  writeFileSync(manifestPath, JSON.stringify({ predecessor: "20260812124000", versions: manifestVersions }))
+  const canonicalManifest = JSON.parse(
+    readFileSync(join(root, ".github/merge-queue/irreversible-change-manifest.json"), "utf8"),
+  ) as { scope?: { releases?: Array<{ predecessor?: string; versions?: string[] }> } }
+  const canonicalLedgerVersions = (canonicalManifest.scope?.releases ?? []).flatMap((release) => [
+    ...(release.predecessor ? [release.predecessor] : []),
+    ...(release.versions ?? []),
+  ])
 
   executable(
     join(bin, "git"),
@@ -93,6 +110,9 @@ release=(
   20260812123000 20260812124000
   20260812125000
 )
+if [[ "$PF_FAKE_LEDGER_MODE" == "canonical" ]]; then
+  for version in $PF_FAKE_CANONICAL_LEDGER_VERSIONS; do release+=("$version"); done
+fi
 dummy=371
 if [[ "$PF_FAKE_LEDGER_MODE" == "bad_total" ]]; then dummy=370; fi
 if [[ "$PF_FAKE_LEDGER_MODE" == "bad_top" ]]; then dummy=370; fi
@@ -110,6 +130,7 @@ printf 'node:%s\n' "$*" >> "$PF_FIXTURE_CALLS"
 [[ -z "${"${NODE_TLS_REJECT_UNAUTHORIZED:-}"}" && -z "${"${NODE_EXTRA_CA_CERTS:-}"}" && -z "${"${NODE_OPTIONS:-}"}" ]]
 [[ -z "${"${SSL_CERT_FILE:-}"}" && -z "${"${SSL_CERT_DIR:-}"}" ]]
 if [[ "$#" == "0" ]]; then exec "$PF_REAL_NODE"; fi
+if [[ "$1" == "-" ]]; then exec "$PF_REAL_NODE" "$@"; fi
 if [[ "$1" == "scripts/audit/lib/run-with-timeout.mjs" ]]; then exec "$PF_REAL_NODE" "$@"; fi
 if [[ "$*" == *"--input-type=module"* && "$*" == *"--import tsx"* ]]; then
   printf '%s' "$PF_FAKE_SUPABASE_REF"
@@ -149,13 +170,19 @@ printf 'bash:%s\n' "$*" >> "$PF_FIXTURE_CALLS"
       PF_FAKE_GIT_MAIN: expectedSha,
       PF_REAL_NODE: process.execPath,
       PF_FAKE_LEDGER_MODE: "ok",
+      PF_FAKE_CANONICAL_LEDGER_VERSIONS: canonicalLedgerVersions.join(" "),
+      PF_LEDGER_PREDECESSOR: "20260812124000",
+      PF_LEDGER_MANIFEST: manifestPath,
       PF_FAKE_SUPABASE_REF: "wskpzsobvqwhnbsdsmok",
       ...overrides,
     },
   })
   const callLog = readFileSync(calls, "utf8")
+  const ledger = existsSync(join(fixture, "output", "ledger.txt"))
+    ? readFileSync(join(fixture, "output", "ledger.txt"), "utf8")
+    : ""
   rmSync(fixture, { force: true, recursive: true })
-  return Object.assign(result, { calls: callLog })
+  return Object.assign(result, { calls: callLog, ledger })
 }
 
 function runPublico(
@@ -465,12 +492,46 @@ test("comparação banco/API rejeita conteúdo antigo com os mesmos slugs", () =
   )
 })
 
-test("runner rejeita independentemente total, topo e cardinalidade da allowlist do ledger", () => {
-  for (const mode of ["bad_total", "bad_top", "bad_count"]) {
-    const result = runRunner({ PF_FAKE_LEDGER_MODE: mode })
-    assert.notEqual(result.status, 0, `ledger ${mode} passou:\n${output(result)}`)
-    assert.doesNotMatch(result.calls, /^node:--import tsx scripts\/audit\//m)
-  }
+test("runner nao fixa cardinalidade ou topo historico e aceita predecessor/manifesto", () => {
+  const runner = readFileSync(runnerPath, "utf8")
+  assert.doesNotMatch(runner, /ledger_total.*395|ledger_top.*20260812125000/)
+  assert.match(runner, /PF_LEDGER_PREDECESSOR/)
+  assert.match(runner, /PF_LEDGER_MANIFEST/)
+})
+
+test("runner usa o manifesto canonico com predecessores e versoes reais", () => {
+  const result = runRunner({
+    PF_FAKE_LEDGER_MODE: "canonical",
+    PF_LEDGER_PREDECESSOR: undefined,
+    PF_LEDGER_MANIFEST: undefined,
+  })
+  assert.equal(result.status, 0, output(result))
+  const manifest = JSON.parse(
+    readFileSync(join(root, ".github/merge-queue/irreversible-change-manifest.json"), "utf8"),
+  ) as { scope: { releases: Array<{ predecessor: string; versions: string[] }> } }
+  const predecessors = manifest.scope.releases.map((release) => release.predecessor).sort()
+  const versions = manifest.scope.releases.flatMap((release) => release.versions)
+  assert.match(result.ledger, new RegExp(`predecessor=${predecessors.join(",")}`))
+  assert.match(result.ledger, /manifest=\/.*irreversible-change-manifest\.json/)
+  assert.match(result.ledger, new RegExp(`\\|${versions.length}\\|`))
+})
+
+test("runner aceita override explícito de predecessor sobre o manifesto canonico", () => {
+  const result = runRunner({
+    PF_FAKE_LEDGER_MODE: "canonical",
+    PF_LEDGER_PREDECESSOR: "20260812124000",
+    PF_LEDGER_MANIFEST: undefined,
+  })
+  assert.equal(result.status, 0, output(result))
+  assert.match(result.ledger, /predecessor=20260812124000/)
+  assert.match(result.ledger, /manifest=.*irreversible-change-manifest\.json/)
+})
+
+test("runner aceita manifesto explícito do run", () => {
+  const result = runRunner()
+  assert.equal(result.status, 0, output(result))
+  assert.match(result.ledger, /predecessor=20260812124000/)
+  assert.match(result.ledger, /manifest=.*ledger-manifest\.json/)
 })
 
 test("readback público executa API e DOM das 194 fichas nos dois viewports", () => {
@@ -490,6 +551,8 @@ test("readback público rejeita host não canônico, ambiente não produtivo e S
   const invalidRuns = [
     runPublico("ok", { publicUrl: "https://preview.example.test" }),
     runPublico("preview"),
+    runPublico("deployment_missing_ok"),
+    runPublico("deployment_wrong_ref"),
     runPublico("ok", { expected: "0123456" }),
     runPublico("sha_mismatch"),
     runPublico("deployment_changed"),

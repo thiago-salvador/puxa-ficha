@@ -6,6 +6,7 @@ import { segmentTextByQueryTokens } from "@/lib/global-search-highlight"
 import {
   buildGlobalSearchIndexItems,
   buildSearchTextForCandidato,
+  filterGlobalSearchIndexToPublicSlugs,
   filterGlobalSearchPalette,
   mergeVotacaoTagsByCandidatoId,
   normalizeForSearch,
@@ -184,6 +185,49 @@ describe("filterGlobalSearchPalette", () => {
     const r = filterGlobalSearchPalette(q, shortcuts, [votOnly, titleMatch])
     assert.equal(r.candidates[0].title, "Economia Silva")
     assert.equal(r.candidates[1].title, "Zuzu")
+  })
+})
+
+describe("filterGlobalSearchIndexToPublicSlugs", () => {
+  it("removes stale candidate entries while preserving non-candidate shortcuts", () => {
+    const stale: GlobalSearchIndexItem = {
+      href: "/candidato/cleber-rabelo",
+      title: "Cleber Rabelo",
+      subtitle: "PSTU · Governador · PA",
+      searchText: "cleber rabelo pstu governador pa",
+    }
+    const current: GlobalSearchIndexItem = {
+      href: "/candidato/well-macedo",
+      title: "Well Macedo",
+      subtitle: "PSTU · Governador · PA",
+      searchText: "well macedo pstu governador pa",
+    }
+    const shortcut: GlobalSearchIndexItem = {
+      href: "/sobre",
+      title: "Sobre",
+      subtitle: "Fontes",
+      searchText: "sobre fontes",
+      badge: "Atalho",
+    }
+
+    assert.deepEqual(
+      filterGlobalSearchIndexToPublicSlugs(
+        [stale, current, shortcut],
+        ["well-macedo"],
+      ),
+      [current, shortcut],
+    )
+  })
+
+  it("matches candidate URLs with query strings against the canonical slug", () => {
+    const item: GlobalSearchIndexItem = {
+      href: "/candidato/cleber-rabelo?tab=votos",
+      title: "Cleber Rabelo",
+      subtitle: "PSTU · Governador · PA",
+      searchText: "cleber rabelo",
+    }
+
+    assert.deepEqual(filterGlobalSearchIndexToPublicSlugs([item], []), [])
   })
 })
 

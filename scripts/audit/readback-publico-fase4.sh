@@ -165,28 +165,96 @@ npm run audit:ledger:gate -- --remotas="$OUT/ledger-versions.txt" > "$OUT/ledger
   exit 1
 }
 
-release_versions=(
-  20260809070000 20260810085000 20260810090000 20260810090100
-  20260810090200 20260810093000 20260810094000 20260810120000
-  20260810120500 20260810120600 20260810121000 20260810122000
-  20260810123000 20260810124000 20260811100000 20260811100100
-  20260811101000 20260811101100 20260811101200 20260811102000
-  20260811102100 20260812123000 20260812124000
-  20260812125000
-)
+# O readback usa o predecessor e o manifesto do próprio run. O manifesto
+# canônico é o fallback do caller real; overrides explícitos continuam
+# disponíveis para runs isolados e fixtures. Não há uma cardinalidade ou topo
+# histórico embutido aqui, portanto migrations novas como 30002 entram sem
+# alterar este script.
+ledger_predecessor="${PF_LEDGER_PREDECESSOR:-}"
+ledger_manifest="${PF_LEDGER_MANIFEST:-$ROOT/.github/merge-queue/irreversible-change-manifest.json}"
+if [[ -z "$ledger_manifest" || ! -f "$ledger_manifest" ]]; then
+  echo "FAIL: manifesto do ledger deve existir em PF_LEDGER_MANIFEST ou no caminho canonico" >&2
+  exit 2
+fi
+manifest_versions="$({
+  node - "$ledger_manifest" <<'NODE'
+const fs = require("node:fs")
+const raw = fs.readFileSync(process.argv[2], "utf8")
+let value = raw
+try { value = JSON.parse(raw) } catch {}
+const releases = Array.isArray(value?.scope?.releases) ? value.scope.releases : []
+const predecessors = releases.length > 0
+  ? releases.flatMap((release) => typeof release?.predecessor === "string" ? [release.predecessor] : [])
+  : typeof value?.predecessor === "string" ? [value.predecessor] : []
+const versions = releases.length > 0
+  ? releases.flatMap((release) => Array.isArray(release?.versions) ? release.versions : [])
+  : Array.isArray(value)
+    ? value
+    : Array.isArray(value?.versions)
+      ? value.versions
+      : raw.split(/\r?\n/).map((v) => v.trim()).filter(Boolean)
+if (predecessors.some((v) => !/^\d{14}$/.test(v))) process.exit(2)
+if (!Array.isArray(versions) || versions.some((v) => typeof v !== "string" || !/^\d{14}$/.test(v))) process.exit(2)
+for (const predecessor of [...new Set(predecessors)].sort()) process.stdout.write(`P:${predecessor}\n`)
+for (const version of [...new Set(versions)].sort()) process.stdout.write(`V:${version}\n`)
+NODE
+} 2>/dev/null)" || {
+  echo "FAIL: manifesto do ledger deve conter predecessores e versoes de 14 digitos" >&2
+  exit 2
+}
+manifest_predecessors=()
+while IFS= read -r predecessor; do
+  [[ -n "$predecessor" ]] && manifest_predecessors+=("${predecessor#P:}")
+done < <(printf '%s\n' "$manifest_versions" | sed -n 's/^P://p')
+if [[ "${#manifest_predecessors[@]}" == "0" ]]; then
+  echo "FAIL: manifesto do ledger deve declarar predecessor" >&2
+  exit 2
+fi
+if [[ -n "$ledger_predecessor" ]]; then
+  ledger_predecessors=("$ledger_predecessor")
+else
+  ledger_predecessors=("${manifest_predecessors[@]}")
+  ledger_predecessor="$(IFS=,; printf '%s' "${ledger_predecessors[*]}")"
+fi
+release_versions=()
+while IFS= read -r version; do
+  [[ -n "$version" ]] && release_versions+=("${version#V:}")
+done < <(printf '%s\n' "$manifest_versions" | sed -n 's/^V://p')
+if [[ "${#release_versions[@]}" == "0" ]]; then
+  echo "FAIL: manifesto do ledger nao pode ser vazio" >&2
+  exit 2
+fi
+if [[ -n "${PF_LEDGER_PREDECESSOR:-}" && ! "$ledger_predecessor" =~ ^[0-9]{14}$ ]]; then
+  echo "FAIL: PF_LEDGER_PREDECESSOR deve ser uma versao de 14 digitos" >&2
+  exit 2
+fi
 ledger_total="$(wc -l < "$OUT/ledger-versions.txt" | tr -d '[:space:]')"
 ledger_top="$(tail -n 1 "$OUT/ledger-versions.txt")"
+for predecessor in "${ledger_predecessors[@]}"; do
+  if ! [[ "$predecessor" =~ ^[0-9]{14}$ ]]; then
+    echo "FAIL: predecessor do manifesto deve ser uma versao de 14 digitos" >&2
+    exit 2
+  fi
+  if ! grep -Fxq "$predecessor" "$OUT/ledger-versions.txt"; then
+    echo "FAIL: ledger nao contem o predecessor do run $predecessor" >&2
+    exit 1
+  fi
+done
 for version in "${release_versions[@]}"; do
   if ! grep -Fxq "$version" "$OUT/ledger-versions.txt"; then
     echo "FAIL: ledger nao contem a migration do release $version" >&2
     exit 1
   fi
 done
-if [[ "$ledger_total" != "395" || "$ledger_top" != "20260812125000" ]]; then
-  echo "FAIL: ledger final divergente (total $ledger_total/395, topo $ledger_top/20260812125000)" >&2
-  exit 1
-fi
-printf '%s|%s|%s\n' "$ledger_total" "$ledger_top" "${#release_versions[@]}" > "$OUT/ledger.txt"
+for predecessor in "${ledger_predecessors[@]}"; do
+  if [[ "$ledger_top" < "$predecessor" ]]; then
+    echo "FAIL: topo do ledger ($ledger_top) anterior ao predecessor ($predecessor)" >&2
+    exit 1
+  fi
+done
+printf '%s|%s|%s|predecessor=%s|manifest=%s\n' \
+  "$ledger_total" "$ledger_top" "${#release_versions[@]}" \
+  "${ledger_predecessor:-none}" "${ledger_manifest:-legacy-fallback}" > "$OUT/ledger.txt"
 
 # O readback final repete todos os contratos, porque o banco pode sofrer drift
 # depois do readback imediato de uma migration. Cada runner abre transacao

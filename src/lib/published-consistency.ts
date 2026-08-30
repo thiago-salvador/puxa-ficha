@@ -135,7 +135,12 @@ const ANON_DENIED_TABLES = [
  * 2026-06-02: anon SELECT na view bypassava a RLS das tabelas base. Probar so as
  * tabelas base (lista acima) nao pegava a regressao via view (review 2026-06-09).
  */
-const ANON_DENIED_VIEWS = ["candidatos_identidade_tier1_auditavel"]
+const ANON_DENIED_VIEWS = ["candidatos_identidade_tier1_auditavel"] as const
+
+export type AnonProbeDeps = {
+  fetchImpl?: typeof fetch
+  timeoutMs?: number
+}
 
 /**
  * Probe de seguranca (faz rede, ao contrario do analyzer puro acima): confirma
@@ -143,42 +148,41 @@ const ANON_DENIED_VIEWS = ["candidatos_identidade_tier1_auditavel"]
  * ler, e regressao da classe do vazamento de 2026-06-02 (alguem concedeu SELECT a
  * anon). Retorna anomalias duras. Erro de rede nao e tratado como vazamento.
  */
-export async function probeAnonLeak(baseUrl: string, anonKey: string): Promise<string[]> {
-  const hard: string[] = []
+export async function probeAnonLeak(
+  baseUrl: string,
+  anonKey: string,
+  deps: AnonProbeDeps = {},
+): Promise<string[]> {
+  const fetchImpl = deps.fetchImpl ?? fetch
+  const timeoutMs = deps.timeoutMs ?? 5_000
   const surfaces: { name: string; kind: "tabela base" | "view" }[] = [
     ...ANON_DENIED_TABLES.map((name) => ({ name, kind: "tabela base" as const })),
     ...ANON_DENIED_VIEWS.map((name) => ({ name, kind: "view" as const })),
   ]
-  let alcancadas = 0
-  for (const { name, kind } of surfaces) {
-    try {
-      const res = await fetch(`${baseUrl}/rest/v1/${name}?select=*&limit=1`, {
-        headers: { apikey: anonKey, Authorization: `Bearer ${anonKey}` },
-        // Sem timeout, o REST pendurado trava a rota inteira ate o teto da
-        // plataforma. Mesmo padrao de runtime-smoke e do envio de email.
-        signal: AbortSignal.timeout(5_000),
-      })
-      alcancadas++
-      if (res.ok) {
+  const results = await Promise.all(
+    surfaces.map(async ({ name, kind }) => {
+      try {
+        const res = await fetchImpl(`${baseUrl.replace(/\/$/, "")}/rest/v1/${name}?select=*&limit=1`, {
+          headers: { apikey: anonKey, Authorization: `Bearer ${anonKey}` },
+          signal: AbortSignal.timeout(timeoutMs),
+        })
+        if (![401, 403, 404].includes(res.status)) {
+          if (!res.ok) {
+            return `PROBE ANON INDETERMINADO: superficie ${kind} "${name}" respondeu HTTP ${res.status} inesperado — timeout/erro parcial reprova o gate`
+          }
+        }
+        if (!res.ok) return null
         const body = (await res.json()) as unknown
         const n = Array.isArray(body) ? body.length : "?"
-        hard.push(`VAZAMENTO ANON: ${kind} "${name}" legivel por anon (HTTP ${res.status}, ${n} linha[s]) — deve ser negada (so views gateadas)`)
+        return `VAZAMENTO ANON: ${kind} "${name}" legivel por anon (HTTP ${res.status}, ${n} linha[s]) — deve ser negada (so views gateadas)`
+      } catch (error) {
+        const detalhe = error instanceof Error ? error.name : "fetch_failed"
+        return `PROBE ANON INDETERMINADO: superficie ${kind} "${name}" nao respondeu (${detalhe}) — timeout/erro parcial reprova o gate`
       }
-    } catch {
-      /* erro de rede/DNS nao e vazamento; contabilizado abaixo como indeterminado */
-    }
-  }
+    }),
+  )
 
-  // Falhar ABERTO era o defeito: com o REST indisponivel, nenhuma superficie era
-  // testada, o catch engolia tudo e o cron respondia ok:true, ou seja o
-  // watchdog de vazamento anon reportava sucesso sem ter olhado nada.
-  // So acusa quando NENHUMA superficie respondeu: se alguma respondeu, a rede
-  // esta de pe e falha isolada nao vira alarme. Review de 2026-08-03.
-  if (alcancadas === 0 && surfaces.length > 0) {
-    hard.push(
-      `PROBE ANON INDETERMINADO: nenhuma das ${surfaces.length} superficies respondeu (rede/DNS/timeout) — o watchdog de vazamento anon nao rodou, trate como nao verificado`,
-    )
-  }
-
-  return hard
+  // O contrato estrito exige evidência de cada superfície. Um erro parcial não
+  // pode ser convertido em ok:true só porque as outras requisições responderam.
+  return results.filter((result): result is string => result !== null)
 }

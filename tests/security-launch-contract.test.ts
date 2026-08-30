@@ -28,10 +28,7 @@ describe("launch security static contract", () => {
     assert.match(supabase, /^import "server-only"/)
     assert.match(supabase, /SUPABASE_SERVICE_ROLE_KEY/)
 
-    const publicClientFiles = [
-      ...sourceFilesUnder("src/components"),
-      ...sourceFilesUnder("src/app"),
-    ]
+    const publicClientFiles = [...sourceFilesUnder("src/components"), ...sourceFilesUnder("src/app")]
 
     for (const file of publicClientFiles) {
       assert.equal(

@@ -39,6 +39,7 @@
  * Uso:
  *   npm run audit:superficie
  *   tsx scripts/audit/audit-superficie.ts --from-snapshot=snap.json
+ *   tsx scripts/audit/audit-superficie.ts --from-snapshot=snap.json --strict-all
  *   tsx scripts/audit/audit-superficie.ts --json=relatorio.json
  *
  * Sai != 0 em qualquer violação. Sai != 0 com snapshot vazio: zero candidato
@@ -479,6 +480,31 @@ export function separarPorCoorte(
   return { dentro, fora }
 }
 
+/**
+ * Decide as falhas do gate sem alterar o resultado operacional por coorte.
+ * `strictAll` promove o backlog fora da coorte e os avisos a falhas, útil para
+ * uma execução explícita de saneamento completo.
+ */
+export function avaliarFalhasDoGate(
+  violacoes: Violacao[],
+  avisos: AvisoIntegridade[],
+  coorte: ReadonlySet<string>,
+  strictAll = false,
+): {
+  dentro: Violacao[]
+  fora: Violacao[]
+  falhas: Array<Violacao | AvisoIntegridade>
+  avisos: AvisoIntegridade[]
+} {
+  const { dentro, fora } = separarPorCoorte(violacoes, coorte)
+  return {
+    dentro,
+    fora,
+    avisos,
+    falhas: strictAll ? [...dentro, ...fora, ...avisos] : dentro,
+  }
+}
+
 function carregarCoorte(): Set<string> {
   const bruto = JSON.parse(
     readFileSync(resolve(import.meta.dirname, "coorte-superficie.json"), "utf8"),
@@ -504,7 +530,8 @@ async function main() {
     ...avaliarIntegridadePartidaria(linhas).avisos,
     ...avaliarFotosSuperficie(linhas).avisos,
   ]
-  const { dentro, fora } = separarPorCoorte(violacoes, coorte)
+  const strictAll = process.argv.includes("--strict-all")
+  const { dentro, fora, falhas } = avaliarFalhasDoGate(violacoes, avisos, coorte, strictAll)
   const jsonOut = lerFlag("json")
   if (jsonOut) {
     writeFileSync(
@@ -514,9 +541,11 @@ async function main() {
           candidatos: linhas.length,
           fichas_publicas: fichasPublicas,
           coorte: coorte.size,
+          strict_all: strictAll,
           violacoes_coorte: dentro,
           backlog_fora_da_coorte: fora,
           avisos_superficie: avisos,
+          falhas_gate: falhas,
         },
         null,
         2,
@@ -525,7 +554,7 @@ async function main() {
   }
 
   console.log(
-    `audit:superficie: ${linhas.length} candidatos avaliados (${fichasPublicas} fichas públicas; coorte dura: ${coorte.size}).`,
+    `audit:superficie: ${linhas.length} candidatos avaliados (${fichasPublicas} fichas públicas; ${strictAll ? "gate strict-all" : `coorte dura: ${coorte.size}`}).`,
   )
 
   if (avisos.length > 0) {
@@ -541,17 +570,23 @@ async function main() {
     const fichas = new Set(fora.map((v) => v.slug)).size
     const resumo = [...porRegra.entries()].map(([r, n]) => `${r}=${n}`).join(", ")
     console.log(
-      `Backlog fora da coorte (informativo, não reprova): ${fora.length} violações em ${fichas} fichas legadas (${resumo}).`,
+      strictAll
+        ? `Violações fora da coorte (strict-all): ${fora.length} em ${fichas} fichas legadas (${resumo}).`
+        : `Backlog fora da coorte (informativo, não reprova): ${fora.length} violações em ${fichas} fichas legadas (${resumo}).`,
     )
   }
 
-  if (dentro.length === 0) {
+  if (strictAll && avisos.length > 0) {
+    console.error(`${avisos.length} aviso(s) promovido(s) a falha por --strict-all.`)
+  }
+
+  if (falhas.length === 0 && (!strictAll || avisos.length === 0)) {
     console.log("Superfície íntegra: R1-R5 na coorte, R6-R9 e R11 globais, R10 e foto nula como avisos.")
     return
   }
 
-  console.error(`${dentro.length} violação(ões) NA COORTE:`)
-  for (const v of dentro) {
+  console.error(`${falhas.length} violação(ões)${strictAll ? " (strict-all)" : " NA COORTE"}:`)
+  for (const v of falhas) {
     console.error(`  [${v.regra}] ${v.slug}: ${v.detalhe}`)
   }
   process.exit(1)

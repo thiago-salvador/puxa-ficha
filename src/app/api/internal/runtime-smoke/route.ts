@@ -20,8 +20,17 @@ interface RuntimeCheck {
   marker?: string
 }
 
-// Cinco checagens publicas. O handler concatena quiz-short-link; a resposta
-// usa results.length (6 = estes 5 + quiz). Nao hardcodar o total.
+// Cinco checagens publicas. O handler concatena quiz-short-link, totalizando
+// seis resultados. O contrato externo valida nomes e total para não confundir
+// uma lista parcial com um smoke completo.
+export const RUNTIME_SMOKE_PUBLIC_CHECK_NAMES = [
+  "home",
+  "candidate",
+  "profile-api",
+  "deployment-info",
+  "real-404",
+] as const
+
 const CHECKS: RuntimeCheck[] = [
   { name: "home", path: "/", status: 200, marker: "Puxa Ficha" },
   { name: "candidate", path: "/candidato/lula", status: 200, marker: "Lula" },

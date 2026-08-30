@@ -122,25 +122,19 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npm run audit:marcadores-tse:gate
 
-  # G6 (validade temporal). O instrumento nasceu em 17/08 e nunca entrou em job,
-  # que e exatamente o diagnostico registrado em Status/ARQUITETURA-DADOS.md e o
-  # que deixou 87 biografias virarem afirmacao vencida em 15/08 sem ninguem ver.
+  # G6 (validade temporal). O instrumento nasceu em 17/08 e continua como fila
+  # informativa até existir baseline/delta confiável para separar estoque
+  # histórico de regressão nova. Não há gate strict artificial neste workflow.
   #
-  # POR QUE INFORMATIVO, E NAO BLOQUEANTE: medido em 18/08, ele reprova com 677
+  # A fila informativa continua existindo porque, medido em 18/08, reprova com 677
   # afirmacoes com prazo em 178 das 208 fichas (520 vencidas, 157 sem data de
-  # verificacao). Bloqueante, ele deixaria o CI vermelho de forma permanente, e
-  # este projeto ja tem a licao registrada de que gate que ninguem consegue
-  # atender vira gate desligado: em 09/08 um gate saiu vermelho por construcao e
-  # dois documentos declararam 'allowlist OK' com ele em exit 1.
+  # verificacao). Sem baseline/delta confiável, torná-la bloqueante manteria o
+  # job vermelho por construção e não produziria um alerta acionável.
   #
   # A falha do job E o alerta, como diz o cabecalho deste arquivo. O numero de
   # achados aparece no log de cada rodada, entao a fila fica visivel e a queda
   # mensuravel.
   #
-  # PRAZO PARA VIRAR BLOQUEANTE: quando a fila cair abaixo de 50 achados, tirar o
-  # continue-on-error. Se em 30/09/2026 ainda estiver informativo, a decisao a
-  # tomar e outra: ou a fila e trabalhavel e alguem assume, ou o gate esta
-  # medindo a coisa errada e precisa ser reescrito.
   validade-temporal:
     name: Validade temporal das afirmações (informativo)
     runs-on: ubuntu-latest
@@ -155,12 +149,35 @@ jobs:
           node-version: "24"
           cache: "npm"
       - run: npm ci
+      - name: Validar acesso de leitura
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_DB_URL:-}" ]; then
+            echo "::error::SUPABASE_DB_URL ausente nos Actions secrets." >&2
+            exit 1
+          fi
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Snapshot temporal (SELECT, nenhuma escrita)
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          set -euo pipefail
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/validade-temporal-snapshot.sql > validade-temporal.json
       - name: Fila de afirmações vencidas ou sem data
         continue-on-error: true
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npm run audit:validade-temporal
+        run: npm run audit:validade-temporal -- --from-snapshot=validade-temporal.json --json=validade-temporal-report.json
+      - name: Preservar receipt temporal
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: validade-temporal-${{ github.run_id }}
+          path: validade-temporal-report.json
+          if-no-files-found: warn
+          retention-days: 30
 
   sq-identity:
     name: SQ do seed vs consulta_cand do TSE
@@ -223,4 +240,18 @@ jobs:
           psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
             -f scripts/audit/superficie-snapshot.sql > superficie.json
       - name: Julgar superfície (script puro)
-        run: npx tsx scripts/audit/audit-superficie.ts --from-snapshot=superficie.json
+        run: |
+          set -euo pipefail
+          args=(--from-snapshot=superficie.json --json=superficie-report.json)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            args+=(--strict-all)
+          fi
+          npx tsx scripts/audit/audit-superficie.ts "${args[@]}"
+      - name: Preservar receipt da superfície
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: superficie-fichas-${{ github.run_id }}
+          path: superficie-report.json
+          if-no-files-found: error
+          retention-days: 30

@@ -69,13 +69,13 @@ describe("proveniência dos destaques após o split de Orleans", () => {
     assert.match(harness, /rollback recusa curadoria posterior/i)
   })
 
-  test("Fase 4 passa a exigir ledger 395, topo 125000 e os 24 readbacks", () => {
+  test("Fase 4 usa manifesto de ledger do run sem cardinalidade ou topo fixos", () => {
     const runner = readFileSync(join(ROOT, "scripts/audit/readback-publico-fase4.sh"), "utf8")
     const operational = readFileSync(join(ROOT, "tests/release-operational-artifacts.test.ts"), "utf8")
-    assert.match(runner, /ledger_total[^\n]*395|total [^\n]*\/395/)
-    assert.match(runner, /ledger_top[^\n]*20260812125000|topo [^\n]*20260812125000/)
-    assert.match(runner, /release_versions=\([\s\S]*20260812124000/)
-    assert.match(runner, /release_versions=\([\s\S]*20260812125000/)
+    assert.doesNotMatch(runner, /ledger_total[^\n]*395|ledger_top[^\n]*20260812125000/)
+    assert.match(runner, /PF_LEDGER_MANIFEST/)
+    assert.match(runner, /irreversible-change-manifest\.json/)
+    assert.match(runner, /release_versions=\(\)/)
     assert.match(operational, /20260812125000/)
     assert.match(operational, /size, 24/)
   })
