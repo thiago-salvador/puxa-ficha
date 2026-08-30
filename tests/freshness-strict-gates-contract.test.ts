@@ -15,7 +15,10 @@ test("workflow mantém validade temporal informativa sem falso gate permanente",
   assert.equal(parsed.jobs?.["validade-temporal-strict"], undefined)
   assert.match(workflow, /baseline\/delta confiável/i)
   const temporalSection = workflow.split("\n  validade-temporal:")[1]?.split("\n  sq-identity:")[0] ?? ""
-  assert.match(temporalSection, /SUPABASE_ACCESS_TOKEN/)
+  assert.match(temporalSection, /SUPABASE_DB_URL/)
+  assert.match(temporalSection, /validade-temporal-snapshot\.sql/)
+  assert.match(temporalSection, /--from-snapshot=validade-temporal\.json/)
+  assert.doesNotMatch(temporalSection, /SUPABASE_ACCESS_TOKEN/)
   assert.doesNotMatch(temporalSection, /SUPABASE_SERVICE_ROLE_KEY/)
 })
 
