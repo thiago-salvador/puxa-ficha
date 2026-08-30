@@ -1,0 +1,35 @@
+{
+  "_comentario": "Allowlist do backfill estrito da issue #138. A escrita e limitada aos quatro refs de proposicao da Camara, com payload completo do writer canonico e sem UPDATE/DELETE.",
+  "recorte": "issue-138-proposicao-source-key-20260829",
+  "migrations": [
+    "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"
+  ],
+  "fonte": "Payloads oficiais da Camara preservados no readback da issue #138; coorte fixa de Ronaldo Caiado.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "projetos_lei",
+      "ref": "123202",
+      "campos": ["candidato_id", "tipo", "numero", "ano", "ementa", "situacao", "url_inteiro_teor", "fonte", "proposicao_id_api", "metadata"]
+    },
+    {
+      "tabela": "projetos_lei",
+      "ref": "123149",
+      "campos": ["candidato_id", "tipo", "numero", "ano", "ementa", "situacao", "url_inteiro_teor", "fonte", "proposicao_id_api", "metadata"]
+    },
+    {
+      "tabela": "projetos_lei",
+      "ref": "123094",
+      "campos": ["candidato_id", "tipo", "numero", "ano", "ementa", "situacao", "url_inteiro_teor", "fonte", "proposicao_id_api", "metadata"]
+    },
+    {
+      "tabela": "projetos_lei",
+      "ref": "121483",
+      "campos": ["candidato_id", "tipo", "numero", "ano", "ementa", "situacao", "url_inteiro_teor", "fonte", "proposicao_id_api", "metadata"]
+    }
+  ]
+}
