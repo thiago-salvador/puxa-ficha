@@ -1,5 +1,5 @@
 import { supabase } from "./supabase"
-import { sleep } from "./helpers"
+import { FETCH_TIMEOUT_MS, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 import { parse } from "csv-parse/sync"
@@ -70,6 +70,7 @@ async function downloadCsv(): Promise<{ text: string; anoBase: number } | null> 
       log("capag", `  Tentando: ${resource.url}`)
       const res = await fetch(resource.url, {
         headers: { "User-Agent": "PuxaFicha/1.0 (dados publicos)" },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       })
       if (!res.ok) {
         warn("capag", `  HTTP ${res.status} para ${resource.url}`)

@@ -15,6 +15,10 @@ import { ativarDryRun } from "./lib/dry-run"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { supabase } from "./lib/supabase"
 import { stripAccents } from "../src/lib/strip-accents"
+import { FETCH_TIMEOUT_MS } from "./lib/helpers"
+
+/** Download de imagem do DivulgaCand: prazo maior que o das chamadas de JSON. */
+const FOTO_DOWNLOAD_TIMEOUT_MS = 60_000
 
 const DIVULGACAND = "https://divulgacandcontas.tse.jus.br/divulga"
 const MIN_PHOTO_BYTES = 5_000
@@ -289,7 +293,7 @@ function dependenciasReais(codigoEleicao: string): DependenciasFotosOficiais {
   return {
     async buscarCandidatura(ancora) {
       const url = `${DIVULGACAND}/rest/v1/candidatura/buscar/2026/${ancora.uf}/${codigoEleicao}/candidato/${ancora.sq_candidato}`
-      const response = await fetch(url)
+      const response = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) })
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       const contentType = response.headers.get("content-type")
       if (!contentType?.toLowerCase().includes("application/json")) {
@@ -299,7 +303,8 @@ function dependenciasReais(codigoEleicao: string): DependenciasFotosOficiais {
     },
     async baixarFoto(ancora) {
       const sourceUrl = `${DIVULGACAND}/rest/arquivo/img/${codigoEleicao}/${ancora.sq_candidato}/${ancora.uf}`
-      const response = await fetch(sourceUrl)
+      // Download de imagem: prazo maior que o das chamadas de JSON, mas prazo.
+      const response = await fetch(sourceUrl, { signal: AbortSignal.timeout(FOTO_DOWNLOAD_TIMEOUT_MS) })
       return {
         status: response.status,
         contentType: response.headers.get("content-type"),
