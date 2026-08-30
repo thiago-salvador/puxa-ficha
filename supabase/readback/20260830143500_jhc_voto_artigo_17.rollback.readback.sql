@@ -9,9 +9,13 @@ DECLARE
 BEGIN
   SELECT count(*) INTO alvo_count
   FROM public.votos_candidato
-  WHERE candidato_id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
+  WHERE id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
+    AND candidato_id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
     AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
-    AND voto = 'ausente';
+    AND voto = 'ausente'
+    AND contradicao = false
+    AND contradicao_descricao IS NULL
+    AND created_at = '2026-08-15T14:10:32.481313+00:00'::timestamptz;
 
   SELECT count(*) FILTER (WHERE execucao = 'migration:20260830143500'),
          count(*) FILTER (WHERE execucao = 'rollback:20260830143500')

@@ -12,10 +12,14 @@ BEGIN
   JOIN public.votacoes_chave vc ON vc.id = v.votacao_id
   WHERE c.id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
     AND c.slug = 'jhc'
+    AND v.id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
     AND vc.id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
     AND vc.fonte = 'camara'
     AND vc.votacao_id_api = '2123843-93'
-    AND v.voto = 'artigo_17';
+    AND v.voto = 'artigo_17'
+    AND v.contradicao = false
+    AND v.contradicao_descricao IS NULL
+    AND v.created_at = '2026-08-15T14:10:32.481313+00:00'::timestamptz;
 
   SELECT count(*) INTO receipt_count
   FROM public.coleta_log

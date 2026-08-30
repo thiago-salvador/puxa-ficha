@@ -56,12 +56,25 @@ BEGIN
       candidato_count, votacao_count, alvo_count;
   END IF;
 
+  IF NOT EXISTS (
+    SELECT 1
+    FROM public.votos_candidato
+    WHERE id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
+      AND candidato_id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
+      AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
+      AND voto IN ('ausente', 'artigo_17')
+      AND contradicao = false
+      AND contradicao_descricao IS NULL
+      AND created_at = '2026-08-15T14:10:32.481313+00:00'::timestamptz
+  ) THEN
+    RAISE EXCEPTION 'jhc artigo_17: linha alvo divergiu do snapshot de produção';
+  END IF;
+
   IF voto_atual NOT IN ('ausente', 'artigo_17') THEN
     RAISE EXCEPTION 'jhc artigo_17: voto atual divergente: %', voto_atual;
   END IF;
 
-  IF voto_atual = 'ausente'
-     AND criado_em::date <> DATE '2026-08-15' THEN
+  IF criado_em <> '2026-08-15T14:10:32.481313+00:00'::timestamptz THEN
     RAISE EXCEPTION 'jhc artigo_17: created_at divergente: %', criado_em;
   END IF;
 
@@ -78,6 +91,7 @@ WHERE candidato_id = (
   WHERE id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
     AND slug = 'jhc'
 )
+  AND id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
   AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
   AND voto = 'ausente'
   AND current_setting('pf.jhc_artigo_17_apply', true) = 'true';
@@ -129,7 +143,7 @@ SELECT
   'camara-votos', 'candidato', 'jhc',
   'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid,
   'encontrado', 1,
-  'Migration 20260830143500: ausente corrigido para artigo_17; postcondicao das demais linhas aprovada',
+  'Migration 20260830143500: voto be44d3a0-492b-4e68-9ed7-d812d7ce0e48 ausente corrigido para artigo_17; created_at 2026-08-15T14:10:32.481313+00:00 e postcondicao das demais linhas aprovados',
   'https://dadosabertos.camara.leg.br/api/v2/votacoes/2123843-93/votos',
   'migration:20260830143500'
 WHERE current_setting('pf.jhc_artigo_17_apply', true) = 'true'

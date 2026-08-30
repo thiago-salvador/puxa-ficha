@@ -71,10 +71,10 @@ INSERT INTO public.votacoes_chave (id, fonte, votacao_id_api) VALUES
 INSERT INTO public.votos_candidato
   (id, candidato_id, votacao_id, voto, contradicao, contradicao_descricao, created_at)
 VALUES
-  ('33333333-3333-4333-8333-333333333333',
+  ('be44d3a0-492b-4e68-9ed7-d812d7ce0e48',
    'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75',
    '274f2ae4-58dc-43bb-b98c-c170b0fb132c',
-   'ausente', false, NULL, '2026-08-15T12:00:00Z'),
+   'ausente', false, NULL, '2026-08-15T14:10:32.481313Z'),
   ('44444444-4444-4444-8444-444444444444',
    '11111111-1111-4111-8111-111111111111',
    '22222222-2222-4222-8222-222222222222',
@@ -87,6 +87,15 @@ if q -q < "$FORWARD_READBACK" >/dev/null 2>&1; then
   echo "FAIL: readback forward aceitou estado anterior" >&2
   exit 1
 fi
+
+q -q -c "update public.votos_candidato set created_at='2026-08-15T14:10:33Z' where id='be44d3a0-492b-4e68-9ed7-d812d7ce0e48'"
+if q -q < "$MIGRATION" >/dev/null 2>&1; then
+  echo "FAIL: migration aceitou linha alvo diferente do snapshot de produção" >&2
+  exit 1
+fi
+[[ "$(q -Atq -c "select voto from public.votos_candidato where id='be44d3a0-492b-4e68-9ed7-d812d7ce0e48'")" == "ausente" ]]
+[[ "$(q -Atq -c "select count(*) from public.coleta_log")" == "0" ]]
+q -q -c "update public.votos_candidato set created_at='2026-08-15T14:10:32.481313Z' where id='be44d3a0-492b-4e68-9ed7-d812d7ce0e48'"
 
 q -q < "$MIGRATION"
 q -q -c "INSERT INTO supabase_migrations.schema_migrations(version) VALUES ('20260830143500')"

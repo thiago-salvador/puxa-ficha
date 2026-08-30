@@ -22,8 +22,22 @@ BEGIN
   WHERE candidato_id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
     AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid;
 
-  IF alvo_count <> 1 OR voto_atual NOT IN ('artigo_17', 'ausente') THEN
+  IF alvo_count <> 1 OR voto_atual <> 'artigo_17' THEN
     RAISE EXCEPTION 'rollback jhc artigo_17: estado divergente (alvo=%, voto=%)', alvo_count, voto_atual;
+  END IF;
+
+  IF NOT EXISTS (
+    SELECT 1
+    FROM public.votos_candidato
+    WHERE id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
+      AND candidato_id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
+      AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
+      AND voto = 'artigo_17'
+      AND contradicao = false
+      AND contradicao_descricao IS NULL
+      AND created_at = '2026-08-15T14:10:32.481313+00:00'::timestamptz
+  ) THEN
+    RAISE EXCEPTION 'rollback jhc artigo_17: linha alvo divergiu do estado aplicado';
   END IF;
 END
 $precondition$;
@@ -37,6 +51,7 @@ WHERE candidato_id = (
   WHERE id = 'ba62f5d0-3e39-40a7-a0af-ee1d86e97e75'::uuid
     AND slug = 'jhc'
 )
+  AND id = 'be44d3a0-492b-4e68-9ed7-d812d7ce0e48'::uuid
   AND votacao_id = '274f2ae4-58dc-43bb-b98c-c170b0fb132c'::uuid
   AND voto = 'artigo_17';
 
