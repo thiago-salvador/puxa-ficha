@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "receipt_set_id": "programas-governo-ausentes:2026-08-30",
+  "generated_at": "2026-08-30T19:05:43.502Z",
+  "prior_confirmation_at": "2026-08-30T17:14:00Z",
+  "supersedes_prior_confirmation_with_raw_payloads": true,
+  "source_system": "TSE DivulgaCandContas",
+  "source_contract": "candidatura.arquivos[].codTipo",
+  "program_cod_tipo": "5",
+  "execution": {
+    "run_url": "https://github.com/thiago-salvador/puxa-ficha/actions/runs/33329832043",
+    "head_sha": "ee5158e253d9c90069cad2a9186ec12fd8acf38c",
+    "monitor_report_path": "monitor-run-33329832043.json",
+    "monitor_report_sha256": "189617e98fc5f9aa8098ed0806f3b7019a3b77e3f17937c24793b9a5a2108f30",
+    "monitor_contract_sha256": "5d5529808572a9733db7b0ca2e29038f362871b29c76279814e2256bcd567f50"
+  },
+  "positive_control": {
+    "profile_slug": "jorginho-mello",
+    "sq_candidato": "240002537073",
+    "result": "programa_oficial_codtipo_5_encontrado",
+    "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002537073",
+    "checked_at": "2026-08-30T19:05:41.660Z",
+    "http_status": 200,
+    "payload_raw_sha256": "857520e5a273873c432043d663907a873c2555aced4a0b62f5e879d049b1d41d",
+    "raw_payload_path": "raw/857520e5a273873c432043d663907a873c2555aced4a0b62f5e879d049b1d41d.raw",
+    "program_file_ids": [
+      "240016881802"
+    ]
+  },
+  "receipts": [
+    {
+      "receipt_id": "programa-governo-ausente:2026:60002553922",
+      "profile_slug": "vera-lucia-ce",
+      "sq_candidato": "60002553922",
+      "result": "sem_programa_oficial_codtipo_5_no_escopo",
+      "scope": "DivulgaCand candidatura 2026, campo arquivos, codTipo 5",
+      "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002553922",
+      "checked_at": "2026-08-30T19:05:42.202Z",
+      "http_status": 200,
+      "payload_raw_sha256": "33f5bbc82ccdf52f1aa289b3c493db1d35b79e1f74ab8c0d78f0f9ff3d2ef41f",
+      "raw_payload_path": "raw/33f5bbc82ccdf52f1aa289b3c493db1d35b79e1f74ab8c0d78f0f9ff3d2ef41f.raw",
+      "files_total": 3,
+      "observed_file_types": [
+        "11",
+        "12",
+        "13"
+      ],
+      "program_files_total": 0
+    },
+    {
+      "receipt_id": "programa-governo-ausente:2026:130002544411",
+      "profile_slug": "ben-mendes",
+      "sq_candidato": "130002544411",
+      "result": "sem_programa_oficial_codtipo_5_no_escopo",
+      "scope": "DivulgaCand candidatura 2026, campo arquivos, codTipo 5",
+      "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544411",
+      "checked_at": "2026-08-30T19:05:42.546Z",
+      "http_status": 200,
+      "payload_raw_sha256": "afe0fffabcbca1d202b422c96139ff505188e8fa8b0f485f42498702e7987539",
+      "raw_payload_path": "raw/afe0fffabcbca1d202b422c96139ff505188e8fa8b0f485f42498702e7987539.raw",
+      "files_total": 9,
+      "observed_file_types": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "program_files_total": 0
+    },
+    {
+      "receipt_id": "programa-governo-ausente:2026:190002543380",
+      "profile_slug": "eduardo-paes",
+      "sq_candidato": "190002543380",
+      "result": "sem_programa_oficial_codtipo_5_no_escopo",
+      "scope": "DivulgaCand candidatura 2026, campo arquivos, codTipo 5",
+      "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002543380",
+      "checked_at": "2026-08-30T19:05:42.856Z",
+      "http_status": 200,
+      "payload_raw_sha256": "eea1f6a88c6cf170295d76f12f2793133a67ccae9a0ae7cca8bef7068f04de57",
+      "raw_payload_path": "raw/eea1f6a88c6cf170295d76f12f2793133a67ccae9a0ae7cca8bef7068f04de57.raw",
+      "files_total": 0,
+      "observed_file_types": [],
+      "program_files_total": 0
+    },
+    {
+      "receipt_id": "programa-governo-ausente:2026:190002550196",
+      "profile_slug": "garotinho",
+      "sq_candidato": "190002550196",
+      "result": "sem_programa_oficial_codtipo_5_no_escopo",
+      "scope": "DivulgaCand candidatura 2026, campo arquivos, codTipo 5",
+      "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196",
+      "checked_at": "2026-08-30T19:05:43.166Z",
+      "http_status": 200,
+      "payload_raw_sha256": "bc1fb47f043d3488d33feb59162de6c9fca18540a33faeaa88e26bc0b35fc6b5",
+      "raw_payload_path": "raw/bc1fb47f043d3488d33feb59162de6c9fca18540a33faeaa88e26bc0b35fc6b5.raw",
+      "files_total": 3,
+      "observed_file_types": [
+        "12",
+        "13",
+        "14"
+      ],
+      "program_files_total": 0
+    },
+    {
+      "receipt_id": "programa-governo-ausente:2026:250002548080",
+      "profile_slug": "policial-edjane",
+      "sq_candidato": "250002548080",
+      "result": "sem_programa_oficial_codtipo_5_no_escopo",
+      "scope": "DivulgaCand candidatura 2026, campo arquivos, codTipo 5",
+      "source_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002548080",
+      "checked_at": "2026-08-30T19:05:43.501Z",
+      "http_status": 200,
+      "payload_raw_sha256": "011e6853280cd0a8d60e6966f999e412a3ee68166f74f40ef33c9f09ae7ca6d3",
+      "raw_payload_path": "raw/011e6853280cd0a8d60e6966f999e412a3ee68166f74f40ef33c9f09ae7ca6d3.raw",
+      "files_total": 2,
+      "observed_file_types": [
+        "12",
+        "14"
+      ],
+      "program_files_total": 0
+    }
+  ],
+  "public_data_changed": false,
+  "receipt_sha256": "ec47a7e50a8283f3db0d2291d4dfc23210498ff23f47949ba79460f5e5b9a2fc"
+}
