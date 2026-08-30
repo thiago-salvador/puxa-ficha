@@ -38,12 +38,13 @@ segura.
 | `SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Leitura pública do Supabase | Uma das duas é obrigatória em produção. A forma sem prefixo vence. | Vercel ou operador local |
 | `SUPABASE_SERVICE_ROLE_KEY` | Rotas e scripts privilegiados | Obrigatória em produção e em operações que escrevem. Nunca expor ao cliente. | Vercel ou GitHub secret |
 | `CRON_SECRET`, `PF_REVALIDATE_SECRET` | Autenticação de crons e revalidação | Obrigatórias em produção. Ausência falha o boot porque cron ou revalidação quebrariam em silêncio. | Vercel; o mesmo valor necessário é espelhado no GitHub quando o workflow chama a rota |
+| `PF_OPERATIONAL_RETENTION_ENABLED` | Habilitação dos expurgos agendados de short-links e notification logs | Opcional e fail-closed. Somente o valor literal `1` autoriza lotes de até 100 linhas por tabela; ausente, vazio ou qualquer outro valor mantém os expurgos desativados. | Vercel |
 | `PF_QUIZ_SHORT_LINK_SALT`, `PF_ALERTS_TOKEN_SALT`, `PF_ALERTS_TOKEN_ENCRYPTION_KEY` | Hash e criptografia de tokens | Obrigatórias em produção. A chave de criptografia precisa ter 64 caracteres hexadecimais. Em desenvolvimento existem fallbacks explícitos apenas para salts. | Vercel |
-| `PF_ALERTS_IP_SALT` | Hash de IP dos limites duráveis | Opcional quando `PF_QUIZ_SHORT_LINK_SALT` existe; cai para ele. Em desenvolvimento ainda há fallback local. | Vercel |
+| `PF_ALERTS_IP_SALT` | Hash de IP dos limites duráveis | Obrigatória e dedicada em produção. Em desenvolvimento ainda pode cair para `PF_QUIZ_SHORT_LINK_SALT` ou para o fallback local. | Vercel |
 | `RESEND_API_KEY` | Transporte de email | Degradável: sem valor, a aplicação pública sobe e o envio de alertas falha com log. | Vercel |
 | `PF_ALERTS_FROM_EMAIL`, `SMTP_FROM` | Remetente dos emails | O primeiro vence e `SMTP_FROM` é alias legado. Ausência usa o fallback do código; formato inválido degrada somente email. | Vercel |
 | `PF_ALERTS_REPLY_TO_EMAIL` | Endereço de Reply-To enviado ao Resend no campo `reply_to` | Obrigatória para o transporte de email e sem fallback. Aceita um único endereço simples, sem nome de exibição, lista ou caracteres de cabeçalho. Ausência ou formato inválido degrada somente email: o site continua no ar, mas cada envio aborta antes de qualquer chamada de rede. | Vercel |
-| `NEXT_PUBLIC_ALERTS_EMAIL_ENABLED` | Exposição da UI de alertas por email | Opcional, habilita somente com `true`; ausente ou outro valor mantém a UI desligada. | Vercel por ambiente |
+| `NEXT_PUBLIC_ALERTS_EMAIL_ENABLED` | Exposição e envio de alertas por email | Opcional, habilita somente com `true`; ausente ou outro valor mantém a UI desligada e bloqueia subscribe e digest no servidor. Gestão, cancelamento e exclusão de dados continuam disponíveis. | Vercel por ambiente |
 | `PF_INTERNAL_TOKEN`, `PF_PREVIEW_TOKEN` | Bootstrap das superfícies internas e preview | Opcionais no boot, mas as rotas falham fechadas. Deploy exige token com pelo menos 24 caracteres para liberar a superfície correspondente. | Vercel por ambiente |
 | `PF_CRON_CHAIN_ORIGIN` | Origem do autoencadeamento dos crons | Opcional. Produção cai para `https://puxaficha.com.br`; fora dela cai para a origem da request. Só HTTPS ou loopback pode carregar segredo. | Vercel por ambiente |
 | `PF_RUNTIME_SMOKE_ORIGIN` | Origem sondada pelo runtime smoke e watchdog | Opcional, cai para `https://puxaficha.com.br`. | Vercel ou workflow |
@@ -155,7 +156,7 @@ horário de verão, inexistente no Brasil em 06/08/2026.
 |---|---:|---:|---|
 | `/api/news/refresh` | 08:00 diária | 05:00 | Atualizar notícias. |
 | `/api/news/refresh/recover` | 08:30 diária | 05:30 | Recuperar lotes pendentes sem duplicar execução. |
-| `/api/internal/published-consistency` | 09:00 diária | 06:00 | Conferir consistência publicada. Carona de manutenção: expurgo de retenção de `analytics_launch_events`, `quiz_result_short_links` e `notification_log` (90 dias cada), fail-open. `candidate_changes` e `coleta_log` ficam de fora. |
+| `/api/internal/published-consistency` | 09:00 diária | 06:00 | Conferir consistência publicada. Mantém a retenção de `analytics_launch_events`; short-links e `notification_log` só são expurgados, em lotes de até 100, com `PF_OPERATIONAL_RETENTION_ENABLED=1`. `candidate_changes` e `coleta_log` ficam de fora. |
 | `/api/internal/runtime-smoke` | 09:30 diária | 06:30 | Smoke operacional. |
 | `/api/alerts/send-digest` | 12:00 diária | 09:00 | Enviar digest de alertas habilitados. |
 | `/api/internal/revalidate-public-cache` | `*/15 * * * *` | a cada 15 min | Invalidar cache público das fichas. |

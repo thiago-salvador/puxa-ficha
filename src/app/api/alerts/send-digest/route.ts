@@ -4,9 +4,11 @@ import {
   buildAlertOneClickUnsubscribeUrl,
   buildAlertManageUrl,
   buildAlertUnsubscribeUrl,
+  applyAlertsNoStoreHeaders,
   createAlertsServiceRoleClient,
   decryptAlertManageToken,
 } from "@/lib/alerts"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import {
   buildAlertDigestEmail,
   type AlertDigestEmailCandidate,
@@ -799,7 +801,16 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
 
 const handler = createSendDigestHandler()
 
+async function emailFeatureGuardedHandler(req: NextRequest) {
+  if (!isAlertsEmailFeatureEnabled()) {
+    return applyAlertsNoStoreHeaders(
+      NextResponse.json({ ok: true, disabled: true, processed: 0, sent: 0 }),
+    )
+  }
+  return handler(req)
+}
+
 // Vercel Cron triggers this endpoint via GET (auth gated by CRON_SECRET, which Vercel injects from
 // the env var). GitHub manual dispatch and the internal auto-chain use POST. Both share one handler.
-export const GET = handler
-export const POST = handler
+export const GET = emailFeatureGuardedHandler
+export const POST = emailFeatureGuardedHandler

@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import {
   ALERT_VERIFICATION_EMAIL_COOLDOWN_MS,
+  applyAlertsNoStoreHeaders,
   alertBodyStringField,
   buildAlertDeleteDataUrl,
   buildAlertManageAccessEmail,
@@ -22,6 +23,7 @@ import {
   normalizeAlertEmail,
   normalizeCandidateSlug,
 } from "@/lib/alerts"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import { isAlertSubscribeHoneypotFilled } from "@/lib/alerts-honeypot"
 import {
   readAlertManageTokenCookie,
@@ -671,4 +673,13 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
   }
 }
 
-export const POST = createSubscribeHandler()
+const subscribeHandler = createSubscribeHandler()
+
+export async function POST(req: NextRequest) {
+  if (!isAlertsEmailFeatureEnabled()) {
+    return applyAlertsNoStoreHeaders(
+      NextResponse.json({ error: "Alerts email feature disabled" }, { status: 503 }),
+    )
+  }
+  return subscribeHandler(req)
+}

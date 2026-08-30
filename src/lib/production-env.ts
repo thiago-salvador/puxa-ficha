@@ -69,8 +69,8 @@ export function validateProductionEnvironment(): void {
     missing.push("PF_ALERTS_TOKEN_SALT")
   }
 
-  if (!hasTrimmed(process.env.PF_ALERTS_IP_SALT) && !hasTrimmed(process.env.PF_QUIZ_SHORT_LINK_SALT)) {
-    missing.push("PF_ALERTS_IP_SALT ou PF_QUIZ_SHORT_LINK_SALT")
+  if (!hasTrimmed(process.env.PF_ALERTS_IP_SALT)) {
+    missing.push("PF_ALERTS_IP_SALT")
   }
 
   const enc = process.env.PF_ALERTS_TOKEN_ENCRYPTION_KEY?.trim()

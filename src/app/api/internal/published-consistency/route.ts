@@ -10,6 +10,7 @@ import {
 import {
   NOTIFICATION_LOG_RETENTION_DAYS,
   notificationLogRetentionCutoffDate,
+  operationalRetentionEnabled,
   purgeExpiredQuizShortLinks,
   purgeNotificationLogsOlderThan,
   quizShortLinkRetentionCutoffIso,
@@ -39,9 +40,9 @@ export const maxDuration = 30
  * O tier caro (realidade politica via web) NAO roda aqui; fica na automacao
  * Codex de freshness, fora do caminho de custo do site.
  *
- * Carona de manutenção: este handler também executa o expurgo de retenção de
- * `analytics_launch_events`, `quiz_result_short_links` e `notification_log`
- * (90 dias cada). Ver o bloco no fim da função.
+ * Carona de manutenção: este handler executa a retenção já existente de
+ * `analytics_launch_events`. Os expurgos de `quiz_result_short_links` e
+ * `notification_log` só executam com `PF_OPERATIONAL_RETENTION_ENABLED=1`.
  *
  * Auth: Vercel Cron injeta `Authorization: Bearer <CRON_SECRET>`. Fail-closed.
  */
@@ -145,22 +146,27 @@ export async function GET(req: NextRequest) {
   // Sequencial e nao Promise.all: sao tres DELETE com service role no mesmo
   // banco que a ficha publica usa, e o ganho de alguns milissegundos nao paga
   // ocupar tres slots do semaforo do Supabase de uma vez.
-  const expurgoShortLinks = await purgeExpiredQuizShortLinks(quizShortLinkRetentionCutoffIso())
+  const retencaoOperacionalHabilitada = operationalRetentionEnabled()
+  const expurgoShortLinks = retencaoOperacionalHabilitada
+    ? await purgeExpiredQuizShortLinks(quizShortLinkRetentionCutoffIso())
+    : { status: "desativado" as const }
   if (expurgoShortLinks.status === "ok") {
     console.log(
       `[published-consistency] short_links_retencao ${JSON.stringify({
         removidos: expurgoShortLinks.removidos,
       })}`,
     )
+  } else if (expurgoShortLinks.status === "desativado") {
+    console.log("[published-consistency] short_links_retencao desativada")
   } else {
     console.error(
       `[published-consistency] short_links_retencao_falhou ${JSON.stringify(expurgoShortLinks)}`,
     )
   }
 
-  const expurgoNotificationLog = await purgeNotificationLogsOlderThan(
-    notificationLogRetentionCutoffDate(),
-  )
+  const expurgoNotificationLog = retencaoOperacionalHabilitada
+    ? await purgeNotificationLogsOlderThan(notificationLogRetentionCutoffDate())
+    : { status: "desativado" as const }
   if (expurgoNotificationLog.status === "ok") {
     console.log(
       `[published-consistency] notification_log_retencao ${JSON.stringify({
@@ -168,6 +174,8 @@ export async function GET(req: NextRequest) {
         removidos: expurgoNotificationLog.removidos,
       })}`,
     )
+  } else if (expurgoNotificationLog.status === "desativado") {
+    console.log("[published-consistency] notification_log_retencao desativada")
   } else {
     console.error(
       `[published-consistency] notification_log_retencao_falhou ${JSON.stringify(

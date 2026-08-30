@@ -19,7 +19,9 @@ require.cache[serverOnlyPath] = {
 
 const {
   NOTIFICATION_LOG_RETENTION_DAYS,
+  OPERATIONAL_RETENTION_BATCH_SIZE,
   notificationLogRetentionCutoffDate,
+  operationalRetentionEnabled,
   purgeExpiredQuizShortLinks,
   purgeNotificationLogsOlderThan,
   quizShortLinkRetentionCutoffIso,
@@ -27,38 +29,67 @@ const {
 
 interface Chamada {
   table: string
-  count: "exact"
+  operacao: "select" | "delete"
+  colunas: string | null
   filtros: Array<[string, string, string]>
+  ordem: Array<[string, boolean]>
+  limite: number | null
 }
 
 function clientFake(
-  resultado: { count: number | null; error: { code?: string; message?: string } | null },
+  resultados: Array<{
+    data: Array<Record<string, unknown>> | null
+    error: { code?: string; message?: string } | null
+  }>,
 ): { client: RetentionSupabaseClient; chamadas: Chamada[] } {
   const chamadas: Chamada[] = []
   const client: RetentionSupabaseClient = {
     from(table) {
-      return {
-        delete(options) {
-          const chamada: Chamada = { table, count: options.count, filtros: [] }
-          chamadas.push(chamada)
-          const query = {
-            lte(column: string, value: string) {
-              chamada.filtros.push(["lte", column, value])
-              return query
-            },
-            lt(column: string, value: string) {
-              chamada.filtros.push(["lt", column, value])
-              return query
-            },
-            then<R>(onOk: (r: typeof resultado) => R) {
-              return Promise.resolve(resultado).then(onOk)
-            },
-          }
-          return query as unknown as ReturnType<
-            ReturnType<RetentionSupabaseClient["from"]>["delete"]
-          >
+      const chamada: Chamada = {
+        table,
+        operacao: "select",
+        colunas: null,
+        filtros: [],
+        ordem: [],
+        limite: null,
+      }
+      chamadas.push(chamada)
+      const query = {
+        select(columns: string) {
+          chamada.colunas = columns
+          return query
+        },
+        delete() {
+          chamada.operacao = "delete"
+          return query
+        },
+        in(column: string, values: string[]) {
+          chamada.filtros.push(["in", column, values.join(",")])
+          return query
+        },
+        lte(column: string, value: string) {
+          chamada.filtros.push(["lte", column, value])
+          return query
+        },
+        lt(column: string, value: string) {
+          chamada.filtros.push(["lt", column, value])
+          return query
+        },
+        order(column: string, options: { ascending: boolean }) {
+          chamada.ordem.push([column, options.ascending])
+          return query
+        },
+        limit(value: number) {
+          chamada.limite = value
+          return query
+        },
+        then<R>(onOk: (r: (typeof resultados)[number]) => R) {
+          const resultado = resultados.shift()
+          if (!resultado) throw new Error("resultado fake ausente")
+          return Promise.resolve(resultado).then(onOk)
         },
       }
+      return query as unknown as ReturnType<RetentionSupabaseClient["from"]>
     },
   }
   return { client, chamadas }
@@ -66,33 +97,70 @@ function clientFake(
 
 describe("retenção operacional agendada", () => {
   it("short links: DELETE com expires_at <= cutoff, contagem exata", async () => {
-    const { client, chamadas } = clientFake({ count: 7, error: null })
+    const { client, chamadas } = clientFake([
+      { data: [{ token: "a" }, { token: "b" }], error: null },
+      { data: [{ token: "a" }, { token: "b" }], error: null },
+    ])
     const resultado = await purgeExpiredQuizShortLinks("2026-08-30T12:00:00.000Z", client)
 
     assert.deepEqual(resultado, {
       status: "ok",
-      removidos: 7,
+      removidos: 2,
       cutoff: "2026-08-30T12:00:00.000Z",
+      limite_alcancado: false,
     })
     assert.deepEqual(chamadas, [
       {
         table: "quiz_result_short_links",
-        count: "exact",
+        operacao: "select",
+        colunas: "token",
         filtros: [["lte", "expires_at", "2026-08-30T12:00:00.000Z"]],
+        ordem: [["expires_at", true], ["token", true]],
+        limite: OPERATIONAL_RETENTION_BATCH_SIZE,
+      },
+      {
+        table: "quiz_result_short_links",
+        operacao: "delete",
+        colunas: "token",
+        filtros: [
+          ["in", "token", "a,b"],
+          ["lte", "expires_at", "2026-08-30T12:00:00.000Z"],
+        ],
+        ordem: [],
+        limite: null,
       },
     ])
   })
 
   it("notification_log: DELETE com digest_date < cutoff, nunca <=", async () => {
-    const { client, chamadas } = clientFake({ count: 3, error: null })
+    const { client, chamadas } = clientFake([
+      { data: [{ id: "1" }], error: null },
+      { data: [{ id: "1" }], error: null },
+    ])
     const resultado = await purgeNotificationLogsOlderThan("2026-06-01", client)
 
-    assert.deepEqual(resultado, { status: "ok", removidos: 3, cutoff: "2026-06-01" })
+    assert.deepEqual(resultado, {
+      status: "ok",
+      removidos: 1,
+      cutoff: "2026-06-01",
+      limite_alcancado: false,
+    })
     assert.deepEqual(chamadas, [
       {
         table: "notification_log",
-        count: "exact",
+        operacao: "select",
+        colunas: "id",
         filtros: [["lt", "digest_date", "2026-06-01"]],
+        ordem: [["digest_date", true], ["id", true]],
+        limite: OPERATIONAL_RETENTION_BATCH_SIZE,
+      },
+      {
+        table: "notification_log",
+        operacao: "delete",
+        colunas: "id",
+        filtros: [["in", "id", "1"], ["lt", "digest_date", "2026-06-01"]],
+        ordem: [],
+        limite: null,
       },
     ])
     // `<=` apagaria o log do próprio dia de corte, e esse log é a chave de
@@ -105,14 +173,14 @@ describe("retenção operacional agendada", () => {
       [purgeExpiredQuizShortLinks, { code: "42P01", message: 'relation "quiz_result_short_links" does not exist' }],
       [purgeNotificationLogsOlderThan, { code: "PGRST205", message: "schema cache" }],
     ] as const) {
-      const { client } = clientFake({ count: null, error: erro })
+      const { client } = clientFake([{ data: null, error: erro }])
       const resultado = await fn("2026-06-01", client)
       assert.deepEqual(resultado, { status: "tabela_ausente" })
     }
   })
 
   it("erro do banco vira resultado tipado, nunca exceção", async () => {
-    const { client } = clientFake({ count: null, error: { code: "57014", message: "timeout" } })
+    const { client } = clientFake([{ data: null, error: { code: "57014", message: "timeout" } }])
     assert.deepEqual(await purgeExpiredQuizShortLinks("2026-06-01", client), {
       status: "falhou",
       message: "timeout",
@@ -142,6 +210,13 @@ describe("retenção operacional agendada", () => {
     const agora = new Date("2026-08-30T12:00:00.000Z")
     assert.equal(quizShortLinkRetentionCutoffIso(agora), "2026-08-30T12:00:00.000Z")
   })
+
+  it("retenção agendada nasce desativada e só aceita o valor literal 1", () => {
+    assert.equal(operationalRetentionEnabled({}), false)
+    assert.equal(operationalRetentionEnabled({ PF_OPERATIONAL_RETENTION_ENABLED: "0" }), false)
+    assert.equal(operationalRetentionEnabled({ PF_OPERATIONAL_RETENTION_ENABLED: "true" }), false)
+    assert.equal(operationalRetentionEnabled({ PF_OPERATIONAL_RETENTION_ENABLED: " 1 " }), true)
+  })
 })
 
 function semComentarios(src: string): string {
@@ -160,10 +235,11 @@ describe("carona no cron diário", () => {
     ),
   )
 
-  it("o cron chama os três expurgos", () => {
+  it("o cron mantém analytics e guarda os dois novos expurgos atrás do opt-in", () => {
     assert.match(ROUTE, /purgeAnalyticsLaunchEventsOlderThan\(/)
-    assert.match(ROUTE, /purgeExpiredQuizShortLinks\(/)
-    assert.match(ROUTE, /purgeNotificationLogsOlderThan\(/)
+    assert.match(ROUTE, /retencaoOperacionalHabilitada\s*\?\s*await purgeExpiredQuizShortLinks\(/)
+    assert.match(ROUTE, /retencaoOperacionalHabilitada\s*\?\s*await purgeNotificationLogsOlderThan\(/)
+    assert.match(ROUTE, /status:\s*"desativado"/)
   })
 
   it("não inclui candidate_changes nem coleta_log", () => {

@@ -7,10 +7,9 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
  *
  * `analytics_launch_events` já pegava carona no cron diário de
  * `published-consistency`. `quiz_result_short_links` e `notification_log`
- * dependiam de alguém lembrar de rodar `scripts/retencao-operacional.ts` à mão,
- * e o script existe desde que as tabelas existem sem nenhum agendamento. As duas
- * crescem por uso do site, não por coleta: quem não roda o script acumula
- * indefinidamente.
+ * ganham uma opção de execução agendada, mas ela nasce fail-closed: deploy não
+ * autoriza deleção. O cron só entra aqui com `PF_OPERATIONAL_RETENTION_ENABLED=1`
+ * e cada execução remove no máximo um lote de 100 linhas por tabela.
  *
  * A política de cada tabela é a MESMA do script manual, de propósito:
  *   - short links: `expires_at <= agora`, que é o TTL que a própria linha
@@ -35,18 +34,30 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
  * duas ordens de grandeza sobre o risco real.
  */
 export const NOTIFICATION_LOG_RETENTION_DAYS = 90
+export const OPERATIONAL_RETENTION_BATCH_SIZE = 100
 
 const NOTIFICATION_LOG_TIME_ZONE = "America/Sao_Paulo"
 const MS_POR_DIA = 24 * 60 * 60 * 1000
 
 export type OperationalPurgeResult =
-  | { status: "ok"; removidos: number; cutoff: string }
+  | { status: "ok"; removidos: number; cutoff: string; limite_alcancado: boolean }
+  | { status: "desativado" }
   | { status: "tabela_ausente" }
   | { status: "falhou"; message: string }
 
-interface PurgeQuery extends PromiseLike<{ count: number | null; error: { code?: string; message?: string } | null }> {
+interface PurgeQueryResult {
+  data: Array<Record<string, unknown>> | null
+  error: { code?: string; message?: string } | null
+}
+
+interface PurgeQuery extends PromiseLike<PurgeQueryResult> {
+  select: (columns: string) => PurgeQuery
+  delete: () => PurgeQuery
+  in: (column: string, values: string[]) => PurgeQuery
   lte: (column: string, value: string) => PurgeQuery
   lt: (column: string, value: string) => PurgeQuery
+  order: (column: string, options: { ascending: boolean }) => PurgeQuery
+  limit: (value: number) => PurgeQuery
 }
 
 /**
@@ -55,7 +66,7 @@ interface PurgeQuery extends PromiseLike<{ count: number | null; error: { code?:
  * seria ler o código, e o que precisa ser provado é o filtro que vai no DELETE.
  */
 export interface RetentionSupabaseClient {
-  from: (table: string) => { delete: (options: { count: "exact" }) => PurgeQuery }
+  from: (table: string) => PurgeQuery
 }
 
 function defaultRetentionClient(): RetentionSupabaseClient {
@@ -98,6 +109,15 @@ export function quizShortLinkRetentionCutoffIso(agora = new Date()): string {
   return agora.toISOString()
 }
 
+/** A habilitação precisa ser deliberada no ambiente; deploy sozinho não apaga dados. */
+export function operationalRetentionEnabled(
+  env: { PF_OPERATIONAL_RETENTION_ENABLED?: string } = {
+    PF_OPERATIONAL_RETENTION_ENABLED: process.env.PF_OPERATIONAL_RETENTION_ENABLED,
+  },
+): boolean {
+  return env.PF_OPERATIONAL_RETENTION_ENABLED?.trim() === "1"
+}
+
 /**
  * Nunca lança: é passo acessório de um cron cujo trabalho principal é outro, e
  * falha de expurgo não pode apagar o sinal do gate de consistência.
@@ -107,18 +127,43 @@ export async function purgeExpiredQuizShortLinks(
   client: RetentionSupabaseClient = defaultRetentionClient(),
 ): Promise<OperationalPurgeResult> {
   try {
-    const supabase = client
-    const { count, error } = await supabase
+    const selection = await client
       .from("quiz_result_short_links")
-      .delete({ count: "exact" })
+      .select("token")
       .lte("expires_at", cutoffIso)
+      .order("expires_at", { ascending: true })
+      .order("token", { ascending: true })
+      .limit(OPERATIONAL_RETENTION_BATCH_SIZE)
 
-    if (error) {
-      if (isMissingTable(error, "quiz_result_short_links")) return { status: "tabela_ausente" }
-      return { status: "falhou", message: error.message ?? "erro sem mensagem" }
+    if (selection.error) {
+      if (isMissingTable(selection.error, "quiz_result_short_links")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: selection.error.message ?? "erro sem mensagem" }
+    }
+    const tokens = (selection.data ?? [])
+      .map((row) => row.token)
+      .filter((token): token is string => typeof token === "string")
+    if (tokens.length === 0) {
+      return { status: "ok", removidos: 0, cutoff: cutoffIso, limite_alcancado: false }
     }
 
-    return { status: "ok", removidos: count ?? 0, cutoff: cutoffIso }
+    const deletion = await client
+      .from("quiz_result_short_links")
+      .delete()
+      .in("token", tokens)
+      .lte("expires_at", cutoffIso)
+      .select("token")
+    if (deletion.error) {
+      if (isMissingTable(deletion.error, "quiz_result_short_links")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: deletion.error.message ?? "erro sem mensagem" }
+    }
+    const removidos = deletion.data?.length ?? 0
+
+    return {
+      status: "ok",
+      removidos,
+      cutoff: cutoffIso,
+      limite_alcancado: tokens.length === OPERATIONAL_RETENTION_BATCH_SIZE,
+    }
   } catch (erro) {
     return { status: "falhou", message: erro instanceof Error ? erro.message : String(erro) }
   }
@@ -130,18 +175,43 @@ export async function purgeNotificationLogsOlderThan(
   client: RetentionSupabaseClient = defaultRetentionClient(),
 ): Promise<OperationalPurgeResult> {
   try {
-    const supabase = client
-    const { count, error } = await supabase
+    const selection = await client
       .from("notification_log")
-      .delete({ count: "exact" })
+      .select("id")
       .lt("digest_date", cutoffDate)
+      .order("digest_date", { ascending: true })
+      .order("id", { ascending: true })
+      .limit(OPERATIONAL_RETENTION_BATCH_SIZE)
 
-    if (error) {
-      if (isMissingTable(error, "notification_log")) return { status: "tabela_ausente" }
-      return { status: "falhou", message: error.message ?? "erro sem mensagem" }
+    if (selection.error) {
+      if (isMissingTable(selection.error, "notification_log")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: selection.error.message ?? "erro sem mensagem" }
+    }
+    const ids = (selection.data ?? [])
+      .map((row) => row.id)
+      .filter((id): id is string => typeof id === "string")
+    if (ids.length === 0) {
+      return { status: "ok", removidos: 0, cutoff: cutoffDate, limite_alcancado: false }
     }
 
-    return { status: "ok", removidos: count ?? 0, cutoff: cutoffDate }
+    const deletion = await client
+      .from("notification_log")
+      .delete()
+      .in("id", ids)
+      .lt("digest_date", cutoffDate)
+      .select("id")
+    if (deletion.error) {
+      if (isMissingTable(deletion.error, "notification_log")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: deletion.error.message ?? "erro sem mensagem" }
+    }
+    const removidos = deletion.data?.length ?? 0
+
+    return {
+      status: "ok",
+      removidos,
+      cutoff: cutoffDate,
+      limite_alcancado: ids.length === OPERATIONAL_RETENTION_BATCH_SIZE,
+    }
   } catch (erro) {
     return { status: "falhou", message: erro instanceof Error ? erro.message : String(erro) }
   }
