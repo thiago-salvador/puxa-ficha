@@ -155,7 +155,7 @@ horário de verão, inexistente no Brasil em 06/08/2026.
 |---|---:|---:|---|
 | `/api/news/refresh` | 08:00 diária | 05:00 | Atualizar notícias. |
 | `/api/news/refresh/recover` | 08:30 diária | 05:30 | Recuperar lotes pendentes sem duplicar execução. |
-| `/api/internal/published-consistency` | 09:00 diária | 06:00 | Conferir consistência publicada. |
+| `/api/internal/published-consistency` | 09:00 diária | 06:00 | Conferir consistência publicada. Carona de manutenção: expurgo de retenção de `analytics_launch_events`, `quiz_result_short_links` e `notification_log` (90 dias cada), fail-open. `candidate_changes` e `coleta_log` ficam de fora. |
 | `/api/internal/runtime-smoke` | 09:30 diária | 06:30 | Smoke operacional. |
 | `/api/alerts/send-digest` | 12:00 diária | 09:00 | Enviar digest de alertas habilitados. |
 | `/api/internal/revalidate-public-cache` | `*/15 * * * *` | a cada 15 min | Invalidar cache público das fichas. |
