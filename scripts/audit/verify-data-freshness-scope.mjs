@@ -72,6 +72,7 @@ const allowed = [
   /^supabase\/rollback\/20260829030000_candidate_roster_publication_integrity\.rollback\.sql$/,
   /^supabase\/rollback\/20260829030002_candidate_registration_structured_state\.rollback\.sql$/,
   /^\.github\/workflows\/(apply|rollback)-candidate-roster-integrity-production\.yml$/,
+  /^\.github\/merge-queue\/irreversible-change-manifest\.json$/,
   /^docs\/plans\/2026-08-28-candidate-roster-integrity\.md$/,
   /^scripts\/audit\/allowlist-chapas-20260827\.json$/,
   /^scripts\/audit\/allowlist-candidate-roster-integrity-20260829\.json$/,

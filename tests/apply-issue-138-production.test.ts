@@ -100,3 +100,15 @@ test("manifesto nomeia aprovacao e artefatos de compensacao sem payload SQL", ()
   assert.ok(MANIFEST.verification.checks.includes("ddl-backfill-ledger-idempotency-hashes"))
   assert.ok(!JSON.stringify(MANIFEST).match(/"(?:sql|query|statement)"/i))
 })
+
+test("manifesto mantém 30002 entre o roster e a release de proposições", () => {
+  const roster = MANIFEST.scope.releases.find(
+    (release: { name: string }) => release.name === "candidate-roster-integrity",
+  )
+  const propositions = MANIFEST.scope.releases.find(
+    (release: { name: string }) => release.name === "proposicao-source-key",
+  )
+  assert.deepEqual(roster.versions, ["20260829030000", "20260829030001", "20260829030002"])
+  assert.equal(propositions.predecessor, roster.versions.at(-1))
+  assert.match(APPLY, new RegExp(`previous_version=${propositions.predecessor}`))
+})
