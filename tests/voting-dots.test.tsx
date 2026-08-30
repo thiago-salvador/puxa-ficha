@@ -34,14 +34,25 @@ test("VotingDots renderiza copy pública normalizada", () => {
       contradicao_descricao: null,
       votacao: { titulo: "PEC 3" },
     },
+    {
+      id: "v4",
+      candidato_id: "cand-1",
+      votacao_id: "vt-4",
+      voto: "artigo_17",
+      contradicao: false,
+      contradicao_descricao: null,
+      votacao: { titulo: "PEC 4" },
+    },
   ] as VotoCandidato[]
 
   const html = renderToStaticMarkup(createElement(VotingDots, { votos }))
 
-  assert.match(html, /Padrão de voto \(3 votações\)/)
+  assert.match(html, /Padrão de voto \(4 votações\)/)
   assert.match(html, /A favor \(1\)/)
   assert.match(html, /Contra \(1\)/)
   assert.match(html, /Abstenção \(1\)/)
+  assert.match(html, /Presidiu \(Art\. 17\) \(1\)/)
+  assert.match(html, /PEC 4: Presidiu a sessão \(Art\. 17\).*não vota.*salvo empate.*quórum/i)
   assert.match(html, /Contradições \(1\)/)
   assert.match(html, /PEC 2: Não \(contradições\)/)
   assert.doesNotMatch(html, /Padrao de voto/)

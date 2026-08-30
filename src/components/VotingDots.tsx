@@ -3,14 +3,16 @@ import {
   fixedCopy,
   formatVoteBadgeLabel,
   formatVoteLegendLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 
-const VOTE_COLORS: Record<string, { bg: string; label: string }> = {
+const VOTE_COLORS: Record<VotoCandidato["voto"], { bg: string; label: string }> = {
   sim: { bg: "bg-foreground", label: formatVoteLegendLabel("sim") },
   "não": { bg: "bg-foreground/30", label: formatVoteLegendLabel("não") },
   "abstenção": { bg: "bg-amber-400", label: formatVoteLegendLabel("abstenção") },
   ausente: { bg: "bg-gray-200", label: formatVoteLegendLabel("ausente") },
   "obstrução": { bg: "bg-red-400", label: formatVoteLegendLabel("obstrução") },
+  artigo_17: { bg: "bg-sky-400", label: formatVoteLegendLabel("artigo_17") },
 }
 
 export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
@@ -29,12 +31,13 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
       {/* Dot grid */}
       <div className="mt-3 flex flex-wrap gap-1.5">
         {votos.map((v) => {
-          const style = VOTE_COLORS[v.voto] ?? VOTE_COLORS.ausente
+          const style = VOTE_COLORS[v.voto]
+          const nota = formatVoteNote(v.voto)
           return (
             <div
               key={v.id}
               className={`size-4 rounded-[3px] ${style.bg} ${v.contradicao ? "ring-2 ring-amber-400 ring-offset-1" : ""}`}
-              title={`${v.votacao?.titulo ?? "Votação"}: ${formatVoteBadgeLabel(v.voto)}${v.contradicao ? ` (${fixedCopy.contradictions.toLowerCase()})` : ""}`}
+              title={`${v.votacao?.titulo ?? "Votação"}: ${formatVoteBadgeLabel(v.voto)}${nota ? `. ${nota}` : ""}${v.contradicao ? ` (${fixedCopy.contradictions.toLowerCase()})` : ""}`}
             />
           )
         })}
@@ -44,7 +47,7 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
         {Object.entries(VOTE_COLORS)
           .filter(([key]) => counts[key])
           .map(([key, val]) => (
-            <div key={key} className="flex items-center gap-1.5">
+            <div key={key} className="flex items-center gap-1.5" title={formatVoteNote(key) || undefined}>
               <div className={`size-2.5 rounded-[2px] ${val.bg}`} />
               <span className="text-[10px] font-semibold text-muted-foreground">
                 {val.label} ({counts[key]})

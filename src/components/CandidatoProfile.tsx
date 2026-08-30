@@ -83,6 +83,7 @@ import {
   formatProcessTypeLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import {
@@ -1087,6 +1088,7 @@ export function CandidatoProfile({
                           )}
                         </div>
                         <span
+                          title={formatVoteNote(v.voto) || undefined}
                           className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
                             v.voto === "sim"
                               ? "bg-foreground text-background"

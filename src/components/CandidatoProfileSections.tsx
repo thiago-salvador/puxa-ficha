@@ -58,6 +58,7 @@ import {
   formatPublicLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import {
   financiamentoPleitoNotaRodape,
@@ -1750,6 +1751,7 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                 )}
               </div>
               <span
+                title={formatVoteNote(voto.voto) || undefined}
                 className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
                   voto.voto === "sim"
                     ? "bg-foreground text-background"

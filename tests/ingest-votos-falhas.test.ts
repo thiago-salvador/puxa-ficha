@@ -4,6 +4,7 @@ import {
   __restaurarPortasDeVotos,
   __usarPortasDeVotosParaTeste,
   ingestVotos,
+  parseVoto,
 } from "../scripts/lib/ingest-camara"
 
 /**
@@ -38,6 +39,30 @@ afterEach(() => {
 })
 
 describe("matching de votos: caminho feliz (item 7)", () => {
+  test("normaliza Artigo 17 sem confundir com ausência", () => {
+    assert.equal(parseVoto("Artigo 17"), "artigo_17")
+    assert.equal(parseVoto("valor futuro da Câmara"), null)
+    assert.equal(parseVoto("Simbólico"), null, "substring conhecida não pode furar o fail-closed")
+  })
+
+  test("persiste Artigo 17 como categoria própria", async () => {
+    const gravados: string[] = []
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
+      buscarDetalheDaVotacao: async () => ({ descricao: DESCRICAO_MERITO }),
+      buscarVotosDaVotacao: async () => votosCom(ID_DEPUTADO, "Artigo 17"),
+      gravarVoto: async (linha) => {
+        gravados.push(linha.voto)
+        return { error: null }
+      },
+    })
+
+    const r = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(r.persistidos, 1)
+    assert.deepEqual(gravados, ["artigo_17"])
+    assert.deepEqual(r.erros, [])
+  })
+
   test("conta só o que o banco confirmou", async () => {
     __usarPortasDeVotosParaTeste({
       selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
@@ -66,6 +91,24 @@ describe("matching de votos: caminho feliz (item 7)", () => {
 })
 
 describe("matching de votos: falhas viram erro, nunca sucesso silencioso", () => {
+  test("tipoVoto desconhecido põe o par em revisão e não grava", async () => {
+    let tentouGravar = false
+    __usarPortasDeVotosParaTeste({
+      selecionarVotacoesChave: async () => ({ data: [VOTACAO_OK], error: null }),
+      buscarDetalheDaVotacao: async () => ({ descricao: DESCRICAO_MERITO }),
+      buscarVotosDaVotacao: async () => votosCom(ID_DEPUTADO, "Valor novo"),
+      gravarVoto: async () => {
+        tentouGravar = true
+        return { error: null }
+      },
+    })
+
+    const r = await ingestVotos(ID_DEPUTADO, "cand-1", "cabo-daciolo")
+    assert.equal(r.persistidos, 0)
+    assert.equal(tentouGravar, false)
+    assert.match(r.erros[0], /tipoVoto desconhecido "Valor novo".*par enviado para revisao/)
+  })
+
   test("erro no select de votacoes_chave sobe como erro", async () => {
     __usarPortasDeVotosParaTeste({
       selecionarVotacoesChave: async () => ({ data: null, error: { message: "connection reset" } }),

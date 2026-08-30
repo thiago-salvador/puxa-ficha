@@ -3,7 +3,7 @@
 import { ChevronRight } from "lucide-react"
 import { enrichContradictions } from "@/lib/contradiction-utils"
 import type { PontoAtencao, VotoCandidato } from "@/lib/types"
-import { fixedCopy, formatTemaLabel, formatVoteBadgeLabel } from "@/lib/ui-labels"
+import { fixedCopy, formatTemaLabel, formatVoteBadgeLabel, formatVoteNote } from "@/lib/ui-labels"
 import { formatDate } from "@/lib/utils"
 import { MetaBadge } from "./MetaBadge"
 
@@ -73,7 +73,10 @@ export function ContradictionsHighlight({
                   )}
                 </div>
               </div>
-              <span className={`mt-0.5 shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${voteBadgeClass(voto.voto)}`}>
+              <span
+                className={`mt-0.5 shrink-0 rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${voteBadgeClass(voto.voto)}`}
+                title={formatVoteNote(voto.voto) || undefined}
+              >
                 {formatVoteBadgeLabel(voto.voto)}
               </span>
             </div>
