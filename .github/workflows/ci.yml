@@ -110,6 +110,110 @@ jobs:
           NEXT_PUBLIC_SITE_URL: http://localhost:3000
         run: npm run build
 
+  # H1 do master-review de 2026-08-28: os gates `audit:*` de dominio nao rodam em
+  # PR nenhum. O `verify` roda `npm test`, que cobre boa parte dos testes de
+  # dominio, mas os audits de integridade, escala e escopo so rodam no cron
+  # seguinte, ou seja DEPOIS do merge. Um PR que quebra um invariante desses
+  # passa com CI verde e a deteccao chega no dia seguinte.
+  #
+  # Job proprio e nao steps no `verify` por dois motivos: nao entra no caminho
+  # critico de quem mexe em UI, e o recorte por path fica visivel num lugar so.
+  #
+  # RECORTE. Os paths abaixo foram medidos no repo, nao copiados do relatorio: os
+  # dados de programas de governo vivem em `src/data/programas-governo*` e
+  # `scripts/data/programas-governo*`, e os de pesquisas nao vivem em arquivo
+  # nenhum (estao no banco), entao o gatilho de pesquisas e o codigo e os scripts.
+  #
+  # SEM SEGREDO, de proposito. Este workflow roda em PR de qualquer fork, e
+  # `Settings/AUTOMATIONS_AND_ENVIRONMENTS.md` diz que PR nunca recebe credencial
+  # de producao. Todo audit aqui e estatico: le arquivo do repo, nao consulta
+  # Supabase nem rede. Foi por isso que `audit:data-freshness` NAO entrou (ver o
+  # step comentado no fim do job).
+  audits-de-dominio:
+    name: Auditorias de domínio (paths tocados)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          # Precisa do histórico para comparar com a base do PR.
+          fetch-depth: 0
+
+      # Filtro por path sem action de terceiro: o checkout acima já traz o
+      # histórico, então `git diff` responde a mesma pergunta que um
+      # paths-filter, sem somar dependência de supply chain ao CI.
+      - name: Decidir se os audits se aplicam a este diff
+        id: recorte
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            echo "base indisponível; roda por precaução"
+            echo "aplica=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          ALVOS='
+          src/data/programas-governo
+          src/lib/programa-governo
+          scripts/data/programas-governo
+          src/lib/pesquisas-eleitorais
+          scripts/pesquisas-
+          scripts/audit/
+          .github/workflows/
+          package.json
+          '
+          MUDADOS="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          APLICA=false
+          for alvo in $ALVOS; do
+            if printf '%s\n' "$MUDADOS" | grep -q "^${alvo}"; then
+              echo "toca $alvo"
+              APLICA=true
+            fi
+          done
+          echo "aplica=$APLICA" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: steps.recorte.outputs.aplica == 'true'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm ci
+
+      # Integridade dos registros de programa de governo e do inventário.
+      - name: Programas de governo (integridade)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo
+
+      - name: Programas de governo (inventário dos governadores)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:governadores
+
+      - name: Programas de governo (escala)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:escala
+
+      - name: Programas de governo (escopo)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:scope
+
+      - name: Pesquisas eleitorais (gate)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:pesquisas:gate
+
+      # Só o escopo. O `audit:data-freshness` completo exige
+      # `--published=<snapshot.json>`, e esse snapshot sai de um `psql` com
+      # `SUPABASE_DB_URL` (ver data-freshness-audit.yml). Segredo de produção não
+      # entra em PR, então ele continua onde está: no cron diário das 11:37 UTC.
+      - name: Frescor dos dados (escopo)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:data-freshness:scope
+
   # A cobertura saiu do `verify` em 18/08/2026, medida antes de mexer: levava 347
   # dos 651 segundos do job, mais da metade, e tem `continue-on-error: true`, ou
   # seja nao pode reprovar nada. O comando roda a suite inteira uma SEGUNDA vez
