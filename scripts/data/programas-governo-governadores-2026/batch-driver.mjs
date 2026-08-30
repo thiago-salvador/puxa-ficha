@@ -1014,7 +1014,14 @@ async function disparar(contexto, unidade, inventoryPath) {
     } catch (erro) {
       resolver({ code: -1, stderr: `${stderr}\n${erro.message}`, inicioProcesso })
     }
-  }).then((resultado) => finalizar(contexto, unidade, resultado))
+  })
+    .then((resultado) => finalizar(contexto, unidade, resultado))
+    .finally(() => {
+      // A unidade só deixa de estar em voo depois que toda a finalização,
+      // inclusive estado e telemetria, terminou. Remover antes permitia que
+      // executarBatch retornasse enquanto ainda havia escrita no runDir.
+      contexto.emVoo.delete(item.chave)
+    })
   unidade.conclusao = conclusao
   contexto.emVoo.set(item.chave, unidade)
   contexto.disparos += 1
@@ -1028,7 +1035,6 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
   const classificacao = classificarRegistro(registro)
   const textoErro = `${stderr}\n${registro?.ingestao?.erro ?? ""}`
   const cota = eErroCota(textoErro)
-  contexto.emVoo.delete(item.chave)
   if (classificacao.estado === "complete") {
     unidade.estado = "complete"
     contexto.metricas.concluidos += 1
