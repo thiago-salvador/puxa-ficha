@@ -481,6 +481,12 @@ test("RemoteFetchClient: cooldown unico permite recuperacao half-open e segue a 
 
 test("RemoteFetchClient: half-open permite uma unica probe concorrente por host", async () => {
   let calls = 0
+  let now = 0
+  let releaseCooldown!: () => void
+  let markCooldownStarted!: () => void
+  const cooldownStarted = new Promise<void>((resolve) => {
+    markCooldownStarted = resolve
+  })
   const waits: number[] = []
   const client = new RemoteFetchClient({
     timeoutMs: 100,
@@ -488,8 +494,16 @@ test("RemoteFetchClient: half-open permite uma unica probe concorrente por host"
     paceMs: 0,
     circuitFailureThreshold: 1,
     circuitCooldownMs: 1_000,
+    now: () => now,
     sleep: async (ms) => {
       waits.push(ms)
+      markCooldownStarted()
+      await new Promise<void>((resolve) => {
+        releaseCooldown = () => {
+          now += ms
+          resolve()
+        }
+      })
     },
     fetchImpl: async () => {
       calls++
@@ -499,10 +513,11 @@ test("RemoteFetchClient: half-open permite uma unica probe concorrente por host"
   })
 
   const first = await client.get("https://dadosabertos.camara.leg.br/api/v2/deputados/1")
-  const probes = await Promise.all([
-    client.get("https://dadosabertos.camara.leg.br/api/v2/deputados/2"),
-    client.get("https://dadosabertos.camara.leg.br/api/v2/deputados/3"),
-  ])
+  const firstProbe = client.get("https://dadosabertos.camara.leg.br/api/v2/deputados/2")
+  await cooldownStarted
+  const secondProbe = client.get("https://dadosabertos.camara.leg.br/api/v2/deputados/3")
+  releaseCooldown()
+  const probes = await Promise.all([firstProbe, secondProbe])
   assert.equal(first.status, "error")
   assert.deepEqual(probes.map((result) => result.status).sort(), ["error", "ok"])
   assert.deepEqual(probes.map((result) => result.error_info?.kind).filter(Boolean), ["circuit_open"])
