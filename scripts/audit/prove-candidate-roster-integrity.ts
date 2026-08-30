@@ -14,11 +14,16 @@ const IMAGE =
 const MIGRATIONS = [
   "supabase/migrations/20260829030000_candidate_roster_publication_integrity.sql",
   "supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql",
+  "supabase/migrations/20260829030002_candidate_registration_structured_state.sql",
 ];
 const READBACK =
   "supabase/readback/20260829030000_candidate_roster_publication_integrity.readback.sql";
 const ROLLBACK =
   "supabase/rollback/20260829030000_candidate_roster_publication_integrity.rollback.sql";
+const VERIFICATION_STATE_READBACK =
+  "supabase/readback/20260829030002_candidate_registration_structured_state.readback.sql";
+const VERIFICATION_STATE_ROLLBACK =
+  "supabase/rollback/20260829030002_candidate_registration_structured_state.rollback.sql";
 
 type SafeCandidate = Record<string, unknown>;
 type SafeSlate = Record<string, unknown>;
@@ -245,12 +250,14 @@ async function main(): Promise<void> {
       psql(readFileSync(migration, "utf8"));
     }
     psql(readFileSync(READBACK, "utf8"));
+    psql(readFileSync(VERIFICATION_STATE_READBACK, "utf8"));
     const forward = JSON.parse(
       psql(`SELECT json_build_object(
       'header_count',(SELECT count(*) FROM public.candidatos_publico WHERE cargo_disputado IN ('Presidente','Governador')),
       'cleber_public',(SELECT count(*) FROM public.candidatos_publico WHERE slug='cleber-rabelo'),
       'well_ready',(SELECT count(*) FROM public.candidatos_publico WHERE slug='well-macedo' AND foto_url IS NOT NULL AND biografia IS NOT NULL),
       'well_vice',(SELECT count(*) FROM public.chapas_2026_publico WHERE titular_slug='well-macedo' AND vice_nome_urna='SEU ALEX'),
+      'pablo_registration_state',(SELECT verificacao_campos->'candidate_registration'->>'estado' FROM public.candidatos_publico WHERE slug='pablo-marcal'),
       'required_missing',(SELECT count(*) FROM public.candidatos_publico
         WHERE cargo_disputado IN ('Presidente','Governador') AND (
           COALESCE(btrim(partido_sigla),'')='' OR COALESCE(btrim(situacao_candidatura),'')='' OR
@@ -277,12 +284,13 @@ async function main(): Promise<void> {
         WHERE cargo_disputado IN ('Presidente','Governador') AND
           (redes_sociais IS NULL OR redes_sociais::text IN ('{}','[]','null')))
     );`),
-    ) as Record<string, number | string[]>;
+    ) as Record<string, number | string | string[]>;
     if (
       forward.header_count !== 208 ||
       forward.cleber_public !== 0 ||
       forward.well_ready !== 1 ||
       forward.well_vice !== 1 ||
+      forward.pablo_registration_state !== "publicado" ||
       forward.required_missing !== 0 ||
       forward.verification_missing !== 0 ||
       forward.gender_missing !== 0 ||
@@ -308,6 +316,20 @@ async function main(): Promise<void> {
        ${readFileSync(ROLLBACK, "utf8")}`,
       /curadoria posterior à forward/,
     );
+    psqlMustFail(
+      `BEGIN;
+       UPDATE public.candidatos
+       SET verificacao_campos = jsonb_set(
+         verificacao_campos,
+         '{candidate_registration,estado}',
+         '"vazio_confirmado"'::jsonb,
+         false
+       )
+       WHERE slug='pablo-marcal';
+       ${readFileSync(VERIFICATION_STATE_ROLLBACK, "utf8")}`,
+      /rollback recusado: candidate_registration de pablo-marcal divergiu da forward 30002/,
+    );
+    psql(readFileSync(VERIFICATION_STATE_ROLLBACK, "utf8"));
     psql(readFileSync(ROLLBACK, "utf8"));
     const rollback = JSON.parse(
       psql(`SELECT json_build_object(
@@ -321,7 +343,7 @@ async function main(): Promise<void> {
       );
     }
     console.log(
-      `CANDIDATE_ROSTER_INTEGRITY_PROOF_PASS header=208 cleber=0 well_ready=1 well_vice=SEU_ALEX required_missing=0 verification_missing=0 gender_missing=0 civil_status_missing=0 race_missing=0 social_missing=${forward.social_missing} social_missing_slugs=${JSON.stringify(forward.social_missing_slugs)} rollback=ok`,
+      `CANDIDATE_ROSTER_INTEGRITY_PROOF_PASS header=208 cleber=0 well_ready=1 well_vice=SEU_ALEX pablo_registration_state=publicado required_missing=0 verification_missing=0 gender_missing=0 civil_status_missing=0 race_missing=0 social_missing=${forward.social_missing} social_missing_slugs=${JSON.stringify(forward.social_missing_slugs)} rollback=ok`,
     );
   } finally {
     spawnSync("docker", ["rm", "-f", CONTAINER], { stdio: "ignore" });

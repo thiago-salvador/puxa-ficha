@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   rollback:
-    name: Rollback coordenado roster 30000 e 30001
+    name: Rollback coordenado roster 30002, 30000 e 30001
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -25,6 +25,7 @@ jobs:
     env:
       PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
       PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      PF_BACKUP_PATH: ${{ runner.temp }}/candidate-registration-30002-before-rollback.json
       GITHUB_REF: ${{ github.ref }}
     steps:
       - name: Validar dispatch manual e SHA fechado
@@ -43,7 +44,26 @@ jobs:
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 24
+          cache: npm
+      - name: Instalar dependências para a prova canônica
+        run: npm ci
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Executar rollback coordenado e readback
+      - name: Capturar backup read-only antes do dry-run
+        run: bash scripts/audit/rollback-candidate-registration-state-production.sh --backup-only
+      - name: Preservar backup independente da execução
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: candidate-registration-30002-before-rollback-${{ inputs.expected_sha }}
+          path: ${{ runner.temp }}/candidate-registration-30002-before-rollback.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Dry-run de apply, readback e rollback em PostgreSQL 17 descartável
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run audit:candidate-integrity:prove
+      - name: Reverter estado residual e validar readback
+        run: bash scripts/audit/rollback-candidate-registration-state-production.sh
+      - name: Executar rollback coordenado do roster e readback
         run: bash scripts/audit/rollback-candidate-roster-integrity-production.sh

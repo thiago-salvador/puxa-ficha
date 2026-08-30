@@ -10,6 +10,10 @@ const schemaMigration = readFileSync(
   "supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql",
   "utf8",
 );
+const verificationStateMigration = readFileSync(
+  "supabase/migrations/20260829030002_candidate_registration_structured_state.sql",
+  "utf8",
+);
 const migration = `${dataMigration}\n${schemaMigration}`;
 const readback = readFileSync(
   "supabase/readback/20260829030000_candidate_roster_publication_integrity.readback.sql",
@@ -17,6 +21,14 @@ const readback = readFileSync(
 );
 const rollback = readFileSync(
   "supabase/rollback/20260829030000_candidate_roster_publication_integrity.rollback.sql",
+  "utf8",
+);
+const verificationStateReadback = readFileSync(
+  "supabase/readback/20260829030002_candidate_registration_structured_state.readback.sql",
+  "utf8",
+);
+const verificationStateRollback = readFileSync(
+  "supabase/rollback/20260829030002_candidate_registration_structured_state.rollback.sql",
   "utf8",
 );
 const demographics = JSON.parse(
@@ -102,6 +114,43 @@ test("remediação e readback cobrem o gate mínimo inteiro", () => {
   );
   assert.match(proof, /psqlMustFail/);
   assert.match(proof, /verificacao_campos=NULL/);
+});
+
+test("follow-up estrutura o estado de Pablo sem substituir fonte e data", () => {
+  assert.match(verificationStateMigration, /slug = 'pablo-marcal'/);
+  assert.match(
+    verificationStateMigration,
+    /\{candidate_registration,estado\}/,
+  );
+  assert.match(verificationStateMigration, /to_jsonb\('publicado'::text\)/);
+  assert.match(verificationStateMigration, /TSE DivulgaCand 2026/);
+  assert.match(
+    verificationStateMigration,
+    /2026-08-16T18:02:07\.454221\+00:00/,
+  );
+  assert.doesNotMatch(verificationStateMigration, /DELETE FROM/i);
+
+  for (const proof of [verificationStateReadback, verificationStateRollback]) {
+    assert.match(proof, /pablo-marcal/);
+    assert.match(proof, /candidate_registration/);
+    assert.match(proof, /TSE DivulgaCand 2026/);
+    assert.match(proof, /2026-08-16T18:02:07\.454221\+00:00/);
+  }
+  assert.match(verificationStateReadback, /->> 'estado' =\s*'publicado'/);
+  assert.match(verificationStateRollback, /rollback recusado/i);
+  assert.match(verificationStateRollback, /FOR UPDATE/);
+  const proof = readFileSync(
+    "scripts/audit/prove-candidate-roster-integrity.ts",
+    "utf8",
+  );
+  assert.match(
+    proof,
+    /psqlMustFail\([\s\S]*candidate_registration,estado[\s\S]*VERIFICATION_STATE_ROLLBACK[\s\S]*rollback recusado/,
+  );
+  assert.match(
+    verificationStateRollback,
+    /\(verificacao_campos -> 'candidate_registration'\) - 'estado'/,
+  );
 });
 
 test("remediação demográfica cobre todas as lacunas sem persistir PII", () => {

@@ -79,6 +79,7 @@ export function classifyOfficialCandidacy(
 export function reconcilePublicRoster(
   official: readonly OfficialCandidacy[],
   published: readonly PublicCandidateSummary[],
+  crosswalk: readonly ActiveProfileCrosswalkEntry[] = [],
 ) {
   const active = official.filter(
     (row) => classifyOfficialCandidacy(row) === "active",
@@ -131,9 +132,40 @@ export function reconcilePublicRoster(
           normalize(profile.uf) !== normalize(row.uf)),
     );
   });
-  const duplicateActiveMappings = Object.fromEntries(
-    [...activeBySlug.entries()].filter(([, rows]) => rows.length > 1),
+  const quarantineBySlug = new Map(
+    crosswalk
+      .filter(
+        (profile) =>
+          profile.publication_status === "quarantine_duplicate_active",
+      )
+      .map((profile) => [normalize(profile.profile_slug), profile]),
   );
+  const duplicateActiveMappings: Record<string, OfficialCandidacy[]> = {};
+  const quarantinedDuplicateActiveMappings: Record<
+    string,
+    OfficialCandidacy[]
+  > = {};
+  for (const [slug, rows] of activeBySlug.entries()) {
+    if (rows.length <= 1) continue;
+    const quarantine = quarantineBySlug.get(slug);
+    const actualRegistrations = rows
+      .map((row) => row.sq_candidato)
+      .sort((left, right) => left.localeCompare(right));
+    const expectedRegistrations = [...(quarantine?.registration_sqs ?? [])].sort(
+      (left, right) => left.localeCompare(right),
+    );
+    const matchesQuarantine =
+      quarantine?.canonical_registration_sq === null &&
+      actualRegistrations.length === expectedRegistrations.length &&
+      actualRegistrations.every(
+        (registration, index) => registration === expectedRegistrations[index],
+      );
+    if (matchesQuarantine) {
+      quarantinedDuplicateActiveMappings[slug] = rows;
+    } else {
+      duplicateActiveMappings[slug] = rows;
+    }
+  }
   const issues =
     missingPublic.length +
     stalePublic.length +
@@ -151,6 +183,8 @@ export function reconcilePublicRoster(
     terminal_official: terminal,
     unresolved_official: unresolved,
     duplicate_active_mappings: duplicateActiveMappings,
+    quarantined_duplicate_active_mappings:
+      quarantinedDuplicateActiveMappings,
   };
 }
 

@@ -1,0 +1,19 @@
+{
+  "_comentario": "Autoriza somente a correção estrutural de candidate_registration em Pablo Marçal. A migration preserva fonte, data e todo o restante do JSON, recusando qualquer estado diferente do baseline auditado.",
+  "recorte": "candidate-registration-state-20260829",
+  "migration": "20260829030002_candidate_registration_structured_state.sql",
+  "fonte": "Readback público do run data-freshness 33280882817 e TSE DivulgaCand 2026 já registrados em verificacao_campos.",
+  "coorte": ["pablo-marcal"],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "pablo-marcal",
+      "campos": ["verificacao_campos"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": []
+}

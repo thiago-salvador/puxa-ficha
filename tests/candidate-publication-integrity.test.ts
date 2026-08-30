@@ -57,8 +57,7 @@ test("reconcilia o conjunto público inteiro e não mascara stale com cardinalid
 });
 
 test("detecta duas inscrições oficiais ativas ligadas ao mesmo perfil", () => {
-  const report = reconcilePublicRoster(
-    [
+  const duplicateOfficial = [
       {
         sq_candidato: "110002553937",
         profile_slug: "laudicerio-aguiar",
@@ -75,7 +74,9 @@ test("detecta duas inscrições oficiais ativas ligadas ao mesmo perfil", () => 
         name: "SARGENTO LAUDICÉRIO",
         status: "Aguardando julgamento",
       },
-    ],
+    ] satisfies OfficialCandidacy[];
+  const report = reconcilePublicRoster(
+    duplicateOfficial,
     [{ slug: "laudicerio-aguiar", office: "Governador", uf: "MT" }],
   );
 
@@ -85,6 +86,66 @@ test("detecta duas inscrições oficiais ativas ligadas ao mesmo perfil", () => 
     "laudicerio-aguiar",
   ]);
   assert.equal(report.status, "review_required");
+});
+
+test("quarentena canônica zera somente a duplicidade ativa exata", () => {
+  const duplicateOfficial = [
+    {
+      sq_candidato: "110002553937",
+      profile_slug: "laudicerio-aguiar",
+      office: "Governador",
+      uf: "MT",
+      name: "SARGENTO LAUDICÉRIO (LAU)",
+      status: "Aguardando julgamento",
+    },
+    {
+      sq_candidato: "110002554073",
+      profile_slug: "laudicerio-aguiar",
+      office: "Governador",
+      uf: "MT",
+      name: "SARGENTO LAUDICÉRIO",
+      status: "Aguardando julgamento",
+    },
+  ] satisfies OfficialCandidacy[];
+  const published = [
+    { slug: "laudicerio-aguiar", office: "Governador", uf: "MT" },
+  ] as const;
+  const crosswalk = [
+    {
+      profile_slug: "laudicerio-aguiar",
+      canonical_registration_sq: null,
+      registration_sqs: ["110002553937", "110002554073"],
+      publication_status: "quarantine_duplicate_active" as const,
+    },
+  ];
+
+  const authorized = reconcilePublicRoster(
+    duplicateOfficial,
+    published,
+    crosswalk,
+  );
+  assert.equal(authorized.status, "ok");
+  assert.deepEqual(Object.keys(authorized.duplicate_active_mappings), []);
+  assert.deepEqual(
+    Object.keys(authorized.quarantined_duplicate_active_mappings),
+    ["laudicerio-aguiar"],
+  );
+
+  const drifted = reconcilePublicRoster(
+    [
+      ...duplicateOfficial,
+      {
+        ...duplicateOfficial[1],
+        sq_candidato: "110002559999",
+      },
+    ],
+    published,
+    crosswalk,
+  );
+  assert.equal(drifted.status, "review_required");
+  assert.deepEqual(Object.keys(drifted.duplicate_active_mappings), [
+    "laudicerio-aguiar",
+  ]);
 });
 
 test("mesmo slug em cargo ou UF divergente não aprova a reconciliação", () => {
@@ -197,4 +258,35 @@ test("perfil com valor ou vazio confirmado em todas as frentes pode ser admitido
   assert.equal(report.ready, true);
   assert.deepEqual(report.missing_fields, []);
   assert.deepEqual(report.missing_verification, []);
+});
+
+test("objeto legado de Pablo sem estado não satisfaz a verificação estruturada", () => {
+  const report = analyzeProfileAdmission({
+    slug: "pablo-marcal",
+    partido_sigla: "PRTB",
+    situacao_candidatura: "aguardando julgamento",
+    foto_url: "https://divulgacandcontas.tse.jus.br/foto.jpg",
+    biografia: "Biografia factual sustentada pelas fontes declaradas.",
+    naturalidade: "Goiânia (GO)",
+    data_nascimento: "1987-04-18",
+    formacao: "Superior completo",
+    profissao_declarada: "Empresário",
+    genero: "Masculino",
+    estado_civil: "Casado(a)",
+    cor_raca: "Branca",
+    verificacao_campos: {
+      candidate_registration: {
+        fonte: "TSE DivulgaCand 2026",
+        verificado_em: "2026-08-16T18:02:07.454221+00:00",
+      },
+      candidate_complement: {
+        estado: "publicado",
+        verificado_em: "2026-08-16T18:02:07.454221+00:00",
+      },
+    },
+  });
+
+  assert.equal(report.ready, false);
+  assert.deepEqual(report.missing_fields, []);
+  assert.deepEqual(report.missing_verification, ["candidate_registration"]);
 });

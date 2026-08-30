@@ -46,26 +46,32 @@ export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 data_version=20260829030000
 schema_version=20260829030001
+successor_version=20260829030002
 previous_version=20260828025037
 data=("$ROOT/supabase/migrations/${data_version}_"*.sql)
 schema=("$ROOT/supabase/migrations/${schema_version}_"*.sql)
 data_rollback=("$ROOT/supabase/rollback/${data_version}_"*.rollback.sql)
 schema_rollback=("$ROOT/supabase/rollback/${schema_version}_"*.rollback.sql)
 readback=("$ROOT/supabase/readback/${data_version}_candidate_roster_publication_integrity.readback.sql")
+successor=("$ROOT/supabase/migrations/${successor_version}_"*.sql)
 [[ ${#data[@]} -eq 1 && -f ${data[0]} ]] || { echo "FAIL: roster data nao unico" >&2; exit 2; }
 [[ ${#schema[@]} -eq 1 && -f ${schema[0]} ]] || { echo "FAIL: roster schema nao unico" >&2; exit 2; }
 [[ ${#data_rollback[@]} -eq 1 && -f ${data_rollback[0]} ]] || { echo "FAIL: rollback roster data nao unico" >&2; exit 2; }
 [[ ${#schema_rollback[@]} -eq 1 && -f ${schema_rollback[0]} ]] || { echo "FAIL: rollback roster schema nao unico" >&2; exit 2; }
 [[ ${#readback[@]} -eq 1 && -f ${readback[0]} ]] || { echo "FAIL: readback roster nao unico" >&2; exit 2; }
+[[ ${#successor[@]} -eq 1 && -f ${successor[0]} ]] || { echo "FAIL: sucessora 30002 nao unica" >&2; exit 2; }
 
 data_hash="sha256:$(shasum -a 256 "${data[0]}" | cut -d' ' -f1)"
 schema_hash="sha256:$(shasum -a 256 "${schema[0]}" | cut -d' ' -f1)"
+successor_hash="sha256:$(shasum -a 256 "${successor[0]}" | cut -d' ' -f1)"
 state="$(PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -Atq -F '|' -c \
-  "select coalesce(max(version),'') || '|' || count(*) filter(where version='$data_version') || '|' || coalesce(max(idempotency_key) filter(where version='$data_version'),'') || '|' || count(*) filter(where version='$schema_version') || '|' || coalesce(max(idempotency_key) filter(where version='$schema_version'),'') from supabase_migrations.schema_migrations")"
-IFS='|' read -r ledger_top data_count data_key schema_count schema_key <<<"$state"
+  "select coalesce(max(version),'') || '|' || count(*) filter(where version='$data_version') || '|' || coalesce(max(idempotency_key) filter(where version='$data_version'),'') || '|' || count(*) filter(where version='$schema_version') || '|' || coalesce(max(idempotency_key) filter(where version='$schema_version'),'') || '|' || count(*) filter(where version='$successor_version') || '|' || coalesce(max(idempotency_key) filter(where version='$successor_version'),'') from supabase_migrations.schema_migrations")"
+IFS='|' read -r ledger_top data_count data_key schema_count schema_key successor_count successor_key <<<"$state"
 
-if [[ "$data_count" == "1" && "$data_key" == "$data_hash" && "$schema_count" == "1" && "$schema_key" == "$schema_hash" && "$ledger_top" == "$schema_version" ]]; then
+if [[ "$data_count" == "1" && "$data_key" == "$data_hash" && "$schema_count" == "1" && "$schema_key" == "$schema_hash" ]] &&
+   { [[ "$ledger_top" == "$schema_version" && "$successor_count" == "0" ]] ||
+     [[ "$ledger_top" == "$successor_version" && "$successor_count" == "1" && "$successor_key" == "$successor_hash" ]]; }; then
   PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f "${readback[0]}"
   echo "PASS: roster 30000/30001 ja aplicado, ledger e readback conferem"
   exit 0
@@ -73,7 +79,7 @@ fi
 
 start=0
 if [[ "$data_count" == "1" && "$data_key" == "$data_hash" && "$schema_count" == "0" && "$ledger_top" == "$data_version" ]]; then start=1
-elif [[ "$data_count" != "0" || "$schema_count" != "0" || "$ledger_top" != "$previous_version" ]]; then
+elif [[ "$data_count" != "0" || "$schema_count" != "0" || "$successor_count" != "0" || "$ledger_top" != "$previous_version" ]]; then
   echo "FAIL: ledger roster inicial ou parcial inesperado: $state" >&2
   exit 1
 fi

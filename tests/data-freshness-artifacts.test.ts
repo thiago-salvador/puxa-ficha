@@ -204,6 +204,160 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
   }
 });
 
+test("auditoria aceita somente a duplicidade ativa presente na quarentena canônica", () => {
+  const work = mkdtempSync(join(process.cwd(), ".tmp-data-freshness-crosswalk-"));
+  try {
+    const snapshotPath = "data/chapas-2026-tse-20260815.json";
+    const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
+      metadata: { extracted_at: string };
+    };
+    const now = snapshot.metadata.extracted_at;
+    const records = officialRecordsFromVersionedSnapshot(snapshotPath).map(
+      (record) => ({
+        ...record,
+        perfil_slug: record.perfil_slug ?? `fixture-${record.sq_candidato}`,
+      }),
+    );
+    const collectionEvidence = loadFreshnessRegistry().flatMap((source) =>
+      source.collection_source_ids.map((sourceId) => ({
+        source_id: sourceId,
+        checked_at: now,
+      })),
+    );
+    const officialProfile = {
+      profile_slug: "duplicidade-em-quarentena",
+      office: "Governador" as const,
+      uf: "AC",
+      name: "Candidatura em quarentena",
+      status: "Deferido",
+    };
+    const currentRecords = [
+      { ...officialProfile, sq_candidato: "100000000001" },
+      { ...officialProfile, sq_candidato: "100000000002" },
+    ];
+    const publicProfile = {
+      slug: officialProfile.profile_slug,
+      office: officialProfile.office,
+      uf: officialProfile.uf,
+      partido_sigla: "AAA",
+      situacao_candidatura: "deferido",
+      foto_url: "https://example.test/foto.jpg",
+      biografia: "Biografia factual verificada.",
+      naturalidade: "Cidade (UF)",
+      data_nascimento: "1980-01-01",
+      formacao: "Superior completo",
+      profissao_declarada: "Profissão declarada",
+      genero: "Masculino",
+      estado_civil: "Casado(a)",
+      cor_raca: "Parda",
+      verificacao_campos: {
+        candidate_registration: "2026-08-28",
+        candidate_complement: "2026-08-28",
+      },
+    };
+    const published = join(work, "published.json");
+    const currentOfficial = join(work, "current-official.json");
+    const crosswalk = join(work, "active-crosswalk.json");
+    const out = join(work, "out");
+    writeFileSync(
+      published,
+      JSON.stringify({
+        records,
+        public_profiles: [publicProfile],
+        collection_evidence: collectionEvidence,
+      }),
+    );
+    writeFileSync(
+      currentOfficial,
+      JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }),
+    );
+    writeFileSync(
+      crosswalk,
+      JSON.stringify({
+        metadata: {
+          active_registration_count: 2,
+          active_profile_count: 1,
+          unresolved_count: 0,
+        },
+        profiles: [
+          {
+            profile_slug: officialProfile.profile_slug,
+            canonical_registration_sq: null,
+            registration_sqs: ["100000000001", "100000000002"],
+            publication_status: "quarantine_duplicate_active",
+          },
+        ],
+      }),
+    );
+
+    execFileSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${published}`,
+        `--official-snapshot=${snapshotPath}`,
+        `--current-official-snapshot=${currentOfficial}`,
+        `--active-profile-crosswalk=${crosswalk}`,
+        `--out=${out}`,
+        `--now=${now}`,
+      ],
+      { stdio: "pipe" },
+    );
+    const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"));
+    assert.equal(diff.status, "ok");
+    assert.deepEqual(
+      Object.keys(diff.publication_integrity.duplicate_active_mappings),
+      [],
+    );
+    assert.deepEqual(
+      Object.keys(
+        diff.publication_integrity.quarantined_duplicate_active_mappings,
+      ),
+      [officialProfile.profile_slug],
+    );
+
+    writeFileSync(
+      crosswalk,
+      JSON.stringify({
+        metadata: {
+          active_registration_count: 2,
+          active_profile_count: 1,
+          unresolved_count: 0,
+        },
+        profiles: [
+          {
+            profile_slug: officialProfile.profile_slug,
+            canonical_registration_sq: null,
+            registration_sqs: [100000000001, 100000000002],
+            publication_status: "quarantine_duplicate_active",
+          },
+        ],
+      }),
+    );
+    const invalidCrosswalk = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${published}`,
+        `--official-snapshot=${snapshotPath}`,
+        `--current-official-snapshot=${currentOfficial}`,
+        `--active-profile-crosswalk=${crosswalk}`,
+        `--out=${join(work, "invalid-out")}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.notEqual(invalidCrosswalk.status, 0);
+    assert.match(invalidCrosswalk.stderr, /registration_sqs inválido/);
+  } finally {
+    rmSync(work, { recursive: true, force: true });
+  }
+});
+
 test("falha das duas superfícies oficiais ainda preserva os quatro artefatos", () => {
   const work = mkdtempSync(join(tmpdir(), "data-freshness-source-error-"));
   try {

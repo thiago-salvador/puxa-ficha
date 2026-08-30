@@ -4,6 +4,8 @@ import { resolve } from "node:path";
 import {
   analyzeProfileAdmission,
   reconcilePublicRoster,
+  validateActiveProfileCrosswalk,
+  type ActiveProfileCrosswalkEntry,
   type OfficialCandidacy,
   type ProfileAdmissionInput,
   type PublicCandidateSummary,
@@ -36,10 +38,20 @@ interface PublishedSnapshot {
   collection_evidence?: SourceEvidence[];
 }
 
+interface ActiveProfileCrosswalkSnapshot {
+  metadata: {
+    active_registration_count: number;
+    active_profile_count: number;
+    unresolved_count: number;
+  };
+  profiles: ActiveProfileCrosswalkEntry[];
+}
+
 interface CliOptions {
   published: string;
   officialSnapshot: string | null;
   currentOfficialSnapshot: string | null;
+  activeProfileCrosswalk: string;
   out: string;
   now: Date;
 }
@@ -53,7 +65,7 @@ function parseArgs(args: string[]): CliOptions {
   const published = values.get("published");
   if (!published) {
     throw new Error(
-      "uso: --published=<snapshot.json> [--official-snapshot=<snapshot.json>] [--current-official-snapshot=<snapshot.json>]",
+      "uso: --published=<snapshot.json> [--official-snapshot=<snapshot.json>] [--current-official-snapshot=<snapshot.json>] [--active-profile-crosswalk=<snapshot.json>]",
     );
   }
   const nowValue = values.get("now");
@@ -68,9 +80,69 @@ function parseArgs(args: string[]): CliOptions {
     currentOfficialSnapshot: values.get("current-official-snapshot")
       ? resolve(values.get("current-official-snapshot") as string)
       : null,
+    activeProfileCrosswalk: resolve(
+      values.get("active-profile-crosswalk") ??
+        "data/candidate-roster-active-20260829.json",
+    ),
     out: resolve(values.get("out") ?? "reports/data-freshness"),
     now,
   };
+}
+
+function readActiveProfileCrosswalk(
+  path: string,
+): ActiveProfileCrosswalkSnapshot {
+  const snapshot: unknown = JSON.parse(readFileSync(path, "utf8"));
+  if (!snapshot || typeof snapshot !== "object" || Array.isArray(snapshot)) {
+    throw new Error("crosswalk ativo deve ser um objeto JSON");
+  }
+  const candidate = snapshot as Record<string, unknown>;
+  const metadata = candidate.metadata;
+  const profiles = candidate.profiles;
+  if (!metadata || typeof metadata !== "object" || Array.isArray(metadata) || !Array.isArray(profiles)) {
+    throw new Error("crosswalk ativo não contém metadata e profiles[]");
+  }
+  const counts = metadata as Record<string, unknown>;
+  for (const field of [
+    "active_registration_count",
+    "active_profile_count",
+    "unresolved_count",
+  ] as const) {
+    if (!Number.isInteger(counts[field]) || (counts[field] as number) < 0) {
+      throw new Error(`crosswalk ativo contém metadata.${field} inválido`);
+    }
+  }
+  for (const [index, profile] of profiles.entries()) {
+    if (!profile || typeof profile !== "object" || Array.isArray(profile)) {
+      throw new Error(`crosswalk ativo contém profiles[${index}] inválido`);
+    }
+    const entry = profile as Record<string, unknown>;
+    if (typeof entry.profile_slug !== "string" || entry.profile_slug.trim() === "") {
+      throw new Error(`crosswalk ativo contém profile_slug inválido em profiles[${index}]`);
+    }
+    if (
+      !Array.isArray(entry.registration_sqs) ||
+      !entry.registration_sqs.every((sq) => typeof sq === "string" && sq.trim() !== "")
+    ) {
+      throw new Error(`crosswalk ativo contém registration_sqs inválido em ${entry.profile_slug}`);
+    }
+    if (entry.canonical_registration_sq !== null && typeof entry.canonical_registration_sq !== "string") {
+      throw new Error(`crosswalk ativo contém canonical_registration_sq inválido em ${entry.profile_slug}`);
+    }
+    if (entry.publication_status !== "active" && entry.publication_status !== "quarantine_duplicate_active") {
+      throw new Error(`crosswalk ativo contém publication_status inválido em ${entry.profile_slug}`);
+    }
+  }
+  const validSnapshot = {
+    metadata: counts as unknown as ActiveProfileCrosswalkSnapshot["metadata"],
+    profiles: profiles as ActiveProfileCrosswalkEntry[],
+  };
+  validateActiveProfileCrosswalk(validSnapshot.profiles, {
+    activeRegistrationCount: validSnapshot.metadata.active_registration_count,
+    activeProfileCount: validSnapshot.metadata.active_profile_count,
+    unresolvedCount: validSnapshot.metadata.unresolved_count,
+  });
+  return validSnapshot;
 }
 
 function readPublished(path: string): PublishedSnapshot {
@@ -366,9 +438,13 @@ async function main(): Promise<void> {
     published.records,
   );
   const publicProfiles = published.public_profiles ?? [];
+  const activeProfileCrosswalk = readActiveProfileCrosswalk(
+    options.activeProfileCrosswalk,
+  );
   const publicationIntegrity = reconcilePublicRoster(
     currentOfficialWithProfiles,
     publicProfiles.map(({ slug, office, uf }) => ({ slug, office, uf })),
+    activeProfileCrosswalk.profiles,
   );
   const profileAdmission = {
     snapshot_present: Array.isArray(published.public_profiles),
@@ -419,6 +495,7 @@ async function main(): Promise<void> {
     generated_at: generatedAt,
     official,
     current_official: currentOfficialWithProfiles,
+    active_profile_crosswalk: activeProfileCrosswalk,
     published: published.records,
     public_profiles: publicProfiles,
   });
