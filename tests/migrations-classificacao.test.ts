@@ -338,7 +338,9 @@ describe("classificador puro (#136)", () => {
     // falhas reais" e "conservacao OK: 333 + 103 = 436 migrations", conjunto de
     // falhas inalterado. O ramo de banco vazio tem prova propria em
     // scripts/audit/provar-migration-profissao-qid.sh (F5 e F6).
-    assert.equal(manifesto.aplicadas_esperadas, 333)
+    // 333 -> 334 em 30/08/2026: a correção do voto Artigo 17 de JHC retorna
+    // cedo sem o alvo. A integração conserva 334 + 103 = 437 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 334)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

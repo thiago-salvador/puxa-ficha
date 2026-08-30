@@ -403,6 +403,13 @@
       "ate": "20260830120000",
       "allowlist": "scripts/audit/allowlist-profissao-qid-20260830.json",
       "divida": null
+    },
+    {
+      "nome": "jhc-artigo-17-20260830",
+      "desde": "20260830143500",
+      "ate": "20260830143500",
+      "allowlist": "scripts/audit/allowlist-jhc-artigo-17-20260830.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
