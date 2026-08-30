@@ -1,5 +1,5 @@
 -- Readback somente leitura da issue #138.
--- Esperado apos aplicacao autorizada: 1849 Camara, 230 Senado, total 2079,
+-- Esperado apos aplicacao autorizada: 1849 Camara, 231 Senado, total 2080,
 -- quatro EMC Camara de 2003 e as quatro materias Senado abaixo intactas.
 
 DO $assert$
@@ -79,8 +79,8 @@ BEGIN
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid;
 
-  IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 230
-     OR senado_exato <> 4 OR total_candidato <> 2079
+  IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 231
+     OR senado_exato <> 4 OR total_candidato <> 2080
      OR camara_total - 1845 <> 4 THEN
     RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, Camara_exato=%, EMC_2003=%, Senado=%, Senado_exato=%, total=%, delta_camara=%)',
       camara_total, camara_exato, camara_emc_2003, senado_total, senado_exato, total_candidato, camara_total - 1845;

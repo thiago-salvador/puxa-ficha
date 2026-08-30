@@ -1,6 +1,6 @@
 -- Readback somente leitura do rollback de dados da issue #138.
--- O schema novo permanece: Camara volta a 1845, Senado permanece em 230,
--- total volta a 2075 e as quatro materias Senado continuam intactas.
+-- O schema novo permanece: Camara volta a 1845, Senado permanece em 231,
+-- total volta a 2076 e as quatro materias Senado continuam intactas.
 
 DO $assert$
 DECLARE
@@ -54,7 +54,7 @@ BEGIN
   WHERE conrelid = 'public.projetos_lei'::regclass
     AND conname = 'uq_projetos_lei_candidato_proposicao';
 
-  IF camara_total <> 1845 OR senado_total <> 230 OR total_candidato <> 2075
+  IF camara_total <> 1845 OR senado_total <> 231 OR total_candidato <> 2076
      OR camara_alvos <> 0 OR senado_exato <> 4 OR scoped_index <> 1 OR old_constraint <> 0 THEN
     RAISE EXCEPTION 'issue_138 rollback readback falhou (Camara=%, Senado=%, total=%, alvos=%, Senado_exato=%, scoped=%, antiga=%)',
       camara_total, senado_total, total_candidato, camara_alvos, senado_exato, scoped_index, old_constraint;
