@@ -5,6 +5,7 @@ import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import type { FichaCandidato } from "@/lib/types"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import { formatCompact } from "@/lib/utils"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 
 type CandidatoProfileProps = {
@@ -25,12 +26,25 @@ type DeferredProfileOverview = {
 
 const MOBILE_DEFER_TIMEOUT_MS = 4000
 
+/**
+ * O KPI de patrimonio do skeleton usava um compact sem moeda e imprimia "189,2 mil"
+ * enquanto o card hidratado, logo depois, imprime "R$ 189,2 mil". O leitor via o
+ * numero mudar de significado no meio do carregamento. Os dois estados passam a
+ * usar `formatCompact`, que e a funcao do card real.
+ *
+ * `formatOverviewNumber` continua para os KPIs de contagem, que nao tem moeda.
+ */
 function formatOverviewNumber(value: number | null) {
   if (value === null) return "N/D"
   return new Intl.NumberFormat("pt-BR", {
     notation: "compact",
     maximumFractionDigits: 1,
   }).format(value)
+}
+
+function formatOverviewPatrimonio(value: number | null) {
+  if (value === null) return "N/D"
+  return formatCompact(value)
 }
 
 function useDeferredBelowFoldLoad() {
@@ -91,11 +105,11 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
         </div>
         <div className="flex min-h-[112px] flex-col gap-1.5 rounded-[12px] border border-border/50 bg-card px-4 py-3">
           <span
-            data-pf-overview-patrimonio={formatOverviewNumber(overview.patrimonio)}
+            data-pf-overview-patrimonio={formatOverviewPatrimonio(overview.patrimonio)}
             data-pf-overview-raw={overview.patrimonio ?? undefined}
             className="text-[24px] font-semibold leading-none text-foreground sm:text-[28px]"
           >
-            {formatOverviewNumber(overview.patrimonio)}
+            {formatOverviewPatrimonio(overview.patrimonio)}
           </span>
           <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[11px]">
             Patrimônio
