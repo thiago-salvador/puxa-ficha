@@ -25,6 +25,7 @@ jobs:
     env:
       PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
       PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      PF_BACKUP_PATH: ${{ runner.temp }}/candidate-registration-30002-before-apply.json
       GITHUB_REF: ${{ github.ref }}
     steps:
       - name: Validar dispatch manual e SHA fechado
@@ -48,7 +49,16 @@ jobs:
         run: npm ci
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
-      - name: Provar apply, readback e rollback em PostgreSQL 17 descartável
+      - name: Capturar backup read-only antes do dry-run
+        run: bash scripts/audit/apply-candidate-registration-state-production.sh --backup-only
+      - name: Preservar backup independente da execução
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: candidate-registration-30002-before-apply-${{ inputs.expected_sha }}
+          path: ${{ runner.temp }}/candidate-registration-30002-before-apply.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Dry-run de apply, readback e rollback em PostgreSQL 17 descartável
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}

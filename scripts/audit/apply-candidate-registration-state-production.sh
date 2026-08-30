@@ -3,6 +3,8 @@
 # Aplica somente 20260829030002, com ledger, readback e rollback versionado.
 set -euo pipefail
 case $- in *x*) set +x ;; esac
+mode="${1:-apply}"
+[[ "$mode" == "apply" || "$mode" == "--backup-only" ]] || { echo "FAIL: modo invalido" >&2; exit 2; }
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
@@ -11,6 +13,7 @@ source "$ROOT/scripts/audit/lib/configure-libpq-from-url.sh"
 
 : "${PF_DATABASE_URL:?PF_DATABASE_URL e obrigatoria}"
 : "${PF_EXPECTED_SHA:?PF_EXPECTED_SHA e obrigatoria}"
+: "${PF_BACKUP_PATH:?PF_BACKUP_PATH e obrigatoria}"
 : "${GITHUB_REF:?GITHUB_REF e obrigatoria}"
 [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "FAIL: SHA invalido" >&2; exit 2; }
 [[ "$(git rev-parse HEAD)" == "$PF_EXPECTED_SHA" ]] || { echo "FAIL: checkout divergiu" >&2; exit 2; }
@@ -62,16 +65,86 @@ state="$(PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300
   "select coalesce(max(version),'') || '|' || count(*) filter(where version='$previous_version') || '|' || coalesce(max(idempotency_key) filter(where version='$previous_version'),'') || '|' || count(*) filter(where version='$version') || '|' || coalesce(max(idempotency_key) filter(where version='$version'),'') from supabase_migrations.schema_migrations")"
 IFS='|' read -r ledger_top previous_count previous_key version_count version_key <<<"$state"
 
+already_applied=false
 if [[ "$ledger_top" == "$version" && "$version_count" == "1" && "$version_key" == "$digest" && "$previous_count" == "1" && "$previous_key" == "$previous_digest" ]]; then
+  already_applied=true
+elif [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$previous_key" != "$previous_digest" || "$version_count" != "0" ]]; then
+  echo "FAIL: ledger 30002 inesperado: $state" >&2
+  exit 1
+fi
+
+validate_backup() {
+  node - "$PF_BACKUP_PATH" <<'NODE'
+const fs = require("node:fs")
+const backup = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))
+const registration = backup?.candidate?.candidate_registration
+if (backup?.candidate?.slug !== "pablo-marcal" || !registration || typeof registration !== "object" || Array.isArray(registration)) process.exit(1)
+if (registration.fonte !== "TSE DivulgaCand 2026" || registration.verificado_em !== "2026-08-16T18:02:07.454221+00:00") process.exit(1)
+if (registration.estado !== undefined && registration.estado !== "publicado") process.exit(1)
+if (!Array.isArray(backup.ledger_rows) || backup.ledger_rows.length < 1) process.exit(1)
+NODE
+}
+
+backup_state() {
+  umask 077
   PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
-    psql -X -v ON_ERROR_STOP=1 -f "$readback"
-  echo "PASS: candidate_registration 30002 ja aplicado, ledger e readback conferem"
+    psql -X -v ON_ERROR_STOP=1 -Atq -c \
+    "select json_build_object(
+      'captured_at', clock_timestamp(),
+      'candidate', (select json_build_object('slug',slug,'candidate_registration',verificacao_campos->'candidate_registration','ultima_atualizacao',ultima_atualizacao) from public.candidatos where slug='pablo-marcal'),
+      'ledger_top', (select max(version) from supabase_migrations.schema_migrations),
+      'ledger_rows', (select coalesce(json_agg(json_build_object('version',version,'idempotency_key',idempotency_key) order by version),'[]'::json) from supabase_migrations.schema_migrations where version in ('$previous_version','$version'))
+    )" > "$PF_BACKUP_PATH"
+  validate_backup
+  echo "BACKUP_SHA256=$(shasum -a 256 "$PF_BACKUP_PATH" | cut -d' ' -f1)"
+}
+
+if [[ "$mode" == "--backup-only" ]]; then
+  backup_state
+  echo "PASS: backup read-only 30002 capturado"
   exit 0
 fi
 
-if [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$previous_key" != "$previous_digest" || "$version_count" != "0" ]]; then
-  echo "FAIL: ledger 30002 inesperado: $state" >&2
-  exit 1
+[[ -s "$PF_BACKUP_PATH" ]] || { echo "FAIL: backup 30002 ausente antes do apply" >&2; exit 1; }
+validate_backup
+backup_hash="$(shasum -a 256 "$PF_BACKUP_PATH" | cut -d' ' -f1)"
+
+write_receipt() {
+  local receipt_state receipt_count receipt_inserted receipt_id
+  receipt_state="$(PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' \
+    psql -X -v ON_ERROR_STOP=1 -Atq -c \
+    "WITH locked AS MATERIALIZED (
+       SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:candidate-roster-integrity-production', 0))
+     ), existing AS MATERIALIZED (
+       SELECT cl.id FROM public.coleta_log cl, locked
+       WHERE cl.fonte='candidate-roster-integrity' AND cl.escopo='candidato' AND cl.alvo='pablo-marcal'
+         AND cl.execucao='migration:20260829030002:$PF_EXPECTED_SHA'
+     ), inserted AS (
+       INSERT INTO public.coleta_log
+         (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao)
+       SELECT 'candidate-roster-integrity','candidato','pablo-marcal',c.id,'encontrado',1,
+         'Migration 20260829030002 aplicada, readback aprovado, backup sha256:$backup_hash',NULL,
+         'migration:20260829030002:$PF_EXPECTED_SHA'
+       FROM public.candidatos c, locked
+       WHERE c.slug='pablo-marcal' AND NOT EXISTS (SELECT 1 FROM existing)
+       RETURNING id
+     ), receipt AS (
+       SELECT id,true AS inserted FROM inserted UNION ALL SELECT id,false FROM existing
+     )
+     SELECT count(*) || '|' || count(*) FILTER (WHERE inserted) || '|' || coalesce(min(id)::text,'') FROM receipt")"
+  IFS='|' read -r receipt_count receipt_inserted receipt_id <<<"$receipt_state"
+  [[ "$receipt_count" == "1" && ( "$receipt_inserted" == "0" || "$receipt_inserted" == "1" ) && -n "$receipt_id" ]] || {
+    echo "FAIL: receipt 30002 nao foi validado: $receipt_state" >&2
+    exit 1
+  }
+}
+
+if [[ "$already_applied" == "true" ]]; then
+  PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
+    psql -X -v ON_ERROR_STOP=1 -f "$readback"
+  write_receipt
+  echo "PASS: candidate_registration 30002 ja aplicado, ledger e readback conferem"
+  exit 0
 fi
 
 python3 - "$PF_EXPECTED_SHA" "$version" "$previous_version" "$digest" "$previous_digest" "$migration" "$rollback" "$readback" <<'PY' | \
@@ -116,4 +189,5 @@ PY
 
 PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -f "$readback"
+write_receipt
 echo "PASS: candidate_registration 30002 aplicado, ledger e readback concluídos"

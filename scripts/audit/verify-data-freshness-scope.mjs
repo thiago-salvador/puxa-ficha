@@ -40,7 +40,7 @@ const allowed = [
   /^scripts\/audit\/collect-divulgacand-current\.ts$/,
   /^scripts\/audit\/prove-candidate-roster-integrity\.ts$/,
   /^scripts\/audit\/(apply|rollback)-candidate-registration-state-production\.sh$/,
-  /^scripts\/audit\/apply-candidate-roster-integrity-production\.sh$/,
+  /^scripts\/audit\/(apply|rollback)-candidate-roster-integrity-production\.sh$/,
   /^scripts\/audit\/apply-issue-138-production\.sh$/,
   /^scripts\/audit\/generate-candidate-demographics-remediation\.ts$/,
   /^scripts\/audit\/classificar-migrations\.ts$/,

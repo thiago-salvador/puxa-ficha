@@ -54,13 +54,74 @@ test("release predecessor do roster e independente e coordenado", () => {
   assert.match(ROSTER_STATE_ROLLBACK, /version=20260829030002/)
   assert.match(ROSTER_STATE_ROLLBACK, /previous_version=20260829030001/)
   assert.match(ROSTER_STATE_ROLLBACK, /DELETE FROM supabase_migrations\.schema_migrations/)
-  assert.match(ROSTER_ROLLBACK, /DELETE FROM supabase_migrations\.schema_migrations WHERE version IN/)
+  assert.match(ROSTER_ROLLBACK, /DELETE FROM supabase_migrations\.schema_migrations WHERE \(version=/)
   assert.match(ROSTER_ROLLBACK, /previous_version=20260828025037/)
   assert.match(ROSTER_SCHEMA_ROLLBACK, /fail-closed/)
   assert.match(ROSTER_WORKFLOW, /workflow_dispatch:/)
   assert.match(ROSTER_WORKFLOW, /apply-candidate-registration-state-production\.sh/)
   assert.match(ROSTER_ROLLBACK_WORKFLOW, /workflow_dispatch:/)
   assert.match(ROSTER_ROLLBACK_WORKFLOW, /rollback-candidate-registration-state-production\.sh/)
+
+  const applyGuard = ROSTER_STATE_APPLY.indexOf("ledger divergiu sob lock")
+  const applyWrite = ROSTER_STATE_APPLY.indexOf('print(body')
+  assert.ok(applyGuard >= 0 && applyGuard < applyWrite)
+  assert.match(
+    ROSTER_STATE_APPLY.slice(applyGuard - 500, applyWrite),
+    /idempotency_key=.*previous_digest/,
+  )
+
+  const stateRollbackGuard = ROSTER_STATE_ROLLBACK.indexOf("ledger divergiu sob lock")
+  const stateRollbackWrite = ROSTER_STATE_ROLLBACK.indexOf('print(body')
+  const stateRollbackDelete = ROSTER_STATE_ROLLBACK.indexOf("DELETE FROM supabase_migrations.schema_migrations")
+  assert.ok(stateRollbackGuard >= 0 && stateRollbackGuard < stateRollbackWrite)
+  assert.ok(stateRollbackWrite < stateRollbackDelete)
+  assert.match(
+    ROSTER_STATE_ROLLBACK.slice(stateRollbackDelete, stateRollbackDelete + 220),
+    /version=.*idempotency_key=.*digest/,
+  )
+
+  const rosterRollbackGuard = ROSTER_ROLLBACK.indexOf("ledger divergiu sob lock")
+  const rosterRollbackWrite = ROSTER_ROLLBACK.indexOf('print(body')
+  const rosterRollbackDelete = ROSTER_ROLLBACK.indexOf("DELETE FROM supabase_migrations.schema_migrations")
+  assert.ok(rosterRollbackGuard >= 0 && rosterRollbackGuard < rosterRollbackWrite)
+  assert.ok(rosterRollbackWrite < rosterRollbackDelete)
+  assert.match(
+    ROSTER_ROLLBACK.slice(rosterRollbackDelete, rosterRollbackDelete + 380),
+    /version=.*data_version.*idempotency_key=.*data_digest[\s\S]*version=.*schema_version.*idempotency_key=.*schema_digest/,
+  )
+
+  assert.ok(
+    ROSTER_WORKFLOW.indexOf("audit:candidate-integrity:prove") <
+      ROSTER_WORKFLOW.indexOf("apply-candidate-roster-integrity-production.sh"),
+  )
+  assert.ok(
+    ROSTER_WORKFLOW.indexOf("apply-candidate-roster-integrity-production.sh") <
+      ROSTER_WORKFLOW.lastIndexOf("run: bash scripts/audit/apply-candidate-registration-state-production.sh"),
+  )
+  assert.ok(
+    ROSTER_ROLLBACK_WORKFLOW.lastIndexOf("run: bash scripts/audit/rollback-candidate-registration-state-production.sh") <
+      ROSTER_ROLLBACK_WORKFLOW.indexOf("rollback-candidate-roster-integrity-production.sh"),
+  )
+})
+
+test("workflow residual mantém backup, dry-run, apply, readback e receipt nessa ordem", () => {
+  const applyBackup = ROSTER_WORKFLOW.indexOf("apply-candidate-registration-state-production.sh --backup-only")
+  const applyDryRun = ROSTER_WORKFLOW.indexOf("audit:candidate-integrity:prove")
+  const applyWrite = ROSTER_WORKFLOW.lastIndexOf("run: bash scripts/audit/apply-candidate-registration-state-production.sh")
+  assert.ok(applyBackup >= 0 && applyBackup < applyDryRun && applyDryRun < applyWrite)
+  assert.match(ROSTER_WORKFLOW, /actions\/upload-artifact@[0-9a-f]{40}/)
+  assert.match(ROSTER_STATE_APPLY, /default_transaction_read_only=on[\s\S]*> "\$PF_BACKUP_PATH"/)
+  assert.ok(ROSTER_STATE_APPLY.indexOf('psql -X -v ON_ERROR_STOP=1 -f "$readback"') < ROSTER_STATE_APPLY.lastIndexOf("\nwrite_receipt\n"))
+  assert.match(ROSTER_STATE_APPLY, /INSERT INTO public\.coleta_log[\s\S]*RETURNING id/)
+  assert.match(ROSTER_STATE_APPLY, /receipt_count[\s\S]*receipt_inserted[\s\S]*receipt_id/)
+
+  const rollbackBackup = ROSTER_ROLLBACK_WORKFLOW.indexOf("rollback-candidate-registration-state-production.sh --backup-only")
+  const rollbackDryRun = ROSTER_ROLLBACK_WORKFLOW.indexOf("audit:candidate-integrity:prove")
+  const rollbackWrite = ROSTER_ROLLBACK_WORKFLOW.lastIndexOf("run: bash scripts/audit/rollback-candidate-registration-state-production.sh")
+  assert.ok(rollbackBackup >= 0 && rollbackBackup < rollbackDryRun && rollbackDryRun < rollbackWrite)
+  assert.match(ROSTER_ROLLBACK_WORKFLOW, /actions\/upload-artifact@[0-9a-f]{40}/)
+  assert.ok(ROSTER_STATE_ROLLBACK.indexOf("post_count=") < ROSTER_STATE_ROLLBACK.indexOf("INSERT INTO public.coleta_log"))
+  assert.match(ROSTER_STATE_ROLLBACK, /INSERT INTO public\.coleta_log[\s\S]*RETURNING id/)
 })
 
 test("workflow de escrita exige dispatch manual, main, SHA e ambiente de producao", () => {

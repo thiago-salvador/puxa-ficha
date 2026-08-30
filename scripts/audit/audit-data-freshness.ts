@@ -92,18 +92,57 @@ function parseArgs(args: string[]): CliOptions {
 function readActiveProfileCrosswalk(
   path: string,
 ): ActiveProfileCrosswalkSnapshot {
-  const snapshot = JSON.parse(
-    readFileSync(path, "utf8"),
-  ) as ActiveProfileCrosswalkSnapshot;
-  if (!snapshot.metadata || !Array.isArray(snapshot.profiles)) {
+  const snapshot: unknown = JSON.parse(readFileSync(path, "utf8"));
+  if (!snapshot || typeof snapshot !== "object" || Array.isArray(snapshot)) {
+    throw new Error("crosswalk ativo deve ser um objeto JSON");
+  }
+  const candidate = snapshot as Record<string, unknown>;
+  const metadata = candidate.metadata;
+  const profiles = candidate.profiles;
+  if (!metadata || typeof metadata !== "object" || Array.isArray(metadata) || !Array.isArray(profiles)) {
     throw new Error("crosswalk ativo não contém metadata e profiles[]");
   }
-  validateActiveProfileCrosswalk(snapshot.profiles, {
-    activeRegistrationCount: snapshot.metadata.active_registration_count,
-    activeProfileCount: snapshot.metadata.active_profile_count,
-    unresolvedCount: snapshot.metadata.unresolved_count,
+  const counts = metadata as Record<string, unknown>;
+  for (const field of [
+    "active_registration_count",
+    "active_profile_count",
+    "unresolved_count",
+  ] as const) {
+    if (!Number.isInteger(counts[field]) || (counts[field] as number) < 0) {
+      throw new Error(`crosswalk ativo contém metadata.${field} inválido`);
+    }
+  }
+  for (const [index, profile] of profiles.entries()) {
+    if (!profile || typeof profile !== "object" || Array.isArray(profile)) {
+      throw new Error(`crosswalk ativo contém profiles[${index}] inválido`);
+    }
+    const entry = profile as Record<string, unknown>;
+    if (typeof entry.profile_slug !== "string" || entry.profile_slug.trim() === "") {
+      throw new Error(`crosswalk ativo contém profile_slug inválido em profiles[${index}]`);
+    }
+    if (
+      !Array.isArray(entry.registration_sqs) ||
+      !entry.registration_sqs.every((sq) => typeof sq === "string" && sq.trim() !== "")
+    ) {
+      throw new Error(`crosswalk ativo contém registration_sqs inválido em ${entry.profile_slug}`);
+    }
+    if (entry.canonical_registration_sq !== null && typeof entry.canonical_registration_sq !== "string") {
+      throw new Error(`crosswalk ativo contém canonical_registration_sq inválido em ${entry.profile_slug}`);
+    }
+    if (entry.publication_status !== "active" && entry.publication_status !== "quarantine_duplicate_active") {
+      throw new Error(`crosswalk ativo contém publication_status inválido em ${entry.profile_slug}`);
+    }
+  }
+  const validSnapshot = {
+    metadata: counts as unknown as ActiveProfileCrosswalkSnapshot["metadata"],
+    profiles: profiles as ActiveProfileCrosswalkEntry[],
+  };
+  validateActiveProfileCrosswalk(validSnapshot.profiles, {
+    activeRegistrationCount: validSnapshot.metadata.active_registration_count,
+    activeProfileCount: validSnapshot.metadata.active_profile_count,
+    unresolvedCount: validSnapshot.metadata.unresolved_count,
   });
-  return snapshot;
+  return validSnapshot;
 }
 
 function readPublished(path: string): PublishedSnapshot {

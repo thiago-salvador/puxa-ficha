@@ -316,6 +316,19 @@ async function main(): Promise<void> {
        ${readFileSync(ROLLBACK, "utf8")}`,
       /curadoria posterior à forward/,
     );
+    psqlMustFail(
+      `BEGIN;
+       UPDATE public.candidatos
+       SET verificacao_campos = jsonb_set(
+         verificacao_campos,
+         '{candidate_registration,estado}',
+         '"vazio_confirmado"'::jsonb,
+         false
+       )
+       WHERE slug='pablo-marcal';
+       ${readFileSync(VERIFICATION_STATE_ROLLBACK, "utf8")}`,
+      /rollback recusado: candidate_registration de pablo-marcal divergiu da forward 30002/,
+    );
     psql(readFileSync(VERIFICATION_STATE_ROLLBACK, "utf8"));
     psql(readFileSync(ROLLBACK, "utf8"));
     const rollback = JSON.parse(

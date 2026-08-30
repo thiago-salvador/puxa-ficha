@@ -139,6 +139,14 @@ test("follow-up estrutura o estado de Pablo sem substituir fonte e data", () => 
   assert.match(verificationStateReadback, /->> 'estado' =\s*'publicado'/);
   assert.match(verificationStateRollback, /rollback recusado/i);
   assert.match(verificationStateRollback, /FOR UPDATE/);
+  const proof = readFileSync(
+    "scripts/audit/prove-candidate-roster-integrity.ts",
+    "utf8",
+  );
+  assert.match(
+    proof,
+    /psqlMustFail\([\s\S]*candidate_registration,estado[\s\S]*VERIFICATION_STATE_ROLLBACK[\s\S]*rollback recusado/,
+  );
   assert.match(
     verificationStateRollback,
     /\(verificacao_campos -> 'candidate_registration'\) - 'estado'/,

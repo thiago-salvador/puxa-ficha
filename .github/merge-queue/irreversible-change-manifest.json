@@ -49,6 +49,7 @@
       "fixed-production-project-url",
       "advisory-transaction-lock",
       "roster-30000-30001-30002-ledger-readback-rollback-coordination",
+      "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
       "ddl-backfill-ledger-idempotency-hashes",
       "exact-senate-and-camara-payload-readback",
       "rollback-readback-preserves-schema"

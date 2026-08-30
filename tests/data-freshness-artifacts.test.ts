@@ -205,7 +205,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
 });
 
 test("auditoria aceita somente a duplicidade ativa presente na quarentena canônica", () => {
-  const work = mkdtempSync(join(tmpdir(), "data-freshness-crosswalk-"));
+  const work = mkdtempSync(join(process.cwd(), ".tmp-data-freshness-crosswalk-"));
   try {
     const snapshotPath = "data/chapas-2026-tse-20260815.json";
     const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as {
@@ -317,6 +317,42 @@ test("auditoria aceita somente a duplicidade ativa presente na quarentena canôn
       ),
       [officialProfile.profile_slug],
     );
+
+    writeFileSync(
+      crosswalk,
+      JSON.stringify({
+        metadata: {
+          active_registration_count: 2,
+          active_profile_count: 1,
+          unresolved_count: 0,
+        },
+        profiles: [
+          {
+            profile_slug: officialProfile.profile_slug,
+            canonical_registration_sq: null,
+            registration_sqs: [100000000001, 100000000002],
+            publication_status: "quarantine_duplicate_active",
+          },
+        ],
+      }),
+    );
+    const invalidCrosswalk = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        `--published=${published}`,
+        `--official-snapshot=${snapshotPath}`,
+        `--current-official-snapshot=${currentOfficial}`,
+        `--active-profile-crosswalk=${crosswalk}`,
+        `--out=${join(work, "invalid-out")}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.notEqual(invalidCrosswalk.status, 0);
+    assert.match(invalidCrosswalk.stderr, /registration_sqs inválido/);
   } finally {
     rmSync(work, { recursive: true, force: true });
   }
