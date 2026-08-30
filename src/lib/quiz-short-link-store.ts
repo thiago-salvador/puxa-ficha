@@ -42,11 +42,54 @@ function withFixtureLock<T>(filePath: string, fn: () => Promise<T>): Promise<T> 
   return run
 }
 
+/**
+ * O store de arquivo existe para teste e dev: ele guarda os short-links num JSON
+ * local, com lock em memoria do processo.
+ *
+ * Em producao serverless isso e um modo de falha silencioso: cada invocacao tem
+ * seu proprio filesystem efemero, entao o link gravado numa instancia some ou
+ * nao e visto pela proxima, e o lock em memoria nao coordena nada entre elas.
+ * Qualquer valor na env, inclusive um deixado por engano numa copia de
+ * configuracao entre ambientes, era suficiente para trocar o Supabase por isso.
+ *
+ * O discriminador e `VERCEL_ENV`, e a escolha e estreita de proposito:
+ *
+ *   - `NODE_ENV=production` NAO serve: tambem vale para `next start` local e no
+ *     CI, onde o store de arquivo e legitimo e nao ha Supabase nenhum. E assim
+ *     que `playwright.launch.config.ts` exercita o fluxo de short link.
+ *   - `VERCEL` NAO serve: `vercel env pull` grava `VERCEL` no `.env.local`, e o
+ *     Next carrega esse arquivo em `next dev`. Usar ele desligaria o fixture na
+ *     maquina de quem desenvolve, que e justamente para quem ele existe.
+ *   - `VERCEL_ENV=production|preview` identifica deployments serverless.
+ *     `VERCEL_ENV=development`, definido por `vercel dev`, continua local e
+ *     pode usar o fixture controlado.
+ *
+ * No runtime da Vercel o fixture e ignorado e a rota volta para o Supabase. O
+ * aviso sai uma vez por processo para a configuracao errada nao passar
+ * despercebida.
+ */
+let avisouFixtureEmProducao = false
+
+function isVercelRuntime() {
+  const vercelEnv = process.env.VERCEL_ENV?.trim()
+  return vercelEnv === "production" || vercelEnv === "preview"
+}
+
 function resolveQuizShortLinkFixturePath() {
   const raw = process.env.PF_QUIZ_SHORT_LINKS_FILE?.trim()
   if (!raw) return null
+  if (isVercelRuntime()) {
+    if (!avisouFixtureEmProducao) {
+      avisouFixtureEmProducao = true
+      console.warn(
+        "[quiz-short-link] PF_QUIZ_SHORT_LINKS_FILE ignorada na Vercel: o store de arquivo nao sobrevive a invocacao serverless. Usando Supabase.",
+      )
+    }
+    return null
+  }
   return path.resolve(raw)
 }
+
 
 function isUniqueViolation(error: unknown) {
   if (!error || typeof error !== "object") return false

@@ -334,6 +334,12 @@ describe("contrato da view candidatos_publico", () => {
       "20260829030002_candidate_registration_structured_state.sql",
       "20260829100000_projetos_lei_chave_por_fonte.sql",
       "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql",
+      // Resolve os 63 profissao_declarada gravados como QID cru do Wikidata.
+      // UPDATE puro em public.candidatos: muda o VALOR de uma coluna que a view
+      // já expõe, não a definição dela. candidatos_publico continua como está.
+      "20260830120000_backfill_profissao_declarada_qid_wikidata.sql",
+      // Correção isolada de um voto e receipt. Não redefine candidatos_publico.
+      "20260830143500_jhc_voto_artigo_17.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

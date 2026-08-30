@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "queue_id": "strict-all-human-review:proof",
+  "queue_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "profiles": [
+    {
+      "slug": "teste-p0",
+      "current": {
+        "nome_urna": "Teste P0",
+        "cargo_disputado": "Governador",
+        "estado": "SP",
+        "partido_sigla": "TST"
+      },
+      "decisions": [
+        {
+          "item_id": "teste-p0:R1_selo",
+          "slug": "teste-p0",
+          "category": "R1_selo",
+          "valid_decisions": ["publicar_com_evidencia", "despublicar_com_motivo_data", "coletar"],
+          "dependencies": []
+        }
+      ]
+    },
+    {
+      "slug": "teste-deps",
+      "current": {
+        "nome_urna": "Teste Dependências",
+        "cargo_disputado": "Senador",
+        "estado": "RJ",
+        "partido_sigla": "TST"
+      },
+      "decisions": [
+        {
+          "item_id": "teste-deps:R3:processos-curadoria",
+          "slug": "teste-deps",
+          "category": "R3:processos-curadoria",
+          "valid_decisions": ["coletar", "recibo_nao_aplicabilidade"],
+          "dependencies": []
+        },
+        {
+          "item_id": "teste-deps:R5:votos",
+          "slug": "teste-deps",
+          "category": "R5:votos",
+          "valid_decisions": ["publicar_com_evidencia", "recibo_nao_aplicabilidade", "coletar"],
+          "dependencies": ["teste-deps:R3:processos-curadoria"]
+        }
+      ]
+    }
+  ]
+}

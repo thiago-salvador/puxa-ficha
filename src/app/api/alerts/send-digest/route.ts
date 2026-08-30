@@ -4,9 +4,11 @@ import {
   buildAlertOneClickUnsubscribeUrl,
   buildAlertManageUrl,
   buildAlertUnsubscribeUrl,
+  applyAlertsNoStoreHeaders,
   createAlertsServiceRoleClient,
   decryptAlertManageToken,
 } from "@/lib/alerts"
+import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import {
   buildAlertDigestEmail,
   type AlertDigestEmailCandidate,
@@ -87,6 +89,72 @@ function parsePositiveInt(value: string | null, fallback: number): number {
   return parsed
 }
 
+/**
+ * Chave de idempotência do digest: a mesma identidade do
+ * `UNIQUE (subscriber_id, canal, digest_date)` de `notification_log`.
+ *
+ * O prefixo existe para a chave nunca colidir com outro tipo de email que venha
+ * a usar idempotência no futuro. Cabe folgado nos 256 caracteres da Resend: um
+ * UUID mais a data mais o prefixo dá 60.
+ */
+export function buildDigestIdempotencyKey(subscriberId: string, digestDate: string): string {
+  return `pf-digest:${subscriberId}:${digestDate}`
+}
+
+/**
+ * Cursor de keyset do lote de assinantes.
+ *
+ * O lote paginava por deslocamento numerico (`.range(cursor, cursor + limit - 1)`)
+ * sobre `order(created_at).order(id)`. Entre uma pagina e a seguinte existe uma
+ * chamada HTTP encadeada, e nessa janela o /api/alerts/delete-data pode apagar
+ * um assinante: todo mundo depois dele anda uma posicao para tras, e o primeiro
+ * da pagina seguinte e PULADO. Ele nao recebe o digest do dia e nada no log diz
+ * isso, porque `processed` continua batendo.
+ *
+ * Keyset sobre a mesma chave de ordenacao nao tem esse modo de falha: a proxima
+ * pagina e definida pelo ULTIMO REGISTRO VISTO, nao por uma posicao. Apagar
+ * qualquer linha, antes ou depois do cursor, nao move a fronteira.
+ *
+ * A chave precisa ser a mesma da ordenacao e precisa ser unica: `created_at`
+ * sozinho empata (dois cadastros no mesmo instante), e por isso o par leva o
+ * `id`, que e a primary key.
+ */
+export interface DigestKeysetCursor {
+  createdAt: string
+  id: string
+}
+
+const DIGEST_CURSOR_SEPARATOR = "|"
+
+export function encodeDigestCursor(cursor: DigestKeysetCursor): string {
+  return `${cursor.createdAt}${DIGEST_CURSOR_SEPARATOR}${cursor.id}`
+}
+
+export function parseDigestCursor(raw: string | null): DigestKeysetCursor | null {
+  if (!raw) return null
+  const separador = raw.indexOf(DIGEST_CURSOR_SEPARATOR)
+  if (separador <= 0) return null
+  const createdAt = raw.slice(0, separador).trim()
+  const id = raw.slice(separador + 1).trim()
+  if (!createdAt || !id) return null
+  if (!Number.isFinite(Date.parse(createdAt))) return null
+  return { createdAt, id }
+}
+
+/**
+ * `(created_at, id) > (a, b)` em PostgREST. Nao ha comparacao de tupla, entao a
+ * desigualdade lexicografica vira a disjuncao equivalente: ou o timestamp e
+ * maior, ou e igual e o id desempata para cima.
+ *
+ * Os valores vao entre aspas porque um timestamp com offset (`+00:00`) e um
+ * UUID passam por um parser que usa virgula e parentese como separador.
+ */
+export function buildDigestKeysetFilter(cursor: DigestKeysetCursor): string {
+  const createdAt = JSON.stringify(cursor.createdAt)
+  const id = JSON.stringify(cursor.id)
+  return `created_at.gt.${createdAt},and(created_at.eq.${createdAt},id.gt.${id})`
+}
+
 function formatDigestDate(date = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: DIGEST_TIME_ZONE,
@@ -113,7 +181,11 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
+    // `cursor` continua sendo o CONTADOR de quantos assinantes ja foram
+    // processados nas paginas anteriores: e o que aparece no corpo, no log e nos
+    // testes. Quem define a proxima pagina agora e `after`, o cursor de keyset.
     const cursor = parsePositiveInt(req.nextUrl.searchParams.get("cursor"), 0)
+    const after = parseDigestCursor(req.nextUrl.searchParams.get("after"))
     const requestedLimit = parsePositiveInt(req.nextUrl.searchParams.get("limit"), DEFAULT_BATCH_LIMIT)
     const limit = Math.max(1, Math.min(MAX_BATCH_LIMIT, requestedLimit || DEFAULT_BATCH_LIMIT))
     const chainDepth = parsePositiveInt(req.nextUrl.searchParams.get("depth"), 0)
@@ -122,7 +194,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
     const digestDate = formatDigestDate(new Date(runStartedAt))
 
     const supabase = deps.createAlertsServiceRoleClient()
-    const { data: subscribers, error: subscribersError, count } = await supabase
+    const consultaBase = supabase
       .from("alert_subscribers")
       .select(
         "id, email, nome, verified_at, last_digest_sent_at, manage_token_ciphertext, created_at",
@@ -130,9 +202,13 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       )
       .eq("verified", true)
       .eq("canal_email", true)
+    const consultaComCursor = after
+      ? consultaBase.or(buildDigestKeysetFilter(after))
+      : consultaBase
+    const { data: subscribers, error: subscribersError, count } = await consultaComCursor
       .order("created_at", { ascending: true })
       .order("id", { ascending: true })
-      .range(cursor, cursor + limit - 1)
+      .limit(limit)
 
     if (subscribersError) {
       deps.logAlertsApiExit("send-digest", 503, "db_subscribers_query_failed")
@@ -398,6 +474,13 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             "List-Unsubscribe": `<${oneClickUnsubscribeUrl}>`,
             "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
           },
+          // `subscriberId + digestDate` e a mesma identidade que o UNIQUE de
+          // notification_log usa, entao a chave e estavel entre tentativas e
+          // unica por envio logico. Fecha a janela em que a Resend aceita o
+          // envio e estoura o prazo de 10s do fetch: o catch marca `failed`, o
+          // cron seguinte reprocessa o assinante, e sem a chave ele receberia o
+          // digest duas vezes.
+          idempotencyKey: buildDigestIdempotencyKey(subscriber.id, digestDate),
         })
         emailEnviado = true
 
@@ -541,9 +624,23 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       }
     }
 
-    const total = count ?? cursor + (subscribers?.length ?? 0)
-    const nextCursor = cursor + (subscribers?.length ?? 0)
-    const hasMore = nextCursor < total
+    const lote = subscribers ?? []
+    const total = count ?? cursor + lote.length
+    const nextCursor = cursor + lote.length
+    // Pagina cheia significa "pode haver mais", e e o unico sinal que sobrevive a
+    // delecao concorrente. `nextCursor < total` nao sobrevive: `count` encolhe
+    // quando alguem apaga a conta durante o lote, e a fila terminava cedo.
+    // O custo e uma requisicao encadeada a mais quando o total e multiplo exato
+    // do limite; ela volta com zero linhas e encerra.
+    const hasMore = lote.length === limit
+    const ultimoDoLote = lote.at(-1)
+    const nextAfter =
+      hasMore && ultimoDoLote
+        ? encodeDigestCursor({
+            createdAt: String(ultimoDoLote.created_at),
+            id: String(ultimoDoLote.id),
+          })
+        : null
     const chainRequired = hasMore && shouldChain
 
     const origemBruta = resolveChainOrigin(req)
@@ -564,6 +661,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       // (mesmo bug do news/refresh, ver src/lib/cron-chain-origin.ts).
       const nextUrl = new URL(req.nextUrl.pathname, origem.origin)
       nextUrl.searchParams.set("cursor", String(nextCursor))
+      if (nextAfter) nextUrl.searchParams.set("after", nextAfter)
       nextUrl.searchParams.set("limit", String(limit))
       nextUrl.searchParams.set("chain", "1")
       nextUrl.searchParams.set("depth", String(chainDepth + 1))
@@ -703,7 +801,16 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
 
 const handler = createSendDigestHandler()
 
+async function emailFeatureGuardedHandler(req: NextRequest) {
+  if (!isAlertsEmailFeatureEnabled()) {
+    return applyAlertsNoStoreHeaders(
+      NextResponse.json({ ok: true, disabled: true, processed: 0, sent: 0 }),
+    )
+  }
+  return handler(req)
+}
+
 // Vercel Cron triggers this endpoint via GET (auth gated by CRON_SECRET, which Vercel injects from
 // the env var). GitHub manual dispatch and the internal auto-chain use POST. Both share one handler.
-export const GET = handler
-export const POST = handler
+export const GET = emailFeatureGuardedHandler
+export const POST = emailFeatureGuardedHandler

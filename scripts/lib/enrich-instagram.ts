@@ -1,5 +1,5 @@
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
-import { sleep } from "./helpers"
+import { FETCH_TIMEOUT_MS, sleep } from "./helpers"
 import { supabase } from "./supabase"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
@@ -67,6 +67,7 @@ async function fetchInstagramFollowers(username: string): Promise<number | null>
           "Accept-Language": "pt-BR,pt;q=0.9,en;q=0.8",
           Referer: `https://www.instagram.com/${username}/`,
         },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       })
 
       if (res.ok) {
@@ -96,6 +97,7 @@ async function fetchInstagramFollowers(username: string): Promise<number | null>
         Accept: "application/json",
         Referer: "https://www.instagram.com/",
       },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     })
 
     if (res.ok) {

@@ -1,0 +1,16 @@
+{
+  "canonical": {
+    "path": "QA/evidencias/2026-08-30-superficie-strict-all-human-review.json",
+    "sha256": "a088ba48e5a6af2c20adede474cd8a2f3ae6978cb5cac875dd48d7890c4a227d",
+    "run_id": 33318905784,
+    "head_sha": "7b83de1e3c7a48eb74e93498e003b1a24db18d9f"
+  },
+  "snapshot": {
+    "path": "QA/evidencias/2026-08-30-strict-all-review-funnel/coverage-snapshot-readonly.json",
+    "sha256": "23da0ce324475261de0c203e0bf2d1900109d05fa784a3bb7feec9de4803619d",
+    "checked_at": "2026-08-30T18:38:54Z",
+    "profiles_total": 209
+  },
+  "queue_sha256": "4cd390ba2b22b650005bb1103759ab5394670f7e7839010f48a68eec64bb20d4",
+  "generated_at": "2026-08-30T18:40:41.094Z"
+}

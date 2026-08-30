@@ -38,7 +38,7 @@ import {
   hasCandidateDebatePressQuotes,
 } from "./CandidateDebatesBentoCard"
 import {
-  FINANCING_BREAKDOWN_KEYS,
+  FINANCING_COLOR_BY_KEY,
   fixedCopy,
   formatFinancingLabel,
   formatPatrimonioEleicaoEstadoLabel,
@@ -47,6 +47,7 @@ import {
   formatProcessTypeLabel,
   formatPublicLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import { financiamentoPleitoSubtitulo } from "@/lib/financiamento-pleito-display"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
@@ -75,14 +76,6 @@ type PatrimonioSummary = {
   latest: Patrimonio | null
   earliest: Patrimonio | null
   growthPct: number | null
-}
-
-const FINANCING_COLOR_BY_KEY: Record<(typeof FINANCING_BREAKDOWN_KEYS)[number], string> = {
-  fundo_eleitoral: "#0a0a0a",
-  fundo_partidario: "#525252",
-  pessoa_fisica: "#a3a3a3",
-  recursos_proprios: "#d4d4d4",
-  outros_recursos: "#e5e5e5",
 }
 
 function getPatrimonioSummary(patrimonio: Patrimonio[]): PatrimonioSummary {
@@ -596,6 +589,7 @@ function VotesTeaser({
         {votos.slice(0, 4).map((v) => (
           <div key={v.id} className="flex items-start gap-2.5">
             <span
+              title={formatVoteNote(v.voto) || undefined}
               className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${getVotoBadgeClassName(v.voto)}`}
             >
               {formatVoteBadgeLabel(v.voto)}

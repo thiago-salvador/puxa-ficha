@@ -1,0 +1,1784 @@
+{
+  "_comentario": "Autoriza somente a remoção dos 63 QIDs: 39 ocupações oficiais TSE 2026 e 24 NULL sem vínculo oficial verificável, com timestamp e receipt reversível.",
+  "recorte": "profissao-qid-20260830",
+  "migration": "20260830120000_backfill_profissao_declarada_qid_wikidata.sql",
+  "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip, SHA-256 eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27, geração 27/08/2026 12:30:35; vínculos em data/chapas-2026-tse-20260827.json.",
+  "coorte": [
+    "acm-neto",
+    "adailton-furia",
+    "adriana-accorsi",
+    "alan-rick",
+    "alexandre-curi",
+    "amelio-cayres",
+    "anderson-ferreira",
+    "ataides-oliveira",
+    "beto-faro",
+    "ciro-gomes-gov-ce",
+    "cleitinho",
+    "confucio-moura",
+    "da-vitoria",
+    "daniel-vilela",
+    "david-almeida",
+    "dr-furlan",
+    "edegar-pretto",
+    "eduardo-braga",
+    "eduardo-braide",
+    "eduardo-girao",
+    "eduardo-paes",
+    "elmano-de-freitas",
+    "erika-hilton",
+    "felicio-ramuth",
+    "gabriel-azevedo",
+    "geraldo-alckmin",
+    "gilberto-kassab",
+    "gilson-machado",
+    "guto-silva",
+    "haddad-gov-sp",
+    "hana-ghassan",
+    "hildon-chaves",
+    "jeronimo",
+    "joao-campos",
+    "joel-rodrigues",
+    "jose-carlos-aleluia",
+    "jose-eliton",
+    "juliana-brizola",
+    "laurez-moreira",
+    "leandro-grass",
+    "mailza-assis",
+    "marconi-perillo",
+    "marcos-vieira",
+    "mateus-simoes",
+    "natasha-slhessarenko",
+    "nikolas-ferreira",
+    "omar-aziz",
+    "otaviano-pivetta",
+    "paula-belmonte",
+    "paulo-hartung",
+    "paulo-martins-gov-pr",
+    "pazolini",
+    "pedro-cunha-lima",
+    "raquel-lyra",
+    "ricardo-cappelli",
+    "roberto-cidade",
+    "rodrigo-bacellar",
+    "rodrigo-pacheco",
+    "silvio-mendes",
+    "simao-jatene",
+    "washington-reis",
+    "wellington-fagundes",
+    "wilder-morais"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "acm-neto",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "adailton-furia",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "adriana-accorsi",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alan-rick",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-curi",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "amelio-cayres",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "anderson-ferreira",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "beto-faro",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ciro-gomes-gov-ce",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cleitinho",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "confucio-moura",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "da-vitoria",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "daniel-vilela",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "david-almeida",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-furlan",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "edegar-pretto",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-braga",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-braide",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-girao",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-paes",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "elmano-de-freitas",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "erika-hilton",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "felicio-ramuth",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "geraldo-alckmin",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gilberto-kassab",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gilson-machado",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "guto-silva",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "haddad-gov-sp",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hana-ghassan",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hildon-chaves",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jeronimo",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joao-campos",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-carlos-aleluia",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-eliton",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "juliana-brizola",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "laurez-moreira",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leandro-grass",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mailza-assis",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marconi-perillo",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marcos-vieira",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mateus-simoes",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "natasha-slhessarenko",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "nikolas-ferreira",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "omar-aziz",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "otaviano-pivetta",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paula-belmonte",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paulo-hartung",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paulo-martins-gov-pr",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pazolini",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "pedro-cunha-lima",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "raquel-lyra",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "roberto-cidade",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rodrigo-bacellar",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rodrigo-pacheco",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "silvio-mendes",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "simao-jatene",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "washington-reis",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wellington-fagundes",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilder-morais",
+      "campos": [
+        "profissao_declarada",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "acm-neto",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "adailton-furia",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "adriana-accorsi",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "alan-rick",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "alexandre-curi",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "amelio-cayres",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "anderson-ferreira",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "beto-faro",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "ciro-gomes-gov-ce",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "cleitinho",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "confucio-moura",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "da-vitoria",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "daniel-vilela",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "david-almeida",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "dr-furlan",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "edegar-pretto",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "eduardo-braga",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "eduardo-braide",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "eduardo-girao",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "eduardo-paes",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "elmano-de-freitas",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "erika-hilton",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "felicio-ramuth",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "geraldo-alckmin",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "gilberto-kassab",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "gilson-machado",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "guto-silva",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "haddad-gov-sp",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "hana-ghassan",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "hildon-chaves",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "jeronimo",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "joao-campos",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "jose-carlos-aleluia",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "jose-eliton",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "juliana-brizola",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "laurez-moreira",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "leandro-grass",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "mailza-assis",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "marconi-perillo",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "marcos-vieira",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "mateus-simoes",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "natasha-slhessarenko",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "nikolas-ferreira",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "omar-aziz",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "otaviano-pivetta",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "paula-belmonte",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "paulo-hartung",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "paulo-martins-gov-pr",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "pazolini",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "pedro-cunha-lima",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "raquel-lyra",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "roberto-cidade",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "rodrigo-bacellar",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "rodrigo-pacheco",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "silvio-mendes",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "simao-jatene",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "washington-reis",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "wellington-fagundes",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "slug": "wilder-morais",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "executado_em",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    "data/qid-profissao/profissao-declarada-qid-20260830.json",
+    "data/chapas-2026-tse-20260827.json",
+    "supabase/readback/20260830120000_backfill_profissao_declarada_qid_wikidata.readback.sql",
+    "supabase/rollback/20260830120000_backfill_profissao_declarada_qid_wikidata.rollback.sql",
+    "supabase/readback/20260830120000_backfill_profissao_declarada_qid_wikidata.rollback.readback.sql"
+  ]
+}

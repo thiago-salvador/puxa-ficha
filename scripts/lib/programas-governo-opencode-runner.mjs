@@ -61,6 +61,11 @@ async function encerrarGrupo(child, closed, graceMs) {
 }
 
 async function executarOpenCodeRunnerInterno({ modelo, api, maxTokens, prefixoTemporario, promptCurto }) {
+  const opencodeGo = process.env.PF_OPENCODE_GO?.trim()
+  if (!opencodeGo) {
+    throw new Error("PF_OPENCODE_GO obrigatorio para runners OpenCode")
+  }
+
   const bruto = await lerStdin()
   const inicioEnvelope = bruto.indexOf("{")
   const envelope = JSON.parse(bruto.slice(inicioEnvelope === -1 ? 0 : inicioEnvelope))
@@ -73,10 +78,15 @@ async function executarOpenCodeRunnerInterno({ modelo, api, maxTokens, prefixoTe
     throw new Error(`prompt final ${promptBytes} bytes excede limite seguro ${PROGRAMA_GOVERNO_PROMPT_LIMITE_BYTES}; deve ser particionado via multipassagem`)
   }
 
+  // Nao ha default: o caminho antigo era um diretorio pessoal de uma maquina
+  // especifica, commitado num repositorio publico. Em qualquer outro ambiente
+  // ele falha em ENOENT depois de montar o prompt, ou pior, executa o que
+  // estiver naquele caminho. Sem a env, aborta antes de qualquer chamada de
+  // modelo. Documentada em Settings/AUTOMATIONS_AND_ENVIRONMENTS.md e no
+  // .env.example.
   const dirTmp = mkdtempSync(join(tmpdir(), prefixoTemporario))
   const arquivoTmp = join(dirTmp, "prompt.txt")
   writeFileSync(arquivoTmp, promptFinal, "utf8")
-  const opencodeGo = process.env.PF_OPENCODE_GO ?? "/Users/thiagosalvador/.codex/skills/opencode/scripts/opencode-go.mjs"
   const timeoutMs = Number(process.env.PF_OPENCODE_TIMEOUT_MS ?? 900_000)
   const paddingMs = Number(process.env.PF_OPENCODE_TIMEOUT_PADDING_MS ?? 5_000)
   const graceMs = Number(process.env.PF_OPENCODE_GRACE_MS ?? 2_000)
