@@ -1,0 +1,330 @@
+{
+  "descricao": "Os 63 registros de public.candidatos com profissao_declarada gravada como QID cru do Wikidata, e o mapa QID -> rotulo pt-BR usado pelo backfill.",
+  "medicao": {
+    "quando": "2026-08-29, reconfirmado em 2026-08-30",
+    "como": "Supabase MCP execute_sql read-only, projeto wskpzsobvqwhnbsdsmok",
+    "query": "select slug, profissao_declarada from candidatos where profissao_declarada ~ '^Q[0-9]+$' order by profissao_declarada, slug;",
+    "sha_repo_auditado": "35c877417685900ab96a84f40283f719c6e8f688",
+    "total": 63
+  },
+  "mapa": {
+    "fonte": "API do Wikidata (action=wbgetentities, props=labels, languages=pt-br|pt|en), lida em 2026-08-30",
+    "nota": "`rotulo` e a forma que vai para o banco: capitalizada e sem marcador de genero, para casar com o resto da coluna, que vem do TSE nesse formato. Os campos wikidata_* preservam o label original, para a escolha ficar auditavel.",
+    "qids": {
+      "Q212238": {
+        "rotulo": "Servidor público",
+        "wikidata_pt_br": "servidor público",
+        "wikidata_en": "civil servant",
+        "registros": 2
+      },
+      "Q33999": {
+        "rotulo": "Ator",
+        "wikidata_pt_br": "ator",
+        "wikidata_en": "actor",
+        "registros": 1
+      },
+      "Q36180": {
+        "rotulo": "Escritor",
+        "wikidata_pt_br": "escritor",
+        "wikidata_en": "writer",
+        "registros": 1
+      },
+      "Q37226": {
+        "rotulo": "Professor",
+        "wikidata_pt_br": "professor(a)",
+        "wikidata_en": "teacher",
+        "registros": 1
+      },
+      "Q39631": {
+        "rotulo": "Médico",
+        "wikidata_pt_br": "médico",
+        "wikidata_en": "physician",
+        "registros": 2
+      },
+      "Q40348": {
+        "rotulo": "Advogado",
+        "wikidata_pt_br": "advogado(a)",
+        "wikidata_en": "lawyer",
+        "registros": 9
+      },
+      "Q43845": {
+        "rotulo": "Empresário",
+        "wikidata_pt_br": "empresário",
+        "wikidata_en": "businessperson",
+        "registros": 3
+      },
+      "Q81096": {
+        "rotulo": "Engenheiro",
+        "wikidata_pt_br": "engenheiro",
+        "wikidata_en": "engineer",
+        "registros": 1
+      },
+      "Q82955": {
+        "rotulo": "Político",
+        "wikidata_pt_br": "político",
+        "wikidata_en": "politician",
+        "registros": 40
+      },
+      "Q937857": {
+        "rotulo": "Futebolista",
+        "wikidata_pt_br": "futebolista",
+        "wikidata_en": "association football player",
+        "registros": 3
+      }
+    }
+  },
+  "registros": [
+    {
+      "slug": "joao-campos",
+      "profissao_declarada": "Q212238"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "profissao_declarada": "Q212238"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "profissao_declarada": "Q33999"
+    },
+    {
+      "slug": "paulo-martins-gov-pr",
+      "profissao_declarada": "Q36180"
+    },
+    {
+      "slug": "mateus-simoes",
+      "profissao_declarada": "Q37226"
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "profissao_declarada": "Q39631"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "profissao_declarada": "Q39631"
+    },
+    {
+      "slug": "acm-neto",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "adailton-furia",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "david-almeida",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "jose-eliton",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "juliana-brizola",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "pedro-cunha-lima",
+      "profissao_declarada": "Q40348"
+    },
+    {
+      "slug": "ataides-oliveira",
+      "profissao_declarada": "Q43845"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "profissao_declarada": "Q43845"
+    },
+    {
+      "slug": "paula-belmonte",
+      "profissao_declarada": "Q43845"
+    },
+    {
+      "slug": "gilberto-kassab",
+      "profissao_declarada": "Q81096"
+    },
+    {
+      "slug": "adriana-accorsi",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "alan-rick",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "alexandre-curi",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "amelio-cayres",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "beto-faro",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "cleitinho",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "confucio-moura",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "da-vitoria",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "daniel-vilela",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "dr-furlan",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "edegar-pretto",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "eduardo-braga",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "eduardo-braide",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "eduardo-girao",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "eduardo-paes",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "erika-hilton",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "felicio-ramuth",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "gilson-machado",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "guto-silva",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "hana-ghassan",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "hildon-chaves",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "jose-carlos-aleluia",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "laurez-moreira",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "leandro-grass",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "mailza-assis",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "marconi-perillo",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "marcos-vieira",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "omar-aziz",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "paulo-hartung",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "pazolini",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "raquel-lyra",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "roberto-cidade",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "rodrigo-bacellar",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "rodrigo-pacheco",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "simao-jatene",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "washington-reis",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "wellington-fagundes",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "wilder-morais",
+      "profissao_declarada": "Q82955"
+    },
+    {
+      "slug": "anderson-ferreira",
+      "profissao_declarada": "Q937857"
+    },
+    {
+      "slug": "jeronimo",
+      "profissao_declarada": "Q937857"
+    },
+    {
+      "slug": "silvio-mendes",
+      "profissao_declarada": "Q937857"
+    }
+  ]
+}
