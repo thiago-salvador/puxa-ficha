@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "source_id": "destaques-votacoes",
+  "execution_ids": [
+    "destaques-votacoes:20260830-run-c",
+    "destaques-votacoes:20260830-run-d"
+  ],
+  "checked_at": [
+    "2026-08-30T20:18:45.269Z",
+    "2026-08-30T20:18:50.366Z"
+  ],
+  "source_hashes_match": true,
+  "vote_hashes_match": true,
+  "pair_hashes_match": true,
+  "summary": {
+    "votacoes": 23,
+    "pairs": 154,
+    "candidates": 30,
+    "sources": 93,
+    "pares_encontrados": 151,
+    "pares_sem_achado": 3,
+    "pares_divergentes": 1,
+    "votacoes_mapeadas": 21,
+    "votacoes_sem_id_oficial": 2
+  },
+  "run_a_manifest_sha256": "e5234003fba9c2cb98bf6979d6ee2956af3d1adc332ceb75181c51d848ca36ef",
+  "run_b_manifest_sha256": "73ea0383fc830903bb0bb3ebc6e292493421dcecde007b9768c28fb8604bdc55",
+  "comparison_sha256": "0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f"
+}

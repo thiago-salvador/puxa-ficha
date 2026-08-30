@@ -218,7 +218,7 @@ export interface VotoCandidato {
   id: string;
   candidato_id: string;
   votacao_id: string;
-  voto: 'sim' | 'não' | 'abstenção' | 'ausente' | 'obstrução';
+  voto: 'sim' | 'não' | 'abstenção' | 'ausente' | 'obstrução' | 'artigo_17';
   contradicao: boolean;
   contradicao_descricao: string | null;
 

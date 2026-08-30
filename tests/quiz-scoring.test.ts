@@ -8,6 +8,7 @@ import {
   compareCandidatesAlphabetically,
   deriveUserPoliticalAxes,
   dynamicWeights,
+  normalizeVotoFromApi,
 } from "../src/lib/quiz-scoring"
 import type { QuizAlignmentDataset } from "../src/lib/quiz-types"
 import { fixedCopy } from "../src/lib/ui-labels"
@@ -60,6 +61,25 @@ function extremeRightAnswers(): Map<string, { valor: RespostaLikert; importante:
 }
 
 describe("quiz-scoring", () => {
+  it("trata Artigo 17 como voto neutro, igual a ausência", () => {
+    assert.equal(normalizeVotoFromApi("artigo_17"), "artigo_17")
+    assert.equal(normalizeVotoFromApi("Artigo 17"), "artigo_17")
+    assert.equal(normalizeVotoFromApi("categoria_desconhecida"), null)
+
+    const dataset = buildMockQuizAlignmentDataset()
+    const respostas = allNeutralAnswers()
+    const base = dataset.candidatos[0]
+    const votacaoId = dataset.votacoes_mapeadas[0]
+    assert.ok(base && votacaoId)
+
+    const comAusencia = { ...base, votos: { ...base.votos, [votacaoId]: "ausente" as const } }
+    const comArtigo17 = { ...base, votos: { ...base.votos, [votacaoId]: "artigo_17" as const } }
+    assert.deepEqual(
+      calcularAlinhamento(respostas, comArtigo17, quizPerguntasOrdenadas(), dataset, 1),
+      calcularAlinhamento(respostas, comAusencia, quizPerguntasOrdenadas(), dataset, 1),
+    )
+  })
+
   it("returns scores for mock dataset without throwing", () => {
     const dataset = buildMockQuizAlignmentDataset()
     const respostas = allNeutralAnswers()

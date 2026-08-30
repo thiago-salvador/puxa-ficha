@@ -54,6 +54,9 @@ function chamarCodex(promptTexto) {
       if (code === 0 && stdout.trim()) resolvePromise({ stdout, stderr, code })
       else rejectPromise(new Error(`codex saiu com ${code}: ${stderr.slice(-500)}`))
     })
+    child.stdin.on("error", (error) => {
+      if (error.code !== "EPIPE") concluirErro(new Error(`codex erro de stdin: ${error.message}`))
+    })
     child.stdin.end(promptTexto)
   })
 }

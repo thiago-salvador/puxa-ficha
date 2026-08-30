@@ -78,11 +78,13 @@ import {
 import {
   fixedCopy,
   formatAttentionCategoryLabel,
+  formatDestaquesLabel,
   formatProcessStatusLabel,
   formatProcessSummaryLabel,
   formatProcessTypeLabel,
   formatTemaLabel,
   formatVoteBadgeLabel,
+  formatVoteNote,
 } from "@/lib/ui-labels"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import {
@@ -459,7 +461,10 @@ export function CandidatoProfile({
       label: "Legislação",
       dataCount: legislacaoGroups.navigationCount + Math.max(0, projetosLeiTotal - projetosLei.length),
     },
-    alertas: { label: "Destaques", dataCount: destaques.totalExibido },
+    alertas: {
+      label: formatDestaquesLabel(destaques.totalExibido),
+      dataCount: destaques.totalExibido,
+    },
   }
 
   const tabDefs: { id: CandidatoProfileNavTabId; label: string; dataCount: number }[] =
@@ -744,7 +749,7 @@ export function CandidatoProfile({
             */}
             <StatCard
               value={destaques.totalExibido}
-              label="Destaques"
+              label={formatDestaquesLabel(destaques.totalExibido)}
               icon={Sparkles}
               dataValueAttr="data-pf-overview-destaques"
               dataRawValue={destaques.totalExibido}
@@ -1087,6 +1092,7 @@ export function CandidatoProfile({
                           )}
                         </div>
                         <span
+                          title={formatVoteNote(v.voto) || undefined}
                           className={`mt-1 shrink-0 rounded-full px-3.5 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.05em] ${
                             v.voto === "sim"
                               ? "bg-foreground text-background"

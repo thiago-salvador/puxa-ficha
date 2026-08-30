@@ -34,10 +34,15 @@ const files = [
 ].filter((file, index, all) => all.indexOf(file) === index);
 const allowed = [
   /^\.github\/workflows\/data-freshness-audit\.yml$/,
+  /^\.github\/workflows\/refresh-destaques-votacoes\.yml$/,
+  /^QA\/evidencias\/2026-08-30-destaques-votacoes\//,
   /^docs\/operations\/data-freshness-workflow\/(EVAL|GATES|PLAN)\.md$/,
   /^package\.json$/,
   /^QA\/evidencias\/2026-08-30-tse-runner-access\/runner-verification\.json$/,
   /^scripts\/audit\/(audit-data-freshness\.ts|data-freshness-snapshot\.sql|sync-data-freshness-issue\.sh|verify-data-freshness-scope\.mjs)$/,
+  /^scripts\/audit\/(coletar|verify)-destaques-votacoes(?:-provenance)?\.ts$/,
+  /^scripts\/audit\/generate-destaques-freshness-reconciliation\.mjs$/,
+  /^scripts\/audit\/provar-destaques-freshness-reconciliation-pg17\.sh$/,
   /^scripts\/audit\/audit-tse-dependent-monitors\.ts$/,
   /^scripts\/audit\/collect-divulgacand-current\.ts$/,
   /^scripts\/audit\/prove-candidate-roster-integrity\.ts$/,
@@ -49,7 +54,9 @@ const allowed = [
   /^scripts\/audit\/schema-replay-substituicoes\.json$/,
   /^scripts\/data\/(data-freshness-sources|tse-dependent-monitors)\.json$/,
   /^scripts\/lib\/data-freshness\/(candidaturas|divulgacand-current|recommendations|registry|tse-dependent-monitors|tse-source|types)\.ts$/,
+  /^scripts\/lib\/destaques-votacoes-provenance\.ts$/,
   /^tests\/data-freshness-(alerts|artifacts|candidaturas|fail-closed|golden|registry|workflow)\.test\.ts$/,
+  /^tests\/destaques-votacoes-provenance\.test\.ts$/,
   /^tests\/tse-dependent-monitors\.test\.ts$/,
   /^tests\/fixtures\/data-freshness\/cases\.jsonl$/,
   /^data\/chapas-2026-tse-20260827\.json$/,
@@ -74,18 +81,21 @@ const allowed = [
   /^supabase\/readback\/20260829030002_candidate_registration_structured_state\.readback\.sql$/,
   /^supabase\/rollback\/20260829030000_candidate_roster_publication_integrity\.rollback\.sql$/,
   /^supabase\/rollback\/20260829030002_candidate_registration_structured_state\.rollback\.sql$/,
+  /^supabase\/(migrations|readback|rollback)\/20260830151500_destaques_freshness_reconciliation(?:\.readback|\.rollback|\.rollback\.readback)?\.sql$/,
   /^\.github\/workflows\/(apply|rollback)-candidate-roster-integrity-production\.yml$/,
   /^\.github\/merge-queue\/irreversible-change-manifest\.json$/,
   /^docs\/plans\/2026-08-28-candidate-roster-integrity\.md$/,
   /^scripts\/audit\/allowlist-chapas-20260827\.json$/,
   /^scripts\/audit\/allowlist-candidate-roster-integrity-20260829\.json$/,
   /^scripts\/audit\/allowlist-candidate-registration-state-20260829\.json$/,
+  /^scripts\/audit\/allowlist-destaques-freshness-reconciliation-20260830\.json$/,
   /^scripts\/audit\/falhas-replay-linear\.json$/,
   /^scripts\/audit\/lib\/migrations-classificacao\.ts$/,
   /^scripts\/audit\/recortes\.json$/,
   /^scripts\/audit\/schema-replay-substituicoes\.json$/,
   /^tests\/candidatos-publico-view-contrato\.test\.ts$/,
   /^tests\/migrations-classificacao\.test\.ts$/,
+  /^tests\/destaques-freshness-reconciliation-migration\.test\.ts$/,
 ];
 const outside = files.filter(
   (file) => !allowed.some((pattern) => pattern.test(file)),
@@ -93,16 +103,21 @@ const outside = files.filter(
 if (outside.length)
   throw new Error(`arquivos fora do escopo: ${outside.join(", ")}`);
 
-const workflow = readFileSync(
+for (const workflowPath of [
   ".github/workflows/data-freshness-audit.yml",
-  "utf8",
-);
-if (
-  /contents:\s*write|pull-requests:\s*write|git\s+(push|commit|merge)|gh\s+pr|deploy|supabase\s+db/i.test(
-    workflow,
-  )
-) {
-  throw new Error("workflow contém operação remota de escrita");
+  ".github/workflows/refresh-destaques-votacoes.yml",
+]) {
+  const workflow = readFileSync(workflowPath, "utf8");
+  if (
+    /contents:\s*write|pull-requests:\s*write|git\s+(push|commit|merge)|gh\s+pr|deploy|supabase\s+db/i.test(
+      workflow,
+    )
+  ) {
+    throw new Error(`${workflowPath} contém operação remota de escrita`);
+  }
+  if (workflowPath.includes("refresh-destaques") && !/PF_DRY_RUN:\s*"1"/.test(workflow)) {
+    throw new Error("workflow de destaques não ativa blindagem read-only");
+  }
 }
 const sql = readFileSync("scripts/audit/data-freshness-snapshot.sql", "utf8");
 if (

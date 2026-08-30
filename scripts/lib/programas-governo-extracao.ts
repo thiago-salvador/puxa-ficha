@@ -8,6 +8,9 @@ import { promisify } from "node:util"
 import type { ProgramaGovernoExtracao, ProgramaGovernoSecao } from "../../src/lib/programa-governo"
 import { stripAccents } from "../../src/lib/strip-accents"
 
+/** Pacote do TSE pode passar de dezenas de MB; prazo maior que o das chamadas de JSON. */
+const DOWNLOAD_TIMEOUT_MS = 120_000
+
 const execFileAsync = promisify(execFile)
 const OFFICIAL_TSE_HOSTS = new Set(["cdn.tse.jus.br", "dadosabertos.tse.jus.br", "divulgacandcontas.tse.jus.br"])
 export const PROGRAMA_GOVERNO_EXTRACTION_VERSION = "programa-governo-extracao-v2" as const
@@ -49,7 +52,12 @@ const defaultAdapters: ProgramaGovernoExtractionAdapters = {
   makeTempDir: () => mkdtemp(join(tmpdir(), "puxa-ficha-programa-governo-")),
   remove: (path) => rm(path, { recursive: true, force: true }),
   async fetchBytes(url) {
-    const response = await fetch(url, { headers: { Accept: "application/pdf, application/zip" } })
+    // Baixa pacote do TSE, que pode ser grande: prazo maior que o padrao, mas
+    // prazo. Sem ele, uma origem que aceita e nao responde pendura a extracao.
+    const response = await fetch(url, {
+      headers: { Accept: "application/pdf, application/zip" },
+      signal: AbortSignal.timeout(DOWNLOAD_TIMEOUT_MS),
+    })
     if (!response.ok) throw new Error(`TSE respondeu HTTP ${response.status}`)
     return Buffer.from(await response.arrayBuffer())
   },
