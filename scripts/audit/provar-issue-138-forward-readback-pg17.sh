@@ -4,6 +4,12 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
+MODE="${1:-both}"
+case "$MODE" in
+  both|backfill|already-applied) ;;
+  *) echo "FAIL: modo desconhecido: $MODE" >&2; exit 2 ;;
+esac
+
 IMG="postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"
 DDL="supabase/migrations/20260829100000_projetos_lei_chave_por_fonte.sql"
 BACKFILL="supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql"
@@ -47,6 +53,8 @@ create table supabase_migrations.schema_migrations(
   version text primary key,
   idempotency_key text not null
 );
+insert into supabase_migrations.schema_migrations(version, idempotency_key)
+values ('20260829030002', 'sha256:previous-release');
 create table public.candidatos(
   id uuid primary key,
   slug text unique not null
@@ -113,12 +121,40 @@ $assert$;
 SQL
 echo "  PASS  preflight antigo"
 
-echo "F1: DDL scoped e forward readback"
-q < "$DDL" >/dev/null
+echo "F1: modo $MODE, DDL scoped e ledger forward"
+if [[ "$MODE" == "both" ]]; then
+  python3 - "$DDL_HASH" "$BACKFILL_HASH" "$DDL" "$BACKFILL" "$FORWARD_READBACK" "$BACKFILL_READBACK" <<'PY' | q >/dev/null
+import pathlib, re, sys
+
+ddl_digest, backfill_digest, ddl_path, backfill_path, ddl_readback_path, backfill_readback_path = sys.argv[1:]
+def body(path):
+    text = pathlib.Path(path).read_text(encoding="utf-8")
+    begin, commit = list(re.finditer(r"(?im)^\s*BEGIN;\s*$", text)), list(re.finditer(r"(?im)^\s*COMMIT;\s*$", text))
+    if len(begin) != 1 or len(commit) != 1 or begin[0].end() >= commit[0].start():
+        raise SystemExit(f"{path}: transacao externa invalida")
+    return text[begin[0].end():commit[0].start()]
+print("BEGIN;")
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:issue-138-proposicao-source-key', 0));")
+print(body(ddl_path))
+print(f"INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260829100000', '{ddl_digest}');")
+print(pathlib.Path(ddl_readback_path).read_text(encoding="utf-8"))
+print(body(backfill_path))
+print(f"INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key) VALUES ('20260829100100', '{backfill_digest}');")
+print(pathlib.Path(backfill_readback_path).read_text(encoding="utf-8"))
+print("COMMIT;")
+PY
+else
+  q < "$DDL" >/dev/null
+  q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100000', '$DDL_HASH')" >/dev/null
+  q < "$FORWARD_READBACK" >/dev/null
+  q < "$BACKFILL" >/dev/null
+  q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100100', '$BACKFILL_HASH')" >/dev/null
+  q < "$BACKFILL_READBACK" >/dev/null
+fi
+echo "  PASS  DDL scoped e ledger forward"
 q < "$FORWARD_READBACK" >/dev/null
-q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100000', '$DDL_HASH')" >/dev/null
-echo "  PASS  DDL scoped"
-echo "  PASS  forward readback"
+q < "$BACKFILL_READBACK" >/dev/null
+echo "  PASS  readbacks pos-commit (modo $MODE)"
 
 echo "F2: rollback readback nao passa antes do rollback"
 if rollback_output="$(q < "$ROLLBACK_READBACK" 2>&1)"; then
@@ -132,15 +168,22 @@ fi
 echo "  PASS  rollback readback bloqueado no estado forward"
 
 echo "F3: backfill allowlisted, quatro Camara e Senado intacto"
-q < "$BACKFILL" >/dev/null
-q < "$BACKFILL_READBACK" >/dev/null
-q < "$FORWARD_READBACK" >/dev/null
-q -c "insert into supabase_migrations.schema_migrations(version, idempotency_key) values ('20260829100100', '$BACKFILL_HASH')" >/dev/null
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Camara' and proposicao_id_api in ('123202','123149','123094','121483')")" == 4 ]] || { echo "FAIL: backfill nao inseriu 4 Camara"; exit 1; }
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado'")" == 231 ]] || { echo "FAIL: Senado foi alterado"; exit 1; }
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID foi alterada"; exit 1; }
 echo "  PASS  backfill 4"
 echo "  PASS  Senado intacto"
+
+echo "F4: substituicao adversarial da linha Senado sem ID falha forward"
+q -c "update public.projetos_lei set ementa='payload adulterado' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+if q < "$FORWARD_READBACK" >/dev/null 2>&1 || q < "$BACKFILL_READBACK" >/dev/null 2>&1; then
+  echo "FAIL: readback forward aceitou payload Senado adulterado" >&2
+  exit 1
+fi
+q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q < "$FORWARD_READBACK" >/dev/null
+q < "$BACKFILL_READBACK" >/dev/null
+echo "  PASS  forward readbacks recusam substituicao"
 
 echo "R1: rollback e rollback readback separado"
 q -c "delete from supabase_migrations.schema_migrations where version='20260829100100' and idempotency_key='$BACKFILL_HASH'" >/dev/null
@@ -148,7 +191,17 @@ q < "$ROLLBACK" >/dev/null
 q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID nao sobreviveu ao rollback de dados"; exit 1; }
 echo "  PASS  rollback de dados e readback"
+echo "F5: substituicao adversarial da linha Senado sem ID falha rollback readback"
+q -c "update public.projetos_lei set ementa='payload adulterado' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+if q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null 2>&1 || q < "$ROLLBACK_READBACK" >/dev/null 2>&1; then
+  echo "FAIL: readback rollback aceitou payload Senado adulterado" >&2
+  exit 1
+fi
+q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null
+echo "  PASS  rollback readbacks recusam substituicao"
 { printf '%s\n' "SET pf.issue_138_schema_rollback_compatibility = 'approved';"; cat "$SCHEMA_ROLLBACK"; } | q >/dev/null
 q < "$ROLLBACK_READBACK" >/dev/null
+[[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID nao sobreviveu ao rollback de schema"; exit 1; }
 echo "  PASS  rollback de schema e readback"
 echo "PASS: issue #138 forward/rollback PG17"

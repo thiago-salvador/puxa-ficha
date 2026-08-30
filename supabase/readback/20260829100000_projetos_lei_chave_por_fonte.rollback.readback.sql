@@ -6,6 +6,8 @@ DECLARE
   scoped_index integer;
   old_constraint integer;
   senado_sem_id integer;
+  ddl_ledger integer;
+  ledger_top text;
 BEGIN
   SELECT count(*) INTO scoped_index
   FROM pg_indexes
@@ -22,9 +24,23 @@ BEGIN
     AND proposicao_id_api IS NULL
     AND tipo = 'PL'
     AND numero = '4444'
-    AND ano = 2015;
-  IF scoped_index <> 0 OR old_constraint <> 1 OR senado_sem_id <> 1 THEN
-    RAISE EXCEPTION 'issue_138 schema rollback readback falhou (scoped=%, antiga=%, Senado_sem_id=%)', scoped_index, old_constraint, senado_sem_id;
+    AND ano = 2015
+    AND ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'
+    AND situacao IS NULL
+    AND url_inteiro_teor IS NULL
+    AND tema IS NULL
+    AND destaque IS FALSE
+    AND destaque_motivo IS NULL
+    AND coverage_id IS NULL
+    AND metadata IS NOT DISTINCT FROM '{}'::jsonb;
+  SELECT count(*) INTO ddl_ledger
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100000';
+  SELECT max(version) INTO ledger_top
+  FROM supabase_migrations.schema_migrations;
+  IF scoped_index <> 0 OR old_constraint <> 1 OR senado_sem_id <> 1
+     OR ddl_ledger <> 0 OR ledger_top IS DISTINCT FROM '20260829030002' THEN
+    RAISE EXCEPTION 'issue_138 schema rollback readback falhou (scoped=%, antiga=%, Senado_sem_id=%, ddl_ledger=%, topo=%)', scoped_index, old_constraint, senado_sem_id, ddl_ledger, ledger_top;
   END IF;
 END
 $assert$;

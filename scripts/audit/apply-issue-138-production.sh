@@ -139,8 +139,8 @@ if mode == "both":
     print("  END IF;")
     print("END $ledger$;")
     print(ddl_body, end="" if ddl_body.endswith("\n") else "\n")
-    print(ddl_readback.decode("utf-8"), end="" if ddl_readback.endswith(b"\n") else "\n")
     ledger_insert(ddl_version, ddl_digest, ddl_path, ddl_raw, ddl_rollback)
+    print(ddl_readback.decode("utf-8"), end="" if ddl_readback.endswith(b"\n") else "\n")
 else:
     print("DO $ledger$ BEGIN")
     print(f"  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(ddl_version)}")

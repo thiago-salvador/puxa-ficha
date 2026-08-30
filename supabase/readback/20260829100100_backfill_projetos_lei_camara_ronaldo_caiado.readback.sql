@@ -10,6 +10,11 @@ DECLARE
   senado_total integer;
   senado_exato integer;
   senado_sem_id integer;
+  ddl_ledger integer;
+  backfill_ledger integer;
+  ddl_key text;
+  backfill_key text;
+  ledger_top text;
   total_candidato integer;
 BEGIN
   SELECT count(*) INTO camara_total
@@ -83,13 +88,39 @@ BEGIN
     AND proposicao_id_api IS NULL
     AND tipo = 'PL'
     AND numero = '4444'
-    AND ano = 2015;
+    AND ano = 2015
+    AND ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'
+    AND situacao IS NULL
+    AND url_inteiro_teor IS NULL
+    AND tema IS NULL
+    AND destaque IS FALSE
+    AND destaque_motivo IS NULL
+    AND coverage_id IS NULL
+    AND metadata IS NOT DISTINCT FROM '{}'::jsonb;
+  SELECT count(*) INTO ddl_ledger
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100000'
+    AND idempotency_key = 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3';
+  SELECT count(*) INTO backfill_ledger
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100100'
+    AND idempotency_key = 'sha256:3451488bbb0b630d9cb8c6b9d6b1debf3ef7b034f1932aecddd6de7a360584c1';
+  SELECT max(idempotency_key) INTO ddl_key
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100000';
+  SELECT max(idempotency_key) INTO backfill_key
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100100';
+  SELECT max(version) INTO ledger_top
+  FROM supabase_migrations.schema_migrations;
   SELECT count(*) INTO total_candidato
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid;
 
   IF camara_total <> 1849 OR camara_emc_2003 <> 4 OR camara_exato <> 4 OR senado_total <> 231
      OR senado_exato <> 4 OR senado_sem_id <> 1 OR total_candidato <> 2080
+     OR ddl_ledger <> 1 OR backfill_ledger <> 1 OR ddl_key <> 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3'
+     OR backfill_key <> 'sha256:3451488bbb0b630d9cb8c6b9d6b1debf3ef7b034f1932aecddd6de7a360584c1' OR ledger_top IS DISTINCT FROM '20260829100100'
      OR camara_total - 1845 <> 4 THEN
     RAISE EXCEPTION 'issue_138 readback falhou (Camara=%, Camara_exato=%, EMC_2003=%, Senado=%, Senado_exato=%, Senado_sem_id=%, total=%, delta_camara=%)',
       camara_total, camara_exato, camara_emc_2003, senado_total, senado_exato, senado_sem_id, total_candidato, camara_total - 1845;

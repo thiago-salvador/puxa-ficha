@@ -44,7 +44,9 @@ test("aplicador da issue 138 e fechado, ordenado e registra rollback por versao"
   const ddlReadback = APPLY.indexOf("print(ddl_readback.decode")
   const backfillBody = APPLY.indexOf("print(backfill_body")
   const commit = APPLY.indexOf('print("COMMIT;")')
+  const ddlLedgerInsert = APPLY.lastIndexOf("ledger_insert(ddl_version, ddl_digest")
   assert.ok(ddlBody >= 0 && ddlBody < ddlReadback)
+  assert.ok(ddlLedgerInsert >= 0 && ddlLedgerInsert < ddlReadback)
   assert.ok(ddlReadback < backfillBody && backfillBody < commit)
 })
 
@@ -66,6 +68,30 @@ test("forward readback e harness PG17 separam apply e rollback", () => {
   assert.ok(PG17_HARNESS.lastIndexOf('q < "$ROLLBACK"') < PG17_HARNESS.lastIndexOf('q < "$ROLLBACK_READBACK"'))
   assert.match(PG17_HARNESS, /SCHEMA_ROLLBACK/)
   assert.match(PG17_HARNESS, /pf\.issue_138_schema_rollback_compatibility = 'approved'/)
+  assert.match(PG17_HARNESS, /case "\$MODE" in\s+both\|backfill\|already-applied/)
+  assert.match(PG17_HARNESS, /payload adulterado/)
+  assert.match(PG17_HARNESS, /readback forward aceitou payload Senado adulterado/)
+  assert.match(PG17_HARNESS, /readback rollback aceitou payload Senado adulterado/)
+  assert.match(PG17_HARNESS, /readbacks pos-commit \(modo \$MODE\)/)
+  assert.match(PG17_HARNESS, /DDL_HASH=.*shasum/)
+  assert.match(PG17_HARNESS, /BACKFILL_HASH=.*shasum/)
+
+  for (const readback of [FORWARD_READBACK, ROLLBACK_READBACK, BACKFILL_READBACK, BACKFILL_ROLLBACK_READBACK]) {
+    assert.match(readback, /candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid/)
+    assert.match(readback, /fonte = 'Senado'/)
+    assert.match(readback, /proposicao_id_api IS NULL/)
+    assert.match(readback, /tipo = 'PL'/)
+    assert.match(readback, /numero = '4444'/)
+    assert.match(readback, /ano = 2015/)
+    assert.match(readback, /ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'/)
+    assert.match(readback, /situacao IS NULL/)
+    assert.match(readback, /url_inteiro_teor IS NULL/)
+    assert.match(readback, /tema IS NULL/)
+    assert.match(readback, /destaque IS FALSE/)
+    assert.match(readback, /destaque_motivo IS NULL/)
+    assert.match(readback, /coverage_id IS NULL/)
+    assert.match(readback, /metadata IS NOT DISTINCT FROM '\{\}'::jsonb/)
+  }
 })
 
 test("backfill preserva o registro Senado fora da coorte de quatro IDs", () => {
@@ -75,9 +101,15 @@ test("backfill preserva o registro Senado fora da coorte de quatro IDs", () => {
   assert.match(BACKFILL_READBACK, /senado_total <> 231/)
   assert.match(BACKFILL_READBACK, /senado_sem_id <> 1/)
   assert.match(BACKFILL_READBACK, /total_candidato <> 2080/)
+  assert.match(BACKFILL_READBACK, /ddl_ledger <> 1/)
+  assert.match(BACKFILL_READBACK, /backfill_ledger <> 1/)
+  assert.match(BACKFILL_READBACK, /ledger_top IS DISTINCT FROM '20260829100100'/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /senado_total <> 231/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /senado_sem_id <> 1/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /total_candidato <> 2076/)
+  assert.match(BACKFILL_ROLLBACK_READBACK, /ddl_ledger <> 1/)
+  assert.match(BACKFILL_ROLLBACK_READBACK, /backfill_ledger <> 0/)
+  assert.match(BACKFILL_ROLLBACK_READBACK, /ledger_top IS DISTINCT FROM '20260829100000'/)
 })
 
 test("release predecessor do roster e independente e coordenado", () => {
