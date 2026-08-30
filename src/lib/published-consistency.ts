@@ -118,7 +118,7 @@ export function analyzePublishedConsistency(
  * concedesse SELECT a anon em alert_subscribers (a classe exata do vazamento de
  * 2026-06-02) passaria sem ser detectada.
  */
-export const ANON_DENIED_TABLES = [
+const ANON_DENIED_TABLES = [
   "candidatos",
   "financiamento",
   "alert_subscribers",
@@ -135,7 +135,7 @@ export const ANON_DENIED_TABLES = [
  * 2026-06-02: anon SELECT na view bypassava a RLS das tabelas base. Probar so as
  * tabelas base (lista acima) nao pegava a regressao via view (review 2026-06-09).
  */
-export const ANON_DENIED_VIEWS = ["candidatos_identidade_tier1_auditavel"] as const
+const ANON_DENIED_VIEWS = ["candidatos_identidade_tier1_auditavel"] as const
 
 export type AnonProbeDeps = {
   fetchImpl?: typeof fetch
