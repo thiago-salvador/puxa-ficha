@@ -87,6 +87,18 @@ function parsePositiveInt(value: string | null, fallback: number): number {
   return parsed
 }
 
+/**
+ * Chave de idempotência do digest: a mesma identidade do
+ * `UNIQUE (subscriber_id, canal, digest_date)` de `notification_log`.
+ *
+ * O prefixo existe para a chave nunca colidir com outro tipo de email que venha
+ * a usar idempotência no futuro. Cabe folgado nos 256 caracteres da Resend: um
+ * UUID mais a data mais o prefixo dá 60.
+ */
+export function buildDigestIdempotencyKey(subscriberId: string, digestDate: string): string {
+  return `pf-digest:${subscriberId}:${digestDate}`
+}
+
 function formatDigestDate(date = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: DIGEST_TIME_ZONE,
@@ -398,6 +410,13 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             "List-Unsubscribe": `<${oneClickUnsubscribeUrl}>`,
             "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
           },
+          // `subscriberId + digestDate` e a mesma identidade que o UNIQUE de
+          // notification_log usa, entao a chave e estavel entre tentativas e
+          // unica por envio logico. Fecha a janela em que a Resend aceita o
+          // envio e estoura o prazo de 10s do fetch: o catch marca `failed`, o
+          // cron seguinte reprocessa o assinante, e sem a chave ele receberia o
+          // digest duas vezes.
+          idempotencyKey: buildDigestIdempotencyKey(subscriber.id, digestDate),
         })
         emailEnviado = true
 
