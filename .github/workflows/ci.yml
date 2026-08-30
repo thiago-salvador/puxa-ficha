@@ -154,9 +154,12 @@ jobs:
           # Precisa do histórico para comparar com a base do PR.
           fetch-depth: 0
 
-      # Filtro por path sem action de terceiro: o checkout acima já traz o
-      # histórico, então `git diff` responde a mesma pergunta que um
-      # paths-filter, sem somar dependência de supply chain ao CI.
+      # O classificador é código puro, versionado e testado. Ele cobre todos os
+      # consumidores de programas e pesquisas pelo marcador do domínio, em vez
+      # de depender de uma lista parcial de diretórios.
+      - name: Validar classificador do recorte
+        run: node --test tests/ci-domain-audit-paths.test.mjs
+
       - name: Decidir se os audits se aplicam a este diff
         id: recorte
         env:
@@ -169,24 +172,9 @@ jobs:
             echo "aplica=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          ALVOS='
-          src/data/programas-governo
-          src/lib/programa-governo
-          scripts/data/programas-governo
-          src/lib/pesquisas-eleitorais
-          scripts/pesquisas-
-          scripts/audit/
-          .github/workflows/
-          package.json
-          '
           MUDADOS="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
-          APLICA=false
-          for alvo in $ALVOS; do
-            if printf '%s\n' "$MUDADOS" | grep -q "^${alvo}"; then
-              echo "toca $alvo"
-              APLICA=true
-            fi
-          done
+          APLICA="$(printf '%s\n' "$MUDADOS" | node scripts/audit/ci-domain-audit-paths.mjs)"
+          printf '%s\n' "$MUDADOS"
           echo "aplica=$APLICA" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -217,13 +205,14 @@ jobs:
         run: npm run audit:pesquisas:gate
 
   # A cobertura saiu do `verify` em 18/08/2026, medida antes de mexer: levava 347
-  # dos 651 segundos do job, mais da metade, e tem `continue-on-error: true`, ou
-  # seja nao pode reprovar nada. O comando roda a suite inteira uma SEGUNDA vez
+  # dos 651 segundos do job, mais da metade. O comando roda a suite inteira uma SEGUNDA vez
   # com --test-concurrency=1, serial, o que explica ser quase o dobro do step
-  # `Test`. Ninguem podia mergear enquanto um numero informativo era calculado.
-  # Em job proprio ela roda em paralelo e sai do caminho critico.
+  # `Test`. Em job proprio ela roda em paralelo e sai do caminho critico. Em
+  # 30/08/2026 os thresholds foram medidos localmente em Node 24: statements
+  # 54,40%, branches 79,20%, functions 83,67% e lines 54,39%. Como todos ficam
+  # acima dos pisos versionados, a cobertura passa a bloquear regressao real.
   cobertura:
-    name: Cobertura (informativa)
+    name: Cobertura (bloqueante)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -239,11 +228,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Thresholds do c8.config.json, que existiam mas nunca eram executados em
-      # lugar nenhum. Informativa por decisao de 2026-08-04: reporta queda de
-      # cobertura sem derrubar o CI. Avaliar promover a bloqueante.
+      # Thresholds do c8.config.json sao contrato de merge, nao telemetria.
       - name: Cobertura
-        continue-on-error: true
         run: npm run test:coverage:raw
 
   # O unico teste que pegaria a regressao de CSP de 03/08 (PR #71, nonce
