@@ -490,13 +490,18 @@ export function avaliarFalhasDoGate(
   avisos: AvisoIntegridade[],
   coorte: ReadonlySet<string>,
   strictAll = false,
-): { dentro: Violacao[]; fora: Violacao[]; falhas: Violacao[]; avisos: AvisoIntegridade[] } {
+): {
+  dentro: Violacao[]
+  fora: Violacao[]
+  falhas: Array<Violacao | AvisoIntegridade>
+  avisos: AvisoIntegridade[]
+} {
   const { dentro, fora } = separarPorCoorte(violacoes, coorte)
   return {
     dentro,
     fora,
     avisos,
-    falhas: strictAll ? [...dentro, ...fora] : dentro,
+    falhas: strictAll ? [...dentro, ...fora, ...avisos] : dentro,
   }
 }
 
@@ -540,6 +545,7 @@ async function main() {
           violacoes_coorte: dentro,
           backlog_fora_da_coorte: fora,
           avisos_superficie: avisos,
+          falhas_gate: falhas,
         },
         null,
         2,

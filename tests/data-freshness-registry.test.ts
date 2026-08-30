@@ -103,6 +103,21 @@ test("modo operacional preserva o agregado mais recente, enquanto strict evita f
   assert.equal(evaluateSourceFreshness(source, evidence, now, { strict: true }).status, "stale")
 })
 
+test("strict reprova membro requerido sem data ou com data inválida", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: now.toISOString() },
+    { source_id: "camara-proposicoes", checked_at: null },
+    { source_id: "destaques-votacoes", checked_at: "não-é-data" },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.deepEqual(result.stale_source_ids, ["camara-proposicoes", "destaques-votacoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
 test("indeterminado e erro manual viram dívida; erro agendado continua bloqueando", () => {
   const registry = loadFreshnessRegistry()
   const scheduled = registry.find((item) => item.source_id === "camara")

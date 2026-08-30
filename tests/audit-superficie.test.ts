@@ -195,7 +195,8 @@ describe("avaliarSuperficie", () => {
 
     assert.deepEqual(resultado.dentro, [])
     assert.equal(resultado.fora.length, 1)
-    assert.equal(resultado.falhas.length, 1)
+    assert.equal(resultado.falhas.length, 2)
+    assert.ok(resultado.falhas.some((falha) => falha.regra === "R11_foto_ausente"))
     assert.equal(resultado.avisos.length, 1)
     assert.equal(resultado.avisos[0]?.regra, "R11_foto_ausente")
   })
