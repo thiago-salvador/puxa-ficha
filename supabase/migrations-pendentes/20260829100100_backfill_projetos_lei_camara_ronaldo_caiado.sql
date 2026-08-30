@@ -68,8 +68,8 @@ BEGIN
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
     AND fonte = 'Senado';
-  IF senado_total <> 230 THEN
-    RAISE EXCEPTION 'issue_138 backfill: esperado acervo Senado de 230 linhas, encontrado %, abortando', senado_total;
+  IF senado_total <> 231 THEN
+    RAISE EXCEPTION 'issue_138 backfill: esperado acervo Senado de 231 linhas, encontrado %, abortando', senado_total;
   END IF;
 
   SELECT count(*) INTO alvo_camara
@@ -116,14 +116,14 @@ BEGIN
   IF alvo_camara = 0 AND camara_total <> 1845 THEN
     RAISE EXCEPTION 'issue_138 backfill: esperado baseline de 1845 Camara, encontrado %', camara_total;
   END IF;
-  IF alvo_camara = 0 AND total_candidato <> 2075 THEN
-    RAISE EXCEPTION 'issue_138 backfill: esperado baseline total de 2075, encontrado %', total_candidato;
+  IF alvo_camara = 0 AND total_candidato <> 2076 THEN
+    RAISE EXCEPTION 'issue_138 backfill: esperado baseline total de 2076, encontrado %', total_candidato;
   END IF;
   IF alvo_camara = 4 AND camara_total <> 1849 THEN
     RAISE EXCEPTION 'issue_138 backfill: 4 alvos ja existem, mas total Camara e % em vez de 1849', camara_total;
   END IF;
-  IF alvo_camara = 4 AND total_candidato <> 2079 THEN
-    RAISE EXCEPTION 'issue_138 backfill: 4 alvos ja existem, mas total e % em vez de 2079', total_candidato;
+  IF alvo_camara = 4 AND total_candidato <> 2080 THEN
+    RAISE EXCEPTION 'issue_138 backfill: 4 alvos ja existem, mas total e % em vez de 2080', total_candidato;
   END IF;
   PERFORM set_config('pf.issue_138_backfill_apply', 'true', false);
 END
@@ -276,7 +276,7 @@ BEGIN
   SELECT count(*) INTO total_candidato
   FROM public.projetos_lei
   WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid;
-  IF alvo_camara <> 4 OR camara_exato <> 4 OR camara_total <> 1849 OR senado_total <> 4 OR total_candidato <> 2079 THEN
+  IF alvo_camara <> 4 OR camara_exato <> 4 OR camara_total <> 1849 OR senado_total <> 4 OR total_candidato <> 2080 THEN
     RAISE EXCEPTION 'issue_138 backfill: readback interno falhou (Camara alvos=%, Camara exato=%, Camara total=%, Senado exato=%, total=%)', alvo_camara, camara_exato, camara_total, senado_total, total_candidato;
   END IF;
   PERFORM set_config('pf.issue_138_backfill_apply', 'false', false);

@@ -1,5 +1,6 @@
--- Readback somente leitura do rollback manual de schema da issue #138.
--- Este arquivo nao autoriza o rollback, apenas prova o estado depois dele.
+-- Readback somente leitura da DDL da issue #138.
+-- Esperado apos a aplicacao da DDL: indice por fonte presente e constraint
+-- global antiga ausente. O readback do rollback e outro arquivo e fluxo.
 
 DO $assert$
 DECLARE
@@ -35,12 +36,13 @@ BEGIN
     AND metadata IS NOT DISTINCT FROM '{}'::jsonb;
   SELECT count(*) INTO ddl_ledger
   FROM supabase_migrations.schema_migrations
-  WHERE version = '20260829100000';
+  WHERE version = '20260829100000'
+    AND idempotency_key = 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3';
   SELECT max(version) INTO ledger_top
   FROM supabase_migrations.schema_migrations;
-  IF scoped_index <> 0 OR old_constraint <> 1 OR senado_sem_id <> 1
-     OR ddl_ledger <> 0 OR ledger_top IS DISTINCT FROM '20260829030002' THEN
-    RAISE EXCEPTION 'issue_138 schema rollback readback falhou (scoped=%, antiga=%, Senado_sem_id=%, ddl_ledger=%, topo=%)', scoped_index, old_constraint, senado_sem_id, ddl_ledger, ledger_top;
+  IF scoped_index <> 1 OR old_constraint <> 0 OR senado_sem_id <> 1
+     OR ddl_ledger <> 1 OR ledger_top NOT IN ('20260829100000', '20260829100100') THEN
+    RAISE EXCEPTION 'issue_138 schema readback falhou (scoped=%, antiga=%, Senado_sem_id=%, ddl_ledger=%, topo=%)', scoped_index, old_constraint, senado_sem_id, ddl_ledger, ledger_top;
   END IF;
 END
 $assert$;

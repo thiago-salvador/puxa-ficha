@@ -7,6 +7,8 @@
 
 BEGIN;
 
+SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:issue-138-proposicao-source-key', 0));
+
 DO $precondition$
 DECLARE
   camara_alvos integer;
@@ -51,6 +53,13 @@ BEGIN
   ) THEN
     RAISE EXCEPTION 'issue_138 schema rollback: backfill ainda esta no ledger';
   END IF;
+  IF (SELECT count(*) FROM supabase_migrations.schema_migrations
+      WHERE version = '20260829100000') <> 1
+     OR (SELECT count(*) FROM supabase_migrations.schema_migrations
+      WHERE version = '20260829100000'
+        AND idempotency_key = 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3') <> 1 THEN
+    RAISE EXCEPTION 'issue_138 schema rollback: ledger DDL ausente, duplicado ou digest divergente';
+  END IF;
 END
 $precondition$;
 
@@ -59,5 +68,20 @@ ALTER TABLE public.projetos_lei
   UNIQUE (candidato_id, proposicao_id_api);
 
 DROP INDEX public.uq_projetos_lei_candidato_fonte_proposicao;
+
+DELETE FROM supabase_migrations.schema_migrations
+WHERE version = '20260829100000'
+  AND idempotency_key = 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3';
+
+DO $ledger_final$
+BEGIN
+  IF EXISTS (
+    SELECT 1 FROM supabase_migrations.schema_migrations
+    WHERE version = '20260829100000'
+  ) THEN
+    RAISE EXCEPTION 'issue_138 schema rollback: ledger DDL permaneceu apos rollback';
+  END IF;
+END
+$ledger_final$;
 
 COMMIT;

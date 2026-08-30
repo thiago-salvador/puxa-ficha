@@ -54,7 +54,10 @@ ddl=("$ROOT/supabase/migrations/${ddl_version}_"*.sql)
 backfill=("$ROOT/supabase/migrations-pendentes/${backfill_version}_"*.sql)
 ddl_rollback=("$ROOT/supabase/rollback/${ddl_version}_"*.rollback.sql)
 backfill_rollback=("$ROOT/supabase/rollback/${backfill_version}_"*.rollback.sql)
-ddl_readback=("$ROOT/supabase/readback/${ddl_version}_"*.readback.sql)
+# O readback de rollback tambem compartilha o prefixo da DDL, mas espera o
+# estado antigo. O apply precisa de uma prova separada, pos-DDL, antes do
+# backfill e do COMMIT.
+ddl_readback=("$ROOT/supabase/readback/${ddl_version}_projetos_lei_chave_por_fonte.readback.sql")
 readback=("$ROOT/supabase/readback/${backfill_version}_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql")
 [[ ${#ddl[@]} -eq 1 && -f ${ddl[0]} ]] || { echo "FAIL: DDL nao unica" >&2; exit 2; }
 [[ ${#backfill[@]} -eq 1 && -f ${backfill[0]} ]] || { echo "FAIL: backfill nao unico" >&2; exit 2; }
@@ -136,8 +139,8 @@ if mode == "both":
     print("  END IF;")
     print("END $ledger$;")
     print(ddl_body, end="" if ddl_body.endswith("\n") else "\n")
-    print(ddl_readback.decode("utf-8"), end="" if ddl_readback.endswith(b"\n") else "\n")
     ledger_insert(ddl_version, ddl_digest, ddl_path, ddl_raw, ddl_rollback)
+    print(ddl_readback.decode("utf-8"), end="" if ddl_readback.endswith(b"\n") else "\n")
 else:
     print("DO $ledger$ BEGIN")
     print(f"  IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(ddl_version)}")

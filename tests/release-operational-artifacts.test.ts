@@ -205,7 +205,11 @@ test("CI observa e executa o gate PG17 das migrations do release", () => {
     "provar-migration-destaques-estados-residuais-194.sh",
     "provar-migration-historico-fontes-oficiais-cadu-cappelli.sh",
     "provar-migration-processos-legados-fontes-oficiais.sh",
+    "provar-issue-138-forward-readback-pg17.sh",
   ]) {
     assert.match(gate, new RegExp(`scripts/audit/${script.replaceAll(".", "\\.")}`))
   }
+  assert.match(gate, /issue-138-forward-readback-pg17\.sh[\s\S]*both/)
+  assert.match(gate, /issue-138-forward-readback-pg17\.sh[\s\S]*backfill/)
+  assert.match(gate, /issue-138-forward-readback-pg17\.sh[\s\S]*already-applied/)
 })

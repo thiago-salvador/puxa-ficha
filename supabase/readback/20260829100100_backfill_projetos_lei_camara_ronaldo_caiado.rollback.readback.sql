@@ -1,6 +1,6 @@
 -- Readback somente leitura do rollback de dados da issue #138.
--- O schema novo permanece: Camara volta a 1845, Senado permanece em 230,
--- total volta a 2075 e as quatro materias Senado continuam intactas.
+-- O schema novo permanece: Camara volta a 1845, Senado permanece em 231,
+-- total volta a 2076 e as quatro materias Senado continuam intactas.
 
 DO $assert$
 DECLARE
@@ -9,6 +9,11 @@ DECLARE
   total_candidato integer;
   camara_alvos integer;
   senado_exato integer;
+  senado_sem_id integer;
+  ddl_ledger integer;
+  backfill_ledger integer;
+  ddl_key text;
+  ledger_top text;
   scoped_index integer;
   old_constraint integer;
 BEGIN
@@ -44,6 +49,34 @@ BEGIN
    AND p.coverage_id IS NOT DISTINCT FROM e.coverage_id
    AND p.metadata IS NOT DISTINCT FROM e.metadata
   WHERE p.candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid AND p.fonte = 'Senado';
+  SELECT count(*) INTO senado_sem_id
+  FROM public.projetos_lei
+  WHERE candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid
+    AND fonte = 'Senado'
+    AND proposicao_id_api IS NULL
+    AND tipo = 'PL'
+    AND numero = '4444'
+    AND ano = 2015
+    AND ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'
+    AND situacao IS NULL
+    AND url_inteiro_teor IS NULL
+    AND tema IS NULL
+    AND destaque IS FALSE
+    AND destaque_motivo IS NULL
+    AND coverage_id IS NULL
+    AND metadata IS NOT DISTINCT FROM '{}'::jsonb;
+  SELECT count(*) INTO ddl_ledger
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100000'
+    AND idempotency_key = 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3';
+  SELECT count(*) INTO backfill_ledger
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100100';
+  SELECT max(idempotency_key) INTO ddl_key
+  FROM supabase_migrations.schema_migrations
+  WHERE version = '20260829100000';
+  SELECT max(version) INTO ledger_top
+  FROM supabase_migrations.schema_migrations;
 
   SELECT count(*) INTO scoped_index
   FROM pg_indexes
@@ -54,10 +87,12 @@ BEGIN
   WHERE conrelid = 'public.projetos_lei'::regclass
     AND conname = 'uq_projetos_lei_candidato_proposicao';
 
-  IF camara_total <> 1845 OR senado_total <> 230 OR total_candidato <> 2075
-     OR camara_alvos <> 0 OR senado_exato <> 4 OR scoped_index <> 1 OR old_constraint <> 0 THEN
-    RAISE EXCEPTION 'issue_138 rollback readback falhou (Camara=%, Senado=%, total=%, alvos=%, Senado_exato=%, scoped=%, antiga=%)',
-      camara_total, senado_total, total_candidato, camara_alvos, senado_exato, scoped_index, old_constraint;
+  IF camara_total <> 1845 OR senado_total <> 231 OR total_candidato <> 2076
+     OR camara_alvos <> 0 OR senado_exato <> 4 OR senado_sem_id <> 1 OR scoped_index <> 1 OR old_constraint <> 0
+     OR ddl_ledger <> 1 OR backfill_ledger <> 0 OR ddl_key <> 'sha256:f33549d5c58c1cb103b36426497d4c6e66f00e2573f0579c05c6f693ab94bba3'
+     OR ledger_top IS DISTINCT FROM '20260829100000' THEN
+    RAISE EXCEPTION 'issue_138 rollback readback falhou (Camara=%, Senado=%, Senado_sem_id=%, total=%, alvos=%, Senado_exato=%, scoped=%, antiga=%)',
+      camara_total, senado_total, senado_sem_id, total_candidato, camara_alvos, senado_exato, scoped_index, old_constraint;
   END IF;
 END
 $assert$;

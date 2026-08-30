@@ -26,11 +26,19 @@ provas=(
   scripts/audit/provar-migration-orleans-destaques-proveniencia.sh
   scripts/audit/provar-migration-orleans-chaves-canonicas.sh
   scripts/audit/provar-quota-rpc-pg17.sh
+  scripts/audit/provar-issue-138-forward-readback-pg17.sh
 )
 
 for prova in "${provas[@]}"; do
   echo "== PG17: $prova"
-  bash "$ROOT/$prova"
+  if [[ "$prova" == "scripts/audit/provar-issue-138-forward-readback-pg17.sh" ]]; then
+    for mode in both backfill already-applied; do
+      echo "  == issue #138 mode: $mode"
+      bash "$ROOT/$prova" "$mode"
+    done
+  else
+    bash "$ROOT/$prova"
+  fi
 done
 
 echo "PASS: gate PG17 do release PF Ajustes (${#provas[@]} provas)"
