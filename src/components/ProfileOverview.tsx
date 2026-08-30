@@ -38,7 +38,6 @@ import {
   hasCandidateDebatePressQuotes,
 } from "./CandidateDebatesBentoCard"
 import {
-  FINANCING_BREAKDOWN_KEYS,
   FINANCING_COLOR_BY_KEY,
   fixedCopy,
   formatFinancingLabel,
