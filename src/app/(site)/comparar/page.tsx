@@ -11,7 +11,7 @@ import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { JsonLd } from "@/components/JsonLd"
 import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
 import { comparadorEixoLabels, normalizeComparadorEixo } from "@/lib/comparador-axis"
-import { isComparadorSlugParam, resolveComparadorCohort } from "@/lib/comparador-cohort"
+import { resolveComparadorCohort, resolveComparadorCohortFromSlugs } from "@/lib/comparador-cohort"
 import Link from "next/link"
 
 const defaultTitle = "Comparador de candidatos | Puxa Ficha"
@@ -66,13 +66,6 @@ export async function generateMetadata({
     }
   }
 
-  const ogSearch = new URLSearchParams()
-  ogSearch.set("c1", c1)
-  ogSearch.set("c2", c2)
-  if (eixo !== "patrimonio") {
-    ogSearch.set("eixo", eixo)
-  }
-  const ogImagePath = `/comparar/og?${ogSearch.toString()}`
   const eixoLabel = comparadorEixoLabels[eixo]
 
   const pageParams = new URLSearchParams()
@@ -83,16 +76,27 @@ export async function generateMetadata({
   if (eixo !== "patrimonio") pageParams.set("eixo", eixo)
   const pageQuery = pageParams.toString()
 
-  const candidateNames = await Promise.all(
+  const candidateMetadata = await Promise.all(
     ordered.map(async (slug) => {
       try {
-        const candidate = (await getCandidatoMetadataResource(slug)).data
-        return candidate?.nome_urna?.trim() || slug
+        return (await getCandidatoMetadataResource(slug)).data
       } catch {
-        return slug
+        return null
       }
     }),
   )
+  const candidateNames = candidateMetadata.map((candidate, index) =>
+    candidate?.nome_urna?.trim() || ordered[index],
+  )
+  const cohort = resolveComparadorCohort(candidateMetadata)
+
+  const ogSearch = new URLSearchParams()
+  ogSearch.set("c1", c1)
+  ogSearch.set("c2", c2)
+  if (eixo !== "patrimonio") ogSearch.set("eixo", eixo)
+  if (cohort.cargo) ogSearch.set("cargo", cohort.cargo.toLowerCase())
+  if (cohort.estado) ogSearch.set("uf", cohort.estado)
+  const ogImagePath = `/comparar/og?${ogSearch.toString()}`
 
   // Bloco 7 do review 2026-04-24: título reflete todos os candidatos selecionados
   // (até 4) em vez de fixar c1 x c2.
@@ -136,13 +140,10 @@ export async function generateMetadata({
  * selecionados.
  */
 async function loadComparadorCohort(slugs: readonly string[]) {
-  const candidateSlugs = slugs.filter(isComparadorSlugParam)
-  if (candidateSlugs.length === 0) return {}
-
-  const metas = await Promise.all(
-    candidateSlugs.map(async (slug) => (await getCandidatoMetadataResource(slug)).data),
+  return resolveComparadorCohortFromSlugs(
+    slugs,
+    async (slug) => (await getCandidatoMetadataResource(slug)).data,
   )
-  return resolveComparadorCohort(metas)
 }
 
 export default async function CompararPage({

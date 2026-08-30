@@ -69,5 +69,7 @@ describe("Open Graph image public routes", () => {
     assert.match(quizOg, /dynamicOgImageCacheHeaders/)
     assert.match(compararOg, /comparadorOgRateLimiter/)
     assert.match(compararOg, /dynamicOgImageCacheHeaders/)
+    assert.match(compararOg, /resolveComparadorCohortFromSlugs/)
+    assert.match(compararOg, /getCandidatoMetadataResource/)
   })
 })
