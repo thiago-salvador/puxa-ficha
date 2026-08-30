@@ -38,6 +38,7 @@ import {
   resolveCargoDisputadoProveniencia,
 } from "@/lib/candidatura-proveniencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
+import { publicTaxonomyValue } from "@/lib/public-profile-dto"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import {
   listarPesquisasGovernadorPorSlug,
@@ -164,7 +165,10 @@ export async function CandidatoFichaView({
         ? sanitizePtBrText(ficha.formacao_instituicao)
         : null,
     }),
-    ficha.profissao_declarada ? sanitizePtBrText(ficha.profissao_declarada) : null,
+    // `publicTaxonomyValue` e o mesmo sanitizador do DTO publico: suprime QID cru
+    // do Wikidata (`^Q\d+$`) e normaliza CAIXA ALTA. O hero le `FichaCandidato`
+    // direto, sem passar pelo DTO, e por isso exibia "Q82955" no site.
+    publicTaxonomyValue(ficha.profissao_declarada),
     ficha.genero ? sanitizePtBrText(ficha.genero) : null,
     ficha.estado_civil ? sanitizePtBrText(ficha.estado_civil) : null,
     ficha.cor_raca ? sanitizePtBrText(ficha.cor_raca) : null,

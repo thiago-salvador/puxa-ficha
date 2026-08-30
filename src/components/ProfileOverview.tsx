@@ -38,7 +38,7 @@ import {
   hasCandidateDebatePressQuotes,
 } from "./CandidateDebatesBentoCard"
 import {
-  FINANCING_BREAKDOWN_KEYS,
+  FINANCING_COLOR_BY_KEY,
   fixedCopy,
   formatFinancingLabel,
   formatPatrimonioEleicaoEstadoLabel,
@@ -76,14 +76,6 @@ type PatrimonioSummary = {
   latest: Patrimonio | null
   earliest: Patrimonio | null
   growthPct: number | null
-}
-
-const FINANCING_COLOR_BY_KEY: Record<(typeof FINANCING_BREAKDOWN_KEYS)[number], string> = {
-  fundo_eleitoral: "#0a0a0a",
-  fundo_partidario: "#525252",
-  pessoa_fisica: "#a3a3a3",
-  recursos_proprios: "#d4d4d4",
-  outros_recursos: "#e5e5e5",
 }
 
 function getPatrimonioSummary(patrimonio: Patrimonio[]): PatrimonioSummary {

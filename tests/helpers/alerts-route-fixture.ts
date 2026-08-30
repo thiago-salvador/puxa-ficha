@@ -186,6 +186,46 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
     return this
   }
 
+  /**
+   * Suporte estreito ao `or` do PostgREST: só a forma de keyset que o
+   * send-digest emite, `campoA.gt."x",and(campoA.eq."x",campoB.gt."y")`.
+   *
+   * De propósito não é um parser geral. Um duplo que aceita qualquer expressão e
+   * modela metade delas errado é pior do que um que falha alto: o teste passaria
+   * afirmando um comportamento que o PostgREST real não tem.
+   */
+  or(expression: string) {
+    const forma =
+      /^([a-z_]+)\.gt\.(".*?"|[^,]+),and\(([a-z_]+)\.eq\.(".*?"|[^,)]+),([a-z_]+)\.gt\.(".*?"|[^,)]+)\)$/
+    const m = forma.exec(expression)
+    if (!m) {
+      throw new Error(
+        `SelectMutationQuery.or só modela o keyset de duas colunas do send-digest; recebido: ${expression}`,
+      )
+    }
+    const [, campoA, brutoA, campoAEq, brutoAEq, campoB, brutoB] = m
+    if (campoA !== campoAEq) {
+      throw new Error(`or com colunas incoerentes: ${campoA} e ${campoAEq}`)
+    }
+    const desaspar = (valor: string) => (valor.startsWith('"') ? JSON.parse(valor) : valor)
+    const limiteA = desaspar(brutoA)
+    const limiteAEq = desaspar(brutoAEq)
+    const limiteB = desaspar(brutoB)
+    this.filters.push((row) => {
+      const valorA = row[campoA as keyof T]
+      const valorB = row[campoB as keyof T]
+      if (valorA === undefined || valorA === null) return false
+      if (toComparable(valorA) > toComparable(limiteA)) return true
+      return (
+        toComparable(valorA) === toComparable(limiteAEq) &&
+        valorB !== undefined &&
+        valorB !== null &&
+        toComparable(valorB) > toComparable(limiteB)
+      )
+    })
+    return this
+  }
+
   in(field: string, values: unknown[]) {
     const allowed = new Set(values)
     this.filters.push((row) => allowed.has(row[field as keyof T]))
