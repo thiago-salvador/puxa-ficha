@@ -1,4 +1,8 @@
 import { stripAccents } from "./strip-accents";
+import {
+  lerVerificacaoPerfilEstruturada,
+  validarDataDeVerificacao,
+} from "./verificacao-campos";
 
 export type OfficialCandidacyState = "active" | "terminal" | "review_required";
 
@@ -302,14 +306,8 @@ function hasValue(value: unknown): boolean {
 }
 
 function hasStructuredVerification(value: unknown): boolean {
-  if (typeof value === "string") return /^\d{4}-\d{2}-\d{2}/.test(value);
-  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
-  const entry = value as { estado?: unknown; verificado_em?: unknown };
-  return (
-    (entry.estado === "publicado" || entry.estado === "vazio_confirmado") &&
-    typeof entry.verificado_em === "string" &&
-    /^\d{4}-\d{2}-\d{2}/.test(entry.verificado_em)
-  );
+  if (typeof value === "string") return validarDataDeVerificacao(value) != null;
+  return lerVerificacaoPerfilEstruturada(value) != null;
 }
 
 export function analyzeProfileAdmission(profile: ProfileAdmissionInput) {

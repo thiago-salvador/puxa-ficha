@@ -7,8 +7,10 @@ import {
   CHAVES_TSE_PERFIL,
   ESTADOS_QUE_AVANCAM_FRESCOR,
   RESULTADOS_DE_COLETA_QUE_VERIFICAM,
+  type VerificacaoCampos,
   candidataDeColeta,
   construirPatchVerificacaoCampos,
+  lerVerificacaoPerfilEstruturada,
   resolverFrescorTsePerfil,
   resolverUltimaVerificacaoDoPerfil,
   validarDataDeVerificacao,
@@ -152,6 +154,48 @@ describe("leitura: resolverFrescorTsePerfil", () => {
     assert.equal(r.tipo, "parcial")
     if (r.tipo !== "parcial") return
     assert.equal(r.resolvidas, 2)
+  })
+
+  it("recibo estruturado publicado ou vazio_confirmado promove pela data mais antiga", () => {
+    const r = resolverFrescorTsePerfil({
+      candidate_registration: {
+        estado: "publicado",
+        verificado_em: "2026-08-06",
+        fonte: "TSE DivulgaCand 2026",
+      },
+      candidate_complement: {
+        estado: "vazio_confirmado",
+        verificado_em: "2026-07-01",
+        fonte: "TSE DivulgaCand 2026",
+      },
+      social_networks: {
+        estado: "publicado",
+        verificado_em: "2026-08-05",
+        fonte: "TSE DivulgaCand 2026",
+      },
+    })
+    assert.equal(r.tipo, "completa")
+    if (r.tipo !== "completa") return
+    assert.equal(r.verificadoEm.bruto, "2026-07-01")
+    assert.equal(r.chaveMaisAntiga, "candidate_complement")
+  })
+
+  it("recibo estruturado sem estado ou com data inválida não promove", () => {
+    const legado = { fonte: "TSE DivulgaCand 2026", verificado_em: HOJE }
+    const dataInvalida = { estado: "publicado", verificado_em: "2026-02-30" }
+    assert.equal(lerVerificacaoPerfilEstruturada(legado), null)
+    assert.equal(lerVerificacaoPerfilEstruturada(dataInvalida), null)
+    const r = resolverFrescorTsePerfil({
+      candidate_registration: legado,
+      candidate_complement: dataInvalida,
+      social_networks: {
+        estado: "publicado",
+        verificado_em: HOJE,
+      },
+    } as unknown as VerificacaoCampos)
+    assert.equal(r.tipo, "parcial")
+    if (r.tipo !== "parcial") return
+    assert.equal(r.resolvidas, 1)
   })
 
   it("um de tres nao promove", () => {

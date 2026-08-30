@@ -61,7 +61,24 @@ export interface EstadoCelulaSuperficie {
   verificado_em: string
 }
 
-export type ValorVerificacaoCampo = string | EstadoCelulaSuperficie | null
+/**
+ * Forma estruturada usada pelas tres frentes TSE do perfil.
+ *
+ * O estado precisa ser uma conclusao verificavel, e a data passa pelo mesmo
+ * validador estrito das datas string. Campos extras (como `fonte`) sao
+ * preservados no jsonb, mas nao participam deste gate.
+ */
+export interface VerificacaoPerfilEstruturada {
+  estado: "publicado" | "vazio_confirmado"
+  verificado_em: string
+  [chave: string]: unknown
+}
+
+export type ValorVerificacaoCampo =
+  | string
+  | EstadoCelulaSuperficie
+  | VerificacaoPerfilEstruturada
+  | null
 export type VerificacaoCampos = Record<string, ValorVerificacaoCampo>
 
 export const CHAVE_ESTADO_VOTACOES = "votacoes_chave"
@@ -79,7 +96,7 @@ export function lerEstadoCelulaSuperficie(
   const valor = verificacaoCampos?.[chave]
   if (!ehRegistro(valor)) return null
 
-  const estado = valor.estado
+  const estado: unknown = valor.estado
   const motivo = typeof valor.motivo === "string" ? valor.motivo.trim() : ""
   const verificadoEm =
     typeof valor.verificado_em === "string" ? valor.verificado_em.trim() : ""
@@ -228,6 +245,19 @@ export function validarDataDeVerificacao(
   if (!Number.isFinite(instante)) return null
 
   return { bruto, instante }
+}
+
+/** Lê um recibo estruturado de perfil, falhando fechado em estado ou data. */
+export function lerVerificacaoPerfilEstruturada(
+  valor: unknown,
+): DataDeVerificacao | null {
+  if (!ehRegistro(valor)) return null
+  if (valor.estado !== "publicado" && valor.estado !== "vazio_confirmado") {
+    return null
+  }
+  return validarDataDeVerificacao(
+    typeof valor.verificado_em === "string" ? valor.verificado_em : null,
+  )
 }
 
 function dataUtilizavel(valor: string | null | undefined): string | null {
@@ -414,7 +444,10 @@ export function resolverFrescorTsePerfil(
   const resolvidas: { chave: ChaveTsePerfil; data: DataDeVerificacao }[] = []
   for (const chave of CHAVES_TSE_PERFIL) {
     const valor = campos[chave]
-    const data = validarDataDeVerificacao(typeof valor === "string" ? valor : null)
+    const data =
+      typeof valor === "string"
+        ? validarDataDeVerificacao(valor)
+        : lerVerificacaoPerfilEstruturada(valor)
     if (data == null) continue
     resolvidas.push({ chave, data })
   }
