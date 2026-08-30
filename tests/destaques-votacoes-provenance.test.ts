@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import {
+  buildDestaquesRunManifest,
   compareDestaquesRuns,
   validateDestaquesRunManifest,
   type DestaquesRunManifest,
@@ -42,6 +43,46 @@ test("gate rejeita evidência sem hash bruto e artefato correspondente", () => {
   assert.throws(
     () => validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(dirname(RUN_A), artifact))),
     /SHA-256 ausente/,
+  )
+})
+
+test("gate rejeita timestamp único de execução para respostas oficiais distintas", () => {
+  const run = load(RUN_A)
+  const sharedTimestamp = run.sources[0].checked_at
+  run.checked_at = sharedTimestamp
+  run.sources = run.sources.map((source) => ({ ...source, checked_at: sharedTimestamp }))
+  run.pairs = run.pairs.map((pair) => ({ ...pair, checked_at: sharedTimestamp }))
+  assert.throws(
+    () => buildDestaquesRunManifest({
+      schema_version: run.schema_version,
+      source_id: run.source_id,
+      execution_id: run.execution_id,
+      checked_at: run.checked_at,
+      database_project_ref: run.database_project_ref,
+      sources: run.sources,
+      votacoes: run.votacoes,
+      pairs: run.pairs,
+    }),
+    /fontes distintas não podem compartilhar um único timestamp/,
+  )
+})
+
+test("cada par referencia o timestamp da resposta oficial que o sustentou", () => {
+  const run = load(RUN_B)
+  const firstPair = run.pairs[0]
+  firstPair.checked_at = new Date(Date.parse(firstPair.checked_at) + 1).toISOString()
+  assert.throws(
+    () => buildDestaquesRunManifest({
+      schema_version: run.schema_version,
+      source_id: run.source_id,
+      execution_id: run.execution_id,
+      checked_at: run.checked_at,
+      database_project_ref: run.database_project_ref,
+      sources: run.sources,
+      votacoes: run.votacoes,
+      pairs: run.pairs,
+    }),
+    /checked_at não corresponde à resposta oficial usada/,
   )
 })
 

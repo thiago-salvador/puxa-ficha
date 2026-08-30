@@ -6,11 +6,14 @@
 - Universo: 23 registros em `votacoes_chave`, 154 pares distintos em
   `votos_candidato`, 30 candidatos.
 - Dupla leitura aceita: `destaques-votacoes:20260830-run-c` em
-  `2026-08-30T18:00:35.779Z` e `destaques-votacoes:20260830-run-d` em
-  `2026-08-30T18:00:49.873Z`.
+  `2026-08-30T20:18:45.269Z` e `destaques-votacoes:20260830-run-d` em
+  `2026-08-30T20:18:50.366Z`.
 - Contrato: 93 fontes oficiais por execução, payload bruto gzipado, URL,
-  timestamp real e SHA-256 por fonte, votação e par.
-- Receipt da comparação: `57d945379a1d739be747edb87658060af5593d6895b74fa9af74f574d93913ed`.
+  timestamp da resposta HTTP por fonte e par, e SHA-256 por fonte, votação e
+  par. Cada execução registrou 36 instantes de resposta para 36 URLs distintas.
+  O receipt de cada par também preserva a identidade e o estado integral da
+  linha de banco, permitindo rollback sem trocar `id` ou `created_at`.
+- Receipt da comparação: `0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f`.
 
 Os payloads brutos ficam em `run-c/raw/` e `run-d/raw/`. Os manifests apontam
 para cada artefato e permitem recalcular os hashes sem rede.

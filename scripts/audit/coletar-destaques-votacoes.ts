@@ -41,9 +41,13 @@ interface VotacaoRow {
 }
 
 interface PairRow {
+  id: string
   candidato_id: string
   votacao_id: string
   voto: string
+  contradicao: boolean
+  contradicao_descricao: string | null
+  created_at: string
   candidatos: { slug: string } | Array<{ slug: string }>
 }
 
@@ -52,6 +56,7 @@ interface FetchedSource {
   status: number
   raw: string
   parsed: unknown
+  checkedAt: string
   artifactPath: string
   rawHash: string
 }
@@ -158,7 +163,12 @@ async function fetchOfficial(url: string): Promise<{ status: number; raw: string
   throw lastError instanceof Error ? lastError : new Error(`${url}: falha sem detalhe`)
 }
 
-function persistRaw(outDir: string, url: string, response: { status: number; raw: string; parsed: unknown }): FetchedSource {
+function persistRaw(
+  outDir: string,
+  url: string,
+  response: { status: number; raw: string; parsed: unknown },
+  checkedAt: string,
+): FetchedSource {
   const rawHash = sha256Raw(response.raw)
   const path = join(outDir, "raw", `${rawHash}.json.gz`)
   mkdirSync(dirname(path), { recursive: true })
@@ -168,6 +178,7 @@ function persistRaw(outDir: string, url: string, response: { status: number; raw
     status: response.status,
     raw: response.raw,
     parsed: response.parsed,
+    checkedAt,
     artifactPath: relative(outDir, path),
     rawHash,
   }
@@ -185,6 +196,7 @@ function pairStablePayload(input: {
 }): Record<string, unknown> {
   return {
     pair_key: `${input.pair.candidato_id}:${input.pair.votacao_id}`,
+    database_row_id: input.pair.id,
     candidato_id: input.pair.candidato_id,
     candidate_slug: input.slug,
     votacao_id: input.pair.votacao_id,
@@ -193,6 +205,9 @@ function pairStablePayload(input: {
     url: input.url,
     resultado: input.result,
     voto_anterior: input.pair.voto,
+    contradicao_anterior: input.pair.contradicao,
+    contradicao_descricao_anterior: input.pair.contradicao_descricao,
+    created_at_anterior: input.pair.created_at,
     voto_oficial: input.officialVote,
     official_record: input.officialRecord,
   }
@@ -205,7 +220,6 @@ async function main(): Promise<void> {
     throw new Error("uso: coletar-destaques-votacoes.ts --out=DIR --execution-id=destaques-votacoes:ID")
   }
   const outDir = resolve(outArg)
-  const checkedAt = new Date().toISOString()
   mkdirSync(outDir, { recursive: true })
 
   const [votacoesResponse, pairsResponse] = await Promise.all([
@@ -215,7 +229,7 @@ async function main(): Promise<void> {
       .order("data_votacao"),
     supabase
       .from("votos_candidato")
-      .select("candidato_id,votacao_id,voto,candidatos!inner(slug)")
+      .select("id,candidato_id,votacao_id,voto,contradicao,contradicao_descricao,created_at,candidatos!inner(slug)")
       .order("votacao_id")
       .order("candidato_id"),
   ])
@@ -233,7 +247,8 @@ async function main(): Promise<void> {
   const getSource = async (url: string): Promise<FetchedSource> => {
     const cached = fetchedByUrl.get(url)
     if (cached) return cached
-    const fetched = persistRaw(outDir, url, await fetchOfficial(url))
+    const response = await fetchOfficial(url)
+    const fetched = persistRaw(outDir, url, response, new Date().toISOString())
     fetchedByUrl.set(url, fetched)
     return fetched
   }
@@ -262,7 +277,7 @@ async function main(): Promise<void> {
         votacao_id: vote.id,
         casa: discovery.casa,
         url: source.url,
-        checked_at: checkedAt,
+        checked_at: source.checkedAt,
         http_status: source.status,
         artifact_path: source.artifactPath,
         payload_raw_sha256: source.rawHash,
@@ -281,7 +296,7 @@ async function main(): Promise<void> {
         votacao_id: vote.id,
         casa,
         url,
-        checked_at: checkedAt,
+        checked_at: source.checkedAt,
         http_status: source.status,
         artifact_path: source.artifactPath,
         payload_raw_sha256: source.rawHash,
@@ -300,7 +315,7 @@ async function main(): Promise<void> {
           votacao_id: vote.id,
           casa,
           url,
-          checked_at: checkedAt,
+          checked_at: source.checkedAt,
           http_status: source.status,
           artifact_path: source.artifactPath,
           payload_raw_sha256: source.rawHash,
@@ -385,15 +400,19 @@ async function main(): Promise<void> {
       })
       pairReceipts.push({
         pair_key: `${pair.candidato_id}:${pair.votacao_id}`,
+        database_row_id: pair.id,
         candidato_id: pair.candidato_id,
         candidate_slug: slug,
         votacao_id: pair.votacao_id,
         votacao_id_api: recollectedId,
         casa,
         url: source.url,
-        checked_at: checkedAt,
+        checked_at: source.checkedAt,
         resultado: result,
         voto_anterior: pair.voto,
+        contradicao_anterior: pair.contradicao,
+        contradicao_descricao_anterior: pair.contradicao_descricao,
+        created_at_anterior: pair.created_at,
         voto_oficial: officialVote,
         voto_confere: voteMatches,
         payload_sha256: sha256Json(stablePayload),
@@ -405,7 +424,7 @@ async function main(): Promise<void> {
     schema_version: DESTAQUES_SCHEMA_VERSION,
     source_id: "destaques-votacoes",
     execution_id: executionId,
-    checked_at: checkedAt,
+    checked_at: new Date().toISOString(),
     database_project_ref: supabaseProjectRefParaAuditoria(),
     sources: sources.sort((left, right) => left.source_key.localeCompare(right.source_key)),
     votacoes: voteReceipts.sort((left, right) => left.votacao_id.localeCompare(right.votacao_id)),
