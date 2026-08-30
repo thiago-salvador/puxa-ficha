@@ -23,24 +23,57 @@ DDL_HASH="sha256:$(shasum -a 256 supabase/migrations/20260829100000_projetos_lei
 BACKFILL_HASH="sha256:$(shasum -a 256 supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql | cut -d' ' -f1)"
 C="pf-issue-138-forward-readback-$$"
 WRAPPER_DIR=""
+CLEANUP_DONE=0
+CONTAINER_VOLUMES=""
+CONTAINER_ID=""
 
 limpar() {
   local rc=$?
-  docker rm -f "$C" >/dev/null 2>&1 || true
+  local signal="${1:-EXIT}"
+  local remove_rc=0
+  local cleanup_failed=0
+  case "$signal" in
+    INT) rc=130 ;;
+    TERM) rc=143 ;;
+  esac
+  if [[ "$CLEANUP_DONE" == 1 ]]; then
+    exit "$rc"
+  fi
+  CLEANUP_DONE=1
+  trap - INT TERM EXIT
+  if [[ -n "$CONTAINER_ID" ]]; then
+    docker rm -fv "$CONTAINER_ID" >/dev/null 2>&1 || remove_rc=$?
+  fi
   if [[ -n "$WRAPPER_DIR" && -d "$WRAPPER_DIR" ]]; then
     rm -rf -- "$WRAPPER_DIR"
   fi
   if docker ps -a --filter "name=^/${C}$" --format '{{.Names}}' | grep -Fxq "$C"; then
     echo "FAIL: container temporario nao foi removido: $C" >&2
+    cleanup_failed=1
+  fi
+  while IFS= read -r volume; do
+    [[ -z "$volume" ]] && continue
+    if docker volume inspect "$volume" >/dev/null 2>&1; then
+      echo "FAIL: volume anonimo do fixture nao foi removido: $volume" >&2
+      cleanup_failed=1
+    fi
+  done <<< "$CONTAINER_VOLUMES"
+  if (( remove_rc != 0 )) && docker ps -a --filter "name=^/${C}$" --format '{{.Names}}' | grep -Fxq "$C"; then
+    cleanup_failed=1
+  fi
+  if (( rc == 0 && cleanup_failed != 0 )); then
     rc=1
   fi
   exit "$rc"
 }
-trap limpar EXIT INT TERM
+trap 'limpar INT' INT
+trap 'limpar TERM' TERM
+trap 'limpar EXIT' EXIT
 
-docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres "$IMG" >/dev/null || {
+if ! CONTAINER_ID="$(docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres "$IMG")"; then
   echo "FAIL: docker nao subiu"; exit 1;
-}
+fi
+CONTAINER_VOLUMES="$(docker inspect -f '{{range .Mounts}}{{if eq .Type "volume"}}{{.Name}}{{"\n"}}{{end}}{{end}}' "$CONTAINER_ID")"
 pronto=0
 for _ in $(seq 1 120); do
   if docker exec "$C" pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 &&
