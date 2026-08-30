@@ -20,6 +20,12 @@ export interface TseDependentMonitorConfig {
       expected_descricao_totalizacao: string
     }>
   }
+  program_control: {
+    profile_slug: "jorginho-mello"
+    sq_candidato: string
+    url: string
+    expected_cod_tipo: "5"
+  }
   program_files: Array<{
     profile_slug: string
     sq_candidato: string
@@ -174,12 +180,14 @@ export async function collectTseDependentMonitors(
   errors: MonitorError[]
   sources: SourceReceipt[]
   laudicerio: Array<Record<string, unknown>>
+  program_control: Record<string, unknown> | null
   program_files: Array<Record<string, unknown>>
   report_sha256: string
 }> {
   if (config.schema_version !== 1
     || config.laudicerio.canonical_registration_sq !== null
     || config.laudicerio.registrations.length !== 2
+    || config.program_control?.expected_cod_tipo !== "5"
     || config.program_files.length !== 5) {
     throw new Error("configuração dos monitores TSE divergiu do contrato")
   }
@@ -190,6 +198,7 @@ export async function collectTseDependentMonitors(
   const alerts: MonitorAlert[] = []
   const errors: MonitorError[] = []
   const laudicerio: Array<Record<string, unknown>> = []
+  let programControl: Record<string, unknown> | null = null
   const programs: Array<Record<string, unknown>> = []
 
   for (const registration of config.laudicerio.registrations) {
@@ -233,6 +242,34 @@ export async function collectTseDependentMonitors(
         error: error instanceof Error ? error.message : String(error),
       })
     }
+  }
+
+  try {
+    const control = config.program_control
+    const payload = await fetchRawJson({
+      url: control.url,
+      outputDir,
+      receipts: sources,
+      fetchImpl,
+      now,
+      attempts: options.attempts,
+    })
+    requireCandidateIdentity(payload, control.sq_candidato)
+    const files = programFiles(payload)
+    const programMatches = files.filter((file) => String(file.codTipo ?? "") === control.expected_cod_tipo)
+    if (programMatches.length === 0) throw new Error("controle positivo Jorginho Mello sem arquivo codTipo 5")
+    programControl = {
+      profile_slug: control.profile_slug,
+      sq_candidato: control.sq_candidato,
+      program_file_count: programMatches.length,
+    }
+  } catch (error) {
+    errors.push({
+      profile_slug: config.program_control.profile_slug,
+      sq_candidato: config.program_control.sq_candidato,
+      url: config.program_control.url,
+      error: error instanceof Error ? error.message : String(error),
+    })
   }
 
   for (const candidate of config.program_files) {
@@ -285,6 +322,7 @@ export async function collectTseDependentMonitors(
     errors,
     sources,
     laudicerio,
+    program_control: programControl,
     program_files: programs,
   }
   return { ...core, report_sha256: sha256(JSON.stringify(core)) }
@@ -297,5 +335,5 @@ export function tseDependentMonitorsMarkdown(report: Awaited<ReturnType<typeof c
   const errors = report.errors.length > 0
     ? `\n\n### Erros brutos\n\n${report.errors.map((error) => `- ${error.sq_candidato}: \`${error.error}\``).join("\n")}`
     : ""
-  return `## Monitores dependentes do TSE\n\n- Estado: **${report.status}**\n- Consultado em: ${report.generated_at}\n- Endpoints configurados: 7\n- Respostas HTTP preservadas: ${report.sources.filter((source) => source.payload_raw_sha256).length}\n- SHA-256 do relatório: \`${report.report_sha256}\`\n\n### Alertas\n\n${alerts}${errors}\n`
+  return `## Monitores dependentes do TSE\n\n- Estado: **${report.status}**\n- Consultado em: ${report.generated_at}\n- Endpoints configurados: 8\n- Respostas HTTP preservadas: ${report.sources.filter((source) => source.payload_raw_sha256).length}\n- SHA-256 do relatório: \`${report.report_sha256}\`\n\n### Alertas\n\n${alerts}${errors}\n`
 }

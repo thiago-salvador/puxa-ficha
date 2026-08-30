@@ -15,6 +15,7 @@ const config = JSON.parse(
 
 function okPayload(url: string): Record<string, unknown> {
   const id = url.split("/").at(-1)
+  if (url.includes("240002537073")) return { id, arquivos: [{ codTipo: "5", nome: "Plano de governo" }] }
   if (url.includes("110002553937") || url.includes("110002554073")) {
     return {
       id,
@@ -40,6 +41,8 @@ test("configura exatamente duas inscrições de Laudicério e cinco programas se
     "110002554073",
   ])
   assert.equal(config.program_files.length, 5)
+  assert.equal(config.program_control.sq_candidato, "240002537073")
+  assert.equal(config.program_control.expected_cod_tipo, "5")
   assert.deepEqual(config.program_files.map((item) => item.sq_candidato).sort(), [
     "130002544411",
     "190002543380",
@@ -49,7 +52,7 @@ test("configura exatamente duas inscrições de Laudicério e cinco programas se
   ])
 })
 
-test("estado esperado fica ok e preserva sete payloads brutos com hash", async () => {
+test("estado esperado fica ok e preserva oito payloads brutos com hash", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-ok-"))
   const calls: Array<{ url: string; userAgent: string | null }> = []
   const report = await collectTseDependentMonitors(config, out, {
@@ -64,11 +67,12 @@ test("estado esperado fica ok e preserva sete payloads brutos com hash", async (
   assert.equal(report.status, "ok")
   assert.equal(report.alerts.length, 0)
   assert.equal(report.errors.length, 0)
-  assert.equal(report.sources.length, 7)
+  assert.equal(report.sources.length, 8)
+  assert.equal(report.program_control?.program_file_count, 1)
   assert.ok(calls.every((call) => call.userAgent === "PuxaFichaDataFreshness/1.0"))
   assert.ok(report.sources.every((source) => source.checked_at === "2026-08-30T19:00:00.000Z"))
   assert.ok(report.sources.every((source) => /^[a-f0-9]{64}$/.test(source.payload_raw_sha256 ?? "")))
-  assert.equal(readdirSync(join(out, "raw")).length, 7)
+  assert.equal(readdirSync(join(out, "raw")).length, 8)
 })
 
 test("mudança de situação gera somente o alerta canônico de Laudicério", async () => {
@@ -144,4 +148,16 @@ test("resposta de outra candidatura falha fechado", async () => {
   })
   assert.equal(report.status, "source_error")
   assert.match(report.errors.find((error) => error.sq_candidato === "190002543380")?.error ?? "", /retornou candidatura 190002550196/)
+})
+
+test("controle positivo sem codTipo 5 bloqueia os recibos negativos", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-control-"))
+  const report = await collectTseDependentMonitors(config, out, {
+    attempts: 1,
+    fetchImpl: async (input) => String(input).includes("240002537073")
+      ? response({ id: "240002537073", arquivos: [{ codTipo: "3" }] })
+      : response(okPayload(String(input))),
+  })
+  assert.equal(report.status, "source_error")
+  assert.match(report.errors.find((error) => error.sq_candidato === "240002537073")?.error ?? "", /controle positivo/)
 })

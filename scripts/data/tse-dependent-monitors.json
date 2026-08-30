@@ -19,6 +19,12 @@
       }
     ]
   },
+  "program_control": {
+    "profile_slug": "jorginho-mello",
+    "sq_candidato": "240002537073",
+    "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002537073",
+    "expected_cod_tipo": "5"
+  },
   "program_files": [
     {
       "profile_slug": "vera-lucia-ce",
