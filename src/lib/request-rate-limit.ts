@@ -21,6 +21,18 @@ interface FixedWindowIpRateLimiterOptions {
   windowMs: number
 }
 
+/**
+ * Teto de buckets vivos antes de valer a pena varrer o Map.
+ *
+ * A varredura rodava dentro de `check()` em TODA chamada, o que faz o custo por
+ * request crescer com o numero de IPs distintos na janela: sob pico, o limiter
+ * que existe para proteger o processo vira o gargalo. O contrato observavel nao
+ * depende da varredura: um bucket expirado ja e ignorado pela comparacao
+ * `existing.resetAt > now` logo abaixo. A varredura serve so para o Map nao
+ * crescer sem limite, entao basta rodar quando ele de fato cresceu.
+ */
+const PRUNE_ACIMA_DE = 10_000
+
 interface Bucket {
   count: number
   resetAt: number
@@ -43,8 +55,10 @@ export function createFixedWindowIpRateLimiter({
         throw new Error("Invalid rate limit configuration")
       }
 
-      for (const [key, bucket] of buckets) {
-        if (bucket.resetAt <= now) buckets.delete(key)
+      if (buckets.size > PRUNE_ACIMA_DE) {
+        for (const [key, bucket] of buckets) {
+          if (bucket.resetAt <= now) buckets.delete(key)
+        }
       }
 
       const ip = extractTrustedClientIp(headers)
