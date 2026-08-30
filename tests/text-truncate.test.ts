@@ -40,6 +40,12 @@ describe("truncateOnWordBoundary", () => {
     assert.ok(out.endsWith("…"))
   })
 
+  it("respeita limites menores ou iguais ao tamanho da reticência", () => {
+    assert.equal(truncateOnWordBoundary("abc", 1), "…")
+    assert.equal(truncateOnWordBoundary("abcdef", 2, "[...]"), "[.")
+    assert.equal(truncateOnWordBoundary("abcdef", 3, ""), "abc")
+  })
+
   it("entrada degenerada não explode", () => {
     assert.equal(truncateOnWordBoundary("   texto   ", 155), "texto")
     assert.equal(truncateOnWordBoundary("qualquer", 0), "")

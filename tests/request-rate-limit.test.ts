@@ -53,14 +53,25 @@ describe("createFixedWindowIpRateLimiter", () => {
   })
 
   it("aguenta milhares de IPs distintos sem mudar de comportamento", () => {
-    const limiter = createFixedWindowIpRateLimiter({ namespace: "t4", max: 1, windowMs: 1000 })
+    const podas: number[] = []
+    const limiter = createFixedWindowIpRateLimiter({
+      namespace: "t4",
+      max: 1,
+      windowMs: 1000,
+      onPrune: (visitedBuckets) => podas.push(visitedBuckets),
+    })
     const t0 = 4_000_000
     for (let i = 0; i < 12_000; i += 1) {
       const ip = `10.${(i >> 16) & 0xff}.${(i >> 8) & 0xff}.${i & 0xff}`
       assert.equal(limiter.check(headersDe(ip), t0).allowed, true)
     }
+    assert.equal(podas.length, 1, "a rajada acima do teto nao pode provocar uma poda por request")
+    assert.ok(podas[0] > 10_000, "a primeira poda precisa inspecionar os buckets existentes")
+    limiter.check(headersDe("192.0.2.1"), t0 + 999)
+    assert.equal(podas.length, 1, "nao pode repetir a varredura dentro da mesma janela")
     // Depois da janela, um IP qualquer do lote volta a ser aceito.
     assert.equal(limiter.check(headersDe("10.0.0.1"), t0 + 2000).allowed, true)
+    assert.equal(podas.length, 2, "a janela seguinte pode remover os buckets expirados")
     // E dentro da janela o mesmo IP continua bloqueado.
     assert.equal(limiter.check(headersDe("10.0.0.1"), t0 + 2001).allowed, false)
   })

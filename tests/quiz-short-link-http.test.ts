@@ -300,6 +300,7 @@ describe("quiz short-link HTTP route", () => {
     for (const ambiente of [
       { rotulo: "test", aplicar: () => { mutableEnv.NODE_ENV = "test" } },
       { rotulo: "production local", aplicar: () => { mutableEnv.NODE_ENV = "production" } },
+      { rotulo: "vercel dev", aplicar: () => { process.env.VERCEL_ENV = "development" } },
       // `vercel env pull` grava VERCEL no .env.local e o Next carrega esse
       // arquivo em `next dev`: usar VERCEL como sinal desligaria o fixture na
       // máquina de quem desenvolve.

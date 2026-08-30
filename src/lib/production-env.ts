@@ -81,7 +81,8 @@ export function validateProductionEnvironment(): void {
   // CRON_SECRET continua FATAL: sem ele as 6 rotas de cron respondem 401 e o
   // digest, os dois passos de refresh de noticias e os tres gates internos
   // (published-consistency, runtime-smoke e revalidate-public-cache) param
-  // calados. A falha nao aparece em lugar nenhum ate alguém reclamar.
+  // calados. `validateProductionEnvironment` detecta a ausencia no boot de
+  // producao e lanca o erro antes que essa degradacao passe despercebida.
   // A contagem sai de `vercel.json` (array `crons`) e bate com
   // `grep -rl CRON_SECRET src/app/api`; eram 4 quando este comentario nasceu.
   if (!hasTrimmed(process.env.CRON_SECRET)) {

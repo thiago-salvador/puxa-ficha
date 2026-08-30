@@ -13,6 +13,7 @@ cron exigem autorização nomeada antes de executar.
 | Supabase | Project Settings > API e Database > Connection string | URL do projeto, anon key, service role, Session pooler e senha do banco | Confirmar no painel: Thiago |
 | Provedor de email | Resend > API Keys e Domains | valor usado em `RESEND_API_KEY` e domínio do remetente | Confirmar no painel: Thiago |
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
+| Operador local, runners históricos OpenCode | Ambiente local do operador | `PF_OPENCODE_GO` | Recriar apontando para o cliente OpenCode canônico antes de retomar esses runners |
 
 Os cinco últimos nomes da linha do GitHub Actions existem por causa da fila de
 merge serial e do watchdog de crons: `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`,

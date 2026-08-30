@@ -61,6 +61,11 @@ async function encerrarGrupo(child, closed, graceMs) {
 }
 
 async function executarOpenCodeRunnerInterno({ modelo, api, maxTokens, prefixoTemporario, promptCurto }) {
+  const opencodeGo = process.env.PF_OPENCODE_GO?.trim()
+  if (!opencodeGo) {
+    throw new Error("PF_OPENCODE_GO obrigatorio para runners OpenCode")
+  }
+
   const bruto = await lerStdin()
   const inicioEnvelope = bruto.indexOf("{")
   const envelope = JSON.parse(bruto.slice(inicioEnvelope === -1 ? 0 : inicioEnvelope))
@@ -79,11 +84,6 @@ async function executarOpenCodeRunnerInterno({ modelo, api, maxTokens, prefixoTe
   // estiver naquele caminho. Sem a env, aborta antes de qualquer chamada de
   // modelo. Documentada em Settings/AUTOMATIONS_AND_ENVIRONMENTS.md e no
   // .env.example.
-  const opencodeGo = process.env.PF_OPENCODE_GO?.trim()
-  if (!opencodeGo) {
-    throw new Error("PF_OPENCODE_GO obrigatorio para runners OpenCode")
-  }
-
   const dirTmp = mkdtempSync(join(tmpdir(), prefixoTemporario))
   const arquivoTmp = join(dirTmp, "prompt.txt")
   writeFileSync(arquivoTmp, promptFinal, "utf8")

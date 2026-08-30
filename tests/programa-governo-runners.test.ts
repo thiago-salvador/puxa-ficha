@@ -250,8 +250,9 @@ test("runners Qwen e Codex encerram por timeout com erro controlado", async () =
 test("opencode runners falham fechado com envelope invalido (sem chamada ao go)", async () => {
   const base = DIR_RUNNERS
   for (const runner of ["run-generator-opencode-luna.mjs", "run-judge-opencode-deepseek.mjs", "run-generator-opencode-glm.mjs"]) {
-    const resultado = await rodarRunner(base + runner, {}, '{"foo":1}')
+    const resultado = await rodarRunner(base + runner, { PF_OPENCODE_GO: "/bin/false" }, '{"foo":1}')
     assert.notEqual(resultado.code, 0)
+    assert.match(resultado.stderr, /envelope invalido/u)
   }
 })
 
@@ -270,6 +271,13 @@ test("runners opencode abortam sem PF_OPENCODE_GO, sem chamar modelo", async () 
     )
     assert.equal(resultado.stdout.trim(), "", "nao pode materializar saida de modelo")
   }
+})
+
+test("PF_OPENCODE_GO ausente vence erro de envelope", async () => {
+  const resultado = await rodarRunner(RUNNER_LUNA, { PF_OPENCODE_GO: "" }, '{"foo":1}')
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /PF_OPENCODE_GO obrigatorio para runners OpenCode/u)
+  assert.doesNotMatch(resultado.stderr, /envelope invalido/u)
 })
 
 test("nenhum runner carrega caminho absoluto pessoal como default", async () => {

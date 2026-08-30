@@ -60,8 +60,9 @@ function withFixtureLock<T>(filePath: string, fn: () => Promise<T>): Promise<T> 
  *   - `VERCEL` NAO serve: `vercel env pull` grava `VERCEL` no `.env.local`, e o
  *     Next carrega esse arquivo em `next dev`. Usar ele desligaria o fixture na
  *     maquina de quem desenvolve, que e justamente para quem ele existe.
- *   - `VERCEL_ENV` so existe no runtime da Vercel, e la todo ambiente e
- *     serverless com filesystem efemero, preview incluido.
+ *   - `VERCEL_ENV=production|preview` identifica deployments serverless.
+ *     `VERCEL_ENV=development`, definido por `vercel dev`, continua local e
+ *     pode usar o fixture controlado.
  *
  * No runtime da Vercel o fixture e ignorado e a rota volta para o Supabase. O
  * aviso sai uma vez por processo para a configuracao errada nao passar
@@ -70,7 +71,8 @@ function withFixtureLock<T>(filePath: string, fn: () => Promise<T>): Promise<T> 
 let avisouFixtureEmProducao = false
 
 function isVercelRuntime() {
-  return Boolean(process.env.VERCEL_ENV?.trim())
+  const vercelEnv = process.env.VERCEL_ENV?.trim()
+  return vercelEnv === "production" || vercelEnv === "preview"
 }
 
 function resolveQuizShortLinkFixturePath() {

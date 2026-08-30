@@ -194,7 +194,7 @@ A tabela cobre os 25 workflows do diretório. Conferir a cobertura com
 | `apply-chapas-2026.yml` | Manual | One-off fechado: aplicar release de chapas 2026. |
 | `apply-chapas-2026-biografias.yml` | Manual | One-off fechado: aplicar correção de biografias das chapas 2026. |
 
-Os seis `apply-*`/`rollback-*` são one-off de produção: rodam por
+Os sete `apply-*`/`rollback-*` são one-off de produção: rodam por
 `workflow_dispatch`, com gate e autorização nomeada, e não têm agendamento.
 
 No `audit:superficie`, R8 reprova reversão A→B e B→A no mesmo ano; R9 reprova

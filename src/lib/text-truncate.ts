@@ -25,7 +25,9 @@ export function truncateOnWordBoundary(
   if (!Number.isFinite(maxLength) || maxLength <= 0) return ""
   if (normalized.length <= maxLength) return normalized
 
-  const budget = Math.max(1, maxLength - ellipsis.length)
+  const suffix = ellipsis.slice(0, maxLength)
+  const budget = maxLength - suffix.length
+  if (budget === 0) return suffix
   const head = normalized.slice(0, budget)
   // Se o caractere seguinte já é espaço, `head` termina numa palavra inteira e
   // recuar até o espaço anterior jogaria fora uma palavra que cabia.
@@ -37,5 +39,5 @@ export function truncateOnWordBoundary(
   }
   const clean = cut.replace(PONTUACAO_FINAL, "")
 
-  return `${clean || head}${ellipsis}`
+  return `${clean || head}${suffix}`
 }
