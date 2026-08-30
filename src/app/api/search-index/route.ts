@@ -14,8 +14,9 @@ export async function GET() {
     resource.data,
     publicSlugRows.map((row) => row.slug),
   )
-  // Nao fixar um indice degradado/vazio por 1h no CDN com ok:true. Em degradacao,
-  // reporta ok:false e cache curto para a recuperacao propagar rapido (review 2026-06-09).
+  // O filtro canônico precisa ser reavaliado após mudanças na coorte pública.
+  // Em degradação, reporta ok:false e cache ainda mais curto para a recuperação
+  // propagar rápido (review 2026-06-09).
   const degraded = resource.sourceStatus === "degraded"
   return NextResponse.json(
     { ok: !degraded, data },
@@ -23,7 +24,7 @@ export async function GET() {
       headers: {
         "cache-control": degraded
           ? "public, max-age=0, s-maxage=30, stale-while-revalidate=300"
-          : "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
+          : "public, max-age=60, s-maxage=60, stale-while-revalidate=300",
       },
     }
   )
