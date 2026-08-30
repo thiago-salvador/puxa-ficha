@@ -10,6 +10,19 @@ import {
   selectLatestSourceEvidence,
 } from "../scripts/lib/data-freshness/registry"
 
+function destaquesEvidence(checkedAt: string) {
+  return {
+    source_id: "destaques-votacoes",
+    checked_at: checkedAt,
+    provenance_contract_version: 1,
+    provenance_complete: true,
+    evidence_sha256: "a".repeat(64),
+    raw_payload_count: 93,
+    pair_count: 154,
+    double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
+  }
+}
+
 function methodologyIds(): string[] {
   const source = readFileSync("src/data/methodology-sources.ts", "utf8")
   return [...source.matchAll(/^\s+id:\s*"([^"]+)"/gm)].map((match) => match[1]).sort()
@@ -79,7 +92,7 @@ test("modo strict avalia cada membro, expõe a data mais antiga e não mascara m
   const result = evaluateSourceFreshnessStrict(source, [
     { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
     { source_id: "camara-proposicoes", checked_at: "2026-08-17T11:00:00.000Z" },
-    { source_id: "destaques-votacoes", checked_at: "2026-08-27T10:00:00.000Z" },
+    destaquesEvidence("2026-08-27T10:00:00.000Z"),
   ], now)
 
   assert.equal(result.status, "stale")
@@ -96,7 +109,7 @@ test("modo operacional preserva o agregado mais recente, enquanto strict evita f
   const evidence = aggregateSourceEvidence(source, [
     { source_id: "camara", checked_at: "2026-08-27T11:00:00.000Z" },
     { source_id: "camara-proposicoes", checked_at: "2026-08-17T11:00:00.000Z" },
-    { source_id: "destaques-votacoes", checked_at: "2026-08-27T10:00:00.000Z" },
+    destaquesEvidence("2026-08-27T10:00:00.000Z"),
   ])
   const now = new Date("2026-08-27T12:00:00.000Z")
   assert.equal(evaluateSourceFreshness(source, evidence, now).status, "fresh")
@@ -124,11 +137,26 @@ test("strict bloqueia família scheduled quando falta um membro requerido", () =
   const now = new Date("2026-08-27T12:00:00.000Z")
   const result = evaluateSourceFreshnessStrict(source, [
     { source_id: "camara", checked_at: now.toISOString() },
-    { source_id: "destaques-votacoes", checked_at: now.toISOString() },
+    destaquesEvidence(now.toISOString()),
   ], now)
 
   assert.equal(result.status, "stale")
   assert.deepEqual(result.stale_source_ids, ["camara-proposicoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
+test("strict rejeita destaques-votacoes sem proveniência completa e dupla leitura", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: now.toISOString() },
+    { source_id: "camara-proposicoes", checked_at: now.toISOString() },
+    { source_id: "destaques-votacoes", checked_at: now.toISOString() },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.deepEqual(result.stale_source_ids, ["destaques-votacoes"])
   assert.equal(result.negative_claims_allowed, false)
 })
 
