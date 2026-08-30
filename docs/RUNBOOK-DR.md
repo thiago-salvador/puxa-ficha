@@ -14,8 +14,9 @@ cron exigem autorização nomeada antes de executar.
 | Provedor de email | Resend > API Keys e Domains | valor usado em `RESEND_API_KEY` e domínio do remetente | Confirmar no painel: Thiago |
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
 
-A lista canônica de nomes fica na tabela acima e em `Status/ARQUITETURA.md`,
-no repositório de operação, seções de automação e ambientes.
+A lista canônica de nomes fica na tabela acima e em
+[`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](../Settings/AUTOMATIONS_AND_ENVIRONMENTS.md),
+seção "Variáveis de ambiente".
 Nunca copiar valores para este arquivo, issue, log ou commit.
 
 ## 2. Ordem de reconstrução
@@ -51,9 +52,10 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
    ```
 
    Aplicar somente migrations ausentes, na ordem, pelo procedimento autorizado
-   de `Status/ARQUITETURA.md`, no repositório de operação, seção de banco. Não usar `db push`
-   amplo para tentar corrigir divergência de ledger.
-4. **Recriar o projeto Vercel.** Importar `thiago-salvador/puxa-ficha-oss`, usar
+   de [`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](../Settings/AUTOMATIONS_AND_ENVIRONMENTS.md),
+   seções "Scripts de banco, ingestão e auditoria" e "Operação segura". Não usar
+   `db push` amplo para tentar corrigir divergência de ledger.
+4. **Recriar o projeto Vercel.** Importar `thiago-salvador/puxa-ficha`, usar
    Next.js, Node 24.x e região `gru1`. Repor as variáveis pelo inventário acima,
    sem copiar entre Production e Preview por suposição. O arquivo
    [`vercel.json`](../vercel.json) recria os seis crons da aplicação.
@@ -63,8 +65,15 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
    deploy exigem autorização nomeada.
 6. **Reativar GitHub Actions.** Repor os secrets, confirmar que os workflows
    estão ativos e conferir os agendamentos em
-   `Status/ARQUITETURA.md`, no repositório de operação, seções de automação e ambientes.
+   [`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](../Settings/AUTOMATIONS_AND_ENVIRONMENTS.md),
+   seções "Crons da Vercel" e "GitHub Actions".
    Não disparar ingest, revalidação ou cron de escrita como teste de conectividade.
+
+A fila de merge serial governa como uma mudança volta a entrar em `main` depois
+da reconstrução: convenção em
+[`.github/serial-merge-queue.json`](../.github/serial-merge-queue.json) e
+manifesto de mudança irreversível em
+[`.github/merge-queue/irreversible-change-manifest.json`](../.github/merge-queue/irreversible-change-manifest.json).
 
 ## 3. Verificação final
 
