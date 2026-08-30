@@ -57,6 +57,16 @@ describe("avaliarSuperficie", () => {
     assert.deepEqual(avaliarSuperficie([ficha]), [])
   })
 
+  it("selo via recibos TSE estruturados também satisfaz R1", () => {
+    const ficha = fichaIntegra()
+    ficha.verificacao_campos = {
+      candidate_registration: { estado: "publicado", verificado_em: "2026-08-06" },
+      candidate_complement: { estado: "vazio_confirmado", verificado_em: "2026-08-06" },
+      social_networks: { estado: "publicado", verificado_em: "2026-08-06" },
+    }
+    assert.deepEqual(avaliarSuperficie([ficha]), [])
+  })
+
   it("R1: TSE parcial sem agregado curado reprova (caso Augusto Cury)", () => {
     const ficha = fichaIntegra("augusto-cury")
     ficha.verificacao_campos = { candidate_registration: "2026-06-09" }
@@ -111,6 +121,21 @@ describe("avaliarSuperficie", () => {
     }
     const violacoes = avaliarSuperficie([ficha])
     assert.deepEqual(violacoes.map((v) => v.regra), ["R3_coletas", "R3_coletas"])
+  })
+
+  it("R3: aceita sem_achado_no_escopo, como a API e o contrato de coleta", () => {
+    const ficha = fichaIntegra()
+    ficha.coletas = {
+      "transparencia-sanctions": {
+        resultado: "sem_achado_no_escopo",
+        executado_em: "2026-08-15",
+      },
+      "processos-curadoria": {
+        resultado: "sem_achado_no_escopo",
+        executado_em: "2026-08-15",
+      },
+    }
+    assert.deepEqual(avaliarSuperficie([ficha]), [])
   })
 
   it("R4: ultima_atualizacao ausente reprova", () => {

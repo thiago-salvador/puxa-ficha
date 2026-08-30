@@ -77,6 +77,7 @@ import { PROJECT_REF_PADRAO, consultar, resolverToken } from "./lib/snapshot-fet
 const RESULTADOS_COLETA_VALIDOS = new Set([
   "encontrado",
   "vazio_confirmado",
+  "sem_achado_no_escopo",
   "nao_aplicavel",
   "erro",
   "indeterminado",
