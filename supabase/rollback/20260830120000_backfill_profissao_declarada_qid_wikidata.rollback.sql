@@ -1,81 +1,77 @@
--- Rollback do backfill 20260830120000.
--- Devolve exatamente o QID medido, e SO para a linha que hoje carrega o rotulo
--- que este backfill escreveu. Linha editada depois por outro caminho nao volta.
-
+\set ON_ERROR_STOP on
 BEGIN;
-
-WITH alvo(slug, qid, rotulo) AS (
-  VALUES
-    ('joao-campos', 'Q212238', 'Servidor público'),
-      ('joel-rodrigues', 'Q212238', 'Servidor público'),
-      ('gabriel-azevedo', 'Q33999', 'Ator'),
-      ('paulo-martins-gov-pr', 'Q36180', 'Escritor'),
-      ('mateus-simoes', 'Q37226', 'Professor'),
-      ('geraldo-alckmin', 'Q39631', 'Médico'),
-      ('natasha-slhessarenko', 'Q39631', 'Médico'),
-      ('acm-neto', 'Q40348', 'Advogado'),
-      ('adailton-furia', 'Q40348', 'Advogado'),
-      ('ciro-gomes-gov-ce', 'Q40348', 'Advogado'),
-      ('david-almeida', 'Q40348', 'Advogado'),
-      ('elmano-de-freitas', 'Q40348', 'Advogado'),
-      ('haddad-gov-sp', 'Q40348', 'Advogado'),
-      ('jose-eliton', 'Q40348', 'Advogado'),
-      ('juliana-brizola', 'Q40348', 'Advogado'),
-      ('pedro-cunha-lima', 'Q40348', 'Advogado'),
-      ('ataides-oliveira', 'Q43845', 'Empresário'),
-      ('otaviano-pivetta', 'Q43845', 'Empresário'),
-      ('paula-belmonte', 'Q43845', 'Empresário'),
-      ('gilberto-kassab', 'Q81096', 'Engenheiro'),
-      ('adriana-accorsi', 'Q82955', 'Político'),
-      ('alan-rick', 'Q82955', 'Político'),
-      ('alexandre-curi', 'Q82955', 'Político'),
-      ('amelio-cayres', 'Q82955', 'Político'),
-      ('beto-faro', 'Q82955', 'Político'),
-      ('cleitinho', 'Q82955', 'Político'),
-      ('confucio-moura', 'Q82955', 'Político'),
-      ('da-vitoria', 'Q82955', 'Político'),
-      ('daniel-vilela', 'Q82955', 'Político'),
-      ('dr-furlan', 'Q82955', 'Político'),
-      ('edegar-pretto', 'Q82955', 'Político'),
-      ('eduardo-braga', 'Q82955', 'Político'),
-      ('eduardo-braide', 'Q82955', 'Político'),
-      ('eduardo-girao', 'Q82955', 'Político'),
-      ('eduardo-paes', 'Q82955', 'Político'),
-      ('erika-hilton', 'Q82955', 'Político'),
-      ('felicio-ramuth', 'Q82955', 'Político'),
-      ('gilson-machado', 'Q82955', 'Político'),
-      ('guto-silva', 'Q82955', 'Político'),
-      ('hana-ghassan', 'Q82955', 'Político'),
-      ('hildon-chaves', 'Q82955', 'Político'),
-      ('jose-carlos-aleluia', 'Q82955', 'Político'),
-      ('laurez-moreira', 'Q82955', 'Político'),
-      ('leandro-grass', 'Q82955', 'Político'),
-      ('mailza-assis', 'Q82955', 'Político'),
-      ('marconi-perillo', 'Q82955', 'Político'),
-      ('marcos-vieira', 'Q82955', 'Político'),
-      ('nikolas-ferreira', 'Q82955', 'Político'),
-      ('omar-aziz', 'Q82955', 'Político'),
-      ('paulo-hartung', 'Q82955', 'Político'),
-      ('pazolini', 'Q82955', 'Político'),
-      ('raquel-lyra', 'Q82955', 'Político'),
-      ('ricardo-cappelli', 'Q82955', 'Político'),
-      ('roberto-cidade', 'Q82955', 'Político'),
-      ('rodrigo-bacellar', 'Q82955', 'Político'),
-      ('rodrigo-pacheco', 'Q82955', 'Político'),
-      ('simao-jatene', 'Q82955', 'Político'),
-      ('washington-reis', 'Q82955', 'Político'),
-      ('wellington-fagundes', 'Q82955', 'Político'),
-      ('wilder-morais', 'Q82955', 'Político'),
-      ('anderson-ferreira', 'Q937857', 'Futebolista'),
-      ('jeronimo', 'Q937857', 'Futebolista'),
-      ('silvio-mendes', 'Q937857', 'Futebolista')
-)
-UPDATE public.candidatos c
-SET profissao_declarada = a.qid
-FROM alvo a
-WHERE c.slug = a.slug
-  AND c.profissao_declarada = a.rotulo;
-
-DELETE FROM supabase_migrations.schema_migrations WHERE version = '20260830120000';
-
+CREATE TEMP TABLE _profissao_qid_rollback ON COMMIT DROP AS SELECT r.*,c.profissao_declarada AS current_value,c.ultima_atualizacao AS current_updated_at FROM (SELECT l.*,substring(l.detalhe from 27)::jsonb AS d FROM public.coleta_log l WHERE l.execucao='migration:20260830120000:profissao-qid-tse-2026') r JOIN public.candidatos c ON c.id=r.candidato_id AND c.slug=r.alvo;
+DO $$ DECLARE ledger integer; receipts integer; exact_rows integer; BEGIN
+  SELECT count(*) INTO ledger FROM supabase_migrations.schema_migrations WHERE version='20260830120000';
+  SELECT count(*) INTO receipts FROM _profissao_qid_rollback;
+  SELECT count(*) INTO exact_rows FROM _profissao_qid_rollback r WHERE r.fonte='tse-candidaturas' AND r.resultado='encontrado' AND r.volume=1 AND r.url='https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip' AND r.natureza='escrita' AND r.d->>'source_sha256'='eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27' AND r.current_value IS NOT DISTINCT FROM r.d->>'target_value' AND r.current_updated_at=r.executado_em;
+  IF ledger<>1 OR receipts<>63 OR exact_rows<>63 THEN RAISE EXCEPTION 'profissao QID rollback recusado ledger=% receipts=% exact=%',ledger,receipts,exact_rows; END IF;
+END $$;
+-- @write tabela=candidatos slug=acm-neto campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=adailton-furia campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=adriana-accorsi campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=alan-rick campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=alexandre-curi campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=amelio-cayres campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=anderson-ferreira campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=ataides-oliveira campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=beto-faro campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=ciro-gomes-gov-ce campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=cleitinho campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=confucio-moura campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=da-vitoria campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=daniel-vilela campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=david-almeida campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=dr-furlan campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=edegar-pretto campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=eduardo-braga campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=eduardo-braide campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=eduardo-girao campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=eduardo-paes campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=elmano-de-freitas campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=erika-hilton campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=felicio-ramuth campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=gabriel-azevedo campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=geraldo-alckmin campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=gilberto-kassab campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=gilson-machado campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=guto-silva campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=haddad-gov-sp campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=hana-ghassan campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=hildon-chaves campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=jeronimo campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=joao-campos campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=joel-rodrigues campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=jose-carlos-aleluia campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=jose-eliton campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=juliana-brizola campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=laurez-moreira campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=leandro-grass campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=mailza-assis campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=marconi-perillo campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=marcos-vieira campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=mateus-simoes campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=natasha-slhessarenko campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=nikolas-ferreira campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=omar-aziz campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=otaviano-pivetta campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=paula-belmonte campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=paulo-hartung campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=paulo-martins-gov-pr campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=pazolini campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=pedro-cunha-lima campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=raquel-lyra campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=ricardo-cappelli campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=roberto-cidade campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=rodrigo-bacellar campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=rodrigo-pacheco campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=silvio-mendes campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=simao-jatene campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=washington-reis campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=wellington-fagundes campos=profissao_declarada,ultima_atualizacao
+-- @write tabela=candidatos slug=wilder-morais campos=profissao_declarada,ultima_atualizacao
+UPDATE public.candidatos c SET profissao_declarada=r.d->>'previous_value',ultima_atualizacao=(r.d->>'previous_updated_at')::timestamptz FROM _profissao_qid_rollback r WHERE c.id=r.candidato_id AND c.slug=r.alvo;
+DELETE FROM public.coleta_log WHERE execucao='migration:20260830120000:profissao-qid-tse-2026';
+DELETE FROM supabase_migrations.schema_migrations WHERE version='20260830120000';
+DO $$ BEGIN IF (SELECT count(*) FROM public.candidatos WHERE profissao_declarada ~ '^Q[0-9]+$')<>63 OR EXISTS(SELECT 1 FROM public.coleta_log WHERE execucao='migration:20260830120000:profissao-qid-tse-2026') THEN RAISE EXCEPTION 'profissao QID rollback pós-condição falhou'; END IF; END $$;
 COMMIT;

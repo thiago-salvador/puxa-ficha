@@ -1,13 +1,26 @@
 {
-  "descricao": "Os 63 registros de public.candidatos com profissao_declarada gravada como QID cru do Wikidata, e o mapa QID -> rotulo pt-BR usado pelo backfill.",
-  "medicao": {
-    "quando": "2026-08-29, reconfirmado em 2026-08-30",
-    "como": "Supabase MCP execute_sql read-only, projeto wskpzsobvqwhnbsdsmok",
-    "query": "select slug, profissao_declarada from candidatos where profissao_declarada ~ '^Q[0-9]+$' order by profissao_declarada, slug;",
-    "sha_repo_auditado": "35c877417685900ab96a84f40283f719c6e8f688",
+  "description": "Remedia os 63 QIDs indevidos em profissao_declarada sem atribuir ao TSE um rótulo do Wikidata.",
+  "measured_production_state": {
+    "checked_at": "2026-08-30T20:33:00Z",
+    "project_id": "wskpzsobvqwhnbsdsmok",
+    "query_contract": "slug + profissao_declarada exata onde profissao_declarada casa ^Q[0-9]+$",
     "total": 63
   },
-  "mapa": {
+  "official_source": {
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+    "sha256": "eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27",
+    "http_last_modified": "Thu, 27 Aug 2026 15:35:38 GMT",
+    "generated_at": "27/08/2026 12:30:35",
+    "fetched_at": "2026-08-30T20:35:23.714Z",
+    "profile_links": "data/chapas-2026-tse-20260827.json"
+  },
+  "semantics": {
+    "with_verified_tse_2026_occupation": 39,
+    "without_verified_tse_2026_link": 24,
+    "null_meaning": "sem declaração TSE 2026 vinculada e verificável; não afirma ausência de profissão",
+    "wikidata_policy": "rótulos do Wikidata não alimentam um campo chamado profissao_declarada"
+  },
+  "defective_wikidata_provenance": {
     "fonte": "API do Wikidata (action=wbgetentities, props=labels, languages=pt-br|pt|en), lida em 2026-08-30",
     "nota": "`rotulo` e a forma que vai para o banco: capitalizada e sem marcador de genero, para casar com o resto da coluna, que vem do TSE nesse formato. Os campos wikidata_* preservam o label original, para a escolha ficar auditavel.",
     "qids": {
@@ -73,258 +86,699 @@
       }
     }
   },
-  "registros": [
-    {
-      "slug": "joao-campos",
-      "profissao_declarada": "Q212238"
-    },
-    {
-      "slug": "joel-rodrigues",
-      "profissao_declarada": "Q212238"
-    },
-    {
-      "slug": "gabriel-azevedo",
-      "profissao_declarada": "Q33999"
-    },
-    {
-      "slug": "paulo-martins-gov-pr",
-      "profissao_declarada": "Q36180"
-    },
-    {
-      "slug": "mateus-simoes",
-      "profissao_declarada": "Q37226"
-    },
-    {
-      "slug": "geraldo-alckmin",
-      "profissao_declarada": "Q39631"
-    },
-    {
-      "slug": "natasha-slhessarenko",
-      "profissao_declarada": "Q39631"
-    },
+  "records": [
     {
       "slug": "acm-neto",
-      "profissao_declarada": "Q40348"
+      "previous_value": "Q40348",
+      "target_value": "EMPRESÁRIO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "50002533190",
+      "occupation_code": "257",
+      "source_role": "GOVERNADOR",
+      "source_uf": "BA",
+      "profile_link_status": "confirmado"
     },
     {
       "slug": "adailton-furia",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "ciro-gomes-gov-ce",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "david-almeida",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "elmano-de-freitas",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "haddad-gov-sp",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "jose-eliton",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "juliana-brizola",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "pedro-cunha-lima",
-      "profissao_declarada": "Q40348"
-    },
-    {
-      "slug": "ataides-oliveira",
-      "profissao_declarada": "Q43845"
-    },
-    {
-      "slug": "otaviano-pivetta",
-      "profissao_declarada": "Q43845"
-    },
-    {
-      "slug": "paula-belmonte",
-      "profissao_declarada": "Q43845"
-    },
-    {
-      "slug": "gilberto-kassab",
-      "profissao_declarada": "Q81096"
+      "previous_value": "Q40348",
+      "target_value": "OUTROS",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "220002536806",
+      "occupation_code": "999",
+      "source_role": "GOVERNADOR",
+      "source_uf": "RO",
+      "profile_link_status": "confirmado"
     },
     {
       "slug": "adriana-accorsi",
-      "profissao_declarada": "Q82955"
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
     },
     {
       "slug": "alan-rick",
-      "profissao_declarada": "Q82955"
+      "previous_value": "Q82955",
+      "target_value": "JORNALISTA E REDATOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "10002532492",
+      "occupation_code": "171",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AC",
+      "profile_link_status": "confirmado"
     },
     {
       "slug": "alexandre-curi",
-      "profissao_declarada": "Q82955"
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
     },
     {
       "slug": "amelio-cayres",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "beto-faro",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "cleitinho",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "confucio-moura",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "da-vitoria",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "daniel-vilela",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "dr-furlan",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "edegar-pretto",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "eduardo-braga",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "eduardo-braide",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "eduardo-girao",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "eduardo-paes",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "erika-hilton",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "felicio-ramuth",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "gilson-machado",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "guto-silva",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "hana-ghassan",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "hildon-chaves",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "jose-carlos-aleluia",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "laurez-moreira",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "leandro-grass",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "mailza-assis",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "marconi-perillo",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "marcos-vieira",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "nikolas-ferreira",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "omar-aziz",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "paulo-hartung",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "pazolini",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "raquel-lyra",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "ricardo-cappelli",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "roberto-cidade",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "rodrigo-bacellar",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "rodrigo-pacheco",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "simao-jatene",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "washington-reis",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "wellington-fagundes",
-      "profissao_declarada": "Q82955"
-    },
-    {
-      "slug": "wilder-morais",
-      "profissao_declarada": "Q82955"
+      "previous_value": "Q82955",
+      "target_value": "DEPUTADO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "270002544545",
+      "occupation_code": "277",
+      "source_role": "VICE-GOVERNADOR",
+      "source_uf": "TO",
+      "profile_link_status": "ficha_reaproveitada"
     },
     {
       "slug": "anderson-ferreira",
-      "profissao_declarada": "Q937857"
+      "previous_value": "Q937857",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "ataides-oliveira",
+      "previous_value": "Q43845",
+      "target_value": "EMPRESÁRIO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "270002548412",
+      "occupation_code": "257",
+      "source_role": "GOVERNADOR",
+      "source_uf": "TO",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "beto-faro",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "ciro-gomes-gov-ce",
+      "previous_value": "Q40348",
+      "target_value": "ADVOGADO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "60002531351",
+      "occupation_code": "131",
+      "source_role": "GOVERNADOR",
+      "source_uf": "CE",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "cleitinho",
+      "previous_value": "Q82955",
+      "target_value": "SENADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "130002552296",
+      "occupation_code": "276",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MG",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "confucio-moura",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "da-vitoria",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "daniel-vilela",
+      "previous_value": "Q82955",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "90002540993",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "GO",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "david-almeida",
+      "previous_value": "Q40348",
+      "target_value": "OUTROS",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "40002536086",
+      "occupation_code": "999",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AM",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "dr-furlan",
+      "previous_value": "Q82955",
+      "target_value": "MÉDICO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "30002530014",
+      "occupation_code": "111",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AP",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "edegar-pretto",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "eduardo-braga",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "eduardo-braide",
+      "previous_value": "Q82955",
+      "target_value": "ADVOGADO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "100002545679",
+      "occupation_code": "131",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MA",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "eduardo-girao",
+      "previous_value": "Q82955",
+      "target_value": "SENADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "280002539825",
+      "occupation_code": "276",
+      "source_role": "VICE-PRESIDENTE",
+      "source_uf": "BR",
+      "profile_link_status": "ficha_reaproveitada"
+    },
+    {
+      "slug": "eduardo-paes",
+      "previous_value": "Q82955",
+      "target_value": "OUTROS",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "190002543380",
+      "occupation_code": "999",
+      "source_role": "GOVERNADOR",
+      "source_uf": "RJ",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "elmano-de-freitas",
+      "previous_value": "Q40348",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "60002543969",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "CE",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "erika-hilton",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "felicio-ramuth",
+      "previous_value": "Q82955",
+      "target_value": "OUTROS",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "250002541302",
+      "occupation_code": "999",
+      "source_role": "VICE-GOVERNADOR",
+      "source_uf": "SP",
+      "profile_link_status": "ficha_reaproveitada"
+    },
+    {
+      "slug": "gabriel-azevedo",
+      "previous_value": "Q33999",
+      "target_value": "PROFESSOR DE ENSINO SUPERIOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "130002549557",
+      "occupation_code": "142",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MG",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "geraldo-alckmin",
+      "previous_value": "Q39631",
+      "target_value": "MÉDICO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "280002542549",
+      "occupation_code": "111",
+      "source_role": "VICE-PRESIDENTE",
+      "source_uf": "BR",
+      "profile_link_status": "ficha_reaproveitada"
+    },
+    {
+      "slug": "gilberto-kassab",
+      "previous_value": "Q81096",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "gilson-machado",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "guto-silva",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "haddad-gov-sp",
+      "previous_value": "Q40348",
+      "target_value": "PROFESSOR DE ENSINO SUPERIOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "250002549705",
+      "occupation_code": "142",
+      "source_role": "GOVERNADOR",
+      "source_uf": "SP",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "hana-ghassan",
+      "previous_value": "Q82955",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "140002551598",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "PA",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "hildon-chaves",
+      "previous_value": "Q82955",
+      "target_value": "EMPRESÁRIO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "220002542916",
+      "occupation_code": "257",
+      "source_role": "GOVERNADOR",
+      "source_uf": "RO",
+      "profile_link_status": "confirmado"
     },
     {
       "slug": "jeronimo",
-      "profissao_declarada": "Q937857"
+      "previous_value": "Q937857",
+      "target_value": "SERVIDOR PÚBLICO ESTADUAL",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "50002536314",
+      "occupation_code": "297",
+      "source_role": "GOVERNADOR",
+      "source_uf": "BA",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "joao-campos",
+      "previous_value": "Q212238",
+      "target_value": "ENGENHEIRO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "170002537230",
+      "occupation_code": "101",
+      "source_role": "GOVERNADOR",
+      "source_uf": "PE",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "joel-rodrigues",
+      "previous_value": "Q212238",
+      "target_value": "TÉCNICO CONTABILIDADE, ESTATÍSTICA, ECONOMIA DOMÉSTICA E ADMINISTRAÇÃO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "180002538530",
+      "occupation_code": "151",
+      "source_role": "GOVERNADOR",
+      "source_uf": "PI",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "jose-carlos-aleluia",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "jose-eliton",
+      "previous_value": "Q40348",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "juliana-brizola",
+      "previous_value": "Q40348",
+      "target_value": "OUTROS",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "210002551508",
+      "occupation_code": "999",
+      "source_role": "GOVERNADOR",
+      "source_uf": "RS",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "laurez-moreira",
+      "previous_value": "Q82955",
+      "target_value": "ADVOGADO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "270002544494",
+      "occupation_code": "131",
+      "source_role": "GOVERNADOR",
+      "source_uf": "TO",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "leandro-grass",
+      "previous_value": "Q82955",
+      "target_value": "PROFESSOR DE ENSINO SUPERIOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "70002552496",
+      "occupation_code": "142",
+      "source_role": "GOVERNADOR",
+      "source_uf": "DF",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "mailza-assis",
+      "previous_value": "Q82955",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "10002544107",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AC",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "marconi-perillo",
+      "previous_value": "Q82955",
+      "target_value": "EMPRESÁRIO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "90002543463",
+      "occupation_code": "257",
+      "source_role": "GOVERNADOR",
+      "source_uf": "GO",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "marcos-vieira",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "mateus-simoes",
+      "previous_value": "Q37226",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "130002541911",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MG",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "previous_value": "Q39631",
+      "target_value": "MÉDICO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "110002544985",
+      "occupation_code": "111",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MT",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "nikolas-ferreira",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "omar-aziz",
+      "previous_value": "Q82955",
+      "target_value": "SENADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "40002532272",
+      "occupation_code": "276",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AM",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "otaviano-pivetta",
+      "previous_value": "Q43845",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "110002551480",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MT",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "paula-belmonte",
+      "previous_value": "Q43845",
+      "target_value": "EMPRESÁRIO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "70002552965",
+      "occupation_code": "257",
+      "source_role": "GOVERNADOR",
+      "source_uf": "DF",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "paulo-hartung",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "paulo-martins-gov-pr",
+      "previous_value": "Q36180",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "pazolini",
+      "previous_value": "Q82955",
+      "target_value": "SERVIDOR PÚBLICO ESTADUAL",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "80002552682",
+      "occupation_code": "297",
+      "source_role": "GOVERNADOR",
+      "source_uf": "ES",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "pedro-cunha-lima",
+      "previous_value": "Q40348",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "raquel-lyra",
+      "previous_value": "Q82955",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "170002537227",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "PE",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "previous_value": "Q82955",
+      "target_value": "JORNALISTA E REDATOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "70002551557",
+      "occupation_code": "171",
+      "source_role": "GOVERNADOR",
+      "source_uf": "DF",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "roberto-cidade",
+      "previous_value": "Q82955",
+      "target_value": "GOVERNADOR",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "40002541741",
+      "occupation_code": "274",
+      "source_role": "GOVERNADOR",
+      "source_uf": "AM",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "rodrigo-bacellar",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "rodrigo-pacheco",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
     },
     {
       "slug": "silvio-mendes",
-      "profissao_declarada": "Q937857"
+      "previous_value": "Q937857",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "simao-jatene",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "washington-reis",
+      "previous_value": "Q82955",
+      "target_value": null,
+      "source_kind": "no_verified_tse_2026_link",
+      "sq_candidato": null,
+      "occupation_code": null,
+      "source_role": null,
+      "source_uf": null,
+      "profile_link_status": null
+    },
+    {
+      "slug": "wellington-fagundes",
+      "previous_value": "Q82955",
+      "target_value": "MÉDICO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "110002551737",
+      "occupation_code": "111",
+      "source_role": "GOVERNADOR",
+      "source_uf": "MT",
+      "profile_link_status": "confirmado"
+    },
+    {
+      "slug": "wilder-morais",
+      "previous_value": "Q82955",
+      "target_value": "ENGENHEIRO",
+      "source_kind": "tse_2026_declared_occupation",
+      "sq_candidato": "90002551791",
+      "occupation_code": "101",
+      "source_role": "GOVERNADOR",
+      "source_uf": "GO",
+      "profile_link_status": "confirmado"
     }
   ]
 }
