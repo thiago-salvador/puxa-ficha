@@ -255,6 +255,45 @@ test("opencode runners falham fechado com envelope invalido (sem chamada ao go)"
   }
 })
 
+test("runners opencode abortam sem PF_OPENCODE_GO, sem chamar modelo", async () => {
+  // O default era "/Users/thiagosalvador/.codex/skills/opencode/scripts/opencode-go.mjs",
+  // caminho pessoal de uma maquina especifica commitado num repositorio publico.
+  // Em qualquer outro ambiente ele falhava so depois de montar o prompt, ou pior,
+  // executava o que estivesse naquele caminho. Env vazia cobre tambem a ausente.
+  for (const runner of [RUNNER_LUNA, RUNNER_DEEPSEEK, RUNNER_GLM]) {
+    const resultado = await rodarRunner(runner, { PF_OPENCODE_GO: "" }, ENVELOPE)
+    assert.notEqual(resultado.code, 0, `${runner} deveria abortar sem PF_OPENCODE_GO`)
+    assert.match(
+      resultado.stderr,
+      /PF_OPENCODE_GO obrigatorio para runners OpenCode/u,
+      `${runner} deveria dizer qual env falta; stderr: ${resultado.stderr}`,
+    )
+    assert.equal(resultado.stdout.trim(), "", "nao pode materializar saida de modelo")
+  }
+})
+
+test("nenhum runner carrega caminho absoluto pessoal como default", async () => {
+  const { readFile, readdir } = await import("node:fs/promises")
+  const arquivos = (await readdir(DIR_RUNNERS)).filter((f) => f.endsWith(".mjs"))
+  const libs = ["../scripts/lib/programas-governo-opencode-runner.mjs"]
+  const alvos = [
+    ...arquivos.map((f) => DIR_RUNNERS + f),
+    ...libs.map((l) => fileURLToPath(new URL(l, import.meta.url))),
+  ]
+  for (const alvo of alvos) {
+    const src = await readFile(alvo, "utf-8")
+    const linhas = src
+      .split("\n")
+      .filter((linha) => !linha.trim().startsWith("//"))
+      .join("\n")
+    assert.doesNotMatch(
+      linhas,
+      /\/Users\/[a-z]/iu,
+      `${alvo} tem caminho absoluto de maquina pessoal fora de comentario`,
+    )
+  }
+})
+
 test("runner opencode luna converte resposta do go em JSON valido", async () => {
   const fakeGo = fixturePath("pf-fake-opencode-luna-ok.mjs")
   // fake opencode-go que responde com --json wrapper {texto: '{"ok": true}'}
