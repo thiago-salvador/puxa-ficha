@@ -442,13 +442,28 @@ export function concorrenciaAlvo({ conclusoes, concorrenciaAtual, metricas }) {
   return concorrenciaAtual
 }
 
+/**
+ * Allowlist do ambiente que chega aos filhos. Duas regras, e as duas importam:
+ * segredo do host nunca passa, e controle documentado nunca e descartado.
+ *
+ * A lista so vale se o ambiente REAL for passado para ca. Ate 2026-08-30 a
+ * chamada montava a mao um objeto de quatro chaves (PATH, HOME, TMPDIR, USER),
+ * entao a allowlist filtrava um conjunto que nunca continha PF_*: as variaveis
+ * documentadas em Settings/AUTOMATIONS_AND_ENVIRONMENTS.md, como
+ * PF_CLAUDE_MAX_BUDGET_USD e PF_CLAUDE_JUDGE_MODEL, viravam letra morta. Quem
+ * exportasse o orcamento do judge rodava com o default de US$ 5 sem aviso.
+ *
+ * Os nomes daqui sao os que algum processo filho de fato le. Conferir com:
+ *   grep -rhoE 'process\.env\.PF_[A-Z_0-9]+' scripts/programas-governo-stage.ts \
+ *     scripts/data/programas-governo-governadores-2026/*.mjs scripts/lib/programas-governo*
+ */
 export function construirAmbienteBatch(ambiente, extras = {}) {
   const chavesPermitidas = new Set([
     "PATH", "HOME", "TMPDIR", "TEMP", "TMP", "LANG", "LC_ALL", "TZ", "TERM", "SHELL", "USER", "LOGNAME",
     "CODEX_HOME", "CLAUDE_CONFIG_DIR",
     "PF_QWEN_CLI", "PF_QWEN_TIMEOUT_MS", "PF_CODEX_CLI", "PF_CODEX_TIMEOUT_MS",
-    "PF_CODEX_REASONING_EFFORT", "PF_GENERATOR_MODEL", "PF_JUDGE_MODEL",
-    "PF_CLAUDE_CLI", "PF_CLAUDE_TIMEOUT_MS", "PF_CLAUDE_MODEL",
+    "PF_CODEX_REASONING_EFFORT", "PF_CODEX_MODEL", "PF_JUDGE_MODEL",
+    "PF_CLAUDE_CLI", "PF_CLAUDE_TIMEOUT_MS", "PF_CLAUDE_JUDGE_MODEL", "PF_CLAUDE_MAX_BUDGET_USD",
     "PF_OPENCODE_GO", "PF_OPENCODE_TIMEOUT_MS", "PF_OPENCODE_TIMEOUT_PADDING_MS", "PF_OPENCODE_GRACE_MS",
   ])
   return {
@@ -805,6 +820,7 @@ async function executarBatchSobLease(params) {
     itens,
     ordem: [],
     emVoo: new Map(),
+    conclusoes: new Set(),
     concorrencia: 3,
     disparos: 0,
     latencias: [],
@@ -932,7 +948,7 @@ async function executarBatchSobLease(params) {
     await checarParadasDuras(contexto, totalEsperado, inicio, limiteWall)
   }
 
-  await Promise.all([...contexto.emVoo.values()].map((unidade) => unidade.conclusao))
+  await Promise.all([...contexto.conclusoes])
   await atualizarProgress(contexto, totalEsperado, inicio)
   return {
     parada: contexto.parada,
@@ -992,12 +1008,19 @@ async function disparar(contexto, unidade, inventoryPath) {
       const child = contexto.spawnFn(node24, args, {
         cwd: DIR_REPO,
         stdio: ["ignore", "pipe", "pipe"],
-        env: construirAmbienteBatch({
-          PATH: process.env.PATH,
-          HOME: process.env.HOME,
-          TMPDIR: process.env.TMPDIR,
-          USER: process.env.USER,
-        }, {
+        // `process.env` inteiro, e nao um objeto montado a mao: e a allowlist
+        // acima que decide o que passa. Montar o objeto aqui fazia a allowlist
+        // filtrar um conjunto que nunca tinha PF_*, e as variaveis documentadas
+        // nao chegavam ao filho.
+        //
+        // O acesso e dinamico de proposito e por isso este arquivo esta em
+        // `allowedDynamicPrefixes` de scripts/check-env-contract.mjs, junto de
+        // scripts/merge-queue/adapters.mjs, que faz o mesmo pelo mesmo motivo:
+        // a funcao existe para FILTRAR o ambiente do host, entao ela tem que
+        // receber o ambiente do host. A enumeracao que o contrato quer esta na
+        // allowlist acima, e ha teste que reprova quando ela sai de sincronia
+        // com o que os filhos leem.
+        env: construirAmbienteBatch(process.env, {
           ...(contexto.qwenExtraArgs ? { PF_QWEN_EXTRA_ARGS: contexto.qwenExtraArgs } : {}),
           ...(contexto.codexExtraArgs ? { PF_CODEX_EXTRA_ARGS: contexto.codexExtraArgs } : {}),
           PF_EXECUTION_ID: contexto.executionId,
@@ -1014,8 +1037,16 @@ async function disparar(contexto, unidade, inventoryPath) {
     } catch (erro) {
       resolver({ code: -1, stderr: `${stderr}\n${erro.message}`, inicioProcesso })
     }
-  }).then((resultado) => finalizar(contexto, unidade, resultado))
+  })
+    .then((resultado) => finalizar(contexto, unidade, resultado))
+    .finally(() => {
+      // A unidade só deixa de estar em voo depois que toda a finalização,
+      // inclusive estado e telemetria, terminou. Remover antes permitia que
+      // executarBatch retornasse enquanto ainda havia escrita no runDir.
+      contexto.emVoo.delete(item.chave)
+    })
   unidade.conclusao = conclusao
+  contexto.conclusoes.add(conclusao)
   contexto.emVoo.set(item.chave, unidade)
   contexto.disparos += 1
   contexto.metricas.tentativas += 1
@@ -1028,7 +1059,6 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
   const classificacao = classificarRegistro(registro)
   const textoErro = `${stderr}\n${registro?.ingestao?.erro ?? ""}`
   const cota = eErroCota(textoErro)
-  contexto.emVoo.delete(item.chave)
   if (classificacao.estado === "complete") {
     unidade.estado = "complete"
     contexto.metricas.concluidos += 1

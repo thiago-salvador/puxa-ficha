@@ -128,9 +128,17 @@ export function RankingTable({
                 </td>
                 <td className="py-3 pr-3">
                   <div className="flex items-center gap-2.5">
+                    {/*
+                      alt="" de proposito: o nome do candidato ja esta no link
+                      ao lado, na mesma celula. Repeti-lo no alt faz o leitor de
+                      tela anunciar o mesmo nome duas vezes seguidas, que e o
+                      que a regra image-redundant-alt do axe aponta. A foto aqui
+                      e decorativa; `name` continua alimentando as iniciais do
+                      fallback.
+                    */}
                     <CandidatePhoto
                       src={entry.candidato.foto_url}
-                      alt={entry.candidato.nome_urna}
+                      alt=""
                       name={entry.candidato.nome_urna}
                       width={40}
                       height={40}

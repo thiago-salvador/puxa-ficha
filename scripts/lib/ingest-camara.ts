@@ -250,13 +250,23 @@ async function ingestGastos(idCamara: number, candidatoId: string, slug: string)
   return totalRows
 }
 
-function parseVoto(raw: string): string {
-  const s = raw.toLowerCase()
-  if (s.includes("sim")) return "sim"
-  if (s.includes("não") || s.includes("nao")) return "não"
-  if (s.includes("abstenção") || s.includes("abstencao")) return "abstenção"
-  if (s.includes("obstrução") || s.includes("obstrucao")) return "obstrução"
-  return "ausente"
+export type VotoCamaraNormalizado =
+  | "sim"
+  | "não"
+  | "abstenção"
+  | "ausente"
+  | "obstrução"
+  | "artigo_17"
+
+export function parseVoto(raw: string): VotoCamaraNormalizado | null {
+  const s = raw.toLowerCase().trim().replace(/\s+/g, " ")
+  if (s === "artigo 17") return "artigo_17"
+  if (s === "sim") return "sim"
+  if (s === "não" || s === "nao") return "não"
+  if (s === "abstenção" || s === "abstencao") return "abstenção"
+  if (s === "obstrução" || s === "obstrucao") return "obstrução"
+  if (s === "ausente") return "ausente"
+  return null
 }
 
 /**
@@ -366,7 +376,10 @@ interface CarregamentoVotacoes {
  * candidatos seguintes, que e mentira com aparencia de dado.
  */
 let cacheVotacoesChave: CarregamentoVotacoes | null = null
-const cacheVotosPorVotacao = new Map<string, Map<number, string>>()
+const cacheVotosPorVotacao = new Map<
+  string,
+  Map<number, { normalizado: VotoCamaraNormalizado | null; cru: string }>
+>()
 
 export function __resetCacheVotacoesParaTeste(): void {
   cacheVotacoesChave = null
@@ -466,7 +479,10 @@ async function carregarVotacoesChaveCamara(): Promise<CarregamentoVotacoes> {
 
 /** Lista de votos de uma votacao, ou falha nomeada. Nunca mapa vazio por erro. */
 type VotosDaVotacao =
-  | { ok: true; votos: Map<number, string> }
+  | {
+      ok: true
+      votos: Map<number, { normalizado: VotoCamaraNormalizado | null; cru: string }>
+    }
   | { ok: false; motivo: string }
 
 /**
@@ -500,12 +516,23 @@ async function votosDaVotacao(votacaoIdApi: string): Promise<VotosDaVotacao> {
     }
   }
 
-  const mapa = new Map<number, string>()
+  const mapa = new Map<
+    number,
+    { normalizado: VotoCamaraNormalizado | null; cru: string }
+  >()
   for (const v of bruto) {
     const dep = v.deputado_ as Record<string, unknown> | undefined
     const idDep = Number(dep?.id)
     if (!Number.isFinite(idDep)) continue
-    mapa.set(idDep, parseVoto(String(v.tipoVoto || "")))
+    const cru = String(v.tipoVoto ?? "")
+    const normalizado = parseVoto(cru)
+    if (normalizado == null) {
+      warn(
+        "camara",
+        `  votacao ${votacaoIdApi}: tipoVoto desconhecido para deputado ${idDep}: ${JSON.stringify(cru)}`
+      )
+    }
+    mapa.set(idDep, { normalizado, cru })
   }
 
   // So sucesso entra no cache.
@@ -560,13 +587,19 @@ export async function ingestVotos(
       continue
     }
 
-    const voto = resultado.votos.get(idCamara)
-    if (!voto) continue
+    const votoDaFonte = resultado.votos.get(idCamara)
+    if (!votoDaFonte) continue
+    if (votoDaFonte.normalizado == null) {
+      erros.push(
+        `${slug}: tipoVoto desconhecido ${JSON.stringify(votoDaFonte.cru)} na votacao ${votacao.votacaoIdApi}; par enviado para revisao e nao persistido`
+      )
+      continue
+    }
 
     const { error } = await portas.gravarVoto({
       candidato_id: candidatoId,
       votacao_id: votacao.id,
-      voto,
+      voto: votoDaFonte.normalizado,
     })
 
     // Conta o que o banco confirmou, nao o que a gente tentou. Contar tentativa

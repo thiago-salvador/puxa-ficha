@@ -31,6 +31,8 @@ const VERIFY_ERROR_MESSAGES: Record<string, string> = {
     "Houve um erro ao enviar seu pedido. Recarregue esta página e abra o link do email de novo.",
   origem_bloqueada:
     "Por segurança, só aceitamos a confirmação aberta direto do email. Abra o link no seu navegador, sem passar por outro site.",
+  muitas_tentativas:
+    "Recebemos tentativas demais deste endereço em pouco tempo. Espere um minuto e abra o link do email de novo.",
   falha_ao_confirmar:
     "Nosso sistema não conseguiu registrar a confirmação agora. Tente de novo em alguns minutos.",
 }

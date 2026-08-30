@@ -1,6 +1,12 @@
 import type { QuizFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
 
-export type QuizVotoNormalizado = "sim" | "nao" | "abstencao" | "ausente" | "obstrucao"
+export type QuizVotoNormalizado =
+  | "sim"
+  | "nao"
+  | "abstencao"
+  | "ausente"
+  | "obstrucao"
+  | "artigo_17"
 
 export type PosicaoDeclaradaTipo = "a_favor" | "contra" | "ambiguo"
 

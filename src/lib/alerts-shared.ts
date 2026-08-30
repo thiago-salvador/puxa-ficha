@@ -8,8 +8,12 @@ const ALERT_EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const ALERT_TOKEN_RE = /^[A-Za-z0-9_-]{16,128}$/
 const ALERT_CANDIDATE_SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const ALERT_TOKEN_SALT = process.env.PF_ALERTS_TOKEN_SALT?.trim() || "dev-alerts-token-salt"
+const configuredAlertIpSalt = process.env.PF_ALERTS_IP_SALT?.trim()
+if (!configuredAlertIpSalt && process.env.VERCEL_ENV === "production") {
+  throw new Error("Missing PF_ALERTS_IP_SALT (required in production)")
+}
 const ALERT_IP_SALT =
-  process.env.PF_ALERTS_IP_SALT?.trim() ||
+  configuredAlertIpSalt ||
   process.env.PF_QUIZ_SHORT_LINK_SALT?.trim() ||
   "dev-alerts-ip-salt"
 
@@ -71,8 +75,21 @@ function buildAlertAccessUrl(params: Record<string, string>): string {
   return buildAbsoluteUrl(`/alertas/acesso?${search.toString()}`)
 }
 
-export function buildAlertManageUrl(manageToken: string): string {
-  return buildAlertAccessUrl({ manage: manageToken })
+/**
+ * `followSlug` carrega a intencao que originou o pedido.
+ *
+ * O caso: assinante ja verificado clica em "seguir" num navegador novo, sem
+ * cookie de sessao. A rota nao tem como autorizar a inscricao ali, entao manda
+ * o email de gestao. So que ela nunca criava a inscricao pedida, e a UI promete
+ * que criou: a pessoa recebia o email, abria o link, e o candidato que ela quis
+ * seguir nao estava la. O slug viaja junto e a rota de acesso efetiva o follow
+ * DEPOIS de validar o token.
+ */
+export function buildAlertManageUrl(manageToken: string, followSlug?: string | null): string {
+  const params: Record<string, string> = { manage: manageToken }
+  const normalizado = normalizeCandidateSlug(followSlug ?? "")
+  if (normalizado) params.follow = normalizado
+  return buildAlertAccessUrl(params)
 }
 
 export function buildAlertVerifyUrl(verifyToken: string, manageToken: string): string {

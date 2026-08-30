@@ -437,9 +437,18 @@ describe("PF-26 alertas nightly", () => {
     }
   })
 
-  test("GET e POST reais usam a composicao default sem contato externo", async () => {
+  test("GET e POST reais usam a composicao default sem contato externo", async (t) => {
     const fixture = new AlertsRouteFixture()
     const fetchesBefore = blockedGlobalFetchUrls.length
+    const previousFeatureFlag = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED
+    process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED = "true"
+    t.after(() => {
+      if (previousFeatureFlag === undefined) {
+        delete process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED
+      } else {
+        process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED = previousFeatureFlag
+      }
+    })
 
     const unauthorized = await routeModule.GET(
       fixture.request("/api/alerts/send-digest?chain=0"),

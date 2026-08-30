@@ -46,6 +46,21 @@ export async function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms))
 }
 
+/**
+ * Prazo padrao de qualquer chamada de rede dos scripts de coleta.
+ *
+ * `fetchJSON` ja usava 15s. Varias coletas chamavam `fetch` cru, sem prazo
+ * nenhum: quando a origem aceita a conexao e nunca responde (o caso classico do
+ * Cloudflare 522 do jarbas, mas tambem proxy silencioso e origem sobrecarregada),
+ * o processo fica pendurado ate o timeout do job, e o run inteiro morre sem
+ * coletar nada e sem dizer por que.
+ *
+ * Quem precisa do objeto `Response` (branch por status, content-type, bytes) nao
+ * pode usar `fetchJSON`, que devolve JSON ja parseado e perde essa distincao.
+ * Nesses casos o contrato e `signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)`.
+ */
+export const FETCH_TIMEOUT_MS = 15_000
+
 export async function fetchJSON<T>(
   url: string,
   headers?: Record<string, string>,
