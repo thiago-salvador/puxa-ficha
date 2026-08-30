@@ -329,7 +329,9 @@ describe("classificador puro (#136)", () => {
     // a 20260829100000 de identidade por fonte aplica como schema puro. A
     // 30002 retorna cedo sem Pablo no replay vazio e aplica limpa. O backfill
     // 100100 tambem retorna cedo sem Caiado e aplica limpo no replay vazio.
-    assert.equal(manifesto.aplicadas_esperadas, 332)
+    // 332 -> 333 em 30/08/2026: a correção do voto Artigo 17 de JHC retorna
+    // cedo sem o alvo. Medido: 333 aplicadas + 103 falhas = 436 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 333)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

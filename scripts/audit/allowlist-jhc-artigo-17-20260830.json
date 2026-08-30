@@ -1,0 +1,26 @@
+{
+  "_comentario": "Autoriza somente a correção do voto de JHC na votação 2123843-93 e o receipt append-only da mesma operação. Nenhuma outra linha de votos_candidato pode mudar.",
+  "recorte": "jhc-artigo-17-20260830",
+  "migration": "20260830143500_jhc_voto_artigo_17.sql",
+  "fonte": "Câmara dos Deputados, Dados Abertos, votação 2123843-93, tipoVoto Artigo 17; RICD Art. 17, I, v.",
+  "coorte": ["jhc"],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "votos_candidato",
+      "slug": "jhc",
+      "campos": ["voto"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260830143500",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao"],
+      "max_registros": 1
+    }
+  ]
+}
