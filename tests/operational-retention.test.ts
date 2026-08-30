@@ -19,7 +19,6 @@ require.cache[serverOnlyPath] = {
 
 const {
   NOTIFICATION_LOG_RETENTION_DAYS,
-  OPERATIONAL_RETENTION_BATCH_SIZE,
   notificationLogRetentionCutoffDate,
   operationalRetentionEnabled,
   purgeExpiredQuizShortLinks,
@@ -116,7 +115,7 @@ describe("retenção operacional agendada", () => {
         colunas: "token",
         filtros: [["lte", "expires_at", "2026-08-30T12:00:00.000Z"]],
         ordem: [["expires_at", true], ["token", true]],
-        limite: OPERATIONAL_RETENTION_BATCH_SIZE,
+        limite: 100,
       },
       {
         table: "quiz_result_short_links",
@@ -152,7 +151,7 @@ describe("retenção operacional agendada", () => {
         colunas: "id",
         filtros: [["lt", "digest_date", "2026-06-01"]],
         ordem: [["digest_date", true], ["id", true]],
-        limite: OPERATIONAL_RETENTION_BATCH_SIZE,
+        limite: 100,
       },
       {
         table: "notification_log",

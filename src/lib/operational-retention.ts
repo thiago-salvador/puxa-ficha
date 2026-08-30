@@ -34,7 +34,7 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
  * duas ordens de grandeza sobre o risco real.
  */
 export const NOTIFICATION_LOG_RETENTION_DAYS = 90
-export const OPERATIONAL_RETENTION_BATCH_SIZE = 100
+const OPERATIONAL_RETENTION_BATCH_SIZE = 100
 
 const NOTIFICATION_LOG_TIME_ZONE = "America/Sao_Paulo"
 const MS_POR_DIA = 24 * 60 * 60 * 1000
