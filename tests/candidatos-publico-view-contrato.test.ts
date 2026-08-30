@@ -334,6 +334,8 @@ describe("contrato da view candidatos_publico", () => {
       "20260829030002_candidate_registration_structured_state.sql",
       "20260829100000_projetos_lei_chave_por_fonte.sql",
       "20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql",
+      // Reconcilia somente votações e coleta_log. Não redefine candidatos_publico.
+      "20260830151500_destaques_freshness_reconciliation.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

@@ -1,0 +1,31 @@
+{
+  "_comentario": "Autoriza somente três metadados oficiais, a retirada de dois pares não confirmados e 155 receipts append-only derivados da dupla leitura preservada.",
+  "recorte": "destaques-freshness-reconciliation-20260830",
+  "migration": "20260830151500_destaques_freshness_reconciliation.sql",
+  "fonte": "Manifestos run-c e run-d em QA/evidencias/2026-08-30-destaques-votacoes, com payload bruto oficial e hashes coincidentes.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "votacoes_chave",
+      "ref": "destaques-freshness-metadata:3",
+      "campos": ["fonte", "votacao_id_api"],
+      "max_registros": 3
+    },
+    {
+      "tabela": "votos_candidato",
+      "ref": "destaques-freshness-removidos:2",
+      "campos": ["candidato_id", "votacao_id"],
+      "max_registros": 2
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "destaques-freshness-proveniencia:155",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "executado_em", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
+      "max_registros": 155
+    }
+  ]
+}

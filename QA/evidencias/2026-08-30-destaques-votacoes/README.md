@@ -70,3 +70,20 @@ A prova de proveniência e dupla leitura está verde. O gate de superfície segu
 vermelho por mérito nos três pares acima. Ele só pode ficar verde depois da
 correção predecessora de JHC e da migration draft que retira os dois pares não
 confirmados e grava os receipts; nenhuma dessas escritas foi executada.
+
+## Reconciliação proposta
+
+A migration `20260830151500_destaques_freshness_reconciliation.sql` é uma proposta
+separada e não foi aplicada. Ela exige como precondição o universo exato de 154 pares
+e o voto de JHC já corrigido para `artigo_17`. No forward provado em PostgreSQL 17:
+
+- 152 pares confirmados permanecem na superfície;
+- os pares de Flávio Bolsonaro e João Rodrigues, não confirmados na fonte oficial,
+  saem da superfície com receipt `sem_achado_no_escopo`;
+- 155 receipts com proveniência são adicionados, um global e 154 por par;
+- as 181 linhas sintéticas antigas permanecem intactas como histórico;
+- três votações recebem `fonte=camara` e ID oficial;
+- dois eventos históricos continuam sem fonte e ID, pois o arquivo oficial consultado
+  não oferece um evento nominal endereçável.
+
+Aplicação em produção depende de autorização nomeada do Thiago.
