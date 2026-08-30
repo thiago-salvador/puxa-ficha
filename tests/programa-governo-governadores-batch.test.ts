@@ -775,6 +775,11 @@ test("executarBatch: concorrencia nunca excede 4 candidatos e multipassagem maxi
   assert.ok(maximosConcorrentes.multipassagem >= 1, "multipassagem exerceu semaforo dedicado")
   const dirs = new Set(itens.map((item) => (item.chaveCacheDir as string)))
   assert.equal(dirs.size, itens.length, "cada candidato em diretorio isolado")
+  const telemetria = (await readFile(path.join(runDir, "logs", "tentativas.ndjson"), "utf8"))
+    .trim()
+    .split("\n")
+    .filter(Boolean)
+  assert.equal(telemetria.length, resultado.tentativas, "executarBatch aguarda toda telemetria antes de retornar")
   await rm(runDir, { recursive: true, force: true })
 })
 

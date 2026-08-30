@@ -805,6 +805,7 @@ async function executarBatchSobLease(params) {
     itens,
     ordem: [],
     emVoo: new Map(),
+    conclusoes: new Set(),
     concorrencia: 3,
     disparos: 0,
     latencias: [],
@@ -932,7 +933,7 @@ async function executarBatchSobLease(params) {
     await checarParadasDuras(contexto, totalEsperado, inicio, limiteWall)
   }
 
-  await Promise.all([...contexto.emVoo.values()].map((unidade) => unidade.conclusao))
+  await Promise.all([...contexto.conclusoes])
   await atualizarProgress(contexto, totalEsperado, inicio)
   return {
     parada: contexto.parada,
@@ -1016,6 +1017,7 @@ async function disparar(contexto, unidade, inventoryPath) {
     }
   }).then((resultado) => finalizar(contexto, unidade, resultado))
   unidade.conclusao = conclusao
+  contexto.conclusoes.add(conclusao)
   contexto.emVoo.set(item.chave, unidade)
   contexto.disparos += 1
   contexto.metricas.tentativas += 1
