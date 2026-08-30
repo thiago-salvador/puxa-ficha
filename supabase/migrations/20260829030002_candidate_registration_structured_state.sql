@@ -2,6 +2,7 @@ BEGIN;
 
 DO $$
 DECLARE
+  candidate_exists boolean;
   current_registration jsonb;
   original_registration constant jsonb := jsonb_build_object(
     'fonte', 'TSE DivulgaCand 2026',
@@ -12,12 +13,12 @@ DECLARE
 BEGIN
   PERFORM set_config('pf.candidate_registration_state_apply', 'false', true);
 
-  SELECT verificacao_campos -> 'candidate_registration'
-  INTO current_registration
+  SELECT true, verificacao_campos -> 'candidate_registration'
+  INTO candidate_exists, current_registration
   FROM public.candidatos
   WHERE slug = 'pablo-marcal';
 
-  IF NOT FOUND THEN
+  IF candidate_exists IS NULL THEN
     RAISE NOTICE 'replay sem a ficha pablo-marcal; correção de procedência ignorada';
     RETURN;
   END IF;

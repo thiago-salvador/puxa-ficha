@@ -326,8 +326,9 @@ describe("classificador puro (#136)", () => {
     // Conservação medida: 325 + 103 = 428.
     // 327 -> 329 em 29/08/2026: curadoria do roster retorna cedo no replay
     // vazio e o schema puro separado aplica constraint e view. 329 -> 330:
-    // a 20260829100000 de identidade por fonte aplica como schema puro.
-    assert.equal(manifesto.aplicadas_esperadas, 330)
+    // a 20260829100000 de identidade por fonte aplica como schema puro. A
+    // 30002 retorna cedo sem Pablo no replay vazio e aplica limpa.
+    assert.equal(manifesto.aplicadas_esperadas, 331)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
