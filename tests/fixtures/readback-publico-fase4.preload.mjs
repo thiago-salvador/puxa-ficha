@@ -97,11 +97,13 @@ globalThis.fetch = async (input, init = {}) => {
   if (url.pathname === "/api/deployment-info") {
     deploymentReads += 1
     return resposta({
+      ok: scenario !== "deployment_missing_ok",
       commitSha:
         scenario === "sha_mismatch" || (scenario === "deployment_changed" && deploymentReads > 1)
           ? "f".repeat(40)
           : expectedSha,
       environment: scenario === "preview" ? "preview" : "production",
+      commitRef: scenario === "deployment_wrong_ref" ? "preview" : "main",
     })
   }
   if (url.pathname === "/api/candidato-slugs") return resposta({ slugs })

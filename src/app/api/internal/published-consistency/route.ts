@@ -15,7 +15,7 @@ import {
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
-export const maxDuration = 15
+export const maxDuration = 30
 
 /**
  * GET /api/internal/published-consistency
@@ -55,6 +55,19 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
+  const serviceUrl =
+    process.env.SUPABASE_URL?.trim() || process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() || ""
+  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() || ""
+  if (!serviceUrl || !serviceRoleKey) {
+    console.error(
+      "[published-consistency] query_unverified: SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes",
+    )
+    return NextResponse.json(
+      { ok: false, error: "credentials_missing" },
+      { status: 503, headers: { "cache-control": "no-store" } },
+    )
+  }
+
   const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
   const { data, error } = await supabase
     .from("candidatos_publico")
@@ -75,8 +88,7 @@ export async function GET(req: NextRequest) {
   // AGENDADO disponivel (GitHub Actions no-spend / dispatch manual). Pega regressao
   // da classe do vazamento de 2026-06-02 tanto em tabelas base quanto na view tier1
   // (review 2026-06-09). Aditivo: erro de rede nao conta como vazamento.
-  const anonUrl =
-    process.env.SUPABASE_URL?.trim() || process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() || ""
+  const anonUrl = serviceUrl
   const anonKey =
     process.env.SUPABASE_ANON_KEY?.trim() ||
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim() ||
@@ -85,7 +97,10 @@ export async function GET(req: NextRequest) {
     report.hard.push(...(await probeAnonLeak(anonUrl, anonKey)))
   } else {
     console.error(
-      "[published-consistency] anon_probe_skipped: SUPABASE_URL/SUPABASE_ANON_KEY ausentes",
+      "[published-consistency] anon_probe_unverified: SUPABASE_URL/SUPABASE_ANON_KEY ausentes",
+    )
+    report.hard.push(
+      "CREDENCIAIS AUSENTES: SUPABASE_URL e SUPABASE_ANON_KEY sao obrigatorias para validar todas as superficies anon",
     )
   }
 

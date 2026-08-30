@@ -931,12 +931,22 @@ async function main(): Promise<void> {
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   })
   if (!deploymentResponse.ok) throw new Error(`deployment-info HTTP ${deploymentResponse.status}`)
-  const deployment = (await deploymentResponse.json()) as { commitSha?: string | null; environment?: string | null }
-  if (deployment.commitSha !== expectedSha) {
-    throw new Error(`SHA publicado divergente: ${deployment.commitSha ?? "nulo"} != ${expectedSha}`)
+  const deployment = (await deploymentResponse.json()) as {
+    ok?: boolean
+    commitSha?: string | null
+    commitRef?: string | null
+    environment?: string | null
   }
-  if (deployment.environment !== "production") {
-    throw new Error(`ambiente publicado divergente: ${deployment.environment ?? "nulo"} != production`)
+  if (
+    deployment.ok !== true ||
+    deployment.environment !== "production" ||
+    deployment.commitRef !== "main" ||
+    deployment.commitSha !== expectedSha
+  ) {
+    throw new Error(
+      `deployment-info divergente: ok=${String(deployment.ok)} environment=${deployment.environment ?? "nulo"} ` +
+        `commitRef=${deployment.commitRef ?? "nulo"} commitSha=${deployment.commitSha ?? "nulo"} esperado=${expectedSha}`,
+    )
   }
 
   const candidatos = await candidatosPublicos(publicUrl)
@@ -1026,10 +1036,17 @@ async function main(): Promise<void> {
     throw new Error("deployment-info final HTTP/URL divergente")
   }
   const deploymentFinal = (await deploymentFinalResponse.json()) as {
+    ok?: boolean
     commitSha?: string | null
+    commitRef?: string | null
     environment?: string | null
   }
-  if (deploymentFinal.commitSha !== expectedSha || deploymentFinal.environment !== "production") {
+  if (
+    deploymentFinal.ok !== true ||
+    deploymentFinal.commitSha !== expectedSha ||
+    deploymentFinal.environment !== "production" ||
+    deploymentFinal.commitRef !== "main"
+  ) {
     throw new Error("deployment mudou durante o readback")
   }
 

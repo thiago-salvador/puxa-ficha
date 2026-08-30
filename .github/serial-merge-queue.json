@@ -125,12 +125,20 @@
         }
       ],
       "private": {
-        "requiredWhenSecretPresent": true,
+        "required": true,
         "secret": "PF_RUNTIME_SMOKE_SECRET",
         "url": "https://puxaficha.com.br/api/internal/runtime-smoke",
         "expected": {
           "ok": true,
-          "total": 5
+          "total": 6,
+          "resultNames": [
+            "candidate",
+            "deployment-info",
+            "home",
+            "profile-api",
+            "quiz-short-link",
+            "real-404"
+          ]
         }
       }
     },
@@ -170,6 +178,12 @@
     "successState": "success",
     "failClosedOnMissingHold": true
   },
+  "ledger": {
+    "predecessorEnv": "PF_LEDGER_PREDECESSOR",
+    "manifestEnv": "PF_LEDGER_MANIFEST",
+    "manifestFormat": "json-or-lines",
+    "requirePredecessor": true
+  },
   "irreversibleChanges": {
     "pathPatterns": [
       "supabase/migrations/**",
@@ -208,9 +222,7 @@
       "VERCEL_ORG_ID",
       "VERCEL_PROJECT_ID"
     ],
-    "optional": [
-      "PF_RUNTIME_SMOKE_SECRET"
-    ],
+    "optional": [],
     "missingPolicy": "block"
   }
 }
