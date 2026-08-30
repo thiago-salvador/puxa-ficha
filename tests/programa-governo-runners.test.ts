@@ -152,7 +152,7 @@ test("runner do judge Claude usa modo mínimo e devolve structured_output", asyn
   const fakeCli = fixturePath("pf-fake-claude-judge.mjs")
   const script = `#!/usr/bin/env node
 const args=process.argv.slice(2)
-for (const esperado of ['--safe-mode','--no-session-persistence','--json-schema','sonnet']) {
+for (const esperado of ['--safe-mode','--no-session-persistence','--json-schema','claude-sonnet-5']) {
   if (!args.includes(esperado)) { console.error('arg ausente: '+esperado); process.exit(2) }
 }
 const schema=JSON.parse(args[args.indexOf('--json-schema')+1])
