@@ -32,7 +32,13 @@ export interface SendEmailInput {
 /** Limite da Resend. Estourar não é erro do lado dela: a chave é ignorada. */
 const IDEMPOTENCY_KEY_MAX_LENGTH = 256
 
-export class IdempotencyKeyTooLongError extends Error {}
+/**
+ * Nao exportada de proposito: ninguem fora deste modulo precisa distinguir esta
+ * falha das outras do transporte, e um export sem consumidor e o que o knip
+ * cobra. O que importa e o comportamento, e ele esta travado em
+ * tests/email-idempotency.test.ts: chave longa demais NAO envia.
+ */
+class IdempotencyKeyTooLongError extends Error {}
 
 function idempotencyHeader(key: string | undefined): Record<string, string> {
   if (!key) return {}

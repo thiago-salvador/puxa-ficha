@@ -12,7 +12,7 @@ require.cache[serverOnlyPath] = {
   exports: {},
 } as never
 
-const { sendTransactionalEmail, IdempotencyKeyTooLongError } =
+const { sendTransactionalEmail } =
   require("../src/lib/email") as typeof import("../src/lib/email")
 const { buildDigestIdempotencyKey } =
   require("../src/app/api/alerts/send-digest/route") as typeof import("../src/app/api/alerts/send-digest/route")
@@ -86,7 +86,7 @@ describe("Idempotency-Key no transporte de email", () => {
       sendTransactionalEmail({
         to: "a@example.com", subject: "s", html: "<p>x</p>", idempotencyKey: "k".repeat(257),
       }),
-      IdempotencyKeyTooLongError,
+      /257 caracteres, acima do limite de 256/,
     )
     assert.equal(chamadas.length, 0, "não pode ter enviado nada")
   })
