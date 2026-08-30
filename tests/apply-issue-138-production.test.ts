@@ -84,6 +84,11 @@ test("forward readback e harness PG17 separam apply e rollback", () => {
   assert.match(PG17_HARNESS, /segunda execução already-applied sem alteração/)
   assert.match(PG17_HARNESS, /state_snapshot\(\)/)
   assert.match(PG17_HARNESS, /created_by like '%\$RUNNER_EXPECTED_SHA'/)
+  assert.match(PG17_HARNESS, /trap limpar EXIT INT TERM/)
+  assert.doesNotMatch(PG17_HARNESS, /trap cleanup_wrappers/)
+  assert.match(PG17_HARNESS, /rm -rf -- "\$WRAPPER_DIR"/)
+  assert.match(PG17_HARNESS, /name=\^\/\$\{C\}\$/)
+  assert.match(PG17_HARNESS, /exit \"\$rc\"/)
 
   for (const readback of [FORWARD_READBACK, ROLLBACK_READBACK, BACKFILL_READBACK, BACKFILL_ROLLBACK_READBACK]) {
     assert.match(readback, /candidato_id = '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid/)

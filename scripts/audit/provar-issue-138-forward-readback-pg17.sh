@@ -22,8 +22,20 @@ ROLLBACK_READBACK="supabase/readback/20260829100000_projetos_lei_chave_por_fonte
 DDL_HASH="sha256:$(shasum -a 256 supabase/migrations/20260829100000_projetos_lei_chave_por_fonte.sql | cut -d' ' -f1)"
 BACKFILL_HASH="sha256:$(shasum -a 256 supabase/migrations-pendentes/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.sql | cut -d' ' -f1)"
 C="pf-issue-138-forward-readback-$$"
+WRAPPER_DIR=""
 
-limpar() { docker rm -f "$C" >/dev/null 2>&1 || true; }
+limpar() {
+  local rc=$?
+  docker rm -f "$C" >/dev/null 2>&1 || true
+  if [[ -n "$WRAPPER_DIR" && -d "$WRAPPER_DIR" ]]; then
+    rm -rf -- "$WRAPPER_DIR"
+  fi
+  if docker ps -a --filter "name=^/${C}$" --format '{{.Names}}' | grep -Fxq "$C"; then
+    echo "FAIL: container temporario nao foi removido: $C" >&2
+    rc=1
+  fi
+  exit "$rc"
+}
 trap limpar EXIT INT TERM
 
 docker run -d --name "$C" -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=postgres "$IMG" >/dev/null || {
@@ -130,8 +142,6 @@ BASE_PATH="$PATH"
 NODE24_BIN="/opt/homebrew/opt/node@24/bin"
 WRAPPER_DIR="$(mktemp -d)"
 RUNNER_EXPECTED_SHA="$(git rev-parse HEAD)"
-cleanup_wrappers() { rm -rf "$WRAPPER_DIR"; }
-trap cleanup_wrappers EXIT INT TERM
 
 printf '%s\n' '#!/usr/bin/env bash' \
   'case "$1" in' \
