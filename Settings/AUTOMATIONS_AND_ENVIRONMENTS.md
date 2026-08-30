@@ -162,15 +162,40 @@ horário de verão, inexistente no Brasil em 06/08/2026.
 
 ## GitHub Actions
 
+A tabela cobre os 25 workflows do diretório. Conferir a cobertura com
+`ls .github/workflows/*.yml`; os agendados saem de
+`grep -l 'schedule:' .github/workflows/*.yml`. Schedule de workflow é UTC.
+
 | Workflow | Disparo | Papel |
 |---|---|---|
 | `ci.yml` | Push e PR | Lint, tipos, testes, build, browser smoke e acessibilidade. |
+| `codeql.yml` | Push, PR e segunda, 06:12 UTC | Análise estática de segurança (CodeQL) em JavaScript/TypeScript e Python. |
+| `gitleaks.yml` | Push e PR | Secret scanning do intervalo auditado e da árvore final. |
+| `replay-migrations.yml` | Push, PR e manual | Replay real das migrations e gates de schema; não usa secret e não toca produção. |
 | `backup-db.yml` | 05:30 UTC diária e manual | Backup do banco. |
+| `ledger-guard.yml` | 06:10 UTC diária, push em `main` e manual | `audit:ledger:gate` do banco contra `supabase/migrations`; nunca roda em PR, porque PR de fork não recebe secret. |
 | `ingest.yml` | Quarta, 06:00 UTC e manual | Câmara e Senado; lotes manuais de TSE, **sanções** e notícias; revalidação após sucesso. |
 | `patrimonio-rerun.yml` | Domingo, 09:00 UTC e manual (ativado em 12/08/2026; primeiro disparo 16/08) | Re-run de patrimônio do ciclo 2026 em dry-run: baixa o pacote oficial do TSE e compara por composição contra o baseline auditado. Não escreve, não recebe secret; publicar o delta continua exigindo migration com gate. |
 | `data-quality.yml` | Quinta, 09:00 UTC; dia 3, 07:00 UTC; manual | Coorte, superfície pública, integridade da cadeia partidária e auditoria de identidade SQ. |
+| `data-freshness-audit.yml` | 11:37 UTC diária e manual | `audit:data-freshness --strict` sobre fonte oficial, candidaturas e SLA; publica o relatório como artefato. |
+| `pesquisas-monitoramento.yml` | 10:17 UTC diária e manual | Coleta e verificação das pesquisas eleitorais da matriz aprovada (`verify:pesquisas`). |
 | `link-check-fontes.yml` | Segunda, 09:00 UTC e manual | Verificar links das fontes publicadas. |
+| `alerts-nightly.yml` | 03:17 UTC diária e manual | Pipeline de alertas ponta a ponta em ambiente local, sem envio real de email. |
+| `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os crons da Vercel e abre issue quando um deles não roda. |
+| `a11y-producao.yml` | `deployment_status` de Production | Axe contra `puxaficha.com.br` depois do deploy alcançar o alias público, não no push. |
 | `revalidate-cache.yml` | Manual | Revalidar tags públicas autorizadas. |
+| `serial-merge-queue.yml` | A cada 5 min, `pull_request_target`, `workflow_run`, `deployment_status` e manual | Coordenador da fila de merge serial: enfileira, promove o deploy e faz o readback público. |
+| `serial-merge-queue-watchdog.yml` | `workflow_run` do coordenador e evento de issue | Abre issue quando um run da fila termina sem sucesso. |
+| `apply-issue-96-production.yml` | Manual | One-off fechado: aplicar a correção de fontes da issue 96. |
+| `apply-issue-138-production.yml` | Manual | One-off fechado: aplicar identidade de proposição por fonte (issue 138). |
+| `rollback-issue-138-production.yml` | Manual | Rollback de dados da issue 138. |
+| `apply-candidate-roster-integrity-production.yml` | Manual | One-off fechado: aplicar integridade do roster de candidatos. |
+| `rollback-candidate-roster-integrity-production.yml` | Manual | Rollback da integridade do roster de candidatos. |
+| `apply-chapas-2026.yml` | Manual | One-off fechado: aplicar release de chapas 2026. |
+| `apply-chapas-2026-biografias.yml` | Manual | One-off fechado: aplicar correção de biografias das chapas 2026. |
+
+Os seis `apply-*`/`rollback-*` são one-off de produção: rodam por
+`workflow_dispatch`, com gate e autorização nomeada, e não têm agendamento.
 
 No `audit:superficie`, R8 reprova reversão A→B e B→A no mesmo ano; R9 reprova
 uma cadeia que não admite ordenação cronológica contínua depois da mesma

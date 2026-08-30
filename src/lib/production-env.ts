@@ -78,9 +78,12 @@ export function validateProductionEnvironment(): void {
     missing.push("PF_ALERTS_TOKEN_ENCRYPTION_KEY (64 caracteres hex = 32 bytes)")
   }
 
-  // CRON_SECRET continua FATAL: sem ele as 4 rotas de cron respondem 401 e o
-  // digest, o refresh de noticias e os dois gates internos param calados. A
-  // falha nao aparece em lugar nenhum ate alguém reclamar.
+  // CRON_SECRET continua FATAL: sem ele as 6 rotas de cron respondem 401 e o
+  // digest, os dois passos de refresh de noticias e os tres gates internos
+  // (published-consistency, runtime-smoke e revalidate-public-cache) param
+  // calados. A falha nao aparece em lugar nenhum ate alguém reclamar.
+  // A contagem sai de `vercel.json` (array `crons`) e bate com
+  // `grep -rl CRON_SECRET src/app/api`; eram 4 quando este comentario nasceu.
   if (!hasTrimmed(process.env.CRON_SECRET)) {
     missing.push("CRON_SECRET")
   }
