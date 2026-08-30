@@ -136,9 +136,14 @@ insert into public.projetos_lei(candidato_id, tipo, numero, ano, ementa, fonte, 
 select '781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid, 'PLS', gs::text, 2015,
        'Senado baseline ' || gs, 'Senado', 'baseline-senado-' || gs
 from generate_series(1, 226) gs;
-insert into public.projetos_lei(candidato_id, tipo, numero, ano, ementa, fonte, proposicao_id_api)
+insert into public.projetos_lei(
+  candidato_id, tipo, numero, ano, ementa, situacao, url_inteiro_teor,
+  fonte, proposicao_id_api, tema, destaque, destaque_motivo, coverage_id, metadata
+)
 values ('781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid, 'PL', '4444', 2015,
-        'Senado sem identificador de proposicao', 'Senado', NULL);
+        'Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas',
+        'tramitando', NULL, 'Senado', NULL, 'Agronegocio', TRUE,
+        'Conhecido como ''PL do Veneno'', amplia permissao de agrotoxicos', NULL, '{}'::jsonb);
 insert into public.projetos_lei(
   candidato_id, tipo, numero, ano, ementa, situacao, url_inteiro_teor,
   fonte, proposicao_id_api, metadata
@@ -308,12 +313,12 @@ echo "  PASS  backfill 4"
 echo "  PASS  Senado intacto"
 
 echo "F4: substituicao adversarial da linha Senado sem ID falha forward"
-q -c "update public.projetos_lei set ementa='payload adulterado' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
 if q < "$FORWARD_READBACK" >/dev/null 2>&1 || q < "$BACKFILL_READBACK" >/dev/null 2>&1; then
   echo "FAIL: readback forward aceitou payload Senado adulterado" >&2
   exit 1
 fi
-q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q -c "update public.projetos_lei set ementa='Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
 q < "$FORWARD_READBACK" >/dev/null
 q < "$BACKFILL_READBACK" >/dev/null
 echo "  PASS  forward readbacks recusam substituicao"
@@ -325,12 +330,12 @@ q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null
 [[ "$(q -c "select count(*) from public.projetos_lei where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'")" == 1 ]] || { echo "FAIL: linha Senado sem ID nao sobreviveu ao rollback de dados"; exit 1; }
 echo "  PASS  rollback de dados e readback"
 echo "F5: substituicao adversarial da linha Senado sem ID falha rollback readback"
-q -c "update public.projetos_lei set ementa='payload adulterado' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
 if q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null 2>&1 || q < "$ROLLBACK_READBACK" >/dev/null 2>&1; then
   echo "FAIL: readback rollback aceitou payload Senado adulterado" >&2
   exit 1
 fi
-q -c "update public.projetos_lei set ementa='Senado sem identificador de proposicao' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
+q -c "update public.projetos_lei set ementa='Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas' where candidato_id='781b5abb-aa49-46a7-bc17-c38f16706ed0'::uuid and fonte='Senado' and proposicao_id_api is null and numero='4444'" >/dev/null
 q < "$BACKFILL_ROLLBACK_READBACK" >/dev/null
 echo "  PASS  rollback readbacks recusam substituicao"
 { printf '%s\n' "SET pf.issue_138_schema_rollback_compatibility = 'approved';"; cat "$SCHEMA_ROLLBACK"; } | q >/dev/null

@@ -57,12 +57,12 @@ BEGIN
     AND tipo = 'PL'
     AND numero = '4444'
     AND ano = 2015
-    AND ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'
-    AND situacao IS NULL
+    AND ementa IS NOT DISTINCT FROM 'Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas'
+    AND situacao IS NOT DISTINCT FROM 'tramitando'
     AND url_inteiro_teor IS NULL
-    AND tema IS NULL
-    AND destaque IS FALSE
-    AND destaque_motivo IS NULL
+    AND tema IS NOT DISTINCT FROM 'Agronegocio'
+    AND destaque IS TRUE
+    AND destaque_motivo IS NOT DISTINCT FROM 'Conhecido como ''PL do Veneno'', amplia permissao de agrotoxicos'
     AND coverage_id IS NULL
     AND metadata IS NOT DISTINCT FROM '{}'::jsonb;
   SELECT count(*) INTO ddl_ledger

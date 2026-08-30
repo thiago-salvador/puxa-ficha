@@ -69,7 +69,7 @@ test("forward readback e harness PG17 separam apply e rollback", () => {
   assert.match(PG17_HARNESS, /SCHEMA_ROLLBACK/)
   assert.match(PG17_HARNESS, /pf\.issue_138_schema_rollback_compatibility = 'approved'/)
   assert.match(PG17_HARNESS, /case "\$MODE" in\s+both\|backfill\|already-applied/)
-  assert.match(PG17_HARNESS, /payload adulterado/)
+  assert.match(PG17_HARNESS, /Senado sem identificador de proposicao/)
   assert.match(PG17_HARNESS, /readback forward aceitou payload Senado adulterado/)
   assert.match(PG17_HARNESS, /readback rollback aceitou payload Senado adulterado/)
   assert.match(PG17_HARNESS, /readbacks pos-commit \(modo \$MODE\)/)
@@ -107,12 +107,12 @@ test("forward readback e harness PG17 separam apply e rollback", () => {
     assert.match(readback, /tipo = 'PL'/)
     assert.match(readback, /numero = '4444'/)
     assert.match(readback, /ano = 2015/)
-    assert.match(readback, /ementa IS NOT DISTINCT FROM 'Senado sem identificador de proposicao'/)
-    assert.match(readback, /situacao IS NULL/)
+    assert.match(readback, /ementa IS NOT DISTINCT FROM 'Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas'/)
+    assert.match(readback, /situacao IS NOT DISTINCT FROM 'tramitando'/)
     assert.match(readback, /url_inteiro_teor IS NULL/)
-    assert.match(readback, /tema IS NULL/)
-    assert.match(readback, /destaque IS FALSE/)
-    assert.match(readback, /destaque_motivo IS NULL/)
+    assert.match(readback, /tema IS NOT DISTINCT FROM 'Agronegocio'/)
+    assert.match(readback, /destaque IS TRUE/)
+    assert.match(readback, /destaque_motivo IS NOT DISTINCT FROM 'Conhecido como ''PL do Veneno'', amplia permissao de agrotoxicos'/)
     assert.match(readback, /coverage_id IS NULL/)
     assert.match(readback, /metadata IS NOT DISTINCT FROM '\{\}'::jsonb/)
   }
@@ -134,6 +134,20 @@ test("backfill preserva o registro Senado fora da coorte de quatro IDs", () => {
   assert.match(BACKFILL_ROLLBACK_READBACK, /ddl_ledger <> 1/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /backfill_ledger <> 0/)
   assert.match(BACKFILL_ROLLBACK_READBACK, /ledger_top IS DISTINCT FROM '20260829100000'/)
+})
+
+test("fixture e readbacks rejeitam o placeholder antigo do PL 4444", () => {
+  const payloadReal = "Regulamenta o uso de agrotoxicos e altera a lei de defensivos agricolas"
+  assert.match(PG17_HARNESS, new RegExp(payloadReal))
+  for (const readback of [FORWARD_READBACK, ROLLBACK_READBACK, BACKFILL_READBACK, BACKFILL_ROLLBACK_READBACK]) {
+    assert.match(readback, new RegExp(payloadReal))
+    assert.doesNotMatch(readback, /Senado sem identificador de proposicao/)
+  }
+  assert.match(FORWARD_READBACK, /destaque IS TRUE/)
+  assert.match(ROLLBACK_READBACK, /destaque IS TRUE/)
+  assert.match(PG17_HARNESS, /Senado sem identificador de proposicao/)
+  assert.match(PG17_HARNESS, /forward readbacks recusam substituicao/)
+  assert.match(PG17_HARNESS, /rollback readbacks recusam substituicao/)
 })
 
 test("release predecessor do roster e independente e coordenado", () => {
