@@ -25,6 +25,15 @@ export type FinancingBreakdownKey = (typeof FINANCING_BREAKDOWN_KEYS)[number]
  * componente grafico nao textual). O piso ficou em `#737373` (4,74:1) e a rampa
  * inteira e verificada por `tests/financing-donut-contraste.test.ts`.
  */
+/**
+ * "1 DESTAQUES" aparecia no card do topo da ficha e no widget de embed, que sao
+ * duas superficies publicas em pt-BR, e o comparador ja pluralizava certo
+ * ("1 processo" contra "3 processos"). Fonte unica para as tres.
+ */
+export function formatDestaquesLabel(count: number): string {
+  return count === 1 ? "Destaque" : "Destaques"
+}
+
 export const FINANCING_COLOR_BY_KEY: Record<FinancingBreakdownKey, string> = {
   fundo_eleitoral: "#0a0a0a",
   fundo_partidario: "#2e2e2e",
