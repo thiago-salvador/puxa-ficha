@@ -64,6 +64,7 @@ describe("quiz-scoring", () => {
   it("trata Artigo 17 como voto neutro, igual a ausência", () => {
     assert.equal(normalizeVotoFromApi("artigo_17"), "artigo_17")
     assert.equal(normalizeVotoFromApi("Artigo 17"), "artigo_17")
+    assert.equal(normalizeVotoFromApi("categoria_desconhecida"), null)
 
     const dataset = buildMockQuizAlignmentDataset()
     const respostas = allNeutralAnswers()

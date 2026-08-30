@@ -16,21 +16,22 @@ const VOTE_COLORS: Record<VotoCandidato["voto"], { bg: string; label: string }> 
 }
 
 export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
-  if (votos.length === 0) return null
+  const votosValidos = votos.filter((voto) => VOTE_COLORS[voto.voto] != null)
+  if (votosValidos.length === 0) return null
 
   const counts: Record<string, number> = {}
-  for (const v of votos) {
+  for (const v of votosValidos) {
     counts[v.voto] = (counts[v.voto] ?? 0) + 1
   }
 
   return (
     <div className="rounded-[12px] border border-border/50 px-4 py-3 sm:rounded-[16px] sm:px-5 sm:py-4">
       <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
-        Padrão de voto ({votos.length} votações)
+        Padrão de voto ({votosValidos.length} votações)
       </p>
       {/* Dot grid */}
       <div className="mt-3 flex flex-wrap gap-1.5">
-        {votos.map((v) => {
+        {votosValidos.map((v) => {
           const style = VOTE_COLORS[v.voto]
           const nota = formatVoteNote(v.voto)
           return (
@@ -54,11 +55,11 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
               </span>
             </div>
           ))}
-        {votos.some((v) => v.contradicao) && (
+        {votosValidos.some((v) => v.contradicao) && (
           <div className="flex items-center gap-1.5">
             <div className="size-2.5 rounded-[2px] ring-2 ring-amber-400 ring-offset-1" />
             <span className="text-[10px] font-semibold text-amber-700">
-              {fixedCopy.contradictions} ({votos.filter((v) => v.contradicao).length})
+              {fixedCopy.contradictions} ({votosValidos.filter((v) => v.contradicao).length})
             </span>
           </div>
         )}

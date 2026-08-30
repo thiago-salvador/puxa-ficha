@@ -58,3 +58,31 @@ test("VotingDots renderiza copy pública normalizada", () => {
   assert.doesNotMatch(html, /Padrao de voto/)
   assert.doesNotMatch(html, /Nao/)
 })
+
+test("VotingDots descarta voto fora do vocabulário sem quebrar a ficha", () => {
+  const votoInvalido = {
+    id: "v-invalido",
+    candidato_id: "cand-1",
+    votacao_id: "vt-invalida",
+    voto: "categoria_desconhecida",
+    contradicao: false,
+    contradicao_descricao: null,
+    votacao: { titulo: "Votação inválida" },
+  } as unknown as VotoCandidato
+  const votoValido = {
+    id: "v-valido",
+    candidato_id: "cand-1",
+    votacao_id: "vt-valida",
+    voto: "sim",
+    contradicao: false,
+    contradicao_descricao: null,
+    votacao: { titulo: "Votação válida" },
+  } as VotoCandidato
+
+  const html = renderToStaticMarkup(createElement(VotingDots, { votos: [votoInvalido, votoValido] }))
+
+  assert.match(html, /Padrão de voto \(1 votações\)/)
+  assert.match(html, /Votação válida/)
+  assert.doesNotMatch(html, /Votação inválida|categoria_desconhecida/)
+  assert.equal(renderToStaticMarkup(createElement(VotingDots, { votos: [votoInvalido] })), "")
+})

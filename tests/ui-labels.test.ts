@@ -101,6 +101,8 @@ describe("ui-labels", () => {
     assert.equal(formatVoteBadgeLabel("artigo_17"), "Presidiu a sessão (Art. 17)")
     assert.equal(formatVoteLegendLabel("artigo_17"), "Presidiu (Art. 17)")
     assert.match(formatVoteNote("artigo_17"), /não vota.*salvo empate.*quórum/i)
+    assert.equal(formatVoteNote("categoria_desconhecida"), "")
+    assert.equal(formatVoteNote(null), "")
   })
 
   it("mantém o contrato display-only sem reescrever chaves canônicas", () => {
