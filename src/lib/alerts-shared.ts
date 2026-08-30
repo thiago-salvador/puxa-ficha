@@ -71,8 +71,21 @@ function buildAlertAccessUrl(params: Record<string, string>): string {
   return buildAbsoluteUrl(`/alertas/acesso?${search.toString()}`)
 }
 
-export function buildAlertManageUrl(manageToken: string): string {
-  return buildAlertAccessUrl({ manage: manageToken })
+/**
+ * `followSlug` carrega a intencao que originou o pedido.
+ *
+ * O caso: assinante ja verificado clica em "seguir" num navegador novo, sem
+ * cookie de sessao. A rota nao tem como autorizar a inscricao ali, entao manda
+ * o email de gestao. So que ela nunca criava a inscricao pedida, e a UI promete
+ * que criou: a pessoa recebia o email, abria o link, e o candidato que ela quis
+ * seguir nao estava la. O slug viaja junto e a rota de acesso efetiva o follow
+ * DEPOIS de validar o token.
+ */
+export function buildAlertManageUrl(manageToken: string, followSlug?: string | null): string {
+  const params: Record<string, string> = { manage: manageToken }
+  const normalizado = normalizeCandidateSlug(followSlug ?? "")
+  if (normalizado) params.follow = normalizado
+  return buildAlertAccessUrl(params)
 }
 
 export function buildAlertVerifyUrl(verifyToken: string, manageToken: string): string {

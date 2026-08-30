@@ -379,7 +379,12 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         const nextManageToken = createAlertToken()
         const manageTokenHash = hashAlertToken(nextManageToken)
         const manageTokenCiphertext = encryptAlertManageToken(nextManageToken)
-        const manageUrl = buildAlertManageUrl(nextManageToken)
+        // O link de gestao carrega o candidato que a pessoa pediu para seguir.
+        // Antes, este ramo mandava o email e ia embora sem criar a inscricao, e
+        // a UI promete o contrario: a pessoa abria o link e o candidato nao
+        // estava la. Quem efetiva o follow e /alertas/acesso, depois de validar
+        // o token contra um assinante real.
+        const manageUrl = buildAlertManageUrl(nextManageToken, candidate.slug)
         const deleteDataUrl = buildAlertDeleteDataUrl(nextManageToken)
         const accessEmail = buildAlertManageAccessEmail({
           candidateName: candidate.nome_urna,
