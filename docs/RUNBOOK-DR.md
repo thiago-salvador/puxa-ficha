@@ -9,10 +9,22 @@ cron exigem autorização nomeada antes de executar.
 | Superfície | Onde fica | Nomes | Acesso |
 |---|---|---|---|
 | Vercel, runtime | Project Settings > Environment Variables | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_DSN`, `SENTRY_TRACES_SAMPLE_RATE`, `NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE`, `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_AUTH_TOKEN`, `NEXT_PUBLIC_X_HANDLE`, `INSTAGRAM_APP_ID`, `PF_REVALIDATE_SECRET`, `PF_PREVIEW_TOKEN`, `PF_INTERNAL_TOKEN`, `PF_FORCE_PRODUCTION_SECURITY_HEADERS`, `PF_CURATION_PHASE`, `PF_QUIZ_SHORT_LINK_SALT`, `NEXT_PUBLIC_ALERTS_EMAIL_ENABLED`, `RESEND_API_KEY`, `CRON_SECRET`, `PF_ALERTS_FROM_EMAIL`, `PF_ALERTS_REPLY_TO_EMAIL`, `PF_ALERTS_TOKEN_SALT`, `PF_ALERTS_IP_SALT`, `PF_ALERTS_TOKEN_ENCRYPTION_KEY`, `TRANSPARENCIA_API_KEY`, `PF_DOADOR_CPF_HASH_SALT` | Confirmar no painel: Thiago |
-| GitHub Actions | Repository Settings > Secrets and variables > Actions | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL`, `PF_REVALIDATE_SECRET`, `TRANSPARENCIA_API_KEY`, `BACKUP_ENCRYPTION_KEY` | Confirmar no painel: Thiago |
+| GitHub Actions | Repository Settings > Secrets and variables > Actions | `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL`, `PF_REVALIDATE_SECRET`, `TRANSPARENCIA_API_KEY`, `BACKUP_ENCRYPTION_KEY`, `CRON_SECRET`, `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | Confirmar no painel: Thiago |
 | Supabase | Project Settings > API e Database > Connection string | URL do projeto, anon key, service role, Session pooler e senha do banco | Confirmar no painel: Thiago |
 | Provedor de email | Resend > API Keys e Domains | valor usado em `RESEND_API_KEY` e domínio do remetente | Confirmar no painel: Thiago |
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
+
+Os cinco últimos nomes da linha do GitHub Actions existem por causa da fila de
+merge serial e do watchdog de crons: `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`,
+`VERCEL_ORG_ID` e `VERCEL_PROJECT_ID` só aparecem em `serial-merge-queue.yml`, e
+`CRON_SECRET` aparece nele e em `cron-watchdog.yml`. Num DR que só recomponha a
+ingestão eles não são necessários; sem eles a fila não roda.
+
+Medir a lista, em vez de confiar nesta tabela:
+
+```bash
+grep -rhoE 'secrets\.[A-Z_0-9]+' .github/workflows/*.yml | sort -u
+```
 
 A lista canônica de nomes fica na tabela acima e em
 [`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](../Settings/AUTOMATIONS_AND_ENVIRONMENTS.md),
