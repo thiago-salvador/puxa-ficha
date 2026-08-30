@@ -3,27 +3,23 @@ import { readFileSync } from "node:fs"
 import test from "node:test"
 import { parse } from "yaml"
 
-const workflow = readFileSync(".github/workflows/data-quality.yml", "utf8")
+const freshnessWorkflow = readFileSync(".github/workflows/data-freshness-audit.yml", "utf8")
+const qualityWorkflow = readFileSync(".github/workflows/data-quality.yml", "utf8")
 
-test("workflow mantém validade temporal informativa sem falso gate permanente", () => {
-  const parsed = parse(workflow) as {
+test("workflow de freshness executa strict por membro e preserva artefatos", () => {
+  const parsed = parse(freshnessWorkflow) as {
     jobs?: Record<string, { steps?: Array<{ run?: string; "continue-on-error"?: boolean }> }>
   }
-  const informative = parsed.jobs?.["validade-temporal"]
-  assert.ok(informative)
-  assert.equal(informative.steps?.some((step) => step["continue-on-error"] === true), true)
-  assert.equal(parsed.jobs?.["validade-temporal-strict"], undefined)
-  assert.match(workflow, /baseline\/delta confiável/i)
-  const temporalSection = workflow.split("\n  validade-temporal:")[1]?.split("\n  sq-identity:")[0] ?? ""
-  assert.match(temporalSection, /SUPABASE_DB_URL/)
-  assert.match(temporalSection, /validade-temporal-snapshot\.sql/)
-  assert.match(temporalSection, /--from-snapshot=validade-temporal\.json/)
-  assert.doesNotMatch(temporalSection, /SUPABASE_ACCESS_TOKEN/)
-  assert.doesNotMatch(temporalSection, /SUPABASE_SERVICE_ROLE_KEY/)
+  const auditJob = parsed.jobs?.auditar
+  assert.ok(auditJob)
+  assert.equal(auditJob.steps?.some((step) => step.run?.includes("audit:data-freshness -- --strict")), true)
+  assert.equal(auditJob.steps?.some((step) => step["continue-on-error"] === true), true)
+  assert.match(freshnessWorkflow, /upload-artifact@[a-f0-9]{40}/)
+  assert.match(freshnessWorkflow, /reports\/data-freshness\//)
 })
 
 test("workflow conecta strict-all manual ao snapshot e preserva receipt", () => {
-  const surfaceSection = workflow.split("\n  superficie-fichas:")[1] ?? ""
+  const surfaceSection = qualityWorkflow.split("\n  superficie-fichas:")[1] ?? ""
   assert.match(surfaceSection, /args\+=\(--strict-all\)/)
   assert.match(surfaceSection, /--json=superficie-report\.json/)
   assert.match(surfaceSection, /upload-artifact@[a-f0-9]{40}/)

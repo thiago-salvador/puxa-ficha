@@ -108,6 +108,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     const diff = JSON.parse(readFileSync(join(out, "diff.json"), "utf8"));
     const summary = readFileSync(join(out, "summary.md"), "utf8");
     assert.equal(diff.status, "ok");
+    assert.equal(diff.strict, false);
     assert.equal(diff.candidacies.official_count, universe.official.length);
     assert.equal(diff.candidacies.published_count, universe.published.length);
     assert.equal(diff.publication_integrity.status, "ok");
@@ -124,6 +125,84 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.match(summary, /Estado: \*\*ok\*\*/);
     assert.match(summary, /Próximas ações recomendadas/);
     assert.match(summary, /Nenhuma ação corretiva necessária/);
+
+    writeFileSync(
+      published,
+      JSON.stringify({
+        records,
+        public_profiles: publicProfiles,
+        collection_evidence: collectionEvidence.map((evidence) =>
+          evidence.source_id === "filiacao"
+            ? { ...evidence, checked_at: "2020-01-01T00:00:00.000Z" }
+            : evidence,
+        ),
+      }),
+    );
+    const strictOut = join(work, "strict-out");
+    const strictResult = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        "--strict",
+        `--published=${published}`,
+        "--official-snapshot=data/chapas-2026-tse-20260815.json",
+        `--current-official-snapshot=${currentOfficial}`,
+        `--out=${strictOut}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.equal(strictResult.status, 0, strictResult.stderr);
+    const strictDiff = JSON.parse(readFileSync(join(strictOut, "diff.json"), "utf8"));
+    assert.equal(strictDiff.status, "ok");
+    assert.equal(strictDiff.strict, true);
+    assert.equal(
+      strictDiff.freshness.find((item: { source_id: string }) => item.source_id === "filiacao")?.status,
+      "technical_debt",
+    );
+
+    writeFileSync(
+      published,
+      JSON.stringify({
+        records,
+        public_profiles: publicProfiles,
+        collection_evidence: collectionEvidence.map((evidence) =>
+          evidence.source_id === "camara-proposicoes"
+            ? { ...evidence, checked_at: "2020-01-01T00:00:00.000Z" }
+            : evidence,
+        ),
+      }),
+    );
+    const scheduledStrictOut = join(work, "scheduled-strict-out");
+    const scheduledStrictResult = spawnSync(
+      process.execPath,
+      [
+        "--import",
+        "tsx",
+        "scripts/audit/audit-data-freshness.ts",
+        "--strict",
+        `--published=${published}`,
+        "--official-snapshot=data/chapas-2026-tse-20260815.json",
+        `--current-official-snapshot=${currentOfficial}`,
+        `--out=${scheduledStrictOut}`,
+        `--now=${now}`,
+      ],
+      { encoding: "utf8" },
+    );
+    assert.equal(scheduledStrictResult.status, 1);
+    const scheduledStrictDiff = JSON.parse(
+      readFileSync(join(scheduledStrictOut, "diff.json"), "utf8"),
+    );
+    assert.equal(scheduledStrictDiff.strict, true);
+    assert.equal(scheduledStrictDiff.status, "review_required");
+    assert.equal(
+      scheduledStrictDiff.freshness.find(
+        (item: { source_id: string }) => item.source_id === "camara",
+      )?.status,
+      "stale",
+    );
 
     writeFileSync(
       currentOfficial,

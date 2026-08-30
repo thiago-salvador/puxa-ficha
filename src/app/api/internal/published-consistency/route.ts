@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
-import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { createServiceRoleSupabaseClient, getAppSupabaseUrl } from "@/lib/supabase"
 import { secretsMatch } from "@/lib/crypto-utils"
 import {
   ANALYTICS_LAUNCH_RETENTION_DAYS,
@@ -55,12 +55,17 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  const serviceUrl =
-    process.env.SUPABASE_URL?.trim() || process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() || ""
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() || ""
-  if (!serviceUrl || !serviceRoleKey) {
+  const serviceUrl = getAppSupabaseUrl() ?? ""
+  let supabase: ReturnType<typeof createServiceRoleSupabaseClient>
+  try {
+    // O helper server-only centraliza a leitura da credencial e impede que o
+    // nome da service role chegue a qualquer módulo potencialmente client-side.
+    supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+  } catch (error) {
     console.error(
-      "[published-consistency] query_unverified: SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY ausentes",
+      `[published-consistency] query_unverified ${JSON.stringify({
+        message: error instanceof Error ? error.message : "credenciais ausentes",
+      })}`,
     )
     return NextResponse.json(
       { ok: false, error: "credentials_missing" },
@@ -68,7 +73,6 @@ export async function GET(req: NextRequest) {
     )
   }
 
-  const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
   const { data, error } = await supabase
     .from("candidatos_publico")
     .select(SELECT_COLUMNS)

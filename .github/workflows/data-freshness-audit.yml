@@ -49,7 +49,7 @@ jobs:
       - name: Comparar fonte oficial, catálogo e SLAs
         id: audit
         continue-on-error: true
-        run: npm run audit:data-freshness -- --published=reports/data-freshness/published.json
+        run: npm run audit:data-freshness -- --strict --published=reports/data-freshness/published.json
       - name: Publicar resumo no run
         if: always()
         run: |

@@ -54,6 +54,7 @@ interface CliOptions {
   activeProfileCrosswalk: string;
   out: string;
   now: Date;
+  strict: boolean;
 }
 
 function parseArgs(args: string[]): CliOptions {
@@ -86,6 +87,7 @@ function parseArgs(args: string[]): CliOptions {
     ),
     out: resolve(values.get("out") ?? "reports/data-freshness"),
     now,
+    strict: args.includes("--strict"),
   };
 }
 
@@ -337,6 +339,7 @@ async function main(): Promise<void> {
           currentSource,
           divulgacandEvidence,
           options.now,
+          { strict: options.strict },
         ).status,
         mode: "versioned_snapshot",
         path: options.currentOfficialSnapshot,
@@ -378,6 +381,7 @@ async function main(): Promise<void> {
           ? tseEvidence
           : aggregateSourceEvidence(entry, published.collection_evidence ?? []),
         options.now,
+        { strict: options.strict },
       ),
     );
     const freshnessCounts = Object.fromEntries(
@@ -406,6 +410,7 @@ async function main(): Promise<void> {
     writeJson(resolve(options.out, "diff.json"), {
       generated_at: generatedAt,
       status: "source_error",
+      strict: options.strict,
       error: message,
       candidacies: null,
       freshness,
@@ -460,6 +465,7 @@ async function main(): Promise<void> {
         ? tseEvidence
         : aggregateSourceEvidence(entry, published.collection_evidence ?? []),
       options.now,
+      { strict: options.strict },
     ),
   );
   const freshnessCounts = Object.fromEntries(
@@ -470,6 +476,8 @@ async function main(): Promise<void> {
       ],
     ),
   );
+  // technical_debt é dívida manual informativa. Só estados que exigem
+  // revisão operacional bloqueiam o status geral, mesmo em strict.
   const sourceNeedsReview = freshness.some(
     (item) =>
       item.status === "source_error" ||
@@ -502,6 +510,7 @@ async function main(): Promise<void> {
   writeJson(resolve(options.out, "diff.json"), {
     generated_at: generatedAt,
     status: overall,
+    strict: options.strict,
     candidacies: comparison,
     publication_integrity: publicationIntegrity,
     profile_admission: profileAdmission,

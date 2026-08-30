@@ -170,6 +170,10 @@ export function evaluateSourceFreshness(
   if (evidence.review_required) {
     return result("review_required", ageHoursForResult(evidence.checked_at), false)
   }
+  const invalidCheckedAt = evidence.checked_at != null && validCheckedAt(evidence.checked_at) === null
+  if (strict && source.refresh_mode === "scheduled" && staleIds.length > 0 && !invalidCheckedAt) {
+    return result("stale", ageHoursForResult(evidence.checked_at), false)
+  }
   if (evidence.source_error || (evidence.debt_count ?? 0) > 0) {
     return result("technical_debt", ageHoursForResult(evidence.checked_at), false)
   }

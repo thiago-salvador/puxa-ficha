@@ -118,6 +118,20 @@ test("strict reprova membro requerido sem data ou com data inválida", () => {
   assert.equal(result.negative_claims_allowed, false)
 })
 
+test("strict bloqueia família scheduled quando falta um membro requerido", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-08-27T12:00:00.000Z")
+  const result = evaluateSourceFreshnessStrict(source, [
+    { source_id: "camara", checked_at: now.toISOString() },
+    { source_id: "destaques-votacoes", checked_at: now.toISOString() },
+  ], now)
+
+  assert.equal(result.status, "stale")
+  assert.deepEqual(result.stale_source_ids, ["camara-proposicoes"])
+  assert.equal(result.negative_claims_allowed, false)
+})
+
 test("strict preserva technical_debt para membro manual vencido sem alterar o operacional fresh", () => {
   const source = loadFreshnessRegistry().find((item) => item.source_id === "knowledge-enrichment")
   assert.ok(source)
