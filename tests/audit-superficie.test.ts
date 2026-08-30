@@ -67,6 +67,59 @@ describe("avaliarSuperficie", () => {
     assert.deepEqual(avaliarSuperficie([ficha]), [])
   })
 
+  it("relatório preserva a lista nominal projetada de R1 com proveniência", () => {
+    const relatorio = JSON.parse(
+      readFileSync(
+        resolve(
+          import.meta.dirname,
+          "../QA/evidencias/2026-08-30-superficie-strict-all-human-review.json",
+        ),
+        "utf8",
+      ),
+    ) as {
+      run_id: number
+      artifact_source: { artifact_name: string }
+      counts_projected_after_r1_structured_contract: {
+        R1_selo: number
+        source_run_id: number
+        source_artifact_name: string
+      }
+      human_review: { R1_selo: { slugs: string[] } }
+      r1_human_review_after_structured_contract: {
+        count: number
+        slugs: string[]
+        provenance: {
+          source_run_id: number
+          source_artifact_name: string
+        }
+      }
+    }
+    const projetada = relatorio.r1_human_review_after_structured_contract
+    assert.equal(projetada.count, 76)
+    assert.equal(projetada.slugs.length, projetada.count)
+    assert.equal(new Set(projetada.slugs).size, projetada.count)
+    assert.equal(
+      projetada.slugs.every((slug) => relatorio.human_review.R1_selo.slugs.includes(slug)),
+      true,
+    )
+    assert.equal(
+      projetada.provenance.source_run_id,
+      relatorio.counts_projected_after_r1_structured_contract.source_run_id,
+    )
+    assert.equal(
+      projetada.provenance.source_artifact_name,
+      relatorio.artifact_source.artifact_name,
+    )
+    assert.equal(
+      projetada.provenance.source_artifact_name,
+      relatorio.counts_projected_after_r1_structured_contract.source_artifact_name,
+    )
+    assert.equal(
+      projetada.count,
+      relatorio.counts_projected_after_r1_structured_contract.R1_selo,
+    )
+  })
+
   it("R1: TSE parcial sem agregado curado reprova (caso Augusto Cury)", () => {
     const ficha = fichaIntegra("augusto-cury")
     ficha.verificacao_campos = { candidate_registration: "2026-06-09" }
