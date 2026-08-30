@@ -126,7 +126,7 @@
       ],
       "private": {
         "required": true,
-        "secret": "PF_RUNTIME_SMOKE_SECRET",
+        "secret": "CRON_SECRET",
         "url": "https://puxaficha.com.br/api/internal/runtime-smoke",
         "expected": {
           "ok": true,
@@ -181,7 +181,8 @@
   "ledger": {
     "predecessorEnv": "PF_LEDGER_PREDECESSOR",
     "manifestEnv": "PF_LEDGER_MANIFEST",
-    "manifestFormat": "json-or-lines",
+    "manifestPath": ".github/merge-queue/irreversible-change-manifest.json",
+    "manifestFormat": "json-releases-or-json-or-lines",
     "requirePredecessor": true
   },
   "irreversibleChanges": {
@@ -220,7 +221,8 @@
       "MERGE_QUEUE_GH_TOKEN",
       "VERCEL_TOKEN",
       "VERCEL_ORG_ID",
-      "VERCEL_PROJECT_ID"
+      "VERCEL_PROJECT_ID",
+      "CRON_SECRET"
     ],
     "optional": [],
     "missingPolicy": "block"

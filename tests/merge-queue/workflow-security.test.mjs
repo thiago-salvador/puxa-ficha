@@ -5,6 +5,7 @@ import test from 'node:test';
 
 const workflowUrl = new URL('../../.github/workflows/serial-merge-queue.yml', import.meta.url);
 const configUrl = new URL('../../.github/serial-merge-queue.json', import.meta.url);
+const manifestUrl = new URL('../../.github/merge-queue/irreversible-change-manifest.json', import.meta.url);
 
 test('coordinator workflow serializes events and checks out only trusted main', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
@@ -20,6 +21,34 @@ test('workflow has read-only default permissions and explicit scoped secret mapp
   assert.match(workflow, /permissions:\s*\n\s*contents: read/);
   assert.match(workflow, /GITHUB_TOKEN: \$\{\{ secrets\.MERGE_QUEUE_GH_TOKEN \}\}/);
   assert.match(workflow, /persist-credentials: false/);
+});
+
+test('runtime smoke usa o CRON_SECRET canonico da rota, config e workflow', async () => {
+  const workflow = await readFile(workflowUrl, 'utf8');
+  const config = JSON.parse(await readFile(configUrl, 'utf8'));
+  const route = await readFile(
+    new URL('../../src/app/api/internal/runtime-smoke/route.ts', import.meta.url),
+    'utf8',
+  );
+  assert.match(route, /process\.env\.CRON_SECRET/);
+  assert.equal(config.production.smokes.private.secret, 'CRON_SECRET');
+  assert.ok(config.secrets.required.includes('CRON_SECRET'));
+  assert.match(workflow, /CRON_SECRET:\s*\$\{\{\s*secrets\.CRON_SECRET\s*\}\}/);
+  assert.doesNotMatch(workflow, /PF_RUNTIME_SMOKE_SECRET/);
+});
+
+test('ledger configura o manifesto canonico e releases reais', async () => {
+  const config = JSON.parse(await readFile(configUrl, 'utf8'));
+  const manifest = JSON.parse(await readFile(manifestUrl, 'utf8'));
+  const releases = manifest.scope.releases;
+  assert.equal(config.ledger.manifestPath, '.github/merge-queue/irreversible-change-manifest.json');
+  assert.equal(config.ledger.manifestFormat, 'json-releases-or-json-or-lines');
+  assert.ok(releases.length > 0);
+  for (const release of releases) {
+    assert.match(release.predecessor, /^\d{14}$/);
+    assert.ok(release.versions.length > 0);
+    for (const version of release.versions) assert.match(version, /^\d{14}$/);
+  }
 });
 
 test('new automation ships disabled and fail-closed', async () => {

@@ -73,7 +73,7 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          PF_RUNTIME_SMOKE_SECRET: ${{ secrets.PF_RUNTIME_SMOKE_SECRET }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: node scripts/merge-queue/coordinator.mjs reconcile --config .github/serial-merge-queue.json
 
   post-merge-production:
@@ -93,7 +93,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          PF_RUNTIME_SMOKE_SECRET: ${{ secrets.PF_RUNTIME_SMOKE_SECRET }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         shell: bash
         run: |
           set -euo pipefail
@@ -105,7 +105,7 @@ jobs:
           test -n "$VERCEL_TOKEN"
           test -n "$VERCEL_TEAM_ID"
           test -n "$VERCEL_PROJECT_ID"
-          test -n "$PF_RUNTIME_SMOKE_SECRET"
+          test -n "$CRON_SECRET"
 
           main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
           test "$main_sha" = "$EXPECTED_SHA"
@@ -366,7 +366,7 @@ jobs:
       - name: Verify private runtime and publish results
         env:
           GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          PF_RUNTIME_SMOKE_SECRET: ${{ secrets.PF_RUNTIME_SMOKE_SECRET }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
           SMOKE_JOB_RESULT: ${{ needs['production-smokes'].result }}
         shell: bash
         run: |
@@ -389,9 +389,9 @@ jobs:
           done
 
           test "$SMOKE_JOB_RESULT" = "success"
-          test -n "${PF_RUNTIME_SMOKE_SECRET:-}"
+          test -n "${CRON_SECRET:-}"
           private_readback="$(curl -fsS \
-            -H "Authorization: Bearer ${PF_RUNTIME_SMOKE_SECRET}" \
+            -H "Authorization: Bearer ${CRON_SECRET}" \
             "${PRODUCTION_URL}/api/internal/runtime-smoke")"
           jq -e '
             .ok == true and

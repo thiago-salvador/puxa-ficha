@@ -42,7 +42,7 @@ function executable(path: string, source: string): void {
   chmodSync(path, 0o755)
 }
 
-function runRunner(overrides: Record<string, string | undefined> = {}): RunResult & { calls: string } {
+function runRunner(overrides: Record<string, string | undefined> = {}): RunResult & { calls: string; ledger: string } {
   const fixture = mkdtempSync(join(tmpdir(), "pf-fase4-runner-"))
   const bin = join(fixture, "bin")
   const calls = join(fixture, "calls.log")
@@ -50,6 +50,13 @@ function runRunner(overrides: Record<string, string | undefined> = {}): RunResul
   writeFileSync(calls, "")
   const manifestPath = join(fixture, "ledger-manifest.json")
   writeFileSync(manifestPath, JSON.stringify({ predecessor: "20260812124000", versions: manifestVersions }))
+  const canonicalManifest = JSON.parse(
+    readFileSync(join(root, ".github/merge-queue/irreversible-change-manifest.json"), "utf8"),
+  ) as { scope?: { releases?: Array<{ predecessor?: string; versions?: string[] }> } }
+  const canonicalLedgerVersions = (canonicalManifest.scope?.releases ?? []).flatMap((release) => [
+    ...(release.predecessor ? [release.predecessor] : []),
+    ...(release.versions ?? []),
+  ])
 
   executable(
     join(bin, "git"),
@@ -103,6 +110,9 @@ release=(
   20260812123000 20260812124000
   20260812125000
 )
+if [[ "$PF_FAKE_LEDGER_MODE" == "canonical" ]]; then
+  for version in $PF_FAKE_CANONICAL_LEDGER_VERSIONS; do release+=("$version"); done
+fi
 dummy=371
 if [[ "$PF_FAKE_LEDGER_MODE" == "bad_total" ]]; then dummy=370; fi
 if [[ "$PF_FAKE_LEDGER_MODE" == "bad_top" ]]; then dummy=370; fi
@@ -160,6 +170,7 @@ printf 'bash:%s\n' "$*" >> "$PF_FIXTURE_CALLS"
       PF_FAKE_GIT_MAIN: expectedSha,
       PF_REAL_NODE: process.execPath,
       PF_FAKE_LEDGER_MODE: "ok",
+      PF_FAKE_CANONICAL_LEDGER_VERSIONS: canonicalLedgerVersions.join(" "),
       PF_LEDGER_PREDECESSOR: "20260812124000",
       PF_LEDGER_MANIFEST: manifestPath,
       PF_FAKE_SUPABASE_REF: "wskpzsobvqwhnbsdsmok",
@@ -167,8 +178,11 @@ printf 'bash:%s\n' "$*" >> "$PF_FIXTURE_CALLS"
     },
   })
   const callLog = readFileSync(calls, "utf8")
+  const ledger = existsSync(join(fixture, "output", "ledger.txt"))
+    ? readFileSync(join(fixture, "output", "ledger.txt"), "utf8")
+    : ""
   rmSync(fixture, { force: true, recursive: true })
-  return Object.assign(result, { calls: callLog })
+  return Object.assign(result, { calls: callLog, ledger })
 }
 
 function runPublico(
@@ -483,6 +497,41 @@ test("runner nao fixa cardinalidade ou topo historico e aceita predecessor/manif
   assert.doesNotMatch(runner, /ledger_total.*395|ledger_top.*20260812125000/)
   assert.match(runner, /PF_LEDGER_PREDECESSOR/)
   assert.match(runner, /PF_LEDGER_MANIFEST/)
+})
+
+test("runner usa o manifesto canonico com predecessores e versoes reais", () => {
+  const result = runRunner({
+    PF_FAKE_LEDGER_MODE: "canonical",
+    PF_LEDGER_PREDECESSOR: undefined,
+    PF_LEDGER_MANIFEST: undefined,
+  })
+  assert.equal(result.status, 0, output(result))
+  const manifest = JSON.parse(
+    readFileSync(join(root, ".github/merge-queue/irreversible-change-manifest.json"), "utf8"),
+  ) as { scope: { releases: Array<{ predecessor: string; versions: string[] }> } }
+  const predecessors = manifest.scope.releases.map((release) => release.predecessor).sort()
+  const versions = manifest.scope.releases.flatMap((release) => release.versions)
+  assert.match(result.ledger, new RegExp(`predecessor=${predecessors.join(",")}`))
+  assert.match(result.ledger, /manifest=\/.*irreversible-change-manifest\.json/)
+  assert.match(result.ledger, new RegExp(`\\|${versions.length}\\|`))
+})
+
+test("runner aceita override explícito de predecessor sobre o manifesto canonico", () => {
+  const result = runRunner({
+    PF_FAKE_LEDGER_MODE: "canonical",
+    PF_LEDGER_PREDECESSOR: "20260812124000",
+    PF_LEDGER_MANIFEST: undefined,
+  })
+  assert.equal(result.status, 0, output(result))
+  assert.match(result.ledger, /predecessor=20260812124000/)
+  assert.match(result.ledger, /manifest=.*irreversible-change-manifest\.json/)
+})
+
+test("runner aceita manifesto explícito do run", () => {
+  const result = runRunner()
+  assert.equal(result.status, 0, output(result))
+  assert.match(result.ledger, /predecessor=20260812124000/)
+  assert.match(result.ledger, /manifest=.*ledger-manifest\.json/)
 })
 
 test("readback público executa API e DOM das 194 fichas nos dois viewports", () => {
