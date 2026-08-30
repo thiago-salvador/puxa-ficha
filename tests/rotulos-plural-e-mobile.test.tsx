@@ -54,7 +54,6 @@ describe("rótulo mobile da aba Pesquisas", () => {
         tabs,
         activeTab: "geral",
         onTabChange: () => {},
-        variant: "mobile" as const,
       }),
     )
     const inicio = html.indexOf('aria-label="Seções principais do perfil"')
