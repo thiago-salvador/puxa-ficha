@@ -105,6 +105,16 @@ test("release predecessor do roster e independente e coordenado", () => {
 })
 
 test("workflow residual mantém backup, dry-run, apply, readback e receipt nessa ordem", () => {
+  assert.doesNotMatch(ROSTER_WORKFLOW.split("steps:")[0], /\$\{\{\s*runner\./)
+  assert.doesNotMatch(ROSTER_ROLLBACK_WORKFLOW.split("steps:")[0], /\$\{\{\s*runner\./)
+  assert.match(
+    ROSTER_WORKFLOW,
+    /Capturar backup read-only[\s\S]*PF_BACKUP_PATH: \$\{\{ runner\.temp \}\}[\s\S]*--backup-only/,
+  )
+  assert.match(
+    ROSTER_ROLLBACK_WORKFLOW,
+    /Capturar backup read-only[\s\S]*PF_BACKUP_PATH: \$\{\{ runner\.temp \}\}[\s\S]*--backup-only/,
+  )
   const applyBackup = ROSTER_WORKFLOW.indexOf("apply-candidate-registration-state-production.sh --backup-only")
   const applyDryRun = ROSTER_WORKFLOW.indexOf("audit:candidate-integrity:prove")
   const applyWrite = ROSTER_WORKFLOW.lastIndexOf("run: bash scripts/audit/apply-candidate-registration-state-production.sh")
