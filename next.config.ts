@@ -148,6 +148,33 @@ export const puxaFichaNextConfig: NextConfig = {
           },
         ],
       },
+      // Assets estaticos de /public saiam com `public, max-age=0,
+      // must-revalidate` (medido em producao em 2026-08-30 para
+      // /images/hero-dossie.webp e /partidos/psol.png): o browser revalidava a
+      // imagem do LCP e cada logo de partido em toda navegacao. Sao arquivos
+      // versionados por commit e trocados por deploy, nao por dado.
+      //
+      // Fora daqui de proposito: /candidates, onde a foto de um candidato pode
+      // ser trocada por coleta, e nao por deploy. Cache longo ali e decisao de
+      // frescor de dado, nao de performance.
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      {
+        source: "/partidos/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
     ]
   },
 }

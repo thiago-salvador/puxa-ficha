@@ -4,7 +4,12 @@
 import { spawn } from "node:child_process"
 
 const CLAUDE_BIN = process.env.PF_CLAUDE_CLI ?? "claude"
-const MODELO = process.env.PF_CLAUDE_JUDGE_MODEL ?? "sonnet"
+// Id completo, nao o alias "sonnet" do CLI. O alias resolve para o Sonnet que o
+// CLI considerar atual no dia, entao dois runs do mesmo pipeline podiam ser
+// julgados por modelos diferentes sem nada no registro dizer isso. Confirmado na
+// doc publica de modelos em 2026-08-30: o id atual e `claude-sonnet-5`, sem
+// sufixo de data (so o Haiku 4.5 ainda tem variante datada).
+const MODELO = process.env.PF_CLAUDE_JUDGE_MODEL ?? "claude-sonnet-5"
 const TIMEOUT_MS = Number(process.env.PF_CLAUDE_TIMEOUT_MS ?? 900_000)
 const MAX_BUDGET_USD = process.env.PF_CLAUDE_MAX_BUDGET_USD ?? "5"
 const MAX_ERRO_STDOUT = 500
@@ -70,6 +75,12 @@ function chamarClaude(promptTexto, schema) {
         const diagnosticoStderr = stderr.slice(-500)
         rejectPromise(new Error(`claude saiu com ${code}: ${diagnosticoStderr}${diagnosticoStdout ? ` ${diagnosticoStdout}` : ""}`))
       }
+    })
+    child.stdin.on("error", (error) => {
+      // O processo pode encerrar antes de consumir todo o envelope. Nesse caso
+      // o `close` acima preserva o exit code real; EPIPE nao pode derrubar o
+      // runner antes de o diagnostico do modelo ser emitido.
+      if (error.code !== "EPIPE") rejectPromise(new Error(`claude erro de stdin: ${error.message}`))
     })
     child.stdin.end(promptTexto)
   })

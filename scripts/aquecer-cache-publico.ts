@@ -31,6 +31,13 @@
 import { rankingDefinitions } from "../src/data/ranking-definitions"
 import { getEstadoUFs } from "../src/lib/br-uf"
 
+/**
+ * Aquecer uma ficha fria pode custar segundos de render no servidor, entao o
+ * prazo aqui e maior que o das chamadas de coleta. O que ele impede e a espera
+ * infinita, nao a espera longa.
+ */
+const AQUECIMENTO_TIMEOUT_MS = 60_000
+
 const BASE_PADRAO = "https://puxaficha.com.br"
 const CONCORRENCIA_PADRAO = 4
 /** Rotas fixas que valem aquecer alem das fichas. */
@@ -98,7 +105,13 @@ async function aquecer(url: string): Promise<Resultado> {
     // `cache: "no-store"` no NOSSO fetch, para nao ler de um cache local e
     // achar que aqueceu. O que interessa e forcar o servidor a produzir e
     // guardar a resposta.
-    const res = await fetch(url, { cache: "no-store", redirect: "follow" })
+    // O aquecimento faz N requisicoes sequenciais contra producao. Sem prazo,
+    // uma rota que pendura trava a fila inteira sem dizer em qual slug parou.
+    const res = await fetch(url, {
+      cache: "no-store",
+      redirect: "follow",
+      signal: AbortSignal.timeout(AQUECIMENTO_TIMEOUT_MS),
+    })
     // Consome o corpo: sem isto a conexao pode fechar antes de o servidor
     // terminar de gerar, e o cache nao e populado.
     await res.arrayBuffer()
@@ -130,7 +143,10 @@ async function emLotes(urls: string[], limite: number): Promise<Resultado[]> {
 }
 
 async function buscarSlugs(base: string): Promise<string[]> {
-  const res = await fetch(`${base}/api/candidato-slugs`, { cache: "no-store" })
+  const res = await fetch(`${base}/api/candidato-slugs`, {
+    cache: "no-store",
+    signal: AbortSignal.timeout(AQUECIMENTO_TIMEOUT_MS),
+  })
   if (!res.ok) {
     throw new Error(`/api/candidato-slugs respondeu ${res.status}`)
   }

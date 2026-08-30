@@ -509,6 +509,12 @@ function scanJavaScript(files) {
     "scripts/audit/check-candidatura-resultados.ts:",
     "scripts/audit/congelar-sobreposicoes.ts:",
     "scripts/curate-contradictions-evidence.mjs:",
+    // Mesmo motivo do adapters.mjs logo abaixo: a funcao existe para FILTRAR o
+    // ambiente do host contra uma allowlist, entao ela tem que receber o
+    // ambiente do host. A enumeracao que este contrato quer esta na allowlist
+    // dentro do arquivo, e tests/programa-governo-governadores-batch-novos.test.ts
+    // reprova quando ela deixa de cobrir o que os processos filhos leem.
+    "scripts/data/programas-governo-governadores-2026/batch-driver.mjs:",
     "scripts/merge-queue/adapters.mjs:",
     "tests/",
   ]

@@ -329,9 +329,18 @@ describe("classificador puro (#136)", () => {
     // a 20260829100000 de identidade por fonte aplica como schema puro. A
     // 30002 retorna cedo sem Pablo no replay vazio e aplica limpa. O backfill
     // 100100 tambem retorna cedo sem Caiado e aplica limpo no replay vazio.
-    // 332 -> 333 em 30/08/2026: a correção do voto Artigo 17 de JHC retorna
-    // cedo sem o alvo. Medido: 333 aplicadas + 103 falhas = 436 migrations.
-    assert.equal(manifesto.aplicadas_esperadas, 333)
+    // 332 -> 333 em 30/08/2026: o backfill 20260830120000 resolve os 63
+    // profissao_declarada gravados como QID cru do Wikidata. Ele le `candidatos`
+    // e tem RAISE EXCEPTION, entao so fica fora do conjunto de quebras por ter
+    // guard de ausencia PRIMEIRO: no replay vazio nenhum dos 63 slugs existe,
+    // ele avisa e retorna. Medido, nao somado de cabeca:
+    // `bash scripts/audit/replay-migrations.sh --gate` deu "333 aplicadas, 103
+    // falhas reais" e "conservacao OK: 333 + 103 = 436 migrations", conjunto de
+    // falhas inalterado. O ramo de banco vazio tem prova propria em
+    // scripts/audit/provar-migration-profissao-qid.sh (F5 e F6).
+    // 333 -> 334 em 30/08/2026: a correção do voto Artigo 17 de JHC retorna
+    // cedo sem o alvo. A integração conserva 334 + 103 = 437 migrations.
+    assert.equal(manifesto.aplicadas_esperadas, 334)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

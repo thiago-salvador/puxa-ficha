@@ -47,7 +47,13 @@ function replaceInternalEditorialJargon(value: string): string {
   return sanitizePublicText(sanitizeObservacaoPublica(value) ?? "")
 }
 
-function publicTaxonomyValue(value: string | null | undefined): string | null {
+/**
+ * Sanitizador canonico dos campos de taxonomia (formacao, profissao, genero).
+ * Exportado porque a ficha renderiza o hero direto de `FichaCandidato`, sem
+ * passar pelo DTO: enquanto so o DTO chamava esta funcao, `profissao_declarada`
+ * gravada como QID cru do Wikidata (`Q82955`) vazava para o hero publico.
+ */
+export function publicTaxonomyValue(value: string | null | undefined): string | null {
   if (value == null) return null
   const sanitized = replaceInternalEditorialJargon(value).trim()
   if (!sanitized || WIKIDATA_QID_ONLY_RE.test(sanitized)) return null

@@ -1,6 +1,6 @@
 import { supabase } from "./supabase"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
-import { sleep } from "./helpers"
+import { FETCH_TIMEOUT_MS, sleep } from "./helpers"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
 import { archiveFonteReferences } from "./archive-url"
@@ -126,11 +126,15 @@ export async function ingestJarbas(): Promise<IngestResult[]> {
       let jarbasData: JarbasResponse
 
       try {
+        // Sem prazo, a origem que aceita a conexao e nunca responde pendura o
+        // run inteiro. Em 2026-08-05 o dominio respondia 522, mas o modo de
+        // falha silencioso e o que nao responde nada.
         const res = await fetch(url, {
           headers: {
             Accept: "application/json",
             "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)",
           },
+          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
         })
 
         if (res.status === 404) {
