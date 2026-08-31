@@ -23,6 +23,14 @@ function recorder(overrides = {}) {
         ...overrides.github,
       },
       vercel: {
+        deploymentForSha: record('deploymentForSha', {
+          id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY',
+          target: 'production', url: 'https://puxa-ficha-before.vercel.app',
+        }),
+        currentProductionForDomain: record('currentProductionForDomain', {
+          id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY',
+          target: 'production', url: 'https://puxa-ficha-before.vercel.app',
+        }),
         productionForSha: record('productionForSha', { id: 'deploy-before', sha: 'main-before', status: 'success' }),
         instantRollback: record('instantRollback'),
         promote: record('promote'),
@@ -46,7 +54,14 @@ test('successful live merge establishes hold and dispatches post-merge validatio
   const { calls, adapters } = recorder();
   const result = await reconcile({
     config: liveConfig(),
-    snapshot: { prs: [pr(43)], main: { sha: 'main-before' }, production: { deployment: { id: 'deploy-before' } } },
+    snapshot: {
+      prs: [pr(43)],
+      main: { sha: 'main-before' },
+      production: { deployment: {
+        id: 'deploy-before', sha: 'main-before', status: 'success',
+        url: 'https://puxa-ficha-before.vercel.app',
+      } },
+    },
     adapters,
   });
   assert.equal(result.decision, 'MERGE');
@@ -56,7 +71,14 @@ test('successful live merge establishes hold and dispatches post-merge validatio
   assert.deepEqual(calls.find(([name]) => name === 'setCommitStatus').slice(1, 4), ['merge-43', 'pending', 'Serial release gate']);
   assert.deepEqual(calls.find(([name]) => name === 'dispatch').slice(1), [
     'serial-merge-queue-post-merge',
-    { pr: 43, mergeSha: 'merge-43', trustedSha: 'main-before' },
+    {
+      pr: 43,
+      mergeSha: 'merge-43',
+      trustedSha: 'main-before',
+      previousDeploymentId: 'deploy-before',
+      previousDeploymentSha: 'main-before',
+      previousDeploymentUrl: 'https://puxa-ficha-before.vercel.app',
+    },
   ]);
 });
 
@@ -69,7 +91,14 @@ test('live pre-merge snapshot captures the previous production deployment before
       snapshot: async () => ({ prs: [pr(43)], main: { sha: 'main-before', checks: [] } }),
     },
     vercel: {
-      productionForSha: async (sha) => ({ id: 'deploy-before', sha, status: 'success' }),
+      deploymentForSha: async (sha) => ({
+        id: 'deploy-before', sha, status: 'success', readyState: 'READY', target: 'production',
+        url: 'https://puxa-ficha-before.vercel.app',
+      }),
+      currentProductionForDomain: async () => ({
+        id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY', target: 'production',
+        url: 'https://puxa-ficha-before.vercel.app',
+      }),
     },
   });
   const result = await reconcile({ config, adapters });
@@ -77,6 +106,8 @@ test('live pre-merge snapshot captures the previous production deployment before
   const firstContext = calls.find(([name]) => name === 'persistContext')[2];
   assert.equal(firstContext.previousDeploymentId, 'deploy-before');
   assert.equal(firstContext.previousMainSha, 'main-before');
+  assert.equal(firstContext.previousDeploymentSha, 'main-before');
+  assert.equal(firstContext.previousDeploymentUrl, 'https://puxa-ficha-before.vercel.app');
   assert.equal(firstContext.transition, 'merge-started');
 });
 
@@ -124,7 +155,7 @@ test('failure after promotion marks the gate failed and instant-rolls back witho
   });
   assert.equal(result.decision, 'ROLLBACK_DEPLOYMENT');
   const sequence = calls.map(([name]) => name);
-  assert.deepEqual(sequence, ['setCommitStatus', 'productionForSha', 'instantRollback', 'upsertIncident']);
+  assert.deepEqual(sequence, ['setCommitStatus', 'deploymentForSha', 'instantRollback', 'upsertIncident']);
   assert.equal(calls.find(([name]) => name === 'instantRollback')[1], 'deploy-before');
   assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
 });
@@ -148,7 +179,7 @@ test('incident outage does not prevent rollback actions from being attempted', a
     /rollback operations failed/,
   );
   assert.deepEqual(calls.map(([name]) => name), [
-    'setCommitStatus', 'productionForSha', 'instantRollback', 'upsertIncident',
+    'setCommitStatus', 'deploymentForSha', 'instantRollback', 'upsertIncident',
   ]);
 });
 
@@ -270,8 +301,14 @@ test('incident upsert deduplicates by PR, phase, SHA, and reason signature', asy
   assert.match(calls[1][0], /issues\/7$/);
 });
 
-test('queue context ignores contributor comments and malformed trusted state', async () => {
-  const valid = { previousMainSha: 'a'.repeat(40), previousDeploymentId: 'deploy-trusted', headSha: 'b'.repeat(40) };
+test('queue context preserves the exact rollback deployment and ignores malformed trusted state', async () => {
+  const valid = {
+    previousMainSha: 'a'.repeat(40),
+    previousDeploymentId: 'deploy-trusted',
+    previousDeploymentSha: 'a'.repeat(40),
+    previousDeploymentUrl: 'https://puxa-ficha-trusted.vercel.app',
+    headSha: 'b'.repeat(40),
+  };
   const comments = [
     {
       user: { login: 'thiago-salvador' },

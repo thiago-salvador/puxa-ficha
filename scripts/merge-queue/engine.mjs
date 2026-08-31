@@ -326,20 +326,27 @@ function preMergeDecision(pr, config, snapshot, queue, acquire) {
     return decision('WAIT', pr, queue, checks.reason, phaseMutations(pr, 'pre-merge', config, { acquire }), { checks, risk });
   }
   const previousMainSha = snapshot.main?.sha ?? snapshot.defaultBranchSha ?? null;
-  const previousDeploymentId = snapshot.production?.currentDeployment?.id ?? snapshot.production?.deployment?.id ?? null;
-  if (config.production.rollback?.requirePreviousReadyDeployment === true && !previousDeploymentId) {
+  const previousDeployment = snapshot.production?.currentDeployment ?? snapshot.production?.deployment ?? null;
+  const previousDeploymentId = previousDeployment?.id ?? null;
+  const previousDeploymentSha = previousDeployment?.sha ?? null;
+  const previousDeploymentUrl = previousDeployment?.url ?? null;
+  const previousDeploymentValid = Boolean(
+    previousDeploymentId && previousDeploymentSha === previousMainSha &&
+    statusOf(previousDeployment) === 'success' && previousDeploymentUrl,
+  );
+  if (config.production.rollback?.requirePreviousReadyDeployment === true && !previousDeploymentValid) {
     return decision('BLOCK', pr, queue, 'previous-production-deployment-missing', [
       ...phaseMutations(pr, 'blocked', config, { acquire }),
       { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason: 'previous-production-deployment-missing' },
-    ], { checks, branch, risk, previousMainSha, previousDeploymentId });
+    ], { checks, branch, risk, previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl });
   }
   return decision('MERGE', pr, queue, 'pre-merge-gates-green', [
     ...phaseMutations(pr, 'pre-merge', config, { acquire }),
     {
       type: 'MERGE_PR', pr: pr.number, expectedHeadSha: pr.headSha,
-      capture: { previousMainSha, previousDeploymentId },
+      capture: { previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl },
     },
-  ], { checks, branch, risk, previousMainSha, previousDeploymentId });
+  ], { checks, branch, risk, previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl });
 }
 
 function inspectSignal(record, expectedSha, required = true) {

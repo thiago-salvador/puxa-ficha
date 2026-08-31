@@ -36,13 +36,22 @@ function isTrustedContextComment(comment, config) {
 function isValidQueueContext(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
   const allowed = new Set([
-    'previousMainSha', 'previousDeploymentId', 'mergeSha', 'headSha', 'transition',
+    'previousMainSha', 'previousDeploymentId', 'previousDeploymentSha', 'previousDeploymentUrl',
+    'mergeSha', 'headSha', 'transition',
     'rollbackPr', 'rollbackMergeSha', 'recovered', 'failedHeadSha', 'restoredSha',
   ]);
   if (Object.keys(value).some((key) => !allowed.has(key))) return false;
-  const shaKeys = ['previousMainSha', 'mergeSha', 'headSha', 'rollbackMergeSha', 'failedHeadSha', 'restoredSha'];
+  const shaKeys = ['previousMainSha', 'previousDeploymentSha', 'mergeSha', 'headSha', 'rollbackMergeSha', 'failedHeadSha', 'restoredSha'];
   if (shaKeys.some((key) => value[key] != null && !/^[0-9a-f]{40}$/.test(String(value[key])))) return false;
+  if (value.previousMainSha && value.previousDeploymentSha && value.previousMainSha !== value.previousDeploymentSha) return false;
   if (value.previousDeploymentId != null && !/^[A-Za-z0-9_-]{1,128}$/.test(String(value.previousDeploymentId))) return false;
+  if (value.previousDeploymentUrl != null) {
+    try {
+      deploymentUrl(value.previousDeploymentUrl);
+    } catch {
+      return false;
+    }
+  }
   if (value.rollbackPr != null && (!Number.isInteger(value.rollbackPr) || value.rollbackPr < 1)) return false;
   if (value.recovered != null && typeof value.recovered !== 'boolean') return false;
   if (value.transition != null && !['merge-started', 'merged'].includes(value.transition)) return false;
@@ -324,6 +333,32 @@ function lowerState(value) {
   return String(value ?? '').toLowerCase();
 }
 
+function deploymentUrl(value) {
+  const raw = String(value ?? '').trim();
+  const url = new URL(raw.startsWith('https://') || raw.startsWith('http://') ? raw : `https://${raw}`);
+  if (url.protocol !== 'https:') throw new CoordinatorError('Vercel deployment URL must use HTTPS');
+  if (!url.hostname.endsWith('.vercel.app')) throw new CoordinatorError('Vercel deployment URL must use a Vercel host');
+  url.pathname = '';
+  url.search = '';
+  url.hash = '';
+  return url.toString().replace(/\/$/, '');
+}
+
+function normalizedDeployment(deployment) {
+  if (!deployment || typeof deployment !== 'object') return null;
+  const readyState = String(deployment.readyState ?? deployment.state ?? '').toUpperCase();
+  const state = lowerState(readyState);
+  return {
+    id: deployment.uid ?? deployment.id ?? null,
+    sha: deployment.meta?.githubCommitSha ?? deployment.sha ?? null,
+    url: deploymentUrl(deployment.url),
+    readyState,
+    target: lowerState(deployment.target),
+    createdAt: deployment.createdAt ?? deployment.created ?? null,
+    status: state === 'ready' ? 'success' : state === 'error' || state === 'canceled' ? 'failure' : 'pending',
+  };
+}
+
 export class VercelAdapter {
   constructor({ token, teamId, projectId, fetchImpl = globalThis.fetch, apiUrl = 'https://api.vercel.com' }) {
     this.token = token;
@@ -333,24 +368,44 @@ export class VercelAdapter {
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
-  async productionForSha(sha) {
+  assertDeployment(deployment, { expectedId, expectedSha, target, requiredState } = {}) {
+    if (!deployment?.id) throw new CoordinatorError('Vercel deployment id is missing');
+    if (expectedId && deployment.id !== expectedId) throw new CoordinatorError('Vercel deployment id does not match the expected deployment');
+    if (expectedSha && deployment.sha !== expectedSha) throw new CoordinatorError('Vercel deployment SHA does not match the expected SHA');
+    if (target && lowerState(deployment.target) !== lowerState(target)) throw new CoordinatorError('Vercel deployment target does not match the expected target');
+    if (requiredState && lowerState(deployment.readyState) !== lowerState(requiredState)) {
+      throw new CoordinatorError('Vercel deployment ready state does not match the required ready state');
+    }
+    deploymentUrl(deployment.url);
+    return deployment;
+  }
+
+  async deploymentForSha(sha, { target = 'production' } = {}) {
     if (!this.token || !this.projectId) return null;
-    const query = new URLSearchParams({ projectId: this.projectId, target: 'production', limit: '20' });
+    const query = new URLSearchParams({ projectId: this.projectId, target, limit: '100' });
     if (this.teamId) query.set('teamId', this.teamId);
     const response = await this.fetch(`${this.apiUrl}/v6/deployments?${query}`, {
       headers: { Authorization: `Bearer ${this.token}` },
     });
     if (!response.ok) throw new HttpError(`Vercel API ${response.status}`, response.status, await response.text());
     const payload = await response.json();
-    const deployment = payload.deployments?.find((item) => item.meta?.githubCommitSha === sha) ?? null;
+    const deployment = payload.deployments?.find((item) => item.meta?.githubCommitSha === sha && lowerState(item.target) === lowerState(target)) ?? null;
     if (!deployment) return null;
-    const state = lowerState(deployment.readyState);
-    return {
-      id: deployment.uid,
-      sha,
-      status: state === 'ready' ? 'success' : state === 'error' || state === 'canceled' ? 'failure' : 'pending',
-      url: deployment.url,
-    };
+    const normalized = normalizedDeployment(deployment);
+    return this.assertDeployment(normalized, { expectedSha: sha, target });
+  }
+
+  async productionForSha(sha) {
+    return this.deploymentForSha(sha, { target: 'production' });
+  }
+
+  async currentProductionForDomain(domain) {
+    const hostname = String(domain ?? '').trim().toLowerCase();
+    if (!/^[a-z0-9.-]+$/.test(hostname) || hostname.includes('..')) {
+      throw new CoordinatorError('Production domain is invalid');
+    }
+    const deployment = normalizedDeployment(await this.request(`/v13/deployments/${encodeURIComponent(hostname)}`));
+    return this.assertDeployment(deployment, { target: 'production', requiredState: 'READY' });
   }
 
   async request(path, init = {}) {

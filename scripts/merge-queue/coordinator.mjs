@@ -26,7 +26,7 @@ async function jsonFile(path) {
 function productionCheckNames(config) {
   const names = (section) => section?.checks ?? (section?.check ? [section.check] : []);
   return {
-    smokes: names(config.production.smokes),
+    stagedChecks: names(config.production.stagedChecks ?? config.production.smokes),
     promotion: names(config.production.promotion),
     readback: names(config.production.publicReadback),
   };
@@ -39,15 +39,19 @@ async function enrichProduction(snapshot, config, vercel) {
   if (!sha) return snapshot;
   const checks = snapshot.main?.checks ?? [];
   const names = productionCheckNames(config);
+  const deploymentForSha = vercel.deploymentForSha?.bind(vercel) ?? vercel.productionForSha.bind(vercel);
+  const productionDomain = config.production?.url ? new URL(config.production.url).hostname : null;
   const [deployment, currentDeployment] = await Promise.all([
-    vercel.productionForSha(sha),
-    snapshot.main?.sha ? vercel.productionForSha(snapshot.main.sha) : Promise.resolve(null),
+    deploymentForSha(sha, { target: 'production' }),
+    productionDomain && vercel.currentProductionForDomain
+      ? vercel.currentProductionForDomain(productionDomain)
+      : snapshot.main?.sha ? deploymentForSha(snapshot.main.sha, { target: 'production' }) : Promise.resolve(null),
   ]);
   snapshot.production = {
     ...(snapshot.production ?? {}),
     stagedDeployment: deployment,
     currentDeployment,
-    smokes: signalFromChecks(checks, sha, names.smokes),
+    stagedChecks: signalFromChecks(checks, sha, names.stagedChecks),
     promotion: signalFromChecks(checks, sha, names.promotion),
     publicReadback: signalFromChecks(checks, sha, names.readback),
   };
@@ -103,6 +107,9 @@ async function executeMutation(mutation, config, adapters) {
         pr: mutation.pr,
         mergeSha,
         trustedSha: mutation.capture.previousMainSha,
+        previousDeploymentId: mutation.capture.previousDeploymentId,
+        previousDeploymentSha: mutation.capture.previousDeploymentSha,
+        previousDeploymentUrl: mutation.capture.previousDeploymentUrl,
       });
       return { mergeSha, merged: merged.merged };
     }
@@ -110,8 +117,17 @@ async function executeMutation(mutation, config, adapters) {
       return adapters.github.createRollbackPr(mutation.pr, config.labels.rollbackPr);
     case 'INSTANT_ROLLBACK':
       {
-        const previous = await adapters.vercel.productionForSha(mutation.previousMainSha);
-        if (!previous || previous.id !== mutation.previousDeploymentId || previous.status !== 'success') {
+        const deploymentForSha = adapters.vercel.deploymentForSha?.bind(adapters.vercel) ?? adapters.vercel.productionForSha.bind(adapters.vercel);
+        const previous = await deploymentForSha(mutation.previousMainSha, { target: 'production' });
+        if (!previous) throw new CoordinatorError('Previous production deployment no longer matches the trusted pre-merge snapshot');
+        if (adapters.vercel.assertDeployment) {
+          adapters.vercel.assertDeployment(previous, {
+            expectedId: mutation.previousDeploymentId,
+            expectedSha: mutation.previousMainSha,
+            target: 'production',
+            requiredState: 'READY',
+          });
+        } else if (previous.id !== mutation.previousDeploymentId || previous.status !== 'success') {
           throw new CoordinatorError('Previous production deployment no longer matches the trusted pre-merge snapshot');
         }
       return adapters.vercel.instantRollback(mutation.previousDeploymentId);
