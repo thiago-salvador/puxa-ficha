@@ -7,6 +7,10 @@ const workflow = readFileSync(
   ".github/workflows/data-freshness-audit.yml",
   "utf8",
 );
+const provenanceWorkflow = readFileSync(
+  ".github/workflows/refresh-destaques-votacoes.yml",
+  "utf8",
+);
 const sql = readFileSync("scripts/audit/data-freshness-snapshot.sql", "utf8");
 const alertScript = readFileSync(
   "scripts/audit/sync-data-freshness-issue.sh",
@@ -65,6 +69,9 @@ test("snapshot força leitura e auditoria preserva quatro artefatos", () => {
   assert.match(workflow, /if:\s*always\(\)/);
   assert.match(workflow, /upload-artifact@[a-f0-9]{40}/);
   assert.match(workflow, /reports\/data-freshness\//);
+  assert.match(workflow, /audit:data-freshness:tse-dependent/);
+  assert.match(workflow, /steps\.tse_monitors\.outcome != 'success'/);
+  assert.match(workflow, /tse-dependent-monitors\/summary\.md/);
 });
 
 test("notificador mantém um incidente destacado sem publicar correção automática", () => {
@@ -85,4 +92,21 @@ test("notificador mantém um incidente destacado sem publicar correção automá
   );
   assert.match(workflow, /DATA_FRESHNESS|auditoria exige revisão/i);
   console.log("DATA_FRESHNESS_WORKFLOW_PASS");
+});
+
+test("recoleta de destaques faz duas leituras e só publica artefato", () => {
+  const parsed = parse(provenanceWorkflow) as {
+    permissions?: { contents?: string };
+    jobs?: { collect?: { env?: { PF_DRY_RUN?: string } } };
+  };
+  assert.equal(parsed.permissions?.contents, "read");
+  assert.equal(parsed.jobs?.collect?.env?.PF_DRY_RUN, "1");
+  assert.match(provenanceWorkflow, /Primeira leitura/);
+  assert.match(provenanceWorkflow, /Segunda leitura independente/);
+  assert.match(provenanceWorkflow, /verify-destaques-votacoes-provenance\.ts/);
+  assert.match(provenanceWorkflow, /upload-artifact@[a-f0-9]{40}/);
+  assert.doesNotMatch(
+    provenanceWorkflow,
+    /contents:\s*write|issues:\s*write|pull-requests:\s*write|git\s+(push|commit|merge)|gh\s+pr|supabase\s+db|psql/i,
+  );
 });

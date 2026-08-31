@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "estado": "sem_documento_oficial",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "RJ",
+    "sqCandidato": "190002550196",
+    "slug": "garotinho",
+    "nomeUrna": "GAROTINHO",
+    "partido": "REPUBLICANOS",
+    "arquivoNome": null,
+    "arquivoNoPacote": null,
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-30T19:05:43.166Z"
+  }
+}

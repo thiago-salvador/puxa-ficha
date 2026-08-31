@@ -24,10 +24,21 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
       perfil_slug: record.perfil_slug ?? `fixture-${record.sq_candidato}`,
     }));
     const collectionEvidence = loadFreshnessRegistry().flatMap((source) =>
-      source.collection_source_ids.map((sourceId) => ({
-        source_id: sourceId,
-        checked_at: now,
-      })),
+      source.collection_source_ids.map((sourceId) => sourceId === "destaques-votacoes"
+        ? {
+            source_id: sourceId,
+            checked_at: now,
+            provenance_contract_version: 1,
+            provenance_complete: true,
+            evidence_sha256: "a".repeat(64),
+            raw_payload_count: 93,
+            pair_count: 154,
+            double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
+          }
+        : {
+            source_id: sourceId,
+            checked_at: now,
+          }),
     );
     const published = join(work, "published.json");
     const currentOfficial = join(work, "current-official.json");

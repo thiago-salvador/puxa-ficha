@@ -39,6 +39,7 @@ WITH candidacies AS (
     alvo,
     executado_em,
     resultado,
+    detalhe,
     COALESCE(
       execucao,
       format('legacy:%s:%s:%s', executado_em, escopo, alvo)
@@ -58,6 +59,53 @@ WITH candidacies AS (
     'debt_count', count(*) FILTER (WHERE log.resultado = 'indeterminado'),
     'total_count', count(*),
     'execution_id', log.execution_id
+    ,'provenance_contract_version', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN max(
+        CASE WHEN log.detalhe LIKE 'provenance_v1:%'
+          THEN (substring(log.detalhe FROM 15)::jsonb ->> 'contract_version')::integer
+          ELSE NULL
+        END
+      )
+      ELSE NULL
+    END
+    ,'provenance_complete', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN
+        count(*) FILTER (WHERE log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%') = 1
+        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 154
+        AND count(*) FILTER (WHERE log.resultado NOT IN ('encontrado', 'sem_achado_no_escopo')) = 0
+      ELSE NULL
+    END
+    ,'evidence_sha256', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN max(
+        CASE WHEN log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%'
+          THEN substring(log.detalhe FROM 15)::jsonb ->> 'comparison_sha256'
+          ELSE NULL
+        END
+      )
+      ELSE NULL
+    END
+    ,'raw_payload_count', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN max(
+        CASE WHEN log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%'
+          THEN (substring(log.detalhe FROM 15)::jsonb ->> 'raw_payload_count')::integer
+          ELSE NULL
+        END
+      )
+      ELSE NULL
+    END
+    ,'pair_count', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN count(*) FILTER (WHERE log.escopo = 'candidato')
+      ELSE NULL
+    END
+    ,'double_read_execution_ids', CASE
+      WHEN log.fonte = 'destaques-votacoes' THEN max(
+        CASE WHEN log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%'
+          THEN (substring(log.detalhe FROM 15)::jsonb -> 'execution_ids')::text
+          ELSE NULL
+        END
+      )::jsonb
+      ELSE NULL
+    END
   ) AS item
   FROM collection_rows log
   GROUP BY log.fonte, log.execution_id

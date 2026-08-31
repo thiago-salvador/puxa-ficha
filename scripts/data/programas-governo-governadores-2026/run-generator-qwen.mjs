@@ -50,6 +50,9 @@ function chamarQwen(promptTexto) {
       if (code === 0) resolvePromise({ stdout, stderr })
       else rejectPromise(new Error(`qwen saiu com ${code}: ${stderr.slice(-500)}`))
     })
+    child.stdin.on("error", (error) => {
+      if (error.code !== "EPIPE") rejectPromise(new Error(`qwen erro de stdin: ${error.message}`))
+    })
     child.stdin.end(promptTexto)
   })
 }

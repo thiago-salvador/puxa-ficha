@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "estado": "sem_documento_oficial",
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "MG",
+    "sqCandidato": "130002544411",
+    "slug": "ben-mendes",
+    "nomeUrna": "BEN MENDES",
+    "partido": "MISSÃO",
+    "arquivoNome": null,
+    "arquivoNoPacote": null,
+    "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": null,
+    "coletadoEm": "2026-08-30T19:05:42.546Z"
+  }
+}

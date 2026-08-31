@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-30T19:05:43.502Z",
+  "status": "ok",
+  "user_agent": "PuxaFichaDataFreshness/1.0",
+  "alerts": [],
+  "errors": [],
+  "sources": [
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002553937",
+      "checked_at": "2026-08-30T19:05:41.002Z",
+      "http_status": 200,
+      "payload_raw_sha256": "3f7e2f5793387d81c5a091a062aeff2cb0c6717264c5e09827a5b6df6f36c3a7",
+      "artifact_path": "raw/3f7e2f5793387d81c5a091a062aeff2cb0c6717264c5e09827a5b6df6f36c3a7.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002554073",
+      "checked_at": "2026-08-30T19:05:41.323Z",
+      "http_status": 200,
+      "payload_raw_sha256": "a987615d750215e6503b4182d076c84322fefdf8cbbc296f00e9c5c5eb10220f",
+      "artifact_path": "raw/a987615d750215e6503b4182d076c84322fefdf8cbbc296f00e9c5c5eb10220f.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002537073",
+      "checked_at": "2026-08-30T19:05:41.660Z",
+      "http_status": 200,
+      "payload_raw_sha256": "857520e5a273873c432043d663907a873c2555aced4a0b62f5e879d049b1d41d",
+      "artifact_path": "raw/857520e5a273873c432043d663907a873c2555aced4a0b62f5e879d049b1d41d.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002553922",
+      "checked_at": "2026-08-30T19:05:42.202Z",
+      "http_status": 200,
+      "payload_raw_sha256": "33f5bbc82ccdf52f1aa289b3c493db1d35b79e1f74ab8c0d78f0f9ff3d2ef41f",
+      "artifact_path": "raw/33f5bbc82ccdf52f1aa289b3c493db1d35b79e1f74ab8c0d78f0f9ff3d2ef41f.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544411",
+      "checked_at": "2026-08-30T19:05:42.546Z",
+      "http_status": 200,
+      "payload_raw_sha256": "afe0fffabcbca1d202b422c96139ff505188e8fa8b0f485f42498702e7987539",
+      "artifact_path": "raw/afe0fffabcbca1d202b422c96139ff505188e8fa8b0f485f42498702e7987539.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002543380",
+      "checked_at": "2026-08-30T19:05:42.856Z",
+      "http_status": 200,
+      "payload_raw_sha256": "eea1f6a88c6cf170295d76f12f2793133a67ccae9a0ae7cca8bef7068f04de57",
+      "artifact_path": "raw/eea1f6a88c6cf170295d76f12f2793133a67ccae9a0ae7cca8bef7068f04de57.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196",
+      "checked_at": "2026-08-30T19:05:43.166Z",
+      "http_status": 200,
+      "payload_raw_sha256": "bc1fb47f043d3488d33feb59162de6c9fca18540a33faeaa88e26bc0b35fc6b5",
+      "artifact_path": "raw/bc1fb47f043d3488d33feb59162de6c9fca18540a33faeaa88e26bc0b35fc6b5.raw",
+      "attempt": 1,
+      "error": null
+    },
+    {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002548080",
+      "checked_at": "2026-08-30T19:05:43.501Z",
+      "http_status": 200,
+      "payload_raw_sha256": "011e6853280cd0a8d60e6966f999e412a3ee68166f74f40ef33c9f09ae7ca6d3",
+      "artifact_path": "raw/011e6853280cd0a8d60e6966f999e412a3ee68166f74f40ef33c9f09ae7ca6d3.raw",
+      "attempt": 1,
+      "error": null
+    }
+  ],
+  "laudicerio": [
+    {
+      "sq_candidato": "110002553937",
+      "descricao_situacao": "Aguardando julgamento",
+      "descricao_totalizacao": "Concorrendo",
+      "changed": false
+    },
+    {
+      "sq_candidato": "110002554073",
+      "descricao_situacao": "Aguardando julgamento",
+      "descricao_totalizacao": "Concorrendo",
+      "changed": false
+    }
+  ],
+  "program_control": {
+    "profile_slug": "jorginho-mello",
+    "sq_candidato": "240002537073",
+    "program_file_count": 1
+  },
+  "program_files": [
+    {
+      "profile_slug": "vera-lucia-ce",
+      "sq_candidato": "60002553922",
+      "files_total": 3,
+      "program_files": []
+    },
+    {
+      "profile_slug": "ben-mendes",
+      "sq_candidato": "130002544411",
+      "files_total": 9,
+      "program_files": []
+    },
+    {
+      "profile_slug": "eduardo-paes",
+      "sq_candidato": "190002543380",
+      "files_total": 0,
+      "program_files": []
+    },
+    {
+      "profile_slug": "garotinho",
+      "sq_candidato": "190002550196",
+      "files_total": 3,
+      "program_files": []
+    },
+    {
+      "profile_slug": "policial-edjane",
+      "sq_candidato": "250002548080",
+      "files_total": 2,
+      "program_files": []
+    }
+  ],
+  "report_sha256": "5d5529808572a9733db7b0ca2e29038f362871b29c76279814e2256bcd567f50"
+}

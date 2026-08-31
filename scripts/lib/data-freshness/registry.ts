@@ -15,6 +15,12 @@ export interface SourceEvidence {
   total_count?: number
   execution_id?: string | null
   missing_source_ids?: string[]
+  provenance_contract_version?: number | null
+  provenance_complete?: boolean
+  evidence_sha256?: string | null
+  raw_payload_count?: number
+  pair_count?: number
+  double_read_execution_ids?: string[]
   /** Evidência individual preservada por aggregateSourceEvidence para o gate strict. */
   member_evidence?: SourceEvidence[]
 }
@@ -131,7 +137,22 @@ function staleMemberIds(
       return ageHours > source.max_age_hours
     })
     .map((member) => member.source_id)
-  return [...new Set([...stale, ...(evidence.missing_source_ids ?? [])])]
+  const invalidProvenance = members
+    .filter((member) => member.source_id === "destaques-votacoes")
+    .filter((member) => {
+      const executionIds = member.double_read_execution_ids ?? []
+      return (
+        member.provenance_contract_version !== 1 ||
+        member.provenance_complete !== true ||
+        !/^[a-f0-9]{64}$/.test(member.evidence_sha256 ?? "") ||
+        (member.raw_payload_count ?? 0) < 1 ||
+        member.pair_count !== 154 ||
+        executionIds.length !== 2 ||
+        new Set(executionIds).size !== 2
+      )
+    })
+    .map((member) => member.source_id)
+  return [...new Set([...stale, ...invalidProvenance, ...(evidence.missing_source_ids ?? [])])]
 }
 
 export function evaluateSourceFreshness(

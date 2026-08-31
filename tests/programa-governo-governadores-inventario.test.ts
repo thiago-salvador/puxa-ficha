@@ -31,7 +31,7 @@ test("inventaria a coorte oficial atual de governador nas 27 UFs", () => {
     textoExtraidoBytesCandidaturasAtuais: 21850086,
     documentosTextoExtraivel: 199,
     documentosRequeremOcr: 5,
-    inventarioPayloadBytes: 369428,
+    inventarioPayloadBytes: 370526,
   });
 });
 
