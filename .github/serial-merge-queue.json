@@ -22,6 +22,10 @@
     ],
     "requireUpToDate": true,
     "baseBranch": "main",
+    "mergeCoAuthor": {
+      "name": "Thiago Salvador",
+      "email": "contato.thiagosalvador@gmail.com"
+    },
     "excludeDrafts": true,
     "excludeLabels": [
       "merge-queue/rollback-pr"

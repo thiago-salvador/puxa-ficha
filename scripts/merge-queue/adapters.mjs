@@ -320,9 +320,14 @@ export class GitHubAdapter {
     });
   }
 
-  async merge(number, expectedHeadSha, mergeMethod = 'squash') {
+  async merge(number, expectedHeadSha, mergeMethod = 'squash', mergeCoAuthor) {
     return this.request(`/repos/${this.repository}/pulls/${number}/merge`, {
-      method: 'PUT', body: JSON.stringify({ sha: expectedHeadSha, merge_method: mergeMethod }),
+      method: 'PUT',
+      body: JSON.stringify({
+        sha: expectedHeadSha,
+        merge_method: mergeMethod,
+        commit_message: coAuthorTrailer(mergeCoAuthor),
+      }),
     });
   }
 
@@ -432,6 +437,15 @@ export class GitHubAdapter {
 
 function lowerState(value) {
   return String(value ?? '').toLowerCase();
+}
+
+function coAuthorTrailer(coAuthor) {
+  const name = String(coAuthor?.name ?? '').trim();
+  const email = String(coAuthor?.email ?? '').trim();
+  if (!/^[^\r\n<>]{1,100}$/.test(name) || !/^[^\s\r\n<>@]+@[^\s\r\n<>@]+$/.test(email)) {
+    throw new CoordinatorError('A valid merge co-author is required');
+  }
+  return `Co-authored-by: ${name} <${email}>`;
 }
 
 function deploymentUrl(value) {
