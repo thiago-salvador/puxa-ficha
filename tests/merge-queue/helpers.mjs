@@ -21,6 +21,8 @@ export const config = {
   },
   irreversibleChanges: {
     pathPatterns: ['supabase/migrations/**'],
+    migrationPathPatterns: ['supabase/migrations/**'],
+    databaseRollbackMode: 'migration-specific',
     requireValidatedManifest: true,
   },
 };
@@ -57,10 +59,29 @@ export function greenProduction(sha) {
 }
 
 export function reversibleMigrationManifest() {
+  const checks = ['migration-forward', 'migration-readback', 'migration-rollback'];
   return {
     version: 1,
     reversible: true,
+    databaseRollbackMode: 'migration-specific',
+    databaseArtifacts: {
+      forward: {
+        artifact: 'supabase/migrations/change.sql',
+        workflow: '.github/workflows/apply-change-production.yml',
+        checks: ['migration-forward'],
+      },
+      readback: {
+        artifact: 'supabase/readback/change.readback.sql',
+        workflow: '.github/workflows/apply-change-production.yml',
+        checks: ['migration-readback'],
+      },
+      rollback: {
+        artifact: 'supabase/rollback/change.rollback.sql',
+        workflow: '.github/workflows/rollback-change-production.yml',
+        checks: ['migration-rollback'],
+      },
+    },
     rollback: { kind: 'compensating-migration', artifact: 'supabase/rollbacks/restore.sql' },
-    verification: { checks: ['migration-replay', 'ledger-readback'] },
+    verification: { checks },
   };
 }

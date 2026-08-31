@@ -15,6 +15,48 @@ test('manifest is declarative and rejects embedded SQL execution payloads', () =
   assert.equal(validateReversibility(pr(43, { files: ['supabase/migrations/x.sql'], reversibilityManifest: manifest }), config).valid, false);
 });
 
+test('migration manifest requires migration-specific forward, readback and rollback evidence', () => {
+  const manifest = reversibleMigrationManifest();
+  assert.equal(manifest.databaseRollbackMode, 'migration-specific');
+  for (const section of ['forward', 'readback', 'rollback']) {
+    const broken = structuredClone(manifest);
+    delete broken.databaseArtifacts[section];
+    const result = validateReversibility(
+      pr(43, { files: ['supabase/migrations/x.sql'], reversibilityManifest: broken }),
+      config,
+    );
+    assert.equal(result.valid, false, `${section} is mandatory`);
+  }
+});
+
+test('database artifacts are invalid when their specialized validation checks are absent', () => {
+  const manifest = reversibleMigrationManifest();
+  manifest.databaseArtifacts.readback.checks = [];
+  const result = validateReversibility(
+    pr(43, { files: ['supabase/migrations/x.sql'], reversibilityManifest: manifest }),
+    config,
+  );
+  assert.equal(result.valid, false);
+});
+
+test('sensitive automation is not misclassified as a database migration', () => {
+  const sensitiveConfig = structuredClone(config);
+  sensitiveConfig.irreversibleChanges.pathPatterns.push('.github/workflows/**');
+  sensitiveConfig.irreversibleChanges.migrationPathPatterns = ['supabase/migrations/**'];
+  const manifest = {
+    version: 1,
+    reversible: true,
+    rollback: { kind: 'revert-pr', artifact: '.github/workflows/example.yml' },
+    verification: { checks: ['workflow-review'] },
+  };
+  const result = validateReversibility(
+    pr(43, { files: ['.github/workflows/example.yml'], reversibilityManifest: manifest }),
+    sensitiveConfig,
+  );
+  assert.equal(result.migration, false);
+  assert.equal(result.valid, true);
+});
+
 test('self-asserted manifest cannot bypass named remote-write approval', () => {
   const lockedConfig = structuredClone(config);
   lockedConfig.irreversibleChanges.requireNamedRemoteWriteApproval = true;

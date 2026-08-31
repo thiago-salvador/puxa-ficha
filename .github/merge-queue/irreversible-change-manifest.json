@@ -1,6 +1,76 @@
 {
   "version": 1,
   "reversible": true,
+  "databaseRollbackMode": "migration-specific",
+  "databaseArtifacts": {
+    "forward": {
+      "artifacts": [
+        "scripts/audit/apply-candidate-roster-integrity-production.sh",
+        "scripts/audit/apply-issue-138-production.sh",
+        "scripts/audit/apply-profissao-qid-production.sh",
+        "scripts/audit/apply-jhc-artigo-17-production.sh",
+        "scripts/audit/apply-destaques-freshness-reconciliation-production.sh"
+      ],
+      "workflows": [
+        ".github/workflows/apply-candidate-roster-integrity-production.yml",
+        ".github/workflows/apply-issue-138-production.yml",
+        ".github/workflows/apply-profissao-qid-production.yml",
+        ".github/workflows/apply-jhc-artigo-17-production.yml",
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+      ],
+      "checks": [
+        "roster-30000-30001-30002-ledger-readback-rollback-coordination",
+        "ddl-backfill-ledger-idempotency-hashes",
+        "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
+        "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
+        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks"
+      ]
+    },
+    "readback": {
+      "artifacts": [
+        "supabase/readback/20260829030000_candidate_roster_publication_integrity.readback.sql",
+        "supabase/readback/20260829030002_candidate_registration_structured_state.readback.sql",
+        "supabase/readback/20260829100000_projetos_lei_chave_por_fonte.readback.sql",
+        "supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql",
+        "supabase/readback/20260830120000_backfill_profissao_declarada_qid_wikidata.readback.sql",
+        "supabase/readback/20260830143500_jhc_voto_artigo_17.readback.sql",
+        "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql"
+      ],
+      "workflows": [
+        ".github/workflows/apply-candidate-roster-integrity-production.yml",
+        ".github/workflows/apply-issue-138-production.yml",
+        ".github/workflows/apply-profissao-qid-production.yml",
+        ".github/workflows/apply-jhc-artigo-17-production.yml",
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+      ],
+      "checks": [
+        "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
+        "exact-senate-and-camara-payload-readback",
+        "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
+        "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
+        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks"
+      ]
+    },
+    "rollback": {
+      "artifacts": [
+        "scripts/audit/rollback-candidate-roster-integrity-production.sh",
+        "scripts/audit/rollback-issue-138-production.sh",
+        "scripts/audit/rollback-profissao-qid-production.sh",
+        "scripts/audit/rollback-jhc-artigo-17-production.sh",
+        "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh"
+      ],
+      "workflows": [
+        ".github/workflows/rollback-candidate-roster-integrity-production.yml",
+        ".github/workflows/rollback-issue-138-production.yml",
+        ".github/workflows/rollback-profissao-qid-production.yml",
+        ".github/workflows/rollback-jhc-artigo-17-production.yml",
+        ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
+      ],
+      "checks": [
+        "rollback-readback-preserves-schema"
+      ]
+    }
+  },
   "change": "issue-138-proposicao-source-key",
   "approval": {
     "kind": "named-remote-write",

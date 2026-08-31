@@ -193,6 +193,11 @@
     "requirePredecessor": true
   },
   "irreversibleChanges": {
+    "migrationPathPatterns": [
+      "supabase/migrations/**",
+      "supabase/migrations-pendentes/**"
+    ],
+    "databaseRollbackMode": "migration-specific",
     "pathPatterns": [
       "supabase/migrations/**",
       "supabase/migrations-pendentes/**",

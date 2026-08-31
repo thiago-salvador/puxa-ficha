@@ -91,6 +91,8 @@ export function normalizeConfig(input = {}) {
     },
     irreversibleChanges: {
       pathPatterns: ['supabase/migrations/**', 'migrations/**'],
+      migrationPathPatterns: ['supabase/migrations/**', 'migrations/**'],
+      databaseRollbackMode: 'migration-specific',
       requireValidatedManifest: true,
       ...(input.irreversibleChanges ?? {}),
     },
@@ -206,9 +208,11 @@ export function validateReversibility(pr, configInput) {
   const config = normalizeConfig(configInput);
   const files = asArray(pr.files).map((file) => typeof file === 'string' ? file : file?.path ?? file?.filename).filter(Boolean);
   const patterns = asArray(config.irreversibleChanges.pathPatterns);
-  const migration = files.some((path) => patterns.some((pattern) => matchGlob(path, pattern)));
+  const migrationPatterns = asArray(config.irreversibleChanges.migrationPathPatterns);
+  const sensitive = files.some((path) => patterns.some((pattern) => matchGlob(path, pattern)));
+  const migration = files.some((path) => migrationPatterns.some((pattern) => matchGlob(path, pattern)));
   const external = Boolean(pr.externalEffect ?? pr.changeRisk?.externalEffect ?? pr.changeRisk?.irreversible);
-  if (!migration && !external) return { required: false, valid: true, migration: false, external: false };
+  if (!sensitive && !external) return { required: false, valid: true, migration: false, external: false };
   const manifest = pr.reversibilityManifest ?? pr.changeRisk?.manifest;
   if (config.irreversibleChanges.requireValidatedManifest === false) {
     return { required: true, valid: true, migration, external };
@@ -227,11 +231,30 @@ export function validateReversibility(pr, configInput) {
   const allowedKinds = migration
     ? new Set(['compensating-migration', 'manual-compensation'])
     : new Set(['revert-pr', 'compensating-change', 'manual-compensation']);
+  const verificationChecks = asArray(verification?.checks);
+  const validDatabaseSection = (section) => {
+    const artifacts = [section?.artifact, ...asArray(section?.artifacts)]
+      .filter((value) => typeof value === 'string' && value.length > 0);
+    const workflows = [section?.workflow, ...asArray(section?.workflows)]
+      .filter((value) => typeof value === 'string' && value.length > 0);
+    const checks = asArray(section?.checks).filter((value) => typeof value === 'string' && value.length > 0);
+    const safePath = (value) => !value.startsWith('/') && !value.split('/').includes('..');
+    return artifacts.length > 0 && workflows.length > 0 && checks.length > 0 &&
+      artifacts.every(safePath) && workflows.every(safePath) &&
+      checks.every((check) => verificationChecks.includes(check));
+  };
+  const databaseContract = manifest?.databaseArtifacts;
+  const databaseValid = !migration || Boolean(
+    manifest?.databaseRollbackMode === config.irreversibleChanges.databaseRollbackMode &&
+    validDatabaseSection(databaseContract?.forward) &&
+    validDatabaseSection(databaseContract?.readback) &&
+    validDatabaseSection(databaseContract?.rollback)
+  );
   const valid = Boolean(
     manifest && manifest.version && manifest.reversible === true && rollback &&
     allowedKinds.has(rollback.kind ?? rollback.type) &&
     (rollback.artifact || rollback.reference || asArray(rollback.steps).length) &&
-    verification && asArray(verification.checks).length &&
+    verification && verificationChecks.length && databaseValid &&
     !containsSqlPayload(manifest)
   );
   return {
