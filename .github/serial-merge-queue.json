@@ -90,6 +90,7 @@
   },
   "production": {
     "provider": "vercel",
+    "projectName": "puxa-ficha",
     "environment": "Production",
     "url": "https://puxaficha.com.br",
     "stagedDeployment": {
@@ -100,7 +101,7 @@
       "hold": {
         "provider": "vercel-deployment-checks",
         "required": true,
-        "githubStatusContext": "Serial release gate"
+        "githubStatusContext": "Vercel - puxa-ficha: staged-release"
       }
     },
     "stagedChecks": {
@@ -150,16 +151,13 @@
     },
     "promotion": {
       "required": true,
-      "checks": [
-        "Serial release gate"
-      ],
       "mode": "deployment-check-auto-alias",
       "recoveryMode": "explicit-vercel-promote"
     },
     "publicReadback": {
       "required": true,
       "checks": [
-        "Production readback"
+        "Production release closure"
       ],
       "url": "https://puxaficha.com.br/api/deployment-info",
       "expected": {
@@ -172,14 +170,17 @@
     },
     "rollback": {
       "mode": "vercel-instant-rollback",
+      "checks": [
+        "Production rollback recovery"
+      ],
       "requirePreviousReadyDeployment": true,
       "verifyPreviousSha": true,
       "promoteRecoveryDeployment": true
     }
   },
   "releaseGate": {
-    "name": "Serial release gate",
-    "required": true,
+    "name": "Serial release orchestration",
+    "required": false,
     "initialState": "pending",
     "successState": "success",
     "failClosedOnMissingHold": true

@@ -469,7 +469,8 @@ export function preflightSecrets(config, env = process.env) {
   });
   if (missing.length) throw new CoordinatorError('Required live secrets are missing', { missing });
   const hold = config.production?.stagedDeployment?.hold;
-  if (config.releaseGate?.required && (!hold?.required || !hold?.githubStatusContext)) {
+  const holdRequired = hold?.required === true || config.releaseGate?.failClosedOnMissingHold === true;
+  if (holdRequired && (!hold?.required || !hold?.githubStatusContext)) {
     throw new CoordinatorError('Production hold configuration is missing or incomplete');
   }
   return { ok: true };

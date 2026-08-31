@@ -27,12 +27,12 @@ function productionCheckNames(config) {
   const names = (section) => section?.checks ?? (section?.check ? [section.check] : []);
   return {
     stagedChecks: names(config.production.stagedChecks ?? config.production.smokes),
-    promotion: names(config.production.promotion),
     readback: names(config.production.publicReadback),
+    rollback: names(config.production.rollback),
   };
 }
 
-async function enrichProduction(snapshot, config, vercel) {
+export async function enrichProduction(snapshot, config, vercel) {
   const owner = snapshot.prs.find((pr) => pr.labels?.includes(config.labels.active));
   const rollbackSha = owner?.labels?.includes(config.labels.rollback) ? owner.rollback?.mergeSha : null;
   const sha = rollbackSha ?? owner?.mergeSha ?? snapshot.main?.sha;
@@ -47,13 +47,21 @@ async function enrichProduction(snapshot, config, vercel) {
       ? vercel.currentProductionForDomain(productionDomain)
       : snapshot.main?.sha ? deploymentForSha(snapshot.main.sha, { target: 'production' }) : Promise.resolve(null),
   ]);
+  const promotion = currentDeployment?.sha === sha && currentDeployment?.status === 'success'
+    ? { sha, status: 'success' }
+    : { sha, status: 'pending' };
+  const rollbackCheck = signalFromChecks(checks, sha, names.rollback);
+  const previousMainSha = owner?.queueContext?.previousMainSha ?? owner?.queueContext?.previousDeploymentSha ?? null;
   snapshot.production = {
     ...(snapshot.production ?? {}),
     stagedDeployment: deployment,
     currentDeployment,
     stagedChecks: signalFromChecks(checks, sha, names.stagedChecks),
-    promotion: signalFromChecks(checks, sha, names.promotion),
+    promotion,
     publicReadback: signalFromChecks(checks, sha, names.readback),
+    rollback: rollbackCheck && previousMainSha
+      ? { ...rollbackCheck, sha: previousMainSha }
+      : null,
   };
   return snapshot;
 }
@@ -110,6 +118,9 @@ async function executeMutation(mutation, config, adapters) {
         previousDeploymentId: mutation.capture.previousDeploymentId,
         previousDeploymentSha: mutation.capture.previousDeploymentSha,
         previousDeploymentUrl: mutation.capture.previousDeploymentUrl,
+        git: { sha: mergeSha },
+        environment: 'production',
+        project: { name: config.production?.projectName ?? 'puxa-ficha' },
       });
       return { mergeSha, merged: merged.merged };
     }

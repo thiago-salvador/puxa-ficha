@@ -1,0 +1,404 @@
+name: Staged production release
+
+on:
+  repository_dispatch:
+    types:
+      - serial-merge-queue-post-merge
+
+concurrency:
+  group: staged-production-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  PRODUCTION_URL: https://puxaficha.com.br
+  INCIDENT_LABEL: merge-queue/blocked
+
+jobs:
+  staged_release:
+    name: "Vercel - puxa-ficha: staged-release"
+    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.actor == 'thiago-salvador'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      statuses: write
+    env:
+      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
+      TRUSTED_SHA: ${{ github.event.client_payload.trustedSha }}
+      OWNER_PR: ${{ github.event.client_payload.pr }}
+      PREVIOUS_DEPLOYMENT_ID: ${{ github.event.client_payload.previousDeploymentId }}
+      PREVIOUS_DEPLOYMENT_SHA: ${{ github.event.client_payload.previousDeploymentSha }}
+      PREVIOUS_DEPLOYMENT_URL: ${{ github.event.client_payload.previousDeploymentUrl }}
+      DISPATCH_GIT_SHA: ${{ github.event.client_payload.git.sha }}
+      DISPATCH_ENVIRONMENT: ${{ github.event.client_payload.environment }}
+      DISPATCH_PROJECT: ${{ github.event.client_payload.project.name }}
+    steps:
+      - name: Publish the required Vercel deployment check
+        uses: vercel/repository-dispatch/actions/status@30f760c6640485cd92f8c785ef361382555fb712
+        with:
+          name: "Vercel - puxa-ficha: staged-release"
+          github_token: ${{ github.token }}
+
+      - name: Validate dispatch and required credentials
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$TRUSTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$OWNER_PR" =~ ^[1-9][0-9]*$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_ID" =~ ^[A-Za-z0-9_-]+$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_URL" =~ ^https://[A-Za-z0-9.-]+\.vercel\.app/?$ ]]
+          test "$DISPATCH_GIT_SHA" = "$EXPECTED_SHA"
+          test "$DISPATCH_ENVIRONMENT" = "production"
+          test "$DISPATCH_PROJECT" = "puxa-ficha"
+          test -n "$GH_TOKEN"
+          test -n "$VERCEL_TOKEN"
+          test -n "$VERCEL_TEAM_ID"
+          test -n "$VERCEL_PROJECT_ID"
+
+          main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
+          test "$main_sha" = "$EXPECTED_SHA"
+          parent_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${EXPECTED_SHA}" --jq '.parents[0].sha')"
+          test "$parent_sha" = "$TRUSTED_SHA"
+
+          pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${OWNER_PR}")"
+          jq -e --arg sha "$EXPECTED_SHA" \
+            '.merged == true and .merge_commit_sha == $sha' <<<"$pr_json" >/dev/null
+          labels="$(gh api "repos/${GITHUB_REPOSITORY}/issues/${OWNER_PR}" --jq '[.labels[].name]')"
+          jq -e \
+            'index("merge-queue/active") != null and index("merge-queue/post-merge") != null' \
+            <<<"$labels" >/dev/null
+
+      - name: Find exact staged production deployment
+        id: deployment
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          staged_url=""
+          for _attempt in $(seq 1 120); do
+            deployments="$(curl -fsS \
+              -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+              "https://api.vercel.com/v6/deployments?projectId=${VERCEL_PROJECT_ID}&teamId=${VERCEL_TEAM_ID}&target=production&meta-githubCommitSha=${EXPECTED_SHA}&limit=20")"
+            staged_host="$(jq -r --arg sha "$EXPECTED_SHA" '
+              [.deployments[]
+                | select(.meta.githubCommitSha == $sha)
+                | select(.target == "production")
+                | select(.readyState == "READY")
+                | .url][0] // empty
+            ' <<<"$deployments")"
+            if [[ -n "$staged_host" ]]; then
+              staged_url="https://${staged_host}"
+              break
+            fi
+            sleep 10
+          done
+          [[ "$staged_url" =~ ^https://[A-Za-z0-9.-]+\.vercel\.app$ ]]
+          test "$staged_url" != "https://puxaficha.com.br"
+          printf 'url=%s\n' "$staged_url" >>"$GITHUB_OUTPUT"
+
+      - name: Checkout exact candidate SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Prove public production is still the captured predecessor
+        env:
+          PF_BASE_URL: https://puxaficha.com.br
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.PREVIOUS_DEPLOYMENT_SHA }}
+        run: npm run release:prove-deployment
+
+      - name: Run complete staged smoke suite
+        env:
+          PF_BASE_URL: ${{ steps.deployment.outputs.url }}
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.EXPECTED_SHA }}
+        run: npm run release:smoke
+
+  public_closure:
+    name: Production release closure
+    needs: staged_release
+    if: needs.staged_release.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
+    steps:
+      - name: Mark public closure pending
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
+            -f state=pending \
+            -f context="Production release closure" \
+            -f description="Waiting for exact-SHA public promotion and smoke" >/dev/null
+
+      - name: Checkout exact candidate SHA
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Wait for public exact-SHA promotion
+        env:
+          PF_BASE_URL: https://puxaficha.com.br
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.EXPECTED_SHA }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for _attempt in $(seq 1 60); do
+            if npm run release:prove-deployment; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Run complete public smoke suite
+        env:
+          PF_BASE_URL: https://puxaficha.com.br
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.EXPECTED_SHA }}
+        run: npm run release:smoke
+
+      - name: Publish public closure result
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          JOB_STATUS: ${{ job.status }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          state=failure
+          description="Exact-SHA public closure failed; rollback is required"
+          if [[ "$JOB_STATUS" = "success" ]]; then
+            state=success
+            description="Exact-SHA public promotion and complete smoke passed"
+          fi
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
+            -f state="$state" \
+            -f context="Production release closure" \
+            -f description="$description" >/dev/null
+
+  rollback_recovery:
+    name: Production rollback recovery
+    needs:
+      - staged_release
+      - public_closure
+    if: always() && needs.staged_release.result == 'success' && needs.public_closure.result == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
+      OWNER_PR: ${{ github.event.client_payload.pr }}
+      PREVIOUS_DEPLOYMENT_ID: ${{ github.event.client_payload.previousDeploymentId }}
+      PREVIOUS_DEPLOYMENT_SHA: ${{ github.event.client_payload.previousDeploymentSha }}
+      PREVIOUS_DEPLOYMENT_URL: ${{ github.event.client_payload.previousDeploymentUrl }}
+    steps:
+      - name: Mark rollback recovery pending
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
+            -f state=pending \
+            -f context="Production rollback recovery" \
+            -f description="Restoring the captured predecessor deployment" >/dev/null
+
+      - name: Restore exact captured deployment
+        id: rollback
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$OWNER_PR" =~ ^[1-9][0-9]*$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_ID" =~ ^[A-Za-z0-9_-]+$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$PREVIOUS_DEPLOYMENT_URL" =~ ^https://[A-Za-z0-9.-]+\.vercel\.app/?$ ]]
+
+          labels="$(gh api "repos/${GITHUB_REPOSITORY}/issues/${OWNER_PR}" --jq '[.labels[].name]')"
+          jq -e \
+            'index("merge-queue/active") != null and index("merge-queue/post-merge") != null' \
+            <<<"$labels" >/dev/null
+
+          deployment="$(curl -fsS \
+            -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+            "https://api.vercel.com/v13/deployments/${PREVIOUS_DEPLOYMENT_ID}?teamId=${VERCEL_TEAM_ID}")"
+          jq -e \
+            --arg id "$PREVIOUS_DEPLOYMENT_ID" \
+            --arg sha "$PREVIOUS_DEPLOYMENT_SHA" \
+            --arg expected_url "${PREVIOUS_DEPLOYMENT_URL%/}" '
+              .id == $id and
+              .meta.githubCommitSha == $sha and
+              .target == "production" and
+              .readyState == "READY" and
+              ("https://" + .url) == $expected_url
+            ' <<<"$deployment" >/dev/null
+
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+            -H "Content-Type: application/json" \
+            "https://api.vercel.com/v1/deployments/${PREVIOUS_DEPLOYMENT_ID}/rollback?teamId=${VERCEL_TEAM_ID}" \
+            -d '{}' >/dev/null
+
+      - name: Checkout exact failed candidate for trusted smoke tooling
+        if: steps.rollback.outcome == 'success'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        if: steps.rollback.outcome == 'success'
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install exact dependencies
+        if: steps.rollback.outcome == 'success'
+        run: npm ci
+
+      - name: Install Playwright browser
+        if: steps.rollback.outcome == 'success'
+        run: npx playwright install --with-deps chromium
+
+      - name: Prove and smoke restored predecessor
+        id: verify
+        if: steps.rollback.outcome == 'success'
+        continue-on-error: true
+        env:
+          PF_BASE_URL: https://puxaficha.com.br
+          PF_EXPECTED_DEPLOY_SHA: ${{ env.PREVIOUS_DEPLOYMENT_SHA }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for _attempt in $(seq 1 60); do
+            if npm run release:prove-deployment; then
+              npm run release:smoke
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Publish rollback result and upsert locked incident
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          ROLLBACK_OUTCOME: ${{ steps.rollback.outcome }}
+          VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          state=failure
+          severity=critical
+          description="Rollback or restored-SHA proof failed"
+          if [[ "$ROLLBACK_OUTCOME" = "success" && "$VERIFY_OUTCOME" = "success" ]]; then
+            state=success
+            severity=recovered
+            description="Captured predecessor restored and fully verified"
+          fi
+          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
+            -f state="$state" \
+            -f context="Production rollback recovery" \
+            -f description="$description" >/dev/null
+
+          marker="<!-- serial-release-incident:${OWNER_PR}:${EXPECTED_SHA} -->"
+          body="${marker}
+          Production release incident for PR #${OWNER_PR}.
+
+          Candidate: ${EXPECTED_SHA}
+          Restored target: ${PREVIOUS_DEPLOYMENT_SHA}
+          Recovery: ${severity}
+
+          The merge queue remains locked for manual remediation."
+          issue_number="$(gh api "repos/${GITHUB_REPOSITORY}/issues?state=open&per_page=100" \
+            | jq -r --arg marker "$marker" '[.[] | select((.body // "") | contains($marker))][0].number // empty')"
+          if [[ -n "$issue_number" ]]; then
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/$issue_number/comments" \
+              -f body="$body" >/dev/null
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues" \
+              -f title="Production release incident for PR #${OWNER_PR}" \
+              -f body="$body" \
+              -f "labels[]=$INCIDENT_LABEL" >/dev/null
+          fi
+          test "$state" = "success"
+
+  stage_incident:
+    name: Record staged release incident
+    needs: staged_release
+    if: always() && needs.staged_release.result == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
+      OWNER_PR: ${{ github.event.client_payload.pr }}
+    steps:
+      - name: Upsert locked stage incident
+        env:
+          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$OWNER_PR" =~ ^[1-9][0-9]*$ ]]
+          marker="<!-- serial-release-incident:${OWNER_PR}:${EXPECTED_SHA} -->"
+          body="${marker}
+          Staged production validation failed for PR #${OWNER_PR} and ${EXPECTED_SHA}.
+
+          Public production was not promoted. The merge queue remains locked for remediation."
+          issue_number="$(gh api "repos/${GITHUB_REPOSITORY}/issues?state=open&per_page=100" \
+            | jq -r --arg marker "$marker" '[.[] | select((.body // "") | contains($marker))][0].number // empty')"
+          if [[ -n "$issue_number" ]]; then
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues/$issue_number/comments" \
+              -f body="$body" >/dev/null
+          else
+            gh api --method POST "repos/${GITHUB_REPOSITORY}/issues" \
+              -f title="Staged release incident for PR #${OWNER_PR}" \
+              -f body="$body" \
+              -f "labels[]=$INCIDENT_LABEL" >/dev/null
+          fi

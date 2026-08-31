@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { GitHubAdapter, preflightSecrets } from '../../scripts/merge-queue/adapters.mjs';
-import { reconcile } from '../../scripts/merge-queue/coordinator.mjs';
+import { enrichProduction, reconcile } from '../../scripts/merge-queue/coordinator.mjs';
 import { config as baseConfig, greenChecks, greenProduction, pr } from './helpers.mjs';
 
 function recorder(overrides = {}) {
@@ -50,6 +50,42 @@ function liveConfig() {
   };
 }
 
+test('live production evidence uses deployment identity for promotion and maps rollback to predecessor SHA', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.stagedChecks.checks = ['Vercel - puxa-ficha: staged-release'];
+  config.production.publicReadback.checks = ['Production release closure'];
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha,
+      queueContext: { previousMainSha: previousSha },
+    })],
+    main: {
+      sha: mergeSha,
+      checks: [
+        { name: 'Vercel - puxa-ficha: staged-release', sha: mergeSha, conclusion: 'success' },
+        { name: 'Production release closure', sha: mergeSha, conclusion: 'pending' },
+        { name: 'Production rollback recovery', sha: mergeSha, conclusion: 'success' },
+      ],
+    },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => candidate,
+  });
+  assert.deepEqual(result.production.promotion, { sha: mergeSha, status: 'success' });
+  assert.deepEqual(result.production.stagedChecks, { sha: mergeSha, status: 'success' });
+  assert.deepEqual(result.production.publicReadback, { sha: mergeSha, status: 'pending' });
+  assert.deepEqual(result.production.rollback, { sha: previousSha, status: 'success' });
+});
+
 test('successful live merge establishes hold and dispatches post-merge validation', async () => {
   const { calls, adapters } = recorder();
   const result = await reconcile({
@@ -78,6 +114,9 @@ test('successful live merge establishes hold and dispatches post-merge validatio
       previousDeploymentId: 'deploy-before',
       previousDeploymentSha: 'main-before',
       previousDeploymentUrl: 'https://puxa-ficha-before.vercel.app',
+      git: { sha: 'merge-43' },
+      environment: 'production',
+      project: { name: 'puxa-ficha' },
     },
   ]);
 });
