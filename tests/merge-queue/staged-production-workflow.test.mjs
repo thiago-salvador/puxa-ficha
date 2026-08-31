@@ -84,6 +84,7 @@ test('stage proves the exact production-target deployment before Vercel promotio
 
 test('an isolated privileged job explicitly promotes only the tested deployment id', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
+  const parsed = parse(workflow);
   assert.match(workflow, /promote_candidate:\s*[\s\S]*name: Promote exact staged deployment/);
   assert.match(workflow, /needs: staged_release/);
   assert.match(workflow, /CANDIDATE_DEPLOYMENT_ID: \$\{\{ needs\.staged_release\.outputs\.deployment_id \}\}/);
@@ -94,6 +95,14 @@ test('an isolated privileged job explicitly promotes only the tested deployment 
     workflow.indexOf('  public_closure:'),
   );
   assert.doesNotMatch(promotion, /actions\/checkout|npm ci|release:smoke/);
+  const steps = parsed.jobs.promote_candidate.steps;
+  const promoteIndex = steps.findIndex(({ name }) => name === 'Promote exact deployment id');
+  const aliasesIndex = steps.findIndex(({ name }) => name === 'Wait for every production alias to complete promotion');
+  assert.ok(promoteIndex >= 0 && aliasesIndex > promoteIndex);
+  assert.match(steps[aliasesIndex].run, /v1\/projects\/\$\{VERCEL_PROJECT_ID\}\/promote\/aliases/);
+  assert.match(steps[aliasesIndex].run, /\.alias == "puxaficha\.com\.br" and \.status == "completed"/);
+  assert.match(steps[aliasesIndex].run, /all\(\.aliases\[\]; \.status == "completed"\)/);
+  assert.match(steps[aliasesIndex].run, /\.status == "failed" or \.status == "error"/);
 });
 
 test('public closure repeats exact-SHA proof and smoke only after explicit promotion', async () => {

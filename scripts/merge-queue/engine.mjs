@@ -286,7 +286,7 @@ function branchState(pr, config) {
     if (sync === 'behind') {
       return { state: 'pending', reason: 'branch-update-required', updateRequired: true };
     }
-    return ['unknown', 'unstable', 'checking', ''].includes(sync)
+    return ['unknown', 'unstable', 'checking', 'blocked', ''].includes(sync)
       ? { state: 'pending', reason: 'branch-state-pending' }
       : { state: 'failure', reason: 'branch-not-up-to-date' };
   }
