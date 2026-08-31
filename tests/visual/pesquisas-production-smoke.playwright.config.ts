@@ -2,8 +2,15 @@ import { defineConfig, devices } from "playwright/test"
 
 const baseURL = process.env.PF_BASE_URL ?? "https://puxaficha.com.br"
 
-if (baseURL !== "https://puxaficha.com.br") {
-  throw new Error("PF_BASE_URL deve ser exatamente https://puxaficha.com.br")
+const releaseUrl = new URL(baseURL)
+if (
+  releaseUrl.protocol !== "https:" ||
+  (releaseUrl.hostname !== "puxaficha.com.br" && !releaseUrl.hostname.endsWith(".vercel.app")) ||
+  releaseUrl.pathname !== "/" ||
+  releaseUrl.search ||
+  releaseUrl.hash
+) {
+  throw new Error("PF_BASE_URL deve ser a origem HTTPS canônica ou de um deployment Vercel")
 }
 
 export default defineConfig({
@@ -15,7 +22,7 @@ export default defineConfig({
   retries: 0,
   reporter: [["list"]],
   use: {
-    baseURL,
+    baseURL: releaseUrl.origin,
     actionTimeout: 15_000,
     navigationTimeout: 30_000,
     serviceWorkers: "block",

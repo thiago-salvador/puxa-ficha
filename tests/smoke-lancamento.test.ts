@@ -7,6 +7,7 @@ import {
   candidatePathFromHref,
   formatResultLine,
   hasMoneyData,
+  releaseBaseUrl,
   runWithRetry,
 } from "../scripts/smoke-lancamento"
 
@@ -24,6 +25,16 @@ test("candidatePathFromHref aceita apenas fichas publicas", () => {
   )
   assert.equal(candidatePathFromHref("/comparar?c1=pablo-marcal"), null)
   assert.equal(candidatePathFromHref("/candidato/"), null)
+})
+
+test("releaseBaseUrl aceita stage Vercel e rejeita host externo", () => {
+  assert.equal(releaseBaseUrl("https://puxaficha.com.br"), "https://puxaficha.com.br")
+  assert.equal(
+    releaseBaseUrl("https://puxa-ficha-stage.vercel.app/"),
+    "https://puxa-ficha-stage.vercel.app",
+  )
+  assert.throws(() => releaseBaseUrl("http://puxa-ficha-stage.vercel.app"), /HTTPS/)
+  assert.throws(() => releaseBaseUrl("https://attacker.example"), /permitido/)
 })
 
 test("hasMoneyData reconhece somente colecoes monetarias com dados", () => {

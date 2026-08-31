@@ -265,6 +265,10 @@ git commit -m "feat: provar deployments e alvo de rollback"
 - Create: `scripts/merge-queue/deployment-proof.mjs`
 - Create: `scripts/merge-queue/run-release-smokes.mjs`
 - Create: `tests/merge-queue/deployment-proof-cli.test.mjs`
+- Modify: `scripts/smoke-lancamento.ts`
+- Modify: `tests/smoke-lancamento.test.ts`
+- Modify: `tests/visual/pesquisas-production-smoke.playwright.config.ts`
+- Modify: `tests/a11y-production-workflow.test.ts`
 - Modify: `package.json`
 
 **Step 1: Escrever testes vermelhos da prova HTTP**
@@ -294,6 +298,8 @@ Expected: FAIL porque os helpers ainda não existem.
 **Step 3: Implementar `deployment-proof.mjs`**
 
 O CLI recebe `PF_BASE_URL` e `PF_EXPECTED_DEPLOY_SHA`, faz readback de `/api/deployment-info`, usa timeout com `AbortSignal.timeout`, não imprime payload completo e termina non-zero em qualquer divergência.
+
+Antes do runner, remover os atalhos que forçam `https://puxaficha.com.br`: `smoke-lancamento.ts`, `test:search-smoke` e o config de pesquisas devem aceitar a URL herdada. A validação permite somente HTTPS no domínio canônico ou em host `*.vercel.app`, e rejeita qualquer outro host.
 
 **Step 4: Implementar `run-release-smokes.mjs`**
 
