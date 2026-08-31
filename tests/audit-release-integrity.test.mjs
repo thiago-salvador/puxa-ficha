@@ -2,11 +2,13 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
   UnavailableError,
+  createDefaultProbes,
   executeAudit,
   filterAuditEnvironment,
   markdownCell,
   parseEnvFile,
   renderReport,
+  runCommand,
 } from '../scripts/audit/audit-release-integrity.mjs';
 
 test('audit classifies pass, fail and unavailable without turning missing evidence green', async () => {
@@ -96,4 +98,26 @@ test('env parser loads only explicitly allowed keys and supports quoted values',
     new Set(['SUPABASE_DB_URL', 'CRON_SECRET']),
   );
   assert.deepEqual(parsed, { SUPABASE_DB_URL: 'postgres://safe', CRON_SECRET: 'secret' });
+});
+
+test('timed out child that ignores SIGTERM is force-killed', async () => {
+  const startedAt = Date.now();
+  await assert.rejects(runCommand(process.execPath, [
+    '-e',
+    "process.on('SIGTERM', () => {}); setInterval(() => {}, 1000)",
+  ], { timeoutMs: 50, killGraceMs: 50 }), /timed out/);
+  assert.ok(Date.now() - startedAt < 2_000);
+});
+
+test('Vercel runtime audit scopes logs to the deployment already validated', async () => {
+  const calls = [];
+  const runner = async (file, args) => {
+    calls.push([file, args]);
+    return { stdout: `${JSON.stringify({ responseStatusCode: 200 })}\n`, stderr: '' };
+  };
+  const probe = createDefaultProbes({ env: {}, runner })
+    .find(({ name }) => name === 'vercel-runtime-log-availability');
+  const context = { publicSha: 'a'.repeat(40), vercelDeploymentId: 'dpl_exact' };
+  await probe.run(context);
+  assert.deepEqual(calls[0][1].slice(-2), ['--deployment', 'dpl_exact']);
 });

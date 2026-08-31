@@ -48,6 +48,7 @@ test('deploymentForSha returns only the exact ready production deployment', asyn
     status: 'success',
   });
   assert.match(calls[0], /target=production/);
+  assert.match(calls[0], new RegExp(`sha=${SHA}`));
 });
 
 test('assertDeployment rejects identity, target, readiness and URL drift', () => {
@@ -60,6 +61,8 @@ test('assertDeployment rejects identity, target, readiness and URL drift', () =>
     expectedId: 'dpl_candidate', expectedSha: SHA, target: 'production', requiredState: 'READY',
   }));
   assert.throws(() => adapter.assertDeployment({ ...candidate, sha: 'b'.repeat(40) }, { expectedSha: SHA }), /SHA/);
+  assert.throws(() => adapter.assertDeployment({ ...candidate, id: 'dpl_other' }, { expectedId: 'dpl_candidate' }), /id does not match/);
+  assert.throws(() => adapter.assertDeployment({ ...candidate, id: null }, { expectedId: 'dpl_candidate' }), /id is missing/);
   assert.throws(() => adapter.assertDeployment({ ...candidate, target: 'preview' }, { expectedSha: SHA, target: 'production' }), /target/);
   assert.throws(() => adapter.assertDeployment({ ...candidate, readyState: 'BUILDING' }, { expectedSha: SHA, requiredState: 'READY' }), /ready state/);
   assert.throws(() => adapter.assertDeployment({ ...candidate, url: 'http://puxa-ficha-a1b2c3.vercel.app' }, { expectedSha: SHA }), /HTTPS/);
@@ -77,6 +80,15 @@ test('currentProductionForDomain resolves the deployment currently serving the c
   const result = await adapter.currentProductionForDomain('puxaficha.com.br');
   assert.equal(result.id, 'dpl_public');
   assert.equal(result.sha, SHA);
+});
+
+test('currentProductionForDomain rejects invalid domains and non-ready deployments', async () => {
+  const adapter = new VercelAdapter({
+    token: 'token', projectId: 'project',
+    fetchImpl: async () => jsonResponse(deployment({ readyState: 'BUILDING' })),
+  });
+  await assert.rejects(adapter.currentProductionForDomain('bad..domain'), /invalid/);
+  await assert.rejects(adapter.currentProductionForDomain('puxaficha.com.br'), /ready state/);
 });
 
 test('deploymentForSha rejects malformed deployment URLs instead of returning usable evidence', async () => {

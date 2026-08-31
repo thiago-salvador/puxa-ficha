@@ -212,7 +212,7 @@ export function validateReversibility(pr, configInput) {
   const sensitive = files.some((path) => patterns.some((pattern) => matchGlob(path, pattern)));
   const migration = files.some((path) => migrationPatterns.some((pattern) => matchGlob(path, pattern)));
   const external = Boolean(pr.externalEffect ?? pr.changeRisk?.externalEffect ?? pr.changeRisk?.irreversible);
-  if (!sensitive && !external) return { required: false, valid: true, migration: false, external: false };
+  if (!sensitive && !external && !migration) return { required: false, valid: true, migration: false, external: false };
   const manifest = pr.reversibilityManifest ?? pr.changeRisk?.manifest;
   if (config.irreversibleChanges.requireValidatedManifest === false) {
     return { required: true, valid: true, migration, external };
@@ -244,8 +244,13 @@ export function validateReversibility(pr, configInput) {
       checks.every((check) => verificationChecks.includes(check));
   };
   const databaseContract = manifest?.databaseArtifacts;
+  const forwardChecks = new Set(asArray(databaseContract?.forward?.checks));
+  const readbackChecks = asArray(databaseContract?.readback?.checks);
+  const forwardAndReadbackAreDistinct = readbackChecks.every((check) => !forwardChecks.has(check));
   const databaseValid = !migration || Boolean(
     manifest?.databaseRollbackMode === config.irreversibleChanges.databaseRollbackMode &&
+    pr.manifestPathsVerified === true &&
+    forwardAndReadbackAreDistinct &&
     validDatabaseSection(databaseContract?.forward) &&
     validDatabaseSection(databaseContract?.readback) &&
     validDatabaseSection(databaseContract?.rollback)
@@ -380,11 +385,29 @@ function inspectSignal(record, expectedSha, required = true) {
   return { state: statusOf(record), reason: statusOf(record) === 'success' ? 'green' : statusOf(record) };
 }
 
+function inspectStagedDeployment(record, expectedSha, section = {}) {
+  const signal = inspectSignal(record, expectedSha, section.required !== false);
+  if (signal.state !== 'success') return signal;
+  try {
+    const id = String(record?.id ?? '');
+    const url = new URL(String(record?.url ?? ''));
+    const target = lower(record?.target);
+    const readyState = lower(record?.readyState);
+    if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new Error('id');
+    if (url.protocol !== 'https:' || !url.hostname.endsWith('.vercel.app')) throw new Error('url');
+    if (target !== lower(section.target ?? 'production')) throw new Error('target');
+    if (readyState !== lower(section.requiredState ?? 'READY')) throw new Error('readyState');
+    return signal;
+  } catch {
+    return { state: 'failure', reason: 'staged-deployment-identity-invalid' };
+  }
+}
+
 function productionSignals(snapshot, config, expectedSha) {
   const prod = snapshot.production ?? {};
   const stagedCheckRecord = prod.stagedChecks ?? prod.smokes ?? prod.smoke;
   return {
-    stagedDeployment: inspectSignal(prod.stagedDeployment ?? prod.deployment, expectedSha, config.production.stagedDeployment?.required !== false),
+    stagedDeployment: inspectStagedDeployment(prod.stagedDeployment, expectedSha, config.production.stagedDeployment),
     stagedChecks: inspectSignal(stagedCheckRecord, expectedSha, config.production.stagedChecks?.required !== false),
     promotion: inspectSignal(prod.promotion, expectedSha, config.production.promotion?.required !== false),
     publicReadback: inspectSignal(prod.publicReadback ?? prod.readback, expectedSha, config.production.publicReadback?.required !== false),
@@ -442,6 +465,9 @@ function postMergeDecision(pr, config, snapshot, queue) {
       return lockedIncident(pr, queue, 'deployment-rollback-failed', mergeSha, rollbackEvidence, 'critical');
     }
     if (rollback.state === 'pending') {
+      if (rollback.reason === 'sha-mismatch') {
+        return lockedIncident(pr, queue, 'deployment-rollback-sha-mismatch', mergeSha, rollbackEvidence, 'critical');
+      }
       return decision('VERIFY_ROLLBACK', pr, queue, rollback.reason, [], rollbackEvidence);
     }
     return lockedIncident(pr, queue, 'previous-deployment-restored', mergeSha, rollbackEvidence, 'recovered');

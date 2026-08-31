@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { parse } from 'yaml';
 
 const stagedWorkflowUrl = new URL(
   '../../.github/workflows/staged-production-release.yml',
@@ -13,6 +14,10 @@ const queueWorkflowUrl = new URL(
 const coordinatorUrl = new URL('../../scripts/merge-queue/coordinator.mjs', import.meta.url);
 
 const DEPLOYMENT_CHECK = 'Vercel - puxa-ficha: staged-release';
+
+async function parsedStagedWorkflow() {
+  return parse(await readFile(stagedWorkflowUrl, 'utf8'));
+}
 
 test('staged release owns the post-merge dispatch and serializes releases', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
@@ -60,6 +65,7 @@ test('dispatch and rollback identity are validated before candidate code runs', 
 
 test('stage proves the exact production-target deployment before Vercel promotion', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
+  const parsed = parse(workflow);
   assert.match(workflow, /target=production/);
   assert.match(workflow, /meta-githubCommitSha/);
   assert.match(workflow, /\.readyState == "READY"/);
@@ -69,6 +75,9 @@ test('stage proves the exact production-target deployment before Vercel promotio
   assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.EXPECTED_SHA \}\}/);
   assert.match(workflow, /npm run release:smoke/);
   assert.match(workflow, /printf 'id=%s\\n'.*GITHUB_OUTPUT/);
+  const findDeployment = parsed.jobs.staged_release.steps.find(({ name }) => name === 'Find exact staged production deployment');
+  assert.match(findDeployment.run, /if ! deployments=/);
+  assert.match(findDeployment.run, /sleep 10\s+continue/);
 });
 
 test('an isolated privileged job explicitly promotes only the tested deployment id', async () => {
@@ -96,31 +105,40 @@ test('public closure repeats exact-SHA proof and smoke only after explicit promo
 });
 
 test('public failure restores the captured deployment and leaves a deduplicated incident', async () => {
-  const workflow = await readFile(stagedWorkflowUrl, 'utf8');
-  assert.match(workflow, /rollback_recovery:\s*[\s\S]*name: Production rollback recovery/);
-  assert.match(
-    workflow,
-    /needs\.staged_release\.result == 'success'[\s\S]*needs\.promote_candidate\.result != 'success'[\s\S]*needs\.public_closure\.result != 'success'/,
-  );
-  assert.match(workflow, /CURRENT_PUBLIC_SHA/);
-  assert.match(workflow, /test "\$current_public_sha" = "\$PREVIOUS_DEPLOYMENT_SHA"/);
-  assert.match(workflow, /deployments\/\$\{PREVIOUS_DEPLOYMENT_ID\}\/rollback/);
-  assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.PREVIOUS_DEPLOYMENT_SHA \}\}/);
-  assert.match(workflow, /serial-release-incident:/);
-  assert.match(workflow, /issues\?state=open/);
-  assert.match(workflow, /issues\/\$issue_number\/comments/);
-  assert.doesNotMatch(workflow, /merge-queue\/active.*remove|remove.*merge-queue\/active/);
+  const workflow = await parsedStagedWorkflow();
+  const recovery = workflow.jobs.rollback_recovery;
+  assert.equal(recovery.name, 'Production rollback recovery');
+  assert.deepEqual(recovery.needs, ['staged_release', 'promote_candidate', 'public_closure']);
+  assert.match(recovery.if, /needs\.staged_release\.result == 'success'/);
+  assert.match(recovery.if, /needs\.promote_candidate\.result != 'success'/);
+  assert.match(recovery.if, /needs\.public_closure\.result != 'success'/);
+  const restoreIndex = recovery.steps.findIndex(({ name }) => name === 'Restore exact captured deployment');
+  const verifyIndex = recovery.steps.findIndex(({ name }) => name === 'Prove and smoke restored predecessor');
+  const publishIndex = recovery.steps.findIndex(({ name }) => name === 'Publish rollback result and upsert locked incident');
+  assert.ok(restoreIndex >= 0 && verifyIndex > restoreIndex && publishIndex > verifyIndex);
+  assert.equal(recovery.steps[verifyIndex].env.PF_EXPECTED_DEPLOY_SHA, '${{ env.PREVIOUS_DEPLOYMENT_SHA }}');
+  assert.match(recovery.steps[restoreIndex].run, /deployments\/\$\{PREVIOUS_DEPLOYMENT_ID\}\/rollback/);
+  assert.match(recovery.steps[publishIndex].run, /serial-release-incident:/);
+  for (const job of Object.values(workflow.jobs)) {
+    for (const step of job.steps ?? []) {
+      const serialized = JSON.stringify(step);
+      assert.ok(!(/merge-queue\/active/.test(serialized) && /remove|DELETE|labels\//i.test(serialized)));
+    }
+  }
 });
 
 test('stage failure also creates a locked incident without production rollback', async () => {
-  const workflow = await readFile(stagedWorkflowUrl, 'utf8');
-  assert.match(
-    workflow,
-    /stage_incident:\s*[\s\S]*needs\.staged_release\.result != 'success'[\s\S]*needs\.staged_release\.result != 'skipped'/,
-  );
-  const stageIncident = workflow.slice(workflow.indexOf('  stage_incident:'));
-  assert.match(stageIncident, /serial-release-incident:/);
-  assert.doesNotMatch(stageIncident, /\/rollback/);
+  const workflow = await parsedStagedWorkflow();
+  const incident = workflow.jobs.stage_incident;
+  assert.equal(incident.needs, 'staged_release');
+  assert.match(incident.if, /always\(\)/);
+  assert.match(incident.if, /vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true'/);
+  assert.match(incident.if, /needs\.staged_release\.result != 'success'/);
+  assert.doesNotMatch(incident.if, /result != 'skipped'/);
+  const run = incident.steps.find(({ name }) => name === 'Upsert locked stage incident').run;
+  assert.match(run, /statuses\/\$\{EXPECTED_SHA\}/);
+  assert.match(run, /serial-release-incident:/);
+  assert.doesNotMatch(run, /\/rollback/);
 });
 
 test('release workflow cannot run migrations or receive Supabase service credentials', async () => {

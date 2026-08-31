@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { EventEmitter } from 'node:events';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { proveDeployment, validateReleaseBaseUrl } from '../../scripts/merge-queue/deployment-proof.mjs';
 import { RELEASE_SMOKE_STEPS, runReleaseSmokes } from '../../scripts/merge-queue/run-release-smokes.mjs';
@@ -76,4 +77,19 @@ test('release runner stops on the first non-zero smoke', async () => {
     env: { PF_BASE_URL: 'https://puxaficha.com.br', PF_EXPECTED_DEPLOY_SHA: SHA },
   }), /exit code 9/);
   assert.equal(calls, 2);
+});
+
+test('release runner rejects an invalid expected SHA before spawning a smoke', async () => {
+  let called = false;
+  await assert.rejects(runReleaseSmokes({
+    spawnImpl: () => { called = true; },
+    env: { PF_BASE_URL: 'https://puxaficha.com.br', PF_EXPECTED_DEPLOY_SHA: 'invalid' },
+  }), /40 caracteres hexadecimais/);
+  assert.equal(called, false);
+});
+
+test('search smoke defaults to production but preserves a staged PF_BASE_URL', async () => {
+  const pkg = JSON.parse(await readFile(new URL('../../package.json', import.meta.url), 'utf8'));
+  assert.match(pkg.scripts['test:search-smoke'], /PF_BASE_URL=\$\{PF_BASE_URL:-https:\/\/puxaficha\.com\.br\}/);
+  assert.match(pkg.scripts['test:search-smoke'], /PF_RUN_SEARCH_SMOKE=1/);
 });

@@ -16,7 +16,7 @@ function runStep(step, { spawnImpl, env }) {
   return new Promise((resolve, reject) => {
     const child = spawnImpl(step.command, step.args, {
       cwd: process.cwd(),
-      env: { ...process.env, ...env },
+      env,
       shell: false,
       stdio: 'inherit',
     });
@@ -36,9 +36,10 @@ function runStep(step, { spawnImpl, env }) {
 export async function runReleaseSmokes({
   steps = RELEASE_SMOKE_STEPS,
   spawnImpl = spawn,
-  env = process.env,
+  env = {},
 } = {}) {
   const releaseEnv = {
+    ...process.env,
     ...env,
     PF_BASE_URL: validateReleaseBaseUrl(env.PF_BASE_URL),
   };

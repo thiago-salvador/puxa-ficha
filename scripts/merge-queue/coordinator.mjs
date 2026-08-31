@@ -44,7 +44,7 @@ export async function enrichProduction(snapshot, config, vercel) {
   const [deployment, currentDeployment] = await Promise.all([
     deploymentForSha(sha, { target: 'production' }),
     productionDomain && vercel.currentProductionForDomain
-      ? vercel.currentProductionForDomain(productionDomain)
+      ? vercel.currentProductionForDomain(productionDomain).catch(() => null)
       : snapshot.main?.sha ? deploymentForSha(snapshot.main.sha, { target: 'production' }) : Promise.resolve(null),
   ]);
   const promotion = currentDeployment?.sha === sha && currentDeployment?.status === 'success'
@@ -59,7 +59,7 @@ export async function enrichProduction(snapshot, config, vercel) {
     stagedChecks: signalFromChecks(checks, sha, names.stagedChecks),
     promotion,
     publicReadback: signalFromChecks(checks, sha, names.readback),
-    rollback: rollbackCheck && previousMainSha
+    rollback: rollbackCheck?.status !== 'pending' && previousMainSha
       ? { ...rollbackCheck, sha: previousMainSha }
       : null,
   };

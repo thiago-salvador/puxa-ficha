@@ -29,6 +29,8 @@ test('canonical database contract names migration-specific forward, readback and
       assert.ok(manifest.verification.checks.includes(check));
     }
   }
+  const forward = new Set(manifest.databaseArtifacts.forward.checks);
+  assert.ok(manifest.databaseArtifacts.readback.checks.every((check) => !forward.has(check)));
 });
 
 test('database recovery never creates a generic SQL rollback mutation', () => {

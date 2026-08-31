@@ -46,11 +46,11 @@ Adicionar snapshots explícitos para:
 ```js
 {
   production: {
-    previousDeployment: { id: 'dep_previous', sha: 'trusted-sha', status: 'success' },
-    stagedDeployment: { id: 'dep_candidate', sha: 'merge-sha', status: 'success' },
-    stagedChecks: { status: 'success', sha: 'merge-sha' },
-    promotion: { status: 'pending', sha: 'merge-sha' },
-    publicReadback: { status: 'pending', sha: 'merge-sha' },
+    previousDeployment: { id: 'dep_previous', sha: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', status: 'success' },
+    stagedDeployment: { id: 'dep_candidate', sha: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', status: 'success' },
+    stagedChecks: { status: 'success', sha: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
+    promotion: { status: 'pending', sha: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
+    publicReadback: { status: 'pending', sha: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' },
     rollback: null,
   },
 }

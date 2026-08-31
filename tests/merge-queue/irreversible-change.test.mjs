@@ -39,6 +39,29 @@ test('database artifacts are invalid when their specialized validation checks ar
   assert.equal(result.valid, false);
 });
 
+test('forward and readback require distinct database evidence identifiers', () => {
+  const manifest = reversibleMigrationManifest();
+  manifest.databaseArtifacts.readback.checks = [...manifest.databaseArtifacts.forward.checks];
+  const result = validateReversibility(
+    pr(43, { files: ['supabase/migrations/x.sql'], reversibilityManifest: manifest }),
+    config,
+  );
+  assert.equal(result.valid, false);
+});
+
+test('migration manifest is rejected when a declared head path was not verified', () => {
+  const result = evaluateSnapshot(config, {
+    prs: [pr(43, {
+      files: ['supabase/migrations/x.sql'],
+      reversibilityManifest: reversibleMigrationManifest(),
+      manifestPathsVerified: false,
+    })],
+    main: { sha: 'main' },
+  });
+  assert.equal(result.decision, 'BLOCK');
+  assert.equal(result.reason, 'reversible-manifest-invalid');
+});
+
 test('sensitive automation is not misclassified as a database migration', () => {
   const sensitiveConfig = structuredClone(config);
   sensitiveConfig.irreversibleChanges.pathPatterns.push('.github/workflows/**');

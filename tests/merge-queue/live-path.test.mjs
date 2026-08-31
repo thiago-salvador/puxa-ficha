@@ -32,6 +32,13 @@ function recorder(overrides = {}) {
           target: 'production', url: 'https://puxa-ficha-before.vercel.app',
         }),
         productionForSha: record('productionForSha', { id: 'deploy-before', sha: 'main-before', status: 'success' }),
+        assertDeployment: (deployment, expected) => {
+          calls.push(['assertDeployment', deployment, expected]);
+          if (deployment?.id !== expected.expectedId || deployment?.sha !== expected.expectedSha) {
+            throw new Error('deployment assertion rejected the predecessor');
+          }
+          return deployment;
+        },
         instantRollback: record('instantRollback'),
         promote: record('promote'),
         ...overrides.vercel,
@@ -84,6 +91,42 @@ test('live production evidence uses deployment identity for promotion and maps r
   assert.deepEqual(result.production.stagedChecks, { sha: mergeSha, status: 'success' });
   assert.deepEqual(result.production.publicReadback, { sha: mergeSha, status: 'pending' });
   assert.deepEqual(result.production.rollback, { sha: previousSha, status: 'success' });
+});
+
+test('missing rollback check stays null instead of inventing pending recovery evidence', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, { labels: ['active', 'post-merge'], mergeSha, queueContext: { previousMainSha: previousSha } })],
+    main: { sha: mergeSha, checks: [] },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => candidate,
+  });
+  assert.equal(result.production.rollback, null);
+});
+
+test('canonical-domain lookup failure degrades to missing evidence and remains fail-closed', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const config = liveConfig();
+  config.production.url = 'https://puxaficha.com.br';
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction({ prs: [], main: { sha: mergeSha, checks: [] } }, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => { throw new Error('Vercel alias lookup unavailable'); },
+  });
+  assert.equal(result.production.currentDeployment, null);
+  assert.deepEqual(result.production.promotion, { sha: mergeSha, status: 'pending' });
 });
 
 test('successful live merge dispatches staged validation without opening a legacy gate', async () => {
@@ -198,7 +241,7 @@ test('failure after promotion marks the gate failed and instant-rolls back witho
   });
   assert.equal(result.decision, 'ROLLBACK_DEPLOYMENT');
   const sequence = calls.map(([name]) => name);
-  assert.deepEqual(sequence, ['setCommitStatus', 'deploymentForSha', 'instantRollback', 'upsertIncident']);
+  assert.deepEqual(sequence, ['setCommitStatus', 'deploymentForSha', 'assertDeployment', 'instantRollback', 'upsertIncident']);
   assert.equal(calls.find(([name]) => name === 'instantRollback')[1], 'deploy-before');
   assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
 });
@@ -222,11 +265,11 @@ test('incident outage does not prevent rollback actions from being attempted', a
     /rollback operations failed/,
   );
   assert.deepEqual(calls.map(([name]) => name), [
-    'setCommitStatus', 'deploymentForSha', 'instantRollback', 'upsertIncident',
+    'setCommitStatus', 'deploymentForSha', 'assertDeployment', 'instantRollback', 'upsertIncident',
   ]);
 });
 
-test('rollback refuses a deployment id that does not match the previous main SHA', async () => {
+test('rollback aborts when assertDeployment rejects the captured predecessor', async () => {
   const config = liveConfig();
   const mergeSha = 'merge-43';
   const owner = pr(43, {
@@ -244,6 +287,7 @@ test('rollback refuses a deployment id that does not match the previous main SHA
   );
   assert.ok(!calls.some(([name]) => name === 'instantRollback'));
   assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
+  assert.ok(calls.some(([name]) => name === 'assertDeployment'));
   assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 

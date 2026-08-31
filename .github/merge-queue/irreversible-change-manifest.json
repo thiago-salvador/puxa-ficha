@@ -21,9 +21,9 @@
       "checks": [
         "roster-30000-30001-30002-ledger-readback-rollback-coordination",
         "ddl-backfill-ledger-idempotency-hashes",
-        "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
-        "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
-        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks"
+        "profissao-qid-63-row-readback-receipt",
+        "jhc-artigo-17-exact-row-readback-receipt",
+        "destaques-freshness-154-pair-readback-receipt"
       ]
     },
     "readback": {
@@ -152,6 +152,9 @@
       "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
       "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
       "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
+      "profissao-qid-63-row-readback-receipt",
+      "jhc-artigo-17-exact-row-readback-receipt",
+      "destaques-freshness-154-pair-readback-receipt",
       "rollback-readback-preserves-schema"
     ]
   }

@@ -43,6 +43,7 @@ export function pr(number, overrides = {}) {
     labels: [],
     checks: greenChecks(headSha),
     files: ['app/page.tsx'],
+    manifestPathsVerified: true,
     ...overrides,
   };
 }
@@ -50,7 +51,10 @@ export function pr(number, overrides = {}) {
 export function greenProduction(sha) {
   return {
     previousDeployment: { id: 'dep-previous', sha: 'trusted-sha', status: 'success' },
-    stagedDeployment: { id: 'dep-candidate', sha, status: 'success' },
+    stagedDeployment: {
+      id: 'dep-candidate', sha, status: 'success', readyState: 'READY', target: 'production',
+      url: 'https://dep-candidate.vercel.app',
+    },
     stagedChecks: { sha, status: 'success' },
     smokes: { sha, status: 'success' },
     promotion: { sha, status: 'success' },

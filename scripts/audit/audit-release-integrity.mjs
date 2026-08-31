@@ -151,6 +151,7 @@ export function runCommand(file, args, options = {}) {
     child.stderr.on('data', (chunk) => { stderr = append(stderr, chunk); });
     child.on('error', reject);
     let timedOut = false;
+    let forceKill = null;
     const timeoutMs = options.timeoutMs ?? 120_000;
     const timeout = setTimeout(() => {
       timedOut = true;
@@ -160,9 +161,18 @@ export function runCommand(file, args, options = {}) {
       } catch {
         child.kill('SIGTERM');
       }
+      forceKill = setTimeout(() => {
+        try {
+          if (isolatedProcessGroup && child.pid) process.kill(-child.pid, 'SIGKILL');
+          else child.kill('SIGKILL');
+        } catch {
+          child.kill('SIGKILL');
+        }
+      }, options.killGraceMs ?? 1_000);
     }, timeoutMs);
     child.on('close', (code, signal) => {
       clearTimeout(timeout);
+      if (forceKill) clearTimeout(forceKill);
       if (captureExceeded) return reject(new Error(`${file} exceeded bounded output capture`));
       if (timedOut) return reject(new Error(`${file} timed out after ${timeoutMs}ms`));
       if (signal) return reject(new Error(`${file} terminated by ${signal}`));
@@ -433,7 +443,8 @@ export function createDefaultProbes({ env, runner = runCommand, repository = DEF
         if (!context.vercelDeploymentId) throw new Error('Vercel deployment id is unavailable');
         const output = await runner('vercel', [
           'logs', '--project', 'puxa-ficha', '--environment', 'production', '--since', '24h',
-          '--limit', '20', '--json', '--no-branch',
+          '--limit', '20', '--json', '--no-branch', '--no-follow',
+          '--deployment', context.vercelDeploymentId,
         ], { env, timeoutMs: 60_000 });
         const lines = output.stdout.split(/\r?\n/).filter(Boolean);
         if (!lines.length) throw new UnavailableError('Vercel returned no retained runtime log entries in the last 24 hours');

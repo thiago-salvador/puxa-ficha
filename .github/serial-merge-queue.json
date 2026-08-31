@@ -110,28 +110,6 @@
         "Vercel - puxa-ficha: staged-release"
       ]
     },
-    "smokes": {
-      "required": true,
-      "checks": [
-        "Launch smoke (produção)",
-        "Busca smoke (produção)",
-        "Acessibilidade smoke (produção)"
-      ],
-      "commands": [
-        {
-          "name": "launch-smoke",
-          "command": "npx tsx scripts/smoke-lancamento.ts"
-        },
-        {
-          "name": "search-smoke",
-          "command": "npm run test:search-smoke"
-        },
-        {
-          "name": "production-a11y",
-          "command": "PF_BASE_URL=https://puxaficha.com.br npm run test:a11y"
-        }
-      ]
-    },
     "promotion": {
       "required": true,
       "mode": "explicit-vercel-promote",

@@ -177,6 +177,16 @@ export class GitHubAdapter {
     }
   }
 
+  async pathExistsAtRef(path, ref) {
+    try {
+      const payload = await this.request(`/repos/${this.repository}/contents/${encodePath(path)}?ref=${encodeURIComponent(ref)}`);
+      return payload?.type === 'file';
+    } catch (error) {
+      if (error instanceof HttpError && error.status === 404) return false;
+      throw error;
+    }
+  }
+
   async pullSnapshot(pr, config) {
     const [checks, files, context, manifest] = await Promise.all([
       this.checks(pr.head.sha),
@@ -187,6 +197,22 @@ export class GitHubAdapter {
         : Promise.resolve(null),
     ]);
     const labels = (pr.labels ?? []).map((label) => label.name);
+    const migrationPrefixes = (config.irreversibleChanges.migrationPathPatterns ?? [])
+      .map((pattern) => String(pattern).replace(/\*.*$/, ''))
+      .filter(Boolean);
+    const migrationTouched = files.some((file) => migrationPrefixes.some((prefix) => file.filename.startsWith(prefix)));
+    const manifestPaths = manifest
+      ? Object.values(manifest.databaseArtifacts ?? {}).flatMap((section) => [
+          section?.artifact,
+          ...(section?.artifacts ?? []),
+          section?.workflow,
+          ...(section?.workflows ?? []),
+        ]).filter(Boolean)
+      : [];
+    const manifestPathsVerified = !migrationTouched || Boolean(
+      manifestPaths.length > 0 &&
+      (await Promise.all(manifestPaths.map((path) => this.pathExistsAtRef(path, pr.head.sha)))).every(Boolean)
+    );
     const snapshot = {
       number: pr.number,
       nodeId: pr.node_id,
@@ -203,6 +229,7 @@ export class GitHubAdapter {
       files: files.map((file) => file.filename),
       queueContext: context,
       reversibilityManifest: manifest,
+      manifestPathsVerified,
     };
     if (labels.includes(config.labels.rollback)) snapshot.rollback = await this.rollbackFor(pr.number, config.labels.rollbackPr);
     return snapshot;
@@ -393,7 +420,7 @@ export class VercelAdapter {
 
   async deploymentForSha(sha, { target = 'production' } = {}) {
     if (!this.token || !this.projectId) return null;
-    const query = new URLSearchParams({ projectId: this.projectId, target, limit: '100' });
+    const query = new URLSearchParams({ projectId: this.projectId, target, sha, limit: '100' });
     if (this.teamId) query.set('teamId', this.teamId);
     const response = await this.fetch(`${this.apiUrl}/v6/deployments?${query}`, {
       headers: { Authorization: `Bearer ${this.token}` },

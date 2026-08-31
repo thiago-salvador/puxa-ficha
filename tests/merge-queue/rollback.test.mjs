@@ -94,6 +94,25 @@ test('deployment rollback in progress keeps the release slot locked', () => {
   assert.equal(result.queue.find((item) => item.number === 44).disposition, 'WAIT');
 });
 
+test('rollback evidence from a divergent SHA becomes a critical locked incident', () => {
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha: 'failed-merge',
+      postMergeChecks: greenChecks('failed-merge', ['CI', 'Ledger']),
+      queueContext: { previousMainSha: 'trusted-sha', previousDeploymentId: 'dep-previous' },
+    })],
+    main: { sha: 'failed-merge', checks: greenChecks('failed-merge', ['CI', 'Ledger']) },
+    production: {
+      ...greenProduction('failed-merge'),
+      rollback: { sha: 'unexpected-sha', status: 'pending', deploymentId: 'dep-previous' },
+    },
+  };
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'INCIDENT_CRITICAL');
+  assert.equal(result.reason, 'deployment-rollback-sha-mismatch');
+});
+
 test('verified deployment rollback becomes a locked incident', () => {
   const snapshot = {
     prs: [pr(43, {

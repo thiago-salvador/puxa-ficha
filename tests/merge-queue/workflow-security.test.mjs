@@ -31,7 +31,7 @@ test('runtime smoke privado fica no watchdog e não amplia privilégios do relea
     'utf8',
   );
   assert.match(route, /process\.env\.CRON_SECRET/);
-  assert.equal(config.production.smokes.private, undefined);
+  assert.equal(config.production.smokes, undefined);
   assert.ok(!config.secrets.required.includes('CRON_SECRET'));
   assert.doesNotMatch(workflow, /CRON_SECRET:\s*\$\{\{\s*secrets\.CRON_SECRET\s*\}\}/);
   assert.doesNotMatch(workflow, /PF_RUNTIME_SMOKE_SECRET/);

@@ -38,6 +38,14 @@ test('successful deployment from another SHA is not evidence', () => {
   assert.equal(result.decision, 'VERIFY_STAGE');
 });
 
+test('same SHA with an invalid staged deployment identity cannot release', () => {
+  const snapshot = postSnapshot();
+  snapshot.production.stagedDeployment.id = '';
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'ROLLBACK_DEPLOYMENT');
+  assert.equal(result.evidence.signals.stagedDeployment.reason, 'staged-deployment-identity-invalid');
+});
+
 test('failed post-merge check locks an incident before promotion', () => {
   const snapshot = postSnapshot();
   snapshot.prs[0].postMergeChecks = [
