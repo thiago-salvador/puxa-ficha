@@ -61,7 +61,8 @@
       "ano": 2026,
       "sq": "10002533539",
       "estado": "nao_coletado",
-      "ausencia_persistida_sem_evidencia": true,
+      "ausencia_persistida_sem_evidencia": false,
+      "ausencia_removida_em_migration": "20260831215407",
       "identidade": {
         "nome": "FRANCISCO DAS CHAGAS CONCEICAO DA SILVA",
         "nome_urna": "DR.LUISINHO",
@@ -82,7 +83,8 @@
       "ano": 2026,
       "sq": "100002534191",
       "estado": "nao_coletado",
-      "ausencia_persistida_sem_evidencia": true,
+      "ausencia_persistida_sem_evidencia": false,
+      "ausencia_removida_em_migration": "20260810093000",
       "identidade": {
         "nome": "LUCIANA COSTA CORREA",
         "nome_urna": "PRETA LU",
@@ -95,6 +97,60 @@
       "resultado_bens": {
         "n_bens": 0,
         "valor_total": null
+      }
+    },
+    {
+      "acao": "substituir",
+      "slug": "joao-campos",
+      "ano": 2026,
+      "sq": "170002537230",
+      "estado": "lacuna_com_dados_tse",
+      "valor_total": 2892723.46,
+      "n_bens": 5,
+      "bens_aplicados": [
+        {"tipo": "OUTROS BENS E DIREITOS", "descricao": "OUTROS BENS E DIREITOS", "valor": 40796.8},
+        {"tipo": "Outras aplicações e Investimentos", "descricao": "APLICAÇÕES E INVESTIMENTOS", "valor": 17413.52},
+        {"tipo": "Outras aplicações e Investimentos", "descricao": "APLICAÇÕES E INVESTIMENTOS", "valor": 449921.41},
+        {"tipo": "Outras aplicações e Investimentos", "descricao": "APLICAÇÕES E INVESTIMENTOS", "valor": 2284591.73},
+        {"tipo": "Quotas ou quinhões de capital", "descricao": "QUOTAS EM EMPRESA", "valor": 100000}
+      ],
+      "aplicado_em_migration": "20260810093000",
+      "resultado_bens": {
+        "arquivo": "bem_candidato_2026_PE.csv",
+        "pacote_sha256": "21a7f4bf799f7784e63c13a152f39bcc554239fa24c11a043cdaf572a944f65c",
+        "n_bens": 5,
+        "valor_total": 2892723.46
+      }
+    },
+    {
+      "acao": "substituir",
+      "slug": "elizeu-aguiar",
+      "ano": 2026,
+      "sq_anterior": "180002533958",
+      "sq": "180002549920",
+      "estado": "lacuna_com_dados_tse",
+      "valor_total": 1592808,
+      "n_bens": 3,
+      "bens_aplicados": [
+        {"tipo": "Terreno", "descricao": "UM TERRENO", "valor": 40000},
+        {"tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.", "descricao": "VEÍCULO TOYOTA COROLLA", "valor": 802808},
+        {"tipo": "Casa", "descricao": "UMA CASA RESIDENCIAL", "valor": 750000}
+      ],
+      "identidade": {
+        "nome": "ELIZEU MORAIS DE AGUIAR",
+        "nome_urna": "ELIZEU AGUIAR",
+        "uf": "PI",
+        "cargo": "GOVERNADOR",
+        "arquivo": "consulta_cand_2026_PI.csv",
+        "pacote_sha256": "c96b5854919d5a220a4142e59d80113727ec47a8f3aa8bbdf1065440a4eb8d0f",
+        "sq_anterior_ocorrencias": 0,
+        "sq_atual_ocorrencias": 1
+      },
+      "resultado_bens": {
+        "arquivo": "bem_candidato_2026_PI.csv",
+        "pacote_sha256": "21a7f4bf799f7784e63c13a152f39bcc554239fa24c11a043cdaf572a944f65c",
+        "n_bens": 3,
+        "valor_total": 1592808
       }
     }
   ]

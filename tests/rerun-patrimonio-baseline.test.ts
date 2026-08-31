@@ -100,7 +100,7 @@ describe("validação do manifesto 2026 (fail-closed)", () => {
     assert.throws(() => validarManifesto2026(adulterado), /esperadas exatamente/)
   })
 
-  it("delta preserva SQ ao substituir e nao aceita adicionar duplicata", () => {
+  it("delta só troca SQ com predecessor explícito e não aceita adicionar duplicata", () => {
     const base = celulasReais()
     assert.throws(
       () =>
@@ -115,6 +115,29 @@ describe("validação do manifesto 2026 (fail-closed)", () => {
         ]),
       /tentou trocar SQ/,
     )
+    const baseAntesDaTroca = base.map((celula) =>
+      celula.slug === "elizeu-aguiar"
+        ? { ...celula, sq: "180002533958", bens_aplicados: undefined }
+        : celula,
+    )
+    const substituido = aplicarDeltaManifesto2026(baseAntesDaTroca, [
+      {
+        acao: "substituir",
+        slug: "elizeu-aguiar",
+        ano: 2026,
+        sq_anterior: "180002533958",
+        sq: "180002549920",
+        estado: "lacuna_com_dados_tse",
+        valor_total: 1592808,
+        n_bens: 3,
+        bens_aplicados: [
+          { tipo: "Terreno", descricao: "UM TERRENO", valor: 40000 },
+          { tipo: "Veículo", descricao: "VEÍCULO TOYOTA COROLLA", valor: 802808 },
+          { tipo: "Casa", descricao: "UMA CASA RESIDENCIAL", valor: 750000 },
+        ],
+      },
+    ])
+    assert.equal(substituido.find((c) => c.slug === "elizeu-aguiar")?.sq, "180002549920")
     assert.throws(
       () =>
         aplicarDeltaManifesto2026(base, [
@@ -169,10 +192,10 @@ describe("comparação por composição normalizada", () => {
   })
 })
 
-describe("baseline extraído da migration aplicada em 07/08", () => {
+describe("baseline consolidado das migrations aplicadas", () => {
   it("a migration real produz exatamente as lacunas congeladas, com bens não vazios", () => {
-    const baseline = carregarBaselineAplicado()
-    assert.equal(baseline.size, CARDINALIDADE_2026.lacunas)
+    const baseline = carregarBaselineAplicado(process.cwd(), celulasReais())
+    assert.ok(baseline.size >= CARDINALIDADE_2026.lacunas)
     for (const [slug, aplicado] of baseline) {
       assert.ok(aplicado.bens.length > 0, `${slug} sem bens no baseline`)
       const soma = Math.round(aplicado.bens.reduce((a, b) => a + b.valor, 0) * 100) / 100
@@ -183,13 +206,21 @@ describe("baseline extraído da migration aplicada em 07/08", () => {
     }
   })
 
-  it("os slugs da migration são exatamente os slugs de lacuna do manifesto", () => {
-    const baseline = carregarBaselineAplicado()
+  it("o baseline consolidado fica restrito ao manifesto e cobre todas as lacunas", () => {
+    const baseline = carregarBaselineAplicado(process.cwd(), celulasReais())
+    const slugsManifesto = new Set(celulasReais().map((c) => c.slug))
     const lacunasManifesto = celulasReais()
       .filter((c) => c.estado === "lacuna_com_dados_tse")
       .map((c) => c.slug)
-      .sort()
-    assert.deepEqual([...baseline.keys()].sort(), lacunasManifesto)
+    assert.equal([...baseline.keys()].every((slug) => slugsManifesto.has(slug)), true)
+    assert.equal(lacunasManifesto.every((slug) => baseline.has(slug)), true)
+  })
+
+  it("sobrepõe Elizeu pelo SQ e composição corrigidos em 31/08", () => {
+    const aplicado = carregarBaselineAplicado(process.cwd(), celulasReais()).get("elizeu-aguiar")
+    assert.equal(aplicado?.valor_total, 1592808)
+    assert.equal(aplicado?.bens.length, 3)
+    assert.equal(aplicado?.bens.find((bem) => bem.descricao === "VEÍCULO TOYOTA COROLLA")?.valor, 802808)
   })
 
   it("bloco sem SELECT parseável derruba, em vez de virar baseline parcial", () => {

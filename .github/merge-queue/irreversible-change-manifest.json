@@ -9,21 +9,24 @@
         "scripts/audit/apply-issue-138-production.sh",
         "scripts/audit/apply-profissao-qid-production.sh",
         "scripts/audit/apply-jhc-artigo-17-production.sh",
-        "scripts/audit/apply-destaques-freshness-reconciliation-production.sh"
+        "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
+        "scripts/audit/apply-elizeu-patrimonio-sq-production.sh"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
         ".github/workflows/apply-issue-138-production.yml",
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
-        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml"
       ],
       "checks": [
         "roster-30000-30001-30002-ledger-readback-rollback-coordination",
         "ddl-backfill-ledger-idempotency-hashes",
         "profissao-qid-63-row-readback-receipt",
         "jhc-artigo-17-exact-row-readback-receipt",
-        "destaques-freshness-154-pair-readback-receipt"
+        "destaques-freshness-154-pair-readback-receipt",
+        "elizeu-patrimonio-sq-exact-row-ledger-readback"
       ]
     },
     "readback": {
@@ -34,21 +37,25 @@
         "supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql",
         "supabase/readback/20260830120000_backfill_profissao_declarada_qid_wikidata.readback.sql",
         "supabase/readback/20260830143500_jhc_voto_artigo_17.readback.sql",
-        "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql"
+        "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql",
+        "supabase/readback/20260831215407_corrigir_elizeu_patrimonio_sq.readback.sql",
+        "supabase/readback/20260831215407_corrigir_elizeu_patrimonio_sq.rollback.readback.sql"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
         ".github/workflows/apply-issue-138-production.yml",
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
-        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml"
       ],
       "checks": [
         "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
         "exact-senate-and-camara-payload-readback",
         "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
         "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
-        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks"
+        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
+        "elizeu-patrimonio-sq-forward-rollback-and-receipt-readbacks"
       ]
     },
     "rollback": {
@@ -57,14 +64,16 @@
         "scripts/audit/rollback-issue-138-production.sh",
         "scripts/audit/rollback-profissao-qid-production.sh",
         "scripts/audit/rollback-jhc-artigo-17-production.sh",
-        "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh"
+        "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
+        "scripts/audit/rollback-elizeu-patrimonio-sq-production.sh"
       ],
       "workflows": [
         ".github/workflows/rollback-candidate-roster-integrity-production.yml",
         ".github/workflows/rollback-issue-138-production.yml",
         ".github/workflows/rollback-profissao-qid-production.yml",
         ".github/workflows/rollback-jhc-artigo-17-production.yml",
-        ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/rollback-elizeu-patrimonio-sq-production.yml"
       ],
       "checks": [
         "rollback-readback-preserves-schema"
@@ -126,6 +135,15 @@
         "apply_workflow": ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
         "rollback_artifact": "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
         "rollback_workflow": ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
+      },
+      {
+        "name": "elizeu-patrimonio-sq",
+        "predecessor": "20260830151500",
+        "versions": ["20260831215407"],
+        "apply_artifact": "scripts/audit/apply-elizeu-patrimonio-sq-production.sh",
+        "apply_workflow": ".github/workflows/apply-elizeu-patrimonio-sq-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-elizeu-patrimonio-sq-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-elizeu-patrimonio-sq-production.yml"
       }
     ],
     "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
@@ -155,6 +173,8 @@
       "profissao-qid-63-row-readback-receipt",
       "jhc-artigo-17-exact-row-readback-receipt",
       "destaques-freshness-154-pair-readback-receipt",
+      "elizeu-patrimonio-sq-exact-row-ledger-readback",
+      "elizeu-patrimonio-sq-forward-rollback-and-receipt-readbacks",
       "rollback-readback-preserves-schema"
     ]
   }

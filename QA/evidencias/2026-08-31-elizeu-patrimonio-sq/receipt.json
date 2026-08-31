@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "consultado_em": "2026-08-31T22:05:43Z",
+  "candidato": {
+    "slug": "elizeu-aguiar",
+    "nome_completo": "ELIZEU MORAIS DE AGUIAR",
+    "nome_urna": "ELIZEU AGUIAR",
+    "uf": "PI",
+    "cargo": "GOVERNADOR",
+    "sq_anterior": "180002533958",
+    "sq_atual": "180002549920"
+  },
+  "consulta_cand_2026": {
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+    "sha256": "c96b5854919d5a220a4142e59d80113727ec47a8f3aa8bbdf1065440a4eb8d0f",
+    "csv_gerado_em": "31/08/2026 12:30:43",
+    "sq_anterior_ocorrencias_pi": 0,
+    "sq_atual_ocorrencias_pi": 1
+  },
+  "bem_candidato_2026": {
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2026.zip",
+    "sha256": "21a7f4bf799f7784e63c13a152f39bcc554239fa24c11a043cdaf572a944f65c",
+    "csv_gerado_em": "31/08/2026 12:31:08",
+    "sq_anterior_ocorrencias_pi": 0,
+    "sq_atual_ocorrencias_pi": 3,
+    "valor_total": 1592808,
+    "bens": [
+      {"tipo": "Terreno", "descricao": "UM TERRENO", "valor": 40000},
+      {"tipo": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.", "descricao": "VEÍCULO TOYOTA COROLLA", "valor": 802808},
+      {"tipo": "Casa", "descricao": "UMA CASA RESIDENCIAL", "valor": 750000}
+    ]
+  },
+  "producao_antes": {
+    "candidato_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+    "sq_candidato_2026": null,
+    "patrimonio_2026": 872808,
+    "n_bens": 3,
+    "fonte_sq": "180002533958",
+    "chapa_confirmada_sq": "180002549920",
+    "dr_luisinho_ausencia_sem_evidencia": {
+      "id": "07f80302-9048-49f7-9b13-5a992f48e6c0",
+      "sq": "10002533539",
+      "estado": "persistida",
+      "motivo_remocao": "zero linhas sem coluna ST_DECLARAR_BENS nao prova ausencia oficial"
+    }
+  }
+}
