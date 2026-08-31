@@ -114,6 +114,29 @@ test('missing rollback check stays null instead of inventing pending recovery ev
   assert.equal(result.production.rollback, null);
 });
 
+test('skipped conditional rollback job stays null instead of becoming a critical failure', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, { labels: ['active', 'post-merge'], mergeSha, queueContext: { previousMainSha: previousSha } })],
+    main: {
+      sha: mergeSha,
+      checks: [{ name: 'Production rollback recovery', sha: mergeSha, conclusion: 'skipped' }],
+    },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => null,
+  });
+  assert.equal(result.production.rollback, null);
+});
+
 test('canonical-domain lookup failure degrades to missing evidence and remains fail-closed', async () => {
   const mergeSha = 'a'.repeat(40);
   const config = liveConfig();
