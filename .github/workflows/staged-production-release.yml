@@ -56,6 +56,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         shell: bash
         run: |
           set -euo pipefail
@@ -73,6 +74,7 @@ jobs:
           test -n "$VERCEL_TOKEN"
           test -n "$VERCEL_TEAM_ID"
           test -n "$VERCEL_PROJECT_ID"
+          test -n "$VERCEL_AUTOMATION_BYPASS_SECRET"
 
           main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
           test "$main_sha" = "$EXPECTED_SHA"
@@ -158,6 +160,7 @@ jobs:
         env:
           PF_BASE_URL: ${{ steps.deployment.outputs.url }}
           PF_EXPECTED_DEPLOY_SHA: ${{ env.EXPECTED_SHA }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: npm run release:smoke
 
       - name: Publish staged verification result

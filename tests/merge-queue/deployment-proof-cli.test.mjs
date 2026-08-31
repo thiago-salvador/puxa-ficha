@@ -24,6 +24,7 @@ test('proveDeployment accepts only the exact deployment-info tuple', async () =>
   const result = await proveDeployment({
     baseUrl: 'https://puxa-ficha-a1b2c3.vercel.app',
     expectedSha: SHA,
+    bypassSecret: 'automation-bypass-secret',
     fetchImpl: async (url, init) => {
       seen.push([String(url), init]);
       return response({ ok: true, environment: 'production', commitRef: 'main', commitSha: SHA });
@@ -32,6 +33,8 @@ test('proveDeployment accepts only the exact deployment-info tuple', async () =>
   assert.deepEqual(result, { ok: true, sha: SHA, ref: 'main', environment: 'production' });
   assert.equal(seen[0][0], 'https://puxa-ficha-a1b2c3.vercel.app/api/deployment-info');
   assert.equal(seen[0][1].redirect, 'error');
+  assert.equal(seen[0][1].headers['x-vercel-protection-bypass'], 'automation-bypass-secret');
+  assert.equal(seen[0][1].headers['x-vercel-set-bypass-cookie'], undefined);
 });
 
 for (const [name, reply, pattern] of [

@@ -73,6 +73,8 @@ test('stage proves the exact production-target deployment before Vercel promotio
   assert.match(workflow, /test "\$staged_url" != "https:\/\/puxaficha\.com\.br"/);
   assert.match(workflow, /PF_BASE_URL: \$\{\{ steps\.deployment\.outputs\.url \}\}/);
   assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.EXPECTED_SHA \}\}/);
+  assert.match(workflow, /VERCEL_AUTOMATION_BYPASS_SECRET: \$\{\{ secrets\.VERCEL_AUTOMATION_BYPASS_SECRET \}\}/);
+  assert.match(workflow, /test -n "\$VERCEL_AUTOMATION_BYPASS_SECRET"/);
   assert.match(workflow, /npm run release:smoke/);
   assert.match(workflow, /printf 'id=%s\\n'.*GITHUB_OUTPUT/);
   const findDeployment = parsed.jobs.staged_release.steps.find(({ name }) => name === 'Find exact staged production deployment');

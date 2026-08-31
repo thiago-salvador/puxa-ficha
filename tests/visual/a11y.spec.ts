@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "playwright/test"
+import { establishAutomationBypass } from "../../scripts/vercel-automation-bypass"
 
 type RouteA11y = {
   name: string
@@ -23,6 +24,12 @@ const ROUTES: RouteA11y[] = [
   { name: "embed-home", path: "/embed" },
   { name: "embed-candidate", path: "/embed/lula" },
 ]
+
+test.beforeEach(async ({ context, baseURL }) => {
+  if (baseURL) {
+    await establishAutomationBypass(context, baseURL, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
+  }
+})
 
 function formatViolations(violations: Awaited<ReturnType<AxeBuilder["analyze"]>>["violations"]) {
   return violations
