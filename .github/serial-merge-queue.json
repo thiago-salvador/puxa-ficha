@@ -39,7 +39,7 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
+        "Cobertura (bloqueante)",
         "CodeQL",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
@@ -57,8 +57,7 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
         "CodeQL",
         "Analyze (python)",
@@ -74,8 +73,7 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
         "CodeQL",
         "Analyze (python)",

@@ -79,6 +79,8 @@ async function executeMutation(mutation, config, adapters) {
         severity: mutation.severity,
         assignee: config.notifications?.assignee,
       });
+    case 'UPDATE_BRANCH':
+      return adapters.github.updateBranch(mutation.pr, mutation.expectedHeadSha);
     case 'MERGE_PR': {
       await adapters.github.assertMergePreconditions(
         mutation.pr,
