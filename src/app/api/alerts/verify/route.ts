@@ -19,9 +19,23 @@ import {
   isRequestBodyTooLargeError,
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
+import {
+  createFixedWindowIpRateLimiter,
+  rateLimitExceededResponse,
+} from "@/lib/request-rate-limit"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
+
+// Mesmo motivo das irmas (ver src/app/api/alerts/session/route.ts): sem teto, um
+// POST com par token/manageToken inventado custava dois SELECT service_role em
+// alert_subscribers e ocupava slot do semaforo do Supabase. O verify era a unica
+// rota de mutacao de alertas que tinha ficado sem o guard.
+const verifyRateLimiter = createFixedWindowIpRateLimiter({
+  namespace: "alerts-verify",
+  max: 120,
+  windowMs: 60_000,
+})
 
 /**
  * Resposta externa uniformizada para qualquer cenário "link não vale agora":
@@ -53,6 +67,7 @@ const VERIFY_ERROR_REASONS = {
   invalidPayload: "payload_invalido",
   invalidVerification: "link_invalido_ou_expirado",
   crossSiteBlocked: "origem_bloqueada",
+  rateLimited: "muitas_tentativas",
   updateFailed: "falha_ao_confirmar",
 } as const
 
@@ -93,6 +108,17 @@ export function createVerifyHandler(deps: VerifyDeps = defaultVerifyDeps) {
     if (csrfResponse) {
       return applyAlertsNoStoreHeaders(
         await withErrorReason(csrfResponse, VERIFY_ERROR_REASONS.crossSiteBlocked),
+      )
+    }
+
+    const decision = verifyRateLimiter.check(req.headers)
+    if (!decision.allowed) {
+      deps.logAlertsApiExit("verify", 429, "rate_limited")
+      return applyAlertsNoStoreHeaders(
+        await withErrorReason(
+          rateLimitExceededResponse(decision),
+          VERIFY_ERROR_REASONS.rateLimited,
+        ),
       )
     }
 

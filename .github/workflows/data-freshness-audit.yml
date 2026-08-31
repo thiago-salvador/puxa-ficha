@@ -50,6 +50,10 @@ jobs:
         id: audit
         continue-on-error: true
         run: npm run audit:data-freshness -- --strict --published=reports/data-freshness/published.json
+      - name: Monitorar julgamentos e arquivos dependentes do TSE
+        id: tse_monitors
+        continue-on-error: true
+        run: npm run audit:data-freshness:tse-dependent
       - name: Publicar resumo no run
         if: always()
         run: |
@@ -58,6 +62,10 @@ jobs:
           else
             echo "## Auditoria sem resumo" >> "$GITHUB_STEP_SUMMARY"
             echo "O snapshot ou o processo falhou antes de gerar os artefatos." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ -f reports/data-freshness/tse-dependent-monitors/summary.md ]; then
+            cat reports/data-freshness/tse-dependent-monitors/summary.md >> "$GITHUB_STEP_SUMMARY"
+            cat reports/data-freshness/tse-dependent-monitors/summary.md >> reports/data-freshness/summary.md
           fi
       - name: Preservar evidências
         if: always()
@@ -68,7 +76,7 @@ jobs:
           if-no-files-found: error
           retention-days: 30
       - name: Bloquear quando houver erro de fonte ou revisão pendente
-        if: always() && steps.audit.outcome != 'success'
+        if: always() && (steps.audit.outcome != 'success' || steps.tse_monitors.outcome != 'success')
         run: |
           set -euo pipefail
           echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2

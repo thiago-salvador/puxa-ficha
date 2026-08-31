@@ -152,7 +152,7 @@ test("runner do judge Claude usa modo mínimo e devolve structured_output", asyn
   const fakeCli = fixturePath("pf-fake-claude-judge.mjs")
   const script = `#!/usr/bin/env node
 const args=process.argv.slice(2)
-for (const esperado of ['--safe-mode','--no-session-persistence','--json-schema','sonnet']) {
+for (const esperado of ['--safe-mode','--no-session-persistence','--json-schema','claude-sonnet-5']) {
   if (!args.includes(esperado)) { console.error('arg ausente: '+esperado); process.exit(2) }
 }
 const schema=JSON.parse(args[args.indexOf('--json-schema')+1])
@@ -206,6 +206,30 @@ process.exit(7)
   }
 })
 
+test("runners preservam o exit code quando o modelo fecha stdin antes de consumir o envelope", async () => {
+  const fakeCli = fixturePath("pf-fake-model-exit-stdin-fechado.mjs")
+  await writeFile(fakeCli, `#!/usr/bin/env node
+process.stdin.destroy()
+process.stderr.write('modelo encerrou antes do envelope')
+process.exit(7)
+`)
+  await chmod(fakeCli, 0o755)
+  const envelopeGrande = JSON.stringify({
+    ...JSON.parse(ENVELOPE),
+    input: { payload: "x".repeat(2_000_000) },
+  })
+  for (const [runner, env] of [
+    [RUNNER_QWEN, { PF_QWEN_CLI: fakeCli, PF_QWEN_TIMEOUT_MS: "15000" }],
+    [RUNNER_CODEX_LUNA, { PF_CODEX_CLI: fakeCli, PF_CODEX_TIMEOUT_MS: "15000" }],
+    [RUNNER_CLAUDE, { PF_CLAUDE_CLI: fakeCli, PF_CLAUDE_TIMEOUT_MS: "15000" }],
+  ] as const) {
+    const resultado = await rodarRunner(runner, env, envelopeGrande)
+    assert.notEqual(resultado.code, 0, `runner ${runner} deveria falhar com exit 7`)
+    assert.match(resultado.stderr, /saiu com 7/u)
+    assert.doesNotMatch(resultado.stderr, /Unhandled 'error' event|write EPIPE/u)
+  }
+})
+
 test("runner Claude inclui diagnóstico estruturado sanitizado quando CLI sai com erro", async () => {
   const fakeCli = fixturePath("pf-fake-claude-judge-erro-estruturado.mjs")
   await writeFile(fakeCli, `#!/usr/bin/env node
@@ -250,8 +274,55 @@ test("runners Qwen e Codex encerram por timeout com erro controlado", async () =
 test("opencode runners falham fechado com envelope invalido (sem chamada ao go)", async () => {
   const base = DIR_RUNNERS
   for (const runner of ["run-generator-opencode-luna.mjs", "run-judge-opencode-deepseek.mjs", "run-generator-opencode-glm.mjs"]) {
-    const resultado = await rodarRunner(base + runner, {}, '{"foo":1}')
+    const resultado = await rodarRunner(base + runner, { PF_OPENCODE_GO: "/bin/false" }, '{"foo":1}')
     assert.notEqual(resultado.code, 0)
+    assert.match(resultado.stderr, /envelope invalido/u)
+  }
+})
+
+test("runners opencode abortam sem PF_OPENCODE_GO, sem chamar modelo", async () => {
+  // O default era "/Users/thiagosalvador/.codex/skills/opencode/scripts/opencode-go.mjs",
+  // caminho pessoal de uma maquina especifica commitado num repositorio publico.
+  // Em qualquer outro ambiente ele falhava so depois de montar o prompt, ou pior,
+  // executava o que estivesse naquele caminho. Env vazia cobre tambem a ausente.
+  for (const runner of [RUNNER_LUNA, RUNNER_DEEPSEEK, RUNNER_GLM]) {
+    const resultado = await rodarRunner(runner, { PF_OPENCODE_GO: "" }, ENVELOPE)
+    assert.notEqual(resultado.code, 0, `${runner} deveria abortar sem PF_OPENCODE_GO`)
+    assert.match(
+      resultado.stderr,
+      /PF_OPENCODE_GO obrigatorio para runners OpenCode/u,
+      `${runner} deveria dizer qual env falta; stderr: ${resultado.stderr}`,
+    )
+    assert.equal(resultado.stdout.trim(), "", "nao pode materializar saida de modelo")
+  }
+})
+
+test("PF_OPENCODE_GO ausente vence erro de envelope", async () => {
+  const resultado = await rodarRunner(RUNNER_LUNA, { PF_OPENCODE_GO: "" }, '{"foo":1}')
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /PF_OPENCODE_GO obrigatorio para runners OpenCode/u)
+  assert.doesNotMatch(resultado.stderr, /envelope invalido/u)
+})
+
+test("nenhum runner carrega caminho absoluto pessoal como default", async () => {
+  const { readFile, readdir } = await import("node:fs/promises")
+  const arquivos = (await readdir(DIR_RUNNERS)).filter((f) => f.endsWith(".mjs"))
+  const libs = ["../scripts/lib/programas-governo-opencode-runner.mjs"]
+  const alvos = [
+    ...arquivos.map((f) => DIR_RUNNERS + f),
+    ...libs.map((l) => fileURLToPath(new URL(l, import.meta.url))),
+  ]
+  for (const alvo of alvos) {
+    const src = await readFile(alvo, "utf-8")
+    const linhas = src
+      .split("\n")
+      .filter((linha) => !linha.trim().startsWith("//"))
+      .join("\n")
+    assert.doesNotMatch(
+      linhas,
+      /\/Users\/[a-z]/iu,
+      `${alvo} tem caminho absoluto de maquina pessoal fora de comentario`,
+    )
   }
 })
 

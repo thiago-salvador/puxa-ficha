@@ -307,6 +307,20 @@ export function lotesSolicitados(argv: string[]): number[] {
   return Array.from({ length: fim - inicio + 1 }, (_, indice) => inicio + indice)
 }
 
+export function slugsSolicitados(argv: string[]): string[] | null {
+  const opcoes = flags(argv)
+  const raw = opcoes.get("slugs")
+  if (!raw) return null
+  if (opcoes.has("lote") || opcoes.has("lotes")) {
+    throw new Error("--slugs não pode ser combinado com --lote ou --lotes")
+  }
+  const slugs = [...new Set(raw.split(",").map((slug) => slug.trim()).filter(Boolean))].sort()
+  if (slugs.length === 0 || slugs.length > TAMANHO_LOTE) {
+    throw new Error(`--slugs exige entre 1 e ${TAMANHO_LOTE} fichas`)
+  }
+  return slugs
+}
+
 export function instituicoesAtivas(inventario: InventarioTribunais[]): string[] {
   return [...new Set(
     inventario.flatMap((item) => item.instituicoes)
@@ -1001,7 +1015,8 @@ export async function gravarCheckpointConcorrente(
 async function main(): Promise<void> {
   const argv = process.argv.slice(2)
   const opcoes = flags(argv)
-  const numeros = lotesSolicitados(argv)
+  const targetSlugs = slugsSolicitados(argv)
+  const numeros = targetSlugs ? [1] : lotesSolicitados(argv)
   const snapshotPath = resolve(opcoes.get("snapshot") ?? "/tmp/2026-08-05-processos-inicial-snapshot.json")
   const evidencePath = resolve(opcoes.get("evidence") ?? "~/.disposable-html/2026-08-05-puxa-ficha-processos-curadoria.evidence.json".replace("~", process.env.HOME ?? ""))
   const cache = resolve(opcoes.get("cache") ?? "/tmp/puxa-ficha-processos-curadoria-cache")
@@ -1010,12 +1025,18 @@ async function main(): Promise<void> {
     async (selecionados) => {
       const snapshot = JSON.parse(readFileSync(snapshotPath, "utf8")) as SnapshotCandidato[]
       const iniciais = ordenar(snapshot.filter((c) => c.processos === 0))
-      if (iniciais.length !== 185) throw new Error(`coorte inicial inesperada: ${iniciais.length}`)
-      const lotes = new Map(selecionados.map((numero) => {
-        const lote = iniciais.slice((numero - 1) * TAMANHO_LOTE, numero * TAMANHO_LOTE)
-        if (lote.length === 0) throw new Error(`lote ${numero} vazio`)
-        return [numero, lote]
-      }))
+      if (!targetSlugs && iniciais.length !== 185) throw new Error(`coorte inicial inesperada: ${iniciais.length}`)
+      const initialBySlug = new Map(iniciais.map((candidate) => [candidate.slug, candidate]))
+      const missingTargets = targetSlugs?.filter((slug) => !initialBySlug.has(slug)) ?? []
+      if (missingTargets.length > 0) throw new Error(`alvos ausentes ou já materializados: ${missingTargets.join(",")}`)
+      const scopedInitials = targetSlugs ? targetSlugs.map((slug) => initialBySlug.get(slug)!) : iniciais
+      const lotes = targetSlugs
+        ? new Map([[1, scopedInitials]])
+        : new Map(selecionados.map((numero) => {
+            const lote = iniciais.slice((numero - 1) * TAMANHO_LOTE, numero * TAMANHO_LOTE)
+            if (lote.length === 0) throw new Error(`lote ${numero} vazio`)
+            return [numero, lote]
+          }))
       const slugs = [...lotes.values()].flatMap((lote) => lote.map((c) => c.slug))
       const { data, error } = await supabase.from("candidatos")
         .select("id,slug,nome_completo,nome_urna,cargo_disputado,cargo_atual,estado,partido_sigla,biografia")
@@ -1032,7 +1053,7 @@ async function main(): Promise<void> {
         ? JSON.parse(readFileSync(evidencePath, "utf8")) as Evidencia
         : null
       const snapshotInicialEm = anterior?.snapshot_inicial_em ?? statSync(snapshotPath).mtime.toISOString()
-      return { iniciais, lotes, banco, seeds, identidadesTse, tribunais, datajudKey, anterior, snapshotInicialEm }
+      return { iniciais: scopedInitials, lotes, banco, seeds, identidadesTse, tribunais, datajudKey, anterior, snapshotInicialEm }
     },
     async (numero, contexto) => {
       const lote = contexto.lotes.get(numero)
@@ -1059,8 +1080,12 @@ async function main(): Promise<void> {
       const evidencia = await gravarCheckpointConcorrente(evidencePath, {
         lote: { numero, concluido_em: agora, slugs: lote.slugs, candidatos: lote.resultados },
         supabase_ref: "wskpzsobvqwhnbsdsmok",
-        base_commit: "022d3ed292b6f0918636c813cf5271e615999809",
-        branch: "codex/processos-curadoria-20260805",
+        base_commit: targetSlugs
+          ? execFileSync("git", ["rev-parse", "HEAD"], { encoding: "utf8" }).trim()
+          : "022d3ed292b6f0918636c813cf5271e615999809",
+        branch: targetSlugs
+          ? execFileSync("git", ["branch", "--show-current"], { encoding: "utf8" }).trim()
+          : "codex/processos-curadoria-20260805",
         snapshot_inicial_em: contexto.snapshotInicialEm,
         total_inicial: contexto.iniciais.length,
         candidatos_iniciais: contexto.iniciais.map((c) => c.slug),

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "laudicerio": {
+    "profile_slug": "laudicerio-aguiar",
+    "canonical_registration_sq": null,
+    "alert_message": "julgamento Laudicério: revisar canônica",
+    "registrations": [
+      {
+        "sq_candidato": "110002553937",
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002553937",
+        "expected_descricao_situacao": "Aguardando julgamento",
+        "expected_descricao_totalizacao": "Concorrendo"
+      },
+      {
+        "sq_candidato": "110002554073",
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002554073",
+        "expected_descricao_situacao": "Aguardando julgamento",
+        "expected_descricao_totalizacao": "Concorrendo"
+      }
+    ]
+  },
+  "program_control": {
+    "profile_slug": "jorginho-mello",
+    "sq_candidato": "240002537073",
+    "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002537073",
+    "expected_cod_tipo": "5"
+  },
+  "program_files": [
+    {
+      "profile_slug": "vera-lucia-ce",
+      "sq_candidato": "60002553922",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002553922"
+    },
+    {
+      "profile_slug": "ben-mendes",
+      "sq_candidato": "130002544411",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544411"
+    },
+    {
+      "profile_slug": "eduardo-paes",
+      "sq_candidato": "190002543380",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002543380"
+    },
+    {
+      "profile_slug": "garotinho",
+      "sq_candidato": "190002550196",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196"
+    },
+    {
+      "profile_slug": "policial-edjane",
+      "sq_candidato": "250002548080",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002548080"
+    }
+  ]
+}

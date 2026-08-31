@@ -1,0 +1,57 @@
+name: Recoletar proveniência de destaques-votações
+
+on:
+  schedule:
+    - cron: "17 12 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: destaques-votacoes-provenance
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    name: Dupla leitura oficial, sem escrita no banco
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      PF_DRY_RUN: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Primeira leitura
+        run: >-
+          node --import tsx scripts/audit/coletar-destaques-votacoes.ts
+          --out=reports/destaques-votacoes/run-a
+          --execution-id=destaques-votacoes:gh-${{ github.run_id }}-a
+      - name: Segunda leitura independente
+        run: |
+          sleep 5
+          node --import tsx scripts/audit/coletar-destaques-votacoes.ts \
+            --out=reports/destaques-votacoes/run-b \
+            --execution-id=destaques-votacoes:gh-${{ github.run_id }}-b
+      - name: Comparar hashes e contrato
+        run: >-
+          node --import tsx scripts/audit/verify-destaques-votacoes-provenance.ts
+          --run-a=reports/destaques-votacoes/run-a/manifest.json
+          --run-b=reports/destaques-votacoes/run-b/manifest.json
+          --out=reports/destaques-votacoes/double-read-receipt.json
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: destaques-votacoes-provenance-${{ github.run_id }}
+          path: reports/destaques-votacoes
+          if-no-files-found: error
+          retention-days: 30

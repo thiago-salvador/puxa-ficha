@@ -29,6 +29,33 @@
         "apply_workflow": ".github/workflows/apply-issue-138-production.yml",
         "rollback_artifact": "scripts/audit/rollback-issue-138-production.sh",
         "rollback_workflow": ".github/workflows/rollback-issue-138-production.yml"
+      },
+      {
+        "name": "profissao-qid-tse-2026",
+        "predecessor": "20260829100100",
+        "versions": ["20260830120000"],
+        "apply_artifact": "scripts/audit/apply-profissao-qid-production.sh",
+        "apply_workflow": ".github/workflows/apply-profissao-qid-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-profissao-qid-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-profissao-qid-production.yml"
+      },
+      {
+        "name": "jhc-artigo-17",
+        "predecessor": "20260830120000",
+        "versions": ["20260830143500"],
+        "apply_artifact": "scripts/audit/apply-jhc-artigo-17-production.sh",
+        "apply_workflow": ".github/workflows/apply-jhc-artigo-17-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-jhc-artigo-17-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-jhc-artigo-17-production.yml"
+      },
+      {
+        "name": "destaques-freshness-reconciliation",
+        "predecessor": "20260830143500",
+        "versions": ["20260830151500"],
+        "apply_artifact": "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
+        "apply_workflow": ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
       }
     ],
     "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
@@ -52,6 +79,9 @@
       "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
       "ddl-backfill-ledger-idempotency-hashes",
       "exact-senate-and-camara-payload-readback",
+      "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
+      "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
+      "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
       "rollback-readback-preserves-schema"
     ]
   }
