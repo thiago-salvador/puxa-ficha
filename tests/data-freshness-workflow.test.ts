@@ -69,6 +69,9 @@ test("snapshot força leitura e auditoria preserva quatro artefatos", () => {
   assert.match(workflow, /if:\s*always\(\)/);
   assert.match(workflow, /upload-artifact@[a-f0-9]{40}/);
   assert.match(workflow, /reports\/data-freshness\//);
+  assert.match(workflow, /audit:data-freshness:tse-dependent/);
+  assert.match(workflow, /steps\.tse_monitors\.outcome != 'success'/);
+  assert.match(workflow, /tse-dependent-monitors\/summary\.md/);
 });
 
 test("notificador mantém um incidente destacado sem publicar correção automática", () => {
