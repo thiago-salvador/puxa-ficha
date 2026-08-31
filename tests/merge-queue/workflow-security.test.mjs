@@ -84,6 +84,11 @@ test('queue contract matches current blocking checks and delegates public smoke 
   }
   assert.ok(!config.checks.postMerge.required.includes('Acessibilidade (produção)'));
   assert.ok(!config.checks.rollback.required.includes('Acessibilidade (produção)'));
+  for (const phase of ['postMerge', 'rollback']) {
+    assert.ok(!config.checks[phase].required.includes('CodeQL'));
+    assert.ok(config.checks[phase].required.includes('CodeQL analysis (javascript-typescript)'));
+    assert.ok(config.checks[phase].required.includes('CodeQL analysis (python)'));
+  }
   assert.deepEqual(config.production.stagedChecks.checks, ['Vercel - puxa-ficha: staged-release']);
 });
 

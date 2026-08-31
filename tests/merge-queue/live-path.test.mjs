@@ -532,6 +532,89 @@ test('GitHub checks keep only the newest rerun for each check name', async () =>
   }]);
 });
 
+test('GitHub CodeQL evidence comes from exact-SHA analyses for both languages', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    assert.match(url, /code-scanning\/analyses\?ref=refs%2Fheads%2Fmain/);
+    return {
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([
+        {
+          id: 3,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/3',
+        },
+        {
+          id: 2,
+          commit_sha: sha,
+          category: '/language:javascript-typescript',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/2',
+        },
+        {
+          id: 1,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T11:00:00Z',
+          error: 'old failed rerun',
+          url: 'https://api.github.test/analyses/1',
+        },
+        {
+          id: 4,
+          commit_sha: 'b'.repeat(40),
+          category: '/language:python',
+          created_at: '2026-08-31T13:00:00Z',
+          error: '',
+        },
+      ]),
+    };
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+  assert.deepEqual(await github.codeScanningChecks(sha, 'refs/heads/main'), [
+    {
+      name: 'CodeQL analysis (javascript-typescript)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/2',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+    {
+      name: 'CodeQL analysis (python)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/3',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+  ]);
+});
+
+test('GitHub CodeQL evidence fails closed on an exact-SHA analysis error', async () => {
+  const sha = 'a'.repeat(40);
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => ({
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([{
+        id: 1,
+        commit_sha: sha,
+        category: '/language:python',
+        created_at: '2026-08-31T12:00:00Z',
+        error: 'upload failed',
+      }]),
+    }),
+  });
+  assert.equal((await github.codeScanningChecks(sha, 'refs/heads/main'))[0].conclusion, 'failure');
+});
+
 test('GitHub branch update is pinned to the observed PR head', async () => {
   const calls = [];
   const github = new GitHubAdapter({
@@ -623,6 +706,7 @@ test('GitHub live snapshot refreshes per-PR mergeability instead of trusting the
     mergeable: pull.mergeable,
   });
   github.checks = async () => [];
+  github.codeScanningChecks = async () => [];
 
   const snapshot = await github.snapshot(liveConfig());
   assert.deepEqual(snapshot.prs, [{ number: 43, sync: 'behind', mergeable: true }]);
