@@ -143,6 +143,32 @@ export class GitHubAdapter {
     return [...latestRunsByName.values()].map(({ run }) => checkFromRun(run)).concat(statuses);
   }
 
+  async codeScanningChecks(sha, ref) {
+    const analyses = await this.paginated(
+      `/repos/${this.repository}/code-scanning/analyses?ref=${encodeURIComponent(ref)}&per_page=100`,
+    );
+    const latestByLanguage = new Map();
+    for (const analysis of analyses) {
+      if (analysis.commit_sha !== sha) continue;
+      const match = String(analysis.category ?? '').match(/^\/language:(javascript-typescript|python)$/);
+      if (!match) continue;
+      const language = match[1];
+      const observedAt = Date.parse(analysis.created_at ?? '') || Number(analysis.id ?? 0);
+      const current = latestByLanguage.get(language);
+      if (!current || observedAt > current.observedAt) {
+        latestByLanguage.set(language, { analysis, observedAt });
+      }
+    }
+    return [...latestByLanguage.entries()].map(([language, { analysis }]) => ({
+      name: `CodeQL analysis (${language})`,
+      sha,
+      status: 'completed',
+      conclusion: analysis.error ? 'failure' : 'success',
+      url: analysis.url ?? null,
+      createdAt: analysis.created_at ?? null,
+    })).sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   async queueContext(number, config) {
     const comments = await this.paginated(`/repos/${this.repository}/issues/${number}/comments?per_page=100`);
     for (const comment of comments.toReversed()) {
@@ -267,9 +293,13 @@ export class GitHubAdapter {
     }
     const prs = await Promise.all([...byNumber.values()].map((pr) => this.pullSnapshot(pr, config)));
     const mainSha = branch.commit.sha;
+    const [mainChecks, codeScanningChecks] = await Promise.all([
+      this.checks(mainSha),
+      this.codeScanningChecks(mainSha, `refs/heads/${config.defaultBranch}`),
+    ]);
     return {
       prs,
-      main: { sha: mainSha, checks: await this.checks(mainSha) },
+      main: { sha: mainSha, checks: [...mainChecks, ...codeScanningChecks] },
     };
   }
 

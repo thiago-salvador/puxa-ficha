@@ -59,7 +59,8 @@
         "Rotas e acessibilidade (build local)",
         "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
@@ -75,7 +76,8 @@
         "Rotas e acessibilidade (build local)",
         "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
