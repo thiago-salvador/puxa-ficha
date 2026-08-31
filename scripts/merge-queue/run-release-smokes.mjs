@@ -41,7 +41,7 @@ export async function runReleaseSmokes({
   const releaseEnv = {
     ...process.env,
     ...env,
-    PF_BASE_URL: validateReleaseBaseUrl(env.PF_BASE_URL),
+    PF_BASE_URL: validateReleaseBaseUrl(env.PF_BASE_URL ?? process.env.PF_BASE_URL),
   };
   if (!/^[0-9a-f]{40}$/.test(String(releaseEnv.PF_EXPECTED_DEPLOY_SHA ?? ''))) {
     throw new Error('PF_EXPECTED_DEPLOY_SHA deve ter 40 caracteres hexadecimais');
