@@ -262,6 +262,41 @@ jobs:
             "https://api.vercel.com/v10/projects/${VERCEL_PROJECT_ID}/promote/${CANDIDATE_DEPLOYMENT_ID}?teamId=${VERCEL_TEAM_ID}" \
             -d '{}' >/dev/null
 
+      - name: Wait for every production alias to complete promotion
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for _attempt in $(seq 1 60); do
+            if ! aliases="$(curl -fsS \
+              --connect-timeout 10 \
+              --max-time 30 \
+              -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+              "https://api.vercel.com/v1/projects/${VERCEL_PROJECT_ID}/promote/aliases?teamId=${VERCEL_TEAM_ID}&limit=100")"; then
+              sleep 5
+              continue
+            fi
+            if jq -e '
+              (.aliases | type == "array") and
+              (.aliases | length > 0) and
+              any(.aliases[]; .alias == "puxaficha.com.br" and .status == "completed") and
+              all(.aliases[]; .status == "completed")
+            ' <<<"$aliases" >/dev/null; then
+              exit 0
+            fi
+            if jq -e '
+              (.aliases | type == "array") and
+              any(.aliases[]; .status == "failed" or .status == "error")
+            ' <<<"$aliases" >/dev/null; then
+              exit 1
+            fi
+            sleep 5
+          done
+          exit 1
+
   public_closure:
     name: Production release closure
     needs: promote_candidate
