@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "enabled": false,
+  "enabled": true,
   "repository": "thiago-salvador/puxa-ficha",
   "defaultBranch": "main",
   "concurrency": {
