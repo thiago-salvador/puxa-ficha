@@ -53,6 +53,26 @@ function fixture(scenario) {
     const owner = pr(number, { labels: ['active', 'post-merge'], mergeSha: merge, postMergeChecks: greenChecks(merge, ['CI', 'Ledger']) });
     return evaluateSnapshot(base, { prs: [owner], main: { sha: merge }, production: prod }).decision;
   }
+  if (['stage-failure', 'await-promotion', 'public-failure', 'deployment-rollback-failure'].includes(scenario.kind)) {
+    const prod = greenProduction(merge);
+    if (scenario.kind === 'stage-failure') prod.stagedChecks.status = 'failure';
+    if (scenario.kind === 'await-promotion') {
+      prod.promotion.status = 'pending';
+      prod.publicReadback.status = 'pending';
+    }
+    if (scenario.kind === 'public-failure') prod.publicReadback.status = 'failure';
+    if (scenario.kind === 'deployment-rollback-failure') {
+      prod.publicReadback.status = 'failure';
+      prod.rollback = { sha: 'trusted-sha', status: 'failure', deploymentId: 'dep-previous' };
+    }
+    const owner = pr(number, {
+      labels: ['active', 'post-merge'],
+      mergeSha: merge,
+      queueContext: { previousMainSha: 'trusted-sha', previousDeploymentId: 'dep-previous' },
+      postMergeChecks: greenChecks(merge, ['CI', 'Ledger']),
+    });
+    return evaluateSnapshot(base, { prs: [owner], main: { sha: merge }, production: prod }).decision;
+  }
   if (scenario.kind === 'rollback-progress') {
     const owner = pr(number, { labels: ['active', 'rollback'], mergeSha: scenario.failedMerge, rollback: { status: 'in_progress' } });
     return evaluateSnapshot(base, { prs: [owner, pr(44)], main: { sha: 'main' } }).decision;

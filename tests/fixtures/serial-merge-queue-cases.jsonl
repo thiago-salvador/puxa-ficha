@@ -28,6 +28,10 @@
 {"id":"G28","origin":"COMPOSICAO S01 G05","scenario":{"kind":"blocked-head-later-green","headPr":47,"candidate":48},"expected":"BLOCK"}
 {"id":"G29","origin":"COMPOSICAO historico PR47 S01 G05","scenario":{"kind":"stale","pr":47,"head":"5e32fdc","old":"7974128"},"expected":"WAIT"}
 {"id":"G30","origin":"COMPOSICAO historico PR47 S01 G05","scenario":{"kind":"current-green-old-failed","pr":47,"head":"5e32fdc","old":"7974128"},"expected":"MERGE"}
-{"id":"G31","origin":"COMPOSICAO S08 S09","scenario":{"kind":"wrong-deploy-sha","merge":"5c85b3a","deploy":"ca2a0c8"},"expected":"VERIFY"}
+{"id":"G31","origin":"COMPOSICAO S08 S09","scenario":{"kind":"wrong-deploy-sha","merge":"5c85b3a","deploy":"ca2a0c8"},"expected":"VERIFY_STAGE"}
 {"id":"G32","origin":"COMPOSICAO S04 S06 S11","scenario":{"kind":"migration-recovery-missing-db","merge":"restore-sha"},"expected":"WAIT"}
 {"id":"G33","origin":"OBSERVADO reparo S11","scenario":{"kind":"release","pr":36,"head":"repair-head","merge":"01113ae"},"expected":"RELEASE"}
+{"id":"G34","origin":"DESIGN fail-closed stage","scenario":{"kind":"stage-failure","merge":"merge-stage-fail"},"expected":"INCIDENT"}
+{"id":"G35","origin":"DESIGN fail-closed promocao","scenario":{"kind":"await-promotion","merge":"merge-await-promotion"},"expected":"AWAIT_PROMOTION"}
+{"id":"G36","origin":"DESIGN fail-closed publico","scenario":{"kind":"public-failure","merge":"merge-public-fail"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G37","origin":"DESIGN fail-closed recovery","scenario":{"kind":"deployment-rollback-failure","merge":"merge-rollback-fail"},"expected":"INCIDENT_CRITICAL"}

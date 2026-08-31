@@ -13,9 +13,11 @@ export const config = {
   },
   production: {
     stagedDeployment: { required: true },
+    stagedChecks: { required: true },
     smokes: { required: true },
     promotion: { required: true },
     publicReadback: { required: true },
+    rollback: { required: true },
   },
   irreversibleChanges: {
     pathPatterns: ['supabase/migrations/**'],
@@ -45,7 +47,9 @@ export function pr(number, overrides = {}) {
 
 export function greenProduction(sha) {
   return {
-    stagedDeployment: { sha, status: 'success' },
+    previousDeployment: { id: 'dep-previous', sha: 'trusted-sha', status: 'success' },
+    stagedDeployment: { id: 'dep-candidate', sha, status: 'success' },
+    stagedChecks: { sha, status: 'success' },
     smokes: { sha, status: 'success' },
     promotion: { sha, status: 'success' },
     publicReadback: { sha, status: 'success' },

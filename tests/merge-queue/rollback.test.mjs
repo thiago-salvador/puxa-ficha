@@ -75,6 +75,64 @@ test('rollback failure remains locked and reports failure', () => {
   assert.ok(result.mutations.some((mutation) => mutation.type === 'NOTIFY'));
 });
 
+test('deployment rollback in progress keeps the release slot locked', () => {
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha: 'failed-merge',
+      postMergeChecks: greenChecks('failed-merge', ['CI', 'Ledger']),
+    }), pr(44)],
+    main: { sha: 'failed-merge', checks: greenChecks('failed-merge', ['CI', 'Ledger']) },
+    production: {
+      ...greenProduction('failed-merge'),
+      publicReadback: { sha: 'failed-merge', status: 'failure' },
+      rollback: { sha: 'trusted-sha', status: 'pending', deploymentId: 'dep-previous' },
+    },
+  };
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'VERIFY_ROLLBACK');
+  assert.equal(result.queue.find((item) => item.number === 44).disposition, 'WAIT');
+});
+
+test('verified deployment rollback becomes a locked incident', () => {
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha: 'failed-merge',
+      postMergeChecks: greenChecks('failed-merge', ['CI', 'Ledger']),
+    }), pr(44)],
+    main: { sha: 'failed-merge', checks: greenChecks('failed-merge', ['CI', 'Ledger']) },
+    production: {
+      ...greenProduction('failed-merge'),
+      publicReadback: { sha: 'failed-merge', status: 'failure' },
+      rollback: { sha: 'trusted-sha', status: 'success', deploymentId: 'dep-previous' },
+    },
+  };
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'INCIDENT');
+  assert.equal(result.reason, 'previous-deployment-restored');
+  assert.ok(!result.mutations.some((mutation) => mutation.type === 'SET_LABELS' && mutation.remove.includes('active')));
+});
+
+test('failed deployment rollback becomes a critical locked incident', () => {
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha: 'failed-merge',
+      postMergeChecks: greenChecks('failed-merge', ['CI', 'Ledger']),
+    }), pr(44)],
+    main: { sha: 'failed-merge', checks: greenChecks('failed-merge', ['CI', 'Ledger']) },
+    production: {
+      ...greenProduction('failed-merge'),
+      publicReadback: { sha: 'failed-merge', status: 'failure' },
+      rollback: { sha: 'trusted-sha', status: 'failure', deploymentId: 'dep-previous' },
+    },
+  };
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'INCIDENT_CRITICAL');
+  assert.ok(result.mutations.some((mutation) => mutation.type === 'NOTIFY' && mutation.severity === 'critical'));
+});
+
 test('green rollback PR is merged without transferring the original queue lock', () => {
   const rollback = {
     status: 'open', prNumber: 900, headSha: 'rollback-head', sync: 'up_to_date', mergeable: true,
