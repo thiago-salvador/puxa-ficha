@@ -41,6 +41,17 @@ test('stage check is unique and published on the exact candidate SHA', async () 
   assert.match(workflow, /node-version: "24"/);
 });
 
+test('every complete release smoke installs Chromium and WebKit', async () => {
+  const workflow = await parsedStagedWorkflow();
+  const installers = Object.values(workflow.jobs)
+    .flatMap((job) => job.steps ?? [])
+    .filter(({ name }) => name === 'Install Playwright browsers used by the release suite');
+  assert.equal(installers.length, 3);
+  for (const installer of installers) {
+    assert.equal(installer.run, 'npx playwright install --with-deps chromium webkit');
+  }
+});
+
 test('dispatch and rollback identity are validated before candidate code runs', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
   for (const field of [

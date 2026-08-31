@@ -50,7 +50,14 @@ export async function enrichProduction(snapshot, config, vercel) {
   const promotion = currentDeployment?.sha === sha && currentDeployment?.status === 'success'
     ? { sha, status: 'success' }
     : { sha, status: 'pending' };
-  const rollbackCheck = signalFromChecks(checks, sha, names.rollback);
+  // GitHub materializes a skipped conditional job as a check run. A skipped
+  // rollback means that no promotion happened, so it is absence of recovery
+  // evidence, not proof that a rollback failed.
+  const rollbackChecks = checks.filter((check) => !(
+    names.rollback.includes(check.name)
+    && String(check.conclusion ?? '').toLowerCase() === 'skipped'
+  ));
+  const rollbackCheck = signalFromChecks(rollbackChecks, sha, names.rollback);
   const previousMainSha = owner?.queueContext?.previousMainSha ?? owner?.queueContext?.previousDeploymentSha ?? null;
   snapshot.production = {
     ...(snapshot.production ?? {}),
