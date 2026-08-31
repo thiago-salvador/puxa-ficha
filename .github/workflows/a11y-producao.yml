@@ -14,15 +14,21 @@ name: Acessibilidade (produção)
 # #89 fosse o ultimo merge do dia, a violacao teria ficado em producao com
 # check verde.
 #
-# Duas condicoes, nao uma. O evento sozinho nao basta:
+# Tres condicoes, nao duas. O evento sozinho nao basta:
 #   1. `deployment_status.state == 'success'` e `deployment.environment` igual
 #      a `Production`, senao cada deploy de preview dispararia o job.
-#   2. readback de `/api/deployment-info` ate o alias publico devolver o SHA
+#   2. `deployment_status.environment_url` deve ser o dominio publico. Um
+#      deployment Production staged tambem emite sucesso, mas aponta para sua
+#      URL imutavel `.vercel.app` e ainda nao pode ser exigido no alias.
+#   3. readback de `/api/deployment-info` ate o alias publico devolver o SHA
 #      exato do deployment. E o mesmo padrao ja usado no bloco "Production
 #      readback" de serial-merge-queue.yml, com a mesma asserção jq
 #      (`.ok == true and .environment == "production" and .commitRef == "main"
 #      and .commitSha == $sha`). Evento de deploy pronto nao e o mesmo que
-#      alias promovido, e e o alias que o leitor acessa.
+#      alias promovido, e e o alias que o leitor acessa. No fluxo staged, os
+#      smokes automaticos antes e depois da promocao pertencem ao workflow
+#      `staged-production-release.yml`; este workflow legado nao pode competir
+#      com o hold nem produzir um falso vermelho antes da promocao.
 
 on:
   deployment_status:
@@ -44,7 +50,8 @@ jobs:
     # do readback abaixo, que le VERCEL_GIT_COMMIT_REF.
     if: >-
       github.event.deployment_status.state == 'success' &&
-      github.event.deployment.environment == 'Production'
+      github.event.deployment.environment == 'Production' &&
+      github.event.deployment_status.environment_url == 'https://puxaficha.com.br'
     # Concorrencia DENTRO do job, colada no `if`, e nao no nivel do workflow.
     # No nivel do workflow o grupo e resolvido para TODO evento, antes de o
     # `if` rodar: um `deployment_status` de Preview, ou um status que nem vai
