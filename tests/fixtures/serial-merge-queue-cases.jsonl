@@ -1,5 +1,5 @@
 {"id":"G01","origin":"OBSERVADO S08 S09","scenario":{"kind":"release","pr":39,"head":"d8873b1","merge":"5c85b3a"},"expected":"RELEASE"}
-{"id":"G02","origin":"OBSERVADO S01 S02","scenario":{"kind":"pre","pr":43,"head":"1364189","sync":"BEHIND"},"expected":"BLOCK"}
+{"id":"G02","origin":"OBSERVADO S01 S02","scenario":{"kind":"pre","pr":43,"head":"1364189","sync":"BEHIND"},"expected":"WAIT"}
 {"id":"G03","origin":"OBSERVADO S01","scenario":{"kind":"later","headPr":43,"candidate":44},"expected":"WAIT"}
 {"id":"G04","origin":"OBSERVADO S01 S04","scenario":{"kind":"later","headPr":43,"candidate":47},"expected":"WAIT"}
 {"id":"G05","origin":"OBSERVADO run 32530366143","scenario":{"kind":"pre-failure","pr":47,"head":"7974128","conclusion":"failure"},"expected":"BLOCK"}
