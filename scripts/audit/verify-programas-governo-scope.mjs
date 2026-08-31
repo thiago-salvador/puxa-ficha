@@ -18,6 +18,8 @@ const EXACT = new Set([
   "scripts/audit/audit-programas-governo.ts",
   "scripts/audit/audit-programas-governo-governadores-inventario.ts",
   "scripts/audit/audit-programas-governo-governadores-publicados.ts",
+  "scripts/audit/attach-program-absence-receipts.ts",
+  "scripts/audit/generate-program-absence-receipts.ts",
   "scripts/audit/verify-programas-governo-scope.mjs",
   "scripts/data/programas-governo-presidencia-2026-fontes.json",
   "scripts/data/programas-governo-governadores-2026-wave-consolidado.mjs",
@@ -58,6 +60,7 @@ const EXACT = new Set([
   "tests/candidato-profile-rate-limit.test.ts",
   "tests/candidato-profile-tabs.test.ts",
   "tests/programa-governo-data.test.ts",
+  "tests/programa-governo-absence-receipts.test.ts",
   "tests/programa-governo-extracao.test.ts",
   "tests/programa-governo-governadores-inventario.test.ts",
   "tests/programa-governo-governadores-ingestao.test.ts",
@@ -78,6 +81,7 @@ const EXACT = new Set([
 ])
 
 const PREFIXES = [
+  "QA/evidencias/2026-08-30-programas-ausentes/",
   "docs/reviews/programas-governo-governadores-2026/",
   "scripts/data/programas-governo-governadores-2026/",
   "src/data/programas-governo/governadores-2026/",

@@ -268,7 +268,7 @@ export function Navbar() {
     <div ref={containerRef}>
       {/* Header: transparent -> glass on scroll */}
       <header
-        className={`fixed top-0 z-[60] w-full transition-all duration-300 ${
+        className={`fixed top-0 z-[60] w-full ${
           scrolled
             ? "glass-nav"
             : "border-b border-transparent bg-transparent"
@@ -277,7 +277,7 @@ export function Navbar() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-12">
           <Link
             href="/"
-            className={`flex min-h-11 items-center gap-2 py-2 pr-3 font-heading text-[18px] uppercase tracking-[-0.01em] transition-colors duration-300 ${
+            className={`flex min-h-11 items-center gap-2 py-2 pr-3 font-heading text-[18px] uppercase tracking-[-0.01em] ${
               useDarkText ? "text-black" : "text-white"
             }`}
           >
@@ -285,7 +285,7 @@ export function Navbar() {
             <img
               src="/images/logo-icon-sm.png"
               alt="Puxa Ficha logo"
-              className={`size-7 transition-all duration-300 ${useDarkText ? "" : "invert"}`}
+              className={`size-7 ${useDarkText ? "" : "invert"}`}
             />
             Puxa Ficha
           </Link>
@@ -294,7 +294,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => openSearch("toolbar")}
-            className={`relative z-[70] flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 transition-colors duration-300 max-sm:min-w-11 max-sm:justify-center ${
+            className={`relative z-[70] flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 max-sm:min-w-11 max-sm:justify-center ${
               useDarkText ? "border-black/15 text-black" : "border-white/20 text-white"
             }`}
             aria-label="Abrir busca rápida"
@@ -320,17 +320,17 @@ export function Navbar() {
             aria-haspopup="dialog"
           >
             <div aria-hidden="true" className="h-[20px] overflow-hidden">
-              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
-              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}>Fechar</p>
+              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
+              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Fechar</p>
             </div>
-            <div className={`flex size-8 items-center justify-center rounded-full border transition-colors duration-300 ${useDarkText ? "border-black/15" : "border-white/20"}`}>
+            <div className={`flex size-8 items-center justify-center rounded-full border ${useDarkText ? "border-black/15" : "border-white/20"}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
                 height="14"
                 viewBox="0 0 16 16"
                 fill="none"
-                className={`menu-button-icon transition-colors duration-300 ${useDarkText ? "text-black" : "text-white"}`}
+                className={`menu-button-icon ${useDarkText ? "text-black" : "text-white"}`}
               >
                 <path d="M7.33333 16L7.33333 -3.2055e-07L8.66667 -3.78832e-07L8.66667 16L7.33333 16Z" fill="currentColor" />
                 <path d="M16 8.66667L-2.62269e-07 8.66667L-3.78832e-07 7.33333L16 7.33333L16 8.66667Z" fill="currentColor" />

@@ -22,6 +22,15 @@ const CANDIDATOS_RECURSO_URL =
 const CANDIDATOS_PACOTE_URL =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip";
 const DEFAULT_PROFILE_SNAPSHOT = "data/candidate-roster-active-20260829.json";
+const DEFAULT_ABSENCE_RECEIPTS =
+  "QA/evidencias/2026-08-30-programas-ausentes/receipt.json";
+const ABSENCE_RECEIPT_SQS = new Set([
+  "60002553922",
+  "130002544411",
+  "190002543380",
+  "190002550196",
+  "250002548080",
+]);
 const UFS = [
   "AC",
   "AL",
@@ -119,6 +128,7 @@ interface ProgramaArgs {
   candidateArchive: string;
   proposalDir: string;
   profileSnapshot: string;
+  absenceReceipts: string;
   collectedAt: string;
   output: string;
   write: boolean;
@@ -145,6 +155,9 @@ function parseArgs(): ProgramaArgs {
     profileSnapshot: resolve(
       value("--profile-snapshot") ?? DEFAULT_PROFILE_SNAPSHOT,
     ),
+    absenceReceipts: resolve(
+      value("--absence-receipts") ?? DEFAULT_ABSENCE_RECEIPTS,
+    ),
     collectedAt,
     output: resolve(
       value("--output") ??
@@ -154,8 +167,55 @@ function parseArgs(): ProgramaArgs {
   };
 }
 
+interface AbsenceReceiptSet {
+  schema_version: number;
+  receipt_set_id: string;
+  generated_at: string;
+  receipt_sha256: string;
+  receipts: Array<{
+    receipt_id: string;
+    sq_candidato: string;
+    result: string;
+    program_files_total: number;
+  }>;
+}
+
+function loadAbsenceReceipts(path: string): {
+  set: AbsenceReceiptSet;
+  raw: Buffer;
+  bySq: Map<string, AbsenceReceiptSet["receipts"][number]>;
+} {
+  const raw = readFileSync(path);
+  const set = JSON.parse(raw.toString("utf8")) as AbsenceReceiptSet & Record<string, unknown>;
+  const semanticCore: Record<string, unknown> = { ...set };
+  delete semanticCore.receipt_sha256;
+  if (set.schema_version !== 1 || set.receipts.length !== 5) {
+    throw new Error("receipt set de programas ausentes inválido");
+  }
+  const bySq = new Map(set.receipts.map((receipt) => [receipt.sq_candidato, receipt]));
+  if (set.receipt_sha256 !== sha256(canonicalJson(semanticCore))
+    || bySq.size !== ABSENCE_RECEIPT_SQS.size
+    || [...ABSENCE_RECEIPT_SQS].some((sq) => !bySq.has(sq))
+    || set.receipts.some((receipt) =>
+      receipt.result !== "sem_programa_oficial_codtipo_5_no_escopo"
+      || receipt.program_files_total !== 0
+      || receipt.receipt_id !== `programa-governo-ausente:2026:${receipt.sq_candidato}`)) {
+    throw new Error("recibos de programas ausentes divergiram do contrato");
+  }
+  return { set, raw, bySq };
+}
+
 function sha256(bytes: Buffer | string): string {
   return createHash("sha256").update(bytes).digest("hex");
+}
+
+function canonicalJson(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    return `{${Object.keys(record).sort().map((key) => `${JSON.stringify(key)}:${canonicalJson(record[key])}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
 }
 
 function normalize(value: string): string {
@@ -322,6 +382,7 @@ function main(): void {
   const candidateBytes = readFileSync(args.candidateArchive);
   const allCandidates = readCandidateRows(args.candidateArchive);
   const crosswalk = profileCrosswalk(args.profileSnapshot);
+  const absenceReceipts = loadAbsenceReceipts(args.absenceReceipts);
   const candidates = allCandidates.filter((row) =>
     crosswalk.has(candidateKey(row.SG_UF, row.SQ_CANDIDATO)),
   );
@@ -529,6 +590,10 @@ function main(): void {
       : perfilEstado === "perfil_local_ausente"
         ? perfilEstado
         : fonteEstado;
+    const absenceReceipt = absenceReceipts.bySq.get(row.SQ_CANDIDATO);
+    if (absenceReceipt && documents.length > 0) {
+      throw new Error(`${row.SQ_CANDIDATO}: recibo de ausência conflita com documento oficial`);
+    }
     return {
       chave: `${ANO}:${CARGO}:${row.SG_UF}:${row.SQ_CANDIDATO}`,
       ano: ANO,
@@ -560,6 +625,9 @@ function main(): void {
       fonteEstado,
       estadoInventario,
       documentoIds: documents.map((document) => document.id),
+      ...(absenceReceipt
+        ? { reciboSemProgramaOficialId: absenceReceipt.receipt_id }
+        : {}),
       tse: {
         eleicaoCodigo: row.CD_ELEICAO,
         eleicaoData: row.DT_ELEICAO,
@@ -670,6 +738,16 @@ function main(): void {
       documentoId: document.id,
       motivo: "arquivo_presente_no_pacote_sem_linha_GOVERNADOR_atual",
     })),
+    recibosSemProgramaOficial: {
+      arquivo: relative(process.cwd(), args.absenceReceipts),
+      arquivo_sha256: sha256(absenceReceipts.raw),
+      receipt_set_id: absenceReceipts.set.receipt_set_id,
+      receipt_sha256: absenceReceipts.set.receipt_sha256,
+      generated_at: absenceReceipts.set.generated_at,
+      receipt_ids: absenceReceipts.set.receipts.map(
+        (receipt) => receipt.receipt_id,
+      ),
+    },
   };
   const serialized = fixedPointPayload(data);
   if (args.write) {

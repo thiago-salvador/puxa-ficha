@@ -25,6 +25,9 @@ const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.
 const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-29.json") as {
   items: Array<{ outcome: string; slug: string | null }>
 }
+const governorAbsenceReceipt = require("../QA/evidencias/2026-08-30-programas-ausentes/receipt.json") as {
+  receipts: Array<{ profile_slug: string }>
+}
 
 async function loadPresidentialCohort(): Promise<ProgramaGovernoRegistro[]> {
   const records = await Promise.all(
@@ -84,25 +87,29 @@ test("checkpoint pós-revisão confirma a aprovação humana da coorte", async (
   assert.equal(records.filter(({ estado }) => estado === "aguardando_revisao").length, 0)
 })
 
-test("server-only manifest retains the unique national approved cohort", () => {
+test("server-only manifest retains approved records and explicit official absences", () => {
   const approvedGovernorSlugs = governorPublication.items
     .filter(({ outcome }) => outcome === "approved")
     .map(({ slug }) => slug)
     .filter((slug): slug is string => Boolean(slug))
     .sort()
-  const approvedGovernors = approvedGovernorSlugs.length
-  const expectedTotal = 13 + approvedGovernors
+  const absenceSlugs = governorAbsenceReceipt.receipts.map(({ profile_slug }) => profile_slug).sort()
+  const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs].sort()
+  const expectedTotal = 13 + publicGovernorSlugs.length
   assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(({ slug }) => slug)).size, expectedTotal)
   assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "PRESIDENTE").length, 13)
-  assert.equal(programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "GOVERNADOR").length, approvedGovernors)
+  assert.equal(
+    programaModule.programasGoverno2026Identidades.filter(({ cargo }) => cargo === "GOVERNADOR").length,
+    publicGovernorSlugs.length,
+  )
   assert.deepEqual(
     programaModule.programasGoverno2026Identidades
       .filter(({ cargo }) => cargo === "GOVERNADOR")
       .map(({ slug }) => slug)
       .sort(),
-    approvedGovernorSlugs,
+    publicGovernorSlugs,
   )
   for (const identidade of programaModule.programasGoverno2026Identidades) {
     assert.equal(identidade.ano, 2026)
@@ -111,15 +118,19 @@ test("server-only manifest retains the unique national approved cohort", () => {
   }
 })
 
-test("manifest publishes only governor records accepted by the canonical approval gate", async () => {
+test("manifest publishes approved content and receipt-backed absence without inventing documents", async () => {
   const approved = await programaModule.programasGoverno2026Manifesto.loadBySlug("acm-neto")
   assert.equal(approved?.estado, "aprovado")
   assert.equal(approved?.fonte.cargo, "GOVERNADOR")
   assert.equal(approved?.fonte.uf, "BA")
   assert.ok(approved?.documentos?.length)
-  const unpublished = governorPublication.items.find(({ outcome, slug }) => outcome !== "approved" && slug)?.slug
-  assert.ok(unpublished)
-  assert.equal(programaModule.programasGoverno2026Manifesto.getBySlug(unpublished), null)
+  for (const slug of governorAbsenceReceipt.receipts.map(({ profile_slug }) => profile_slug)) {
+    const absent = await programaModule.programasGoverno2026Manifesto.loadBySlug(slug)
+    assert.equal(absent?.estado, "sem_documento_oficial")
+    assert.equal(absent?.documentos, undefined)
+    assert.equal(absent?.resumo, undefined)
+    assert.ok(programaModule.programasGoverno2026Manifesto.getBySlug(slug))
+  }
 })
 
 test("Pedro Abib publica seis fatos com grupos de evidência distintos", async () => {
