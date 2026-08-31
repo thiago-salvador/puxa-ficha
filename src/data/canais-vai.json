@@ -1,0 +1,14 @@
+[
+  {
+    "source": "/vai/aos-fatos",
+    "destination": "/"
+  },
+  {
+    "source": "/vai/lupa",
+    "destination": "/"
+  },
+  {
+    "source": "/vai/comprova",
+    "destination": "/"
+  }
+]
