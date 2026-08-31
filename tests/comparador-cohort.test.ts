@@ -15,7 +15,11 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 
-import { isComparadorSlugParam, resolveComparadorCohort } from "@/lib/comparador-cohort"
+import {
+  isComparadorSlugParam,
+  resolveComparadorCohort,
+  resolveComparadorCohortFromSlugs,
+} from "@/lib/comparador-cohort"
 
 describe("isComparadorSlugParam", () => {
   it("aceita slug publico e rejeita lixo de query string", () => {
@@ -86,5 +90,35 @@ describe("resolveComparadorCohort", () => {
       ]),
       { cargo: "Senador", estado: undefined },
     )
+  })
+})
+
+describe("resolveComparadorCohortFromSlugs", () => {
+  it("carrega os slugs válidos e resolve governadores da mesma UF", async () => {
+    const loaded: string[] = []
+    const cohort = await resolveComparadorCohortFromSlugs(
+      ["tarcisio-gov-sp", "slug inválido", "haddad-gov-sp"],
+      async (slug) => {
+        loaded.push(slug)
+        return { cargo_disputado: "Governador", estado: "SP" }
+      },
+    )
+
+    assert.deepEqual(loaded, ["tarcisio-gov-sp", "haddad-gov-sp"])
+    assert.deepEqual(cohort, { cargo: "Governador", estado: "SP" })
+  })
+
+  it("sem slug válido não consulta metadata nem inventa coorte", async () => {
+    let calls = 0
+    const cohort = await resolveComparadorCohortFromSlugs(
+      [null, "", "INVÁLIDO"],
+      async () => {
+        calls += 1
+        return { cargo_disputado: "Presidente", estado: null }
+      },
+    )
+
+    assert.equal(calls, 0)
+    assert.deepEqual(cohort, {})
   })
 })

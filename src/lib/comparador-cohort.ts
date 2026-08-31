@@ -69,3 +69,19 @@ export function resolveComparadorCohort(
 
   return { cargo, estado }
 }
+
+/**
+ * Resolve os metadados somente para slugs públicos válidos e aplica a mesma
+ * regra de coorte usada pela página e pelas imagens sociais do comparador.
+ */
+export async function resolveComparadorCohortFromSlugs(
+  slugs: readonly (string | null | undefined)[],
+  loadMetadata: (slug: string) => Promise<ComparadorCohortInput | null | undefined>,
+): Promise<ComparadorCohort> {
+  const candidateSlugs = slugs.filter(
+    (slug): slug is string => isComparadorSlugParam(slug),
+  )
+  if (candidateSlugs.length === 0) return {}
+
+  return resolveComparadorCohort(await Promise.all(candidateSlugs.map(loadMetadata)))
+}

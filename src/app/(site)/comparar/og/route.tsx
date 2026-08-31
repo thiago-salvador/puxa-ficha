@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server"
 import { BRAZIL_STATES } from "@/data/brazil-states"
-import { getCandidatosComparaveisResource } from "@/lib/api"
+import { getCandidatoMetadataResource, getCandidatosComparaveisResource } from "@/lib/api"
 import {
   comparadorEixoLabels,
   comparadorEixoOgSubtitle,
@@ -17,6 +17,7 @@ import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
+import { resolveComparadorCohortFromSlugs } from "@/lib/comparador-cohort"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -52,10 +53,14 @@ export async function GET(request: NextRequest) {
 
   const cargoParam = url.searchParams.get("cargo")?.trim().toLowerCase()
   const ufParam = url.searchParams.get("uf")?.trim().toUpperCase() ?? ""
-  const resource =
-    cargoParam === "governador" && UF_SET.has(ufParam)
-      ? await getCandidatosComparaveisResource("Governador", ufParam)
-      : await getCandidatosComparaveisResource()
+  const explicitCohort = cargoParam === "governador" && UF_SET.has(ufParam)
+    ? { cargo: "Governador", estado: ufParam }
+    : null
+  const cohort = explicitCohort ?? await resolveComparadorCohortFromSlugs(
+    [c1, c2],
+    async (slug) => (await getCandidatoMetadataResource(slug)).data,
+  )
+  const resource = await getCandidatosComparaveisResource(cohort.cargo, cohort.estado)
   const list = resource.data
   const a = list.find((c) => c.slug === c1)
   const b = list.find((c) => c.slug === c2)
