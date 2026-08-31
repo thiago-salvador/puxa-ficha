@@ -4,9 +4,9 @@
 
 **Goal:** Impedir que um SHA não verificado alcance o domínio público e restaurar automaticamente o último deployment comprovado quando o fechamento público falhar.
 
-**Architecture:** A fila existente continua como dona do lock FIFO e passa a modelar separadamente stage, promoção, fechamento público e recuperação. Um workflow confiável recebe o SHA mergeado e a identidade do deployment anterior, testa a URL imutável da Vercel, publica um Deployment Check único, aguarda a promoção automática, repete a prova no domínio público e executa rollback instantâneo se necessário. Supabase permanece read-only nesse fluxo, e migrations continuam protegidas por manifesto e rollback específico.
+**Architecture:** A fila existente continua como dona do lock FIFO e passa a modelar separadamente stage, promoção, fechamento público e recuperação. Um workflow confiável recebe o SHA mergeado e a identidade do deployment anterior, testa a URL imutável da Vercel, revalida o deployment ID e promove explicitamente somente o artefato testado. Depois repete a prova no domínio público e executa rollback instantâneo se necessário. Supabase permanece read-only nesse fluxo, e migrations continuam protegidas por manifesto e rollback específico.
 
-**Tech Stack:** Node.js 24, JavaScript ESM, TypeScript, `node:test`, GitHub Actions, Playwright, Vercel Deployment Checks e REST API, Supabase PostgreSQL readbacks.
+**Tech Stack:** Node.js 24, JavaScript ESM, TypeScript, `node:test`, GitHub Actions, Playwright, Vercel staged deployments, promote e REST API, Supabase PostgreSQL readbacks.
 
 ---
 
@@ -17,7 +17,7 @@
 - Aplicar @test-driven-development: todo comportamento novo começa com teste vermelho.
 - Aplicar @surgical-coding: preservar a fila existente e alterar apenas contratos necessários.
 - Aplicar @verification-before-completion antes de cada commit e do fechamento.
-- Não criar secrets, alterar variável remota, configurar Deployment Check, mergear, promover, fazer rollback real ou executar falha controlada sem confirmação nominal do Thiago.
+- Não criar secrets, alterar variável remota, desligar auto-assignment, mergear, promover, fazer rollback real ou executar falha controlada sem confirmação nominal do Thiago.
 - Nunca executar código de pull request não confiável com secrets.
 - Não incluir token, URL credenciada ou payload sensível em logs, artefatos ou issues.
 
@@ -360,11 +360,12 @@ Exigir:
 - Node 24;
 - `concurrency.cancel-in-progress: false`;
 - validação do `EXPECTED_SHA`, `TRUSTED_SHA`, owner PR e deployment anterior;
-- job único `Vercel - puxa-ficha: staged-release` para o Deployment Check;
+- job único `Vercel - puxa-ficha: staged-release` para a prova staged;
 - URL de stage obtida da Vercel e nunca igual a `https://puxaficha.com.br`;
 - `PF_BASE_URL` e `PF_EXPECTED_DEPLOY_SHA` passados ao runner;
-- ação `vercel/repository-dispatch/actions/status` pinada por SHA completo;
-- job `Production release closure` somente depois do stage;
+- deployment ID e URL persistidos como outputs do stage;
+- job privilegiado separado que revalida e promove esse deployment ID;
+- job `Production release closure` somente depois da promoção explícita;
 - job `Production rollback recovery` com `if: failure()` limitado a falha pós-promoção;
 - nenhum `SUPABASE_SERVICE_ROLE_KEY` ou comando de migration;
 - status de sucesso da fila somente após fechamento público;
@@ -391,7 +392,10 @@ O job deve:
 3. provar `READY`, `target=production` e URL imutável;
 4. instalar dependências e browsers em checkout confiável;
 5. executar `npm run release:smoke` contra a URL imutável;
-6. publicar exatamente um status Vercel chamado `Vercel - puxa-ficha: staged-release`.
+6. publicar exatamente um status staged chamado `Vercel - puxa-ficha: staged-release`;
+7. passar deployment ID e URL como outputs para um job privilegiado sem checkout;
+8. revalidar o mesmo ID, SHA, URL, owner, `main` e predecessor;
+9. promover explicitamente somente esse deployment ID.
 
 Se qualquer passo falhar, o status fica vermelho e o alias público não deve se mover.
 
@@ -624,7 +628,7 @@ Solicitar autorização para:
 
 1. mergear o PR e iniciar o deploy associado;
 2. criar ou atualizar `MERGE_QUEUE_GH_TOKEN` e `VERCEL_TOKEN`;
-3. configurar `Vercel - puxa-ficha: staged-release` como Deployment Check obrigatório;
+3. desligar a atribuição automática de domínios de produção na Vercel;
 4. definir `SERIAL_MERGE_QUEUE_ENABLED=true`;
 5. executar um release controlado sem mudança funcional;
 6. executar uma falha deliberada em produção para provar bloqueio e rollback.

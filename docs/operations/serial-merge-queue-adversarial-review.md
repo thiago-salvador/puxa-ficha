@@ -11,8 +11,8 @@ continua `enabled: false` e a variável remota deve permanecer ausente ou falsa.
 
 Correções verificadas nesta revisão:
 
-- o hold não depende mais do contexto legado `Serial release orchestration`;
-  o check obrigatório e único é `Vercel - puxa-ficha: staged-release`;
+- o hold não depende mais de commit status: auto-assignment fica desligado e a
+  promoção usa explicitamente o deployment ID testado;
 - o dispatch leva `git.sha`, ambiente e projeto exigidos pela integração da
   Vercel e é rejeitado se qualquer identidade divergir;
 - o candidato `READY` é provado em URL `.vercel.app` antes da promoção;
@@ -28,6 +28,12 @@ Correções verificadas nesta revisão:
   exigem artifacts forward, readback, compensação e readback pós-compensação;
 - nenhum rollback SQL genérico foi introduzido;
 - actions de terceiros usadas no release estão pinadas por SHA completo;
+- retries do mesmo commit status preservam somente o estado mais recente, sem
+  deixar uma falha histórica bloquear um retry verde;
+- cancelamento de stage ou fechamento público entra nos mesmos caminhos de
+  incidente e recovery, exceto o `skipped` esperado com a fila desligada;
+- o release não recebe `CRON_SECRET` e não aciona o runtime smoke privado que
+  grava e remove short link no Supabase;
 - a auditoria histórica read-only encontrou zero falha confirmada nas onze
   superfícies consultadas. Três provas diretas ficaram `unavailable`: conexão
   SQL de produção do Supabase, readbacks SQL diretos e API do Sentry com o token
@@ -37,7 +43,7 @@ O gate externo que falta não é correção de código. É a ativação controla
 
 1. publicar o PR mantendo os dois locks desligados;
 2. configurar credenciais mínimas;
-3. configurar o Deployment Check exato na Vercel;
+3. desligar a atribuição automática de domínios na Vercel;
 4. ativar config e variável em mudança isolada;
 5. provar um release verde real;
 6. provar uma falha deliberada, Instant Rollback e promoção explícita de

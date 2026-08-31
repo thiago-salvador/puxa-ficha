@@ -143,16 +143,6 @@ async function executeMutation(mutation, config, adapters) {
         }
       return adapters.vercel.instantRollback(mutation.previousDeploymentId);
       }
-    case 'PROMOTE':
-      if (config.production?.promotion?.mode === 'deployment-check-auto-alias') {
-        return adapters.github.setCommitStatus(
-          mutation.mergeSha,
-          config.releaseGate?.successState ?? 'success',
-          config.releaseGate?.name ?? 'Serial release gate',
-          'Serial queue gates passed; production promotion is allowed',
-        );
-      }
-      return adapters.vercel.promote(mutation.deploymentId);
     case 'PROMOTE_RECOVERY':
       return adapters.vercel.promote(mutation.deploymentId);
     case 'SET_RELEASE_GATE_FAILED':

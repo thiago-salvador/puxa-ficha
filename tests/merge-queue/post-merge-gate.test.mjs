@@ -64,7 +64,7 @@ for (const signal of ['stagedDeployment', 'stagedChecks', 'promotion']) {
   });
 }
 
-test('green stage waits for automatic promotion while keeping the queue locked', () => {
+test('green stage waits for explicit promotion while keeping the queue locked', () => {
   const snapshot = postSnapshot();
   snapshot.production.promotion.status = 'pending';
   snapshot.production.publicReadback.status = 'pending';

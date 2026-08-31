@@ -25,8 +25,8 @@ Exigem confirmação explícita que nomeie cada ato:
 1. mergear o PR de implementação e iniciar o deploy associado;
 2. criar ou atualizar `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`,
    `VERCEL_ORG_ID` e `VERCEL_PROJECT_ID`;
-3. configurar `Vercel - puxa-ficha: staged-release` como Deployment Check
-   obrigatório do ambiente Production do projeto `puxa-ficha`;
+3. desligar a atribuição automática dos domínios do ambiente Production do
+   projeto `puxa-ficha`;
 4. alterar `.github/serial-merge-queue.json` para `enabled: true` e definir
    `SERIAL_MERGE_QUEUE_ENABLED=true`;
 5. executar um release controlado sem mudança funcional;
@@ -55,19 +55,24 @@ Critério de saída: código publicado e automação inerte.
 Critério de saída: preflight consegue consultar as superfícies necessárias e
 nenhum segredo aparece em logs.
 
-## Fase 3, Deployment Check real
+## Fase 3, stage sem atribuição automática
 
 No projeto Vercel `puxa-ficha`, ambiente Production:
 
 1. mantenha `main` como Production Branch;
-2. adicione o check `Vercel - puxa-ficha: staged-release`;
-3. torne o check obrigatório antes da atribuição dos domínios;
-4. confirme que o integration dispatch envia `git.sha`,
-   `environment=production` e `project.name=puxa-ficha`;
-5. não use o contexto legado `Serial release orchestration` como hold.
+2. desligue `Auto-assign Custom Production Domains`;
+3. confirme que um push cria deployment Production em estado Staged e não
+   altera `puxaficha.com.br`;
+4. mantenha o status `Vercel - puxa-ficha: staged-release` somente como
+   evidência da fila, nunca como seletor implícito de deployment;
+5. confirme que o token Vercel pode inspecionar e promover somente o projeto
+   esperado.
 
 Critério de saída: um deployment Production pode ficar `READY` em URL
 `.vercel.app` enquanto `puxaficha.com.br` continua no SHA anterior.
+
+Essa configuração segue o fluxo oficial de staged production build da Vercel:
+<https://vercel.com/docs/cli/deploying-from-cli#deploying-a-staged-production-build>.
 
 ## Fase 4, ativar os dois locks
 
@@ -88,7 +93,7 @@ Use um PR sem mudança funcional e acompanhe o mesmo SHA em todas as superfície
 3. o candidato fica `READY` sem alias público;
 4. produção continua no predecessor durante o smoke staged;
 5. `Vercel - puxa-ficha: staged-release` fica verde no SHA candidato;
-6. o domínio passa ao candidato;
+6. o workflow promove explicitamente o deployment ID testado;
 7. `Production release closure` fica verde no mesmo SHA;
 8. o owner é liberado somente depois dessa leitura.
 

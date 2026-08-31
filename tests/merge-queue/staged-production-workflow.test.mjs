@@ -13,8 +13,6 @@ const queueWorkflowUrl = new URL(
 const coordinatorUrl = new URL('../../scripts/merge-queue/coordinator.mjs', import.meta.url);
 
 const DEPLOYMENT_CHECK = 'Vercel - puxa-ficha: staged-release';
-const VERCEL_STATUS_ACTION =
-  'vercel/repository-dispatch/actions/status@30f760c6640485cd92f8c785ef361382555fb712';
 
 test('staged release owns the post-merge dispatch and serializes releases', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
@@ -25,12 +23,13 @@ test('staged release owns the post-merge dispatch and serializes releases', asyn
   assert.match(workflow, /permissions:\s*\n\s*contents: read/);
 });
 
-test('stage check is unique, pinned and allowed to publish only commit status', async () => {
+test('stage check is unique and published on the exact candidate SHA', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
   assert.match(workflow, new RegExp(`name: ["']?${DEPLOYMENT_CHECK}`));
   assert.match(workflow, /permissions:\s*\n\s*contents: read\s*\n\s*statuses: write/);
-  assert.ok(workflow.includes(`uses: ${VERCEL_STATUS_ACTION}`));
-  assert.ok(workflow.includes(`name: "${DEPLOYMENT_CHECK}"`));
+  assert.doesNotMatch(workflow, /vercel\/repository-dispatch\/actions\/status/);
+  assert.match(workflow, /statuses\/\$\{EXPECTED_SHA\}/);
+  assert.match(workflow, new RegExp(`context="${DEPLOYMENT_CHECK}"`));
   assert.match(workflow, /uses: actions\/checkout@[0-9a-f]{40}/);
   assert.match(workflow, /ref: \$\{\{ env\.EXPECTED_SHA \}\}/);
   assert.match(workflow, /persist-credentials: false/);
@@ -69,12 +68,27 @@ test('stage proves the exact production-target deployment before Vercel promotio
   assert.match(workflow, /PF_BASE_URL: \$\{\{ steps\.deployment\.outputs\.url \}\}/);
   assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.EXPECTED_SHA \}\}/);
   assert.match(workflow, /npm run release:smoke/);
+  assert.match(workflow, /printf 'id=%s\\n'.*GITHUB_OUTPUT/);
 });
 
-test('public closure repeats exact-SHA proof and smoke only after stage success', async () => {
+test('an isolated privileged job explicitly promotes only the tested deployment id', async () => {
+  const workflow = await readFile(stagedWorkflowUrl, 'utf8');
+  assert.match(workflow, /promote_candidate:\s*[\s\S]*name: Promote exact staged deployment/);
+  assert.match(workflow, /needs: staged_release/);
+  assert.match(workflow, /CANDIDATE_DEPLOYMENT_ID: \$\{\{ needs\.staged_release\.outputs\.deployment_id \}\}/);
+  assert.match(workflow, /\.id == \$id[\s\S]*\.projectId == \$project[\s\S]*\.meta\.githubCommitSha == \$sha[\s\S]*\.readyState == "READY"/);
+  assert.match(workflow, /projects\/\$\{VERCEL_PROJECT_ID\}\/promote\/\$\{CANDIDATE_DEPLOYMENT_ID\}/);
+  const promotion = workflow.slice(
+    workflow.indexOf('  promote_candidate:'),
+    workflow.indexOf('  public_closure:'),
+  );
+  assert.doesNotMatch(promotion, /actions\/checkout|npm ci|release:smoke/);
+});
+
+test('public closure repeats exact-SHA proof and smoke only after explicit promotion', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
   assert.match(workflow, /public_closure:\s*[\s\S]*name: Production release closure/);
-  assert.match(workflow, /public_closure:\s*[\s\S]*needs: staged_release/);
+  assert.match(workflow, /public_closure:\s*[\s\S]*needs: promote_candidate/);
   assert.match(workflow, /PF_BASE_URL: https:\/\/puxaficha\.com\.br/);
   assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.EXPECTED_SHA \}\}/);
   assert.match(workflow, /Wait for public exact-SHA promotion[\s\S]*release:prove-deployment/);
@@ -86,8 +100,10 @@ test('public failure restores the captured deployment and leaves a deduplicated 
   assert.match(workflow, /rollback_recovery:\s*[\s\S]*name: Production rollback recovery/);
   assert.match(
     workflow,
-    /needs\.staged_release\.result == 'success'[\s\S]*needs\.public_closure\.result == 'failure'/,
+    /needs\.staged_release\.result == 'success'[\s\S]*needs\.promote_candidate\.result != 'success'[\s\S]*needs\.public_closure\.result != 'success'/,
   );
+  assert.match(workflow, /CURRENT_PUBLIC_SHA/);
+  assert.match(workflow, /test "\$current_public_sha" = "\$PREVIOUS_DEPLOYMENT_SHA"/);
   assert.match(workflow, /deployments\/\$\{PREVIOUS_DEPLOYMENT_ID\}\/rollback/);
   assert.match(workflow, /PF_EXPECTED_DEPLOY_SHA: \$\{\{ env\.PREVIOUS_DEPLOYMENT_SHA \}\}/);
   assert.match(workflow, /serial-release-incident:/);
@@ -98,7 +114,10 @@ test('public failure restores the captured deployment and leaves a deduplicated 
 
 test('stage failure also creates a locked incident without production rollback', async () => {
   const workflow = await readFile(stagedWorkflowUrl, 'utf8');
-  assert.match(workflow, /stage_incident:\s*[\s\S]*needs\.staged_release\.result == 'failure'/);
+  assert.match(
+    workflow,
+    /stage_incident:\s*[\s\S]*needs\.staged_release\.result != 'success'[\s\S]*needs\.staged_release\.result != 'skipped'/,
+  );
   const stageIncident = workflow.slice(workflow.indexOf('  stage_incident:'));
   assert.match(stageIncident, /serial-release-incident:/);
   assert.doesNotMatch(stageIncident, /\/rollback/);

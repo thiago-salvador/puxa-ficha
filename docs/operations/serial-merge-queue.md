@@ -19,9 +19,8 @@ Há dois workflows com responsabilidades separadas:
 1. `Serial merge queue` seleciona um único PR, valida o head, faz o merge e
    reconcilia o estado. Ele não promove nem desfaz um deployment.
 2. `Staged production release` recebe somente o dispatch pós-merge validado,
-   prova o deployment candidato em URL isolada, permite a promoção pelo
-   Deployment Check, fecha a produção pública e recupera o predecessor em caso
-   de falha.
+   prova o deployment candidato em URL isolada, promove explicitamente o ID
+   testado, fecha a produção pública e recupera o predecessor em caso de falha.
 
 O PR com `merge-queue/active` é o único dono do slot. O lock atravessa
 pre-merge, merge, stage, promoção, fechamento público, rollback e incidente.
@@ -39,7 +38,7 @@ produção concorrentes.
 | `IDLE` | nenhum owner ativo | selecionar o PR elegível mais antigo |
 | `PRE_MERGE` | head atualizado, checks exatos e fronteira sensível válida | merge do owner |
 | `POST_MERGE` | `merge_commit_sha`, ponta de `main`, deployment predecessor e dispatch válido | aguardar release staged |
-| `STAGED` | candidato `READY`, SHA exato, domínio ainda no predecessor e smoke completo na URL `.vercel.app` | Deployment Check verde |
+| `STAGED` | candidato `READY`, SHA e ID exatos, domínio ainda no predecessor e smoke completo na URL `.vercel.app` | promoção explícita desse ID |
 | `PUBLIC_CLOSURE` | domínio público no SHA candidato e novo smoke completo | liberar o owner |
 | `ROLLBACK` | predecessor exato restaurado, SHA público anterior e smoke completo | manter incidente e recuperação auditável |
 | `BLOCKED` | qualquer contradição, ausência ou falha | nenhuma liberação automática |
@@ -63,8 +62,8 @@ sem provar o estado de produção.
 Os nomes são parte do protocolo e estão versionados em
 `.github/serial-merge-queue.json`:
 
-- `Vercel - puxa-ficha: staged-release`: Deployment Check obrigatório. Fica
-  verde somente depois de provar candidato, predecessor e smoke staged.
+- `Vercel - puxa-ficha: staged-release`: status staged do SHA. Fica verde
+  somente depois de provar candidato, predecessor e smoke staged.
 - `Production release closure`: readback e smoke completos no domínio público,
   associados ao SHA candidato.
 - `Production rollback recovery`: restauração e smoke completos do predecessor,
@@ -100,12 +99,12 @@ O SHA público é provado por `/api/deployment-info`, exigindo HTTP 200,
 1. O coordenador captura e valida o deployment público anterior.
 2. O merge dispara `serial-merge-queue-post-merge` com o payload completo.
 3. A Vercel cria um deployment de target production sem trocar o alias público,
-   pois o Deployment Check permanece pending.
+   pois a atribuição automática dos domínios está desligada.
 4. O job staged confirma que produção ainda serve o predecessor.
 5. `npm run release:smoke` roda contra a URL isolada e inclui prova de
    deployment, lançamento, busca, acessibilidade e pesquisas.
-6. `Vercel - puxa-ficha: staged-release` fica verde. A integração da Vercel
-   pode então atribuir o domínio ao candidato.
+6. Um job sem checkout revalida ID, SHA, URL, owner, `main` e predecessor, e
+   chama `promote` somente para esse deployment ID.
 7. `Production release closure` espera o SHA exato no domínio público e repete
    o smoke completo.
 8. O coordenador só remove o lock depois de ler o fechamento público verde no
@@ -221,6 +220,6 @@ continua como segundo lock. Pausar não apaga owner, incidente ou recovery.
 - Merge, deploy e efeitos externos não formam uma transação distribuída. O lock
   e a compensação limitam o dano e tornam a falha observável.
 - GitHub Issues notificam conforme as preferências da conta.
-- O pacote local não configura secrets, Deployment Checks ou variáveis remotas.
+- O pacote local não configura secrets, auto-assignment ou variáveis remotas.
 - Produção só pode ser declarada íntegra com readback atual. CI ou relatório
   anterior, isoladamente, não provam o domínio público.

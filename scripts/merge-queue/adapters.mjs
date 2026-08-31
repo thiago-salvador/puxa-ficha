@@ -106,15 +106,26 @@ export class GitHubAdapter {
 
   async checks(sha) {
     const [runs, statusesPayload] = await Promise.all([
-      this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/check-runs?per_page=100`, (payload) => payload.check_runs),
+      this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/check-runs?filter=latest&per_page=100`, (payload) => payload.check_runs),
       this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/statuses?per_page=100`),
     ]);
-    const statuses = statusesPayload.map((status) => ({
+    const latestByContext = new Map();
+    for (const status of statusesPayload) {
+      const context = String(status.context ?? '');
+      const observedAt = Date.parse(status.updated_at ?? status.created_at ?? '') || 0;
+      const current = latestByContext.get(context);
+      if (!current || observedAt > current.observedAt) {
+        latestByContext.set(context, { status, observedAt });
+      }
+    }
+    const statuses = [...latestByContext.values()].map(({ status }) => ({
       name: status.context,
       sha,
       status: status.state,
       conclusion: status.state,
       url: status.target_url,
+      createdAt: status.created_at ?? null,
+      updatedAt: status.updated_at ?? status.created_at ?? null,
     }));
     return [...runs.map(checkFromRun), ...statuses];
   }
@@ -472,6 +483,12 @@ export function preflightSecrets(config, env = process.env) {
   const holdRequired = hold?.required === true || config.releaseGate?.failClosedOnMissingHold === true;
   if (holdRequired && (!hold?.required || !hold?.githubStatusContext)) {
     throw new CoordinatorError('Production hold configuration is missing or incomplete');
+  }
+  if (holdRequired && hold?.provider !== 'vercel-auto-assignment-disabled') {
+    throw new CoordinatorError('Production hold must disable Vercel automatic domain assignment');
+  }
+  if (holdRequired && config.production?.promotion?.mode !== 'explicit-vercel-promote') {
+    throw new CoordinatorError('Production promotion must target an explicit Vercel deployment');
   }
   return { ok: true };
 }

@@ -42,10 +42,10 @@ function recorder(overrides = {}) {
 
 function liveConfig() {
   const config = structuredClone(baseConfig);
-  config.production.promotion.mode = 'deployment-check-auto-alias';
+  config.production.promotion.mode = 'explicit-vercel-promote';
   return {
     ...config,
-    releaseGate: { required: true, name: 'Serial release gate', initialState: 'pending', successState: 'success' },
+    releaseGate: { required: false, name: 'Serial release orchestration', initialState: 'pending', successState: 'success' },
     notifications: { assignee: 'thiago-salvador' },
   };
 }
@@ -86,7 +86,7 @@ test('live production evidence uses deployment identity for promotion and maps r
   assert.deepEqual(result.production.rollback, { sha: previousSha, status: 'success' });
 });
 
-test('successful live merge establishes hold and dispatches post-merge validation', async () => {
+test('successful live merge dispatches staged validation without opening a legacy gate', async () => {
   const { calls, adapters } = recorder();
   const result = await reconcile({
     config: liveConfig(),
@@ -102,9 +102,9 @@ test('successful live merge establishes hold and dispatches post-merge validatio
   });
   assert.equal(result.decision, 'MERGE');
   assert.deepEqual(calls.map(([name]) => name), [
-    'setLabels', 'assertMergePreconditions', 'persistContext', 'merge', 'persistContext', 'setLabels', 'setCommitStatus', 'dispatch',
+    'setLabels', 'assertMergePreconditions', 'persistContext', 'merge', 'persistContext', 'setLabels', 'dispatch',
   ]);
-  assert.deepEqual(calls.find(([name]) => name === 'setCommitStatus').slice(1, 4), ['merge-43', 'pending', 'Serial release gate']);
+  assert.ok(!calls.some(([name]) => name === 'setCommitStatus'));
   assert.deepEqual(calls.find(([name]) => name === 'dispatch').slice(1), [
     'serial-merge-queue-post-merge',
     {
@@ -124,7 +124,11 @@ test('successful live merge establishes hold and dispatches post-merge validatio
 test('live pre-merge snapshot captures the previous production deployment before merging', async () => {
   const config = liveConfig();
   config.production.rollback = { requirePreviousReadyDeployment: true };
-  config.production.stagedDeployment.hold = { required: true, githubStatusContext: 'Serial release gate' };
+  config.production.stagedDeployment.hold = {
+    required: true,
+    provider: 'vercel-auto-assignment-disabled',
+    githubStatusContext: 'Vercel - puxa-ficha: staged-release',
+  };
   const { calls, adapters } = recorder({
     github: {
       snapshot: async () => ({ prs: [pr(43)], main: { sha: 'main-before', checks: [] } }),
@@ -243,7 +247,7 @@ test('rollback refuses a deployment id that does not match the previous main SHA
   assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
-test('ready staged release opens hold but keeps lock until promoted readback', async () => {
+test('ready staged release keeps lock until explicit promotion is visible', async () => {
   const config = liveConfig();
   const sha = 'merge-43';
   const owner = pr(43, { labels: ['active', 'post-merge'], mergeSha: sha, postMergeChecks: greenChecks(sha, ['CI', 'Ledger']) });
@@ -312,7 +316,16 @@ test('secret and production hold preflight fail closed', () => {
   const config = {
     ...liveConfig(),
     secrets: { required: ['MERGE_QUEUE_GH_TOKEN', 'VERCEL_TOKEN', 'VERCEL_ORG_ID', 'VERCEL_PROJECT_ID'] },
-    production: { stagedDeployment: { hold: { required: true, githubStatusContext: 'Serial release gate' } } },
+    production: {
+      stagedDeployment: {
+        hold: {
+          required: true,
+          provider: 'vercel-auto-assignment-disabled',
+          githubStatusContext: 'Vercel - puxa-ficha: staged-release',
+        },
+      },
+      promotion: { mode: 'explicit-vercel-promote' },
+    },
   };
   assert.throws(() => preflightSecrets(config, {}), /secrets are missing/);
   assert.doesNotThrow(() => preflightSecrets(config, {
@@ -323,6 +336,11 @@ test('secret and production hold preflight fail closed', () => {
   assert.throws(() => preflightSecrets(broken, {
     GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /hold configuration/);
+  const unsafe = structuredClone(config);
+  unsafe.production.stagedDeployment.hold.provider = 'vercel-deployment-checks';
+  assert.throws(() => preflightSecrets(unsafe, {
+    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+  }), /disable Vercel automatic domain assignment/);
 });
 
 test('incident upsert deduplicates by PR, phase, SHA, and reason signature', async () => {
@@ -367,6 +385,49 @@ test('queue context preserves the exact rollback deployment and ignores malforme
   const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
   const context = await github.queueContext(43, { queue: { trustedContextActors: ['thiago-salvador'] } });
   assert.deepEqual(context, valid);
+});
+
+test('GitHub checks keep only the newest commit status for each context', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    if (url.includes('/check-runs?')) {
+      return { ok: true, status: 200, text: async () => JSON.stringify({ check_runs: [] }) };
+    }
+    if (url.includes('/statuses?')) {
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify([
+          {
+            context: 'Production release closure',
+            state: 'success',
+            target_url: 'https://github.test/runs/current',
+            created_at: '2026-08-31T12:00:00Z',
+            updated_at: '2026-08-31T12:00:00Z',
+          },
+          {
+            context: 'Production release closure',
+            state: 'failure',
+            target_url: 'https://github.test/runs/old',
+            created_at: '2026-08-31T11:00:00Z',
+            updated_at: '2026-08-31T11:00:00Z',
+          },
+        ]),
+      };
+    }
+    throw new Error(`unexpected URL: ${url}`);
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+
+  assert.deepEqual(await github.checks(sha), [{
+    name: 'Production release closure',
+    sha,
+    status: 'success',
+    conclusion: 'success',
+    url: 'https://github.test/runs/current',
+    createdAt: '2026-08-31T12:00:00Z',
+    updatedAt: '2026-08-31T12:00:00Z',
+  }]);
 });
 
 test('GitHub pagination includes a sensitive file from the second page', async () => {

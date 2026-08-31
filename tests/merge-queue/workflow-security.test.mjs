@@ -23,7 +23,7 @@ test('workflow has read-only default permissions and explicit scoped secret mapp
   assert.match(workflow, /persist-credentials: false/);
 });
 
-test('runtime smoke usa o CRON_SECRET canonico da rota, config e workflow', async () => {
+test('runtime smoke privado fica no watchdog e não amplia privilégios do release', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
   const config = JSON.parse(await readFile(configUrl, 'utf8'));
   const route = await readFile(
@@ -31,9 +31,9 @@ test('runtime smoke usa o CRON_SECRET canonico da rota, config e workflow', asyn
     'utf8',
   );
   assert.match(route, /process\.env\.CRON_SECRET/);
-  assert.equal(config.production.smokes.private.secret, 'CRON_SECRET');
-  assert.ok(config.secrets.required.includes('CRON_SECRET'));
-  assert.match(workflow, /CRON_SECRET:\s*\$\{\{\s*secrets\.CRON_SECRET\s*\}\}/);
+  assert.equal(config.production.smokes.private, undefined);
+  assert.ok(!config.secrets.required.includes('CRON_SECRET'));
+  assert.doesNotMatch(workflow, /CRON_SECRET:\s*\$\{\{\s*secrets\.CRON_SECRET\s*\}\}/);
   assert.doesNotMatch(workflow, /PF_RUNTIME_SMOKE_SECRET/);
 });
 
@@ -63,6 +63,8 @@ test('new automation ships disabled and fail-closed', async () => {
     config.production.stagedDeployment.hold.githubStatusContext,
     'Vercel - puxa-ficha: staged-release',
   );
+  assert.equal(config.production.stagedDeployment.hold.provider, 'vercel-auto-assignment-disabled');
+  assert.equal(config.production.promotion.mode, 'explicit-vercel-promote');
   assert.equal(config.irreversibleChanges.executePullRequestSql, false);
   assert.equal(config.secrets.missingPolicy, 'block');
 });

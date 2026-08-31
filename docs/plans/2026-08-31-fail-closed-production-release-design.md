@@ -76,7 +76,11 @@ O job usa um nome único e estável, por exemplo `Vercel - puxa-ficha: staged-re
 
 ### Bloqueio de promoção
 
-A Vercel deve ter um Deployment Check obrigatório associado ao job de stage. Enquanto esse check não estiver verde, o deployment não pode receber o alias público. A promoção só acontece para a URL e o SHA que acabaram de ser verificados.
+A atribuição automática dos domínios de produção deve permanecer desligada na
+Vercel. O workflow seleciona um deployment `READY` pelo SHA, preserva ID e URL,
+testa essa URL imutável e revalida o mesmo tuple imediatamente antes de chamar
+`promote` explicitamente. Isso evita que um commit status verde promova outro
+redeploy do mesmo SHA.
 
 O deployment público verificado anterior é capturado antes do merge e armazenado como candidato de rollback. A fila não aceita outro merge enquanto o release atual estiver entre `premerge_verified` e `closed`.
 
@@ -144,7 +148,7 @@ Além dos testes unitários e de contrato, a ativação termina com dois exercí
 
 Rejeitada porque continua permitindo exposição pública de um SHA defeituoso, mesmo com rollback rápido.
 
-### Usar somente o workflow atual de acessibilidade como Deployment Check
+### Usar somente o workflow atual de acessibilidade como gate de promoção
 
 Rejeitada porque ele observa o alias público e exige o SHA já promovido. Torná-lo obrigatório antes da promoção criaria dependência circular.
 
@@ -174,7 +178,7 @@ O desenho estará implementado quando:
 1. implementar código, workflows, testes e documentação em pull request;
 2. revisar e verificar localmente no Node 24;
 3. criar `MERGE_QUEUE_GH_TOKEN` e `VERCEL_TOKEN` após confirmação nominal;
-4. configurar o Deployment Check obrigatório na Vercel após confirmação nominal;
+4. desligar a atribuição automática de domínios na Vercel após confirmação nominal;
 5. definir `SERIAL_MERGE_QUEUE_ENABLED=true` após confirmação nominal;
 6. executar release controlado sem mudança funcional após confirmação nominal;
 7. executar teste deliberado de falha após confirmação nominal;
