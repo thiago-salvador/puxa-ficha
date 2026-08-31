@@ -192,7 +192,7 @@ export async function reconcile({ config, snapshot, dryRun = false, adapters }) 
       try {
         writes.push({ mutation, result: await executeMutation(mutation, normalized, liveAdapters) });
       } catch (error) {
-        if (plan.decision !== 'ROLLBACK') throw error;
+        if (!['ROLLBACK', 'ROLLBACK_DEPLOYMENT'].includes(plan.decision)) throw error;
         recoveryErrors.push(error);
         writes.push({ mutation, error: { name: error.name, message: error.message, status: error.status ?? null } });
       }

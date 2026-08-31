@@ -83,6 +83,7 @@ export function normalizeConfig(input = {}) {
     production: {
       environment: 'Production',
       stagedDeployment: { required: true, ...(production.stagedDeployment ?? {}) },
+      stagedChecks: { required: true, ...(production.stagedChecks ?? production.smokes ?? {}) },
       smokes: { required: true, checks: [], ...(production.smokes ?? {}) },
       promotion: { required: true, ...(production.promotion ?? {}) },
       publicReadback: { required: true, ...(production.publicReadback ?? {}) },
@@ -351,58 +352,104 @@ function inspectSignal(record, expectedSha, required = true) {
 
 function productionSignals(snapshot, config, expectedSha) {
   const prod = snapshot.production ?? {};
-  const smokeRecord = prod.smokes ?? prod.smoke;
+  const stagedCheckRecord = prod.stagedChecks ?? prod.smokes ?? prod.smoke;
   return {
-    deployment: inspectSignal(prod.stagedDeployment ?? prod.deployment, expectedSha, config.production.stagedDeployment?.required !== false),
-    smokes: inspectSignal(smokeRecord, expectedSha, config.production.smokes?.required !== false),
+    stagedDeployment: inspectSignal(prod.stagedDeployment ?? prod.deployment, expectedSha, config.production.stagedDeployment?.required !== false),
+    stagedChecks: inspectSignal(stagedCheckRecord, expectedSha, config.production.stagedChecks?.required !== false),
     promotion: inspectSignal(prod.promotion, expectedSha, config.production.promotion?.required !== false),
-    readback: inspectSignal(prod.publicReadback ?? prod.readback, expectedSha, config.production.publicReadback?.required !== false),
+    publicReadback: inspectSignal(prod.publicReadback ?? prod.readback, expectedSha, config.production.publicReadback?.required !== false),
   };
+}
+
+function lockedIncident(pr, queue, reason, mergeSha, evidence, severity = 'failure') {
+  return decision(severity === 'critical' ? 'INCIDENT_CRITICAL' : 'INCIDENT', pr, queue, reason, [
+    { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
+    { type: 'NOTIFY', pr: pr.number, severity, reason, phase: 'post-merge', sha: mergeSha },
+  ], evidence);
+}
+
+function rollbackTarget(pr, snapshot) {
+  const context = pr.queueContext ?? snapshot.queueContext ?? {};
+  const previous = snapshot.production?.previousDeployment ?? {};
+  return {
+    previousMainSha: context.previousMainSha ?? context.previousDeploymentSha ?? previous.sha ?? null,
+    previousDeploymentId: context.previousDeploymentId ?? previous.id ?? null,
+  };
+}
+
+function deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, reason) {
+  const target = rollbackTarget(pr, snapshot);
+  if (!target.previousMainSha || !target.previousDeploymentId) {
+    return lockedIncident(pr, queue, 'rollback-target-missing', mergeSha, { ...evidence, target }, 'critical');
+  }
+  return decision('ROLLBACK_DEPLOYMENT', pr, queue, reason, [
+    { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
+    {
+      type: 'INSTANT_ROLLBACK',
+      pr: pr.number,
+      failedMergeSha: mergeSha,
+      previousMainSha: target.previousMainSha,
+      previousDeploymentId: target.previousDeploymentId,
+    },
+    { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason, phase: 'post-merge', sha: mergeSha },
+  ], { ...evidence, target });
 }
 
 function postMergeDecision(pr, config, snapshot, queue) {
   const mergeSha = pr.mergeSha ?? snapshot.mergeSha ?? snapshot.main?.sha;
-  if (!mergeSha) return decision('VERIFY', pr, queue, 'merge-sha-missing', [], {});
+  if (!mergeSha) return decision('VERIFY_STAGE', pr, queue, 'merge-sha-missing', [], {});
   if (snapshot.main?.sha && snapshot.main.sha !== mergeSha) {
-    return decision('VERIFY', pr, queue, 'main-sha-does-not-match-merge', [], { mergeSha, mainSha: snapshot.main.sha });
+    return decision('VERIFY_STAGE', pr, queue, 'main-sha-does-not-match-merge', [], { mergeSha, mainSha: snapshot.main.sha });
   }
   const checks = inspectChecks(pr.postMergeChecks ?? snapshot.main?.checks, mergeSha, config.checks.postMerge);
   const signals = productionSignals(snapshot, config, mergeSha);
-  const failedSignals = Object.entries(signals).filter(([, state]) => state.state === 'failure');
-  if (checks.state === 'failure' || failedSignals.length) {
-    const reason = checks.state === 'failure' ? checks.reason : `${failedSignals[0][0]}-failed`;
-    return decision('ROLLBACK', pr, queue, reason, [
-      ...phaseMutations(pr, 'rollback', config),
-      { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
-      {
-        type: 'INSTANT_ROLLBACK',
-        pr: pr.number,
-        failedMergeSha: mergeSha,
-        previousMainSha: pr.queueContext?.previousMainSha ?? snapshot.queueContext?.previousMainSha ?? null,
-        previousDeploymentId: pr.queueContext?.previousDeploymentId ?? snapshot.queueContext?.previousDeploymentId ?? null,
-      },
-      {
-        type: 'CREATE_ROLLBACK_PR',
-        pr: pr.number,
-        mergeSha,
-        previousMainSha: pr.queueContext?.previousMainSha ?? snapshot.queueContext?.previousMainSha ?? null,
-        previousDeploymentId: pr.queueContext?.previousDeploymentId ?? snapshot.queueContext?.previousDeploymentId ?? null,
-        risk: validateReversibility(pr, config),
-      },
-      { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason, phase: 'post-merge', sha: mergeSha },
-    ], { checks, signals, mergeSha });
+  const rollbackRecord = snapshot.production?.rollback;
+  if (rollbackRecord) {
+    const expectedRollbackSha = rollbackTarget(pr, snapshot).previousMainSha ?? rollbackRecord.sha;
+    const rollback = inspectSignal(rollbackRecord, expectedRollbackSha, true);
+    const rollbackEvidence = { checks, signals, rollback, mergeSha };
+    if (rollback.state === 'failure') {
+      return lockedIncident(pr, queue, 'deployment-rollback-failed', mergeSha, rollbackEvidence, 'critical');
+    }
+    if (rollback.state === 'pending') {
+      return decision('VERIFY_ROLLBACK', pr, queue, rollback.reason, [], rollbackEvidence);
+    }
+    return lockedIncident(pr, queue, 'previous-deployment-restored', mergeSha, rollbackEvidence, 'recovered');
   }
-  if (checks.state !== 'success' || Object.values(signals).some((state) => state.state !== 'success')) {
-    const readyToPromote = checks.state === 'success' && signals.deployment.state === 'success' && signals.smokes.state === 'success'
-      && signals.promotion.state === 'pending';
-    const mutations = readyToPromote
-      ? [{ type: 'PROMOTE', pr: pr.number, mergeSha, deploymentId: snapshot.production?.stagedDeployment?.id ?? snapshot.production?.deployment?.id ?? null }]
-      : [];
-    return decision('VERIFY', pr, queue, readyToPromote ? 'ready-to-promote' : 'post-merge-evidence-pending', mutations, { checks, signals, mergeSha });
+
+  const stageFailures = [
+    checks.state === 'failure' ? checks.reason : null,
+    signals.stagedDeployment.state === 'failure' ? 'stagedDeployment-failed' : null,
+    signals.stagedChecks.state === 'failure' ? 'stagedChecks-failed' : null,
+  ].filter(Boolean);
+  const evidence = { checks, signals, mergeSha };
+
+  if (signals.promotion.state === 'success') {
+    if (signals.publicReadback.state === 'failure') {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, 'publicReadback-failed');
+    }
+    if (stageFailures.length) {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, stageFailures[0]);
+    }
+    if (checks.state !== 'success' || signals.stagedDeployment.state !== 'success' || signals.stagedChecks.state !== 'success') {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, 'stage-evidence-lost-after-promotion');
+    }
+    if (signals.publicReadback.state !== 'success') {
+      return decision('VERIFY_PUBLIC', pr, queue, signals.publicReadback.reason, [], evidence);
+    }
+    return decision('RELEASE', pr, queue, 'release-gates-green', phaseMutations(pr, null, config, { release: true }), evidence);
   }
-  return decision('RELEASE', pr, queue, 'release-gates-green', phaseMutations(pr, null, config, { release: true }), {
-    checks, signals, mergeSha,
-  });
+
+  if (signals.promotion.state === 'failure') {
+    return lockedIncident(pr, queue, 'promotion-failed', mergeSha, evidence);
+  }
+  if (stageFailures.length) {
+    return lockedIncident(pr, queue, stageFailures[0], mergeSha, evidence);
+  }
+  if (checks.state !== 'success' || signals.stagedDeployment.state !== 'success' || signals.stagedChecks.state !== 'success') {
+    return decision('VERIFY_STAGE', pr, queue, 'stage-evidence-pending', [], evidence);
+  }
+  return decision('AWAIT_PROMOTION', pr, queue, 'stage-green-awaiting-promotion', [], evidence);
 }
 
 function rollbackDecision(pr, config, snapshot, queue) {
@@ -455,7 +502,7 @@ function rollbackDecision(pr, config, snapshot, queue) {
   const complete = checks.state === 'success' && database.state === 'success' && Object.values(signals).every((state) => state.state === 'success');
   if (!complete) {
     const readyToPromote = checks.state === 'success' && database.state === 'success'
-      && signals.deployment.state === 'success' && signals.smokes.state === 'success'
+      && signals.stagedDeployment.state === 'success' && signals.stagedChecks.state === 'success'
       && signals.promotion.state === 'pending';
     const mutations = readyToPromote
       ? [{ type: 'PROMOTE_RECOVERY', pr: pr.number, restoredSha, deploymentId: snapshot.production?.stagedDeployment?.id ?? null }]

@@ -103,6 +103,12 @@
         "githubStatusContext": "Serial release gate"
       }
     },
+    "stagedChecks": {
+      "required": true,
+      "checks": [
+        "Vercel - puxa-ficha: staged-release"
+      ]
+    },
     "smokes": {
       "required": true,
       "checks": [

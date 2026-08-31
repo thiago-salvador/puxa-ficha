@@ -21,6 +21,8 @@ function postSnapshot(overrides = {}) {
 test('lock stays held while deployment is pending', () => {
   const snapshot = postSnapshot();
   snapshot.production.stagedDeployment.status = 'pending';
+  snapshot.production.promotion.status = 'pending';
+  snapshot.production.publicReadback.status = 'pending';
   const result = evaluateSnapshot(config, snapshot);
   assert.equal(result.decision, 'VERIFY_STAGE');
   assert.equal(result.owner, 43);
@@ -30,6 +32,8 @@ test('lock stays held while deployment is pending', () => {
 test('successful deployment from another SHA is not evidence', () => {
   const snapshot = postSnapshot();
   snapshot.production.stagedDeployment.sha = 'different-sha';
+  snapshot.production.promotion.status = 'pending';
+  snapshot.production.publicReadback.status = 'pending';
   const result = evaluateSnapshot(config, snapshot);
   assert.equal(result.decision, 'VERIFY_STAGE');
 });
@@ -40,6 +44,8 @@ test('failed post-merge check locks an incident before promotion', () => {
     ...greenChecks('merge-43', ['CI']),
     { name: 'Ledger', sha: 'merge-43', conclusion: 'failure' },
   ];
+  snapshot.production.promotion.status = 'pending';
+  snapshot.production.publicReadback.status = 'pending';
   const result = evaluateSnapshot(config, snapshot);
   assert.equal(result.decision, 'INCIDENT');
   assert.ok(result.mutations.some((mutation) => mutation.type === 'NOTIFY'));
@@ -50,6 +56,8 @@ for (const signal of ['stagedDeployment', 'stagedChecks', 'promotion']) {
   test(`failed ${signal} locks an incident without rolling back public production`, () => {
     const snapshot = postSnapshot();
     snapshot.production[signal].status = 'failure';
+    if (signal !== 'promotion') snapshot.production.promotion.status = 'pending';
+    snapshot.production.publicReadback.status = 'pending';
     const result = evaluateSnapshot(config, snapshot);
     assert.equal(result.decision, 'INCIDENT');
     assert.ok(!result.mutations.some((mutation) => mutation.type === 'INSTANT_ROLLBACK'));

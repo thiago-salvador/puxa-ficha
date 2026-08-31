@@ -55,7 +55,11 @@ function fixture(scenario) {
   }
   if (['stage-failure', 'await-promotion', 'public-failure', 'deployment-rollback-failure'].includes(scenario.kind)) {
     const prod = greenProduction(merge);
-    if (scenario.kind === 'stage-failure') prod.stagedChecks.status = 'failure';
+    if (scenario.kind === 'stage-failure') {
+      prod.stagedChecks.status = 'failure';
+      prod.promotion.status = 'pending';
+      prod.publicReadback.status = 'pending';
+    }
     if (scenario.kind === 'await-promotion') {
       prod.promotion.status = 'pending';
       prod.publicReadback.status = 'pending';

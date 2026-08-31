@@ -105,7 +105,7 @@ test('base change between snapshot and merge fails closed before any merge call'
   assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
-test('post-merge failure marks release gate failed, reports once, instant-rolls back, and creates revert PR', async () => {
+test('failure after promotion marks the gate failed and instant-rolls back without creating a revert PR', async () => {
   const config = liveConfig();
   const mergeSha = 'merge-43';
   const owner = pr(43, {
@@ -122,10 +122,11 @@ test('post-merge failure marks release gate failed, reports once, instant-rolls 
     snapshot: { prs: [owner], main: { sha: mergeSha }, production: greenProduction(mergeSha) },
     adapters,
   });
-  assert.equal(result.decision, 'ROLLBACK');
+  assert.equal(result.decision, 'ROLLBACK_DEPLOYMENT');
   const sequence = calls.map(([name]) => name);
-  assert.deepEqual(sequence, ['setLabels', 'setCommitStatus', 'productionForSha', 'instantRollback', 'createRollbackPr', 'upsertIncident']);
+  assert.deepEqual(sequence, ['setCommitStatus', 'productionForSha', 'instantRollback', 'upsertIncident']);
   assert.equal(calls.find(([name]) => name === 'instantRollback')[1], 'deploy-before');
+  assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
 });
 
 test('incident outage does not prevent rollback actions from being attempted', async () => {
@@ -147,7 +148,7 @@ test('incident outage does not prevent rollback actions from being attempted', a
     /rollback operations failed/,
   );
   assert.deepEqual(calls.map(([name]) => name), [
-    'setLabels', 'setCommitStatus', 'productionForSha', 'instantRollback', 'createRollbackPr', 'upsertIncident',
+    'setCommitStatus', 'productionForSha', 'instantRollback', 'upsertIncident',
   ]);
 });
 
@@ -168,7 +169,8 @@ test('rollback refuses a deployment id that does not match the previous main SHA
     /rollback operations failed/,
   );
   assert.ok(!calls.some(([name]) => name === 'instantRollback'));
-  assert.ok(calls.some(([name]) => name === 'createRollbackPr'));
+  assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
+  assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
 test('ready staged release opens hold but keeps lock until promoted readback', async () => {
@@ -179,10 +181,9 @@ test('ready staged release opens hold but keeps lock until promoted readback', a
   production.promotion.status = 'pending';
   const { calls, adapters } = recorder();
   const result = await reconcile({ config, snapshot: { prs: [owner], main: { sha }, production }, adapters });
-  assert.equal(result.decision, 'VERIFY');
-  assert.equal(result.reason, 'ready-to-promote');
-  assert.deepEqual(calls.map(([name]) => name), ['setCommitStatus']);
-  assert.equal(calls[0][2], 'success');
+  assert.equal(result.decision, 'AWAIT_PROMOTION');
+  assert.equal(result.reason, 'stage-green-awaiting-promotion');
+  assert.deepEqual(calls, []);
 });
 
 test('green rollback PR merge dispatches recovery validation for the restored SHA', async () => {
