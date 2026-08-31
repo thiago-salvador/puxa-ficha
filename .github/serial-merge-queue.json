@@ -194,7 +194,8 @@
       "MERGE_QUEUE_GH_TOKEN",
       "VERCEL_TOKEN",
       "VERCEL_ORG_ID",
-      "VERCEL_PROJECT_ID"
+      "VERCEL_PROJECT_ID",
+      "VERCEL_AUTOMATION_BYPASS_SECRET"
     ],
     "optional": [],
     "missingPolicy": "block"

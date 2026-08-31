@@ -18,8 +18,11 @@ test('coordinator workflow serializes events and checks out only trusted main', 
 
 test('workflow has read-only default permissions and explicit scoped secret mapping', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
+  const config = JSON.parse(await readFile(configUrl, 'utf8'));
   assert.match(workflow, /permissions:\s*\n\s*contents: read/);
   assert.match(workflow, /GITHUB_TOKEN: \$\{\{ secrets\.MERGE_QUEUE_GH_TOKEN \}\}/);
+  assert.match(workflow, /VERCEL_AUTOMATION_BYPASS_SECRET: \$\{\{ secrets\.VERCEL_AUTOMATION_BYPASS_SECRET \}\}/);
+  assert.ok(config.secrets.required.includes('VERCEL_AUTOMATION_BYPASS_SECRET'));
   assert.match(workflow, /persist-credentials: false/);
 });
 

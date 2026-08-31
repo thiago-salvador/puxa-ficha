@@ -5,6 +5,9 @@ import {
   type Locator,
   type Page,
 } from "playwright"
+import { establishAutomationBypass } from "./vercel-automation-bypass"
+
+export { automationBypassHeaders } from "./vercel-automation-bypass"
 
 export function releaseBaseUrl(value: string): string {
   const url = new URL(value.trim())
@@ -315,26 +318,26 @@ async function checkQuiz(context: BrowserContext): Promise<{ questions: number; 
     while (page.url().includes("/quiz/perguntas") && questions < 50) {
       const radio = page.getByRole("radio", { name: "Neutro ou sem opinião" })
       await radio.waitFor({ state: "visible" })
-      const currentQuestion = (await page.locator("h1, h2, legend").first().innerText()).trim()
+      const questionHeading = page.locator('h2[id^="quiz-pergunta-"]')
+      const currentQuestionId = await questionHeading.getAttribute("id")
+      invariant(currentQuestionId, "pergunta do quiz sem identificador")
       await radio.click()
       await page.getByRole("button", { name: /^Continuar$/i }).click()
       questions += 1
       // Sincronizar por sinal de estado, não por delay fixo: ou a URL virou
       // resultado, ou a pergunta visível mudou. Timeout fixo curto deixava a
       // iteração seguinte correr durante a navegação e gerar falso negativo.
-      await Promise.race([
-        page.waitForURL(/\/quiz\/resultado\?/, { timeout: ACTION_TIMEOUT_MS }).catch(() => undefined),
+      await Promise.any([
+        page.waitForURL(/\/quiz\/resultado\?/, { timeout: ACTION_TIMEOUT_MS }),
         page
           .waitForFunction(
             (previous) => {
-              const el = document.querySelector("h1, h2, legend")
-              const text = el?.textContent?.trim() ?? ""
-              return text.length > 0 && text !== previous
+              const el = document.querySelector<HTMLHeadingElement>('h2[id^="quiz-pergunta-"]')
+              return Boolean(el?.id && el.id !== previous)
             },
-            currentQuestion,
+            currentQuestionId,
             { timeout: ACTION_TIMEOUT_MS },
-          )
-          .catch(() => undefined),
+          ),
       ])
     }
 
@@ -399,6 +402,7 @@ async function main(): Promise<number> {
     reducedMotion: "reduce",
     viewport: { width: 1440, height: 1000 },
   })
+  await establishAutomationBypass(context, BASE_URL, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
   const results: SmokeResult[] = []
 
   const collect = async <T>(

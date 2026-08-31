@@ -17,13 +17,18 @@ export async function proveDeployment({
   expectedSha,
   expectedRef = 'main',
   expectedEnvironment = 'production',
+  bypassSecret,
   fetchImpl = globalThis.fetch,
   timeoutMs = 15_000,
 }) {
   const origin = validateReleaseBaseUrl(baseUrl);
   if (!SHA_PATTERN.test(String(expectedSha ?? ''))) throw new Error('SHA esperado deve ter 40 caracteres hexadecimais');
+  const headers = { accept: 'application/json', 'cache-control': 'no-cache' };
+  if (bypassSecret) {
+    headers['x-vercel-protection-bypass'] = bypassSecret;
+  }
   const response = await fetchImpl(`${origin}/api/deployment-info`, {
-    headers: { accept: 'application/json', 'cache-control': 'no-cache' },
+    headers,
     redirect: 'error',
     signal: AbortSignal.timeout(timeoutMs),
   });
@@ -45,6 +50,7 @@ async function main() {
   const result = await proveDeployment({
     baseUrl: process.env.PF_BASE_URL,
     expectedSha: process.env.PF_EXPECTED_DEPLOY_SHA,
+    bypassSecret: process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
   });
   process.stdout.write(`${JSON.stringify({ proof: 'deployment-info', ...result })}\n`);
 }
