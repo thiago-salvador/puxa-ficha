@@ -26,12 +26,25 @@ SELECT
 
 DO $precondition$
 DECLARE
+  candidate_identity_count integer;
   candidate_count integer;
   chapa_count integer;
   patrimonio_count integer;
   dr_luisinho_absence_count integer;
   forward_receipt_count integer;
 BEGIN
+  SELECT count(*) INTO candidate_identity_count
+  FROM public.candidatos
+  WHERE id = '914d9904-1c6a-47f9-a25f-017138dc1cef'::uuid
+    AND slug = 'elizeu-aguiar';
+
+  -- O replay linear de estrutura não carrega a ficha. Nesse único caso a
+  -- curadoria é um no-op. Se a ficha existe, todos os guards exatos abaixo
+  -- continuam obrigatórios e qualquer divergência aborta a transação.
+  IF candidate_identity_count = 0 THEN
+    RETURN;
+  END IF;
+
   SELECT count(*) INTO candidate_count
   FROM public.candidatos
   WHERE id = '914d9904-1c6a-47f9-a25f-017138dc1cef'::uuid
@@ -133,6 +146,11 @@ WHERE NOT EXISTS (
   WHERE fonte = 'tse-patrimonio'
     AND alvo = 'elizeu-aguiar'
     AND execucao = 'migration:20260831215407'
+)
+AND EXISTS (
+  SELECT 1 FROM public.candidatos
+  WHERE id = '914d9904-1c6a-47f9-a25f-017138dc1cef'::uuid
+    AND slug = 'elizeu-aguiar'
 );
 
 DO $postcondition$
@@ -153,6 +171,14 @@ DECLARE
   before_absences_digest text;
   dr_luisinho_absence_count integer;
 BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM public.candidatos
+    WHERE id = '914d9904-1c6a-47f9-a25f-017138dc1cef'::uuid
+      AND slug = 'elizeu-aguiar'
+  ) THEN
+    RETURN;
+  END IF;
+
   SELECT count(*) INTO target_count
   FROM public.candidatos c
   JOIN public.patrimonio p ON p.candidato_id = c.id AND p.ano_eleicao = 2026

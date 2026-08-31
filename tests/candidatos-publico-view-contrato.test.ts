@@ -342,6 +342,9 @@ describe("contrato da view candidatos_publico", () => {
       "20260830143500_jhc_voto_artigo_17.sql",
       // Reconcilia somente votações e coleta_log. Não redefine candidatos_publico.
       "20260830151500_destaques_freshness_reconciliation.sql",
+      // Curadoria de patrimônio e identidade eleitoral de Elizeu. Não altera
+      // a definição nem as permissões de candidatos_publico.
+      "20260831215407_corrigir_elizeu_patrimonio_sq.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
