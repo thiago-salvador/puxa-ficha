@@ -24,7 +24,8 @@ Exigem confirmação explícita que nomeie cada ato:
 
 1. mergear o PR de implementação e iniciar o deploy associado;
 2. criar ou atualizar `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`,
-   `VERCEL_ORG_ID` e `VERCEL_PROJECT_ID`;
+   `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` e
+   `VERCEL_AUTOMATION_BYPASS_SECRET`;
 3. desligar a atribuição automática dos domínios do ambiente Production do
    projeto `puxa-ficha`;
 4. alterar `.github/serial-merge-queue.json` para `enabled: true` e definir
@@ -45,7 +46,7 @@ Critério de saída: código publicado e automação inerte.
 
 ## Fase 2, credenciais mínimas
 
-1. Configure os quatro secrets obrigatórios.
+1. Configure os cinco secrets obrigatórios.
 2. Restrinja o token GitHub ao repositório e às permissões de Actions,
    contents, deployments, issues, pull requests e commit statuses necessárias.
 3. Restrinja o token Vercel ao team e projeto exatos.
