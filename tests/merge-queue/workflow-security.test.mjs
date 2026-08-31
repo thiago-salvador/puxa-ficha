@@ -128,6 +128,10 @@ test('privileged automation sources are protected by the irreversible-change gat
   assert.ok(config.irreversibleChanges.pathPatterns.includes('scripts/merge-queue/**'));
   assert.equal(config.irreversibleChanges.requireNamedRemoteWriteApproval, true);
   assert.deepEqual(config.queue.trustedContextActors, ['thiago-salvador']);
+  assert.deepEqual(config.queue.mergeCoAuthor, {
+    name: 'Thiago Salvador',
+    email: 'contato.thiagosalvador@gmail.com',
+  });
 });
 
 test('rollback verifies the immutable deployment tuple before the remote write', async () => {
