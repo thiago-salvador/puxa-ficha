@@ -7,11 +7,14 @@ function decide(overrides) {
   return evaluateSnapshot(config, { prs: [pr(43, overrides), pr(44)], main: { sha: 'main-a' } });
 }
 
-test('behind branch blocks and keeps FIFO owner', () => {
+test('behind branch keeps FIFO owner and requests an exact-head update', () => {
   const result = decide({ sync: 'BEHIND' });
-  assert.equal(result.decision, 'BLOCK');
+  assert.equal(result.decision, 'WAIT');
   assert.equal(result.owner, 43);
-  assert.equal(result.reason, 'branch-not-up-to-date');
+  assert.equal(result.reason, 'branch-update-required');
+  assert.deepEqual(result.mutations.at(-1), {
+    type: 'UPDATE_BRANCH', pr: 43, expectedHeadSha: 'head-43',
+  });
 });
 
 test('missing expected check blocks', () => {
@@ -29,6 +32,14 @@ for (const conclusion of ['failure', 'cancelled', 'neutral', 'skipped']) {
     assert.equal(result.decision, 'BLOCK');
   });
 }
+
+test('a skipped non-required job does not deadlock otherwise green checks', () => {
+  const result = decide({ checks: [
+    ...greenChecks('head-43'),
+    { name: 'not-applicable', sha: 'head-43', status: 'completed', conclusion: 'skipped' },
+  ] });
+  assert.equal(result.decision, 'MERGE');
+});
 
 test('pending check waits without advancing another PR', () => {
   const result = decide({ checks: [

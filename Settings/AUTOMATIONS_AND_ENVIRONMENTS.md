@@ -73,6 +73,7 @@ segura.
 |---|---|---|---|
 | `SUPABASE_DB_URL`, `PF_DATABASE_URL` | Conexão Postgres para backup, replay, apply e readback | Obrigatória somente nos comandos que citam uma delas. Não há fallback entre os dois nomes porque os scripts têm contratos distintos. | Operador ou GitHub secret |
 | `PF_LEDGER_PREDECESSOR`, `PF_LEDGER_MANIFEST` | Override do predecessor e manifesto usados pelo readback público da Fase 4 | Opcionais. Ausentes, o runner usa `.github/merge-queue/irreversible-change-manifest.json`; quando fornecidos, devem apontar para o run e migrations reais. | Operador ou workflow |
+| `VERCEL_AUTOMATION_BYPASS_SECRET` | Autenticação dos smokes no deployment Production ainda protegido e sem domínio público | Obrigatória no release staged protegido. Não há fallback; o preflight aborta antes do smoke quando ausente. O valor deve ser o Automation Bypass do projeto Vercel exato. | GitHub secret ou operador do release |
 | `SUPABASE_ACCESS_TOKEN`, `SUPABASE_PROJECT_REF` | Snapshot e auditorias via Supabase CLI/API | Opcionais por script. `SUPABASE_PROJECT_REF` tem fallback codificado em duas auditorias; snapshot remoto exige credencial. | Operador local |
 | `TRANSPARENCIA_API_KEY`, `PF_TRANSPARENCIA_API_BASE` | Portal da Transparência e endpoint substituto de teste | Chave obrigatória para coleta real. Base é opcional e existe para teste controlado. | Operador ou GitHub secret |
 | `INSTAGRAM_APP_ID` | Enriquecimento de Instagram | Opcional; sem valor, o enriquecimento não usa o app id. | Operador local |

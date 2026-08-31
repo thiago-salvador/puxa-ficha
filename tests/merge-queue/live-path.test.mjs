@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { GitHubAdapter, preflightSecrets } from '../../scripts/merge-queue/adapters.mjs';
+import { GitHubAdapter, HttpError, preflightSecrets } from '../../scripts/merge-queue/adapters.mjs';
 import { enrichProduction, reconcile } from '../../scripts/merge-queue/coordinator.mjs';
 import { config as baseConfig, greenChecks, greenProduction, pr } from './helpers.mjs';
 
@@ -13,6 +13,7 @@ function recorder(overrides = {}) {
       github: {
         setLabels: record('setLabels'),
         upsertIncident: record('upsertIncident'),
+        updateBranch: record('updateBranch', { message: 'Updating pull request branch.' }),
         assertMergePreconditions: record('assertMergePreconditions', { ok: true }),
         assertOwnerLabels: record('assertOwnerLabels', { ok: true }),
         merge: record('merge', { merged: true, sha: 'merge-43' }),
@@ -162,6 +163,19 @@ test('successful live merge dispatches staged validation without opening a legac
       project: { name: 'puxa-ficha' },
     },
   ]);
+});
+
+test('live behind branch updates only the captured head and keeps the serial lock', async () => {
+  const { calls, adapters } = recorder();
+  const result = await reconcile({
+    config: liveConfig(),
+    snapshot: { prs: [pr(43, { sync: 'behind' }), pr(44)], main: { sha: 'main-before' } },
+    adapters,
+  });
+  assert.equal(result.decision, 'WAIT');
+  assert.equal(result.reason, 'branch-update-required');
+  assert.deepEqual(calls.map(([name]) => name), ['setLabels', 'updateBranch']);
+  assert.deepEqual(calls.find(([name]) => name === 'updateBranch').slice(1), [43, 'head-43']);
 });
 
 test('live pre-merge snapshot captures the previous production deployment before merging', async () => {
@@ -474,6 +488,179 @@ test('GitHub checks keep only the newest commit status for each context', async 
   }]);
 });
 
+test('GitHub checks keep only the newest rerun for each check name', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    if (url.includes('/check-runs?')) {
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ check_runs: [
+          {
+            id: 2,
+            name: 'verify',
+            head_sha: sha,
+            status: 'completed',
+            conclusion: 'success',
+            completed_at: '2026-08-31T12:00:00Z',
+            html_url: 'https://github.test/runs/current',
+          },
+          {
+            id: 1,
+            name: 'verify',
+            head_sha: sha,
+            status: 'completed',
+            conclusion: 'failure',
+            completed_at: '2026-08-31T11:00:00Z',
+            html_url: 'https://github.test/runs/old',
+          },
+        ] }),
+      };
+    }
+    if (url.includes('/statuses?')) {
+      return { ok: true, status: 200, text: async () => '[]' };
+    }
+    throw new Error(`unexpected URL: ${url}`);
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+  assert.deepEqual(await github.checks(sha), [{
+    name: 'verify',
+    sha,
+    status: 'completed',
+    conclusion: 'success',
+    url: 'https://github.test/runs/current',
+  }]);
+});
+
+test('GitHub CodeQL evidence comes from exact-SHA analyses for both languages', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    assert.match(url, /code-scanning\/analyses\?ref=refs%2Fheads%2Fmain/);
+    return {
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([
+        {
+          id: 3,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/3',
+        },
+        {
+          id: 2,
+          commit_sha: sha,
+          category: '/language:javascript-typescript',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/2',
+        },
+        {
+          id: 1,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T11:00:00Z',
+          error: 'old failed rerun',
+          url: 'https://api.github.test/analyses/1',
+        },
+        {
+          id: 4,
+          commit_sha: 'b'.repeat(40),
+          category: '/language:python',
+          created_at: '2026-08-31T13:00:00Z',
+          error: '',
+        },
+      ]),
+    };
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+  assert.deepEqual(await github.codeScanningChecks(sha, 'refs/heads/main'), [
+    {
+      name: 'CodeQL analysis (javascript-typescript)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/2',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+    {
+      name: 'CodeQL analysis (python)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/3',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+  ]);
+});
+
+test('GitHub CodeQL evidence fails closed on an exact-SHA analysis error', async () => {
+  const sha = 'a'.repeat(40);
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => ({
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([{
+        id: 1,
+        commit_sha: sha,
+        category: '/language:python',
+        created_at: '2026-08-31T12:00:00Z',
+        error: 'upload failed',
+      }]),
+    }),
+  });
+  assert.equal((await github.codeScanningChecks(sha, 'refs/heads/main'))[0].conclusion, 'failure');
+});
+
+test('GitHub branch update is pinned to the observed PR head', async () => {
+  const calls = [];
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      return {
+        ok: true,
+        status: 202,
+        text: async () => JSON.stringify({ message: 'Updating pull request branch.' }),
+      };
+    },
+  });
+  const sha = 'a'.repeat(40);
+  await github.updateBranch(43, sha);
+  assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/update-branch');
+  assert.equal(calls[0].init.method, 'PUT');
+  assert.deepEqual(JSON.parse(calls[0].init.body), { expected_head_sha: sha });
+});
+
+test('GitHub branch update treats a changed head race as a safe recheck', async () => {
+  const oldSha = 'a'.repeat(40);
+  const newSha = 'b'.repeat(40);
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.request = async (path) => {
+    if (path.endsWith('/update-branch')) throw new HttpError('head changed', 422, {});
+    return { head: { sha: newSha }, mergeable_state: 'unknown' };
+  };
+  assert.deepEqual(await github.updateBranch(43, oldSha), {
+    updated: false,
+    stale: true,
+    observedHeadSha: newSha,
+  });
+});
+
+test('GitHub branch update fails closed when the captured head is still behind', async () => {
+  const sha = 'a'.repeat(40);
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.request = async (path) => {
+    if (path.endsWith('/update-branch')) throw new HttpError('cannot update', 422, {});
+    return { head: { sha }, mergeable_state: 'behind' };
+  };
+  await assert.rejects(github.updateBranch(43, sha), (error) => error instanceof HttpError && error.status === 422);
+});
+
 test('GitHub pagination includes a sensitive file from the second page', async () => {
   const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl: async () => { throw new Error('unused'); } });
   github.checks = async () => [];
@@ -497,4 +684,30 @@ test('GitHub pagination includes a sensitive file from the second page', async (
     labels: [],
   }, liveConfig());
   assert.ok(snapshot.files.includes('supabase/migrations/hidden-on-page-two.sql'));
+});
+
+test('GitHub live snapshot refreshes per-PR mergeability instead of trusting the list response', async () => {
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.paginated = async (path) => {
+    if (path.includes('/pulls?state=open')) return [{ number: 43 }];
+    if (path.includes('/issues?state=all')) return [];
+    throw new Error(`unexpected pagination: ${path}`);
+  };
+  github.request = async (path) => {
+    if (path.includes('/branches/')) return { commit: { sha: 'main-sha' } };
+    if (path.endsWith('/pulls/43')) {
+      return { number: 43, mergeable: true, mergeable_state: 'behind' };
+    }
+    throw new Error(`unexpected request: ${path}`);
+  };
+  github.pullSnapshot = async (pull) => ({
+    number: pull.number,
+    sync: pull.mergeable_state,
+    mergeable: pull.mergeable,
+  });
+  github.checks = async () => [];
+  github.codeScanningChecks = async () => [];
+
+  const snapshot = await github.snapshot(liveConfig());
+  assert.deepEqual(snapshot.prs, [{ number: 43, sync: 'behind', mergeable: true }]);
 });

@@ -40,6 +40,10 @@ function statusOf(record) {
   return 'failure';
 }
 
+function isSkipped(record) {
+  return lower(record?.conclusion ?? record?.status ?? record?.state ?? record?.result) === 'skipped';
+}
+
 function checkName(check) {
   return String(check?.name ?? check?.context ?? check?.checkName ?? '');
 }
@@ -154,15 +158,19 @@ export function validateQueueState(configInput, snapshot) {
 function inspectChecks(checksInput, expectedSha, section) {
   const checks = asArray(checksInput);
   const required = requiredNames(section);
+  const requiredSet = new Set(required);
   const current = checks.filter((check) => checkSha(check) === expectedSha);
   const stale = checks.filter((check) => checkSha(check) && checkSha(check) !== expectedSha);
-  const failures = current.filter((check) => statusOf(check) === 'failure');
+  // A skipped required check is a hard failure. A skipped check that is not
+  // required is a declared non-applicable job and must not deadlock the queue.
+  const considered = current.filter((check) => !isSkipped(check) || requiredSet.has(checkName(check)));
+  const failures = considered.filter((check) => statusOf(check) === 'failure');
   const pending = current.filter((check) => statusOf(check) === 'pending');
   const missing = required.filter((name) => !current.some((check) => checkName(check) === name));
   const staleRequired = missing.filter((name) => stale.some((check) => checkName(check) === name));
   const trulyMissing = missing.filter((name) => !staleRequired.includes(name));
   const staleOnlyPresent = section?.includeAllPresent !== false
-    ? stale.filter((old) => !current.some((now) => checkName(now) === checkName(old)))
+    ? stale.filter((old) => !isSkipped(old) && !current.some((now) => checkName(now) === checkName(old)))
     : [];
 
   if (failures.length) {
@@ -181,7 +189,7 @@ function inspectChecks(checksInput, expectedSha, section) {
   if (trulyMissing.length || (required.length === 0 && current.length === 0)) {
     return { state: 'failure', reason: 'check-missing', checks: trulyMissing };
   }
-  if (section?.includeAllPresent !== false && current.some((check) => statusOf(check) !== 'success')) {
+  if (section?.includeAllPresent !== false && considered.some((check) => statusOf(check) !== 'success')) {
     return { state: 'failure', reason: 'check-not-green' };
   }
   return { state: 'success', reason: 'all-checks-green', count: current.length };
@@ -275,6 +283,9 @@ function branchState(pr, config) {
   const sync = lower(pr.sync ?? pr.mergeStateStatus ?? pr.branchState);
   const upToDate = pr.upToDate === true || ['up_to_date', 'up-to-date', 'clean', 'has_hooks'].includes(sync);
   if (config.queue.requireUpToDate && !upToDate) {
+    if (sync === 'behind') {
+      return { state: 'pending', reason: 'branch-update-required', updateRequired: true };
+    }
     return ['unknown', 'unstable', 'checking', ''].includes(sync)
       ? { state: 'pending', reason: 'branch-state-pending' }
       : { state: 'failure', reason: 'branch-not-up-to-date' };
@@ -341,7 +352,11 @@ function preMergeDecision(pr, config, snapshot, queue, acquire) {
     ], { branch, risk });
   }
   if (branch.state === 'pending') {
-    return decision('WAIT', pr, queue, branch.reason, phaseMutations(pr, 'pre-merge', config, { acquire }), { branch, risk });
+    const mutations = phaseMutations(pr, 'pre-merge', config, { acquire });
+    if (branch.updateRequired) {
+      mutations.push({ type: 'UPDATE_BRANCH', pr: pr.number, expectedHeadSha: pr.headSha });
+    }
+    return decision('WAIT', pr, queue, branch.reason, mutations, { branch, risk });
   }
   const checks = inspectChecks(pr.checks, pr.headSha, sectionForRisk(config.checks.preMerge, risk));
   if (checks.state === 'failure') {

@@ -25,6 +25,10 @@ function checkFromRun(run) {
   };
 }
 
+function checkRunObservedAt(run) {
+  return Date.parse(run.completed_at ?? run.started_at ?? run.created_at ?? '') || Number(run.id ?? 0);
+}
+
 function isTrustedContextComment(comment, config) {
   const actor = String(comment.user?.login ?? '').toLowerCase();
   const app = String(comment.performed_via_github_app?.slug ?? '').toLowerCase();
@@ -109,6 +113,15 @@ export class GitHubAdapter {
       this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/check-runs?filter=latest&per_page=100`, (payload) => payload.check_runs),
       this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/statuses?per_page=100`),
     ]);
+    const latestRunsByName = new Map();
+    for (const run of runs) {
+      const name = String(run.name ?? '');
+      const observedAt = checkRunObservedAt(run);
+      const current = latestRunsByName.get(name);
+      if (!current || observedAt > current.observedAt) {
+        latestRunsByName.set(name, { run, observedAt });
+      }
+    }
     const latestByContext = new Map();
     for (const status of statusesPayload) {
       const context = String(status.context ?? '');
@@ -127,7 +140,33 @@ export class GitHubAdapter {
       createdAt: status.created_at ?? null,
       updatedAt: status.updated_at ?? status.created_at ?? null,
     }));
-    return [...runs.map(checkFromRun), ...statuses];
+    return [...latestRunsByName.values()].map(({ run }) => checkFromRun(run)).concat(statuses);
+  }
+
+  async codeScanningChecks(sha, ref) {
+    const analyses = await this.paginated(
+      `/repos/${this.repository}/code-scanning/analyses?ref=${encodeURIComponent(ref)}&per_page=100`,
+    );
+    const latestByLanguage = new Map();
+    for (const analysis of analyses) {
+      if (analysis.commit_sha !== sha) continue;
+      const match = String(analysis.category ?? '').match(/^\/language:(javascript-typescript|python)$/);
+      if (!match) continue;
+      const language = match[1];
+      const observedAt = Date.parse(analysis.created_at ?? '') || Number(analysis.id ?? 0);
+      const current = latestByLanguage.get(language);
+      if (!current || observedAt > current.observedAt) {
+        latestByLanguage.set(language, { analysis, observedAt });
+      }
+    }
+    return [...latestByLanguage.entries()].map(([language, { analysis }]) => ({
+      name: `CodeQL analysis (${language})`,
+      sha,
+      status: 'completed',
+      conclusion: analysis.error ? 'failure' : 'success',
+      url: analysis.url ?? null,
+      createdAt: analysis.created_at ?? null,
+    })).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   async queueContext(number, config) {
@@ -242,7 +281,11 @@ export class GitHubAdapter {
       this.paginated(`/repos/${this.repository}/issues?state=all&labels=${encodeURIComponent(config.labels.active)}&per_page=100`),
       this.request(`/repos/${this.repository}/branches/${encodeURIComponent(config.defaultBranch)}`),
     ]);
-    const byNumber = new Map(open.map((pr) => [pr.number, pr]));
+    // The pulls list endpoint commonly omits the computed mergeable fields.
+    // Decisions must use the full per-PR resource or the queue can wait forever.
+    const openDetails = await Promise.all(open.map((pr) =>
+      this.request(`/repos/${this.repository}/pulls/${pr.number}`)));
+    const byNumber = new Map(openDetails.map((pr) => [pr.number, pr]));
     for (const issue of lockedIssues) {
       if (issue.pull_request && !byNumber.has(issue.number)) {
         byNumber.set(issue.number, await this.request(`/repos/${this.repository}/pulls/${issue.number}`));
@@ -250,9 +293,13 @@ export class GitHubAdapter {
     }
     const prs = await Promise.all([...byNumber.values()].map((pr) => this.pullSnapshot(pr, config)));
     const mainSha = branch.commit.sha;
+    const [mainChecks, codeScanningChecks] = await Promise.all([
+      this.checks(mainSha),
+      this.codeScanningChecks(mainSha, `refs/heads/${config.defaultBranch}`),
+    ]);
     return {
       prs,
-      main: { sha: mainSha, checks: await this.checks(mainSha) },
+      main: { sha: mainSha, checks: [...mainChecks, ...codeScanningChecks] },
     };
   }
 
@@ -277,6 +324,22 @@ export class GitHubAdapter {
     return this.request(`/repos/${this.repository}/pulls/${number}/merge`, {
       method: 'PUT', body: JSON.stringify({ sha: expectedHeadSha, merge_method: mergeMethod }),
     });
+  }
+
+  async updateBranch(number, expectedHeadSha) {
+    try {
+      return await this.request(`/repos/${this.repository}/pulls/${number}/update-branch`, {
+        method: 'PUT', body: JSON.stringify({ expected_head_sha: expectedHeadSha }),
+      });
+    } catch (error) {
+      if (!(error instanceof HttpError) || error.status !== 422) throw error;
+      const current = await this.request(`/repos/${this.repository}/pulls/${number}`);
+      const sync = lowerState(current.mergeable_state);
+      if (current.head?.sha !== expectedHeadSha || ['clean', 'has_hooks'].includes(sync)) {
+        return { updated: false, stale: true, observedHeadSha: current.head?.sha ?? null };
+      }
+      throw error;
+    }
   }
 
   async assertMergePreconditions(number, expectedHeadSha, expectedBaseSha, config, requiredLabel = config.labels.active) {

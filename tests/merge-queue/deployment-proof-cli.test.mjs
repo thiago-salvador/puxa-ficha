@@ -24,6 +24,7 @@ test('proveDeployment accepts only the exact deployment-info tuple', async () =>
   const result = await proveDeployment({
     baseUrl: 'https://puxa-ficha-a1b2c3.vercel.app',
     expectedSha: SHA,
+    bypassSecret: 'automation-bypass-secret',
     fetchImpl: async (url, init) => {
       seen.push([String(url), init]);
       return response({ ok: true, environment: 'production', commitRef: 'main', commitSha: SHA });
@@ -32,6 +33,8 @@ test('proveDeployment accepts only the exact deployment-info tuple', async () =>
   assert.deepEqual(result, { ok: true, sha: SHA, ref: 'main', environment: 'production' });
   assert.equal(seen[0][0], 'https://puxa-ficha-a1b2c3.vercel.app/api/deployment-info');
   assert.equal(seen[0][1].redirect, 'error');
+  assert.equal(seen[0][1].headers['x-vercel-protection-bypass'], 'automation-bypass-secret');
+  assert.equal(seen[0][1].headers['x-vercel-set-bypass-cookie'], undefined);
 });
 
 for (const [name, reply, pattern] of [
@@ -62,6 +65,36 @@ test('release runner executes every smoke without a shell and preserves the targ
   assert.equal(calls.length, RELEASE_SMOKE_STEPS.length);
   assert.ok(calls.every((call) => call.options.shell === false));
   assert.ok(calls.every((call) => call.options.env.PF_BASE_URL === 'https://puxa-ficha-a1b2c3.vercel.app'));
+});
+
+test('release runner CLI path inherits the target from process.env', async () => {
+  const originalBaseUrl = process.env.PF_BASE_URL;
+  const originalSha = process.env.PF_EXPECTED_DEPLOY_SHA;
+  process.env.PF_BASE_URL = 'https://puxa-ficha-a1b2c3.vercel.app';
+  process.env.PF_EXPECTED_DEPLOY_SHA = SHA;
+  const calls = [];
+  const spawnImpl = (command, args, options) => {
+    calls.push({ command, args, options });
+    const child = new EventEmitter();
+    queueMicrotask(() => child.emit('close', 0, null));
+    return child;
+  };
+
+  try {
+    await runReleaseSmokes({
+      steps: [{ name: 'deployment-info', command: 'node', args: ['proof.mjs'] }],
+      spawnImpl,
+    });
+  } finally {
+    if (originalBaseUrl === undefined) delete process.env.PF_BASE_URL;
+    else process.env.PF_BASE_URL = originalBaseUrl;
+    if (originalSha === undefined) delete process.env.PF_EXPECTED_DEPLOY_SHA;
+    else process.env.PF_EXPECTED_DEPLOY_SHA = originalSha;
+  }
+
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].options.env.PF_BASE_URL, 'https://puxa-ficha-a1b2c3.vercel.app');
+  assert.equal(calls[0].options.env.PF_EXPECTED_DEPLOY_SHA, SHA);
 });
 
 test('release runner stops on the first non-zero smoke', async () => {

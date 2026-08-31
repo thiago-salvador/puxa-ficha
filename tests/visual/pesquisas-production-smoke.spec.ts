@@ -1,5 +1,9 @@
 import AxeBuilder from "@axe-core/playwright"
 import { expect, test, type Locator, type Page } from "playwright/test"
+import {
+  automationBypassHeaders,
+  establishAutomationBypass,
+} from "../../scripts/vercel-automation-bypass"
 
 const EXPECTED_SHA = process.env.PF_EXPECTED_DEPLOY_SHA ?? ""
 const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG?.trim() || "alan-rick"
@@ -99,7 +103,9 @@ test.beforeAll(async ({ request }) => {
     /^[0-9a-f]{40}$/,
   )
 
-  const response = await request.get("/api/deployment-info")
+  const response = await request.get("/api/deployment-info", {
+    headers: automationBypassHeaders(process.env.VERCEL_AUTOMATION_BYPASS_SECRET),
+  })
   expect(response.ok(), `deployment-info respondeu ${response.status()}`).toBe(true)
   await expect(response.json()).resolves.toMatchObject({
     ok: true,
@@ -107,6 +113,12 @@ test.beforeAll(async ({ request }) => {
     commitRef: "main",
     commitSha: EXPECTED_SHA,
   })
+})
+
+test.beforeEach(async ({ context, baseURL }) => {
+  if (baseURL) {
+    await establishAutomationBypass(context, baseURL, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
+  }
 })
 
 test.describe("smoke somente leitura de pesquisas em produção", () => {

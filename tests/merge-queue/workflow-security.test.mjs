@@ -5,6 +5,7 @@ import test from 'node:test';
 const workflowUrl = new URL('../../.github/workflows/serial-merge-queue.yml', import.meta.url);
 const stagedWorkflowUrl = new URL('../../.github/workflows/staged-production-release.yml', import.meta.url);
 const configUrl = new URL('../../.github/serial-merge-queue.json', import.meta.url);
+const coordinatorUrl = new URL('../../scripts/merge-queue/coordinator.mjs', import.meta.url);
 const manifestUrl = new URL('../../.github/merge-queue/irreversible-change-manifest.json', import.meta.url);
 
 test('coordinator workflow serializes events and checks out only trusted main', async () => {
@@ -18,8 +19,11 @@ test('coordinator workflow serializes events and checks out only trusted main', 
 
 test('workflow has read-only default permissions and explicit scoped secret mapping', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
+  const config = JSON.parse(await readFile(configUrl, 'utf8'));
   assert.match(workflow, /permissions:\s*\n\s*contents: read/);
   assert.match(workflow, /GITHUB_TOKEN: \$\{\{ secrets\.MERGE_QUEUE_GH_TOKEN \}\}/);
+  assert.match(workflow, /VERCEL_AUTOMATION_BYPASS_SECRET: \$\{\{ secrets\.VERCEL_AUTOMATION_BYPASS_SECRET \}\}/);
+  assert.ok(config.secrets.required.includes('VERCEL_AUTOMATION_BYPASS_SECRET'));
   assert.match(workflow, /persist-credentials: false/);
 });
 
@@ -51,11 +55,14 @@ test('ledger configura o manifesto canonico e releases reais', async () => {
   }
 });
 
-test('new automation ships disabled and fail-closed', async () => {
+test('automation requires both repository and GitHub activation locks', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
+  const coordinator = await readFile(coordinatorUrl, 'utf8');
   const config = JSON.parse(await readFile(configUrl, 'utf8'));
-  assert.equal(config.enabled, false);
+  assert.equal(Object.hasOwn(config, 'enabled'), true);
+  assert.equal(typeof config.enabled, 'boolean');
   assert.match(workflow, /vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true'/);
+  assert.match(coordinator, /if \(!normalized\.enabled\)/);
   assert.equal(config.queue.requireUpToDate, true);
   assert.equal(config.releaseGate.failClosedOnMissingHold, true);
   assert.equal(config.releaseGate.required, false);
@@ -67,6 +74,22 @@ test('new automation ships disabled and fail-closed', async () => {
   assert.equal(config.production.promotion.mode, 'explicit-vercel-promote');
   assert.equal(config.irreversibleChanges.executePullRequestSql, false);
   assert.equal(config.secrets.missingPolicy, 'block');
+});
+
+test('queue contract matches current blocking checks and delegates public smoke to staged release', async () => {
+  const config = JSON.parse(await readFile(configUrl, 'utf8'));
+  for (const phase of ['preMerge', 'postMerge', 'rollback']) {
+    assert.ok(config.checks[phase].required.includes('Cobertura (bloqueante)'));
+    assert.ok(!config.checks[phase].required.includes('Cobertura (informativa)'));
+  }
+  assert.ok(!config.checks.postMerge.required.includes('Acessibilidade (produção)'));
+  assert.ok(!config.checks.rollback.required.includes('Acessibilidade (produção)'));
+  for (const phase of ['postMerge', 'rollback']) {
+    assert.ok(!config.checks[phase].required.includes('CodeQL'));
+    assert.ok(config.checks[phase].required.includes('CodeQL analysis (javascript-typescript)'));
+    assert.ok(config.checks[phase].required.includes('CodeQL analysis (python)'));
+  }
+  assert.deepEqual(config.production.stagedChecks.checks, ['Vercel - puxa-ficha: staged-release']);
 });
 
 test('post-merge dispatch validates trusted SHA before production commands', async () => {

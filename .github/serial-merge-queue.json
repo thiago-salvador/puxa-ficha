@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "enabled": false,
+  "enabled": true,
   "repository": "thiago-salvador/puxa-ficha",
   "defaultBranch": "main",
   "concurrency": {
@@ -39,7 +39,7 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
+        "Cobertura (bloqueante)",
         "CodeQL",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
@@ -57,10 +57,10 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
@@ -74,10 +74,10 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
@@ -194,7 +194,8 @@
       "MERGE_QUEUE_GH_TOKEN",
       "VERCEL_TOKEN",
       "VERCEL_ORG_ID",
-      "VERCEL_PROJECT_ID"
+      "VERCEL_PROJECT_ID",
+      "VERCEL_AUTOMATION_BYPASS_SECRET"
     ],
     "optional": [],
     "missingPolicy": "block"
