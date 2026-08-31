@@ -16,6 +16,57 @@ const ALLOWED_ENV_KEYS = new Set([
   'SENTRY_ORG',
   'SENTRY_PROJECT',
 ]);
+const AUDIT_ENV_KEYS = new Set([
+  'PATH',
+  'HOME',
+  'USER',
+  'LOGNAME',
+  'SHELL',
+  'TMPDIR',
+  'TMP',
+  'TEMP',
+  'LANG',
+  'LC_ALL',
+  'TERM',
+  'CI',
+  'NO_COLOR',
+  'FORCE_COLOR',
+  'NODE_OPTIONS',
+  'NODE_EXTRA_CA_CERTS',
+  'SSL_CERT_FILE',
+  'SSL_CERT_DIR',
+  'HTTP_PROXY',
+  'HTTPS_PROXY',
+  'NO_PROXY',
+  'http_proxy',
+  'https_proxy',
+  'no_proxy',
+  'XDG_CONFIG_HOME',
+  'GH_TOKEN',
+  'GITHUB_TOKEN',
+  'GH_HOST',
+  'GH_ENTERPRISE_TOKEN',
+  'GH_CONFIG_DIR',
+  'VERCEL_TOKEN',
+  'VERCEL_ORG_ID',
+  'VERCEL_PROJECT_ID',
+  'VERCEL_CONFIG_DIR',
+  'SUPABASE_DB_URL',
+  'PF_DATABASE_URL',
+  'PF_PSQL_BIN',
+  'PGHOST',
+  'PGPORT',
+  'PGUSER',
+  'PGPASSWORD',
+  'PGDATABASE',
+  'PGSSLMODE',
+  'PGSSLROOTCERT',
+  'PGAPPNAME',
+  'PGCONNECT_TIMEOUT',
+  'SENTRY_AUTH_TOKEN',
+  'SENTRY_ORG',
+  'SENTRY_PROJECT',
+]);
 
 export class UnavailableError extends Error {
   constructor(message) {
@@ -38,14 +89,24 @@ function sanitize(value) {
     .replace(/eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{10,}/g, '[redacted-jwt]')
     .replace(/(postgres(?:ql)?:\/\/[^:\s/]+:)[^@\s]+@/gi, '$1[redacted]@')
     .replace(/Bearer\s+[A-Za-z0-9._-]+/gi, 'Bearer [redacted]')
-    .replace(/[\r\n|]+/g, ' ')
+    .replace(/[\r\n]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .slice(0, 500);
 }
 
-function markdownCell(value) {
-  return sanitize(value).replace(/\|/g, '\\|') || 'n/a';
+export function markdownCell(value) {
+  return sanitize(value).replace(/\\/g, '\\\\').replace(/\|/g, '\\|') || 'n/a';
+}
+
+export function filterAuditEnvironment(source, overrides = {}) {
+  const filtered = {};
+  for (const environment of [source, overrides]) {
+    for (const [key, value] of Object.entries(environment ?? {})) {
+      if (AUDIT_ENV_KEYS.has(key) && value != null) filtered[key] = String(value);
+    }
+  }
+  return filtered;
 }
 
 export function parseEnvFile(text, allowed = ALLOWED_ENV_KEYS) {
@@ -69,7 +130,7 @@ export function runCommand(file, args, options = {}) {
     const isolatedProcessGroup = process.platform !== 'win32';
     const child = spawn(file, args, {
       cwd: options.cwd ?? ROOT,
-      env: options.env ?? process.env,
+      env: options.env ?? {},
       shell: false,
       detached: isolatedProcessGroup,
       stdio: ['pipe', 'pipe', 'pipe'],
@@ -266,9 +327,9 @@ export function createDefaultProbes({ env, runner = runCommand, repository = DEF
       source: 'public SHA source tree',
       command: 'git show <public-sha>:<fixed-files>',
       run: async (context) => {
-        const general = await runner('git', ['show', `${context.publicSha}:src/components/CandidateGeneralData.tsx`]);
-        const tabs = await runner('git', ['show', `${context.publicSha}:src/components/ProfileTabs.tsx`]);
-        const tests = await runner('git', ['show', `${context.publicSha}:tests/rotulos-plural-e-mobile.test.tsx`]);
+        const general = await runner('git', ['show', `${context.publicSha}:src/components/CandidateGeneralData.tsx`], { env });
+        const tabs = await runner('git', ['show', `${context.publicSha}:src/components/ProfileTabs.tsx`], { env });
+        const tests = await runner('git', ['show', `${context.publicSha}:tests/rotulos-plural-e-mobile.test.tsx`], { env });
         if (!general.stdout.includes('<dl') || !general.stdout.includes('<dt') || !general.stdout.includes('<dd')) {
           throw new Error('public SHA lacks the dt/dd semantic wrapper correction');
         }
@@ -470,7 +531,7 @@ async function main() {
   if (args.envFile) {
     fileEnv = parseEnvFile(await readFile(resolve(args.envFile), 'utf8'));
   }
-  const env = { ...fileEnv, ...process.env };
+  const env = filterAuditEnvironment(fileEnv, process.env);
   const probes = createDefaultProbes({ env });
   const result = await executeAudit({ probes, outputPath: args.outputPath });
   process.stdout.write(`${JSON.stringify({

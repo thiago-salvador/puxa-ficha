@@ -133,7 +133,7 @@ mascarar o ambiente real.
 | `GH_REPO`, `WATCHDOG_DRY_RUN`, `WATCHDOG_GRACE_DAYS` | Configuração do cron watchdog | Opcionais. Fallbacks: repositório canônico, `0` e 8 dias. | Workflow ou operador local |
 | `DEFAULT_TAGS_JSON`, `INPUT_TAGS`, `REVALIDATE_URL`, `REVALIDATE_SECRET`, `TAGS_JSON` | Revalidação de cache | Variáveis internas montadas a partir de input e secret no mesmo job. | GitHub workflow |
 | `RAW_SOURCES`, `INCREMENTAL`, `REVALIDAR`, `MANIFESTO` | Ingestão e patrimônio | Variáveis internas derivadas dos inputs ou paths do job. | GitHub workflow |
-| `DISPATCH_REF`, `DISPATCH_SHA`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `RESTORED_SHA`, `ROLLBACK_PR`, `SMOKE_JOB_RESULT` | Estado da fila serial e rollback | Variáveis efêmeras do job; valores vêm de inputs e outputs previamente validados. | GitHub workflow |
+| `DISPATCH_REF`, `DISPATCH_SHA`, `DISPATCH_ENVIRONMENT`, `DISPATCH_GIT_SHA`, `DISPATCH_PROJECT`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `CANDIDATE_DEPLOYMENT_ID`, `CANDIDATE_DEPLOYMENT_URL`, `PREVIOUS_DEPLOYMENT_ID`, `PREVIOUS_DEPLOYMENT_SHA`, `PREVIOUS_DEPLOYMENT_URL`, `INCIDENT_LABEL`, `JOB_STATUS`, `ROLLBACK_OUTCOME`, `VERIFY_OUTCOME` | Estado da fila serial, promoção e rollback | Variáveis efêmeras do job; valores vêm de inputs, outputs e recursos remotos previamente validados. | GitHub workflow |
 | `WATCHED_HEAD_SHA`, `WATCHED_RUN_ID`, `WATCHED_RUN_URL`, `WATCHED_RUN_CONCLUSION` | Payload do watchdog da fila | Variáveis efêmeras recebidas do workflow observado. | GitHub workflow |
 
 ### Contrato de Reply-To integrado por PF-24

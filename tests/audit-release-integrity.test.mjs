@@ -3,6 +3,8 @@ import test from 'node:test';
 import {
   UnavailableError,
   executeAudit,
+  filterAuditEnvironment,
+  markdownCell,
   parseEnvFile,
   renderReport,
 } from '../scripts/audit/audit-release-integrity.mjs';
@@ -62,6 +64,30 @@ test('report stores only bounded summaries and redacts token-shaped values', () 
   assert.doesNotMatch(report, /ghp_[a-z]/);
   assert.match(report, /\[redacted-token\]/);
   assert.ok(report.length < 2000);
+});
+
+test('markdown cells escape existing backslashes before table separators', () => {
+  assert.equal(markdownCell(String.raw`path\with|separator`), String.raw`path\\with\|separator`);
+});
+
+test('audit child environment keeps only the explicit operational allowlist', () => {
+  const filtered = filterAuditEnvironment({
+    PATH: '/usr/bin',
+    GH_TOKEN: 'github-token',
+    VERCEL_TOKEN: 'vercel-token',
+    SUPABASE_DB_URL: 'postgres://database',
+    SENTRY_AUTH_TOKEN: 'sentry-token',
+    UNRELATED_SECRET: 'must-not-leak',
+  });
+
+  assert.deepEqual(filtered, {
+    PATH: '/usr/bin',
+    GH_TOKEN: 'github-token',
+    VERCEL_TOKEN: 'vercel-token',
+    SUPABASE_DB_URL: 'postgres://database',
+    SENTRY_AUTH_TOKEN: 'sentry-token',
+  });
+  assert.equal(filtered.UNRELATED_SECRET, undefined);
 });
 
 test('env parser loads only explicitly allowed keys and supports quoted values', () => {
