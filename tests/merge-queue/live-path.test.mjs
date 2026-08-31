@@ -659,6 +659,46 @@ test('GitHub branch update is pinned to the observed PR head', async () => {
   assert.deepEqual(JSON.parse(calls[0].init.body), { expected_head_sha: sha });
 });
 
+test('GitHub squash merge always credits the configured co-author', async () => {
+  const calls = [];
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ merged: true, sha: 'b'.repeat(40) }),
+      };
+    },
+  });
+  const sha = 'a'.repeat(40);
+  await github.merge(43, sha, 'squash', {
+    name: 'Thiago Salvador',
+    email: 'contato.thiagosalvador@gmail.com',
+  });
+  assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/merge');
+  assert.deepEqual(JSON.parse(calls[0].init.body), {
+    sha,
+    merge_method: 'squash',
+    commit_message: 'Co-authored-by: Thiago Salvador <contato.thiagosalvador@gmail.com>',
+  });
+});
+
+test('GitHub merge fails closed when co-author metadata is absent or unsafe', async () => {
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => { throw new Error('merge request must not run'); },
+  });
+  await assert.rejects(github.merge(43, 'a'.repeat(40), 'squash'), /valid merge co-author/);
+  await assert.rejects(
+    github.merge(43, 'a'.repeat(40), 'squash', { name: 'Thiago\nInjected', email: 'x@example.com' }),
+    /valid merge co-author/,
+  );
+});
+
 test('GitHub branch update treats a changed head race as a safe recheck', async () => {
   const oldSha = 'a'.repeat(40);
   const newSha = 'b'.repeat(40);
