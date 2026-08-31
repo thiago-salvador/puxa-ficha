@@ -17,6 +17,19 @@ test('behind branch keeps FIFO owner and requests an exact-head update', () => {
   });
 });
 
+test('GitHub blocked merge state waits for branch protection without reporting a stale branch', () => {
+  const result = decide({
+    sync: 'blocked',
+    checks: [
+      ...greenChecks('head-43', ['verify']),
+      { name: 'build', sha: 'head-43', status: 'in_progress', conclusion: null },
+    ],
+  });
+  assert.equal(result.decision, 'WAIT');
+  assert.equal(result.reason, 'branch-state-pending');
+  assert.ok(!result.mutations.some((mutation) => mutation.type === 'NOTIFY'));
+});
+
 test('missing expected check blocks', () => {
   const result = decide({ checks: greenChecks('head-43', ['verify']) });
   assert.equal(result.decision, 'BLOCK');
