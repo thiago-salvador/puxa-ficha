@@ -13,12 +13,16 @@ export const config = {
   },
   production: {
     stagedDeployment: { required: true },
+    stagedChecks: { required: true },
     smokes: { required: true },
     promotion: { required: true },
     publicReadback: { required: true },
+    rollback: { required: true },
   },
   irreversibleChanges: {
     pathPatterns: ['supabase/migrations/**'],
+    migrationPathPatterns: ['supabase/migrations/**'],
+    databaseRollbackMode: 'migration-specific',
     requireValidatedManifest: true,
   },
 };
@@ -39,13 +43,19 @@ export function pr(number, overrides = {}) {
     labels: [],
     checks: greenChecks(headSha),
     files: ['app/page.tsx'],
+    manifestPathsVerified: true,
     ...overrides,
   };
 }
 
 export function greenProduction(sha) {
   return {
-    stagedDeployment: { sha, status: 'success' },
+    previousDeployment: { id: 'dep-previous', sha: 'trusted-sha', status: 'success' },
+    stagedDeployment: {
+      id: 'dep-candidate', sha, status: 'success', readyState: 'READY', target: 'production',
+      url: 'https://dep-candidate.vercel.app',
+    },
+    stagedChecks: { sha, status: 'success' },
     smokes: { sha, status: 'success' },
     promotion: { sha, status: 'success' },
     publicReadback: { sha, status: 'success' },
@@ -53,10 +63,29 @@ export function greenProduction(sha) {
 }
 
 export function reversibleMigrationManifest() {
+  const checks = ['migration-forward', 'migration-readback', 'migration-rollback'];
   return {
     version: 1,
     reversible: true,
+    databaseRollbackMode: 'migration-specific',
+    databaseArtifacts: {
+      forward: {
+        artifact: 'supabase/migrations/change.sql',
+        workflow: '.github/workflows/apply-change-production.yml',
+        checks: ['migration-forward'],
+      },
+      readback: {
+        artifact: 'supabase/readback/change.readback.sql',
+        workflow: '.github/workflows/apply-change-production.yml',
+        checks: ['migration-readback'],
+      },
+      rollback: {
+        artifact: 'supabase/rollback/change.rollback.sql',
+        workflow: '.github/workflows/rollback-change-production.yml',
+        checks: ['migration-rollback'],
+      },
+    },
     rollback: { kind: 'compensating-migration', artifact: 'supabase/rollbacks/restore.sql' },
-    verification: { checks: ['migration-replay', 'ledger-readback'] },
+    verification: { checks },
   };
 }

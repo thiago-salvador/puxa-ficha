@@ -1,8 +1,62 @@
 # Revisão adversarial da fila serial de merge
 
+## Re-review de 2026-08-31
+
+### Veredito atual
+
+**IMPLEMENTAÇÃO LOCAL APROVADA PARA PR, ATIVAÇÃO REMOTA AINDA BLOQUEADA.** A
+arquitetura antiga, que misturava reconciliação, promoção pública e recovery no
+mesmo workflow, foi substituída por um release staged fail-closed. A config
+continua `enabled: false` e a variável remota deve permanecer ausente ou falsa.
+
+Correções verificadas nesta revisão:
+
+- o hold não depende mais de commit status: auto-assignment fica desligado e a
+  promoção usa explicitamente o deployment ID testado;
+- o dispatch leva `git.sha`, ambiente e projeto exigidos pela integração da
+  Vercel e é rejeitado se qualquer identidade divergir;
+- o candidato `READY` é provado em URL `.vercel.app` antes da promoção;
+- o domínio público precisa continuar no predecessor durante o stage;
+- o smoke completo roda no stage e é repetido no domínio público;
+- `Production release closure` é a única prova que libera o slot;
+- falha pública aciona rollback pelo deployment ID e SHA capturados, nunca por
+  ordenação temporal;
+- `Production rollback recovery` prova o SHA restaurado e repete os smokes;
+- stage falho, fechamento público falho e rollback falho têm caminhos e
+  incidentes distintos, todos preservando o lock;
+- migrations agora são classificadas separadamente de outros paths sensíveis e
+  exigem artifacts forward, readback, compensação e readback pós-compensação;
+- nenhum rollback SQL genérico foi introduzido;
+- actions de terceiros usadas no release estão pinadas por SHA completo;
+- retries do mesmo commit status preservam somente o estado mais recente, sem
+  deixar uma falha histórica bloquear um retry verde;
+- cancelamento de stage ou fechamento público entra nos mesmos caminhos de
+  incidente e recovery, exceto o `skipped` esperado com a fila desligada;
+- o release não recebe `CRON_SECRET` e não aciona o runtime smoke privado que
+  grava e remove short link no Supabase;
+- a auditoria histórica read-only encontrou zero falha confirmada nas onze
+  superfícies consultadas. Três provas diretas ficaram `unavailable`: conexão
+  SQL de produção do Supabase, readbacks SQL diretos e API do Sentry com o token
+  disponível.
+
+O gate externo que falta não é correção de código. É a ativação controlada:
+
+1. publicar o PR mantendo os dois locks desligados;
+2. configurar credenciais mínimas;
+3. desligar a atribuição automática de domínios na Vercel;
+4. ativar config e variável em mudança isolada;
+5. provar um release verde real;
+6. provar uma falha deliberada, Instant Rollback e promoção explícita de
+   recovery.
+
+Até essas provas, o estado correto é "implementado, não ativado". O procedimento
+nominal está em `docs/operations/fail-closed-release-activation.md`.
+
+## Registro histórico de 2026-08-21
+
 Data: 2026-08-21. Escopo: todo o pacote local da fila serial, sem escrita remota.
 
-## Veredito
+### Veredito daquele snapshot
 
 **NÃO HABILITAR AINDA.** Os 104 testes específicos da fila, os 3.449 testes não ignorados do repositório e os dois workflows passam localmente sobre a `main` atual. Os blockers locais encontrados pela revisão foram corrigidos. Falta a prova externa do hold real da Vercel no projeto e ambiente exatos, portanto `enabled` e `SERIAL_MERGE_QUEUE_ENABLED` devem permanecer falsos.
 

@@ -6,7 +6,18 @@ import {
   type Page,
 } from "playwright"
 
-const BASE_URL = "https://puxaficha.com.br"
+export function releaseBaseUrl(value: string): string {
+  const url = new URL(value.trim())
+  if (url.protocol !== "https:") throw new Error("A URL do smoke deve usar HTTPS")
+  const allowed = url.hostname === "puxaficha.com.br" || url.hostname.endsWith(".vercel.app")
+  if (!allowed) throw new Error("Host do smoke não permitido")
+  if (url.pathname !== "/" || url.search || url.hash) {
+    throw new Error("A URL do smoke deve conter somente a origem")
+  }
+  return url.origin
+}
+
+const BASE_URL = releaseBaseUrl(process.env.PF_BASE_URL ?? "https://puxaficha.com.br")
 const NAVIGATION_TIMEOUT_MS = 60_000
 const ACTION_TIMEOUT_MS = 20_000
 const SOCIAL_CARD_MIN_BYTES = 80 * 1024

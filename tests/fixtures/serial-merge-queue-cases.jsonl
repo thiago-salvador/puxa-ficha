@@ -12,22 +12,26 @@
 {"id":"G12","origin":"OBSERVADO run 32265746098","scenario":{"kind":"pre-failure","pr":23,"head":"bdd8ed5","conclusion":"cancelled"},"expected":"BLOCK"}
 {"id":"G13","origin":"OBSERVADO run 32250044360","scenario":{"kind":"pre-failure","pr":20,"head":"2f987fe","conclusion":"cancelled"},"expected":"BLOCK"}
 {"id":"G14","origin":"OBSERVADO replay 32178043147 CI 32178043158","scenario":{"kind":"pre-failure","pr":12,"head":"8b53662","conclusion":"cancelled","secondFailure":true},"expected":"BLOCK"}
-{"id":"G15","origin":"OBSERVADO run 32530337456","scenario":{"kind":"post-failure","merge":"ca2a0c8","check":"Ledger"},"expected":"ROLLBACK"}
-{"id":"G16","origin":"OBSERVADO run 32424010059","scenario":{"kind":"post-failure","merge":"688a805","check":"Ledger"},"expected":"ROLLBACK"}
-{"id":"G17","origin":"OBSERVADO run 32304941073","scenario":{"kind":"post-failure","merge":"adfef28","check":"Ledger"},"expected":"ROLLBACK"}
-{"id":"G18","origin":"OBSERVADO run 32268001697","scenario":{"kind":"post-failure","merge":"16fd8a8","check":"CI"},"expected":"ROLLBACK"}
-{"id":"G19","origin":"OBSERVADO run 32263428277","scenario":{"kind":"post-failure","merge":"caaf32f","check":"CI"},"expected":"ROLLBACK"}
-{"id":"G20","origin":"OBSERVADO run 32223085524","scenario":{"kind":"post-failure","merge":"986c81c","check":"Ingestao"},"expected":"ROLLBACK"}
+{"id":"G15","origin":"OBSERVADO run 32530337456","scenario":{"kind":"post-failure","merge":"ca2a0c8","check":"Ledger"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G16","origin":"OBSERVADO run 32424010059","scenario":{"kind":"post-failure","merge":"688a805","check":"Ledger"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G17","origin":"OBSERVADO run 32304941073","scenario":{"kind":"post-failure","merge":"adfef28","check":"Ledger"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G18","origin":"OBSERVADO run 32268001697","scenario":{"kind":"post-failure","merge":"16fd8a8","check":"CI"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G19","origin":"OBSERVADO run 32263428277","scenario":{"kind":"post-failure","merge":"caaf32f","check":"CI"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G20","origin":"OBSERVADO run 32223085524","scenario":{"kind":"post-failure","merge":"986c81c","check":"Ingestao"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G21","origin":"OBSERVADO S10 deployment 6011094851","scenario":{"kind":"pre-failure","pr":35,"head":"7000ca3","conclusion":"failure"},"expected":"BLOCK"}
-{"id":"G22","origin":"COMPOSICAO S08","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"deployment"},"expected":"VERIFY"}
-{"id":"G23","origin":"COMPOSICAO S08 S09","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"Ledger"},"expected":"VERIFY"}
-{"id":"G24","origin":"COMPOSICAO S08 S10","scenario":{"kind":"deploy-failure","merge":"5c85b3a"},"expected":"ROLLBACK"}
+{"id":"G22","origin":"COMPOSICAO S08","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"deployment"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G23","origin":"COMPOSICAO S08 S09","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"Ledger"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G24","origin":"COMPOSICAO S08 S10","scenario":{"kind":"deploy-failure","merge":"5c85b3a"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G25","origin":"COMPOSICAO S10 S11","scenario":{"kind":"rollback-progress","failedMerge":"688a805"},"expected":"WAIT"}
 {"id":"G26","origin":"COMPOSICAO S10 S11","scenario":{"kind":"recovered-unchanged","head":"failed-head"},"expected":"BLOCK"}
 {"id":"G27","origin":"COMPOSICAO S01 S10 S11","scenario":{"kind":"recovered-fixed","head":"new-sha","failedHead":"failed-head"},"expected":"MERGE"}
 {"id":"G28","origin":"COMPOSICAO S01 G05","scenario":{"kind":"blocked-head-later-green","headPr":47,"candidate":48},"expected":"BLOCK"}
 {"id":"G29","origin":"COMPOSICAO historico PR47 S01 G05","scenario":{"kind":"stale","pr":47,"head":"5e32fdc","old":"7974128"},"expected":"WAIT"}
 {"id":"G30","origin":"COMPOSICAO historico PR47 S01 G05","scenario":{"kind":"current-green-old-failed","pr":47,"head":"5e32fdc","old":"7974128"},"expected":"MERGE"}
-{"id":"G31","origin":"COMPOSICAO S08 S09","scenario":{"kind":"wrong-deploy-sha","merge":"5c85b3a","deploy":"ca2a0c8"},"expected":"VERIFY"}
+{"id":"G31","origin":"COMPOSICAO S08 S09","scenario":{"kind":"wrong-deploy-sha","merge":"5c85b3a","deploy":"ca2a0c8"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G32","origin":"COMPOSICAO S04 S06 S11","scenario":{"kind":"migration-recovery-missing-db","merge":"restore-sha"},"expected":"WAIT"}
 {"id":"G33","origin":"OBSERVADO reparo S11","scenario":{"kind":"release","pr":36,"head":"repair-head","merge":"01113ae"},"expected":"RELEASE"}
+{"id":"G34","origin":"DESIGN fail-closed stage","scenario":{"kind":"stage-failure","merge":"merge-stage-fail"},"expected":"INCIDENT"}
+{"id":"G35","origin":"DESIGN fail-closed promocao","scenario":{"kind":"await-promotion","merge":"merge-await-promotion"},"expected":"AWAIT_PROMOTION"}
+{"id":"G36","origin":"DESIGN fail-closed publico","scenario":{"kind":"public-failure","merge":"merge-public-fail"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G37","origin":"DESIGN fail-closed recovery","scenario":{"kind":"deployment-rollback-failure","merge":"merge-rollback-fail"},"expected":"INCIDENT_CRITICAL"}

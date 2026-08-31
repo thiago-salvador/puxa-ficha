@@ -175,7 +175,8 @@ function structurePass(check: StructureCase["check"]): boolean {
         smokeSpecText.includes('getByText("0%", { exact: true })') &&
         smokeConfigText.includes('viewport: { width: 1440, height: 1000 }') &&
         smokeConfigText.includes('viewport: { width: 390, height: 844 }') &&
-        smokeConfigText.includes('"https://puxaficha.com.br"')
+        smokeConfigText.includes('"https://puxaficha.com.br"') &&
+        smokeConfigText.includes('.endsWith(".vercel.app")')
       )
   }
 }
