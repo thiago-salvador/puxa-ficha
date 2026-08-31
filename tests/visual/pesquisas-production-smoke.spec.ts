@@ -57,6 +57,14 @@ async function waitForProfile(page: Page) {
     .catch(() => undefined)
 }
 
+async function openPesquisasTab(page: Page) {
+  const tab = page.locator(
+    '[role="tab"][aria-controls="profile-panel-pesquisas"]:visible',
+  )
+  await expect(tab).toHaveCount(1)
+  await tab.click()
+}
+
 async function expectNoHorizontalOverflow(page: Page, regions: Locator[]) {
   const documentOverflows = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -124,7 +132,7 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
       animations: "disabled",
     })
 
-    await page.getByRole("tab", { name: /^Pesquisas/ }).click()
+    await openPesquisasTab(page)
     const tab = page.locator("[data-pf-pesquisas-tab]")
     await expect(tab).toContainText("Datafolha")
     await expect(tab).toContainText("45%")
@@ -163,7 +171,7 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
       animations: "disabled",
     })
 
-    await page.getByRole("tab", { name: /^Pesquisas/ }).click()
+    await openPesquisasTab(page)
     const tab = page.locator("[data-pf-pesquisas-tab]")
     await expect(tab.locator("[data-pf-pesquisas-empty]")).toBeVisible()
     await expect(tab.getByText("0%", { exact: true })).toHaveCount(0)
