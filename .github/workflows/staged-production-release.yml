@@ -27,6 +27,8 @@ jobs:
       deployment_url: ${{ steps.deployment.outputs.url }}
     permissions:
       contents: read
+      issues: read
+      pull-requests: read
       statuses: write
     env:
       EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
@@ -41,7 +43,7 @@ jobs:
     steps:
       - name: Mark staged verification pending
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
@@ -52,7 +54,7 @@ jobs:
 
       - name: Validate dispatch and required credentials
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -147,8 +149,8 @@ jobs:
       - name: Install exact dependencies
         run: npm ci
 
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers used by the release suite
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Prove public production is still the captured predecessor
         env:
@@ -166,7 +168,7 @@ jobs:
       - name: Publish staged verification result
         if: always()
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         shell: bash
         run: |
@@ -188,6 +190,9 @@ jobs:
     if: needs.staged_release.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: read
     env:
       EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
       OWNER_PR: ${{ github.event.client_payload.pr }}
@@ -197,7 +202,7 @@ jobs:
     steps:
       - name: Revalidate lock, predecessor and exact candidate
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -303,12 +308,15 @@ jobs:
     if: needs.promote_candidate.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    permissions:
+      contents: read
+      statuses: write
     env:
       EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
     steps:
       - name: Mark public closure pending
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
@@ -331,8 +339,8 @@ jobs:
       - name: Install exact dependencies
         run: npm ci
 
-      - name: Install Playwright browser
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright browsers used by the release suite
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Wait for public exact-SHA promotion
         env:
@@ -358,7 +366,7 @@ jobs:
       - name: Publish public closure result
         if: always()
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           JOB_STATUS: ${{ job.status }}
         shell: bash
         run: |
@@ -389,6 +397,10 @@ jobs:
       )
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    permissions:
+      contents: read
+      issues: write
+      statuses: write
     env:
       EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
       OWNER_PR: ${{ github.event.client_payload.pr }}
@@ -399,7 +411,7 @@ jobs:
       - name: Mark rollback recovery pending
         continue-on-error: true
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
@@ -411,7 +423,7 @@ jobs:
         id: rollback
         continue-on-error: true
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
         shell: bash
@@ -481,9 +493,9 @@ jobs:
         if: steps.rollback.outcome == 'success'
         run: npm ci
 
-      - name: Install Playwright browser
+      - name: Install Playwright browsers used by the release suite
         if: steps.rollback.outcome == 'success'
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Prove and smoke restored predecessor
         id: verify
@@ -507,7 +519,7 @@ jobs:
       - name: Publish rollback result and upsert locked incident
         if: always()
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           ROLLBACK_OUTCOME: ${{ steps.rollback.outcome }}
           VERIFY_OUTCOME: ${{ steps.verify.outcome }}
         shell: bash
@@ -557,13 +569,17 @@ jobs:
       && needs.staged_release.result != 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+      statuses: write
     env:
       EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
       OWNER_PR: ${{ github.event.client_payload.pr }}
     steps:
       - name: Upsert locked stage incident
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail

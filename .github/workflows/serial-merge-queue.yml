@@ -29,6 +29,16 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Operação manual segura
+        required: true
+        default: reconcile
+        type: choice
+        options:
+          - reconcile
+          - dry-run
+          - vercel-credentials
 
 # Eventos simultâneos viram uma fila de execuções. O lock persistente em labels
 # continua protegendo a operação entre execuções e durante recovery.
@@ -36,15 +46,22 @@ concurrency:
   group: serial-merge-queue
   cancel-in-progress: false
 
-# O coordenador usa MERGE_QUEUE_GH_TOKEN, com escopo próprio. O GITHUB_TOKEN
-# implícito serve somente para ler a default branch no checkout confiável.
+# O coordenador usa o GITHUB_TOKEN efêmero para leituras e reserva o
+# MERGE_QUEUE_GH_TOKEN, com escopo próprio, somente para mutações.
 permissions:
+  actions: read
+  checks: read
   contents: read
+  deployments: read
+  issues: read
+  pull-requests: read
+  security-events: read
+  statuses: read
 
 jobs:
   reconcile:
     name: Reconcile serial merge queue
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true'
+    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs.mode != 'vercel-credentials' && inputs.mode != 'dry-run'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -64,11 +81,80 @@ jobs:
       - name: Reconcile
         env:
           MERGE_QUEUE_GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: node scripts/merge-queue/coordinator.mjs reconcile --config .github/serial-merge-queue.json
+
+  queue-dry-run:
+    name: Reconcile serial merge queue (read-only dry-run)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'dry-run'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout trusted default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Inspect the live queue without mutations
+        env:
+          MERGE_QUEUE_GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: dry-run-not-used
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          receipt="$(mktemp)"
+          trap 'rm -f "$receipt"' EXIT
+          node scripts/merge-queue/coordinator.mjs reconcile --dry-run --config .github/serial-merge-queue.json > "$receipt"
+          jq -e '.ok == true and .dryRun == true and (.writes | length) == 0' "$receipt" >/dev/null
+          jq -r '"decision=\(.decision) reason=\(.reason) owner=\(.owner // "none") queue_count=\(.queue | length) writes=\(.writes | length)"' "$receipt"
+
+  vercel-credentials:
+    name: Validate Vercel credentials (read-only)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'vercel-credentials'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe the Vercel deployments API without mutations
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -n "$VERCEL_TOKEN"
+          test -n "$VERCEL_ORG_ID"
+          test -n "$VERCEL_PROJECT_ID"
+
+          response_file="$(mktemp)"
+          trap 'rm -f "$response_file"' EXIT
+          query="projectId=${VERCEL_PROJECT_ID}&target=production&limit=1&teamId=${VERCEL_ORG_ID}"
+          http_code="$(curl --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+            "https://api.vercel.com/v6/deployments?${query}")"
+
+          test "$http_code" = "200"
+          jq -e '.deployments | type == "array"' "$response_file" >/dev/null
+          echo "Vercel credentials have read access to the configured project."

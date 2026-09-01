@@ -19,7 +19,7 @@
 {"id":"G19","origin":"OBSERVADO run 32263428277","scenario":{"kind":"post-failure","merge":"caaf32f","check":"CI"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G20","origin":"OBSERVADO run 32223085524","scenario":{"kind":"post-failure","merge":"986c81c","check":"Ingestao"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G21","origin":"OBSERVADO S10 deployment 6011094851","scenario":{"kind":"pre-failure","pr":35,"head":"7000ca3","conclusion":"failure"},"expected":"BLOCK"}
-{"id":"G22","origin":"COMPOSICAO S08","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"deployment"},"expected":"ROLLBACK_DEPLOYMENT"}
+{"id":"G22","origin":"COMPOSICAO S08","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"deployment"},"expected":"VERIFY_STAGE"}
 {"id":"G23","origin":"COMPOSICAO S08 S09","scenario":{"kind":"post-pending","merge":"5c85b3a","pending":"Ledger"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G24","origin":"COMPOSICAO S08 S10","scenario":{"kind":"deploy-failure","merge":"5c85b3a"},"expected":"ROLLBACK_DEPLOYMENT"}
 {"id":"G25","origin":"COMPOSICAO S10 S11","scenario":{"kind":"rollback-progress","failedMerge":"688a805"},"expected":"WAIT"}

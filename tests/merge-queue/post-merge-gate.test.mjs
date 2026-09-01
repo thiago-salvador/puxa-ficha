@@ -89,6 +89,58 @@ test('promoted candidate waits for public closure', () => {
   assert.equal(result.queue.find((item) => item.number === 44).disposition, 'WAIT');
 });
 
+test('promoted candidate waits when staged deployment lookup is transiently pending', () => {
+  const snapshot = postSnapshot();
+  snapshot.production.stagedDeployment.status = 'pending';
+  snapshot.production.publicReadback.status = 'pending';
+  const result = evaluateSnapshot(config, snapshot);
+  assert.equal(result.decision, 'VERIFY_STAGE');
+  assert.equal(result.reason, 'stage-evidence-pending-after-promotion');
+  assert.ok(!result.mutations.some((mutation) => mutation.type === 'INSTANT_ROLLBACK'));
+  assert.ok(!result.mutations.some((mutation) => mutation.type === 'SET_RELEASE_GATE_FAILED'));
+});
+
+test('release orchestration output status cannot poison its own post-merge evidence', () => {
+  const snapshot = postSnapshot({
+    pr: { postMergeChecks: undefined },
+    snapshot: {
+      main: {
+        sha: 'merge-43',
+        checks: [
+          ...greenChecks('merge-43', ['CI', 'Ledger']),
+          { name: 'Serial release orchestration', sha: 'merge-43', conclusion: 'failure' },
+        ],
+      },
+    },
+  });
+  const result = evaluateSnapshot({
+    ...config,
+    releaseGate: { required: false, name: 'Serial release orchestration' },
+  }, snapshot);
+  assert.equal(result.decision, 'RELEASE');
+  assert.equal(result.reason, 'release-gates-green');
+});
+
+test('coordinator workflow output check cannot poison post-merge product evidence', () => {
+  const snapshot = postSnapshot({
+    pr: { postMergeChecks: undefined },
+    snapshot: {
+      main: {
+        sha: 'merge-43',
+        checks: [
+          ...greenChecks('merge-43', ['CI', 'Ledger']),
+          { name: 'Reconcile serial merge queue', sha: 'merge-43', conclusion: 'failure' },
+        ],
+      },
+    },
+  });
+  const configured = structuredClone(config);
+  configured.checks.postMerge.ignored = ['Reconcile serial merge queue'];
+  const result = evaluateSnapshot(configured, snapshot);
+  assert.equal(result.decision, 'RELEASE');
+  assert.equal(result.reason, 'release-gates-green');
+});
+
 test('public closure failure starts deployment rollback to the captured target', () => {
   const snapshot = postSnapshot({
     pr: {
@@ -108,7 +160,13 @@ test('public closure failure starts deployment rollback to the captured target',
 });
 
 test('release happens only after every post-merge and production gate is green', () => {
-  const result = evaluateSnapshot(config, postSnapshot());
+  const result = evaluateSnapshot({
+    ...config,
+    releaseGate: { required: false, name: 'Serial release orchestration', successState: 'success' },
+  }, postSnapshot());
   assert.equal(result.decision, 'RELEASE');
+  assert.ok(result.mutations.some((mutation) => (
+    mutation.type === 'SET_RELEASE_GATE_SUCCESS' && mutation.mergeSha === 'merge-43'
+  )));
   assert.ok(result.mutations.some((mutation) => mutation.type === 'SET_LABELS' && mutation.remove.includes('active')));
 });

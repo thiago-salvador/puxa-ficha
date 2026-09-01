@@ -50,7 +50,14 @@ export async function enrichProduction(snapshot, config, vercel) {
   const promotion = currentDeployment?.sha === sha && currentDeployment?.status === 'success'
     ? { sha, status: 'success' }
     : { sha, status: 'pending' };
-  const rollbackCheck = signalFromChecks(checks, sha, names.rollback);
+  // GitHub materializes a skipped conditional job as a check run. A skipped
+  // rollback means that no promotion happened, so it is absence of recovery
+  // evidence, not proof that a rollback failed.
+  const rollbackChecks = checks.filter((check) => !(
+    names.rollback.includes(check.name)
+    && String(check.conclusion ?? '').toLowerCase() === 'skipped'
+  ));
+  const rollbackCheck = signalFromChecks(rollbackChecks, sha, names.rollback);
   const previousMainSha = owner?.queueContext?.previousMainSha ?? owner?.queueContext?.previousDeploymentSha ?? null;
   snapshot.production = {
     ...(snapshot.production ?? {}),
@@ -93,7 +100,12 @@ async function executeMutation(mutation, config, adapters) {
         headSha: mutation.expectedHeadSha,
         transition: 'merge-started',
       });
-      const merged = await adapters.github.merge(mutation.pr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.pr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) {
         throw new HttpError('GitHub declined the merge transition', 422, merged);
       }
@@ -154,6 +166,13 @@ async function executeMutation(mutation, config, adapters) {
         config.releaseGate?.name ?? 'Serial release gate',
         `Serial release failed: ${mutation.reason}`,
       );
+    case 'SET_RELEASE_GATE_SUCCESS':
+      return adapters.github.setCommitStatus(
+        mutation.mergeSha,
+        config.releaseGate?.successState ?? 'success',
+        config.releaseGate?.name ?? 'Serial release gate',
+        'Serial release completed successfully',
+      );
     case 'MARK_RECOVERED':
       return adapters.github.persistContext(mutation.pr, mutation.context);
     case 'MERGE_ROLLBACK_PR': {
@@ -165,7 +184,12 @@ async function executeMutation(mutation, config, adapters) {
         config.labels.rollbackPr,
       );
       await adapters.github.assertOwnerLabels(mutation.pr, [config.labels.active, config.labels.rollback]);
-      const merged = await adapters.github.merge(mutation.rollbackPr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.rollbackPr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) throw new HttpError('GitHub declined rollback PR merge', 422, merged);
       await adapters.github.persistContext(mutation.pr, { rollbackPr: mutation.rollbackPr, rollbackMergeSha: merged.sha });
       await adapters.github.dispatch('serial-merge-queue-recovery', {

@@ -114,6 +114,29 @@ test('missing rollback check stays null instead of inventing pending recovery ev
   assert.equal(result.production.rollback, null);
 });
 
+test('skipped conditional rollback job stays null instead of becoming a critical failure', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, { labels: ['active', 'post-merge'], mergeSha, queueContext: { previousMainSha: previousSha } })],
+    main: {
+      sha: mergeSha,
+      checks: [{ name: 'Production rollback recovery', sha: mergeSha, conclusion: 'skipped' }],
+    },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => null,
+  });
+  assert.equal(result.production.rollback, null);
+});
+
 test('canonical-domain lookup failure degrades to missing evidence and remains fail-closed', async () => {
   const mergeSha = 'a'.repeat(40);
   const config = liveConfig();
@@ -318,6 +341,60 @@ test('ready staged release keeps lock until explicit promotion is visible', asyn
   assert.deepEqual(calls, []);
 });
 
+test('completed public release overwrites any synthetic gate failure before releasing the lock', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const { calls, adapters } = recorder();
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'RELEASE');
+  assert.deepEqual(calls.map(([name]) => name), ['setCommitStatus', 'setLabels']);
+  assert.deepEqual(calls[0].slice(1), [
+    sha,
+    'success',
+    'Serial release orchestration',
+    'Serial release completed successfully',
+  ]);
+});
+
+test('failed final release status keeps the owner locked and opens an incident', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const statusError = Object.assign(new Error('status rejected'), { status: 422 });
+  const { calls, adapters } = recorder({
+    github: {
+      setCommitStatus: async (...args) => {
+        calls.push(['setCommitStatus', ...args]);
+        throw statusError;
+      },
+    },
+  });
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'BLOCK');
+  assert.equal(result.reason, 'remote-transition-failed');
+  assert.ok(calls.some(([name, number, add]) => (
+    name === 'setLabels' && number === 43 && add.includes('active') && add.includes('blocked')
+  )));
+  assert.ok(calls.some(([name]) => name === 'upsertIncident'));
+});
+
 test('green rollback PR merge dispatches recovery validation for the restored SHA', async () => {
   const config = liveConfig();
   const rollback = {
@@ -386,19 +463,45 @@ test('secret and production hold preflight fail closed', () => {
     },
   };
   assert.throws(() => preflightSecrets(config, {}), /secrets are missing/);
+  assert.throws(() => preflightSecrets(config, {
+    GITHUB_TOKEN: 'read', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+  }), /secrets are missing/);
   assert.doesNotThrow(() => preflightSecrets(config, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }));
   const broken = structuredClone(config);
   broken.production.stagedDeployment.hold.githubStatusContext = '';
   assert.throws(() => preflightSecrets(broken, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /hold configuration/);
   const unsafe = structuredClone(config);
   unsafe.production.stagedDeployment.hold.provider = 'vercel-deployment-checks';
   assert.throws(() => preflightSecrets(unsafe, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /disable Vercel automatic domain assignment/);
+});
+
+test('GitHub adapter isolates read traffic from privileged mutations', async () => {
+  const calls = [];
+  const fetchImpl = async (_url, init = {}) => {
+    calls.push(init);
+    return { ok: true, status: 200, text: async () => '{}' };
+  };
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'read-token',
+    writeToken: 'write-token',
+    fetchImpl,
+  });
+
+  await github.request('/repos/owner/repo');
+  await github.request('/repos/owner/repo/statuses/abc', { method: 'POST', body: '{}' });
+
+  assert.equal(calls[0].headers.Authorization, 'Bearer read-token');
+  assert.equal(calls[1].headers.Authorization, 'Bearer write-token');
 });
 
 test('incident upsert deduplicates by PR, phase, SHA, and reason signature', async () => {
@@ -634,6 +737,46 @@ test('GitHub branch update is pinned to the observed PR head', async () => {
   assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/update-branch');
   assert.equal(calls[0].init.method, 'PUT');
   assert.deepEqual(JSON.parse(calls[0].init.body), { expected_head_sha: sha });
+});
+
+test('GitHub squash merge always credits the configured co-author', async () => {
+  const calls = [];
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ merged: true, sha: 'b'.repeat(40) }),
+      };
+    },
+  });
+  const sha = 'a'.repeat(40);
+  await github.merge(43, sha, 'squash', {
+    name: 'Thiago Salvador',
+    email: 'contato.thiagosalvador@gmail.com',
+  });
+  assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/merge');
+  assert.deepEqual(JSON.parse(calls[0].init.body), {
+    sha,
+    merge_method: 'squash',
+    commit_message: 'Co-authored-by: Thiago Salvador <contato.thiagosalvador@gmail.com>',
+  });
+});
+
+test('GitHub merge fails closed when co-author metadata is absent or unsafe', async () => {
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => { throw new Error('merge request must not run'); },
+  });
+  await assert.rejects(github.merge(43, 'a'.repeat(40), 'squash'), /valid merge co-author/);
+  await assert.rejects(
+    github.merge(43, 'a'.repeat(40), 'squash', { name: 'Thiago\nInjected', email: 'x@example.com' }),
+    /valid merge co-author/,
+  );
 });
 
 test('GitHub branch update treats a changed head race as a safe recheck', async () => {
