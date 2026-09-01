@@ -9,21 +9,25 @@
         "scripts/audit/apply-issue-138-production.sh",
         "scripts/audit/apply-profissao-qid-production.sh",
         "scripts/audit/apply-jhc-artigo-17-production.sh",
-        "scripts/audit/apply-destaques-freshness-reconciliation-production.sh"
+        "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
+        "supabase/migrations/20260901180000_reancorar_tcu_fontes_curadas_issue_202.sql",
+        "scripts/audit/apply-issue-202-tcu-fontes-production.sh"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
         ".github/workflows/apply-issue-138-production.yml",
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
-        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/apply-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "roster-30000-30001-30002-ledger-readback-rollback-coordination",
         "ddl-backfill-ledger-idempotency-hashes",
         "profissao-qid-63-row-readback-receipt",
         "jhc-artigo-17-exact-row-readback-receipt",
-        "destaques-freshness-154-pair-readback-receipt"
+        "destaques-freshness-154-pair-readback-receipt",
+        "issue-202-two-row-forward-rollback-and-readbacks"
       ]
     },
     "readback": {
@@ -34,21 +38,25 @@
         "supabase/readback/20260829100100_backfill_projetos_lei_camara_ronaldo_caiado.readback.sql",
         "supabase/readback/20260830120000_backfill_profissao_declarada_qid_wikidata.readback.sql",
         "supabase/readback/20260830143500_jhc_voto_artigo_17.readback.sql",
-        "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql"
+        "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql",
+        "supabase/readback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.readback.sql",
+        "supabase/readback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.rollback.readback.sql"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
         ".github/workflows/apply-issue-138-production.yml",
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
-        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/apply-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
         "exact-senate-and-camara-payload-readback",
         "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
         "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
-        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks"
+        "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
+        "issue-202-two-row-readback-and-curated-claims-still-published"
       ]
     },
     "rollback": {
@@ -57,14 +65,17 @@
         "scripts/audit/rollback-issue-138-production.sh",
         "scripts/audit/rollback-profissao-qid-production.sh",
         "scripts/audit/rollback-jhc-artigo-17-production.sh",
-        "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh"
+        "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
+        "supabase/rollback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.rollback.sql",
+        "scripts/audit/rollback-issue-202-tcu-fontes-production.sh"
       ],
       "workflows": [
         ".github/workflows/rollback-candidate-roster-integrity-production.yml",
         ".github/workflows/rollback-issue-138-production.yml",
         ".github/workflows/rollback-profissao-qid-production.yml",
         ".github/workflows/rollback-jhc-artigo-17-production.yml",
-        ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
+        ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml",
+        ".github/workflows/rollback-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "rollback-readback-preserves-schema"
@@ -85,7 +96,11 @@
       {
         "name": "candidate-roster-integrity",
         "predecessor": "20260828025037",
-        "versions": ["20260829030000", "20260829030001", "20260829030002"],
+        "versions": [
+          "20260829030000",
+          "20260829030001",
+          "20260829030002"
+        ],
         "apply_artifact": "scripts/audit/apply-candidate-roster-integrity-production.sh",
         "apply_workflow": ".github/workflows/apply-candidate-roster-integrity-production.yml",
         "rollback_artifact": "scripts/audit/rollback-candidate-roster-integrity-production.sh",
@@ -94,7 +109,10 @@
       {
         "name": "proposicao-source-key",
         "predecessor": "20260829030002",
-        "versions": ["20260829100000", "20260829100100"],
+        "versions": [
+          "20260829100000",
+          "20260829100100"
+        ],
         "apply_artifact": "scripts/audit/apply-issue-138-production.sh",
         "apply_workflow": ".github/workflows/apply-issue-138-production.yml",
         "rollback_artifact": "scripts/audit/rollback-issue-138-production.sh",
@@ -103,7 +121,9 @@
       {
         "name": "profissao-qid-tse-2026",
         "predecessor": "20260829100100",
-        "versions": ["20260830120000"],
+        "versions": [
+          "20260830120000"
+        ],
         "apply_artifact": "scripts/audit/apply-profissao-qid-production.sh",
         "apply_workflow": ".github/workflows/apply-profissao-qid-production.yml",
         "rollback_artifact": "scripts/audit/rollback-profissao-qid-production.sh",
@@ -112,7 +132,9 @@
       {
         "name": "jhc-artigo-17",
         "predecessor": "20260830120000",
-        "versions": ["20260830143500"],
+        "versions": [
+          "20260830143500"
+        ],
         "apply_artifact": "scripts/audit/apply-jhc-artigo-17-production.sh",
         "apply_workflow": ".github/workflows/apply-jhc-artigo-17-production.yml",
         "rollback_artifact": "scripts/audit/rollback-jhc-artigo-17-production.sh",
@@ -121,16 +143,37 @@
       {
         "name": "destaques-freshness-reconciliation",
         "predecessor": "20260830143500",
-        "versions": ["20260830151500"],
+        "versions": [
+          "20260830151500"
+        ],
         "apply_artifact": "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
         "apply_workflow": ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
         "rollback_artifact": "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
         "rollback_workflow": ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml"
+      },
+      {
+        "name": "issue-202-tcu-fontes",
+        "predecessor": "20260830151500",
+        "versions": [
+          "20260901180000"
+        ],
+        "apply_artifact": "scripts/audit/apply-issue-202-tcu-fontes-production.sh",
+        "apply_workflow": ".github/workflows/apply-issue-202-tcu-fontes-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-issue-202-tcu-fontes-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-issue-202-tcu-fontes-production.yml"
       }
     ],
     "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
-    "proposicao_ids": ["123202", "123149", "123094", "121483"],
-    "sources": ["Camara", "Senado"]
+    "proposicao_ids": [
+      "123202",
+      "123149",
+      "123094",
+      "121483"
+    ],
+    "sources": [
+      "Camara",
+      "Senado"
+    ]
   },
   "rollback": {
     "kind": "compensating-migration",
@@ -155,7 +198,9 @@
       "profissao-qid-63-row-readback-receipt",
       "jhc-artigo-17-exact-row-readback-receipt",
       "destaques-freshness-154-pair-readback-receipt",
-      "rollback-readback-preserves-schema"
+      "rollback-readback-preserves-schema",
+      "issue-202-two-row-forward-rollback-and-readbacks",
+      "issue-202-two-row-readback-and-curated-claims-still-published"
     ]
   }
 }

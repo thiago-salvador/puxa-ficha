@@ -343,7 +343,10 @@ describe("classificador puro (#136)", () => {
     // integração conserva 334 + 103 = 437 migrations.
     // 334 -> 335 em 30/08/2026: a reconciliação de freshness retorna cedo
     // somente no replay vazio. A integração conserva 335 + 103 = 438.
-    assert.equal(manifesto.aplicadas_esperadas, 335)
+    // 335 -> 336 em 01/09/2026: a reancoragem das fontes do TCU da issue #202
+    // retorna cedo quando as duas claims não existem, que é o caso do banco
+    // vazio. A integração conserva 336 + 103 = 439.
+    assert.equal(manifesto.aplicadas_esperadas, 336)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

@@ -417,6 +417,13 @@
       "ate": "20260830151500",
       "allowlist": "scripts/audit/allowlist-destaques-freshness-reconciliation-20260830.json",
       "divida": null
+    },
+    {
+      "nome": "issue-202-tcu-fontes-20260901",
+      "desde": "20260901180000",
+      "ate": "20260901180000",
+      "allowlist": "scripts/audit/allowlist-issue-202-tcu-fontes-20260901.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
