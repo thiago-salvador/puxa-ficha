@@ -118,7 +118,8 @@ jobs:
         run: |
           set -euo pipefail
 
-          receipt="$RUNNER_TEMP/queue-dry-run.json"
+          receipt="$(mktemp)"
+          trap 'rm -f "$receipt"' EXIT
           node scripts/merge-queue/coordinator.mjs reconcile --dry-run --config .github/serial-merge-queue.json > "$receipt"
           jq -e '.ok == true and .dryRun == true and (.writes | length) == 0' "$receipt" >/dev/null
           jq -r '"decision=\(.decision) reason=\(.reason) owner=\(.owner // "none") queue_count=\(.queue | length) writes=\(.writes | length)"' "$receipt"
