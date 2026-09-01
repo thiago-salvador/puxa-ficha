@@ -68,6 +68,10 @@ const PUBLICOU = [
 ] as const
 
 const SEM_EVIDENCIA = ["dr-luisinho", "preta-lu"] as const
+const AUSENCIA_REMOVIDA_EM = new Map([
+  ["dr-luisinho", "20260831215407"],
+  ["preta-lu", "20260810093000"],
+] as const)
 
 function escaparRegExp(valor: string): string {
   return valor.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
@@ -145,7 +149,7 @@ describe("re-run de patrimonio 2026 (21 operacoes)", () => {
     }
   })
 
-  test("delta congela identidade, fonte e os dois estados nao coletados", () => {
+  test("delta congela identidade, fonte e os dois estados nao coletados sem ausencia persistida", () => {
     assert.match(DELTA.fontes.consulta_cand_2026.sha256, /^[a-f0-9]{64}$/)
     assert.match(DELTA.fontes.bem_candidato_2026.sha256, /^[a-f0-9]{64}$/)
     const porSlug = new Map(DELTA.linhas.map((linha: { slug: string }) => [linha.slug, linha]))
@@ -169,9 +173,11 @@ describe("re-run de patrimonio 2026 (21 operacoes)", () => {
     for (const slug of SEM_EVIDENCIA) {
       const linha = porSlug.get(slug) as {
         ausencia_persistida_sem_evidencia: boolean
+        ausencia_removida_em_migration: string
         identidade: { st_declarar_bens: null }
       }
-      assert.equal(linha.ausencia_persistida_sem_evidencia, true)
+      assert.equal(linha.ausencia_persistida_sem_evidencia, false)
+      assert.equal(linha.ausencia_removida_em_migration, AUSENCIA_REMOVIDA_EM.get(slug))
       assert.equal(linha.identidade.st_declarar_bens, null)
     }
   })
