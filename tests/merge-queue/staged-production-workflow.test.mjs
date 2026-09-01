@@ -41,6 +41,22 @@ test('stage check is unique and published on the exact candidate SHA', async () 
   assert.match(workflow, /node-version: "24"/);
 });
 
+test('release jobs use scoped ephemeral tokens instead of the shared queue PAT', async () => {
+  const workflow = await readFile(stagedWorkflowUrl, 'utf8');
+  const parsed = parse(workflow);
+  assert.doesNotMatch(workflow, /GH_TOKEN: \$\{\{ secrets\.MERGE_QUEUE_GH_TOKEN \}\}/);
+  assert.equal(
+    workflow.match(/GH_TOKEN: \$\{\{ github\.token \}\}/g)?.length,
+    10,
+  );
+  assert.equal(parsed.jobs.staged_release.permissions.statuses, 'write');
+  assert.equal(parsed.jobs.public_closure.permissions.statuses, 'write');
+  assert.equal(parsed.jobs.rollback_recovery.permissions.issues, 'write');
+  assert.equal(parsed.jobs.rollback_recovery.permissions.statuses, 'write');
+  assert.equal(parsed.jobs.stage_incident.permissions.issues, 'write');
+  assert.equal(parsed.jobs.stage_incident.permissions.statuses, 'write');
+});
+
 test('every complete release smoke installs Chromium and WebKit', async () => {
   const workflow = await parsedStagedWorkflow();
   const installers = Object.values(workflow.jobs)
