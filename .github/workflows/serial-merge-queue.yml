@@ -37,6 +37,7 @@ on:
         type: choice
         options:
           - reconcile
+          - dry-run
           - vercel-credentials
 
 # Eventos simultâneos viram uma fila de execuções. O lock persistente em labels
@@ -60,7 +61,7 @@ permissions:
 jobs:
   reconcile:
     name: Reconcile serial merge queue
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs.mode != 'vercel-credentials'
+    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs.mode != 'vercel-credentials' && inputs.mode != 'dry-run'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -87,6 +88,41 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: node scripts/merge-queue/coordinator.mjs reconcile --config .github/serial-merge-queue.json
+
+  queue-dry-run:
+    name: Reconcile serial merge queue (read-only dry-run)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'dry-run'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout trusted default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Inspect the live queue without mutations
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: dry-run-not-used
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          receipt="$(mktemp)"
+          trap 'rm -f "$receipt"' EXIT
+          node scripts/merge-queue/coordinator.mjs reconcile --dry-run --config .github/serial-merge-queue.json > "$receipt"
+          jq -e '.ok == true and .dryRun == true and (.writes | length) == 0' "$receipt" >/dev/null
+          jq -r '"decision=\(.decision) reason=\(.reason) owner=\(.owner // "none") queue_count=\(.queue | length) writes=\(.writes | length)"' "$receipt"
 
   vercel-credentials:
     name: Validate Vercel credentials (read-only)

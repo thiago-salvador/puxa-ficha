@@ -38,7 +38,7 @@ test('manual Vercel credential probe is read-only and cannot reconcile the queue
   assert.match(workflow, /workflow_dispatch:\s*\n\s*inputs:\s*\n\s*mode:/);
   assert.match(
     workflow,
-    /reconcile:\s*[\s\S]*?if: vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs\.mode != 'vercel-credentials'/,
+    /reconcile:\s*[\s\S]*?if: vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs\.mode != 'vercel-credentials' && inputs\.mode != 'dry-run'/,
   );
 
   const probe = workflow.slice(workflow.indexOf('  vercel-credentials:'));
@@ -46,6 +46,23 @@ test('manual Vercel credential probe is read-only and cannot reconcile the queue
   assert.match(probe, /https:\/\/api\.vercel\.com\/v6\/deployments\?/);
   assert.match(probe, /test "\$http_code" = "200"/);
   assert.doesNotMatch(probe, /-X POST|--request POST|\/promote\/|\/rollback|DELETE/);
+});
+
+test('manual live dry-run uses read-only tokens and proves zero writes', async () => {
+  const workflow = await readFile(workflowUrl, 'utf8');
+  assert.match(workflow, /options:\s*[\s\S]*?- dry-run/);
+
+  const start = workflow.indexOf('  queue-dry-run:');
+  const end = workflow.indexOf('  vercel-credentials:', start);
+  assert.ok(start >= 0, 'queue-dry-run job is present');
+  assert.ok(end > start, 'queue-dry-run job is isolated');
+  const dryRun = workflow.slice(start, end);
+
+  assert.match(dryRun, /if: github\.event_name == 'workflow_dispatch' && inputs\.mode == 'dry-run'/);
+  assert.match(dryRun, /GITHUB_TOKEN: \$\{\{ github\.token \}\}/);
+  assert.doesNotMatch(dryRun, /MERGE_QUEUE_GH_TOKEN/);
+  assert.match(dryRun, /coordinator\.mjs reconcile --dry-run --config/);
+  assert.match(dryRun, /\.dryRun == true and \(\.writes \| length\) == 0/);
 });
 
 test('runtime smoke privado fica no watchdog e não amplia privilégios do release', async () => {
