@@ -75,7 +75,7 @@
     "test:data-freshness:candidate-integrity": "node --import tsx --test tests/candidate-publication-integrity.test.ts tests/candidate-roster-active-snapshot.test.ts tests/candidate-roster-artifact-publication.test.ts tests/divulgacand-current.test.ts tests/candidate-roster-integrity-migration.test.ts tests/chapas-2026-20260827.test.ts",
     "audit:data-freshness": "node --import tsx scripts/audit/audit-data-freshness.ts",
     "audit:data-freshness:tse-dependent": "node --import tsx scripts/audit/audit-tse-dependent-monitors.ts",
-    "audit:destaques-votacoes:prove": "node --import tsx scripts/audit/verify-destaques-votacoes-provenance.ts --run-a=QA/evidencias/2026-08-30-destaques-votacoes/run-c/manifest.json --run-b=QA/evidencias/2026-08-30-destaques-votacoes/run-d/manifest.json --out=QA/evidencias/2026-08-30-destaques-votacoes/double-read-receipt.json",
+    "audit:destaques-votacoes:prove": "node --import tsx scripts/audit/verify-destaques-votacoes-provenance.ts --run-a=QA/evidencias/2026-08-30-destaques-votacoes/run-c/manifest.json --run-b=QA/evidencias/2026-08-30-destaques-votacoes/run-d/manifest.json --out=QA/evidencias/2026-08-30-destaques-votacoes/double-read-receipt.json --expected-pairs=154",
     "audit:destaques-votacoes:generate-reconciliation": "node scripts/audit/generate-destaques-freshness-reconciliation.mjs",
     "test:data-freshness:reconciliation-migration": "node --import tsx --test tests/destaques-freshness-reconciliation-migration.test.ts",
     "prove:data-freshness:reconciliation-pg17": "bash scripts/audit/provar-destaques-freshness-reconciliation-pg17.sh",
