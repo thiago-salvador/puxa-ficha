@@ -3,8 +3,35 @@ import { gunzipSync } from "node:zlib"
 
 export const DESTAQUES_SCHEMA_VERSION = 1
 export const DESTAQUES_EXPECTED_VOTACOES = 23
-export const DESTAQUES_EXPECTED_PAIRS = 154
+/**
+ * Universo atual de pares candidato x votação em `votos_candidato`.
+ * A migration 20260830151500_destaques_freshness_reconciliation removeu os 2
+ * pares sem confirmação oficial (154 -> 152). A evidência golden de 2026-08-30
+ * foi coletada antes dessa remoção e continua validada com o universo
+ * histórico (`DESTAQUES_UNIVERSE_2026_08_30`).
+ */
+export const DESTAQUES_EXPECTED_PAIRS = 152
 export const DESTAQUES_EXPECTED_CANDIDATES = 30
+
+export interface DestaquesUniverse {
+  votacoes: number
+  pairs: number
+  candidates: number
+}
+
+/** Universo vigente: o que uma nova dupla leitura precisa encontrar no banco. */
+export const DESTAQUES_UNIVERSE_ATUAL: DestaquesUniverse = Object.freeze({
+  votacoes: DESTAQUES_EXPECTED_VOTACOES,
+  pairs: DESTAQUES_EXPECTED_PAIRS,
+  candidates: DESTAQUES_EXPECTED_CANDIDATES,
+})
+
+/** Universo da evidência golden de 2026-08-30, anterior à reconciliação. */
+export const DESTAQUES_UNIVERSE_2026_08_30: DestaquesUniverse = Object.freeze({
+  votacoes: 23,
+  pairs: 154,
+  candidates: 30,
+})
 
 export type DestaquesResult = "encontrado" | "sem_achado_no_escopo"
 
@@ -126,6 +153,7 @@ function assertResult(value: string, label: string): asserts value is DestaquesR
 
 export function buildDestaquesRunManifest(
   input: Omit<DestaquesRunManifest, "manifest_sha256" | "summary">,
+  universe: DestaquesUniverse = DESTAQUES_UNIVERSE_ATUAL,
 ): DestaquesRunManifest {
   assertIsoReal(input.checked_at, "manifesto")
   if (!/^destaques-votacoes:[a-z0-9][a-z0-9._:-]+$/.test(input.execution_id)) {
@@ -199,12 +227,12 @@ export function buildDestaquesRunManifest(
     votacoes_sem_id_oficial: input.votacoes.filter((vote) => vote.votacao_id_api_recoletada === null).length,
   }
   if (
-    summary.votacoes !== DESTAQUES_EXPECTED_VOTACOES ||
-    summary.pairs !== DESTAQUES_EXPECTED_PAIRS ||
-    summary.candidates !== DESTAQUES_EXPECTED_CANDIDATES
+    summary.votacoes !== universe.votacoes ||
+    summary.pairs !== universe.pairs ||
+    summary.candidates !== universe.candidates
   ) {
     throw new Error(
-      `manifesto: universo divergente, esperado ${DESTAQUES_EXPECTED_VOTACOES}/${DESTAQUES_EXPECTED_PAIRS}/${DESTAQUES_EXPECTED_CANDIDATES}, encontrado ${summary.votacoes}/${summary.pairs}/${summary.candidates}`,
+      `manifesto: universo divergente, esperado ${universe.votacoes}/${universe.pairs}/${universe.candidates}, encontrado ${summary.votacoes}/${summary.pairs}/${summary.candidates}`,
     )
   }
   const core = { ...input, summary }
@@ -214,6 +242,7 @@ export function buildDestaquesRunManifest(
 export function validateDestaquesRunManifest(
   manifest: DestaquesRunManifest,
   readArtifact: (relativePath: string) => Buffer,
+  universe: DestaquesUniverse = DESTAQUES_UNIVERSE_ATUAL,
 ): DestaquesRunManifest {
   const input = {
     schema_version: manifest.schema_version,
@@ -225,7 +254,7 @@ export function validateDestaquesRunManifest(
     votacoes: manifest.votacoes,
     pairs: manifest.pairs,
   }
-  const rebuilt = buildDestaquesRunManifest(input)
+  const rebuilt = buildDestaquesRunManifest(input, universe)
   if (rebuilt.manifest_sha256 !== manifest.manifest_sha256) throw new Error("manifesto: hash divergente")
   for (const source of manifest.sources) {
     const raw = gunzipSync(readArtifact(source.artifact_path))
