@@ -29,6 +29,15 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Operação manual segura
+        required: true
+        default: reconcile
+        type: choice
+        options:
+          - reconcile
+          - vercel-credentials
 
 # Eventos simultâneos viram uma fila de execuções. O lock persistente em labels
 # continua protegendo a operação entre execuções e durante recovery.
@@ -51,7 +60,7 @@ permissions:
 jobs:
   reconcile:
     name: Reconcile serial merge queue
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true'
+    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs.mode != 'vercel-credentials'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -78,3 +87,37 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: node scripts/merge-queue/coordinator.mjs reconcile --config .github/serial-merge-queue.json
+
+  vercel-credentials:
+    name: Validate Vercel credentials (read-only)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'vercel-credentials'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe the Vercel deployments API without mutations
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -n "$VERCEL_TOKEN"
+          test -n "$VERCEL_ORG_ID"
+          test -n "$VERCEL_PROJECT_ID"
+
+          response_file="$(mktemp)"
+          trap 'rm -f "$response_file"' EXIT
+          query="projectId=${VERCEL_PROJECT_ID}&target=production&limit=1&teamId=${VERCEL_ORG_ID}"
+          http_code="$(curl --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
+            -H "Authorization: Bearer ${VERCEL_TOKEN}" \
+            "https://api.vercel.com/v6/deployments?${query}")"
+
+          test "$http_code" = "200"
+          jq -e '.deployments | type == "array"' "$response_file" >/dev/null
+          echo "Vercel credentials have read access to the configured project."

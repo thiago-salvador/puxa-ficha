@@ -33,6 +33,21 @@ test('workflow has read-only default permissions and explicit scoped secret mapp
   assert.match(workflow, /persist-credentials: false/);
 });
 
+test('manual Vercel credential probe is read-only and cannot reconcile the queue', async () => {
+  const workflow = await readFile(workflowUrl, 'utf8');
+  assert.match(workflow, /workflow_dispatch:\s*\n\s*inputs:\s*\n\s*mode:/);
+  assert.match(
+    workflow,
+    /reconcile:\s*[\s\S]*?if: vars\.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs\.mode != 'vercel-credentials'/,
+  );
+
+  const probe = workflow.slice(workflow.indexOf('  vercel-credentials:'));
+  assert.match(probe, /if: github\.event_name == 'workflow_dispatch' && inputs\.mode == 'vercel-credentials'/);
+  assert.match(probe, /https:\/\/api\.vercel\.com\/v6\/deployments\?/);
+  assert.match(probe, /test "\$http_code" = "200"/);
+  assert.doesNotMatch(probe, /-X POST|--request POST|\/promote\/|\/rollback|DELETE/);
+});
+
 test('runtime smoke privado fica no watchdog e não amplia privilégios do release', async () => {
   const workflow = await readFile(workflowUrl, 'utf8');
   const config = JSON.parse(await readFile(configUrl, 'utf8'));
