@@ -10,7 +10,9 @@
         "scripts/audit/apply-profissao-qid-production.sh",
         "scripts/audit/apply-jhc-artigo-17-production.sh",
         "scripts/audit/apply-destaques-freshness-reconciliation-production.sh",
-        "scripts/audit/apply-elizeu-patrimonio-sq-production.sh"
+        "scripts/audit/apply-elizeu-patrimonio-sq-production.sh",
+        "supabase/migrations/20260901180000_reancorar_tcu_fontes_curadas_issue_202.sql",
+        "scripts/audit/apply-issue-202-tcu-fontes-production.sh"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
@@ -18,7 +20,8 @@
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
         ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
-        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml"
+        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml",
+        ".github/workflows/apply-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "roster-30000-30001-30002-ledger-readback-rollback-coordination",
@@ -26,7 +29,8 @@
         "profissao-qid-63-row-readback-receipt",
         "jhc-artigo-17-exact-row-readback-receipt",
         "destaques-freshness-154-pair-readback-receipt",
-        "elizeu-patrimonio-sq-exact-row-ledger-readback"
+        "elizeu-patrimonio-sq-exact-row-ledger-readback",
+        "issue-202-two-row-forward-rollback-and-readbacks"
       ]
     },
     "readback": {
@@ -39,7 +43,9 @@
         "supabase/readback/20260830143500_jhc_voto_artigo_17.readback.sql",
         "supabase/readback/20260830151500_destaques_freshness_reconciliation.readback.sql",
         "supabase/readback/20260831215407_corrigir_elizeu_patrimonio_sq.readback.sql",
-        "supabase/readback/20260831215407_corrigir_elizeu_patrimonio_sq.rollback.readback.sql"
+        "supabase/readback/20260831215407_corrigir_elizeu_patrimonio_sq.rollback.readback.sql",
+        "supabase/readback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.readback.sql",
+        "supabase/readback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.rollback.readback.sql"
       ],
       "workflows": [
         ".github/workflows/apply-candidate-roster-integrity-production.yml",
@@ -47,7 +53,8 @@
         ".github/workflows/apply-profissao-qid-production.yml",
         ".github/workflows/apply-jhc-artigo-17-production.yml",
         ".github/workflows/apply-destaques-freshness-reconciliation-production.yml",
-        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml"
+        ".github/workflows/apply-elizeu-patrimonio-sq-production.yml",
+        ".github/workflows/apply-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "candidate-registration-backup-dry-run-readback-coleta-log-receipt",
@@ -55,7 +62,8 @@
         "profissao-qid-63-row-forward-rollback-and-receipt-readbacks",
         "jhc-artigo-17-exact-row-forward-rollback-and-receipt-readbacks",
         "destaques-freshness-154-pair-forward-rollback-and-receipt-readbacks",
-        "elizeu-patrimonio-sq-forward-rollback-and-receipt-readbacks"
+        "elizeu-patrimonio-sq-forward-rollback-and-receipt-readbacks",
+        "issue-202-two-row-readback-and-curated-claims-still-published"
       ]
     },
     "rollback": {
@@ -65,7 +73,9 @@
         "scripts/audit/rollback-profissao-qid-production.sh",
         "scripts/audit/rollback-jhc-artigo-17-production.sh",
         "scripts/audit/rollback-destaques-freshness-reconciliation-production.sh",
-        "scripts/audit/rollback-elizeu-patrimonio-sq-production.sh"
+        "scripts/audit/rollback-elizeu-patrimonio-sq-production.sh",
+        "supabase/rollback/20260901180000_reancorar_tcu_fontes_curadas_issue_202.rollback.sql",
+        "scripts/audit/rollback-issue-202-tcu-fontes-production.sh"
       ],
       "workflows": [
         ".github/workflows/rollback-candidate-roster-integrity-production.yml",
@@ -73,7 +83,8 @@
         ".github/workflows/rollback-profissao-qid-production.yml",
         ".github/workflows/rollback-jhc-artigo-17-production.yml",
         ".github/workflows/rollback-destaques-freshness-reconciliation-production.yml",
-        ".github/workflows/rollback-elizeu-patrimonio-sq-production.yml"
+        ".github/workflows/rollback-elizeu-patrimonio-sq-production.yml",
+        ".github/workflows/rollback-issue-202-tcu-fontes-production.yml"
       ],
       "checks": [
         "rollback-readback-preserves-schema"
@@ -144,6 +155,15 @@
         "apply_workflow": ".github/workflows/apply-elizeu-patrimonio-sq-production.yml",
         "rollback_artifact": "scripts/audit/rollback-elizeu-patrimonio-sq-production.sh",
         "rollback_workflow": ".github/workflows/rollback-elizeu-patrimonio-sq-production.yml"
+      },
+      {
+        "name": "issue-202-tcu-fontes",
+        "predecessor": "20260831215407",
+        "versions": ["20260901180000"],
+        "apply_artifact": "scripts/audit/apply-issue-202-tcu-fontes-production.sh",
+        "apply_workflow": ".github/workflows/apply-issue-202-tcu-fontes-production.yml",
+        "rollback_artifact": "scripts/audit/rollback-issue-202-tcu-fontes-production.sh",
+        "rollback_workflow": ".github/workflows/rollback-issue-202-tcu-fontes-production.yml"
       }
     ],
     "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
@@ -175,7 +195,9 @@
       "destaques-freshness-154-pair-readback-receipt",
       "elizeu-patrimonio-sq-exact-row-ledger-readback",
       "elizeu-patrimonio-sq-forward-rollback-and-receipt-readbacks",
-      "rollback-readback-preserves-schema"
+      "rollback-readback-preserves-schema",
+      "issue-202-two-row-forward-rollback-and-readbacks",
+      "issue-202-two-row-readback-and-curated-claims-still-published"
     ]
   }
 }
