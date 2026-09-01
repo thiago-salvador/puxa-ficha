@@ -3,6 +3,7 @@ import { withSentryConfig } from "@sentry/nextjs"
 import { REMOTE_IMAGE_HOSTS } from "./src/lib/remote-image-hosts"
 import { getEmbedNoindexHeaderValue } from "./src/lib/preview-indexing"
 import ondaPRedirects from "./src/data/redirects-onda-p.json"
+import canaisVaiRewrites from "./src/data/canais-vai.json"
 
 const isDevelopment = process.env.NODE_ENV !== "production"
 const apexHost = "puxaficha.com.br"
@@ -90,6 +91,33 @@ export const puxaFichaNextConfig: NextConfig = {
       },
     ]
   },
+  /**
+   * Links curtos de atribuicao por canal (/vai/<canal>).
+   *
+   * Sao REWRITE, nao redirect, por causa de como a medicao funciona aqui. O
+   * Cloudflare Web Analytics deste site e beacon JavaScript
+   * (src/components/CloudflareWebAnalytics.tsx), nao proxy de borda: o dominio
+   * responde pela Vercel, sem cf-ray. Beacon so dispara em pagina que renderiza,
+   * e resposta 30x nao renderiza nada. Com redirect o path /vai/<canal> jamais
+   * apareceria no relatorio; com rewrite a home renderiza enquanto a barra do
+   * browser continua em /vai/<canal>, e o beacon reporta esse path.
+   *
+   * Uma regra por canal, e nao um ":canal" generico, de proposito: slug fora
+   * da lista cai no 404 natural em vez de virar home silenciosa com um path de
+   * atribuicao inventado poluindo o relatorio.
+   *
+   * Ressalva medida, nao teorica: custom route do Next casa sem distinguir
+   * caixa (caseSensitive false por padrao, e nao ligamos), entao /VAI/AOS-FATOS
+   * tambem serve a home e aparece no Cloudflare como outra string de path.
+   * Ligar caseSensitiveRoutes mudaria o casamento do site inteiro, os 37
+   * redirects da Onda P inclusive, entao o custo aceito e divulgar o link
+   * sempre minusculo. tests/vai-canais-contrato.test.ts prende as duas coisas.
+   *
+   * Canal novo entra em src/data/canais-vai.json, so isso.
+   */
+  async rewrites() {
+    return [...canaisVaiRewrites]
+  },
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
@@ -145,6 +173,20 @@ export const puxaFichaNextConfig: NextConfig = {
           {
             key: "X-Robots-Tag",
             value: "noindex, nofollow, noarchive",
+          },
+        ],
+      },
+      // O rewrite de /vai/<canal> serve a home, entao a metadata da resposta e a
+      // da home e nao da para pendurar noindex por pagina sem duplicar a home.
+      // O header resolve no nivel do path, que e onde o problema existe: ele
+      // casa a requisicao ANTES do rewrite, nao mexe na arvore de rotas e nao
+      // toca na CSP (que vem do middleware). Mesmo padrao de /preview acima.
+      {
+        source: "/vai/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow",
           },
         ],
       },
