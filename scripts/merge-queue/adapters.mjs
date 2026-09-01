@@ -63,21 +63,25 @@ function isValidQueueContext(value) {
 }
 
 export class GitHubAdapter {
-  constructor({ repository, token, fetchImpl = globalThis.fetch, apiUrl = 'https://api.github.com' }) {
+  constructor({ repository, token, writeToken = token, fetchImpl = globalThis.fetch, apiUrl = 'https://api.github.com' }) {
     if (!repository?.includes('/')) throw new CoordinatorError('Config repository must be owner/name');
-    if (!token) throw new CoordinatorError('GITHUB_TOKEN is required for live reconciliation');
+    if (!token) throw new CoordinatorError('GITHUB_TOKEN is required for live reconciliation reads');
+    if (!writeToken) throw new CoordinatorError('MERGE_QUEUE_GH_TOKEN is required for live reconciliation mutations');
     this.repository = repository;
     this.token = token;
+    this.writeToken = writeToken;
     this.fetch = fetchImpl;
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
   async request(path, init = {}) {
+    const method = String(init.method ?? 'GET').toUpperCase();
+    const token = ['GET', 'HEAD'].includes(method) ? this.token : this.writeToken;
     const response = await this.fetch(`${this.apiUrl}${path}`, {
       ...init,
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
         'X-GitHub-Api-Version': '2022-11-28',
         'Content-Type': 'application/json',
         ...(init.headers ?? {}),
@@ -563,7 +567,12 @@ export function signalFromChecks(checks, sha, names = []) {
 }
 
 export async function createLiveAdapters(config, env = process.env, fetchImpl = globalThis.fetch) {
-  const github = new GitHubAdapter({ repository: config.repository, token: env.GITHUB_TOKEN, fetchImpl });
+  const github = new GitHubAdapter({
+    repository: config.repository,
+    token: env.GITHUB_TOKEN,
+    writeToken: env.MERGE_QUEUE_GH_TOKEN,
+    fetchImpl,
+  });
   const vercel = new VercelAdapter({
     token: env.VERCEL_TOKEN,
     teamId: env.VERCEL_TEAM_ID,
@@ -575,7 +584,6 @@ export async function createLiveAdapters(config, env = process.env, fetchImpl = 
 
 export function preflightSecrets(config, env = process.env) {
   const aliases = {
-    MERGE_QUEUE_GH_TOKEN: ['MERGE_QUEUE_GH_TOKEN', 'GITHUB_TOKEN'],
     VERCEL_ORG_ID: ['VERCEL_ORG_ID', 'VERCEL_TEAM_ID'],
   };
   const missing = (config.secrets?.required ?? []).filter((name) => {
