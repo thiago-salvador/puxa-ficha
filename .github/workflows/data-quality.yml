@@ -42,6 +42,12 @@ on:
     # Dia 3 de cada mês às 07:00 UTC: sq-identity.
     - cron: "0 7 3 * *"
   workflow_dispatch:
+    inputs:
+      strict_all:
+        description: "Incluir backlog fora da coorte no gate de superfície"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -243,7 +249,7 @@ jobs:
         run: |
           set -euo pipefail
           args=(--from-snapshot=superficie.json --json=superficie-report.json)
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "${{ inputs.strict_all }}" = "true" ]; then
             args+=(--strict-all)
           fi
           npx tsx scripts/audit/audit-superficie.ts "${args[@]}"

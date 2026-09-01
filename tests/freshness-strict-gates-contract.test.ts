@@ -18,8 +18,22 @@ test("workflow de freshness executa strict por membro e preserva artefatos", () 
   assert.match(freshnessWorkflow, /reports\/data-freshness\//)
 })
 
-test("workflow conecta strict-all manual ao snapshot e preserva receipt", () => {
+test("workflow deixa recuperação manual no gate da coorte e exige opt-in para strict-all", () => {
+  const parsed = parse(qualityWorkflow) as {
+    on?: {
+      workflow_dispatch?: {
+        inputs?: Record<string, { type?: string; default?: boolean }>
+      }
+    }
+  }
   const surfaceSection = qualityWorkflow.split("\n  superficie-fichas:")[1] ?? ""
+  assert.deepEqual(parsed.on?.workflow_dispatch?.inputs?.strict_all, {
+    description: "Incluir backlog fora da coorte no gate de superfície",
+    required: false,
+    type: "boolean",
+    default: false,
+  })
+  assert.match(surfaceSection, /inputs\.strict_all/)
   assert.match(surfaceSection, /args\+=\(--strict-all\)/)
   assert.match(surfaceSection, /--json=superficie-report\.json/)
   assert.match(surfaceSection, /upload-artifact@[a-f0-9]{40}/)
