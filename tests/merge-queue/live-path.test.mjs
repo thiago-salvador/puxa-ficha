@@ -341,6 +341,60 @@ test('ready staged release keeps lock until explicit promotion is visible', asyn
   assert.deepEqual(calls, []);
 });
 
+test('completed public release overwrites any synthetic gate failure before releasing the lock', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const { calls, adapters } = recorder();
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'RELEASE');
+  assert.deepEqual(calls.map(([name]) => name), ['setCommitStatus', 'setLabels']);
+  assert.deepEqual(calls[0].slice(1), [
+    sha,
+    'success',
+    'Serial release orchestration',
+    'Serial release completed successfully',
+  ]);
+});
+
+test('failed final release status keeps the owner locked and opens an incident', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const statusError = Object.assign(new Error('status rejected'), { status: 422 });
+  const { calls, adapters } = recorder({
+    github: {
+      setCommitStatus: async (...args) => {
+        calls.push(['setCommitStatus', ...args]);
+        throw statusError;
+      },
+    },
+  });
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'BLOCK');
+  assert.equal(result.reason, 'remote-transition-failed');
+  assert.ok(calls.some(([name, number, add]) => (
+    name === 'setLabels' && number === 43 && add.includes('active') && add.includes('blocked')
+  )));
+  assert.ok(calls.some(([name]) => name === 'upsertIncident'));
+});
+
 test('green rollback PR merge dispatches recovery validation for the restored SHA', async () => {
   const config = liveConfig();
   const rollback = {

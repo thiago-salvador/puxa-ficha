@@ -72,6 +72,9 @@
       "conditionalRequired": [
         "Gate de replay (conjunto de falhas congelado)"
       ],
+      "ignored": [
+        "Reconcile serial merge queue"
+      ],
       "includeAllPresent": true
     },
     "rollback": {
