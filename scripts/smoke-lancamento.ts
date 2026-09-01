@@ -182,6 +182,25 @@ async function gotoPublicPage(page: Page, path: string): Promise<void> {
   invariant(response.ok(), `${path} respondeu HTTP ${response.status()}`)
 }
 
+export async function enterQuiz(page: Pick<Page, "getByRole">): Promise<"start" | "office"> {
+  const candidates = [
+    {
+      kind: "start" as const,
+      locator: page.getByRole("button", { name: "Começar", exact: true }),
+    },
+    {
+      kind: "office" as const,
+      locator: page.getByRole("button", { name: /^Presidente$/i }),
+    },
+  ]
+  const winner = await Promise.any(candidates.map(async (candidate) => {
+    await candidate.locator.waitFor({ state: "visible", timeout: ACTION_TIMEOUT_MS })
+    return candidate
+  }))
+  await winner.locator.click()
+  return winner.kind
+}
+
 async function withPage<T>(
   context: BrowserContext,
   path: string,
@@ -306,12 +325,7 @@ async function checkQuiz(context: BrowserContext): Promise<{ questions: number; 
     page.on("pageerror", (error) => consoleErrors.push(error.message))
     await gotoPublicPage(page, "/quiz")
 
-    const start = page.getByRole("button", { name: "Começar", exact: true })
-    if (await start.count() > 0) {
-      await start.click()
-    } else {
-      await page.getByRole("button", { name: /^Presidente$/i }).click()
-    }
+    await enterQuiz(page)
     await page.waitForURL(/\/quiz\/perguntas\?cargo=Presidente/i)
 
     let questions = 0
