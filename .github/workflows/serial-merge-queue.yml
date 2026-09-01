@@ -108,6 +108,7 @@ jobs:
 
       - name: Inspect the live queue without mutations
         env:
+          MERGE_QUEUE_GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
