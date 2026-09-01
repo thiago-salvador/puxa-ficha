@@ -1,4 +1,5 @@
 import { expect, test } from "playwright/test"
+import { establishAutomationBypass } from "../../scripts/vercel-automation-bypass"
 
 /**
  * Smoke curto no caminho real de busca (palette), o mesmo que
@@ -19,6 +20,10 @@ function isPuxaFichaHost(raw: string): boolean {
 const baseUrl = process.env.PF_BASE_URL ?? ""
 const hasRealIndex =
   process.env.PF_RUN_SEARCH_SMOKE === "1" || isPuxaFichaHost(baseUrl)
+
+test.beforeEach(async ({ context }) => {
+  await establishAutomationBypass(context, baseUrl, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
+})
 
 test.describe("Busca rápida (caminho real)", () => {
   test.skip(

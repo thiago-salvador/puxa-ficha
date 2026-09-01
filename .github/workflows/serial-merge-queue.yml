@@ -16,14 +16,11 @@ on:
       - Replay real de migrations
       - Acessibilidade (produção)
       - Ledger vs repositório
+      - Staged production release
     types:
       - completed
   status:
   deployment_status:
-  repository_dispatch:
-    types:
-      - serial-merge-queue-post-merge
-      - serial-merge-queue-recovery
   # cron-watchdog: skipped-ok-com-gate-desligado
   # Enquanto SERIAL_MERGE_QUEUE_ENABLED não for "true", todos os jobs são
   # pulados e a execução agendada conclui "skipped". O watchdog de crons lê
@@ -32,6 +29,16 @@ on:
   schedule:
     - cron: "*/5 * * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Operação manual segura
+        required: true
+        default: reconcile
+        type: choice
+        options:
+          - reconcile
+          - dry-run
+          - vercel-credentials
 
 # Eventos simultâneos viram uma fila de execuções. O lock persistente em labels
 # continua protegendo a operação entre execuções e durante recovery.
@@ -39,15 +46,22 @@ concurrency:
   group: serial-merge-queue
   cancel-in-progress: false
 
-# O coordenador usa MERGE_QUEUE_GH_TOKEN, com escopo próprio. O GITHUB_TOKEN
-# implícito serve somente para ler a default branch no checkout confiável.
+# O coordenador usa o GITHUB_TOKEN efêmero para leituras e reserva o
+# MERGE_QUEUE_GH_TOKEN, com escopo próprio, somente para mutações.
 permissions:
+  actions: read
+  checks: read
   contents: read
+  deployments: read
+  issues: read
+  pull-requests: read
+  security-events: read
+  statuses: read
 
 jobs:
   reconcile:
     name: Reconcile serial merge queue
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name != 'repository_dispatch'
+    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && inputs.mode != 'vercel-credentials' && inputs.mode != 'dry-run'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -67,506 +81,80 @@ jobs:
       - name: Reconcile
         env:
           MERGE_QUEUE_GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: node scripts/merge-queue/coordinator.mjs reconcile --config .github/serial-merge-queue.json
 
-  post-merge-production:
-    name: Validate staged deployment and production
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-post-merge'
+  queue-dry-run:
+    name: Reconcile serial merge queue (read-only dry-run)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'dry-run'
     runs-on: ubuntu-latest
-    timeout-minutes: 90
-    env:
-      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
-      TRUSTED_SHA: ${{ github.event.client_payload.trustedSha }}
-      OWNER_PR: ${{ github.event.client_payload.pr }}
-      PRODUCTION_URL: https://puxaficha.com.br
+    timeout-minutes: 10
     steps:
-      - name: Validate dispatch and required credentials
+      - name: Checkout trusted default branch
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: refs/heads/main
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+
+      - name: Inspect the live queue without mutations
         env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          MERGE_QUEUE_GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: dry-run-not-used
         shell: bash
         run: |
           set -euo pipefail
 
-          [[ "$EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$TRUSTED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$OWNER_PR" =~ ^[1-9][0-9]*$ ]]
-          test -n "$GH_TOKEN"
+          receipt="$(mktemp)"
+          trap 'rm -f "$receipt"' EXIT
+          node scripts/merge-queue/coordinator.mjs reconcile --dry-run --config .github/serial-merge-queue.json > "$receipt"
+          jq -e '.ok == true and .dryRun == true and (.writes | length) == 0' "$receipt" >/dev/null
+          jq -r '"decision=\(.decision) reason=\(.reason) owner=\(.owner // "none") queue_count=\(.queue | length) writes=\(.writes | length)"' "$receipt"
+
+  vercel-credentials:
+    name: Validate Vercel credentials (read-only)
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'vercel-credentials'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe the Vercel deployments API without mutations
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
           test -n "$VERCEL_TOKEN"
-          test -n "$VERCEL_TEAM_ID"
+          test -n "$VERCEL_ORG_ID"
           test -n "$VERCEL_PROJECT_ID"
-          test -n "$CRON_SECRET"
 
-          main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
-          test "$main_sha" = "$EXPECTED_SHA"
-          parent_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${EXPECTED_SHA}" --jq '.parents[0].sha')"
-          test "$parent_sha" = "$TRUSTED_SHA"
-
-          pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${OWNER_PR}")"
-          jq -e --arg sha "$EXPECTED_SHA" \
-            '.merged == true and .merge_commit_sha == $sha' <<<"$pr_json" >/dev/null
-
-          labels="$(gh api "repos/${GITHUB_REPOSITORY}/issues/${OWNER_PR}" --jq '[.labels[].name]')"
-          jq -e \
-            'index("merge-queue/active") != null and index("merge-queue/post-merge") != null' \
-            <<<"$labels" >/dev/null
-
-      - name: Wait for post-merge checks on the merge SHA
-        env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          fail_gate() {
-            exit_code="$?"
-            trap - ERR
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
-              -f state=error \
-              -f context="Serial release gate" \
-              -f description="Post-merge checks failed or timed out" >/dev/null
-            exit "$exit_code"
-          }
-          trap fail_gate ERR
-
-          required='[
-            "verify",
-            "Rotas e acessibilidade (build local)",
-            "Cobertura (informativa)",
-            "Acessibilidade (produção)",
-            "Ledger do banco vs supabase/migrations",
-            "CodeQL",
-            "Analyze (python)",
-            "Analyze (javascript-typescript)"
-          ]'
-          ignored='[
-            "Vercel",
-            "Serial release gate",
-            "Launch smoke (produção)",
-            "Busca smoke (produção)",
-            "Acessibilidade smoke (produção)",
-            "Production readback",
-            "Reconcile serial merge queue",
-            "Validate staged deployment and production",
-            "Run production smokes from trusted parent",
-            "Publish production smoke results",
-            "Restore verified production deployment",
-            "Run recovery smokes",
-            "Publish recovery smoke results"
-          ]'
-
-          checks_green=0
-          for _attempt in $(seq 1 60); do
-            check_runs="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${EXPECTED_SHA}/check-runs?per_page=100")"
-            statuses="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${EXPECTED_SHA}/status")"
-            observed="$(jq -n \
-              --argjson runs "$check_runs" \
-              --argjson statuses "$statuses" \
-              '[
-                ($runs.check_runs[] | {
-                  name,
-                  result: (.conclusion // (if .status == "completed" then "failure" else "pending" end))
-                }),
-                ($statuses.statuses[] | {name: .context, result: .state})
-              ]')"
-
-            if jq -n -e --argjson observed "$observed" --argjson ignored "$ignored" '
-              ["failure", "error", "cancelled", "canceled", "timed_out",
-               "action_required", "startup_failure", "stale", "neutral", "skipped"] as $failures |
-              any($observed[]; . as $check |
-                ($ignored | index($check.name) | not) and
-                ($failures | index($check.result) != null))
-            ' >/dev/null; then
-              echo "::error::A post-merge check failed on the merge SHA." >&2
-              false
-            fi
-
-            if jq -n -e \
-              --argjson observed "$observed" \
-              --argjson required "$required" \
-              --argjson ignored "$ignored" '
-              ($required | all(. as $name |
-                any($observed[]; .name == $name and .result == "success"))) and
-              all($observed[]; . as $check |
-                ($ignored | index($check.name) != null) or $check.result == "success")
-            ' >/dev/null; then
-              checks_green=1
-              break
-            fi
-            sleep 60
-          done
-          test "$checks_green" = "1"
-          trap - ERR
-
-      - name: Validate staged deployment, promote, and prove production
-        env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          release_context="Serial release gate"
-          current_context="$release_context"
-          release_open=1
-
-          set_status() {
-            local context="$1"
-            local state="$2"
-            local description="$3"
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
-              -f state="$state" \
-              -f context="$context" \
-              -f description="$description" >/dev/null
-          }
-
-          assert_queue_state() {
-            local main_sha
-            local pr_json
-            local labels
-            main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
-            test "$main_sha" = "$EXPECTED_SHA"
-            pr_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${OWNER_PR}")"
-            jq -e --arg sha "$EXPECTED_SHA" \
-              '.merged == true and .merge_commit_sha == $sha' <<<"$pr_json" >/dev/null
-            labels="$(gh api "repos/${GITHUB_REPOSITORY}/issues/${OWNER_PR}" --jq '[.labels[].name]')"
-            jq -e 'index("merge-queue/active") != null and index("merge-queue/post-merge") != null' \
-              <<<"$labels" >/dev/null
-          }
-
-          fail_status() {
-            exit_code="$?"
-            trap - ERR
-            set_status "$current_context" error "Serial production validation failed"
-            if [[ "$release_open" = "1" && "$current_context" != "$release_context" ]]; then
-              set_status "$release_context" error "Staged production validation failed"
-            fi
-            exit "$exit_code"
-          }
-          trap fail_status ERR
-
-          for context in \
-            "Launch smoke (produção)" \
-            "Busca smoke (produção)" \
-            "Acessibilidade smoke (produção)" \
-            "Production readback"; do
-            set_status "$context" pending "Waiting for staged production validation"
-          done
-
-          current_context="$release_context"
-          query="projectId=${VERCEL_PROJECT_ID}&target=production&limit=20&teamId=${VERCEL_TEAM_ID}"
-          deployments="$(curl -fsS \
+          response_file="$(mktemp)"
+          trap 'rm -f "$response_file"' EXIT
+          query="projectId=${VERCEL_PROJECT_ID}&target=production&limit=1&teamId=${VERCEL_ORG_ID}"
+          http_code="$(curl --silent --show-error \
+            --connect-timeout 10 \
+            --max-time 30 \
+            --output "$response_file" \
+            --write-out '%{http_code}' \
             -H "Authorization: Bearer ${VERCEL_TOKEN}" \
             "https://api.vercel.com/v6/deployments?${query}")"
-          deployment_url="$(jq -er --arg sha "$EXPECTED_SHA" \
-            '.deployments[] | select(.meta.githubCommitSha == $sha and .readyState == "READY") | .url' \
-            <<<"$deployments" | sed -n '1p')"
-          staged_url="https://${deployment_url}"
 
-          staged_readback="$(curl -fsS "${staged_url}/api/deployment-info")"
-          jq -e --arg sha "$EXPECTED_SHA" \
-            '.ok == true and .environment == "production" and .commitRef == "main" and .commitSha == $sha' \
-            <<<"$staged_readback" >/dev/null
-          curl -fsS "${staged_url}/" >/dev/null
-
-          before_promotion="$(curl -fsS "${PRODUCTION_URL}/api/deployment-info")"
-          if jq -e --arg sha "$EXPECTED_SHA" '.commitSha == $sha' \
-            <<<"$before_promotion" >/dev/null; then
-            echo "::error::Production already serves the candidate SHA; the Vercel hold is missing." >&2
-            false
-          fi
-
-          assert_queue_state
-          set_status "$release_context" success "Staged deployment gates passed; promotion is allowed"
-          release_open=0
-
-          current_context="Production readback"
-          public_ready=0
-          for _attempt in $(seq 1 40); do
-            if public_readback="$(curl -fsS "${PRODUCTION_URL}/api/deployment-info" 2>/dev/null)" && \
-              jq -e --arg sha "$EXPECTED_SHA" \
-                '.ok == true and .environment == "production" and .commitRef == "main" and .commitSha == $sha' \
-                <<<"$public_readback" >/dev/null; then
-              public_ready=1
-              break
-            fi
-            sleep 15
-          done
-          test "$public_ready" = "1"
-          assert_queue_state
-          set_status "$current_context" success "Production domain serves the merge SHA"
-          trap - ERR
-
-  production-smokes:
-    name: Run production smokes from trusted parent
-    needs: post-merge-production
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-post-merge'
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    env:
-      TRUSTED_SHA: ${{ github.event.client_payload.trustedSha }}
-      PRODUCTION_URL: https://puxaficha.com.br
-    steps:
-      - name: Checkout trusted parent
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ env.TRUSTED_SHA }}
-          persist-credentials: false
-
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: "24"
-          cache: npm
-
-      - name: Install production smoke dependencies
-        run: npm ci
-
-      - name: Install Playwright browsers
-        timeout-minutes: 25
-        run: npx playwright install --with-deps chromium webkit
-
-      - name: Launch smoke in production
-        run: npx tsx scripts/smoke-lancamento.ts
-
-      - name: Search smoke in production
-        env:
-          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
-        run: npm run test:search-smoke
-
-      - name: Accessibility smoke in production
-        env:
-          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
-        run: npm run test:a11y
-
-  publish-production-smoke-results:
-    name: Publish production smoke results
-    needs:
-      - post-merge-production
-      - production-smokes
-    if: always() && vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-post-merge' && needs['post-merge-production'].result == 'success'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      EXPECTED_SHA: ${{ github.event.client_payload.mergeSha }}
-      PRODUCTION_URL: https://puxaficha.com.br
-    steps:
-      - name: Verify private runtime and publish results
-        env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          CRON_SECRET: ${{ secrets.CRON_SECRET }}
-          SMOKE_JOB_RESULT: ${{ needs['production-smokes'].result }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          smoke_state="failure"
-          smoke_description="Production smokes failed"
-          if [[ "$SMOKE_JOB_RESULT" = "success" ]]; then
-            smoke_state="success"
-            smoke_description="Production smokes passed"
-          fi
-
-          for context in \
-            "Launch smoke (produção)" \
-            "Busca smoke (produção)" \
-            "Acessibilidade smoke (produção)"; do
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${EXPECTED_SHA}" \
-              -f state="$smoke_state" \
-              -f context="$context" \
-              -f description="$smoke_description" >/dev/null
-          done
-
-          test "$SMOKE_JOB_RESULT" = "success"
-          test -n "${CRON_SECRET:-}"
-          private_readback="$(curl -fsS \
-            -H "Authorization: Bearer ${CRON_SECRET}" \
-            "${PRODUCTION_URL}/api/internal/runtime-smoke")"
-          jq -e '
-            .ok == true and
-            .total == 6 and
-            ([.results[]?.name] | sort) == ["candidate", "deployment-info", "home", "profile-api", "quiz-short-link", "real-404"]
-          ' <<<"$private_readback" >/dev/null
-
-  recovery-production:
-    name: Restore verified production deployment
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-recovery'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    env:
-      OWNER_PR: ${{ github.event.client_payload.ownerPr }}
-      ROLLBACK_PR: ${{ github.event.client_payload.rollbackPr }}
-      RESTORED_SHA: ${{ github.event.client_payload.restoredSha }}
-      PRODUCTION_URL: https://puxaficha.com.br
-    steps:
-      - name: Validate recovery, promote restored SHA, and prove readback
-        env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          [[ "$OWNER_PR" =~ ^[1-9][0-9]*$ ]]
-          [[ "$ROLLBACK_PR" =~ ^[1-9][0-9]*$ ]]
-          [[ "$RESTORED_SHA" =~ ^[0-9a-f]{40}$ ]]
-          test -n "$GH_TOKEN"
-          test -n "$VERCEL_TOKEN"
-          test -n "$VERCEL_TEAM_ID"
-          test -n "$VERCEL_PROJECT_ID"
-
-          fail_recovery() {
-            exit_code="$?"
-            trap - ERR
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${RESTORED_SHA}" \
-              -f state=error -f context="Serial release gate" \
-              -f description="Recovery validation failed" >/dev/null || true
-            exit "$exit_code"
-          }
-          trap fail_recovery ERR
-
-          main_sha="$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)"
-          test "$main_sha" = "$RESTORED_SHA"
-          rollback_json="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${ROLLBACK_PR}")"
-          jq -e --arg sha "$RESTORED_SHA" '.merged == true and .merge_commit_sha == $sha' \
-            <<<"$rollback_json" >/dev/null
-          labels="$(gh api "repos/${GITHUB_REPOSITORY}/issues/${OWNER_PR}" --jq '[.labels[].name]')"
-          jq -e 'index("merge-queue/active") != null and index("merge-queue/rollback") != null' \
-            <<<"$labels" >/dev/null
-
-          checks_green=0
-          for _attempt in $(seq 1 60); do
-            runs="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${RESTORED_SHA}/check-runs?per_page=100")"
-            if jq -e '
-              ([.check_runs[] | select(
-                .name != "Reconcile serial merge queue" and
-                .name != "Validate staged deployment and production" and
-                .name != "Run production smokes from trusted parent" and
-                .name != "Publish production smoke results" and
-                .name != "Restore verified production deployment" and
-                .name != "Run recovery smokes" and
-                .name != "Publish recovery smoke results"
-              )] as $checks |
-              ($checks | length > 0) and
-              all($checks[]; .status == "completed" and .conclusion == "success") and
-              all(["verify", "Rotas e acessibilidade (build local)"][];
-                . as $required |
-                any($checks[]; .name == $required and .conclusion == "success")))
-            ' <<<"$runs" >/dev/null; then
-              checks_green=1
-              break
-            fi
-            sleep 60
-          done
-          test "$checks_green" = "1"
-
-          query="projectId=${VERCEL_PROJECT_ID}&target=production&limit=20&teamId=${VERCEL_TEAM_ID}"
-          deployments="$(curl -fsS -H "Authorization: Bearer ${VERCEL_TOKEN}" \
-            "https://api.vercel.com/v6/deployments?${query}")"
-          deployment_id="$(jq -er --arg sha "$RESTORED_SHA" \
-            '.deployments[] | select(.meta.githubCommitSha == $sha and .readyState == "READY") | .uid' \
-            <<<"$deployments" | sed -n '1p')"
-          curl -fsS -X POST -H "Authorization: Bearer ${VERCEL_TOKEN}" \
-            -H "Content-Type: application/json" -d '{}' \
-            "https://api.vercel.com/v10/projects/${VERCEL_PROJECT_ID}/promote/${deployment_id}?teamId=${VERCEL_TEAM_ID}" >/dev/null
-
-          public_ready=0
-          for _attempt in $(seq 1 40); do
-            if readback="$(curl -fsS "${PRODUCTION_URL}/api/deployment-info" 2>/dev/null)" && \
-              jq -e --arg sha "$RESTORED_SHA" \
-                '.ok == true and .environment == "production" and .commitRef == "main" and .commitSha == $sha' \
-                <<<"$readback" >/dev/null; then
-              public_ready=1
-              break
-            fi
-            sleep 15
-          done
-          test "$public_ready" = "1"
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${RESTORED_SHA}" \
-            -f state=success -f context="Production readback" \
-            -f description="Restored production SHA verified" >/dev/null
-          gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${RESTORED_SHA}" \
-            -f state=success -f context="Serial release gate" \
-            -f description="Recovery deployment promoted and verified" >/dev/null
-          trap - ERR
-
-  recovery-smokes:
-    name: Run recovery smokes
-    needs: recovery-production
-    if: vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-recovery'
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    env:
-      RESTORED_SHA: ${{ github.event.client_payload.restoredSha }}
-      PRODUCTION_URL: https://puxaficha.com.br
-    steps:
-      - name: Checkout restored trusted SHA
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          ref: ${{ env.RESTORED_SHA }}
-          persist-credentials: false
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: "24"
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Install Playwright browsers
-        timeout-minutes: 25
-        run: npx playwright install --with-deps chromium webkit
-      - name: Launch smoke
-        run: npx tsx scripts/smoke-lancamento.ts
-      - name: Search smoke
-        env:
-          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
-        run: npm run test:search-smoke
-      - name: Accessibility smoke
-        env:
-          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
-        run: npm run test:a11y
-
-  publish-recovery-smoke-results:
-    name: Publish recovery smoke results
-    needs:
-      - recovery-production
-      - recovery-smokes
-    if: always() && vars.SERIAL_MERGE_QUEUE_ENABLED == 'true' && github.event_name == 'repository_dispatch' && github.event.action == 'serial-merge-queue-recovery' && needs['recovery-production'].result == 'success'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      RESTORED_SHA: ${{ github.event.client_payload.restoredSha }}
-    steps:
-      - name: Publish recovery smoke statuses
-        env:
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          SMOKE_JOB_RESULT: ${{ needs['recovery-smokes'].result }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          state="failure"
-          description="Recovery smokes failed"
-          if [[ "$SMOKE_JOB_RESULT" = "success" ]]; then
-            state="success"
-            description="Recovery smokes passed"
-          fi
-          for context in \
-            "Launch smoke (produção)" \
-            "Busca smoke (produção)" \
-            "Acessibilidade smoke (produção)"; do
-            gh api --method POST "repos/${GITHUB_REPOSITORY}/statuses/${RESTORED_SHA}" \
-              -f state="$state" -f context="$context" -f description="$description" >/dev/null
-          done
-          test "$SMOKE_JOB_RESULT" = "success"
+          test "$http_code" = "200"
+          jq -e '.deployments | type == "array"' "$response_file" >/dev/null
+          echo "Vercel credentials have read access to the configured project."

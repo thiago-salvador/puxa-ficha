@@ -36,6 +36,7 @@ type EventCase = {
   kind: "event"
   state: string
   environment: string
+  environmentUrl: string
   expected: boolean
 }
 
@@ -66,7 +67,11 @@ const cases = readFileSync(join(ROOT, "tests/fixtures/a11y-production-workflow-c
   .map((line) => JSON.parse(line) as EventCase | StructureCase)
 
 function eventAllowed(c: EventCase): boolean {
-  return c.state === "success" && c.environment === "Production"
+  return (
+    c.state === "success" &&
+    c.environment === "Production" &&
+    c.environmentUrl === "https://puxaficha.com.br"
+  )
 }
 
 function readbackStep(): Record<string, unknown> {
@@ -94,7 +99,8 @@ function structurePass(check: StructureCase["check"]): boolean {
     case "job-if":
       return (
         job?.if?.includes("deployment_status.state == 'success'") === true &&
-        job.if.includes("deployment.environment == 'Production'")
+        job.if.includes("deployment.environment == 'Production'") &&
+        job.if.includes("deployment_status.environment_url == 'https://puxaficha.com.br'")
       )
     case "concurrency":
       return (
@@ -175,13 +181,14 @@ function structurePass(check: StructureCase["check"]): boolean {
         smokeSpecText.includes('getByText("0%", { exact: true })') &&
         smokeConfigText.includes('viewport: { width: 1440, height: 1000 }') &&
         smokeConfigText.includes('viewport: { width: 390, height: 844 }') &&
-        smokeConfigText.includes('"https://puxaficha.com.br"')
+        smokeConfigText.includes('"https://puxaficha.com.br"') &&
+        smokeConfigText.includes('.endsWith(".vercel.app")')
       )
   }
 }
 
 describe("workflow de acessibilidade em produção", () => {
-  assert.equal(cases.length, 24, "o golden set precisa manter 24 casos")
+  assert.equal(cases.length, 25, "o golden set precisa manter 25 casos")
 
   for (const c of cases) {
     it(c.id, () => {

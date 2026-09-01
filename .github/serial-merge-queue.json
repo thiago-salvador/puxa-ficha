@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "enabled": false,
+  "enabled": true,
   "repository": "thiago-salvador/puxa-ficha",
   "defaultBranch": "main",
   "concurrency": {
@@ -22,6 +22,10 @@
     ],
     "requireUpToDate": true,
     "baseBranch": "main",
+    "mergeCoAuthor": {
+      "name": "Thiago Salvador",
+      "email": "contato.thiagosalvador@gmail.com"
+    },
     "excludeDrafts": true,
     "excludeLabels": [
       "merge-queue/rollback-pr"
@@ -39,7 +43,7 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
+        "Cobertura (bloqueante)",
         "CodeQL",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
@@ -57,10 +61,10 @@
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
@@ -68,16 +72,19 @@
       "conditionalRequired": [
         "Gate de replay (conjunto de falhas congelado)"
       ],
+      "ignored": [
+        "Reconcile serial merge queue"
+      ],
       "includeAllPresent": true
     },
     "rollback": {
       "required": [
         "verify",
         "Rotas e acessibilidade (build local)",
-        "Cobertura (informativa)",
-        "Acessibilidade (produção)",
+        "Cobertura (bloqueante)",
         "Ledger do banco vs supabase/migrations",
-        "CodeQL",
+        "CodeQL analysis (javascript-typescript)",
+        "CodeQL analysis (python)",
         "Analyze (python)",
         "Analyze (javascript-typescript)",
         "Vercel"
@@ -90,6 +97,7 @@
   },
   "production": {
     "provider": "vercel",
+    "projectName": "puxa-ficha",
     "environment": "Production",
     "url": "https://puxaficha.com.br",
     "stagedDeployment": {
@@ -98,62 +106,26 @@
       "requiredState": "READY",
       "requireMergeSha": true,
       "hold": {
-        "provider": "vercel-deployment-checks",
+        "provider": "vercel-auto-assignment-disabled",
         "required": true,
-        "githubStatusContext": "Serial release gate"
+        "githubStatusContext": "Vercel - puxa-ficha: staged-release"
       }
     },
-    "smokes": {
+    "stagedChecks": {
       "required": true,
       "checks": [
-        "Launch smoke (produção)",
-        "Busca smoke (produção)",
-        "Acessibilidade smoke (produção)"
-      ],
-      "commands": [
-        {
-          "name": "launch-smoke",
-          "command": "npx tsx scripts/smoke-lancamento.ts"
-        },
-        {
-          "name": "search-smoke",
-          "command": "npm run test:search-smoke"
-        },
-        {
-          "name": "production-a11y",
-          "command": "PF_BASE_URL=https://puxaficha.com.br npm run test:a11y"
-        }
-      ],
-      "private": {
-        "required": true,
-        "secret": "CRON_SECRET",
-        "url": "https://puxaficha.com.br/api/internal/runtime-smoke",
-        "expected": {
-          "ok": true,
-          "total": 6,
-          "resultNames": [
-            "candidate",
-            "deployment-info",
-            "home",
-            "profile-api",
-            "quiz-short-link",
-            "real-404"
-          ]
-        }
-      }
+        "Vercel - puxa-ficha: staged-release"
+      ]
     },
     "promotion": {
       "required": true,
-      "checks": [
-        "Serial release gate"
-      ],
-      "mode": "deployment-check-auto-alias",
+      "mode": "explicit-vercel-promote",
       "recoveryMode": "explicit-vercel-promote"
     },
     "publicReadback": {
       "required": true,
       "checks": [
-        "Production readback"
+        "Production release closure"
       ],
       "url": "https://puxaficha.com.br/api/deployment-info",
       "expected": {
@@ -166,14 +138,17 @@
     },
     "rollback": {
       "mode": "vercel-instant-rollback",
+      "checks": [
+        "Production rollback recovery"
+      ],
       "requirePreviousReadyDeployment": true,
       "verifyPreviousSha": true,
       "promoteRecoveryDeployment": true
     }
   },
   "releaseGate": {
-    "name": "Serial release gate",
-    "required": true,
+    "name": "Serial release orchestration",
+    "required": false,
     "initialState": "pending",
     "successState": "success",
     "failClosedOnMissingHold": true
@@ -186,6 +161,11 @@
     "requirePredecessor": true
   },
   "irreversibleChanges": {
+    "migrationPathPatterns": [
+      "supabase/migrations/**",
+      "supabase/migrations-pendentes/**"
+    ],
+    "databaseRollbackMode": "migration-specific",
     "pathPatterns": [
       "supabase/migrations/**",
       "supabase/migrations-pendentes/**",
@@ -222,7 +202,7 @@
       "VERCEL_TOKEN",
       "VERCEL_ORG_ID",
       "VERCEL_PROJECT_ID",
-      "CRON_SECRET"
+      "VERCEL_AUTOMATION_BYPASS_SECRET"
     ],
     "optional": [],
     "missingPolicy": "block"

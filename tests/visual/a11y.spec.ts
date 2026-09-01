@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright"
 import { expect, test } from "playwright/test"
+import { establishAutomationBypass } from "../../scripts/vercel-automation-bypass"
 
 type RouteA11y = {
   name: string
@@ -23,6 +24,12 @@ const ROUTES: RouteA11y[] = [
   { name: "embed-home", path: "/embed" },
   { name: "embed-candidate", path: "/embed/lula" },
 ]
+
+test.beforeEach(async ({ context, baseURL }) => {
+  if (baseURL) {
+    await establishAutomationBypass(context, baseURL, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
+  }
+})
 
 function formatViolations(violations: Awaited<ReturnType<AxeBuilder["analyze"]>>["violations"]) {
   return violations
@@ -79,4 +86,26 @@ test.describe("Acessibilidade automatizada", () => {
       expect(blockingViolations, formatViolations(blockingViolations)).toEqual([])
     })
   }
+
+  test("alerts-manage error state has no moderate, serious or critical axe violations", async ({ page }) => {
+    await page.route("**/api/alerts/me", async (route) => {
+      await route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "Não foi possível carregar sua gestão de alertas." }),
+      })
+    })
+
+    await page.goto("/alertas/gerenciar", { waitUntil: "domcontentloaded" })
+    await expect(page.getByText("Acesso indisponível")).toBeVisible()
+
+    const results = await new AxeBuilder({ page }).analyze()
+    const blockingViolations = results.violations.filter((violation) =>
+      violation.impact === "moderate" ||
+      violation.impact === "serious" ||
+      violation.impact === "critical"
+    )
+
+    expect(blockingViolations, formatViolations(blockingViolations)).toEqual([])
+  })
 })

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { GitHubAdapter, preflightSecrets } from '../../scripts/merge-queue/adapters.mjs';
-import { reconcile } from '../../scripts/merge-queue/coordinator.mjs';
+import { GitHubAdapter, HttpError, preflightSecrets } from '../../scripts/merge-queue/adapters.mjs';
+import { enrichProduction, reconcile } from '../../scripts/merge-queue/coordinator.mjs';
 import { config as baseConfig, greenChecks, greenProduction, pr } from './helpers.mjs';
 
 function recorder(overrides = {}) {
@@ -13,6 +13,7 @@ function recorder(overrides = {}) {
       github: {
         setLabels: record('setLabels'),
         upsertIncident: record('upsertIncident'),
+        updateBranch: record('updateBranch', { message: 'Updating pull request branch.' }),
         assertMergePreconditions: record('assertMergePreconditions', { ok: true }),
         assertOwnerLabels: record('assertOwnerLabels', { ok: true }),
         merge: record('merge', { merged: true, sha: 'merge-43' }),
@@ -23,7 +24,22 @@ function recorder(overrides = {}) {
         ...overrides.github,
       },
       vercel: {
+        deploymentForSha: record('deploymentForSha', {
+          id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY',
+          target: 'production', url: 'https://puxa-ficha-before.vercel.app',
+        }),
+        currentProductionForDomain: record('currentProductionForDomain', {
+          id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY',
+          target: 'production', url: 'https://puxa-ficha-before.vercel.app',
+        }),
         productionForSha: record('productionForSha', { id: 'deploy-before', sha: 'main-before', status: 'success' }),
+        assertDeployment: (deployment, expected) => {
+          calls.push(['assertDeployment', deployment, expected]);
+          if (deployment?.id !== expected.expectedId || deployment?.sha !== expected.expectedSha) {
+            throw new Error('deployment assertion rejected the predecessor');
+          }
+          return deployment;
+        },
         instantRollback: record('instantRollback'),
         promote: record('promote'),
         ...overrides.vercel,
@@ -34,42 +50,178 @@ function recorder(overrides = {}) {
 
 function liveConfig() {
   const config = structuredClone(baseConfig);
-  config.production.promotion.mode = 'deployment-check-auto-alias';
+  config.production.promotion.mode = 'explicit-vercel-promote';
   return {
     ...config,
-    releaseGate: { required: true, name: 'Serial release gate', initialState: 'pending', successState: 'success' },
+    releaseGate: { required: false, name: 'Serial release orchestration', initialState: 'pending', successState: 'success' },
     notifications: { assignee: 'thiago-salvador' },
   };
 }
 
-test('successful live merge establishes hold and dispatches post-merge validation', async () => {
+test('live production evidence uses deployment identity for promotion and maps rollback to predecessor SHA', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.stagedChecks.checks = ['Vercel - puxa-ficha: staged-release'];
+  config.production.publicReadback.checks = ['Production release closure'];
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, {
+      labels: ['active', 'post-merge'],
+      mergeSha,
+      queueContext: { previousMainSha: previousSha },
+    })],
+    main: {
+      sha: mergeSha,
+      checks: [
+        { name: 'Vercel - puxa-ficha: staged-release', sha: mergeSha, conclusion: 'success' },
+        { name: 'Production release closure', sha: mergeSha, conclusion: 'pending' },
+        { name: 'Production rollback recovery', sha: mergeSha, conclusion: 'success' },
+      ],
+    },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => candidate,
+  });
+  assert.deepEqual(result.production.promotion, { sha: mergeSha, status: 'success' });
+  assert.deepEqual(result.production.stagedChecks, { sha: mergeSha, status: 'success' });
+  assert.deepEqual(result.production.publicReadback, { sha: mergeSha, status: 'pending' });
+  assert.deepEqual(result.production.rollback, { sha: previousSha, status: 'success' });
+});
+
+test('missing rollback check stays null instead of inventing pending recovery evidence', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, { labels: ['active', 'post-merge'], mergeSha, queueContext: { previousMainSha: previousSha } })],
+    main: { sha: mergeSha, checks: [] },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => candidate,
+  });
+  assert.equal(result.production.rollback, null);
+});
+
+test('skipped conditional rollback job stays null instead of becoming a critical failure', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const previousSha = 'b'.repeat(40);
+  const config = liveConfig();
+  config.production.rollback.checks = ['Production rollback recovery'];
+  const snapshot = {
+    prs: [pr(43, { labels: ['active', 'post-merge'], mergeSha, queueContext: { previousMainSha: previousSha } })],
+    main: {
+      sha: mergeSha,
+      checks: [{ name: 'Production rollback recovery', sha: mergeSha, conclusion: 'skipped' }],
+    },
+  };
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction(snapshot, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => null,
+  });
+  assert.equal(result.production.rollback, null);
+});
+
+test('canonical-domain lookup failure degrades to missing evidence and remains fail-closed', async () => {
+  const mergeSha = 'a'.repeat(40);
+  const config = liveConfig();
+  config.production.url = 'https://puxaficha.com.br';
+  const candidate = {
+    id: 'candidate', sha: mergeSha, status: 'success', readyState: 'READY',
+    target: 'production', url: 'https://candidate.vercel.app',
+  };
+  const result = await enrichProduction({ prs: [], main: { sha: mergeSha, checks: [] } }, config, {
+    deploymentForSha: async () => candidate,
+    currentProductionForDomain: async () => { throw new Error('Vercel alias lookup unavailable'); },
+  });
+  assert.equal(result.production.currentDeployment, null);
+  assert.deepEqual(result.production.promotion, { sha: mergeSha, status: 'pending' });
+});
+
+test('successful live merge dispatches staged validation without opening a legacy gate', async () => {
   const { calls, adapters } = recorder();
   const result = await reconcile({
     config: liveConfig(),
-    snapshot: { prs: [pr(43)], main: { sha: 'main-before' }, production: { deployment: { id: 'deploy-before' } } },
+    snapshot: {
+      prs: [pr(43)],
+      main: { sha: 'main-before' },
+      production: { deployment: {
+        id: 'deploy-before', sha: 'main-before', status: 'success',
+        url: 'https://puxa-ficha-before.vercel.app',
+      } },
+    },
     adapters,
   });
   assert.equal(result.decision, 'MERGE');
   assert.deepEqual(calls.map(([name]) => name), [
-    'setLabels', 'assertMergePreconditions', 'persistContext', 'merge', 'persistContext', 'setLabels', 'setCommitStatus', 'dispatch',
+    'setLabels', 'assertMergePreconditions', 'persistContext', 'merge', 'persistContext', 'setLabels', 'dispatch',
   ]);
-  assert.deepEqual(calls.find(([name]) => name === 'setCommitStatus').slice(1, 4), ['merge-43', 'pending', 'Serial release gate']);
+  assert.ok(!calls.some(([name]) => name === 'setCommitStatus'));
   assert.deepEqual(calls.find(([name]) => name === 'dispatch').slice(1), [
     'serial-merge-queue-post-merge',
-    { pr: 43, mergeSha: 'merge-43', trustedSha: 'main-before' },
+    {
+      pr: 43,
+      mergeSha: 'merge-43',
+      trustedSha: 'main-before',
+      previousDeploymentId: 'deploy-before',
+      previousDeploymentSha: 'main-before',
+      previousDeploymentUrl: 'https://puxa-ficha-before.vercel.app',
+      git: { sha: 'merge-43' },
+      environment: 'production',
+      project: { name: 'puxa-ficha' },
+    },
   ]);
+});
+
+test('live behind branch updates only the captured head and keeps the serial lock', async () => {
+  const { calls, adapters } = recorder();
+  const result = await reconcile({
+    config: liveConfig(),
+    snapshot: { prs: [pr(43, { sync: 'behind' }), pr(44)], main: { sha: 'main-before' } },
+    adapters,
+  });
+  assert.equal(result.decision, 'WAIT');
+  assert.equal(result.reason, 'branch-update-required');
+  assert.deepEqual(calls.map(([name]) => name), ['setLabels', 'updateBranch']);
+  assert.deepEqual(calls.find(([name]) => name === 'updateBranch').slice(1), [43, 'head-43']);
 });
 
 test('live pre-merge snapshot captures the previous production deployment before merging', async () => {
   const config = liveConfig();
   config.production.rollback = { requirePreviousReadyDeployment: true };
-  config.production.stagedDeployment.hold = { required: true, githubStatusContext: 'Serial release gate' };
+  config.production.stagedDeployment.hold = {
+    required: true,
+    provider: 'vercel-auto-assignment-disabled',
+    githubStatusContext: 'Vercel - puxa-ficha: staged-release',
+  };
   const { calls, adapters } = recorder({
     github: {
       snapshot: async () => ({ prs: [pr(43)], main: { sha: 'main-before', checks: [] } }),
     },
     vercel: {
-      productionForSha: async (sha) => ({ id: 'deploy-before', sha, status: 'success' }),
+      deploymentForSha: async (sha) => ({
+        id: 'deploy-before', sha, status: 'success', readyState: 'READY', target: 'production',
+        url: 'https://puxa-ficha-before.vercel.app',
+      }),
+      currentProductionForDomain: async () => ({
+        id: 'deploy-before', sha: 'main-before', status: 'success', readyState: 'READY', target: 'production',
+        url: 'https://puxa-ficha-before.vercel.app',
+      }),
     },
   });
   const result = await reconcile({ config, adapters });
@@ -77,6 +229,8 @@ test('live pre-merge snapshot captures the previous production deployment before
   const firstContext = calls.find(([name]) => name === 'persistContext')[2];
   assert.equal(firstContext.previousDeploymentId, 'deploy-before');
   assert.equal(firstContext.previousMainSha, 'main-before');
+  assert.equal(firstContext.previousDeploymentSha, 'main-before');
+  assert.equal(firstContext.previousDeploymentUrl, 'https://puxa-ficha-before.vercel.app');
   assert.equal(firstContext.transition, 'merge-started');
 });
 
@@ -105,7 +259,7 @@ test('base change between snapshot and merge fails closed before any merge call'
   assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
-test('post-merge failure marks release gate failed, reports once, instant-rolls back, and creates revert PR', async () => {
+test('failure after promotion marks the gate failed and instant-rolls back without creating a revert PR', async () => {
   const config = liveConfig();
   const mergeSha = 'merge-43';
   const owner = pr(43, {
@@ -122,10 +276,11 @@ test('post-merge failure marks release gate failed, reports once, instant-rolls 
     snapshot: { prs: [owner], main: { sha: mergeSha }, production: greenProduction(mergeSha) },
     adapters,
   });
-  assert.equal(result.decision, 'ROLLBACK');
+  assert.equal(result.decision, 'ROLLBACK_DEPLOYMENT');
   const sequence = calls.map(([name]) => name);
-  assert.deepEqual(sequence, ['setLabels', 'setCommitStatus', 'productionForSha', 'instantRollback', 'createRollbackPr', 'upsertIncident']);
+  assert.deepEqual(sequence, ['setCommitStatus', 'deploymentForSha', 'assertDeployment', 'instantRollback', 'upsertIncident']);
   assert.equal(calls.find(([name]) => name === 'instantRollback')[1], 'deploy-before');
+  assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
 });
 
 test('incident outage does not prevent rollback actions from being attempted', async () => {
@@ -147,11 +302,11 @@ test('incident outage does not prevent rollback actions from being attempted', a
     /rollback operations failed/,
   );
   assert.deepEqual(calls.map(([name]) => name), [
-    'setLabels', 'setCommitStatus', 'productionForSha', 'instantRollback', 'createRollbackPr', 'upsertIncident',
+    'setCommitStatus', 'deploymentForSha', 'assertDeployment', 'instantRollback', 'upsertIncident',
   ]);
 });
 
-test('rollback refuses a deployment id that does not match the previous main SHA', async () => {
+test('rollback aborts when assertDeployment rejects the captured predecessor', async () => {
   const config = liveConfig();
   const mergeSha = 'merge-43';
   const owner = pr(43, {
@@ -168,10 +323,12 @@ test('rollback refuses a deployment id that does not match the previous main SHA
     /rollback operations failed/,
   );
   assert.ok(!calls.some(([name]) => name === 'instantRollback'));
-  assert.ok(calls.some(([name]) => name === 'createRollbackPr'));
+  assert.ok(!calls.some(([name]) => name === 'createRollbackPr'));
+  assert.ok(calls.some(([name]) => name === 'assertDeployment'));
+  assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
-test('ready staged release opens hold but keeps lock until promoted readback', async () => {
+test('ready staged release keeps lock until explicit promotion is visible', async () => {
   const config = liveConfig();
   const sha = 'merge-43';
   const owner = pr(43, { labels: ['active', 'post-merge'], mergeSha: sha, postMergeChecks: greenChecks(sha, ['CI', 'Ledger']) });
@@ -179,10 +336,63 @@ test('ready staged release opens hold but keeps lock until promoted readback', a
   production.promotion.status = 'pending';
   const { calls, adapters } = recorder();
   const result = await reconcile({ config, snapshot: { prs: [owner], main: { sha }, production }, adapters });
-  assert.equal(result.decision, 'VERIFY');
-  assert.equal(result.reason, 'ready-to-promote');
-  assert.deepEqual(calls.map(([name]) => name), ['setCommitStatus']);
-  assert.equal(calls[0][2], 'success');
+  assert.equal(result.decision, 'AWAIT_PROMOTION');
+  assert.equal(result.reason, 'stage-green-awaiting-promotion');
+  assert.deepEqual(calls, []);
+});
+
+test('completed public release overwrites any synthetic gate failure before releasing the lock', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const { calls, adapters } = recorder();
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'RELEASE');
+  assert.deepEqual(calls.map(([name]) => name), ['setCommitStatus', 'setLabels']);
+  assert.deepEqual(calls[0].slice(1), [
+    sha,
+    'success',
+    'Serial release orchestration',
+    'Serial release completed successfully',
+  ]);
+});
+
+test('failed final release status keeps the owner locked and opens an incident', async () => {
+  const config = liveConfig();
+  const sha = 'merge-43';
+  const owner = pr(43, {
+    labels: ['active', 'post-merge'],
+    mergeSha: sha,
+    postMergeChecks: greenChecks(sha, ['CI', 'Ledger']),
+  });
+  const statusError = Object.assign(new Error('status rejected'), { status: 422 });
+  const { calls, adapters } = recorder({
+    github: {
+      setCommitStatus: async (...args) => {
+        calls.push(['setCommitStatus', ...args]);
+        throw statusError;
+      },
+    },
+  });
+  const result = await reconcile({
+    config,
+    snapshot: { prs: [owner], main: { sha }, production: greenProduction(sha) },
+    adapters,
+  });
+  assert.equal(result.decision, 'BLOCK');
+  assert.equal(result.reason, 'remote-transition-failed');
+  assert.ok(calls.some(([name, number, add]) => (
+    name === 'setLabels' && number === 43 && add.includes('active') && add.includes('blocked')
+  )));
+  assert.ok(calls.some(([name]) => name === 'upsertIncident'));
 });
 
 test('green rollback PR merge dispatches recovery validation for the restored SHA', async () => {
@@ -241,17 +451,57 @@ test('secret and production hold preflight fail closed', () => {
   const config = {
     ...liveConfig(),
     secrets: { required: ['MERGE_QUEUE_GH_TOKEN', 'VERCEL_TOKEN', 'VERCEL_ORG_ID', 'VERCEL_PROJECT_ID'] },
-    production: { stagedDeployment: { hold: { required: true, githubStatusContext: 'Serial release gate' } } },
+    production: {
+      stagedDeployment: {
+        hold: {
+          required: true,
+          provider: 'vercel-auto-assignment-disabled',
+          githubStatusContext: 'Vercel - puxa-ficha: staged-release',
+        },
+      },
+      promotion: { mode: 'explicit-vercel-promote' },
+    },
   };
   assert.throws(() => preflightSecrets(config, {}), /secrets are missing/);
+  assert.throws(() => preflightSecrets(config, {
+    GITHUB_TOKEN: 'read', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+  }), /secrets are missing/);
   assert.doesNotThrow(() => preflightSecrets(config, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }));
   const broken = structuredClone(config);
   broken.production.stagedDeployment.hold.githubStatusContext = '';
   assert.throws(() => preflightSecrets(broken, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /hold configuration/);
+  const unsafe = structuredClone(config);
+  unsafe.production.stagedDeployment.hold.provider = 'vercel-deployment-checks';
+  assert.throws(() => preflightSecrets(unsafe, {
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+  }), /disable Vercel automatic domain assignment/);
+});
+
+test('GitHub adapter isolates read traffic from privileged mutations', async () => {
+  const calls = [];
+  const fetchImpl = async (_url, init = {}) => {
+    calls.push(init);
+    return { ok: true, status: 200, text: async () => '{}' };
+  };
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'read-token',
+    writeToken: 'write-token',
+    fetchImpl,
+  });
+
+  await github.request('/repos/owner/repo');
+  await github.request('/repos/owner/repo/statuses/abc', { method: 'POST', body: '{}' });
+
+  assert.equal(calls[0].headers.Authorization, 'Bearer read-token');
+  assert.equal(calls[1].headers.Authorization, 'Bearer write-token');
 });
 
 test('incident upsert deduplicates by PR, phase, SHA, and reason signature', async () => {
@@ -269,8 +519,14 @@ test('incident upsert deduplicates by PR, phase, SHA, and reason signature', asy
   assert.match(calls[1][0], /issues\/7$/);
 });
 
-test('queue context ignores contributor comments and malformed trusted state', async () => {
-  const valid = { previousMainSha: 'a'.repeat(40), previousDeploymentId: 'deploy-trusted', headSha: 'b'.repeat(40) };
+test('queue context preserves the exact rollback deployment and ignores malformed trusted state', async () => {
+  const valid = {
+    previousMainSha: 'a'.repeat(40),
+    previousDeploymentId: 'deploy-trusted',
+    previousDeploymentSha: 'a'.repeat(40),
+    previousDeploymentUrl: 'https://puxa-ficha-trusted.vercel.app',
+    headSha: 'b'.repeat(40),
+  };
   const comments = [
     {
       user: { login: 'thiago-salvador' },
@@ -290,6 +546,262 @@ test('queue context ignores contributor comments and malformed trusted state', a
   const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
   const context = await github.queueContext(43, { queue: { trustedContextActors: ['thiago-salvador'] } });
   assert.deepEqual(context, valid);
+});
+
+test('GitHub checks keep only the newest commit status for each context', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    if (url.includes('/check-runs?')) {
+      return { ok: true, status: 200, text: async () => JSON.stringify({ check_runs: [] }) };
+    }
+    if (url.includes('/statuses?')) {
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify([
+          {
+            context: 'Production release closure',
+            state: 'success',
+            target_url: 'https://github.test/runs/current',
+            created_at: '2026-08-31T12:00:00Z',
+            updated_at: '2026-08-31T12:00:00Z',
+          },
+          {
+            context: 'Production release closure',
+            state: 'failure',
+            target_url: 'https://github.test/runs/old',
+            created_at: '2026-08-31T11:00:00Z',
+            updated_at: '2026-08-31T11:00:00Z',
+          },
+        ]),
+      };
+    }
+    throw new Error(`unexpected URL: ${url}`);
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+
+  assert.deepEqual(await github.checks(sha), [{
+    name: 'Production release closure',
+    sha,
+    status: 'success',
+    conclusion: 'success',
+    url: 'https://github.test/runs/current',
+    createdAt: '2026-08-31T12:00:00Z',
+    updatedAt: '2026-08-31T12:00:00Z',
+  }]);
+});
+
+test('GitHub checks keep only the newest rerun for each check name', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    if (url.includes('/check-runs?')) {
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ check_runs: [
+          {
+            id: 2,
+            name: 'verify',
+            head_sha: sha,
+            status: 'completed',
+            conclusion: 'success',
+            completed_at: '2026-08-31T12:00:00Z',
+            html_url: 'https://github.test/runs/current',
+          },
+          {
+            id: 1,
+            name: 'verify',
+            head_sha: sha,
+            status: 'completed',
+            conclusion: 'failure',
+            completed_at: '2026-08-31T11:00:00Z',
+            html_url: 'https://github.test/runs/old',
+          },
+        ] }),
+      };
+    }
+    if (url.includes('/statuses?')) {
+      return { ok: true, status: 200, text: async () => '[]' };
+    }
+    throw new Error(`unexpected URL: ${url}`);
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+  assert.deepEqual(await github.checks(sha), [{
+    name: 'verify',
+    sha,
+    status: 'completed',
+    conclusion: 'success',
+    url: 'https://github.test/runs/current',
+  }]);
+});
+
+test('GitHub CodeQL evidence comes from exact-SHA analyses for both languages', async () => {
+  const sha = 'a'.repeat(40);
+  const fetchImpl = async (url) => {
+    assert.match(url, /code-scanning\/analyses\?ref=refs%2Fheads%2Fmain/);
+    return {
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([
+        {
+          id: 3,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/3',
+        },
+        {
+          id: 2,
+          commit_sha: sha,
+          category: '/language:javascript-typescript',
+          created_at: '2026-08-31T12:00:00Z',
+          error: '',
+          url: 'https://api.github.test/analyses/2',
+        },
+        {
+          id: 1,
+          commit_sha: sha,
+          category: '/language:python',
+          created_at: '2026-08-31T11:00:00Z',
+          error: 'old failed rerun',
+          url: 'https://api.github.test/analyses/1',
+        },
+        {
+          id: 4,
+          commit_sha: 'b'.repeat(40),
+          category: '/language:python',
+          created_at: '2026-08-31T13:00:00Z',
+          error: '',
+        },
+      ]),
+    };
+  };
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token', fetchImpl });
+  assert.deepEqual(await github.codeScanningChecks(sha, 'refs/heads/main'), [
+    {
+      name: 'CodeQL analysis (javascript-typescript)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/2',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+    {
+      name: 'CodeQL analysis (python)',
+      sha,
+      status: 'completed',
+      conclusion: 'success',
+      url: 'https://api.github.test/analyses/3',
+      createdAt: '2026-08-31T12:00:00Z',
+    },
+  ]);
+});
+
+test('GitHub CodeQL evidence fails closed on an exact-SHA analysis error', async () => {
+  const sha = 'a'.repeat(40);
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => ({
+      ok: true,
+      status: 200,
+      text: async () => JSON.stringify([{
+        id: 1,
+        commit_sha: sha,
+        category: '/language:python',
+        created_at: '2026-08-31T12:00:00Z',
+        error: 'upload failed',
+      }]),
+    }),
+  });
+  assert.equal((await github.codeScanningChecks(sha, 'refs/heads/main'))[0].conclusion, 'failure');
+});
+
+test('GitHub branch update is pinned to the observed PR head', async () => {
+  const calls = [];
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      return {
+        ok: true,
+        status: 202,
+        text: async () => JSON.stringify({ message: 'Updating pull request branch.' }),
+      };
+    },
+  });
+  const sha = 'a'.repeat(40);
+  await github.updateBranch(43, sha);
+  assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/update-branch');
+  assert.equal(calls[0].init.method, 'PUT');
+  assert.deepEqual(JSON.parse(calls[0].init.body), { expected_head_sha: sha });
+});
+
+test('GitHub squash merge always credits the configured co-author', async () => {
+  const calls = [];
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async (url, init) => {
+      calls.push({ url, init });
+      return {
+        ok: true,
+        status: 200,
+        text: async () => JSON.stringify({ merged: true, sha: 'b'.repeat(40) }),
+      };
+    },
+  });
+  const sha = 'a'.repeat(40);
+  await github.merge(43, sha, 'squash', {
+    name: 'Thiago Salvador',
+    email: 'contato.thiagosalvador@gmail.com',
+  });
+  assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/merge');
+  assert.deepEqual(JSON.parse(calls[0].init.body), {
+    sha,
+    merge_method: 'squash',
+    commit_message: 'Co-authored-by: Thiago Salvador <contato.thiagosalvador@gmail.com>',
+  });
+});
+
+test('GitHub merge fails closed when co-author metadata is absent or unsafe', async () => {
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'token',
+    fetchImpl: async () => { throw new Error('merge request must not run'); },
+  });
+  await assert.rejects(github.merge(43, 'a'.repeat(40), 'squash'), /valid merge co-author/);
+  await assert.rejects(
+    github.merge(43, 'a'.repeat(40), 'squash', { name: 'Thiago\nInjected', email: 'x@example.com' }),
+    /valid merge co-author/,
+  );
+});
+
+test('GitHub branch update treats a changed head race as a safe recheck', async () => {
+  const oldSha = 'a'.repeat(40);
+  const newSha = 'b'.repeat(40);
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.request = async (path) => {
+    if (path.endsWith('/update-branch')) throw new HttpError('head changed', 422, {});
+    return { head: { sha: newSha }, mergeable_state: 'unknown' };
+  };
+  assert.deepEqual(await github.updateBranch(43, oldSha), {
+    updated: false,
+    stale: true,
+    observedHeadSha: newSha,
+  });
+});
+
+test('GitHub branch update fails closed when the captured head is still behind', async () => {
+  const sha = 'a'.repeat(40);
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.request = async (path) => {
+    if (path.endsWith('/update-branch')) throw new HttpError('cannot update', 422, {});
+    return { head: { sha }, mergeable_state: 'behind' };
+  };
+  await assert.rejects(github.updateBranch(43, sha), (error) => error instanceof HttpError && error.status === 422);
 });
 
 test('GitHub pagination includes a sensitive file from the second page', async () => {
@@ -315,4 +827,30 @@ test('GitHub pagination includes a sensitive file from the second page', async (
     labels: [],
   }, liveConfig());
   assert.ok(snapshot.files.includes('supabase/migrations/hidden-on-page-two.sql'));
+});
+
+test('GitHub live snapshot refreshes per-PR mergeability instead of trusting the list response', async () => {
+  const github = new GitHubAdapter({ repository: 'owner/repo', token: 'token' });
+  github.paginated = async (path) => {
+    if (path.includes('/pulls?state=open')) return [{ number: 43 }];
+    if (path.includes('/issues?state=all')) return [];
+    throw new Error(`unexpected pagination: ${path}`);
+  };
+  github.request = async (path) => {
+    if (path.includes('/branches/')) return { commit: { sha: 'main-sha' } };
+    if (path.endsWith('/pulls/43')) {
+      return { number: 43, mergeable: true, mergeable_state: 'behind' };
+    }
+    throw new Error(`unexpected request: ${path}`);
+  };
+  github.pullSnapshot = async (pull) => ({
+    number: pull.number,
+    sync: pull.mergeable_state,
+    mergeable: pull.mergeable,
+  });
+  github.checks = async () => [];
+  github.codeScanningChecks = async () => [];
+
+  const snapshot = await github.snapshot(liveConfig());
+  assert.deepEqual(snapshot.prs, [{ number: 43, sync: 'behind', mergeable: true }]);
 });

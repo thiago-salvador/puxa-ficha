@@ -1,14 +1,19 @@
 import assert from "node:assert/strict"
 import test from "node:test"
+import type { BrowserContext } from "playwright"
 
 import {
   BRAZIL_UFS,
   PartialCheckFailure,
+  automationBypassHeaders,
   candidatePathFromHref,
+  enterQuiz,
   formatResultLine,
   hasMoneyData,
+  releaseBaseUrl,
   runWithRetry,
 } from "../scripts/smoke-lancamento"
+import { establishAutomationBypass } from "../scripts/vercel-automation-bypass"
 
 test("smoke cobre as 27 UFs sem duplicatas", () => {
   assert.equal(BRAZIL_UFS.length, 27)
@@ -24,6 +29,68 @@ test("candidatePathFromHref aceita apenas fichas publicas", () => {
   )
   assert.equal(candidatePathFromHref("/comparar?c1=pablo-marcal"), null)
   assert.equal(candidatePathFromHref("/candidato/"), null)
+})
+
+test("releaseBaseUrl aceita stage Vercel e rejeita host externo", () => {
+  assert.equal(releaseBaseUrl("https://puxaficha.com.br"), "https://puxaficha.com.br")
+  assert.equal(
+    releaseBaseUrl("https://puxa-ficha-stage.vercel.app/"),
+    "https://puxa-ficha-stage.vercel.app",
+  )
+  assert.throws(() => releaseBaseUrl("http://puxa-ficha-stage.vercel.app"), /HTTPS/)
+  assert.throws(() => releaseBaseUrl("https://attacker.example"), /permitido/)
+})
+
+test("automationBypassHeaders autentica stage sem colocar segredo na URL", () => {
+  assert.deepEqual(automationBypassHeaders("automation-bypass-secret"), {
+    "x-vercel-protection-bypass": "automation-bypass-secret",
+    "x-vercel-set-bypass-cookie": "true",
+  })
+  assert.equal(automationBypassHeaders(undefined), undefined)
+})
+
+test("establishAutomationBypass envia o segredo somente ao stage e persiste o cookie", async () => {
+  const calls: Array<{ url: string; options: Record<string, unknown> }> = []
+  let disposed = false
+  const context = {
+    request: {
+      get: async (url: string, options: Record<string, unknown>) => {
+        calls.push({ url, options })
+        return {
+          status: () => 307,
+          dispose: async () => {
+            disposed = true
+          },
+        }
+      },
+    },
+    cookies: async () => [{ name: "_vercel_jwt" }],
+  } as unknown as BrowserContext
+
+  await establishAutomationBypass(
+    context,
+    "https://puxa-ficha-stage.vercel.app/caminho-ignorado",
+    "automation-bypass-secret",
+  )
+
+  assert.equal(calls.length, 1)
+  assert.equal(calls[0].url, "https://puxa-ficha-stage.vercel.app")
+  assert.deepEqual(calls[0].options, {
+    failOnStatusCode: false,
+    headers: {
+      "x-vercel-protection-bypass": "automation-bypass-secret",
+      "x-vercel-set-bypass-cookie": "true",
+    },
+    maxRedirects: 0,
+  })
+  assert.equal(disposed, true)
+})
+
+test("establishAutomationBypass bloqueia exfiltracao para host externo", async () => {
+  await assert.rejects(
+    establishAutomationBypass({} as BrowserContext, "https://attacker.example", "secret"),
+    /somente em deployment HTTPS da Vercel/,
+  )
 })
 
 test("hasMoneyData reconhece somente colecoes monetarias com dados", () => {
@@ -78,6 +145,37 @@ test("runWithRetry preserva descoberta parcial depois da segunda falha", async (
   assert.ok(caught instanceof PartialCheckFailure)
   assert.deepEqual(caught.value, ["/candidato/pablo-marcal"])
   assert.match(caught.message, /home: copy proibida/)
+})
+
+test("enterQuiz aguarda a hidratacao antes de escolher a entrada", async () => {
+  const calls: string[] = []
+  const start = {
+    waitFor: async () => {
+      calls.push("wait:start")
+    },
+    click: async () => {
+      calls.push("click:start")
+    },
+  }
+  const office = {
+    waitFor: async () => {
+      calls.push("wait:office")
+      throw new Error("cargo ausente")
+    },
+    click: async () => {
+      calls.push("click:office")
+    },
+  }
+  const page = {
+    getByRole: (_role: string, options: { name: string | RegExp }) => (
+      options.name === "Começar" ? start : office
+    ),
+  }
+
+  const entry = await enterQuiz(page as never)
+
+  assert.equal(entry, "start")
+  assert.deepEqual(calls.sort(), ["click:start", "wait:office", "wait:start"])
 })
 
 test("formatResultLine gera uma linha compacta sem travessao", () => {

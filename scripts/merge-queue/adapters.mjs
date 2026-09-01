@@ -25,6 +25,10 @@ function checkFromRun(run) {
   };
 }
 
+function checkRunObservedAt(run) {
+  return Date.parse(run.completed_at ?? run.started_at ?? run.created_at ?? '') || Number(run.id ?? 0);
+}
+
 function isTrustedContextComment(comment, config) {
   const actor = String(comment.user?.login ?? '').toLowerCase();
   const app = String(comment.performed_via_github_app?.slug ?? '').toLowerCase();
@@ -36,13 +40,22 @@ function isTrustedContextComment(comment, config) {
 function isValidQueueContext(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
   const allowed = new Set([
-    'previousMainSha', 'previousDeploymentId', 'mergeSha', 'headSha', 'transition',
+    'previousMainSha', 'previousDeploymentId', 'previousDeploymentSha', 'previousDeploymentUrl',
+    'mergeSha', 'headSha', 'transition',
     'rollbackPr', 'rollbackMergeSha', 'recovered', 'failedHeadSha', 'restoredSha',
   ]);
   if (Object.keys(value).some((key) => !allowed.has(key))) return false;
-  const shaKeys = ['previousMainSha', 'mergeSha', 'headSha', 'rollbackMergeSha', 'failedHeadSha', 'restoredSha'];
+  const shaKeys = ['previousMainSha', 'previousDeploymentSha', 'mergeSha', 'headSha', 'rollbackMergeSha', 'failedHeadSha', 'restoredSha'];
   if (shaKeys.some((key) => value[key] != null && !/^[0-9a-f]{40}$/.test(String(value[key])))) return false;
+  if (value.previousMainSha && value.previousDeploymentSha && value.previousMainSha !== value.previousDeploymentSha) return false;
   if (value.previousDeploymentId != null && !/^[A-Za-z0-9_-]{1,128}$/.test(String(value.previousDeploymentId))) return false;
+  if (value.previousDeploymentUrl != null) {
+    try {
+      deploymentUrl(value.previousDeploymentUrl);
+    } catch {
+      return false;
+    }
+  }
   if (value.rollbackPr != null && (!Number.isInteger(value.rollbackPr) || value.rollbackPr < 1)) return false;
   if (value.recovered != null && typeof value.recovered !== 'boolean') return false;
   if (value.transition != null && !['merge-started', 'merged'].includes(value.transition)) return false;
@@ -50,21 +63,25 @@ function isValidQueueContext(value) {
 }
 
 export class GitHubAdapter {
-  constructor({ repository, token, fetchImpl = globalThis.fetch, apiUrl = 'https://api.github.com' }) {
+  constructor({ repository, token, writeToken = token, fetchImpl = globalThis.fetch, apiUrl = 'https://api.github.com' }) {
     if (!repository?.includes('/')) throw new CoordinatorError('Config repository must be owner/name');
-    if (!token) throw new CoordinatorError('GITHUB_TOKEN is required for live reconciliation');
+    if (!token) throw new CoordinatorError('GITHUB_TOKEN is required for live reconciliation reads');
+    if (!writeToken) throw new CoordinatorError('MERGE_QUEUE_GH_TOKEN is required for live reconciliation mutations');
     this.repository = repository;
     this.token = token;
+    this.writeToken = writeToken;
     this.fetch = fetchImpl;
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
   async request(path, init = {}) {
+    const method = String(init.method ?? 'GET').toUpperCase();
+    const token = ['GET', 'HEAD'].includes(method) ? this.token : this.writeToken;
     const response = await this.fetch(`${this.apiUrl}${path}`, {
       ...init,
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${this.token}`,
+        Authorization: `Bearer ${token}`,
         'X-GitHub-Api-Version': '2022-11-28',
         'Content-Type': 'application/json',
         ...(init.headers ?? {}),
@@ -97,17 +114,63 @@ export class GitHubAdapter {
 
   async checks(sha) {
     const [runs, statusesPayload] = await Promise.all([
-      this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/check-runs?per_page=100`, (payload) => payload.check_runs),
+      this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/check-runs?filter=latest&per_page=100`, (payload) => payload.check_runs),
       this.paginated(`/repos/${this.repository}/commits/${encodeURIComponent(sha)}/statuses?per_page=100`),
     ]);
-    const statuses = statusesPayload.map((status) => ({
+    const latestRunsByName = new Map();
+    for (const run of runs) {
+      const name = String(run.name ?? '');
+      const observedAt = checkRunObservedAt(run);
+      const current = latestRunsByName.get(name);
+      if (!current || observedAt > current.observedAt) {
+        latestRunsByName.set(name, { run, observedAt });
+      }
+    }
+    const latestByContext = new Map();
+    for (const status of statusesPayload) {
+      const context = String(status.context ?? '');
+      const observedAt = Date.parse(status.updated_at ?? status.created_at ?? '') || 0;
+      const current = latestByContext.get(context);
+      if (!current || observedAt > current.observedAt) {
+        latestByContext.set(context, { status, observedAt });
+      }
+    }
+    const statuses = [...latestByContext.values()].map(({ status }) => ({
       name: status.context,
       sha,
       status: status.state,
       conclusion: status.state,
       url: status.target_url,
+      createdAt: status.created_at ?? null,
+      updatedAt: status.updated_at ?? status.created_at ?? null,
     }));
-    return [...runs.map(checkFromRun), ...statuses];
+    return [...latestRunsByName.values()].map(({ run }) => checkFromRun(run)).concat(statuses);
+  }
+
+  async codeScanningChecks(sha, ref) {
+    const analyses = await this.paginated(
+      `/repos/${this.repository}/code-scanning/analyses?ref=${encodeURIComponent(ref)}&per_page=100`,
+    );
+    const latestByLanguage = new Map();
+    for (const analysis of analyses) {
+      if (analysis.commit_sha !== sha) continue;
+      const match = String(analysis.category ?? '').match(/^\/language:(javascript-typescript|python)$/);
+      if (!match) continue;
+      const language = match[1];
+      const observedAt = Date.parse(analysis.created_at ?? '') || Number(analysis.id ?? 0);
+      const current = latestByLanguage.get(language);
+      if (!current || observedAt > current.observedAt) {
+        latestByLanguage.set(language, { analysis, observedAt });
+      }
+    }
+    return [...latestByLanguage.entries()].map(([language, { analysis }]) => ({
+      name: `CodeQL analysis (${language})`,
+      sha,
+      status: 'completed',
+      conclusion: analysis.error ? 'failure' : 'success',
+      url: analysis.url ?? null,
+      createdAt: analysis.created_at ?? null,
+    })).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   async queueContext(number, config) {
@@ -157,6 +220,16 @@ export class GitHubAdapter {
     }
   }
 
+  async pathExistsAtRef(path, ref) {
+    try {
+      const payload = await this.request(`/repos/${this.repository}/contents/${encodePath(path)}?ref=${encodeURIComponent(ref)}`);
+      return payload?.type === 'file';
+    } catch (error) {
+      if (error instanceof HttpError && error.status === 404) return false;
+      throw error;
+    }
+  }
+
   async pullSnapshot(pr, config) {
     const [checks, files, context, manifest] = await Promise.all([
       this.checks(pr.head.sha),
@@ -167,6 +240,22 @@ export class GitHubAdapter {
         : Promise.resolve(null),
     ]);
     const labels = (pr.labels ?? []).map((label) => label.name);
+    const migrationPrefixes = (config.irreversibleChanges.migrationPathPatterns ?? [])
+      .map((pattern) => String(pattern).replace(/\*.*$/, ''))
+      .filter(Boolean);
+    const migrationTouched = files.some((file) => migrationPrefixes.some((prefix) => file.filename.startsWith(prefix)));
+    const manifestPaths = manifest
+      ? Object.values(manifest.databaseArtifacts ?? {}).flatMap((section) => [
+          section?.artifact,
+          ...(section?.artifacts ?? []),
+          section?.workflow,
+          ...(section?.workflows ?? []),
+        ]).filter(Boolean)
+      : [];
+    const manifestPathsVerified = !migrationTouched || Boolean(
+      manifestPaths.length > 0 &&
+      (await Promise.all(manifestPaths.map((path) => this.pathExistsAtRef(path, pr.head.sha)))).every(Boolean)
+    );
     const snapshot = {
       number: pr.number,
       nodeId: pr.node_id,
@@ -183,6 +272,7 @@ export class GitHubAdapter {
       files: files.map((file) => file.filename),
       queueContext: context,
       reversibilityManifest: manifest,
+      manifestPathsVerified,
     };
     if (labels.includes(config.labels.rollback)) snapshot.rollback = await this.rollbackFor(pr.number, config.labels.rollbackPr);
     return snapshot;
@@ -195,7 +285,11 @@ export class GitHubAdapter {
       this.paginated(`/repos/${this.repository}/issues?state=all&labels=${encodeURIComponent(config.labels.active)}&per_page=100`),
       this.request(`/repos/${this.repository}/branches/${encodeURIComponent(config.defaultBranch)}`),
     ]);
-    const byNumber = new Map(open.map((pr) => [pr.number, pr]));
+    // The pulls list endpoint commonly omits the computed mergeable fields.
+    // Decisions must use the full per-PR resource or the queue can wait forever.
+    const openDetails = await Promise.all(open.map((pr) =>
+      this.request(`/repos/${this.repository}/pulls/${pr.number}`)));
+    const byNumber = new Map(openDetails.map((pr) => [pr.number, pr]));
     for (const issue of lockedIssues) {
       if (issue.pull_request && !byNumber.has(issue.number)) {
         byNumber.set(issue.number, await this.request(`/repos/${this.repository}/pulls/${issue.number}`));
@@ -203,9 +297,13 @@ export class GitHubAdapter {
     }
     const prs = await Promise.all([...byNumber.values()].map((pr) => this.pullSnapshot(pr, config)));
     const mainSha = branch.commit.sha;
+    const [mainChecks, codeScanningChecks] = await Promise.all([
+      this.checks(mainSha),
+      this.codeScanningChecks(mainSha, `refs/heads/${config.defaultBranch}`),
+    ]);
     return {
       prs,
-      main: { sha: mainSha, checks: await this.checks(mainSha) },
+      main: { sha: mainSha, checks: [...mainChecks, ...codeScanningChecks] },
     };
   }
 
@@ -226,10 +324,31 @@ export class GitHubAdapter {
     });
   }
 
-  async merge(number, expectedHeadSha, mergeMethod = 'squash') {
+  async merge(number, expectedHeadSha, mergeMethod = 'squash', mergeCoAuthor) {
     return this.request(`/repos/${this.repository}/pulls/${number}/merge`, {
-      method: 'PUT', body: JSON.stringify({ sha: expectedHeadSha, merge_method: mergeMethod }),
+      method: 'PUT',
+      body: JSON.stringify({
+        sha: expectedHeadSha,
+        merge_method: mergeMethod,
+        commit_message: coAuthorTrailer(mergeCoAuthor),
+      }),
     });
+  }
+
+  async updateBranch(number, expectedHeadSha) {
+    try {
+      return await this.request(`/repos/${this.repository}/pulls/${number}/update-branch`, {
+        method: 'PUT', body: JSON.stringify({ expected_head_sha: expectedHeadSha }),
+      });
+    } catch (error) {
+      if (!(error instanceof HttpError) || error.status !== 422) throw error;
+      const current = await this.request(`/repos/${this.repository}/pulls/${number}`);
+      const sync = lowerState(current.mergeable_state);
+      if (current.head?.sha !== expectedHeadSha || ['clean', 'has_hooks'].includes(sync)) {
+        return { updated: false, stale: true, observedHeadSha: current.head?.sha ?? null };
+      }
+      throw error;
+    }
   }
 
   async assertMergePreconditions(number, expectedHeadSha, expectedBaseSha, config, requiredLabel = config.labels.active) {
@@ -324,6 +443,41 @@ function lowerState(value) {
   return String(value ?? '').toLowerCase();
 }
 
+function coAuthorTrailer(coAuthor) {
+  const name = String(coAuthor?.name ?? '').trim();
+  const email = String(coAuthor?.email ?? '').trim();
+  if (!/^[^\r\n<>]{1,100}$/.test(name) || !/^[^\s\r\n<>@]+@[^\s\r\n<>@]+$/.test(email)) {
+    throw new CoordinatorError('A valid merge co-author is required');
+  }
+  return `Co-authored-by: ${name} <${email}>`;
+}
+
+function deploymentUrl(value) {
+  const raw = String(value ?? '').trim();
+  const url = new URL(raw.startsWith('https://') || raw.startsWith('http://') ? raw : `https://${raw}`);
+  if (url.protocol !== 'https:') throw new CoordinatorError('Vercel deployment URL must use HTTPS');
+  if (!url.hostname.endsWith('.vercel.app')) throw new CoordinatorError('Vercel deployment URL must use a Vercel host');
+  url.pathname = '';
+  url.search = '';
+  url.hash = '';
+  return url.toString().replace(/\/$/, '');
+}
+
+function normalizedDeployment(deployment) {
+  if (!deployment || typeof deployment !== 'object') return null;
+  const readyState = String(deployment.readyState ?? deployment.state ?? '').toUpperCase();
+  const state = lowerState(readyState);
+  return {
+    id: deployment.uid ?? deployment.id ?? null,
+    sha: deployment.meta?.githubCommitSha ?? deployment.sha ?? null,
+    url: deploymentUrl(deployment.url),
+    readyState,
+    target: lowerState(deployment.target),
+    createdAt: deployment.createdAt ?? deployment.created ?? null,
+    status: state === 'ready' ? 'success' : state === 'error' || state === 'canceled' ? 'failure' : 'pending',
+  };
+}
+
 export class VercelAdapter {
   constructor({ token, teamId, projectId, fetchImpl = globalThis.fetch, apiUrl = 'https://api.vercel.com' }) {
     this.token = token;
@@ -333,24 +487,44 @@ export class VercelAdapter {
     this.apiUrl = apiUrl.replace(/\/$/, '');
   }
 
-  async productionForSha(sha) {
+  assertDeployment(deployment, { expectedId, expectedSha, target, requiredState } = {}) {
+    if (!deployment?.id) throw new CoordinatorError('Vercel deployment id is missing');
+    if (expectedId && deployment.id !== expectedId) throw new CoordinatorError('Vercel deployment id does not match the expected deployment');
+    if (expectedSha && deployment.sha !== expectedSha) throw new CoordinatorError('Vercel deployment SHA does not match the expected SHA');
+    if (target && lowerState(deployment.target) !== lowerState(target)) throw new CoordinatorError('Vercel deployment target does not match the expected target');
+    if (requiredState && lowerState(deployment.readyState) !== lowerState(requiredState)) {
+      throw new CoordinatorError('Vercel deployment ready state does not match the required ready state');
+    }
+    deploymentUrl(deployment.url);
+    return deployment;
+  }
+
+  async deploymentForSha(sha, { target = 'production' } = {}) {
     if (!this.token || !this.projectId) return null;
-    const query = new URLSearchParams({ projectId: this.projectId, target: 'production', limit: '20' });
+    const query = new URLSearchParams({ projectId: this.projectId, target, sha, limit: '100' });
     if (this.teamId) query.set('teamId', this.teamId);
     const response = await this.fetch(`${this.apiUrl}/v6/deployments?${query}`, {
       headers: { Authorization: `Bearer ${this.token}` },
     });
     if (!response.ok) throw new HttpError(`Vercel API ${response.status}`, response.status, await response.text());
     const payload = await response.json();
-    const deployment = payload.deployments?.find((item) => item.meta?.githubCommitSha === sha) ?? null;
+    const deployment = payload.deployments?.find((item) => item.meta?.githubCommitSha === sha && lowerState(item.target) === lowerState(target)) ?? null;
     if (!deployment) return null;
-    const state = lowerState(deployment.readyState);
-    return {
-      id: deployment.uid,
-      sha,
-      status: state === 'ready' ? 'success' : state === 'error' || state === 'canceled' ? 'failure' : 'pending',
-      url: deployment.url,
-    };
+    const normalized = normalizedDeployment(deployment);
+    return this.assertDeployment(normalized, { expectedSha: sha, target });
+  }
+
+  async productionForSha(sha) {
+    return this.deploymentForSha(sha, { target: 'production' });
+  }
+
+  async currentProductionForDomain(domain) {
+    const hostname = String(domain ?? '').trim().toLowerCase();
+    if (!/^[a-z0-9.-]+$/.test(hostname) || hostname.includes('..')) {
+      throw new CoordinatorError('Production domain is invalid');
+    }
+    const deployment = normalizedDeployment(await this.request(`/v13/deployments/${encodeURIComponent(hostname)}`));
+    return this.assertDeployment(deployment, { target: 'production', requiredState: 'READY' });
   }
 
   async request(path, init = {}) {
@@ -393,7 +567,12 @@ export function signalFromChecks(checks, sha, names = []) {
 }
 
 export async function createLiveAdapters(config, env = process.env, fetchImpl = globalThis.fetch) {
-  const github = new GitHubAdapter({ repository: config.repository, token: env.GITHUB_TOKEN, fetchImpl });
+  const github = new GitHubAdapter({
+    repository: config.repository,
+    token: env.GITHUB_TOKEN,
+    writeToken: env.MERGE_QUEUE_GH_TOKEN,
+    fetchImpl,
+  });
   const vercel = new VercelAdapter({
     token: env.VERCEL_TOKEN,
     teamId: env.VERCEL_TEAM_ID,
@@ -405,7 +584,6 @@ export async function createLiveAdapters(config, env = process.env, fetchImpl = 
 
 export function preflightSecrets(config, env = process.env) {
   const aliases = {
-    MERGE_QUEUE_GH_TOKEN: ['MERGE_QUEUE_GH_TOKEN', 'GITHUB_TOKEN'],
     VERCEL_ORG_ID: ['VERCEL_ORG_ID', 'VERCEL_TEAM_ID'],
   };
   const missing = (config.secrets?.required ?? []).filter((name) => {
@@ -414,8 +592,15 @@ export function preflightSecrets(config, env = process.env) {
   });
   if (missing.length) throw new CoordinatorError('Required live secrets are missing', { missing });
   const hold = config.production?.stagedDeployment?.hold;
-  if (config.releaseGate?.required && (!hold?.required || !hold?.githubStatusContext)) {
+  const holdRequired = hold?.required === true || config.releaseGate?.failClosedOnMissingHold === true;
+  if (holdRequired && (!hold?.required || !hold?.githubStatusContext)) {
     throw new CoordinatorError('Production hold configuration is missing or incomplete');
+  }
+  if (holdRequired && hold?.provider !== 'vercel-auto-assignment-disabled') {
+    throw new CoordinatorError('Production hold must disable Vercel automatic domain assignment');
+  }
+  if (holdRequired && config.production?.promotion?.mode !== 'explicit-vercel-promote') {
+    throw new CoordinatorError('Production promotion must target an explicit Vercel deployment');
   }
   return { ok: true };
 }

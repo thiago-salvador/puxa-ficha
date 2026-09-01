@@ -40,6 +40,10 @@ function statusOf(record) {
   return 'failure';
 }
 
+function isSkipped(record) {
+  return lower(record?.conclusion ?? record?.status ?? record?.state ?? record?.result) === 'skipped';
+}
+
 function checkName(check) {
   return String(check?.name ?? check?.context ?? check?.checkName ?? '');
 }
@@ -83,6 +87,7 @@ export function normalizeConfig(input = {}) {
     production: {
       environment: 'Production',
       stagedDeployment: { required: true, ...(production.stagedDeployment ?? {}) },
+      stagedChecks: { required: true, ...(production.stagedChecks ?? production.smokes ?? {}) },
       smokes: { required: true, checks: [], ...(production.smokes ?? {}) },
       promotion: { required: true, ...(production.promotion ?? {}) },
       publicReadback: { required: true, ...(production.publicReadback ?? {}) },
@@ -90,6 +95,8 @@ export function normalizeConfig(input = {}) {
     },
     irreversibleChanges: {
       pathPatterns: ['supabase/migrations/**', 'migrations/**'],
+      migrationPathPatterns: ['supabase/migrations/**', 'migrations/**'],
+      databaseRollbackMode: 'migration-specific',
       requireValidatedManifest: true,
       ...(input.irreversibleChanges ?? {}),
     },
@@ -151,15 +158,19 @@ export function validateQueueState(configInput, snapshot) {
 function inspectChecks(checksInput, expectedSha, section) {
   const checks = asArray(checksInput);
   const required = requiredNames(section);
+  const requiredSet = new Set(required);
   const current = checks.filter((check) => checkSha(check) === expectedSha);
   const stale = checks.filter((check) => checkSha(check) && checkSha(check) !== expectedSha);
-  const failures = current.filter((check) => statusOf(check) === 'failure');
+  // A skipped required check is a hard failure. A skipped check that is not
+  // required is a declared non-applicable job and must not deadlock the queue.
+  const considered = current.filter((check) => !isSkipped(check) || requiredSet.has(checkName(check)));
+  const failures = considered.filter((check) => statusOf(check) === 'failure');
   const pending = current.filter((check) => statusOf(check) === 'pending');
   const missing = required.filter((name) => !current.some((check) => checkName(check) === name));
   const staleRequired = missing.filter((name) => stale.some((check) => checkName(check) === name));
   const trulyMissing = missing.filter((name) => !staleRequired.includes(name));
   const staleOnlyPresent = section?.includeAllPresent !== false
-    ? stale.filter((old) => !current.some((now) => checkName(now) === checkName(old)))
+    ? stale.filter((old) => !isSkipped(old) && !current.some((now) => checkName(now) === checkName(old)))
     : [];
 
   if (failures.length) {
@@ -178,7 +189,7 @@ function inspectChecks(checksInput, expectedSha, section) {
   if (trulyMissing.length || (required.length === 0 && current.length === 0)) {
     return { state: 'failure', reason: 'check-missing', checks: trulyMissing };
   }
-  if (section?.includeAllPresent !== false && current.some((check) => statusOf(check) !== 'success')) {
+  if (section?.includeAllPresent !== false && considered.some((check) => statusOf(check) !== 'success')) {
     return { state: 'failure', reason: 'check-not-green' };
   }
   return { state: 'success', reason: 'all-checks-green', count: current.length };
@@ -205,9 +216,11 @@ export function validateReversibility(pr, configInput) {
   const config = normalizeConfig(configInput);
   const files = asArray(pr.files).map((file) => typeof file === 'string' ? file : file?.path ?? file?.filename).filter(Boolean);
   const patterns = asArray(config.irreversibleChanges.pathPatterns);
-  const migration = files.some((path) => patterns.some((pattern) => matchGlob(path, pattern)));
+  const migrationPatterns = asArray(config.irreversibleChanges.migrationPathPatterns);
+  const sensitive = files.some((path) => patterns.some((pattern) => matchGlob(path, pattern)));
+  const migration = files.some((path) => migrationPatterns.some((pattern) => matchGlob(path, pattern)));
   const external = Boolean(pr.externalEffect ?? pr.changeRisk?.externalEffect ?? pr.changeRisk?.irreversible);
-  if (!migration && !external) return { required: false, valid: true, migration: false, external: false };
+  if (!sensitive && !external && !migration) return { required: false, valid: true, migration: false, external: false };
   const manifest = pr.reversibilityManifest ?? pr.changeRisk?.manifest;
   if (config.irreversibleChanges.requireValidatedManifest === false) {
     return { required: true, valid: true, migration, external };
@@ -226,11 +239,35 @@ export function validateReversibility(pr, configInput) {
   const allowedKinds = migration
     ? new Set(['compensating-migration', 'manual-compensation'])
     : new Set(['revert-pr', 'compensating-change', 'manual-compensation']);
+  const verificationChecks = asArray(verification?.checks);
+  const validDatabaseSection = (section) => {
+    const artifacts = [section?.artifact, ...asArray(section?.artifacts)]
+      .filter((value) => typeof value === 'string' && value.length > 0);
+    const workflows = [section?.workflow, ...asArray(section?.workflows)]
+      .filter((value) => typeof value === 'string' && value.length > 0);
+    const checks = asArray(section?.checks).filter((value) => typeof value === 'string' && value.length > 0);
+    const safePath = (value) => !value.startsWith('/') && !value.split('/').includes('..');
+    return artifacts.length > 0 && workflows.length > 0 && checks.length > 0 &&
+      artifacts.every(safePath) && workflows.every(safePath) &&
+      checks.every((check) => verificationChecks.includes(check));
+  };
+  const databaseContract = manifest?.databaseArtifacts;
+  const forwardChecks = new Set(asArray(databaseContract?.forward?.checks));
+  const readbackChecks = asArray(databaseContract?.readback?.checks);
+  const forwardAndReadbackAreDistinct = readbackChecks.every((check) => !forwardChecks.has(check));
+  const databaseValid = !migration || Boolean(
+    manifest?.databaseRollbackMode === config.irreversibleChanges.databaseRollbackMode &&
+    pr.manifestPathsVerified === true &&
+    forwardAndReadbackAreDistinct &&
+    validDatabaseSection(databaseContract?.forward) &&
+    validDatabaseSection(databaseContract?.readback) &&
+    validDatabaseSection(databaseContract?.rollback)
+  );
   const valid = Boolean(
     manifest && manifest.version && manifest.reversible === true && rollback &&
     allowedKinds.has(rollback.kind ?? rollback.type) &&
     (rollback.artifact || rollback.reference || asArray(rollback.steps).length) &&
-    verification && asArray(verification.checks).length &&
+    verification && verificationChecks.length && databaseValid &&
     !containsSqlPayload(manifest)
   );
   return {
@@ -246,7 +283,10 @@ function branchState(pr, config) {
   const sync = lower(pr.sync ?? pr.mergeStateStatus ?? pr.branchState);
   const upToDate = pr.upToDate === true || ['up_to_date', 'up-to-date', 'clean', 'has_hooks'].includes(sync);
   if (config.queue.requireUpToDate && !upToDate) {
-    return ['unknown', 'unstable', 'checking', ''].includes(sync)
+    if (sync === 'behind') {
+      return { state: 'pending', reason: 'branch-update-required', updateRequired: true };
+    }
+    return ['unknown', 'unstable', 'checking', 'blocked', ''].includes(sync)
       ? { state: 'pending', reason: 'branch-state-pending' }
       : { state: 'failure', reason: 'branch-not-up-to-date' };
   }
@@ -312,7 +352,11 @@ function preMergeDecision(pr, config, snapshot, queue, acquire) {
     ], { branch, risk });
   }
   if (branch.state === 'pending') {
-    return decision('WAIT', pr, queue, branch.reason, phaseMutations(pr, 'pre-merge', config, { acquire }), { branch, risk });
+    const mutations = phaseMutations(pr, 'pre-merge', config, { acquire });
+    if (branch.updateRequired) {
+      mutations.push({ type: 'UPDATE_BRANCH', pr: pr.number, expectedHeadSha: pr.headSha });
+    }
+    return decision('WAIT', pr, queue, branch.reason, mutations, { branch, risk });
   }
   const checks = inspectChecks(pr.checks, pr.headSha, sectionForRisk(config.checks.preMerge, risk));
   if (checks.state === 'failure') {
@@ -325,20 +369,27 @@ function preMergeDecision(pr, config, snapshot, queue, acquire) {
     return decision('WAIT', pr, queue, checks.reason, phaseMutations(pr, 'pre-merge', config, { acquire }), { checks, risk });
   }
   const previousMainSha = snapshot.main?.sha ?? snapshot.defaultBranchSha ?? null;
-  const previousDeploymentId = snapshot.production?.currentDeployment?.id ?? snapshot.production?.deployment?.id ?? null;
-  if (config.production.rollback?.requirePreviousReadyDeployment === true && !previousDeploymentId) {
+  const previousDeployment = snapshot.production?.currentDeployment ?? snapshot.production?.deployment ?? null;
+  const previousDeploymentId = previousDeployment?.id ?? null;
+  const previousDeploymentSha = previousDeployment?.sha ?? null;
+  const previousDeploymentUrl = previousDeployment?.url ?? null;
+  const previousDeploymentValid = Boolean(
+    previousDeploymentId && previousDeploymentSha === previousMainSha &&
+    statusOf(previousDeployment) === 'success' && previousDeploymentUrl,
+  );
+  if (config.production.rollback?.requirePreviousReadyDeployment === true && !previousDeploymentValid) {
     return decision('BLOCK', pr, queue, 'previous-production-deployment-missing', [
       ...phaseMutations(pr, 'blocked', config, { acquire }),
       { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason: 'previous-production-deployment-missing' },
-    ], { checks, branch, risk, previousMainSha, previousDeploymentId });
+    ], { checks, branch, risk, previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl });
   }
   return decision('MERGE', pr, queue, 'pre-merge-gates-green', [
     ...phaseMutations(pr, 'pre-merge', config, { acquire }),
     {
       type: 'MERGE_PR', pr: pr.number, expectedHeadSha: pr.headSha,
-      capture: { previousMainSha, previousDeploymentId },
+      capture: { previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl },
     },
-  ], { checks, branch, risk, previousMainSha, previousDeploymentId });
+  ], { checks, branch, risk, previousMainSha, previousDeploymentId, previousDeploymentSha, previousDeploymentUrl });
 }
 
 function inspectSignal(record, expectedSha, required = true) {
@@ -349,60 +400,144 @@ function inspectSignal(record, expectedSha, required = true) {
   return { state: statusOf(record), reason: statusOf(record) === 'success' ? 'green' : statusOf(record) };
 }
 
+function inspectStagedDeployment(record, expectedSha, section = {}) {
+  const signal = inspectSignal(record, expectedSha, section.required !== false);
+  if (signal.state !== 'success') return signal;
+  try {
+    const id = String(record?.id ?? '');
+    const url = new URL(String(record?.url ?? ''));
+    const target = lower(record?.target);
+    const readyState = lower(record?.readyState);
+    if (!/^[A-Za-z0-9_-]+$/.test(id)) throw new Error('id');
+    if (url.protocol !== 'https:' || !url.hostname.endsWith('.vercel.app')) throw new Error('url');
+    if (target !== lower(section.target ?? 'production')) throw new Error('target');
+    if (readyState !== lower(section.requiredState ?? 'READY')) throw new Error('readyState');
+    return signal;
+  } catch {
+    return { state: 'failure', reason: 'staged-deployment-identity-invalid' };
+  }
+}
+
 function productionSignals(snapshot, config, expectedSha) {
   const prod = snapshot.production ?? {};
-  const smokeRecord = prod.smokes ?? prod.smoke;
+  const stagedCheckRecord = prod.stagedChecks ?? prod.smokes ?? prod.smoke;
   return {
-    deployment: inspectSignal(prod.stagedDeployment ?? prod.deployment, expectedSha, config.production.stagedDeployment?.required !== false),
-    smokes: inspectSignal(smokeRecord, expectedSha, config.production.smokes?.required !== false),
+    stagedDeployment: inspectStagedDeployment(prod.stagedDeployment, expectedSha, config.production.stagedDeployment),
+    stagedChecks: inspectSignal(stagedCheckRecord, expectedSha, config.production.stagedChecks?.required !== false),
     promotion: inspectSignal(prod.promotion, expectedSha, config.production.promotion?.required !== false),
-    readback: inspectSignal(prod.publicReadback ?? prod.readback, expectedSha, config.production.publicReadback?.required !== false),
+    publicReadback: inspectSignal(prod.publicReadback ?? prod.readback, expectedSha, config.production.publicReadback?.required !== false),
   };
+}
+
+function lockedIncident(pr, queue, reason, mergeSha, evidence, severity = 'failure') {
+  return decision(severity === 'critical' ? 'INCIDENT_CRITICAL' : 'INCIDENT', pr, queue, reason, [
+    { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
+    { type: 'NOTIFY', pr: pr.number, severity, reason, phase: 'post-merge', sha: mergeSha },
+  ], evidence);
+}
+
+function rollbackTarget(pr, snapshot) {
+  const context = pr.queueContext ?? snapshot.queueContext ?? {};
+  const previous = snapshot.production?.previousDeployment ?? {};
+  return {
+    previousMainSha: context.previousMainSha ?? context.previousDeploymentSha ?? previous.sha ?? null,
+    previousDeploymentId: context.previousDeploymentId ?? previous.id ?? null,
+  };
+}
+
+function deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, reason) {
+  const target = rollbackTarget(pr, snapshot);
+  if (!target.previousMainSha || !target.previousDeploymentId) {
+    return lockedIncident(pr, queue, 'rollback-target-missing', mergeSha, { ...evidence, target }, 'critical');
+  }
+  return decision('ROLLBACK_DEPLOYMENT', pr, queue, reason, [
+    { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
+    {
+      type: 'INSTANT_ROLLBACK',
+      pr: pr.number,
+      failedMergeSha: mergeSha,
+      previousMainSha: target.previousMainSha,
+      previousDeploymentId: target.previousDeploymentId,
+    },
+    { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason, phase: 'post-merge', sha: mergeSha },
+  ], { ...evidence, target });
 }
 
 function postMergeDecision(pr, config, snapshot, queue) {
   const mergeSha = pr.mergeSha ?? snapshot.mergeSha ?? snapshot.main?.sha;
-  if (!mergeSha) return decision('VERIFY', pr, queue, 'merge-sha-missing', [], {});
+  if (!mergeSha) return decision('VERIFY_STAGE', pr, queue, 'merge-sha-missing', [], {});
   if (snapshot.main?.sha && snapshot.main.sha !== mergeSha) {
-    return decision('VERIFY', pr, queue, 'main-sha-does-not-match-merge', [], { mergeSha, mainSha: snapshot.main.sha });
+    return decision('VERIFY_STAGE', pr, queue, 'main-sha-does-not-match-merge', [], { mergeSha, mainSha: snapshot.main.sha });
   }
-  const checks = inspectChecks(pr.postMergeChecks ?? snapshot.main?.checks, mergeSha, config.checks.postMerge);
+  const releaseGateName = config.releaseGate?.name;
+  const ignoredPostMergeChecks = new Set([
+    ...asArray(config.checks.postMerge?.ignored),
+    ...(releaseGateName ? [releaseGateName] : []),
+  ]);
+  const postMergeChecks = asArray(pr.postMergeChecks ?? snapshot.main?.checks).filter((check) => (
+    !ignoredPostMergeChecks.has(checkName(check))
+  ));
+  const checks = inspectChecks(postMergeChecks, mergeSha, config.checks.postMerge);
   const signals = productionSignals(snapshot, config, mergeSha);
-  const failedSignals = Object.entries(signals).filter(([, state]) => state.state === 'failure');
-  if (checks.state === 'failure' || failedSignals.length) {
-    const reason = checks.state === 'failure' ? checks.reason : `${failedSignals[0][0]}-failed`;
-    return decision('ROLLBACK', pr, queue, reason, [
-      ...phaseMutations(pr, 'rollback', config),
-      { type: 'SET_RELEASE_GATE_FAILED', pr: pr.number, mergeSha, reason },
-      {
-        type: 'INSTANT_ROLLBACK',
-        pr: pr.number,
-        failedMergeSha: mergeSha,
-        previousMainSha: pr.queueContext?.previousMainSha ?? snapshot.queueContext?.previousMainSha ?? null,
-        previousDeploymentId: pr.queueContext?.previousDeploymentId ?? snapshot.queueContext?.previousDeploymentId ?? null,
-      },
-      {
-        type: 'CREATE_ROLLBACK_PR',
-        pr: pr.number,
-        mergeSha,
-        previousMainSha: pr.queueContext?.previousMainSha ?? snapshot.queueContext?.previousMainSha ?? null,
-        previousDeploymentId: pr.queueContext?.previousDeploymentId ?? snapshot.queueContext?.previousDeploymentId ?? null,
-        risk: validateReversibility(pr, config),
-      },
-      { type: 'NOTIFY', pr: pr.number, severity: 'failure', reason, phase: 'post-merge', sha: mergeSha },
-    ], { checks, signals, mergeSha });
+  const rollbackRecord = snapshot.production?.rollback;
+  if (rollbackRecord) {
+    const expectedRollbackSha = rollbackTarget(pr, snapshot).previousMainSha ?? rollbackRecord.sha;
+    const rollback = inspectSignal(rollbackRecord, expectedRollbackSha, true);
+    const rollbackEvidence = { checks, signals, rollback, mergeSha };
+    if (rollback.state === 'failure') {
+      return lockedIncident(pr, queue, 'deployment-rollback-failed', mergeSha, rollbackEvidence, 'critical');
+    }
+    if (rollback.state === 'pending') {
+      if (rollback.reason === 'sha-mismatch') {
+        return lockedIncident(pr, queue, 'deployment-rollback-sha-mismatch', mergeSha, rollbackEvidence, 'critical');
+      }
+      return decision('VERIFY_ROLLBACK', pr, queue, rollback.reason, [], rollbackEvidence);
+    }
+    return lockedIncident(pr, queue, 'previous-deployment-restored', mergeSha, rollbackEvidence, 'recovered');
   }
-  if (checks.state !== 'success' || Object.values(signals).some((state) => state.state !== 'success')) {
-    const readyToPromote = checks.state === 'success' && signals.deployment.state === 'success' && signals.smokes.state === 'success'
-      && signals.promotion.state === 'pending';
-    const mutations = readyToPromote
-      ? [{ type: 'PROMOTE', pr: pr.number, mergeSha, deploymentId: snapshot.production?.stagedDeployment?.id ?? snapshot.production?.deployment?.id ?? null }]
-      : [];
-    return decision('VERIFY', pr, queue, readyToPromote ? 'ready-to-promote' : 'post-merge-evidence-pending', mutations, { checks, signals, mergeSha });
+
+  const stageFailures = [
+    checks.state === 'failure' ? checks.reason : null,
+    signals.stagedDeployment.state === 'failure' ? 'stagedDeployment-failed' : null,
+    signals.stagedChecks.state === 'failure' ? 'stagedChecks-failed' : null,
+  ].filter(Boolean);
+  const evidence = { checks, signals, mergeSha };
+
+  if (signals.promotion.state === 'success') {
+    if (signals.publicReadback.state === 'failure') {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, 'publicReadback-failed');
+    }
+    if (stageFailures.length) {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, stageFailures[0]);
+    }
+    if (
+      signals.stagedDeployment.state === 'pending'
+      && ['missing', 'pending'].includes(signals.stagedDeployment.reason)
+    ) {
+      return decision('VERIFY_STAGE', pr, queue, 'stage-evidence-pending-after-promotion', [], evidence);
+    }
+    if (checks.state !== 'success' || signals.stagedDeployment.state !== 'success' || signals.stagedChecks.state !== 'success') {
+      return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, 'stage-evidence-lost-after-promotion');
+    }
+    if (signals.publicReadback.state !== 'success') {
+      return decision('VERIFY_PUBLIC', pr, queue, signals.publicReadback.reason, [], evidence);
+    }
+    return decision('RELEASE', pr, queue, 'release-gates-green', [
+      { type: 'SET_RELEASE_GATE_SUCCESS', pr: pr.number, mergeSha },
+      ...phaseMutations(pr, null, config, { release: true }),
+    ], evidence);
   }
-  return decision('RELEASE', pr, queue, 'release-gates-green', phaseMutations(pr, null, config, { release: true }), {
-    checks, signals, mergeSha,
-  });
+
+  if (signals.promotion.state === 'failure') {
+    return lockedIncident(pr, queue, 'promotion-failed', mergeSha, evidence);
+  }
+  if (stageFailures.length) {
+    return lockedIncident(pr, queue, stageFailures[0], mergeSha, evidence);
+  }
+  if (checks.state !== 'success' || signals.stagedDeployment.state !== 'success' || signals.stagedChecks.state !== 'success') {
+    return decision('VERIFY_STAGE', pr, queue, 'stage-evidence-pending', [], evidence);
+  }
+  return decision('AWAIT_PROMOTION', pr, queue, 'stage-green-awaiting-promotion', [], evidence);
 }
 
 function rollbackDecision(pr, config, snapshot, queue) {
@@ -455,7 +590,7 @@ function rollbackDecision(pr, config, snapshot, queue) {
   const complete = checks.state === 'success' && database.state === 'success' && Object.values(signals).every((state) => state.state === 'success');
   if (!complete) {
     const readyToPromote = checks.state === 'success' && database.state === 'success'
-      && signals.deployment.state === 'success' && signals.smokes.state === 'success'
+      && signals.stagedDeployment.state === 'success' && signals.stagedChecks.state === 'success'
       && signals.promotion.state === 'pending';
     const mutations = readyToPromote
       ? [{ type: 'PROMOTE_RECOVERY', pr: pr.number, restoredSha, deploymentId: snapshot.production?.stagedDeployment?.id ?? null }]

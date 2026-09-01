@@ -5,8 +5,22 @@ import {
   type Locator,
   type Page,
 } from "playwright"
+import { establishAutomationBypass } from "./vercel-automation-bypass"
 
-const BASE_URL = "https://puxaficha.com.br"
+export { automationBypassHeaders } from "./vercel-automation-bypass"
+
+export function releaseBaseUrl(value: string): string {
+  const url = new URL(value.trim())
+  if (url.protocol !== "https:") throw new Error("A URL do smoke deve usar HTTPS")
+  const allowed = url.hostname === "puxaficha.com.br" || url.hostname.endsWith(".vercel.app")
+  if (!allowed) throw new Error("Host do smoke não permitido")
+  if (url.pathname !== "/" || url.search || url.hash) {
+    throw new Error("A URL do smoke deve conter somente a origem")
+  }
+  return url.origin
+}
+
+const BASE_URL = releaseBaseUrl(process.env.PF_BASE_URL ?? "https://puxaficha.com.br")
 const NAVIGATION_TIMEOUT_MS = 60_000
 const ACTION_TIMEOUT_MS = 20_000
 const SOCIAL_CARD_MIN_BYTES = 80 * 1024
@@ -168,6 +182,25 @@ async function gotoPublicPage(page: Page, path: string): Promise<void> {
   invariant(response.ok(), `${path} respondeu HTTP ${response.status()}`)
 }
 
+export async function enterQuiz(page: Pick<Page, "getByRole">): Promise<"start" | "office"> {
+  const candidates = [
+    {
+      kind: "start" as const,
+      locator: page.getByRole("button", { name: "Começar", exact: true }),
+    },
+    {
+      kind: "office" as const,
+      locator: page.getByRole("button", { name: /^Presidente$/i }),
+    },
+  ]
+  const winner = await Promise.any(candidates.map(async (candidate) => {
+    await candidate.locator.waitFor({ state: "visible", timeout: ACTION_TIMEOUT_MS })
+    return candidate
+  }))
+  await winner.locator.click()
+  return winner.kind
+}
+
 async function withPage<T>(
   context: BrowserContext,
   path: string,
@@ -292,38 +325,33 @@ async function checkQuiz(context: BrowserContext): Promise<{ questions: number; 
     page.on("pageerror", (error) => consoleErrors.push(error.message))
     await gotoPublicPage(page, "/quiz")
 
-    const start = page.getByRole("button", { name: "Começar", exact: true })
-    if (await start.count() > 0) {
-      await start.click()
-    } else {
-      await page.getByRole("button", { name: /^Presidente$/i }).click()
-    }
+    await enterQuiz(page)
     await page.waitForURL(/\/quiz\/perguntas\?cargo=Presidente/i)
 
     let questions = 0
     while (page.url().includes("/quiz/perguntas") && questions < 50) {
       const radio = page.getByRole("radio", { name: "Neutro ou sem opinião" })
       await radio.waitFor({ state: "visible" })
-      const currentQuestion = (await page.locator("h1, h2, legend").first().innerText()).trim()
+      const questionHeading = page.locator('h2[id^="quiz-pergunta-"]')
+      const currentQuestionId = await questionHeading.getAttribute("id")
+      invariant(currentQuestionId, "pergunta do quiz sem identificador")
       await radio.click()
       await page.getByRole("button", { name: /^Continuar$/i }).click()
       questions += 1
       // Sincronizar por sinal de estado, não por delay fixo: ou a URL virou
       // resultado, ou a pergunta visível mudou. Timeout fixo curto deixava a
       // iteração seguinte correr durante a navegação e gerar falso negativo.
-      await Promise.race([
-        page.waitForURL(/\/quiz\/resultado\?/, { timeout: ACTION_TIMEOUT_MS }).catch(() => undefined),
+      await Promise.any([
+        page.waitForURL(/\/quiz\/resultado\?/, { timeout: ACTION_TIMEOUT_MS }),
         page
           .waitForFunction(
             (previous) => {
-              const el = document.querySelector("h1, h2, legend")
-              const text = el?.textContent?.trim() ?? ""
-              return text.length > 0 && text !== previous
+              const el = document.querySelector<HTMLHeadingElement>('h2[id^="quiz-pergunta-"]')
+              return Boolean(el?.id && el.id !== previous)
             },
-            currentQuestion,
+            currentQuestionId,
             { timeout: ACTION_TIMEOUT_MS },
-          )
-          .catch(() => undefined),
+          ),
       ])
     }
 
@@ -388,6 +416,7 @@ async function main(): Promise<number> {
     reducedMotion: "reduce",
     viewport: { width: 1440, height: 1000 },
   })
+  await establishAutomationBypass(context, BASE_URL, process.env.VERCEL_AUTOMATION_BYPASS_SECRET)
   const results: SmokeResult[] = []
 
   const collect = async <T>(

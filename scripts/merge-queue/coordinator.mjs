@@ -26,30 +26,49 @@ async function jsonFile(path) {
 function productionCheckNames(config) {
   const names = (section) => section?.checks ?? (section?.check ? [section.check] : []);
   return {
-    smokes: names(config.production.smokes),
-    promotion: names(config.production.promotion),
+    stagedChecks: names(config.production.stagedChecks ?? config.production.smokes),
     readback: names(config.production.publicReadback),
+    rollback: names(config.production.rollback),
   };
 }
 
-async function enrichProduction(snapshot, config, vercel) {
+export async function enrichProduction(snapshot, config, vercel) {
   const owner = snapshot.prs.find((pr) => pr.labels?.includes(config.labels.active));
   const rollbackSha = owner?.labels?.includes(config.labels.rollback) ? owner.rollback?.mergeSha : null;
   const sha = rollbackSha ?? owner?.mergeSha ?? snapshot.main?.sha;
   if (!sha) return snapshot;
   const checks = snapshot.main?.checks ?? [];
   const names = productionCheckNames(config);
+  const deploymentForSha = vercel.deploymentForSha?.bind(vercel) ?? vercel.productionForSha.bind(vercel);
+  const productionDomain = config.production?.url ? new URL(config.production.url).hostname : null;
   const [deployment, currentDeployment] = await Promise.all([
-    vercel.productionForSha(sha),
-    snapshot.main?.sha ? vercel.productionForSha(snapshot.main.sha) : Promise.resolve(null),
+    deploymentForSha(sha, { target: 'production' }),
+    productionDomain && vercel.currentProductionForDomain
+      ? vercel.currentProductionForDomain(productionDomain).catch(() => null)
+      : snapshot.main?.sha ? deploymentForSha(snapshot.main.sha, { target: 'production' }) : Promise.resolve(null),
   ]);
+  const promotion = currentDeployment?.sha === sha && currentDeployment?.status === 'success'
+    ? { sha, status: 'success' }
+    : { sha, status: 'pending' };
+  // GitHub materializes a skipped conditional job as a check run. A skipped
+  // rollback means that no promotion happened, so it is absence of recovery
+  // evidence, not proof that a rollback failed.
+  const rollbackChecks = checks.filter((check) => !(
+    names.rollback.includes(check.name)
+    && String(check.conclusion ?? '').toLowerCase() === 'skipped'
+  ));
+  const rollbackCheck = signalFromChecks(rollbackChecks, sha, names.rollback);
+  const previousMainSha = owner?.queueContext?.previousMainSha ?? owner?.queueContext?.previousDeploymentSha ?? null;
   snapshot.production = {
     ...(snapshot.production ?? {}),
     stagedDeployment: deployment,
     currentDeployment,
-    smokes: signalFromChecks(checks, sha, names.smokes),
-    promotion: signalFromChecks(checks, sha, names.promotion),
+    stagedChecks: signalFromChecks(checks, sha, names.stagedChecks),
+    promotion,
     publicReadback: signalFromChecks(checks, sha, names.readback),
+    rollback: rollbackCheck?.status !== 'pending' && previousMainSha
+      ? { ...rollbackCheck, sha: previousMainSha }
+      : null,
   };
   return snapshot;
 }
@@ -67,6 +86,8 @@ async function executeMutation(mutation, config, adapters) {
         severity: mutation.severity,
         assignee: config.notifications?.assignee,
       });
+    case 'UPDATE_BRANCH':
+      return adapters.github.updateBranch(mutation.pr, mutation.expectedHeadSha);
     case 'MERGE_PR': {
       await adapters.github.assertMergePreconditions(
         mutation.pr,
@@ -79,7 +100,12 @@ async function executeMutation(mutation, config, adapters) {
         headSha: mutation.expectedHeadSha,
         transition: 'merge-started',
       });
-      const merged = await adapters.github.merge(mutation.pr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.pr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) {
         throw new HttpError('GitHub declined the merge transition', 422, merged);
       }
@@ -103,6 +129,12 @@ async function executeMutation(mutation, config, adapters) {
         pr: mutation.pr,
         mergeSha,
         trustedSha: mutation.capture.previousMainSha,
+        previousDeploymentId: mutation.capture.previousDeploymentId,
+        previousDeploymentSha: mutation.capture.previousDeploymentSha,
+        previousDeploymentUrl: mutation.capture.previousDeploymentUrl,
+        git: { sha: mergeSha },
+        environment: 'production',
+        project: { name: config.production?.projectName ?? 'puxa-ficha' },
       });
       return { mergeSha, merged: merged.merged };
     }
@@ -110,22 +142,21 @@ async function executeMutation(mutation, config, adapters) {
       return adapters.github.createRollbackPr(mutation.pr, config.labels.rollbackPr);
     case 'INSTANT_ROLLBACK':
       {
-        const previous = await adapters.vercel.productionForSha(mutation.previousMainSha);
-        if (!previous || previous.id !== mutation.previousDeploymentId || previous.status !== 'success') {
+        const deploymentForSha = adapters.vercel.deploymentForSha?.bind(adapters.vercel) ?? adapters.vercel.productionForSha.bind(adapters.vercel);
+        const previous = await deploymentForSha(mutation.previousMainSha, { target: 'production' });
+        if (!previous) throw new CoordinatorError('Previous production deployment no longer matches the trusted pre-merge snapshot');
+        if (adapters.vercel.assertDeployment) {
+          adapters.vercel.assertDeployment(previous, {
+            expectedId: mutation.previousDeploymentId,
+            expectedSha: mutation.previousMainSha,
+            target: 'production',
+            requiredState: 'READY',
+          });
+        } else if (previous.id !== mutation.previousDeploymentId || previous.status !== 'success') {
           throw new CoordinatorError('Previous production deployment no longer matches the trusted pre-merge snapshot');
         }
       return adapters.vercel.instantRollback(mutation.previousDeploymentId);
       }
-    case 'PROMOTE':
-      if (config.production?.promotion?.mode === 'deployment-check-auto-alias') {
-        return adapters.github.setCommitStatus(
-          mutation.mergeSha,
-          config.releaseGate?.successState ?? 'success',
-          config.releaseGate?.name ?? 'Serial release gate',
-          'Serial queue gates passed; production promotion is allowed',
-        );
-      }
-      return adapters.vercel.promote(mutation.deploymentId);
     case 'PROMOTE_RECOVERY':
       return adapters.vercel.promote(mutation.deploymentId);
     case 'SET_RELEASE_GATE_FAILED':
@@ -134,6 +165,13 @@ async function executeMutation(mutation, config, adapters) {
         'failure',
         config.releaseGate?.name ?? 'Serial release gate',
         `Serial release failed: ${mutation.reason}`,
+      );
+    case 'SET_RELEASE_GATE_SUCCESS':
+      return adapters.github.setCommitStatus(
+        mutation.mergeSha,
+        config.releaseGate?.successState ?? 'success',
+        config.releaseGate?.name ?? 'Serial release gate',
+        'Serial release completed successfully',
       );
     case 'MARK_RECOVERED':
       return adapters.github.persistContext(mutation.pr, mutation.context);
@@ -146,7 +184,12 @@ async function executeMutation(mutation, config, adapters) {
         config.labels.rollbackPr,
       );
       await adapters.github.assertOwnerLabels(mutation.pr, [config.labels.active, config.labels.rollback]);
-      const merged = await adapters.github.merge(mutation.rollbackPr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.rollbackPr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) throw new HttpError('GitHub declined rollback PR merge', 422, merged);
       await adapters.github.persistContext(mutation.pr, { rollbackPr: mutation.rollbackPr, rollbackMergeSha: merged.sha });
       await adapters.github.dispatch('serial-merge-queue-recovery', {
@@ -192,7 +235,7 @@ export async function reconcile({ config, snapshot, dryRun = false, adapters }) 
       try {
         writes.push({ mutation, result: await executeMutation(mutation, normalized, liveAdapters) });
       } catch (error) {
-        if (plan.decision !== 'ROLLBACK') throw error;
+        if (!['ROLLBACK', 'ROLLBACK_DEPLOYMENT'].includes(plan.decision)) throw error;
         recoveryErrors.push(error);
         writes.push({ mutation, error: { name: error.name, message: error.message, status: error.status ?? null } });
       }

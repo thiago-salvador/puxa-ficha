@@ -509,6 +509,10 @@ function scanJavaScript(files) {
     "scripts/audit/check-candidatura-resultados.ts:",
     "scripts/audit/congelar-sobreposicoes.ts:",
     "scripts/curate-contradictions-evidence.mjs:",
+    // A auditoria precisa oferecer PATH e credenciais read-only aos CLIs gh,
+    // Vercel e psql. Ela recebe o ambiente do host uma vez e o reduz pela
+    // allowlist AUDIT_ENV_KEYS antes de criar qualquer processo filho.
+    "scripts/audit/audit-release-integrity.mjs:",
     // Mesmo motivo do adapters.mjs logo abaixo: a funcao existe para FILTRAR o
     // ambiente do host contra uma allowlist, entao ela tem que receber o
     // ambiente do host. A enumeracao que este contrato quer esta na allowlist

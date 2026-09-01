@@ -73,6 +73,7 @@ segura.
 |---|---|---|---|
 | `SUPABASE_DB_URL`, `PF_DATABASE_URL` | Conexão Postgres para backup, replay, apply e readback | Obrigatória somente nos comandos que citam uma delas. Não há fallback entre os dois nomes porque os scripts têm contratos distintos. | Operador ou GitHub secret |
 | `PF_LEDGER_PREDECESSOR`, `PF_LEDGER_MANIFEST` | Override do predecessor e manifesto usados pelo readback público da Fase 4 | Opcionais. Ausentes, o runner usa `.github/merge-queue/irreversible-change-manifest.json`; quando fornecidos, devem apontar para o run e migrations reais. | Operador ou workflow |
+| `VERCEL_AUTOMATION_BYPASS_SECRET` | Autenticação dos smokes no deployment Production ainda protegido e sem domínio público | Obrigatória no release staged protegido. Não há fallback; o preflight aborta antes do smoke quando ausente. O valor deve ser o Automation Bypass do projeto Vercel exato. | GitHub secret ou operador do release |
 | `SUPABASE_ACCESS_TOKEN`, `SUPABASE_PROJECT_REF` | Snapshot e auditorias via Supabase CLI/API | Opcionais por script. `SUPABASE_PROJECT_REF` tem fallback codificado em duas auditorias; snapshot remoto exige credencial. | Operador local |
 | `TRANSPARENCIA_API_KEY`, `PF_TRANSPARENCIA_API_BASE` | Portal da Transparência e endpoint substituto de teste | Chave obrigatória para coleta real. Base é opcional e existe para teste controlado. | Operador ou GitHub secret |
 | `INSTAGRAM_APP_ID` | Enriquecimento de Instagram | Opcional; sem valor, o enriquecimento não usa o app id. | Operador local |
@@ -133,7 +134,7 @@ mascarar o ambiente real.
 | `GH_REPO`, `WATCHDOG_DRY_RUN`, `WATCHDOG_GRACE_DAYS` | Configuração do cron watchdog | Opcionais. Fallbacks: repositório canônico, `0` e 8 dias. | Workflow ou operador local |
 | `DEFAULT_TAGS_JSON`, `INPUT_TAGS`, `REVALIDATE_URL`, `REVALIDATE_SECRET`, `TAGS_JSON` | Revalidação de cache | Variáveis internas montadas a partir de input e secret no mesmo job. | GitHub workflow |
 | `RAW_SOURCES`, `INCREMENTAL`, `REVALIDAR`, `MANIFESTO` | Ingestão e patrimônio | Variáveis internas derivadas dos inputs ou paths do job. | GitHub workflow |
-| `DISPATCH_REF`, `DISPATCH_SHA`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `RESTORED_SHA`, `ROLLBACK_PR`, `SMOKE_JOB_RESULT` | Estado da fila serial e rollback | Variáveis efêmeras do job; valores vêm de inputs e outputs previamente validados. | GitHub workflow |
+| `DISPATCH_REF`, `DISPATCH_SHA`, `DISPATCH_ENVIRONMENT`, `DISPATCH_GIT_SHA`, `DISPATCH_PROJECT`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `CANDIDATE_DEPLOYMENT_ID`, `CANDIDATE_DEPLOYMENT_URL`, `PREVIOUS_DEPLOYMENT_ID`, `PREVIOUS_DEPLOYMENT_SHA`, `PREVIOUS_DEPLOYMENT_URL`, `INCIDENT_LABEL`, `JOB_STATUS`, `ROLLBACK_OUTCOME`, `VERIFY_OUTCOME` | Estado da fila serial, promoção e rollback | Variáveis efêmeras do job; valores vêm de inputs, outputs e recursos remotos previamente validados. | GitHub workflow |
 | `WATCHED_HEAD_SHA`, `WATCHED_RUN_ID`, `WATCHED_RUN_URL`, `WATCHED_RUN_CONCLUSION` | Payload do watchdog da fila | Variáveis efêmeras recebidas do workflow observado. | GitHub workflow |
 
 ### Contrato de Reply-To integrado por PF-24
