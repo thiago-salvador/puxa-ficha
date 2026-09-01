@@ -345,7 +345,10 @@ describe("classificador puro (#136)", () => {
     // somente no replay vazio. A integração conserva 335 + 103 = 438.
     // 335 -> 336 em 31/08/2026: a curadoria de Elizeu retorna cedo quando a
     // ficha alvo não existe. Gate real: 336 + 103 = 439, falhas intactas.
-    assert.equal(manifesto.aplicadas_esperadas, 336)
+    // 336 -> 337 em 01/09/2026: a reancoragem das fontes do TCU da issue #202
+    // retorna cedo quando as duas claims não existem, que é o caso do banco
+    // vazio. A integração conserva 337 + 103 = 440.
+    assert.equal(manifesto.aplicadas_esperadas, 337)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

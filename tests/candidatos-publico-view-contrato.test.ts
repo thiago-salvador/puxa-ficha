@@ -345,6 +345,10 @@ describe("contrato da view candidatos_publico", () => {
       // Curadoria de patrimônio e identidade eleitoral de Elizeu. Não altera
       // a definição nem as permissões de candidatos_publico.
       "20260831215407_corrigir_elizeu_patrimonio_sq.sql",
+      // Issue #202: UPDATE em duas linhas de pontos_atencao (fonte reancorada e
+      // cópia automática despublicada). Não toca em candidatos nem redefine
+      // candidatos_publico.
+      "20260901180000_reancorar_tcu_fontes_curadas_issue_202.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

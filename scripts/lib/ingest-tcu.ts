@@ -44,6 +44,16 @@ const HOSTS_PUBLICOS_TCU = new Set(["contas.tcu.gov.br", "conecta-tcu.apps.tcu.g
  * A API oficial devolve links públicos do próprio processo. Preferimos o TVP,
  * cuja URL tem o identificador no caminho, e recusamos host ou raiz genérica.
  * CPF nunca entra na fonte pública.
+ *
+ * Issue #202: o TVP do Conecta é casca de SPA e o link-check o classifica como
+ * `sem_substancia`. O outro link da API, `linkDeliberacoesProcesso`, NÃO é
+ * saída melhor: `contas.tcu.gov.br/pesquisaJurisprudencia/#/...` põe o
+ * identificador no fragmento, então o caminho que o servidor vê tem UM
+ * segmento (raiz de aplicação) e o corpo é a mesma casca de SPA. Admiti-lo
+ * trocaria uma fonte sem substância por duas. A âncora durável do acórdão é o
+ * documento REST de `pesquisa.apps.tcu.gov.br`, que a API não devolve e que
+ * por isso é ato de curadoria: o trabalho deste arquivo é PRESERVAR essa
+ * curadoria (ver `montarLinhaPontoAtencaoTCU`), não adivinhá-la.
  */
 export function fontePublicaTCU(
   registro: Pick<TCUInabilitado, "linkAcompanhamentoProcesso" | "linkDeliberacoesProcesso">,
@@ -122,20 +132,85 @@ export async function fetchTCUCadirreg(
   }
 }
 
-async function upsertPontoAtencao(
+/** Linha existente de `pontos_atencao` que o ingest pode reescrever. */
+export interface PontoAtencaoExistente {
+  id: string
+  descricao: unknown
+  fontes: unknown
+  verificado: unknown
+}
+
+export interface LinhaPontoAtencaoTCU {
+  candidato_id: string
+  categoria: string
+  titulo: string
+  descricao: string
+  gravidade: string
+  verificado: boolean
+  gerado_por: string
+  fontes: unknown[]
+}
+
+function urlDeFonte(fonte: unknown): string {
+  if (typeof fonte !== "object" || fonte === null) return ""
+  const url = (fonte as { url?: unknown }).url
+  return typeof url === "string" ? url.trim() : ""
+}
+
+/**
+ * Uniao de fontes por URL, com as EXISTENTES na frente.
+ *
+ * A ancora duravel de um acordao do TCU nao vem da API: ela e curada a mao
+ * (issue #96 reancorou dois acordaos em `pesquisa.apps.tcu.gov.br`). A API so
+ * devolve o TVP do Conecta, que e casca de SPA. Uniao, e nao substituicao,
+ * porque a fonte nova e adicional, nunca superior a curadoria.
+ */
+export function unirFontesPorUrl(existentes: unknown, novas: unknown[]): unknown[] {
+  const base = Array.isArray(existentes) ? existentes : []
+  const vistas = new Set<string>()
+  const resultado: unknown[] = []
+
+  for (const fonte of [...base, ...novas]) {
+    const url = urlDeFonte(fonte)
+    if (url === "" || vistas.has(url)) continue
+    vistas.add(url)
+    resultado.push(fonte)
+  }
+
+  return resultado
+}
+
+/**
+ * Monta a linha que o ingest vai gravar.
+ *
+ * Sem `existente` (INSERT) o comportamento e o de sempre. Com `existente`
+ * (UPDATE) a regra e nao destruir curadoria, porque o `update(row)` antigo
+ * reescrevia a linha INTEIRA e apagava, a cada reingest, tudo o que um humano
+ * tinha corrigido.
+ *
+ * Contexto da issue #202: em producao o que aconteceu NAO foi sobrescrita, foi
+ * duplicata. A issue #96 renomeou o titulo das claims curadas, a busca por
+ * (candidato_id, titulo) nao as achou e o reingest de 28/08/2026 INSERIU duas
+ * copias com o titulo antigo e o TVP do Conecta; o link-check reprovou em 31/08
+ * pela copia sem fonte utilizavel. A migration 20260901180000 reancora e
+ * despublica essas copias. Daqui em diante o reingest as encontra pelo titulo
+ * antigo e cai neste UPDATE, que preserva a ancora duravel e nao as republica
+ * (`visivel` nao faz parte da linha gravada aqui).
+ *
+ * Tres invariantes no UPDATE:
+ *  - `fontes` e uniao por URL, existentes primeiro: fonte curada nunca sai;
+ *  - `descricao` existente e nao vazia e preservada: o texto gerado aqui e
+ *    concatenacao de campos da API, e a curadoria e irrecuperavel;
+ *  - `verificado` nunca cai de `true` para `false`.
+ */
+export function montarLinhaPontoAtencaoTCU(
   candidatoId: string,
   titulo: string,
   descricao: string,
   fontes: FonteTCU[],
-): Promise<boolean> {
-  const { data: existing } = await supabase
-    .from("pontos_atencao")
-    .select("id")
-    .eq("candidato_id", candidatoId)
-    .eq("titulo", titulo)
-    .single()
-
-  const row = {
+  existente: PontoAtencaoExistente | null,
+): LinhaPontoAtencaoTCU {
+  const row: LinhaPontoAtencaoTCU = {
     candidato_id: candidatoId,
     categoria: "processo_grave",
     titulo,
@@ -146,6 +221,37 @@ async function upsertPontoAtencao(
     fontes,
   }
 
+  if (!existente) return row
+
+  const descricaoExistente =
+    typeof existente.descricao === "string" && existente.descricao.trim() !== ""
+      ? existente.descricao
+      : null
+
+  return {
+    ...row,
+    descricao: descricaoExistente ?? descricao,
+    verificado: existente.verificado === true,
+    fontes: unirFontesPorUrl(existente.fontes, fontes),
+  }
+}
+
+async function upsertPontoAtencao(
+  candidatoId: string,
+  titulo: string,
+  descricao: string,
+  fontes: FonteTCU[],
+): Promise<boolean> {
+  const { data: existing } = await supabase
+    .from("pontos_atencao")
+    .select("id, descricao, fontes, verificado")
+    .eq("candidato_id", candidatoId)
+    .eq("titulo", titulo)
+    .single()
+
+  const existente = (existing as PontoAtencaoExistente | null) ?? null
+  const row = montarLinhaPontoAtencaoTCU(candidatoId, titulo, descricao, fontes, existente)
+
   // Guard de fonte (auditoria de 2026-07-24, achados V1 e A3).
   //
   // Esta rota grava gravidade "critica" sem nenhuma fonte, e "automatico" nao
@@ -154,6 +260,8 @@ async function upsertPontoAtencao(
   // Aqui a gente para ANTES, com aviso legivel, em vez de deixar o pipeline
   // estourar no meio.
   //
+  // O guard roda sobre a linha EFETIVA, ja com as fontes unidas: e ela que vai
+  // para o banco, nao a lista crua devolvida pela API.
   const recusa = motivoRecusaDeFonte(row.gravidade, row.fontes)
   if (recusa) {
     warn("tcu", `ponto de atencao nao gravado (${recusa}): ${titulo}`)
@@ -161,8 +269,15 @@ async function upsertPontoAtencao(
   }
 
   let error
-  if (existing) {
-    ;({ error } = await supabase.from("pontos_atencao").update(row).eq("id", existing.id))
+  if (existente) {
+    if (row.descricao !== descricao) {
+      warn(
+        "tcu",
+        `descricao curada preservada em "${titulo}" (${existente.id}); ` +
+          `a API devolveria: ${descricao}`,
+      )
+    }
+    ;({ error } = await supabase.from("pontos_atencao").update(row).eq("id", existente.id))
   } else {
     ;({ error } = await supabase.from("pontos_atencao").insert(row))
   }

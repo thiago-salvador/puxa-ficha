@@ -1,0 +1,23 @@
+{
+  "_comentario": "Allowlist fechada da issue #202. A migration guarda os 2 UUIDs automáticos por preimagem exata (candidato_id, titulo, descricao, fontes, visivel) e exige que as 2 claims curadas da issue #96 continuem publicadas. Aceita somente a preimagem medida em 2026-09-01 ou a posimagem exata.",
+  "recorte": "issue-202-tcu-fontes-20260901",
+  "migration": "20260901180000_reancorar_tcu_fontes_curadas_issue_202.sql",
+  "fonte": "Issue #202, run 33414501027 do cron de link-check, e leitura direta das 4 linhas de pontos_atencao em produção em 2026-09-01",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "pontos_atencao",
+      "ref": "issue_202",
+      "campos": [
+        "fontes",
+        "visivel",
+        "despublicacao_motivo",
+        "despublicado_em",
+        "dados_relacionados"
+      ],
+      "max_registros": 2
+    }
+  ]
+}
