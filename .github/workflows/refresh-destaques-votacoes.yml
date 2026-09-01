@@ -49,9 +49,15 @@ jobs:
           --run-a=reports/destaques-votacoes/run-a/manifest.json
           --run-b=reports/destaques-votacoes/run-b/manifest.json
           --out=reports/destaques-votacoes/double-read-receipt.json
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+      # Sobe mesmo quando a comparação reprova: sem os payloads brutos das duas
+      # leituras não dá para diagnosticar uma divergência de hash (run
+      # 33553696034, 01/09/2026, senado:7fa2b07b:4531 divergiu e o artifact
+      # não subiu). `warn` porque uma falha antes da primeira leitura deixa o
+      # diretório vazio, e aí o passo não deve mascarar a causa original.
+      - if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
         with:
           name: destaques-votacoes-provenance-${{ github.run_id }}
           path: reports/destaques-votacoes
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 30
