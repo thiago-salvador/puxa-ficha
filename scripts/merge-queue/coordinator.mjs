@@ -166,6 +166,13 @@ async function executeMutation(mutation, config, adapters) {
         config.releaseGate?.name ?? 'Serial release gate',
         `Serial release failed: ${mutation.reason}`,
       );
+    case 'SET_RELEASE_GATE_SUCCESS':
+      return adapters.github.setCommitStatus(
+        mutation.mergeSha,
+        config.releaseGate?.successState ?? 'success',
+        config.releaseGate?.name ?? 'Serial release gate',
+        'Serial release completed successfully',
+      );
     case 'MARK_RECOVERED':
       return adapters.github.persistContext(mutation.pr, mutation.context);
     case 'MERGE_ROLLBACK_PR': {
