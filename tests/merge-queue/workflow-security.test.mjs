@@ -59,8 +59,9 @@ test('manual live dry-run uses read-only tokens and proves zero writes', async (
   const dryRun = workflow.slice(start, end);
 
   assert.match(dryRun, /if: github\.event_name == 'workflow_dispatch' && inputs\.mode == 'dry-run'/);
+  assert.match(dryRun, /MERGE_QUEUE_GH_TOKEN: \$\{\{ github\.token \}\}/);
   assert.match(dryRun, /GITHUB_TOKEN: \$\{\{ github\.token \}\}/);
-  assert.doesNotMatch(dryRun, /MERGE_QUEUE_GH_TOKEN/);
+  assert.doesNotMatch(dryRun, /MERGE_QUEUE_GH_TOKEN: \$\{\{ secrets\.MERGE_QUEUE_GH_TOKEN \}\}/);
   assert.match(dryRun, /coordinator\.mjs reconcile --dry-run --config/);
   assert.match(dryRun, /\.dryRun == true and \(\.writes \| length\) == 0/);
 });
