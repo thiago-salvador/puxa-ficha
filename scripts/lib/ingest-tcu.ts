@@ -186,9 +186,16 @@ export function unirFontesPorUrl(existentes: unknown, novas: unknown[]): unknown
  * Sem `existente` (INSERT) o comportamento e o de sempre. Com `existente`
  * (UPDATE) a regra e nao destruir curadoria, porque o `update(row)` antigo
  * reescrevia a linha INTEIRA e apagava, a cada reingest, tudo o que um humano
- * tinha corrigido. Foi assim que as duas claims de contas irregulares do TCU
- * voltaram a apontar para o Conecta depois da issue #96, e o link-check
- * reprovou de novo em 31/08/2026 (issue #202).
+ * tinha corrigido.
+ *
+ * Contexto da issue #202: em producao o que aconteceu NAO foi sobrescrita, foi
+ * duplicata. A issue #96 renomeou o titulo das claims curadas, a busca por
+ * (candidato_id, titulo) nao as achou e o reingest de 28/08/2026 INSERIU duas
+ * copias com o titulo antigo e o TVP do Conecta; o link-check reprovou em 31/08
+ * pela copia sem fonte utilizavel. A migration 20260901180000 reancora e
+ * despublica essas copias. Daqui em diante o reingest as encontra pelo titulo
+ * antigo e cai neste UPDATE, que preserva a ancora duravel e nao as republica
+ * (`visivel` nao faz parte da linha gravada aqui).
  *
  * Tres invariantes no UPDATE:
  *  - `fontes` e uniao por URL, existentes primeiro: fonte curada nunca sai;
