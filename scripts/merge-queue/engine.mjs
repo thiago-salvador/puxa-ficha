@@ -469,7 +469,15 @@ function postMergeDecision(pr, config, snapshot, queue) {
   if (snapshot.main?.sha && snapshot.main.sha !== mergeSha) {
     return decision('VERIFY_STAGE', pr, queue, 'main-sha-does-not-match-merge', [], { mergeSha, mainSha: snapshot.main.sha });
   }
-  const checks = inspectChecks(pr.postMergeChecks ?? snapshot.main?.checks, mergeSha, config.checks.postMerge);
+  const releaseGateName = config.releaseGate?.name;
+  const ignoredPostMergeChecks = new Set([
+    ...asArray(config.checks.postMerge?.ignored),
+    ...(releaseGateName ? [releaseGateName] : []),
+  ]);
+  const postMergeChecks = asArray(pr.postMergeChecks ?? snapshot.main?.checks).filter((check) => (
+    !ignoredPostMergeChecks.has(checkName(check))
+  ));
+  const checks = inspectChecks(postMergeChecks, mergeSha, config.checks.postMerge);
   const signals = productionSignals(snapshot, config, mergeSha);
   const rollbackRecord = snapshot.production?.rollback;
   if (rollbackRecord) {
@@ -502,13 +510,22 @@ function postMergeDecision(pr, config, snapshot, queue) {
     if (stageFailures.length) {
       return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, stageFailures[0]);
     }
+    if (
+      signals.stagedDeployment.state === 'pending'
+      && ['missing', 'pending'].includes(signals.stagedDeployment.reason)
+    ) {
+      return decision('VERIFY_STAGE', pr, queue, 'stage-evidence-pending-after-promotion', [], evidence);
+    }
     if (checks.state !== 'success' || signals.stagedDeployment.state !== 'success' || signals.stagedChecks.state !== 'success') {
       return deploymentRollbackDecision(pr, snapshot, queue, mergeSha, evidence, 'stage-evidence-lost-after-promotion');
     }
     if (signals.publicReadback.state !== 'success') {
       return decision('VERIFY_PUBLIC', pr, queue, signals.publicReadback.reason, [], evidence);
     }
-    return decision('RELEASE', pr, queue, 'release-gates-green', phaseMutations(pr, null, config, { release: true }), evidence);
+    return decision('RELEASE', pr, queue, 'release-gates-green', [
+      { type: 'SET_RELEASE_GATE_SUCCESS', pr: pr.number, mergeSha },
+      ...phaseMutations(pr, null, config, { release: true }),
+    ], evidence);
   }
 
   if (signals.promotion.state === 'failure') {
