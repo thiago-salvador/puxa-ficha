@@ -7,6 +7,7 @@ import {
   PartialCheckFailure,
   automationBypassHeaders,
   candidatePathFromHref,
+  enterQuiz,
   formatResultLine,
   hasMoneyData,
   releaseBaseUrl,
@@ -144,6 +145,37 @@ test("runWithRetry preserva descoberta parcial depois da segunda falha", async (
   assert.ok(caught instanceof PartialCheckFailure)
   assert.deepEqual(caught.value, ["/candidato/pablo-marcal"])
   assert.match(caught.message, /home: copy proibida/)
+})
+
+test("enterQuiz aguarda a hidratacao antes de escolher a entrada", async () => {
+  const calls: string[] = []
+  const start = {
+    waitFor: async () => {
+      calls.push("wait:start")
+    },
+    click: async () => {
+      calls.push("click:start")
+    },
+  }
+  const office = {
+    waitFor: async () => {
+      calls.push("wait:office")
+      throw new Error("cargo ausente")
+    },
+    click: async () => {
+      calls.push("click:office")
+    },
+  }
+  const page = {
+    getByRole: (_role: string, options: { name: string | RegExp }) => (
+      options.name === "Começar" ? start : office
+    ),
+  }
+
+  const entry = await enterQuiz(page as never)
+
+  assert.equal(entry, "start")
+  assert.deepEqual(calls.sort(), ["click:start", "wait:office", "wait:start"])
 })
 
 test("formatResultLine gera uma linha compacta sem travessao", () => {

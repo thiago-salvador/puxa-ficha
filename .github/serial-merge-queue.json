@@ -22,6 +22,10 @@
     ],
     "requireUpToDate": true,
     "baseBranch": "main",
+    "mergeCoAuthor": {
+      "name": "Thiago Salvador",
+      "email": "contato.thiagosalvador@gmail.com"
+    },
     "excludeDrafts": true,
     "excludeLabels": [
       "merge-queue/rollback-pr"
@@ -67,6 +71,9 @@
       ],
       "conditionalRequired": [
         "Gate de replay (conjunto de falhas congelado)"
+      ],
+      "ignored": [
+        "Reconcile serial merge queue"
       ],
       "includeAllPresent": true
     },

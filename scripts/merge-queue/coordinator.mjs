@@ -100,7 +100,12 @@ async function executeMutation(mutation, config, adapters) {
         headSha: mutation.expectedHeadSha,
         transition: 'merge-started',
       });
-      const merged = await adapters.github.merge(mutation.pr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.pr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) {
         throw new HttpError('GitHub declined the merge transition', 422, merged);
       }
@@ -161,6 +166,13 @@ async function executeMutation(mutation, config, adapters) {
         config.releaseGate?.name ?? 'Serial release gate',
         `Serial release failed: ${mutation.reason}`,
       );
+    case 'SET_RELEASE_GATE_SUCCESS':
+      return adapters.github.setCommitStatus(
+        mutation.mergeSha,
+        config.releaseGate?.successState ?? 'success',
+        config.releaseGate?.name ?? 'Serial release gate',
+        'Serial release completed successfully',
+      );
     case 'MARK_RECOVERED':
       return adapters.github.persistContext(mutation.pr, mutation.context);
     case 'MERGE_ROLLBACK_PR': {
@@ -172,7 +184,12 @@ async function executeMutation(mutation, config, adapters) {
         config.labels.rollbackPr,
       );
       await adapters.github.assertOwnerLabels(mutation.pr, [config.labels.active, config.labels.rollback]);
-      const merged = await adapters.github.merge(mutation.rollbackPr, mutation.expectedHeadSha, config.queue.mergeMethod ?? 'squash');
+      const merged = await adapters.github.merge(
+        mutation.rollbackPr,
+        mutation.expectedHeadSha,
+        config.queue.mergeMethod ?? 'squash',
+        config.queue.mergeCoAuthor,
+      );
       if (merged.merged !== true || !merged.sha) throw new HttpError('GitHub declined rollback PR merge', 422, merged);
       await adapters.github.persistContext(mutation.pr, { rollbackPr: mutation.rollbackPr, rollbackMergeSha: merged.sha });
       await adapters.github.dispatch('serial-merge-queue-recovery', {
