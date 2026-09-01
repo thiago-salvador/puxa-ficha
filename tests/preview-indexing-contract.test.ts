@@ -39,17 +39,12 @@ test("producao preserva robots publico e embed noindex estreito", () => {
 
   assert.strictEqual(rule.userAgent, "*")
   assert.strictEqual(rule.allow, "/")
-  // `/vai/` entrou com os links curtos de atribuicao por canal: o rewrite de
-  // next.config serve a home neles, entao indexar cada um seria publicar copia
-  // da home sob um path de campanha. Contrato proprio em
-  // tests/vai-canais-contrato.test.ts.
   assert.deepStrictEqual(rule.disallow, [
     "/styleguide",
     "/internaltest",
     "/preview",
     "/api/",
     "/embed/",
-    "/vai/",
   ])
   assert.strictEqual(robots.sitemap, `${SITE_ORIGIN}/sitemap.xml`)
 })

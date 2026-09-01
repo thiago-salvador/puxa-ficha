@@ -4,21 +4,7 @@ import { SITE_ORIGIN } from "./metadata"
 export const PREVIEW_NOINDEX_HEADER_VALUE = "noindex, nofollow, noarchive"
 export const EMBED_NOINDEX_HEADER_VALUE = "noindex, nofollow"
 
-/**
- * `/vai/` sao os links curtos de atribuicao por canal. Eles nao sao conteudo:
- * o rewrite de next.config serve a home, entao cada /vai/<canal> indexado seria
- * uma copia da home ocupando o indice com um path de campanha. O noindex real
- * vem do header X-Robots-Tag em next.config; este Disallow mantem o crawl fora
- * do path antes disso.
- */
-const PUBLIC_ROBOTS_DISALLOW = [
-  "/styleguide",
-  "/internaltest",
-  "/preview",
-  "/api/",
-  "/embed/",
-  "/vai/",
-]
+const PUBLIC_ROBOTS_DISALLOW = ["/styleguide", "/internaltest", "/preview", "/api/", "/embed/"]
 
 function isVercelPreviewDeployment(
   vercelEnv: string | undefined = process.env.VERCEL_ENV
