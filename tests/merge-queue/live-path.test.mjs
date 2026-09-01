@@ -463,19 +463,45 @@ test('secret and production hold preflight fail closed', () => {
     },
   };
   assert.throws(() => preflightSecrets(config, {}), /secrets are missing/);
+  assert.throws(() => preflightSecrets(config, {
+    GITHUB_TOKEN: 'read', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+  }), /secrets are missing/);
   assert.doesNotThrow(() => preflightSecrets(config, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }));
   const broken = structuredClone(config);
   broken.production.stagedDeployment.hold.githubStatusContext = '';
   assert.throws(() => preflightSecrets(broken, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /hold configuration/);
   const unsafe = structuredClone(config);
   unsafe.production.stagedDeployment.hold.provider = 'vercel-deployment-checks';
   assert.throws(() => preflightSecrets(unsafe, {
-    GITHUB_TOKEN: 'x', VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
+    GITHUB_TOKEN: 'read', MERGE_QUEUE_GH_TOKEN: 'write',
+    VERCEL_TOKEN: 'x', VERCEL_TEAM_ID: 'x', VERCEL_PROJECT_ID: 'x',
   }), /disable Vercel automatic domain assignment/);
+});
+
+test('GitHub adapter isolates read traffic from privileged mutations', async () => {
+  const calls = [];
+  const fetchImpl = async (_url, init = {}) => {
+    calls.push(init);
+    return { ok: true, status: 200, text: async () => '{}' };
+  };
+  const github = new GitHubAdapter({
+    repository: 'owner/repo',
+    token: 'read-token',
+    writeToken: 'write-token',
+    fetchImpl,
+  });
+
+  await github.request('/repos/owner/repo');
+  await github.request('/repos/owner/repo/statuses/abc', { method: 'POST', body: '{}' });
+
+  assert.equal(calls[0].headers.Authorization, 'Bearer read-token');
+  assert.equal(calls[1].headers.Authorization, 'Bearer write-token');
 });
 
 test('incident upsert deduplicates by PR, phase, SHA, and reason signature', async () => {

@@ -36,10 +36,17 @@ concurrency:
   group: serial-merge-queue
   cancel-in-progress: false
 
-# O coordenador usa MERGE_QUEUE_GH_TOKEN, com escopo próprio. O GITHUB_TOKEN
-# implícito serve somente para ler a default branch no checkout confiável.
+# O coordenador usa o GITHUB_TOKEN efêmero para leituras e reserva o
+# MERGE_QUEUE_GH_TOKEN, com escopo próprio, somente para mutações.
 permissions:
+  actions: read
+  checks: read
   contents: read
+  deployments: read
+  issues: read
+  pull-requests: read
+  security-events: read
+  statuses: read
 
 jobs:
   reconcile:
@@ -64,8 +71,7 @@ jobs:
       - name: Reconcile
         env:
           MERGE_QUEUE_GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
