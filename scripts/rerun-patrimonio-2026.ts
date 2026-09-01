@@ -171,7 +171,7 @@ async function main(): Promise<void> {
   // A composição APLICADA em produção, por bem, extraída da migration
   // versionada. É contra ela que a lacuna é comparada: total e contagem não
   // detectam dois bens com valores trocados.
-  const baselineAplicado = carregarBaselineAplicado()
+  const baselineAplicado = carregarBaselineAplicado(process.cwd(), celulas2026)
   for (const celula of celulas2026) {
     if (celula.estado === "lacuna_com_dados_tse" && !baselineAplicado.has(celula.slug)) {
       throw new Error(
@@ -225,6 +225,61 @@ async function main(): Promise<void> {
         valor: item.valor,
       }))
       const total = Math.round(bens.reduce((acc, bem) => acc + bem.valor, 0) * 100) / 100
+
+      // O estado aplicado mais recente vence o rótulo histórico do manifesto.
+      // Isso impede que um bem já publicado por migrations posteriores a 07/08
+      // reapareça toda semana como INSERT pendente.
+      const aplicado = baselineAplicado.get(celula.slug)
+      if (aplicado) {
+        if (bens.length === 0) {
+          comparadas.push({
+            slug: celula.slug,
+            ano: 2026,
+            sq: celula.sq,
+            estado_manifesto: celula.estado,
+            estado_atual: "erro",
+            detalhe:
+              `SQ tinha ${aplicado.bens.length} bem(ns) no baseline aplicado e não aparece no pacote atual; ` +
+              `divergência de fonte, investigar antes de qualquer escrita`,
+          })
+        } else if (composicoesIguais(bens, aplicado.bens)) {
+          comparadas.push({
+            slug: celula.slug,
+            ano: 2026,
+            sq: celula.sq,
+            estado_manifesto: celula.estado,
+            estado_atual: "sem_mudanca",
+            detalhe:
+              `composição idêntica ao baseline aplicado: ${bens.length} bem(ns), ` +
+              `total R$ ${total}, comparados bem a bem (tipo, descrição, valor)`,
+          })
+        } else {
+          comparadas.push({
+            slug: celula.slug,
+            ano: 2026,
+            sq: celula.sq,
+            estado_manifesto: celula.estado,
+            estado_atual: "valores_mudaram",
+            detalhe:
+              `composição divergente do baseline aplicado: aplicado R$ ${aplicado.valor_total} em ` +
+              `${aplicado.bens.length} bem(ns); pacote atual R$ ${total} em ${bens.length} bem(ns)` +
+              (Math.abs(total - aplicado.valor_total) <= 0.01 && bens.length === aplicado.bens.length
+                ? " (agregados iguais, conteúdo dos bens diferente; o agregado sozinho não teria visto)"
+                : ""),
+            operacoes_planejadas: [
+              {
+                tabela: "patrimonio",
+                operacao: "update",
+                chave: { slug: celula.slug, ano_eleicao: 2026 },
+                valor_total: total,
+                n_bens: bens.length,
+                bens,
+              },
+            ],
+          })
+        }
+        continue
+      }
 
       if (celula.estado === "nao_coletado") {
         if (bens.length > 0) {
@@ -326,59 +381,7 @@ async function main(): Promise<void> {
         continue
       }
 
-      // lacuna_com_dados_tse: aplicada em 07/08. A comparação é por COMPOSIÇÃO
-      // normalizada contra o que a migration gravou, não por agregado: dois
-      // bens com valores trocados mantêm total e contagem e mudam a composição.
-      const aplicado = baselineAplicado.get(celula.slug)!
-      if (bens.length === 0) {
-        // O SQ tinha bens no snapshot antigo e SUMIU do pacote atual. Não é
-        // "sem mudança" nem autoriza apagar nada: é divergência a investigar.
-        comparadas.push({
-          slug: celula.slug,
-          ano: 2026,
-          sq: celula.sq,
-          estado_manifesto: celula.estado,
-          estado_atual: "erro",
-          detalhe:
-            `SQ tinha ${aplicado.bens.length} bem(ns) no snapshot de 04/08 e não aparece no pacote atual; ` +
-            `divergência de fonte, investigar antes de qualquer escrita`,
-        })
-      } else if (composicoesIguais(bens, aplicado.bens)) {
-        comparadas.push({
-          slug: celula.slug,
-          ano: 2026,
-          sq: celula.sq,
-          estado_manifesto: celula.estado,
-          estado_atual: "sem_mudanca",
-          detalhe:
-            `composição idêntica à aplicada em 07/08: ${bens.length} bem(ns), ` +
-            `total R$ ${total}, comparados bem a bem (tipo, descrição, valor)`,
-        })
-      } else {
-        comparadas.push({
-          slug: celula.slug,
-          ano: 2026,
-          sq: celula.sq,
-          estado_manifesto: celula.estado,
-          estado_atual: "valores_mudaram",
-          detalhe:
-            `composição divergente da aplicada em 07/08: aplicado R$ ${aplicado.valor_total} em ` +
-            `${aplicado.bens.length} bem(ns); pacote atual R$ ${total} em ${bens.length} bem(ns)` +
-            (Math.abs(total - aplicado.valor_total) <= 0.01 && bens.length === aplicado.bens.length
-              ? " (agregados iguais, conteúdo dos bens diferente; o agregado sozinho não teria visto)"
-              : ""),
-          operacoes_planejadas: [
-            {
-              tabela: "patrimonio",
-              operacao: "update",
-              chave: { slug: celula.slug, ano_eleicao: 2026 },
-              valor_total: total,
-              n_bens: bens.length,
-              bens,
-            },
-          ],
-        })
-      }
+      throw new Error(`baseline: ${celula.slug} é lacuna sem patrimônio aplicado`)
     }
   } catch (err) {
     // Falha de download/extração não vira "sem mudança" para célula nenhuma.

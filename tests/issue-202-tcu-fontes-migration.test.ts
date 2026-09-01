@@ -117,10 +117,10 @@ test("runners de producao fecham SHA, projeto, predecessor, digest, lock e readb
     assert.match(runner, /wskpzsobvqwhnbsdsmok/)
     assert.match(runner, /PGSSLMODE=verify-full/)
     assert.match(runner, /version=20260901180000/)
-    assert.match(runner, /previous_version=20260830151500/)
+    assert.match(runner, /previous_version=20260831215407/)
     assert.match(
       runner,
-      /sha256:59c212dd68c913a2e98836cf109ad32fa9bc21b40826bb67035a277589ab095a/,
+      /sha256:8ce895c1158f757dd89df1b31c7ecefdd3018d3878f8215fcc56a214bcf66255/,
     )
     assert.match(runner, /puxa-ficha:issue-202-tcu-fontes-production/)
     assert.match(runner, /idempotency_key/)
@@ -175,6 +175,6 @@ test("recorte, allowlist e manifesto de mudanca irreversivel apontam para a mesm
 
   const release = manifestoIrreversivel.scope.releases.find((r) => r.name === "issue-202-tcu-fontes")
   assert.ok(release, "release da issue #202 ausente no manifesto de mudanca irreversivel")
-  assert.equal(release.predecessor, "20260830151500")
+  assert.equal(release.predecessor, "20260831215407")
   assert.deepEqual(release.versions, [VERSION])
 })

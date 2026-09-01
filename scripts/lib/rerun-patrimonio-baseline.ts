@@ -27,10 +27,14 @@ export interface CelulaManifesto2026 {
   valor_total?: number | null
   n_bens?: number | null
   ausencia_persistida_sem_evidencia?: boolean
+  /** Composição já aplicada depois do snapshot original, para sobrepor o baseline. */
+  bens_aplicados?: Bem[]
 }
 
 export interface CelulaDeltaManifesto2026 extends CelulaManifesto2026 {
   acao: "adicionar" | "substituir"
+  /** Exigido quando a fonte oficial substitui o SQ da mesma célula nominal. */
+  sq_anterior?: string
 }
 
 export interface Bem {
@@ -47,13 +51,16 @@ export interface Bem {
  */
 export const CARDINALIDADE_2026 = Object.freeze({
   total: 32,
-  lacunas: 17,
-  ausencias: 11,
+  lacunas: 18,
+  ausencias: 10,
   naoColetadas: 4,
 })
+const LACUNAS_BASELINE_ORIGINAL_2026 = 17
 
 export const MIGRATION_BASELINE_2026 =
   "supabase/migrations/20260807183000_backfill_patrimonio_oficial_2026_snapshot.sql"
+export const MIGRATION_BASELINE_NACIONAL_2026 =
+  "supabase/migrations/20260816055200_backfill_patrimonio_nacional_2026.sql"
 
 const ESTADOS_VALIDOS = new Set(["lacuna_com_dados_tse", "ausencia_oficial", "nao_coletado"])
 const RE_SLUG = /^[a-z0-9][a-z0-9-]*$/
@@ -99,6 +106,15 @@ export function validarManifesto2026(linhas: CelulaManifesto2026[]): void {
       }
       if (typeof linha.n_bens !== "number" || linha.n_bens <= 0) {
         violacoes.push(`${onde}: lacuna sem n_bens positivo`)
+      }
+      if (linha.bens_aplicados) {
+        const total = Math.round(linha.bens_aplicados.reduce((soma, bem) => soma + bem.valor, 0) * 100) / 100
+        if (linha.bens_aplicados.length !== linha.n_bens) {
+          violacoes.push(`${onde}: bens_aplicados diverge de n_bens`)
+        }
+        if (typeof linha.valor_total !== "number" || Math.abs(total - linha.valor_total) > 0.01) {
+          violacoes.push(`${onde}: bens_aplicados diverge de valor_total`)
+        }
       }
     } else if (linha.estado === "ausencia_oficial") {
       ausencias++
@@ -148,8 +164,9 @@ export function validarManifesto2026(linhas: CelulaManifesto2026[]): void {
 
 /**
  * Aplica um delta nominal ao manifesto histórico sem reescrever o artefato de
- * 07/08. `substituir` exige a mesma identidade eleitoral; `adicionar` exige que
- * a célula ainda não exista. Qualquer desvio falha fechado.
+ * 07/08. `substituir` preserva o SQ por padrão. Uma troca exige `sq_anterior`
+ * explícito e exatamente igual ao baseline; `adicionar` exige célula ausente.
+ * Qualquer desvio falha fechado.
  */
 export function aplicarDeltaManifesto2026(
   base: CelulaManifesto2026[],
@@ -164,12 +181,16 @@ export function aplicarDeltaManifesto2026(
       if (anterior) throw new Error(`delta: ${chave} ja existe e nao pode ser adicionado`)
     } else {
       if (!anterior) throw new Error(`delta: ${chave} nao existe e nao pode ser substituido`)
-      if (anterior.sq !== linha.sq) {
+      if (anterior.sq !== linha.sq && linha.sq_anterior !== anterior.sq) {
         throw new Error(`delta: ${chave} tentou trocar SQ ${anterior.sq} por ${linha.sq}`)
       }
+      if (anterior.sq === linha.sq && linha.sq_anterior !== undefined) {
+        throw new Error(`delta: ${chave} declarou sq_anterior sem trocar o SQ`)
+      }
     }
-    const { acao, ...celula } = linha
+    const { acao, sq_anterior, ...celula } = linha
     void acao
+    void sq_anterior
     porChave.set(chave, celula)
   }
 
@@ -247,15 +268,43 @@ export function extrairBaselineDaMigration(sql: string): Map<string, BaselineApl
   return baseline
 }
 
-/** Lê e extrai o baseline do arquivo versionado, validando a cardinalidade. */
-export function carregarBaselineAplicado(raiz: string = process.cwd()): Map<string, BaselineAplicado> {
+/** Lê o baseline original e aplica sobreposições versionadas já publicadas. */
+export function carregarBaselineAplicado(
+  raiz: string = process.cwd(),
+  celulas: CelulaManifesto2026[] = [],
+): Map<string, BaselineAplicado> {
   const sql = readFileSync(resolve(raiz, MIGRATION_BASELINE_2026), "utf8")
   const baseline = extrairBaselineDaMigration(sql)
-  if (baseline.size !== CARDINALIDADE_2026.lacunas) {
+  if (celulas.length > 0) {
+    const slugs = new Set(celulas.map((celula) => celula.slug))
+    const nacional = extrairBaselineDaMigration(
+      readFileSync(resolve(raiz, MIGRATION_BASELINE_NACIONAL_2026), "utf8"),
+    )
+    for (const [slug, aplicado] of nacional) {
+      if (slugs.has(slug)) baseline.set(slug, aplicado)
+    }
+  }
+  for (const celula of celulas) {
+    if (!celula.bens_aplicados) continue
+    if (celula.estado !== "lacuna_com_dados_tse") {
+      throw new Error(`baseline: sobreposicao invalida para ${celula.slug}`)
+    }
+    baseline.set(celula.slug, {
+      slug: celula.slug,
+      valor_total: celula.valor_total!,
+      bens: celula.bens_aplicados,
+    })
+  }
+  if (celulas.length === 0 && baseline.size !== LACUNAS_BASELINE_ORIGINAL_2026) {
     throw new Error(
       `baseline: migration com ${baseline.size} inserts de patrimonio, ` +
-        `esperados exatamente ${CARDINALIDADE_2026.lacunas}`,
+        `esperados exatamente ${LACUNAS_BASELINE_ORIGINAL_2026}`,
     )
+  }
+  for (const celula of celulas.filter((item) => item.estado === "lacuna_com_dados_tse")) {
+    if (!baseline.has(celula.slug)) {
+      throw new Error(`baseline: lacuna ${celula.slug} sem composição aplicada`)
+    }
   }
   return baseline
 }

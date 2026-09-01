@@ -1,0 +1,43 @@
+{
+  "_comentario": "Autoriza somente a troca de SQ e patrimônio de Elizeu, a remoção da ausência sem evidência de Dr. Luisinho e um receipt append-only.",
+  "recorte": "elizeu-patrimonio-sq-20260831",
+  "migration": "20260831215407_corrigir_elizeu_patrimonio_sq.sql",
+  "fonte": "Pacotes oficiais consulta_cand_2026 e bem_candidato_2026 do TSE, hashes e linhas preservados em QA/evidencias/2026-08-31-elizeu-patrimonio-sq/receipt.json.",
+  "coorte": [
+    "elizeu-aguiar",
+    "dr-luisinho"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "elizeu-aguiar",
+      "campos": ["sq_candidato_2026"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "elizeu-aguiar",
+      "ano": 2026,
+      "campos": ["valor_total", "bens", "fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "campos": ["remocao_de_ausencia_sem_evidencia"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260831215407",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao"],
+      "max_registros": 1
+    }
+  ]
+}

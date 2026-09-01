@@ -40,7 +40,7 @@ CREATE TABLE supabase_migrations.schema_migrations (
   rollback text[]
 );
 INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key)
-VALUES ('20260830151500', 'sha256:59c212dd68c913a2e98836cf109ad32fa9bc21b40826bb67035a277589ab095a');
+VALUES ('20260831215407', 'sha256:8ce895c1158f757dd89df1b31c7ecefdd3018d3878f8215fcc56a214bcf66255');
 
 CREATE TABLE public.pontos_atencao (
   id uuid PRIMARY KEY,

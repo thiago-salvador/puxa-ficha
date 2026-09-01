@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Aplica somente a migration 20260901180000 (issue #202), com predecessor,
-# hash, lock, ledger e readback fechados para o projeto de producao do Puxa Ficha.
+# Aplica somente a migration 20260831215407, com predecessor, hash, lock,
+# ledger e readback fechados para o projeto de producao do Puxa Ficha.
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 
@@ -44,14 +44,14 @@ pf_configure_libpq_from_url
 export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
-version=20260901180000
-previous_version=20260831215407
-previous_digest=sha256:8ce895c1158f757dd89df1b31c7ecefdd3018d3878f8215fcc56a214bcf66255
-migration="$ROOT/supabase/migrations/${version}_reancorar_tcu_fontes_curadas_issue_202.sql"
-rollback="$ROOT/supabase/rollback/${version}_reancorar_tcu_fontes_curadas_issue_202.rollback.sql"
-readback="$ROOT/supabase/readback/${version}_reancorar_tcu_fontes_curadas_issue_202.readback.sql"
+version=20260831215407
+previous_version=20260830151500
+previous_digest=sha256:59c212dd68c913a2e98836cf109ad32fa9bc21b40826bb67035a277589ab095a
+migration="$ROOT/supabase/migrations/${version}_corrigir_elizeu_patrimonio_sq.sql"
+rollback="$ROOT/supabase/rollback/${version}_corrigir_elizeu_patrimonio_sq.rollback.sql"
+readback="$ROOT/supabase/readback/${version}_corrigir_elizeu_patrimonio_sq.readback.sql"
 [[ -f "$migration" && -f "$rollback" && -f "$readback" ]] || {
-  echo "FAIL: artefato da issue 202 ausente" >&2
+  echo "FAIL: artefato de patrimonio 2026 ausente" >&2
   exit 2
 }
 
@@ -64,11 +64,11 @@ IFS='|' read -r ledger_top previous_count previous_key version_count version_key
 if [[ "$ledger_top" == "$version" && "$version_count" == "1" && "$version_key" == "$digest" && "$previous_count" == "1" && "$previous_key" == "$previous_digest" ]]; then
   PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
     psql -X -v ON_ERROR_STOP=1 -f "$readback"
-  echo "PASS: issue 202 ja aplicado, ledger e readback conferem"
+  echo "PASS: patrimonio 2026 ja aplicado, ledger e readback conferem"
   exit 0
 fi
 if [[ "$ledger_top" != "$previous_version" || "$previous_count" != "1" || "$previous_key" != "$previous_digest" || "$version_count" != "0" ]]; then
-  echo "FAIL: ledger inicial de issue 202 inesperado: $state" >&2
+  echo "FAIL: ledger inicial de patrimonio 2026 inesperado: $state" >&2
   exit 1
 fi
 
@@ -97,16 +97,16 @@ name = pathlib.Path(migration_path).stem.removeprefix(version + "_")
 created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
 
 print("BEGIN;")
-print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:issue-202-tcu-fontes-production', 0));")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'issue 202: ledger divergiu sob lock'; END IF; END $ledger$;")
+print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:patrimonio-2026-reconciliation-production', 0));")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'patrimonio 2026: ledger divergiu sob lock'; END IF; END $ledger$;")
 print(body, end="" if body.endswith("\n") else "\n")
 print("INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback) VALUES (")
 print(f"  {lit(version)}, ARRAY[convert_from(decode({lit(b64(raw))}, 'base64'), 'UTF8')], {lit(name)}, {lit(created_by)}, {lit(digest)}, ARRAY[convert_from(decode({lit(b64(rollback))}, 'base64'), 'UTF8')]);")
 print(readback.decode("utf-8"), end="" if readback.endswith(b"\n") else "\n")
-print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'issue 202: ledger final divergiu'; END IF; END $ledger$;")
+print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(version)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(version)} AND idempotency_key={lit(digest)}) <> 1 THEN RAISE EXCEPTION 'patrimonio 2026: ledger final divergiu'; END IF; END $ledger$;")
 print("COMMIT;")
 PY
 
 PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' \
   psql -X -v ON_ERROR_STOP=1 -f "$readback"
-echo "PASS: issue 202 aplicado, ledger e readback concluidos"
+echo "PASS: patrimonio 2026 aplicado, ledger e readback concluidos"
