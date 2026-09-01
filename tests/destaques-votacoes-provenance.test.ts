@@ -3,6 +3,9 @@ import { readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import test from "node:test"
 import {
+  DESTAQUES_EXPECTED_PAIRS,
+  DESTAQUES_UNIVERSE_2026_08_30,
+  DESTAQUES_UNIVERSE_ATUAL,
   buildDestaquesRunManifest,
   compareDestaquesRuns,
   validateDestaquesRunManifest,
@@ -15,8 +18,23 @@ const RUN_B = "QA/evidencias/2026-08-30-destaques-votacoes/run-d/manifest.json"
 function load(path: string): DestaquesRunManifest {
   const root = dirname(path)
   const manifest = JSON.parse(readFileSync(path, "utf8")) as DestaquesRunManifest
-  return validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(root, artifact)))
+  // A evidência golden é anterior à reconciliação 20260830151500 (154 pares).
+  return validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(root, artifact)), DESTAQUES_UNIVERSE_2026_08_30)
 }
+
+test("universo vigente reflete a reconciliação que removeu 2 pares (154 -> 152)", () => {
+  assert.equal(DESTAQUES_EXPECTED_PAIRS, 152)
+  assert.deepEqual(DESTAQUES_UNIVERSE_ATUAL, { votacoes: 23, pairs: 152, candidates: 30 })
+  assert.deepEqual(DESTAQUES_UNIVERSE_2026_08_30, { votacoes: 23, pairs: 154, candidates: 30 })
+})
+
+test("gate vigente reprova evidência com o universo histórico de 154 pares", () => {
+  const manifest = JSON.parse(readFileSync(RUN_A, "utf8")) as DestaquesRunManifest
+  assert.throws(
+    () => validateDestaquesRunManifest(manifest, (artifact) => readFileSync(join(dirname(RUN_A), artifact))),
+    /universo divergente, esperado 23\/152\/30, encontrado 23\/154\/30/,
+  )
+})
 
 test("dupla leitura cobre o universo real e repete hashes de fonte, votação e par", () => {
   const receipt = compareDestaquesRuns(load(RUN_A), load(RUN_B))
