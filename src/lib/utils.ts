@@ -190,7 +190,9 @@ export function getPartyLogoUrl(sigla: string): string | null {
     .toLowerCase()
     .replace(/\s/g, "")
   const resolved = PARTY_LOGO_ALIASES[normalized] ?? normalized
-  if (KNOWN_PARTIES.includes(resolved)) return `/partidos/${resolved}.png`
+  // WebP lossless: mesmos pixels do PNG (112x112, 2x para o logo maior da
+  // ficha) com 46% menos bytes; os PNGs ficam como fonte.
+  if (KNOWN_PARTIES.includes(resolved)) return `/partidos/${resolved}.webp`
   return null
 }
 

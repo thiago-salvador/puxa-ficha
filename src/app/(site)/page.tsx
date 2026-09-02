@@ -7,6 +7,7 @@ import {
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Suspense, lazy } from "react"
+import { preload } from "react-dom"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
 
 export const metadata: Metadata = {
@@ -25,6 +26,13 @@ import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { formatCompact } from "@/lib/utils"
 
 export default async function Home() {
+  // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
+  // imagem depois de ler o HTML e competir com os scripts (Lighthouse
+  // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
+  // espelhando o <picture> abaixo, para o preload não baixar a versão errada.
+  preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
+  preload("/images/hero-dossie.webp", { as: "image", fetchPriority: "high", media: "(min-width: 641px)" })
+
   const [todosResumosResource, comparaveisResource] = await Promise.all([
     getCandidatosComResumoResource(),
     getCandidatosComparaveisResource("Presidente"),

@@ -11,7 +11,7 @@ describe("PartyLogoMark", () => {
     const html = renderToStaticMarkup(<PartyLogoMark sigla="PT" priority />)
 
     assert.match(html, /data-pf-party-logo="PT"/)
-    assert.match(html, /src="\/partidos\/pt\.png"/)
+    assert.match(html, /src="\/partidos\/pt\.webp"/)
     assert.match(html, /aria-hidden="true"/)
     assert.match(html, /alt=""/)
     assert.match(html, /loading="eager"/)
@@ -34,7 +34,7 @@ describe("PartyLogoMark", () => {
     for (const { sigla } of referencia.partidos) {
       const html = renderToStaticMarkup(<PartyLogoMark sigla={sigla} />)
       assert.match(html, /data-pf-party-logo=/, sigla)
-      assert.match(html, /src="\/partidos\/[a-z0-9-]+\.png"/, sigla)
+      assert.match(html, /src="\/partidos\/[a-z0-9-]+\.webp"/, sigla)
     }
 
     const integrationFiles = [

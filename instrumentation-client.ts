@@ -8,9 +8,14 @@ const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN?.trim() || process.env.SENTRY_DSN
 if (dsn && sentryHabilitadoNesteAmbiente()) {
   Sentry.init({
     dsn,
-    tracesSampleRate: Number(
-      process.env.NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE ?? process.env.SENTRY_TRACES_SAMPLE_RATE ?? "0.05",
-    ),
+    // Só captura de erro no navegador. O tracing de cliente (browserTracing)
+    // era o maior chunk de JS do site (133 KB br) e a maior long task em toda
+    // página, para amostrar 5% das navegações; o tracing do servidor continua
+    // em sentry.server.config.ts. `excludeTracing` no next.config tira o
+    // código do bundle; este filtro garante o comportamento se o build
+    // deixar de ter a opção.
+    integrations: (defaults) => defaults.filter((integration) => integration.name !== "BrowserTracing"),
+    tracesSampleRate: 0,
     environment: process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.NODE_ENV,
     sendDefaultPii: false,
     beforeSend(event) {
