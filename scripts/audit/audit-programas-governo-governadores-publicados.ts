@@ -69,15 +69,28 @@ async function main(): Promise<void> {
   const selectionByKey = new Map(selection.items.map((item) => [item.identityKey, item]))
   const staleRecords: Array<{ slug: string; identityKey: string; reasons: string[] }> = []
 
+  // Dois estados publicáveis: "aprovado" (com documentos) e
+  // "sem_documento_oficial" (ausência oficial, sem documentos), o mesmo par
+  // que o manifesto aceita.
   const byUf = new Map<ProgramaGovernoUf, ProgramaGovernoRegistro[]>()
+  const absenceRecords: ProgramaGovernoRegistro[] = []
   for (const record of records) {
-    assert(record.estado === "aprovado", `${record.fonte.slug}: estado nao aprovado`)
+    const isAbsence = record.estado === "sem_documento_oficial"
+    assert(record.estado === "aprovado" || isAbsence, `${record.fonte.slug}: estado ${record.estado} nao publicavel`)
     const key = `${record.fonte.ano}:${record.fonte.cargo}:${record.fonte.uf}:${record.fonte.sqCandidato}`
     const expected = inventoryByKey.get(key)
     const slugExpected = inventoryBySlug.get(record.fonte.slug)
     const reasons: string[] = []
     if (!expected) reasons.push(slugExpected ? "identity" : "identity_not_in_canonical_crosswalk")
-    else {
+    else if (isAbsence) {
+      if (expected.perfilEstado !== "vinculado") reasons.push("profile_not_linked")
+      if (expected.slug !== record.fonte.slug) reasons.push("identity")
+      if (expected.nomeUrna !== record.fonte.nomeUrna) reasons.push("name")
+      if (expected.partido !== record.fonte.partido) reasons.push("party")
+      if (expected.documentoIds.length !== 0) reasons.push("absence_with_inventory_documents")
+      if (record.documentos !== undefined) reasons.push("absence_with_published_documents")
+      if (selectionByKey.get(key)?.outcome !== "unavailable") reasons.push("absence_not_unavailable_in_selection")
+    } else {
       if (expected.perfilEstado !== "vinculado") reasons.push("profile_not_linked")
       if (expected.slug !== record.fonte.slug) reasons.push("identity")
       if (expected.nomeUrna !== record.fonte.nomeUrna) reasons.push("name")
@@ -96,6 +109,10 @@ async function main(): Promise<void> {
       const slug = record.fonte.slug
       assert(slug, `${key}: registro stale sem slug`)
       staleRecords.push({ slug, identityKey: key, reasons })
+      continue
+    }
+    if (isAbsence) {
+      absenceRecords.push(record)
       continue
     }
     const current = byUf.get(record.fonte.uf) ?? []
@@ -121,13 +138,18 @@ async function main(): Promise<void> {
     evalItems += result.evalItems
   }
 
+  const approvedRecords = records.filter((record) => record.estado === "aprovado")
   const approvedSelection = selection.items.filter((item) => item.outcome === "approved")
+  const unavailableSelection = selection.items.filter((item) => item.outcome === "unavailable")
   const approvedSlugs = new Set(approvedSelection.map((item) => item.slug))
+  const unavailableSlugs = new Set(unavailableSelection.map((item) => item.slug))
   const selectionReasons = [
     ...(selection.items.length === inventory.candidaturas.length ? [] : ["selection_coverage"]),
     ...(selectionByKey.size === selection.items.length ? [] : ["selection_duplicate_identity"]),
-    ...(approvedSelection.length === records.length ? [] : ["selection_approved_count"]),
-    ...(records.every((record) => approvedSlugs.has(record.fonte.slug)) ? [] : ["selection_membership"]),
+    ...(approvedSelection.length === approvedRecords.length ? [] : ["selection_approved_count"]),
+    ...(unavailableSelection.length === absenceRecords.length ? [] : ["selection_unavailable_count"]),
+    ...(approvedRecords.every((record) => approvedSlugs.has(record.fonte.slug)) ? [] : ["selection_membership"]),
+    ...(absenceRecords.every((record) => unavailableSlugs.has(record.fonte.slug)) ? [] : ["selection_absence_membership"]),
   ]
   if (selectionReasons.length) staleRecords.push({ slug: "<publication-manifest>", identityKey: "<manifest>", reasons: selectionReasons })
   if (staleRecords.length) {
@@ -135,7 +157,7 @@ async function main(): Promise<void> {
     process.exitCode = 1
     return
   }
-  console.log(`PROGRAMAS_GOV_PUBLICADOS_PASS candidatos=${records.length} ufs=${byUf.size} claims=${claims} eval_items=${evalItems}`)
+  console.log(`PROGRAMAS_GOV_PUBLICADOS_PASS candidatos=${records.length} aprovados=${approvedRecords.length} sem_documento_oficial=${absenceRecords.length} ufs=${byUf.size} claims=${claims} eval_items=${evalItems}`)
 }
 
 void main().catch((error: unknown) => {
