@@ -15,7 +15,7 @@ export function IndicadorFonteTag({
       data-pf-source-badge=""
       data-pf-source-label={label}
       data-pf-source-value={fonte.trim()}
-      className={`text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground ${className}`.trim()}
+      className={`text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground ${className}`.trim()}
     >
       {label}
     </span>

@@ -21,7 +21,7 @@ export function DataUnavailableState({
         tone="caution"
         eyebrow="Fonte pública"
         title={
-          <span className="font-heading text-[36px] uppercase leading-[0.9] sm:text-[48px]">
+          <span className="font-heading text-[length:var(--text-heading-lg)] uppercase leading-[0.9] sm:text-[48px]">
             {title}
           </span>
         }
@@ -31,7 +31,7 @@ export function DataUnavailableState({
       />
       <Link
         href={backHref}
-        className="pill-hover mt-8 inline-flex items-center gap-2 rounded-full border border-foreground px-5 py-2.5 text-[13px] font-semibold text-foreground"
+        className="pill-hover mt-8 inline-flex items-center gap-2 rounded-full border border-foreground px-5 py-2.5 text-[length:var(--text-body-sm)] font-semibold text-foreground"
       >
         <ArrowLeft className="size-4" />
         {backLabel}

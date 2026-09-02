@@ -10,7 +10,7 @@ export function RouteLoadingState({
       <div className="mx-auto max-w-7xl px-5 pt-24 md:px-12">
         <Skeleton className="h-4 w-24" />
         <div className="mt-6 max-w-3xl space-y-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
             {eyebrow}
           </p>
           <Skeleton className="h-16 w-full max-w-2xl" />

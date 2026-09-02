@@ -82,7 +82,7 @@ export function TimelineFilters({
               <span>{TIMELANE_LABELS[t]}</span>
               {c > 0 ? (
                 <span
-                  className={`rounded-full px-1.5 py-0.5 text-[10px] leading-none ${
+                  className={`rounded-full px-1.5 py-0.5 text-[length:var(--text-eyebrow)] leading-none ${
                     on ? "bg-background/15 text-background" : "bg-background text-foreground"
                   }`}
                 >

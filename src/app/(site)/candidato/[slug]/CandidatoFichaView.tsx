@@ -320,7 +320,7 @@ export async function CandidatoFichaView({
               </div>
               {ficha.foto_credito && (
                 <details className="group relative mt-2 w-[96px] sm:hidden" data-pf-photo-credit-collapsible="">
-                  <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-[8px] border border-border px-2 text-[10px] font-bold leading-tight text-muted-foreground outline-none marker:content-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center rounded-[8px] border border-border px-2 text-[length:var(--text-eyebrow)] font-bold leading-tight text-muted-foreground outline-none marker:content-none focus-visible:ring-2 focus-visible:ring-ring">
                     Foto e licença
                   </summary>
                   <div className="absolute left-0 top-full z-10 mt-2 w-[min(78vw,280px)] rounded-[8px] bg-card p-2 shadow-lg">
@@ -337,7 +337,7 @@ export async function CandidatoFichaView({
               <span
                 data-pf-hero-party={partyPublicLabel || undefined}
                 data-pf-hero-role={ficha.cargo_disputado}
-                className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
+                className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground"
               >
                 {partyPublicLabel
                   ? `${partyPublicLabel} · ${cargoDisputadoLabel}`
@@ -355,7 +355,7 @@ export async function CandidatoFichaView({
             <span
               data-pf-hero-role-provenance={cargoProveniencia}
               title={cargoProvenienciaNota}
-              className="mt-1.5 inline-flex w-fit items-center rounded-full border border-border bg-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-secondary-foreground"
+              className="mt-1.5 inline-flex w-fit items-center rounded-full border border-border bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-secondary-foreground"
             >
               {cargoProvenienciaLabel}
             </span>

@@ -26,7 +26,7 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
 
   return (
     <div className="rounded-[12px] border border-border/50 px-4 py-3 sm:rounded-[16px] sm:px-5 sm:py-4">
-      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+      <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         Padrão de voto ({votosValidos.length} votações)
       </p>
       {/* Dot grid */}
@@ -50,7 +50,7 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
           .map(([key, val]) => (
             <div key={key} className="flex items-center gap-1.5" title={formatVoteNote(key) || undefined}>
               <div className={`size-2.5 rounded-[2px] ${val.bg}`} />
-              <span className="text-[10px] font-semibold text-muted-foreground">
+              <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                 {val.label} ({counts[key]})
               </span>
             </div>
@@ -58,7 +58,7 @@ export function VotingDots({ votos }: { votos: VotoCandidato[] }) {
         {votosValidos.some((v) => v.contradicao) && (
           <div className="flex items-center gap-1.5">
             <div className="size-2.5 rounded-[2px] ring-2 ring-amber-400 ring-offset-1" />
-            <span className="text-[10px] font-semibold text-amber-700">
+            <span className="text-[length:var(--text-eyebrow)] font-semibold text-amber-700">
               {fixedCopy.contradictions} ({votosValidos.filter((v) => v.contradicao).length})
             </span>
           </div>

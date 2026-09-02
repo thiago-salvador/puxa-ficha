@@ -66,16 +66,16 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
               data-pf-state-ranking-indicator={r.indicador}
               className="min-w-0 rounded-[14px] border border-border/50 bg-card px-4 py-4"
             >
-              <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+              <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                 {cfg.label}
               </p>
               <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
-                <span className="block font-heading text-[22px] leading-[0.95] tracking-tight text-foreground sm:text-[28px]">
+                <span className="block font-heading text-[length:var(--text-heading-sm)] leading-[0.95] tracking-tight text-foreground sm:text-[length:var(--text-heading)]">
                   {cfg.format(r.valor)}
                 </span>
                 <QualityBadge qualidade={r.qualidade} />
               </div>
-              <p className="mt-1 text-[10px] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
+              <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
                 {r.label} · ano {r.ano}
               </p>
               {r.fonte ? (

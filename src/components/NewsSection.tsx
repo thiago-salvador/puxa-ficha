@@ -47,7 +47,7 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
           <span className="text-[15px] font-semibold text-foreground">
             Na mídia
           </span>
-          <span className="text-[12px] font-medium text-muted-foreground">
+          <span className="text-[length:var(--text-caption)] font-medium text-muted-foreground">
             {sorted.length} notícia{sorted.length !== 1 ? "s" : ""} recente{sorted.length !== 1 ? "s" : ""}
             {contextoCount > 0
               ? `, ${contextoCount} sem citar o nome do candidato`
@@ -61,7 +61,7 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
           const content = (
             <>
               <div className="min-w-0 flex-1">
-                <p className="text-[13px] font-medium leading-snug text-foreground group-hover:underline">
+                <p className="text-[length:var(--text-body-sm)] font-medium leading-snug text-foreground group-hover:underline">
                   {n.titulo}
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
@@ -69,17 +69,17 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
                     <span
                       data-pf-news-contexto-pleito=""
                       title="O título desta matéria não cita o candidato. É cobertura do pleito, não notícia sobre ele."
-                      className="rounded-full border border-border px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.06em] text-muted-foreground"
+                      className="rounded-full border border-border px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground"
                     >
                       Contexto do pleito
                     </span>
                   )}
                   {n.fonte && (
-                    <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">
+                    <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground">
                       {n.fonte}
                     </span>
                   )}
-                  <span className="text-[11px] font-medium tabular-nums text-muted-foreground">
+                  <span className="text-[length:var(--text-eyebrow)] font-medium tabular-nums text-muted-foreground">
                     {formatDate(n.data_publicacao)}
                   </span>
                 </div>
@@ -117,7 +117,7 @@ export function NewsSection({ noticias }: { noticias: NoticiaCandidato[] }) {
         {hasMore && !expanded && (
           <button
             onClick={() => setExpanded(true)}
-            className="flex w-full items-center justify-center gap-1.5 rounded-md border border-border px-4 py-2.5 text-[12px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            className="flex w-full items-center justify-center gap-1.5 rounded-md border border-border px-4 py-2.5 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
           >
             Ver mais ({sorted.length - VISIBLE_LIMIT})
             <ChevronDown className="size-3.5" />

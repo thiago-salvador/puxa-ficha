@@ -473,7 +473,7 @@ function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
           Total declarado ao TSE. Esta declaração não traz detalhamento de bens.
         </p>
       </div>
-      <span className="shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-right sm:text-[28px]">
+      <span className="shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-right sm:text-[length:var(--text-heading)]">
         {formatBRL(patrimonio.valor_total)}
       </span>
     </div>
@@ -548,7 +548,7 @@ function FinanciamentoEleicoesSemDado({
 
   return (
     <div data-pf-financiamento-eleicoes-sem-dado={eleicoes.length}>
-      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         Situação dos pleitos sem valor positivo publicado
       </p>
       <div className="mt-2 space-y-3">
@@ -572,7 +572,7 @@ function PatrimonioEleicoesSemDado({
 
   return (
     <div data-pf-patrimonio-eleicoes-sem-dado={semDadoPublicado.length}>
-      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         Eleições sem dado publicado
       </p>
       <div className="mt-2 space-y-3">
@@ -708,7 +708,7 @@ export function MoneyTabSection({
                             className="flex items-baseline justify-between rounded-[8px] bg-muted px-3 py-2"
                           >
                             <div>
-                              <span className="text-[10px] font-bold uppercase tracking-[0.05em] text-muted-foreground">
+                              <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.05em] text-muted-foreground">
                                 {sanitizePublicText(bem.tipo) || "Tipo não informado"}
                               </span>
                               <p className="text-[length:var(--text-body-sm)] font-medium text-foreground">
@@ -798,7 +798,7 @@ export function MoneyTabSection({
                       <p className="text-[length:var(--text-eyebrow)] font-bold tracking-[0.04em] text-foreground">
                         {formatFinanciamentoPleitoPublicLabelForRow(item, historico)}
                       </p>
-                      <p className="mt-1 text-[11px] font-medium leading-snug text-muted-foreground">
+                      <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
                         {financiamentoPleitoSubtitulo()}
                       </p>
                     </div>
@@ -808,7 +808,7 @@ export function MoneyTabSection({
                         Number(item.total_arrecadado) === 0 &&
                         (item.maiores_doadores ?? []).length === 0
                           ? "max-w-[320px] text-[length:var(--text-body)] leading-snug"
-                          : "text-[24px] tracking-tight sm:text-[28px]"
+                          : "text-[24px] tracking-tight sm:text-[length:var(--text-heading)]"
                       }`}
                     >
                       {Number(item.total_arrecadado) === 0 &&
@@ -844,7 +844,7 @@ export function MoneyTabSection({
                   })()}
                   {(item.maiores_doadores ?? []).length > 0 && (
                     <div className="mt-3 border-t border-border/50 pt-3">
-                      <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                      <p className="mb-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                         Maiores doadores
                       </p>
                       <div className="space-y-1.5">
@@ -952,7 +952,7 @@ export function MoneyTabSection({
                   )}
                   {(gasto.gastos_destaque ?? []).length > 0 && (
                     <div className="mt-3 space-y-2 border-t border-border/50 pt-3">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                      <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                         Destaques
                       </p>
                       {(gasto.gastos_destaque ?? []).map((item, index) => (
@@ -1255,7 +1255,7 @@ const EXECUTIVE_RELATION_LABELS: Record<LegislacaoMandatoExecutivo["tipo_relacao
 
 function LegislationSubtabCount({ count }: { count: number }) {
   return (
-    <span className="ml-1 shrink-0 rounded-full bg-background/80 px-1.5 py-0.5 text-[10px] font-bold tabular-nums text-muted-foreground">
+    <span className="ml-1 shrink-0 rounded-full bg-background/80 px-1.5 py-0.5 text-[length:var(--text-eyebrow)] font-bold tabular-nums text-muted-foreground">
       {count}
     </span>
   )
@@ -1425,7 +1425,7 @@ function ExecutiveLegislationList({
                 {featured && <MetaBadge tone="neutral">Relevância pública</MetaBadge>}
                 <MetaBadge tone="muted">{tipoRelacaoLabel}</MetaBadge>
                 {lei.data_norma && (
-                  <span className="text-[10px] font-semibold text-muted-foreground">
+                  <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                     {formatDate(lei.data_norma)}
                   </span>
                 )}
@@ -1648,7 +1648,7 @@ function ProjetoLeiList({
                           </MetaBadge>
                         )}
                         {projeto.tema && (
-                          <span className="text-[10px] font-semibold text-muted-foreground">
+                          <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                             {formatTemaLabel(projeto.tema)}
                           </span>
                         )}
@@ -1734,7 +1734,7 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                     </MetaBadge>
                   )}
                   {voto.votacao?.casa && (
-                    <span className="text-[10px] font-semibold text-muted-foreground">
+                    <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                       {voto.votacao.casa} | {voto.votacao.data_votacao ? formatDate(voto.votacao.data_votacao) : ""}
                     </span>
                   )}
@@ -1770,7 +1770,7 @@ function VotedLegislationList({ items }: { items: VotoCandidato[] }) {
                 {notaDoVoto && (
                   <span
                     data-pf-vote-note
-                    className="text-right text-[10px] font-semibold normal-case leading-snug text-muted-foreground"
+                    className="text-right text-[length:var(--text-eyebrow)] font-semibold normal-case leading-snug text-muted-foreground"
                   >
                     {notaDoVoto}
                   </span>

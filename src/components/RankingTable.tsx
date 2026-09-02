@@ -123,7 +123,7 @@ export function RankingTable({
                 data-pf-ranking-value={entry.metricValue ?? ""}
                 className="border-b border-border/30"
               >
-                <td className="py-3 pr-3 font-heading text-[22px] uppercase leading-none text-muted-foreground">
+                <td className="py-3 pr-3 font-heading text-[length:var(--text-heading-sm)] uppercase leading-none text-muted-foreground">
                   {String(index + 1).padStart(2, "0")}
                 </td>
                 <td className="py-3 pr-3">

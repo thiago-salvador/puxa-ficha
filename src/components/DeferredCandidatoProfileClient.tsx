@@ -81,15 +81,15 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
           <span
             data-pf-overview-processos={String(processosDisplay.value)}
             data-pf-overview-raw={overview.processos}
-            className="text-[24px] font-semibold leading-none text-foreground sm:text-[28px]"
+            className="text-[24px] font-semibold leading-none text-foreground sm:text-[length:var(--text-heading)]"
           >
             {processosDisplay.value}
           </span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[11px]">
+          <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
             Processos
           </span>
           {processosDisplay.sub && (
-            <span className="text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
+            <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
               {processosDisplay.sub}
             </span>
           )}
@@ -98,11 +98,11 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
           <span
             data-pf-overview-patrimonio={formatOverviewPatrimonio(overview.patrimonio)}
             data-pf-overview-raw={overview.patrimonio ?? undefined}
-            className="text-[24px] font-semibold leading-none text-foreground sm:text-[28px]"
+            className="text-[24px] font-semibold leading-none text-foreground sm:text-[length:var(--text-heading)]"
           >
             {formatOverviewPatrimonio(overview.patrimonio)}
           </span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[11px]">
+          <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
             Patrimônio
           </span>
         </div>
@@ -110,15 +110,15 @@ function CandidatoProfileSkeleton({ overview }: { overview: DeferredProfileOverv
           <span
             data-pf-overview-mudancas={overview.mudancas ?? "—"}
             data-pf-overview-raw={overview.mudancas ?? undefined}
-            className="text-[24px] font-semibold leading-none text-foreground sm:text-[28px]"
+            className="text-[24px] font-semibold leading-none text-foreground sm:text-[length:var(--text-heading)]"
           >
             {overview.mudancas ?? "—"}
           </span>
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[11px]">
+          <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
             Trocas de partido
           </span>
           {overview.mudancas === null && (
-            <span className="text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
+            <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
               não verificado
             </span>
           )}

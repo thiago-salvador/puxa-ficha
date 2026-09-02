@@ -23,7 +23,7 @@ export function SortOrderMenu({ value, onChange }: SortOrderMenuProps) {
     <Menu.Root modal={false}>
       <Menu.Trigger
         type="button"
-        className="inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:min-h-10 md:p-0"
+        className="inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:min-h-10 md:p-0"
         aria-label={`Ordenar candidatos: ${current.label}`}
       >
         <span className="flex h-10 items-center gap-2 rounded-full border border-foreground bg-transparent px-4">
@@ -42,7 +42,7 @@ export function SortOrderMenu({ value, onChange }: SortOrderMenuProps) {
                 <Menu.RadioItem
                   key={opt.value}
                   value={opt.value}
-                  className="flex cursor-pointer items-center justify-between gap-8 px-4 py-2.5 text-[13px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors data-[highlighted]:bg-muted focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="flex cursor-pointer items-center justify-between gap-8 px-4 py-2.5 text-[length:var(--text-body-sm)] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors data-[highlighted]:bg-muted focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   {opt.label}
                   <Menu.RadioItemIndicator className="text-foreground">

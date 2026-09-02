@@ -104,7 +104,7 @@ export default async function PreviewCandidatoPage({
               <span
                 data-pf-hero-party={formatPartyPublicLabel(ficha.partido_sigla) || undefined}
                 data-pf-hero-role={ficha.cargo_disputado}
-                className="text-[10px] font-bold uppercase tracking-[0.12em] text-foreground sm:text-[length:var(--text-eyebrow)]"
+                className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground"
               >
                 {(() => {
                   const partyLabel = formatPartyPublicLabel(ficha.partido_sigla)

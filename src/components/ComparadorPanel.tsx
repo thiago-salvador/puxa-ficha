@@ -295,10 +295,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                   />
                 )}
                 <div aria-hidden="true" className="min-w-0 flex-1">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-foreground">
+                  <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                     {formatPartyPublicLabel(candidato.partido_sigla)}
                   </span>
-                  <p className="truncate font-heading text-[16px] uppercase leading-tight text-foreground">
+                  <p className="truncate font-heading text-[length:var(--text-body-lg)] uppercase leading-tight text-foreground">
                     {candidato.nome_urna}
                   </p>
                 </div>
@@ -428,7 +428,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                               initialsClassName="text-xs"
                             />
                           )}
-                          <span className="whitespace-nowrap font-heading text-[16px] uppercase leading-tight text-foreground">
+                          <span className="whitespace-nowrap font-heading text-[length:var(--text-body-lg)] uppercase leading-tight text-foreground">
                             {candidato.nome_urna}
                           </span>
                         </button>
@@ -457,7 +457,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           <span className="block font-medium text-muted-foreground">sem declaração</span>
                         )}
                         <span
-                          className="mt-0.5 block text-[11px] font-semibold text-muted-foreground"
+                          className="mt-0.5 block text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground"
                         >
                           <span className="sr-only">Evolução patrimonial: </span>
                           {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
@@ -699,7 +699,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                             {display.value}
                           </span>
                           {display.sub && (
-                            <span className="mt-0.5 block text-[10px] font-semibold text-muted-foreground">
+                            <span className="mt-0.5 block text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                               {display.sub}
                             </span>
                           )}
@@ -793,7 +793,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
 
 function MaiorBadge() {
   return (
-    <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[11px] font-bold uppercase text-muted-foreground">
+    <span className="ml-1.5 inline-block rounded-full bg-foreground/10 px-1.5 py-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase text-muted-foreground">
       maior
     </span>
   )
@@ -827,7 +827,7 @@ function CompRow({
           </span>
         </div>
         {caption && (
-          <span className="mt-1 block max-w-[11rem] text-[10px] font-medium normal-case tracking-normal text-muted-foreground">
+          <span className="mt-1 block max-w-[11rem] text-[length:var(--text-eyebrow)] font-medium normal-case tracking-normal text-muted-foreground">
             {caption}
           </span>
         )}

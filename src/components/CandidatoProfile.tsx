@@ -179,16 +179,16 @@ const StatCard = memo(function StatCard({
         <span
           {...(dataValueAttr ? { [dataValueAttr]: String(value) } : {})}
           data-pf-overview-raw={dataRawValue ?? undefined}
-          className="font-heading text-[24px] leading-none tracking-tight text-foreground sm:text-[28px] lg:text-[32px]"
+          className="font-heading text-[24px] leading-none tracking-tight text-foreground sm:text-[length:var(--text-heading)] lg:text-[32px]"
         >
           {value}
         </span>
       </div>
-      <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:text-[11px]">
+      <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         {label}
       </span>
       {(sub || trend) && (
-        <span className={`text-[10px] font-semibold sm:text-[11px] ${trend?.positive === false ? "text-red-600" : trend?.positive ? "text-green-700" : "text-muted-foreground"}`}>
+        <span className={`text-[length:var(--text-eyebrow)] font-semibold ${trend?.positive === false ? "text-red-600" : trend?.positive ? "text-green-700" : "text-muted-foreground"}`}>
           {trend ? `${trend.positive === false ? "↓ " : trend.positive ? "↑ " : ""}${trend.value}` : sub}
         </span>
       )}
@@ -972,7 +972,7 @@ export function CandidatoProfile({
                               {(() => {
                                 const temporal = processoTemporalLabel(p)
                                 return temporal ? (
-                                <span className="text-[10px] font-semibold text-muted-foreground">
+                                <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                                   {temporal.label} {formatDate(temporal.date)}
                                 </span>
                                 ) : null
@@ -1070,7 +1070,7 @@ export function CandidatoProfile({
                               </MetaBadge>
                             )}
                             {v.votacao?.casa && (
-                              <span className="text-[10px] font-semibold text-muted-foreground">
+                              <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                                 {v.votacao.casa} | {v.votacao.data_votacao ? formatDate(v.votacao.data_votacao) : ""}
                               </span>
                             )}

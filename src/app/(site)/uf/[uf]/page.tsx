@@ -204,40 +204,40 @@ export default async function UfHubPage({
           <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
             {pop?.valor != null && (
               <div>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {STATE_INDICATOR_CONFIG.populacao_estimada.format(pop.valor)}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   população (ref. {pop.ano})
                 </p>
               </div>
             )}
             {pib?.valor != null && (
               <div>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {STATE_INDICATOR_CONFIG.pib_total.format(pib.valor)}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   PIB (ref. {pib.ano})
                 </p>
               </div>
             )}
             {totalCandidatos > 0 && (
               <div>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {totalCandidatos}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   candidatos mapeados
                 </p>
               </div>
             )}
             {totalCandidatos === 0 && pop == null && pib == null && totalPatrimonio > 0 && (
               <div>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {formatCompact(totalPatrimonio)}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   patrimônio declarado
                 </p>
               </div>
@@ -248,10 +248,10 @@ export default async function UfHubPage({
               totalPatrimonio === 0 &&
               totalProcessos > 0 && (
                 <div>
-                  <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                     {totalProcessos}
                   </p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                  <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                     processos
                   </p>
                 </div>
@@ -263,10 +263,10 @@ export default async function UfHubPage({
               totalProcessos === 0 &&
               totalPartidos > 0 && (
                 <div>
-                  <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                  <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                     {totalPartidos}
                   </p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                  <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                     partidos
                   </p>
                 </div>

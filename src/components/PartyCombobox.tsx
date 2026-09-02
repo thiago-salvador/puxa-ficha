@@ -23,7 +23,7 @@ export function PartyCombobox({
       <div className="relative min-w-[190px]">
         <Combobox.Input
           placeholder="Filtrar partido..."
-          className="h-11 w-full rounded-full border border-foreground bg-transparent px-4 pr-16 text-base font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors placeholder:text-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-10 md:text-[12px]"
+          className="h-11 w-full rounded-full border border-foreground bg-transparent px-4 pr-16 text-base font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors placeholder:text-foreground/60 focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-10 md:text-[length:var(--text-caption)]"
           aria-label="Filtrar por partido"
         />
         <div className="pointer-events-none absolute right-10 top-1/2 -translate-y-1/2 text-foreground">
@@ -44,7 +44,7 @@ export function PartyCombobox({
       <Combobox.Portal>
         <Combobox.Positioner sideOffset={8}>
           <Combobox.Popup className="z-[75] w-[var(--anchor-width)] overflow-hidden rounded-[18px] border border-border bg-background shadow-xl outline-none">
-            <Combobox.Empty className="px-4 py-3 text-[13px] font-medium text-muted-foreground">
+            <Combobox.Empty className="px-4 py-3 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
               Nenhum partido encontrado.
             </Combobox.Empty>
             <Combobox.List className="max-h-72 overflow-y-auto p-2">
@@ -52,7 +52,7 @@ export function PartyCombobox({
                 <Combobox.Item
                   key={option}
                   value={option}
-                  className="flex cursor-pointer items-center justify-between rounded-[12px] px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors data-[highlighted]:bg-muted focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  className="flex cursor-pointer items-center justify-between rounded-[12px] px-3 py-2 text-[length:var(--text-body-sm)] font-semibold uppercase tracking-[0.05em] text-foreground outline-none transition-colors data-[highlighted]:bg-muted focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 >
                   <span>{option}</span>
                   <Combobox.ItemIndicator className="text-foreground">

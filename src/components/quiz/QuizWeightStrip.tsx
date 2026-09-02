@@ -24,7 +24,7 @@ export function QuizWeightStrip({ explanation }: QuizWeightStripProps) {
 
   return (
     <div className="space-y-2" aria-label="Sinais usados neste card">
-      <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Composição do card</p>
+      <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-muted-foreground">Composição do card</p>
       <div className="flex h-2 w-full overflow-hidden rounded-full bg-muted" role="img">
         {segments.map((s) => (
           <div
@@ -35,7 +35,7 @@ export function QuizWeightStrip({ explanation }: QuizWeightStripProps) {
           />
         ))}
       </div>
-      <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-muted-foreground">
+      <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[length:var(--text-eyebrow)] text-muted-foreground">
         {segments.map((s) => (
           <li key={s.key} className="flex items-center gap-1">
             <span className={`inline-block h-2 w-2 rounded-sm ${s.className}`} aria-hidden />

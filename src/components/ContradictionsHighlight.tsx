@@ -35,13 +35,13 @@ export function ContradictionsHighlight({
     <div className="rounded-[12px] border border-border/50 border-l-[3px] border-l-amber-400 bg-card px-5 py-4">
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="text-[13px] font-semibold text-foreground">{fixedCopy.contradictions}</span>
+          <span className="text-[length:var(--text-body-sm)] font-semibold text-foreground">{fixedCopy.contradictions}</span>
           <MetaBadge tone="caution">{total} registros</MetaBadge>
         </div>
         <button
           type="button"
           onClick={() => onNavigateTab("votos")}
-          className="inline-flex items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground"
         >
           Ver todas <ChevronRight className="size-3" />
         </button>
@@ -53,11 +53,11 @@ export function ContradictionsHighlight({
           return (
             <div key={voto.id} className="flex items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
-                <p className="text-[13px] font-semibold leading-snug text-foreground">
+                <p className="text-[length:var(--text-body-sm)] font-semibold leading-snug text-foreground">
                   {vt?.titulo ?? "Votação"}
                 </p>
                 {voto.contradicao_descricao && (
-                  <p className="mt-0.5 line-clamp-1 text-[12px] text-muted-foreground">
+                  <p className="mt-0.5 line-clamp-1 text-[length:var(--text-caption)] text-muted-foreground">
                     {voto.contradicao_descricao}
                   </p>
                 )}
@@ -68,7 +68,7 @@ export function ContradictionsHighlight({
                     </MetaBadge>
                   )}
                   {(vt?.casa || vt?.data_votacao) && (
-                    <span className="text-[10px] font-semibold text-muted-foreground">
+                    <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                       {[vt?.casa, vt?.data_votacao ? formatDate(vt.data_votacao) : null].filter(Boolean).join(" · ")}
                     </span>
                   )}
@@ -76,14 +76,14 @@ export function ContradictionsHighlight({
               </div>
               <div className="mt-0.5 flex max-w-[190px] shrink-0 flex-col items-end gap-1">
                 <span
-                  className={`rounded-full px-2.5 py-1 text-[11px] font-bold uppercase ${voteBadgeClass(voto.voto)}`}
+                  className={`rounded-full px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase ${voteBadgeClass(voto.voto)}`}
                 >
                   {formatVoteBadgeLabel(voto.voto)}
                 </span>
                 {notaDoVoto && (
                   <span
                     data-pf-vote-note
-                    className="text-right text-[10px] font-semibold normal-case leading-snug text-muted-foreground"
+                    className="text-right text-[length:var(--text-eyebrow)] font-semibold normal-case leading-snug text-muted-foreground"
                   >
                     {notaDoVoto}
                   </span>
@@ -96,7 +96,7 @@ export function ContradictionsHighlight({
           <button
             type="button"
             onClick={() => onNavigateTab("votos")}
-            className="text-[11px] font-bold text-muted-foreground transition-colors hover:text-foreground"
+            className="text-[length:var(--text-eyebrow)] font-bold text-muted-foreground transition-colors hover:text-foreground"
           >
             +{rest} mais
           </button>

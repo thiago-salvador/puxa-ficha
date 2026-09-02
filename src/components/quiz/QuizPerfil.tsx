@@ -29,10 +29,10 @@ function MiniEixosPlot({ eco, soc }: { eco: number; soc: number }) {
       aria-hidden
     >
       <rect x={pad} y={pad} width={plotW} height={plotH} fill="none" stroke="currentColor" strokeWidth={1} rx={4} />
-      <text x={pad} y={h - 4} className="fill-current text-[10px] font-medium">
+      <text x={pad} y={h - 4} className="fill-current text-[length:var(--text-eyebrow)] font-medium">
         Eco
       </text>
-      <text x={4} y={pad + 8} className="fill-current text-[10px] font-medium">
+      <text x={4} y={pad + 8} className="fill-current text-[length:var(--text-eyebrow)] font-medium">
         Soc
       </text>
       <circle cx={x} cy={y} r={6} className="fill-foreground" />

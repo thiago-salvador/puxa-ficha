@@ -55,7 +55,7 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
         const pct = Math.max((d.valor / max) * 100, 8)
         return (
           <div key={d.id ?? `${d.ano}-${d.valor}-${index}`} className="flex min-w-[64px] flex-1 flex-col items-center gap-1.5">
-            <span className="whitespace-nowrap text-[10px] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
+            <span className="whitespace-nowrap text-[length:var(--text-eyebrow)] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
               {formatCompact(d.valor)}
             </span>
             <div className="flex w-full items-end overflow-hidden rounded-t-[4px] bg-secondary" style={{ height: "120px" }}>
@@ -64,7 +64,7 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
                 style={{ height: `${pct}%` }}
               />
             </div>
-            <span className="whitespace-nowrap text-[10px] font-bold tabular-nums text-muted-foreground sm:text-[length:var(--text-caption)]">
+            <span className="whitespace-nowrap text-[length:var(--text-eyebrow)] font-bold tabular-nums text-muted-foreground sm:text-[length:var(--text-caption)]">
               {d.ano}
             </span>
           </div>
@@ -98,7 +98,7 @@ export function StackedBar({ segments }: { segments: { label: string; value: num
         {segments.filter(s => s.value > 0).map((s) => (
           <div key={s.label} className="flex items-center gap-1.5">
             <div className="size-2 rounded-full" style={{ backgroundColor: s.color }} />
-            <span className="text-[10px] font-semibold text-foreground sm:text-[length:var(--text-caption)]">
+            <span className="text-[length:var(--text-eyebrow)] font-semibold text-foreground sm:text-[length:var(--text-caption)]">
               {s.label} ({Math.round((s.value / total) * 100)}%)
             </span>
           </div>

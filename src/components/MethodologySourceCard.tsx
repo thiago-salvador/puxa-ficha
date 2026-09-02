@@ -83,7 +83,7 @@ export function MethodologySourceCard({ source }: MethodologySourceCardProps) {
         {source.dataTypes.map((dt) => (
           <li
             key={dt}
-            className="rounded-md border border-border/50 bg-muted/30 px-2 py-0.5 text-[11px] font-medium text-foreground"
+            className="rounded-md border border-border/50 bg-muted/30 px-2 py-0.5 text-[length:var(--text-eyebrow)] font-medium text-foreground"
           >
             {dt}
           </li>
@@ -91,7 +91,7 @@ export function MethodologySourceCard({ source }: MethodologySourceCardProps) {
       </ul>
 
       {source.curationNote && (
-        <p className="mt-2.5 text-[11px] font-medium italic leading-snug text-muted-foreground">
+        <p className="mt-2.5 text-[length:var(--text-eyebrow)] font-medium italic leading-snug text-muted-foreground">
           {source.curationNote}
         </p>
       )}

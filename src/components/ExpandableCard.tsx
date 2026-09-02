@@ -42,7 +42,7 @@ export function ExpandableCard({
           )}
         </div>
         {valor && (
-          <span className="ml-3 shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-[28px]">
+          <span className="ml-3 shrink-0 text-[24px] font-bold tabular-nums tracking-tight text-foreground sm:text-[length:var(--text-heading)]">
             {valor}
           </span>
         )}

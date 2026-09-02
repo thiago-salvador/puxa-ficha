@@ -41,7 +41,7 @@ test("indicadores estaduais: valor e ano ficam numa linha e a sparkline só entr
   assert.equal(cards, 2)
   assert.match(html, /R\$ 431 bi/)
   assert.match(html, /<span class="block whitespace-nowrap font-heading/)
-  assert.match(html, /<span class="mt-1 block whitespace-nowrap text-\[10px\]/)
+  assert.match(html, /<span class="mt-1 block whitespace-nowrap text-\[length:var\(--text-eyebrow\)\]/)
   assert.match(html, /<div class="hidden sm:block"><svg/)
   assert.doesNotMatch(html, /px-5 py-5"/, "o card mobile precisa do padding menor (px-4) para o valor caber")
 })
@@ -62,7 +62,7 @@ test("teaser de processos: pílula e rótulo de situação podem quebrar em duas
   const end = source.indexOf("\nfunction ", start + 1)
   const teaser = source.slice(start, end)
   assert.match(teaser, /<div className="flex flex-wrap items-center gap-x-2 gap-y-1">/)
-  assert.match(teaser, /<span className="min-w-0 text-\[10px\] font-semibold text-muted-foreground">/)
+  assert.match(teaser, /<span className="min-w-0 text-\[length:var\(--text-eyebrow\)\] font-semibold text-muted-foreground">/)
   assert.doesNotMatch(teaser, /<div className="flex items-center gap-2">/)
 })
 
@@ -73,12 +73,12 @@ test("barra de abas desktop sinaliza rolagem e rola só na horizontal até a aba
   assert.match(source, /from-background to-transparent/)
   assert.match(source, /list\.scrollTo\(\{ left: /)
   assert.doesNotMatch(source, /scrollIntoView/, "scrollIntoView poderia rolar a página na vertical")
-  assert.match(source, /px-1 py-3 text-\[10px\]/, "as abas mobile usam px-1 para PROGRAMA caber a 360px")
+  assert.match(source, /px-1 py-3 text-\[length:var\(--text-eyebrow\)\]/, "as abas mobile usam px-1 para PROGRAMA caber a 360px")
 })
 
 test("links de doadores têm 24px de altura de toque sem perder o truncate", () => {
   const overview = readFileSync("src/components/ProfileOverview.tsx", "utf8")
   const sections = readFileSync("src/components/CandidatoProfileSections.tsx", "utf8")
-  assert.match(overview, /className="block min-w-0 truncate py-0\.5 text-\[12px\] font-medium leading-5/)
+  assert.match(overview, /className="block min-w-0 truncate py-0\.5 text-\[length:var\(--text-caption\)\] font-medium leading-5/)
   assert.match(sections, /className="py-0\.5 font-medium leading-5 text-foreground underline-offset-2/)
 })

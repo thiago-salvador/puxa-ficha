@@ -117,13 +117,13 @@ export default async function DoadoresPage({
       </section>
 
       <section className="mx-auto max-w-3xl px-5 py-10 md:px-8 md:py-12" aria-label="Busca por doadores">
-        <p className="mb-6 rounded-lg border border-border bg-secondary/40 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground">
+        <p className="mb-6 rounded-lg border border-border bg-secondary/40 px-4 py-3 text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
           {DOADOR_REVERSE_DISCLAIMER}
         </p>
 
         <form action="/doadores" method="get" className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end">
           <div className="min-w-0 flex-1">
-            <label htmlFor="doador-q" className="mb-1.5 block text-[12px] font-bold uppercase tracking-wide text-muted-foreground">
+            <label htmlFor="doador-q" className="mb-1.5 block text-[length:var(--text-caption)] font-bold uppercase tracking-wide text-muted-foreground">
               Nome do doador (como na declaração)
             </label>
             <input
@@ -138,21 +138,21 @@ export default async function DoadoresPage({
           </div>
           <button
             type="submit"
-            className="h-11 shrink-0 rounded-md bg-foreground px-5 text-[13px] font-bold uppercase tracking-wide text-background transition-opacity hover:opacity-90"
+            className="h-11 shrink-0 rounded-md bg-foreground px-5 text-[length:var(--text-body-sm)] font-bold uppercase tracking-wide text-background transition-opacity hover:opacity-90"
           >
             Buscar
           </button>
         </form>
 
         {aguardeSegundos !== null && (
-          <p className="mb-6 text-[14px] text-destructive" role="alert">
+          <p className="mb-6 text-[length:var(--text-body)] text-destructive" role="alert">
             Muitas buscas seguidas deste endereço. Aguarde {aguardeSegundos}{" "}
             {aguardeSegundos === 1 ? "segundo" : "segundos"} e tente de novo.
           </p>
         )}
 
         {result.error && (
-          <p className="mb-6 text-[14px] text-destructive" role="alert">
+          <p className="mb-6 text-[length:var(--text-body)] text-destructive" role="alert">
             {result.error}
           </p>
         )}
@@ -169,7 +169,7 @@ export default async function DoadoresPage({
               Resultados para busca semelhante a &quot;{result.displayQuery}&quot;
             </h2>
             {result.truncado && (
-              <p className="mb-4 text-[13px] text-muted-foreground">
+              <p className="mb-4 text-[length:var(--text-body-sm)] text-muted-foreground">
                 Mostrando as {DOADOR_REVERSE_PAGE_SIZE} primeiras campanhas. Refine o termo para
                 ver o resto.
               </p>
@@ -189,11 +189,11 @@ export default async function DoadoresPage({
                       <div>
                         <Link
                           href={`/candidato/${row.slug}`}
-                          className="text-[16px] font-semibold text-foreground underline-offset-4 hover:underline"
+                          className="text-[length:var(--text-body-lg)] font-semibold text-foreground underline-offset-4 hover:underline"
                         >
                           {row.nome_urna}
                         </Link>
-                        <p className="mt-1 text-[13px] text-muted-foreground">
+                        <p className="mt-1 text-[length:var(--text-body-sm)] text-muted-foreground">
                           {[
                             formatPartyPublicLabel(row.partido_sigla) || null,
                             row.cargo_disputado,
@@ -202,18 +202,18 @@ export default async function DoadoresPage({
                             .filter(Boolean)
                             .join(" · ")}
                         </p>
-                        <p className="mt-2 text-[13px] text-muted-foreground">
+                        <p className="mt-2 text-[length:var(--text-body-sm)] text-muted-foreground">
                           Doador na declaração:{" "}
                           <span className="font-medium text-foreground">{row.doador_nome_exibicao}</span>
                         </p>
                       </div>
                       <div className="shrink-0 text-right">
-                        <p className="text-[12px] font-bold uppercase tracking-wide text-muted-foreground">
+                        <p className="text-[length:var(--text-caption)] font-bold uppercase tracking-wide text-muted-foreground">
                           {row.ano_eleicao}
                         </p>
                         <p className="text-[18px] font-bold tabular-nums text-foreground">{formatBRL(row.valor)}</p>
                         {row.tipo ? (
-                          <p className="text-[11px] uppercase tracking-wide text-muted-foreground">{row.tipo}</p>
+                          <p className="text-[length:var(--text-eyebrow)] uppercase tracking-wide text-muted-foreground">{row.tipo}</p>
                         ) : null}
                       </div>
                     </div>

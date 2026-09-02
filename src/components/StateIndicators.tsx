@@ -74,7 +74,7 @@ function TrendArrow({
 
   return (
     <span
-      className={`text-[10px] font-bold sm:text-[length:var(--text-caption)] ${
+      className={`text-[length:var(--text-eyebrow)] font-bold sm:text-[length:var(--text-caption)] ${
         isPositive ? "text-green-700" : "text-red-700"
       }`}
     >
@@ -143,7 +143,7 @@ export function StateIndicators({
             data-pf-state-indicator-card
             className="rounded-[16px] border border-border/50 bg-card px-4 py-5 sm:px-5"
           >
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+            <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
               {config.label}
             </p>
             <div className="mt-2 flex items-end justify-between gap-2">
@@ -151,7 +151,7 @@ export function StateIndicators({
                 <span className="block whitespace-nowrap font-heading text-[24px] leading-[0.95] tracking-tight text-foreground sm:text-[30px]">
                   {config.format(latest.valor!)}
                 </span>
-                <span className="mt-1 block whitespace-nowrap text-[10px] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
+                <span className="mt-1 block whitespace-nowrap text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
                   {latest.ano}
                 </span>
               </div>

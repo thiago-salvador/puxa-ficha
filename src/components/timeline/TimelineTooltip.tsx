@@ -47,7 +47,7 @@ export function TimelineTooltipPanel({
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className="inline-flex items-center rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
+            className="inline-flex items-center rounded-full border px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em]"
             style={{
               backgroundColor: theme.softFill,
               borderColor: theme.softStroke,
@@ -79,37 +79,37 @@ export function TimelineTooltipPanel({
       <dl className="mt-4 grid gap-2 text-[length:var(--text-caption)] font-semibold text-muted-foreground sm:grid-cols-2">
         {event.date && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Data</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Data</dt>
             <dd className="mt-1 text-foreground">{formatDate(event.date)}</dd>
           </div>
         )}
         {!event.date && event.date_unknown && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Data</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Data</dt>
             <dd className="mt-1 text-foreground">Desconhecida ou aproximada</dd>
           </div>
         )}
         {event.value_formatted && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Valor</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Valor</dt>
             <dd className="mt-1 text-foreground">{event.value_formatted}</dd>
           </div>
         )}
         {event.vote && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Voto</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Voto</dt>
             <dd className="mt-1 text-foreground">{voteAbbrev(event.vote)}</dd>
           </div>
         )}
         {event.severity && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Gravidade</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Gravidade</dt>
             <dd className="mt-1 text-foreground">{formatGravityLabel(event.severity)}</dd>
           </div>
         )}
         {event.attention_gravidade && (
           <div className="rounded-2xl border border-border/60 bg-background px-3 py-2">
-            <dt className="shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">Gravidade</dt>
+            <dt className="shrink-0 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Gravidade</dt>
             <dd className="mt-1 text-foreground">{formatGravityLabel(event.attention_gravidade)}</dd>
           </div>
         )}

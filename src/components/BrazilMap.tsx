@@ -258,7 +258,7 @@ export function BrazilMap({
             }}
           >
             <div className="whitespace-nowrap rounded-lg bg-foreground px-4 py-2 shadow-lg">
-              <span className="block text-[13px] font-bold text-background">
+              <span className="block text-[length:var(--text-body-sm)] font-bold text-background">
                 {hoveredState.name}
               </span>
             </div>
@@ -287,18 +287,18 @@ export function BrazilMap({
             <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em]">
               XX
             </p>
-            <p className="font-heading text-[28px] uppercase leading-[0.9]">
+            <p className="font-heading text-[length:var(--text-heading)] uppercase leading-[0.9]">
               {LONGEST_STATE_NAME}
             </p>
             {previewTemIndicadores && (
-              <ul className="mt-3 space-y-1 text-[13px] font-medium">
+              <ul className="mt-3 space-y-1 text-[length:var(--text-body-sm)] font-medium">
                 <li>População: 000,0 mil</li>
                 <li>PIB: R$ 0.000 bi</li>
                 <li>Homicídios/100k: 00,0</li>
               </ul>
             )}
             {previewTemCandidatos && (
-              <p className="mt-3 inline-flex rounded-full border border-transparent px-3 py-1 text-[11px] font-bold uppercase tracking-wide">
+              <p className="mt-3 inline-flex rounded-full border border-transparent px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-wide">
                 00 candidatos a governador
               </p>
             )}
@@ -309,7 +309,7 @@ export function BrazilMap({
                 <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                   {hoveredState.sigla}
                 </p>
-                <p className="font-heading text-[28px] uppercase leading-[0.9] text-foreground">
+                <p className="font-heading text-[length:var(--text-heading)] uppercase leading-[0.9] text-foreground">
                   {hoveredState.name}
                 </p>
                 {indicadoresPorEstado?.[hoveredState.sigla] &&
@@ -322,7 +322,7 @@ export function BrazilMap({
                     ].filter(Boolean)
                     if (lines.length === 0) return null
                     return (
-                      <ul className="mt-3 space-y-1 text-[13px] font-medium text-muted-foreground">
+                      <ul className="mt-3 space-y-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
                         {lines.map((line) => (
                           <li key={line}>{line}</li>
                         ))}
@@ -331,7 +331,7 @@ export function BrazilMap({
                   })()}
                 {candidatosPorEstado &&
                   (candidatosPorEstado[hoveredState.sigla] ?? 0) > 0 && (
-                    <p className="mt-3 inline-flex rounded-full border border-border/60 bg-background px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-foreground">
+                    <p className="mt-3 inline-flex rounded-full border border-border/60 bg-background px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-wide text-foreground">
                       {candidatosPorEstado[hoveredState.sigla]}{" "}
                       {candidatosPorEstado[hoveredState.sigla] === 1
                         ? "candidato"
@@ -359,7 +359,7 @@ export function BrazilMap({
                     da página, sem nenhum nível intermediário entre os dois. O
                     tamanho e o peso do texto vêm das classes, então a troca de
                     tag não muda nada visualmente. */}
-                <h2 className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+                <h2 className="flex items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.1em] text-muted-foreground">
                   <span
                     className="size-2.5 shrink-0 rounded-sm border border-border/50"
                     style={{
