@@ -1,6 +1,22 @@
 # Status atual
 
-Snapshot mais recente verificado em **12/08/2026**.
+Snapshot mais recente verificado em **02/09/2026**.
+
+## Snapshot 02/09/2026: registro de identidade renovado e validade de 30 dias
+
+- `data/identidade-etapa2-2026.json` venceu em 01/09 e a porta de
+  materialização das etapas 5 e 9 passou a reprovar o `npm test` de qualquer
+  PR. A renovação (#214) seguiu o procedimento do próprio registro no modo
+  padrão: pacotes do catálogo aberto do TSE (`metadata_modified` 18/08) e
+  reclassificação dos 71 perfis congelados. Classes, contagens e universo
+  ficaram idênticos; onze entradas `match_fresco` ganharam uma rede social a
+  mais no TSE.
+- `VALIDADE_EM_DIAS` sobe de 7 para 30. Os sete dias cobriam o fechamento da
+  janela de registro em 15/08, quando a lista mudava todo dia; depois disso o
+  ritmo é de julgamentos e substituições, e o prazo curto derrubava o CI toda
+  semana. Trinta dias a partir de 02/09 vencem em 02/10, dois dias antes do
+  primeiro turno, o que força uma renovação com a lista final na hora certa.
+- Nenhuma migration, nenhuma escrita em produção.
 
 ## Snapshot 12/08/2026: Fase 4 chega ao último readback e para num marcador ausente
 

@@ -14,7 +14,7 @@
     "janela_registro": "convencoes ate 05/08; pedidos de registro ate 15/08 as 19h (Resolucao TSE 23.609/2019, art. 19). As nao-localizacoes EXIGEM recheque apos 15/08 e nunca sao lidas como ausencia de registro."
   },
   "renovacao": {
-    "revalidar_ate": "2026-09-09",
+    "revalidar_ate": "2026-10-02",
     "responsavel": "dono do repositorio, unico autor de migrations e unico operador do banco (Settings/WORKFLOWS.md)",
     "procedimento": [
       "npm run data:identidade-etapa2:fontes",

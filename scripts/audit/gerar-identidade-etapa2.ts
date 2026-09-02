@@ -41,15 +41,21 @@ const ESPERADO_NO_SAFE_MATCH = 71
  *
  * Uma classificacao so e tao boa quanto o snapshot do TSE contra o qual rodou, e
  * o TSE publica atualizacao continuamente: registro entra, e julgado, e alterado.
- * Sete dias e a janela em que a foto ainda descreve a realidade com folga.
  *
  * O valor original de 09/08/2026 era 7 dias (decidido em 09/08, revalidar ate
  * 16/08), escolhido para cobrir o fechamento da janela de pedidos de registro em
- * 15/08. A regra segue a mesma; o que mudou e que as duas datas passaram a ser
- * CALCULADAS na execucao, em vez de escritas fixas: uma renovacao rodada depois
- * de 16/08 nascia vencida no mesmo instante em que era gerada.
+ * 15/08, quando a lista mudava todo dia. As duas datas passaram a ser CALCULADAS
+ * na execucao, em vez de escritas fixas: uma renovacao rodada depois de 16/08
+ * nascia vencida no mesmo instante em que era gerada.
+ *
+ * Em 02/09/2026 a validade subiu para 30 dias. Com a janela fechada, o que muda
+ * no TSE e julgamento e substituicao, ritmo de semanas; e sete dias faziam a
+ * porta de materializacao reprovar o CI toda semana. Trinta dias a partir da
+ * renovacao de 02/09 vencem em 02/10, dois dias antes do primeiro turno, o que
+ * obriga uma renovacao com a lista final de candidatos exatamente quando ela
+ * importa. As renovacoes seguintes acompanham o calendario eleitoral.
  */
-const VALIDADE_EM_DIAS = 7
+const VALIDADE_EM_DIAS = 30
 
 function apenasData(d: Date): string {
   return d.toISOString().slice(0, 10)
