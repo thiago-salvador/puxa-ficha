@@ -777,7 +777,10 @@ export async function arquivarRegistrosParciais(runDir, item, pipelineAnterior =
 }
 
 async function executarBatchSobLease(params) {
-  const { runDir, inventoryPath, workDir, archiveDir, modelsConfig, maxMinutos = 480, pollMs = 2_000, spawnFn = spawn, node24Resolver = resolverNode24, qwenExtraArgs = "", codexExtraArgs = "", itens } = params
+  const { runDir, inventoryPath, workDir, archiveDir, modelsConfig, maxMinutos = 480, maxTokensBatch = null, pollMs = 2_000, spawnFn = spawn, node24Resolver = resolverNode24, qwenExtraArgs = "", codexExtraArgs = "", itens } = params
+  if (maxTokensBatch !== null && !(Number.isFinite(maxTokensBatch) && maxTokensBatch > 0)) {
+    throw new Error("maxTokensBatch deve ser um numero positivo")
+  }
   const node24 = await node24Resolver(runDir)
   await mkdir(path.join(runDir, "logs"), { recursive: true })
   const executionId = params.executionId
@@ -828,6 +831,7 @@ async function executarBatchSobLease(params) {
     parada: null,
     quota: criarControleQuota(),
     historicos: criarContadoresExecucao(),
+    maxTokensBatch,
     metricas: {
       concluidos: 0,
       bloqueados: 0,
@@ -836,6 +840,11 @@ async function executarBatchSobLease(params) {
       errosCota: 0,
       cacheHits: 0,
       chamadas: { generator: 0, judge: 0 },
+      // Custo agregado do batch, somado do `uso` que cada runner devolve
+      // (tokens do Codex, custo em USD do Claude). O teto por invocacao do
+      // judge Claude continua valendo; este e o teto do batch inteiro.
+      tokens: 0,
+      custoUsd: 0,
     },
   }
 
@@ -962,6 +971,9 @@ async function executarBatchSobLease(params) {
     errosCota: contexto.metricas.errosCota,
     concorrenciaFinal: contexto.concorrencia,
     quota: contexto.quota.estado,
+    tokens: contexto.metricas.tokens,
+    custoUsd: Number(contexto.metricas.custoUsd.toFixed(4)),
+    maxTokensBatch: contexto.maxTokensBatch,
   }
 }
 
@@ -1057,6 +1069,7 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
   const duracao = Date.now() - inicioProcesso
   const registro = await lerRegistro(runDir, item)
   const classificacao = classificarRegistro(registro)
+  contabilizarUso(contexto, registro)
   const textoErro = `${stderr}\n${registro?.ingestao?.erro ?? ""}`
   const cota = eErroCota(textoErro)
   if (classificacao.estado === "complete") {
@@ -1116,6 +1129,41 @@ async function finalizar(contexto, unidade, { code, stderr, inicioProcesso }) {
   })
   if (contexto.quota.estado === "stopped_by_quota" && !contexto.parada) {
     await parar(contexto, "stopped_by_quota")
+  }
+  if (contexto.maxTokensBatch !== null && contexto.metricas.tokens > contexto.maxTokensBatch && !contexto.parada) {
+    await parar(contexto, "stopped_by_budget")
+  }
+}
+
+/** Soma todo campo numerico cujo nome contem "tokens" no `uso` de um runner. */
+export function somarTokensUso(uso) {
+  if (!uso || typeof uso !== "object") return 0
+  let total = 0
+  for (const [chave, valor] of Object.entries(uso)) {
+    if (typeof valor === "number" && Number.isFinite(valor) && /tokens/iu.test(chave)) total += valor
+    else if (valor && typeof valor === "object") total += somarTokensUso(valor)
+  }
+  return total
+}
+
+/** Custo em USD declarado pelo runner (Claude CLI devolve `total_cost_usd`). */
+export function custoUsdUso(uso) {
+  if (!uso || typeof uso !== "object") return 0
+  let total = 0
+  for (const [chave, valor] of Object.entries(uso)) {
+    if (typeof valor === "number" && Number.isFinite(valor) && /cost.*usd|usd/iu.test(chave)) total += valor
+    else if (valor && typeof valor === "object") total += custoUsdUso(valor)
+  }
+  return total
+}
+
+function contabilizarUso(contexto, registro) {
+  const modelos = registro?.ingestao?.modelos
+  if (!modelos) return
+  for (const papel of ["generator", "judge"]) {
+    const uso = modelos[papel]?.uso
+    contexto.metricas.tokens += somarTokensUso(uso)
+    contexto.metricas.custoUsd += custoUsdUso(uso)
   }
 }
 
@@ -1324,6 +1372,7 @@ async function main() {
       archiveDir: argumento("archive-dir"),
       modelsConfig: argumento("models-config"),
       maxMinutos: Number(argumento("max-minutos") ?? 480),
+      maxTokensBatch: argumento("max-tokens-batch") !== undefined ? Number(argumento("max-tokens-batch")) : null,
       qwenExtraArgs: argumento("qwen-extra-args") ?? "",
       codexExtraArgs: argumento("codex-extra-args") ?? "",
       filaPath: argumento("fila"),

@@ -498,3 +498,59 @@ test("o judge Claude e o generator do stage carregam id completo", async () => {
   assert.match(stage, /model: CLAUDE_GENERATOR_MODEL_ID/)
   assert.doesNotMatch(stage, /model: "Anthropic Claude Sonnet"/)
 })
+
+test("runner de modelo nasce em cwd temporário vazio, sem segredos do host, e o diretório some no fim", async () => {
+  const { runProgramaGovernoModelProcess, construirAmbienteModelo } = await import("../scripts/programas-governo-governadores-2026-models")
+  const { tmpdir } = await import("node:os")
+  const { existsSync, realpathSync } = await import("node:fs")
+  process.env.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF = "segredo-que-nao-pode-vazar"
+  process.env.PF_MODELO_TESTE = "chega-ao-runner"
+  try {
+    const filtrado = construirAmbienteModelo(process.env)
+    assert.equal(filtrado.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF, undefined)
+    assert.equal(filtrado.PF_MODELO_TESTE, "chega-ao-runner")
+    assert.equal(filtrado.PATH, process.env.PATH)
+
+    const script = "process.stdout.write(JSON.stringify({ cwd: process.cwd(), env: Object.keys(process.env), files: require('fs').readdirSync('.') }))"
+    const result = await runProgramaGovernoModelProcess(process.execPath, ["-e", script], "", 20_000)
+    const info = JSON.parse(result.stdout) as { cwd: string; env: string[]; files: string[] }
+    // O diretório já foi removido quando o processo encerra; compara pelo
+    // caminho que o filho enxergou (resolvido) contra o tmpdir resolvido.
+    const tmpReal = realpathSync(tmpdir())
+    assert.ok(info.cwd.startsWith(tmpReal) || info.cwd.startsWith(tmpdir()), `cwd fora do tmpdir: ${info.cwd}`)
+    assert.notEqual(info.cwd, realpathSync(process.cwd()))
+    assert.deepEqual(info.files, [], "o runner enxerga um diretório vazio")
+    assert.ok(!info.env.includes("SUPABASE_SERVICE_ROLE_KEY_TESTE_PF"))
+    assert.ok(info.env.includes("PF_MODELO_TESTE"))
+    assert.ok(info.env.includes("PATH"))
+    assert.ok(!existsSync(info.cwd), "diretório temporário removido ao encerrar")
+  } finally {
+    delete process.env.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF
+    delete process.env.PF_MODELO_TESTE
+  }
+})
+
+test("transporte Codex roda em sandbox read-only, efêmero, sem web e com raiz no cwd; judge Claude sem ferramentas", async () => {
+  const { readFileSync } = await import("node:fs")
+  const { fileURLToPath } = await import("node:url")
+  const dir = "../scripts/data/programas-governo-governadores-2026/"
+  const transporte = readFileSync(fileURLToPath(new URL(`${dir}run-codex-transporte.mjs`, import.meta.url)), "utf-8")
+  assert.match(transporte, /"--sandbox", "read-only"/)
+  assert.match(transporte, /"--ephemeral"/)
+  assert.match(transporte, /"--ignore-user-config", "--ignore-rules"/)
+  assert.match(transporte, /"-C", process\.cwd\(\)/)
+  assert.match(transporte, /web_search=\\"disabled\\"/)
+  assert.match(transporte, /shell_environment_policy\.inherit=none/)
+  const judge = readFileSync(fileURLToPath(new URL(`${dir}run-judge-claude.mjs`, import.meta.url)), "utf-8")
+  assert.match(judge, /"--tools", ""/)
+  assert.match(judge, /"--safe-mode"/)
+  assert.match(judge, /"--no-session-persistence"/)
+})
+
+test("hash das instruções do gerador está congelado e é o que o registro passa a carregar", async () => {
+  const { createHash } = await import("node:crypto")
+  const { PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS } = await import("../scripts/programas-governo-governadores-2026-models")
+  const sha = createHash("sha256").update(JSON.stringify(PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS)).digest("hex")
+  // Mudou o texto das instruções: atualizar aqui de propósito, junto com promptVersion.
+  assert.equal(sha, "9f383704c5fcad4a9754d5d413ae711d10e19960d11b474a845f142aae6b5721")
+})
