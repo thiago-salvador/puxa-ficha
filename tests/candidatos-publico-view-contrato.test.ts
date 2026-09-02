@@ -349,6 +349,9 @@ describe("contrato da view candidatos_publico", () => {
       // cópia automática despublicada). Não toca em candidatos nem redefine
       // candidatos_publico.
       "20260901180000_reancorar_tcu_fontes_curadas_issue_202.sql",
+      // REVOKE de DML de anon e authenticated em candidatos_identidade_tier1_auditavel
+      // e financiamento_publico. Não toca em candidatos_publico nem em seus grants.
+      "20260902200000_revoke_dml_views_publicas.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
