@@ -179,6 +179,13 @@ export default function TermosPage() {
             humana final de todas as fichas. Quando a fonte ou a checagem não forem suficientes, o
             conteúdo deve permanecer pendente, oculto ou descrito com ressalva.
           </P>
+          <P>
+            Os resumos de programa de governo são gerados por IA a partir do documento oficial
+            registrado no TSE, com cada frase amarrada a trechos literais do documento, avaliação
+            por um segundo modelo independente e aprovação humana registrada. São descritivos, não
+            avaliam mérito nem substituem a leitura do documento original, cujo link acompanha cada
+            resumo. Erros ou omissões podem ser apontados pelo canal de correções desta página.
+          </P>
         </div>
       </section>
 
