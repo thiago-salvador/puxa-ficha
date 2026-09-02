@@ -22,7 +22,7 @@ export default async function EmbedGeneratorPage() {
           Não foi possível carregar a lista de candidatos agora. Tente novamente em instantes.
         </p>
         {resource.sourceMessage ? (
-          <p className="mt-2 text-[13px] text-muted-foreground">{resource.sourceMessage}</p>
+          <p className="mt-2 text-[length:var(--text-body-sm)] text-muted-foreground">{resource.sourceMessage}</p>
         ) : null}
       </div>
     )

@@ -76,7 +76,7 @@ export function DonutChart({
         {/* Center label */}
         {centerLabel && (
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="text-[10px] font-semibold text-muted-foreground">{centerLabel}</span>
+            <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">{centerLabel}</span>
           </div>
         )}
       </div>
@@ -85,7 +85,7 @@ export function DonutChart({
           {arcs.map((arc) => (
             <div key={arc.label} className="flex items-center gap-1.5">
               <div className="size-2.5 rounded-full" style={{ backgroundColor: arc.color }} />
-              <span className="text-[10px] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
+              <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
                 {arc.label} ({Math.round(arc.percent * 100)}%)
               </span>
             </div>

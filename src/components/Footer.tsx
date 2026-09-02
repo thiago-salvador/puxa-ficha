@@ -9,7 +9,7 @@ export function Footer() {
         <SlashDivider className="mb-8" />
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <span className="font-heading text-[16px] uppercase tracking-[-0.01em] text-foreground">
+            <span className="font-heading text-[length:var(--text-body-lg)] uppercase tracking-[-0.01em] text-foreground">
               Puxa Ficha
             </span>
             <p className="mt-1 text-[length:var(--text-caption)] font-medium text-muted-foreground">

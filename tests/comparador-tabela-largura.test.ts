@@ -30,7 +30,7 @@ describe("tabela do comparador", () => {
   it("o nome do candidato não quebra linha", () => {
     assert.match(
       SRC,
-      /<span className="whitespace-nowrap font-heading text-\[16px\] uppercase leading-tight text-foreground">\s*\{candidato\.nome_urna\}/,
+      /<span className="whitespace-nowrap font-heading text-\[length:var\(--text-body-lg\)\] uppercase leading-tight text-foreground">\s*\{candidato\.nome_urna\}/,
       "o nome na linha da tabela precisa de whitespace-nowrap",
     )
   })

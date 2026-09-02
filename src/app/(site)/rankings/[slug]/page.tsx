@@ -195,7 +195,7 @@ export default async function RankingDetailPage({
           </div>
           <div className="mt-8 flex flex-wrap gap-6 sm:gap-10">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75">
+              <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white/75">
                 Recorte atual
               </p>
               <p className="mt-1 font-heading text-[24px] uppercase leading-none text-white sm:text-[34px]">
@@ -203,7 +203,7 @@ export default async function RankingDetailPage({
               </p>
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75">
+              <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white/75">
                 Ordem
               </p>
               <p className="mt-1 font-heading text-[24px] uppercase leading-none text-white sm:text-[34px]">
@@ -212,7 +212,7 @@ export default async function RankingDetailPage({
             </div>
             {leader ? (
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/75">
+                <p className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white/75">
                   {view.sortOrder === "asc" ? "Menor valor neste recorte" : "Maior valor neste recorte"}
                 </p>
                 <p className="mt-1 font-heading text-[24px] uppercase leading-none text-white sm:text-[34px]">

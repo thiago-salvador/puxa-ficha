@@ -119,15 +119,15 @@ export function GlobalSearchToolbarButton() {
     <button
       type="button"
       onClick={() => openSearch("toolbar")}
-      className="group inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground md:min-h-10 md:p-0"
+      className="group inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.05em] text-foreground md:min-h-10 md:p-0"
       aria-label="Abrir busca rápida"
     >
-      <span className="flex h-10 items-center gap-2 rounded-full border border-foreground px-4 text-[12px] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
+      <span className="flex h-10 items-center gap-2 rounded-full border border-foreground px-4 text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
         <Search className="size-3.5" />
         Busca rápida
         <span
           aria-hidden="true"
-          className="hidden rounded-full border border-current px-2 py-0.5 text-[10px] sm:inline-flex"
+          className="hidden rounded-full border border-current px-2 py-0.5 text-[length:var(--text-eyebrow)] sm:inline-flex"
         >
           {modLabel}
         </span>
@@ -470,10 +470,10 @@ export function GlobalSearchProvider({
                     <Command className="size-4" />
                   </div>
                   <div className="flex-1">
-                    <Dialog.Title className="font-heading text-[22px] uppercase leading-none text-foreground">
+                    <Dialog.Title className="font-heading text-[length:var(--text-heading-sm)] uppercase leading-none text-foreground">
                       Busca rápida
                     </Dialog.Title>
-                    <p className="mt-1 text-[12px] font-medium text-muted-foreground">
+                    <p className="mt-1 text-[length:var(--text-caption)] font-medium text-muted-foreground">
                       {SCOPE_LABEL}
                     </p>
                   </div>
@@ -502,7 +502,7 @@ export function GlobalSearchProvider({
                     onChange={(event) => setQuery(event.target.value)}
                     onKeyDown={handleInputKeyDown}
                     placeholder="Buscar candidato, página ou destino..."
-                    className="h-12 w-full rounded-full border border-border bg-background pl-11 pr-4 text-base font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/40 focus:ring-2 focus:ring-foreground/10 md:text-[14px]"
+                    className="h-12 w-full rounded-full border border-border bg-background pl-11 pr-4 text-base font-medium text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground/40 focus:ring-2 focus:ring-foreground/10 md:text-[length:var(--text-body)]"
                   />
                 </div>
               </div>
@@ -523,19 +523,19 @@ export function GlobalSearchProvider({
               >
                 {isSearchIndexLoading ? (
                   <div className="rounded-[18px] border border-dashed border-border px-4 py-10 text-center">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                    <p className="text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                       Carregando busca
                     </p>
-                    <p className="mt-2 text-[14px] font-medium text-foreground">
+                    <p className="mt-2 text-[length:var(--text-body)] font-medium text-foreground">
                       Preparando o índice de candidatos.
                     </p>
                   </div>
                 ) : totalCount === 0 ? (
                   <div className="rounded-[18px] border border-dashed border-border px-4 py-10 text-center">
-                    <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                    <p className="text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                       Sem resultado
                     </p>
-                    <p className="mt-2 text-[14px] font-medium text-foreground">
+                    <p className="mt-2 text-[length:var(--text-body)] font-medium text-foreground">
                       Nenhum item corresponde a &ldquo;{deferredQuery}&rdquo;.
                     </p>
                   </div>
@@ -547,7 +547,7 @@ export function GlobalSearchProvider({
                         if (section.rows.length === 0) return null
                         const block = (
                           <div key={section.label} role="group" aria-label={section.label}>
-                            <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                            <p className="mb-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                               {section.label}
                             </p>
                             <div className="space-y-2">
@@ -578,7 +578,7 @@ export function GlobalSearchProvider({
                                       <span className="font-heading text-[18px] uppercase leading-none text-foreground">
                                         {row.query}
                                       </span>
-                                      <span className="text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                                      <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                                         Aplicar
                                       </span>
                                     </button>
@@ -626,7 +626,7 @@ export function GlobalSearchProvider({
                                           <p className="font-heading text-[18px] uppercase leading-none text-foreground">
                                             <HighlightedText text={item.title} query={deferredQuery} />
                                           </p>
-                                          <p className="mt-1 text-[13px] font-medium text-muted-foreground">
+                                          <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
                                             <HighlightedText text={item.subtitle} query={deferredQuery} />
                                           </p>
                                         </div>
@@ -638,7 +638,7 @@ export function GlobalSearchProvider({
                                           <p className="font-heading text-[18px] uppercase leading-none text-foreground">
                                             <HighlightedText text={item.title} query={deferredQuery} />
                                           </p>
-                                          <p className="mt-1 text-[13px] font-medium text-muted-foreground">
+                                          <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
                                             <HighlightedText text={item.subtitle} query={deferredQuery} />
                                           </p>
                                         </div>

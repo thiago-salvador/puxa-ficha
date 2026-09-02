@@ -55,12 +55,12 @@ export function SancoesSection({
                   que existe.
                 */}
                 {s.data_inicio ? (
-                  <span className="text-[10px] font-semibold text-muted-foreground">
+                  <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                     Desde {formatDate(s.data_inicio)}
                     {s.data_fim ? ` até ${formatDate(s.data_fim)}` : ""}
                   </span>
                 ) : s.data_fim ? (
-                  <span className="text-[10px] font-semibold text-muted-foreground">
+                  <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                     Até {formatDate(s.data_fim)}
                   </span>
                 ) : null}

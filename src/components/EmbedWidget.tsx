@@ -27,7 +27,7 @@ function MetaLine({ ficha }: { ficha: FichaCandidato }) {
   return (
     <div className="flex items-start gap-2">
       <PartyLogoMark sigla={ficha.partido_sigla} priority />
-      <p className="min-w-0 text-[11px] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+      <p className="min-w-0 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
         {parts.join(" · ")}
       </p>
     </div>
@@ -45,9 +45,9 @@ function StatRow({
 }) {
   return (
     <div className="border-b border-border/40 py-2.5 last:border-b-0">
-      <p className="text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground">{label}</p>
+      <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground">{label}</p>
       <p className="mt-1 text-[15px] font-semibold text-foreground">{value}</p>
-      {sub ? <p className="text-[12px] text-muted-foreground">{sub}</p> : null}
+      {sub ? <p className="text-[length:var(--text-caption)] text-muted-foreground">{sub}</p> : null}
     </div>
   )
 }
@@ -100,11 +100,11 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
         />
         <div className="min-w-0 flex-1">
           <MetaLine ficha={ficha} />
-          <h1 className="mt-1 font-heading text-[22px] uppercase leading-tight tracking-tight text-foreground">
+          <h1 className="mt-1 font-heading text-[length:var(--text-heading-sm)] uppercase leading-tight tracking-tight text-foreground">
             {ficha.nome_urna}
           </h1>
           {ficha.nome_completo && ficha.nome_completo !== ficha.nome_urna ? (
-            <p className="mt-0.5 truncate text-[13px] text-muted-foreground">{ficha.nome_completo}</p>
+            <p className="mt-0.5 truncate text-[length:var(--text-body-sm)] text-muted-foreground">{ficha.nome_completo}</p>
           ) : null}
         </div>
       </div>
@@ -144,11 +144,11 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
           href={fichaUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[13px] font-bold text-foreground underline-offset-4 hover:underline"
+          className="inline-flex items-center gap-1 text-[length:var(--text-body-sm)] font-bold text-foreground underline-offset-4 hover:underline"
         >
           Ver ficha pública
         </Link>
-        <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">Puxa Ficha</span>
+        <span className="text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wider text-muted-foreground">Puxa Ficha</span>
       </div>
     </article>
   )

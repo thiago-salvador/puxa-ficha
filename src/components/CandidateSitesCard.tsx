@@ -19,10 +19,10 @@ export function CandidateSitesCard({
       data-pf-candidate-sites-count={links.length}
     >
       <div className="mb-3 flex items-baseline justify-between gap-3">
-        <h2 id="candidate-sites-title" className="text-[13px] font-semibold text-foreground">
+        <h2 id="candidate-sites-title" className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
           Sites do candidato
         </h2>
-        <span className="text-[10px] font-bold uppercase tracking-[0.06em] text-muted-foreground">
+        <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground">
           {links.length} {links.length === 1 ? "link" : "links"}
         </span>
       </div>
@@ -48,10 +48,10 @@ export function CandidateSitesCard({
               <Globe2 aria-hidden="true" className="size-4" />
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-[11px] font-bold leading-tight text-foreground">
+              <span className="block text-[length:var(--text-eyebrow)] font-bold leading-tight text-foreground">
                 {link.label}
               </span>
-              <span className="mt-0.5 block truncate text-[11px] font-medium text-muted-foreground">
+              <span className="mt-0.5 block truncate text-[length:var(--text-eyebrow)] font-medium text-muted-foreground">
                 {link.displayUrl}
               </span>
             </span>

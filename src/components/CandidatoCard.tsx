@@ -113,18 +113,18 @@ export const CandidatoCard = memo(function CandidatoCard({
                     className="size-5 rounded-sm object-contain sm:size-7"
                   />
                 )}
-                <span className="font-sans text-[11px] font-bold uppercase tracking-[0.08em] text-white sm:text-[14px]">
+                <span className="font-sans text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-white sm:text-[length:var(--text-body)]">
                   {formatPartyPublicLabel(candidato.partido_sigla)}
                 </span>
               </div>
 
               {/* Name — always visible */}
-              <h3 className="mt-1 truncate font-heading text-[16px] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:mb-2 sm:line-clamp-1 sm:text-[24px] lg:text-[28px]">
+              <h3 className="mt-1 truncate font-heading text-[length:var(--text-body-lg)] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:mb-2 sm:line-clamp-1 sm:text-[24px] lg:text-[length:var(--text-heading)]">
                 {candidato.nome_urna}
               </h3>
 
               {/* Mobile: compact inline stats — always visible, fixed single line */}
-              <div className="mt-1 flex min-h-[14px] items-center gap-1.5 text-[10px] font-bold text-white/80 sm:hidden">
+              <div className="mt-1 flex min-h-[14px] items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold text-white/80 sm:hidden">
                 {hasMainStats ? (
                   <>
                     <span className="flex shrink-0 items-center gap-0.5">
@@ -167,7 +167,7 @@ export const CandidatoCard = memo(function CandidatoCard({
                       <p className="font-heading text-[26px] leading-none text-white">
                         {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
                       </p>
-                      <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
+                      <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Landmark className="size-3 shrink-0" />
                         Patrimônio
                       </p>
@@ -176,7 +176,7 @@ export const CandidatoCard = memo(function CandidatoCard({
                       <p className="font-heading text-[26px] leading-none text-white">
                         {processos}
                       </p>
-                      <p className="mt-1 flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-white/60">
+                      <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Scale className="size-3 shrink-0" />
                         Processo{processos !== 1 ? "s" : ""}
                       </p>
@@ -187,17 +187,17 @@ export const CandidatoCard = memo(function CandidatoCard({
                     {candidato.cargo_atual && (
                       <div className="flex items-center gap-2">
                         <Briefcase className="size-3.5 shrink-0 text-white/60" />
-                        <span className="text-[13px] font-semibold text-white">{sanitizePtBrText(candidato.cargo_atual)}</span>
+                        <span className="text-[length:var(--text-body-sm)] font-semibold text-white">{sanitizePtBrText(candidato.cargo_atual)}</span>
                       </div>
                     )}
                     {formacaoLabel && (
                       <div className="flex items-center gap-2">
                         <GraduationCap className="size-3.5 shrink-0 text-white/60" />
-                        <span className="text-[13px] font-semibold text-white">{formacaoLabel}</span>
+                        <span className="text-[length:var(--text-body-sm)] font-semibold text-white">{formacaoLabel}</span>
                       </div>
                     )}
                     {candidato.idade && (
-                      <span className="text-[13px] font-semibold text-white">{candidato.idade} anos</span>
+                      <span className="text-[length:var(--text-body-sm)] font-semibold text-white">{candidato.idade} anos</span>
                     )}
                   </div>
                 )}
@@ -205,7 +205,7 @@ export const CandidatoCard = memo(function CandidatoCard({
 
               {/* CTA — always visible on mobile, part of hover on desktop */}
               <div className="mt-1.5 sm:mt-3 sm:opacity-0 sm:transition-opacity sm:delay-75 sm:duration-300 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
-                <span className="flex items-center gap-1 text-[10px] font-semibold tracking-wide text-white/80 transition-colors duration-200 group-hover:text-white sm:text-[12px]">
+                <span className="flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold tracking-wide text-white/80 transition-colors duration-200 group-hover:text-white sm:text-[length:var(--text-caption)]">
                   Ver Ficha <ArrowRight className="size-3 transition-transform duration-200 group-hover:translate-x-0.5" />
                 </span>
               </div>

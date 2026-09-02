@@ -302,7 +302,7 @@ export function Navbar() {
             <Search className="size-4 shrink-0" />
             <span
               aria-hidden="true"
-              className="hidden font-heading text-[11px] uppercase tracking-[0.05em] sm:inline"
+              className="hidden font-heading text-[length:var(--text-eyebrow)] uppercase tracking-[0.05em] sm:inline"
             >
               {modKLabel}
             </span>
@@ -320,8 +320,8 @@ export function Navbar() {
             aria-haspopup="dialog"
           >
             <div aria-hidden="true" className="h-[20px] overflow-hidden">
-              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
-              <p className={`font-heading text-[13px] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Fechar</p>
+              <p className={`font-heading text-[length:var(--text-body-sm)] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Menu</p>
+              <p className={`font-heading text-[length:var(--text-body-sm)] uppercase tracking-[0.05em] leading-[20px] ${useDarkText ? "text-black" : "text-white"}`}>Fechar</p>
             </div>
             <div className={`flex size-8 items-center justify-center rounded-full border ${useDarkText ? "border-black/15" : "border-white/20"}`}>
               <svg
@@ -383,7 +383,7 @@ export function Navbar() {
               className="absolute right-8 top-5 z-10 flex items-center gap-3 sm:right-12 md:right-16"
               aria-label="Fechar menu"
             >
-              <span className="font-heading text-[13px] uppercase tracking-[0.05em] text-black">
+              <span className="font-heading text-[length:var(--text-body-sm)] uppercase tracking-[0.05em] text-black">
                 Fechar
               </span>
               <div className="flex size-8 items-center justify-center rounded-full border border-black/15">
@@ -428,14 +428,14 @@ export function Navbar() {
             {/* Footer */}
             <div className="flex items-end justify-between border-t border-black/8 pt-6" data-menu-fade>
               <div>
-                <p className="font-heading text-[14px] uppercase tracking-[0.02em] text-black">
+                <p className="font-heading text-[length:var(--text-body)] uppercase tracking-[0.02em] text-black">
                   Puxa Ficha
                 </p>
-                <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.1em] text-black">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium uppercase tracking-[0.1em] text-black">
                   Eleições 2026
                 </p>
               </div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-black">
+              <p className="text-[length:var(--text-eyebrow)] font-medium uppercase tracking-[0.1em] text-black">
                 TSE &middot; Câmara &middot; Senado
               </p>
             </div>

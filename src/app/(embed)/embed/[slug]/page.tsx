@@ -76,7 +76,7 @@ export default async function EmbedCandidatePage({
     <EmbedResizer>
       <main aria-label="Ficha do candidato (embed)" className="p-3">
         {showNotice ? (
-          <p className="mb-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[12px] leading-snug text-amber-950">
+          <p className="mb-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-[length:var(--text-caption)] leading-snug text-amber-950">
             {resource.sourceMessage}
           </p>
         ) : null}

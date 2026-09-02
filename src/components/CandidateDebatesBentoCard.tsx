@@ -48,14 +48,14 @@ function QuoteSource({ quote }: { quote: DebatePressQuote }) {
       data-pf-debate-source-quote={quote.id}
       className="mt-auto flex flex-wrap items-end justify-between gap-3 border-t border-border/60 pt-3"
     >
-      <p className="max-w-[24rem] text-[10px] font-medium leading-relaxed text-muted-foreground sm:text-[11px]">
+      <p className="max-w-[24rem] text-[length:var(--text-eyebrow)] font-medium leading-relaxed text-muted-foreground">
         Aspa atribuída pela matéria da {debatePressQuotes.source.publisher}. Sem análise do Puxa Ficha.
       </p>
       <a
         href={debatePressQuotes.source.article_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex min-h-10 items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="inline-flex min-h-10 items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         Ler matéria <ExternalLink className="size-3.5" aria-hidden="true" />
       </a>
@@ -121,12 +121,12 @@ export function CandidateDebatesBentoCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <h2 className="text-[13px] font-semibold text-foreground">Debates</h2>
-            <span className="rounded-full bg-secondary px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            <h2 className="text-[length:var(--text-body-sm)] font-semibold text-foreground">Debates</h2>
+            <span className="rounded-full bg-secondary px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
               {quote.topic}
             </span>
           </div>
-          <p className="mt-1 text-[10px] font-semibold text-muted-foreground sm:text-[11px]">
+          <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
             Band · {formatDate(debatePressQuotes.event.occurred_at)}
           </p>
         </div>
@@ -164,10 +164,10 @@ export function CandidateDebatesBentoCard({
       </div>
 
       <div key={quote.id} className="py-4" aria-live="off">
-        <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           {index + 1} de {quotes.length} · citação literal
         </p>
-        <blockquote className="mt-2 text-balance font-heading text-[20px] leading-[1.18] tracking-[-0.01em] text-foreground sm:text-[22px]">
+        <blockquote className="mt-2 text-balance font-heading text-[20px] leading-[1.18] tracking-[-0.01em] text-foreground sm:text-[length:var(--text-heading-sm)]">
           “{quote.quote_text}”
         </blockquote>
       </div>

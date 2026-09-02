@@ -78,14 +78,14 @@ function CandidatoListItem({
       )}
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2">
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-foreground">
+          <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
             {formatPartyPublicLabel(candidato.partido_sigla)}
           </span>
         </div>
         <p className="truncate font-heading text-[18px] uppercase leading-tight text-foreground sm:text-[20px]">
           {candidato.nome_urna}
         </p>
-        <p className="mt-0.5 truncate text-[12px] font-medium text-foreground">
+        <p className="mt-0.5 truncate text-[length:var(--text-caption)] font-medium text-foreground">
           {candidato.cargo_atual
             ? sanitizePtBrText(candidato.cargo_atual)
             : candidato.cargo_disputado
@@ -95,19 +95,19 @@ function CandidatoListItem({
       </div>
       <div className="hidden shrink-0 items-center gap-4 sm:flex">
         {processos > 0 && (
-          <span className="flex items-center gap-1 text-[12px] font-bold text-foreground">
+          <span className="flex items-center gap-1 text-[length:var(--text-caption)] font-bold text-foreground">
             <Scale className="size-3.5" />
             {processos}
           </span>
         )}
         {patrimonio != null && patrimonio > 0 && (
-          <span className="flex items-center gap-1 text-[12px] font-bold text-foreground">
+          <span className="flex items-center gap-1 text-[length:var(--text-caption)] font-bold text-foreground">
             <Landmark className="size-3.5" />
             {formatCompact(patrimonio)}
           </span>
         )}
       </div>
-      <span className="pill-hover flex h-[30px] shrink-0 items-center rounded-full border border-foreground px-4 text-[11px] font-medium text-foreground">
+      <span className="pill-hover flex h-[30px] shrink-0 items-center rounded-full border border-foreground px-4 text-[length:var(--text-eyebrow)] font-medium text-foreground">
         Ficha
       </span>
     </Link>
@@ -192,7 +192,7 @@ export function CandidatoGrid({
               type="search"
               aria-label="Buscar candidatos por nome, partido ou estado"
               placeholder="Nome, partido ou estado"
-              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-base font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:border-foreground focus:ring-2 focus:ring-foreground/50 md:text-[14px]"
+              className="w-full rounded-full border border-foreground bg-transparent px-4 py-2.5 pl-11 pr-10 text-base font-medium text-foreground outline-none transition-colors placeholder:font-medium placeholder:text-foreground focus:border-foreground focus:ring-2 focus:ring-foreground/50 md:text-[length:var(--text-body)]"
               value={query}
               onChange={(event) => {
                 const nextValue = event.target.value
@@ -263,7 +263,7 @@ export function CandidatoGrid({
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-[12px] font-medium text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-3 text-[length:var(--text-caption)] font-medium text-muted-foreground">
           <span>
             {filtered.length} resultado{filtered.length !== 1 ? "s" : ""}
           </span>
@@ -273,7 +273,7 @@ export function CandidatoGrid({
               onClick={() => setPartidoFilter("")}
               className="inline-flex min-h-11 min-w-11 items-center justify-center p-0.5 md:min-h-0 md:p-0"
             >
-              <span className="rounded-full border border-border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors hover:bg-muted">
+              <span className="rounded-full border border-border px-3 py-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors hover:bg-muted">
                 Partido: {partidoFilter} ×
               </span>
             </button>
@@ -287,7 +287,7 @@ export function CandidatoGrid({
       </div>
 
       {filtered.length === 0 ? (
-        <p className="py-20 text-center text-[14px] text-foreground">
+        <p className="py-20 text-center text-[length:var(--text-body)] text-foreground">
           Nenhum candidato encontrado para &ldquo;{query}&rdquo;
         </p>
       ) : view === "grid" ? (

@@ -86,7 +86,7 @@ export default function InternalTestPage() {
     <div className="min-h-screen bg-background">
       <a
         href="#conteudo-interno"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:overflow-visible focus:rounded-lg focus:border focus:border-border focus:bg-foreground focus:px-4 focus:py-3 focus:text-[13px] focus:font-semibold focus:text-background focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:overflow-visible focus:rounded-lg focus:border focus:border-border focus:bg-foreground focus:px-4 focus:py-3 focus:text-[length:var(--text-body-sm)] focus:font-semibold focus:text-background focus:shadow-lg"
       >
         Pular para o conteudo (demo de skip link)
       </a>
@@ -103,7 +103,7 @@ export default function InternalTestPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-[length:var(--text-body)] text-muted-foreground">
           Blocos comparativos com as sugestoes do audit de front-end (
-          <code className="rounded bg-muted px-1.5 py-0.5 text-[13px]">cursorfront.md</code>
+          <code className="rounded bg-muted px-1.5 py-0.5 text-[length:var(--text-body-sm)]">cursorfront.md</code>
           ) e notas do Context7. Nada aqui altera a home nem as fichas ate voce decidir aplicar no projeto.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
@@ -201,7 +201,7 @@ export default function InternalTestPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-border bg-card p-4">
                 <p className="text-[length:var(--text-caption)] font-bold text-foreground">URL https</p>
-                <p className="mt-1 break-all font-mono text-[12px] text-muted-foreground">{okUrl}</p>
+                <p className="mt-1 break-all font-mono text-[length:var(--text-caption)] text-muted-foreground">{okUrl}</p>
                 <p className="mt-2 text-[length:var(--text-caption)]">
                   safeHref retorna:{" "}
                   <span className="font-mono text-emerald-700 dark:text-emerald-400">{ok ? "link valido" : "null"}</span>
@@ -219,7 +219,7 @@ export default function InternalTestPage() {
               </div>
               <div className="rounded-lg border border-border bg-card p-4">
                 <p className="text-[length:var(--text-caption)] font-bold text-foreground">URL javascript:</p>
-                <p className="mt-1 break-all font-mono text-[12px] text-muted-foreground">{badUrl}</p>
+                <p className="mt-1 break-all font-mono text-[length:var(--text-caption)] text-muted-foreground">{badUrl}</p>
                 <p className="mt-2 text-[length:var(--text-caption)]">
                   safeHref retorna:{" "}
                   <span className="font-mono text-red-600 dark:text-red-400">{bad === null ? "null" : String(bad)}</span>
@@ -280,7 +280,7 @@ export default function InternalTestPage() {
                 <code className="text-foreground">Menu.Root / Trigger / Portal / Popup</code> ou Dialog full-screen e manter o visual com Tailwind.
               </p>
             </Explain>
-            <div className="rounded-lg border border-dashed border-border bg-muted/30 p-4 font-mono text-[12px] leading-relaxed text-muted-foreground">
+            <div className="rounded-lg border border-dashed border-border bg-muted/30 p-4 font-mono text-[length:var(--text-caption)] leading-relaxed text-muted-foreground">
               Menu.Root -&gt; Menu.Trigger (hamburger)
               <br />
               -&gt; Menu.Portal -&gt; Menu.Positioner -&gt; Menu.Popup (links + fechar)

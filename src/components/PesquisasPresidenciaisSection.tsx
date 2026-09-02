@@ -109,7 +109,7 @@ function PesquisaDetalhada({ pesquisa }: { pesquisa: PesquisaEleitoralDoCandidat
             {resultadoLabel(pesquisa)}
           </p>
         </div>
-        <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+        <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           {pesquisa.cenario.turn}º turno
         </span>
       </div>
@@ -190,11 +190,11 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
       data-pf-pesquisa-hero-index={activeIndex}
       className="min-w-0 rounded-[14px] border border-border/70 bg-card px-4 py-3 lg:w-[220px]"
     >
-      <p data-pf-pesquisa-hero-instituto="" className="truncate text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+      <p data-pf-pesquisa-hero-instituto="" className="truncate text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
         {pesquisa.instituto.value ?? "Instituto não informado"}
       </p>
       <div className="mt-1.5 flex items-end justify-between gap-3">
-        <p data-pf-pesquisa-hero-periodo="" className="min-w-0 text-[10px] font-semibold leading-tight text-muted-foreground">
+        <p data-pf-pesquisa-hero-periodo="" className="min-w-0 text-[length:var(--text-eyebrow)] font-semibold leading-tight text-muted-foreground">
           {formatarPeriodo(pesquisa)}
         </p>
         <p data-pf-pesquisa-hero-resultado="" className="shrink-0 font-heading text-[30px] leading-none tabular-nums text-foreground">
@@ -228,14 +228,14 @@ export function PesquisasPresidenciaisOverview({
       className="min-w-0 rounded-[12px] border border-border/50 bg-card px-5 py-4"
     >
       <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 id="pesquisas-overview-title" className="text-[13px] font-semibold text-foreground">
+        <h2 id="pesquisas-overview-title" className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
           Intenção de voto
         </h2>
         <button
           type="button"
           onClick={onOpenTab}
           aria-label="Ver todas na aba Pesquisas"
-          className="inline-flex min-h-6 items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+          className="inline-flex min-h-6 items-center gap-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
         >
           Pesquisas <ChevronRight className="size-3" aria-hidden="true" />
         </button>
@@ -251,30 +251,30 @@ export function PesquisasPresidenciaisOverview({
         >
           <div className="flex min-w-0 items-start justify-between gap-4">
             <div className="min-w-0">
-              <p className="truncate text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+              <p className="truncate text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
                 {pesquisa.instituto.value ?? "Instituto não informado"}
               </p>
               <p
                 data-pf-pesquisa-resultado=""
                 className={
                   resultadoPublicado(pesquisa)
-                    ? "mt-1.5 font-heading text-[36px] leading-none tabular-nums text-foreground"
+                    ? "mt-1.5 font-heading text-[length:var(--text-heading-lg)] leading-none tabular-nums text-foreground"
                     : "mt-1.5 text-[length:var(--text-body)] font-bold leading-snug text-foreground"
                 }
               >
                 {resultadoLabel(pesquisa)}
               </p>
             </div>
-            <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+            <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
               {pesquisa.cenario.turn}º turno
             </span>
           </div>
 
-          <p data-pf-pesquisa-cenario="" className="mt-2 line-clamp-2 text-[12px] font-semibold leading-snug text-foreground">
+          <p data-pf-pesquisa-cenario="" className="mt-2 line-clamp-2 text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">
             {pesquisa.cenario.labelRaw}
           </p>
 
-          <dl className="mt-4 grid min-w-0 grid-cols-2 gap-x-4 gap-y-3 border-t border-border/60 pt-3 text-[11px]">
+          <dl className="mt-4 grid min-w-0 grid-cols-2 gap-x-4 gap-y-3 border-t border-border/60 pt-3 text-[length:var(--text-eyebrow)]">
             <div className="min-w-0">
               <dt className="font-bold uppercase tracking-[0.06em] text-muted-foreground">Período</dt>
               <dd data-pf-pesquisa-periodo="" className="mt-0.5 font-semibold leading-snug text-foreground">
@@ -301,7 +301,7 @@ export function PesquisasPresidenciaisOverview({
               href={pesquisa.provenance.resultUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-11 min-w-0 items-center gap-1.5 text-[11px] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+              className="inline-flex min-h-11 min-w-0 items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
               aria-label={`Ver divulgação pública de ${pesquisa.instituto.value ?? "instituto não informado"} (abre em nova aba)`}
             >
               <span className="truncate">Fonte pública</span>
@@ -331,16 +331,16 @@ export function PesquisasPresidenciaisOverview({
         </article>
       ) : (
         <div data-pf-pesquisas-empty="" className="flex min-h-44 flex-col justify-center border-t border-border/60 py-4">
-          <p className="text-[13px] font-semibold leading-snug text-foreground">
+          <p className="text-[length:var(--text-body-sm)] font-semibold leading-snug text-foreground">
             Sem pesquisa qualificada recente para este candidato
           </p>
-          <p className="mt-1 text-[11px] font-medium leading-relaxed text-muted-foreground">
+          <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-relaxed text-muted-foreground">
             As fontes do piloto ainda não publicaram um resultado comparável para esta candidatura.
           </p>
         </div>
       )}
 
-      <p className="mt-3 text-[10px] font-medium leading-relaxed text-muted-foreground">
+      <p className="mt-3 text-[length:var(--text-eyebrow)] font-medium leading-relaxed text-muted-foreground">
         Fotografia do período das entrevistas, não uma previsão eleitoral.
       </p>
     </section>

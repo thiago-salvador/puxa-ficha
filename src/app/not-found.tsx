@@ -28,7 +28,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="mt-8 inline-flex min-h-11 items-center gap-2 text-[11px] font-medium uppercase tracking-[0.2em] text-foreground transition-opacity hover:opacity-70"
+            className="mt-8 inline-flex min-h-11 items-center gap-2 text-[length:var(--text-eyebrow)] font-medium uppercase tracking-[0.2em] text-foreground transition-opacity hover:opacity-70"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para a home

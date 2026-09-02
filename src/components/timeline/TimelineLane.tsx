@@ -44,7 +44,7 @@ export function TimelineLane({
       <text
         x={30}
         y={laneY + laneHeight / 2 + 4}
-        className="text-[11px] font-bold uppercase tracking-[0.08em]"
+        className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em]"
         fill={theme.text}
         style={{ fontSize: 9 }}
       >

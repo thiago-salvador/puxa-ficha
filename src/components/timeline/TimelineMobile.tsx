@@ -93,7 +93,7 @@ export function TimelineMobile({ events, selectedId, onSelectId, introKey }: Tim
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2">
                       <span
-                        className="inline-flex items-center rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em]"
+                        className="inline-flex items-center rounded-full border px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em]"
                         style={{
                           backgroundColor: theme.softFill,
                           borderColor: theme.softStroke,
@@ -109,7 +109,7 @@ export function TimelineMobile({ events, selectedId, onSelectId, introKey }: Tim
                       ) : null}
                     </div>
                     {ev.contradicao && (
-                      <MetaBadge tone="caution" className="shrink-0 px-2 py-0.5 text-[11px]">
+                      <MetaBadge tone="caution" className="shrink-0 px-2 py-0.5 text-[length:var(--text-eyebrow)]">
                         Contrad.
                       </MetaBadge>
                     )}

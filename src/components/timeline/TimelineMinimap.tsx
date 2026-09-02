@@ -93,7 +93,7 @@ export function TimelineMinimap({
         <p className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">
           Mapa da carreira ({extentMin} a {extentMax})
         </p>
-        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Janela: {Math.round(viewMin)} a {Math.round(viewMax)}
         </p>
       </div>
@@ -108,10 +108,10 @@ export function TimelineMinimap({
         aria-label={`Minimap da timeline de ${label}: janela ${Math.round(viewMin)} a ${Math.round(viewMax)}`}
       >
         <div className="pointer-events-none absolute inset-y-[7px] left-3 right-3 rounded-full bg-foreground/7" />
-        <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+        <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           {extentMin}
         </div>
-        <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+        <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
           {extentMax}
         </div>
         <div

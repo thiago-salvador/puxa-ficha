@@ -176,11 +176,11 @@ function TeaserCard({
       className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
     >
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-[13px] font-semibold text-foreground">{title}</h2>
+        <h2 className="text-[length:var(--text-body-sm)] font-semibold text-foreground">{title}</h2>
         <button
           type="button"
           onClick={onNavigate}
-          className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         >
           {linkLabel} <ChevronRight className="size-3" />
         </button>
@@ -195,7 +195,7 @@ function TeaserCard({
 function EmptyOverviewState() {
   return (
     <div className="rounded-[12px] border border-border/50 bg-card px-8 py-16 text-center">
-      <h2 className="font-heading text-[28px] uppercase tracking-tight text-foreground">Perfil em construção</h2>
+      <h2 className="font-heading text-[length:var(--text-heading)] uppercase tracking-tight text-foreground">Perfil em construção</h2>
       <p className="mt-2 text-[15px] text-muted-foreground">Estamos coletando dados públicos sobre este candidato.</p>
     </div>
   )
@@ -335,16 +335,16 @@ function PatrimonioTeaser({
               data-pf-patrimonio-eleicao-estado={eleicao.estado}
               className="flex items-baseline justify-between gap-3"
             >
-              <span className="shrink-0 text-[12px] font-bold tabular-nums text-foreground">
+              <span className="shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground">
                 {eleicao.ano}
               </span>
-              <span className="min-w-0 flex-1 text-right text-[12px] font-medium leading-snug text-muted-foreground">
+              <span className="min-w-0 flex-1 text-right text-[length:var(--text-caption)] font-medium leading-snug text-muted-foreground">
                 {formatPatrimonioEleicaoEstadoLabel(eleicao.estado)}
               </span>
             </div>
           ))}
         </div>
-        <p className="mt-2 text-[11px] font-medium leading-snug text-muted-foreground">
+        <p className="mt-2 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
           Eleições disputadas sem dado de patrimônio publicado.
         </p>
       </TeaserCard>
@@ -362,13 +362,13 @@ function PatrimonioTeaser({
         onNavigate={onNavigate}
         moneyCardKind="patrimonio"
       >
-        <p className="text-[12px] font-semibold leading-snug text-foreground">
+        <p className="text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">
           Declarado em {latest.ano_eleicao}
         </p>
-        <p className="mt-1 text-[11px] font-medium leading-snug text-muted-foreground">
+        <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
           Registro único disponível.
         </p>
-        <p className="mt-2 font-heading text-[22px] leading-none tracking-tight text-foreground">
+        <p className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
           {formatCompact(latest.valor_total)}
         </p>
       </TeaserCard>
@@ -385,11 +385,11 @@ function PatrimonioTeaser({
       moneyCardKind="patrimonio"
     >
       <div className="mb-3 flex items-baseline gap-3">
-        <span className="font-heading text-[22px] leading-none tracking-tight text-foreground">
+        <span className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
           {formatCompact(latest.valor_total)}
         </span>
         {indicator && earliest && growthPct !== null && (
-          <span className={`text-[12px] font-bold ${indicator.color}`}>
+          <span className={`text-[length:var(--text-caption)] font-bold ${indicator.color}`}>
             {indicator.arrow} {Math.abs(Math.round(growthPct))}% desde {earliest.ano_eleicao}
           </span>
         )}
@@ -406,7 +406,7 @@ function FinancingTeaserDoadores({ doadores }: { doadores: Financiamento["maiore
   if (doadores.length === 0) return null
   return (
     <div className="mt-3 border-t border-border/50 pt-3">
-      <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-foreground">
+      <p className="mb-1.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.1em] text-muted-foreground">
         Maiores doadores
       </p>
       <div className="space-y-1">
@@ -414,11 +414,11 @@ function FinancingTeaserDoadores({ doadores }: { doadores: Financiamento["maiore
           <div key={`${d.nome}-${i}`} className="flex items-baseline justify-between gap-2">
             <Link
               href={buildDoadorReverseHref(d.nome)}
-              className="block min-w-0 truncate py-0.5 text-[12px] font-medium leading-5 text-foreground underline-offset-2 hover:underline"
+              className="block min-w-0 truncate py-0.5 text-[length:var(--text-caption)] font-medium leading-5 text-foreground underline-offset-2 hover:underline"
             >
               {d.nome}
             </Link>
-            <span className="shrink-0 text-[12px] font-bold tabular-nums text-foreground">
+            <span className="shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground">
               {formatCompact(d.valor)}
             </span>
           </div>
@@ -451,10 +451,10 @@ function FinancingTeaserSegments({
         {segments.map((s) => (
           <div key={s.label} className="flex items-start gap-2">
             <div className="mt-1 size-2 shrink-0 rounded-full" style={{ backgroundColor: s.color }} />
-            <span className="min-w-0 flex-1 text-[11px] font-medium leading-snug text-muted-foreground">
+            <span className="min-w-0 flex-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
               {s.label} ({Math.round((s.value / total) * 100)}%)
             </span>
-            <span className="shrink-0 text-[11px] font-bold tabular-nums text-foreground">
+            <span className="shrink-0 text-[length:var(--text-eyebrow)] font-bold tabular-nums text-foreground">
               {formatCompact(s.value)}
             </span>
           </div>
@@ -483,11 +483,11 @@ function FinancingTeaser({
       onNavigate={onNavigate}
       moneyCardKind="financiamento"
     >
-      <p className="text-[12px] font-semibold leading-snug text-foreground">{pleitoLabel}</p>
-      <p className="mt-1 text-[11px] font-medium leading-snug text-muted-foreground">
+      <p className="text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">{pleitoLabel}</p>
+      <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
         {financiamentoPleitoSubtitulo()}
       </p>
-      <p className="mt-2 font-heading text-[22px] leading-none tracking-tight text-foreground">
+      <p className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
         {formatCompact(latestFin.total_arrecadado)}
       </p>
       <FinancingTeaserSegments segments={segments} total={latestFin.total_arrecadado} />
@@ -544,23 +544,23 @@ function ProcessesTeaser({
                     : formatProcessTypeLabel(p.tipo)}
               </MetaBadge>
               {independentStatuses.length === 1 && (
-                <span className="min-w-0 text-[10px] font-semibold text-muted-foreground">
+                <span className="min-w-0 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                   {formatProcessStatusLabel(independentStatuses[0])}
                 </span>
               )}
             </div>
-            <p className="mt-1 text-[12px] font-medium leading-snug text-foreground">
+            <p className="mt-1 text-[length:var(--text-caption)] font-medium leading-snug text-foreground">
               {formatProcessSummaryLabel(p.descricao) || formatProcessTypeLabel(p.tipo)}
             </p>
             {processGroup.length > 1 ? (
-              <span className="mt-1 inline-flex text-[10px] font-semibold text-muted-foreground">
+              <span className="mt-1 inline-flex text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                 {processGroup.length} processos relacionados
                 {independentStatuses.length > 1
                   ? `, ${independentStatuses.length} situações processuais`
                   : ""}
               </span>
             ) : href ? (
-              <span className="mt-1 inline-flex text-[10px] font-bold text-foreground underline underline-offset-2">
+              <span className="mt-1 inline-flex text-[length:var(--text-eyebrow)] font-bold text-foreground underline underline-offset-2">
                 {processoFonteLabel({ ...p, url_fonte: href })}
               </span>
             ) : null}
@@ -596,11 +596,11 @@ function VotesTeaser({
           <div key={v.id} className="flex items-start gap-2.5">
             <span
               title={formatVoteNote(v.voto) || undefined}
-              className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${getVotoBadgeClassName(v.voto)}`}
+              className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-wide ${getVotoBadgeClassName(v.voto)}`}
             >
               {formatVoteBadgeLabel(v.voto)}
             </span>
-            <p className="min-w-0 flex-1 line-clamp-1 text-[13px] font-medium leading-snug text-foreground">
+            <p className="min-w-0 flex-1 line-clamp-1 text-[length:var(--text-body-sm)] font-medium leading-snug text-foreground">
               {v.votacao?.titulo}
             </p>
           </div>
@@ -634,14 +634,14 @@ function ExecutiveSpendingTeaser({
       onNavigate={onNavigate}
       moneyCardKind="gasto"
     >
-      <p className="text-[12px] font-medium text-muted-foreground">{orgao.nome}</p>
+      <p className="text-[length:var(--text-caption)] font-medium text-muted-foreground">{orgao.nome}</p>
       <p
         data-pf-gastos-executivo-total-mandato
-        className="mt-2 font-heading text-[22px] leading-none tracking-tight text-foreground"
+        className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground"
       >
         {formatCompact(orgao.totalMandato)}
       </p>
-      <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">Total no mandato</p>
+      <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">Total no mandato</p>
       <p
         data-pf-gastos-executivo-total-ano={orgao.anoCorrente ?? ""}
         data-pf-gastos-executivo-total-ano-estado={orgao.totalAnoCorrente == null ? "vazio" : "publicado"}
@@ -653,7 +653,7 @@ function ExecutiveSpendingTeaser({
       >
         {orgao.totalAnoCorrente == null ? "Sem dado neste recorte" : formatCompact(orgao.totalAnoCorrente)}
       </p>
-      <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
+      <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         {orgao.anoCorrente == null ? "Total no recorte" : `Total em ${orgao.anoCorrente}`}
       </p>
       {orgao.ultimoMesComMovimento && (
@@ -664,13 +664,13 @@ function ExecutiveSpendingTeaser({
           >
             {formatCompact(orgao.ultimoMesComMovimento.valor_total)}
           </p>
-          <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
+          <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
             Último mês com movimento: {formatMesExtratoCurto(orgao.ultimoMesComMovimento.mes_extrato)}
           </p>
         </>
       )}
       {outrosOrgaos > 0 && (
-        <p className="mt-2 text-[12px] font-medium text-muted-foreground">
+        <p className="mt-2 text-[length:var(--text-caption)] font-medium text-muted-foreground">
           +{outrosOrgaos} {outrosOrgaos === 1 ? "outro órgão detalhado" : "outros órgãos detalhados"} na aba
           Dinheiro.
         </p>
@@ -703,10 +703,10 @@ function ParliamentarySpendingTeaser({
       onNavigate={onNavigate}
       moneyCardKind="gasto"
     >
-      <p className="font-heading text-[22px] leading-none tracking-tight text-foreground">
+      <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
         {formatCompact(topGastos.total_gasto)}
       </p>
-      <p className="mt-0.5 text-[12px] font-medium text-muted-foreground">
+      <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         Ano do registro: {topGastos.ano} (mais recente com dados CEAP na ficha)
       </p>
       {sortedDet.length > 0 && (
@@ -714,10 +714,10 @@ function ParliamentarySpendingTeaser({
           {sortedDet.slice(0, 3).map((d, i) => (
             <div key={d.categoria}>
               <div className="flex items-baseline justify-between gap-2">
-                <span className="min-w-0 truncate text-[12px] font-medium text-foreground">
+                <span className="min-w-0 truncate text-[length:var(--text-caption)] font-medium text-foreground">
                   {formatPublicLabel(d.categoria)}
                 </span>
-                <span className="shrink-0 text-[12px] font-bold tabular-nums text-foreground">
+                <span className="shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground">
                   {formatCompact(d.valor)}
                 </span>
               </div>
@@ -757,14 +757,14 @@ function CareerTeaser({
             <div key={h.id} className="flex items-start gap-2.5">
               <div className="mt-1 size-2.5 shrink-0 rounded-full bg-foreground" />
               <div className="min-w-0 flex-1">
-                <p className="text-[13px] font-semibold leading-snug text-foreground">
+                <p className="text-[length:var(--text-body-sm)] font-semibold leading-snug text-foreground">
                   {formatHistoricoCargoTituloPublico(h)}
                 </p>
-                <span className="text-[11px] font-semibold text-muted-foreground">
+                <span className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
                   {formatHistoricoPeriodoDisplay(h, historicoOrdenado)}
                 </span>
                 {observation && (
-                  <p className="mt-0.5 line-clamp-1 text-[11px] font-medium leading-snug text-muted-foreground">
+                  <p className="mt-0.5 line-clamp-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
                     {observation}
                   </p>
                 )}

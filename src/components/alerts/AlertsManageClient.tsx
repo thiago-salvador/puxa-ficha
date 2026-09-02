@@ -260,7 +260,7 @@ export function AlertsManageClient() {
       <div className="rounded-[20px] border border-border/60 bg-card p-5 sm:p-6">
         <div id="cancelar-tudo" className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+            <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
               Gestão dos alertas
             </p>
             <h1 className="mt-1 font-heading text-3xl uppercase leading-none text-foreground sm:text-4xl">

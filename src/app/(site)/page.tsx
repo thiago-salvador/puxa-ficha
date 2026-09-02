@@ -120,7 +120,7 @@ export default async function Home() {
           <SlashDivider className="hero-fade my-6 lg:my-8" color="text-white" />
 
           {/* Label */}
-          <p className="hero-fade text-[11px] font-semibold uppercase tracking-[0.15em] text-white" style={{ animationDelay: "0.3s" }}>
+          <p className="hero-fade text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.15em] text-white" style={{ animationDelay: "0.3s" }}>
             Eleições 2026
           </p>
 
@@ -128,30 +128,30 @@ export default async function Home() {
           <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
             {totalCandidatos !== null && (
               <div className="hero-fade" style={{ animationDelay: "0.4s" }}>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {totalCandidatos}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   candidatos mapeados
                 </p>
               </div>
             )}
             {totalPatrimonio !== null && totalPatrimonio > 0 && (
               <div className="hero-fade" style={{ animationDelay: "0.5s" }}>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {formatCompact(totalPatrimonio)}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   patrimônio declarado
                 </p>
               </div>
             )}
             {totalProcessos !== null && totalProcessos > 0 && (
               <div className="hero-fade" style={{ animationDelay: "0.6s" }}>
-                <p className="font-heading text-[22px] leading-none tracking-tight text-white sm:text-[36px] lg:text-[48px]">
+                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
                   {totalProcessos}
                 </p>
-                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-white">
+                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
                   processos
                 </p>
               </div>

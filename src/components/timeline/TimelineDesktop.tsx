@@ -260,13 +260,13 @@ export function TimelineDesktop({
         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <div className="mb-2 flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-foreground">
+              <span className="rounded-full border border-border/60 bg-secondary/40 px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.14em] text-foreground">
                 Mapa da carreira
               </span>
-              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                 {visibleLaneTypes.length} trilhas
               </span>
-              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
+              <span className="rounded-full border border-border/50 bg-background px-3 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
                 {events.length} eventos
               </span>
             </div>
@@ -457,7 +457,7 @@ export function TimelineDesktop({
                           y={cy + 4}
                           textAnchor="middle"
                           fill={theme.text}
-                          className="pointer-events-none text-[10px] font-bold"
+                          className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
                           style={{ fontSize: 10 }}
                         >
                           {b.items.length}+
@@ -532,7 +532,7 @@ export function TimelineDesktop({
                             x={x0 + 10}
                             y={cy + 3}
                             textAnchor="start"
-                            className="pointer-events-none text-[10px] font-semibold"
+                            className="pointer-events-none text-[length:var(--text-eyebrow)] font-semibold"
                             fill={textFill}
                             style={{ fontSize: 8 }}
                           >
@@ -659,7 +659,7 @@ export function TimelineDesktop({
                             y={badgeY + 14}
                             textAnchor="middle"
                             fill={theme.text}
-                            className="pointer-events-none text-[10px] font-bold"
+                            className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
                             style={{ fontSize: 8 }}
                           >
                             {badgeLabel}

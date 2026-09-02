@@ -55,7 +55,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
   return (
     <div className="mx-auto max-w-3xl space-y-8">
       <div>
-        <label htmlFor="embed-search" className="mb-2 block text-[13px] font-semibold text-foreground">
+        <label htmlFor="embed-search" className="mb-2 block text-[length:var(--text-body-sm)] font-semibold text-foreground">
           Buscar candidato
         </label>
         <input
@@ -69,7 +69,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
       </div>
 
       <div>
-        <label htmlFor="embed-select" className="mb-2 block text-[13px] font-semibold text-foreground">
+        <label htmlFor="embed-select" className="mb-2 block text-[length:var(--text-body-sm)] font-semibold text-foreground">
           Candidato
         </label>
         <select
@@ -93,7 +93,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
 
       {embedSrc ? (
         <div>
-          <h2 className="mb-2 text-[13px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <h2 className="mb-2 text-[length:var(--text-body-sm)] font-semibold uppercase tracking-wider text-muted-foreground">
             Preview
           </h2>
           <div className="overflow-hidden rounded-xl border border-border bg-muted/30 p-2">
@@ -110,13 +110,13 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
 
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-[13px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <h2 className="text-[length:var(--text-body-sm)] font-semibold uppercase tracking-wider text-muted-foreground">
             HTML do iframe
           </h2>
           <button
             type="button"
             onClick={() => copy(iframeHtml, "html")}
-            className="rounded-full border border-foreground px-4 py-1.5 text-[12px] font-bold uppercase tracking-wide"
+            className="rounded-full border border-foreground px-4 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-wide"
           >
             {copied === "html" ? "Copiado" : "Copiar"}
           </button>
@@ -128,7 +128,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
           tabIndex={0}
           role="region"
           aria-label="Código HTML do iframe, área com rolagem"
-          className="max-h-48 overflow-auto rounded-lg border border-border bg-card p-3 text-[12px] leading-relaxed outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="max-h-48 overflow-auto rounded-lg border border-border bg-card p-3 text-[length:var(--text-caption)] leading-relaxed outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {iframeHtml}
         </pre>
@@ -136,13 +136,13 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
 
       <div>
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <h2 className="text-[13px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <h2 className="text-[length:var(--text-body-sm)] font-semibold uppercase tracking-wider text-muted-foreground">
             Script opcional (altura automatica)
           </h2>
           <button
             type="button"
             onClick={() => copy(RESIZE_SNIPPET, "script")}
-            className="rounded-full border border-foreground px-4 py-1.5 text-[12px] font-bold uppercase tracking-wide"
+            className="rounded-full border border-foreground px-4 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-wide"
           >
             {copied === "script" ? "Copiado" : "Copiar"}
           </button>
@@ -151,11 +151,11 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
           tabIndex={0}
           role="region"
           aria-label="Código do script opcional de altura automática, área com rolagem"
-          className="max-h-48 overflow-auto rounded-lg border border-border bg-card p-3 text-[12px] leading-relaxed outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="max-h-48 overflow-auto rounded-lg border border-border bg-card p-3 text-[length:var(--text-caption)] leading-relaxed outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {RESIZE_SNIPPET}
         </pre>
-        <p className="mt-2 text-[12px] text-muted-foreground">
+        <p className="mt-2 text-[length:var(--text-caption)] text-muted-foreground">
           O script valida a origem das mensagens. Use o mesmo{" "}
           <code className="rounded bg-muted px-1">id</code> no iframe.
         </p>

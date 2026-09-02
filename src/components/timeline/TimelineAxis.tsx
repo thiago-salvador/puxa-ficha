@@ -51,7 +51,7 @@ export function TimelineAxis({ yearMin, yearMax, leftPad, rightPad, width, y }: 
             x={xForYear(yr)}
             y={y + 22}
             textAnchor="middle"
-            className="fill-muted-foreground text-[10px] font-bold tracking-[0.04em]"
+            className="fill-muted-foreground text-[length:var(--text-eyebrow)] font-bold tracking-[0.04em]"
             style={{ fontSize: 10 }}
           >
             {yr}

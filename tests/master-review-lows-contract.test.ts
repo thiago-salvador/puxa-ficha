@@ -19,7 +19,7 @@ describe("master review low regressions", () => {
     const inputClass = source.match(/placeholder="Buscar candidato[\s\S]*?className="([^"]+)"/)?.[1]
     assert.ok(inputClass)
     assert.match(inputClass, /\btext-base\b/)
-    assert.match(inputClass, /\bmd:text-\[14px\]/)
+    assert.match(inputClass, /\bmd:text-\[length:var\(--text-body\)\]/)
   })
 
   it("envia batch_failed do news refresh para console.error", () => {

@@ -109,7 +109,7 @@ export function FollowCandidateButton({
 
     return (
       <div className="mt-5 max-w-xl rounded-[18px] border border-border/60 bg-card/80 p-4 sm:mt-6 sm:p-5">
-        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
           Alertas da ficha
         </p>
         <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-foreground sm:text-[length:var(--text-body)]">
@@ -347,7 +347,7 @@ export function FollowCandidateButton({
     <div className="mt-5 max-w-xl rounded-[18px] border border-border/60 bg-card/80 p-4 sm:mt-6 sm:p-5">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
+          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
             Alertas da ficha
           </p>
           <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-foreground sm:text-[length:var(--text-body)]">

@@ -482,7 +482,7 @@ test("patrimônio e cota mostram a cifra na mesma altura tipográfica do financi
   })
 
   // O card de financiamento sempre usou 24px no mobile e 28px acima dele.
-  const cifrasGrandes = html.match(/text-\[24px\][^"]*sm:text-\[28px\]/g) ?? []
+  const cifrasGrandes = html.match(/text-\[24px\][^"]*sm:text-\[length:var\(--text-heading\)\]/g) ?? []
   assert.ok(
     cifrasGrandes.length >= 3,
     `patrimônio, financiamento e cota devem usar a mesma escala; achei ${cifrasGrandes.length}`,

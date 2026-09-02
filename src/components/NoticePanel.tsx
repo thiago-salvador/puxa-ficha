@@ -68,7 +68,7 @@ export function NoticePanel({
       {eyebrow ? (
         <p
           className={cn(
-            "text-[10px] font-bold uppercase tracking-[0.08em]",
+            "text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em]",
             styles.eyebrow,
             title || description ? "mb-1.5" : "",
           )}

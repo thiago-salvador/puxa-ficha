@@ -25,7 +25,7 @@ type TabChange = (id: string) => void
 function TabCount({ count, inverted = false }: { count?: number; inverted?: boolean }) {
   if (count == null || count <= 0) return null
   return (
-    <span className={`inline-flex h-[18px] min-w-[18px] shrink-0 items-center justify-center rounded-full px-1 text-[10px] font-bold ${inverted ? "bg-background text-foreground" : "bg-foreground text-background"}`}>
+    <span className={`inline-flex h-[18px] min-w-[18px] shrink-0 items-center justify-center rounded-full px-1 text-[length:var(--text-eyebrow)] font-bold ${inverted ? "bg-background text-foreground" : "bg-foreground text-background"}`}>
       {count}
     </span>
   )
@@ -185,7 +185,7 @@ function MobilePrimaryTabs({ tabs, activeTab, onTabChange }: { tabs: Tab[]; acti
           idPrefix="profile-tab-"
           label={<span className="truncate">{MOBILE_TAB_LABELS[tab.id] ?? tab.label}</span>}
           onTabChange={onTabChange}
-          className={(isActive) => `inline-flex min-h-12 min-w-0 items-center justify-center gap-1 border-b-2 px-1 py-3 text-[10px] font-bold uppercase tracking-[0.06em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
+          className={(isActive) => `inline-flex min-h-12 min-w-0 items-center justify-center gap-1 border-b-2 px-1 py-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
         />
       ))}
     </div>
@@ -258,7 +258,7 @@ function MoreTabs({ tabs, activeTab, onTabChange }: { tabs: Tab[]; activeTab: st
         aria-expanded={open}
         aria-controls="profile-tabs-more-menu"
         onClick={() => setOpen((current) => !current)}
-        className={`inline-flex min-h-12 items-center gap-1 border-b-2 px-3 py-3 text-[10px] font-bold uppercase tracking-[0.06em] outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${activeMoreTab ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
+        className={`inline-flex min-h-12 items-center gap-1 border-b-2 px-3 py-3 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${activeMoreTab ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
       >
         <MoreHorizontal className="size-4" aria-hidden="true" />
         <span>Mais</span>
