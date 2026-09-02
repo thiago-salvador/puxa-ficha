@@ -1276,6 +1276,74 @@ describe("alerts HTTP routes", () => {
      * O contrato mudou de proposito. O envio nao pode mais ser contado como
      * falha de envio, e o que impede o reenvio e a janela do assinante avancar.
      */
+    function seedChanges(total: number, startIso = "2026-04-10T12:00:00.000Z") {
+      const start = new Date(startIso).getTime()
+      return Array.from({ length: total }, (_, index) => ({
+        id: `chg_${String(index + 1).padStart(3, "0")}`,
+        candidato_id: "cand_lula",
+        titulo: `Mudança ${index + 1}`,
+        descricao: null,
+        created_at: new Date(start + index * 1000).toISOString(),
+      }))
+    }
+
+    it("envia todas as mudanças da janela acima de 40 e resume o excedente por ficha no email", async () => {
+      // Até 2026-09-02 o digest pedia `limit(40)` e avançava a janela para o
+      // instante da execução: a 41ª mudança em diante saía da janela para sempre.
+      const fixture = baseDigestFixture()
+      fixture.setTable("candidate_changes", seedChanges(45))
+
+      const handler = createSendDigestHandler(createDeps(fixture))
+      const response = await handler(buildDigestRequest(fixture))
+      const body = await readJson<{ sent: number; skipped: number; failed: number }>(response)
+      const logRow = fixture.getTable("notification_log")[0]
+      const subscriber = fixture.getTable("alert_subscribers")[0]
+
+      assert.equal(response.status, 200)
+      assert.deepEqual([body.sent, body.skipped, body.failed], [1, 0, 0])
+      assert.equal((logRow?.change_ids as string[]).length, 45, "as 45 mudanças entram no registro")
+      assert.equal(subscriber?.last_digest_sent_at, NOW.toISOString(), "tudo coube: janela no instante da execução")
+      const email = fixture.emails[0]
+      assert.match(email?.text ?? "", /Mudança 45/)
+      assert.match(email?.text ?? "", /Mudança 36/)
+      assert.doesNotMatch(email?.text ?? "", /Mudança 35\b/, "só as 10 mais recentes são listadas")
+      assert.match(email?.text ?? "", /e mais 35 atualizações nesta ficha/)
+      assert.match(email?.html ?? "", /45 atualizações na ficha/)
+    })
+
+    it("janela truncada avança só até a última mudança enviada, e o resto sai no digest seguinte", async () => {
+      const fixture = baseDigestFixture()
+      const changes = seedChanges(205)
+      fixture.setTable("candidate_changes", changes)
+
+      const primeira = await createSendDigestHandler(createDeps(fixture))(buildDigestRequest(fixture))
+      assert.equal(primeira.status, 200)
+      const primeiroLog = fixture.getTable("notification_log")[0]
+      assert.equal((primeiroLog?.change_ids as string[]).length, 200)
+      assert.equal(
+        fixture.getTable("alert_subscribers")[0]?.last_digest_sent_at,
+        changes[199]?.created_at,
+        "janela para no created_at da 200ª mudança, não no instante da execução",
+      )
+      assert.ok(
+        fixture.events.some((event) => event.event === "digest_truncado"),
+        "truncamento fica no log",
+      )
+
+      const amanha = new Date(NOW.getTime() + 24 * 60 * 60 * 1000)
+      const segunda = await createSendDigestHandler(createDeps(fixture, amanha))(buildDigestRequest(fixture))
+      assert.equal(segunda.status, 200)
+      const body = await readJson<{ sent: number }>(segunda)
+      assert.equal(body.sent, 1)
+      const segundoLog = fixture.getTable("notification_log")[1]
+      assert.deepEqual(
+        segundoLog?.change_ids,
+        changes.slice(200).map((change) => change.id),
+        "as 5 restantes saem no digest seguinte, sem repetir as 200",
+      )
+      assert.equal(fixture.getTable("alert_subscribers")[0]?.last_digest_sent_at, amanha.toISOString())
+    })
+
     it("nao marca como falha o digest que saiu e so nao conseguiu ser registrado", async () => {
       const fixture = baseDigestFixture()
       fixture.setTable("candidate_changes", [

@@ -32,6 +32,15 @@ const CHAIN_FETCH_ATTEMPTS = 2
 const CHAIN_FETCH_RETRY_DELAY_MS = 3000
 const CHAIN_FETCH_TIMEOUT_MS = 15_000
 const DIGEST_TIME_ZONE = "America/Sao_Paulo"
+// Teto de mudanças por digest e por assinante. A consulta pede uma linha a
+// mais para saber se a janela ficou truncada; nesse caso a janela do assinante
+// avança só até o `created_at` da última mudança enviada, e o excedente sai no
+// digest seguinte. Antes era `limit(40)` com a janela avançando para o instante
+// da execução, o que descartava da 41ª mudança em diante para sempre (3 de 164
+// envios medidos em 2026-09-01 tinham 57 a 60 mudanças na janela).
+const DIGEST_MAX_CHANGES = 200
+// No email, cada ficha mostra até este número de mudanças e resume o resto.
+const DIGEST_MAX_CHANGES_PER_CANDIDATE = 10
 type AfterResponseCallback = () => Promise<void> | void
 
 interface SendDigestDeps {
@@ -325,8 +334,9 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         .in("candidato_id", candidateIds)
         .gt("created_at", windowStart)
         .lte("created_at", runStartedAt)
-        .order("created_at", { ascending: false })
-        .limit(40)
+        .order("created_at", { ascending: true })
+        .order("id", { ascending: true })
+        .limit(DIGEST_MAX_CHANGES + 1)
 
       if (changesError) {
         deps.logAlertsEvent({
@@ -349,15 +359,39 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         continue
       }
 
+      const truncado = changeRows.length > DIGEST_MAX_CHANGES
+      const changesInWindow = (
+        truncado ? changeRows.slice(0, DIGEST_MAX_CHANGES) : changeRows
+      ) as CandidateChangeRow[]
+      // Janela do assinante depois deste digest: o instante da execução quando
+      // tudo coube; senão, o `created_at` da última mudança enviada, para o
+      // excedente entrar no próximo digest em vez de sair da janela.
+      const windowEnd = truncado
+        ? (changesInWindow.at(-1)?.created_at ?? runStartedAt)
+        : runStartedAt
+      if (truncado) {
+        deps.logAlertsEvent({
+          route: "send-digest",
+          event: "digest_truncado",
+          level: "warn",
+          detail: { subscriberId: subscriber.id, enviadas: changesInWindow.length, windowEnd },
+        })
+      }
+
       const grouped: AlertDigestEmailCandidate[] = []
 
       for (const candidateId of candidateIds) {
         const candidate = candidateMap.get(candidateId)
         if (!candidate) continue
 
-        const changes = (changeRows as CandidateChangeRow[])
+        // Mais recente primeiro na leitura; no email, cada ficha mostra até
+        // DIGEST_MAX_CHANGES_PER_CANDIDATE e resume o resto num rodapé.
+        const allChanges = changesInWindow
           .filter((row) => row.candidato_id === candidateId)
+          .reverse()
           .map((row) => ({ title: row.titulo, description: row.descricao ?? null }))
+        const changes = allChanges.slice(0, DIGEST_MAX_CHANGES_PER_CANDIDATE)
+        const omitted = allChanges.length - changes.length
 
         if (changes.length === 0) continue
 
@@ -370,6 +404,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
           candidateName: candidate.nome_urna,
           candidateMeta: [partyLabel || null, cargoLabel || null].filter(Boolean).join(" · "),
           changes,
+          ...(omitted > 0 ? { omitted } : {}),
         })
       }
 
@@ -422,7 +457,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             status: "pending",
             error_message: null,
             candidato_ids: candidateIds,
-            change_ids: (changeRows as CandidateChangeRow[]).map((row) => row.id),
+            change_ids: changesInWindow.map((row) => row.id),
           }).abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", logId)
 
@@ -445,7 +480,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             digest_date: digestDate,
             status: "pending",
             candidato_ids: candidateIds,
-            change_ids: (changeRows as CandidateChangeRow[]).map((row) => row.id),
+            change_ids: changesInWindow.map((row) => row.id),
           }).abortSignal(supabaseQueryTimeoutSignal())
           .select("id")
           .single()
@@ -504,7 +539,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
 
         const { error: subscriberDigestUpdateError } = await supabase
           .from("alert_subscribers")
-          .update({ last_digest_sent_at: runStartedAt })
+          .update({ last_digest_sent_at: windowEnd })
           .abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", subscriber.id)
 
@@ -581,7 +616,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
 
           const { error: janelaError } = await supabase
             .from("alert_subscribers")
-            .update({ last_digest_sent_at: runStartedAt })
+            .update({ last_digest_sent_at: windowEnd })
             .abortSignal(supabaseQueryTimeoutSignal())
             .eq("id", subscriber.id)
 

@@ -347,6 +347,12 @@ export interface AlertDigestEmailCandidate {
     title: string
     description?: string | null
   }>
+  /** Mudanças desta ficha que entraram no digest mas não são listadas uma a uma. */
+  omitted?: number
+}
+
+function omittedLabel(omitted: number): string {
+  return omitted === 1 ? "e mais 1 atualização nesta ficha" : `e mais ${omitted} atualizações nesta ficha`
 }
 
 export function buildAlertDigestEmail(input: {
@@ -364,6 +370,7 @@ export function buildAlertDigestEmail(input: {
     ...item.changes.map((change) =>
       change.description ? `- ${change.title}: ${change.description}` : `- ${change.title}`,
     ),
+    ...(item.omitted ? [`- ${omittedLabel(item.omitted)}`] : []),
     "",
   ])
 
@@ -392,6 +399,9 @@ export function buildAlertDigestEmail(input: {
             }</li>`,
         )
         .join("")
+      const omitidas = item.omitted
+        ? `<li class="pf-muted" style="margin:12px 0 0;padding-left:4px;font-family:${EMAIL_FONT_BODY};font-size:14px;line-height:21px;color:${EMAIL_COLORS.muted}">${escapeHtml(omittedLabel(item.omitted))}</li>`
+        : ""
 
       return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="pf-card" bgcolor="${EMAIL_COLORS.surface}" style="margin:0 0 16px;border:1px solid ${EMAIL_COLORS.border};border-radius:12px;background-color:${EMAIL_COLORS.surface}">
         <tr>
@@ -401,14 +411,17 @@ export function buildAlertDigestEmail(input: {
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 12px">
               <tr><td class="pf-rule" bgcolor="${EMAIL_COLORS.border}" style="height:1px;line-height:1px;font-size:0;background-color:${EMAIL_COLORS.border};padding:0">&nbsp;</td></tr>
             </table>
-            <ul style="margin:0;padding:0 0 0 18px">${mudancas}</ul>
+            <ul style="margin:0;padding:0 0 0 18px">${mudancas}${omitidas}</ul>
           </td>
         </tr>
       </table>`
     })
     .join("")
 
-  const totalMudancas = input.items.reduce((acc, item) => acc + item.changes.length, 0)
+  const totalMudancas = input.items.reduce(
+    (acc, item) => acc + item.changes.length + (item.omitted ?? 0),
+    0,
+  )
   const resumoLead =
     input.items.length === 1
       ? `${totalMudancas} ${totalMudancas === 1 ? "atualização" : "atualizações"} na ficha que você acompanha.`
