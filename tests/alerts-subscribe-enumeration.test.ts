@@ -76,6 +76,59 @@ async function subscribeBody(fixture: AlertsRouteFixture, email: string, ip: str
   return (await response.json()) as Record<string, unknown>
 }
 
+function subscribeRequestWithManageToken(email: string, ip: string, manageToken: string) {
+  return new NextRequest("http://localhost/api/alerts/subscribe", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      origin: "http://localhost",
+      "sec-fetch-site": "same-origin",
+      "x-vercel-forwarded-for": ip,
+      "x-real-ip": ip,
+    },
+    body: JSON.stringify({ email, candidateSlug: "lula", manageToken }),
+  })
+}
+
+describe("alerts subscribe: token de gestao invalido nao e oraculo", () => {
+  // Ate 2026-09-02, email verificado + manageToken que nao resolvia devolvia
+  // 403 "Invalid manage token", enquanto qualquer outro email com o mesmo token
+  // inventado recebia 200 neutro. Bastava um token qualquer para descobrir, a
+  // ~30 emails por minuto, quem acompanha candidatos no site.
+  it("responde identico para email novo e email verificado quando o token nao resolve", async () => {
+    const token = "TokenInventado0000000000000000000000000000"
+    const novo = new AlertsRouteFixture({ candidatos_publico: [seedCandidate()] })
+    const respostaNovo = await createSubscribeHandler(createDeps(novo))(
+      subscribeRequestWithManageToken("novo@example.com", "203.0.113.31", token),
+    )
+
+    const verificado = new AlertsRouteFixture({
+      candidatos_publico: [seedCandidate()],
+      alert_subscribers: [
+        seedSubscriber({
+          email: "verificado@example.com",
+          verified: true,
+          verified_at: "2026-04-01T10:00:00.000Z",
+          verify_token_hash: null,
+        }),
+      ],
+    })
+    const respostaVerificado = await createSubscribeHandler(createDeps(verificado))(
+      subscribeRequestWithManageToken("verificado@example.com", "203.0.113.32", token),
+    )
+
+    assert.equal(respostaNovo.status, 200)
+    assert.equal(respostaVerificado.status, 200, "token invalido nao pode virar 403 so para verificado")
+    assert.deepEqual(await respostaVerificado.json(), await respostaNovo.json())
+    // O fato fica no log, nao na resposta.
+    assert.ok(
+      verificado.events.some((event) => event.event === "invalid_manage_token_verified_flow"),
+      "token invalido no fluxo verificado precisa ser logado",
+    )
+    assert.equal(verificado.emails.length, 1, "cai no reenvio do link de gestao, como sem token")
+  })
+})
+
 describe("alerts subscribe: resposta neutra contra enumeracao", () => {
   it("responde identico para email novo, cadastrado sem verificar e ja verificado", async () => {
     const novo = new AlertsRouteFixture({ candidatos_publico: [seedCandidate()] })

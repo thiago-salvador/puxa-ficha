@@ -22,6 +22,9 @@ const {
   notificationLogRetentionCutoffDate,
   operationalRetentionEnabled,
   purgeExpiredQuizShortLinks,
+  pendingSubscriberPurgeMode,
+  pendingSubscriberRetentionCutoffIso,
+  purgeExpiredPendingSubscribers,
   purgeNotificationLogsOlderThan,
   quizShortLinkRetentionCutoffIso,
 } = require("../src/lib/operational-retention") as typeof import("../src/lib/operational-retention")
@@ -64,6 +67,10 @@ function clientFake(
         },
         in(column: string, values: string[]) {
           chamada.filtros.push(["in", column, values.join(",")])
+          return query
+        },
+        eq(column: string, value: string | boolean) {
+          chamada.filtros.push(["eq", column, String(value)])
           return query
         },
         lte(column: string, value: string) {
@@ -256,5 +263,89 @@ describe("carona no cron diário", () => {
     assert.match(script, /O padrão é dry-run/)
     assert.match(script, /--notification-before/)
     assert.match(script, /quiz_result_short_links/)
+  })
+})
+
+describe("assinantes pendentes com token vencido", () => {
+  const cutoff = "2026-08-26T12:00:00.000Z"
+
+  it("cutoff é 7 dias antes de agora e o modo nasce em contar", () => {
+    assert.equal(
+      pendingSubscriberRetentionCutoffIso(new Date("2026-09-02T12:00:00.000Z")),
+      cutoff,
+    )
+    assert.equal(pendingSubscriberPurgeMode({}), "contar")
+    assert.equal(pendingSubscriberPurgeMode({ PF_ALERTS_PENDING_PURGE_ENABLED: "true" }), "contar")
+    assert.equal(pendingSubscriberPurgeMode({ PF_ALERTS_PENDING_PURGE_ENABLED: " 1 " }), "apagar")
+  })
+
+  it("modo contar: só SELECT com verified=false e verify_token_expires_at < cutoff, sem DELETE", async () => {
+    const { client, chamadas } = clientFake([{ data: [{ id: "a" }, { id: "b" }], error: null }])
+    const resultado = await purgeExpiredPendingSubscribers(cutoff, "contar", client)
+
+    assert.deepEqual(resultado, {
+      status: "ok",
+      modo: "contar",
+      pendentes: 2,
+      cutoff,
+      limite_alcancado: false,
+    })
+    assert.deepEqual(chamadas, [
+      {
+        table: "alert_subscribers",
+        operacao: "select",
+        colunas: "id",
+        filtros: [
+          ["eq", "verified", "false"],
+          ["lt", "verify_token_expires_at", cutoff],
+        ],
+        ordem: [["verify_token_expires_at", true], ["id", true]],
+        limite: 100,
+      },
+    ])
+  })
+
+  it("modo apagar: DELETE repete os dois filtros além do IN, contagem exata", async () => {
+    const { client, chamadas } = clientFake([
+      { data: [{ id: "a" }, { id: "b" }], error: null },
+      { data: [{ id: "a" }, { id: "b" }], error: null },
+    ])
+    const resultado = await purgeExpiredPendingSubscribers(cutoff, "apagar", client)
+
+    assert.deepEqual(resultado, {
+      status: "ok",
+      modo: "apagar",
+      removidos: 2,
+      cutoff,
+      limite_alcancado: false,
+    })
+    assert.equal(chamadas.length, 2)
+    assert.deepEqual(chamadas[1], {
+      table: "alert_subscribers",
+      operacao: "delete",
+      colunas: "id",
+      filtros: [
+        ["in", "id", "a,b"],
+        ["eq", "verified", "false"],
+        ["lt", "verify_token_expires_at", cutoff],
+      ],
+      ordem: [],
+      limite: null,
+    })
+  })
+
+  it("modo apagar sem pendentes não emite DELETE", async () => {
+    const { client, chamadas } = clientFake([{ data: [], error: null }])
+    const resultado = await purgeExpiredPendingSubscribers(cutoff, "apagar", client)
+    assert.deepEqual(resultado, { status: "ok", modo: "apagar", removidos: 0, cutoff, limite_alcancado: false })
+    assert.equal(chamadas.length, 1)
+  })
+
+  it("falha de consulta vira status falhou, nunca lança", async () => {
+    const { client } = clientFake([{ data: null, error: { message: "timeout" } }])
+    assert.deepEqual(await purgeExpiredPendingSubscribers(cutoff, "contar", client), {
+      status: "falhou",
+      message: "timeout",
+    })
   })
 })

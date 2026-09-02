@@ -377,7 +377,26 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
       now - lastVerificationSentAt < ALERT_VERIFICATION_EMAIL_COOLDOWN_MS
 
     if (existingSubscriber?.verified) {
-      if (!manageToken) {
+      // Token de gestão que não resolve para ESTE assinante conta como ausente:
+      // cai no reenvio do link de gestão e responde neutro. Antes, este ramo
+      // devolvia 403 "Invalid manage token" só quando o email era de um
+      // assinante verificado, e 200 neutro para qualquer outro email, o que
+      // fazia de um token inventado um oráculo de enumeração da base. O fato
+      // fica só no log.
+      const authorizedSubscriber = manageToken
+        ? await deps.findSubscriberByManageToken(manageToken)
+        : null
+      const authorizedManageToken =
+        manageToken && authorizedSubscriber?.id === existingSubscriber.id ? manageToken : null
+      if (manageToken && !authorizedManageToken) {
+        deps.logAlertsEvent({
+          route: "subscribe",
+          event: "invalid_manage_token_verified_flow",
+          level: "warn",
+        })
+      }
+
+      if (!authorizedManageToken) {
         if (cooldownActive) {
           deps.logAlertsApiExit("subscribe", 200, "verified_manage_link_cooldown", {
             candidateSlug: candidate.slug,
@@ -460,12 +479,6 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         return neutralSubscribeResponse(candidate.slug)
       }
 
-      const authorizedSubscriber = await deps.findSubscriberByManageToken(manageToken)
-      if (!authorizedSubscriber || authorizedSubscriber.id !== existingSubscriber.id) {
-        deps.logAlertsApiExit("subscribe", 403, "invalid_manage_token_verified_flow")
-        return NextResponse.json({ error: "Invalid manage token" }, { status: 403 })
-      }
-
       const { error: upsertError } = await supabase.from("alert_subscriptions").upsert(
         {
           subscriber_id: existingSubscriber.id,
@@ -487,7 +500,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           following: true,
           candidateSlug: candidate.slug,
         }),
-        manageToken,
+        authorizedManageToken,
       )
     }
 
