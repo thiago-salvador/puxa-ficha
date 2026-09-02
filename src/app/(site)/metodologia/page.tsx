@@ -229,6 +229,43 @@ export default function MetodologiaPage() {
             selo de pendência enquanto aguardam verificação adicional. Isso não é parecer jurídico
             nem aprovação humana final.
           </p>
+          <h3 className="pt-2 text-[length:var(--text-body-lg)] font-semibold text-foreground">
+            Resumos de programa de governo
+          </h3>
+          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
+            Na aba de programa de governo, o resumo exibido é gerado por IA a partir do documento
+            oficial que a candidatura registrou no TSE, e passa por um processo próprio antes de
+            ser publicado:
+          </p>
+          <ol className="list-decimal space-y-2 pl-5 text-[length:var(--text-body-sm)] font-medium leading-snug text-muted-foreground">
+            <li>
+              O PDF oficial é baixado do pacote do TSE, identificado por hash e extraído página a
+              página. O documento é tratado como dado a resumir, nunca como instrução ao modelo.
+            </li>
+            <li>
+              Um modelo gerador escreve de seis a oito frases e de quatro a seis temas. Cada frase
+              e cada tema citam trechos literais do documento, com página, e o trecho precisa
+              existir palavra por palavra no texto extraído. O parágrafo publicado é exatamente a
+              união dessas frases verificadas: nada além delas entra no texto.
+            </li>
+            <li>
+              Um segundo modelo, independente do primeiro, avalia cada frase e cada tema em seis
+              dimensões: suporte na evidência, números, neutralidade, mistura de assuntos,
+              identidade da candidatura e cobertura das cláusulas. Qualquer reprovação ou dúvida
+              bloqueia a publicação.
+            </li>
+            <li>
+              A aprovação final é humana e fica registrada com os hashes do documento e do
+              resumo. Se o documento oficial ou o texto mudarem, a aprovação perde validade e o
+              resumo sai do ar até nova revisão.
+            </li>
+          </ol>
+          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]">
+            O resumo é descritivo: reproduz o que o documento propõe, sem avaliar mérito, sem
+            comparar candidaturas e sem recomendar voto. O link para o PDF original no TSE aparece
+            sempre ao lado, para conferência. Candidaturas sem documento localizado no pacote
+            oficial são exibidas como tal, sem resumo.
+          </p>
         </div>
       </section>
 
