@@ -138,7 +138,10 @@ function urlOficial(trabalho: Trabalho): URL | null {
 
 async function consultar(url: URL): Promise<{ resposta: RespostaDjen; restante: number | null }> {
   for (let tentativa = 0; tentativa < 3; tentativa += 1) {
-    const response = await fetch(url, { headers: { accept: "application/json" } })
+    const response = await fetch(url, {
+      headers: { accept: "application/json" },
+      signal: AbortSignal.timeout(30_000),
+    })
     const restanteCabecalho = response.headers.get("x-ratelimit-remaining")
     const restante = restanteCabecalho === null ? null : Number(restanteCabecalho)
     if (response.status === 429) {

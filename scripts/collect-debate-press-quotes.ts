@@ -109,6 +109,7 @@ export async function collectDebatePressQuotes() {
 
   const response = await fetch(ARTICLE_URL, {
     headers: { "user-agent": "PuxaFicha/1.0 (+https://puxaficha.com.br)" },
+    signal: AbortSignal.timeout(30_000),
   })
   if (!response.ok) throw new Error(`Falha ao coletar matéria: HTTP ${response.status}`)
   if (response.url !== ARTICLE_URL) throw new Error("Redirecionamento inesperado da fonte")

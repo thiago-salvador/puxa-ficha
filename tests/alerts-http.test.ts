@@ -551,6 +551,9 @@ describe("alerts HTTP routes", () => {
       assert.equal(fixture.emails.length, 1)
       assert.equal(fixture.emails[0]?.to, "eleitor+teste@example.com")
       assert.match(fixture.emails[0]?.subject ?? "", /Confirme seu alerta sobre Lula/)
+      // Chave estável por assinante e token: uma nova tentativa depois de a
+      // Resend aceitar e o fetch estourar não vira segundo email.
+      assert.match(fixture.emails[0]?.idempotencyKey ?? "", /^pf-verify:[^:]+:[0-9a-f]{32}$/)
       assert.equal(fixture.extractAccessUrls(0).length, 3)
       assert.ok(fixture.getTable("alert_subscribers")[0]?.last_verification_email_sent_at)
     })
@@ -627,6 +630,7 @@ describe("alerts HTTP routes", () => {
       // continua provado pelo efeito colateral.
       assert.equal("verified" in body, false)
       assert.equal(fixture.emails.length, 1)
+      assert.match(fixture.emails[0]?.idempotencyKey ?? "", /^pf-manage:[^:]+:[0-9a-f]{32}$/)
       assert.notEqual(fixture.getTable("alert_subscribers")[0]?.manage_token_hash, previousManageHash)
     })
 

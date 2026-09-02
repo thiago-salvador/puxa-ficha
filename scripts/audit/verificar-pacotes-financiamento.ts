@@ -11,7 +11,7 @@ const receipts = JSON.parse(
 ) as PackageReceipt[]
 
 async function verify(receipt: PackageReceipt): Promise<void> {
-  const response = await fetch(receipt.url)
+  const response = await fetch(receipt.url, { signal: AbortSignal.timeout(120_000) })
   if (!response.ok || !response.body) throw new Error(`${receipt.ano}: HTTP ${response.status}`)
   const hash = createHash("sha256")
   for await (const chunk of response.body) hash.update(chunk)

@@ -78,6 +78,7 @@ export async function consultar<T>(sql: string, ref: string, token: string): Pro
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({ query: sql, read_only: true }),
+    signal: AbortSignal.timeout(60_000),
   })
 
   const texto = await r.text()

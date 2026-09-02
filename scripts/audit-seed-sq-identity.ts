@@ -155,7 +155,7 @@ async function baixarPacote(ano: string): Promise<string | null> {
   const zipPath = resolve(CACHE_DIR, `consulta_cand_${ano}.zip`)
 
   process.stderr.write(`  baixando ${ano}...\n`)
-  const resposta = await fetch(url)
+  const resposta = await fetch(url, { signal: AbortSignal.timeout(120_000) })
   if (!resposta.ok || !resposta.body) {
     process.stderr.write(`  ${ano}: HTTP ${resposta.status}, pulando\n`)
     return null

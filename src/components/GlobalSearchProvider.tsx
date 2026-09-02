@@ -20,6 +20,7 @@ import {
   filterGlobalSearchPalette,
   GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT,
   normalizeForSearch,
+  readGlobalSearchIndexResponse,
   resolveGlobalSearchHref,
   type GlobalSearchIndexItem,
 } from "@/lib/global-search"
@@ -146,8 +147,7 @@ async function fetchGlobalSearchIndex(): Promise<GlobalSearchIndexItem[]> {
   if (!response.ok) {
     throw new Error(`search index request failed: ${response.status}`)
   }
-  const body = (await response.json()) as { data?: unknown }
-  return Array.isArray(body.data) ? (body.data as GlobalSearchIndexItem[]) : []
+  return readGlobalSearchIndexResponse(await response.json())
 }
 
 function HighlightedText({

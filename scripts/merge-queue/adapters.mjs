@@ -79,6 +79,7 @@ export class GitHubAdapter {
     const token = ['GET', 'HEAD'].includes(method) ? this.token : this.writeToken;
     const response = await this.fetch(`${this.apiUrl}${path}`, {
       ...init,
+      signal: init.signal ?? AbortSignal.timeout(30_000),
       headers: {
         Accept: 'application/vnd.github+json',
         Authorization: `Bearer ${token}`,
@@ -505,6 +506,7 @@ export class VercelAdapter {
     if (this.teamId) query.set('teamId', this.teamId);
     const response = await this.fetch(`${this.apiUrl}/v6/deployments?${query}`, {
       headers: { Authorization: `Bearer ${this.token}` },
+      signal: AbortSignal.timeout(30_000),
     });
     if (!response.ok) throw new HttpError(`Vercel API ${response.status}`, response.status, await response.text());
     const payload = await response.json();
@@ -532,6 +534,7 @@ export class VercelAdapter {
     const query = this.teamId ? `${path.includes('?') ? '&' : '?'}teamId=${encodeURIComponent(this.teamId)}` : '';
     const response = await this.fetch(`${this.apiUrl}${path}${query}`, {
       ...init,
+      signal: init.signal ?? AbortSignal.timeout(30_000),
       headers: { Authorization: `Bearer ${this.token}`, 'Content-Type': 'application/json', ...(init.headers ?? {}) },
     });
     const text = await response.text();
