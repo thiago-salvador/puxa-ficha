@@ -60,6 +60,23 @@ export function filterGlobalSearchIndexToPublicSlugs(
 /** Limite de candidatos na lista principal do palette (busca vazia ou com filtro). */
 export const GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT = 28
 
+/**
+ * Lê a resposta de `/api/search-index`. A rota responde 200 mesmo degradada,
+ * com `ok: false` e cache curto, para o CDN não segurar um índice ruim por
+ * uma hora. O consumidor precisa honrar esse sinal: índice degradado e vazio é
+ * erro (o provider mostra o estado de falha em vez de "nenhum resultado" para
+ * toda busca); índice degradado com itens serve como está, porque ainda é
+ * melhor que nada até a fonte voltar.
+ */
+export function readGlobalSearchIndexResponse(body: unknown): GlobalSearchIndexItem[] {
+  const payload = (body ?? {}) as { ok?: unknown; data?: unknown }
+  const items = Array.isArray(payload.data) ? (payload.data as GlobalSearchIndexItem[]) : []
+  if (payload.ok === false && items.length === 0) {
+    throw new Error("search index degraded and empty")
+  }
+  return items
+}
+
 const DEFAULT_DISPLAY_LIMIT = GLOBAL_SEARCH_PALETTE_DISPLAY_LIMIT
 
 /** Agrega temas e títulos distintos por candidato a partir das linhas de voto. */

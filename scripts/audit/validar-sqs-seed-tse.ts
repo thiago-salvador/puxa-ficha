@@ -31,7 +31,10 @@ async function main(): Promise<void> {
   for (const [ano, esperados] of [...porAno.entries()].sort(([a], [b]) => Number(a) - Number(b))) {
     const zip = join(trabalho, `consulta_cand_${ano}.zip`)
     const dir = join(trabalho, ano)
-    const resposta = await fetch(`https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${ano}.zip`)
+    const resposta = await fetch(
+      `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${ano}.zip`,
+      { signal: AbortSignal.timeout(120_000) },
+    )
     if (!resposta.ok) throw new Error(`TSE ${ano}: HTTP ${resposta.status}`)
     writeFileSync(zip, Buffer.from(await resposta.arrayBuffer()))
     execFileSync("unzip", ["-q", zip, "-d", dir])

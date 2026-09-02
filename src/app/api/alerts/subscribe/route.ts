@@ -47,6 +47,21 @@ import {
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
+/**
+ * Chaves de idempotência dos emails do subscribe, no mesmo espírito de
+ * `buildDigestIdempotencyKey`: estáveis por envio lógico (assinante mais o
+ * token que o email carrega) e únicas entre tipos de email pelo prefixo. O
+ * hash do token entra truncado: 32 hex bastam para não colidir e a chave fica
+ * longe do limite de 256 caracteres da Resend.
+ */
+export function buildVerificationIdempotencyKey(subscriberId: string, verifyTokenHash: string): string {
+  return `pf-verify:${subscriberId}:${verifyTokenHash.slice(0, 32)}`
+}
+
+export function buildManageAccessIdempotencyKey(subscriberId: string, manageTokenHash: string): string {
+  return `pf-manage:${subscriberId}:${manageTokenHash.slice(0, 32)}`
+}
+
 const MAX_NEW_SUBSCRIBERS_PER_HOUR = 24
 const IP_RATE_WINDOW_MS = 3_600_000
 const SUBSCRIBE_IP_NAMESPACE = "alerts-subscribe"
@@ -413,6 +428,9 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
             subject: accessEmail.subject,
             text: accessEmail.text,
             html: accessEmail.html,
+            // Mesma proteção do digest: se a Resend aceitar e o fetch estourar o
+            // prazo, uma nova tentativa com este token não vira segundo email.
+            idempotencyKey: buildManageAccessIdempotencyKey(existingSubscriber.id, manageTokenHash),
           })
         } catch {
           deps.logAlertsApiExit("subscribe", 503, "manage_access_email_failed")
@@ -646,6 +664,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         subject: emailPayload.subject,
         text: emailPayload.text,
         html: emailPayload.html,
+        idempotencyKey: buildVerificationIdempotencyKey(subscriberId, verifyTokenHash),
       })
     } catch {
       deps.logAlertsApiExit("subscribe", 503, "verification_email_send_failed")

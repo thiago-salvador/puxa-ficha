@@ -455,7 +455,8 @@ test("server page no longer hard-gates the manifesto to President", async () => 
     "utf8",
   )
   assert.match(source, /cargo_disputado === "Governador"/)
-  assert.match(source, /await getProgramaGovernoManifesto\(slug\)/)
+  // Carregado em paralelo com o anel de navegação, dentro do mesmo Promise.all.
+  assert.match(source, /await Promise\.all\(\[[\s\S]*?getProgramaGovernoManifesto\(slug\)/)
 })
 
 test("PROGRAMAS_CHUNKING_PASS", () => assert.ok(true))

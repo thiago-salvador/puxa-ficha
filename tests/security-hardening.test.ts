@@ -338,6 +338,29 @@ describe("fixed-window IP rate limit", () => {
     )
     assert.equal(reads, 0)
   })
+
+  it("api/card distingue slug inexistente (404) de fonte degradada (503, sem cache)", async () => {
+    const build = (sourceStatus: "live" | "degraded") =>
+      createCardGetHandler({
+        rateLimiter: { check: () => ({ allowed: true }), reset: () => undefined },
+        getCandidatoBySlugResource: async () => ({ data: null, sourceStatus }),
+        fetchPhotoAsBase64: async () => null,
+        extractCardData: () => ({}),
+        buildSocialCard: async () => new Response("card"),
+        startSpan: (_context: unknown, callback: () => Promise<Response>) => callback(),
+      })
+    const request = () =>
+      new NextRequest("http://localhost/api/card/lula", { headers: { "x-real-ip": "203.0.113.45" } })
+
+    const notFound = await build("live")(request(), { params: Promise.resolve({ slug: "lula" }) })
+    assert.equal(notFound.status, 404)
+    assert.equal(notFound.headers.get("cache-control"), null)
+
+    const degraded = await build("degraded")(request(), { params: Promise.resolve({ slug: "lula" }) })
+    assert.equal(degraded.status, 503)
+    assert.equal(degraded.headers.get("cache-control"), "no-store")
+    assert.match(await degraded.text(), /indisponível/)
+  })
 })
 
 describe("trusted client IP extraction", () => {

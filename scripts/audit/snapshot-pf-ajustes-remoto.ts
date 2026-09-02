@@ -73,6 +73,7 @@ const requiredServiceKey = serviceKey
 
 async function contar(path: string): Promise<ResultadoRest> {
   const response = await fetch(`${requiredSupabaseUrl}/rest/v1/${path}`, {
+    signal: AbortSignal.timeout(30_000),
     headers: {
       apikey: requiredServiceKey,
       Authorization: `Bearer ${requiredServiceKey}`,
@@ -284,7 +285,9 @@ async function main(): Promise<void> {
 
   let deployment: Record<string, unknown>
   try {
-    const deploymentResponse = await fetch(new URL("/api/deployment-info", siteUrl))
+    const deploymentResponse = await fetch(new URL("/api/deployment-info", siteUrl), {
+      signal: AbortSignal.timeout(30_000),
+    })
     deployment = deploymentResponse.ok
       ? ((await deploymentResponse.json()) as Record<string, unknown>)
       : { status: deploymentResponse.status }

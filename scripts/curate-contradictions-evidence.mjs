@@ -37,6 +37,7 @@ async function getJson(path) {
   if (!base || !key)
     throw new Error("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
   const response = await fetch(`${base}/rest/v1/${path}`, {
+    signal: AbortSignal.timeout(30_000),
     headers: {
       apikey: key,
       authorization: `Bearer ${key}`,

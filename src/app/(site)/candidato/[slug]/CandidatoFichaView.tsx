@@ -97,17 +97,20 @@ export async function CandidatoFichaView({
       : ficha.estado
         ? listarPesquisasGovernadorPorSlug(slug, ficha.estado)
         : []
-  const programaGoverno =
-    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador")
-      && seoSubpath !== "timeline"
-      ? await getProgramaGovernoManifesto(slug)
-      : null
-
   // Presidente é disputa nacional (anel único); qualquer outra disputa navega
   // dentro da própria UF. Sem estado na ficha, degrada para o anel do cargo.
   const navEstado =
     ficha.cargo_disputado === "Presidente" ? undefined : (ficha.estado ?? undefined)
-  const allCandidatosResource = await getCandidatoNavResource(ficha.cargo_disputado, navEstado)
+  // O manifesto do programa e o anel de navegação dependem só da ficha, não um
+  // do outro: carregam em paralelo em vez de somar as duas latências na cauda
+  // do stream da página.
+  const [programaGoverno, allCandidatosResource] = await Promise.all([
+    (ficha.cargo_disputado === "Presidente" || ficha.cargo_disputado === "Governador")
+      && seoSubpath !== "timeline"
+      ? getProgramaGovernoManifesto(slug)
+      : Promise.resolve(null),
+    getCandidatoNavResource(ficha.cargo_disputado, navEstado),
+  ])
   const allCandidatos = allCandidatosResource.data
   const sourceStatus = mergeSourceStatuses(
     fichaResource.sourceStatus,

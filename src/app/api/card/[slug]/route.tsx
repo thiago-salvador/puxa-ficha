@@ -70,9 +70,22 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
         const resource = await deps.getCandidatoBySlugResource(slug)
 
         if (!resource.data) {
+          // Mesmo contrato das rotas irmãs (candidato-profile, projetos-lei,
+          // legislacao-executivo): 404 só quando a fonte está viva e o slug não
+          // existe; fonte degradada é 503 sem cache, para o CDN e o crawler não
+          // congelarem um "não encontrado" que era indisponibilidade.
+          const degraded = resource.sourceStatus === "degraded"
           return new Response(
-            JSON.stringify({ error: "Candidato não encontrado" }),
-            { status: 404, headers: { "Content-Type": "application/json" } },
+            JSON.stringify({
+              error: degraded ? "Fonte temporariamente indisponível" : "Candidato não encontrado",
+            }),
+            {
+              status: degraded ? 503 : 404,
+              headers: {
+                "Content-Type": "application/json",
+                ...(degraded ? { "Cache-Control": "no-store" } : {}),
+              },
+            },
           )
         }
 

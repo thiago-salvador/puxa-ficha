@@ -57,7 +57,10 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 async function fetchJSON<T>(url: string): Promise<T> {
   for (let tentativa = 1; tentativa <= 4; tentativa++) {
     try {
-      const resp = await fetch(url, { headers: { Accept: "application/json" } })
+      const resp = await fetch(url, {
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(30_000),
+      })
       if (resp.ok) return (await resp.json()) as T
       if (tentativa === 4) throw new Error(`HTTP ${resp.status} em ${url}`)
     } catch (err) {

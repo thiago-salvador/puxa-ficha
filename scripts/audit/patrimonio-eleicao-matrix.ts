@@ -72,6 +72,7 @@ async function fetchApiProfile(slug: string): Promise<Record<string, unknown>> {
   if (existsSync(cachePath)) return jparse(cachePath)
   const res = await fetch(`${SITE}/api/candidato-profile/${slug}`, {
     headers: { accept: "application/json" },
+    signal: AbortSignal.timeout(30_000),
   })
   if (!res.ok) throw new Error(`API ${res.status} para ${slug}`)
   const body = (await res.json()) as { data?: Record<string, unknown> }
