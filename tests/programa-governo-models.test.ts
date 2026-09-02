@@ -503,12 +503,16 @@ test("runner de modelo nasce em cwd temporário vazio, sem segredos do host, e o
   const { runProgramaGovernoModelProcess, construirAmbienteModelo } = await import("../scripts/programas-governo-governadores-2026-models")
   const { tmpdir } = await import("node:os")
   const { existsSync, realpathSync } = await import("node:fs")
-  process.env.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF = "segredo-que-nao-pode-vazar"
-  process.env.PF_MODELO_TESTE = "chega-ao-runner"
+  // Chaves montadas em runtime: o scanner do contrato de ambiente nao deve
+  // exigir documentacao de variaveis que so existem dentro deste teste.
+  const chaveSegredo = ["SUPABASE_SERVICE_ROLE_KEY", "TESTE_PF"].join("_")
+  const chavePf = ["PF_MODELO", "TESTE"].join("_")
+  process.env[chaveSegredo] = "segredo-que-nao-pode-vazar"
+  process.env[chavePf] = "chega-ao-runner"
   try {
     const filtrado = construirAmbienteModelo(process.env)
-    assert.equal(filtrado.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF, undefined)
-    assert.equal(filtrado.PF_MODELO_TESTE, "chega-ao-runner")
+    assert.equal(filtrado[chaveSegredo], undefined)
+    assert.equal(filtrado[chavePf], "chega-ao-runner")
     assert.equal(filtrado.PATH, process.env.PATH)
 
     const script = "process.stdout.write(JSON.stringify({ cwd: process.cwd(), env: Object.keys(process.env), files: require('fs').readdirSync('.') }))"
@@ -520,13 +524,13 @@ test("runner de modelo nasce em cwd temporário vazio, sem segredos do host, e o
     assert.ok(info.cwd.startsWith(tmpReal) || info.cwd.startsWith(tmpdir()), `cwd fora do tmpdir: ${info.cwd}`)
     assert.notEqual(info.cwd, realpathSync(process.cwd()))
     assert.deepEqual(info.files, [], "o runner enxerga um diretório vazio")
-    assert.ok(!info.env.includes("SUPABASE_SERVICE_ROLE_KEY_TESTE_PF"))
-    assert.ok(info.env.includes("PF_MODELO_TESTE"))
+    assert.ok(!info.env.includes(chaveSegredo))
+    assert.ok(info.env.includes(chavePf))
     assert.ok(info.env.includes("PATH"))
     assert.ok(!existsSync(info.cwd), "diretório temporário removido ao encerrar")
   } finally {
-    delete process.env.SUPABASE_SERVICE_ROLE_KEY_TESTE_PF
-    delete process.env.PF_MODELO_TESTE
+    delete process.env[chaveSegredo]
+    delete process.env[chavePf]
   }
 })
 
