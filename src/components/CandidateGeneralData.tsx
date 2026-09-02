@@ -138,7 +138,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
         >
           Fontes: {sourceLabel}. Atualizado em {updatedAtLabel}.
         </p>
-        <Link className="w-fit underline underline-offset-2" href="/metodologia">
+        <Link className="w-fit py-1 underline underline-offset-2" href="/metodologia">
           Entenda os dados
         </Link>
       </div>

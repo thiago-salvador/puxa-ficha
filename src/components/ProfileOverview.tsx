@@ -414,7 +414,7 @@ function FinancingTeaserDoadores({ doadores }: { doadores: Financiamento["maiore
           <div key={`${d.nome}-${i}`} className="flex items-baseline justify-between gap-2">
             <Link
               href={buildDoadorReverseHref(d.nome)}
-              className="min-w-0 truncate text-[12px] font-medium text-foreground underline-offset-2 hover:underline"
+              className="block min-w-0 truncate py-0.5 text-[12px] font-medium leading-5 text-foreground underline-offset-2 hover:underline"
             >
               {d.nome}
             </Link>
@@ -523,7 +523,13 @@ function ProcessesTeaser({
             className="rounded-lg border border-border/50 border-l-[3px] px-3 py-2"
             style={{ borderLeftColor: processoBorderColor(p) }}
           >
-            <div className="flex items-center gap-2">
+            {/*
+              `flex-wrap`: a pílula tem largura fixa (`shrink-0` no MetaBadge) e o
+              rótulo de situação ("Comunicação processual publicada; mérito não
+              inferido") ficava com ~30px no mobile, quebrando sílaba a sílaba.
+              Quando não cabe ao lado, o rótulo desce para a linha seguinte.
+            */}
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <MetaBadge tone={
                 !isTerminalProcessStatus(p.status) &&
                 !isProcessStatusNeutral(p.status) &&
@@ -538,7 +544,7 @@ function ProcessesTeaser({
                     : formatProcessTypeLabel(p.tipo)}
               </MetaBadge>
               {independentStatuses.length === 1 && (
-                <span className="text-[10px] font-semibold text-muted-foreground">
+                <span className="min-w-0 text-[10px] font-semibold text-muted-foreground">
                   {formatProcessStatusLabel(independentStatuses[0])}
                 </span>
               )}

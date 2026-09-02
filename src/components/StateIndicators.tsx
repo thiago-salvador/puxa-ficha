@@ -131,25 +131,33 @@ export function StateIndicators({
     <div>
       <SectionLabel>O estado</SectionLabel>
       <SectionTitle>{estadoNome}</SectionTitle>
+      {/*
+        Abaixo de `sm` o card tem ~114px úteis (2 colunas a 360px). Valor e ano
+        ficam em `whitespace-nowrap` e a sparkline só entra a partir de `sm`:
+        com ela visível, "R$ 431 bi" quebrava caractere por caractere.
+      */}
       <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
         {cards.map(({ key, config, latest, previous, sparkData }) => (
           <div
             key={key}
-            className="rounded-[16px] border border-border/50 bg-card px-5 py-5"
+            data-pf-state-indicator-card
+            className="rounded-[16px] border border-border/50 bg-card px-4 py-5 sm:px-5"
           >
             <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:text-[length:var(--text-eyebrow)]">
               {config.label}
             </p>
             <div className="mt-2 flex items-end justify-between gap-2">
-              <div>
-                <span className="block font-heading text-[24px] leading-[0.95] tracking-tight text-foreground sm:text-[30px]">
+              <div className="min-w-0">
+                <span className="block whitespace-nowrap font-heading text-[24px] leading-[0.95] tracking-tight text-foreground sm:text-[30px]">
                   {config.format(latest.valor!)}
                 </span>
-                <span className="mt-1 block text-[10px] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
+                <span className="mt-1 block whitespace-nowrap text-[10px] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
                   {latest.ano}
                 </span>
               </div>
-              <Sparkline points={sparkData} />
+              <div className="hidden sm:block">
+                <Sparkline points={sparkData} />
+              </div>
             </div>
             {previous && (
               <div className="mt-2">

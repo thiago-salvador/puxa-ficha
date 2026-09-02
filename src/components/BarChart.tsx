@@ -46,13 +46,16 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
     return a.valor - b.valor
   })
 
+  // Cada barra tem largura mínima para o rótulo ("R$ 820,6 mil", "2006") caber
+  // numa linha; com 6 ou mais eleições numa coluna estreita, o gráfico rola na
+  // horizontal dentro do próprio container em vez de quebrar os números no meio.
   return (
-    <div className="flex items-end gap-2 sm:gap-3">
+    <div data-pf-patrimonio-chart className="-mx-2 flex items-end gap-2 overflow-x-auto px-2 pb-1 sm:gap-3">
       {sorted.map((d, index) => {
         const pct = Math.max((d.valor / max) * 100, 8)
         return (
-          <div key={d.id ?? `${d.ano}-${d.valor}-${index}`} className="flex flex-1 flex-col items-center gap-1.5">
-            <span className="text-[10px] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
+          <div key={d.id ?? `${d.ano}-${d.valor}-${index}`} className="flex min-w-[64px] flex-1 flex-col items-center gap-1.5">
+            <span className="whitespace-nowrap text-[10px] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
               {formatCompact(d.valor)}
             </span>
             <div className="flex w-full items-end overflow-hidden rounded-t-[4px] bg-secondary" style={{ height: "120px" }}>
@@ -61,7 +64,7 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
                 style={{ height: `${pct}%` }}
               />
             </div>
-            <span className="text-[10px] font-bold tabular-nums text-muted-foreground sm:text-[length:var(--text-caption)]">
+            <span className="whitespace-nowrap text-[10px] font-bold tabular-nums text-muted-foreground sm:text-[length:var(--text-caption)]">
               {d.ano}
             </span>
           </div>

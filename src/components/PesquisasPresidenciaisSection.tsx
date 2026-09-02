@@ -235,7 +235,7 @@ export function PesquisasPresidenciaisOverview({
           type="button"
           onClick={onOpenTab}
           aria-label="Ver todas na aba Pesquisas"
-          className="inline-flex items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
+          className="inline-flex min-h-6 items-center gap-0.5 text-[11px] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
         >
           Pesquisas <ChevronRight className="size-3" aria-hidden="true" />
         </button>
