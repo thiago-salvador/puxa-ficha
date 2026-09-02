@@ -1,0 +1,103 @@
+name: Acessibilidade (produção, diária)
+
+# O `a11y-producao.yml` depende do evento `deployment_status` e de a
+# produção passar a servir o SHA do deployment. Com a promoção manual, esse
+# evento chega para deployments que nunca vão ao alias e o job falha no
+# readback: entre 31/08 e 02/09 ele ficou 243 vezes skipped e 17 vermelho
+# sem rodar o axe. Este workflow roda o mesmo axe contra o alias público,
+# todo dia, seja qual for o SHA que estiver no ar, e registra qual é.
+#
+# O watchdog de crons cobre este workflow como qualquer outro `schedule`.
+
+on:
+  schedule:
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PRODUCTION_URL: https://puxaficha.com.br
+
+jobs:
+  a11y:
+    name: Acessibilidade (produção, diária)
+    concurrency:
+      group: a11y-prod-diaria
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Registrar o SHA que a produção serve
+        run: |
+          set -euo pipefail
+          readback="$(curl -fsS --connect-timeout 3 --max-time 10 "${PRODUCTION_URL}/api/deployment-info")"
+          echo "$readback" | jq -e '.ok == true and .environment == "production"' >/dev/null
+          echo "producao serve $(echo "$readback" | jq -r '.commitSha') (ref $(echo "$readback" | jq -r '.commitRef'))"
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Versao do Playwright, para a chave do cache
+        id: pw-versao
+        run: |
+          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
+
+      - name: Cache dos navegadores do Playwright
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
+
+      - uses: ./.github/actions/pin-apt-mirrors
+
+      - name: Dependencias de sistema dos navegadores (apt)
+        timeout-minutes: 22
+        run: |
+          limpar_apt() {
+            sudo pkill -9 -x apt-get 2>/dev/null || true
+            sudo pkill -9 -x dpkg 2>/dev/null || true
+            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
+                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
+            sudo dpkg --configure -a 2>/dev/null || true
+          }
+          for tentativa in 1 2; do
+            if timeout -k 15 300 npx playwright install-deps chromium webkit; then
+              exit 0
+            fi
+            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 5 min"
+            limpar_apt
+            sleep 10
+          done
+          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
+          exit 1
+
+      - name: Install Playwright browsers
+        timeout-minutes: 10
+        run: npx playwright install chromium webkit
+
+      - name: Axe (moderate, serious e critical) contra o alias público
+        env:
+          PF_BASE_URL: ${{ env.PRODUCTION_URL }}
+        run: npm run test:a11y
+
+      - name: Publicar relatório em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: playwright-a11y-diaria-report
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -26,7 +26,7 @@
     "lint": "eslint --max-warnings=0",
     "lint:spell": "cspell lint --no-progress \"src/app/(site)/privacidade/page.tsx\" \"src/app/(site)/sobre/page.tsx\" src/app/not-found.tsx \"src/app/(site)/page.tsx\" src/app/layout.tsx",
     "lint:spell:ui": "cspell lint --no-progress \"src/app/**/*.tsx\" \"src/components/**/*.tsx\" --exclude \"**/internaltest/**\" --exclude \"**/styleguide/**\" --exclude \"**/preview/**\"",
-    "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx",
+    "test": "node --import tsx --test tests/**/*.test.ts tests/**/*.test.tsx tests/**/*.test.mjs",
     "test:pesquisas:dados": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-dados.test.ts",
     "test:programas-governo:schema": "node --conditions react-server --import tsx --test tests/programa-governo-schema.test.ts",
     "test:programas-governo:extracao": "node --conditions react-server --import tsx --test tests/programa-governo-extracao.test.ts",
@@ -92,7 +92,7 @@
     "audit:pesquisas:gate": "node --conditions react-server --import tsx scripts/audit/audit-pesquisas-eleitorais.ts",
     "verify:pesquisas": "npm run audit:pesquisas:gate && npm run test:pesquisas && npm run test:visual:pesquisas && npm run lint && npm run lint:spell:ui && npm run typecheck && npm run check:scripts && git diff --check",
     "test:alerts:nightly": "node --import tsx --test tests/alerts-nightly-e2e.test.ts",
-    "test:coverage:raw": "node scripts/run-c8-node26.mjs --config c8.config.json node --import tsx --test --test-force-exit --test-concurrency=1 tests/**/*.test.ts tests/**/*.test.tsx",
+    "test:coverage:raw": "node scripts/run-c8-node26.mjs --config c8.config.json node --import tsx --test --test-force-exit --test-concurrency=1 tests/**/*.test.ts tests/**/*.test.tsx tests/**/*.test.mjs",
     "check:dead-code": "knip --config knip.json --include files,dependencies,unlisted,unresolved,exports --no-progress --max-issues 0",
     "test:a11y": "playwright test tests/visual/a11y.spec.ts",
     "test:visual": "playwright test",
@@ -236,7 +236,7 @@
   "overrides": {
     "brace-expansion@5": "^5.0.9",
     "brace-expansion@1": "^1.1.18",
-    "fast-uri@3": "^3.1.5",
+    "fast-uri@3": "^3.1.7",
     "nanoid@3": "^3.3.17",
     "postcss": "$postcss",
     "sharp": "^0.35.3"

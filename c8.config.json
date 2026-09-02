@@ -3,8 +3,8 @@
   "check-coverage": true,
   "branches": 72,
   "functions": 75,
-  "lines": 33,
-  "statements": 33,
+  "lines": 48,
+  "statements": 48,
   "reporter": [
     "text-summary",
     "lcov"

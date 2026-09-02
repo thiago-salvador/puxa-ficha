@@ -23,6 +23,9 @@ function runWatchdog(opts: {
   cronSecret?: string
   origin?: string
   runConclusion?: string
+  freshnessBody?: string
+  freshnessCode?: string
+  prodSha?: string
 }) {
   const fixture = mkdtempSync(join(tmpdir(), "pf-watchdog-"))
   const bin = join(fixture, "bin")
@@ -61,15 +64,29 @@ exit 1
 set -euo pipefail
 printf 'curl:%s\\n' "$*" >> "$PF_FIXTURE_CALLS"
 output=""
+url=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -o) output="$2"; shift 2 ;;
     -w|--max-time) shift 2 ;;
     -H) shift 2 ;;
     -sS|-s|-S) shift ;;
+    http*) url="$1"; shift ;;
     *) shift ;;
   esac
 done
+# Sondas novas respondem por URL; o runtime-smoke continua com o corpo e o
+# código do caso de teste.
+if [[ "$url" == *"/api/internal/cron-freshness" ]]; then
+  printf '%s\\n' "$PF_FAKE_FRESHNESS_BODY" > "$output"
+  printf '%s' "$PF_FAKE_FRESHNESS_CODE"
+  exit 0
+fi
+if [[ "$url" == *"/api/deployment-info" ]]; then
+  printf '{"ok":true,"environment":"production","commitRef":"main","commitSha":"%s"}\\n' "$PF_FAKE_PROD_SHA" > "$output"
+  printf '200'
+  exit 0
+fi
 printf '%s\\n' "$PF_FAKE_CURL_BODY" > "$output"
 printf '%s' "$PF_FAKE_CURL_CODE"
 `,
@@ -85,6 +102,17 @@ printf '%s' "$PF_FAKE_CURL_CODE"
       PF_FAKE_CURL_BODY: opts.body,
       PF_FAKE_CURL_CODE: opts.httpCode,
       PF_FAKE_RUN_CONCLUSION: opts.runConclusion ?? "success",
+      PF_FAKE_FRESHNESS_BODY:
+        opts.freshnessBody ??
+        JSON.stringify({
+          ok: true,
+          checks: [
+            { name: "news-refresh", last: "2026-09-02T08:00:00.000Z", age_hours: 4 },
+            { name: "send-digest", last: "2026-09-02T12:00:00.000Z", age_hours: 20 },
+          ],
+        }),
+      PF_FAKE_FRESHNESS_CODE: opts.freshnessCode ?? "200",
+      PF_FAKE_PROD_SHA: opts.prodSha ?? spawnSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).stdout.trim(),
       WATCHDOG_DRY_RUN: "1",
       CRON_SECRET: opts.cronSecret ?? "test-cron-secret",
       PF_RUNTIME_SMOKE_ORIGIN: opts.origin ?? "https://puxaficha.com.br",
@@ -205,6 +233,67 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.match(output, /ok: runtime-smoke/)
     assert.doesNotMatch(output, /\[cron-failure\] runtime-smoke/)
     assert.match(output, /anomalias_detectadas=0/)
+  })
+
+  it("frescor dentro do limite e produção no HEAD não abrem issue", () => {
+    const run = runWatchdog({ httpCode: "200", body: JSON.stringify({ ok: true, total: 6, results: [] }) })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+    assert.match(output, /ok: frescor news-refresh \(4h\)/)
+    assert.match(output, /ok: frescor send-digest \(20h\)/)
+    assert.match(output, /ok: produção serve o HEAD de main/)
+    assert.match(output, /anomalias_detectadas=0/)
+  })
+
+  it("cron da Vercel sem rastro há mais de 36h abre issue própria", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6, results: [] }),
+      freshnessBody: JSON.stringify({
+        ok: true,
+        checks: [
+          { name: "news-refresh", last: "2026-08-30T08:00:00.000Z", age_hours: 52 },
+          { name: "send-digest", last: null, age_hours: null },
+        ],
+      }),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+    assert.match(output, /\[cron-failure\] vercel-cron-news-refresh/)
+    assert.match(output, /último rastro há 52h \(limite 36h\)/)
+    assert.match(output, /frescor: send-digest sem rastro ainda/)
+    assert.match(output, /anomalias_detectadas=1/)
+  })
+
+  it("sonda de frescor fora do ar abre uma issue só, sem inventar cron", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6, results: [] }),
+      freshnessBody: "",
+      freshnessCode: "503",
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+    assert.match(output, /\[cron-failure\] cron-freshness/)
+    assert.match(output, /sonda de frescor respondeu HTTP 503/)
+    assert.match(output, /anomalias_detectadas=1/)
+  })
+
+  it("produção num SHA antigo com main à frente há mais de 24h abre issue de drift", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6, results: [] }),
+      prodSha: "0000000000000000000000000000000000000000",
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+    // O HEAD deste checkout tem horas ou dias; o que se testa é a comparação e o
+    // rótulo, não a idade exata.
+    assert.match(output, /producao-atras-de-main|drift: main à frente de produção há \d+h/)
   })
 
   it("HTTP 200 com ok false também abre issue", () => {
