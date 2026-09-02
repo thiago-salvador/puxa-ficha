@@ -284,7 +284,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 {candidato.foto_url && (
                   <CandidatePhoto
                     src={candidato.foto_url}
-                    alt={candidato.nome_urna}
+                    alt=""
                     name={candidato.nome_urna}
                     width={40}
                     height={40}
@@ -391,7 +391,11 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           type="button"
                           onClick={() => toggle(candidato.id)}
                           aria-pressed={selected}
-                          aria-label={`${selected ? "Remover" : "Adicionar"} ${candidato.nome_urna} da comparação`}
+                          aria-label={
+                            selected
+                              ? `Remover ${candidato.nome_urna} da comparação`
+                              : `Adicionar ${candidato.nome_urna} à comparação`
+                          }
                           className={`flex size-8 items-center justify-center rounded border transition-colors ${
                             selected
                               ? "border-foreground bg-foreground text-background"
@@ -414,7 +418,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           {candidato.foto_url && (
                             <CandidatePhoto
                               src={candidato.foto_url}
-                              alt={candidato.nome_urna}
+                              alt=""
                               name={candidato.nome_urna}
                               width={40}
                               height={40}
@@ -568,7 +572,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           {candidato.foto_url && (
                             <CandidatePhoto
                               src={candidato.foto_url}
-                              alt={candidato.nome_urna}
+                              alt=""
                               name={candidato.nome_urna}
                               width={80}
                               height={80}

@@ -1,4 +1,5 @@
 import type { CSSProperties, ReactNode } from "react"
+import { TrackedExternalSourceLink } from "@/components/TrackedExternalSourceLink"
 import {
   processoFonteLabel,
   processStatusRepeatsDescription,
@@ -41,7 +42,8 @@ function ProcessoPublicSurface({
   }
 
   return (
-    <a
+    <TrackedExternalSourceLink
+      area="ficha-processo"
       href={href}
       target="_blank"
       rel="noreferrer noopener"
@@ -51,7 +53,7 @@ function ProcessoPublicSurface({
       {...rest}
     >
       {children}
-    </a>
+    </TrackedExternalSourceLink>
   )
 }
 
@@ -132,7 +134,8 @@ export function ProcessoGroupSources({
         {references.map((reference) => (
           <li key={reference.key} className="text-[length:var(--text-caption)] font-semibold">
             {reference.href ? (
-              <a
+              <TrackedExternalSourceLink
+                area="ficha-processo-referencia"
                 href={reference.href}
                 target="_blank"
                 rel="noreferrer noopener"
@@ -141,7 +144,7 @@ export function ProcessoGroupSources({
               >
                 {reference.label}
                 {reference.status ? `, ${reference.status}` : ""}
-              </a>
+              </TrackedExternalSourceLink>
             ) : (
               <span>
                 {reference.label}

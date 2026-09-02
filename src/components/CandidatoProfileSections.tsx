@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { TrackedExternalSourceLink } from "@/components/TrackedExternalSourceLink"
 import { useMemo, useRef, useState } from "react"
 import {
   EmptyState,
@@ -289,14 +290,15 @@ function GastosExecutivoOrgaoBlock({
 
         <p className="mt-4 text-[length:var(--text-caption)] text-muted-foreground">
           Fonte: {fonte ? (
-            <Link
+            <TrackedExternalSourceLink
+              area="ficha-eleicoes-fonte"
               href={fonte}
               target="_blank"
               rel="noreferrer"
               className="font-semibold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground"
             >
               {rotuloFonte}
-            </Link>
+            </TrackedExternalSourceLink>
           ) : (
             rotuloFonte
           )}
@@ -431,14 +433,15 @@ function PatrimonioEleicaoSemDadoRow({ eleicao }: { eleicao: PatrimonioEleicaoPu
         <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
           {verificadoEm && <span>Verificado em {verificadoEm}</span>}
           {fonteHref && (
-            <a
+            <TrackedExternalSourceLink
+              area="ficha-fonte-oficial"
               href={fonteHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold text-foreground underline"
             >
               Fonte oficial <ExternalLink className="size-3 shrink-0" />
-            </a>
+            </TrackedExternalSourceLink>
           )}
         </p>
       )}
@@ -520,14 +523,15 @@ function FinanciamentoEleicaoSemDadoRow({ eleicao }: { eleicao: FinanciamentoEle
         <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
           {verificadoEm && <span>Verificado em {verificadoEm}</span>}
           {fonteHref && (
-            <a
+            <TrackedExternalSourceLink
+              area="ficha-fonte-oficial"
               href={fonteHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold text-foreground underline"
             >
               Fonte oficial <ExternalLink className="size-3 shrink-0" />
-            </a>
+            </TrackedExternalSourceLink>
           )}
         </p>
       )}
@@ -1440,14 +1444,15 @@ function ExecutiveLegislationList({
                 </p>
               )}
               {safeHref(lei.fonte_primaria_url) && (
-                <a
+                <TrackedExternalSourceLink
+                  area="ficha-legislacao-fonte"
                   href={safeHref(lei.fonte_primaria_url)!}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex max-w-full items-center gap-1 break-words text-[length:var(--text-caption)] font-semibold text-foreground underline"
                 >
                   Fonte oficial <ExternalLink className="size-3 shrink-0" />
-                </a>
+                </TrackedExternalSourceLink>
               )}
             </div>
           )
@@ -1670,14 +1675,15 @@ function ProjetoLeiList({
                   </p>
                 )}
                 {safeHref(projeto.url_inteiro_teor) && (
-                  <a
+                  <TrackedExternalSourceLink
+                    area="ficha-projeto-lei-fonte"
                     href={safeHref(projeto.url_inteiro_teor)!}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-flex max-w-full items-center gap-1 break-words text-[length:var(--text-caption)] font-semibold text-foreground underline"
                   >
                     Página oficial da proposta <ExternalLink className="size-3 shrink-0" />
-                  </a>
+                  </TrackedExternalSourceLink>
                 )}
               </div>
               )
