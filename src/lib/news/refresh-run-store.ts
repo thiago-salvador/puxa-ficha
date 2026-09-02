@@ -1,4 +1,5 @@
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const NEWS_REFRESH_EXECUTION_HEADER = "x-puxaficha-news-execution-id"
 
@@ -135,7 +136,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
           p_chain_enabled: config.shouldChain,
           p_revalidate_requested: config.revalidateRequested,
           p_lease_seconds: leaseSeconds,
-        }),
+        }).abortSignal(supabaseQueryTimeoutSignal()),
         "acquire_news_refresh_lote",
       )
       const row = firstRow<AcquireRow>(data, "acquire_news_refresh_lote")
@@ -162,7 +163,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
             p_cursor: cursor,
             p_owner_token: ownerToken,
             p_lease_seconds: leaseSeconds,
-          }),
+          }).abortSignal(supabaseQueryTimeoutSignal()),
           "renew_news_refresh_lote_lease",
         ),
       )
@@ -176,7 +177,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
             p_cursor: cursor,
             p_owner_token: ownerToken,
             p_next_cursor: nextCursor,
-          }),
+          }).abortSignal(supabaseQueryTimeoutSignal()),
           "complete_news_refresh_lote",
         ),
       )
@@ -190,7 +191,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
             p_cursor: cursor,
             p_owner_token: ownerToken,
             p_error_code: error,
-          }),
+          }).abortSignal(supabaseQueryTimeoutSignal()),
           "retry_news_refresh_lote",
         ),
       )
@@ -202,7 +203,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
           p_execucao_id: executionId,
           p_cursor: cursor,
           p_lease_seconds: leaseSeconds,
-        }),
+        }).abortSignal(supabaseQueryTimeoutSignal()),
         "claim_news_refresh_continuacao",
       )
       const row = firstRow<ContinuationRow>(data, "claim_news_refresh_continuacao")
@@ -224,7 +225,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
             p_cursor: cursor,
             p_continuation_token: token,
             p_accepted: accepted,
-          }),
+          }).abortSignal(supabaseQueryTimeoutSignal()),
           "finish_news_refresh_continuacao",
         ),
       )
@@ -232,7 +233,7 @@ export function createNewsRefreshRunStore(): NewsRefreshRunStore {
 
     async listRecoverable(limit) {
       const rows = requireRpcSuccess(
-        await client().rpc("list_news_refresh_recuperaveis", { p_limit: limit }),
+        await client().rpc("list_news_refresh_recuperaveis", { p_limit: limit }).abortSignal(supabaseQueryTimeoutSignal()),
         "list_news_refresh_recuperaveis",
       ) as RecoverableRow[] | null
       return (rows ?? []).map((row) => ({

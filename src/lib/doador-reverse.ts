@@ -12,6 +12,7 @@ import {
 } from "@/lib/doador-reverse-shared"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import { createServiceRoleSupabaseClient, getAppSupabaseUrl } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export {
   DOADOR_REVERSE_DISCLAIMER,
@@ -43,6 +44,21 @@ async function readDoadorReverseFixture(filePath: string): Promise<DoadorReverse
 /** RPC caller contract for dependency injection (tests). */
 export interface DoadorReverseRpcCaller {
   rpc: (fn: string, params: Record<string, unknown>) => Promise<{ data: unknown; error: { message: string } | null }>
+}
+
+/**
+ * Caller real: o cliente service_role com prazo por chamada. O prazo mora aqui,
+ * e nao no call site, para o contrato injetavel continuar aceitando um `rpc`
+ * que devolve Promise simples (os testes passam objetos assim).
+ */
+function realRpcCaller(): DoadorReverseRpcCaller {
+  const client = createServiceRoleSupabaseClient()
+  return {
+    rpc: async (fn, params) => {
+      const { data, error } = await client.rpc(fn, params).abortSignal(supabaseQueryTimeoutSignal())
+      return { data, error: error ? { message: error.message } : null }
+    },
+  }
 }
 
 interface DoadorReversePage {
@@ -108,7 +124,7 @@ async function fetchDoadorReverseRows(
 
   // service_role: a RPC nao tem mais EXECUTE para anon. O limiter de /doadores
   // so e real se o visitante nao puder POST /rest/v1/rpc com a chave publica.
-  const caller = rpcCaller ?? createServiceRoleSupabaseClient()
+  const caller = rpcCaller ?? realRpcCaller()
   const { data, error } = await Sentry.startSpan(
     {
       name: "doador_reverse.rpc",

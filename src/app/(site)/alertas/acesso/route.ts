@@ -9,6 +9,7 @@ import { logAlertsApiExit } from "@/lib/alerts-log"
 import { setAlertManageTokenCookie } from "@/lib/alerts-session"
 import { normalizeCandidateSlug, normalizeOpaqueToken } from "@/lib/alerts-shared"
 import { createFixedWindowIpRateLimiter } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -111,7 +112,7 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
           const { error } = await supabase.from("alert_subscriptions").upsert(
             { subscriber_id: subscriber.id, candidato_id: candidate.id },
             { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-          )
+          ).abortSignal(supabaseQueryTimeoutSignal())
           if (error) {
             deps.logAlertsApiExit("alertas-acesso", 302, "follow_pendente_falhou", {
               candidateSlug: candidate.slug,

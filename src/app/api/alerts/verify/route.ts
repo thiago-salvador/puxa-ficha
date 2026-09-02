@@ -23,6 +23,7 @@ import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -186,7 +187,7 @@ export function createVerifyHandler(deps: VerifyDeps = defaultVerifyDeps) {
         verified_at: deps.now().toISOString(),
         verify_token_hash: null,
         verify_token_expires_at: null,
-      })
+      }).abortSignal(supabaseQueryTimeoutSignal())
       .eq("id", subscriber.id)
 
     if (error) {

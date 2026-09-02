@@ -8,6 +8,7 @@ import {
 } from "@/lib/analytics-events"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export type AnalyticsLaunchCounts = Record<AnalyticsEventName, number>
 
@@ -48,6 +49,7 @@ async function countRecentAnalyticsEventsByIpHash(
   const { count, error } = await supabase
     .from("analytics_launch_events")
     .select("*", { count: "exact", head: true })
+    .abortSignal(supabaseQueryTimeoutSignal())
     .eq("ip_hash", ipHash)
     .gte("created_at", sinceIso)
 
@@ -115,6 +117,7 @@ export async function purgeAnalyticsLaunchEventsOlderThan(
     const { count, error } = await supabase
       .from("analytics_launch_events")
       .delete({ count: "exact" })
+      .abortSignal(supabaseQueryTimeoutSignal())
       .lt("created_at", cutoffIso)
 
     if (error) {
@@ -151,14 +154,14 @@ export async function recordAnalyticsLaunchEvent(input: {
     ? { ...row, ip_hash: input.ipHash }
     : row
 
-  const { error } = await supabase.from("analytics_launch_events").insert(rowComIpHash)
+  const { error } = await supabase.from("analytics_launch_events").insert(rowComIpHash).abortSignal(supabaseQueryTimeoutSignal())
 
   if (!error) return
 
   // Sem a coluna ainda, grava o evento sem o identificador em vez de perdê-lo:
   // analytics é sink de auditoria, e um evento a menos não volta.
   if (input.ipHash && isMissingIpHashColumn(error)) {
-    const { error: retryError } = await supabase.from("analytics_launch_events").insert(row)
+    const { error: retryError } = await supabase.from("analytics_launch_events").insert(row).abortSignal(supabaseQueryTimeoutSignal())
     if (!retryError) return
     throw new Error(`analytics_launch_events insert failed: ${retryError.message}`)
   }
@@ -192,7 +195,7 @@ export async function recordAnalyticsLaunchEventUnderQuota(input: {
     p_ip_hash: input.ipHash,
     p_since: input.sinceIso,
     p_max: input.max,
-  })
+  }).abortSignal(supabaseQueryTimeoutSignal())
 
   if (error) {
     if (isMissingIpHashColumn(error)) return { status: "coluna_ausente" }
@@ -228,6 +231,7 @@ export async function readAnalyticsLaunchCounts(input: {
   const { data, error } = await supabase
     .from("analytics_launch_events")
     .select("event_name")
+    .abortSignal(supabaseQueryTimeoutSignal())
     .gte("created_at", input.sinceIso)
     .eq("proof_id", input.proofId)
 

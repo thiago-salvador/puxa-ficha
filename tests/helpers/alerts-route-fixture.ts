@@ -247,6 +247,12 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
     return this
   }
 
+  // O código de produção encadeia `.abortSignal(supabaseQueryTimeoutSignal())`
+  // em toda query; o fixture aceita e ignora, como o PostgREST faria sem rede.
+  abortSignal() {
+    return this
+  }
+
   maybeSingle() {
     this.singleMode = "maybeSingle"
     return this.execute()
@@ -365,6 +371,16 @@ class SelectMutationQuery<T extends Record<string, unknown>> {
   }
 }
 
+/**
+ * Resultado já resolvido que ainda aceita `.abortSignal()` antes do `await`,
+ * como o builder do PostgREST: `upsert` e `rpc` do fixture devolvem isto.
+ */
+function abortable<T>(promise: Promise<T>): Promise<T> & { abortSignal: (signal: AbortSignal) => Promise<T> } {
+  const result = promise as Promise<T> & { abortSignal: (signal: AbortSignal) => Promise<T> }
+  result.abortSignal = () => result
+  return result
+}
+
 class InsertQuery<T extends Record<string, unknown>> {
   private selectedColumns: string | null = null
   private singleMode = false
@@ -373,6 +389,10 @@ class InsertQuery<T extends Record<string, unknown>> {
 
   select(columns: string) {
     this.selectedColumns = columns
+    return this
+  }
+
+  abortSignal() {
     return this
   }
 
@@ -509,16 +529,17 @@ export class AlertsRouteFixture {
             )
             return new InsertQuery(rows)
           },
-          upsert: async (payload: Record<string, unknown> | Array<Record<string, unknown>>, options?: { onConflict?: string; ignoreDuplicates?: boolean }) => {
-            const rows = Array.isArray(payload) ? payload : [payload]
-            for (const row of rows) {
-              this.applyUpsert(tableName, row, options)
-            }
-            return { data: null, error: null, count: rows.length }
-          },
+          upsert: (payload: Record<string, unknown> | Array<Record<string, unknown>>, options?: { onConflict?: string; ignoreDuplicates?: boolean }) =>
+            abortable((async () => {
+              const rows = Array.isArray(payload) ? payload : [payload]
+              for (const row of rows) {
+                this.applyUpsert(tableName, row, options)
+              }
+              return { data: null, error: null, count: rows.length }
+            })()),
         }
       },
-      rpc: (fn: string, args: Record<string, unknown> = {}) => this.executeQuotaRpc(fn, args),
+      rpc: (fn: string, args: Record<string, unknown> = {}) => abortable(this.executeQuotaRpc(fn, args)),
     } as unknown as AlertsServiceRoleClient
   }
 

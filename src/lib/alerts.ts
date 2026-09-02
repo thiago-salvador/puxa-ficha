@@ -7,6 +7,7 @@ import {
   normalizeOpaqueToken,
 } from "@/lib/alerts-shared"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export * from "@/lib/alerts-shared"
 
@@ -93,6 +94,7 @@ export async function findPublicCandidateBySlug(
   const { data, error } = await supabase
     .from("candidatos_publico")
     .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
+    .abortSignal(supabaseQueryTimeoutSignal())
     .eq("slug", normalized)
     .maybeSingle()
 
@@ -108,7 +110,7 @@ export async function findSubscriberByEmailHash(
     .from("alert_subscribers")
     .select(
       "id, email, nome, verified, verified_at, verify_token_expires_at, manage_token_hash, canal_email, last_verification_email_sent_at, last_digest_sent_at",
-    )
+    ).abortSignal(supabaseQueryTimeoutSignal())
     .eq("email_hash", emailHash)
     .maybeSingle()
 
@@ -127,7 +129,7 @@ export async function findSubscriberByManageToken(
     .from("alert_subscribers")
     .select(
       "id, email, nome, verified, verified_at, verify_token_expires_at, manage_token_hash, canal_email, last_verification_email_sent_at, last_digest_sent_at",
-    )
+    ).abortSignal(supabaseQueryTimeoutSignal())
     .eq("manage_token_hash", hashAlertToken(normalized))
     .maybeSingle()
 
@@ -148,7 +150,7 @@ export async function findSubscriberByVerifyAndManageToken(
     .from("alert_subscribers")
     .select(
       "id, email, nome, verified, verified_at, verify_token_expires_at, manage_token_hash, canal_email, last_verification_email_sent_at, last_digest_sent_at",
-    )
+    ).abortSignal(supabaseQueryTimeoutSignal())
     .eq("verify_token_hash", hashAlertToken(normalizedVerifyToken))
     .eq("manage_token_hash", hashAlertToken(normalizedManageToken))
     .maybeSingle()
