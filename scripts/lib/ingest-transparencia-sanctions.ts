@@ -205,7 +205,7 @@ function estaAtiva(dataFimISO: string | null, hoje: Date): boolean {
 // Normalizacao dos registros
 // ---------------------------------------------------------------------------
 
-export interface SancaoNormalizada {
+interface SancaoNormalizada {
   tipo: SancaoTipo
   descricao: string
   orgaoSancionador: string | null
@@ -374,7 +374,7 @@ export interface ColetaDeps {
  * "CEIS achou duas sancoes e o CEAF caiu" de "os tres caem sempre". Quem vai
  * decidir se re-executa, e o que re-executa, precisa do desfecho por cadastro.
  */
-export interface DesfechoCadastro {
+interface DesfechoCadastro {
   tipo: SancaoTipo
   resultado: "encontrado" | "vazio_confirmado" | "indeterminado" | "erro"
   /** Quantos registros CONFERIDOS sobraram para este cadastro. */

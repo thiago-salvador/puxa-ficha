@@ -33,7 +33,7 @@ import { normalizePartySigla, resolveCanonicalPartySigla } from "@/lib/party-uti
  *
  * Gerado por scripts/gerar-espectro-partidario.py. Nao editar a mao.
  */
-export interface FonteEixo {
+interface FonteEixo {
   tipo: "programa" | "carta_de_principios" | "manifesto" | "curadoria"
   url?: string
   data?: string

@@ -35,10 +35,10 @@ export type TimelineEventType =
   | "gasto_parlamentar"
   | "ponto_atencao"
 
-export type TimelineAttentionGravidade = "critica" | "alta" | "media" | "baixa"
+type TimelineAttentionGravidade = "critica" | "alta" | "media" | "baixa"
 
 /** Mirrors `VotoCandidato["voto"]` in types.ts (accented literals). */
-export type TimelineVote = "sim" | "não" | "abstenção" | "ausente" | "obstrução" | "artigo_17"
+type TimelineVote = "sim" | "não" | "abstenção" | "ausente" | "obstrução" | "artigo_17"
 
 export interface TimelineEvent {
   id: string

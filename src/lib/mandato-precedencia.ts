@@ -30,7 +30,7 @@ function chaveCanonica(row: Pick<HistoricoPolitico, "cargo" | "cargo_canonico">)
   return (row.cargo_canonico?.trim() || canonicalCargo(row.cargo ?? "")).trim()
 }
 
-export type ClasseSobreposicao =
+type ClasseSobreposicao =
   /** Mesma posição registrada duas vezes, equivalência comprovada linha a linha. */
   | "C1_duplicata"
   /** Fim real citado com fonte institucional na própria linha. */

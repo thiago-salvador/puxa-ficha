@@ -51,7 +51,7 @@ interface DespesasResponse {
   }
 }
 
-export interface DespesasAgregadas {
+interface DespesasAgregadas {
   total: number
   porCategoria: GastoPorCategoria
   destaques: GastoDestaque[]

@@ -7,9 +7,9 @@ import {
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import type { HistoricoPolitico } from "@/lib/types"
 
-export type DisplayIssueSeverity = "alta" | "media" | "baixa"
+type DisplayIssueSeverity = "alta" | "media" | "baixa"
 
-export interface DisplayHistoricoRow {
+interface DisplayHistoricoRow {
   id: string
   title: string
   canon: string
@@ -19,7 +19,7 @@ export interface DisplayHistoricoRow {
   badPeriod: boolean
 }
 
-export interface DisplayHistoricoIssue {
+interface DisplayHistoricoIssue {
   groupKey: string
   severity: DisplayIssueSeverity
   teaserBroken: boolean

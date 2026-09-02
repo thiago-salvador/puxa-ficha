@@ -8,7 +8,7 @@ export type QuizVotoNormalizado =
   | "obstrucao"
   | "artigo_17"
 
-export type PosicaoDeclaradaTipo = "a_favor" | "contra" | "ambiguo"
+type PosicaoDeclaradaTipo = "a_favor" | "contra" | "ambiguo"
 
 export interface QuizPosicaoDeclarada {
   tema: string
@@ -58,7 +58,7 @@ export interface QuizAlignmentDataset {
   votacao_fonte_por_titulo?: Record<string, string | null>
 }
 
-export type QuizConfiabilidade = "alta" | "media" | "baixa"
+type QuizConfiabilidade = "alta" | "media" | "baixa"
 
 export interface QuizScoreExplanation {
   resumo: string

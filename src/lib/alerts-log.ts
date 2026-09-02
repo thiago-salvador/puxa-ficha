@@ -2,7 +2,7 @@
  * Server-only by usage: import only from API routes, Route Handlers e `email.ts`.
  * Sem `import "server-only"` para permitir testes Node (`tsx --test`) no formato JSON.
  */
-export type AlertsLogLevel = "info" | "warn" | "error"
+type AlertsLogLevel = "info" | "warn" | "error"
 
 export interface AlertsLogPayload {
   route: string

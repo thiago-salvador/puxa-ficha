@@ -90,7 +90,7 @@ export function exigirDryRun(script: string): void {
 // Camada 1: o plano
 // ---------------------------------------------------------------------------
 
-export type OperacaoPlanejada = "insert" | "update" | "upsert" | "delete"
+type OperacaoPlanejada = "insert" | "update" | "upsert" | "delete"
 
 /**
  * Uma linha que o coletor gravaria. `chave` é por onde ele casaria a linha
@@ -133,7 +133,7 @@ export interface ResultadoPlanejado {
 }
 
 /** Escrita que a blindagem barrou: o coletor esqueceu de planejar. */
-export interface EscritaBloqueada {
+interface EscritaBloqueada {
   tabela: string
   metodo: string
   pilha?: string

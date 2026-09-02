@@ -22,9 +22,9 @@ import { readFileSync } from "node:fs"
 
 export type ScopeName = "cohort" | "db_total"
 
-export type Severity = "alta" | "media" | "baixa"
+type Severity = "alta" | "media" | "baixa"
 
-export interface DisplayIssueCandidateBuckets {
+interface DisplayIssueCandidateBuckets {
   alta: string[]
   media: string[]
   baixa: string[]

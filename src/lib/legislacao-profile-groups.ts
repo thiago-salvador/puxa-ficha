@@ -30,7 +30,7 @@ export interface LegislacaoProfileContext {
   cargoDisputado?: string | null
 }
 
-export type ExecutiveLegislationInventoryScopeKind =
+type ExecutiveLegislationInventoryScopeKind =
   | "empty"
   | "complete"
   | "parlamentar_complete"

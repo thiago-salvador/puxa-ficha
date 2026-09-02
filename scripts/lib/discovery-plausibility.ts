@@ -8,7 +8,7 @@
 
 import { stripAccents } from "../../src/lib/strip-accents"
 
-export type MatchStatus = "accepted" | "suspect" | "rejected"
+type MatchStatus = "accepted" | "suspect" | "rejected"
 
 export interface PlausibilityResult {
   status: MatchStatus

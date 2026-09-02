@@ -23,7 +23,7 @@ const slugArgs = args
   .filter(Boolean)
 const filterSlugs = slugArgs.length > 0 ? new Set(slugArgs) : null
 
-export interface SparqlBinding {
+interface SparqlBinding {
   party?: { value: string }
   partyLabel?: { value: string }
   partyStart?: { value: string }
@@ -36,14 +36,14 @@ export interface SparqlBinding {
   officeEnd?: { value: string }
 }
 
-export interface PartyMembership {
+interface PartyMembership {
   sigla: string
   label: string
   startDate: string | null
   endDate: string | null
 }
 
-export interface OfficeHeld {
+interface OfficeHeld {
   label: string
   startDate: string | null
   endDate: string | null
@@ -58,7 +58,7 @@ export interface IngestWikidataPoliticoDependencies {
   wait: typeof sleep
 }
 
-export interface FonteWikidata<T> {
+interface FonteWikidata<T> {
   items: T[]
   sourceRows: number
 }

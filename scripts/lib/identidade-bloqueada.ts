@@ -53,7 +53,7 @@ export interface IdentidadeBloqueada {
   migrations: string[]
 }
 
-export interface ConsultaDeBloqueio {
+interface ConsultaDeBloqueio {
   slug: string
   /** SQ_CANDIDATO da linha do TSE, quando a linha tem um. */
   sq?: string | null

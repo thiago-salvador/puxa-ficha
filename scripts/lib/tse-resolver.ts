@@ -11,7 +11,7 @@ export interface ResolveResult {
   method: ResolveMethod
 }
 
-export interface ResolverStats {
+interface ResolverStats {
   sqPreloaded: number
   cpf: number
   nameUnique: number

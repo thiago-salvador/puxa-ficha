@@ -31,8 +31,8 @@ const ANALYTICS_ALLOWED_PAYLOAD_KEYS = [
   "term_length",
 ] as const
 
-export type AnalyticsPayloadKey = (typeof ANALYTICS_ALLOWED_PAYLOAD_KEYS)[number]
-export type AnalyticsPayloadValue = string | number | boolean
+type AnalyticsPayloadKey = (typeof ANALYTICS_ALLOWED_PAYLOAD_KEYS)[number]
+type AnalyticsPayloadValue = string | number | boolean
 export type AnalyticsPayload = Partial<Record<AnalyticsPayloadKey, AnalyticsPayloadValue>>
 
 const ANALYTICS_ALLOWED_PAYLOAD_KEY_SET = new Set<string>(ANALYTICS_ALLOWED_PAYLOAD_KEYS)

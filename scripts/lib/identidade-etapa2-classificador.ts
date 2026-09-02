@@ -108,7 +108,7 @@ export const CARGOS_ALVO: ReadonlySet<string> = new Set([
   "VICE-PRESIDENTE",
 ])
 
-export interface HitTse {
+interface HitTse {
   sq: string
   nome_civil: string
   nome_urna: string
@@ -118,14 +118,14 @@ export interface HitTse {
   numero: string
 }
 
-export interface FrentesTse {
+interface FrentesTse {
   registration: true
   complement: boolean
   social_networks: boolean
   social_count: number
 }
 
-export interface ChaveDeIdentidade {
+interface ChaveDeIdentidade {
   type: "SQ_CANDIDATO"
   value: string
 }

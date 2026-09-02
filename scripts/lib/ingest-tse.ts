@@ -932,7 +932,7 @@ function logResolverStats(ano: number, resolver: TSEResolver) {
   }
 }
 
-export interface PlannedTseRow {
+interface PlannedTseRow {
   table: "patrimonio" | "financiamento" | "financiamento_verificacoes"
   slug: string
   row: Record<string, unknown>

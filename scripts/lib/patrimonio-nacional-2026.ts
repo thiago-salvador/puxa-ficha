@@ -1,7 +1,7 @@
 import { stripAccents } from "../../src/lib/strip-accents"
 
-export type OrigemAncora = "frozen_sq" | "pr203_sq" | "seed_sq"
-export type RotaIdentidade = OrigemAncora | "cpf_consulta"
+type OrigemAncora = "frozen_sq" | "pr203_sq" | "seed_sq"
+type RotaIdentidade = OrigemAncora | "cpf_consulta"
 
 export interface CandidatoPublicavel {
   slug: string
@@ -32,7 +32,7 @@ export interface IdentidadeResolvida {
   geracaoConsulta: string
 }
 
-export type MotivoExclusaoIdentidade =
+type MotivoExclusaoIdentidade =
   | "ambiguous_anchor"
   | "cpf_mismatch"
   | "cpf_not_found_or_scope_mismatch"

@@ -30,5 +30,3 @@ export const SITUACAO_CANDIDATURA_DOMINIO = [
   /** A equipe apurou e as fontes divergem. Estado editorial, nao "ainda nao checado". */
   "incerto",
 ] as const
-
-export type SituacaoCandidatura = (typeof SITUACAO_CANDIDATURA_DOMINIO)[number]

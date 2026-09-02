@@ -266,7 +266,7 @@ export interface PontoAtencao {
   data_referencia?: string | null;
 }
 
-export interface FonteReferencia {
+interface FonteReferencia {
   titulo: string;
   url: string;
   /** Snapshot best effort da fonte original, quando o Wayback respondeu. */
@@ -299,14 +299,14 @@ export interface ProjetoLei {
 }
 
 // --- Legislação de Mandato Executivo ---
-export type LegislacaoMandatoExecutivoTipoRelacao =
+type LegislacaoMandatoExecutivoTipoRelacao =
   | 'projeto_enviado_pelo_executivo'
   | 'lei_sancionada'
   | 'lei_promulgada_pelo_legislativo';
 
-export type LegislacaoMandatoExecutivoEsfera = 'federal' | 'estadual' | 'municipal';
+type LegislacaoMandatoExecutivoEsfera = 'federal' | 'estadual' | 'municipal';
 
-export type LegislacaoMandatoExecutivoAutoridadePapel =
+type LegislacaoMandatoExecutivoAutoridadePapel =
   | 'titular'
   | 'vice_interino'
   | 'mesa_legislativa'
@@ -369,13 +369,13 @@ export interface GastoExecutivo {
   coletado_em: string;
 }
 
-export interface GastoCategoria {
+interface GastoCategoria {
   categoria: string;
   valor: number;
   fornecedor?: string;
 }
 
-export interface GastoDestaque {
+interface GastoDestaque {
   descricao: string;
   valor: number;
   categoria: string;
@@ -400,7 +400,7 @@ export interface SancaoAdministrativa {
  * `public.coleta_log` (migration 20260804160000). A ausência de linha é o sexto
  * estado, "nunca verificado", e se lê pela negativa.
  */
-export type ColetaResultado =
+type ColetaResultado =
   | 'encontrado'
   | 'vazio_confirmado'
   | 'nao_aplicavel'
@@ -486,7 +486,7 @@ export interface DataResource<T> {
   sourceMessage?: string | null;
 }
 
-export type SectionFreshnessStatus =
+type SectionFreshnessStatus =
   | "current"
   | "historical"
   | "stale"

@@ -11,7 +11,7 @@ import {
 } from "./pesquisas-monitoramento-adapters"
 import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
 
-export type ClassificacaoMonitoramento =
+type ClassificacaoMonitoramento =
   | "novo"
   | "alterado"
   | "inalterado"
@@ -64,7 +64,7 @@ export interface SourceContract {
   } | null
 }
 
-export interface DecisaoMonitoramento {
+interface DecisaoMonitoramento {
   classification: ClassificacaoMonitoramento
   eligible_for_human_review: boolean
   reason: string

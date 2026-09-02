@@ -1,10 +1,3 @@
-export type QuotaRpcStatus =
-  | "inserted"
-  | "duplicate"
-  | "quota_exceeded"
-  | "reserved"
-  | "not_found"
-
 export type QuotaRpcFunctionName =
   | "insert_quiz_short_link_under_ip_quota"
   | "insert_analytics_launch_event_under_ip_quota"

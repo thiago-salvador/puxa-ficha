@@ -1,7 +1,7 @@
 import type { Financiamento } from "@/lib/types"
 import type { FinancingBreakdownKey } from "@/lib/ui-labels"
 
-export interface FinancingCompositionSegment {
+interface FinancingCompositionSegment {
   key: FinancingBreakdownKey
   value: number
 }

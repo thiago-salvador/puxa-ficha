@@ -68,13 +68,13 @@ export interface EstadoCelulaSuperficie {
  * validador estrito das datas string. Campos extras (como `fonte`) sao
  * preservados no jsonb, mas nao participam deste gate.
  */
-export interface VerificacaoPerfilEstruturada {
+interface VerificacaoPerfilEstruturada {
   estado: "publicado" | "vazio_confirmado"
   verificado_em: string
   [chave: string]: unknown
 }
 
-export type ValorVerificacaoCampo =
+type ValorVerificacaoCampo =
   | string
   | EstadoCelulaSuperficie
   | VerificacaoPerfilEstruturada
@@ -161,7 +161,7 @@ export interface ResolucaoCampo {
   verificadoEm?: string | null
 }
 
-export interface CampoPreservado {
+interface CampoPreservado {
   chave: string
   estado: EstadoCampo
   motivo: string

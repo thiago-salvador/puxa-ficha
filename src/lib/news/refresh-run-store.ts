@@ -2,10 +2,10 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 
 export const NEWS_REFRESH_EXECUTION_HEADER = "x-puxaficha-news-execution-id"
 
-export type NewsRefreshBatchState = "processing" | "retryable" | "completed"
-export type NewsRefreshContinuationState = "none" | "pending" | "dispatching" | "dispatched"
+type NewsRefreshBatchState = "processing" | "retryable" | "completed"
+type NewsRefreshContinuationState = "none" | "pending" | "dispatching" | "dispatched"
 
-export interface NewsRefreshBatchConfig {
+interface NewsRefreshBatchConfig {
   executionId: string
   cursor: number
   limit: number
@@ -22,7 +22,7 @@ export interface NewsRefreshBatchClaim extends NewsRefreshBatchConfig {
   continuationState: NewsRefreshContinuationState
 }
 
-export interface NewsRefreshContinuationClaim {
+interface NewsRefreshContinuationClaim {
   acquired: boolean
   token: string | null
   nextCursor: number | null

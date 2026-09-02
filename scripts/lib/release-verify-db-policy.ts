@@ -1,4 +1,4 @@
-export type ReleaseVerifyMode = "partial" | "full"
+type ReleaseVerifyMode = "partial" | "full"
 
 export interface ReleaseVerifyDbPolicyInput {
   mode: ReleaseVerifyMode

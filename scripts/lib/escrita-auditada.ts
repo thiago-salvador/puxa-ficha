@@ -112,7 +112,7 @@ import { emDryRun, ENV_DRY_RUN } from "./dry-run"
 import type { ResultadoColeta } from "./coleta-log"
 
 /** Natureza da linha em `coleta_log`. Coleta é o default histórico da tabela. */
-export type NaturezaColeta = "coleta" | "escrita"
+type NaturezaColeta = "coleta" | "escrita"
 
 /** Tamanho mínimo do motivo. Curto o bastante para não atrapalhar, longo o bastante para não caber "fix". */
 export const MOTIVO_MINIMO = 12

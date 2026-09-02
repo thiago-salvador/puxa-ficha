@@ -17,14 +17,14 @@ interface StatusValue<T> {
   status?: string
 }
 
-export interface ResultadoPesquisaAgendada extends UnknownObject {
+interface ResultadoPesquisaAgendada extends UnknownObject {
   raw_label: string
   candidate_slug: string | null
   match_status: string
   value_percent: number
 }
 
-export interface CenarioPesquisaAgendada extends UnknownObject {
+interface CenarioPesquisaAgendada extends UnknownObject {
   id: string
   turn: number
   geography: string
