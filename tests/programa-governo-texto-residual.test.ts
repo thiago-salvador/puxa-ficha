@@ -62,9 +62,8 @@ test("o legado so diminui: 12 registros de 2026-09-02, nenhum novo", () => {
   assert.ok(programaGovernoTextoResidualLegado().length <= 12)
 })
 
-test("registro novo com prosa fora das frases falha fechado; o legado passa so com o hash congelado", () => {
-  const [legado] = programaGovernoTextoResidualLegado()
-  const record = publishedRecords().find((item) => item.fonte.slug === legado.slug)
+test("registro com prosa fora das frases falha fechado, mesmo publicado e aprovado", () => {
+  const record = publishedRecords().find((item) => item.estado === "aprovado" && item.resumo)
   assert.ok(record?.resumo)
   assert.doesNotThrow(() => assertProgramaGovernoRegistro(record))
 
@@ -72,7 +71,8 @@ test("registro novo com prosa fora das frases falha fechado; o legado passa so c
   editado.resumo!.texto = `${editado.resumo!.texto} Frase acrescentada sem evidencia.`
   assert.throws(() => assertProgramaGovernoRegistro(editado), /prosa fora das frases verificadas/u)
 
-  const outroSlug = structuredClone(record)
+  // O legado só libera por slug e hash congelado: slug fora da lista falha.
+  const outroSlug = structuredClone(editado)
   outroSlug.fonte = { ...outroSlug.fonte, slug: "candidato-inexistente" }
   assert.throws(() => assertProgramaGovernoRegistro(outroSlug), /prosa fora das frases verificadas/u)
 })

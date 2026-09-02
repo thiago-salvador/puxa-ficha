@@ -783,139 +783,159 @@
     }
   ],
   "resumo": {
-    "texto": "O Saúde da Gente Alagoana prevê polos regionais de especialidades para aproximar consultas, exames e cirurgias dos locais de moradia em Alagoas. O plano prevê expansão das teleconsultas para conectar pacientes do interior a especialistas da rede estadual de saúde. O Imuniza Alagoas propõe recuperar a cobertura vacinal por meio de busca ativa, vacinação itinerante e painel público por município. O plano propõe Escolas Técnicas Estaduais com cursos técnicos de Ensino Médio definidos pela vocação econômica de cada região. O Olho Vivo prevê uma rede estadual integrada de videomonitoramento para prevenir crimes, identificar suspeitos e ampliar a resposta das forças de segurança. A Operação Água e Esgoto propõe ampliar o acesso à água tratada por meio de infraestrutura destinada às casas e ao meio rural. As propostas integram áreas de saúde, educação, segurança, saneamento, formação profissional e imunização previstas no documento oficial.",
+    "texto": "O plano propõe ampliar a capacidade de imunização da rede estadual. O plano propõe levar solução regional de saúde mental aos 42 municípios sem CAPS. O plano propõe criar os primeiros parques estaduais de Alagoas. O plano propõe criar o Passe Livre Estudantil Estadual, com redução do custo do deslocamento para estudantes. O plano propõe criar uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual. O plano propõe publicar um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030. O programa Alagoas Trabalha prevê metas específicas de geração de empregos formais fora da Região Metropolitana. O plano propõe implantar uma rede de matadouros públicos no interior de Alagoas.",
     "frases": [
       {
-        "texto": "O Saúde da Gente Alagoana prevê polos regionais de especialidades para aproximar consultas, exames e cirurgias dos locais de moradia em Alagoas.",
+        "texto": "O plano propõe ampliar a capacidade de imunização da rede estadual.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 18,
-            "trecho": "O programa prevê a implantação de polos regionais de especialidades, com consultas, exames de apoio diagnóstico e cirurgias eletivas;"
+            "pagina": 14,
+            "trecho": "A frente IMUNIZA ALAGOAS quer ampliar a capacidade de imunização da rede estadual;"
           }
         ]
       },
       {
-        "texto": "O plano prevê expansão das teleconsultas para conectar pacientes do interior a especialistas da rede estadual de saúde.",
+        "texto": "O plano propõe levar solução regional de saúde mental aos 42 municípios sem CAPS.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 18,
-            "trecho": "Ampliação da Telessaúde e do Transporte Sanitário Regional, com expansão das teleconsultas, do telediagnóstico e das teleinterconsultas para conectar pacientes e profissionais do interior a especialistas da rede estadual,"
+            "pagina": 14,
+            "trecho": "Levar solução regional de saúde mental aos 42 municípios sem CAPS, com CAPS regionais, equipes itinerantes e retaguarda de leito em hospital geral;"
           }
         ]
       },
       {
-        "texto": "O Imuniza Alagoas propõe recuperar a cobertura vacinal por meio de busca ativa, vacinação itinerante e painel público por município.",
+        "texto": "O plano propõe criar os primeiros parques estaduais de Alagoas.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 19,
-            "trecho": "Imuniza Alagoas, para a recuperação da cobertura vacinal. Trata-se de um pacto estadual de recuperação vacinal com sala de situação por município, busca ativa integrada entre escola, unidade básica de saúde e Cadastro Único, vacinação itinerante em áreas rurais e de difícil acesso, apoio logístico e cadeia de frio, meta anual por imunizante e painel público de cobertura municipal."
+            "pagina": 14,
+            "trecho": "Criar os primeiros parques estaduais de Alagoas;"
           }
         ]
       },
       {
-        "texto": "O plano propõe Escolas Técnicas Estaduais com cursos técnicos de Ensino Médio definidos pela vocação econômica de cada região.",
+        "texto": "O plano propõe criar o Passe Livre Estudantil Estadual, com redução do custo do deslocamento para estudantes.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 23,
-            "trecho": "Criação de Escolas Técnicas Estaduais (ETECs): oferta de cursos técnicos de Ensino Médio, definida pela vocação econômica de cada região,"
+            "pagina": 38,
+            "trecho": "Vai Estudante. Criar o Passe Livre Estudantil Estadual, reduzindo o custo do deslocamento para estudantes"
           }
         ]
       },
       {
-        "texto": "O Olho Vivo prevê uma rede estadual integrada de videomonitoramento para prevenir crimes, identificar suspeitos e ampliar a resposta das forças de segurança.",
+        "texto": "O plano propõe criar uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 26,
-            "trecho": "Olho Vivo. Implantação de uma rede estadual integrada de videomonitoramento, inteligência e análise de dados para prevenir crimes, identificar suspeitos e ampliar a capacidade de resposta das forças de segurança."
+            "pagina": 47,
+            "trecho": "Criação de uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual"
           }
         ]
       },
       {
-        "texto": "A Operação Água e Esgoto propõe ampliar o acesso à água tratada por meio de infraestrutura destinada às casas e ao meio rural.",
+        "texto": "O plano propõe publicar um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 43,
-            "trecho": "Operação Água e Esgoto. Estratégia estadual para ampliar o acesso à água tratada e ao esgotamento sanitário, garantindo que a infraestrutura chegue efetivamente às casas e que o meio rural tenha soluções próprias."
+            "pagina": 37,
+            "trecho": "Criação de um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030"
+          }
+        ]
+      },
+      {
+        "texto": "O programa Alagoas Trabalha prevê metas específicas de geração de empregos formais fora da Região Metropolitana.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 29,
+            "trecho": "metas específicas de geração de empregos formais fora da Região Metropolitana"
+          }
+        ]
+      },
+      {
+        "texto": "O plano propõe implantar uma rede de matadouros públicos no interior de Alagoas.",
+        "evidencias": [
+          {
+            "documentoId": "AL:20002553350:01",
+            "pagina": 31,
+            "trecho": "Implantação de uma rede de matadouros públicos no interior de Alagoas"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "saude-regional",
-        "titulo": "Saúde regional",
-        "descricao": "Regionalização de consultas, exames e cirurgias.",
+        "id": "imunizacao-estadual",
+        "titulo": "Imunização estadual",
+        "descricao": "Ampliação da capacidade de imunização da rede estadual.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 18,
-            "trecho": "O programa prevê a implantação de polos regionais de especialidades, com consultas, exames de apoio diagnóstico e cirurgias eletivas;"
+            "pagina": 14,
+            "trecho": "A frente IMUNIZA ALAGOAS quer ampliar a capacidade de imunização da rede estadual;"
           }
         ]
       },
       {
-        "id": "telesssaude",
-        "titulo": "Telessaúde",
-        "descricao": "Expansão das teleconsultas para pacientes do interior.",
+        "id": "saude-mental-regional",
+        "titulo": "Saúde mental regional",
+        "descricao": "Atendimento regional de saúde mental para municípios sem CAPS.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 18,
-            "trecho": "Ampliação da Telessaúde e do Transporte Sanitário Regional, com expansão das teleconsultas, do telediagnóstico e das teleinterconsultas para conectar pacientes e profissionais do interior a especialistas da rede estadual,"
+            "pagina": 14,
+            "trecho": "Levar solução regional de saúde mental aos 42 municípios sem CAPS, com CAPS regionais, equipes itinerantes e retaguarda de leito em hospital geral;"
           }
         ]
       },
       {
-        "id": "cobertura-vacinal",
-        "titulo": "Cobertura vacinal",
-        "descricao": "Recuperação da cobertura vacinal por município.",
+        "id": "parques-estaduais",
+        "titulo": "Parques estaduais",
+        "descricao": "Criação dos primeiros parques estaduais de Alagoas.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 19,
-            "trecho": "Imuniza Alagoas, para a recuperação da cobertura vacinal. Trata-se de um pacto estadual de recuperação vacinal com sala de situação por município, busca ativa integrada entre escola, unidade básica de saúde e Cadastro Único, vacinação itinerante em áreas rurais e de difícil acesso, apoio logístico e cadeia de frio, meta anual por imunizante e painel público de cobertura municipal."
+            "pagina": 14,
+            "trecho": "Criar os primeiros parques estaduais de Alagoas;"
           }
         ]
       },
       {
-        "id": "ensino-tecnico",
-        "titulo": "Ensino técnico",
-        "descricao": "Criação de Escolas Técnicas Estaduais.",
+        "id": "mobilidade-estudantil",
+        "titulo": "Mobilidade estudantil",
+        "descricao": "Criação do Passe Livre Estudantil Estadual.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 23,
-            "trecho": "Criação de Escolas Técnicas Estaduais (ETECs): oferta de cursos técnicos de Ensino Médio, definida pela vocação econômica de cada região,"
+            "pagina": 38,
+            "trecho": "Vai Estudante. Criar o Passe Livre Estudantil Estadual, reduzindo o custo do deslocamento para estudantes"
           }
         ]
       },
       {
-        "id": "videomonitoramento",
-        "titulo": "Videomonitoramento",
-        "descricao": "Implantação de rede estadual integrada de videomonitoramento.",
+        "id": "integridade-publica",
+        "titulo": "Integridade pública",
+        "descricao": "Criação de instituição permanente para enfrentar a corrupção estadual.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 26,
-            "trecho": "Olho Vivo. Implantação de uma rede estadual integrada de videomonitoramento, inteligência e análise de dados para prevenir crimes, identificar suspeitos e ampliar a capacidade de resposta das forças de segurança."
+            "pagina": 47,
+            "trecho": "Criação de uma instituição autônoma e permanente para prevenir, investigar e enfrentar a corrupção na administração pública estadual"
           }
         ]
       },
       {
-        "id": "agua-tratada",
-        "titulo": "Água tratada",
-        "descricao": "Ampliação do acesso à água tratada nas casas.",
+        "id": "infraestrutura-publica",
+        "titulo": "Infraestrutura pública",
+        "descricao": "Publicação de portfólio de projetos de infraestrutura até 2030.",
         "evidencias": [
           {
             "documentoId": "AL:20002553350:01",
-            "pagina": 43,
-            "trecho": "Operação Água e Esgoto. Estratégia estadual para ampliar o acesso à água tratada e ao esgotamento sanitário, garantindo que a infraestrutura chegue efetivamente às casas e que o meio rural tenha soluções próprias."
+            "pagina": 37,
+            "trecho": "Criação de um portfólio único, público e atualizado dos projetos de infraestrutura que Alagoas pretende viabilizar até 2030"
           }
         ]
       }
@@ -923,373 +943,433 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-29T14:20:27.096Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:32:31.579Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-29T16:23:44.013Z",
+    "judgedAt": "2026-09-02T18:37:08.720Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma polos regionais com consultas, exames e cirurgias, alinhado ao objetivo de aproximação declarado no texto da página."
+        "reason": "A evidência sustenta integralmente a ampliação proposta."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata somente da capacidade de imunização estadual."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:1:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma expansão das teleconsultas conectando pacientes do interior a especialistas estaduais."
+        "reason": "A evidência sustenta integralmente a solução regional para os 42 municípios sem CAPS."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 42 municípios está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (telessaúde)."
+        "reason": "A afirmação trata de uma única proposta coerente de saúde mental regional."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:2:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre a solução regional, a área de saúde mental e os 42 municípios sem CAPS."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência menciona busca ativa, vacinação itinerante e painel público de cobertura municipal, como afirmado."
+        "reason": "A evidência reproduz integralmente a proposta afirmada."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números específicos na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (imunização)."
+        "reason": "A afirmação trata de uma única proposta de criação de parques estaduais."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:3:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais citadas."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma exatamente a criação de ETECs com cursos definidos pela vocação econômica regional."
+        "reason": "A evidência sustenta tanto a criação do passe quanto a redução do custo para estudantes."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (ETECs)."
+        "reason": "A redução do custo é efeito integrante da mesma proposta de passe estudantil."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:4:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz quase literalmente a afirmação."
+        "reason": "A evidência reproduz integralmente a instituição e suas finalidades afirmadas."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (Olho Vivo)."
+        "reason": "As atividades enumeradas pertencem à mesma proposta institucional anticorrupção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:5:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+        "reason": "A evidência cobre autonomia, permanência, finalidades e âmbito estadual."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma ampliação do acesso à água tratada com infraestrutura para casas e soluções rurais."
+        "reason": "A evidência e a página citada sustentam o portfólio público, suas características e o horizonte de 2030."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O prazo de 2030 está literalmente sustentado."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (saneamento)."
+        "reason": "A afirmação trata de uma única proposta de portfólio de infraestrutura."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
         "id": "2026:GOVERNADOR:AL:20002553350:frase:6:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais citadas."
+        "reason": "A evidência cobre o portfólio, suas características, o objeto e o prazo."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma a regionalização de consultas, exames e cirurgias."
+        "reason": "O trecho e a página citada vinculam literalmente essas metas ao programa Alagoas Trabalha."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação descreve o programa sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (saúde regional)."
+        "reason": "A afirmação trata de uma única medida coerente de geração regional de empregos."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-regional:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:7:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "O trecho, em seu contexto na página citada, cobre o programa, as metas, os empregos formais e o recorte territorial."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma expansão das teleconsultas para pacientes do interior."
+        "reason": "A evidência reproduz integralmente a proposta afirmada."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (telessaúde)."
+        "reason": "A afirmação trata de uma única proposta de rede de matadouros."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:telesssaude:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:frase:8:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "A evidência cobre implantação, rede pública e localização no interior de Alagoas."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma recuperação da cobertura vacinal com abordagem por município."
+        "reason": "A evidência sustenta integralmente o resumo temático."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (vacinação)."
+        "reason": "O tema reúne uma única proposta coerente de imunização estadual."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:cobertura-vacinal:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:imunizacao-estadual:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "A evidência cobre integralmente o tema e a ampliação descrita."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma a criação das ETECs."
+        "reason": "A solução regional descrita sustenta integralmente o atendimento resumido no tema."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (ensino técnico)."
+        "reason": "O tema trata de uma única área coerente de atendimento regional em saúde mental."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:ensino-tecnico:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:saude-mental-regional:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "A evidência cobre a regionalização, a saúde mental e os municípios sem CAPS."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma a implantação da rede integrada de videomonitoramento."
+        "reason": "A evidência sustenta literalmente o resumo temático."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (segurança/videomonitoramento)."
+        "reason": "O tema trata de uma única proposta de criação de parques estaduais."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:videomonitoramento:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:parques-estaduais:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "A evidência cobre integralmente a criação e a caracterização dos parques."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:suporte",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma ampliação do acesso à água tratada com chegada da infraestrutura às casas."
+        "reason": "A evidência sustenta literalmente a criação do Passe Livre Estudantil Estadual."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:numeros",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:neutralidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:mistura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única (saneamento/água tratada)."
+        "reason": "O tema trata de uma única proposta coerente de mobilidade estudantil."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:identidade",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:AL:20002553350:tema:agua-tratada:documentos:AL:20002553350:01:cobertura",
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:mobilidade-estudantil:documentos:AL:20002553350:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material resumida."
+        "reason": "A evidência cobre integralmente a proposta resumida no tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a criação, a permanência e a finalidade anticorrupção resumidas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "O tema trata de uma única proposta coerente de integridade pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:integridade-publica:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a criação institucional, a permanência e o enfrentamento da corrupção estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada sustentam a publicação do portfólio e o horizonte de 2030."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:numeros",
+        "verdict": "yes",
+        "reason": "O prazo de 2030 está literalmente sustentado."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:mistura",
+        "verdict": "yes",
+        "reason": "O tema trata de uma única proposta coerente de portfólio de infraestrutura."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AL:20002553350:tema:infraestrutura-publica:documentos:AL:20002553350:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o portfólio, os projetos de infraestrutura, seu caráter público e o prazo."
       }
     ]
   },
@@ -1305,48 +1385,36 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 2
+        "attempts": 1
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 28027,
-          "cache_read_input_tokens": 0,
-          "output_tokens": 23626,
-          "output_tokens_details": {
-            "thinking_tokens": 300
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 28027,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 23626,
-              "cache_read_input_tokens": 0,
-              "cache_creation_input_tokens": 28027,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 28027
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.369371
+          "input_tokens": 38805,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15047,
+          "reasoning_output_tokens": 176
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "cbcd1b06e369e74b536db0719f659270093f088eb1c823401acac2f6ad8e9a59",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
         }
       }
     },
@@ -1365,11 +1433,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "014a6e4fdb624cbdbf0fa0bff8c1c3cc69f94588edbad970e5b00d9400e6717b",
     "extractedTextSha256": "a66748f42f473b2674d4f3f4d0deddf126fddd9a1c9fd219a34ae9f656e9bddd",
     "documentCount": 1,
     "documentSetSha256": "6f10b5f0452daf1dff6bed481f36697ae94567a92de96cb695922c436aca1c3d",
-    "contentSha256": "219ec7824671ad074dd94e7c6cb1bd974b1ee59e4d41bf73381a5eaecc517546"
+    "contentSha256": "c7b314d00437ca1b95f8d517bb9bf8656377fb84172dcefd01c3c0e5f47aab25"
   }
 }

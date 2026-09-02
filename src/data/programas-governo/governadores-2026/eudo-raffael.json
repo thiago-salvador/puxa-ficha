@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -125,159 +125,142 @@
     }
   ],
   "resumo": {
-    "texto": "O plano de governo apresenta propostas organizadas em torno de direitos sociais e serviços públicos. O plano prevê o combate à precarização do trabalho e às reformas que retiraram direitos históricos dos trabalhadores. O plano propõe a participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo. O plano prevê o fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis. O plano prevê um sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica. O plano propõe a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial. O plano prevê a manutenção e a ampliação dos serviços públicos de saneamento no estado. O plano propõe um programa estatal de construção, reforma e regularização fundiária de moradias. O plano propõe a realização de uma auditoria integral da dívida pública.",
+    "texto": "O programa prevê participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo. A proposta educacional orienta a escola pública por uma perspectiva crítica, científica e popular, com acesso universal, permanência e qualidade em todos os níveis. Na saúde, o documento defende um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas. Para o trabalho, o programa propõe industrialização sustentável, geração de empregos dignos, economia solidária e valorização do salário. Na mobilidade urbana, o plano defende sistemas de transporte 100% públicos e gratuitos, com integração entre zonas rurais e urbanas. Sobre deficiência, o documento prevê acessibilidade plena e inclusão em todas as políticas públicas, com autonomia, participação social e equidade nas oportunidades. Na comunicação, a proposta trata o acesso à internet e à informação como serviço público universal.",
     "frases": [
       {
-        "texto": "O plano prevê o combate à precarização do trabalho e às reformas que retiraram direitos históricos dos trabalhadores.",
+        "texto": "O programa prevê participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 1,
-            "trecho": "Devemos combater a precarização e as reformas neoliberais que retiraram direitos históricos e ameaçaram a fraca democracia liberal."
+            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta\ndo povo nas decisões políticas, por meio de conselhos populares, assembleias\nterritoriais e orçamento participativo."
           }
         ]
       },
       {
-        "texto": "O plano propõe a participação direta do povo nas decisões políticas por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
+        "texto": "A proposta educacional orienta a escola pública por uma perspectiva crítica, científica e popular, com acesso universal, permanência e qualidade em todos os níveis.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 1,
-            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo."
+            "trecho": "A educação deve ser um instrumento de libertação da classe trabalhadora,\norientada por uma perspectiva crítica, científica e popular, garantindo acesso\nuniversal, permanência e qualidade em todos os níveis."
           }
         ]
       },
       {
-        "texto": "O plano prevê o fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis.",
-        "evidencias": [
-          {
-            "documentoId": "AC:10002549500:01",
-            "pagina": 1,
-            "trecho": "garantindo acesso universal, permanência e qualidade em todos os níveis. O Estado deve fortalecer a escola pública como espaço de formação integral"
-          }
-        ]
-      },
-      {
-        "texto": "O plano prevê um sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica.",
+        "texto": "Na saúde, o documento defende um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 2,
-            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas."
+            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e\nna atenção básica voltada às especificidades amazônicas."
           }
         ]
       },
       {
-        "texto": "O plano propõe a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial.",
+        "texto": "Para o trabalho, o programa propõe industrialização sustentável, geração de empregos dignos, economia solidária e valorização do salário.",
+        "evidencias": [
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 2,
+            "trecho": "O Estado deve liderar uma industrialização sustentável, com geração de empregos\ndignos, economia solidária e valorização do salário que atenda às necessidades\ndas famílias."
+          }
+        ]
+      },
+      {
+        "texto": "Na mobilidade urbana, o plano defende sistemas de transporte 100% públicos e gratuitos, com integração entre zonas rurais e urbanas.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 3,
-            "trecho": "por isso defendemos a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial."
+            "trecho": "sistemas de transporte 100% públicos e gratuitos"
+          },
+          {
+            "documentoId": "AC:10002549500:01",
+            "pagina": 3,
+            "trecho": "O planejamento do transporte deve\npriorizar modelos sustentáveis e a integração entre as zonas rurais e urbanas,"
           }
         ]
       },
       {
-        "texto": "O plano prevê a manutenção e a ampliação dos serviços públicos de saneamento no estado.",
+        "texto": "Sobre deficiência, o documento prevê acessibilidade plena e inclusão em todas as políticas públicas, com autonomia, participação social e equidade nas oportunidades.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 3,
-            "trecho": "Exigimos a manutenção e ampliação do aparato público estatal de todos os serviços de saneamento no Acre"
+            "trecho": "Precisamos garantir acessibilidade plena e inclusão em todas as\npolíticas públicas, combatendo o capacitismo estrutural."
           }
         ]
       },
       {
-        "texto": "O plano propõe um programa estatal de construção, reforma e regularização fundiária de moradias.",
-        "evidencias": [
-          {
-            "documentoId": "AC:10002549500:01",
-            "pagina": 5,
-            "trecho": "um programa estatal massivo de construção, reforma e regularização fundiária, especialmente nos terrenos de invasão."
-          }
-        ]
-      },
-      {
-        "texto": "O plano propõe a realização de uma auditoria integral da dívida pública.",
+        "texto": "Na comunicação, a proposta trata o acesso à internet e à informação como serviço público universal.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 6,
-            "trecho": "é urgente a realização de uma auditoria integral da dívida pública"
+            "trecho": "O acesso à internet e à informação deve ser tratado como serviço público universal."
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "defesa-dos-trabalhadores",
-        "titulo": "Defesa dos trabalhadores",
-        "descricao": "Propostas de defesa dos trabalhadores, com combate à precarização do trabalho e às reformas que retiraram direitos históricos.",
-        "evidencias": [
-          {
-            "documentoId": "AC:10002549500:01",
-            "pagina": 1,
-            "trecho": "Devemos combater a precarização e as reformas neoliberais que retiraram direitos históricos e ameaçaram a fraca democracia liberal."
-          }
-        ]
-      },
-      {
         "id": "democracia-participativa",
         "titulo": "Democracia participativa",
-        "descricao": "Proposta de gestão baseada na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo.",
+        "descricao": "Participação popular nas decisões políticas por meio de conselhos populares.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 1,
-            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta do povo nas decisões políticas, por meio de conselhos populares, assembleias territoriais e orçamento participativo."
+            "trecho": "Defendemos a construção de um modelo de gestão baseado na participação direta\ndo povo nas decisões políticas, por meio de conselhos populares, assembleias\nterritoriais e orçamento participativo."
           }
         ]
       },
       {
         "id": "educacao-publica",
         "titulo": "Educação pública",
-        "descricao": "Proposta de fortalecimento da escola pública com acesso universal, permanência e qualidade em todos os níveis.",
+        "descricao": "Orientação da escola pública por uma perspectiva crítica, científica e popular.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 1,
-            "trecho": "garantindo acesso universal, permanência e qualidade em todos os níveis. O Estado deve fortalecer a escola pública como espaço de formação integral"
+            "trecho": "A educação deve ser um instrumento de libertação da classe trabalhadora,\norientada por uma perspectiva crítica, científica e popular, garantindo acesso\nuniversal, permanência e qualidade em todos os níveis."
           }
         ]
       },
       {
-        "id": "saude-publica-estatal",
-        "titulo": "Saúde pública estatal",
-        "descricao": "Proposta de sistema de saúde 100% estatal, com foco na medicina preventiva e na atenção básica.",
+        "id": "saude-estatal",
+        "titulo": "Saúde estatal",
+        "descricao": "Defesa de um sistema estatal com foco na medicina preventiva.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 2,
-            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e na atenção básica voltada às especificidades amazônicas."
+            "trecho": "Defendemos um sistema 100% estatal, com foco na medicina preventiva e\nna atenção básica voltada às especificidades amazônicas."
           }
         ]
       },
       {
-        "id": "transporte-publico",
-        "titulo": "Transporte público",
-        "descricao": "Proposta de criação de empresa estatal de transporte rodoviário, ferroviário e fluvial.",
+        "id": "mobilidade-urbana",
+        "titulo": "Mobilidade urbana",
+        "descricao": "Defesa de sistemas de transporte públicos e gratuitos.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
             "pagina": 3,
-            "trecho": "por isso defendemos a criação de uma empresa estatal de transporte rodoviário, ferroviário e fluvial."
+            "trecho": "sistemas de transporte 100% públicos e gratuitos"
           }
         ]
       },
       {
-        "id": "habitacao",
-        "titulo": "Habitação",
-        "descricao": "Proposta de programa estatal de construção, reforma e regularização fundiária de moradias.",
+        "id": "inclusao-deficiencia",
+        "titulo": "Inclusão de pessoas com deficiência",
+        "descricao": "Previsão de acessibilidade plena nas políticas públicas.",
         "evidencias": [
           {
             "documentoId": "AC:10002549500:01",
-            "pagina": 5,
-            "trecho": "um programa estatal massivo de construção, reforma e regularização fundiária, especialmente nos terrenos de invasão."
+            "pagina": 3,
+            "trecho": "Precisamos garantir acessibilidade plena e inclusão em todas as\npolíticas públicas, combatendo o capacitismo estrutural."
           }
         ]
       }
@@ -285,168 +268,168 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "Alibaba Qwen@qwen-code-cli-0.21.12",
-    "generatedAt": "2026-08-27T12:16:07.398Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T17:56:48.419Z"
   },
   "julgamento": {
-    "model": "OpenAI GPT@codex-cli-gpt-5.4",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-27T12:21:08.936Z",
+    "judgedAt": "2026-09-02T18:01:03.496Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência afirma literalmente o combate à precarização e às reformas que retiraram direitos históricos, no eixo de defesa dos trabalhadores."
+        "reason": "A evidência sustenta integralmente a participação direta e os três mecanismos citados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica adicional ou tom promocional."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza indevida."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de um único eixo coerente, defesa dos trabalhadores contra precarização e perda de direitos."
+        "reason": "A afirmação trata de uma única área coerente, a democracia participativa."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência e o documento informado pertencem à mesma chave eleitoral e ao documento citado."
+        "reason": "A evidência pertence ao documento AC:10002549500:01, compatível com a chave eleitoral informada."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:1:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre as cláusulas materiais da afirmação: combate à precarização e às reformas que retiraram direitos históricos."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente a proposta descrita na afirmação."
+        "reason": "A evidência e a página citada sustentam a orientação educacional, a escola pública e todas as garantias mencionadas."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva e sem linguagem valorativa adicional."
+        "reason": "A redação descreve a proposta educacional sem avaliação favorável ou desfavorável."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta de democracia participativa, com mecanismos do mesmo eixo."
+        "reason": "Todos os elementos pertencem à mesma proposta de educação pública."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao mesmo documento e à mesma identidade eleitoral informada."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:2:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a participação direta e os três instrumentos citados."
+        "reason": "A evidência e a página citada cobrem todas as cláusulas materiais."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente acesso universal, permanência, qualidade em todos os níveis e fortalecimento da escola pública."
+        "reason": "A evidência reproduz integralmente a proposta descrita."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "O percentual de 100% está literalmente presente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A formulação é descritiva do conteúdo do plano."
+        "reason": "A redação atribui corretamente a posição ao documento sem avaliá-la."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, educação pública."
+        "reason": "A afirmação reúne componentes coerentes de uma única proposta de saúde."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao mesmo documento e à mesma identidade eleitoral declarada."
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral indicados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:3:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+        "reason": "Todas as cláusulas materiais aparecem literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente sistema 100% estatal, medicina preventiva e atenção básica."
+        "reason": "A evidência sustenta literalmente todos os componentes da proposta."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "O percentual 100% aparece literalmente na evidência."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A afirmação resume a proposta sem adjetivação promocional ou crítica."
+        "reason": "A redação apenas descreve a proposta apresentada no programa."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente na área de saúde."
+        "reason": "Os elementos compõem uma única área coerente de emprego e renda."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "Documento e evidência correspondem à mesma identidade eleitoral informada."
+        "reason": "A evidência corresponde ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:4:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre integralmente as cláusulas materiais da afirmação; o detalhe amazônico é adicional, não faltante."
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz literalmente a proposta da afirmação."
+        "reason": "As duas evidências sustentam integralmente o caráter público e gratuito e a integração territorial."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "O percentual de 100% está literalmente sustentado pela evidência."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação apenas descreve a proposta."
+        "reason": "A redação descreve a posição do plano sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de empresa estatal de transporte."
+        "reason": "A afirmação trata exclusivamente da proposta coerente de transporte e mobilidade."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento informado da mesma identidade eleitoral."
+        "reason": "Ambas as evidências pertencem ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:5:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a criação da empresa e os três modais citados."
+        "reason": "As evidências cobrem todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta manutenção e ampliação do aparato público de todos os serviços de saneamento no estado."
+        "reason": "A evidência e o restante da página citada sustentam acessibilidade, inclusão, autonomia, participação social e equidade."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:numeros",
@@ -456,117 +439,57 @@
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação resume o conteúdo do plano de forma descritiva."
+        "reason": "A redação descreve o conteúdo do documento sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, saneamento público."
+        "reason": "Todos os elementos pertencem à mesma área de inclusão de pessoas com deficiência."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado da mesma chave eleitoral."
+        "reason": "A evidência e a página citada pertencem ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:6:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre manutenção, ampliação e natureza pública dos serviços de saneamento."
+        "reason": "O trecho e a página citada cobrem todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência traz literalmente o programa estatal de construção, reforma e regularização fundiária; o contexto da página é habitação e moradia."
+        "reason": "A evidência sustenta literalmente toda a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva do conteúdo do documento."
+        "reason": "A redação descreve neutralmente a proposta do documento."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, habitação e moradia."
+        "reason": "A afirmação trata de uma única proposta coerente na área de comunicação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento indicado da mesma identidade eleitoral."
+        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral indicados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:frase:7:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "As cláusulas materiais do programa estão cobertas, e a página citada enquadra o trecho em habitação e moradia."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta literalmente a realização de auditoria integral da dívida pública."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A formulação é descritiva da proposta."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente na área fiscal."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:identidade",
-        "verdict": "yes",
-        "reason": "A evidência corresponde ao mesmo documento e identidade eleitoral informados."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:frase:8:documentos:AC:10002549500:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre integralmente a proposta enunciada."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta o combate à precarização e às reformas que retiraram direitos, no tema de defesa dos trabalhadores."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação é classificatória e descritiva, sem promoção ou crítica adicional."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação permanece em um único tema coerente, defesa dos trabalhadores."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:identidade",
-        "verdict": "yes",
-        "reason": "A evidência está no documento indicado da mesma identidade eleitoral."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:defesa-dos-trabalhadores:documentos:AC:10002549500:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre integralmente as cláusulas materiais do tema descrito."
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente o conteúdo temático da afirmação."
+        "reason": "A evidência sustenta diretamente a participação popular por conselhos populares."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:numeros",
@@ -576,149 +499,149 @@
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação é descritiva do tema e sem tom valorativo extra."
+        "reason": "A redação é descritiva e não contém avaliação, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de um único tema coerente de democracia participativa."
+        "reason": "A afirmação contém uma única proposta na área de democracia participativa."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao documento e à identidade eleitoral informados."
+        "reason": "A evidência corresponde ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:democracia-participativa:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a gestão participativa e os mecanismos citados."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta literalmente fortalecimento da escola pública, acesso universal, permanência e qualidade."
+        "reason": "A evidência e a página citada sustentam a orientação crítica, científica e popular da escola pública."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A formulação é neutra e descritiva."
+        "reason": "A redação descreve a orientação da proposta sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente, educação pública."
+        "reason": "A afirmação trata de uma única proposta coerente de educação pública."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento indicado da mesma identidade eleitoral."
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002549500:tema:educacao-publica:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais do tema."
+        "reason": "A evidência e a página citada cobrem integralmente a afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:suporte",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a descrição temática apresentada."
+        "reason": "A evidência sustenta diretamente o sistema estatal e o foco na medicina preventiva."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:numeros",
-        "verdict": "yes",
-        "reason": "O percentual 100% está literalmente sustentado pela evidência."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação é descritiva do conteúdo do documento."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação se mantém em um único tema coerente de saúde pública estatal."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:identidade",
-        "verdict": "yes",
-        "reason": "A evidência pertence ao mesmo documento e à mesma chave eleitoral."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-publica-estatal:documentos:AC:10002549500:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre integralmente as cláusulas materiais do tema."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta literalmente a proposta temática descrita."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não traz números, prazos, percentuais ou quantidades."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação é descritiva e não promocional."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação trata de um único tema coerente de transporte público."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:identidade",
-        "verdict": "yes",
-        "reason": "A evidência pertence ao documento indicado da mesma identidade eleitoral."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:transporte-publico:documentos:AC:10002549500:01:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre a proposta e os modais mencionados na afirmação."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta o programa estatal de construção, reforma e regularização fundiária dentro do tema habitacional da página citada."
-      },
-      {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:numeros",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:numeros",
         "verdict": "yes",
         "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:neutralidade",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:neutralidade",
         "verdict": "yes",
-        "reason": "A redação apenas descreve o conteúdo do plano."
+        "reason": "A redação descreve a posição do documento sem avaliação."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:mistura",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:mistura",
         "verdict": "yes",
-        "reason": "A afirmação permanece em uma única área coerente, habitação."
+        "reason": "A afirmação trata de uma única proposta coerente na área de saúde."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:identidade",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento informado da mesma chave eleitoral."
+        "reason": "A evidência corresponde exatamente ao documento e à chave eleitoral informados."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002549500:tema:habitacao:documentos:AC:10002549500:01:cobertura",
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:saude-estatal:documentos:AC:10002549500:01:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre as cláusulas materiais do programa, e a página citada o enquadra explicitamente em habitação e moradia."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a defesa de sistemas públicos e gratuitos."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente de mobilidade urbana."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:mobilidade-urbana:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente todas as cláusulas materiais."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a acessibilidade plena nas políticas públicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a previsão documental sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de inclusão e acessibilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência corresponde exatamente ao documento e à chave eleitoral informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:AC:10002549500:tema:inclusao-deficiencia:documentos:AC:10002549500:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:AC:10002549500",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -726,16 +649,30 @@
     ],
     "modelos": {
       "generator": {
-        "name": "Alibaba Qwen",
-        "version": "qwen-code-cli-0.21.12",
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 1
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 22973,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3595,
+          "reasoning_output_tokens": 2332
+        }
       },
       "judge": {
-        "name": "OpenAI GPT",
-        "version": "codex-cli-gpt-5.4",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
-        "attempts": 1
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 35968,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13843,
+          "reasoning_output_tokens": 143
+        }
       }
     },
     "eval": {
@@ -753,11 +690,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "8c811667d3b306d3e2cdf5fbda08cf6665f1e78496560b3d0a1a10716e06773a",
     "extractedTextSha256": "36e39bd97f35300b8bf32bcff5191f80309d266131f33ed83185add6966db731",
     "documentCount": 1,
-    "documentSetSha256": "4214a4287e554d0f4f1454813dc69e066ce7323d3459c6ccacd4ce4f287df315",
-    "contentSha256": "1423456ca43d959f1247ff1fdee6a77b6bb47b1538c7e5cb654543dcfd2bd9be"
+    "documentSetSha256": "38db99d29efd2eb61980a80fd92525ae3082fab20b066f98b5db0814e91ecd13",
+    "contentSha256": "2a73939c810c65296692cc020cfc19cd8929cd3cf14a1ee6de2e169326b16a88"
   }
 }

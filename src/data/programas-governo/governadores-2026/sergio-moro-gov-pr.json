@@ -1351,86 +1351,20 @@
     }
   ],
   "resumo": {
-    "texto": "O documento organiza as propostas em cinco pilares de governo, apresentados como estrutura para definir prioridades da gestão pública estadual. Na educação, prevê ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, segundo as vocações econômicas regionais. Na saúde, planeja integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede, com uso de análise de dados. Na gestão pública, propõe reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão. Na área ambiental, prevê modernizar e digitalizar o licenciamento com tecnologia e análise por risco, mantendo a proteção ambiental. Na segurança pública, planeja implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial, gerando alertas em tempo real. O plano apresenta essas propostas como ações de governo estadual para diferentes áreas.",
+    "texto": "O documento propõe criar a Tabela SUS Paranaense, com pagamento complementar padronizado aos serviços de saúde. Também prevê integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde. O programa prevê levar internet de alta velocidade a todas as regiões do estado, utilizando antenas, satélites, fibra e provedores locais. O plano prevê criar um código de ética para a alta administração do Governo do Estado do Paraná. Na segurança, o documento prevê implantar videomonitoramento estadual integrando câmeras públicas e privadas com inteligência artificial. Também prevê uma unidade de segurança máxima para isolar lideranças e integrantes de alta periculosidade do crime organizado. Em saneamento, o plano prevê universalizar água tratada e esgoto em todas as regiões. Na habitação, o programa prevê criar o Casa Própria Paraná para famílias com renda mensal de até R$ 3.200,00.",
     "frases": [
       {
-        "texto": "O documento organiza as propostas em cinco pilares de governo, apresentados como estrutura para definir prioridades da gestão pública estadual.",
+        "texto": "O documento propõe criar a Tabela SUS Paranaense, com pagamento complementar padronizado aos serviços de saúde.",
         "evidencias": [
           {
             "documentoId": "PR:160002540833:02",
-            "pagina": 11,
-            "trecho": "organizamos nossas propostas em cinco grandes pilares, que estruturam as prioridades da gestão e orientam todas as políticas públicas:"
+            "pagina": 25,
+            "trecho": "vamos criar a Tabela SUS Paranaense. Identificaremos em cada região as maiores demandas de saúde e agregaremos ao pagamento da Tabela SUS do Governo Federal, um pagamento complementar, padronizado, dos serviços de saúde"
           }
         ]
       },
       {
-        "texto": "Na educação, prevê ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, segundo as vocações econômicas regionais.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 15,
-            "trecho": "ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio, com matérias vinculadas ao ensino técnico, tecnológico e profissionalizante ligados às vocações econômicas de cada região"
-          }
-        ]
-      },
-      {
-        "texto": "Na saúde, planeja integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede, com uso de análise de dados.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 26,
-            "trecho": "Integrar os sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde, utilizando inteligência artificial e análise de dados"
-          }
-        ]
-      },
-      {
-        "texto": "Na gestão pública, propõe reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 72,
-            "trecho": "Vamos reunir os serviços estaduais em um único ambiente digital, com atendimento integrado e experiência centrada no cidadão"
-          }
-        ]
-      },
-      {
-        "texto": "Na área ambiental, prevê modernizar e digitalizar o licenciamento com tecnologia e análise por risco, mantendo a proteção ambiental.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 54,
-            "trecho": "Modernizar e digitalizar o licenciamento com tecnologia e análise por risco, reduzindo prazos e trazendo previsibilidade, preservando a proteção ambiental"
-          }
-        ]
-      },
-      {
-        "texto": "Na segurança pública, planeja implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial, gerando alertas em tempo real.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 85,
-            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artiﬁcial, capaz de reconhecer pessoas procuradas e veículos suspeitos e gerar alertas em tempo real"
-          }
-        ]
-      }
-    ],
-    "temas": [
-      {
-        "id": "ensino-tempo-integral",
-        "titulo": "Ensino em tempo integral",
-        "descricao": "A proposta prevê ampliar o ensino em tempo integral associado à formação profissional no ensino médio.",
-        "evidencias": [
-          {
-            "documentoId": "PR:160002540833:02",
-            "pagina": 15,
-            "trecho": "ampliar o ensino em tempo integral atrelado à Educação Profissional e Tecnológica no Ensino Médio"
-          }
-        ]
-      },
-      {
-        "id": "saude-digital",
-        "titulo": "Saúde digital",
-        "descricao": "A proposta planeja integrar sistemas de informação e prontuários eletrônicos na rede de saúde.",
+        "texto": "Também prevê integrar sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde.",
         "evidencias": [
           {
             "documentoId": "PR:160002540833:02",
@@ -1440,38 +1374,139 @@
         ]
       },
       {
-        "id": "licenciamento-ambiental",
-        "titulo": "Licenciamento ambiental",
-        "descricao": "A proposta prevê modernizar e digitalizar o licenciamento ambiental com análise por risco.",
+        "texto": "O programa prevê levar internet de alta velocidade a todas as regiões do estado, utilizando antenas, satélites, fibra e provedores locais.",
         "evidencias": [
           {
             "documentoId": "PR:160002540833:02",
-            "pagina": 54,
-            "trecho": "Modernizar e digitalizar o licenciamento com tecnologia e análise por risco"
+            "pagina": 69,
+            "trecho": "Vamos levar internet de alta velocidade a todas as regiões do estado, com antenas, satélites, fibra e provedores locais"
           }
         ]
       },
       {
-        "id": "videomonitoramento-publico",
-        "titulo": "Videomonitoramento público",
-        "descricao": "A proposta planeja implantar um sistema estadual de videomonitoramento integrado.",
+        "texto": "O plano prevê criar um código de ética para a alta administração do Governo do Estado do Paraná.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 75,
+            "trecho": "Criaremos um código de ética para a alta administração do Governo do Estado do Paraná."
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança, o documento prevê implantar videomonitoramento estadual integrando câmeras públicas e privadas com inteligência artificial.",
         "evidencias": [
           {
             "documentoId": "PR:160002540833:02",
             "pagina": 85,
-            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas"
+            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial"
           }
         ]
       },
       {
-        "id": "servicos-digitais",
-        "titulo": "Serviços digitais",
-        "descricao": "A proposta propõe reunir os serviços estaduais em um ambiente digital único.",
+        "texto": "Também prevê uma unidade de segurança máxima para isolar lideranças e integrantes de alta periculosidade do crime organizado.",
         "evidencias": [
           {
             "documentoId": "PR:160002540833:02",
-            "pagina": 72,
-            "trecho": "Vamos reunir os serviços estaduais em um único ambiente digital"
+            "pagina": 86,
+            "trecho": "Implantar uma unidade de segurança máxima, inspirada nas melhores práticas do sistema federal, para isolar as lideranças e integrantes do crime organizado de alta periculosidade"
+          }
+        ]
+      },
+      {
+        "texto": "Em saneamento, o plano prevê universalizar água tratada e esgoto em todas as regiões.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 63,
+            "trecho": "Universalizar a água tratada e o esgoto, acabar com a falta de água, reduzir perdas, ampliar o tratamento e investir em segurança hídrica em todas as regiões."
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, o programa prevê criar o Casa Própria Paraná para famílias com renda mensal de até R$ 3.200,00.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 59,
+            "trecho": "Criaremos o Casa Própria Paraná, com financiamento do FAR (Fundo de Arrendamento Residencial), oferecendo os maiores subsídios do governo (podendo cobrir até 95% do valor do imóvel), para as famílias com renda de até R$ 3.200,00 por mês"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "saude-publica",
+        "titulo": "Saúde pública",
+        "descricao": "Medidas para financiamento complementar e integração de sistemas de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 25,
+            "trecho": "vamos criar a Tabela SUS Paranaense. Identificaremos em cada região as maiores demandas de saúde e agregaremos ao pagamento da Tabela SUS do Governo Federal, um pagamento complementar, padronizado, dos serviços de saúde"
+          },
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 26,
+            "trecho": "Integrar os sistemas estaduais de informação, regulação, monitoramento e prontuário eletrônico interoperável em toda a rede de saúde"
+          }
+        ]
+      },
+      {
+        "id": "conectividade",
+        "titulo": "Conectividade",
+        "descricao": "Previsão de internet de alta velocidade nas regiões do estado.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 69,
+            "trecho": "Vamos levar internet de alta velocidade a todas as regiões do estado, com antenas, satélites, fibra e provedores locais"
+          }
+        ]
+      },
+      {
+        "id": "governanca",
+        "titulo": "Governança",
+        "descricao": "Proposta de código de ética para a alta administração estadual.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 75,
+            "trecho": "Criaremos um código de ética para a alta administração do Governo do Estado do Paraná."
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Medidas de videomonitoramento e isolamento de integrantes de alta periculosidade do crime organizado.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 85,
+            "trecho": "Implantar um sistema estadual de videomonitoramento que integra câmeras públicas e privadas com inteligência artificial"
+          },
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 86,
+            "trecho": "Implantar uma unidade de segurança máxima, inspirada nas melhores práticas do sistema federal, para isolar as lideranças e integrantes do crime organizado de alta periculosidade"
+          }
+        ]
+      },
+      {
+        "id": "infraestrutura-social",
+        "titulo": "Infraestrutura social",
+        "descricao": "Previsões para saneamento e habitação.",
+        "evidencias": [
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 63,
+            "trecho": "Universalizar a água tratada e o esgoto, acabar com a falta de água, reduzir perdas, ampliar o tratamento e investir em segurança hídrica em todas as regiões."
+          },
+          {
+            "documentoId": "PR:160002540833:02",
+            "pagina": 59,
+            "trecho": "Criaremos o Casa Própria Paraná, com financiamento do FAR (Fundo de Arrendamento Residencial), oferecendo os maiores subsídios do governo (podendo cobrir até 95% do valor do imóvel), para as famílias com renda de até R$ 3.200,00 por mês"
           }
         ]
       }
@@ -1479,158 +1514,158 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-29T14:47:45.911Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:35:49.076Z"
   },
   "julgamento": {
-    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-v5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-29T19:11:09.406Z",
+    "judgedAt": "2026-09-02T18:40:43.712Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente que as propostas foram organizadas em cinco pilares que estruturam as prioridades da gestão."
+        "reason": "A evidência sustenta integralmente a criação da Tabela SUS Paranaense e o pagamento complementar padronizado."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A quantidade de cinco pilares está literalmente sustentada pela evidência."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a organização do documento sem elogio, crítica, promoção ou certeza adicional."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de um único aspecto coerente: a estruturação geral das propostas em pilares."
+        "reason": "A afirmação trata de uma única proposta de financiamento complementar da saúde."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e sua chave eleitoral coincide exatamente com a identidade da afirmação."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:1:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre as cláusulas materiais sobre a organização em cinco pilares e sua função de estruturar prioridades."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a ampliação do ensino integral associado à educação profissional e às vocações econômicas regionais."
+        "reason": "A evidência reproduz integralmente a proposta de integração dos sistemas indicados em toda a rede de saúde."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta educacional sem avaliação positiva, negativa ou promocional."
+        "reason": "A redação descreve a previsão documental sem avaliação ou linguagem promocional."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação reúne componentes de uma única proposta educacional coerente."
+        "reason": "Os componentes citados integram uma única proposta coerente de interoperabilidade dos sistemas de saúde."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e corresponde exatamente à mesma chave eleitoral."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:2:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+        "reason": "A evidência cobre todos os sistemas, a interoperabilidade e o alcance em toda a rede de saúde."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a integração dos sistemas e prontuário interoperável em toda a rede, com análise de dados."
+        "reason": "A evidência sustenta integralmente o alcance territorial, a velocidade e os meios de conectividade citados."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta de saúde sem elogio, crítica, promoção ou certeza indevida."
+        "reason": "A redação relata a previsão sem elogio, crítica, certeza de realização ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "Os elementos citados integram uma única proposta coerente de infraestrutura digital em saúde."
+        "reason": "A afirmação reúne meios técnicos de uma única proposta de conectividade estadual."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência está no documento informado e coincide com a chave eleitoral da afirmação."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:3:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todos os sistemas enumerados, o alcance da rede e o uso de análise de dados."
+        "reason": "A evidência cobre todas as cláusulas materiais, incluindo alcance e meios utilizados."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência reproduz integralmente os elementos materiais da proposta descrita."
+        "reason": "A evidência sustenta literalmente a criação do código de ética e seu público institucional."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A referência a um único ambiente digital está literalmente sustentada pela evidência."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação apenas descreve a proposta, sem elogio, crítica ou linguagem promocional."
+        "reason": "A redação descreve objetivamente a proposta, sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de centralização digital dos serviços estaduais."
+        "reason": "A afirmação trata de uma única proposta de governança."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence exatamente ao documento e à chave eleitoral informados."
+        "reason": "A evidência pertence ao documento informado e identifica expressamente o Governo do Estado do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:4:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre o ambiente único, o atendimento integrado e a experiência centrada no cidadão."
+        "reason": "A evidência cobre integralmente a ação, o instrumento e a administração destinatária."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a modernização, a digitalização, a análise por risco e a preservação da proteção ambiental."
+        "reason": "A evidência sustenta integralmente o sistema estadual, a integração das câmeras e o uso de inteligência artificial."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos determinados, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta ambiental sem elogio, crítica, certeza ou promoção."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de resultado."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "Todos os componentes pertencem à mesma proposta de modernização do licenciamento ambiental."
+        "reason": "A afirmação trata de uma única proposta coerente de videomonitoramento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde exatamente ao documento informado e à mesma chave eleitoral."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:5:documentos:PR:160002540833:02:cobertura",
@@ -1640,182 +1675,242 @@
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a implantação, a integração das câmeras, o uso de inteligência artificial e os alertas em tempo real."
+        "reason": "A evidência sustenta integralmente a implantação da unidade e sua finalidade de isolamento."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos quantificados, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou garantia de resultado."
+        "reason": "A redação descreve a previsão documental sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "Todos os elementos integram uma única proposta coerente de videomonitoramento público."
+        "reason": "A afirmação trata de uma única proposta do sistema prisional."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence exatamente ao documento indicado e à mesma chave eleitoral."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
         "id": "2026:GOVERNADOR:PR:160002540833:frase:6:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+        "reason": "A evidência cobre a unidade, o nível de segurança, os grupos visados e a finalidade de isolamento."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a ampliação do ensino integral associado à formação profissional no ensino médio."
+        "reason": "A evidência sustenta literalmente a universalização de água tratada e esgoto em todas as regiões."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta de forma neutra, sem elogio, crítica ou promoção."
+        "reason": "A redação descreve a previsão sem avaliação, certeza de execução ou linguagem promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de ensino integral com formação profissional."
+        "reason": "Água tratada e esgoto compõem uma única proposta coerente de saneamento."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde ao documento informado e à mesma chave eleitoral da afirmação."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:ensino-tempo-integral:documentos:PR:160002540833:02:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:7:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
+        "reason": "A evidência cobre integralmente os serviços e o alcance territorial afirmados."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a integração dos sistemas de informação e do prontuário eletrônico na rede de saúde."
+        "reason": "A evidência sustenta a criação do programa e o limite mensal de renda das famílias."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+        "reason": "O limite de renda de até R$ 3.200,00 por mês está literalmente sustentado."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta de saúde digital sem avaliação ou promoção."
+        "reason": "A redação descreve objetivamente o programa e seu critério de renda, sem incorporar linguagem promocional."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única área coerente de integração digital da saúde."
+        "reason": "A afirmação trata de um único programa habitacional e seu público elegível."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence ao documento informado e coincide exatamente com a chave eleitoral."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-digital:documentos:PR:160002540833:02:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:frase:8:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a integração dos sistemas, do prontuário eletrônico e seu alcance na rede de saúde."
+        "reason": "A evidência cobre a criação, o nome do programa, o público e o limite mensal de renda."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a modernização e digitalização do licenciamento com análise por risco."
+        "reason": "As evidências sustentam integralmente as medidas de financiamento complementar e integração dos sistemas de saúde."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:numeros",
-        "verdict": "yes",
-        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:neutralidade",
-        "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:mistura",
-        "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de licenciamento ambiental."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:identidade",
-        "verdict": "yes",
-        "reason": "A evidência pertence exatamente ao documento informado e à mesma chave eleitoral."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:licenciamento-ambiental:documentos:PR:160002540833:02:cobertura",
-        "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:suporte",
-        "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a implantação de um sistema estadual integrado de videomonitoramento."
-      },
-      {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
         "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de resultado."
+        "reason": "A redação resume as medidas sem elogio, crítica, promoção ou certeza sobre resultados."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de videomonitoramento."
+        "reason": "As duas medidas pertencem à área coerente de saúde pública explicitada na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência corresponde exatamente ao documento informado e à mesma chave eleitoral."
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma chave eleitoral do Paraná."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:videomonitoramento-publico:documentos:PR:160002540833:02:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:saude-publica:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre a implantação, o caráter estadual e a integração do sistema."
+        "reason": "As duas evidências cobrem respectivamente todas as cláusulas materiais sobre financiamento e integração."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:suporte",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:suporte",
         "verdict": "yes",
-        "reason": "A evidência sustenta integralmente a reunião dos serviços estaduais em um ambiente digital único."
+        "reason": "A evidência sustenta integralmente a previsão de internet de alta velocidade nas regiões do estado."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:numeros",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:numeros",
         "verdict": "yes",
-        "reason": "A referência a um ambiente digital único está literalmente sustentada pela evidência."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:neutralidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:neutralidade",
         "verdict": "yes",
-        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou linguagem promocional."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:mistura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:mistura",
         "verdict": "yes",
-        "reason": "A afirmação trata de uma única proposta coerente de centralização digital dos serviços."
+        "reason": "A afirmação trata de uma única área coerente de conectividade."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:identidade",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:identidade",
         "verdict": "yes",
-        "reason": "A evidência pertence exatamente ao documento indicado e à mesma chave eleitoral."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral do Paraná."
       },
       {
-        "id": "2026:GOVERNADOR:PR:160002540833:tema:servicos-digitais:documentos:PR:160002540833:02:cobertura",
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:conectividade:documentos:PR:160002540833:02:cobertura",
         "verdict": "yes",
-        "reason": "A evidência cobre todas as cláusulas materiais da afirmação temática."
+        "reason": "A evidência cobre integralmente a tecnologia e o alcance territorial resumidos."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a proposta de código de ética para a alta administração estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve objetivamente a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta na área de governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e identifica a administração do Estado do Paraná."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:governanca:documentos:PR:160002540833:02:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o instrumento proposto e sua aplicação institucional."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam integralmente as medidas de videomonitoramento e isolamento mencionadas."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume as medidas sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:mistura",
+        "verdict": "yes",
+        "reason": "As duas medidas pertencem à área coerente de segurança pública explicitada na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma chave eleitoral do Paraná."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:seguranca-publica:documentos:PR:160002540833:02:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem separadamente e por inteiro as duas cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:suporte",
+        "verdict": "yes",
+        "reason": "As evidências sustentam integralmente a existência de previsões para saneamento e habitação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação apenas classifica e resume as previsões, sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:mistura",
+        "verdict": "yes",
+        "reason": "Saneamento e habitação formam a área coerente de infraestrutura social indicada na própria afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:identidade",
+        "verdict": "yes",
+        "reason": "Todas as evidências pertencem ao documento informado e à mesma chave eleitoral do Paraná."
+      },
+      {
+        "id": "2026:GOVERNADOR:PR:160002540833:tema:infraestrutura-social:documentos:PR:160002540833:02:cobertura",
+        "verdict": "yes",
+        "reason": "As evidências cobrem as duas cláusulas materiais, uma sobre saneamento e outra sobre habitação."
       }
     ]
   },
@@ -1832,21 +1927,36 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 1
       },
       "judge": {
         "name": "OpenAI Sol",
-        "version": "gpt-5.6-sol-medium@codex-cli-v5",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 35408,
-          "cached_input_tokens": 0,
+          "input_tokens": 39068,
+          "cached_input_tokens": 3712,
           "cache_write_input_tokens": 0,
-          "output_tokens": 12661,
-          "reasoning_output_tokens": 141
+          "output_tokens": 16119,
+          "reasoning_output_tokens": 171
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "7e10ebb9eafa68ea2dbc46660b84d13f942bce32e993c66c368b93bc81146223",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
         }
       }
     },
@@ -1865,11 +1975,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-29T20:12:56.567Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "befba0e36d0277b2adf0a4e96027a61d76dd81744ada6b3599df835009504c13",
     "extractedTextSha256": "d0199f022e5fe3b050f8e10e59fea3679899ebbf9fc2e69a9ac62cdfb0945f82",
     "documentCount": 2,
     "documentSetSha256": "902b0bc849beb663d2e3d5a5f34f88da10d4f8e07d042cb1b8cf389e5a43fb95",
-    "contentSha256": "7ac9c9f16230b7ce57cc4ae365a13b99ebe94485b4d5b00831b9fbc47fb8f8dd"
+    "contentSha256": "842eb2fa0a92753578b7b6ebf932aa25c8b735ec7670dc2ff465be1a534fbe4c"
   }
 }

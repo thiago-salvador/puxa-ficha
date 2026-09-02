@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_GO.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -811,20 +811,30 @@
     }
   ],
   "resumo": {
-    "texto": "O plano propõe implantar progressivamente a Tarifa Zero, com prioridade para a Região Metropolitana de Goiânia. O programa Goiás Escola do Futuro propõe chegar a 350-370 escolas estaduais de tempo integral ao final do mandato. O plano prevê oito planos regionais aprovados e em execução para as Zonas Econômicas. O programa de turismo e eventos prevê pelo menos 32 eventos estratégicos captados, criados ou ampliados. O plano propõe universalizar a cobertura da Estratégia Saúde da Família nos 246 municípios. O plano propõe acabar com os lixões no Estado de Goiás por meio do Programa Goiás Lixo Zero. O programa prevê a instalação de um sistema estadual de monitoramento de enchentes e alagamentos. Em conjunto, as propostas abrangem transporte público, educação, desenvolvimento regional, turismo, saúde, resíduos sólidos e prevenção de riscos. As medidas descritas combinam metas quantitativas, expansão de serviços e criação de programas estaduais. O documento também apresenta iniciativas voltadas à organização territorial e à prestação de serviços públicos. A execução das propostas está associada a diferentes áreas da administração estadual.",
+    "texto": "O plano prevê oito zonas econômicas, cada uma com vocações, infraestrutura, qualificação e carteira de projetos próprias. A Tarifa Zero tem como objetivo final chegar a R$ 0 para o usuário, com implantação progressiva e gatilhos fiscais e operacionais. O programa propõe chegar, de forma indicativa, a 350-370 escolas estaduais de tempo integral ao final do mandato. A IQUEGO tem capacidade produtiva superior a 1 bilhão de unidades de medicamentos por ano. O plano propõe universalizar a cobertura da Estratégia Saúde da Família nos 246 municípios. O plano propõe instituir o Programa Goiás Lixo Zero para acabar com os lixões no Estado de Goiás. O plano propõe a criação de um fundo emergencial de socorro e justiça climática. O programa propõe instalar um sistema estadual de monitoramento de enchentes e alagamentos.",
     "frases": [
       {
-        "texto": "O plano propõe implantar progressivamente a Tarifa Zero, com prioridade para a Região Metropolitana de Goiânia.",
+        "texto": "O plano prevê oito zonas econômicas, cada uma com vocações, infraestrutura, qualificação e carteira de projetos próprias.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
-            "pagina": 29,
-            "trecho": "A proposta e implantar progressivamente a Tarifa Zero, com prioridade para a Região Metropolitana de Goiânia e, mediante cooperação interfederativa, para o Entorno do Distrito Federal."
+            "pagina": 4,
+            "trecho": "Oito zonas econômicas com vocações, infraestrutura, qualificação e carteira de projetos próprias."
           }
         ]
       },
       {
-        "texto": "O programa Goiás Escola do Futuro propõe chegar a 350-370 escolas estaduais de tempo integral ao final do mandato.",
+        "texto": "A Tarifa Zero tem como objetivo final chegar a R$ 0 para o usuário, com implantação progressiva e gatilhos fiscais e operacionais.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002545476:01",
+            "pagina": 4,
+            "trecho": "R$ 0 ao usuário\n\nObjetivo final da Tarifa Zero, com implantação progressiva e gatilhos fiscais e operacionais."
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe chegar, de forma indicativa, a 350-370 escolas estaduais de tempo integral ao final do mandato.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
@@ -834,22 +844,12 @@
         ]
       },
       {
-        "texto": "O plano prevê oito planos regionais aprovados e em execução para as Zonas Econômicas.",
+        "texto": "A IQUEGO tem capacidade produtiva superior a 1 bilhão de unidades de medicamentos por ano.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
-            "pagina": 13,
-            "trecho": "Zonas Econômicas 8 planos regionais aprovados e em execução."
-          }
-        ]
-      },
-      {
-        "texto": "O programa de turismo e eventos prevê pelo menos 32 eventos estratégicos captados, criados ou ampliados.",
-        "evidencias": [
-          {
-            "documentoId": "GO:90002545476:01",
-            "pagina": 10,
-            "trecho": "Pelo menos 32 eventos estratégicos captados, criados ou ampliados."
+            "pagina": 45,
+            "trecho": "capacidade produtiva superior a 1 bilhão de unidades de medicamentos por ano."
           }
         ]
       },
@@ -864,7 +864,7 @@
         ]
       },
       {
-        "texto": "O plano propõe acabar com os lixões no Estado de Goiás por meio do Programa Goiás Lixo Zero.",
+        "texto": "O plano propõe instituir o Programa Goiás Lixo Zero para acabar com os lixões no Estado de Goiás.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
@@ -874,7 +874,17 @@
         ]
       },
       {
-        "texto": "O programa prevê a instalação de um sistema estadual de monitoramento de enchentes e alagamentos.",
+        "texto": "O plano propõe a criação de um fundo emergencial de socorro e justiça climática.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002545476:01",
+            "pagina": 50,
+            "trecho": "Criação de um fundo emergencial de socorro e justiça climática para atender aos atingidos por eventos extremos;"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe instalar um sistema estadual de monitoramento de enchentes e alagamentos.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
@@ -886,21 +896,33 @@
     ],
     "temas": [
       {
-        "id": "transporte-publico",
-        "titulo": "Transporte público",
-        "descricao": "A proposta trata da implantação progressiva da Tarifa Zero na Região Metropolitana de Goiânia.",
+        "id": "desenvolvimento-regional",
+        "titulo": "Desenvolvimento regional",
+        "descricao": "O plano prevê oito zonas econômicas com estruturas e projetos próprios.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
-            "pagina": 29,
-            "trecho": "A proposta e implantar progressivamente a Tarifa Zero, com prioridade para a Região Metropolitana de Goiânia e, mediante cooperação interfederativa, para o Entorno do Distrito Federal."
+            "pagina": 4,
+            "trecho": "Oito zonas econômicas com vocações, infraestrutura, qualificação e carteira de projetos próprias."
+          }
+        ]
+      },
+      {
+        "id": "mobilidade-urbana",
+        "titulo": "Mobilidade urbana",
+        "descricao": "A Tarifa Zero tem como objetivo final chegar a R$ 0 para o usuário.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002545476:01",
+            "pagina": 4,
+            "trecho": "R$ 0 ao usuário\n\nObjetivo final da Tarifa Zero, com implantação progressiva e gatilhos fiscais e operacionais."
           }
         ]
       },
       {
         "id": "educacao-integral",
         "titulo": "Educação integral",
-        "descricao": "O programa estabelece uma meta de expansão das escolas estaduais de tempo integral.",
+        "descricao": "O programa propõe ampliar a rede estadual de escolas de tempo integral.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
@@ -910,33 +932,9 @@
         ]
       },
       {
-        "id": "desenvolvimento-regional",
-        "titulo": "Desenvolvimento regional",
-        "descricao": "O plano prevê planos regionais para as Zonas Econômicas.",
-        "evidencias": [
-          {
-            "documentoId": "GO:90002545476:01",
-            "pagina": 13,
-            "trecho": "Zonas Econômicas 8 planos regionais aprovados e em execução."
-          }
-        ]
-      },
-      {
-        "id": "turismo-e-eventos",
-        "titulo": "Turismo e eventos",
-        "descricao": "O programa prevê eventos estratégicos captados, criados ou ampliados.",
-        "evidencias": [
-          {
-            "documentoId": "GO:90002545476:01",
-            "pagina": 10,
-            "trecho": "Pelo menos 32 eventos estratégicos captados, criados ou ampliados."
-          }
-        ]
-      },
-      {
-        "id": "saude-publica",
-        "titulo": "Saúde pública",
-        "descricao": "O plano propõe universalizar a cobertura da Estratégia Saúde da Família.",
+        "id": "atencao-basica",
+        "titulo": "Atenção básica",
+        "descricao": "O plano propõe universalizar a cobertura da Estratégia Saúde da Família nos municípios do estado.",
         "evidencias": [
           {
             "documentoId": "GO:90002545476:01",
@@ -944,385 +942,427 @@
             "trecho": "Meta de universalização da cobertura de Estratégia Saúde da Família nos 246 municípios"
           }
         ]
+      },
+      {
+        "id": "gestao-ambiental",
+        "titulo": "Gestão ambiental",
+        "descricao": "O plano propõe instituir o Programa Goiás Lixo Zero para acabar com os lixões.",
+        "evidencias": [
+          {
+            "documentoId": "GO:90002545476:01",
+            "pagina": 49,
+            "trecho": "Acabar com os lixões no Estado de Goiás, instituindo o Programa Goiás Lixo Zero"
+          }
+        ]
       }
     ]
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v3",
-    "generatedAt": "2026-08-28T13:56:04.790Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:02:17.107Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T13:58:07.782Z",
+    "judgedAt": "2026-09-02T18:06:38.732Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma implantação progressiva da Tarifa Zero com prioridade para a RMG."
+        "reason": "A evidência reproduz integralmente a previsão descrita na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação não contém números que precisem verificação."
+        "reason": "A quantidade de oito zonas está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve o conteúdo do plano sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta (mobilidade/tarifa zero)."
+        "reason": "A afirmação trata de uma única proposta coerente de desenvolvimento regional."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Claim e evidência pertencem ao mesmo candidato/documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:1:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusulas materiais da afirmação (implantação progressiva e prioridade RMG) estão cobertas."
+        "reason": "A evidência cobre a quantidade e todas as características materiais das zonas."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma literalmente a meta."
+        "reason": "A evidência sustenta integralmente o objetivo final e as condições de implantação."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Número 350-370 sustentado literalmente."
+        "reason": "O valor de R$ 0 está literalmente sustentado."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do documento."
+        "reason": "A redação relata o objetivo do plano sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (educação integral)."
+        "reason": "A afirmação aborda uma única proposta de mobilidade e suas condições."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:2:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material (meta e prazo) coberta pela evidência."
+        "reason": "A evidência cobre o valor final, a progressividade e os gatilhos fiscais e operacionais."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta literalmente a meta indicativa e seu horizonte temporal."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Número 8 sustentado literalmente."
+        "reason": "A faixa de 350-370 escolas e o prazo até o final do mandato estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta e preserva seu caráter indicativo, sem avaliação."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área única (desenvolvimento regional)."
+        "reason": "A afirmação trata de uma única meta de educação integral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:3:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta integralmente."
+        "reason": "A evidência cobre a natureza indicativa, a faixa, o tipo de escola e o prazo."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta a afirmação."
+        "reason": "A página citada identifica a IQUEGO e sustenta literalmente a capacidade afirmada."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Número 32 sustentado literalmente."
+        "reason": "O patamar superior a 1 bilhão de unidades por ano está literalmente sustentado."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apresenta um dado atribuído ao documento sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de turismo e eventos."
+        "reason": "A afirmação contém um único dado coerente sobre a capacidade produtiva da IQUEGO."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:4:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A página e o trecho cobrem a instituição, a capacidade, a unidade e a periodicidade."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho sustenta integralmente."
+        "reason": "A evidência sustenta integralmente a meta de universalização nos 246 municípios."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Número 246 sustentado literalmente."
+        "reason": "A quantidade de 246 municípios está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza de execução ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de saúde."
+        "reason": "A afirmação trata de uma única proposta de atenção primária."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:5:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre a universalização, a Estratégia Saúde da Família e os 246 municípios."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta a afirmação."
+        "reason": "A evidência sustenta integralmente a instituição do programa e sua finalidade."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta e sua finalidade sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de resíduos sólidos."
+        "reason": "A afirmação trata de uma única proposta coerente de gestão de resíduos."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:6:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre o programa, sua instituição, sua finalidade e o âmbito estadual."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta a afirmação."
+        "reason": "A evidência sustenta integralmente a criação e a natureza do fundo."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de prevenção de riscos."
+        "reason": "A afirmação trata de uma única proposta coerente de resposta climática."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:frase:7:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:suporte",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho sustenta a afirmação resumida."
+        "reason": "A evidência sustenta literalmente a instalação descrita."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:numeros",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:neutralidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do tema."
+        "reason": "A redação descreve a proposta sem avaliação, certeza de execução ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:mistura",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área temática única (transporte público)."
+        "reason": "A afirmação trata de uma única proposta de monitoramento de riscos hídricos."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:identidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:transporte-publico:documentos:GO:90002545476:01:cobertura",
+        "id": "2026:GOVERNADOR:GO:90002545476:frase:8:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo temático coberto pela evidência."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:suporte",
-        "verdict": "yes",
-        "reason": "Trecho confirma meta de expansão."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:numeros",
-        "verdict": "yes",
-        "reason": "Afirmação resumida não cita números específicos."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:neutralidade",
-        "verdict": "yes",
-        "reason": "Descrição neutra."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:mistura",
-        "verdict": "yes",
-        "reason": "Área única (educação integral)."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:identidade",
-        "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
-      },
-      {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:cobertura",
-        "verdict": "yes",
-        "reason": "Resumo temático coberto."
+        "reason": "A evidência cobre a instalação, o âmbito estadual e o monitoramento de enchentes e alagamentos."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma existência dos planos regionais."
+        "reason": "A evidência sustenta as oito zonas, sua infraestrutura e sua carteira própria de projetos."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação resumida sem número específico citado."
+        "reason": "A quantidade de oito zonas está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de desenvolvimento regional."
+        "reason": "A afirmação permanece em uma única área coerente de desenvolvimento regional."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:GO:90002545476:tema:desenvolvimento-regional:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo temático coberto."
+        "reason": "A evidência cobre as zonas econômicas, a quantidade, as estruturas e os projetos próprios."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:suporte",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma a existência dos eventos estratégicos."
+        "reason": "A evidência sustenta literalmente o objetivo final de R$ 0 ao usuário."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:numeros",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação resumida sem número específico citado."
+        "reason": "O valor de R$ 0 está literalmente sustentado."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:neutralidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apresenta o objetivo do plano sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:mistura",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de turismo e eventos."
+        "reason": "A afirmação trata de uma única proposta coerente de mobilidade urbana."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:identidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:turismo-e-eventos:documentos:GO:90002545476:01:cobertura",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:mobilidade-urbana:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo temático coberto."
+        "reason": "A evidência cobre a Tarifa Zero, seu caráter de objetivo final e o valor ao usuário."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:suporte",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma a meta de universalização."
+        "reason": "A meta de chegar a 350-370 escolas, lida com a página citada, sustenta a ampliação da rede estadual."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:numeros",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação resumida sem número específico citado."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:neutralidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:mistura",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:mistura",
         "verdict": "yes",
-        "reason": "Área única de saúde pública."
+        "reason": "A afirmação trata de uma única proposta de educação integral."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:identidade",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:GO:90002545476:tema:saude-publica:documentos:GO:90002545476:01:cobertura",
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:educacao-integral:documentos:GO:90002545476:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo temático coberto."
+        "reason": "A evidência e a página cobrem a ampliação, o âmbito estadual e as escolas de tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta a universalização da cobertura nos municípios do estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de atenção básica."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:atencao-basica:documentos:GO:90002545476:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a universalização, a Estratégia Saúde da Família e sua abrangência municipal estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a instituição do programa e a finalidade de acabar com os lixões."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta e sua finalidade sem avaliação ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de gestão ambiental e resíduos."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:GO:90002545476:tema:gestao-ambiental:documentos:GO:90002545476:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o programa, sua instituição e sua finalidade de acabar com os lixões."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:GO:90002545476",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -1331,60 +1371,37 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna@codex-cli-v3",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 1
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 29830,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 20259,
-          "output_tokens_details": {
-            "thinking_tokens": 564
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 29830,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 20259,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 29830,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 29830
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.3451564
+          "input_tokens": 41452,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14147,
+          "reasoning_output_tokens": 167
         }
       },
       "geracaoMultipassagem": {
         "planejador": "multipassagem-v3",
         "limiteBytes": 180000,
         "passagens": 2,
-        "passagensCacheadas": 2,
-        "chamadasGeracao": 0,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 2,
         "retriesPassagem": 0,
         "chamadasSintese": 1,
         "retriesSintese": 0,
-        "fingerprint": "42380c3fd84d92ebaebe4a7e8c4f05d45b7874990561c17e781052fd51f22d54"
+        "fingerprint": "3151c1eb74732ccf26e2dacc276253841e706363780c30a05426cef2a776a6c9",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
+        }
       }
     },
     "eval": {
@@ -1402,11 +1419,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "b8aa37b0e0330f36bf81971d72b7316896515c3926b9b1606208856e0d1997e6",
     "extractedTextSha256": "56581a8992fdfafd9d04d2910a35c2395200e5ed5bbac01fd2cb647064412a23",
     "documentCount": 1,
-    "documentSetSha256": "fe4ba01c8358bcac1968911be7e03a35dc8a8f6c3869de93086801c44315aa3f",
-    "contentSha256": "733800543e572a85314079c0b97f901a4a9ba1276f1634f175d1741ae1cf73e2"
+    "documentSetSha256": "55cc8bae400feb47976a790d399939e446577672c24ba29f95d18398bf5c2398",
+    "contentSha256": "e6dc1b391c2375a764a29363c48d243150c65caead0765bf4a4c22ed8f870001"
   }
 }

@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_PB.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -139,10 +139,10 @@
     }
   ],
   "resumo": {
-    "texto": "O documento apresenta um plano de governo para o Estado da Paraíba. Na área do trabalho, prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais para todo o funcionalismo público estadual, sem redução salarial. Na administração pública, propõe a realização de concurso público para preenchimento das vagas dispostas no funcionalismo público estadual. Para o emprego, planeja a criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social. Na política financeira, propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos. Nos transportes, prevê a criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre). Na saúde, propõe a descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais. Na cultura, planeja a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC. No meio ambiente, prevê combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais.",
+    "texto": "O programa prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais no funcionalismo público estadual, sem redução salarial. O programa propõe a realização de concurso público para preencher vagas do funcionalismo público estadual. O programa planeja frentes estaduais de trabalho focadas em infraestrutura social para garantir emprego a jovens adultos paraibanos. O programa propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos. O programa prevê uma empresa pública de transporte coletivo intermunicipal ligando as microrregiões do estado. O programa propõe a desapropriação de latifúndios improdutivos para a reforma agrária popular. O programa prevê hospitais regionais como parte da descentralização da estrutura de saúde. O programa propõe a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
     "frases": [
       {
-        "texto": "Na área do trabalho, prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais para todo o funcionalismo público estadual, sem redução salarial.",
+        "texto": "O programa prevê a redução da jornada de trabalho para o regime geral de 30 horas semanais no funcionalismo público estadual, sem redução salarial.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -152,7 +152,7 @@
         ]
       },
       {
-        "texto": "Na administração pública, propõe a realização de concurso público para preenchimento das vagas dispostas no funcionalismo público estadual.",
+        "texto": "O programa propõe a realização de concurso público para preencher vagas do funcionalismo público estadual.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -162,7 +162,7 @@
         ]
       },
       {
-        "texto": "Para o emprego, planeja a criação de frentes estaduais de trabalho para garantir emprego a todos os jovens e adultos paraibanos, focadas em infraestrutura social.",
+        "texto": "O programa planeja frentes estaduais de trabalho focadas em infraestrutura social para garantir emprego a jovens adultos paraibanos.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -172,7 +172,7 @@
         ]
       },
       {
-        "texto": "Na política financeira, propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos.",
+        "texto": "O programa propõe a criação do Banco Estadual da Paraíba sob controle popular para combater juros abusivos.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -182,17 +182,27 @@
         ]
       },
       {
-        "texto": "Nos transportes, prevê a criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre).",
+        "texto": "O programa prevê uma empresa pública de transporte coletivo intermunicipal ligando as microrregiões do estado.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
             "pagina": 3,
-            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre)"
+            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre) e os descontos previstos em lei."
           }
         ]
       },
       {
-        "texto": "Na saúde, propõe a descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais.",
+        "texto": "O programa propõe a desapropriação de latifúndios improdutivos para a reforma agrária popular.",
+        "evidencias": [
+          {
+            "documentoId": "PB:150002540204:01",
+            "pagina": 4,
+            "trecho": "Desapropriação imediata de todos os latifúndios improdutivos e estatização das terras."
+          }
+        ]
+      },
+      {
+        "texto": "O programa prevê hospitais regionais como parte da descentralização da estrutura de saúde.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -202,7 +212,7 @@
         ]
       },
       {
-        "texto": "Na cultura, planeja a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
+        "texto": "O programa propõe a criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -210,23 +220,13 @@
             "trecho": "Criação de uma Empresa Pública de Produção Cultural utilizando a estrutura da EPC."
           }
         ]
-      },
-      {
-        "texto": "No meio ambiente, prevê combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais.",
-        "evidencias": [
-          {
-            "documentoId": "PB:150002540204:01",
-            "pagina": 6,
-            "trecho": "Combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais."
-          }
-        ]
       }
     ],
     "temas": [
       {
-        "id": "jornada-de-trabalho",
-        "titulo": "Jornada de trabalho",
-        "descricao": "Redução da jornada do funcionalismo público estadual.",
+        "id": "trabalho-publico",
+        "titulo": "Trabalho público",
+        "descricao": "Jornada do funcionalismo público estadual.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -236,9 +236,9 @@
         ]
       },
       {
-        "id": "emprego-publico",
-        "titulo": "Emprego público",
-        "descricao": "Criação de frentes estaduais de trabalho.",
+        "id": "emprego-estadual",
+        "titulo": "Emprego estadual",
+        "descricao": "Frentes estaduais de trabalho.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -250,7 +250,7 @@
       {
         "id": "banco-estadual",
         "titulo": "Banco estadual",
-        "descricao": "Criação de banco estadual sob controle popular.",
+        "descricao": "Banco Estadual da Paraíba.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
@@ -262,36 +262,24 @@
       {
         "id": "transporte-intermunicipal",
         "titulo": "Transporte intermunicipal",
-        "descricao": "Criação de empresa pública de transporte coletivo intermunicipal.",
+        "descricao": "Transporte coletivo entre microrregiões.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
             "pagina": 3,
-            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre)"
+            "trecho": "Criação da Empresa Pública de Transporte Coletivo Intermunicipal ligando as microrregiões do estado, assegurando as gratuidades (Passe Livre) e os descontos previstos em lei."
           }
         ]
       },
       {
-        "id": "saude-regional",
-        "titulo": "Saúde regional",
-        "descricao": "Descentralização da estrutura de saúde por meio de hospitais e policlínicas regionais.",
+        "id": "reforma-agraria",
+        "titulo": "Reforma agrária",
+        "descricao": "Desapropriação de latifúndios improdutivos.",
         "evidencias": [
           {
             "documentoId": "PB:150002540204:01",
-            "pagina": 5,
-            "trecho": "Descentralização da estrutura de saúde com a criação de hospitais e policlínicas regionais."
-          }
-        ]
-      },
-      {
-        "id": "protecao-ambiental",
-        "titulo": "Proteção ambiental",
-        "descricao": "Combate ao desmatamento em biomas e áreas costeiras.",
-        "evidencias": [
-          {
-            "documentoId": "PB:150002540204:01",
-            "pagina": 6,
-            "trecho": "Combate rigoroso ao desmatamento na Caatinga, Mata Atlântica e manguezais."
+            "pagina": 4,
+            "trecho": "Desapropriação imediata de todos os latifúndios improdutivos e estatização das terras."
           }
         ]
       }
@@ -299,440 +287,410 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T19:19:17.138Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:16:04.250Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T19:21:42.500Z",
+    "judgedAt": "2026-09-02T18:20:31.874Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a redução para 30 horas semanais no funcionalismo estadual, sem redução salarial."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Número 30 horas semanais é literal ao documento."
+        "reason": "O número de 30 horas semanais está literalmente sustentado pela evidência."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem elogio ou crítica."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre jornada de trabalho."
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada e remuneração do funcionalismo."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Claim e evidência pertencem à mesma chave eleitoral e documento."
+        "reason": "A evidência pertence ao documento PB:150002540204:01, compatível com a chave eleitoral informada."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:1:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta diretamente a realização de concurso para preencher vagas do funcionalismo estadual."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta sem avaliação positiva, negativa ou promocional."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação contém uma única proposta coerente sobre concurso público."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência e a afirmação estão vinculadas ao mesmo documento e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:2:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre a realização do concurso, sua finalidade e o âmbito estadual."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta a criação das frentes, o foco em infraestrutura social e a finalidade de gerar emprego para jovens e adultos paraibanos."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não apresenta números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação atribui ao programa seu objetivo declarado sem elogio, crítica ou certeza de resultado."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre emprego."
+        "reason": "A afirmação trata de uma única proposta de frentes estaduais de trabalho."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e corresponde à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:3:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência reproduz integralmente a proposta e sua finalidade declarada."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A expressão sobre juros é apresentada como finalidade da proposta, sem endosso ou avaliação adicional."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única proposta bancária coerente."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A afirmação e a evidência pertencem ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:4:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre a criação do banco, o controle popular e a finalidade declarada."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta diretamente a criação da empresa pública e a ligação entre as microrregiões."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta de forma factual e sem avaliação."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre transporte."
+        "reason": "A afirmação trata de uma única proposta de transporte intermunicipal."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência está no documento informado e corresponde à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:5:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência, sob o tópico de reforma agrária popular na página citada, sustenta a desapropriação dos latifúndios improdutivos."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre saúde."
+        "reason": "A afirmação trata de uma única proposta coerente de reforma agrária."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A afirmação e a evidência pertencem ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:6:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "O trecho e o contexto da página cobrem a desapropriação, o objeto e sua inserção na reforma agrária popular."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta explicitamente hospitais regionais como parte da descentralização da saúde."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta de forma neutra, sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre cultura."
+        "reason": "A afirmação trata de uma única proposta coerente na área da saúde."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência está no documento informado e corresponde à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:7:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre a criação dos hospitais regionais e sua relação com a descentralização."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta literalmente a proposta apresentada."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicas."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação replica linguagem do documento sem juízo de valor adicional."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre meio ambiente."
+        "reason": "A afirmação trata de uma única proposta coerente na área cultural."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A afirmação e a evidência pertencem ao documento e à chave eleitoral informados."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:frase:8:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre a criação da empresa e o uso da estrutura da EPC."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:suporte",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo do tema é sustentado pela evidência."
+        "reason": "A evidência trata diretamente da jornada do funcionalismo público estadual."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:numeros",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Resumo não cita números que contradigam o documento."
+        "reason": "O texto da afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:neutralidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "O rótulo temático é descritivo e não contém avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:mistura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação representa uma única área temática coerente."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:identidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:jornada-de-trabalho:documentos:PB:150002540204:01:cobertura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:trabalho-publico:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo simplificado cobre o núcleo da proposta original."
+        "reason": "A evidência cobre integralmente o tema enunciado."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:suporte",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência menciona diretamente a criação de frentes estaduais de trabalho para emprego."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:numeros",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O texto da afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:neutralidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "O rótulo temático descreve o conteúdo sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:mistura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação representa uma única área temática coerente."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:identidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-publico:documentos:PB:150002540204:01:cobertura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:emprego-estadual:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo cobre o núcleo da proposta original."
+        "reason": "A evidência cobre integralmente o tema enunciado."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência menciona diretamente a criação do Banco Estadual da Paraíba."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O texto da afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "O rótulo temático é descritivo e não contém avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação representa uma única proposta ou área temática coerente."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:banco-estadual:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo cobre o núcleo da proposta original."
+        "reason": "A evidência cobre integralmente o tema enunciado."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência trata diretamente de transporte coletivo intermunicipal ligando as microrregiões."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O texto da afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "O rótulo temático descreve o conteúdo sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação representa uma única área temática coerente de transporte."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:PB:150002540204:tema:transporte-intermunicipal:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo cobre o núcleo da proposta original."
+        "reason": "A evidência cobre integralmente o tema enunciado."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:suporte",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:suporte",
         "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência."
+        "reason": "A evidência menciona diretamente a desapropriação de latifúndios improdutivos no contexto da reforma agrária."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:numeros",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O texto da afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:neutralidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "O rótulo temático descreve a proposta sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:mistura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação representa uma única área temática coerente de reforma agrária."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:identidade",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A evidência pertence ao documento informado e à mesma chave eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:saude-regional:documentos:PB:150002540204:01:cobertura",
+        "id": "2026:GOVERNADOR:PB:150002540204:tema:reforma-agraria:documentos:PB:150002540204:01:cobertura",
         "verdict": "yes",
-        "reason": "Resumo cobre o núcleo da proposta original."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:suporte",
-        "verdict": "yes",
-        "reason": "Resumo sustentado pela evidência (biomas = Caatinga/Mata Atlântica; manguezais = área costeira)."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:numeros",
-        "verdict": "yes",
-        "reason": "Não há números na afirmação."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:neutralidade",
-        "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:mistura",
-        "verdict": "yes",
-        "reason": "Tema único e coerente."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:identidade",
-        "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
-      },
-      {
-        "id": "2026:GOVERNADOR:PB:150002540204:tema:protecao-ambiental:documentos:PB:150002540204:01:cobertura",
-        "verdict": "yes",
-        "reason": "Resumo cobre o núcleo da proposta original."
+        "reason": "A evidência cobre integralmente o tema enunciado."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:PB:150002540204",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -741,55 +699,28 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 1,
+        "attempts": 2,
         "uso": {
-          "input_tokens": 22877,
+          "input_tokens": 23933,
           "cached_input_tokens": 6912,
           "cache_write_input_tokens": 0,
-          "output_tokens": 2617,
-          "reasoning_output_tokens": 1213
+          "output_tokens": 2765,
+          "reasoning_output_tokens": 1552
         }
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 25546,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 24168,
-          "output_tokens_details": {
-            "thinking_tokens": 364
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 25546,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 24168,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 25546,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 25546
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.36442839999999993
+          "input_tokens": 35411,
+          "cached_input_tokens": 3840,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14599,
+          "reasoning_output_tokens": 385
         }
       }
     },
@@ -808,11 +739,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T19:22:14Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "0e8924b4a2abfc473c83dde63632c96e06105f3eb96df8e011d94a2163451dcb",
     "extractedTextSha256": "ebe0855e610a04dec3c34543ac50f78bbe0817a4c24db024d4703dab29ae1b0a",
     "documentCount": 1,
-    "documentSetSha256": "0aaba4dfdcf2b9e5e9aa405639312a3201a130ee01f9e2ff5f57109b2bdabc2d",
-    "contentSha256": "20d141a9ce43fd52ac34a5ff9fadedca6a40637cb08b4c6551bfaab328fd05d9"
+    "documentSetSha256": "052efb82d022831cda4919383325b56d3871ebdefbe1e2b65abd0ad147f870cc",
+    "contentSha256": "dcad4e9851583ff7ad499058b9c837c0717f0ca073d43d3d9ff75fe21960e0cb"
   }
 }

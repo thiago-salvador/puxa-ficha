@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RN.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -167,10 +167,10 @@
     }
   ],
   "resumo": {
-    "texto": "O documento apresenta propostas distribuídas em seções temáticas do plano de governo estadual. O programa prevê a redução da jornada de trabalho para 30h semanais para todo o funcionalismo público estadual. Também propõe a criação de uma empresa pública de transporte coletivo para municípios das regiões do Seridó e Oeste Potiguar. No campo habitacional, prevê a garantia de moradia digna para as famílias. Na segurança pública estadual, propõe a proibição de operações militares em vilas e favelas. Para a educação pública, prevê a ampliação da quantidade de creches em todos os municípios. Na área ambiental do estado, propõe um programa de incentivo à recuperação florestal de áreas desmatadas. O documento prevê a demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas.",
+    "texto": "No eixo Trabalho e Desenvolvimento Econômico, o programa prevê a redução da jornada de trabalho para 30h semanais para todo funcionalismo público estadual. No mesmo eixo, o documento propõe a realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde. Na Mobilidade Urbana, o plano prevê a estatização de todo o transporte estadual, garantindo passe livre para todos. Na área de Habitação, o texto propõe a garantia de moradia digna para todas as famílias brasileiras. Em Segurança Pública e Direitos Humanos, o programa prevê a proibição de operações militares em vilas e favelas. Na área de Educação, o documento estabelece educação pública e gratuita para todos e em todos os níveis. No eixo Meio Ambiente, o documento prevê o combate ao desmatamento ilegal como medida de proteção ambiental no estado.",
     "frases": [
       {
-        "texto": "O programa prevê a redução da jornada de trabalho para 30h semanais para todo o funcionalismo público estadual.",
+        "texto": "No eixo Trabalho e Desenvolvimento Econômico, o programa prevê a redução da jornada de trabalho para 30h semanais para todo funcionalismo público estadual.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
@@ -180,27 +180,37 @@
         ]
       },
       {
-        "texto": "Também propõe a criação de uma empresa pública de transporte coletivo para municípios das regiões do Seridó e Oeste Potiguar.",
+        "texto": "No mesmo eixo, o documento propõe a realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
-            "pagina": 5,
-            "trecho": "Criação de uma empresa pública de transporte coletivo, ampliando para municípios das regiões do Seridó e Oeste Potiguar"
+            "pagina": 3,
+            "trecho": "Realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde"
           }
         ]
       },
       {
-        "texto": "No campo habitacional, prevê a garantia de moradia digna para as famílias.",
+        "texto": "Na Mobilidade Urbana, o plano prevê a estatização de todo o transporte estadual, garantindo passe livre para todos.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 5,
-            "trecho": "Garantia de moradia digna"
+            "trecho": "Estatização de todo o transporte estadual, garantindo passe livre para todos"
           }
         ]
       },
       {
-        "texto": "Na segurança pública estadual, propõe a proibição de operações militares em vilas e favelas.",
+        "texto": "Na área de Habitação, o texto propõe a garantia de moradia digna para todas as famílias brasileiras.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 5,
+            "trecho": "Garantia de moradia digna, saneamento e coleta de lixo para todas as famílias brasileiras"
+          }
+        ]
+      },
+      {
+        "texto": "Em Segurança Pública e Direitos Humanos, o programa prevê a proibição de operações militares em vilas e favelas.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
@@ -210,41 +220,31 @@
         ]
       },
       {
-        "texto": "Para a educação pública, prevê a ampliação da quantidade de creches em todos os municípios.",
+        "texto": "Na área de Educação, o documento estabelece educação pública e gratuita para todos e em todos os níveis.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 8,
-            "trecho": "Ampliação da quantidade de creches em todos os municípios"
+            "trecho": "Educação pública e gratuita para todos e em todos os níveis"
           }
         ]
       },
       {
-        "texto": "Na área ambiental do estado, propõe um programa de incentivo à recuperação florestal de áreas desmatadas.",
+        "texto": "No eixo Meio Ambiente, o documento prevê o combate ao desmatamento ilegal como medida de proteção ambiental no estado.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 8,
-            "trecho": "Programa de incentivo a recuperação florestal de áreas desmatadas"
-          }
-        ]
-      },
-      {
-        "texto": "O documento prevê a demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas.",
-        "evidencias": [
-          {
-            "documentoId": "RN:200002547826:01",
-            "pagina": 6,
-            "trecho": "Demarcação e proteção urgente das terras e territórios indígenas, quilombolas e ribeirinhas"
+            "trecho": "Combate ao desmatamento ilegal"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "jornada-trabalho",
+        "id": "jornada-de-trabalho",
         "titulo": "Jornada de trabalho",
-        "descricao": "Redução da jornada de trabalho no funcionalismo público estadual.",
+        "descricao": "Redução da jornada de trabalho para o funcionalismo público estadual.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
@@ -254,14 +254,26 @@
         ]
       },
       {
-        "id": "transporte-coletivo",
-        "titulo": "Transporte coletivo",
-        "descricao": "Criação de empresa pública de transporte coletivo.",
+        "id": "concursos-publicos",
+        "titulo": "Concursos públicos",
+        "descricao": "Elevação do quadro estadual de professores.",
+        "evidencias": [
+          {
+            "documentoId": "RN:200002547826:01",
+            "pagina": 3,
+            "trecho": "Realização de concursos públicos para elevação do quadro estadual de professores e trabalhadores da saúde"
+          }
+        ]
+      },
+      {
+        "id": "transporte-estadual",
+        "titulo": "Transporte estadual",
+        "descricao": "Estatização do transporte estadual.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 5,
-            "trecho": "Criação de uma empresa pública de transporte coletivo"
+            "trecho": "Estatização de todo o transporte estadual, garantindo passe livre para todos"
           }
         ]
       },
@@ -273,13 +285,13 @@
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 5,
-            "trecho": "Garantia de moradia digna"
+            "trecho": "Garantia de moradia digna, saneamento e coleta de lixo para todas as famílias brasileiras"
           }
         ]
       },
       {
-        "id": "seguranca-publica",
-        "titulo": "Segurança pública",
+        "id": "operacoes-militares",
+        "titulo": "Operações militares",
         "descricao": "Proibição de operações militares em vilas e favelas.",
         "evidencias": [
           {
@@ -290,26 +302,14 @@
         ]
       },
       {
-        "id": "creches-municipais",
-        "titulo": "Creches municipais",
-        "descricao": "Ampliação da quantidade de creches nos municípios.",
+        "id": "educacao-publica",
+        "titulo": "Educação pública",
+        "descricao": "Educação pública e gratuita em todos os níveis.",
         "evidencias": [
           {
             "documentoId": "RN:200002547826:01",
             "pagina": 8,
-            "trecho": "Ampliação da quantidade de creches em todos os municípios"
-          }
-        ]
-      },
-      {
-        "id": "recuperacao-florestal",
-        "titulo": "Recuperação florestal",
-        "descricao": "Incentivo à recuperação florestal de áreas desmatadas.",
-        "evidencias": [
-          {
-            "documentoId": "RN:200002547826:01",
-            "pagina": 8,
-            "trecho": "Programa de incentivo a recuperação florestal de áreas desmatadas"
+            "trecho": "Educação pública e gratuita para todos e em todos os níveis"
           }
         ]
       }
@@ -317,410 +317,410 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T15:44:15.270Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T17:48:48.111Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T15:46:19.270Z",
+    "judgedAt": "2026-09-02T17:55:38.123Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência sustenta integralmente a redução para 30h semanais e sua aplicação a todo o funcionalismo público estadual."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "O número 30h está literalmente sustentado."
+        "reason": "O número de 30h semanais está literalmente sustentado pela evidência."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem elogio ou crítica."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre jornada de trabalho."
+        "reason": "A afirmação trata de uma única proposta coerente sobre jornada de trabalho."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Claim e evidência pertencem à mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:1:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência reproduz integralmente a proposta descrita na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva e neutra."
+        "reason": "A redação descreve a proposta documental sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de mobilidade."
+        "reason": "Professores e trabalhadores da saúde integram uma única proposta de ampliação do quadro estadual por concursos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:2:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais."
+        "reason": "A evidência cobre o concurso público, a elevação do quadro e os dois grupos profissionais citados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "O documento afirma 'Garantia de moradia digna...para todas as famílias brasileiras', sustentando a afirmação."
+        "reason": "A evidência sustenta literalmente a estatização de todo o transporte estadual e o passe livre para todos."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação relata a proposta sem elogio, crítica ou afirmação de que será executada."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única área coerente (habitação)."
+        "reason": "A estatização e o passe livre constituem uma única proposta coerente de transporte estadual."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:3:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência sustenta integralmente a garantia de moradia digna para todas as famílias brasileiras."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de segurança pública."
+        "reason": "A afirmação trata exclusivamente de uma proposta de moradia."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:4:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre a moradia digna, a abrangência a todas as famílias e o recorte brasileiro."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência sustenta literalmente a proibição descrita."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação relata a proposta sem juízo de valor ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta educacional."
+        "reason": "A afirmação contém uma única proposta coerente sobre operações militares."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:5:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre integralmente a proibição, o tipo de operação e os locais citados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência sustenta literalmente educação pública e gratuita para todos e em todos os níveis."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve o conteúdo do documento sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta ambiental."
+        "reason": "A afirmação trata de uma única proposta coerente na área educacional."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:6:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre o caráter público, a gratuidade, o público universal e todos os níveis."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A proposta aparece no eixo Meio Ambiente, e o documento estadual sustenta sua descrição como medida ambiental no estado."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre demarcação de terras."
+        "reason": "A afirmação trata de uma única medida coerente de proteção ambiental."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:frase:7:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência e o contexto da página cobrem a medida, seu enquadramento ambiental e o documento estadual."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação resumida."
+        "reason": "A evidência sustenta integralmente a redução da jornada para o funcionalismo público estadual."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Claim não cita números; evidência tem número mas não contradiz."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação aborda apenas a redução da jornada de trabalho."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-trabalho:documentos:RN:200002547826:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:jornada-de-trabalho:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula resumida."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta diretamente a afirmação."
+        "reason": "A evidência sustenta a realização de concursos para elevar o quadro estadual de professores."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação apresenta a proposta sem avaliação, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação trata de uma única proposta de concursos para professores."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-coletivo:documentos:RN:200002547826:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:concursos-publicos:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula resumida."
+        "reason": "A evidência cobre o concurso público e a elevação do quadro estadual de professores."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a estatização do transporte estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda exclusivamente a estatização do transporte estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:transporte-estadual:documentos:RN:200002547826:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a cláusula material sobre estatização do transporte estadual."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta diretamente a afirmação."
+        "reason": "A evidência sustenta a garantia de moradia digna para as famílias."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação apresenta a proposta sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação aborda exclusivamente uma proposta de moradia digna."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:RN:200002547826:tema:moradia-digna:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula resumida."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência reproduz literalmente a afirmação."
+        "reason": "A evidência sustenta literalmente toda a afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação contém uma única proposta sobre operações militares."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:seguranca-publica:documentos:RN:200002547826:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:operacoes-militares:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula."
+        "reason": "A evidência cobre integralmente a proibição, o tipo de operação e os locais citados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:suporte",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta diretamente a afirmação."
+        "reason": "A evidência sustenta integralmente educação pública e gratuita em todos os níveis."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:numeros",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades numéricas."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:neutralidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:mistura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação aborda uma única proposta coerente de educação pública e gratuita."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:identidade",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:creches-municipais:documentos:RN:200002547826:01:cobertura",
+        "id": "2026:GOVERNADOR:RN:200002547826:tema:educacao-publica:documentos:RN:200002547826:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:suporte",
-        "verdict": "yes",
-        "reason": "Evidência sustenta diretamente a afirmação."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:numeros",
-        "verdict": "yes",
-        "reason": "Não há números."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:neutralidade",
-        "verdict": "yes",
-        "reason": "Redação neutra."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:mistura",
-        "verdict": "yes",
-        "reason": "Tema único e coerente."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:identidade",
-        "verdict": "yes",
-        "reason": "Chave e documento coincidem."
-      },
-      {
-        "id": "2026:GOVERNADOR:RN:200002547826:tema:recuperacao-florestal:documentos:RN:200002547826:01:cobertura",
-        "verdict": "yes",
-        "reason": "Evidência cobre a cláusula."
+        "reason": "A evidência cobre o caráter público, a gratuidade e a abrangência a todos os níveis."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:RN:200002547826",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -729,55 +729,28 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 1,
         "uso": {
-          "input_tokens": 24016,
-          "cached_input_tokens": 3840,
+          "input_tokens": 23929,
+          "cached_input_tokens": 6912,
           "cache_write_input_tokens": 0,
-          "output_tokens": 3343,
-          "reasoning_output_tokens": 2274
+          "output_tokens": 2164,
+          "reasoning_output_tokens": 1079
         }
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 21210,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 20411,
-          "output_tokens_details": {
-            "thinking_tokens": 752
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 21210,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 20411,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 21210,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 21210
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.3060514
+          "input_tokens": 35292,
+          "cached_input_tokens": 34816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13427,
+          "reasoning_output_tokens": 0
         }
       }
     },
@@ -796,11 +769,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "a39f68d9094a16f34fc3fd64f869c085bc47cd5f65a2bb0aa068dd2b6d2d2a22",
     "extractedTextSha256": "b1122eb8148463814683fdff65a202d2b8cc3598a11c595205b1e3aeca72c770",
     "documentCount": 1,
-    "documentSetSha256": "49c2c9410622b856fe8b1719b2ee4de71d332668dc7e3ed7a89917c14ad68c99",
-    "contentSha256": "c467498f513045726498145a22b7f215f1c2d87c902f27cf24f8a88c486eb71d"
+    "documentSetSha256": "a7955f0f02783166a0fd49eaf6ac7a7fd491ef01cba6d62804a33a1719af33bc",
+    "contentSha256": "c13d55e82e563e56c2a1a471fc55455f7bf9198b8ff2981ac594237c6986e5d8"
   }
 }
