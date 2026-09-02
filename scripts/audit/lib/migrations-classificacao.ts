@@ -404,7 +404,12 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 89 -> 90 em 29/08/2026: a identidade por fonte das proposicoes entra no
   // replay de schema depois do gate mínimo de publicação e filtro fail-closed.
   // chapas entram em migration de schema puro, separada da curadoria do roster.
-  schemaReplayTamanho: 90,
+  // 90 -> 91 em 02/09/2026: a 20260902200000 revoga DML de anon e authenticated
+  // nas views publicas (REVOKE e estrutura persistente). MEDIDO no schema-gate
+  // local PostgreSQL 17: aplicadas limpo 91, falhas 0, e o hash canonico do
+  // pg_dump continua 9d6f4d243684ad5350de4e2f5d61dd8600a01c3f8fbbc2f75646593c4ce9218b
+  // (o dump limpo do gate nao carrega ACL de view).
+  schemaReplayTamanho: 91,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

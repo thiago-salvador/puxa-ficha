@@ -348,7 +348,9 @@ describe("classificador puro (#136)", () => {
     // 336 -> 337 em 01/09/2026: a reancoragem das fontes do TCU da issue #202
     // retorna cedo quando as duas claims não existem, que é o caso do banco
     // vazio. A integração conserva 337 + 103 = 440.
-    assert.equal(manifesto.aplicadas_esperadas, 337)
+    // 337 -> 338 em 02/09/2026: a revogação de DML das views públicas é schema
+    // puro e aplica limpo em banco vazio. Gate local: 338 + 103 = 441.
+    assert.equal(manifesto.aplicadas_esperadas, 338)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
