@@ -77,6 +77,8 @@ export declare type ExecutarBatchParams = {
   archiveDir?: string
   modelsConfig?: string
   maxMinutos?: number
+  /** Teto de tokens somados de generator e judge no batch inteiro; null desliga. */
+  maxTokensBatch?: number | null
   pollMs?: number
   spawnFn?: (bin: string, args: string[], opts: { cwd: string; env?: Record<string, string>; stdio: string[] }) => {
     stderr?: { on(event: "data", listener: (chunk: Buffer) => void): void } | undefined
@@ -104,7 +106,12 @@ export declare function executarBatch(params: ExecutarBatchParams): Promise<{
   errosCota: number
   concorrenciaFinal: number
   quota: "normal" | "draining_after_quota" | "single_probe" | "stopped_by_quota"
+  tokens: number
+  custoUsd: number
+  maxTokensBatch: number | null
 }>
+export declare function somarTokensUso(uso: unknown): number
+export declare function custoUsdUso(uso: unknown): number
 
 export declare function calcularFingerprintFila(itens: Array<Record<string, unknown>>, plannerVersion?: string): string
 export declare function validarFilaPlanejada(itens: Array<Record<string, unknown>>, planejados: Array<Record<string, unknown>> | null, manifesto: Record<string, unknown> | null): void

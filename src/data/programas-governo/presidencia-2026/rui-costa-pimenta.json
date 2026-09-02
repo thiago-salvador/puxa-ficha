@@ -302,10 +302,12 @@
   "geracao": {
     "promptVersion": "programa-governo-resumo-v1",
     "model": "Anthropic Claude Sonnet",
+    "modelPinned": false,
     "generatedAt": "2026-08-26T02:52:12.697Z"
   },
   "julgamento": {
     "model": "OpenAI GPT-5.4",
+    "modelPinned": false,
     "judgedAt": "2026-08-26T03:25:59.329Z",
     "verdicts": [
       {

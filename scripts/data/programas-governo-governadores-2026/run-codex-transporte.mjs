@@ -18,7 +18,11 @@ function chamarCodex(promptTexto) {
     const extras = (process.env.PF_CODEX_EXTRA_ARGS ?? "").split(" ").filter(Boolean)
     const args = [
       "exec", "--json", "--skip-git-repo-check", "--sandbox", "read-only",
-      "--ephemeral", "--ignore-user-config", "--ignore-rules", "-m", modelo,
+      "--ephemeral", "--ignore-user-config", "--ignore-rules",
+      // Raiz do sandbox = cwd. O CLI canônico já sobe o runner num diretório
+      // temporário vazio; aqui isso vira explícito para o Codex.
+      "-C", process.cwd(),
+      "-m", modelo,
       "-c", `model_reasoning_effort="${reasoningEffort}"`,
       "-c", "shell_environment_policy.inherit=none", "-c", "web_search=\"disabled\"",
       ...extras, "-",

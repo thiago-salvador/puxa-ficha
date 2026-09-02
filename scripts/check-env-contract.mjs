@@ -519,6 +519,11 @@ function scanJavaScript(files) {
     // dentro do arquivo, e tests/programa-governo-governadores-batch-novos.test.ts
     // reprova quando ela deixa de cobrir o que os processos filhos leem.
     "scripts/data/programas-governo-governadores-2026/batch-driver.mjs:",
+    // Mesmo caso: `construirAmbienteModelo` filtra o ambiente do host contra
+    // a allowlist antes de subir cada runner de modelo. A enumeracao esta na
+    // allowlist do arquivo; tests/programa-governo-models.test.ts prova que
+    // segredo fora dela nao chega ao filho.
+    "scripts/programas-governo-governadores-2026-models.ts:",
     "scripts/merge-queue/adapters.mjs:",
     "tests/",
   ]

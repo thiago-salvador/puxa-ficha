@@ -130,10 +130,20 @@ export type ProgramaGovernoGeracao = {
   promptVersion: string
   model: string
   generatedAt: string
+  /** sha256 do JSON das instruções do gerador em vigor na geração. Registros anteriores a 2026-09-02 não têm. */
+  instructionsSha256?: string
+  /**
+   * `false` marca os 13 registros presidenciais de agosto, gerados antes de o
+   * pipeline exigir ID completo de modelo ("Anthropic Claude Sonnet" em vez de
+   * `nome@id@cli`). Decisão de 2026-09-02: anotar, não reprocessar.
+   */
+  modelPinned?: boolean
 }
 
 export type ProgramaGovernoJulgamento = {
   model: string
+  /** `false` só nos 13 presidenciais de agosto, sem ID completo de modelo. Ver ProgramaGovernoGeracao. */
+  modelPinned?: boolean
   promptVersion?: string
   judgedAt: string
   verdicts: Array<{
@@ -712,6 +722,12 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
     const legado = slug ? TEXTO_RESIDUAL_LEGADO.get(slug) : undefined
     if (legado !== sha256(texto)) {
       fail("registro.resumo.texto", `contem prosa fora das frases verificadas ("${residuo.slice(0, 60)}")`)
+    }
+  }
+  if (record.geracao !== undefined) {
+    const geracao = objectAt(record.geracao, "registro.geracao")
+    if (geracao.instructionsSha256 !== undefined && !/^[0-9a-f]{64}$/u.test(String(geracao.instructionsSha256))) {
+      fail("registro.geracao.instructionsSha256", "deve ser sha256 em hex")
     }
   }
   if (!Array.isArray(resumo.temas) || resumo.temas.length < 4 || resumo.temas.length > 6) {
