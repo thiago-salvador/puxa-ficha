@@ -852,7 +852,7 @@ export function MoneyTabSection({
                           >
                             <Link
                               href={buildDoadorReverseHref(doador.nome)}
-                              className="font-medium text-foreground underline-offset-2 hover:underline"
+                              className="py-0.5 font-medium leading-5 text-foreground underline-offset-2 hover:underline"
                             >
                               {doador.nome}
                             </Link>

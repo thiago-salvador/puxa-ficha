@@ -105,22 +105,69 @@ function ProfileTabButton({
   )
 }
 
+// A barra desktop tem 9 abas (~1.300px) e rola na horizontal sem scrollbar.
+// Sem sinal visual, a aba cortada na borda parecia a última; e ao trocar de
+// aba por URL, a ativa podia ficar fora da área visível. Aqui: fade nas bordas
+// enquanto houver conteúdo escondido, e rolagem horizontal (só horizontal, para
+// não mover a página) até a aba ativa ficar inteira na vista.
+function useTablistOverflow(listRef: React.RefObject<HTMLDivElement | null>, activeTab: string) {
+  const [edges, setEdges] = useState({ left: false, right: false })
+
+  useEffect(() => {
+    const list = listRef.current
+    if (!list) return
+    const update = () => {
+      setEdges({
+        left: list.scrollLeft > 1,
+        right: list.scrollLeft + list.clientWidth < list.scrollWidth - 1,
+      })
+    }
+    update()
+    list.addEventListener("scroll", update, { passive: true })
+    const observer = new ResizeObserver(update)
+    observer.observe(list)
+    return () => {
+      list.removeEventListener("scroll", update)
+      observer.disconnect()
+    }
+  }, [listRef])
+
+  useEffect(() => {
+    const list = listRef.current
+    const active = document.getElementById(`profile-tab-desktop-${activeTab}`)
+    if (!list || !active) return
+    const margin = 24
+    const start = active.offsetLeft - list.offsetLeft
+    const end = start + active.offsetWidth
+    if (start < list.scrollLeft) list.scrollTo({ left: Math.max(0, start - margin) })
+    else if (end > list.scrollLeft + list.clientWidth) list.scrollTo({ left: end - list.clientWidth + margin })
+  }, [activeTab, listRef])
+
+  return edges
+}
+
 function DesktopTabs({ tabs, activeTab, onTabChange }: { tabs: Tab[]; activeTab: string; onTabChange: TabChange }) {
+  const listRef = useRef<HTMLDivElement>(null)
+  const edges = useTablistOverflow(listRef, activeTab)
   return (
-    <div role="tablist" aria-label="Seções do perfil" aria-orientation="horizontal" className="-mb-px hidden w-full overflow-x-auto scrollbar-none sm:flex">
-      {tabs.map((tab, index) => (
-        <ProfileTabButton
-          key={tab.id}
-          tab={tab}
-          index={index}
-          tabs={tabs}
-          activeTab={activeTab}
-          idPrefix="profile-tab-desktop-"
-          label={tab.label}
-          onTabChange={onTabChange}
-          className={(isActive) => `inline-flex min-h-11 shrink-0 items-center gap-1.5 border-b-2 px-5 py-3.5 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.08em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"}`}
-        />
-      ))}
+    <div className="relative hidden sm:block" data-pf-tabs-scroll data-pf-tabs-overflow={edges.left || edges.right ? "true" : "false"}>
+      <div ref={listRef} role="tablist" aria-label="Seções do perfil" aria-orientation="horizontal" className="-mb-px flex w-full overflow-x-auto scrollbar-none">
+        {tabs.map((tab, index) => (
+          <ProfileTabButton
+            key={tab.id}
+            tab={tab}
+            index={index}
+            tabs={tabs}
+            activeTab={activeTab}
+            idPrefix="profile-tab-desktop-"
+            label={tab.label}
+            onTabChange={onTabChange}
+            className={(isActive) => `inline-flex min-h-11 shrink-0 items-center gap-1.5 border-b-2 px-5 py-3.5 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.08em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:border-border hover:text-foreground"}`}
+          />
+        ))}
+      </div>
+      <div aria-hidden="true" className={`pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-background to-transparent transition-opacity ${edges.left ? "opacity-100" : "opacity-0"}`} />
+      <div aria-hidden="true" className={`pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-background to-transparent transition-opacity ${edges.right ? "opacity-100" : "opacity-0"}`} />
     </div>
   )
 }
@@ -138,7 +185,7 @@ function MobilePrimaryTabs({ tabs, activeTab, onTabChange }: { tabs: Tab[]; acti
           idPrefix="profile-tab-"
           label={<span className="truncate">{MOBILE_TAB_LABELS[tab.id] ?? tab.label}</span>}
           onTabChange={onTabChange}
-          className={(isActive) => `inline-flex min-h-12 min-w-0 items-center justify-center gap-1 border-b-2 px-2 py-3 text-[10px] font-bold uppercase tracking-[0.06em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
+          className={(isActive) => `inline-flex min-h-12 min-w-0 items-center justify-center gap-1 border-b-2 px-1 py-3 text-[10px] font-bold uppercase tracking-[0.06em] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${isActive ? "border-foreground text-foreground" : "border-transparent text-muted-foreground"}`}
         />
       ))}
     </div>
