@@ -11,6 +11,9 @@ import {
   NOTIFICATION_LOG_RETENTION_DAYS,
   notificationLogRetentionCutoffDate,
   operationalRetentionEnabled,
+  pendingSubscriberPurgeMode,
+  pendingSubscriberRetentionCutoffIso,
+  purgeExpiredPendingSubscribers,
   purgeExpiredQuizShortLinks,
   purgeNotificationLogsOlderThan,
   quizShortLinkRetentionCutoffIso,
@@ -186,10 +189,33 @@ export async function GET(req: NextRequest) {
     )
   }
 
+  // Assinantes pendentes com token vencido: nasce em modo `contar` (só mede e
+  // loga); apagar exige PF_ALERTS_PENDING_PURGE_ENABLED=1 além do opt-in geral.
+  const modoPendentes = pendingSubscriberPurgeMode()
+  const expurgoPendentes = retencaoOperacionalHabilitada
+    ? await purgeExpiredPendingSubscribers(pendingSubscriberRetentionCutoffIso(), modoPendentes)
+    : { status: "desativado" as const }
+  if (expurgoPendentes.status === "ok") {
+    console.log(
+      `[published-consistency] assinantes_pendentes_retencao ${JSON.stringify(
+        expurgoPendentes.modo === "contar"
+          ? { modo: "contar", pendentes: expurgoPendentes.pendentes, cutoff: expurgoPendentes.cutoff }
+          : { modo: "apagar", removidos: expurgoPendentes.removidos, cutoff: expurgoPendentes.cutoff },
+      )}`,
+    )
+  } else if (expurgoPendentes.status === "desativado") {
+    console.log("[published-consistency] assinantes_pendentes_retencao desativada")
+  } else {
+    console.error(
+      `[published-consistency] assinantes_pendentes_retencao_falhou ${JSON.stringify(expurgoPendentes)}`,
+    )
+  }
+
   const retencao = {
     analytics: expurgo,
     short_links: expurgoShortLinks,
     notification_log: expurgoNotificationLog,
+    assinantes_pendentes: expurgoPendentes,
   }
 
   if (report.hard.length) {

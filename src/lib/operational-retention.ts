@@ -54,6 +54,7 @@ interface PurgeQueryResult {
 interface PurgeQuery extends PromiseLike<PurgeQueryResult> {
   select: (columns: string) => PurgeQuery
   delete: () => PurgeQuery
+  eq: (column: string, value: string | boolean) => PurgeQuery
   in: (column: string, values: string[]) => PurgeQuery
   lte: (column: string, value: string) => PurgeQuery
   lt: (column: string, value: string) => PurgeQuery
@@ -217,6 +218,102 @@ export async function purgeNotificationLogsOlderThan(
       removidos,
       cutoff: cutoffDate,
       limite_alcancado: ids.length === OPERATIONAL_RETENTION_BATCH_SIZE,
+    }
+  } catch (erro) {
+    return { status: "falhou", message: erro instanceof Error ? erro.message : String(erro) }
+  }
+}
+
+/**
+ * Assinantes que pediram alerta, nunca confirmaram e cujo token de verificação
+ * já venceu. O token vale 48 horas (`ALERT_VERIFY_TOKEN_TTL_MS`); a folga de
+ * sete dias depois do vencimento cobre um reenvio tardio e diferença de fuso.
+ * Essas linhas guardam o email em claro, e ficar sem expurgo contradiz o que a
+ * página de privacidade promete.
+ *
+ * Nasce em modo `contar`: o cron só mede e loga quantas linhas seriam apagadas.
+ * A deleção exige `PF_ALERTS_PENDING_PURGE_ENABLED=1`, além do opt-in geral de
+ * retenção, para o deploy do código não apagar nada por si.
+ */
+const PENDING_SUBSCRIBER_GRACE_DAYS = 7
+
+export function pendingSubscriberRetentionCutoffIso(agora = new Date()): string {
+  return new Date(agora.getTime() - PENDING_SUBSCRIBER_GRACE_DAYS * MS_POR_DIA).toISOString()
+}
+
+export type PendingSubscriberPurgeMode = "contar" | "apagar"
+
+export function pendingSubscriberPurgeMode(
+  env: { PF_ALERTS_PENDING_PURGE_ENABLED?: string } = {
+    PF_ALERTS_PENDING_PURGE_ENABLED: process.env.PF_ALERTS_PENDING_PURGE_ENABLED,
+  },
+): PendingSubscriberPurgeMode {
+  return env.PF_ALERTS_PENDING_PURGE_ENABLED?.trim() === "1" ? "apagar" : "contar"
+}
+
+export type PendingSubscriberPurgeResult =
+  | { status: "ok"; modo: "contar"; pendentes: number; cutoff: string; limite_alcancado: boolean }
+  | { status: "ok"; modo: "apagar"; removidos: number; cutoff: string; limite_alcancado: boolean }
+  | { status: "desativado" }
+  | { status: "tabela_ausente" }
+  | { status: "falhou"; message: string }
+
+/**
+ * `verified = false` e `verify_token_expires_at < cutoff`. `alert_subscriptions`
+ * cai junto pelo `ON DELETE CASCADE`; `notification_log` não referencia
+ * pendentes porque o digest só sai para verificados. Nunca lança.
+ */
+export async function purgeExpiredPendingSubscribers(
+  cutoffIso: string,
+  modo: PendingSubscriberPurgeMode,
+  client: RetentionSupabaseClient = defaultRetentionClient(),
+): Promise<PendingSubscriberPurgeResult> {
+  try {
+    const selection = await client
+      .from("alert_subscribers")
+      .select("id")
+      .abortSignal(supabaseQueryTimeoutSignal())
+      .eq("verified", false)
+      .lt("verify_token_expires_at", cutoffIso)
+      .order("verify_token_expires_at", { ascending: true })
+      .order("id", { ascending: true })
+      .limit(OPERATIONAL_RETENTION_BATCH_SIZE)
+
+    if (selection.error) {
+      if (isMissingTable(selection.error, "alert_subscribers")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: selection.error.message ?? "erro sem mensagem" }
+    }
+    const ids = (selection.data ?? [])
+      .map((row) => row.id)
+      .filter((id): id is string => typeof id === "string")
+    const limiteAlcancado = ids.length === OPERATIONAL_RETENTION_BATCH_SIZE
+
+    if (modo === "contar") {
+      return { status: "ok", modo, pendentes: ids.length, cutoff: cutoffIso, limite_alcancado: limiteAlcancado }
+    }
+    if (ids.length === 0) {
+      return { status: "ok", modo, removidos: 0, cutoff: cutoffIso, limite_alcancado: false }
+    }
+
+    const deletion = await client
+      .from("alert_subscribers")
+      .delete()
+      .abortSignal(supabaseQueryTimeoutSignal())
+      .in("id", ids)
+      .eq("verified", false)
+      .lt("verify_token_expires_at", cutoffIso)
+      .select("id")
+    if (deletion.error) {
+      if (isMissingTable(deletion.error, "alert_subscribers")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: deletion.error.message ?? "erro sem mensagem" }
+    }
+
+    return {
+      status: "ok",
+      modo,
+      removidos: deletion.data?.length ?? 0,
+      cutoff: cutoffIso,
+      limite_alcancado: limiteAlcancado,
     }
   } catch (erro) {
     return { status: "falhou", message: erro instanceof Error ? erro.message : String(erro) }
