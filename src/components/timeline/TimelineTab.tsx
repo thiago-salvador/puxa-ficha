@@ -181,10 +181,10 @@ export function TimelineTab({ ficha, events, onTabNavigate, suggest }: TimelineT
             <button
               type="button"
               aria-label="Fechar detalhe do evento"
-              className="fixed inset-0 z-[70] bg-black/40 lg:hidden"
+              className="fixed inset-0 z-floating bg-black/40 lg:hidden"
               onClick={() => handleSelectId(null)}
             />
-            <div className="fixed inset-x-0 bottom-0 z-[80] max-h-[min(78vh,560px)] overflow-y-auto rounded-t-2xl border-t border-border bg-card px-4 pb-6 pt-3 shadow-[0_-12px_40px_rgba(0,0,0,0.15)] lg:hidden">
+            <div className="fixed inset-x-0 bottom-0 z-modal max-h-[min(78vh,560px)] overflow-y-auto rounded-t-2xl border-t border-border bg-card px-4 pb-6 pt-3 shadow-[0_-12px_40px_rgba(0,0,0,0.15)] lg:hidden">
               <TimelineTooltipPanel
                 event={selectedEvent}
                 onNavigateTab={onTabNavigate}

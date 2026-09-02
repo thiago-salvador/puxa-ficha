@@ -213,13 +213,13 @@ export default async function CompararPage({
 
       <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12">
         <div className="max-w-3xl">
-          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+          <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
             O comparador foi pensado para busca orgânica e decisão prática:
             selecionar de 2 a 4 nomes, comparar patrimônio, formação, processos e
             alertas graves, e, quando alguém do conjunto tiver o histórico, a
             cota parlamentar (CEAP/CEAPS).
           </p>
-          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+          <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
             Se quiser navegar antes de comparar, volte para a{" "}
             <Link href="/" className="font-semibold text-foreground underline">
               home
@@ -252,7 +252,7 @@ export default async function CompararPage({
       </Suspense>
 
       <div className="mx-auto max-w-7xl px-5 pb-4 md:px-12">
-        <p className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+        <p className="max-w-prose text-[length:var(--text-caption)] font-semibold text-muted-foreground">
           Dados de fontes públicas oficiais (TSE, Câmara, Senado). Patrimônio refere-se à última
           declaração disponível. Cota parlamentar mede CEAP/CEAPS, não gasto da Presidência nem de
           governo estadual.

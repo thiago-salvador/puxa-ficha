@@ -86,7 +86,7 @@ export default function InternalTestPage() {
     <div className="min-h-screen bg-background">
       <a
         href="#conteudo-interno"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:overflow-visible focus:rounded-lg focus:border focus:border-border focus:bg-foreground focus:px-4 focus:py-3 focus:text-[length:var(--text-body-sm)] focus:font-semibold focus:text-background focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-skip-link focus:overflow-visible focus:rounded-lg focus:border focus:border-border focus:bg-foreground focus:px-4 focus:py-3 focus:text-[length:var(--text-body-sm)] focus:font-semibold focus:text-background focus:shadow-lg"
       >
         Pular para o conteudo (demo de skip link)
       </a>

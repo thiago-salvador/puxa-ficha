@@ -33,7 +33,7 @@ export function SortOrderMenu({ value, onChange }: SortOrderMenuProps) {
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner sideOffset={8} align="start">
-          <Menu.Popup className="z-[75] min-w-[var(--anchor-width)] overflow-hidden rounded-[18px] border border-border bg-background shadow-xl outline-none">
+          <Menu.Popup className="z-popover min-w-[var(--anchor-width)] overflow-hidden rounded-[18px] border border-border bg-background shadow-xl outline-none">
             <Menu.RadioGroup
               value={value}
               onValueChange={(v) => onChange(v as SortKey)}

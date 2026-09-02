@@ -136,31 +136,34 @@ export function Navbar() {
       if (cancelled || !containerRef.current) return
 
       tlRef.current?.kill()
-      const tl = gsap.timeline({ defaults: { ease: "power3.inOut", duration: 0.7 } })
+      // Medido em 2026-09-01: o menu levava 1,2 a 1,8 s para assentar (painéis
+      // em cascata de 0,575 s, links de 0,7 s com stagger, rodapé depois). A
+      // coreografia é a mesma, só mais curta: assenta em menos de 0,8 s.
+      const tl = gsap.timeline({ defaults: { ease: "power3.inOut", duration: 0.4 } })
       tlRef.current = tl
 
       if (isMenuOpen) {
         tl.set(navWrap, { display: "block" })
         if (menuTexts.length) {
-          tl.fromTo(menuTexts, { yPercent: 0 }, { yPercent: -100, stagger: 0.2, duration: 0.5 })
+          tl.fromTo(menuTexts, { yPercent: 0 }, { yPercent: -100, stagger: 0.1, duration: 0.35 })
         }
-        if (menuIcon) tl.fromTo(menuIcon, { rotate: 0 }, { rotate: 315, duration: 0.5 }, "<")
-        tl.fromTo(overlay, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.4 }, "<")
-          .fromTo(bgPanels, { xPercent: 101 }, { xPercent: 0, stagger: 0.12, duration: 0.575, ease: "power2.out" }, "<")
+        if (menuIcon) tl.fromTo(menuIcon, { rotate: 0 }, { rotate: 315, duration: 0.35 }, "<")
+        tl.fromTo(overlay, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.25 }, "<")
+          .fromTo(bgPanels, { xPercent: 101 }, { xPercent: 0, stagger: 0.06, duration: 0.4, ease: "power2.out" }, "<")
         if (navLinks.length) {
           tl.fromTo(
             navLinks,
             { yPercent: 140, rotate: 10 },
-            { yPercent: 0, rotate: 0, stagger: 0.05, duration: 0.7, ease: "power3.out" },
-            "<+=0.35"
+            { yPercent: 0, rotate: 0, stagger: 0.03, duration: 0.45, ease: "power3.out" },
+            "<+=0.15"
           )
         }
         if (fadeTargets.length) {
           tl.fromTo(
             fadeTargets,
             { autoAlpha: 0, yPercent: 50 },
-            { autoAlpha: 1, yPercent: 0, stagger: 0.04, duration: 0.4, clearProps: "all" },
-            "<+=0.2"
+            { autoAlpha: 1, yPercent: 0, stagger: 0.02, duration: 0.3, clearProps: "all" },
+            "<+=0.1"
           )
         }
       } else {
@@ -268,7 +271,7 @@ export function Navbar() {
     <div ref={containerRef}>
       {/* Header: transparent -> glass on scroll */}
       <header
-        className={`fixed top-0 z-[60] w-full ${
+        className={`fixed top-0 z-header w-full ${
           scrolled
             ? "glass-nav"
             : "border-b border-transparent bg-transparent"
@@ -294,7 +297,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => openSearch("toolbar")}
-            className={`relative z-[70] flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 max-sm:min-w-11 max-sm:justify-center ${
+            className={`relative z-floating flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 max-sm:min-w-11 max-sm:justify-center ${
               useDarkText ? "border-black/15 text-black" : "border-white/20 text-white"
             }`}
             aria-label="Abrir busca rápida"
@@ -312,7 +315,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
-            className="menu-btn relative z-[70] flex min-h-11 items-center gap-3 overflow-hidden max-sm:min-w-11 max-sm:justify-center"
+            className="menu-btn relative z-floating flex min-h-11 items-center gap-3 overflow-hidden max-sm:min-w-11 max-sm:justify-center"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}
@@ -345,8 +348,8 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Fullscreen menu overlay — z-65 so it covers the header (z-60) */}
-      <div className="nav-overlay-wrapper fixed inset-0 z-[65]" style={{ display: "none" }}>
+      {/* Fullscreen menu overlay — z-overlay so it covers the header (z-header) */}
+      <div className="nav-overlay-wrapper fixed inset-0 z-overlay" style={{ display: "none" }}>
         <button
           type="button"
           className="overlay absolute inset-0 bg-black/40"

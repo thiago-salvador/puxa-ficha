@@ -166,13 +166,13 @@ export default async function Home() {
 
       <section className="mx-auto max-w-7xl px-5 pt-8 md:px-12 lg:pt-10">
         <div className="max-w-3xl">
-          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
+          <p className="max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[15px]">
             O Puxa Ficha organiza fontes públicas consultadas, como TSE,
             Câmara e Senado, para ajudar quem busca entender os candidatos à
             Presidência e aos governos de todos os estados e do Distrito Federal
             em 2026.
           </p>
-          <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
+          <p className="mt-3 max-w-prose text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
             Aqui você encontra ficha pública, comparação lado a lado e uma
             navegação mais rápida por nome, partido e estado. Se quiser atalhos
             imediatos, você pode ir para{" "}
