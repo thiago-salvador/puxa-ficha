@@ -64,7 +64,7 @@ segura.
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
 | `SENTRY_DSN`, `NEXT_PUBLIC_SENTRY_DSN` | Observabilidade server, edge e client | Degradável. A forma adequada ao runtime vence; sem as duas, o site sobe sem observabilidade e registra degradação quando possível. | Vercel |
-| `SENTRY_TRACES_SAMPLE_RATE`, `NEXT_PUBLIC_SENTRY_TRACES_SAMPLE_RATE` | Amostragem de traces | Opcionais, fallback `0.05`. | Vercel |
+| `SENTRY_TRACES_SAMPLE_RATE` | Amostragem de traces no servidor e no edge | Opcional, fallback `0.05`. O cliente não faz tracing (só captura de erro), então não há variável pública equivalente. | Vercel |
 | `SENTRY_ENABLE_PREVIEW`, `NEXT_PUBLIC_SENTRY_ENABLE_PREVIEW` | Telemetria em preview | Opcionais; somente `1` habilita. Preview fica mudo por padrão. | Preview temporário |
 | `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_AUTH_TOKEN` | Upload de source maps no build | Necessárias apenas quando o build deve publicar artefatos no Sentry. | Vercel build |
 

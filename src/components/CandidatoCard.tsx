@@ -96,7 +96,7 @@ export const CandidatoCard = memo(function CandidatoCard({
             <div className="glass-dark flex min-h-[5.5rem] flex-col justify-end px-3 pb-2.5 pt-2.5 sm:min-h-0 sm:block sm:px-5 sm:pb-5 sm:pt-4">
 
               {/* Party logo + sigla — always visible.
-                  Logos sao PNGs estaticos em /public/partidos/ com tamanho alvo 28px.
+                  Logos sao WebP lossless estaticos em /public/partidos/ (112px, fonte PNG ao lado) com tamanho alvo 28px.
                   Servidos via <img> nativo para nao consumir o pipeline de otimizacao
                   do Vercel (1 transformation por card x N cards por pageview). */}
               <div className="flex items-center gap-2">

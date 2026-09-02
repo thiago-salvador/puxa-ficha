@@ -7,15 +7,15 @@ import { getPartyLogoUrl } from "@/lib/utils"
 
 describe("getPartyLogoUrl", () => {
   it("keeps local static logos for existing party assets", () => {
-    assert.equal(getPartyLogoUrl("PT"), "/partidos/pt.png")
-    assert.equal(getPartyLogoUrl("AVANTE"), "/partidos/avante.png")
+    assert.equal(getPartyLogoUrl("PT"), "/partidos/pt.webp")
+    assert.equal(getPartyLogoUrl("AVANTE"), "/partidos/avante.webp")
   })
 
   it("serve local os logos que antes vinham da Wikimedia (G5-09)", () => {
-    assert.equal(getPartyLogoUrl("MOBILIZA"), "/partidos/mobiliza.png")
-    assert.equal(getPartyLogoUrl("PMN"), "/partidos/mobiliza.png")
-    assert.equal(getPartyLogoUrl("PCB"), "/partidos/pcb.png")
-    assert.equal(getPartyLogoUrl("PODE"), "/partidos/pode.png")
+    assert.equal(getPartyLogoUrl("MOBILIZA"), "/partidos/mobiliza.webp")
+    assert.equal(getPartyLogoUrl("PMN"), "/partidos/mobiliza.webp")
+    assert.equal(getPartyLogoUrl("PCB"), "/partidos/pcb.webp")
+    assert.equal(getPartyLogoUrl("PODE"), "/partidos/pode.webp")
   })
 
   it("nenhum logo de partido depende de host de terceiro", () => {
@@ -30,12 +30,12 @@ describe("getPartyLogoUrl", () => {
   })
 
   it("normaliza diacríticos nas siglas canônicas e preserva grafias legadas", () => {
-    assert.equal(getPartyLogoUrl("UNIÃO"), "/partidos/uniao.png")
-    assert.equal(getPartyLogoUrl("UNIAO"), "/partidos/uniao.png")
-    assert.equal(getPartyLogoUrl("MISSÃO"), "/partidos/missao.png")
-    assert.equal(getPartyLogoUrl("MISSAO"), "/partidos/missao.png")
-    assert.equal(getPartyLogoUrl("PODEMOS"), "/partidos/pode.png")
-    assert.equal(getPartyLogoUrl("PMN"), "/partidos/mobiliza.png")
+    assert.equal(getPartyLogoUrl("UNIÃO"), "/partidos/uniao.webp")
+    assert.equal(getPartyLogoUrl("UNIAO"), "/partidos/uniao.webp")
+    assert.equal(getPartyLogoUrl("MISSÃO"), "/partidos/missao.webp")
+    assert.equal(getPartyLogoUrl("MISSAO"), "/partidos/missao.webp")
+    assert.equal(getPartyLogoUrl("PODEMOS"), "/partidos/pode.webp")
+    assert.equal(getPartyLogoUrl("PMN"), "/partidos/mobiliza.webp")
   })
 
   it("resolve os oito partidos adicionados pelo PFIX", () => {

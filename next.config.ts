@@ -185,6 +185,14 @@ export default withSentryConfig(puxaFichaNextConfig, {
   authToken: process.env.SENTRY_AUTH_TOKEN,
   silent: !process.env.CI,
   widenClientFileUpload: true,
+  // Tracing e Replay não são usados no cliente (instrumentation-client.ts só
+  // captura erros); tirar do bundle o que não roda.
+  bundleSizeOptimizations: {
+    excludeTracing: true,
+    excludeReplayIframe: true,
+    excludeReplayShadowDom: true,
+    excludeReplayWorker: true,
+  },
   sourcemaps: {
     deleteSourcemapsAfterUpload: true,
     filesToDeleteAfterUpload: [".next/static/**/*.map", ".next/server/**/*.map"],
