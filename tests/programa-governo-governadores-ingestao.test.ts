@@ -709,13 +709,16 @@ test("multipassagem retomavel: cache evita re-chamada e retries por passagem fic
     }
     if (envelope.promptVersion.endsWith("/sintese-fatos")) {
       const fatoIds = (envelope.input.FATOS ?? []).map((fato) => String((fato as { id: unknown }).id))
-      const textoBase = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
-      const pedacos = textoBase.split(" ")
+      // 6 frases que cobrem o texto inteiro: o resumo precisa ser exatamente a
+      // união das frases verificadas (checagem inversa).
+      const frasesTexto = Array.from({ length: 6 }, (_, index) =>
+        Array.from({ length: 24 }, (_, word) => `palavra${index * 24 + word + 1}`).join(" "),
+      )
       return {
         stdout: JSON.stringify({
-          texto: textoBase,
-          frases: Array.from({ length: 6 }, (_, index) => ({
-            texto: pedacos.slice(index * 8, index * 8 + 8).join(" "),
+          texto: frasesTexto.join(" "),
+          frases: frasesTexto.map((texto, index) => ({
+            texto,
             fatoIds: [fatoIds[index % fatoIds.length]],
           })),
           temas: Array.from({ length: 4 }, (_, index) => ({
