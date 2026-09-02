@@ -202,6 +202,10 @@ jobs:
         if: steps.recorte.outputs.aplica == 'true'
         run: npm run audit:programas-governo:escala
 
+      - name: Programas de governo (publicados batem com o inventário)
+        if: steps.recorte.outputs.aplica == 'true'
+        run: npm run audit:programas-governo:governadores:publicados
+
       - name: Pesquisas eleitorais (gate)
         if: steps.recorte.outputs.aplica == 'true'
         run: npm run audit:pesquisas:gate

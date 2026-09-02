@@ -237,7 +237,101 @@ probe_runtime_smoke() {
     "$status_label" "$smoke_url" "" "vercel.json"
 }
 
+# Frescor dos crons da Vercel com rastro no banco (news-refresh, send-digest).
+# A rota /api/internal/cron-freshness devolve o último instante de cada um; se
+# o cron deixar de disparar (plano, cron desativado, CRON_SECRET rotacionado de
+# um lado só), nenhum 500 acontece e só esta sonda percebe.
+probe_cron_freshness() {
+  local origin="${PF_RUNTIME_SMOKE_ORIGIN:-https://puxaficha.com.br}"
+  origin="${origin%/}"
+  local url="${origin}/api/internal/cron-freshness"
+  local max_hours="${WATCHDOG_FRESHNESS_MAX_HOURS:-36}"
+  local http_code="000"
+  local body
+
+  if ! origin_allowed_for_secret "$origin" || [[ -z "${CRON_SECRET:-}" ]]; then
+    # Já denunciado por probe_runtime_smoke com o mesmo motivo.
+    return 0
+  fi
+
+  body="$(mktemp)"
+  if ! http_code="$(curl -sS -o "$body" -w "%{http_code}" \
+      --max-time 45 \
+      -H "Authorization: Bearer ${CRON_SECRET}" \
+      -H "User-Agent: puxaficha-cron-watchdog/1.0" \
+      "$url")" || [[ "$http_code" != "200" ]]; then
+    rm -f "$body"
+    ANOMALIES=$((ANOMALIES + 1))
+    publish_anomaly "cron-freshness" "cron-freshness" \
+      "sonda de frescor respondeu HTTP ${http_code:-000}" "$url" "" "vercel.json"
+    return 0
+  fi
+
+  local line name age
+  while IFS=$'\t' read -r name age; do
+    [[ -z "$name" ]] && continue
+    if [[ "$age" == "null" ]]; then
+      echo "frescor: ${name} sem rastro ainda"
+      continue
+    fi
+    if awk -v a="$age" -v m="$max_hours" 'BEGIN { exit !(a > m) }'; then
+      ANOMALIES=$((ANOMALIES + 1))
+      publish_anomaly "vercel-cron-${name}" "vercel-cron-${name}" \
+        "último rastro há ${age}h (limite ${max_hours}h)" "$url" "" "vercel.json"
+    else
+      echo "ok: frescor ${name} (${age}h)"
+    fi
+  done < <(jq -r '.checks[]? | [.name, (.age_hours // "null" | tostring)] | @tsv' "$body")
+  rm -f "$body"
+}
+
+# Produção atrás de main. A promoção é manual por desenho; o que não pode é
+# main ficar à frente por dias sem ninguém notar.
+probe_main_drift() {
+  local origin="${PF_RUNTIME_SMOKE_ORIGIN:-https://puxaficha.com.br}"
+  origin="${origin%/}"
+  local url="${origin}/api/deployment-info"
+  local max_hours="${WATCHDOG_DRIFT_MAX_HOURS:-24}"
+  local body prod_sha head_sha head_epoch now_epoch age_hours
+
+  # Sem segredo o watchdog está mal configurado e já abriu issue; não faz
+  # nenhuma chamada de rede nesse estado (contrato do teste).
+  if ! origin_allowed_for_secret "$origin" || [[ -z "${CRON_SECRET:-}" ]]; then
+    return 0
+  fi
+
+  body="$(mktemp)"
+  if ! curl -sS -o "$body" --max-time 20 -H "User-Agent: puxaficha-cron-watchdog/1.0" "$url"; then
+    rm -f "$body"
+    echo "drift: deployment-info indisponível, sem comparação"
+    return 0
+  fi
+  prod_sha="$(jq -r '.commitSha // empty' "$body" 2>/dev/null || true)"
+  rm -f "$body"
+  if [[ ! "$prod_sha" =~ ^[0-9a-f]{7,40}$ ]]; then
+    echo "drift: deployment-info sem commitSha, sem comparação"
+    return 0
+  fi
+  head_sha="$(git rev-parse HEAD 2>/dev/null || true)"
+  if [[ -z "$head_sha" || "$head_sha" == "$prod_sha"* || "$prod_sha" == "$head_sha"* ]]; then
+    echo "ok: produção serve o HEAD de main (${prod_sha})"
+    return 0
+  fi
+  head_epoch="$(git log -1 --format=%ct HEAD 2>/dev/null || echo 0)"
+  now_epoch="$(date -u +%s)"
+  age_hours=$(( (now_epoch - head_epoch) / 3600 ))
+  if (( age_hours > max_hours )); then
+    ANOMALIES=$((ANOMALIES + 1))
+    publish_anomaly "producao-atras-de-main" "producao-atras-de-main" \
+      "produção em ${prod_sha}, main em ${head_sha} há ${age_hours}h (limite ${max_hours}h)" "$url" "" "vercel.json"
+  else
+    echo "drift: main à frente de produção há ${age_hours}h, dentro do limite de ${max_hours}h"
+  fi
+}
+
 list_vercel_crons
 probe_runtime_smoke
+probe_cron_freshness
+probe_main_drift
 
 echo "anomalias_detectadas=${ANOMALIES}"
