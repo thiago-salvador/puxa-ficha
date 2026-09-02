@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_AC.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -601,11 +601,16 @@
     }
   ],
   "resumo": {
-    "texto": "O programa prevê a criação do Polo Industrial do Acre como estrutura produtiva estadual. Propõe a Faculdade Estadual do Polo Industrial para formar profissionais voltados ao desenvolvimento econômico. Prevê um Banco de Desenvolvimento do Acre para financiar atividades produtivas no estado. Planeja Complexos Regionais de Saúde para ampliar o atendimento regionalizado à população. Propõe o Programa Casa para Todos como política de habitação popular. Prevê o Plano Antienchente do Rio Acre com estruturas de controle hídrico. O documento também organiza áreas de atuação governamental relacionadas à educação, saúde, segurança pública, agricultura, turismo, infraestrutura, meio ambiente, ciência, tecnologia, desenvolvimento social, energia, sustentabilidade, desenvolvimento econômico e indústria. A proposta apresenta essas iniciativas como componentes de um modelo estadual orientado à industrialização, à prestação de serviços públicos, à infraestrutura, à habitação, à prevenção de enchentes e ao desenvolvimento regional.",
+    "texto": "O programa propõe a criação do Polo Industrial do Acre, descrito como estrutura voltada à transformação do estado em polo produtivo da Amazônia. A Faculdade Estadual do Polo Industrial prevê ensino técnico e superior integrado, com cursos alinhados à economia real e acesso facilitado. O Banco de Desenvolvimento do Acre é apresentado como instituição destinada a financiar o crescimento econômico estadual por meio de crédito para a indústria. O programa prevê complexos regionais de saúde para levar saúde de qualidade para perto das pessoas, com hospitais completos nas áreas regionais indicadas. O Programa Casa para Todos prevê 40 mil moradias em 8 anos, conforme a meta habitacional apresentada no documento. A gestão ambiental estadual proposta inclui a valorização da floresta em pé por meio da bioeconomia.",
     "frases": [
       {
-        "texto": "O programa prevê a criação do Polo Industrial do Acre como estrutura produtiva estadual.",
+        "texto": "O programa propõe a criação do Polo Industrial do Acre, descrito como estrutura voltada à transformação do estado em polo produtivo da Amazônia.",
         "evidencias": [
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 6,
+            "trecho": "PIA – POLO INDUSTRIAL DO ACRE"
+          },
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 6,
@@ -614,61 +619,81 @@
         ]
       },
       {
-        "texto": "Propõe a Faculdade Estadual do Polo Industrial para formar profissionais voltados ao desenvolvimento econômico.",
+        "texto": "A Faculdade Estadual do Polo Industrial prevê ensino técnico e superior integrado, com cursos alinhados à economia real e acesso facilitado.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 7,
-            "trecho": "Objetivo: Formar profissionais para sustentar o desenvolvimento econômico."
+            "trecho": "Ensino técnico e superior integrado"
+          },
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 7,
+            "trecho": "Cursos alinhados à economia real"
+          },
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 7,
+            "trecho": "Acesso facilitado (sem modelo tradicional excludente)"
           }
         ]
       },
       {
-        "texto": "Prevê um Banco de Desenvolvimento do Acre para financiar atividades produtivas no estado.",
+        "texto": "O Banco de Desenvolvimento do Acre é apresentado como instituição destinada a financiar o crescimento econômico estadual por meio de crédito para a indústria.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 8,
             "trecho": "Objetivo: Financiar o crescimento econômico do estado."
+          },
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 8,
+            "trecho": "Crédito para indústria"
           }
         ]
       },
       {
-        "texto": "Planeja Complexos Regionais de Saúde para ampliar o atendimento regionalizado à população.",
+        "texto": "O programa prevê complexos regionais de saúde para levar saúde de qualidade para perto das pessoas, com hospitais completos nas áreas regionais indicadas.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 9,
             "trecho": "Objetivo: Levar saúde de qualidade para perto das pessoas."
+          },
+          {
+            "documentoId": "AC:10002533539:01",
+            "pagina": 9,
+            "trecho": "Hospital completo"
           }
         ]
       },
       {
-        "texto": "Propõe o Programa Casa para Todos como política de habitação popular.",
+        "texto": "O Programa Casa para Todos prevê 40 mil moradias em 8 anos, conforme a meta habitacional apresentada no documento.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 10,
-            "trecho": "PROGRAMA CASA PARA TODOS (HABITAÇÃO)"
+            "trecho": "40 mil moradias em 8 anos"
           }
         ]
       },
       {
-        "texto": "Prevê o Plano Antienchente do Rio Acre com estruturas de controle hídrico.",
+        "texto": "A gestão ambiental estadual proposta inclui a valorização da floresta em pé por meio da bioeconomia.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
-            "pagina": 13,
-            "trecho": "Sistema de controle hídrico"
+            "pagina": 27,
+            "trecho": "Valorização da floresta em pé por meio da bioeconomia"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "industrializacao",
-        "titulo": "Industrialização",
-        "descricao": "Criação de estrutura produtiva estadual.",
+        "id": "desenvolvimento-industrial",
+        "titulo": "Desenvolvimento industrial",
+        "descricao": "Criação do Polo Industrial do Acre como eixo produtivo.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
@@ -680,7 +705,7 @@
       {
         "id": "formacao-profissional",
         "titulo": "Formação profissional",
-        "descricao": "Formação de profissionais para o desenvolvimento econômico.",
+        "descricao": "Ensino técnico e superior integrado associado ao desenvolvimento econômico.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
@@ -690,33 +715,33 @@
         ]
       },
       {
-        "id": "financiamento-produtivo",
-        "titulo": "Financiamento produtivo",
-        "descricao": "Financiamento do crescimento econômico estadual.",
+        "id": "credito-produtivo",
+        "titulo": "Crédito produtivo",
+        "descricao": "Financiamento estadual dirigido à indústria.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 8,
-            "trecho": "Objetivo: Financiar o crescimento econômico do estado."
+            "trecho": "Crédito para indústria"
           }
         ]
       },
       {
         "id": "saude-regional",
         "titulo": "Saúde regional",
-        "descricao": "Ampliação do atendimento de saúde próximo à população.",
+        "descricao": "Organização regional de serviços hospitalares.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
             "pagina": 9,
-            "trecho": "Objetivo: Levar saúde de qualidade para perto das pessoas."
+            "trecho": "Saúde – Programa “VIDA PERTO”"
           }
         ]
       },
       {
         "id": "habitacao-popular",
         "titulo": "Habitação popular",
-        "descricao": "Implementação de programa estadual de habitação.",
+        "descricao": "Construção de moradias pelo Programa Casa para Todos.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
@@ -726,14 +751,14 @@
         ]
       },
       {
-        "id": "controle-hidrico",
-        "titulo": "Controle hídrico",
-        "descricao": "Implantação de estruturas para o controle de enchentes.",
+        "id": "gestao-ambiental",
+        "titulo": "Gestão ambiental",
+        "descricao": "Valorização econômica da floresta em pé por meio da bioeconomia.",
         "evidencias": [
           {
             "documentoId": "AC:10002533539:01",
-            "pagina": 13,
-            "trecho": "Sistema de controle hídrico"
+            "pagina": 27,
+            "trecho": "1. Floresta como Ativo Econômico"
           }
         ]
       }
@@ -741,380 +766,380 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T19:32:49.723Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T17:56:47.721Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T19:34:44.928Z",
+    "judgedAt": "2026-09-02T18:01:00.644Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma o PIA como estrutura produtiva estadual."
+        "reason": "O título e o objetivo do PIA sustentam integralmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação atribui a proposta ao programa sem elogio, crítica ou certeza de execução."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata apenas do Polo Industrial do Acre e de seu objetivo produtivo."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento das evidências coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:1:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a única cláusula material da afirmação."
+        "reason": "As evidências cobrem o nome da proposta e seu objetivo de transformação produtiva."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma diretamente o objetivo da FEPI."
+        "reason": "As três características afirmadas aparecem literalmente nas evidências da FEPI."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve características apresentadas no documento sem avaliação própria."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "Todas as cláusulas pertencem ao modelo educacional da mesma faculdade."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento das evidências coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:2:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a única cláusula material."
+        "reason": "As evidências cobrem integralmente ensino integrado, alinhamento dos cursos e acesso facilitado."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma o BDA com esse objetivo."
+        "reason": "O objetivo do banco e sua atuação com crédito industrial sustentam integralmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve a finalidade e a atuação apresentadas no documento, sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única instituição e de uma atuação financeira coerente."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento das evidências coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:3:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a única cláusula material."
+        "reason": "As evidências cobrem o financiamento do crescimento estadual e o crédito industrial."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma proposta de complexos regionais e objetivo de aproximar o atendimento."
+        "reason": "As evidências e a página citada sustentam os complexos regionais, o objetivo e os hospitais completos."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação atribui ao programa seu objetivo e sua estrutura, sem avaliação independente."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "Todas as cláusulas pertencem à mesma proposta de complexos regionais de saúde."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento das evidências coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:4:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material da afirmação."
+        "reason": "A página citada cobre a regionalização, o objetivo de proximidade e a estrutura hospitalar."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma nome do programa e área de habitação."
+        "reason": "A meta de 40 mil moradias em 8 anos aparece literalmente no Programa Casa para Todos."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 40 mil moradias e o prazo de 8 anos estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação relata uma meta documental sem elogio, crítica ou garantia de cumprimento."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata apenas da meta habitacional do Programa Casa para Todos."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:5:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a única cláusula material."
+        "reason": "A evidência e a página citada cobrem o programa, a quantidade e o prazo afirmados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma o Plano Antienchente com sistema de controle hídrico."
+        "reason": "A medida afirmada aparece literalmente na seção sobre a gestão ambiental proposta."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve uma medida do documento sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única medida coerente de gestão ambiental."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:frase:6:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula sobre estruturas de controle hídrico."
+        "reason": "A evidência cobre integralmente a valorização da floresta em pé e o uso da bioeconomia."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:suporte",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a criação de estrutura produtiva."
+        "reason": "A evidência e a página citada identificam o Polo Industrial do Acre e seu objetivo produtivo."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:numeros",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:neutralidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação resume a proposta sem elogio, crítica ou certeza de resultado."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:mistura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única proposta de desenvolvimento industrial."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:identidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:industrializacao:documentos:AC:10002533539:01:cobertura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:desenvolvimento-industrial:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A página citada cobre a identificação do PIA e sua função como polo produtivo."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma exatamente o objetivo."
+        "reason": "A página citada combina ensino técnico e superior integrado com o objetivo de sustentar o desenvolvimento econômico."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação resume o modelo e o objetivo educacional sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única área coerente de formação profissional."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:formacao-profissional:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A página citada cobre o ensino integrado e sua associação ao desenvolvimento econômico."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:suporte",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma exatamente o objetivo."
+        "reason": "A evidência, no contexto do Banco de Desenvolvimento do Acre, sustenta financiamento estadual para a indústria."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:numeros",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:neutralidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve a modalidade de crédito sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:mistura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única modalidade coerente de crédito produtivo."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:identidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:financiamento-produtivo:documentos:AC:10002533539:01:cobertura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:credito-produtivo:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência e seu contexto documental cobrem o crédito estadual dirigido à indústria."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma exatamente o objetivo."
+        "reason": "A página citada apresenta estrutura regional e componentes hospitalares do programa de saúde."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve a organização temática do programa sem avaliação própria."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única área coerente de organização regional da saúde."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:saude-regional:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A página citada cobre as regiões atendidas e a estrutura de serviços hospitalares."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma o programa de habitação."
+        "reason": "A página citada identifica o programa habitacional e apresenta metas e construção de moradias."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação descreve o programa e sua ação habitacional sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única proposta de habitação."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
         "id": "2026:GOVERNADOR:AC:10002533539:tema:habitacao-popular:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A página citada cobre o nome do programa, a área habitacional e a construção de moradias."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:suporte",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma sistema de controle hídrico no plano antienchente."
+        "reason": "A página citada explicita a valorização da floresta em pé por meio da bioeconomia."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:numeros",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:neutralidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva sem juízo de valor."
+        "reason": "A redação resume a medida ambiental sem elogio, crítica ou certeza de resultado."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:mistura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente e única."
+        "reason": "A afirmação trata de uma única medida coerente de gestão ambiental e bioeconomia."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:identidade",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:AC:10002533539:tema:controle-hidrico:documentos:AC:10002533539:01:cobertura",
+        "id": "2026:GOVERNADOR:AC:10002533539:tema:gestao-ambiental:documentos:AC:10002533539:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A página citada cobre a dimensão econômica, a floresta em pé e o meio da bioeconomia."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:AC:10002533539",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -1123,55 +1148,28 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 2,
+        "attempts": 1,
         "uso": {
-          "input_tokens": 31915,
-          "cached_input_tokens": 3840,
+          "input_tokens": 31792,
+          "cached_input_tokens": 6912,
           "cache_write_input_tokens": 0,
-          "output_tokens": 1446,
-          "reasoning_output_tokens": 516
+          "output_tokens": 3575,
+          "reasoning_output_tokens": 2465
         }
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 19937,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 18892,
-          "output_tokens_details": {
-            "thinking_tokens": 909
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 19937,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 18892,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 19937,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 19937
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.2840624
+          "input_tokens": 34958,
+          "cached_input_tokens": 2816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13618,
+          "reasoning_output_tokens": 577
         }
       }
     },
@@ -1190,11 +1188,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T19:41:05Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "f1a6f8f3b526b195f9103d4f617702c4354ed768bf60766559ca8ffbb4fa63ce",
     "extractedTextSha256": "988d240d30e2304235174d4a430bfacce3482e46704f34792cf84922d602d79b",
     "documentCount": 1,
-    "documentSetSha256": "8cc066639238e0a605f6b023807b52b5402a8f9879830239ce8a63b4531cf632",
-    "contentSha256": "9b098988c806cc61bca473d4d944fc458358f000c468ba9735fcf17f80ccdd44"
+    "documentSetSha256": "825303f0d4bb6a15555fdbb8b2e5fa1ff2b2bde1592f41dbc538fa87ed5c7e85",
+    "contentSha256": "f6b7e1b549ce8c33049aa168e597148227e11de308d3efd634155de12b44132f"
   }
 }

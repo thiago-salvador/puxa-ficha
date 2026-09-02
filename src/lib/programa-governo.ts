@@ -422,12 +422,16 @@ export function programaGovernoTextoResidual(texto: string, frases: ReadonlyArra
 // Resumos publicados antes da checagem inversa (2026-09-02) com prosa fora das
 // frases. O hash congela o texto: reprocessar ou editar o resumo invalida a
 // entrada, que precisa sair da lista. A lista só diminui.
+type TextoResidualLegado = { slug: string; textoSha256: string; palavrasResiduais: number }
+const TEXTO_RESIDUAL_LEGADO_REGISTROS: ReadonlyArray<TextoResidualLegado> = (
+  textoResidualLegado as { registros: TextoResidualLegado[] }
+).registros
 const TEXTO_RESIDUAL_LEGADO = new Map(
-  textoResidualLegado.registros.map((item) => [item.slug, item.textoSha256] as const),
+  TEXTO_RESIDUAL_LEGADO_REGISTROS.map((item) => [item.slug, item.textoSha256] as const),
 )
 
-export function programaGovernoTextoResidualLegado(): ReadonlyArray<{ slug: string; textoSha256: string; palavrasResiduais: number }> {
-  return textoResidualLegado.registros
+export function programaGovernoTextoResidualLegado(): ReadonlyArray<TextoResidualLegado> {
+  return TEXTO_RESIDUAL_LEGADO_REGISTROS
 }
 
 function fonteTemDocumento(
