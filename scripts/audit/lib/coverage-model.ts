@@ -53,7 +53,7 @@ import { resolveCanonicalPartySigla } from "../../../src/lib/party-utils"
 export type { ColetaPorFonte } from "./coleta-proveniencia"
 export { FONTES_POR_COLUNA } from "./coleta-proveniencia"
 
-export type CellState = "ok" | "partial" | "missing" | "zero" | "na"
+type CellState = "ok" | "partial" | "missing" | "zero" | "na"
 
 /**
  * Por que a célula está zerada, quando dá para saber.
@@ -129,7 +129,7 @@ const CARGOS_ELETIVOS = new Set([
   "Vice-Prefeito"
 ])
 
-export interface HistoricoEvento {
+interface HistoricoEvento {
   cargo_canonico: string | null
   tipo_evento: string | null
   periodo_inicio: number | null
@@ -143,7 +143,7 @@ export interface HistoricoEvento {
   proveniencia?: string | null
 }
 
-export type FotoOrigem = "local" | "tse" | "wikimedia" | "oficial" | "terceiro"
+type FotoOrigem = "local" | "tse" | "wikimedia" | "oficial" | "terceiro"
 
 export interface CandidatoCoverage {
   slug: string
@@ -279,7 +279,7 @@ export const ROTULO_CLASSE: Record<ClasseRevisar, string> = {
   ponto_atencao_ia_no_ar_sem_revisao: "Ponto de atenção de IA no ar sem revisão humana"
 }
 
-export interface Aplicabilidade {
+interface Aplicabilidade {
   cotaParlamentar: boolean
   votacoesChave: boolean
   projetosLei: boolean

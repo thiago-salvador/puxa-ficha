@@ -1,7 +1,10 @@
 import assert from "node:assert/strict"
 import { describe, test } from "node:test"
 import { NextRequest } from "next/server"
-import { createRuntimeSmokeHandler } from "../src/app/api/internal/runtime-smoke/route"
+import {
+  createRuntimeSmokeHandler,
+  RUNTIME_SMOKE_PUBLIC_CHECK_NAMES,
+} from "../src/app/api/internal/runtime-smoke/route"
 
 const SECRET = "runtime-smoke-secret"
 const ROUTE_URL = "https://puxaficha.com.br/api/internal/runtime-smoke"
@@ -54,7 +57,15 @@ describe("runtime smoke cron", () => {
     }))
     const response = await handler(request())
     assert.equal(response.status, 200)
-    assert.deepEqual(await response.json(), {
+    const body = (await response.json()) as { results: Array<{ name: string }> }
+    // O contrato externo é a lista exportada pela rota mais o quiz-short-link:
+    // uma checagem a menos na rota, ou a mais, reprova aqui sem depender de
+    // alguém lembrar de editar a lista literal abaixo.
+    assert.deepEqual(
+      body.results.map((result) => result.name),
+      [...RUNTIME_SMOKE_PUBLIC_CHECK_NAMES, "quiz-short-link"],
+    )
+    assert.deepEqual(body, {
       ok: true,
       total: 6,
       results: [
