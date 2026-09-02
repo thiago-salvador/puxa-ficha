@@ -43,6 +43,7 @@ import {
   isRequestBodyTooLargeError,
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -148,7 +149,7 @@ async function reserveEmailIpBudget(
     p_since: sinceIso,
     p_max: MAX_EMAILS_PER_IP_HOUR,
     p_sent_at: sentAt,
-  })
+  }).abortSignal(supabaseQueryTimeoutSignal())
 
   if (error) {
     if (isMissingEmailIpHashColumn(error)) {
@@ -166,6 +167,7 @@ async function reserveEmailIpBudget(
     const { count, error: countError } = await supabase
       .from("alert_subscribers")
       .select("*", { count: "exact", head: true })
+      .abortSignal(supabaseQueryTimeoutSignal())
       .eq("last_email_request_ip_hash", emailIpHash)
       .gte("last_verification_email_sent_at", sinceIso)
 
@@ -283,7 +285,7 @@ async function markVerificationEmailSent(
     .update({
       last_verification_email_sent_at: sentAt,
       last_email_request_ip_hash: emailIpHash,
-    })
+    }).abortSignal(supabaseQueryTimeoutSignal())
     .eq("id", subscriberId)
 
   if (!error) return
@@ -297,6 +299,7 @@ async function markVerificationEmailSent(
     const { error: retryError } = await supabase
       .from("alert_subscribers")
       .update({ last_verification_email_sent_at: sentAt })
+      .abortSignal(supabaseQueryTimeoutSignal())
       .eq("id", subscriberId)
 
     if (retryError) avisarFalha(retryError.message)
@@ -414,7 +417,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           .update({
             manage_token_hash: manageTokenHash,
             manage_token_ciphertext: manageTokenCiphertext,
-          })
+          }).abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", existingSubscriber.id)
 
         if (updateError) {
@@ -469,7 +472,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           candidato_id: candidate.id,
         },
         { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-      )
+      ).abortSignal(supabaseQueryTimeoutSignal())
 
       if (upsertError) {
         deps.logAlertsApiExit("subscribe", 503, "db_upsert_subscription_failed_verified")
@@ -497,7 +500,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           candidato_id: candidate.id,
         },
         { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-      )
+      ).abortSignal(supabaseQueryTimeoutSignal())
 
       if (subscriptionError) {
         deps.logAlertsApiExit("subscribe", 503, "db_pending_subscription_cooldown_failed")
@@ -546,7 +549,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           manage_token_hash: manageTokenHash,
           manage_token_ciphertext: manageTokenCiphertext,
           ip_consentimento_hash: ipHash,
-        })
+        }).abortSignal(supabaseQueryTimeoutSignal())
         .eq("id", existingSubscriber.id)
 
       if (updateError) {
@@ -570,13 +573,14 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           p_since: ipWindowStartIso,
           p_max: MAX_NEW_SUBSCRIBERS_PER_HOUR,
         },
-      )
+      ).abortSignal(supabaseQueryTimeoutSignal())
 
       if (insertError) {
         if (isMissingQuotaRpc(insertError, "insert_alert_subscriber_under_ip_quota")) {
           const { count, error: countError } = await supabase
             .from("alert_subscribers")
             .select("*", { count: "exact", head: true })
+            .abortSignal(supabaseQueryTimeoutSignal())
             .eq("ip_consentimento_hash", ipHash)
             .gte("created_at", ipWindowStartIso)
 
@@ -601,7 +605,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
               manage_token_hash: manageTokenHash,
               manage_token_ciphertext: manageTokenCiphertext,
               ip_consentimento_hash: ipHash,
-            })
+            }).abortSignal(supabaseQueryTimeoutSignal())
             .select("id")
             .single()
 
@@ -641,7 +645,7 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         candidato_id: candidate.id,
       },
       { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-    )
+    ).abortSignal(supabaseQueryTimeoutSignal())
 
     if (subscriptionError) {
       deps.logAlertsApiExit("subscribe", 503, "db_create_subscription_failed")

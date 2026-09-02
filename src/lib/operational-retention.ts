@@ -1,6 +1,7 @@
 import "server-only"
 
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 /**
  * Retenção agendada das duas tabelas operacionais que sobraram sem cron.
@@ -58,6 +59,7 @@ interface PurgeQuery extends PromiseLike<PurgeQueryResult> {
   lt: (column: string, value: string) => PurgeQuery
   order: (column: string, options: { ascending: boolean }) => PurgeQuery
   limit: (value: number) => PurgeQuery
+  abortSignal: (signal: AbortSignal) => PurgeQuery
 }
 
 /**
@@ -130,6 +132,7 @@ export async function purgeExpiredQuizShortLinks(
     const selection = await client
       .from("quiz_result_short_links")
       .select("token")
+      .abortSignal(supabaseQueryTimeoutSignal())
       .lte("expires_at", cutoffIso)
       .order("expires_at", { ascending: true })
       .order("token", { ascending: true })
@@ -149,6 +152,7 @@ export async function purgeExpiredQuizShortLinks(
     const deletion = await client
       .from("quiz_result_short_links")
       .delete()
+      .abortSignal(supabaseQueryTimeoutSignal())
       .in("token", tokens)
       .lte("expires_at", cutoffIso)
       .select("token")
@@ -178,6 +182,7 @@ export async function purgeNotificationLogsOlderThan(
     const selection = await client
       .from("notification_log")
       .select("id")
+      .abortSignal(supabaseQueryTimeoutSignal())
       .lt("digest_date", cutoffDate)
       .order("digest_date", { ascending: true })
       .order("id", { ascending: true })
@@ -197,6 +202,7 @@ export async function purgeNotificationLogsOlderThan(
     const deletion = await client
       .from("notification_log")
       .delete()
+      .abortSignal(supabaseQueryTimeoutSignal())
       .in("id", ids)
       .lt("digest_date", cutoffDate)
       .select("id")

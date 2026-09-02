@@ -12,6 +12,7 @@ import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -87,6 +88,7 @@ export function createUnsubscribeAllHandler(deps: UnsubscribeAllDeps = defaultUn
     const { error } = await supabase
       .from("alert_subscriptions")
       .delete()
+      .abortSignal(supabaseQueryTimeoutSignal())
       .eq("subscriber_id", subscriber.id)
     if (error) {
       deps.logAlertsApiExit("unsubscribe-all", 503, "db_delete_subscriptions_failed")

@@ -17,6 +17,7 @@ import {
   isRequestBodyTooLargeError,
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -61,6 +62,7 @@ async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextRespon
   const { data: subscriptions, error: subscriptionsError } = await supabase
     .from("alert_subscriptions")
     .select("candidato_id")
+    .abortSignal(supabaseQueryTimeoutSignal())
     .eq("subscriber_id", subscriber.id)
 
   if (subscriptionsError) {
@@ -81,6 +83,7 @@ async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextRespon
     const { data: rows, error: candidatesError } = await supabase
       .from("candidatos_publico")
       .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
+      .abortSignal(supabaseQueryTimeoutSignal())
       .in("id", candidateIds)
 
     if (candidatesError) {

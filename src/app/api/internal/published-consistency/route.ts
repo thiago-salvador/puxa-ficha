@@ -20,6 +20,7 @@ import {
   probeAnonLeak,
   type PublishedRow,
 } from "@/lib/published-consistency"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -85,6 +86,7 @@ export async function GET(req: NextRequest) {
   const { data, error } = await supabase
     .from("candidatos_publico")
     .select(SELECT_COLUMNS)
+    .abortSignal(supabaseQueryTimeoutSignal())
 
   if (error || !data) {
     console.error(

@@ -82,6 +82,9 @@ function clientFake(
           chamada.limite = value
           return query
         },
+        abortSignal() {
+          return query
+        },
         then<R>(onOk: (r: (typeof resultados)[number]) => R) {
           const resultado = resultados.shift()
           if (!resultado) throw new Error("resultado fake ausente")

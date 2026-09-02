@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import { secretsMatch } from "@/lib/crypto-utils"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -47,6 +48,7 @@ async function deleteQuizShortLink(token: string): Promise<void> {
   const { error, count } = await supabase
     .from("quiz_result_short_links")
     .delete({ count: "exact" })
+    .abortSignal(supabaseQueryTimeoutSignal())
     .eq("token", token)
 
   if (error) throw error

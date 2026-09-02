@@ -12,6 +12,7 @@ import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -75,7 +76,7 @@ export function createDeleteDataHandler(deps: DeleteDataDeps = defaultDeleteData
     }
 
     const supabase = deps.createAlertsServiceRoleClient()
-    const { error } = await supabase.from("alert_subscribers").delete().eq("id", subscriber.id)
+    const { error } = await supabase.from("alert_subscribers").delete().abortSignal(supabaseQueryTimeoutSignal()).eq("id", subscriber.id)
     if (error) {
       deps.logAlertsApiExit("delete-data", 503, "db_delete_failed")
       return NextResponse.json({ error: "Could not delete subscriber data" }, { status: 503 })

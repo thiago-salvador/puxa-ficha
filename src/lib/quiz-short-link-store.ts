@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 /** TTL padrão do short-link do quiz (90 dias em milissegundos). */
 export const QUIZ_SHORT_LINK_TTL_MS = 90 * 24 * 60 * 60 * 1000
@@ -180,6 +181,7 @@ async function countRecentByIpHash(
   const { count, error } = await supabase
     .from("quiz_result_short_links")
     .select("*", { count: "exact", head: true })
+    .abortSignal(supabaseQueryTimeoutSignal())
     .eq("ip_hash", ipHash)
     .gte("created_at", sinceIso)
 
@@ -197,7 +199,7 @@ async function insertLink(
     ip_hash: record.ip_hash,
     created_at: record.created_at,
     expires_at: record.expires_at,
-  })
+  }).abortSignal(supabaseQueryTimeoutSignal())
 
   if (!error) return "inserted"
   if (isUniqueViolation(error)) return "duplicate"
@@ -221,7 +223,7 @@ function createSupabaseStore(): QuizShortLinkStore {
         p_expires_at: record.expires_at,
         p_since: sinceIso,
         p_max: max,
-      })
+      }).abortSignal(supabaseQueryTimeoutSignal())
 
       if (error && isMissingQuotaRpc(error, "insert_quiz_short_link_under_ip_quota")) {
         const count = await countRecentByIpHash(supabase, record.ip_hash, sinceIso)
@@ -241,6 +243,7 @@ function createSupabaseStore(): QuizShortLinkStore {
       const { data, error } = await supabase
         .from("quiz_result_short_links")
         .select("query_string")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("token", token)
         .gt("expires_at", new Date().toISOString())
         .maybeSingle()

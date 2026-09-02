@@ -4,6 +4,7 @@ import { sumTotalGastoByCandidatoId } from "@/lib/gastos-parlamentares-aggregate
 import type { PatrimonioAnoValor } from "@/lib/evolucao-patrimonial"
 import type { LegislacaoMandatoExecutivo, MudancaPartido } from "@/lib/types"
 import { legislativeHistoryFlagsFromRows } from "@/lib/legislative-history"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 /** PostgREST / Supabase default max rows per request. */
 const PAGE_SIZE = 1000
@@ -64,6 +65,7 @@ export async function fetchGastoTotalsByCandidatoIds(
       const { data, error } = await supabase
         .from("gastos_parlamentares")
         .select("candidato_id,total_gasto")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .range(from, from + PAGE_SIZE - 1)
 
@@ -103,6 +105,7 @@ export async function fetchCargoAtualByCandidatoIds(
       const { data, error } = await supabase
         .from("candidatos_publico")
         .select("id,cargo_atual")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("id", idChunk)
         .range(from, from + PAGE_SIZE - 1)
 
@@ -148,6 +151,7 @@ export async function fetchLegislativeHistoryFlagsByCandidatoIds(
       const { data, error } = await supabase
         .from("historico_politico")
         .select("candidato_id,cargo,cargo_canonico")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .is("despublicado_em", null)
         .range(from, from + PAGE_SIZE - 1)
@@ -194,6 +198,7 @@ export async function fetchPatrimonioSeriesByCandidatoIds(
       const { data, error } = await supabase
         .from("patrimonio")
         .select("candidato_id,ano_eleicao,valor_total")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .is("despublicado_em", null)
         .range(from, from + PAGE_SIZE - 1)
@@ -244,6 +249,7 @@ export async function fetchMudancasPartidoRowsPaged(
       const { data, error } = await supabase
         .from("mudancas_partido")
         .select(MUDANCAS_SELECT)
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .order("ano", { ascending: true })
         .range(from, from + PAGE_SIZE - 1)
@@ -302,6 +308,7 @@ export async function fetchLegislacaoMandatoExecutivoRowsPaged(
     : supabase
         .from("legislacao_mandato_executivo")
         .select("id", { count: "exact", head: true })
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("candidato_id", candidatoId))
 
   if (countError) {
@@ -323,6 +330,7 @@ export async function fetchLegislacaoMandatoExecutivoRowsPaged(
       const query = supabase
         .from("legislacao_mandato_executivo")
         .select(LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT)
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("candidato_id", candidatoId)
         .order("id", { ascending: true })
         .range(from, from + LEGISLACAO_MANDATO_EXECUTIVO_PAGE_SIZE - 1)

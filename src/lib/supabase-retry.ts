@@ -20,6 +20,20 @@ function readAttemptTimeoutFromEnv(): number | null {
 const SUPABASE_ATTEMPT_TIMEOUT_MS = readAttemptTimeoutFromEnv() ?? 15_000
 
 /**
+ * Prazo para uma query PostgREST feita fora de `withSupabaseRetry` (rotas de
+ * alertas, analytics, quiz, retenção e crons). Encadeado em `.abortSignal()`,
+ * ele libera o slot do semáforo de `src/lib/supabase.ts` quando a conexão
+ * pendura, em vez de segurar a vaga até o `maxDuration` da função. O erro
+ * chega ao chamador pelo mesmo `{ error }` que ele já trata; não há retentativa,
+ * porque a maioria dessas queries escreve e repetir não é idempotente.
+ *
+ * Mesmo prazo do retry de leitura da ficha, para a operação ter um número só.
+ */
+export function supabaseQueryTimeoutSignal(timeoutMs: number = SUPABASE_ATTEMPT_TIMEOUT_MS): AbortSignal {
+  return AbortSignal.timeout(timeoutMs)
+}
+
+/**
  * Timeout por tentativa das consultas de primeira dobra (lista da home, /uf e
  * comparador). Elas respondem em bem menos de 1s quando saudáveis; 5s por
  * tentativa mantém as 3 retentativas em ~15,75s no pior caso, em vez dos ~45s

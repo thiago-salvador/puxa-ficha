@@ -19,6 +19,7 @@ import { secretsMatch } from "@/lib/crypto-utils"
 import { sendTransactionalEmail } from "@/lib/email"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -199,7 +200,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       .select(
         "id, email, nome, verified_at, last_digest_sent_at, manage_token_ciphertext, created_at",
         { count: "exact" },
-      )
+      ).abortSignal(supabaseQueryTimeoutSignal())
       .eq("verified", true)
       .eq("canal_email", true)
     const consultaComCursor = after
@@ -239,6 +240,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       const { data: existingLog, error: existingLogError } = await supabase
         .from("notification_log")
         .select("id, status")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("subscriber_id", subscriber.id)
         .eq("canal", "email")
         .eq("digest_date", digestDate)
@@ -268,6 +270,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       const { data: subscriptionRows, error: subscriptionsError } = await supabase
         .from("alert_subscriptions")
         .select("candidato_id")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("subscriber_id", subscriber.id)
 
       if (subscriptionsError) {
@@ -298,6 +301,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       const { data: candidateRows, error: candidatesError } = await supabase
         .from("candidatos_publico")
         .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("id", candidateIds)
 
       if (candidatesError) {
@@ -317,6 +321,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       const { data: changeRows, error: changesError } = await supabase
         .from("candidate_changes")
         .select("id, candidato_id, titulo, descricao, created_at")
+        .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", candidateIds)
         .gt("created_at", windowStart)
         .lte("created_at", runStartedAt)
@@ -418,7 +423,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             error_message: null,
             candidato_ids: candidateIds,
             change_ids: (changeRows as CandidateChangeRow[]).map((row) => row.id),
-          })
+          }).abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", logId)
 
         if (pendingLogError) {
@@ -441,7 +446,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             status: "pending",
             candidato_ids: candidateIds,
             change_ids: (changeRows as CandidateChangeRow[]).map((row) => row.id),
-          })
+          }).abortSignal(supabaseQueryTimeoutSignal())
           .select("id")
           .single()
 
@@ -490,7 +495,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
             status: "sent",
             error_message: null,
             sent_at: runStartedAt,
-          })
+          }).abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", logId)
 
         if (sentLogError) {
@@ -500,6 +505,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         const { error: subscriberDigestUpdateError } = await supabase
           .from("alert_subscribers")
           .update({ last_digest_sent_at: runStartedAt })
+          .abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", subscriber.id)
 
         if (subscriberDigestUpdateError) {
@@ -520,6 +526,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
           const { error: logPartialError } = await supabase
             .from("notification_log")
             .update({ error_message: errMsg })
+            .abortSignal(supabaseQueryTimeoutSignal())
             .eq("id", logId)
 
           if (logPartialError) {
@@ -575,6 +582,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
           const { error: janelaError } = await supabase
             .from("alert_subscribers")
             .update({ last_digest_sent_at: runStartedAt })
+            .abortSignal(supabaseQueryTimeoutSignal())
             .eq("id", subscriber.id)
 
           if (janelaError) {
@@ -608,7 +616,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
           .update({
             status: "failed",
             error_message: errMsg,
-          })
+          }).abortSignal(supabaseQueryTimeoutSignal())
           .eq("id", logId)
 
         if (failedLogError) {

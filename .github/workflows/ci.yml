@@ -78,6 +78,8 @@ jobs:
 
       - name: Dead code (knip)
         run: npm run check:dead-code
+      - name: Queries Supabase com prazo (abortSignal)
+        run: npm run audit:supabase-abort-signal
 
       # Escrita em produção fora de `escreverAuditado()` é escrita sem trilha, que
       # é a causa raiz da #131. A varredura é estática (lê `scripts/` e `src/`, não

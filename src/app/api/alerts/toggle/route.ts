@@ -18,6 +18,7 @@ import {
   createFixedWindowIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -97,6 +98,7 @@ export function createToggleHandler(deps: ToggleDeps = defaultToggleDeps) {
     const { data: existingSubscription, error: selectError } = await supabase
       .from("alert_subscriptions")
       .select("id")
+      .abortSignal(supabaseQueryTimeoutSignal())
       .eq("subscriber_id", subscriber.id)
       .eq("candidato_id", candidate.id)
       .maybeSingle()
@@ -110,6 +112,7 @@ export function createToggleHandler(deps: ToggleDeps = defaultToggleDeps) {
       const { error: deleteError } = await supabase
         .from("alert_subscriptions")
         .delete()
+        .abortSignal(supabaseQueryTimeoutSignal())
         .eq("id", existingSubscription.id)
 
       if (deleteError) {
@@ -132,7 +135,7 @@ export function createToggleHandler(deps: ToggleDeps = defaultToggleDeps) {
           candidato_id: candidate.id,
         },
         { onConflict: "subscriber_id,candidato_id", ignoreDuplicates: true },
-      )
+      ).abortSignal(supabaseQueryTimeoutSignal())
 
     if (insertError) {
       deps.logAlertsApiExit("toggle", 503, "db_insert_subscription_failed")

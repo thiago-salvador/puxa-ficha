@@ -20,6 +20,7 @@ import {
   type NewsRefreshBatchClaim,
   type NewsRefreshRunStore,
 } from "@/lib/news/refresh-run-store"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -134,6 +135,7 @@ async function defaultFetchCandidatoPage(args: { cursor: number; limit: number }
     // nome_completo entra so para o guard de relevancia de titulo
     // (src/lib/news/name-match.ts); nao e gravado em noticias_candidato.
     .select("id, slug, nome_urna, nome_completo, cargo_disputado", { count: "exact" })
+    .abortSignal(supabaseQueryTimeoutSignal())
     .order("slug", { ascending: true })
     .range(args.cursor, args.cursor + args.limit - 1)
 
@@ -153,6 +155,7 @@ function defaultRefreshNews(candidatos: NewsCandidato[]): Promise<NewsRefreshSum
     const { error } = await supabase
       .from("noticias_candidato")
       .upsert(rows, { onConflict: "candidato_id,url", ignoreDuplicates: true })
+      .abortSignal(supabaseQueryTimeoutSignal())
     return { error: error?.message ?? null }
   }
   return refreshCandidatosNews(candidatos, defaultNewsRefreshDeps(upsertNoticias))
@@ -189,7 +192,7 @@ async function defaultRegistrarColetas(
       duracao_ms: t.duracao_ms,
     })),
     { onConflict: "fonte,execucao,lote_cursor,candidato_id", ignoreDuplicates: true },
-  )
+  ).abortSignal(supabaseQueryTimeoutSignal())
   if (error) {
     throw new Error(error.message)
   }

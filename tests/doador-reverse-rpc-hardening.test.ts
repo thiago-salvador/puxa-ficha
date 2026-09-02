@@ -104,7 +104,13 @@ describe("app /doadores: service_role + limiter fail-closed", () => {
   it("caminho de producao chama a RPC com o cliente service_role", () => {
     const src = readFileSync(join(ROOT, "src/lib/doador-reverse.ts"), "utf8")
     assert.match(src, /createServiceRoleSupabaseClient/)
-    assert.match(src, /rpcCaller \?\? createServiceRoleSupabaseClient\(\)/)
+    // O caller real embrulha o cliente service_role e da prazo por chamada; o
+    // contrato injetavel (testes) continua sendo um rpc que devolve Promise.
+    assert.match(src, /rpcCaller \?\? realRpcCaller\(\)/)
+    assert.match(
+      src,
+      /function realRpcCaller\(\)[\s\S]*?createServiceRoleSupabaseClient\(\)[\s\S]*?\.rpc\(fn, params\)\.abortSignal\(supabaseQueryTimeoutSignal\(\)\)/,
+    )
     assert.doesNotMatch(src, /createServerSupabaseClient/)
     assert.doesNotMatch(src, /assinaturaPaginadaAusente/)
     assert.doesNotMatch(src, /p_query: normalizedQuery,\s*\n\s*\}\)/)

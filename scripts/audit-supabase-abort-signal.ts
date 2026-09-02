@@ -17,8 +17,8 @@
  * tem entrada obsoleta, ou quando um call site allowlistado passou a ser query
  * direta (allowlist nao e cheque em branco: ela e reconferida a cada rodada).
  */
-import { readFileSync } from "node:fs"
-import { relative, resolve } from "node:path"
+import { readdirSync, readFileSync } from "node:fs"
+import { join, relative, resolve } from "node:path"
 
 import ts from "typescript"
 
@@ -266,19 +266,200 @@ export function auditSupabaseAbortSignal(source: string, fileName = TARGET_FILE)
   return { sites, violations: findViolations(sites) }
 }
 
+/**
+ * Segunda varredura, fora de `src/lib/api.ts`: toda cadeia PostgREST direta
+ * (`<client>.from("tabela").<verbo>(...)...` ou `<client>.rpc("fn", ...)`) nas
+ * rotas e libs precisa encadear `.abortSignal(...)`, normalmente com
+ * `supabaseQueryTimeoutSignal()` de `src/lib/supabase-retry.ts`.
+ *
+ * Aqui nao ha `withSupabaseRetry` para dar o signal: rotas de alertas,
+ * analytics, quiz, retencao e crons chamam o PostgREST direto, e uma conexao
+ * pendurada segurava o slot do semaforo ate o `maxDuration` da funcao. O
+ * codigo foi convertido em 2026-09-02; este gate impede que uma query nova
+ * volte a nascer sem prazo.
+ */
+const DIRECT_QUERY_DIRS = ["src/lib", "src/app"]
+const DIRECT_QUERY_VERBS = new Set(["select", "insert", "update", "upsert", "delete"])
+/** Objetos cujo `.from(` nao e PostgREST. */
+const NOT_A_CLIENT = /^(Buffer|Array|Uint8Array|Promise|Set|Map|Object|String|Number|Date|Response)$/
+
+export interface DirectQueryChain {
+  file: string
+  line: number
+  head: string
+  chainsAbortSignal: boolean
+}
+
+/**
+ * Cadeias que recebem o prazo por outro caminho. Mesma regra da allowlist de
+ * cima: motivo escrito, e entrada sem cadeia correspondente e violacao.
+ */
+const DIRECT_QUERY_ALLOWLIST: ReadonlyArray<{ file: string; head: string; motivo: string }> = [
+  {
+    file: "src/lib/doador-reverse.ts",
+    head: "caller.rpc(search_financiamento_by_doador_normalized)",
+    motivo:
+      "`caller` e um DoadorReverseRpcCaller injetavel (testes passam um objeto com rpc " +
+      "que devolve Promise). O prazo entra no caller real, `realRpcCaller()`, que encadeia " +
+      ".abortSignal(supabaseQueryTimeoutSignal()) no cliente do Supabase antes de devolver.",
+  },
+]
+
+function chainRoot(node: ts.Node): ts.Node {
+  let current: ts.Node = node
+  for (;;) {
+    const parent = current.parent
+    if (!parent) return current
+    if (ts.isPropertyAccessExpression(parent) && parent.expression === current) {
+      current = parent
+      continue
+    }
+    if (ts.isCallExpression(parent) && parent.expression === current) {
+      current = parent
+      continue
+    }
+    return current
+  }
+}
+
+function insideRetryCallback(node: ts.Node): boolean {
+  let current: ts.Node | undefined = node.parent
+  while (current) {
+    if (ts.isCallExpression(current) && isRetryCallee(current.expression)) return true
+    current = current.parent
+  }
+  return false
+}
+
+export function auditDirectQueryChains(source: string, fileName: string): DirectQueryChain[] {
+  const sourceFile = ts.createSourceFile(
+    fileName,
+    source,
+    ts.ScriptTarget.Latest,
+    true,
+    fileName.endsWith("x") ? ts.ScriptKind.TSX : ts.ScriptKind.TS
+  )
+  const chains: DirectQueryChain[] = []
+  const seen = new Set<number>()
+
+  const visit = (node: ts.Node): void => {
+    if (ts.isCallExpression(node) && ts.isPropertyAccessExpression(node.expression)) {
+      const name = node.expression.name.text
+      const objectText = node.expression.expression.getText(sourceFile)
+      const firstArg = node.arguments[0]
+      const literalArg = firstArg !== undefined && ts.isStringLiteral(firstArg)
+      const isFrom = name === "from" && node.arguments.length === 1 && literalArg
+      const isRpc = name === "rpc" && literalArg
+      if ((isFrom || isRpc) && !NOT_A_CLIENT.test(objectText) && !insideRetryCallback(node)) {
+        const root = chainRoot(node)
+        if (!seen.has(root.pos)) {
+          seen.add(root.pos)
+          const rootText = root.getText(sourceFile)
+          // `from(...)` sem verbo (builder guardado numa variavel) nao e cadeia
+          // completa aqui; o verbo aparece em outro lugar e sera visto la.
+          const hasVerb = isRpc || [...DIRECT_QUERY_VERBS].some((verb) => rootText.includes(`.${verb}(`))
+          if (hasVerb) {
+            chains.push({
+              file: fileName,
+              line: sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile)).line + 1,
+              head: `${objectText}.${name}(${firstArg.text})`,
+              chainsAbortSignal: rootText.includes(".abortSignal("),
+            })
+          }
+        }
+      }
+    }
+    ts.forEachChild(node, visit)
+  }
+  visit(sourceFile)
+  return chains
+}
+
+function listSourceFiles(dir: string): string[] {
+  const out: string[] = []
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = join(dir, entry.name)
+    if (entry.isDirectory()) out.push(...listSourceFiles(full))
+    else if (/\.(ts|tsx)$/.test(entry.name) && !/\.test\.tsx?$/.test(entry.name)) out.push(full)
+  }
+  return out
+}
+
+function auditDirectQueriesInRepo(): DirectQueryChain[] {
+  const target = resolve(process.cwd(), TARGET_FILE)
+  const chains: DirectQueryChain[] = []
+  for (const dir of DIRECT_QUERY_DIRS) {
+    for (const file of listSourceFiles(resolve(process.cwd(), dir))) {
+      if (file === target) continue
+      const source = readFileSync(file, "utf8")
+      if (!source.includes(".from(") && !source.includes(".rpc(")) continue
+      chains.push(...auditDirectQueryChains(source, relative(process.cwd(), file)))
+    }
+  }
+  return chains
+}
+
+function isDirectAllowlisted(chain: DirectQueryChain): boolean {
+  return DIRECT_QUERY_ALLOWLIST.some((entry) => entry.file === chain.file && entry.head === chain.head)
+}
+
+/** Cadeias sem prazo que nao estao na allowlist, mais entradas orfas da allowlist. */
+export function findDirectViolations(chains: DirectQueryChain[]): string[] {
+  const violations = chains
+    .filter((chain) => !chain.chainsAbortSignal && !isDirectAllowlisted(chain))
+    .map((chain) => `${chain.file}:${chain.line}  ${chain.head}`)
+  for (const entry of DIRECT_QUERY_ALLOWLIST) {
+    if (!chains.some((chain) => chain.file === entry.file && chain.head === entry.head)) {
+      violations.push(`allowlist orfa: ${entry.file}  ${entry.head} (remova a entrada)`)
+    }
+  }
+  return violations
+}
+
+function renderDirect(chains: DirectQueryChain[], violations: string[]): string {
+  const allowlisted = chains.filter((chain) => !chain.chainsAbortSignal && isDirectAllowlisted(chain))
+  const lines: string[] = []
+  lines.push("")
+  lines.push(`Queries PostgREST diretas fora de ${TARGET_FILE}: ${chains.length}`)
+  lines.push(`Com .abortSignal(): ${chains.filter((chain) => chain.chainsAbortSignal).length}`)
+  lines.push(`Allowlist (prazo por outro caminho): ${allowlisted.length}`)
+  for (const chain of allowlisted) {
+    const entry = DIRECT_QUERY_ALLOWLIST.find((item) => item.file === chain.file && item.head === chain.head)
+    lines.push(`  ${chain.file}:${chain.line}  ${chain.head}`)
+    lines.push(`         motivo: ${entry?.motivo}`)
+  }
+  if (violations.length > 0) {
+    lines.push(`SEM .abortSignal(): ${violations.length}`)
+    for (const violation of violations) lines.push(`  ${violation}`)
+    lines.push(
+      "  Encadeie .abortSignal(supabaseQueryTimeoutSignal()) depois do verbo (select/insert/update/upsert/delete) ou do rpc."
+    )
+  }
+  return lines.join("\n")
+}
+
 function main(argv: string[]): number {
   const asJson = argv.includes("--json")
   const filePath = resolve(process.cwd(), TARGET_FILE)
   const source = readFileSync(filePath, "utf8")
   const { sites, violations } = auditSupabaseAbortSignal(source)
+  const direct = auditDirectQueriesInRepo()
+  const directViolations = findDirectViolations(direct)
 
   if (asJson) {
-    console.log(JSON.stringify({ file: relative(process.cwd(), filePath), sites, violations }, null, 2))
+    console.log(
+      JSON.stringify(
+        { file: relative(process.cwd(), filePath), sites, violations, direct, directViolations },
+        null,
+        2
+      )
+    )
   } else {
     console.log(render(sites, violations, relative(process.cwd(), filePath)))
+    console.log(renderDirect(direct, directViolations))
   }
 
-  return violations.length === 0 ? 0 : 1
+  return violations.length === 0 && directViolations.length === 0 ? 0 : 1
 }
 
 if (process.argv[1] && process.argv[1].endsWith("audit-supabase-abort-signal.ts")) {
