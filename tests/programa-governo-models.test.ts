@@ -340,13 +340,17 @@ test("aplica orientação de reparo apenas na geração e na síntese, sem conta
     }
     if (envelope.promptVersion.endsWith("/sintese-fatos")) {
       const fatoIds = (envelope.input.FATOS as Array<{ id: string }>).map(({ id }) => id)
-      const texto = Array.from({ length: 140 }, (_, index) => `palavra${index + 1}`).join(" ")
-      const palavras = texto.split(" ")
+      // 6 frases que cobrem o texto inteiro: o resumo precisa ser exatamente a
+      // união das frases verificadas (checagem inversa).
+      const frasesTexto = Array.from({ length: 6 }, (_, index) =>
+        Array.from({ length: 24 }, (_, word) => `palavra${index * 24 + word + 1}`).join(" "),
+      )
+      const texto = frasesTexto.join(" ")
       return {
         stdout: JSON.stringify({
           texto,
-          frases: Array.from({ length: 6 }, (_, index) => ({
-            texto: palavras.slice(index * 8, index * 8 + 8).join(" "),
+          frases: frasesTexto.map((fraseTexto, index) => ({
+            texto: fraseTexto,
             fatoIds: [fatoIds[index]],
           })),
           temas: Array.from({ length: 4 }, (_, index) => ({

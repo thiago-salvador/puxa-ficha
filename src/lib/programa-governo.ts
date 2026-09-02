@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto"
 
+import textoResidualLegado from "../data/programas-governo/texto-residual-legado-2026-09-02.json"
+
 const PROGRAMA_GOVERNO_ESTADOS_CANONICOS = [
   "em_revisao",
   "sem_documento_oficial",
@@ -405,6 +407,29 @@ function wordCount(value: string): number {
   return value.trim().split(/\s+/u).filter(Boolean).length
 }
 
+/**
+ * O que sobra de `texto` depois de remover cada frase verificada uma vez e
+ * descartar espaço e pontuação. Resumo íntegro devolve string vazia: o
+ * parágrafo publicado é exatamente a união das frases que passaram pelo gate
+ * de evidência literal e pelo judge.
+ */
+export function programaGovernoTextoResidual(texto: string, frases: ReadonlyArray<{ texto: string }>): string {
+  let restante = texto
+  for (const frase of frases) restante = restante.replace(frase.texto, " ")
+  return restante.replace(/[\s\p{P}\p{S}]+/gu, " ").trim()
+}
+
+// Resumos publicados antes da checagem inversa (2026-09-02) com prosa fora das
+// frases. O hash congela o texto: reprocessar ou editar o resumo invalida a
+// entrada, que precisa sair da lista. A lista só diminui.
+const TEXTO_RESIDUAL_LEGADO = new Map(
+  textoResidualLegado.registros.map((item) => [item.slug, item.textoSha256] as const),
+)
+
+export function programaGovernoTextoResidualLegado(): ReadonlyArray<{ slug: string; textoSha256: string; palavrasResiduais: number }> {
+  return textoResidualLegado.registros
+}
+
 function fonteTemDocumento(
   fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento,
 ): fonte is ProgramaGovernoFonte {
@@ -663,10 +688,12 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   if (!Array.isArray(resumo.frases) || resumo.frases.length < 6 || resumo.frases.length > 8) {
     fail("registro.resumo.frases", "deve conter entre 6 e 8 frases materiais")
   }
+  const frasesVerificadas: Array<{ texto: string }> = []
   for (const [index, raw] of resumo.frases.entries()) {
     const sentence = objectAt(raw, `registro.resumo.frases[${index}]`)
     const sentenceText = stringAt(sentence.texto, `registro.resumo.frases[${index}].texto`)
     if (!texto.includes(sentenceText)) fail(`registro.resumo.frases[${index}].texto`, "deve existir no resumo")
+    frasesVerificadas.push({ texto: sentenceText })
     evidenceListAt(
       sentence.evidencias,
       `registro.resumo.frases[${index}].evidencias`,
@@ -674,6 +701,14 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
       documentoLegadoId,
       isMultiDocument,
     )
+  }
+  const residuo = programaGovernoTextoResidual(texto, frasesVerificadas)
+  if (residuo) {
+    const slug = (record.fonte as { slug?: string | null }).slug
+    const legado = slug ? TEXTO_RESIDUAL_LEGADO.get(slug) : undefined
+    if (legado !== sha256(texto)) {
+      fail("registro.resumo.texto", `contem prosa fora das frases verificadas ("${residuo.slice(0, 60)}")`)
+    }
   }
   if (!Array.isArray(resumo.temas) || resumo.temas.length < 4 || resumo.temas.length > 6) {
     fail("registro.resumo.temas", "deve conter entre 4 e 6 temas")

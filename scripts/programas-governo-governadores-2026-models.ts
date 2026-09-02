@@ -2,7 +2,11 @@ import { spawn } from "node:child_process"
 import path from "node:path"
 
 import judgeSchema from "./prompts/programa-governo-governadores-judge-v2.schema.json"
-import type { ProgramaGovernoEvidencia, ProgramaGovernoResumo } from "../src/lib/programa-governo"
+import {
+  programaGovernoTextoResidual,
+  type ProgramaGovernoEvidencia,
+  type ProgramaGovernoResumo,
+} from "../src/lib/programa-governo"
 import {
   substituirEvidenciasFato,
   validarResultadoProgramaGovernoMultipassagem,
@@ -556,6 +560,13 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
       )),
     }
   })
+  // Checagem inversa: o resumo publicado é exatamente a união das frases
+  // verificadas. Prosa fora delas não passa pelo gate de evidência literal
+  // nem pelo judge, então não pode existir.
+  const residuo = programaGovernoTextoResidual(texto, normalizedPhrases)
+  if (residuo) {
+    throw new Error(`generator.texto: prosa fora das frases verificadas ("${residuo.slice(0, 80)}")`)
+  }
   return {
     texto,
     frases: normalizedPhrases,
