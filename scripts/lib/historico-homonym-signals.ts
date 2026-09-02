@@ -5,7 +5,7 @@
 
 import { canonicalCargo } from "./cargo-utils"
 
-export type HomonymSignalSeverity = "media" | "baixa"
+type HomonymSignalSeverity = "media" | "baixa"
 
 export interface HomonymSignal {
   code: "idade_minima_cargo" | "cpf_obs_incompativel" | "deputado_estadual_uf_coorte"

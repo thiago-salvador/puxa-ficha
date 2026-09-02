@@ -75,7 +75,12 @@ Nunca copiar valores para este arquivo, issue, log ou commit.
    Inventário de paths e horários (UTC e BRT) na seção 3; não inventar a lista.
 5. **Ligar domínio.** Adicionar `puxaficha.com.br` ao projeto novo e confirmar
    DNS/certificado no painel antes da troca. A alteração de DNS e a promoção do
-   deploy exigem autorização nomeada.
+   deploy exigem autorização nomeada. O DNS atual tem, além do apex e de `www`,
+   um registro curinga `*.puxaficha.com.br` apontando para a Vercel, coberto
+   pelo certificado curinga e respondendo 404 (medido em 02/09/2026 com
+   `dig +short <nome-inexistente>.puxaficha.com.br`). Nenhuma rota, cron ou
+   integração depende dele; ao reconstruir, decidir se ele volta ou não, e
+   registrar aqui.
 6. **Reativar GitHub Actions.** Repor os secrets, confirmar que os workflows
    estão ativos e conferir os agendamentos em
    [`Settings/AUTOMATIONS_AND_ENVIRONMENTS.md`](../Settings/AUTOMATIONS_AND_ENVIRONMENTS.md),

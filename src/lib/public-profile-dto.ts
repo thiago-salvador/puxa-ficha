@@ -600,8 +600,6 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
   }
 }
 
-export type PublicCandidatoProfileDto = ReturnType<typeof toPublicCandidatoProfileDto>
-
 export function toPublicProjetosLeiDto(rows: ProjetoLei[]) {
   return rows.map(publicProjetoLei)
 }

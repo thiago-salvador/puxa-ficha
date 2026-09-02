@@ -44,7 +44,7 @@ export interface NoticiaRow {
  * origem: HTTP quebrado/timeout/upsert com erro é `erro`, e RSS respondido sem
  * nenhum título citando o candidato é `vazio_confirmado`.
  */
-export type ColetaResultadoNews = "encontrado" | "vazio_confirmado" | "erro"
+type ColetaResultadoNews = "encontrado" | "vazio_confirmado" | "erro"
 
 /**
  * Uma tentativa de coleta por candidato, pronta para virar linha de

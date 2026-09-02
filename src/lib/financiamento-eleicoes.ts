@@ -25,7 +25,7 @@ import { anosDePleitoDisputado, type LinhaDeTrajetoriaParaPleito } from "@/lib/p
  * nunca vira zero nem ficha limpa, e ausência só pode ser AFIRMADA quando foi
  * verificada na fonte, com fonte e data à vista.
  */
-export type FinanciamentoEleicaoEstado =
+type FinanciamentoEleicaoEstado =
   /** Há linha de prestação de contas publicada nesta ficha. */
   | "publicado"
   /** Há linha oficial e o total declarado nela é exatamente zero. */

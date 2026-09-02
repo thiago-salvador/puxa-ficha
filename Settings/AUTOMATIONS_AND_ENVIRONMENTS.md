@@ -183,7 +183,7 @@ A tabela cobre os 25 workflows do diretório. Conferir a cobertura com
 | `pesquisas-monitoramento.yml` | 10:17 UTC diária e manual | Coleta e verificação das pesquisas eleitorais da matriz aprovada (`verify:pesquisas`). |
 | `link-check-fontes.yml` | Segunda, 09:00 UTC e manual | Verificar links das fontes publicadas. |
 | `alerts-nightly.yml` | 03:17 UTC diária e manual | Pipeline de alertas ponta a ponta em ambiente local, sem envio real de email. |
-| `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os crons da Vercel e abre issue quando um deles não roda. |
+| `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os workflows agendados do GitHub e, na Vercel, só o cron `runtime-smoke`; abre issue quando um deles não roda. Os outros cinco crons da Vercel (digest, notícias, recuperação, consistência, revalidação) dependem do alerta de falha HTTP 500 da própria Vercel, que não cobre cron que simplesmente não dispara. |
 | `a11y-producao.yml` | `deployment_status` de Production | Axe contra `puxaficha.com.br` depois do deploy alcançar o alias público, não no push. |
 | `revalidate-cache.yml` | Manual | Revalidar tags públicas autorizadas. |
 | `serial-merge-queue.yml` | A cada 5 min, `pull_request_target`, `workflow_run`, `deployment_status` e manual | Coordenador da fila de merge serial: enfileira, promove o deploy e faz o readback público. |

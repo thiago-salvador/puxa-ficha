@@ -53,7 +53,7 @@ import { resolveHistoricoRowProvenance } from "@/lib/historico-provenance"
  * Vocabulário fechado do contrato B-E2. Repetido aqui como tipo para o
  * compilador cobrar o caso novo se a Trilha B acrescentar um estado.
  */
-export type ResultadoVerificacao =
+type ResultadoVerificacao =
   | "encontrado"
   | "vazio_confirmado"
   | "sem_achado_no_escopo"
@@ -301,7 +301,7 @@ export function sancaoVigente(sancao: SancaoAdministrativa, hoje: Date): boolean
  * e cada um desses três vem da fonte: nada é estimado nem interpolado. Sem
  * `valorTotal`, o card diz só que a declaração existe, com o link.
  */
-export interface DestaquePatrimonio {
+interface DestaquePatrimonio {
   ano: number
   valorTotal: number | null
   fonteUrl: string | null

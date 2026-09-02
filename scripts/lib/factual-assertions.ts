@@ -1,7 +1,7 @@
 import { sanitizeNullablePtBrText } from "../../src/lib/ptbr-text"
 import type { CandidatePublicSnapshot } from "./audit-types"
 
-export type AssertionCohort =
+type AssertionCohort =
   | "presidenciaveis"
   | "governadores-prioritarios"
   | "governadores"
@@ -11,7 +11,7 @@ export type AssertionCohort =
   | "alto-trafego"
   | "alto-trafego-editorial"
 
-export type AssertionConfidence = "curated" | "mirrored"
+type AssertionConfidence = "curated" | "mirrored"
 
 export interface CandidateAssertion {
   slug: string

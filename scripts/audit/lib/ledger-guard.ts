@@ -39,7 +39,7 @@ export const RETIDAS_PADRAO = [
   "20260807053000",
 ] as const
 
-export interface Violacao {
+interface Violacao {
   regra: "R1" | "R2"
   versao: string
   /** Nome do arquivo, quando a violação é de um arquivo local. */

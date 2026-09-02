@@ -11,7 +11,7 @@ const HEADERS = {
   "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)",
 }
 
-export interface SparqlBinding {
+interface SparqlBinding {
   item?: { value: string }
   instagram?: { value: string }
   twitter?: { value: string }

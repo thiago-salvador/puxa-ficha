@@ -620,7 +620,7 @@ export async function ingestVotos(
   return { persistidos, erros, avisos }
 }
 
-export interface ProjetosIngestOutcome {
+interface ProjetosIngestOutcome {
   /** Quantas a fonte declarou para a consulta de autoria. `null` = fonte nao disse. */
   declarado: number | null
   /** Quantas linhas o laco tentou gravar. */

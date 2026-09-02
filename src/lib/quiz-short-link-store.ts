@@ -16,7 +16,7 @@ interface QuizShortLinkRecord {
   expires_at: string
 }
 
-export type QuizShortLinkInsertResult = "inserted" | "duplicate" | "quota_exceeded"
+type QuizShortLinkInsertResult = "inserted" | "duplicate" | "quota_exceeded"
 
 interface QuizShortLinkStore {
   tryInsertLink(

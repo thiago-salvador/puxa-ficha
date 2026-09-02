@@ -7,7 +7,7 @@ import {
 } from "@/lib/party-switches"
 import { stripAccents } from "@/lib/strip-accents"
 
-export interface PartyTimelineContinuityBrokenLink {
+interface PartyTimelineContinuityBrokenLink {
   /** Índice da row “destino” na ordem cronológica crescente (a segunda transição da dupla). */
   indexTo: number
   from: Pick<MudancaPartido, "partido_anterior" | "partido_novo" | "ano" | "data_mudanca" | "id">

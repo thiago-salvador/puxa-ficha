@@ -4,14 +4,14 @@
  */
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http"
 
-export interface PatchRequest {
+interface PatchRequest {
   table: string
   filterField: string
   filterValue: string
   body: Record<string, unknown>
 }
 
-export interface PostRequest {
+interface PostRequest {
   table: string
   rows: Record<string, unknown>[]
 }

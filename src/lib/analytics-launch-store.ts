@@ -30,7 +30,7 @@ function isMissingIpHashColumn(error: { code?: string; message?: string } | null
   return message.includes("ip_hash") && (message.includes("column") || message.includes("schema cache"))
 }
 
-export type AnalyticsIpHashCount =
+type AnalyticsIpHashCount =
   | { status: "ok"; count: number }
   | { status: "coluna_ausente" }
 

@@ -1,9 +1,6 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
-import {
-  getCrossSiteWriteBlockReason,
-  type CrossSiteWriteBlockReason,
-} from "@/lib/cross-site-write-guard"
+import { getCrossSiteWriteBlockReason } from "@/lib/cross-site-write-guard"
 
 type AlertsApiExitLogger = (
   route: string,
@@ -11,8 +8,6 @@ type AlertsApiExitLogger = (
   reason: string,
   detail?: Record<string, unknown>,
 ) => void
-
-export type AlertsCsrfBlockReason = CrossSiteWriteBlockReason
 
 export function rejectCrossSiteAlertsMutation(
   req: NextRequest,

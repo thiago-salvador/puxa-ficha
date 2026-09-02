@@ -16,7 +16,7 @@ export type GastoExecutivoUgResumo = {
   estabelecimento: SigiloStatus
 }
 
-export type GastoExecutivoMesResumo = {
+type GastoExecutivoMesResumo = {
   id: string
   mes_extrato: string
   valor_total: number

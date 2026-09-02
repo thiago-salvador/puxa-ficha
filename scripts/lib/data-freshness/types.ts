@@ -5,7 +5,7 @@ export type FreshnessStatus =
   | "review_required"
   | "technical_debt"
 
-export type RefreshMode = "scheduled" | "manual" | "versioned_review" | "disabled"
+type RefreshMode = "scheduled" | "manual" | "versioned_review" | "disabled"
 
 export interface FreshnessSource {
   source_id: string

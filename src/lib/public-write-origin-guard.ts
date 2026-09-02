@@ -1,13 +1,10 @@
 import { NextResponse } from "next/server"
 import {
   getCrossSiteWriteBlockReason,
-  type CrossSiteWriteBlockReason,
   type CrossSiteWriteGuardOptions,
 } from "@/lib/cross-site-write-guard"
 
 type HeadersLike = Pick<Headers, "get">
-
-export type PublicWriteOriginBlockReason = CrossSiteWriteBlockReason
 
 interface PublicWriteRequestLike {
   url: string

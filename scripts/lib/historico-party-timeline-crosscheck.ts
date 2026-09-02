@@ -12,7 +12,7 @@ import { canonicalCargo } from "./cargo-utils"
 import { resolveHistoricoRowProvenance } from "../../src/lib/historico-provenance"
 import { canonicalPartiesEquivalent, resolveCanonicalParty } from "./party-canonical"
 
-export type PartyHistoricoCrossSeverity = "media" | "baixa"
+type PartyHistoricoCrossSeverity = "media" | "baixa"
 
 export interface PartyHistoricoCrossFinding {
   code:

@@ -20,7 +20,7 @@ export interface PerfilB2 {
   proposals: PropostaB2[]
 }
 
-export interface RegistroTse {
+interface RegistroTse {
   sq_candidato?: string | null
   role?: string | null
   uf?: string | null

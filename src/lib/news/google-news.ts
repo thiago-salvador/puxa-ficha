@@ -9,7 +9,7 @@
  * o mesmo codigo roda no script tsx e dentro da function da Vercel.
  */
 
-export interface GoogleNewsItem {
+interface GoogleNewsItem {
   titulo: string
   fonte: string
   url: string

@@ -17,7 +17,6 @@ export {
   DOADOR_REVERSE_DISCLAIMER,
   DOADOR_REVERSE_MIN_QUERY_LENGTH,
   DOADOR_REVERSE_PAGE_SIZE,
-  type DoadorReverseFinanciamentoRow,
   type DoadorReverseSearchResult,
 } from "@/lib/doador-reverse-shared"
 

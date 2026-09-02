@@ -1,10 +1,10 @@
-export type ProgramaGovernoRevisaoEvidencia = {
+type ProgramaGovernoRevisaoEvidencia = {
   documentoId?: string
   pagina: number
   trecho: string
 }
 
-export type ProgramaGovernoRevisaoResumo = {
+type ProgramaGovernoRevisaoResumo = {
   texto: string
   frases: Array<{ texto: string; evidencias: ProgramaGovernoRevisaoEvidencia[] }>
   temas: Array<{ id: string; titulo: string; descricao: string; evidencias: ProgramaGovernoRevisaoEvidencia[] }>

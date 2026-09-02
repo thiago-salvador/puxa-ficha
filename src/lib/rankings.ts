@@ -9,10 +9,10 @@ export const RANKING_CARGOS = ["Presidente", "Governador"] as const
 export type RankingCargo = (typeof RANKING_CARGOS)[number]
 export type RankingSortOrder = "desc" | "asc"
 export type RankingMetricUnit = "currency" | "count"
-export type RankingQueryType = "comparador-field" | "aggregate-table"
+type RankingQueryType = "comparador-field" | "aggregate-table"
 export type RankingSourceField = "mudancas_partido" | "patrimonio_declarado"
-export type RankingTableName = "gastos_parlamentares"
-export type RankingAggregateField = "total_gasto"
+type RankingTableName = "gastos_parlamentares"
+type RankingAggregateField = "total_gasto"
 
 export interface RankingDefinition {
   slug: string

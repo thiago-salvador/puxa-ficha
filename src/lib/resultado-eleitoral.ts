@@ -37,7 +37,7 @@ export type ResultadoEleitoral =
   | "desconhecido"
 
 /** Situação do registro da candidatura, eixo independente da totalização. */
-export type SituacaoRegistro = "indeferido" | "inapto" | "cancelado" | null
+type SituacaoRegistro = "indeferido" | "inapto" | "cancelado" | null
 
 export interface ClassificacaoEleitoral {
   resultado: ResultadoEleitoral

@@ -19,7 +19,7 @@ export const DEFAULT_ANOS_DINHEIRO: readonly number[] = [
   2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024,
 ]
 
-export type SqExceptionReason =
+type SqExceptionReason =
   | "homonym-false-positive"
   | "no-bens-at-source"
   | "no-receita-at-source"
@@ -171,22 +171,6 @@ export interface YearMoneyCoverageRow {
   /** Lista completa de exceções aplicáveis no par `(slug, ano)` — pode conter
    * múltiplas razões (ex.: `no-bens-at-source` + `no-receita-at-source`). */
   exceptions: Array<{ reason: SqExceptionReason; detail: string }>
-}
-
-export interface CandidateMoneyCoverageSummary {
-  slug: string
-  cargo_disputado: string
-  estado: string | null
-  candidato_id: string | null
-  eligible_years: number[]
-  patrimonio_years_in_db: number[]
-  financiamento_years_in_db: number[]
-  /** Linhas ano a ano (só anos elegíveis). */
-  years: YearMoneyCoverageRow[]
-  /** Contagens por estado — patrimônio. */
-  patrimonio_state_counts: Record<PatrimonioCoverageState, number>
-  /** Contagens por estado — financiamento. */
-  financiamento_state_counts: Record<FinanciamentoCoverageState, number>
 }
 
 export function buildYearRowsForCandidate(args: {

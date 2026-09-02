@@ -52,7 +52,7 @@ import { readFileSync, readdirSync, statSync } from "node:fs"
 import { join, relative, sep } from "node:path"
 
 export const VERBOS_DE_ESCRITA = ["insert", "upsert", "update", "delete"] as const
-export type VerboDeEscrita = (typeof VERBOS_DE_ESCRITA)[number]
+type VerboDeEscrita = (typeof VERBOS_DE_ESCRITA)[number]
 
 /** Nome do helper. Escrita dentro da chamada dele é escrita auditada. */
 export const HELPER = "escreverAuditado"
@@ -87,7 +87,7 @@ export const TABELAS_DE_ESTADO_DE_FERRAMENTA: readonly IsencaoDeTabela[] = [
  * Isenção reconhecida, com o motivo declarado. `null` significa escrita em
  * produção de verdade.
  */
-export type Isencao =
+type Isencao =
   | "trilha"
   | "estado-de-ferramenta"
   | "tabela-temporaria"
@@ -375,7 +375,7 @@ export interface OpcoesVarredura {
 // mesma lista sem importar `node:test`.
 // ---------------------------------------------------------------------------
 
-export interface ExcecaoDeclarada {
+interface ExcecaoDeclarada {
   /** Caminho relativo a `scripts/`. */
   arquivo: string
   motivo: string
@@ -560,7 +560,7 @@ export const RECORTES_AUDITADOS: readonly RecorteAuditado[] = [
 // ---------------------------------------------------------------------------
 
 /** Arquivo que escreve em produção sem helper, com o veredito da política. */
-export interface ArquivoAcusado {
+interface ArquivoAcusado {
   /** Caminho a partir da raiz do repositório. */
   arquivo: string
   sitios: number

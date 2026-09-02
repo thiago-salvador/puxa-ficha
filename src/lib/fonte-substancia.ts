@@ -31,7 +31,7 @@
 /** Veredito de substância de um corpo de resposta já baixado. */
 import { stripAccents } from "@/lib/strip-accents"
 
-export type SubstanciaVeredito = "com_conteudo" | "sem_substancia" | "indisponivel"
+type SubstanciaVeredito = "com_conteudo" | "sem_substancia" | "indisponivel"
 
 export interface SubstanciaAnalise {
   veredito: SubstanciaVeredito

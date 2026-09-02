@@ -21,7 +21,7 @@ import { historicoCanonKey } from "@/lib/historico-display"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import type { Financiamento, HistoricoPolitico } from "@/lib/types"
 
-export type FinanciamentoPleitoPublicResolution = "unique" | "deduped" | "no_match" | "ambiguous"
+type FinanciamentoPleitoPublicResolution = "unique" | "deduped" | "no_match" | "ambiguous"
 
 export type FinanciamentoPleitoPublicLabelResult = {
   /** Texto único para overview, aba Dinheiro e timeline. */

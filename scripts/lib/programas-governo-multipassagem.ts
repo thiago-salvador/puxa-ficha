@@ -7,7 +7,7 @@ import {
 
 export { construirPromptFinal }
 
-export type ProgramaGovernoPaginaEntrada = {
+type ProgramaGovernoPaginaEntrada = {
   pagina: number
   origem: string
   texto: string
@@ -24,7 +24,7 @@ export type ProgramaGovernoPassagemPlano = {
   bytes: number
 }
 
-export type ProgramaGovernoEvidenciaMultipassagem = {
+type ProgramaGovernoEvidenciaMultipassagem = {
   documentoId: string
   pagina: number
   trecho: string
@@ -34,12 +34,6 @@ export type ProgramaGovernoFato = {
   id: string
   texto: string
   evidencias: ProgramaGovernoEvidenciaMultipassagem[]
-}
-
-export type ProgramaGovernoMultiPassagemResultado = {
-  passagens: ProgramaGovernoPassagemPlano[]
-  fatosSelecionados: ProgramaGovernoFato[]
-  fingerprint: string
 }
 
 export const PROGRAMA_GOVERNO_MULTIPASSAGEM_LIMITE_PADRAO_BYTES = 180_000

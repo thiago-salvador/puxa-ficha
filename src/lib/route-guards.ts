@@ -1,4 +1,4 @@
-export type RouteGuardMatchMode = "exact-or-subpath" | "subpath-only"
+type RouteGuardMatchMode = "exact-or-subpath" | "subpath-only"
 
 export type RouteGuardDefinition = {
   id: "preview-access" | "internal-access" | "candidate-slug" | "ranking-slug" | "uf-slug"

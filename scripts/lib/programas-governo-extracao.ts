@@ -16,7 +16,7 @@ const OFFICIAL_TSE_HOSTS = new Set(["cdn.tse.jus.br", "dadosabertos.tse.jus.br",
 export const PROGRAMA_GOVERNO_EXTRACTION_VERSION = "programa-governo-extracao-v2" as const
 export const PROGRAMA_GOVERNO_EXTRACTION_METHOD = "pdftotext-pagewise-with-ocr-fallback" as const
 
-export type ProgramaGovernoPaginaMapeada = {
+type ProgramaGovernoPaginaMapeada = {
   pagina: number
   origem: ProgramaGovernoSecao["origem"]
   textSha256: string

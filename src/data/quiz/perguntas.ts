@@ -15,11 +15,11 @@ export type RespostaLikert =
   | "discordo_parcial"
   | "discordo_total"
 
-export type DirecaoVoto = "concordo=sim" | "concordo=nao"
+type DirecaoVoto = "concordo=sim" | "concordo=nao"
 
-export type DirecaoEconomico = "concordo=mercado" | "concordo=estado"
+type DirecaoEconomico = "concordo=mercado" | "concordo=estado"
 
-export type DirecaoSocial = "concordo=progressista" | "concordo=conservador"
+type DirecaoSocial = "concordo=progressista" | "concordo=conservador"
 
 export interface QuizPergunta {
   id: string

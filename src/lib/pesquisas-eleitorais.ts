@@ -10,8 +10,8 @@ export type EstadoPesquisa =
   | "erro"
   | "sem_pesquisa_qualificada"
 
-export type StatusFonte = "aprovado" | "condicional" | "excluído"
-export type StatusVinculo = "exact_alias" | "not_candidate" | "indeterminado"
+type StatusFonte = "aprovado" | "condicional" | "excluído"
+type StatusVinculo = "exact_alias" | "not_candidate" | "indeterminado"
 
 export interface EscopoAlias {
   year: number
@@ -35,7 +35,7 @@ export type ResolucaoAlias =
   | { status: "exact_alias"; candidateSlug: string }
   | { status: "indeterminado"; candidateSlug: null }
 
-export interface ResultadoPesquisaEleitoral {
+interface ResultadoPesquisaEleitoral {
   rawLabel: string
   candidateSlug: string | null
   matchStatus: StatusVinculo
@@ -43,7 +43,7 @@ export interface ResultadoPesquisaEleitoral {
   status: EstadoPesquisa
 }
 
-export interface ProvenienciaPesquisaEleitoral {
+interface ProvenienciaPesquisaEleitoral {
   resultUrl: string
   supportingUrls: string[]
   registrationUrl: string | null
@@ -59,7 +59,7 @@ export interface ProvenienciaPesquisaEleitoral {
   }
 }
 
-export interface CenarioPesquisaEleitoral {
+interface CenarioPesquisaEleitoral {
   id: string
   turn: 1 | 2
   geography: string
@@ -69,7 +69,7 @@ export interface CenarioPesquisaEleitoral {
   resultados: ResultadoPesquisaEleitoral[]
 }
 
-export interface PesquisaEleitoral {
+interface PesquisaEleitoral {
   id: string
   sourceId: string
   sourceStatus: StatusFonte

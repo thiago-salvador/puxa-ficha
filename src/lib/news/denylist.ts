@@ -59,7 +59,7 @@
  */
 import { stripAccents } from "@/lib/strip-accents"
 
-export type NewsDenylistRegra =
+type NewsDenylistRegra =
   | { readonly tipo: "url"; readonly url: string; readonly motivo: string }
   | { readonly tipo: "fonte"; readonly fonte: string; readonly motivo: string }
   | {

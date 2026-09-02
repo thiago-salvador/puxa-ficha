@@ -27,9 +27,8 @@ const PROGRAMA_GOVERNO_UFS = [
 ] as const
 
 export type ProgramaGovernoEstadoCanonico = (typeof PROGRAMA_GOVERNO_ESTADOS_CANONICOS)[number]
-export type ProgramaGovernoEstadoLegado = (typeof PROGRAMA_GOVERNO_ESTADOS_LEGADOS)[number]
 export type ProgramaGovernoEstado = (typeof PROGRAMA_GOVERNO_ESTADOS)[number]
-export type ProgramaGovernoCargo = (typeof PROGRAMA_GOVERNO_CARGOS)[number]
+type ProgramaGovernoCargo = (typeof PROGRAMA_GOVERNO_CARGOS)[number]
 export type ProgramaGovernoUf = "BR" | (typeof PROGRAMA_GOVERNO_UFS)[number]
 
 export type ProgramaGovernoIdentidade = {
@@ -50,14 +49,14 @@ export type ProgramaGovernoEvidencia = {
   trecho: string
 }
 
-export type ProgramaGovernoTema = {
+type ProgramaGovernoTema = {
   id: string
   titulo: string
   descricao: string
   evidencias: ProgramaGovernoEvidencia[]
 }
 
-export type ProgramaGovernoFrase = {
+type ProgramaGovernoFrase = {
   texto: string
   evidencias: ProgramaGovernoEvidencia[]
 }
@@ -142,7 +141,7 @@ export type ProgramaGovernoJulgamento = {
   }>
 }
 
-export type ProgramaGovernoRevisao = {
+type ProgramaGovernoRevisao = {
   reviewer: string
   reviewedAt: string
   sourceSha256: string
@@ -183,7 +182,7 @@ export type ProgramaGovernoFontePublica = Pick<
   consultadoEm: string
 }
 
-export type ProgramaGovernoDocumentoFontePublica = Omit<ProgramaGovernoDocumentoFonte, "coletadoEm"> & {
+type ProgramaGovernoDocumentoFontePublica = Omit<ProgramaGovernoDocumentoFonte, "coletadoEm"> & {
   consultadoEm: string
 }
 

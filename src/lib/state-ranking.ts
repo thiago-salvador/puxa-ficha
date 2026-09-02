@@ -5,7 +5,7 @@ import {
   ordinalMasculino,
 } from "@/lib/state-indicator-metadata"
 
-export interface StateIndicatorRank {
+interface StateIndicatorRank {
   indicador: string
   valor: number
   ano: number
