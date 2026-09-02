@@ -43,7 +43,7 @@ export function PartyCombobox({
 
       <Combobox.Portal>
         <Combobox.Positioner sideOffset={8}>
-          <Combobox.Popup className="z-[75] w-[var(--anchor-width)] overflow-hidden rounded-[18px] border border-border bg-background shadow-xl outline-none">
+          <Combobox.Popup className="z-popover w-[var(--anchor-width)] overflow-hidden rounded-[18px] border border-border bg-background shadow-xl outline-none">
             <Combobox.Empty className="px-4 py-3 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
               Nenhum partido encontrado.
             </Combobox.Empty>

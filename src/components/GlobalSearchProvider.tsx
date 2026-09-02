@@ -461,8 +461,8 @@ export function GlobalSearchProvider({
 
       <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Portal>
-          <Dialog.Backdrop className="fixed inset-0 z-[80] bg-black/45 backdrop-blur-[2px]" />
-          <div className="fixed inset-0 z-[81] flex items-start justify-center px-4 pt-20 sm:px-6 sm:pt-24">
+          <Dialog.Backdrop className="fixed inset-0 z-modal bg-black/45 backdrop-blur-[2px]" />
+          <div className="fixed inset-0 z-modal flex items-start justify-center px-4 pt-20 sm:px-6 sm:pt-24">
             <Dialog.Popup className="w-full max-w-2xl rounded-[24px] border border-foreground/10 bg-background shadow-2xl outline-none">
               <div className="border-b border-border/60 px-4 py-4 sm:px-5">
                 <div className="flex items-center gap-3">

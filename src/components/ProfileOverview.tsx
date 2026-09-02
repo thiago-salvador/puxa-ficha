@@ -436,17 +436,28 @@ function FinancingTeaserSegments({
   total: number
 }) {
   if (segments.length === 0) return null
+  // Uma origem só rende um anel 100% cinza rotulado "Total", com o valor que
+  // já está no título do card: o donut só informa quando há proporção.
+  const showDonut = segments.length >= 2
   return (
-    <div className="mt-3 grid grid-cols-1 items-center gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-5">
-      <div className="flex justify-center sm:justify-start">
-        <DonutChart
-          segments={segments}
-          centerLabel="Total"
-          size={112}
-          strokeWidth={16}
-          showLegend={false}
-        />
-      </div>
+    <div
+      className={
+        showDonut
+          ? "mt-3 grid grid-cols-1 items-center gap-4 sm:grid-cols-[112px_minmax(0,1fr)] sm:gap-5"
+          : "mt-3"
+      }
+    >
+      {showDonut ? (
+        <div className="flex justify-center sm:justify-start">
+          <DonutChart
+            segments={segments}
+            centerLabel="Total"
+            size={112}
+            strokeWidth={16}
+            showLegend={false}
+          />
+        </div>
+      ) : null}
       <div className="min-w-0 space-y-2">
         {segments.map((s) => (
           <div key={s.label} className="flex items-start gap-2">

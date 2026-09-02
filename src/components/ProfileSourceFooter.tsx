@@ -40,7 +40,7 @@ export function ProfileSourceFooter({
       </p>
       <CandidatePhotoCredit credit={ficha.foto_credito} variant="footer" />
       <p
-        className="mt-2 max-w-3xl text-[length:var(--text-eyebrow)] leading-relaxed text-muted-foreground"
+        className="mt-2 max-w-prose text-[length:var(--text-caption)] leading-relaxed text-muted-foreground"
         data-pf-profile-legal-disclaimer=""
       >
         Dados públicos sobre candidato mapeado para 2026. Não é recomendação de voto.

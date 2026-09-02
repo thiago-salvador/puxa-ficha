@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+/*
+  O site não tem tema escuro. Sem esta linha, o Tailwind liga `dark:` pelo
+  `prefers-color-scheme` do sistema, e os primitivos (button, input, tabs,
+  badge) trocavam de cor no modo escuro do aparelho sem o resto da página
+  acompanhar. Com a variante por classe, `dark:` só vale dentro de `.dark`,
+  que nenhuma página aplica.
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Escala de z-index. Antes eram 13 valores soltos (10, 20, 30, 50, 60, 65,
+  70, 75, 80, 81, 200) sem relação declarada entre eles. Cada camada tem um
+  nome e um lugar; a ordem entre irmãos na mesma camada é a ordem do DOM.
+*/
+@utility z-header {
+  z-index: 60;
+}
+@utility z-overlay {
+  z-index: 65;
+}
+@utility z-floating {
+  z-index: 70;
+}
+@utility z-popover {
+  z-index: 75;
+}
+@utility z-modal {
+  z-index: 80;
+}
+@utility z-skip-link {
+  z-index: 200;
+}
+
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-anton), var(--font-inter), ui-sans-serif, sans-serif;
