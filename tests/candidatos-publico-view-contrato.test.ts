@@ -352,6 +352,10 @@ describe("contrato da view candidatos_publico", () => {
       // REVOKE de DML de anon e authenticated em candidatos_identidade_tier1_auditavel
       // e financiamento_publico. Não toca em candidatos_publico nem em seus grants.
       "20260902200000_revoke_dml_views_publicas.sql",
+      // Vocabulário de situacao_candidatura: UPDATE de valores em candidatos e o
+      // CHECK na tabela. Não redefinem candidatos_publico nem seus grants.
+      "20260903100000_vocabulario_situacao_candidatura.sql",
+      "20260903100100_vocabulario_situacao_candidatura_check.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

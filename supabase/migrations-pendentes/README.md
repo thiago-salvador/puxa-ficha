@@ -4,7 +4,22 @@ Este diretório NÃO é lido por nenhum runner. O que está aqui foi escrito,
 revisado e preservado, mas não passou no `replay-migrations.sh --gate` e por
 isso não pode entrar em `supabase/migrations/` sem travar o CI inteiro.
 
-## vocabulário de `situacao_candidatura` (16/08/2026)
+Hoje o diretório está vazio de migrations. A seção abaixo fica como histórico
+do único par que passou por aqui.
+
+## vocabulário de `situacao_candidatura` (16/08/2026) — RETOMADO em 02/09/2026
+
+O par voltou para `supabase/migrations/` com timestamps novos, porque o ledger
+já tinha passado dos originais: `20260903100000_vocabulario_situacao_candidatura.sql`
+(dado) e `20260903100100_vocabulario_situacao_candidatura_check.sql` (CHECK).
+O teste voltou como `tests/situacao-candidatura-dominio.test.ts`, a allowlist
+para `scripts/audit/allowlist-vocabulario-situacao-20260816.json` e o recorte
+`vocabulario-situacao-20260816` para `scripts/audit/recortes.json`. As duas
+grafias novas do diagnóstico de 02/09 estão mapeadas (statements 5 e 6) e o
+ingestor do TSE passou a emitir só o vocabulário. Aplicação em produção segue
+o procedimento autorizado, como toda migration.
+
+O texto abaixo descreve o estado de 17/08 a 02/09 e não foi reescrito.
 
 Duas migrations que fecham o vocabulário do campo `situacao_candidatura` em três
 valores mais NULL, com CHECK constraint. O diagnóstico que as motivou continua

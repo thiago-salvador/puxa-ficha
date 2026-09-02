@@ -431,6 +431,13 @@
       "ate": "20260901180000",
       "allowlist": "scripts/audit/allowlist-issue-202-tcu-fontes-20260901.json",
       "divida": null
+    },
+    {
+      "nome": "vocabulario-situacao-20260816",
+      "desde": "20260903100000",
+      "ate": "20260903100100",
+      "allowlist": "scripts/audit/allowlist-vocabulario-situacao-20260816.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

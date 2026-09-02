@@ -288,7 +288,11 @@ main() {
       # primeiro teste deste gate pegou (lista vazia = tudo "sumiu").
       local manifesto_rc lista_falhas_tmp
       lista_falhas_tmp="$(mktemp)"
-      printf '%s\n' ${R_FALHAS[@]+"${R_FALHAS[@]}"} | sed 's/ ::.*//' > "$lista_falhas_tmp"
+      # A lista vai INTEIRA ("arquivo :: motivo"): ate 02/09/2026 o sed abaixo
+      # cortava o motivo antes de o python ler, e o gate reprovava sem dizer
+      # por que (o defeito descrito em supabase/migrations-pendentes/README.md).
+      # Quem separa nome de motivo e o python, que ja fazia isso.
+      printf '%s\n' ${R_FALHAS[@]+"${R_FALHAS[@]}"} > "$lista_falhas_tmp"
       # O total do diretorio entra como ARGUMENTO para o invariante de
       # conservacao abaixo. Contado aqui, no shell, sobre o mesmo diretorio que o
       # replay acabou de percorrer.
@@ -299,7 +303,8 @@ import json, sys
 manifesto = json.load(open(sys.argv[1]))
 aplicadas = int(sys.argv[2])
 esperadas = set(manifesto["falhas"])
-reais = {l.strip() for l in open(sys.argv[3]) if l.strip()}
+linhas_brutas = [l.strip() for l in open(sys.argv[3]) if l.strip()]
+reais = {l.partition(" :: ")[0].strip() for l in linhas_brutas}
 total = int(sys.argv[4])
 novas = sorted(reais - esperadas)
 sumiram = sorted(esperadas - reais)
@@ -323,7 +328,7 @@ else:
     print(f"GATE: conservacao OK: {aplicadas} + {len(reais)} = {total} migrations")
 # Falha repetida na lista bruta indicaria arquivo replayado duas vezes, e a
 # deduplicacao acima esconderia isso da soma.
-brutas = [l.strip() for l in open(sys.argv[3]) if l.strip()]
+brutas = [l.partition(" :: ")[0].strip() for l in linhas_brutas]
 if len(brutas) != len(reais):
     print(f"GATE: {len(brutas) - len(reais)} falha(s) repetida(s) na lista bruta do replay")
     ok = False
@@ -331,7 +336,7 @@ if len(brutas) != len(reais):
 # imprimia so o nome. Quem lia o log via QUE reprovou e nao POR QUE, e tinha
 # que reproduzir o replay inteiro para descobrir. O erro ja estava na mao.
 motivo_de = {}
-for linha in brutas:
+for linha in linhas_brutas:
     nome, _, erro = linha.partition(" :: ")
     if erro:
         motivo_de.setdefault(nome.strip(), erro.strip())
