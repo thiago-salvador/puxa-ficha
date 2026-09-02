@@ -87,6 +87,35 @@ test.describe("Acessibilidade automatizada", () => {
     })
   }
 
+  test("open navigation menu has no moderate, serious or critical axe violations", async ({ page }) => {
+    // O painel do menu só existe visível depois do clique; sem este caso, o
+    // axe nunca via o role="dialog" (que ficava num <nav>, papel não permitido).
+    await page.goto("/", { waitUntil: "domcontentloaded" })
+    await page.getByRole("button", { name: "Abrir menu" }).click()
+    await expect(page.getByRole("dialog", { name: "Menu principal" })).toBeVisible()
+    // A entrada do menu é uma timeline GSAP de ~2s (overlay, painéis, links e
+    // rodapé com autoAlpha). Enquanto ela roda, o axe mede o texto ainda
+    // translúcido e acusa color-contrast falso. Espera todo o painel opaco.
+    await page
+      .waitForFunction(
+        () =>
+          Array.from(document.querySelectorAll<HTMLElement>("#primary-navigation-panel *")).every(
+            (el) => getComputedStyle(el).opacity === "1",
+          ),
+        undefined,
+        { timeout: 10_000 },
+      )
+      .catch(() => undefined)
+
+    const results = await new AxeBuilder({ page }).analyze()
+    const blockingViolations = results.violations.filter((violation) =>
+      violation.impact === "moderate" ||
+      violation.impact === "serious" ||
+      violation.impact === "critical"
+    )
+    expect(blockingViolations, formatViolations(blockingViolations)).toEqual([])
+  })
+
   test("alerts-manage error state has no moderate, serious or critical axe violations", async ({ page }) => {
     await page.route("**/api/alerts/me", async (route) => {
       await route.fulfill({

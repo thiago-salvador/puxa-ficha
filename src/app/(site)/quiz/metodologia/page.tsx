@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     title,
     description,
     url: "https://puxaficha.com.br/quiz/metodologia",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Metodologia do quiz | Puxa Ficha",
+      },
+    ],
   },
   twitter: buildTwitterMetadata({ title, description }),
 }

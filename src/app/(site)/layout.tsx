@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Puxa Ficha | Candidatos mapeados 2026",
   description:
     "Consulta pública sobre candidatos mapeados para 2026, com fichas, comparador e pontos de atenção baseados em fontes públicas disponíveis.",
-  alternates: {
-    canonical: "/",
-  },
+  // Sem canonical aqui: o layout vale para todas as rotas do site, e páginas
+  // sem canonical próprio (alertas, governadores/[uf], preview) herdavam "/",
+  // que é o canonical da home. A home declara o dela em page.tsx.
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

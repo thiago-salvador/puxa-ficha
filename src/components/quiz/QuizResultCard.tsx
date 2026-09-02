@@ -39,7 +39,7 @@ export function QuizResultCard({ candidato, score }: QuizResultCardProps) {
       >
         <CandidatePhoto
           src={candidato.foto_url}
-          alt={candidato.nome_urna}
+          alt=""
           name={candidato.nome_urna}
           width={64}
           height={64}

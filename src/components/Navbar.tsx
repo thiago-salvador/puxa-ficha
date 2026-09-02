@@ -24,7 +24,7 @@ export function Navbar() {
   const modKLabel = useModKShortcutLabel()
   const containerRef = useRef<HTMLDivElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
-  const panelRef = useRef<HTMLElement>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const navLinkRefs = useRef<Array<HTMLAnchorElement | null>>([])
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -355,7 +355,12 @@ export function Navbar() {
           style={{ visibility: "hidden", opacity: 0 }}
         />
 
-        <nav
+        {/*
+          O painel é um diálogo modal (role="dialog" só é permitido em elemento
+          genérico, não em <nav>: axe aria-allowed-role). A landmark de
+          navegação fica no <nav> interno, que envolve os links.
+        */}
+        <div
           id="primary-navigation-panel"
           ref={panelRef}
           className="menu-content absolute inset-y-0 right-0 w-full sm:w-[560px]"
@@ -369,7 +374,7 @@ export function Navbar() {
             <div className="backdrop-layer absolute inset-0 bg-card" />
           </div>
 
-          <div className="relative flex h-full flex-col px-8 pt-16 pb-6 sm:px-12 sm:pt-20 sm:pb-10 md:px-16">
+          <nav aria-label="Menu principal" className="relative flex h-full flex-col px-8 pt-16 pb-6 sm:px-12 sm:pt-20 sm:pb-10 md:px-16">
             {/* Close button inside menu panel */}
             <button
               ref={closeButtonRef}
@@ -434,8 +439,8 @@ export function Navbar() {
                 TSE &middot; Câmara &middot; Senado
               </p>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </div>
   )

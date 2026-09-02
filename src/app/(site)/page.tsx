@@ -4,9 +4,14 @@ import {
   mergeSourceMessages,
   mergeSourceStatuses,
 } from "@/lib/api"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { Suspense, lazy } from "react"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+}
 
 const ComparadorPanel = lazy(() =>
   import("@/components/ComparadorPanel").then((m) => ({ default: m.ComparadorPanel })),

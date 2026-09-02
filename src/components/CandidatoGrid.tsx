@@ -66,7 +66,7 @@ function CandidatoListItem({
       {candidato.foto_url && (
         <CandidatePhoto
           src={candidato.foto_url}
-          alt={candidato.nome_urna}
+          alt=""
           name={candidato.nome_urna}
           width={56}
           height={56}
