@@ -11,15 +11,15 @@ import { classificarMigration } from "../scripts/audit/lib/migrations-classifica
  * Contrato do vocabulario de `situacao_candidatura`.
  *
  * O campo era TEXT livre e acumulou onze grafias para tres sentidos. A
- * migration 20260816230000 fechou o dominio no banco; este teste existe para
+ * migration 20260903100000 fechou o dominio no banco; este teste existe para
  * que o lado TypeScript e o CHECK nao possam divergir em silencio, que e
  * exatamente como as onze grafias apareceram.
  */
 
 const MIGRATIONS = join(process.cwd(), "supabase", "migrations")
 /** Par 1: so dado. Par 2: so schema. A separacao e exigida pelo gate de classificacao. */
-const DADOS = "20260816230000_vocabulario_situacao_candidatura.sql"
-const CHECK = "20260816230100_vocabulario_situacao_candidatura_check.sql"
+const DADOS = "20260903100000_vocabulario_situacao_candidatura.sql"
+const CHECK = "20260903100100_vocabulario_situacao_candidatura_check.sql"
 
 function sql(arquivo: string): string {
   return readFileSync(join(MIGRATIONS, arquivo), "utf8")
@@ -130,7 +130,7 @@ describe("dominio de situacao_candidatura", () => {
     // anotacao e escrita invisivel.
     const linhas = statements(DADOS).split("\n")
     const escritas = linhas.filter((l) => /^\s*(INSERT\s+INTO|UPDATE|DELETE\s+FROM)\b/i.test(l))
-    assert.equal(escritas.length, 4, `esperava 4 statements de escrita, achou ${escritas.length}`)
+    assert.equal(escritas.length, 6, `esperava 6 statements de escrita, achou ${escritas.length}`)
     const anotacoes = sql(DADOS).split("\n").filter((l) => /^--\s*@write\b/.test(l.trim()))
     assert.equal(anotacoes.length, escritas.length)
     for (const a of anotacoes) {

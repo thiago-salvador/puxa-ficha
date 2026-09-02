@@ -409,7 +409,11 @@ export const MEDICAO_REPLAY = Object.freeze({
   // local PostgreSQL 17: aplicadas limpo 91, falhas 0, e o hash canonico do
   // pg_dump continua 9d6f4d243684ad5350de4e2f5d61dd8600a01c3f8fbbc2f75646593c4ce9218b
   // (o dump limpo do gate nao carrega ACL de view).
-  schemaReplayTamanho: 91,
+  // 91 -> 92 em 02/09/2026: a 20260903100100 (CHECK do vocabulario de
+  // situacao_candidatura) volta do diretorio de pendentes e entra no replay
+  // de schema. MEDIDO no schema-gate local PostgreSQL 17: aplicadas limpo 92,
+  // falhas 0, hash 502d7ff57ec7ba7d3ec6f77119942f9c6c8ff90589fee8656049b7c34caffd8a.
+  schemaReplayTamanho: 92,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

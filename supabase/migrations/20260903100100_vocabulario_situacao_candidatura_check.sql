@@ -2,7 +2,7 @@
 --
 -- Par 2 de 2, e schema puro: nenhum statement de escrita em tabela de conteudo.
 -- A normalizacao dos dados esta em
--- 20260816230000_vocabulario_situacao_candidatura.sql, que roda ANTES e e onde
+-- 20260903100000_vocabulario_situacao_candidatura.sql, que roda ANTES e e onde
 -- mora a evidencia completa (censo das onze grafias, o `#NE` do pacote do TSE e
 -- o destino de cada valor).
 --

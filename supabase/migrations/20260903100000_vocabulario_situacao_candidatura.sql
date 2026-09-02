@@ -1,7 +1,7 @@
 -- Normaliza o vocabulario de `candidatos.situacao_candidatura`.
 --
 -- Par 1 de 2. Este arquivo so mexe em DADO. O CHECK que fecha o dominio vive em
--- 20260816230100_vocabulario_situacao_candidatura_check.sql, e a separacao e
+-- 20260903100100_vocabulario_situacao_candidatura_check.sql, e a separacao e
 -- obrigatoria: `tests/migrations-classificacao.test.ts` reprova migration que
 -- mistura DDL persistente com dado de ficha no mesmo arquivo. A ordem importa,
 -- e por isso o dado vem primeiro: o CHECK e criado sem `NOT VALID` e so passa
@@ -149,6 +149,46 @@
 -- normalizacao de vocabulario diria ao leitor que o dado foi reapurado hoje,
 -- quando o que mudou foi a redacao. Nao ha trigger em `public.candidatos` que
 -- o atualize sozinho (conferido em 16/08/2026), entao omitir e suficiente.
+--
+-- =====================================================================
+-- ADENDO DE 02/09/2026 (retomada do par, ver supabase/migrations-pendentes/README.md)
+-- =====================================================================
+--
+-- O par ficou retido de 17/08 a 02/09 e o banco andou. Censo remedido em
+-- 02/09/2026, read-only, sobre 328 linhas (212 publicaveis):
+--
+--   registrada, aguardando julgamento                                   163 (163 pub)
+--   pre-candidato                                                        53 (  0 pub)
+--   (NULL)                                                               31 (  0 pub)
+--   aguardando julgamento                                                28 ( 28 pub)
+--   incerto                                                              18 (  3 pub)
+--   pedido de registro no TSE; situacao nao informada no snapshot         17 ( 10 pub)
+--   APTO [2022]                                                           7 (  0 pub)
+--   APTO [2020]                                                           3 (  0 pub)
+--   deferido                                                              3 (  3 pub)
+--   pedido de registro no TSE; codigo oficial -3 (#NE) no snapshot de 27/08/2026
+--                                                                         2 (  2 pub)
+--   renuncia                                                              1 (  0 pub)
+--   desistente                                                            1 (  0 pub)
+--   INAPTO [2022]                                                         1 (  0 pub)
+--
+-- Duas grafias novas, e as duas ja tem casa no vocabulario:
+--
+--   "pedido de registro no TSE; codigo oficial -3 (#NE) no snapshot de 27/08/2026"
+--     gravada pela migration do roster de 27/08 (20260828025037) em rico-pinheiro
+--     e well-macedo. E o mesmo fato `#NE` das tres redacoes acima, com a data do
+--     snapshot embutida no texto. Destino: aguardando julgamento (statement 5).
+--   "renuncia"
+--     gravada em 29/08 (20260829030000) em cleber-rabelo junto com
+--     status = 'removido' e publicavel = false. Mesmo caso de 'desistente':
+--     valor de `status` na coluna errada. Destino: NULL (statement 6).
+--
+-- O ultimo caminho de codigo que gravava texto livre nesta coluna
+-- (scripts/lib/ingest-tse-situacao.ts) passou a emitir so o vocabulario na
+-- mesma PR que devolveu este par. Censo esperado depois desta migration, sobre
+-- as 328 linhas: 213 aguardando julgamento, 53 candidatura declarada, 18
+-- incerto, 44 NULL; publicaveis 206 / 0 / 3. O bloco de conferencia abaixo usa
+-- esses numeros e continua ignorando o censo exato em qualquer outro tamanho.
 BEGIN;
 
 -- ---------------------------------------------------------------------------
@@ -184,6 +224,22 @@ WHERE situacao_candidatura IN ('APTO [2022]', 'APTO [2020]', 'INAPTO [2022]');
 UPDATE public.candidatos
 SET situacao_candidatura = NULL
 WHERE situacao_candidatura = 'desistente' AND status = 'desistente';
+
+-- ---------------------------------------------------------------------------
+-- 5. (02/09/2026) Grafia da migration do roster de 27/08: o mesmo `#NE`, com a
+--    data do snapshot embutida. Mesmo destino das tres redacoes do statement 1.
+-- @write tabela=candidatos ref=vocabulario-situacao-20260816 chave="pedido de registro no TSE; código oficial -3 (#NE) no snapshot de 27/08/2026" campos=situacao_candidatura
+UPDATE public.candidatos
+SET situacao_candidatura = 'aguardando julgamento'
+WHERE situacao_candidatura = 'pedido de registro no TSE; código oficial -3 (#NE) no snapshot de 27/08/2026';
+
+-- ---------------------------------------------------------------------------
+-- 6. (02/09/2026) `renúncia` gravada em 29/08 na coluna errada, com
+--    `status = 'removido'` dizendo o mesmo. Mesmo tratamento de 'desistente'.
+-- @write tabela=candidatos ref=vocabulario-situacao-20260816 chave="renúncia" campos=situacao_candidatura
+UPDATE public.candidatos
+SET situacao_candidatura = NULL
+WHERE situacao_candidatura = 'renúncia' AND status = 'removido';
 
 -- ---------------------------------------------------------------------------
 -- Conferencia.
@@ -250,9 +306,9 @@ BEGIN
     RAISE EXCEPTION 'vocabulario_situacao: % linha(s) com valor aposentado (deferido/pre-candidato)', aposentados;
   END IF;
 
-  -- 5. Censo exato, so na forma medida em producao.
-  IF total <> 296 THEN
-    RAISE NOTICE 'vocabulario_situacao: tabela com % linha(s), diferente das 296 medidas em 16/08/2026; censo exato ignorado', total;
+  -- 5. Censo exato, so na forma medida em producao (remedido em 02/09/2026).
+  IF total <> 328 THEN
+    RAISE NOTICE 'vocabulario_situacao: tabela com % linha(s), diferente das 328 medidas em 02/09/2026; censo exato ignorado', total;
     RETURN;
   END IF;
 
@@ -263,8 +319,8 @@ BEGIN
     INTO n_aguardando, n_declarada, n_incerto, n_nulas
     FROM public.candidatos;
 
-  IF n_aguardando <> 154 OR n_declarada <> 79 OR n_incerto <> 19 OR n_nulas <> 44 THEN
-    RAISE EXCEPTION 'vocabulario_situacao: censo da tabela esperado 154/79/19/44, encontrado %/%/%/%',
+  IF n_aguardando <> 213 OR n_declarada <> 53 OR n_incerto <> 18 OR n_nulas <> 44 THEN
+    RAISE EXCEPTION 'vocabulario_situacao: censo da tabela esperado 213/53/18/44, encontrado %/%/%/%',
       n_aguardando, n_declarada, n_incerto, n_nulas;
   END IF;
 
@@ -275,8 +331,8 @@ BEGIN
     FROM public.candidatos
    WHERE publicavel = true AND status <> 'removido';
 
-  IF pub_aguardando <> 147 OR pub_declarada <> 25 OR pub_incerto <> 3 THEN
-    RAISE EXCEPTION 'vocabulario_situacao: censo publicavel esperado 147/25/3, encontrado %/%/%',
+  IF pub_aguardando <> 206 OR pub_declarada <> 0 OR pub_incerto <> 3 THEN
+    RAISE EXCEPTION 'vocabulario_situacao: censo publicavel esperado 206/0/3, encontrado %/%/%',
       pub_aguardando, pub_declarada, pub_incerto;
   END IF;
 END $$;

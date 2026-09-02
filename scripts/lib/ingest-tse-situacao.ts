@@ -274,11 +274,28 @@ export function buildIngestPayload(
   }
 
   // Fase 14.2: situacao_candidatura so e reescrita quando a linha vem do
-  // pleito corrente. Anos historicos nao tocam esse campo pra preservar a
-  // convencao editorial da coorte 2026 (pre-candidato/incerto, depois
-  // APTO [2026] quando o TSE 2026 publicar em agosto/2026).
-  if (info.situacao && info.ano === pleitoCorrente) {
-    payload.situacao_candidatura = `${info.situacao}${info.detalhe ? ` (${info.detalhe})` : ""} [${info.ano}]`
+  // pleito corrente. Anos historicos nao tocam esse campo.
+  //
+  // 02/09/2026: o campo tem vocabulario fechado (src/lib/situacao-candidatura.ts
+  // e o CHECK candidatos_situacao_candidatura_dominio). Este ingest era o ultimo
+  // caminho que gravava texto livre ("APTO [2026]", "DEFERIDO (COM RECURSO)
+  // [2026]"), e foi assim que as onze grafias nasceram. Agora ele so grava o
+  // valor do dominio que a fonte sustenta: codigo `#NE` (ou vazio) no pleito
+  // corrente, com identidade fechada por SQ, e pedido de registro protocolado
+  // sem julgamento publicado, ou seja `aguardando julgamento`. Qualquer outro
+  // codigo (DEFERIDO, INDEFERIDO, APTO, INAPTO, RENUNCIA...) bloqueia a
+  // persistencia deste candidato ate o vocabulario ganhar o valor numa PR
+  // deliberada. Match por nome nao basta para afirmar que ha pedido de registro.
+  if (info.situacao.trim() && info.ano === pleitoCorrente) {
+    const codigo = info.situacao.trim().toUpperCase()
+    const pendenteSemJulgamento = codigo === "#NE" || codigo === "#NE#" || codigo === "#NULO#"
+    if (!pendenteSemJulgamento) {
+      blockedReasons.push(`situacao-fora-do-vocabulario:${codigo}${info.detalhe ? ` (${info.detalhe})` : ""}`)
+    } else if (info.match_method !== "sq-preloaded") {
+      blockedReasons.push(`situacao-match-fraco:${info.match_method}`)
+    } else if (before?.situacao_candidatura !== "aguardando julgamento") {
+      payload.situacao_candidatura = "aguardando julgamento"
+    }
   }
 
   // Fase 14 closure (invariante 13.7 do spec): naturalidade nunca e gravada
