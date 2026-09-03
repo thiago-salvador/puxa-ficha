@@ -244,12 +244,10 @@ export async function collectTseDependentMonitors(
     || config.laudicerio.canonical_registration_sq !== null
     || config.laudicerio.registrations.length !== 2
     || config.program_control?.expected_cod_tipo !== "5"
-    // Quatro desde 2026-09-03: Eduardo Paes (RJ) saiu porque o pacote oficial
-    // republicado em 2026-09-02 passou a trazer o programa e o registro foi
-    // publicado. Vera Lúcia (CE) fica e o alerta dela é verdadeiro: o pacote de
-    // CE republicado em 2026-09-03T06:49:12Z passou a carregar
-    // CE/2026CE60002553922_01.pdf, então o programa existe e falta ingerir.
-    || config.program_files.length !== 4) {
+    // Três desde 2026-09-03: Eduardo Paes (RJ) e Vera Lúcia (CE) saíram no mesmo
+    // dia porque os pacotes oficiais republicados passaram a trazer os
+    // programas e os dois registros foram publicados.
+    || config.program_files.length !== 3) {
     throw new Error("configuração dos monitores TSE divergiu do contrato")
   }
   const reviewsBySlug = new Map<string, TseDependentProgramReview[]>()

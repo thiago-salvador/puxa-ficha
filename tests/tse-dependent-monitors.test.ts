@@ -35,28 +35,26 @@ function response(payload: unknown, status = 200): Response {
   })
 }
 
-// Quatro fichas desde 2026-09-03: Eduardo Paes (RJ) saiu porque o pacote
-// oficial republicado em 2026-09-02 trouxe o programa e o registro foi
-// publicado. Vera Lúcia (CE) continua na lista com alerta verdadeiro: o pacote
-// de CE republicado em 2026-09-03T06:49:12Z passou a carregar o PDF dela.
-test("configura exatamente duas inscrições de Laudicério e quatro programas sem SQ canônica", () => {
+// Três fichas desde 2026-09-03: Eduardo Paes (RJ) e Vera Lúcia (CE) saíram no
+// mesmo dia porque os pacotes oficiais republicados trouxeram os programas e os
+// dois registros foram publicados.
+test("configura exatamente duas inscrições de Laudicério e três programas sem SQ canônica", () => {
   assert.equal(config.laudicerio.canonical_registration_sq, null)
   assert.deepEqual(config.laudicerio.registrations.map((item) => item.sq_candidato), [
     "110002553937",
     "110002554073",
   ])
-  assert.equal(config.program_files.length, 4)
+  assert.equal(config.program_files.length, 3)
   assert.equal(config.program_control.sq_candidato, "240002537073")
   assert.equal(config.program_control.expected_cod_tipo, "5")
   assert.deepEqual(config.program_files.map((item) => item.sq_candidato).sort(), [
     "130002544411",
     "190002550196",
     "250002548080",
-    "60002553922",
   ])
 })
 
-test("estado esperado fica ok e preserva sete payloads brutos com hash", async () => {
+test("estado esperado fica ok e preserva seis payloads brutos com hash", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-ok-"))
   const calls: Array<{ url: string; userAgent: string | null }> = []
   const report = await collectTseDependentMonitors(config, out, {
@@ -71,12 +69,12 @@ test("estado esperado fica ok e preserva sete payloads brutos com hash", async (
   assert.equal(report.status, "ok")
   assert.equal(report.alerts.length, 0)
   assert.equal(report.errors.length, 0)
-  assert.equal(report.sources.length, 7)
+  assert.equal(report.sources.length, 6)
   assert.equal(report.program_control?.program_file_count, 1)
   assert.ok(calls.every((call) => call.userAgent === "PuxaFichaDataFreshness/1.0"))
   assert.ok(report.sources.every((source) => source.checked_at === "2026-08-30T19:00:00.000Z"))
   assert.ok(report.sources.every((source) => /^[a-f0-9]{64}$/.test(source.payload_raw_sha256 ?? "")))
-  assert.equal(readdirSync(join(out, "raw")).length, 7)
+  assert.equal(readdirSync(join(out, "raw")).length, 6)
 })
 
 test("mudança de situação gera somente o alerta canônico de Laudicério", async () => {
@@ -95,7 +93,7 @@ test("mudança de situação gera somente o alerta canônico de Laudicério", as
   assert.equal(config.laudicerio.canonical_registration_sq, null)
 })
 
-test("codTipo 5 em qualquer uma das quatro fichas gera alerta sem publicar nada", async () => {
+test("codTipo 5 em qualquer uma das três fichas gera alerta sem publicar nada", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-program-"))
   const report = await collectTseDependentMonitors(config, out, {
     attempts: 1,
@@ -110,14 +108,17 @@ test("codTipo 5 em qualquer uma das quatro fichas gera alerta sem publicar nada"
   assert.equal(report.program_files.find((item) => item.profile_slug === "ben-mendes")?.program_files instanceof Array, true)
 })
 
+// Fixture do contrato de revisão. O sujeito é Garotinho (RJ) porque Vera Lúcia
+// (CE) saiu do monitor em 2026-09-03, quando o pacote oficial passou a trazer o
+// programa dela e o registro foi publicado.
 const REVIEW = {
-  id_arquivo: "60017139080",
+  id_arquivo: "190017139080",
   revisado_em: "2026-09-03",
-  pacote_url: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+  pacote_url: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
   pacote_sha256: "0".repeat(64),
-  pacote_last_modified: "2026-09-02T06:58:29Z",
+  pacote_last_modified: "2026-09-02T06:58:30Z",
   resultado: "ausente_do_pacote",
-  referencia: "PR #247",
+  referencia: "QA/evidencias/2026-08-30-programas-ausentes/receipt.json",
 } as const
 
 function withReview(
@@ -143,67 +144,67 @@ function announcing(sqCandidato: string, idArquivo: number | string | null) {
 
 test("arquivo com revisão registrada para o mesmo id_arquivo não alerta", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-revisado-"))
-  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+  const report = await collectTseDependentMonitors(withReview("190002550196"), out, {
     attempts: 1,
-    fetchImpl: announcing("60002553922", 60017139080),
+    fetchImpl: announcing("190002550196", 190017139080),
   })
   assert.equal(report.status, "ok")
   assert.equal(report.alerts.length, 0)
-  const program = report.program_files.find((item) => item.profile_slug === "vera-lucia-ce")
+  const program = report.program_files.find((item) => item.profile_slug === "garotinho")
   assert.equal(program?.program_file_count, 1)
   assert.equal(program?.reviewed_program_file_count, 1)
   assert.equal(program?.pending_program_file_count, 0)
   const summary = tseDependentMonitorsMarkdown(report)
   assert.match(summary, /Revisões registradas/)
-  assert.match(summary, /60017139080 anunciado, revisado em 2026-09-03: ausente_do_pacote/)
+  assert.match(summary, /190017139080 anunciado, revisado em 2026-09-03: ausente_do_pacote/)
 })
 
 test("arquivo com id_arquivo novo volta a alertar mesmo com revisão registrada", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-id-novo-"))
-  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+  const report = await collectTseDependentMonitors(withReview("190002550196"), out, {
     attempts: 1,
-    fetchImpl: announcing("60002553922", 60017999999),
+    fetchImpl: announcing("190002550196", 190017999999),
   })
   assert.equal(report.status, "review_required")
-  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["vera-lucia-ce"])
-  assert.deepEqual(report.alerts[0]?.details.pending_id_arquivos, [60017999999])
+  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["garotinho"])
+  assert.deepEqual(report.alerts[0]?.details.pending_id_arquivos, [190017999999])
   assert.equal(
-    report.program_files.find((item) => item.profile_slug === "vera-lucia-ce")?.reviewed_program_file_count,
+    report.program_files.find((item) => item.profile_slug === "garotinho")?.reviewed_program_file_count,
     0,
   )
 })
 
 test("revisão nunca silencia arquivo anunciado sem id_arquivo", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-sem-id-"))
-  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+  const report = await collectTseDependentMonitors(withReview("190002550196"), out, {
     attempts: 1,
-    fetchImpl: announcing("60002553922", null),
+    fetchImpl: announcing("190002550196", null),
   })
   assert.equal(report.status, "review_required")
-  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["vera-lucia-ce"])
+  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["garotinho"])
 })
 
 test("revisão sem id_arquivo, sem pacote_sha256 ou com resultado estranho reprova o contrato", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-contrato-"))
   const run = (review: Record<string, unknown>) => collectTseDependentMonitors(
-    withReview("60002553922", review),
+    withReview("190002550196", review),
     out,
-    { attempts: 1, fetchImpl: announcing("60002553922", 60017139080) },
+    { attempts: 1, fetchImpl: announcing("190002550196", 190017139080) },
   )
   const sem = (field: keyof typeof REVIEW): Record<string, unknown> => {
     const review: Record<string, unknown> = { ...REVIEW }
     delete review[field]
     return review
   }
-  await assert.rejects(run(sem("id_arquivo")), /divergiu do contrato: revisão de vera-lucia-ce sem id_arquivo/)
-  await assert.rejects(run(sem("pacote_sha256")), /divergiu do contrato: revisão de vera-lucia-ce sem pacote_sha256/)
+  await assert.rejects(run(sem("id_arquivo")), /divergiu do contrato: revisão de garotinho sem id_arquivo/)
+  await assert.rejects(run(sem("pacote_sha256")), /divergiu do contrato: revisão de garotinho sem pacote_sha256/)
   await assert.rejects(
     run({ ...REVIEW, pacote_sha256: "nao-e-hash" }),
-    /divergiu do contrato: revisão de vera-lucia-ce com pacote_sha256 inválido/,
+    /divergiu do contrato: revisão de garotinho com pacote_sha256 inválido/,
   )
   await assert.rejects(
     run({ ...REVIEW, resultado: "presente_no_pacote" }),
-    /divergiu do contrato: revisão de vera-lucia-ce com resultado não suportado/,
+    /divergiu do contrato: revisão de garotinho com resultado não suportado/,
   )
 })
 
@@ -231,12 +232,12 @@ test("arquivos ausente falha fechado em vez de significar programa ausente", asy
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-shape-"))
   const report = await collectTseDependentMonitors(config, out, {
     attempts: 1,
-    fetchImpl: async (input) => String(input).includes("60002553922")
-      ? response({ id: "60002553922", documentos: [] })
+    fetchImpl: async (input) => String(input).includes("250002548080")
+      ? response({ id: "250002548080", documentos: [] })
       : response(okPayload(String(input))),
   })
   assert.equal(report.status, "source_error")
-  assert.match(report.errors.find((error) => error.sq_candidato === "60002553922")?.error ?? "", /sem arquivos\[\]/)
+  assert.match(report.errors.find((error) => error.sq_candidato === "250002548080")?.error ?? "", /sem arquivos\[\]/)
 })
 
 test("resposta de outra candidatura falha fechado", async () => {
