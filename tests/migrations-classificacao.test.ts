@@ -350,12 +350,15 @@ describe("classificador puro (#136)", () => {
     // vazio. A integração conserva 337 + 103 = 440.
     // 337 -> 338 em 02/09/2026: a revogação de DML das views públicas é schema
     // puro e aplica limpo em banco vazio. Gate local: 338 + 103 = 441.
-    // 338 -> 339 em 03/09/2026: a correção do nome de urna do vice de RN
+    // 338 -> 339 em 03/09/2026: a remoção dos 11 índices sem uso (20260903120000)
+    // é schema puro e `DROP INDEX IF EXISTS` não depende de linha nem de tabela
+    // existente, então aplica limpo.
+    // 339 -> 340 em 03/09/2026: a correção do nome de urna do vice de RN
     // (20260903130000) retorna cedo quando a linha de chapas_2026 não existe,
     // que é o caso do banco sintético, e aplica limpo. MEDIDO no gate local
-    // PostgreSQL 17: "339 aplicadas, 105 falhas reais" e "conservação OK:
-    // 339 + 105 = 444 migrations", conjunto de falhas intacto.
-    assert.equal(manifesto.aplicadas_esperadas, 339)
+    // PostgreSQL 17: "340 aplicadas, 105 falhas reais" e "conservação OK:
+    // 340 + 105 = 445 migrations", conjunto de falhas intacto.
+    assert.equal(manifesto.aplicadas_esperadas, 340)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
