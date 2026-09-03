@@ -3,13 +3,32 @@
   "fonte": "Censo de public.candidatos medido em 16/08/2026 (296 linhas, 175 publicaveis) mais o pacote TSE consulta_cand 2026 pos-prazo de registro, que traz DS_SITUACAO_CANDIDATURA = '#NE' em 20456 de 20456 candidaturas, em 28 arquivos por unidade da federacao.",
   "motivo": "Normalizacao de vocabulario de uma coluna, nao curadoria de pessoa. As quatro escritas de 20260816230000 sao enderecadas por VALOR (WHERE situacao_candidatura IN (...)), nunca por slug, e alcancam 220 linhas das 296. Por isso a autorizacao vive no bloco `referencias` e nao numa coorte: declarar 220 slugs descreveria mal o que a migration faz, e a anotacao slug= seria falsa, porque nenhum statement menciona slug nenhum. A prova de que a anotacao bate com o SQL vem do `chave=` de cada statement, conferido literal pelo parser de pending-writes.",
   "coorte": [],
-  "fora_por_construcao": { "slugs": [] },
+  "fora_por_construcao": {
+    "slugs": []
+  },
   "entries": [],
   "referencias": [
     {
       "tabela": "candidatos",
       "ref": "vocabulario-situacao-20260816",
-      "campos": ["situacao_candidatura"]
+      "campos": [
+        "situacao_candidatura"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260903100000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao"
+      ],
+      "max_registros": 1
     }
   ]
 }

@@ -130,10 +130,14 @@ describe("dominio de situacao_candidatura", () => {
     // anotacao e escrita invisivel.
     const linhas = statements(DADOS).split("\n")
     const escritas = linhas.filter((l) => /^\s*(INSERT\s+INTO|UPDATE|DELETE\s+FROM)\b/i.test(l))
-    assert.equal(escritas.length, 6, `esperava 6 statements de escrita, achou ${escritas.length}`)
+    assert.equal(escritas.length, 7, `esperava 7 statements de escrita (6 em candidatos + recibo de pre-imagem em coleta_log), achou ${escritas.length}`)
     const anotacoes = sql(DADOS).split("\n").filter((l) => /^--\s*@write\b/.test(l.trim()))
     assert.equal(anotacoes.length, escritas.length)
     for (const a of anotacoes) {
+      if (/tabela=coleta_log/.test(a)) {
+        assert.match(a, /ref=migration:20260903100000/)
+        continue
+      }
       assert.match(a, /tabela=candidatos/)
       assert.match(a, /ref=vocabulario-situacao-20260816/)
       assert.match(a, /campos=situacao_candidatura$/)
