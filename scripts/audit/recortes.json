@@ -445,6 +445,13 @@
       "ate": "20260903130000",
       "allowlist": "scripts/audit/allowlist-chapas-hermano-20260903.json",
       "divida": null
+    },
+    {
+      "nome": "chapas-ma-vice-20260903",
+      "desde": "20260903140000",
+      "ate": "20260903140000",
+      "allowlist": "scripts/audit/allowlist-chapas-ma-vice-20260903.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
