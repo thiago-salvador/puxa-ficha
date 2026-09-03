@@ -192,6 +192,34 @@
 BEGIN;
 
 -- ---------------------------------------------------------------------------
+-- 0. Pre-imagem para o rollback (02/09/2026): um recibo em coleta_log com o
+--    mapa id -> valor de toda linha que os statements abaixo alcancam. Quatro
+--    origens convergem em 'aguardando julgamento' e tres em NULL; sem o mapa
+--    o rollback nao teria como devolver cada linha a grafia original.
+--    Idempotente pelo `execucao`; em banco vazio grava volume 0 e mapa vazio.
+-- @write tabela=coleta_log ref=migration:20260903100000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao
+INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao)
+SELECT 'vocabulario-situacao', 'coluna', 'candidatos.situacao_candidatura', 'pre-imagem',
+       count(*)::integer,
+       coalesce(jsonb_object_agg(id::text, situacao_candidatura), '{}'::jsonb)::text,
+       'https://dadosabertos.tse.jus.br/dataset/candidatos-2026',
+       'migration:20260903100000'
+FROM public.candidatos
+WHERE situacao_candidatura IN (
+  'registrada, aguardando julgamento',
+  'pedido de registro no TSE; situação não informada no snapshot',
+  'deferido',
+  'pre-candidato',
+  'APTO [2022]', 'APTO [2020]', 'INAPTO [2022]',
+  'desistente',
+  'pedido de registro no TSE; código oficial -3 (#NE) no snapshot de 27/08/2026',
+  'renúncia'
+)
+AND NOT EXISTS (
+  SELECT 1 FROM public.coleta_log WHERE execucao = 'migration:20260903100000'
+);
+
+-- ---------------------------------------------------------------------------
 -- 1. As tres redacoes do mesmo `#NE`, mais a afirmacao de deferimento sem
 --    lastro, convergem no unico estado que a fonte de 2026 sustenta.
 -- @write tabela=candidatos ref=vocabulario-situacao-20260816 chave="registrada, aguardando julgamento" campos=situacao_candidatura
