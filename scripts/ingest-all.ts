@@ -24,6 +24,11 @@ import { ingestIpea } from "./lib/ingest-ipea"
 import { log, error, warn } from "./lib/logger"
 import { registrarColeta, registrarColetaDeResultados } from "./lib/coleta-log"
 import { parseIngestCliOptions } from "./lib/pipeline-cli-options"
+import {
+  avaliarToleranciaPorFonte,
+  formatarTolerancia,
+  parseErroMaxFracao,
+} from "./lib/pipeline-tolerancia-erros"
 import type { IngestResult } from "./lib/types"
 
 const VALID_SOURCES = [
@@ -56,6 +61,7 @@ type IngestTask = {
 const cli = parseIngestCliOptions(process.argv.slice(2))
 const sources = parseSources(cli.sourceArgs)
 const tseYears = parseTseYearsEnv(process.env.PF_TSE_ANOS)
+const erroMaxFracao = parseErroMaxFracao(process.env.PF_INGEST_ERRO_MAX_FRACAO)
 
 function parseSources(input: string[]): IngestSource[] {
   const selected = input.length > 0 ? input : [...VALID_SOURCES]
@@ -302,6 +308,32 @@ async function main() {
       error("pipeline", `  ${r.source}/${r.candidato}: ${r.errors.join("; ")}`)
     }
     if (taskFailures > 0) error("pipeline", `  ${taskFailures} fonte(s) falharam antes de devolver resultados`)
+  }
+
+  // Erro por candidato nao reprova sozinho o run: um soluco de rede na origem
+  // federal atinge alguns candidatos e o resto da coleta continua valido. Cada
+  // erro fica em `coleta_log` para a auditoria de frescor; o que o limiar
+  // decide e so o codigo de saida.
+  const tolerancia = avaliarToleranciaPorFonte(allResults, erroMaxFracao)
+  const reprovadas = tolerancia.filter((t) => t.reprovada)
+
+  if (tolerancia.some((t) => t.comErro > 0)) {
+    log("pipeline", ``)
+    log("pipeline", `Erros por fonte (limiar PF_INGEST_ERRO_MAX_FRACAO=${erroMaxFracao}):`)
+    for (const t of tolerancia.filter((t) => t.comErro > 0)) {
+      const veredito = t.fonteMorta
+        ? "fonte inteira falhou"
+        : t.reprovada
+          ? "acima do limiar"
+          : "dentro do limiar"
+      log("pipeline", `  ${formatarTolerancia(t)} - ${veredito}`)
+    }
+  }
+
+  if (reprovadas.length > 0 || taskFailures > 0) {
+    for (const t of reprovadas) {
+      error("pipeline", `Fonte reprovada: ${formatarTolerancia(t)}`)
+    }
     process.exit(1)
   }
 
