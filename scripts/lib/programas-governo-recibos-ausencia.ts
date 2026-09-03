@@ -27,13 +27,11 @@ export const RECIBOS_AUSENCIA_SQS: ReadonlySet<string> = new Set([
  *
  * - `190002543380` (Eduardo Paes, RJ): o pacote `proposta_governo_2026_RJ.zip`
  *   republicado em 2026-09-02 passou a conter `RJ/2026RJ190002543380_01.pdf`.
- *
- * Vera Lúcia (CE, `60002553922`) continua fora desta lista: a DivulgaCandContas
- * já lista um arquivo `codTipo = 5` para ela, mas o pacote oficial de CE
- * republicado em 2026-09-02 continua sem o PDF, e o importador não inventa URL
- * individual.
+ * - `60002553922` (Vera Lúcia, CE): o pacote `proposta_governo_2026_CE.zip`
+ *   republicado em 2026-09-03 passou a conter `CE/2026CE60002553922_01.pdf`.
  */
 export const RECIBOS_AUSENCIA_SUPERADOS_SQS: ReadonlySet<string> = new Set([
+  "60002553922",
   "190002543380",
 ])
 

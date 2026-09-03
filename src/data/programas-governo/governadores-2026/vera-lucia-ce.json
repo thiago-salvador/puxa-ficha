@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "sem_documento_oficial",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "GOVERNADOR",
@@ -9,11 +9,1516 @@
     "slug": "vera-lucia-ce",
     "nomeUrna": "VERA LÚCIA",
     "partido": "NOVO",
-    "arquivoNome": null,
-    "arquivoNoPacote": null,
+    "arquivoNome": "2026CE60002553922_01.pdf",
+    "arquivoNoPacote": "CE/2026CE60002553922_01.pdf",
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-30T19:05:42.202Z"
+    "coletadoEm": "2026-09-03T12:17:00Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "CE:60002553922:01",
+      "fonte": {
+        "arquivoNome": "2026CE60002553922_01.pdf",
+        "arquivoNoPacote": "CE/2026CE60002553922_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-09-03T12:17:00Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "7279ec445572eeb461889d7c768fd3a5ee7875dabd87044b4c8fe53c2521fa10",
+        "extractedTextSha256": "20e10777ec6690d4dd86e1936d0c95ad6123329f953aac4051482ddf9d1bed93",
+        "paginas": 65,
+        "secoes": [
+          {
+            "id": "plano-de-governo",
+            "titulo": "PLANO DE GOVERNO",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "PLANO DE GOVERNO\nO ESTADO DO CEARÁ\n\nO Ceará ocupa um lugar singular na história do Brasil. Muito antes de se tornar\nreferência nacional em diversas áreas, nosso Estado já demonstrava sua vocação\npara a coragem, a liberdade e o pioneirismo. Foi aqui, na Terra da Luz, que o\nprocesso abolicionista alcançou um de seus maiores marcos: em 1884, o Ceará\ndeclarou extinta a escravidão em seu território, quatro anos antes da assinatura da\nLei Áurea no Brasil.\nFoi também desta terra que surgiram exemplos de resistência, empreendedorismo,\ncultura, trabalho e transformação social que ajudaram a construir a identidade do\npovo brasileiro.\nAo longo de sua história, o Ceará superou desafios que muitas vezes pareciam\nintransponíveis. A seca, a escassez de recursos naturais, as dificuldades logísticas\ne as desigualdades históricas jamais impediram que o nosso povo construísse uma\nsociedade marcada pela capacidade de trabalho, pela criatividade, pela coragem e\npela força de vontade.\nDas margens do Rio Acaraú aos sertões dos Inhamuns, do Cariri à Serra da\nIbiapaba, do Vale do Jaguaribe às praias dos litorais leste e oeste, o cearense\nsempre encontrou maneiras de enfrentar as adversidades, gerar oportunidades e\nconstruir o próprio futuro.\nNas últimas décadas, o Estado alcançou avanços importantes. Consolidou-se\ncomo uma das principais economias do Nordeste, ampliou sua infraestrutura\nlogística, fortaleceu setores estratégicos como o turismo, o agronegócio, a\nindústria, os serviços e as energias renováveis, além de expandir sua rede de\neducação, ensino técnico e formação profissional.\nO Ceará também demonstrou que planejamento, responsabilidade fiscal,\ncontinuidade administrativa e visão de longo prazo podem produzir resultados\nrelevantes para a população. Entretanto, os desafios atuais exigem uma nova etapa\nde desenvolvimento.\nApesar dos avanços conquistados, milhões de cearenses ainda convivem\ndiariamente com problemas que afetam sua qualidade de vida, limitam\noportunidades e comprometem o futuro de suas famílias."
+          },
+          {
+            "id": "a-violencia-tornou-se-uma-das-maiores-preocupacoes-da-populacao-o-avanco",
+            "titulo": "A violência tornou-se uma das maiores preocupações da população. O avanço das",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "A violência tornou-se uma das maiores preocupações da população. O avanço das\nfacções criminosas, os elevados índices de homicídios registrados ao longo dos\núltimos anos, a presença do crime organizado em comunidades urbanas e rurais,\na expulsão de famílias de suas residências e o recrutamento de jovens pelo tráfico\nrepresentam ameaças diretas à paz social, à liberdade e ao desenvolvimento\neconômico.\nNenhuma sociedade pode prosperar quando o medo ocupa o lugar da liberdade.\nNenhuma família deve aceitar como normal viver sob ameaça, abandonar sua casa\npor determinação de criminosos ou mudar sua rotina por receio da violência.\nNa saúde, persistem dificuldades que atingem diretamente milhares de famílias.\nFilas para consultas, exames e cirurgias, demora no acesso a especialistas,\ndesigualdades regionais, sobrecarga das unidades hospitalares e dificuldades de\ngestão ainda fazem parte da realidade de muitos cearenses.\nQuem precisa de atendimento médico não pode ficar esperando indefinidamente.\nO acesso à saúde precisa ser rápido, transparente, eficiente e, acima de tudo,\nhumanizado.\nNa economia, apesar do extraordinário potencial do Ceará, milhares de\nempreendedores ainda enfrentam burocracia excessiva, insegurança regulatória,\ncarga tributária elevada e dificuldades para investir, crescer e gerar empregos.\nO desemprego, a informalidade e a baixa renda ainda atingem parte significativa\nda população, especialmente os jovens que procuram o primeiro emprego,\ntrabalhadores que buscam melhores oportunidades e pequenos empreendedores\nque lutam diariamente para manter seus negócios funcionando.\nO setor produtivo cearense possui condições para crescer muito mais. Nossa\nlocalização estratégica, nossos portos e aeroportos, o potencial turístico, a\nagricultura, a pecuária, a pesca, as energias renováveis, a indústria, a tecnologia e\na vocação empreendedora do nosso povo representam vantagens competitivas que\nprecisam ser aproveitadas de maneira mais eficiente.\nPara isso, o Estado precisa criar um ambiente favorável aos investimentos, à\ninovação, à geração de empregos e à livre iniciativa.\nTambém é necessário modernizar a administração pública. O crescimento da\nestrutura estatal ao longo dos anos nem sempre foi acompanhado pelo aumento\nda eficiência e da qualidade dos serviços prestados à população.O cidadão não\nquer um governo maior.\nQuer um governo que funcione.\nQuer segurança na sua rua, atendimento quando procurar um hospital, escola de\nqualidade para seus filhos, estradas em boas condições, oportunidades de emprego\ne respeito ao dinheiro pago em impostos."
+          },
+          {
+            "id": "e-diante-dessa-realidade-que-apresentamos-este-plano-de-governo",
+            "titulo": "É diante dessa realidade que apresentamos este Plano de Governo.",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "É diante dessa realidade que apresentamos este Plano de Governo.\nNossa proposta parte de uma convicção simples: o Ceará pode fazer mais e pode\nfazer melhor.\nÉ possível construir um Estado mais seguro, eficiente, justo e próspero. Um\nEstado que proteja a vida, valorize quem trabalha, incentive o empreendedorismo,\nrespeite o dinheiro do contribuinte e cuide daqueles que mais precisam.\nDefendemos um governo enxuto na burocracia e forte na entrega de resultados;\nrigoroso no combate ao desperdício e à corrupção; firme no enfrentamento ao\ncrime e comprometido com a valorização dos profissionais da segurança pública;\neficiente na saúde; transformador na educação; responsável na proteção social e\nparceiro de quem produz e gera empregos.\nQueremos um governo que proteja a mulher vítima de violência, ampare a pessoa\nidosa, cuide das pessoas com deficiência, ofereça oportunidades aos jovens,\nrespeite e valorize os profissionais que servem à população e trate a proteção\nanimal como uma política permanente de responsabilidade pública.\nUm governo capaz de utilizar a tecnologia, a iniciativa privada, o terceiro setor,\nas universidades e a capacidade da sociedade civil para entregar melhores serviços\nsem necessariamente aumentar a máquina pública.\nO Ceará já provou inúmeras vezes que sabe superar dificuldades e transformar\ndesafios em oportunidades. A história do nosso povo é uma história de coragem,\ntrabalho, criatividade e perseverança.\nCom planejamento, responsabilidade, transparência, eficiência e união, podemos\ninaugurar um novo ciclo de desenvolvimento, segurança, prosperidade e\ndignidade para todos os cearenses.\nO futuro do Ceará não será construído apenas pelo governo. Será construído por\ncada cidadão que trabalha, empreende, estuda, produz, ensina, cuida e acredita na\nforça do nosso Estado.\nÉ hora de recuperar a segurança, fortalecer a saúde, melhorar a educação,\nimpulsionar a economia, proteger os mais vulneráveis e devolver ao cidadão a\nconfiança de que o poder público existe para servi-lo.\nMenos estrutura. Mais resultado.\nEstado eficiente. Cidadão respeitado.\nO melhor do Ceará ainda está por vir."
+          },
+          {
+            "id": "carta-compromisso-aos-cearenses",
+            "titulo": "CARTA-COMPROMISSO AOS CEARENSES",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "CARTA-COMPROMISSO AOS CEARENSES\nMenos Estrutura. Mais Resultado.\nCearenses,\nEu, Vera Lúcia da Silva, nasci em Recife, mas foi no Ceará que construí grande\nparte da minha história. Há mais de 26 anos moro em Fortaleza, cidade que\nescolhi para viver, trabalhar, empreender e criar raízes.\nFoi aqui que construí minha trajetória profissional. Como empresária, conheço\nde perto os desafios de quem acorda cedo, enfrenta dificuldades, paga impostos,\ngera empregos, movimenta a economia e luta todos os dias para manter seu\nnegócio de portas abertas.\nTambém foi no Ceará que ampliei minha participação em trabalhos sociais,\nassociações e iniciativas voltadas para melhorar a vida das pessoas.\nEu conheço a força do nosso povo, mas também conheço suas dores.\nConheço a preocupação da mãe que teme pela segurança do filho. Conheço a\nangústia de quem espera meses por uma consulta, um exame ou uma cirurgia.\nConheço a dificuldade do pequeno empresário que luta para sobreviver diante\nda burocracia. Conheço o drama das famílias que precisam de emprego, renda e\noportunidade.\nE é exatamente por conhecer essa realidade que assumo este compromisso.\nPara mim, política não pode ser profissão de quem busca privilégios. Política é\nserviço, responsabilidade e missão.\nQuem se dispõe a governar precisa ter coragem para enfrentar problemas,\nhumildade para ouvir as pessoas e responsabilidade para administrar cada\ncentavo que pertence à população.\nQuero um Ceará onde o cidadão volte a se sentir seguro.\nUm Ceará onde a mulher vítima de violência tenha proteção e acolhimento.\nOnde os profissionais da segurança pública sejam valorizados, tenham\nacompanhamento físico e psicológico e saibam que suas famílias serão\namparadas pelo Estado.\nOnde nossos idosos sejam tratados com respeito e dignidade.\nOnde quem precisa de atendimento médico não seja condenado a esperar\nindefinidamente em uma fila."
+          },
+          {
+            "id": "onde-nossos-jovens-encontrem-educacao-qualificacao-e-oportunidade-de",
+            "titulo": "Onde nossos jovens encontrem educação, qualificação e oportunidade de",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Onde nossos jovens encontrem educação, qualificação e oportunidade de\ntrabalho antes que o crime tente recrutá-los.\nE onde aquele que empreende, trabalha e gera emprego encontre no Estado um\nparceiro, e não um obstáculo.\nNão acredito em um governo que mede sua importância pela quantidade de\nsecretarias, cargos ou estruturas que possui.\nAcredito em um governo que mede seu sucesso pelo resultado entregue à\npopulação.\nMenos estrutura. Mais resultado.\nQuero um governo firme contra o crime, responsável com o dinheiro público,\neficiente na saúde, transformador na educação e sensível com aqueles que mais\nprecisam.\nUm governo que saiba cuidar sem criar dependência, que incentive quem quer\ntrabalhar, que respeite quem produz e que proteja aqueles que não conseguem se\nproteger sozinhos.\nDepois de mais de 26 anos vivendo nesta terra, posso dizer com tranquilidade: o\nCeará também é a minha casa.\nAqui construí minha vida, minha história profissional e meus compromissos.\nAqui gerei emprego e renda. Aqui conheci de perto as dificuldades e a\ncapacidade extraordinária do povo cearense.\nE é por este Ceará que assumo hoje este compromisso.\nNão prometo um governo de discursos fáceis.\nAssumo o compromisso de trabalhar, ouvir, administrar com responsabilidade e\nenfrentar os problemas com coragem.\nPorque governar não é mandar.\nGovernar é servir.\nE servir ao Ceará exige coragem, integridade, sensibilidade, competência e\nrespeito às pessoas.\nQue Deus nos dê sabedoria para construir um Ceará mais seguro, mais humano,\nmais eficiente e com oportunidades para todos.\nVera Lúcia da Silva"
+          },
+          {
+            "id": "seguranca-publica-como-prioridade-absoluta",
+            "titulo": "SEGURANÇA PÚBLICA COMO PRIORIDADE ABSOLUTA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "SEGURANÇA PÚBLICA COMO PRIORIDADE ABSOLUTA\n1. SEGURANÇA PÚBLICA COMO PRIORIDADE ABSOLUTA\nGarantir a vida, a liberdade e a tranquilidade das famílias cearenses será uma das\nmaiores responsabilidades do nosso governo.\nO Ceará precisa enfrentar o crime organizado com autoridade, inteligência e\npresença permanente do Estado. Mas segurança pública moderna não se faz\napenas aumentando o número de policiais nas ruas. É necessário colocar\ntecnologia, inteligência, equipamentos modernos e informação nas mãos de quem\nenfrenta o crime.\nNossa política será baseada em quatro pilares:\n\n\n\n\n\nINTELIGÊNCIA.\nTECNOLOGIA.\nPRESENÇA POLICIAL.\nVALORIZAÇÃO PROFISSIONAL.\n\nO criminoso não pode estar tecnologicamente à frente do Estado.\nAo mesmo tempo, nenhuma política de segurança será eficiente se os homens e\nmulheres responsáveis pela proteção da sociedade estiverem desvalorizados,\nadoecidos ou trabalhando sem equipamentos adequados.\nCompromisso: recuperar territórios, enfraquecer organizações criminosas, reduzir\nhomicídios, aumentar a capacidade de investigação e proporcionar condições\nadequadas de trabalho aos profissionais da segurança pública.\nPROPOSTAS\n1.1) COMBATE ÀS LIDERANÇAS DO CRIME ORGANIZADO\nArticular com o Governo Federal e com o Poder Judiciário a transferência de\nlideranças de organizações criminosas que preencham os requisitos legais para\nestabelecimentos de segurança máxima, impedindo que continuem comandando\natividades criminosas de dentro das unidades prisionais.\n1.2) FORÇA INTEGRADA CONTRA ORGANIZAÇÕES CRIMINOSAS\nCriar uma estrutura permanente de integração entre Polícia Militar, Polícia Civil,\nPolícia Penal, inteligência estadual e, mediante cooperação, Polícia Federal,\nPolícia Rodoviária Federal e demais órgãos."
+          },
+          {
+            "id": "o-objetivo-sera-compartilhar-informacoes-realizar-operacoes-integradas-e",
+            "titulo": "O objetivo será compartilhar informações, realizar operações integradas e",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "O objetivo será compartilhar informações, realizar operações integradas e\nidentificar lideranças, estruturas financeiras, armas, veículos, imóveis e\npatrimônio ligados às organizações criminosas.\nNão basta prender quem está na rua. É preciso atingir o comando e o dinheiro das\norganizações criminosas.\n\n1.3) CENTRO ESTADUAL INTEGRADO DE INTELIGÊNCIA 24 HORAS\nImplantar uma estrutura estadual permanente de inteligência funcionando 24\nhoras por dia, integrando informações das forças de segurança.\nO centro deverá utilizar tecnologia para cruzamento de dados, identificação de\npadrões criminais, localização de veículos, acompanhamento de mandados de\nprisão e produção de mapas de incidência criminal.\nAs decisões operacionais deverão ser orientadas por dados e inteligência.\n1.4) CINTURÃO\nINTELIGENTE\n\nESTADUAL\n\nDE\n\nVIDEOMONITORAMENTO\n\nExpandir o sistema de câmeras para Fortaleza, Região Metropolitana, municípios\ndo interior, entradas e saídas das cidades e principais corredores rodoviários.\nO sistema poderá utilizar, respeitada a legislação:\n* leitura automática de placas;\n* identificação de veículos roubados ou utilizados em crimes;\n* integração com bases policiais;\n* análise de movimentações suspeitas;\n* acompanhamento de ocorrências em tempo real;\n* reconhecimento de padrões por inteligência artificial.\nToda utilização de tecnologias de identificação deverá possuir regras de proteção\nde dados, auditoria e controle contra erros e abusos.\n\n1.5) PROGRAMA ESTADUAL DE DRONES DE SEGURANÇA\nCriar unidades especializadas de operação de drones para apoiar as forças de\nsegurança."
+          },
+          {
+            "id": "adquirir-equipamentos-com-recursos-adequados-as-missoes-policiais-inclui",
+            "titulo": "Adquirir equipamentos com recursos adequados às missões policiais, incluindo:",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Adquirir equipamentos com recursos adequados às missões policiais, incluindo:\n* câmeras de alta resolução;\n* visão térmica;\n* operação noturna;\n* transmissão de imagens em tempo real;\n* capacidade de monitoramento de grandes áreas.\nOs equipamentos poderão auxiliar operações policiais, buscas de pessoas\ndesaparecidas, localização de suspeitos, monitoramento de áreas de difícil acesso,\nsegurança de grandes eventos e vigilância do entorno de unidades prisionais.\n1.6) RENOVAÇÃO DA FROTA OPERACIONAL\nEstabelecer programa permanente de renovação de viaturas, evitando que\npoliciais trabalhem com veículos sem condições adequadas.\nAdquirir, conforme a necessidade operacional:\n* novas viaturas;\n* motocicletas para patrulhamento;\n* veículos 4x4 para regiões rurais;\n* unidades móveis de comando;\n* veículos para transporte operacional;\n* ambulâncias e unidades de apoio;\n* veículos blindados destinados exclusivamente a operações de alto risco.\nA compra de veículos blindados deverá atender a critérios técnicos e operacionais,\nevitando aquisições meramente simbólicas ou sem utilização prática.\n1.7) AMPLIAÇÃO DO POLICIAMENTO COM MOTOCICLETAS\nExpandir a capacidade operacional do RAIO e de outras unidades de\npatrulhamento com motocicletas, especialmente nas regiões com elevados índices\nde criminalidade.\nA motocicleta oferece rapidez de deslocamento e capacidade de acesso a locais\nonde viaturas convencionais possuem maior dificuldade.\n\n1.8) PROTEÇÃO BALÍSTICA MODERNA PARA OS PROFISSIONAIS\nCriar um programa permanente de renovação dos equipamentos de proteção\nindividual.\nGarantir aquisição periódica de:"
+          },
+          {
+            "id": "coletes-balisticos-certificados",
+            "titulo": "* coletes balísticos certificados;",
+            "nivel": 1,
+            "paginaInicial": 9,
+            "paginaFinal": 9,
+            "origem": "pdftotext",
+            "conteudo": "* coletes balísticos certificados;\n* capacetes balísticos;\n* escudos balísticos para unidades especializadas;\n* equipamentos de proteção para operações de alto risco;\n* kits individuais de primeiros socorros operacionais.\nNenhum profissional deverá ser colocado em uma situação de alto risco utilizando\nequipamento vencido ou inadequado.\n1.9) MODERNIZAÇÃO DAS COMUNICAÇÕES POLICIAIS\nImplantar sistema moderno e seguro de comunicação entre as forças de segurança,\ncom rádios digitais e comunicação protegida, permitindo melhor coordenação das\noperações.\nTambém será ampliada a capacidade de comunicação policial nas áreas rurais e\nregiões onde atualmente existem dificuldades de cobertura.\n1.10) CÂMERAS CORPORAIS COM PROTEÇÃO AO POLICIAL E AO\nCIDADÃO\nImplantar câmeras corporais com protocolo técnico claro, armazenamento seguro\ndas imagens e regras de utilização.\nA tecnologia deverá servir para:\n* Produzir provas;\n* Registrar ocorrências;\n* Proteger juridicamente o profissional;\n* Esclarecer denúncias;\n* Aumentar a transparência das operações.\nAs câmeras não serão tratadas apenas como instrumento de fiscalização do\npolicial, mas também como instrumento de proteção do próprio profissional.\n1.11) DELEGACIAS MÓVEIS\nImplantar unidades móveis da Polícia Civil equipadas com tecnologia para\nregistro de ocorrências, coleta inicial de informações e apoio às operações.\nEssas unidades poderão ser deslocadas para municípios, bairros, grandes eventos\nou regiões onde exista aumento temporário da demanda policial."
+          },
+          {
+            "id": "1-12-policia",
+            "titulo": "1.12) POLÍCIA",
+            "nivel": 1,
+            "paginaInicial": 10,
+            "paginaFinal": 10,
+            "origem": "pdftotext",
+            "conteudo": "1.12) POLÍCIA\nTECNOLOGIA\n\nCIENTÍFICA\n\nE\n\nINVESTIGAÇÃO\n\nCOM\n\nMAIS\n\nInvestir na modernização da perícia e da investigação criminal.\nAmpliar recursos destinados a:\n* Perícia digital;\n* Equipamentos laboratoriais;\n* Análise de imagens;\n* Processamento de evidências;\n* Identificação biométrica dentro dos limites legais;\n* Laboratórios móveis;\n* Investigação de crimes cibernéticos.\nCombater o crime também significa aumentar a capacidade de produzir provas e\nesclarecer delitos.\n1.13) TECNOLOGIA CONTRA CELULARES E COMUNICAÇÕES\nCRIMINOSAS NOS PRESÍDIOS\nModernizar os sistemas de fiscalização das unidades prisionais com equipamentos\nde inspeção, scanners, detectores e sistemas capazes de auxiliar na localização de\naparelhos e equipamentos eletrônicos ilícitos.\nTambém ampliar o uso de drones e equipamentos de vigilância nos perímetros\npenitenciários.\nPresídio não pode continuar funcionando como escritório de organização\ncriminosa.\n1.14) MAPA DIGITAL DO CRIME\nCriar plataforma estadual de acompanhamento territorial da criminalidade,\npermitindo identificar rapidamente:\n\n* Crescimento de homicídios;\n* Roubos;\n* Furtos;\n* Violência contra a mulher;\n* Atuação de facções;\n* Crimes patrimoniais;\n* Areas com aumento de ocorrências.\nCada região terá indicadores, metas e comando responsável pelo resultado."
+          },
+          {
+            "id": "1-15-meta-publica-de-reducao-da-criminalidade-por",
+            "titulo": "1.15) META PÚBLICA DE REDUÇÃO DA CRIMINALIDADE POR",
+            "nivel": 1,
+            "paginaInicial": 11,
+            "paginaFinal": 11,
+            "origem": "pdftotext",
+            "conteudo": "1.15) META PÚBLICA DE REDUÇÃO DA CRIMINALIDADE POR\nREGIÃO\nEstabelecer metas públicas e mensuráveis para redução de homicídios e outros\ncrimes violentos.\nCada região terá:\n* meta definida;\n* comando responsável;\n* indicadores mensais;\n* avaliação periódica;\n* prestação pública de contas.\nSegurança pública também precisa ser administrada por resultado.\n1.16) DELEGACIAS DA MULHER E REDE DE PROTEÇÃO\nImplantar novas Delegacias de Defesa da Mulher nas regiões atualmente\ndesassistidas e integrá-las à Rede Estadual de Proteção e Acolhimento à Mulher\nVítima de Violência.\nA mulher não poderá receber apenas uma ocorrência policial. Quando houver\nrisco, deverá existir uma rede preparada para protegê-la e acolhê-la.\n\n1.17) POLÍTICA DE VALORIZAÇÃO DOS PROFISSIONAIS DA\nSEGURANÇA\nCriar uma política estadual permanente de valorização da Polícia Militar, Polícia\nCivil, Corpo de Bombeiros, Polícia Penal e demais categorias estaduais da\nsegurança.\n1.18) POLÍTICA REMUNERATÓRIA E PISO POR CATEGORIA\nConstruir, mediante diálogo com as categorias e observância da legislação e da\nresponsabilidade fiscal, uma política de remuneração e valorização salarial\nconsiderando:\n* Risco profissional;\n* Responsabilidade da função;\n* Qualificação;\n* Progressão;\n* Tempo de serviço;\n* Características de cada carreira."
+          },
+          {
+            "id": "1-19-saude-fisica-e-mental-dos-profissionais",
+            "titulo": "1.19) SAÚDE FÍSICA E MENTAL DOS PROFISSIONAIS",
+            "nivel": 1,
+            "paginaInicial": 12,
+            "paginaFinal": 12,
+            "origem": "pdftotext",
+            "conteudo": "1.19) SAÚDE FÍSICA E MENTAL DOS PROFISSIONAIS\nCriar uma rede permanente de acompanhamento dos profissionais da segurança,\ngarantindo:\n* Atendimento psicológico;\n* Assistência psiquiátrica quando necessária;\n* Avaliações médicas periódicas;\n* Acompanhamento físico;\n* Prevenção ao suicídio;\n* Tratamento de estresse pós-traumático;…\n\n1. GOVERNO MENOR, MAIS EFICIENTE E HONESTO\nO Ceará precisa de um Estado mais simples na estrutura e mais forte na prestação\ndos serviços essenciais.\nNosso compromisso não será apenas reduzir cargos, secretarias ou despesas\nadministrativas. Será reorganizar o governo para que cada órgão tenha função clara,\nmetas definidas, indicadores públicos e responsabilidade pelo resultado entregue\nao cidadão.\nUm governo eficiente deve concentrar seus esforços naquilo que realmente\nimporta: segurança pública, saúde, educação, infraestrutura, geração de\noportunidades e proteção aos mais vulneráveis.\nA redução da burocracia será acompanhada pela digitalização dos serviços, revisão\nde estruturas administrativas, profissionalização da gestão e avaliação permanente\ndos resultados.\nCompromisso: menos burocracia, menos desperdício, mais produtividade e\nmelhores serviços para a população.\nPROPOSTAS :\n1.1) IMPLANTAR GESTÃO POR METAS E RESULTADOS EM TODO O\nGOVERNO\nEstabelecer metas anuais e indicadores objetivos para secretarias, órgãos, empresas\ne unidades administrativas do Estado.\nCada área deverá apresentar publicamente:\n* Metas estabelecidas;\n* Indicadores de desempenho;\n* Prazos;"
+          },
+          {
+            "id": "resultados-alcancados",
+            "titulo": "* Resultados alcançados;",
+            "nivel": 1,
+            "paginaInicial": 13,
+            "paginaFinal": 13,
+            "origem": "pdftotext",
+            "conteudo": "* Resultados alcançados;\n* Justificativas para metas não cumpridas;\n* Medidas corretivas adotadas.\nO cidadão deverá poder acompanhar o desempenho do governo de maneira simples\ne transparente.\n1.2) IMPLANTAR\nDESEMPENHO\n\nPOLÍTICA\n\nDE\n\nRECONHECIMENTO\n\nPOR\n\nEstruturar modelos de incentivo vinculados ao cumprimento de metas institucionais\ne à melhoria efetiva dos serviços públicos.\nOs mecanismos poderão combinar, nos limites da legislação:\n* Bonificação variável;\n* Reconhecimento por desempenho;\n* Capacitação profissional;\n* Oportunidades de progressão;\n* Premiações institucionais;\n* Valorização das equipes que apresentarem melhores resultados.\nO modelo deverá evitar avaliações subjetivas ou indicações políticas, utilizando\ncritérios públicos, mensuráveis e auditáveis.\n1.3) REORGANIZAR A ESTRUTURA ADMINISTRATIVA DO ESTADO\nRealizar, nos primeiros meses de governo, uma revisão completa da estrutura\nadministrativa estadual para identificar:\n* Secretarias com funções sobrepostas;\n* Orgãos com competências duplicadas;\n* Estruturas que podem ser incorporadas;\n* Cargos desnecessários;\n* Despesas administrativas que podem ser reduzidas;\n* Atividades que podem ser digitalizadas ou compartilhadas.\nA partir desse diagnóstico, promover a fusão, extinção ou reorganização de\nestruturas sempre que isso representar economia e melhoria do serviço.\nO objetivo não será reduzir por reduzir. Será gastar menos com burocracia para\ninvestir mais na ponta."
+          },
+          {
+            "id": "1-4",
+            "titulo": "1.4)",
+            "nivel": 1,
+            "paginaInicial": 14,
+            "paginaFinal": 14,
+            "origem": "pdftotext",
+            "conteudo": "1.4)\nESTABELECER\nADMINISTRATIVO\n\nMETA\n\nDE\n\nREDUÇÃO\n\nDO\n\nCUSTO\n\nCriar uma meta plurianual de redução das despesas administrativas e de custeio da\nmáquina pública, preservando os serviços essenciais.\nOs recursos economizados deverão ser prioritariamente direcionados para áreas\ncomo:\n* Segurança;\n* Saúde;\n* Educação;\n* Infraestrutura;\n* Tecnologia;\n* Proteção social.\n1.5) CRIAR O PROGRAMA CEARÁ DIGITAL\nTransformar progressivamente os principais serviços públicos estaduais em\nserviços digitais.\nO cidadão deverá conseguir resolver cada vez mais demandas pelo celular ou pela\ninternet, reduzindo deslocamentos, filas e burocracia.\nEntre as prioridades:\n* Documentos digitais;\n* Solicitações administrativas;\n* Acompanhamento de processos;\n* Licenças;\n* Autorizações;\n* Consultas;\n* Pagamentos;\n* Protocolos;\n* Serviços para empresas.\n1.6) CRIAR UMA CONTA ÚNICA DIGITAL DO CIDADÃO\nDesenvolver uma plataforma integrada para que o cidadão tenha acesso aos\nserviços estaduais por meio de uma única identificação.\nA plataforma deverá permitir acompanhar solicitações, documentos, protocolos e\nserviços, respeitando a legislação de proteção de dados."
+          },
+          {
+            "id": "1-7-criar",
+            "titulo": "1.7) CRIAR",
+            "nivel": 1,
+            "paginaInicial": 15,
+            "paginaFinal": 15,
+            "origem": "pdftotext",
+            "conteudo": "1.7) CRIAR\nGOVERNO\n\nLABORATÓRIO\n\nESTADUAL\n\nDE\n\nINOVAÇÃO\n\nEM\n\nEstabelecer um ambiente de inovação conectando:\n* Universidades;\n* Startups;\n* Govtechs;\n* Centros de pesquisa;\n* Incubadoras;\n* Empresas de tecnologia;\n* Servidores públicos.\nO objetivo será buscar soluções para problemas reais da administração, com\nprojetos-piloto, avaliação de resultados e contratação de soluções inovadoras\nquando houver comprovação de eficiência.\n1.8) IMPLANTAR O PRINCÍPIO “UMA EXIGÊNCIA ENTRA, OUTRA\nSAI”\nToda criação de nova obrigação burocrática para cidadãos ou empresas deverá ser\nacompanhada da revisão de exigências já existentes.\nO objetivo será impedir o crescimento permanente da burocracia estadual.\n1.9) REVISAR LICENÇAS, AUTORIZAÇÕES E PROCEDIMENTOS\nRealizar revisão geral dos procedimentos administrativos estaduais para eliminar\nexigências:\n* Duplicadas;\n* Desnecessárias;\n* Sem fundamento técnico;\n* Que possam ser substituídas por declarações digitais ou compartilhamento de\ninformações entre órgãos.\nO Estado não deverá exigir do cidadão um documento que o próprio governo já\npossui.\n1.10) IMPLANTAR\nGOVERNO\n\nPAINEL\n\nPÚBLICO\n\nCriar plataforma pública para acompanhar:\n* Metas;\n* Investimentos;\n* Obras;\n\nDE\n\nDESEMPENHO\n\nDO"
+          },
+          {
+            "id": "indicadores",
+            "titulo": "* Indicadores;",
+            "nivel": 1,
+            "paginaInicial": 16,
+            "paginaFinal": 16,
+            "origem": "pdftotext",
+            "conteudo": "* Indicadores;\n* Despesas;\n* Contratos;\n* Prazo de execução;\n* Desempenho das secretarias.\nO cidadão terá condições de verificar o que foi prometido, quanto foi gasto e o que\nrealmente foi entregue.\n2. RESPEITO AO DINHEIRO DO CONTRIBUINTE\nO dinheiro público não pertence ao governo. Pertence ao cidadão que trabalha,\nproduz, empreende e paga impostos.\nPor isso, cada real arrecadado deverá ser tratado com responsabilidade.\nNosso governo terá como prioridade combater desperdícios, melhorar a eficiência\nda arrecadação, enfrentar grandes devedores, reduzir despesas desnecessárias e\ncriar condições fiscais para diminuir a carga tributária sempre que houver espaço\nresponsável para isso.\nNão existe redução sustentável de impostos sem controle de despesas, crescimento\neconômico e equilíbrio das contas públicas.\nCompromisso: gastar melhor, cobrar de maneira justa e transformar arrecadação\nem serviço público de qualidade.\nPROPOSTAS\n2.1) CRIAR PROGRAMA PERMANENTE DE REVISÃO DE GASTOS\nImplantar processo contínuo de avaliação das despesas estaduais.\nCada programa deverá responder a três perguntas:\nFunciona?\nÉ necessário?\nO dinheiro está sendo bem utilizado?\nProgramas sem resultado comprovado poderão ser corrigidos, redimensionados ou\nencerrados."
+          },
+          {
+            "id": "2-2-fazer-inventario",
+            "titulo": "2.2) FAZER INVENTÁRIO",
+            "nivel": 1,
+            "paginaInicial": 17,
+            "paginaFinal": 17,
+            "origem": "pdftotext",
+            "conteudo": "2.2) FAZER INVENTÁRIO\nIMOBILIÁRIO DO ESTADO\n\nCOMPLETO\n\nDO\n\nPATRIMÔNIO\n\nMapear imóveis públicos:\n* Ocupados;\n* Desocupados;\n* Subutilizados;\n* Alugados;\n* Disponíveis para alienação.\nO Estado deverá deixar de pagar aluguel quando possuir imóvel adequado\ndisponível e poderá vender ativos sem utilidade pública, mediante avaliação,\ntransparência e procedimento legal.\n2.3) CRIAR PLANO ANUAL DE ALIENAÇÃO DE IMÓVEIS OCIOSOS\nEstabelecer cronograma público para venda de imóveis que não tenham finalidade\nestratégica para o Estado.\nOs recursos obtidos deverão ter destinação previamente definida, priorizando:\n* Redução de passivos;\n* Investimentos estruturantes;\n* Modernização do Estado.\n2.4) FORTALECER A CONTROLADORIA E CRIAR ESTRUTURA\nESPECIALIZADA ANTICORRUPÇÃO\nEm vez de criar apenas mais uma estrutura administrativa, fortalecer os órgãos de\ncontrole existentes e estabelecer uma unidade especializada em:\n* Prevenção à corrupção;\n* Análise de riscos;\n* Integridade;\n* Auditoria;\n* Identificação de fraudes;\n* Proteção ao patrimônio público;\n* Cooperação com órgãos de investigação.\n\nO foco será evitar que o dinheiro seja desviado antes que o prejuízo aconteça."
+          },
+          {
+            "id": "2-5-criar-programa-de-integridade-em-contratos",
+            "titulo": "2.5) CRIAR PROGRAMA DE INTEGRIDADE EM CONTRATOS",
+            "nivel": 1,
+            "paginaInicial": 18,
+            "paginaFinal": 18,
+            "origem": "pdftotext",
+            "conteudo": "2.5) CRIAR PROGRAMA DE INTEGRIDADE EM CONTRATOS\nPÚBLICOS\nGrandes contratos estaduais deverão possuir mecanismos de:\n* Transparência;\n* Gestão de riscos;\n* Auditoria;\n* Fiscalização;\n* Acompanhamento de execução;\n* Prevenção a conflitos de interesse.\n2.6) CRIAR PAINEL DO DINHEIRO PÚBLICO\nDisponibilizar ao cidadão uma plataforma simples mostrando:\n* Quanto o Estado arrecada;\n* Quanto gasta;\n* Onde gasta;\n* Fornecedores;\n* Contratos;\n* Obras;\n* Transferências;\n* Resultados alcançados.\nTransparência não pode existir apenas para especialistas. O cidadão comum precisa\nentender para onde vai o seu dinheiro.\n2.7) COMBATER GRANDES DEVEDORES CONTUMAZES\nFortalecer a cobrança dos grandes devedores que utilizam sistematicamente a\ninadimplência tributária como estratégia empresarial, diferenciando-os do\ncontribuinte que enfrenta dificuldade eventual.\nA política tributária deverá ser firme contra a fraude e equilibrada com quem produz\nde boa-fé.\n2.8) CRIAR PROGRAMA DE REDUÇÃO RESPONSÁVEL DA CARGA\nTRIBUTÁRIA\nEstabelecer uma estratégia gradual de redução da carga tributária estadual\ncondicionada a:\n* equilíbrio fiscal;\n* redução do custo da máquina;\n* crescimento da arrecadação decorrente da atividade econômica;\n* combate à sonegação;"
+          },
+          {
+            "id": "revisao-de-beneficios-tributarios-ineficientes",
+            "titulo": "* revisão de benefícios tributários ineficientes.",
+            "nivel": 1,
+            "paginaInicial": 19,
+            "paginaFinal": 19,
+            "origem": "pdftotext",
+            "conteudo": "* revisão de benefícios tributários ineficientes.\nA meta será devolver ao cidadão e ao setor produtivo parte dos ganhos de eficiência\nobtidos pelo governo.\n2.9) REVISAR BENEFÍCIOS E INCENTIVOS FISCAIS\nAvaliar periodicamente incentivos concedidos pelo Estado.\nTodo benefício deverá demonstrar resultado econômico ou social, como:\n* Geração de emprego;\n* Investimento;\n* Desenvolvimento regional;\n* Inovação;\n* Aumento de produtividade.\nBenefício sem resultado não deverá ser renovado automaticamente.\n2.10) CRIAR PROGRAMA DE DESLIGAMENTO VOLUNTÁRIO E\nREORGANIZAÇÃO DE PESSOAL\nNos setores onde estudos técnicos demonstrarem excesso de pessoal, poderão ser\nadotados mecanismos voluntários e negociados de reorganização da força de\ntrabalho, respeitando integralmente os direitos dos servidores.\nTambém deverão ser priorizados:\n* Redistribuição;\n* Capacitação;\n* Aproveitamento em áreas com déficit de pessoal;\n* Transformação digital de atividades administrativas.\nO servidor não deve ser tratado como problema. O problema é a má gestão da força\nde trabalho.\n2.11) REVISAR CONTRATOS E DESPESAS RECORRENTES\nRealizar auditoria administrativa sobre grandes despesas recorrentes do Estado,\ncomo:\n* Aluguéis;\n* Telefonia;\n* Tecnologia;\n* Combustível;\n* Veículos;\n* Serviços terceirizados;"
+          },
+          {
+            "id": "consultorias",
+            "titulo": "* Consultorias;",
+            "nivel": 1,
+            "paginaInicial": 20,
+            "paginaFinal": 20,
+            "origem": "pdftotext",
+            "conteudo": "* Consultorias;\n* Manutenção.\nO objetivo será renegociar contratos, eliminar desperdícios e obter melhores preços.\n2.12) INSTITUIR O PRINCÍPIO DO “GASTOU, EXPLIQUE; INVESTIU,\nMOSTRE O RESULTADO”\nGrandes programas e investimentos públicos deverão apresentar de maneira\ntransparente:\n* Objetivo;\n* Valor;\n* Prazo;\n* Responsável;\n* Resultado esperado;\n* Indicador de desempenho;\n* Resultado efetivamente alcançado.\nO dinheiro público será medido não apenas pelo quanto foi gasto, mas pelo\nresultado que produziu\n\n1. SAÚDE EM FILA “ESCONDIDA” E COM ATENDIMENTO\nMAIS HUMANIZADO\nNosso compromisso é aproximar a saúde de quem mais precisa, reduzir filas,\nmelhorar a gestão dos hospitais, ampliar o acesso a especialistas e garantir\natenção especial às pessoas mais vulneráveis, principalmente crianças com\ndeficiência, mães atípicas, pessoas idosas e pacientes que dependem de\nmedicamentos de uso contínuo.\nPROPOSTAS\n1.1) AMPLIAR A TELEMEDICINA EM TODO O ESTADO\nInvestir em infraestrutura, tecnologia e capacitação profissional para ampliar o\natendimento por telemedicina, garantindo acesso a especialistas para moradores\nde regiões afastadas e pacientes com dificuldade de locomoção.\nO objetivo é reduzir deslocamentos desnecessários, acelerar diagnósticos e\naumentar a capacidade de resolução dos casos na própria região."
+          },
+          {
+            "id": "1-2",
+            "titulo": "1.2)",
+            "nivel": 1,
+            "paginaInicial": 21,
+            "paginaFinal": 21,
+            "origem": "pdftotext",
+            "conteudo": "1.2)\nCRIAR\nUMA\nFILA\nTRANSPARENTE\nPARA\nPROCEDIMENTOS\n\nÚNICA,\nREGIONALIZADA\nCONSULTAS,\nEXAMES\n\nE\nE\n\nImplantar plataformas regionais integradas de gestão das filas, reunindo\nunidades públicas e serviços contratados pelo Estado.\nO sistema deverá informar a data de entrada do paciente, sua posição, prioridade\nclínica e histórico de todas as alterações realizadas na fila.\nProtocolos técnicos deverão definir quando o paciente deve ser encaminhado\npara outro nível de atendimento e quando poderá retornar à unidade de origem.\nO objetivo é garantir mais transparência, controle e justiça no acesso à saúde.\n\n1.3) PROFISSIONALIZAR A GESTÃO DOS HOSPITAIS ESTADUAIS\nSelecionar dirigentes hospitalares com base em critérios técnicos, experiência e\ncapacidade de gestão.\nEstabelecer metas objetivas de desempenho, indicadores de qualidade e\navaliações periódicas dos resultados.\nHospital público precisa ser administrado com responsabilidade, eficiência e\nfoco no paciente.\n1.4) IMPLANTAR PROGRAMAS ESTADUAIS DE TELECONSULTA E\nTELE-UTI\nCriar uma rede estadual de teleconsulta e tele-UTI para oferecer suporte\nespecializado aos hospitais de menor porte, permitindo que médicos de unidades\ndo interior contem com apoio de equipes especializadas em casos de maior\ncomplexidade.\nA medida poderá reduzir transferências desnecessárias e permitir atendimento\nmais rápido e seguro.\n1.5) FORTALECER A PREVENÇÃO E O ACOLHIMENTO EM SAÚDE\nMENTAL\nCapacitar professores, psicólogos escolares, profissionais de saúde, policiais e\ndemais agentes públicos para identificação precoce de situações de risco,\nacolhimento, prevenção do suicídio e primeiros cuidados em saúde mental.\nCriar uma verdadeira rede de proteção capaz de identificar sinais de sofrimento\ne encaminhar as pessoas para atendimento especializado antes que a situação se\nagrave."
+          },
+          {
+            "id": "1-6-capacitar-profissionais-da-rede-publica",
+            "titulo": "1.6) CAPACITAR PROFISSIONAIS DA REDE PÚBLICA",
+            "nivel": 1,
+            "paginaInicial": 22,
+            "paginaFinal": 22,
+            "origem": "pdftotext",
+            "conteudo": "1.6) CAPACITAR PROFISSIONAIS DA REDE PÚBLICA\nPRÁTICAS INTEGRATIVAS E COMPLEMENTARES\n\nEM\n\nCriar um programa estadual de capacitação dos profissionais da rede pública em\npráticas integrativas e complementares reconhecidas pelo SUS, ampliando as\npossibilidades de prevenção, promoção da saúde e cuidado complementar aos\npacientes.\n1.7) LEVAR A PREVENÇÃO DO CÂNCER ATÉ AS MULHERES\nImplantar uma rede estadual de unidades móveis destinadas à prevenção e ao\ndiagnóstico precoce do câncer de mama e do colo do útero.\nAs unidades deverão percorrer todas as regiões do Ceará, priorizando municípios\ndo interior e localidades com maior dificuldade de acesso aos serviços\nespecializados.\nDeverão ser oferecidos exames preventivos, mamografias e outros\nprocedimentos de rastreamento, além do encaminhamento rápido dos casos\nsuspeitos para diagnóstico e tratamento.\nA distribuição das unidades deverá\nepidemiológicos e de demanda reprimida.\n\nseguir\n\ncritérios\n\npopulacionais,\n\n1.8) PRIORIDADE ÀS CRIANÇAS COM DEFICIÊNCIA E APOIO ÀS\nMÃES ATÍPICAS\nGarantir prioridade nas políticas estaduais às crianças com deficiência,\ntranstornos do desenvolvimento e outras necessidades específicas.\nAssegurar acesso mais rápido à saúde, terapias, reabilitação, educação inclusiva\ne demais serviços necessários ao seu desenvolvimento.\nCriar Casas de Apoio às Mães Atípicas nos maiores municípios e polos regionais\ndo Ceará.\nEssas unidades deverão oferecer acolhimento, orientação, acompanhamento\npsicológico e social, suporte jurídico e administrativo, encaminhamento para\nserviços públicos e apoio às famílias que enfrentam longos deslocamentos em\nbusca de tratamento para seus filhos.\nO Estado deverá ajudar essas famílias na obtenção de terapias, consultas,\nequipamentos, medicamentos e acompanhamento especializado.\nCompromisso: cuidar da criança é também cuidar de quem dedica a vida a ela."
+          },
+          {
+            "id": "1-9-medicamento-no-tempo-certo-menos-burocracia",
+            "titulo": "1.9) MEDICAMENTO NO TEMPO CERTO — MENOS BUROCRACIA",
+            "nivel": 1,
+            "paginaInicial": 23,
+            "paginaFinal": 23,
+            "origem": "pdftotext",
+            "conteudo": "1.9) MEDICAMENTO NO TEMPO CERTO — MENOS BUROCRACIA\nE MENOS JUDICIALIZAÇÃO\nImplantar um programa estadual para acelerar a aquisição, distribuição e entrega\nde medicamentos aos pacientes da rede pública, especialmente nos casos de\ndoenças graves, raras, crônicas e tratamentos de uso contínuo.\nCriar mecanismos para acompanhamento dos pedidos, com prazos,\ntransparência e comunicação direta com o paciente.\nIdentificar os medicamentos que mais geram ações judiciais contra o Estado e\ntrabalhar para que, quando houver comprovação científica, segurança e\nnecessidade assistencial, sejam analisados pelos órgãos competentes para\npossível incorporação aos protocolos e listas oficiais do SUS.\nO objetivo é reduzir a judicialização não retirando direitos, mas fazendo com\nque o cidadão receba seu medicamento antes de precisar procurar a Justiça.\nNos casos relacionados à saúde suplementar, defender junto aos órgãos\ncompetentes a ampliação da cobertura de medicamentos e tratamentos pelos\nplanos de saúde.\nMeta: transformar medicamentos que hoje chegam somente depois de uma\ndecisão judicial em tratamentos fornecidos de maneira regular, planejada e mais\nrápida pela rede pública.\n1.10) PROGRAMA ESTADUAL DE CUIDADO E PROTEÇÃO À\nPESSOA IDOSA\nCriar uma política estadual permanente de cuidado, acompanhamento e proteção\nà pessoa idosa, especialmente para aqueles que vivem sozinhos, possuem\nmobilidade reduzida ou dependem de familiares para realizar tratamentos de\nsaúde.\nFortalecer e apoiar instituições, casas de acolhimento, centros de convivência e\nentidades que atendam pessoas idosas, garantindo acompanhamento social e de\nsaúde.\nCriar programas de acompanhamento periódico para identificar necessidades\nmédicas, nutricionais, psicológicas e sociais da população idosa.\nEstabelecer parcerias com a iniciativa privada, organizações sociais e\ninstituições especializadas para ampliar a oferta de fisioterapia, terapia\nocupacional, acompanhamento de enfermagem e outros tratamentos.\nImplantar programas de fisioterapia domiciliar, destinados prioritariamente às\npessoas idosas com dificuldade de locomoção, pacientes acamados ou que"
+          },
+          {
+            "id": "apresentem-limitacoes-fisicas-que-impecam-o-deslocamento-frequente-ate",
+            "titulo": "apresentem limitações físicas que impeçam o deslocamento frequente até",
+            "nivel": 1,
+            "paginaInicial": 24,
+            "paginaFinal": 24,
+            "origem": "pdftotext",
+            "conteudo": "apresentem limitações físicas que impeçam o deslocamento frequente até\nunidades de saúde.\nCriar um sistema estadual de transporte assistido para disponibilizar veículos\ndestinados a buscar e levar pessoas idosas, pessoas com deficiência e pacientes\ncom dificuldade de locomoção para consultas, exames, sessões de fisioterapia e\ntratamentos especializados.\nO programa deverá funcionar de forma integrada com os municípios, permitindo\no agendamento do transporte juntamente com a consulta ou exame, evitando que\no paciente consiga atendimento médico, mas não tenha condições de chegar até\na unidade de saúde.\nFortalecer ainda políticas de prevenção de quedas, acompanhamento de doenças\ncrônicas, vacinação, alimentação saudável e promoção da autonomia da pessoa\nidosa.\nCompromisso: envelhecer não pode significar ficar abandonado, sem tratamento\nou sem condições de chegar até o atendimento. O Estado precisa chegar até quem\nmais precisa.\nNOSSO COMPROMISSO COM A SAÚDE\nUma saúde pública moderna precisa enxergar a pessoa antes da burocracia.\nQueremos um Estado que reduza filas, leve atendimento ao interior, use\ntecnologia, cuide das crianças, acolha as mães atípicas, respeite as pessoas idosas\ne faça o medicamento chegar antes que o cidadão precise recorrer à Justiça.\nMenos burocracia. Mais prevenção. Mais atendimento. Mais dignidade para\nquem precisa do Estado.\n2. EDUCAÇÃO QUE PREPARA PARA A VIDA\nA escola precisa preparar a criança e o jovem não apenas para uma prova, mas\npara a vida, para o trabalho, para a cidadania e para um mundo cada vez mais\ntecnológico e competitivo.\nNosso compromisso é construir uma educação pública que valorize o professor,\namplie o tempo integral, fortaleça o ensino profissionalizante, garanta\nalimentação de qualidade, inclua crianças com deficiência e aproxime cada vez\nmais a família da vida escolar.\nCompromisso: professor valorizado, escola moderna, criança protegida e jovem\npreparado para o futuro."
+          },
+          {
+            "id": "propostas",
+            "titulo": "PROPOSTAS",
+            "nivel": 1,
+            "paginaInicial": 25,
+            "paginaFinal": 25,
+            "origem": "pdftotext",
+            "conteudo": "PROPOSTAS\n2.1) AMPLIAR A OFERTA DE CRECHES EM TODO O ESTADO\nCriar um programa estadual de ampliação do acesso às creches, em parceria com\nos municípios, organizações credenciadas e instituições privadas, priorizando as\nlocalidades onde houver maior déficit de vagas.\nO programa deverá permitir a contratação de vagas em creches conveniadas ou\ncredenciadas quando a rede pública não conseguir atender toda a demanda.\nA política não deverá ficar concentrada apenas na capital ou nos grandes centros\nurbanos, alcançando também municípios do interior e regiões com maior\nnecessidade.\nO objetivo é garantir às famílias, principalmente às mães que trabalham, a\nsegurança de saber que seus filhos estão sendo bem cuidados enquanto elas\nestudam ou trabalham.\n2.2) AMPLIAR A ESCOLA DE TEMPO INTEGRAL\nExpandir progressivamente a oferta de escolas estaduais em tempo integral,\ngarantindo que o estudante permaneça na escola durante grande parte do dia com\nensino, esporte, cultura, alimentação e atividades de formação profissional.\nAs escolas de tempo integral deverão oferecer quatro refeições diárias:\n* Café da manhã;\n* Lnche da manhã;\n* Almoço;\n* Lanche da tarde.\nA alimentação deverá seguir critérios nutricionais e ser acompanhada por\nprofissionais especializados.\nA escola precisa ser também um espaço de proteção, convivência e\noportunidade.\n2.3) ENSINO PROFISSIONALIZANTE LIGADO À REALIDADE DE\nCADA REGIÃO\nAmpliar o ensino técnico e profissionalizante nas escolas estaduais, priorizando\ncursos relacionados às necessidades econômicas de cada região do Ceará.\nAs formações deverão considerar setores como tecnologia, turismo, indústria,\ncomércio, energia, agronegócio, serviços, economia criativa e outras atividades\ncom potencial de geração de emprego."
+          },
+          {
+            "id": "o-estudante-devera-poder-concluir-o-ensino-medio-ja-com-uma-formacao-que",
+            "titulo": "O estudante deverá poder concluir o ensino médio já com uma formação que",
+            "nivel": 1,
+            "paginaInicial": 26,
+            "paginaFinal": 26,
+            "origem": "pdftotext",
+            "conteudo": "O estudante deverá poder concluir o ensino médio já com uma formação que\namplie suas oportunidades de ingresso no mercado de trabalho.\n2.4) AMPLIAR OS CURSOS TÉCNICOS DE CURTA DURAÇÃO\nCriar e ampliar cursos técnicos e profissionalizantes de curta duração,\nprincipalmente para estudantes em situação de vulnerabilidade social ou com\nmaior risco de abandonar os estudos.\nO objetivo será criar uma ponte rápida entre escola, qualificação e mercado de\ntrabalho, reduzindo a evasão escolar e aumentando as oportunidades para os\njovens.\n2.5) CRIAR UM PROGRAMA ESTADUAL DE BOLSAS PARA\nFORMAÇÃO TÉCNICA\nOferecer vagas gratuitas em cursos técnicos para estudantes e egressos do ensino\nmédio por meio de instituições públicas e privadas credenciadas.\nOs cursos deverão ser escolhidos de acordo com as necessidades do mercado de\ntrabalho em cada região do Estado.\nO programa deverá aproximar empresas, escolas técnicas e estudantes,\nfacilitando também estágios, aprendizagem profissional e oportunidades de\nprimeiro emprego.\n2.6) IMPLANTAR O ENSINO DE IDIOMAS NAS ESCOLAS DE TEMPO\nINTEGRAL\nFortalecer o ensino de inglês e ampliar progressivamente a oferta de outros\nidiomas, como francês e mandarim, de acordo com a estrutura disponível e a\nrealidade de cada escola.\nA política deverá permitir parcerias com instituições de ensino, universidades,\ncentros de idiomas e plataformas digitais.\nO objetivo é permitir que jovens da escola pública tenham acesso a\noportunidades que muitas vezes ficam restritas aos estudantes da rede particular.\n2.7) LEVAR MÚSICA, CULTURA E ARTE PARA DENTRO DA\nESCOLA\nCriar programas permanentes de ensino de música, canto, instrumentos\nmusicais, teatro, dança e outras expressões culturais.\nAs escolas poderão formar bandas, corais, grupos artísticos e projetos culturais\npróprios."
+          },
+          {
+            "id": "alem-de-desenvolver-talentos-essas-atividades-contribuem-para-disciplina",
+            "titulo": "Além de desenvolver talentos, essas atividades contribuem para disciplina,",
+            "nivel": 1,
+            "paginaInicial": 27,
+            "paginaFinal": 27,
+            "origem": "pdftotext",
+            "conteudo": "Além de desenvolver talentos, essas atividades contribuem para disciplina,\nintegração social, criatividade e permanência do jovem na escola.\n2.8) ESCOLA PREPARADA PARA RECEBER CRIANÇAS COM\nAUTISMO E OUTRAS DEFICIÊNCIAS\nCriar um programa estadual permanente de capacitação de professores e\nprofissionais da educação para o atendimento de estudantes com transtorno do\nespectro autista, deficiência intelectual, física, sensorial e outras necessidades\nespecíficas.\n\nGarantir profissionais de apoio escolar quando houver necessidade devidamente\nidentificada.\nFortalecer salas de recursos, acompanhamento pedagógico especializado e\nintegração entre escola, família e profissionais de saúde.\nNenhuma família deverá ter medo de matricular seu filho por acreditar que a\nescola não está preparada para recebê-lo.\n2.9) VALORIZAR E CAPACITAR O PROFESSOR\nCriar uma política permanente de valorização dos profissionais da educação,\ncom remuneração adequada, formação continuada, reconhecimento por\ndesempenho e oportunidades de desenvolvimento profissional.\nOs professores deverão contar com programas regulares de capacitação em:\n* Tecnologia educacional;\n* Educação inclusiva;\n* Novas metodologias de ensino;\n* Saúde emocional dos estudantes;\n* Ensino técnico e profissionalizante;\n* Uso de inteligência artificial e ferramentas digitais na educação.\nProfessor valorizado ensina melhor. Professor preparado transforma vidas.\n2.10) FORMAR E ATRAIR PROFISSIONAIS PARA O ENSINO\nTÉCNICO\nAmpliar a formação de professores para a educação profissional e tecnológica.\nPermitir, dentro das normas educacionais aplicáveis, a participação de\nprofissionais com experiência comprovada no mercado de trabalho em cursos\ntécnicos e profissionalizantes."
+          },
+          {
+            "id": "profissionais-da-industria-tecnologia-turismo-comercio-e-outros-setores",
+            "titulo": "Profissionais da indústria, tecnologia, turismo, comércio e outros setores",
+            "nivel": 1,
+            "paginaInicial": 28,
+            "paginaFinal": 28,
+            "origem": "pdftotext",
+            "conteudo": "Profissionais da indústria, tecnologia, turismo, comércio e outros setores\npoderão contribuir diretamente para aproximar o conteúdo ensinado da realidade\ndas empresas e do mercado.\n2.11) DIGITALIZAR AS ESCOLAS ESTADUAIS\nImplantar um amplo programa de modernização tecnológica da rede pública\nestadual.\nAs escolas deverão receber, de forma progressiva:\n* Internet de alta velocidade;\n* Lousas digitais;\n* Computadores e equipamentos multimídia;\n* Plataformas educacionais;\n* Ferramentas de inteligência artificial;\n* Sistemas digitais de gestão escolar.\nO professor precisa ter tecnologia como aliada, e não continuar dependendo\nexclusivamente de ferramentas do passado.\n2.12) CRIAR O APLICATIVO ESTADUAL DA EDUCAÇÃO\nDesenvolver um aplicativo oficial para aproximar pais, alunos, professores e\nescolas.\nPor meio do aplicativo, os responsáveis poderão acompanhar:\n* Notas;\n* Boletins;\n* Frequência;\n* Atrasos;\n* Atividades escolares;\n* Calendário;\n* Comunicados;\n* Alimentação oferecida no dia;\n* Cardápio escolar;\n* Desempenho pedagógico;\n* Atividades culturais e esportivas;\n* Reuniões;\n* Informações sobre transporte escolar;\n* Ocorrências e comunicados da escola.\nO sistema também poderá enviar alertas quando o estudante apresentar\nfaltas frequentes ou queda significativa de desempenho."
+          },
+          {
+            "id": "a-familia-precisa-saber-o-que-acontece-com-seu-filho-dentro-da-escola",
+            "titulo": "A família precisa saber o que acontece com seu filho dentro da escola.",
+            "nivel": 1,
+            "paginaInicial": 29,
+            "paginaFinal": 29,
+            "origem": "pdftotext",
+            "conteudo": "A família precisa saber o que acontece com seu filho dentro da escola.\n2.13) MODERNIZAR A GESTÃO DAS ESCOLAS\nImplementar sistemas digitais de apoio à gestão escolar, auxiliando diretores e\nequipes administrativas na prestação de contas, gestão financeira, gestão de\npessoas, controle de patrimônio, merenda escolar e acompanhamento de\nindicadores educacionais.\n\nA direção deverá ter mais tempo para cuidar da escola e menos tempo perdido\ncom burocracia.\n2.14) FORTALECER A SELEÇÃO E A FORMAÇÃO DE GESTORES\nESCOLARES\nValorizar critérios técnicos, experiência, capacidade de liderança e resultados na\nseleção e formação dos gestores da rede estadual.\nCriar cursos de preparação e formação continuada para diretores e\ncoordenadores, utilizando também o desempenho nessas formações como um\ndos critérios dos processos de seleção.\n2.15) IMPLANTAR MODELOS CÍVICO-MILITARES ONDE HOUVER\nDEMANDA DA COMUNIDADE\nPossibilitar a implantação de escolas com modelo cívico-militar em regiões do\nEstado onde exista demanda da comunidade escolar, observando a legislação\neducacional e garantindo a preservação do conteúdo pedagógico sob\nresponsabilidade dos profissionais da educação.\nO modelo deverá priorizar disciplina, respeito, organização, prevenção da\nviolência e fortalecimento da convivência escolar.\n2.16) COMBATER A EVASÃO ESCOLAR\nCriar um sistema estadual de identificação precoce da evasão.\nQuando um estudante acumular faltas ou apresentar sinais de abandono, escola,\nfamília e rede de proteção deverão ser acionadas rapidamente.\nO objetivo será descobrir por que o jovem está deixando a escola e atuar antes\nque ele abandone definitivamente os estudos.\nNOSSO COMPROMISSO COM A EDUCAÇÃO\nQueremos uma escola pública onde a criança entre pela manhã, tenha"
+          },
+          {
+            "id": "alimentacao-de-qualidade-encontre-professores-valorizados-aprenda-portug",
+            "titulo": "alimentação de qualidade, encontre professores valorizados, aprenda português",
+            "nivel": 1,
+            "paginaInicial": 30,
+            "paginaFinal": 30,
+            "origem": "pdftotext",
+            "conteudo": "alimentação de qualidade, encontre professores valorizados, aprenda português\ne matemática, tenha contato com tecnologia, idiomas, música, esporte e cultura\ne possa sair do ensino médio preparada para a universidade ou para uma\nprofissão.\nUma escola onde a criança com autismo seja acolhida.\nOnde o professor tenha condições de trabalhar.\nOnde os pais saibam o que acontece com seus filhos.\nE onde o jovem possa olhar para o futuro e enxergar oportunidades.\nEducação não é apenas colocar a criança dentro da escola. É garantir que ela\naprenda, seja protegida e saia preparada para construir o próprio futuro.\n\n3. EMPREGO, RENDA E LIBERDADE ECONÔMICO\nO Ceará precisa ser um Estado onde seja fácil empreender, seguro investir e\npossível crescer.\nQuem produz, emprega e paga impostos precisa encontrar no Governo um\nparceiro, e não um obstáculo.\nNosso compromisso será reduzir burocracia, simplificar licenças, ampliar a\nsegurança jurídica, melhorar o ambiente de negócios e criar condições para que\nempresas cearenses possam crescer com a mesma força das grandes empresas que\nchegam de fora.\nO desenvolvimento econômico precisa alcançar a capital, o interior, o litoral, as\nregiões produtivas e os municípios com menor geração de emprego.\nCompromisso: abrir uma empresa será mais simples, investir no Ceará será mais\nseguro e gerar emprego será prioridade.\nPROPOSTAS\n3.1) CRIAR UM PROGRAMA DE FORTALECIMENTO DAS EMPRESAS\nCEARENSES\nCriar uma política estadual específica para que empresas já instaladas no Ceará,\ninclusive empresas de pequeno e médio porte, possam ter acesso a instrumentos\nde incentivo, financiamento, inovação e expansão.\nOs critérios de concessão de benefícios deverão ser objetivos e transparentes,\nlevando em consideração geração de empregos, investimento, inovação,"
+          },
+          {
+            "id": "interiorizacao-do-desenvolvimento-e-compromisso-com-a-economia-local",
+            "titulo": "interiorização do desenvolvimento e compromisso com a economia local.",
+            "nivel": 1,
+            "paginaInicial": 31,
+            "paginaFinal": 31,
+            "origem": "pdftotext",
+            "conteudo": "interiorização do desenvolvimento e compromisso com a economia local.\nO objetivo é impedir que o empresário cearense veja apenas empresas de fora\ncrescerem com apoio público enquanto ele enfrenta sozinho os custos para investir\ne ampliar seu negócio.\nQueremos atrair novas empresas, mas também transformar empresas cearenses\nem grandes empresas.\n3.2) GARANTIR CRITÉRIOS MAIS JUSTOS PARA INCENTIVOS AO\nDESENVOLVIMENTO\nRevisar os programas estaduais de incentivo econômico para permitir que\nempresas locais que atendam aos mesmos critérios de investimento, geração de\nemprego e expansão possam disputar benefícios em condições mais equilibradas.\nTodo incentivo público deverá estar associado a contrapartidas claras, como:\n* Geração de empregos;\n* Aumento da produção;\n* Investimento em tecnologia;\n* Qualificação profissional;\n* Instalação em municípios do interior;\n* Aquisição de produtos e serviços locais, quando viável.\nO Estado não deve escolher privilegiados. Deve criar condições para quem produz\ncrescer.\n3.3) REDUZIR A BUROCRACIA PARA QUEM QUER EMPREENDER\nCriar um sistema integrado para abertura, licenciamento, regularização e\nexpansão de empresas.\nAmpliar a digitalização dos processos e estabelecer prazos para respostas dos\nórgãos públicos.\nAtividades de baixo risco deverão contar com procedimentos simplificados,\nobservadas as normas legais e de segurança aplicáveis.\nO empresário precisa dedicar seu tempo a produzir e gerar emprego, e não a\nenfrentar meses de burocracia.\n3.4) CRIAR A PORTA ÚNICA DO EMPREENDEDOR\nImplantar uma plataforma estadual que concentre serviços e informações\nnecessários para quem deseja abrir ou ampliar um negócio."
+          },
+          {
+            "id": "por-meio-dela-o-empreendedor-podera-acompanhar-licencas-incentivos-linha",
+            "titulo": "Por meio dela, o empreendedor poderá acompanhar licenças, incentivos, linhas de",
+            "nivel": 1,
+            "paginaInicial": 32,
+            "paginaFinal": 32,
+            "origem": "pdftotext",
+            "conteudo": "Por meio dela, o empreendedor poderá acompanhar licenças, incentivos, linhas de\nfinanciamento, capacitações, oportunidades de investimento e andamento de\nprocessos.\nO sistema deverá também integrar informações estaduais e, por meio de parcerias,\nserviços municipais.\n3.5) FORTALECER O MICRO E PEQUENO EMPREENDEDOR\nCriar programas de capacitação, orientação empresarial, transformação digital e\nacesso ao crédito para microempreendedores individuais, pequenos comerciantes,\nprestadores de serviços e pequenas empresas.\nAmpliar parcerias com instituições financeiras, entidades empresariais,\nuniversidades e instituições de capacitação.\nO pequeno negócio de hoje pode ser a grande empresa cearense de amanhã.\n3.6) APROXIMAR\nPROFISSIONAL\n\nEMPREGO,\n\nEMPRESA\n\nE\n\nQUALIFICAÇÃO\n\nCriar programas de qualificação profissional de acordo com as vagas disponíveis\ne as necessidades econômicas de cada região.\nEmpresas que pretendam ampliar suas atividades poderão informar previamente\nsuas necessidades de mão de obra, permitindo que o Estado organize cursos e\ntreinamentos direcionados.\nA política de emprego precisa começar antes da vaga ser aberta.\n3.7) CRIAR UM PROGRAMA ESTADUAL DO PRIMEIRO EMPREGO\nAmpliar oportunidades para jovens que concluíram ou estejam concluindo o\nensino médio, técnico ou superior.\nO Estado deverá buscar parcerias com empresas para programas de aprendizagem,\nestágio, capacitação e contratação de jovens.\nA falta de experiência não pode ser uma barreira permanente para quem está\ntentando conseguir o primeiro emprego.\nTURISMO COMO INDÚSTRIA DE EMPREGO E RENDA\nO Ceará possui uma das maiores riquezas naturais e culturais do Brasil.\nO turismo precisa ser tratado como atividade econômica estratégica, capaz de"
+          },
+          {
+            "id": "gerar-empregos-na-hotelaria-gastronomia-transporte-comercio-cultura-laze",
+            "titulo": "gerar empregos na hotelaria, gastronomia, transporte, comércio, cultura, lazer e",
+            "nivel": 1,
+            "paginaInicial": 33,
+            "paginaFinal": 33,
+            "origem": "pdftotext",
+            "conteudo": "gerar empregos na hotelaria, gastronomia, transporte, comércio, cultura, lazer e\nprestação de serviços.\nNão queremos vender apenas praias. Queremos vender experiências, cultura,\ngastronomia, esporte, religião, natureza, negócios e história.\n3.8) CRIAR NOVAS ROTAS TURÍSTICAS NO CEARÁ\nDesenvolver, em parceria com municípios, iniciativa privada, Embratur e\nentidades do setor, novas rotas temáticas integradas.\nEntre elas:\n* Turismo de sol e praia;\n* Turismo gastronômico;\n* Turismo religioso;\n* Turismo esportivo;\n* Turismo cultural;\n* Ecoturismo;\n* Turismo rural;\n* Turismo de negócios;\n* Turismo de eventos.\n\nOs roteiros deverão integrar hospedagem, alimentação, transporte, atrações e\nexperiências locais.\nO turista precisa ter motivos para permanecer mais tempo no Ceará e conhecer\nmais de uma região.\n3.9) FORTALECER O TURISMO DOS MUNICÍPIOS\nOferecer apoio técnico para que os municípios desenvolvam planos locais e\nregionais de turismo.\nAs políticas deverão respeitar as características de cada região.\nNo litoral, fortalecer principalmente sol, praia, esportes, gastronomia e hotelaria.\nNo interior, desenvolver turismo religioso, cultural, rural, ecológico, de aventura,\nnegócios e eventos.\n3.10) DESENVOLVER TODA A ORLA TURÍSTICA DO CEARÁ\nCriar um programa de desenvolvimento da orla cearense, articulando Estado,\nmunicípios e iniciativa privada."
+          },
+          {
+            "id": "o-programa-devera-trabalhar",
+            "titulo": "O programa deverá trabalhar:",
+            "nivel": 1,
+            "paginaInicial": 34,
+            "paginaFinal": 34,
+            "origem": "pdftotext",
+            "conteudo": "O programa deverá trabalhar:\n* Urbanização;\n* Iluminação;\n* Saneamento;\n* Segurança;\n* Mobilidade;\n* Acessibilidade;\n* Preservação ambiental;\n* Equipamentos de apoio ao turista;\n* Fortalecimento do comércio local.\nNossa costa não pode ser desenvolvida apenas em alguns pontos. O objetivo será\ncriar oportunidades ao longo de todo o litoral.\n3.11) ATRAIR NOVOS HOTÉIS E EMPREENDIMENTOS TURÍSTICOS\nCriar condições para ampliar a rede hoteleira e estimular investimentos em hotéis,\npousadas, resorts, centros de convenções e equipamentos turísticos.\nOs incentivos deverão priorizar projetos que gerem empregos, valorizem\ntrabalhadores locais, respeitem o meio ambiente e ajudem a desenvolver regiões\ncom potencial turístico ainda pouco explorado.\n3.12) MELHORAR AS ESTRADAS QUE LEVAM AOS DESTINOS\nTURÍSTICOS\nCriar um programa permanente de recuperação e melhoria da malha viária que\nconecta aeroportos, rodovias e centros urbanos aos principais destinos turísticos.\nNão adianta divulgar um destino se o turista encontra dificuldade para chegar até\nele.\nAs estradas deverão receber atenção especial em sinalização turística,\nmanutenção, segurança e infraestrutura.\n3.13) AMPLIAR A CONECTIVIDADE AÉREA DO CEARÁ\nTrabalhar para ampliar a oferta de voos nacionais e internacionais com origem e\ndestino no Ceará.\nFortalecer Fortaleza como centro de conexão aérea e buscar ampliar a utilização\ndos aeroportos regionais.\nO Estado deverá dialogar com companhias aéreas, setor turístico e municípios\npara atrair novas rotas, respeitando critérios técnicos, econômicos e de demanda.\nMais voos significam mais turistas, mais negócios e mais empregos."
+          },
+          {
+            "id": "3-14-integrar-transporte-e-turismo",
+            "titulo": "3.14) INTEGRAR TRANSPORTE E TURISMO",
+            "nivel": 1,
+            "paginaInicial": 35,
+            "paginaFinal": 35,
+            "origem": "pdftotext",
+            "conteudo": "3.14) INTEGRAR TRANSPORTE E TURISMO\nCriar políticas para melhorar o transporte entre aeroportos, terminais, hotéis e\ndestinos turísticos.\nEstimular soluções integradas envolvendo transporte rodoviário, aplicativos,\nlocadoras, transporte turístico e outros modais.\nO turista precisa conseguir chegar ao Ceará e também circular pelo Ceará.\n3.15) CRIAR UM CALENDÁRIO ESTADUAL DE GRANDES EVENTOS\nOrganizar e divulgar com antecedência um calendário anual de eventos\nesportivos, culturais, gastronômicos, religiosos, musicais e empresariais.\nA previsibilidade permitirá que hotéis, restaurantes, companhias aéreas,\ntransportadoras e comerciantes se preparem para receber visitantes.\nO objetivo é diminuir a sazonalidade e movimentar o turismo durante todo o ano.\n\nTECNOLOGIA, INOVAÇÃO E NOVA ECONOMIA\n3.16) AMPLIAR PARCERIAS INTERNACIONAIS EM TECNOLOGIA\nExpandir relações com centros de pesquisa, universidades, empresas e instituições\nde países com forte desenvolvimento tecnológico, incluindo Japão, Coreia do Sul,\nIsrael e outras nações estratégicas.\nCriar programas de cooperação tecnológica, intercâmbio acadêmico e\ndesenvolvimento conjunto de projetos em áreas como:\n* Inteligência artificial;\n* Energia renovável;\n* Dessalinização;\n* Agricultura de precisão;\n* Saúde;\n* Segurança;\n* Semicondutores;\n* Tecnologia da informação;\n* Biotecnologia."
+          },
+          {
+            "id": "3-17-transformar-o-ceara-em-um-polo-de-tecnologia-e",
+            "titulo": "3.17) TRANSFORMAR O CEARÁ EM UM POLO DE TECNOLOGIA E",
+            "nivel": 1,
+            "paginaInicial": 36,
+            "paginaFinal": 36,
+            "origem": "pdftotext",
+            "conteudo": "3.17) TRANSFORMAR O CEARÁ EM UM POLO DE TECNOLOGIA E\nINOVAÇÃO\nCriar ambientes favoráveis à instalação e expansão de empresas de tecnologia,\nstartups, centros de pesquisa e empresas da nova economia.\nFortalecer parcerias entre universidades, setor produtivo, investidores e poder\npúblico.\nO Ceará precisa exportar não apenas produtos, mas conhecimento, tecnologia e\ninovação.\n3.18) LEVAR DESENVOLVIMENTO E EMPREGO PARA O INTERIOR\nCriar políticas de incentivo à instalação e expansão de empresas fora da Região\nMetropolitana de Fortaleza.\nOs programas estaduais deverão considerar como fatores de incentivo:\n* Geração de emprego local;\n* Desenvolvimento regional;\n* Vocação econômica do município;\n* Disponibilidade de mão de obra;\n* Infraestrutura;\n* Impacto social.\nO cearense não deveria precisar abandonar sua cidade para encontrar uma\noportunidade de trabalho.\nNOSSO COMPROMISSO COM O DESENVOLVIMENTO\nQueremos um Ceará onde o empresário tenha segurança para investir, onde o\npequeno empreendedor tenha condições de crescer e onde uma empresa cearense\npossa se tornar uma gigante nacional ou internacional.\nQueremos fortalecer o turismo, desenvolver nosso litoral e nosso interior,\nmelhorar estradas, ampliar conexões aéreas, atrair hotéis, tecnologia e novos\ninvestimentos.\nMas desenvolvimento só faz sentido quando chega à vida das pessoas.\nEmpresa crescendo. Turismo avançando. Investimento chegando. Emprego sendo\ncriado. E oportunidade chegando a todas as regiões do Ceará"
+          },
+          {
+            "id": "4-protecao-social-com-dignidade-e-porta-de-saida",
+            "titulo": "4. PROTEÇÃO SOCIAL COM DIGNIDADE E PORTA DE SAÍDA",
+            "nivel": 1,
+            "paginaInicial": 37,
+            "paginaFinal": 37,
+            "origem": "pdftotext",
+            "conteudo": "4. PROTEÇÃO SOCIAL COM DIGNIDADE E PORTA DE SAÍDA\nA assistência social precisa proteger quem mais precisa, mas também criar\ncaminhos para que as pessoas recuperem autonomia, renda e dignidade.\nNosso compromisso será cuidar de quem está em situação de vulnerabilidade sem\ntransformar a política social em dependência permanente.\nQueremos um Estado que acolha, proteja, capacite e ajude cada pessoa a\nreconstruir sua própria vida.\nCompromisso: proteger quem precisa, criar oportunidades e abrir caminhos para\na autonomia.\nPROPOSTAS\n4.1) CRIAR UMA POLÍTICA INTEGRADA PARA PESSOAS EM\nSITUAÇÃO DE RUA E COM DEPENDÊNCIA QUÍMICA\nEstruturar uma rede integrada de acolhimento, saúde, assistência social,\ncapacitação profissional e reinserção social para pessoas em situação de rua e para\naquelas que enfrentam dependência química.\nFormalizar parcerias, dentro dos critérios legais e técnicos, com comunidades\nterapêuticas, centros de reabilitação, organizações sociais e serviços\nespecializados.\nO atendimento deverá ser individualizado, respeitando as condições de cada\npessoa e buscando, sempre que possível, reconstruir vínculos familiares,\nrecuperar documentos, tratar problemas de saúde e criar oportunidades de trabalho\ne moradia.\nA política não pode se limitar a retirar a pessoa da rua. Precisa oferecer uma\nverdadeira possibilidade de reconstrução de vida.\n4.2) CRIAR UM PLANO ESTADUAL PARA O ENVELHECIMENTO DA\nPOPULAÇÃO\nElaborar uma estratégia de longo prazo para preparar o Ceará para o\nenvelhecimento da população.\nTodas as áreas do Governo deverão considerar o aumento da população idosa em\nseus planejamentos, especialmente:\n* Saúde;\n* Assistência social;\n* Mobilidade;"
+          },
+          {
+            "id": "habitacao",
+            "titulo": "* Habitação;",
+            "nivel": 1,
+            "paginaInicial": 38,
+            "paginaFinal": 38,
+            "origem": "pdftotext",
+            "conteudo": "* Habitação;\n* Segurança;\n* Cultura;\n* Esporte;\n* Emprego;\n* Acessibilidade.\nO Ceará precisa se preparar hoje para a sociedade que terá amanhã.\n4.3) QUALIFICAR E INCLUIR PESSOAS COM DEFICIÊNCIA NO\nMERCADO DE TRABALHO\nCriar programas de capacitação profissional específicos para pessoas com\ndeficiência em parceria com empresas, Sistema S, organizações especializadas e\ninstituições de ensino.\nAlém da formação, o Estado deverá atuar na aproximação entre trabalhador e\nempresa, criando bancos de talentos e programas de encaminhamento\nprofissional.\nTambém deverão ser incentivadas adaptações no ambiente de trabalho e políticas\nde acessibilidade.\nA pessoa com deficiência precisa ser enxergada pelo seu potencial, e não apenas\npor suas limitações.\n4.4) CRIAR O PROGRAMA ESPORTE QUE TRANSFORMA\nEstabelecer parcerias entre escolas, organizações sociais, federações esportivas e\niniciativa privada para ampliar projetos esportivos em regiões de maior\nvulnerabilidade.\nOs programas deverão utilizar o esporte como instrumento de:\n* Disciplina;\n* Foco;\n* Convivência;\n* Permanência na escola;\n* Prevenção à violência;\n* Identificação de talentos.\nOs projetos deverão trabalhar com metas e acompanhamento dos resultados.\nEsporte também é política de prevenção social."
+          },
+          {
+            "id": "4-5-tratar-a-cultura-como-economia-oportunidade-e",
+            "titulo": "4.5) TRATAR A CULTURA COMO ECONOMIA, OPORTUNIDADE E",
+            "nivel": 1,
+            "paginaInicial": 39,
+            "paginaFinal": 39,
+            "origem": "pdftotext",
+            "conteudo": "4.5) TRATAR A CULTURA COMO ECONOMIA, OPORTUNIDADE E\nINCLUSÃO\nFortalecer cinema, música, teatro, dança, audiovisual, games, produção de\nconteúdo e eventos como setores da economia criativa.\nCriar políticas que integrem cultura, turismo, tecnologia e desenvolvimento\nurbano.\nEstimular:\n* Festivais;\n* Polos culturais;\n* Rotas culturais;\n* Produção audiovisual;\n* Economia dos games;\n* Eventos;\n* Formação técnica e artística.\nCultura não é apenas entretenimento. É também emprego, renda, identidade e\ndesenvolvimento econômico.\n4.6) CRIAR CENTROS DE CULTURA E FORMAÇÃO NAS PERIFERIAS\nE NO INTERIOR\nImplantar programas inspirados em experiências bem-sucedidas de formação\ncultural, utilizando parcerias com organizações sociais e instituições\nespecializadas.\nOferecer cursos gratuitos de:\n* Música;\n* Teatro;\n* Dança;\n* Circo;\n* Audiovisual;\n* Fotografia;\n* Produção cultural;\n* Tecnologia;\n* Games;\n* Edição de vídeo;\n* Criação de conteúdo digital.\nOs projetos deverão priorizar comunidades com maior vulnerabilidade social e\njuventude exposta à violência.\nOnde existe oportunidade, diminui o espaço para o crime recrutar nossos jovens."
+          },
+          {
+            "id": "4-7-proteger-familias-expulsas-de-suas-casas-por",
+            "titulo": "4.7) PROTEGER FAMÍLIAS EXPULSAS DE SUAS CASAS POR",
+            "nivel": 1,
+            "paginaInicial": 40,
+            "paginaFinal": 40,
+            "origem": "pdftotext",
+            "conteudo": "4.7) PROTEGER FAMÍLIAS EXPULSAS DE SUAS CASAS POR\nFACÇÕES CRIMINOSAS\nCriar uma política estadual emergencial de proteção para famílias expulsas de\nsuas residências por organizações criminosas.\nEssas famílias deverão receber acolhimento temporário, assistência social, apoio\njurídico, proteção e encaminhamento para solução habitacional segura.\nO Estado deverá atuar também para recuperar territórios dominados pelo crime e\ngarantir o direito das famílias de viverem com segurança.\nNenhum cidadão pode perder sua casa porque criminosos decidiram quem pode\nou não morar em determinado lugar.\n4.8) CRIAR UM PROGRAMA DE AUTONOMIA ECONÔMICA PARA\nMULHERES VÍTIMAS DE VIOLÊNCIA\nCriar um programa específico para mulheres que tiveram sua independência\neconômica comprometida por relacionamentos abusivos ou violentos.\nEm parceria com municípios, Sebrae, Sistema S, empresas e instituições de\ncapacitação, oferecer:\n* Formação profissional;\n* Empreendedorismo;\n* Educação financeira;\n* Acesso ao crédito;\n* Intermediação de emprego;\n* Apoio para abertura de pequenos negócios.\nA mulher que rompe um ciclo de violência precisa encontrar condições reais para\nreconstruir sua vida.\n4.9) PRIORIDADE EM EMPREGO\nMULHERES VÍTIMAS DE VIOLÊNCIA\n\nE\n\nCAPACITAÇÃO\n\nPARA\n\nCriar mecanismos para aproximar mulheres atendidas pela rede de proteção de\nempresas que disponham de vagas de emprego.\nEstabelecer parcerias voluntárias com o setor privado e programas de capacitação\ndirecionados às demandas reais do mercado.\nA independência financeira é uma das principais ferramentas para impedir que\numa mulher seja obrigada a retornar para um ambiente de violência."
+          },
+          {
+            "id": "4-10-criar-uma-porta-de-saida-dos-programas-sociais",
+            "titulo": "4.10) CRIAR UMA PORTA DE SAÍDA DOS PROGRAMAS SOCIAIS",
+            "nivel": 1,
+            "paginaInicial": 41,
+            "paginaFinal": 41,
+            "origem": "pdftotext",
+            "conteudo": "4.10) CRIAR UMA PORTA DE SAÍDA DOS PROGRAMAS SOCIAIS\nIntegrar os programas estaduais de assistência social às políticas de emprego,\nqualificação e empreendedorismo.\nAs famílias atendidas deverão ter acesso facilitado a:\n* Cursos profissionalizantes;\n* Intermediação de mão de obra;\n* Programas de primeiro emprego;\n* Orientação para empreendedorismo;\n* Acesso a microcrédito;\n* Acompanhamento social.\nA proteção social continuará existindo para quem necessita, mas o Estado\ndeverá criar todas as condições possíveis para que cada família possa\nconquistar autonomia.\n\n4.11) CRIAR UM SISTEMA DE ACOMPANHAMENTO DAS FAMÍLIAS\nEM MAIOR VULNERABILIDADE\nIntegrar informações das áreas de assistência social, saúde, educação e emprego,\nrespeitando as regras de proteção de dados.\nO objetivo será identificar famílias que enfrentam múltiplas vulnerabilidades e\nconstruir planos de acompanhamento específicos.\nEm vez de cada secretaria enxergar apenas uma parte do problema, o Governo\nprecisa enxergar a família como um todo.\n4.12) FORTALECER AS ENTIDADES SOCIAIS QUE ENTREGAM\nRESULTADOS\nCriar critérios transparentes para parcerias com organizações da sociedade civil\nque atuem em assistência social, cultura, esporte, inclusão, acolhimento e\ncapacitação.\nOs recursos públicos deverão estar vinculados a metas, prestação de contas e\navaliação de resultados.\nQuem realiza um bom trabalho social precisa ter condições de ampliar sua\natuação."
+          },
+          {
+            "id": "nosso-compromisso-com-a-protecao-social",
+            "titulo": "NOSSO COMPROMISSO COM A PROTEÇÃO SOCIAL",
+            "nivel": 1,
+            "paginaInicial": 42,
+            "paginaFinal": 42,
+            "origem": "pdftotext",
+            "conteudo": "NOSSO COMPROMISSO COM A PROTEÇÃO SOCIAL\nQueremos um Ceará que não abandone quem está vulnerável.\nUm Estado que acolha a pessoa em situação de rua, ofereça tratamento para quem\nenfrenta dependência química, crie oportunidades para pessoas com deficiência,\nproteja mulheres vítimas de violência e garanta segurança para famílias\nameaçadas pelo crime.\nMas queremos ir além do acolhimento.\nQueremos oferecer qualificação, emprego, cultura, esporte, moradia e\noportunidade.\nAssistência social precisa ser proteção no momento da dificuldade e uma ponte\npara a reconstrução da vida.\n\n5. OBRAS QUE SAEM DO PAPEL E CHEGAM A TODO O CEARÁ\nO Ceará não pode desperdiçar dinheiro público com obras abandonadas, projetos\nque se arrastam por anos ou investimentos concentrados apenas na capital e na\nRegião Metropolitana.\nNosso governo terá um princípio claro: nenhuma obra pública útil, legalmente\ncontratada, tecnicamente viável e já em execução será paralisada por disputa\npolítica ou mudança de governo.\nObras iniciadas serão avaliadas com responsabilidade e terão prioridade para\nconclusão, principalmente aquelas próximas de serem entregues à população.\nO dinheiro público já investido precisa se transformar em estrada, saneamento,\nenergia, escola, hospital, abastecimento e desenvolvimento.\nAo mesmo tempo, iniciaremos um novo ciclo de infraestrutura voltado\nprincipalmente para o interior do Ceará.\nCompromisso: concluir o que já começou, recuperar o que está parado e levar\nnovos investimentos para onde o Ceará mais precisa.\nPROPOSTAS\n5.1) GARANTIR A CONTINUIDADE DAS OBRAS EM ANDAMENTO\nRealizar, no início do governo, um levantamento completo de todas as obras\nestaduais em execução."
+          },
+          {
+            "id": "obras-que-estejam-regularmente-contratadas-tenham-utilidade-publica-segu",
+            "titulo": "Obras que estejam regularmente contratadas, tenham utilidade pública, segurança",
+            "nivel": 1,
+            "paginaInicial": 43,
+            "paginaFinal": 43,
+            "origem": "pdftotext",
+            "conteudo": "Obras que estejam regularmente contratadas, tenham utilidade pública, segurança\ntécnica e recursos disponíveis deverão ter continuidade assegurada.\nProjetos próximos da conclusão terão prioridade para evitar desperdício de\nrecursos já investidos.\nMudança de governo não pode significar abandonar obra simplesmente porque\nela foi iniciada pela gestão anterior.\nObra pública pertence à população, não a um governante.\n5.2) CRIAR UM PLANO PARA RETOMADA DAS OBRAS PARADAS\nFazer uma auditoria técnica, financeira e jurídica das obras interrompidas em todo\no Ceará.\nCada empreendimento deverá receber uma classificação clara:\n* Obra pronta para retomada;\n* Obra que necessita de adequação;\n* Obra com pendência jurídica;\n* Obra que precisa de nova licitação;\n* Obra tecnicamente inviável.\nNos casos em que a retomada for possível e vantajosa para a população, o Estado\ndeverá estabelecer prazo para reinício e conclusão.\n5.3) CRIAR O PAINEL CEARÁ DE OBRAS\nImplantar uma plataforma pública para acompanhamento das obras estaduais.\nA população poderá consultar:\n* Valor contratado;\n* Empresa responsável;\n* Fonte dos recursos;\n* Percentual executado;\n* Prazo previsto;\n* Aditivos;\n* Fotografias da evolução da obra;\n* Pagamentos realizados;\n* Previsão de entrega.\nTransparência será uma ferramenta permanente de fiscalização."
+          },
+          {
+            "id": "5-4-levar-infraestrutura-para-o-interior",
+            "titulo": "5.4) LEVAR INFRAESTRUTURA PARA O INTERIOR",
+            "nivel": 1,
+            "paginaInicial": 44,
+            "paginaFinal": 44,
+            "origem": "pdftotext",
+            "conteudo": "5.4) LEVAR INFRAESTRUTURA PARA O INTERIOR\nCriar um programa estadual de interiorização dos investimentos em infraestrutura.\nOs projetos deverão priorizar municípios que apresentem maiores déficits de:\n* Saneamento;\n* Abastecimento de água;\n* Energia;\n* Estradas;\n* Mobilidade;\n* Conectividade;\n* Infraestrutura urbana;\n* Equipamentos públicos.\nO desenvolvimento do Ceará não pode terminar nos limites da Região\nMetropolitana de Fortaleza.\n5.5) AMPLIAR O SANEAMENTO BÁSICO\nAcelerar os investimentos em abastecimento de água, coleta e tratamento de\nesgoto, drenagem e manejo adequado de resíduos.\nPriorizar comunidades e municípios com menor cobertura de saneamento.\nBuscar recursos estaduais, federais, financiamentos e parcerias com a iniciativa\nprivada para ampliar a capacidade de investimento.\nSaneamento não é apenas infraestrutura. É saúde pública, dignidade e\ndesenvolvimento.\n5.6) GARANTIR ÁGUA PARA O INTERIOR\nAmpliar a infraestrutura hídrica do Estado com novos sistemas de abastecimento,\nadutoras, reservatórios e integração dos sistemas existentes.\nPriorizar regiões que convivem historicamente com insegurança hídrica.\nFortalecer também soluções adequadas para comunidades rurais e localidades\ndistantes das grandes redes de abastecimento."
+          },
+          {
+            "id": "5-7-fortalecer-a-infraestrutura-de-energia",
+            "titulo": "5.7) FORTALECER A INFRAESTRUTURA DE ENERGIA",
+            "nivel": 1,
+            "paginaInicial": 45,
+            "paginaFinal": 45,
+            "origem": "pdftotext",
+            "conteudo": "5.7) FORTALECER A INFRAESTRUTURA DE ENERGIA\nTrabalhar em parceria com concessionárias, setor privado e órgãos reguladores\npara ampliar e modernizar a infraestrutura energética do Ceará.\nA expansão deverá atender tanto às famílias quanto às áreas industriais,\ncomerciais e rurais.\nEstimular também investimentos em energia renovável, especialmente solar e\neólica, aproveitando o enorme potencial do Estado.\nEnergia confiável é condição para atrair empresas, gerar empregos e desenvolver\no interior.\n5.8) CRIAR CORREDORES REGIONAIS DE DESENVOLVIMENTO\nPlanejar obras de infraestrutura de maneira integrada, conectando estradas, áreas\nprodutivas, polos industriais, centros comerciais, destinos turísticos e municípios.\nO objetivo é evitar obras isoladas e criar corredores que realmente movimentem\na economia regional.\nUma boa estrada pode significar mais turismo, escoamento da produção, novos\nnegócios e empregos.\n5.9) RECUPERAR E MANTER AS ESTRADAS ESTADUAIS\nRevisar os contratos de conservação e manutenção das rodovias estaduais.\nCriar indicadores de qualidade para avaliar pavimentação, sinalização, segurança\ne condições de tráfego.\nAs empresas responsáveis pela manutenção deverão ser cobradas pelo resultado\nentregue.\nNão basta recuperar uma estrada. É preciso impedir que ela volte rapidamente a\nse deteriorar.\n5.10) CRIAR UM PROGRAMA PERMANENTE DE ESTRADAS DO\nINTERIOR\nMapear os principais trechos que prejudicam o escoamento da produção, o\ntransporte escolar, o atendimento de saúde e a circulação entre municípios.\nCriar um cronograma plurianual para recuperação e pavimentação de trechos\nconsiderados prioritários."
+          },
+          {
+            "id": "as-obras-deverao-considerar-impacto-economico-e-social-e-nao-apenas-volu",
+            "titulo": "As obras deverão considerar impacto econômico e social, e não apenas volume de",
+            "nivel": 1,
+            "paginaInicial": 46,
+            "paginaFinal": 46,
+            "origem": "pdftotext",
+            "conteudo": "As obras deverão considerar impacto econômico e social, e não apenas volume de\ntráfego.\n5.11) MELHORAR\nINDUSTRIAIS\n\nA\n\nINFRAESTRUTURA\n\nDOS\n\nDISTRITOS\n\nRecuperar e modernizar áreas destinadas à instalação de empresas.\nGarantir, conforme a necessidade de cada polo:\n* Acesso rodoviário;\n* Energia;\n* Agua;\n* Saneamento;\n* Iluminação;\n* Telecomunicações;\n* Segurança;\n* Areas preparadas para novos investimentos.\nNão adianta oferecer incentivo fiscal se o empresário chega ao município e\nnão encontra infraestrutura para produzir.\n5.12) USAR PARCERIAS PARA ACELERAR GRANDES OBRAS\nAmpliar o uso responsável de concessões e parcerias público-privadas quando\nesses modelos forem tecnicamente e economicamente vantajosos para a\npopulação.\nAs parcerias deverão contar com metas claras, fiscalização, transparência e\nmecanismos que garantam qualidade na prestação dos serviços.\nO Estado precisa utilizar diferentes fontes de financiamento para conseguir fazer\nmais obras sem comprometer irresponsavelmente as contas públicas.\n5.13) CRIAR UM BANCO DE PROJETOS PARA O INTERIOR\nMuitos municípios deixam de receber investimentos porque não possuem projetos\ntécnicos prontos.\nCriar uma estrutura estadual para apoiar municípios na elaboração de projetos de\nengenharia e infraestrutura.\nO banco deverá reunir projetos aptos a buscar recursos federais, financiamentos,\nemendas, fundos e parcerias privadas.\nProjeto pronto significa mais capacidade de captar dinheiro e fazer a obra\nacontecer."
+          },
+          {
+            "id": "5-14-estabelecer-prioridade-para-obras-que-gerem",
+            "titulo": "5.14) ESTABELECER PRIORIDADE PARA OBRAS QUE GEREM",
+            "nivel": 1,
+            "paginaInicial": 47,
+            "paginaFinal": 47,
+            "origem": "pdftotext",
+            "conteudo": "5.14) ESTABELECER PRIORIDADE PARA OBRAS QUE GEREM\nDESENVOLVIMENTO\nNa definição dos novos investimentos, considerar critérios como:\n* número de pessoas beneficiadas;\n* impacto na geração de emprego;\n* redução das desigualdades regionais;\n* melhoria da saúde e qualidade de vida;\n* fortalecimento da economia local;\n* integração entre municípios;\n* capacidade de atrair novos investimentos.\nObra pública precisa resolver problema e melhorar a vida das pessoas.\nNOSSO COMPROMISSO COM A INFRAESTRUTURA\nNão chegaremos ao governo para apagar o que foi feito antes.\nAquilo que estiver funcionando será mantido.\nAquilo que estiver em construção será concluído, sempre que técnica e legalmente\npossível.\nAquilo que estiver parado será analisado e, quando viável, retomado.\nE novos investimentos deverão chegar principalmente às regiões que durante\ndécadas receberam menos infraestrutura.\nQueremos mais água, mais saneamento, mais energia, melhores estradas e\ncondições para que empresas possam investir também no interior.\nObra não tem partido. Obra tem que ter utilidade, prazo, transparência e resultado\npara a população."
+          },
+          {
+            "id": "6-meio-ambiente-com-responsabilidade-e",
+            "titulo": "6. MEIO AMBIENTE COM RESPONSABILIDADE E",
+            "nivel": 1,
+            "paginaInicial": 48,
+            "paginaFinal": 48,
+            "origem": "pdftotext",
+            "conteudo": "6. MEIO AMBIENTE COM RESPONSABILIDADE E\nBOM SENSO.\nO Ceará precisa crescer, gerar emprego, atrair investimentos e ampliar sua\ninfraestrutura sem abrir mão da proteção ambiental.\nDesenvolvimento econômico e preservação não podem ser tratados como\nlados opostos.\nNosso compromisso será construir uma política ambiental baseada em\nresponsabilidade, ciência, diálogo, compensação ambiental e respeito às\npessoas que vivem nos territórios afetados.\nNenhuma obra ou empreendimento deverá avançar ignorando quem mora,\ntrabalha ou produz naquela região.\nCompromisso: preservar o meio ambiente, respeitar as pessoas e permitir que\no Ceará se desenvolva de forma sustentável.\nPROPOSTAS\n6.1) GARANTIR RESPEITO ÀS COMUNIDADES AFETADAS POR\nINTERVENÇÕES\nToda grande intervenção pública ou privada deverá considerar os impactos\nambientais, sociais e econômicos sobre as comunidades da região.\nMoradores, trabalhadores, produtores rurais, pescadores, comunidades\ntradicionais e demais grupos diretamente afetados deverão ser ouvidos nos\nprocessos de planejamento e licenciamento, conforme a legislação aplicável.\nQuando houver necessidade de reassentamento, desapropriação ou mudança\nsignificativa no modo de vida da população, o poder público deverá garantir\ndiálogo, informação, compensação adequada e acompanhamento social.\nNenhuma política ambiental pode proteger a natureza ignorando as pessoas\nque vivem nela.\n6.2) CRIAR O\nOBRIGATÓRIA\n\nPRINCÍPIO\n\nDA\n\nREPOSIÇÃO\n\nAMBIENTAL\n\nEstabelecer políticas estaduais para que intervenções que impliquem\nsupressão autorizada de vegetação sejam acompanhadas de\ncompensação e reposição ambiental.\nSempre que houver retirada de árvores em razão de obras ou"
+          },
+          {
+            "id": "empreendimentos-devidamente-autorizados-devera-existir-plano-de",
+            "titulo": "empreendimentos devidamente autorizados, deverá existir plano de",
+            "nivel": 1,
+            "paginaInicial": 49,
+            "paginaFinal": 49,
+            "origem": "pdftotext",
+            "conteudo": "empreendimentos devidamente autorizados, deverá existir plano de\ncompensação que considere quantidade, espécie, localização,\ncapacidade de sobrevivência e recuperação ambiental.\nA reposição deverá priorizar espécies adequadas ao bioma e à\nrealidade local.\nO objetivo não será apenas plantar mudas, mas garantir que elas\ncresçam e cumpram sua função ambiental.\n6.3)\nCRIAR\nPROGRAMAS\nPERMANENTES\nDE\nREFLORESTAMENTO\nE\nRECUPERAÇÃO\nDE\nÁREAS\nDEGRADADAS\n\nAmpliar a recuperação de matas ciliares, áreas degradadas,\nmargens de rios, nascentes, dunas, manguezais e demais\necossistemas importantes para o Ceará.\nEstabelecer parcerias com:\n* Empresas;\n* Universidades;\n* Organizações ambientais;\n* Municípios;\n* Produtores rurais;\n* Comunidades locais.\nOs programas deverão possuir metas mensuráveis de recuperação,\nmanutenção e monitoramento.\n6.4) ESTIMULAR EMPRESAS A ADOTAREM PROGRAMAS\nCONTÍNUOS DE RESPONSABILIDADE AMBIENTAL\n\nCriar mecanismos para incentivar e, nos casos previstos em lei ou\nem condicionantes ambientais, exigir que empresas mantenham\nprogramas permanentes de:\n* Reflorestamento;\n* Recuperação de áreas degradadas;\n* Gestão de resíduos;\n* Economia de água;\n* Eficiência energética;"
+          },
+          {
+            "id": "reducao-de-emissoes",
+            "titulo": "* Redução de emissões;",
+            "nivel": 1,
+            "paginaInicial": 50,
+            "paginaFinal": 50,
+            "origem": "pdftotext",
+            "conteudo": "* Redução de emissões;\n* Educação ambiental.\nAs obrigações deverão ser proporcionais ao impacto de cada\natividade e acompanhadas por indicadores objetivos.\nResponsabilidade ambiental precisa fazer parte da rotina da\nempresa, e não ser apenas uma ação pontual.\n6.5) CRIAR O SELO EMPRESA AMIGA DO CEARÁ VERDE\n\nCriar uma certificação estadual para reconhecer empresas que\nsuperem as exigências ambientais mínimas e desenvolvam boas\npráticas de sustentabilidade.\nPoderão ser considerados critérios como:\n* Redução de emissões;\n* Uso eficiente da água;\n* Energia renovável;\n* Reciclagem;\n* Reflorestamento;\n* Preservação da biodiversidade;\n* Inovação ambiental;\n* Geração de empregos verdes.\nO selo poderá ser utilizado como instrumento de valorização\ninstitucional e atração de investimentos responsáveis.\n6.6) CRIAR UM AMBIENTE SEGURO PARA O INVESTIMENTO\nSUSTENTÁVEL\nModernizar os processos de licenciamento ambiental, garantindo mais\nprevisibilidade, prazos, transparência e segurança jurídica sem reduzir a\nproteção ambiental.\nEmpreendimentos deverão saber com clareza:\n* quais estudos serão exigidos;\n* quais documentos deverão apresentar;\n* quais condicionantes deverão cumprir;\n* quais prazos deverão ser observados."
+          },
+          {
+            "id": "licenciamento-ambiental-eficiente-nao-significa-licenciamento",
+            "titulo": "Licenciamento ambiental eficiente não significa licenciamento",
+            "nivel": 1,
+            "paginaInicial": 51,
+            "paginaFinal": 51,
+            "origem": "pdftotext",
+            "conteudo": "Licenciamento ambiental eficiente não significa licenciamento\nirresponsável.\nSignifica fazer com que boas empresas consigam investir com regras claras,\nenquanto atividades prejudiciais sejam fiscalizadas e responsabilizadas.\n6.7) ATRAIR EMPRESAS DA ECONOMIA VERDE PARA O CEARÁ\nCriar uma política ativa para atrair investimentos ligados à sustentabilidade.\nPriorizar setores como:\n* energia solar;\n* energia eólica;\n* hidrogênio de baixa emissão;\n* reciclagem;\n* reaproveitamento de resíduos;\n* saneamento;\n* tecnologia ambiental;\n* dessalinização;\n* eficiência energética;\n* mobilidade limpa;\n* agricultura sustentável.\nO Ceará possui condições naturais e estratégicas para se tornar referência em\neconomia verde e geração de empregos associados à sustentabilidade.\n6.8) CRIAR POLOS DE ECONOMIA CIRCULAR\nEstimular empresas a transformar resíduos de uma atividade em insumos\npara outra.\nCriar polos e programas de economia circular para reduzir descarte, custos\nindustriais e impacto ambiental.\nA política poderá integrar indústria, cooperativas, municípios, universidades\ne empresas de tecnologia.\nO que hoje é tratado como lixo pode se transformar em matéria-prima, renda\ne emprego.\n6.9) FORTALECER A COLETA SELETIVA E AS COOPERATIVAS\nDE RECICLAGEM\nAmpliar parcerias com municípios e cooperativas para fortalecer a coleta\nseletiva e a reciclagem."
+          },
+          {
+            "id": "apoiar-catadores-e-cooperativas-com",
+            "titulo": "Apoiar catadores e cooperativas com:",
+            "nivel": 1,
+            "paginaInicial": 52,
+            "paginaFinal": 52,
+            "origem": "pdftotext",
+            "conteudo": "Apoiar catadores e cooperativas com:\n* Capacitação;\n* Equipamentos;\n* Infraestrutura;\n* Formalização;\n* Acesso a contratos e mercados.\nA política ambiental também precisa gerar inclusão e renda.\n6.10) PROTEGER RIOS, LAGOAS, NASCENTES, MANGUEZAIS E\nO LITORAL\nCriar programas permanentes de proteção e recuperação dos recursos\nhídricos e dos ecossistemas costeiros.\nCombater despejo irregular de resíduos e esgoto.\nFortalecer ações de recuperação de:\n* Rios;\n* Lagoas;\n* Nascentes;\n* Matas ciliares;\n* Manguezais;\n* Dunas;\n* Areas costeiras degradadas.\nÁgua e meio ambiente precisam ser tratados como patrimônio estratégico do\nCeará.\n6.11) AMPLIAR A ARBORIZAÇÃO URBANA\nCriar um programa estadual de apoio à arborização dos municípios.\nPriorizar áreas com:\n* Altas temperaturas;\n* Pouca cobertura vegetal;\n* Grande circulação de pedestres;\n* Escolas;\n* Hospitais;\n* Praças;\n* Avenidas.\nO planejamento deverá considerar espécies adequadas, manutenção e\ncompatibilidade com calçadas, rede elétrica e infraestrutura urbana."
+          },
+          {
+            "id": "mais-arvores-significam-cidades-mais-agradaveis-mais-sombra-e-melhor",
+            "titulo": "Mais árvores significam cidades mais agradáveis, mais sombra e melhor",
+            "nivel": 1,
+            "paginaInicial": 53,
+            "paginaFinal": 53,
+            "origem": "pdftotext",
+            "conteudo": "Mais árvores significam cidades mais agradáveis, mais sombra e melhor\nqualidade de vida.\n6.12) INCENTIVAR O PRODUTOR RURAL QUE PRESERVA\nCriar programas para apoiar agricultores e produtores que adotem práticas\nsustentáveis.\nEstimular:\n* Conservação do solo;\n* Proteção de nascentes;\n* Uso racional da água;\n* Recuperação de áreas degradadas;\n* Sistemas agroflorestais;\n* Tecnologias de produção sustentável.\nO produtor rural deve ser tratado como aliado da preservação.\n6.13) CRIAR PROGRAMAS DE PAGAMENTO POR SERVIÇOS\nAMBIENTAIS\nEstruturar mecanismos para reconhecer e incentivar proprietários,\ncomunidades e produtores que preservem áreas de interesse ambiental.\nOs programas poderão apoiar quem protege:\n* Nascentes;\n* Matas;\n* Biodiversidade;\n* Areas de recarga hídrica;\n* Ecossistemas estratégicos.\nPreservar também precisa gerar valor para quem cuida do território.\n6.14) FORTALECER A FISCALIZAÇÃO CONTRA CRIMES\nAMBIENTAIS\nCombater desmatamento ilegal, ocupações irregulares, descarte clandestino\nde resíduos, poluição e outros crimes ambientais.\nUtilizar tecnologia, imagens de satélite, drones e integração entre órgãos\npara ampliar a capacidade de fiscalização.\nA política de bom senso não significa tolerância com quem destrói\nilegalmente o patrimônio ambiental."
+          },
+          {
+            "id": "6-15-criar-educacao-ambiental-permanente",
+            "titulo": "6.15) CRIAR EDUCAÇÃO AMBIENTAL PERMANENTE",
+            "nivel": 1,
+            "paginaInicial": 54,
+            "paginaFinal": 54,
+            "origem": "pdftotext",
+            "conteudo": "6.15) CRIAR EDUCAÇÃO AMBIENTAL PERMANENTE\nFortalecer programas de educação ambiental nas escolas, comunidades e\nempresas.\nTrabalhar temas como:\n* Uso responsável da água;\n* Reciclagem;\n* Preservação;\n* Combate às queimadas;\n* Limpeza urbana;\n* Consumo consciente;\n* Mudanças climáticas.\nPreservação também depende de mudança de comportamento.\nNOSSO COMPROMISSO COM O MEIO AMBIENTE\nQueremos um Ceará capaz de crescer sem destruir.\nUm Estado que respeite as famílias que vivem nos territórios onde haverá\nnovos investimentos.\nQue exija compensação ambiental quando houver impacto.\nQue recupere áreas degradadas.\nQue plante, preserve e acompanhe as árvores que forem repostas.\nQue responsabilize quem polui, mas que também dê segurança jurídica a\nquem quer investir corretamente.\nE que transforme a política ambiental em uma oportunidade para atrair\nnovas empresas, novas tecnologias e novos empregos.\nDesenvolvimento com responsabilidade. Preservação com bom senso. E\nrespeito absoluto às pessoas e ao futuro do Ceará.\n7. MÉRITO, TRANSPARÊNCIA E PRESTAÇÃO DE CONTAS\nO Governo do Ceará precisa funcionar com responsabilidade, competência e\ntransparência.\nCada secretaria terá orçamento próprio, metas claras e autonomia para\nexecutar suas políticas públicas sem depender de decisões políticas a todo\nmomento para funcionar."
+          },
+          {
+            "id": "mas-autonomia-vira-acompanhada-de-responsabilidade",
+            "titulo": "Mas autonomia virá acompanhada de responsabilidade.",
+            "nivel": 1,
+            "paginaInicial": 55,
+            "paginaFinal": 55,
+            "origem": "pdftotext",
+            "conteudo": "Mas autonomia virá acompanhada de responsabilidade.\nTodas as secretarias deverão prestar contas de forma permanente, com\nfiscalização mensal, auditorias trimestrais e acompanhamento público dos\nresultados.\nCompromisso: quem administra dinheiro público precisa mostrar onde gastou,\ncomo gastou e qual resultado entregou.\nPROPOSTAS\n7.1) CARGOS DE RESPONSABILIDADE SERÃO OCUPADOS POR\nMÉRITO\nEstabelecer critérios técnicos para ocupação de cargos de direção,\ncoordenação, presidência e demais funções estratégicas da administração\nestadual.\nNenhum cargo de responsabilidade deverá ser preenchido apenas por\nindicação política.\nOs critérios deverão considerar:\n* Formação;\n* Experiência profissional;\n* Capacidade de gestão;\n* Conhecimento técnico;\n* Histórico funcional;\n* Resultados anteriores;\n* Qualificação para a função.\nO Estado precisa colocar a pessoa certa no lugar certo.\nCargo público de responsabilidade não pode ser prêmio político. Deve ser\ncompromisso com resultado.\n7.2) CRIAR PROCESSOS TÉCNICOS DE SELEÇÃO PARA\nFUNÇÕES ESTRATÉGICAS\nImplantar processos públicos de seleção para cargos estratégicos da\nadministração estadual.\nSempre que possível, serão utilizados:\n* Análise curricular;\n* Entrevistas técnicas;\n* Avaliação de experiência;"
+          },
+          {
+            "id": "metas-de-desempenho",
+            "titulo": "* Metas de desempenho;",
+            "nivel": 1,
+            "paginaInicial": 56,
+            "paginaFinal": 56,
+            "origem": "pdftotext",
+            "conteudo": "* Metas de desempenho;\n* Critérios objetivos de seleção.\nA escolha final deverá ser fundamentada e transparente.\n7.3) DAR AUTONOMIA ORÇAMENTÁRIA ÀS SECRETARIAS\nCada secretaria deverá receber orçamento previamente definido para executar\nsuas políticas públicas.\nO objetivo será reduzir a dependência de liberações políticas constantes e\npermitir planejamento de médio e longo prazo.\nCada gestor saberá:\n* Quanto poderá gastar;\n* Quais metas deverá cumprir;\n* Quais serviços deverá entregar;\n* Quais resultados serão cobrados.\nAutonomia para trabalhar. Responsabilidade para prestar contas.\n7.4) IMPLANTAR FISCALIZAÇÃO MENSAL DOS GASTOS\nCriar rotinas mensais de acompanhamento da execução financeira e\norçamentária de todas as secretarias.\nSerão monitorados:\n* Gastos;\n* Contratos;\n* Licitações;\n* Compras;\n* Despesas com pessoal;\n* Diárias;\n* Viagens;\n* Serviços terceirizados;\n* Execução das metas.\nOs relatórios deverão ser padronizados e enviados aos órgãos de controle.\n7.5) REALIZAR AUDITORIAS TRIMESTRAIS\nTodas as secretarias e principais órgãos estaduais deverão passar por\nauditorias periódicas, preferencialmente a cada três meses, de acordo com\ncritérios de risco, materialidade e relevância."
+          },
+          {
+            "id": "as-auditorias-deverao-avaliar",
+            "titulo": "As auditorias deverão avaliar:",
+            "nivel": 1,
+            "paginaInicial": 57,
+            "paginaFinal": 57,
+            "origem": "pdftotext",
+            "conteudo": "As auditorias deverão avaliar:\n* Legalidade;\n* Eficiência;\n* Cumprimento de metas;\n* Qualidade do gasto;\n* Execução de contratos;\n* riscos de irregularidades.\nNão basta saber se o dinheiro foi gasto dentro da lei.\nÉ preciso saber se o dinheiro público entregou resultado.\n7.6) CRIAR O PAINEL CEARÁ TRANSPARENTE\nModernizar o Portal da Transparência para torná-lo mais simples, intuitivo e\nacessível.\nO cidadão não deverá precisar ser contador, advogado ou especialista para\nentender os gastos do Governo.\nO novo painel deverá permitir consultas simples sobre:\n* Quanto cada secretaria recebeu;\n* Quanto gastou;\n* Onde gastou;\n* Contratos;\n* Empresas contratadas;\n* Obras;\n* Salários;\n* Diárias;\n* Viagens;\n* Licitações;\n* Emendas;\n* Convênios;\n* Metas e Resultados.\nA informação precisa estar disponível em linguagem clara.\nTransparência que ninguém entende não é transparência de verdade.\n\n7.7) CRIAR UMA VERSÃO SIMPLIFICADA DO PORTAL PARA\nCELULAR\nDesenvolver uma versão leve e simples do Portal da Transparência para\ncelular."
+          },
+          {
+            "id": "o-cidadao-podera-pesquisar-por-exemplo",
+            "titulo": "O cidadão poderá pesquisar, por exemplo:",
+            "nivel": 1,
+            "paginaInicial": 58,
+            "paginaFinal": 58,
+            "origem": "pdftotext",
+            "conteudo": "O cidadão poderá pesquisar, por exemplo:\n* Quanto custou uma obra;\n* Quanto recebeu determinada secretaria;\n* Quem venceu uma licitação;\n* Quanto foi gasto com viagens;\n* Quanto foi destinado para seu município.\nA tecnologia precisa aproximar o cidadão do controle do Estado.\n7.8) PUBLICAR METAS E RESULTADOS DE TODAS AS\nSECRETARIAS\nCada secretaria deverá publicar suas principais metas anuais.\nAo longo do ano, o Governo divulgará:\n* Metas alcançadas;\n* Metas atrasadas;\n* Indicadores;\n* Justificativas;\n* Medidas corretivas.\nA população poderá acompanhar não apenas quanto foi gasto, mas o que foi\nentregue.\n7.9) CRIAR INDICADORES PÚBLICOS DE DESEMPENHO\nImplantar indicadores objetivos para avaliar secretarias, órgãos, programas e\ngestores.\nExemplos:\n* Tempo de espera na saúde;\n* Desempenho educacional;\n* Redução de criminalidade;\n* Geração de empregos;\n* Execução de obras;\n* Qualidade das estradas;\n* Tempo para abertura de empresas.\nO Governo precisa ser medido pelo resultado que entrega."
+          },
+          {
+            "id": "7-10-valorizar-o-servidor-por-desempenho",
+            "titulo": "7.10) VALORIZAR O SERVIDOR POR DESEMPENHO",
+            "nivel": 1,
+            "paginaInicial": 59,
+            "paginaFinal": 59,
+            "origem": "pdftotext",
+            "conteudo": "7.10) VALORIZAR O SERVIDOR POR DESEMPENHO\nCriar mecanismos de reconhecimento e valorização dos servidores públicos\nque apresentem bons resultados.\nPoderão ser adotados:\n* premiações institucionais;\n* capacitação;\n* reconhecimento profissional;\n* progressão baseada nos critérios legais aplicáveis;\n* incentivos vinculados a metas coletivas.\nA valorização deverá ocorrer com critérios claros e objetivos.\n7.11) COMBATER O NEPOTISMO E AS INDICAÇÕES POLÍTICAS\nINADEQUADAS\nFortalecer regras para impedir nepotismo e nomeações incompatíveis com\nprincípios de impessoalidade e moralidade.\nO Governo deverá defender também critérios técnicos para nomeações em\nórgãos de controle e funções estratégicas.\nQuem fiscaliza o Estado precisa ter independência.\n7.12) REDUZIR GASTOS INJUSTIFICADOS COM DIÁRIAS E\nDESLOCAMENTOS\nRevisar despesas com:\n* Diárias;\n* Viagens;\n* Hospedagens;\n* Veículos oficiais;\n* Aeronaves;\n* Deslocamentos administrativos.\nO uso de helicópteros e aeronaves deverá ocorrer apenas quando houver\njustificativa operacional, segurança ou necessidade de serviço público.\nDinheiro público não pode financiar conforto desnecessário."
+          },
+          {
+            "id": "7-13",
+            "titulo": "7.13)",
+            "nivel": 1,
+            "paginaInicial": 60,
+            "paginaFinal": 60,
+            "origem": "pdftotext",
+            "conteudo": "7.13)\nDAR\nTRANSPARÊNCIA\nPARLAMENTARES\n\nTOTAL\n\nÀS\n\nEMENDAS\n\nCriar um painel específico para acompanhamento das emendas dos deputados\nestaduais.\nO cidadão poderá saber:\n* Autor da emenda;\n* Valor;\n* Município beneficiado;\n* Finalidade;\n* Orgão responsável;\n* Estágio de execução.\nO Governo deverá trabalhar para ampliar previsibilidade e critérios\nobjetivos na execução das emendas, observando as regras constitucionais\ne orçamentárias aplicáveis.\n7.14) PROTEGER ÓRGÃOS TÉCNICOS DA INTERFERÊNCIA\nPOLÍTICA\nFortalecer critérios técnicos para nomeações em agências, autarquias e órgãos\nreguladores.\nDirigentes deverão possuir qualificação compatível com a função.\nO objetivo é reduzir captura política e garantir decisões baseadas em critérios\ntécnicos.\n7.15) CRIAR PRESTAÇÃO DE CONTAS TRIMESTRAL DO\nGOVERNADOR\nA cada trimestre, o Governo deverá apresentar publicamente um balanço das\nprincipais ações.\nO relatório deverá mostrar:\n* Receitas;\n* Despesas;\n* Obras;\n* Saúde;\n* Educação;\n* Segurança;\n* Empregos;\n* Investimentos;\n* Cumprimento de metas.\nO Governo precisa explicar diretamente à população o que está fazendo."
+          },
+          {
+            "id": "nosso-compromisso-com-a-transparencia",
+            "titulo": "NOSSO COMPROMISSO COM A TRANSPARÊNCIA",
+            "nivel": 1,
+            "paginaInicial": 61,
+            "paginaFinal": 61,
+            "origem": "pdftotext",
+            "conteudo": "NOSSO COMPROMISSO COM A TRANSPARÊNCIA\nQueremos um Governo onde nenhuma informação relevante fique escondida.\nUm Governo em que o secretário tenha autonomia para trabalhar, mas saiba\nque será fiscalizado.\nOnde cargos de responsabilidade sejam ocupados por pessoas capacitadas.\nOnde o servidor seja valorizado pelo que entrega.\nOnde cada real gasto possa ser acompanhado.\nE onde qualquer cidadão, independentemente de escolaridade ou condição\nsocial, consiga entender como o dinheiro público está sendo utilizado.\nMérito para administrar. Transparência para governar. Fiscalização para\nproteger o dinheiro do povo.\n8. CIÊNCIA, TECNOLOGIA, INOVAÇÃO E COMUNICAÇÕES\n\nO Ceará precisa usar tecnologia para gerar emprego, melhorar\nserviços e aumentar a competitividade.\nCompromisso: conectar conhecimento, empresas e inovação para\ncriar oportunidades.\n8.1) APROXIMAR UNIVERSIDADES, EMPRESAS E STARTUPS\n\nCriar programas conjuntos para desenvolver soluções tecnológicas\npara problemas reais da indústria, agricultura, comércio, saúde,\nenergia e serviços.\n8.2) LEVAR INTERNET E SINAL DE QUALIDADE AO INTERIOR\n\nTrabalhar em parceria com operadoras para ampliar cobertura de\ninternet e telefonia em pequenas cidades, comunidades rurais e áreas\nprodutivas.\nConectividade hoje é infraestrutura básica para estudar, trabalhar,\nproduzir e empreender."
+          },
+          {
+            "id": "8-3-criar-um-grande-centro-estadual-de-inovacao",
+            "titulo": "8.3) CRIAR UM GRANDE CENTRO ESTADUAL DE INOVAÇÃO",
+            "nivel": 1,
+            "paginaInicial": 62,
+            "paginaFinal": 62,
+            "origem": "pdftotext",
+            "conteudo": "8.3) CRIAR UM GRANDE CENTRO ESTADUAL DE INOVAÇÃO\n\nAproveitar estruturas públicas disponíveis para criar um polo de\ninovação que reúna startups, incubadoras, universidades, centros de\npesquisa e empresas.\nO espaço deverá estimular pesquisa aplicada, empreendedorismo\ntecnológico e atração de investimentos.\n8.4) INCENTIVAR A INOVAÇÃO NAS EMPRESAS CEARENSES\n\nCriar programas de apoio técnico e acesso a linhas de financiamento\npara empresas que invistam em tecnologia, automação, pesquisa e\nnovos produtos.\n8.5) FORMAR JOVENS PARA A NOVA ECONOMIA\n\nAmpliar cursos e programas de formação em programação,\ninteligência artificial, robótica, segurança digital e outras áreas de\ntecnologia.\n8.6) CRIAR AMBIENTE\nTECNOLOGIA\n\nPARA\n\nATRAIR\n\nEMPRESAS\n\nDE\n\nOferecer segurança jurídica, infraestrutura e condições competitivas\npara atrair empresas de tecnologia, centros de pesquisa e novos\ninvestimentos.\nCompromisso final: mais conexão, mais inovação, mais empresas e\nmais empregos de qualidade no Ceará.\n9. AGRONEGÓCIO E DESENVOLVIMENTO RURAL\n\nO campo precisa de tecnologia, crédito, infraestrutura e segurança\npara produzir mais, gerar renda e fortalecer o interior.\nCompromisso: apoiar pequeno, médio e grande produtor de acordo\ncom suas necessidades."
+          },
+          {
+            "id": "9-1-atrair-investimentos-e-tecnologia-para-o-campo",
+            "titulo": "9.1) ATRAIR INVESTIMENTOS E TECNOLOGIA PARA O CAMPO",
+            "nivel": 1,
+            "paginaInicial": 63,
+            "paginaFinal": 63,
+            "origem": "pdftotext",
+            "conteudo": "9.1) ATRAIR INVESTIMENTOS E TECNOLOGIA PARA O CAMPO\n\nFacilitar a entrada de recursos privados e internacionais para\npesquisa, inovação e modernização da produção rural.\n9.2) QUALIFICAR\nAGROINDUSTRIAL\n\nMÃO\n\nDE\n\nOBRA\n\nPARA\n\nO\n\nSETOR\n\nCriar cursos profissionalizantes em parceria com empresas para\natender abatedouros, agroindústrias e cadeias produtivas regionais.\n9.3) APOIAR O PEQUENO PRODUTOR\n\nAmpliar assistência técnica, acesso simplificado ao crédito, compras\npúblicas e apoio à comercialização da produção.\n9.4) FORTALECER O MÉDIO PRODUTOR\n\nCriar condições para financiamento de mecanização, irrigação,\narmazenagem, tecnologia e expansão da produção.\n9.5) DAR SEGURANÇA AO GRANDE PRODUTOR\n\nGarantir ambiente de segurança jurídica, infraestrutura, logística e\nestímulo a novos investimentos e exportações.\n9.6) MELHORAR ESTRADAS E ESCOAMENTO DA PRODUÇÃO\n\nPriorizar a recuperação de vias utilizadas para transportar produtos\nagrícolas e pecuários.\n9.7) INCENTIVAR IRRIGAÇÃO E USO EFICIENTE DA ÁGUA\n\nEstimular tecnologias de irrigação, reúso de água e soluções\nadaptadas ao semiárido.\n9.8) ESTIMULAR AGROINDÚSTRIAS NO INTERIOR\n\nCriar condições para instalação e expansão de empresas próximas às\nregiões produtoras, agregando valor à produção local.\nCompromisso final: quem produz no Ceará, seja pequeno, médio ou"
+          },
+          {
+            "id": "grande-tera-no-estado-um-parceiro-para-crescer",
+            "titulo": "grande, terá no Estado um parceiro para crescer.",
+            "nivel": 1,
+            "paginaInicial": 64,
+            "paginaFinal": 64,
+            "origem": "pdftotext",
+            "conteudo": "grande, terá no Estado um parceiro para crescer.\n\nCOMPROMISSO FINAL\nEste plano não foi feito para preencher páginas.\nFoi feito para mudar a realidade.\nAssumo diante do povo cearense compromissos claros, firmes e\ninegociáveis:\nDefender a vida.\nEnfrentar a violência.\nLibertar quem produz da burocracia.\nValorizar quem trabalha e entrega resultado.\nGovernar com transparência, coragem e responsabilidade.\nO Ceará não precisa de mais promessas vazias.\nPrecisa de governo presente.\nPrecisa de gestão séria.\nPrecisa de resultado.\nCada real público terá destino.\nCada secretário terá meta.\nCada obra terá prazo.\nCada política terá avaliação.\nCada cidadão terá o direito de cobrar.\nNão vamos governar para grupos.\nVamos governar para o Ceará.\nPara quem trabalha.\nPara quem empreende.\nPara quem produz.\nPara quem precisa do Estado.\nPara quem acredita que ainda é possível fazer diferente.\nMenos privilégio. Mais mérito.\nMenos burocracia. Mais oportunidade.\nMenos desperdício. Mais resultado.\nMenos distância do povo. Mais presença do Estado.\nGovernar é servir."
+          },
+          {
+            "id": "e-servir-exige-coragem-para-enfrentar-problemas-disciplina-para-cumprir",
+            "titulo": "E servir exige coragem para enfrentar problemas, disciplina para cumprir",
+            "nivel": 1,
+            "paginaInicial": 65,
+            "paginaFinal": 65,
+            "origem": "pdftotext",
+            "conteudo": "E servir exige coragem para enfrentar problemas, disciplina para cumprir\nmetas e respeito absoluto ao dinheiro e à confiança do cidadão.\nEstado eficiente. Cidadão respeitado. Ceará mais forte.\nQue Deus abençoe o Ceará, proteja o nosso povo e nos dê sabedoria para\nconstruir um Estado mais justo, seguro, próspero e digno para todos.\nQue Deus nos abençoe."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "5bc17a0a55ec964d666e5df3d4bf6cb73272df37dc8037e56e108a4c2f8bfc2b"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "97c6edeafea4a222ac7f8cb929d09812f10600db636c4c733281272db74a7c50"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "9ebfb1abd5bfacd9baf24d1d5a788aa810ff31b4f431c5785a747f0401e3bb17"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "a40b5ee44b9068c47f8f59d1f7c18af38ea0f6f3c32b72627bdf5e89097e4242"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "34706a3c79af7cce5c51dbfef18879434ffc5cd20f8f4d6812e5e41075ccca0f"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "cbe3cfdcad2185862e5eaccc65a43819ddcd1acbc0cddfda7401bb2e95070b14"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "76fb49864d9ffc5d7339c1657302fce763d6c41f6e974fccb332511769727771"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "857a3f3d96fe2066e6c0a8f94da94b2986dd047db50fb5d2f53ddcab4605cf14"
+          },
+          {
+            "pagina": 9,
+            "origem": "pdftotext",
+            "textSha256": "398d92df24f0c012104b969664702716287cdcd1bd291890a5648fbddce03590"
+          },
+          {
+            "pagina": 10,
+            "origem": "pdftotext",
+            "textSha256": "d0fc42ce3003ce6eb01bed19b270481c13fb85a32ab8157dc2ffd01e58af158d"
+          },
+          {
+            "pagina": 11,
+            "origem": "pdftotext",
+            "textSha256": "6eb8ed7962cd1d70b62d5c1c9374677766c88f2c658f2bd0a58f93fd3dd7248f"
+          },
+          {
+            "pagina": 12,
+            "origem": "pdftotext",
+            "textSha256": "4d17711ea712ae95c01d69a9b9e3ecbaf41a260e7be5ef407fa0759b0ebc0618"
+          },
+          {
+            "pagina": 13,
+            "origem": "pdftotext",
+            "textSha256": "0b6182943c76bf462522f84c0f6bf31355f066c97da0ef6354001a3603fb8704"
+          },
+          {
+            "pagina": 14,
+            "origem": "pdftotext",
+            "textSha256": "9dac939672aaf85dabc64f39a7c765fd7a0917cf138fbe4f3592ce4bd233f8d8"
+          },
+          {
+            "pagina": 15,
+            "origem": "pdftotext",
+            "textSha256": "7f4f1185cf297d5e6ade3e32b34ee2c6858b8e715333148fb50922367040f399"
+          },
+          {
+            "pagina": 16,
+            "origem": "pdftotext",
+            "textSha256": "21246d9d67ad5e2a5a03273b553aa34a0b4eddafbb46aafbc91ed803a704679a"
+          },
+          {
+            "pagina": 17,
+            "origem": "pdftotext",
+            "textSha256": "5b7c051cd6bc70270755efc2b5e6313c3ea4688ca7a893c8329bc3c91f05b034"
+          },
+          {
+            "pagina": 18,
+            "origem": "pdftotext",
+            "textSha256": "5c3d0d40261201639d6c05f03863c47d4d93bdec5f10ca44a8d75984a75274a5"
+          },
+          {
+            "pagina": 19,
+            "origem": "pdftotext",
+            "textSha256": "a1f4b789bc6fa85ee8b2810de9d2ac0ba743f376b0a3a7a642bbdc2040ef13e7"
+          },
+          {
+            "pagina": 20,
+            "origem": "pdftotext",
+            "textSha256": "5d4c3ba755573c603d9c52a780ce41a832a159a19acb0ca22b4f3a7d5d30399e"
+          },
+          {
+            "pagina": 21,
+            "origem": "pdftotext",
+            "textSha256": "7772d17c4141ce1e3e5f96480cacdfdb8c6fc68a005b995a9c5a2e235fbefdec"
+          },
+          {
+            "pagina": 22,
+            "origem": "pdftotext",
+            "textSha256": "0b243e0b7958f188d33ccb8f23269a9508c5a2aa9b186bff70e64138c86ee017"
+          },
+          {
+            "pagina": 23,
+            "origem": "pdftotext",
+            "textSha256": "76dbe55c17f1c07b954eee10a9940fd1a89128b29cbe38af1471a4e19e1ff46c"
+          },
+          {
+            "pagina": 24,
+            "origem": "pdftotext",
+            "textSha256": "586c1dc40732d2c23271128769b3b134bd6d43eaf510448aae33e5d80f4e8909"
+          },
+          {
+            "pagina": 25,
+            "origem": "pdftotext",
+            "textSha256": "a3413a297c58b6b2c692bd937cc6212bd0321ba9438bd0f798241930b5f61134"
+          },
+          {
+            "pagina": 26,
+            "origem": "pdftotext",
+            "textSha256": "ef3e933ecca2ec48ab575fe4c0cdeafb6054aa9d1a3124f94899ce7f6eebd15e"
+          },
+          {
+            "pagina": 27,
+            "origem": "pdftotext",
+            "textSha256": "78a6832cb3981d309459ebf4e14d1d9a82d61a46fb500d3a0055cb54fd110ba8"
+          },
+          {
+            "pagina": 28,
+            "origem": "pdftotext",
+            "textSha256": "7d9837b4e1f0e415bdcfd1ea47d6a079c7dc9b22843c18234cc6285be4a20dc3"
+          },
+          {
+            "pagina": 29,
+            "origem": "pdftotext",
+            "textSha256": "d60f00b4b4a1078b237f0c5f5684182707fea789cd3b57a1510e875e1ce0d91e"
+          },
+          {
+            "pagina": 30,
+            "origem": "pdftotext",
+            "textSha256": "17cf81f2420b08b77cc6a196d466458ed26ba1ac6443f3221c46a72ce35eed67"
+          },
+          {
+            "pagina": 31,
+            "origem": "pdftotext",
+            "textSha256": "6383dada9a3d76c45a20a75bb9ffeb03006c9c8bc02e436991dea8734c6d981d"
+          },
+          {
+            "pagina": 32,
+            "origem": "pdftotext",
+            "textSha256": "33997abf25550d5be5e64b7213fd55cb204277862df22f604d705d6a26303528"
+          },
+          {
+            "pagina": 33,
+            "origem": "pdftotext",
+            "textSha256": "171efffc2e7171e2077eebf8c49c3dd15941680ad74709d775e363133b7acdd9"
+          },
+          {
+            "pagina": 34,
+            "origem": "pdftotext",
+            "textSha256": "d81eeda4b125e0a07c49b0cdd3851225ae3e0091d9eb6686b4e2d3a660bc320d"
+          },
+          {
+            "pagina": 35,
+            "origem": "pdftotext",
+            "textSha256": "bce43b5d895d2e907a9a90ce7a2ff10821627d13ba9fc4bf8709facb7a71aa6d"
+          },
+          {
+            "pagina": 36,
+            "origem": "pdftotext",
+            "textSha256": "4d22db23416211cf071e27a975fd0b440ac6424fda98db0893f10ca95acfc9c3"
+          },
+          {
+            "pagina": 37,
+            "origem": "pdftotext",
+            "textSha256": "47a00e31fbe6fedb4efb4d6a9b5a5b7394066a17874377893cdd38c06e535f0e"
+          },
+          {
+            "pagina": 38,
+            "origem": "pdftotext",
+            "textSha256": "b0de9572540033de164a8892f4f460e44061e77066606da3df8089d642a06eb6"
+          },
+          {
+            "pagina": 39,
+            "origem": "pdftotext",
+            "textSha256": "ee9c947744945e95926f270800dd961d6d13fd0ee275630c49e2b6b73dfdeb2e"
+          },
+          {
+            "pagina": 40,
+            "origem": "pdftotext",
+            "textSha256": "38c14169e14186c7686a48c3c00b5e610cde21937d57d5724976921887a1cb44"
+          },
+          {
+            "pagina": 41,
+            "origem": "pdftotext",
+            "textSha256": "5720aced304032e76d4a13c73d5e5545569f72f28a061a1e754b6296706d33a9"
+          },
+          {
+            "pagina": 42,
+            "origem": "pdftotext",
+            "textSha256": "76091e1d13e0341824fa69c8d6cc6a7ce52ea3007d3cb0f25b6d64aa2ab069a9"
+          },
+          {
+            "pagina": 43,
+            "origem": "pdftotext",
+            "textSha256": "696883eccc03c6d02a3964da2e4128926498077867ca9e95d858aa3a39d7cde0"
+          },
+          {
+            "pagina": 44,
+            "origem": "pdftotext",
+            "textSha256": "0f15d9e06edbe49da68e43d15c6516bb25a67bd18cba6ea99805ee78b6b3f739"
+          },
+          {
+            "pagina": 45,
+            "origem": "pdftotext",
+            "textSha256": "9ac6b0d521034c6a0d0f0de669a9bd15c1523baff38d34909976ba68dbeed815"
+          },
+          {
+            "pagina": 46,
+            "origem": "pdftotext",
+            "textSha256": "b9b4b62ba892357dc1e02f51d5bde1293e7571369a242bb9a4059479df0b917d"
+          },
+          {
+            "pagina": 47,
+            "origem": "pdftotext",
+            "textSha256": "785073bd55c66b723544feb2379131bb25f3b2426dabc7112888159f7a3c5f3d"
+          },
+          {
+            "pagina": 48,
+            "origem": "pdftotext",
+            "textSha256": "941118b5cdc95b5969d742d039fb956eea224e31cd11525f98bc2563ffa4120f"
+          },
+          {
+            "pagina": 49,
+            "origem": "pdftotext",
+            "textSha256": "0e6d0bd7e0dfc937b0d621eaed5cddd8d2641af00a8370c8b2ff86179fe7a0c1"
+          },
+          {
+            "pagina": 50,
+            "origem": "pdftotext",
+            "textSha256": "24b050bdb5618800fc5272e50e92128b11dd1f64dcc324881c4a7cfbb8f8d27a"
+          },
+          {
+            "pagina": 51,
+            "origem": "pdftotext",
+            "textSha256": "71e71ecd05a5963ec74c463391c7b6b852bef766b56f556418b63dd638368599"
+          },
+          {
+            "pagina": 52,
+            "origem": "pdftotext",
+            "textSha256": "c3a6dca92c71eca377f2f2237b11c4fbd1fcdfc1bd96c87c43cf03ef6f585c2a"
+          },
+          {
+            "pagina": 53,
+            "origem": "pdftotext",
+            "textSha256": "edcb372ea7560d06f2deae8e6b120e0f2c832fdac2b75cfdba1bbe0b142e48b1"
+          },
+          {
+            "pagina": 54,
+            "origem": "pdftotext",
+            "textSha256": "c3cebb8d9e45a9416fb55584233ffe8b931d337a3f0d5f1648199215ffa32f96"
+          },
+          {
+            "pagina": 55,
+            "origem": "pdftotext",
+            "textSha256": "b61569dc4c6b1e61875848845eae9fbc1de37c2f048708a50ebcd3c19133ff24"
+          },
+          {
+            "pagina": 56,
+            "origem": "pdftotext",
+            "textSha256": "d47090ed94e5ccea320031ead5d2dd73214af3d4dab6a9433fefb6582f0e83f9"
+          },
+          {
+            "pagina": 57,
+            "origem": "pdftotext",
+            "textSha256": "b5c80c00fc513ca42538de89206ee8ba11528f811b661a9c904fce836d72f138"
+          },
+          {
+            "pagina": 58,
+            "origem": "pdftotext",
+            "textSha256": "ed79135ca48655ad1332f87043cec8eaa5734cbc1ebb4aa9fb0e8e5658db5692"
+          },
+          {
+            "pagina": 59,
+            "origem": "pdftotext",
+            "textSha256": "0ff933067ed742139e788d1f79c6cbd2c9641a15dd600a81dcb84bce6a1c2687"
+          },
+          {
+            "pagina": 60,
+            "origem": "pdftotext",
+            "textSha256": "8955fbe0f3211da8e0bfdbd90e344e7884d472f19a5c8e8ae35a248769b48f15"
+          },
+          {
+            "pagina": 61,
+            "origem": "pdftotext",
+            "textSha256": "5de05fa67e3174b56ab42bd1af6e111f31214df8812ad2075f098abefc6d45ed"
+          },
+          {
+            "pagina": 62,
+            "origem": "pdftotext",
+            "textSha256": "577ccd163216d4fbf9dd6e2f64845c2c12c7a101d7cf7f01d79aa6420aec5f60"
+          },
+          {
+            "pagina": 63,
+            "origem": "pdftotext",
+            "textSha256": "08573f0310e7ce3a08d4d0d25c433df037b55795c578f2a84275edb261bd5aef"
+          },
+          {
+            "pagina": 64,
+            "origem": "pdftotext",
+            "textSha256": "3933a3aaa4123bc15988ca49c11ca72b971bbfda858b690f346bf334a5d53288"
+          },
+          {
+            "pagina": 65,
+            "origem": "pdftotext",
+            "textSha256": "5c8046e3a661b991c481861bf9a963321121ac97f57e58a6b2ee07dea1c69d50"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais. Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção. Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas. Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio. Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química. Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos.",
+    "frases": [
+      {
+        "texto": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 6,
+            "trecho": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais."
+          }
+        ]
+      },
+      {
+        "texto": "Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 20,
+            "trecho": "Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção."
+          }
+        ]
+      },
+      {
+        "texto": "Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 25,
+            "trecho": "Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas."
+          }
+        ]
+      },
+      {
+        "texto": "Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 31,
+            "trecho": "Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio."
+          }
+        ]
+      },
+      {
+        "texto": "Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 37,
+            "trecho": "Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química."
+          }
+        ]
+      },
+      {
+        "texto": "Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 44,
+            "trecho": "Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Transferência de lideranças criminosas para estabelecimentos de segurança máxima.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 6,
+            "trecho": "Articular com o Governo Federal e com o Poder Judiciário a transferência de lideranças de organizações criminosas que preencham os requisitos legais para estabelecimentos de segurança máxima, impedindo que continuem comandando atividades criminosas de dentro das unidades prisionais."
+          }
+        ]
+      },
+      {
+        "id": "telemedicina",
+        "titulo": "Telemedicina",
+        "descricao": "Ampliação do atendimento por telemedicina.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 20,
+            "trecho": "Investir em infraestrutura, tecnologia e capacitação profissional para ampliar o atendimento por telemedicina, garantindo acesso a especialistas para moradores de regiões afastadas e pacientes com dificuldade de locomoção."
+          }
+        ]
+      },
+      {
+        "id": "creches",
+        "titulo": "Creches",
+        "descricao": "Ampliação do acesso às creches.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 25,
+            "trecho": "Criar um programa estadual de ampliação do acesso às creches, em parceria com os municípios, organizações credenciadas e instituições privadas, priorizando as localidades onde houver maior déficit de vagas."
+          }
+        ]
+      },
+      {
+        "id": "empreendedorismo",
+        "titulo": "Empreendedorismo",
+        "descricao": "Plataforma estadual para abertura ou ampliação de negócios.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 31,
+            "trecho": "Implantar uma plataforma estadual que concentre serviços e informações necessários para quem deseja abrir ou ampliar um negócio."
+          }
+        ]
+      },
+      {
+        "id": "protecao-social",
+        "titulo": "Proteção social",
+        "descricao": "Rede integrada para pessoas em situação de rua.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 37,
+            "trecho": "Estruturar uma rede integrada de acolhimento, saúde, assistência social, capacitação profissional e reinserção social para pessoas em situação de rua e para aquelas que enfrentam dependência química."
+          }
+        ]
+      },
+      {
+        "id": "saneamento-basico",
+        "titulo": "Saneamento básico",
+        "descricao": "Investimentos em abastecimento, esgoto, drenagem e resíduos.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002553922:01",
+            "pagina": 44,
+            "trecho": "Acelerar os investimentos em abastecimento de água, coleta e tratamento de esgoto, drenagem e manejo adequado de resíduos."
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-03T12:18:47.133Z",
+    "instructionsSha256": "9f383704c5fcad4a9754d5d413ae711d10e19960d11b474a845f142aae6b5721"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-09-03T12:23:09.033Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:1:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:2:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ampliação do acesso às creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:3:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de plataforma para empreendedores."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:4:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "Os serviços e públicos citados integram uma única proposta coerente de proteção social."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:5:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica ou qualificação promocional."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "Os componentes citados pertencem a uma única área coerente de saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:frase:6:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a síntese sobre transferência de lideranças criminosas."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta da área de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:seguranca-publica:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre o tema, a transferência, o público-alvo e o destino indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta explicitamente a ampliação do atendimento por telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta de telemedicina."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:telemedicina:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta explicitamente a ampliação do acesso às creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta relativa a creches."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:creches:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente a plataforma estadual para abrir ou ampliar negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de empreendedorismo."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:empreendedorismo:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre a plataforma estadual e suas finalidades de abertura e ampliação de negócios."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta explicitamente uma rede integrada para pessoas em situação de rua."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de proteção social."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:protecao-social:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a rede integrada e o público indicado."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta integralmente os investimentos nos quatro componentes citados."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume o documento sem elogio, crítica, certeza ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:mistura",
+        "verdict": "yes",
+        "reason": "Os componentes citados pertencem a uma única área coerente de saneamento básico."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:identidade",
+        "verdict": "yes",
+        "reason": "A evidência pertence ao documento informado e sua chave coincide com a identidade eleitoral."
+      },
+      {
+        "id": "2026:GOVERNADOR:CE:60002553922:tema:saneamento-basico:documentos:CE:60002553922:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre abastecimento de água, esgoto, drenagem e resíduos."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:CE:60002553922",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-09-03T12:17:00Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "CE:60002553922:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 44213,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2208,
+          "reasoning_output_tokens": 834
+        }
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 36159,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14345,
+          "reasoning_output_tokens": 186
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-09-03T12:30:00.000Z",
+    "sourceSha256": "7279ec445572eeb461889d7c768fd3a5ee7875dabd87044b4c8fe53c2521fa10",
+    "extractedTextSha256": "20e10777ec6690d4dd86e1936d0c95ad6123329f953aac4051482ddf9d1bed93",
+    "documentCount": 1,
+    "documentSetSha256": "95dca55c6102915f35df61d8732c2587969b34c2b562eb5e3195fa6083a024d6",
+    "contentSha256": "685b83cb96a716d68e6afbabdc2c16c6fc5e465524e7283ea37ae4acfe9260e5"
   }
 }
