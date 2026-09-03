@@ -137,6 +137,8 @@ Responsável por confirmar: **Thiago**.
 
 - Quem mantém acesso administrativo a Vercel, GitHub, Supabase, Resend e Sentry.
 - Se Point in Time Recovery está ativo e qual é a retenção atual do Supabase.
+  Confirmado em 03/09/2026: **desligado**. O painel oferece o PITR como add-on
+  pago, não habilitado. Enquanto for assim, o RPO da seção 5 é o do dump diário.
 - Onde existe a segunda cópia de `BACKUP_ENCRYPTION_KEY`, fora do GitHub.
 - Se `puxaficha.com.br` e seus registros DNS estão sob a conta esperada.
 - Se notificações de falha de cron e de novas issues estão habilitadas.
@@ -148,7 +150,7 @@ são promessas medidas: a coluna "medido" só se preenche com um ensaio.
 
 | Métrica | Definição aqui | Objetivo | Medido |
 |---|---|---|---|
-| RPO (perda máxima de dado) | Idade do último dump restaurável. O `backup-db.yml` roda todo dia às 05:30 UTC (02:30 BRT) e guarda 14 dias de artifacts cifrados. Só vale para as tabelas que não se reconstroem pelas migrations e pelos ingestores: `alert_subscribers`, `noticias_candidato`, `coleta_log`. O resto se refaz do repositório. | Até 24 h para essas três tabelas; menor se o PITR do Supabase estiver ativo (confirmar na seção 4) | Ensaio de 02/09/2026: dado mais recente em `coleta_log` de 08:07 UTC num dump de 09:45 UTC. Atenção: o agendamento do GitHub atrasa 4 a 6 h (runs de 31/08 a 02/09 começaram entre 09:44 e 11:41 UTC), então o dump do dia fica pronto por volta do meio-dia UTC, não às 05:30 |
+| RPO (perda máxima de dado) | Idade do último dump restaurável. O `backup-db.yml` roda todo dia às 05:30 UTC (02:30 BRT) e guarda 14 dias de artifacts cifrados. Só vale para as tabelas que não se reconstroem pelas migrations e pelos ingestores: `alert_subscribers`, `noticias_candidato`, `coleta_log`. O resto se refaz do repositório. | Até 24 h para essas três tabelas. PITR do Supabase desligado (confirmado em 03/09/2026, seção 4), então não há janela menor que o dump diário | Ensaio de 02/09/2026: dado mais recente em `coleta_log` de 08:07 UTC num dump de 09:45 UTC. Atenção: o agendamento do GitHub atrasa 4 a 6 h (runs de 31/08 a 02/09 começaram entre 09:44 e 11:41 UTC), então o dump do dia fica pronto por volta do meio-dia UTC, não às 05:30 |
 | RTO do banco | Do início da restauração até o readback passar num projeto novo: decifrar, `pg_restore`, conferir contagens. | Até 60 min | Ensaio de 02/09/2026, dump de 30 MB: 1 s de `pg_restore`, 3 s do container ao readback, mais o download do artifact. Em projeto Supabase novo, contar a criação do projeto e a rede |
 | RTO da aplicação | Do banco pronto até os três gates da seção 3 passarem: repor variáveis, deploy, domínio. | Até 2 h | pendente de ensaio |
 
