@@ -159,6 +159,81 @@ const STATE_COPY: Record<ProgramaGovernoEstado, { title: string; description: st
   },
 }
 
+/**
+ * Evidências por frase (decisão D13 do master-review de 01/09/2026). O
+ * manifesto já trazia página e trecho literal de cada frase para o cliente;
+ * até aqui nada renderizava. A disclosure é nativa (`details`) para funcionar
+ * sem JS e ler bem em leitor de tela; o link abre o PDF na página citada
+ * quando o documento tem URL direta no TSE.
+ */
+function evidenciaDocumento(
+  manifesto: ProgramaGovernoManifestoPublico,
+  documentoId: string | undefined,
+): { position: number; total: number; pdfUrl: string | null } {
+  const documentos = manifesto.documentos ?? []
+  const position = documentoId ? documentos.findIndex((documento) => documento.documentoId === documentoId) : -1
+  const pdfUrl = (position >= 0 ? documentos[position].fonte.pdfOriginalUrl : null) ?? manifesto.fonte.pdfOriginalUrl ?? null
+  return { position, total: documentos.length, pdfUrl }
+}
+
+function ProgramaEvidencias({ manifesto }: { manifesto: ProgramaGovernoManifestoPublico }) {
+  const frases = manifesto.resumo?.frases ?? []
+  if (frases.length === 0) return null
+  return (
+    <details
+      className="mt-4 max-w-4xl rounded-[12px] border border-border/60 px-4 py-3"
+      data-pf-programa-evidencias=""
+    >
+      <summary className="cursor-pointer text-sm font-semibold text-foreground">
+        Ver as {frases.length} frases do resumo e as evidências no documento oficial
+      </summary>
+      <ol className="mt-3 list-decimal space-y-3 pl-5">
+        {frases.map((frase, index) => (
+          <li key={index} className="text-sm leading-6 text-foreground">
+            <p>{frase.texto}</p>
+            <ul className="mt-1 space-y-1 text-xs leading-5 text-muted-foreground">
+              {frase.evidencias.map((evidencia, evidenciaIndex) => {
+                const documento = evidenciaDocumento(manifesto, evidencia.documentoId)
+                const rotulo = documento.total > 1 && documento.position >= 0
+                  ? `Documento ${documento.position + 1} de ${documento.total}, página ${evidencia.pagina}`
+                  : `Página ${evidencia.pagina}`
+                return (
+                  <li key={evidenciaIndex}>
+                    <span className="font-semibold text-foreground">{rotulo}:</span>{" "}
+                    <q>{evidencia.trecho}</q>
+                    {documento.pdfUrl && (
+                      <>
+                        {" "}
+                        <a
+                          href={`${documento.pdfUrl}#page=${evidencia.pagina}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="underline underline-offset-2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        >
+                          abrir no PDF
+                          <span className="sr-only">, página {evidencia.pagina}, abre em nova aba</span>
+                        </a>
+                      </>
+                    )}
+                  </li>
+                )
+              })}
+            </ul>
+          </li>
+        ))}
+      </ol>
+      <p className="mt-3 text-xs leading-5 text-muted-foreground">
+        Cada frase cita trechos literais do documento registrado no TSE, conferidos por um segundo
+        modelo e por revisão humana. Como o resumo é feito:{" "}
+        <a href="/metodologia" className="underline underline-offset-2 hover:text-foreground">
+          metodologia
+        </a>
+        .
+      </p>
+    </details>
+  )
+}
+
 function ProgramStateNotice({ manifesto }: { manifesto: ProgramaGovernoManifestoPublico }) {
   const copy = STATE_COPY[manifesto.estado]
   const consultedAt = sourceConsultedAt(manifesto.fonte)
@@ -228,6 +303,7 @@ export function ProgramaGovernoOverview({
       {manifesto.estado === "aprovado" && manifesto.resumo ? (
         <div data-pf-programa-approved="">
           <p className="max-w-4xl text-[15px] leading-7 text-foreground">{manifesto.resumo.texto}</p>
+          <ProgramaEvidencias manifesto={manifesto} />
           <ul className="mt-5 flex flex-wrap gap-2" aria-label="Temas centrais do programa">
             {manifesto.resumo.temas.map((tema) => (
               <li key={tema.id} className="rounded-full bg-muted px-3 py-1.5 text-xs font-semibold text-foreground">
