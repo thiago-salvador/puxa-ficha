@@ -25,7 +25,7 @@ export type ResendWebhookVerification =
   | { ok: false; reason: "headers_ausentes" | "segredo_invalido" | "timestamp_invalido" | "fora_da_tolerancia" | "assinatura_invalida" }
 
 const SECRET_PREFIX = "whsec_"
-export const RESEND_WEBHOOK_TOLERANCE_SECONDS = 300
+const RESEND_WEBHOOK_TOLERANCE_SECONDS = 300
 
 export function verifyResendWebhook(params: {
   payload: string

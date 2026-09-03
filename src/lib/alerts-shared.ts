@@ -4,7 +4,6 @@ import { extractTrustedClientIp } from "@/lib/client-ip"
 import { sha256Hex } from "@/lib/crypto-utils"
 import { buildAbsoluteUrl } from "@/lib/metadata"
 
-const ALERT_EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 const ALERT_TOKEN_RE = /^[A-Za-z0-9_-]{16,128}$/
 const ALERT_CANDIDATE_SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 const ALERT_TOKEN_SALT = process.env.PF_ALERTS_TOKEN_SALT?.trim() || "dev-alerts-token-salt"
@@ -20,9 +19,28 @@ const ALERT_IP_SALT =
 const ALERT_VERIFY_TOKEN_TTL_MS = 48 * 60 * 60 * 1000
 export const ALERT_VERIFICATION_EMAIL_COOLDOWN_MS = 15 * 60 * 1000
 
+/**
+ * Forma minima de email, sem regex: um `@`, parte local e dominio sem espaco,
+ * dominio com um ponto que nao esta nas pontas. A versao anterior era uma
+ * regex com dois `[^\s@]+` ao redor de `\.`, que o CodeQL marca como ReDoS
+ * polinomial quando a entrada vem de fora (o webhook da Resend traz o
+ * endereco do proprio evento). Tamanho maximo de 254 por RFC 5321.
+ */
+function isPlausibleEmail(value: string): boolean {
+  if (value.length === 0 || value.length > 254) return false
+  const at = value.indexOf("@")
+  if (at <= 0 || at !== value.lastIndexOf("@")) return false
+  const local = value.slice(0, at)
+  const domain = value.slice(at + 1)
+  if (/\s/u.test(value)) return false
+  const dot = domain.indexOf(".")
+  if (dot <= 0 || dot === domain.length - 1) return false
+  return local.length > 0 && domain.length > 0
+}
+
 export function normalizeAlertEmail(email: string): string | null {
   const normalized = email.trim().toLowerCase()
-  if (!ALERT_EMAIL_RE.test(normalized)) return null
+  if (!isPlausibleEmail(normalized)) return null
   return normalized
 }
 
