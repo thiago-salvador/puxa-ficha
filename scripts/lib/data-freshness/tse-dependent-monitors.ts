@@ -30,7 +30,29 @@ export interface TseDependentMonitorConfig {
     profile_slug: string
     sq_candidato: string
     url: string
+    revisoes?: TseDependentProgramReview[]
   }>
+}
+
+/**
+ * Revisão já feita de um arquivo que a DivulgaCandContas anuncia com codTipo 5.
+ * Nomeia um `id_arquivo` específico: enquanto o TSE anunciar esse mesmo id, o
+ * monitor não repete o alerta, porque a revisão registrada já é a resposta. Um
+ * id diferente é arquivo novo e volta a alertar.
+ *
+ * A revisão NÃO expira sozinha quando o pacote oficial é republicado, porque o
+ * monitor só fala com a DivulgaCandContas e nunca com o CDN. Por isso ela grava
+ * o pacote medido (`pacote_sha256`, `pacote_last_modified`): pacote novo torna a
+ * revisão vencida, e ela sai daqui por PR.
+ */
+export interface TseDependentProgramReview {
+  id_arquivo: string
+  revisado_em: string
+  pacote_url: string
+  pacote_sha256: string
+  pacote_last_modified: string
+  resultado: "ausente_do_pacote"
+  referencia: string
 }
 
 interface SourceReceipt {
@@ -147,6 +169,39 @@ async function fetchRawJson(input: {
   throw new Error(lastError)
 }
 
+function assertReviewContract(profileSlug: string, reviews: unknown): TseDependentProgramReview[] {
+  if (reviews === undefined) return []
+  if (!Array.isArray(reviews)) {
+    throw new Error(`configuração dos monitores TSE divergiu do contrato: revisoes de ${profileSlug} não é lista`)
+  }
+  return reviews.map((entry) => {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
+      throw new Error(`configuração dos monitores TSE divergiu do contrato: revisão de ${profileSlug} não é objeto`)
+    }
+    const review = entry as Record<string, unknown>
+    for (const field of [
+      "id_arquivo",
+      "revisado_em",
+      "pacote_url",
+      "pacote_sha256",
+      "pacote_last_modified",
+      "referencia",
+    ]) {
+      const value = review[field]
+      if (typeof value !== "string" || value.trim() === "") {
+        throw new Error(`configuração dos monitores TSE divergiu do contrato: revisão de ${profileSlug} sem ${field}`)
+      }
+    }
+    if (!/^[a-f0-9]{64}$/.test(String(review.pacote_sha256))) {
+      throw new Error(`configuração dos monitores TSE divergiu do contrato: revisão de ${profileSlug} com pacote_sha256 inválido`)
+    }
+    if (review.resultado !== "ausente_do_pacote") {
+      throw new Error(`configuração dos monitores TSE divergiu do contrato: revisão de ${profileSlug} com resultado não suportado`)
+    }
+    return review as unknown as TseDependentProgramReview
+  })
+}
+
 function requiredString(payload: Record<string, unknown>, field: string): string {
   const value = payload[field]
   if (typeof value !== "string" || value.trim() === "") throw new Error(`DivulgaCand sem ${field}`)
@@ -176,6 +231,7 @@ export async function collectTseDependentMonitors(
   generated_at: string
   status: "ok" | "review_required" | "source_error"
   user_agent: string
+  endpoints_configured: number
   alerts: MonitorAlert[]
   errors: MonitorError[]
   sources: SourceReceipt[]
@@ -190,10 +246,18 @@ export async function collectTseDependentMonitors(
     || config.program_control?.expected_cod_tipo !== "5"
     // Quatro desde 2026-09-03: Eduardo Paes (RJ) saiu porque o pacote oficial
     // republicado em 2026-09-02 passou a trazer o programa e o registro foi
-    // publicado. Vera Lúcia (CE) fica: a DivulgaCandContas lista codTipo 5, mas
-    // o pacote oficial de CE ainda não carrega o PDF.
+    // publicado. Vera Lúcia (CE) fica e o alerta dela é verdadeiro: o pacote de
+    // CE republicado em 2026-09-03T06:49:12Z passou a carregar
+    // CE/2026CE60002553922_01.pdf, então o programa existe e falta ingerir.
     || config.program_files.length !== 4) {
     throw new Error("configuração dos monitores TSE divergiu do contrato")
+  }
+  const reviewsBySlug = new Map<string, TseDependentProgramReview[]>()
+  for (const candidate of config.program_files) {
+    reviewsBySlug.set(
+      candidate.profile_slug,
+      assertReviewContract(candidate.profile_slug, candidate.revisoes),
+    )
   }
   mkdirSync(outputDir, { recursive: true })
   const fetchImpl = options.fetchImpl ?? fetch
@@ -289,23 +353,54 @@ export async function collectTseDependentMonitors(
       requireCandidateIdentity(payload, candidate.sq_candidato)
       const files = programFiles(payload)
       const programMatches = files.filter((file) => String(file.codTipo ?? "") === "5")
-      programs.push({
-        profile_slug: candidate.profile_slug,
-        sq_candidato: candidate.sq_candidato,
-        files_total: files.length,
-        program_files: programMatches.map((file) => ({
+      const reviews = reviewsBySlug.get(candidate.profile_slug) ?? []
+      // Arquivo sem idArquivo nunca casa com revisão: revisão só silencia o id
+      // que ela nomeia, e um anúncio sem id não é nomeável.
+      const annotated = programMatches.map((file) => {
+        const idArquivo = file.idArquivo == null || String(file.idArquivo).trim() === ""
+          ? null
+          : String(file.idArquivo)
+        const review = idArquivo === null
+          ? undefined
+          : reviews.find((item) => item.id_arquivo === idArquivo)
+        return {
           id_arquivo: file.idArquivo ?? null,
           nome: file.nome ?? null,
           url: file.url ?? null,
           cod_tipo: file.codTipo ?? null,
-        })),
+          revisado: review !== undefined,
+          revisao: review
+            ? {
+              revisado_em: review.revisado_em,
+              resultado: review.resultado,
+              pacote_url: review.pacote_url,
+              pacote_sha256: review.pacote_sha256,
+              pacote_last_modified: review.pacote_last_modified,
+              referencia: review.referencia,
+            }
+            : null,
+        }
       })
-      if (programMatches.length > 0) alerts.push({
+      const pending = annotated.filter((file) => !file.revisado)
+      programs.push({
+        profile_slug: candidate.profile_slug,
+        sq_candidato: candidate.sq_candidato,
+        files_total: files.length,
+        program_file_count: annotated.length,
+        reviewed_program_file_count: annotated.length - pending.length,
+        pending_program_file_count: pending.length,
+        program_files: annotated,
+      })
+      if (pending.length > 0) alerts.push({
         code: "program_file_available",
         message: `programa oficial disponível: revisar recibo de ${candidate.profile_slug}`,
         profile_slug: candidate.profile_slug,
         sq_candidato: candidate.sq_candidato,
-        details: { program_file_count: programMatches.length },
+        details: {
+          program_file_count: pending.length,
+          reviewed_program_file_count: annotated.length - pending.length,
+          pending_id_arquivos: pending.map((file) => file.id_arquivo),
+        },
       })
     } catch (error) {
       errors.push({
@@ -322,6 +417,7 @@ export async function collectTseDependentMonitors(
     generated_at: now().toISOString(),
     status: errors.length > 0 ? "source_error" as const : alerts.length > 0 ? "review_required" as const : "ok" as const,
     user_agent: USER_AGENT,
+    endpoints_configured: config.laudicerio.registrations.length + 1 + config.program_files.length,
     alerts,
     errors,
     sources,
@@ -339,5 +435,18 @@ export function tseDependentMonitorsMarkdown(report: Awaited<ReturnType<typeof c
   const errors = report.errors.length > 0
     ? `\n\n### Erros brutos\n\n${report.errors.map((error) => `- ${error.sq_candidato}: \`${error.error}\``).join("\n")}`
     : ""
-  return `## Monitores dependentes do TSE\n\n- Estado: **${report.status}**\n- Consultado em: ${report.generated_at}\n- Endpoints configurados: 8\n- Respostas HTTP preservadas: ${report.sources.filter((source) => source.payload_raw_sha256).length}\n- SHA-256 do relatório: \`${report.report_sha256}\`\n\n### Alertas\n\n${alerts}${errors}\n`
+  const reviewed = report.program_files.flatMap((program) => {
+    const files = Array.isArray(program.program_files) ? program.program_files : []
+    return files
+      .filter((file): file is Record<string, unknown> => Boolean(file) && typeof file === "object")
+      .filter((file) => file.revisado === true)
+      .map((file) => {
+        const review = file.revisao as Record<string, unknown> | null
+        return `- ${String(program.profile_slug)} (SQ ${String(program.sq_candidato)}): arquivo ${String(file.id_arquivo)} anunciado, revisado em ${String(review?.revisado_em)}: ${String(review?.resultado)} (pacote \`${String(review?.pacote_sha256)}\`, ${String(review?.pacote_last_modified)}, ${String(review?.referencia)})`
+      })
+  })
+  const reviews = reviewed.length > 0
+    ? `\n\n### Revisões registradas\n\n${reviewed.join("\n")}\n\nRevisão registrada vale só para o \`id_arquivo\` que ela nomeia. Id novo volta a alertar; pacote republicado não expira a revisão sozinho e exige nova conferência.`
+    : ""
+  return `## Monitores dependentes do TSE\n\n- Estado: **${report.status}**\n- Consultado em: ${report.generated_at}\n- Endpoints configurados: ${report.endpoints_configured}\n- Respostas HTTP preservadas: ${report.sources.filter((source) => source.payload_raw_sha256).length}\n- SHA-256 do relatório: \`${report.report_sha256}\`\n\n### Alertas\n\n${alerts}${reviews}${errors}\n`
 }

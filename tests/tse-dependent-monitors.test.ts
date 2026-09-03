@@ -6,6 +6,7 @@ import test from "node:test"
 
 import {
   collectTseDependentMonitors,
+  tseDependentMonitorsMarkdown,
   type TseDependentMonitorConfig,
 } from "../scripts/lib/data-freshness/tse-dependent-monitors"
 
@@ -36,8 +37,8 @@ function response(payload: unknown, status = 200): Response {
 
 // Quatro fichas desde 2026-09-03: Eduardo Paes (RJ) saiu porque o pacote
 // oficial republicado em 2026-09-02 trouxe o programa e o registro foi
-// publicado. Vera Lúcia (CE) continua na lista: a DivulgaCandContas lista
-// codTipo 5, mas o pacote oficial de CE ainda não carrega o PDF.
+// publicado. Vera Lúcia (CE) continua na lista com alerta verdadeiro: o pacote
+// de CE republicado em 2026-09-03T06:49:12Z passou a carregar o PDF dela.
 test("configura exatamente duas inscrições de Laudicério e quatro programas sem SQ canônica", () => {
   assert.equal(config.laudicerio.canonical_registration_sq, null)
   assert.deepEqual(config.laudicerio.registrations.map((item) => item.sq_candidato), [
@@ -107,6 +108,103 @@ test("codTipo 5 em qualquer uma das quatro fichas gera alerta sem publicar nada"
   assert.equal(report.status, "review_required")
   assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["ben-mendes"])
   assert.equal(report.program_files.find((item) => item.profile_slug === "ben-mendes")?.program_files instanceof Array, true)
+})
+
+const REVIEW = {
+  id_arquivo: "60017139080",
+  revisado_em: "2026-09-03",
+  pacote_url: "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
+  pacote_sha256: "0".repeat(64),
+  pacote_last_modified: "2026-09-02T06:58:29Z",
+  resultado: "ausente_do_pacote",
+  referencia: "PR #247",
+} as const
+
+function withReview(
+  sqCandidato: string,
+  review: Record<string, unknown> = { ...REVIEW },
+): TseDependentMonitorConfig {
+  const clone = structuredClone(config) as TseDependentMonitorConfig
+  const entry = clone.program_files.find((item) => item.sq_candidato === sqCandidato)
+  if (!entry) throw new Error(`ficha ${sqCandidato} não está no config`)
+  entry.revisoes = [review as never]
+  return clone
+}
+
+function announcing(sqCandidato: string, idArquivo: number | string | null) {
+  return async (input: string | URL | Request): Promise<Response> => {
+    const url = String(input)
+    if (!url.includes(sqCandidato)) return response(okPayload(url))
+    const file: Record<string, unknown> = { codTipo: "5", nome: "PLANO_DE_GOVERNO.pdf" }
+    if (idArquivo !== null) file.idArquivo = idArquivo
+    return response({ id: sqCandidato, arquivos: [file] })
+  }
+}
+
+test("arquivo com revisão registrada para o mesmo id_arquivo não alerta", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-revisado-"))
+  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+    attempts: 1,
+    fetchImpl: announcing("60002553922", 60017139080),
+  })
+  assert.equal(report.status, "ok")
+  assert.equal(report.alerts.length, 0)
+  const program = report.program_files.find((item) => item.profile_slug === "vera-lucia-ce")
+  assert.equal(program?.program_file_count, 1)
+  assert.equal(program?.reviewed_program_file_count, 1)
+  assert.equal(program?.pending_program_file_count, 0)
+  const summary = tseDependentMonitorsMarkdown(report)
+  assert.match(summary, /Revisões registradas/)
+  assert.match(summary, /60017139080 anunciado, revisado em 2026-09-03: ausente_do_pacote/)
+})
+
+test("arquivo com id_arquivo novo volta a alertar mesmo com revisão registrada", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-id-novo-"))
+  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+    attempts: 1,
+    fetchImpl: announcing("60002553922", 60017999999),
+  })
+  assert.equal(report.status, "review_required")
+  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["vera-lucia-ce"])
+  assert.deepEqual(report.alerts[0]?.details.pending_id_arquivos, [60017999999])
+  assert.equal(
+    report.program_files.find((item) => item.profile_slug === "vera-lucia-ce")?.reviewed_program_file_count,
+    0,
+  )
+})
+
+test("revisão nunca silencia arquivo anunciado sem id_arquivo", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-sem-id-"))
+  const report = await collectTseDependentMonitors(withReview("60002553922"), out, {
+    attempts: 1,
+    fetchImpl: announcing("60002553922", null),
+  })
+  assert.equal(report.status, "review_required")
+  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["vera-lucia-ce"])
+})
+
+test("revisão sem id_arquivo, sem pacote_sha256 ou com resultado estranho reprova o contrato", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-contrato-"))
+  const run = (review: Record<string, unknown>) => collectTseDependentMonitors(
+    withReview("60002553922", review),
+    out,
+    { attempts: 1, fetchImpl: announcing("60002553922", 60017139080) },
+  )
+  const sem = (field: keyof typeof REVIEW): Record<string, unknown> => {
+    const review: Record<string, unknown> = { ...REVIEW }
+    delete review[field]
+    return review
+  }
+  await assert.rejects(run(sem("id_arquivo")), /divergiu do contrato: revisão de vera-lucia-ce sem id_arquivo/)
+  await assert.rejects(run(sem("pacote_sha256")), /divergiu do contrato: revisão de vera-lucia-ce sem pacote_sha256/)
+  await assert.rejects(
+    run({ ...REVIEW, pacote_sha256: "nao-e-hash" }),
+    /divergiu do contrato: revisão de vera-lucia-ce com pacote_sha256 inválido/,
+  )
+  await assert.rejects(
+    run({ ...REVIEW, resultado: "presente_no_pacote" }),
+    /divergiu do contrato: revisão de vera-lucia-ce com resultado não suportado/,
+  )
 })
 
 test("403 do WAF é source_error bruto, com payload persistido e sem inferir estado", async () => {
