@@ -33,6 +33,8 @@ regiões, o teto real passa a ser aproximadamente `N × limite`.
 | `rate-limit-preview` | `path` começa com `/preview/` e ambiente é produção | 10 req / 60s por IP | 429 |
 | `rate-limit-alerts` | `path` começa com `/api/alerts/` e ambiente é produção | 30 req / 60s por IP | 429 |
 | `rate-limit-og-e-cards` | `path` começa com `/api/card/` **ou** termina em `/og`, ambiente produção | 120 req / 60s por IP | 429 |
+| `rate-limit-candidato-profile` | `path` começa com `/api/candidato-profile/` e ambiente é produção | 100 req / 60s por IP | 429 |
+| `rate-limit-doadores` | `path` começa com `/doadores` e ambiente é produção | 100 req / 60s por IP | 429 |
 
 ### `rate-limit-alerts`
 
@@ -53,6 +55,24 @@ de 15 minutos por assinante.
 
 Geração de imagem é cara por requisição. O limite é mais alto porque uma página
 pode disparar várias, e porque crawler de rede social busca OG legitimamente.
+
+### `rate-limit-candidato-profile`
+
+Cobre as rotas que a ficha chama por `fetch` ao abrir as abas (perfil, projetos
+de lei, legislação do executivo e programa de governo). Cada uma faz leitura no
+Supabase por requisição, e as quatro já têm o limitador de processo por IP como
+camada de dentro. Uma pessoa lendo fichas dispara poucas chamadas por ficha, e
+cem por minuto por IP dá margem para rede compartilhada (NAT de escritório ou
+universidade) sem deixar um script varrer o catálogo inteiro na função.
+
+### `rate-limit-doadores`
+
+A busca de doadores é um formulário `GET` com o termo em `?q=`, e cada envio
+com termo acima do piso vira uma consulta ao banco. Dentro do processo a página
+já aplica limitador por IP só nesse caminho caro, fail-closed. O WAF põe o
+mesmo teto na borda, onde a requisição barrada não custa invocação nem chega
+ao limitador de processo, que é por instância. O prefixo `/doadores` cobre a
+página com e sem query string.
 
 ## Como aplicar
 
