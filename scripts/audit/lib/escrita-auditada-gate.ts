@@ -466,6 +466,11 @@ export const EXCECOES_DE_RUNTIME: readonly ExcecaoDeclarada[] = [
       "Apagamento de dados a pedido do titular em alert_subscribers. É direito dele, exercido por ele, e a trilha do ato é o próprio fluxo de confirmação.",
   },
   {
+    arquivo: "app/api/webhooks/resend/route.ts",
+    motivo:
+      "Bounce permanente ou reclamação de spam da Resend desliga canal_email em alert_subscribers. O ato é do provedor de e-mail, assinado (Svix) e registrado no log da rota pelo hash; sem isso o endereço continuaria recebendo tentativas de digest.",
+  },
+  {
     arquivo: "app/api/alerts/send-digest/route.ts",
     motivo:
       "Envio do digest: marca notification_log e alert_subscribers a cada disparo. A auditoria do envio é o próprio notification_log, que existe para isso.",

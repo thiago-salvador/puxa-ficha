@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -139,147 +139,169 @@
     }
   ],
   "resumo": {
-    "texto": "O documento apresenta propostas para o governo do Estado do Rio de Janeiro. Na área de emprego, o programa prevê auxílio emergencial de um salário mínimo para todo desempregado. Na organização do trabalho, propõe a redução da jornada para 30 horas semanais sem redução de salário. Na mobilidade, defende a revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas. Na educação, defende o investimento mínimo constitucional de 25% do orçamento em educação. Na saúde, defende o fim do modelo de gestão por Organizações Sociais. Na segurança pública, defende a desmilitarização da segurança pública e da Polícia Militar. No meio ambiente, defende a universalização do saneamento básico. Na participação popular, propõe conselhos populares nos bairros, escolas, hospitais e locais de trabalho.",
+    "texto": "O programa identifica Cyro Garcia como candidato a Governador e Perciliana Rodrigues como candidata a Vice-Governadora. O documento registra que a produção da indústria de transformação do Rio de Janeiro é 15% menor em valor do que era em 1985. Segundo o programa, entre 1985 e 2020, o emprego formal cresceu 40,88% no Rio de Janeiro. O documento afirma que 65,51% da força de trabalho fluminense está desempregada ou subempregada. O programa informa que os royalties do petróleo respondem historicamente por cerca de 20% da arrecadação estadual. O documento registra que a dívida do Rio de Janeiro está atualmente na casa de 163 bilhões de reais. Na habitação, o programa informa que o déficit chegou a 481 mil moradias em 2019. Na segurança pública, o documento registra que, em 2021, 1.356 das 4.750 mortes violentas foram causadas por intervenção policial.",
     "frases": [
       {
-        "texto": "O documento apresenta propostas para o governo do Estado do Rio de Janeiro.",
+        "texto": "O programa identifica Cyro Garcia como candidato a Governador e Perciliana Rodrigues como candidata a Vice-Governadora.",
         "evidencias": [
           {
             "documentoId": "RJ:190002540198:01",
             "pagina": 1,
-            "trecho": "Programa de Governo – PSTU\nEleições 2026 – Governo do Estado do Rio de Janeiro"
+            "trecho": "Candidato a Governador: Cyro Garcia / Candidata a ViceGovernadora: Perciliana Rodrigues"
           }
         ]
       },
       {
-        "texto": "Na área de emprego, o programa prevê auxílio emergencial de um salário mínimo para todo desempregado.",
+        "texto": "O documento registra que a produção da indústria de transformação do Rio de Janeiro é 15% menor em valor do que era em 1985.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "sua produção é hoje 15% menor em valor do que era em 1985"
+          }
+        ]
+      },
+      {
+        "texto": "Segundo o programa, entre 1985 e 2020, o emprego formal cresceu 40,88% no Rio de Janeiro.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "Entre 1985 e 2020, o emprego formal cresceu apenas 40,88% no Rio de Janeiro"
+          }
+        ]
+      },
+      {
+        "texto": "O documento afirma que 65,51% da força de trabalho fluminense está desempregada ou subempregada.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "65,51% da força de trabalho fluminense hoje está desempregada ou subempregada"
+          }
+        ]
+      },
+      {
+        "texto": "O programa informa que os royalties do petróleo respondem historicamente por cerca de 20% da arrecadação estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "os royalties do petróleo, que respondem, historicamente, por cerca de 20% da arrecadação estadual"
+          }
+        ]
+      },
+      {
+        "texto": "O documento registra que a dívida do Rio de Janeiro está atualmente na casa de 163 bilhões de reais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "a dívida, atualmente na casa de 163 bilhões de reais"
+          }
+        ]
+      },
+      {
+        "texto": "Na habitação, o programa informa que o déficit chegou a 481 mil moradias em 2019.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 3,
+            "trecho": "Na habitação, o déficit chegou a 481 mil moradias em 2019"
+          }
+        ]
+      },
+      {
+        "texto": "Na segurança pública, o documento registra que, em 2021, 1.356 das 4.750 mortes violentas foram causadas por intervenção policial.",
         "evidencias": [
           {
             "documentoId": "RJ:190002540198:01",
             "pagina": 4,
-            "trecho": "auxílio emergencial de um salário mínimo para todo desempregado"
-          }
-        ]
-      },
-      {
-        "texto": "Na organização do trabalho, propõe a redução da jornada para 30 horas semanais sem redução de salário.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 4,
-            "trecho": "redução da jornada para 30 horas semanais sem redução de salário"
-          }
-        ]
-      },
-      {
-        "texto": "Na mobilidade, defende a revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 4,
-            "trecho": "revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas"
-          }
-        ]
-      },
-      {
-        "texto": "Na educação, defende o investimento mínimo constitucional de 25% do orçamento em educação.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 5,
-            "trecho": "investimento mínimo constitucional de 25% do orçamento em educação"
-          }
-        ]
-      },
-      {
-        "texto": "Na saúde, defende o fim do modelo de gestão por Organizações Sociais.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 5,
-            "trecho": "fim do modelo de gestão por Organizações Sociais"
-          }
-        ]
-      },
-      {
-        "texto": "Na segurança pública, defende a desmilitarização da segurança pública e da Polícia Militar.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 6,
-            "trecho": "desmilitarização da segurança pública e da Polícia Militar"
-          }
-        ]
-      },
-      {
-        "texto": "No meio ambiente, defende a universalização do saneamento básico.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 6,
-            "trecho": "universalização do saneamento básico"
+            "trecho": "em 2021, das 4.750 mortes violentas registradas, 1.356 foram causadas por intervenção policial"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "auxilio-desempregado",
-        "titulo": "Auxílio ao desempregado",
-        "descricao": "O programa prevê auxílio emergencial para pessoas desempregadas.",
+        "id": "identificacao-eleitoral",
+        "titulo": "Identificação eleitoral",
+        "descricao": "O programa identifica os candidatos aos cargos de Governador e Vice-Governadora.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "Candidato a Governador: Cyro Garcia / Candidata a ViceGovernadora: Perciliana Rodrigues"
+          }
+        ]
+      },
+      {
+        "id": "economia-e-emprego",
+        "titulo": "Economia e emprego",
+        "descricao": "O documento apresenta informações sobre a produção industrial e o emprego formal no estado.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "sua produção é hoje 15% menor em valor do que era em 1985"
+          },
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 1,
+            "trecho": "Entre 1985 e 2020, o emprego formal cresceu apenas 40,88% no Rio de Janeiro"
+          }
+        ]
+      },
+      {
+        "id": "trabalho",
+        "titulo": "Trabalho",
+        "descricao": "O programa informa a proporção da força de trabalho fluminense desempregada ou subempregada.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "65,51% da força de trabalho fluminense hoje está desempregada ou subempregada"
+          }
+        ]
+      },
+      {
+        "id": "financas-estaduais",
+        "titulo": "Finanças estaduais",
+        "descricao": "O documento registra a participação histórica dos royalties e o valor da dívida estadual.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "os royalties do petróleo, que respondem, historicamente, por cerca de 20% da arrecadação estadual"
+          },
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 2,
+            "trecho": "a dívida, atualmente na casa de 163 bilhões de reais"
+          }
+        ]
+      },
+      {
+        "id": "habitacao",
+        "titulo": "Habitação",
+        "descricao": "O programa informa o déficit habitacional registrado no estado em 2019.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002540198:01",
+            "pagina": 3,
+            "trecho": "Na habitação, o déficit chegou a 481 mil moradias em 2019"
+          }
+        ]
+      },
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "O documento registra mortes violentas causadas por intervenção policial em 2021.",
         "evidencias": [
           {
             "documentoId": "RJ:190002540198:01",
             "pagina": 4,
-            "trecho": "auxílio emergencial de um salário mínimo para todo desempregado"
-          }
-        ]
-      },
-      {
-        "id": "mobilidade-publica",
-        "titulo": "Mobilidade pública",
-        "descricao": "O programa defende a revogação de privatizações no transporte metroferroviário.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 4,
-            "trecho": "revogação das privatizações da Supervia e do MetrôRio, sem indenização às empresas"
-          }
-        ]
-      },
-      {
-        "id": "educacao-orcamento",
-        "titulo": "Orçamento da educação",
-        "descricao": "O programa defende um percentual constitucional do orçamento para educação.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 5,
-            "trecho": "investimento mínimo constitucional de 25% do orçamento em educação"
-          }
-        ]
-      },
-      {
-        "id": "gestao-saude",
-        "titulo": "Gestão da saúde",
-        "descricao": "O programa defende o fim da gestão por Organizações Sociais na saúde.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 5,
-            "trecho": "fim do modelo de gestão por Organizações Sociais"
-          }
-        ]
-      },
-      {
-        "id": "desmilitarizacao-seguranca",
-        "titulo": "Desmilitarização da segurança",
-        "descricao": "O programa defende a desmilitarização da segurança pública.",
-        "evidencias": [
-          {
-            "documentoId": "RJ:190002540198:01",
-            "pagina": 6,
-            "trecho": "desmilitarização da segurança pública e da Polícia Militar"
+            "trecho": "em 2021, das 4.750 mortes violentas registradas, 1.356 foram causadas por intervenção policial"
           }
         ]
       }
@@ -287,410 +309,440 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-v5",
-    "generatedAt": "2026-08-28T15:55:20.344Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:44:19.216Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T15:57:27.105Z",
+    "judgedAt": "2026-09-02T18:49:11.895Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "O título confirma que é programa de governo para o Estado do Rio de Janeiro."
+        "reason": "A evidência identifica literalmente ambos os candidatos e seus respectivos cargos."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra e factual do documento."
+        "reason": "A redação apenas descreve a identificação constante do programa, sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de tema único e coerente: apresentação geral do documento."
+        "reason": "A afirmação trata de uma única área coerente: a identificação da chapa eleitoral."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Documento e chave eleitoral correspondem exatamente."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:1:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Afirmação genérica totalmente coberta pela evidência do título."
+        "reason": "A evidência cobre os dois nomes e os dois cargos mencionados."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal confirma a proposta."
+        "reason": "O trecho sustenta integralmente a comparação sobre a produção da indústria de transformação."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Valor 'um salário mínimo' está literalmente sustentado."
+        "reason": "O percentual de 15% e o ano de 1985 aparecem literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta, sem juízo de valor."
+        "reason": "A redação atribui o dado ao documento sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente na área de emprego."
+        "reason": "A afirmação trata de um único indicador de produção industrial."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral e documento correspondem."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:2:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas materiais da afirmação estão cobertas."
+        "reason": "A evidência cobre a medida, a base temporal e a comparação material da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta a afirmação."
+        "reason": "A evidência sustenta integralmente o crescimento do emprego formal no período indicado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Número 30 horas está literalmente sustentado."
+        "reason": "Os anos de 1985 e 2020 e o percentual de 40,88% aparecem literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação descreve e atribui o dado ao programa sem avaliação valorativa."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de um único indicador de emprego formal."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:3:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas cobertas literalmente."
+        "reason": "A evidência cobre o local, o período, o indicador e o percentual afirmados."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal idêntico à afirmação."
+        "reason": "A evidência reproduz integralmente a informação atribuída ao documento."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O percentual de 65,51% aparece literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação apenas atribui a informação ao documento, sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de mobilidade."
+        "reason": "A afirmação trata de um único indicador relacionado à força de trabalho."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:4:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas cobertas literalmente."
+        "reason": "A evidência cobre o percentual, o grupo e as duas condições mencionadas."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal idêntico."
+        "reason": "A evidência sustenta integralmente a participação histórica atribuída aos royalties."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Percentual 25% está literalmente sustentado."
+        "reason": "A expressão quantitativa 'cerca de 20%' aparece literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação descreve o dado do programa sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de educação."
+        "reason": "A afirmação trata de um único aspecto das finanças estaduais."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:5:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Todas as cláusulas cobertas literalmente."
+        "reason": "A evidência cobre a fonte da receita, o caráter histórico, a proporção e a arrecadação estadual."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal idêntico."
+        "reason": "A evidência sustenta integralmente o valor aproximado e a referência temporal da dívida."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O valor de 163 bilhões de reais aparece literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação apenas atribui o valor ao documento, sem juízo de valor."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de saúde."
+        "reason": "A afirmação trata de um único indicador da dívida estadual."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:6:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta literalmente."
+        "reason": "A evidência cobre a dívida, sua atualidade e o valor aproximado afirmado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal idêntico."
+        "reason": "A evidência corresponde literalmente à afirmação sobre o déficit habitacional."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A quantidade de 481 mil moradias e o ano de 2019 aparecem literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação descreve o dado do programa sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta de segurança."
+        "reason": "A afirmação trata de um único indicador da área de habitação."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:7:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta literalmente."
+        "reason": "A evidência cobre a área, o déficit, a quantidade e o ano mencionados."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal idêntico."
+        "reason": "A evidência sustenta integralmente a relação entre mortes violentas e intervenção policial."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O ano de 2021 e as quantidades de 1.356 e 4.750 aparecem literalmente na evidência."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra da proposta."
+        "reason": "A redação descreve o dado atribuído ao documento sem avaliação valorativa."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta ambiental."
+        "reason": "A afirmação trata de um único indicador coerente de segurança pública."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
         "id": "2026:GOVERNADOR:RJ:190002540198:frase:8:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta literalmente."
+        "reason": "A evidência cobre o ano, o total de mortes, a parcela e a causa mencionada."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:suporte",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação."
+        "reason": "A evidência identifica candidatos para os dois cargos mencionados."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:numeros",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação não cita número específico, compatível com evidência."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:neutralidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apenas descreve o conteúdo do programa sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:mistura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação permanece em uma única área coerente de identificação eleitoral."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:identidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:auxilio-desempregado:documentos:RJ:190002540198:01:cobertura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:identificacao-eleitoral:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre integralmente os cargos de Governador e Vice-Governadora."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:suporte",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação."
+        "reason": "As evidências apresentam informações tanto sobre produção industrial quanto sobre emprego formal."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:numeros",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:neutralidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve os assuntos apresentados no documento sem avaliação valorativa."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:mistura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "Produção industrial e emprego formal integram uma única área temática coerente de economia e emprego."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:identidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e todas as evidências pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:mobilidade-publica:documentos:RJ:190002540198:01:cobertura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:economia-e-emprego:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "As duas evidências cobrem todas as áreas materiais mencionadas na afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:suporte",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação."
+        "reason": "A evidência informa explicitamente a proporção e as condições descritas."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:numeros",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Afirmação não cita percentual específico, compatível com evidência."
+        "reason": "A afirmação não expressa um número específico; a referência genérica à proporção não introduz quantidade própria."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:neutralidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apenas descreve a informação contida no programa, sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:mistura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação trata de um único tema coerente relacionado ao trabalho."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:identidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:educacao-orcamento:documentos:RJ:190002540198:01:cobertura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:trabalho:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre a proporção, a força de trabalho fluminense e as condições mencionadas."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:suporte",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação."
+        "reason": "As evidências sustentam tanto a participação histórica dos royalties quanto o valor da dívida."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:numeros",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades específicos."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:neutralidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve informações do documento sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:mistura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "Royalties e dívida integram uma única área coerente de finanças estaduais."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:identidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e todas as evidências pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:gestao-saude:documentos:RJ:190002540198:01:cobertura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:financas-estaduais:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "As evidências cobrem integralmente as duas cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:suporte",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência sustenta a afirmação."
+        "reason": "A evidência informa explicitamente o déficit habitacional e o ano indicado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:numeros",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "O ano de 2019 aparece literalmente na evidência."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:neutralidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apenas descreve a informação do programa, sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:mistura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:mistura",
         "verdict": "yes",
-        "reason": "Tema único e coerente."
+        "reason": "A afirmação trata de uma única área coerente: habitação."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:identidade",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:identidade",
         "verdict": "yes",
-        "reason": "Identidade eleitoral corresponde."
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
       },
       {
-        "id": "2026:GOVERNADOR:RJ:190002540198:tema:desmilitarizacao-seguranca:documentos:RJ:190002540198:01:cobertura",
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:habitacao:documentos:RJ:190002540198:01:cobertura",
         "verdict": "yes",
-        "reason": "Cláusula material coberta."
+        "reason": "A evidência cobre o tema, o déficit registrado e o ano mencionado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência registra explicitamente mortes violentas causadas por intervenção policial em 2021."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:numeros",
+        "verdict": "yes",
+        "reason": "O ano de 2021 aparece literalmente na evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a informação do documento sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente: segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:identidade",
+        "verdict": "yes",
+        "reason": "A afirmação e a evidência pertencem à mesma chave eleitoral e ao documento informado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002540198:tema:seguranca-publica:documentos:RJ:190002540198:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre as mortes violentas, a causa por intervenção policial e o ano indicado."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:RJ:190002540198",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -699,55 +751,36 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna-medium@codex-cli-v5",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 2,
-        "uso": {
-          "input_tokens": 24899,
-          "cached_input_tokens": 6912,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 2690,
-          "reasoning_output_tokens": 1634
-        }
+        "attempts": 1
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 23801,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 20693,
-          "output_tokens_details": {
-            "thinking_tokens": 635
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 23801,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 20693,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 23801,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 23801
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.3209574
+          "input_tokens": 39145,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15914,
+          "reasoning_output_tokens": 287
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "c983d48790eb697fda50e0e8ad6347c97fd29b4487185d0fbf1455f715ff7ef9",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
         }
       }
     },
@@ -766,11 +799,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "8398563d5b691e4eb122e1d7af14ddfe99fd2c6852879ec121adfab35e001b0c",
     "extractedTextSha256": "a3d2e36f2511d3394d062f111539f17bcf546e680ac7fa28c792a68798be4303",
     "documentCount": 1,
-    "documentSetSha256": "b55fddea4483351b9680d0584d49952d8bcfa0065b28901507ab667086228fa4",
-    "contentSha256": "45a0ebfc428018283e6b92d1ac223fdf412cabfde49f87a8db65fda56a6d208f"
+    "documentSetSha256": "93105e780afd0da616fdd26f097b8f0d0f72533bbc87c7775d89c4ad2006bb65",
+    "contentSha256": "99453cf920a38657f1e5c52498ece7f51dd7cbba885f6326ac980d916069bd82"
   }
 }

@@ -1,8 +1,14 @@
 import { spawn } from "node:child_process"
+import { mkdtempSync, rmSync } from "node:fs"
+import { tmpdir } from "node:os"
 import path from "node:path"
 
 import judgeSchema from "./prompts/programa-governo-governadores-judge-v2.schema.json"
-import type { ProgramaGovernoEvidencia, ProgramaGovernoResumo } from "../src/lib/programa-governo"
+import {
+  programaGovernoTextoResidual,
+  type ProgramaGovernoEvidencia,
+  type ProgramaGovernoResumo,
+} from "../src/lib/programa-governo"
 import {
   substituirEvidenciasFato,
   validarResultadoProgramaGovernoMultipassagem,
@@ -556,6 +562,13 @@ function validateSummary(value: unknown): ProgramaGovernoResumo {
       )),
     }
   })
+  // Checagem inversa: o resumo publicado é exatamente a união das frases
+  // verificadas. Prosa fora delas não passa pelo gate de evidência literal
+  // nem pelo judge, então não pode existir.
+  const residuo = programaGovernoTextoResidual(texto, normalizedPhrases)
+  if (residuo) {
+    throw new Error(`generator.texto: prosa fora das frases verificadas ("${residuo.slice(0, 80)}")`)
+  }
   return {
     texto,
     frases: normalizedPhrases,
@@ -646,13 +659,42 @@ function validateJudge(value: unknown): ProgramaGovernoJudgeOutput {
   }
 }
 
+/**
+ * Ambiente que chega aos runners de modelo: nenhum segredo do host, só o que
+ * os CLIs precisam para autenticar e localizar a própria configuração, mais as
+ * variáveis PF_* documentadas. Espelha a allowlist do batch-driver, mas vale
+ * mesmo quando o CLI canônico é chamado direto, fora do driver.
+ */
+const MODEL_PROCESS_ENV_ALLOWLIST = new Set([
+  "PATH", "HOME", "TMPDIR", "TEMP", "TMP", "LANG", "LC_ALL", "TZ", "TERM", "SHELL", "USER", "LOGNAME",
+  "CODEX_HOME", "CLAUDE_CONFIG_DIR", "XDG_CONFIG_HOME", "XDG_CACHE_HOME",
+])
+
+export function construirAmbienteModelo(ambiente: NodeJS.ProcessEnv): Record<string, string> {
+  return Object.fromEntries(
+    Object.entries(ambiente).filter((entry): entry is [string, string] =>
+      entry[1] !== undefined && (MODEL_PROCESS_ENV_ALLOWLIST.has(entry[0]) || entry[0].startsWith("PF_")),
+    ),
+  )
+}
+
+/**
+ * O runner recebe o documento oficial, que é dado externo potencialmente
+ * hostil. Por isso ele nasce num diretório temporário vazio (o sandbox do
+ * Codex usa o cwd como raiz) e com ambiente filtrado. O diretório some no fim.
+ */
 export const runProgramaGovernoModelProcess: ProgramaGovernoModelProcessRunner = (
   command,
   args,
   input,
   timeoutMs,
 ) => new Promise((resolve, reject) => {
-  const child = spawn(command, [...args], { stdio: ["pipe", "pipe", "pipe"] })
+  const cwd = mkdtempSync(path.join(tmpdir(), "pf-modelo-"))
+  const child = spawn(command, [...args], {
+    cwd,
+    env: construirAmbienteModelo(process.env) as NodeJS.ProcessEnv,
+    stdio: ["pipe", "pipe", "pipe"],
+  })
   const stdout: Buffer[] = []
   const stderr: Buffer[] = []
   let stdoutBytes = 0
@@ -662,6 +704,7 @@ export const runProgramaGovernoModelProcess: ProgramaGovernoModelProcessRunner =
     if (settled) return
     settled = true
     clearTimeout(timer)
+    rmSync(cwd, { recursive: true, force: true })
     callback()
   }
   const timer = setTimeout(() => {

@@ -140,3 +140,49 @@ Responsável por confirmar: **Thiago**.
 - Onde existe a segunda cópia de `BACKUP_ENCRYPTION_KEY`, fora do GitHub.
 - Se `puxaficha.com.br` e seus registros DNS estão sob a conta esperada.
 - Se notificações de falha de cron e de novas issues estão habilitadas.
+
+## 5. RTO, RPO e ensaio de restauração
+
+Objetivos declarados em 02/09/2026, a partir do que o projeto de fato tem. Não
+são promessas medidas: a coluna "medido" só se preenche com um ensaio.
+
+| Métrica | Definição aqui | Objetivo | Medido |
+|---|---|---|---|
+| RPO (perda máxima de dado) | Idade do último dump restaurável. O `backup-db.yml` roda todo dia às 05:30 UTC (02:30 BRT) e guarda 14 dias de artifacts cifrados. Só vale para as tabelas que não se reconstroem pelas migrations e pelos ingestores: `alert_subscribers`, `noticias_candidato`, `coleta_log`. O resto se refaz do repositório. | Até 24 h para essas três tabelas; menor se o PITR do Supabase estiver ativo (confirmar na seção 4) | Ensaio de 02/09/2026: dado mais recente em `coleta_log` de 08:07 UTC num dump de 09:45 UTC. Atenção: o agendamento do GitHub atrasa 4 a 6 h (runs de 31/08 a 02/09 começaram entre 09:44 e 11:41 UTC), então o dump do dia fica pronto por volta do meio-dia UTC, não às 05:30 |
+| RTO do banco | Do início da restauração até o readback passar num projeto novo: decifrar, `pg_restore`, conferir contagens. | Até 60 min | Ensaio de 02/09/2026, dump de 30 MB: 1 s de `pg_restore`, 3 s do container ao readback, mais o download do artifact. Em projeto Supabase novo, contar a criação do projeto e a rede |
+| RTO da aplicação | Do banco pronto até os três gates da seção 3 passarem: repor variáveis, deploy, domínio. | Até 2 h | pendente de ensaio |
+
+### Como ensaiar sem tocar produção
+
+O script [`scripts/audit/drill-restore-backup.sh`](../scripts/audit/drill-restore-backup.sh)
+restaura um artifact do `backup-db.yml` num PostgreSQL 17 descartável em Docker,
+mede os segundos do `pg_restore`, conta tabelas e linhas das três tabelas acima,
+lê o dado mais recente de `coleta_log` (é o RPO observado) e apaga o dump
+decifrado e o container no fim. Ele recusa qualquer URL de banco: o único
+destino é o container que ele mesmo cria.
+
+```bash
+run_id="$(gh run list --workflow=backup-db.yml --status success --limit 1 --json databaseId -q '.[0].databaseId')"
+gh run download "$run_id" --name "backup-db-$run_id" --dir backups/
+BACKUP_ENCRYPTION_KEY='<a chave, fora do histórico do shell>' \
+  scripts/audit/drill-restore-backup.sh backups/puxa-ficha-*.dump.enc
+```
+
+A linha `DRILL_RESTORE_OK={...}` traz `segundos_restore`, `segundos_total`,
+`erros_pg_restore`, as contagens e `dado_mais_recente_coleta_log`. Copiar os
+números para a tabela abaixo; `erros_pg_restore` acima de zero merece leitura
+do log antes de aceitar o ensaio. O RTO da aplicação se mede à parte, num
+projeto Vercel de teste, seguindo os passos 4 a 6 da seção 2 com cronômetro.
+
+Cadência: um ensaio por trimestre e um depois de qualquer mudança no
+`backup-db.yml`, no `backup-supabase.sh` ou na versão maior do Postgres.
+
+### Ensaios realizados
+
+| Data | Artifact (run) | Bytes | `segundos_restore` | `erros_pg_restore` | candidatos / alert_subscribers / noticias_candidato | RPO observado | Quem |
+|---|---|---|---|---|---|---|---|
+| 2026-09-02 | `backup-db-33615805264` (`puxa-ficha-20260902T094543Z.dump.enc`) | 30.138.523 | 1 (3 no total) | 0 (`pg_restore_rc` 1 só pelo `schema "public" already exists`) | 328 / 37 / 32.051 (33 tabelas, `coleta_log` 14.533) | dado mais recente 2026-09-02T08:07Z, 1 h 38 min antes do dump | Thiago, PostgreSQL 17 local via Docker |
+
+Aprendizado do primeiro ensaio: `read -rs` engole a linha seguinte quando se
+cola mais de um comando de uma vez, e a chave "errada" era o próprio comando.
+Colar a chave sozinha, com Enter, e conferir o tamanho antes de decifrar.

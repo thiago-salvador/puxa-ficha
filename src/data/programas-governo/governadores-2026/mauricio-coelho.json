@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MT.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -1917,127 +1917,139 @@
     }
   ],
   "resumo": {
-    "texto": "O programa prevê o domínio dos fundamentos nos primeiros anos da educação básica. O ensino orientado a projetos será implantado nas escolas estaduais. A formação técnica será modernizada no ensino médio. O diagnóstico em saúde será organizado por uma rede integrada de coleta, processamento, análise e entrega de resultados. A fiscalização da saúde contará com uma força-tarefa permanente contra fraudes. A gestão dos recursos hídricos será organizada por bacias hidrográficas. O documento descreve medidas educacionais voltadas à aprendizagem dos fundamentos. Também propõe atividades escolares baseadas em projetos. A formação profissional aparece associada ao ensino técnico. Na saúde, o texto prevê integração dos serviços de diagnóstico. O programa planeja monitoramento de contratos, pagamentos, estoques, preços e fornecedores. Para os recursos hídricos, prevê mapeamento de nascentes, áreas de erosão, pontos de assoreamento, lançamentos poluentes, escassez e inundação. As medidas são apresentadas como ações estaduais vinculadas à educação, à saúde e à gestão ambiental.",
+    "texto": "O documento propõe zerar o ICMS da energia elétrica, medida descrita como capaz de reduzir a conta de luz em 17%. O documento propõe o Cartão Trabalho, definido como crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos. Na educação, o documento propõe que o aluno avance após aprender os fundamentos, sem depender do calendário escolar. Na saúde, o documento propõe uma rede integrada de coleta, processamento, análise e entrega de resultados sob coordenação estadual. Na área ambiental, o documento propõe o Programa Estadual de Recuperação Produtiva de Áreas Degradadas, com assistência técnica, crédito e análise do solo. Na infraestrutura, o documento propõe o Plano Mato Grosso Multimodal, estruturado por uma carteira integrada de rodovias, ferrovias, hidrovias, aeroportos, portos secos e terminais de transbordo.",
     "frases": [
       {
-        "texto": "O programa prevê o domínio dos fundamentos nos primeiros anos da educação básica.",
+        "texto": "O documento propõe zerar o ICMS da energia elétrica, medida descrita como capaz de reduzir a conta de luz em 17%.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002553058:01",
+            "pagina": 10,
+            "trecho": "O ato de zerar o ICMS da energia vai reduzir a conta de luz em 17%, custando R$1 bilhão ao ano para o estado e aliviando as famílias mato-grossenses."
+          }
+        ]
+      },
+      {
+        "texto": "O documento propõe o Cartão Trabalho, definido como crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002553058:01",
+            "pagina": 12,
+            "trecho": "Vamos criar o Cartão Trabalho: um crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos."
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, o documento propõe que o aluno avance após aprender os fundamentos, sem depender do calendário escolar.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
             "pagina": 43,
-            "trecho": "Nos primeiros anos, o objetivo será o domínio dos fundamentos."
+            "trecho": "O aluno não avançará porque o calendário mandou, mas porque aprendeu."
           }
         ]
       },
       {
-        "texto": "O ensino orientado a projetos será implantado nas escolas estaduais.",
-        "evidencias": [
-          {
-            "documentoId": "MT:110002553058:01",
-            "pagina": 45,
-            "trecho": "O Estado implantará esse modelo nas escolas estaduais e oferecerá formação aos professores para conduzir projetos."
-          }
-        ]
-      },
-      {
-        "texto": "A formação técnica será modernizada no ensino médio.",
-        "evidencias": [
-          {
-            "documentoId": "MT:110002553058:01",
-            "pagina": 46,
-            "trecho": "O ensino técnico será modernizado e ampliado."
-          }
-        ]
-      },
-      {
-        "texto": "O diagnóstico em saúde será organizado por uma rede integrada de coleta, processamento, análise e entrega de resultados.",
+        "texto": "Na saúde, o documento propõe uma rede integrada de coleta, processamento, análise e entrega de resultados sob coordenação estadual.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
             "pagina": 54,
-            "trecho": "O Estado organizará uma rede integrada de coleta, processamento, análise e entrega de resultados, sob coordenação estadual."
+            "trecho": "Vamos verticalizar o diagnóstico em Mato Grosso. O\nEstado\n\norganizará\n\numa\n\nrede\n\nintegrada\n\nde\n\ncoleta,\n\nprocessamento, análise e entrega de resultados, sob coordenação estadual."
           }
         ]
       },
       {
-        "texto": "A fiscalização da saúde contará com uma força-tarefa permanente contra fraudes.",
+        "texto": "Na área ambiental, o documento propõe o Programa Estadual de Recuperação Produtiva de Áreas Degradadas, com assistência técnica, crédito e análise do solo.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 62,
-            "trecho": "Vamos criar uma força-tarefa permanente para blindar o SUS por dentro."
+            "pagina": 102,
+            "trecho": "Vamos criar o Programa Estadual de Recuperação\nProdutiva\n\nde\n\nÁreas\n\nDegradadas.\n\nA\n\nprioridade\n\nserá\n\nrecuperar pastagens, solos e áreas produtivas degradadas,\nusando assistência técnica, crédito, análise do solo,"
           }
         ]
       },
       {
-        "texto": "A gestão dos recursos hídricos será organizada por bacias hidrográficas.",
+        "texto": "Na infraestrutura, o documento propõe o Plano Mato Grosso Multimodal, estruturado por uma carteira integrada de rodovias, ferrovias, hidrovias, aeroportos, portos secos e terminais de transbordo.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 105,
-            "trecho": "Vamos criar o Programa Água e Território Vivos, organizado por bacias hidrográficas."
+            "pagina": 119,
+            "trecho": "Vamos criar o Plano Mato Grosso Multimodal, com uma\ncarteira\n\nintegrada\n\nde\n\nrodovias,\n\nferrovias,\n\nhidrovias,\naeroportos, portos secos e terminais de transbordo."
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "fundamentos-educacionais",
-        "titulo": "Fundamentos educacionais",
-        "descricao": "Domínio dos fundamentos nos primeiros anos da educação básica.",
+        "id": "energia-eletrica",
+        "titulo": "Energia elétrica",
+        "descricao": "O documento propõe zerar o ICMS da energia elétrica.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 43,
-            "trecho": "Nos primeiros anos, o objetivo será o domínio dos fundamentos."
+            "pagina": 10,
+            "trecho": "O ato de zerar o ICMS da energia vai reduzir a conta de luz em 17%, custando R$1 bilhão ao ano para o estado e aliviando as famílias mato-grossenses."
           }
         ]
       },
       {
-        "id": "ensino-por-projetos",
-        "titulo": "Ensino por projetos",
-        "descricao": "Implantação do ensino orientado a projetos nas escolas estaduais.",
+        "id": "cartao-trabalho",
+        "titulo": "Cartão Trabalho",
+        "descricao": "O documento propõe crédito mensal para trabalhadores elegíveis.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 45,
-            "trecho": "O Estado implantará esse modelo nas escolas estaduais e oferecerá formação aos professores para conduzir projetos."
+            "pagina": 12,
+            "trecho": "Vamos criar o Cartão Trabalho: um crédito mensal de R$ 200 para cada trabalhador com carteira assinada que receba até dois salários mínimos."
+          }
+        ]
+      },
+      {
+        "id": "aprendizagem-escolar",
+        "titulo": "Aprendizagem escolar",
+        "descricao": "O documento propõe avanço escolar condicionado ao aprendizado dos fundamentos.",
+        "evidencias": [
+          {
+            "documentoId": "MT:110002553058:01",
+            "pagina": 43,
+            "trecho": "O aluno não avançará porque o calendário mandou, mas porque aprendeu."
           }
         ]
       },
       {
         "id": "diagnostico-em-saude",
         "titulo": "Diagnóstico em saúde",
-        "descricao": "Organização integrada dos serviços estaduais de diagnóstico.",
+        "descricao": "O documento propõe uma rede estadual integrada para diagnóstico.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
             "pagina": 54,
-            "trecho": "O Estado organizará uma rede integrada de coleta, processamento, análise e entrega de resultados, sob coordenação estadual."
+            "trecho": "O Estado\n\norganizará\n\numa\n\nrede\n\nintegrada\n\nde\n\ncoleta,\n\nprocessamento, análise e entrega de resultados, sob coordenação estadual."
           }
         ]
       },
       {
-        "id": "fiscalizacao-da-saude",
-        "titulo": "Fiscalização da saúde",
-        "descricao": "Criação de força-tarefa permanente para fiscalização do SUS.",
+        "id": "areas-degradadas",
+        "titulo": "Áreas degradadas",
+        "descricao": "O documento propõe recuperação produtiva de áreas degradadas.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 62,
-            "trecho": "Vamos criar uma força-tarefa permanente para blindar o SUS por dentro."
+            "pagina": 102,
+            "trecho": "Vamos criar o Programa Estadual de Recuperação\nProdutiva\n\nde\n\nÁreas\n\nDegradadas."
           }
         ]
       },
       {
-        "id": "recursos-hidricos",
-        "titulo": "Recursos hídricos",
-        "descricao": "Organização da gestão hídrica por bacias hidrográficas.",
+        "id": "plano-multimodal",
+        "titulo": "Plano multimodal",
+        "descricao": "O documento propõe integração de modais de transporte.",
         "evidencias": [
           {
             "documentoId": "MT:110002553058:01",
-            "pagina": 105,
-            "trecho": "Vamos criar o Programa Água e Território Vivos, organizado por bacias hidrográficas."
+            "pagina": 119,
+            "trecho": "Vamos criar o Plano Mato Grosso Multimodal, com uma\ncarteira\n\nintegrada\n\nde\n\nrodovias,\n\nferrovias,\n\nhidrovias,\naeroportos, portos secos e terminais de transbordo."
           }
         ]
       }
@@ -2045,350 +2057,380 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
-    "generatedAt": "2026-08-28T14:07:46.429Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:24:47.473Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T14:09:31.228Z",
+    "judgedAt": "2026-09-02T18:29:17.124Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente a afirmação."
+        "reason": "A evidência sustenta integralmente a redução proposta do ICMS e o efeito de 17% na conta de luz."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "O percentual de 17% está literalmente sustentado pela evidência."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação atribui a proposta e sua estimativa ao documento, sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única proposta de tributação da energia e de seu efeito previsto."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:1:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula."
+        "reason": "A evidência cobre tanto a eliminação do ICMS quanto a redução prevista de 17%."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente."
+        "reason": "A evidência reproduz integralmente a criação, o valor, a periodicidade e os critérios do Cartão Trabalho."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "Os valores de R$ 200 e até dois salários mínimos estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra e descritiva."
+        "reason": "A redação descreve objetivamente a proposta, sem avaliação ou linguagem promocional."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação trata exclusivamente do Cartão Trabalho e de suas condições."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:2:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente."
+        "reason": "A evidência e a página citada sustentam o avanço pelo aprendizado dos fundamentos, em vez do calendário."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta educacional sem elogio, crítica, certeza externa ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação trata de uma única proposta coerente sobre progressão escolar."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:3:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência e a página citada cobrem o domínio dos fundamentos e a independência do calendário."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente."
+        "reason": "A evidência sustenta literalmente todos os componentes e a coordenação estadual da rede."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém avaliação, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação trata de uma única proposta coerente de rede diagnóstica."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:4:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre todas as etapas da rede e sua coordenação estadual."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente."
+        "reason": "A evidência sustenta a criação do programa e os três instrumentos mencionados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica ou linguagem promocional."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação trata de um único programa e de instrumentos diretamente associados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:5:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre o programa, sua finalidade e todos os instrumentos citados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente."
+        "reason": "A evidência sustenta literalmente o plano, a carteira integrada e todos os modais listados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve objetivamente a proposta, sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "Os diferentes modais são componentes coerentes de uma única proposta multimodal."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:frase:6:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre o plano, a integração e cada modalidade enumerada."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:suporte",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente o tema."
+        "reason": "A evidência sustenta diretamente a proposta de zerar o ICMS da energia."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:numeros",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:neutralidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta de forma neutra, sem avaliação ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:mistura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação aborda uma única proposta na área de energia elétrica."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:identidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fundamentos-educacionais:documentos:MT:110002553058:01:cobertura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:energia-eletrica:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:suporte",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente o tema."
+        "reason": "A evidência sustenta o crédito mensal e explicita quais trabalhadores são elegíveis."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:numeros",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:neutralidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:mistura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação trata exclusivamente do Cartão Trabalho."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:identidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:ensino-por-projetos:documentos:MT:110002553058:01:cobertura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:cartao-trabalho:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre a periodicidade do crédito e a existência de critérios de elegibilidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada sustentam o avanço condicionado ao aprendizado dos fundamentos."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza externa ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação aborda uma única proposta coerente de progressão escolar."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:aprendizagem-escolar:documentos:MT:110002553058:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência e a página citada cobrem integralmente o condicionamento do avanço ao aprendizado."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente o tema."
+        "reason": "A evidência sustenta uma rede integrada de diagnóstico organizada e coordenada pelo Estado."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém avaliação, elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação aborda uma única proposta na área de diagnóstico em saúde."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
         "id": "2026:GOVERNADOR:MT:110002553058:tema:diagnostico-em-saude:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre integralmente a rede integrada, sua finalidade diagnóstica e seu caráter estadual."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:suporte",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente o tema."
+        "reason": "A evidência sustenta diretamente a proposta de recuperação produtiva de áreas degradadas."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:numeros",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:neutralidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica ou linguagem promocional."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:mistura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "A afirmação aborda uma única proposta coerente sobre áreas degradadas."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:identidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:fiscalizacao-da-saude:documentos:MT:110002553058:01:cobertura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:areas-degradadas:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre integralmente a única cláusula material da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:suporte",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho confirma diretamente o tema."
+        "reason": "A evidência sustenta a integração de diversas modalidades de transporte em um plano multimodal."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:numeros",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:neutralidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:mistura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:mistura",
         "verdict": "yes",
-        "reason": "Área coerente única."
+        "reason": "Os vários modais compõem uma única proposta coerente de integração de transportes."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:identidade",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento coincidem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os informados."
       },
       {
-        "id": "2026:GOVERNADOR:MT:110002553058:tema:recursos-hidricos:documentos:MT:110002553058:01:cobertura",
+        "id": "2026:GOVERNADOR:MT:110002553058:tema:plano-multimodal:documentos:MT:110002553058:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material."
+        "reason": "A evidência cobre integralmente a proposta de integração dos modais de transporte."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:MT:110002553058",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -2397,55 +2439,28 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna@codex-cli-v4",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
         "attempts": 2,
         "uso": {
-          "input_tokens": 58022,
-          "cached_input_tokens": 0,
+          "input_tokens": 57524,
+          "cached_input_tokens": 18176,
           "cache_write_input_tokens": 0,
-          "output_tokens": 1400,
-          "reasoning_output_tokens": 428
+          "output_tokens": 3580,
+          "reasoning_output_tokens": 2203
         }
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 19661,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 17478,
-          "output_tokens_details": {
-            "thinking_tokens": 364
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 19661,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 17478,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 19661,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 19661
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.26879339999999996
+          "input_tokens": 35970,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 14747,
+          "reasoning_output_tokens": 246
         }
       }
     },
@@ -2464,11 +2479,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "314c2f4752c7d64a79bac72c6fe8bec47176353e6ba0c7f0a9b785b108da053d",
     "extractedTextSha256": "b086130679751f5980081bc88bceaada07495a0737a840a2556d408d70fcc54d",
     "documentCount": 1,
-    "documentSetSha256": "78c8e50fa34b8e0c6520848c72aa7e8eec249dc1fda134b4ab74a728ff9d1232",
-    "contentSha256": "4a312bc2e75991f694513483dc7381d91adba46eb7c6ac96fc4548c743701560"
+    "documentSetSha256": "dbafe7716973a4eb9e781c15e9b6eae59e408192ac6e269c569fced2e9ee4a2f",
+    "contentSha256": "9e41923972efd43aa5d9db0f4ac7fd5523191f429578209608d8007724e13c0a"
   }
 }

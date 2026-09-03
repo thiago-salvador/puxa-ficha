@@ -4,7 +4,22 @@ Este diretório NÃO é lido por nenhum runner. O que está aqui foi escrito,
 revisado e preservado, mas não passou no `replay-migrations.sh --gate` e por
 isso não pode entrar em `supabase/migrations/` sem travar o CI inteiro.
 
-## vocabulário de `situacao_candidatura` (16/08/2026)
+Hoje o diretório está vazio de migrations. A seção abaixo fica como histórico
+do único par que passou por aqui.
+
+## vocabulário de `situacao_candidatura` (16/08/2026) — RETOMADO em 02/09/2026
+
+O par voltou para `supabase/migrations/` com timestamps novos, porque o ledger
+já tinha passado dos originais: `20260903100000_vocabulario_situacao_candidatura.sql`
+(dado) e `20260903100100_vocabulario_situacao_candidatura_check.sql` (CHECK).
+O teste voltou como `tests/situacao-candidatura-dominio.test.ts`, a allowlist
+para `scripts/audit/allowlist-vocabulario-situacao-20260816.json` e o recorte
+`vocabulario-situacao-20260816` para `scripts/audit/recortes.json`. As duas
+grafias novas do diagnóstico de 02/09 estão mapeadas (statements 5 e 6) e o
+ingestor do TSE passou a emitir só o vocabulário. Aplicação em produção segue
+o procedimento autorizado, como toda migration.
+
+O texto abaixo descreve o estado de 17/08 a 02/09 e não foi reescrito.
 
 Duas migrations que fecham o vocabulário do campo `situacao_candidatura` em três
 valores mais NULL, com CHECK constraint. O diagnóstico que as motivou continua
@@ -30,6 +45,33 @@ não das migrations.
 4. Só então mover de volta para `supabase/migrations/`.
 
 Nada aqui foi aplicado no banco de produção.
+
+### Diagnóstico de 02/09/2026 (antes de retomar)
+
+O gate foi rodado localmente em PostgreSQL 17 nesta data: a junção nome/erro
+já imprime o motivo (`GATE: falha NOVA ... motivo: ...`), então o passo 1 acima
+está feito. O que impede a retomada agora não é o gate, é o dado:
+
+- A tabela `candidatos` tem **328 linhas** (eram 296 em 16/08), e o censo exato
+  da migration 1 (154/79/19/44) só vale para 296; ela ignora o censo em outro
+  tamanho, então não quebra, mas a evidência do cabeçalho está desatualizada.
+- Duas grafias novas entraram depois de 16/08 e **não estão mapeadas** pela
+  migration 1, então a migration 2 (o CHECK) falharia na aplicação:
+  - `pedido de registro no TSE; código oficial -3 (#NE) no snapshot de 27/08/2026`
+    em 2 fichas publicáveis (`rico-pinheiro` e `well-macedo`, gravadas em
+    29/08 pela migration de integridade do roster). É o mesmo fato `#NE`, e o
+    destino natural é `aguardando julgamento`.
+  - `renúncia` em 1 ficha não publicável (`cleber-rabelo`, `status = removido`),
+    o mesmo caso de `desistente`: valor de `status` na coluna errada, destino
+    NULL.
+- A migration de 29/08 mostra que ainda existe caminho de escrita que grava
+  texto livre nesta coluna. Fechar o CHECK sem antes fazer esse caminho
+  escrever só o vocabulário quebraria a próxima ingestão.
+
+Para retomar: (a) mapear as duas grafias na migration 1 e atualizar o censo;
+(b) localizar o ponto de escrita da grafia de 27/08 e fazê-lo emitir o
+vocabulário; (c) só então rodar o replay, tratar o resultado pelo passo 3 acima
+e mover o par de volta. Nada disso foi feito nesta data.
 
 ## O teste que acompanha
 

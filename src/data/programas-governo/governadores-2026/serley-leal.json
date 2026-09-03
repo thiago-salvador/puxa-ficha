@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_CE.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -1231,142 +1231,139 @@
     }
   ],
   "resumo": {
-    "texto": "Educação pública e gratuita para todos e em todos os níveis. Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas. Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030. Expandir CAPS-AD para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito: psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego). Criação de canais de atendimento acessíveis no INSS para PCDs. O aumento da malha metroviária, integrada aos ônibus. Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados. O programa prevê ações nas áreas de educação pública, estrutura escolar, saneamento, saúde mental, acessibilidade e transporte coletivo.",
+    "texto": "O programa prevê a elaboração das peças orçamentárias com participação da população por meio de audiências de orçamento participativo, submetendo a aprovação a referendo popular. O programa prevê a criação de uma Estatal Eólica do Ceará como instrumento público para a área de energia eólica. O programa propõe a criação de uma Empresa Estadual de Moradia Popular como medida institucional para a política habitacional estadual. O programa prevê a ampliação da rede de saúde da família, com equipes dotadas de suporte profissional e insumos para o atendimento. O programa propõe a redução da tarifa de transporte público, vinculando o gasto com transporte a uma parcela do salário mínimo. O programa propõe a construção de salas de cinema públicas nos municípios, com estrutura flexível conforme a quantidade de habitantes.",
     "frases": [
       {
-        "texto": "Educação pública e gratuita para todos e em todos os níveis.",
+        "texto": "O programa prevê a elaboração das peças orçamentárias com participação da população por meio de audiências de orçamento participativo, submetendo a aprovação a referendo popular.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Educação pública e gratuita para todos e em todos os níveis."
+            "pagina": 14,
+            "trecho": "Elaboração das peças orçamentárias (PPA, LDO e LOA)\njunto à população através de audiências de orçamento\nparticipativo. Aprovação efetiva submetida à população\nvia referendo;"
           }
         ]
       },
       {
-        "texto": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas.",
+        "texto": "O programa prevê a criação de uma Estatal Eólica do Ceará como instrumento público para a área de energia eólica.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas."
+            "pagina": 14,
+            "trecho": "Criação de Estatal Eólica do Ceará;"
           }
         ]
       },
       {
-        "texto": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030.",
+        "texto": "O programa propõe a criação de uma Empresa Estadual de Moradia Popular como medida institucional para a política habitacional estadual.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030."
+            "pagina": 15,
+            "trecho": "Criação da Empresa Estadual de Moradia Popular;"
           }
         ]
       },
       {
-        "texto": "Expandir CAPS-AD para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito: psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego).",
+        "texto": "O programa prevê a ampliação da rede de saúde da família, com equipes dotadas de suporte profissional e insumos para o atendimento.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 46,
-            "trecho": "Expandir CAPS-AD (Centros de Atenção Psicossocial Álcool e Drogas) para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito:"
-          },
-          {
-            "documentoId": "CE:60002533729:01",
-            "pagina": 47,
-            "trecho": "psicoterapia, psiquiatria, grupos terapêuticos, medicina integrativa e suporte social (moradia, emprego)."
+            "pagina": 45,
+            "trecho": "Ampliar a rede de saúde da família, com equipes com\n\nsuporte profissional e insumos para atender,"
           }
         ]
       },
       {
-        "texto": "Criação de canais de atendimento acessíveis no INSS para PCDs.",
-        "evidencias": [
-          {
-            "documentoId": "CE:60002533729:01",
-            "pagina": 62,
-            "trecho": "Criação de canais de atendimento acessíveis no INSS para PCDs;"
-          }
-        ]
-      },
-      {
-        "texto": "O aumento da malha metroviária, integrada aos ônibus.",
+        "texto": "O programa propõe a redução da tarifa de transporte público, vinculando o gasto com transporte a uma parcela do salário mínimo.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
             "pagina": 67,
-            "trecho": "O aumento da malha metroviária, integrada aos ônibus;"
+            "trecho": "Redução da tarifa de transporte público garantindo que\n\no gasto com transporte não ultrapasse 5% do salário\nmínimo."
           }
         ]
       },
       {
-        "texto": "Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados.",
+        "texto": "O programa propõe a construção de salas de cinema públicas nos municípios, com estrutura flexível conforme a quantidade de habitantes.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 67,
-            "trecho": "Passe livre para os estudantes e desempregados durante toda a semana, incluindo os domingos e feriados."
+            "pagina": 54,
+            "trecho": "Construção de salas de cinema públicas em todos os\n\nMunicípios, com estrutura flexível à quantidade de\n\nhabitantes."
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "educacao-publica",
-        "titulo": "Educação pública",
-        "descricao": "A proposta prevê educação pública e gratuita em todos os níveis.",
+        "id": "orcamento-participativo",
+        "titulo": "Orçamento participativo",
+        "descricao": "Participação popular na elaboração orçamentária.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Educação pública e gratuita para todos e em todos os níveis."
+            "pagina": 14,
+            "trecho": "Elaboração das peças orçamentárias (PPA, LDO e LOA)\njunto à população através de audiências de orçamento\nparticipativo."
           }
         ]
       },
       {
-        "id": "estrutura-escolar",
-        "titulo": "Estrutura escolar",
-        "descricao": "A proposta prevê reforma da estrutura das escolas.",
+        "id": "energia-eolica",
+        "titulo": "Energia eólica",
+        "descricao": "Criação de empresa estatal para energia eólica.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Reforma imediata da estrutura escolar: salas de aula, banheiros, quadras, abertura de laboratórios em todas as escolas e garantia de aulas práticas."
+            "pagina": 14,
+            "trecho": "Criação de Estatal Eólica do Ceará;"
           }
         ]
       },
       {
-        "id": "saneamento-escolar",
-        "titulo": "Saneamento escolar",
-        "descricao": "A proposta prevê a ligação das escolas estaduais às redes de esgoto.",
+        "id": "moradia-popular",
+        "titulo": "Moradia popular",
+        "descricao": "Criação de empresa estadual de moradia popular.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 27,
-            "trecho": "Programa emergencial de saneamento das escolas com objetivo de alcançar 100% das escolas do Estado ligadas a redes de esgoto até 2030."
+            "pagina": 15,
+            "trecho": "Criação da Empresa Estadual de Moradia Popular;"
           }
         ]
       },
       {
-        "id": "saude-mental",
-        "titulo": "Saúde mental",
-        "descricao": "A proposta prevê a expansão dos CAPS-AD.",
+        "id": "saude-da-familia",
+        "titulo": "Saúde da família",
+        "descricao": "Ampliação da rede de saúde da família.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 46,
-            "trecho": "Expandir CAPS-AD (Centros de Atenção Psicossocial Álcool e Drogas) para todos os municípios acima de 50 mil habitantes + unidades móveis no interior, com Tratamento multidisciplinar gratuito:"
+            "pagina": 45,
+            "trecho": "Ampliar a rede de saúde da família, com equipes com\n\nsuporte profissional e insumos para atender,"
           }
         ]
       },
       {
-        "id": "acessibilidade",
-        "titulo": "Acessibilidade",
-        "descricao": "A proposta prevê canais acessíveis de atendimento no INSS para pessoas com deficiência.",
+        "id": "tarifa-de-transporte",
+        "titulo": "Tarifa de transporte",
+        "descricao": "Redução da tarifa de transporte público.",
         "evidencias": [
           {
             "documentoId": "CE:60002533729:01",
-            "pagina": 62,
-            "trecho": "Criação de canais de atendimento acessíveis no INSS para PCDs;"
+            "pagina": 67,
+            "trecho": "Redução da tarifa de transporte público garantindo que\n\no gasto com transporte não ultrapasse 5% do salário\nmínimo."
+          }
+        ]
+      },
+      {
+        "id": "cinema-publico",
+        "titulo": "Cinema público",
+        "descricao": "Construção de salas públicas de cinema.",
+        "evidencias": [
+          {
+            "documentoId": "CE:60002533729:01",
+            "pagina": 54,
+            "trecho": "Construção de salas de cinema públicas em todos os\n\nMunicípios, com estrutura flexível à quantidade de\n\nhabitantes."
           }
         ]
       }
@@ -1374,380 +1371,380 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna",
-    "generatedAt": "2026-08-28T13:48:12.340Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T17:43:40.157Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T13:50:22.143Z",
+    "judgedAt": "2026-09-02T17:47:45.487Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal do documento sustenta integralmente a afirmação."
+        "reason": "A evidência sustenta integralmente a elaboração participativa das peças orçamentárias e a submissão da aprovação a referendo."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente sobre educação."
+        "reason": "A afirmação trata de uma única proposta coerente de participação popular no processo orçamentário."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave eleitoral e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:1:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula única da afirmação."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta integralmente."
+        "reason": "A criação da Estatal Eólica do Ceará sustenta integralmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do conteúdo do documento."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (estrutura escolar)."
+        "reason": "A afirmação trata de uma única proposta na área de energia eólica."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave eleitoral e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:2:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas da afirmação."
+        "reason": "A evidência cobre a criação, a natureza estatal e a área eólica indicadas na afirmação."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta integralmente."
+        "reason": "A evidência sustenta integralmente a criação da empresa estadual voltada à moradia popular."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Números 100% e 2030 literalmente sustentados."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta (saneamento escolar)."
+        "reason": "A afirmação trata de uma única proposta coerente de política habitacional."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:3:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre todas as cláusulas materiais."
+        "reason": "A evidência cobre a criação, o âmbito estadual e a finalidade de moradia popular."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trechos combinados das páginas 46 e 47 sustentam integralmente a afirmação."
+        "reason": "A evidência sustenta literalmente a ampliação da rede e a oferta de suporte profissional e insumos às equipes."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Número '50 mil habitantes' literalmente sustentado."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra e literal."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (expansão do CAPS-AD)."
+        "reason": "A afirmação trata de uma única proposta coerente para a rede de saúde da família."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:4:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidências das duas páginas cobrem todas as cláusulas."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta integralmente."
+        "reason": "A evidência sustenta a redução da tarifa e vincula o gasto ao limite de 5% do salário mínimo."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não apresenta valor numérico; a parcela mencionada está sustentada pelo limite literal de 5% na evidência."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única proposta tarifária e de seu critério de limite."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:5:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula única."
+        "reason": "A evidência cobre a redução tarifária e a vinculação do gasto ao salário mínimo."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta integralmente."
+        "reason": "A evidência sustenta literalmente a construção das salas públicas e a adaptação da estrutura à quantidade de habitantes."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades determinadas."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza sobre sua execução."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata de uma única proposta coerente de implantação de cinemas públicos."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
         "id": "2026:GOVERNADOR:CE:60002533729:frase:6:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula única."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Trecho literal sustenta integralmente."
+        "reason": "A evidência sustenta diretamente a participação popular na elaboração das peças orçamentárias."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente."
+        "reason": "A afirmação trata exclusivamente de orçamento participativo."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:frase:7:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:orcamento-participativo:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a cláusula única."
+        "reason": "A evidência cobre integralmente o tema e a participação popular descritos."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho literal."
+        "reason": "A evidência sustenta diretamente a criação de uma estatal eólica."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra do conteúdo."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área coerente (educação pública)."
+        "reason": "A afirmação trata exclusivamente da criação de uma estatal de energia eólica."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:educacao-publica:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:energia-eolica:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material do tema."
+        "reason": "A evidência cobre integralmente a criação e a natureza eólica e estatal da empresa."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho literal."
+        "reason": "A evidência sustenta literalmente a criação da Empresa Estadual de Moradia Popular."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área coerente (estrutura escolar)."
+        "reason": "A afirmação trata exclusivamente da criação de uma empresa estadual de moradia popular."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:estrutura-escolar:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:moradia-popular:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material do tema."
+        "reason": "A evidência cobre integralmente todas as cláusulas da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho literal."
+        "reason": "A evidência sustenta literalmente a ampliação da rede de saúde da família."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números explícitos na afirmação (100% e 2030 omitidos, mas não contraditos)."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área coerente (saneamento escolar)."
+        "reason": "A afirmação trata exclusivamente da ampliação da rede de saúde da família."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saneamento-escolar:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-da-familia:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material do tema."
+        "reason": "A evidência cobre integralmente o tema e a ação descritos."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho literal."
+        "reason": "A evidência sustenta literalmente a redução da tarifa de transporte público."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números explícitos na afirmação resumida."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área coerente (saúde mental/CAPS-AD)."
+        "reason": "A afirmação trata exclusivamente da redução da tarifa de transporte público."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:saude-mental:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:tarifa-de-transporte:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material do tema."
+        "reason": "A evidência cobre integralmente o tema e a ação descritos."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:suporte",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:suporte",
         "verdict": "yes",
-        "reason": "Paráfrase fiel do trecho literal."
+        "reason": "A evidência sustenta literalmente a construção de salas públicas de cinema."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:numeros",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:numeros",
         "verdict": "yes",
-        "reason": "Não há números na afirmação."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:neutralidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação é descritiva e não contém elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:mistura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de área coerente (acessibilidade para PCDs)."
+        "reason": "A afirmação trata exclusivamente da construção de salas públicas de cinema."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:identidade",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:identidade",
         "verdict": "yes",
-        "reason": "Chave e documento correspondem."
+        "reason": "A chave eleitoral e o documento da evidência coincidem exatamente com os identificadores informados."
       },
       {
-        "id": "2026:GOVERNADOR:CE:60002533729:tema:acessibilidade:documentos:CE:60002533729:01:cobertura",
+        "id": "2026:GOVERNADOR:CE:60002533729:tema:cinema-publico:documentos:CE:60002533729:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula material do tema."
+        "reason": "A evidência cobre integralmente o tema e a ação descritos."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:CE:60002533729",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -1756,55 +1753,28 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 1,
+        "attempts": 2,
         "uso": {
-          "input_tokens": 46429,
+          "input_tokens": 46372,
           "cached_input_tokens": 6912,
           "cache_write_input_tokens": 0,
-          "output_tokens": 1964,
-          "reasoning_output_tokens": 730
+          "output_tokens": 3163,
+          "reasoning_output_tokens": 2070
         }
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 22034,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 21311,
-          "output_tokens_details": {
-            "thinking_tokens": 561
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 22034,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 21311,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 22034,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 22034
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.31862240000000003
+          "input_tokens": 34369,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13359,
+          "reasoning_output_tokens": 356
         }
       }
     },
@@ -1823,11 +1793,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "245dcb42335d6c5e45172e817535b20fb66cab7f7761c96d7ecc9533e64cdd1a",
     "extractedTextSha256": "72cbda09375abf897581f9f3f038316e436ccfd22a4a9d50f92a509874989d8f",
     "documentCount": 1,
-    "documentSetSha256": "1d949eb72d770044416b0bf9b5e359fb2017ef20e9519ff23421d059c9e0b385",
-    "contentSha256": "90b6162a305c7ce846aa460fe99f07adede67e447b03f6503137c2c60d5adac1"
+    "documentSetSha256": "63ac9fa59f4fbec5619fbd0c0fc3181238f8a02731317337dbc14ed3b2472323",
+    "contentSha256": "6dc9bec74cb80e160ead48eb9c044963551bec00dcd37b38710edf29fa672e34"
   }
 }

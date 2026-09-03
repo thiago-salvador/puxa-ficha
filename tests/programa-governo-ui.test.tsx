@@ -163,6 +163,63 @@ describe("box do programa na Visão geral", () => {
     assert.match(html, /abre em nova aba/)
   })
 
+  it("expõe as frases e as evidências (página e trecho) em disclosure, com link para a página do PDF quando há URL direta", () => {
+    const frases = [
+      { texto: "O programa propõe ampliar a rede de saúde da família nos municípios.", evidencias: [{ pagina: 3, trecho: "ampliar a rede de saúde da família" }] },
+      { texto: "O documento prevê a criação de uma empresa estadual de moradia popular.", evidencias: [{ pagina: 7, trecho: "empresa estadual de moradia popular" }, { pagina: 8, trecho: "moradia popular como prioridade" }] },
+    ]
+    const resumo = { ...manifestoAprovado.resumo!, texto: frases.map((frase) => frase.texto).join(" "), frases }
+    const manifestoComFrases = { ...manifestoAprovado, resumo }
+    const semPdf = renderToStaticMarkup(
+      <ProgramaGovernoOverview manifesto={manifestoComFrases} onOpenTab={() => {}} />,
+    )
+    assert.match(semPdf, /data-pf-programa-evidencias=""/)
+    assert.match(semPdf, new RegExp(`Ver as ${resumo.frases.length} frases do resumo`))
+    for (const frase of resumo.frases) {
+      assert.ok(semPdf.includes(frase.texto), `frase ausente: ${frase.texto.slice(0, 40)}`)
+      for (const evidencia of frase.evidencias) {
+        assert.match(semPdf, new RegExp(`Página ${evidencia.pagina}`))
+        assert.ok(semPdf.includes(`<q>${evidencia.trecho}</q>`), `trecho ausente: ${evidencia.trecho.slice(0, 40)}`)
+      }
+    }
+    assert.doesNotMatch(semPdf, /#page=/, "sem URL direta do PDF não há link por página")
+    assert.match(semPdf, /href="\/metodologia"/)
+
+    const comPdf = renderToStaticMarkup(
+      <ProgramaGovernoOverview
+        manifesto={{
+          ...manifestoComFrases,
+          fonte: { ...manifestoAprovado.fonte, pdfOriginalUrl: "https://divulgacandcontas.tse.jus.br/x/proposta.pdf" },
+        }}
+        onOpenTab={() => {}}
+      />,
+    )
+    assert.match(comPdf, /href="https:\/\/divulgacandcontas\.tse\.jus\.br\/x\/proposta\.pdf#page=3"/)
+    assert.match(comPdf, /href="https:\/\/divulgacandcontas\.tse\.jus\.br\/x\/proposta\.pdf#page=8"/)
+    assert.equal((comPdf.match(/abrir no PDF/g) ?? []).length, 3)
+
+    const multiDoc = renderToStaticMarkup(
+      <ProgramaGovernoOverview
+        manifesto={{
+          ...manifestoComFrases,
+          fonte: fonteGovernador,
+          documentos: documentosGovernador.slice(0, 2),
+          resumo: {
+            ...resumo,
+            frases: [{ texto: frases[0].texto, evidencias: [{ documentoId: documentosGovernador[1].documentoId, pagina: 2, trecho: "trecho do segundo" }] }],
+          },
+        }}
+        onOpenTab={() => {}}
+      />,
+    )
+    assert.match(multiDoc, /Documento 2 de 2, página 2/)
+
+    const pendente = renderToStaticMarkup(
+      <ProgramaGovernoOverview manifesto={{ ...manifestoComFrases, estado: "em_revisao" }} onOpenTab={() => {}} />,
+    )
+    assert.doesNotMatch(pendente, /data-pf-programa-evidencias/, "evidências só aparecem com resumo aprovado")
+  })
+
   it("não vaza resumo pendente e explica a revisão humana", () => {
     const html = renderToStaticMarkup(
       <ProgramaGovernoOverview

@@ -327,6 +327,15 @@ export default function PrivacidadePage() {
             checados dos que ainda aguardam verificação adicional em ambiente interno.
           </P>
           <P>
+            Os resumos de programa de governo também são gerados por IA, a partir do documento
+            oficial que cada candidatura registrou no TSE. Os modelos recebem apenas o texto desse
+            documento público e a identificação da candidatura; nenhum dado de usuário do site,
+            como email de alertas ou respostas ao quiz, é enviado a modelos de IA. Cada frase do
+            resumo cita trechos literais do documento, um segundo modelo independente avalia o
+            resultado e a aprovação final é humana e registrada. O processo completo está descrito
+            na página de metodologia.
+          </P>
+          <P>
             A IA não é usada para recomendar voto, sugerir candidato, ranquear candidatos, priorizar
             campanhas ou tomar decisão política automatizada. O quiz, quando exibido, mostra
             candidatos em ordem alfabética e usa regras determinísticas documentadas para apresentar

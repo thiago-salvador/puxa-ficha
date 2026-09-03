@@ -123,22 +123,45 @@ test("buildIngestPayload: DB tem CPF invalido (menos de 11 digitos), preenche co
   assert.deepEqual(blockedReasons, [])
 })
 
-test("buildIngestPayload: ano === pleito corrente, situacao_candidatura reescrita", () => {
-  const { payload } = buildIngestPayload(
-    { ...BASE_MATCHED, ano: 2026, situacao: "APTO" },
-    snapshot(),
+test("buildIngestPayload: pleito corrente com #NE e identidade por SQ grava so o vocabulario", () => {
+  const { payload, blockedReasons } = buildIngestPayload(
+    { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
+    snapshot({ situacao_candidatura: "candidatura declarada" }),
     2026
   )
-  assert.equal(payload.situacao_candidatura, "APTO [2026]")
+  assert.equal(payload.situacao_candidatura, "aguardando julgamento")
+  assert.deepEqual(blockedReasons, [])
+
+  const jaCerto = buildIngestPayload(
+    { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
+    snapshot({ situacao_candidatura: "aguardando julgamento" }),
+    2026
+  )
+  assert.equal(jaCerto.payload.situacao_candidatura, undefined, "valor igual nao gera escrita")
 })
 
-test("buildIngestPayload: ano === pleito corrente, situacao com detalhe concatenada", () => {
-  const { payload } = buildIngestPayload(
+test("buildIngestPayload: codigo fora do vocabulario (APTO, DEFERIDO) nunca vira texto livre; bloqueia", () => {
+  const apto = buildIngestPayload({ ...BASE_MATCHED, ano: 2026, situacao: "APTO" }, snapshot(), 2026)
+  assert.equal(apto.payload.situacao_candidatura, undefined)
+  assert.deepEqual(apto.blockedReasons, ["situacao-fora-do-vocabulario:APTO"])
+
+  const deferido = buildIngestPayload(
     { ...BASE_MATCHED, ano: 2026, situacao: "DEFERIDO", detalhe: "COM RECURSO" },
     snapshot(),
     2026
   )
-  assert.equal(payload.situacao_candidatura, "DEFERIDO (COM RECURSO) [2026]")
+  assert.equal(deferido.payload.situacao_candidatura, undefined)
+  assert.deepEqual(deferido.blockedReasons, ["situacao-fora-do-vocabulario:DEFERIDO (COM RECURSO)"])
+})
+
+test("buildIngestPayload: #NE com match por nome nao afirma pedido de registro; bloqueia", () => {
+  const { payload, blockedReasons } = buildIngestPayload(
+    { ...BASE_MATCHED, ano: 2026, situacao: "#NE", match_method: "name-unique" as MatchedData["match_method"] },
+    snapshot(),
+    2026
+  )
+  assert.equal(payload.situacao_candidatura, undefined)
+  assert.deepEqual(blockedReasons, ["situacao-match-fraco:name-unique"])
 })
 
 test("buildIngestPayload: ano historico 2022, NUNCA reescreve situacao_candidatura (Fase 14.2 blast radius fix)", () => {
@@ -250,10 +273,10 @@ test("buildIngestPayload: caso canonico rafael-greca (DB com CPF correto, matche
 
 test("buildIngestPayload: default pleitoCorrente=2026 quando argumento omitido", () => {
   const { payload } = buildIngestPayload(
-    { ...BASE_MATCHED, ano: 2026, situacao: "APTO" },
+    { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
     snapshot()
   )
-  assert.equal(payload.situacao_candidatura, "APTO [2026]")
+  assert.equal(payload.situacao_candidatura, "aguardando julgamento")
 })
 
 test("buildIngestPayload: matched sem situacao, nao adiciona campo (mesmo em pleito corrente)", () => {

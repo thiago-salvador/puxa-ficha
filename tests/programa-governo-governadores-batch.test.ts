@@ -596,6 +596,9 @@ async function testeBatch(opcoes: {
   pollMs?: number
   delayMs?: number
   runDirFixo?: string
+  /** `uso` que o fake grava em ingestao.modelos.generator de cada registro. */
+  usoPorCandidato?: Record<string, number>
+  maxTokensBatch?: number
 }): Promise<{ runDir: string; resultado: Awaited<ReturnType<typeof executarBatch>>; disparos: string[]; maximosConcorrentes: { candidatos: number; slots: number; multipassagem: number } }> {
   const runDir = opcoes.runDirFixo ?? (await dirTemporario())
   await criarFilaFixture(runDir, opcoes.itens)
@@ -614,7 +617,13 @@ async function testeBatch(opcoes: {
     version: 1,
     estado: "em_revisao",
     fonte: { ano: 2026, cargo: "GOVERNADOR", uf: item.uf, sqCandidato: item.sqCandidato, nomeUrna: "x", partido: "x", arquivoNome: null, arquivoNoPacote: null },
-    ingestao: { identityKey: item.chave, etapa: "concluida", erro: null, eval: { completo: true, blockers: 0, dimensoes: [] } },
+    ingestao: {
+      identityKey: item.chave,
+      etapa: "concluida",
+      erro: null,
+      eval: { completo: true, blockers: 0, dimensoes: [] },
+      ...(opcoes.usoPorCandidato ? { modelos: { generator: { uso: opcoes.usoPorCandidato }, judge: null } } : {}),
+    },
     julgamento: { model: "m", promptVersion: "p", judgedAt: "2026-08-27T00:00:00Z", verdicts: [] },
   })
   const spawnFn = (_bin: string, args: string[]) => {
@@ -677,6 +686,7 @@ async function testeBatch(opcoes: {
     modelsConfig,
     archiveDir: "/archives",
     pollMs: opcoes.pollMs ?? 20,
+    maxTokensBatch: opcoes.maxTokensBatch ?? null,
     spawnFn: spawnFn as unknown as Parameters<typeof executarBatch>[0]["spawnFn"],
     node24Resolver: async () => process.execPath,
     validarFilaFn: async () => undefined,
@@ -873,4 +883,34 @@ test("validarFilaContraInventario recusa falta, excesso, UF norte e chave duplic
     /chave duplicada na fila/,
   )
   await rm(dir, { recursive: true, force: true })
+})
+
+test("executarBatch: teto de tokens do batch para o run com stopped_by_budget e soma o uso dos runners", async () => {
+  const { somarTokensUso, custoUsdUso } = await import("../scripts/data/programas-governo-governadores-2026/batch-driver.mjs")
+  assert.equal(somarTokensUso({ input_tokens: 600, cached_input_tokens: 50, output_tokens: 100, duration_ms: 999 }), 750)
+  assert.equal(somarTokensUso({ usage: { input_tokens: 10, output_tokens: 5 }, total_cost_usd: 0.12 }), 15)
+  assert.equal(custoUsdUso({ usage: { input_tokens: 10 }, total_cost_usd: 0.12 }), 0.12)
+  assert.equal(somarTokensUso(null), 0)
+
+  const itens = Array.from({ length: 5 }, (_, index) => itemFila("AL", `3300000010${index + 1}`, `orcamento-${index + 1}`))
+  const { resultado, disparos } = await testeBatch({
+    itens,
+    unidades: new Map<string, UnidadeFake>(),
+    usoPorCandidato: { input_tokens: 600, output_tokens: 100 },
+    maxTokensBatch: 1_000,
+    delayMs: 30,
+  })
+  assert.equal(resultado.parada, "stopped_by_budget")
+  assert.equal(resultado.maxTokensBatch, 1_000)
+  assert.ok(resultado.tokens > 1_000, `tokens somados: ${resultado.tokens}`)
+  assert.ok(disparos.length < itens.length, `o teto impediu novos disparos: ${disparos.length} de ${itens.length}`)
+  assert.equal(resultado.tokens, disparos.length * 700)
+})
+
+test("executarBatch: sem teto, tokens são só contabilizados e o run vai até o fim", async () => {
+  const itens = [itemFila("AL", "33000000201", "livre-1"), itemFila("AL", "33000000202", "livre-2")]
+  const { resultado } = await testeBatch({ itens, unidades: new Map<string, UnidadeFake>(), usoPorCandidato: { input_tokens: 400, output_tokens: 100 } })
+  assert.equal(resultado.parada, null)
+  assert.equal(resultado.tokens, 1_000)
+  assert.equal(resultado.maxTokensBatch, null)
 })

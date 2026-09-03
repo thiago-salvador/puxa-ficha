@@ -1163,6 +1163,7 @@ function assertGeneratorCheckpointCurrent(
       promptVersion: checkpoint.generation.promptVersion,
       model: checkpoint.generation.model,
       generatedAt: checkpoint.generation.generatedAt,
+      instructionsSha256: checkpoint.contract.instructionsSha256,
     },
   } satisfies ProgramaGovernoRegistro
   assertProgramaGovernoRegistro(record)
@@ -1299,6 +1300,9 @@ async function ingestCandidate(
       promptVersion: generated.metadata.promptVersion,
       model: `${generated.metadata.name}@${generated.metadata.version}`,
       generatedAt: checkpointGeneratedAt ?? adapters.now(),
+      // Hash das instruções em vigor: o registro publicado prova qual texto de
+      // prompt o gerou, não só a etiqueta manual de promptVersion.
+      instructionsSha256: jsonSha256(PROGRAMA_GOVERNO_GOV_GENERATOR_INSTRUCTIONS),
     }
     const draft: ProgramaGovernoRegistro = {
       version: 1,

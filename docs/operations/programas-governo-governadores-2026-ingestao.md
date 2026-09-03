@@ -97,7 +97,15 @@ O stage e o approval operam em dry-run por padrão. `--apply` é obrigatório pa
 
 O fingerprint humano cobre identidade completa, incluindo nome de urna e partido, fonte completa, conjunto ordenado de documentos, hashes, extrações, resumo e metadados separados de generator e judge. Qualquer mudança torna a decisão stale. Nenhuma das duas etapas cria uma decisão humana automaticamente.
 
+## Isolamento dos runners de modelo
+
+O documento oficial é dado externo potencialmente hostil. Por isso o CLI canônico sobe cada runner de modelo (generator e judge) num diretório temporário vazio, apagado ao fim da chamada, e com ambiente filtrado: só as variáveis base do sistema (`PATH`, `HOME`, `TMPDIR`, locale), `CODEX_HOME`, `CLAUDE_CONFIG_DIR` e as `PF_*` documentadas chegam ao filho. Nenhum segredo do host passa. O transporte Codex roda com `--sandbox read-only`, `--ephemeral`, sem `web_search`, sem herdar ambiente no shell e com `-C` apontando para esse diretório temporário; o judge Claude roda com `--tools ""`. Teste que reprova se isso regredir: `tests/programa-governo-models.test.ts`. Teste adversarial com documento hostil: `tests/programa-governo-injecao.test.ts`.
+
+Cada registro novo grava `geracao.instructionsSha256`, o sha256 do JSON das instruções do gerador em vigor. O valor está congelado em teste; mudar as instruções exige mudar `promptVersion` e o hash de propósito.
+
 ## Driver de batch nacional
+
+Teto de custo do batch: `--max-tokens-batch=<n>` soma os tokens declarados por generator e judge em cada registro concluído ou bloqueado e encerra o run com `parada = stopped_by_budget` quando a soma passa do teto. Novos candidatos não são disparados; os em voo terminam. O `progress.json` e o resultado final trazem `tokens` e `custoUsd` (o Claude CLI declara `total_cost_usd`). O teto por invocação do judge Claude (`PF_CLAUDE_MAX_BUDGET_USD`, padrão 5) continua valendo; este é o teto do batch inteiro.
 
 O processamento de muitas candidaturas usa o driver `scripts/data/programas-governo-governadores-2026/batch-driver.mjs`, executado com o binário Node 24 resolvido uma única vez. O driver nunca chama modelo: apenas orquestra processos do CLI canônico, um processo por candidato.
 

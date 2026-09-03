@@ -14,7 +14,7 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-26T15:35:53Z"
+    "coletadoEm": "2026-08-29T13:27:45Z"
   },
   "documentos": [
     {
@@ -25,7 +25,7 @@
         "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_SP.zip",
         "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
         "pdfOriginalUrl": null,
-        "coletadoEm": "2026-08-26T15:35:53Z"
+        "coletadoEm": "2026-08-29T13:27:45Z"
       },
       "extracao": {
         "extractionVersion": "programa-governo-extracao-v2",
@@ -993,137 +993,169 @@
     }
   ],
   "resumo": {
-    "texto": "O programa organiza políticas públicas em uma Trilha da Prosperidade voltada às etapas da vida. Na educação, prevê alfabetização na idade certa. Na saúde, propõe vacinação. No desenvolvimento social, inclui segurança alimentar e nutricional. Em sustentabilidade, apresenta restauração ecológica. Em infraestrutura, planeja o SP Pra Toda Obra 4.0. Na governança, coloca a cidadã e o cidadão no centro. A proposta também relaciona formação profissional às oportunidades de trabalho. O documento apresenta programas destinados a diferentes faixas etárias. A organização contempla ações para crianças, jovens, adultos e pessoas idosas. O plano reúne dez objetivos estratégicos. As áreas listadas incluem segurança, saúde, educação, desenvolvimento social, mulheres, sustentabilidade, infraestrutura, economia do conhecimento, prosperidade e governança. A descrição afirma que as trilhas funcionam como uma rede em torno de cada trajetória de vida. Os programas citados em cada etapa são apresentados como exemplificativos. O texto indica acompanhamento das transições ao longo da vida.",
+    "texto": "O plano propõe criar o SP CIN, Centro de Inteligência e Inovação. Na área de segurança pública, o plano prevê ampliar o Programa Muralha Paulista em 30% nos primeiros dois anos de governo. Na saúde, o SP Inova Saúde prevê aumento de 40% no número de teleatendimentos nos próximos quatro anos. Na saúde, o plano descreve a Tabela SUS Paulista como iniciativa que complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais. Na alfabetização, o programa Alfabetiza Juntos SP estabelece a meta de alcançar 90% no próximo quadriênio. Na educação superior, o Provão Paulista permitiu que mais de 46 mil jovens conquistassem vagas em universidades públicas desde sua criação. Em adaptação climática, o plano prevê investimentos superiores a R$ 25 bilhões até o final de 2029. Para o empreendedorismo feminino, o plano propõe criar um programa estadual de empreendedorismo feminino.",
     "frases": [
       {
-        "texto": "O programa organiza políticas públicas em uma Trilha da Prosperidade voltada às etapas da vida.",
+        "texto": "O plano propõe criar o SP CIN, Centro de Inteligência e Inovação.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "Trilha da Prosperidade"
+            "pagina": 7,
+            "trecho": "Vamos criar o SP CIN - Centro de Inteligência e Inovação."
           }
         ]
       },
       {
-        "texto": "Na educação, prevê alfabetização na idade certa.",
+        "texto": "Na área de segurança pública, o plano prevê ampliar o Programa Muralha Paulista em 30% nos primeiros dois anos de governo.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "ALFABETIZAÇÃO NA IDADE CERTA"
+            "pagina": 8,
+            "trecho": "O Programa Muralha Paulista será ampliado em 30%,"
           }
         ]
       },
       {
-        "texto": "Na saúde, propõe vacinação.",
+        "texto": "Na saúde, o SP Inova Saúde prevê aumento de 40% no número de teleatendimentos nos próximos quatro anos.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "VACINAÇÃO"
+            "pagina": 13,
+            "trecho": "será implementado nos próximos quatro anos com 40% de aumento no número de teleatendimentos."
           }
         ]
       },
       {
-        "texto": "No desenvolvimento social, inclui segurança alimentar e nutricional.",
+        "texto": "Na saúde, o plano descreve a Tabela SUS Paulista como iniciativa que complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "SEGURANÇA ALIMENTAR E NUTRICIONAL"
+            "pagina": 14,
+            "trecho": "A Tabela SUS Paulista, iniciativa inédita do Governo Tarcísio, complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais."
           }
         ]
       },
       {
-        "texto": "Em sustentabilidade, apresenta restauração ecológica.",
+        "texto": "Na alfabetização, o programa Alfabetiza Juntos SP estabelece a meta de alcançar 90% no próximo quadriênio.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "RESTAURAÇÃO ECOLÓGICA"
+            "pagina": 20,
+            "trecho": "Hoje são 61% - e vamos fechar o próximo quadriênio com 90%."
           }
         ]
       },
       {
-        "texto": "Em infraestrutura, planeja o SP Pra Toda Obra 4.0.",
+        "texto": "Na educação superior, o Provão Paulista permitiu que mais de 46 mil jovens conquistassem vagas em universidades públicas desde sua criação.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "SP PRA TODA OBRA 4.0"
+            "pagina": 22,
+            "trecho": "Desde sua criação, mais de 46 mil jovens já conquistaram vagas em universidades públicas."
           }
         ]
       },
       {
-        "texto": "Na governança, coloca a cidadã e o cidadão no centro.",
+        "texto": "Em adaptação climática, o plano prevê investimentos superiores a R$ 25 bilhões até o final de 2029.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "A CIDADÃ E O CIDADÃO\nNO CENTRO"
+            "pagina": 42,
+            "trecho": "Vamos investir mais de R$ 25 bilhões, até o final de 2029, em ações de adaptação e resiliência climática"
+          }
+        ]
+      },
+      {
+        "texto": "Para o empreendedorismo feminino, o plano propõe criar um programa estadual de empreendedorismo feminino.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002541303:01",
+            "pagina": 38,
+            "trecho": "Vamos criar um programa estadual de empreendedorismo feminino que reúne quatro perfis segmentados por estágio do negócio"
           }
         ]
       }
     ],
     "temas": [
       {
-        "id": "trajetoria-de-vida",
-        "titulo": "Trajetória de vida",
-        "descricao": "O programa estrutura políticas públicas segundo etapas da vida.",
+        "id": "inteligencia-inovacao",
+        "titulo": "Inteligência e inovação",
+        "descricao": "Criação do SP CIN, Centro de Inteligência e Inovação.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "10 OBJETIVOS ESTRATÉGICOS COMO UMA REDE EM TORNO DE CADA TRAJETÓRIA DE VIDA"
+            "pagina": 7,
+            "trecho": "Vamos criar o SP CIN - Centro de Inteligência e Inovação."
           }
         ]
       },
       {
-        "id": "educacao",
-        "titulo": "Educação",
-        "descricao": "O plano inclui alfabetização na idade certa.",
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Ampliação prevista para o Programa Muralha Paulista.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "ALFABETIZAÇÃO NA IDADE CERTA"
+            "pagina": 8,
+            "trecho": "O Programa Muralha Paulista será ampliado em 30%,"
           }
         ]
       },
       {
         "id": "saude",
         "titulo": "Saúde",
-        "descricao": "O plano inclui vacinação.",
+        "descricao": "Teleatendimentos e complementação de valores pela Tabela SUS Paulista.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "VACINAÇÃO"
+            "pagina": 13,
+            "trecho": "será implementado nos próximos quatro anos com 40% de aumento no número de teleatendimentos."
+          },
+          {
+            "documentoId": "SP:250002541303:01",
+            "pagina": 14,
+            "trecho": "A Tabela SUS Paulista, iniciativa inédita do Governo Tarcísio, complementa os valores pagos pelo Ministério da Saúde em até cinco vezes mais."
           }
         ]
       },
       {
-        "id": "sustentabilidade",
-        "titulo": "Sustentabilidade",
-        "descricao": "O plano inclui restauração ecológica.",
+        "id": "educacao",
+        "titulo": "Educação",
+        "descricao": "Metas de alfabetização e acesso a universidades públicas.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "RESTAURAÇÃO ECOLÓGICA"
+            "pagina": 20,
+            "trecho": "Hoje são 61% - e vamos fechar o próximo quadriênio com 90%."
+          },
+          {
+            "documentoId": "SP:250002541303:01",
+            "pagina": 22,
+            "trecho": "Desde sua criação, mais de 46 mil jovens já conquistaram vagas em universidades públicas."
           }
         ]
       },
       {
-        "id": "governanca",
-        "titulo": "Governança",
-        "descricao": "O plano posiciona a cidadã e o cidadão no centro.",
+        "id": "adaptacao-climatica",
+        "titulo": "Adaptação climática",
+        "descricao": "Investimentos previstos em adaptação e resiliência climática.",
         "evidencias": [
           {
             "documentoId": "SP:250002541303:01",
-            "pagina": 4,
-            "trecho": "A CIDADÃ E O CIDADÃO\nNO CENTRO"
+            "pagina": 42,
+            "trecho": "Vamos investir mais de R$ 25 bilhões, até o final de 2029, em ações de adaptação e resiliência climática"
+          }
+        ]
+      },
+      {
+        "id": "empreendedorismo-feminino",
+        "titulo": "Empreendedorismo feminino",
+        "descricao": "Criação proposta de programa estadual de empreendedorismo feminino.",
+        "evidencias": [
+          {
+            "documentoId": "SP:250002541303:01",
+            "pagina": 38,
+            "trecho": "Vamos criar um programa estadual de empreendedorismo feminino que reúne quatro perfis segmentados por estágio do negócio"
           }
         ]
       }
@@ -1131,380 +1163,440 @@
   },
   "geracao": {
     "promptVersion": "programa-governo-governadores-generator-v1",
-    "model": "OpenAI Luna@gpt-5.6-luna@codex-cli-v4",
-    "generatedAt": "2026-08-28T14:19:42.029Z"
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-02T18:48:16.479Z"
   },
   "julgamento": {
-    "model": "Anthropic Claude@claude-sonnet-5",
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
     "promptVersion": "programa-governo-governadores-judge-v2",
-    "judgedAt": "2026-08-28T14:21:34.721Z",
+    "judgedAt": "2026-09-02T18:53:05.505Z",
     "verdicts": [
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "O documento apresenta a Trilha da Prosperidade organizada por etapas da vida (0-6, 7-17, etc.)."
+        "reason": "A evidência sustenta integralmente a criação do SP CIN e sua denominação."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "A afirmação não contém números a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Redação descritiva, sem juízo de valor."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza indevida ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de uma única proposta coerente (a estrutura da Trilha)."
+        "reason": "A afirmação trata de uma única proposta coerente: a criação do SP CIN."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Claim e evidência pertencem à mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:1:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre integralmente a afirmação única."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Termo consta literalmente na trajetória de vida do documento."
+        "reason": "A evidência e a página citada sustentam a ampliação de 30% nos primeiros dois anos de governo."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números na afirmação."
+        "reason": "O percentual de 30% e o prazo dos primeiros dois anos aparecem literalmente na página citada."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação relata a previsão do plano de forma neutra e sem promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta de educação."
+        "reason": "A afirmação trata somente da ampliação do Programa Muralha Paulista."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:2:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a única cláusula."
+        "reason": "A página citada cobre o programa, a ampliação, o percentual e o prazo."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Vacinação listada sob objetivo 2. SAÚDE."
+        "reason": "A evidência e a página identificam o SP Inova Saúde e sustentam integralmente o aumento previsto."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "O aumento de 40% e o prazo de quatro anos estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a previsão do documento sem avaliação ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta de saúde."
+        "reason": "A afirmação trata de uma única proposta do SP Inova Saúde."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:3:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre o programa, o aumento, o objeto do aumento e o prazo."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 4. DESENVOLVIMENTO SOCIAL."
+        "reason": "A evidência sustenta diretamente a descrição da Tabela SUS Paulista e a complementação informada."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A quantidade de até cinco vezes está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A afirmação atribui a descrição ao plano e não reproduz o qualificativo promocional 'inédita'."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área."
+        "reason": "A afirmação trata somente da complementação de valores pela Tabela SUS Paulista."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:4:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 6. SUSTENTABILIDADE."
+        "reason": "A página vincula o trecho ao Alfabetiza Juntos SP e sustenta a meta de 90% no próximo quadriênio."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A meta de 90% e o prazo do próximo quadriênio estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação apresenta a meta do programa sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área."
+        "reason": "A afirmação trata de uma única meta de alfabetização."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:5:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A página cobre o programa, a área, a meta e o prazo mencionados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 7. INFRAESTRUTURA."
+        "reason": "A página vincula o resultado ao Provão Paulista e sustenta integralmente a afirmação."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Nome do programa contém '4.0', literal na evidência."
+        "reason": "A quantidade de mais de 46 mil jovens está literalmente sustentada."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação relata o resultado atribuído ao programa sem elogio ou crítica."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área."
+        "reason": "A afirmação trata de um único resultado associado ao Provão Paulista."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:6:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A página cobre o programa, o período, a quantidade e as vagas em universidades públicas."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 10. GOVERNANÇA."
+        "reason": "A evidência sustenta integralmente o valor, o prazo e a finalidade dos investimentos."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "O valor superior a R$ 25 bilhões e o prazo até o final de 2029 estão literalmente sustentados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a previsão do plano sem elogio, crítica ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área."
+        "reason": "A afirmação trata de uma única proposta de investimento em adaptação climática."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:frase:7:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:suporte",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Evidência confirma estrutura em torno de trajetórias de vida."
+        "reason": "A evidência sustenta diretamente a criação proposta do programa estadual."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:numeros",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Claim não cita números específicos a verificar."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:neutralidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação descreve a proposta sem elogio, crítica, certeza indevida ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:mistura",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Trata de tema único e coerente."
+        "reason": "A afirmação trata de uma única proposta de empreendedorismo feminino."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:identidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:trajetoria-de-vida:documentos:SP:250002541303:01:cobertura",
+        "id": "2026:GOVERNADOR:SP:250002541303:frase:8:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a afirmação completa."
+        "reason": "A evidência cobre integralmente a criação e o objeto do programa."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:suporte",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item presente literalmente no documento."
+        "reason": "A evidência sustenta integralmente a criação do SP CIN e sua denominação."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:numeros",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:neutralidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza indevida ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:mistura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área de educação."
+        "reason": "A afirmação trata de uma única proposta coerente de inteligência e inovação."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:identidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:cobertura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:inteligencia-inovacao:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre todas as cláusulas materiais do resumo temático."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a ampliação prevista do Programa Muralha Paulista."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a previsão sem elogio, crítica ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:seguranca-publica:documentos:SP:250002541303:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente o programa e sua ampliação prevista."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Vacinação listada sob 2. SAÚDE."
+        "reason": "As evidências sustentam os teleatendimentos e a complementação de valores pela Tabela SUS Paulista."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação resume os temas de saúde sem elogio, crítica, certeza ou promoção."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área de saúde."
+        "reason": "Os dois tópicos pertencem à mesma área coerente de saúde."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento de ambas as evidências correspondem exatamente aos informados."
       },
       {
         "id": "2026:GOVERNADOR:SP:250002541303:tema:saude:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "As duas evidências cobrem todas as cláusulas materiais do resumo temático."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:suporte",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 6. SUSTENTABILIDADE."
+        "reason": "As evidências sustentam a meta de alfabetização e o acesso a vagas em universidades públicas."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:numeros",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:neutralidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação resume os temas educacionais sem elogio, crítica, certeza ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:mistura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área de sustentabilidade."
+        "reason": "Os tópicos de alfabetização e ensino superior pertencem à mesma área coerente de educação."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:identidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento de ambas as evidências correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:sustentabilidade:documentos:SP:250002541303:01:cobertura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:educacao:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "As evidências cobrem as duas cláusulas materiais do resumo temático."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:suporte",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:suporte",
         "verdict": "yes",
-        "reason": "Item listado sob 10. GOVERNANÇA."
+        "reason": "A evidência sustenta diretamente os investimentos previstos em adaptação e resiliência climática."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:numeros",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:numeros",
         "verdict": "yes",
-        "reason": "Sem números."
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:neutralidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:neutralidade",
         "verdict": "yes",
-        "reason": "Descrição neutra."
+        "reason": "A redação resume a previsão de investimentos sem elogio, crítica ou promoção."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:mistura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:mistura",
         "verdict": "yes",
-        "reason": "Única proposta na área de governança."
+        "reason": "A afirmação trata de uma única área coerente de adaptação e resiliência climática."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:identidade",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:identidade",
         "verdict": "yes",
-        "reason": "Mesma chave e documento."
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
       },
       {
-        "id": "2026:GOVERNADOR:SP:250002541303:tema:governanca:documentos:SP:250002541303:01:cobertura",
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:adaptacao-climatica:documentos:SP:250002541303:01:cobertura",
         "verdict": "yes",
-        "reason": "Evidência cobre a cláusula única."
+        "reason": "A evidência cobre integralmente os investimentos e sua área de aplicação."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a criação proposta do programa estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, prazos, percentuais ou quantidades."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação resume a proposta sem elogio, crítica, certeza indevida ou promoção."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta de empreendedorismo feminino."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:SP:250002541303:tema:empreendedorismo-feminino:documentos:SP:250002541303:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a criação e o objeto do programa."
       }
     ]
   },
   "ingestao": {
     "identityKey": "2026:GOVERNADOR:SP:250002541303",
     "inventoryVersion": 1,
-    "inventoryGeneratedAt": "2026-08-26T15:35:53Z",
+    "inventoryGeneratedAt": "2026-08-29T13:27:45Z",
     "etapa": "concluida",
     "erro": null,
     "documentosInventario": [
@@ -1513,55 +1605,36 @@
     "modelos": {
       "generator": {
         "name": "OpenAI Luna",
-        "version": "gpt-5.6-luna@codex-cli-v4",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-generator-v1",
-        "attempts": 2,
-        "uso": {
-          "input_tokens": 57744,
-          "cached_input_tokens": 14080,
-          "cache_write_input_tokens": 0,
-          "output_tokens": 1225,
-          "reasoning_output_tokens": 323
-        }
+        "attempts": 1
       },
       "judge": {
-        "name": "Anthropic Claude",
-        "version": "claude-sonnet-5",
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
         "promptVersion": "programa-governo-governadores-judge-v2",
         "attempts": 1,
         "uso": {
-          "input_tokens": 2,
-          "cache_creation_input_tokens": 18449,
-          "cache_read_input_tokens": 1062,
-          "output_tokens": 18040,
-          "output_tokens_details": {
-            "thinking_tokens": 896
-          },
-          "server_tool_use": {
-            "web_search_requests": 0,
-            "web_fetch_requests": 0
-          },
-          "service_tier": "standard",
-          "cache_creation": {
-            "ephemeral_1h_input_tokens": 18449,
-            "ephemeral_5m_input_tokens": 0
-          },
-          "inference_geo": "not_available",
-          "iterations": [
-            {
-              "input_tokens": 2,
-              "output_tokens": 18040,
-              "cache_read_input_tokens": 1062,
-              "cache_creation_input_tokens": 18449,
-              "cache_creation": {
-                "ephemeral_5m_input_tokens": 0,
-                "ephemeral_1h_input_tokens": 18449
-              },
-              "type": "message"
-            }
-          ],
-          "speed": "standard",
-          "cost_usd": 0.2682924
+          "input_tokens": 41606,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 15808,
+          "reasoning_output_tokens": 241
+        }
+      },
+      "geracaoMultipassagem": {
+        "planejador": "multipassagem-v3",
+        "limiteBytes": 180000,
+        "passagens": 1,
+        "passagensCacheadas": 0,
+        "chamadasGeracao": 1,
+        "retriesPassagem": 0,
+        "chamadasSintese": 1,
+        "retriesSintese": 0,
+        "fingerprint": "03ae5b6697a1fbda99f66074beb68312e72a2238cde409492884419102724935",
+        "promptVersoes": {
+          "fatosPassagem": "programa-governo-governadores-generator-v1/fatos-passagem",
+          "sinteseFatos": "programa-governo-governadores-generator-v1/sintese-fatos"
         }
       }
     },
@@ -1580,11 +1653,11 @@
   },
   "revisao": {
     "reviewer": "Thiago Salvador",
-    "reviewedAt": "2026-08-28T18:01:09Z",
+    "reviewedAt": "2026-09-02T18:53:29.308Z",
     "sourceSha256": "55f742949759f84ea5d55040a9b33493935ad235cb52fb78b86f1ed84e747a93",
     "extractedTextSha256": "06b92f3e2560ff065f18b124df6653136a2efc979a4edddd3479b044068d2762",
     "documentCount": 1,
-    "documentSetSha256": "73d3f2103befe19a3164ad5d13c23214d1b9fba8611c88137a5ce702b2d9a5fc",
-    "contentSha256": "b0ea3229ff4b548f167474445c9ce47f01844dc13e10e2a2de6796e512e032ce"
+    "documentSetSha256": "43d3105cfa6c9e5b6c6b12278df294c4c3d108de0cb17377ebb0b2dc9f5184aa",
+    "contentSha256": "f8b786087930b2ca29adb7434505829adf240f29824b88b78720c1ab41aed708"
   }
 }
