@@ -77,7 +77,23 @@ CREATE TABLE public.coleta_log (
   detalhe text,
   url text,
   execucao text,
-  natureza text NOT NULL DEFAULT 'coleta'
+  natureza text NOT NULL DEFAULT 'coleta',
+  -- CHECKs copiados de producao (pg_get_constraintdef, 02/09/2026). A primeira
+  -- versao desta fixture nao os tinha e a aplicacao real abortou no recibo.
+  CONSTRAINT coleta_log_escopo_check CHECK (escopo = ANY (ARRAY['candidato'::text, 'territorio'::text, 'global'::text])),
+  CONSTRAINT coleta_log_resultado_check CHECK (resultado = ANY (ARRAY['encontrado'::text, 'vazio_confirmado'::text, 'sem_achado_no_escopo'::text, 'nao_aplicavel'::text, 'erro'::text, 'indeterminado'::text])),
+  CONSTRAINT coleta_log_natureza_check CHECK (natureza = ANY (ARRAY['coleta'::text, 'escrita'::text])),
+  CONSTRAINT coleta_log_volume_check CHECK (volume >= 0),
+  CONSTRAINT coleta_log_candidato_id_so_em_escopo_candidato CHECK ((escopo = 'candidato'::text) OR (candidato_id IS NULL)),
+  CONSTRAINT coleta_log_volume_coerente CHECK (
+    CASE resultado
+      WHEN 'encontrado'::text THEN (volume > 0)
+      WHEN 'vazio_confirmado'::text THEN (volume = 0)
+      WHEN 'sem_achado_no_escopo'::text THEN (volume = 0)
+      WHEN 'nao_aplicavel'::text THEN (volume = 0)
+      WHEN 'indeterminado'::text THEN (volume = 0)
+      ELSE true
+    END)
 );
 
 CREATE OR REPLACE FUNCTION pg_temp.seed(prefixo text, valor text, total integer, publicaveis integer, st text) RETURNS void
