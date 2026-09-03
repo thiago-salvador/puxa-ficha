@@ -63,13 +63,15 @@ FROM (
 ) pre
 WHERE c.id = pre.id;
 
--- @write tabela=coleta_log ref=rollback:20260903100000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao
-INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao)
-SELECT 'vocabulario-situacao', 'coluna', 'candidatos.situacao_candidatura', 'revertido',
+-- @write tabela=coleta_log ref=rollback:20260903100000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
+INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
+SELECT 'vocabulario-situacao', 'global', 'candidatos.situacao_candidatura',
+       CASE WHEN r.volume > 0 THEN 'encontrado' ELSE 'vazio_confirmado' END,
        r.volume,
        'Rollback do par 20260903100000/20260903100100: CHECK removido e ' || r.volume || ' linha(s) devolvidas a grafia anterior pela pre-imagem',
        'https://dadosabertos.tse.jus.br/dataset/candidatos-2026',
-       'rollback:20260903100000'
+       'rollback:20260903100000',
+       'escrita'
 FROM public.coleta_log r
 WHERE r.execucao = 'migration:20260903100000';
 

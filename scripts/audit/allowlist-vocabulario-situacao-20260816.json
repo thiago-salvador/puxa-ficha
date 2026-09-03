@@ -26,7 +26,8 @@
         "volume",
         "detalhe",
         "url",
-        "execucao"
+        "execucao",
+        "natureza"
       ],
       "max_registros": 1
     }

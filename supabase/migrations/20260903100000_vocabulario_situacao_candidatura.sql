@@ -197,13 +197,21 @@ BEGIN;
 --    origens convergem em 'aguardando julgamento' e tres em NULL; sem o mapa
 --    o rollback nao teria como devolver cada linha a grafia original.
 --    Idempotente pelo `execucao`; em banco vazio grava volume 0 e mapa vazio.
--- @write tabela=coleta_log ref=migration:20260903100000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao
-INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao)
-SELECT 'vocabulario-situacao', 'coluna', 'candidatos.situacao_candidatura', 'pre-imagem',
+--    Vocabulario de coleta_log (CHECKs medidos em producao em 02/09/2026):
+--    escopo em {candidato, territorio, global}; resultado em {encontrado,
+--    vazio_confirmado, ...} com volume coerente (encontrado exige > 0);
+--    natureza em {coleta, escrita}. A primeira tentativa de aplicacao
+--    (run 33699247433) abortou exatamente aqui por usar 'coluna' e
+--    'pre-imagem', sem tocar linha nenhuma.
+-- @write tabela=coleta_log ref=migration:20260903100000 campos=fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza
+INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
+SELECT 'vocabulario-situacao', 'global', 'candidatos.situacao_candidatura',
+       CASE WHEN count(*) > 0 THEN 'encontrado' ELSE 'vazio_confirmado' END,
        count(*)::integer,
        coalesce(jsonb_object_agg(id::text, situacao_candidatura), '{}'::jsonb)::text,
        'https://dadosabertos.tse.jus.br/dataset/candidatos-2026',
-       'migration:20260903100000'
+       'migration:20260903100000',
+       'escrita'
 FROM public.candidatos
 WHERE situacao_candidatura IN (
   'registrada, aguardando julgamento',
