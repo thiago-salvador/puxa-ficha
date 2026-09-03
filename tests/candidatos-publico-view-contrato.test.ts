@@ -368,6 +368,15 @@ describe("contrato da view candidatos_publico", () => {
       // e a definição dela também fica intacta: muda o valor, não o contrato.
       // Predecessor no ledger: 20260903120000.
       "20260903130000_chapas_2026_hermano_nome_urna.sql",
+      // Vice substituto da chapa de governador do MA: UPDATE de sete colunas em
+      // uma linha de chapas_2026 (cinco de identidade do vice, duas de
+      // procedência do pacote), mais o recibo de pré-imagem em coleta_log. Não
+      // toca em candidatos nem redefine candidatos_publico. A view que expõe
+      // essas colunas é chapas_2026_publico, e a definição dela também fica
+      // intacta: mudam os valores, não o contrato, e `vice_sq_candidato` e
+      // `tse_situacao_vice_codigo` nem chegam a ser colunas dela.
+      // Predecessor no ledger: 20260903130000.
+      "20260903140000_chapas_2026_ma_vice_substituicao.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
