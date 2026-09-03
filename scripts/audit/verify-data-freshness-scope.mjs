@@ -61,7 +61,7 @@ const allowed = [
   /^tests\/fixtures\/data-freshness\/cases\.jsonl$/,
   /^data\/chapas-2026-tse-20260827\.json$/,
   /^data\/tse-profile-links-20260827\.json$/,
-  /^data\/divulgacand-vices-20260828\.json$/,
+  /^data\/divulgacand-vices-(20260828|20260903)\.json$/,
   /^data\/tse-candidate-demographics-remediation-20260829\.json$/,
   /^data\/candidate-roster-active-20260829\.json$/,
   /^scripts\/gerar-chapas-2026-20260827\.ts$/,
