@@ -1,0 +1,42 @@
+{
+  "versao": "2026-09-03",
+  "fonte": "Auditoria data-freshness-audit.yml, run 33746777166 de 03/09/2026 10:55 UTC: item de kind replacement no slot MA:VICE GOVERNADOR:100001800701, oficial GATO FELIX (sq 100002554354) contra publicado BARTOLOMEU (sq 100002544074). Pacote oficial consulta_cand_2026.zip, SHA-256 b1b2613e246b85b7c3e002c3625232aac6abf5994a3639f1c834d6fda39b9217, Last-Modified Wed, 02 Sep 2026 22:34:58 GMT, lido em 2026-09-03T11:00:01.358Z. A substituicao em si NAO vem do CSV, que lista as duas vices com a mesma situacao (-3 / #NE) e sem marcador: vem do DivulgaCandContas, GET /divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002544073, que devolve situacaoVice 3 para BARTOLOMEU e 1 para GATO FELIX, sob a mesma regra registrada em data/divulgacand-vices-20260828.json.",
+  "motivo": "Troca do vice de UMA linha de chapas_2026, endereçada pela chave da chapa: sete colunas, sendo cinco de identidade do vice e duas de proveniencia do pacote. A autorizacao vive no bloco `referencias` porque chapas_2026 nao pertence a um candidato: nem o vice antigo nem o novo tem ficha vinculada (vice_candidato_id IS NULL), entao nao existe slug honesto para declarar. E o mesmo tratamento que os snapshots de chapas de 12/08, 15/08 e 27/08 e a correcao de 20260903130000 receberam. O recibo de pre-imagem em coleta_log e a segunda e ultima escrita, e e nele que a trilha de BARTOLOMEU passa a viver.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "chapas-ma-vice-20260903",
+      "campos": [
+        "vice_sq_candidato",
+        "vice_nome_urna",
+        "vice_nome_completo",
+        "vice_partido_sigla",
+        "tse_situacao_vice_codigo",
+        "fonte_sha256",
+        "snapshot_em"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260903140000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

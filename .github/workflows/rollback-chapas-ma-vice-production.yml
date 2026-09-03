@@ -1,0 +1,53 @@
+name: Reverter vice substituto da chapa do MA (chapas_2026)
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "SHA de 40 caracteres já mergeado em main"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-db-migrations
+  cancel-in-progress: false
+
+jobs:
+  rollback:
+    name: Rollback chapas_2026 20260903140000
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: production
+    env:
+      PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+      PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+      GITHUB_REF: ${{ github.ref }}
+    steps:
+      - name: Validar dispatch manual e SHA fechado
+        env:
+          DISPATCH_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+          [[ "$PF_EXPECTED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$PF_EXPECTED_SHA" = "$DISPATCH_SHA"
+          test -n "${PF_DATABASE_URL:-}"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.expected_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+        timeout-minutes: 12
+      - name: Provar forward, adulteração, rollback e readbacks em PostgreSQL 17 descartável
+        run: bash scripts/audit/provar-chapas-ma-vice-pg17.sh
+      - name: Executar rollback fechado em produção
+        run: bash scripts/audit/rollback-chapas-ma-vice-production.sh

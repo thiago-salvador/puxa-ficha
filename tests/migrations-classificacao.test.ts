@@ -358,7 +358,13 @@ describe("classificador puro (#136)", () => {
     // que é o caso do banco sintético, e aplica limpo. MEDIDO no gate local
     // PostgreSQL 17: "340 aplicadas, 105 falhas reais" e "conservação OK:
     // 340 + 105 = 445 migrations", conjunto de falhas intacto.
-    assert.equal(manifesto.aplicadas_esperadas, 340)
+    // 340 -> 341 em 03/09/2026: a troca do vice substituto da chapa do MA
+    // (20260903140000) tem o mesmo guard de ausência: no banco sintético a
+    // linha `2026:MA:reginaldo-lima-brauno` não existe, a migration avisa e
+    // retorna. MEDIDO no gate local PostgreSQL 17: "341 aplicadas, 105 falhas
+    // reais" e "conservação OK: 341 + 105 = 446 migrations", conjunto de
+    // falhas intacto.
+    assert.equal(manifesto.aplicadas_esperadas, 341)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
