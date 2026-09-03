@@ -1,0 +1,36 @@
+{
+  "versao": "2026-09-03",
+  "fonte": "Auditoria data-freshness-audit.yml, run 33647415283 de 02/09/2026: um unico item em candidacies.changes, kind identity_mismatch, slot RN:VICE GOVERNADOR:200001800267, oficial nome_urna HERMANO contra publicado HERMANO MORAIS. Pacote oficial consulta_cand_2026.zip, SHA-256 875a13ecf63ef4af942d95c7e45227346da56c9d0a4963cb59bf724051532061, lido em 2026-09-02T15:17:15Z.",
+  "motivo": "Correcao de UMA coluna de UMA linha de chapas_2026, endereçada pela chave da chapa. A autorizacao vive no bloco `referencias` porque chapas_2026 nao pertence a um candidato: a linha alvo nem tem ficha de vice vinculada (vice_candidato_id IS NULL), entao nao existe slug honesto para declarar. E o mesmo tratamento que os snapshots de chapas de 12/08, 15/08 e 27/08 receberam. O recibo de pre-imagem em coleta_log e a segunda e ultima escrita.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "chapas-hermano-20260903",
+      "campos": [
+        "vice_nome_urna"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260903130000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

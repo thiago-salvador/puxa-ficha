@@ -356,6 +356,18 @@ describe("contrato da view candidatos_publico", () => {
       // CHECK na tabela. Não redefinem candidatos_publico nem seus grants.
       "20260903100000_vocabulario_situacao_candidatura.sql",
       "20260903100100_vocabulario_situacao_candidatura_check.sql",
+      // Nome de urna do vice de RN reancorado no pacote oficial atual do TSE:
+      // UPDATE de uma coluna em uma linha de chapas_2026, mais o recibo de
+      // pré-imagem em coleta_log. Não toca em candidatos nem redefine
+      // candidatos_publico. A view que expõe essa coluna é chapas_2026_publico,
+      // e a definição dela também fica intacta: muda o valor, não o contrato.
+      //
+      // O predecessor no ledger é a 20260903120000 (drop de índices sem uso),
+      // que chega por outra PR. Enquanto ela não estiver em main, esta lista tem
+      // só a 130000, e o apply recusa aplicar em produção justamente por não
+      // achar o arquivo do predecessor. Quando a 120000 entrar, ela também
+      // precisa de linha aqui.
+      "20260903130000_chapas_2026_hermano_nome_urna.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
