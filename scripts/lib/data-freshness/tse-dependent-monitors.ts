@@ -188,7 +188,11 @@ export async function collectTseDependentMonitors(
     || config.laudicerio.canonical_registration_sq !== null
     || config.laudicerio.registrations.length !== 2
     || config.program_control?.expected_cod_tipo !== "5"
-    || config.program_files.length !== 5) {
+    // Quatro desde 2026-09-03: Eduardo Paes (RJ) saiu porque o pacote oficial
+    // republicado em 2026-09-02 passou a trazer o programa e o registro foi
+    // publicado. Vera Lúcia (CE) fica: a DivulgaCandContas lista codTipo 5, mas
+    // o pacote oficial de CE ainda não carrega o PDF.
+    || config.program_files.length !== 4) {
     throw new Error("configuração dos monitores TSE divergiu do contrato")
   }
   mkdirSync(outputDir, { recursive: true })

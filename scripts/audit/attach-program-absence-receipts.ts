@@ -3,13 +3,13 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-const TARGET_SQS = new Set([
-  "60002553922",
-  "130002544411",
-  "190002543380",
-  "190002550196",
-  "250002548080",
-]);
+import {
+  RECIBOS_AUSENCIA_SQS,
+  RECIBOS_AUSENCIA_SUPERADOS_SQS,
+  RECIBOS_AUSENCIA_VIGENTES_SQS,
+} from "../lib/programas-governo-recibos-ausencia";
+
+const TARGET_SQS = RECIBOS_AUSENCIA_SQS;
 
 function sha256(value: string | Buffer): string {
   return createHash("sha256").update(value).digest("hex");
@@ -64,7 +64,13 @@ export function attachProgramAbsenceReceipts(inventoryPath: string, receiptsPath
       || receipt.receipt_id !== `programa-governo-ausente:2026:${receipt.sq_candidato}`)) {
     throw new Error("receipt set de programas ausentes inválido");
   }
-  const bySq = new Map(receiptSet.receipts.map((receipt) => [receipt.sq_candidato, receipt]));
+  // Recibo superado por pacote oficial posterior segue no artefato histórico e
+  // sai do vínculo: a candidatura passou a ter documento.
+  const bySq = new Map(
+    receiptSet.receipts
+      .filter((receipt) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato))
+      .map((receipt) => [receipt.sq_candidato, receipt]),
+  );
   const candidates = inventory.candidaturas as Array<Record<string, unknown>>;
   const attached = new Set<string>();
   inventory.candidaturas = candidates.map((candidate) => {
@@ -81,7 +87,9 @@ export function attachProgramAbsenceReceipts(inventoryPath: string, receiptsPath
     delete beforeTse.reciboSemProgramaOficialId;
     return { ...beforeTse, reciboSemProgramaOficialId: receipt.receipt_id, tse };
   });
-  if (attached.size !== receiptSet.receipts.length) throw new Error("nem todos os recibos foram vinculados ao inventário");
+  if (attached.size !== RECIBOS_AUSENCIA_VIGENTES_SQS.size) {
+    throw new Error("nem todos os recibos vigentes foram vinculados ao inventário");
+  }
   inventory.recibosSemProgramaOficial = {
     arquivo: relative(process.cwd(), receiptsPath),
     arquivo_sha256: sha256(receiptsRaw),
@@ -89,6 +97,9 @@ export function attachProgramAbsenceReceipts(inventoryPath: string, receiptsPath
     receipt_sha256: receiptSet.receipt_sha256,
     generated_at: receiptSet.generated_at,
     receipt_ids: receiptSet.receipts.map((receipt) => receipt.receipt_id),
+    receipt_ids_superados: receiptSet.receipts
+      .filter((receipt) => RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato))
+      .map((receipt) => receipt.receipt_id),
   };
   return fixedPointPayload(inventory);
 }
@@ -109,7 +120,9 @@ export function buildProgramAbsencePublicRecords(
   };
   const candidateBySq = new Map(inventory.candidaturas.map((candidate) => [String(candidate.sqCandidato), candidate]));
   const packageByUf = new Map(inventory.pacotes.map((entry) => [entry.uf, entry.pacoteUrl]));
-  return receiptSet.receipts.map((receipt) => {
+  return receiptSet.receipts.filter(
+    (receipt) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato),
+  ).map((receipt) => {
     const candidate = candidateBySq.get(receipt.sq_candidato);
     if (!candidate || candidate.slug !== receipt.profile_slug
       || candidate.fonteEstado !== "sem_documento_oficial"
