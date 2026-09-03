@@ -4,7 +4,7 @@
 
 O recorte foi atualizado em 29 de agosto de 2026 sobre a geração TSE de 27 de agosto de 2026, 12:30:35. O arquivo versionado é `scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json`.
 
-Em 3 de setembro de 2026 o snapshot foi regerado pelo mesmo gerador, com o cadastro e 26 pacotes da coleta original e o pacote `proposta_governo_2026_RJ.zip` republicado pelo TSE em 2 de setembro. A única diferença material é Eduardo Paes (RJ), que deixou de ser ausência explícita e passou a ter documento oficial. O pacote `proposta_governo_2026_CE.zip` também foi rebaixado e conferido nessa data: ele continua com as mesmas nove propostas e nenhum arquivo de Vera Lúcia, então a ausência dela permanece.
+Em 3 de setembro de 2026 o snapshot foi regerado duas vezes pelo mesmo gerador, com o cadastro e os pacotes da coleta original. Na primeira, o pacote `proposta_governo_2026_RJ.zip` republicado pelo TSE em 2 de setembro trouxe Eduardo Paes (RJ). Na segunda, o pacote `proposta_governo_2026_CE.zip` republicado às 06:49:12 UTC de 3 de setembro, com 5.480.787 bytes, passou a trazer `CE/2026CE60002553922_01.pdf` e com ele Vera Lúcia (CE). As duas candidaturas deixaram de ser ausência explícita e passaram a ter documento oficial.
 
 | Medida                                       |         Resultado |
 | -------------------------------------------- | ----------------: |
@@ -17,20 +17,20 @@ Em 3 de setembro de 2026 o snapshot foi regerado pelo mesmo gerador, com o cadas
 | Perfis locais ausentes                       |                 0 |
 | Alias de duplicidade oficial                 |                 2 |
 | Pacotes estaduais                            |                27 |
-| PDFs nos pacotes                             |               213 |
-| PDFs ligados à coorte atual                  |               205 |
+| PDFs nos pacotes                             |               214 |
+| PDFs ligados à coorte atual                  |               206 |
 | PDFs sem candidatura atual                   |                 8 |
-| Candidaturas com PDF                         |               192 |
-| Ausências explícitas de PDF                  |                 4 |
-| Páginas da coorte atual                      |            11.064 |
-| Texto extraído da coorte atual               |  21.862.531 bytes |
+| Candidaturas com PDF                         |               193 |
+| Ausências explícitas de PDF                  |                 3 |
+| Páginas da coorte atual                      |            11.129 |
+| Texto extraído da coorte atual               |  21.960.302 bytes |
 | PDFs atuais que requerem OCR                 |                 5 |
 
 ## Fontes e integridade
 
 - Catálogo primário: [Candidatos 2026, Dados Abertos do TSE](https://dadosabertos.tse.jus.br/dataset/candidatos-2026).
 - Cadastro: `consulta_cand_2026.zip`, 3.139.062 bytes, SHA-256 `eae2178d1d87c6f66c81ac5c6a56f10118a0bff373068135531315cec6f74a27`.
-- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 278.912.902 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
+- Propostas: 27 recursos estaduais `proposta_governo_2026_UF.zip`, 279.777.553 bytes comprimidos no total. O inventário guarda URL de catálogo, URL do pacote, tamanho, SHA-256 e caminho interno de cada PDF.
 - Um PDF individual não tem URL oficial independente no catálogo. Por isso, a proveniência correta é a URL do pacote mais `arquivoNoPacote`, nunca uma URL inventada.
 - O acesso direto do shell à CDN respondeu HTTP 403. O navegador Playwright conseguiu obter os arquivos pelos links do catálogo. Isso prova apenas disponibilidade por esse transporte. A integridade de conteúdo foi verificada separadamente com teste de cada ZIP, assinatura PDF, páginas e SHA-256 de pacote e documento.
 
@@ -45,7 +45,7 @@ O crosswalk canônico é `data/candidate-roster-active-20260829.json`. Ele regis
 | AM  |            7 |             7 |             0 |          14 |           0 |          1.839 |
 | AP  |            5 |             5 |             0 |           5 |           0 |            166 |
 | BA  |            7 |             7 |             0 |           7 |           0 |            408 |
-| CE  |            8 |             7 |             1 |           8 |           1 |            304 |
+| CE  |            8 |             8 |             0 |           9 |           1 |            369 |
 | DF  |           11 |            11 |             0 |          12 |           0 |            896 |
 | ES  |            5 |             5 |             0 |           5 |           1 |            353 |
 | GO  |            6 |             6 |             0 |           7 |           0 |            359 |
@@ -72,7 +72,6 @@ O crosswalk canônico é `data/candidate-roster-active-20260829.json`. Ele regis
 
 | UF  | Candidatura     | Partido      | SQ_CANDIDATO   | Perfil local |
 | --- | --------------- | ------------ | -------------- | ------------ |
-| CE  | Vera Lúcia      | NOVO         | `60002553922`  | vinculado    |
 | MG  | Ben Mendes      | MISSÃO       | `130002544411` | vinculado    |
 | RJ  | Garotinho       | REPUBLICANOS | `190002550196` | vinculado    |
 | SP  | Policial Edjane | AGIR         | `250002548080` | vinculado    |
@@ -109,7 +108,7 @@ O antigo SQ de Elizeu Aguiar, PI `180002533958`, é um desses arquivos. A linha 
 
 O detector `scripts/audit/audit-programas-governo-governadores-publicados.ts` compara todos os registros publicados contra o inventário atual por identidade eleitoral, nome de urna, partido, conjunto documental e hash SHA-256 da fonte. Após a revisão dos 54 alvos (47 ausentes e 7 stale), a auditoria passou com 189 registros aprovados em 27 UFs, 2.406 claims e 14.436 itens de Eval.
 
-O manifesto canônico passou a ser `docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-03.json`, que sucede o de 29 de agosto com uma única mudança: Eduardo Paes saiu de `unavailable` para `approved`. Ele registra os mesmos 194 perfis publicáveis, agora 190 programas aprovados e quatro perfis com `sem_documento_oficial`, sem `human_review_required`. Com esse manifesto a auditoria de publicados passa com 190 registros aprovados em 27 UFs, 2.423 claims e 14.538 itens de Eval. As duas inscrições oficiais de Laudicério permanecem excluídas em `quarantine_duplicate_active`; os registros terminais de Cleber Rabelo e Pedro Brito foram removidos da superfície e preservados em backup datado.
+O manifesto canônico é `docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-03.json`, que sucede o de 29 de agosto e cobre as duas publicações de 3 de setembro: Eduardo Paes e Vera Lúcia saíram de `unavailable` para `approved`. Ele registra os mesmos 194 perfis publicáveis, agora 191 programas aprovados e três perfis com `sem_documento_oficial`, sem `human_review_required`. Com esse manifesto a auditoria de publicados passa com 191 registros aprovados em 27 UFs, 2.435 claims e 14.610 itens de Eval. As duas inscrições oficiais de Laudicério permanecem excluídas em `quarantine_duplicate_active`; os registros terminais de Cleber Rabelo e Pedro Brito foram removidos da superfície e preservados em backup datado.
 
 O fingerprint de cada aprovação cobre identidade, fontes, documentos ordenados, hashes, extrações, resumo, generator e judge. O writer canônico fez readback dos 54 arquivos aplicados e guardou os registros anteriores em backup antes da troca. A publicação continua fail-closed: ausência oficial não vira programa vazio e duplicidade não recebe SQ canônica inventada.
 

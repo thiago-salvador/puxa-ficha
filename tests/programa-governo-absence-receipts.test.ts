@@ -23,8 +23,12 @@ const TARGETS = new Map([
 ]);
 // Recibo superado por pacote posterior: o artefato de 2026-08-30 continua com
 // cinco recibos, mas Eduardo Paes ganhou o programa no pacote de 2026-09-02 e
-// saiu do vínculo com o inventário e do estado público sem documento.
-const SUPERSEDED = new Map([["190002543380", "eduardo-paes"]]);
+// Vera Lúcia no pacote de 2026-09-03. Os dois saíram do vínculo com o
+// inventário e do estado público sem documento.
+const SUPERSEDED = new Map([
+  ["60002553922", "vera-lucia-ce"],
+  ["190002543380", "eduardo-paes"],
+]);
 const CURRENT = new Map([...TARGETS].filter(([sq]) => !SUPERSEDED.has(sq)));
 
 function sha256(value: string | Buffer): string {

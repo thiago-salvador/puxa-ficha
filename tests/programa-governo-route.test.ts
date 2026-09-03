@@ -116,8 +116,8 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
   }
 })
 
-test("quatro candidaturas sem codTipo 5 retornam estado explícito, não 404", async () => {
-  for (const slug of ["vera-lucia-ce", "ben-mendes", "garotinho", "policial-edjane"]) {
+test("três candidaturas sem codTipo 5 retornam estado explícito, não 404", async () => {
+  for (const slug of ["ben-mendes", "garotinho", "policial-edjane"]) {
     const resource = await getProgramaGovernoPublicResource(slug)
     assert.equal(resource.known, true, slug)
     if (!resource.known) continue

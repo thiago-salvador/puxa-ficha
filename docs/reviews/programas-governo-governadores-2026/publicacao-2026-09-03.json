@@ -1,11 +1,11 @@
 {
   "version": 3,
   "reviewer": "Thiago Salvador",
-  "reviewedAt": "2026-09-03T11:18:50.000Z",
-  "decisionBasis": "Sucede publicacao-2026-08-29. Unica mudanca: Eduardo Paes (RJ) saiu de unavailable porque o pacote oficial republicado em 2026-09-02 passou a conter o programa, e o registro percorreu a cadeia canonica de geracao, julgamento e aprovacao. Vera Lucia (CE) continua unavailable: a DivulgaCandContas lista arquivo codTipo 5, mas o pacote oficial de CE de 2026-09-02 nao carrega o PDF.",
+  "reviewedAt": "2026-09-03T12:30:00.000Z",
+  "decisionBasis": "Sucede publicacao-2026-08-29 e cobre as duas publicacoes de 2026-09-03. Eduardo Paes (RJ) saiu de unavailable as 11:18 UTC porque o pacote oficial republicado em 2026-09-02 passou a conter o programa. Vera Lucia (CE) saiu de unavailable nesta atualizacao porque o pacote proposta_governo_2026_CE.zip republicado em 2026-09-03T06:49:12Z passou a conter CE/2026CE60002553922_01.pdf. Os dois registros percorreram a cadeia canonica de geracao, julgamento e aprovacao.",
   "counts": {
-    "approved": 190,
-    "unavailable": 4,
+    "approved": 191,
+    "unavailable": 3,
     "human_review_required": 2,
     "quarantined_duplicate": 2
   },
@@ -2096,9 +2096,9 @@
       "sqCandidato": "60002553922",
       "nomeUrna": "VERA LÚCIA",
       "partido": "NOVO",
-      "outcome": "unavailable",
-      "sourceState": "sem_documento_oficial",
-      "reason": "sem_documento_oficial"
+      "outcome": "approved",
+      "sourceState": "aprovado",
+      "reason": "Aprovador canonico confirmou schema, hashes, prompts, evidencias e Eval sem bloqueios."
     },
     {
       "identityKey": "2026:GOVERNADOR:MG:130002544411",

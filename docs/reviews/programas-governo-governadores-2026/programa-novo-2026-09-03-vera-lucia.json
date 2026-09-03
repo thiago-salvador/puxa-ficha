@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "reviewer": "Thiago Salvador",
+  "reviewedAt": "2026-09-03T12:30:00.000Z",
+  "sucede": "programa-novo-2026-09-03.json",
+  "decisionBasis": "Programa oficial que apareceu no pacote proposta_governo_2026_CE.zip republicado pelo TSE em 2026-09-03T06:49:12Z, depois da decisao registrada em programa-novo-2026-09-03.json. O registro percorreu a cadeia canonica de ingestao: extracao do PDF do pacote, geracao multipassagem, gate de evidencia literal, checagem inversa e Eval completo com todas as dimensoes yes antes da aprovacao.",
+  "modelsConfigRevision": "programas-governo-vera-lucia-ce-2026-09-03",
+  "separationPolicy": "codex-only",
+  "counts": {
+    "aprovados": 1,
+    "primeiraTentativa": 1,
+    "comReparo": 0,
+    "semPacoteOficial": 0
+  },
+  "items": [
+    {
+      "identityKey": "2026:GOVERNADOR:CE:60002553922",
+      "uf": "CE",
+      "slug": "vera-lucia-ce",
+      "nomeUrna": "VERA LÚCIA",
+      "partido": "NOVO",
+      "motivo": "programa oficial passou a existir no pacote proposta_governo_2026_CE.zip republicado em 2026-09-03",
+      "documentoId": "CE:60002553922:01",
+      "arquivoNoPacote": "CE/2026CE60002553922_01.pdf",
+      "paginas": 65,
+      "sourceSha256": "7279ec445572eeb461889d7c768fd3a5ee7875dabd87044b4c8fe53c2521fa10",
+      "pacoteSha256": "56d562e2a0e74004b5c585d0d4df086dbcae9504e41b76fec20fc8949da24b43",
+      "tentativas": 1,
+      "orientacoesDeReparo": [],
+      "generator": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+      "judge": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
+      "vereditos": 72,
+      "palavras": 158,
+      "frases": 6,
+      "temas": 6,
+      "contentSha256": "685b83cb96a716d68e6afbabdc2c16c6fc5e465524e7283ea37ae4acfe9260e5"
+    }
+  ],
+  "naoProcessados": []
+}

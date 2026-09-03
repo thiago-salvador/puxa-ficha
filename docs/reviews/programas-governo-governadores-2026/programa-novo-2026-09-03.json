@@ -43,7 +43,8 @@
       "partido": "NOVO",
       "estado": "sem_documento_oficial",
       "motivo": "A DivulgaCandContas lista arquivo codTipo 5 (idArquivo 60017139080), mas o pacote oficial proposta_governo_2026_CE.zip rebaixado em 2026-09-03, com Last-Modified de 2026-09-02T06:58:29Z e 4616136 bytes, continua com as mesmas nove propostas e nenhum CE/2026CE60002553922_01.pdf. O importador nao inventa URL individual, entao a candidatura segue sem documento oficial e o monitor mantem a ficha dela.",
-      "pacoteSha256": "ddace0bd426e6d4fa6dc4a7bdc526840ec68a1143815e741bb6257bc2fd97b78"
+      "pacoteSha256": "ddace0bd426e6d4fa6dc4a7bdc526840ec68a1143815e741bb6257bc2fd97b78",
+      "superadoPor": "programa-novo-2026-09-03-vera-lucia.json"
     }
   ]
 }
