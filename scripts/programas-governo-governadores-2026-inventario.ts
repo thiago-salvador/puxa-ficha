@@ -12,6 +12,10 @@ import { basename, join, relative, resolve } from "node:path";
 
 import { parse } from "csv-parse/sync";
 
+import {
+  RECIBOS_AUSENCIA_SQS,
+  RECIBOS_AUSENCIA_SUPERADOS_SQS,
+} from "./lib/programas-governo-recibos-ausencia";
 import { stripAccents } from "../src/lib/strip-accents";
 
 const ANO = 2026;
@@ -24,13 +28,7 @@ const CANDIDATOS_PACOTE_URL =
 const DEFAULT_PROFILE_SNAPSHOT = "data/candidate-roster-active-20260829.json";
 const DEFAULT_ABSENCE_RECEIPTS =
   "QA/evidencias/2026-08-30-programas-ausentes/receipt.json";
-const ABSENCE_RECEIPT_SQS = new Set([
-  "60002553922",
-  "130002544411",
-  "190002543380",
-  "190002550196",
-  "250002548080",
-]);
+const ABSENCE_RECEIPT_SQS = RECIBOS_AUSENCIA_SQS;
 const UFS = [
   "AC",
   "AL",
@@ -590,10 +588,17 @@ function main(): void {
       : perfilEstado === "perfil_local_ausente"
         ? perfilEstado
         : fonteEstado;
-    const absenceReceipt = absenceReceipts.bySq.get(row.SQ_CANDIDATO);
-    if (absenceReceipt && documents.length > 0) {
+    // Recibo superado por pacote posterior continua no artefato histórico, mas
+    // não é vinculado a uma candidatura que agora tem documento oficial.
+    const superado = RECIBOS_AUSENCIA_SUPERADOS_SQS.has(row.SQ_CANDIDATO);
+    const receiptRow = absenceReceipts.bySq.get(row.SQ_CANDIDATO);
+    if (receiptRow && documents.length > 0 && !superado) {
       throw new Error(`${row.SQ_CANDIDATO}: recibo de ausência conflita com documento oficial`);
     }
+    if (superado && documents.length === 0) {
+      throw new Error(`${row.SQ_CANDIDATO}: recibo marcado como superado sem documento oficial no pacote`);
+    }
+    const absenceReceipt = superado ? undefined : receiptRow;
     return {
       chave: `${ANO}:${CARGO}:${row.SG_UF}:${row.SQ_CANDIDATO}`,
       ano: ANO,
@@ -747,6 +752,9 @@ function main(): void {
       receipt_ids: absenceReceipts.set.receipts.map(
         (receipt) => receipt.receipt_id,
       ),
+      receipt_ids_superados: absenceReceipts.set.receipts
+        .filter((receipt) => RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato))
+        .map((receipt) => receipt.receipt_id),
     },
   };
   const serialized = fixedPointPayload(data);

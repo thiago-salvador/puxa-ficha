@@ -21,6 +21,11 @@ const TARGETS = new Map([
   ["190002550196", "garotinho"],
   ["250002548080", "policial-edjane"],
 ]);
+// Recibo superado por pacote posterior: o artefato de 2026-08-30 continua com
+// cinco recibos, mas Eduardo Paes ganhou o programa no pacote de 2026-09-02 e
+// saiu do vínculo com o inventário e do estado público sem documento.
+const SUPERSEDED = new Map([["190002543380", "eduardo-paes"]]);
+const CURRENT = new Map([...TARGETS].filter(([sq]) => !SUPERSEDED.has(sq)));
 
 function sha256(value: string | Buffer): string {
   return createHash("sha256").update(value).digest("hex");
@@ -89,11 +94,22 @@ test("valida hash semântico e reproduz o receipt set pelo gerador", () => {
   );
 });
 
-test("vincula os cinco recibos ao inventário sem publicar documento inexistente", () => {
+test("vincula os recibos vigentes ao inventário sem publicar documento inexistente", () => {
   const attached = inventory.candidaturas.filter((candidate) => candidate.reciboSemProgramaOficialId);
   assert.deepEqual(
     attached.map((candidate) => String(candidate.sqCandidato)).sort(),
-    [...TARGETS.keys()].sort(),
+    [...CURRENT.keys()].sort(),
+  );
+  for (const sq of SUPERSEDED.keys()) {
+    const superseded = inventory.candidaturas.find((candidate) => String(candidate.sqCandidato) === sq);
+    assert.ok(superseded);
+    assert.equal(superseded.reciboSemProgramaOficialId, undefined);
+    assert.equal(superseded.fonteEstado, "documento_oficial_encontrado");
+    assert.ok((superseded.documentoIds as unknown[]).length > 0);
+  }
+  assert.deepEqual(
+    inventory.recibosSemProgramaOficial.receipt_ids_superados,
+    [...SUPERSEDED.keys()].map((sq) => `programa-governo-ausente:2026:${sq}`),
   );
   for (const candidate of attached) {
     assert.equal(candidate.fonteEstado, "sem_documento_oficial");
@@ -134,9 +150,9 @@ test("mantém a referência no gerador do inventário sem tocar o banco", () => 
   assert.equal(receipt.production_database_changed, false);
 });
 
-test("gera cinco estados públicos sem documento, sem inventar conteúdo", () => {
+test("gera os estados públicos sem documento dos recibos vigentes, sem inventar conteúdo", () => {
   const records = buildProgramAbsencePublicRecords(INVENTORY_PATH, RECEIPT_PATH);
-  assert.deepEqual(records.map((entry) => entry.slug), [...TARGETS.values()].sort((a, b) => a.localeCompare(b, "pt-BR")));
+  assert.deepEqual(records.map((entry) => entry.slug), [...CURRENT.values()].sort((a, b) => a.localeCompare(b, "pt-BR")));
   for (const entry of records) {
     assert.equal(entry.record.estado, "sem_documento_oficial");
     assert.equal("resumo" in entry.record, false);

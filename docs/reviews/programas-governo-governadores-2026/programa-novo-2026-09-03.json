@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "reviewer": "Thiago Salvador",
+  "reviewedAt": "2026-09-03T11:18:50.000Z",
+  "decisionBasis": "Programa oficial que apareceu no pacote do TSE republicado em 2026-09-02. O registro percorreu a cadeia canonica de ingestao: extracao do PDF do pacote, geracao multipassagem, gate de evidencia literal, checagem inversa e Eval completo com todas as dimensoes yes antes da aprovacao.",
+  "modelsConfigRevision": "programas-governo-eduardo-paes-2026-09-03",
+  "separationPolicy": "codex-only",
+  "counts": {
+    "aprovados": 1,
+    "primeiraTentativa": 1,
+    "comReparo": 0,
+    "semPacoteOficial": 1
+  },
+  "items": [
+    {
+      "identityKey": "2026:GOVERNADOR:RJ:190002543380",
+      "uf": "RJ",
+      "slug": "eduardo-paes",
+      "nomeUrna": "EDUARDO PAES",
+      "partido": "PSD",
+      "motivo": "programa oficial passou a existir no pacote proposta_governo_2026_RJ.zip republicado em 2026-09-02",
+      "documentoId": "RJ:190002543380:01",
+      "arquivoNoPacote": "RJ/2026RJ190002543380_01.pdf",
+      "paginas": 8,
+      "sourceSha256": "6ba7ba399dcfeffe0688cf57e9048e0a02e4e7e6b1d199f08e07454c02e2830d",
+      "tentativas": 1,
+      "orientacoesDeReparo": [],
+      "generator": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+      "judge": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
+      "vereditos": 72,
+      "palavras": 143,
+      "frases": 6,
+      "temas": 6,
+      "contentSha256": "51291585031439238b384401842690afce219606a64ea49773f6c97c64e64831"
+    }
+  ],
+  "naoProcessados": [
+    {
+      "identityKey": "2026:GOVERNADOR:CE:60002553922",
+      "uf": "CE",
+      "slug": "vera-lucia-ce",
+      "nomeUrna": "VERA LUCIA",
+      "partido": "NOVO",
+      "estado": "sem_documento_oficial",
+      "motivo": "A DivulgaCandContas lista arquivo codTipo 5 (idArquivo 60017139080), mas o pacote oficial proposta_governo_2026_CE.zip rebaixado em 2026-09-03, com Last-Modified de 2026-09-02T06:58:29Z e 4616136 bytes, continua com as mesmas nove propostas e nenhum CE/2026CE60002553922_01.pdf. O importador nao inventa URL individual, entao a candidatura segue sem documento oficial e o monitor mantem a ficha dela.",
+      "pacoteSha256": "ddace0bd426e6d4fa6dc4a7bdc526840ec68a1143815e741bb6257bc2fd97b78"
+    }
+  ]
+}

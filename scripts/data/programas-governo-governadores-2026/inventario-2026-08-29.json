@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "geradoEm": "2026-08-29T13:27:45Z",
+  "geradoEm": "2026-09-03T11:11:05Z",
   "escopo": {
     "ano": 2026,
     "cargo": "GOVERNADOR",
@@ -63,20 +63,20 @@
     "perfisLocaisAusentes": 0,
     "aliasesDuplicidadeOficial": 2,
     "pacotes": 27,
-    "documentosTotais": 212,
-    "documentosDeCandidaturasAtuais": 204,
+    "documentosTotais": 213,
+    "documentosDeCandidaturasAtuais": 205,
     "documentosSemCandidaturaAtual": 8,
-    "candidaturasComDocumento": 191,
-    "candidaturasSemDocumento": 5,
-    "paginasCandidaturasAtuais": 11056,
+    "candidaturasComDocumento": 192,
+    "candidaturasSemDocumento": 4,
+    "paginasCandidaturasAtuais": 11064,
     "paginasDocumentosOrfaos": 283,
-    "pdfBytesCandidaturasAtuais": 269008917,
+    "pdfBytesCandidaturasAtuais": 269475136,
     "pdfBytesDocumentosOrfaos": 5011949,
-    "pacoteBytesTotais": 278446551,
-    "textoExtraidoBytesCandidaturasAtuais": 21850086,
-    "documentosTextoExtraivel": 199,
+    "pacoteBytesTotais": 278912902,
+    "textoExtraidoBytesCandidaturasAtuais": 21862531,
+    "documentosTextoExtraivel": 200,
     "documentosRequeremOcr": 5,
-    "inventarioPayloadBytes": 370526
+    "inventarioPayloadBytes": 371353
   },
   "pacotes": [
     {
@@ -447,8 +447,8 @@
       "recursoCatalogoUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026/resource/fe53384a-b57e-4dc5-bd87-04b0bb8d0941",
       "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
       "arquivoNome": "proposta_governo_2026_RJ.zip",
-      "bytes": 12185065,
-      "sha256": "7b400a03c0acd786d417403a03bd4a754efb19cbb73c65e47b69a2f5649665a2",
+      "bytes": 12651416,
+      "sha256": "5136898fc28929a645476f3222053f58b056b7cb6dbd961a02b23c0b437e0e3f",
       "integridadeZip": "valida",
       "arquivoLeiaMe": "RJ/leiame.pdf",
       "documentoIds": [
@@ -456,6 +456,7 @@
         "RJ:190002537524:01",
         "RJ:190002540198:01",
         "RJ:190002542887:01",
+        "RJ:190002543380:01",
         "RJ:190002543534:01",
         "RJ:190002544120:01",
         "RJ:190002547272:01",
@@ -3332,6 +3333,24 @@
       "textoExtraidoBytes": 69320,
       "textoExtraidoCaracteres": 66751,
       "textoExtraidoSha256": "41c49643b0fbc67a4ccaa5becc949d545b01c016b7b18e7b750df54795db71c9",
+      "textoEstado": "extraivel",
+      "candidaturaAtual": true
+    },
+    {
+      "id": "RJ:190002543380:01",
+      "uf": "RJ",
+      "sqCandidato": "190002543380",
+      "sequencia": 1,
+      "arquivoNome": "2026RJ190002543380_01.pdf",
+      "arquivoNoPacote": "RJ/2026RJ190002543380_01.pdf",
+      "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+      "pdfOriginalUrl": null,
+      "bytes": 466219,
+      "sha256": "6ba7ba399dcfeffe0688cf57e9048e0a02e4e7e6b1d199f08e07454c02e2830d",
+      "paginas": 8,
+      "textoExtraidoBytes": 12445,
+      "textoExtraidoCaracteres": 12092,
+      "textoExtraidoSha256": "bfa3adccb6ba2c58d5f8fc83fd4da95a648124e065af5d97915f93652f4b844e",
       "textoEstado": "extraivel",
       "candidaturaAtual": true
     },
@@ -8577,10 +8596,11 @@
       "identidadeEstado": "confirmada",
       "grupoAmbiguidade": null,
       "alternativasOficiais": [],
-      "fonteEstado": "sem_documento_oficial",
-      "estadoInventario": "sem_documento_oficial",
-      "documentoIds": [],
-      "reciboSemProgramaOficialId": "programa-governo-ausente:2026:190002543380",
+      "fonteEstado": "documento_oficial_encontrado",
+      "estadoInventario": "documento_oficial_encontrado",
+      "documentoIds": [
+        "RJ:190002543380:01"
+      ],
       "tse": {
         "eleicaoCodigo": "6259",
         "eleicaoData": "04/10/2026",
@@ -10408,6 +10428,9 @@
       "programa-governo-ausente:2026:190002543380",
       "programa-governo-ausente:2026:190002550196",
       "programa-governo-ausente:2026:250002548080"
+    ],
+    "receipt_ids_superados": [
+      "programa-governo-ausente:2026:190002543380"
     ]
   }
 }

@@ -7,6 +7,7 @@ import {
   toProgramaGovernoPublico,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
+import { RECIBOS_AUSENCIA_SUPERADOS_SQS } from "../scripts/lib/programas-governo-recibos-ausencia"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -22,12 +23,18 @@ before(async () => {
   programaModule = await import("../src/data/programas-governo-2026")
 })
 const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
-const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-08-29.json") as {
+const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-03.json") as {
   items: Array<{ outcome: string; slug: string | null }>
 }
 const governorAbsenceReceipt = require("../QA/evidencias/2026-08-30-programas-ausentes/receipt.json") as {
-  receipts: Array<{ profile_slug: string }>
+  receipts: Array<{ profile_slug: string; sq_candidato: string }>
 }
+// O artefato de recibos é histórico e continua com cinco entradas. Recibo
+// superado por pacote posterior não corresponde mais a um estado público sem
+// documento: a candidatura passou a ter programa aprovado.
+const governorAbsenceSlugs = governorAbsenceReceipt.receipts
+  .filter(({ sq_candidato }) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(sq_candidato))
+  .map(({ profile_slug }) => profile_slug)
 
 async function loadPresidentialCohort(): Promise<ProgramaGovernoRegistro[]> {
   const records = await Promise.all(
@@ -93,7 +100,7 @@ test("server-only manifest retains approved records and explicit official absenc
     .map(({ slug }) => slug)
     .filter((slug): slug is string => Boolean(slug))
     .sort()
-  const absenceSlugs = governorAbsenceReceipt.receipts.map(({ profile_slug }) => profile_slug).sort()
+  const absenceSlugs = [...governorAbsenceSlugs].sort()
   const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs].sort()
   const expectedTotal = 13 + publicGovernorSlugs.length
   assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
@@ -124,7 +131,7 @@ test("manifest publishes approved content and receipt-backed absence without inv
   assert.equal(approved?.fonte.cargo, "GOVERNADOR")
   assert.equal(approved?.fonte.uf, "BA")
   assert.ok(approved?.documentos?.length)
-  for (const slug of governorAbsenceReceipt.receipts.map(({ profile_slug }) => profile_slug)) {
+  for (const slug of governorAbsenceSlugs) {
     const absent = await programaModule.programasGoverno2026Manifesto.loadBySlug(slug)
     assert.equal(absent?.estado, "sem_documento_oficial")
     assert.equal(absent?.documentos, undefined)

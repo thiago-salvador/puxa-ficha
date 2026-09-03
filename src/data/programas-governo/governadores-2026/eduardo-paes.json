@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "estado": "sem_documento_oficial",
+  "estado": "aprovado",
   "fonte": {
     "ano": 2026,
     "cargo": "GOVERNADOR",
@@ -9,11 +9,718 @@
     "slug": "eduardo-paes",
     "nomeUrna": "EDUARDO PAES",
     "partido": "PSD",
-    "arquivoNome": null,
-    "arquivoNoPacote": null,
+    "arquivoNome": "2026RJ190002543380_01.pdf",
+    "arquivoNoPacote": "RJ/2026RJ190002543380_01.pdf",
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-30T19:05:42.856Z"
+    "coletadoEm": "2026-09-03T11:11:05Z"
+  },
+  "documentos": [
+    {
+      "documentoId": "RJ:190002543380:01",
+      "fonte": {
+        "arquivoNome": "2026RJ190002543380_01.pdf",
+        "arquivoNoPacote": "RJ/2026RJ190002543380_01.pdf",
+        "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": null,
+        "coletadoEm": "2026-09-03T11:11:05Z"
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "6ba7ba399dcfeffe0688cf57e9048e0a02e4e7e6b1d199f08e07454c02e2830d",
+        "extractedTextSha256": "a81b6b1c8d5a31bab966a3016a1b760c3b4413864b4ef40dd4806c938bb59e2d",
+        "paginas": 8,
+        "secoes": [
+          {
+            "id": "plano-de-reconstrucao-do",
+            "titulo": "Plano de reconstrução do",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "Plano de reconstrução do\nEstado do Rio de Janeiro\nVERSÃO PRELIMINAR DO PROGRAMA DE GOVERNO\nColigação Juntos para Mudar, Coragem para Reconstruir"
+          },
+          {
+            "id": "ao-povo-do",
+            "titulo": "Ao povo do",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "Ao povo do\nnosso estado\nCARTA DE ABERTURA\nO momento que o nosso estado passa não admite improvisos e nem promessas fáceis.\nSomos a segunda economia do Brasil, mas vivemos o pior momento da nossa história.\nA violência tomou conta de todo o estado. As pessoas vivem com medo nas ruas, nas\ncomunidades e até mesmo em suas casas. Retiraram do nosso povo o seu direito de ir\ne vir, e os casos de feminicídio só aumentam.\nA classe política do nosso estado se tornou sócia do crime organizado. Nos governos\ndo grupo político que quer se manter no poder, houve um aumento de 35% da\npopulação que vive sob o domínio do tráfico ou da milícia. Hoje, mais de 4 milhões de\npessoas são oprimidas diariamente por esses criminosos.\nOs hospitais e as UPAs estaduais, que já foram referência no país, deixam nosso\npovo sofrendo em filas, com a saúde entregue à própria sorte. Faltam médicos,\nespecialistas, remédios e empatia com a população. A saúde do estado está na UTI.\nAs escolas estaduais, que também já formaram as melhores turmas do país, estão\nsucateadas. Os alunos abandonam o Ensino Médio cada vez mais cedo. Hoje, o nosso\nestado amarga a vice-lanterna do Brasil na qualidade do Ensino Médio, e não prepara\nnossos jovens para ingressarem no mercado de trabalho. Faltam escolas técnicas\nprofissionalizantes e ensino em tempo integral.\nTrens, barcas e ônibus intermunicipais deixaram de funcionar com o mínimo de\nsegurança, conforto e rapidez, apesar das passagens estarem entre as mais altas do\npaís, comprometendo o tempo e a renda do povo trabalhador. As estradas estaduais se\ndeterioraram a ponto de encarecer tudo o que o povo fluminense produz e consome."
+          },
+          {
+            "id": "enquanto-isso-o-grupo-politico-que-se-apossou-da-maquina-publica-estadua",
+            "titulo": "Enquanto isso, o grupo político que se apossou da máquina pública estadual nos",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "Enquanto isso, o grupo político que se apossou da máquina pública estadual nos\núltimos oito anos, fez dela um negócio particular bilionário, que só serve aos seus\npróprios interesses. O resultado está diante de todos: governador cassado por\ncorrupção, ex-presidente da ALERJ preso por associação ao Comando Vermelho e um\nestado que perdeu a capacidade de fazer o mínimo, seja para a população, seja para\nseus municípios.\nAs noventa e duas prefeituras fluminenses, muitas delas inteiramente dependentes do\ngoverno estadual para manter serviços essenciais, foram deixadas à própria sorte, e a\nconta desse abandono chegou para todos os fluminenses, sobretudo os mais pobres.\nNada disso é destino. É consequência de anos de um governo estadual dominado pela\ncorrupção e pelo crime organizado.\n\nO QUE EU VI\nDesde que deixei a Prefeitura do Rio de Janeiro, dediquei este tempo a percorrer\no estado. Não foi visita de campanha. Foi trabalho de reconhecimento e de escuta\nàs pessoas que vivem nos noventa e dois municípios do nosso estado. Parei pra\nouvir quem é raramente consultado: o pequeno produtor rural, as cooperativas, o\ncomerciante de rua e o empreendedor que presta serviços. Nessa jornada, afirmei\numa coisa que repito agora por escrito: o interior do nosso estado jamais voltará a ser\ntratado como quintal de cidade grande.\nO que constatei nessas andanças não foi falta de potencial. O Rio de Janeiro tem\npetróleo e gás, tem portos, tem universidades e centros de pesquisa de primeira ordem,\ntem indústria, tem agricultura familiar, tem turismo, tem uma marca que o mundo inteiro\nreconhece e tem um povo acolhedor que acorda cedo e trabalha.\nO que falta a este estado não é riqueza. É governo. É autoridade.\nE percebi também que as pessoas pedem pouco, e pedem o que lhes é devido: uma\nestrada em condições para escoar a produção, um posto de saúde que abra e funcione,\nmédicos com empatia, remédios. Uma escola que ensine, um trem que cumpra horário\ne acima de tudo, segurança pra sair de casa e tranquilidade pra saber que vai voltar.\n\nPOR QUE ASSUMO ESTA MISSÃO\nNão é de hoje que eu digo estas coisas sobre o nosso estado. Venho dizendo há muitos\nanos, com o mesmo diagnóstico e propondo, em boa parte, as mesmas soluções. Não\nmudei de opinião sobre os caminhos a serem percorridos. O que mudou, e pra pior, foram\nos serviços do governo do estado, a violência nas ruas e o poder do crime organizado."
+          },
+          {
+            "id": "fui-prefeito-da-capital-por-quatro-mandatos-quando-voltei-a-assumir-o-co",
+            "titulo": "Fui prefeito da capital por quatro mandatos. Quando voltei a assumir o comando da",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "Fui prefeito da capital por quatro mandatos. Quando voltei a assumir o comando da\nPrefeitura, em 2021, encontrei uma cidade em colapso: a atenção básica de saúde\ndesfeita, as escolas fechadas, o BRT quebrado, o caixa vazio e uma pandemia matando\npessoas todos os dias. Não faltou quem dissesse que não havia solução. Arrumamos\nas contas, recuperamos a rede de saúde, aumentamos o ensino em tempo integral, e\nfizemos o BRT renascer e ser ampliado, levando mais conforto, rapidez e segurança pra\nquem usa transporte público.\nNão posso afirmar que resolvi absolutamente todos os problemas da cidade, mas posso\nsim dizer que melhorei, de forma verdadeira e significativa, a vida de quem mora nela.\nGestão não é discurso: é entrega de resultados.\nA preocupação com o lugar onde os nossos filhos e os nossos netos vão construir suas\nvidas e famílias não me permitiu recusar esta missão. Retorno à disputa estadual com a\nmesma determinação que marcou toda a minha trajetória.\n\nOS COMPROMISSOS QUE ASSUMIMOS\nAssumimos cinco compromissos com o povo do Estado do Rio de Janeiro.\n\nDevolver a segurança e o direito de ir e vir das pessoas.\nCombater o crime dia e noite, em todos os cantos do estado por meio de uma polícia\nmais eficiente, mais preparada e com compromisso com o cidadão. Enfrentar o crime\norganizado, a milícia, as facções e a corrupção que os protege, com coragem, firmeza\ne muita investigação. Ao crime organizado, o recado é direto: o tempo em que o Estado\nfoi seu sócio ou se acovardou acabou.\n\nMelhorar a qualidade dos serviços públicos de saúde, educação e\ntransporte.\nRecuperar os hospitais e UPAs estaduais, contratar mais médicos e especialistas,\nreduzir as filas, ampliar a distribuição de remédios, humanizar o atendimento e garantir\nos repasses aos municípios independentemente de questões políticas, ideológicas ou\npartidárias.\nAmpliar o ensino técnico profissionalizante em tempo integral, fazer as Faetecs\nrenascerem e recolocar nossa rede estadual de ensino entre as melhores do Brasil,\ncomo já foi no passado.\nNo transporte, vamos colocar a Supervia no padrão do BRT do Rio, recuperar as\nestradas estaduais, levar o BRT para toda a Baixada, iniciar as obras da Linha 3 do\nMetrô até São Gonçalo e enfrentar as empresas de ônibus intermunicipais da mesma\nforma que fizemos na capital, com o objetivo de garantir mais transparência na\nbilhetagem, e sobretudo, mais qualidade no serviço oferecido à população."
+          },
+          {
+            "id": "destravar-a-economia-para-gerar-mais-oportunidades-de-trabalho-e-renda",
+            "titulo": "Destravar a economia para gerar mais oportunidades de trabalho e renda.",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "Destravar a economia para gerar mais oportunidades de trabalho e renda.\nAtrair novos investimentos e empresas para o estado, dinamizar o turismo em todas as\nregiões, promover um amplo programa de formação e qualificação profissional de forma\ncontínua, melhorar o ambiente de negócios, reduzir o custo de produzir no Rio, para que\nassim, o setor privado volte a gerar oportunidades, emprego e renda para as pessoas\nem todo o estado.\n\nGovernar para todos e em parceria com todos os municípios.\nSer o principal parceiro de todos os 92 prefeitos do nosso estado na busca pelo\ndesenvolvimento de seus municípios de acordo com suas necessidades e vocações sem qualquer distinção partidária, política ou ideológica. Garantir sem atrasos todos os\nrepasses para a saúde e a educação dos municípios. Fui prefeito quatro vezes e sei que\nsão os prefeitos que atuam na ponta. São eles que mais mudam a vida das pessoas pois\nconhecem seus problemas de perto.\n\nColocar a máquina pública estadual em ordem.\nReequilibrar as finanças estaduais e devolver ao Rio de Janeiro a capacidade de\ninvestir. Restaurar a capacidade de planejar, coordenar, fiscalizar e entregar, com metas\ntransparentes e prestação de contas. O bom gestor público não admite desperdício e\nnão tolera desvios.\nAssumimos esses compromissos com uma condição que atravessa todos eles: não\nprometeremos aquilo que não poderemos cumprir. Há decisões que dependem de\nBrasília, e sobre elas o nosso compromisso é outro — o de trabalhar pelo Rio de Janeiro\ncom diálogo permanente e em parceria com o governo federal, independente de\nideologias, para que este estado receba o que lhe cabe.\nCom coragem, firmeza e serenidade, temos certeza de que podemos trabalhar muito\npara trazer de volta a importância do nosso estado no país, levando mais dignidade e\nqualidade de vida para toda a população, sobretudo para as pessoas mais pobres.\nCom a benção de Deus, vamos juntos reconstruir nosso estado.\n\nEduardo Paes\nJane Reis"
+          },
+          {
+            "id": "compromissos-centrais",
+            "titulo": "Compromissos centrais",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "Compromissos centrais\ndo governo Eduardo Paes\n• Reduzir a violência no estado, sobretudo os assaltos, tiroteios e feminicídios, de\nforma significativa já no primeiro ano de mandato, por meio da implantação de um novo\nmodelo de patrulhamento territorial, do treinamento dos policiais, do fortalecimento das\npatrulhas Maria da Penha e do aumento do efetivo dedicado às operações de vigilância e\npoliciamento ostensivo conforme os indicadores criminais em cada município do estado.\n• Estancar o crescimento territorial do crime organizado em todo o estado e retomar os\nterritórios que hoje estão sob seu domínio, inclusive por meio de ações conjuntas com as\nforças armadas e de investigações que rastreiem o caminho do dinheiro desses grupos.\n• Eliminar imediatamente as indicações de políticos no processo de escolha dos\ncomandantes dos batalhões da Polícia Militar e dos delegados da Polícia Civil, que será\nestritamente técnico.\n• Recuperar os serviços públicos de saúde do estado, colocando os hospitais e as UPAs\nestaduais para funcionarem com mais eficiência, agilidade e empatia com a população.\n• Ampliar a rede e o atendimento nas regiões distantes da capital e garantir os repasses\npara fortalecer a atenção primária da saúde em todos os municípios.\n• Contratar mais médicos e especialistas e oferecer um atendimento humanizado para as\npessoas, além de assegurar o fornecimento e distribuição de remédios em todo o estado.\n• Expandir o ensino médio profissionalizante em tempo integral em todo o estado\ne de acordo com as vocações econômicas de cada região, garantindo assim mais\noportunidades de trabalho e acesso ao primeiro emprego para os nossos jovens\n• Apoiar as prefeituras na educação inclusiva e na assistência às famílias de crianças\ncom autismo."
+          },
+          {
+            "id": "fazer-o-estado-voltar-a-atrair-empresas-e-investimentos-gerando-emprego",
+            "titulo": "• Fazer o estado voltar a atrair empresas e investimentos, gerando emprego e renda em",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "• Fazer o estado voltar a atrair empresas e investimentos, gerando emprego e renda em\ntodas as regiões de acordo com as suas vocações, sobretudo nos setores de petróleo e\ngás, turismo, indústria naval, agronegócio e cultura & entretenimento.\n• Investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT\npara mais cidades, além de garantir mais qualidade no serviço e transparência no custo\ndas passagens dos ônibus intermunicipais.\n• Iniciar as obras da Linha 3 do metrô para Niterói, São Gonçalo e Itaboraí até o\nfim do mandato.\n• Recuperar as estradas do interior com obras de recapeamento, restauração e módulos\nde vigilância, atuando nos 32 mil quilômetros por onde passa tudo que é consumido e\nproduzido no nosso estado.\n• Implantar um grande plano de obras para combater as enchentes e prevenir\ndeslizamentos em todo o estado, com especial atenção à Região Serrana, Costa Verde e\nBaixada Fluminense.\n• Colocar as contas públicas em ordem, reequilibrar as finanças e devolver ao nosso\nestado a capacidade de investir, sempre com responsabilidade fiscal, gestão por resultados,\nmetas claras com prestação de contas e transparência em cada área do governo.\n• Governar em parceria com os prefeitos dos 92 municípios do nosso estado, sem\ndistinção partidária, política ou ideológica, e por meio da criação de um Conselho das\nCidades, ligado diretamente ao governador, com o objetivo de promover um maior\nequilíbrio nos indicadores de desenvolvimento humano nas oito regiões de planejamento\ndo nosso estado - Metropolitana, Serrana, Norte Fluminense, Noroeste Fluminense,\nRegião dos Lagos, Médio Paraíba, Centro-Sul Fluminense e Costa Verde."
+          },
+          {
+            "id": "com-boa-gestao-coragem",
+            "titulo": "Com boa gestão, coragem",
+            "nivel": 1,
+            "paginaInicial": 8,
+            "paginaFinal": 8,
+            "origem": "pdftotext",
+            "conteudo": "Com boa gestão, coragem\ne empatia,vamos juntos\nreconstruir nosso estado."
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "35d1399ed72265016ebcc67d972822bf4019d453d35ca3dbd33e5747c2ccecce"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "92fe544598e6249442a18cf90caa65b998ea7ef0d5ddaaca9c63fedbea0770df"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "e00e07066d255c70b57b042845c0841f7860fd6335b080d418bcaddaef184928"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "671fe04d50100449335e5e8c2670a7a0ad09dcc07e1a38f602f6e108420bea2c"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "4ba680a6f0f50ffd6f5ec0aaa4768cdde6ac792493353584c5c261867ca4a0cf"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "5903ed97166448408929d6c230b6c2e1b5cd4de965fdda75f8c60c44a13d92f5"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "d6f71f176f0801c6e94ba1ea8ecd4e6ab411c628ab47a8cba41324de0c6aa415"
+          },
+          {
+            "pagina": 8,
+            "origem": "pdftotext",
+            "textSha256": "2f4e8ad6f29d1b3ebb3b48497122ff5dba80d5bf2b7543118df6ab7fc896ee64"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa prevê reduzir a violência no estado por meio de um novo modelo de patrulhamento territorial e do treinamento dos policiais. O programa propõe estancar o crescimento territorial do crime organizado em todo o estado por meio de investigações que rastreiem o caminho do dinheiro desses grupos. Na saúde, prevê recuperar os serviços públicos estaduais, ampliando o atendimento nas regiões distantes da capital e assegurando o fornecimento de remédios em todo o estado. Na educação, prevê expandir o ensino médio profissionalizante em tempo integral em todo o estado, de acordo com as vocações econômicas de cada região. No transporte, propõe investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT para mais cidades. Na gestão fiscal, prevê colocar as contas públicas em ordem, reequilibrar as finanças e estabelecer metas claras com prestação de contas e transparência em cada área do governo.",
+    "frases": [
+      {
+        "texto": "O programa prevê reduzir a violência no estado por meio de um novo modelo de patrulhamento territorial e do treinamento dos policiais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "novo\nmodelo de patrulhamento territorial, do treinamento dos policiais,"
+          }
+        ]
+      },
+      {
+        "texto": "O programa propõe estancar o crescimento territorial do crime organizado em todo o estado por meio de investigações que rastreiem o caminho do dinheiro desses grupos.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Estancar o crescimento territorial do crime organizado em todo o estado"
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê recuperar os serviços públicos estaduais, ampliando o atendimento nas regiões distantes da capital e assegurando o fornecimento de remédios em todo o estado.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Ampliar a rede e o atendimento nas regiões distantes da capital"
+          }
+        ]
+      },
+      {
+        "texto": "Na educação, prevê expandir o ensino médio profissionalizante em tempo integral em todo o estado, de acordo com as vocações econômicas de cada região.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Expandir o ensino médio profissionalizante em tempo integral em todo o estado\ne de acordo com as vocações econômicas de cada região"
+          }
+        ]
+      },
+      {
+        "texto": "No transporte, propõe investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT para mais cidades.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 7,
+            "trecho": "Investir na melhoria do transporte metropolitano e intermunicipal, expandindo o BRT\npara mais cidades"
+          }
+        ]
+      },
+      {
+        "texto": "Na gestão fiscal, prevê colocar as contas públicas em ordem, reequilibrar as finanças e estabelecer metas claras com prestação de contas e transparência em cada área do governo.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 7,
+            "trecho": "Colocar as contas públicas em ordem, reequilibrar as finanças e devolver ao nosso\nestado a capacidade de investir, sempre com responsabilidade fiscal, gestão por resultados,\nmetas claras com prestação de contas e transparência em cada área do governo"
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "seguranca-publica",
+        "titulo": "Segurança pública",
+        "descricao": "Redução da violência por meio de patrulhamento territorial e treinamento policial.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "novo\nmodelo de patrulhamento territorial, do treinamento dos policiais,"
+          }
+        ]
+      },
+      {
+        "id": "crime-organizado",
+        "titulo": "Crime organizado",
+        "descricao": "Estancamento do crescimento territorial do crime organizado.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Estancar o crescimento territorial do crime organizado em todo o estado"
+          }
+        ]
+      },
+      {
+        "id": "saude-estadual",
+        "titulo": "Saúde estadual",
+        "descricao": "Recuperação dos serviços públicos estaduais de saúde.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Recuperar os serviços públicos de saúde do estado"
+          }
+        ]
+      },
+      {
+        "id": "ensino-profissionalizante",
+        "titulo": "Ensino profissionalizante",
+        "descricao": "Expansão do ensino médio profissionalizante em tempo integral.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 6,
+            "trecho": "Expandir o ensino médio profissionalizante em tempo integral em todo o estado"
+          }
+        ]
+      },
+      {
+        "id": "transporte-metropolitano",
+        "titulo": "Transporte metropolitano",
+        "descricao": "Melhoria do transporte metropolitano e intermunicipal.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 7,
+            "trecho": "Investir na melhoria do transporte metropolitano e intermunicipal"
+          }
+        ]
+      },
+      {
+        "id": "gestao-fiscal",
+        "titulo": "Gestão fiscal",
+        "descricao": "Reorganização das contas públicas e das finanças estaduais.",
+        "evidencias": [
+          {
+            "documentoId": "RJ:190002543380:01",
+            "pagina": 7,
+            "trecho": "Colocar as contas públicas em ordem, reequilibrar as finanças"
+          }
+        ]
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Luna@gpt-5.6-luna-medium@codex-cli-0.149.1",
+    "generatedAt": "2026-09-03T11:13:55.040Z",
+    "instructionsSha256": "9f383704c5fcad4a9754d5d413ae711d10e19960d11b474a845f142aae6b5721"
+  },
+  "julgamento": {
+    "model": "OpenAI Sol@gpt-5.6-sol-medium@codex-cli-0.149.1",
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-09-03T11:17:56.122Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada vincula expressamente a redução da violência ao novo patrulhamento territorial e ao treinamento policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação reúne medidas coerentes de uma única proposta de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:1:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre o objetivo de reduzir a violência e os dois meios indicados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta o objetivo em todo o estado e menciona as investigações para rastrear o dinheiro dos grupos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação atribui a proposta ao programa sem avaliação, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de combate ao crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:2:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre o objetivo, a abrangência estadual e o meio investigativo descrito."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada sustenta a recuperação dos serviços estaduais, a ampliação regional e o fornecimento de remédios em todo o estado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve propostas de saúde sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "Todas as cláusulas pertencem à área coerente de serviços estaduais de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:3:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "O texto integral da página cobre todas as três cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência reproduz integralmente a expansão, o tempo integral, a abrangência estadual e o critério regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de ensino profissionalizante."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:4:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o investimento e a expansão do BRT descritos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém número ou quantidade determinada; a expressão qualitativa consta literalmente da evidência."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação atribui a proposta ao programa sem elogio, crítica ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única área coerente de transporte coletivo."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:5:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as duas cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente todas as medidas de gestão fiscal descritas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação descreve compromissos do documento sem avaliação, crítica ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "As cláusulas integram uma única proposta coerente de gestão fiscal e prestação de contas."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:frase:6:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A página citada vincula expressamente a redução da violência ao patrulhamento territorial e ao treinamento policial."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação sintetiza a proposta sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação trata de uma única proposta coerente de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:seguranca-publica:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A página citada cobre o objetivo e os dois meios apresentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente o estancamento do crescimento territorial do crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação sintetiza a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta sobre crime organizado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:crime-organizado:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a recuperação dos serviços públicos estaduais de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação sintetiza a proposta sem elogio, crítica, promoção ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta na área de saúde estadual."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:saude-estadual:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a única cláusula material."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a expansão do ensino médio profissionalizante em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação sintetiza a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta de ensino profissionalizante."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:ensino-profissionalizante:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente a expansão e a modalidade em tempo integral."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta literalmente a melhoria do transporte metropolitano e intermunicipal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "O termo melhoria descreve o objeto da proposta, sem avaliação própria, elogio ou certeza de resultado."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente na área de transporte."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:transporte-metropolitano:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente os componentes metropolitano e intermunicipal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:suporte",
+        "verdict": "yes",
+        "reason": "A evidência sustenta diretamente a reorganização das contas públicas e o reequilíbrio das finanças estaduais."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:numeros",
+        "verdict": "yes",
+        "reason": "A afirmação não contém números, percentuais, quantidades ou prazos."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:neutralidade",
+        "verdict": "yes",
+        "reason": "A redação sintetiza a proposta sem elogio, crítica, promoção ou certeza de execução."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:mistura",
+        "verdict": "yes",
+        "reason": "A afirmação contém uma única proposta coerente de gestão fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:identidade",
+        "verdict": "yes",
+        "reason": "A chave eleitoral e o documento da evidência correspondem exatamente aos informados."
+      },
+      {
+        "id": "2026:GOVERNADOR:RJ:190002543380:tema:gestao-fiscal:documentos:RJ:190002543380:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre integralmente as contas públicas e as finanças mencionadas."
+      }
+    ]
+  },
+  "ingestao": {
+    "identityKey": "2026:GOVERNADOR:RJ:190002543380",
+    "inventoryVersion": 1,
+    "inventoryGeneratedAt": "2026-09-03T11:11:05Z",
+    "etapa": "concluida",
+    "erro": null,
+    "documentosInventario": [
+      "RJ:190002543380:01"
+    ],
+    "modelos": {
+      "generator": {
+        "name": "OpenAI Luna",
+        "version": "gpt-5.6-luna-medium@codex-cli-0.149.1",
+        "promptVersion": "programa-governo-governadores-generator-v1",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 23366,
+          "cached_input_tokens": 6912,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3082,
+          "reasoning_output_tokens": 1960
+        }
+      },
+      "judge": {
+        "name": "OpenAI Sol",
+        "version": "gpt-5.6-sol-medium@codex-cli-0.149.1",
+        "promptVersion": "programa-governo-governadores-judge-v2",
+        "attempts": 1,
+        "uso": {
+          "input_tokens": 34452,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 13101,
+          "reasoning_output_tokens": 175
+        }
+      }
+    },
+    "eval": {
+      "completo": true,
+      "blockers": 0,
+      "dimensoes": [
+        "suporte",
+        "numeros",
+        "neutralidade",
+        "mistura",
+        "identidade",
+        "cobertura"
+      ]
+    }
+  },
+  "revisao": {
+    "reviewer": "Thiago Salvador",
+    "reviewedAt": "2026-09-03T11:18:50.000Z",
+    "sourceSha256": "6ba7ba399dcfeffe0688cf57e9048e0a02e4e7e6b1d199f08e07454c02e2830d",
+    "extractedTextSha256": "a81b6b1c8d5a31bab966a3016a1b760c3b4413864b4ef40dd4806c938bb59e2d",
+    "documentCount": 1,
+    "documentSetSha256": "efb0f7192216c5f386e513a67d9c90bf86da76afa98080861d7d6bb4b8c80aa7",
+    "contentSha256": "51291585031439238b384401842690afce219606a64ea49773f6c97c64e64831"
   }
 }
