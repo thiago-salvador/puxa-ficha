@@ -356,6 +356,11 @@ describe("contrato da view candidatos_publico", () => {
       // CHECK na tabela. Não redefinem candidatos_publico nem seus grants.
       "20260903100000_vocabulario_situacao_candidatura.sql",
       "20260903100100_vocabulario_situacao_candidatura_check.sql",
+      // Remove 11 índices com idx_scan = 0 desde 12/02/2026, em sete tabelas
+      // satélite. Nenhuma delas é candidatos, nenhum dos índices sustenta
+      // constraint, e índice não entra em definição de view: candidatos_publico
+      // continua idêntica, na definição, nas colunas e nos grants.
+      "20260903120000_drop_indices_sem_uso.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 
