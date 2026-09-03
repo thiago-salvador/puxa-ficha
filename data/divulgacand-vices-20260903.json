@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "source": "TSE DivulgaCandContas",
+    "election_id": "20322002026",
+    "checked_at": "2026-09-03",
+    "rule": "situacaoVice 3 é substituída; exatamente uma alternativa não 3 é a vice vigente",
+    "scope": "chapas em que o pacote consolidado consulta_cand_2026.zip mantém duas vices com a mesma situação e só o DivulgaCandContas prova qual foi substituída",
+    "fields": "somente sq_candidato, nome de urna e situacaoVice, dados já presentes no pacote público do TSE"
+  },
+  "resolutions": [
+    {
+      "titular_sq": "100002544073",
+      "titular_nome_urna": "REGINALDO LIMA",
+      "uf": "MA",
+      "cargo": "GOVERNADOR",
+      "sq_coligacao": "100001800701",
+      "current_vice_sq": "100002554354",
+      "replaced_vice_sq": "100002544074",
+      "consultado_em": "2026-09-03T11:21:17.169Z",
+      "endpoint": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002544073",
+      "response_sha256": "37c2de29906bdbd0d3fc26242454473db107af397b7df8e11d58bb522a9a60c3",
+      "vices": [
+        {
+          "sq_candidato": "100002554354",
+          "nome_urna": "GATO FELIX",
+          "situacao_vice": 1
+        },
+        {
+          "sq_candidato": "100002544074",
+          "nome_urna": "BARTOLOMEU",
+          "situacao_vice": 3
+        }
+      ]
+    }
+  ]
+}

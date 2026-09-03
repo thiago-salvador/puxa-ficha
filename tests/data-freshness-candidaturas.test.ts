@@ -56,7 +56,74 @@ test("classifica inclusão, remoção, substituição, situação, identidade e 
     status_change: 1,
     identity_mismatch: 1,
     missing_profile: 1,
+    substituted: 0,
   })
+  assert.equal(result.status, "review_required")
+})
+
+// Chapa de governador do MA (coligação 100001800701, PCB): o pacote consolidado
+// traz as duas vices com a mesma situação e só o DivulgaCandContas prova que
+// BARTOLOMEU foi substituído por GATO FELIX.
+const VICE_SUBSTITUIDO_SQ = "100002544074"
+const VICE_VIGENTE_SQ = "100002554354"
+
+function vice(sq: string, nome: string): CandidacyRecord {
+  return record(sq, "VICE GOVERNADOR", {
+    uf: "MA",
+    sq_coligacao: "100001800701",
+    nome_urna: nome,
+    partido_sigla: "PCB",
+    perfil_slug: null,
+  })
+}
+
+const viceSubstituido = vice(VICE_SUBSTITUIDO_SQ, "BARTOLOMEU")
+const viceVigente = vice(VICE_VIGENTE_SQ, "GATO FELIX")
+
+test("vice substituído ainda publicado continua sendo substituição bloqueante", () => {
+  const result = compareCandidacies(
+    [viceSubstituido, viceVigente],
+    [viceSubstituido],
+    undefined,
+    { substitutedViceSqs: [VICE_SUBSTITUIDO_SQ] },
+  )
+  assert.equal(result.counts.replacement, 1)
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.status, "review_required")
+})
+
+test("vice vigente publicada com o substituído no registro vira mudança informativa", () => {
+  const result = compareCandidacies(
+    [viceSubstituido, viceVigente],
+    [viceVigente],
+    undefined,
+    { substitutedViceSqs: [VICE_SUBSTITUIDO_SQ] },
+  )
+  assert.equal(result.counts.substituted, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.counts.replacement, 0)
+  assert.equal(result.counts.removal, 0)
+  assert.equal(result.status, "ok")
+  const change = result.changes.find((item) => item.kind === "substituted")
+  assert.equal(change?.official?.sq_candidato, VICE_SUBSTITUIDO_SQ)
+  assert.equal(change?.published?.sq_candidato, VICE_VIGENTE_SQ)
+  assert.match(change?.detail ?? "", /DivulgaCandContas/)
+})
+
+test("vice vigente publicada sem o substituído no registro continua bloqueando", () => {
+  const result = compareCandidacies([viceSubstituido, viceVigente], [viceVigente])
+  assert.equal(result.counts.inclusion, 1)
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.status, "review_required")
+})
+
+test("SQ no registro sem outra alternativa oficial no mesmo slot não vira substituição", () => {
+  const result = compareCandidacies([viceSubstituido], [], undefined, {
+    substitutedViceSqs: [VICE_SUBSTITUIDO_SQ],
+  })
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.counts.inclusion, 1)
   assert.equal(result.status, "review_required")
 })
 

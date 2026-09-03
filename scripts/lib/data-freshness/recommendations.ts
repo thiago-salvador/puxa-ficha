@@ -20,7 +20,13 @@ interface RecommendationInput {
   registry: FreshnessSource[]
 }
 
-const CHANGE_GUIDANCE: Record<CandidacyChangeKind, { title: string; action: string }> = {
+type ChangeGuidance = {
+  title: string
+  action: string
+  priority?: DataFreshnessRecommendation["priority"]
+}
+
+const CHANGE_GUIDANCE: Record<CandidacyChangeKind, ChangeGuidance> = {
   inclusion: {
     title: "Candidaturas oficiais ainda não publicadas",
     action: "Confirmar cada registro pelo SQ_CANDIDATO e preparar a inclusão ou a ficha ausente para revisão humana.",
@@ -44,6 +50,11 @@ const CHANGE_GUIDANCE: Record<CandidacyChangeKind, { title: string; action: stri
   missing_profile: {
     title: "Candidaturas sem ficha pública vinculada",
     action: "Criar ou vincular a ficha correta e validar a rota pública antes da publicação.",
+  },
+  substituted: {
+    title: "Vice substituído conforme DivulgaCandContas",
+    action: "Informativo, sem ação corretiva: o catálogo já publica a vice vigente e o registro substituído permanece no pacote consolidado do TSE. Manter a resolução versionada como evidência.",
+    priority: "medium",
   },
 }
 
@@ -153,13 +164,13 @@ export function buildDataFreshnessRecommendations(input: RecommendationInput): D
 
   if (input.comparison) {
     for (const [kind, guidance] of Object.entries(CHANGE_GUIDANCE) as Array<
-      [CandidacyChangeKind, { title: string; action: string }]
+      [CandidacyChangeKind, ChangeGuidance]
     >) {
       const changes = input.comparison.changes.filter((change) => change.kind === kind)
       if (changes.length === 0) continue
       recommendations.push({
         code: kind,
-        priority: "high",
+        priority: guidance.priority ?? "high",
         title: guidance.title,
         action: guidance.action,
         evidence: cappedEvidence(changes.map(affectedLabel), changes.length),

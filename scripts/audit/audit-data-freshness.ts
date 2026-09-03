@@ -1,4 +1,9 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { resolve } from "node:path";
 
 import {
@@ -30,6 +35,8 @@ import {
   parseOfficialCandidaciesZip,
 } from "../lib/data-freshness/tse-source";
 import type { CandidacyRecord } from "../lib/data-freshness/types";
+
+const ELECTION_ID_2026 = "20322002026";
 
 interface PublishedSnapshot {
   generated_at?: string;
@@ -160,6 +167,47 @@ function writeJson(path: string, value: unknown): void {
   writeFileSync(path, `${JSON.stringify(value, null, 2)}\n`);
 }
 
+interface ViceResolutionsFile {
+  metadata?: { election_id?: string };
+  resolutions?: Array<{
+    replaced_vice_sq?: string;
+    vices?: Array<{ sq_candidato?: string; situacao_vice?: number }>;
+  }>;
+}
+
+/**
+ * SQ das vices que o DivulgaCandContas marca como substituídas (situacaoVice 3).
+ * O pacote consolidado do TSE mantém as duas alternativas com a mesma situação,
+ * então essa prova só existe nos artefatos versionados data/divulgacand-vices-*.json.
+ */
+function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): string[] {
+  let entries: string[];
+  try {
+    entries = readdirSync(dataDir);
+  } catch {
+    return [];
+  }
+  const files = entries
+    .filter((name) => /^divulgacand-vices-\d{8}\.json$/.test(name))
+    .sort();
+  const sqs = new Set<string>();
+  for (const name of files) {
+    const parsed = JSON.parse(
+      readFileSync(resolve(dataDir, name), "utf8"),
+    ) as ViceResolutionsFile;
+    if (parsed.metadata?.election_id && parsed.metadata.election_id !== ELECTION_ID_2026) {
+      throw new Error(`${name}: resoluções de vice pertencem a outra eleição`);
+    }
+    for (const resolution of parsed.resolutions ?? []) {
+      if (resolution.replaced_vice_sq) sqs.add(resolution.replaced_vice_sq);
+      for (const vice of resolution.vices ?? []) {
+        if (vice.situacao_vice === 3 && vice.sq_candidato) sqs.add(vice.sq_candidato);
+      }
+    }
+  }
+  return [...sqs];
+}
+
 function readCurrentOfficial(path: string): {
   records: OfficialCandidacy[];
   checkedAt: string | null;
@@ -247,6 +295,9 @@ function summaryMarkdown(input: {
         `- Fichas abaixo do gate de admissão: ${input.incompleteProfiles ?? 0}\n`) +
     (input.sourceError ? `- Erro da fonte: ${input.sourceError}\n` : "") +
     `\n## Diferenças de candidaturas\n\n| Classificação | Total |\n|---|---:|\n${changes}\n` +
+    ((input.changeCounts.substituted ?? 0) > 0
+      ? `\n- \`substituted\` é informativo: vice substituído conforme DivulgaCandContas, com a vice vigente já publicada. Não leva a auditoria a review_required.\n`
+      : "") +
     `\n## Atualidade por fonte\n\n| Estado | Total |\n|---|---:|\n${freshness}\n` +
     `\n${recommendationsMarkdown(input.recommendations)}`
   );
@@ -437,6 +488,7 @@ async function main(): Promise<void> {
     official,
     published.records,
     generatedAt,
+    { substitutedViceSqs: readSubstitutedViceSqs() },
   );
   const currentOfficialWithProfiles = attachPublishedProfiles(
     currentOfficial,
