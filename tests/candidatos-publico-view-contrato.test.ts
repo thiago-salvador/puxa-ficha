@@ -361,6 +361,13 @@ describe("contrato da view candidatos_publico", () => {
       // constraint, e índice não entra em definição de view: candidatos_publico
       // continua idêntica, na definição, nas colunas e nos grants.
       "20260903120000_drop_indices_sem_uso.sql",
+      // Nome de urna do vice de RN reancorado no pacote oficial atual do TSE:
+      // UPDATE de uma coluna em uma linha de chapas_2026, mais o recibo de
+      // pré-imagem em coleta_log. Não toca em candidatos nem redefine
+      // candidatos_publico. A view que expõe essa coluna é chapas_2026_publico,
+      // e a definição dela também fica intacta: muda o valor, não o contrato.
+      // Predecessor no ledger: 20260903120000.
+      "20260903130000_chapas_2026_hermano_nome_urna.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

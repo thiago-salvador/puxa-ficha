@@ -438,6 +438,13 @@
       "ate": "20260903100100",
       "allowlist": "scripts/audit/allowlist-vocabulario-situacao-20260816.json",
       "divida": null
+    },
+    {
+      "nome": "chapas-hermano-20260903",
+      "desde": "20260903130000",
+      "ate": "20260903130000",
+      "allowlist": "scripts/audit/allowlist-chapas-hermano-20260903.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
