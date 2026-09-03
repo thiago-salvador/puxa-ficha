@@ -47,11 +47,27 @@ function sameIdentity(a: CandidacyRecord, b: CandidacyRecord): boolean {
   )
 }
 
+export interface CompareCandidaciesOptions {
+  /**
+   * SQ_CANDIDATO das vices que o DivulgaCandContas marca como substituídas
+   * (situacaoVice 3). O pacote consolidado consulta_cand_2026.zip mantém as
+   * duas alternativas com a mesma situação, então a substituição só é
+   * comprovável por esse registro externo versionado.
+   */
+  substitutedViceSqs?: Iterable<string>
+}
+
+// Mudanças informativas entram no relatório e nas contagens, mas não levam a
+// auditoria a review_required: elas descrevem um estado já conferido.
+const INFORMATIVE_KINDS = new Set<CandidacyChangeKind>(["substituted"])
+
 export function compareCandidacies(
   officialInput: CandidacyRecord[],
   publishedInput: CandidacyRecord[],
   generatedAt = new Date().toISOString(),
+  options: CompareCandidaciesOptions = {},
 ): CandidacyComparison {
+  const substitutedViceSqs = new Set(options.substitutedViceSqs ?? [])
   const official = [...officialInput].sort(stableRecordSort)
   const published = [...publishedInput].sort(stableRecordSort)
   const officialBySq = new Map(
@@ -61,6 +77,11 @@ export function compareCandidacies(
     published.filter((record) => record.sq_candidato).map((record) => [record.sq_candidato, record]),
   )
   const officialBySlot = new Map(official.map((record) => [candidacySlot(record), record]))
+  const officialRecordsBySlot = new Map<string, CandidacyRecord[]>()
+  for (const record of official) {
+    const slot = candidacySlot(record)
+    officialRecordsBySlot.set(slot, [...(officialRecordsBySlot.get(slot) ?? []), record])
+  }
   const publishedBySlot = new Map(published.map((record) => [candidacySlot(record), record]))
   const changes: CandidacyChange[] = []
   const replacedOfficial = new Set<string>()
@@ -94,13 +115,33 @@ export function compareCandidacies(
         : undefined)
     if (!publishedRecord) {
       if (!replacedOfficial.has(officialRecord.sq_candidato)) {
-        addChange(changes, {
-          kind: "inclusion",
-          slot: candidacySlot(officialRecord),
-          official: officialRecord,
-          published: null,
-          detail: `${officialRecord.nome_urna} consta na fonte oficial e não no catálogo publicado`,
-        })
+        const slot = candidacySlot(officialRecord)
+        const vigente = (officialRecordsBySlot.get(slot) ?? []).find(
+          (candidate) => candidate.sq_candidato !== officialRecord.sq_candidato,
+        )
+        const publishedSlotRecord = publishedBySlot.get(slot)
+        if (
+          substitutedViceSqs.has(officialRecord.sq_candidato) &&
+          vigente &&
+          publishedSlotRecord &&
+          publishedSlotRecord.sq_candidato === vigente.sq_candidato
+        ) {
+          addChange(changes, {
+            kind: "substituted",
+            slot,
+            official: officialRecord,
+            published: publishedSlotRecord,
+            detail: `${officialRecord.nome_urna} é vice substituído conforme DivulgaCandContas; o catálogo publica ${vigente.nome_urna}`,
+          })
+        } else {
+          addChange(changes, {
+            kind: "inclusion",
+            slot,
+            official: officialRecord,
+            published: null,
+            detail: `${officialRecord.nome_urna} consta na fonte oficial e não no catálogo publicado`,
+          })
+        }
       }
       continue
     }
@@ -169,10 +210,12 @@ export function compareCandidacies(
     "status_change",
     "identity_mismatch",
     "missing_profile",
+    "substituted",
   ]
   const counts = Object.fromEntries(
     kinds.map((kind) => [kind, changes.filter((change) => change.kind === kind).length]),
   ) as Record<CandidacyChangeKind, number>
+  const blocking = changes.filter((change) => !INFORMATIVE_KINDS.has(change.kind))
 
   return {
     generated_at: generatedAt,
@@ -180,6 +223,6 @@ export function compareCandidacies(
     published_count: published.length,
     counts,
     changes,
-    status: changes.length === 0 ? "ok" : "review_required",
+    status: blocking.length === 0 ? "ok" : "review_required",
   }
 }

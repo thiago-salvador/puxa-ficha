@@ -47,6 +47,9 @@ export type CandidacyChangeKind =
   | "status_change"
   | "identity_mismatch"
   | "missing_profile"
+  // Informativo: vice substituída comprovada no DivulgaCandContas, com o
+  // catálogo já publicando a vice vigente. Não bloqueia a auditoria.
+  | "substituted"
 
 export interface CandidacyChange {
   kind: CandidacyChangeKind
