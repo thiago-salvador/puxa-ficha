@@ -377,6 +377,30 @@ describe("contrato da view candidatos_publico", () => {
       // `tse_situacao_vice_codigo` nem chegam a ser colunas dela.
       // Predecessor no ledger: 20260903130000.
       "20260903140000_chapas_2026_ma_vice_substituicao.sql",
+      // Âncora de identidade das duas fichas das ondas de agosto: UPDATE de
+      // `sq_candidato_2026` em duas linhas de candidatos, mais o recibo de
+      // pré-imagem em coleta_log. Toca em `candidatos`, mas em VALOR, não em
+      // definição: `sq_candidato_2026` é coluna interna e não entra em
+      // candidatos_publico nem no DTO público (mesmo motivo declarado em
+      // 20260817053000, que criou a coluna).
+      // Predecessor no ledger: 20260903140000.
+      "20260903200000_backfill_sq_candidato_ondas_agosto.sql",
+      // Alarga o CHECK `candidatos_situacao_candidatura_dominio` para os quatro
+      // estados de julgamento. É DDL em `candidatos`, e mesmo assim não redefine
+      // candidatos_publico: constraint não entra em definição de view, a lista de
+      // colunas não muda e nenhum valor é escrito. O que muda é o conjunto que a
+      // coluna passa a ACEITAR, e o espelho disso é
+      // `src/lib/situacao-candidatura.ts`, conferido em
+      // tests/situacao-candidatura-dominio.test.ts.
+      // Predecessor no ledger: 20260903200000.
+      "20260903210000_vocabulario_situacao_julgamento_publicado.sql",
+      // Despublicação lógica de 6 linhas de historico_politico e 2 de
+      // financiamento do homônimo na ficha alvaro-dias-rn, mais o recibo de
+      // pré-imagem. Não toca em `candidatos` e não redefine candidatos_publico.
+      // A view que passa a mostrar menos é `financiamento_publico`, que já
+      // filtra `despublicado_em IS NULL` na definição que ela tem hoje.
+      // Predecessor no ledger: 20260903210000.
+      "20260903220000_despublicar_alvaro_dias_rn_homonimo.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

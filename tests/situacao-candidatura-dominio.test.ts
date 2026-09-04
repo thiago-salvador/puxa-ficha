@@ -1,8 +1,12 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { readdirSync, readFileSync } from "node:fs"
 import { join } from "node:path"
 import { describe, it } from "node:test"
-import { SITUACAO_CANDIDATURA_DOMINIO } from "../src/lib/situacao-candidatura"
+import {
+  SITUACAO_CANDIDATURA_DOMINIO,
+  SITUACAO_JULGAMENTO_INDEFERIDO,
+  SITUACAO_JULGAMENTO_PUBLICADO,
+} from "../src/lib/situacao-candidatura"
 import { analyzePublishedConsistency, type PublishedRow } from "../src/lib/published-consistency"
 import { resolveCargoDisputadoProveniencia } from "../src/lib/candidatura-proveniencia"
 import { classificarMigration } from "../scripts/audit/lib/migrations-classificacao"
@@ -19,11 +23,33 @@ import { classificarMigration } from "../scripts/audit/lib/migrations-classifica
 const MIGRATIONS = join(process.cwd(), "supabase", "migrations")
 /** Par 1: so dado. Par 2: so schema. A separacao e exigida pelo gate de classificacao. */
 const DADOS = "20260903100000_vocabulario_situacao_candidatura.sql"
-const CHECK = "20260903100100_vocabulario_situacao_candidatura_check.sql"
 
 function sql(arquivo: string): string {
   return readFileSync(join(MIGRATIONS, arquivo), "utf8")
 }
+
+/**
+ * A migration MAIS RECENTE que instala o CHECK, resolvida por varredura em vez
+ * de constante.
+ *
+ * Por que nao um literal: a versao anterior deste arquivo apontava para
+ * 20260903100100 e so por isso ficava verde. Em 03/09/2026 a migration
+ * 20260903210000 alargou o dominio para os quatro estados de julgamento, e o
+ * teste seguiu comparando o TypeScript com o CHECK ANTIGO, que e exatamente a
+ * divergencia silenciosa que ele existe para impedir. Resolvendo pela maior
+ * versao, uma migration nova que mexa no dominio entra na comparacao sozinha, e
+ * quem esquecer o lado TypeScript reprova no CI.
+ */
+function arquivoDoCheckMaisRecente(): string {
+  const candidatos = readdirSync(MIGRATIONS)
+    .filter((f) => f.endsWith(".sql"))
+    .filter((f) => /ADD CONSTRAINT\s+candidatos_situacao_candidatura_dominio/.test(sql(f)))
+    .sort()
+  assert.ok(candidatos.length > 0, "nenhuma migration instala candidatos_situacao_candidatura_dominio")
+  return candidatos[candidatos.length - 1]
+}
+
+const CHECK = arquivoDoCheckMaisRecente()
 
 /** Statements sem comentario: a prosa do arquivo cita valores aposentados de proposito. */
 function statements(arquivo: string): string {
@@ -36,7 +62,9 @@ function statements(arquivo: string): string {
 /** Os literais do `CHECK (situacao_candidatura IN (...))`. */
 function dominioDoCheck(): string[] {
   const texto = statements(CHECK)
-  const inicio = texto.indexOf("ADD CONSTRAINT candidatos_situacao_candidatura_dominio")
+  const inicio = texto.indexOf("ADD CONSTRAINT\n    candidatos_situacao_candidatura_dominio") >= 0
+    ? texto.indexOf("ADD CONSTRAINT\n    candidatos_situacao_candidatura_dominio")
+    : texto.search(/ADD CONSTRAINT\s+candidatos_situacao_candidatura_dominio/)
   assert.notEqual(inicio, -1, "constraint nao encontrada na migration")
   const abre = texto.indexOf("IN (", inicio)
   assert.notEqual(abre, -1, "lista IN (...) do CHECK nao encontrada")
@@ -70,15 +98,45 @@ describe("dominio de situacao_candidatura", () => {
   })
 
   it("os valores aposentados nao voltam pelo CHECK", () => {
-    // 'deferido' entra so quando o TSE publicar julgamento de 2026, e 'pre-candidato'
-    // e valor de `status`, nao deste campo.
-    for (const morto of ["deferido", "deferido com recurso", "pre-candidato", "desistente"]) {
+    // 'pre-candidato' e valor de `status`, nao deste campo. 'APTO [2022]' e
+    // residuo de pleito antigo. 'renuncia', 'cassado' e 'falecido' sao estados
+    // que o TSE ainda nao emitiu para esta coorte: entram numa PR deliberada,
+    // com a mesma friccao que os quatro de julgamento tiveram, nao de carona.
+    for (const morto of ["pre-candidato", "desistente", "renuncia", "cassado", "falecido", "apto"]) {
       assert.equal(
         SITUACAO_CANDIDATURA_DOMINIO.includes(morto as never),
         false,
         `${morto} nao pode estar no dominio`,
       )
     }
+  })
+
+  it("os quatro estados de julgamento estao no dominio, e so eles", () => {
+    // Espelho de SITUACAO_JULGAMENTO_PUBLICADO. A regressao coberta: alguem
+    // acrescenta um quinto estado de julgamento ao CHECK e esquece do subconjunto
+    // que `candidatura-proveniencia.ts` consome para decidir o selo.
+    assert.deepEqual(
+      [...SITUACAO_JULGAMENTO_PUBLICADO],
+      ["deferido", "deferido com recurso", "indeferido", "indeferido com recurso"],
+    )
+    for (const estado of SITUACAO_JULGAMENTO_PUBLICADO) {
+      assert.ok(
+        SITUACAO_CANDIDATURA_DOMINIO.includes(estado),
+        `${estado} esta em SITUACAO_JULGAMENTO_PUBLICADO mas nao no dominio`,
+      )
+    }
+    for (const estado of SITUACAO_JULGAMENTO_INDEFERIDO) {
+      assert.ok(
+        SITUACAO_JULGAMENTO_PUBLICADO.includes(estado),
+        `${estado} esta em INDEFERIDO mas nao em PUBLICADO`,
+      )
+    }
+  })
+
+  it("o CHECK comparado e o da migration mais recente, nao o do par de 100100", () => {
+    // Guarda do proprio guard: se `arquivoDoCheckMaisRecente` voltar a apontar
+    // para o par original, esta comparacao morre em silencio de novo.
+    assert.equal(CHECK, "20260903210000_vocabulario_situacao_julgamento_publicado.sql")
   })
 
   it("nenhum valor do dominio dispara a regra de situacao stale", () => {
@@ -116,6 +174,50 @@ describe("dominio de situacao_candidatura", () => {
     assert.equal(
       resolveCargoDisputadoProveniencia({ status: "pre-candidato", situacao_candidatura: "incerto" }),
       "declaracao_editorial",
+    )
+  })
+
+  it("cada estado de julgamento produz um selo, e indeferido nao vira declaracao editorial", () => {
+    // A regressao concreta que este teste cobre: sem o ramo de julgamento,
+    // 'indeferido' cai no `return "declaracao_editorial"` do fim da funcao e a
+    // ficha de quem teve registro NEGADO passa a exibir "Candidatura declarada",
+    // apagando o pedido de registro que existiu.
+    const esperado: Record<string, string> = {
+      deferido: "registro_tse",
+      "deferido com recurso": "registro_tse",
+      indeferido: "registro_tse_indeferido",
+      "indeferido com recurso": "registro_tse_indeferido",
+    }
+    for (const estado of SITUACAO_JULGAMENTO_PUBLICADO) {
+      assert.equal(
+        resolveCargoDisputadoProveniencia({ status: "candidato", situacao_candidatura: estado }),
+        esperado[estado],
+        `selo errado para ${estado}`,
+      )
+    }
+  })
+
+  it("julgamento publicado vence snapshot de chapa que diz apenas #NE", () => {
+    // Sem esta precedencia, as 4 fichas indeferidas seguiriam exibindo "Pedido de
+    // registro no TSE", porque `chapas_2026.tse_situacao_codigo` e '#NE' em todas
+    // as linhas (medido em 03/09/2026) e o ramo da chapa rodava primeiro.
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "indeferido",
+        chapa_2026: { tse_situacao_codigo: "#NE", fonte_sha256: "qualquer" },
+      }),
+      "registro_tse_indeferido",
+    )
+    // Mas um snapshot que TRAGA julgamento proprio volta a mandar: a excecao vale
+    // so para codigo que nao afirma nada.
+    assert.equal(
+      resolveCargoDisputadoProveniencia({
+        status: "candidato",
+        situacao_candidatura: "indeferido",
+        chapa_2026: { tse_situacao_codigo: "2", fonte_sha256: "qualquer" },
+      }),
+      "registro_tse",
     )
   })
 

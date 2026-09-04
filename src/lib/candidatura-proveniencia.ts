@@ -18,12 +18,17 @@
  */
 
 import { stripAccents } from "@/lib/strip-accents"
+import {
+  SITUACAO_JULGAMENTO_INDEFERIDO,
+  SITUACAO_JULGAMENTO_PUBLICADO,
+} from "@/lib/situacao-candidatura"
 
 export type CargoDisputadoProveniencia =
   | "declaracao_editorial"
   | "registro_tse_pendente"
   | "registro_tse_situacao_nao_informada"
   | "registro_tse"
+  | "registro_tse_indeferido"
 
 /**
  * Tokens de `status`/`situacao_candidatura` que significam candidatura ja
@@ -38,6 +43,21 @@ const TOKENS_REGISTRO_TSE: ReadonlySet<string> = new Set([
   "deferido com recurso",
   "apto",
 ])
+
+/**
+ * Julgamento publicado, os quatro estados que o TSE so emite depois de decidir o
+ * pedido de registro. Espelha `SITUACAO_JULGAMENTO_PUBLICADO`, e existe aqui
+ * como Set para a comparacao ser exata: `deferido` nao pode casar dentro de
+ * `indeferido`, que e o modo de falha obvio de fazer isto com `includes`.
+ */
+const TOKENS_JULGAMENTO: ReadonlySet<string> = new Set(SITUACAO_JULGAMENTO_PUBLICADO)
+const TOKENS_JULGAMENTO_INDEFERIDO: ReadonlySet<string> = new Set(SITUACAO_JULGAMENTO_INDEFERIDO)
+
+/**
+ * Codigos de `chapas_2026.tse_situacao_codigo` que NAO carregam julgamento.
+ * Hoje o snapshot inteiro e `#NE` ("nao informado"), medido em 03/09/2026.
+ */
+const CHAPA_SEM_JULGAMENTO: ReadonlySet<string> = new Set(["#NE", "#NE#", "#NULO#", ""])
 
 const CHAPAS_POS_REGISTRO_SHA256 =
   "c3d13ae50f95024f43046acb4458a4420a620e86526fed665f9e60c8dc6068df"
@@ -61,6 +81,25 @@ export function resolveCargoDisputadoProveniencia(
 ): CargoDisputadoProveniencia {
   if (!input) return "declaracao_editorial"
 
+  const status = normalizeToken(input.status)
+  const situacao = normalizeToken(input.situacao_candidatura)
+
+  // Julgamento publicado vence snapshot de chapa, e por isso e conferido ANTES
+  // do ramo de `chapa_2026`. O motivo e de ordem de precisao, nao de gosto: o
+  // codigo do snapshot vale `#NE`, que significa literalmente "situacao nao
+  // informada", enquanto `situacao_candidatura` carrega a decisao que o TSE ja
+  // publicou em `DS_SITUACAO_JULGAMENTO`. Deixar o `#NE` mandar faria as 4
+  // fichas com registro INDEFERIDO exibirem "Pedido de registro no TSE", que e
+  // a afirmacao vencida que a migration 20260903210000 existe para corrigir.
+  // Se um dia o snapshot passar a trazer codigo de julgamento proprio, ele
+  // volta a mandar: a excecao e so para codigo que nao afirma nada.
+  const chapaSemJulgamento =
+    !input.chapa_2026 ||
+    CHAPA_SEM_JULGAMENTO.has(input.chapa_2026.tse_situacao_codigo ?? "")
+  if (chapaSemJulgamento && TOKENS_JULGAMENTO.has(situacao)) {
+    return TOKENS_JULGAMENTO_INDEFERIDO.has(situacao) ? "registro_tse_indeferido" : "registro_tse"
+  }
+
   // A view de chapas só devolve a linha para quem foi vinculado por UUID como
   // titular ou vice. Portanto sua presença é prova mais forte e mais recente
   // do que os rótulos editoriais legados em `candidatos`.
@@ -72,9 +111,6 @@ export function resolveCargoDisputadoProveniencia(
       ? "registro_tse_situacao_nao_informada"
       : "registro_tse"
   }
-
-  const status = normalizeToken(input.status)
-  const situacao = normalizeToken(input.situacao_candidatura)
 
   if (situacao.includes("situacao nao informada")) {
     return "registro_tse_situacao_nao_informada"
@@ -100,6 +136,7 @@ const CARGO_DISPUTADO_PROVENIENCIA_LABEL: Record<CargoDisputadoProveniencia, str
   registro_tse_pendente: "Pedido de registro no TSE",
   registro_tse_situacao_nao_informada: "Pedido de registro no TSE",
   registro_tse: "Candidatura registrada no TSE",
+  registro_tse_indeferido: "Registro indeferido pelo TSE",
 }
 
 /** Frase completa, para tooltip, aria-label e payload da API. */
@@ -111,6 +148,8 @@ const CARGO_DISPUTADO_PROVENIENCIA_NOTA: Record<CargoDisputadoProveniencia, stri
   registro_tse_situacao_nao_informada:
     "O pedido de registro consta no snapshot do TSE, mas a situação ainda não foi informada. Isso não equivale a candidatura deferida nem a julgamento pendente.",
   registro_tse: "Candidatura registrada no TSE.",
+  registro_tse_indeferido:
+    "O pedido de registro consta no TSE e foi indeferido. Indeferimento não equivale a estar fora da urna: o TSE pode seguir classificando a candidatura como concorrendo enquanto couber recurso.",
 }
 
 export function buildCargoDisputadoProvenienceLabel(

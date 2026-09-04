@@ -452,6 +452,20 @@
       "ate": "20260903140000",
       "allowlist": "scripts/audit/allowlist-chapas-ma-vice-20260903.json",
       "divida": null
+    },
+    {
+      "nome": "sq-ondas-agosto-20260903",
+      "desde": "20260903200000",
+      "ate": "20260903200000",
+      "allowlist": "scripts/audit/allowlist-sq-ondas-agosto-20260903.json",
+      "divida": null
+    },
+    {
+      "nome": "alvaro-dias-rn-homonimo-20260903",
+      "desde": "20260903220000",
+      "ate": "20260903220000",
+      "allowlist": "scripts/audit/allowlist-alvaro-dias-rn-homonimo-20260903.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

@@ -1,0 +1,49 @@
+{
+  "_comentario": "Autoriza somente o preenchimento de sq_candidato_2026 nas duas fichas publicaveis que estao no ar sem ancora eleitoral. Nenhuma outra coluna, nenhuma outra ficha.",
+  "recorte": "sq-ondas-agosto-20260903",
+  "migration": "20260903200000_backfill_sq_candidato_ondas_agosto.sql",
+  "fonte": "Pacote oficial consulta_cand_2026 do TSE (arquivos consulta_cand_2026_PA.csv e consulta_cand_2026_DF.csv), lido em 03/09/2026: SQ 140002554108 = WELLINGTA JOSYANE SIQUEIRA MACEDO, urna WELL MACEDO, GOVERNADOR/PA, PSTU, nascimento 23/03/1980; SQ 70002553982 = ALDERICO DA SILVA PINHEIRO FILHO, urna RICO PINHEIRO, GOVERNADOR/DF, PRTB, nascimento 16/02/1980. Nome completo, nome de urna, cargo, UF e data de nascimento batem com o que a ficha ja publica. Corroborado por data/candidate-roster-active-20260829.json (canonical_registration_sq) e por chapas_2026 (titular_sq_candidato). Levantamento completo em docs/reviews/2026-09-03-revisao-informacoes-fichas.md.",
+  "coorte": [
+    "well-macedo",
+    "rico-pinheiro"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "well-macedo",
+      "campos": [
+        "sq_candidato_2026"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rico-pinheiro",
+      "campos": [
+        "sq_candidato_2026"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260903200000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}
