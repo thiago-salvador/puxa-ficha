@@ -6,6 +6,7 @@ import {
   type Page,
 } from "playwright"
 import { establishAutomationBypass } from "./vercel-automation-bypass"
+import { COMPARADOR_ADICIONAR_PATTERN } from "@/lib/comparador-labels"
 
 export { automationBypassHeaders } from "./vercel-automation-bypass"
 
@@ -372,8 +373,8 @@ async function checkComparator(context: BrowserContext): Promise<number> {
     await rows.first().waitFor({ state: "visible" })
     invariant(await rows.count() >= 2, "comparador tem menos de dois candidatos")
 
-    await rows.nth(0).getByRole("button", { name: /^Adicionar .* da comparação$/i }).click()
-    await rows.nth(1).getByRole("button", { name: /^Adicionar .* da comparação$/i }).click()
+    await rows.nth(0).getByRole("button", { name: COMPARADOR_ADICIONAR_PATTERN }).click()
+    await rows.nth(1).getByRole("button", { name: COMPARADOR_ADICIONAR_PATTERN }).click()
     const comparison = page.locator('[data-pf-comparacao-root][data-pf-comparacao-count="2"]')
     await comparison.waitFor({ state: "visible" })
     const compared = await comparison.locator("[data-pf-comparacao-candidato]").count()

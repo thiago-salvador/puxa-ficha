@@ -27,6 +27,7 @@ import {
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
+import { comparadorToggleLabel } from "@/lib/comparador-labels"
 import type { CandidatoComparavel } from "@/lib/types"
 import {
   COMPARADOR_EIXO_DEFAULT,
@@ -262,9 +263,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 type="button"
                 onClick={() => toggle(candidato.id)}
                 aria-pressed={selected}
-                aria-label={`${selected
-                  ? `Remover ${candidato.nome_urna} da comparação`
-                  : `Adicionar ${candidato.nome_urna} à comparação`}. ${
+                aria-label={`${comparadorToggleLabel(candidato.nome_urna, selected)}. ${
                   candidato.idade ? `${candidato.idade} anos, ` : ""
                 }${processosResumoLabel(candidato.total_processos)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
@@ -391,11 +390,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           type="button"
                           onClick={() => toggle(candidato.id)}
                           aria-pressed={selected}
-                          aria-label={
-                            selected
-                              ? `Remover ${candidato.nome_urna} da comparação`
-                              : `Adicionar ${candidato.nome_urna} à comparação`
-                          }
+                          aria-label={comparadorToggleLabel(candidato.nome_urna, selected)}
                           className={`flex size-8 items-center justify-center rounded border transition-colors ${
                             selected
                               ? "border-foreground bg-foreground text-background"
