@@ -3,6 +3,7 @@ import { createHash } from "node:crypto"
 import textoResidualLegado from "../data/programas-governo/texto-residual-legado-2026-09-02.json"
 
 const PROGRAMA_GOVERNO_ESTADOS_CANONICOS = [
+  "documento_anunciado",
   "em_revisao",
   "sem_documento_oficial",
   "falha_de_extracao",
@@ -163,10 +164,23 @@ type ProgramaGovernoRevisao = {
   contentSha256?: string
 }
 
+/** Recibo de metadados do DivulgaCand. Nenhum hash aqui representa bytes do PDF. */
+export type ProgramaGovernoAnuncio = {
+  fonteUrl: string
+  idArquivo: string
+  nomeArquivo: string
+  codTipo: "5"
+  consultadoEm: string
+  payloadSha256: string
+  evidenciaUrl: string
+  metadadosSha256: string
+}
+
 export type ProgramaGovernoRegistro = {
   version: 1
   estado: ProgramaGovernoEstado
   fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento
+  anuncio?: ProgramaGovernoAnuncio
   extracao?: ProgramaGovernoExtracao
   documentos?: ProgramaGovernoDocumento[]
   resumo?: ProgramaGovernoResumo
@@ -210,6 +224,7 @@ export type ProgramaGovernoDocumentoPublico = {
 export type ProgramaGovernoManifestoPublico = {
   estado: ProgramaGovernoEstado
   fonte: ProgramaGovernoFontePublica
+  anuncio?: ProgramaGovernoAnuncio
   resumo?: ProgramaGovernoResumo
   paginas?: number
   documentos?: ProgramaGovernoDocumentoPublico[]
@@ -229,6 +244,7 @@ export type ProgramaGovernoApiResponse = {
   data: ProgramaGovernoPublico | null
   estado: ProgramaGovernoEstado
   fonte: ProgramaGovernoFontePublica
+  anuncio?: ProgramaGovernoAnuncio
   chunk?: ProgramaGovernoChunkPublico
 }
 
@@ -629,6 +645,44 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
   const estadoCanonico = normalizarProgramaGovernoEstado(estado)
   const fonteRegistro = record.fonte as ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento
   const sourceHasDocument = fonteTemDocumento(fonteRegistro)
+  if (estadoCanonico === "documento_anunciado") {
+    for (const key of Object.keys(record)) {
+      if (!["version", "estado", "fonte", "anuncio"].includes(key)) {
+        fail(`registro.${key}`, "anuncio nao publica conteudo nem revisao")
+      }
+    }
+    if (sourceHasDocument || fonteRegistro.pdfOriginalUrl !== null) {
+      fail("registro.fonte", "anuncio nao comprova PDF nem arquivo dentro do pacote")
+    }
+    const anuncio = objectAt(record.anuncio, "registro.anuncio")
+    for (const key of Object.keys(anuncio)) {
+      if (!["fonteUrl", "idArquivo", "nomeArquivo", "codTipo", "consultadoEm", "payloadSha256", "evidenciaUrl", "metadadosSha256"].includes(key)) {
+        fail(`registro.anuncio.${key}`, "campo nao pertence ao recibo de metadados")
+      }
+    }
+    const fonteUrl = stringAt(anuncio.fonteUrl, "registro.anuncio.fonteUrl")
+    const expectedUrl = `https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/${fonteRegistro.ano}/${fonteRegistro.uf}/20322002026/candidato/${fonteRegistro.sqCandidato}`
+    if (fonteUrl !== expectedUrl) fail("registro.anuncio.fonteUrl", "deve identificar a mesma candidatura no TSE")
+    const idArquivo = stringAt(anuncio.idArquivo, "registro.anuncio.idArquivo")
+    if (!/^\d{11,15}$/.test(idArquivo)) fail("registro.anuncio.idArquivo", "ID de arquivo invalido")
+    const nomeArquivo = stringAt(anuncio.nomeArquivo, "registro.anuncio.nomeArquivo")
+    if (!/\.pdf$/i.test(nomeArquivo)) fail("registro.anuncio.nomeArquivo", "deve identificar o PDF anunciado")
+    if (anuncio.codTipo !== "5") fail("registro.anuncio.codTipo", "deve ser programa de governo")
+    const consultadoEm = isoDateAt(anuncio.consultadoEm, "registro.anuncio.consultadoEm")
+    if (consultadoEm !== fonteRegistro.coletadoEm) fail("registro.anuncio.consultadoEm", "deve corresponder a consulta da fonte")
+    const payloadSha256 = stringAt(anuncio.payloadSha256, "registro.anuncio.payloadSha256")
+    if (!SHA256_PATTERN.test(payloadSha256)) fail("registro.anuncio.payloadSha256", "SHA-256 invalido")
+    const evidenciaUrl = stringAt(anuncio.evidenciaUrl, "registro.anuncio.evidenciaUrl")
+    if (!/^https:\/\/github\.com\/thiago-salvador\/puxa-ficha\/actions\/runs\/\d+$/.test(evidenciaUrl)) {
+      fail("registro.anuncio.evidenciaUrl", "deve identificar a execucao que preservou a resposta")
+    }
+    const metadadosSha256 = createHash("sha256").update(JSON.stringify({
+      fonteUrl, idArquivo, nomeArquivo, codTipo: "5", consultadoEm, payloadSha256, evidenciaUrl,
+    })).digest("hex")
+    if (anuncio.metadadosSha256 !== metadadosSha256) fail("registro.anuncio.metadadosSha256", "recibo adulterado")
+    return
+  }
+  if (record.anuncio !== undefined) fail("registro.anuncio", "exige estado documento_anunciado")
   if (
     estadoCanonico === "sem_documento_oficial"
     || estadoCanonico === "falha_de_extracao"
@@ -894,7 +948,7 @@ export function toProgramaGovernoManifestoPublico(value: unknown): ProgramaGover
     || !value.resumo
     || !value.revisao
   ) {
-    return { estado: value.estado, fonte, ...(documentos ? { documentos } : {}) }
+    return { estado: value.estado, fonte, ...(value.anuncio ? { anuncio: value.anuncio } : {}), ...(documentos ? { documentos } : {}) }
   }
   return {
     estado: "aprovado",

@@ -6,6 +6,7 @@ import { pathToFileURL } from "node:url";
 import {
   RECIBOS_AUSENCIA_SQS,
   RECIBOS_AUSENCIA_SUPERADOS_SQS,
+  RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS,
   RECIBOS_AUSENCIA_VIGENTES_SQS,
 } from "../lib/programas-governo-recibos-ausencia";
 
@@ -121,7 +122,8 @@ export function buildProgramAbsencePublicRecords(
   const candidateBySq = new Map(inventory.candidaturas.map((candidate) => [String(candidate.sqCandidato), candidate]));
   const packageByUf = new Map(inventory.pacotes.map((entry) => [entry.uf, entry.pacoteUrl]));
   return receiptSet.receipts.filter(
-    (receipt) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato),
+    (receipt) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato)
+      && !RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS.has(receipt.sq_candidato),
   ).map((receipt) => {
     const candidate = candidateBySq.get(receipt.sq_candidato);
     if (!candidate || candidate.slug !== receipt.profile_slug

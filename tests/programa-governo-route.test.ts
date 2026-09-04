@@ -64,6 +64,23 @@ test("servidor publica conteúdo somente depois da aprovação", async () => {
   assert.doesNotMatch(serialized, /julgamento|geracao|promptVersion|reviewer/)
 })
 
+test("rota de Ben entrega anúncio auditável sem conteúdo nem PDF presumido", async () => {
+  const record = require("../src/data/programas-governo/governadores-2026/ben-mendes.json") as ProgramaGovernoRegistro
+  const resource = await getProgramaGovernoPublicResource("ben-mendes", async () => record)
+  const handler = createProgramaGovernoGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({ namespace: "programa-route-anuncio", max: 5, windowMs: 60_000 }),
+    getProgramaGovernoPublicResource: async () => resource,
+  })
+  const response = await handler(request("ben-mendes"), params("ben-mendes"))
+  const body = await response.json()
+  assert.equal(response.status, 200)
+  assert.equal(body.estado, "documento_anunciado")
+  assert.equal(body.data, null)
+  assert.equal(body.fonte.pdfOriginalUrl, null)
+  assert.deepEqual(body.anuncio, record.anuncio)
+  assert.doesNotMatch(JSON.stringify(body), /"resumo"|"extracao"|"revisao"|"documentos"/)
+})
+
 test("rota retorna o DTO aprovado e remove campos editoriais", async () => {
   const resource = await getProgramaGovernoPublicResource("lula", async () => approvedRecord())
   const handler = createProgramaGovernoGetHandler({
@@ -116,8 +133,8 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
   }
 })
 
-test("três candidaturas sem codTipo 5 retornam estado explícito, não 404", async () => {
-  for (const slug of ["ben-mendes", "garotinho", "policial-edjane"]) {
+test("duas candidaturas ainda sem codTipo 5 retornam estado explícito, não 404", async () => {
+  for (const slug of ["garotinho", "policial-edjane"]) {
     const resource = await getProgramaGovernoPublicResource(slug)
     assert.equal(resource.known, true, slug)
     if (!resource.known) continue

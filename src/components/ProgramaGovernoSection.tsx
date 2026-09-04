@@ -121,6 +121,10 @@ function SourceLink({ fonte }: { fonte: ProgramaGovernoLinkFonte }) {
 }
 
 const STATE_COPY: Record<ProgramaGovernoEstado, { title: string; description: string }> = {
+  documento_anunciado: {
+    title: "Documento anunciado pelo TSE",
+    description: "O TSE lista um programa de governo para esta candidatura. O download e a leitura do PDF ainda não foram confirmados. Resumo pendente.",
+  },
   em_revisao: {
     title: "Conteúdo em revisão editorial",
     description: "O texto e o resumo só serão publicados após revisão humana.",
@@ -254,7 +258,19 @@ function ProgramStateNotice({ manifesto }: { manifesto: ProgramaGovernoManifesto
           {consultedAt ? `, em ${formatDate(consultedAt)}` : ""}.
         </p>
       </div>
-      <SourceLink fonte={manifesto.fonte} />
+      {manifesto.estado === "documento_anunciado" && manifesto.anuncio ? (
+        <a
+          href={manifesto.anuncio.fonteUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex min-h-11 items-center gap-2 rounded-[8px] border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+          data-pf-programa-source="anuncio-tse"
+        >
+          <ExternalLink className="size-4" aria-hidden="true" />
+          Ver registro da candidatura no TSE
+          <span className="sr-only">, dados em JSON, abre em nova aba</span>
+        </a>
+      ) : <SourceLink fonte={manifesto.fonte} />}
       {hasLocatedDocument && !manifesto.fonte.pdfOriginalUrl && (
         <p className="text-xs leading-5 text-muted-foreground">
           O TSE disponibiliza este documento no arquivo {manifesto.fonte.arquivoNome}, dentro do pacote oficial.
@@ -883,7 +899,7 @@ export function ProgramaGovernoTab({
     return (
       <section className="rounded-[12px] border border-border bg-card p-6" aria-labelledby="programa-tab-state-title">
         <h2 id="programa-tab-state-title" className="sr-only">Estado do programa de governo</h2>
-        <ProgramStateNotice manifesto={{ ...manifesto, estado: response?.estado ?? manifesto.estado, fonte: response?.fonte ?? manifesto.fonte }} />
+        <ProgramStateNotice manifesto={{ ...manifesto, estado: response?.estado ?? manifesto.estado, fonte: response?.fonte ?? manifesto.fonte, anuncio: response?.anuncio ?? manifesto.anuncio }} />
       </section>
     )
   }

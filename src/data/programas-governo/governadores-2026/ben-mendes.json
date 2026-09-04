@@ -1,6 +1,16 @@
 {
   "version": 1,
-  "estado": "sem_documento_oficial",
+  "estado": "documento_anunciado",
+  "anuncio": {
+    "fonteUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544411",
+    "idArquivo": "130017139584",
+    "nomeArquivo": "pje-0601954-55.2026.6.13.0000 Plano de Governo.pdf",
+    "codTipo": "5",
+    "consultadoEm": "2026-09-04T15:06:05.782Z",
+    "payloadSha256": "6f8138d36cb5093f612d37bf3c8aafd0e5871a21fe2ee5b6e1ec66895bfaee8c",
+    "evidenciaUrl": "https://github.com/thiago-salvador/puxa-ficha/actions/runs/33887424607",
+    "metadadosSha256": "5bc8b0f39bb96a572e3cdc62a2c853621c0b1010667f05768b7da6753dbb4920"
+  },
   "fonte": {
     "ano": 2026,
     "cargo": "GOVERNADOR",
@@ -14,6 +24,6 @@
     "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
     "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
     "pdfOriginalUrl": null,
-    "coletadoEm": "2026-08-30T19:05:42.546Z"
+    "coletadoEm": "2026-09-04T15:06:05.782Z"
   }
 }

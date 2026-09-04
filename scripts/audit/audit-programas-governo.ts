@@ -151,7 +151,7 @@ export function auditProgramaGovernoRecordSet(
     seenSlugs.add(slug)
 
     const state = normalizarProgramaGovernoEstado(record.estado as ProgramaGovernoRegistro["estado"])
-    if (state === "sem_documento_oficial" || state === "falha_de_extracao" || state === "perfil_local_ausente") {
+    if (state === "documento_anunciado" || state === "sem_documento_oficial" || state === "falha_de_extracao" || state === "perfil_local_ausente") {
       assertProgramaGovernoRegistro(record)
       continue
     }
@@ -201,7 +201,7 @@ export function auditProgramaGovernoRecordSet(
     absent: stateCount("sem_documento_oficial"),
     extractionFailed: stateCount("falha_de_extracao"),
     missingProfile: stateCount("perfil_local_ausente") + sources.filter((source) => source.slug === null).length,
-    reviewPending: stateCount("em_revisao"),
+    reviewPending: stateCount("em_revisao") + stateCount("documento_anunciado"),
     approved: stateCount("aprovado"),
     pages,
     sections,

@@ -7,7 +7,7 @@ import {
   toProgramaGovernoPublico,
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
-import { RECIBOS_AUSENCIA_SUPERADOS_SQS } from "../scripts/lib/programas-governo-recibos-ausencia"
+import { RECIBOS_AUSENCIA_SUPERADOS_SQS, RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS } from "../scripts/lib/programas-governo-recibos-ausencia"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -34,6 +34,7 @@ const governorAbsenceReceipt = require("../QA/evidencias/2026-08-30-programas-au
 // documento: a candidatura passou a ter programa aprovado.
 const governorAbsenceSlugs = governorAbsenceReceipt.receipts
   .filter(({ sq_candidato }) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(sq_candidato))
+  .filter(({ sq_candidato }) => !RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS.has(sq_candidato))
   .map(({ profile_slug }) => profile_slug)
 
 async function loadPresidentialCohort(): Promise<ProgramaGovernoRegistro[]> {
@@ -101,7 +102,10 @@ test("server-only manifest retains approved records and explicit official absenc
     .filter((slug): slug is string => Boolean(slug))
     .sort()
   const absenceSlugs = [...governorAbsenceSlugs].sort()
-  const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs].sort()
+  const announcedSlugs = governorAbsenceReceipt.receipts
+    .filter(({ sq_candidato }) => RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS.has(sq_candidato))
+    .map(({ profile_slug }) => profile_slug)
+  const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs, ...announcedSlugs].sort()
   const expectedTotal = 13 + publicGovernorSlugs.length
   assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, expectedTotal)
@@ -126,6 +130,13 @@ test("server-only manifest retains approved records and explicit official absenc
 })
 
 test("manifest publishes approved content and receipt-backed absence without inventing documents", async () => {
+  const announced = await programaModule.programasGoverno2026Manifesto.loadBySlug("ben-mendes")
+  assert.equal(announced?.estado, "documento_anunciado")
+  assert.equal(announced?.anuncio?.idArquivo, "130017139584")
+  assert.equal(announced?.documentos, undefined)
+  assert.equal(announced?.resumo, undefined)
+  assert.throws(() => toProgramaGovernoPublico(announced), /somente registros aprovados/)
+  assert.deepEqual(programaModule.programasGoverno2026Manifesto.getBySlug("ben-mendes")?.manifesto, toProgramaGovernoManifestoPublico(announced))
   const approved = await programaModule.programasGoverno2026Manifesto.loadBySlug("acm-neto")
   assert.equal(approved?.estado, "aprovado")
   assert.equal(approved?.fonte.cargo, "GOVERNADOR")

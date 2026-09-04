@@ -116,6 +116,7 @@ export function createProgramaGovernoGetHandler(
         data: resource.data,
         estado: resource.manifesto.estado,
         fonte: resource.manifesto.fonte,
+        ...(resource.manifesto.anuncio ? { anuncio: resource.manifesto.anuncio } : {}),
       },
       { headers: { "cache-control": PUBLIC_CACHE } },
     )
