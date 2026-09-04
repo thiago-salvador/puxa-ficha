@@ -15,6 +15,14 @@ import {
   type ResolveResult,
 } from "./tse-resolver"
 import { downloadToFile } from "./download-to-file"
+import {
+  COLUNAS_JULGAMENTO,
+  censoPorDescricao,
+  indexarJulgamentoPorSq,
+  mapearJulgamento,
+  type JulgamentoTse,
+} from "./tse-situacao-julgamento"
+import { registrarColeta, type EntradaColeta } from "./coleta-log"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
 const AUDIT_PATH = resolve(process.cwd(), "scripts/tse-situacao-audit.json")
@@ -24,7 +32,13 @@ const AUDIT_PATH = resolve(process.cwd(), "scripts/tse-situacao-audit.json")
 // (2022, 2020, 2024 municipal) nao tocam o campo, porque a convencao editorial
 // da coorte 2026 usa situacao_candidatura como estado do pleito corrente
 // (pre-candidato/incerto/APTO [2026]), nao historico.
-const PLEITO_CORRENTE = 2026
+export const PLEITO_CORRENTE = 2026
+
+// Pacote irmao do consulta_cand, mesmo conjunto de dados abertos. E onde vive
+// `DS_SITUACAO_JULGAMENTO`; o consulta_cand traz `#NE` em todas as linhas de
+// 2026 e por isso nao sustenta nenhum estado de julgamento.
+const COMPLEMENTAR_URL = (ano: number) =>
+  `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_${ano}.zip`
 
 // Tenta anos em ordem decrescente. 2026 ainda nao existe (campanha formal comeca em agosto/2026).
 // 2022 tem todos os candidatos nacionais (presidente, governadores, senadores, deputados).
@@ -126,6 +140,10 @@ export interface MatchedData {
   cor_raca: string
   ocupacao: string
   email: string
+  /** SQ_CANDIDATO da linha que casou. Chave do cruzamento com o complementar. */
+  sq_candidato: string
+  /** Julgamento do pedido de registro, quando o pacote complementar do pleito corrente traz. */
+  julgamento?: JulgamentoTse | null
 }
 
 interface IngestTSESituacaoOptions {
@@ -293,7 +311,23 @@ export function buildIngestPayload(
       blockedReasons.push(`situacao-fora-do-vocabulario:${codigo}${info.detalhe ? ` (${info.detalhe})` : ""}`)
     } else if (info.match_method !== "sq-preloaded") {
       blockedReasons.push(`situacao-match-fraco:${info.match_method}`)
+    } else if (info.julgamento) {
+      // 04/09/2026: o julgamento do pacote complementar VENCE o `#NE` do
+      // consulta_cand. Nao e preferencia, e especificidade: `#NE` significa
+      // literalmente "nao informado", enquanto `DS_SITUACAO_JULGAMENTO` carrega
+      // a decisao que o TSE ja publicou. A exigencia de `sq-preloaded` acima
+      // continua valendo e e o que autoriza cruzar os dois pacotes: os dois sao
+      // indexados por SQ_CANDIDATO, e nome nunca basta para dizer que duas
+      // linhas sao a mesma pessoa.
+      const mapeado = mapearJulgamento(info.julgamento)
+      if (!mapeado.ok) {
+        blockedReasons.push(mapeado.bloqueio)
+      } else if (before?.situacao_candidatura !== mapeado.valor) {
+        payload.situacao_candidatura = mapeado.valor
+      }
     } else if (before?.situacao_candidatura !== "aguardando julgamento") {
+      // Sem julgamento no pacote, o unico fato sustentado segue sendo o pedido
+      // de registro protocolado.
       payload.situacao_candidatura = "aguardando julgamento"
     }
   }
@@ -418,6 +452,8 @@ async function processAno(
         cor_raca: row.DS_COR_RACA || existing?.cor_raca || "",
         ocupacao: row.DS_OCUPACAO || existing?.ocupacao || "",
         email: cleanEmail(row.DS_EMAIL || "") || existing?.email || "",
+        sq_candidato: (row.SQ_CANDIDATO || "").trim() || existing?.sq_candidato || "",
+        julgamento: existing?.julgamento ?? null,
       })
     })
   }
@@ -438,6 +474,55 @@ async function processAno(
   }
 
   return { matched: existingMatches, success: true }
+}
+
+/**
+ * Baixa o pacote complementar do pleito e indexa o julgamento por SQ_CANDIDATO.
+ *
+ * Devolve `null` quando o download falha, e nesse caso o ingest segue sem tocar
+ * em `situacao_candidatura`: a ausencia da fonte nao pode virar afirmacao. Ja um
+ * pacote que chega SEM as colunas esperadas faz `indexarJulgamentoPorSq` lancar,
+ * de proposito, porque aquilo e o pacote ter mudado de formato e nao a fonte
+ * estar fora do ar.
+ */
+export async function carregarJulgamentoPorSq(ano: number): Promise<Map<string, JulgamentoTse> | null> {
+  // O diretorio e criado aqui, e nao herdado do chamador: a reconciliacao chama
+  // este leitor sem passar por `ingestTSESituacao`, e sem isto o download falha
+  // com ENOENT. Achado rodando a reconciliacao de verdade, nao lendo o codigo.
+  mkdirSync(DATA_DIR, { recursive: true })
+  const zipPath = resolve(DATA_DIR, `consulta_cand_complementar_${ano}.zip`)
+  const extractDir = resolve(DATA_DIR, `consulta_cand_complementar_${ano}`)
+
+  const ok = await downloadFile(COMPLEMENTAR_URL(ano), zipPath)
+  if (!ok) {
+    warn("tse-situacao", `  complementar ${ano}: download falhou; situacao_candidatura nao sera tocada`)
+    return null
+  }
+
+  try {
+    extractZip(zipPath, extractDir)
+    const csvPaths = findAllCSVs(extractDir)
+    if (csvPaths.length === 0) {
+      warn("tse-situacao", `  complementar ${ano}: ZIP sem CSV`)
+      return null
+    }
+    const porSq = new Map<string, JulgamentoTse>()
+    for (const csvPath of csvPaths) {
+      const linhas: Record<string, string | undefined>[] = []
+      let cabecalho: string[] = []
+      await parseCSV(csvPath, (row) => {
+        if (cabecalho.length === 0) cabecalho = Object.keys(row)
+        linhas.push(row as Record<string, string | undefined>)
+      })
+      if (linhas.length === 0) continue
+      for (const [sq, j] of indexarJulgamentoPorSq(linhas, cabecalho)) porSq.set(sq, j)
+    }
+    log("tse-situacao", `  complementar ${ano}: ${porSq.size} SQ com julgamento`)
+    return porSq
+  } finally {
+    cleanupDir(extractDir)
+    cleanupFile(zipPath)
+  }
 }
 
 export async function ingestTSESituacao(
@@ -465,6 +550,32 @@ export async function ingestTSESituacao(
   }
 
   log("tse-situacao", `Total encontrado: ${matched.size} candidatos`)
+
+  // Julgamento do pleito corrente, cruzado por SQ. Roda uma vez para a coorte
+  // inteira, nao por candidato: o pacote e um arquivo so.
+  let censoJulgamento: Record<string, number> = {}
+  let comJulgamento = 0
+  let semSqParaCruzar = 0
+  const julgamentoPorSq = await carregarJulgamentoPorSq(PLEITO_CORRENTE)
+  if (julgamentoPorSq) {
+    censoJulgamento = censoPorDescricao(julgamentoPorSq)
+    for (const info of matched.values()) {
+      if (info.ano !== PLEITO_CORRENTE) continue
+      if (!info.sq_candidato) {
+        semSqParaCruzar++
+        continue
+      }
+      const j = julgamentoPorSq.get(info.sq_candidato)
+      if (j) {
+        info.julgamento = j
+        comJulgamento++
+      }
+    }
+    log(
+      "tse-situacao",
+      `  julgamento cruzado por SQ: ${comJulgamento} ficha(s); ${semSqParaCruzar} sem SQ para cruzar`,
+    )
+  }
 
   // Candidatos sem match em nenhum ano
   for (const cand of candidatos) {
@@ -602,6 +713,39 @@ export async function ingestTSESituacao(
     ambiguousByYearPayload[String(ano)] = slugs
   }
 
+  // Recibo do que foi LIDO da fonte, separado do que foi escrito em cada ficha.
+  // Sem ele o unico rastro do julgamento seria o arquivo de auditoria local, que
+  // nao sobrevive fora da maquina que rodou. Em dry-run o recibo diz isso na
+  // propria linha, para nao se passar por escrita.
+  const situacoesGravadas = auditEntries.filter(
+    (entry) => entry.persisted && Boolean(entry.proposed_update.situacao_candidatura),
+  ).length
+  if (julgamentoPorSq) {
+    const censoTexto = Object.entries(censoJulgamento)
+      .sort((a, b) => b[1] - a[1])
+      .map(([k, v]) => `${k}=${v}`)
+      .join(", ")
+    const recibo: EntradaColeta = {
+      fonte: "tse-situacao",
+      escopo: "global",
+      alvo: `consulta_cand_complementar_${PLEITO_CORRENTE}`,
+      resultado: comJulgamento > 0 ? "encontrado" : "vazio_confirmado",
+      volume: comJulgamento,
+      url: COMPLEMENTAR_URL(PLEITO_CORRENTE),
+      detalhe:
+        `DS_SITUACAO_JULGAMENTO cruzado por SQ_CANDIDATO: ${comJulgamento} ficha(s) da coorte, ` +
+        `${semSqParaCruzar} sem SQ para cruzar, ${situacoesGravadas} situacao(oes) gravada(s). ` +
+        `Censo do pacote: ${censoTexto || "vazio"}`,
+    }
+    // `coleta_log` e banco. Em dry-run o recibo e impresso e nao gravado, senao
+    // o proprio dry-run seria uma escrita, que e o oposto do que ele promete.
+    if (options.dryRun) {
+      log("tse-situacao", `  dry-run, recibo NAO gravado: ${recibo.detalhe}`)
+    } else {
+      await registrarColeta(recibo)
+    }
+  }
+
   const auditSummary = {
     generated_at: new Date().toISOString(),
     dry_run: Boolean(options.dryRun),
@@ -623,6 +767,16 @@ export async function ingestTSESituacao(
         name_unique: auditEntries.filter((entry) => entry.match_method === "name-unique").length,
         name_uf: auditEntries.filter((entry) => entry.match_method === "name-uf").length,
       },
+    },
+    julgamento: {
+      pacote: julgamentoPorSq ? `consulta_cand_complementar_${PLEITO_CORRENTE}` : null,
+      sq_no_pacote: julgamentoPorSq?.size ?? 0,
+      fichas_cruzadas: comJulgamento,
+      fichas_sem_sq: semSqParaCruzar,
+      censo_do_pacote: censoJulgamento,
+      bloqueios: auditEntries
+        .flatMap((entry) => entry.blocked_reasons)
+        .filter((r) => r.startsWith("julgamento-")),
     },
     ambiguous_by_year: ambiguousByYearPayload,
     entries: auditEntries,

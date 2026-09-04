@@ -30,6 +30,8 @@ const BASE_MATCHED: MatchedData = {
   estado_civil: "CASADO(A)",
   cor_raca: "PARDA",
   ocupacao: "ADVOGADO",
+  sq_candidato: "290000000001",
+  julgamento: null,
   email: "foo@bar.com",
 }
 
