@@ -346,8 +346,8 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
       metodos.push(`${req.method} ${req.url?.split("?")[0]}`)
       res.setHeader("content-type", "application/json")
       if (req.url?.includes("candidatos_publico")) {
-        // Um slug que existe no seed real, para o filtro do roster casar.
-        res.end(JSON.stringify([{ slug: "cabo-daciolo" }]))
+        const offset = Number(new URL(req.url, "http://localhost").searchParams.get("offset") ?? 0)
+        res.end(JSON.stringify(offset > 0 ? [] : [{ slug: "cabo-daciolo", nome_completo: "Pessoa de Teste" }]))
         return
       }
       res.end(JSON.stringify([]))
@@ -425,13 +425,15 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
 
     // CPF com dígitos verificadores válidos, exclusivo deste teste.
     const CPF_FIXTURE = "52998224725"
-    const SLUG = "cabo-daciolo"
+    // A seleção pública deve alcançar também quem não consta no seed.
+    const SLUG = "publico-fora-do-seed-fixture"
 
     const db = createServer((req, res) => {
       metodosDb.push(`${req.method} ${req.url?.split("?")[0]}`)
       res.setHeader("content-type", "application/json")
       if (req.url?.includes("candidatos_publico")) {
-        res.end(JSON.stringify([{ slug: SLUG }]))
+        const offset = Number(new URL(req.url, "http://localhost").searchParams.get("offset") ?? 0)
+        res.end(JSON.stringify(offset > 0 ? [] : [{ slug: SLUG, nome_completo: "Fulano De Tal Completo" }]))
         return
       }
       if (req.url?.includes("/candidatos")) {
