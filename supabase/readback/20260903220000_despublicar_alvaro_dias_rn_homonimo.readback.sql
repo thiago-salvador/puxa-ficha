@@ -51,7 +51,11 @@ BEGIN
   -- O efeito que o leitor ve: a view publica de financiamento nao pode mais
   -- somar o dinheiro do homonimo nesta ficha.
   IF to_regclass('public.financiamento_publico') IS NOT NULL THEN
-    EXECUTE $q$SELECT coalesce(sum(total_receitas), 0) FROM public.financiamento_publico WHERE candidato_id = 'c89aaf3b-a9a7-4a95-856a-5b65df38cc80'::uuid AND ano IN (2018, 2022)$q$
+    -- Colunas conferidas contra o information_schema de producao em 04/09/2026:
+    -- a view expoe `ano_eleicao` e `total_arrecadado`. A primeira versao desta
+    -- linha usava `ano` e `total_receitas`, nomes que so existiam na fixture do
+    -- prover, entao o EXECUTE teria abortado a transacao inteira do apply.
+    EXECUTE $q$SELECT coalesce(sum(total_arrecadado), 0) FROM public.financiamento_publico WHERE candidato_id = 'c89aaf3b-a9a7-4a95-856a-5b65df38cc80'::uuid AND ano_eleicao IN (2018, 2022)$q$
       INTO fin_publico;
     IF fin_publico <> 0 THEN
       RAISE EXCEPTION 'readback alvaro-dias-rn homonimo: financiamento_publico ainda soma % em 2018/2022', fin_publico;

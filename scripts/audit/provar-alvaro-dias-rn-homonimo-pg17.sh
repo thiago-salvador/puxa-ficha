@@ -41,14 +41,19 @@ q() { docker exec -i "$CONTAINER_ID" psql -X -U postgres -d postgres -v ON_ERROR
 # Fixture com os UUID reais das 8 linhas do achado, mais as 12 linhas do Rio
 # Grande do Norte que TEM de sobreviver, mais uma ficha vizinha para provar que
 # a despublicacao nao vaza de candidato.
-q -q <<SQL
+# Heredoc CITADO: com o delimitador entre aspas o shell nao expande nada aqui
+# dentro, entao crase, $ e $( ficam sendo texto de SQL. A versao anterior era
+# `q -q <<SQL` e uma crase num comentario virou substituicao de comando; o
+# prover seguiu saindo 0 e o erro so aparecia no stderr. O unico valor que
+# precisava vir de fora passa a entrar por variavel do psql.
+q -q -v previous="$PREVIOUS" <<'SQL'
 CREATE SCHEMA supabase_migrations;
 CREATE TABLE supabase_migrations.schema_migrations (
   version text PRIMARY KEY, statements text[], name text,
   created_by text, idempotency_key text, rollback text[]
 );
 INSERT INTO supabase_migrations.schema_migrations(version, idempotency_key)
-VALUES ('${PREVIOUS}', 'sha256:fixture-previous');
+VALUES (:'previous', 'sha256:fixture-previous');
 
 CREATE TABLE public.candidatos (id uuid PRIMARY KEY, slug text NOT NULL UNIQUE);
 CREATE TABLE public.historico_politico (
@@ -56,12 +61,16 @@ CREATE TABLE public.historico_politico (
   despublicado_em timestamptz, despublicacao_motivo text
 );
 CREATE TABLE public.financiamento (
-  id uuid PRIMARY KEY, candidato_id uuid NOT NULL, ano integer NOT NULL,
-  total_receitas numeric NOT NULL DEFAULT 0,
+  -- Nomes copiados do information_schema de producao (04/09/2026). A primeira
+  -- versao desta fixture inventou `ano` e `total_receitas`, e por isso o prover
+  -- validou o readback contra um schema que nao existe: os dois lados eram
+  -- escritos aqui, entao a prova adversarial nunca tocou no defeito.
+  id uuid PRIMARY KEY, candidato_id uuid NOT NULL, ano_eleicao integer NOT NULL,
+  total_arrecadado numeric NOT NULL DEFAULT 0,
   despublicado_em timestamptz, despublicacao_motivo text
 );
 CREATE VIEW public.financiamento_publico AS
-  SELECT id, candidato_id, ano, total_receitas FROM public.financiamento WHERE despublicado_em IS NULL;
+  SELECT id, candidato_id, ano_eleicao, total_arrecadado FROM public.financiamento WHERE despublicado_em IS NULL;
 CREATE TABLE public.coleta_log (
   id bigserial PRIMARY KEY, fonte text NOT NULL, escopo text NOT NULL, alvo text NOT NULL,
   candidato_id uuid, executado_em timestamptz NOT NULL DEFAULT now(),
@@ -101,13 +110,13 @@ SELECT gen_random_uuid(), 'c89aaf3b-a9a7-4a95-856a-5b65df38cc80', 'rn-' || g FRO
 INSERT INTO public.historico_politico(id, candidato_id, cargo)
 VALUES (gen_random_uuid(), '00000000-0000-4000-8000-000000000002', 'vizinha-1');
 
-INSERT INTO public.financiamento(id, candidato_id, ano, total_receitas) VALUES
+INSERT INTO public.financiamento(id, candidato_id, ano_eleicao, total_arrecadado) VALUES
   ('0332669e-5a46-4b32-b7f8-d23ad5001f48', 'c89aaf3b-a9a7-4a95-856a-5b65df38cc80', 2018, 4200000.00),
   ('c14061ca-7829-4908-becd-c09af5baf5c1', 'c89aaf3b-a9a7-4a95-856a-5b65df38cc80', 2022, 6321995.02);
 SQL
 
 before="$(q -Atq -c "SELECT md5(string_agg(t.k, ',' ORDER BY t.k)) FROM (SELECT id::text || '=' || coalesce(despublicado_em::text,'<NULL>') || '/' || coalesce(despublicacao_motivo,'<NULL>') AS k FROM public.historico_politico UNION ALL SELECT id::text || '=' || coalesce(despublicado_em::text,'<NULL>') || '/' || coalesce(despublicacao_motivo,'<NULL>') FROM public.financiamento) t")"
-antes_publico="$(q -Atq -c "SELECT coalesce(sum(total_receitas),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
+antes_publico="$(q -Atq -c "SELECT coalesce(sum(total_arrecadado),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
 [[ "$antes_publico" == "10521995.02" ]] || { echo "FAIL: fixture soma $antes_publico, esperado 10521995.02" >&2; exit 1; }
 
 if q -q < "$READBACK" >/dev/null 2>&1; then
@@ -119,7 +128,7 @@ q -q -c "INSERT INTO supabase_migrations.schema_migrations(version, idempotency_
 q -q < "$READBACK"
 
 # O efeito que o leitor ve: o dinheiro do homonimo sai da view publica.
-depois_publico="$(q -Atq -c "SELECT coalesce(sum(total_receitas),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
+depois_publico="$(q -Atq -c "SELECT coalesce(sum(total_arrecadado),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
 [[ "$depois_publico" == "0" ]] || { echo "FAIL: financiamento_publico ainda soma $depois_publico" >&2; exit 1; }
 volume="$(q -Atq -c "SELECT volume FROM public.coleta_log WHERE execucao='migration:$VERSION'")"
 [[ "$volume" == "8" ]] || { echo "FAIL: recibo com volume $volume, esperado 8" >&2; exit 1; }
@@ -157,7 +166,7 @@ q -q < "$ROLLBACK_READBACK"
 
 after="$(q -Atq -c "SELECT md5(string_agg(t.k, ',' ORDER BY t.k)) FROM (SELECT id::text || '=' || coalesce(despublicado_em::text,'<NULL>') || '/' || coalesce(despublicacao_motivo,'<NULL>') AS k FROM public.historico_politico UNION ALL SELECT id::text || '=' || coalesce(despublicado_em::text,'<NULL>') || '/' || coalesce(despublicacao_motivo,'<NULL>') FROM public.financiamento) t")"
 [[ "$after" == "$before" ]] || { echo "FAIL: rollback nao devolveu a pre-imagem byte a byte" >&2; exit 1; }
-volta_publico="$(q -Atq -c "SELECT coalesce(sum(total_receitas),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
+volta_publico="$(q -Atq -c "SELECT coalesce(sum(total_arrecadado),0) FROM public.financiamento_publico WHERE candidato_id='c89aaf3b-a9a7-4a95-856a-5b65df38cc80'")"
 [[ "$volta_publico" == "10521995.02" ]] || { echo "FAIL: apos o rollback a view soma $volta_publico" >&2; exit 1; }
 ledger="$(q -Atq -c "SELECT coalesce(max(version),'') FROM supabase_migrations.schema_migrations")"
 [[ "$ledger" == "$PREVIOUS" ]] || { echo "FAIL: ledger apos rollback = $ledger" >&2; exit 1; }
