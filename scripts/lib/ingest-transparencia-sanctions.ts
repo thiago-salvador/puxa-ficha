@@ -1,6 +1,10 @@
 import { somenteDigitos, cpfEhValido } from "./cpf"
 import { supabase } from "./supabase"
-import { loadCandidatosPublicos } from "./helpers-db"
+import {
+  exigirCoortePublicaMinima,
+  loadCandidatosPublicosMinimos,
+  type CoortePublicaMinima,
+} from "./candidatos-publicos-minimos"
 import { fetchJSON, sleep, normalizeForMatch } from "./helpers"
 import { log, warn } from "./logger"
 import { registrarColetas } from "./coleta-log"
@@ -677,7 +681,11 @@ async function upsertPontoAtencao(
   await supabase.from("pontos_atencao").insert(row)
 }
 
-export async function ingestTransparenciaSanctions(): Promise<IngestResult[]> {
+export async function ingestTransparenciaSanctions(
+  coorte?: CoortePublicaMinima,
+): Promise<IngestResult[]> {
+  const candidatos = coorte ?? await loadCandidatosPublicosMinimos()
+  exigirCoortePublicaMinima(candidatos)
   const apiKey = process.env.TRANSPARENCIA_API_KEY
   if (!apiKey) {
     warn("transparencia-sanctions", "TRANSPARENCIA_API_KEY nao definida, pulando")
@@ -689,12 +697,12 @@ export async function ingestTransparenciaSanctions(): Promise<IngestResult[]> {
     // a diferenca legivel: a ficha continua vazia, mas o relatorio passa a
     // dizer POR QUE esta vazia, e da para ver que falta credencial em vez de
     // concluir que 194 politicos tem ficha limpa.
-    // Mesmo roster do caminho feliz (`loadCandidatosPublicos`), e nao o seed
+    // Mesmo roster do caminho feliz (`loadCandidatosPublicosMinimos`), e nao o seed
     // inteiro: o log tem que registrar tentativa exatamente de quem o pipeline
     // teria consultado. Gravar `erro` para quem nunca seria coletado inventaria
     // 77 lacunas que ninguem tem intencao de fechar.
     await registrarColetas(
-      (await loadCandidatosPublicos()).map((cand) => ({
+      candidatos.map((cand) => ({
         fonte: "transparencia-sanctions",
         alvo: cand.slug,
         resultado: "erro" as const,
@@ -706,7 +714,6 @@ export async function ingestTransparenciaSanctions(): Promise<IngestResult[]> {
 
   const headers = { "chave-api-dados": apiKey, Accept: "application/json" }
   const deps = criarDepsHttp(headers)
-  const candidatos = await loadCandidatosPublicos()
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
