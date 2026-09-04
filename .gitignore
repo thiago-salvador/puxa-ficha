@@ -71,6 +71,7 @@ supabase/.branches/
 .codex/
 .unlazy/
 .cursor/
+.opencode/
 **/CLAUDE.md
 **/AGENTS.md
 !/CLAUDE.md

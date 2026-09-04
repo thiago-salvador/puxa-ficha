@@ -364,7 +364,15 @@ describe("classificador puro (#136)", () => {
     // retorna. MEDIDO no gate local PostgreSQL 17: "341 aplicadas, 105 falhas
     // reais" e "conservação OK: 341 + 105 = 446 migrations", conjunto de
     // falhas intacto.
-    assert.equal(manifesto.aplicadas_esperadas, 341)
+    // 341 -> 344 em 03/09/2026: as tres migrations propostas pela revisao de
+    // informacao das fichas (20260903200000 backfill de sq_candidato,
+    // 20260903210000 alargamento do vocabulario de situacao e 20260903220000
+    // despublicacao do homonimo de alvaro-dias-rn) aplicam limpo. As tres
+    // carregam guard de ausencia, entao o replay em banco vazio passa por elas
+    // como no-op em vez de quebrar. MEDIDO no gate local PostgreSQL 17:
+    // "344 aplicadas, 105 falhas reais" e "conservacao OK: 344 + 105 = 449
+    // migrations", conjunto de falhas inalterado.
+    assert.equal(manifesto.aplicadas_esperadas, 344)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

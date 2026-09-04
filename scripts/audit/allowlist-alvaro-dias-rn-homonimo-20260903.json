@@ -1,0 +1,51 @@
+{
+  "_comentario": "Autoriza somente a despublicacao logica das linhas de historico e financiamento que pertencem a ALVARO FERNANDES DIAS (PR) e estao na ficha de ALVARO COSTA DIAS (RN). Nenhuma linha e apagada e nenhum campo de conteudo e reescrito.",
+  "recorte": "alvaro-dias-rn-homonimo-20260903",
+  "migration": "20260903220000_despublicar_alvaro_dias_rn_homonimo.sql",
+  "fonte": "Prova por exaustao dos pacotes consulta_cand do TSE, 28 arquivos de unidade da federacao por ano, lidos em 03/09/2026: em 2018 e 2022 existe UM unico 'Alvaro ... Dias' no pais, ALVARO FERNANDES DIAS (nasc. 07/12/1944); ALVARO COSTA DIAS (nasc. 04/09/1959) nao consta em nenhuma UF nesses dois anos. Em 2002, 2006 e 2014 os dois constam, em UFs e cargos distintos. As duas linhas de financiamento ja estavam em financiamento_quarentena desde 30/07/2026 com o mesmo valor, e voltaram a tabela viva pela execucao pf-ajustes-financiamento-20260810. Levantamento completo em docs/reviews/2026-09-03-revisao-informacoes-fichas.md.",
+  "coorte": [
+    "alvaro-dias-rn"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "historico_politico",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 6
+    },
+    {
+      "tabela": "financiamento",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "despublicado_em",
+        "despublicacao_motivo"
+      ],
+      "max_registros": 2
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260903220000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "candidato_id",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

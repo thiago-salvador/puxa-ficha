@@ -4280,5 +4280,33 @@
       }
     },
     "wikipedia_title": "Babá_Pereira"
+  },
+  {
+    "slug": "well-macedo",
+    "nome_completo": "WELLINGTA JOSYANE SIQUEIRA MACEDO",
+    "nome_urna": "WELL MACEDO",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002554108"
+      }
+    }
+  },
+  {
+    "slug": "rico-pinheiro",
+    "nome_completo": "ALDERICO DA SILVA PINHEIRO FILHO",
+    "nome_urna": "RICO PINHEIRO",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002553982"
+      }
+    }
   }
 ]

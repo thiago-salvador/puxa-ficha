@@ -417,7 +417,12 @@ export const MEDICAO_REPLAY = Object.freeze({
   // desde 12/02/2026. E DDL persistente (DROP INDEX) e entra no replay de
   // schema. MEDIDO no schema-gate local PostgreSQL 17: aplicadas limpo 93,
   // falhas 0, hash 47559be4b7d54c8ea84dabb6008d106b4fbbecaf7f7ef11b2ac5c8024ade871e.
-  schemaReplayTamanho: 93,
+  // 93 -> 94 em 03/09/2026: a 20260903210000 alarga o CHECK do vocabulario de
+  // situacao_candidatura para os quatro estados de julgamento. E DDL
+  // persistente e entra no replay de schema. MEDIDO no schema-gate local
+  // PostgreSQL 17: aplicadas limpo 94, falhas 0, hash
+  // b8cc9a759e195000044275fb86b76e8b9968d938e9e9decebca05bc504f5a83f.
+  schemaReplayTamanho: 94,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
