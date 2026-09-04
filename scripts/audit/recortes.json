@@ -466,6 +466,13 @@
       "ate": "20260903220000",
       "allowlist": "scripts/audit/allowlist-alvaro-dias-rn-homonimo-20260903.json",
       "divida": null
+    },
+    {
+      "nome": "profissao-alvaro-dias-rn-20260904",
+      "desde": "20260904220000",
+      "ate": "20260904220000",
+      "allowlist": "scripts/audit/allowlist-profissao-alvaro-dias-rn-20260904.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

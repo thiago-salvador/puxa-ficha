@@ -372,7 +372,9 @@ describe("classificador puro (#136)", () => {
     // como no-op em vez de quebrar. MEDIDO no gate local PostgreSQL 17:
     // "344 aplicadas, 105 falhas reais" e "conservacao OK: 344 + 105 = 449
     // migrations", conjunto de falhas inalterado.
-    assert.equal(manifesto.aplicadas_esperadas, 344)
+    // 344 -> 345: correção de profissão 20260904220000 aplica como no-op sem
+    // ficha. MEDIDO no replay local PG17: 345 + 105 = 450, falhas inalteradas.
+    assert.equal(manifesto.aplicadas_esperadas, 345)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

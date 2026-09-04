@@ -401,6 +401,7 @@ describe("contrato da view candidatos_publico", () => {
       // filtra `despublicado_em IS NULL` na definição que ela tem hoje.
       // Predecessor no ledger: 20260903210000.
       "20260903220000_despublicar_alvaro_dias_rn_homonimo.sql",
+      "20260904220000_corrigir_profissao_alvaro_dias_rn.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

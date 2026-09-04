@@ -1,0 +1,10 @@
+{
+  "_comentario": "Lote mínimo confirmado por identidade TSE 2026: profissão SENADOR -> MÉDICO, SQ 200002534442, RN/Governador. Demais diferenças do censo exigem revisão semântica.",
+  "recorte": "profissao-alvaro-dias-rn-20260904",
+  "migration": "20260904220000_corrigir_profissao_alvaro_dias_rn.sql",
+  "fonte": "consulta_cand_2026.zip, geração 04/09/2026 16:30:46, SHA256 a2e593639affda48223ce179ccdca792da927c729e968bf14de7b80002a586ae, CD_OCUPACAO=111",
+  "coorte": ["alvaro-dias-rn"],
+  "fora_por_construcao": {"slugs": []},
+  "entries": [{"tabela": "candidatos", "slug": "alvaro-dias-rn", "campos": ["profissao_declarada", "ultima_atualizacao"], "max_registros": 1}],
+  "referencias": [{"tabela": "coleta_log", "ref": "migration:20260904220000", "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"], "max_registros": 1}]
+}
