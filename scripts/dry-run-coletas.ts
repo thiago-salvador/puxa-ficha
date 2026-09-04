@@ -31,6 +31,7 @@ import {
   type RelatorioDryRun,
 } from "./lib/dry-run"
 import { log, warn } from "./lib/logger"
+import type { CoortePublicaMinima } from "./lib/candidatos-publicos-minimos"
 
 // Liga o modo ANTES de qualquer import de coletor tocar o cliente. A ordem
 // importa: um coletor que resolvesse o cliente no topo do módulo já teria
@@ -84,6 +85,7 @@ export function parseArgs(argv: string[]): Args {
 interface Roster {
   origem: string
   slugs: string[]
+  coorte?: CoortePublicaMinima
 }
 
 async function carregarRoster(caminho: string | null): Promise<Roster> {
@@ -97,11 +99,12 @@ async function carregarRoster(caminho: string | null): Promise<Roster> {
   }
 
   // Leitura de produção. Só o `select` passa pela blindagem; escrita, não.
-  const { loadCandidatosPublicos } = await import("./lib/helpers-db")
-  const candidatos = await loadCandidatosPublicos()
+  const { loadCandidatosPublicosMinimos } = await import("./lib/candidatos-publicos-minimos")
+  const candidatos = await loadCandidatosPublicosMinimos()
   return {
     origem: "produção: view candidatos_publico",
     slugs: candidatos.map((c) => c.slug),
+    coorte: candidatos,
   }
 }
 
@@ -141,7 +144,8 @@ async function dryRunSancoes(roster: Roster): Promise<Record<string, unknown>> {
   }
 
   const { ingestTransparenciaSanctions } = await import("./lib/ingest-transparencia-sanctions")
-  const resultados = await ingestTransparenciaSanctions()
+  if (!roster.coorte) throw new Error("Coorte pública de sanções não carregada")
+  const resultados = await ingestTransparenciaSanctions(roster.coorte)
   return {
     escopo: "coleta completa em dry-run",
     universo: roster.slugs.length,
