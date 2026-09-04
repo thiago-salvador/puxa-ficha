@@ -89,6 +89,7 @@ segura.
 | `PF_MANUAL_REVIEW_PERIODO_FIM_CSV_PATH` | Saída de revisão manual | Opcional; ausência usa o caminho padrão do script. | Operador local |
 | `PF_AUDIT_RAIZ`, `PF_AUDIT_REPORT_MAX_AGE_MS`, `PF_AUDIT_GENERATED_AT` | Raiz, frescor e relógio de auditorias | Opcionais. Os dois primeiros ajustam o runner; o terceiro existe só na spec visual para relógio determinístico. | Auditoria local ou teste |
 | `PF_EXPECTED_DEPLOY_SHA`, `PF_EXPECTED_SHA` | SHA esperado nos readbacks e applies | Obrigatórias somente para os scripts que as leem; ausência aborta o gate correspondente. | Operador ou workflow |
+| `PF_PROVAR_PROFISSAO_PG17` | Ativa o teste dos drivers de correção de profissão em PostgreSQL 17 descartável | O prover local define `1`; ausente ou diferente de `1`, a suíte comum pula esse teste. Não habilita escrita remota. | Script de prova local ou workflow |
 | `PF_PUBLIC_SITE_URL`, `PF_PUBLIC_ORIGIN`, `PF_URL_PARA_VALIDAR` | Alvo de readbacks HTTP | Opcionais ou obrigatórias conforme o script; fallbacks e validações ficam no próprio gate. | Operador local |
 | `PF_OUTPUT_DIR` | Diretório de evidência do readback | Opcional, cai para o diretório datado do script. | Operador local |
 | `PF_BACKUP_PATH` | Caminho do backup read-only anterior ao apply ou rollback da migration 30002 | Obrigatória nos workflows fechados da issue 138. O workflow aponta para `runner.temp`; o artefato é validado antes de qualquer mutação e preservado pelo GitHub Actions. | Workflow de produção |
