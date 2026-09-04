@@ -120,9 +120,12 @@ test("o julgamento vence o #NE do consulta_cand", () => {
   assert.equal(payload.situacao_candidatura, "indeferido")
 })
 
-test("sem julgamento no pacote, o comportamento antigo fica de pe", () => {
-  const { payload } = buildIngestPayload({ ...BASE }, { ...ANTES, situacao_candidatura: null })
-  assert.equal(payload.situacao_candidatura, "aguardando julgamento")
+test("sem julgamento no pacote, preserva valor existente e bloqueia", () => {
+  for (const valor of [null, "deferido", "indeferido", "aguardando julgamento"]) {
+    const { payload, blockedReasons } = buildIngestPayload({ ...BASE }, { ...ANTES, situacao_candidatura: valor })
+    assert.equal(payload.situacao_candidatura, undefined)
+    assert.deepEqual(blockedReasons, ["julgamento-ausente"])
+  }
 })
 
 test("julgamento nao escreve quando a identidade nao esta fechada por SQ", () => {

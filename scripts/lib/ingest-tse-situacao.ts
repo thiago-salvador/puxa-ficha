@@ -1,6 +1,7 @@
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from "fs"
 import { resolve } from "path"
 import { execFileSync } from "child_process"
+import { pathToFileURL } from "node:url"
 import { supabase } from "./supabase"
 import { normalizarCpfTse } from "./cpf"
 import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
@@ -16,7 +17,6 @@ import {
 } from "./tse-resolver"
 import { downloadToFile } from "./download-to-file"
 import {
-  COLUNAS_JULGAMENTO,
   censoPorDescricao,
   indexarJulgamentoPorSq,
   mapearJulgamento,
@@ -325,10 +325,9 @@ export function buildIngestPayload(
       } else if (before?.situacao_candidatura !== mapeado.valor) {
         payload.situacao_candidatura = mapeado.valor
       }
-    } else if (before?.situacao_candidatura !== "aguardando julgamento") {
-      // Sem julgamento no pacote, o unico fato sustentado segue sendo o pedido
-      // de registro protocolado.
-      payload.situacao_candidatura = "aguardando julgamento"
+    } else {
+      // Ausência da fonte não prova pendência e nunca rebaixa um julgamento.
+      blockedReasons.push("julgamento-ausente")
     }
   }
 
@@ -796,7 +795,7 @@ export async function ingestTSESituacao(
   return allResults
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   const dryRun = process.argv.includes("--dry-run")
   const auditPathArg = process.argv.find((arg) => arg.startsWith("--audit-path="))
   const auditPath = auditPathArg?.split("=")[1]

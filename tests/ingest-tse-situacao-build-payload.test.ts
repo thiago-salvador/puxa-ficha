@@ -125,14 +125,14 @@ test("buildIngestPayload: DB tem CPF invalido (menos de 11 digitos), preenche co
   assert.deepEqual(blockedReasons, [])
 })
 
-test("buildIngestPayload: pleito corrente com #NE e identidade por SQ grava so o vocabulario", () => {
+test("buildIngestPayload: pleito corrente exige julgamento explicito mesmo com identidade por SQ", () => {
   const { payload, blockedReasons } = buildIngestPayload(
     { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
     snapshot({ situacao_candidatura: "candidatura declarada" }),
     2026
   )
-  assert.equal(payload.situacao_candidatura, "aguardando julgamento")
-  assert.deepEqual(blockedReasons, [])
+  assert.equal(payload.situacao_candidatura, undefined)
+  assert.deepEqual(blockedReasons, ["julgamento-ausente"])
 
   const jaCerto = buildIngestPayload(
     { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
@@ -278,7 +278,7 @@ test("buildIngestPayload: default pleitoCorrente=2026 quando argumento omitido",
     { ...BASE_MATCHED, ano: 2026, situacao: "#NE" },
     snapshot()
   )
-  assert.equal(payload.situacao_candidatura, "aguardando julgamento")
+  assert.equal(payload.situacao_candidatura, undefined)
 })
 
 test("buildIngestPayload: matched sem situacao, nao adiciona campo (mesmo em pleito corrente)", () => {
