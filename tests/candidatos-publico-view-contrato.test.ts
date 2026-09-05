@@ -402,6 +402,7 @@ describe("contrato da view candidatos_publico", () => {
       // Predecessor no ledger: 20260903210000.
       "20260903220000_despublicar_alvaro_dias_rn_homonimo.sql",
       "20260904220000_corrigir_profissao_alvaro_dias_rn.sql",
+      "20260905150000_corrigir_textos_julgamento.sql",
     ]
     const versao = (nome: string) => nome.split("_", 1)[0]
 

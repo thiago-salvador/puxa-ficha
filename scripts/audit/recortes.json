@@ -473,6 +473,13 @@
       "ate": "20260904220000",
       "allowlist": "scripts/audit/allowlist-profissao-alvaro-dias-rn-20260904.json",
       "divida": null
+    },
+    {
+      "nome": "textos-julgamento-20260905",
+      "desde": "20260905150000",
+      "ate": "20260905150000",
+      "allowlist": "scripts/audit/allowlist-textos-julgamento-20260905.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

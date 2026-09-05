@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 345,
+  "aplicadas_esperadas": 346,
+  "_comentario_20260905150000": "345 -> 346 medido no replay linear local PostgreSQL 17: 346 aplicadas e as mesmas 105 falhas. A correção de textos retorna sem escrita quando os IDs do lote estão ausentes. Conservação: 346 + 105 = 451 migrations.",
   "_comentario_20260904220000": "344 -> 345 medido no replay linear local PostgreSQL 17: 345 aplicadas, 105 falhas reais; conservação 345 + 105 = 450 migrations. A correção de profissão retorna sem escrita quando a ficha não existe. Conjunto de falhas inalterado.",
   "_comentario_20260903140000": "aplicadas_esperadas 340 -> 341 em 03/09/2026: a troca do vice substituto da chapa do MA (20260903140000) retorna cedo quando a linha de chapas_2026 nao existe (banco sintetico) e aplica limpo. MEDIDO no gate local PG17: 'gate: 341 aplicadas, 105 falhas reais' e 'conservacao OK: 341 + 105 = 446 migrations', conjunto de falhas intacto.",
   "_comentario_20260903120000": "aplicadas_esperadas 338 -> 339 em 03/09/2026: a remocao dos 11 indices sem uso (20260903120000) e schema puro e aplica limpo em banco vazio (DROP INDEX IF EXISTS nao depende de linha nem de tabela). Medido no gate local PG17.",

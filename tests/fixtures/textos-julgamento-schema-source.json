@@ -1,0 +1,10 @@
+{
+  "capturado_em": "2026-09-05",
+  "fonte": "pg_dump --schema-only --schema=public, PostgreSQL 17, conexão autenticada somente leitura com TLS verify-full",
+  "dump_sha256": "e7b1e5d1a9a7cee739f7da592335bab80058412a7a0a69da156111ccb242f749",
+  "contrato_sha256": "9addc67f78838d0072daffb9c3f80a17cc120d28768947527ea17463b3d807c4",
+  "selecao": "Blocos CREATE TABLE candidatos/coleta_log/historico_politico; CREATE VIEW candidatos_publico; ALTER TABLE ADD CONSTRAINT e IDENTITY; índices únicos dessas tabelas; trigger sanitize_historico_politico_documents; funções mask_document_like_sequences(text/jsonb) e sanitize_public_document_fields. Somente ALTER OWNER removidos.",
+  "objetos_extraidos": 19,
+  "exclusoes": "ACL/RLS não reproduzidas: prova usa postgres como driver operacional. Índices não únicos não alteram o contrato DML. Trigger de candidatos UPDATE OF publicavel,status não dispara nos campos deste lote; coleta_log sem trigger.",
+  "dados": "Sem linhas de produção no schema. Fixture de dados usa os textos/identidades aprovados e placeholders explícitos nos campos de publicação não consultados pela migration."
+}

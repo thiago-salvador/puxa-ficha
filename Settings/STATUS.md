@@ -1,6 +1,24 @@
 # Status atual
 
-Snapshot mais recente verificado em **04/09/2026**.
+Snapshot mais recente verificado em **05/09/2026**.
+
+## Snapshot 05/09/2026: correção fechada dos textos de julgamento
+
+- Pacote `20260905150000` preparado para remover 187 trechos padronizados
+  que ainda dizem aguardar julgamento em fichas com situação estruturada
+  já atualizada, além do marcador `#NULO` em uma observação de Rico Pinheiro.
+  São 63 biografias e 125 observações, em 138 fichas. Não insere novos
+  julgamentos na prosa nem altera outros campos.
+- Pré-estado lido em produção: os 188 campos ainda coincidem com os alvos
+  congelados; topo do ledger `20260904220000`, sem a nova migration.
+  Este é o estado anterior à aplicação, não uma declaração de publicação.
+- Apply e rollback usam workflows manuais, SHA fechado, pré-imagem e
+  readback transacional. A prova PG17 usa 19 objetos extraídos do schema
+  público real, incluindo o trigger de saneamento das observações.
+- Referências históricas datadas, textos de fichas ainda aguardando e a
+  redação individual de Cadu Xavier ficam fora do lote. Continuam separadas
+  a revisão do programa de Ben Mendes e a decisão editorial sobre
+  Subtenente Luiz Carlos. Ver [procedimento operacional](../docs/reviews/2026-09-05-textos-julgamento.md).
 
 ## Snapshot 04/09/2026: julgamentos e profissão publicados
 

@@ -1,0 +1,1672 @@
+{
+  "_comentario": "Lote fechado de 187 textos padronizados vencidos e um marcador técnico, por UUID e pré-imagem exata. Não publica novas decisões editoriais.",
+  "recorte": "textos-julgamento-20260905",
+  "migration": "20260905150000_corrigir_textos_julgamento.sql",
+  "coorte": [
+    "acm-neto",
+    "adailton-furia",
+    "alan-rick",
+    "alexandre-kalil",
+    "alexandre-salomao",
+    "alvaro-dias-rn",
+    "alysson-bezerra",
+    "andre-marinho",
+    "araceli-lemos",
+    "ariel-capistrano",
+    "arinalda-do-mlb",
+    "aroldo-felix",
+    "arthur-henrique",
+    "ataides-oliveira",
+    "cabo-daciolo",
+    "cadu-xavier",
+    "camilo-duarte",
+    "carlos-cley",
+    "carlos-jararaca",
+    "carlos-machado",
+    "celina-leao",
+    "ciro-gomes-gov-ce",
+    "cleitinho",
+    "coronel-busnello",
+    "cyro-garcia",
+    "daniel-lemes",
+    "daniel-vilela",
+    "danilo-pinheiro",
+    "danilo-soares",
+    "dario-barbosa",
+    "david-almeida",
+    "delcidio-amaral",
+    "douglas-ruas",
+    "dr-daniel",
+    "dr-furlan",
+    "dr-luisinho",
+    "du-pereira",
+    "edmilson-costa",
+    "eduardo-braide",
+    "eduardo-riedel",
+    "elmano-de-freitas",
+    "emanuel-cacho",
+    "eudo-raffael",
+    "expedito-mendonca",
+    "fabio-mitidieri",
+    "fabio-trad",
+    "farah-mesquita",
+    "felipe-camarao",
+    "flavio-bolsonaro",
+    "flavio-roscoe",
+    "gabriel-azevedo",
+    "gabriel-souza",
+    "gal-leite",
+    "geraldo-carvalho",
+    "gilberto-vasconcelos",
+    "guilherme-fonseca",
+    "haddad-gov-sp",
+    "hana-ghassan",
+    "helder-salomao",
+    "hertz-dias",
+    "hildon-chaves",
+    "ieri-braga",
+    "isael-munduruku",
+    "ivan-moraes",
+    "jairo-palheta",
+    "jeronimo",
+    "joao-campos",
+    "joel-rodrigues",
+    "jorginho-mello",
+    "jose-estevao",
+    "jose-roberto-arruda",
+    "juliana-brizola",
+    "laurez-moreira",
+    "leandro-grass",
+    "lenilda-luna",
+    "luan-monteiro",
+    "lucas-ribeiro",
+    "lucia-santos",
+    "luciana-amorim",
+    "luciano-zucco",
+    "lucien-rezende",
+    "luis-cesar-bueno",
+    "lula",
+    "mailza-assis",
+    "marcelo-maranata",
+    "marcos-reategui",
+    "marcos-rogerio",
+    "maria-bona",
+    "maria-do-carmo",
+    "mauricio-coelho",
+    "natasha-slhessarenko",
+    "omar-aziz",
+    "orleans-brandao",
+    "otaviano-pivetta",
+    "patrus-ananias",
+    "paula-belmonte",
+    "pedro-coutinho",
+    "priscila-voigt",
+    "professora-dorinha",
+    "rafael-demuner",
+    "rafael-duda",
+    "rafael-fonteles",
+    "raquel-lyra",
+    "ravenna-castro",
+    "reginaldo-lima",
+    "rejane-oliveira",
+    "renato-gomes",
+    "ricardo-cappelli",
+    "ricardo-marques",
+    "rico-pinheiro",
+    "roberio-paulino",
+    "roberto-cidade",
+    "robson-raymundo",
+    "rodrigo-bolsonaro",
+    "romeu-zema",
+    "ronaldo-caiado",
+    "ronaldo-mansur",
+    "rosi-aires",
+    "rui-costa-pimenta",
+    "samara-martins",
+    "saulo-arcangeli",
+    "serley-leal",
+    "soldado-sampaio",
+    "subtenente-luiz-carlos",
+    "tarcisio-gov-sp",
+    "tayna-miessa",
+    "thor-dantas",
+    "tiao-bocalom",
+    "tulio-lopes",
+    "valmir-de-francisquinho",
+    "vicentinho-junior",
+    "vivian-mendes",
+    "wellington-fagundes",
+    "wilder-morais",
+    "william-siri",
+    "witer-naves",
+    "yuri-ezequiel",
+    "ze-batista"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "acm-neto",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alexandre-kalil",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "alysson-bezerra",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "andre-marinho",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "araceli-lemos",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cabo-daciolo",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "celina-leao",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ciro-gomes-gov-ce",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "cyro-garcia",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "daniel-vilela",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "david-almeida",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "douglas-ruas",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-daniel",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-furlan",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "edmilson-costa",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-braide",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eduardo-riedel",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "elmano-de-freitas",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "eudo-raffael",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "fabio-trad",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "felipe-camarao",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "flavio-bolsonaro",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "gabriel-souza",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "haddad-gov-sp",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hana-ghassan",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hertz-dias",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "hildon-chaves",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ivan-moraes",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jeronimo",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joao-campos",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jorginho-mello",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-roberto-arruda",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leandro-grass",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "luan-monteiro",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lucas-ribeiro",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lucia-santos",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "lula",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "mailza-assis",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "marcelo-maranata",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "maria-do-carmo",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "natasha-slhessarenko",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "omar-aziz",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "otaviano-pivetta",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "paula-belmonte",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "priscila-voigt",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rafael-fonteles",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "raquel-lyra",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rejane-oliveira",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "romeu-zema",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ronaldo-caiado",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ronaldo-mansur",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "rui-costa-pimenta",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "samara-martins",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tarcisio-gov-sp",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "tulio-lopes",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "vicentinho-junior",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "wilder-morais",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "william-siri",
+      "campos": [
+        "biografia"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "acm-neto",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "adailton-furia",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "alan-rick",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "alexandre-kalil",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "alexandre-salomao",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "alvaro-dias-rn",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "alysson-bezerra",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "araceli-lemos",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ariel-capistrano",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "arinalda-do-mlb",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "aroldo-felix",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "arthur-henrique",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ataides-oliveira",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "cabo-daciolo",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "cadu-xavier",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "camilo-duarte",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "carlos-cley",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "carlos-jararaca",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "carlos-machado",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ciro-gomes-gov-ce",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "cleitinho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "coronel-busnello",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "cyro-garcia",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "daniel-lemes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "danilo-pinheiro",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "danilo-soares",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "dario-barbosa",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "david-almeida",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "delcidio-amaral",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "dr-daniel",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "dr-furlan",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "dr-luisinho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "du-pereira",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "edmilson-costa",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "eduardo-braide",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "eduardo-riedel",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "elmano-de-freitas",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "emanuel-cacho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "eudo-raffael",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "expedito-mendonca",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "fabio-mitidieri",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "fabio-trad",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "farah-mesquita",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "felipe-camarao",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "flavio-roscoe",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "gabriel-azevedo",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "gabriel-souza",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "gal-leite",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "geraldo-carvalho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "gilberto-vasconcelos",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "guilherme-fonseca",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "haddad-gov-sp",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "helder-salomao",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "hildon-chaves",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ieri-braga",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "isael-munduruku",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ivan-moraes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jairo-palheta",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jeronimo",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "joao-campos",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "joel-rodrigues",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jorginho-mello",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jose-estevao",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "jose-roberto-arruda",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "juliana-brizola",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "laurez-moreira",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "leandro-grass",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "lenilda-luna",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "luan-monteiro",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "lucia-santos",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "luciana-amorim",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "luciano-zucco",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "lucien-rezende",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "luis-cesar-bueno",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "mailza-assis",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "marcelo-maranata",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "marcos-reategui",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "marcos-rogerio",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "maria-bona",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "maria-do-carmo",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "mauricio-coelho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "omar-aziz",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "orleans-brandao",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "otaviano-pivetta",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "patrus-ananias",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "paula-belmonte",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "pedro-coutinho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "priscila-voigt",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "professora-dorinha",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rafael-demuner",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rafael-duda",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rafael-fonteles",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "raquel-lyra",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ravenna-castro",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "reginaldo-lima",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rejane-oliveira",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "renato-gomes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ricardo-cappelli",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ricardo-marques",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "roberio-paulino",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "roberto-cidade",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "robson-raymundo",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rodrigo-bolsonaro",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ronaldo-mansur",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rosi-aires",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "samara-martins",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "saulo-arcangeli",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "serley-leal",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "soldado-sampaio",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "subtenente-luiz-carlos",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "tarcisio-gov-sp",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "tayna-miessa",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "thor-dantas",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "tiao-bocalom",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "tulio-lopes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "valmir-de-francisquinho",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "vicentinho-junior",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "vivian-mendes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "wellington-fagundes",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "wilder-morais",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "william-siri",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "witer-naves",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "yuri-ezequiel",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "ze-batista",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "historico_politico",
+      "slug": "rico-pinheiro",
+      "campos": [
+        "observacoes"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260905150000",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ],
+      "max_registros": 1
+    }
+  ]
+}
