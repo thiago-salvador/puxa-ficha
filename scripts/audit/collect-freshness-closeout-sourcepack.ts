@@ -1,10 +1,14 @@
 /** Read-only, fixed-scope official sourcepack. Raw candidate JSON never reaches disk. */
 import { createHash } from "node:crypto"
-import { mkdirSync, writeFileSync } from "node:fs"
-import { join, resolve } from "node:path"
+import { execFileSync } from "node:child_process"
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { basename, join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 import { collectCandidateVices, DIVULGACAND_BASE, ELECTION_ID_2026, sanitizeVices } from "../lib/data-freshness/divulgacand-current"
 import { fetchTseProgramaBytes } from "../lib/programas-governo-extracao"
+import { TSE_CANDIDACY_URL } from "../lib/data-freshness/tse-source"
+import { parseCSV } from "../lib/parse-csv-local"
 
 type FetchLike = (input: string | URL | Request, init?: RequestInit) => Promise<Response>
 const CANDIDATES = [
@@ -34,6 +38,74 @@ function code(value: unknown): string | number | null {
   if (typeof value === "number" && Number.isSafeInteger(value)) return value
   if (typeof value === "string" && /^[\d-]{1,32}$/.test(value)) return value
   return null
+}
+
+/** Schema diagnostic: only field paths and types, never unknown field values. */
+export function sourceShape(payload: unknown): Record<string, string> {
+  const shape: Record<string, string> = {}
+  function visit(value: unknown, prefix: string, depth: number) {
+    if (depth > 3) return
+    for (const [key, child] of Object.entries(object(value)).slice(0, 150)) {
+      if (!/^[A-Za-z_][A-Za-z0-9_]{0,80}$/.test(key)) continue
+      const path = prefix ? `${prefix}.${key}` : key
+      shape[path] = child === null ? "null" : Array.isArray(child) ? "array" : typeof child
+      if (Array.isArray(child)) { if (child.length) visit(child[0], `${path}[]`, depth + 1) }
+      else if (child && typeof child === "object") visit(child, path, depth + 1)
+    }
+  }
+  visit(payload, "", 0)
+  return shape
+}
+
+const CSV_FIELDS = [
+  "DT_GERACAO", "HH_GERACAO", "ANO_ELEICAO", "CD_ELEICAO", "NR_TURNO", "SG_UF",
+  "SQ_CANDIDATO", "NM_CANDIDATO", "NM_URNA_CANDIDATO", "NR_CANDIDATO", "DS_CARGO", "CD_CARGO",
+  "NR_PARTIDO", "SG_PARTIDO", "NM_PARTIDO", "SQ_COLIGACAO", "NM_COLIGACAO", "DS_COMPOSICAO_COLIGACAO", "TP_AGREMIACAO",
+  "DT_NASCIMENTO", "SG_UF_NASCIMENTO", "NM_MUNICIPIO_NASCIMENTO", "DS_GRAU_INSTRUCAO", "DS_OCUPACAO",
+  "DS_GENERO", "DS_ESTADO_CIVIL", "DS_COR_RACA", "CD_SITUACAO_CANDIDATURA", "DS_SITUACAO_CANDIDATURA",
+  "CD_SITUACAO_CANDIDATO", "DS_SITUACAO_CANDIDATO", "DS_SITUACAO_CANDIDATO_PLEITO", "DS_SIT_TOT_TURNO",
+] as const
+const CANDIDATE_SQS = new Set<string>(CANDIDATES.map((candidate) => candidate.sq))
+
+export function sanitizeCandidateCsvRow(row: Record<string, string>): Record<string, string | null> | null {
+  if (!CANDIDATE_SQS.has(row.SQ_CANDIDATO) || row.NR_TURNO !== "1") return null
+  return Object.fromEntries(CSV_FIELDS.map((key) => [key, /^SQ_|^CD_|^NR_|^ANO_/.test(key) ? String(code(row[key]) ?? "") || null : text(row[key])]))
+}
+
+export async function parseCandidatePackage(bytes: Buffer) {
+  if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw new Error("pacote de candidaturas inválido")
+  const privateDir = mkdtempSync(join(tmpdir(), "pf-private-candidacy-sourcepack-"))
+  try {
+    const archive = join(privateDir, "consulta_cand_2026.zip")
+    writeFileSync(archive, bytes, { mode: 0o600 })
+    const entries = execFileSync("unzip", ["-Z1", archive], { encoding: "utf8", timeout: 30_000, maxBuffer: 4 * 1024 * 1024 }).trim().split(/\r?\n/)
+      .filter((entry) => /^[A-Za-z0-9_/-]+\.csv$/.test(entry) && !entry.includes("..") && !entry.startsWith("/")
+        && /^consulta_cand_2026_(BRASIL|PA|MG|TO)\.csv$/.test(basename(entry)))
+    const brasil = entries.filter((entry) => basename(entry) === "consulta_cand_2026_BRASIL.csv")
+    const selected = brasil.length ? brasil : entries
+    if (!selected.length || selected.length > 3) throw new Error("CSV canônico ausente ou ambíguo")
+    const records = new Map<string, Record<string, string | null>>()
+    const members: Array<{ member: string; raw_sha256: string; bytes: number }> = []
+    for (const entry of selected) {
+      const csv = execFileSync("unzip", ["-p", archive, entry], { timeout: 60_000, maxBuffer: 512 * 1024 * 1024 })
+      members.push({ member: entry, raw_sha256: SHA(csv), bytes: csv.length })
+      const csvPath = join(privateDir, basename(entry))
+      writeFileSync(csvPath, csv, { mode: 0o600 })
+      await parseCSV(csvPath, (row) => {
+        const safe = sanitizeCandidateCsvRow(row)
+        if (!safe) return
+        const sq = safe.SQ_CANDIDATO!
+        const previous = records.get(sq)
+        if (previous && JSON.stringify(previous) !== JSON.stringify(safe)) throw new Error("SQ com linhas oficiais divergentes")
+        records.set(sq, safe)
+      })
+    }
+    const missingSqs = CANDIDATES.filter((candidate) => !records.has(candidate.sq)).map((candidate) => candidate.sq)
+    return {
+      members, complete: missingSqs.length === 0, missing_sqs: missingSqs,
+      records: CANDIDATES.flatMap((candidate) => records.has(candidate.sq) ? [records.get(candidate.sq)!] : []),
+    }
+  } finally { rmSync(privateDir, { recursive: true, force: true }) }
 }
 
 export function safeProgramUrl(value: unknown): string | null {
@@ -69,6 +141,7 @@ export function sanitizeDetail(payload: unknown, expectedSq: string) {
   })
   return {
     id: expectedSq,
+    source_shape: sourceShape(row),
     nomeUrna: text(row.nomeUrna), nomeCompleto: text(row.nomeCompleto), numero: code(row.numero),
     descricaoSituacao: text(row.descricaoSituacao), descricaoTotalizacao: text(row.descricaoTotalizacao),
     descricaoSituacaoComplementar: text(row.descricaoSituacaoComplementar),
@@ -91,7 +164,7 @@ export function sanitizeDetail(payload: unknown, expectedSq: string) {
 }
 
 export async function fetchBounded(url: string, maxBytes: number, timeoutMs: number, fetchImpl: FetchLike = fetch) {
-  if (!DETAIL_URLS.has(url) && url !== ZIP_URL && safeProgramUrl(url) !== url) throw new Error("URL fora da allowlist")
+  if (!DETAIL_URLS.has(url) && url !== ZIP_URL && url !== TSE_CANDIDACY_URL && safeProgramUrl(url) !== url) throw new Error("URL fora da allowlist")
   const response = await fetchImpl(url, {
     redirect: "manual", signal: AbortSignal.timeout(timeoutMs),
     headers: { accept: "application/json, application/pdf, application/zip", referer: "https://divulgacandcontas.tse.jus.br/divulga/", "user-agent": "PuxaFichaDataFreshness/1.0" },
@@ -176,10 +249,18 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
   const file = candidates.find((candidate) => candidate.id === "130002544411")?.arquivos[0]
   const directPdf = file?.url ? await binary(file.url, "ben-mendes-130017139584.pdf", "pdf") : false
   if (!directPdf) await binary(ZIP_URL, "proposta_governo_2026_MG.zip", "zip")
+  let officialCsv: Awaited<ReturnType<typeof parseCandidatePackage>> | null = null
+  try {
+    const result = await fetchBounded(TSE_CANDIDACY_URL, 128 * 1024 * 1024, 120_000, fetchImpl)
+    record(TSE_CANDIDACY_URL, result)
+    if (!result.response.ok) throw new Error("HTTP não aprovado")
+    officialCsv = await parseCandidatePackage(result.bytes)
+    if (!officialCsv.complete) errors.push({ target: TSE_CANDIDACY_URL, reason: `pacote consultado ainda não contém SQs: ${officialCsv.missing_sqs.join(",")}; recorte existente preservado, sem inferir situação da pessoa` })
+  } catch { errors.push({ target: TSE_CANDIDACY_URL, reason: "CSV indisponível, inválido, incompleto ou acima do limite; nenhum dado bruto persistido no artefato" }) }
   const report = {
     schema_version: 1, generated_at: now().toISOString(), scope: "freshness-closeout-readonly",
     privacy: "allowlisted candidate fields only; original JSON bytes hashed but never persisted",
-    direct_pdf_metadata_url: file?.url ?? null, candidates, receipts, errors,
+    direct_pdf_metadata_url: file?.url ?? null, candidates, official_csv: officialCsv, receipts, errors,
   }
   writeFileSync(join(outputDir, "sourcepack.json"), `${JSON.stringify(report, null, 2)}\n`)
   return report

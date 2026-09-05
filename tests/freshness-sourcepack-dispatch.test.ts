@@ -12,7 +12,7 @@ test("diagnóstico fechado no branch não recebe secrets nem executa auditoria r
   assert.equal(workflow.jobs.auditar.if, "github.ref != 'refs/heads/codex/freshness-closeout'")
   assert.match(workflow.jobs.notificar.if, /github.ref == 'refs\/heads\/main'/)
   assert.deepEqual(job.permissions, { contents: "read" })
-  assert.equal(job["timeout-minutes"], 15)
+  assert.equal(job["timeout-minutes"], 20)
   assert.doesNotMatch(JSON.stringify(job), /secrets\.|SUPABASE|VERCEL|issues:|write|psql|revalidate/)
   const upload = job.steps.find((step: { uses?: string }) => step.uses?.startsWith("actions/upload-artifact@"))
   assert.equal(upload.if, "always()")

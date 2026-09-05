@@ -118,7 +118,7 @@ jobs:
     name: Sourcepack oficial dirigido, sem credenciais
     if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/codex/freshness-closeout'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: read
     steps:
