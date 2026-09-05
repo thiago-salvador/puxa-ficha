@@ -1,6 +1,32 @@
 # Status atual
 
-Snapshot mais recente verificado em **02/09/2026**.
+Snapshot mais recente verificado em **04/09/2026**.
+
+## Snapshot 04/09/2026: julgamentos e profissão publicados
+
+- As PRs #257, #259 e #258 foram integradas. Produção serve
+  `4e3972c31105ee33d331fc0f488bef155c104c27`, confirmado pelo endpoint
+  público de deployment. Smoke público: 52/52; busca: 1/1;
+  acessibilidade: 34/34; pesquisas: 4/4.
+- O ingest de julgamento atualizou 153 fichas, com recibo e readback para
+  cada escrita. As 209 APIs públicas foram comparadas ao plano executado,
+  sem divergências de situação. A fonte é o snapshot TSE de 04/09, não uma
+  garantia de que o TSE não voltará a publicar alterações.
+- A migration `20260904220000`, run `33924509599`, corrigiu somente a
+  profissão de `alvaro-dias-rn`, com pré-imagem. Banco e API pública mostram
+  `Médico`. O topo do ledger foi conferido após o apply.
+- A coleta de sanções do universo público terminou no run `33925164381`:
+  209 recibos, sendo 206 `vazio_confirmado`, dois `encontrado` e um erro por
+  falta de CPF de Vera Lúcia (CE). As quatro sanções preexistentes de três
+  candidatos foram preservadas. Na cobertura por ficha, os estados são três
+  com dados, 205 com zero comprovado e uma ainda não verificada. Um workflow
+  verde não elimina esse erro individual.
+- Permanecem pendências factuais: marcador técnico no histórico de Rico
+  Pinheiro, textos persistidos que ainda dizem aguardar julgamento, revisão
+  do programa anunciado de Ben Mendes e decisão editorial sobre a ficha
+  indeferida de Subtenente Luiz Carlos. Situação estruturada atualizada não
+  implica biografia revisada, documento lido ou ficha despublicada.
+
 
 ## Snapshot 02/09/2026: registro de identidade renovado e validade de 30 dias
 

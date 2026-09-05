@@ -35,7 +35,12 @@ export const RECIBOS_AUSENCIA_SUPERADOS_SQS: ReadonlySet<string> = new Set([
   "190002543380",
 ])
 
-/** Recibos que ainda descrevem o estado atual da fonte oficial. */
+/** Anúncio posterior no DivulgaCand; não comprova conteúdo no pacote histórico. */
+export const RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS: ReadonlySet<string> = new Set([
+  "130002544411", // Ben Mendes: arquivo 130017139584 em 2026-09-04.
+])
+
+/** Recibos ainda vinculados ao snapshot histórico do inventário de pacotes. */
 export const RECIBOS_AUSENCIA_VIGENTES_SQS: ReadonlySet<string> = new Set(
   [...RECIBOS_AUSENCIA_SQS].filter((sq) => !RECIBOS_AUSENCIA_SUPERADOS_SQS.has(sq)),
 )

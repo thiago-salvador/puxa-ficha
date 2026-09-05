@@ -156,7 +156,9 @@ test("mantém a referência no gerador do inventário sem tocar o banco", () => 
 
 test("gera os estados públicos sem documento dos recibos vigentes, sem inventar conteúdo", () => {
   const records = buildProgramAbsencePublicRecords(INVENTORY_PATH, RECEIPT_PATH);
-  assert.deepEqual(records.map((entry) => entry.slug), [...CURRENT.values()].sort((a, b) => a.localeCompare(b, "pt-BR")));
+  // O snapshot do pacote continua datado; o anúncio posterior impede restaurar
+  // a ausência antiga na ficha, sem alegar que houve download do PDF.
+  assert.deepEqual(records.map((entry) => entry.slug), [...CURRENT.values()].filter((slug) => slug !== "ben-mendes").sort((a, b) => a.localeCompare(b, "pt-BR")));
   for (const entry of records) {
     assert.equal(entry.record.estado, "sem_documento_oficial");
     assert.equal("resumo" in entry.record, false);

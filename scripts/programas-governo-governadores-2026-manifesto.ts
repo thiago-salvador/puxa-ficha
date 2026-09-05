@@ -22,7 +22,7 @@ async function main(): Promise<void> {
   const records = await Promise.all(files.map(async (file) => {
     const record = JSON.parse(await readFile(path.join(RECORDS_DIR, file), "utf8")) as ProgramaGovernoRegistro
     assertProgramaGovernoRegistro(record)
-    if (!["aprovado", "sem_documento_oficial"].includes(record.estado)) {
+    if (!["aprovado", "sem_documento_oficial", "documento_anunciado"].includes(record.estado)) {
       throw new Error(`${file}: estado não publicável no manifesto`)
     }
     if (record.fonte.cargo !== "GOVERNADOR") throw new Error(`${file}: cargo divergente`)

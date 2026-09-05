@@ -16,6 +16,7 @@ import type { ResolveMethod } from "./tse-resolver"
 import { createTSEResolver, isWeakNameMatch, shouldSkipWeakMatch } from "./tse-resolver"
 import { canonicalCargo } from "./cargo-utils"
 import { sanitizeTemplateText } from "./ptbr-sanitize"
+import { sanitizePublicText } from "@/lib/public-text"
 import { canonicalizeEstadoForStorage } from "@/lib/br-uf"
 import { downloadToFile } from "./download-to-file"
 
@@ -80,6 +81,13 @@ function shouldOmitFromHistoricoDescricao(descricao: string): boolean {
     u.includes("CASSADO") ||
     u.includes("FALECIDO")
   )
+}
+
+/** Higiene do texto público, sem inferir um resultado eleitoral ausente. */
+export function buildTseHistoricoObservacoes(resultado: string, ano: number, eleito: boolean): string {
+  return sanitizePublicText(sanitizeTemplateText(eleito
+    ? `${resultado} (TSE ${ano})`
+    : `Candidatura: ${resultado} (TSE ${ano})`))
 }
 
 interface CandidacyRecord {
@@ -375,9 +383,7 @@ export async function ingestTSEHistorico(): Promise<IngestResult[]> {
           existing = legacyRows?.[0]
         }
 
-        const observacoes = sanitizeTemplateText(record.eleito
-          ? `${record.situacao_resultado} (TSE ${record.ano})`
-          : `Candidatura: ${record.situacao_resultado} (TSE ${record.ano})`)
+        const observacoes = buildTseHistoricoObservacoes(record.situacao_resultado, record.ano, record.eleito)
 
         // Guard-rail de homonimo (2026-07-26). O resolver casa em tres degraus:
         // SQ_CANDIDATO, CPF e, por ultimo, NOME. O degrau de nome era silencioso,

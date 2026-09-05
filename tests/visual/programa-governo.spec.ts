@@ -2,6 +2,8 @@ import { expect, test, type Page } from "playwright/test"
 import AxeBuilder from "@axe-core/playwright"
 import { build } from "esbuild"
 import path from "node:path"
+import ben from "../../src/data/programas-governo/governadores-2026/ben-mendes.json"
+import { toProgramaGovernoManifestoPublico } from "../../src/lib/programa-governo"
 
 const fonte = {
   ano: 2026,
@@ -123,6 +125,7 @@ const chunkManifest = {
 }
 
 let multidocumentHarness = ""
+let announcementHarness = ""
 
 test.beforeAll(async () => {
   const result = await build({
@@ -172,9 +175,26 @@ test.beforeAll(async () => {
     write: false,
   })
   multidocumentHarness = result.outputFiles[0].text
+  const announcement = await build({
+    stdin: {
+      contents: `
+        import React from "react"
+        import { createRoot } from "react-dom/client"
+        import { ProgramaGovernoOverview } from "./src/components/ProgramaGovernoSection"
+        createRoot(document.getElementById("root")).render(
+          <ProgramaGovernoOverview manifesto={${JSON.stringify(toProgramaGovernoManifestoPublico(ben))}} onOpenTab={() => {}} />
+        )
+      `,
+      resolveDir: process.cwd(), sourcefile: "programa-governo-anuncio-harness.tsx", loader: "tsx",
+    },
+    alias: { "@": path.join(process.cwd(), "src") },
+    bundle: true, define: { "process.env.NODE_ENV": '"test"' },
+    format: "iife", platform: "browser", write: false,
+  })
+  announcementHarness = announcement.outputFiles[0].text
 })
 
-async function mountMultidocumentHarness(page: Page) {
+async function mountMultidocumentHarness(page: Page, harness = multidocumentHarness, selector = "[data-pf-programa-multidocument]") {
   const appResponse = await page.request.get("/candidato/lula")
   const appHtml = await appResponse.text()
   const linkTags = appHtml.match(/<link[^>]+>/g) ?? []
@@ -202,9 +222,23 @@ async function mountMultidocumentHarness(page: Page) {
       </body>
     </html>
   `)
-  await page.addScriptTag({ content: multidocumentHarness })
-  await expect(page.locator("[data-pf-programa-multidocument]")).toBeVisible()
+  await page.addScriptTag({ content: harness })
+  await expect(page.locator(selector)).toBeVisible()
 }
+
+test("anúncio real de Ben mantém resumo pendente em desktop e mobile", async ({ page }, testInfo) => {
+  for (const width of [390, 1440]) {
+    await page.setViewportSize({ width, height: 900 })
+    await mountMultidocumentHarness(page, announcementHarness, '[data-pf-programa-state="documento_anunciado"]')
+    await expect(page.getByText("Documento anunciado pelo TSE", { exact: true })).toBeVisible()
+    await expect(page.getByText(/Resumo pendente/)).toBeVisible()
+    await expect(page.locator('[data-pf-programa-source="anuncio-tse"]')).toHaveAttribute("href", ben.anuncio.fonteUrl)
+    await expect(page.getByText("Documento oficial não localizado", { exact: true })).toHaveCount(0)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+    expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
+    await page.screenshot({ path: testInfo.outputPath(`ben-anuncio-${width}.png`), fullPage: true })
+  }
+})
 
 test("estado real aprovado é explícito, lazy e acessível", async ({ browser }, testInfo) => {
   const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
