@@ -374,7 +374,9 @@ describe("classificador puro (#136)", () => {
     // migrations", conjunto de falhas inalterado.
     // 344 -> 345: correção de profissão 20260904220000 aplica como no-op sem
     // ficha. MEDIDO no replay local PG17: 345 + 105 = 450, falhas inalteradas.
-    assert.equal(manifesto.aplicadas_esperadas, 345)
+    // 345 -> 346: textos 20260905150000 sem IDs do lote não escrevem no replay.
+    // Medição local PG17: 346 + 105 = 451, conjunto de falhas preservado.
+    assert.equal(manifesto.aplicadas_esperadas, 346)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
