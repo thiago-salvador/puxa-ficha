@@ -14,7 +14,7 @@ import {
 import { buildComparadorPairOg, buildEditorialOg, dynamicOgImageCacheHeaders } from "@/lib/og"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { resolveComparadorCohortFromSlugs } from "@/lib/comparador-cohort"
@@ -23,7 +23,7 @@ export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 const UF_SET = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
-const comparadorOgRateLimiter = createFixedWindowIpRateLimiter({
+const comparadorOgRateLimiter = createDistributedIpRateLimiter({
   namespace: "comparador-og",
   max: 90,
   windowMs: 60_000,
@@ -31,10 +31,11 @@ const comparadorOgRateLimiter = createFixedWindowIpRateLimiter({
 
 export async function GET(request: NextRequest) {
   try {
-    const decision = comparadorOgRateLimiter.check(request.headers)
+    const decision = await comparadorOgRateLimiter.check(request.headers)
     if (!decision.allowed) return rateLimitExceededResponse(decision)
   } catch (error) {
-    console.warn("comparador OG rate limit failed open", error)
+    console.warn("comparador OG rate limit failed closed", error)
+    return rateLimitExceededResponse({ allowed: false, remaining: 0, resetAt: Date.now() + 3000, unavailable: true })
   }
 
   const url = request.nextUrl

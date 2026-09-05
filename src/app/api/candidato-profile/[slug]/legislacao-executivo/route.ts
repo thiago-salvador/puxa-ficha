@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { getLegislacaoExecutivoBySlugResource } from "@/lib/api"
 import { toPublicLegislacaoExecutivoDto } from "@/lib/public-profile-dto"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 
@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic"
  * Nao se protege dado: o conteudo e publico por projeto. Protege-se conta e
  * disponibilidade.
  */
-const legislacaoRateLimiter = createFixedWindowIpRateLimiter({
+const legislacaoRateLimiter = createDistributedIpRateLimiter({
   namespace: "candidato-legislacao-executivo",
   max: 60,
   windowMs: 60_000,
@@ -27,7 +27,7 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> },
 ) {
-  const decisao = legislacaoRateLimiter.check(request.headers)
+  const decisao = await legislacaoRateLimiter.check(request.headers)
   if (!decisao.allowed) return rateLimitExceededResponse(decisao)
 
   const { slug } = await params

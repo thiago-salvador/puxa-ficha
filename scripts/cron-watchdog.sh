@@ -237,7 +237,7 @@ probe_runtime_smoke() {
     "$status_label" "$smoke_url" "" "vercel.json"
 }
 
-# Frescor dos crons da Vercel com rastro no banco (news-refresh, send-digest).
+# Frescor dos crons com rastro de coleta/envio ou recibo operacional privado.
 # A rota /api/internal/cron-freshness devolve o último instante de cada um; se
 # o cron deixar de disparar (plano, cron desativado, CRON_SECRET rotacionado de
 # um lado só), nenhum 500 acontece e só esta sonda percebe.
@@ -267,17 +267,40 @@ probe_cron_freshness() {
     return 0
   fi
 
-  local line name age
+  # HTTP 200 sozinho não prova que todos os crons foram medidos. Um deploy
+  # antigo ou payload malformado não pode transformar uma lista vazia em verde.
+  if ! jq -e '
+    .ok == true and (.checks | type == "array") and
+    ([.checks[].name] | sort == ["news-refresh", "published-consistency", "revalidate-public-cache", "send-digest"]) and
+    all(.checks[]; has("age_hours") and (.age_hours == null or
+      ((.age_hours | type) == "number" and .age_hours >= 0)))
+  ' "$body" >/dev/null 2>&1; then
+    rm -f "$body"
+    ANOMALIES=$((ANOMALIES + 1))
+    publish_anomaly "cron-freshness" "cron-freshness" \
+      "contrato de frescor inválido: roster ou idades ausentes" "$url" "" "vercel.json"
+    return 0
+  fi
+
+  local name age limit_hours
   while IFS=$'\t' read -r name age; do
     [[ -z "$name" ]] && continue
+    limit_hours="$max_hours"
+    [[ "$name" == "revalidate-public-cache" ]] && limit_hours=1
     if [[ "$age" == "null" ]]; then
+      if [[ "$name" == "published-consistency" || "$name" == "revalidate-public-cache" ]]; then
+        ANOMALIES=$((ANOMALIES + 1))
+        publish_anomaly "vercel-cron-${name}" "vercel-cron-${name}" \
+          "recibo de execução ausente" "$url" "" "vercel.json"
+        continue
+      fi
       echo "frescor: ${name} sem rastro ainda"
       continue
     fi
-    if awk -v a="$age" -v m="$max_hours" 'BEGIN { exit !(a > m) }'; then
+    if awk -v a="$age" -v m="$limit_hours" 'BEGIN { exit !(a > m) }'; then
       ANOMALIES=$((ANOMALIES + 1))
       publish_anomaly "vercel-cron-${name}" "vercel-cron-${name}" \
-        "último rastro há ${age}h (limite ${max_hours}h)" "$url" "" "vercel.json"
+        "último rastro há ${age}h (limite ${limit_hours}h)" "$url" "" "vercel.json"
     else
       echo "ok: frescor ${name} (${age}h)"
     fi

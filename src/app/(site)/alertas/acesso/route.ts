@@ -8,7 +8,7 @@ import {
 import { logAlertsApiExit } from "@/lib/alerts-log"
 import { setAlertManageTokenCookie } from "@/lib/alerts-session"
 import { normalizeCandidateSlug, normalizeOpaqueToken } from "@/lib/alerts-shared"
-import { createFixedWindowIpRateLimiter } from "@/lib/request-rate-limit"
+import { createDistributedIpRateLimiter } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
@@ -19,7 +19,7 @@ export const dynamic = "force-dynamic"
 // do semáforo do Supabase, degradando a ficha pública junto. As quatro rotas de
 // mutação de alertas ganharam o guard no review de 2026-08-03 e esta ficou de
 // fora, mesmo fazendo a mesma consulta e sendo alcançável por GET simples.
-const acessoRateLimiter = createFixedWindowIpRateLimiter({
+const acessoRateLimiter = createDistributedIpRateLimiter({
   namespace: "alertas-acesso",
   max: 120,
   windowMs: 60_000,
@@ -69,10 +69,11 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
     // cookie, a mesma degradação para anônimo já usada quando o token não existe,
     // em vez de devolver 429 em JSON no meio de uma navegação do navegador.
     try {
-      const decision = acessoRateLimiter.check(req.headers)
+      const decision = await acessoRateLimiter.check(req.headers)
       if (!decision.allowed) return response
     } catch (error) {
-      console.warn("alertas/acesso rate limit failed open", error)
+      console.warn("alertas/acesso rate limit failed closed", error)
+      return response
     }
 
     // FIXACAO DE SESSAO (master review de 2026-08-03). Antes, qualquer string que

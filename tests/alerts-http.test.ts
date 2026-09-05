@@ -595,7 +595,7 @@ describe("alerts HTTP routes", () => {
       assert.equal(fixture.emails.length, 0)
     })
 
-    it("sends a fresh manage link for a verified subscriber without a valid browser session", async () => {
+    it("resends existing manage access without invalidating a verified subscriber session", async () => {
       const fixture = new AlertsRouteFixture({
         candidatos_publico: [seedCandidate()],
         alert_subscribers: [
@@ -631,7 +631,9 @@ describe("alerts HTTP routes", () => {
       assert.equal("verified" in body, false)
       assert.equal(fixture.emails.length, 1)
       assert.match(fixture.emails[0]?.idempotencyKey ?? "", /^pf-manage:[^:]+:[0-9a-f]{32}$/)
-      assert.notEqual(fixture.getTable("alert_subscribers")[0]?.manage_token_hash, previousManageHash)
+      assert.equal(fixture.getTable("alert_subscribers")[0]?.manage_token_hash, previousManageHash)
+      assert.match(fixture.emails[0]?.text ?? "", /ManageTokenVerified001/)
+      assert.equal(fixture.getTable("alert_subscriptions").length, 0, "mailbox possession is required before following")
     })
 
     it("follows immediately for a verified subscriber with a valid manage token", async () => {
@@ -671,6 +673,33 @@ describe("alerts HTTP routes", () => {
       assert.equal(body.following, true)
       assert.equal(fixture.getTable("alert_subscriptions").length, 1)
       assertAlertManageCookie(response, manageToken)
+    })
+
+    it("never rotates or exposes recovery failure when the stored manage ciphertext is invalid", async () => {
+      const subscriber = seedSubscriber({ verified: true, manage_token_ciphertext: "invalid", last_verification_email_sent_at: null })
+      const fixture = new AlertsRouteFixture({ candidatos_publico: [seedCandidate()], alert_subscribers: [subscriber] })
+      const response = await createSubscribeHandler(createDeps(fixture))(
+        fixture.request("/api/alerts/subscribe", { body: { email: subscriber.email, candidateSlug: "lula" } }),
+      )
+      assert.equal(response.status, 200)
+      assert.equal(fixture.getTable("alert_subscribers")[0]?.manage_token_hash, subscriber.manage_token_hash)
+      assert.equal(fixture.emails.length, 0)
+      assert.equal(fixture.getTable("alert_subscriptions").length, 0)
+    })
+
+    it("a later recovery email has a fresh delivery key without rotating the session", async () => {
+      const subscriber = seedSubscriber({ verified: true, last_verification_email_sent_at: null })
+      const fixture = new AlertsRouteFixture({ candidatos_publico: [seedCandidate()], alert_subscribers: [subscriber] })
+      const requestedAt = Date.now()
+      for (const offset of [0, 3_600_000]) {
+        const response = await createSubscribeHandler(createDeps(fixture, new Date(requestedAt + offset)))(
+          fixture.request("/api/alerts/subscribe", { body: { email: subscriber.email, candidateSlug: "lula" } }),
+        )
+        assert.equal(response.status, 200)
+      }
+      assert.equal(fixture.emails.length, 2)
+      assert.notEqual(fixture.emails[0]?.idempotencyKey, fixture.emails[1]?.idempotencyKey)
+      assert.equal(fixture.getTable("alert_subscribers")[0]?.manage_token_hash, subscriber.manage_token_hash)
     })
 
     it("returns 503 when sending the verification email fails", async () => {

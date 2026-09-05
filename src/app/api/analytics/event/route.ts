@@ -9,9 +9,9 @@ import {
 } from "@/lib/analytics-launch-store"
 import { hashTrustedClientIp } from "@/lib/client-ip"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
-  type RequestRateLimiter,
+  type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
 import { rejectCrossSitePublicWrite } from "@/lib/public-write-origin-guard"
 import {
@@ -26,7 +26,7 @@ const RATE_LIMIT_MAX = 120
 const RATE_LIMIT_WINDOW_MS = 60_000
 const RATE_LIMIT_NAMESPACE = "analytics-event"
 
-const analyticsEventRateLimiter = createFixedWindowIpRateLimiter({
+const analyticsEventRateLimiter = createDistributedIpRateLimiter({
   namespace: RATE_LIMIT_NAMESPACE,
   max: RATE_LIMIT_MAX,
   windowMs: RATE_LIMIT_WINDOW_MS,
@@ -35,7 +35,7 @@ const analyticsEventRateLimiter = createFixedWindowIpRateLimiter({
 interface AnalyticsEventDeps {
   recordAnalyticsLaunchEvent: typeof recordAnalyticsLaunchEvent
   recordAnalyticsLaunchEventUnderQuota: typeof recordAnalyticsLaunchEventUnderQuota
-  rateLimiter: RequestRateLimiter
+  rateLimiter: DistributedRequestRateLimiter
   now: () => number
 }
 
@@ -78,7 +78,7 @@ export function createAnalyticsEventPostHandler(deps: AnalyticsEventDeps = defau
     // Primeiro portão, em memória: é de graça e corta enxurrada de uma instância
     // só antes de gastar round-trip de banco. Não é o teto, é o pré-filtro.
     try {
-      const decision = deps.rateLimiter.check(req.headers)
+      const decision = await deps.rateLimiter.check(req.headers)
       if (!decision.allowed) return rateLimitExceededResponse(decision)
     } catch (error) {
       console.error("analytics event rate limit failed closed", error)

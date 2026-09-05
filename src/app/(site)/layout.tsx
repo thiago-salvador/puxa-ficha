@@ -4,6 +4,7 @@ import { CloudflareWebAnalytics } from "@/components/CloudflareWebAnalytics"
 import { Navbar } from "@/components/Navbar"
 import { GlobalSearchProvider } from "@/components/GlobalSearchProvider"
 import DevToolsInit from "@/components/DevToolsInit"
+import { OfflineFallback } from "@/components/OfflineFallback"
 
 export const metadata: Metadata = {
   title: "Puxa Ficha | Candidatos mapeados 2026",
@@ -71,6 +72,7 @@ export default async function SiteLayout({
         </main>
       </GlobalSearchProvider>
       <CloudflareWebAnalytics />
+      <OfflineFallback />
     </>
   )
 }

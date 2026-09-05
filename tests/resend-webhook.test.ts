@@ -96,6 +96,16 @@ describe("rota /api/webhooks/resend", () => {
     assert.ok(!hashes[0].includes("@"), "o email nunca sai em claro")
   })
 
+  test("recusa corpo acima de 256 KiB antes da assinatura, com ou sem Content-Length", async () => {
+    let chamadas = 0
+    const handler = createResendWebhookHandler({ secret: SECRET, desligarCanal: async () => { chamadas++; return 1 }, now: () => NOW })
+    const payload = JSON.stringify({ type: "email.complained", padding: "x".repeat(256 * 1024) })
+    for (const h of [{}, headers(payload), { ...headers(payload), "content-length": String(Buffer.byteLength(payload)) }]) {
+      assert.equal((await handler(request(payload, h))).status, 413)
+    }
+    assert.equal(chamadas, 0)
+  })
+
   test("bounce transitorio e outros eventos sao ignorados com 200; falha no Supabase responde 500 para a Resend reenviar", async () => {
     const handler = createResendWebhookHandler({ secret: SECRET, desligarCanal: async () => { throw new Error("timeout") }, now: () => NOW })
     const transitorio = JSON.stringify({ type: "email.bounced", data: { to: ["a@b.c"], bounce: { type: "Transient" } } })

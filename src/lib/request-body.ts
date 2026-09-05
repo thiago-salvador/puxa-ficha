@@ -11,7 +11,7 @@ export function isRequestBodyTooLargeError(error: unknown): error is RequestBody
   return error instanceof RequestBodyTooLargeError
 }
 
-async function readTextBodyWithLimit(
+export async function readTextBodyWithLimit(
   request: Request,
   limitBytes = PUBLIC_JSON_BODY_LIMIT_BYTES,
 ): Promise<string> {

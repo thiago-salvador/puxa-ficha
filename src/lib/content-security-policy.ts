@@ -72,6 +72,7 @@ export function buildContentSecurityPolicy({
   return [
     "default-src 'self'",
     `script-src ${compactDirective(scriptSources)}`,
+    "worker-src 'self'",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     `img-src ${compactDirective(imageSources)}`,
     "font-src 'self' data: https://fonts.gstatic.com",

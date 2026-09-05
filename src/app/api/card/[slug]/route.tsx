@@ -8,9 +8,9 @@ import {
   type CardFormat,
 } from "@/lib/social-card"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
-  type RequestRateLimiter,
+  type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
 
 export const runtime = "nodejs"
@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic"
 
 const VALID_FORMATS = new Set<CardFormat>(["feed", "story"])
 
-const cardRateLimiter = createFixedWindowIpRateLimiter({
+const cardRateLimiter = createDistributedIpRateLimiter({
   namespace: "social-card",
   max: 60,
   windowMs: 60_000,
@@ -29,7 +29,7 @@ interface CardRouteDeps {
   fetchPhotoAsBase64: typeof fetchPhotoAsBase64
   extractCardData: typeof extractCardData
   buildSocialCard: typeof buildSocialCard
-  rateLimiter: RequestRateLimiter
+  rateLimiter: DistributedRequestRateLimiter
   startSpan: typeof Sentry.startSpan
 }
 
@@ -47,7 +47,7 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
     request: NextRequest,
     { params }: { params: Promise<{ slug: string }> },
   ) {
-    const decision = deps.rateLimiter.check(request.headers)
+    const decision = await deps.rateLimiter.check(request.headers)
     if (!decision.allowed) return rateLimitExceededResponse(decision)
 
     const { slug } = await params

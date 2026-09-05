@@ -13,36 +13,36 @@ function headersComIp(ip: string): Pick<Headers, "get"> {
   }
 }
 
-test("permite até o teto na janela e recusa a partir dele", () => {
+test("permite até o teto na janela e recusa a partir dele", async () => {
   doadoresSearchRateLimiter.reset()
   const agora = 1_000_000
   for (let i = 0; i < DOADORES_SEARCH_RATE_LIMIT_MAX; i++) {
-    const decisao = doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
+    const decisao = await doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
     assert.equal(decisao.allowed, true, `busca ${i + 1} deveria passar`)
   }
-  const recusa = doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
+  const recusa = await doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
   assert.equal(recusa.allowed, false)
   assert.equal(recusa.remaining, 0)
 })
 
-test("IPs distintos não dividem o mesmo balde", () => {
+test("IPs distintos não dividem o mesmo balde", async () => {
   doadoresSearchRateLimiter.reset()
   const agora = 1_000_000
   for (let i = 0; i < DOADORES_SEARCH_RATE_LIMIT_MAX; i++) {
-    doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
+    await doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
   }
-  const outroIp = doadoresSearchRateLimiter.check(headersComIp("198.51.100.9"), agora)
+  const outroIp = await doadoresSearchRateLimiter.check(headersComIp("198.51.100.9"), agora)
   assert.equal(outroIp.allowed, true)
 })
 
-test("janela expira e libera de novo", () => {
+test("janela expira e libera de novo", async () => {
   doadoresSearchRateLimiter.reset()
   const agora = 1_000_000
   for (let i = 0; i < DOADORES_SEARCH_RATE_LIMIT_MAX; i++) {
-    doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
+    await doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), agora)
   }
   const depoisDaJanela = agora + DOADORES_SEARCH_RATE_LIMIT_WINDOW_MS + 1
-  const liberada = doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), depoisDaJanela)
+  const liberada = await doadoresSearchRateLimiter.check(headersComIp("203.0.113.7"), depoisDaJanela)
   assert.equal(liberada.allowed, true)
 })
 

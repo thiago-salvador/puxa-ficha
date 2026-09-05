@@ -42,3 +42,11 @@ npm run settings:check
 Testes visuais e de acessibilidade exigem browsers do Playwright. Mudanças na
 ficha pública, responsividade ou estados visuais devem executar o recorte
 Playwright correspondente, além dos gates básicos.
+
+## Revisão de dependências e lint de 05/09/2026
+
+O lockfile atualiza a dependência transitiva de desenvolvimento `qs` de 6.15.2
+para 6.16.0 dentro do intervalo já declarado, corrigindo os advisories moderados.
+Não altera a API de dependências diretas. O ESLint passa a verificar promises
+com tipos em todo `src/`: `no-floating-promises` e `no-misused-promises` são
+erros bloqueantes. Scripts mantêm o gate TypeScript próprio.

@@ -229,7 +229,7 @@ export function FollowCandidateButton({
       type="button"
       variant={following ? "outline" : "default"}
       size="lg"
-      onClick={handleToggleFollow}
+      onClick={() => { void handleToggleFollow() }}
       disabled={sessionLoading || submitting}
       aria-busy={sessionLoading || submitting}
       className={variant === "compact" ? "min-h-11 rounded-full px-4" : "min-h-11 w-full sm:w-auto"}
@@ -255,7 +255,7 @@ export function FollowCandidateButton({
 
   const subscribeForm = !hasSession && !sessionLoading && (expanded || Boolean(feedback)) && (
     <form
-      onSubmit={handleSubscribe}
+      onSubmit={(event) => { void handleSubscribe(event) }}
       className={variant === "compact"
         ? "basis-full mt-1 flex flex-col gap-2"
         : "mt-4 flex flex-col gap-2"}

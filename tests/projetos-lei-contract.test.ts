@@ -148,7 +148,7 @@ describe("Projetos de lei contract", () => {
     })
 
     test("UI de legislação ordena com destaque primeiro, mas não trata ausência de tema/destaque como erro factual", () => {
-      const sectionsContent = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const sectionsContent = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       // UI uses destaque for ordering but handles missing gracefully
       assert.match(sectionsContent, /if \(a\.destaque && !b\.destaque\) return -1/, "UI ordena destaque primeiro")
       // No assertion that destaque or tema must be present - absence is acceptable
@@ -252,14 +252,14 @@ describe("Projetos de lei contract", () => {
     })
   })
 
-  describe("src/components/CandidatoProfileSections.tsx", () => {
+  describe("src/components/LegislationTabSection.tsx", () => {
     test("a seção de legislação recebe projetosLei", () => {
-      const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       assert.match(content, /projetosLei:\s*ProjetoLei\[\]/, "deve receber projetosLei")
     })
 
     test("renderiza Projetos de lei ({projetosLei.length}) quando o acervo é só projeto de lei", () => {
-      const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       assert.match(content, /Projetos de lei \(\$\{items\.length\}\)/, "deve renderizar contagem")
     })
 
@@ -304,7 +304,7 @@ describe("Projetos de lei contract", () => {
         "o numerador vem de head-count por sigla, não da prévia",
       )
       assert.match(
-        api,
+        readFileSync("src/lib/candidate-section-freshness.ts", "utf-8"),
         /rotuloFreshnessProjetos/,
         "o freshness também rotula pelo acervo inteiro",
       )
@@ -469,7 +469,7 @@ describe("Projetos de lei contract", () => {
     })
 
     test("acervo misto deixa de ser anunciado como projeto de lei", () => {
-      const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       assert.match(
         content,
         /Proposições de autoria \(\$\{items\.length\}\)/,
@@ -488,12 +488,12 @@ describe("Projetos de lei contract", () => {
     })
 
     test("ordena visualmente com destaque primeiro", () => {
-      const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       assert.match(content, /if \(a\.destaque && !b\.destaque\) return -1/, "deve ordenar destaque primeiro")
     })
 
     test("usa safeHref antes de renderizar link externo", () => {
-      const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+      const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
       assert.match(content, /safeHref\(projeto\.url_inteiro_teor\)/, "deve usar safeHref antes de renderizar link")
     })
   })

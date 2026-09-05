@@ -23,6 +23,7 @@ interface AlertSubscriberRecordBase {
   verified_at: string | null
   verify_token_expires_at: string | null
   manage_token_hash: string
+  manage_token_ciphertext: string
   canal_email: boolean
   last_verification_email_sent_at: string | null
   last_digest_sent_at: string | null
@@ -807,6 +808,7 @@ export class AlertsRouteFixture {
       verified_at: subscriber.verified_at,
       verify_token_expires_at: subscriber.verify_token_expires_at,
       manage_token_hash: subscriber.manage_token_hash,
+      manage_token_ciphertext: subscriber.manage_token_ciphertext,
       canal_email: subscriber.canal_email,
       last_verification_email_sent_at: subscriber.last_verification_email_sent_at,
       last_digest_sent_at: subscriber.last_digest_sent_at,

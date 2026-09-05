@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { getProjetosLeiBySlugResource } from "@/lib/api"
 import { toPublicProjetosLeiDto } from "@/lib/public-profile-dto"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 
@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic"
  * Nao se protege dado: o conteudo e publico por projeto. Protege-se conta e
  * disponibilidade.
  */
-const projetosLeiRateLimiter = createFixedWindowIpRateLimiter({
+const projetosLeiRateLimiter = createDistributedIpRateLimiter({
   namespace: "candidato-projetos-lei",
   max: 60,
   windowMs: 60_000,
@@ -27,7 +27,7 @@ export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> },
 ) {
-  const decisao = projetosLeiRateLimiter.check(request.headers)
+  const decisao = await projetosLeiRateLimiter.check(request.headers)
   if (!decisao.allowed) return rateLimitExceededResponse(decisao)
 
   const { slug } = await params

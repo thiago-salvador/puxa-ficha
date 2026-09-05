@@ -7,9 +7,11 @@
 import { spawn } from "node:child_process"
 
 const MODELO_CLI = process.env.PF_QWEN_CLI ?? "qwen"
+const MODELO = (process.env.PF_QWEN_MODEL ?? "").trim()
 // Extra args via ambiente (ex.: PF_QWEN_EXTRA_ARGS="--safe-mode" para nao
 // carregar MCP servers em chamadas batch). Argumentos sem espacos internos.
-const MODELO_ARGS_BASE = ["--safe-mode", "--output-format", "json", ...(process.env.PF_QWEN_EXTRA_ARGS ?? "").split(" ").filter(Boolean), "-p", ""]
+const ARGS_EXTRAS = (process.env.PF_QWEN_EXTRA_ARGS ?? "").split(" ").filter(Boolean)
+const MODELO_ARGS_BASE = ["--safe-mode", "--output-format", "json", "--model", MODELO, ...ARGS_EXTRAS]
 
 function sinalizarGrupo(child, signal) {
   if (!child?.pid) return
@@ -114,6 +116,12 @@ function extrairRespostaCli(streamTexto) {
 }
 
 async function main() {
+  if (!MODELO || /\s/.test(MODELO)) {
+    throw new Error("PF_QWEN_MODEL obrigatorio: informe uma identidade de modelo explicita, sem espacos")
+  }
+  if (ARGS_EXTRAS.some((arg) => /^(?:--model|-m)(?:=|$)/.test(arg))) {
+    throw new Error("PF_QWEN_EXTRA_ARGS nao pode substituir o modelo; use somente PF_QWEN_MODEL")
+  }
   const bruto = await lerStdin()
   const inicioEnvelope = bruto.indexOf("{")
   const envelope = JSON.parse(bruto.slice(inicioEnvelope === -1 ? 0 : inicioEnvelope))
@@ -133,6 +141,7 @@ async function main() {
     `INPUT=${JSON.stringify(envelope.input)}`,
   ].join("\n")
 
+  console.error(`PF_MODEL_ID=${MODELO}`)
   const { stdout, stderr } = await chamarQwen(promptFinal)
   let resposta
   try {

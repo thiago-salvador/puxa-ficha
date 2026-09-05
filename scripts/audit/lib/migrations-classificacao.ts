@@ -92,10 +92,12 @@ export const TABELAS_DE_ESTADO: readonly string[] = [
   "alert_subscribers",
   "analytics_launch_events",
   "coleta_log",
+  "cron_execution_receipts",
   "financiamento_doador_search",
   "identidade_timeline_quarentena_snapshot",
   "news_refresh_lotes",
   "quiz_result_short_links",
+  "request_ip_quotas",
   "schema_migrations",
 ]
 
@@ -253,7 +255,7 @@ export function tabelasTemporarias(sql: string): Set<string> {
  * declaradas nela mesma (rascunho de transação não é persistência).
  */
 export function alvosDeEscrita(sql: string): string[] {
-  const corpo = stripComentarios(sql)
+  const corpo = stripComentarios(sql).replace(/\bFOR\s+UPDATE\s+SKIP\s+LOCKED\b/gi, "")
   const temps = tabelasTemporarias(corpo)
   const alvos = new Set<string>()
   for (const m of corpo.matchAll(RE_DML)) {
@@ -422,7 +424,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // persistente e entra no replay de schema. MEDIDO no schema-gate local
   // PostgreSQL 17: aplicadas limpo 94, falhas 0, hash
   // b8cc9a759e195000044275fb86b76e8b9968d938e9e9decebca05bc504f5a83f.
-  schemaReplayTamanho: 94,
+  // 05/09/2026: PG17 mediu 97 aplicadas e zero falhas, incluindo as três
+  // migrations de remediação e a DDL explícita da barreira de publicação.
+  schemaReplayTamanho: 97,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

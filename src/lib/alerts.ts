@@ -29,6 +29,7 @@ export interface AlertSubscriberRecord {
   verified_at: string | null
   verify_token_expires_at: string | null
   manage_token_hash: string
+  manage_token_ciphertext?: string
   canal_email: boolean
   last_verification_email_sent_at: string | null
   last_digest_sent_at: string | null
@@ -109,7 +110,7 @@ export async function findSubscriberByEmailHash(
   const { data, error } = await supabase
     .from("alert_subscribers")
     .select(
-      "id, email, nome, verified, verified_at, verify_token_expires_at, manage_token_hash, canal_email, last_verification_email_sent_at, last_digest_sent_at",
+      "id, email, nome, verified, verified_at, verify_token_expires_at, manage_token_hash, manage_token_ciphertext, canal_email, last_verification_email_sent_at, last_digest_sent_at",
     ).abortSignal(supabaseQueryTimeoutSignal())
     .eq("email_hash", emailHash)
     .maybeSingle()

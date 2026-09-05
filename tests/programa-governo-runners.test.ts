@@ -10,7 +10,7 @@ type RunnerResultado = { code: number | null; stdout: string; stderr: string }
 function rodarRunner(caminho: string, envExtra: Record<string, string>, payloadStdin: string): Promise<RunnerResultado> {
   return new Promise((resolvePromise, rejectPromise) => {
     const child = spawn(process.execPath, [caminho], {
-      env: { ...process.env, ...envExtra },
+      env: { ...process.env, PF_QWEN_MODEL: "qwen-test-pinned", ...envExtra },
       stdio: ["pipe", "pipe", "pipe"],
     })
     let stdout = ""
@@ -64,6 +64,41 @@ test("runner do generator qwen converte resposta de CLI em objeto estruturado", 
   )
   assert.equal(resultado.code, 0, resultado.stderr)
   assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
+})
+
+test("runner Qwen exige modelo explícito antes de executar o CLI", async () => {
+  const resultado = await rodarRunner(RUNNER_QWEN, {
+    PF_QWEN_MODEL: "", PF_QWEN_CLI: "/cli-que-nao-deve-ser-executado",
+  }, ENVELOPE)
+  assert.notEqual(resultado.code, 0)
+  assert.match(resultado.stderr, /PF_QWEN_MODEL.*obrigatorio/)
+  assert.doesNotMatch(resultado.stderr, /ENOENT/)
+})
+
+test("runner Qwen passa um único modelo explícito e registra a identidade", async () => {
+  const fakeCli = fixturePath("pf-fake-qwen-modelo.mjs")
+  await writeFile(fakeCli, `#!/usr/bin/env node
+const args = process.argv.slice(2)
+if (args.filter(arg => arg === '--model').length !== 1 || args[args.indexOf('--model') + 1] !== 'qwen-test-pinned') process.exit(2)
+process.stdin.resume()
+process.stdout.write(JSON.stringify({response:'{"ok":true}'}))
+`)
+  await chmod(fakeCli, 0o755)
+  const resultado = await rodarRunner(RUNNER_QWEN, { PF_QWEN_CLI: fakeCli }, ENVELOPE)
+  assert.equal(resultado.code, 0, resultado.stderr)
+  assert.deepEqual(JSON.parse(resultado.stdout), { ok: true })
+  assert.match(resultado.stderr, /PF_MODEL_ID=qwen-test-pinned/)
+})
+
+test("runner Qwen impede override de modelo nos argumentos extras", async () => {
+  for (const args of ["--model outro", "--model=outro", "-m outro", "-m=outro"]) {
+    const resultado = await rodarRunner(RUNNER_QWEN, {
+      PF_QWEN_EXTRA_ARGS: args, PF_QWEN_CLI: "/cli-que-nao-deve-ser-executado",
+    }, ENVELOPE)
+    assert.notEqual(resultado.code, 0)
+    assert.match(resultado.stderr, /PF_QWEN_EXTRA_ARGS.*modelo/)
+    assert.doesNotMatch(resultado.stderr, /ENOENT/)
+  }
 })
 
 test("runner do judge codex extrai mensagem final do stream ndjson e devolve objeto", async () => {

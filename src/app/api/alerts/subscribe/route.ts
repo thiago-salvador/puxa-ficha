@@ -12,6 +12,7 @@ import {
   createAlertToken,
   createAlertVerifyExpiryDate,
   createAlertsServiceRoleClient,
+  decryptAlertManageToken,
   encryptAlertManageToken,
   extractClientIp,
   findPublicCandidateBySlug,
@@ -33,7 +34,7 @@ import {
 import { hashTrustedClientIp } from "@/lib/client-ip"
 import { rejectCrossSiteAlertsMutation } from "@/lib/alerts-csrf"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { logAlertsApiExit, logAlertsEvent } from "@/lib/alerts-log"
@@ -83,11 +84,10 @@ const MAX_EMAILS_PER_IP_HOUR = 24
  * um bot com uma lista de emails validos conseguia um email por endereco sem
  * nunca esbarrar em teto de IP.
  *
- * Este limitador e em memoria do processo, logo e por instancia, e nao
- * substitui o rate limit distribuido na borda. Serve como camada de dentro,
- * barata, que fecha a assimetria entre os dois caminhos.
+ * Em Vercel a quota é compartilhada atomicamente no banco. A memória local
+ * só antecipa a recusa e nunca substitui a quota distribuída indisponível.
  */
-const subscribeRateLimiter = createFixedWindowIpRateLimiter({
+const subscribeRateLimiter = createDistributedIpRateLimiter({
   namespace: SUBSCRIBE_IP_NAMESPACE,
   max: 12,
   windowMs: 10 * 60_000,
@@ -314,9 +314,9 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
     const csrfResponse = rejectCrossSiteAlertsMutation(req, "subscribe", deps.logAlertsApiExit)
     if (csrfResponse) return csrfResponse
 
-    const rateLimit = subscribeRateLimiter.check(req.headers)
+    const rateLimit = await subscribeRateLimiter.check(req.headers)
     if (!rateLimit.allowed) {
-      deps.logAlertsApiExit("subscribe", 429, "rate_limit_ip_window")
+      deps.logAlertsApiExit("subscribe", rateLimit.unavailable ? 503 : 429, "rate_limit_ip_window")
       return rateLimitExceededResponse(rateLimit)
     }
 
@@ -415,9 +415,20 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
         )
         if (budget.kind === "blocked") return budget.response
 
-        const nextManageToken = createAlertToken()
-        const manageTokenHash = hashAlertToken(nextManageToken)
-        const manageTokenCiphertext = encryptAlertManageToken(nextManageToken)
+        // Knowing an email address must not revoke its owner's existing session.
+        // Resend the recoverable token only to that mailbox; follow still requires
+        // opening the access link. Never rotate on an unauthenticated request.
+        let nextManageToken: string
+        try {
+          nextManageToken = decryptAlertManageToken(existingSubscriber.manage_token_ciphertext ?? "")
+          if (hashAlertToken(nextManageToken) !== existingSubscriber.manage_token_hash) {
+            throw new Error("Manage token integrity mismatch")
+          }
+        } catch {
+          deps.logAlertsApiExit("subscribe", 503, "db_recover_manage_access_failed")
+          return neutralSubscribeResponse(candidate.slug)
+        }
+        const manageTokenHash = existingSubscriber.manage_token_hash
         // O link de gestao carrega o candidato que a pessoa pediu para seguir.
         // Antes, este ramo mandava o email e ia embora sem criar a inscricao, e
         // a UI promete o contrario: a pessoa abria o link e o candidato nao
@@ -431,19 +442,6 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
           deleteDataUrl,
         })
 
-        const { error: updateError } = await supabase
-          .from("alert_subscribers")
-          .update({
-            manage_token_hash: manageTokenHash,
-            manage_token_ciphertext: manageTokenCiphertext,
-          }).abortSignal(supabaseQueryTimeoutSignal())
-          .eq("id", existingSubscriber.id)
-
-        if (updateError) {
-          deps.logAlertsApiExit("subscribe", 503, "db_refresh_manage_access_failed")
-          return NextResponse.json({ error: "Could not refresh manage access" }, { status: 503 })
-        }
-
         try {
           await deps.sendTransactionalEmail({
             to: email,
@@ -452,7 +450,11 @@ export function createSubscribeHandler(deps: SubscribeDeps = defaultSubscribeDep
             html: accessEmail.html,
             // Mesma proteção do digest: se a Resend aceitar e o fetch estourar o
             // prazo, uma nova tentativa com este token não vira segundo email.
-            idempotencyKey: buildManageAccessIdempotencyKey(existingSubscriber.id, manageTokenHash),
+            // The token stays stable, but a later allowed recovery is a new
+            // delivery (Resend otherwise suppresses it for 24 hours).
+            idempotencyKey: buildManageAccessIdempotencyKey(existingSubscriber.id, hashAlertToken(
+              `${manageTokenHash}:${candidate.slug}:${Math.floor(now / ALERT_VERIFICATION_EMAIL_COOLDOWN_MS)}`,
+            )),
           })
         } catch {
           deps.logAlertsApiExit("subscribe", 503, "manage_access_email_failed")

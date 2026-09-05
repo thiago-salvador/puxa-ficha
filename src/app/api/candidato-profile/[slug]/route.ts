@@ -3,9 +3,9 @@ import { getCandidatoBySlugResource } from "@/lib/api"
 import { toPublicCandidatoProfileDto } from "@/lib/public-profile-dto"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
-  type RequestRateLimiter,
+  type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
 
 // Estado pos-PF-04: o HTML da ficha e esta API sao dinamicos e private/no-store.
@@ -32,7 +32,7 @@ export const dynamic = "force-dynamic"
  * de fichas por minuto; 100 por minuto por IP nao encosta em leitor real e
  * ainda assim transforma varredura ilimitada em varredura com ritmo.
  */
-const perfilRateLimiter = createFixedWindowIpRateLimiter({
+const perfilRateLimiter = createDistributedIpRateLimiter({
   namespace: "candidato-profile",
   max: 100,
   windowMs: 60_000,
@@ -43,7 +43,7 @@ type CandidatoProfileResource = Awaited<ReturnType<typeof getCandidatoBySlugReso
 interface CandidatoProfileRouteDeps {
   getCandidatoBySlugResource: (slug: string) => Promise<CandidatoProfileResource>
   getCandidateSitesTseBySlug?: typeof getCandidateSitesTseBySlug
-  rateLimiter: RequestRateLimiter
+  rateLimiter: DistributedRequestRateLimiter
 }
 
 const defaultCandidatoProfileRouteDeps: CandidatoProfileRouteDeps = {
@@ -59,7 +59,7 @@ export function createCandidatoProfileGetHandler(
     request: Request,
     { params }: { params: Promise<{ slug: string }> },
   ) {
-    const decisao = deps.rateLimiter.check(request.headers)
+    const decisao = await deps.rateLimiter.check(request.headers)
     if (!decisao.allowed) return rateLimitExceededResponse(decisao)
 
     const { slug } = await params

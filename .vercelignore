@@ -1,5 +1,6 @@
 .git
 .next
+.next-e2e
 node_modules
 coverage
 test-results

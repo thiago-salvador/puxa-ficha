@@ -63,7 +63,7 @@ export default async function DoadoresPage({
   let aguardeSegundos: number | null = null
   if (rawQ.trim().length >= DOADOR_REVERSE_MIN_QUERY_LENGTH) {
     try {
-      const decision = doadoresSearchRateLimiter.check(await headers())
+      const decision = await doadoresSearchRateLimiter.check(await headers())
       if (!decision.allowed) aguardeSegundos = retryAfterSeconds(decision)
     } catch (error) {
       console.error("doadores search rate limit failed closed", error)

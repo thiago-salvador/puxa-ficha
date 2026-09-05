@@ -20,7 +20,7 @@ import {
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -32,7 +32,7 @@ export const dynamic = "force-dynamic"
 // POST com par token/manageToken inventado custava dois SELECT service_role em
 // alert_subscribers e ocupava slot do semaforo do Supabase. O verify era a unica
 // rota de mutacao de alertas que tinha ficado sem o guard.
-const verifyRateLimiter = createFixedWindowIpRateLimiter({
+const verifyRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-verify",
   max: 120,
   windowMs: 60_000,
@@ -112,9 +112,9 @@ export function createVerifyHandler(deps: VerifyDeps = defaultVerifyDeps) {
       )
     }
 
-    const decision = verifyRateLimiter.check(req.headers)
+    const decision = await verifyRateLimiter.check(req.headers)
     if (!decision.allowed) {
-      deps.logAlertsApiExit("verify", 429, "rate_limited")
+      deps.logAlertsApiExit("verify", decision.unavailable ? 503 : 429, "rate_limited")
       return applyAlertsNoStoreHeaders(
         await withErrorReason(
           rateLimitExceededResponse(decision),

@@ -394,6 +394,17 @@ jobs:
           rm -rf playwright-report
           npx playwright test tests/visual/a11y.spec.ts
 
+      - name: Build E2E isolado (pessoas fictícias, sem banco)
+        env:
+          PF_VISUAL_FIXTURE_BUILD: "1"
+        run: npm run build
+
+      - name: Regressões funcionais (quiz e interações)
+        env:
+          PF_EXPECT_PLACEHOLDER_DATA: "1"
+          PF_VISUAL_FIXTURE_BUILD: "1"
+        run: npx playwright test tests/visual/quiz.spec.ts tests/visual/interactions.spec.ts tests/visual/offline.spec.ts
+
       - name: Publicar relatório em caso de falha
         if: failure()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0

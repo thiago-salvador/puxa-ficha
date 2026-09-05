@@ -1,11 +1,12 @@
 /**
  * Quiz "Quem me representa?" — landing, governador sem UF, fluxo SP, resultado com payload neutro.
  *
- * PF_BASE_URL=http://127.0.0.1:3000 npm run start  (outro terminal)
- * PF_BASE_URL=http://127.0.0.1:3000 npm run test:visual:quiz
- * npm run test:visual:quiz:mobile
+ * Build e execução com CI=true PF_VISUAL_FIXTURE_BUILD=1 e URLs Supabase
+ * placeholder. O Playwright sobe .next-e2e; as quatro pessoas são fictícias.
+ * CI=true PF_VISUAL_FIXTURE_BUILD=1 npm run build
+ * CI=true PF_VISUAL_FIXTURE_BUILD=1 npm run test:visual:quiz
  *
- * Se PF_BASE_URL nao tiver /quiz (ex.: producao antes do deploy), a suite inteira e ignorada.
+ * A rota é obrigatória: resposta HTTP inválida falha a suíte.
  */
 
 import { test, expect } from "playwright/test"
@@ -16,12 +17,7 @@ const QUIZ_NEUTRAL_R = "REREREREREA"
 test.describe("Quiz e2e", () => {
   test.beforeAll(async ({ request }) => {
     const res = await request.get("/quiz")
-    if (!res.ok()) {
-      test.skip(
-        true,
-        `/quiz indisponivel neste PF_BASE_URL (HTTP ${res.status()}). Suba npm run start ou use deploy com a rota.`
-      )
-    }
+    expect(res.ok(), `/quiz deve responder com sucesso (HTTP ${res.status()})`).toBe(true)
   })
 
   test.describe("landing", () => {
@@ -30,15 +26,15 @@ test.describe("Quiz e2e", () => {
       await page.waitForLoadState("networkidle")
 
       await expect(page.getByRole("heading", { name: /quem me representa/i })).toBeVisible()
-      await expect(page.getByRole("button", { name: /^presidente$/i })).toBeVisible()
-      await expect(page.getByRole("button", { name: /Começar/i })).toBeVisible()
+      await expect(page.getByRole("heading", { name: /^presidente$/i })).toBeVisible()
+      await expect(page.getByRole("button", { name: /^Começar$/i })).toBeVisible()
     })
 
     test("Presidente leva para perguntas", async ({ page }) => {
       await page.goto("/quiz")
       await page.waitForLoadState("networkidle")
 
-      await page.getByRole("button", { name: /^presidente$/i }).click()
+      await page.getByRole("button", { name: /^Começar$/i }).click()
       await expect(page).toHaveURL(/\/quiz\/perguntas\?cargo=Presidente/i)
       await expect(page.getByText(/pergunta 1 de/i)).toBeVisible()
     })

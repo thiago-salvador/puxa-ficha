@@ -249,6 +249,7 @@ export async function fetchMudancasPartidoRowsPaged(
       const { data, error } = await supabase
         .from("mudancas_partido")
         .select(MUDANCAS_SELECT)
+        .is("despublicado_em", null)
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", idChunk)
         .order("ano", { ascending: true })

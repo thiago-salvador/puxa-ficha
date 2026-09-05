@@ -3,28 +3,60 @@
  * could not test: search filtering, comparador selection, tab switching,
  * mobile menu cycle, and BrazilMap navigation.
  *
- * Run:
- *   npx playwright test
- *   npx playwright test --project=mobile
- *   PF_BASE_URL=http://localhost:3000 npx playwright test
+ * Run com URLs Supabase placeholder (nenhuma conexão real):
+ *   CI=true PF_VISUAL_FIXTURE_BUILD=1 npm run build
+ *   CI=true PF_VISUAL_FIXTURE_BUILD=1 npx playwright test tests/visual/interactions.spec.ts
+ * O build .next-e2e injeta pessoas fictícias na fronteira SSR, não no DOM.
  */
 
 import { test, expect } from "playwright/test"
-
-function isPuxaFichaHost(raw: string): boolean {
-  try {
-    const host = new URL(raw).hostname
-    return host === "puxaficha.com.br" || host === "www.puxaficha.com.br"
-  } catch {
-    return false
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Navbar — mobile menu cycle
 // ---------------------------------------------------------------------------
 
 test.describe("Navbar mobile menu", () => {
+  test("menu waits for hydration before accepting a click", async ({ page }) => {
+    let releaseChunks = () => {}
+    const chunksReady = new Promise<void>((resolve) => { releaseChunks = resolve })
+    let blockedChunks = 0
+    await page.route(/\/_next\/static\/.*\.js(?:\?.*)?$/, async (route) => {
+      blockedChunks += 1
+      await chunksReady
+      await route.continue()
+    })
+
+    try {
+      // HTML and CSS arrive normally; the real client chunks are held until
+      // the SSR control has been inspected. No timer or hydration proxy.
+      await page.goto("/", { waitUntil: "commit" })
+      const menuBtn = page.getByRole("button", { name: "Abrir menu" })
+      await expect(menuBtn).toBeVisible()
+      await expect.poll(() => blockedChunks).toBeGreaterThan(0)
+      const before = await menuBtn.evaluate((button: HTMLButtonElement) => {
+        const disabled = button.disabled
+        button.click()
+        return { disabled, expandedAfterClick: button.getAttribute("aria-expanded") }
+      })
+      await test.info().attach("menu-before-hydration", {
+        body: JSON.stringify({ ...before, blockedChunks }), contentType: "application/json",
+      })
+      expect(before.expandedAfterClick).toBe("false")
+      await expect(menuBtn).toBeDisabled()
+
+      releaseChunks()
+      await expect(menuBtn).toBeEnabled()
+      await menuBtn.click()
+      const dialog = page.getByRole("dialog", { name: "Menu principal" })
+      await expect(dialog).toBeVisible()
+      await expect(page.locator(".menu-btn")).toHaveAttribute("aria-expanded", "true")
+      await page.keyboard.press("Escape")
+      await expect(dialog).toBeHidden()
+    } finally {
+      releaseChunks()
+    }
+  })
+
   test("opens, shows links, closes with Escape — and restores scroll", async ({
     page,
   }) => {
@@ -79,19 +111,17 @@ test.describe("Navbar mobile menu", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("Busca rápida palette", () => {
-  test("search opens palette and lists Lula", async ({ page }) => {
-    test.skip(
-      process.env.PF_EXPECT_PLACEHOLDER_DATA === "1" ||
-        (!isPuxaFichaHost(process.env.PF_BASE_URL ?? "") &&
-          process.env.PF_RUN_SEARCH_SMOKE !== "1"),
-      "índice real só com PF_BASE_URL de produção",
-    )
+  test("search opens palette and filters the local candidate fixture", async ({ page }) => {
+    await page.route("**/api/search-index", (route) => route.fulfill({ json: {
+      ok: true,
+      data: [{ href: "/candidato/fixture-alfa", title: "Pessoa Alfa", subtitle: "Fixture de teste", searchText: "pessoa alfa" }],
+    } }))
     await page.goto("/")
     await page.getByRole("button", { name: "Abrir busca rápida" }).first().click()
     const searchInput = page.getByRole("combobox", { name: "Buscar no site" })
     await expect(searchInput).toBeVisible()
-    await searchInput.fill("Lula")
-    const target = page.getByRole("option").filter({ hasText: /Lula/i }).first()
+    await searchInput.fill("Pessoa Alfa")
+    const target = page.getByRole("option").filter({ hasText: /Pessoa Alfa/i }).first()
     await expect(target).toBeVisible({ timeout: 15_000 })
   })
 
@@ -148,7 +178,9 @@ test.describe("ComparadorPanel", () => {
 
     // Select first two
     await candidateButtons.nth(0).click()
-    await candidateButtons.nth(1).click()
+    // O primeiro deixa o conjunto "Adicionar" ao virar "Remover".
+    await candidateButtons.first().click()
+    await expect(page.getByRole("button", { name: /remover.+compara(?:ção|cao)/i })).toHaveCount(2)
 
     // Sticky bar should appear showing 2/4 selecionados
     const stickyBar = page.getByText(/2\/4 selecionados/i)
@@ -161,7 +193,7 @@ test.describe("ComparadorPanel", () => {
 
     const addBtns = page.getByRole("button", { name: /adicionar.+compara(?:ção|cao)/i })
     await addBtns.nth(0).click()
-    await addBtns.nth(1).click()
+    await addBtns.first().click()
 
     // Now one should be "Remover"
     const removeBtns = page.getByRole("button", { name: /remover.+compara(?:ção|cao)/i })
@@ -177,7 +209,7 @@ test.describe("ComparadorPanel", () => {
 
     const addBtns = page.getByRole("button", { name: /adicionar.+compara(?:ção|cao)/i })
     await addBtns.nth(0).click()
-    await addBtns.nth(1).click()
+    await addBtns.first().click()
 
     const root = page.locator("[data-pf-comparacao-root]")
     await expect(root).toBeVisible({ timeout: 15_000 })
@@ -196,8 +228,8 @@ test.describe("ComparadorPanel", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("ProfileTabs", () => {
-  test("clicking each tab switches content", async ({ page }) => {
-    await page.goto("/candidato/lula")
+  test("clicking each tab switches content", async ({ page, isMobile }) => {
+    await page.goto("/candidato/fixture-alfa")
     await page.waitForLoadState("networkidle")
 
     const tabNav = page.getByRole("navigation", { name: /se(?:ções|coes) do perfil/i })
@@ -216,31 +248,53 @@ test.describe("ProfileTabs", () => {
       // Active tab has border-foreground class
       await expect(tab).toHaveClass(/border-foreground/)
     }
+    // No mobile, as demais seções são opções radio no menu Mais.
+    if (isMobile) {
+      const more = tabNav.getByRole("button", { name: /^Mais/ })
+      await more.click()
+      const choices = tabNav.getByRole("menuitemradio")
+      const choiceCount = await choices.count()
+      expect(choiceCount).toBeGreaterThan(0)
+      for (let i = 0; i < choiceCount; i++) {
+        await choices.nth(i).click()
+        await expect(page).toHaveURL(/\?tab=/)
+        await expect(page.getByRole("tabpanel")).toBeVisible()
+        await more.click()
+        await expect(choices.nth(i)).toHaveAttribute("aria-checked", "true")
+      }
+      await page.keyboard.press("Escape")
+    }
   })
 
-  test("query param restores active tab and browser back follows tab history", async ({ page }) => {
-    await page.goto("/candidato/lula?tab=dinheiro")
+  test("query param restores active tab and browser back follows tab history", async ({ page, isMobile }) => {
+    await page.goto("/candidato/fixture-alfa?tab=dinheiro")
     await page.waitForLoadState("networkidle")
 
-    const dinheiroTab = page.getByRole("tab", { name: /^dinheiro/i })
-    const justicaTab = page.getByRole("tab", { name: /^justiça/i })
-    await expect(dinheiroTab).toHaveAttribute("aria-selected", "true")
+    const more = page.getByRole("button", { name: /^Mais/ })
+    if (isMobile) await more.click()
+    const dinheiroTab = page.getByRole(isMobile ? "menuitemradio" : "tab", { name: /^dinheiro/i })
+    const justicaTab = page.getByRole(isMobile ? "menuitemradio" : "tab", { name: /^justiça/i })
+    const selectionAttribute = isMobile ? "aria-checked" : "aria-selected"
+    await expect(dinheiroTab).toHaveAttribute(selectionAttribute, "true")
     await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-dinheiro")
 
     await justicaTab.click()
     await expect(page).toHaveURL(/\?tab=justica/)
-    await expect(justicaTab).toHaveAttribute("aria-selected", "true")
+    if (isMobile) await more.click()
+    await expect(justicaTab).toHaveAttribute(selectionAttribute, "true")
     await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-justica")
 
+    if (isMobile) await page.keyboard.press("Escape")
     await page.goBack()
-    await expect(dinheiroTab).toHaveAttribute("aria-selected", "true")
+    if (isMobile) await more.click()
+    await expect(dinheiroTab).toHaveAttribute(selectionAttribute, "true")
     await expect(page.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "profile-tab-dinheiro")
   })
 
   test("tab bar sticks to top after scroll — no gap below navbar", async ({
     page,
   }) => {
-    await page.goto("/candidato/lula")
+    await page.goto("/candidato/fixture-alfa")
     await page.waitForLoadState("networkidle")
 
     // Scroll past the hero (wheel not supported on mobile WebKit)
@@ -298,7 +352,7 @@ test.describe("BrazilMap", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("No horizontal overflow", () => {
-  const pages = ["/", "/comparar", "/governadores", "/sobre", "/candidato/lula", "/quiz"]
+  const pages = ["/", "/comparar", "/governadores", "/sobre", "/candidato/fixture-alfa", "/quiz"]
 
   for (const path of pages) {
     test(`${path} — no overflow at 375px`, async ({ browser }) => {
