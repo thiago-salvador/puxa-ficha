@@ -47,16 +47,15 @@ test("migration nasce com RLS pública limitada a candidato publicável", () => 
   assert.match(source, /GRANT SELECT ON TABLE public\.gastos_executivo TO anon, authenticated/i)
 })
 
-test("migration é schema puro e está declarada na ordenação pública", () => {
+test("migration é schema puro e ordena após candidatos e seu gate público", () => {
   const source = sql()
   assert.doesNotMatch(source, /^\s*(?:INSERT|UPDATE|DELETE)\b/im)
   assert.equal(source.includes("@write"), false)
 
-  const viewContract = readFileSync(
-    join(ROOT, "tests/candidatos-publico-view-contrato.test.ts"),
-    "utf8",
-  )
-  assert.ok(viewContract.includes(MIGRATION), "migration nova não entrou em POSTERIORES")
+  for (const dependency of ["20260329000000_initial_schema.sql", "20260403113000_harden_child_rls_and_uniques.sql"]) {
+    assert.ok(existsSync(join(ROOT, "supabase/migrations", dependency)), dependency)
+    assert.ok(dependency.slice(0, 14) < MIGRATION.slice(0, 14), `${dependency} deve preceder a tabela de gastos`)
+  }
 })
 
 function sqlUg(): string {
@@ -92,11 +91,8 @@ test("migration de UG troca o grão para candidato, órgão, unidade gestora e m
   assert.doesNotMatch(source, /^\s*(?:INSERT|UPDATE|DELETE)\b/im)
   assert.equal(source.includes("@write"), false)
 
-  const viewContract = readFileSync(
-    join(ROOT, "tests/candidatos-publico-view-contrato.test.ts"),
-    "utf8",
-  )
-  assert.ok(viewContract.includes(MIGRATION_UG), "migration de UG não entrou em POSTERIORES")
+  assert.ok(existsSync(migrationPath), "schema inicial de gastos ausente")
+  assert.ok(MIGRATION.slice(0, 14) < MIGRATION_UG.slice(0, 14), "UG deve ordenar após a criação da tabela que altera")
 
   const rollback = readFileSync(
     join(ROOT, "supabase/rollback", "20260820010000_gastos_executivo_ug.rollback.sql"),

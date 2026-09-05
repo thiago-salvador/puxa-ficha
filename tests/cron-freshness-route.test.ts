@@ -45,10 +45,12 @@ describe("cron freshness", () => {
     assert.deepEqual(body.checks.map((check) => [check.name, check.age_hours]), [
       ["news-refresh", 4],
       ["send-digest", 24],
+      ["published-consistency", 24],
+      ["revalidate-public-cache", 24],
     ])
     assert.deepEqual(
       CRON_FRESHNESS_CHECKS.map((check) => check.name),
-      ["news-refresh", "send-digest"],
+      ["news-refresh", "send-digest", "published-consistency", "revalidate-public-cache"],
     )
   })
 
@@ -57,7 +59,7 @@ describe("cron freshness", () => {
     const semRastro = (await vazio(request())) as Response
     assert.equal(semRastro.status, 200)
     const body = (await semRastro.json()) as { checks: Array<{ age_hours: number | null }> }
-    assert.deepEqual(body.checks.map((check) => check.age_hours), [null, null])
+    assert.deepEqual(body.checks.map((check) => check.age_hours), [null, null, null, null])
 
     const quebrado = createCronFreshnessHandler({
       expectedSecret: SECRET,

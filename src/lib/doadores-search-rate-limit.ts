@@ -1,7 +1,7 @@
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   type RateLimitDecision,
-  type RequestRateLimiter,
+  type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
 
 // Cada termo distinto de 3+ caracteres em /doadores?q= vira um full scan de
@@ -13,15 +13,13 @@ import {
 // Teto de 30/min: um IP de operadora móvel com CGNAT agrega centenas de
 // visitantes legítimos, então o limite precisa caber o pico humano concentrado
 // e ainda cortar script de termo aleatório (30 scans/min = ~11s de CPU por
-// instância, sustentável). O balde é in-memory POR INSTÂNCIA serverless: com N
-// instâncias quentes o teto efetivo é 30xN/min, direção permissiva de
-// propósito (primeiro portão; o durável fica documentado no PR como passo
-// pós-lançamento junto da materialização com índice trgm).
+// instância, sustentável). Em Vercel, o teto autoritativo é compartilhado no
+// Postgres; a memória só antecipa recusas na instância já saturada.
 export const DOADORES_SEARCH_RATE_LIMIT_MAX = 30
 export const DOADORES_SEARCH_RATE_LIMIT_WINDOW_MS = 60_000
 
-export const doadoresSearchRateLimiter: RequestRateLimiter =
-  createFixedWindowIpRateLimiter({
+export const doadoresSearchRateLimiter: DistributedRequestRateLimiter =
+  createDistributedIpRateLimiter({
     namespace: "doadores-search",
     max: DOADORES_SEARCH_RATE_LIMIT_MAX,
     windowMs: DOADORES_SEARCH_RATE_LIMIT_WINDOW_MS,

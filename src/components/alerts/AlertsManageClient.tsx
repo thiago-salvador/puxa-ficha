@@ -276,14 +276,14 @@ export function AlertsManageClient() {
           </div>
 
           <div className="flex flex-col gap-2 sm:items-end">
-            <Button type="button" variant="outline" size="lg" onClick={handleForgetBrowser}>
+            <Button type="button" variant="outline" size="lg" onClick={() => { void handleForgetBrowser() }}>
               Esquecer este navegador
             </Button>
-            <Button type="button" variant="outline" size="lg" onClick={handleCancelAll} disabled={cancellingAll || subscriptions.length === 0}>
+            <Button type="button" variant="outline" size="lg" onClick={() => { void handleCancelAll() }} disabled={cancellingAll || subscriptions.length === 0}>
               {cancellingAll ? <LoaderCircle className="size-4 animate-spin" /> : <Mail className="size-4" />}
               Cancelar todos os alertas
             </Button>
-            <Button type="button" variant="destructive" size="lg" onClick={handleDeleteData} disabled={deleting}>
+            <Button type="button" variant="destructive" size="lg" onClick={() => { void handleDeleteData() }} disabled={deleting}>
               {deleting ? <LoaderCircle className="size-4 animate-spin" /> : <Trash2 className="size-4" />}
               Apagar meus dados
             </Button>
@@ -324,7 +324,7 @@ export function AlertsManageClient() {
                   variant="outline"
                   size="lg"
                   disabled={submittingSlug === item.slug}
-                  onClick={() => handleUnfollow(item.slug)}
+                  onClick={() => { void handleUnfollow(item.slug) }}
                 >
                   {submittingSlug === item.slug ? (
                     <LoaderCircle className="size-4 animate-spin" />

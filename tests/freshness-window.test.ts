@@ -4,7 +4,8 @@ import { join } from "node:path"
 import { describe, it } from "node:test"
 
 const root = process.cwd()
-const apiSrc = readFileSync(join(root, "src/lib/api.ts"), "utf8")
+const apiSrc = readFileSync(join(root, "src/lib/api.ts"), "utf8") +
+  readFileSync(join(root, "src/lib/candidate-section-freshness.ts"), "utf8")
 const annotatorSrc = readFileSync(join(root, "scripts/lib/freshness-annotator.ts"), "utf8")
 
 /**

@@ -195,7 +195,7 @@ describe("UI claims copy contract", () => {
   })
 
   test("LegislationTabSection mantém ressalva parcial nas subabas de categoria", () => {
-    const content = readFileSync("src/components/CandidatoProfileSections.tsx", "utf-8")
+    const content = readFileSync("src/components/LegislationTabSection.tsx", "utf-8")
 
     assert.match(content, /const renderInventoryScopeNotice =/)
     for (const subtab of ["propostas", "votadas", "aprovadas", "executivo"]) {

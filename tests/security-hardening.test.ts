@@ -412,8 +412,8 @@ describe("alerts subscribe scope guard", () => {
     )
     assert.match(
       subscribeRoute,
-      /createFixedWindowIpRateLimiter/,
-      "janela por IP no processo, aplicada a todos os caminhos",
+      /createDistributedIpRateLimiter/,
+      "janela distribuída por IP aplicada a todos os caminhos",
     )
   })
 

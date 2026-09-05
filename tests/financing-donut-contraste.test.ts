@@ -74,7 +74,7 @@ describe("paleta do donut de financiamento", () => {
   it("nenhum componente redefine a paleta localmente", () => {
     for (const rel of [
       "src/components/ProfileOverview.tsx",
-      "src/components/CandidatoProfileSections.tsx",
+      "src/components/MoneyTabSection.tsx",
     ]) {
       const src = readFileSync(resolve(process.cwd(), rel), "utf-8")
       assert.doesNotMatch(

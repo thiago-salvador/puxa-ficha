@@ -9,7 +9,7 @@ import {
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 
@@ -19,7 +19,7 @@ export const dynamic = "force-dynamic"
 // Sem limite, um POST com manageToken inventado custava um SELECT service_role em
 // alert_subscribers e ocupava um slot do semaforo do Supabase, degradando a ficha
 // publica junto. A irma /api/alerts/me ja tinha esse guard. Review de 2026-08-03.
-const sessionRateLimiter = createFixedWindowIpRateLimiter({
+const sessionRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-session",
   max: 120,
   windowMs: 60_000,
@@ -40,9 +40,9 @@ export function createSessionPostHandler(deps: SessionDeps = defaultSessionDeps)
     const csrfResponse = rejectCrossSiteAlertsMutation(req, "session", deps.logAlertsApiExit)
     if (csrfResponse) return csrfResponse
 
-    const decision = sessionRateLimiter.check(req.headers)
+    const decision = await sessionRateLimiter.check(req.headers)
     if (!decision.allowed) {
-      deps.logAlertsApiExit("session", 429, "rate_limited")
+      deps.logAlertsApiExit("session", decision.unavailable ? 503 : 429, "rate_limited")
       return rateLimitExceededResponse(decision)
     }
 

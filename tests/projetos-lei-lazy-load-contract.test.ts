@@ -56,7 +56,7 @@ describe("inventário de projetos de lei sob demanda", () => {
   test("o cliente só busca todas as páginas quando Legislação é aberta", async () => {
     const [source, sections] = await Promise.all([
       readFile(PROFILE_PATH, "utf8"),
-      readFile("src/components/CandidatoProfileSections.tsx", "utf8"),
+      readFile("src/components/LegislationTabSection.tsx", "utf8"),
     ])
 
     assert.match(source, /activeTab !== "legislacao"/)

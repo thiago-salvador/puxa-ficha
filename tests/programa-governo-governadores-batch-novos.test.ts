@@ -333,6 +333,15 @@ test("ambiente do batch preserva controles necessários e remove segredos do hos
   })
 })
 
+test("batch preserva modelo e argumentos explícitos do runner Qwen legado", async () => {
+  const d = await driver()
+  assert.deepEqual(d.construirAmbienteBatch({
+    PF_QWEN_MODEL: "qwen-modelo-pinado",
+    PF_QWEN_EXTRA_ARGS: "--safe-mode",
+    SUPABASE_SERVICE_ROLE_KEY: "nao-propagar",
+  }), { PF_QWEN_MODEL: "qwen-modelo-pinado", PF_QWEN_EXTRA_ARGS: "--safe-mode" })
+})
+
 test("allowlist deixa passar os controles documentados do judge", async () => {
   // A allowlist so vale se o ambiente REAL chegar nela. A chamada montava a mao
   // um objeto de quatro chaves (PATH, HOME, TMPDIR, USER), entao PF_* nunca
@@ -615,7 +624,9 @@ setInterval(() => {}, 1000)
     const envelope = JSON.stringify({ instructions: "Responda.", schema: { type: "object" }, input: { identityKey: "2026:GOVERNADOR:MA:1" } })
     const runner = fileURLToPath(new URL("run-generator-opencode-luna.mjs", RUNNERS_DIR))
     const resultado = await rodarProcesso(process.execPath, [runner], {
-      ...process.env, PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "100", PF_OPENCODE_TIMEOUT_PADDING_MS: "0",
+      // Allow the fake Node process to install its SIGTERM handler under full-suite load.
+      // The runner must still time out, kill the group and remove its temporary file.
+      ...process.env, PF_OPENCODE_GO: fakeGo, PF_OPENCODE_TIMEOUT_MS: "1000", PF_OPENCODE_TIMEOUT_PADDING_MS: "0",
       PF_OPENCODE_GRACE_MS: "30", PF_TEST_MARKER: marker,
     }, envelope)
     assert.notEqual(resultado.code, 0)

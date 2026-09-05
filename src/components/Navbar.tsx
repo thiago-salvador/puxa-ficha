@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Search } from "lucide-react"
@@ -18,7 +18,11 @@ const NAV_ITEMS = [
   { href: "/sobre", label: "Sobre" },
 ]
 
+const subscribeHydration = () => () => undefined
+
 export function Navbar() {
+  // SSR must not advertise a working menu before its click handler is attached.
+  const isHydrated = useSyncExternalStore(subscribeHydration, () => true, () => false)
   const pathname = usePathname()
   const { openSearch } = useGlobalSearch()
   const modKLabel = useModKShortcutLabel()
@@ -93,7 +97,7 @@ export function Navbar() {
 
     if (!navWrap || !overlay) return
 
-    if (prefersReducedMotion) {
+    const applyWithoutAnimation = () => {
       tlRef.current?.kill()
       navWrap.style.display = isMenuOpen ? "block" : "none"
       overlay.style.visibility = isMenuOpen ? "visible" : "hidden"
@@ -127,6 +131,10 @@ export function Navbar() {
           : "rotate(0deg)"
       }
 
+    }
+
+    if (prefersReducedMotion) {
+      applyWithoutAnimation()
       return
     }
 
@@ -177,6 +185,9 @@ export function Navbar() {
         tl.set(navWrap, { display: "none" })
         if (navLinks.length) tl.set(navLinks, { clearProps: "all" })
       }
+    }).catch(() => {
+      // Navegação continua utilizável se o chunk de animação não carregar.
+      if (!cancelled && containerRef.current) applyWithoutAnimation()
     })
 
     return () => {
@@ -315,6 +326,7 @@ export function Navbar() {
           <button
             ref={menuButtonRef}
             type="button"
+            disabled={!isHydrated}
             className="menu-btn relative z-floating flex min-h-11 items-center gap-3 overflow-hidden max-sm:min-w-11 max-sm:justify-center"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}

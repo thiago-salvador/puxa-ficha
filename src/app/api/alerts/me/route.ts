@@ -10,7 +10,7 @@ import { alertBodyStringField, applyAlertsNoStoreHeaders } from "@/lib/alerts-sh
 import { readAlertManageTokenCookie, resolveAlertManageToken } from "@/lib/alerts-session"
 import { logAlertsApiExit } from "@/lib/alerts-log"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import {
@@ -22,7 +22,7 @@ import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-const alertsMeRateLimiter = createFixedWindowIpRateLimiter({
+const alertsMeRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-me",
   max: 120,
   windowMs: 60_000,
@@ -35,12 +35,13 @@ function jsonNoStore(
   return applyAlertsNoStoreHeaders(NextResponse.json(body, init))
 }
 
-function checkAlertsMeRateLimit(req: NextRequest): NextResponse | null {
+async function checkAlertsMeRateLimit(req: NextRequest): Promise<NextResponse | null> {
   try {
-    const decision = alertsMeRateLimiter.check(req.headers)
+    const decision = await alertsMeRateLimiter.check(req.headers)
     if (!decision.allowed) return applyAlertsNoStoreHeaders(rateLimitExceededResponse(decision))
   } catch (error) {
-    console.warn("alerts/me rate limit failed open", error)
+    console.warn("alerts/me rate limit failed closed", error)
+    return jsonNoStore({ error: "Rate limit temporarily unavailable" }, { status: 503 })
   }
   return null
 }
@@ -109,7 +110,7 @@ async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextRespon
 
 /** Preferir POST com corpo JSON — evita token em query string (logs de proxy, Referer). */
 export async function POST(req: NextRequest) {
-  const limited = checkAlertsMeRateLimit(req)
+  const limited = await checkAlertsMeRateLimit(req)
   if (limited) return limited
 
   let body: unknown
@@ -133,7 +134,7 @@ export async function POST(req: NextRequest) {
 
 /** Alternativa para ferramentas: `Authorization: Bearer <manageToken>`. Query `?token=` não é suportada. */
 export async function GET(req: NextRequest) {
-  const limited = checkAlertsMeRateLimit(req)
+  const limited = await checkAlertsMeRateLimit(req)
   if (limited) return limited
 
   const auth = req.headers.get("authorization")?.trim()

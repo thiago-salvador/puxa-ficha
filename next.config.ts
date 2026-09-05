@@ -3,6 +3,7 @@ import { withSentryConfig } from "@sentry/nextjs"
 import { REMOTE_IMAGE_HOSTS } from "./src/lib/remote-image-hosts"
 import { getEmbedNoindexHeaderValue } from "./src/lib/preview-indexing"
 import ondaPRedirects from "./src/data/redirects-onda-p.json"
+import { visualFixtureBuildConfig } from "./src/lib/visual-fixture-build"
 
 const isDevelopment = process.env.NODE_ENV !== "production"
 const apexHost = "puxaficha.com.br"
@@ -57,6 +58,14 @@ const embedFramingHeaders = [
 ]
 
 export const puxaFichaNextConfig: NextConfig = {
+  ...visualFixtureBuildConfig({
+    CI: process.env.CI,
+    VERCEL: process.env.VERCEL,
+    VERCEL_ENV: process.env.VERCEL_ENV,
+    PF_VISUAL_FIXTURE_BUILD: process.env.PF_VISUAL_FIXTURE_BUILD,
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+  }),
   poweredByHeader: false,
   // Páginas públicas pesadas de UF/rankings podem exceder o default de 60s
   // durante static generation no Vercel, mesmo com build local verde.
@@ -126,6 +135,10 @@ export const puxaFichaNextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        source: "/offline-worker.js",
+        headers: [{ key: "Cache-Control", value: "no-store" }],
+      },
       // ":path+" (um ou mais segmentos) casa so o widget /embed/[slug]. Com ":path*"
       // a rota nua /embed, que e a pagina publica geradora do codigo de embed,
       // tambem recebia noindex e ficava fora do indice sem necessidade.

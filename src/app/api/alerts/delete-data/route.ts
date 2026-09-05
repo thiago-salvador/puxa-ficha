@@ -9,7 +9,7 @@ import {
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -19,7 +19,7 @@ export const dynamic = "force-dynamic"
 
 // Ver o comentario em src/app/api/alerts/session/route.ts: as quatro rotas de
 // mutacao de alertas faziam SELECT com service role sem nenhum teto.
-const deleteDataRateLimiter = createFixedWindowIpRateLimiter({
+const deleteDataRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-delete-data",
   max: 120,
   windowMs: 60_000,
@@ -42,9 +42,9 @@ export function createDeleteDataHandler(deps: DeleteDataDeps = defaultDeleteData
     const csrfResponse = rejectCrossSiteAlertsMutation(req, "delete-data", deps.logAlertsApiExit)
     if (csrfResponse) return csrfResponse
 
-    const decision = deleteDataRateLimiter.check(req.headers)
+    const decision = await deleteDataRateLimiter.check(req.headers)
     if (!decision.allowed) {
-      deps.logAlertsApiExit("delete-data", 429, "rate_limited")
+      deps.logAlertsApiExit("delete-data", decision.unavailable ? 503 : 429, "rate_limited")
       return rateLimitExceededResponse(decision)
     }
 

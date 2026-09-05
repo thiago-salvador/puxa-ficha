@@ -5,14 +5,14 @@ import { buildEditorialOg, dynamicOgImageCacheHeaders } from "@/lib/og"
 import { normalizeQuizCargo } from "@/lib/quiz-cargo"
 import { resolveQuizShortToken } from "@/lib/quiz-short-link-resolve"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-const quizResultOgRateLimiter = createFixedWindowIpRateLimiter({
+const quizResultOgRateLimiter = createDistributedIpRateLimiter({
   namespace: "quiz-result-og",
   max: 90,
   windowMs: 60_000,
@@ -20,10 +20,11 @@ const quizResultOgRateLimiter = createFixedWindowIpRateLimiter({
 
 export async function GET(request: NextRequest) {
   try {
-    const decision = quizResultOgRateLimiter.check(request.headers)
+    const decision = await quizResultOgRateLimiter.check(request.headers)
     if (!decision.allowed) return rateLimitExceededResponse(decision)
   } catch (error) {
-    console.warn("quiz result OG rate limit failed open", error)
+    console.warn("quiz result OG rate limit failed closed", error)
+    return rateLimitExceededResponse({ allowed: false, remaining: 0, resetAt: Date.now() + 3000, unavailable: true })
   }
 
   const url = request.nextUrl

@@ -15,6 +15,11 @@ cron exigem autorização nomeada antes de executar.
 | Observabilidade | Sentry > Project Settings | DSN, organização, projeto e token de source maps | Confirmar no painel: Thiago |
 | Operador local, runners históricos OpenCode | Ambiente local do operador | `PF_OPENCODE_GO` | Recriar apontando para o cliente OpenCode canônico antes de retomar esses runners |
 
+O secret `VERCEL_AUTOMATION_BYPASS_SECRET` também é obrigatório no GitHub Actions
+para o smoke do deployment Production protegido, antes da promoção do domínio.
+Recriar pelo Automation Bypass do projeto Vercel exato; o preflight do release
+staged deve abortar se ele estiver ausente. Nunca colocar seu valor no runbook.
+
 Os cinco últimos nomes da linha do GitHub Actions existem por causa da fila de
 merge serial e do watchdog de crons: `MERGE_QUEUE_GH_TOKEN`, `VERCEL_TOKEN`,
 `VERCEL_ORG_ID` e `VERCEL_PROJECT_ID` só aparecem em `serial-merge-queue.yml`, e

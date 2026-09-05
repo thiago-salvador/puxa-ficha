@@ -115,7 +115,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
           </h2>
           <button
             type="button"
-            onClick={() => copy(iframeHtml, "html")}
+            onClick={() => { void copy(iframeHtml, "html") }}
             className="rounded-full border border-foreground px-4 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-wide"
           >
             {copied === "html" ? "Copiado" : "Copiar"}
@@ -141,7 +141,7 @@ export function EmbedCodeGenerator({ candidates }: { candidates: EmbedCodeGenera
           </h2>
           <button
             type="button"
-            onClick={() => copy(RESIZE_SNIPPET, "script")}
+            onClick={() => { void copy(RESIZE_SNIPPET, "script") }}
             className="rounded-full border border-foreground px-4 py-1.5 text-[length:var(--text-caption)] font-bold uppercase tracking-wide"
           >
             {copied === "script" ? "Copiado" : "Copiar"}

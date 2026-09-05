@@ -3,6 +3,7 @@ import { NextResponse } from "next/server"
 import { revalidateTag } from "next/cache"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { REVALIDATE_ALLOWED_TAGS } from "@/lib/revalidate-cache"
+import { withCronExecutionReceipt } from "@/lib/cron-execution-receipt"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -68,10 +69,10 @@ export function createRevalidatePublicCacheHandler(deps: {
   }
 }
 
-export const GET = createRevalidatePublicCacheHandler({
+export const GET = withCronExecutionReceipt("revalidate-public-cache", createRevalidatePublicCacheHandler({
   expectedSecret: process.env.CRON_SECRET,
   revalidateFn: (tag) => revalidateTag(tag, "max"),
-})
+}))
 
 export async function POST() {
   return jsonNoStore(

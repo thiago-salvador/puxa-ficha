@@ -24,6 +24,7 @@ import {
   type PublishedRow,
 } from "@/lib/published-consistency"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
+import { withCronExecutionReceipt } from "@/lib/cron-execution-receipt"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -61,7 +62,7 @@ function getBearer(req: NextRequest): string | null {
   return null
 }
 
-export async function GET(req: NextRequest) {
+async function publishedConsistency(req: NextRequest) {
   const expectedSecret = process.env.CRON_SECRET?.trim()
   const providedSecret = getBearer(req)
   if (!secretsMatch(providedSecret, expectedSecret)) {
@@ -237,3 +238,5 @@ export async function GET(req: NextRequest) {
     { status: 200, headers: { "cache-control": "no-store" } },
   )
 }
+
+export const GET = withCronExecutionReceipt("published-consistency", publishedConsistency)

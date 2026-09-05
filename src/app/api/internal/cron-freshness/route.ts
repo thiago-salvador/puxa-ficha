@@ -15,13 +15,14 @@ export const maxDuration = 30
  * que simplesmente não dispara. Esta rota devolve o último instante conhecido
  * de cada cron com rastro, e o watchdog abre issue quando passa do limite.
  *
- * `published-consistency` e `revalidate-public-cache` não gravam nada e ficam
- * de fora de propósito: medir exigiria escrever, e escrever de dentro de uma
- * sonda é o que a trilha auditada proíbe.
+ * `published-consistency` e `revalidate-public-cache` deixam recibos privados
+ * após conclusão; esta sonda apenas lê, nunca executa os crons nem escreve.
  */
 export const CRON_FRESHNESS_CHECKS = [
   { name: "news-refresh", table: "coleta_log", column: "executado_em", filter: { fonte: "google-news" } },
   { name: "send-digest", table: "notification_log", column: "sent_at", filter: { status: "sent" } },
+  { name: "published-consistency", table: "cron_execution_receipts", column: "completed_at", filter: { name: "published-consistency" } },
+  { name: "revalidate-public-cache", table: "cron_execution_receipts", column: "completed_at", filter: { name: "revalidate-public-cache" } },
 ] as const
 
 type FreshnessCheck = (typeof CRON_FRESHNESS_CHECKS)[number]

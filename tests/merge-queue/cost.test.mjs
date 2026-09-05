@@ -4,6 +4,7 @@ import test from 'node:test';
 import { performance } from 'node:perf_hooks';
 import { simulate } from '../../scripts/merge-queue/simulate.mjs';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 test('ten-PR decision stays local, bounded, and single-slot', async () => {
   const fixture = JSON.parse(await readFile(new URL('../fixtures/merge-queue-ten-prs.json', import.meta.url), 'utf8'));
@@ -17,8 +18,8 @@ test('ten-PR decision stays local, bounded, and single-slot', async () => {
 });
 
 test('simulation CLI has stable human and JSON receipts with zero remote writes', () => {
-  const fixturePath = new URL('../fixtures/merge-queue-ten-prs.json', import.meta.url).pathname;
-  const scriptPath = new URL('../../scripts/merge-queue/simulate.mjs', import.meta.url).pathname;
+  const fixturePath = fileURLToPath(new URL('../fixtures/merge-queue-ten-prs.json', import.meta.url));
+  const scriptPath = fileURLToPath(new URL('../../scripts/merge-queue/simulate.mjs', import.meta.url));
   const human = execFileSync(process.execPath, [scriptPath, fixturePath], { encoding: 'utf8' });
   assert.match(human, /^SIMULATION PASS /);
   const json = JSON.parse(execFileSync(process.execPath, [scriptPath, fixturePath, '--json'], { encoding: 'utf8' }));

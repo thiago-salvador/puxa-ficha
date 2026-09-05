@@ -6,6 +6,7 @@ import {
 } from "@/lib/api"
 import type { Metadata } from "next"
 import Link from "next/link"
+import { getImageProps } from "next/image"
 import { Suspense, lazy } from "react"
 import { preload } from "react-dom"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
@@ -26,12 +27,25 @@ import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { formatCompact } from "@/lib/utils"
 
 export default async function Home() {
+  const { props: heroImage } = getImageProps({
+    src: "/images/hero-dossie.webp",
+    alt: "",
+    width: 1600,
+    height: 893,
+    sizes: "100vw",
+    loading: "eager",
+    fetchPriority: "high",
+    className: "h-full w-full object-cover",
+  })
   // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
   // imagem depois de ler o HTML e competir com os scripts (Lighthouse
   // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
   // espelhando o <picture> abaixo, para o preload não baixar a versão errada.
   preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
-  preload("/images/hero-dossie.webp", { as: "image", fetchPriority: "high", media: "(min-width: 641px)" })
+  preload(heroImage.src, {
+    as: "image", fetchPriority: "high", media: "(min-width: 641px)",
+    imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
+  })
 
   const [todosResumosResource, comparaveisResource] = await Promise.all([
     getCandidatosComResumoResource(),
@@ -99,17 +113,7 @@ export default async function Home() {
         <div className="absolute inset-0 opacity-40" aria-hidden="true">
           <picture>
             <source media="(max-width: 640px)" srcSet="/images/hero-dossie-mobile.webp" />
-            <img
-              src="/images/hero-dossie.webp"
-              srcSet="/images/hero-dossie-mobile.webp 560w, /images/hero-dossie.webp 1600w"
-              sizes="100vw"
-              alt=""
-              fetchPriority="high"
-              decoding="async"
-              width={1600}
-              height={893}
-              className="h-full w-full object-cover"
-            />
+            <img {...heroImage} alt={heroImage.alt} />
           </picture>
         </div>
         {/* Gradient overlay for text readability */}

@@ -15,7 +15,7 @@ import {
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -25,7 +25,7 @@ export const dynamic = "force-dynamic"
 
 // Ver o comentario em src/app/api/alerts/session/route.ts: as quatro rotas de
 // mutacao de alertas faziam SELECT com service role sem nenhum teto.
-const toggleRateLimiter = createFixedWindowIpRateLimiter({
+const toggleRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-toggle",
   max: 120,
   windowMs: 60_000,
@@ -50,9 +50,9 @@ export function createToggleHandler(deps: ToggleDeps = defaultToggleDeps) {
     const csrfResponse = rejectCrossSiteAlertsMutation(req, "toggle", deps.logAlertsApiExit)
     if (csrfResponse) return csrfResponse
 
-    const decision = toggleRateLimiter.check(req.headers)
+    const decision = await toggleRateLimiter.check(req.headers)
     if (!decision.allowed) {
-      deps.logAlertsApiExit("toggle", 429, "rate_limited")
+      deps.logAlertsApiExit("toggle", decision.unavailable ? 503 : 429, "rate_limited")
       return rateLimitExceededResponse(decision)
     }
 

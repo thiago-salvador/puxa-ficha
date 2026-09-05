@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "quota-ip-operacional-20260905",
+      "desde": "20260905220100",
+      "ate": "20260905220100",
+      "allowlist": "scripts/audit/allowlist-quota-ip-operacional-20260905.json",
+      "divida": null
+    },
+    {
       "nome": "governadores-ac",
       "desde": "20260802200000",
       "ate": "20260802200100",

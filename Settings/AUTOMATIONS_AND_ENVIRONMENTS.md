@@ -102,7 +102,8 @@ segura.
 
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
-| `PF_QWEN_CLI`, `PF_QWEN_EXTRA_ARGS`, `PF_QWEN_TIMEOUT_MS` | Runner legado Qwen | Opcionais. O CLI cai para `qwen`, safe mode é obrigatório e o timeout padrão é 900.000 ms. | Operador local |
+| `PF_QWEN_MODEL` | Modelo do runner legado Qwen | Obrigatório, sem default. A identidade é registrada em stderr; a allowlist do batch preserva a variável. | Operador local |
+| `PF_QWEN_CLI`, `PF_QWEN_EXTRA_ARGS`, `PF_QWEN_TIMEOUT_MS` | Runner legado Qwen | Opcionais. O CLI cai para `qwen`, safe mode é obrigatório e o timeout padrão é 900.000 ms. `PF_QWEN_EXTRA_ARGS` não aceita `--model` ou `-m`, para não substituir a identidade explícita. | Operador local |
 | `PF_CODEX_CLI`, `PF_CODEX_EXTRA_ARGS`, `PF_CODEX_MODEL`, `PF_CODEX_REASONING_EFFORT`, `PF_CODEX_TIMEOUT_MS`, `PF_JUDGE_MODEL` | Runner direto Codex para geração ou julgamento | Opcionais. O CLI cai para `codex`; modelo, esforço e timeout têm defaults explícitos nos wrappers. Argumentos extras não substituem sandbox, config limpa nem web desabilitada. | Operador local |
 | `PF_CLAUDE_CLI`, `PF_CLAUDE_JUDGE_MODEL`, `PF_CLAUDE_MAX_BUDGET_USD`, `PF_CLAUDE_TIMEOUT_MS` | Judge direto Claude | Opcionais. Defaults: CLI `claude`, modelo `sonnet`, orçamento máximo de US$ 5 e timeout de 900.000 ms. | Operador local |
 | `PF_OPENCODE_GO`, `PF_OPENCODE_TIMEOUT_MS`, `PF_OPENCODE_TIMEOUT_PADDING_MS`, `PF_OPENCODE_GRACE_MS` | Compatibilidade dos runners OpenCode históricos | Restritas a retomadas históricas que selecionem esses wrappers; não são usadas pela pipeline final Codex Luna mais Claude. `PF_OPENCODE_GO` é **obrigatória** quando um desses runners roda: sem ela o runner aborta antes de qualquer chamada de modelo, porque não existe mais caminho padrão. As três de tempo continuam opcionais. | Operador local |
@@ -110,10 +111,17 @@ segura.
 
 ### QA e testes focados
 
+`PF_PROVAR_CRON_RECEIPTS_PG17`, `PF_PROVAR_PUBLICATION_PG17` e
+`PF_PROVAR_QUOTA_PG17` habilitam, somente com valor `1`, fixtures locais
+descartáveis PostgreSQL 17 de recibos, publicação e cota. O wrapper
+`scripts/audit/provar-master-review-remediation-pg17.sh` define as três;
+não configurar essas variáveis em produção.
+
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
 | `PUXAFICHA_DEV_NO_KILL_PORT` | Proteção do servidor local contra encerramento do processo que ocupa a porta 3000 | Opcional; somente `1` impede `scripts/dev.sh` de encerrar o processo existente. Ausente, o script preserva o comportamento padrão de liberar a porta. | Desenvolvimento local |
 | `PF_BASE_URL`, `PF_QUIZ_OG_BASE_URL` | Base URL de Playwright e quiz OG | Opcionais; caem para loopback nas configs que suportam servidor local. | Teste local ou CI |
+| `PF_VISUAL_FIXTURE_BUILD` | Build isolado com fixtures de dados para Playwright | Opcional; somente `1`, junto de `CI=true`, sem Vercel e com URL placeholder, habilita o alias de teste e a saída `.next-e2e`. Ausente mantém o build normal. Não configurar em produção. | Teste local ou CI |
 | `PF_PESQUISAS_EMPTY_SLUG` | Controle negativo do smoke de pesquisas em produção | Opcional; ausência usa `ciro-gomes-gov-ce`. Restrita ao teste. | Teste local ou CI |
 | `PF_PLAYWRIGHT_EDITORIAL_WEBSERVER` | Sobe servidor editorial local | Opcional; somente `1` ativa. | Teste local |
 | `PF_RUN_SEARCH_SMOKE`, `PF_EXPECT_PLACEHOLDER_DATA` | Seleção de cenários visuais | Opcionais; valores truthy esperados pelas specs ativam o cenário. | CI ou teste local |
@@ -168,9 +176,25 @@ horário de verão, inexistente no Brasil em 06/08/2026.
 | `/api/alerts/send-digest` | 12:00 diária | 09:00 | Enviar digest de alertas habilitados. |
 | `/api/internal/revalidate-public-cache` | `*/15 * * * *` | a cada 15 min | Invalidar cache público das fichas. |
 
+## Recibos privados dos crons
+
+A migration `20260905220200_private_cron_execution_receipts.sql` prepara
+`cron_execution_receipts`, com RLS e acesso somente por service role, limitada
+a uma linha por cron. Aplicar antes do código que a utiliza, após aprovação de
+banco separada. Os handlers gravam apenas depois de conclusão HTTP 200; falha
+de gravação retorna 503, sem alegar prova de execução. A sonda de frescor não
+escreve e não dispara os handlers. O watchdog diário detecta ausência ou idade
+excessiva na próxima sonda, não promete detecção em tempo real.
+
+Readback: `scripts/audit/readback-private-cron-execution-receipts.sql`.
+Rollback: primeiro reverter os handlers e a sonda; depois executar
+`scripts/audit/rollback-private-cron-execution-receipts.sql`, que preserva os
+recibos em tabela renomeada. Nenhum recibo é evidência de proveniência eleitoral.
+
 ## GitHub Actions
 
-A tabela cobre os 25 workflows do diretório. Conferir a cobertura com
+A tabela registra as rotinas recorrentes e os principais workflows operacionais.
+Os one-offs históricos continuam versionados no diretório. Conferir o inventário com
 `ls .github/workflows/*.yml`; os agendados saem de
 `grep -l 'schedule:' .github/workflows/*.yml`. Schedule de workflow é UTC.
 
@@ -186,10 +210,11 @@ A tabela cobre os 25 workflows do diretório. Conferir a cobertura com
 | `patrimonio-rerun.yml` | Domingo, 09:00 UTC e manual (ativado em 12/08/2026; primeiro disparo 16/08) | Re-run de patrimônio do ciclo 2026 em dry-run: baixa o pacote oficial do TSE e compara por composição contra o baseline auditado. Não escreve, não recebe secret; publicar o delta continua exigindo migration com gate. |
 | `data-quality.yml` | Quinta, 09:00 UTC; dia 3, 07:00 UTC; manual | Coorte, superfície pública, integridade da cadeia partidária e auditoria de identidade SQ. |
 | `data-freshness-audit.yml` | 11:37 UTC diária e manual | `audit:data-freshness --strict` sobre fonte oficial, candidaturas e SLA; publica o relatório como artefato. |
+| `refresh-destaques-votacoes.yml` | Segunda, 12:17 UTC e manual | Duas leituras oficiais de proveniência, comparação de hashes e artefato, sem escrita no banco (`PF_DRY_RUN=1`). |
 | `pesquisas-monitoramento.yml` | 10:17 UTC diária e manual | Coleta e verificação das pesquisas eleitorais da matriz aprovada (`verify:pesquisas`). |
 | `link-check-fontes.yml` | Segunda, 09:00 UTC e manual | Verificar links das fontes publicadas. |
 | `alerts-nightly.yml` | 03:17 UTC diária e manual | Pipeline de alertas ponta a ponta em ambiente local, sem envio real de email. |
-| `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os workflows agendados do GitHub; na Vercel, o cron `runtime-smoke` (resposta ao vivo) e o frescor de `news/refresh` e `send-digest` via `/api/internal/cron-freshness` (issue quando o último rastro passa de 36h); e o drift entre `main` e produção (issue quando `main` está à frente há mais de 24h). `published-consistency` e `revalidate-public-cache` não deixam rastro no banco e continuam dependendo do alerta HTTP 500 da própria Vercel. |
+| `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os workflows agendados do GitHub; na Vercel, `runtime-smoke` ao vivo e `/api/internal/cron-freshness` somente leitura. `news/refresh`, `send-digest` e `published-consistency` têm limite de 36h; `revalidate-public-cache`, 1h. Os dois últimos gravam recibo privado após sucesso e ausência de recibo também gera issue. Sonda ainda o drift quando `main` está à frente da produção há mais de 24h. |
 | `a11y-producao-diaria.yml` | 06:15 UTC diária e manual | Axe contra o alias público `puxaficha.com.br`, seja qual for o SHA no ar (registrado no log). Existe porque `a11y-producao.yml` depende de o `deployment_status` coincidir com a promoção, que é manual. |
 | `a11y-producao.yml` | `deployment_status` de Production | Axe contra `puxaficha.com.br` depois do deploy alcançar o alias público, não no push. |
 | `revalidate-cache.yml` | Manual | Revalidar tags públicas autorizadas. |

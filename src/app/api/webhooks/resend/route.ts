@@ -12,6 +12,7 @@ import {
   type ResendWebhookEvent,
 } from "@/lib/resend-webhook"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
+import { isRequestBodyTooLargeError, readTextBodyWithLimit } from "@/lib/request-body"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -54,7 +55,16 @@ export function createResendWebhookHandler(deps: ResendWebhookDeps) {
       logAlertsEvent({ route: ROUTE, event: "resend_webhook_sem_segredo", level: "error", httpStatus: 503 })
       return NextResponse.json({ ok: false, error: "webhook nao configurado" }, { status: 503 })
     }
-    const payload = await request.text()
+    // Operational ceiling for delivery metadata, not email bodies/attachments.
+    let payload: string
+    try {
+      payload = await readTextBodyWithLimit(request, 256 * 1024)
+    } catch (error) {
+      return NextResponse.json(
+        { ok: false, error: "corpo invalido" },
+        { status: isRequestBodyTooLargeError(error) ? 413 : 400 },
+      )
+    }
     const verification = verifyResendWebhook({
       payload,
       headers: {

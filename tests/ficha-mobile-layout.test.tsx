@@ -78,7 +78,7 @@ test("barra de abas desktop sinaliza rolagem e rola só na horizontal até a aba
 
 test("links de doadores têm 24px de altura de toque sem perder o truncate", () => {
   const overview = readFileSync("src/components/ProfileOverview.tsx", "utf8")
-  const sections = readFileSync("src/components/CandidatoProfileSections.tsx", "utf8")
+  const sections = readFileSync("src/components/MoneyTabSection.tsx", "utf8")
   assert.match(overview, /className="block min-w-0 truncate py-0\.5 text-\[length:var\(--text-caption\)\] font-medium leading-5/)
   assert.match(sections, /className="py-0\.5 font-medium leading-5 text-foreground underline-offset-2/)
 })

@@ -77,6 +77,11 @@ export interface IsencaoDeTabela {
  */
 export const TABELAS_DE_ESTADO_DE_FERRAMENTA: readonly IsencaoDeTabela[] = [
   {
+    tabela: "cron_execution_receipts",
+    motivo:
+      "Recibo privado de conclusão de dois crons (migration 20260905220200). Uma linha por nome, service_role somente, sem dados eleitorais. A sonda lê esta tabela, nunca a ficha pública; falha de persistência reprova o próprio cron.",
+  },
+  {
     tabela: "link_check_url_observacao",
     motivo:
       "Memória do link-check (migration 20260803190000): guarda quantas execuções distintas viram a mesma URL morta. É escrita em TODA execução, inclusive dry-run, porque confirmar morte em duas rodadas é o algoritmo. Nada dela chega ao leitor.",

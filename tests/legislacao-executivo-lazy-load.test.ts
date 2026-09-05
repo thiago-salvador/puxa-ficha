@@ -222,7 +222,7 @@ describe("contrato do carregamento sob demanda", () => {
   test("o cliente só busca o inventário quando Legislação abre, e recusa resposta parcial", async () => {
     const [profile, sections] = await Promise.all([
       readFile(PROFILE_PATH, "utf8"),
-      readFile("src/components/CandidatoProfileSections.tsx", "utf8"),
+      readFile("src/components/LegislationTabSection.tsx", "utf8"),
     ])
 
     const efeito = profile.slice(profile.indexOf("legislacaoExecutivoLoadStateRef.current !== \"idle\""))

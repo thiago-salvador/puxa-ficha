@@ -53,7 +53,7 @@ describe("analytics D1 instrumentation", () => {
     // 1758 Candidate Click, porque a ficha (processos, eleições, fonte oficial)
     // usava <a target="_blank"> sem tracking. O funil declara o evento como
     // medido; a superfície tem que medir.
-    for (const file of ["src/components/ProcessoPublicSurface.tsx", "src/components/CandidatoProfileSections.tsx"]) {
+    for (const file of ["src/components/ProcessoPublicSurface.tsx", "src/components/LegislationTabSection.tsx"]) {
       const source = readSource(file)
       assert.ok(source.includes("TrackedExternalSourceLink"), `${file} deve usar TrackedExternalSourceLink`)
       const rawExternal = source.match(/<(a|Link)\b[^>]*target="_blank"/g) ?? []

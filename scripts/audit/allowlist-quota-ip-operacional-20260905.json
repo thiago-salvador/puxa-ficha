@@ -1,0 +1,11 @@
+{
+  "motivo": "Remediação MR07: cota compartilhada privada de requisições. Apenas contadores efêmeros com chave hash, sem escrita em ficha ou assinantes.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [{
+    "tabela": "request_ip_quotas",
+    "ref": "quota-ip-operacional",
+    "campos": ["bucket_key", "request_count", "reset_at"]
+  }]
+}

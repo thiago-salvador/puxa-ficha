@@ -34,6 +34,9 @@ on:
       - "scripts/gerar-proposta-processos-judiciais-66.ts"
       - "QA/evidencias/2026-08-10-item2-judicial/**"
       - "tests/release-operational-artifacts.test.ts"
+      - "tests/*pg17.test.ts"
+      - "scripts/audit/readback-*.sql"
+      - "scripts/audit/rollback-*.sql"
       - "supabase/rollback/**"
       - ".github/workflows/replay-migrations.yml"
       # Dependencias tambem sao entrada do gate (rodada 4 da vistoria): o job
@@ -47,6 +50,9 @@ on:
       - "supabase/readback/**"
       - "supabase/rollback/**"
       - "scripts/audit/provar-*.sh"
+      - "tests/*pg17.test.ts"
+      - "scripts/audit/readback-*.sql"
+      - "scripts/audit/rollback-*.sql"
       - "scripts/audit/falhas-replay-linear.json"
   workflow_dispatch:
 
@@ -79,6 +85,9 @@ jobs:
 
       - name: Replay integral do schema separado
         run: bash scripts/audit/replay-migrations.sh --schema-gate
+
+      - name: Remediação do master review (RLS, cotas e recibos privados)
+        run: bash scripts/audit/provar-master-review-remediation-pg17.sh
 
       # Contratos de migration não são provados por asserção textual. O gate
       # agrega as mutações adversariais das 19 migrations, serialmente, em bancos

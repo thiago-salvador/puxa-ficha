@@ -6,14 +6,14 @@ import {
   type ProgramaGovernoPublicResource,
 } from "@/lib/programa-governo-server"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
-  type RequestRateLimiter,
+  type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
 
 export const dynamic = "force-dynamic"
 
-const programaRateLimiter = createFixedWindowIpRateLimiter({
+const programaRateLimiter = createDistributedIpRateLimiter({
   namespace: "candidato-programa-governo",
   max: 60,
   windowMs: 60_000,
@@ -26,7 +26,7 @@ interface ProgramaGovernoRouteDeps {
     documentoId: string,
     cursor: string | null,
   ) => Promise<ProgramaGovernoChunkResource>
-  rateLimiter: RequestRateLimiter
+  rateLimiter: DistributedRequestRateLimiter
 }
 
 const defaultDeps: ProgramaGovernoRouteDeps = {
@@ -53,7 +53,7 @@ export function createProgramaGovernoGetHandler(
     request: Request,
     { params }: { params: Promise<{ slug: string }> },
   ) {
-    const decisao = deps.rateLimiter.check(request.headers)
+    const decisao = await deps.rateLimiter.check(request.headers)
     if (!decisao.allowed) return rateLimitExceededResponse(decisao)
 
     const { slug } = await params

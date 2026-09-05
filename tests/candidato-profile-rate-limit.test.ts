@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 import test from "node:test"
-import { createFixedWindowIpRateLimiter, rateLimitExceededResponse } from "@/lib/request-rate-limit"
+import { createDistributedIpRateLimiter, createFixedWindowIpRateLimiter, rateLimitExceededResponse } from "@/lib/request-rate-limit"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -147,6 +147,17 @@ test("falha no snapshot complementar nao derruba a ficha", async () => {
   }
 })
 
+test("distributed backend outage returns 503 before any candidate read", async () => {
+  let reads = 0
+  const handler = createCandidatoProfileGetHandler({
+    rateLimiter: createDistributedIpRateLimiter({ namespace: "outage-route", max: 10, windowMs: 60_000, store: async () => { throw new Error("unavailable") } }),
+    getCandidatoBySlugResource: async () => { reads++; return { data: null, sourceStatus: "live" } },
+  })
+  const response = await handler(new Request("https://example.test/api/candidato-profile/lula"), { params: Promise.resolve({ slug: "lula" }) })
+  assert.equal(response.status, 503)
+  assert.equal(reads, 0)
+})
+
 test("as quatro rotas de leitura de ficha declaram limitador", async () => {
   const { readFile } = await import("node:fs/promises")
   const rotas = [
@@ -157,7 +168,7 @@ test("as quatro rotas de leitura de ficha declaram limitador", async () => {
   ]
   for (const r of rotas) {
     const txt = await readFile(new URL(`../${r}`, import.meta.url), "utf8")
-    assert.match(txt, /createFixedWindowIpRateLimiter/, `${r} sem limitador`)
+    assert.match(txt, /createDistributedIpRateLimiter/, `${r} sem limitador`)
     assert.match(txt, /rateLimitExceededResponse\(decisao\)/, `${r} nao recusa`)
     // A checagem tem que vir ANTES do trabalho caro, senao limita depois de pagar.
     const posCheck = txt.indexOf(".check(request.headers)")

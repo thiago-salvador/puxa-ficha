@@ -29,6 +29,14 @@ const TODAS = classificarTodas()
 const TODAS_COM_REPLAY_SCHEMA = classificarTodasComReplaySchema()
 
 describe("classificador puro (#136)", () => {
+  test("barreira de publicação integra o replay de schema", () => {
+    const migration = TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo.startsWith("20260905220000"))
+    assert.equal(migration?.replaySchema, true)
+  })
+  test("FOR UPDATE SKIP LOCKED não inventa DML, mas tabela skip continua visível", () => {
+    assert.deepEqual(alvosDeEscrita("SELECT * FROM request_ip_quotas FOR UPDATE SKIP LOCKED"), [])
+    assert.deepEqual(alvosDeEscrita("UPDATE public.skip SET value = 1"), ["skip"])
+  })
   test("comentário não vira SQL", () => {
     const sql = "-- INSERT INTO candidatos (slug) VALUES ('x');\nselect 1;"
     assert.equal(stripComentarios(sql).includes("INSERT"), false)
@@ -376,7 +384,9 @@ describe("classificador puro (#136)", () => {
     // ficha. MEDIDO no replay local PG17: 345 + 105 = 450, falhas inalteradas.
     // 345 -> 346: textos 20260905150000 sem IDs do lote não escrevem no replay.
     // Medição local PG17: 346 + 105 = 451, conjunto de falhas preservado.
-    assert.equal(manifesto.aplicadas_esperadas, 346)
+    // 05/09: três migrations MR01/MR07/MR08 medidas localmente em PG17;
+    // 349 aplicadas + 105 falhas preservadas = 454 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 349)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

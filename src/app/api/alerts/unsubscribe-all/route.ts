@@ -9,7 +9,7 @@ import {
   readJsonBodyWithLimit,
 } from "@/lib/request-body"
 import {
-  createFixedWindowIpRateLimiter,
+  createDistributedIpRateLimiter,
   rateLimitExceededResponse,
 } from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -19,7 +19,7 @@ export const dynamic = "force-dynamic"
 
 // Ver o comentario em src/app/api/alerts/session/route.ts: as quatro rotas de
 // mutacao de alertas faziam SELECT com service role sem nenhum teto.
-const unsubscribeAllRateLimiter = createFixedWindowIpRateLimiter({
+const unsubscribeAllRateLimiter = createDistributedIpRateLimiter({
   namespace: "alerts-unsubscribe-all",
   max: 120,
   windowMs: 60_000,
@@ -42,9 +42,9 @@ export function createUnsubscribeAllHandler(deps: UnsubscribeAllDeps = defaultUn
     const csrfResponse = rejectCrossSiteAlertsMutation(req, "unsubscribe-all", deps.logAlertsApiExit)
     if (csrfResponse) return csrfResponse
 
-    const decision = unsubscribeAllRateLimiter.check(req.headers)
+    const decision = await unsubscribeAllRateLimiter.check(req.headers)
     if (!decision.allowed) {
-      deps.logAlertsApiExit("unsubscribe-all", 429, "rate_limited")
+      deps.logAlertsApiExit("unsubscribe-all", decision.unavailable ? 503 : 429, "rate_limited")
       return rateLimitExceededResponse(decision)
     }
 

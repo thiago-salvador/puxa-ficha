@@ -124,13 +124,15 @@ export function motivoRecusaDeFonte(gravidade: unknown, fontes: unknown): string
   return partes.join("; ")
 }
 
-/** Espelha `public.is_public_attention_point(boolean, text, boolean, text, jsonb)`. */
+/** Gate editorial SQL mais a barreira de despublicação da policy RLS. */
 export function isPublicAttentionPoint(
   ponto: Pick<PontoAtencao, "visivel" | "gerado_por" | "verificado"> & {
     gravidade?: unknown
     fontes?: unknown
+    despublicado_em?: unknown
   },
 ): boolean {
+  if (ponto.despublicado_em != null) return false
   return isPublicAttentionPointFields(
     ponto.visivel,
     ponto.gerado_por,
