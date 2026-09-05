@@ -58,6 +58,13 @@ ambiente autorizado. Não colocar valores de segredos em comandos, artefatos ou
 logs. O SHA esperado deve ser o commit limpo e aprovado em main, não o SHA base
 deste plano.
 
+O dispatch manual `.github/workflows/apply-master-review-remediation-production.yml`
+recebe `expected_sha` e `mode` (`dry-run` por padrão, `apply` ou `verify`). Exige
+`main`, SHA exato e environment `production`, serializa com os demais applies e
+prova primeiro o pacote em PostgreSQL 17 descartável. O secret `SUPABASE_DB_URL`
+só chega ao passo do driver remoto, não à instalação nem à prova local. Esse
+workflow não expõe rollback e não promove o site automaticamente.
+
 | Ordem | Migration | Mudança e readback |
 |---|---|---|
 | 1 | `20260905220000_publicacao_tabelas_filhas.sql` | Acrescenta três policies restrictive sem apagar registros. Readback em `supabase/readback/20260905220000_publicacao_tabelas_filhas.readback.sql` confere ledger, policies e conjuntos de leitura anon/authenticated. |
