@@ -36,8 +36,8 @@ id = "generic-api-key"
   paths = ['''^supabase/rollback/20260811100000_votacoes_senado_chave_exata\.rollback\.sql$''']
 
   [[rules.allowlists]]
-  description = "UUID público do evento histórico de Ariel Capistrano"
+  description = "UUID público do evento histórico de Ariel Capistrano e sua regressão de caminho"
   condition = "AND"
   regexTarget = "secret"
   regexes = ['''^2c3f7577-3ed9-44ff-9360-c1740191e043$''']
-  paths = ['''^supabase/migrations/20260905150000_corrigir_textos_julgamento\.sql$''']
+  paths = ['''^supabase/migrations/20260905150000_corrigir_textos_julgamento\.sql$''', '''^tests/gitleaks-workflow\.test\.mjs$''']

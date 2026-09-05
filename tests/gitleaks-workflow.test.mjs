@@ -226,6 +226,10 @@ test("controlled fixture survives every former allowlist bypass and stays redact
       path: "supabase/migrations/20260905150000_corrigir_textos_julgamento.sql",
       contents: `chave=${secret}\n`,
     },
+    {
+      path: "tests/gitleaks-workflow.test.mjs",
+      contents: `api_key=${secret}\n`,
+    },
   ]
 
   for (const fixture of cases) {
