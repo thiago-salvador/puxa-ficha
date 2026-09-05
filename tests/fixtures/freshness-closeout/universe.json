@@ -1,0 +1,2124 @@
+{
+  "current_official": [
+    {
+      "sq_candidato": "10002532492",
+      "profile_slug": "alan-rick",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "ALAN RICK",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "10002533539",
+      "profile_slug": "dr-luisinho",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "DR.LUISINHO",
+      "status": "Deferido",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "10002549500",
+      "profile_slug": "eudo-raffael",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "EUDO RAFFAEL",
+      "status": "Deferido",
+      "party": "PCB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "10002544107",
+      "profile_slug": "mailza-assis",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "MAILZA ASSIS",
+      "status": "Deferido",
+      "party": "PP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "10002550719",
+      "profile_slug": "thor-dantas",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "THOR DANTAS",
+      "status": "Deferido",
+      "party": "PSB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "10002544015",
+      "profile_slug": "tiao-bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "name": "TIÃO BOCALOM",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "20002553350",
+      "profile_slug": "jhc",
+      "office": "Governador",
+      "uf": "AL",
+      "name": "JHC",
+      "status": "Aguardando julgamento",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "20002539642",
+      "profile_slug": "lenilda-luna",
+      "office": "Governador",
+      "uf": "AL",
+      "name": "LENILDA LUNA",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "20002552502",
+      "profile_slug": "marcio-jambo",
+      "office": "Governador",
+      "uf": "AL",
+      "name": "MÁRCIO JAMBO",
+      "status": "Aguardando julgamento",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "20002553745",
+      "profile_slug": "renan-filho",
+      "office": "Governador",
+      "uf": "AL",
+      "name": "RENAN FILHO",
+      "status": "Aguardando julgamento",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "30002536313",
+      "profile_slug": "carlos-cley",
+      "office": "Governador",
+      "uf": "AP",
+      "name": "CARLOS CLEY",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "30002536311",
+      "profile_slug": "clecio-luis",
+      "office": "Governador",
+      "uf": "AP",
+      "name": "CLÉCIO",
+      "status": "Aguardando julgamento",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "30002552017",
+      "profile_slug": "marcos-reategui",
+      "office": "Governador",
+      "uf": "AP",
+      "name": "DELEGADO MARCOS",
+      "status": "Deferido",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "30002530014",
+      "profile_slug": "dr-furlan",
+      "office": "Governador",
+      "uf": "AP",
+      "name": "DR. FURLAN",
+      "status": "Deferido com recurso",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "30002551388",
+      "profile_slug": "jairo-palheta",
+      "office": "Governador",
+      "uf": "AP",
+      "name": "JAIRO PALHETA",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002551740",
+      "profile_slug": "cabo-daciolo",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "CABO DACIOLO",
+      "status": "Deferido",
+      "party": "MOBILIZA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002536086",
+      "profile_slug": "david-almeida",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "DAVID ALMEIDA",
+      "status": "Deferido",
+      "party": "AVANTE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002535267",
+      "profile_slug": "gilberto-vasconcelos",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "GILBERTO VASCONCELOS",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002550776",
+      "profile_slug": "isael-munduruku",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "ISAEL MUNDURUKU",
+      "status": "Deferido",
+      "party": "REDE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002532272",
+      "profile_slug": "omar-aziz",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "OMAR AZIZ",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002541626",
+      "profile_slug": "maria-do-carmo",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "PROFESSORA MARIA DO CARMO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "40002541741",
+      "profile_slug": "roberto-cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "name": "ROBERTO CIDADE",
+      "status": "Deferido",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002533190",
+      "profile_slug": "acm-neto",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "ACM NETO",
+      "status": "Deferido",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002535253",
+      "profile_slug": "ariel-capistrano",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "ARIEL CAPISTRANO",
+      "status": "Deferido com recurso",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002544692",
+      "profile_slug": "aroldo-felix",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "AROLDO FELIX",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002536579",
+      "profile_slug": "jose-estevao",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "ESTÊVÃO",
+      "status": "Indeferido em prazo recursal ou com recurso",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002536314",
+      "profile_slug": "jeronimo",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "JERÔNIMO RODRIGUES",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002552489",
+      "profile_slug": "maria-bona",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "MARIA BONA",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "50002532269",
+      "profile_slug": "ronaldo-mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "name": "RONALDO MANSUR",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002531351",
+      "profile_slug": "ciro-gomes-gov-ce",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "CIRO GOMES",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002552498",
+      "profile_slug": "danilo-soares",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "DANILO SOARES",
+      "status": "Deferido",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002540417",
+      "profile_slug": "huggo-leonardo",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "DELEGADO HUGGO",
+      "status": "Deferido",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002543969",
+      "profile_slug": "elmano-de-freitas",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "ELMANO DE FREITAS",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002552320",
+      "profile_slug": "ieri-braga",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "IERI BRAGA",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002540336",
+      "profile_slug": "pedro-brito",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "PEDRO BRITO",
+      "status": "Renúncia",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002533729",
+      "profile_slug": "serley-leal",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "SERLEY LEAL",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002553922",
+      "profile_slug": "vera-lucia-ce",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "VERA LÚCIA",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "60002549967",
+      "profile_slug": "ze-batista",
+      "office": "Governador",
+      "uf": "CE",
+      "name": "ZÉ BATISTA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002552586",
+      "profile_slug": "jose-roberto-arruda",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "ARRUDA",
+      "status": "Indeferido em prazo recursal ou com recurso",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002551557",
+      "profile_slug": "ricardo-cappelli",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "CAPPELLI",
+      "status": "Deferido",
+      "party": "PSB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002553055",
+      "profile_slug": "celina-leao",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "CELINA LEÃO",
+      "status": "Deferido",
+      "party": "PP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002551298",
+      "profile_slug": "elisson-ferreira",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "ELISSON",
+      "status": "Aguardando julgamento",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002552341",
+      "profile_slug": "expedito-mendonca",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "EXPEDITO MENDONÇA",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002547775",
+      "profile_slug": "kiko-caputo",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "KIKO CAPUTO",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002552496",
+      "profile_slug": "leandro-grass",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "LEANDRO GRASS",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002552965",
+      "profile_slug": "paula-belmonte",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "PAULA BELMONTE",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002535930",
+      "profile_slug": "robson-raymundo",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "PROFESSOR ROBSON",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002537111",
+      "profile_slug": "samara-mineiro",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "PROFESSORA SAMARA MINEIRO",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "70002553982",
+      "profile_slug": "rico-pinheiro",
+      "office": "Governador",
+      "uf": "DF",
+      "name": "RICO PINHEIRO",
+      "status": "Aguardando julgamento",
+      "party": "PRTB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "80002541012",
+      "profile_slug": "breno-barcelar",
+      "office": "Governador",
+      "uf": "ES",
+      "name": "BRENO BARCELOS",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "80002551833",
+      "profile_slug": "helder-salomao",
+      "office": "Governador",
+      "uf": "ES",
+      "name": "HELDER SALOMÃO",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "80002552682",
+      "profile_slug": "pazolini",
+      "office": "Governador",
+      "uf": "ES",
+      "name": "LORENZO PAZOLINI",
+      "status": "Aguardando julgamento",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "80002550832",
+      "profile_slug": "rafael-demuner",
+      "office": "Governador",
+      "uf": "ES",
+      "name": "RAFAEL DEMUNER",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "80002552172",
+      "profile_slug": "ricardo-ferraco",
+      "office": "Governador",
+      "uf": "ES",
+      "name": "RICARDO FERRAÇO",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002540993",
+      "profile_slug": "daniel-vilela",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "DANIEL VILELA",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002553733",
+      "profile_slug": "danilo-pinheiro",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "DANILO PINHEIRO",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002550707",
+      "profile_slug": "luciana-amorim",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "LUCIANA AMORIM",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002545476",
+      "profile_slug": "luis-cesar-bueno",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "LUIS CESAR BUENO",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002543463",
+      "profile_slug": "marconi-perillo",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "MARCONI PERILLO",
+      "status": "Aguardando julgamento",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "90002551791",
+      "profile_slug": "wilder-morais",
+      "office": "Governador",
+      "uf": "GO",
+      "name": "WILDER MORAIS",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002544076",
+      "profile_slug": "andre-luis",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "ANDRÉ LUIS",
+      "status": "Deferido",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002552700",
+      "profile_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "DIMAS CASSIMIRO",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002545679",
+      "profile_slug": "eduardo-braide",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "EDUARDO BRAIDE",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002542556",
+      "profile_slug": "felipe-camarao",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "FELIPE CAMARÃO",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002543869",
+      "profile_slug": "orleans-brandao",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "ORLEANS BRANDÃO",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002544073",
+      "profile_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "REGINALDO LIMA",
+      "status": "Deferido",
+      "party": "PCB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002551399",
+      "profile_slug": "roberto-rocha",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "ROBERTO ROCHA",
+      "status": "Aguardando julgamento",
+      "party": "PRTB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "100002534190",
+      "profile_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "name": "SAULO ARCANGELI",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002544985",
+      "profile_slug": "natasha-slhessarenko",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "DOUTORA NATASHA",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002553058",
+      "profile_slug": "mauricio-coelho",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "MAURICIO COELHO",
+      "status": "Deferido",
+      "party": "MOBILIZA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002551480",
+      "profile_slug": "otaviano-pivetta",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "OTAVIANO PIVETTA",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002543953",
+      "profile_slug": "rafaell-milas",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "RAFAELL MILAS",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002554073",
+      "profile_slug": "laudicerio-aguiar",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "SARGENTO LAUDICÉRIO",
+      "status": "Aguardando julgamento",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002553937",
+      "profile_slug": "laudicerio-aguiar",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "SARGENTO LAUDICÉRIO (LAU)",
+      "status": "Aguardando julgamento",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "110002551737",
+      "profile_slug": "wellington-fagundes",
+      "office": "Governador",
+      "uf": "MT",
+      "name": "WELLINGTON FAGUNDES",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002552201",
+      "profile_slug": "daniel-lemes",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "DANIEL LEMES",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002552155",
+      "profile_slug": "delcidio-amaral",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "DELCIDIO AMARAL",
+      "status": "Deferido",
+      "party": "PRD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002549681",
+      "profile_slug": "renato-gomes",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "ECONOMISTA RENATO GOMES",
+      "status": "Deferido",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002536582",
+      "profile_slug": "eduardo-riedel",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "EDUARDO RIEDEL",
+      "status": "Deferido",
+      "party": "PP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002539834",
+      "profile_slug": "fabio-trad",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "FÁBIO TRAD",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002550198",
+      "profile_slug": "jeferson-bezerra",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "JEFERSON BEZERRA",
+      "status": "Aguardando julgamento",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002552191",
+      "profile_slug": "joao-henrique-catan",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "JOÃO HENRIQUE CATAN",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "120002532257",
+      "profile_slug": "lucien-rezende",
+      "office": "Governador",
+      "uf": "MS",
+      "name": "LUCIEN REZENDE",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002539775",
+      "profile_slug": "alexandre-kalil",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "ALEXANDRE KALIL",
+      "status": "Deferido",
+      "party": "PDT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002544411",
+      "profile_slug": "ben-mendes",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "BEN MENDES",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002552296",
+      "profile_slug": "cleitinho",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "CLEITINHO AZEVEDO",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002550834",
+      "profile_slug": "flavio-roscoe",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "FLÁVIO ROSCOE",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002549557",
+      "profile_slug": "gabriel-azevedo",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "GABRIEL",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002552308",
+      "profile_slug": "henrique-areas",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "HENRIQUE ÁREAS",
+      "status": "Indeferido em prazo recursal ou com recurso",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002547874",
+      "profile_slug": "indira-xavier",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "INDIRA XAVIER",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002541911",
+      "profile_slug": "mateus-simoes",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "MATEUS SIMÕES",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002550464",
+      "profile_slug": "patrus-ananias",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "PATRUS ANANIAS",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002544122",
+      "profile_slug": "tulio-lopes",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "PROFESSOR TÚLIO LOPES",
+      "status": "Deferido",
+      "party": "PCB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "130002546802",
+      "profile_slug": "rafael-duda",
+      "office": "Governador",
+      "uf": "MG",
+      "name": "RAFAEL DUDA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002542386",
+      "profile_slug": "araceli-lemos",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "ARACELI",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002538631",
+      "profile_slug": "cleber-rabelo",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "CLEBER RABELO",
+      "status": "Renúncia",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002549930",
+      "profile_slug": "dr-daniel",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "DR. DANIEL",
+      "status": "Deferido",
+      "party": "PODE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002551943",
+      "profile_slug": "gal-leite",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "GAL LEITE",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002551598",
+      "profile_slug": "hana-ghassan",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "HANA GHASSAN",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002551357",
+      "profile_slug": "jose-moita",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "JOSÉ MOITA",
+      "status": "Renúncia",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002554434",
+      "profile_slug": null,
+      "office": "Governador",
+      "uf": "PA",
+      "name": "RUTH REIS",
+      "status": "Aguardando julgamento",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "140002554108",
+      "profile_slug": "well-macedo",
+      "office": "Governador",
+      "uf": "PA",
+      "name": "WELL MACEDO",
+      "status": "Aguardando julgamento",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002552603",
+      "profile_slug": "camilo-duarte",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "CAMILO DUARTE",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002544133",
+      "profile_slug": "cicero-lucena",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "CÍCERO LUCENA",
+      "status": "Aguardando julgamento",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002538692",
+      "profile_slug": "efraim-filho",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "EFRAIM FILHO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002551789",
+      "profile_slug": "lucas-ribeiro",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "LUCAS RIBEIRO",
+      "status": "Deferido",
+      "party": "PP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002551911",
+      "profile_slug": "pedro-coutinho",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "PEDRO COUTINHO",
+      "status": "Deferido",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "150002540204",
+      "profile_slug": "yuri-ezequiel",
+      "office": "Governador",
+      "uf": "PB",
+      "name": "YURI EZEQUIEL",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002552560",
+      "profile_slug": "adriano-funileiro",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "ADRIANO FUNILEIRO",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002547594",
+      "profile_slug": "alexandre-salomao",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "DOUTOR ALEXANDRE SALOMÃO",
+      "status": "Deferido",
+      "party": "MOBILIZA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002551353",
+      "profile_slug": "luiz-franca",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "LUIZ FRANÇA",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002547666",
+      "profile_slug": "requiao-filho",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "REQUIÃO FILHO",
+      "status": "Aguardando julgamento",
+      "party": "PDT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002548010",
+      "profile_slug": "samuel-de-mattos",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "SAMUEL DE MATTOS",
+      "status": "Aguardando julgamento",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002549553",
+      "profile_slug": "sandro-alex",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "SANDRO ALEX",
+      "status": "Aguardando julgamento",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002540833",
+      "profile_slug": "sergio-moro-gov-pr",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "SERGIO MORO",
+      "status": "Aguardando julgamento",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "160002550997",
+      "profile_slug": "tayna-miessa",
+      "office": "Governador",
+      "uf": "PR",
+      "name": "TAYNÁ MIESSA",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002536575",
+      "profile_slug": "guilherme-fonseca",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "GUILHERME FONSECA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002538097",
+      "profile_slug": "ivan-moraes",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "IVAN MORAES",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002537230",
+      "profile_slug": "joao-campos",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "JOÃO CAMPOS",
+      "status": "Deferido",
+      "party": "PSB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002541258",
+      "profile_slug": "jeremias-cosmo",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "PROFESSOR JEREMIAS DO BANCO",
+      "status": "Aguardando julgamento",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002537320",
+      "profile_slug": "camila-falcao",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "PROFESSORA CAMILA",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002537227",
+      "profile_slug": "raquel-lyra",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "RAQUEL LYRA",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002540337",
+      "profile_slug": "renan-hallais",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "RENAN",
+      "status": "Deferido",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "170002552776",
+      "profile_slug": "victor-assis",
+      "office": "Governador",
+      "uf": "PE",
+      "name": "VICTOR ASSIS",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002544216",
+      "profile_slug": "lucia-santos",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "DRA. LÚCIA SANTOS",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002549920",
+      "profile_slug": "elizeu-aguiar",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "ELIZEU AGUIAR",
+      "status": "Aguardando julgamento",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002537422",
+      "profile_slug": "geraldo-carvalho",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "GERALDO CARVALHO",
+      "status": "Indeferido em prazo recursal ou com recurso",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002550421",
+      "profile_slug": "gustavo-henrique",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "GUSTAVO PELO PIAUÍ OU GUSTAVO",
+      "status": "Aguardando julgamento",
+      "party": "AVANTE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002538530",
+      "profile_slug": "joel-rodrigues",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "JOEL RODRIGUES",
+      "status": "Deferido",
+      "party": "PP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002553722",
+      "profile_slug": "lourdes-melo",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "LOURDES MELO",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002549970",
+      "profile_slug": "gisvaldo-oliveira",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "PROFESSOR GISVALDO",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002548565",
+      "profile_slug": "francisco-jurity",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "PROFESSOR JURITY",
+      "status": "Aguardando julgamento",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002532987",
+      "profile_slug": "rafael-fonteles",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "RAFAEL FONTELES",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002548388",
+      "profile_slug": "ravenna-castro",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "RAVENNA DA INCLUSÃO",
+      "status": "Deferido",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "180002549995",
+      "profile_slug": "santiago-belizario",
+      "office": "Governador",
+      "uf": "PI",
+      "name": "SANTIAGO BELIZÁRIO",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002537524",
+      "profile_slug": "andre-marinho",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "ANDRÉ MARINHO",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002544120",
+      "profile_slug": "coronel-busnello",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "CORONEL BUSNELLO",
+      "status": "Deferido",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002540198",
+      "profile_slug": "cyro-garcia",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "CYRO GARCIA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002542887",
+      "profile_slug": "douglas-ruas",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "DOUGLAS RUAS",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002543380",
+      "profile_slug": "eduardo-paes",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "EDUARDO PAES",
+      "status": "Aguardando julgamento",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002550196",
+      "profile_slug": "garotinho",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "GAROTINHO",
+      "status": "Aguardando julgamento",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002547272",
+      "profile_slug": "juliete-pantoja",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "JULIETE",
+      "status": "Aguardando julgamento",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002552513",
+      "profile_slug": "luan-monteiro",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "LUAN MONTEIRO",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "190002536162",
+      "profile_slug": "william-siri",
+      "office": "Governador",
+      "uf": "RJ",
+      "name": "WILLIAM SIRI",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002535255",
+      "profile_slug": "alysson-bezerra",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "ALLYSON",
+      "status": "Deferido",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002534442",
+      "profile_slug": "alvaro-dias-rn",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "ÁLVARO DIAS",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002547826",
+      "profile_slug": "arinalda-do-mlb",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "ARINALDA DO MLB",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002534001",
+      "profile_slug": "cadu-xavier",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "CADU DE LULA",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002550223",
+      "profile_slug": "carlos-jararaca",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "CARLOS JARARACA",
+      "status": "Indeferido em prazo recursal ou com recurso",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002542481",
+      "profile_slug": "dario-barbosa",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "DÁRIO BARBOSA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002553301",
+      "profile_slug": "henrique-lyra",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "HENRIQUE LYRA",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002546757",
+      "profile_slug": "roberio-paulino",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "PROFESSOR ROBERIO PAULINO",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "200002546756",
+      "profile_slug": "rodrigo-bolsonaro",
+      "office": "Governador",
+      "uf": "RN",
+      "name": "RODRIGO DE BOLSONARO",
+      "status": "Deferido",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002552592",
+      "profile_slug": "cesar-pontes",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "CESAR PONTES",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002542892",
+      "profile_slug": "gabriel-souza",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "GABRIEL SOUZA",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002551508",
+      "profile_slug": "juliana-brizola",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "JULIANA BRIZOLA",
+      "status": "Deferido",
+      "party": "PDT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002535802",
+      "profile_slug": "marcelo-maranata",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "MARCELO MARANATA",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002533355",
+      "profile_slug": "priscila-voigt",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "PRISCILA VOIGT",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002541367",
+      "profile_slug": "rejane-oliveira",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "REJANE DE OLIVEIRA",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "210002547857",
+      "profile_slug": "luciano-zucco",
+      "office": "Governador",
+      "uf": "RS",
+      "name": "ZUCCO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002536806",
+      "profile_slug": "adailton-furia",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "ADAILTON FURIA",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002542185",
+      "profile_slug": "expedito-netto",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "EXPEDITO NETTO",
+      "status": "Aguardando julgamento",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002542916",
+      "profile_slug": "hildon-chaves",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "HILDON CHAVES",
+      "status": "Deferido",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002541939",
+      "profile_slug": "marcos-rogerio",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "MARCOS ROGÉRIO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002551251",
+      "profile_slug": "pedro-abib",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "PEDRO ABIB",
+      "status": "Deferido",
+      "party": "MDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "220002550927",
+      "profile_slug": "samuel-costa",
+      "office": "Governador",
+      "uf": "RO",
+      "name": "SAMUEL COSTA",
+      "status": "Aguardando julgamento",
+      "party": "PSB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "230002549223",
+      "profile_slug": "arthur-henrique",
+      "office": "Governador",
+      "uf": "RR",
+      "name": "ARTHUR HENRIQUE",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "230002553857",
+      "profile_slug": "clebio-genuino",
+      "office": "Governador",
+      "uf": "RR",
+      "name": "CLÉBIO GENUÍNO",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "230002549294",
+      "profile_slug": "farah-mesquita",
+      "office": "Governador",
+      "uf": "RR",
+      "name": "FARAH MESQUITA",
+      "status": "Deferido",
+      "party": "SOLIDARIEDADE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "230002552060",
+      "profile_slug": "rosi-aires",
+      "office": "Governador",
+      "uf": "RR",
+      "name": "ROSI AIRES",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "230002551571",
+      "profile_slug": "soldado-sampaio",
+      "office": "Governador",
+      "uf": "RR",
+      "name": "SOLDADO SAMPAIO",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002553718",
+      "profile_slug": "bruno-pedreiro-do-pco",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "BRUNO PEDREIRO DO PCO",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002548628",
+      "profile_slug": "gelson-merisio",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "GELSON MERÍSIO",
+      "status": "Aguardando julgamento",
+      "party": "PSB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002551001",
+      "profile_slug": "joao-rodrigues",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "JOÃO RODRIGUES",
+      "status": "Aguardando julgamento",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002537073",
+      "profile_slug": "jorginho-mello",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "JORGINHO MELLO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002550544",
+      "profile_slug": "lais-chaud",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "LAÍS CHAUD",
+      "status": "Aguardando julgamento",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002544118",
+      "profile_slug": "marcelo-brigadeiro",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "MARCELO BRIGADEIRO",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002541913",
+      "profile_slug": "marcus-sodre",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "PROFESSOR MARCUS SODRÉ",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "240002552157",
+      "profile_slug": "ralf-zimmer",
+      "office": "Governador",
+      "uf": "SC",
+      "name": "RALF ZIMMER",
+      "status": "Aguardando julgamento",
+      "party": "PRD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002550913",
+      "profile_slug": "carlos-machado",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "CARLOS MACHADO",
+      "status": "Deferido",
+      "party": "PCB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002549705",
+      "profile_slug": "haddad-gov-sp",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "FERNANDO HADDAD",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002553062",
+      "profile_slug": "izadora-dias",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "IZADORA DIAS",
+      "status": "Aguardando julgamento",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002548080",
+      "profile_slug": "policial-edjane",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "POLICIAL EDJANE",
+      "status": "Aguardando julgamento",
+      "party": "AGIR",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002541303",
+      "profile_slug": "tarcisio-gov-sp",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "TARCÍSIO",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002536915",
+      "profile_slug": "vera-lucia",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "VERA LÚCIA",
+      "status": "Aguardando julgamento",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "250002544912",
+      "profile_slug": "vivian-mendes",
+      "office": "Governador",
+      "uf": "SP",
+      "name": "VIVIAN MENDES",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002547415",
+      "profile_slug": "dr-helton-monteiro",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "DR. HELTON",
+      "status": "Aguardando julgamento",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002551712",
+      "profile_slug": "emanuel-cacho",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "EMANUEL CACHO",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002542491",
+      "profile_slug": "fabio-mitidieri",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "FÁBIO",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002549466",
+      "profile_slug": "ricardo-marques",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "RICARDO MARQUES",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002550683",
+      "profile_slug": "taty-cristina-de-jesus",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "TATY  CRISTINA DE JESUS",
+      "status": "Deferido",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "260002532010",
+      "profile_slug": "valmir-de-francisquinho",
+      "office": "Governador",
+      "uf": "SE",
+      "name": "VALMIR DE FRANCISQUINHO",
+      "status": "Deferido",
+      "party": "REPUBLICANOS",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002548412",
+      "profile_slug": "ataides-oliveira",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "ATAIDES DE OLIVEIRA",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002550458",
+      "profile_slug": "du-pereira",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "DU PEREIRA",
+      "status": "Deferido",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002544494",
+      "profile_slug": "laurez-moreira",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "LAUREZ MOREIRA",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002539187",
+      "profile_slug": "witer-naves",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "PROF WITER NAVES",
+      "status": "Deferido",
+      "party": "PSOL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002544599",
+      "profile_slug": "professora-dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "PROFESSORA DORINHA",
+      "status": "Deferido",
+      "party": "UNIÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002546368",
+      "profile_slug": "subtenente-luiz-carlos",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "SUBTENENTE LUIZ CARLOS",
+      "status": "Indeferido",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002544544",
+      "profile_slug": "vicentinho-junior",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "VICENTINHO JÚNIOR",
+      "status": "Deferido",
+      "party": "PSDB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002552484",
+      "profile_slug": "clariana-barao",
+      "office": "Presidente",
+      "uf": null,
+      "name": "CLARIANA BARAO",
+      "status": "Aguardando julgamento",
+      "party": "DC",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002551975",
+      "profile_slug": "edmilson-costa",
+      "office": "Presidente",
+      "uf": null,
+      "name": "EDMILSON COSTA",
+      "status": "Deferido",
+      "party": "PCB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002551547",
+      "profile_slug": "augusto-cury",
+      "office": "Presidente",
+      "uf": null,
+      "name": "ESCRITOR AUGUSTO CURY",
+      "status": "Aguardando julgamento",
+      "party": "AVANTE",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002551544",
+      "profile_slug": "flavio-bolsonaro",
+      "office": "Presidente",
+      "uf": null,
+      "name": "FLAVIO BOLSONARO",
+      "status": "Deferido",
+      "party": "PL",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002541457",
+      "profile_slug": "hertz-dias",
+      "office": "Presidente",
+      "uf": null,
+      "name": "HERTZ DIAS",
+      "status": "Deferido",
+      "party": "PSTU",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002542548",
+      "profile_slug": "lula",
+      "office": "Presidente",
+      "uf": null,
+      "name": "LULA",
+      "status": "Deferido",
+      "party": "PT",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002553884",
+      "profile_slug": "pablo-marcal",
+      "office": "Presidente",
+      "uf": null,
+      "name": "PABLO MARÇAL",
+      "status": "Aguardando julgamento",
+      "party": "PRTB",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002540694",
+      "profile_slug": "renan-santos",
+      "office": "Presidente",
+      "uf": null,
+      "name": "RENAN SANTOS",
+      "status": "Aguardando julgamento",
+      "party": "MISSÃO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002551932",
+      "profile_slug": "ronaldo-caiado",
+      "office": "Presidente",
+      "uf": null,
+      "name": "RONALDO CAIADO",
+      "status": "Deferido",
+      "party": "PSD",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002552487",
+      "profile_slug": "rui-costa-pimenta",
+      "office": "Presidente",
+      "uf": null,
+      "name": "RUI COSTA PIMENTA",
+      "status": "Deferido",
+      "party": "PCO",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002538811",
+      "profile_slug": "samara-martins",
+      "office": "Presidente",
+      "uf": null,
+      "name": "SAMARA",
+      "status": "Deferido",
+      "party": "UP",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002548139",
+      "profile_slug": "wilson-grassi-junior",
+      "office": "Presidente",
+      "uf": null,
+      "name": "VETERINÁRIO WILSON GRASSI",
+      "status": "Aguardando julgamento",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "280002539826",
+      "profile_slug": "romeu-zema",
+      "office": "Presidente",
+      "uf": null,
+      "name": "ZEMA",
+      "status": "Deferido",
+      "party": "NOVO",
+      "checked_at": null
+    }
+  ]
+}

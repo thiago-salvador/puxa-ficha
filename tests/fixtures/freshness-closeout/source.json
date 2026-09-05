@@ -1,0 +1,38 @@
+{
+  "status": "fresh",
+  "divulgacand": {
+    "status": "fresh",
+    "mode": "live_official",
+    "checked_at": "2026-09-05T22:55:46.430Z",
+    "sources": [
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AC/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AL/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AP/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AM/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/BA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/CE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/DF/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/ES/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/GO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MT/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MS/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MG/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PB/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PR/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PI/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RJ/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RN/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RS/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RR/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SC/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SP/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/TO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/BR/20322002026/1/candidatos"
+    ]
+  }
+}

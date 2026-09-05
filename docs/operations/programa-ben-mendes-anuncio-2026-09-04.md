@@ -71,3 +71,68 @@ ativo do TSE: atualizar a situação no banco não remove esse alerta enquanto a
 ficha continuar pública. Despublicar a ficha é decisão editorial separada, não
 um meio de fazer o gate passar. Nenhuma issue, ficha ou publicação editorial é
 alterada por este roteiro.
+
+## Atualização de 05/09: PDF obtido, rascunho local não publicado
+
+O bloqueio descrito acima permanece como histórico da investigação de 04/09.
+Na execução [33998003451](https://github.com/thiago-salvador/puxa-ficha/actions/runs/33998003451),
+o runner obteve o ZIP oficial de MG com HTTP 200 em
+`2026-09-05T23:12:24.865Z`. O pacote tem 19.972.034 bytes,
+`Last-Modified: Sat, 05 Sep 2026 06:48:58 GMT` e SHA-256
+`0004837d38bb429bd893695ce137801ba65d73e9c49ac27df8d2f38167fa72cb`.
+Seu inventário contém 12 membros e exatamente um PDF com o SQ de Ben:
+`MG/2026MG130002544411_01.pdf`.
+
+O PDF tem 1.256.027 bytes, 97 páginas e SHA-256
+`277d3eee53e0b0428d11e54c6cfeef5190f97bd86ff07202f52033e788cc5fab`.
+A capa judicial identifica Benoni Benjamin Cardoso Mendes, candidato a
+governador pelo Partido Missão. Isso comprova a obtenção de um documento
+oficial associado à inscrição, não aprovação editorial das suas propostas.
+
+O adapter canônico `extractProgramaPdf()` produziu 97 seções e 97 entradas
+ordenadas em `pageMap`, todas por `pdftotext`, com hashes individuais
+conferidos. A extração usa `programa-governo-extracao-v2`, método
+`pdftotext-pagewise-with-ocr-fallback`, e SHA-256 do texto canônico
+`76dd727b4ce45fa3e91b9225ae7ffb8c3b011062ab36f1954c215ab330a7ffb6`.
+As páginas citadas são as posições físicas no PDF, incluindo a capa do PJe;
+a paginação impressa do sumário não foi usada como âncora.
+
+Foi preparado um primeiro rascunho local pelo assistente Codex, com 145 palavras,
+oito frases, seis temas e 25 trechos localizados na extração por comparação
+literal com espaços normalizados. Os artefatos estão no diretório de
+trabalho ignorado `reports/ben-mendes-closeout/`: `provenance.json`,
+`extraction.json`, `review-draft.json`, `review-package.json`, `review.md`
+e `verification.json`. O PDF e a extração integral incluem a capa e os
+carimbos judiciais do original; são material local de revisão, não arquivos
+a publicar automaticamente.
+
+Na primeira preparação, não houve invocação de runners externos de modelos, julgamento independente,
+aprovação humana, alteração do inventário nacional, migração de banco,
+troca do registro público ou modificação do monitor. O rascunho não é um
+registro publicável e não equivale a `em_revisao` aprovado pelo pipeline.
+O alerta documental continua pendente até a revisão canônica ser concluída.
+O recibo `ausente_do_pacote` não se aplica: o arquivo foi encontrado.
+
+Registro operacional: extração e rascunho locais verificados, sem publicação.
+[confidence: alta, source: GitHub Actions 33998003451, ZIP oficial TSE, extractProgramaPdf e reports/ben-mendes-closeout/verification.json]
+[codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]
+
+### Revisão independente por assistente e segunda versão local
+
+A tarefa independente `release_workflow` revisou o primeiro rascunho e pediu
+três correções: explicitar as condicionalidades do Casa que Educa, representar
+o foco mineral na industrialização de terras raras e na cadeia da mina ao ímã,
+e incluir o Fundo Soberano Mineiro no lugar da síntese de energia e turismo.
+As três alterações foram incorporadas com evidências nas páginas físicas
+14, 15, 66, 67, 68 e 96. O rascunho atualizado tem 158 palavras, oito frases,
+seis temas e 28 trechos conferidos literalmente. A releitura independente
+após os ajustes concluiu `PASS_FOR_HUMAN_REVIEW`, sem achados acionáveis
+restantes. O recibo privado `review-assistant-verdict.json` identifica
+`humanApproved: false` e `published: false`.
+
+Essa revisão foi realizada por outro assistente, não por Thiago nem por um
+revisor humano. Não constitui execução do judge do pipeline canônico,
+aprovação humana, publicação ou validação da viabilidade das propostas.
+O monitor, o registro público e o inventário nacional permanecem inalterados.
+[confidence: alta, source: revisão da tarefa release_workflow, reports/ben-mendes-closeout/review-package.json e verification.json]
+[codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]

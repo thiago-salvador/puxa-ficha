@@ -49,8 +49,10 @@ psql_run() { docker exec -i "$CONTAINER" psql -U postgres -d postgres -v ON_ERRO
 # Cada migration roda numa transacao unica, como o CLI do Supabase faz. Sem isso,
 # `CREATE TEMP TABLE ... ON COMMIT DROP` some antes do proximo statement e o
 # replay quebraria por emulacao errada, nao por defeito real.
+# O marcador vale somente nesta conexão do container descartável: guards de
+# coorte vazia podem reconhecê-lo sem habilitar o mesmo caminho em produção.
 psql_migration() {
-  docker exec -i "$CONTAINER" psql -U postgres -d postgres \
+  docker exec -e PGOPTIONS='-c pf.replay=true' -i "$CONTAINER" psql -U postgres -d postgres \
     -v ON_ERROR_STOP=1 -q --single-transaction -f -
 }
 

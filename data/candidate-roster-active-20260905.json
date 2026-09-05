@@ -1,0 +1,3977 @@
+{
+  "metadata": {
+    "checked_at": "2026-09-05T22:55:46.430Z",
+    "source": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura",
+    "election_id": "20322002026",
+    "active_registration_count": 208,
+    "active_profile_count": 207,
+    "unresolved_count": 0,
+    "source_urls": [
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AC/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AL/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AP/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/AM/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/BA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/CE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/DF/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/ES/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/GO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MT/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MS/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/MG/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PA/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PB/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PR/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/PI/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RJ/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RN/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RS/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/RR/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SC/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SP/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/SE/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/TO/20322002026/3/candidatos",
+      "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2026/BR/20322002026/1/candidatos"
+    ]
+  },
+  "profiles": [
+    {
+      "profile_slug": "alan-rick",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002532492",
+      "registration_sqs": [
+        "10002532492"
+      ],
+      "names": [
+        "ALAN RICK"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dr-luisinho",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002533539",
+      "registration_sqs": [
+        "10002533539"
+      ],
+      "names": [
+        "DR.LUISINHO"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "eudo-raffael",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002549500",
+      "registration_sqs": [
+        "10002549500"
+      ],
+      "names": [
+        "EUDO RAFFAEL"
+      ],
+      "parties": [
+        "PCB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "mailza-assis",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002544107",
+      "registration_sqs": [
+        "10002544107"
+      ],
+      "names": [
+        "MAILZA ASSIS"
+      ],
+      "parties": [
+        "PP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "thor-dantas",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002550719",
+      "registration_sqs": [
+        "10002550719"
+      ],
+      "names": [
+        "THOR DANTAS"
+      ],
+      "parties": [
+        "PSB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "tiao-bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "canonical_registration_sq": "10002544015",
+      "registration_sqs": [
+        "10002544015"
+      ],
+      "names": [
+        "TIÃO BOCALOM"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jhc",
+      "office": "Governador",
+      "uf": "AL",
+      "canonical_registration_sq": "20002553350",
+      "registration_sqs": [
+        "20002553350"
+      ],
+      "names": [
+        "JHC"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lenilda-luna",
+      "office": "Governador",
+      "uf": "AL",
+      "canonical_registration_sq": "20002539642",
+      "registration_sqs": [
+        "20002539642"
+      ],
+      "names": [
+        "LENILDA LUNA"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcio-jambo",
+      "office": "Governador",
+      "uf": "AL",
+      "canonical_registration_sq": "20002552502",
+      "registration_sqs": [
+        "20002552502"
+      ],
+      "names": [
+        "MÁRCIO JAMBO"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "renan-filho",
+      "office": "Governador",
+      "uf": "AL",
+      "canonical_registration_sq": "20002553745",
+      "registration_sqs": [
+        "20002553745"
+      ],
+      "names": [
+        "RENAN FILHO"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cabo-daciolo",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002551740",
+      "registration_sqs": [
+        "40002551740"
+      ],
+      "names": [
+        "CABO DACIOLO"
+      ],
+      "parties": [
+        "MOBILIZA"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "david-almeida",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002536086",
+      "registration_sqs": [
+        "40002536086"
+      ],
+      "names": [
+        "DAVID ALMEIDA"
+      ],
+      "parties": [
+        "AVANTE"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gilberto-vasconcelos",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002535267",
+      "registration_sqs": [
+        "40002535267"
+      ],
+      "names": [
+        "GILBERTO VASCONCELOS"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "isael-munduruku",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002550776",
+      "registration_sqs": [
+        "40002550776"
+      ],
+      "names": [
+        "ISAEL MUNDURUKU"
+      ],
+      "parties": [
+        "REDE"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "maria-do-carmo",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002541626",
+      "registration_sqs": [
+        "40002541626"
+      ],
+      "names": [
+        "PROFESSORA MARIA DO CARMO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "omar-aziz",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002532272",
+      "registration_sqs": [
+        "40002532272"
+      ],
+      "names": [
+        "OMAR AZIZ"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "roberto-cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "canonical_registration_sq": "40002541741",
+      "registration_sqs": [
+        "40002541741"
+      ],
+      "names": [
+        "ROBERTO CIDADE"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "carlos-cley",
+      "office": "Governador",
+      "uf": "AP",
+      "canonical_registration_sq": "30002536313",
+      "registration_sqs": [
+        "30002536313"
+      ],
+      "names": [
+        "CARLOS CLEY"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "clecio-luis",
+      "office": "Governador",
+      "uf": "AP",
+      "canonical_registration_sq": "30002536311",
+      "registration_sqs": [
+        "30002536311"
+      ],
+      "names": [
+        "CLÉCIO"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dr-furlan",
+      "office": "Governador",
+      "uf": "AP",
+      "canonical_registration_sq": "30002530014",
+      "registration_sqs": [
+        "30002530014"
+      ],
+      "names": [
+        "DR. FURLAN"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jairo-palheta",
+      "office": "Governador",
+      "uf": "AP",
+      "canonical_registration_sq": "30002551388",
+      "registration_sqs": [
+        "30002551388"
+      ],
+      "names": [
+        "JAIRO PALHETA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcos-reategui",
+      "office": "Governador",
+      "uf": "AP",
+      "canonical_registration_sq": "30002552017",
+      "registration_sqs": [
+        "30002552017"
+      ],
+      "names": [
+        "DELEGADO MARCOS"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "acm-neto",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002533190",
+      "registration_sqs": [
+        "50002533190"
+      ],
+      "names": [
+        "ACM NETO"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ariel-capistrano",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002535253",
+      "registration_sqs": [
+        "50002535253"
+      ],
+      "names": [
+        "ARIEL CAPISTRANO"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "aroldo-felix",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002544692",
+      "registration_sqs": [
+        "50002544692"
+      ],
+      "names": [
+        "AROLDO FELIX"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jeronimo",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002536314",
+      "registration_sqs": [
+        "50002536314"
+      ],
+      "names": [
+        "JERÔNIMO RODRIGUES"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jose-estevao",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002536579",
+      "registration_sqs": [
+        "50002536579"
+      ],
+      "names": [
+        "ESTÊVÃO"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Indeferido em prazo recursal ou com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "maria-bona",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002552489",
+      "registration_sqs": [
+        "50002552489"
+      ],
+      "names": [
+        "MARIA BONA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ronaldo-mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "canonical_registration_sq": "50002532269",
+      "registration_sqs": [
+        "50002532269"
+      ],
+      "names": [
+        "RONALDO MANSUR"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ciro-gomes-gov-ce",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002531351",
+      "registration_sqs": [
+        "60002531351"
+      ],
+      "names": [
+        "CIRO GOMES"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "danilo-soares",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002552498",
+      "registration_sqs": [
+        "60002552498"
+      ],
+      "names": [
+        "DANILO SOARES"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "elmano-de-freitas",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002543969",
+      "registration_sqs": [
+        "60002543969"
+      ],
+      "names": [
+        "ELMANO DE FREITAS"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "huggo-leonardo",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002540417",
+      "registration_sqs": [
+        "60002540417"
+      ],
+      "names": [
+        "DELEGADO HUGGO"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ieri-braga",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002552320",
+      "registration_sqs": [
+        "60002552320"
+      ],
+      "names": [
+        "IERI BRAGA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "serley-leal",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002533729",
+      "registration_sqs": [
+        "60002533729"
+      ],
+      "names": [
+        "SERLEY LEAL"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "vera-lucia-ce",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002553922",
+      "registration_sqs": [
+        "60002553922"
+      ],
+      "names": [
+        "VERA LÚCIA"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ze-batista",
+      "office": "Governador",
+      "uf": "CE",
+      "canonical_registration_sq": "60002549967",
+      "registration_sqs": [
+        "60002549967"
+      ],
+      "names": [
+        "ZÉ BATISTA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "celina-leao",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002553055",
+      "registration_sqs": [
+        "70002553055"
+      ],
+      "names": [
+        "CELINA LEÃO"
+      ],
+      "parties": [
+        "PP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "elisson-ferreira",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002551298",
+      "registration_sqs": [
+        "70002551298"
+      ],
+      "names": [
+        "ELISSON"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "expedito-mendonca",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002552341",
+      "registration_sqs": [
+        "70002552341"
+      ],
+      "names": [
+        "EXPEDITO MENDONÇA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jose-roberto-arruda",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002552586",
+      "registration_sqs": [
+        "70002552586"
+      ],
+      "names": [
+        "ARRUDA"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Indeferido em prazo recursal ou com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "kiko-caputo",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002547775",
+      "registration_sqs": [
+        "70002547775"
+      ],
+      "names": [
+        "KIKO CAPUTO"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "leandro-grass",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002552496",
+      "registration_sqs": [
+        "70002552496"
+      ],
+      "names": [
+        "LEANDRO GRASS"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "paula-belmonte",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002552965",
+      "registration_sqs": [
+        "70002552965"
+      ],
+      "names": [
+        "PAULA BELMONTE"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ricardo-cappelli",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002551557",
+      "registration_sqs": [
+        "70002551557"
+      ],
+      "names": [
+        "CAPPELLI"
+      ],
+      "parties": [
+        "PSB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rico-pinheiro",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002553982",
+      "registration_sqs": [
+        "70002553982"
+      ],
+      "names": [
+        "RICO PINHEIRO"
+      ],
+      "parties": [
+        "PRTB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "robson-raymundo",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002535930",
+      "registration_sqs": [
+        "70002535930"
+      ],
+      "names": [
+        "PROFESSOR ROBSON"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "samara-mineiro",
+      "office": "Governador",
+      "uf": "DF",
+      "canonical_registration_sq": "70002537111",
+      "registration_sqs": [
+        "70002537111"
+      ],
+      "names": [
+        "PROFESSORA SAMARA MINEIRO"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "breno-barcelar",
+      "office": "Governador",
+      "uf": "ES",
+      "canonical_registration_sq": "80002541012",
+      "registration_sqs": [
+        "80002541012"
+      ],
+      "names": [
+        "BRENO BARCELOS"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "helder-salomao",
+      "office": "Governador",
+      "uf": "ES",
+      "canonical_registration_sq": "80002551833",
+      "registration_sqs": [
+        "80002551833"
+      ],
+      "names": [
+        "HELDER SALOMÃO"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "pazolini",
+      "office": "Governador",
+      "uf": "ES",
+      "canonical_registration_sq": "80002552682",
+      "registration_sqs": [
+        "80002552682"
+      ],
+      "names": [
+        "LORENZO PAZOLINI"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rafael-demuner",
+      "office": "Governador",
+      "uf": "ES",
+      "canonical_registration_sq": "80002550832",
+      "registration_sqs": [
+        "80002550832"
+      ],
+      "names": [
+        "RAFAEL DEMUNER"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ricardo-ferraco",
+      "office": "Governador",
+      "uf": "ES",
+      "canonical_registration_sq": "80002552172",
+      "registration_sqs": [
+        "80002552172"
+      ],
+      "names": [
+        "RICARDO FERRAÇO"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "daniel-vilela",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002540993",
+      "registration_sqs": [
+        "90002540993"
+      ],
+      "names": [
+        "DANIEL VILELA"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "danilo-pinheiro",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002553733",
+      "registration_sqs": [
+        "90002553733"
+      ],
+      "names": [
+        "DANILO PINHEIRO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "luciana-amorim",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002550707",
+      "registration_sqs": [
+        "90002550707"
+      ],
+      "names": [
+        "LUCIANA AMORIM"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "luis-cesar-bueno",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002545476",
+      "registration_sqs": [
+        "90002545476"
+      ],
+      "names": [
+        "LUIS CESAR BUENO"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marconi-perillo",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002543463",
+      "registration_sqs": [
+        "90002543463"
+      ],
+      "names": [
+        "MARCONI PERILLO"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "wilder-morais",
+      "office": "Governador",
+      "uf": "GO",
+      "canonical_registration_sq": "90002551791",
+      "registration_sqs": [
+        "90002551791"
+      ],
+      "names": [
+        "WILDER MORAIS"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "andre-luis",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002544076",
+      "registration_sqs": [
+        "100002544076"
+      ],
+      "names": [
+        "ANDRÉ LUIS"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002552700",
+      "registration_sqs": [
+        "100002552700"
+      ],
+      "names": [
+        "DIMAS CASSIMIRO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "eduardo-braide",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002545679",
+      "registration_sqs": [
+        "100002545679"
+      ],
+      "names": [
+        "EDUARDO BRAIDE"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "felipe-camarao",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002542556",
+      "registration_sqs": [
+        "100002542556"
+      ],
+      "names": [
+        "FELIPE CAMARÃO"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "orleans-brandao",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002543869",
+      "registration_sqs": [
+        "100002543869"
+      ],
+      "names": [
+        "ORLEANS BRANDÃO"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002544073",
+      "registration_sqs": [
+        "100002544073"
+      ],
+      "names": [
+        "REGINALDO LIMA"
+      ],
+      "parties": [
+        "PCB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "roberto-rocha",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002551399",
+      "registration_sqs": [
+        "100002551399"
+      ],
+      "names": [
+        "ROBERTO ROCHA"
+      ],
+      "parties": [
+        "PRTB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "canonical_registration_sq": "100002534190",
+      "registration_sqs": [
+        "100002534190"
+      ],
+      "names": [
+        "SAULO ARCANGELI"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "alexandre-kalil",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002539775",
+      "registration_sqs": [
+        "130002539775"
+      ],
+      "names": [
+        "ALEXANDRE KALIL"
+      ],
+      "parties": [
+        "PDT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ben-mendes",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002544411",
+      "registration_sqs": [
+        "130002544411"
+      ],
+      "names": [
+        "BEN MENDES"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cleitinho",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002552296",
+      "registration_sqs": [
+        "130002552296"
+      ],
+      "names": [
+        "CLEITINHO AZEVEDO"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "flavio-roscoe",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002550834",
+      "registration_sqs": [
+        "130002550834"
+      ],
+      "names": [
+        "FLÁVIO ROSCOE"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gabriel-azevedo",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002549557",
+      "registration_sqs": [
+        "130002549557"
+      ],
+      "names": [
+        "GABRIEL"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "henrique-areas",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002552308",
+      "registration_sqs": [
+        "130002552308"
+      ],
+      "names": [
+        "HENRIQUE ÁREAS"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Indeferido em prazo recursal ou com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "indira-xavier",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002547874",
+      "registration_sqs": [
+        "130002547874"
+      ],
+      "names": [
+        "INDIRA XAVIER"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "mateus-simoes",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002541911",
+      "registration_sqs": [
+        "130002541911"
+      ],
+      "names": [
+        "MATEUS SIMÕES"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "patrus-ananias",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002550464",
+      "registration_sqs": [
+        "130002550464"
+      ],
+      "names": [
+        "PATRUS ANANIAS"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rafael-duda",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002546802",
+      "registration_sqs": [
+        "130002546802"
+      ],
+      "names": [
+        "RAFAEL DUDA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "tulio-lopes",
+      "office": "Governador",
+      "uf": "MG",
+      "canonical_registration_sq": "130002544122",
+      "registration_sqs": [
+        "130002544122"
+      ],
+      "names": [
+        "PROFESSOR TÚLIO LOPES"
+      ],
+      "parties": [
+        "PCB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "daniel-lemes",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002552201",
+      "registration_sqs": [
+        "120002552201"
+      ],
+      "names": [
+        "DANIEL LEMES"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "delcidio-amaral",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002552155",
+      "registration_sqs": [
+        "120002552155"
+      ],
+      "names": [
+        "DELCIDIO AMARAL"
+      ],
+      "parties": [
+        "PRD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "eduardo-riedel",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002536582",
+      "registration_sqs": [
+        "120002536582"
+      ],
+      "names": [
+        "EDUARDO RIEDEL"
+      ],
+      "parties": [
+        "PP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "fabio-trad",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002539834",
+      "registration_sqs": [
+        "120002539834"
+      ],
+      "names": [
+        "FÁBIO TRAD"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jeferson-bezerra",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002550198",
+      "registration_sqs": [
+        "120002550198"
+      ],
+      "names": [
+        "JEFERSON BEZERRA"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "joao-henrique-catan",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002552191",
+      "registration_sqs": [
+        "120002552191"
+      ],
+      "names": [
+        "JOÃO HENRIQUE CATAN"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lucien-rezende",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002532257",
+      "registration_sqs": [
+        "120002532257"
+      ],
+      "names": [
+        "LUCIEN REZENDE"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "renato-gomes",
+      "office": "Governador",
+      "uf": "MS",
+      "canonical_registration_sq": "120002549681",
+      "registration_sqs": [
+        "120002549681"
+      ],
+      "names": [
+        "ECONOMISTA RENATO GOMES"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "laudicerio-aguiar",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": null,
+      "registration_sqs": [
+        "110002553937",
+        "110002554073"
+      ],
+      "names": [
+        "SARGENTO LAUDICÉRIO",
+        "SARGENTO LAUDICÉRIO (LAU)"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "quarantine_duplicate_active"
+    },
+    {
+      "profile_slug": "mauricio-coelho",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": "110002553058",
+      "registration_sqs": [
+        "110002553058"
+      ],
+      "names": [
+        "MAURICIO COELHO"
+      ],
+      "parties": [
+        "MOBILIZA"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "natasha-slhessarenko",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": "110002544985",
+      "registration_sqs": [
+        "110002544985"
+      ],
+      "names": [
+        "DOUTORA NATASHA"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "otaviano-pivetta",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": "110002551480",
+      "registration_sqs": [
+        "110002551480"
+      ],
+      "names": [
+        "OTAVIANO PIVETTA"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rafaell-milas",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": "110002543953",
+      "registration_sqs": [
+        "110002543953"
+      ],
+      "names": [
+        "RAFAELL MILAS"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "wellington-fagundes",
+      "office": "Governador",
+      "uf": "MT",
+      "canonical_registration_sq": "110002551737",
+      "registration_sqs": [
+        "110002551737"
+      ],
+      "names": [
+        "WELLINGTON FAGUNDES"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "araceli-lemos",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002542386",
+      "registration_sqs": [
+        "140002542386"
+      ],
+      "names": [
+        "ARACELI"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dr-daniel",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002549930",
+      "registration_sqs": [
+        "140002549930"
+      ],
+      "names": [
+        "DR. DANIEL"
+      ],
+      "parties": [
+        "PODE"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gal-leite",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002551943",
+      "registration_sqs": [
+        "140002551943"
+      ],
+      "names": [
+        "GAL LEITE"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "hana-ghassan",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002551598",
+      "registration_sqs": [
+        "140002551598"
+      ],
+      "names": [
+        "HANA GHASSAN"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ruth-reis",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002554434",
+      "registration_sqs": [
+        "140002554434"
+      ],
+      "names": [
+        "RUTH REIS"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "well-macedo",
+      "office": "Governador",
+      "uf": "PA",
+      "canonical_registration_sq": "140002554108",
+      "registration_sqs": [
+        "140002554108"
+      ],
+      "names": [
+        "WELL MACEDO"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "camilo-duarte",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002552603",
+      "registration_sqs": [
+        "150002552603"
+      ],
+      "names": [
+        "CAMILO DUARTE"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cicero-lucena",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002544133",
+      "registration_sqs": [
+        "150002544133"
+      ],
+      "names": [
+        "CÍCERO LUCENA"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "efraim-filho",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002538692",
+      "registration_sqs": [
+        "150002538692"
+      ],
+      "names": [
+        "EFRAIM FILHO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lucas-ribeiro",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002551789",
+      "registration_sqs": [
+        "150002551789"
+      ],
+      "names": [
+        "LUCAS RIBEIRO"
+      ],
+      "parties": [
+        "PP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "pedro-coutinho",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002551911",
+      "registration_sqs": [
+        "150002551911"
+      ],
+      "names": [
+        "PEDRO COUTINHO"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "yuri-ezequiel",
+      "office": "Governador",
+      "uf": "PB",
+      "canonical_registration_sq": "150002540204",
+      "registration_sqs": [
+        "150002540204"
+      ],
+      "names": [
+        "YURI EZEQUIEL"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "camila-falcao",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002537320",
+      "registration_sqs": [
+        "170002537320"
+      ],
+      "names": [
+        "PROFESSORA CAMILA"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "guilherme-fonseca",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002536575",
+      "registration_sqs": [
+        "170002536575"
+      ],
+      "names": [
+        "GUILHERME FONSECA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ivan-moraes",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002538097",
+      "registration_sqs": [
+        "170002538097"
+      ],
+      "names": [
+        "IVAN MORAES"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jeremias-cosmo",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002541258",
+      "registration_sqs": [
+        "170002541258"
+      ],
+      "names": [
+        "PROFESSOR JEREMIAS DO BANCO"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "joao-campos",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002537230",
+      "registration_sqs": [
+        "170002537230"
+      ],
+      "names": [
+        "JOÃO CAMPOS"
+      ],
+      "parties": [
+        "PSB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "raquel-lyra",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002537227",
+      "registration_sqs": [
+        "170002537227"
+      ],
+      "names": [
+        "RAQUEL LYRA"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "renan-hallais",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002540337",
+      "registration_sqs": [
+        "170002540337"
+      ],
+      "names": [
+        "RENAN"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "victor-assis",
+      "office": "Governador",
+      "uf": "PE",
+      "canonical_registration_sq": "170002552776",
+      "registration_sqs": [
+        "170002552776"
+      ],
+      "names": [
+        "VICTOR ASSIS"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "elizeu-aguiar",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002549920",
+      "registration_sqs": [
+        "180002549920"
+      ],
+      "names": [
+        "ELIZEU AGUIAR"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "francisco-jurity",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002548565",
+      "registration_sqs": [
+        "180002548565"
+      ],
+      "names": [
+        "PROFESSOR JURITY"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "geraldo-carvalho",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002537422",
+      "registration_sqs": [
+        "180002537422"
+      ],
+      "names": [
+        "GERALDO CARVALHO"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Indeferido em prazo recursal ou com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gisvaldo-oliveira",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002549970",
+      "registration_sqs": [
+        "180002549970"
+      ],
+      "names": [
+        "PROFESSOR GISVALDO"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gustavo-henrique",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002550421",
+      "registration_sqs": [
+        "180002550421"
+      ],
+      "names": [
+        "GUSTAVO PELO PIAUÍ OU GUSTAVO"
+      ],
+      "parties": [
+        "AVANTE"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "joel-rodrigues",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002538530",
+      "registration_sqs": [
+        "180002538530"
+      ],
+      "names": [
+        "JOEL RODRIGUES"
+      ],
+      "parties": [
+        "PP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lourdes-melo",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002553722",
+      "registration_sqs": [
+        "180002553722"
+      ],
+      "names": [
+        "LOURDES MELO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lucia-santos",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002544216",
+      "registration_sqs": [
+        "180002544216"
+      ],
+      "names": [
+        "DRA. LÚCIA SANTOS"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rafael-fonteles",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002532987",
+      "registration_sqs": [
+        "180002532987"
+      ],
+      "names": [
+        "RAFAEL FONTELES"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ravenna-castro",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002548388",
+      "registration_sqs": [
+        "180002548388"
+      ],
+      "names": [
+        "RAVENNA DA INCLUSÃO"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "santiago-belizario",
+      "office": "Governador",
+      "uf": "PI",
+      "canonical_registration_sq": "180002549995",
+      "registration_sqs": [
+        "180002549995"
+      ],
+      "names": [
+        "SANTIAGO BELIZÁRIO"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "adriano-funileiro",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002552560",
+      "registration_sqs": [
+        "160002552560"
+      ],
+      "names": [
+        "ADRIANO FUNILEIRO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "alexandre-salomao",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002547594",
+      "registration_sqs": [
+        "160002547594"
+      ],
+      "names": [
+        "DOUTOR ALEXANDRE SALOMÃO"
+      ],
+      "parties": [
+        "MOBILIZA"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "luiz-franca",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002551353",
+      "registration_sqs": [
+        "160002551353"
+      ],
+      "names": [
+        "LUIZ FRANÇA"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "requiao-filho",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002547666",
+      "registration_sqs": [
+        "160002547666"
+      ],
+      "names": [
+        "REQUIÃO FILHO"
+      ],
+      "parties": [
+        "PDT"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "samuel-de-mattos",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002548010",
+      "registration_sqs": [
+        "160002548010"
+      ],
+      "names": [
+        "SAMUEL DE MATTOS"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "sandro-alex",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002549553",
+      "registration_sqs": [
+        "160002549553"
+      ],
+      "names": [
+        "SANDRO ALEX"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "sergio-moro-gov-pr",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002540833",
+      "registration_sqs": [
+        "160002540833"
+      ],
+      "names": [
+        "SERGIO MORO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "tayna-miessa",
+      "office": "Governador",
+      "uf": "PR",
+      "canonical_registration_sq": "160002550997",
+      "registration_sqs": [
+        "160002550997"
+      ],
+      "names": [
+        "TAYNÁ MIESSA"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "andre-marinho",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002537524",
+      "registration_sqs": [
+        "190002537524"
+      ],
+      "names": [
+        "ANDRÉ MARINHO"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "coronel-busnello",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002544120",
+      "registration_sqs": [
+        "190002544120"
+      ],
+      "names": [
+        "CORONEL BUSNELLO"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cyro-garcia",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002540198",
+      "registration_sqs": [
+        "190002540198"
+      ],
+      "names": [
+        "CYRO GARCIA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "douglas-ruas",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002542887",
+      "registration_sqs": [
+        "190002542887"
+      ],
+      "names": [
+        "DOUGLAS RUAS"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "eduardo-paes",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002543380",
+      "registration_sqs": [
+        "190002543380"
+      ],
+      "names": [
+        "EDUARDO PAES"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "garotinho",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002550196",
+      "registration_sqs": [
+        "190002550196"
+      ],
+      "names": [
+        "GAROTINHO"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "juliete-pantoja",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002547272",
+      "registration_sqs": [
+        "190002547272"
+      ],
+      "names": [
+        "JULIETE"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "luan-monteiro",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002552513",
+      "registration_sqs": [
+        "190002552513"
+      ],
+      "names": [
+        "LUAN MONTEIRO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "william-siri",
+      "office": "Governador",
+      "uf": "RJ",
+      "canonical_registration_sq": "190002536162",
+      "registration_sqs": [
+        "190002536162"
+      ],
+      "names": [
+        "WILLIAM SIRI"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "alvaro-dias-rn",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002534442",
+      "registration_sqs": [
+        "200002534442"
+      ],
+      "names": [
+        "ÁLVARO DIAS"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "alysson-bezerra",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002535255",
+      "registration_sqs": [
+        "200002535255"
+      ],
+      "names": [
+        "ALLYSON"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "arinalda-do-mlb",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002547826",
+      "registration_sqs": [
+        "200002547826"
+      ],
+      "names": [
+        "ARINALDA DO MLB"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cadu-xavier",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002534001",
+      "registration_sqs": [
+        "200002534001"
+      ],
+      "names": [
+        "CADU DE LULA"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "carlos-jararaca",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002550223",
+      "registration_sqs": [
+        "200002550223"
+      ],
+      "names": [
+        "CARLOS JARARACA"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Indeferido em prazo recursal ou com recurso"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dario-barbosa",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002542481",
+      "registration_sqs": [
+        "200002542481"
+      ],
+      "names": [
+        "DÁRIO BARBOSA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "henrique-lyra",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002553301",
+      "registration_sqs": [
+        "200002553301"
+      ],
+      "names": [
+        "HENRIQUE LYRA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "roberio-paulino",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002546757",
+      "registration_sqs": [
+        "200002546757"
+      ],
+      "names": [
+        "PROFESSOR ROBERIO PAULINO"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rodrigo-bolsonaro",
+      "office": "Governador",
+      "uf": "RN",
+      "canonical_registration_sq": "200002546756",
+      "registration_sqs": [
+        "200002546756"
+      ],
+      "names": [
+        "RODRIGO DE BOLSONARO"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "adailton-furia",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002536806",
+      "registration_sqs": [
+        "220002536806"
+      ],
+      "names": [
+        "ADAILTON FURIA"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "expedito-netto",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002542185",
+      "registration_sqs": [
+        "220002542185"
+      ],
+      "names": [
+        "EXPEDITO NETTO"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "hildon-chaves",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002542916",
+      "registration_sqs": [
+        "220002542916"
+      ],
+      "names": [
+        "HILDON CHAVES"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcos-rogerio",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002541939",
+      "registration_sqs": [
+        "220002541939"
+      ],
+      "names": [
+        "MARCOS ROGÉRIO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "pedro-abib",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002551251",
+      "registration_sqs": [
+        "220002551251"
+      ],
+      "names": [
+        "PEDRO ABIB"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "samuel-costa",
+      "office": "Governador",
+      "uf": "RO",
+      "canonical_registration_sq": "220002550927",
+      "registration_sqs": [
+        "220002550927"
+      ],
+      "names": [
+        "SAMUEL COSTA"
+      ],
+      "parties": [
+        "PSB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "arthur-henrique",
+      "office": "Governador",
+      "uf": "RR",
+      "canonical_registration_sq": "230002549223",
+      "registration_sqs": [
+        "230002549223"
+      ],
+      "names": [
+        "ARTHUR HENRIQUE"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "clebio-genuino",
+      "office": "Governador",
+      "uf": "RR",
+      "canonical_registration_sq": "230002553857",
+      "registration_sqs": [
+        "230002553857"
+      ],
+      "names": [
+        "CLÉBIO GENUÍNO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "farah-mesquita",
+      "office": "Governador",
+      "uf": "RR",
+      "canonical_registration_sq": "230002549294",
+      "registration_sqs": [
+        "230002549294"
+      ],
+      "names": [
+        "FARAH MESQUITA"
+      ],
+      "parties": [
+        "SOLIDARIEDADE"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rosi-aires",
+      "office": "Governador",
+      "uf": "RR",
+      "canonical_registration_sq": "230002552060",
+      "registration_sqs": [
+        "230002552060"
+      ],
+      "names": [
+        "ROSI AIRES"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "soldado-sampaio",
+      "office": "Governador",
+      "uf": "RR",
+      "canonical_registration_sq": "230002551571",
+      "registration_sqs": [
+        "230002551571"
+      ],
+      "names": [
+        "SOLDADO SAMPAIO"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "cesar-pontes",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002552592",
+      "registration_sqs": [
+        "210002552592"
+      ],
+      "names": [
+        "CESAR PONTES"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gabriel-souza",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002542892",
+      "registration_sqs": [
+        "210002542892"
+      ],
+      "names": [
+        "GABRIEL SOUZA"
+      ],
+      "parties": [
+        "MDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "juliana-brizola",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002551508",
+      "registration_sqs": [
+        "210002551508"
+      ],
+      "names": [
+        "JULIANA BRIZOLA"
+      ],
+      "parties": [
+        "PDT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "luciano-zucco",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002547857",
+      "registration_sqs": [
+        "210002547857"
+      ],
+      "names": [
+        "ZUCCO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcelo-maranata",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002535802",
+      "registration_sqs": [
+        "210002535802"
+      ],
+      "names": [
+        "MARCELO MARANATA"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "priscila-voigt",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002533355",
+      "registration_sqs": [
+        "210002533355"
+      ],
+      "names": [
+        "PRISCILA VOIGT"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rejane-oliveira",
+      "office": "Governador",
+      "uf": "RS",
+      "canonical_registration_sq": "210002541367",
+      "registration_sqs": [
+        "210002541367"
+      ],
+      "names": [
+        "REJANE DE OLIVEIRA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "bruno-pedreiro-do-pco",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002553718",
+      "registration_sqs": [
+        "240002553718"
+      ],
+      "names": [
+        "BRUNO PEDREIRO DO PCO"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "gelson-merisio",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002548628",
+      "registration_sqs": [
+        "240002548628"
+      ],
+      "names": [
+        "GELSON MERÍSIO"
+      ],
+      "parties": [
+        "PSB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "joao-rodrigues",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002551001",
+      "registration_sqs": [
+        "240002551001"
+      ],
+      "names": [
+        "JOÃO RODRIGUES"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "jorginho-mello",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002537073",
+      "registration_sqs": [
+        "240002537073"
+      ],
+      "names": [
+        "JORGINHO MELLO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lais-chaud",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002550544",
+      "registration_sqs": [
+        "240002550544"
+      ],
+      "names": [
+        "LAÍS CHAUD"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcelo-brigadeiro",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002544118",
+      "registration_sqs": [
+        "240002544118"
+      ],
+      "names": [
+        "MARCELO BRIGADEIRO"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "marcus-sodre",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002541913",
+      "registration_sqs": [
+        "240002541913"
+      ],
+      "names": [
+        "PROFESSOR MARCUS SODRÉ"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ralf-zimmer",
+      "office": "Governador",
+      "uf": "SC",
+      "canonical_registration_sq": "240002552157",
+      "registration_sqs": [
+        "240002552157"
+      ],
+      "names": [
+        "RALF ZIMMER"
+      ],
+      "parties": [
+        "PRD"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "dr-helton-monteiro",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002547415",
+      "registration_sqs": [
+        "260002547415"
+      ],
+      "names": [
+        "DR. HELTON"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "emanuel-cacho",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002551712",
+      "registration_sqs": [
+        "260002551712"
+      ],
+      "names": [
+        "EMANUEL CACHO"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "fabio-mitidieri",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002542491",
+      "registration_sqs": [
+        "260002542491"
+      ],
+      "names": [
+        "FÁBIO"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ricardo-marques",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002549466",
+      "registration_sqs": [
+        "260002549466"
+      ],
+      "names": [
+        "RICARDO MARQUES"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "taty-cristina-de-jesus",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002550683",
+      "registration_sqs": [
+        "260002550683"
+      ],
+      "names": [
+        "TATY  CRISTINA DE JESUS"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "valmir-de-francisquinho",
+      "office": "Governador",
+      "uf": "SE",
+      "canonical_registration_sq": "260002532010",
+      "registration_sqs": [
+        "260002532010"
+      ],
+      "names": [
+        "VALMIR DE FRANCISQUINHO"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "carlos-machado",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002550913",
+      "registration_sqs": [
+        "250002550913"
+      ],
+      "names": [
+        "CARLOS MACHADO"
+      ],
+      "parties": [
+        "PCB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "haddad-gov-sp",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002549705",
+      "registration_sqs": [
+        "250002549705"
+      ],
+      "names": [
+        "FERNANDO HADDAD"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "izadora-dias",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002553062",
+      "registration_sqs": [
+        "250002553062"
+      ],
+      "names": [
+        "IZADORA DIAS"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "policial-edjane",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002548080",
+      "registration_sqs": [
+        "250002548080"
+      ],
+      "names": [
+        "POLICIAL EDJANE"
+      ],
+      "parties": [
+        "AGIR"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "tarcisio-gov-sp",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002541303",
+      "registration_sqs": [
+        "250002541303"
+      ],
+      "names": [
+        "TARCÍSIO"
+      ],
+      "parties": [
+        "REPUBLICANOS"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "vera-lucia",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002536915",
+      "registration_sqs": [
+        "250002536915"
+      ],
+      "names": [
+        "VERA LÚCIA"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "vivian-mendes",
+      "office": "Governador",
+      "uf": "SP",
+      "canonical_registration_sq": "250002544912",
+      "registration_sqs": [
+        "250002544912"
+      ],
+      "names": [
+        "VIVIAN MENDES"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ataides-oliveira",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002548412",
+      "registration_sqs": [
+        "270002548412"
+      ],
+      "names": [
+        "ATAIDES DE OLIVEIRA"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "du-pereira",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002550458",
+      "registration_sqs": [
+        "270002550458"
+      ],
+      "names": [
+        "DU PEREIRA"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "laurez-moreira",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002544494",
+      "registration_sqs": [
+        "270002544494"
+      ],
+      "names": [
+        "LAUREZ MOREIRA"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "professora-dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002544599",
+      "registration_sqs": [
+        "270002544599"
+      ],
+      "names": [
+        "PROFESSORA DORINHA"
+      ],
+      "parties": [
+        "UNIÃO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "vicentinho-junior",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002544544",
+      "registration_sqs": [
+        "270002544544"
+      ],
+      "names": [
+        "VICENTINHO JÚNIOR"
+      ],
+      "parties": [
+        "PSDB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "witer-naves",
+      "office": "Governador",
+      "uf": "TO",
+      "canonical_registration_sq": "270002539187",
+      "registration_sqs": [
+        "270002539187"
+      ],
+      "names": [
+        "PROF WITER NAVES"
+      ],
+      "parties": [
+        "PSOL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "augusto-cury",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002551547",
+      "registration_sqs": [
+        "280002551547"
+      ],
+      "names": [
+        "ESCRITOR AUGUSTO CURY"
+      ],
+      "parties": [
+        "AVANTE"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "clariana-barao",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002552484",
+      "registration_sqs": [
+        "280002552484"
+      ],
+      "names": [
+        "CLARIANA BARAO"
+      ],
+      "parties": [
+        "DC"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "edmilson-costa",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002551975",
+      "registration_sqs": [
+        "280002551975"
+      ],
+      "names": [
+        "EDMILSON COSTA"
+      ],
+      "parties": [
+        "PCB"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "flavio-bolsonaro",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002551544",
+      "registration_sqs": [
+        "280002551544"
+      ],
+      "names": [
+        "FLAVIO BOLSONARO"
+      ],
+      "parties": [
+        "PL"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "hertz-dias",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002541457",
+      "registration_sqs": [
+        "280002541457"
+      ],
+      "names": [
+        "HERTZ DIAS"
+      ],
+      "parties": [
+        "PSTU"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "lula",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002542548",
+      "registration_sqs": [
+        "280002542548"
+      ],
+      "names": [
+        "LULA"
+      ],
+      "parties": [
+        "PT"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "pablo-marcal",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002553884",
+      "registration_sqs": [
+        "280002553884"
+      ],
+      "names": [
+        "PABLO MARÇAL"
+      ],
+      "parties": [
+        "PRTB"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "renan-santos",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002540694",
+      "registration_sqs": [
+        "280002540694"
+      ],
+      "names": [
+        "RENAN SANTOS"
+      ],
+      "parties": [
+        "MISSÃO"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "romeu-zema",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002539826",
+      "registration_sqs": [
+        "280002539826"
+      ],
+      "names": [
+        "ZEMA"
+      ],
+      "parties": [
+        "NOVO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "ronaldo-caiado",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002551932",
+      "registration_sqs": [
+        "280002551932"
+      ],
+      "names": [
+        "RONALDO CAIADO"
+      ],
+      "parties": [
+        "PSD"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "rui-costa-pimenta",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002552487",
+      "registration_sqs": [
+        "280002552487"
+      ],
+      "names": [
+        "RUI COSTA PIMENTA"
+      ],
+      "parties": [
+        "PCO"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "samara-martins",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002538811",
+      "registration_sqs": [
+        "280002538811"
+      ],
+      "names": [
+        "SAMARA"
+      ],
+      "parties": [
+        "UP"
+      ],
+      "statuses": [
+        "Deferido"
+      ],
+      "publication_status": "active"
+    },
+    {
+      "profile_slug": "wilson-grassi-junior",
+      "office": "Presidente",
+      "uf": null,
+      "canonical_registration_sq": "280002548139",
+      "registration_sqs": [
+        "280002548139"
+      ],
+      "names": [
+        "VETERINÁRIO WILSON GRASSI"
+      ],
+      "parties": [
+        "DEMOCRATA"
+      ],
+      "statuses": [
+        "Aguardando julgamento"
+      ],
+      "publication_status": "active"
+    }
+  ]
+}

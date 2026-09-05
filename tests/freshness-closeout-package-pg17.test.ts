@@ -1,0 +1,123 @@
+import assert from "node:assert/strict"
+import { spawnSync } from "node:child_process"
+import { readFileSync } from "node:fs"
+import test from "node:test"
+import { digest, PREDECESSOR, renderFreshnessCloseoutTransaction } from "../scripts/audit/apply-freshness-closeout"
+import { analyzeProfileAdmission, selectCurrentVice } from "../src/lib/candidate-publication-integrity"
+
+const read = (path: string) => readFileSync(path, "utf8")
+const manifest = JSON.parse(read("data/freshness-closeout-20260905.json"))
+const lit = (v: unknown) => `'${String(v).replaceAll("'", "''")}'`
+
+test("Ruth entra com 11 campos, dois recibos reais e vice vigente sem inventar histórico", () => {
+  assert.equal(analyzeProfileAdmission(manifest.profile).ready, true)
+  const source = manifest.source_evidence.candidates.find((c: {id: string}) => c.id === "140002554434")
+  assert.deepEqual(selectCurrentVice(source.id, source.vices), {status: "resolved", vice: {sq_candidato: "140002554426", name: "MARCIA CARVALHO", situacao_vice: 1}})
+  for (const key of ["candidate_registration", "candidate_complement"]) {
+    const receipt = manifest.profile.verificacao_campos[key]
+    assert.equal(receipt.estado, "publicado")
+    assert.equal(receipt.verificado_em, receipt.fontes_consultadas[0].checked_at)
+    assert.match(receipt.fontes_consultadas[0].payload_raw_sha256, /^[a-f0-9]{64}$/)
+    assert.equal(receipt.fontes_consultadas[0].http_status, 200)
+  }
+  assert.equal(manifest.profile.naturalidade, "Pará")
+  assert.equal(manifest.profile.sq_candidato_2026, "140002554434")
+  assert.notEqual(manifest.profile.id, manifest.before_candidates[1].id)
+  for (const field of ["partido_sigla", "situacao_candidatura", "foto_url", "biografia", "naturalidade", "data_nascimento", "formacao", "profissao_declarada", "genero", "estado_civil", "cor_raca"]) {
+    assert.equal(analyzeProfileAdmission({...manifest.profile,[field]:null}).ready,false,field)
+  }
+  for (const key of ["candidate_registration", "candidate_complement"]) {
+    assert.equal(analyzeProfileAdmission({...manifest.profile,verificacao_campos:{...manifest.profile.verificacao_campos,[key]:{estado:"publicado",verificado_em:"2026-02-31"}}}).ready,false,key)
+  }
+})
+
+test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preservador", {
+  skip: process.env.PF_PROVAR_FRESHNESS_CLOSEOUT_PG17 !== "1", timeout: 120_000,
+}, () => {
+  const run = (args: string[], input?: string) => spawnSync("docker", args, {input, encoding: "utf8", timeout: 60_000})
+  const start = run(["run", "-d", "--rm", "-e", "POSTGRES_PASSWORD=fixture", "postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"])
+  assert.equal(start.status, 0, start.stderr)
+  const id = start.stdout.trim()
+  const q = (sql: string) => run(["exec", "-i", id, "psql", "-X", "-U", "postgres", "-Atq", "-v", "ON_ERROR_STOP=1"], sql)
+  const ok = (sql: string) => {const r=q(sql); assert.equal(r.status,0,r.stderr); return r.stdout.trim()}
+  try {
+    assert.equal(run(["exec",id,"bash","-c","for i in {1..40}; do pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 && psql -U postgres -h 127.0.0.1 -Atqc 'select 1' >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1"]).status,0)
+    ok("CREATE ROLE anon; CREATE ROLE authenticated; CREATE SCHEMA supabase_migrations; CREATE TABLE supabase_migrations.schema_migrations(version text PRIMARY KEY,statements text[],name text,created_by text,idempotency_key text,rollback text[]);")
+    const initial=read("supabase/migrations/20260329000000_initial_schema.sql")
+    ok(initial.slice(initial.indexOf("CREATE TABLE candidatos ("),initial.indexOf("-- Índice pra busca")))
+    ok("ALTER TABLE candidatos ADD COLUMN genero text, ADD COLUMN estado_civil text, ADD COLUMN cor_raca text, ADD COLUMN biografia text, ADD COLUMN situacao_candidatura text, ADD COLUMN publicavel boolean, ADD COLUMN verificacao_campos jsonb, ADD COLUMN sq_candidato_2026 text; ALTER TABLE candidatos ENABLE ROW LEVEL SECURITY; GRANT SELECT ON candidatos TO anon,authenticated; CREATE POLICY candidate_public ON candidatos FOR SELECT USING(publicavel AND status<>'removido'); CREATE VIEW candidatos_publico WITH(security_invoker=true) AS SELECT id,slug FROM candidatos WHERE publicavel AND status<>'removido'; GRANT SELECT ON candidatos_publico TO anon,authenticated;")
+    ok(read("supabase/migrations/20260813040000_chapas_2026_schema.sql"))
+    const previous=read("supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql")
+    ok(previous)
+    const predecessorDigest=digest(read(`supabase/migrations/${PREDECESSOR}_private_cron_execution_receipts.sql`))
+    ok(`INSERT INTO supabase_migrations.schema_migrations(version,idempotency_key) VALUES(${lit(PREDECESSOR)},${lit(predecessorDigest)})`)
+    const rawData=read("supabase/migrations/20260905230738_freshness_closeout_candidaturas_data.sql")
+    assert.notEqual(q(rawData).status,0,"empty database without explicit replay marker fails")
+    ok("SET pf.replay='true';\n"+rawData)
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"0","explicit empty replay is a no-op")
+    assert.notEqual(q("SET pf.replay='true';\n"+renderFreshnessCloseoutTransaction("apply","a".repeat(40))).status,0,"production driver disables replay even with caller marker")
+    assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
+    for(const before of manifest.before_candidates){
+      const fixture={...manifest.profile,...before,cpf_hash:"synthetic-private-witness"}
+      ok(`INSERT INTO candidatos SELECT p.* FROM jsonb_populate_record(NULL::candidatos,${lit(JSON.stringify(fixture))}::jsonb) p;`)
+      assert.notEqual(q("SET pf.replay='true';\n"+rawData).status,0,"partial or drifted cohort never silently skips")
+    }
+    for(const before of manifest.before_chapas) ok(`INSERT INTO chapas_2026 SELECT p.* FROM jsonb_populate_record(NULL::chapas_2026,${lit(JSON.stringify({...before,alternativas_oficiais:[]}))}::jsonb) p;`)
+    ok(`CREATE TABLE historico_politico(id integer,candidato_id uuid REFERENCES candidatos,observacoes text); INSERT INTO historico_politico VALUES(1,${lit(manifest.before_candidates[0].id)}::uuid,'historical witness'),(2,${lit(manifest.before_candidates[1].id)}::uuid,'historical witness');`)
+    const beforeHash=ok("SELECT md5(string_agg(to_jsonb(c)::text,'|' ORDER BY id)) FROM candidatos c")
+    const childHash=ok("SELECT md5(string_agg(to_jsonb(h)::text,'|' ORDER BY id)) FROM historico_politico h")
+    const replacements: [string,string][]=[]
+    for(const before of manifest.before_candidates) replacements.push([before.row_digest,ok(`SELECT md5(to_jsonb(c)::text) FROM candidatos c WHERE id=${lit(before.id)}::uuid`)])
+    for(const before of manifest.before_chapas) replacements.push([before.row_digest,ok(`SELECT md5(to_jsonb(ch)::text) FROM chapas_2026 ch WHERE id=${lit(before.id)}::uuid`)])
+    // Synthetic fixtures contain no production PII. Only the four captured full-row
+    // digests are substituted in memory; every SQL guard and write remains real.
+    const sql=(mode: "apply"|"dry-run"|"verify"|"rollback") => replacements.reduce((s,[from,to])=>s.replaceAll(from,to),renderFreshnessCloseoutTransaction(mode,"a".repeat(40)))
+    ok(sql("dry-run"))
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"2")
+    assert.equal(ok("SELECT md5(string_agg(to_jsonb(c)::text,'|' ORDER BY id)) FROM candidatos c"),beforeHash)
+    for(const conflict of [
+      {...manifest.profile,id:"00000000-0000-4000-8000-000000000091",slug:"collision-other-slug"},
+      {...manifest.profile,id:"00000000-0000-4000-8000-000000000092",sq_candidato_2026:"140009999999"},
+    ]) {
+      ok(`INSERT INTO candidatos SELECT p.* FROM jsonb_populate_record(NULL::candidatos,${lit(JSON.stringify(conflict))}::jsonb) p`)
+      assert.notEqual(q(sql("apply")).status,0,"identity collision aborts without a unique SQ constraint")
+      assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
+      ok(`DELETE FROM candidatos WHERE id=${lit(conflict.id)}::uuid`)
+    }
+    ok("UPDATE supabase_migrations.schema_migrations SET idempotency_key='wrong'")
+    assert.notEqual(q(sql("apply")).status,0,"wrong predecessor digest aborts")
+    ok(`UPDATE supabase_migrations.schema_migrations SET idempotency_key=${lit(predecessorDigest)}`)
+    ok("ALTER VIEW chapas_2026_publico SET(security_invoker=false)")
+    assert.notEqual(q(sql("apply")).status,0,"second migration drift rolls back first migration and ledger")
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"2")
+    assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
+    ok("ALTER VIEW chapas_2026_publico SET(security_invoker=true)")
+    ok(sql("apply")); ok(sql("verify"))
+    const postimage=JSON.parse(ok("SELECT row_to_json(c) FROM candidatos c WHERE slug='ruth-reis'"))
+    assert.equal(analyzeProfileAdmission(postimage).ready,true,"admission runs on actual SQL postimage, not only the manifest")
+    const compareManifest=(actual: Record<string,unknown>,expected: Record<string,unknown>) => {
+      const canonical=(value: unknown,key: string) => ["created_at","ultima_atualizacao","snapshot_em"].includes(key) ? new Date(String(value)).toISOString() : value
+      assert.deepEqual(Object.fromEntries(Object.keys(expected).map(k=>[k,canonical(actual[k],k)])),Object.fromEntries(Object.entries(expected).map(([k,v])=>[k,canonical(v,k)])),"every manifest field must equal the actual SQL postimage")
+    }
+    compareManifest(postimage,manifest.profile)
+    compareManifest(JSON.parse(ok(`SELECT row_to_json(ch) FROM chapas_2026 ch WHERE id=${lit(manifest.chapa.id)}::uuid`)),manifest.chapa)
+    ok("UPDATE candidatos SET verificacao_campos=jsonb_set(verificacao_campos,'{candidate_registration}', '{\"estado\":\"publicado\",\"verificado_em\":\"invalid\"}') WHERE slug='ruth-reis'")
+    assert.equal(analyzeProfileAdmission(JSON.parse(ok("SELECT row_to_json(c) FROM candidatos c WHERE slug='ruth-reis'"))).ready,false)
+    assert.notEqual(q(sql("verify")).status,0,"SQL readback rejects invalid real receipt")
+    ok(`UPDATE candidatos SET verificacao_campos=${lit(JSON.stringify(manifest.profile.verificacao_campos))}::jsonb WHERE slug='ruth-reis'`)
+    assert.equal(ok("SET ROLE anon; SELECT string_agg(titular_slug,',') FROM chapas_2026_publico; RESET ROLE;"),"ruth-reis")
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"3")
+    assert.equal(ok("SELECT count(*) FROM chapas_2026"),"3")
+    assert.equal(ok("SELECT md5(string_agg(to_jsonb(h)::text,'|' ORDER BY id)) FROM historico_politico h"),childHash)
+    ok("UPDATE candidatos SET biografia='concurrent legitimate edit' WHERE slug='ruth-reis'")
+    assert.notEqual(q(sql("rollback")).status,0,"rollback CAS preserves concurrent edit")
+    assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"3")
+    ok(`UPDATE candidatos SET biografia=${lit(manifest.profile.biografia)} WHERE slug='ruth-reis'`)
+    ok(sql("rollback"))
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"3","new registration is archived, never deleted")
+    assert.equal(ok("SELECT count(*) FROM chapas_2026"),"3","both old and new slates survive rollback")
+    assert.equal(ok("SELECT publicavel::text || ':' || status FROM candidatos WHERE slug='ruth-reis'"),"false:removido")
+    assert.equal(ok("SELECT md5(string_agg(to_jsonb(h)::text,'|' ORDER BY id)) FROM historico_politico h"),childHash)
+    assert.notEqual(q(sql("apply")).status,0,"archived new registration needs new reviewed preimage; never overwritten")
+  } finally {assert.equal(run(["stop",id]).status,0)}
+})

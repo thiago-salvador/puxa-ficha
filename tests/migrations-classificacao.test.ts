@@ -33,6 +33,17 @@ describe("classificador puro (#136)", () => {
     const migration = TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo.startsWith("20260905220000"))
     assert.equal(migration?.replaySchema, true)
   })
+  test("freshness closeout separa curadoria guardada da view de schema", () => {
+    const dados = TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo.startsWith("20260905230738"))
+    const schema = TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo.startsWith("20260905230739"))
+    assert.equal(dados?.classe, "curadoria")
+    assert.equal(dados?.temGuard, true)
+    assert.equal(dados?.replay, "replicavel")
+    assert.equal(dados?.replaySchema, false)
+    assert.equal(schema?.classe, "schema")
+    assert.equal(schema?.replaySchema, true)
+    assert.equal(schema?.mista, false)
+  })
   test("FOR UPDATE SKIP LOCKED não inventa DML, mas tabela skip continua visível", () => {
     assert.deepEqual(alvosDeEscrita("SELECT * FROM request_ip_quotas FOR UPDATE SKIP LOCKED"), [])
     assert.deepEqual(alvosDeEscrita("UPDATE public.skip SET value = 1"), ["skip"])
@@ -386,7 +397,8 @@ describe("classificador puro (#136)", () => {
     // Medição local PG17: 346 + 105 = 451, conjunto de falhas preservado.
     // 05/09: três migrations MR01/MR07/MR08 medidas localmente em PG17;
     // 349 aplicadas + 105 falhas preservadas = 454 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 349)
+    // Freshness closeout medido no PG17: 351 + mesmas 105 = 456 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 351)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

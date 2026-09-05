@@ -118,6 +118,14 @@ descartáveis PostgreSQL 17 de recibos, publicação e cota. O wrapper
 `scripts/audit/provar-master-review-remediation-pg17.sh` define as três;
 não configurar essas variáveis em produção.
 
+`PF_PROVAR_FRESHNESS_CLOSEOUT_PG17` habilita, somente com valor `1`, as
+fixtures PostgreSQL 17 descartáveis de admissão, despublicação preservadora
+e guarda da view de chapas. O workflow
+`.github/workflows/apply-freshness-closeout-production.yml` define o valor
+no passo de prova local, antes de disponibilizar a conexão remota ao driver.
+A ausência pula essas integrações na suíte comum; não configurar na Vercel
+nem em runtime de produção. Não autoriza aplicação de migrations.
+
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
 | `PUXAFICHA_DEV_NO_KILL_PORT` | Proteção do servidor local contra encerramento do processo que ocupa a porta 3000 | Opcional; somente `1` impede `scripts/dev.sh` de encerrar o processo existente. Ausente, o script preserva o comportamento padrão de liberar a porta. | Desenvolvimento local |
