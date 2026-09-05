@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 4)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 4)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 5)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 5)
   assert.match(config, /id\s*=\s*"generic-api-key"/)
 })
 
@@ -221,6 +221,10 @@ test("controlled fixture survives every former allowlist bypass and stays redact
     {
       path: "src/lib/remote-image-hosts.ts",
       contents: `api_key=${secret}\n`,
+    },
+    {
+      path: "supabase/migrations/20260905150000_corrigir_textos_julgamento.sql",
+      contents: `chave=${secret}\n`,
     },
   ]
 
@@ -295,6 +299,7 @@ test("only exact known false positives at their exact paths are allowed", () => 
     "src/lib/remote-image-hosts.ts",
     "supabase/migrations/20260510183000_seed_projetos_lei_amelio_soldado_sapl_completo.sql",
     "supabase/rollback/20260811100000_votacoes_senado_chave_exata.rollback.sql",
+    "supabase/migrations/20260905150000_corrigir_textos_julgamento.sql",
   ]
 
   try {
@@ -333,6 +338,19 @@ test("an allowed public value is detected outside its exact path", () => {
       false,
       "scanner output and report must redact the public value",
     )
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
+})
+
+test("the public event UUID remains detected outside its migration", () => {
+  const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+  try {
+    writeFixture(directory, "wrong-path.env", "-- @write tabela=historico_politico slug=ariel-capistrano chave=2c3f7577-3ed9-44ff-9360-c1740191e043 campos=observacoes\n")
+    const result = scan(directory)
+    assert.ifError(result.error)
+    assert.equal(result.status, 17)
+    assert.ok(result.findings.some((finding) => finding.RuleID === "generic-api-key"))
   } finally {
     rmSync(directory, { recursive: true, force: true })
   }
