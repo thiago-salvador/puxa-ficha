@@ -40,7 +40,6 @@ import {
   ProcessoGroupSources,
   ProcessoPublicGroupSurface,
 } from "./ProcessoPublicSurface"
-import { StateIndicators } from "./StateIndicators"
 import {
   EmptyState,
   getProcessosEmptyState,
@@ -825,9 +824,6 @@ export function CandidatoProfile({
                     ) : undefined
                   }
                 />
-                {ficha.cargo_disputado === "Governador" && (ficha.indicadores_estaduais ?? []).length > 0 && (
-                  <StateIndicators indicadores={ficha.indicadores_estaduais!} estado={ficha.estado ?? ""} />
-                )}
                 <FollowCandidateButton
                   candidateName={ficha.nome_urna}
                   candidateSlug={ficha.slug}
