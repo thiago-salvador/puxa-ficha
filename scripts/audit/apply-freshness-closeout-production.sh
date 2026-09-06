@@ -63,9 +63,9 @@ if [[ "$mode" == "backup" ]]; then
   exit 0
 fi
 node --import tsx scripts/audit/apply-freshness-closeout.ts "$mode" "$PF_EXPECTED_SHA" | \
-  PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
+  PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -v VERBOSITY=terse -f -
 if [[ "$mode" == "apply" ]]; then
   node --import tsx scripts/audit/apply-freshness-closeout.ts verify "$PF_EXPECTED_SHA" | \
-    PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
+    PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -v VERBOSITY=terse -f -
 fi
 echo "PASS: freshness-closeout mode=$mode"

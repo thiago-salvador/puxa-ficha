@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "source": {
+    "kind": "production_schema_only_snapshot",
+    "commit": "0c9fe99",
+    "snapshot_sha256": "3ded08987b6b94beae1cbfa4e4a142c2c92c9c2df61d4df128af8535b1b0ca2e"
+  },
+  "constraints": [
+    {
+      "conname": "candidatos_cpf_formato_check",
+      "definition": "CHECK (((cpf IS NULL) OR (cpf ~ '^[0-9]{11}$'::text)))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_pkey",
+      "definition": "PRIMARY KEY (id)",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_publicacao_minima_2026_check",
+      "definition": "CHECK (((publicavel IS DISTINCT FROM true) OR (cargo_disputado <> ALL (ARRAY['Presidente'::text, 'Governador'::text])) OR ((COALESCE(btrim(foto_url), ''::text) <> ''::text) AND (COALESCE(btrim(partido_sigla), ''::text) <> ''::text) AND (COALESCE(btrim(situacao_candidatura), ''::text) <> ''::text) AND (COALESCE(btrim(biografia), ''::text) <> ''::text) AND (COALESCE(btrim(naturalidade), ''::text) <> ''::text) AND (data_nascimento IS NOT NULL) AND (COALESCE(btrim(formacao), ''::text) <> ''::text) AND (COALESCE(btrim(profissao_declarada), ''::text) <> ''::text) AND (COALESCE(btrim(genero), ''::text) <> ''::text) AND (COALESCE(btrim(estado_civil), ''::text) <> ''::text) AND (COALESCE(btrim(cor_raca), ''::text) <> ''::text) AND (COALESCE(verificacao_campos, '{}'::jsonb) ? 'candidate_registration'::text) AND (COALESCE(verificacao_campos, '{}'::jsonb) ? 'candidate_complement'::text))))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_publicavel_requires_disputa",
+      "definition": "CHECK (((publicavel IS NOT TRUE) OR ((cargo_disputado IS NOT NULL) AND (cargo_disputado <> 'Nenhum'::text) AND (status <> ALL (ARRAY['removido'::text, 'desistente'::text])))))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_situacao_candidatura_dominio",
+      "definition": "CHECK ((situacao_candidatura = ANY (ARRAY['aguardando julgamento'::text, 'candidatura declarada'::text, 'incerto'::text, 'deferido'::text, 'deferido com recurso'::text, 'indeferido'::text, 'indeferido com recurso'::text])))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_slug_key",
+      "definition": "UNIQUE (slug)",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_sq_candidato_2026_formato",
+      "definition": "CHECK (((sq_candidato_2026 IS NULL) OR (sq_candidato_2026 ~ '^[0-9]{9,15}$'::text)))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "candidatos_status_dominio",
+      "definition": "CHECK ((status = ANY (ARRAY['pre-candidato'::text, 'candidato'::text, 'indeferido'::text, 'desistente'::text, 'removido'::text])))",
+      "relation": "candidatos"
+    },
+    {
+      "conname": "coleta_log_candidato_id_fkey",
+      "definition": "FOREIGN KEY (candidato_id) REFERENCES candidatos(id) ON DELETE SET NULL",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_candidato_id_so_em_escopo_candidato",
+      "definition": "CHECK (((escopo = 'candidato'::text) OR (candidato_id IS NULL)))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_duracao_ms_check",
+      "definition": "CHECK (((duracao_ms IS NULL) OR (duracao_ms >= 0)))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_escopo_check",
+      "definition": "CHECK ((escopo = ANY (ARRAY['candidato'::text, 'territorio'::text, 'global'::text])))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_execucao_lote_candidato_unique",
+      "definition": "UNIQUE (fonte, execucao, lote_cursor, candidato_id)",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_lote_cursor_check",
+      "definition": "CHECK (((lote_cursor IS NULL) OR (lote_cursor >= 0)))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_natureza_check",
+      "definition": "CHECK ((natureza = ANY (ARRAY['coleta'::text, 'escrita'::text])))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_pkey",
+      "definition": "PRIMARY KEY (id)",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_resultado_check",
+      "definition": "CHECK ((resultado = ANY (ARRAY['encontrado'::text, 'vazio_confirmado'::text, 'sem_achado_no_escopo'::text, 'nao_aplicavel'::text, 'erro'::text, 'indeterminado'::text])))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_volume_check",
+      "definition": "CHECK ((volume >= 0))",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "coleta_log_volume_coerente",
+      "definition": "CHECK (\nCASE resultado\n    WHEN 'encontrado'::text THEN (volume > 0)\n    WHEN 'vazio_confirmado'::text THEN (volume = 0)\n    WHEN 'sem_achado_no_escopo'::text THEN (volume = 0)\n    WHEN 'nao_aplicavel'::text THEN (volume = 0)\n    WHEN 'indeterminado'::text THEN (volume = 0)\n    ELSE true\nEND)",
+      "relation": "coleta_log"
+    },
+    {
+      "conname": "chapas_2026_cargo_titular_check",
+      "definition": "CHECK ((cargo_titular = ANY (ARRAY['Presidente'::text, 'Governador'::text])))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_chave_key",
+      "definition": "UNIQUE (chave)",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_check",
+      "definition": "CHECK ((((cargo_titular = 'Presidente'::text) AND (uf IS NULL)) OR ((cargo_titular = 'Governador'::text) AND (uf ~ '^[A-Z]{2}$'::text))))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_check1",
+      "definition": "CHECK ((((identidade_status = 'confirmada'::text) AND (sq_coligacao IS NOT NULL)) OR (identidade_status = 'duplicidade_oficial'::text)))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_check2",
+      "definition": "CHECK (((identidade_status <> 'duplicidade_oficial'::text) OR ((jsonb_array_length(alternativas_oficiais) = 2) AND (((sq_coligacao IS NULL) AND (titular_sq_candidato IS NULL) AND (vice_sq_candidato IS NULL)) OR ((sq_coligacao IS NOT NULL) AND (titular_sq_candidato IS NOT NULL) AND (vice_sq_candidato IS NOT NULL))))))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_check3",
+      "definition": "CHECK (((vinculo_titular_status = ANY (ARRAY['confirmado'::text, 'novo_perfil_oficial'::text])) OR ((titular_candidato_id IS NULL) AND (titular_sq_candidato IS NULL))))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_identidade_status_check",
+      "definition": "CHECK ((identidade_status = ANY (ARRAY['confirmada'::text, 'duplicidade_oficial'::text])))",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_pkey",
+      "definition": "PRIMARY KEY (id)",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_titular_candidato_id_fkey",
+      "definition": "FOREIGN KEY (titular_candidato_id) REFERENCES candidatos(id) ON DELETE RESTRICT",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_vice_candidato_id_fkey",
+      "definition": "FOREIGN KEY (vice_candidato_id) REFERENCES candidatos(id) ON DELETE RESTRICT",
+      "relation": "chapas_2026"
+    },
+    {
+      "conname": "chapas_2026_vinculo_titular_status_check",
+      "definition": "CHECK ((vinculo_titular_status = ANY (ARRAY['confirmado'::text, 'revisao_identidade'::text, 'duplicidade_oficial'::text, 'novo_perfil_oficial'::text])))",
+      "relation": "chapas_2026"
+    }
+  ]
+}

@@ -12,26 +12,38 @@ const driverRoot=resolve(import.meta.dirname,"..")
 const driverSha="a".repeat(40)
 const syntheticSecret="fixture-secret-never-log"
 
-function runGuardedDriver(name: string, overrides: Record<string,string>={}, mode="dry-run") {
+function runGuardedDriver(name: string, overrides: Record<string,string>={}, mode="dry-run", legacyVerbosity=false) {
   const fixture=mkdtempSync(join(tmpdir(),"pf-freshness-driver-"))
   try {
     for(const dir of ["scripts/audit/lib","bin"]) mkdirSync(join(fixture,dir),{recursive:true})
     const driver=`scripts/audit/${name}`
-    writeFileSync(join(fixture,driver),readFileSync(join(driverRoot,driver)))
+    const source=readFileSync(join(driverRoot,driver),"utf8")
+    writeFileSync(join(fixture,driver),legacyVerbosity?source.replaceAll(" -v VERBOSITY=terse",""):source)
     writeFileSync(join(fixture,"scripts/audit/lib/configure-libpq-from-url.sh"),readFileSync(join(driverRoot,"scripts/audit/lib/configure-libpq-from-url.sh")))
     // Only external process boundaries are replaced. Bash guards and Node URL
     // parsing execute unmodified; no network or database connection is possible.
     writeFileSync(join(fixture,"bin/git"),`#!${process.execPath}\nconst a=process.argv.slice(2),e=process.env;if(a[0]==='rev-parse')console.log(e.PF_FAKE_HEAD);else if(a[0]==='status')console.log(e.PF_FAKE_DIRTY??'');else if(a[0]==='ls-remote')console.log(e.PF_FAKE_REMOTE+'\\trefs/heads/main');else process.exit(9);\n`,{mode:0o755})
     writeFileSync(join(fixture,"bin/node"),`#!${process.execPath}\nconst a=process.argv.slice(2),e=process.env,fs=require('node:fs');if(a[0]==='--import'){fs.appendFileSync(e.PF_FAKE_LOG,'composer\\n');process.stdout.write('SELECT 1;\\n');}else if(e.PF_FAKE_NODE_EXIT){process.stderr.write(e.PF_DATABASE_URL);process.exit(Number(e.PF_FAKE_NODE_EXIT));}else {const r=require('node:child_process').spawnSync(process.execPath,a,{stdio:'inherit'});process.exit(r.status??1);}\n`,{mode:0o755})
-    writeFileSync(join(fixture,"bin/psql"),`#!${process.execPath}\nconst fs=require('node:fs');fs.appendFileSync(process.env.PF_FAKE_LOG,'psql\\n');fs.readFileSync(0);\n`,{mode:0o755})
+    writeFileSync(join(fixture,"bin/psql"),`#!${process.execPath}\nconst fs=require('node:fs');fs.appendFileSync(process.env.PF_FAKE_LOG,'psql\\n');fs.appendFileSync(process.env.PF_FAKE_LOG+'.psql',JSON.stringify(process.argv.slice(2))+'\\n');fs.readFileSync(0);\n`,{mode:0o755})
     writeFileSync(join(fixture,"scripts/audit/backup-closeout-production.sh"),'#!/usr/bin/env bash\nset -euo pipefail\n[[ "$PGSSLMODE" == verify-full && "$PGHOST" == db.wskpzsobvqwhnbsdsmok.supabase.co && -n "$1" ]]\nprintf "backup\\n" >> "$PF_FAKE_LOG"\n')
     const env={...process.env,PATH:`${join(fixture,"bin")}:${process.env.PATH}`,PF_DATABASE_URL:`postgresql://postgres:${syntheticSecret}@db.wskpzsobvqwhnbsdsmok.supabase.co:5432/postgres`,PF_EXPECTED_SHA:driverSha,GITHUB_REF:"refs/heads/main",PF_FAKE_HEAD:driverSha,PF_FAKE_REMOTE:driverSha,PF_FAKE_LOG:join(fixture,"calls"),...overrides}
     const result=spawnSync("bash",[driver,mode,join(fixture,"private-backup")],{cwd:fixture,env,encoding:"utf8",timeout:15_000})
     const calls=existsSync(env.PF_FAKE_LOG)?readFileSync(env.PF_FAKE_LOG,"utf8").trim().split("\n"):[]
     assert.ok(!(result.stdout+result.stderr).includes(syntheticSecret),"never expose the password, even if a failing runtime emits the full URL")
     assert.ok(!(result.stdout+result.stderr).includes(env.PF_DATABASE_URL),"never expose the raw database URL")
-    return {result,calls}
+    const psqlArgs: string[][]=existsSync(env.PF_FAKE_LOG+".psql")?readFileSync(env.PF_FAKE_LOG+".psql","utf8").trim().split("\n").map(line=>JSON.parse(line)):[]
+    return {result,calls,psqlArgs}
   } finally {rmSync(fixture,{recursive:true,force:true})}
+}
+
+function assertTerseInvocations(calls: string[][]): void {
+  assert.ok(calls.length>0,"must exercise at least one psql invocation")
+  for(const args of calls) {
+    const index=args.indexOf("VERBOSITY=terse")
+    assert.ok(index>0 && args[index-1]==="-v","every psql invocation must explicitly use VERBOSITY=terse")
+    assert.ok(args.includes("ON_ERROR_STOP=1"),"errors must still stop execution")
+    assert.ok(args.includes("-X"),"user psqlrc cannot override privacy settings")
+  }
 }
 
 test("driver preserva literalmente SHA, main, árvore limpa, projeto e TLS canônicos", () => {
@@ -82,7 +94,54 @@ for(const driver of ["apply-freshness-closeout-production.sh","apply-master-revi
     assert.equal(backup.result.status,0,backup.result.stderr)
     assert.deepEqual(backup.calls,["backup"])
   })
+  test(`${driver}: todas as chamadas psql, incluindo readback pós-apply, usam diagnóstico terse`,()=>{
+    const legacy=runGuardedDriver(driver,{},"apply",true)
+    assert.equal(legacy.result.status,0,legacy.result.stderr)
+    assert.throws(()=>assertTerseInvocations(legacy.psqlArgs),/VERBOSITY=terse/,"negative control must reject the pre-fix driver")
+    for(const mode of ["dry-run","apply","verify","rollback"]) {
+      const actual=runGuardedDriver(driver,{},mode)
+      assert.equal(actual.result.status,0,actual.result.stderr)
+      assert.equal(actual.psqlArgs.length,mode==="apply"?2:1)
+      assertTerseInvocations(actual.psqlArgs)
+    }
+  })
 }
+
+test("PG17: erro de constraint preserva causa e exit status, sem expor linha privada em terse", {
+  skip:process.env.PF_PROVAR_FRESHNESS_CLOSEOUT_PG17!=="1",timeout:120_000,
+},(t)=>{
+  const run=(args:string[],input?:string)=>spawnSync("docker",args,{input,encoding:"utf8",timeout:30_000})
+  const start=run(["run","-d","--rm","-e","POSTGRES_PASSWORD=fixture","postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"])
+  assert.equal(start.status,0,start.stderr)
+  const id=start.stdout.trim()
+  assert.match(id,/^[a-f0-9]{64}$/)
+  let bodyFailed=false
+  try {
+    assert.equal(run(["exec",id,"bash","-c","for i in {1..20}; do pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 && psql -U postgres -h 127.0.0.1 -Atqc 'select 1' >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1"]).status,0)
+    const setup=run(["exec","-i",id,"psql","-X","-U","postgres","-v","ON_ERROR_STOP=1","-f","-"],"CREATE TABLE private_error_fixture(private_payload text, permitted boolean CONSTRAINT private_error_policy CHECK(permitted));")
+    assert.equal(setup.status,0,setup.stderr)
+    const marker="SYNTHETIC_PRIVATE_ROW_MUST_NEVER_APPEAR"
+    const sql=`BEGIN; DO $$ BEGIN INSERT INTO private_error_fixture VALUES('${marker}',false); END $$; COMMIT;`
+    const execute=(terse:boolean)=>run(["exec","-i",id,"psql","-X","-U","postgres","-v","ON_ERROR_STOP=1",...(terse?["-v","VERBOSITY=terse"]:[]),"-f","-"],sql)
+    const baseline=execute(false)
+    assert.equal(baseline.status,3,"default errors must fail rather than commit")
+    assert.ok(baseline.stderr.includes(marker),"RED control reproduces the default failing-row disclosure using synthetic data only")
+    assert.match(baseline.stderr,/DETAIL:/)
+    assert.match(baseline.stderr,/CONTEXT:/)
+    const protectedResult=execute(true)
+    assert.equal(protectedResult.status,3,"terse must retain the nonzero psql error status")
+    assert.match(protectedResult.stderr,/ERROR:.*private_error_policy/)
+    assert.ok(!protectedResult.stderr.includes(marker),"terse must not disclose the private row marker")
+    assert.doesNotMatch(protectedResult.stdout+protectedResult.stderr,/DETAIL:|CONTEXT:|INSERT INTO private_error_fixture|DO \$\$/)
+    const readback=run(["exec",id,"psql","-X","-U","postgres","-Atqc","SELECT count(*) FROM private_error_fixture"])
+    assert.equal(readback.status,0,readback.stderr)
+    assert.equal(readback.stdout.trim(),"0","neither failed transaction persisted a row")
+  } catch(error) {bodyFailed=true;throw error} finally {
+    const stopped=run(["stop",id])
+    if(bodyFailed && stopped.status!==0) t.diagnostic("Docker cleanup also failed; original privacy assertion preserved")
+    else assert.equal(stopped.status,0,stopped.stderr)
+  }
+})
 
 test("compositor fecha dados, schema e ledger em uma transação e desativa replay", () => {
   assert.equal(PREDECESSOR,"20260905220200")

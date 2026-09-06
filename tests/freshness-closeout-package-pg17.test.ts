@@ -8,6 +8,8 @@ import { analyzeProfileAdmission, selectCurrentVice } from "../src/lib/candidate
 
 const read = (path: string) => readFileSync(path, "utf8")
 const manifest = JSON.parse(read("data/freshness-closeout-20260905.json"))
+const liveConstraints: {constraints:{relation:string;conname:string;definition:string}[]} = JSON.parse(read("tests/fixtures/freshness-closeout/live-constraints-0c9fe99.json"))
+const liveColumns: {columns:{relation:string;column_name:string;data_type:string;not_null:boolean;identity:string;generated:string;default_expression:string|null}[]} = JSON.parse(read("tests/fixtures/freshness-closeout/live-columns-0c9fe99.json"))
 const lit = (v: unknown) => `'${String(v).replaceAll("'", "''")}'`
 
 type DockerResult = {status:number|null; signal:string|null; stderr:string; stdout:string; error?:Error}
@@ -73,6 +75,21 @@ test("Ruth entra com 11 campos, dois recibos reais e vice vigente sem inventar h
   }
 })
 
+test("José é despublicado sem forçar estado terminal fora do domínio armazenado",()=>{
+  const decision=manifest.publication_decisions.find((d:{sq_candidato_2026:string})=>d.sq_candidato_2026==="140002551357")
+  const source=manifest.source_evidence.candidates.find((c:{id:string})=>c.id==="140002551357")
+  const before=manifest.before_candidates.find((c:{id:string})=>c.id===decision.candidate_id)
+  assert.equal(decision.source_status,source.descricaoSituacao)
+  assert.equal(decision.source_status_code,source.codigoSituacaoCandidato)
+  assert.equal(decision.stored_situacao_candidatura,before.situacao_candidatura)
+  assert.equal(decision.action,"preserve_stored_situation_and_unpublish")
+  for(const file of ["supabase/migrations/20260905230738_freshness_closeout_candidaturas_data.sql","supabase/rollback/20260905230738_freshness_closeout_candidaturas_data.rollback.sql"]){
+    const update=read(file).split("\n").find(line=>line.startsWith("UPDATE public.candidatos")&&line.includes("slug='jose-moita'"))
+    assert.ok(update)
+    assert.doesNotMatch(update,/situacao_candidatura=/)
+  }
+})
+
 test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preservador", {
   skip: process.env.PF_PROVAR_FRESHNESS_CLOSEOUT_PG17 !== "1", timeout: 120_000,
 }, (t) => {
@@ -80,7 +97,7 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
   const start = run(["run", "-d", "--rm", "-e", "POSTGRES_PASSWORD=fixture", "postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"])
   assert.equal(start.status, 0, start.stderr)
   const id = start.stdout.trim()
-  const q = (sql: string) => run(["exec", "-i", id, "psql", "-X", "-U", "postgres", "-Atq", "-v", "ON_ERROR_STOP=1"], sql)
+  const q = (sql: string) => run(["exec", "-i", id, "psql", "-X", "-U", "postgres", "-Atq", "-v", "ON_ERROR_STOP=1", "-v", "VERBOSITY=terse"], sql)
   const ok = (sql: string) => {const r=q(sql); assert.equal(r.status,0,r.stderr); return r.stdout.trim()}
   runWithPackageCleanup(() => {
     assert.equal(run(["exec",id,"bash","-c","for i in {1..40}; do pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 && psql -U postgres -h 127.0.0.1 -Atqc 'select 1' >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1"]).status,0)
@@ -94,6 +111,29 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     ok(read("supabase/migrations/20260813040000_chapas_2026_schema.sql"))
     const previous=read("supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql")
     ok(previous)
+    // The schema-only production snapshot closes gaps left by assembling old
+    // migrations: every live target CHECK is exercised, including status domains.
+    ok(liveColumns.columns.map(column=>{
+      assert.match(column.relation,/^(candidatos|chapas_2026|coleta_log)$/)
+      assert.match(column.column_name,/^[a-z0-9_]+$/)
+      assert.ok(["text","date","integer","jsonb","text[]","uuid","timestamp with time zone","boolean","bigint"].includes(column.data_type))
+      assert.equal(column.generated,"")
+      assert.ok(["","a"].includes(column.identity))
+      const table=`public.${column.relation}`, field=column.column_name
+      return `ALTER TABLE ${table} ADD COLUMN IF NOT EXISTS ${field} ${column.data_type}${column.identity?" GENERATED ALWAYS AS IDENTITY":""};
+        ALTER TABLE ${table} ALTER COLUMN ${field} ${column.not_null?"SET":"DROP"} NOT NULL;
+        ${column.identity?"":`ALTER TABLE ${table} ALTER COLUMN ${field} ${column.default_expression===null?"DROP DEFAULT":`SET DEFAULT ${column.default_expression}`};`}`
+    }).join("\n"))
+    const measuredColumns=JSON.parse(ok("SELECT json_agg(row_to_json(x) ORDER BY relation,column_name) FROM (SELECT c.relname AS relation,a.attname AS column_name,format_type(a.atttypid,a.atttypmod) AS data_type,a.attnotnull AS not_null,a.attidentity AS identity,a.attgenerated AS generated,pg_get_expr(d.adbin,d.adrelid) AS default_expression FROM pg_attribute a JOIN pg_class c ON c.oid=a.attrelid LEFT JOIN pg_attrdef d ON d.adrelid=a.attrelid AND d.adnum=a.attnum WHERE c.oid IN ('public.candidatos'::regclass,'public.chapas_2026'::regclass,'public.coleta_log'::regclass) AND a.attnum>0 AND NOT a.attisdropped) x"))
+    assert.deepEqual(measuredColumns,liveColumns.columns.toSorted((a,b)=>a.relation.localeCompare(b.relation)||a.column_name.localeCompare(b.column_name)),"all 80 live column types, nullability, identity and defaults must match")
+    ok("ALTER TABLE coleta_log ADD CONSTRAINT coleta_log_execucao_lote_candidato_unique UNIQUE(fonte,execucao,lote_cursor,candidato_id)")
+    for(const constraint of liveConstraints.constraints.filter(c=>c.definition.startsWith("CHECK"))) {
+      assert.match(constraint.relation,/^(candidatos|chapas_2026|coleta_log)$/)
+      assert.match(constraint.conname,/^[a-z0-9_]+$/)
+      ok(`ALTER TABLE public.${constraint.relation} DROP CONSTRAINT IF EXISTS ${constraint.conname}; ALTER TABLE public.${constraint.relation} ADD CONSTRAINT ${constraint.conname} ${constraint.definition}`)
+    }
+    const measured=JSON.parse(ok("SELECT json_agg(row_to_json(x) ORDER BY relation,conname) FROM (SELECT conrelid::regclass::text AS relation,conname,pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conrelid IN ('public.candidatos'::regclass,'public.chapas_2026'::regclass,'public.coleta_log'::regclass)) x"))
+    assert.deepEqual(measured,liveConstraints.constraints.toSorted((a,b)=>a.relation.localeCompare(b.relation)||a.conname.localeCompare(b.conname)),"all 30 live constraints, including 21 CHECKs, must match before domain writes")
     const predecessorDigest=digest(read(`supabase/migrations/${PREDECESSOR}_private_cron_execution_receipts.sql`))
     ok(`INSERT INTO supabase_migrations.schema_migrations(version,idempotency_key) VALUES(${lit(PREDECESSOR)},${lit(predecessorDigest)})`)
     const rawData=read("supabase/migrations/20260905230738_freshness_closeout_candidaturas_data.sql")
@@ -111,6 +151,10 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     ok(`CREATE TABLE historico_politico(id integer,candidato_id uuid REFERENCES candidatos,observacoes text); INSERT INTO historico_politico VALUES(1,${lit(manifest.before_candidates[0].id)}::uuid,'historical witness'),(2,${lit(manifest.before_candidates[1].id)}::uuid,'historical witness');`)
     const beforeHash=ok("SELECT md5(string_agg(to_jsonb(c)::text,'|' ORDER BY id)) FROM candidatos c")
     const childHash=ok("SELECT md5(string_agg(to_jsonb(h)::text,'|' ORDER BY id)) FROM historico_politico h")
+    const invalidSituation=q("BEGIN; UPDATE candidatos SET situacao_candidatura='renúncia' WHERE slug='jose-moita'; ROLLBACK;")
+    assert.notEqual(invalidSituation.status,0,"production domain must reject the original incident's unsupported value")
+    assert.match(invalidSituation.stderr,/candidatos_situacao_candidatura_dominio/)
+    assert.equal(ok("SELECT md5(string_agg(to_jsonb(c)::text,'|' ORDER BY id)) FROM candidatos c"),beforeHash)
     const replacements: [string,string][]=[]
     for(const before of manifest.before_candidates) replacements.push([before.row_digest,ok(`SELECT md5(to_jsonb(c)::text) FROM candidatos c WHERE id=${lit(before.id)}::uuid`)])
     for(const before of manifest.before_chapas) replacements.push([before.row_digest,ok(`SELECT md5(to_jsonb(ch)::text) FROM chapas_2026 ch WHERE id=${lit(before.id)}::uuid`)])
@@ -145,6 +189,7 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
     ok("ALTER VIEW chapas_2026_publico SET(security_invoker=true)")
     ok(sql("apply")); ok(sql("verify"))
+    assert.equal(ok("SELECT situacao_candidatura || ':' || publicavel::text || ':' || status FROM candidatos WHERE slug='jose-moita'"),"aguardando julgamento:false:removido")
     ok(sql("verify","b".repeat(40)))
     assert.equal(ok("SELECT count(*) FROM coleta_log"),"1")
     const applyReceiptHash=ok("SELECT md5(to_jsonb(l)::text) FROM coleta_log l")
