@@ -4,6 +4,7 @@
   "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar todos os estados patrimoniais de 2026, ligar a vice-presidencia oficial, normalizar a proveniencia das candidaturas com SQ_CANDIDATO vigente, retirar dois pontos sem sustentacao publica suficiente e manter as coortes de retencao exatamente assinadas.",
   "coorte": [
     "clebio-genuino",
+    "dr-helton-monteiro",
     "dr-luisinho",
     "laudicerio-aguiar",
     "leonardo-avalanche",
@@ -60,6 +61,12 @@
       "tabela": "candidatos",
       "slug": "leonardo-avalanche",
       "campos": ["status", "sq_candidato_2026", "fonte_dados", "verificacao_campos", "ultima_atualizacao"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "dr-helton-monteiro",
+      "campos": ["status", "publicavel", "situacao_candidatura", "fonte_dados", "verificacao_campos", "ultima_atualizacao"],
       "max_registros": 1
     },
     {
@@ -133,6 +140,18 @@
       "ref": "migration:20260906185805",
       "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
       "max_registros": 53
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "freshness-dr-helton-20260906",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:freshness-dr-helton-20260906",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
+      "max_registros": 1
     },
     {
       "tabela": "noticias_candidato",
