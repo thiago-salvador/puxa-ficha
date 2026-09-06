@@ -110,8 +110,8 @@ test("fica no fim da Visão Geral sem criar uma aba", () => {
   const overview = profile.slice(overviewStart, overviewEnd)
 
   assert.ok(overviewStart >= 0 && overviewEnd > overviewStart)
-  assert.ok(overview.indexOf("<ProfileOverview") < overview.indexOf("<StateIndicators"))
-  assert.ok(overview.indexOf("<StateIndicators") < overview.indexOf("<FollowCandidateButton"))
+  assert.doesNotMatch(overview, /<StateIndicators/)
+  assert.ok(overview.indexOf("<ProfileOverview") >= 0 && overview.indexOf("<ProfileOverview") < overview.indexOf("<FollowCandidateButton"))
   assert.ok(overview.indexOf("<FollowCandidateButton") < overview.indexOf("<CandidateGeneralData"))
   assert.match(generalData, /grid-cols-1 gap-x-8 sm:grid-cols-2/)
   assert.doesNotMatch(tabs, /["']dados["']/)
