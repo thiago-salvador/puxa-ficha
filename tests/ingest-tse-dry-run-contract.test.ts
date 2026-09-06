@@ -9,6 +9,7 @@ import {
   hasOfficialPatrimonioPackage,
   isDoadorOriginarioReceiptSource,
   patrimonioDeclarationObservation,
+  recordPatrimonioDeclarationObservation,
   sanitizeTseLegacyAssetText,
   selectPatrimonioAbsenceCandidates,
   validarCoberturaPacotePatrimonio,
@@ -89,10 +90,38 @@ test("anexa ST_DECLARAR_BENS do arquivo complementar pela identidade oficial", (
     ),
     null,
   )
-  assert.match(source, /patrimonioDeclarationByIdentity\.get/)
-  assert.match(source, /selection\.observed[\s\S]*?patrimonioDeclarationByIdentity/)
+  assert.match(source, /patrimonioDeclarations\.observations\.get/)
+  assert.match(source, /selection\.observed[\s\S]*?patrimonioDeclarations\.observations/)
   assert.match(source, /consulta_cand_complementar\/consulta_cand_complementar_\$\{ano\}\.zip/)
   assert.match(source, /loadPatrimonioDeclarationObservations\(ano, governorUFs\)/)
+})
+
+test("ST_DECLARAR_BENS conflitante isola a identidade sem derrubar o ano", () => {
+  const observations = new Map<string, "S" | "N">()
+  const conflicts = new Set<string>()
+  const affected = "2012:PA:140000001601"
+  const healthy = "2012:RN:200000001258"
+
+  recordPatrimonioDeclarationObservation(observations, conflicts, {
+    identityKey: affected,
+    status: "S",
+  })
+  recordPatrimonioDeclarationObservation(observations, conflicts, {
+    identityKey: healthy,
+    status: "S",
+  })
+  recordPatrimonioDeclarationObservation(observations, conflicts, {
+    identityKey: affected,
+    status: "N",
+  })
+  recordPatrimonioDeclarationObservation(observations, conflicts, {
+    identityKey: affected,
+    status: "S",
+  })
+
+  assert.deepEqual([...observations], [[healthy, "S"]])
+  assert.deepEqual([...conflicts], [affected])
+  assert.doesNotMatch(source, /throw new Error\(`Consulta de candidaturas \$\{ano\}: ST_DECLARAR_BENS conflitante/)
 })
 
 test("ambiguidades históricas usam o registro final comprovado no TSE", () => {
