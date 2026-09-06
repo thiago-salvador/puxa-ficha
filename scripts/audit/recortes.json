@@ -487,6 +487,13 @@
       "ate": "20260905150000",
       "allowlist": "scripts/audit/allowlist-textos-julgamento-20260905.json",
       "divida": null
+    },
+    {
+      "nome": "freshness-closeout-20260905",
+      "desde": "20260905230738",
+      "ate": "20260905230738",
+      "allowlist": "scripts/audit/allowlist-freshness-closeout-20260905.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

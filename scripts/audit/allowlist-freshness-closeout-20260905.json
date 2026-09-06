@@ -1,0 +1,107 @@
+{
+  "versao": "2026-09-05",
+  "fonte": "DivulgaCandContas e consulta_cand_2026, recibos públicos em data/freshness-closeout-20260905.json; run33998537035. Identidade exclusivamente por SQ, UUID e pré-imagens; autorização operacional registrada nesta tarefa.",
+  "motivo": "Escopo fechado: duas despublicações preservadoras, uma admissão de Ruth titular SQ140002554434 e uma nova chapa PA. Sem exclusão de históricos, sem escrita em tabelas filhas e sem ampliar dívida.",
+  "coorte": [
+    "subtenente-luiz-carlos",
+    "jose-moita",
+    "ruth-reis"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "subtenente-luiz-carlos",
+      "campos": [
+        "status",
+        "publicavel",
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "jose-moita",
+      "campos": [
+        "status",
+        "publicavel",
+        "situacao_candidatura",
+        "ultima_atualizacao"
+      ],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "ruth-reis",
+      "campos": [
+        "id",
+        "slug",
+        "nome_completo",
+        "nome_urna",
+        "partido_sigla",
+        "partido_atual",
+        "cargo_disputado",
+        "estado",
+        "sq_candidato_2026",
+        "data_nascimento",
+        "naturalidade",
+        "formacao",
+        "profissao_declarada",
+        "genero",
+        "estado_civil",
+        "cor_raca",
+        "foto_url",
+        "biografia",
+        "situacao_candidatura",
+        "status",
+        "publicavel",
+        "fonte_dados",
+        "verificacao_campos",
+        "ultima_atualizacao",
+        "created_at"
+      ],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "freshness-closeout-20260905",
+      "campos": [
+        "id",
+        "chave",
+        "eleicao_codigo",
+        "eleicao_data",
+        "uf",
+        "cargo_titular",
+        "sq_coligacao",
+        "identidade_status",
+        "vinculo_titular_status",
+        "tse_situacao_codigo",
+        "tse_situacao_titular_codigo",
+        "tse_situacao_vice_codigo",
+        "tipo_agremiacao",
+        "composicao",
+        "titular_candidato_id",
+        "vice_candidato_id",
+        "titular_sq_candidato",
+        "vice_sq_candidato",
+        "titular_nome_completo",
+        "titular_nome_urna",
+        "titular_partido_sigla",
+        "vice_nome_completo",
+        "vice_nome_urna",
+        "vice_partido_sigla",
+        "alternativas_oficiais",
+        "fonte_url",
+        "fonte_sha256",
+        "snapshot_em",
+        "created_at"
+      ],
+      "max_registros": 1
+    }
+  ]
+}

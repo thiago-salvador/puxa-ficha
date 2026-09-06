@@ -90,7 +90,7 @@ function parseArgs(args: string[]): CliOptions {
       : null,
     activeProfileCrosswalk: resolve(
       values.get("active-profile-crosswalk") ??
-        "data/candidate-roster-active-20260829.json",
+        "data/candidate-roster-active-20260905.json",
     ),
     out: resolve(values.get("out") ?? "reports/data-freshness"),
     now,

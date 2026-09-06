@@ -74,6 +74,7 @@ segura.
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
 | `SUPABASE_DB_URL`, `PF_DATABASE_URL` | Conexão Postgres para backup, replay, apply e readback | Obrigatória somente nos comandos que citam uma delas. Não há fallback entre os dois nomes porque os scripts têm contratos distintos. | Operador ou GitHub secret |
+| `PGDATABASE`, `PGHOST`, `PGPORT`, `PGUSER`, `PGSSLMODE`, `PGSSLROOTCERT` | Conexão libpq do backup restrito | Derivadas e fechadas pelo driver após validar a URI de produção. O helper exige banco postgres, projeto exato e TLS verify-full; não são configuração alternativa à URI. | Driver de produção |
 | `PF_LEDGER_PREDECESSOR`, `PF_LEDGER_MANIFEST` | Override do predecessor e manifesto usados pelo readback público da Fase 4 | Opcionais. Ausentes, o runner usa `.github/merge-queue/irreversible-change-manifest.json`; quando fornecidos, devem apontar para o run e migrations reais. | Operador ou workflow |
 | `VERCEL_AUTOMATION_BYPASS_SECRET` | Autenticação dos smokes no deployment Production ainda protegido e sem domínio público | Obrigatória no release staged protegido. Não há fallback; o preflight aborta antes do smoke quando ausente. O valor deve ser o Automation Bypass do projeto Vercel exato. | GitHub secret ou operador do release |
 | `SUPABASE_ACCESS_TOKEN`, `SUPABASE_PROJECT_REF` | Snapshot e auditorias via Supabase CLI/API | Opcionais por script. `SUPABASE_PROJECT_REF` tem fallback codificado em duas auditorias; snapshot remoto exige credencial. | Operador local |
@@ -118,6 +119,14 @@ descartáveis PostgreSQL 17 de recibos, publicação e cota. O wrapper
 `scripts/audit/provar-master-review-remediation-pg17.sh` define as três;
 não configurar essas variáveis em produção.
 
+`PF_PROVAR_FRESHNESS_CLOSEOUT_PG17` habilita, somente com valor `1`, as
+fixtures PostgreSQL 17 descartáveis de admissão, despublicação preservadora
+e guarda da view de chapas. O workflow
+`.github/workflows/apply-freshness-closeout-production.yml` define o valor
+no passo de prova local, antes de disponibilizar a conexão remota ao driver.
+A ausência pula essas integrações na suíte comum; não configurar na Vercel
+nem em runtime de produção. Não autoriza aplicação de migrations.
+
 | Variáveis | Contexto | Obrigatoriedade e fallback | Responsável |
 |---|---|---|---|
 | `PUXAFICHA_DEV_NO_KILL_PORT` | Proteção do servidor local contra encerramento do processo que ocupa a porta 3000 | Opcional; somente `1` impede `scripts/dev.sh` de encerrar o processo existente. Ausente, o script preserva o comportamento padrão de liberar a porta. | Desenvolvimento local |
@@ -140,7 +149,7 @@ mascarar o ambiente real.
 |---|---|---|---|
 | `NODE_ENV`, `NEXT_RUNTIME`, `CI` | Runtime Node, Next e CI | Fornecidas pelo runner. O código usa os valores para escolher runtime e política de segurança. | Node, Next ou GitHub |
 | `VERCEL`, `VERCEL_ENV`, `NEXT_PUBLIC_VERCEL_ENV`, `VERCEL_GIT_COMMIT_REF`, `VERCEL_GIT_COMMIT_SHA` | Ambiente e identidade do deploy | Fornecidas pela Vercel. A ausência caracteriza execução local em vários guards. | Vercel |
-| `HOME`, `PATH`, `TMPDIR`, `USER`, `USERNAME`, `GITHUB_PATH`, `GITHUB_OUTPUT`, `GITHUB_STEP_SUMMARY`, `GITHUB_REF`, `GITHUB_REPOSITORY`, `GITHUB_RUN_ID`, `GITHUB_RUN_ATTEMPT`, `GITHUB_ACTOR` | Diretórios, arquivos de saída e resumo, repositório e identidade do run | Fornecidas pelo sistema ou GitHub runner. `GITHUB_OUTPUT` e `GITHUB_STEP_SUMMARY` apontam para arquivos efêmeros do step; `GITHUB_REPOSITORY` identifica o repositório no formato `owner/name`. | Sistema ou GitHub |
+| `HOME`, `PATH`, `TMPDIR`, `RUNNER_TEMP`, `USER`, `USERNAME`, `GITHUB_PATH`, `GITHUB_OUTPUT`, `GITHUB_STEP_SUMMARY`, `GITHUB_REF`, `GITHUB_REPOSITORY`, `GITHUB_RUN_ID`, `GITHUB_RUN_ATTEMPT`, `GITHUB_ACTOR` | Diretórios, arquivos de saída e resumo, repositório e identidade do run | Fornecidas pelo sistema ou GitHub runner. `RUNNER_TEMP` guarda temporariamente o backup cifrado antes do upload; `GITHUB_OUTPUT` e `GITHUB_STEP_SUMMARY` apontam para arquivos efêmeros do step; `GITHUB_REPOSITORY` identifica o repositório no formato `owner/name`. | Sistema ou GitHub |
 | `BACKUP_ENCRYPTION_KEY`, `MERGE_QUEUE_GH_TOKEN`, `CRON_SECRET`, `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` | Segredos de backup e fila serial | Obrigatórias somente nos workflows que as referenciam. `CRON_SECRET` é o mesmo valor usado pela rota de runtime smoke e pelo workflow; não há secret alternativo. | GitHub secrets |
 | `GH_TOKEN`, `GITHUB_TOKEN`, `VERCEL_TEAM_ID` | Aliases consumidos pelas CLIs dentro dos workflows | Injetados pelo workflow; `VERCEL_TEAM_ID` recebe o org id já autorizado. | GitHub workflow |
 | `GITLEAKS_CONFIG`, `GITLEAKS_ENABLE_COMMENTS`, `GITLEAKS_ENABLE_SUMMARY`, `GITLEAKS_ENABLE_UPLOAD_ARTIFACT`, `GITLEAKS_VERSION` | Configuração fixa da action de secret scanning | Definidas no próprio workflow. Fixam o arquivo de regras, desabilitam comentários, resumo e upload de artefato, e selecionam a versão do scanner; não são configuração de operador e não entram em `.env.example`. | GitHub workflow |

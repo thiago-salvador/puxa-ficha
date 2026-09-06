@@ -4308,5 +4308,19 @@
         "2026": "70002553982"
       }
     }
+  },
+  {
+    "slug": "ruth-reis",
+    "nome_completo": "RUTH HELENA FERREIRA REIS",
+    "nome_urna": "RUTH REIS",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002554434"
+      }
+    }
   }
 ]

@@ -426,7 +426,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // b8cc9a759e195000044275fb86b76e8b9968d938e9e9decebca05bc504f5a83f.
   // 05/09/2026: PG17 mediu 97 aplicadas e zero falhas, incluindo as três
   // migrations de remediação e a DDL explícita da barreira de publicação.
-  schemaReplayTamanho: 97,
+  // Freshness closeout: PG17 mediu 98 aplicadas e zero falhas, incluindo a
+  // guarda de titular público em chapas_2026_publicas (20260905230739).
+  schemaReplayTamanho: 98,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

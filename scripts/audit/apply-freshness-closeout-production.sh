@@ -62,10 +62,10 @@ if [[ "$mode" == "backup" ]]; then
   bash scripts/audit/backup-closeout-production.sh "${2:?diretorio de backup obrigatorio}"
   exit 0
 fi
-node --import tsx scripts/audit/apply-master-review-remediation.ts "$mode" "$PF_EXPECTED_SHA" | \
+node --import tsx scripts/audit/apply-freshness-closeout.ts "$mode" "$PF_EXPECTED_SHA" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
 if [[ "$mode" == "apply" ]]; then
-  node --import tsx scripts/audit/apply-master-review-remediation.ts verify "$PF_EXPECTED_SHA" | \
+  node --import tsx scripts/audit/apply-freshness-closeout.ts verify "$PF_EXPECTED_SHA" | \
     PGOPTIONS='-c default_transaction_read_only=on -c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
 fi
-echo "PASS: master-review mode=$mode"
+echo "PASS: freshness-closeout mode=$mode"
