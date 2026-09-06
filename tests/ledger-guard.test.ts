@@ -61,7 +61,7 @@ describe("ledger-guard: as três regras do invariante", () => {
   })
 
   it("R2 é dispensada para as retidas, e só para elas", () => {
-    const topo = "20260808032540"
+    const topo = "20260906185805"
     const locais = [...RETIDAS_PADRAO.map((v) => arquivo(v, "retida")), arquivo(topo, "aplicada")]
 
     const r = compararLedgerComRepo([topo], locais)
