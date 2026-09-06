@@ -402,7 +402,8 @@ describe("classificador puro (#136)", () => {
     // Master review integral medido no PG17: 358 + mesmas 105 = 463 arquivos.
     // Fechamento residual medido no PG17: 360 + mesmas 105 = 465 arquivos.
     // Normalização do pleito 2026 medida no PG17: 361 + mesmas 105 = 466 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 361)
+    // Reclassificação de Dr. Helton medida no PG17: 362 + mesmas 105 = 467 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 362)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
