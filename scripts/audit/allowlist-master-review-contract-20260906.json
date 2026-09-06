@@ -1,7 +1,7 @@
 {
   "versao": "2026-09-06",
   "fonte": "TSE consulta_cand_2026, bem_candidato_2026 e DivulgaCand, fontes primarias dos pontos de atencao e coortes de retencao medidas em producao em 2026-09-06.",
-  "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar todos os estados patrimoniais de 2026, ligar a vice-presidencia oficial, retirar dois pontos sem sustentacao publica suficiente e manter as coortes de retencao exatamente assinadas.",
+  "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar todos os estados patrimoniais de 2026, ligar a vice-presidencia oficial, normalizar a proveniencia das candidaturas com SQ_CANDIDATO vigente, retirar dois pontos sem sustentacao publica suficiente e manter as coortes de retencao exatamente assinadas.",
   "coorte": [
     "clebio-genuino",
     "dr-luisinho",
@@ -61,6 +61,13 @@
       "slug": "leonardo-avalanche",
       "campos": ["status", "sq_candidato_2026", "fonte_dados", "verificacao_campos", "ultima_atualizacao"],
       "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "leonardo-avalanche",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"],
+      "max_registros": 1
     }
   ],
   "referencias": [
@@ -108,6 +115,24 @@
       "tabela": "coleta_log",
       "ref": "migration:20260906154500",
       "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260906185805",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"],
+      "max_registros": 52
+    },
+    {
+      "tabela": "historico_politico",
+      "ref": "20260906185805",
+      "campos": ["proveniencia"],
+      "max_registros": 52
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906185805",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
+      "max_registros": 53
     },
     {
       "tabela": "noticias_candidato",

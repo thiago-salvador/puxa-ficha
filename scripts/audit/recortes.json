@@ -505,7 +505,7 @@
     {
       "nome": "master-review-contract-20260906",
       "desde": "20260906150000",
-      "ate": "20260906155100",
+      "ate": "20260906185805",
       "allowlist": "scripts/audit/allowlist-master-review-contract-20260906.json",
       "divida": null
     }
