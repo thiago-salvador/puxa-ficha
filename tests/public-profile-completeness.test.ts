@@ -29,11 +29,21 @@ test("marca patrimônio e financiamento não coletados como acionáveis", () => 
       ...completeCore,
       patrimonio_eleicoes: [
         { ano: 2022, estado: "nao_coletado" },
-        { ano: 2016, estado: "vazio_confirmado" },
+        {
+          ano: 2016,
+          estado: "vazio_confirmado",
+          fonte_url: "https://dadosabertos.tse.jus.br/",
+          verificado_em: "2026-09-06T00:00:00.000Z",
+        },
       ],
       financiamento_eleicoes: [
         { ano: 2022, estado: "erro" },
-        { ano: 2016, estado: "ausencia_oficial" },
+        {
+          ano: 2016,
+          estado: "ausencia_oficial",
+          fonte_url: "https://dadosabertos.tse.jus.br/",
+          verificado_em: "2026-09-06T00:00:00.000Z",
+        },
       ],
     },
   })
@@ -51,13 +61,28 @@ test("aceita publicação, ausência oficial, zero e pleito futuro", () => {
       ...completeCore,
       patrimonio_eleicoes: [
         { ano: 2022, estado: "publicado" },
-        { ano: 2018, estado: "vazio_confirmado" },
+        {
+          ano: 2018,
+          estado: "vazio_confirmado",
+          fonte_url: "https://dadosabertos.tse.jus.br/",
+          verificado_em: "2026-09-06T00:00:00.000Z",
+        },
       ],
       financiamento_eleicoes: [
         { ano: 2022, estado: "zero_declarado" },
-        { ano: 2018, estado: "ausencia_oficial" },
+        {
+          ano: 2018,
+          estado: "ausencia_oficial",
+          fonte_url: "https://dadosabertos.tse.jus.br/",
+          verificado_em: "2026-09-06T00:00:00.000Z",
+        },
         { ano: 2026, estado: "pleito_futuro" },
-        { ano: 1998, estado: "fora_da_serie_oficial" },
+        {
+          ano: 1998,
+          estado: "fora_da_serie_oficial",
+          fonte_url: "https://dadosabertos.tse.jus.br/",
+          verificado_em: "2026-09-06T00:00:00.000Z",
+        },
       ],
     },
   })
@@ -139,6 +164,34 @@ test("falha fechado quando séries monetárias ou identidade do payload são inv
   ])
 })
 
+test("ausência oficial sem fonte e data é lacuna objetiva", () => {
+  const result = analyzePublicProfileCompleteness("sem-prova", {
+    sourceStatus: "live",
+    data: {
+      slug: "sem-prova",
+      ...completeCore,
+      patrimonio_eleicoes: [{ ano: 2022, estado: "vazio_confirmado" }],
+      financiamento_eleicoes: [{ ano: 2022, estado: "ausencia_oficial" }],
+    },
+  })
+  assert.deepEqual(result.actionable, [
+    {
+      slug: "sem-prova",
+      kind: "profile_payload_invalid",
+      field: "patrimonio_eleicoes[0]",
+      year: 2022,
+      state: "vazio_confirmado_without_official_proof",
+    },
+    {
+      slug: "sem-prova",
+      kind: "profile_payload_invalid",
+      field: "financiamento_eleicoes[0]",
+      year: 2022,
+      state: "ausencia_oficial_without_official_proof",
+    },
+  ])
+})
+
 test("gate rejeita inventário público vazio", async () => {
   const originalFetch = globalThis.fetch
   globalThis.fetch = async () => Response.json({ slugs: [] })
@@ -152,6 +205,25 @@ test("gate rejeita inventário público vazio", async () => {
         expectZeroActionable: true,
       }),
       /inventário vazio ou inválido/,
+    )
+  } finally {
+    globalThis.fetch = originalFetch
+  }
+})
+
+test("gate rejeita slugs públicos duplicados", async () => {
+  const originalFetch = globalThis.fetch
+  globalThis.fetch = async () => Response.json({ slugs: ["duplicado", "duplicado"] })
+  try {
+    await assert.rejects(
+      runPublicProfileCompletenessAudit({
+        baseUrl: "https://example.test",
+        out: null,
+        slug: null,
+        allowActionable: false,
+        expectZeroActionable: true,
+      }),
+      /slugs duplicados/,
     )
   } finally {
     globalThis.fetch = originalFetch

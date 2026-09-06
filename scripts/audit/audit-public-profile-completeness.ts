@@ -24,6 +24,8 @@ type ProfileEnvelope = {
 type MoneyElection = {
   ano?: number
   estado?: string
+  fonte_url?: string | null
+  verificado_em?: string | null
 }
 
 const PATRIMONIO_STATES = new Set(["publicado", "vazio_confirmado", "nao_coletado"])
@@ -66,6 +68,7 @@ function moneyIssues(
   kind: "patrimonio_uncollected" | "financiamento_uncollected",
   field: "patrimonio_eleicoes" | "financiamento_eleicoes",
   allowedStates: ReadonlySet<string>,
+  proofRequiredStates: ReadonlySet<string>,
 ): ProfileCompletenessIssue[] {
   if (!Array.isArray(value)) {
     return [{ slug, kind: "profile_payload_invalid", field, state: "missing_or_not_array" }]
@@ -84,6 +87,19 @@ function moneyIssues(
         field: `${field}[${index}]`,
         year: item.ano,
         state: item.estado ?? "invalid_year_or_state",
+      })
+      return
+    }
+    if (
+      proofRequiredStates.has(item.estado) &&
+      (!hasValue(item.fonte_url) || !hasValue(item.verificado_em))
+    ) {
+      issues.push({
+        slug,
+        kind: "profile_payload_invalid",
+        field: `${field}[${index}]`,
+        year: item.ano,
+        state: `${item.estado}_without_official_proof`,
       })
       return
     }
@@ -125,6 +141,7 @@ export function analyzePublicProfileCompleteness(
       "patrimonio_uncollected",
       "patrimonio_eleicoes",
       PATRIMONIO_STATES,
+      new Set(["vazio_confirmado"]),
     ),
   )
   actionable.push(
@@ -134,6 +151,7 @@ export function analyzePublicProfileCompleteness(
       "financiamento_uncollected",
       "financiamento_eleicoes",
       FINANCIAMENTO_STATES,
+      new Set(["ausencia_oficial", "fora_da_serie_oficial"]),
     ),
   )
 

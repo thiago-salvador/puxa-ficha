@@ -22,6 +22,7 @@ import {
 import { maskDocumentLikeSequences } from "../../src/lib/public-profile-dto"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { dedupeTsePatrimonioRows } from "../../src/lib/tse-patrimonio-dedupe"
+import { carregarBloqueios } from "./identidade-bloqueada"
 import { financiamentoReceitasZipUrls } from "./tse-financiamento-receitas-urls"
 import {
   financiamentoReceitaIdentity,
@@ -327,6 +328,25 @@ async function buildSQMap(
     }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
+
+  // O SQ curado continua disponível para coletar linhas reais. Ele não prova
+  // ausência por si só: `declarouBens` só é preenchido quando a linha oficial
+  // de consulta_cand passa pelo resolver logo abaixo.
+  const bloqueios = carregarBloqueios()
+  for (const candidato of candidatos) {
+    const sq = candidato.ids.tse_sq_candidato?.[String(ano)]?.trim()
+    if (!sq) continue
+    const configuredUf = candidato.ids.tse_uf_candidatura?.[String(ano)]?.trim().toUpperCase()
+    if (bloqueios.bloqueio({ slug: candidato.slug, sq, ano })) continue
+    selectedBySlug.set(candidato.slug, {
+      candidato,
+      sq,
+      method: "sq-preloaded",
+      priority: getResolveMethodPriority("sq-preloaded"),
+      uf: configuredUf || undefined,
+      declarouBens: undefined,
+    })
+  }
 
   for (const csvPath of allPaths) {
     await parseCSV(csvPath, (row) => {

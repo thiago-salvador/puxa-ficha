@@ -150,10 +150,7 @@ test("patrimônio registra ausência oficial somente para identidade resolvida s
 })
 
 test("identidade e erro de patrimônio fecham o ingest sem falso verde", () => {
-  assert.doesNotMatch(
-    source,
-    /for \(const candidato of candidatos\) \{[\s\S]{0,900}selectedBySlug\.set\(candidato\.slug/,
-  )
+  assert.match(source, /method: "sq-preloaded"[\s\S]{0,160}declarouBens: undefined/)
   assert.match(source, /const declarouBens = row\.ST_DECLARAR_BENS/)
   assert.match(source, /\.filter\(\(identity\) => identity\.declarouBens === "N"\)/)
   assert.match(source, /Erro patrimonio \$\{ano\}:[\s\S]{0,100}throw err/)
