@@ -5,6 +5,7 @@ import { join } from "node:path"
 import { test } from "node:test"
 import {
   financiamentoSourceFileUf,
+  hasOfficialCandidateComplementaryPackage,
   hasOfficialPatrimonioPackage,
   isDoadorOriginarioReceiptSource,
   patrimonioDeclarationObservation,
@@ -67,6 +68,9 @@ test("patrimonio só exige download nos anos publicados pelo TSE", () => {
 })
 
 test("anexa ST_DECLARAR_BENS do arquivo complementar pela identidade oficial", () => {
+  assert.equal(hasOfficialCandidateComplementaryPackage(2016), false)
+  assert.equal(hasOfficialCandidateComplementaryPackage(2018), true)
+  assert.equal(hasOfficialCandidateComplementaryPackage(2022), true)
   assert.deepEqual(
     patrimonioDeclarationObservation(
       {
@@ -87,6 +91,8 @@ test("anexa ST_DECLARAR_BENS do arquivo complementar pela identidade oficial", (
   )
   assert.match(source, /patrimonioDeclarationByIdentity\.get/)
   assert.match(source, /selection\.observed[\s\S]*?patrimonioDeclarationByIdentity/)
+  assert.match(source, /consulta_cand_complementar\/consulta_cand_complementar_\$\{ano\}\.zip/)
+  assert.match(source, /loadPatrimonioDeclarationObservations\(ano, governorUFs\)/)
 })
 
 test("ambiguidades históricas usam o registro final comprovado no TSE", () => {

@@ -148,8 +148,10 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: data/tse
-          key: tse-downloads-${{ runner.os }}-v1-${{ matrix.shard }}
+          key: tse-downloads-${{ runner.os }}-v2-${{ matrix.shard }}
           restore-keys: |
+            tse-downloads-${{ runner.os }}-v2-${{ matrix.shard }}
+            tse-downloads-${{ runner.os }}-v2
             tse-downloads-${{ runner.os }}-v1-${{ matrix.shard }}
             tse-downloads-${{ runner.os }}-v1
       - run: npm ci
