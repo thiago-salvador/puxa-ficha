@@ -4,6 +4,7 @@ export interface CandidatoConfig {
   nome_urna: string
   cargo_disputado:
     | "Presidente"
+    | "Vice-Presidente"
     | "Governador"
     | "Vice-Governador"
     | "Senador"
