@@ -271,7 +271,7 @@ probe_cron_freshness() {
   # antigo ou payload malformado não pode transformar uma lista vazia em verde.
   if ! jq -e '
     .ok == true and (.checks | type == "array") and
-    ([.checks[].name] | sort == ["news-refresh", "published-consistency", "revalidate-public-cache", "send-digest"]) and
+    ([.checks[].name] | sort == ["news-refresh", "news-refresh-recover", "published-consistency", "revalidate-public-cache", "send-digest"]) and
     all(.checks[]; has("age_hours") and (.age_hours == null or
       ((.age_hours | type) == "number" and .age_hours >= 0)))
   ' "$body" >/dev/null 2>&1; then
@@ -288,7 +288,7 @@ probe_cron_freshness() {
     limit_hours="$max_hours"
     [[ "$name" == "revalidate-public-cache" ]] && limit_hours=1
     if [[ "$age" == "null" ]]; then
-      if [[ "$name" == "published-consistency" || "$name" == "revalidate-public-cache" ]]; then
+      if [[ "$name" == "news-refresh-recover" || "$name" == "published-consistency" || "$name" == "revalidate-public-cache" ]]; then
         ANOMALIES=$((ANOMALIES + 1))
         publish_anomaly "vercel-cron-${name}" "vercel-cron-${name}" \
           "recibo de execução ausente" "$url" "" "vercel.json"

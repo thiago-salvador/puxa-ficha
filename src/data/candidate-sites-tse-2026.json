@@ -4,24 +4,24 @@
   "source": {
     "catalog_url": "https://dadosabertos.tse.jus.br/api/3/action/package_show?id=candidatos-2026",
     "candidate_resource_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
-    "candidate_resource_sha256": "72293d243494be123d1962144925d94e02dfdc9063dca355773adce96dfe2e57",
+    "candidate_resource_sha256": "1c16c0fa6b89510e2677744bc25c8adb6f300321960fa9e222144227a3d358c7",
     "resource_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/rede_social_candidato_2026.zip",
-    "resource_sha256": "24dd2bd5500ec8bb97078c00967e5035f5c8ef76e5934d7e6499dcb5a852353b",
+    "resource_sha256": "c89a313b03d952b3973ff0fc325f96ee372847d45c38a2c074f2bf757308c098",
     "license": "Creative Commons Atribuição",
-    "collected_at": "2026-08-26T22:12:16.324Z",
-    "generated_at_tse": "26/08/2026 16:30:24"
+    "collected_at": "2026-09-06T15:27:12.979Z",
+    "generated_at_tse": "06/09/2026 08:30:48"
   },
   "counts": {
-    "profiles_total": 271,
-    "profiles_matched": 131,
-    "profiles_with_sites": 129,
-    "site_rows": 876,
-    "unique_entries": 859,
-    "unique_sites": 830,
-    "non_linkable_entries": 29,
-    "duplicate_rows_removed": 17,
+    "profiles_total": 317,
+    "profiles_matched": 178,
+    "profiles_with_sites": 174,
+    "site_rows": 1127,
+    "unique_entries": 1105,
+    "unique_sites": 1069,
+    "non_linkable_entries": 36,
+    "duplicate_rows_removed": 22,
     "ambiguous_profiles": 1,
-    "declared_sq_missing": 2
+    "declared_sq_missing": 0
   },
   "ambiguous_profiles": [
     {
@@ -32,14 +32,27 @@
       ]
     }
   ],
-  "unmatched_declared_profiles": [
+  "unmatched_declared_profiles": [],
+  "verified_empty_profiles": [
     {
-      "slug": "elizeu-aguiar",
-      "sq_candidato": "180002533958"
+      "slug": "ariel-capistrano",
+      "sq_candidato": "50002535253",
+      "match_method": "sq_candidato"
     },
     {
-      "slug": "ismar-marques",
-      "sq_candidato": "180002533957"
+      "slug": "carlos-cley",
+      "sq_candidato": "30002536313",
+      "match_method": "sq_candidato"
+    },
+    {
+      "slug": "jose-estevao",
+      "sq_candidato": "50002536579",
+      "match_method": "sq_candidato"
+    },
+    {
+      "slug": "policial-edjane",
+      "sq_candidato": "250002548080",
+      "match_method": "sq_candidato"
     }
   ],
   "candidates": {
@@ -86,6 +99,27 @@
           "order": 8,
           "url": "https://t.me/ACM_NETO",
           "original_url": "HTTPS://T.ME/ACM_NETO"
+        },
+        {
+          "order": 9,
+          "url": "https://x.com/acmnetoba",
+          "original_url": "https://x.com/acmnetoba"
+        },
+        {
+          "order": 10,
+          "url": "https://open.spotify.com/show/6TcAOwgV68RGqe64Oj7Ywv?si=77a24ce4f1b446fc",
+          "original_url": "open.spotify.com/show/6TcAOwgV68RGqe64Oj7Ywv?si=77a24ce4f1b446fc"
+        }
+      ]
+    },
+    "adriano-funileiro": {
+      "sq_candidato": "160002552560",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR"
         }
       ]
     },
@@ -194,6 +228,72 @@
           "order": 8,
           "url": "https://www.kalil12.com.br/",
           "original_url": "https://www.kalil12.com.br"
+        },
+        {
+          "order": 9,
+          "url": "https://linktr.ee/alexandre.kalil",
+          "original_url": "https://linktr.ee/alexandre.kalil"
+        },
+        {
+          "order": 10,
+          "url": "https://www.twibbonize.com/timekalil?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+          "original_url": "https://www.twibbonize.com/timekalil?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+        },
+        {
+          "order": 11,
+          "url": "https://chat.whatsapp.com/Hg76EUcgXo35Rs6Qknqu6l",
+          "original_url": "https://chat.whatsapp.com/Hg76EUcgXo35Rs6Qknqu6l"
+        },
+        {
+          "order": 12,
+          "url": "https://www.flickr.com/photos/204785450@N08/",
+          "original_url": "https://www.flickr.com/photos/204785450@N08/"
+        },
+        {
+          "order": 13,
+          "url": "https://chat.whatsapp.com/LhOHhAG52fi5zn6hBtlIiD",
+          "original_url": "https://chat.whatsapp.com/LhOHhAG52fi5zn6hBtlIiD"
+        },
+        {
+          "order": 14,
+          "url": "https://www.threads.com/@alexandrekaliloficial",
+          "original_url": "https://www.threads.com/@alexandrekaliloficial"
+        }
+      ]
+    },
+    "alexandre-salomao": {
+      "sq_candidato": "160002547594",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ALEXANDRE.SALOMAO.712/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ALEXANDRE.SALOMAO.712/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/ALEXANDRESALOMAO.ADV/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ALEXANDRESALOMAO.ADV/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/ALEXANDRESALOMAO.ADV/",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/ALEXANDRESALOMAO.ADV/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/ALEXANDRESALOMAO.ADVOCACIA/",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/ALEXANDRESALOMAO.ADVOCACIA/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/ALEXANDRESALOMAO.ADVOCACIA/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ALEXANDRESALOMAO.ADVOCACIA/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.instagram.com/dralexandresalomao.adv?igsi=MWFpYmc2dGdqb2NpbA==",
+          "original_url": "https://www.instagram.com/dralexandresalomao.adv?igsi=MWFpYmc2dGdqb2NpbA=="
         }
       ]
     },
@@ -266,6 +366,11 @@
           "order": 9,
           "url": "https://www.allysonbezerra.com.br/",
           "original_url": "WWW.ALLYSONBEZERRA.COM.BR"
+        },
+        {
+          "order": 10,
+          "url": "https://soundcloud.com/allyson-governador-44",
+          "original_url": "https://soundcloud.com/allyson-governador-44"
         }
       ]
     },
@@ -292,6 +397,16 @@
           "order": 4,
           "url": "https://www.instagram.com/ANDREDOPRADOSP/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/ANDREDOPRADOSP/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@andredopradosp",
+          "original_url": "https://www.tiktok.com/@andredopradosp"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/andredopradosp",
+          "original_url": "https://x.com/andredopradosp"
         }
       ]
     },
@@ -359,6 +474,32 @@
           "order": 5,
           "url": "https://www.instagram.com/ARACELILEMOS?IGSH=MTKXNG80BJQ4OTF6ZQ==",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/ARACELILEMOS?IGSH=MTKXNG80BJQ4OTF6ZQ=="
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/aracelilemos/status/2095937164311691417?s=46",
+          "original_url": "https://x.com/aracelilemos/status/2095937164311691417?s=46"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/aracelilemos?s=11",
+          "original_url": "https://x.com/aracelilemos?s=11"
+        },
+        {
+          "order": 8,
+          "url": "https://k.kwai.com/u/@aracelilemos/ACy1WCKJ",
+          "original_url": "https://k.kwai.com/u/@aracelilemos/ACy1WCKJ"
+        }
+      ]
+    },
+    "arinalda-do-mlb": {
+      "sq_candidato": "200002547826",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://arinaldamedeiros.up/",
+          "original_url": "ARINALDAMEDEIROS.UP"
         }
       ]
     },
@@ -497,8 +638,19 @@
       "sites": [
         {
           "order": 1,
-          "url": null,
-          "original_url": "DRBENONIMENDES"
+          "url": "https://instagram.com/drbenonimendes",
+          "original_url": "https://instagram.com/drbenonimendes"
+        }
+      ]
+    },
+    "bruno-pedreiro-do-pco": {
+      "sq_candidato": "240002553718",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/C/NOME-DE-URNA-2026",
+          "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR/C/NOME-DE-URNA-2026"
         }
       ]
     },
@@ -525,6 +677,32 @@
           "order": 4,
           "url": "https://wa.me/QR/NC7R4CKA5MISP1",
           "original_url": "WA.ME/QR/NC7R4CKA5MISP1"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/caduxavier/",
+          "original_url": "https://www.instagram.com/caduxavier/"
+        },
+        {
+          "order": 6,
+          "url": "https://k.kwai.com/u/@caduxavierrn/x4CmCphE",
+          "original_url": "https://k.kwai.com/u/@caduxavierrn/x4CmCphE"
+        },
+        {
+          "order": 7,
+          "url": "https://web.facebook.com/profile.php?id=6157658513335",
+          "original_url": "https://web.facebook.com/profile.php?id=6157658513335"
+        }
+      ]
+    },
+    "camilo-duarte": {
+      "sq_candidato": "150002552603",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
         }
       ]
     },
@@ -536,6 +714,52 @@
           "order": 1,
           "url": "https://www.instagram.com/CAPITAOWAGNERSOUSA/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/CAPITAOWAGNERSOUSA/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@capitaowagnersousa",
+          "original_url": "https://www.tiktok.com/@capitaowagnersousa"
+        },
+        {
+          "order": 4,
+          "url": "https://youtube.com/@capitaowagnersousa",
+          "original_url": "https://youtube.com/@capitaowagnersousa"
+        },
+        {
+          "order": 5,
+          "url": "https://k.kwai.com/u/@capitaowagnersousa/C3qDxabk",
+          "original_url": "https://k.kwai.com/u/@capitaowagnersousa/C3qDxabk"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/capitaowagnersousa",
+          "original_url": "https://www.facebook.com/capitaowagnersousa"
+        },
+        {
+          "order": 7,
+          "url": "http://www.capitaowagner.com.br/",
+          "original_url": "http://www.capitaowagner.com.br/"
+        },
+        {
+          "order": 8,
+          "url": "http://www.capitaowagnersenador.com.br/",
+          "original_url": "http://www.capitaowagnersenador.com.br/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/capitaowagnersousareserva",
+          "original_url": "https://www.instagram.com/capitaowagnersousareserva"
+        }
+      ]
+    },
+    "carlos-jararaca": {
+      "sq_candidato": "200002550223",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/CARLOS_JARARACA/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/CARLOS_JARARACA/"
         }
       ]
     },
@@ -552,6 +776,27 @@
           "order": 2,
           "url": "https://www.instagram.com/UNIDADEPOPULARCE?IGSH=OXM5CJDZODRYZMHZ",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/UNIDADEPOPULARCE?IGSH=OXM5CJDZODRYZMHZ"
+        }
+      ]
+    },
+    "cesar-pontes": {
+      "sq_candidato": "210002552592",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/C/NOME-DE-URNA-2026",
+          "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR/C/NOME-DE-URNA-2026"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/cesaraugustopontesferreira/",
+          "original_url": "https://www.instagram.com/cesaraugustopontesferreira/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/cesar.augusto.pontes.ferreira",
+          "original_url": "https://www.facebook.com/cesar.augusto.pontes.ferreira"
         }
       ]
     },
@@ -914,6 +1159,42 @@
           "order": 65,
           "url": "https://soundcloud.com/cirogomes",
           "original_url": "https://soundcloud.com/cirogomes"
+        },
+        {
+          "order": 66,
+          "url": "https://zap.cirogomes.com.br/",
+          "original_url": "https://zap.cirogomes.com.br/"
+        }
+      ]
+    },
+    "clariana-barao": {
+      "sq_candidato": "280002552484",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "X - @Clarianabr"
+        },
+        {
+          "order": 2,
+          "url": null,
+          "original_url": "YouTube - @ClarianaBarãoo"
+        },
+        {
+          "order": 3,
+          "url": null,
+          "original_url": "Tik Tok - @clarianabr"
+        },
+        {
+          "order": 4,
+          "url": null,
+          "original_url": "@clarianabarao27"
+        },
+        {
+          "order": 5,
+          "url": null,
+          "original_url": "@clarianabarao"
         }
       ]
     },
@@ -930,6 +1211,17 @@
           "order": 2,
           "url": null,
           "original_url": "CLEBER RABELO (FACEBOOK)"
+        }
+      ]
+    },
+    "clebio-genuino": {
+      "sq_candidato": "230002553857",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
         }
       ]
     },
@@ -971,6 +1263,31 @@
           "order": 7,
           "url": "https://whatsapp.com/CHANNEL/0029VBAF4BOI1RCPR3FP9N2U",
           "original_url": "HTTPS://WHATSAPP.COM/CHANNEL/0029VBAF4BOI1RCPR3FP9N2U"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/clecio.ia?igsh=M2xkZHNjaHU2cTVh",
+          "original_url": "https://www.instagram.com/clecio.ia?igsh=M2xkZHNjaHU2cTVh"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/timedoclecio?igsh=czk2Y3J4emd2amE1",
+          "original_url": "https://www.instagram.com/timedoclecio?igsh=czk2Y3J4emd2amE1"
+        },
+        {
+          "order": 10,
+          "url": "https://www.instagram.com/cortapraclecio?igsh=MWk3MXNvOHk4M2Q2cA==",
+          "original_url": "https://www.instagram.com/cortapraclecio?igsh=MWk3MXNvOHk4M2Q2cA=="
+        },
+        {
+          "order": 11,
+          "url": "https://www.instagram.com/tropadoclecio?igsi=OGl3d2hjZ25oY3Vp",
+          "original_url": "https://www.instagram.com/tropadoclecio?igsi=OGl3d2hjZ25oY3Vp"
+        },
+        {
+          "order": 12,
+          "url": "https://www.instagram.com/juntascomclecio_?igsi=MzFoZDdvdHEzaG52",
+          "original_url": "https://www.instagram.com/juntascomclecio_?igsi=MzFoZDdvdHEzaG52"
         }
       ]
     },
@@ -982,6 +1299,36 @@
           "order": 1,
           "url": null,
           "original_url": "@CORONELBSNELLO"
+        },
+        {
+          "order": 2,
+          "url": "https://instagram.com/coronelbusnello",
+          "original_url": "https://instagram.com/coronelbusnello"
+        },
+        {
+          "order": 3,
+          "url": "https://tiktok.com/@coronel.busnello",
+          "original_url": "https://tiktok.com/@coronel.busnello"
+        },
+        {
+          "order": 4,
+          "url": "https://facebook.com/199hvq3bfr",
+          "original_url": "https://facebook.com/199hvq3bfr"
+        },
+        {
+          "order": 5,
+          "url": "https://kwai.com/@coronelbusnell",
+          "original_url": "https://kwai.com/@coronelbusnell"
+        },
+        {
+          "order": 6,
+          "url": "https://youtube.com/@coronelbusnello",
+          "original_url": "https://youtube.com/@coronelbusnello"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/coronelbusnello",
+          "original_url": "https://x.com/coronelbusnello"
         }
       ]
     },
@@ -1001,6 +1348,17 @@
         }
       ]
     },
+    "daniel-lemes": {
+      "sq_candidato": "120002552201",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
+        }
+      ]
+    },
     "daniela-paiva": {
       "sq_candidato": "10002533538",
       "match_method": "sq_candidato",
@@ -1009,6 +1367,63 @@
           "order": 1,
           "url": "https://www.instagram.com/AMORPELOACRE?IGSH=MW1PEDZXDM8XNXFKNQ==",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/AMORPELOACRE?IGSH=MW1PEDZXDM8XNXFKNQ=="
+        }
+      ]
+    },
+    "danilo-pinheiro": {
+      "sq_candidato": "90002553733",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
+        }
+      ]
+    },
+    "danilo-soares": {
+      "sq_candidato": "60002552498",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/danilosoares.advogado/",
+          "original_url": "https://www.instagram.com/danilosoares.advogado/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/danilosoares.35/",
+          "original_url": "https://www.instagram.com/danilosoares.35/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/danilosoaresceara/",
+          "original_url": "https://www.instagram.com/danilosoaresceara/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/democrata.ce",
+          "original_url": "https://www.instagram.com/democrata.ce"
+        },
+        {
+          "order": 5,
+          "url": "https://youtube.com/@danilosoaresceara?si=qWmbyQlVEtegWE7r",
+          "original_url": "https://youtube.com/@danilosoaresceara?si=qWmbyQlVEtegWE7r"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/profile.php?id=61593983091180",
+          "original_url": "https://www.facebook.com/profile.php?id=61593983091180"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/danilosoaresce",
+          "original_url": "https://x.com/danilosoaresce"
+        },
+        {
+          "order": 8,
+          "url": "https://www.tiktok.com/@danilosoaresceara",
+          "original_url": "https://www.tiktok.com/@danilosoaresceara"
         }
       ]
     },
@@ -1116,6 +1531,73 @@
           "order": 17,
           "url": "https://www.instagram.com/pracimajuventude70",
           "original_url": "https://www.instagram.com/pracimajuventude70"
+        },
+        {
+          "order": 18,
+          "url": "https://www.facebook.com/davidalmeidaam",
+          "original_url": "https://www.facebook.com/davidalmeidaam"
+        },
+        {
+          "order": 19,
+          "url": "https://open.spotify.com/intl-pt/artist/5K1VFqIW9iCx8lac16qktF",
+          "original_url": "https://open.spotify.com/intl-pt/artist/5K1VFqIW9iCx8lac16qktF"
+        }
+      ]
+    },
+    "delcidio-amaral": {
+      "sq_candidato": "120002552155",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.youtube.com/@delcidioamaral25",
+          "original_url": "https://www.youtube.com/@delcidioamaral25"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/people/Delcidio%C2%BFAmaral",
+          "original_url": "https://www.facebook.com/people/Delcidio¿Amaral"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/people/Delcidio%C2%BFAmaral%C2%BF25",
+          "original_url": "https://www.facebook.com/people/Delcidio¿Amaral¿25"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/delcidioamaral25",
+          "original_url": "https://www.instagram.com/delcidioamaral25"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@delcidioamaral.25",
+          "original_url": "https://www.tiktok.com/@delcidioamaral.25"
+        },
+        {
+          "order": 6,
+          "url": "https://www.instagram.com/delcidioms",
+          "original_url": "https://www.instagram.com/delcidioms"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/DelcidioAmaral/",
+          "original_url": "https://www.facebook.com/DelcidioAmaral/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/delcidioms",
+          "original_url": "https://www.facebook.com/delcidioms"
+        }
+      ]
+    },
+    "dimas-cassimiro": {
+      "sq_candidato": "100002552700",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
         }
       ]
     },
@@ -1219,6 +1701,17 @@
           "order": 1,
           "url": "https://www.facebook.com/PROFILE.PHP?ID=61592070802260",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/PROFILE.PHP?ID=61592070802260"
+        }
+      ]
+    },
+    "du-pereira": {
+      "sq_candidato": "270002550458",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/DUPEREIRA.OFICIAL?IGSH=ZTEWC293BJFXNGFX",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/DUPEREIRA.OFICIAL?IGSH=ZTEWC293BJFXNGFX"
         }
       ]
     },
@@ -1388,6 +1881,27 @@
           "order": 3,
           "url": "https://www.instagram.com/EFRAIMFILHOPB",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/EFRAIMFILHOPB"
+        }
+      ]
+    },
+    "elizeu-aguiar": {
+      "sq_candidato": "180002549920",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.facebook.com/PROFILE.PHP?ID=61590574529887",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/PROFILE.PHP?ID=61590574529887 - HTTPS://WWW.FACEBOOK.C"
+        },
+        {
+          "order": 2,
+          "url": "https://elizeuaguiar.com.br/",
+          "original_url": "HTTPS://ELIZEUAGUIAR.COM.BR/ - HTTPS://ELIZEUAGUIAR.COM.BR/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/ELIZEUAGUIARR",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ELIZEUAGUIARR - HTTPS://WWW.INSTAGRAM.COM/ELIZEUAGUIA"
         }
       ]
     },
@@ -1799,6 +2313,11 @@
           "order": 83,
           "url": "https://open.spotify.com/intl-pt/artist/69uolt2WjzfdUoBzNywItr",
           "original_url": "https://open.spotify.com/intl-pt/artist/69uolt2WjzfdUoBzNywItr"
+        },
+        {
+          "order": 84,
+          "url": "https://www.instagram.com/channel/AbbTcbyjlOumA9Lx/",
+          "original_url": "https://www.instagram.com/channel/AbbTcbyjlOumA9Lx/"
         }
       ]
     },
@@ -1820,6 +2339,27 @@
           "order": 3,
           "url": "https://www.facebook.com/emanuel.cacho.1/",
           "original_url": "https://www.facebook.com/emanuel.cacho.1/"
+        }
+      ]
+    },
+    "expedito-mendonca": {
+      "sq_candidato": "70002552341",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/mexpedito/",
+          "original_url": "https://www.instagram.com/mexpedito/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/expedito.mendonca",
+          "original_url": "https://www.facebook.com/expedito.mendonca"
         }
       ]
     },
@@ -1912,6 +2452,58 @@
           "order": 9,
           "url": "https://www.facebook.com/FABIOGOV55",
           "original_url": "FACEBOOK - HTTPS://WWW.FACEBOOK.COM/FABIOGOV55"
+        },
+        {
+          "order": 10,
+          "url": "http://www.fabiogov55.com.br/",
+          "original_url": "http://www.fabiogov55.com.br/"
+        }
+      ]
+    },
+    "farah-mesquita": {
+      "sq_candidato": "230002549294",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "FARAH_GOVERNADOR"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/FARAH_GOVERNADOR?IGSH=MXRJCDDJCMVUYWHIZG%3D%3D&UTM_SOU",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/FARAH_GOVERNADOR?IGSH=MXRJCDDJCMVUYWHIZG%3D%3D&UTM_SOU"
+        }
+      ]
+    },
+    "felicio-ramuth": {
+      "sq_candidato": "250002541302",
+      "match_method": "nome_completo_exato_unico",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/felicioramuth?igsi=OHBycGNwOGxubzdi&utm_source=qr",
+          "original_url": "https://www.instagram.com/felicioramuth?igsi=OHBycGNwOGxubzdi&utm_source=qr"
+        },
+        {
+          "order": 2,
+          "url": "https://www.tiktok.com/@felicio.ramuth?_r=1&_t=ZS-99LryCCy3PM",
+          "original_url": "https://www.tiktok.com/@felicio.ramuth?_r=1&_t=ZS-99LryCCy3PM"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/share/1Ley2pK3gJ/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1Ley2pK3gJ/?mibextid=wwXIfr"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/felicioramuth?s=11",
+          "original_url": "https://x.com/felicioramuth?s=11"
+        },
+        {
+          "order": 5,
+          "url": "https://youtube.com/@felicio.ramuth?si=9ERjayfg9bMKYGHg",
+          "original_url": "https://youtube.com/@felicio.ramuth?si=9ERjayfg9bMKYGHg"
         }
       ]
     },
@@ -2094,6 +2686,52 @@
           "order": 38,
           "url": "https://flaviobolsonaro.net/",
           "original_url": "FLAVIOBOLSONARO.NET"
+        },
+        {
+          "order": 39,
+          "url": "https://www.jogotesouraco.com.br/",
+          "original_url": "https://www.jogotesouraco.com.br/"
+        },
+        {
+          "order": 40,
+          "url": "https://www.youtube.com/@tv.celular",
+          "original_url": "https://www.youtube.com/@tv.celular"
+        },
+        {
+          "order": 41,
+          "url": "https://www.threads.com/@flaviobolsonaro?igshid=NTc4MTIwNjQ2YQ%3D%3D",
+          "original_url": "https://www.threads.com/@flaviobolsonaro?igshid=NTc4MTIwNjQ2YQ%3D%3D"
+        },
+        {
+          "order": 42,
+          "url": "https://tvcelular.com.br/",
+          "original_url": "https://tvcelular.com.br"
+        }
+      ]
+    },
+    "flavio-roscoe": {
+      "sq_candidato": "130002550834",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ROSCOE.FLAVIO/",
+          "original_url": "https://www.instagram.com/ROSCOE.FLAVIO/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/channel/AbaZqg7dbgxxwdhz/",
+          "original_url": "https://www.instagram.com/channel/AbaZqg7dbgxxwdhz/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/flavioroscoenogueira/",
+          "original_url": "https://www.facebook.com/flavioroscoenogueira/"
+        },
+        {
+          "order": 4,
+          "url": "https://br.linkedin.com/in/fl%C3%A1vio-roscoe-377998300",
+          "original_url": "https://br.linkedin.com/in/flávio-roscoe-377998300"
         }
       ]
     },
@@ -2130,6 +2768,42 @@
           "order": 6,
           "url": "https://www.instagram.com/GABRIELAZEVEDO/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/GABRIELAZEVEDO/"
+        },
+        {
+          "order": 7,
+          "url": "https://x.com/oGabrielAzevedo",
+          "original_url": "https://x.com/oGabrielAzevedo"
+        },
+        {
+          "order": 8,
+          "url": "https://gabriel15.com/",
+          "original_url": "https://gabriel15.com/"
+        },
+        {
+          "order": 10,
+          "url": "https://gabriel15.app/",
+          "original_url": "https://gabriel15.app/"
+        },
+        {
+          "order": 11,
+          "url": "https://www.youtube.com/@gabrieldeazevedo",
+          "original_url": "https://www.youtube.com/@gabrieldeazevedo"
+        },
+        {
+          "order": 12,
+          "url": "https://linktr.ee/gabrielazevedo",
+          "original_url": "https://linktr.ee/gabrielazevedo"
+        }
+      ]
+    },
+    "gal-leite": {
+      "sq_candidato": "140002551943",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/GUALDINALEITE",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/GUALDINALEITE"
         }
       ]
     },
@@ -2202,6 +2876,26 @@
           "order": 2,
           "url": "https://www.instagram.com/GELSONMERISIO/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/GELSONMERISIO/"
+        },
+        {
+          "order": 3,
+          "url": "https://x.com/Merisio",
+          "original_url": "https://x.com/Merisio"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/gelsonmerisio/?locale=pt",
+          "original_url": "https://www.facebook.com/gelsonmerisio/?locale=pt"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@gelsonmerisio?_r=1&_t=ZS-99Qq1ipnA1w",
+          "original_url": "https://www.tiktok.com/@gelsonmerisio?_r=1&_t=ZS-99Qq1ipnA1w"
+        },
+        {
+          "order": 6,
+          "url": "https://www.flickr.com/photos/204883824@N08/",
+          "original_url": "https://www.flickr.com/photos/204883824@N08/"
         }
       ]
     },
@@ -2400,6 +3094,26 @@
           "order": 5,
           "url": "http://hana15.com.br/",
           "original_url": "http://hana15.com.br/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.youtube.com/@HanaGhassan",
+          "original_url": "https://www.youtube.com/@HanaGhassan"
+        },
+        {
+          "order": 7,
+          "url": "https://www.twibbonize.com/oparatajunto",
+          "original_url": "https://www.twibbonize.com/oparatajunto"
+        },
+        {
+          "order": 8,
+          "url": "https://www.kwai.com/@hanaghassantuma",
+          "original_url": "https://www.kwai.com/@hanaghassantuma"
+        },
+        {
+          "order": 9,
+          "url": "https://www.threads.com/@hanaghassan",
+          "original_url": "https://www.threads.com/@hanaghassan"
         }
       ]
     },
@@ -2459,14 +3173,35 @@
         }
       ]
     },
+    "henrique-lyra": {
+      "sq_candidato": "200002553301",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/hoclyra",
+          "original_url": "https://www.facebook.com/hoclyra"
+        }
+      ]
+    },
     "hertz-dias": {
       "sq_candidato": "280002541457",
       "match_method": "nome_completo_exato_unico",
       "sites": [
         {
           "order": 1,
-          "url": null,
-          "original_url": "HERTZDIASPSTU"
+          "url": "https://www.instagram.com/hertzdiaspstu?igsi=MXhhZmVxbDN1bHRmOA==",
+          "original_url": "https://www.instagram.com/hertzdiaspstu?igsi=MXhhZmVxbDN1bHRmOA=="
+        },
+        {
+          "order": 2,
+          "url": "https://www.youtube.com/@canaldohertz",
+          "original_url": "https://www.youtube.com/@canaldohertz"
         }
       ]
     },
@@ -2511,6 +3246,38 @@
         }
       ]
     },
+    "ieri-braga": {
+      "sq_candidato": "60002552320",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/C/NOME-DE-URNA-2026",
+          "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR/C/NOME-DE-URNA-2026"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/bragajunior29/",
+          "original_url": "https://www.instagram.com/bragajunior29/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/profile.php?id=61581081287949",
+          "original_url": "https://www.facebook.com/profile.php?id=61581081287949"
+        }
+      ]
+    },
+    "ismar-marques": {
+      "sq_candidato": "180002549919",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://instagram.com/ISMARMARQUESOFC",
+          "original_url": "HTTPS://INSTAGRAM.COM/ISMARMARQUESOFC - HTTPS://INSTAGRAM.COM/ISMARMARQUESOFC"
+        }
+      ]
+    },
     "ivan-moraes": {
       "sq_candidato": "170002538097",
       "match_method": "sq_candidato",
@@ -2545,6 +3312,37 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "HTTPS://CANDIDATOS.PCO.ORG.BR"
+        },
+        {
+          "order": 2,
+          "url": "https://x.com/izadoradias29",
+          "original_url": "https://x.com/izadoradias29"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/izadoradias.pco/",
+          "original_url": "https://www.instagram.com/izadoradias.pco/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/izzadoradias?_rdc=1&_rdr",
+          "original_url": "https://www.facebook.com/izzadoradias?_rdc=1&_rdr"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@izadoradias29",
+          "original_url": "https://www.tiktok.com/@izadoradias29"
+        }
+      ]
+    },
+    "jairo-palheta": {
+      "sq_candidato": "30002551388",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
         }
       ]
     },
@@ -2612,6 +3410,11 @@
           "order": 10,
           "url": "https://x.com/JERONIMOBA13?S=21",
           "original_url": "HTTPS://X.COM/JERONIMOBA13?S=21"
+        },
+        {
+          "order": 11,
+          "url": "https://jeronimorodrigues.com.br/",
+          "original_url": "https://jeronimorodrigues.com.br"
         }
       ]
     },
@@ -2724,6 +3527,16 @@
           "order": 7,
           "url": "https://www.facebook.com/IMPRENSAJOAORODRIGUES",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/IMPRENSAJOAORODRIGUES"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/joaorodrigues.cco/",
+          "original_url": "https://www.facebook.com/joaorodrigues.cco/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.youtube.com/@joaorodriguessc55",
+          "original_url": "https://www.youtube.com/@joaorodriguessc55"
         }
       ]
     },
@@ -2920,46 +3733,31 @@
       "sites": [
         {
           "order": 1,
-          "url": "https://jorginhomello.sc/",
-          "original_url": "FACEBOOK: JORGINHOMELLO.SC"
+          "url": "https://www.tiktok.com/@jorginhomello.sc",
+          "original_url": "https://www.tiktok.com/@jorginhomello.sc"
         },
         {
           "order": 2,
-          "url": "https://www.tiktok.com/@JORGINHOMELLO.SC",
-          "original_url": "HTTPS://WWW.TIKTOK.COM/@JORGINHOMELLO.SC"
-        },
-        {
-          "order": 3,
-          "url": null,
-          "original_url": "TWITTER: JORGINHOMELLO"
-        },
-        {
-          "order": 4,
           "url": "https://www.facebook.com/JORGINHOMELLO.SC",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/JORGINHOMELLO.SC"
         },
         {
-          "order": 5,
+          "order": 3,
           "url": "https://www.threads.com/@JORGINHOMELLO",
           "original_url": "HTTPS://WWW.THREADS.COM/@JORGINHOMELLO"
         },
         {
-          "order": 6,
+          "order": 4,
           "url": "https://whatsapp.com/CHANNEL/0029VAEGZVULDQEEAHRROW28",
           "original_url": "HTTPS://WHATSAPP.COM/CHANNEL/0029VAEGZVULDQEEAHRROW28"
         },
         {
-          "order": 8,
-          "url": null,
-          "original_url": "THREADS: JORGINHOMELLO"
-        },
-        {
-          "order": 9,
+          "order": 5,
           "url": "https://x.com/JORGINHOMELLO",
           "original_url": "HTTPS://X.COM/JORGINHOMELLO"
         },
         {
-          "order": 10,
+          "order": 6,
           "url": "https://www.instagram.com/JORGINHOMELLO/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/JORGINHOMELLO/"
         }
@@ -3103,6 +3901,16 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.threads.com/@lourdes_melo29",
+          "original_url": "https://www.threads.com/@lourdes_melo29"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/lourdes_melo29/",
+          "original_url": "https://www.instagram.com/lourdes_melo29/"
         }
       ]
     },
@@ -3125,6 +3933,22 @@
           "order": 1,
           "url": "https://www.instagram.com/DRALUCIASANTOS/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/DRALUCIASANTOS/"
+        },
+        {
+          "order": 2,
+          "url": "https://www.youtube.com/@dra.luciasantos",
+          "original_url": "https://www.youtube.com/@dra.luciasantos"
+        }
+      ]
+    },
+    "luciana-amorim": {
+      "sq_candidato": "90002550707",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://instagram.com/LUCIANA.UP",
+          "original_url": "HTTPS://INSTAGRAM.COM/LUCIANA.UP"
         }
       ]
     },
@@ -3188,6 +4012,16 @@
           "order": 1,
           "url": null,
           "original_url": "INSTAGRAM/LUISCESARBUENO"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/LuisCesarBuenoeFreitas",
+          "original_url": "https://www.facebook.com/LuisCesarBuenoeFreitas"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/luiscesarbueno/",
+          "original_url": "https://www.facebook.com/luiscesarbueno/"
         }
       ]
     },
@@ -3294,6 +4128,16 @@
           "order": 22,
           "url": "https://open.spotify.com/SHOW/5YNKXGHBJDP3RWY6Q2M2SX?SI=C1CDAF95D0384616",
           "original_url": "HTTPS://OPEN.SPOTIFY.COM/SHOW/5YNKXGHBJDP3RWY6Q2M2SX?SI=C1CDAF95D0384616"
+        },
+        {
+          "order": 23,
+          "url": "http://www.mercadodamentira.com.br/",
+          "original_url": "HTTP://WWW.MERCADODAMENTIRA.COM.BR/"
+        },
+        {
+          "order": 24,
+          "url": "https://opiordosbolsonaros.com.br/",
+          "original_url": "https://opiordosbolsonaros.com.br"
         }
       ]
     },
@@ -3303,13 +4147,34 @@
       "sites": [
         {
           "order": 1,
-          "url": null,
-          "original_url": "@MARCELOBRIGADEIRO"
+          "url": "https://www.marcelobrigadeirosc.com.br/",
+          "original_url": "HTTPS://WWW.MARCELOBRIGADEIROSC.COM.BR/"
         },
         {
           "order": 2,
-          "url": "https://www.marcelobrigadeirosc.com.br/",
-          "original_url": "HTTPS://WWW.MARCELOBRIGADEIROSC.COM.BR/"
+          "url": "https://www.instagram.com/marcelobrigadeiro",
+          "original_url": "https://www.instagram.com/marcelobrigadeiro"
+        },
+        {
+          "order": 3,
+          "url": "https://x.com/Brigadeiromma",
+          "original_url": "https://x.com/Brigadeiromma"
+        },
+        {
+          "order": 4,
+          "url": "https://www.youtube.com/channel/UCKtQVrhzkSu5gfBkXiMytkQ",
+          "original_url": "https://www.youtube.com/channel/UCKtQVrhzkSu5gfBkXiMytkQ"
+        }
+      ]
+    },
+    "marcio-jambo": {
+      "sq_candidato": "20002552502",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "MARCIOJAMBO.SER@GMAIL.COM"
         }
       ]
     },
@@ -3321,6 +4186,82 @@
           "order": 1,
           "url": "https://www.instagram.com/MARCONIPERILLO/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/MARCONIPERILLO/"
+        },
+        {
+          "order": 2,
+          "url": "https://youtube.com/@marconiperillogo?si=Vl0MstKh3BFe9uPS",
+          "original_url": "https://youtube.com/@marconiperillogo?si=Vl0MstKh3BFe9uPS"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/share/1HYvsVwpmL/?mibextid=wwXIfr",
+          "original_url": "https://www.facebook.com/share/1HYvsVwpmL/?mibextid=wwXIfr"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/marconiperillo?s=11",
+          "original_url": "https://x.com/marconiperillo?s=11"
+        },
+        {
+          "order": 5,
+          "url": "https://www.tiktok.com/@marconiperillo?_r=1&_t=ZS-994d8CN2jfE",
+          "original_url": "https://www.tiktok.com/@marconiperillo?_r=1&_t=ZS-994d8CN2jfE"
+        },
+        {
+          "order": 6,
+          "url": "https://www.kwai.com/@marconiperillo45/",
+          "original_url": "https://www.kwai.com/@marconiperillo45/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.youtube.com/@marconiperilloGO",
+          "original_url": "https://www.youtube.com/@marconiperilloGO"
+        },
+        {
+          "order": 8,
+          "url": "https://x.com/marconiperillo",
+          "original_url": "https://x.com/marconiperillo"
+        },
+        {
+          "order": 9,
+          "url": "https://www.tiktok.com/@marconiperillo",
+          "original_url": "https://www.tiktok.com/@marconiperillo"
+        },
+        {
+          "order": 10,
+          "url": "https://www.facebook.com/MarconiPerillo",
+          "original_url": "https://www.facebook.com/MarconiPerillo"
+        }
+      ]
+    },
+    "marcos-reategui": {
+      "sq_candidato": "30002552017",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://x.com/MARCOS_REATEGUI?S=11",
+          "original_url": "HTTPS://X.COM/MARCOS_REATEGUI?S=11"
+        },
+        {
+          "order": 2,
+          "url": "https://www.tiktok.com/@MARCOSREATEGUI2",
+          "original_url": "WWW.TIKTOK.COM/@MARCOSREATEGUI2"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/SHARE/1DW97PEFL5/",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1DW97PEFL5/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/SHARE",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/MARCOSREATEGUIDESOUZA",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/MARCOSREATEGUIDESOUZA"
         }
       ]
     },
@@ -3393,6 +4334,17 @@
           "order": 2,
           "url": "https://www.facebook.com/SHARE/1C1MYTFAGU/",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1C1MYTFAGU/"
+        }
+      ]
+    },
+    "maria-bona": {
+      "sq_candidato": "50002552489",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
         }
       ]
     },
@@ -3490,6 +4442,36 @@
           "order": 17,
           "url": "https://www.twibbonize.com/omarazizam",
           "original_url": "https://www.twibbonize.com/omarazizam"
+        },
+        {
+          "order": 18,
+          "url": "https://linktr.ee/OmarGovernador",
+          "original_url": "https://linktr.ee/OmarGovernador"
+        },
+        {
+          "order": 19,
+          "url": "http://materiais.omargovernador.com.br/",
+          "original_url": "http://materiais.omargovernador.com.br/"
+        },
+        {
+          "order": 20,
+          "url": "https://www.instagram.com/omardegente",
+          "original_url": "https://www.instagram.com/omardegente"
+        },
+        {
+          "order": 21,
+          "url": "https://www.tiktok.com/@omardegente",
+          "original_url": "https://www.tiktok.com/@omardegente"
+        },
+        {
+          "order": 22,
+          "url": "https://giphy.com/channel/omarazizz",
+          "original_url": "https://giphy.com/channel/omarazizz"
+        },
+        {
+          "order": 23,
+          "url": "https://open.spotify.com/intl-pt/artist/4wSenIyvWzn3WJcuTpRlCr?si=oy3_QEYfQcK__ac5A2p6ag&nd=1&dlsi",
+          "original_url": "https://open.spotify.com/intl-pt/artist/4wSenIyvWzn3WJcuTpRlCr?si=oy3_QEYfQcK__ac5A2p6ag&nd=1&dlsi"
         }
       ]
     },
@@ -3536,6 +4518,37 @@
           "order": 8,
           "url": "https://x.com/ORLEANSBRANDAO_",
           "original_url": "HTTPS://X.COM/ORLEANSBRANDAO_"
+        }
+      ]
+    },
+    "pablo-marcal": {
+      "sq_candidato": "280002553884",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.youtube.com/@pablomarcall",
+          "original_url": "https://www.youtube.com/@pablomarcall"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/PabloMarcall/?locale=pt_BR",
+          "original_url": "https://www.facebook.com/PabloMarcall/?locale=pt_BR"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@pablomarcal1",
+          "original_url": "https://www.tiktok.com/@pablomarcal1"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/pablomarcal?lang=pt",
+          "original_url": "https://x.com/pablomarcal?lang=pt"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/pablomarcal1/?hl=pt-br",
+          "original_url": "https://www.instagram.com/pablomarcal1/?hl=pt-br"
         }
       ]
     },
@@ -3623,6 +4636,17 @@
           "order": 8,
           "url": "http://www.pedro15.com.br/",
           "original_url": "http://www.pedro15.com.br/"
+        }
+      ]
+    },
+    "pedro-coutinho": {
+      "sq_candidato": "150002551911",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "@PEDROCOUTINHOPB"
         }
       ]
     },
@@ -3739,6 +4763,27 @@
           "order": 8,
           "url": "https://tonaescuta.com.br/",
           "original_url": "https://tonaescuta.com.br"
+        },
+        {
+          "order": 9,
+          "url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=b",
+          "original_url": "https://open.spotify.com/intl-pt/artist/4FqcbeVdisyAtDLsd1n2gQ?si=SpfyEFBGRlOvSW_fT3lAbQ&nd=1&dlsi=b"
+        }
+      ]
+    },
+    "rafael-demuner": {
+      "sq_candidato": "80002550832",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/UNIDADEPOPULAR.ES",
+          "original_url": "WWW.INSTAGRAM.COM/UNIDADEPOPULAR.ES"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/RAFAEL.DEMUNER_UP",
+          "original_url": "WWW.INSTAGRAM.COM/RAFAEL.DEMUNER_UP"
         }
       ]
     },
@@ -3871,6 +4916,22 @@
         }
       ]
     },
+    "reginaldo-lima": {
+      "sq_candidato": "100002544073",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.facebook.com/REGINALDO.LIMA.372",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/REGINALDO.LIMA.372"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/REGINALDOBRAUNO/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/REGINALDOBRAUNO/"
+        }
+      ]
+    },
     "rejane-oliveira": {
       "sq_candidato": "210002541367",
       "match_method": "nome_completo_exato_unico",
@@ -3879,6 +4940,66 @@
           "order": 1,
           "url": null,
           "original_url": "@REJANEPSTU"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/rejanepstu/",
+          "original_url": "https://www.instagram.com/rejanepstu/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/rejanepstu/",
+          "original_url": "https://www.facebook.com/rejanepstu/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/portopstu/",
+          "original_url": "https://www.instagram.com/portopstu/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.facebook.com/pstuportoalegre/",
+          "original_url": "https://www.facebook.com/pstuportoalegre/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.facebook.com/PSTURS/?locale=pt_BR",
+          "original_url": "https://www.facebook.com/PSTURS/?locale=pt_BR"
+        },
+        {
+          "order": 7,
+          "url": "https://www.facebook.com/rejaneoliveira.mls",
+          "original_url": "https://www.facebook.com/rejaneoliveira.mls"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/pstuserragaucha/",
+          "original_url": "https://www.instagram.com/pstuserragaucha/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/pstu_litoralnortegaucho/",
+          "original_url": "https://www.instagram.com/pstu_litoralnortegaucho/"
+        },
+        {
+          "order": 10,
+          "url": "https://www.instagram.com/pstugravatai/",
+          "original_url": "https://www.instagram.com/pstugravatai/"
+        },
+        {
+          "order": 11,
+          "url": "https://www.facebook.com/pstu.gravatai/",
+          "original_url": "https://www.facebook.com/pstu.gravatai/"
+        },
+        {
+          "order": 12,
+          "url": "https://www.instagram.com/pstupf/",
+          "original_url": "https://www.instagram.com/pstupf/"
+        },
+        {
+          "order": 13,
+          "url": "https://www.instagram.com/pstucanoas/",
+          "original_url": "https://www.instagram.com/pstucanoas/"
         }
       ]
     },
@@ -3936,6 +5057,86 @@
           "order": 2,
           "url": "https://renanpresidente.com.br/",
           "original_url": "RENANPRESIDENTE.COM.BR"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/renansantosmbl/",
+          "original_url": "https://www.instagram.com/renansantosmbl/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/renanvote14",
+          "original_url": "https://www.instagram.com/renanvote14"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/nextfragments/",
+          "original_url": "https://www.instagram.com/nextfragments/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.instagram.com/oncaviral/",
+          "original_url": "https://www.instagram.com/oncaviral/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/multiversoamarelo/",
+          "original_url": "https://www.instagram.com/multiversoamarelo/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.instagram.com/blackjaguarsquad/",
+          "original_url": "https://www.instagram.com/blackjaguarsquad/"
+        },
+        {
+          "order": 9,
+          "url": "https://www.instagram.com/jaguatiricahub/",
+          "original_url": "https://www.instagram.com/jaguatiricahub/"
+        },
+        {
+          "order": 10,
+          "url": "https://www.tiktok.com/@renansantosmbl",
+          "original_url": "https://www.tiktok.com/@renansantosmbl"
+        },
+        {
+          "order": 11,
+          "url": "https://www.tiktok.com/@renansantosreserva",
+          "original_url": "https://www.tiktok.com/@renansantosreserva"
+        },
+        {
+          "order": 12,
+          "url": "https://www.tiktok.com/@nextfragments",
+          "original_url": "https://www.tiktok.com/@nextfragments"
+        },
+        {
+          "order": 13,
+          "url": "https://www.tiktok.com/@oncaviral",
+          "original_url": "https://www.tiktok.com/@oncaviral"
+        },
+        {
+          "order": 14,
+          "url": "https://www.tiktok.com/@multiversoamarelo",
+          "original_url": "https://www.tiktok.com/@multiversoamarelo"
+        },
+        {
+          "order": 15,
+          "url": "https://www.tiktok.com/@blackjaguarsquad",
+          "original_url": "https://www.tiktok.com/@blackjaguarsquad"
+        },
+        {
+          "order": 16,
+          "url": "https://www.tiktok.com/@jaguatiricahub",
+          "original_url": "https://www.tiktok.com/@jaguatiricahub"
+        },
+        {
+          "order": 17,
+          "url": "https://www.youtube.com/@RenanSantosMBL",
+          "original_url": "https://www.youtube.com/@RenanSantosMBL"
+        },
+        {
+          "order": 18,
+          "url": "https://www.facebook.com/renansantosmbl",
+          "original_url": "https://www.facebook.com/renansantosmbl"
         }
       ]
     },
@@ -4065,6 +5266,27 @@
           "order": 2,
           "url": null,
           "original_url": "@RICARDOMARQUES_RM"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/RicardoMarques.redeRM/?locale=pt_BR",
+          "original_url": "https://www.facebook.com/RicardoMarques.redeRM/?locale=pt_BR"
+        },
+        {
+          "order": 4,
+          "url": "https://x.com/RicMarques_RM",
+          "original_url": "https://x.com/RicMarques_RM"
+        }
+      ]
+    },
+    "rico-pinheiro": {
+      "sq_candidato": "70002553982",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "@ricopinheirooficial"
         }
       ]
     },
@@ -4228,6 +5450,47 @@
           "order": 4,
           "url": "https://www.facebook.com/profile.php?id=61557202017711&locale=pt_BR",
           "original_url": "https://www.facebook.com/profile.php?id=61557202017711&locale=pt_BR"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/robertoclaudiooficial/",
+          "original_url": "https://www.instagram.com/robertoclaudiooficial/"
+        },
+        {
+          "order": 6,
+          "url": "https://x.com/robertoclaudio",
+          "original_url": "https://x.com/robertoclaudio"
+        }
+      ]
+    },
+    "roberto-rocha": {
+      "sq_candidato": "100002551399",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ROBERTOROCHA_MA/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ROBERTOROCHA_MA/"
+        },
+        {
+          "order": 2,
+          "url": "https://pl-pl.facebook.com/ROBERTOROCHA.MA/",
+          "original_url": "HTTPS://PL-PL.FACEBOOK.COM/ROBERTOROCHA.MA/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.youtube.com/@ROBERTOROCHA_MA",
+          "original_url": "HTTPS://WWW.YOUTUBE.COM/@ROBERTOROCHA_MA"
+        },
+        {
+          "order": 4,
+          "url": "https://www.threads.com/@ROBERTOROCHA_MA?IGSHID=NTC4MTIWNJQ2YQ==",
+          "original_url": "HTTPS://WWW.THREADS.COM/@ROBERTOROCHA_MA?IGSHID=NTC4MTIWNJQ2YQ=="
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/ROBERTOROCHA_MA",
+          "original_url": "HTTPS://X.COM/ROBERTOROCHA_MA"
         }
       ]
     },
@@ -4244,6 +5507,17 @@
           "order": 2,
           "url": "https://lnk.bio/PSTU_DF",
           "original_url": "HTTPS://LNK.BIO/PSTU_DF"
+        }
+      ]
+    },
+    "rodrigo-bolsonaro": {
+      "sq_candidato": "200002546756",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/RODRIGOBOLSONARORN2026?IGSH=MWDYADRXYXHHZWXOBG==",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/RODRIGOBOLSONARORN2026?IGSH=MWDYADRXYXHHZWXOBG=="
         }
       ]
     },
@@ -4387,6 +5661,47 @@
           "order": 1,
           "url": "https://www.instagram.com/RONALDOMANSUR.PSOL/",
           "original_url": "HTTPS://WWW.INSTAGRAM.COM/RONALDOMANSUR.PSOL/"
+        },
+        {
+          "order": 2,
+          "url": "https://ronaldomansur.com.br/",
+          "original_url": "https://ronaldomansur.com.br"
+        },
+        {
+          "order": 3,
+          "url": "https://www.tiktok.com/@ronaldomansur",
+          "original_url": "https://www.tiktok.com/@ronaldomansur"
+        },
+        {
+          "order": 4,
+          "url": "https://www.facebook.com/share/1CBsum9rgX/",
+          "original_url": "https://www.facebook.com/share/1CBsum9rgX/"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/RonaldoMansur_",
+          "original_url": "https://x.com/RonaldoMansur_"
+        }
+      ]
+    },
+    "rosi-aires": {
+      "sq_candidato": "230002552060",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ROSI______AIRES/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/ROSI______AIRES/"
+        },
+        {
+          "order": 2,
+          "url": "https://vm.tiktok.com/ZS9K6TT4CYACQ-JZ3PT/",
+          "original_url": "HTTPS://VM.TIKTOK.COM/ZS9K6TT4CYACQ-JZ3PT/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/SHARE/1EWNVQXUTC/",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1EWNVQXUTC/"
         }
       ]
     },
@@ -4398,6 +5713,42 @@
           "order": 1,
           "url": "https://candidatos.pco.org.br/",
           "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://x.com/Ruicpimenta29",
+          "original_url": "https://x.com/Ruicpimenta29"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/ruicpimenta/",
+          "original_url": "https://www.instagram.com/ruicpimenta/"
+        },
+        {
+          "order": 4,
+          "url": "https://web.facebook.com/ruicpimenta29",
+          "original_url": "https://web.facebook.com/ruicpimenta29"
+        },
+        {
+          "order": 5,
+          "url": "https://www.youtube.com/@rcp29",
+          "original_url": "https://www.youtube.com/@rcp29"
+        }
+      ]
+    },
+    "ruth-reis": {
+      "sq_candidato": "140002554434",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/ruthreiscontadora?igsh=dHFxM2FhZ3VheHow",
+          "original_url": "https://www.instagram.com/ruthreiscontadora?igsh=dHFxM2FhZ3VheHow"
+        },
+        {
+          "order": 2,
+          "url": "https://www.facebook.com/share/1ZWg3oDkRg/",
+          "original_url": "https://www.facebook.com/share/1ZWg3oDkRg/"
         }
       ]
     },
@@ -4445,6 +5796,17 @@
           "order": 5,
           "url": "https://www.facebook.com/SHARE/1FGYWAJT31/?MIBEXTID=WWXIFR",
           "original_url": "HTTPS://WWW.FACEBOOK.COM/SHARE/1FGYWAJT31/?MIBEXTID=WWXIFR"
+        }
+      ]
+    },
+    "samuel-de-mattos": {
+      "sq_candidato": "160002548010",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/SAMUEL.DEMATTOS/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/SAMUEL.DEMATTOS/"
         }
       ]
     },
@@ -4639,6 +6001,11 @@
           "order": 20,
           "url": "https://t.me/sergiofmoro",
           "original_url": "https://t.me/sergiofmoro"
+        },
+        {
+          "order": 21,
+          "url": "https://open.spotify.com/intl-pt/artist/3FlHpj4hdeXwlOpu2vFvDz",
+          "original_url": "https://open.spotify.com/intl-pt/artist/3FlHpj4hdeXwlOpu2vFvDz"
         }
       ]
     },
@@ -4731,6 +6098,48 @@
           "order": 11,
           "url": "https://www.kwai.com/@TARCISIOGDF.OFICIAL",
           "original_url": "HTTPS://WWW.KWAI.COM/@TARCISIOGDF.OFICIAL"
+        }
+      ]
+    },
+    "taty-cristina-de-jesus": {
+      "sq_candidato": "260002550683",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://vt.tiktok.com/ZS4QA4SCW/",
+          "original_url": "HTTPS://VT.TIKTOK.COM/ZS4QA4SCW/"
+        },
+        {
+          "order": 2,
+          "url": null,
+          "original_url": "TATY CRISTINA     FACEBOOK"
+        },
+        {
+          "order": 3,
+          "url": "https://www.youtube.com/LIVE/UQBJUZBUI0I?IS=KANFQFZCCDG_CWZN",
+          "original_url": "HTTPS://WWW.YOUTUBE.COM/LIVE/UQBJUZBUI0I?IS=KANFQFZCCDG_CWZN"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/TATYCRISTINA.SE?UTM_SOURCE=QR",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/TATYCRISTINA.SE?UTM_SOURCE=QR"
+        }
+      ]
+    },
+    "tayna-miessa": {
+      "sq_candidato": "160002550997",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://instagram.com/TAYNAMIESS",
+          "original_url": "INSTAGRAM.COM/TAYNAMIESS"
+        },
+        {
+          "order": 2,
+          "url": "https://wa.me/5541995137971",
+          "original_url": "WA.ME/5541995137971"
         }
       ]
     },
@@ -4910,6 +6319,17 @@
         }
       ]
     },
+    "vera-lucia-ce": {
+      "sq_candidato": "60002553922",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://www.instagram.com/verinhanovo?igsh=cGRyMmQyN3djdnhl",
+          "original_url": "https://www.instagram.com/verinhanovo?igsh=cGRyMmQyN3djdnhl"
+        }
+      ]
+    },
     "vicentinho-junior": {
       "sq_candidato": "270002544544",
       "match_method": "nome_completo_exato_unico",
@@ -4961,6 +6381,37 @@
         }
       ]
     },
+    "victor-assis": {
+      "sq_candidato": "170002552776",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": "https://candidatos.pco.org.br/",
+          "original_url": "https://candidatos.pco.org.br"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/victorassisrecife/",
+          "original_url": "https://www.instagram.com/victorassisrecife/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.facebook.com/VictorAssisRecife/",
+          "original_url": "https://www.facebook.com/VictorAssisRecife/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.tiktok.com/@victorassisrecife",
+          "original_url": "https://www.tiktok.com/@victorassisrecife"
+        },
+        {
+          "order": 5,
+          "url": "https://x.com/VictorAssis_Rec",
+          "original_url": "https://x.com/VictorAssis_Rec"
+        }
+      ]
+    },
     "vivian-mendes": {
       "sq_candidato": "250002544912",
       "match_method": "nome_completo_exato_unico",
@@ -5003,6 +6454,17 @@
         }
       ]
     },
+    "well-macedo": {
+      "sq_candidato": "140002554108",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "Instagram: @wellmacedo"
+        }
+      ]
+    },
     "william-siri": {
       "sq_candidato": "190002536162",
       "match_method": "sq_candidato",
@@ -5036,6 +6498,57 @@
           "order": 6,
           "url": "https://williamsirirj.com/",
           "original_url": "HTTPS://WILLIAMSIRIRJ.COM/"
+        }
+      ]
+    },
+    "wilson-grassi-junior": {
+      "sq_candidato": "280002548139",
+      "match_method": "sq_candidato",
+      "sites": [
+        {
+          "order": 1,
+          "url": null,
+          "original_url": "@VETERINARIOWILSONGRASSIOFICIAL"
+        },
+        {
+          "order": 2,
+          "url": "https://www.instagram.com/VETERINARIOWILSONGRASSIOFICIAL/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/VETERINARIOWILSONGRASSIOFICIAL/"
+        },
+        {
+          "order": 3,
+          "url": "https://www.instagram.com/WWGRASSI/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/WWGRASSI/"
+        },
+        {
+          "order": 4,
+          "url": "https://www.instagram.com/WILSONGRASSIGUARULHOS/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/WILSONGRASSIGUARULHOS/"
+        },
+        {
+          "order": 5,
+          "url": "https://www.instagram.com/GATEIROSDESAOPAULO/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/GATEIROSDESAOPAULO/"
+        },
+        {
+          "order": 6,
+          "url": "https://www.instagram.com/CACHORREIROSDESAOPAULO/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/CACHORREIROSDESAOPAULO/"
+        },
+        {
+          "order": 7,
+          "url": "https://www.instagram.com/GATEIROSDABAHIA/",
+          "original_url": "HTTPS://WWW.INSTAGRAM.COM/GATEIROSDABAHIA/"
+        },
+        {
+          "order": 8,
+          "url": "https://www.facebook.com/WILSONGRASSIOFICIAL",
+          "original_url": "HTTPS://WWW.FACEBOOK.COM/WILSONGRASSIOFICIAL"
+        },
+        {
+          "order": 9,
+          "url": "https://veterinariowilsongrassi.com.br/",
+          "original_url": "HTTPS://VETERINARIOWILSONGRASSI.COM.BR"
         }
       ]
     },

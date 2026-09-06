@@ -108,6 +108,7 @@ printf '%s' "$PF_FAKE_CURL_CODE"
           ok: true,
           checks: [
             { name: "news-refresh", last: "2026-09-02T08:00:00.000Z", age_hours: 4 },
+            { name: "news-refresh-recover", last: "2026-09-02T12:00:00.000Z", age_hours: 20 },
             { name: "send-digest", last: "2026-09-02T12:00:00.000Z", age_hours: 20 },
             { name: "published-consistency", age_hours: 4 },
             { name: "revalidate-public-cache", age_hours: 0.5 },
@@ -256,6 +257,7 @@ describe("watchdog dry-run com curl mockado", () => {
         ok: true,
         checks: [
           { name: "news-refresh", last: "2026-08-30T08:00:00.000Z", age_hours: 52 },
+          { name: "news-refresh-recover", age_hours: 4 },
           { name: "send-digest", last: null, age_hours: null },
           { name: "published-consistency", age_hours: 4 },
           { name: "revalidate-public-cache", age_hours: 0.5 },
@@ -276,6 +278,7 @@ describe("watchdog dry-run com curl mockado", () => {
       httpCode: "200", body: JSON.stringify({ ok: true, total: 6, results: [] }),
       freshnessBody: JSON.stringify({ ok: true, checks: [
         { name: "news-refresh", age_hours: 4 },
+        { name: "news-refresh-recover", age_hours: 4 },
         { name: "send-digest", age_hours: 20 },
         { name: "published-consistency", age_hours: null },
         { name: "revalidate-public-cache", age_hours: 2 },
@@ -305,7 +308,7 @@ describe("watchdog dry-run com curl mockado", () => {
   })
 
   it("HTTP200 não mascara roster vazio, parcial ou idade inválida", () => {
-    const names = ["news-refresh", "send-digest", "published-consistency", "revalidate-public-cache"]
+    const names = ["news-refresh", "news-refresh-recover", "send-digest", "published-consistency", "revalidate-public-cache"]
     for (const checks of [[], [{ name: "news-refresh", age_hours: 1 }], names.map((name) => ({ name, age_hours: "invalid" }))]) {
       const run = runWatchdog({ httpCode: "200", body: JSON.stringify({ ok: true }), freshnessBody: JSON.stringify({ ok: true, checks }) })
       fixtures.push(run.fixture)

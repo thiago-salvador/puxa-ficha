@@ -12,6 +12,7 @@ import {
 } from "../src/lib/quiz-scoring"
 import type { QuizAlignmentDataset } from "../src/lib/quiz-types"
 import { fixedCopy } from "../src/lib/ui-labels"
+import { getEspectroPartidario } from "../src/data/quiz/espectro-partidario"
 
 function allNeutralAnswers(): Map<string, { valor: RespostaLikert; importante: boolean }> {
   const m = new Map<string, { valor: RespostaLikert; importante: boolean }>()
@@ -20,6 +21,14 @@ function allNeutralAnswers(): Map<string, { valor: RespostaLikert; importante: b
   }
   return m
 }
+
+it("mapeia a REDE com manifesto oficial nos dois eixos", () => {
+  const rede = getEspectroPartidario("REDE")
+  assert.ok(rede)
+  assert.equal(rede.fonte_economico.tipo, "manifesto")
+  assert.equal(rede.fonte_social.tipo, "manifesto")
+  assert.match(rede.fonte_economico.url ?? "", /redesustentabilidade\.org\.br/)
+})
 
 /**
  * Respostas que empurram eixo economico a estatal e social a progressista.

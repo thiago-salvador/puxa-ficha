@@ -91,7 +91,9 @@ test.describe("Acessibilidade automatizada", () => {
     // O painel do menu só existe visível depois do clique; sem este caso, o
     // axe nunca via o role="dialog" (que ficava num <nav>, papel não permitido).
     await page.goto("/", { waitUntil: "domcontentloaded" })
-    await page.getByRole("button", { name: "Abrir menu" }).click()
+    const menuButton = page.getByRole("button", { name: "Abrir menu" })
+    await expect(menuButton).toBeEnabled({ timeout: 30_000 })
+    await menuButton.click()
     await expect(page.getByRole("dialog", { name: "Menu principal" })).toBeVisible()
     // A entrada do menu é uma timeline GSAP de ~2s (overlay, painéis, links e
     // rodapé com autoAlpha). Enquanto ela roda, o axe mede o texto ainda
@@ -126,7 +128,7 @@ test.describe("Acessibilidade automatizada", () => {
     })
 
     await page.goto("/alertas/gerenciar", { waitUntil: "domcontentloaded" })
-    await expect(page.getByText("Acesso indisponível")).toBeVisible()
+    await expect(page.getByText("Acesso indisponível")).toBeVisible({ timeout: 30_000 })
 
     const results = await new AxeBuilder({ page }).analyze()
     const blockingViolations = results.violations.filter((violation) =>

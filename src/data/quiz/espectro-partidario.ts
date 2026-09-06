@@ -187,6 +187,24 @@ const ESPECTRO_PARTIDARIO: EspectroPartidario[] = [
     },
   },
   {
+    partido_sigla: "REDE",
+    eixo_economico: 4,
+    eixo_social: 2,
+    fonte_economico: {
+      tipo: "manifesto",
+      url: "https://redesustentabilidade.org.br/manifesto/",
+      data: "2020-02-01",
+      trecho: "Mudanças no modelo econômico para a construção de um projeto de desenvolvimento socialmente includente e ambientalmente sustentável.",
+    },
+    fonte_social: {
+      tipo: "manifesto",
+      url: "https://redesustentabilidade.org.br/manifesto/",
+      data: "2020-02-01",
+      trecho: "Respeito aos direitos humanos, garantia de igualdade de gênero e repúdio a todas as formas de discriminação.",
+    },
+    notas: "Eixos editoriais derivados do manifesto oficial da REDE; nunca representam declaração individual do candidato.",
+  },
+  {
     partido_sigla: "CIDADANIA",
     eixo_economico: 5,
     eixo_social: 4,

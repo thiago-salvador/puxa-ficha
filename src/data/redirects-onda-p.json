@@ -135,11 +135,6 @@
     "permanent": true
   },
   {
-    "source": "/candidato/cadu-xavier",
-    "destination": "/",
-    "permanent": true
-  },
-  {
     "source": "/candidato/cintia-dias",
     "destination": "/",
     "permanent": true

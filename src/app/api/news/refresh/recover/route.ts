@@ -3,6 +3,7 @@ import { NextResponse } from "next/server"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { resolveChainOrigin, validarOrigemEncadeamento } from "@/lib/cron-chain-origin"
 import { confirmsNewsRefreshAcceptance } from "@/lib/news/refresh-ack"
+import { withCronExecutionReceipt } from "@/lib/cron-execution-receipt"
 import {
   createNewsRefreshRunStore,
   NEWS_REFRESH_EXECUTION_HEADER,
@@ -131,4 +132,4 @@ export function createNewsRefreshRecoveryHandler(deps: NewsRefreshRecoveryDeps =
 }
 
 const handler = createNewsRefreshRecoveryHandler()
-export const GET = handler
+export const GET = withCronExecutionReceipt("news-refresh-recover", handler)

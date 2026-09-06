@@ -269,8 +269,8 @@ main() {
         exit 1
       fi
       echo "schema     : EQUIVALENTE (diff de pg_dump linha a linha; deltas canonicos:"
-      echo "             candidatos_status_dominio e o contrato exato do Senado,"
-      echo "             ambos ausentes do linear por pre-condicao de dado)"
+      echo "             status, situação, publicação mínima e contrato do Senado,"
+      echo "             divergentes só pelas precondições de dados do replay sintético)"
       echo "assinatura : $(printf '%s\n' "$dump_linear" | grep -ac '^CREATE ') CREATEs comparados"
       exit 0
       ;;

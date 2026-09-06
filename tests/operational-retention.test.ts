@@ -19,6 +19,8 @@ require.cache[serverOnlyPath] = {
 
 const {
   NOTIFICATION_LOG_RETENTION_DAYS,
+  NEWS_RETENTION_DAYS,
+  newsRetentionCutoffIso,
   notificationLogRetentionCutoffDate,
   operationalRetentionEnabled,
   purgeExpiredQuizShortLinks,
@@ -26,6 +28,7 @@ const {
   pendingSubscriberRetentionCutoffIso,
   purgeExpiredPendingSubscribers,
   purgeNotificationLogsOlderThan,
+  purgeNewsOlderThan,
   quizShortLinkRetentionCutoffIso,
 } = require("../src/lib/operational-retention") as typeof import("../src/lib/operational-retention")
 
@@ -177,6 +180,23 @@ describe("retenção operacional agendada", () => {
     assert.ok(!chamadas[0].filtros.some(([op]) => op === "lte"))
   })
 
+  it("notícias: DELETE usa data_publicacao anterior ao cutoff de 12 meses", async () => {
+    const { client, chamadas } = clientFake([
+      { data: [{ id: "n1" }], error: null },
+      { data: [{ id: "n1" }], error: null },
+    ])
+    const resultado = await purgeNewsOlderThan("2025-09-06T12:00:00.000Z", client)
+    assert.equal(resultado.status, "ok")
+    assert.deepEqual(chamadas.map((chamada) => ({
+      table: chamada.table,
+      operacao: chamada.operacao,
+      filtros: chamada.filtros,
+    })), [
+      { table: "noticias_candidato", operacao: "select", filtros: [["lt", "data_publicacao", "2025-09-06T12:00:00.000Z"]] },
+      { table: "noticias_candidato", operacao: "delete", filtros: [["in", "id", "n1"], ["lt", "data_publicacao", "2025-09-06T12:00:00.000Z"]] },
+    ])
+  })
+
   it("tabela ausente não vira falha: o expurgo é passo acessório do cron", async () => {
     for (const [fn, erro] of [
       [purgeExpiredQuizShortLinks, { code: "42P01", message: 'relation "quiz_result_short_links" does not exist' }],
@@ -220,6 +240,11 @@ describe("retenção operacional agendada", () => {
     assert.equal(quizShortLinkRetentionCutoffIso(agora), "2026-08-30T12:00:00.000Z")
   })
 
+  it("cutoff de notícias recua 365 dias", () => {
+    assert.equal(NEWS_RETENTION_DAYS, 365)
+    assert.equal(newsRetentionCutoffIso(new Date("2026-09-06T12:00:00.000Z")), "2025-09-06T12:00:00.000Z")
+  })
+
   it("retenção agendada nasce desativada e só aceita o valor literal 1", () => {
     assert.equal(operationalRetentionEnabled({}), false)
     assert.equal(operationalRetentionEnabled({ PF_OPERATIONAL_RETENTION_ENABLED: "0" }), false)
@@ -248,6 +273,7 @@ describe("carona no cron diário", () => {
     assert.match(ROUTE, /purgeAnalyticsLaunchEventsOlderThan\(/)
     assert.match(ROUTE, /retencaoOperacionalHabilitada\s*\?\s*await purgeExpiredQuizShortLinks\(/)
     assert.match(ROUTE, /retencaoOperacionalHabilitada\s*\?\s*await purgeNotificationLogsOlderThan\(/)
+    assert.match(ROUTE, /retencaoOperacionalHabilitada\s*\?\s*await purgeNewsOlderThan\(/)
     assert.match(ROUTE, /status:\s*"desativado"/)
   })
 

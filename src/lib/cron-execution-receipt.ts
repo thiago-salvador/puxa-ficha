@@ -1,4 +1,7 @@
-export type RecordedCron = "published-consistency" | "revalidate-public-cache"
+export type RecordedCron =
+  | "news-refresh-recover"
+  | "published-consistency"
+  | "revalidate-public-cache"
 
 async function recordCronExecution(name: RecordedCron): Promise<void> {
   const { createServiceRoleSupabaseClient } = await import("./supabase")

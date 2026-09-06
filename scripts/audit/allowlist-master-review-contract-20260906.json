@@ -1,0 +1,95 @@
+{
+  "versao": "2026-09-06",
+  "fonte": "TSE consulta_cand_2026 e bem_candidato_2026, fontes primarias dos pontos de atencao e coortes de retencao medidas em producao em 2026-09-06.",
+  "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar quatro estados patrimoniais, retirar dois pontos sem sustentacao publica suficiente e executar as duas coortes de retencao exatamente assinadas.",
+  "coorte": [
+    "clebio-genuino",
+    "dr-luisinho",
+    "rico-pinheiro",
+    "ruth-reis",
+    "well-macedo"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    {
+      "tabela": "candidatos",
+      "slug": "clebio-genuino",
+      "campos": ["status", "publicavel", "situacao_candidatura", "ultima_atualizacao"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "rico-pinheiro",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio",
+      "slug": "ruth-reis",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "valor_total", "bens", "fonte"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "dr-luisinho",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "well-macedo",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"],
+      "max_registros": 1
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260906150000",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "candidatos",
+      "ref": "20260906150000",
+      "campos": ["status", "publicavel", "situacao_candidatura", "ultima_atualizacao"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906150000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906153000",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260906154000",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "pontos_atencao",
+      "ref": "20260906154000",
+      "campos": ["visivel", "despublicacao_motivo", "despublicado_em"]
+    },
+    {
+      "tabela": "noticias_candidato",
+      "ref": "retencao-20260906",
+      "campos": ["delete"],
+      "max_registros": 1451
+    },
+    {
+      "tabela": "alert_subscribers",
+      "ref": "retencao-pendentes-20260906",
+      "campos": ["delete"],
+      "max_registros": 20
+    }
+  ]
+}

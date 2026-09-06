@@ -215,39 +215,41 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
     <>
       {selectedIds.length > 0 && (
         <div className="sticky top-16 z-30 border-b border-border/50 bg-background/95 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center gap-3 px-5 py-3 md:px-12">
-            <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+          <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-2 px-5 py-3 sm:flex sm:gap-3 md:px-12">
+            <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground sm:shrink-0">
               {selectedIds.length}/4 selecionados
             </span>
-            <div className="flex flex-1 flex-wrap gap-2">
+            <div className="col-span-2 row-start-2 flex min-w-0 gap-2 overflow-x-auto overscroll-x-contain pb-1 sm:col-auto sm:row-auto sm:flex-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
               {selectedCandidatos.map((candidato) => (
                 <button
                   key={candidato.id}
                   type="button"
                   onClick={() => toggle(candidato.id)}
-                  className="flex items-center gap-1.5 rounded-full bg-foreground px-3 py-1 text-[length:var(--text-caption)] font-semibold text-background transition-opacity hover:opacity-80"
+                  className="flex min-h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-foreground px-3 py-1 text-[length:var(--text-caption)] font-semibold text-background transition-opacity hover:opacity-80"
                 >
                   {candidato.nome_urna}
                   <X className="size-3" />
                 </button>
               ))}
             </div>
-            {isComparing && (
+            <div className="flex items-center justify-end gap-1 sm:contents">
+              {isComparing && (
+                <button
+                  type="button"
+                  onClick={scrollToComparison}
+                  className="flex min-h-11 shrink-0 items-center gap-1 rounded-full border border-foreground px-3 py-1 text-[length:var(--text-caption)] font-bold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                >
+                  Ver comparação <ChevronDown className="size-3" />
+                </button>
+              )}
               <button
                 type="button"
-                onClick={scrollToComparison}
-                className="flex shrink-0 items-center gap-1 rounded-full border border-foreground px-3 py-1 text-[length:var(--text-caption)] font-bold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                onClick={clearAll}
+                className="min-h-11 shrink-0 px-2 text-[length:var(--text-caption)] font-semibold text-muted-foreground transition-colors hover:text-foreground"
               >
-                Ver comparação <ChevronDown className="size-3" />
+                Limpar
               </button>
-            )}
-            <button
-              type="button"
-              onClick={clearAll}
-              className="text-[length:var(--text-caption)] font-semibold text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Limpar
-            </button>
+            </div>
           </div>
         </div>
       )}
@@ -650,7 +652,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         <td key={candidato.id} className="py-3 text-center">
                           {candidato.patrimonio_declarado != null ? (
                             <span
-                              className={`text-[length:var(--text-body)] font-bold tabular-nums ${isMax ? "text-destructive" : "text-foreground"}`}
+                              className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
                             >
                               {formatCompact(candidato.patrimonio_declarado)}
                             </span>
@@ -749,7 +751,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                           <td key={candidato.id} className="py-3 text-center">
                             {candidato.total_gasto_parlamentar != null ? (
                               <span
-                                className={`text-[length:var(--text-body)] font-bold tabular-nums ${isMax ? "text-destructive" : "text-foreground"}`}
+                                        className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
                               >
                                 {formatCompact(candidato.total_gasto_parlamentar)}
                               </span>

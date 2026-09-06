@@ -9,7 +9,7 @@
  * O que está no banco esperando decisão humana não vira verde: vira item na
  * coluna "Aguardando aprovação", com página própria para aprovar ou rejeitar.
  *
- * A régua (cinco estados de célula, aplicabilidade, índice de 15 colunas) vive
+ * A régua (cinco estados de célula, aplicabilidade, índice de 16 colunas) vive
  * em `lib/coverage-model.ts`; este arquivo só monta e desenha.
  *
  * Não escreve em banco. Os efeitos colaterais são o HTML de saída, o JSON irmão
@@ -43,12 +43,18 @@
  *   --slugs=a,b,c               limita o relatório a esses slugs
  */
 
-import { mkdirSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, writeFileSync } from "node:fs"
 import { basename, dirname, join, resolve } from "node:path"
 import { homedir } from "node:os"
 
 import type { CandidatoConfig } from "../lib/types"
 import { readFileSync } from "node:fs"
+import candidateSitesDataset from "../../src/data/candidate-sites-tse-2026.json"
+import { buildCandidateSiteLinks } from "../../src/lib/candidate-sites"
+import {
+  isCompleteExecutiveLegislationCoverageId,
+  isCompleteParliamentaryAuthorshipCoverageId,
+} from "../../src/lib/legislacao-profile-groups"
 import {
   COLUNAS,
   ROTULO_CLASSE,
@@ -250,27 +256,68 @@ export function lerSnapshot(path: string, slugs?: Set<string>): CandidatoCoverag
     | "temIdSenadoNoSeed"
     | "coletas"
     | "patrimonioAusenciasOficiais"
+    | "financiamentoAnosComReceitaPositiva"
+    | "financiamentoVerificacoes"
     | "posicoesTemasSemDeclaracao"
+    | "projetosTemInventarioCompleto"
+    | "legislacaoExecutivoTemInventarioCompleto"
   > & {
     coleta?: ColetaPorFonte
     patrimonioAusenciasOficiais?: unknown
+    financiamentoAnosComReceitaPositiva?: unknown
+    financiamentoVerificacoes?: unknown
     posicoesTemasSemDeclaracao?: unknown
+    projetosCoverageIds?: unknown
+    legislacaoExecutivoCoverageIds?: unknown
   })[]
   const idsNoSeed = idsOficiaisNoSeed()
   return bruto
     .filter((c) => (slugs ? slugs.has(c.slug) : true))
-    .map(({ coleta, patrimonioAusenciasOficiais, posicoesTemasSemDeclaracao, ...c }) => {
+    .map(({ coleta, patrimonioAusenciasOficiais, financiamentoAnosComReceitaPositiva, financiamentoVerificacoes, posicoesTemasSemDeclaracao, projetosCoverageIds, legislacaoExecutivoCoverageIds, ...c }) => {
       const ids = idsNoSeed.get(c.slug)
+      const sitesTse = candidateSitesDataset.candidates[
+        c.slug as keyof typeof candidateSitesDataset.candidates
+      ]?.sites
+      const temSiteTsePublico = buildCandidateSiteLinks({
+        sites: sitesTse?.map((site) => ({ ordem: site.order, url: site.url ?? "" })),
+      }).length > 0
+      const redesVazioConfirmadoNoSnapshot = candidateSitesDataset.verified_empty_profiles
+        .some((item) => item.slug === c.slug)
+      const projetosCoverage = stringsValidas(projetosCoverageIds)
+      const executivoCoverage = stringsValidas(legislacaoExecutivoCoverageIds)
       return {
         ...c,
+        programaGovernoEstado: lerEstadoProgramaGoverno(c.slug),
+        redes: c.redes || temSiteTsePublico,
+        redesVazioConfirmado: c.redesVazioConfirmado || redesVazioConfirmadoNoSnapshot,
+        projetosTemInventarioCompleto: projetosCoverage.some(isCompleteParliamentaryAuthorshipCoverageId),
+        legislacaoExecutivoTemInventarioCompleto: executivoCoverage.some(isCompleteExecutiveLegislationCoverageId),
         temSqNoSeed: ids?.temSq ?? false,
         temIdCamaraNoSeed: ids?.temCamara ?? false,
         temIdSenadoNoSeed: ids?.temSenado ?? false,
         coletas: coleta,
         patrimonioAusenciasOficiais: anosValidos(patrimonioAusenciasOficiais),
+        financiamentoAnosComReceitaPositiva: anosValidos(financiamentoAnosComReceitaPositiva),
+        financiamentoVerificacoes: Array.isArray(financiamentoVerificacoes)
+          ? financiamentoVerificacoes.filter((item): item is { ano_eleicao: number; resultado: "ausencia_oficial" | "nao_coletado" | "erro" } => {
+              if (typeof item !== "object" || item === null) return false
+              const row = item as Record<string, unknown>
+              return Number.isInteger(row.ano_eleicao) && ["ausencia_oficial", "nao_coletado", "erro"].includes(String(row.resultado))
+            })
+          : [],
         posicoesTemasSemDeclaracao: stringsValidas(posicoesTemasSemDeclaracao),
       }
     })
+}
+
+function lerEstadoProgramaGoverno(slug: string): string | null {
+  for (const recorte of ["governadores-2026", "presidencia-2026"]) {
+    const arquivo = join(RAIZ, "src", "data", "programas-governo", recorte, `${slug}.json`)
+    if (!existsSync(arquivo)) continue
+    const registro = JSON.parse(readFileSync(arquivo, "utf8")) as { estado?: unknown }
+    return typeof registro.estado === "string" ? registro.estado : null
+  }
+  return null
 }
 
 /** Normaliza a lista de anos vinda do snapshot: ausente ou inválida vira []. */
@@ -305,6 +352,10 @@ export function aplicarPendentes(
     if (w.tabela === "patrimonio" && w.ano !== undefined) {
       c.patrimonioAnos = push(c.patrimonioAnos, w.ano)
       if (w.campos.includes("bens")) c.patrimonioAnosComBens = push(c.patrimonioAnosComBens, w.ano)
+    } else if (w.tabela === "patrimonio_ausencia_oficial" && w.ano !== undefined) {
+      c.patrimonioAusenciasOficiais = push(c.patrimonioAusenciasOficiais, w.ano)
+    } else if (w.tabela === "candidatos" && w.campos.includes("publicavel")) {
+      porSlug.delete(c.slug)
     } else if (w.tabela === "financiamento" && w.ano !== undefined) {
       c.financiamentoAnos = push(c.financiamentoAnos, w.ano)
       if (w.campos.includes("maiores_doadores")) {
@@ -752,7 +803,7 @@ Gerado por <code>scripts/audit/coverage-report.ts</code>.</p>
   <li><b>Não se aplica</b> é inferido do histórico político registrado no próprio site: cota parlamentar exige mandato de deputado federal ou senador com fim a partir de 2009 (quando começa a cota digital do CEAP); votações-chave, mandato federal com fim a partir de 2012 (janela das votações carregadas no banco); projetos de lei, mandato parlamentar em qualquer esfera; legislação do Executivo, chefia de Executivo; patrimônio e financiamento, já ter declarado ao TSE, isto é, SQ_CANDIDATO conhecido no seed do projeto ou candidatura / mandato eletivo no histórico com início até 2024. A pré-candidatura de 2026 não conta, e cargo por nomeação (ministro, secretário, presidência de partido) também não. Histórico incompleto pode gerar falso "não se aplica".</li>
   <li><b>Patrimônio mede por eleição aplicável</b>, não por presença: o denominador são as eleições a partir de 2006 (janela da série bem_candidato dos dados abertos do TSE) registradas no histórico com proveniência TSE, unidas aos anos com bem publicado e aos anos com ausência oficial confirmada. A célula mostra cobertos/aplicáveis, e candidatura aplicável sem dado nem confirmação é lacuna ainda que haja bem publicado em outro ano. "Ausência confirmada" é o pacote oficial bem_candidato lido de ponta a ponta sem bens para o SQ_CANDIDATO (tabela <code>patrimonio_ausencia_oficial</code>); sem essa tabela no banco, a leitura degrada para lista vazia e toda eleição sem dado conta como lacuna. 2026 fica de fora até o snapshot do TSE estabilizar. Quem declarou ao TSE mas não tem nenhuma eleição aplicável na janela também sai como "não se aplica". Evolução patrimonial e bens ano a ano continuam medindo só o conjunto publicado.</li>
   <li><b>Zero</b> (cargos ocupados, trocas de partido, contradições, processos, alertas, sanções): o traço embaixo da célula diz por que ela está zerada, lido da última tentativa em <code>coleta_log</code>. Verde, todas as fontes responderam vazio. Azul, a curadoria terminou sem achado no escopo declarado, sem prometer ausência absoluta. Âmbar, falta tentativa. Vermelho, a tentativa foi inconclusiva. Cinza, não existe ingest automático. Sem traço, o log não foi lido.</li>
-  <li><b>Preenchimento</b>: entram no índice exatamente 15 colunas: foto, bio, redes sociais, dados pessoais (cheio com 3 de 4 ou mais), patrimônio, evolução patrimonial, bens ano a ano, financiamento, doadores detalhados, votações-chave, projetos de lei, cota parlamentar, legislação do Executivo, notícias e posições (quiz). Só contam as aplicáveis ao candidato; parcial vale meio ponto. Ficam fora as seis colunas de zero acima, "proj. em destaque" e "itens a revisar" (curadoria editorial), por isso pode haver 100% com célula amarela de destaque.</li>
+  <li><b>Preenchimento</b>: entram no índice exatamente 16 colunas: foto, bio, redes sociais, dados pessoais (cheio com 3 de 4 ou mais), patrimônio, evolução patrimonial, bens ano a ano, financiamento, doadores detalhados, votações-chave, projetos de lei, cota parlamentar, legislação do Executivo, notícias, programa de governo de 2026 e posições (quiz). Só contam as aplicáveis ao candidato; parcial vale meio ponto. Ficam fora as seis colunas de zero acima, "proj. em destaque" e "itens a revisar" (curadoria editorial), por isso pode haver 100% com célula amarela de destaque.</li>
   <li>Alertas contam pontos de atenção visíveis que não sejam "feito positivo". Dados pessoais = idade (da view pública <code>candidatos_publico</code>, derivada da data de nascimento), naturalidade, formação e profissão. Posições (quiz) é x/3, um por tema do quiz presidencial.</li>
 </ul>
 ${blocoPendentes}

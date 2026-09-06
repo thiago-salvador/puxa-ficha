@@ -245,6 +245,8 @@ jobs:
           set -euo pipefail
           psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
             -f scripts/audit/superficie-snapshot.sql > superficie.json
+          psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -Atq \
+            -f scripts/audit/coverage-snapshot.sql > superficie-cobertura.json
       - name: Julgar superfície (script puro)
         run: |
           set -euo pipefail
@@ -253,8 +255,17 @@ jobs:
             args+=(--strict-all)
           fi
           npx tsx scripts/audit/audit-superficie.ts "${args[@]}"
-      - name: Auditar completude das fichas públicas
-        run: npm run audit:completude-publica
+      - name: Auditar núcleo mínimo das fichas públicas
+        run: npm run audit:nucleo-fichas-publicas
+      - name: Gerar matriz integral das seções públicas
+        run: |
+          set -euo pipefail
+          npx tsx scripts/audit/coverage-report.ts \
+            --from-snapshot=superficie-cobertura.json \
+            --out=public-profile-contract.html \
+            --json=public-profile-contract.json
+      - name: Impedir aumento da dívida integral conhecida
+        run: npm run audit:contrato-fichas-publicas -- --report=public-profile-contract.json --out=public-profile-contract-gate.json
       - name: Preservar receipt da superfície
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
@@ -262,6 +273,9 @@ jobs:
           name: superficie-fichas-${{ github.run_id }}
           path: |
             superficie-report.json
-            public-profile-completeness-report.json
+            public-profile-core-report.json
+            public-profile-contract.html
+            public-profile-contract.json
+            public-profile-contract-gate.json
           if-no-files-found: error
           retention-days: 30

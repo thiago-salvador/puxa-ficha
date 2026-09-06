@@ -3,11 +3,15 @@ import { buildCandidateSiteLinks } from "@/lib/candidate-sites"
 
 export function CandidateSitesCard({
   sites,
+  vazioConfirmadoEm,
+  indeterminadoEm,
 }: {
   sites?: ReadonlyArray<{ ordem: number; url: string }> | null
+  vazioConfirmadoEm?: string | null
+  indeterminadoEm?: string | null
 }) {
   const links = buildCandidateSiteLinks({ sites })
-  if (links.length === 0) return null
+  if (links.length === 0 && !vazioConfirmadoEm && !indeterminadoEm) return null
 
   const isScrollable = links.length > 5
 
@@ -22,12 +26,27 @@ export function CandidateSitesCard({
         <h2 id="candidate-sites-title" className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
           Sites do candidato
         </h2>
-        <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground">
-          {links.length} {links.length === 1 ? "link" : "links"}
-        </span>
+        {links.length > 0 && (
+          <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground">
+            {links.length} {links.length === 1 ? "link" : "links"}
+          </span>
+        )}
       </div>
 
-      <div
+      {links.length === 0 ? (
+        <div className="flex min-h-0 flex-1 flex-col justify-center rounded-lg border border-border/50 bg-secondary/30 px-4 py-5">
+          <p className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
+            {vazioConfirmadoEm
+              ? "Nenhum site ou rede declarado ao TSE"
+              : "Declaração do TSE sem link verificável"}
+          </p>
+          <p className="mt-1 text-[length:var(--text-eyebrow)] leading-relaxed text-muted-foreground">
+            {vazioConfirmadoEm
+              ? `Fonte consultada em ${vazioConfirmadoEm}.`
+              : `A fonte foi consultada em ${indeterminadoEm}, mas o texto declarado não forma uma URL segura.`}
+          </p>
+        </div>
+      ) : <div
         aria-label="Lista de sites do candidato"
         className="max-h-[245px] min-h-0 flex-1 divide-y divide-border/60 overflow-y-auto overscroll-contain rounded-lg border border-border/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
         data-pf-candidate-sites-list=""
@@ -61,7 +80,7 @@ export function CandidateSitesCard({
             />
           </a>
         ))}
-      </div>
+      </div>}
     </section>
   )
 }

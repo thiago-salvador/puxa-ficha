@@ -15,6 +15,8 @@ import type { Candidato, Chapa2026, FichaCandidato, CandidatoComparavel, Indicad
 import { buildGlobalSearchIndexItems, mergeVotacaoTagsByCandidatoId, type GlobalSearchIndexItem, type VotacaoSearchRow } from "@/lib/global-search"
 import { countPartySwitches, normalizePartyTimelineForDisplay } from "@/lib/party-switches"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
+import { splitNewsByDenylist } from "@/lib/news/denylist"
+import { newsRetentionCutoffIso } from "@/lib/operational-retention"
 import { fetchGastoTotalsByCandidatoIds, fetchCargoAtualByCandidatoIds, fetchLegislacaoMandatoExecutivoRowsPaged, fetchLegislativeHistoryFlagsByCandidatoIds, fetchMudancasPartidoRowsPaged, fetchPatrimonioSeriesByCandidatoIds, LEGISLACAO_MANDATO_EXECUTIVO_PROFILE_PREVIEW_LIMIT, LEGISLACAO_MANDATO_EXECUTIVO_PUBLIC_SELECT } from "@/lib/fetch-gastos-votos-in-batch"
 import { applyLegislacaoMandatoExecutivoCachePolicy } from "@/lib/legislacao-mandato-executivo-cache"
 import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
@@ -1099,8 +1101,12 @@ async function getCandidatoBySlugFromRelationResource(
           .from("noticias_candidato")
           .select("*")
           .eq("candidato_id", id)
+          .not("data_publicacao", "is", null)
+          .gte("data_publicacao", newsRetentionCutoffIso())
           .order("data_publicacao", { ascending: false })
-          .limit(20)
+          // Busca margem para que a denylist editorial possa retirar itens sem
+          // reduzir artificialmente a previa publica de 20 noticias.
+          .limit(40)
           .abortSignal(signal)
       ),
       candidato.cargo_disputado === "Governador" && candidato.estado
@@ -1285,10 +1291,12 @@ async function getCandidatoBySlugFromRelationResource(
     // mas as linhas ja gravadas continuam no banco: 3.984 de 17.498 (22,77%)
     // sem nenhum token do nome no titulo. Em vez de apagar dado, marcamos o que
     // e cobertura do pleito para a UI dizer isso ao leitor.
-    noticias: (noticias.data ?? []).map((noticia) => ({
-      ...noticia,
-      contexto_do_pleito: !newsTitleMentionsCandidate(noticia.titulo, candidato),
-    })),
+    noticias: splitNewsByDenylist(noticias.data ?? [], candidato.slug).permitidos
+      .slice(0, 20)
+      .map((noticia) => ({
+        ...noticia,
+        contexto_do_pleito: !newsTitleMentionsCandidate(noticia.titulo, candidato),
+      })),
     indicadores_estaduais: indicadores.data ?? [],
     total_processos: (processos.data ?? []).length,
     processos_criminais: (processos.data ?? []).filter(processoPodeContarComoCriminal).length,

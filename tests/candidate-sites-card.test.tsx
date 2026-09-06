@@ -86,11 +86,30 @@ test("card nao cria caixa vazia quando o TSE nao publicou site valido", () => {
   assert.equal(html, "")
 })
 
+test("card explicita ausencia quando a consulta ao TSE terminou vazia", () => {
+  const html = renderToStaticMarkup(
+    <CandidateSitesCard sites={[]} vazioConfirmadoEm="2026-08-15" />,
+  )
+
+  assert.match(html, /Nenhum site ou rede declarado ao TSE/)
+  assert.match(html, /Fonte consultada em 2026-08-15/)
+  assert.match(html, /data-pf-candidate-sites-count="0"/)
+})
+
+test("card explicita declaração que não pode virar link seguro", () => {
+  const html = renderToStaticMarkup(
+    <CandidateSitesCard sites={[]} indeterminadoEm="2026-09-06T15:27:12.979Z" />,
+  )
+
+  assert.match(html, /Declaração do TSE sem link verificável/)
+  assert.match(html, /não forma uma URL segura/)
+})
+
 test("snapshot traz a lista integral e deduplicada do Flavio Bolsonaro", () => {
   const record = candidateSitesDataset.candidates["flavio-bolsonaro"]
   assert.ok(record)
   assert.equal(record.sq_candidato, "280002551544")
-  assert.equal(record.sites.length, 33)
+  assert.equal(record.sites.length, 37)
   const urls = record.sites.map((site) => site.url?.toLowerCase())
   assert.ok(urls.some((url) => url?.includes("t.me/senadorflaviobolsonaro")))
   assert.ok(urls.some((url) => url?.includes("discord.gg/exyyrj5tf")))
@@ -146,6 +165,7 @@ test("coletor casa por SQ, usa nome exato unico como fallback e falha fechado na
   ])
   assert.equal(dataset.counts.declared_sq_missing, 1)
   assert.equal(dataset.counts.duplicate_rows_removed, 1)
+  assert.deepEqual(dataset.verified_empty_profiles, [])
 })
 
 test("coletor seleciona a geracao mais recente pela data cronologica do TSE", () => {

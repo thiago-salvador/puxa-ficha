@@ -94,3 +94,9 @@ jobs:
       # PostgreSQL 17 efêmeros e sem conexão ou segredo de produção.
       - name: Contratos operacionais das 19 migrations em PostgreSQL 17
         run: bash scripts/audit/provar-release-pf-ajustes-pg17.sh
+
+      - name: Correções editoriais de julgamento em PostgreSQL 17
+        run: bash scripts/audit/provar-textos-julgamento-pg17.sh
+
+      - name: Profissão de Álvaro Dias em PostgreSQL 17
+        run: bash scripts/audit/provar-profissao-alvaro-dias-rn-pg17.sh

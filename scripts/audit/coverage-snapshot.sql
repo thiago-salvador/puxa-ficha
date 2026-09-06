@@ -21,6 +21,12 @@ from (
     'partido_sigla', c.partido_sigla,
     'cargo_disputado', c.cargo_disputado,
     'estado', c.estado,
+    'temSqAtualNoBanco', exists (
+      select 1
+      from candidatos c_raw
+      where c_raw.id = c.id
+        and nullif(btrim(c_raw.sq_candidato_2026), '') is not null
+    ),
     'foto', nullif(btrim(c.foto_url), '') is not null,
     'foto_url', c.foto_url,
     'foto_origem', case
@@ -34,6 +40,7 @@ from (
     'bio', c.biografia is not null,
     'redes', coalesce(c.redes_sociais, '{}'::jsonb) <> '{}'::jsonb
              and coalesce(c.redes_sociais, '[]'::jsonb) <> '[]'::jsonb,
+    'redesVazioConfirmado', coalesce(c.verificacao_campos #>> '{social_networks,estado}', '') = 'vazio_confirmado',
     'idade', c.idade,
     'naturalidade', c.naturalidade,
     'formacao', c.formacao,
@@ -69,7 +76,9 @@ from (
         'tipo_evento', h.tipo_evento,
         'periodo_inicio', h.periodo_inicio,
         'periodo_fim', h.periodo_fim,
-        'proveniencia', h.proveniencia))
+        'proveniencia', h.proveniencia,
+        'eleito_por', h.eleito_por,
+        'observacoes', h.observacoes))
       from historico_politico h
       where h.candidato_id = c.id and h.despublicado_em is null), '[]'::jsonb),
     'mudancas', (select count(*) from mudancas_partido m where m.candidato_id = c.id),
@@ -104,7 +113,32 @@ from (
       select jsonb_agg(f.ano_eleicao) from financiamento f
       where f.candidato_id = c.id and jsonb_typeof(f.maiores_doadores) = 'array'
         and jsonb_array_length(f.maiores_doadores) > 0), '[]'::jsonb),
+    'financiamentoAnosComReceitaPositiva', coalesce((
+      select jsonb_agg(f.ano_eleicao) from financiamento f
+      where f.candidato_id = c.id and coalesce(f.total_arrecadado, 0) > 0), '[]'::jsonb),
+    'financiamentoVerificacoes', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'ano_eleicao', fv.ano_eleicao,
+        'resultado', fv.resultado) order by fv.ano_eleicao)
+      from financiamento_verificacoes fv
+      where fv.candidato_id = c.id), '[]'::jsonb),
     'votos', (select count(*) from votos_candidato v where v.candidato_id = c.id),
+    'votosAplicaveis', (
+      select count(*)
+      from votacoes_chave vc
+      where exists (
+        select 1
+        from historico_politico hp
+        where hp.candidato_id = c.id
+          and hp.tipo_evento = 'mandato'
+          and (
+            (vc.casa = 'Câmara' and hp.cargo_canonico = 'Deputado Federal')
+            or (vc.casa = 'Senado' and hp.cargo_canonico = 'Senador')
+          )
+          and extract(year from vc.data_votacao)::int >= hp.periodo_inicio
+          and extract(year from vc.data_votacao)::int <= coalesce(hp.periodo_fim, 9999)
+      )
+    ),
     'contradicoes', (
       select count(*) from pontos_atencao pa
       where pa.candidato_id = c.id and pa.visivel
@@ -121,6 +155,11 @@ from (
     'projetosCamara', (
       select count(*) from projetos_lei pl
       where pl.candidato_id = c.id and pl.fonte = 'Camara'),
+    'projetosCoverageIds', coalesce((
+      select jsonb_agg(distinct pl.coverage_id)
+      from projetos_lei pl
+      where pl.candidato_id = c.id and nullif(trim(pl.coverage_id), '') is not null
+    ), '[]'::jsonb),
     'destaquesTotais', (select count(*) from projetos_lei pl where pl.candidato_id = c.id and pl.destaque),
     -- A ficha carrega só os 25 mais recentes (ano desc, numero desc) e ordena
     -- destaque primeiro DENTRO dessa fatia. Destaque antigo não aparece.
@@ -134,6 +173,12 @@ from (
       select jsonb_agg(g.ano) from gastos_parlamentares g where g.candidato_id = c.id), '[]'::jsonb),
     'legislacaoExecutivo', (
       select count(*) from legislacao_mandato_executivo l where l.candidato_id = c.id),
+    'legislacaoExecutivoCoverageIds', coalesce((
+      select jsonb_agg(distinct l.metadata->>'coverage_id')
+      from legislacao_mandato_executivo l
+      where l.candidato_id = c.id
+        and nullif(trim(l.metadata->>'coverage_id'), '') is not null
+    ), '[]'::jsonb),
     'noticias', (select count(*) from noticias_candidato n where n.candidato_id = c.id),
     -- Só o que o quiz consome (`.eq("verificado", true)` em src/lib/api.ts).
     'posicoesTemasVerificados', coalesce((

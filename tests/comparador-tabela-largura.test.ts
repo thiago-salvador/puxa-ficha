@@ -18,6 +18,17 @@ const SRC = readFileSync(resolve(process.cwd(), "src/components/ComparadorPanel.
  * entre 768px e ~964px e inerente ao conteudo, nao ao piso.
  */
 describe("tabela do comparador", () => {
+  it("mantém a barra sticky utilizável em 360 px", () => {
+    assert.match(SRC, /grid-cols-\[1fr_auto\]/)
+    assert.match(SRC, /overflow-x-auto overscroll-x-contain/)
+    assert.match(SRC, /min-h-11 shrink-0 items-center gap-1\.5 whitespace-nowrap/)
+    assert.match(SRC, /min-h-11 shrink-0 px-2/)
+  })
+
+  it("não usa vermelho de contraste insuficiente no maior patrimônio", () => {
+    assert.doesNotMatch(SRC, /isMax \? "text-destructive" : "text-foreground"/)
+  })
+
   it("tem piso de largura que força scroll em vez de esmagar a coluna do nome", () => {
     assert.match(
       SRC,

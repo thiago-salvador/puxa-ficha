@@ -20,13 +20,13 @@
  *   - legislação exec.  : chefia de Executivo (Presidente, Governador ou Prefeito),
  *                         com `tipo_evento = 'mandato'`
  *   - patrimônio e      : já ter declarado ao TSE, isto é, SQ_CANDIDATO conhecido no
- *     financiamento       seed OU candidatura / mandato ELETIVO no histórico com
- *                         `periodo_inicio <= 2024`. A pré-candidatura de 2026 não
- *                         conta (ainda não houve registro), e cargo por nomeação
- *                         (ministro, secretário, presidência de partido) também não.
+ *     financiamento       seed, âncora atual no banco OU candidatura / mandato
+ *                         ELETIVO no histórico com `periodo_inicio <= 2026`.
+ *                         Cargo por nomeação (ministro, secretário, presidência de
+ *                         partido) não conta.
  *
  * Patrimônio mede POR ELEIÇÃO aplicável, não por presença (2026-08-07): o
- * denominador são as eleições a partir de `PATRIMONIO_ANO_INICIAL_APLICAVEL`
+ * denominador são as candidaturas a partir de `PATRIMONIO_ANO_INICIAL_APLICAVEL`
  * (2006, janela da série bem_candidato dos dados abertos do TSE) vindas do
  * histórico com proveniência `tse`, unidas aos anos com bem publicado e aos anos
  * com ausência oficial confirmada (`patrimonioAusenciasOficiais`). Quem publicou
@@ -46,6 +46,11 @@ import {
 } from "./coleta-proveniencia"
 import { FONTE_CAMARA_PROPOSICOES } from "../../lib/coleta-log"
 import { QUIZ_PERGUNTAS } from "../../../src/data/quiz/perguntas"
+import {
+  FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE,
+  FINANCIAMENTO_ULTIMO_PLEITO_COM_PRESTACAO_DEVIDA,
+} from "../../../src/lib/financiamento-eleicoes"
+import { anosDePleitoDisputado } from "../../../src/lib/pleitos-disputados"
 import { getEspectroPartidario } from "../../../src/data/quiz/espectro-partidario"
 import { isPhotoPlaceholder } from "../../../src/lib/photo-placeholder"
 import { resolveCanonicalPartySigla } from "../../../src/lib/party-utils"
@@ -92,7 +97,7 @@ export const ROTULO_PROVENIENCIA: Record<Proveniencia, string> = {
 }
 
 /** Último ano de registro no TSE considerado para "já declarou". */
-export const ANO_ULTIMA_ELEICAO_REGISTRADA = 2024
+export const ANO_ULTIMA_ELEICAO_REGISTRADA = 2026
 /**
  * Primeira eleição medida pela régua de patrimônio. A série `bem_candidato` dos
  * dados abertos do TSE começa em 2006; antes disso não há pacote oficial para
@@ -102,8 +107,8 @@ export const ANO_ULTIMA_ELEICAO_REGISTRADA = 2024
 export const PATRIMONIO_ANO_INICIAL_APLICAVEL = 2006
 /** Cota parlamentar digital (CEAP) só existe a partir de 2009. */
 export const ANO_INICIO_COTA_PARLAMENTAR = 2009
-/** Primeira das votações-chave carregadas no banco (2012-05-25). */
-export const ANO_INICIO_VOTACOES_CHAVE = 2012
+/** Fallback para snapshot antigo sem a cardinalidade dinâmica das votações. */
+export const ANO_INICIO_VOTACOES_CHAVE = 2015
 /** Temas derivados das perguntas que o cálculo do quiz realmente consome. */
 export const TEMAS_QUIZ: readonly string[] = Object.freeze(
   [...new Set(QUIZ_PERGUNTAS.flatMap((pergunta) => pergunta.temas_pl ?? []))].sort()
@@ -141,6 +146,13 @@ interface HistoricoEvento {
    * carregava; aí a linha simplesmente não cria eleição aplicável.
    */
   proveniencia?: string | null
+  eleito_por?: string | null
+  observacoes?: string | null
+}
+
+interface FinanciamentoVerificacaoCoverage {
+  ano_eleicao: number
+  resultado: "ausencia_oficial" | "nao_coletado" | "erro"
 }
 
 type FotoOrigem = "local" | "tse" | "wikimedia" | "oficial" | "terceiro"
@@ -159,6 +171,8 @@ export interface CandidatoCoverage {
   foto_origem?: FotoOrigem | null
   bio: boolean
   redes: boolean
+  /** A fonte oficial foi consultada e não publicou link válido para o pleito. */
+  redesVazioConfirmado?: boolean
 
   /** Idade vem da view pública `candidatos_publico` (a coluna crua é sempre NULL). */
   idade: number | null
@@ -169,6 +183,8 @@ export interface CandidatoCoverage {
   historico: HistoricoEvento[]
   /** SQ_CANDIDATO conhecido no seed `data/candidatos.json`. */
   temSqNoSeed: boolean
+  /** SQ_CANDIDATO do pleito atual persistido no banco, sem expor o identificador. */
+  temSqAtualNoBanco?: boolean
   /** IDs oficiais usados pelos ingests federais, resolvidos do seed pelo relatório. */
   temIdCamaraNoSeed: boolean
   temIdSenadoNoSeed: boolean
@@ -186,7 +202,11 @@ export interface CandidatoCoverage {
   patrimonioAusenciasOficiais: number[]
   financiamentoAnos: number[]
   financiamentoAnosComDoadores: number[]
+  financiamentoAnosComReceitaPositiva?: number[]
+  financiamentoVerificacoes?: FinanciamentoVerificacaoCoverage[]
   votos: number
+  /** Votações-chave cujo ano e casa intersectam um mandato federal da ficha. */
+  votosAplicaveis?: number
   contradicoes: number
   processos: number
   alertas: number
@@ -200,6 +220,8 @@ export interface CandidatoCoverage {
    * "está completo".
    */
   projetosCamara?: number
+  /** Ao menos um recorte público de autoria parlamentar está marcado como completo. */
+  projetosTemInventarioCompleto?: boolean
   /**
    * Destaques que o leitor alcança hoje. A ficha carrega os 25 projetos mais
    * recentes (`ano` desc, `numero` desc) e ordena destaque primeiro DENTRO dessa
@@ -211,7 +233,11 @@ export interface CandidatoCoverage {
   destaquesTotais: number
   gastosAnos: number[]
   legislacaoExecutivo: number
+  /** O inventário público de atos do Executivo traz coverage_id reconhecido como completo. */
+  legislacaoExecutivoTemInventarioCompleto?: boolean
   noticias: number
+  /** Estado editorial do artefato estático de programa de governo de 2026. */
+  programaGovernoEstado?: string | null
   /**
    * Temas com posição declarada E `verificado = true`. É o que o quiz usa
    * (`src/lib/api.ts`, `.eq("verificado", true)`), portanto é o que o leitor vê.
@@ -249,13 +275,20 @@ export const COLUNAS_COM_PROVENIENCIA = Object.keys(FONTES_POR_COLUNA)
  */
 export function provenienciaDoZero(
   coluna: string,
-  coletas: ColetaPorFonte | undefined
+  coletas: ColetaPorFonte | undefined,
+  fontesNaoAplicaveis: Readonly<Record<string, string>> = {}
 ): Proveniencia {
   if (!FONTES_POR_COLUNA[coluna]) return "desconhecida"
   // Coluna sem ingest não depende do log: o veredito é o mesmo com ou sem ele.
   if (FONTES_POR_COLUNA[coluna].length === 0) return "sem_ingest"
   if (!coletas) return "desconhecida"
-  return provenienciaDaColuna(coluna, coletas).veredito
+  const coletaComNaoAplicaveis: ColetaPorFonte = { ...coletas }
+  for (const fonte of Object.keys(fontesNaoAplicaveis)) {
+    if (!coletaComNaoAplicaveis[fonte]) {
+      coletaComNaoAplicaveis[fonte] = { resultado: "nao_aplicavel" }
+    }
+  }
+  return provenienciaDaColuna(coluna, coletaComNaoAplicaveis).veredito
 }
 
 /** Classes de item que entram na fila de revisão. */
@@ -319,7 +352,7 @@ export function calcularAplicabilidade(c: CandidatoCoverage): Aplicabilidade {
     }),
     projetosLei: mandatos.some((h) => CARGOS_PARLAMENTAR.has(h.cargo_canonico ?? "")),
     legislacaoExecutivo: mandatos.some((h) => CARGOS_CHEFIA_EXECUTIVO.has(h.cargo_canonico ?? "")),
-    declarouAoTse: c.temSqNoSeed || declarouPorHistorico,
+    declarouAoTse: c.temSqNoSeed || c.temSqAtualNoBanco === true || declarouPorHistorico,
     parlamentarFederalQualquerEpoca: mandatosFederais.length > 0
   }
 }
@@ -383,11 +416,20 @@ export interface PatrimonioPorEleicao {
 
 export function patrimonioPorEleicao(c: CandidatoCoverage): PatrimonioPorEleicao {
   const anos = new Set<number>()
-  for (const h of c.historico) {
-    if (h.proveniencia !== "tse") continue
-    if (h.periodo_inicio === null) continue
-    if (h.periodo_inicio >= PATRIMONIO_ANO_INICIAL_APLICAVEL) anos.add(h.periodo_inicio)
+  if (c.temSqAtualNoBanco === true && CARGOS_ELETIVOS.has(c.cargo_disputado ?? "")) {
+    anos.add(ANO_ULTIMA_ELEICAO_REGISTRADA)
   }
+  for (const ano of anosDePleitoDisputado(
+    c.historico.map((h) => ({
+      periodo_inicio: h.periodo_inicio,
+      periodo_fim: h.periodo_fim,
+      proveniencia: h.proveniencia,
+      cargo: h.cargo_canonico,
+      eleito_por: h.eleito_por,
+      observacoes: h.observacoes,
+    })),
+    PATRIMONIO_ANO_INICIAL_APLICAVEL,
+  )) anos.add(ano)
   for (const ano of c.patrimonioAnos) {
     if (ano >= PATRIMONIO_ANO_INICIAL_APLICAVEL) anos.add(ano)
   }
@@ -444,13 +486,14 @@ export const COLUNAS: ColunaDef[] = [
   { key: "gastos", label: "Cota parlamentar" },
   { key: "legexec", label: "Legislação do Executivo" },
   { key: "noticias", label: "Notícias" },
+  { key: "programa", label: "Programa de governo 2026" },
   { key: "posicoes", label: "Posições (quiz)" },
   { key: "espectro", label: "Espectro do partido (quiz)" },
   { key: "sancoes", label: "Sanções" },
   { key: "revisar", label: "Aguardando aprovação" }
 ]
 
-/** As 15 colunas que entram no índice de preenchimento. */
+/** As 16 colunas que entram no índice de preenchimento. */
 export const COLUNAS_DO_INDICE = [
   "foto",
   "bio",
@@ -466,6 +509,7 @@ export const COLUNAS_DO_INDICE = [
   "gastos",
   "legexec",
   "noticias",
+  "programa",
   "posicoes"
 ] as const
 
@@ -500,7 +544,7 @@ function declaradoNaCamara(coletas: ColetaPorFonte | undefined): number | null {
  * motivo, e a dica diz o que aquele zero autoriza afirmar.
  */
 function cellZero(coluna: string, c: CandidatoCoverage, semDado: string): Cell {
-  const prov = provenienciaDoZero(coluna, c.coletas)
+  const prov = provenienciaDoZero(coluna, c.coletas, calcularFontesNaoAplicaveis(c))
   const explicacao: Record<Proveniencia, string> = {
     zero_provado: `${semDado}: todas as fontes foram consultadas e responderam vazio`,
     coletado: `${semDado} nesta régua, mas a coleta trouxe dado: o vazio é do recorte, não da fonte`,
@@ -552,7 +596,11 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
     )
   }
   out.bio = c.bio ? cell("ok", "✓") : cell("missing", "—")
-  out.redes = c.redes ? cell("ok", "✓") : cell("missing", "—")
+  out.redes = c.redes
+    ? cell("ok", "✓")
+    : c.redesVazioConfirmado
+      ? cell("zero", "0", "TSE consultado; nenhum site ou rede declarado para a candidatura")
+      : cell("missing", "—")
 
   const dp = [
     c.idade !== null,
@@ -655,27 +703,93 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
   }
 
   const fin = c.financiamentoAnos.length
-  if (fin > 0) {
+  const verificacoesFin = c.financiamentoVerificacoes ?? []
+  const ausenciasFin = new Set(
+    verificacoesFin.filter((v) => v.resultado === "ausencia_oficial").map((v) => v.ano_eleicao),
+  )
+  const anosAplicaveisFin = anosDePleitoDisputado(
+    c.historico.map((h) => ({
+      periodo_inicio: h.periodo_inicio,
+      periodo_fim: h.periodo_fim,
+      proveniencia: h.proveniencia,
+      cargo: h.cargo_canonico,
+      eleito_por: h.eleito_por,
+      observacoes: h.observacoes,
+    })),
+    FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE,
+  )
+  // A eleição de 2026 já aparece na trajetória, mas a prestação final ainda
+  // não é devida. O próprio contrato público a classifica como pleito futuro.
+  for (const ano of anosAplicaveisFin) {
+    if (ano > FINANCIAMENTO_ULTIMO_PLEITO_COM_PRESTACAO_DEVIDA) anosAplicaveisFin.delete(ano)
+  }
+  for (const ano of c.financiamentoAnos) {
+    if (ano <= FINANCIAMENTO_ULTIMO_PLEITO_COM_PRESTACAO_DEVIDA) anosAplicaveisFin.add(ano)
+  }
+  for (const v of verificacoesFin) {
+    if (v.ano_eleicao <= FINANCIAMENTO_ULTIMO_PLEITO_COM_PRESTACAO_DEVIDA) anosAplicaveisFin.add(v.ano_eleicao)
+  }
+  const publicadosFin = new Set(c.financiamentoAnos)
+  const lacunasFin = [...anosAplicaveisFin].filter((ano) => !publicadosFin.has(ano) && !ausenciasFin.has(ano))
+  const cobertosFin = [...anosAplicaveisFin].filter((ano) => publicadosFin.has(ano) || ausenciasFin.has(ano))
+
+  if (anosAplicaveisFin.size > 0) {
+    out.financiamento = cell(
+      lacunasFin.length === 0 ? "ok" : cobertosFin.length > 0 ? "partial" : "missing",
+      `${cobertosFin.length}/${anosAplicaveisFin.size}`,
+      lacunasFin.length > 0 ? `sem dado nem confirmação: ${lacunasFin.sort((a, b) => a - b).join(", ")}` : undefined,
+    )
+    const positivos = c.financiamentoAnosComReceitaPositiva ?? c.financiamentoAnos
+    const anosComDoadores = new Set(c.financiamentoAnosComDoadores)
+    const doadores = positivos.filter((ano) => anosComDoadores.has(ano)).length
+    out.doadores = positivos.length === 0
+      ? cell("zero", "0", "nenhum pleito publicado com receita positiva exige lista de doadores")
+      : cell(
+          doadores === positivos.length ? "ok" : doadores > 0 ? "partial" : "missing",
+          `${doadores}/${positivos.length}`,
+        )
+  } else if (fin > 0) {
     out.financiamento = cell("ok", anos(fin))
-    const d = c.financiamentoAnosComDoadores.length
-    out.doadores = cell(d === fin ? "ok" : d > 0 ? "partial" : "missing", `${d}/${fin}`)
+    const positivos = c.financiamentoAnosComReceitaPositiva ?? c.financiamentoAnos
+    const anosComDoadores = new Set(c.financiamentoAnosComDoadores)
+    const doadores = positivos.filter((ano) => anosComDoadores.has(ano)).length
+    out.doadores = positivos.length === 0
+      ? cell("zero", "0", "nenhum pleito publicado com receita positiva exige lista de doadores")
+      : cell(doadores === positivos.length ? "ok" : doadores > 0 ? "partial" : "missing", `${doadores}/${positivos.length}`)
   } else if (!ap.declarouAoTse) {
     const tip = "nunca disputou eleição nem teve mandato eletivo: não há prestação de contas ao TSE"
     out.financiamento = cell("na", "n/a", tip)
     out.doadores = cell("na", "n/a", tip)
   } else {
-    out.financiamento = cell("missing", "—")
-    out.doadores = cell("missing", "—")
+    const tip = c.temSqAtualNoBanco === true
+      ? "nenhum pleito anterior aplicável; a prestação de contas de 2026 ainda não é devida"
+      : `nenhum pleito aplicável na série digital do TSE (${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}-${FINANCIAMENTO_ULTIMO_PLEITO_COM_PRESTACAO_DEVIDA})`
+    out.financiamento = cell("na", c.temSqAtualNoBanco === true ? "pleito em curso" : "n/a", tip)
+    out.doadores = cell("na", c.temSqAtualNoBanco === true ? "pleito em curso" : "n/a", tip)
   }
 
-  if (c.votos > 0) {
-    out.votos = cell("ok", String(c.votos))
-  } else if (ap.votacoesChave) {
+  const votosAplicaveis = typeof c.votosAplicaveis === "number" && Number.isFinite(c.votosAplicaveis)
+    ? c.votosAplicaveis
+    : null
+  if (votosAplicaveis === 0) {
+    out.votos = cell("na", "n/a", "nenhuma votação-chave coincide com os anos e a casa do mandato federal")
+  } else if (c.votos > 0 && votosAplicaveis !== null) {
     out.votos = cell(
-      "missing",
-      "—",
-      `mandato federal dentro da janela das votações-chave (${ANO_INICIO_VOTACOES_CHAVE}-2024), sem voto registrado`
+      c.votos >= votosAplicaveis ? "ok" : "partial",
+      `${c.votos}/${votosAplicaveis}`,
+      c.votos < votosAplicaveis ? `${votosAplicaveis - c.votos} votação(ões) aplicável(is) sem registro` : undefined
     )
+  } else if (c.votos > 0) {
+    out.votos = cell("ok", String(c.votos), "snapshot antigo sem cardinalidade de votações aplicáveis")
+  } else if ((votosAplicaveis ?? (ap.votacoesChave ? 1 : 0)) > 0) {
+    const prov = provenienciaDoZero("votos", c.coletas, calcularFontesNaoAplicaveis(c))
+    out.votos = prov === "zero_provado"
+      ? cell("zero", "0", "fontes oficiais aplicáveis consultadas; nenhum voto nas votações-chave do recorte")
+      : cell(
+          "missing",
+          "—",
+          "há votação-chave cujo ano e casa coincidem com o mandato federal, sem voto registrado"
+        )
   } else if (ap.parlamentarFederalQualquerEpoca) {
     out.votos = cell(
       "na",
@@ -726,7 +840,9 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
           `truncado: a Câmara declara ${declaradoCamara} proposições autorais e o banco tem ` +
             `${projetosCamara} de fonte Câmara (${c.projetos} no total, somando outras fontes)`
         )
-      : declaradoCamara == null
+      : declaradoCamara == null && c.projetosTemInventarioCompleto
+        ? cell("ok", String(c.projetos), "inventário completo no recorte oficial explicitado na ficha")
+        : declaradoCamara == null
         ? cell(
             "partial",
             String(c.projetos),
@@ -757,8 +873,14 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
               : "tem projetos, sem curadoria de destaque"
           )
   } else if (ap.projetosLei) {
-    out.projetos = cell("missing", "—", "teve mandato parlamentar, sem projeto registrado")
-    out.destaques = cell("missing", "—")
+    const prov = provenienciaDoZero("projetos", c.coletas, calcularFontesNaoAplicaveis(c))
+    if (prov === "zero_provado") {
+      out.projetos = cell("zero", "0", "fontes oficiais aplicáveis consultadas; nenhuma proposição autoral no recorte")
+      out.destaques = cell("zero", "0", "sem proposição autoral no recorte para destacar")
+    } else {
+      out.projetos = cell("missing", "—", "teve mandato parlamentar, sem projeto registrado")
+      out.destaques = cell("missing", "—")
+    }
   } else {
     const tip = "nunca exerceu mandato parlamentar (pelo histórico registrado)"
     out.projetos = cell("na", "n/a", tip)
@@ -769,7 +891,10 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
   if (g > 0) {
     out.gastos = cell("ok", anos(g))
   } else if (ap.cotaParlamentar) {
-    out.gastos = cell("missing", "—", "mandato federal na era do CEAP digital, sem cota registrada")
+    const prov = provenienciaDoZero("gastos", c.coletas, calcularFontesNaoAplicaveis(c))
+    out.gastos = prov === "zero_provado"
+      ? cell("zero", "0", "fontes oficiais aplicáveis consultadas; nenhuma despesa no recorte")
+      : cell("missing", "—", "mandato federal na era do CEAP digital, sem cota registrada")
   } else if (ap.parlamentarFederalQualquerEpoca) {
     out.gastos = cell(
       "na",
@@ -781,7 +906,9 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
   }
 
   if (c.legislacaoExecutivo > 0) {
-    out.legexec = cell("ok", String(c.legislacaoExecutivo))
+    out.legexec = c.legislacaoExecutivoTemInventarioCompleto
+      ? cell("ok", String(c.legislacaoExecutivo), "inventário completo no recorte oficial explicitado na ficha")
+      : cell("partial", String(c.legislacaoExecutivo), "há atos publicados, mas nenhum coverage_id reconhecido como inventário completo")
   } else if (ap.legislacaoExecutivo) {
     out.legexec = cell("missing", "—", "chefiou Executivo, sem norma registrada")
   } else {
@@ -789,6 +916,22 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
   }
 
   out.noticias = c.noticias > 0 ? cell("ok", String(c.noticias)) : cell("missing", "—")
+
+  if (!new Set(["Presidente", "Governador"]).has(c.cargo_disputado ?? "")) {
+    out.programa = cell("na", "n/a", "programa de governo é atribuído à candidatura titular ao Executivo")
+  } else {
+    out.programa = c.programaGovernoEstado === "aprovado"
+      ? cell("ok", "✓", "documento oficial extraído, revisado e publicado na ficha")
+      : c.programaGovernoEstado === "sem_documento_oficial"
+        ? cell("zero", "0", "TSE consultado; nenhum documento oficial foi publicado para a candidatura")
+        : cell(
+            "missing",
+            "—",
+            c.programaGovernoEstado
+              ? `programa ainda não publicável: ${c.programaGovernoEstado}`
+              : "ficha sem artefato de programa de governo de 2026"
+          )
+  }
 
   if (CARGOS_COM_QUIZ.has(c.cargo_disputado ?? "")) {
     const uteis = new Set(TEMAS_QUIZ)

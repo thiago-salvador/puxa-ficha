@@ -105,14 +105,16 @@ describe("resolveCargoDisputadoProveniencia", () => {
       "registro_tse_situacao_nao_informada",
     )
 
+  })
+
+  it("não rebaixa aguardando julgamento quando o snapshot de chapas muda de SHA", () => {
     assert.equal(
       resolveCargoDisputadoProveniencia({
-        status: "pre-candidato",
-        situacao_candidatura: "pre-candidato",
+        status: "candidato",
+        situacao_candidatura: "aguardando julgamento",
         chapa_2026: {
           tse_situacao_codigo: "#NE",
-          fonte_sha256:
-            "c3d13ae50f95024f43046acb4458a4420a620e86526fed665f9e60c8dc6068df",
+          fonte_sha256: "snapshot-oficial-mais-recente",
         },
       }),
       "registro_tse_pendente",
