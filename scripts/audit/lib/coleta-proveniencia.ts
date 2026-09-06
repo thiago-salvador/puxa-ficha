@@ -118,6 +118,8 @@ export const FONTES_POR_COLUNA: Readonly<Record<string, readonly string[]>> = Ob
   gastos: ["camara", "ceaps-senado"],
 
   noticias: ["google-news"],
+  // Artefato estático com proveniência e estado próprios em src/data/programas-governo.
+  programa: [],
   sancoes: ["transparencia-sanctions"],
 
   // `pontos_atencao` é escrita por três ingests. A leitura anterior, de que a

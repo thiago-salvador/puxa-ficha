@@ -62,6 +62,7 @@ export interface CandidatoSitesCollection {
   fonte_sha256: string;
   coletado_em: string;
   gerado_em_tse: string | null;
+  resultado: 'publicado' | 'vazio_confirmado' | 'indeterminado';
   sites: Array<{
     ordem: number;
     url: string;
@@ -96,6 +97,11 @@ export interface CandidateSitesTseDataset {
   };
   ambiguous_profiles: Array<{ slug: string; sq_candidato: string[] }>;
   unmatched_declared_profiles: Array<{ slug: string; sq_candidato: string }>;
+  verified_empty_profiles: Array<{
+    slug: string;
+    sq_candidato: string;
+    match_method: 'sq_candidato' | 'nome_completo_exato_unico';
+  }>;
   candidates: Record<
     string,
     {

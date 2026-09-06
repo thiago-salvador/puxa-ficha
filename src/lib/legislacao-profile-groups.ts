@@ -245,6 +245,14 @@ const COMPLETE_PARLAMENTAR_AUTHORSHIP_COVERAGE: Record<string, string> = {
     "Inventário completo da autoria parlamentar: autoria principal na Câmara dos Deputados em tipos legislativos canônicos (PDL, PEC, PL, PLP e PRC) no recorte 2015-2026, enumerada via Câmara Dados Abertos v2 por idDeputadoAutor e confirmada em /proposicoes/{id}/autores com ordemAssinatura=1, com cutoff em 09/05/2026. Este recorte cobre apenas autoria parlamentar principal na Câmara em tipos legislativos canônicos; não cobre inventário global da vida política, Senado, assembleias, prefeituras, governos estaduais, cargos executivos, atos do Executivo, requerimentos, indicações, emendas, pareceres ou demais atos procedimentais.",
 }
 
+export function isCompleteParliamentaryAuthorshipCoverageId(value: string): boolean {
+  return Boolean(COMPLETE_PARLAMENTAR_AUTHORSHIP_COVERAGE[value.trim()])
+}
+
+export function isCompleteExecutiveLegislationCoverageId(value: string): boolean {
+  return Boolean(COMPLETE_EXECUTIVE_LEGISLATION_COVERAGE[value.trim()])
+}
+
 const COMPLETE_EXECUTIVE_LEGISLATION_COVERAGE: Record<string, string> = {
   "eduardo-leite-rs-completo-leis-ordinarias-complementares-2019-2022-2023-2026-04-27":
     "Inventário completo de atos do Executivo no mandato: leis ordinárias e complementares do RS encontradas na ALRS com assinatura de Eduardo Leite confirmada no DOE-RS até 27/04/2026. Este recorte cobre apenas o exercício de Governador do RS; cargos públicos anteriores ou paralelos não estão refletidos nesta aba.",

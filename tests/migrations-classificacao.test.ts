@@ -399,7 +399,9 @@ describe("classificador puro (#136)", () => {
     // 349 aplicadas + 105 falhas preservadas = 454 arquivos.
     // Freshness closeout medido no PG17: 351 + mesmas 105 = 456 arquivos.
     // Completude residual medida no PG17: 352 + mesmas 105 = 457 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 352)
+    // Master review integral medido no PG17: 358 + mesmas 105 = 463 arquivos.
+    // Fechamento residual medido no PG17: 360 + mesmas 105 = 465 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 360)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -678,8 +680,8 @@ describe("gate do repositório (#136)", () => {
   test("a prova estrutural registrada é a do diff, não a da contagem", () => {
     // A vistoria derrubou a prova por contagem de objetos (33 tabelas/26
     // funções): dois schemas diferentes podem ter a mesma contagem. O que a
-    // medição registra agora é o diff de pg_dump com delta único conhecido.
-    assert.equal(MEDICAO_REPLAY.compararDeltasConhecidos, 2)
+    // medição registra agora é o diff de pg_dump com deltas exatos conhecidos.
+    assert.equal(MEDICAO_REPLAY.compararDeltasConhecidos, 4)
     assert.match(MEDICAO_REPLAY.compararDeltaCausa, /^20260805120633/)
     const causa = TODAS.find((m) => m.arquivo === MEDICAO_REPLAY.compararDeltaCausa)
     assert.ok(causa, "a mista causadora do delta sumiu do disco: refaça o --comparar")

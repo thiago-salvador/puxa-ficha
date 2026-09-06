@@ -665,6 +665,22 @@ test("duas escritas concorrentes do mesmo estado preservam campos", async () => 
   })
 })
 
+test("estado corrompido bloqueia escrita e preserva o checkpoint", async () => {
+  await withTempDir("pf-estado-corrompido-", async (runDir) => {
+    const d = await driver()
+    const item = fixtureItem("MA", "100000000005")
+    const estadoPath = path.join(runDir, "candidatos", item.chaveCacheDir, "estado.json")
+    await mkdir(path.dirname(estadoPath), { recursive: true })
+    await writeFile(estadoPath, "{checkpoint-invalido", "utf8")
+
+    await assert.rejects(
+      d.gravarEstado(runDir, item, { estado: "complete" }),
+      /JSON|position|property/iu,
+    )
+    assert.equal(await readFile(estadoPath, "utf8"), "{checkpoint-invalido")
+  })
+})
+
 function fixtureItem(uf: string, sqCandidato: string) {
   const chave = `2026:GOVERNADOR:${uf}:${sqCandidato}`
   return {

@@ -519,7 +519,11 @@ export async function gravarEstado(runDir, item, campos) {
   const destino = path.join(dir, "estado.json")
   await enfileirarEscrita(estadoWriteQueues, destino, async () => {
     let anterior = {}
-    try { anterior = JSON.parse(await readFile(destino, "utf8")) } catch {}
+    try {
+      anterior = JSON.parse(await readFile(destino, "utf8"))
+    } catch (error) {
+      if (error?.code !== "ENOENT") throw error
+    }
     const definidos = Object.fromEntries(Object.entries(campos).filter(([, value]) => value !== undefined))
     const registro = {
       chave: item.chave,

@@ -65,6 +65,7 @@ import {
   pickOrgaoMaisRecente,
 } from "@/lib/gastos-executivo-display"
 import { buildCandidateSiteLinks } from "@/lib/candidate-sites"
+import { validarDataDeVerificacao } from "@/lib/verificacao-campos"
 import { CandidateSitesCard } from "./CandidateSitesCard"
 
 /* ─── Pure helpers ──────────────────────────────────── */
@@ -801,6 +802,26 @@ export function ProfileOverview({
   leadingCard?: React.ReactNode
   trailingCard?: React.ReactNode
 }) {
+  const socialNetworksVerification = ficha.verificacao_campos?.social_networks
+  const socialNetworksEmptyVerifiedAt =
+    typeof socialNetworksVerification === "object" &&
+    socialNetworksVerification !== null &&
+    "estado" in socialNetworksVerification &&
+    socialNetworksVerification.estado === "vazio_confirmado" &&
+    "verificado_em" in socialNetworksVerification
+      ? validarDataDeVerificacao(
+          typeof socialNetworksVerification.verificado_em === "string"
+            ? socialNetworksVerification.verificado_em
+            : null,
+        )?.bruto ?? null
+      : null
+  const sitesTseCollectedAt = ficha.sites_candidato?.coletado_em ?? null
+  const sitesTseEmptyAt =
+    ficha.sites_candidato?.resultado === "vazio_confirmado"
+      ? sitesTseCollectedAt
+      : socialNetworksEmptyVerifiedAt
+  const sitesTseIndeterminateAt =
+    ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
   const hasDebateQuotes = hasCandidateDebatePressQuotes(ficha.slug, ficha.id)
 
   if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !hasDebateQuotes) {
@@ -863,6 +884,8 @@ export function ProfileOverview({
       <OverviewMasonryItem>
         <CandidateSitesCard
           sites={ficha.sites_candidato?.sites}
+          vazioConfirmadoEm={sitesTseEmptyAt}
+          indeterminadoEm={sitesTseIndeterminateAt}
         />
       </OverviewMasonryItem>
       <OverviewMasonryItem>

@@ -52,6 +52,7 @@ export type ProfileCompletenessIssue = {
     | "financiamento_uncollected"
     | "current_candidacy_missing_from_history"
     | "current_candidacy_duplicate_in_history"
+    | "current_registration_status_mismatch"
     | "public_profile_missing_from_seed"
   field?: string
   year?: number
@@ -178,6 +179,15 @@ export function analyzePublicProfileCompleteness(
         field: "historico",
         year: 2026,
         state: String(currentCandidacyCount),
+      })
+    }
+    if (currentCandidacyCount > 0 && data.status !== "candidato") {
+      actionable.push({
+        slug,
+        kind: "current_registration_status_mismatch",
+        field: "status",
+        year: 2026,
+        state: typeof data.status === "string" ? data.status : "missing",
       })
     }
   }
@@ -353,8 +363,8 @@ export async function runPublicProfileCompletenessAudit(options: CliOptions) {
   }
 
   const marker = options.expectZeroActionable
-    ? "PROFILE_COMPLETENESS_ZERO_ACTIONABLE"
-    : "PROFILE_COMPLETENESS_AUDIT_OK"
+    ? "PROFILE_CORE_ZERO_ACTIONABLE"
+    : "PROFILE_CORE_AUDIT_OK"
   console.log(
     `${marker} requested=${slugs.length} completed=${slugs.length - fetchErrors.length} actionable=${actionable.length} actionable_profiles=${new Set(actionable.map((row) => row.slug)).size} review=${review.length}`,
   )

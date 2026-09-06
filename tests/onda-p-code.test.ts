@@ -68,15 +68,15 @@ describe("Onda P", () => {
     }
   })
 
-  it("instala os 37 redirects permanentes sem incluir as decisoes retidas", async () => {
+  it("instala os 36 redirects permanentes sem incluir colisões com fichas públicas", async () => {
     assert.ok(puxaFichaNextConfig.redirects)
     const redirects = (await puxaFichaNextConfig.redirects()) as RedirectRule[]
     const ondaP = redirects.filter((redirect) => redirect.source.startsWith("/candidato/"))
     const sources = new Set(ondaP.map((redirect) => redirect.source))
 
-    assert.equal(ondaP.length, 37)
-    assert.equal(sources.size, 37)
-    assert.equal(ondaP.filter((redirect) => redirect.destination === "/").length, 11)
+    assert.equal(ondaP.length, 36)
+    assert.equal(sources.size, 36)
+    assert.equal(ondaP.filter((redirect) => redirect.destination === "/").length, 10)
     assert.equal(ondaP.filter((redirect) => redirect.destination !== "/").length, 26)
     assert.equal(ondaP.every((redirect) => redirect.permanent), true)
     assert.deepEqual(

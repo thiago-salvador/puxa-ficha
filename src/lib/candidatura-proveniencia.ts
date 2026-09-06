@@ -59,9 +59,6 @@ const TOKENS_JULGAMENTO_INDEFERIDO: ReadonlySet<string> = new Set(SITUACAO_JULGA
  */
 const CHAPA_SEM_JULGAMENTO: ReadonlySet<string> = new Set(["#NE", "#NE#", "#NULO#", ""])
 
-const CHAPAS_POS_REGISTRO_SHA256 =
-  "c3d13ae50f95024f43046acb4458a4420a620e86526fed665f9e60c8dc6068df"
-
 function normalizeToken(value: string | null | undefined): string {
   if (!value) return ""
   return stripAccents(value)
@@ -100,13 +97,19 @@ export function resolveCargoDisputadoProveniencia(
     return TOKENS_JULGAMENTO_INDEFERIDO.has(situacao) ? "registro_tse_indeferido" : "registro_tse"
   }
 
+  // A situação normalizada do candidato vem da mesma coleta oficial e não
+  // pode ser rebaixada só porque o arquivo de chapas ainda usa #NE. Vincular a
+  // semântica a um SHA específico fez o texto voltar a "não informada" assim
+  // que o TSE publicou um snapshot novo, apesar de a ficha já dizer
+  // explicitamente "aguardando julgamento".
+  if (chapaSemJulgamento && (situacao.includes("aguardando julgamento") || situacao === "pedido de registro")) {
+    return "registro_tse_pendente"
+  }
+
   // A view de chapas só devolve a linha para quem foi vinculado por UUID como
   // titular ou vice. Portanto sua presença é prova mais forte e mais recente
   // do que os rótulos editoriais legados em `candidatos`.
   if (input.chapa_2026) {
-    if (input.chapa_2026.fonte_sha256 === CHAPAS_POS_REGISTRO_SHA256) {
-      return "registro_tse_pendente"
-    }
     return input.chapa_2026.tse_situacao_codigo === "#NE"
       ? "registro_tse_situacao_nao_informada"
       : "registro_tse"

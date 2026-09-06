@@ -4,20 +4,22 @@ import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 /**
- * Retenção agendada das duas tabelas operacionais que sobraram sem cron.
+ * Retenção agendada das tabelas que sobraram sem cron.
  *
  * `analytics_launch_events` já pegava carona no cron diário de
- * `published-consistency`. `quiz_result_short_links` e `notification_log`
+ * `published-consistency`. `quiz_result_short_links`, `notification_log` e
+ * `noticias_candidato`
  * ganham uma opção de execução agendada, mas ela nasce fail-closed: deploy não
  * autoriza deleção. O cron só entra aqui com `PF_OPERATIONAL_RETENTION_ENABLED=1`
  * e cada execução remove no máximo um lote de 100 linhas por tabela.
  *
- * A política de cada tabela é a MESMA do script manual, de propósito:
+ * A política das tabelas operacionais é a MESMA do script manual, de propósito:
  *   - short links: `expires_at <= agora`, que é o TTL que a própria linha
  *     carrega (90 dias, `QUIZ_SHORT_LINK_TTL_MS`);
  *   - notification_log: `digest_date < cutoff`. O script exige que o operador
  *     passe o cutoff (`--notification-before`); aqui ele é fixo e documentado,
- *     porque um cron não tem operador para perguntar.
+ *     porque um cron não tem operador para perguntar;
+ *   - notícias: `data_publicacao < agora - 365 dias`, conforme a política pública.
  *
  * Fora daqui por decisão do dono: `candidate_changes` e `coleta_log`. As duas
  * são histórico de dado, não log operacional, e a política delas é decisão
@@ -35,6 +37,7 @@ import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
  * duas ordens de grandeza sobre o risco real.
  */
 export const NOTIFICATION_LOG_RETENTION_DAYS = 90
+export const NEWS_RETENTION_DAYS = 365
 const OPERATIONAL_RETENTION_BATCH_SIZE = 100
 
 const NOTIFICATION_LOG_TIME_ZONE = "America/Sao_Paulo"
@@ -110,6 +113,10 @@ export function notificationLogRetentionCutoffDate(agora = new Date()): string {
 /** Short link expirado é lixo por definição: o TTL está na própria linha. */
 export function quizShortLinkRetentionCutoffIso(agora = new Date()): string {
   return agora.toISOString()
+}
+
+export function newsRetentionCutoffIso(agora = new Date()): string {
+  return new Date(agora.getTime() - NEWS_RETENTION_DAYS * MS_POR_DIA).toISOString()
 }
 
 /** A habilitação precisa ser deliberada no ambiente; deploy sozinho não apaga dados. */
@@ -217,6 +224,50 @@ export async function purgeNotificationLogsOlderThan(
       status: "ok",
       removidos,
       cutoff: cutoffDate,
+      limite_alcancado: ids.length === OPERATIONAL_RETENTION_BATCH_SIZE,
+    }
+  } catch (erro) {
+    return { status: "falhou", message: erro instanceof Error ? erro.message : String(erro) }
+  }
+}
+
+/** Cumpre a janela pública de 12 meses usando a data da publicação original. */
+export async function purgeNewsOlderThan(
+  cutoffIso: string,
+  client: RetentionSupabaseClient = defaultRetentionClient(),
+): Promise<OperationalPurgeResult> {
+  try {
+    const selection = await client
+      .from("noticias_candidato")
+      .select("id")
+      .abortSignal(supabaseQueryTimeoutSignal())
+      .lt("data_publicacao", cutoffIso)
+      .order("data_publicacao", { ascending: true })
+      .order("id", { ascending: true })
+      .limit(OPERATIONAL_RETENTION_BATCH_SIZE)
+
+    if (selection.error) {
+      if (isMissingTable(selection.error, "noticias_candidato")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: selection.error.message ?? "erro sem mensagem" }
+    }
+    const ids = (selection.data ?? []).map((row) => row.id).filter((id): id is string => typeof id === "string")
+    if (ids.length === 0) return { status: "ok", removidos: 0, cutoff: cutoffIso, limite_alcancado: false }
+
+    const deletion = await client
+      .from("noticias_candidato")
+      .delete()
+      .abortSignal(supabaseQueryTimeoutSignal())
+      .in("id", ids)
+      .lt("data_publicacao", cutoffIso)
+      .select("id")
+    if (deletion.error) {
+      if (isMissingTable(deletion.error, "noticias_candidato")) return { status: "tabela_ausente" }
+      return { status: "falhou", message: deletion.error.message ?? "erro sem mensagem" }
+    }
+    return {
+      status: "ok",
+      removidos: deletion.data?.length ?? 0,
+      cutoff: cutoffIso,
       limite_alcancado: ids.length === OPERATIONAL_RETENTION_BATCH_SIZE,
     }
   } catch (erro) {

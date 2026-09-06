@@ -8,6 +8,7 @@
 
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { pathToFileURL } from "node:url"
 import { normalizeForMatch } from "./lib/normalize-for-match"
 import {
   carregarIdentidadeEtapa2,
@@ -18,6 +19,7 @@ import type { CandidatoConfig } from "./lib/types"
 
 const CARGO_VALUES = new Set<CandidatoConfig["cargo_disputado"]>([
   "Presidente",
+  "Vice-Presidente",
   "Governador",
   "Vice-Governador",
   "Senador",
@@ -439,6 +441,10 @@ function main() {
   console.log(`validate-seed: OK (${parsed.length} candidatos em ${SEED_PATH})`)
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+export function isMainModule(metaUrl: string, argvPath: string | undefined): boolean {
+  return Boolean(argvPath && metaUrl === pathToFileURL(resolve(argvPath)).href)
+}
+
+if (isMainModule(import.meta.url, process.argv[1])) {
   main()
 }

@@ -152,6 +152,7 @@ export function buildCandidateSitesTseDataset({
   const output: CandidateSitesTseDataset["candidates"] = {}
   const ambiguousProfiles: CandidateSitesTseDataset["ambiguous_profiles"] = []
   const unmatchedDeclaredProfiles: CandidateSitesTseDataset["unmatched_declared_profiles"] = []
+  const verifiedEmptyProfiles: CandidateSitesTseDataset["verified_empty_profiles"] = []
   let matchedProfiles = 0
   let sourceSiteRows = 0
   let uniqueEntries = 0
@@ -190,7 +191,14 @@ export function buildCandidateSitesTseDataset({
     const sourceRows = [...(sitesBySq.get(match.SQ_CANDIDATO) ?? [])].sort(
       (a, b) => parseOrder(a.NR_ORDEM_REDE_SOCIAL) - parseOrder(b.NR_ORDEM_REDE_SOCIAL),
     )
-    if (sourceRows.length === 0) continue
+    if (sourceRows.length === 0) {
+      verifiedEmptyProfiles.push({
+        slug: profile.slug,
+        sq_candidato: match.SQ_CANDIDATO,
+        match_method: matchMethod,
+      })
+      continue
+    }
     sourceSiteRows += sourceRows.length
 
     const seen = new Set<string>()
@@ -249,6 +257,9 @@ export function buildCandidateSitesTseDataset({
     },
     ambiguous_profiles: ambiguousProfiles.sort((a, b) => a.slug.localeCompare(b.slug)),
     unmatched_declared_profiles: unmatchedDeclaredProfiles.sort((a, b) =>
+      a.slug.localeCompare(b.slug),
+    ),
+    verified_empty_profiles: verifiedEmptyProfiles.sort((a, b) =>
       a.slug.localeCompare(b.slug),
     ),
     candidates: Object.fromEntries(

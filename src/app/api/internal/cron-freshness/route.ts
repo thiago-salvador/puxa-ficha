@@ -20,6 +20,7 @@ export const maxDuration = 30
  */
 export const CRON_FRESHNESS_CHECKS = [
   { name: "news-refresh", table: "coleta_log", column: "executado_em", filter: { fonte: "google-news" } },
+  { name: "news-refresh-recover", table: "cron_execution_receipts", column: "completed_at", filter: { name: "news-refresh-recover" } },
   { name: "send-digest", table: "notification_log", column: "sent_at", filter: { status: "sent" } },
   { name: "published-consistency", table: "cron_execution_receipts", column: "completed_at", filter: { name: "published-consistency" } },
   { name: "revalidate-public-cache", table: "cron_execution_receipts", column: "completed_at", filter: { name: "revalidate-public-cache" } },

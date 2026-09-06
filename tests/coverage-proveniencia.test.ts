@@ -95,6 +95,135 @@ function origemFoto(url: string): "local" | "tse" | "wikimedia" | "oficial" | "t
   return "terceiro"
 }
 
+test("registro atual de 2026 entra no contrato de patrimônio sem inventar financiamento", () => {
+  const atual = candidato({ temSqAtualNoBanco: true })
+  const celulas = calcularCelulas(atual)
+
+  assert.equal(patrimonioPorEleicao(atual).aplicaveis.includes(2026), true)
+  assert.equal(celulas.patrimonio.state, "missing")
+  assert.equal(celulas.financiamento.state, "na")
+  assert.equal(celulas.financiamento.text, "pleito em curso")
+})
+
+test("votações são medidas contra a interseção real com o mandato", () => {
+  assert.equal(calcularCelulas(candidato({ votos: 0, votosAplicaveis: 0 })).votos.state, "na")
+  const parcial = calcularCelulas(candidato({ votos: 2, votosAplicaveis: 3 })).votos
+  assert.equal(parcial.state, "partial")
+  assert.equal(parcial.text, "2/3")
+  assert.equal(calcularCelulas(candidato({ votos: 3, votosAplicaveis: 3 })).votos.state, "ok")
+})
+
+test("acervos positivos só ficam completos com recibo de cobertura reconhecido", () => {
+  const parcialProjetos = calcularCelulas(candidato({ projetos: 4 })).projetos
+  assert.equal(parcialProjetos.state, "partial")
+  const completoProjetos = calcularCelulas(candidato({
+    projetos: 4,
+    projetosTemInventarioCompleto: true,
+  })).projetos
+  assert.equal(completoProjetos.state, "ok")
+
+  const parcialExecutivo = calcularCelulas(candidato({
+    legislacaoExecutivo: 2,
+    historico: [{
+      cargo_canonico: "Prefeito",
+      tipo_evento: "mandato",
+      periodo_inicio: 2021,
+      periodo_fim: 2024,
+      proveniencia: "tse",
+    }],
+  })).legexec
+  assert.equal(parcialExecutivo.state, "partial")
+  assert.equal(calcularCelulas(candidato({
+    legislacaoExecutivo: 2,
+    legislacaoExecutivoTemInventarioCompleto: true,
+  })).legexec.state, "ok")
+})
+
+test("candidatura anterior sem financiamento continua sendo lacuna", () => {
+  const recorrente = candidato({
+    temSqAtualNoBanco: true,
+    historico: [
+      {
+        cargo_canonico: "Governador",
+        tipo_evento: "candidatura",
+        periodo_inicio: 2022,
+        periodo_fim: 2022,
+        proveniencia: "tse",
+      },
+    ],
+  })
+
+  assert.equal(calcularCelulas(recorrente).financiamento.state, "missing")
+})
+
+test("financiamento: ausência oficial por pleito cobre a candidatura sem inventar receita", () => {
+  const perfil = candidato({
+    historico: [{
+      cargo_canonico: "Governador",
+      tipo_evento: "candidatura",
+      periodo_inicio: 2022,
+      periodo_fim: 2022,
+      proveniencia: "tse",
+      observacoes: "NÃO ELEITO (TSE 2022)",
+    }],
+    financiamentoVerificacoes: [{ ano_eleicao: 2022, resultado: "ausencia_oficial" }],
+  })
+
+  const celulas = calcularCelulas(perfil)
+  assert.equal(celulas.financiamento.state, "ok")
+  assert.equal(celulas.financiamento.text, "1/1")
+  assert.equal(celulas.doadores.state, "zero")
+})
+
+test("financiamento: pleito com receita zero não exige maiores doadores", () => {
+  const perfil = candidato({
+    financiamentoAnos: [2022],
+    financiamentoAnosComReceitaPositiva: [],
+    financiamentoAnosComDoadores: [],
+  })
+
+  const celulas = calcularCelulas(perfil)
+  assert.equal(celulas.financiamento.state, "ok")
+  assert.equal(celulas.doadores.state, "zero")
+})
+
+test("redes: ausência oficial confirmada não vira lacuna", () => {
+  const celulas = calcularCelulas(candidato({
+    redes: false,
+    redesVazioConfirmado: true,
+  }))
+
+  assert.equal(celulas.redes.state, "zero")
+  assert.match(celulas.redes.tip ?? "", /TSE consultado/)
+})
+
+test("programa de governo aprovado entra no contrato público", () => {
+  const celula = calcularCelulas(candidato({ programaGovernoEstado: "aprovado" })).programa
+
+  assert.equal(celula.state, "ok")
+  assert.match(celula.tip ?? "", /publicado na ficha/)
+})
+
+test("ausência oficial de programa de governo é zero explícito", () => {
+  const celula = calcularCelulas(candidato({ programaGovernoEstado: "sem_documento_oficial" })).programa
+
+  assert.equal(celula.state, "zero")
+  assert.match(celula.tip ?? "", /TSE consultado/)
+})
+
+test("ficha sem artefato de programa de governo permanece lacuna", () => {
+  const celula = calcularCelulas(candidato()).programa
+
+  assert.equal(celula.state, "missing")
+  assert.match(celula.tip ?? "", /sem artefato/)
+})
+
+test("vice não recebe como lacuna o programa atribuído à candidatura titular", () => {
+  const celula = calcularCelulas(candidato({ cargo_disputado: "Vice-Presidente" })).programa
+
+  assert.equal(celula.state, "na")
+})
+
 type Desfecho = UltimaColeta["resultado"]
 
 /** Todas as fontes de uma coluna com o mesmo desfecho. */
@@ -147,6 +276,28 @@ test("'nao_aplicavel' não impede o zero de ser confirmado", () => {
     filiacao: { resultado: "nao_aplicavel" }
   }
   assert.equal(provenienciaDoZero("partidos", misto), "zero_provado")
+})
+
+test("fonte institucional sem mandato não bloqueia vazio oficial da fonte aplicável", () => {
+  const perfil = candidato({
+    temIdSenadoNoSeed: true,
+    historico: [{
+      cargo_canonico: "Senador",
+      tipo_evento: "mandato",
+      periodo_inicio: 2019,
+      periodo_fim: 2026,
+      proveniencia: "senado",
+    }],
+    coletas: {
+      senado: { resultado: "vazio_confirmado" },
+      "ceaps-senado": { resultado: "vazio_confirmado" },
+    },
+  })
+
+  const celulas = calcularCelulas(perfil)
+  assert.equal(celulas.votos.state, "zero")
+  assert.equal(celulas.projetos.state, "zero")
+  assert.equal(celulas.gastos.state, "zero")
 })
 
 test("'encontrado' com célula zerada não vira zero provado", () => {
@@ -384,6 +535,32 @@ test("patrimônio: publicado com lacuna = parcial, e a lacuna aparece", () => {
   assert.equal(cel.state, "partial")
   assert.equal(cel.text, "1/2")
   assert.match(cel.tip ?? "", /sem dado nem confirmação: 2018/)
+})
+
+test("patrimônio: início de mandato não vira eleição aplicável", () => {
+  const base = candidato({
+    historico: [
+      {
+        cargo_canonico: "Governador",
+        tipo_evento: "mandato",
+        periodo_inicio: 2023,
+        periodo_fim: 2026,
+        proveniencia: "tse",
+      },
+      {
+        cargo_canonico: "Governador",
+        tipo_evento: "candidatura",
+        periodo_inicio: 2022,
+        periodo_fim: 2022,
+        proveniencia: "tse",
+      },
+    ],
+    patrimonioAnos: [2022],
+    patrimonioAnosComBens: [2022],
+  })
+
+  assert.deepEqual(patrimonioPorEleicao(base).aplicaveis, [2022])
+  assert.equal(calcularCelulas(base).patrimonio.state, "ok")
 })
 
 test("eleição com ausência oficial conta como cobertura mesmo sem histórico", () => {
@@ -645,4 +822,8 @@ test("o snapshot expõe a contagem por fonte da Câmara", () => {
   )
   assert.match(sql, /'projetosCamara'/)
   assert.match(sql, /pl\.fonte = 'Camara'/)
+  assert.match(sql, /'votosAplicaveis'/)
+  assert.match(sql, /vc\.data_votacao/)
+  assert.match(sql, /'projetosCoverageIds'/)
+  assert.match(sql, /'legislacaoExecutivoCoverageIds'/)
 })

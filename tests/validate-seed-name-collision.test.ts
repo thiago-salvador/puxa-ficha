@@ -7,7 +7,15 @@ import {
   detectDuplicateSenadoIds,
   detectDuplicateSqCandidato,
   detectNameUrnaCollisions,
+  isMainModule,
 } from "../scripts/validate-seed"
+
+test("validate-seed reconhece o entrypoint mesmo quando o caminho contém espaços", () => {
+  assert.equal(
+    isMainModule("file:///tmp/Puxa%20Ficha/scripts/validate-seed.ts", "/tmp/Puxa Ficha/scripts/validate-seed.ts"),
+    true
+  )
+})
 
 // Fase 14.7 (2026-04-14): homonym prevention proativa em validate-seed.
 // detectNameUrnaCollisions e pura: recebe entries e allowlist, retorna

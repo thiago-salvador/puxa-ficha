@@ -8,6 +8,7 @@ import {
 } from "../scripts/audit/audit-public-profile-completeness"
 
 const completeCore = {
+  status: "candidato",
   partido_sigla: "PSTU",
   situacao_candidatura: "aguardando julgamento",
   foto_url: "https://example.test/foto.jpg",
@@ -180,6 +181,35 @@ test("marca candidatura atual duplicada na trajetória como acionável", () => {
       state: "2",
     },
   ])
+})
+
+test("marca registro oficial ainda rotulado como pré-candidatura", () => {
+  const result = analyzePublicProfileCompleteness("registro-oficial", {
+    sourceStatus: "live",
+    data: {
+      slug: "registro-oficial",
+      ...completeCore,
+      status: "pre-candidato",
+      cargo_disputado: "Governador",
+      historico: [{
+        cargo: "Governador",
+        cargo_canonico: "Governador",
+        tipo_evento: "candidatura",
+        periodo_inicio: 2026,
+        periodo_fim: 2026,
+      }],
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [{
+    slug: "registro-oficial",
+    kind: "current_registration_status_mismatch",
+    field: "status",
+    year: 2026,
+    state: "pre-candidato",
+  }])
 })
 
 test("separa ausência de recibo contextual de lacuna objetiva", () => {

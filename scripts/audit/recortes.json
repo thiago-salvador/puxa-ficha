@@ -501,6 +501,13 @@
       "ate": "20260906065729",
       "allowlist": "scripts/audit/allowlist-completude-fichas-residual-20260906.json",
       "divida": null
+    },
+    {
+      "nome": "master-review-contract-20260906",
+      "desde": "20260906150000",
+      "ate": "20260906155100",
+      "allowlist": "scripts/audit/allowlist-master-review-contract-20260906.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [

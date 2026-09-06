@@ -4668,8 +4668,7 @@
     "slug": "leonardo-avalanche",
     "nome_completo": "Leonardo Alves de Araújo",
     "nome_urna": "Leonardo Avalanche",
-    "cargo_disputado": "Nenhum",
-    "estado": "GO",
+    "cargo_disputado": "Vice-Presidente",
     "ids": {
       "camara": null,
       "senado": null,
@@ -4677,13 +4676,15 @@
         "2006": "10408",
         "2008": "13788",
         "2016": "90000024503",
-        "2018": "90000628107"
+        "2018": "90000628107",
+        "2026": "280002553883"
       },
       "tse_uf_candidatura": {
         "2006": "GO",
         "2008": "GO",
         "2016": "GO",
-        "2018": "GO"
+        "2018": "GO",
+        "2026": "BR"
       }
     }
   },

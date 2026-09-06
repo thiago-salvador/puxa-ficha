@@ -23,10 +23,12 @@ export async function getCandidateSitesTseBySlug(
   slug: string,
 ): Promise<CandidatoSitesCollection | null> {
   const dataset = await loadDataset()
-  const sites = dataset.candidates[slug]?.sites
+  const candidate = dataset.candidates[slug]
+  const sites = candidate?.sites
     .filter((site): site is typeof site & { url: string } => Boolean(site.url))
     .map((site) => ({ ordem: site.order, url: site.url }))
-  if (!sites?.length) return null
+  const vazioConfirmado = dataset.verified_empty_profiles.some((item) => item.slug === slug)
+  if (!sites?.length && !candidate && !vazioConfirmado) return null
 
   return {
     ano_eleicao: dataset.election_year,
@@ -34,6 +36,11 @@ export async function getCandidateSitesTseBySlug(
     fonte_sha256: dataset.source.resource_sha256,
     coletado_em: dataset.source.collected_at,
     gerado_em_tse: dataset.source.generated_at_tse,
-    sites,
+    resultado: sites?.length
+      ? "publicado"
+      : vazioConfirmado
+        ? "vazio_confirmado"
+        : "indeterminado",
+    sites: sites ?? [],
   }
 }

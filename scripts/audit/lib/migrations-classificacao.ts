@@ -428,7 +428,13 @@ export const MEDICAO_REPLAY = Object.freeze({
   // migrations de remediação e a DDL explícita da barreira de publicação.
   // Freshness closeout: PG17 mediu 98 aplicadas e zero falhas, incluindo a
   // guarda de titular público em chapas_2026_publicas (20260905230739).
-  schemaReplayTamanho: 98,
+  // 98 -> 99 em 06/09/2026: o recibo privado do cron de recuperação de
+  // notícias é DDL persistente. Medido no schema-gate local: 99 limpas,
+  // zero falhas e hash daa84ff0991285cbd2411523ee08f16473d2db5a90e7c52267ef6741c18c78f9.
+  // 99 -> 100 em 06/09/2026: o CHECK técnico do snapshot passa a aceitar
+  // pontos_atencao e chapas_2026. Medido com zero falhas e hash
+  // 70db99801d5dd9688be21fe38f069459c2661bab37caf7ead7325f65b516a531.
+  schemaReplayTamanho: 100,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
@@ -449,8 +455,10 @@ export const MEDICAO_REPLAY = Object.freeze({
   // valor anterior (159) ja estava defasado antes desta mudanca, e nenhum teste
   // o afirma; `ADD COLUMN` nao acrescenta linha `CREATE`, entao a coluna nova
   // nao mexeu na contagem.
-  compararCreatesComparados: 179,
-  compararDeltasConhecidos: 2,
+  // Medido novamente em 06/09/2026: 197 CREATEs comparados, equivalentes após
+  // os oito deltas canônicos das quatro famílias documentadas no comparador.
+  compararCreatesComparados: 197,
+  compararDeltasConhecidos: 4,
   compararDeltaCausa: "20260805120633_status_fora_do_dominio_e_check.sql",
 })
 

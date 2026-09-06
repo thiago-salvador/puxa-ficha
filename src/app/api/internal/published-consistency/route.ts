@@ -9,6 +9,8 @@ import {
 } from "@/lib/analytics-launch-store"
 import {
   NOTIFICATION_LOG_RETENTION_DAYS,
+  NEWS_RETENTION_DAYS,
+  newsRetentionCutoffIso,
   notificationLogRetentionCutoffDate,
   operationalRetentionEnabled,
   pendingSubscriberPurgeMode,
@@ -16,6 +18,7 @@ import {
   purgeExpiredPendingSubscribers,
   purgeExpiredQuizShortLinks,
   purgeNotificationLogsOlderThan,
+  purgeNewsOlderThan,
   quizShortLinkRetentionCutoffIso,
 } from "@/lib/operational-retention"
 import {
@@ -47,8 +50,9 @@ export const maxDuration = 30
  * Codex de freshness, fora do caminho de custo do site.
  *
  * Carona de manutenção: este handler executa a retenção já existente de
- * `analytics_launch_events`. Os expurgos de `quiz_result_short_links` e
- * `notification_log` só executam com `PF_OPERATIONAL_RETENTION_ENABLED=1`.
+ * `analytics_launch_events`. Os expurgos de `quiz_result_short_links`,
+ * `notification_log` e `noticias_candidato` só executam com
+ * `PF_OPERATIONAL_RETENTION_ENABLED=1`.
  *
  * Auth: Vercel Cron injeta `Authorization: Bearer <CRON_SECRET>`. Fail-closed.
  */
@@ -146,9 +150,9 @@ async function publishedConsistency(req: NextRequest) {
     )
   }
 
-  // Mesma carona, pelo mesmo motivo, para as duas tabelas operacionais que
-  // sobraram sem agendamento: `quiz_result_short_links` (TTL na propria linha) e
-  // `notification_log` (90 dias). Ate aqui elas dependiam de alguem lembrar de
+  // Mesma carona, pelo mesmo motivo, para as tabelas que sobraram sem
+  // agendamento: `quiz_result_short_links` (TTL na propria linha),
+  // `notification_log` (90 dias) e `noticias_candidato` (12 meses). Ate aqui dependiam de alguem lembrar de
   // rodar scripts/retencao-operacional.ts a mao, e as duas crescem por uso do
   // site. `candidate_changes` e `coleta_log` ficam de fora por decisao do dono.
   //
@@ -193,6 +197,24 @@ async function publishedConsistency(req: NextRequest) {
     )
   }
 
+  const expurgoNoticias = retencaoOperacionalHabilitada
+    ? await purgeNewsOlderThan(newsRetentionCutoffIso())
+    : { status: "desativado" as const }
+  if (expurgoNoticias.status === "ok") {
+    console.log(
+      `[published-consistency] noticias_retencao ${JSON.stringify({
+        dias: NEWS_RETENTION_DAYS,
+        removidos: expurgoNoticias.removidos,
+      })}`,
+    )
+  } else if (expurgoNoticias.status === "desativado") {
+    console.log("[published-consistency] noticias_retencao desativada")
+  } else {
+    console.error(
+      `[published-consistency] noticias_retencao_falhou ${JSON.stringify(expurgoNoticias)}`,
+    )
+  }
+
   // Assinantes pendentes com token vencido: nasce em modo `contar` (só mede e
   // loga); apagar exige PF_ALERTS_PENDING_PURGE_ENABLED=1 além do opt-in geral.
   const modoPendentes = pendingSubscriberPurgeMode()
@@ -219,6 +241,7 @@ async function publishedConsistency(req: NextRequest) {
     analytics: expurgo,
     short_links: expurgoShortLinks,
     notification_log: expurgoNotificationLog,
+    noticias: expurgoNoticias,
     assinantes_pendentes: expurgoPendentes,
   }
 
