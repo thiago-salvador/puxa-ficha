@@ -323,6 +323,7 @@ async function buildSQMap(
       sq: string
       method: ResolveMethod
       priority: number
+      observed: boolean
       uf?: string
       declarouBens?: string
     }
@@ -343,6 +344,7 @@ async function buildSQMap(
       sq,
       method: "sq-preloaded",
       priority: getResolveMethodPriority("sq-preloaded"),
+      observed: false,
       uf: configuredUf || undefined,
       declarouBens: undefined,
     })
@@ -379,9 +381,28 @@ async function buildSQMap(
           sq,
           method: match.method,
           priority,
+          observed: true,
           uf,
           declarouBens,
         })
+        return
+      }
+
+      // O preload é uma pista curada para localizar linhas de bens/receitas,
+      // não uma observação do pacote atual. Qualquer identidade aceita pelo
+      // resolver no consulta_cand atual substitui essa pista, mesmo que tenha
+      // prioridade nominal menor (por exemplo, CPF corrigindo um SQ antigo).
+      if (!existing.observed) {
+        selectedBySlug.set(match.slug, {
+          candidato,
+          sq,
+          method: match.method,
+          priority,
+          observed: true,
+          uf,
+          declarouBens,
+        })
+        callerAmbiguousPriority.delete(match.slug)
         return
       }
 
@@ -391,6 +412,7 @@ async function buildSQMap(
           sq,
           method: match.method,
           priority,
+          observed: true,
           uf,
           declarouBens,
         })

@@ -150,7 +150,8 @@ test("patrimônio registra ausência oficial somente para identidade resolvida s
 })
 
 test("identidade e erro de patrimônio fecham o ingest sem falso verde", () => {
-  assert.match(source, /method: "sq-preloaded"[\s\S]{0,160}declarouBens: undefined/)
+  assert.match(source, /method: "sq-preloaded"[\s\S]{0,160}observed: false[\s\S]{0,80}declarouBens: undefined/)
+  assert.match(source, /if \(!existing\.observed\) \{[\s\S]{0,320}observed: true/)
   assert.match(source, /const declarouBens = row\.ST_DECLARAR_BENS/)
   assert.match(source, /\.filter\(\(identity\) => identity\.declarouBens === "N"\)/)
   assert.match(source, /Erro patrimonio \$\{ano\}:[\s\S]{0,100}throw err/)
