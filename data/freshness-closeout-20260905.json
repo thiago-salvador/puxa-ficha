@@ -1,5 +1,16 @@
 {
   "schema_version": 1,
+  "publication_decisions": [
+    {
+      "sq_candidato_2026": "140002551357",
+      "candidate_id": "2f79fdfa-9c29-4feb-86fa-4e75bd7f92f4",
+      "source_status": "Renúncia",
+      "source_status_code": 6,
+      "stored_situacao_candidatura": "aguardando julgamento",
+      "action": "preserve_stored_situation_and_unpublish",
+      "reason": "O domínio vigente não inclui renúncia; o fato oficial permanece na evidência de fonte, e a despublicação usa somente status e publicavel sem sobrescrever a situação histórica."
+    }
+  ],
   "scope": "issues253/261: preservar histórico e corrigir catálogo ativo",
   "source_run": "33998537035",
   "generated_at": "2026-09-05T23:23:43.657Z",

@@ -1,0 +1,730 @@
+{
+  "schema_version": 1,
+  "source": {
+    "kind": "production_schema_only_readonly_query",
+    "commit": "0c9fe99",
+    "snapshot_sha256": "9d8dacf0ec42e59d8d909db8f62e395358da8b414a50146fcfb9a7ec67310d66"
+  },
+  "columns": [
+    {
+      "column_name": "id",
+      "data_type": "uuid",
+      "default_expression": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "nome_completo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "nome_urna",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "slug",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "cpf_hash",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "data_nascimento",
+      "data_type": "date",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "idade",
+      "data_type": "integer",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "naturalidade",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "formacao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "profissao_declarada",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "partido_atual",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "partido_sigla",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "cargo_atual",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "cargo_disputado",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "estado",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "status",
+      "data_type": "text",
+      "default_expression": "'pre-candidato'::text",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "foto_url",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "site_campanha",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "redes_sociais",
+      "data_type": "jsonb",
+      "default_expression": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "fonte_dados",
+      "data_type": "text[]",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "ultima_atualizacao",
+      "data_type": "timestamp with time zone",
+      "default_expression": "now()",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "default_expression": "now()",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "biografia",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "cpf",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "tcu_inabilitado",
+      "data_type": "boolean",
+      "default_expression": "false",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "tcu_contas_irregulares",
+      "data_type": "boolean",
+      "default_expression": "false",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "situacao_candidatura",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "wikidata_id",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "genero",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "estado_civil",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "cor_raca",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "email_campanha",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "publicavel",
+      "data_type": "boolean",
+      "default_expression": "false",
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "verificacao_campos",
+      "data_type": "jsonb",
+      "default_expression": "'{}'::jsonb",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "foto_credito",
+      "data_type": "jsonb",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "sq_candidato_2026",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "formacao_instituicao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "candidatos"
+    },
+    {
+      "column_name": "id",
+      "data_type": "uuid",
+      "default_expression": "gen_random_uuid()",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "chave",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "eleicao_codigo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "eleicao_data",
+      "data_type": "date",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "uf",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "cargo_titular",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "sq_coligacao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "identidade_status",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vinculo_titular_status",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "tse_situacao_codigo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "tse_situacao_titular_codigo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "tse_situacao_vice_codigo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "tipo_agremiacao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "composicao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "titular_candidato_id",
+      "data_type": "uuid",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vice_candidato_id",
+      "data_type": "uuid",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "titular_sq_candidato",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vice_sq_candidato",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "titular_nome_completo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "titular_nome_urna",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "titular_partido_sigla",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vice_nome_completo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vice_nome_urna",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "vice_partido_sigla",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "alternativas_oficiais",
+      "data_type": "jsonb",
+      "default_expression": "'[]'::jsonb",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "fonte_url",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "fonte_sha256",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "snapshot_em",
+      "data_type": "timestamp with time zone",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone",
+      "default_expression": "now()",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "chapas_2026"
+    },
+    {
+      "column_name": "id",
+      "data_type": "bigint",
+      "default_expression": null,
+      "generated": "",
+      "identity": "a",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "fonte",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "escopo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "alvo",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "candidato_id",
+      "data_type": "uuid",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "executado_em",
+      "data_type": "timestamp with time zone",
+      "default_expression": "now()",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "resultado",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "volume",
+      "data_type": "integer",
+      "default_expression": "0",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "detalhe",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "url",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "execucao",
+      "data_type": "text",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "duracao_ms",
+      "data_type": "integer",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "lote_cursor",
+      "data_type": "integer",
+      "default_expression": null,
+      "generated": "",
+      "identity": "",
+      "not_null": false,
+      "relation": "coleta_log"
+    },
+    {
+      "column_name": "natureza",
+      "data_type": "text",
+      "default_expression": "'coleta'::text",
+      "generated": "",
+      "identity": "",
+      "not_null": true,
+      "relation": "coleta_log"
+    }
+  ]
+}
