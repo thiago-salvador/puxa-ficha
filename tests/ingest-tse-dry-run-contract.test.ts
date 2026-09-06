@@ -5,6 +5,7 @@ import { join } from "node:path"
 import { test } from "node:test"
 import {
   financiamentoSourceFileUf,
+  hasOfficialPatrimonioPackage,
   isDoadorOriginarioReceiptSource,
   sanitizeTseLegacyAssetText,
   selectPatrimonioAbsenceCandidates,
@@ -50,6 +51,14 @@ test("TSE ingest inclui 2002 a 2008 e valida toda identidade por SQ, ano e UF", 
   assert.match(source, /successfulReceitasZips === receitasUrls\.length/)
   assert.match(source, /const resultado = confirmOfficialAbsence/)
   assert.match(source, /resultado: "erro"/)
+})
+
+test("patrimonio só exige download nos anos publicados pelo TSE", () => {
+  assert.equal(hasOfficialPatrimonioPackage(2002), false)
+  assert.equal(hasOfficialPatrimonioPackage(2004), false)
+  assert.equal(hasOfficialPatrimonioPackage(2006), true)
+  assert.match(source, /!options\.skipPatrimonio && hasOfficialPatrimonioPackage\(ano\)/)
+  assert.match(source, /pacote nao publicado pelo TSE; etapa ignorada/)
 })
 
 test("falha ou pacote parcial persiste erro por candidatura e nunca ausencia", () => {
