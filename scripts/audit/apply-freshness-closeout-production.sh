@@ -28,14 +28,26 @@ let url
 try { url = new URL(raw) } catch { process.exit(2) }
 if (!/^(?:postgres|postgresql):$/.test(url.protocol) || url.search || url.hash || url.pathname !== "/postgres") process.exit(2)
 const host = url.hostname.match(/^db\.([a-z0-9]+)\.supabase\.co$/)?.[1]
-const user = decodeURIComponent(url.username).match(/^postgres\.([a-z0-9]+)$/)?.[1]
+let decodedUser
+try { decodedUser = decodeURIComponent(url.username) } catch { process.exit(2) }
+const user = decodedUser.match(/^postgres\.([a-z0-9]+)$/)?.[1]
 const pooler = /(?:^|\.)pooler\.supabase\.com$/.test(url.hostname)
 if ((host && url.port !== "5432") || (pooler && !["5432", "6543"].includes(url.port))) process.exit(2)
 if (host && user && host !== user) process.exit(3)
 if (!host && !(pooler && user)) process.exit(4)
 process.stdout.write(host ?? user)
 NODE
-} 2>/dev/null)" || { echo "FAIL: URL nao identifica projeto Supabase" >&2; exit 2; }
+} 2>/dev/null)" || {
+  url_validation_status=$?
+  # Runtime stderr may contain the full secret URI. Report only safe reasons.
+  case "$url_validation_status" in
+    2) echo "FAIL: URL invalida para conexao Supabase" >&2 ;;
+    3) echo "FAIL: projeto diverge entre host e usuario da URL" >&2 ;;
+    4) echo "FAIL: URL nao identifica projeto Supabase" >&2 ;;
+    *) echo "FAIL: runtime de validacao da URL falhou (codigo $url_validation_status)" >&2 ;;
+  esac
+  exit 2
+}
 [[ "$database_ref" == "wskpzsobvqwhnbsdsmok" ]] || { echo "FAIL: banco nao e producao" >&2; exit 2; }
 
 unset PGHOST PGHOSTADDR PGPORT PGUSER PGPASSWORD PGDATABASE PGPASSFILE PGOPTIONS
@@ -45,7 +57,11 @@ export PGCONNECT_TIMEOUT=10 PGSSLMODE=verify-full
 export PGSSLROOTCERT="$ROOT/scripts/audit/certs/supabase-root-2021.crt"
 
 mode="${1:-dry-run}"
-case "$mode" in apply|dry-run|rollback|verify) ;; *) echo "FAIL: modo inválido" >&2; exit 2 ;; esac
+case "$mode" in apply|dry-run|rollback|verify|backup) ;; *) echo "FAIL: modo inválido" >&2; exit 2 ;; esac
+if [[ "$mode" == "backup" ]]; then
+  bash scripts/audit/backup-closeout-production.sh "${2:?diretorio de backup obrigatorio}"
+  exit 0
+fi
 node --import tsx scripts/audit/apply-freshness-closeout.ts "$mode" "$PF_EXPECTED_SHA" | \
   PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR_STOP=1 -f -
 if [[ "$mode" == "apply" ]]; then

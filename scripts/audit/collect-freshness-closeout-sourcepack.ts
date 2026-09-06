@@ -22,6 +22,45 @@ const CANDIDATES = [
 const ZIP_URL = "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip"
 const DETAIL_URLS = new Set(CANDIDATES.map(({ sq, uf }) => `${DIVULGACAND_BASE}/buscar/2026/${uf}/${ELECTION_ID_2026}/candidato/${sq}`))
 const SHA = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex")
+const DIAGNOSTIC_PHASES = new Set(["initialize", "detail_fetch", "detail_json", "detail_identity", "vice_parse", "binary_fetch", "binary_validate", "binary_write", "csv_fetch", "csv_validate", "csv_zip", "csv_parse", "csv_scope", "report_write", "sourcepack"])
+const DIAGNOSTIC_NAMES = new Set(["Error", "TypeError", "SyntaxError", "RangeError", "AbortError", "TimeoutError", "CsvError"])
+const DIAGNOSTIC_CODES = new Set(["ENOENT", "EACCES", "ENOSPC", "ENOBUFS", "ETIMEDOUT", "ECONNRESET", "ECONNREFUSED", "ENOTFOUND", "EAI_AGAIN", "UND_ERR_CONNECT_TIMEOUT", "UND_ERR_HEADERS_TIMEOUT", "UND_ERR_BODY_TIMEOUT", "ERR_STREAM_PREMATURE_CLOSE", "HTTP_ERROR", "INVALID_FORMAT", "IDENTITY_MISMATCH", "INVALID_VICE", "SIZE_LIMIT", "REDIRECT_BLOCKED", "URL_NOT_ALLOWED", "CSV_MEMBERS_INVALID", "CSV_CONFLICT", "CSV_INCOMPLETE", "CSV_INVALID_CLOSING_QUOTE", "CSV_QUOTE_NOT_CLOSED"])
+const DIAGNOSTIC_SIGNALS = new Set(["SIGTERM", "SIGKILL", "SIGINT", "SIGABRT"])
+
+// Read data properties only: neither error getters nor message/cause.message are evaluated.
+function diagnosticField(value: unknown, key: string): unknown {
+  try {
+    let current = value
+    for (let depth = 0; depth < 3 && current && typeof current === "object"; depth += 1) {
+      const descriptor = Object.getOwnPropertyDescriptor(current, key)
+      if (descriptor) return descriptor.value
+      current = Object.getPrototypeOf(current)
+    }
+  } catch { /* A hostile error object is not diagnostic evidence. */ }
+  return undefined
+}
+
+export function sanitizeSourcepackDiagnostic(phase: unknown, error: unknown) {
+  const name = diagnosticField(error, "name")
+  const ownCode = diagnosticField(error, "code")
+  const nestedCode = diagnosticField(diagnosticField(error, "cause"), "code")
+  const code = typeof ownCode === "string" && DIAGNOSTIC_CODES.has(ownCode) ? ownCode
+    : typeof nestedCode === "string" && DIAGNOSTIC_CODES.has(nestedCode) ? nestedCode : null
+  const status = diagnosticField(error, "status")
+  const signal = diagnosticField(error, "signal")
+  return {
+    phase: typeof phase === "string" && DIAGNOSTIC_PHASES.has(phase) ? phase : "unknown",
+    name: typeof name === "string" && DIAGNOSTIC_NAMES.has(name) ? name : "unknown", code,
+    status: typeof status === "number" && Number.isInteger(status) && status >= 0 && status <= 599 ? status : null,
+    signal: typeof signal === "string" && DIAGNOSTIC_SIGNALS.has(signal) ? signal : null,
+  }
+}
+
+class SafeSourcepackError extends Error {
+  constructor(readonly diagnostic: ReturnType<typeof sanitizeSourcepackDiagnostic>) { super("sourcepack failed") }
+}
+
+function failure(code: string, message: string, status?: number) { return Object.assign(new Error(message), { code, status }) }
 
 function object(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {}
@@ -72,31 +111,35 @@ export function sanitizeCandidateCsvRow(row: Record<string, string>): Record<str
   return Object.fromEntries(CSV_FIELDS.map((key) => [key, /^SQ_|^CD_|^NR_|^ANO_/.test(key) ? String(code(row[key]) ?? "") || null : text(row[key])]))
 }
 
-export async function parseCandidatePackage(bytes: Buffer) {
-  if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw new Error("pacote de candidaturas inválido")
+export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: string) => void = () => {}) {
+  onPhase("csv_validate")
+  if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw failure("INVALID_FORMAT", "pacote de candidaturas inválido")
   const privateDir = mkdtempSync(join(tmpdir(), "pf-private-candidacy-sourcepack-"))
   try {
     const archive = join(privateDir, "consulta_cand_2026.zip")
     writeFileSync(archive, bytes, { mode: 0o600 })
+    onPhase("csv_zip")
     const entries = execFileSync("unzip", ["-Z1", archive], { encoding: "utf8", timeout: 30_000, maxBuffer: 4 * 1024 * 1024 }).trim().split(/\r?\n/)
       .filter((entry) => /^[A-Za-z0-9_/-]+\.csv$/.test(entry) && !entry.includes("..") && !entry.startsWith("/")
         && /^consulta_cand_2026_(BRASIL|PA|MG|TO)\.csv$/.test(basename(entry)))
     const brasil = entries.filter((entry) => basename(entry) === "consulta_cand_2026_BRASIL.csv")
     const selected = brasil.length ? brasil : entries
-    if (!selected.length || selected.length > 3) throw new Error("CSV canônico ausente ou ambíguo")
+    if (!selected.length || selected.length > 3) throw failure("CSV_MEMBERS_INVALID", "CSV canônico ausente ou ambíguo")
     const records = new Map<string, Record<string, string | null>>()
     const members: Array<{ member: string; raw_sha256: string; bytes: number }> = []
     for (const entry of selected) {
+      onPhase("csv_zip")
       const csv = execFileSync("unzip", ["-p", archive, entry], { timeout: 60_000, maxBuffer: 512 * 1024 * 1024 })
       members.push({ member: entry, raw_sha256: SHA(csv), bytes: csv.length })
       const csvPath = join(privateDir, basename(entry))
       writeFileSync(csvPath, csv, { mode: 0o600 })
+      onPhase("csv_parse")
       await parseCSV(csvPath, (row) => {
         const safe = sanitizeCandidateCsvRow(row)
         if (!safe) return
         const sq = safe.SQ_CANDIDATO!
         const previous = records.get(sq)
-        if (previous && JSON.stringify(previous) !== JSON.stringify(safe)) throw new Error("SQ com linhas oficiais divergentes")
+        if (previous && JSON.stringify(previous) !== JSON.stringify(safe)) throw failure("CSV_CONFLICT", "SQ com linhas oficiais divergentes")
         records.set(sq, safe)
       })
     }
@@ -132,11 +175,11 @@ function safePhotoUrl(value: unknown): string | null {
 
 export function sanitizeDetail(payload: unknown, expectedSq: string) {
   const row = object(payload)
-  if (String(row.id ?? "") !== expectedSq) throw new Error("identidade da candidatura divergiu")
+  if (String(row.id ?? "") !== expectedSq) throw failure("IDENTITY_MISMATCH", "identidade da candidatura divergiu")
   const party = object(row.partido)
   const office = object(row.cargo)
   const vices = sanitizeVices(row).map((vice) => {
-    if (!/^\d{1,15}$/.test(vice.sq_candidato) || !text(vice.name)) throw new Error("vice com campos inválidos")
+    if (!/^\d{1,15}$/.test(vice.sq_candidato) || !text(vice.name)) throw failure("INVALID_VICE", "vice com campos inválidos")
     return { ...vice, name: text(vice.name)! }
   })
   return {
@@ -164,13 +207,13 @@ export function sanitizeDetail(payload: unknown, expectedSq: string) {
 }
 
 export async function fetchBounded(url: string, maxBytes: number, timeoutMs: number, fetchImpl: FetchLike = fetch) {
-  if (!DETAIL_URLS.has(url) && url !== ZIP_URL && url !== TSE_CANDIDACY_URL && safeProgramUrl(url) !== url) throw new Error("URL fora da allowlist")
+  if (!DETAIL_URLS.has(url) && url !== ZIP_URL && url !== TSE_CANDIDACY_URL && safeProgramUrl(url) !== url) throw failure("URL_NOT_ALLOWED", "URL fora da allowlist")
   const response = await fetchImpl(url, {
     redirect: "manual", signal: AbortSignal.timeout(timeoutMs),
     headers: { accept: "application/json, application/pdf, application/zip", referer: "https://divulgacandcontas.tse.jus.br/divulga/", "user-agent": "PuxaFichaDataFreshness/1.0" },
   })
-  if (response.status >= 300 && response.status < 400) { await response.body?.cancel(); throw new Error("redirect recusado") }
-  if (Number(response.headers.get("content-length")) > maxBytes) { await response.body?.cancel(); throw new Error("corpo excede limite") }
+  if (response.status >= 300 && response.status < 400) { await response.body?.cancel(); throw failure("REDIRECT_BLOCKED", "redirect recusado", response.status) }
+  if (Number(response.headers.get("content-length")) > maxBytes) { await response.body?.cancel(); throw failure("SIZE_LIMIT", "corpo excede limite", response.status) }
   const reader = response.body?.getReader()
   const chunks: Buffer[] = []
   let size = 0
@@ -180,7 +223,7 @@ export async function fetchBounded(url: string, maxBytes: number, timeoutMs: num
         const chunk = await reader.read()
         if (chunk.done) break
         size += chunk.value.byteLength
-        if (size > maxBytes) { await reader.cancel(); throw new Error("corpo excede limite") }
+        if (size > maxBytes) { await reader.cancel(); throw failure("SIZE_LIMIT", "corpo excede limite", response.status) }
         chunks.push(Buffer.from(chunk.value))
       }
     } finally { reader.releaseLock() }
@@ -197,10 +240,10 @@ type Receipt = {
 export async function collectFreshnessCloseoutSourcepack(outputDir: string, options: { fetchImpl?: FetchLike; now?: () => Date } = {}) {
   const fetchImpl = options.fetchImpl ?? fetch
   const now = options.now ?? (() => new Date())
-  mkdirSync(outputDir, { recursive: true })
+  try { mkdirSync(outputDir, { recursive: true }) } catch (error) { throw new SafeSourcepackError(sanitizeSourcepackDiagnostic("initialize", error)) }
   const receipts: Receipt[] = []
   const candidates: Array<ReturnType<typeof sanitizeDetail> & { source: string; label: string }> = []
-  const errors: Array<{ target: string; reason: string }> = []
+  const errors: Array<{ target: string; reason: string; diagnostic: ReturnType<typeof sanitizeSourcepackDiagnostic> }> = []
   const record = (url: string, result: Awaited<ReturnType<typeof fetchBounded>>) => {
     const receipt: Receipt = {
       url, checked_at: now().toISOString(), http_status: result.response.status,
@@ -212,57 +255,71 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
     return receipt
   }
   for (const candidate of CANDIDATES) {
+    let phase = "detail_fetch"
+    let diagnostic: ReturnType<typeof sanitizeSourcepackDiagnostic> | undefined
     try {
       let selected: ReturnType<typeof sanitizeDetail> | undefined
       const official = await collectCandidateVices(candidate.sq, candidate.uf, async (input) => {
+        phase = "detail_fetch"
+        try {
         const url = String(input)
         const result = await fetchBounded(url, 2 * 1024 * 1024, 20_000, fetchImpl)
         record(url, result)
-        if (result.response.ok) selected = sanitizeDetail(JSON.parse(result.bytes.toString("utf8")), candidate.sq)
+        if (result.response.ok) {
+          phase = "detail_json"
+          const payload: unknown = JSON.parse(result.bytes.toString("utf8"))
+          phase = "detail_identity"
+          selected = sanitizeDetail(payload, candidate.sq)
+        } else diagnostic = sanitizeSourcepackDiagnostic(phase, failure("HTTP_ERROR", "HTTP não aprovado", result.response.status))
         // Canonical collector receives only the allowlisted object, never unfiltered JSON.
         const canonicalVices = selected?.vices.map((vice) => ({ sq_CANDIDATO: vice.sq_candidato, nm_URNA: vice.name, situacaoVice: vice.situacao_vice }))
         return new Response(result.response.ok ? JSON.stringify({ vices: canonicalVices }) : "source_error", { status: result.response.status })
+        } catch (error) { diagnostic = sanitizeSourcepackDiagnostic(phase, error); throw error }
       })
       if (!selected) throw new Error("detalhe não obtido")
       // Preserve canonical vice parser output from the original payload, already sanitized above.
       candidates.push({ ...selected, vices: official.vices, source: official.source, label: candidate.label })
-    } catch { errors.push({ target: candidate.sq, reason: "detalhe indisponível, inválido ou identidade divergente; consultar recibos HTTP" }) }
+    } catch (error) { errors.push({ target: candidate.sq, reason: "detalhe indisponível, inválido ou identidade divergente; consultar recibos HTTP", diagnostic: diagnostic ?? sanitizeSourcepackDiagnostic(phase, error) }) }
   }
 
   async function binary(url: string, filename: string, kind: "pdf" | "zip"): Promise<boolean> {
+    let phase = "binary_fetch"
     try {
       let receipt: Receipt | undefined
       const bytes = await fetchTseProgramaBytes(url, { fetchBytes: async (officialUrl) => {
         const result = await fetchBounded(officialUrl, kind === "pdf" ? 64 * 1024 * 1024 : 256 * 1024 * 1024, 120_000, fetchImpl)
         receipt = record(officialUrl, result)
-        if (!result.response.ok) throw new Error("HTTP não aprovado")
+        if (!result.response.ok) throw failure("HTTP_ERROR", "HTTP não aprovado", result.response.status)
         return result.bytes
       } })
+      phase = "binary_validate"
       const valid = kind === "pdf" ? bytes.subarray(0, 5).toString("ascii") === "%PDF-"
         : bytes.length >= 4 && bytes[0] === 0x50 && bytes[1] === 0x4b && bytes[2] === 3 && bytes[3] === 4
-      if (!valid) throw new Error("magic bytes incompatíveis")
+      if (!valid) throw failure("INVALID_FORMAT", "magic bytes incompatíveis")
+      phase = "binary_write"
       writeFileSync(join(outputDir, filename), bytes)
       receipt!.artifact_path = filename
       return true
-    } catch { errors.push({ target: url, reason: "arquivo indisponível, inválido ou acima do limite; nenhum corpo de erro persistido" }); return false }
+    } catch (error) { errors.push({ target: url, reason: "arquivo indisponível, inválido ou acima do limite; nenhum corpo de erro persistido", diagnostic: sanitizeSourcepackDiagnostic(phase, error) }); return false }
   }
   const file = candidates.find((candidate) => candidate.id === "130002544411")?.arquivos[0]
   const directPdf = file?.url ? await binary(file.url, "ben-mendes-130017139584.pdf", "pdf") : false
   if (!directPdf) await binary(ZIP_URL, "proposta_governo_2026_MG.zip", "zip")
   let officialCsv: Awaited<ReturnType<typeof parseCandidatePackage>> | null = null
+  let csvPhase = "csv_fetch"
   try {
     const result = await fetchBounded(TSE_CANDIDACY_URL, 128 * 1024 * 1024, 120_000, fetchImpl)
     record(TSE_CANDIDACY_URL, result)
-    if (!result.response.ok) throw new Error("HTTP não aprovado")
-    officialCsv = await parseCandidatePackage(result.bytes)
-    if (!officialCsv.complete) errors.push({ target: TSE_CANDIDACY_URL, reason: `pacote consultado ainda não contém SQs: ${officialCsv.missing_sqs.join(",")}; recorte existente preservado, sem inferir situação da pessoa` })
-  } catch { errors.push({ target: TSE_CANDIDACY_URL, reason: "CSV indisponível, inválido, incompleto ou acima do limite; nenhum dado bruto persistido no artefato" }) }
+    if (!result.response.ok) throw failure("HTTP_ERROR", "HTTP não aprovado", result.response.status)
+    officialCsv = await parseCandidatePackage(result.bytes, (phase) => { csvPhase = phase })
+    if (!officialCsv.complete) errors.push({ target: TSE_CANDIDACY_URL, reason: `pacote consultado ainda não contém SQs: ${officialCsv.missing_sqs.join(",")}; recorte existente preservado, sem inferir situação da pessoa`, diagnostic: sanitizeSourcepackDiagnostic("csv_scope", failure("CSV_INCOMPLETE", "recorte parcial")) })
+  } catch (error) { errors.push({ target: TSE_CANDIDACY_URL, reason: "CSV indisponível, inválido, incompleto ou acima do limite; nenhum dado bruto persistido no artefato", diagnostic: sanitizeSourcepackDiagnostic(csvPhase, error) }) }
   const report = {
     schema_version: 1, generated_at: now().toISOString(), scope: "freshness-closeout-readonly",
     privacy: "allowlisted candidate fields only; original JSON bytes hashed but never persisted",
     direct_pdf_metadata_url: file?.url ?? null, candidates, official_csv: officialCsv, receipts, errors,
   }
-  writeFileSync(join(outputDir, "sourcepack.json"), `${JSON.stringify(report, null, 2)}\n`)
+  try { writeFileSync(join(outputDir, "sourcepack.json"), `${JSON.stringify(report, null, 2)}\n`) } catch (error) { throw new SafeSourcepackError(sanitizeSourcepackDiagnostic("report_write", error)) }
   return report
 }
 
@@ -271,5 +328,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1]
   collectFreshnessCloseoutSourcepack(outputDir).then((report) => {
     console.log(JSON.stringify({ outputDir, candidates: report.candidates.length, receipts: report.receipts.length, errors: report.errors.length }))
     if (report.errors.length) process.exitCode = 1
-  }).catch(() => { console.error("sourcepack falhou antes do relatório; nenhum payload bruto foi registrado"); process.exitCode = 1 })
+  }).catch((error: unknown) => {
+    console.error(JSON.stringify({ error: "sourcepack_failed", diagnostic: error instanceof SafeSourcepackError ? error.diagnostic : sanitizeSourcepackDiagnostic("sourcepack", error) }))
+    process.exitCode = 1
+  })
 }

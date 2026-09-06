@@ -118,8 +118,39 @@ test("PDF direto só vem de metadado permitido e exige magic bytes; HTML vira er
   })
   assert.equal(calls.length, 9)
   assert.equal(report.errors.length, 2)
+  assert.deepEqual(report.errors.map((error) => [error.diagnostic.phase, error.diagnostic.code, error.diagnostic.status]), [
+    ["binary_validate", "INVALID_FORMAT", null], ["binary_fetch", "HTTP_ERROR", 403],
+  ])
   assert.deepEqual(readdirSync(out), ["sourcepack.json"])
   assert.doesNotMatch(JSON.stringify(report), /privado@example|blocked private body/)
+})
+
+test("diagnóstico usa enums e não lê message, cause.message ou getters desconhecidos", async () => {
+  const { sanitizeSourcepackDiagnostic } = await collector()
+  assert.equal(typeof sanitizeSourcepackDiagnostic, "function")
+  const cause = Object.defineProperty({ code: "ECONNRESET" }, "message", { get() { throw Error("message must not be read") } })
+  const error = Object.defineProperty({ name: "TypeError", cause, status: 503, signal: "SIGTERM" }, "message", { get() { throw Error("message must not be read") } })
+  assert.deepEqual(sanitizeSourcepackDiagnostic("detail_fetch", error), { phase: "detail_fetch", name: "TypeError", code: "ECONNRESET", status: 503, signal: "SIGTERM" })
+  const unsafe = sanitizeSourcepackDiagnostic("private@example.invalid", { name: "private@example.invalid", code: "secret password", status: "403", signal: "private-token", message: "12345678900", cause: { message: "private@example.invalid" } })
+  assert.deepEqual(unsafe, { phase: "unknown", name: "unknown", code: null, status: null, signal: null })
+  assert.doesNotMatch(JSON.stringify(unsafe), /private|secret|12345678900|password/)
+})
+
+test("falha JSON é diferenciada do fetch sem publicar conteúdo inválido", async () => {
+  const { collectFreshnessCloseoutSourcepack } = await collector()
+  const out = mkdtempSync(join(tmpdir(), "pf-sourcepack-safe-diagnostic-"))
+  const zip = officialCsvZip()
+  const report = await collectFreshnessCloseoutSourcepack(out, { fetchImpl: async (input) => {
+    const url = String(input)
+    if (url.endsWith("consulta_cand_2026.zip")) return new Response(zip)
+    if (url.endsWith(".zip")) return new Response(Buffer.from([0x50, 0x4b, 3, 4]))
+    if (url.endsWith("140002554434")) return new Response("private@example.invalid invalid JSON")
+    return new Response(JSON.stringify(detail(url.split("/").at(-1)!)))
+  } })
+  assert.equal(report.errors.length, 1)
+  assert.equal(report.errors[0].diagnostic.phase, "detail_json")
+  assert.equal(report.errors[0].diagnostic.name, "SyntaxError")
+  assert.doesNotMatch(JSON.stringify(report), /private@example.invalid/)
 })
 
 test("CSV oficial seleciona só seis SQs, preserva recorte parcial e rejeita duplicata divergente", async () => {

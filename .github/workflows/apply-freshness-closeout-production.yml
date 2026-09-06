@@ -60,6 +60,27 @@ jobs:
         env:
           PF_PROVAR_FRESHNESS_CLOSEOUT_PG17: '1'
         run: node --import tsx --test tests/freshness-closeout-package-pg17.test.ts tests/freshness-closeout-view-pg17.test.ts tests/freshness-closeout-crosswalk.test.ts tests/freshness-closeout-driver.test.ts tests/freshness-closeout-domain.test.ts
+      - name: Backup read-only restrito, cifrado e validado antes de qualquer escrita
+        if: inputs.mode != 'verify'
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+        run: bash scripts/audit/apply-freshness-closeout-production.sh backup "$RUNNER_TEMP/freshness-backup"
+      - name: Preservar somente backup cifrado e checksum
+        if: inputs.mode != 'verify'
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: freshness-backup-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/freshness-backup/closeout.dump.enc
+            ${{ runner.temp }}/freshness-backup/closeout.dump.enc.sha256
+          retention-days: 14
+          if-no-files-found: error
+      - name: Provar pacote completo com rollback antes de persistir
+        if: inputs.mode == 'apply'
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: bash scripts/audit/apply-freshness-closeout-production.sh dry-run
       - name: Executar modo autorizado pelo driver guardado
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}

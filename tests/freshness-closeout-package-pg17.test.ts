@@ -3,11 +3,53 @@ import { spawnSync } from "node:child_process"
 import { readFileSync } from "node:fs"
 import test from "node:test"
 import { digest, PREDECESSOR, renderFreshnessCloseoutTransaction } from "../scripts/audit/apply-freshness-closeout"
+import { transactionBody } from "../scripts/audit/lib/master-review-transaction"
 import { analyzeProfileAdmission, selectCurrentVice } from "../src/lib/candidate-publication-integrity"
 
 const read = (path: string) => readFileSync(path, "utf8")
 const manifest = JSON.parse(read("data/freshness-closeout-20260905.json"))
 const lit = (v: unknown) => `'${String(v).replaceAll("'", "''")}'`
+
+type DockerResult = {status:number|null; signal:string|null; stderr:string; stdout:string; error?:Error}
+function stopPackageFixture(run:(args:string[])=>DockerResult, id:string):void {
+  assert.match(id,/^[a-f0-9]{64}$/,"cleanup requires the exact container ID")
+  const stopped=run(["stop",id])
+  if(stopped.status===0&&!stopped.error&&!stopped.signal)return
+  const inspected=run(["inspect","--format","{{.Id}}",id])
+  if(inspected.status===1&&!inspected.error&&!inspected.signal
+    &&[`Error: No such object: ${id}`,`Error response from daemon: No such container: ${id}`].includes(inspected.stderr.trim()))return
+  assert.fail(`Docker fixture cleanup failed (stop_status=${stopped.status}; inspect_status=${inspected.status})`)
+}
+function runWithPackageCleanup(body:()=>void, cleanup:()=>void, diagnose:(message:string)=>void):void {
+  let failed=false
+  try {body()} catch(error){failed=true;throw error} finally {
+    try {cleanup()} catch(error){if(!failed)throw error;diagnose("Docker cleanup also failed; original test failure preserved")}
+  }
+}
+
+test("cleanup do pacote preserva erro primário e só tolera ausência exata",()=>{
+  const id="a".repeat(64), primary=new Error("primary"), secondary=new Error("cleanup"), diagnostics:string[]=[]
+  assert.throws(()=>runWithPackageCleanup(()=>{throw primary},()=>{throw secondary},m=>diagnostics.push(m)),e=>e===primary)
+  assert.equal(diagnostics.length,1)
+  assert.throws(()=>runWithPackageCleanup(()=>{},()=>{throw secondary},()=>{}),e=>e===secondary)
+  stopPackageFixture(()=>({status:1,signal:null,stdout:"",stderr:`Error: No such object: ${id}`}),id)
+  assert.throws(()=>stopPackageFixture(()=>({status:1,signal:null,stdout:"",stderr:"Cannot connect to daemon"}),id),/cleanup failed/)
+  assert.throws(()=>stopPackageFixture(()=>({status:1,signal:null,stdout:"",stderr:`Error: No such object: ${"b".repeat(64)}`}),id),/cleanup failed/)
+})
+
+test("recibo composto segue readbacks reais e verify usa o SHA aplicado", () => {
+  const render=(mode: "apply"|"dry-run"|"verify"|"rollback", sha="a".repeat(40))=>renderFreshnessCloseoutTransaction(mode,sha)
+  for(const mode of ["apply","dry-run","rollback"] as const) {
+    const sql=render(mode)
+    assert.equal((sql.match(/INSERT INTO public\.coleta_log/g)??[]).length,1)
+    assert.ok(sql.indexOf("INSERT INTO public.coleta_log")>sql.lastIndexOf("RESET ROLE;"))
+    assert.doesNotMatch(sql,/DELETE FROM public\.coleta_log|UPDATE public\.coleta_log/)
+  }
+  assert.match(render("dry-run"),/ROLLBACK;\n$/)
+  assert.doesNotMatch(render("verify"),/INSERT INTO public\.coleta_log/)
+  assert.equal(render("verify"),render("verify","b".repeat(40)))
+  assert.match(render("verify"),/receipt missing, duplicated or altered/)
+})
 
 test("Ruth entra com 11 campos, dois recibos reais e vice vigente sem inventar histórico", () => {
   assert.equal(analyzeProfileAdmission(manifest.profile).ready, true)
@@ -33,18 +75,21 @@ test("Ruth entra com 11 campos, dois recibos reais e vice vigente sem inventar h
 
 test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preservador", {
   skip: process.env.PF_PROVAR_FRESHNESS_CLOSEOUT_PG17 !== "1", timeout: 120_000,
-}, () => {
+}, (t) => {
   const run = (args: string[], input?: string) => spawnSync("docker", args, {input, encoding: "utf8", timeout: 60_000})
   const start = run(["run", "-d", "--rm", "-e", "POSTGRES_PASSWORD=fixture", "postgres:17@sha256:7958605b474b3d264a969cb3a123d6aa00ad1e1fe9da8a69984dabb704d93317"])
   assert.equal(start.status, 0, start.stderr)
   const id = start.stdout.trim()
   const q = (sql: string) => run(["exec", "-i", id, "psql", "-X", "-U", "postgres", "-Atq", "-v", "ON_ERROR_STOP=1"], sql)
   const ok = (sql: string) => {const r=q(sql); assert.equal(r.status,0,r.stderr); return r.stdout.trim()}
-  try {
+  runWithPackageCleanup(() => {
     assert.equal(run(["exec",id,"bash","-c","for i in {1..40}; do pg_isready -U postgres -h 127.0.0.1 >/dev/null 2>&1 && psql -U postgres -h 127.0.0.1 -Atqc 'select 1' >/dev/null 2>&1 && exit 0; sleep 1; done; exit 1"]).status,0)
     ok("CREATE ROLE anon; CREATE ROLE authenticated; CREATE SCHEMA supabase_migrations; CREATE TABLE supabase_migrations.schema_migrations(version text PRIMARY KEY,statements text[],name text,created_by text,idempotency_key text,rollback text[]);")
     const initial=read("supabase/migrations/20260329000000_initial_schema.sql")
     ok(initial.slice(initial.indexOf("CREATE TABLE candidatos ("),initial.indexOf("-- Índice pra busca")))
+    // The actual canonical receipt table, constraints and private views, not a mock.
+    ok(read("supabase/migrations/20260805003740_coleta_log_tentativa_por_fonte.sql"))
+    ok(read("supabase/migrations/20260808120000_coleta_log_natureza_escrita.sql"))
     ok("ALTER TABLE candidatos ADD COLUMN genero text, ADD COLUMN estado_civil text, ADD COLUMN cor_raca text, ADD COLUMN biografia text, ADD COLUMN situacao_candidatura text, ADD COLUMN publicavel boolean, ADD COLUMN verificacao_campos jsonb, ADD COLUMN sq_candidato_2026 text; ALTER TABLE candidatos ENABLE ROW LEVEL SECURITY; GRANT SELECT ON candidatos TO anon,authenticated; CREATE POLICY candidate_public ON candidatos FOR SELECT USING(publicavel AND status<>'removido'); CREATE VIEW candidatos_publico WITH(security_invoker=true) AS SELECT id,slug FROM candidatos WHERE publicavel AND status<>'removido'; GRANT SELECT ON candidatos_publico TO anon,authenticated;")
     ok(read("supabase/migrations/20260813040000_chapas_2026_schema.sql"))
     const previous=read("supabase/migrations/20260829030001_candidate_roster_publication_integrity_schema.sql")
@@ -71,8 +116,15 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     for(const before of manifest.before_chapas) replacements.push([before.row_digest,ok(`SELECT md5(to_jsonb(ch)::text) FROM chapas_2026 ch WHERE id=${lit(before.id)}::uuid`)])
     // Synthetic fixtures contain no production PII. Only the four captured full-row
     // digests are substituted in memory; every SQL guard and write remains real.
-    const sql=(mode: "apply"|"dry-run"|"verify"|"rollback") => replacements.reduce((s,[from,to])=>s.replaceAll(from,to),renderFreshnessCloseoutTransaction(mode,"a".repeat(40)))
+    const sql=(mode: "apply"|"dry-run"|"verify"|"rollback", sha="a".repeat(40)) => replacements.reduce((s,[from,to])=>s.replaceAll(from,to),renderFreshnessCloseoutTransaction(mode,sha))
+    ok("ALTER TABLE coleta_log ADD CONSTRAINT reject_test_receipt CHECK(fonte<>'escrita:apply-freshness-closeout')")
+    assert.notEqual(q(sql("apply")).status,0,"receipt insert failure aborts domain, schema and ledger atomically")
+    assert.equal(ok("SELECT count(*) FROM candidatos"),"2")
+    assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
+    assert.equal(ok("SELECT count(*) FROM coleta_log"),"0")
+    ok("ALTER TABLE coleta_log DROP CONSTRAINT reject_test_receipt")
     ok(sql("dry-run"))
+    assert.equal(ok("SELECT count(*) FROM coleta_log"),"0","dry-run exercises and rolls back its receipt")
     assert.equal(ok("SELECT count(*) FROM candidatos"),"2")
     assert.equal(ok("SELECT md5(string_agg(to_jsonb(c)::text,'|' ORDER BY id)) FROM candidatos c"),beforeHash)
     for(const conflict of [
@@ -93,6 +145,30 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
     ok("ALTER VIEW chapas_2026_publico SET(security_invoker=true)")
     ok(sql("apply")); ok(sql("verify"))
+    ok(sql("verify","b".repeat(40)))
+    assert.equal(ok("SELECT count(*) FROM coleta_log"),"1")
+    const applyReceiptHash=ok("SELECT md5(to_jsonb(l)::text) FROM coleta_log l")
+    const applyReceipt=JSON.parse(ok("SELECT detalhe FROM coleta_log"))
+    assert.equal(applyReceipt.operation,"apply")
+    assert.equal(applyReceipt.git_sha,"a".repeat(40),"verification binds the original ledger SHA, not the caller SHA")
+    assert.deepEqual(applyReceipt.artifacts.map((a: {version:string})=>a.version),["20260905230738","20260905230739"])
+    assert.equal(ok("SELECT count(*) FROM coleta_log_ultima"),"0","write receipts never masquerade as source collection")
+    assert.notEqual(q("SET ROLE anon; SELECT * FROM coleta_log").status,0,"operational receipts remain private")
+    for(const mutation of [
+      "DELETE FROM coleta_log",
+      "UPDATE coleta_log SET detalhe=jsonb_set(detalhe::jsonb,'{git_sha}',to_jsonb(repeat('b',40)))::text",
+      "UPDATE coleta_log SET volume=9",
+      "UPDATE coleta_log SET natureza='coleta'",
+      "INSERT INTO coleta_log(fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza) SELECT fonte,escopo,alvo,resultado,volume,detalhe,url,execucao,natureza FROM coleta_log",
+    ]) {
+      for(const mode of ["verify","rollback"] as const) {
+        // Local adversarial mutation and the real composed proof share a transaction;
+        // each rejected proof rolls back when this isolated psql connection exits.
+        assert.notEqual(q(`BEGIN; ${mutation}; ${transactionBody(sql(mode))} ROLLBACK;`).status,0,`${mode} rejects missing, altered or duplicated receipt`)
+        assert.equal(ok("SELECT md5(to_jsonb(l)::text) FROM coleta_log l"),applyReceiptHash)
+        assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"3")
+      }
+    }
     const postimage=JSON.parse(ok("SELECT row_to_json(c) FROM candidatos c WHERE slug='ruth-reis'"))
     assert.equal(analyzeProfileAdmission(postimage).ready,true,"admission runs on actual SQL postimage, not only the manifest")
     const compareManifest=(actual: Record<string,unknown>,expected: Record<string,unknown>) => {
@@ -113,11 +189,17 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     assert.notEqual(q(sql("rollback")).status,0,"rollback CAS preserves concurrent edit")
     assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"3")
     ok(`UPDATE candidatos SET biografia=${lit(manifest.profile.biografia)} WHERE slug='ruth-reis'`)
-    ok(sql("rollback"))
+    ok(sql("rollback","b".repeat(40)))
     assert.equal(ok("SELECT count(*) FROM candidatos"),"3","new registration is archived, never deleted")
     assert.equal(ok("SELECT count(*) FROM chapas_2026"),"3","both old and new slates survive rollback")
     assert.equal(ok("SELECT publicavel::text || ':' || status FROM candidatos WHERE slug='ruth-reis'"),"false:removido")
     assert.equal(ok("SELECT md5(string_agg(to_jsonb(h)::text,'|' ORDER BY id)) FROM historico_politico h"),childHash)
+    assert.equal(ok("SELECT count(*) FROM coleta_log"),"2","rollback appends its fact without deleting history")
+    assert.equal(ok("SELECT md5(to_jsonb(l)::text) FROM coleta_log l WHERE detalhe::jsonb->>'operation'='apply'"),applyReceiptHash)
+    const rollbackReceipt=JSON.parse(ok("SELECT detalhe FROM coleta_log WHERE detalhe::jsonb->>'operation'='rollback'"))
+    assert.equal(rollbackReceipt.git_sha,"b".repeat(40))
+    assert.equal(rollbackReceipt.applied_git_sha,"a".repeat(40))
+    assert.deepEqual(rollbackReceipt.data_writes,{candidates_updated:3,candidates_deleted:0,slates_deleted:0})
     assert.notEqual(q(sql("apply")).status,0,"archived new registration needs new reviewed preimage; never overwritten")
-  } finally {assert.equal(run(["stop",id]).status,0)}
+  },()=>stopPackageFixture(run,id),message=>t.diagnostic(message))
 })
