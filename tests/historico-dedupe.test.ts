@@ -3,12 +3,13 @@ import { test } from "node:test"
 import {
   countHistoricoSemanticOverlaps,
   dedupeHistoricoPoliticoForDisplay,
+  ensureCurrentCandidacyInHistory,
   hasWideManualOverlappingSegmentedMandates,
   normalizeHistoricoPoliticoForDisplay,
   splitBrasilPresidenteTwoOpenLongGap,
 } from "@/lib/historico-dedupe"
 import { formatHistoricoPeriodoDisplay } from "@/lib/historico-display"
-import type { HistoricoPolitico } from "@/lib/types"
+import type { Candidato, HistoricoPolitico } from "@/lib/types"
 
 function row(partial: Partial<HistoricoPolitico> & Pick<HistoricoPolitico, "id">): HistoricoPolitico {
   return {
@@ -24,6 +25,69 @@ function row(partial: Partial<HistoricoPolitico> & Pick<HistoricoPolitico, "id">
     ...partial,
   } as HistoricoPolitico
 }
+
+const currentCandidate = {
+  id: "well-macedo-id",
+  cargo_disputado: "Governador",
+  partido_sigla: "PSTU",
+  estado: "PA",
+  status: "candidato",
+  fonte_dados: ["TSE consulta_cand 2026"],
+} satisfies Pick<Candidato, "id" | "cargo_disputado" | "partido_sigla" | "estado" | "status" | "fonte_dados">
+
+test("projeta candidatura atual ausente sem apagar o histórico anterior", () => {
+  const out = ensureCurrentCandidacyInHistory(currentCandidate, [
+    row({ id: "well-2022", periodo_inicio: 2022, periodo_fim: 2022, tipo_evento: "candidatura" }),
+  ])
+
+  assert.equal(out.length, 2)
+  assert.deepEqual(
+    out.find((item) => item.periodo_inicio === 2026),
+    {
+      id: "perfil-atual-well-macedo-id-2026",
+      candidato_id: "well-macedo-id",
+      cargo: "Governador",
+      cargo_canonico: "Governador",
+      tipo_evento: "candidatura",
+      periodo_inicio: 2026,
+      periodo_fim: 2026,
+      partido: "PSTU",
+      estado: "PA",
+      eleito_por: "",
+      observacoes: null,
+      proveniencia: "tse",
+    },
+  )
+})
+
+test("preserva mandato atual e adiciona candidatura do mesmo cargo no mesmo ano", () => {
+  const mandato = row({
+    id: "mandato-2026",
+    cargo: "Governador",
+    cargo_canonico: "Governador",
+    periodo_inicio: 2026,
+    periodo_fim: null,
+    tipo_evento: "mandato",
+  })
+  const out = ensureCurrentCandidacyInHistory(currentCandidate, [mandato])
+
+  assert.equal(out.length, 2)
+  assert.equal(out.filter((item) => item.tipo_evento === "mandato").length, 1)
+  assert.equal(out.filter((item) => item.tipo_evento === "candidatura").length, 1)
+})
+
+test("não duplica variante textual já existente da candidatura atual", () => {
+  const candidatura = row({
+    id: "candidatura-2026",
+    cargo: "Pré-candidatura ao Governo do Pará",
+    cargo_canonico: "Pré-candidatura ao Governo do Pará",
+    periodo_inicio: 2026,
+    periodo_fim: 2026,
+    tipo_evento: "candidatura",
+  })
+
+  assert.deepEqual(ensureCurrentCandidacyInHistory(currentCandidate, [candidatura]), [candidatura])
+})
 
 test("dedupeHistoricoPoliticoForDisplay colapsa mesmo cargo canónico e período", () => {
   const a = row({ id: "a", observacoes: "foo" })

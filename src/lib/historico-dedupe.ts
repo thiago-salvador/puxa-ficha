@@ -2,11 +2,67 @@ import { canonicalCargo } from "@/lib/cargo-utils"
 import { longFormMatchesUfSigla, normalizeBrUfToken } from "@/lib/br-uf"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import { resolveHistoricoRowProvenance } from "@/lib/historico-provenance"
-import type { HistoricoPolitico } from "@/lib/types"
+import type { Candidato, HistoricoPolitico } from "@/lib/types"
+
+const CURRENT_CANDIDACY_ELECTION_YEAR = 2026
 
 /** Alinhado a `historicoCanonKey` em `historico-display.ts`. */
 function historicoCanonKeyForRow(row: Pick<HistoricoPolitico, "cargo" | "cargo_canonico">): string {
   return (row.cargo_canonico?.trim() || canonicalCargo(row.cargo ?? "")).trim()
+}
+
+/**
+ * A candidatura vigente pertence ao perfil atual, enquanto `historico_politico`
+ * também guarda mandatos e pleitos anteriores. Projeta a candidatura atual na
+ * trajetória quando a linha denormalizada não existe, sem apagar um mandato do
+ * mesmo cargo e ano.
+ */
+export function ensureCurrentCandidacyInHistory(
+  candidato: Pick<
+    Candidato,
+    "id" | "cargo_disputado" | "partido_sigla" | "estado" | "status" | "fonte_dados"
+  >,
+  rows: HistoricoPolitico[],
+  electionYear = CURRENT_CANDIDACY_ELECTION_YEAR,
+): HistoricoPolitico[] {
+  if (
+    candidato.cargo_disputado === "Nenhum" ||
+    candidato.status === "desistente" ||
+    candidato.status === "removido"
+  ) {
+    return rows
+  }
+
+  const currentCargo = canonicalCargo(candidato.cargo_disputado)
+  const alreadyPresent = rows.some(
+    (row) =>
+      row.periodo_inicio === electionYear &&
+      isHistoricoCandidaturaRow(row) &&
+      canonicalCargo(row.cargo_canonico?.trim() || row.cargo) === currentCargo,
+  )
+  if (alreadyPresent) return rows
+
+  const proveniencia = candidato.fonte_dados.some((fonte) => /\btse\b/i.test(fonte))
+    ? "tse"
+    : "manual"
+
+  return [
+    ...rows,
+    {
+      id: `perfil-atual-${candidato.id}-${electionYear}`,
+      candidato_id: candidato.id,
+      cargo: candidato.cargo_disputado,
+      cargo_canonico: currentCargo,
+      tipo_evento: "candidatura",
+      periodo_inicio: electionYear,
+      periodo_fim: electionYear,
+      partido: candidato.partido_sigla,
+      estado: candidato.estado ?? "BR",
+      eleito_por: "",
+      observacoes: null,
+      proveniencia,
+    },
+  ]
 }
 
 /**

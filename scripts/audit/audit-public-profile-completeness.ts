@@ -2,6 +2,8 @@ import { mkdir, writeFile } from "node:fs/promises"
 import { readFileSync } from "node:fs"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
+import { canonicalCargo } from "../../src/lib/cargo-utils"
+import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
 
 const CORE_FIELDS = [
   "partido_sigla",
@@ -48,6 +50,8 @@ export type ProfileCompletenessIssue = {
     | "profile_payload_invalid"
     | "patrimonio_uncollected"
     | "financiamento_uncollected"
+    | "current_candidacy_missing_from_history"
+    | "current_candidacy_duplicate_in_history"
     | "public_profile_missing_from_seed"
   field?: string
   year?: number
@@ -62,6 +66,28 @@ export type ProfileReviewNotice = {
 
 function hasValue(value: unknown): boolean {
   return typeof value === "string" ? value.trim().length > 0 : value != null
+}
+
+function currentCandidacyHistoryCount(data: Record<string, unknown>): number {
+  if (!Array.isArray(data.historico) || typeof data.cargo_disputado !== "string") return 0
+  const currentCargo = canonicalCargo(data.cargo_disputado)
+  return data.historico.filter((raw) => {
+    if (!raw || typeof raw !== "object") return false
+    const row = raw as Record<string, unknown>
+    const rowCargo = typeof row.cargo_canonico === "string"
+      ? row.cargo_canonico
+      : typeof row.cargo === "string"
+        ? row.cargo
+        : ""
+    return row.periodo_inicio === 2026 &&
+      isHistoricoCandidaturaRow({
+        tipo_evento: typeof row.tipo_evento === "string" ? row.tipo_evento : null,
+        observacoes: typeof row.observacoes === "string" ? row.observacoes : null,
+        periodo_inicio: typeof row.periodo_inicio === "number" ? row.periodo_inicio : null,
+        periodo_fim: typeof row.periodo_fim === "number" ? row.periodo_fim : null,
+      }) &&
+      canonicalCargo(rowCargo) === currentCargo
+  }).length
 }
 
 function moneyIssues(
@@ -134,6 +160,26 @@ export function analyzePublicProfileCompleteness(
 
   for (const field of CORE_FIELDS) {
     if (!hasValue(data[field])) actionable.push({ slug, kind: "core_field_missing", field })
+  }
+
+  if (typeof data.cargo_disputado === "string" && data.cargo_disputado !== "Nenhum") {
+    const currentCandidacyCount = currentCandidacyHistoryCount(data)
+    if (currentCandidacyCount === 0) {
+      actionable.push({
+        slug,
+        kind: "current_candidacy_missing_from_history",
+        field: "historico",
+        year: 2026,
+      })
+    } else if (currentCandidacyCount > 1) {
+      actionable.push({
+        slug,
+        kind: "current_candidacy_duplicate_in_history",
+        field: "historico",
+        year: 2026,
+        state: String(currentCandidacyCount),
+      })
+    }
   }
 
   actionable.push(

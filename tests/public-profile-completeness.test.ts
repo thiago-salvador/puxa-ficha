@@ -89,6 +89,99 @@ test("aceita publicação, ausência oficial, zero e pleito futuro", () => {
   assert.deepEqual(result.actionable, [])
 })
 
+test("marca candidatura atual ausente da trajetória como acionável", () => {
+  const result = analyzePublicProfileCompleteness("well-macedo", {
+    sourceStatus: "live",
+    data: {
+      slug: "well-macedo",
+      ...completeCore,
+      cargo_disputado: "Governador",
+      historico: [
+        {
+          cargo: "Deputado Federal",
+          cargo_canonico: "Deputado Federal",
+          tipo_evento: "candidatura",
+          periodo_inicio: 2022,
+          periodo_fim: 2022,
+        },
+      ],
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [
+    {
+      slug: "well-macedo",
+      kind: "current_candidacy_missing_from_history",
+      field: "historico",
+      year: 2026,
+    },
+  ])
+})
+
+test("aceita candidatura atual projetada junto de mandato no mesmo ano", () => {
+  const result = analyzePublicProfileCompleteness("governador-candidato", {
+    sourceStatus: "live",
+    data: {
+      slug: "governador-candidato",
+      ...completeCore,
+      cargo_disputado: "Governador",
+      historico: [
+        {
+          cargo: "Governador",
+          cargo_canonico: "Governador",
+          tipo_evento: "mandato",
+          periodo_inicio: 2026,
+          periodo_fim: null,
+        },
+        {
+          cargo: "Governador",
+          cargo_canonico: "Governador",
+          tipo_evento: "candidatura",
+          periodo_inicio: 2026,
+          periodo_fim: 2026,
+        },
+      ],
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [])
+})
+
+test("marca candidatura atual duplicada na trajetória como acionável", () => {
+  const candidaturaAtual = {
+    cargo: "Governador",
+    cargo_canonico: "Governador",
+    tipo_evento: "candidatura",
+    periodo_inicio: 2026,
+    periodo_fim: 2026,
+  }
+  const result = analyzePublicProfileCompleteness("duplicado", {
+    sourceStatus: "live",
+    data: {
+      slug: "duplicado",
+      ...completeCore,
+      cargo_disputado: "Governador",
+      historico: [candidaturaAtual, { ...candidaturaAtual, cargo: "Candidato a Governador" }],
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [
+    {
+      slug: "duplicado",
+      kind: "current_candidacy_duplicate_in_history",
+      field: "historico",
+      year: 2026,
+      state: "2",
+    },
+  ])
+})
+
 test("separa ausência de recibo contextual de lacuna objetiva", () => {
   const result = analyzePublicProfileCompleteness("sem-recibos", {
     sourceStatus: "live",
