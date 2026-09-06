@@ -326,6 +326,57 @@ export function patrimonioDeclarationObservation(
   }
 }
 
+export function hasOfficialCandidateComplementaryPackage(ano: number): boolean {
+  return ano >= 2018
+}
+
+async function loadPatrimonioDeclarationObservations(
+  ano: number,
+  governorUFs: string[],
+): Promise<Map<string, "S" | "N">> {
+  const observations = new Map<string, "S" | "N">()
+  if (!hasOfficialCandidateComplementaryPackage(ano)) return observations
+
+  const zipPath = resolve(DATA_DIR, `consulta_cand_complementar_${ano}.zip`)
+  const extractDir = resolve(DATA_DIR, `consulta_cand_complementar_${ano}`)
+  const url = `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_${ano}.zip`
+
+  const ok = await downloadFile(url, zipPath)
+  if (!ok) {
+    throw new Error(`Consulta complementar de candidaturas ${ano}: download do pacote oficial falhou`)
+  }
+
+  try {
+    extractZip(zipPath, extractDir, governorUFs)
+    const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
+    const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
+    const csvPaths = [...brPaths, ...ufPaths].filter((value, index, all) => all.indexOf(value) === index)
+    if (csvPaths.length === 0) {
+      throw new Error(`Consulta complementar de candidaturas ${ano}: nenhum CSV oficial encontrado`)
+    }
+
+    for (const csvPath of csvPaths) {
+      const sourceUf = financiamentoSourceFileUf(csvPath, governorUFs)
+      await parseCSV(csvPath, (row) => {
+        const declaration = patrimonioDeclarationObservation(row, ano, sourceUf)
+        if (!declaration) return
+        const existingStatus = observations.get(declaration.identityKey)
+        if (existingStatus && existingStatus !== declaration.status) {
+          throw new Error(
+            `Consulta complementar de candidaturas ${ano}: ST_DECLARAR_BENS conflitante para ${declaration.identityKey}`,
+          )
+        }
+        observations.set(declaration.identityKey, declaration.status)
+      })
+    }
+  } finally {
+    cleanupDir(extractDir)
+    cleanupDownloadedZip(zipPath)
+  }
+
+  return observations
+}
+
 async function buildSQMap(
   ano: number,
   candidatos: CandidatoConfig[],
@@ -360,7 +411,7 @@ async function buildSQMap(
     }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
-  const patrimonioDeclarationByIdentity = new Map<string, "S" | "N">()
+  const patrimonioDeclarationByIdentity = await loadPatrimonioDeclarationObservations(ano, governorUFs)
 
   // O SQ curado continua disponível para coletar linhas reais. Ele não prova
   // ausência por si só: `declarouBens` só é preenchido quando a linha oficial
