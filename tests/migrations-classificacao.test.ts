@@ -398,7 +398,8 @@ describe("classificador puro (#136)", () => {
     // 05/09: três migrations MR01/MR07/MR08 medidas localmente em PG17;
     // 349 aplicadas + 105 falhas preservadas = 454 arquivos.
     // Freshness closeout medido no PG17: 351 + mesmas 105 = 456 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 351)
+    // Completude residual medida no PG17: 352 + mesmas 105 = 457 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 352)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

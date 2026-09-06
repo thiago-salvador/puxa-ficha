@@ -1,0 +1,51 @@
+{
+  "_comentario": "Autoriza somente a despublicacao reversivel de 11 linhas atribuidas a homonimos e o registro de quatro ausencias de bens comprovadas diretamente no DivulgaCand oficial.",
+  "recorte": "completude-fichas-residual-20260906",
+  "migration": "20260906065729_corrigir_completude_fichas_residual.sql",
+  "fonte": "TSE Dados Abertos consulta_cand para identidade, ano, UF e cargo; TSE DivulgaCand para st_DIVULGA_BENS=true, bens=[] e totalDeBens=0 nas quatro candidaturas exatas, consultado em 2026-09-06.",
+  "coorte": [
+    "dr-daniel",
+    "izadora-dias",
+    "jeronimo",
+    "joao-campos",
+    "mailza-assis",
+    "policial-edjane",
+    "robson-raymundo"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [
+    { "tabela": "historico_politico", "slug": "jeronimo", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "dr-daniel", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
+    { "tabela": "historico_politico", "slug": "joao-campos", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 2 },
+    { "tabela": "mudancas_partido", "slug": "jeronimo", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 2 },
+    { "tabela": "mudancas_partido", "slug": "joao-campos", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
+    { "tabela": "financiamento", "slug": "jeronimo", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
+    { "tabela": "financiamento", "slug": "dr-daniel", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 1 },
+    { "tabela": "financiamento", "slug": "joao-campos", "campos": ["despublicado_em", "despublicacao_motivo"], "max_registros": 2 },
+    { "tabela": "patrimonio_ausencia_oficial", "slug": "izadora-dias", "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"], "max_registros": 1 },
+    { "tabela": "patrimonio_ausencia_oficial", "slug": "policial-edjane", "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"], "max_registros": 1 },
+    { "tabela": "patrimonio_ausencia_oficial", "slug": "mailza-assis", "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"], "max_registros": 1 },
+    { "tabela": "patrimonio_ausencia_oficial", "slug": "robson-raymundo", "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"], "max_registros": 1 }
+  ],
+  "referencias": [
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260906065729",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906065729:homonimos",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906065729:",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"],
+      "max_registros": 4
+    }
+  ]
+}

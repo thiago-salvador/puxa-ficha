@@ -326,6 +326,25 @@ export function patrimonioDeclarationObservation(
   }
 }
 
+type PatrimonioDeclarationStatus = "S" | "N"
+
+export function recordPatrimonioDeclarationObservation(
+  observations: Map<string, PatrimonioDeclarationStatus>,
+  conflicts: Set<string>,
+  declaration: { identityKey: string; status: PatrimonioDeclarationStatus },
+): void {
+  if (conflicts.has(declaration.identityKey)) return
+
+  const existingStatus = observations.get(declaration.identityKey)
+  if (existingStatus && existingStatus !== declaration.status) {
+    observations.delete(declaration.identityKey)
+    conflicts.add(declaration.identityKey)
+    return
+  }
+
+  observations.set(declaration.identityKey, declaration.status)
+}
+
 export function hasOfficialCandidateComplementaryPackage(ano: number): boolean {
   return ano >= 2018
 }
@@ -333,9 +352,13 @@ export function hasOfficialCandidateComplementaryPackage(ano: number): boolean {
 async function loadPatrimonioDeclarationObservations(
   ano: number,
   governorUFs: string[],
-): Promise<Map<string, "S" | "N">> {
-  const observations = new Map<string, "S" | "N">()
-  if (!hasOfficialCandidateComplementaryPackage(ano)) return observations
+): Promise<{
+  observations: Map<string, PatrimonioDeclarationStatus>
+  conflicts: Set<string>
+}> {
+  const observations = new Map<string, PatrimonioDeclarationStatus>()
+  const conflicts = new Set<string>()
+  if (!hasOfficialCandidateComplementaryPackage(ano)) return { observations, conflicts }
 
   const zipPath = resolve(DATA_DIR, `consulta_cand_complementar_${ano}.zip`)
   const extractDir = resolve(DATA_DIR, `consulta_cand_complementar_${ano}`)
@@ -360,13 +383,7 @@ async function loadPatrimonioDeclarationObservations(
       await parseCSV(csvPath, (row) => {
         const declaration = patrimonioDeclarationObservation(row, ano, sourceUf)
         if (!declaration) return
-        const existingStatus = observations.get(declaration.identityKey)
-        if (existingStatus && existingStatus !== declaration.status) {
-          throw new Error(
-            `Consulta complementar de candidaturas ${ano}: ST_DECLARAR_BENS conflitante para ${declaration.identityKey}`,
-          )
-        }
-        observations.set(declaration.identityKey, declaration.status)
+        recordPatrimonioDeclarationObservation(observations, conflicts, declaration)
       })
     }
   } finally {
@@ -374,7 +391,7 @@ async function loadPatrimonioDeclarationObservations(
     cleanupDownloadedZip(zipPath)
   }
 
-  return observations
+  return { observations, conflicts }
 }
 
 async function buildSQMap(
@@ -411,7 +428,7 @@ async function buildSQMap(
     }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
-  const patrimonioDeclarationByIdentity = await loadPatrimonioDeclarationObservations(ano, governorUFs)
+  const patrimonioDeclarations = await loadPatrimonioDeclarationObservations(ano, governorUFs)
 
   // O SQ curado continua disponível para coletar linhas reais. Ele não prova
   // ausência por si só: `declarouBens` só é preenchido quando a linha oficial
@@ -438,11 +455,11 @@ async function buildSQMap(
     await parseCSV(csvPath, (row) => {
       const declaration = patrimonioDeclarationObservation(row, ano, sourceUf)
       if (declaration) {
-        const existingStatus = patrimonioDeclarationByIdentity.get(declaration.identityKey)
-        if (existingStatus && existingStatus !== declaration.status) {
-          throw new Error(`Consulta de candidaturas ${ano}: ST_DECLARAR_BENS conflitante para ${declaration.identityKey}`)
-        }
-        patrimonioDeclarationByIdentity.set(declaration.identityKey, declaration.status)
+        recordPatrimonioDeclarationObservation(
+          patrimonioDeclarations.observations,
+          patrimonioDeclarations.conflicts,
+          declaration,
+        )
       }
 
       const sq = (row.SQ_CANDIDATO || "").trim()
@@ -527,6 +544,13 @@ async function buildSQMap(
     })
   }
 
+  if (patrimonioDeclarations.conflicts.size > 0) {
+    warn(
+      "tse",
+      `  Consulta de candidaturas ${ano}: ${patrimonioDeclarations.conflicts.size} identidade(s) com ST_DECLARAR_BENS conflitante; somente essas identidades ficaram sem prova de ausência`,
+    )
+  }
+
   const sqMap = new Map<string, SqCandidateIdentity>()
   let preloaded = 0
   let resolved = 0
@@ -543,7 +567,7 @@ async function buildSQMap(
       uf: selection.uf,
       publicacaoAutorizada: selection.observed && selection.method === "sq-preloaded",
       declarouBens: selection.observed
-        ? patrimonioDeclarationByIdentity.get(
+        ? patrimonioDeclarations.observations.get(
             financiamentoReceitaIdentityKey({
               sqCandidato: selection.sq,
               ano,
