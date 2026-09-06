@@ -570,7 +570,8 @@
       "senado": null,
       "tse_sq_candidato": {
         "2010": "240000000218",
-        "2014": "240000000213"
+        "2014": "240000000213",
+        "2018": "240000627221"
       }
     },
     "wikipedia_title": "João_Rodrigues_(político_de_Santa_Catarina)"
@@ -921,6 +922,7 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
+        "2012": "190000028329",
         "2020": "190001128515",
         "2022": "190001609712",
         "2024": "190002135108"
@@ -1991,6 +1993,7 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
+        "2010": "30000000614",
         "2018": "30000611703",
         "2020": "30000747583",
         "2024": "30002098704",
@@ -3913,7 +3916,8 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
-        "2022": "20001653097"
+        "2022": "20001653097",
+        "2024": "20002309911"
       }
     }
   },
@@ -4291,6 +4295,7 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
+        "2022": "140001651204",
         "2026": "140002554108"
       }
     }
@@ -4305,6 +4310,7 @@
       "camara": null,
       "senado": null,
       "tse_sq_candidato": {
+        "2010": "30000000611",
         "2026": "70002553982"
       }
     }
@@ -4320,6 +4326,620 @@
       "senado": null,
       "tse_sq_candidato": {
         "2026": "140002554434"
+      }
+    }
+  },
+  {
+    "slug": "adriano-funileiro",
+    "nome_completo": "Adriano Teixeira",
+    "nome_urna": "Adriano Funileiro",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002552560"
+      }
+    }
+  },
+  {
+    "slug": "alexandre-salomao",
+    "nome_completo": "ALEXANDRE SALOMAO",
+    "nome_urna": "ALEXANDRE SALOMÃO",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002547594"
+      }
+    }
+  },
+  {
+    "slug": "ariel-capistrano",
+    "nome_completo": "ARIEL DA SILVA CAPISTRANO",
+    "nome_urna": "ARIEL CAPISTRANO",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002535253"
+      }
+    }
+  },
+  {
+    "slug": "arinalda-do-mlb",
+    "nome_completo": "ARINALDA VASCONCELOS DE MEDEIROS",
+    "nome_urna": "ARINALDA DO MLB",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002547826"
+      }
+    }
+  },
+  {
+    "slug": "bruno-pedreiro-do-pco",
+    "nome_completo": "Brunno Andrade Dias",
+    "nome_urna": "Bruno Pedreiro do PCO",
+    "cargo_disputado": "Governador",
+    "estado": "SC",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "240002553718"
+      }
+    }
+  },
+  {
+    "slug": "camilo-duarte",
+    "nome_completo": "Camilo Sobreira Duarte Filho",
+    "nome_urna": "Camilo Duarte",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002552603"
+      }
+    }
+  },
+  {
+    "slug": "carlos-cley",
+    "nome_completo": "CARLOS CLEY RAMOS PAIVA",
+    "nome_urna": "CARLOS CLEY",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002536313"
+      }
+    }
+  },
+  {
+    "slug": "carlos-jararaca",
+    "nome_completo": "Carlos Alberto de Almeida Cavalcante",
+    "nome_urna": "Carlos Jararaca",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002550223"
+      }
+    }
+  },
+  {
+    "slug": "cesar-pontes",
+    "nome_completo": "Cesar Augusto Pontes Ferreira",
+    "nome_urna": "Cesar Pontes",
+    "cargo_disputado": "Governador",
+    "estado": "RS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "210002552592"
+      }
+    }
+  },
+  {
+    "slug": "clariana-barao",
+    "nome_completo": "Clariana Zacarkim Barão",
+    "nome_urna": "Clariana Barão",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "280002552484"
+      }
+    }
+  },
+  {
+    "slug": "clebio-genuino",
+    "nome_completo": "Jose Clebio Genuino do Nascimento",
+    "nome_urna": "Clébio Genuíno",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002553857"
+      }
+    }
+  },
+  {
+    "slug": "daniel-lemes",
+    "nome_completo": "Daniel Lemes Vasques",
+    "nome_urna": "Daniel Lemes",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002552201"
+      }
+    }
+  },
+  {
+    "slug": "danilo-pinheiro",
+    "nome_completo": "Danilo Pinheiro Evangelista da Silva",
+    "nome_urna": "Danilo Pinheiro",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002553733"
+      }
+    }
+  },
+  {
+    "slug": "danilo-soares",
+    "nome_completo": "Danilo Soares Sousa",
+    "nome_urna": "Danilo Soares",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002552498"
+      }
+    }
+  },
+  {
+    "slug": "delcidio-amaral",
+    "nome_completo": "Delcidio do Amaral Gomez",
+    "nome_urna": "Delcidio Amaral",
+    "cargo_disputado": "Governador",
+    "estado": "MS",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "120002552155"
+      }
+    }
+  },
+  {
+    "slug": "dimas-cassimiro",
+    "nome_completo": "Dimas Cassimiro do Nascimento",
+    "nome_urna": "Dimas Cassimiro",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002552700"
+      }
+    }
+  },
+  {
+    "slug": "du-pereira",
+    "nome_completo": "IVAILDO PEREIRA DA CRUZ",
+    "nome_urna": "DU PEREIRA",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002550458"
+      }
+    }
+  },
+  {
+    "slug": "expedito-mendonca",
+    "nome_completo": "Expedito Carneiro de Mendonça",
+    "nome_urna": "Expedito Mendonça",
+    "cargo_disputado": "Governador",
+    "estado": "DF",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "70002552341"
+      }
+    }
+  },
+  {
+    "slug": "farah-mesquita",
+    "nome_completo": "FARAH MESQUITA",
+    "nome_urna": "FARAH MESQUITA",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002549294"
+      }
+    }
+  },
+  {
+    "slug": "flavio-roscoe",
+    "nome_completo": "Flavio Roscoe Nogueira",
+    "nome_urna": "Flávio Roscoe",
+    "cargo_disputado": "Governador",
+    "estado": "MG",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "130002550834"
+      }
+    }
+  },
+  {
+    "slug": "gal-leite",
+    "nome_completo": "Gualdina Maria Menezes Leite",
+    "nome_urna": "Gal Leite",
+    "cargo_disputado": "Governador",
+    "estado": "PA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "140002551943"
+      }
+    }
+  },
+  {
+    "slug": "henrique-lyra",
+    "nome_completo": "Henrique Othon Costa de Lyra",
+    "nome_urna": "Henrique Lyra",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002553301"
+      }
+    }
+  },
+  {
+    "slug": "ieri-braga",
+    "nome_completo": "Ieri de Sousa Braga Junior",
+    "nome_urna": "Ieri Braga",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002552320"
+      }
+    }
+  },
+  {
+    "slug": "jairo-palheta",
+    "nome_completo": "Jairo Palheta da Silva Marques",
+    "nome_urna": "Jairo Palheta",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002551388"
+      }
+    }
+  },
+  {
+    "slug": "leonardo-avalanche",
+    "nome_completo": "Leonardo Alves de Araújo",
+    "nome_urna": "Leonardo Avalanche",
+    "cargo_disputado": "Nenhum",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2006": "10408",
+        "2008": "13788",
+        "2016": "90000024503",
+        "2018": "90000628107"
+      },
+      "tse_uf_candidatura": {
+        "2006": "GO",
+        "2008": "GO",
+        "2016": "GO",
+        "2018": "GO"
+      }
+    }
+  },
+  {
+    "slug": "luciana-amorim",
+    "nome_completo": "Luciana de Deus Amorim",
+    "nome_urna": "Luciana Amorim",
+    "cargo_disputado": "Governador",
+    "estado": "GO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "90002550707"
+      }
+    }
+  },
+  {
+    "slug": "marcio-jambo",
+    "nome_completo": "Marcio Ferreira Jambo Sobrinho",
+    "nome_urna": "Márcio Jambo",
+    "cargo_disputado": "Governador",
+    "estado": "AL",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "20002552502"
+      }
+    }
+  },
+  {
+    "slug": "marcos-reategui",
+    "nome_completo": "Marcos Jose Reategui de Souza",
+    "nome_urna": "Marcos Reategui",
+    "cargo_disputado": "Governador",
+    "estado": "AP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "30002552017"
+      }
+    }
+  },
+  {
+    "slug": "maria-bona",
+    "nome_completo": "Maria Bona Carrara de Sumbuy",
+    "nome_urna": "Maria Bona",
+    "cargo_disputado": "Governador",
+    "estado": "BA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "50002552489"
+      }
+    }
+  },
+  {
+    "slug": "pablo-marcal",
+    "nome_completo": "PABLO HENRIQUE COSTA MARCAL",
+    "nome_urna": "Pablo Marçal",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "280002553884"
+      }
+    }
+  },
+  {
+    "slug": "pedro-coutinho",
+    "nome_completo": "Pedro Jorge Coutinho Guerra",
+    "nome_urna": "Pedro Coutinho",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "150002551911"
+      }
+    }
+  },
+  {
+    "slug": "policial-edjane",
+    "nome_completo": "EDJANE LIMA DE SOUSA",
+    "nome_urna": "POLICIAL EDJANE",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2020": "250000881915",
+        "2022": "250001677910",
+        "2026": "250002548080"
+      },
+      "tse_uf_candidatura": {
+        "2020": "SP",
+        "2022": "SP"
+      }
+    }
+  },
+  {
+    "slug": "rafael-demuner",
+    "nome_completo": "Rafael Ketley Demuner",
+    "nome_urna": "Rafael Demuner",
+    "cargo_disputado": "Governador",
+    "estado": "ES",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "80002550832"
+      }
+    }
+  },
+  {
+    "slug": "reginaldo-lima",
+    "nome_completo": "REGINALDO LIMA BRAUNO",
+    "nome_urna": "REGINALDO LIMA",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002544073"
+      }
+    }
+  },
+  {
+    "slug": "roberto-rocha",
+    "nome_completo": "Roberto Coelho Rocha",
+    "nome_urna": "Roberto Rocha",
+    "cargo_disputado": "Governador",
+    "estado": "MA",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "100002551399"
+      }
+    }
+  },
+  {
+    "slug": "rodrigo-bolsonaro",
+    "nome_completo": "KARLO RODRIGO LUCIO VIEIRA",
+    "nome_urna": "RODRIGO BOLSONARO",
+    "cargo_disputado": "Governador",
+    "estado": "RN",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "200002546756"
+      }
+    }
+  },
+  {
+    "slug": "rosi-aires",
+    "nome_completo": "Rosimayre Patricia Aires da Silva",
+    "nome_urna": "Rosi Aires",
+    "cargo_disputado": "Governador",
+    "estado": "RR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "230002552060"
+      }
+    }
+  },
+  {
+    "slug": "samuel-de-mattos",
+    "nome_completo": "SAMUEL DE MATTOS FIGUEIREDO",
+    "nome_urna": "SAMUEL DE MATTOS",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002548010"
+      }
+    }
+  },
+  {
+    "slug": "taty-cristina-de-jesus",
+    "nome_completo": "Tatiana Cristina Santos de Jesus",
+    "nome_urna": "Taty Cristina de Jesus",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "260002550683"
+      }
+    }
+  },
+  {
+    "slug": "tayna-miessa",
+    "nome_completo": "Tayna Miessa Tsushida",
+    "nome_urna": "Tayná Miessa",
+    "cargo_disputado": "Governador",
+    "estado": "PR",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "160002550997"
+      }
+    }
+  },
+  {
+    "slug": "vera-lucia-ce",
+    "nome_completo": "Vera Lucia da Silva",
+    "nome_urna": "Vera Lúcia",
+    "cargo_disputado": "Governador",
+    "estado": "CE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "60002553922"
+      }
+    }
+  },
+  {
+    "slug": "victor-assis",
+    "nome_completo": "Victor Assis da Silva",
+    "nome_urna": "Victor Assis",
+    "cargo_disputado": "Governador",
+    "estado": "PE",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "170002552776"
+      }
+    }
+  },
+  {
+    "slug": "wilson-grassi-junior",
+    "nome_completo": "Wilson Grassi Júnior",
+    "nome_urna": "Wilson Grassi Júnior",
+    "cargo_disputado": "Presidente",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "280002548139"
       }
     }
   }

@@ -7,6 +7,7 @@ import {
   financiamentoSourceFileUf,
   hasOfficialPatrimonioPackage,
   isDoadorOriginarioReceiptSource,
+  patrimonioDeclarationObservation,
   sanitizeTseLegacyAssetText,
   selectPatrimonioAbsenceCandidates,
   validarCoberturaPacotePatrimonio,
@@ -14,6 +15,10 @@ import {
 } from "../scripts/lib/ingest-tse"
 
 const source = readFileSync("scripts/lib/ingest-tse.ts", "utf8")
+const candidatos = JSON.parse(readFileSync("data/candidatos.json", "utf8")) as Array<{
+  slug: string
+  ids: { tse_sq_candidato: Record<string, string> }
+}>
 
 test("TSE ingest dry-run emits normalized rows without database mutations", () => {
   assert.match(source, /dryRun\?: boolean/)
@@ -59,6 +64,49 @@ test("patrimonio só exige download nos anos publicados pelo TSE", () => {
   assert.equal(hasOfficialPatrimonioPackage(2006), true)
   assert.match(source, /!options\.skipPatrimonio && hasOfficialPatrimonioPackage\(ano\)/)
   assert.match(source, /pacote nao publicado pelo TSE; etapa ignorada/)
+})
+
+test("anexa ST_DECLARAR_BENS do arquivo complementar pela identidade oficial", () => {
+  assert.deepEqual(
+    patrimonioDeclarationObservation(
+      {
+        SQ_CANDIDATO: " 140001651204 ",
+        ST_DECLARAR_BENS: "n",
+      },
+      2022,
+      "pa",
+    ),
+    { identityKey: "2022:PA:140001651204", status: "N" },
+  )
+  assert.equal(
+    patrimonioDeclarationObservation(
+      { SQ_CANDIDATO: "140001651204", SG_UF: "PA", ST_DECLARAR_BENS: "#NE" },
+      2022,
+    ),
+    null,
+  )
+  assert.match(source, /patrimonioDeclarationByIdentity\.get/)
+  assert.match(source, /selection\.observed[\s\S]*?patrimonioDeclarationByIdentity/)
+})
+
+test("ambiguidades históricas usam o registro final comprovado no TSE", () => {
+  const sq = (slug: string, year: string) =>
+    candidatos.find((candidate) => candidate.slug === slug)?.ids.tse_sq_candidato[year]
+
+  assert.equal(sq("dr-furlan", "2010"), "30000000614")
+  assert.equal(sq("rico-pinheiro", "2010"), "30000000611")
+  assert.equal(sq("juliete-pantoja", "2012"), "190000028329")
+  assert.equal(sq("joao-rodrigues", "2018"), "240000627221")
+  assert.equal(sq("lenilda-luna", "2024"), "20002309911")
+  assert.equal(sq("leonardo-avalanche", "2006"), "10408")
+  assert.equal(sq("policial-edjane", "2020"), "250000881915")
+  assert.equal(sq("policial-edjane", "2022"), "250001677910")
+})
+
+test("reingestão só republica linha antes em quarentena com SQ curado e observado", () => {
+  assert.match(source, /publicacaoAutorizada: selection\.observed && selection\.method === "sq-preloaded"/)
+  assert.match(source, /data\.publicacaoAutorizada[\s\S]{0,120}despublicado_em: null/)
+  assert.match(source, /publicationAuthorizedSlugs\.has\(slug\)[\s\S]{0,120}despublicado_em: null/)
 })
 
 test("falha ou pacote parcial persiste erro por candidatura e nunca ausencia", () => {

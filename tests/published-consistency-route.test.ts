@@ -1,10 +1,20 @@
 import assert from "node:assert/strict"
 import { execFileSync } from "node:child_process"
+import { readFileSync } from "node:fs"
 import { join } from "node:path"
 import { pathToFileURL } from "node:url"
 import { describe, it } from "node:test"
 
 describe("published-consistency route", () => {
+  it("passa o seed ao gate para detectar ficha pública fora da coleta", () => {
+    const source = readFileSync(
+      join(process.cwd(), "src/app/api/internal/published-consistency/route.ts"),
+      "utf8",
+    )
+    assert.match(source, /candidateSeed\.map\(\(candidate\) => candidate\.slug\)/)
+    assert.match(source, /analyzePublishedConsistency\(data as PublishedRow\[\], seedSlugs\)/)
+  })
+
   it("falha fechado quando a credencial de service role está ausente", async () => {
     const env = {
       ...process.env,

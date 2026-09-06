@@ -230,6 +230,39 @@ test("gate rejeita slugs públicos duplicados", async () => {
   }
 })
 
+test("varredura torna ficha pública fora do seed uma lacuna acionável", async () => {
+  const originalFetch = globalThis.fetch
+  globalThis.fetch = async (input) => {
+    const url = String(input)
+    if (url.endsWith("/api/candidato-slugs")) {
+      return Response.json({ slugs: ["fora-do-seed"] })
+    }
+    return Response.json({
+      sourceStatus: "live",
+      data: {
+        slug: "fora-do-seed",
+        ...completeCore,
+        patrimonio_eleicoes: [],
+        financiamento_eleicoes: [],
+      },
+    })
+  }
+  try {
+    const report = await runPublicProfileCompletenessAudit({
+      baseUrl: "https://example.test",
+      out: null,
+      slug: null,
+      allowActionable: true,
+      expectZeroActionable: false,
+    })
+    assert.deepEqual(report.actionable_issues, [
+      { slug: "fora-do-seed", kind: "public_profile_missing_from_seed" },
+    ])
+  } finally {
+    globalThis.fetch = originalFetch
+  }
+})
+
 test("404 falha imediatamente sem consumir retries", async () => {
   const originalFetch = globalThis.fetch
   let calls = 0
