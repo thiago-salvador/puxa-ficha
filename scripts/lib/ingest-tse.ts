@@ -40,6 +40,15 @@ export const DEFAULT_TSE_ANOS = [
 const KEEP_TSE_DOWNLOADS = process.env.PF_KEEP_TSE_DOWNLOADS === "1"
 
 /**
+ * O portal oficial do TSE só publica declarações de bens a partir de 2006.
+ * 2002 e 2004 continuam no ingest para candidaturas e financiamento, mas não
+ * devem transformar a inexistência conhecida do pacote em falha de execução.
+ */
+export function hasOfficialPatrimonioPackage(ano: number): boolean {
+  return ano >= 2006
+}
+
+/**
  * Recorte explícito usado pelos shards do workflow. Ausente ou vazio preserva
  * o lote completo; valores declarados falham fechado para ano estranho,
  * repetido ou item vazio, evitando cobertura aparentemente completa e incorreta.
@@ -1182,7 +1191,7 @@ export async function ingestTSE(
     }
 
     const bensUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_${ano}.zip`
-    if (!options.skipPatrimonio) {
+    if (!options.skipPatrimonio && hasOfficialPatrimonioPackage(ano)) {
       const bensOk = await downloadFile(bensUrl, bensZip)
       if (bensOk) {
         try {
@@ -1207,8 +1216,10 @@ export async function ingestTSE(
         cleanupDownloadedZip(bensZip)
         throw new Error(`Patrimonio ${ano}: download do pacote oficial falhou`)
       }
-    } else {
+    } else if (options.skipPatrimonio) {
       log("tse", `  Patrimonio ${ano}: ignorado (skipPatrimonio)`)
+    } else {
+      log("tse", `  Patrimonio ${ano}: pacote nao publicado pelo TSE; etapa ignorada`)
     }
 
     await sleep(1000)
