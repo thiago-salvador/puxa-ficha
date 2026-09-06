@@ -1,4 +1,4 @@
-# Programa de Ben Mendes: anúncio oficial, resumo pendente
+# Programa de Ben Mendes: do anúncio oficial à publicação
 
 O DivulgaCandContas listou o arquivo `130017139584`, tipo `5`, para a
 candidatura de Ben Mendes ao governo de MG (`130002544411`). A consulta
@@ -135,4 +135,21 @@ revisor humano. Não constitui execução do judge do pipeline canônico,
 aprovação humana, publicação ou validação da viabilidade das propostas.
 O monitor, o registro público e o inventário nacional permanecem inalterados.
 [confidence: alta, source: revisão da tarefa release_workflow, reports/ben-mendes-closeout/review-package.json e verification.json]
+[codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]
+
+## Fechamento em 06/09/2026
+
+O pacote oficial e a extração preservados foram novamente conferidos. Dois
+judges independentes validaram as oito frases, os seis temas, as 28 evidências
+e as 97 páginas, sem achados acionáveis. A publicação solicitada por Thiago
+Salvador nesta sessão promoveu o registro para `aprovado`, sem atribuir a ele
+uma revisão de conteúdo que não realizou. O recibo identifica separadamente a
+síntese do Codex, o julgamento do GPT-6 Astra e a solicitação de publicação.
+
+O inventário passou a conter `MG:130002544411:01`, com SHA-256
+`277d3eee53e0b0428d11e54c6cfeef5190f97bd86ff07202f52033e788cc5fab`.
+Ben saiu do monitor de documentos pendentes; um novo `id_arquivo` oficial volta
+a exigir revisão pelo fluxo de atualização do inventário.
+
+[confidence: alta, source: ZIP oficial TSE da execução 33998003451, review-package.json, judges independentes e auditorias locais]
 [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]

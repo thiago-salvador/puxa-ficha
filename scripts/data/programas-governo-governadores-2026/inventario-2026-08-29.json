@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "geradoEm": "2026-09-03T12:17:00Z",
+  "geradoEm": "2026-09-06T08:30:00.000Z",
   "escopo": {
     "ano": 2026,
     "cargo": "GOVERNADOR",
@@ -63,20 +63,20 @@
     "perfisLocaisAusentes": 0,
     "aliasesDuplicidadeOficial": 2,
     "pacotes": 27,
-    "documentosTotais": 214,
-    "documentosDeCandidaturasAtuais": 206,
+    "documentosTotais": 215,
+    "documentosDeCandidaturasAtuais": 207,
     "documentosSemCandidaturaAtual": 8,
-    "candidaturasComDocumento": 193,
-    "candidaturasSemDocumento": 3,
-    "paginasCandidaturasAtuais": 11129,
+    "candidaturasComDocumento": 194,
+    "candidaturasSemDocumento": 2,
+    "paginasCandidaturasAtuais": 11226,
     "paginasDocumentosOrfaos": 283,
-    "pdfBytesCandidaturasAtuais": 270339657,
+    "pdfBytesCandidaturasAtuais": 271595684,
     "pdfBytesDocumentosOrfaos": 5011949,
-    "pacoteBytesTotais": 279777553,
-    "textoExtraidoBytesCandidaturasAtuais": 21960302,
-    "documentosTextoExtraivel": 201,
+    "pacoteBytesTotais": 281033712,
+    "textoExtraidoBytesCandidaturasAtuais": 22204642,
+    "documentosTextoExtraivel": 202,
     "documentosRequeremOcr": 5,
-    "inventarioPayloadBytes": 372138
+    "inventarioPayloadBytes": 372936
   },
   "pacotes": [
     {
@@ -284,14 +284,15 @@
       "recursoCatalogoUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026/resource/72831fd0-1ace-4834-8d7e-746d190baeb0",
       "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
       "arquivoNome": "proposta_governo_2026_MG.zip",
-      "bytes": 18715875,
-      "sha256": "56c4d358fcb30f5819e9c357654fd5e5808f15100d0a75d615417e39f33d65d4",
+      "bytes": 19972034,
+      "sha256": "0004837d38bb429bd893695ce137801ba65d73e9c49ac27df8d2f38167fa72cb",
       "integridadeZip": "valida",
       "arquivoLeiaMe": "MG/leiame.pdf",
       "documentoIds": [
         "MG:130002539775:01",
         "MG:130002541911:01",
         "MG:130002544122:01",
+        "MG:130002544411:01",
         "MG:130002546802:01",
         "MG:130002547874:01",
         "MG:130002549557:01",
@@ -2110,6 +2111,24 @@
       "textoExtraidoBytes": 61900,
       "textoExtraidoCaracteres": 59298,
       "textoExtraidoSha256": "945617526f197bd26c0b607b97cef7966be2338cb9ba0bdc1b1ca1ef208021cf",
+      "textoEstado": "extraivel",
+      "candidaturaAtual": true
+    },
+    {
+      "id": "MG:130002544411:01",
+      "uf": "MG",
+      "sqCandidato": "130002544411",
+      "sequencia": 1,
+      "arquivoNome": "2026MG130002544411_01.pdf",
+      "arquivoNoPacote": "MG/2026MG130002544411_01.pdf",
+      "pacoteUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip",
+      "pdfOriginalUrl": null,
+      "bytes": 1256027,
+      "sha256": "277d3eee53e0b0428d11e54c6cfeef5190f97bd86ff07202f52033e788cc5fab",
+      "paginas": 97,
+      "textoExtraidoBytes": 244340,
+      "textoExtraidoCaracteres": 236521,
+      "textoExtraidoSha256": "b9054f1c2d8be971eb16aec9c3f56ce00d72942b596dd12705135b43c1a2c0f8",
       "textoEstado": "extraivel",
       "candidaturaAtual": true
     },
@@ -6598,10 +6617,11 @@
       "identidadeEstado": "confirmada",
       "grupoAmbiguidade": null,
       "alternativasOficiais": [],
-      "fonteEstado": "sem_documento_oficial",
-      "estadoInventario": "sem_documento_oficial",
-      "documentoIds": [],
-      "reciboSemProgramaOficialId": "programa-governo-ausente:2026:130002544411",
+      "fonteEstado": "documento_oficial_encontrado",
+      "estadoInventario": "documento_oficial_encontrado",
+      "documentoIds": [
+        "MG:130002544411:01"
+      ],
       "tse": {
         "eleicaoCodigo": "6259",
         "eleicaoData": "04/10/2026",
@@ -10450,8 +10470,9 @@
       "programa-governo-ausente:2026:250002548080"
     ],
     "receipt_ids_superados": [
-      "programa-governo-ausente:2026:60002553922",
-      "programa-governo-ausente:2026:190002543380"
+      "programa-governo-ausente:2026:130002544411",
+      "programa-governo-ausente:2026:190002543380",
+      "programa-governo-ausente:2026:60002553922"
     ]
   }
 }

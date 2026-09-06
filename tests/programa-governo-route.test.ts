@@ -64,7 +64,7 @@ test("servidor publica conteúdo somente depois da aprovação", async () => {
   assert.doesNotMatch(serialized, /julgamento|geracao|promptVersion|reviewer/)
 })
 
-test("rota de Ben entrega anúncio auditável sem conteúdo nem PDF presumido", async () => {
+test("rota de Ben entrega o programa aprovado sem metadados editoriais", async () => {
   const record = require("../src/data/programas-governo/governadores-2026/ben-mendes.json") as ProgramaGovernoRegistro
   const resource = await getProgramaGovernoPublicResource("ben-mendes", async () => record)
   const handler = createProgramaGovernoGetHandler({
@@ -74,11 +74,12 @@ test("rota de Ben entrega anúncio auditável sem conteúdo nem PDF presumido", 
   const response = await handler(request("ben-mendes"), params("ben-mendes"))
   const body = await response.json()
   assert.equal(response.status, 200)
-  assert.equal(body.estado, "documento_anunciado")
-  assert.equal(body.data, null)
+  assert.equal(body.estado, "aprovado")
+  assert.equal(body.data?.estado, "aprovado")
+  assert.equal(body.data?.resumo.frases.length, 8)
+  assert.equal(body.data?.resumo.temas.length, 6)
   assert.equal(body.fonte.pdfOriginalUrl, null)
-  assert.deepEqual(body.anuncio, record.anuncio)
-  assert.doesNotMatch(JSON.stringify(body), /"resumo"|"extracao"|"revisao"|"documentos"/)
+  assert.doesNotMatch(JSON.stringify(body), /"extracao"|"revisao"|"julgamento"|"geracao"|"reviewer"/)
 })
 
 test("rota retorna o DTO aprovado e remove campos editoriais", async () => {

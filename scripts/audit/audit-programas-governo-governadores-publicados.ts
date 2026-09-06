@@ -15,7 +15,7 @@ import type {
 const ROOT = path.resolve(import.meta.dirname, "../..")
 const RECORDS_DIR = path.join(ROOT, "src/data/programas-governo/governadores-2026")
 const INVENTORY_PATH = path.join(ROOT, "scripts/data/programas-governo-governadores-2026/inventario-2026-08-29.json")
-const SELECTION_PATH = path.join(ROOT, "docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-03.json")
+const SELECTION_PATH = path.join(ROOT, "docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-06.json")
 
 type InventoryCandidate = {
   ano: number

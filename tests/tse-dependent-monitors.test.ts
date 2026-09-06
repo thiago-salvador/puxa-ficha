@@ -35,26 +35,25 @@ function response(payload: unknown, status = 200): Response {
   })
 }
 
-// Três fichas desde 2026-09-03: Eduardo Paes (RJ) e Vera Lúcia (CE) saíram no
-// mesmo dia porque os pacotes oficiais republicados trouxeram os programas e os
-// dois registros foram publicados.
-test("configura exatamente duas inscrições de Laudicério e três programas sem SQ canônica", () => {
+// Duas fichas desde 2026-09-06: Eduardo Paes (RJ), Vera Lúcia (CE) e Ben Mendes
+// (MG) saíram do monitor quando os pacotes oficiais trouxeram os programas e os
+// registros foram publicados.
+test("configura exatamente duas inscrições de Laudicério e dois programas sem SQ canônica", () => {
   assert.equal(config.laudicerio.canonical_registration_sq, null)
   assert.deepEqual(config.laudicerio.registrations.map((item) => item.sq_candidato), [
     "110002553937",
     "110002554073",
   ])
-  assert.equal(config.program_files.length, 3)
+  assert.equal(config.program_files.length, 2)
   assert.equal(config.program_control.sq_candidato, "240002537073")
   assert.equal(config.program_control.expected_cod_tipo, "5")
   assert.deepEqual(config.program_files.map((item) => item.sq_candidato).sort(), [
-    "130002544411",
     "190002550196",
     "250002548080",
   ])
 })
 
-test("estado esperado fica ok e preserva seis payloads brutos com hash", async () => {
+test("estado esperado fica ok e preserva cinco payloads brutos com hash", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-ok-"))
   const calls: Array<{ url: string; userAgent: string | null }> = []
   const report = await collectTseDependentMonitors(config, out, {
@@ -69,12 +68,12 @@ test("estado esperado fica ok e preserva seis payloads brutos com hash", async (
   assert.equal(report.status, "ok")
   assert.equal(report.alerts.length, 0)
   assert.equal(report.errors.length, 0)
-  assert.equal(report.sources.length, 6)
+  assert.equal(report.sources.length, 5)
   assert.equal(report.program_control?.program_file_count, 1)
   assert.ok(calls.every((call) => call.userAgent === "PuxaFichaDataFreshness/1.0"))
   assert.ok(report.sources.every((source) => source.checked_at === "2026-08-30T19:00:00.000Z"))
   assert.ok(report.sources.every((source) => /^[a-f0-9]{64}$/.test(source.payload_raw_sha256 ?? "")))
-  assert.equal(readdirSync(join(out, "raw")).length, 6)
+  assert.equal(readdirSync(join(out, "raw")).length, 5)
 })
 
 test("mudança de situação gera somente o alerta canônico de Laudicério", async () => {
@@ -93,19 +92,19 @@ test("mudança de situação gera somente o alerta canônico de Laudicério", as
   assert.equal(config.laudicerio.canonical_registration_sq, null)
 })
 
-test("codTipo 5 em qualquer uma das três fichas gera alerta sem publicar nada", async () => {
+test("codTipo 5 em qualquer uma das duas fichas gera alerta sem publicar nada", async () => {
   const out = mkdtempSync(join(tmpdir(), "tse-dependent-program-"))
   const report = await collectTseDependentMonitors(config, out, {
     attempts: 1,
     fetchImpl: async (input) => {
       const url = String(input)
-      if (url.includes("130002544411")) return response({ id: "130002544411", arquivos: [{ codTipo: 5, nome: "Plano.pdf" }] })
+      if (url.includes("250002548080")) return response({ id: "250002548080", arquivos: [{ codTipo: 5, nome: "Plano.pdf" }] })
       return response(okPayload(url))
     },
   })
   assert.equal(report.status, "review_required")
-  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["ben-mendes"])
-  assert.equal(report.program_files.find((item) => item.profile_slug === "ben-mendes")?.program_files instanceof Array, true)
+  assert.deepEqual(report.alerts.map((alert) => alert.profile_slug), ["policial-edjane"])
+  assert.equal(report.program_files.find((item) => item.profile_slug === "policial-edjane")?.program_files instanceof Array, true)
 })
 
 // Fixture do contrato de revisão. O sujeito é Garotinho (RJ) porque Vera Lúcia

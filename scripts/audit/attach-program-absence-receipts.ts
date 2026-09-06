@@ -100,7 +100,8 @@ export function attachProgramAbsenceReceipts(inventoryPath: string, receiptsPath
     receipt_ids: receiptSet.receipts.map((receipt) => receipt.receipt_id),
     receipt_ids_superados: receiptSet.receipts
       .filter((receipt) => RECIBOS_AUSENCIA_SUPERADOS_SQS.has(receipt.sq_candidato))
-      .map((receipt) => receipt.receipt_id),
+      .map((receipt) => receipt.receipt_id)
+      .sort(),
   };
   return fixedPointPayload(inventory);
 }
