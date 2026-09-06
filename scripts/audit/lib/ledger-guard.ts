@@ -37,6 +37,10 @@ export const RETIDAS_PADRAO = [
   "20260807052000",
   "20260807052500",
   "20260807053000",
+  // Expurgos destrutivos: permanecem no repositório, mas só entram no ledger
+  // depois de autorização explícita que nomeie cada exclusão definitiva.
+  "20260906155000",
+  "20260906155100",
 ] as const
 
 interface Violacao {
