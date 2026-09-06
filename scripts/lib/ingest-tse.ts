@@ -251,6 +251,36 @@ type SqCandidateIdentity = {
   uf?: string
 }
 
+export function selectPatrimonioAbsenceCandidates(
+  identities: Array<{ slug: string; sqCandidato: string; uf?: string }>,
+  slugsWithPatrimonio: ReadonlySet<string>,
+  slugAllowlist: ReadonlySet<string> | null = null,
+) {
+  const bySlug = new Map(identities.map((identity) => [identity.slug, identity]))
+  return [...bySlug.values()]
+    .filter((identity) => !slugsWithPatrimonio.has(identity.slug))
+    .filter((identity) => !slugAllowlist || slugAllowlist.has(identity.slug))
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+}
+
+export function validarCoberturaPacotePatrimonio(
+  ano: number,
+  sourcePaths: string[],
+  requiredUFs: string[],
+): void {
+  const upperNames = sourcePaths.map((sourcePath) => sourcePath.split(sep).pop()?.toUpperCase() ?? "")
+  if (upperNames.some((name) => /_(BR|BRASIL)\.(CSV|TXT)$/.test(name))) return
+  const observedUFs = new Set(
+    upperNames
+      .map((name) => name.match(/_([A-Z]{2})\.(?:CSV|TXT)$/)?.[1])
+      .filter((uf): uf is string => Boolean(uf)),
+  )
+  const missing = requiredUFs.filter((uf) => !observedUFs.has(uf))
+  if (missing.length > 0) {
+    throw new Error(`Pacote de bens ${ano}: cobertura incompleta das UFs (${missing.join(",")})`)
+  }
+}
+
 function candidateUfFromTseRow(row: Record<string, string>): string | undefined {
   const uf = (
     row.SG_UF ||
@@ -400,7 +430,8 @@ async function processPatrimonio(
   extractDir: string,
   sqMap: Map<string, SqCandidateIdentity>,
   slugAllowlist: Set<string> | null,
-  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">
+  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">,
+  sourceUrl: string,
 ): Promise<IngestResult[]> {
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
   const governorUFs = getGovernorUFs(candidatos)
@@ -415,6 +446,7 @@ async function processPatrimonio(
     warn("tse", `  CSV de bens nao encontrado para ${ano}`)
     return []
   }
+  validarCoberturaPacotePatrimonio(ano, uniquePaths, governorUFs)
 
   const parsedRows: Array<{
     slug: string
@@ -504,18 +536,34 @@ async function processPatrimonio(
         },
       })
     } else {
-      const { data: existing } = await supabase
+      const { data: existing, error: existingError } = await supabase
         .from("patrimonio")
         .select("id")
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
-        .single()
+        .maybeSingle()
+      if (existingError) throw existingError
 
       if (existing) {
-        await supabase.from("patrimonio").update(row).eq("id", existing.id)
+        const { error: updateError } = await supabase
+          .from("patrimonio")
+          .update(row)
+          .eq("id", existing.id)
+        if (updateError) throw updateError
       } else {
-        await supabase.from("patrimonio").insert(row)
+        const { error: insertError } = await supabase.from("patrimonio").insert(row)
+        if (insertError) throw insertError
       }
+
+      // Só retire uma ausência anterior depois que o patrimônio real estiver
+      // confirmado no banco. Assim uma falha de escrita nunca apaga a última
+      // evidência válida e transforma o estado em "não coletado".
+      const { error: staleAbsenceError } = await supabase
+        .from("patrimonio_ausencia_oficial")
+        .delete()
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", ano)
+      if (staleAbsenceError) throw staleAbsenceError
     }
 
     log("tse", `  ${slug}: patrimonio ${ano} — R$ ${Math.round(data.total).toLocaleString()} (${data.bens.length} bens)`)
@@ -526,6 +574,64 @@ async function processPatrimonio(
       rows_upserted: options.dryRun ? 0 : 1,
       errors: [],
       duration_ms: 0,
+    })
+  }
+
+  const absenceCandidates = selectPatrimonioAbsenceCandidates(
+    [...sqMap.values()].map((identity) => ({
+      slug: identity.candidato.slug,
+      sqCandidato: identity.sqCandidato,
+      uf: identity.uf,
+    })),
+    new Set(aggregated.keys()),
+    slugAllowlist,
+  )
+  const verifiedAt = new Date().toISOString()
+  const execution = process.env.GITHUB_RUN_ID
+    ? `github-actions:${process.env.GITHUB_RUN_ID}`
+    : "ingest-tse"
+
+  for (const identity of absenceCandidates) {
+    const candidatoId = await resolveCandidatoId(identity.slug)
+    if (!candidatoId) continue
+    const row = {
+      candidato_id: candidatoId,
+      ano_eleicao: ano,
+      sq_candidato: identity.sqCandidato,
+      fonte_url: sourceUrl,
+      verificado_em: verifiedAt,
+      detalhe: "Identidade confirmada por SQ_CANDIDATO, ano e UF; pacote oficial completo sem bens para a candidatura.",
+      execucao: execution,
+    }
+
+    if (options.dryRun) {
+      options.onPlannedRow?.({ table: "patrimonio_ausencia_oficial", slug: identity.slug, row })
+    } else {
+      const { data: existingPatrimonio, error: existingPatrimonioError } = await supabase
+        .from("patrimonio")
+        .select("id")
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", ano)
+        .maybeSingle()
+      if (existingPatrimonioError) throw existingPatrimonioError
+      if (existingPatrimonio) continue
+
+      const { error: absenceError } = await supabase
+        .from("patrimonio_ausencia_oficial")
+        .upsert(row, { onConflict: "candidato_id,ano_eleicao" })
+      if (absenceError) throw absenceError
+    }
+
+    results.push({
+      source: "tse",
+      candidato: identity.slug,
+      tables_updated: ["patrimonio_ausencia_oficial"],
+      rows_upserted: options.dryRun ? 0 : 1,
+      errors: [],
+      duration_ms: 0,
+      coleta_resultado: "vazio_confirmado",
+      coleta_volume: 0,
+      coleta_detalhe: row.detalhe,
     })
   }
 
@@ -933,7 +1039,11 @@ function logResolverStats(ano: number, resolver: TSEResolver) {
 }
 
 interface PlannedTseRow {
-  table: "patrimonio" | "financiamento" | "financiamento_verificacoes"
+  table:
+    | "patrimonio"
+    | "patrimonio_ausencia_oficial"
+    | "financiamento"
+    | "financiamento_verificacoes"
   slug: string
   row: Record<string, unknown>
 }
@@ -1025,7 +1135,8 @@ export async function ingestTSE(
             bensDir,
             sqMap,
             options.patrimonioSlugAllowlist ?? null,
-            options
+            options,
+            bensUrl,
           )
           allResults.push(...patrimonioResults)
         } catch (err) {

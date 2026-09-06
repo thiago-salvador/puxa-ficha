@@ -253,11 +253,15 @@ jobs:
             args+=(--strict-all)
           fi
           npx tsx scripts/audit/audit-superficie.ts "${args[@]}"
+      - name: Auditar completude das fichas públicas
+        run: npm run audit:completude-publica
       - name: Preservar receipt da superfície
         if: always()
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
         with:
           name: superficie-fichas-${{ github.run_id }}
-          path: superficie-report.json
+          path: |
+            superficie-report.json
+            public-profile-completeness-report.json
           if-no-files-found: error
           retention-days: 30

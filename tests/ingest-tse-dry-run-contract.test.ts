@@ -7,6 +7,8 @@ import {
   financiamentoSourceFileUf,
   isDoadorOriginarioReceiptSource,
   sanitizeTseLegacyAssetText,
+  selectPatrimonioAbsenceCandidates,
+  validarCoberturaPacotePatrimonio,
   validarCoberturaPacoteReceitas,
 } from "../scripts/lib/ingest-tse"
 
@@ -122,4 +124,38 @@ test("patrimonio historico normaliza somente o separador U+00BF do TSE", () => {
   )
   assert.equal(sanitizeTseLegacyAssetText("¿ FRACAO DE 5%", "fixture"), "- FRACAO DE 5%")
   assert.throws(() => sanitizeTseLegacyAssetText("texto � quebrado", "fixture"), /artefato de encoding/)
+})
+
+test("patrimônio registra ausência oficial somente para identidade resolvida sem bens", () => {
+  const selected = selectPatrimonioAbsenceCandidates(
+    [
+      { slug: "com-bens", sqCandidato: "1", uf: "PA" },
+      { slug: "sem-bens", sqCandidato: "2", uf: "PA" },
+      { slug: "fora-do-recorte", sqCandidato: "3", uf: "SP" },
+    ],
+    new Set(["com-bens"]),
+    new Set(["com-bens", "sem-bens"]),
+  )
+  assert.deepEqual(selected, [{ slug: "sem-bens", sqCandidato: "2", uf: "PA" }])
+  assert.match(source, /table: "patrimonio_ausencia_oficial"/)
+  assert.match(source, /onConflict: "candidato_id,ano_eleicao"/)
+  assert.match(source, /if \(existingPatrimonio\) continue/)
+  assert.match(source, /staleAbsenceError/)
+})
+
+test("ausência de patrimônio exige pacote nacional ou todas as UFs esperadas", () => {
+  assert.doesNotThrow(() =>
+    validarCoberturaPacotePatrimonio(2022, ["/tmp/bem_candidato_2022_BRASIL.csv"], ["PA", "SP"]),
+  )
+  assert.doesNotThrow(() =>
+    validarCoberturaPacotePatrimonio(
+      2022,
+      ["/tmp/bem_candidato_2022_PA.csv", "/tmp/bem_candidato_2022_SP.csv"],
+      ["PA", "SP"],
+    ),
+  )
+  assert.throws(
+    () => validarCoberturaPacotePatrimonio(2022, ["/tmp/bem_candidato_2022_PA.csv"], ["PA", "SP"]),
+    /cobertura incompleta das UFs \(SP\)/,
+  )
 })
