@@ -1,7 +1,11 @@
 import assert from "node:assert/strict"
 import test from "node:test"
 
-import { analyzePublicProfileCompleteness } from "../scripts/audit/audit-public-profile-completeness"
+import {
+  analyzePublicProfileCompleteness,
+  fetchJson,
+  runPublicProfileCompletenessAudit,
+} from "../scripts/audit/audit-public-profile-completeness"
 
 const completeCore = {
   partido_sigla: "PSTU",
@@ -21,6 +25,7 @@ test("marca patrimônio e financiamento não coletados como acionáveis", () => 
   const result = analyzePublicProfileCompleteness("well-macedo", {
     sourceStatus: "live",
     data: {
+      slug: "well-macedo",
       ...completeCore,
       patrimonio_eleicoes: [
         { ano: 2022, estado: "nao_coletado" },
@@ -42,6 +47,7 @@ test("aceita publicação, ausência oficial, zero e pleito futuro", () => {
   const result = analyzePublicProfileCompleteness("perfil-completo", {
     sourceStatus: "live",
     data: {
+      slug: "perfil-completo",
       ...completeCore,
       patrimonio_eleicoes: [
         { ano: 2022, estado: "publicado" },
@@ -62,6 +68,7 @@ test("separa ausência de recibo contextual de lacuna objetiva", () => {
   const result = analyzePublicProfileCompleteness("sem-recibos", {
     sourceStatus: "live",
     data: {
+      slug: "sem-recibos",
       ...completeCore,
       patrimonio_eleicoes: [],
       financiamento_eleicoes: [],
@@ -85,12 +92,85 @@ test("separa ausência de recibo contextual de lacuna objetiva", () => {
 test("falha com fonte não live e campo cadastral ausente", () => {
   const result = analyzePublicProfileCompleteness("perfil-quebrado", {
     sourceStatus: "fallback",
-    data: { ...completeCore, foto_url: null },
+    data: {
+      slug: "perfil-quebrado",
+      ...completeCore,
+      foto_url: null,
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
   })
   assert.deepEqual(result.actionable, [
     { slug: "perfil-quebrado", kind: "source_not_live", state: "fallback" },
     { slug: "perfil-quebrado", kind: "core_field_missing", field: "foto_url" },
   ])
+})
+
+test("falha fechado quando séries monetárias ou identidade do payload são inválidas", () => {
+  const result = analyzePublicProfileCompleteness("perfil-esperado", {
+    sourceStatus: "live",
+    data: {
+      slug: "outro-perfil",
+      ...completeCore,
+      patrimonio_eleicoes: null,
+      financiamento_eleicoes: [{ ano: 2022, estado: "estado_desconhecido" }],
+    },
+  })
+  assert.deepEqual(result.actionable, [
+    {
+      slug: "perfil-esperado",
+      kind: "profile_payload_invalid",
+      field: "slug",
+      state: "outro-perfil",
+    },
+    {
+      slug: "perfil-esperado",
+      kind: "profile_payload_invalid",
+      field: "patrimonio_eleicoes",
+      state: "missing_or_not_array",
+    },
+    {
+      slug: "perfil-esperado",
+      kind: "profile_payload_invalid",
+      field: "financiamento_eleicoes[0]",
+      year: 2022,
+      state: "estado_desconhecido",
+    },
+  ])
+})
+
+test("gate rejeita inventário público vazio", async () => {
+  const originalFetch = globalThis.fetch
+  globalThis.fetch = async () => Response.json({ slugs: [] })
+  try {
+    await assert.rejects(
+      runPublicProfileCompletenessAudit({
+        baseUrl: "https://example.test",
+        out: null,
+        slug: null,
+        allowActionable: false,
+        expectZeroActionable: true,
+      }),
+      /inventário vazio ou inválido/,
+    )
+  } finally {
+    globalThis.fetch = originalFetch
+  }
+})
+
+test("404 falha imediatamente sem consumir retries", async () => {
+  const originalFetch = globalThis.fetch
+  let calls = 0
+  globalThis.fetch = async () => {
+    calls += 1
+    return new Response(null, { status: 404 })
+  }
+  try {
+    await assert.rejects(fetchJson("https://example.test/inexistente"), /HTTP 404/)
+    assert.equal(calls, 1)
+  } finally {
+    globalThis.fetch = originalFetch
+  }
 })
 
 console.log("PUBLIC_PROFILE_COMPLETENESS_TESTS_OK")

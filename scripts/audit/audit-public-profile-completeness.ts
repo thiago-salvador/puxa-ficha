@@ -26,11 +26,23 @@ type MoneyElection = {
   estado?: string
 }
 
+const PATRIMONIO_STATES = new Set(["publicado", "vazio_confirmado", "nao_coletado"])
+const FINANCIAMENTO_STATES = new Set([
+  "publicado",
+  "zero_declarado",
+  "ausencia_oficial",
+  "erro",
+  "fora_da_serie_oficial",
+  "pleito_futuro",
+  "nao_coletado",
+])
+
 export type ProfileCompletenessIssue = {
   slug: string
   kind:
     | "source_not_live"
     | "core_field_missing"
+    | "profile_payload_invalid"
     | "patrimonio_uncollected"
     | "financiamento_uncollected"
   field?: string
@@ -52,16 +64,34 @@ function moneyIssues(
   slug: string,
   value: unknown,
   kind: "patrimonio_uncollected" | "financiamento_uncollected",
+  field: "patrimonio_eleicoes" | "financiamento_eleicoes",
+  allowedStates: ReadonlySet<string>,
 ): ProfileCompletenessIssue[] {
-  if (!Array.isArray(value)) return []
-  return (value as MoneyElection[])
-    .filter((item) => item.estado === "nao_coletado" || item.estado === "erro")
-    .map((item) => ({
-      slug,
-      kind,
-      year: item.ano,
-      state: item.estado,
-    }))
+  if (!Array.isArray(value)) {
+    return [{ slug, kind: "profile_payload_invalid", field, state: "missing_or_not_array" }]
+  }
+  const issues: ProfileCompletenessIssue[] = []
+  value.forEach((raw, index) => {
+    if (!raw || typeof raw !== "object") {
+      issues.push({ slug, kind: "profile_payload_invalid", field: `${field}[${index}]`, state: "not_object" })
+      return
+    }
+    const item = raw as MoneyElection
+    if (!Number.isInteger(item.ano) || !item.estado || !allowedStates.has(item.estado)) {
+      issues.push({
+        slug,
+        kind: "profile_payload_invalid",
+        field: `${field}[${index}]`,
+        year: item.ano,
+        state: item.estado ?? "invalid_year_or_state",
+      })
+      return
+    }
+    if (item.estado === "nao_coletado" || item.estado === "erro") {
+      issues.push({ slug, kind, year: item.ano, state: item.estado })
+    }
+  })
+  return issues
 }
 
 export function analyzePublicProfileCompleteness(
@@ -75,13 +105,37 @@ export function analyzePublicProfileCompleteness(
   if (envelope.sourceStatus !== "live") {
     actionable.push({ slug, kind: "source_not_live", state: envelope.sourceStatus })
   }
+  if (data.slug !== slug) {
+    actionable.push({
+      slug,
+      kind: "profile_payload_invalid",
+      field: "slug",
+      state: typeof data.slug === "string" ? data.slug : "missing",
+    })
+  }
 
   for (const field of CORE_FIELDS) {
     if (!hasValue(data[field])) actionable.push({ slug, kind: "core_field_missing", field })
   }
 
-  actionable.push(...moneyIssues(slug, data.patrimonio_eleicoes, "patrimonio_uncollected"))
-  actionable.push(...moneyIssues(slug, data.financiamento_eleicoes, "financiamento_uncollected"))
+  actionable.push(
+    ...moneyIssues(
+      slug,
+      data.patrimonio_eleicoes,
+      "patrimonio_uncollected",
+      "patrimonio_eleicoes",
+      PATRIMONIO_STATES,
+    ),
+  )
+  actionable.push(
+    ...moneyIssues(
+      slug,
+      data.financiamento_eleicoes,
+      "financiamento_uncollected",
+      "financiamento_eleicoes",
+      FINANCIAMENTO_STATES,
+    ),
+  )
 
   for (const [section, value] of [
     ["processos", data.processos_verificacao],
@@ -108,7 +162,7 @@ function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-async function fetchJson(url: string, attempts = 8): Promise<unknown> {
+export async function fetchJson(url: string, attempts = 8): Promise<unknown> {
   let lastError: Error | null = null
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
@@ -116,11 +170,12 @@ async function fetchJson(url: string, attempts = 8): Promise<unknown> {
       if (response.ok) return await response.json()
       lastError = new Error(`HTTP ${response.status}`)
       const retryable = response.status === 429 || response.status >= 500
-      if (!retryable) throw new Error(`HTTP ${response.status}`)
+      if (!retryable) throw Object.assign(new Error(`HTTP ${response.status}`), { retryable: false })
       const retryAfter = Number(response.headers.get("retry-after"))
       await delay(Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter * 1_000 : 500 * 2 ** attempt)
     } catch (error) {
       lastError = error instanceof Error ? error : new Error(String(error))
+      if ((error as { retryable?: unknown })?.retryable === false) throw lastError
       if (attempt + 1 < attempts) await delay(500 * 2 ** attempt)
     }
   }
@@ -135,7 +190,7 @@ function countBy<T extends { kind?: string; section?: string }>(rows: T[], key: 
   )
 }
 
-type CliOptions = {
+export type CliOptions = {
   baseUrl: string
   out: string | null
   slug: string | null
@@ -162,6 +217,12 @@ export async function runPublicProfileCompletenessAudit(options: CliOptions) {
     throw new Error("/api/candidato-slugs não retornou uma lista válida")
   }
   const slugs = rawSlugs as string[]
+  if (slugs.length === 0 || slugs.some((slug) => slug.trim().length === 0)) {
+    throw new Error("/api/candidato-slugs retornou um inventário vazio ou inválido")
+  }
+  if (new Set(slugs).size !== slugs.length) {
+    throw new Error("/api/candidato-slugs retornou slugs duplicados")
+  }
 
   const actionable: ProfileCompletenessIssue[] = []
   const review: ProfileReviewNotice[] = []

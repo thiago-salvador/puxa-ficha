@@ -129,18 +129,36 @@ test("patrimonio historico normaliza somente o separador U+00BF do TSE", () => {
 test("patrimônio registra ausência oficial somente para identidade resolvida sem bens", () => {
   const selected = selectPatrimonioAbsenceCandidates(
     [
-      { slug: "com-bens", sqCandidato: "1", uf: "PA" },
-      { slug: "sem-bens", sqCandidato: "2", uf: "PA" },
-      { slug: "fora-do-recorte", sqCandidato: "3", uf: "SP" },
+      { slug: "com-bens", sqCandidato: "1", uf: "PA", declarouBens: "S" },
+      { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
+      { slug: "sem-prova-de-ausencia", sqCandidato: "3", uf: "PA" },
+      { slug: "fora-do-recorte", sqCandidato: "4", uf: "SP", declarouBens: "N" },
     ],
     new Set(["com-bens"]),
-    new Set(["com-bens", "sem-bens"]),
+    new Set(["com-bens", "sem-bens", "sem-prova-de-ausencia"]),
   )
-  assert.deepEqual(selected, [{ slug: "sem-bens", sqCandidato: "2", uf: "PA" }])
+  assert.deepEqual(selected, [
+    { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
+  ])
   assert.match(source, /table: "patrimonio_ausencia_oficial"/)
-  assert.match(source, /onConflict: "candidato_id,ano_eleicao"/)
+  assert.match(source, /ST_DECLARAR_BENS=N/)
+  assert.match(source, /existingAbsence/)
+  assert.match(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.insert\(row\)/)
+  assert.doesNotMatch(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.upsert\(row/)
   assert.match(source, /if \(existingPatrimonio\) continue/)
   assert.match(source, /staleAbsenceError/)
+})
+
+test("identidade e erro de patrimônio fecham o ingest sem falso verde", () => {
+  assert.doesNotMatch(
+    source,
+    /for \(const candidato of candidatos\) \{[\s\S]{0,900}selectedBySlug\.set\(candidato\.slug/,
+  )
+  assert.match(source, /const declarouBens = row\.ST_DECLARAR_BENS/)
+  assert.match(source, /\.filter\(\(identity\) => identity\.declarouBens === "N"\)/)
+  assert.match(source, /Erro patrimonio \$\{ano\}:[\s\S]{0,100}throw err/)
+  assert.match(source, /Patrimonio \$\{ano\}: download do pacote oficial falhou/)
+  assert.match(source, /const requiredUFs = \[[\s\S]{0,180}sqMap\.values\(\)/)
 })
 
 test("ausência de patrimônio exige pacote nacional ou todas as UFs esperadas", () => {
