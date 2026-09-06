@@ -142,14 +142,70 @@ test("aceita candidatura atual projetada junto de mandato no mesmo ano", () => {
           tipo_evento: "candidatura",
           periodo_inicio: 2026,
           periodo_fim: 2026,
+          proveniencia: "tse",
         },
       ],
+      patrimonio_eleicoes: [{ ano: 2026, estado: "publicado" }],
+      financiamento_eleicoes: [{ ano: 2026, estado: "pleito_futuro" }],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [])
+})
+
+test("marca candidatura oficial cuja linha corrente conserva proveniência editorial", () => {
+  const result = analyzePublicProfileCompleteness("registro-sem-proveniencia", {
+    sourceStatus: "live",
+    data: {
+      slug: "registro-sem-proveniencia",
+      ...completeCore,
+      cargo_disputado: "Governador",
+      historico: [{
+        cargo: "Governador",
+        cargo_canonico: "Governador",
+        tipo_evento: "candidatura",
+        periodo_inicio: 2026,
+        periodo_fim: 2026,
+        proveniencia: "manual",
+      }],
       patrimonio_eleicoes: [],
       financiamento_eleicoes: [],
     },
   })
 
-  assert.deepEqual(result.actionable, [])
+  assert.deepEqual(result.actionable, [{
+    slug: "registro-sem-proveniencia",
+    kind: "current_candidacy_unverified_provenance",
+    field: "historico",
+    year: 2026,
+    state: "manual",
+  }])
+})
+
+test("marca pleito oficial ausente das duas séries monetárias", () => {
+  const result = analyzePublicProfileCompleteness("ano-sumido", {
+    sourceStatus: "live",
+    data: {
+      slug: "ano-sumido",
+      ...completeCore,
+      cargo_disputado: "Nenhum",
+      historico: [{
+        cargo: "Deputado Federal",
+        cargo_canonico: "Deputado Federal",
+        tipo_evento: "candidatura",
+        periodo_inicio: 2022,
+        periodo_fim: 2022,
+        proveniencia: "tse",
+      }],
+      patrimonio_eleicoes: [],
+      financiamento_eleicoes: [],
+    },
+  })
+
+  assert.deepEqual(result.actionable, [
+    { slug: "ano-sumido", kind: "patrimonio_uncollected", year: 2022, state: "missing" },
+    { slug: "ano-sumido", kind: "financiamento_uncollected", year: 2022, state: "missing" },
+  ])
 })
 
 test("marca candidatura atual duplicada na trajetória como acionável", () => {

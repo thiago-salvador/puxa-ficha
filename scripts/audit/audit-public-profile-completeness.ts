@@ -4,6 +4,8 @@ import path from "node:path"
 import { pathToFileURL } from "node:url"
 import { canonicalCargo } from "../../src/lib/cargo-utils"
 import { isHistoricoCandidaturaRow } from "../../src/lib/historico-tipo-evento"
+import { anosDePleitoDisputado, type LinhaDeTrajetoriaParaPleito } from "../../src/lib/pleitos-disputados"
+import { PATRIMONIO_ANO_INICIAL_APLICAVEL } from "../../src/lib/public-profile-dto"
 
 const CORE_FIELDS = [
   "partido_sigla",
@@ -52,6 +54,7 @@ export type ProfileCompletenessIssue = {
     | "financiamento_uncollected"
     | "current_candidacy_missing_from_history"
     | "current_candidacy_duplicate_in_history"
+    | "current_candidacy_unverified_provenance"
     | "current_registration_status_mismatch"
     | "public_profile_missing_from_seed"
   field?: string
@@ -69,10 +72,10 @@ function hasValue(value: unknown): boolean {
   return typeof value === "string" ? value.trim().length > 0 : value != null
 }
 
-function currentCandidacyHistoryCount(data: Record<string, unknown>): number {
-  if (!Array.isArray(data.historico) || typeof data.cargo_disputado !== "string") return 0
+function currentCandidacyHistoryRows(data: Record<string, unknown>): Array<Record<string, unknown>> {
+  if (!Array.isArray(data.historico) || typeof data.cargo_disputado !== "string") return []
   const currentCargo = canonicalCargo(data.cargo_disputado)
-  return data.historico.filter((raw) => {
+  return data.historico.filter((raw): raw is Record<string, unknown> => {
     if (!raw || typeof raw !== "object") return false
     const row = raw as Record<string, unknown>
     const rowCargo = typeof row.cargo_canonico === "string"
@@ -88,7 +91,7 @@ function currentCandidacyHistoryCount(data: Record<string, unknown>): number {
         periodo_fim: typeof row.periodo_fim === "number" ? row.periodo_fim : null,
       }) &&
       canonicalCargo(rowCargo) === currentCargo
-  }).length
+  })
 }
 
 function moneyIssues(
@@ -98,11 +101,13 @@ function moneyIssues(
   field: "patrimonio_eleicoes" | "financiamento_eleicoes",
   allowedStates: ReadonlySet<string>,
   proofRequiredStates: ReadonlySet<string>,
+  expectedYears: ReadonlySet<number>,
 ): ProfileCompletenessIssue[] {
   if (!Array.isArray(value)) {
     return [{ slug, kind: "profile_payload_invalid", field, state: "missing_or_not_array" }]
   }
   const issues: ProfileCompletenessIssue[] = []
+  const receivedYears = new Set<number>()
   value.forEach((raw, index) => {
     if (!raw || typeof raw !== "object") {
       issues.push({ slug, kind: "profile_payload_invalid", field: `${field}[${index}]`, state: "not_object" })
@@ -119,6 +124,7 @@ function moneyIssues(
       })
       return
     }
+    receivedYears.add(item.ano as number)
     if (
       proofRequiredStates.has(item.estado) &&
       (!hasValue(item.fonte_url) || !hasValue(item.verificado_em))
@@ -136,6 +142,9 @@ function moneyIssues(
       issues.push({ slug, kind, year: item.ano, state: item.estado })
     }
   })
+  for (const year of expectedYears) {
+    if (!receivedYears.has(year)) issues.push({ slug, kind, year, state: "missing" })
+  }
   return issues
 }
 
@@ -164,7 +173,8 @@ export function analyzePublicProfileCompleteness(
   }
 
   if (typeof data.cargo_disputado === "string" && data.cargo_disputado !== "Nenhum") {
-    const currentCandidacyCount = currentCandidacyHistoryCount(data)
+    const currentCandidacies = currentCandidacyHistoryRows(data)
+    const currentCandidacyCount = currentCandidacies.length
     if (currentCandidacyCount === 0) {
       actionable.push({
         slug,
@@ -181,6 +191,21 @@ export function analyzePublicProfileCompleteness(
         state: String(currentCandidacyCount),
       })
     }
+    if (
+      currentCandidacyCount === 1 &&
+      data.status === "candidato" &&
+      currentCandidacies[0]?.proveniencia !== "tse"
+    ) {
+      actionable.push({
+        slug,
+        kind: "current_candidacy_unverified_provenance",
+        field: "historico",
+        year: 2026,
+        state: typeof currentCandidacies[0]?.proveniencia === "string"
+          ? currentCandidacies[0].proveniencia
+          : "missing",
+      })
+    }
     if (currentCandidacyCount > 0 && data.status !== "candidato") {
       actionable.push({
         slug,
@@ -192,6 +217,12 @@ export function analyzePublicProfileCompleteness(
     }
   }
 
+  const historico = Array.isArray(data.historico)
+    ? data.historico.filter((row): row is LinhaDeTrajetoriaParaPleito => Boolean(row && typeof row === "object"))
+    : []
+  const pleitos = anosDePleitoDisputado(historico)
+  const pleitosPatrimonio = new Set([...pleitos].filter((year) => year >= PATRIMONIO_ANO_INICIAL_APLICAVEL))
+
   actionable.push(
     ...moneyIssues(
       slug,
@@ -200,6 +231,7 @@ export function analyzePublicProfileCompleteness(
       "patrimonio_eleicoes",
       PATRIMONIO_STATES,
       new Set(["vazio_confirmado"]),
+      pleitosPatrimonio,
     ),
   )
   actionable.push(
@@ -210,6 +242,7 @@ export function analyzePublicProfileCompleteness(
       "financiamento_eleicoes",
       FINANCIAMENTO_STATES,
       new Set(["ausencia_oficial", "fora_da_serie_oficial"]),
+      pleitos,
     ),
   )
 

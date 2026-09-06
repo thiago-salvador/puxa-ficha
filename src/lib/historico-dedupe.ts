@@ -20,7 +20,12 @@ function historicoCanonKeyForRow(row: Pick<HistoricoPolitico, "cargo" | "cargo_c
 export function ensureCurrentCandidacyInHistory(
   candidato: Pick<
     Candidato,
-    "id" | "cargo_disputado" | "partido_sigla" | "estado" | "status" | "fonte_dados"
+    | "id"
+    | "cargo_disputado"
+    | "partido_sigla"
+    | "estado"
+    | "status"
+    | "fonte_dados"
   >,
   rows: HistoricoPolitico[],
   electionYear = CURRENT_CANDIDACY_ELECTION_YEAR,
@@ -34,15 +39,29 @@ export function ensureCurrentCandidacyInHistory(
   }
 
   const currentCargo = canonicalCargo(candidato.cargo_disputado)
+  const isCurrentCandidacy = (row: HistoricoPolitico) =>
+    row.periodo_inicio === electionYear &&
+    isHistoricoCandidaturaRow(row) &&
+    canonicalCargo(row.cargo_canonico?.trim() || row.cargo) === currentCargo
+  // `status=candidato` é o contrato público de registro oficial. Estados
+  // editoriais anteriores permanecem como `pre-candidato`.
+  const hasOfficialRegistration = candidato.status === "candidato"
   const alreadyPresent = rows.some(
     (row) =>
-      row.periodo_inicio === electionYear &&
-      isHistoricoCandidaturaRow(row) &&
-      canonicalCargo(row.cargo_canonico?.trim() || row.cargo) === currentCargo,
+      isCurrentCandidacy(row),
   )
-  if (alreadyPresent) return rows
+  if (alreadyPresent) {
+    // O registro oficial pode chegar depois da linha editorial de
+    // pré-candidatura. Quando o perfil já tem SQ_CANDIDATO vigente, conservar
+    // `manual`/`misto` aqui faria a âncora de pleitos ignorar 2026 e esconder
+    // patrimônio e financiamento já coletados. A normalização é apenas da
+    // candidatura corrente e não reclassifica outras linhas da trajetória.
+    return hasOfficialRegistration
+      ? rows.map((row) => isCurrentCandidacy(row) ? { ...row, proveniencia: "tse" } : row)
+      : rows
+  }
 
-  const proveniencia = candidato.fonte_dados.some((fonte) => /\btse\b/i.test(fonte))
+  const proveniencia = hasOfficialRegistration || candidato.fonte_dados.some((fonte) => /\btse\b/i.test(fonte))
     ? "tse"
     : "manual"
 

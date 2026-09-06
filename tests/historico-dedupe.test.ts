@@ -76,7 +76,7 @@ test("preserva mandato atual e adiciona candidatura do mesmo cargo no mesmo ano"
   assert.equal(out.filter((item) => item.tipo_evento === "candidatura").length, 1)
 })
 
-test("não duplica variante textual já existente da candidatura atual", () => {
+test("não duplica variante textual e promove a proveniência após o registro oficial", () => {
   const candidatura = row({
     id: "candidatura-2026",
     cargo: "Pré-candidatura ao Governo do Pará",
@@ -86,7 +86,26 @@ test("não duplica variante textual já existente da candidatura atual", () => {
     tipo_evento: "candidatura",
   })
 
-  assert.deepEqual(ensureCurrentCandidacyInHistory(currentCandidate, [candidatura]), [candidatura])
+  assert.deepEqual(ensureCurrentCandidacyInHistory(currentCandidate, [candidatura]), [
+    { ...candidatura, proveniencia: "tse" },
+  ])
+})
+
+test("preserva proveniência editorial enquanto não há SQ_CANDIDATO oficial", () => {
+  const candidatura = row({
+    id: "pre-candidatura-2026",
+    cargo: "Pré-candidatura ao Governo do Pará",
+    cargo_canonico: "Pré-candidatura ao Governo do Pará",
+    periodo_inicio: 2026,
+    periodo_fim: 2026,
+    tipo_evento: "candidatura",
+    proveniencia: "manual",
+  })
+
+  assert.deepEqual(
+    ensureCurrentCandidacyInHistory({ ...currentCandidate, status: "pre-candidato" }, [candidatura]),
+    [candidatura],
+  )
 })
 
 test("dedupeHistoricoPoliticoForDisplay colapsa mesmo cargo canónico e período", () => {
