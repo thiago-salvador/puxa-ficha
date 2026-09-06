@@ -400,7 +400,8 @@ describe("classificador puro (#136)", () => {
     // Freshness closeout medido no PG17: 351 + mesmas 105 = 456 arquivos.
     // Completude residual medida no PG17: 352 + mesmas 105 = 457 arquivos.
     // Master review integral medido no PG17: 358 + mesmas 105 = 463 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 358)
+    // Fechamento residual medido no PG17: 360 + mesmas 105 = 465 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 360)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

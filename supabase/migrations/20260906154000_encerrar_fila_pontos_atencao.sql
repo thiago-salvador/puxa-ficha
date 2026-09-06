@@ -8,6 +8,7 @@
 BEGIN;
 SET LOCAL TIME ZONE 'UTC';
 LOCK TABLE public.pontos_atencao IN SHARE ROW EXCLUSIVE MODE;
+LOCK TABLE public.identidade_timeline_quarentena_snapshot IN SHARE ROW EXCLUSIVE MODE;
 
 DO $apply$
 DECLARE

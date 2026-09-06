@@ -1,10 +1,12 @@
 {
   "versao": "2026-09-06",
-  "fonte": "TSE consulta_cand_2026 e bem_candidato_2026, fontes primarias dos pontos de atencao e coortes de retencao medidas em producao em 2026-09-06.",
-  "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar quatro estados patrimoniais, retirar dois pontos sem sustentacao publica suficiente e executar as duas coortes de retencao exatamente assinadas.",
+  "fonte": "TSE consulta_cand_2026, bem_candidato_2026 e DivulgaCand, fontes primarias dos pontos de atencao e coortes de retencao medidas em producao em 2026-09-06.",
+  "motivo": "Escopo fechado do master review: reconciliar status oficial, fechar todos os estados patrimoniais de 2026, ligar a vice-presidencia oficial, retirar dois pontos sem sustentacao publica suficiente e manter as coortes de retencao exatamente assinadas.",
   "coorte": [
     "clebio-genuino",
     "dr-luisinho",
+    "laudicerio-aguiar",
+    "leonardo-avalanche",
     "rico-pinheiro",
     "ruth-reis",
     "well-macedo"
@@ -46,6 +48,19 @@
       "ano": 2026,
       "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"],
       "max_registros": 1
+    },
+    {
+      "tabela": "patrimonio_ausencia_oficial",
+      "slug": "laudicerio-aguiar",
+      "ano": 2026,
+      "campos": ["candidato_id", "ano_eleicao", "sq_candidato", "fonte_url", "verificado_em", "detalhe", "execucao"],
+      "max_registros": 1
+    },
+    {
+      "tabela": "candidatos",
+      "slug": "leonardo-avalanche",
+      "campos": ["status", "sq_candidato_2026", "fonte_dados", "verificacao_campos", "ultima_atualizacao"],
+      "max_registros": 1
     }
   ],
   "referencias": [
@@ -62,7 +77,7 @@
     {
       "tabela": "coleta_log",
       "ref": "migration:20260906150000",
-      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
     },
     {
       "tabela": "coleta_log",
@@ -78,6 +93,21 @@
       "tabela": "pontos_atencao",
       "ref": "20260906154000",
       "campos": ["visivel", "despublicacao_motivo", "despublicado_em"]
+    },
+    {
+      "tabela": "identidade_timeline_quarentena_snapshot",
+      "ref": "20260906154500",
+      "campos": ["migration_version", "tabela", "row_id", "candidato_id", "preimage", "postimage", "registrado_em"]
+    },
+    {
+      "tabela": "chapas_2026",
+      "ref": "2026:BR:pablo-henrique-costa-marcal",
+      "campos": ["vice_candidato_id"]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20260906154500",
+      "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
     },
     {
       "tabela": "noticias_candidato",

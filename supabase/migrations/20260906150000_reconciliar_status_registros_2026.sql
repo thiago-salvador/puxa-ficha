@@ -104,6 +104,7 @@ BEGIN
     AND preimage->>'status'='pre-candidato'
   HAVING count(*)>0;
 
+  -- @write tabela=coleta_log ref=migration:20260906150000 campos=fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza
   INSERT INTO public.coleta_log
     (fonte,escopo,alvo,candidato_id,resultado,volume,detalhe,url,execucao,natureza)
   SELECT 'tse-consulta-cand-2026','candidato','candidatos.publicavel',c.id,
