@@ -259,6 +259,11 @@ type SqCandidateIdentity = {
   sqCandidato: string
   uf?: string
   declarouBens?: string
+  /**
+   * A identidade foi reencontrada no pacote oficial pelo SQ curado do seed.
+   * Somente esse nível autoriza retirar uma quarentena antiga ao reingerir.
+   */
+  publicacaoAutorizada: boolean
 }
 
 export function selectPatrimonioAbsenceCandidates(
@@ -304,6 +309,23 @@ function candidateUfFromTseRow(row: Record<string, string>): string | undefined 
   return uf || undefined
 }
 
+export function patrimonioDeclarationObservation(
+  row: Record<string, string>,
+  ano: number,
+  sourceUf?: string,
+): { identityKey: string; status: "S" | "N" } | null {
+  const sqCandidato = (row.SQ_CANDIDATO || "").trim()
+  const rowUf = candidateUfFromTseRow(row)
+  const uf = rowUf || (sourceUf && sourceUf !== "BR" ? sourceUf.trim().toUpperCase() : undefined)
+  const status = row.ST_DECLARAR_BENS?.trim().toUpperCase()
+  if (!sqCandidato || !uf || (status !== "S" && status !== "N")) return null
+
+  return {
+    identityKey: financiamentoReceitaIdentityKey({ sqCandidato, ano, uf }),
+    status,
+  }
+}
+
 async function buildSQMap(
   ano: number,
   candidatos: CandidatoConfig[],
@@ -338,6 +360,7 @@ async function buildSQMap(
     }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
+  const patrimonioDeclarationByIdentity = new Map<string, "S" | "N">()
 
   // O SQ curado continua disponível para coletar linhas reais. Ele não prova
   // ausência por si só: `declarouBens` só é preenchido quando a linha oficial
@@ -360,7 +383,17 @@ async function buildSQMap(
   }
 
   for (const csvPath of allPaths) {
+    const sourceUf = financiamentoSourceFileUf(csvPath, governorUFs)
     await parseCSV(csvPath, (row) => {
+      const declaration = patrimonioDeclarationObservation(row, ano, sourceUf)
+      if (declaration) {
+        const existingStatus = patrimonioDeclarationByIdentity.get(declaration.identityKey)
+        if (existingStatus && existingStatus !== declaration.status) {
+          throw new Error(`Consulta de candidaturas ${ano}: ST_DECLARAR_BENS conflitante para ${declaration.identityKey}`)
+        }
+        patrimonioDeclarationByIdentity.set(declaration.identityKey, declaration.status)
+      }
+
       const sq = (row.SQ_CANDIDATO || "").trim()
       if (!sq) return
       const uf = candidateUfFromTseRow(row)
@@ -457,7 +490,16 @@ async function buildSQMap(
       candidato: selection.candidato,
       sqCandidato: selection.sq,
       uf: selection.uf,
-      declarouBens: selection.declarouBens,
+      publicacaoAutorizada: selection.observed && selection.method === "sq-preloaded",
+      declarouBens: selection.observed
+        ? patrimonioDeclarationByIdentity.get(
+            financiamentoReceitaIdentityKey({
+              sqCandidato: selection.sq,
+              ano,
+              uf: selection.uf,
+            }),
+          ) ?? selection.declarouBens
+        : undefined,
     }
     if (selection.uf) {
       sqMap.set(
@@ -568,6 +610,11 @@ async function processPatrimonio(
   }
 
   const results: IngestResult[] = []
+  const publicationAuthorizedSlugs = new Set(
+    [...sqMap.values()]
+      .filter((identity) => identity.publicacaoAutorizada)
+      .map((identity) => identity.candidato.slug),
+  )
   for (const [slug, data] of aggregated) {
     const candidatoId = await resolveCandidatoId(slug)
     if (!candidatoId) continue
@@ -578,6 +625,9 @@ async function processPatrimonio(
       valor_total: Math.round(data.total * 100) / 100,
       bens: data.bens,
       fonte: "TSE",
+      ...(publicationAuthorizedSlugs.has(slug)
+        ? { despublicado_em: null, despublicacao_motivo: null }
+        : {}),
     }
 
     if (options.dryRun) {
@@ -769,6 +819,7 @@ async function processFinanciamento(
   interface FinData {
     sqCandidato: string
     uf: string | null
+    publicacaoAutorizada: boolean
     total: number
     fundo_partidario: number
     fundo_eleitoral: number
@@ -825,6 +876,7 @@ async function processFinanciamento(
       const existing = aggregated.get(candidato.slug) ?? {
         sqCandidato: identidade.sqCandidato,
         uf: identidade.uf ?? null,
+        publicacaoAutorizada: identidade.publicacaoAutorizada,
         total: 0,
         fundo_partidario: 0,
         fundo_eleitoral: 0,
@@ -901,6 +953,9 @@ async function processFinanciamento(
       total_recursos_proprios: Math.round(data.recursos_proprios * 100) / 100,
       maiores_doadores: maioresDoadores,
       fonte: "TSE",
+      ...(data.publicacaoAutorizada
+        ? { despublicado_em: null, despublicacao_motivo: null }
+        : {}),
     }
 
     if (options.dryRun) {

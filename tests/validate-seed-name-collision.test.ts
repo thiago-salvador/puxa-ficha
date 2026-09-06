@@ -41,6 +41,22 @@ test("detectNameUrnaCollisions: colisao fora da allowlist, violacao emitida", ()
   )
 })
 
+test("detectNameUrnaCollisions: homônimos com UFs explícitas distintas estão desambiguados", () => {
+  const entries = [
+    { slug: "vera-lucia-sp", nome_urna: "Vera Lúcia", estado: "SP" },
+    { slug: "vera-lucia-ce", nome_urna: "Vera Lucia", estado: "CE" },
+  ]
+  assert.deepEqual(detectNameUrnaCollisions(entries, []), [])
+})
+
+test("detectNameUrnaCollisions: UF repetida não desambigua homônimo", () => {
+  const entries = [
+    { slug: "joao-1", nome_urna: "João", estado: "SP" },
+    { slug: "joao-2", nome_urna: "Joao", estado: "SP" },
+  ]
+  assert.equal(detectNameUrnaCollisions(entries, []).length, 1)
+})
+
 test("detectNameUrnaCollisions: colisao na allowlist, zero violacoes", () => {
   // ciro-gomes e ciro-gomes-gov-ce sao a mesma pessoa em 2 cargos.
   const entries = [

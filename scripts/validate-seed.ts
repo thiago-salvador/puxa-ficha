@@ -69,7 +69,7 @@ export interface DuplicateHouseIdViolation {
  * vazio se nenhuma.
  */
 export function detectNameUrnaCollisions(
-  entries: ReadonlyArray<{ slug: string; nome_urna: string }>,
+  entries: ReadonlyArray<{ slug: string; nome_urna: string; estado?: string }>,
   allowedGroups: ReadonlyArray<readonly string[]> = ALLOWED_NAME_COLLISION_GROUPS
 ): NameCollisionViolation[] {
   const byNormalized = new Map<string, string[]>()
@@ -87,6 +87,13 @@ export function detectNameUrnaCollisions(
     const sortedSlugs = [...slugs].sort()
     const key = sortedSlugs.join("|")
     if (allowedKeys.has(key)) continue
+    const states = sortedSlugs.map(
+      (slug) => entries.find((entry) => entry.slug === slug)?.estado?.trim().toUpperCase() ?? "",
+    )
+    // Homônimos em UFs distintas são identidades desambiguadas pelo mesmo
+    // critério que o resolver usa. Sem UF em qualquer lado, ou com UF repetida,
+    // a colisão continua bloqueando.
+    if (states.every(Boolean) && new Set(states).size === states.length) continue
     violations.push({ normalized: name, slugs: sortedSlugs })
   }
   violations.sort((a, b) => a.normalized.localeCompare(b.normalized))
@@ -309,9 +316,10 @@ function main() {
   }
 
   // Fase 14.7: bloquear colisao de nome_urna normalizado, exceto allowlist.
-  const entriesForCollision = (parsed as Array<{ slug: string; nome_urna: string }>).map((entry) => ({
+  const entriesForCollision = (parsed as Array<{ slug: string; nome_urna: string; estado?: string }>).map((entry) => ({
     slug: entry.slug,
     nome_urna: entry.nome_urna,
+    estado: entry.estado,
   }))
   const nameViolations = detectNameUrnaCollisions(entriesForCollision)
   if (nameViolations.length > 0) {

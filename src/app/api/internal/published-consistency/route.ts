@@ -25,6 +25,7 @@ import {
 } from "@/lib/published-consistency"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { withCronExecutionReceipt } from "@/lib/cron-execution-receipt"
+import candidateSeed from "../../../../../data/candidatos.json"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -99,9 +100,11 @@ async function publishedConsistency(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "query_failed" }, { status: 503 })
   }
 
-  // Seed nao e bundlado no runtime serverless; a checagem de "publicado fora do
-  // seed" fica para o gate de CLI/CI. O cron cobre integridade estrutural.
-  const report = analyzePublishedConsistency(data as PublishedRow[])
+  // O JSON e empacotado pelo Next no handler server-only. Passar o roster aqui
+  // ativa a anomalia dura que impede uma ficha pública de ficar invisível para
+  // os coletores baseados em loadCandidatosPublicos().
+  const seedSlugs = new Set(candidateSeed.map((candidate) => candidate.slug))
+  const report = analyzePublishedConsistency(data as PublishedRow[], seedSlugs)
 
   // Probe de vazamento anon (faz rede, barato): este cron diario e o UNICO caminho
   // AGENDADO disponivel (GitHub Actions no-spend / dispatch manual). Pega regressao

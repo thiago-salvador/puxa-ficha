@@ -1,4 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises"
+import { readFileSync } from "node:fs"
 import path from "node:path"
 import { pathToFileURL } from "node:url"
 
@@ -47,6 +48,7 @@ export type ProfileCompletenessIssue = {
     | "profile_payload_invalid"
     | "patrimonio_uncollected"
     | "financiamento_uncollected"
+    | "public_profile_missing_from_seed"
   field?: string
   year?: number
   state?: string
@@ -245,6 +247,14 @@ export async function runPublicProfileCompletenessAudit(options: CliOptions) {
   const actionable: ProfileCompletenessIssue[] = []
   const review: ProfileReviewNotice[] = []
   const fetchErrors: Array<{ slug: string; error: string }> = []
+  const seedSlugs = new Set(
+    (JSON.parse(readFileSync(path.resolve("data/candidatos.json"), "utf8")) as Array<{ slug: string }>).map(
+      (candidate) => candidate.slug,
+    ),
+  )
+  for (const slug of slugs) {
+    if (!seedSlugs.has(slug)) actionable.push({ slug, kind: "public_profile_missing_from_seed" })
+  }
   let nextIndex = 0
 
   async function worker(): Promise<void> {
