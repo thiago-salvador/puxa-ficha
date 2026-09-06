@@ -162,6 +162,7 @@
     "audit:financiamento:fontes": "tsx scripts/audit/verificar-pacotes-financiamento.ts && tsx scripts/audit/gerar-manifesto-financiamento-universo.ts --output=/tmp/pf-financiamento-manifesto-fontes.json && cmp /tmp/pf-financiamento-manifesto-fontes.json QA/evidencias/2026-08-10-financiamento-universo/manifesto-235.json",
     "eval:completude": "node scripts/eval-profile-completeness.mjs",
     "eval:completude:self-test": "node scripts/eval-profile-completeness.mjs --self-test",
+    "audit:completude-publica": "node --import tsx scripts/audit/audit-public-profile-completeness.ts --base-url=https://puxaficha.com.br --out=public-profile-completeness-report.json --expect-zero-actionable",
     "settings:check": "node --import tsx --test tests/settings-contract.test.ts",
     "audit:cobertura:allowlist": "tsx scripts/audit/check-migrations-allowlist.ts",
     "audit:ledger:gate": "tsx scripts/audit/check-ledger-vs-repo.ts",

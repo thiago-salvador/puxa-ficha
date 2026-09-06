@@ -7,6 +7,8 @@ import {
   financiamentoSourceFileUf,
   isDoadorOriginarioReceiptSource,
   sanitizeTseLegacyAssetText,
+  selectPatrimonioAbsenceCandidates,
+  validarCoberturaPacotePatrimonio,
   validarCoberturaPacoteReceitas,
 } from "../scripts/lib/ingest-tse"
 
@@ -122,4 +124,54 @@ test("patrimonio historico normaliza somente o separador U+00BF do TSE", () => {
   )
   assert.equal(sanitizeTseLegacyAssetText("¿ FRACAO DE 5%", "fixture"), "- FRACAO DE 5%")
   assert.throws(() => sanitizeTseLegacyAssetText("texto � quebrado", "fixture"), /artefato de encoding/)
+})
+
+test("patrimônio registra ausência oficial somente para identidade resolvida sem bens", () => {
+  const selected = selectPatrimonioAbsenceCandidates(
+    [
+      { slug: "com-bens", sqCandidato: "1", uf: "PA", declarouBens: "S" },
+      { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
+      { slug: "sem-prova-de-ausencia", sqCandidato: "3", uf: "PA" },
+      { slug: "fora-do-recorte", sqCandidato: "4", uf: "SP", declarouBens: "N" },
+    ],
+    new Set(["com-bens"]),
+    new Set(["com-bens", "sem-bens", "sem-prova-de-ausencia"]),
+  )
+  assert.deepEqual(selected, [
+    { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
+  ])
+  assert.match(source, /table: "patrimonio_ausencia_oficial"/)
+  assert.match(source, /ST_DECLARAR_BENS=N/)
+  assert.match(source, /existingAbsence/)
+  assert.match(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.insert\(row\)/)
+  assert.doesNotMatch(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.upsert\(row/)
+  assert.match(source, /if \(existingPatrimonio\) continue/)
+  assert.match(source, /staleAbsenceError/)
+})
+
+test("identidade e erro de patrimônio fecham o ingest sem falso verde", () => {
+  assert.match(source, /method: "sq-preloaded"[\s\S]{0,160}observed: false[\s\S]{0,80}declarouBens: undefined/)
+  assert.match(source, /if \(!existing\.observed\) \{[\s\S]{0,320}observed: true/)
+  assert.match(source, /const declarouBens = row\.ST_DECLARAR_BENS/)
+  assert.match(source, /\.filter\(\(identity\) => identity\.declarouBens === "N"\)/)
+  assert.match(source, /Erro patrimonio \$\{ano\}:[\s\S]{0,100}throw err/)
+  assert.match(source, /Patrimonio \$\{ano\}: download do pacote oficial falhou/)
+  assert.match(source, /const requiredUFs = \[[\s\S]{0,180}sqMap\.values\(\)/)
+})
+
+test("ausência de patrimônio exige pacote nacional ou todas as UFs esperadas", () => {
+  assert.doesNotThrow(() =>
+    validarCoberturaPacotePatrimonio(2022, ["/tmp/bem_candidato_2022_BRASIL.csv"], ["PA", "SP"]),
+  )
+  assert.doesNotThrow(() =>
+    validarCoberturaPacotePatrimonio(
+      2022,
+      ["/tmp/bem_candidato_2022_PA.csv", "/tmp/bem_candidato_2022_SP.csv"],
+      ["PA", "SP"],
+    ),
+  )
+  assert.throws(
+    () => validarCoberturaPacotePatrimonio(2022, ["/tmp/bem_candidato_2022_PA.csv"], ["PA", "SP"]),
+    /cobertura incompleta das UFs \(SP\)/,
+  )
 })

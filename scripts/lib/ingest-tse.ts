@@ -13,7 +13,6 @@ import {
   type ResolveMethod,
   type TSEResolver,
 } from "./tse-resolver"
-import { carregarBloqueios } from "./identidade-bloqueada"
 import { extractOptionalDonorIdsFromTseRow } from "../../src/lib/financiamento-doador-identifiers"
 import {
   normalizeDoadorTipoWithIdentifiers,
@@ -23,6 +22,7 @@ import {
 import { maskDocumentLikeSequences } from "../../src/lib/public-profile-dto"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { dedupeTsePatrimonioRows } from "../../src/lib/tse-patrimonio-dedupe"
+import { carregarBloqueios } from "./identidade-bloqueada"
 import { financiamentoReceitasZipUrls } from "./tse-financiamento-receitas-urls"
 import {
   financiamentoReceitaIdentity,
@@ -249,6 +249,38 @@ type SqCandidateIdentity = {
   candidato: CandidatoConfig
   sqCandidato: string
   uf?: string
+  declarouBens?: string
+}
+
+export function selectPatrimonioAbsenceCandidates(
+  identities: Array<{ slug: string; sqCandidato: string; uf?: string; declarouBens?: string }>,
+  slugsWithPatrimonio: ReadonlySet<string>,
+  slugAllowlist: ReadonlySet<string> | null = null,
+) {
+  const bySlug = new Map(identities.map((identity) => [identity.slug, identity]))
+  return [...bySlug.values()]
+    .filter((identity) => !slugsWithPatrimonio.has(identity.slug))
+    .filter((identity) => identity.declarouBens === "N")
+    .filter((identity) => !slugAllowlist || slugAllowlist.has(identity.slug))
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+}
+
+export function validarCoberturaPacotePatrimonio(
+  ano: number,
+  sourcePaths: string[],
+  requiredUFs: string[],
+): void {
+  const upperNames = sourcePaths.map((sourcePath) => sourcePath.split(sep).pop()?.toUpperCase() ?? "")
+  if (upperNames.some((name) => /_(BR|BRASIL)\.(CSV|TXT)$/.test(name))) return
+  const observedUFs = new Set(
+    upperNames
+      .map((name) => name.match(/_([A-Z]{2})\.(?:CSV|TXT)$/)?.[1])
+      .filter((uf): uf is string => Boolean(uf)),
+  )
+  const missing = requiredUFs.filter((uf) => !observedUFs.has(uf))
+  if (missing.length > 0) {
+    throw new Error(`Pacote de bens ${ano}: cobertura incompleta das UFs (${missing.join(",")})`)
+  }
 }
 
 function candidateUfFromTseRow(row: Record<string, string>): string | undefined {
@@ -286,27 +318,35 @@ async function buildSQMap(
   const candidatosBySlug = new Map(candidatos.map((candidato) => [candidato.slug, candidato]))
   const selectedBySlug = new Map<
     string,
-    { candidato: CandidatoConfig; sq: string; method: ResolveMethod; priority: number; uf?: string }
+    {
+      candidato: CandidatoConfig
+      sq: string
+      method: ResolveMethod
+      priority: number
+      observed: boolean
+      uf?: string
+      declarouBens?: string
+    }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
 
+  // O SQ curado continua disponível para coletar linhas reais. Ele não prova
+  // ausência por si só: `declarouBens` só é preenchido quando a linha oficial
+  // de consulta_cand passa pelo resolver logo abaixo.
   const bloqueios = carregarBloqueios()
-
   for (const candidato of candidatos) {
     const sq = candidato.ids.tse_sq_candidato?.[String(ano)]?.trim()
     if (!sq) continue
     const configuredUf = candidato.ids.tse_uf_candidatura?.[String(ano)]?.trim().toUpperCase()
-    // Este laco le o seed DIRETO, sem passar por `resolver.resolveRow`, entao o
-    // filtro de identidade bloqueada do resolver nao o alcanca. Sem esta linha,
-    // patrimonio e financiamento continuariam sendo colhidos pelo SQ que a
-    // curadoria ja rejeitou, ainda que o historico parasse (issue #130).
     if (bloqueios.bloqueio({ slug: candidato.slug, sq, ano })) continue
     selectedBySlug.set(candidato.slug, {
       candidato,
       sq,
       method: "sq-preloaded",
       priority: getResolveMethodPriority("sq-preloaded"),
+      observed: false,
       uf: configuredUf || undefined,
+      declarouBens: undefined,
     })
   }
 
@@ -323,6 +363,7 @@ async function buildSQMap(
       const candidato = candidatosBySlug.get(match.slug)
       if (!candidato) return
       const configuredUf = candidato.ids.tse_uf_candidatura?.[String(ano)]?.trim().toUpperCase()
+      const declarouBens = row.ST_DECLARAR_BENS?.trim().toUpperCase() || undefined
       if (
         ano < 2010 &&
         match.method === "sq-preloaded" &&
@@ -335,18 +376,53 @@ async function buildSQMap(
       const priority = getResolveMethodPriority(match.method)
       const existing = selectedBySlug.get(match.slug)
       if (!existing) {
-        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority, uf })
+        selectedBySlug.set(match.slug, {
+          candidato,
+          sq,
+          method: match.method,
+          priority,
+          observed: true,
+          uf,
+          declarouBens,
+        })
+        return
+      }
+
+      // O preload é uma pista curada para localizar linhas de bens/receitas,
+      // não uma observação do pacote atual. Qualquer identidade aceita pelo
+      // resolver no consulta_cand atual substitui essa pista, mesmo que tenha
+      // prioridade nominal menor (por exemplo, CPF corrigindo um SQ antigo).
+      if (!existing.observed) {
+        selectedBySlug.set(match.slug, {
+          candidato,
+          sq,
+          method: match.method,
+          priority,
+          observed: true,
+          uf,
+          declarouBens,
+        })
+        callerAmbiguousPriority.delete(match.slug)
         return
       }
 
       if (priority > existing.priority) {
-        selectedBySlug.set(match.slug, { candidato, sq, method: match.method, priority, uf })
+        selectedBySlug.set(match.slug, {
+          candidato,
+          sq,
+          method: match.method,
+          priority,
+          observed: true,
+          uf,
+          declarouBens,
+        })
         callerAmbiguousPriority.delete(match.slug)
         return
       }
 
       if (existing.sq === sq) {
         if (!existing.uf && uf) existing.uf = uf
+        if (!existing.declarouBens && declarouBens) existing.declarouBens = declarouBens
         return
       }
 
@@ -372,6 +448,7 @@ async function buildSQMap(
       candidato: selection.candidato,
       sqCandidato: selection.sq,
       uf: selection.uf,
+      declarouBens: selection.declarouBens,
     }
     if (selection.uf) {
       sqMap.set(
@@ -396,15 +473,17 @@ async function buildSQMap(
 
 async function processPatrimonio(
   ano: number,
-  candidatos: CandidatoConfig[],
   extractDir: string,
   sqMap: Map<string, SqCandidateIdentity>,
   slugAllowlist: Set<string> | null,
-  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">
+  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">,
+  sourceUrl: string,
 ): Promise<IngestResult[]> {
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
-  const governorUFs = getGovernorUFs(candidatos)
-  const ufPaths = governorUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
+  const requiredUFs = [
+    ...new Set([...sqMap.values()].map((identity) => identity.uf).filter((uf): uf is string => Boolean(uf))),
+  ]
+  const ufPaths = requiredUFs.flatMap((uf) => findCSVs(extractDir, `_${uf}`))
   const allSourcePaths = [...brPaths, ...ufPaths]
   const csvPaths = allSourcePaths.length > 0
     ? allSourcePaths
@@ -415,6 +494,7 @@ async function processPatrimonio(
     warn("tse", `  CSV de bens nao encontrado para ${ano}`)
     return []
   }
+  validarCoberturaPacotePatrimonio(ano, uniquePaths, requiredUFs)
 
   const parsedRows: Array<{
     slug: string
@@ -425,7 +505,7 @@ async function processPatrimonio(
     valor: number
   }> = []
 
-  log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR${governorUFs.length > 0 ? " + " + governorUFs.length + " UFs" : ""})`)
+  log("tse", `  Parseando patrimonio ${ano}: ${uniquePaths.length} arquivos CSV (BR${requiredUFs.length > 0 ? " + " + requiredUFs.length + " UFs" : ""})`)
   for (const csvPath of uniquePaths) {
     await parseCSV(csvPath, (row) => {
       const sq = (row.SQ_CANDIDATO || "").trim()
@@ -504,18 +584,34 @@ async function processPatrimonio(
         },
       })
     } else {
-      const { data: existing } = await supabase
+      const { data: existing, error: existingError } = await supabase
         .from("patrimonio")
         .select("id")
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
-        .single()
+        .maybeSingle()
+      if (existingError) throw existingError
 
       if (existing) {
-        await supabase.from("patrimonio").update(row).eq("id", existing.id)
+        const { error: updateError } = await supabase
+          .from("patrimonio")
+          .update(row)
+          .eq("id", existing.id)
+        if (updateError) throw updateError
       } else {
-        await supabase.from("patrimonio").insert(row)
+        const { error: insertError } = await supabase.from("patrimonio").insert(row)
+        if (insertError) throw insertError
       }
+
+      // Só retire uma ausência anterior depois que o patrimônio real estiver
+      // confirmado no banco. Assim uma falha de escrita nunca apaga a última
+      // evidência válida e transforma o estado em "não coletado".
+      const { error: staleAbsenceError } = await supabase
+        .from("patrimonio_ausencia_oficial")
+        .delete()
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", ano)
+      if (staleAbsenceError) throw staleAbsenceError
     }
 
     log("tse", `  ${slug}: patrimonio ${ano} — R$ ${Math.round(data.total).toLocaleString()} (${data.bens.length} bens)`)
@@ -526,6 +622,74 @@ async function processPatrimonio(
       rows_upserted: options.dryRun ? 0 : 1,
       errors: [],
       duration_ms: 0,
+    })
+  }
+
+  const absenceCandidates = selectPatrimonioAbsenceCandidates(
+    [...sqMap.values()].map((identity) => ({
+      slug: identity.candidato.slug,
+      sqCandidato: identity.sqCandidato,
+      uf: identity.uf,
+      declarouBens: identity.declarouBens,
+    })),
+    new Set(aggregated.keys()),
+    slugAllowlist,
+  )
+  const verifiedAt = new Date().toISOString()
+  const execution = process.env.GITHUB_RUN_ID
+    ? `github-actions:${process.env.GITHUB_RUN_ID}`
+    : "ingest-tse"
+
+  for (const identity of absenceCandidates) {
+    const candidatoId = await resolveCandidatoId(identity.slug)
+    if (!candidatoId) continue
+    const row = {
+      candidato_id: candidatoId,
+      ano_eleicao: ano,
+      sq_candidato: identity.sqCandidato,
+      fonte_url: sourceUrl,
+      verificado_em: verifiedAt,
+      detalhe: "Identidade confirmada por SQ_CANDIDATO, ano e UF; consulta_cand registra ST_DECLARAR_BENS=N e o pacote oficial completo não traz bens para a candidatura.",
+      execucao: execution,
+    }
+
+    if (options.dryRun) {
+      options.onPlannedRow?.({ table: "patrimonio_ausencia_oficial", slug: identity.slug, row })
+    } else {
+      const { data: existingPatrimonio, error: existingPatrimonioError } = await supabase
+        .from("patrimonio")
+        .select("id")
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", ano)
+        .maybeSingle()
+      if (existingPatrimonioError) throw existingPatrimonioError
+      if (existingPatrimonio) continue
+
+      const { data: existingAbsence, error: existingAbsenceError } = await supabase
+        .from("patrimonio_ausencia_oficial")
+        .select("id")
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", ano)
+        .maybeSingle()
+      if (existingAbsenceError) throw existingAbsenceError
+      if (existingAbsence) continue
+
+      const { error: absenceError } = await supabase
+        .from("patrimonio_ausencia_oficial")
+        .insert(row)
+      if (absenceError) throw absenceError
+    }
+
+    results.push({
+      source: "tse",
+      candidato: identity.slug,
+      tables_updated: ["patrimonio_ausencia_oficial"],
+      rows_upserted: options.dryRun ? 0 : 1,
+      errors: [],
+      duration_ms: 0,
+      coleta_resultado: "vazio_confirmado",
+      coleta_volume: 0,
+      coleta_detalhe: row.detalhe,
     })
   }
 
@@ -933,7 +1097,11 @@ function logResolverStats(ano: number, resolver: TSEResolver) {
 }
 
 interface PlannedTseRow {
-  table: "patrimonio" | "financiamento" | "financiamento_verificacoes"
+  table:
+    | "patrimonio"
+    | "patrimonio_ausencia_oficial"
+    | "financiamento"
+    | "financiamento_verificacoes"
   slug: string
   row: Record<string, unknown>
 }
@@ -1021,18 +1189,23 @@ export async function ingestTSE(
           extractZip(bensZip, bensDir, governorUFs)
           const patrimonioResults = await processPatrimonio(
             ano,
-            candidatos,
             bensDir,
             sqMap,
             options.patrimonioSlugAllowlist ?? null,
-            options
+            options,
+            bensUrl,
           )
           allResults.push(...patrimonioResults)
         } catch (err) {
           error("tse", `  Erro patrimonio ${ano}: ${err}`)
+          throw err
+        } finally {
+          cleanupDir(bensDir)
+          cleanupDownloadedZip(bensZip)
         }
-        cleanupDir(bensDir)
+      } else {
         cleanupDownloadedZip(bensZip)
+        throw new Error(`Patrimonio ${ano}: download do pacote oficial falhou`)
       }
     } else {
       log("tse", `  Patrimonio ${ano}: ignorado (skipPatrimonio)`)
