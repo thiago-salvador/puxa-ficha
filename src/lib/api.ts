@@ -21,7 +21,7 @@ import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
 import { hasIncompletePartyTimeline } from "@/lib/candidate-integrity"
 import { buildPatrimonioEleicoes } from "@/lib/public-profile-dto"
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
-import { normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
+import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { normalizeFinanciamentoForDisplay, normalizePatrimonioForDisplay } from "@/lib/person-level-dedupe"
 import { sanitizeFinanciamentoForPublic, sanitizeMaioresDoadoresForPublic } from "@/lib/financiamento-public"
@@ -1184,7 +1184,9 @@ async function getCandidatoBySlugFromRelationResource(
     )
   }
 
-  const historicoConfiavel = normalizeHistoricoPoliticoForDisplay(historico.data ?? [])
+  const historicoConfiavel = normalizeHistoricoPoliticoForDisplay(
+    ensureCurrentCandidacyInHistory(candidato, historico.data ?? []),
+  )
   const patrimonioConfiavel = normalizePatrimonioForDisplay(patrimonio.data ?? [])
   const financiamentoConfiavel = normalizeFinanciamentoForDisplay(financiamento.data ?? [])
   const mudancasRaw = normalizePartyTimelineForDisplay(mudancas.data ?? []).sort(
@@ -1514,7 +1516,12 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // e serializado DENTRO deste payload, e o TTL e de 3600s. Sem o bump, as fichas
   // ja aquecidas continuariam servindo o `message` antigo, com a data de
   // calendario recuada um dia, por ate uma hora depois do deploy.
-  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", CURRENT_DATA_WAVE],
+  //
+  // Bumped 2026-09-06 (`trajetoria-candidatura-atual-20260906`): a candidatura
+  // vigente passou a ser projetada na trajetória quando a linha denormalizada
+  // de `historico_politico` estiver ausente. Sem o bump, perfis já aquecidos
+  // continuariam omitindo 2026 durante o TTL.
+  ["public-candidato-ficha-resource", "central-party-sanitize", "no-cache-degraded-v1", "legislacao-paged-v4", "lme-trim-2mb-20260501", "pl-lazy-preview-20260711", "presidential-cohort-20260515", "editorial-full-closure-20260518", "pre-candidates-lote12-20260522", "photos-names-20260610", "raw-empty-core-lote2-20260630", "raw-empty-core-lote3-20260630", "raw-empty-core-lote4-20260630", "raw-empty-core-news-lote5-20260630", "raw-empty-core-lote6-20260630", "raw-empty-core-lote7-20260630", "raw-empty-core-lote8-20260630", "raw-empty-core-lote9-20260630", "raw-empty-core-lote10-20260630", "raw-empty-core-lote11-20260630", "pe-state-html-gaps-20260708", "rr-state-completion-20260710-v2", "reescrita-claims-homonimo-20260726", "consolidacao-mapa-fome-20260726", "lme-preview-lazy-20260803", "density-bypass-clear-20260804", "sancoes-proveniencia-20260805", "verificacao-campos-tse-min-20260809", "frescor-data-calendario-20260809", "ultima-verificacao-qualquer-dado-20260809", "chapas-tse-20260815", "chapas-bio-card-20260813", "onda-p-20260814", "party-siglas-lote2-20260815", "gastos-executivo-cpgf-20260816", "gastos-executivo-ug-20260820", "trajetoria-candidatura-atual-20260906", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidato-ficha"],

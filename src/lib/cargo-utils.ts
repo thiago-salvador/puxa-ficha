@@ -53,6 +53,7 @@ export function canonicalCargo(cargo: string): string {
   }
   if (/^vice[- ]governador[ae]?/.test(compactRole)) return "Vice-Governador"
   if (/^governador[ae]?/.test(compactRole)) return "Governador"
+  if (/^governo(?:\s+(?:do|da|de))?(?:\s|$)/.test(compactRole)) return "Governador"
   if (/^vice[- ]prefeit[oa]/.test(compactRole)) return "Vice-Prefeito"
   if (/^prefeit[oa]/.test(compactRole)) return "Prefeito"
   if (/deputad[oa]?\s+federal/.test(compactRole)) return "Deputado Federal"
