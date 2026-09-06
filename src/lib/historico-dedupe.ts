@@ -4,7 +4,7 @@ import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import { resolveHistoricoRowProvenance } from "@/lib/historico-provenance"
 import type { Candidato, HistoricoPolitico } from "@/lib/types"
 
-export const CURRENT_CANDIDACY_ELECTION_YEAR = 2026
+const CURRENT_CANDIDACY_ELECTION_YEAR = 2026
 
 /** Alinhado a `historicoCanonKey` em `historico-display.ts`. */
 function historicoCanonKeyForRow(row: Pick<HistoricoPolitico, "cargo" | "cargo_canonico">): string {
