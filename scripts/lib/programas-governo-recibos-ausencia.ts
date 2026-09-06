@@ -29,16 +29,17 @@ export const RECIBOS_AUSENCIA_SQS: ReadonlySet<string> = new Set([
  *   republicado em 2026-09-02 passou a conter `RJ/2026RJ190002543380_01.pdf`.
  * - `60002553922` (Vera Lúcia, CE): o pacote `proposta_governo_2026_CE.zip`
  *   republicado em 2026-09-03 passou a conter `CE/2026CE60002553922_01.pdf`.
+ * - `130002544411` (Ben Mendes, MG): o pacote `proposta_governo_2026_MG.zip`
+ *   medido em 2026-09-05 passou a conter `MG/2026MG130002544411_01.pdf`.
  */
 export const RECIBOS_AUSENCIA_SUPERADOS_SQS: ReadonlySet<string> = new Set([
   "60002553922",
+  "130002544411",
   "190002543380",
 ])
 
 /** Anúncio posterior no DivulgaCand; não comprova conteúdo no pacote histórico. */
-export const RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS: ReadonlySet<string> = new Set([
-  "130002544411", // Ben Mendes: arquivo 130017139584 em 2026-09-04.
-])
+export const RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS: ReadonlySet<string> = new Set()
 
 /** Recibos ainda vinculados ao snapshot histórico do inventário de pacotes. */
 export const RECIBOS_AUSENCIA_VIGENTES_SQS: ReadonlySet<string> = new Set(

@@ -226,17 +226,18 @@ async function mountMultidocumentHarness(page: Page, harness = multidocumentHarn
   await expect(page.locator(selector)).toBeVisible()
 }
 
-test("anúncio real de Ben mantém resumo pendente em desktop e mobile", async ({ page }, testInfo) => {
+test("programa real de Ben mostra resumo aprovado em desktop e mobile", async ({ page }, testInfo) => {
   for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 })
-    await mountMultidocumentHarness(page, announcementHarness, '[data-pf-programa-state="documento_anunciado"]')
-    await expect(page.getByText("Documento anunciado pelo TSE", { exact: true })).toBeVisible()
-    await expect(page.getByText(/Resumo pendente/)).toBeVisible()
-    await expect(page.locator('[data-pf-programa-source="anuncio-tse"]')).toHaveAttribute("href", ben.anuncio.fonteUrl)
+    await mountMultidocumentHarness(page, announcementHarness, "[data-pf-programa-overview]")
+    await expect(page.locator("[data-pf-programa-approved]")).toBeVisible()
+    await expect(page.getByText("Resumo por IA, revisado editorialmente", { exact: true })).toBeVisible()
+    await expect(page.locator("[data-pf-programa-approved] > p").first()).toContainText("Na saúde, propõe teleconsultas")
+    await expect(page.getByText(/Resumo pendente/)).toHaveCount(0)
     await expect(page.getByText("Documento oficial não localizado", { exact: true })).toHaveCount(0)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
     expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([])
-    await page.screenshot({ path: testInfo.outputPath(`ben-anuncio-${width}.png`), fullPage: true })
+    await page.screenshot({ path: testInfo.outputPath(`ben-aprovado-${width}.png`), fullPage: true })
   }
 })
 
@@ -326,7 +327,7 @@ test("governador em 390 px preserva teclado, foco, axe e ausência de overflow",
   const geral = page.getByRole("tab", { name: "Visão", exact: true })
   await geral.focus()
   await geral.press("ArrowRight")
-  const pesquisas = page.getByRole("tab", { name: /^Pesquisas/u })
+  const pesquisas = page.getByRole("tab", { name: /^Pesq\./u })
   await expect(pesquisas).toBeFocused()
   await pesquisas.press("ArrowRight")
   await expect(page.getByRole("tab", { name: "Programa" })).toBeFocused()

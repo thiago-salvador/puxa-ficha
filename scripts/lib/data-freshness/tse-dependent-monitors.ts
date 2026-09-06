@@ -244,10 +244,10 @@ export async function collectTseDependentMonitors(
     || config.laudicerio.canonical_registration_sq !== null
     || config.laudicerio.registrations.length !== 2
     || config.program_control?.expected_cod_tipo !== "5"
-    // Três desde 2026-09-03: Eduardo Paes (RJ) e Vera Lúcia (CE) saíram no mesmo
-    // dia porque os pacotes oficiais republicados passaram a trazer os
-    // programas e os dois registros foram publicados.
-    || config.program_files.length !== 3) {
+    // Dois desde 2026-09-06: Eduardo Paes (RJ), Vera Lúcia (CE) e Ben Mendes
+    // (MG) saíram do monitor depois que os pacotes oficiais passaram a trazer
+    // os programas e os registros foram publicados.
+    || config.program_files.length !== 2) {
     throw new Error("configuração dos monitores TSE divergiu do contrato")
   }
   const reviewsBySlug = new Map<string, TseDependentProgramReview[]>()

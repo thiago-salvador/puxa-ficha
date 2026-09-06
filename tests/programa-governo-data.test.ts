@@ -23,7 +23,7 @@ before(async () => {
   programaModule = await import("../src/data/programas-governo-2026")
 })
 const lulaRecord = require("../src/data/programas-governo/presidencia-2026/lula.json") as ProgramaGovernoRegistro
-const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-03.json") as {
+const governorPublication = require("../docs/reviews/programas-governo-governadores-2026/publicacao-2026-09-06.json") as {
   items: Array<{ outcome: string; slug: string | null }>
 }
 const governorAbsenceReceipt = require("../QA/evidencias/2026-08-30-programas-ausentes/receipt.json") as {
@@ -129,14 +129,15 @@ test("server-only manifest retains approved records and explicit official absenc
   }
 })
 
-test("manifest publishes approved content and receipt-backed absence without inventing documents", async () => {
-  const announced = await programaModule.programasGoverno2026Manifesto.loadBySlug("ben-mendes")
-  assert.equal(announced?.estado, "documento_anunciado")
-  assert.equal(announced?.anuncio?.idArquivo, "130017139584")
-  assert.equal(announced?.documentos, undefined)
-  assert.equal(announced?.resumo, undefined)
-  assert.throws(() => toProgramaGovernoPublico(announced), /somente registros aprovados/)
-  assert.deepEqual(programaModule.programasGoverno2026Manifesto.getBySlug("ben-mendes")?.manifesto, toProgramaGovernoManifestoPublico(announced))
+test("manifest publishes Ben after the official document review and keeps receipt-backed absences explicit", async () => {
+  const ben = await programaModule.programasGoverno2026Manifesto.loadBySlug("ben-mendes")
+  assert.equal(ben?.estado, "aprovado")
+  assert.equal(ben?.documentos?.[0]?.documentoId, "MG:130002544411:01")
+  assert.equal(ben?.documentos?.[0]?.extracao.sourceSha256, "277d3eee53e0b0428d11e54c6cfeef5190f97bd86ff07202f52033e788cc5fab")
+  assert.equal(ben?.resumo?.frases.length, 8)
+  assert.equal(ben?.resumo?.temas.length, 6)
+  assert.doesNotThrow(() => toProgramaGovernoPublico(ben))
+  assert.deepEqual(programaModule.programasGoverno2026Manifesto.getBySlug("ben-mendes")?.manifesto, toProgramaGovernoManifestoPublico(ben))
   const approved = await programaModule.programasGoverno2026Manifesto.loadBySlug("acm-neto")
   assert.equal(approved?.estado, "aprovado")
   assert.equal(approved?.fonte.cargo, "GOVERNADOR")

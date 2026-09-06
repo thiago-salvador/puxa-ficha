@@ -1,6 +1,20 @@
 # Status atual
 
-Snapshot mais recente verificado em **05/09/2026**.
+Snapshot mais recente verificado em **06/09/2026**.
+
+## Snapshot 06/09/2026: completude pública e programa de Ben Mendes
+
+- A varredura pública fechou 208 de 208 fichas com zero lacuna acionável e
+  zero erro de leitura. A ficha de Well Macedo foi corrigida pela junção do ZIP
+  complementar de candidaturas do TSE, que contém a declaração patrimonial.
+- O pacote oficial de MG contém o programa de Ben Mendes. A extração de 97
+  páginas, o resumo de oito frases e seis temas e as 28 evidências passaram por
+  verificação mecânica e dois julgamentos independentes, sem achados acionáveis.
+  O registro foi promovido para `aprovado` com autoria de revisão explícita, sem
+  atribuir a Thiago uma leitura que ele não realizou.
+- O inventário de programas agora tem 207 documentos, 192 programas aprovados
+  e dois recibos vigentes de ausência. O monitor TSE ficou restrito aos dois
+  programas ainda ausentes e volta a alertar se surgir novo arquivo oficial.
 
 ## Snapshot 05/09/2026: correção fechada dos textos de julgamento
 

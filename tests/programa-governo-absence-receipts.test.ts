@@ -23,10 +23,12 @@ const TARGETS = new Map([
 ]);
 // Recibo superado por pacote posterior: o artefato de 2026-08-30 continua com
 // cinco recibos, mas Eduardo Paes ganhou o programa no pacote de 2026-09-02 e
-// Vera Lúcia no pacote de 2026-09-03. Os dois saíram do vínculo com o
+// Vera Lúcia no pacote de 2026-09-03 e Ben Mendes no pacote de 2026-09-05.
+// Os três saíram do vínculo com o
 // inventário e do estado público sem documento.
 const SUPERSEDED = new Map([
   ["60002553922", "vera-lucia-ce"],
+  ["130002544411", "ben-mendes"],
   ["190002543380", "eduardo-paes"],
 ]);
 const CURRENT = new Map([...TARGETS].filter(([sq]) => !SUPERSEDED.has(sq)));
@@ -112,8 +114,8 @@ test("vincula os recibos vigentes ao inventário sem publicar documento inexiste
     assert.ok((superseded.documentoIds as unknown[]).length > 0);
   }
   assert.deepEqual(
-    inventory.recibosSemProgramaOficial.receipt_ids_superados,
-    [...SUPERSEDED.keys()].map((sq) => `programa-governo-ausente:2026:${sq}`),
+    [...inventory.recibosSemProgramaOficial.receipt_ids_superados as string[]].sort(),
+    [...SUPERSEDED.keys()].map((sq) => `programa-governo-ausente:2026:${sq}`).sort(),
   );
   for (const candidate of attached) {
     assert.equal(candidate.fonteEstado, "sem_documento_oficial");

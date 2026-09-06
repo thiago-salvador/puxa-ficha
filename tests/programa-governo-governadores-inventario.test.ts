@@ -18,30 +18,29 @@ test("inventaria a coorte oficial atual de governador nas 27 UFs", () => {
     perfisLocaisAusentes: 0,
     aliasesDuplicidadeOficial: 2,
     pacotes: 27,
-    documentosTotais: 214,
-    documentosDeCandidaturasAtuais: 206,
+    documentosTotais: 215,
+    documentosDeCandidaturasAtuais: 207,
     documentosSemCandidaturaAtual: 8,
-    candidaturasComDocumento: 193,
-    candidaturasSemDocumento: 3,
-    paginasCandidaturasAtuais: 11129,
+    candidaturasComDocumento: 194,
+    candidaturasSemDocumento: 2,
+    paginasCandidaturasAtuais: 11226,
     paginasDocumentosOrfaos: 283,
-    pdfBytesCandidaturasAtuais: 270339657,
+    pdfBytesCandidaturasAtuais: 271595684,
     pdfBytesDocumentosOrfaos: 5011949,
-    pacoteBytesTotais: 279777553,
-    textoExtraidoBytesCandidaturasAtuais: 21960302,
-    documentosTextoExtraivel: 201,
+    pacoteBytesTotais: 281033712,
+    textoExtraidoBytesCandidaturasAtuais: 22204642,
+    documentosTextoExtraivel: 202,
     documentosRequeremOcr: 5,
-    inventarioPayloadBytes: 372138,
+    inventarioPayloadBytes: 372936,
   });
 });
 
-test("preserva as três ausências e os oito documentos órfãos", () => {
+test("preserva as duas ausências e os oito documentos órfãos", () => {
   assert.deepEqual(
     inventory.candidaturas
       .filter((candidate) => candidate.documentoIds.length === 0)
       .map((candidate) => `${candidate.uf}:${candidate.sqCandidato}`),
     [
-      "MG:130002544411",
       "RJ:190002550196",
       "SP:250002548080",
     ],
