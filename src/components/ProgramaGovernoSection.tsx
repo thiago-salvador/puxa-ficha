@@ -85,7 +85,9 @@ type ProgramaGovernoLinkFonte = Pick<
 >
 
 function sourceHref(fonte: ProgramaGovernoLinkFonte) {
-  return fonte.pdfOriginalUrl ?? fonte.pacoteUrl
+  const href = fonte.pdfOriginalUrl ?? fonte.pacoteUrl
+  if (!href) throw new Error("Programa de governo sem URL oficial")
+  return href
 }
 
 function sourceConsultedAt(fonte: ProgramaGovernoFontePublica): string | null {

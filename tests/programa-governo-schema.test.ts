@@ -58,6 +58,7 @@ function validRecord(): ProgramaGovernoRegistro {
 
 function syntheticGovernorRecord(): ProgramaGovernoRegistro {
   const record = validRecord()
+  assert(record.fonte.origem !== "divulgacand_pdf")
   record.estado = "em_revisao"
   record.fonte = {
     ...record.fonte,

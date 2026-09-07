@@ -1,0 +1,17 @@
+{
+  "versao": "2026-09-07",
+  "fonte": "data/siqueira-to-20260907.json; fontes diretas oficiais TSE titular/vice e mídias verificadas nos runs 34151762737 e 34152174008. Sem atribuir códigos de API ao CSV nem inventar SQ_COLIGACAO.",
+  "motivo": "Admissão de uma nova inscrição Governador/TO por fonte direta modelada, preservando todos os registros anteriores.",
+  "coorte": ["siqueira-campos-jr"],
+  "fora_por_construcao": {"slugs": ["subtenente-luiz-carlos"]},
+  "entries": [
+    {"tabela": "candidatos", "slug": "siqueira-campos-jr", "campos": ["id","slug","nome_completo","nome_urna","partido_sigla","partido_atual","cargo_disputado","estado","sq_candidato_2026","data_nascimento","naturalidade","formacao","profissao_declarada","genero","estado_civil","cor_raca","foto_url","biografia","situacao_candidatura","status","publicavel","fonte_dados","verificacao_campos","ultima_atualizacao","created_at"], "max_registros": 1},
+    {"tabela": "historico_politico", "slug": "siqueira-campos-jr", "campos": ["id","candidato_id","cargo","periodo_inicio","periodo_fim","partido","estado","observacoes","proveniencia","created_at"], "max_registros": 1},
+    {"tabela": "patrimonio_ausencia_oficial", "slug": "siqueira-campos-jr", "campos": ["id","candidato_id","ano_eleicao","sq_candidato","fonte_url","verificado_em","detalhe","execucao","created_at"], "max_registros": 1}
+  ],
+  "referencias": [
+    {"tabela": "chapas_2026", "ref": "siqueira-to-publication", "campos": ["id","chave","eleicao_codigo","eleicao_data","uf","cargo_titular","sq_coligacao","identidade_status","vinculo_titular_status","tse_situacao_codigo","tse_situacao_titular_codigo","tse_situacao_vice_codigo","tipo_agremiacao","composicao","titular_candidato_id","vice_candidato_id","titular_sq_candidato","vice_sq_candidato","titular_nome_completo","titular_nome_urna","titular_partido_sigla","vice_nome_completo","vice_nome_urna","vice_partido_sigla","alternativas_oficiais","fonte_url","fonte_sha256","snapshot_em","created_at","fonte_tipo","fonte_detalhe"], "max_registros": 1},
+    {"tabela": "coleta_log", "ref": "migration:20260907193100", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"], "max_registros": 1},
+    {"tabela": "coleta_log", "ref": "migration:20260907193100:patrimonio", "campos": ["fonte","escopo","alvo","candidato_id","resultado","volume","detalhe","url","execucao","natureza"], "max_registros": 1}
+  ]
+}

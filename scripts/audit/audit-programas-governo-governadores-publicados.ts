@@ -7,6 +7,7 @@ import {
   type ProgramaGovernoRegistro,
 } from "../../src/lib/programa-governo"
 import { auditProgramaGovernoRecordSet } from "./audit-programas-governo"
+import { assertProgramaDiretoFonteEsperada, fonteDiretaProgramaEsperada } from "../lib/programas-governo-fontes-diretas"
 import type {
   ProgramaGovernoPipelineRecord,
   ProgramaGovernoStageSource,
@@ -74,6 +75,7 @@ async function main(): Promise<void> {
   const byUf = new Map<ProgramaGovernoUf, ProgramaGovernoRegistro[]>()
   const absenceRecords: ProgramaGovernoRegistro[] = []
   const announcedRecords: ProgramaGovernoRegistro[] = []
+  const directRecords: ProgramaGovernoRegistro[] = []
   for (const record of records) {
     const isAbsence = record.estado === "sem_documento_oficial"
     const isAnnounced = record.estado === "documento_anunciado"
@@ -82,7 +84,13 @@ async function main(): Promise<void> {
     const expected = inventoryByKey.get(key)
     const slugExpected = inventoryBySlug.get(record.fonte.slug)
     const reasons: string[] = []
-    if (!expected) reasons.push(slugExpected ? "identity" : "identity_not_in_canonical_crosswalk")
+    if (record.fonte.origem === "divulgacand_pdf") {
+      assert(record.estado === "aprovado", `${key}: PDF direto exige revisão aprovada`)
+      assert(!expected && !slugExpected, `${key}: fonte direta não pode substituir inventário histórico`)
+      assertProgramaDiretoFonteEsperada(record)
+      directRecords.push(record)
+    }
+    else if (!expected) reasons.push(slugExpected ? "identity" : "identity_not_in_canonical_crosswalk")
     else if (isAbsence || isAnnounced) {
       if (expected.perfilEstado !== "vinculado") reasons.push("profile_not_linked")
       if (expected.slug !== record.fonte.slug) reasons.push("identity")
@@ -129,7 +137,7 @@ async function main(): Promise<void> {
   let evalItems = 0
   for (const [uf, ufRecords] of byUf) {
     const result = auditProgramaGovernoRecordSet(
-      ufRecords.map((record) => ({
+      ufRecords.map((record) => record.fonte.origem === "divulgacand_pdf" ? assertProgramaDiretoFonteEsperada(record) : ({
         ...record.fonte,
         documentos: record.documentos?.map((documento) => ({
           documentoId: documento.documentoId,
@@ -147,13 +155,17 @@ async function main(): Promise<void> {
   const approvedSelection = selection.items.filter((item) => item.outcome === "approved")
   const unavailableSelection = selection.items.filter((item) => item.outcome === "unavailable")
   const approvedSlugs = new Set(approvedSelection.map((item) => item.slug))
+  const directExpected = fonteDiretaProgramaEsperada()
+  assert(directRecords.length === 1, "seleção direta deve cobrir exatamente a fonte adicional registrada")
+  assert(directRecords[0].fonte.slug === directExpected.slug, "seleção direta diverge da fonte esperada")
+  const historicalApprovedRecords = approvedRecords.filter((record) => record.fonte.origem !== "divulgacand_pdf")
   const unavailableSlugs = new Set(unavailableSelection.map((item) => item.slug))
   const selectionReasons = [
     ...(selection.items.length === inventory.candidaturas.length ? [] : ["selection_coverage"]),
     ...(selectionByKey.size === selection.items.length ? [] : ["selection_duplicate_identity"]),
-    ...(approvedSelection.length === approvedRecords.length ? [] : ["selection_approved_count"]),
+    ...(approvedSelection.length === historicalApprovedRecords.length ? [] : ["selection_approved_count"]),
     ...(unavailableSelection.length === absenceRecords.length + announcedRecords.length ? [] : ["selection_unavailable_count"]),
-    ...(approvedRecords.every((record) => approvedSlugs.has(record.fonte.slug)) ? [] : ["selection_membership"]),
+    ...(historicalApprovedRecords.every((record) => approvedSlugs.has(record.fonte.slug)) ? [] : ["selection_membership"]),
     ...(absenceRecords.every((record) => unavailableSlugs.has(record.fonte.slug)) ? [] : ["selection_absence_membership"]),
     ...(announcedRecords.every((record) => unavailableSlugs.has(record.fonte.slug)) ? [] : ["selection_announcement_membership"]),
   ]

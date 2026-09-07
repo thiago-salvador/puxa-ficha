@@ -11,7 +11,9 @@ WITH candidacies AS (
     'nome_urna', ch.titular_nome_urna,
     'partido_sigla', ch.titular_partido_sigla,
     'situacao_codigo', ch.tse_situacao_titular_codigo,
-    'situacao_descricao', NULL,
+    -- to_jsonb mantém compatibilidade entre deploy do código e aplicação do DDL.
+    'situacao_descricao', CASE WHEN to_jsonb(ch)->>'fonte_tipo' = 'divulgacand_detalhe'
+      THEN to_jsonb(ch)->'fonte_detalhe'->'titular'->>'descricao_situacao' ELSE NULL END,
     'perfil_slug', titular.slug
   ) AS record
   FROM public.chapas_2026 ch
@@ -27,7 +29,8 @@ WITH candidacies AS (
     'nome_urna', ch.vice_nome_urna,
     'partido_sigla', ch.vice_partido_sigla,
     'situacao_codigo', ch.tse_situacao_vice_codigo,
-    'situacao_descricao', NULL,
+    'situacao_descricao', CASE WHEN to_jsonb(ch)->>'fonte_tipo' = 'divulgacand_detalhe'
+      THEN to_jsonb(ch)->'fonte_detalhe'->'vice'->>'descricao_situacao' ELSE NULL END,
     'perfil_slug', vice.slug
   ) AS record
   FROM public.chapas_2026 ch

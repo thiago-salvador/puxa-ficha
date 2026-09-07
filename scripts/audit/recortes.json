@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "siqueira-to-publication-20260907",
+      "desde": "20260907193100",
+      "ate": "20260907193100",
+      "allowlist": "scripts/audit/allowlist-siqueira-to-publication-20260907.json",
+      "divida": null
+    },
+    {
       "nome": "danilo-nome-urna-20260907",
       "desde": "20260907180000",
       "ate": "20260907180000",

@@ -16,7 +16,11 @@ import {
   type PublicCandidateSummary,
 } from "../../src/lib/candidate-publication-integrity";
 import { compareCandidacies } from "../lib/data-freshness/candidaturas";
-import { collectCurrentOfficialCandidacies } from "../lib/data-freshness/divulgacand-current";
+import {
+  collectCurrentOfficialCandidacies,
+  collectDirectCandidaciesMissingFromCdn,
+  type DivulgaCandReceipt,
+} from "../lib/data-freshness/divulgacand-current";
 import {
   aggregateSourceEvidence,
   evaluateSourceFreshness,
@@ -314,6 +318,8 @@ async function main(): Promise<void> {
   );
   let official: CandidacyRecord[] = [];
   let currentOfficial: OfficialCandidacy[] = [];
+  const divulgacandReceipts: DivulgaCandReceipt[] = [];
+  const directReceipts: DivulgaCandReceipt[] = [];
   let source: Record<string, unknown>;
   let tseEvidence: SourceEvidence = {
     source_id: "tse-current",
@@ -397,8 +403,18 @@ async function main(): Promise<void> {
         checked_at: currentSnapshot.checkedAt,
       };
     } else {
-      const current = await collectCurrentOfficialCandidacies();
+      const current = await collectCurrentOfficialCandidacies(fetch, divulgacandReceipts);
       currentOfficial = current.records;
+      const direct = await collectDirectCandidaciesMissingFromCdn(
+        official, current.records, current.receipts, directReceipts,
+      );
+      source.direct_candidacies = {
+        mode: "live_official",
+        policy: "cdn_missing_only",
+        records: direct,
+        receipts: directReceipts,
+      };
+      official = [...official, ...direct];
       divulgacandEvidence = {
         source_id: "tse-current",
         checked_at: generatedAt,
@@ -408,6 +424,7 @@ async function main(): Promise<void> {
         mode: "live_official",
         checked_at: generatedAt,
         sources: current.sources,
+        receipts: divulgacandReceipts,
       };
     }
     tseEvidence = oldestEvidence(tseEvidence, divulgacandEvidence);
@@ -419,6 +436,8 @@ async function main(): Promise<void> {
       checked_at: generatedAt,
       error: message,
       attempts,
+      divulgacand_receipts: divulgacandReceipts,
+      direct_candidacy_receipts: directReceipts,
     };
     tseEvidence = {
       source_id: "tse-current",

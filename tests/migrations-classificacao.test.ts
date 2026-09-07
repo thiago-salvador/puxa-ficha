@@ -404,7 +404,8 @@ describe("classificador puro (#136)", () => {
     // Normalização do pleito 2026 medida no PG17: 361 + mesmas 105 = 466 arquivos.
     // Reclassificação de Dr. Helton medida no PG17: 362 + mesmas 105 = 467 arquivos.
     // Nome de urna de Danilo medido no PG17: 363 + mesmas 105 = 468 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 363)
+    // Fonte direta medida no PG17: 365 + mesmas 105 = 470 arquivos.
+    assert.equal(manifesto.aplicadas_esperadas, 365)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em

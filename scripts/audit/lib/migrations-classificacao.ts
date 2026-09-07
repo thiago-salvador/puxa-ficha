@@ -434,7 +434,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 99 -> 100 em 06/09/2026: o CHECK técnico do snapshot passa a aceitar
   // pontos_atencao e chapas_2026. Medido com zero falhas e hash
   // 70db99801d5dd9688be21fe38f069459c2661bab37caf7ead7325f65b516a531.
-  schemaReplayTamanho: 100,
+  // 100 -> 101 em 07/09/2026: fonte direta de chapas. PG17: 101 limpas,
+  // zero falhas; dump ddb423c409d8a280eacf7c867bbdbe01cfd7b51c3dd15c9049f958c8da691c5d.
+  schemaReplayTamanho: 101,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

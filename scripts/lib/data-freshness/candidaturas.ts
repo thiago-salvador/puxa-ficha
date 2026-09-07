@@ -22,7 +22,7 @@ function normalized(value: string | null): string {
 }
 
 export function candidacySlot(record: CandidacyRecord): string {
-  return [record.uf ?? "BR", record.cargo, record.sq_coligacao].join(":")
+  return [record.uf ?? "BR", record.cargo, record.sq_coligacao || `SQ:${record.sq_candidato}`].join(":")
 }
 
 function stableRecordSort(a: CandidacyRecord, b: CandidacyRecord): number {
@@ -147,9 +147,12 @@ export function compareCandidacies(
     }
 
     if (
-      officialRecord.situacao_codigo &&
+      ((officialRecord.source_origin === "divulgacand_current" ||
+        !officialRecord.situacao_codigo || !publishedRecord.situacao_codigo) &&
+        normalized(officialRecord.situacao_descricao) !== normalized(publishedRecord.situacao_descricao)) ||
+      (officialRecord.situacao_codigo &&
       publishedRecord.situacao_codigo &&
-      officialRecord.situacao_codigo !== publishedRecord.situacao_codigo
+      officialRecord.situacao_codigo !== publishedRecord.situacao_codigo)
     ) {
       addChange(changes, {
         kind: "status_change",

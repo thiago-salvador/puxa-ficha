@@ -372,4 +372,7 @@ PY
   exit 0
 }
 
-main
+# Permite reutilizar o harness por source estático, sem executar o modo CLI.
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  main
+fi

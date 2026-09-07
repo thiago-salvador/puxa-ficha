@@ -1,0 +1,781 @@
+{
+  "version": 1,
+  "estado": "aprovado",
+  "revisao": {
+    "reviewer": "Codex (revisão editorial nesta tarefa)",
+    "reviewedAt": "2026-09-07T19:01:06.043Z",
+    "sourceSha256": "4fe5618450e7f3ecbde2d2ed128138028b4389e625a3304aa0cabf47d59746b7",
+    "extractedTextSha256": "7cb493b9d7d6c9328e02e6433bfe96b91a70aa81bd3329f78eab2230f10b05ae",
+    "documentCount": 1,
+    "documentSetSha256": "2d43ad94ebfef4d2986b5c634bea81fdbb2d76caa953ac3720d4a78c750568ea",
+    "contentSha256": "f4358e100d6d03027825d02c734e768c30feac764288c5b30324aadfaf039aaa"
+  },
+  "fonte": {
+    "ano": 2026,
+    "cargo": "GOVERNADOR",
+    "uf": "TO",
+    "sqCandidato": "270002554375",
+    "slug": "siqueira-campos-jr",
+    "nomeUrna": "SIQUEIRA CAMPOS JR",
+    "partido": "DEMOCRATA",
+    "origem": "divulgacand_pdf",
+    "arquivoNome": "Plano de Governo Final.pdf",
+    "arquivoNoPacote": null,
+    "pacoteUrl": null,
+    "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "pdfOriginalUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/270017140501",
+    "coletadoEm": "2026-09-07T18:35:27.509Z",
+    "vinculoCandidatura": {
+      "fonteUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554375",
+      "arquivoId": "270017140501",
+      "codTipo": "5",
+      "consultadoEm": "2026-09-07T18:29:39.648Z",
+      "payloadSha256": "4b47d9752f0b97b0d711a4b93da88d1c2f507ce880fb81e87eadc8302ced56cd",
+      "evidenciaUrl": "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34151762737"
+    }
+  },
+  "documentos": [
+    {
+      "documentoId": "TO:270002554375:01",
+      "fonte": {
+        "origem": "divulgacand_pdf",
+        "arquivoNome": "Plano de Governo Final.pdf",
+        "arquivoNoPacote": null,
+        "pacoteUrl": null,
+        "datasetUrl": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+        "pdfOriginalUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/270017140501",
+        "coletadoEm": "2026-09-07T18:35:27.509Z",
+        "vinculoCandidatura": {
+          "fonteUrl": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554375",
+          "arquivoId": "270017140501",
+          "codTipo": "5",
+          "consultadoEm": "2026-09-07T18:29:39.648Z",
+          "payloadSha256": "4b47d9752f0b97b0d711a4b93da88d1c2f507ce880fb81e87eadc8302ced56cd",
+          "evidenciaUrl": "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34151762737"
+        }
+      },
+      "extracao": {
+        "extractionVersion": "programa-governo-extracao-v2",
+        "method": "pdftotext-pagewise-with-ocr-fallback",
+        "sourceSha256": "4fe5618450e7f3ecbde2d2ed128138028b4389e625a3304aa0cabf47d59746b7",
+        "extractedTextSha256": "7cb493b9d7d6c9328e02e6433bfe96b91a70aa81bd3329f78eab2230f10b05ae",
+        "paginas": 7,
+        "secoes": [
+          {
+            "id": "democrata-35",
+            "titulo": "DEMOCRATA 35",
+            "nivel": 1,
+            "paginaInicial": 1,
+            "paginaFinal": 1,
+            "origem": "pdftotext",
+            "conteudo": "DEMOCRATA 35\nPLANO DE GOVERNO 2027–2030\nTOCANTINS\nO ESTADO DA LIVRE INICIATIVA E DA JUSTIÇA\nSOCIAL\nCandidato a Governador: Siqueira Campos Jr.\nCandidato a Vice-Governador: Capitão Osmar\nO SONHO NÃO ACABOU\nO desenvolvimento que queremos para o Tocantins precisa chegar às pessoas.\nO Estado deve criar condições para que cada região desenvolva suas\npotencialidades, cada município encontre novos caminhos de crescimento e\ncada cidadão tenha oportunidade de estudar, trabalhar, produzir, empreender e\nconstruir uma vida melhor.\n\n01. TOCANTINS SUPERIOR PARA TODOS\nEducação não é despesa. É investimento.\nO Tocantins Superior para Todos propõe fazer da educação superior um\ninstrumento permanente de transformação social e desenvolvimento regional.\nA UNITINS terá papel estratégico na interiorização do conhecimento, levando\nformação superior, qualificação e oportunidades para mais perto dos municípios.\nOs cursos deverão dialogar com as vocações econômicas de cada região,\nformando profissionais para áreas em que existam oportunidades reais de\ntrabalho, produção e empreendedorismo. Universidades, institutos de ensino,\nsetor produtivo e entidades profissionais serão parceiros na construção dessa\npolítica.\nO que buscamos alcançar: democratizar o acesso ao ensino superior, formar\nmão de obra qualificada, gerar oportunidades para os jovens e utilizar o\nconhecimento como força de desenvolvimento em todas as regiões do\nTocantins.\n\n02. TOCANTINS EM CRESCIMENTO\nEconomia forte, mais empregos, renda e oportunidades em todos os\nmunicípios.\nO desenvolvimento econômico será tratado como política permanente de\nEstado. O Tocantins em Crescimento propõe conhecer profundamente as\npotencialidades de cada região, acompanhar os indicadores econômicos e\ndirecionar políticas públicas para onde possam produzir melhores resultados."
+          },
+          {
+            "id": "o-planejamento-devera-reunir-governo-municipios-universidades-empresario",
+            "titulo": "O planejamento deverá reunir Governo, municípios, universidades, empresários,",
+            "nivel": 1,
+            "paginaInicial": 2,
+            "paginaFinal": 2,
+            "origem": "pdftotext",
+            "conteudo": "O planejamento deverá reunir Governo, municípios, universidades, empresários,\nentidades profissionais e representantes dos setores produtivos. Agricultura,\ncomércio, indústria, turismo, serviços, tecnologia e logística serão tratados como\npartes de uma mesma estratégia de crescimento.\nO que buscamos alcançar: ampliar investimentos, fortalecer empresas,\nestimular novos empreendimentos e transformar crescimento econômico em\nemprego, renda e qualidade de vida para a população.\n\n03. TOCANTINS MINERAL, INDUSTRIAL E\nTECNOLÓGICO\nDa riqueza do solo à indústria, ao emprego e ao conhecimento.\nO Tocantins possui riquezas minerais capazes de gerar muito mais\ndesenvolvimento quando associadas à industrialização, à pesquisa e à\ntecnologia. O programa propõe organizar uma cadeia econômica que vá da\nexploração responsável dos recursos minerais até sua transformação dentro do\npróprio Estado.\nA política alcançará minerais estratégicos, metais, pedras, gemas e joias,\nestimulando pesquisa, beneficiamento, inovação, qualificação profissional e\natração de empresas.\nO que buscamos alcançar: fazer com que uma parcela cada vez maior da\nriqueza extraída do solo tocantinense seja transformada no próprio Tocantins,\nagregando valor, criando indústrias, empregos qualificados, conhecimento e\nnovas receitas.\n\n04. SAÚDE PERTO DE CASA\nFim do sofrimento na ambulância.\nO cidadão não pode percorrer centenas de quilômetros para conseguir\natendimento que deveria encontrar em sua própria região. O Saúde Perto de\nCasa propõe reorganizar e regionalizar a assistência, fortalecendo hospitais e\nserviços de saúde em diferentes pontos do Estado.\nA proposta envolve ampliação de consultas especializadas, exames,\ndiagnósticos, cirurgias eletivas, telemedicina, saúde da mulher, saúde mental e\natendimento hospitalar regional, além de uma gestão moderna e transparente.\nO que buscamos alcançar: reduzir filas, viagens e sofrimento, permitindo que\no tocantinense tenha atendimento de qualidade mais perto de onde mora,\ncom maior rapidez e capacidade de resolução.\n\n05. EDUCAÇÃO BÁSICA\nEscola que forma para a vida.\nA educação básica deve preparar o estudante não apenas para concluir uma\netapa escolar, mas para construir seu futuro. A proposta reúne alfabetização na"
+          },
+          {
+            "id": "idade-certa-recuperacao-da-aprendizagem-ensino-integral-tecnologia",
+            "titulo": "idade certa, recuperação da aprendizagem, ensino integral, tecnologia,",
+            "nivel": 1,
+            "paginaInicial": 3,
+            "paginaFinal": 3,
+            "origem": "pdftotext",
+            "conteudo": "idade certa, recuperação da aprendizagem, ensino integral, tecnologia,\ninovação, formação profissional, cultura, esporte e valorização dos professores.\nA modernização das escolas e as parcerias também deverão aproximar a\neducação das novas profissões e das oportunidades existentes no Tocantins.\nO que buscamos alcançar: garantir aprendizagem efetiva e oferecer aos jovens\numa educação capaz de abrir caminhos para a universidade, o mercado de\ntrabalho, o empreendedorismo e a cidadania.\n\n06. AGRO – 100 MIL FAMÍLIAS PRODUTIVAS E\nFORTES\nDo campo às oportunidades, com renda, alimento e desenvolvimento.\nO campo será tratado como uma das grandes forças de transformação\neconômica e social do Estado. O programa pretende ampliar assistência técnica,\nextensão rural, mecanização, irrigação, regularização fundiária, armazenagem,\nlogística, agroindústria e acesso aos mercados.\nA atenção à agricultura familiar deverá permitir que pequenos produtores deixem\nde atuar apenas na subsistência e passem a participar de cadeias produtivas\norganizadas e rentáveis.\nO que buscamos alcançar: chegar a 100 mil famílias produtivas em quatro\nanos, ampliando produção, renda e segurança no campo e transformando\npequenos produtores em protagonistas do desenvolvimento regional.\n\n07. TURISMO – MUITO ALÉM DO JALAPÃO\nTurismo que gera emprego, renda e orgulho para os tocantinenses.\nO Jalapão continuará sendo uma das grandes referências do Estado, mas o\npotencial turístico do Tocantins é muito maior. O programa propõe estruturar e\ndivulgar destinos nas diversas regiões, valorizando praias, rios, lagos, serras,\ncultura, gastronomia, religiosidade, esportes, pesca e natureza.\nInfraestrutura, acesso, qualificação dos serviços e promoção dos destinos\ndeverão caminhar juntos.\nO que buscamos alcançar: transformar o Tocantins inteiro em destino turístico,\nfazendo com que visitantes permaneçam mais tempo, conheçam mais regiões e\nmovimentem hotéis, restaurantes, comércio, transporte, artesanato e\npequenos negócios locais.\n\n08. TOCANTINS MODAL\nRodovias, ferrovia, hidrovia, aeroportos e transporte aéreo integrados.\nO desenvolvimento depende da capacidade de movimentar pessoas, produtos e\nriquezas. O Tocantins Modal propõe integrar rodovias, ferrovias, hidrovias,\naeroportos e estruturas logísticas dentro de uma estratégia estadual."
+          },
+          {
+            "id": "a-ferrovia-norte-sul-a-hidrovia-araguaia-tocantins-os-aeroportos-regiona",
+            "titulo": "A Ferrovia Norte-Sul, a Hidrovia Araguaia-Tocantins, os aeroportos regionais, as",
+            "nivel": 1,
+            "paginaInicial": 4,
+            "paginaFinal": 4,
+            "origem": "pdftotext",
+            "conteudo": "A Ferrovia Norte-Sul, a Hidrovia Araguaia-Tocantins, os aeroportos regionais, as\nrodovias e o projeto do Porto Praia Norte aparecem como elementos capazes de\nampliar a conexão do Estado com os grandes mercados.\nO que buscamos alcançar: reduzir custos logísticos, aproximar regiões\nprodutoras dos mercados consumidores, atrair empresas e consolidar o\nTocantins como corredor estratégico de produção e distribuição do Brasil.\n\n09. SEGURANÇA PRESENTE\nUma terra segura para todos.\nSegurança pública exige presença, integração, inteligência e tecnologia. O\nprograma propõe fortalecer a atuação conjunta das forças estaduais e\nmunicipais, ampliar videomonitoramento, inteligência policial, equipamentos,\nestrutura operacional e ações preventivas.\nTambém prevê atenção ao combate ao crime organizado e às diferentes formas\nde violência, ao lado de políticas sociais e oportunidades destinadas\nespecialmente aos jovens.\nO que buscamos alcançar: garantir presença efetiva do Estado, prevenir a\nviolência, combater a criminalidade e proporcionar às famílias tocantinenses o\ndireito de viver, trabalhar e criar seus filhos com segurança.\n\n10. MUNICIPALISMO\nGoverno nos 139 municípios. Desenvolvimento real, oportunidades em cada\ncidade.\nO desenvolvimento do Tocantins somente será completo quando alcançar seus\n139 municípios. O programa propõe uma relação direta e permanente entre\nGoverno do Estado, prefeituras e comunidades, com planejamento regional e\nidentificação das necessidades e potencialidades de cada território.\nA proposta inclui Governo Itinerante, consórcios regionais, apoio técnico à\nelaboração de projetos, pactos de resultados e políticas voltadas ao\nfortalecimento das economias locais.\nO que buscamos alcançar: aproximar o Governo das pessoas e fazer com que\ninvestimentos, serviços públicos, infraestrutura e oportunidades cheguem\nefetivamente a todas as regiões.\n\n11. TOCANTINS DE VOLTA AO MUNDO\nMais oportunidades, mais investimentos, mais futuro.\nO Tocantins precisa apresentar suas riquezas e oportunidades para o Brasil e\npara o mundo. O programa propõe uma política ativa de atração de\ninvestimentos, abertura de mercados, promoção de produtos tocantinenses e\nconstrução de relações econômicas nacionais e internacionais.\nMissões empresariais, participação em feiras, promoção comercial e parcerias\ninstitucionais deverão colocar o Estado novamente no radar de investidores."
+          },
+          {
+            "id": "o-que-buscamos-alcancar-trazer-novos-investimentos-mercados-empresas-e",
+            "titulo": "O que buscamos alcançar: trazer novos investimentos, mercados, empresas e",
+            "nivel": 1,
+            "paginaInicial": 5,
+            "paginaFinal": 5,
+            "origem": "pdftotext",
+            "conteudo": "O que buscamos alcançar: trazer novos investimentos, mercados, empresas e\ntecnologias para o Tocantins, ao mesmo tempo em que nossos produtos e\npotencialidades conquistam novos espaços no Brasil e no exterior.\n\n12. MEIO AMBIENTE, ÁGUA E ENERGIA\nDesenvolvimento com responsabilidade. Preservar hoje, garantir o amanhã.\nCrescimento econômico e preservação ambiental devem caminhar juntos. A\nproposta busca proteger recursos hídricos, nascentes, florestas e\nbiodiversidade, ao mesmo tempo em que estimula energia limpa, economia\ncircular, gestão de resíduos e atividades produtivas sustentáveis.\nÁgua e energia serão tratadas também como elementos estratégicos para a\nprodução, para as famílias e para o futuro econômico do Estado.\nO que buscamos alcançar: garantir desenvolvimento sustentável, segurança\nhídrica e energética e preservar as riquezas naturais que fazem do Tocantins um\npatrimônio das atuais e das futuras gerações.\n\n13. TOCANTINS VALE DA TECNOLOGIA\nNosso polo de inovação e indústria avançada.\nO Tocantins precisa participar da nova economia. O programa propõe criar um\necossistema estadual de inovação reunindo universidades, pesquisadores,\nstartups, empresas, investidores e poder público.\nEntre as áreas prioritárias estão software, inteligência artificial, robótica,\neletrônica, segurança cibernética, biotecnologia, equipamentos médicos,\ndrones, agricultura de precisão, tecnologias ambientais e energias renováveis.\nO que buscamos alcançar: transformar conhecimento em empresas e\nempregos, atrair indústrias de tecnologia e preparar uma geração de\nprofissionais para atividades de maior valor agregado e melhores salários.\n\n14. TOCANTINS TRANSPARENTE E\nRESPONSÁVEL\nContas abertas, participação popular e mais investimentos para as pessoas.\nResponsabilidade fiscal será condição para que o Estado tenha capacidade\npermanente de investir. O programa propõe ampliar transparência, controle,\nplanejamento, participação popular e acompanhamento das contas públicas.\nA população e os municípios deverão ter instrumentos para acompanhar\nreceitas, despesas, investimentos, metas e resultados do Governo.\nO que buscamos alcançar: construir uma administração responsável e\ntransparente, na qual cada recurso público tenha finalidade,\nacompanhamento e resultado, recuperando capacidade de investimento e\nconfiança na gestão estadual."
+          },
+          {
+            "id": "15-tocantins-justica-acelerada",
+            "titulo": "15. TOCANTINS JUSTIÇA ACELERADA",
+            "nivel": 1,
+            "paginaInicial": 6,
+            "paginaFinal": 6,
+            "origem": "pdftotext",
+            "conteudo": "15. TOCANTINS JUSTIÇA ACELERADA\nResolução de demandas judiciais em até 6 meses.\nO programa pretende articular Governo, instituições do Sistema de Justiça,\nmunicípios, universidades e entidades para ampliar mecanismos de conciliação,\nmediação, arbitragem, digitalização e prevenção de litígios.\nA proposta busca reduzir burocracia e incentivar soluções mais rápidas para\nconflitos que afetam cidadãos, trabalhadores, empresas e poder público.\nO que buscamos alcançar: diminuir o tempo de resolução das demandas,\nreduzir conflitos acumulados e proporcionar mais segurança jurídica, menos\nburocracia e melhores condições para cidadãos e empresas.\n\n16. GESTÃO, TECNOLOGIA E JUVENTUDE\nPlanejamento, inovação e pessoas para um Tocantins mais competitivo.\nA modernização do Estado estará associada à criação de oportunidades para\numa nova geração. O programa propõe planejamento, metas, gestão por\nresultados, Governo digital, integração de dados e ampliação dos serviços\npúblicos disponíveis ao cidadão por meios tecnológicos.\nAo mesmo tempo, educação superior, qualificação profissional, inovação e\nempreendedorismo deverão preparar os jovens para as novas atividades\neconômicas.\nO que buscamos alcançar: construir um Governo mais simples, tecnológico e\neficiente e, paralelamente, criar condições para que a juventude encontre no\npróprio Tocantins formação, trabalho, inovação, renda e perspectivas de\nfuturo.\n\nCOMPROMISSO CENTRAL\nO TOCANTINS EM PRIMEIRO LUGAR\nDesenvolver cada região. Valorizar cada pessoa.\nA concepção que encerra o Plano é a de que o Tocantins será desenvolvido\na partir de suas regiões, de suas potencialidades e de sua gente. Educação\nformará o cidadão; tecnologia abrirá novas oportunidades; responsabilidade\nfiscal protegerá os investimentos; infraestrutura aproximará municípios e\nmercados; e o crescimento econômico deverá retornar à sociedade na forma de\nsaúde, segurança, emprego, renda e qualidade de vida.\nO objetivo final é simples e abrangente: fazer o Tocantins crescer criando\ncondições para que cada cidadão possa estudar, trabalhar, produzir,\nempreender e transformar o lugar onde vive.\n\nGOVERNANÇA E AVALIAÇÃO\nPlanejar. Executar. Avaliar. Prestar contas."
+          },
+          {
+            "id": "os-programas-nao-deverao-existir-apenas-como-compromissos-politicos-cada",
+            "titulo": "Os programas não deverão existir apenas como compromissos políticos. Cada",
+            "nivel": 1,
+            "paginaInicial": 7,
+            "paginaFinal": 7,
+            "origem": "pdftotext",
+            "conteudo": "Os programas não deverão existir apenas como compromissos políticos. Cada\num será estruturado com objetivos, municípios atendidos, órgãos\nresponsáveis, parceiros, orçamento, fontes de recursos, prazos, metas,\nindicadores e resultados esperados.\nUniversidades, órgãos técnicos e profissionais, associações comerciais,\nfederações, entidades representativas e sociedade civil participarão do\nacompanhamento das políticas e da avaliação de seus resultados.\nA proposta é estabelecer uma nova relação entre planejamento, execução e\nprestação de contas, permitindo que a população saiba não apenas o que o\nGoverno prometeu, mas o que realizou, onde realizou, quanto investiu e\nquais resultados entregou.\nA VISÃO QUE UNE OS 16 PROGRAMAS\nNão são 16 propostas isoladas. É um projeto de desenvolvimento para um\núnico Tocantins.\nA educação prepara as pessoas.\nA tecnologia cria novas oportunidades.\nO agro e a indústria produzem riqueza.\nA infraestrutura conecta essa produção aos mercados.\nO turismo movimenta as regiões.\nA segurança protege as famílias.\nA saúde cuida das pessoas.\nO municipalismo leva o desenvolvimento a cada cidade.\nA responsabilidade fiscal permite investir.\nE a transparência permite que a sociedade acompanhe os resultados.\n16 PROGRAMAS • 139 MUNICÍPIOS • UM SÓ TOCANTINS\nTOCANTINS: O SONHO CONTINUA EM CADA CIDADÃO.\n\nSiqueira Campos Jr.\nGovernador\n\nCapitão Osmar\nVice-Governador"
+          }
+        ],
+        "pageMap": [
+          {
+            "pagina": 1,
+            "origem": "pdftotext",
+            "textSha256": "6cf50c9ed4ce6a9eeebc4abf2026019c8768b612404318c8b93a1be76ebdcd88"
+          },
+          {
+            "pagina": 2,
+            "origem": "pdftotext",
+            "textSha256": "45bd9afd7254da5ad70a468b337a7506a573cd20dc42c6e95c62eb057d3c6f01"
+          },
+          {
+            "pagina": 3,
+            "origem": "pdftotext",
+            "textSha256": "fa6cd35f3b7c5e0b43d43950c8a853cc9a6fced63382fecd1db9aa3e92b73fa1"
+          },
+          {
+            "pagina": 4,
+            "origem": "pdftotext",
+            "textSha256": "7944cd864a28ba4dabb97e6ee5daa5a2c4489d5b6678f3dd3ec7d1c3651b18f5"
+          },
+          {
+            "pagina": 5,
+            "origem": "pdftotext",
+            "textSha256": "ee7e0b42d0f894f7ff98c4a72da772218cd320a5949523bd79f7998406698057"
+          },
+          {
+            "pagina": 6,
+            "origem": "pdftotext",
+            "textSha256": "62d9ac7e79d10b471081488592f50d13e6a96d20201503e54d94d0a09c348d0b"
+          },
+          {
+            "pagina": 7,
+            "origem": "pdftotext",
+            "textSha256": "773f1303208c57d6093400649ee557077f79ec4f2b029c6cd9703bc25a64237a"
+          }
+        ]
+      }
+    }
+  ],
+  "resumo": {
+    "texto": "O programa propõe interiorizar o ensino superior por meio da UNITINS, aproximando a formação das vocações econômicas de cada região do Tocantins. Na saúde, prevê regionalizar a assistência, fortalecendo hospitais e serviços em diferentes pontos do estado para oferecer atendimento mais perto de casa. Para a agricultura familiar, estabelece o objetivo de alcançar cem mil famílias produtivas em quatro anos, ampliando a renda e a produção. Na logística, propõe integrar os diferentes modais de transporte em uma estratégia estadual para reduzir custos e aproximar produtores dos mercados consumidores. Para a segurança, defende fortalecer a atuação conjunta das forças estaduais e municipais, com maior presença, inteligência e capacidade operacional no território. Na área ambiental, busca proteger recursos hídricos, nascentes, florestas e biodiversidade, associando o crescimento econômico à preservação das riquezas naturais do estado. O plano trata a responsabilidade fiscal como condição para que o estado mantenha sua capacidade permanente de investimento. A governança proposta prevê estruturar cada programa com objetivos e indicadores, permitindo acompanhar a execução das políticas e avaliar os resultados apresentados.",
+    "frases": [
+      {
+        "texto": "O programa propõe interiorizar o ensino superior por meio da UNITINS, aproximando a formação das vocações econômicas de cada região do Tocantins.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 1,
+            "trecho": "A UNITINS terá papel estratégico na interiorização do conhecimento, levando formação superior, qualificação e oportunidades para mais perto dos municípios. Os cursos deverão dialogar com as vocações econômicas de cada região, formando profissionais para áreas em que existam oportunidades reais de trabalho, produção e empreendedorismo. Universidades, institutos de ensino, setor produtivo e entidades profissionais serão parceiros na construção dessa política."
+          }
+        ]
+      },
+      {
+        "texto": "Na saúde, prevê regionalizar a assistência, fortalecendo hospitais e serviços em diferentes pontos do estado para oferecer atendimento mais perto de casa.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 2,
+            "trecho": "O Saúde Perto de Casa propõe reorganizar e regionalizar a assistência, fortalecendo hospitais e serviços de saúde em diferentes pontos do Estado."
+          },
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 2,
+            "trecho": "O que buscamos alcançar: reduzir filas, viagens e sofrimento, permitindo que o tocantinense tenha atendimento de qualidade mais perto de onde mora, com maior rapidez e capacidade de resolução."
+          }
+        ]
+      },
+      {
+        "texto": "Para a agricultura familiar, estabelece o objetivo de alcançar cem mil famílias produtivas em quatro anos, ampliando a renda e a produção.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 3,
+            "trecho": "O que buscamos alcançar: chegar a 100 mil famílias produtivas em quatro anos, ampliando produção, renda e segurança no campo e transformando pequenos produtores em protagonistas do desenvolvimento regional."
+          }
+        ]
+      },
+      {
+        "texto": "Na logística, propõe integrar os diferentes modais de transporte em uma estratégia estadual para reduzir custos e aproximar produtores dos mercados consumidores.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 3,
+            "trecho": "O Tocantins Modal propõe integrar rodovias, ferrovias, hidrovias, aeroportos e estruturas logísticas dentro de uma estratégia estadual."
+          },
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 4,
+            "trecho": "O que buscamos alcançar: reduzir custos logísticos, aproximar regiões produtoras dos mercados consumidores, atrair empresas e consolidar o Tocantins como corredor estratégico de produção e distribuição do Brasil."
+          }
+        ]
+      },
+      {
+        "texto": "Para a segurança, defende fortalecer a atuação conjunta das forças estaduais e municipais, com maior presença, inteligência e capacidade operacional no território.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 4,
+            "trecho": "Segurança pública exige presença, integração, inteligência e tecnologia. O programa propõe fortalecer a atuação conjunta das forças estaduais e municipais, ampliar videomonitoramento, inteligência policial, equipamentos, estrutura operacional e ações preventivas."
+          }
+        ]
+      },
+      {
+        "texto": "Na área ambiental, busca proteger recursos hídricos, nascentes, florestas e biodiversidade, associando o crescimento econômico à preservação das riquezas naturais do estado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 5,
+            "trecho": "Crescimento econômico e preservação ambiental devem caminhar juntos. A proposta busca proteger recursos hídricos, nascentes, florestas e biodiversidade, ao mesmo tempo em que estimula energia limpa, economia circular, gestão de resíduos e atividades produtivas sustentáveis."
+          }
+        ]
+      },
+      {
+        "texto": "O plano trata a responsabilidade fiscal como condição para que o estado mantenha sua capacidade permanente de investimento.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 5,
+            "trecho": "Responsabilidade fiscal será condição para que o Estado tenha capacidade permanente de investir."
+          }
+        ]
+      },
+      {
+        "texto": "A governança proposta prevê estruturar cada programa com objetivos e indicadores, permitindo acompanhar a execução das políticas e avaliar os resultados apresentados.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 7,
+            "trecho": "Os programas não deverão existir apenas como compromissos políticos. Cada um será estruturado com objetivos, municípios atendidos, órgãos responsáveis, parceiros, orçamento, fontes de recursos, prazos, metas, indicadores e resultados esperados."
+          },
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 7,
+            "trecho": "Universidades, órgãos técnicos e profissionais, associações comerciais, federações, entidades representativas e sociedade civil participarão do acompanhamento das políticas e da avaliação de seus resultados."
+          }
+        ]
+      }
+    ],
+    "temas": [
+      {
+        "id": "ensino-superior",
+        "titulo": "Ensino superior",
+        "descricao": "Interiorizar a formação superior por meio da UNITINS.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 1,
+            "trecho": "A UNITINS terá papel estratégico na interiorização do conhecimento, levando formação superior, qualificação e oportunidades para mais perto dos municípios. Os cursos deverão dialogar com as vocações econômicas de cada região, formando profissionais para áreas em que existam oportunidades reais de trabalho, produção e empreendedorismo. Universidades, institutos de ensino, setor produtivo e entidades profissionais serão parceiros na construção dessa política."
+          }
+        ]
+      },
+      {
+        "id": "saude-regional",
+        "titulo": "Saúde regional",
+        "descricao": "Regionalizar a assistência com hospitais e serviços em diferentes pontos do estado.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 2,
+            "trecho": "O Saúde Perto de Casa propõe reorganizar e regionalizar a assistência, fortalecendo hospitais e serviços de saúde em diferentes pontos do Estado."
+          }
+        ]
+      },
+      {
+        "id": "agricultura-familiar",
+        "titulo": "Agricultura familiar",
+        "descricao": "Alcançar cem mil famílias produtivas em quatro anos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 3,
+            "trecho": "O que buscamos alcançar: chegar a 100 mil famílias produtivas em quatro anos, ampliando produção, renda e segurança no campo e transformando pequenos produtores em protagonistas do desenvolvimento regional."
+          }
+        ]
+      },
+      {
+        "id": "logistica",
+        "titulo": "Logística",
+        "descricao": "Integrar modais de transporte para reduzir custos logísticos.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 3,
+            "trecho": "O Tocantins Modal propõe integrar rodovias, ferrovias, hidrovias, aeroportos e estruturas logísticas dentro de uma estratégia estadual."
+          },
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 4,
+            "trecho": "O que buscamos alcançar: reduzir custos logísticos, aproximar regiões produtoras dos mercados consumidores, atrair empresas e consolidar o Tocantins como corredor estratégico de produção e distribuição do Brasil."
+          }
+        ]
+      },
+      {
+        "id": "meio-ambiente",
+        "titulo": "Meio ambiente",
+        "descricao": "Proteger recursos hídricos, nascentes, florestas e biodiversidade.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 5,
+            "trecho": "Crescimento econômico e preservação ambiental devem caminhar juntos. A proposta busca proteger recursos hídricos, nascentes, florestas e biodiversidade, ao mesmo tempo em que estimula energia limpa, economia circular, gestão de resíduos e atividades produtivas sustentáveis."
+          }
+        ]
+      },
+      {
+        "id": "governanca",
+        "titulo": "Governança",
+        "descricao": "Estruturar programas com objetivos e indicadores para acompanhar os resultados.",
+        "evidencias": [
+          {
+            "documentoId": "TO:270002554375:01",
+            "pagina": 7,
+            "trecho": "Os programas não deverão existir apenas como compromissos políticos. Cada um será estruturado com objetivos, municípios atendidos, órgãos responsáveis, parceiros, orçamento, fontes de recursos, prazos, metas, indicadores e resultados esperados."
+          }
+        ]
+      }
+    ]
+  },
+  "julgamento": {
+    "model": "Anthropic Claude Sonnet@claude-sonnet-5@claude-cli",
+    "modelPinned": true,
+    "promptVersion": "programa-governo-governadores-judge-v2",
+    "judgedAt": "2026-09-07T18:54:34.775Z",
+    "verdicts": [
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 1 sustenta integralmente a afirmação sobre UNITINS e vocações econômicas."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Redação apenas descreve o conteúdo do documento, sem juízo de valor."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata de uma única proposta (ensino superior via UNITINS)."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Claim, evidência e página pertencem ao mesmo documento do candidato a Governador do TO."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:1:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "A evidência cobre todas as cláusulas materiais da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trechos da página 2 sustentam a regionalização e o atendimento mais perto de casa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do programa de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata apenas da política de saúde regionalizada."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:2:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidências cobrem regionalização, fortalecimento de hospitais e atendimento mais perto."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 3 sustenta a meta de 100 mil famílias produtivas em quatro anos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Número '100 mil' e prazo 'quatro anos' literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da meta do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata unicamente da agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:3:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre meta, prazo e objetivos de renda/produção."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trechos das páginas 3 e 4 sustentam integração de modais e redução de custos aproximando mercados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do programa de logística."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata apenas da política de logística/modais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:4:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidências cobrem integração de modais, redução de custos e aproximação de mercados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 4 sustenta o fortalecimento conjunto de forças e capacidade operacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do programa de segurança."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata apenas da política de segurança pública."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:5:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre presença, integração, inteligência e estrutura operacional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 5 sustenta a proteção ambiental associada ao crescimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da proposta ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata apenas da área ambiental."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:6:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre proteção de recursos hídricos, florestas, biodiversidade e crescimento econômico."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 5 sustenta exatamente a afirmação sobre responsabilidade fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra do compromisso fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata apenas do tema fiscal."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:7:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a cláusula da afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trechos da página 7 sustentam estruturação com objetivos, indicadores e acompanhamento/avaliação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação a verificar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Descrição neutra da governança do programa."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Trata unicamente do tema de governança/acompanhamento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:frase:8:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidências cobrem estruturação, indicadores e acompanhamento/avaliação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Mesma evidência da página 1 sustenta a versão resumida do tema."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de ensino superior."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:ensino-superior:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre a afirmação resumida integralmente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a regionalização da assistência de saúde."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de saúde regional."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:saude-regional:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a meta de 100 mil famílias produtivas em quatro anos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Número e prazo literalmente sustentados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de agricultura familiar."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:agricultura-familiar:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trechos sustentam integração de modais e redução de custos logísticos."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de logística/modais."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:logistica:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidências cobrem integralmente a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho sustenta a proteção de recursos hídricos, nascentes, florestas e biodiversidade."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de meio ambiente."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:meio-ambiente:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação resumida."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:suporte",
+        "verdict": "yes",
+        "reason": "Trecho da página 7 sustenta estruturação com objetivos e indicadores para acompanhar resultados."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:numeros",
+        "verdict": "yes",
+        "reason": "Não há números específicos na afirmação."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:neutralidade",
+        "verdict": "yes",
+        "reason": "Formulação neutra e descritiva."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:mistura",
+        "verdict": "yes",
+        "reason": "Tema único de governança."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:identidade",
+        "verdict": "yes",
+        "reason": "Mesma chave eleitoral e documento."
+      },
+      {
+        "id": "2026:GOVERNADOR:TO:270002554375:tema:governanca:documentos:TO:270002554375:01:cobertura",
+        "verdict": "yes",
+        "reason": "Evidência cobre integralmente a afirmação resumida."
+      }
+    ]
+  },
+  "geracao": {
+    "promptVersion": "programa-governo-governadores-generator-v1",
+    "model": "OpenAI Astra@gpt-6-astra@codex",
+    "modelPinned": true,
+    "generatedAt": "2026-09-07T18:40:51.779Z"
+  }
+}
