@@ -19,7 +19,7 @@ export function fonteDiretaProgramaEsperada(): ProgramaGovernoStageSource {
   assert.equal(pdf.detected_magic, "pdf")
   assert.equal(pdf.cod_tipo, "5")
   assert.equal(candidate.source.http_status, 200)
-  assert(sourcepack.runs.includes("https://github.com/thiago-salvador/puxa-ficha/actions/runs/34151762737"))
+  assert(sourcepack.runs.some((run) => run === "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34151762737"))
   const fonte = {
     ano: 2026 as const,
     cargo: "GOVERNADOR" as const,

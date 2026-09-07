@@ -57,8 +57,6 @@ jobs:
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
       - name: Provar forward, adulteração, concorrência, rollback e readbacks em PostgreSQL 17 descartável
-        env:
-          PF_PROVAR_SIQUEIRA_PG17: '1'
         run: bash scripts/audit/provar-siqueira-publication-pg17.sh
       - name: Backup read-only restrito, cifrado e validado antes de qualquer escrita
         if: inputs.mode != 'verify'

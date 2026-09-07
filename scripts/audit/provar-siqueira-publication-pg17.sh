@@ -3,8 +3,11 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT"
-# Reusa funções/bootstrap/imagem/trap; exclui apenas a chamada final main.
-eval "$(sed '$d' scripts/audit/replay-migrations.sh)"
+# Estado local preenchido pelo harness importado, não configuração de ambiente.
+CONTAINER=''
+R_APLICADAS=0
+# Reusa funções/bootstrap/imagem/trap pela entrada estática do harness.
+source scripts/audit/replay-migrations.sh
 set -euo pipefail
 subir_container siqueira
 bootstrap
