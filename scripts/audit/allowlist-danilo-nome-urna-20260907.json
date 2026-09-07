@@ -1,0 +1,12 @@
+{
+  "versao": "2026-09-07",
+  "fonte": "TSE consulta_cand_2026.zip, run 34144197661, 2026-09-07T16:39:21.607Z, SHA256 640f5ee64e25c9f594efe614f49d599091c098d5972c6eac981d0661de4d5e2a; SQ 90002553733, GO, Governador, PCO, NM_URNA_CANDIDATO DANILO DA SILVA.",
+  "motivo": "Issue #283: atualizar somente nome de urna atual e sua menção na biografia, preservando nome civil, slug e snapshots históricos.",
+  "coorte": ["danilo-pinheiro"],
+  "fora_por_construcao": {"slugs": []},
+  "entries": [{"tabela": "candidatos", "slug": "danilo-pinheiro", "campos": ["nome_urna", "biografia"], "max_registros": 1}],
+  "referencias": [
+    {"tabela": "chapas_2026", "ref": "danilo-nome-urna-20260907", "campos": ["titular_nome_urna"], "max_registros": 1},
+    {"tabela": "coleta_log", "ref": "migration:20260907180000", "campos": ["fonte", "escopo", "alvo", "candidato_id", "resultado", "volume", "detalhe", "url", "execucao", "natureza"], "max_registros": 1}
+  ]
+}
