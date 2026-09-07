@@ -18,6 +18,7 @@ import {
 import { compareCandidacies } from "../lib/data-freshness/candidaturas";
 import {
   collectCurrentOfficialCandidacies,
+  collectCurrentStatusEvidence,
   collectDirectCandidaciesMissingFromCdn,
   type DivulgaCandReceipt,
 } from "../lib/data-freshness/divulgacand-current";
@@ -320,6 +321,8 @@ async function main(): Promise<void> {
   let currentOfficial: OfficialCandidacy[] = [];
   const divulgacandReceipts: DivulgaCandReceipt[] = [];
   const directReceipts: DivulgaCandReceipt[] = [];
+  const statusReceipts: DivulgaCandReceipt[] = [];
+  let currentStatusEvidence: CandidacyRecord[] = [];
   let source: Record<string, unknown>;
   let tseEvidence: SourceEvidence = {
     source_id: "tse-current",
@@ -408,6 +411,15 @@ async function main(): Promise<void> {
       const direct = await collectDirectCandidaciesMissingFromCdn(
         official, current.records, current.receipts, directReceipts,
       );
+      currentStatusEvidence = await collectCurrentStatusEvidence(
+        official, current.records, published.records, current.receipts, statusReceipts,
+      );
+      source.current_status_evidence = {
+        mode: "live_official",
+        policy: "published_direct_with_unknown_cdn_status",
+        records: currentStatusEvidence,
+        receipts: statusReceipts,
+      };
       source.direct_candidacies = {
         mode: "live_official",
         policy: "cdn_missing_only",
@@ -438,6 +450,7 @@ async function main(): Promise<void> {
       attempts,
       divulgacand_receipts: divulgacandReceipts,
       direct_candidacy_receipts: directReceipts,
+      current_status_receipts: statusReceipts,
     };
     tseEvidence = {
       source_id: "tse-current",
@@ -507,7 +520,7 @@ async function main(): Promise<void> {
     official,
     published.records,
     generatedAt,
-    { substitutedViceSqs: readSubstitutedViceSqs() },
+    { substitutedViceSqs: readSubstitutedViceSqs(), currentOfficial, currentStatusEvidence },
   );
   const currentOfficialWithProfiles = attachPublishedProfiles(
     currentOfficial,

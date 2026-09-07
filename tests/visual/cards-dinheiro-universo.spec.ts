@@ -227,7 +227,7 @@ function expectedPatrimonioSemDado(row: PatrimonioEleicaoPublico): ExpectedVisib
     String(row.ano),
     formatPatrimonioEleicaoEstadoLabel(row.estado),
     row.estado === "vazio_confirmado"
-      ? `Sem bens declarados ao TSE em ${row.ano}. O pacote oficial de bens desta eleição foi conferido e não traz registros para este candidato.`
+      ? `Sem bens declarados ao TSE em ${row.ano}. A fonte oficial de bens desta eleição foi conferida e não traz registros para este candidato.`
       : `A coleta de bens da eleição de ${row.ano} ainda não foi realizada. A ausência de dados aqui não significa ausência de bens.`,
   ]
   if (row.estado === "vazio_confirmado" && row.verificado_em) {

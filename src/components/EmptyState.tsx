@@ -89,7 +89,7 @@ export function getPatrimonioEmptyState(
     return {
       title: "Nenhum patrimônio declarado no TSE",
       description:
-        "A fonte oficial foi conferida em todos os pleitos aplicáveis e não registra bens declarados. Para um candidato com histórico de cargos públicos, essa ausência é uma informação relevante.",
+        "A fonte oficial foi conferida em todos os pleitos aplicáveis e não registra bens declarados.",
       type: "notable" as const,
     }
   }

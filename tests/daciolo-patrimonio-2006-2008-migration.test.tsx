@@ -290,7 +290,7 @@ describe("contrato de exibicao dos dois anos", () => {
     assert.ok(html.includes('data-pf-patrimonio-eleicao="2008"'))
     assert.ok(html.includes('data-pf-patrimonio-eleicao-estado="vazio_confirmado"'))
     assert.ok(
-      html.includes(`Sem bens declarados ao TSE em 2008. O pacote oficial de bens desta eleição foi conferido e ${FRASE_AUSENCIA}`),
+      html.includes(`Sem bens declarados ao TSE em 2008. A fonte oficial de bens desta eleição foi conferida e ${FRASE_AUSENCIA}`),
       "a frase de ausencia so e verdadeira em 2008, e ela precisa estar la",
     )
     assert.ok(html.includes(URL_BENS_2008), "a ausencia sem fonte oficial e afirmacao sem endereco")
@@ -315,7 +315,7 @@ describe("contrato de exibicao dos dois anos", () => {
     const htmlErrado = renderMoneyTab(eleicoesErradas, semODe2006)
 
     assert.ok(
-      htmlErrado.includes(`Sem bens declarados ao TSE em 2006. O pacote oficial de bens desta eleição foi conferido e ${FRASE_AUSENCIA}`),
+      htmlErrado.includes(`Sem bens declarados ao TSE em 2006. A fonte oficial de bens desta eleição foi conferida e ${FRASE_AUSENCIA}`),
       "e esta e a frase falsa: o pacote bem_candidato_2006 TRAZ um registro para o SQ 12132 em RJ",
     )
     assert.ok(

@@ -1,0 +1,205 @@
+{
+  "provenance": {
+    "actions_run": "34157244496",
+    "source_sha256": "62c1ee651b83f2db07a3460a59a6161bdb3f214e84d9ce6fb7514e3b262cbe19",
+    "universe_sha256": "f450b2641c5bb31378115c8434f80635ab1f7d5db6e4e297d29f03fabd98aabe",
+    "detail_receipts": [
+      {
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554375",
+        "checked_at": "2026-09-07T18:39:09.746Z",
+        "http_status": 200,
+        "payload_raw_sha256": "4b47d9752f0b97b0d711a4b93da88d1c2f507ce880fb81e87eadc8302ced56cd"
+      },
+      {
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554376",
+        "checked_at": "2026-09-07T18:39:10.022Z",
+        "http_status": 200,
+        "payload_raw_sha256": "cc8df3179916f1ab0556a5188995eff1ff6c2ba5167c5dcaa92f4292fcf4df4f"
+      }
+    ],
+    "note": "Exact relevant rows from run; detail bodies separately captured before publication, projected to public identity and status fields only. Replays are offline, not fresh source claims."
+  },
+  "official": [
+    {
+      "sq_candidato": "270002554375",
+      "cargo": "GOVERNADOR",
+      "uf": "TO",
+      "sq_coligacao": "270001800814",
+      "nome_urna": "SIQUEIRA CAMPOS JR",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": "#NE",
+      "perfil_slug": null
+    },
+    {
+      "sq_candidato": "270002546368",
+      "cargo": "GOVERNADOR",
+      "uf": "TO",
+      "sq_coligacao": "270001800814",
+      "nome_urna": "SUBTENENTE LUIZ CARLOS",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": "#NE",
+      "perfil_slug": null
+    },
+    {
+      "sq_candidato": "270002554376",
+      "cargo": "VICE GOVERNADOR",
+      "uf": "TO",
+      "sq_coligacao": "270001800814",
+      "nome_urna": "CAPITÃO OSMAR",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": "#NE",
+      "perfil_slug": null
+    },
+    {
+      "sq_candidato": "270002546369",
+      "cargo": "VICE GOVERNADOR",
+      "uf": "TO",
+      "sq_coligacao": "270001800814",
+      "nome_urna": "JAIR MEDEIROS",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": "#NE",
+      "perfil_slug": null
+    }
+  ],
+  "published": [
+    {
+      "uf": "TO",
+      "cargo": "GOVERNADOR",
+      "nome_urna": "SIQUEIRA CAMPOS JR",
+      "perfil_slug": "siqueira-campos-jr",
+      "sq_candidato": "270002554375",
+      "sq_coligacao": "",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": null,
+      "situacao_descricao": "Aguardando julgamento"
+    },
+    {
+      "uf": "TO",
+      "cargo": "GOVERNADOR",
+      "nome_urna": "SUBTENENTE LUIZ CARLOS",
+      "perfil_slug": "subtenente-luiz-carlos",
+      "sq_candidato": "270002546368",
+      "sq_coligacao": "270001800814",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": null
+    },
+    {
+      "uf": "TO",
+      "cargo": "VICE GOVERNADOR",
+      "nome_urna": "CAPITÃO OSMAR",
+      "perfil_slug": null,
+      "sq_candidato": "270002554376",
+      "sq_coligacao": "",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": null,
+      "situacao_descricao": "Aguardando julgamento"
+    },
+    {
+      "uf": "TO",
+      "cargo": "VICE GOVERNADOR",
+      "nome_urna": "JAIR MEDEIROS",
+      "perfil_slug": null,
+      "sq_candidato": "270002546369",
+      "sq_coligacao": "270001800814",
+      "partido_sigla": "DEMOCRATA",
+      "situacao_codigo": "-3",
+      "situacao_descricao": null
+    }
+  ],
+  "current": [
+    {
+      "sq_candidato": "270002554375",
+      "profile_slug": "siqueira-campos-jr",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "SIQUEIRA CAMPOS JR",
+      "status": "Aguardando julgamento",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    },
+    {
+      "sq_candidato": "270002546368",
+      "profile_slug": "subtenente-luiz-carlos",
+      "office": "Governador",
+      "uf": "TO",
+      "name": "SUBTENENTE LUIZ CARLOS",
+      "status": "Indeferido",
+      "party": "DEMOCRATA",
+      "checked_at": null
+    }
+  ],
+  "details": [
+    {
+      "id": 270002554375,
+      "nomeUrna": "SIQUEIRA CAMPOS JR",
+      "descricaoSituacao": "Aguardando julgamento",
+      "ufCandidatura": "TO",
+      "eleicao": {
+        "id": 20322002026,
+        "ano": 2026
+      },
+      "cargo": {
+        "codigo": 3,
+        "nome": "Governador"
+      },
+      "partido": {
+        "sigla": "DEMOCRATA"
+      },
+      "isCandidatoInapto": false,
+      "st_SUBSTITUIDO": false,
+      "vices": [
+        {
+          "sq_CANDIDATO": 270002546369,
+          "nm_URNA": "JAIR MEDEIROS",
+          "situacaoVice": 3,
+          "sg_PARTIDO": "DEMOCRATA"
+        },
+        {
+          "sq_CANDIDATO": 270002554376,
+          "nm_URNA": "CAPITÃO OSMAR",
+          "situacaoVice": 1,
+          "sg_PARTIDO": "DEMOCRATA"
+        }
+      ]
+    },
+    {
+      "id": 270002554376,
+      "nomeUrna": "CAPITÃO OSMAR",
+      "descricaoSituacao": "Aguardando julgamento",
+      "ufCandidatura": "TO",
+      "eleicao": {
+        "id": 20322002026,
+        "ano": 2026
+      },
+      "cargo": {
+        "codigo": 4,
+        "nome": "Vice-governador"
+      },
+      "partido": {
+        "sigla": "DEMOCRATA"
+      },
+      "isCandidatoInapto": false,
+      "st_SUBSTITUIDO": false,
+      "vices": [
+        {
+          "sq_CANDIDATO": 270002546368,
+          "nm_URNA": "SUBTENENTE LUIZ CARLOS",
+          "situacaoVice": null,
+          "sg_PARTIDO": "DEMOCRATA"
+        },
+        {
+          "sq_CANDIDATO": 270002554375,
+          "nm_URNA": "SIQUEIRA CAMPOS JR",
+          "situacaoVice": null,
+          "sg_PARTIDO": "DEMOCRATA"
+        }
+      ]
+    }
+  ]
+}
+

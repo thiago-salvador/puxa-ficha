@@ -343,7 +343,7 @@ function PatrimonioEleicaoSemDadoRow({ eleicao }: { eleicao: PatrimonioEleicaoPu
       </div>
       <p className="mt-1.5 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
         {eleicao.estado === "vazio_confirmado"
-          ? `Sem bens declarados ao TSE em ${eleicao.ano}. O pacote oficial de bens desta eleição foi conferido e não traz registros para este candidato.`
+          ? `Sem bens declarados ao TSE em ${eleicao.ano}. A fonte oficial de bens desta eleição foi conferida e não traz registros para este candidato.`
           : `A coleta de bens da eleição de ${eleicao.ano} ainda não foi realizada. A ausência de dados aqui não significa ausência de bens.`}
       </p>
       {eleicao.estado === "vazio_confirmado" && (verificadoEm || fonteHref) && (

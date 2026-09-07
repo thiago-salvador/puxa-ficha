@@ -6,6 +6,7 @@ import type {
   RelevantOffice,
 } from "./types"
 import { stripAccents } from "../../../src/lib/strip-accents"
+import type { OfficialCandidacy } from "../../../src/lib/candidate-publication-integrity"
 
 const OFFICE_ORDER: Record<RelevantOffice, number> = {
   PRESIDENTE: 0,
@@ -47,7 +48,20 @@ function sameIdentity(a: CandidacyRecord, b: CandidacyRecord): boolean {
   )
 }
 
+function statusDescription(value: string | null): string | null {
+  const description = normalized(value)
+  return !description || description === "#NE" ? null : description
+}
+
+/** -3/#NE registra ausência de informação no CSV, sem equivalência com situação humana. */
+export function hasUnknownCdnStatus(record: CandidacyRecord): boolean {
+  return (!record.situacao_codigo || record.situacao_codigo === "-3") &&
+    statusDescription(record.situacao_descricao) === null
+}
+
 export interface CompareCandidaciesOptions {
+  currentOfficial?: readonly (OfficialCandidacy & { party?: string })[]
+  currentStatusEvidence?: readonly CandidacyRecord[]
   /**
    * SQ_CANDIDATO das vices que o DivulgaCandContas marca como substituídas
    * (situacaoVice 3). O pacote consolidado consulta_cand_2026.zip mantém as
@@ -92,7 +106,8 @@ export function compareCandidacies(
     if (
       publishedRecord &&
       publishedRecord.sq_candidato &&
-      publishedRecord.sq_candidato !== officialRecord.sq_candidato
+      publishedRecord.sq_candidato !== officialRecord.sq_candidato &&
+      !publishedBySq.has(officialRecord.sq_candidato)
     ) {
       replacedOfficial.add(officialRecord.sq_candidato)
       replacedPublished.add(publishedRecord.sq_candidato)
@@ -146,20 +161,34 @@ export function compareCandidacies(
       continue
     }
 
-    if (
-      ((officialRecord.source_origin === "divulgacand_current" ||
-        !officialRecord.situacao_codigo || !publishedRecord.situacao_codigo) &&
-        normalized(officialRecord.situacao_descricao) !== normalized(publishedRecord.situacao_descricao)) ||
-      (officialRecord.situacao_codigo &&
-      publishedRecord.situacao_codigo &&
-      officialRecord.situacao_codigo !== publishedRecord.situacao_codigo)
-    ) {
+    let currentDescription = statusDescription(officialRecord.situacao_descricao)
+    const publishedDescription = statusDescription(publishedRecord.situacao_descricao)
+    if (hasUnknownCdnStatus(officialRecord) && !publishedRecord.situacao_codigo) {
+      const detail = options.currentStatusEvidence?.find((row) =>
+        row.sq_candidato === officialRecord.sq_candidato && sameIdentity(row, officialRecord))
+      const titular = options.currentOfficial?.find((row) =>
+        row.sq_candidato === officialRecord.sq_candidato &&
+        normalized(row.name) === normalized(officialRecord.nome_urna) &&
+        normalized(row.party ?? null) === normalized(officialRecord.partido_sigla) &&
+        normalized(row.office) === officialRecord.cargo && row.uf === officialRecord.uf)
+      currentDescription = statusDescription(detail?.situacao_descricao ?? titular?.status ?? null)
+    }
+    const bothCodes = Boolean(officialRecord.situacao_codigo && publishedRecord.situacao_codigo)
+    const statusUnknown = !bothCodes && Boolean(currentDescription || publishedDescription ||
+      !hasUnknownCdnStatus(officialRecord) || !hasUnknownCdnStatus(publishedRecord)) &&
+      (!currentDescription || !publishedDescription)
+    const statusChanged = bothCodes
+      ? officialRecord.situacao_codigo !== publishedRecord.situacao_codigo
+      : currentDescription !== publishedDescription
+    if (statusChanged || statusUnknown) {
       addChange(changes, {
         kind: "status_change",
         slot: candidacySlot(officialRecord),
         official: officialRecord,
         published: publishedRecord,
-        detail: `situação mudou de ${publishedRecord.situacao_descricao ?? publishedRecord.situacao_codigo} para ${officialRecord.situacao_descricao ?? officialRecord.situacao_codigo}`,
+        detail: statusUnknown
+          ? "situação oficial sem evidência comparável à situação publicada; revisão necessária"
+          : `situação mudou de ${publishedRecord.situacao_descricao ?? publishedRecord.situacao_codigo} para ${currentDescription ?? officialRecord.situacao_codigo}`,
       })
     }
 
