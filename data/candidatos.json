@@ -4932,6 +4932,20 @@
     }
   },
   {
+    "slug": "siqueira-campos-jr",
+    "nome_completo": "José Wilson Siqueira Campos Júnior",
+    "nome_urna": "Siqueira Campos Jr",
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "270002554375"
+      }
+    }
+  },
+  {
     "slug": "wilson-grassi-junior",
     "nome_completo": "Wilson Grassi Júnior",
     "nome_urna": "Wilson Grassi Júnior",

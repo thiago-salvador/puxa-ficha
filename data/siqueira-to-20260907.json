@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "scope": "Admissão de SIQUEIRA CAMPOS JR, SQ 270002554375, Governador/TO, por fonte oficial direta explicitamente modelada. Campos selecionados; CPF, título eleitoral, endereço, email e telefone não integram este pacote.",
+  "runs": [
+    "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34151762737",
+    "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34152174008"
+  ],
+  "candidate": {
+    "id": "1d5c69c3-4a4e-4f8f-9796-aa2248775e80",
+    "slug": "siqueira-campos-jr",
+    "sq_candidato_2026": "270002554375",
+    "nome_completo": "JOSÉ WILSON SIQUEIRA CAMPOS JÚNIOR",
+    "nome_urna": "SIQUEIRA CAMPOS JR",
+    "partido_sigla": "DEMOCRATA",
+    "partido_atual": "DEMOCRATA",
+    "numero": 35,
+    "cargo_disputado": "Governador",
+    "estado": "TO",
+    "data_nascimento": "1956-12-19",
+    "naturalidade": "Campinas (SP)",
+    "formacao": "Ensino Médio completo",
+    "profissao_declarada": "Empresário",
+    "genero": "Masculino",
+    "estado_civil": "Divorciado(a)",
+    "cor_raca": "Branca",
+    "situacao_candidatura": "aguardando julgamento",
+    "api_descricao_situacao": "Aguardando julgamento",
+    "api_descricao_totalizacao": "Concorrendo",
+    "api_codigo_situacao_candidato": 8,
+    "api_descricao_situacao_candidato": "Cadastrado",
+    "api_is_candidato_inapto": false,
+    "api_candidato_apto": false,
+    "api_substituido": false,
+    "vice_vigente_sq": "270002554376",
+    "contagem_vices_vigentes": 1,
+    "vices_anunciados": [
+      {"sq_candidato": "270002546369", "nome_urna": "JAIR MEDEIROS", "situacao_vice": 3},
+      {"sq_candidato": "270002554376", "nome_urna": "CAPITÃO OSMAR", "situacao_vice": 1}
+    ],
+    "foto_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/270002554375/TO",
+    "source": {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554375",
+      "checked_at": "2026-09-07T18:29:39.648Z",
+      "http_status": 200,
+      "payload_raw_sha256": "4b47d9752f0b97b0d711a4b93da88d1c2f507ce880fb81e87eadc8302ced56cd"
+    }
+  },
+  "vice": {
+    "sq_candidato": "270002554376",
+    "nome_urna": "CAPITÃO OSMAR",
+    "nome_completo": "OSMAR GOMES DE LIMA",
+    "partido_sigla": "DEMOCRATA",
+    "cargo": "Vice-governador",
+    "api_descricao_situacao": "Aguardando julgamento",
+    "api_descricao_totalizacao": "Concorrendo",
+    "api_codigo_situacao_candidato": 8,
+    "api_descricao_situacao_candidato": "Cadastrado",
+    "api_is_candidato_inapto": false,
+    "api_candidato_apto": false,
+    "api_substituido": false,
+    "source": {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002554376",
+      "checked_at": "2026-09-07T18:35:27.213Z",
+      "http_status": 200,
+      "payload_raw_sha256": "cc8df3179916f1ab0556a5188995eff1ff6c2ba5167c5dcaa92f4292fcf4df4f"
+    }
+  },
+  "patrimonio": {
+    "ano_eleicao": 2026,
+    "sq_candidato": "270002554375",
+    "bens": [],
+    "total_de_bens": 0,
+    "divulgacao_bens": true,
+    "interpretacao": "Ausência oficial confirmada no detalhe desta inscrição. Não criar linha fictícia de patrimônio com valor zero.",
+    "source_reference": "candidate.source"
+  },
+  "media": [
+    {
+      "kind": "foto",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/270002554375/TO",
+      "checked_at": "2026-09-07T18:35:27.270Z",
+      "http_status": 200,
+      "content_type_declared": "image/png",
+      "detected_magic": "jpeg",
+      "bytes": 5022,
+      "sha256": "70bc72a8c3898db72d2a8e2b4a39a708b9338720cc0d464dfe2a7a98c144da14"
+    },
+    {
+      "kind": "programa_governo",
+      "id_arquivo": "270017140501",
+      "nome": "Plano de Governo Final.pdf",
+      "cod_tipo": "5",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/270017140501",
+      "checked_at": "2026-09-07T18:35:27.509Z",
+      "http_status": 200,
+      "content_type_declared": "application/pdf",
+      "detected_magic": "pdf",
+      "bytes": 93284,
+      "sha256": "4fe5618450e7f3ecbde2d2ed128138028b4389e625a3304aa0cabf47d59746b7"
+    }
+  ],
+  "replaced_registration": {
+    "sq_candidato": "270002546368",
+    "nome_urna": "SUBTENENTE LUIZ CARLOS",
+    "descricao_situacao": "Indeferido",
+    "descricao_situacao_candidato": "Não consta da urna",
+    "is_candidato_inapto": true,
+    "substituido": true,
+    "substituto_sq": "270002554375",
+    "action": "Preservar despublicado; nenhuma alteração nesta inscrição.",
+    "source": {
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002546368",
+      "checked_at": "2026-09-07T18:29:39.936Z",
+      "http_status": 200,
+      "payload_raw_sha256": "209930417c18c6276c4b4a2cc8e7821ff1c3c5d27111c0c1d78af325516a8cf5"
+    }
+  },
+  "package_probe": {
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026_TO.zip",
+    "run": "https://github.com/thiago-salvador/puxa-ficha/actions/runs/34152402711",
+    "checked_at": "2026-09-07T18:39:11.646760+00:00",
+    "http_status": 403,
+    "conclusion": "Acesso negado no runner e local. Não prova ausência dos SQs no pacote. SQ_COLIGACAO e códigos CSV continuam sem evidência."
+  },
+  "source_limits": [
+    "Código 8 da API não é CD_SITUACAO_CANDIDATURA do CSV.",
+    "O array vices também inclui JAIR MEDEIROS SQ270002546369; não usar a ordem da lista como vínculo atual.",
+    "O histórico da API contém somente a inscrição de 2026; isso não prova ausência de candidaturas anteriores.",
+    "Certidões anunciadas não foram interpretadas e seus nomes não comprovam ausência de processos."
+  ]
+}

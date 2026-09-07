@@ -48,7 +48,7 @@ function sha(value: string): string {
   return createHash("sha256").update(value).digest("hex")
 }
 
-function governorSource(overrides: Partial<ProgramaGovernoFonte> = {}): ProgramaGovernoFonte {
+function governorSource(overrides: Partial<Extract<ProgramaGovernoFonte, { origem?: "pacote_tse" }>> = {}): Extract<ProgramaGovernoFonte, { origem?: "pacote_tse" }> {
   return {
     ano: 2026,
     cargo: "GOVERNADOR",
@@ -68,6 +68,7 @@ function governorSource(overrides: Partial<ProgramaGovernoFonte> = {}): Programa
 }
 
 function documentSource(source: ProgramaGovernoFonte, sequence: number): ProgramaGovernoDocumentoFonte {
+  assert(source.origem !== "divulgacand_pdf")
   const suffix = String(sequence).padStart(2, "0")
   const arquivoNome = `2026${source.uf}${source.sqCandidato}_${suffix}.pdf`
   return {

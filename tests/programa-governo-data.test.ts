@@ -8,6 +8,7 @@ import {
   type ProgramaGovernoRegistro,
 } from "../src/lib/programa-governo"
 import { RECIBOS_AUSENCIA_SUPERADOS_SQS, RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS } from "../scripts/lib/programas-governo-recibos-ausencia"
+import { fonteDiretaProgramaEsperada } from "../scripts/lib/programas-governo-fontes-diretas"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -105,7 +106,9 @@ test("server-only manifest retains approved records and explicit official absenc
   const announcedSlugs = governorAbsenceReceipt.receipts
     .filter(({ sq_candidato }) => RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS.has(sq_candidato))
     .map(({ profile_slug }) => profile_slug)
-  const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs, ...announcedSlugs].sort()
+  const directSource = fonteDiretaProgramaEsperada()
+  assert.ok(directSource.slug)
+  const publicGovernorSlugs = [...approvedGovernorSlugs, ...absenceSlugs, ...announcedSlugs, directSource.slug].sort()
   const expectedTotal = 13 + publicGovernorSlugs.length
   assert.equal(programaModule.programasGoverno2026Identidades.length, expectedTotal)
   assert.equal(new Set(programaModule.programasGoverno2026Identidades.map(programaGovernoChave)).size, expectedTotal)

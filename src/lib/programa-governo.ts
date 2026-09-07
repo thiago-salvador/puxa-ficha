@@ -80,32 +80,68 @@ export type ProgramaGovernoSecao = {
   conteudo: string
 }
 
-type ProgramaGovernoFonteBase = ProgramaGovernoIdentidade & {
+export type ProgramaGovernoVinculoCandidatura = {
+  fonteUrl: string
+  arquivoId: string
+  codTipo: "5"
+  consultadoEm: string
+  payloadSha256: string
+  evidenciaUrl: string
+}
+
+type ProgramaGovernoOrigemDocumento = {
+  origem?: "pacote_tse"
   pacoteUrl: string
+  arquivoNoPacote: string
+  pdfOriginalUrl: string | null
+  vinculoCandidatura?: never
+} | {
+  origem: "divulgacand_pdf"
+  pacoteUrl: null
+  arquivoNoPacote: null
+  pdfOriginalUrl: string
+  vinculoCandidatura: ProgramaGovernoVinculoCandidatura
+}
+
+type ProgramaGovernoFonteBase = ProgramaGovernoIdentidade & {
+  origem?: "pacote_tse" | "divulgacand_pdf"
+  pacoteUrl: string | null
   datasetUrl: string
   pdfOriginalUrl: string | null
   coletadoEm: string
 }
 
-export type ProgramaGovernoFonte = ProgramaGovernoFonteBase & {
+export type ProgramaGovernoFonte = ProgramaGovernoFonteBase & ProgramaGovernoOrigemDocumento & {
   arquivoNome: string
-  arquivoNoPacote: string
 }
 
 export type ProgramaGovernoFonteSemDocumento = ProgramaGovernoFonteBase & {
+  origem?: "pacote_tse"
+  pacoteUrl: string
+  vinculoCandidatura?: never
   arquivoNome?: null
   arquivoNoPacote?: null
 }
 
 export type ProgramaGovernoDocumentoFonte = Pick<
-  ProgramaGovernoFonte,
-  | "arquivoNome"
-  | "arquivoNoPacote"
-  | "pacoteUrl"
-  | "datasetUrl"
-  | "pdfOriginalUrl"
-  | "coletadoEm"
->
+  ProgramaGovernoFonte, "arquivoNome" | "datasetUrl" | "coletadoEm"
+> & ProgramaGovernoOrigemDocumento
+
+export function programaGovernoDocumentoFonte(fonte: ProgramaGovernoFonte): ProgramaGovernoDocumentoFonte {
+  const comum = { arquivoNome: fonte.arquivoNome, datasetUrl: fonte.datasetUrl, coletadoEm: fonte.coletadoEm }
+  if (fonte.origem === "divulgacand_pdf") {
+    return { ...comum, origem: fonte.origem, pacoteUrl: null, arquivoNoPacote: null, pdfOriginalUrl: fonte.pdfOriginalUrl, vinculoCandidatura: fonte.vinculoCandidatura }
+  }
+  return {
+    arquivoNome: fonte.arquivoNome,
+    arquivoNoPacote: fonte.arquivoNoPacote,
+    pacoteUrl: fonte.pacoteUrl,
+    datasetUrl: fonte.datasetUrl,
+    pdfOriginalUrl: fonte.pdfOriginalUrl,
+    coletadoEm: fonte.coletadoEm,
+    ...(fonte.origem ? { origem: fonte.origem } : {}),
+  }
+}
 
 export type ProgramaGovernoExtracao = {
   sourceSha256: string
@@ -192,7 +228,7 @@ export type ProgramaGovernoRegistro = {
 export type ProgramaGovernoPublico = {
   version: 1
   estado: "aprovado"
-  fonte: ProgramaGovernoFontePublica & { arquivoNoPacote: string }
+  fonte: ProgramaGovernoFontePublica & { arquivoNoPacote: string | null }
   resumo: ProgramaGovernoResumo
   paginas: number
   secoes: ProgramaGovernoSecao[]
@@ -463,7 +499,44 @@ export function programaGovernoTextoResidualLegado(): ReadonlyArray<TextoResidua
 function fonteTemDocumento(
   fonte: ProgramaGovernoFonte | ProgramaGovernoFonteSemDocumento,
 ): fonte is ProgramaGovernoFonte {
-  return typeof fonte.arquivoNome === "string" && typeof fonte.arquivoNoPacote === "string"
+  return typeof fonte.arquivoNome === "string"
+    && (typeof fonte.arquivoNoPacote === "string" || fonte.origem === "divulgacand_pdf")
+}
+
+function assertProgramaGovernoOrigem(
+  fonte: Record<string, unknown>,
+  identidade: ProgramaGovernoIdentidade,
+  arquivoNome: string | null,
+  path: string,
+): void {
+  if (fonte.origem === "divulgacand_pdf") {
+    if (!arquivoNome || fonte.pacoteUrl !== null || fonte.arquivoNoPacote !== null) {
+      fail(path, "PDF direto exige documento identificado e pacote/caminho nulos")
+    }
+    const pdf = stringAt(fonte.pdfOriginalUrl, `${path}.pdfOriginalUrl`)
+    const vinculo = objectAt(fonte.vinculoCandidatura, `${path}.vinculoCandidatura`)
+    const arquivoId = stringAt(vinculo.arquivoId, `${path}.vinculoCandidatura.arquivoId`)
+    if (vinculo.codTipo !== "5") fail(`${path}.vinculoCandidatura.codTipo`, "deve identificar programa de governo")
+    if (!/^[^/\\]+\.pdf$/i.test(arquivoNome)) fail(`${path}.arquivoNome`, "deve identificar o nome do PDF oficial")
+    if (!/^\d+$/.test(arquivoId) || pdf !== `https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/${arquivoId}`) {
+      fail(`${path}.pdfOriginalUrl`, "deve corresponder ao arquivo oficial do DivulgaCand")
+    }
+    const detalhe = `https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/${identidade.uf}/20322002026/candidato/${identidade.sqCandidato}`
+    if (vinculo.fonteUrl !== detalhe) fail(`${path}.vinculoCandidatura.fonteUrl`, "deve corresponder a UF e SQ_CANDIDATO")
+    isoDateAt(vinculo.consultadoEm, `${path}.vinculoCandidatura.consultadoEm`)
+    if (!SHA256_PATTERN.test(String(vinculo.payloadSha256))) fail(`${path}.vinculoCandidatura.payloadSha256`, "SHA-256 invalido")
+    if (!/^https:\/\/github\.com\/thiago-salvador\/puxa-ficha\/actions\/runs\/\d+$/.test(String(vinculo.evidenciaUrl))) {
+      fail(`${path}.vinculoCandidatura.evidenciaUrl`, "deve identificar a execucao que preservou a resposta")
+    }
+    return
+  }
+  if (fonte.origem !== undefined && fonte.origem !== "pacote_tse") fail(`${path}.origem`, "origem documental invalida")
+  if (fonte.vinculoCandidatura !== undefined) fail(`${path}.vinculoCandidatura`, "recibo exclusivo do PDF direto")
+  if (arquivoNome && fonte.arquivoNoPacote !== `${identidade.uf}/${arquivoNome}`) {
+    fail(`${path}.arquivoNoPacote`, "caminho inesperado no pacote TSE")
+  }
+  tseUrlAt(fonte.pacoteUrl, `${path}.pacoteUrl`, "zip")
+  if (fonte.pdfOriginalUrl !== null) tseUrlAt(fonte.pdfOriginalUrl, `${path}.pdfOriginalUrl`, "pdf")
 }
 
 export function assertProgramaGovernoFonte(
@@ -482,15 +555,12 @@ export function assertProgramaGovernoFonte(
   }
   if (!packageOnly) {
     const arquivoNome = stringAt(source.arquivoNome, `${path}.arquivoNome`)
-    if (arquivoNome !== `${ano}${uf}${sq}_01.pdf`) {
+    if (source.origem !== "divulgacand_pdf" && arquivoNome !== `${ano}${uf}${sq}_01.pdf`) {
       fail(`${path}.arquivoNome`, "deve corresponder a eleicao, UF e SQ_CANDIDATO")
     }
-    const arquivoNoPacote = stringAt(source.arquivoNoPacote, `${path}.arquivoNoPacote`)
-    if (arquivoNoPacote !== `${uf}/${arquivoNome}`) fail(`${path}.arquivoNoPacote`, "caminho inesperado no pacote TSE")
   }
-  tseUrlAt(source.pacoteUrl, `${path}.pacoteUrl`, "zip")
+  assertProgramaGovernoOrigem(source, source, packageOnly ? null : String(source.arquivoNome), path)
   tseUrlAt(source.datasetUrl, `${path}.datasetUrl`, "dataset")
-  if (source.pdfOriginalUrl !== null) tseUrlAt(source.pdfOriginalUrl, `${path}.pdfOriginalUrl`, "pdf")
   isoDateAt(source.coletadoEm, `${path}.coletadoEm`)
 }
 
@@ -504,14 +574,9 @@ function assertProgramaGovernoDocumentoFonte(
   const sufixo = String(sequencia).padStart(2, "0")
   const arquivoNome = stringAt(fonte.arquivoNome, `${path}.arquivoNome`)
   const esperado = `${identidade.ano}${identidade.uf}${identidade.sqCandidato}_${sufixo}.pdf`
-  if (arquivoNome !== esperado) fail(`${path}.arquivoNome`, `deve ser a parte sequencial ${sufixo}`)
-  const arquivoNoPacote = stringAt(fonte.arquivoNoPacote, `${path}.arquivoNoPacote`)
-  if (arquivoNoPacote !== `${identidade.uf}/${arquivoNome}`) {
-    fail(`${path}.arquivoNoPacote`, "caminho inesperado no pacote TSE")
-  }
-  tseUrlAt(fonte.pacoteUrl, `${path}.pacoteUrl`, "zip")
+  if (fonte.origem !== "divulgacand_pdf" && arquivoNome !== esperado) fail(`${path}.arquivoNome`, `deve ser a parte sequencial ${sufixo}`)
+  assertProgramaGovernoOrigem(fonte, identidade, arquivoNome, path)
   tseUrlAt(fonte.datasetUrl, `${path}.datasetUrl`, "dataset")
-  if (fonte.pdfOriginalUrl !== null) tseUrlAt(fonte.pdfOriginalUrl, `${path}.pdfOriginalUrl`, "pdf")
   isoDateAt(fonte.coletadoEm, `${path}.coletadoEm`)
 }
 
@@ -725,23 +790,20 @@ export function assertProgramaGovernoRegistro(value: unknown): asserts value is 
       "datasetUrl",
       "pdfOriginalUrl",
       "coletadoEm",
+      "origem",
     ] as const) {
       if (fonte[key] !== primeiraFonte[key]) {
         fail(`registro.fonte.${key}`, "deve corresponder ao primeiro documento")
       }
     }
+    if (JSON.stringify(fonte.vinculoCandidatura) !== JSON.stringify(primeiraFonte.vinculoCandidatura)) {
+      fail("registro.fonte.vinculoCandidatura", "deve corresponder ao primeiro documento")
+    }
   } else {
     assertProgramaGovernoExtracao(record.extracao, "registro.extracao")
     documentos.set(documentoLegadoId, {
       documentoId: documentoLegadoId,
-      fonte: {
-        arquivoNome: fonte.arquivoNome,
-        arquivoNoPacote: fonte.arquivoNoPacote,
-        pacoteUrl: fonte.pacoteUrl,
-        datasetUrl: fonte.datasetUrl,
-        pdfOriginalUrl: fonte.pdfOriginalUrl,
-        coletadoEm: fonte.coletadoEm,
-      },
+      fonte: programaGovernoDocumentoFonte(fonte),
       extracao: record.extracao,
     })
   }

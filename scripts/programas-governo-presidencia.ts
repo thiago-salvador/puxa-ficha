@@ -35,6 +35,7 @@ async function main(): Promise<void> {
   }
   const source = sources.find((candidate) => candidate.slug === slugArg)
   if (!source) throw new Error(`slug nao encontrado no registro oficial: ${slugArg}`)
+  if (source.origem === "divulgacand_pdf") throw new Error("Extrator presidencial ZIP exige fonte de pacote")
   assertTseProgramaUrl(source.pacoteUrl)
 
   const workspace = await createProgramaTempWorkspace()

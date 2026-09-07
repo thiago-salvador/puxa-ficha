@@ -82,6 +82,27 @@ test("rota de Ben entrega o programa aprovado sem metadados editoriais", async (
   assert.doesNotMatch(JSON.stringify(body), /"extracao"|"revisao"|"julgamento"|"geracao"|"reviewer"/)
 })
 
+test("rota de Siqueira entrega PDF direto e páginas com identidade documental", async () => {
+  const resource = await getProgramaGovernoPublicResource("siqueira-campos-jr")
+  assert.equal(resource.data?.estado, "aprovado")
+  const handler = createProgramaGovernoGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({ namespace: "programa-route-direto", max: 5, windowMs: 60_000 }),
+    getProgramaGovernoPublicResource: async () => resource,
+  })
+  const response = await handler(request("siqueira-campos-jr"), params("siqueira-campos-jr"))
+  const body = await response.json()
+  assert.equal(response.status, 200)
+  assert.equal(body.data?.resumo.frases.length, 8)
+  assert.equal(body.fonte.sqCandidato, "270002554375")
+  assert.equal(body.fonte.pacoteUrl, null)
+  assert.equal(body.fonte.pdfOriginalUrl, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/270017140501")
+  assert.doesNotMatch(JSON.stringify(body), /vinculoCandidatura|payloadSha256|julgamento|geracao|reviewer/)
+  const chunk = await getProgramaGovernoPublicChunk("siqueira-campos-jr", "TO:270002554375:01", null)
+  assert.equal(chunk.known, true)
+  assert.equal(chunk.chunk?.secoes.length, 7)
+  assert.equal(chunk.chunk?.documento.fonte.arquivoNoPacote, null)
+})
+
 test("rota retorna o DTO aprovado e remove campos editoriais", async () => {
   const resource = await getProgramaGovernoPublicResource("lula", async () => approvedRecord())
   const handler = createProgramaGovernoGetHandler({

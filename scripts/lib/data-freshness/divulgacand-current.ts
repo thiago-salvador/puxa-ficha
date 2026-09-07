@@ -1,7 +1,21 @@
-import type {
-  OfficialCandidacy,
-  OfficialVice,
+import { createHash } from "node:crypto";
+import {
+  classifyOfficialCandidacy,
+  selectCurrentVice,
+  type OfficialCandidacy,
+  type OfficialVice,
 } from "../../../src/lib/candidate-publication-integrity";
+import { stripAccents } from "../../../src/lib/strip-accents";
+import type { CandidacyRecord } from "./types";
+
+export interface DivulgaCandReceipt {
+  url: string;
+  checked_at: string;
+  http_status: number | null;
+  sha256: string | null;
+}
+
+type CurrentCandidacy = OfficialCandidacy & { party: string; checked_at: string | null };
 
 export const DIVULGACAND_BASE =
   "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura";
@@ -117,9 +131,14 @@ async function fetchJsonWithRetry(
   url: string,
   fetchImpl: FetchLike,
   attempts = 3,
+  receipts?: DivulgaCandReceipt[],
 ): Promise<unknown> {
   let lastError: Error | null = null;
   for (let attempt = 1; attempt <= attempts; attempt++) {
+    const receipt: DivulgaCandReceipt = {
+      url, checked_at: new Date().toISOString(), http_status: null, sha256: null,
+    };
+    receipts?.push(receipt);
     try {
       const response = await fetchImpl(url, {
         headers: {
@@ -128,12 +147,21 @@ async function fetchJsonWithRetry(
           "user-agent": "PuxaFichaDataFreshness/1.0",
         },
         signal: AbortSignal.timeout(20_000),
+        redirect: "error",
+        cache: "no-store",
       });
-      if (response.ok) return await response.json();
+      receipt.http_status = response.status;
+      const body = await response.text();
+      receipt.sha256 = createHash("sha256").update(body).digest("hex");
+      if (response.ok) {
+        if (body.length > 2_000_000) throw new Error("resposta excede limite");
+        return JSON.parse(body) as unknown;
+      }
       lastError = new Error(`DivulgaCand HTTP ${response.status}: ${url}`);
       if (![403, 408, 429, 500, 502, 503, 504].includes(response.status)) break;
-    } catch (error) {
-      lastError = error instanceof Error ? error : new Error(String(error));
+    } catch {
+      // Erros de parse podem incluir trechos privados do corpo da resposta.
+      lastError = new Error(`DivulgaCand resposta inválida ou indisponível: ${url}`);
     }
     if (attempt < attempts)
       await new Promise((resolve) => setTimeout(resolve, attempt * 250));
@@ -143,6 +171,7 @@ async function fetchJsonWithRetry(
 
 export async function collectCurrentOfficialCandidacies(
   fetchImpl: FetchLike = fetch,
+  receipts: DivulgaCandReceipt[] = [],
 ) {
   const records: Array<
     OfficialCandidacy & { party: string; checked_at: string | null }
@@ -152,7 +181,7 @@ export async function collectCurrentOfficialCandidacies(
   for (const uf of BRAZIL_UFS) {
     const url = listUrl("Governador", uf);
     const rows = sanitizeCandidateList(
-      await fetchJsonWithRetry(url, fetchImpl),
+      await fetchJsonWithRetry(url, fetchImpl, 3, receipts),
       "Governador",
       uf,
     );
@@ -166,7 +195,7 @@ export async function collectCurrentOfficialCandidacies(
 
   const presidentUrl = listUrl("Presidente", null);
   const presidents = sanitizeCandidateList(
-    await fetchJsonWithRetry(presidentUrl, fetchImpl),
+    await fetchJsonWithRetry(presidentUrl, fetchImpl, 3, receipts),
     "Presidente",
     null,
   );
@@ -187,7 +216,117 @@ export async function collectCurrentOfficialCandidacies(
     );
   }
 
-  return { records, sources };
+  return { records, sources, receipts };
+}
+
+const normalized = (value: unknown) =>
+  stripAccents(String(value ?? "")).replace(/\s+/g, " ").trim().toUpperCase();
+
+interface CandidateDetail extends RawCandidate {
+  isCandidatoInapto?: boolean;
+  st_SUBSTITUIDO?: boolean;
+  ufCandidatura?: string;
+  eleicao?: { id?: string | number; ano?: number };
+  cargo?: { codigo?: number; nome?: string };
+  vices?: Array<RawVice & { sg_PARTIDO?: string }>;
+}
+
+/** A ausência no pacote não basta: lista e dois detalhes oficiais devem concordar. */
+export async function collectDirectCandidaciesMissingFromCdn(
+  cdn: readonly CandidacyRecord[],
+  current: readonly CurrentCandidacy[],
+  listReceipts: readonly DivulgaCandReceipt[],
+  receipts: DivulgaCandReceipt[] = [],
+  fetchImpl: FetchLike = fetch,
+  now?: Date,
+): Promise<CandidacyRecord[]> {
+  const seen = new Set<string>();
+  for (const row of current) {
+    if (seen.has(row.sq_candidato)) throw new Error("DivulgaCand lista com SQ duplicado");
+    seen.add(row.sq_candidato);
+  }
+  const cdnBySq = new Map(cdn.map((row) => [row.sq_candidato, row]));
+  const additions = new Map<string, CandidacyRecord>();
+  const resolvedViceSqs = new Set<string>();
+  const fresh = (receipt: DivulgaCandReceipt) => {
+    const age = (now?.getTime() ?? Date.now()) - Date.parse(receipt.checked_at);
+    return receipt.http_status === 200 && /^[a-f0-9]{64}$/.test(receipt.sha256 ?? "") &&
+      Number.isFinite(age) && age >= -60_000 && age <= 3_600_000;
+  };
+  async function detail(sq: string, uf: string | null) {
+    if (!/^\d+$/.test(sq)) throw new Error("DivulgaCand SQ inválido");
+    const url = `${DIVULGACAND_BASE}/buscar/2026/${uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${sq}`;
+    const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts);
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+      throw new Error(`DivulgaCand detalhe inválido para SQ ${sq}`);
+    }
+    if (!receipts.some((receipt) => receipt.url === url && fresh(receipt))) {
+      throw new Error(`DivulgaCand detalhe sem recibo fresco para SQ ${sq}`);
+    }
+    return raw as CandidateDetail;
+  }
+  function validate(raw: CandidateDetail, sq: string, name: string, party: string, uf: string | null, officeCode: number) {
+    if (String(raw.id) !== sq || normalized(raw.nomeUrna) !== normalized(name) ||
+        !party || normalized(raw.partido?.sigla) !== normalized(party) ||
+        normalized(raw.ufCandidatura) !== (uf ?? "BR") ||
+        String(raw.eleicao?.id) !== ELECTION_ID_2026 || raw.eleicao?.ano !== 2026 ||
+        raw.cargo?.codigo !== officeCode ||
+        raw.isCandidatoInapto !== false || raw.st_SUBSTITUIDO !== false ||
+        classifyOfficialCandidacy({ status: raw.descricaoSituacao ?? null }) !== "active") {
+      throw new Error(`DivulgaCand detalhe divergente ou não ativo para SQ ${sq}`);
+    }
+  }
+  function add(raw: CandidateDetail, sq: string, uf: string | null, cargo: CandidacyRecord["cargo"]) {
+    if (additions.has(sq)) throw new Error(`DivulgaCand detalhe compartilha SQ ${sq} entre chapas`);
+    if (cdnBySq.has(sq)) return; // Nunca substituir qualquer campo existente no CDN.
+    additions.set(sq, {
+      sq_candidato: sq, uf, cargo, sq_coligacao: "",
+      nome_urna: nonEmpty(raw.nomeUrna, "nome de urna"),
+      partido_sigla: nonEmpty(raw.partido?.sigla, "partido"),
+      situacao_codigo: null,
+      situacao_descricao: nonEmpty(raw.descricaoSituacao, "situação"),
+      perfil_slug: null, source_origin: "divulgacand_current",
+    });
+  }
+  for (const row of current) {
+    if (cdnBySq.has(row.sq_candidato)) continue;
+    // Terminal e desconhecido continuam na reconciliação, sem ganhar admissão.
+    if (classifyOfficialCandidacy(row) !== "active") continue;
+    if (!listReceipts.some((receipt) => receipt.url === listUrl(row.office, row.uf) && fresh(receipt))) {
+      throw new Error(`DivulgaCand lista sem recibo fresco para SQ ${row.sq_candidato}`);
+    }
+    const raw = await detail(row.sq_candidato, row.uf);
+    const governor = row.office === "Governador";
+    validate(raw, row.sq_candidato, row.name, row.party, row.uf, governor ? 3 : 1);
+    if (normalized(raw.descricaoSituacao) !== normalized(row.status)) {
+      throw new Error(`DivulgaCand situação diverge entre lista e detalhe para SQ ${row.sq_candidato}`);
+    }
+    const vices = sanitizeVices(raw);
+    if (new Set(vices.map((vice) => vice.sq_candidato)).size !== vices.length ||
+        vices.some((vice) => ![1, 3].includes(vice.situacao_vice))) {
+      throw new Error(`DivulgaCand vices duplicadas ou situação desconhecida para SQ ${row.sq_candidato}`);
+    }
+    const selected = selectCurrentVice(row.sq_candidato, vices);
+    if (selected.status !== "resolved") throw new Error(`DivulgaCand vice não resolvida para SQ ${row.sq_candidato}`);
+    const vice = selected.vice;
+    if (resolvedViceSqs.has(vice.sq_candidato)) {
+      throw new Error(`DivulgaCand vice compartilha SQ ${vice.sq_candidato} entre chapas`);
+    }
+    resolvedViceSqs.add(vice.sq_candidato);
+    const viceParty = raw.vices?.find((entry) => String(entry.sq_CANDIDATO) === vice.sq_candidato)?.sg_PARTIDO ?? "";
+    const viceDetail = await detail(vice.sq_candidato, row.uf);
+    validate(viceDetail, vice.sq_candidato, vice.name, viceParty, row.uf, governor ? 4 : 2);
+    const cdnVice = cdnBySq.get(vice.sq_candidato);
+    if (cdnVice && (normalized(cdnVice.nome_urna) !== normalized(viceDetail.nomeUrna) ||
+        normalized(cdnVice.partido_sigla) !== normalized(viceDetail.partido?.sigla) ||
+        cdnVice.uf !== row.uf || cdnVice.cargo !== (governor ? "VICE GOVERNADOR" : "VICE PRESIDENTE") ||
+        normalized(cdnVice.situacao_descricao) !== normalized(viceDetail.descricaoSituacao))) {
+      throw new Error(`DivulgaCand vice diverge do CDN para SQ ${vice.sq_candidato}`);
+    }
+    add(raw, row.sq_candidato, row.uf, governor ? "GOVERNADOR" : "PRESIDENTE");
+    add(viceDetail, vice.sq_candidato, row.uf, governor ? "VICE GOVERNADOR" : "VICE PRESIDENTE");
+  }
+  return [...additions.values()];
 }
 
 export async function collectCandidateVices(

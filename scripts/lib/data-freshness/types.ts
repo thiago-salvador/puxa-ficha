@@ -38,6 +38,8 @@ export interface CandidacyRecord {
   situacao_codigo: string | null
   situacao_descricao: string | null
   perfil_slug: string | null
+  /** Somente registros comprovados na coleta direta desta auditoria. */
+  source_origin?: "divulgacand_current"
 }
 
 export type CandidacyChangeKind =

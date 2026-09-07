@@ -13,6 +13,7 @@ import {
   assertProgramaGovernoFonte,
   assertProgramaGovernoRegistro,
   programaGovernoRevisaoHashes,
+  programaGovernoDocumentoFonte,
   type ProgramaGovernoDocumento,
   type ProgramaGovernoDocumentoFonte,
   type ProgramaGovernoEvidencia,
@@ -263,14 +264,7 @@ function documentoIdLegado(source: ProgramaGovernoIdentity): string {
 }
 
 function documentoFonteDoRegistro(source: ProgramaGovernoFontePipeline): ProgramaGovernoDocumentoFonte {
-  return {
-    arquivoNome: source.arquivoNome,
-    arquivoNoPacote: source.arquivoNoPacote,
-    pacoteUrl: source.pacoteUrl,
-    datasetUrl: source.datasetUrl,
-    pdfOriginalUrl: source.pdfOriginalUrl,
-    coletadoEm: source.coletadoEm,
-  }
+  return programaGovernoDocumentoFonte(source)
 }
 
 export function programaGovernoDocumentos(record: ProgramaGovernoPipelineRecord): ProgramaGovernoDocumento[] {
@@ -334,11 +328,14 @@ function documentoEntradaFingerprint(entry: ProgramaGovernoDocumentoEntrada): re
   return [
     entry.documentoId,
     entry.fonte.arquivoNome,
-    entry.fonte.arquivoNoPacote,
-    entry.fonte.pacoteUrl,
+    entry.fonte.arquivoNoPacote ?? "",
+    entry.fonte.pacoteUrl ?? "",
     entry.fonte.datasetUrl,
     entry.fonte.pdfOriginalUrl ?? "",
     entry.fonte.coletadoEm,
+    ...(entry.fonte.origem === "divulgacand_pdf"
+      ? [entry.fonte.origem, JSON.stringify(entry.fonte.vinculoCandidatura)]
+      : []),
   ]
 }
 
@@ -701,7 +698,9 @@ export function renderProgramaGovernoReviewHtml(records: readonly ProgramaGovern
     const themes = record.resumo.temas.map((theme) => `<li><strong>tema:${escapeHtml(theme.id)}</strong> ${escapeHtml(theme.titulo)}: ${escapeHtml(theme.descricao)}<ul>${theme.evidencias.map(evidenceHtml).join("")}</ul></li>`).join("")
     const documentsHtml = documents.map((document) => {
       const sourceLink = document.fonte.pdfOriginalUrl ?? document.fonte.pacoteUrl
-      return `<section><h3>Documento ${escapeHtml(document.documentoId)}</h3><p><a href="${escapeHtml(sourceLink)}">Abrir fonte oficial do TSE</a>; arquivo ${escapeHtml(document.fonte.arquivoNome)}; caminho ${escapeHtml(document.fonte.arquivoNoPacote)}</p><p>source_sha256=${document.extracao.sourceSha256}; extracted_text_sha256=${document.extracao.extractedTextSha256}; ${document.extracao.paginas} páginas; ${document.extracao.secoes.length} seções.</p></section>`
+      if (!sourceLink) throw new Error("Documento sem URL oficial")
+      const caminho = document.fonte.arquivoNoPacote ? `; caminho ${escapeHtml(document.fonte.arquivoNoPacote)}` : "; PDF direto do DivulgaCand"
+      return `<section><h3>Documento ${escapeHtml(document.documentoId)}</h3><p><a href="${escapeHtml(sourceLink)}">Abrir fonte oficial do TSE</a>; arquivo ${escapeHtml(document.fonte.arquivoNome)}${caminho}</p><p>source_sha256=${document.extracao.sourceSha256}; extracted_text_sha256=${document.extracao.extractedTextSha256}; ${document.extracao.paginas} páginas; ${document.extracao.secoes.length} seções.</p></section>`
     }).join("")
     const identity = programaGovernoIdentityKey(record.fonte)
     return `<article><h2>${escapeHtml(record.fonte.nomeUrna)} (${escapeHtml(record.fonte.partido)})</h2><p><strong>Identidade:</strong> ${escapeHtml(identity)}; slug=${escapeHtml(record.fonte.slug ?? "perfil-local-ausente")}</p><p><strong>Estado:</strong> nunca aprovado pelo stage</p>${alerts}<p>${escapeHtml(record.resumo.texto)}</p><h3>Claims e evidências</h3><ul>${items}${themes}</ul><h3>Fontes por documento</h3>${documentsHtml}<p>documentos=${documents.length}; prompt=${escapeHtml(record.geracao?.promptVersion ?? "ausente")}; judge_rubric=${escapeHtml(record.julgamento.promptVersion ?? "legada")}.</p></article>`
@@ -719,6 +718,7 @@ async function extractRecord(source: ProgramaGovernoStageSource, archiveBytes: B
     void _documentos
     const documents: ProgramaGovernoDocumento[] = []
     for (const [index, input] of documentoEntradas(source).entries()) {
+      if (input.fonte.origem === "divulgacand_pdf") throw new Error("Stage ZIP exige fonte de pacote; use extração direta verificada para DivulgaCand")
       const pdfPath = resolve(workspace.directory, basename(input.fonte.arquivoNome))
       const extracted = await execFileAsync("unzip", ["-p", archivePath, input.fonte.arquivoNoPacote], { encoding: "buffer", maxBuffer: 64 * 1024 * 1024 })
       await writeFile(pdfPath, extracted.stdout as Buffer)
