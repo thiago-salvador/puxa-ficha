@@ -7,6 +7,7 @@ import {
 } from "../../../src/lib/candidate-publication-integrity";
 import { stripAccents } from "../../../src/lib/strip-accents";
 import type { CandidacyRecord } from "./types";
+import { hasUnknownCdnStatus } from "./candidaturas";
 
 export interface DivulgaCandReceipt {
   url: string;
@@ -327,6 +328,39 @@ export async function collectDirectCandidaciesMissingFromCdn(
     add(viceDetail, vice.sq_candidato, row.uf, governor ? "VICE GOVERNADOR" : "VICE PRESIDENTE");
   }
   return [...additions.values()];
+}
+
+/** Revalida somente a transição de perfil direto para CSV ainda sem situação. */
+export async function collectCurrentStatusEvidence(
+  cdn: readonly CandidacyRecord[],
+  current: readonly CurrentCandidacy[],
+  published: readonly CandidacyRecord[],
+  listReceipts: readonly DivulgaCandReceipt[],
+  receipts: DivulgaCandReceipt[] = [],
+  fetchImpl: FetchLike = fetch,
+): Promise<CandidacyRecord[]> {
+  const cdnBySq = new Map(cdn.map((row) => [row.sq_candidato, row]));
+  const needed = new Set(published.filter((row) => {
+    const official = cdnBySq.get(row.sq_candidato);
+    return !row.situacao_codigo && !hasUnknownCdnStatus(row) && official && hasUnknownCdnStatus(official);
+  }).map((row) => row.sq_candidato));
+  if (needed.size === 0) return [];
+  // O coletor já exige lista fresca, detalhe titular/vice, flags, eleição e vigência.
+  // As linhas retornadas são evidências separadas; nunca substituem campos do CDN.
+  const evidence = await collectDirectCandidaciesMissingFromCdn(
+    cdn.filter((row) => !needed.has(row.sq_candidato)),
+    current.filter((row) => needed.has(row.sq_candidato)),
+    listReceipts, receipts, fetchImpl,
+  );
+  for (const row of evidence) {
+    const official = cdnBySq.get(row.sq_candidato);
+    if (official && (normalized(official.nome_urna) !== normalized(row.nome_urna) ||
+        normalized(official.partido_sigla) !== normalized(row.partido_sigla) ||
+        official.cargo !== row.cargo || official.uf !== row.uf)) {
+      throw new Error(`DivulgaCand evidência de situação diverge da identidade CDN para SQ ${row.sq_candidato}`);
+    }
+  }
+  return evidence;
 }
 
 export async function collectCandidateVices(
