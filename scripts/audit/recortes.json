@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "danilo-nome-urna-20260907",
+      "desde": "20260907180000",
+      "ate": "20260907180000",
+      "allowlist": "scripts/audit/allowlist-danilo-nome-urna-20260907.json",
+      "divida": null
+    },
+    {
       "nome": "quota-ip-operacional-20260905",
       "desde": "20260905220100",
       "ate": "20260905220100",
