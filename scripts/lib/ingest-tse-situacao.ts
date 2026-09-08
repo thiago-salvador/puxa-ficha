@@ -560,7 +560,9 @@ export async function ingestTSESituacao(
   let comJulgamento = 0
   let semSqParaCruzar = 0
   const julgamentoPorSq = await carregarJulgamentoPorSq(PLEITO_CORRENTE)
-  if (options.observationOnly && !julgamentoPorSq) throw new Error("Official judgment source unavailable for observation")
+  if (options.observationOnly && (!julgamentoPorSq || julgamentoPorSq.size === 0)) {
+    throw new Error("Official judgment source unavailable or empty for observation")
+  }
   if (julgamentoPorSq) {
     censoJulgamento = censoPorDescricao(julgamentoPorSq)
     for (const info of matched.values()) {
