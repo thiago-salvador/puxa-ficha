@@ -218,6 +218,7 @@ Os one-offs históricos continuam versionados no diretório. Conferir o inventá
 | `backup-db.yml` | 05:30 UTC diária e manual | Backup do banco. |
 | `ledger-guard.yml` | 06:10 UTC diária, push em `main` e manual | `audit:ledger:gate` do banco contra `supabase/migrations`; nunca roda em PR, porque PR de fork não recebe secret. |
 | `ingest.yml` | Quarta, 06:00 UTC e manual | Câmara e Senado; lotes manuais de TSE, **sanções** e notícias; revalidação após sucesso. |
+| `observe-home-updates.yml` | Quarta, 08:00 UTC e manual | Confirma patrimônio e situação do ciclo atual na fonte e na ficha; escreve somente referências/eventos do H12. Primeiro registro é baseline. Divergências aguardam revisão dos fatos. Compartilha o lock da ingestão. |
 | `patrimonio-rerun.yml` | Domingo, 09:00 UTC e manual (ativado em 12/08/2026; primeiro disparo 16/08) | Re-run de patrimônio do ciclo 2026 em dry-run: baixa o pacote oficial do TSE e compara por composição contra o baseline auditado. Não escreve, não recebe secret; publicar o delta continua exigindo migration com gate. |
 | `data-quality.yml` | Quinta, 09:00 UTC; dia 3, 07:00 UTC; manual | Coorte, superfície pública, integridade da cadeia partidária e auditoria de identidade SQ. |
 | `data-freshness-audit.yml` | 11:37 UTC diária e manual | `audit:data-freshness --strict` sobre fonte oficial, candidaturas e SLA; publica o relatório como artefato. |

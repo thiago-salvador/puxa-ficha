@@ -405,7 +405,8 @@ describe("classificador puro (#136)", () => {
     // Reclassificação de Dr. Helton medida no PG17: 362 + mesmas 105 = 467 arquivos.
     // Nome de urna de Danilo medido no PG17: 363 + mesmas 105 = 468 arquivos.
     // Fonte direta medida no PG17: 365 + mesmas 105 = 470 arquivos.
-    assert.equal(manifesto.aplicadas_esperadas, 365)
+    // H12 medido no gate local PG17: 366 aplicadas + mesmas 105 = 471.
+    assert.equal(manifesto.aplicadas_esperadas, 366)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
