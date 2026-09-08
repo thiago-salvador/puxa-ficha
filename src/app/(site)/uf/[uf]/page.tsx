@@ -15,9 +15,8 @@ import {
   mergeSourceStatuses,
 } from "@/lib/api"
 import { computeStateRanking } from "@/lib/state-ranking"
-import { isUncertainParty } from "@/lib/party-utils"
+import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { STATE_INDICATOR_CONFIG } from "@/lib/state-indicator-metadata"
-import type { IndicadorEstadual } from "@/lib/types"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 const ComparadorPanel = lazy(() =>
   import("@/components/ComparadorPanel").then((m) => ({ default: m.ComparadorPanel })),
@@ -37,16 +36,6 @@ import { StatePrograms } from "@/components/StatePrograms"
 import { StatePolls } from "@/components/StatePolls"
 import { loadStatePrograms } from "@/lib/state-programs"
 import { loadStatePolls } from "@/lib/state-polls"
-
-function latestIndicador(
-  indicadores: IndicadorEstadual[],
-  key: string
-): IndicadorEstadual | null {
-  const rows = indicadores
-    .filter((i) => i.indicador === key && i.valor != null)
-    .sort((a, b) => b.ano - a.ano)
-  return rows[0] ?? null
-}
 
 export async function generateStaticParams() {
   return getEstadoUFs().map((uf) => ({ uf }))
@@ -159,24 +148,8 @@ export default async function UfHubPage({
     patrimonios[r.candidato.slug] = r.patrimonio
   }
 
-  const totalCandidatos = candidatos.length
-  const totalPatrimonio = resumos.reduce((sum, r) => sum + (r.patrimonio ?? 0), 0)
-  const totalProcessos = resumos.reduce((sum, r) => sum + r.processos, 0)
-  const partidos = new Set(
-    candidatos.map((c) => c.partido_sigla).filter((value) => Boolean(value) && !isUncertainParty(value))
-  )
-  const totalPartidos = partidos.size
-
-  const pop = latestIndicador(indicadores, "populacao_estimada")
-  const pib = latestIndicador(indicadores, "pib_total")
-
-  // "Contexto territorial" saiu em 17/08, por decisão do dono. O bloco era prosa montada por
-  // template a partir do ranking de indicadores, e o texto que chegava ao leitor tinha defeito
-  // visível ("a media nacional situa em", sem o "se"; "2o de 27" no lugar de "2º"). Ranking de
-  // estado também não é o assunto do site, que é candidato.
-  //
-  // A numeração das seções já previa a ausência dele, então o governo volta a ser 01 sem
-  // buraco na sequência.
+  const { totalCandidatos, totalPatrimonio, totalProcessos } =
+    getHomeHeroMetrics(resumos, resumosResource.sourceStatus)
   const secGov = "01"
 
   const schema = {
@@ -222,87 +195,35 @@ export default async function UfHubPage({
             </h1>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20">
-            {pop?.valor != null && (
-              <div>
+          <div className="mt-6 flex flex-wrap gap-6 pb-4 sm:gap-12 lg:gap-20" data-pf-state-hero-metrics>
+            {[
+              { label: "candidatos mapeados", value: totalCandidatos },
+              { label: "processos", value: totalProcessos },
+              { label: "patrimônio declarado", value: totalPatrimonio === null ? null : formatCompact(totalPatrimonio) },
+            ].map(({ label, value }) => (
+              <div key={label}>
                 <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {STATE_INDICATOR_CONFIG.populacao_estimada.format(pop.valor)}
+                  {value ?? "N/D"}
                 </p>
                 <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  população (ref. {pop.ano})
+                  {label}
                 </p>
               </div>
-            )}
-            {pib?.valor != null && (
-              <div>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {STATE_INDICATOR_CONFIG.pib_total.format(pib.valor)}
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  PIB (ref. {pib.ano})
-                </p>
-              </div>
-            )}
-            {totalCandidatos > 0 && (
-              <div>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {totalCandidatos}
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  candidatos mapeados
-                </p>
-              </div>
-            )}
-            {totalCandidatos === 0 && pop == null && pib == null && totalPatrimonio > 0 && (
-              <div>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {formatCompact(totalPatrimonio)}
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  patrimônio declarado
-                </p>
-              </div>
-            )}
-            {totalCandidatos === 0 &&
-              pop == null &&
-              pib == null &&
-              totalPatrimonio === 0 &&
-              totalProcessos > 0 && (
-                <div>
-                  <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                    {totalProcessos}
-                  </p>
-                  <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                    processos
-                  </p>
-                </div>
-              )}
-            {totalCandidatos === 0 &&
-              pop == null &&
-              pib == null &&
-              totalPatrimonio === 0 &&
-              totalProcessos === 0 &&
-              totalPartidos > 0 && (
-                <div>
-                  <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                    {totalPartidos}
-                  </p>
-                  <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                    partidos
-                  </p>
-                </div>
-              )}
+            ))}
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
+        <StateIndicators indicadores={indicadores} estado={uf} unavailable={indicadoresResource.sourceStatus !== "live"} />
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
         <nav aria-label="Seções do estado" className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-3 text-sm font-semibold">
           <a href="#candidatos" className="inline-flex min-h-11 items-center">Candidaturas</a>
-          <a href="#indicadores" className="inline-flex min-h-11 items-center">Contexto estadual</a>
           <a href="#programas" className="inline-flex min-h-11 items-center">Programas por tema</a>
           <a href="#pesquisas" className="inline-flex min-h-11 items-center">Pesquisas</a>
+          <a href="#indicadores" className="inline-flex min-h-11 items-center">O estado</a>
+          <a href="#ranking" className="inline-flex min-h-11 items-center">Posição no país</a>
+          <a href="#comparador" className="inline-flex min-h-11 items-center">Lado a lado</a>
           <a href="#compartilhar" className="inline-flex min-h-11 items-center">Compartilhar</a>
         </nav>
       </section>
@@ -351,30 +272,24 @@ export default async function UfHubPage({
         </section>
       )}
 
-      {(
-        <>
-          <div className="mx-auto max-w-7xl px-5 pt-8 md:px-12 sm:pt-12">
-            <SlashDivider />
-          </div>
-          <section id="indicadores" className="mx-auto max-w-7xl scroll-mt-24 px-5 pb-8 pt-8 md:px-12 sm:pb-12 sm:pt-12 lg:pb-16">
-            <div className="space-y-8">
-              <StateRankingCards ranking={ranking} />
-              <StateIndicators indicadores={indicadores} estado={uf} unavailable={indicadoresResource.sourceStatus !== "live"} />
-              <StateIndicatorComparison
-                indicadores={allIndicadoresResource.data}
-                estado={uf}
-                unavailable={allIndicadoresResource.sourceStatus !== "live"}
-              />
-            </div>
-          </section>
-        </>
-      )}
-
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
         <StatePrograms programs={programsResource.data} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
         <StatePolls polls={pollsResource.data} unavailable={pollsResource.unavailable} />
+        <SlashDivider />
+        <section id="indicadores" className="scroll-mt-24 space-y-6">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">O estado</p>
+            <h2 className="mt-2 font-heading text-3xl uppercase sm:text-5xl">{nome}</h2>
+            <p className="mt-3 text-sm text-muted-foreground">O tamanho de um estado não mede a qualidade de uma gestão. Cada indicador tem seu próprio período.</p>
+          </div>
+          <StateIndicatorComparison indicadores={allIndicadoresResource.data} estado={uf} unavailable={allIndicadoresResource.sourceStatus !== "live"} />
+        </section>
+        <SlashDivider />
+        <section id="ranking" className="scroll-mt-24" aria-label="Posição no país">
+          <StateRankingCards ranking={ranking} />
+        </section>
       </div>
 
       {candidatos.length > 0 && comparaveis.length >= 2 && (
@@ -382,7 +297,7 @@ export default async function UfHubPage({
           <div className="mx-auto max-w-7xl px-5 md:px-12">
             <SlashDivider />
           </div>
-          <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
+          <section id="comparador" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
             <div className="section-reveal">
               <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
                 Comparador

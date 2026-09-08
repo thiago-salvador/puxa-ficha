@@ -26,7 +26,7 @@ function indicador(indicador: string, ano: number, valor: number): IndicadorEsta
   return { id: `${indicador}-${ano}`, estado: "BA", indicador, ano, valor, fonte: indicador === "pib_total" ? "ibge_sidra" : "ipeadata", unidade: indicador === "pib_total" ? "mil_reais" : "indice", metadata: null, valor_texto: null }
 }
 
-test("indicadores estaduais: valor fica numa linha, referência pode quebrar e sparkline só entra a partir de sm", () => {
+test("indicadores estaduais: seis boxes compactos preservam valor e referências no disclosure", () => {
   const html = renderToStaticMarkup(
     <StateIndicators
       estado="BA"
@@ -39,13 +39,17 @@ test("indicadores estaduais: valor fica numa linha, referência pode quebrar e s
     />,
   )
   const cards = html.split("data-pf-state-indicator-card").length - 1
-  assert.equal(cards, 2)
+  assert.equal(cards, 6)
   assert.match(html, /R\$ 431 bi/)
-  assert.match(html, /<span class="block whitespace-nowrap font-heading/)
-  assert.match(html, /<span class="mt-1 block text-\[length:var\(--text-eyebrow\)\][^"]*">Referência: 2023<\/span>/)
-  assert.doesNotMatch(html, /<span class="mt-1 block whitespace-nowrap/, "a referência completa precisa poder quebrar para não transbordar no celular")
-  assert.match(html, /<div class="hidden sm:block"><svg/)
-  assert.doesNotMatch(html, /px-5 py-5"/, "o card mobile precisa do padding menor (px-4) para o valor caber")
+  assert.match(html, /shrink-0 whitespace-nowrap font-heading/)
+  assert.match(html, /grid-cols-1 items-start gap-2 md:grid-cols-2 xl:grid-cols-3/)
+  assert.equal((html.match(/<summary /g) ?? []).length, 6)
+  assert.match(html, /Referência: 2023/)
+  assert.match(html, /Variação de 2022 a 2023/)
+  assert.match(html, /Publicação na fonte: não informada/)
+  assert.match(html, /Abrir fonte e limites de PIB Total/)
+  assert.match(html, /Sem dado/)
+  assert.doesNotMatch(html, /<svg|<h2|>O estado</)
 })
 
 test("gráfico de patrimônio: rótulos numa linha, largura mínima por barra e rolagem interna", () => {
