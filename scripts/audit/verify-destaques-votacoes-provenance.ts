@@ -43,7 +43,10 @@ function main(): void {
   const universe = resolveUniverse()
   const runA = readRun(runAPath, universe)
   const runB = readRun(runBPath, universe)
-  const receipt = compareDestaquesRuns(runA, runB)
+  const receipt = compareDestaquesRuns(runA, runB, {
+    runA: (path) => readFileSync(join(dirname(resolve(runAPath)), path)),
+    runB: (path) => readFileSync(join(dirname(resolve(runBPath)), path)),
+  })
   if (strictSurface && receipt.summary.pares_sem_achado !== 0) {
     const affected = runB.pairs
       .filter((pair) => pair.resultado === "sem_achado_no_escopo")
