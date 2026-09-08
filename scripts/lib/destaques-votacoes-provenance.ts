@@ -104,6 +104,7 @@ export interface DestaquesRunManifest {
 }
 
 export interface DestaquesDoubleReadReceipt {
+  hash_comparison?: "senado-semantic-v1"
   schema_version: number
   source_id: "destaques-votacoes"
   execution_ids: [string, string]
@@ -277,21 +278,68 @@ function assertSameMap(label: string, left: Map<string, string>, right: Map<stri
   }
 }
 
+/** Normaliza somente a versão da resposta e a ordem da lista do Senado. */
+export function destaquesSourceComparisonHash(raw: Buffer, casa: DestaquesSourceReceipt["casa"]): string {
+  if (casa !== "senado") return sha256Raw(raw)
+  const payload = JSON.parse(raw.toString("utf8"))
+  const root = payload?.VotacaoParlamentar
+  const votes = root?.Parlamentar?.Votacoes?.Votacao
+  if (!Array.isArray(votes)) return sha256Raw(raw)
+  if (root.Metadados && typeof root.Metadados === "object") delete root.Metadados.Versao
+  root.Parlamentar.Votacoes.Votacao = votes
+    .map((vote: unknown) => ({ vote, key: canonicalJson(vote) }))
+    .sort((a: { key: string }, b: { key: string }) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0)
+    .map((entry: { vote: unknown }) => entry.vote)
+  return sha256Json(payload)
+}
+
+function comparisonHashes(run: DestaquesRunManifest, readArtifact: (path: string) => Buffer) {
+  const sources = new Map<string, string>()
+  const rawHashes = new Map<string, string>()
+  for (const source of run.sources) {
+    const raw = gunzipSync(readArtifact(source.artifact_path))
+    if (sha256Raw(raw) !== source.payload_raw_sha256) {
+      throw new Error(`${source.source_key}: artefato bruto diverge do hash`)
+    }
+    rawHashes.set(source.source_key, source.payload_raw_sha256)
+    sources.set(source.source_key, destaquesSourceComparisonHash(raw, source.casa))
+  }
+  const votes = new Map<string, string>()
+  for (const vote of run.votacoes) {
+    const hash = (hashes: Map<string, string>) => sha256Json({
+      votacao_id: vote.votacao_id,
+      fonte_recoletada: vote.fonte_recoletada,
+      votacao_id_api_recoletada: vote.votacao_id_api_recoletada,
+      resultado: vote.resultado,
+      sources: vote.source_keys.map((key) => {
+        if (!hashes.has(key)) throw new Error(`votação ${vote.votacao_id}: fonte não declarada`)
+        return { source_key: key, payload_raw_sha256: hashes.get(key) }
+      }),
+    })
+    if (hash(rawHashes) !== vote.payload_sha256) throw new Error(`votação ${vote.votacao_id}: hash divergente do conteúdo`)
+    votes.set(vote.votacao_id, hash(sources))
+  }
+  return { sources, votes }
+}
+
 export function compareDestaquesRuns(
   runA: DestaquesRunManifest,
   runB: DestaquesRunManifest,
+  artifacts?: { runA: (path: string) => Buffer; runB: (path: string) => Buffer },
 ): DestaquesDoubleReadReceipt {
   if (runA.execution_id === runB.execution_id) throw new Error("dupla leitura: execution_id deve ser distinto")
   if (runA.checked_at === runB.checked_at) throw new Error("dupla leitura: checked_at deve ser distinto")
+  const left = artifacts && comparisonHashes(runA, artifacts.runA)
+  const right = artifacts && comparisonHashes(runB, artifacts.runB)
   assertSameMap(
     "dupla leitura de fonte",
-    mapHash(runA.sources, (row) => row.source_key, (row) => row.payload_raw_sha256),
-    mapHash(runB.sources, (row) => row.source_key, (row) => row.payload_raw_sha256),
+    left?.sources ?? mapHash(runA.sources, (row) => row.source_key, (row) => row.payload_raw_sha256),
+    right?.sources ?? mapHash(runB.sources, (row) => row.source_key, (row) => row.payload_raw_sha256),
   )
   assertSameMap(
     "dupla leitura de votação",
-    mapHash(runA.votacoes, (row) => row.votacao_id, (row) => row.payload_sha256),
-    mapHash(runB.votacoes, (row) => row.votacao_id, (row) => row.payload_sha256),
+    left?.votes ?? mapHash(runA.votacoes, (row) => row.votacao_id, (row) => row.payload_sha256),
+    right?.votes ?? mapHash(runB.votacoes, (row) => row.votacao_id, (row) => row.payload_sha256),
   )
   assertSameMap(
     "dupla leitura de par",
@@ -300,6 +348,7 @@ export function compareDestaquesRuns(
   )
   if (sha256Json(runA.summary) !== sha256Json(runB.summary)) throw new Error("dupla leitura: resumo divergente")
   const core = {
+    ...(artifacts ? { hash_comparison: "senado-semantic-v1" as const } : {}),
     schema_version: DESTAQUES_SCHEMA_VERSION,
     source_id: "destaques-votacoes" as const,
     execution_ids: [runA.execution_id, runB.execution_id] as [string, string],

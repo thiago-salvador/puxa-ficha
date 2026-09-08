@@ -8,12 +8,51 @@ import {
   DESTAQUES_UNIVERSE_ATUAL,
   buildDestaquesRunManifest,
   compareDestaquesRuns,
+  destaquesSourceComparisonHash,
   validateDestaquesRunManifest,
   type DestaquesRunManifest,
 } from "../scripts/lib/destaques-votacoes-provenance"
 
 const RUN_A = "QA/evidencias/2026-08-30-destaques-votacoes/run-c/manifest.json"
 const RUN_B = "QA/evidencias/2026-08-30-destaques-votacoes/run-d/manifest.json"
+
+test("comparação semântica preserva votos completos e duplicatas", () => {
+  const payload = { VotacaoParlamentar: {
+    Metadados: { Versao: "primeira", Outro: "preservado" },
+    Parlamentar: { Votacoes: { Votacao: [{ Codigo: "1", Voto: "Sim" }, { Codigo: "2", Voto: "Não" }] } },
+  } }
+  const hash = (value: unknown, casa: "senado" | "camara" = "senado") =>
+    destaquesSourceComparisonHash(Buffer.from(JSON.stringify(value)), casa)
+  const reordered = structuredClone(payload)
+  reordered.VotacaoParlamentar.Metadados.Versao = "segunda"
+  reordered.VotacaoParlamentar.Parlamentar.Votacoes.Votacao.reverse()
+  assert.equal(hash(payload), hash(reordered))
+  assert.notEqual(hash(payload, "camara"), hash(reordered, "camara"))
+  for (const mutation of ["voto", "inclusão", "exclusão", "duplicata", "metadata"]) {
+    const changed = structuredClone(payload)
+    const votes = changed.VotacaoParlamentar.Parlamentar.Votacoes.Votacao
+    if (mutation === "voto") votes[0].Voto = "Não"
+    if (mutation === "inclusão") votes.push({ Codigo: "3", Voto: "Sim" })
+    if (mutation === "exclusão") votes.pop()
+    if (mutation === "duplicata") votes.push({ ...votes[0] })
+    if (mutation === "metadata") changed.VotacaoParlamentar.Metadados.Outro = "alterado"
+    assert.notEqual(hash(payload), hash(changed), mutation)
+  }
+})
+
+test("comparação semântica valida artefatos e hashes derivados da evidência histórica", () => {
+  const readers = {
+    runA: (path: string) => readFileSync(join(dirname(RUN_A), path)),
+    runB: (path: string) => readFileSync(join(dirname(RUN_B), path)),
+  }
+  const a = load(RUN_A)
+  const b = load(RUN_B)
+  assert.equal(compareDestaquesRuns(a, b, readers).hash_comparison, "senado-semantic-v1")
+  b.votacoes[0].payload_sha256 = "0".repeat(64)
+  assert.throws(() => compareDestaquesRuns(a, b, readers), /hash divergente do conteúdo/)
+  b.sources[0].payload_raw_sha256 = "0".repeat(64)
+  assert.throws(() => compareDestaquesRuns(a, b, readers), /artefato bruto diverge/)
+})
 
 function load(path: string): DestaquesRunManifest {
   const root = dirname(path)
