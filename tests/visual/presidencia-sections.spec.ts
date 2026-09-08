@@ -19,3 +19,17 @@ test("home presents presidential programs then national polls", async ({ page })
   await expect(polls.getByRole("combobox", { name: "Turno", exact: true })).toHaveValue("2")
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
 })
+
+test("first-turn national poll fits a 375px viewport", async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 375, height: 812 } })
+  const page = await context.newPage()
+  await page.goto("/")
+  await expect(page.locator("#pesquisas")).toBeVisible()
+  await page.waitForLoadState("networkidle")
+  const dimensions = await page.evaluate(() => ({
+    viewport: document.documentElement.clientWidth,
+    content: document.documentElement.scrollWidth,
+  }))
+  expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport)
+  await context.close()
+})
