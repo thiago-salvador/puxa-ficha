@@ -11,6 +11,7 @@ import { Suspense, lazy } from "react"
 import { preload } from "react-dom"
 import { HomeQuizIntro } from "@/components/HomeQuizIntro"
 import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
+import { HomeRecentUpdatesData } from "@/components/HomeRecentUpdatesData"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
 
 export const metadata: Metadata = {
@@ -237,7 +238,9 @@ export default async function Home() {
         />
       </section>
 
-      <HomeRecentUpdates />
+      <Suspense fallback={<HomeRecentUpdates />}>
+        <HomeRecentUpdatesData />
+      </Suspense>
       <HomeQuizIntro />
 
       {/* Comparador */}

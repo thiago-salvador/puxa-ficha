@@ -2,6 +2,13 @@
 
 Snapshot mais recente verificado em **06/09/2026**.
 
+## H12: histórico verificado, implementação 08/09/2026
+
+- Referências privadas e eventos antes/depois para patrimônio e situação, confirmados com fonte oficial e ficha persistida; primeira coleta sem novidade e repetições sem duplicação.
+- Home conectada à leitura pública restrita, com fonte, eleição, horário de detecção e estados distintos para histórico vazio e indisponibilidade.
+- Observador semanal preparado, limitado a registrar histórico. Preserva o fluxo de revisão dos fatos eleitorais; partido ainda sem produtor.
+- PostgreSQL 17: baseline, mudança, concorrência, permissões, despublicação e rollback verificados; replay de schema com 102 migrations e zero falhas. Ativação remota e baseline inicial dependem do fluxo de release descrito em `docs/operacoes/home-updates.md`. [confidence: alta, source: implementação e provas locais H12] [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]
+
 ## Home H10, H12 e H13: implementação 08/09/2026
 
 - Ordenação explícita preserva os cards e distingue contagens indisponíveis de zero; a mesma origem nullable atende a home e a grade estadual compartilhada.

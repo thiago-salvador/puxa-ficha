@@ -32,6 +32,7 @@ import {
   resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
 import { downloadToFile } from "./download-to-file"
+import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
 export const DEFAULT_TSE_ANOS = [
@@ -602,7 +603,7 @@ async function processPatrimonio(
   extractDir: string,
   sqMap: Map<string, SqCandidateIdentity>,
   slugAllowlist: Set<string> | null,
-  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow">,
+  options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow" | "observationOnly" | "onObservation">,
   sourceUrl: string,
 ): Promise<IngestResult[]> {
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
@@ -618,6 +619,7 @@ async function processPatrimonio(
 
   if (uniquePaths.length === 0) {
     warn("tse", `  CSV de bens nao encontrado para ${ano}`)
+    if (options.observationOnly) throw new Error(`Official wealth CSV unavailable for ${ano}`)
     return []
   }
   validarCoberturaPacotePatrimonio(ano, uniquePaths, requiredUFs)
@@ -705,6 +707,29 @@ async function processPatrimonio(
         : {}),
     }
 
+    const observeWealth = async () => {
+      const identity = [...sqMap.values()].find((item) => item.candidato.slug === slug && item.publicacaoAutorizada)
+      if (!identity) return
+      const outcome = await observeVerifiedCandidateChange({
+        candidateId: candidatoId, field: "patrimonio", year: ano,
+        value: String(row.valor_total), sq: identity.sqCandidato, uf: identity.uf ?? "",
+        sourceUrl, identityVerified: identity.publicacaoAutorizada,
+        dryRun: options.dryRun, observationOnly: options.observationOnly,
+      }, {
+        rpc: (name, args) => supabase.rpc(name, args),
+        confirmPersisted: async () => {
+          const { data: persisted, error: readError } = await supabase.from("patrimonio")
+            .select("valor_total, despublicado_em").eq("candidato_id", candidatoId).eq("ano_eleicao", ano).maybeSingle()
+          if (readError) throw readError
+          return persisted != null && persisted.despublicado_em == null && persisted.valor_total != null && Number(persisted.valor_total) === row.valor_total
+        },
+      })
+      options.onObservation?.(outcome)
+    }
+    if (options.observationOnly) {
+      await observeWealth()
+      continue
+    }
     if (options.dryRun) {
       options.onPlannedRow?.({
         table: "patrimonio",
@@ -746,6 +771,7 @@ async function processPatrimonio(
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
       if (staleAbsenceError) throw staleAbsenceError
+      await observeWealth()
     }
 
     log("tse", `  ${slug}: patrimonio ${ano} — R$ ${Math.round(data.total).toLocaleString()} (${data.bens.length} bens)`)
@@ -759,6 +785,7 @@ async function processPatrimonio(
     })
   }
 
+  if (options.observationOnly) return results
   const absenceCandidates = selectPatrimonioAbsenceCandidates(
     [...sqMap.values()].map((identity) => ({
       slug: identity.candidato.slug,
@@ -1246,6 +1273,10 @@ interface PlannedTseRow {
 }
 
 export type IngestTseOptions = {
+  /** Read official facts and observe already published values only; never rewrite facts. */
+  observationOnly?: boolean
+  onObservation?: (outcome: "baseline" | "unchanged" | "changed" | "skipped") => void
+  skipFinanciamento?: boolean
   /** Omite download/parse de patrimônio (bens) — útil para lote só `financiamento-gap`. */
   skipPatrimonio?: boolean
   /** Se definido, só persiste linhas de `patrimonio` para estes slugs. */
@@ -1297,7 +1328,7 @@ export async function ingestTSE(
 
     const mappedSlugs = new Set([...sqMap.values()].map((identity) => identity.candidato.slug))
     const identityUrl = `https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_${ano}.zip`
-    await planFinanciamentoCandidatesYearError(
+    if (!options.observationOnly && !options.skipFinanciamento) await planFinanciamentoCandidatesYearError(
       ano,
       candidatos,
       options.financiamentoSlugAllowlist ?? null,
@@ -1352,6 +1383,7 @@ export async function ingestTSE(
       log("tse", `  Patrimonio ${ano}: pacote nao publicado pelo TSE; etapa ignorada`)
     }
 
+    if (options.observationOnly || options.skipFinanciamento) continue
     await sleep(1000)
 
     cleanupDir(receitasDir)

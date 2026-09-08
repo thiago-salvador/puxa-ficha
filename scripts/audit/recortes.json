@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "verified-history-rpc-20260908",
+      "desde": "20260908160000",
+      "ate": "20260908160000",
+      "allowlist": "scripts/audit/allowlist-verified-history-rpc-20260908.json",
+      "divida": null
+    },
+    {
       "nome": "siqueira-to-publication-20260907",
       "desde": "20260907193100",
       "ate": "20260907193100",
