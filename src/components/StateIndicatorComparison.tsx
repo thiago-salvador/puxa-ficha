@@ -15,7 +15,7 @@ export function StateIndicatorComparison({ indicadores, estado, unavailable = fa
   const issue = unavailable ? "Não foi possível carregar os dados nesta consulta. Tente recarregar a página." : comparisonIssue(a, b)
   const config = STATE_INDICATOR_CONFIG[indicator]
   return <div className="mt-6 rounded-[16px] border border-border/50 bg-card p-5 sm:p-6">
-    <h3 className="font-heading text-2xl">Antes de colocar lado a lado</h3>
+    <h2 className="font-heading text-2xl">Antes de colocar lado a lado</h2>
     <p className="mt-2 text-sm text-muted-foreground">A comparação exige o mesmo indicador, unidade, período, fonte e definição. Sem isso, mostramos a limitação.</p>
     <div className="mt-5 grid gap-4 sm:grid-cols-2">
       <label className="text-sm font-semibold">Indicador<select value={indicator} onChange={event => setIndicator(event.target.value)} className="mt-2 block min-h-11 w-full rounded-lg border border-border bg-background px-3">{STATE_INDICATOR_ORDER.map(key => <option key={key} value={key}>{STATE_INDICATOR_CONFIG[key].label}</option>)}</select></label>
