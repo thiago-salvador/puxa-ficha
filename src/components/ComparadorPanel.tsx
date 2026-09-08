@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
 import {
   X,
   Check,
@@ -16,7 +17,7 @@ import {
 } from "lucide-react"
 
 import { CandidatePhoto } from "@/components/CandidatePhoto"
-import { formatCompact } from "@/lib/utils"
+import { FormattedNumber } from "./FormattedNumber"
 import { formatEvolucaoPatrimonialPct } from "@/lib/evolucao-patrimonial"
 import {
   processosListaCount,
@@ -45,7 +46,8 @@ import {
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { BRAZIL_STATES } from "@/data/brazil-states"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
-import { trackLaunchEvent } from "@/lib/analytics-client"
+import { readProofIdFromUrl, trackLaunchEvent } from "@/lib/analytics-client"
+import { observeAnalyticsResult } from "@/lib/analytics-visibility"
 
 const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
@@ -112,7 +114,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
   const [eixoOverride, setEixoOverride] = useState<ComparadorEixo | null>(null)
   const eixo = eixoOverride ?? urlEixo
   const [copied, setCopied] = useState(false)
+  // Keep only the validated proof for this mounted page, before URL normalization.
+  const [analyticsProofId] = useState(readProofIdFromUrl)
   const comparisonStartedRef = useRef(false)
+  const comparisonViewedRef = useRef(false)
   const prefersReducedMotion = usePrefersReducedMotion()
   const comparisonRef = useRef<HTMLDivElement>(null)
 
@@ -159,16 +164,32 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
   useEffect(() => {
     if (!isComparing) {
       comparisonStartedRef.current = false
+      comparisonViewedRef.current = false
       return
     }
     if (comparisonStartedRef.current) return
     comparisonStartedRef.current = true
     trackLaunchEvent(ANALYTICS_EVENTS.comparisonStart, {
+      stage: "ready",
+      ...(analyticsProofId ? { proof_id: analyticsProofId } : {}),
       candidate_count: selectedCandidatos.length,
       eixo,
       scope: hubScope ? "uf" : "global",
     })
-  }, [eixo, hubScope, isComparing, selectedCandidatos.length])
+  }, [analyticsProofId, eixo, hubScope, isComparing, selectedCandidatos.length])
+
+  useEffect(() => {
+    if (!isComparing || !comparisonRef.current || comparisonViewedRef.current) return
+    return observeAnalyticsResult(comparisonRef.current, () => {
+      comparisonViewedRef.current = true
+      trackLaunchEvent(ANALYTICS_EVENTS.comparisonStart, {
+        stage: "viewed",
+        ...(analyticsProofId ? { proof_id: analyticsProofId } : {}),
+        candidate_count: selectedCandidatos.length,
+        scope: hubScope ? "uf" : "global",
+      })
+    })
+  }, [analyticsProofId, hubScope, isComparing, selectedCandidatos.length])
 
   useEffect(() => {
     if (candidatos.length === 0) return
@@ -267,7 +288,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 aria-pressed={selected}
                 aria-label={`${comparadorToggleLabel(candidato.nome_urna, selected)}. ${
                   candidato.idade ? `${candidato.idade} anos, ` : ""
-                }${processosResumoLabel(candidato.total_processos)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
+                }${processosResumoLabel(candidato.total_processos, candidato.processos_verificacao)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
                   selected
                     ? "border-foreground bg-foreground/[0.03]"
@@ -305,10 +326,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                 </div>
                 <div
                   aria-hidden="true"
-                  className="flex shrink-0 flex-col items-end gap-0.5 whitespace-nowrap text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
+                  className="flex max-w-[40%] shrink-0 flex-col items-end gap-0.5 whitespace-normal text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
                 >
                   {candidato.idade && <span>{candidato.idade} anos</span>}
-                  <span>{processosResumoLabel(candidato.total_processos)}</span>
+                  <span>{processosResumoLabel(candidato.total_processos, candidato.processos_verificacao)}</span>
                   <span>
                     {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
                   </span>
@@ -448,10 +469,10 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                       <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                         {candidato.patrimonio_declarado != null ? (
                           <span className="block">
-                            {formatCompact(candidato.patrimonio_declarado)}
+                            <FormattedNumber value={candidato.patrimonio_declarado} />
                           </span>
                         ) : (
-                          <span className="block font-medium text-muted-foreground">sem declaração</span>
+                          <span className="block font-medium text-muted-foreground">{PUBLIC_DATA_VOCABULARY.unverified.label}</span>
                         )}
                         <span
                           className="mt-0.5 block text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground"
@@ -461,7 +482,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         </span>
                       </td>
                       <td className="py-3 pr-4 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
-                        {processosListaCount(candidato.total_processos)}
+                        {processosListaCount(candidato.total_processos, candidato.processos_verificacao)}
                       </td>
                       <td className="py-3 text-right text-[length:var(--text-body-sm)] font-bold tabular-nums text-foreground">
                         {candidato.alertas_graves}
@@ -654,11 +675,11 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                             <span
                               className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
                             >
-                              {formatCompact(candidato.patrimonio_declarado)}
+                              <FormattedNumber value={candidato.patrimonio_declarado} />
                             </span>
                           ) : (
                             <span className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-                              sem declaração
+                              {PUBLIC_DATA_VOCABULARY.unverified.label}
                             </span>
                           )}
                           {isMax && <MaiorBadge />}
@@ -688,7 +709,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                         values,
                       )
 
-                      const display = processosOverviewDisplay(candidato.total_processos)
+                      const display = processosOverviewDisplay(candidato.total_processos, undefined, candidato.processos_verificacao)
 
                       return (
                         <td key={candidato.id} className="py-3 text-center">
@@ -753,7 +774,7 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
                               <span
                                         className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground"
                               >
-                                {formatCompact(candidato.total_gasto_parlamentar)}
+                                <FormattedNumber value={candidato.total_gasto_parlamentar} />
                               </span>
                             ) : (
                               <span className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">

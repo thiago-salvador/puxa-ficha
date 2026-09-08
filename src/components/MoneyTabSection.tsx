@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { GlossaryTerm } from "./GlossaryTerm"
 import { TrackedExternalSourceLink } from "@/components/TrackedExternalSourceLink"
 import { EmptyState, getFinanciamentoEmptyState, getPatrimonioEmptyState } from "./EmptyState"
 import { buildDoadorReverseHref } from "@/lib/doador-reverse-shared"
@@ -836,7 +837,7 @@ export function MoneyTabSection({
       {gastos.length > 0 && (
         <div>
           <SectionLabel>Gastos parlamentares</SectionLabel>
-          <SectionTitle>Uso da cota parlamentar (CEAP)</SectionTitle>
+          <SectionTitle>Uso da cota parlamentar (<GlossaryTerm term="CEAP" />)</SectionTitle>
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.gastos_parlamentares} />
           </div>

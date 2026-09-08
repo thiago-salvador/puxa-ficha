@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { NoticePanel } from "./NoticePanel"
+import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
 
 interface DataUnavailableStateProps {
   title?: string
@@ -10,7 +11,7 @@ interface DataUnavailableStateProps {
 }
 
 export function DataUnavailableState({
-  title = "Dados temporariamente indisponíveis",
+  title = PUBLIC_DATA_VOCABULARY.unavailable.label,
   description = "A fonte pública desta página não respondeu agora. Tente novamente em instantes.",
   backHref = "/",
   backLabel = "Voltar ao início",

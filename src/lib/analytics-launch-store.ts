@@ -5,6 +5,8 @@ import {
   type AnalyticsEventName,
   type AnalyticsPayload,
   getAnalyticsProofIdFromPayload,
+  summarizeAnalyticsTasks,
+  sanitizeAnalyticsPayload,
 } from "@/lib/analytics-events"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { isMissingQuotaRpc, readQuotaRpcStatus } from "@/lib/quota-rpc"
@@ -222,7 +224,7 @@ export async function recordAnalyticsLaunchEventUnderQuota(input: {
 export async function readAnalyticsLaunchCounts(input: {
   sinceIso: string
   proofId: string
-}): Promise<{ counts: AnalyticsLaunchCounts; missing: AnalyticsEventName[] }> {
+}): Promise<{ counts: AnalyticsLaunchCounts; missing: AnalyticsEventName[]; tasks?: ReturnType<typeof summarizeAnalyticsTasks> }> {
   if (typeof input.proofId !== "string" || input.proofId.trim() === "") {
     throw new Error("analytics_launch_events readback requires proofId")
   }
@@ -230,7 +232,7 @@ export async function readAnalyticsLaunchCounts(input: {
   const supabase = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
   const { data, error } = await supabase
     .from("analytics_launch_events")
-    .select("event_name")
+    .select("event_name,payload")
     .abortSignal(supabaseQueryTimeoutSignal())
     .gte("created_at", input.sinceIso)
     .eq("proof_id", input.proofId)
@@ -241,6 +243,8 @@ export async function readAnalyticsLaunchCounts(input: {
 
   const counts = emptyCounts()
   for (const row of data ?? []) {
+    // Keep the original launch counts comparable after adding the viewed stage.
+    if (row.event_name === "Comparison Start" && sanitizeAnalyticsPayload(row.payload).stage === "viewed") continue
     const eventName = row.event_name as AnalyticsEventName
     if (Object.prototype.hasOwnProperty.call(counts, eventName)) {
       counts[eventName] += 1
@@ -249,6 +253,7 @@ export async function readAnalyticsLaunchCounts(input: {
 
   return {
     counts,
+    tasks: summarizeAnalyticsTasks(data ?? []),
     missing: ANALYTICS_EVENT_NAMES.filter((eventName) => counts[eventName] <= 0),
   }
 }

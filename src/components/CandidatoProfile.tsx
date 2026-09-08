@@ -28,6 +28,9 @@ import {
   urlPublicaDoProcesso,
 } from "@/lib/processos-display"
 import { formatCompact, formatDate, safeHref } from "@/lib/utils"
+import { DataCoverageDetails } from "./DataCoverageDetails"
+import { FormattedNumber } from "./FormattedNumber"
+import { PUBLIC_DATA_VOCABULARY, patrimonioWithoutValueLabel } from "@/lib/public-data-vocabulary"
 import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
 import { GravityBadge } from "./GravityBadge"
@@ -154,7 +157,7 @@ const StatCard = memo(function StatCard({
   dataRawValue,
   rootDataAttrs,
 }: {
-  value: string | number
+  value: React.ReactNode
   label: string
   icon: React.ComponentType<{ className?: string }>
   sub?: string
@@ -176,9 +179,9 @@ const StatCard = memo(function StatCard({
       <div className="flex items-center gap-2">
         <Icon className="size-4 shrink-0 text-muted-foreground" />
         <span
-          {...(dataValueAttr ? { [dataValueAttr]: String(value) } : {})}
+          {...(dataValueAttr ? { [dataValueAttr]: typeof value === "object" && typeof dataRawValue === "number" ? formatCompact(dataRawValue) : String(value) } : {})}
           data-pf-overview-raw={dataRawValue ?? undefined}
-          className="font-heading text-[24px] leading-none tracking-tight text-foreground sm:text-[length:var(--text-heading)] lg:text-[32px]"
+          className="min-w-0 break-words font-heading text-[24px] leading-none tracking-tight text-foreground sm:text-[length:var(--text-heading)] lg:text-[32px]"
         >
           {value}
         </span>
@@ -710,7 +713,7 @@ export function CandidatoProfile({
               sub={processosOverview.sub}
             />
             <StatCard
-              value={latestPatrimonio ? formatCompact(latestPatrimonio.valor_total) : "N/D"}
+              value={latestPatrimonio ? <FormattedNumber value={latestPatrimonio.valor_total} kind="currency" /> : patrimonioWithoutValueLabel(patrimonioEleicoes)}
               label="Patrimônio"
               icon={Landmark}
               dataValueAttr="data-pf-overview-patrimonio"
@@ -778,7 +781,7 @@ export function CandidatoProfile({
               title="Soma de total_gasto em todos os anos com registro CEAP nesta ficha. Na visão geral, o cartão de cota parlamentar destaca o ano mais recente com dados."
             >
             <StatCard
-              value={totalGastos != null ? formatCompact(totalGastos) : "N/D"}
+              value={totalGastos != null ? <FormattedNumber value={totalGastos} kind="currency" /> : PUBLIC_DATA_VOCABULARY.unverified.label}
               label="Gastos CEAP"
               icon={Banknote}
               sub={gastos.length > 0 ? `Soma total · ${gastos.length} ano${gastos.length > 1 ? "s" : ""}` : undefined}
@@ -788,6 +791,14 @@ export function CandidatoProfile({
         </div>
       </section>
 
+
+      <DataCoverageDetails fontes={destaques.fontes} freshness={sectionFreshness} verifications={{
+        sancoes: ficha.sancoes_verificacao,
+        processos: ficha.processos_verificacao,
+        trajetoria: ficha.trajetoria_verificacao,
+        patrimonio: ficha.patrimonio_verificacao,
+        votacoes: ficha.votacoes_verificacao,
+      }} />
 
       {/* Tab navigation */}
       {tabs.length > 0 && (

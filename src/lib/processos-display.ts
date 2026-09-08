@@ -174,24 +174,22 @@ export function processosOverviewDisplay(
   }
 }
 
-function processosNaoVerificado(total: number | null | undefined): boolean {
-  return typeof processosOverviewDisplay(total).value !== "number"
+/** Lista, ficha e embed compartilham a mesma evidência para afirmar zero. */
+export function processosResumoLabel(
+  total: number | null | undefined,
+  verificacao?: Pick<import("@/lib/types").ProcessosVerificacao, "resultado"> | null,
+): string {
+  const display = processosOverviewDisplay(total, undefined, verificacao)
+  if (typeof display.value !== "number") return `Processos: ${display.sub}`
+  return display.value === 1 ? "1 processo" : `${display.value} processos`
 }
 
-/**
- * Lista compacta (cards e coluna Processos): 0 processos é o display pedido
- * para ausência de contagem, não uma afirmação de ficha limpa. A ficha e o
- * overview continuam em `processosOverviewDisplay` ("—" + legenda).
- */
-export function processosResumoLabel(total: number | null | undefined): string {
-  if (processosNaoVerificado(total)) return "0 processos"
-  return total === 1 ? "1 processo" : `${total} processos`
-}
-
-/** Número da coluna Processos na lista: 0 quando não há contagem verificada. */
-export function processosListaCount(total: number | null | undefined): number {
-  if (processosNaoVerificado(total)) return 0
-  return total ?? 0
+/** Sem recibo de ausência, a coluna não inventa uma contagem numérica. */
+export function processosListaCount(
+  total: number | null | undefined,
+  verificacao?: Pick<import("@/lib/types").ProcessosVerificacao, "resultado"> | null,
+): number | string {
+  return processosOverviewDisplay(total, undefined, verificacao).value
 }
 
 export function processoFonteLabel(

@@ -1,5 +1,6 @@
 import type { DataSourceStatus } from "@/lib/types"
 import { NoticePanel } from "./NoticePanel"
+import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
 
 interface DataSourceNoticeProps {
   status: DataSourceStatus
@@ -21,7 +22,7 @@ export function DataSourceNotice({
     <NoticePanel
       role="status"
       tone="caution"
-      eyebrow="Fonte temporariamente instável"
+      eyebrow={PUBLIC_DATA_VOCABULARY.unavailable.label}
       description={message ?? fallbackMessage}
       className={className}
     >

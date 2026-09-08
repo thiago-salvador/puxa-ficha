@@ -1,7 +1,8 @@
+import { patrimonioWithoutValueLabel } from "@/lib/public-data-vocabulary"
 import Link from "next/link"
 import type { FichaCandidato } from "@/lib/types"
 import { resolvePatrimonioEleicoes, type PatrimonioEleicaoPublico } from "@/lib/public-profile-dto"
-import { formatCompact } from "@/lib/utils"
+import { FormattedNumber } from "./FormattedNumber"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { PartyLogoMark } from "@/components/PartyLogoMark"
 import { SITE_ORIGIN } from "@/lib/metadata"
@@ -40,7 +41,7 @@ function StatRow({
   sub,
 }: {
   label: string
-  value: string | number
+  value: React.ReactNode
   sub?: string
 }) {
   return (
@@ -112,7 +113,7 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
       <div className="px-4 py-1">
         <StatRow
           label="Patrimônio declarado"
-          value={latestPatrimonio ? formatCompact(latestPatrimonio.valor_total) : "N/D"}
+          value={latestPatrimonio ? <FormattedNumber value={latestPatrimonio.valor_total} /> : patrimonioWithoutValueLabel(patrimonioEleicoes)}
           sub={buildPatrimonioEmbedSub(latestPatrimonio, patrimonioEleicoesSemDado)}
         />
         <StatRow

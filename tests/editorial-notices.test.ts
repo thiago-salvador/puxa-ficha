@@ -56,7 +56,7 @@ test("DataSourceNotice degradado usa NoticePanel de cautela", () => {
   )
 
   assert.ok(html.includes('data-pf-notice-tone="caution"'))
-  assert.ok(html.includes("Fonte temporariamente instável"))
+  assert.ok(html.includes("Fonte indisponível"))
   assert.ok(html.includes("Fonte externa indisponível nesta coleta."))
 })
 

@@ -24,7 +24,7 @@ import {
 } from "@/lib/historico-display"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import { formatFinanciamentoPleitoPublicLabelForRow } from "@/lib/financiamento-pleito-public-label"
-import { formatCompact } from "@/lib/utils"
+import { FormattedNumber } from "./FormattedNumber"
 import { PatrimonioChart } from "./BarChart"
 import { DonutChart } from "./DonutChart"
 import { ChevronRight } from "lucide-react"
@@ -370,7 +370,7 @@ function PatrimonioTeaser({
           Registro único disponível.
         </p>
         <p className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-          {formatCompact(latest.valor_total)}
+          <FormattedNumber value={latest.valor_total} />
         </p>
       </TeaserCard>
     )
@@ -387,7 +387,7 @@ function PatrimonioTeaser({
     >
       <div className="mb-3 flex items-baseline gap-3">
         <span className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-          {formatCompact(latest.valor_total)}
+          <FormattedNumber value={latest.valor_total} />
         </span>
         {indicator && earliest && growthPct !== null && (
           <span className={`text-[length:var(--text-caption)] font-bold ${indicator.color}`}>
@@ -420,7 +420,7 @@ function FinancingTeaserDoadores({ doadores }: { doadores: Financiamento["maiore
               {d.nome}
             </Link>
             <span className="shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground">
-              {formatCompact(d.valor)}
+              <FormattedNumber value={d.valor} />
             </span>
           </div>
         ))}
@@ -467,7 +467,7 @@ function FinancingTeaserSegments({
               {s.label} ({Math.round((s.value / total) * 100)}%)
             </span>
             <span className="shrink-0 text-[length:var(--text-eyebrow)] font-bold tabular-nums text-foreground">
-              {formatCompact(s.value)}
+              <FormattedNumber value={s.value} />
             </span>
           </div>
         ))}
@@ -500,7 +500,7 @@ function FinancingTeaser({
         {financiamentoPleitoSubtitulo()}
       </p>
       <p className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-        {formatCompact(latestFin.total_arrecadado)}
+        <FormattedNumber value={latestFin.total_arrecadado} />
       </p>
       <FinancingTeaserSegments segments={segments} total={latestFin.total_arrecadado} />
       <FinancingTeaserDoadores doadores={latestFin.maiores_doadores} />
@@ -651,7 +651,7 @@ function ExecutiveSpendingTeaser({
         data-pf-gastos-executivo-total-mandato
         className="mt-2 font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground"
       >
-        {formatCompact(orgao.totalMandato)}
+        <FormattedNumber value={orgao.totalMandato} />
       </p>
       <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">Total no mandato</p>
       <p
@@ -663,7 +663,7 @@ function ExecutiveSpendingTeaser({
             : "mt-3 text-[15px] font-bold tabular-nums text-foreground"
         }
       >
-        {orgao.totalAnoCorrente == null ? "Sem dado neste recorte" : formatCompact(orgao.totalAnoCorrente)}
+        {orgao.totalAnoCorrente == null ? "Sem dado neste recorte" : <FormattedNumber value={orgao.totalAnoCorrente} />}
       </p>
       <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         {orgao.anoCorrente == null ? "Total no recorte" : `Total em ${orgao.anoCorrente}`}
@@ -674,7 +674,7 @@ function ExecutiveSpendingTeaser({
             data-pf-gastos-executivo-ultimo-mes={orgao.ultimoMesComMovimento.mes_extrato}
             className="mt-3 text-[15px] font-bold tabular-nums text-foreground"
           >
-            {formatCompact(orgao.ultimoMesComMovimento.valor_total)}
+            <FormattedNumber value={orgao.ultimoMesComMovimento.valor_total} />
           </p>
           <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
             Último mês com movimento: {formatMesExtratoCurto(orgao.ultimoMesComMovimento.mes_extrato)}
@@ -716,7 +716,7 @@ function ParliamentarySpendingTeaser({
       moneyCardKind="gasto"
     >
       <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
-        {formatCompact(topGastos.total_gasto)}
+        <FormattedNumber value={topGastos.total_gasto} />
       </p>
       <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         Ano do registro: {topGastos.ano} (mais recente com dados CEAP na ficha)
@@ -730,7 +730,7 @@ function ParliamentarySpendingTeaser({
                   {formatPublicLabel(d.categoria)}
                 </span>
                 <span className="shrink-0 text-[length:var(--text-caption)] font-bold tabular-nums text-foreground">
-                  {formatCompact(d.valor)}
+                  <FormattedNumber value={d.valor} />
                 </span>
               </div>
               <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-secondary">

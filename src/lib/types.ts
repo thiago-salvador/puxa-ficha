@@ -671,6 +671,7 @@ export interface CandidatoComparavel {
   formacao: string | null;
   formacao_instituicao?: string | null;
   total_processos: number;
+  processos_verificacao?: ProcessosVerificacao | null;
   mudancas_partido: number;
   alertas_graves: number;
   patrimonio_declarado: number | null;

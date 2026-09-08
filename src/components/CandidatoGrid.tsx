@@ -24,7 +24,7 @@ import {
   resolveCanonicalPartySigla,
 } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
-import { formatCompact } from "@/lib/utils"
+import { FormattedNumber } from "./FormattedNumber"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
 import { compareCandidateSortValues } from "@/lib/candidate-sort"
@@ -102,10 +102,10 @@ function CandidatoListItem({
             {processos}
           </span>
         )}
-        {patrimonio != null && patrimonio > 0 && (
+        {patrimonio != null && (
           <span className="flex items-center gap-1 text-[length:var(--text-caption)] font-bold text-foreground">
             <Landmark className="size-3.5" />
-            {formatCompact(patrimonio)}
+            <FormattedNumber value={patrimonio} />
           </span>
         )}
       </div>

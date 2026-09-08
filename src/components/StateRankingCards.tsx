@@ -1,9 +1,11 @@
 import { Check, Minus, X } from "lucide-react"
+import { GlossaryTerm } from "./GlossaryTerm"
 import { IndicadorFonteTag } from "@/components/IndicadorFonteTag"
 import { MetaBadge } from "@/components/MetaBadge"
 import type { StateRankingResult } from "@/lib/state-ranking"
 import {
   STATE_INDICATOR_CONFIG,
+  formatStateIndicatorFull,
   STATE_INDICATOR_ORDER,
 } from "@/lib/state-indicator-metadata"
 
@@ -67,11 +69,11 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
               className="min-w-0 rounded-[14px] border border-border/50 bg-card px-4 py-4"
             >
               <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                {cfg.label}
+                {cfg.glossary ? <GlossaryTerm term={cfg.glossary}>{cfg.label}</GlossaryTerm> : cfg.label}
               </p>
               <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
                 <span className="block font-heading text-[length:var(--text-heading-sm)] leading-[0.95] tracking-tight text-foreground sm:text-[length:var(--text-heading)]">
-                  {cfg.format(r.valor)}
+                  <span title={formatStateIndicatorFull(r.indicador, r.valor)}><span aria-hidden="true">{cfg.format(r.valor)}</span><span className="sr-only">{formatStateIndicatorFull(r.indicador, r.valor)}</span></span>
                 </span>
                 {cfg.scale ? <MetaBadge tone="muted">{r.indicador === "pib_total" ? "Medida de escala" : "Medida de tamanho"}</MetaBadge> : <QualityBadge qualidade={r.qualidade} />}
               </div>

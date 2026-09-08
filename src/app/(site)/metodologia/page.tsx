@@ -9,6 +9,7 @@ import { MetaBadge } from "@/components/MetaBadge"
 import { NoticePanel } from "@/components/NoticePanel"
 import { METHODOLOGY_SOURCES } from "@/data/methodology-sources"
 import { buildTwitterMetadata } from "@/lib/metadata"
+import { DataVocabularyGlossary } from "@/components/DataVocabularyGlossary"
 
 const title = "Metodologia e Fontes | Puxa Ficha"
 const description =
@@ -134,6 +135,7 @@ export default function MetodologiaPage() {
       <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
         <SectionLabel>02 Fontes</SectionLabel>
         <SectionTitle>Fontes de dados consultadas</SectionTitle>
+        <DataVocabularyGlossary />
         <p className="mt-4 max-w-2xl text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground sm:text-[length:var(--text-body)]">
           Cada card mostra o tipo de coleta (automático, curadoria editorial ou misto) e a
           frequência de atualização.

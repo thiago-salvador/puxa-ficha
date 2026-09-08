@@ -1,4 +1,5 @@
-import { formatBRL, formatCompact } from "@/lib/utils"
+import { formatBRL } from "@/lib/utils"
+import { FormattedNumber } from "./FormattedNumber"
 
 interface BarItem {
   label: string
@@ -21,7 +22,7 @@ export function HorizontalBars({ items, maxValue }: { items: BarItem[]; maxValue
                 {item.label}
               </span>
               <span className="text-[length:var(--text-caption)] font-bold tabular-nums text-foreground sm:text-[length:var(--text-body-sm)]">
-                {formatCompact(item.value)}
+                <FormattedNumber value={item.value} />
               </span>
             </div>
             <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
@@ -56,7 +57,7 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
         return (
           <div key={d.id ?? `${d.ano}-${d.valor}-${index}`} className="flex min-w-[64px] flex-1 flex-col items-center gap-1.5">
             <span className="whitespace-nowrap text-[length:var(--text-eyebrow)] font-bold tabular-nums text-foreground sm:text-[length:var(--text-caption)]">
-              {formatCompact(d.valor)}
+              <FormattedNumber value={d.valor} />
             </span>
             <div className="flex w-full items-end overflow-hidden rounded-t-[4px] bg-secondary" style={{ height: "120px" }}>
               <div

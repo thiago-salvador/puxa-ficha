@@ -272,8 +272,8 @@ describe("defeito 2: judicial não pode dizer que a busca não foi feita", () =>
     })
   })
 
-  test("o comparador, que não recebe o desfecho, mostra 0 processos na lista", () => {
-    assert.equal(processosResumoLabel(0), "0 processos")
+  test("o comparador, que não recebe o desfecho, preserva ausência de verificação", () => {
+    assert.equal(processosResumoLabel(0), "Processos: não verificado")
     assert.equal(processosResumoLabel(2), "2 processos")
   })
 })

@@ -107,7 +107,9 @@ describe("aba Destaques reordenada", () => {
       }],
       processos: [{ id: "processo-1", candidato_id: "cand-1", descricao: "Processo", status: "em andamento" }],
     } as unknown as Partial<FichaCandidato>)
-    const conteudo = texto(html)
+    const panelStart = html.indexOf('id="profile-panel-alertas"')
+    assert.ok(panelStart >= 0)
+    const conteudo = texto(html.slice(panelStart))
     const alertas = conteudo.indexOf("Alertas (1)")
     const positivos = conteudo.indexOf("Pontos positivos (1)")
     const fontes = conteudo.indexOf("Estado das outras fontes")

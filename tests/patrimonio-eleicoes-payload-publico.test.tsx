@@ -19,6 +19,10 @@ import assert from "node:assert/strict"
 import test from "node:test"
 import { renderToStaticMarkup } from "react-dom/server"
 import { CandidatoProfile } from "@/components/CandidatoProfile"
+import { EmbedWidget } from "@/components/EmbedWidget"
+import { estadoDaFonte } from "@/lib/destaques-ficha"
+import { processosOverviewDisplay } from "@/lib/processos-display"
+import { formatCompact } from "@/lib/utils"
 import {
   buildPatrimonioEleicoes,
   resolvePatrimonioEleicoes,
@@ -343,4 +347,70 @@ test("DTO público preserva a série financeira composta com ausência e erro", 
 
   const dto = payloadDoCliente(ficha)
   assert.deepEqual(dto.financiamento_eleicoes, ficha.financiamento_eleicoes)
+})
+
+test("X10: zero patrimonial oficial preserva candidatura, ano e valor no DTO e embed", () => {
+  const ficha = fichaDoServidor({
+    patrimonio: [{ ...patrimonioRow("pat-zero", 2022), valor_total: 0, bens: [] }],
+    historico: [candidaturaTse("h-2022", 2022, "Presidente")],
+  })
+  const dto = payloadDoCliente(ficha)
+  assert.equal(dto.slug, ficha.slug)
+  assert.equal(dto.patrimonio[0].ano_eleicao, 2022)
+  assert.equal(dto.patrimonio[0].valor_total, 0)
+  assert.equal(resolvePatrimonioEleicoes(dto)[0].estado, "publicado")
+  const html = renderToStaticMarkup(<EmbedWidget ficha={dto} />)
+  assert.ok(html.includes(formatCompact(0)))
+  assert.ok(html.includes("Ano 2022"))
+  assert.ok(html.includes(`/candidato/${ficha.slug}`))
+  assert.ok(!html.includes("N/D"), "zero declarado não é dado ausente")
+})
+
+test("X10: ausência patrimonial confirmada preserva fonte e ano entre DTO, ficha e embed", async () => {
+  const dto = payloadDoCliente(fichaDoServidor({
+    patrimonio_ausencias_oficiais: [ausenciaRow(2022)],
+    historico: [candidaturaTse("h-2022", 2022, "Presidente")],
+  }))
+  assert.deepEqual(resolvePatrimonioEleicoes(dto), [{
+    ano: 2022,
+    estado: "vazio_confirmado",
+    fonte_url: fonteBemCandidato(2022),
+    verificado_em: VERIFICADO_EM,
+  }])
+  const profile = await renderAbaDinheiro(dto)
+  const embed = renderToStaticMarkup(<EmbedWidget ficha={dto} />)
+  assert.equal(estadoNoDom(profile, 2022), "vazio_confirmado")
+  assert.ok(profile.includes(`href="${fonteBemCandidato(2022)}"`))
+  assert.ok(embed.includes("2022: sem bens declarados ao TSE"))
+  assert.ok(embed.includes("Sem bens declarados ao TSE em 2022"))
+  assert.ok(profile.includes('data-pf-overview-patrimonio="Sem bens declarados ao TSE em 2022"'))
+  assert.ok(!embed.includes("Ainda não verificado"))
+  assert.ok(!embed.includes("coleta de bens ainda não realizada"))
+})
+
+test("X10: zero verificado, fonte ausente e fonte falha não se confundem após DTO", () => {
+  const cases = [
+    { resultado: "vazio_confirmado", estado: "vazio_confirmado", value: 0, sub: "escopo verificado" },
+    { resultado: undefined, estado: "nunca_verificado", value: "—", sub: "não verificado" },
+    { resultado: "erro", estado: "nao_foi_possivel_verificar", value: "—", sub: "busca não concluída" },
+  ] as const
+  for (const item of cases) {
+    const verificacao = item.resultado ? {
+      fonte: "DJEN",
+      resultado: item.resultado,
+      executado_em: VERIFICADO_EM,
+      detalhe: "Consulta de teste no recorte documentado.",
+      url: "https://comunica.pje.jus.br/consulta",
+    } : null
+    const dto = payloadDoCliente(fichaDoServidor({ processos_verificacao: verificacao }))
+    assert.deepEqual(dto.processos_verificacao, verificacao)
+    assert.equal(estadoDaFonte(false, dto.processos_verificacao).tipo, item.estado)
+    assert.deepEqual(processosOverviewDisplay(dto.total_processos, dto.processos_criminais, dto.processos_verificacao), {
+      value: item.value,
+      sub: item.sub,
+    })
+    const html = renderToStaticMarkup(<EmbedWidget ficha={dto} />)
+    assert.ok(html.includes(item.sub), `embed preserva ${item.estado}`)
+    if (item.resultado !== "vazio_confirmado") assert.ok(!html.includes("escopo verificado"))
+  }
 })

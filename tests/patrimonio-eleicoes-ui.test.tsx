@@ -339,7 +339,7 @@ test("EmbedWidget explicita vazio confirmado quando não há patrimônio publica
 
   const html = renderToStaticMarkup(<EmbedWidget ficha={ficha} />)
 
-  assert.ok(html.includes("N/D"), "sem valor para exibir")
+  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"), "ausência oficial preservada no indicador")
   assert.ok(html.includes("2014: sem bens declarados ao TSE"), "eleição não fica invisível no embed")
 })
 
