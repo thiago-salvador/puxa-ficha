@@ -1,0 +1,18 @@
+{
+  "motivo": "H12: definição da RPC de observações verificadas. As escritas anotadas pertencem ao corpo da função e só executam quando o coletor autorizado chama a RPC; a migration não insere observações nem eventos. Escopo fechado às colunas do estado derivado, sem escrita em fichas.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "verified_candidate_observations",
+      "ref": "verified-history-rpc",
+      "campos": ["candidate_id", "field", "year", "source_identity", "value", "source_url", "observed_at"]
+    },
+    {
+      "tabela": "verified_candidate_updates",
+      "ref": "verified-history-rpc",
+      "campos": ["candidate_id", "field", "year", "source_identity", "before_source_url", "before_value", "after_value", "source_url"]
+    }
+  ]
+}

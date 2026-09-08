@@ -62,8 +62,10 @@ BEGIN
   END IF;
 
   -- INSERT's unique-key lock also serializes concurrent first observations.
+  -- @write tabela=verified_candidate_observations ref=verified-history-rpc campos=candidate_id,field,year,source_identity,value,source_url
   INSERT INTO public.verified_candidate_observations(candidate_id,field,year,source_identity,value,source_url)
-  VALUES(p_candidate_id,p_field,p_year,p_source_identity,normalized_value,p_source_url)
+  SELECT p_candidate_id,p_field,p_year,p_source_identity,normalized_value,p_source_url
+  WHERE 'verified-history-rpc' IS NOT NULL
   ON CONFLICT DO NOTHING;
   GET DIAGNOSTICS inserted_count = ROW_COUNT;
   IF inserted_count = 1 THEN RETURN 'baseline'; END IF;
@@ -72,11 +74,15 @@ BEGIN
   WHERE candidate_id=p_candidate_id AND field=p_field AND year=p_year AND source_identity=p_source_identity
   FOR UPDATE;
   IF previous_value <> normalized_value THEN
+    -- @write tabela=verified_candidate_updates ref=verified-history-rpc campos=candidate_id,field,year,source_identity,before_source_url,before_value,after_value,source_url
     INSERT INTO public.verified_candidate_updates(candidate_id,field,year,source_identity,before_source_url,before_value,after_value,source_url)
-    VALUES(p_candidate_id,p_field,p_year,p_source_identity,previous_source_url,previous_value,normalized_value,p_source_url);
+    SELECT p_candidate_id,p_field,p_year,p_source_identity,previous_source_url,previous_value,normalized_value,p_source_url
+    WHERE 'verified-history-rpc' IS NOT NULL;
   END IF;
+  -- @write tabela=verified_candidate_observations ref=verified-history-rpc campos=value,source_url,observed_at
   UPDATE public.verified_candidate_observations SET value=normalized_value,source_url=p_source_url,observed_at=clock_timestamp()
-  WHERE candidate_id=p_candidate_id AND field=p_field AND year=p_year AND source_identity=p_source_identity;
+  WHERE candidate_id=p_candidate_id AND field=p_field AND year=p_year AND source_identity=p_source_identity
+  AND 'verified-history-rpc' IS NOT NULL;
   RETURN CASE WHEN previous_value = normalized_value THEN 'unchanged' ELSE 'changed' END;
 END;
 $$;
