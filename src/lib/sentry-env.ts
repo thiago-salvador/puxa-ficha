@@ -62,11 +62,18 @@ export function sentryHabilitadoNesteAmbiente(): boolean {
  *
  * Segunda linha de defesa: com o gate acima, servidor fora da Vercel nem chega
  * a inicializar o Sentry. Isto existe para o dia em que o gate mudar.
+ *
+ * `NEXT_PUBLIC_VERCEL_ENV` só vale no navegador. Ele é a única pista de
+ * ambiente que sobrevive ao bundle do cliente, mas no servidor é apenas mais
+ * uma variável do processo: um run local com ela setada rotulava `production`
+ * antes de a checagem de Vercel rodar, que é exatamente a falha da 1E entrando
+ * pela outra porta. Achado do review do PR #295.
  */
 export function ambienteSentry(): string | undefined {
-  const doCliente = process.env.NEXT_PUBLIC_VERCEL_ENV
-  if (doCliente) return doCliente
-  if (noServidor() && rodandoNaVercel() && process.env.VERCEL_ENV) {
+  if (!noServidor()) {
+    return process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.NODE_ENV
+  }
+  if (rodandoNaVercel() && process.env.VERCEL_ENV) {
     return process.env.VERCEL_ENV
   }
   return process.env.NODE_ENV

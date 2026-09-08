@@ -66,8 +66,13 @@ test("run local com VERCEL_ENV=production não reporta e não vira produção", 
     assert.equal(sentryHabilitadoNesteAmbiente(), false)
     assert.equal(ambienteSentry(), "development")
   })
+  // A mesma falha entrando pela outra porta: no servidor,
+  // `NEXT_PUBLIC_VERCEL_ENV` é só mais uma variável do processo e não pode
+  // rotular produção. Sem esta asserção o rótulo voltava `production` mesmo com
+  // o envio bloqueado. Achado do review do PR #295.
   comEnv({ NEXT_PUBLIC_VERCEL_ENV: "production", NODE_ENV: "development" }, () => {
     assert.equal(sentryHabilitadoNesteAmbiente(), false)
+    assert.equal(ambienteSentry(), "development")
   })
 })
 
@@ -86,6 +91,10 @@ test("dev local sem nenhuma variável da Vercel não reporta no servidor", () =>
 test("no cliente a exigência de Vercel não se aplica", () => {
   const globalComWindow = globalThis as { window?: unknown }
   const tinhaWindow = "window" in globalComWindow
+  // Guardar o valor, não só a presença: num runner que já expõe `window`,
+  // restaurar por `delete` apagaria o objeto original e contaminaria os testes
+  // seguintes. Achado do review do PR #295.
+  const windowAnterior = globalComWindow.window
   globalComWindow.window = {}
   try {
     comEnv({ NEXT_PUBLIC_VERCEL_ENV: "production" }, () => {
@@ -103,6 +112,7 @@ test("no cliente a exigência de Vercel não se aplica", () => {
       assert.equal(ambienteSentry(), "development")
     })
   } finally {
-    if (!tinhaWindow) delete globalComWindow.window
+    if (tinhaWindow) globalComWindow.window = windowAnterior
+    else delete globalComWindow.window
   }
 })
