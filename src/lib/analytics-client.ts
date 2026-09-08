@@ -8,7 +8,7 @@ import {
   sanitizeAnalyticsPayload,
 } from "@/lib/analytics-events"
 
-function readProofIdFromUrl(): string | null {
+export function readProofIdFromUrl(): string | null {
   if (typeof window === "undefined") return null
   // Prova de uma execução: gerar com `openssl rand -hex 16` (32 hex, casa o regex).
   // Navegar as superfícies com `?pf_analytics_proof=<id>`. O cliente anexa

@@ -69,7 +69,7 @@ describe("card, comparador e ranking usam o formatador central", () => {
   for (const surface of surfaces) {
     it(`${surface} nao formata moeda na mao`, () => {
       const src = readFileSync(join(root, surface), "utf8")
-      assert.match(src, /formatCompact/, "deve importar o formatador central")
+      assert.match(src, /formatCompact|FormattedNumber/, "deve usar o formatador central ou seu componente acessível")
       assert.doesNotMatch(src, /toFixed\(/, "toFixed manual em superficie publica")
       assert.doesNotMatch(src, /R\$ \$\{/, "template R$ manual em superficie publica")
     })

@@ -102,22 +102,27 @@ describe("processosMaiorVerificadoNaComparacao", () => {
 })
 
 describe("processosResumoLabel", () => {
-  /*
-    2026-08-19: na lista compacta o texto longo quebrava o card no mobile.
-    0 processos é o display da ausência de contagem, não afirmação de ficha
-    limpa. A ficha continua em processosOverviewDisplay.
-  */
-  it("mostra 0 processos quando não há contagem verificada", () => {
-    assert.equal(processosResumoLabel(0), "0 processos")
-    assert.equal(processosResumoLabel(null), "0 processos")
+  it("preserva desconhecido quando não há contagem verificada", () => {
+    assert.equal(processosResumoLabel(0), "Processos: não verificado")
+    assert.equal(processosResumoLabel(null), "Processos: não verificado")
     assert.equal(processosResumoLabel(1), "1 processo")
     assert.equal(processosResumoLabel(3), "3 processos")
   })
 
-  it("a coluna numérica da lista usa 0 no mesmo caso", () => {
-    assert.equal(processosListaCount(0), 0)
-    assert.equal(processosListaCount(null), 0)
+  it("a coluna numérica não converte desconhecido em zero", () => {
+    assert.equal(processosListaCount(0), "—")
+    assert.equal(processosListaCount(null), "—")
     assert.equal(processosListaCount(4), 4)
+  })
+
+  it("o mesmo recibo produz a mesma contagem na lista e na ficha", () => {
+    for (const resultado of ["vazio_confirmado", "erro", "indeterminado"] as const) {
+      const recibo = { resultado }
+      const overview = processosOverviewDisplay(0, 0, recibo)
+      assert.equal(processosListaCount(0, recibo), overview.value)
+      assert.equal(processosResumoLabel(0, recibo), resultado === "vazio_confirmado"
+        ? "0 processos" : `Processos: ${overview.sub}`)
+    }
   })
 })
 
@@ -139,12 +144,12 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
     // O único `{candidato.total_processos}` que pode sobrar é o data-attribute.
     const semDataAttr = fonte.replace(/data-pf-comparador-processos=\{candidato\.total_processos\}/g, "")
     assert.doesNotMatch(semDataAttr, /(?<!\$)\{candidato\.total_processos\}/)
-    assert.match(fonte, /processosOverviewDisplay\(candidato\.total_processos\)/)
-    assert.match(fonte, /processosListaCount\(candidato\.total_processos\)/)
+    assert.match(fonte, /processosOverviewDisplay\(candidato\.total_processos, undefined, candidato\.processos_verificacao\)/)
+    assert.match(fonte, /processosListaCount\(candidato\.total_processos, candidato\.processos_verificacao\)/)
   })
 
-  it("a lista compacta e o aria-label usam 0 processos, não o texto longo", () => {
-    const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos\)/g) ?? []
+  it("a lista compacta e o aria-label usam o resolvedor compartilhado", () => {
+    const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos, candidato\.processos_verificacao\)/g) ?? []
     assert.equal(ocorrencias.length, 2, "esperado no aria-label e na lista compacta")
     assert.doesNotMatch(fonte, /sem contagem de processos verificada/)
     assert.doesNotMatch(fonte, /sem contagem verificada/)

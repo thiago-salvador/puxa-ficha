@@ -811,6 +811,48 @@ async function fetchColetaVerificacao(
   }
 }
 
+/** Metadado da mesma fonte da ficha, em lotes para evitar uma consulta por card. */
+async function fetchProcessosVerificacoesBatch(
+  slugs: string[],
+): Promise<Map<string, SancoesVerificacao>> {
+  const verificacoes = new Map<string, SancoesVerificacao>()
+  const alvos = [...new Set(slugs.filter(Boolean))]
+  if (alvos.length === 0) return verificacoes
+  try {
+    const admin = createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+    for (let offset = 0; offset < alvos.length; offset += 100) {
+      const lote = alvos.slice(offset, offset + 100)
+      const { data, error } = await withSupabaseRetry(
+        `coleta_log_ultima(comparador:${offset})`,
+        async (signal) => admin
+          .from("coleta_log_ultima")
+          .select("alvo, resultado, executado_em")
+          .eq("fonte", "processos-curadoria")
+          .eq("escopo", "candidato")
+          .in("alvo", lote)
+          .abortSignal(signal),
+      )
+      if (error) continue
+      for (const row of data ?? []) {
+        const resultado = row.resultado as SancoesVerificacao["resultado"]
+        if (typeof row.alvo !== "string" || !lote.includes(row.alvo)) continue
+        if (!COLETA_RESULTADOS_VALIDOS.has(resultado)) continue
+        if (typeof row.executado_em !== "string" || !row.executado_em) continue
+        verificacoes.set(row.alvo, {
+          fonte: "processos-curadoria",
+          resultado,
+          executado_em: row.executado_em,
+          detalhe: null,
+          url: null,
+        })
+      }
+    }
+  } catch {
+    // Credencial/view ausente mantém estado desconhecido, nunca zero afirmado.
+  }
+  return verificacoes
+}
+
 async function fetchSancoesVerificacao(slug: string): Promise<SancoesVerificacao | null> {
   return fetchColetaVerificacao(slug, "transparencia-sanctions")
 }
@@ -1697,16 +1739,19 @@ async function getCandidatosComparaveisResourceUncached(
   const cargoAtualById = new Map<string, string | null>()
   const legislativoById = new Map<string, boolean>()
   let patrimonioPorId = new Map<string, PatrimonioAnoValor[]>()
+  let processosVerificacoes = new Map<string, SancoesVerificacao>()
   if (comparadorIds.length > 0) {
-    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap] =
+    const [mudRows, gastoMap, patrimonioMap, cargoMap, legislativoMap, processosMap] =
       await Promise.all([
         fetchMudancasPartidoRowsPaged(supabase, comparadorIds),
         fetchGastoTotalsByCandidatoIds(supabase, comparadorIds),
         fetchPatrimonioSeriesByCandidatoIds(supabase, comparadorIds),
         fetchCargoAtualByCandidatoIds(supabase, comparadorIds),
         fetchLegislativeHistoryFlagsByCandidatoIds(supabase, comparadorIds),
+        fetchProcessosVerificacoesBatch(baseRows.map((row) => row.slug)),
       ])
     patrimonioPorId = patrimonioMap
+    processosVerificacoes = processosMap
 
     const byCandidato = new Map<string, MudancaPartido[]>()
     for (const row of mudRows) {
@@ -1733,6 +1778,7 @@ async function getCandidatosComparaveisResourceUncached(
 
     const normalized = {
       ...row,
+      processos_verificacao: processosVerificacoes.get(row.slug) ?? null,
       cargo_atual: cargoAtualById.has(row.id) ? (cargoAtualById.get(row.id) ?? null) : null,
       alertas_graves: alertasGraves.length,
       mudancas_partido: switchCountById.has(row.id)

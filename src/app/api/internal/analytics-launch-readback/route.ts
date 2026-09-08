@@ -73,6 +73,7 @@ export function createAnalyticsLaunchReadbackGetHandler(
           proofId,
           total,
           counts: readback.counts,
+          tasks: readback.tasks,
           missing: readback.missing,
         },
         { headers: { "cache-control": "no-store" } }

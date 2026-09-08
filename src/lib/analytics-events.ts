@@ -27,6 +27,7 @@ const ANALYTICS_ALLOWED_PAYLOAD_KEYS = [
   "proof_id",
   "question_count",
   "scope",
+  "stage",
   "surface",
   "term_length",
 ] as const
@@ -46,6 +47,10 @@ export function sanitizeAnalyticsPayload(input: unknown): AnalyticsPayload {
   for (const [key, value] of Object.entries(input as Record<string, unknown>)) {
     if (!ANALYTICS_ALLOWED_PAYLOAD_KEY_SET.has(key)) continue
     if (SENSITIVE_ANALYTICS_PROP_KEY_RE.test(key)) continue
+    if (key === "stage") {
+      if (value === "ready" || value === "viewed") out[key] = value
+      continue
+    }
 
     if (typeof value === "string") {
       const trimmed = value.trim()
@@ -64,6 +69,21 @@ export function sanitizeAnalyticsPayload(input: unknown): AnalyticsPayload {
   }
 
   return out as AnalyticsPayload
+}
+
+/** Aggregate actions, never candidate identity or an inference of understanding. */
+export function summarizeAnalyticsTasks(rows: readonly { event_name: string; payload?: unknown }[]) {
+  const tasks = { candidateOpened: 0, sourceOpened: 0, comparisonReady: 0, comparisonViewed: 0 }
+  for (const row of rows) {
+    if (row.event_name === ANALYTICS_EVENTS.candidateClick) tasks.candidateOpened++
+    if (row.event_name === ANALYTICS_EVENTS.externalSourceClick) tasks.sourceOpened++
+    if (row.event_name === ANALYTICS_EVENTS.comparisonStart) {
+      const payload = sanitizeAnalyticsPayload(row.payload)
+      if (payload.stage === "viewed") tasks.comparisonViewed++
+      else tasks.comparisonReady++ // Legacy rows did not have a stage.
+    }
+  }
+  return tasks
 }
 
 export function getAnalyticsProofIdFromPayload(payload: AnalyticsPayload): string | null {

@@ -1,9 +1,12 @@
 "use client"
 
+import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
+
 import { memo, useEffect, useRef, useState } from "react"
 import Link from "next/link"
+import { FormattedNumber } from "./FormattedNumber"
+import { processosOverviewDisplay } from "@/lib/processos-display"
 import {
-  formatCompact,
   getPartyLogoUrl,
   FALLBACK_GRADIENT,
 } from "@/lib/utils"
@@ -33,7 +36,8 @@ export const CandidatoCard = memo(function CandidatoCard({
 }: CandidatoCardProps) {
   const gradient = FALLBACK_GRADIENT
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
-  const hasMainStats = (patrimonio != null && patrimonio > 0) || processos > 0
+  const hasMainStats = (patrimonio != null) || processos > 0
+  const processosDisplay = processosOverviewDisplay(processos)
   const formacaoLabel = formacaoPublicaDe({
     formacao: candidato.formacao ? sanitizePtBrText(candidato.formacao) : null,
     formacao_instituicao: candidato.formacao_instituicao
@@ -127,14 +131,14 @@ export const CandidatoCard = memo(function CandidatoCard({
               <div className="mt-1 flex min-h-[14px] items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold text-white/80 sm:hidden">
                 {hasMainStats ? (
                   <>
-                    <span className="flex shrink-0 items-center gap-0.5">
+                    <span className="flex min-w-0 items-center gap-0.5">
                       <Landmark className="size-3.5 shrink-0" />
-                      {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
+                      {patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}
                     </span>
                     <span className="text-white/30">|</span>
                     <span className="flex shrink-0 items-center gap-0.5">
                       <Scale className="size-3.5 shrink-0" />
-                      {processos}
+                      <span title={processosDisplay.sub}>{processosDisplay.value}<span className="sr-only">{processosDisplay.sub ? ` processos: ${processosDisplay.sub}` : " processos"}</span></span>
                     </span>
                   </>
                 ) : (
@@ -165,7 +169,7 @@ export const CandidatoCard = memo(function CandidatoCard({
                   <div className="grid grid-cols-2 gap-x-4">
                     <div>
                       <p className="font-heading text-[26px] leading-none text-white">
-                        {patrimonio != null && patrimonio > 0 ? formatCompact(patrimonio) : "N/D"}
+                        {patrimonio != null ? <FormattedNumber value={patrimonio} /> : PUBLIC_DATA_VOCABULARY.unverified.label}
                       </p>
                       <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Landmark className="size-3 shrink-0" />
@@ -174,7 +178,7 @@ export const CandidatoCard = memo(function CandidatoCard({
                     </div>
                     <div>
                       <p className="font-heading text-[26px] leading-none text-white">
-                        {processos}
+                        <span title={processosDisplay.sub}>{processosDisplay.value}<span className="sr-only">{processosDisplay.sub ? `: ${processosDisplay.sub}` : ""}</span></span>
                       </p>
                       <p className="mt-1 flex items-center gap-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-wide text-white/60">
                         <Scale className="size-3 shrink-0" />
