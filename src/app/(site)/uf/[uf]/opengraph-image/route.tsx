@@ -1,4 +1,4 @@
-import { getEstadoNome } from "@/lib/api"
+import { getStatePagePresentation } from "@/lib/state-page-presentation"
 import { buildEditorialOg } from "@/lib/og"
 
 export async function GET(
@@ -6,12 +6,13 @@ export async function GET(
   { params }: { params: Promise<{ uf: string }> }
 ) {
   const { uf } = await params
-  const nome = getEstadoNome(uf) ?? uf.toUpperCase()
+  const presentation = getStatePagePresentation(uf)
+  if (!presentation) return new Response("Estado não encontrado", { status: 404 })
 
   return buildEditorialOg({
-    eyebrow: "Estado",
-    title: nome,
-    subtitle: `Indicadores territoriais e candidatos a governador de ${nome} nas eleições de 2026.`,
-    meta: `${uf.toUpperCase()} · Puxa Ficha`,
+    eyebrow: "Eleições 2026 · Governadores",
+    title: presentation.name,
+    subtitle: "Candidaturas · Programas por tema · Pesquisas · Contexto estadual",
+    meta: `${uf.toUpperCase()} · Fontes e períodos de referência · Puxa Ficha`,
   })
 }

@@ -20,12 +20,13 @@ import { renderToStaticMarkup } from "react-dom/server"
 
 import { PatrimonioChart } from "@/components/BarChart"
 import { StateIndicators } from "@/components/StateIndicators"
+import type { IndicadorEstadual } from "@/lib/types"
 
-function indicador(indicador: string, ano: number, valor: number) {
-  return { id: `${indicador}-${ano}`, uf: "BA", indicador, ano, valor, fonte: "IBGE" } as never
+function indicador(indicador: string, ano: number, valor: number): IndicadorEstadual {
+  return { id: `${indicador}-${ano}`, estado: "BA", indicador, ano, valor, fonte: indicador === "pib_total" ? "ibge_sidra" : "ipeadata", unidade: indicador === "pib_total" ? "mil_reais" : "indice", metadata: null, valor_texto: null }
 }
 
-test("indicadores estaduais: valor e ano ficam numa linha e a sparkline só entra a partir de sm", () => {
+test("indicadores estaduais: valor fica numa linha, referência pode quebrar e sparkline só entra a partir de sm", () => {
   const html = renderToStaticMarkup(
     <StateIndicators
       estado="BA"
@@ -41,7 +42,8 @@ test("indicadores estaduais: valor e ano ficam numa linha e a sparkline só entr
   assert.equal(cards, 2)
   assert.match(html, /R\$ 431 bi/)
   assert.match(html, /<span class="block whitespace-nowrap font-heading/)
-  assert.match(html, /<span class="mt-1 block whitespace-nowrap text-\[length:var\(--text-eyebrow\)\]/)
+  assert.match(html, /<span class="mt-1 block text-\[length:var\(--text-eyebrow\)\][^"]*">Referência: 2023<\/span>/)
+  assert.doesNotMatch(html, /<span class="mt-1 block whitespace-nowrap/, "a referência completa precisa poder quebrar para não transbordar no celular")
   assert.match(html, /<div class="hidden sm:block"><svg/)
   assert.doesNotMatch(html, /px-5 py-5"/, "o card mobile precisa do padding menor (px-4) para o valor caber")
 })

@@ -462,6 +462,8 @@ export interface IndicadorEstadualRanking {
   valor: number | null;
   /** Chave da origem no banco (ex.: ibge_sidra, ipeadata). */
   fonte?: string | null;
+  unidade?: string | null;
+  metadata?: Record<string, unknown> | null;
 }
 
 // --- Noticias ---

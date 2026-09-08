@@ -12,6 +12,7 @@ import {
 } from "@/data/brazil-states"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { BrazilMapIndicadoresPreview } from "@/lib/brazil-map-preview"
+import { rememberState, StatePreference } from "@/components/StatePreference"
 
 /**
  * Estados grandes o bastante para caber uma sigla legível dentro do polígono.
@@ -85,6 +86,8 @@ export function BrazilMap({
   const router = useRouter()
   const prefersReducedMotion = usePrefersReducedMotion()
   const [hovered, setHovered] = useState<string | null>(null)
+  const [focusState, setFocusState] = useState("SP")
+  const [touchState, setTouchState] = useState<string | null>(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 })
   const mapRef = useRef<HTMLDivElement>(null)
   // Touch: track which state was tapped for first-tap tooltip / second-tap navigate
@@ -115,6 +118,9 @@ export function BrazilMap({
   }, [])
 
   return (
+    <div>
+      <StatePreference />
+      <p id="map-instructions" className="mb-4 text-sm text-muted-foreground">Escolha no mapa ou no diretório. No mapa, use as setas para percorrer os estados e Enter para abrir. No celular, toque para ver o estado e use o link para abrir.</p>
     <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
       {/* Left: Isometric Map */}
       <div
@@ -122,19 +128,15 @@ export function BrazilMap({
         className="relative w-full flex-shrink-0 lg:w-[55%]"
         onMouseMove={handleMouseMove}
       >
-        {/*
-          Mapa puramente decorativo para tecnologia assistiva: o diretório de estados
-          ao lado já expõe as 27 UFs como links de texto, que é o caminho acessível.
-          Marcar os polígonos como interativos criava controles aninhados dentro do
-          svg (violação nested-interactive) e 27 paradas mudas de Tab.
-        */}
         <svg
           viewBox="-20 -20 870 950"
           className="w-full"
           style={{
             transform: "rotate(-2deg)",
           }}
-          aria-hidden="true"
+          role="group"
+          aria-label="Mapa dos estados brasileiros"
+          aria-describedby="map-instructions"
         >
           <defs>
             {/* Shadow under entire map */}
@@ -165,7 +167,27 @@ export function BrazilMap({
               return (
                 <g
                   key={state.sigla}
-                  className="cursor-pointer"
+                  className="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
+                  role="link"
+                  aria-label={`Abrir ${state.name} (${state.sigla})`}
+                  tabIndex={focusState === state.sigla ? 0 : -1}
+                  data-map-uf={state.sigla}
+                  onFocus={() => { setHovered(state.sigla); setFocusState(state.sigla) }}
+                  onBlur={() => setHovered(null)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault()
+                      rememberState(state.sigla)
+                      router.push(`/uf/${state.sigla.toLowerCase()}`)
+                    } else if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp", "Home", "End"].includes(event.key)) {
+                      event.preventDefault()
+                      const index = BRAZIL_STATES.findIndex((item) => item.sigla === state.sigla)
+                      const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? BRAZIL_STATES.length - 1 : (index + (["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1) + BRAZIL_STATES.length) % BRAZIL_STATES.length
+                      const next = BRAZIL_STATES[nextIndex].sigla
+                      setFocusState(next)
+                      mapRef.current?.querySelector<SVGGElement>(`[data-map-uf="${next}"]`)?.focus()
+                    }
+                  }}
                   onMouseEnter={() => {
                     touchedRef.current = null
                     setHovered(state.sigla)
@@ -181,12 +203,14 @@ export function BrazilMap({
                         setMouse({ x: t.clientX - rect.left, y: t.clientY - rect.top })
                       }
                       touchedRef.current = state.sigla
+                      setTouchState(state.sigla)
                       setHovered(state.sigla)
                     }
                     // Second tap: don't preventDefault → click fires → navigate
                   }}
                   onClick={() => {
                     touchedRef.current = null
+                    rememberState(state.sigla)
                     router.push(`/uf/${state.sigla.toLowerCase()}`)
                   }}
                 >
@@ -247,6 +271,12 @@ export function BrazilMap({
           </g>
         </svg>
 
+        {touchState && (
+          <p className="mt-3" aria-live="polite">
+            <Link className="inline-flex min-h-11 items-center rounded-lg border border-border px-4 font-bold underline" href={`/uf/${touchState.toLowerCase()}`} onClick={() => rememberState(touchState)}>Abrir {STATE_NAMES[touchState]} ({touchState})</Link>
+          </p>
+        )}
+
         {/* Cursor-following tooltip */}
         {hoveredState && (
           <div
@@ -282,7 +312,7 @@ export function BrazilMap({
           O gabarito usa o nome mais longo do conjunto, então ele quebra em duas
           linhas exatamente nas larguras em que o nome real quebraria.
         */}
-        <div className="mb-6 hidden min-h-[72px] lg:grid">
+        <div className="mb-6 hidden min-h-[72px] lg:grid" aria-live="polite" aria-atomic="true">
           <div aria-hidden className="invisible col-start-1 row-start-1">
             <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em]">
               XX
@@ -342,14 +372,14 @@ export function BrazilMap({
               </div>
             ) : (
               <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-                Passe o mouse sobre um estado
+                Aponte ou use o teclado para explorar um estado
               </p>
             )}
           </div>
         </div>
 
         {/* Region directory */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+        <div id="diretorio-estados" tabIndex={-1} aria-label="Diretório de estados" className="grid scroll-mt-24 grid-cols-2 gap-x-6 gap-y-5 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
           {Object.entries(REGIONS).map(([region, ufs]) => {
             const macro = region as BrazilMacroRegion
             const slug = MACRO_REGION_CSS_SLUG[macro]
@@ -376,13 +406,16 @@ export function BrazilMap({
                       <li key={uf}>
                         <Link
                           href={`/uf/${uf.toLowerCase()}`}
-                          className={`group flex items-baseline gap-1.5 rounded px-1 py-0.5 text-[length:var(--text-body-sm)] transition-colors ${
+                          className={`group flex min-h-11 items-center gap-1.5 rounded px-1 py-0.5 text-[length:var(--text-body-sm)] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 ${
                             isActive
                               ? "bg-foreground/5 text-foreground"
                               : "text-foreground/70 hover:text-foreground"
                           }`}
                           onMouseEnter={() => setHovered(uf)}
                           onMouseLeave={() => setHovered(null)}
+                          onFocus={() => setHovered(uf)}
+                          onBlur={() => setHovered(null)}
+                          onClick={() => rememberState(uf)}
                         >
                           <span className="font-bold">{uf}</span>
                           <span className="font-medium">{STATE_NAMES[uf]}</span>
@@ -396,6 +429,7 @@ export function BrazilMap({
           })}
         </div>
       </div>
+    </div>
     </div>
   )
 }

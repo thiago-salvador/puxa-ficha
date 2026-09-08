@@ -16,9 +16,9 @@ import {
   buildIndicadoresPorEstadoForMap,
 } from "@/lib/brazil-map-preview"
 
-const title = "Governadores por estado | Puxa Ficha"
+const title = "Eleições 2026: governadores por estado | Puxa Ficha"
 const description =
-  "Consulte candidatos a governador mapeados em cada estado brasileiro. Mapa interativo com fichas públicas disponíveis."
+  "Encontre candidaturas a governador por estado. Consulte programas por tema, pesquisas e indicadores, com fontes e períodos de referência."
 
 export const metadata: Metadata = {
   title,

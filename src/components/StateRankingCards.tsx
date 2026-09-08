@@ -33,7 +33,7 @@ function QualityBadge({ qualidade }: { qualidade: "bom" | "ruim" | "neutro" }) {
 }
 
 export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) {
-  if (ranking.rankings.length === 0) return null
+  if (ranking.rankings.length === 0) return <p className="rounded-[16px] border border-border/50 p-5 text-sm text-muted-foreground">Ranking indisponível: não há pelo menos duas UFs com período, unidade, fonte e definição compatíveis. Consulte os indicadores e seus limites acima.</p>
 
   const byKey = new Map(ranking.rankings.map((r) => [r.indicador, r]))
   const ordered = STATE_INDICATOR_ORDER.map((k) => byKey.get(k)).filter(
@@ -51,7 +51,7 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
         className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
         style={{ fontSize: "clamp(22px, 4vw, 36px)" }}
       >
-        Ranking nacional
+        Entre UFs comparáveis
       </p>
       <div className="mt-4 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-3">
         {ordered.map((r) => {
@@ -73,16 +73,17 @@ export function StateRankingCards({ ranking }: { ranking: StateRankingResult }) 
                 <span className="block font-heading text-[length:var(--text-heading-sm)] leading-[0.95] tracking-tight text-foreground sm:text-[length:var(--text-heading)]">
                   {cfg.format(r.valor)}
                 </span>
-                <QualityBadge qualidade={r.qualidade} />
+                {cfg.scale ? <MetaBadge tone="muted">{r.indicador === "pib_total" ? "Medida de escala" : "Medida de tamanho"}</MetaBadge> : <QualityBadge qualidade={r.qualidade} />}
               </div>
               <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:text-[length:var(--text-caption)]">
-                {r.label} · ano {r.ano}
+                {r.label} UFs · referência {r.periodLabel ?? r.ano}
               </p>
               {r.fonte ? (
                 <div className="mt-1.5">
                   <IndicadorFonteTag fonte={r.fonte} />
                 </div>
               ) : null}
+              <p className="mt-2 text-xs text-muted-foreground">{cfg.scale ? "Maior ou menor não significa melhor ou pior. " : "Média simples das UFs compatíveis. "}Cobertura: {r.total} de 27 UFs.</p>
               <div
                 className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-muted"
                 role="presentation"
