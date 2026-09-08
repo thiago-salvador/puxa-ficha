@@ -2,6 +2,13 @@
 
 Snapshot mais recente verificado em **06/09/2026**.
 
+## Home H10, H12 e H13: implementação 08/09/2026
+
+- Ordenação explícita preserva os cards e distingue contagens indisponíveis de zero; a mesma origem nullable atende a home e a grade estadual compartilhada.
+- A entrada do quiz explica temas, recortes e limites e aponta para o quiz e sua metodologia. Duração não é estimada sem medição.
+- H12 publica apenas o estado de histórico indisponível. Os eventos internos de coleta não comprovam mudanças oficiais com fonte e data; o feed real continua pendente. Exemplos locais não entram em produção.
+- Validação da implementação: build, lint, TypeScript, ortografia, testes focados e inspeção móvel. A publicação depende dos checks e do readback do SHA no domínio. [confidence: alta, source: diff e execução local desta implementação] [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]
+
 ## Snapshot 06/09/2026: completude pública e programa de Ben Mendes
 
 - A varredura pública fechou 208 de 208 fichas com zero lacuna acionável e

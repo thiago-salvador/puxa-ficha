@@ -27,12 +27,14 @@ import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
 import { formatCompact } from "@/lib/utils"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
+import { compareCandidateSortValues } from "@/lib/candidate-sort"
 import type { Candidato } from "@/lib/types"
 
 interface CandidatoGridProps {
   candidatos: Candidato[]
   processos: Record<string, number>
   patrimonios: Record<string, number | null>
+  processSortCounts?: Record<string, number | null>
 }
 
 type ViewMode = "grid" | "list"
@@ -118,6 +120,7 @@ export function CandidatoGrid({
   candidatos,
   processos,
   patrimonios,
+  processSortCounts,
 }: CandidatoGridProps) {
   const [query, setQuery] = useState("")
   const [view, setView] = useState<ViewMode>("grid")
@@ -158,18 +161,15 @@ export function CandidatoGrid({
       )
     }
 
-    if (sort === "patrimonio") {
-      result = [...result].sort(
-        (a, b) => (patrimonios[b.slug] ?? 0) - (patrimonios[a.slug] ?? 0)
-      )
-    } else if (sort === "processos") {
-      result = [...result].sort(
-        (a, b) => (processos[b.slug] ?? 0) - (processos[a.slug] ?? 0)
-      )
-    }
+    result = [...result].sort((a, b) => {
+      const byName = a.nome_urna.localeCompare(b.nome_urna, "pt-BR")
+      if (sort === "nome") return byName
+      const values = sort === "patrimonio" ? patrimonios : (processSortCounts ?? processos)
+      return compareCandidateSortValues(values[a.slug], values[b.slug]) || byName
+    })
 
     return result
-  }, [candidatos, deferredQuery, partidoFilter, sort, patrimonios, processos])
+  }, [candidatos, deferredQuery, partidoFilter, sort, patrimonios, processos, processSortCounts])
 
   const shouldVirtualizeList =
     view === "list" && filtered.length >= VIRTUALIZATION_THRESHOLD
@@ -286,6 +286,13 @@ export function CandidatoGrid({
         </div>
       </div>
 
+      <p className="mb-5 max-w-3xl text-[length:var(--text-caption)] leading-relaxed text-muted-foreground" aria-live="polite">
+        {sort === "nome"
+          ? "Ordem alfabética. A posição não representa uma avaliação dos candidatos."
+          : sort === "patrimonio"
+            ? "Patrimônio declarado: maior para menor. Os anos das declarações podem variar; consulte o ano e a fonte na ficha. Dados ausentes ficam no fim, separados de valores iguais a zero."
+            : "Processos registrados na base: maior para menor. A quantidade não indica gravidade ou culpa. Zero significa nenhum registro nesta contagem, não uma certidão de ausência de processos. Dados indisponíveis ficam no fim."}
+      </p>
       {filtered.length === 0 ? (
         <p className="py-20 text-center text-[length:var(--text-body)] text-foreground">
           Nenhum candidato encontrado para &ldquo;{query}&rdquo;

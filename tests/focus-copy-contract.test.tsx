@@ -38,7 +38,7 @@ describe("filter focus styles", () => {
       <SortOrderMenu value="nome" onChange={() => undefined} />,
     )
 
-    assert.match(html, /aria-label="Ordenar candidatos: A-Z"/)
+    assert.match(html, /aria-label="Ordenar candidatos: Nome: A a Z"/)
     assert.match(html, /focus-visible:ring-2/)
   })
 })

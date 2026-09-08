@@ -130,9 +130,11 @@ export default async function UfHubPage({
   )
 
   const processos: Record<string, number> = {}
+  const processSortCounts: Record<string, number | null> = {}
   const patrimonios: Record<string, number | null> = {}
   for (const r of resumos) {
     processos[r.candidato.slug] = r.processos
+    processSortCounts[r.candidato.slug] = r.processos_ordenacao ?? null
     patrimonios[r.candidato.slug] = r.patrimonio
   }
 
@@ -300,6 +302,7 @@ export default async function UfHubPage({
             <CandidatoGrid
               candidatos={candidatos}
               processos={processos}
+              processSortCounts={processSortCounts}
               patrimonios={patrimonios}
             />
           </section>
