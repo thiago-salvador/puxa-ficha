@@ -31,5 +31,13 @@ test("first-turn national poll fits a 375px viewport", async ({ browser }) => {
     content: document.documentElement.scrollWidth,
   }))
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport)
+  const otherThemes = page.getByRole("combobox", { name: "Outros temas do programa" })
+  if (await otherThemes.count()) {
+    const longestTheme = await otherThemes.evaluate((select: HTMLSelectElement) =>
+      [...select.options].sort((a, b) => b.text.length - a.text.length)[0].value)
+    await otherThemes.selectOption(longestTheme)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth))
+      .toBeLessThanOrEqual(dimensions.viewport)
+  }
   await context.close()
 })

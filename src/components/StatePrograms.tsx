@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { ChevronDown } from "lucide-react"
 import Link from "next/link"
 import type { StateProgram } from "@/lib/state-programs"
 import { STATE_PROGRAM_CORE_THEMES, stateProgramTheme } from "@/lib/state-program-themes"
@@ -27,7 +28,7 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
     {unavailable && <p role="status" className="text-sm text-muted-foreground">Não foi possível carregar os programas agora. Consulte as fichas das candidaturas.</p>}
     <div className="flex flex-wrap items-center gap-2" aria-label="Tema do programa">
       {coreThemes.map(([id, title]) => <button type="button" key={id} aria-pressed={theme === id} onClick={() => setSelected(id)} className={`min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ${theme === id ? "bg-foreground text-background" : "bg-card"}`}>{title}</button>)}
-      {otherThemes.length > 0 && <label className="flex min-w-0 max-w-full flex-col gap-1 text-sm font-semibold sm:flex-row sm:items-center sm:gap-2">Outros temas<select aria-label="Outros temas do programa" className="min-h-11 min-w-0 max-w-full overflow-hidden text-ellipsis rounded-lg border bg-card px-3" value={otherThemes.some(([id]) => id === selected) ? selected : ""} onChange={e => { if (e.target.value) setSelected(e.target.value) }}><option value="">Selecionar tema</option>{otherThemes.map(([id,title]) => <option key={id} value={id}>{title}</option>)}</select></label>}
+      {otherThemes.length > 0 && <label className="flex min-w-0 max-w-full flex-col gap-1 text-sm font-semibold sm:flex-row sm:items-center sm:gap-2">Outros temas<span className="relative min-w-0 max-w-full"><select aria-label="Outros temas do programa" className="min-h-11 w-full min-w-0 max-w-full appearance-none overflow-hidden text-ellipsis rounded-lg border bg-card py-2 pl-3 pr-10" value={otherThemes.some(([id]) => id === selected) ? selected : ""} onChange={e => { if (e.target.value) setSelected(e.target.value) }}><option value="">Selecionar tema</option>{otherThemes.map(([id,title]) => <option key={id} value={id}>{title}</option>)}</select><ChevronDown aria-hidden="true" className="pointer-events-none absolute right-3 top-1/2 size-4 -translate-y-1/2" /></span></label>}
     </div>
     <div className={`grid items-start gap-5 ${showContext ? "lg:grid-cols-[240px_minmax(0,1fr)]" : ""}`}>
       {showContext && <aside className="rounded-xl border bg-card p-5">
