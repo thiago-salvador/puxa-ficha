@@ -4,9 +4,14 @@ const GROUPS: Record<string, { id: string; title: string }> = {
   "seguranca-publica": { id: "seguranca", title: "Segurança" },
   "integracao-policial": { id: "seguranca", title: "Segurança" },
   "cameras-corporais": { id: "seguranca", title: "Segurança" },
+  "seguranca-publica-desmilitarizacao": { id: "seguranca", title: "Segurança" },
+  "seguranca-publica-plebiscito": { id: "seguranca", title: "Segurança" },
+  "seguranca-publica-integrada": { id: "seguranca", title: "Segurança" },
   saude: { id: "saude", title: "Saúde" },
   "saude-publica": { id: "saude", title: "Saúde" },
   "fila-da-saude": { id: "saude", title: "Saúde" },
+  "saude-sus": { id: "saude", title: "Saúde" },
+  "saude-digital-e-emocional": { id: "saude", title: "Saúde" },
   educacao: { id: "educacao", title: "Educação" },
   "educacao-publica": { id: "educacao", title: "Educação" },
   "ensino-profissional": { id: "educacao", title: "Educação" },
@@ -14,6 +19,7 @@ const GROUPS: Record<string, { id: string; title: string }> = {
   "adaptacao-climatica": { id: "clima", title: "Clima e ambiente" },
   "meio-ambiente": { id: "clima", title: "Clima e ambiente" },
   "mudancas-climaticas": { id: "clima", title: "Clima e ambiente" },
+  "meio-ambiente-clima": { id: "clima", title: "Clima e ambiente" },
 }
 export function stateProgramTheme(theme: { id: string; titulo: string }) {
   return GROUPS[theme.id] ?? { id: theme.id, title: theme.titulo }

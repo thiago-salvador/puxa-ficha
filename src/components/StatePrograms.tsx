@@ -8,7 +8,7 @@ import { IndicadorFonteTag } from "./IndicadorFonteTag"
 
 export type StateProgramContext = { themeId: string; label: string; value: string; year: string; source: string }
 
-export function StatePrograms({ programs, context = [], unavailable = false }: { programs: StateProgram[]; context?: StateProgramContext[]; unavailable?: boolean }) {
+export function StatePrograms({ programs, context = [], unavailable = false, showContext = true }: { programs: StateProgram[]; context?: StateProgramContext[]; unavailable?: boolean; showContext?: boolean }) {
   const themes = [...new Map(programs.flatMap(p => p.manifesto?.resumo?.temas ?? []).map(t => {
     const group = stateProgramTheme(t)
     return [group.id, group.title] as const
@@ -29,13 +29,13 @@ export function StatePrograms({ programs, context = [], unavailable = false }: {
       {coreThemes.map(([id, title]) => <button type="button" key={id} aria-pressed={theme === id} onClick={() => setSelected(id)} className={`min-h-11 rounded-lg border px-4 py-2 text-sm font-semibold ${theme === id ? "bg-foreground text-background" : "bg-card"}`}>{title}</button>)}
       {otherThemes.length > 0 && <label className="min-w-0 text-sm font-semibold">Outros temas<select aria-label="Outros temas do programa" className="ml-2 min-h-11 max-w-full rounded-lg border bg-card px-3" value={otherThemes.some(([id]) => id === selected) ? selected : ""} onChange={e => { if (e.target.value) setSelected(e.target.value) }}><option value="">Selecionar tema</option>{otherThemes.map(([id,title]) => <option key={id} value={id}>{title}</option>)}</select></label>}
     </div>
-    <div className="grid items-start gap-5 lg:grid-cols-[240px_minmax(0,1fr)]">
-      <aside className="rounded-xl border bg-card p-5">
+    <div className={`grid items-start gap-5 ${showContext ? "lg:grid-cols-[240px_minmax(0,1fr)]" : ""}`}>
+      {showContext && <aside className="rounded-xl border bg-card p-5">
         <h3 className="font-heading text-xl uppercase">Contexto do estado</h3>
         <p className="mt-2 text-sm text-muted-foreground">Indicadores de contexto, sem atribuição de causa ou de resultado às candidaturas.</p>
         {indicators.length > 0 ? indicators.map(c => <div key={c.label} className="mt-5"><p className="text-sm">{c.label}</p><p className="mt-1 font-heading text-3xl">{c.value}</p><p className="mt-1 text-xs text-muted-foreground">{c.year}</p><IndicadorFonteTag fonte={c.source} /></div>) : <p className="mt-5 text-sm text-muted-foreground">Indicador relacionado a este tema indisponível nesta cobertura.</p>}
-      </aside>
-      <div className="grid min-w-0 gap-4 md:grid-cols-2">{[...programs].sort((a,b) => a.nome_urna.localeCompare(b.nome_urna,"pt-BR")).map(p => {
+      </aside>}
+      <div className={`grid min-w-0 gap-4 md:grid-cols-2 ${showContext ? "" : "xl:grid-cols-3"}`}>{[...programs].sort((a,b) => a.nome_urna.localeCompare(b.nome_urna,"pt-BR")).map(p => {
         const items = p.manifesto?.resumo?.temas.filter(t => stateProgramTheme(t).id === theme) ?? []
         const sourceUrl = p.manifesto?.fonte.pdfOriginalUrl ?? p.manifesto?.fonte.pacoteUrl ?? p.manifesto?.fonte.datasetUrl
         return <article key={p.slug} className="min-w-0 rounded-xl border bg-card p-5">

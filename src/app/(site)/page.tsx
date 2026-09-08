@@ -12,6 +12,7 @@ import { preload } from "react-dom"
 import { HomeQuizIntro } from "@/components/HomeQuizIntro"
 import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
 import { HomeRecentUpdatesData } from "@/components/HomeRecentUpdatesData"
+import { PresidentialElectionSections } from "@/components/PresidentialElectionSections"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
 
 export const metadata: Metadata = {
@@ -237,6 +238,10 @@ export default async function Home() {
           processSortCounts={processSortCounts}
         />
       </section>
+
+      <Suspense fallback={<p role="status" className="mx-auto max-w-7xl px-5 py-12 text-sm text-muted-foreground md:px-12">Carregando programas e pesquisas...</p>}>
+        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna }) => ({ slug, nome_urna }))} unavailable={todosResumosResource.sourceStatus !== "live"} />
+      </Suspense>
 
       <Suspense fallback={<HomeRecentUpdates />}>
         <HomeRecentUpdatesData />
