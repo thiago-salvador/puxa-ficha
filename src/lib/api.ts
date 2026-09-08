@@ -1537,6 +1537,8 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
 )
 
 export interface CandidatoResumo {
+  /** Nullable source count for sorting; missing enrichment must not compete as zero. */
+  processos_ordenacao?: number | null
   candidato: Candidato
   patrimonio: number | null
   processos: number
@@ -1592,6 +1594,7 @@ async function getCandidatosComResumoResourceUncached(
     { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS }
   )
 
+  const sortCounts = new Map((compareError ? [] : compareRows ?? []).map((row) => [row.id, row.total_processos]))
   const compareMap = new Map<string, ResumoEnriquecimento>()
   for (const row of compareRows ?? []) {
     compareMap.set(row.id, {
@@ -1611,6 +1614,7 @@ async function getCandidatosComResumoResourceUncached(
     const enriquecimento = compareMap.get(c.id) ?? ultimoEnriquecimento(c.id)
     return {
       candidato: c,
+      processos_ordenacao: sortCounts.get(c.id) ?? null,
       patrimonio: enriquecimento?.patrimonio ?? null,
       processos: enriquecimento?.processos ?? 0,
       pontos_atencao: enriquecimento?.pontosAtencao ?? 0,
@@ -1632,7 +1636,7 @@ const getCachedCandidatosComResumoResource = unstableCacheWithSingleFlight(
     rejectPartialForCache(getCandidatosComResumoResourceUncached(cargo, estado)),
   // Bumped 2026-04-26: dados de candidato vem ja sanitizados via getCandidatosResource;
   // o suffix forca bust de cache antigo do Bloco 1.
-  ["public-candidatos-resumo-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
+  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-resumo"],

@@ -9,6 +9,8 @@ import Link from "next/link"
 import { getImageProps } from "next/image"
 import { Suspense, lazy } from "react"
 import { preload } from "react-dom"
+import { HomeQuizIntro } from "@/components/HomeQuizIntro"
+import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
 import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
 
 export const metadata: Metadata = {
@@ -72,8 +74,10 @@ export default async function Home() {
   const candidatos = resumosPresidencia.map((r) => r.candidato)
   const processos: Record<string, number> = {}
   const patrimonios: Record<string, number | null> = {}
+  const processSortCounts: Record<string, number | null> = {}
   for (const r of resumosPresidencia) {
     processos[r.candidato.slug] = r.processos
+    processSortCounts[r.candidato.slug] = r.processos_ordenacao ?? null
     patrimonios[r.candidato.slug] = r.patrimonio
   }
 
@@ -229,41 +233,12 @@ export default async function Home() {
           candidatos={candidatos}
           processos={processos}
           patrimonios={patrimonios}
+          processSortCounts={processSortCounts}
         />
       </section>
 
-      {/* Quiz CTA */}
-      <div className="mx-auto max-w-7xl px-5 md:px-12">
-        <SlashDivider />
-      </div>
-      <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
-        <div className="section-reveal">
-          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
-            02 Quiz
-          </p>
-          <h2
-            className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
-            style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
-          >
-            Compare sinais programáticos
-          </h2>
-        </div>
-        <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
-        <div className="max-w-2xl pb-16 lg:pb-20">
-          <p className="text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[15px]">
-            Responda algumas perguntas sobre temas como economia, segurança e
-            meio ambiente e veja uma comparação programática, sem recomendação
-            de voto.
-          </p>
-          <Link
-            href="/quiz"
-            className="mt-6 inline-flex items-center gap-2 rounded-md bg-foreground px-6 py-3 text-sm font-semibold uppercase tracking-wide text-background transition-opacity hover:opacity-80"
-          >
-            Fazer o quiz
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-      </section>
+      <HomeRecentUpdates />
+      <HomeQuizIntro />
 
       {/* Comparador */}
       {comparaveis.length >= 2 && (

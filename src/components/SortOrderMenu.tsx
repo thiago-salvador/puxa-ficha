@@ -6,9 +6,9 @@ import { Check, ChevronDown } from "lucide-react"
 export type SortKey = "nome" | "patrimonio" | "processos"
 
 const OPTIONS: { value: SortKey; label: string }[] = [
-  { value: "nome", label: "A-Z" },
-  { value: "patrimonio", label: "Patrimônio" },
-  { value: "processos", label: "Processos" },
+  { value: "nome", label: "Nome: A a Z" },
+  { value: "patrimonio", label: "Patrimônio: maior para menor" },
+  { value: "processos", label: "Processos: maior para menor" },
 ]
 
 interface SortOrderMenuProps {
@@ -27,7 +27,7 @@ export function SortOrderMenu({ value, onChange }: SortOrderMenuProps) {
         aria-label={`Ordenar candidatos: ${current.label}`}
       >
         <span className="flex h-10 items-center gap-2 rounded-full border border-foreground bg-transparent px-4">
-          {current.label}
+          {value === "nome" ? "Nome: A a Z" : value === "patrimonio" ? "Patrimônio ↓" : "Processos ↓"}
           <ChevronDown className="size-4 shrink-0 opacity-70" aria-hidden />
         </span>
       </Menu.Trigger>
