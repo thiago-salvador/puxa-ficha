@@ -1,6 +1,8 @@
 import type { IndicadorEstadualRanking } from "@/lib/types"
+import { comparisonIssue, latestIndicator, indicatorPeriod } from "./state-indicator-comparability"
 import {
   STATE_INDICATOR_ORDER,
+  STATE_INDICATOR_CONFIG,
   getStateIndicatorLowerIsBetter,
   ordinalMasculino,
 } from "@/lib/state-indicator-metadata"
@@ -17,6 +19,7 @@ interface StateIndicatorRank {
   qualidade: "bom" | "ruim" | "neutro"
   /** Origem do valor usado no ranking (último ano por UF). */
   fonte: string | null
+  periodLabel?: string
 }
 
 export interface StateRankingResult {
@@ -87,12 +90,15 @@ export function computeStateRanking(
   const rankings: StateIndicatorRank[] = []
 
   for (const indicador of STATE_INDICATOR_ORDER) {
-    const latestMap = latestValorPorEstado(allIndicadores, indicador)
+    const reference = latestIndicator(allIndicadores, uf, indicador)
+    if (!reference || comparisonIssue(reference, reference)) continue
+    const compatible = allIndicadores.filter(row => comparisonIssue(reference, row) === null)
+    const latestMap = latestValorPorEstado(compatible, indicador)
     const entries = [...latestMap.entries()].map(([estado, v]) => ({
       estado,
       valor: v.valor,
     }))
-    if (entries.length === 0) continue
+    if (entries.length < 2) continue
 
     const targetRow = latestMap.get(uf)
     if (!targetRow) continue
@@ -111,7 +117,8 @@ export function computeStateRanking(
     const abaixoDaMedia = valor < mediaNacional - epsilon
 
     let qualidade: "bom" | "ruim" | "neutro"
-    if (lowerIsBetter) {
+    if (STATE_INDICATOR_CONFIG[indicador]?.scale) qualidade = "neutro"
+    else if (lowerIsBetter) {
       if (abaixoDaMedia) qualidade = "bom"
       else if (acimaDaMedia) qualidade = "ruim"
       else qualidade = "neutro"
@@ -132,6 +139,7 @@ export function computeStateRanking(
       label: `${ordinalMasculino(posicao)} de ${total}`,
       qualidade,
       fonte,
+      periodLabel: indicatorPeriod(reference).label,
     })
   }
 

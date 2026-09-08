@@ -2319,8 +2319,8 @@ export async function getQuizAlignmentDatasetResource(
 }
 
 const INDICADORES_ESTADO_COLUMNS =
-  "id, estado, ano, fonte, indicador, valor, valor_texto" as const
-const INDICADORES_RANKING_COLUMNS = "id, estado, ano, indicador, valor, fonte" as const
+  "id, estado, ano, fonte, indicador, valor, valor_texto, unidade, metadata" as const
+const INDICADORES_RANKING_COLUMNS = "id, estado, ano, indicador, valor, fonte, unidade, metadata" as const
 
 function mapIndicadorEstadualRow(row: {
   id: string
@@ -2330,11 +2330,13 @@ function mapIndicadorEstadualRow(row: {
   indicador: string
   valor: number | null
   valor_texto: string | null
+  unidade: string | null
+  metadata: Record<string, unknown> | null
 }): IndicadorEstadual {
   return {
     ...row,
-    unidade: null,
-    metadata: null,
+    unidade: row.unidade ?? null,
+    metadata: row.metadata ?? null,
   }
 }
 
@@ -2374,7 +2376,7 @@ async function getIndicadoresEstadoResourceUncached(
 
 const getCachedIndicadoresEstadoResource = unstableCacheWithSingleFlight(
   async (uf: string) => getIndicadoresEstadoResourceUncached(uf),
-  ["public-indicadores-estado-resource", "cache-poison-fix-20260802", CURRENT_DATA_WAVE],
+  ["public-indicadores-estado-resource", "reference-contract-20260908", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-indicadores-estado"],
@@ -2427,13 +2429,15 @@ async function getIndicadoresAllEstadosResourceUncached(): Promise<
       indicador: row.indicador,
       valor: row.valor ?? null,
       fonte: row.fonte ?? null,
+      unidade: row.unidade ?? null,
+      metadata: row.metadata ?? null,
     }))
   )
 }
 
 const getCachedIndicadoresAllEstadosResource = unstableCacheWithSingleFlight(
   async () => getIndicadoresAllEstadosResourceUncached(),
-  ["public-indicadores-all-estados-resource", "cache-poison-fix-20260802", CURRENT_DATA_WAVE],
+  ["public-indicadores-all-estados-resource", "reference-contract-20260908", CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-indicadores-all"],

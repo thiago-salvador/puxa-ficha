@@ -18,10 +18,29 @@ function row(
     indicador,
     valor,
     fonte,
+    unidade: "indice",
   }
 }
 
 describe("computeStateRanking", () => {
+  it("never mixes years or missing references, even when latest years differ", () => {
+    const rows = [row("SP", "gini", 0.5, 2024), row("RJ", "gini", 0.4, 2025)]
+    assert.equal(computeStateRanking(rows, "SP").rankings.length, 0)
+    rows.push(row("MG", "gini", 0.6, 2024))
+    assert.equal(computeStateRanking(rows, "SP").rankings[0].total, 2)
+    rows[2].unidade = null
+    assert.equal(computeStateRanking(rows, "SP").rankings.length, 0)
+  })
+
+  it("does not grade population size as good or bad", () => {
+    const rows = [row("SP", "populacao_estimada", 100, 2024, "ibge_sidra"), row("RJ", "populacao_estimada", 20, 2024, "ibge_sidra")].map(r => ({...r, unidade: "habitantes"}))
+    assert.equal(computeStateRanking(rows, "SP").rankings[0].qualidade, "neutro")
+  })
+
+  it("blocks unemployment without the quarter", () => {
+    const rows = [row("SP", "taxa_desemprego", 5, 2024), row("RJ", "taxa_desemprego", 10, 2024)].map(r => ({...r, unidade: "percentual"}))
+    assert.equal(computeStateRanking(rows, "SP").rankings.length, 0)
+  })
   it("excludes null valor from ranking", () => {
     const rows = [
       row("SP", "gini", 0.5, 2024),

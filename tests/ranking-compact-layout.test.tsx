@@ -215,10 +215,13 @@ describe("PF-18 ranking compacto", () => {
     for (const source of ["ibge", "ibge-pnad", "ipeadata"]) {
       assert.match(html, new RegExp(`data-pf-source-value="${source}"`))
     }
-    assert.equal(countMatches(html, />Melhor que a média</g), 2)
+    assert.equal(countMatches(html, />Melhor que a média</g), 1)
+    assert.equal(countMatches(html, />Medida de tamanho</g), 1)
+    assert.equal(countMatches(html, /Maior ou menor não significa melhor ou pior\./g), 1)
     assert.equal(countMatches(html, />Próximo da média</g), 1)
-    assert.equal(countMatches(html, /ano 2025/g), 1)
-    assert.equal(countMatches(html, /ano 2024/g), 2)
+    assert.equal(countMatches(html, /referência 2025/g), 1)
+    assert.equal(countMatches(html, /referência 2024/g), 2)
+    assert.equal(countMatches(html, /Cobertura: 27 de 27 UFs\./g), 3)
     assert.equal(countMatches(html, /min-w-0 rounded-\[14px\][^"]*px-4 py-4/g), 3)
   })
 })

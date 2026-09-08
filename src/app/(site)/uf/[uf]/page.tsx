@@ -30,6 +30,13 @@ import { StateIndicators } from "@/components/StateIndicators"
 import { StateRankingCards } from "@/components/StateRankingCards"
 import { formatCompact } from "@/lib/utils"
 import { buildTwitterMetadata } from "@/lib/metadata"
+import { getStatePagePresentation } from "@/lib/state-page-presentation"
+import { ShareButtons } from "@/components/ShareButtons"
+import { StateIndicatorComparison } from "@/components/StateIndicatorComparison"
+import { StatePrograms } from "@/components/StatePrograms"
+import { StatePolls } from "@/components/StatePolls"
+import { loadStatePrograms } from "@/lib/state-programs"
+import { loadStatePolls } from "@/lib/state-polls"
 
 function latestIndicador(
   indicadores: IndicadorEstadual[],
@@ -51,11 +58,10 @@ export async function generateMetadata({
   params: Promise<{ uf: string }>
 }): Promise<Metadata> {
   const { uf } = await params
-  const nome = getEstadoNome(uf)
-  if (!nome) return {}
+  const presentation = getStatePagePresentation(uf)
+  if (!presentation) return {}
+  const { name: nome, title, description } = presentation
   const u = uf.toUpperCase()
-  const title = `${nome} (${u}) | Indicadores e candidatos mapeados | Puxa Ficha`
-  const description = `Indicadores estaduais e candidatos a governador mapeados em ${nome} para 2026.`
   return {
     title,
     description,
@@ -92,6 +98,7 @@ export default async function UfHubPage({
   if (uf !== uf.toLowerCase()) permanentRedirect(`/uf/${uf.toLowerCase()}`)
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
+  const presentation = getStatePagePresentation(uf)!
 
   const [
     resumosResource,
@@ -115,6 +122,20 @@ export default async function UfHubPage({
   // central (src/lib/api.ts via sanitizePublicPartyFields); o mapping pontual
   // que existia aqui ate o Bloco 1 foi removido.
   const candidatos = resumos.map((r) => r.candidato)
+  const [programsResource, pollsResource] = await Promise.all([
+    loadStatePrograms(candidatos.map(({ slug, nome_urna }) => ({ slug, nome_urna })), uf)
+      .then(data => ({ data, unavailable: false }))
+      .catch(() => {
+        console.error("State programs could not be loaded")
+        return { data: [], unavailable: true }
+      }),
+    Promise.resolve().then(() => loadStatePolls(uf))
+      .then(data => ({ data, unavailable: false }))
+      .catch(() => {
+        console.error("State polls could not be loaded")
+        return { data: [], unavailable: true }
+      }),
+  ])
 
   const sourceStatus = mergeSourceStatuses(
     resumosResource.sourceStatus,
@@ -149,8 +170,6 @@ export default async function UfHubPage({
   const pop = latestIndicador(indicadores, "populacao_estimada")
   const pib = latestIndicador(indicadores, "pib_total")
 
-  const showMetricsAfterCards =
-    ranking.rankings.length > 0 || indicadores.length > 0
   // "Contexto territorial" saiu em 17/08, por decisão do dono. O bloco era prosa montada por
   // template a partir do ranking de indicadores, e o texto que chegava ao leitor tinha defeito
   // visível ("a media nacional situa em", sem o "se"; "2o de 27" no lugar de "2º"). Ranking de
@@ -163,9 +182,9 @@ export default async function UfHubPage({
   const schema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `${nome} (${uf.toUpperCase()}), indicadores e governador`,
+    name: presentation.title,
     url: `https://puxaficha.com.br/uf/${uf.toLowerCase()}`,
-    description: `Indicadores do estado e candidatos a governador mapeados em ${nome} para 2026.`,
+    description: presentation.description,
   }
 
   return (
@@ -279,12 +298,19 @@ export default async function UfHubPage({
 
       <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
+        <nav aria-label="Seções do estado" className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-3 text-sm font-semibold">
+          <a href="#candidatos" className="inline-flex min-h-11 items-center">Candidaturas</a>
+          <a href="#indicadores" className="inline-flex min-h-11 items-center">Contexto estadual</a>
+          <a href="#programas" className="inline-flex min-h-11 items-center">Programas por tema</a>
+          <a href="#pesquisas" className="inline-flex min-h-11 items-center">Pesquisas</a>
+          <a href="#compartilhar" className="inline-flex min-h-11 items-center">Compartilhar</a>
+        </nav>
       </section>
 
 
       {candidatos.length > 0 ? (
         <>
-          <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
+          <section id="candidatos" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
             <div className="section-reveal">
               <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
                 {secGov} Governador
@@ -308,12 +334,12 @@ export default async function UfHubPage({
           </section>
         </>
       ) : (
-        <section className="mx-auto max-w-7xl px-5 py-20 text-center md:px-12">
+        <section id="candidatos" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-20 text-center md:px-12">
           <p className="font-heading text-[length:var(--text-heading)] uppercase text-foreground">
-            Em breve
+            {resumosResource.sourceStatus === "degraded" ? "Candidaturas temporariamente indisponíveis" : "Nenhuma candidatura disponível nesta cobertura"}
           </p>
           <p className="mt-2 text-[length:var(--text-body)] font-medium text-muted-foreground">
-            Nenhum candidato a governador cadastrado para {nome}.
+            {resumosResource.sourceStatus === "degraded" ? "Não foi possível carregar a lista nesta consulta. Tente recarregar a página." : `Não há fichas publicadas nesta base para ${nome}. Isso não indica ausência de candidaturas na eleição.`}
           </p>
           <Link
             href="/governadores"
@@ -325,19 +351,31 @@ export default async function UfHubPage({
         </section>
       )}
 
-      {showMetricsAfterCards && (
+      {(
         <>
           <div className="mx-auto max-w-7xl px-5 pt-8 md:px-12 sm:pt-12">
             <SlashDivider />
           </div>
-          <section className="mx-auto max-w-7xl px-5 pb-8 pt-8 md:px-12 sm:pb-12 sm:pt-12 lg:pb-16">
+          <section id="indicadores" className="mx-auto max-w-7xl scroll-mt-24 px-5 pb-8 pt-8 md:px-12 sm:pb-12 sm:pt-12 lg:pb-16">
             <div className="space-y-8">
               <StateRankingCards ranking={ranking} />
-              <StateIndicators indicadores={indicadores} estado={uf} />
+              <StateIndicators indicadores={indicadores} estado={uf} unavailable={indicadoresResource.sourceStatus !== "live"} />
+              <StateIndicatorComparison
+                indicadores={allIndicadoresResource.data}
+                estado={uf}
+                unavailable={allIndicadoresResource.sourceStatus !== "live"}
+              />
             </div>
           </section>
         </>
       )}
+
+      <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
+        <SlashDivider />
+        <StatePrograms programs={programsResource.data} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
+        <SlashDivider />
+        <StatePolls polls={pollsResource.data} unavailable={pollsResource.unavailable} />
+      </div>
 
       {candidatos.length > 0 && comparaveis.length >= 2 && (
         <>
@@ -369,6 +407,26 @@ export default async function UfHubPage({
           </Suspense>
         </>
       )}
+
+      <section id="compartilhar" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-12 md:px-12">
+        <SlashDivider className="mb-8" />
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em]">Compartilhar o estado</p>
+        <h2 className="mt-2 font-heading text-3xl uppercase sm:text-5xl">Leve a consulta adiante</h2>
+        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-xl border border-border">
+            <Image src={presentation.image} alt={`Eleições 2026: ${nome}. Candidaturas, programas e contexto estadual.`} width={1200} height={630} unoptimized className="h-auto w-full" />
+            <div className="p-5">
+              <p className="text-xs text-muted-foreground">puxaficha.com.br{presentation.path}</p>
+              <p className="mt-2 font-bold">{presentation.title}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{presentation.description}</p>
+            </div>
+          </div>
+          <div>
+            <ShareButtons shareUrl={`https://puxaficha.com.br${presentation.path}`} title={presentation.title} label={`Compartilhar ${nome}`} />
+            <p className="mt-4 text-sm text-muted-foreground">A prévia do link pode variar conforme a plataforma. As fontes e os períodos de referência acompanham os dados nesta página.</p>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-7xl px-5 pt-8 pb-16 md:px-12 sm:pt-12 sm:pb-20 lg:pb-24">
         <div className="max-w-3xl">

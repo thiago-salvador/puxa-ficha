@@ -5,6 +5,7 @@ export interface StateIndicatorConfig {
   format: (value: number) => string
   /** true = lower is better (homicidios, pobreza, desemprego, gini) */
   lowerIsBetter: boolean
+  scale?: boolean
 }
 
 export const STATE_INDICATOR_CONFIG: Record<string, StateIndicatorConfig> = {
@@ -14,6 +15,7 @@ export const STATE_INDICATOR_CONFIG: Record<string, StateIndicatorConfig> = {
     lowerIsBetter: true,
   },
   pib_total: {
+    scale: true,
     label: "PIB Total",
     // O valor da fonte vem em milhares de reais.
     format: (v) => {
@@ -25,6 +27,7 @@ export const STATE_INDICATOR_CONFIG: Record<string, StateIndicatorConfig> = {
     lowerIsBetter: false,
   },
   populacao_estimada: {
+    scale: true,
     label: "População",
     format: (v) => formatCompactNumber(v),
     lowerIsBetter: false,
