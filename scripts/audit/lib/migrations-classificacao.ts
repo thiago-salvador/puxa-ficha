@@ -99,6 +99,10 @@ export const TABELAS_DE_ESTADO: readonly string[] = [
   "quiz_result_short_links",
   "request_ip_quotas",
   "schema_migrations",
+  // Estado derivado das observações verificadas. A migration só define a RPC;
+  // nenhuma observação ou evento é inserido durante o replay de schema.
+  "verified_candidate_observations",
+  "verified_candidate_updates",
 ]
 
 // `MERGE INTO` entra como DML: e escrita valida de Postgres 15+ e a vistoria do
@@ -436,7 +440,9 @@ export const MEDICAO_REPLAY = Object.freeze({
   // 70db99801d5dd9688be21fe38f069459c2661bab37caf7ead7325f65b516a531.
   // 100 -> 101 em 07/09/2026: fonte direta de chapas. PG17: 101 limpas,
   // zero falhas; dump ddb423c409d8a280eacf7c867bbdbe01cfd7b51c3dd15c9049f958c8da691c5d.
-  schemaReplayTamanho: 101,
+  // 08/09/2026: H12 define estado privado, RPC e view pública; schema-gate PG17
+  // mediu 102 migrations limpas e zero falhas.
+  schemaReplayTamanho: 102,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.

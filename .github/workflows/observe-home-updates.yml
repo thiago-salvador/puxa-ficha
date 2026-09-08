@@ -1,0 +1,40 @@
+name: Histórico verificado da home
+
+on:
+  schedule:
+    - cron: "0 8 * * 3"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Shares the ingest lock: do not observe a candidate midway through ingestion.
+concurrency:
+  group: ingest-pipeline
+  cancel-in-progress: false
+
+jobs:
+  observe:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment: production
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Verificar contrato de observação
+        run: node --import tsx --test tests/verified-candidate-changes.test.ts
+      - name: Comparar fontes com fichas e registrar histórico
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        # Downloads are fresh; never restore an old TSE package as today's source.
+        # --apply writes only baseline/history via the RPC, never candidate facts.
+        run: node --import tsx scripts/observe-home-updates.ts --apply

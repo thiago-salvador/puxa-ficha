@@ -23,6 +23,7 @@ import {
   type JulgamentoTse,
 } from "./tse-situacao-julgamento"
 import { registrarColeta, type EntradaColeta } from "./coleta-log"
+import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-situacao")
 const AUDIT_PATH = resolve(process.cwd(), "scripts/tse-situacao-audit.json")
@@ -148,6 +149,8 @@ export interface MatchedData {
 
 interface IngestTSESituacaoOptions {
   dryRun?: boolean
+  observationOnly?: boolean
+  onObservation?: (outcome: "baseline" | "unchanged" | "changed" | "skipped") => void
   auditPath?: string
 }
 
@@ -533,7 +536,7 @@ export async function ingestTSESituacao(
   const ambiguousByYear = new Map<number, string[]>()
 
   // Tenta cada ano ate ter CPF para todos os candidatos ou esgotar opcoes
-  for (const ano of ANOS_TENTATIVA) {
+  for (const ano of (options.observationOnly ? [PLEITO_CORRENTE] : ANOS_TENTATIVA)) {
     const semCPF = candidatos.filter((c) => {
       const m = matched.get(c.slug)
       return !m || !m.cpf
@@ -549,6 +552,7 @@ export async function ingestTSESituacao(
   }
 
   log("tse-situacao", `Total encontrado: ${matched.size} candidatos`)
+  if (options.observationOnly && matched.size === 0) throw new Error("Official candidate identities unavailable for observation")
 
   // Julgamento do pleito corrente, cruzado por SQ. Roda uma vez para a coorte
   // inteira, nao por candidato: o pacote e um arquivo so.
@@ -556,6 +560,7 @@ export async function ingestTSESituacao(
   let comJulgamento = 0
   let semSqParaCruzar = 0
   const julgamentoPorSq = await carregarJulgamentoPorSq(PLEITO_CORRENTE)
+  if (options.observationOnly && !julgamentoPorSq) throw new Error("Official judgment source unavailable for observation")
   if (julgamentoPorSq) {
     censoJulgamento = censoPorDescricao(julgamentoPorSq)
     for (const info of matched.values()) {
@@ -609,11 +614,13 @@ export async function ingestTSESituacao(
       }
 
       // Fetch current DB values to avoid overwriting manually curated data
-      const { data: dbCand } = await supabase
+      const { data: dbCand, error: snapshotError } = await supabase
         .from("candidatos")
         .select("cpf, situacao_candidatura, naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
         .eq("id", candidatoId)
         .single()
+      if (snapshotError) throw snapshotError
+      if (!dbCand) throw new Error("Candidate snapshot unavailable")
 
       const before: CandidateSnapshot | null = dbCand
         ? {
@@ -632,6 +639,26 @@ export async function ingestTSESituacao(
 
       // Fase 14.2: logica de payload extraida pra buildIngestPayload (testavel).
       const { payload: updatePayload, blockedReasons } = buildIngestPayload(info, before)
+      const observeStatus = async () => {
+        const mapped = mapearJulgamento(info.julgamento)
+        if (!mapped.ok || blockedReasons.length > 0 || info.ano !== PLEITO_CORRENTE) return
+        const outcome = await observeVerifiedCandidateChange({
+          candidateId: candidatoId, field: "situacao", year: info.ano,
+          value: mapped.valor, sq: info.sq_candidato, uf: info.sg_uf,
+          sourceUrl: COMPLEMENTAR_URL(info.ano),
+          identityVerified: info.match_method === "sq-preloaded", dryRun: options.dryRun,
+          observationOnly: options.observationOnly,
+        }, {
+          rpc: (name, args) => supabase.rpc(name, args),
+          confirmPersisted: async () => {
+            const { data: persisted, error: readError } = await supabase.from("candidatos")
+              .select("situacao_candidatura").eq("id", candidatoId).single()
+            if (readError) throw readError
+            return persisted?.situacao_candidatura === mapped.valor
+          },
+        })
+        options.onObservation?.(outcome)
+      }
 
       const auditEntry: AuditEntry = {
         slug,
@@ -650,7 +677,15 @@ export async function ingestTSESituacao(
         persisted: false,
       }
 
+      if (options.observationOnly) {
+        await observeStatus()
+        auditEntries.push(auditEntry)
+        result.duration_ms = Date.now() - start
+        allResults.push(result)
+        continue
+      }
       if (Object.keys(updatePayload).length === 0) {
+        await observeStatus()
         auditEntries.push(auditEntry)
         result.duration_ms = Date.now() - start
         allResults.push(result)
@@ -685,6 +720,7 @@ export async function ingestTSESituacao(
       if (updateErr) {
         result.errors.push(`Erro ao atualizar: ${updateErr.message}`)
       } else {
+        await observeStatus()
         auditEntry.persisted = true
         result.tables_updated.push("candidatos")
         result.rows_upserted++
@@ -738,7 +774,7 @@ export async function ingestTSESituacao(
     }
     // `coleta_log` e banco. Em dry-run o recibo e impresso e nao gravado, senao
     // o proprio dry-run seria uma escrita, que e o oposto do que ele promete.
-    if (options.dryRun) {
+    if (options.dryRun || options.observationOnly) {
       log("tse-situacao", `  dry-run, recibo NAO gravado: ${recibo.detalhe}`)
     } else {
       await registrarColeta(recibo)
