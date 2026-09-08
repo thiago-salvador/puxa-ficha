@@ -28,7 +28,7 @@ export function StateIndicators({ indicadores, estado, unavailable = false }: {
         <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 px-3 py-3 text-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&::-webkit-details-marker]:hidden">
           <span className="min-w-0 flex-1 font-semibold text-muted-foreground">{SHORT_LABELS[key] ?? config.label}</span>
           <span className="shrink-0 whitespace-nowrap font-heading text-base leading-none tracking-tight text-foreground">{latest?.valor != null ? config.format(latest.valor) : "Sem dado"}</span>
-          <span className="shrink-0 whitespace-nowrap text-[10px] text-muted-foreground">{latest ? `${latest.ano}${period?.key ? "" : "*"}` : ""}</span>
+          <span className="shrink-0 whitespace-nowrap text-[length:var(--text-eyebrow)] text-muted-foreground">{latest ? `${latest.ano}${period?.key ? "" : "*"}` : ""}</span>
           <span aria-hidden="true" className="shrink-0 text-muted-foreground transition-transform group-open:rotate-180">⌄</span>
           <span className="sr-only">Abrir fonte e limites de {config.label}</span>
         </summary>
