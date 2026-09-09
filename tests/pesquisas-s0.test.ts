@@ -145,3 +145,48 @@ test("CLI inalterada retorna zero sem operacoes", () => {
     assert.deepEqual(JSON.parse(readFileSync(resolve(root, "out/diff.json"), "utf8")).operations, [])
   } finally { rmSync(root, { recursive: true, force: true }) }
 })
+
+for (const mode of ["inalterado", "bloqueado", "item-incorreto", "matriz-ambigua", "duplicado"] as const) {
+  test(`artefato plano de download unico: ${mode}`, () => {
+    const root = mkdtempSync(resolve(tmpdir(), "pesquisas-s0-flat-"))
+    try {
+      const matrix = construirMatrizAgendada({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })
+      if (mode === "matriz-ambigua") matrix.push(...construirMatrizAgendada({ sourceId: "real-time-big-data-estaduais-2026", uf: "RS" }))
+      const matrixPath = resolve(root, "matrix.json")
+      writeFileSync(matrixPath, JSON.stringify({ include: matrix }))
+      const input = resolve(root, "input")
+      mkdirSync(input)
+      const proposal = JSON.stringify({
+        schema_version: "1.0.0", dry_run: true, human_review_required: true,
+        items: [{
+          id: mode === "item-incorreto" ? "outra-pesquisa-live" : `${matrix[0].poll_ids[0]}-live`,
+          evidence: null, normalized_contract: null,
+          decision: mode === "bloqueado"
+            ? { classification: "fonte indisponivel", eligible_for_human_review: false, reason: "source_unavailable" }
+            : { classification: "inalterado", eligible_for_human_review: false, reason: "evidence_unchanged" },
+        }],
+      })
+      writeFileSync(resolve(input, "proposal.json"), proposal)
+      if (mode === "duplicado") {
+        const nested = resolve(input, `pesquisas-monitoramento-part-${matrix[0].key}`)
+        mkdirSync(nested)
+        writeFileSync(resolve(nested, "proposal.json"), proposal)
+      }
+      const env = { ...process.env }
+      delete env.GITHUB_OUTPUT
+      delete env.GITHUB_STEP_SUMMARY
+      const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
+      assert.equal(result.status, mode === "inalterado" ? 0 : 1, result.stderr)
+      const summary = readFileSync(resolve(root, "out/summary.md"), "utf8")
+      if (mode === "inalterado" || mode === "bloqueado") {
+        assert.match(summary, /Artefatos esperados: 1. Recebidos: 1/)
+        assert.doesNotMatch(summary, /artefato ausente|item ausente/)
+      }
+      if (mode === "bloqueado") assert.match(summary, /source_unavailable/)
+      if (mode === "item-incorreto") assert.match(summary, /item inesperado/)
+      if (mode === "matriz-ambigua") assert.match(summary, /artefato inesperado/)
+      if (mode === "duplicado") assert.match(summary, /artefato duplicado/)
+      assert.deepEqual(JSON.parse(readFileSync(resolve(root, "out/diff.json"), "utf8")).operations, [])
+    } finally { rmSync(root, { recursive: true, force: true }) }
+  })
+}

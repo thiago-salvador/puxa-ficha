@@ -63,9 +63,18 @@ function matrixCommand(options: Map<string, string>): void {
   console.log(JSON.stringify(payload))
 }
 
-function findDocuments(inputDir: string): DocumentoColetadoAgendado[] {
+function findDocuments(inputDir: string, matrix: ItemMatrizAgendada[]): DocumentoColetadoAgendado[] {
   if (!existsSync(inputDir)) return []
   const documents: DocumentoColetadoAgendado[] = []
+  // download-artifact can flatten a single matching artifact into the input root.
+  // Only a single expected source/UF can identify that document unambiguously.
+  const flatProposalPath = resolve(inputDir, "proposal.json")
+  if (existsSync(flatProposalPath)) {
+    documents.push({
+      key: matrix.length === 1 ? matrix[0].key : "unmapped-flat-artifact",
+      proposal: JSON.parse(readFileSync(flatProposalPath, "utf8")) as DocumentoPropostaAgendada,
+    })
+  }
   for (const entry of readdirSync(inputDir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue
     const proposalPath = resolve(inputDir, entry.name, "proposal.json")
@@ -88,7 +97,7 @@ function consolidateCommand(options: Map<string, string>): void {
   }
   const result = consolidarPropostasAgendadas({
     matrix: matrixPayload.include,
-    documents: findDocuments(inputDir),
+    documents: findDocuments(inputDir, matrixPayload.include),
     catalogs: carregarCatalogosAgendados(),
   })
   mkdirSync(outputDir, { recursive: true })

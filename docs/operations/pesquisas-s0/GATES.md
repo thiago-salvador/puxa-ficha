@@ -7,12 +7,12 @@ Scope: corrigir e verificar o S0 local, sem alterar catálogos, frequência, cre
 - [x] L1: Os incidentes de robots, redação da amostra/campo e consolidação bloqueada têm regressões determinísticas aprovadas
   CHECK: node --conditions react-server --import tsx --test tests/pesquisas-s0.test.ts
   EXPECT: /# fail 0|ℹ fail 0/
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=f26ac12a19b45d051167e19ac20896e7156c3b5aad9406dc55eb9cc45a527352; output-bytes=1830
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=b6abfd4ab55ac5b734ebc3389f2fc389a858c24440c4d0bca5078791a11afc93; output-bytes=2144
 
 - [x] L2: Os contratos existentes de monitoramento, rede, isolamento e atualização agendada permanecem aprovados
   CHECK: npm run verify:pesquisas:monitoramento && npm run test:pesquisas:atualizacao-agendada
   EXPECT: /# fail 0|ℹ fail 0/
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=c39937c018d3c0e61faff0c027f1c0837936a0ef058616cdb4d5f1984f3852e0; output-bytes=7097
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=4555bf9d316cb8997bf93db0037623f09c88bdcc2b2f047dbcfa472e773dadf4; output-bytes=7415
 
 - [x] L3: O eval do S0 obedece ao formato e às dimensões exigidas
   CHECK: python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-s0/EVAL.md
