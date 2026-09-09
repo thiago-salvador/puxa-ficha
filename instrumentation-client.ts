@@ -1,5 +1,5 @@
 import * as Sentry from "@sentry/nextjs"
-import { sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
+import { ambienteSentry, sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
 import { redactSensitiveUrl, scrubSentryEvent } from "@/lib/sentry-scrub"
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart
@@ -16,7 +16,7 @@ if (dsn && sentryHabilitadoNesteAmbiente()) {
     // deixar de ter a opção.
     integrations: (defaults) => defaults.filter((integration) => integration.name !== "BrowserTracing"),
     tracesSampleRate: 0,
-    environment: process.env.NEXT_PUBLIC_VERCEL_ENV ?? process.env.NODE_ENV,
+    environment: ambienteSentry(),
     sendDefaultPii: false,
     beforeSend(event) {
       return scrubSentryEvent(event)
