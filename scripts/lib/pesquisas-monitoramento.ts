@@ -11,6 +11,7 @@ import {
 } from "./pesquisas-monitoramento-adapters"
 import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
+import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
 
 type ClassificacaoMonitoramento =
   | "novo"
@@ -51,7 +52,14 @@ export interface EvidenciaPesquisaCandidata {
   observed_at: string
   evidence_sha256: string
   scenario_complete?: boolean
+  publication_complete?: boolean
+  additional_scenarios?: Array<{
+    scenario: EvidenciaPesquisaCandidata["scenario"]
+    results: EvidenciaPesquisaCandidata["results"]
+    scenario_complete: true
+  }>
   registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
+  result_document?: { url: string; observed_at: string; evidence_sha256: string; pages: number[] }
 }
 
 export interface SourceContract {
@@ -156,6 +164,7 @@ function targetFromPoll(poll: CatalogPoll): AlvoMonitoramento {
     scenario_label: scenario.label_raw,
     scenario_question: scenario.question.value,
     population: poll.sample.population.value,
+    known_scenarios: poll.cenarios.map((scenario) => ({ id: scenario.id, turn: scenario.turn, label: scenario.label_raw, question: scenario.question.value })),
   }
 }
 
@@ -261,6 +270,7 @@ function fingerprint(evidence: EvidenciaPesquisaCandidata): string {
   delete stable.observed_at
   delete stable.evidence_sha256
   delete stable.registry_observation
+  if (stable.result_document) stable.result_document = { ...stable.result_document, observed_at: "" }
   return createHash("sha256").update(JSON.stringify(stable)).digest("hex")
 }
 
@@ -311,17 +321,21 @@ function classify(input: {
     return { decision: decision("conflitante", false, "registry_conflict"), evidence: input.evidence, baseline: input.baseline }
   }
 
+  const resolveResults = (results: EvidenciaPesquisaCandidata["results"]): EvidenciaPesquisaCandidata["results"] => results.map((result) => {
+    if (result.match_status === "not_candidate") return result
+    const candidateSlug = input.aliases.get(result.raw_label)
+    return candidateSlug
+      ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
+      : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
+  })
   const resolvedEvidence: EvidenciaPesquisaCandidata = {
     ...input.evidence,
-    results: input.evidence.results.map((result) => {
-      if (result.match_status === "not_candidate") return result
-      const candidateSlug = input.aliases.get(result.raw_label)
-      return candidateSlug
-        ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
-        : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
-    }),
+    results: resolveResults(input.evidence.results),
+    ...(input.evidence.additional_scenarios ? {
+      additional_scenarios: input.evidence.additional_scenarios.map((entry) => ({ ...entry, results: resolveResults(entry.results) })),
+    } : {}),
   }
-  if (resolvedEvidence.results.some((result) => result.match_status === "indeterminado")) {
+  if ([resolvedEvidence, ...(resolvedEvidence.additional_scenarios ?? [])].some((entry) => entry.results.some((result) => result.match_status === "indeterminado"))) {
     return { decision: decision("identidade nao resolvida", false, "identity_unresolved"), evidence: resolvedEvidence, baseline: input.baseline }
   }
 
@@ -334,12 +348,10 @@ function classify(input: {
   }
   const resolvedBaseline: EvidenciaPesquisaCandidata = {
     ...input.baseline,
-    results: input.baseline.results.map((result) => {
-      const candidateSlug = input.aliases.get(result.raw_label)
-      return candidateSlug
-        ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
-        : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
-    }),
+    results: resolveResults(input.baseline.results),
+    ...(input.baseline.additional_scenarios ? {
+      additional_scenarios: input.baseline.additional_scenarios.map((entry) => ({ ...entry, results: resolveResults(entry.results) })),
+    } : {}),
   }
   if (fingerprint(resolvedBaseline) === fingerprint(resolvedEvidence)) {
     return { decision: decision("inalterado", false, "evidence_unchanged"), evidence: resolvedEvidence, baseline: resolvedBaseline }
@@ -424,19 +436,19 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
     office: evidence.scenario.office,
     provenance: {
       result_url: evidence.url,
-      supporting_urls: evidence.registry_observation ? [evidence.registry_observation.url] : [],
+      supporting_urls: [evidence.registry_observation?.url, evidence.result_document?.url].filter((url): url is string => Boolean(url)),
       consulted_at: evidence.observed_at,
       capture: { format: "html", sha256: evidence.evidence_sha256, status: "indeterminado" },
     },
-    cenarios: [{
-      id: evidence.scenario.id,
-      turn: evidence.scenario.turn,
-      geography: evidence.scenario.geography,
-      label_raw: evidence.scenario.label,
-      question: { value: evidence.scenario.question, status: "indeterminado" },
-      comparability_key: `2026|${evidence.scenario.office}|${evidence.scenario.geography_code}|${evidence.scenario.turn}|${evidence.scenario.id}`,
-      resultados: evidence.results.map((entry) => ({ ...entry, status: "indeterminado" })),
-    }],
+    cenarios: [evidence, ...(evidence.additional_scenarios ?? [])].map(({ scenario, results }) => ({
+      id: scenario.id,
+      turn: scenario.turn,
+      geography: scenario.geography,
+      label_raw: scenario.label,
+      question: { value: scenario.question, status: "indeterminado" },
+      comparability_key: `2026|${scenario.office}|${scenario.geography_code}|${scenario.turn}|${scenario.id}`,
+      resultados: results.map((entry) => ({ ...entry, status: "indeterminado" })),
+    })),
   }
 }
 
@@ -523,6 +535,7 @@ export function avaliarEvidenciaAoVivo(input: {
   observedAt: string
   registry?: RegistroTseMonitoramento[]
   registrySupplement?: ObservacaoPesqele
+  resultDocument?: DocumentoPoderData
 }): ResultadoAvaliacao {
   const evidence = parsePublicacaoMonitorada({
     html: input.html,
@@ -530,6 +543,7 @@ export function avaliarEvidenciaAoVivo(input: {
     source: input.source,
     target: input.target,
     registrySupplement: input.registrySupplement,
+    resultDocument: input.resultDocument,
   })
   const registry: RegistroTseMonitoramento[] = input.registry ?? []
   const result = classify({
@@ -540,7 +554,7 @@ export function avaliarEvidenciaAoVivo(input: {
     baseline: null,
     observedAt: input.observedAt,
   })
-  if (result.decision.eligible_for_human_review && !evidence.scenario_complete) {
+  if (result.decision.eligible_for_human_review && (!evidence.scenario_complete || !evidence.publication_complete)) {
     return { ...result, decision: decision("conflitante", false, "scenario_incomplete") }
   }
   return result

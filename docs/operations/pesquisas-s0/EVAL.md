@@ -11,8 +11,10 @@ Tipo: automacao
 | S06 | Catálogos, origem autorizada, fontes condicionais, política do conteúdo e frequência não mudam; nenhum push, merge, deploy, ativação ou envio externo decorre dos testes locais. | code: diff e testes de isolamento/rede; revisão das permissões e variáveis | policy |
 | S07 | Testes existentes do monitor e atualização agendada passam; fixtures positivas e negativas mantêm veredito esperado. | code: `npm run verify:pesquisas:monitoramento` e `npm run test:pesquisas:atualizacao-agendada` | outcome |
 | S08 | Diagnóstico limitado a AM, BR e registro TSE; uma repetição para falha transitória e interrupção após duas tentativas iguais sem evidência nova. | code: contagem de tentativas nos logs locais e durações registradas; não aumentar retries do coletor | custo |
+| S09 | Todos os duelos publicados em listas são preservados; títulos, quantidade declarada, soma, nomes e categorias são validados; identidade não resolvida em qualquer turno bloqueia proposta. | code: `tests/pesquisas-pesqele.test.ts` e readback da coleta AM com sete cenários e 32 respostas | outcome |
+| S10 | PDF usa a coluna correspondente ao término do campo, reconcilia primeiro turno com a coluna Total independente, ignora recortes demográficos, preserva perguntas e rejeita registro ou metadados divergentes. | code: `tests/pesquisas-pesqele.test.ts` e readback PoderData com cinco cenários; hash e páginas do PDF na evidência | outcome |
 
-Gate: S0 operacional só com 100% PASS em S01 a S08. L1 a L4 de GATES.md certificam somente a correção e regressão local. S04 ou S05 sem prova permanecem PENDENTES/BLOQUEADOS e impedem afirmar S0 completo.
+Gate: S0 operacional só com 100% PASS em S01 a S10. GATES.md certifica somente correção e regressão local. S04 ou S05 sem prova permanecem PENDENTES/BLOQUEADOS e impedem afirmar S0 completo. A prova remota da consulta pública passou para AM; a extensão dos cenários e PDF exige nova execução no SHA correspondente.
 
 Custo esperado: uma sessão local de até duas horas; dependências e verificações dentro desse limite; até duas capturas por alvo antes de fallback orientado por evidência.
 

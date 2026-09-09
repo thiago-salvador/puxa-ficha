@@ -1,6 +1,7 @@
 import { resolve } from "node:path"
 import { mkdirSync, writeFileSync } from "node:fs"
 import { consultarRegistroPesqele, type ObservacaoPesqele } from "./lib/pesquisas-monitoramento-pesqele"
+import { descobrirRelatorioPoderData, extrairDocumentoPoderData, type DocumentoPoderData } from "./lib/pesquisas-monitoramento-poderdata-pdf"
 
 import {
   avaliarEvidenciaAoVivo,
@@ -87,6 +88,7 @@ interface CapturaAoVivo {
   target: AlvoMonitoramento
   result: MonitoringResult
   registrySupplement?: ObservacaoPesqele
+  resultDocument?: DocumentoPoderData
 }
 
 function errorMessage(error: unknown): string {
@@ -119,12 +121,19 @@ async function collectSource(
   const source = obterContratoFonte(target.source_id)
   try {
     const response = await client.getText(target.url)
+    let resultDocument: DocumentoPoderData | undefined
+    if (target.source_id === "poderdata-aya-nacional-2026") {
+      const pdfUrl = descobrirRelatorioPoderData(response.body)
+      const pdf = await client.getBytes(pdfUrl)
+      resultDocument = extrairDocumentoPoderData({ bytes: pdf.body, url: pdfUrl, observedAt: pdf.observedAt, registrationId: target.registration_id })
+    }
     const evidence = parsePublicacaoMonitorada({
       source,
       target,
       html: response.body,
       observedAt: response.observedAt,
       registrySupplement,
+      resultDocument,
     })
     if (!evidenceIsComplete(evidence, target)) throw new Error("evidencia publica incompleta")
     console.log(`SOURCE_ADAPTER_OBSERVED: ${target.source_id} ${target.poll_id}`)
@@ -134,6 +143,7 @@ async function collectSource(
       observedAt: response.observedAt,
       target,
       registrySupplement,
+      resultDocument,
       result: resultadoFonteIndisponivel("tse_registry_pending"),
     }
   } catch (error) {
@@ -166,6 +176,7 @@ function reconcileCapture(capture: CapturaAoVivo, registry: RegistroTseMonitoram
       observedAt: capture.observedAt,
       registry,
       registrySupplement: capture.registrySupplement,
+      resultDocument: capture.resultDocument,
     }),
   }
 }
@@ -179,6 +190,7 @@ function buildSourceClient(targets: AlvoMonitoramento[]): ClienteHttpMonitoramen
       throw new Error(`origem fora da allowlist do adaptador: ${origin}`)
     }
     allowedOrigins.add(origin)
+    if (target.source_id === "poderdata-aya-nacional-2026") allowedOrigins.add("https://static.poder360.com.br")
   }
   return criarClienteHttpMonitoramento({
     allowedOrigins: [...allowedOrigins],
@@ -198,7 +210,7 @@ function buildTseClient(): ClienteHttpMonitoramento {
 function assertLiveCheck(args: Args, captures: CapturaAoVivo[]): void {
   if (!args.liveCheck) return
   const complete = captures.filter((capture) => (
-    capture.evidence?.scenario_complete &&
+    capture.evidence?.scenario_complete && capture.evidence.publication_complete &&
     capture.result.decision.reason !== "registry_conflict" &&
     capture.result.decision.reason !== "tse_registry_unavailable" &&
     capture.result.decision.reason !== "tse_registry_pending"
@@ -241,6 +253,7 @@ async function main(): Promise<void> {
   writeFileSync(resolve(args.out, "tse-observations.json"), `${JSON.stringify([...observations.values()], null, 2)}\n`)
   const captures: CapturaAoVivo[] = []
   for (const target of targets) captures.push(await collectSource(sourceClient, target, observations.get(target.registration_id)))
+  writeFileSync(resolve(args.out, "document-observations.json"), `${JSON.stringify(captures.flatMap((capture) => capture.resultDocument ? [capture.resultDocument] : []), null, 2)}\n`)
 
   let reconciled = captures
   try {

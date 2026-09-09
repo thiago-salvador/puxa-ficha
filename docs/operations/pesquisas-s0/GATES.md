@@ -1,18 +1,18 @@
 # Gates: S0 local da coleta de pesquisas
 
-OWNS: scripts/lib/pesquisas-monitoramento-rede.ts, scripts/lib/pesquisas-monitoramento-adapters.ts, scripts/lib/pesquisas-monitoramento-pesqele.ts, scripts/lib/pesquisas-monitoramento.ts, scripts/pesquisas-monitoramento.ts, scripts/pesquisas-atualizacao-agendada/cli.ts, package.json, tests/pesquisas-s0.test.ts, tests/pesquisas-pesqele.test.ts, tests/fixtures/pesquisas-monitoramento/**, docs/operations/pesquisas-s0/**
+OWNS: scripts/lib/pesquisas-monitoramento-rede.ts, scripts/lib/pesquisas-monitoramento-adapters.ts, scripts/lib/pesquisas-monitoramento-pesqele.ts, scripts/lib/pesquisas-monitoramento-poderdata-pdf.ts, scripts/lib/pesquisas-monitoramento.ts, scripts/pesquisas-monitoramento.ts, scripts/pesquisas-atualizacao-agendada/cli.ts, .github/workflows/pesquisas-monitoramento.yml, package.json, tests/pesquisas-s0.test.ts, tests/pesquisas-pesqele.test.ts, tests/fixtures/pesquisas-monitoramento/**, docs/operations/pesquisas-s0/**
 
-Scope: corrigir e verificar coleta, PesqEle e consolidação. Publicação da branch e diagnóstico remoto foram autorizados na conversa. Catálogos, frequência e produção permanecem fora dessas alterações. Prova local, prova no runner e ativação continuam gates separados.
+Scope: corrigir e verificar coleta, PesqEle, cenários completos e consolidação. Ler a íntegra do PoderData com pdftotext já disponível localmente; preparar poppler-utils no job correspondente do runner. Publicação da branch e diagnóstico remoto foram autorizados na conversa. Catálogos, frequência e produção permanecem fora dessas alterações. Prova local, prova no runner e ativação continuam gates separados.
 
 - [x] L1: Os incidentes de robots, redação da amostra/campo e consolidação bloqueada têm regressões determinísticas aprovadas
   CHECK: node --conditions react-server --import tsx --test tests/pesquisas-s0.test.ts
   EXPECT: /# fail 0|ℹ fail 0/
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=2cfa8efbfe07a408c709ef0c36e149c1569ab22b78a21eafd9ef77fc5505f1bb; output-bytes=2148
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=9de045f51280f05f5ec0cc6287603005678c952b1c6072311e6831f02e3425f3; output-bytes=2148
 
 - [x] L2: Os contratos existentes de monitoramento, rede, isolamento e atualização agendada permanecem aprovados
   CHECK: npm run verify:pesquisas:monitoramento && npm run test:pesquisas:atualizacao-agendada
   EXPECT: /# fail 0|ℹ fail 0/
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=9415e766980b599104a818b554e39dae5517b40ad4d33b14aeb0da200a4c401c; output-bytes=8462
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=96b2380151a9b762465576de77a4ddeebac08b2ead364b4c6622fabbf7189bdd; output-bytes=8974
 
 - [x] L3: O eval do S0 obedece ao formato e às dimensões exigidas
   CHECK: python3 /Users/thiagosalvador/.claude/skills/eval/scripts/eval_lint.py docs/operations/pesquisas-s0/EVAL.md
@@ -29,4 +29,4 @@ Rodar com Node 24, cwd na raiz do checkout e PATH estável. L1/L2 não comprovam
 - [x] L5: Consulta PesqEle e cenários completos preservam todos os resultados e rejeitam conflitos de registro, sessão e escopo
   CHECK: node --conditions react-server --import tsx --test tests/pesquisas-pesqele.test.ts
   EXPECT: /# fail 0|ℹ fail 0/
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=c22fe3e7f2b54956ebb960db4f8de78b3c2a2eace397bdcf5ab54c0b39830a16; output-bytes=1140
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/private/tmp/pf-pesquisas-s0; path=9bcc7defaf68/25 entries; EXPECT=matched; output-sha256=0d58fe16bd102981c14ba7e1e717280b58e4d131c2d4d6238b39905c11b20e44; output-bytes=1644

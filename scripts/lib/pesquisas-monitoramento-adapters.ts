@@ -4,6 +4,7 @@ import { createHash } from "node:crypto"
 
 import type { EvidenciaPesquisaCandidata } from "./pesquisas-monitoramento"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
+import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
 
 export interface SourceContractMonitoramento {
   id: string
@@ -32,6 +33,7 @@ export interface AlvoMonitoramento {
   scenario_label: string
   scenario_question: string | null
   population: string
+  known_scenarios?: Array<{ id: string; turn: 1 | 2; label: string; question: string | null }>
 }
 
 export interface AdaptadorMonitoramento {
@@ -43,6 +45,7 @@ export interface AdaptadorMonitoramento {
     source: SourceContractMonitoramento
     target: AlvoMonitoramento
     registrySupplement?: ObservacaoPesqele
+    resultDocument?: DocumentoPoderData
   }): EvidenciaPesquisaCandidata
 }
 
@@ -284,6 +287,74 @@ export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_lab
   return candidates[0] ?? null
 }
 
+const NON_CANDIDATE = /^(Outros|Nulo\/Branco|Branco\/Nulo|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+
+/** Only explicit headings and complete lists establish a runoff scenario. */
+export function extrairCenariosSegundoTurno(html: string): Array<{
+  label: string
+  results: Array<{ raw_label: string; value_percent: number }>
+}> {
+  const safe = html.replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+  const scenarios: ReturnType<typeof extrairCenariosSegundoTurno> = []
+  let inRunoffs = false
+  let sectionLevel = 0
+  let label = ""
+  let declaredCount: number | null = null
+  for (const block of safe.matchAll(/<(h[1-6]|p|ul)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {
+    const tag = block[1].toLowerCase()
+    const text = stripExternalMarkup(block[2])
+    if (tag.startsWith("h")) {
+      const level = Number(tag[1])
+      if (/^Cenários? de (?:segundo|2[oº]) turno$/i.test(text)) {
+        inRunoffs = true
+        sectionLevel = level
+        label = ""
+      } else if (inRunoffs && /\s+x\s+/i.test(text) && level >= sectionLevel) {
+        label = text
+      } else if (inRunoffs && level <= sectionLevel) {
+        inRunoffs = false
+        label = ""
+      } else if (inRunoffs) {
+        // A different office must never inherit the governor/president context.
+        if (/senado|senador|deputad|vereador|prefeit/i.test(text)) throw new Error("HTML inesperado: cargo conflitante no segundo turno")
+        label = text
+      }
+      continue
+    }
+    if (!inRunoffs) continue
+    if (tag === "p") {
+      const declared = text.match(/\b(\d+) cenários? de (?:segundo|2[oº]) turno/i)
+      if (declared) declaredCount = Number(declared[1])
+      continue
+    }
+    const lines = [...block[2].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => stripExternalMarkup(match[1]))
+    if (!lines.some((line) => /:\s*\d+(?:[,.]\d+)?%$/.test(line))) continue
+    if (!label || !/\s+x\s+/i.test(label)) throw new Error("HTML inesperado: cenário de segundo turno sem identificação")
+    const results = lines.map((line) => {
+      const match = requireMatch(line, /^(.+?)\s*:\s*(\d+(?:[,.]\d+)?)%$/, "linha de segundo turno completa")
+      const value = normalizeNumber(match[2])
+      if (value < 0 || value > 100) throw new Error("HTML inesperado: percentual inválido")
+      return { raw_label: match[1].trim(), value_percent: value }
+    })
+    if (new Set(results.map((row) => row.raw_label)).size !== results.length) throw new Error("HTML inesperado: resultado duplicado")
+    const names = results.filter((row) => !NON_CANDIDATE.test(row.raw_label)).map((row) => row.raw_label)
+    const headingNames = label.split(/\s+x\s+/i).map((value) => value.trim())
+    if (names.length !== 2 || headingNames.length !== 2 || !names.every((name) => headingNames.includes(name))) {
+      throw new Error("HTML inesperado: nomes conflitantes no segundo turno")
+    }
+    if (Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5) {
+      throw new Error("HTML inesperado: cenário de segundo turno incompleto")
+    }
+    if (scenarios.some((scenario) => scenario.label === label)) throw new Error("HTML inesperado: cenário de segundo turno duplicado")
+    scenarios.push({ label, results })
+    label = ""
+  }
+  if (declaredCount !== null && declaredCount !== scenarios.length) throw new Error("HTML inesperado: quantidade de cenários de segundo turno divergente")
+  const mentionsRunoffs = /(?:segundo|2[oº])\s+turno/i.test(stripExternalMarkup(safe))
+  if (mentionsRunoffs && scenarios.length === 0) throw new Error("HTML inesperado: segundo turno sem captura completa")
+  return scenarios
+}
+
 function buildEvidence(input: {
   adapter: AdaptadorMonitoramento
   html: string
@@ -291,6 +362,7 @@ function buildEvidence(input: {
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
   registrySupplement?: ObservacaoPesqele
+  resultDocument?: DocumentoPoderData
   institutePattern: RegExp
   parseResults(text: string): Array<{ raw_label: string; value_percent: number }>
 }): EvidenciaPesquisaCandidata {
@@ -325,8 +397,23 @@ function buildEvidence(input: {
     if (!supplement) throw error
     method = extractMethod(supplement.method)
   }
-  const completeResults = extrairListaCompletaPrimeiroTurno(input.html)
+  const document = input.resultDocument
+  if (document && (input.source.id !== "poderdata-aya-nacional-2026" || input.target.office !== "Presidente" || input.target.geography_code !== "BR"
+    || document.registration_id !== registration || document.fieldwork.start !== fieldwork.start || document.fieldwork.end !== fieldwork.end
+    || document.sample_size !== sampleSize || document.margin_error_pp !== normalizeMeasure(margin) || document.confidence_percent !== confidence)) {
+    throw new Error("PoderData PDF: metadados conflitantes com a publicação")
+  }
+  const primaryDocumentScenario = document?.scenarios.find((scenario) => scenario.turn === 1)
+  const completeResults = primaryDocumentScenario?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
   const results = completeResults ?? input.parseResults(text)
+  if (completeResults && input.target.turn !== 1) throw new Error("HTML inesperado: turno do alvo conflitante")
+  const runoffs = document ? document.scenarios.filter((scenario) => scenario.turn === 2)
+    : (completeResults ? extrairCenariosSegundoTurno(input.html).map((scenario) => ({ ...scenario, question: null })) : [])
+  const unresolvedResults = (rows: typeof results): EvidenciaPesquisaCandidata["results"] => rows.map((result) => ({
+    ...result,
+    candidate_slug: null,
+    match_status: NON_CANDIDATE.test(result.raw_label) ? "not_candidate" : "indeterminado",
+  }))
   return {
     source_id: input.source.id,
     source_status: input.source.status,
@@ -345,19 +432,33 @@ function buildEvidence(input: {
       geography_code: input.target.geography_code,
       turn: input.target.turn,
       label: input.target.scenario_label,
-      question: input.target.scenario_question,
+      question: primaryDocumentScenario?.question ?? input.target.scenario_question,
     },
     sample: { size: sampleSize, population: input.target.population },
     margin_error_pp: normalizeMeasure(margin),
     confidence_percent: confidence,
     method,
-    ...(completeResults ? { scenario_complete: true } : {}),
+    ...(completeResults ? {
+      scenario_complete: true,
+      publication_complete: true,
+      additional_scenarios: runoffs.map((runoff) => ({
+        scenario: {
+          id: input.target.known_scenarios?.find((scenario) => scenario.turn === 2 && (runoff.question ? scenario.question === runoff.question : scenario.label === runoff.label))?.id
+            ?? `${input.target.poll_id}-2t-${createHash("sha256").update(runoff.question ?? runoff.label).digest("hex").slice(0, 16)}`,
+          office: input.target.office,
+          geography: input.target.geography,
+          geography_code: input.target.geography_code,
+          turn: 2 as const,
+          label: runoff.label,
+          question: runoff.question,
+        },
+        results: unresolvedResults(runoff.results),
+        scenario_complete: true as const,
+      })),
+    } : {}),
     ...(supplement ? { registry_observation: { url: supplement.source_url, observed_at: supplement.observed_at, evidence_sha256: supplement.evidence_sha256 } } : {}),
-    results: results.map((result) => ({
-      ...result,
-      candidate_slug: null,
-      match_status: /^(Outros|Nulo\/Branco|Branco\/Nulo|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i.test(result.raw_label) ? "not_candidate" as const : "indeterminado" as const,
-    })),
+    ...(document ? { result_document: { url: document.url, observed_at: document.observed_at, evidence_sha256: document.evidence_sha256, pages: document.scenarios.map((scenario) => scenario.page) } } : {}),
+    results: unresolvedResults(results),
     observed_at: input.observedAt,
     evidence_sha256: createHash("sha256").update(input.html).digest("hex"),
   }
@@ -432,6 +533,7 @@ export function parsePublicacaoMonitorada(input: {
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
   registrySupplement?: ObservacaoPesqele
+  resultDocument?: DocumentoPoderData
 }): EvidenciaPesquisaCandidata {
   return obterAdaptadorMonitoramento(input.source.id).parse(input)
 }

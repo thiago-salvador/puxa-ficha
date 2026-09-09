@@ -109,6 +109,13 @@ jobs:
       - name: Instalar dependências sem scripts de pacote
         run: npm ci --ignore-scripts
 
+      - name: Preparar leitura dos relatórios públicos em PDF
+        if: matrix.target.source_id == 'poderdata-aya-nacional-2026'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends -y poppler-utils
+          pdftotext -v
+
       - name: Coletar em dry-run sem credencial de escrita
         env:
           monitor_source_id: ${{ matrix.target.source_id }}
