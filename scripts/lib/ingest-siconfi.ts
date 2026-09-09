@@ -1,174 +1,152 @@
 import { supabase } from "./supabase"
 import { fetchJSON, sleep } from "./helpers"
-import { log, warn, error } from "./logger"
+import { log } from "./logger"
 import type { IngestResult } from "./types"
 
-const ESTADOS = ["AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"]
-
-const CODIGO_IBGE: Record<string, string> = {
-  AC: "12", AL: "27", AM: "13", AP: "16", BA: "29", CE: "23",
-  DF: "53", ES: "32", GO: "52", MA: "21", MG: "31", MS: "50",
-  MT: "51", PA: "15", PB: "25", PE: "26", PI: "22", PR: "41",
-  RJ: "33", RN: "24", RO: "11", RR: "14", RS: "43", SC: "42",
-  SE: "28", SP: "35", TO: "17"
+const CODIGO_IBGE: Record<string, number> = {
+  AC: 12, AL: 27, AM: 13, AP: 16, BA: 29, CE: 23, DF: 53, ES: 32, GO: 52,
+  MA: 21, MG: 31, MS: 50, MT: 51, PA: 15, PB: 25, PE: 26, PI: 22, PR: 41,
+  RJ: 33, RN: 24, RO: 11, RR: 14, RS: 43, SC: 42, SE: 28, SP: 35, TO: 17,
 }
-
-const ANOS = [2022, 2023, 2024]
 const BASE_URL = "https://apidatalake.tesouro.gov.br/ords/siconfi/tt"
 
-interface SiconfiItem {
-  co_conta: string
-  no_conta: string
-  vl_conta: number
+export interface SiconfiItem {
+  exercicio: number; periodo: number; cod_ibge: number; uf: string
+  esfera: string; co_poder?: string; anexo: string
+  cod_conta: string; conta: string; coluna: string; valor: number
+}
+interface SiconfiResponse { items: SiconfiItem[]; hasMore: boolean; offset: number; limit: number }
+interface Indicador {
+  estado: string; ano: number; fonte: string; indicador: string; valor: number
+  unidade: string; metadata: Record<string, unknown>
+}
+interface Dependencies {
+  fetchJson: (url: string) => Promise<SiconfiResponse>
+  write: (row: Indicador) => Promise<void>
+  sleep: (ms: number) => Promise<void>
+}
+// Receita realizada; despesa empenhada acumulada; resultado acima da linha.
+// Em 2023 o demonstrativo passa a separar com/sem RPPS; guardar a definição anual.
+const CONTAS = [
+  { indicador: "pessoal_rcl", anexo: "RGF-Anexo 01", cod: "DespesaComPessoalTotal", coluna: "% sobre a RCL Ajustada", unidade: "percentual" },
+  { indicador: "receita_total", anexo: "RREO-Anexo 01", cod: "TotalReceitas", coluna: "Até o Bimestre (c)", unidade: "reais" },
+  { indicador: "despesa_total", anexo: "RREO-Anexo 01", cod: "TotalDespesas", coluna: "DESPESAS EMPENHADAS ATÉ O BIMESTRE (f)", unidade: "reais" },
+  { indicador: "resultado_primario", anexo: "RREO-Anexo 06", cod: "ResultadoPrimarioComRPPSAcimaDaLinha", coluna: "VALOR", unidade: "reais" },
+] as const
+
+export function interpretarSiconfi(items: SiconfiItem[], estado: string, ano: number, anexo: string): Indicador[] {
+  if (!CODIGO_IBGE[estado] || !Number.isInteger(ano)) throw new Error("UF/ano inválidos")
+  if (!Array.isArray(items)) throw new Error("SICONFI: items ausente ou inválido")
+  if (!items.length) return []
+  const periodo = anexo.startsWith("RGF") ? 3 : 6
+  if (items.some((i) => i.cod_ibge !== CODIGO_IBGE[estado] || i.uf !== estado || i.exercicio !== ano ||
+      i.esfera !== "E" || i.periodo !== periodo || i.anexo !== anexo ||
+      (anexo.startsWith("RGF") && i.co_poder !== "E"))) {
+    throw new Error("SICONFI: resposta diverge de UF/exercício/período/anexo/poder solicitado")
+  }
+  return CONTAS.filter((c) => c.anexo === anexo).map((c) => {
+    const codigo = c.indicador === "resultado_primario" && ano === 2022
+      ? "RREO6ResultadoPrimarioEstadosMunicipios" : c.cod
+    const matches = items.filter((i) => i.cod_conta === codigo && i.coluna === c.coluna)
+    if (matches.length !== 1) throw new Error("SICONFI: " + c.indicador + " exige conta/coluna única; encontrados " + matches.length)
+    const item = matches[0]
+    if (typeof item.valor !== "number" || !Number.isFinite(item.valor)) throw new Error("SICONFI: valor inválido para " + c.indicador)
+    const metadata: Record<string, unknown> = { anexo, cod_conta: item.cod_conta, coluna: item.coluna, periodo }
+    if (c.indicador === "resultado_primario") {
+      metadata.definicao = item.conta
+      metadata.metodologia = ano === 2022 ? "acima_da_linha_edicao_2022" : "com_rpps_acima_da_linha"
+    }
+    if (c.indicador === "pessoal_rcl") {
+      const limites = items.filter((i) => i.cod_conta === "LimiteMaximoDespesaComPessoalTotal" && i.coluna === c.coluna)
+      if (limites.length !== 1 || typeof limites[0].valor !== "number" || !Number.isFinite(limites[0].valor)) {
+        throw new Error("SICONFI: limite máximo do ente ausente ou ambíguo")
+      }
+      metadata.limite_constitucional = limites[0].valor
+      metadata.acima_limite = item.valor > limites[0].valor
+    }
+    return { estado, ano, fonte: "siconfi", indicador: c.indicador, valor: item.valor, unidade: c.unidade, metadata }
+  })
 }
 
-interface SiconfiResponse {
-  items: SiconfiItem[]
+const defaults: Dependencies = {
+  fetchJson: (url) => fetchJSON<SiconfiResponse>(url), sleep,
+  write: async (row) => {
+    const { error } = await supabase.from("indicadores_estaduais").upsert(
+      { ...row, valor_texto: null, updated_at: new Date().toISOString() },
+      { onConflict: "estado,ano,fonte,indicador" },
+    )
+    if (error) throw new Error("Upsert " + row.estado + "/" + row.ano + "/" + row.indicador + ": " + error.message)
+  },
 }
 
-async function upsertIndicador(
-  estado: string,
-  ano: number,
-  fonte: string,
-  indicador: string,
-  valor: number | null,
-  valorTexto?: string,
-  unidade?: string,
-  metadata?: Record<string, unknown>
-) {
-  const { error: err } = await supabase.from("indicadores_estaduais").upsert(
-    {
-      estado,
-      ano,
-      fonte,
-      indicador,
-      valor,
-      valor_texto: valorTexto ?? null,
-      unidade: unidade ?? null,
-      metadata: metadata ?? null,
-      updated_at: new Date().toISOString(),
-    },
-    { onConflict: "estado,ano,fonte,indicador" }
-  )
-  if (err) throw new Error(`Upsert falhou para ${estado}/${ano}/${indicador}: ${err.message}`)
-}
-
-function findConta(items: SiconfiItem[], termo: string): number | null {
-  const match = items.find((i) =>
-    i.no_conta?.toLowerCase().includes(termo.toLowerCase())
-  )
-  return match ? match.vl_conta : null
-}
-
-export async function ingestSiconfi(): Promise<IngestResult[]> {
+export async function ingestSiconfi(
+  options: { estados?: string[]; anos?: number[]; deps?: Partial<Dependencies> } = {},
+): Promise<IngestResult[]> {
+  const deps = { ...defaults, ...options.deps }
+  const anos = options.anos ?? [2022, 2023, 2024]
+  if (!anos.length || anos.some((ano) => ![2022, 2023, 2024].includes(ano))) {
+    throw new Error("SICONFI: informe exercícios suportados (2022, 2023, 2024)")
+  }
   const results: IngestResult[] = []
-
-  for (const estado of ESTADOS) {
+  for (const estado of options.estados ?? Object.keys(CODIGO_IBGE)) {
+    const start = Date.now()
     const result: IngestResult = {
       source: "siconfi",
       candidato: estado,
       tables_updated: [],
       rows_upserted: 0,
       errors: [],
+      warnings: [],
       duration_ms: 0,
     }
-    const start = Date.now()
-
-    const ibge = CODIGO_IBGE[estado]
-    if (!ibge) {
-      result.errors.push(`Codigo IBGE nao encontrado para ${estado}`)
-      result.duration_ms = Date.now() - start
-      results.push(result)
-      continue
-    }
-
-    for (const ano of ANOS) {
-      try {
-        // RGF - Relatorio de Gestao Fiscal (limite de pessoal)
-        const rgfUrl =
-          `${BASE_URL}/rgf?an_exercicio=${ano}&in_periodicidade=Q&nr_periodo=3` +
-          `&co_tipo_demonstrativo=RGF&no_anexo=RGF-Anexo%2002&co_esfera=E&co_poder=E&id_ente=${ibge}`
-
-        log("siconfi", `  RGF ${estado} ${ano}`)
+    for (const ano of anos) {
+      for (const anexo of [...new Set(CONTAS.map((c) => c.anexo))]) {
         try {
-          const rgfData = await fetchJSON<SiconfiResponse>(rgfUrl)
-          const items = rgfData?.items ?? []
-
-          // Percentual de pessoal sobre RCL (limite executivo estadual: 49%)
-          const pessoalItem = items.find(
-            (i) =>
-              i.no_conta?.toLowerCase().includes("despesa total com pessoal") &&
-              i.no_conta?.toLowerCase().includes("percentual")
-          ) ?? items.find(
-            (i) =>
-              i.no_conta?.toLowerCase().includes("pessoal") &&
-              i.no_conta?.toLowerCase().includes("%")
-          )
-
-          const pessoalRcl = pessoalItem ? pessoalItem.vl_conta : null
-
-          if (pessoalRcl !== null) {
-            await upsertIndicador(estado, ano, "siconfi", "pessoal_rcl", pessoalRcl, undefined, "percentual", {
-              limite_constitucional: 49,
-              acima_limite: pessoalRcl > 49,
-            })
+          if (!CODIGO_IBGE[estado] || !Number.isInteger(ano)) throw new Error("UF/ano inválidos")
+          const rgf = anexo.startsWith("RGF")
+          const url = new URL(BASE_URL + "/" + (rgf ? "rgf" : "rreo"))
+          for (const [key, value] of Object.entries({ an_exercicio: ano, nr_periodo: rgf ? 3 : 6,
+            co_tipo_demonstrativo: rgf ? "RGF" : "RREO", no_anexo: anexo, co_esfera: "E", id_ente: CODIGO_IBGE[estado] })) {
+            url.searchParams.set(key, String(value))
+          }
+          if (rgf) { url.searchParams.set("in_periodicidade", "Q"); url.searchParams.set("co_poder", "E") }
+          const items: SiconfiItem[] = []
+          let offset = 0
+          for (let page = 0; ; page++) {
+            if (page >= 100) throw new Error("SICONFI: paginação excedeu limite")
+            url.searchParams.set("offset", String(offset))
+            const data = await deps.fetchJson(url.toString())
+            if (!data || !Array.isArray(data.items) || typeof data.hasMore !== "boolean" || data.offset !== offset) {
+              throw new Error("SICONFI: envelope/paginação inválido")
+            }
+            items.push(...data.items)
+            if (!data.hasMore) break
+            if (!Number.isInteger(data.limit) || data.limit <= 0 || !data.items.length) throw new Error("SICONFI: paginação sem avanço")
+            offset += data.limit
+          }
+          const rows = interpretarSiconfi(items, estado, ano, anexo)
+          url.searchParams.delete("offset")
+          if (!rows.length) result.warnings!.push(estado + "/" + ano + "/" + anexo + ": fonte respondeu lista vazia")
+          for (const row of rows) {
+            row.metadata.fonte_url = url.toString()
+            await deps.write(row)
             result.rows_upserted++
           }
-        } catch (rgfErr) {
-          warn("siconfi", `  RGF ${estado} ${ano}: ${rgfErr}`)
-          result.errors.push(`RGF ${estado} ${ano}: ${rgfErr instanceof Error ? rgfErr.message : String(rgfErr)}`)
+        } catch (error) {
+          result.errors.push(estado + "/" + ano + "/" + anexo + ": " + (error instanceof Error ? error.message : String(error)))
         }
-
-        await sleep(300)
-
-        // RREO - Receitas e Despesas
-        const rreoUrl =
-          `${BASE_URL}/rreo?an_exercicio=${ano}&nr_periodo=6` +
-          `&co_tipo_demonstrativo=RREO&no_anexo=RREO-Anexo%2001&co_esfera=E&id_ente=${ibge}`
-
-        log("siconfi", `  RREO ${estado} ${ano}`)
-        try {
-          const rreoData = await fetchJSON<SiconfiResponse>(rreoUrl)
-          const items = rreoData?.items ?? []
-
-          const receitaTotal = findConta(items, "receita total")
-          const despesaTotal = findConta(items, "despesa total")
-          const resultadoPrimario = findConta(items, "resultado primario")
-
-          if (receitaTotal !== null) {
-            await upsertIndicador(estado, ano, "siconfi", "receita_total", receitaTotal, undefined, "reais")
-            result.rows_upserted++
-          }
-          if (despesaTotal !== null) {
-            await upsertIndicador(estado, ano, "siconfi", "despesa_total", despesaTotal, undefined, "reais")
-            result.rows_upserted++
-          }
-          if (resultadoPrimario !== null) {
-            await upsertIndicador(estado, ano, "siconfi", "resultado_primario", resultadoPrimario, undefined, "reais")
-            result.rows_upserted++
-          }
-        } catch (rreoErr) {
-          warn("siconfi", `  RREO ${estado} ${ano}: ${rreoErr}`)
-          result.errors.push(`RREO ${estado} ${ano}: ${rreoErr instanceof Error ? rreoErr.message : String(rreoErr)}`)
-        }
-
-        await sleep(300)
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err)
-        error("siconfi", `  ${estado} ${ano}: ${msg}`)
-        result.errors.push(`${estado} ${ano}: ${msg}`)
+        await deps.sleep(300)
       }
     }
-
-    if (result.rows_upserted > 0) result.tables_updated.push("indicadores_estaduais")
+    if (result.rows_upserted) result.tables_updated.push("indicadores_estaduais")
+    result.coleta_resultado = result.errors.length ? "erro" : result.rows_upserted
+      ? result.warnings!.length ? "indeterminado" : "encontrado" : "vazio_confirmado"
+    result.coleta_detalhe = result.rows_upserted + " indicadores gravados; " + result.warnings!.length + " consultas vazias; " + result.errors.length + " erros; despesa total = empenhada acumulada; primário = acima da linha, definição anual em metadata"
     result.duration_ms = Date.now() - start
     results.push(result)
-    log("siconfi", `${estado}: ${result.rows_upserted} indicadores, ${result.errors.length} erros`)
+    log("siconfi", estado + ": " + result.coleta_detalhe)
   }
-
   return results
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestSiconfi().then((r) => console.log(JSON.stringify(r, null, 2)))
-}
+if (import.meta.url === `file://${process.argv[1]}`) ingestSiconfi().then((r) => console.log(JSON.stringify(r, null, 2)))

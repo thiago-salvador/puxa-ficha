@@ -15,6 +15,9 @@ export interface SourceEvidence {
   debt_count?: number
   total_count?: number
   execution_id?: string | null
+  /** Estoque atual por fonte/escopo/alvo, independente do último run parcial. */
+  target_inventory?: { total_count: number; error_count: number; debt_count: number }
+  assessment_scope?: "latest_per_target"
   missing_source_ids?: string[]
   provenance_contract_version?: number | null
   provenance_complete?: boolean
@@ -77,7 +80,20 @@ export function aggregateSourceEvidence(
     return { source_id: source.source_id, checked_at: null }
   }
   const byId = new Map(selectLatestSourceEvidence(allEvidence).map((item) => [item.source_id, item]))
-  const candidates = source.collection_source_ids.map((sourceId) => byId.get(sourceId))
+  const useInventory = source.refresh_mode === "manual" || source.refresh_mode === "versioned_review"
+  const candidates = source.collection_source_ids.map((sourceId) => {
+    const item = byId.get(sourceId)
+    const inventory = item?.target_inventory
+    if (!item || !inventory || !useInventory) return item
+    return {
+      ...item,
+      ...inventory,
+      assessment_scope: "latest_per_target" as const,
+      source_error: inventory.error_count > 0
+        ? `${inventory.error_count} erro(s) nos recibos vigentes por alvo`
+        : null,
+    }
+  })
   const complete = candidates.filter((item): item is SourceEvidence => Boolean(item))
   const missingSourceIds = source.collection_source_ids.filter((sourceId) => !byId.has(sourceId))
   if (complete.length === 0) {
