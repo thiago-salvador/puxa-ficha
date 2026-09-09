@@ -28,6 +28,28 @@ test("nota de Outros é preservada sem atribuir percentual individual aos nomes 
   assert.throws(() => extrairPublicacaoRealTime(html.replace(/<p>.*?<\/p>/, ""), plain))
 })
 
+test("ordem espontânea antes da estimulada preserva modalidade e encerra leitura antes do Senado", () => {
+  const html = `<h2>Pesquisa espontânea</h2>${list([["A (X)", 50], ["B (Y)", 40], ["Nulos/brancos", 5], ["Não sabe", 5]])}<h2>Pesquisa estimulada</h2>${list([["A (X)", 55], ["B (Y)", 35], ["Nulos/brancos", 5], ["Não sabe", 5]])}<h2>Senado</h2>${list([["C (Z)", 70], ["D (W)", 20], ...categories])}`
+  const result = extrairPublicacaoRealTime(html, plain)!
+  assert.deepEqual(result.scenarios.map((scenario) => scenario.mode), ["espontaneo", "estimulado"])
+  assert.equal(result.scenarios[1].results[0].value_percent, 55)
+  assert.equal(result.scenarios.some((scenario) => scenario.results.some((row) => row.raw_label === "C (Z)")), false)
+})
+
+test("duelo aceita nome completo com partido só no título e rejeita partido divergente", () => {
+  const first = `<h1>Primeiro turno para governador</h1>${list([["Ana Silva (X)", 50], ["Beto Souza (Y)", 40], ...categories])}`
+  const runoff = `<h3>Segundo turno</h3><h4>Ana Silva (X) x Beto Souza (Y)</h4>${list([["Ana Silva", 55], ["Beto Souza", 35], ...categories])}`
+  assert.equal(extrairPublicacaoRealTime(first + runoff, plain)?.scenarios.length, 2)
+  assert.throws(() => extrairPublicacaoRealTime(first + runoff.replace("Ana Silva: 55%", "Ana Silva (Z): 55%"), plain), /nomes conflitantes/)
+})
+
+test("matéria conjunta separa modalidade, espaço antes de percentual e segundo turno estadual do Senado", () => {
+  const html = `<h1>Pesquisa para governo e Senado</h1><h2>Pesquisa para governador de Sergipe</h2><p>Pesquisa espontânea e cenário estimulado.</p><h3>Liderança no cenário espontâneo</h3>${list([["Ana Silva (X)", 50], ["Beto Souza (Y)", 40], ...categories])}<h3>Resultados do cenário estimulado</h3>${list([["Ana Silva (X)", 55], ["Beto Souza (Y)", 35], ...categories])}<h2>Segundo turno para governador de Sergipe</h2><p>Um cenário de segundo turno.</p><h3>Ana Silva x Beto Souza</h3>${list([["Ana Silva (X)", 60], ["Beto Souza (Y)", 30], ...categories]).replace("60%", "60 %")}<h2>Pesquisa para o Senado</h2>${list([["Senador (X)", 80], ["Outro senador (Y)", 10], ...categories])}`
+  const scenarios = extrairPublicacaoRealTime(html, plain)!.scenarios
+  assert.deepEqual(scenarios.map(({ turn, mode }) => [turn, mode]), [[1, "espontaneo"], [1, "estimulado"], [2, "estimulado"]])
+  assert.equal(scenarios[2].results[0].value_percent, 60)
+})
+
 test("UF nova recebe pesquisa e aliases completos em cópia, com readback pelo parser público", () => {
   const directory = mkdtempSync(join(tmpdir(), "pf-uf-nova-"))
   try {

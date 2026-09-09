@@ -172,6 +172,26 @@ function extractFieldwork(text: string, publicationDate: string): { start: strin
     const year = crossMonth[5] ?? publicationDate.slice(0, 4)
     return validateFieldwork({ start: isoDate(crossMonth[1], crossMonth[2], year), end: isoDate(crossMonth[3], crossMonth[4], year) }, publicationDate)
   }
+  const days = "domingo|segunda|terça|quarta|quinta|sexta|sábado"
+  const weekdayRange = text.match(new RegExp(`(?:de|da)\\s+(?:última\\s+)?(${days})(?:-feira)?\\s*\\((\\d{1,2})\\)\\s+(?:a|até|e)\\s+(?:esta\\s+|última\\s+)?(${days})(?:-feira)?(?:\\s*\\((\\d{1,2})\\))?`, "i"))
+  if (weekdayRange) {
+    if (!/pesquisa|levantamento|entrevistas?|eleitores|Datafolha/i.test(text.slice(Math.max(0, weekdayRange.index! - 240), weekdayRange.index))) throw new Error("HTML inesperado: datas sem contexto de pesquisa")
+    const weekdays = days.split("|")
+    const latestDate = (before: string, day: number, weekday: string): string => {
+      const end = new Date(`${before}T00:00:00Z`)
+      for (let offset = 0; offset <= 31; offset++) {
+        const date = new Date(end.getTime() - offset * 86_400_000)
+        if (date.getUTCDate() === day) {
+          if (date.getUTCDay() !== weekdays.indexOf(weekday.toLocaleLowerCase("pt-BR"))) throw new Error("HTML inesperado: dia da semana conflitante com a data")
+          return date.toISOString().slice(0, 10)
+        }
+      }
+      throw new Error("HTML inesperado: dia da semana conflitante com a data")
+    }
+    const end = weekdayRange[4] ? latestDate(publicationDate, Number(weekdayRange[4]), weekdayRange[3]) : publicationDate
+    if (!weekdayRange[4] && (!/\besta\s/i.test(weekdayRange[0]) || new Date(`${end}T00:00:00Z`).getUTCDay() !== weekdays.indexOf(weekdayRange[3].toLocaleLowerCase("pt-BR")))) throw new Error("HTML inesperado: fim do campo sem data verificável")
+    return validateFieldwork({ start: latestDate(end, Number(weekdayRange[2]), weekdayRange[1]), end }, publicationDate)
+  }
   const weekdayDates = text.match(/\((\d{1,2})\),?\s+dia\s+do\s+in[ií]cio\s+do\s+levantamento\s+que\s+acabou[^0-9.]{0,30}\((\d{1,2})\)/i)
     ?? text.match(/in[ií]cio\s+do\s+levantamento[^0-9]{0,30}\((\d{1,2})\)[^.]{0,100}?acabou[^0-9]{0,30}\((\d{1,2})\)/i)
   if (weekdayDates) {
@@ -183,7 +203,7 @@ function extractFieldwork(text: string, publicationDate: string): { start: strin
   }
   const sameMonth = requireFirstMatch(text, [
     /(?:campo|entrevistas?|ouvidos?|coleta)[^0-9]{0,80}(\d{1,2})\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i,
-    /(?:entre\s+os\s+dias?\s+)?(\d{1,2})\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i,
+    /(?:entre\s+os\s+dias?\s+)?(\d{1,2})[º°]?\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i,
   ], "período de campo")
   const year = sameMonth[4] ?? publicationDate.slice(0, 4)
   return {
@@ -234,7 +254,7 @@ function assertScope(text: string, target: AlvoMonitoramento): void {
     ? /Brasil|nacional/i.test(text)
     : text.toLocaleLowerCase("pt-BR").includes(target.geography.toLocaleLowerCase("pt-BR"))
   if (!geographyMentioned) throw new Error("HTML inesperado: geografia ausente")
-  const turn = requireMatch(text, /(?:1[oº]|primeiro)\s+turno/i, "turno")
+  const turn = requireMatch(text, /(?:1[oº°]|primeiro)\s+turno/i, "turno")
   if (!turn[0] || target.turn !== 1) throw new Error("HTML inesperado: turno conflitante")
 }
 
@@ -296,7 +316,7 @@ export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_lab
   return candidates[0] ?? null
 }
 
-const NON_CANDIDATE = /^(Outros|Nulo\/Branco|Branco\/Nulo|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
 
 /** Only explicit headings and complete lists establish a runoff scenario. */
 export function extrairCenariosSegundoTurno(html: string): Array<{
@@ -384,18 +404,20 @@ function buildEvidence(input: {
   if (registration !== input.target.registration_id) throw new Error("HTML inesperado: registro conflitante")
   const fieldwork = extractFieldwork(text, publicationDate)
   const sampleSize = extractSample(text)
-  const margin = requireMatch(text, /margem de erro.{0,30}?(\d+(?:[,.]\d+)?|um|uma|dois|duas|tr[eê]s|quatro|cinco)\s+pontos?/i, "margem de erro")[1]
+  const margin = requireMatch(text, /margem de erro[^.!?]{0,70}?(\d+(?:[,.]\d+)?|um|uma|dois|duas|tr[eê]s|quatro|cinco)\s+pontos?/i, "margem de erro")[1]
   const supplement = input.registrySupplement
   if (supplement) {
     const registry = supplement.registry
     const geographies = [input.target.geography, input.target.geography_code].map((value) => value.toLocaleLowerCase("pt-BR"))
-    if (registry.registration_id !== registration || !geographies.includes(registry.geography.toLocaleLowerCase("pt-BR"))
-      || !registry.office.toLocaleLowerCase("pt-BR").includes(input.target.office.toLocaleLowerCase("pt-BR"))
-      || registry.field_start !== fieldwork.start || registry.field_end !== fieldwork.end || registry.sample_size !== sampleSize
-      || !margemCompativelComRegistro(registry, normalizeMeasure(margin))
-      || !registry.institute.toLocaleLowerCase("pt-BR").includes(input.source.roles.institute.toLocaleLowerCase("pt-BR"))) {
-      throw new Error("PesqEle: metadados conflitantes com a publicação")
+    const conflicts: string[] = []
+    for (const [key, published, registered] of [["registro", registration, registry.registration_id], ["início do campo", fieldwork.start, registry.field_start], ["fim do campo", fieldwork.end, registry.field_end], ["amostra", sampleSize, registry.sample_size]] as const) {
+      if (published !== registered) conflicts.push(`${key}: publicação=${published}, registro=${registered}`)
     }
+    if (!geographies.includes(registry.geography.toLocaleLowerCase("pt-BR"))) conflicts.push("geografia")
+    if (!registry.office.toLocaleLowerCase("pt-BR").includes(input.target.office.toLocaleLowerCase("pt-BR"))) conflicts.push("cargo")
+    if (!margemCompativelComRegistro(registry, normalizeMeasure(margin))) conflicts.push(`margem: publicação=${normalizeMeasure(margin)}, registro=${registry.margin_error_pp}`)
+    if (!registry.institute.toLocaleLowerCase("pt-BR").includes(input.source.roles.institute.toLocaleLowerCase("pt-BR"))) conflicts.push("instituto")
+    if (conflicts.length) throw new Error(`PesqEle: metadados conflitantes com a publicação (${conflicts.join("; ")})`)
   }
   const publishedConfidence = text.match(/(?:intervalo|n[ií]vel|[ií]ndice) de confian[cç]a[^0-9]{0,30}(\d+(?:[,.]\d+)?)%/i)?.[1]
   const confidence = publishedConfidence ? normalizeNumber(publishedConfidence) : supplement?.confidence_percent
@@ -414,11 +436,13 @@ function buildEvidence(input: {
   }
   const primaryDocumentScenario = document?.scenarios.find((scenario) => scenario.turn === 1)
   const realTime = input.source.id === "real-time-big-data-estaduais-2026" ? extrairPublicacaoRealTime(input.html, stripExternalMarkup) : null
-  const completeResults = primaryDocumentScenario?.results ?? realTime?.scenarios[0]?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
+  const primaryRealTime = realTime?.scenarios.find((scenario) => scenario.turn === 1 && scenario.mode === "estimulado")
+  if (realTime && !primaryRealTime) throw new Error("Real Time: cenário estimulado ausente")
+  const completeResults = primaryDocumentScenario?.results ?? primaryRealTime?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
   const results = completeResults ?? input.parseResults(text)
   if (completeResults && input.target.turn !== 1) throw new Error("HTML inesperado: turno do alvo conflitante")
   const additional = document ? document.scenarios.filter((scenario) => scenario !== primaryDocumentScenario)
-    : realTime ? realTime.scenarios.slice(1).map((scenario) => ({ ...scenario, question: null }))
+    : realTime ? realTime.scenarios.filter((scenario) => scenario !== primaryRealTime).map((scenario) => ({ ...scenario, question: null }))
       : (completeResults ? extrairCenariosSegundoTurno(input.html).map((scenario) => ({ ...scenario, turn: 2 as const, question: null })) : [])
   const unresolvedResults = (rows: typeof results): EvidenciaPesquisaCandidata["results"] => rows.map((result) => ({
     ...result,
@@ -442,7 +466,7 @@ function buildEvidence(input: {
       geography: input.target.geography,
       geography_code: input.target.geography_code,
       turn: input.target.turn,
-      label: realTime?.scenarios[0]?.label ?? input.target.scenario_label,
+      label: primaryRealTime?.label ?? input.target.scenario_label,
       question: primaryDocumentScenario?.question ?? input.target.scenario_question,
     },
     sample: { size: sampleSize, population: input.target.population },

@@ -71,6 +71,17 @@ function parseFixture(file: string, sourceId: string, uf: string, transform: (ht
   })
 }
 
+test("adaptador usa cenário estimulado como principal mesmo quando a lista espontânea vem antes", () => {
+  const spontaneous = '<h2>Pesquisa espontânea</h2><ul><li>Juliana Brizola (PDT): 50%</li><li>Luciano Zucco (PL): 30%</li><li>Nulo/Branco: 10%</li><li>Não sabe: 10%</li></ul>'
+  const stimulated = '<h2>Pesquisa estimulada</h2><ul><li>Juliana Brizola (PDT): 55%</li><li>Luciano Zucco (PL): 35%</li><li>Nulo/Branco: 5%</li><li>Não sabe: 5%</li></ul>'
+  const evidence = parseFixture("real-time-big-data-publicacao.html", "real-time-big-data-estaduais-2026", "RS", (html) => html.replace("</article>", `${spontaneous}${stimulated}</article>`))
+  assert.match(evidence.scenario.label, /estimulado/)
+  assert.equal(evidence.results[0].value_percent, 55)
+  assert.match(evidence.additional_scenarios![0].scenario.label, /espontâneo/)
+  assert.equal(evidence.additional_scenarios![0].results[0].value_percent, 50)
+  assert.throws(() => parseFixture("real-time-big-data-publicacao.html", "real-time-big-data-estaduais-2026", "RS", (html) => html.replace("</article>", `${spontaneous}</article>`)), /cenário estimulado ausente/)
+})
+
 // Synthetic fixtures with wording observed in the public AM and BR pages on 2026-09-09.
 const samplePhrase = "Foram ouvidos 1.600 eleitores"
 for (const phrase of ["A pesquisa foi realizada entre 21 e 25 de agosto de 2026, com 1.600 eleitores", "A pesquisa foi feita com as entrevistas de 1.600 eleitores"]) {
@@ -85,6 +96,21 @@ test("numero de eleitores sem contexto de pesquisa nao vira amostra", () => {
 
 const originalFieldwork = "com campo de 18 a 19 de agosto de 2026"
 const observedFieldwork = "Elas começaram na terça (18), dia do início do levantamento que acabou na quarta (19)"
+for (const phrase of ["com campo de terça-feira (18) a esta sexta-feira (21)", "com campo de terça (18) até sexta (21)", "com campo de terça-feira (18) a esta sexta"]) {
+  test(`campo associa dia da semana ao calendário e à publicação: ${phrase}`, () => {
+    const evidence = parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replace(originalFieldwork, phrase))
+    assert.deepEqual(evidence.fieldwork, { start: "2026-08-18", end: "2026-08-21" })
+  })
+}
+test("dia da semana incompatível não é corrigido silenciosamente", () => {
+  assert.throws(() => parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replace(originalFieldwork, "com campo de segunda-feira (18) a sexta (21)")), /dia da semana conflitante/)
+})
+test("fim do campo sem dia exige referência explícita à publicação", () => {
+  assert.throws(() => parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replace(originalFieldwork, "com campo de terça-feira (18) a sexta")), /fim do campo sem data verificável/)
+})
+test("dia da semana conflitante não recua ao mesmo dia de outro mês", () => {
+  assert.throws(() => parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replaceAll("2026-08-21", "2026-09-21").replace(originalFieldwork, "com campo de terça-feira (18) a sexta-feira (21)")), /dia da semana conflitante/)
+})
 test("campo aceita dias contextualizados no inicio e fim do levantamento", () => {
   const evidence = parseFixture("datafolha-nacional-publicacao.html", "datafolha-folha-globo-nacional-2026", "BR", (html) => html.replace(originalFieldwork, observedFieldwork))
   assert.deepEqual(evidence.fieldwork, { start: "2026-08-18", end: "2026-08-19" })
