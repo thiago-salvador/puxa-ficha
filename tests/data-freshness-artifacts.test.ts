@@ -32,7 +32,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
             provenance_complete: true,
             evidence_sha256: "a".repeat(64),
             raw_payload_count: 93,
-            pair_count: 154,
+            pair_count: 152,
             double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
           }
         : {

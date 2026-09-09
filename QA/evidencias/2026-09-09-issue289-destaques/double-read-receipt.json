@@ -1,0 +1,30 @@
+{
+  "hash_comparison": "senado-semantic-v1",
+  "schema_version": 1,
+  "source_id": "destaques-votacoes",
+  "execution_ids": [
+    "destaques-votacoes:20260909-issue289-c",
+    "destaques-votacoes:20260909-issue289-d"
+  ],
+  "checked_at": [
+    "2026-09-09T14:38:03.922Z",
+    "2026-09-09T14:38:51.815Z"
+  ],
+  "source_hashes_match": true,
+  "vote_hashes_match": true,
+  "pair_hashes_match": true,
+  "summary": {
+    "votacoes": 23,
+    "pairs": 152,
+    "candidates": 30,
+    "sources": 92,
+    "pares_encontrados": 152,
+    "pares_sem_achado": 0,
+    "pares_divergentes": 0,
+    "votacoes_mapeadas": 21,
+    "votacoes_sem_id_oficial": 2
+  },
+  "run_a_manifest_sha256": "683df2aab11368a8453be964a99d8865b4f5c4ba30328523ce5c3d72af40744a",
+  "run_b_manifest_sha256": "fff71a35a3aed2c324ec65a7198d5f041a29aa28e55bf454d01dd1569d6b2491",
+  "comparison_sha256": "a3ddd5194cd3fea134c19e685bf9a9e79852d4212394376cf54e6ff652e30127"
+}

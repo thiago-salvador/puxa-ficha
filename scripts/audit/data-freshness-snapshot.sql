@@ -74,7 +74,7 @@ WITH candidacies AS (
     ,'provenance_complete', CASE
       WHEN log.fonte = 'destaques-votacoes' THEN
         count(*) FILTER (WHERE log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%') = 1
-        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 154
+        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 152
         AND count(*) FILTER (WHERE log.resultado NOT IN ('encontrado', 'sem_achado_no_escopo')) = 0
       ELSE NULL
     END

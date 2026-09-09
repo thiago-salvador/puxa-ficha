@@ -2,13 +2,13 @@
   "schema_version": 1,
   "laudicerio": {
     "profile_slug": "laudicerio-aguiar",
-    "canonical_registration_sq": null,
+    "canonical_registration_sq": "110002554073",
     "alert_message": "julgamento Laudicério: revisar canônica",
     "registrations": [
       {
         "sq_candidato": "110002553937",
         "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002553937",
-        "expected_descricao_situacao": "Aguardando julgamento",
+        "expected_descricao_situacao": "Indeferido",
         "expected_descricao_totalizacao": "Concorrendo"
       },
       {

@@ -10,7 +10,36 @@ import { curateSenadoEmenta } from "./senado-ementa-curation"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
-const SENADO_CANDIDATE_TIMEOUT_MS = 2 * 60 * 1000
+// Run 34339017360: 528 autorias de Ferraco exigiram 124s no fluxo sequencial.
+// Margem limitada para esse acervo, mantendo cancelamento e override por run.
+const SENADO_CANDIDATE_TIMEOUT_MS = 3 * 60 * 1000
+const SENADO_CANCEL_SETTLE_MS = 5_000
+
+interface CandidateContext {
+  signal: AbortSignal
+  confirmed: (table: string) => void
+}
+
+function defaultContext(): CandidateContext {
+  return { signal: new AbortController().signal, confirmed: () => {} }
+}
+
+async function persist(
+  query: PromiseLike<{ error: { message: string } | null }>,
+  table: string,
+  context: CandidateContext,
+): Promise<void> {
+  context.signal.throwIfAborted()
+  const { error } = await query
+  if (error) {
+    // Aborting HTTP cannot roll back a write the server already received.
+    // Keep the receipt fail-closed, counting only confirmed writes.
+    if (context.signal.aborted) throw new Error(`${context.signal.reason.message}; ${table}: escrita em voo sem confirmação, conferir no banco`)
+    throw new Error(`${table}: ${error.message}`)
+  }
+  context.confirmed(table)
+  context.signal.throwIfAborted()
+}
 
 function ensureArray<T>(val: T | T[] | undefined | null): T[] {
   if (!val) return []
@@ -26,20 +55,28 @@ function dig(obj: unknown, ...keys: string[]): unknown {
   return current
 }
 
-async function withTimeout<T>(promise: Promise<T>, timeoutMs: number, label: string): Promise<T> {
+async function withTimeout<T>(operation: (signal: AbortSignal) => Promise<T>, timeoutMs: number, label: string): Promise<T> {
   let timer: ReturnType<typeof setTimeout> | null = null
-
+  let settleTimer: ReturnType<typeof setTimeout> | null = null
+  const controller = new AbortController()
+  const promise = operation(controller.signal)
   try {
     return await Promise.race([
       promise,
       new Promise<T>((_, reject) => {
         timer = setTimeout(() => {
-          reject(new Error(`${label} excedeu ${timeoutMs}ms`))
+          const timeout = new Error(`${label} excedeu ${timeoutMs}ms`)
+          controller.abort(timeout)
+          // Settle cancellation before finalizing the receipt. All remaining
+          // operations also guard their signal, even if a transport ignores it.
+          settleTimer = setTimeout(() => reject(new Error(`${timeout.message}; cancelamento não confirmou encerramento em ${SENADO_CANCEL_SETTLE_MS}ms`)), SENADO_CANCEL_SETTLE_MS)
+          void promise.then(() => reject(timeout), reject)
         }, timeoutMs)
       }),
     ])
   } finally {
     if (timer) clearTimeout(timer)
+    if (settleTimer) clearTimeout(settleTimer)
   }
 }
 
@@ -49,9 +86,10 @@ async function ingestPerfil(
   slug: string,
   expectedNomeCompleto: string,
   expectedNomeUrna: string,
-  candidateEstado?: string
+  candidateEstado?: string,
+  context: CandidateContext = defaultContext(),
 ) {
-  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}.json`, HEADERS)
+  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const parlamentar = dig(json, "DetalheParlamentar", "Parlamentar") as Record<string, unknown> | undefined
   if (!parlamentar) {
     warn("senado", `  ${slug}: perfil vazio`)
@@ -90,7 +128,7 @@ async function ingestPerfil(
 
     // Only set photo if candidate doesn't already have one (Wikipedia photos preferred)
     if (ident.UrlFotoParlamentar) {
-      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).single()
+      const { data: current } = await supabase.from("candidatos").select("foto_url").eq("id", candidatoId).abortSignal(context.signal).single()
       if (!current?.foto_url) updates.foto_url = ident.UrlFotoParlamentar as string
     }
     // The Senado detail endpoint reflects the parliamentary profile there. For ex-senators it
@@ -109,12 +147,12 @@ async function ingestPerfil(
     }
   }
 
-  await supabase.from("candidatos").update(updates).eq("id", candidatoId)
+  await persist(supabase.from("candidatos").update(updates).eq("id", candidatoId).abortSignal(context.signal), "candidatos", context)
   log("senado", `  ${slug}: perfil atualizado`)
 }
 
-async function ingestMandatos(codigo: number, candidatoId: string, slug: string): Promise<number> {
-  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/mandatos.json`, HEADERS)
+async function ingestMandatos(codigo: number, candidatoId: string, slug: string, context: CandidateContext = defaultContext()): Promise<number> {
+  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/mandatos.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const mandatos = ensureArray(
     dig(json, "MandatoParlamentar", "Parlamentar", "Mandatos", "Mandato") as Record<string, unknown>[]
   )
@@ -126,6 +164,7 @@ async function ingestMandatos(codigo: number, candidatoId: string, slug: string)
 
   let count = 0
   for (const m of mandatos) {
+    context.signal.throwIfAborted()
     const primeiraLeg = m.PrimeiraLegislaturaDoMandato as Record<string, unknown> | undefined
     const segundaLeg = m.SegundaLegislaturaDoMandato as Record<string, unknown> | undefined
 
@@ -158,6 +197,7 @@ async function ingestMandatos(codigo: number, candidatoId: string, slug: string)
       .eq("candidato_id", candidatoId)
       .eq("cargo", "Senador")
       .eq("periodo_inicio", inicio)
+      .abortSignal(context.signal)
       .single()
 
     const row = {
@@ -171,9 +211,9 @@ async function ingestMandatos(codigo: number, candidatoId: string, slug: string)
     }
 
     if (existing) {
-      await supabase.from("historico_politico").update(row).eq("id", existing.id)
+      await persist(supabase.from("historico_politico").update(row).eq("id", existing.id).abortSignal(context.signal), "historico_politico", context)
     } else {
-      await supabase.from("historico_politico").insert(row)
+      await persist(supabase.from("historico_politico").insert(row).abortSignal(context.signal), "historico_politico", context)
     }
     count++
   }
@@ -183,39 +223,42 @@ async function ingestMandatos(codigo: number, candidatoId: string, slug: string)
 }
 
 export interface PortasDeVotosSenado {
-  selecionarVotacoesChave: () => Promise<{
+  selecionarVotacoesChave: (signal: AbortSignal) => Promise<{
     data: Array<Record<string, unknown>> | null
     error: { message: string } | null
   }>
-  buscarVotacoesDoParlamentar: (codigo: number) => Promise<Array<Record<string, unknown>>>
+  buscarVotacoesDoParlamentar: (codigo: number, signal: AbortSignal) => Promise<Array<Record<string, unknown>>>
   gravarVoto: (linha: {
     candidato_id: string
     votacao_id: string
     voto: string
-  }) => Promise<{ error: { message: string } | null }>
+  }, signal: AbortSignal) => Promise<{ error: { message: string } | null }>
 }
 
 const PORTAS_DE_VOTOS_REAIS: PortasDeVotosSenado = {
-  selecionarVotacoesChave: async () => {
+  selecionarVotacoesChave: async (signal) => {
     const { data, error } = await supabase
       .from("votacoes_chave")
       .select("id, titulo, fonte, votacao_id_api")
       .eq("casa", "Senado")
+      .abortSignal(signal)
     return { data: (data as Array<Record<string, unknown>> | null) ?? null, error }
   },
-  buscarVotacoesDoParlamentar: async (codigo) => {
+  buscarVotacoesDoParlamentar: async (codigo, signal) => {
     const json = await fetchJSON<Record<string, unknown>>(
       `${API}/senador/${codigo}/votacoes.json`,
-      HEADERS
+      HEADERS, undefined, undefined, { signal }
     )
     return ensureArray(
       dig(json, "VotacaoParlamentar", "Parlamentar", "Votacoes", "Votacao") as Record<string, unknown>[]
     )
   },
-  gravarVoto: async (linha) => {
+  gravarVoto: async (linha, signal) => {
+    signal.throwIfAborted()
     const { error: upsertError } = await supabase
       .from("votos_candidato")
       .upsert(linha, { onConflict: "candidato_id,votacao_id" })
+      .abortSignal(signal)
     return { error: upsertError }
   },
 }
@@ -262,10 +305,13 @@ function interpretarVotoNominal(raw: unknown): string | null {
 export async function ingestVotos(
   codigo: number,
   candidatoId: string,
-  slug: string
+  slug: string,
+  context: CandidateContext = defaultContext(),
 ): Promise<IngestVotosSenadoOutcome> {
   const erros: string[] = []
-  const selecionadas = await portasDeVotos.selecionarVotacoesChave()
+  context.signal.throwIfAborted()
+  const selecionadas = await portasDeVotos.selecionarVotacoesChave(context.signal)
+  context.signal.throwIfAborted()
 
   if (selecionadas.error) {
     return {
@@ -300,8 +346,10 @@ export async function ingestVotos(
 
   let votacoes: Array<Record<string, unknown>>
   try {
-    votacoes = await portasDeVotos.buscarVotacoesDoParlamentar(codigo)
+    votacoes = await portasDeVotos.buscarVotacoesDoParlamentar(codigo, context.signal)
+    context.signal.throwIfAborted()
   } catch (err) {
+    context.signal.throwIfAborted()
     erros.push(
       `votos: lista oficial do senador ${codigo} indisponivel: ${err instanceof Error ? err.message : String(err)}`
     )
@@ -311,6 +359,7 @@ export async function ingestVotos(
   let persistidos = 0
   const eventosVistos = new Set<string>()
   for (const votacao of votacoes) {
+    context.signal.throwIfAborted()
     const evento = String(votacao.CodigoSessaoVotacao ?? "").trim()
     const chave = porEvento.get(evento)
     if (!chave) continue
@@ -342,14 +391,17 @@ export async function ingestVotos(
       candidato_id: candidatoId,
       votacao_id: chave.id,
       voto,
-    })
+    }, context.signal)
     if (gravacao.error) {
+      if (context.signal.aborted) throw new Error(`${context.signal.reason.message}; votos_candidato: escrita em voo sem confirmação, conferir no banco`)
       erros.push(
         `votos: upsert do voto na votacao ${evento} recusado: ${gravacao.error.message}`
       )
       continue
     }
+    context.confirmed("votos_candidato")
     persistidos++
+    context.signal.throwIfAborted()
   }
 
   log(
@@ -370,9 +422,10 @@ interface AutoriasOutcome {
 async function ingestAutorias(
   codigo: number,
   candidatoId: string,
-  slug: string
+  slug: string,
+  context: CandidateContext = defaultContext(),
 ): Promise<AutoriasOutcome> {
-  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/autorias.json`, HEADERS)
+  const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/autorias.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const autorias = ensureArray(
     dig(json, "MateriasAutoriaParlamentar", "Parlamentar", "Autorias", "Autoria") as Record<string, unknown>[]
   )
@@ -385,6 +438,7 @@ async function ingestAutorias(
   let recusados = 0
   let primeiroErro: string | undefined
   for (const a of autorias) {
+    context.signal.throwIfAborted()
     const materia = a.Materia as Record<string, unknown> | undefined
     if (!materia) continue
 
@@ -430,13 +484,17 @@ async function ingestAutorias(
     const { error: upsertError } = await supabase
       .from("projetos_lei")
       .upsert(row, { onConflict: "candidato_id,fonte,proposicao_id_api" })
+      .abortSignal(context.signal)
     if (upsertError) {
+      if (context.signal.aborted) throw new Error(`${context.signal.reason.message}; projetos_lei: escrita em voo sem confirmação, conferir no banco`)
       recusados++
       if (!primeiroErro) primeiroErro = upsertError.message
       warn("senado", `  ${slug}: upsert recusou materia ${materiaId}: ${upsertError.message}`)
       continue
     }
+    context.confirmed("projetos_lei")
     count++
+    context.signal.throwIfAborted()
   }
 
   const alerta = recusados > 0 ? ` / ${recusados} RECUSADAS (${primeiroErro})` : ""
@@ -497,35 +555,39 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
       continue
     }
 
+    let finalized = false
     try {
       await withTimeout(
-        (async () => {
+        async (signal) => {
+          const context: CandidateContext = {
+            signal,
+            confirmed: (table) => {
+              if (finalized) return
+              if (!result.tables_updated.includes(table)) result.tables_updated.push(table)
+              result.rows_upserted++
+            },
+          }
           await ingestPerfil(
             cand.ids.senado!,
             candidatoId,
             cand.slug,
             cand.nome_completo,
             cand.nome_urna,
-            cand.estado
+            cand.estado,
+            context,
           )
-          result.tables_updated.push("candidatos")
-          result.rows_upserted++
-          await sleep(500)
+          await sleep(500, signal)
 
-          const mandatoRows = await ingestMandatos(cand.ids.senado!, candidatoId, cand.slug)
-          if (mandatoRows > 0) result.tables_updated.push("historico_politico")
-          result.rows_upserted += mandatoRows
-          await sleep(500)
+          await ingestMandatos(cand.ids.senado!, candidatoId, cand.slug, context)
+          await sleep(500, signal)
 
-          const votos = await ingestVotos(cand.ids.senado!, candidatoId, cand.slug)
-          if (votos.persistidos > 0) result.tables_updated.push("votos_candidato")
-          result.rows_upserted += votos.persistidos
+          const votos = await ingestVotos(cand.ids.senado!, candidatoId, cand.slug, context)
+          signal.throwIfAborted()
           result.errors.push(...votos.erros)
-          await sleep(500)
+          await sleep(500, signal)
 
-          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug)
-          if (autorias.persistidas > 0) result.tables_updated.push("projetos_lei")
-          result.rows_upserted += autorias.persistidas
+          const autorias = await ingestAutorias(cand.ids.senado!, candidatoId, cand.slug, context)
+          signal.throwIfAborted()
           // Vistoria do PR #141: recusa que fica só no log de texto é escrita
           // perdida com trilha estruturada dizendo sucesso. Vai para errors.
           if (autorias.recusadas > 0) {
@@ -533,7 +595,7 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
               `projetos_lei: ${autorias.recusadas} upsert(s) de autoria recusado(s) (${autorias.primeiroErro})`
             )
           }
-        })(),
+        },
         candidateTimeoutMs,
         `Ingestao Senado de ${cand.slug}`
       )
@@ -541,6 +603,8 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
       const msg = err instanceof Error ? err.message : String(err)
       result.errors.push(msg)
       error("senado", `  ${cand.slug}: ${msg}`)
+    } finally {
+      finalized = true
     }
 
     result.duration_ms = Date.now() - start

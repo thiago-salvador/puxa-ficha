@@ -18,7 +18,7 @@ function destaquesEvidence(checkedAt: string) {
     provenance_complete: true,
     evidence_sha256: "a".repeat(64),
     raw_payload_count: 93,
-    pair_count: 154,
+    pair_count: 152,
     double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
   }
 }
@@ -143,6 +143,20 @@ test("strict bloqueia família scheduled quando falta um membro requerido", () =
   assert.equal(result.status, "stale")
   assert.deepEqual(result.stale_source_ids, ["camara-proposicoes"])
   assert.equal(result.negative_claims_allowed, false)
+})
+
+test("strict aceita apenas os 152 pares vigentes, nunca os 154 históricos", () => {
+  const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
+  assert.ok(source)
+  const now = new Date("2026-09-09T12:00:00.000Z")
+  for (const pairCount of [151, 152, 153, 154]) {
+    const result = evaluateSourceFreshnessStrict(source, [
+      { source_id: "camara", checked_at: now.toISOString() },
+      { source_id: "camara-proposicoes", checked_at: now.toISOString() },
+      { ...destaquesEvidence(now.toISOString()), pair_count: pairCount },
+    ], now)
+    assert.equal(result.status, pairCount === 152 ? "fresh" : "stale")
+  }
 })
 
 test("strict rejeita destaques-votacoes sem proveniência completa e dupla leitura", () => {
