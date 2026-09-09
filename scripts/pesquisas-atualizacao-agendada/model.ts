@@ -1,5 +1,6 @@
 import "server-only"
 
+import { createHash } from "node:crypto"
 import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
@@ -59,6 +60,16 @@ export interface ContratoPesquisaAgendada extends UnknownObject {
     [key: string]: unknown
   }
   cenarios: CenarioPesquisaAgendada[]
+  identity_aliases?: Array<{
+    raw_label: string
+    candidate_slug: string
+    year: number
+    office: string
+    geography: string
+    turn: number
+    scenario_id: string
+    proof: { raw_label: string; candidate_slug: string; basis: string; source_url: string; source_sha256: string }
+  }>
 }
 
 export interface ItemMatrizAgendada {
@@ -218,6 +229,16 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
       }
       if (!Number.isFinite(result.value_percent)) missing.push(`resultado.valor:${result.raw_label ?? "desconhecido"}`)
     }
+  }
+  for (const alias of contract.identity_aliases ?? []) {
+    const scenario = contract.cenarios.find((entry) => entry.id === alias.scenario_id)
+    if (!scenario || alias.year !== 2026 || alias.office !== contract.office || alias.geography !== contract.geography.label || alias.turn !== scenario.turn
+      || !scenario.resultados.some((row) => row.raw_label === alias.raw_label && row.candidate_slug === alias.candidate_slug && row.match_status === "exact_alias")
+      || alias.proof?.raw_label !== alias.raw_label || alias.proof.candidate_slug !== alias.candidate_slug
+      || !["curated_name_party_office_uf", "same_publication_full_name"].includes(alias.proof.basis)
+      || !/^https:\/\//.test(alias.proof.source_url) || !/^[a-f0-9]{64}$/.test(alias.proof.source_sha256)) missing.push("identity_aliases.proof_or_scope")
+    if (alias.proof?.basis === "same_publication_full_name" && alias.proof.source_url !== contract.provenance.result_url) missing.push("identity_aliases.publication_mismatch")
+    if (alias.proof?.basis === "curated_name_party_office_uf" && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
   }
   return [...new Set(missing)]
 }
@@ -516,7 +537,9 @@ function mergeProposedPoll(current: ContratoPesquisaAgendada, proposed: Contrato
     ...current,
     source_id: proposed.source_id,
     source_status: proposed.source_status,
-    publishable_by_default: false,
+    // This flag describes the source scorecard, not approval of this capture.
+    // The proposed data remains indeterminado until human review.
+    publishable_by_default: current.publishable_by_default,
     state: "indeterminado",
     instituto: proposed.instituto,
     fieldwork: proposed.fieldwork,
@@ -531,7 +554,7 @@ function mergeProposedPoll(current: ContratoPesquisaAgendada, proposed: Contrato
     provenance: {
       ...current.provenance,
       ...proposed.provenance,
-      supporting_urls: current.provenance?.supporting_urls ?? [],
+      supporting_urls: [...new Set([...(current.provenance?.supporting_urls ?? []), ...(proposed.provenance?.supporting_urls ?? [])])],
     },
     cenarios: proposed.cenarios.map((scenario) => {
       const previous = current.cenarios.find((candidate) => candidate.id === scenario.id)
@@ -543,6 +566,22 @@ function mergeProposedPoll(current: ContratoPesquisaAgendada, proposed: Contrato
   }
 }
 
+function applyDocumentedAliases(dataset: UnknownObject, proposed: ContratoPesquisaAgendada): void {
+  if (!proposed.identity_aliases?.length) return
+  if (!Array.isArray(dataset.exact_aliases)) throw new Error("inventário de aliases ausente")
+  const aliases = dataset.exact_aliases as UnknownObject[]
+  let added = false
+  for (const entry of proposed.identity_aliases) {
+    if (aliases.some((alias) => alias.raw_label === entry.raw_label && alias.candidate_slug !== entry.candidate_slug)) throw new Error(`alias conflitante: ${entry.raw_label}`)
+    const alias = { raw_label: entry.raw_label, candidate_slug: entry.candidate_slug, year: entry.year, office: entry.office, geography: entry.geography, turn: entry.turn, scenario_id: entry.scenario_id }
+    if (!aliases.some((existing) => stable(existing) === stable(alias))) {
+      aliases.push(alias)
+      added = true
+    }
+  }
+  if (added) dataset.exact_aliases_version = `monitor-2026-${createHash("sha256").update(stable(aliases)).digest("hex").slice(0, 16)}`
+}
+
 export function aplicarOperacoesAgendadas(
   operations: OperacaoCatalogoAgendada[],
   baseDir = process.cwd(),
@@ -551,6 +590,7 @@ export function aplicarOperacoesAgendadas(
   const touched = new Set<string>()
   const expectedReadback = new Map<string, ContratoPesquisaAgendada>()
   for (const operation of operations) {
+    if (requiredMetadata(operation.proposed).length) throw new Error(`proposta incompleta: ${operation.poll_id}`)
     if (!CATALOGOS_PERMITIDOS.includes(operation.file)) throw new Error(`arquivo fora da allowlist: ${operation.file}`)
     const matches = findPollMatches(catalogs, operation.poll_id)
     if (matches.length === 0) throw new Error(`pesquisa base ausente: ${operation.poll_id}`)
@@ -560,11 +600,13 @@ export function aplicarOperacoesAgendadas(
     if (located.poll.geography.code !== operation.geography_code) throw new Error(`geografia divergente para pesquisa: ${operation.poll_id}`)
     const replacement = mergeProposedPoll(located.poll, operation.proposed)
     if (operation.file === CATALOGOS_PERMITIDOS[0]) {
+      applyDocumentedAliases(catalogs.presidente, operation.proposed)
       const index = catalogs.presidente.pesquisas.findIndex((poll) => poll.id === operation.poll_id)
       catalogs.presidente.pesquisas[index] = replacement
     } else {
       if (located.datasetIndex === null) throw new Error(`dataset estadual ausente: ${operation.poll_id}`)
       const dataset = catalogs.governadores.datasets[located.datasetIndex]
+      applyDocumentedAliases(dataset, operation.proposed)
       const index = dataset.pesquisas.findIndex((poll) => poll.id === operation.poll_id)
       dataset.pesquisas[index] = replacement
     }

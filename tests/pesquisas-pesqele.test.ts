@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { mkdtempSync, readFileSync, rmSync } from "node:fs"
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { criarClienteHttpMonitoramento } from "../scripts/lib/pesquisas-monitoramento-rede"
@@ -8,6 +8,8 @@ import { consultarRegistroPesqele, parseDetalhePesqele, PESQELE_ORIGIN } from ".
 import { extrairCenariosSegundoTurno, extrairListaCompletaPrimeiroTurno, parsePublicacaoMonitorada } from "../scripts/lib/pesquisas-monitoramento-adapters"
 import { avaliarEvidenciaAoVivo, escreverRelatorios, listarAlvosMonitoramento, obterContratoFonte } from "../scripts/lib/pesquisas-monitoramento"
 import { descobrirRelatorioPoderData, parseTextoPoderData } from "../scripts/lib/pesquisas-monitoramento-poderdata-pdf"
+import { aplicarOperacoesAgendadas, carregarCatalogosAgendados, consolidarPropostasAgendadas, construirMatrizAgendada } from "../scripts/pesquisas-atualizacao-agendada/model"
+import { parsePesquisasEleitoraisJson } from "../src/lib/pesquisas-eleitorais"
 
 const searchUrl = `${PESQELE_ORIGIN}/app/pesquisa/listar.xhtml`
 const detailsUrl = `${PESQELE_ORIGIN}/app/pesquisa/detalhar.xhtml`
@@ -207,17 +209,19 @@ test("segundo turno preserva cada duelo completo, rotulo e categorias sem depend
   assert.throws(() => extrairCenariosSegundoTurno("<p>Seis cenários de segundo turno em imagem.</p>"), /sem captura completa/)
 })
 
-test("proposta conserva todos os cenarios e bloqueia nomes sem alias em qualquer turno", () => {
+test("proposta conserva todos os cenarios e resolve nome completo com evidencia da mesma publicacao", () => {
   const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })[0]
   const source = obterContratoFonte(target.source_id)
   const observedAt = "2026-09-09T12:00:00Z"
   const registrySupplement = parseDetalhePesqele(detailHtml, target.registration_id, observedAt)
   const html = sourceHtml.replace("</article>", `${runoffsHtml}</article>`)
   const result = avaliarEvidenciaAoVivo({ html, target, source, observedAt, registrySupplement, registry: [registrySupplement.registry] })
-  assert.equal(result.decision.reason, "identity_unresolved")
+  assert.equal(result.decision.reason, "approved_new_evidence")
   assert.equal(result.evidence?.publication_complete, true)
   assert.equal(result.evidence?.additional_scenarios?.length, 2)
-  assert.equal(result.evidence?.additional_scenarios?.[0].results[0].candidate_slug, null, "sem alias exato não inferir vínculo pela retirada do partido")
+  assert.equal(result.evidence?.additional_scenarios?.[0].results[0].candidate_slug, "omar-aziz", "nome completo corresponde unicamente ao nome com partido na mesma publicação")
+  const unresolvedHtml = html.replaceAll("Omar Aziz:", "Pessoa Desconhecida:").replaceAll("Omar Aziz x", "Pessoa Desconhecida x")
+  assert.equal(avaliarEvidenciaAoVivo({ html: unresolvedHtml, target, source, observedAt, registrySupplement, registry: [registrySupplement.registry] }).decision.reason, "identity_unresolved")
   const changed = parsePublicacaoMonitorada({ html: html.replace("Omar Aziz: 42%", "Omar Aziz: 41%").replace("Roberto Cidade: 41%", "Roberto Cidade: 42%"), target, source, observedAt, registrySupplement })
   assert.equal(changed.additional_scenarios?.[0].scenario.id, result.evidence?.additional_scenarios?.[0].scenario.id, "percentuais não mudam a identidade do cenário")
   const dir = mkdtempSync(join(tmpdir(), "pesquisas-cenarios-"))
@@ -227,6 +231,24 @@ test("proposta conserva todos os cenarios e bloqueia nomes sem alias em qualquer
     const scenarios = proposal.items[0].normalized_contract.cenarios
     assert.deepEqual(scenarios.map((scenario: { turn: number; resultados: unknown[] }) => [scenario.turn, scenario.resultados.length]), [[1, 8], [2, 4], [2, 4]])
     assert.equal(scenarios[1].question.value, null, "não fabricar pergunta do segundo turno")
+    const matrix = construirMatrizAgendada({ sourceId: target.source_id, uf: "AM" })
+    const consolidated = consolidarPropostasAgendadas({ matrix, documents: [{ key: matrix[0].key, proposal }], catalogs: carregarCatalogosAgendados() })
+    assert.equal(consolidated.status, "ready")
+    mkdirSync(join(dir, "scripts/data"), { recursive: true })
+    for (const filename of ["pesquisas-presidencia-2026.json", "pesquisas-governadores-2026.json"]) {
+      writeFileSync(join(dir, "scripts/data", filename), readFileSync(join("scripts/data", filename)))
+    }
+    aplicarOperacoesAgendadas(consolidated.diff.operations, dir)
+    const saved = carregarCatalogosAgendados(dir)
+    const dataset = saved.governadores.datasets.find((entry) => entry.pesquisas.some((poll) => poll.id === target.poll_id))!
+    const parsed = parsePesquisasEleitoraisJson(JSON.stringify(dataset), readFileSync("scripts/data/pesquisas-governadores-fontes.json", "utf8"))
+    assert.ok(parsed, "o contrato usado pelo site aceita os aliases escopados propostos")
+    const aliasesBefore = JSON.stringify(dataset.exact_aliases)
+    aplicarOperacoesAgendadas(consolidated.diff.operations, dir)
+    const savedAgain = carregarCatalogosAgendados(dir).governadores.datasets.find((entry) => entry.pesquisas.some((poll) => poll.id === target.poll_id))!
+    assert.equal(JSON.stringify(savedAgain.exact_aliases), aliasesBefore, "aplicação repetida não duplica aliases")
+    const unchanged = consolidarPropostasAgendadas({ matrix, documents: [{ key: matrix[0].key, proposal }], catalogs: saved })
+    assert.equal(unchanged.status, "no_changes")
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
@@ -244,7 +266,7 @@ test("lista incompleta, linhas duplicadas e cenarios ambiguos falham", () => {
   assert.throws(() => extrairListaCompletaPrimeiroTurno(fullList + fullList), /ambíguos/)
 })
 
-test("metadados ausentes usam somente registro conciliado e nomes nao vinculados ficam preservados", () => {
+test("metadados conciliados e identidade canônica preservam procedencia e rejeitam partido ou nome divergente", () => {
   const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })[0]
   const source = obterContratoFonte(target.source_id)
   const observedAt = "2026-09-09T12:00:00Z"
@@ -257,8 +279,16 @@ test("metadados ausentes usam somente registro conciliado e nomes nao vinculados
   assert.equal(evidence.results.length, 8)
   assert.equal(evidence.results[7].match_status, "not_candidate")
   const result = avaliarEvidenciaAoVivo({ ...input, registry: [registrySupplement.registry] })
-  assert.equal(result.decision.reason, "identity_unresolved")
+  assert.equal(result.decision.reason, "approved_new_evidence")
   assert.equal(result.evidence?.results[4].value_percent, 4)
+  assert.equal(result.evidence?.results[4].candidate_slug, "cabo-daciolo")
+  assert.equal(result.evidence?.identity_observations?.find((entry) => entry.raw_label === "Cabo Daciolo (Mobiliza)")?.basis, "curated_name_party_office_uf")
+  for (const label of ["Cabo Daciolo (MDB)", "Pessoa Desconhecida (Mobiliza)", "Daciolo (Mobiliza)"]) {
+    const unknown = avaliarEvidenciaAoVivo({ ...input, html: sourceHtml.replace("Cabo Daciolo (Mobiliza)", label), registry: [registrySupplement.registry] })
+    assert.equal(unknown.decision.reason, "identity_unresolved")
+    assert.equal(unknown.evidence?.results[4].value_percent, 4)
+    assert.equal(unknown.evidence?.results[4].candidate_slug, null)
+  }
   assert.equal(avaliarEvidenciaAoVivo(input).decision.reason, "registry_conflict", "nenhum registro pode ser fabricado a partir da matéria")
   assert.throws(() => parsePublicacaoMonitorada({ ...input, registrySupplement: undefined }), /confiança ausente/)
   assert.throws(() => parsePublicacaoMonitorada({ ...input, registrySupplement: { ...registrySupplement, registry: { ...registrySupplement.registry, geography: "RS" } } }), /conflitantes/)

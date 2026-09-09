@@ -339,7 +339,7 @@ test("aplicação altera somente catálogo allowlisted e preserva metadados de r
     const poll = updated.pesquisas.find((candidate) => candidate.id === baseline.id)
     assert.ok(poll)
     assert.equal(poll.state, "indeterminado")
-    assert.equal(poll.publishable_by_default, false)
+    assert.equal(poll.publishable_by_default, baseline.publishable_by_default, "preferência da fonte permanece compatível com o scorecard; o dado continua indeterminado")
     assert.equal(poll.contratante?.value, baseline.contratante?.value)
     assert.equal(poll.provenance.route_class, baseline.provenance.route_class)
   } finally {

@@ -45,6 +45,7 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
       expected: ${{ steps.matrix.outputs.expected }}
+      discovery_status: ${{ steps.discovery.outputs.status }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -64,6 +65,22 @@ jobs:
           npm run test:pesquisas:monitoramento:isolamento
           npm run test:pesquisas:monitoramento:rede
           npm run test:pesquisas:atualizacao-agendada
+
+      - name: Descobrir publicações além do catálogo
+        id: discovery
+        continue-on-error: true
+        env:
+          monitor_source_id: ${{ inputs.source_id || 'all' }}
+        run: npm run monitor:pesquisas:descoberta -- --source "$monitor_source_id" --out reports/pesquisas-descoberta
+
+      - name: Publicar descoberta e lacunas de cobertura
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/pesquisas-descoberta/
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Calcular todas as fontes e UFs aprovadas
         id: matrix
@@ -202,9 +219,12 @@ jobs:
 
   promover:
     name: Preparar draft PR de dados
-    needs: consolidar
+    needs:
+      - preparar-matriz
+      - consolidar
     if: >-
       needs.consolidar.outputs.status == 'ready' &&
+      needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' &&
       vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || inputs.create_draft_pr == true)

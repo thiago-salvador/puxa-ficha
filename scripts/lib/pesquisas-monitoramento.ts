@@ -1,7 +1,7 @@
 import "server-only"
 
 import { createHash } from "node:crypto"
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import {
@@ -60,6 +60,7 @@ export interface EvidenciaPesquisaCandidata {
   }>
   registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
   result_document?: { url: string; observed_at: string; evidence_sha256: string; pages: number[] }
+  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "same_publication_full_name"; source_url: string; source_sha256: string }>
 }
 
 export interface SourceContract {
@@ -235,6 +236,52 @@ function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
   return aliases
 }
 
+/** Exact identity evidence already curated in this checkout; no fuzzy name matching. */
+function enrichAliases(target: AlvoMonitoramento, evidence: EvidenciaPesquisaCandidata, aliases: Map<string, string | null>): Map<string, string | null> {
+  const observations: NonNullable<EvidenciaPesquisaCandidata["identity_observations"]> = []
+  const allRows = [evidence, ...(evidence.additional_scenarios ?? [])].flatMap((scenario) => scenario.results)
+  const exact = (value: string) => value.normalize("NFC").trim().toLocaleUpperCase("pt-BR")
+  if (target.office === "Governador") {
+    const directory = resolve("src/data/programas-governo/governadores-2026")
+    const candidates = readdirSync(directory).filter((file) => file.endsWith(".json")).flatMap((file) => {
+      const record = JSON.parse(readFileSync(resolve(directory, file), "utf8")) as {
+        estado?: string
+        fonte?: { ano: number; cargo: string; uf: string; nomeUrna: string; partido: string; slug: string; sqCandidato: string; pacoteUrl: string }
+        documentos?: Array<{ extracao?: { sourceSha256?: string } }>
+      }
+      const candidate = record.fonte
+      const hash = record.documentos?.[0]?.extracao?.sourceSha256
+      if (record.estado !== "aprovado" || !candidate || candidate.ano !== 2026 || candidate.cargo !== "GOVERNADOR" || candidate.uf !== target.geography_code
+        || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(candidate.slug) || !/^\d+$/.test(candidate.sqCandidato)
+        || !/^https:\/\/cdn\.tse\.jus\.br\/estatistica\/sead\/odsele\/proposta_governo\//.test(candidate.pacoteUrl) || !hash || !/^[a-f0-9]{64}$/.test(hash)) return []
+      return [{ ...candidate, hash }]
+    })
+    for (const row of allRows) {
+      if (aliases.has(row.raw_label) || row.match_status === "not_candidate") continue
+      const label = row.raw_label.match(/^(.+?)\s+\(([^()]+)\)$/)
+      if (!label) continue
+      const matches = candidates.filter((candidate) => exact(candidate.nomeUrna) === exact(label[1]) && exact(candidate.partido) === exact(label[2]))
+      if (matches.length !== 1) continue
+      const candidate = matches[0]
+      aliases.set(row.raw_label, candidate.slug)
+      observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: "curated_name_party_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
+    }
+  }
+  // A bare full name in a later scenario may refer to the unique, already
+  // resolved name+party printed in this same publication. Never infer a surname.
+  for (const row of allRows) {
+    if (aliases.has(row.raw_label) || row.match_status === "not_candidate" || /[()]/.test(row.raw_label)) continue
+    const matches = allRows.filter((other) => other.raw_label.replace(/\s+\([^()]+\)$/, "") === row.raw_label && /\([^()]+\)$/.test(other.raw_label))
+    const slugs = new Set(matches.map((other) => aliases.get(other.raw_label)))
+    if (slugs.size !== 1 || ![...slugs][0]) continue
+    const slug = [...slugs][0]!
+    aliases.set(row.raw_label, slug)
+    observations.push({ raw_label: row.raw_label, candidate_slug: slug, basis: "same_publication_full_name", source_url: evidence.url, source_sha256: evidence.evidence_sha256 })
+  }
+  if (observations.length) evidence.identity_observations = observations
+  return aliases
+}
+
 function parseTseRegistryCsv(csv: string): RegistroTseMonitoramento[] {
   const lines = csv.trim().split(/\r?\n/)
   const header = lines.shift()?.split(";") ?? []
@@ -270,6 +317,7 @@ function fingerprint(evidence: EvidenciaPesquisaCandidata): string {
   delete stable.observed_at
   delete stable.evidence_sha256
   delete stable.registry_observation
+  delete stable.identity_observations
   if (stable.result_document) stable.result_document = { ...stable.result_document, observed_at: "" }
   return createHash("sha256").update(JSON.stringify(stable)).digest("hex")
 }
@@ -434,6 +482,10 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
       code: evidence.scenario.geography_code,
     },
     office: evidence.scenario.office,
+    identity_aliases: [evidence, ...(evidence.additional_scenarios ?? [])].flatMap(({ scenario, results }) => results.flatMap((row) => {
+      const proof = evidence.identity_observations?.find((entry) => entry.raw_label === row.raw_label && entry.candidate_slug === row.candidate_slug)
+      return proof ? [{ raw_label: row.raw_label, candidate_slug: row.candidate_slug, year: 2026, office: scenario.office, geography: scenario.geography, turn: scenario.turn, scenario_id: scenario.id, proof }] : []
+    })),
     provenance: {
       result_url: evidence.url,
       supporting_urls: [evidence.registry_observation?.url, evidence.result_document?.url].filter((url): url is string => Boolean(url)),
@@ -550,7 +602,7 @@ export function avaliarEvidenciaAoVivo(input: {
     source: input.source,
     evidence,
     registry,
-    aliases: loadAliases(input.target),
+    aliases: enrichAliases(input.target, evidence, loadAliases(input.target)),
     baseline: null,
     observedAt: input.observedAt,
   })
