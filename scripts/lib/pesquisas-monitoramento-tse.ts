@@ -13,7 +13,16 @@ export interface RegistroTseMonitoramento {
   field_end: string
   sample_size: number
   margin_error_pp: number | null
+  margin_error_qualifier?: "maximum_planned"
   institute: string
+}
+
+export function margemCompativelComRegistro(registry: RegistroTseMonitoramento, publishedMargin: number): boolean {
+  if (!Number.isFinite(publishedMargin) || publishedMargin <= 0) return false
+  if (registry.margin_error_pp === null) return true
+  return registry.margin_error_qualifier === "maximum_planned"
+    ? publishedMargin <= registry.margin_error_pp
+    : publishedMargin === registry.margin_error_pp
 }
 
 function findEocd(buffer: Buffer): number {

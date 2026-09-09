@@ -72,6 +72,7 @@ export function parseDetalhePesqele(html: string, registrationId: string, observ
       geography: publicText(requiredMatch(html, /<h5\b[^>]*>([\s\S]*?)<\/h5>/i, "abrangência")[1]),
       field_start: start, field_end: end, sample_size: sample,
       margin_error_pp: margin, institute: field("Empresa contratada/ Nome Fantasia:"),
+      ...(/margem de erro(?:\s*:\s*A margem de erro)?\s+máxima prevista\s+(?:é de\s+)?\d/i.test(text) ? { margin_error_qualifier: "maximum_planned" as const } : {}),
     },
     confidence_percent: confidence, method, publication_date: publication,
     source_url: SEARCH_URL, observed_at: observedAt,

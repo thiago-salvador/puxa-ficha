@@ -5,6 +5,8 @@ import { createHash } from "node:crypto"
 import type { EvidenciaPesquisaCandidata } from "./pesquisas-monitoramento"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
+import { margemCompativelComRegistro } from "./pesquisas-monitoramento-tse"
+import { extrairPublicacaoRealTime } from "./pesquisas-monitoramento-realtime-cenarios"
 
 export interface SourceContractMonitoramento {
   id: string
@@ -34,6 +36,7 @@ export interface AlvoMonitoramento {
   scenario_question: string | null
   population: string
   known_scenarios?: Array<{ id: string; turn: 1 | 2; label: string; question: string | null }>
+  alternative_urls?: string[]
 }
 
 export interface AdaptadorMonitoramento {
@@ -105,7 +108,7 @@ function isoDate(day: string, month: string, year: string): string {
   return `${year}-${normalizedMonth}-${day.padStart(2, "0")}`
 }
 
-function extractPublicationDate(html: string, text: string): string {
+export function extractPublicationDate(html: string, text = stripExternalMarkup(html)): string {
   const machine = html.match(/(?:datePublished|datetime|publishtime|published_time)[^0-9]{0,100}(20\d{2}-\d{2}-\d{2})/i)?.[1]
   if (machine) return machine
   const slash = text.match(/\b(\d{2})\/(\d{2})\/(20\d{2})\b/)
@@ -164,6 +167,11 @@ function assertAdapterInput(
 }
 
 function extractFieldwork(text: string, publicationDate: string): { start: string; end: string } {
+  const crossMonth = text.match(/(\d{1,2})\s+de\s+([a-zçã]+)\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i)
+  if (crossMonth) {
+    const year = crossMonth[5] ?? publicationDate.slice(0, 4)
+    return validateFieldwork({ start: isoDate(crossMonth[1], crossMonth[2], year), end: isoDate(crossMonth[3], crossMonth[4], year) }, publicationDate)
+  }
   const weekdayDates = text.match(/\((\d{1,2})\),?\s+dia\s+do\s+in[ií]cio\s+do\s+levantamento\s+que\s+acabou[^0-9.]{0,30}\((\d{1,2})\)/i)
     ?? text.match(/in[ií]cio\s+do\s+levantamento[^0-9]{0,30}\((\d{1,2})\)[^.]{0,100}?acabou[^0-9]{0,30}\((\d{1,2})\)/i)
   if (weekdayDates) {
@@ -203,6 +211,7 @@ function extractSample(text: string): number {
   const match = requireFirstMatch(text, [
     /(?:ouviu|ouvidos|entrevistou|entrevistados|foram ouvidos|amostra)[^0-9]{0,40}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+(?:eleitores|pessoas|entrevistas|entrevistados)/i,
     /(?:foram|total de)[^0-9]{0,20}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
+    /(?:com a realização de|pesquisa foi realizada com)\s+(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
     /(?:pesquisa|levantamento)\s+foi\s+(?:realizad[oa]|feit[oa])[^.]{0,100}?\bcom\s+(?:as\s+entrevistas\s+de\s+)?(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+eleitores/i,
   ], "amostra")
   return normalizeNumber(match[1])
@@ -383,7 +392,7 @@ function buildEvidence(input: {
     if (registry.registration_id !== registration || !geographies.includes(registry.geography.toLocaleLowerCase("pt-BR"))
       || !registry.office.toLocaleLowerCase("pt-BR").includes(input.target.office.toLocaleLowerCase("pt-BR"))
       || registry.field_start !== fieldwork.start || registry.field_end !== fieldwork.end || registry.sample_size !== sampleSize
-      || registry.margin_error_pp !== normalizeMeasure(margin)
+      || !margemCompativelComRegistro(registry, normalizeMeasure(margin))
       || !registry.institute.toLocaleLowerCase("pt-BR").includes(input.source.roles.institute.toLocaleLowerCase("pt-BR"))) {
       throw new Error("PesqEle: metadados conflitantes com a publicação")
     }
@@ -404,11 +413,13 @@ function buildEvidence(input: {
     throw new Error("PoderData PDF: metadados conflitantes com a publicação")
   }
   const primaryDocumentScenario = document?.scenarios.find((scenario) => scenario.turn === 1)
-  const completeResults = primaryDocumentScenario?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
+  const realTime = input.source.id === "real-time-big-data-estaduais-2026" ? extrairPublicacaoRealTime(input.html, stripExternalMarkup) : null
+  const completeResults = primaryDocumentScenario?.results ?? realTime?.scenarios[0]?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
   const results = completeResults ?? input.parseResults(text)
   if (completeResults && input.target.turn !== 1) throw new Error("HTML inesperado: turno do alvo conflitante")
-  const runoffs = document ? document.scenarios.filter((scenario) => scenario.turn === 2)
-    : (completeResults ? extrairCenariosSegundoTurno(input.html).map((scenario) => ({ ...scenario, question: null })) : [])
+  const additional = document ? document.scenarios.filter((scenario) => scenario !== primaryDocumentScenario)
+    : realTime ? realTime.scenarios.slice(1).map((scenario) => ({ ...scenario, question: null }))
+      : (completeResults ? extrairCenariosSegundoTurno(input.html).map((scenario) => ({ ...scenario, turn: 2 as const, question: null })) : [])
   const unresolvedResults = (rows: typeof results): EvidenciaPesquisaCandidata["results"] => rows.map((result) => ({
     ...result,
     candidate_slug: null,
@@ -431,7 +442,7 @@ function buildEvidence(input: {
       geography: input.target.geography,
       geography_code: input.target.geography_code,
       turn: input.target.turn,
-      label: input.target.scenario_label,
+      label: realTime?.scenarios[0]?.label ?? input.target.scenario_label,
       question: primaryDocumentScenario?.question ?? input.target.scenario_question,
     },
     sample: { size: sampleSize, population: input.target.population },
@@ -441,14 +452,15 @@ function buildEvidence(input: {
     ...(completeResults ? {
       scenario_complete: true,
       publication_complete: true,
-      additional_scenarios: runoffs.map((runoff) => ({
+      ...(realTime?.notes.length ? { result_notes: realTime.notes } : {}),
+      additional_scenarios: additional.map((runoff) => ({
         scenario: {
-          id: input.target.known_scenarios?.find((scenario) => scenario.turn === 2 && (runoff.question ? scenario.question === runoff.question : scenario.label === runoff.label))?.id
-            ?? `${input.target.poll_id}-2t-${createHash("sha256").update(runoff.question ?? runoff.label).digest("hex").slice(0, 16)}`,
+          id: input.target.known_scenarios?.find((scenario) => scenario.turn === runoff.turn && (runoff.question ? scenario.question === runoff.question : scenario.label === runoff.label))?.id
+            ?? `${input.target.poll_id}-${runoff.turn}t-${createHash("sha256").update("mode" in runoff ? `${runoff.mode}|${runoff.results.map((row) => row.raw_label).sort().join("|")}` : runoff.question ?? runoff.label).digest("hex").slice(0, 16)}`,
           office: input.target.office,
           geography: input.target.geography,
           geography_code: input.target.geography_code,
-          turn: 2 as const,
+          turn: runoff.turn,
           label: runoff.label,
           question: runoff.question,
         },

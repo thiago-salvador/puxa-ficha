@@ -1,7 +1,7 @@
 import "server-only"
 
 import { createHash } from "node:crypto"
-import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import {
@@ -9,9 +9,10 @@ import {
   parsePublicacaoMonitorada,
   type AlvoMonitoramento,
 } from "./pesquisas-monitoramento-adapters"
-import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
+import { margemCompativelComRegistro, type RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
+import { carregarIdentidadesCuradas, resolverIdentidadeCurada } from "./pesquisas-monitoramento-identidades"
 
 type ClassificacaoMonitoramento =
   | "novo"
@@ -21,6 +22,7 @@ type ClassificacaoMonitoramento =
   | "conflitante"
   | "fonte indisponivel"
   | "identidade nao resolvida"
+  | "extração incompleta"
 
 export interface EvidenciaPesquisaCandidata {
   source_id: string
@@ -60,7 +62,8 @@ export interface EvidenciaPesquisaCandidata {
   }>
   registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
   result_document?: { url: string; observed_at: string; evidence_sha256: string; pages: number[] }
-  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "same_publication_full_name"; source_url: string; source_sha256: string }>
+  result_notes?: string[]
+  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "curated_ballot_name_office_uf" | "same_publication_full_name"; source_url: string; source_sha256: string }>
 }
 
 export interface SourceContract {
@@ -102,6 +105,7 @@ interface ResultadoAvaliacao {
   decision: DecisaoMonitoramento
   evidence: EvidenciaPesquisaCandidata | null
   baseline: EvidenciaPesquisaCandidata | null
+  diagnostic?: { detail: string; source_url: string; source_observed_at: string | null; source_sha256: string | null }
 }
 
 const STALE_AFTER_DAYS = 45
@@ -231,8 +235,7 @@ function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
     }>
   }
   const dataset = governors.datasets.find((candidate) => candidate.publication_scope.geography_code === target.geography_code)
-  if (!dataset) throw new Error(`aliases ausentes para ${target.geography_code}`)
-  dataset.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+  dataset?.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
   return aliases
 }
 
@@ -240,32 +243,16 @@ function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
 function enrichAliases(target: AlvoMonitoramento, evidence: EvidenciaPesquisaCandidata, aliases: Map<string, string | null>): Map<string, string | null> {
   const observations: NonNullable<EvidenciaPesquisaCandidata["identity_observations"]> = []
   const allRows = [evidence, ...(evidence.additional_scenarios ?? [])].flatMap((scenario) => scenario.results)
-  const exact = (value: string) => value.normalize("NFC").trim().toLocaleUpperCase("pt-BR")
-  if (target.office === "Governador") {
-    const directory = resolve("src/data/programas-governo/governadores-2026")
-    const candidates = readdirSync(directory).filter((file) => file.endsWith(".json")).flatMap((file) => {
-      const record = JSON.parse(readFileSync(resolve(directory, file), "utf8")) as {
-        estado?: string
-        fonte?: { ano: number; cargo: string; uf: string; nomeUrna: string; partido: string; slug: string; sqCandidato: string; pacoteUrl: string }
-        documentos?: Array<{ extracao?: { sourceSha256?: string } }>
-      }
-      const candidate = record.fonte
-      const hash = record.documentos?.[0]?.extracao?.sourceSha256
-      if (record.estado !== "aprovado" || !candidate || candidate.ano !== 2026 || candidate.cargo !== "GOVERNADOR" || candidate.uf !== target.geography_code
-        || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(candidate.slug) || !/^\d+$/.test(candidate.sqCandidato)
-        || !/^https:\/\/cdn\.tse\.jus\.br\/estatistica\/sead\/odsele\/proposta_governo\//.test(candidate.pacoteUrl) || !hash || !/^[a-f0-9]{64}$/.test(hash)) return []
-      return [{ ...candidate, hash }]
-    })
-    for (const row of allRows) {
-      if (aliases.has(row.raw_label) || row.match_status === "not_candidate") continue
-      const label = row.raw_label.match(/^(.+?)\s+\(([^()]+)\)$/)
-      if (!label) continue
-      const matches = candidates.filter((candidate) => exact(candidate.nomeUrna) === exact(label[1]) && exact(candidate.partido) === exact(label[2]))
-      if (matches.length !== 1) continue
-      const candidate = matches[0]
-      aliases.set(row.raw_label, candidate.slug)
-      observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: "curated_name_party_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
-    }
+  const candidates = carregarIdentidadesCuradas(target.office, target.geography_code)
+  for (const row of allRows) {
+    if (aliases.has(row.raw_label) || row.match_status === "not_candidate") continue
+    // Governors retain the stricter name+party requirement. Presidential ballot
+    // names can be short, but must be explicit in the approved official record.
+    if (target.office === "Governador" && !/\([^()]+\)$/.test(row.raw_label)) continue
+    const candidate = resolverIdentidadeCurada(row.raw_label, candidates, aliases)
+    if (!candidate) continue
+    aliases.set(row.raw_label, candidate.slug)
+    observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: target.office === "Governador" ? "curated_name_party_office_uf" : "curated_ballot_name_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
   }
   // A bare full name in a later scenario may refer to the unique, already
   // resolved name+party printed in this same publication. Never infer a surname.
@@ -360,7 +347,7 @@ function classify(input: {
     registry.field_start !== input.evidence.fieldwork.start ||
     registry.field_end !== input.evidence.fieldwork.end ||
     registry.sample_size !== input.evidence.sample.size ||
-    (registry.margin_error_pp !== null && registry.margin_error_pp !== input.evidence.margin_error_pp) ||
+    !margemCompativelComRegistro(registry, input.evidence.margin_error_pp) ||
     !(
       registry.institute.toLocaleLowerCase("pt-BR").includes(input.evidence.institute.toLocaleLowerCase("pt-BR")) ||
       input.evidence.institute.toLocaleLowerCase("pt-BR").includes(registry.institute.toLocaleLowerCase("pt-BR"))
@@ -488,9 +475,11 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
     })),
     provenance: {
       result_url: evidence.url,
+      ...(evidence.result_notes?.length ? { result_notes: evidence.result_notes } : {}),
+      ...(evidence.registry_observation ? { registry_observation: evidence.registry_observation } : {}),
       supporting_urls: [evidence.registry_observation?.url, evidence.result_document?.url].filter((url): url is string => Boolean(url)),
       consulted_at: evidence.observed_at,
-      capture: { format: "html", sha256: evidence.evidence_sha256, status: "indeterminado" },
+      capture: { format: evidence.result_document ? "html+pdf" : "html", sha256: evidence.evidence_sha256, ...(evidence.result_document ? { supporting_pdf_sha256: evidence.result_document.evidence_sha256 } : {}), status: "indeterminado" },
     },
     cenarios: [evidence, ...(evidence.additional_scenarios ?? [])].map(({ scenario, results }) => ({
       id: scenario.id,
@@ -517,6 +506,7 @@ export function escreverRelatorios(results: Array<{ case_id: string; result: Res
       decision: result.decision,
       evidence: result.evidence,
       normalized_contract: normalizedContract(result),
+      ...(result.diagnostic ? { diagnostic: result.diagnostic } : {}),
     })),
   }
   const diff = {
@@ -617,6 +607,17 @@ export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {
     decision: decision("fonte indisponivel", false, reason),
     evidence: null,
     baseline: null,
+  }
+}
+
+export function resultadoFalhaColeta(input: { detail: string; source_url: string; source_observed_at: string | null; source_sha256: string | null }): ResultadoAvaliacao {
+  const conflict = /conflitant|divergente|duelo conflitante/i.test(input.detail)
+  const parsedSource = input.source_sha256 !== null
+  return {
+    decision: conflict ? decision("conflitante", false, "source_metadata_conflict")
+      : parsedSource ? decision("extração incompleta", false, "extraction_incomplete")
+        : decision("fonte indisponivel", false, /timeout/i.test(input.detail) ? "source_timeout" : "source_unavailable"),
+    evidence: null, baseline: null, diagnostic: input,
   }
 }
 

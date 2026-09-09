@@ -54,7 +54,10 @@ function appendGithubOutput(name: string, value: string | number): void {
 function matrixCommand(options: Map<string, string>): void {
   const sourceId = options.get("--source") ?? "all"
   const uf = options.get("--uf") ?? "all"
-  const matrix = construirMatrizAgendada({ sourceId, uf })
+  const discoveredPath = options.get("--discovered-targets")
+  const discovered = discoveredPath ? JSON.parse(readFileSync(resolve(discoveredPath), "utf8")).targets : []
+  if (!Array.isArray(discovered)) throw new Error("alvos descobertos inválidos")
+  const matrix = construirMatrizAgendada({ sourceId, uf }, discovered)
   if (matrix.length === 0) throw new Error("matriz agendada vazia")
   const payload = { include: matrix }
   if (options.get("--out")) writeJson(resolve(options.get("--out")!), payload)

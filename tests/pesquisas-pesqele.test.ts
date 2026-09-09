@@ -6,7 +6,8 @@ import { join } from "node:path"
 import { criarClienteHttpMonitoramento } from "../scripts/lib/pesquisas-monitoramento-rede"
 import { consultarRegistroPesqele, parseDetalhePesqele, PESQELE_ORIGIN } from "../scripts/lib/pesquisas-monitoramento-pesqele"
 import { extrairCenariosSegundoTurno, extrairListaCompletaPrimeiroTurno, parsePublicacaoMonitorada } from "../scripts/lib/pesquisas-monitoramento-adapters"
-import { avaliarEvidenciaAoVivo, escreverRelatorios, listarAlvosMonitoramento, obterContratoFonte } from "../scripts/lib/pesquisas-monitoramento"
+import { avaliarEvidenciaAoVivo, escreverRelatorios, listarAlvosMonitoramento, obterContratoFonte, resultadoFalhaColeta } from "../scripts/lib/pesquisas-monitoramento"
+import { margemCompativelComRegistro } from "../scripts/lib/pesquisas-monitoramento-tse"
 import { descobrirRelatorioPoderData, parseTextoPoderData } from "../scripts/lib/pesquisas-monitoramento-poderdata-pdf"
 import { aplicarOperacoesAgendadas, carregarCatalogosAgendados, consolidarPropostasAgendadas, construirMatrizAgendada } from "../scripts/pesquisas-atualizacao-agendada/model"
 import { parsePesquisasEleitoraisJson } from "../src/lib/pesquisas-eleitorais"
@@ -38,6 +39,33 @@ test("metadados do PesqEle preservam campos, procedencia e texto publico sem est
   assert.equal(result.source_url, searchUrl)
   assert.match(result.evidence_sha256, /^[a-f0-9]{64}$/)
   assert.doesNotMatch(result.public_text, /private-transient-state|UNTRUSTED_SCRIPT/)
+})
+
+test("margem máxima prevista preserva o limite registrado e aceita margem publicada dentro dele", () => {
+  const exact = parseDetalhePesqele(detailHtml, "AM-09965/2026", "2026-09-09T12:00:00Z")
+  const planned = parseDetalhePesqele(detailHtml.replace("margem de erro máxima estimada é de aproximadamente", "margem de erro máxima prevista é de"), "AM-09965/2026", "2026-09-09T12:00:00Z")
+  assert.equal(planned.registry.margin_error_pp, 2, "não substituir a margem declarada pelo valor do relatório")
+  assert.equal(planned.registry.margin_error_qualifier, "maximum_planned")
+  assert.equal(margemCompativelComRegistro(planned.registry, 1.8), true)
+  assert.equal(margemCompativelComRegistro(planned.registry, 2.1), false)
+  assert.equal(margemCompativelComRegistro(planned.registry, 0), false)
+  assert.equal(margemCompativelComRegistro(exact.registry, 1.8), false, "sem qualificador explícito, comparação continua exata")
+})
+
+test("diagnostico diferencia acesso, estrutura e divergencia com prova de captura", () => {
+  const captured = { source_url: "https://noticias.r7.com/eleicoes/2026/pesquisa/", source_observed_at: "2026-09-09T12:00:00Z", source_sha256: "c".repeat(64) }
+  assert.equal(resultadoFalhaColeta({ ...captured, detail: "HTML inesperado: período de campo ausente" }).decision.reason, "extraction_incomplete")
+  assert.equal(resultadoFalhaColeta({ ...captured, detail: "PesqEle: metadados conflitantes com a publicação" }).decision.reason, "source_metadata_conflict")
+  assert.equal(resultadoFalhaColeta({ ...captured, source_sha256: null, source_observed_at: null, detail: "HTTP 403" }).decision.reason, "source_unavailable")
+  const result = resultadoFalhaColeta({ ...captured, detail: "HTML inesperado: resultados ausente" })
+  const dir = mkdtempSync(join(tmpdir(), "pesquisas-diagnostico-"))
+  try {
+    escreverRelatorios([{ case_id: "captura-bloqueada", result }], dir)
+    const persisted = JSON.parse(readFileSync(join(dir, "proposal.json"), "utf8")).items[0]
+    assert.equal(persisted.diagnostic.source_sha256, captured.source_sha256)
+    assert.equal(persisted.evidence, null)
+    assert.equal(persisted.decision.eligible_for_human_review, false)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
 })
 
 for (const transform of [

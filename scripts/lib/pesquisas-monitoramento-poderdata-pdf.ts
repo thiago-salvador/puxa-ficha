@@ -2,12 +2,14 @@ import "server-only"
 
 import { execFileSync } from "node:child_process"
 import { createHash } from "node:crypto"
+import { criarResolvedorPresidencial } from "./pesquisas-monitoramento-identidades"
 
 export interface CenarioDocumentoPoderData {
   turn: 1 | 2
   label: string
   question: string
   page: number
+  results_date?: string
   results: Array<{ raw_label: string; value_percent: number }>
 }
 
@@ -23,38 +25,54 @@ export interface DocumentoPoderData {
   scenarios: CenarioDocumentoPoderData[]
 }
 
-export function descobrirRelatorioPoderData(html: string): string {
+export function descobrirRelatorioPoderData(html: string, fieldEnd?: string): string {
   const safe = html.replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
   const urls = [...new Set([...safe.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
-    .filter((match) => match[2].replace(/<[^>]*>/g, " ").trim().toLocaleLowerCase("pt-BR") === "íntegra")
+    .filter((match) => /^(íntegra|brasil)$/.test(match[2].replace(/<[^>]*>/g, " ").trim().toLocaleLowerCase("pt-BR")))
     .map((match) => match[1])
     .filter((url) => /^https:\/\/static\.poder360\.com\.br\/(?:uploads\/)?2026\/\d{2}\/[^?#]+\.pdf$/.test(url)))]
-  if (urls.length !== 1) throw new Error("PoderData: relatório integral ausente ou ambíguo")
-  return urls[0]
+  const dated = fieldEnd && /^2026-\d{2}-\d{2}$/.test(fieldEnd)
+    ? urls.filter((url) => new RegExp(`(?:^|[^0-9])${Number(fieldEnd.slice(8))}${PT_SHORT_MONTHS[Number(fieldEnd.slice(5, 7)) - 1]}26(?:[^0-9]|$)`, "i").test(new URL(url).pathname.split("/").at(-1)!)) : []
+  const selected = dated.length ? dated : urls
+  if (selected.length !== 1) throw new Error("PoderData: relatório integral ausente ou ambíguo")
+  return selected[0]
 }
 
 const MONTHS = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
 const SHORT_MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const PT_SHORT_MONTHS = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+
+function columnDate(value: string): string | null {
+  const match = value.match(/^(\d{1,2})([-./])([a-z]{3})$/i)
+  if (!match) return null
+  const months = match[2] === "-" ? SHORT_MONTHS.map((month) => month.toLowerCase()) : PT_SHORT_MONTHS
+  const month = months.indexOf(match[3].toLowerCase()) + 1
+  const date = `2026-${String(month).padStart(2, "0")}-${match[1].padStart(2, "0")}`
+  return month > 0 && Number.isFinite(Date.parse(date)) && new Date(date).toISOString().slice(0, 10) === date ? date : null
+}
 
 /** Extract the dated table below each national voting-intention chart, never subgroup columns. */
-export function parseTextoPoderData(text: string, registrationId: string): Omit<DocumentoPoderData, "url" | "observed_at" | "evidence_sha256"> {
+export function parseTextoPoderData(text: string, registrationId: string, publicationDate?: string): Omit<DocumentoPoderData, "url" | "observed_at" | "evidence_sha256"> {
   const pages = text.split("\f")
+  const resolverNomePresidencial = criarResolvedorPresidencial()
   const registrations = [...new Set(text.match(/\bBR-\d{5}\/2026\b/g) ?? [])]
   if (registrations.length !== 1 || registrations[0] !== registrationId) throw new Error("PoderData PDF: registro conflitante")
   const front = pages.slice(0, 2).join(" ").replace(/\s+/g, " ")
-  const field = front.match(/(\d{1,2}) a (\d{1,2}) de (\p{L}+) de 2026/u)
+  const field = front.match(/(\d{1,2})(?: de (\p{L}+))? a (\d{1,2}) de (\p{L}+) de 2026/u)
   const sample = front.match(/([\d.]+) entrevistas/i)
   const margin = front.match(/\+\/-\s*(\d+(?:[,.]\d+)?) p\.p\./i)
   const confidence = front.match(/confiança de (\d+)%/i)
-  const month = MONTHS.indexOf(field?.[3].toLocaleLowerCase("pt-BR") ?? "") + 1
-  if (!field || !sample || !margin || !confidence || month === 0) throw new Error("PoderData PDF: ficha técnica incompleta")
-  const date = (day: string) => `2026-${String(month).padStart(2, "0")}-${day.padStart(2, "0")}`
-  const fieldwork = { start: date(field[1]), end: date(field[2]) }
+  const endMonth = MONTHS.indexOf(field?.[4].toLocaleLowerCase("pt-BR") ?? "") + 1
+  const startMonth = field?.[2] ? MONTHS.indexOf(field[2].toLocaleLowerCase("pt-BR")) + 1 : endMonth
+  if (!field || !sample || !margin || !confidence || !endMonth || !startMonth) throw new Error("PoderData PDF: ficha técnica incompleta")
+  const date = (day: string, month: number) => `2026-${String(month).padStart(2, "0")}-${day.padStart(2, "0")}`
+  const fieldwork = { start: date(field[1], startMonth), end: date(field[3], endMonth) }
   if ([fieldwork.start, fieldwork.end].some((value) => !Number.isFinite(Date.parse(value)) || new Date(value).toISOString().slice(0, 10) !== value) || fieldwork.start > fieldwork.end) {
     throw new Error("PoderData PDF: período inválido")
   }
-  const lastColumn = `${Number(field[2])}-${SHORT_MONTHS[month - 1]}`
+  if (publicationDate && (!Number.isFinite(Date.parse(publicationDate)) || new Date(publicationDate).toISOString().slice(0, 10) !== publicationDate || publicationDate < fieldwork.end)) throw new Error("PoderData PDF: publicação inválida")
   const scenarios: CenarioDocumentoPoderData[] = []
+  const plots: string[] = []
   for (const [index, page] of pages.entries()) {
     const lines = page.trim().split(/\r?\n/)
     const turnMatch = lines[0]?.trim().match(/^Intenção de voto no ([12])º turno$/)
@@ -64,15 +82,21 @@ export function parseTextoPoderData(text: string, registrationId: string): Omit<
     if (questionStart < 0) continue
     const question = lines.slice(questionStart, questionStart + 4).join(" ").replace(/\s+/g, " ").match(/^.*?\?/)?.[0]?.trim()
     if (!question) throw new Error("PoderData PDF: pergunta incompleta")
-    const columnsIndex = lines.findIndex((line) => /\b\d{1,2}-[A-Z][a-z]{2}\b/.test(line))
+    const columnsIndex = lines.findIndex((line) => {
+      const tokens = line.trim().split(/\s+/)
+      return tokens.length >= 2 && tokens.every((token) => columnDate(token))
+    })
+    if (columnsIndex < 0) { plots.push(question); continue }
     const columns = columnsIndex >= 0 ? lines[columnsIndex].trim().split(/\s+/) : []
-    if (!columns.length || columns.at(-1) !== lastColumn || columns.some((column) => !/^\d{1,2}-[A-Z][a-z]{2}$/.test(column))) {
+    const dates = columns.map((column) => columnDate(column)!)
+    if (![fieldwork.end, publicationDate].includes(dates.at(-1)) || dates.some((value, index) => index > 0 && value <= dates[index - 1])) {
       throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
     }
     const table = lines.slice(columnsIndex + 1)
     const footer = table.findIndex((line) => /Pesquisa realizada|Copyright/.test(line))
     if (footer < 0) throw new Error("PoderData PDF: limite da tabela ausente")
     const rows = table.slice(0, footer).filter((line) => line.trim())
+    if (!rows.length) { plots.push(question); continue }
     const results = rows.map((line) => {
       const match = line.trim().match(/^(.+?)\s{2,}([\d.,%\s]+)$/)
       const values = match?.[2].trim().split(/\s+/) ?? []
@@ -89,11 +113,15 @@ export function parseTextoPoderData(text: string, registrationId: string): Omit<
     if (turn === 2) {
       const names = question.match(/entre (.+?) e (.+?), em quem você votaria\?/)?.slice(1)
       const candidates = results.filter((row) => !/^(Branco\/Nulo|Não sabe)$/.test(row.raw_label))
-      if (!names || candidates.length !== 2 || !candidates.every((row) => names.includes(row.raw_label))) throw new Error("PoderData PDF: duelo conflitante")
+      const identity = (name: string) => resolverNomePresidencial(name) ?? `literal:${name}`
+      if (!names || candidates.length !== 2 || new Set(names.map(identity)).size !== 2
+        || !candidates.every((row) => names.map(identity).includes(identity(row.raw_label)))) throw new Error("PoderData PDF: duelo conflitante")
     }
     if (scenarios.some((scenario) => scenario.question === question)) throw new Error("PoderData PDF: cenário ambíguo")
-    scenarios.push({ turn, label: lines[0].trim(), question, page: index + 1, results })
+    scenarios.push({ turn, label: lines[0].trim(), question, page: index + 1, results_date: dates.at(-1), results })
   }
+  if (plots.some((question) => !scenarios.some((scenario) => scenario.question === question))) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
+  if (new Set(scenarios.map((scenario) => scenario.results_date)).size !== 1) throw new Error("PoderData PDF: datas de resultado divergentes entre cenários")
   if (scenarios.filter((scenario) => scenario.turn === 1).length !== 1 || !scenarios.some((scenario) => scenario.turn === 2)) {
     throw new Error("PoderData PDF: cenários nacionais incompletos")
   }
@@ -106,8 +134,10 @@ export function parseTextoPoderData(text: string, registrationId: string): Omit<
     return row && row[1] !== "Total" ? [{ raw_label: row[1], value_percent: Number(row[4].replace("%", "").replace(",", ".")) }] : []
   })
   const primary = scenarios.find((scenario) => scenario.turn === 1)!
-  if (crossRows.length !== primary.results.length || new Set(crossRows.map((row) => row.raw_label)).size !== crossRows.length
-    || !primary.results.every((row) => crossRows.some((other) => other.raw_label === row.raw_label && other.value_percent === row.value_percent))) {
+  const identity = (name: string) => resolverNomePresidencial(name) ?? `literal:${name}`
+  if (crossRows.length !== primary.results.length || new Set(crossRows.map((row) => identity(row.raw_label))).size !== crossRows.length
+    || new Set(primary.results.map((row) => identity(row.raw_label))).size !== primary.results.length
+    || !primary.results.every((row) => crossRows.some((other) => identity(other.raw_label) === identity(row.raw_label) && other.value_percent === row.value_percent))) {
     throw new Error("PoderData PDF: lista ou percentual diverge da coluna Total")
   }
   if (scenarios.some((scenario) => !["Branco/Nulo", "Não sabe"].every((label) => scenario.results.some((row) => row.raw_label === label)))) {
@@ -116,12 +146,12 @@ export function parseTextoPoderData(text: string, registrationId: string): Omit<
   return { registration_id: registrationId, fieldwork, sample_size: Number(sample[1].replaceAll(".", "")), margin_error_pp: Number(margin[1].replace(",", ".")), confidence_percent: Number(confidence[1]), scenarios }
 }
 
-export function extrairDocumentoPoderData(input: { bytes: Uint8Array; url: string; observedAt: string; registrationId: string }): DocumentoPoderData {
+export function extrairDocumentoPoderData(input: { bytes: Uint8Array; url: string; observedAt: string; registrationId: string; publicationDate?: string }): DocumentoPoderData {
   if (input.bytes.length > 5_000_000 || Buffer.from(input.bytes).subarray(0, 5).toString() !== "%PDF-") throw new Error("PoderData: documento inválido ou acima do limite")
   // No shell, URL or filename from the source is executed. PDF bytes enter stdin.
   const text = execFileSync("pdftotext", ["-layout", "-", "-"], { input: input.bytes, encoding: "utf8", timeout: 20_000, maxBuffer: 2_000_000 })
   return {
-    ...parseTextoPoderData(text, input.registrationId),
+    ...parseTextoPoderData(text, input.registrationId, input.publicationDate),
     url: input.url,
     observed_at: input.observedAt,
     evidence_sha256: createHash("sha256").update(input.bytes).digest("hex"),

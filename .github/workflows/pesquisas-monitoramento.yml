@@ -71,7 +71,7 @@ jobs:
         continue-on-error: true
         env:
           monitor_source_id: ${{ inputs.source_id || 'all' }}
-        run: npm run monitor:pesquisas:descoberta -- --source "$monitor_source_id" --out reports/pesquisas-descoberta
+        run: npm run monitor:pesquisas:descoberta -- --source "$monitor_source_id" --validate-targets --out reports/pesquisas-descoberta
 
       - name: Publicar descoberta e lacunas de cobertura
         if: always()
@@ -91,6 +91,7 @@ jobs:
           npm run pesquisas:atualizacao:matrix -- \
             --source="$monitor_source_id" \
             --uf="$monitor_uf" \
+            --discovered-targets=reports/pesquisas-descoberta/discovered-targets.json \
             --out=reports/pesquisas-monitoramento/matrix.json
 
       - name: Publicar inventário da matriz
@@ -133,7 +134,13 @@ jobs:
           sudo apt-get install --no-install-recommends -y poppler-utils
           pdftotext -v
 
-      - name: Coletar em dry-run sem credencial de escrita
+      - name: Baixar descoberta validada
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/pesquisas-descoberta
+
+      - name: Conciliar catálogo e publicações descobertas
         env:
           monitor_source_id: ${{ matrix.target.source_id }}
           monitor_uf: ${{ matrix.target.uf }}
@@ -142,7 +149,8 @@ jobs:
           npm run monitor:pesquisas -- \
             --out="reports/pesquisas-monitoramento/$monitor_key" \
             --source="$monitor_source_id" \
-            --uf="$monitor_uf"
+            --uf="$monitor_uf" \
+            --discovery=reports/pesquisas-descoberta/discovery.json
 
       - name: Publicar artefato individual
         if: always()
@@ -224,7 +232,7 @@ jobs:
       - consolidar
     if: >-
       needs.consolidar.outputs.status == 'ready' &&
-      needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' &&
+      (needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' || needs.preparar-matriz.outputs.discovery_status == 'targets_ready_for_collection') &&
       vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || inputs.create_draft_pr == true)

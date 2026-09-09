@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import { listarAlvosMonitoramento } from "../lib/pesquisas-monitoramento"
+import type { AlvoMonitoramento } from "../lib/pesquisas-monitoramento-adapters"
 
 export const CATALOGOS_PERMITIDOS = [
   "scripts/data/pesquisas-presidencia-2026.json",
@@ -42,7 +43,7 @@ export interface ContratoPesquisaAgendada extends UnknownObject {
   publishable_by_default: boolean
   state: string
   instituto: StatusValue<string>
-  contratante?: StatusValue<string>
+  contratante?: StatusValue<string | null>
   fieldwork: { start: StatusValue<string>; end: StatusValue<string> }
   publication_date: StatusValue<string>
   sample: { size: StatusValue<number>; population: StatusValue<string> }
@@ -77,6 +78,7 @@ export interface ItemMatrizAgendada {
   source_id: string
   uf: string
   poll_ids: string[]
+  new_poll_ids?: string[]
 }
 
 export interface ItemPropostaAgendada {
@@ -99,6 +101,7 @@ export interface DocumentoPropostaAgendada {
 }
 
 export interface OperacaoCatalogoAgendada {
+  kind?: "update" | "insert"
   file: typeof CATALOGOS_PERMITIDOS[number]
   poll_id: string
   geography_code: string
@@ -235,10 +238,10 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
     if (!scenario || alias.year !== 2026 || alias.office !== contract.office || alias.geography !== contract.geography.label || alias.turn !== scenario.turn
       || !scenario.resultados.some((row) => row.raw_label === alias.raw_label && row.candidate_slug === alias.candidate_slug && row.match_status === "exact_alias")
       || alias.proof?.raw_label !== alias.raw_label || alias.proof.candidate_slug !== alias.candidate_slug
-      || !["curated_name_party_office_uf", "same_publication_full_name"].includes(alias.proof.basis)
+      || !["curated_name_party_office_uf", "curated_ballot_name_office_uf", "same_publication_full_name"].includes(alias.proof.basis)
       || !/^https:\/\//.test(alias.proof.source_url) || !/^[a-f0-9]{64}$/.test(alias.proof.source_sha256)) missing.push("identity_aliases.proof_or_scope")
     if (alias.proof?.basis === "same_publication_full_name" && alias.proof.source_url !== contract.provenance.result_url) missing.push("identity_aliases.publication_mismatch")
-    if (alias.proof?.basis === "curated_name_party_office_uf" && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
+    if (["curated_name_party_office_uf", "curated_ballot_name_office_uf"].includes(alias.proof?.basis) && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
   }
   return [...new Set(missing)]
 }
@@ -269,6 +272,18 @@ function findPollMatches(catalogs: CatalogosAgendados, pollId: string): Pesquisa
 function findPoll(catalogs: CatalogosAgendados, pollId: string): PesquisaLocalizadaAgendada | null {
   const matches = findPollMatches(catalogs, pollId)
   return matches.length === 1 ? matches[0] : null
+}
+
+function prepararPesquisaNova(catalogs: CatalogosAgendados, proposed: ContratoPesquisaAgendada, pollId: string): ContratoPesquisaAgendada {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(pollId)) throw new Error("identificador da pesquisa nova inválido")
+  const all = [...catalogs.presidente.pesquisas, ...catalogs.governadores.datasets.flatMap((dataset) => dataset.pesquisas)]
+  if (all.some((poll) => poll.registration.code.value === proposed.registration.code.value && poll.source_id === proposed.source_id && poll.office === proposed.office && poll.geography.code === proposed.geography.code)) throw new Error("registro já cadastrado com outro identificador")
+  const sourcePeer = all.find((poll) => poll.source_id === proposed.source_id && poll.office === proposed.office && poll.source_status === "aprovado")
+  if (!sourcePeer || proposed.source_status !== "aprovado") throw new Error("pesquisa nova sem fonte aprovada no catálogo")
+  const registry = proposed.provenance.registry_observation as UnknownObject | undefined
+  if (!registry || typeof registry.url !== "string" || !registry.url.startsWith("https://pesqele-divulgacao.tse.jus.br/") || !/^[a-f0-9]{64}$/.test(String(registry.evidence_sha256))) throw new Error("pesquisa nova sem comprovação do registro público")
+  if (!((proposed.office === "Presidente" && proposed.geography.code === "BR") || (proposed.office === "Governador" && /^[A-Z]{2}$/.test(proposed.geography.code) && proposed.geography.code !== "BR"))) throw new Error("cargo ou geografia de pesquisa nova inválido")
+  return { ...proposed, id: pollId, publishable_by_default: sourcePeer.publishable_by_default, state: "indeterminado", contratante: { value: null, status: "indeterminado" }, provenance: { ...proposed.provenance, source_kind: sourcePeer.provenance.source_kind, route_class: "direta_automatizavel", route_reason: "Publicação capturada e conciliada com o registro público PesqEle; proposta sujeita a revisão humana." } }
 }
 
 interface CandidateScenarioValue {
@@ -317,18 +332,25 @@ function candidateDiff(before: ContratoPesquisaAgendada, after: ContratoPesquisa
     })
 }
 
-export function construirMatrizAgendada(filters: { sourceId?: string | null; uf?: string | null } = {}): ItemMatrizAgendada[] {
+export function construirMatrizAgendada(filters: { sourceId?: string | null; uf?: string | null } = {}, discovered: AlvoMonitoramento[] = []): ItemMatrizAgendada[] {
   const grouped = new Map<string, ItemMatrizAgendada>()
   const normalizedUf = filters.uf?.toLocaleUpperCase("pt-BR")
   const normalizedFilters = {
     sourceId: filters.sourceId,
     uf: normalizedUf === "ALL" ? null : normalizedUf,
   }
-  for (const target of listarAlvosMonitoramento(normalizedFilters)) {
+  const known = listarAlvosMonitoramento(normalizedFilters)
+  const knownIds = new Set(listarAlvosMonitoramento().map((target) => target.poll_id))
+  const targets = new Map(known.map((target) => [target.poll_id, target]))
+  for (const target of discovered) {
+    if ((!filters.sourceId || filters.sourceId === "all" || target.source_id === filters.sourceId) && (!normalizedFilters.uf || target.geography_code === normalizedFilters.uf)) targets.set(target.poll_id, target)
+  }
+  for (const target of targets.values()) {
     const pair = `${target.source_id}|${target.geography_code}`
     const current = grouped.get(pair)
     if (current) {
       current.poll_ids.push(target.poll_id)
+      if (!knownIds.has(target.poll_id)) current.new_poll_ids = [...(current.new_poll_ids ?? []), target.poll_id]
       continue
     }
     grouped.set(pair, {
@@ -336,6 +358,7 @@ export function construirMatrizAgendada(filters: { sourceId?: string | null; uf?
       source_id: target.source_id,
       uf: target.geography_code,
       poll_ids: [target.poll_id],
+      ...(!knownIds.has(target.poll_id) ? { new_poll_ids: [target.poll_id] } : {}),
     })
   }
   return [...grouped.values()]
@@ -456,7 +479,13 @@ export function consolidarPropostasAgendadas(input: {
     const pollId = pollIdFromItem(item)
     const baseline = findPoll(input.catalogs, pollId)
     if (!baseline || !item.normalized_contract) {
-      alerts.push(`${item.id}: inventário base ausente`)
+      const contract = item.normalized_contract
+      const manifest = input.matrix.find((entry) => entry.new_poll_ids?.includes(pollId) && entry.source_id === contract?.source_id && entry.uf === contract?.geography.code)
+      if (!manifest || !contract || findPollMatches(input.catalogs, pollId).length || item.evidence?.scenario_complete !== true || item.evidence?.publication_complete !== true) { alerts.push(`${item.id}: inventário base ausente`); continue }
+      try {
+        const proposed = prepararPesquisaNova(input.catalogs, contract, pollId)
+        operations.push({ kind: "insert", file: contract.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1], poll_id: pollId, geography_code: contract.geography.code, source_id: contract.source_id, registration_id: contract.registration.code.value, proposed, candidate_diff: candidateDiff({ ...proposed, cenarios: [] }, proposed) })
+      } catch (error) { alerts.push(`${item.id}: ${error instanceof Error ? error.message : String(error)}`) }
       continue
     }
     if (stable(contractComparable(baseline.poll)) === stable(contractComparable(item.normalized_contract))) continue
@@ -593,6 +622,26 @@ export function aplicarOperacoesAgendadas(
     if (requiredMetadata(operation.proposed).length) throw new Error(`proposta incompleta: ${operation.poll_id}`)
     if (!CATALOGOS_PERMITIDOS.includes(operation.file)) throw new Error(`arquivo fora da allowlist: ${operation.file}`)
     const matches = findPollMatches(catalogs, operation.poll_id)
+    if (operation.kind === "insert" && matches.length === 0) {
+      const replacement = prepararPesquisaNova(catalogs, operation.proposed, operation.poll_id)
+      const expectedFile = replacement.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1]
+      if (operation.file !== expectedFile || replacement.geography.code !== operation.geography_code || replacement.source_id !== operation.source_id || replacement.registration.code.value !== operation.registration_id) throw new Error("escopo da inserção divergente")
+      if (expectedFile === CATALOGOS_PERMITIDOS[0]) {
+        applyDocumentedAliases(catalogs.presidente, replacement)
+        catalogs.presidente.pesquisas.push(replacement)
+      } else {
+        let dataset = catalogs.governadores.datasets.find((entry) => (entry.publication_scope as UnknownObject)?.geography_code === replacement.geography.code)
+        if (!dataset) {
+          dataset = { schema_version: "1.0.0", election_scope: { year: 2026, office: "Governador", geography: replacement.geography.label }, alias_scope: { year: 2026, office: "Governador", geography: replacement.geography.label }, publication_scope: { election_year: 2026, office: "Governador", geography_code: replacement.geography.code, turn: 1, comparability_key: replacement.cenarios.find((scenario) => scenario.turn === 1)?.comparability_key }, exact_aliases_version: "monitor-2026", exact_aliases: [], pesquisas: [] }
+          catalogs.governadores.datasets.push(dataset)
+        }
+        applyDocumentedAliases(dataset, replacement)
+        dataset.pesquisas.push(replacement)
+      }
+      touched.add(operation.file)
+      expectedReadback.set(`${operation.file}\u0000${operation.poll_id}`, replacement)
+      continue
+    }
     if (matches.length === 0) throw new Error(`pesquisa base ausente: ${operation.poll_id}`)
     if (matches.length > 1) throw new Error(`poll_id ambíguo em múltiplos datasets: ${operation.poll_id}`)
     const located = matches[0]
