@@ -84,3 +84,60 @@ test("reporta a excecao quando a consulta lanca em todas as tentativas", async (
   assert.equal(event.tags?.["supabase.operation"], "noticias_candidato")
   assert.equal(event.exception?.values?.[0]?.value, "connection reset")
 })
+
+/**
+ * Regressao da triagem de 2026-09-08: sonda de crawler e leitor caiam no MESMO
+ * issue. A rajada de 06/09 eram 69 eventos, todos `HEAD`, e subiu na fila de
+ * alertas como pagina publica quebrando em ano eleitoral; o episodio com leitor
+ * de verdade, 10-11/08, foram 700 `GET`, 577 na home. Sem metodo no fingerprint
+ * os dois padroes ficam indistinguiveis na origem.
+ */
+async function esgotarSob(transacao: string | undefined): Promise<ErrorEvent> {
+  const escopo = Sentry.getCurrentScope()
+  const anterior = escopo.getScopeData().transactionName
+  escopo.setTransactionName(transacao)
+  try {
+    await withSupabaseRetry<Row>(
+      "getCandidatos",
+      () => new Promise<{ data: Row | null; error: { message?: string } | null }>(() => {}),
+      { attemptTimeoutMs: 5 }
+    )
+    await Sentry.flush(1_000)
+  } finally {
+    escopo.setTransactionName(anterior)
+  }
+  assert.equal(captured.length, 1)
+  return captured[0]
+}
+
+test("sonda de crawler e leitor viram issues distintos", async () => {
+  const sonda = await esgotarSob("HEAD /uf/df")
+  assert.equal(sonda.tags?.["http.method"], "HEAD")
+  assert.deepEqual(sonda.fingerprint, ["supabase-retry-exhausted", "getCandidatos", "HEAD"])
+
+  captured.length = 0
+
+  const leitor = await esgotarSob("GET /")
+  assert.equal(leitor.tags?.["http.method"], "GET")
+  assert.deepEqual(leitor.fingerprint, ["supabase-retry-exhausted", "getCandidatos", "GET"])
+
+  assert.notDeepEqual(
+    sonda.fingerprint,
+    leitor.fingerprint,
+    "sem fingerprint distinto os dois padroes voltam a cair no mesmo issue"
+  )
+})
+
+test("sem transacao o fingerprint fica estavel e nao cria issue orfao", async () => {
+  const evento = await esgotarSob(undefined)
+  assert.equal(evento.tags?.["http.method"], undefined)
+  assert.deepEqual(evento.fingerprint, ["supabase-retry-exhausted", "getCandidatos"])
+})
+
+test("o evento carrega quanto o chamador esperou antes de degradar", async () => {
+  const evento = await esgotarSob("GET /candidato/lula")
+  const elapsed = evento.contexts?.supabase_retry?.elapsedMs
+  assert.equal(typeof elapsed, "number")
+  // 3 tentativas de 5ms mais backoff de 250ms e 500ms: o piso e o backoff.
+  assert.ok((elapsed as number) >= 750, `esperado >= 750ms, veio ${elapsed}`)
+})
