@@ -88,6 +88,25 @@ function retryGroupKey(label: string): string {
 }
 
 /**
+ * Metodo HTTP da request que originou a falha, deduzido do nome da transação
+ * ("HEAD /uf/df" vira "HEAD"). Sem chamar `headers()`: ler header em rota
+ * estatica dispara `app-static-to-dynamic-error`, que e o incidente de
+ * 2026-08-03 documentado em `production-env.ts`.
+ *
+ * Motivo (triagem 2026-09-08): sonda de crawler e leitor caiam no MESMO issue.
+ * A rajada de 06/09 eram 69 eventos, todos `HEAD` de crawler, e subiu na fila
+ * de alertas como pagina publica quebrando em ano eleitoral, custando um ciclo
+ * inteiro de triagem. O episodio com leitor de verdade, 10-11/08, foram 700
+ * eventos `GET`, 577 deles na home. Os dois padroes sao operacionalmente
+ * opostos e precisam de issues distintas.
+ */
+function metodoHttpDaTransacao(): string | null {
+  const nome = Sentry.getCurrentScope().getScopeData().transactionName
+  const metodo = nome?.trim().split(/\s+/)[0]
+  return metodo && /^[A-Z]{3,7}$/.test(metodo) ? metodo : null
+}
+
+/**
  * Falha de Supabase que sobrevive a todas as tentativas nao lança: os callers
  * degradam a pagina e seguem. Sem isto ela so existiria como `console.error` e
  * um span `internal_error` solto, sem issue, sem alerta e sem agrupamento.
@@ -97,12 +116,15 @@ function reportExhaustedRetries(params: {
   attempts: number
   timeouts: number
   attemptTimeoutMs: number
+  elapsedMs?: number
   lastError?: string
   lastCode?: string
   thrown?: unknown
 }): void {
-  const { label, attempts, timeouts, attemptTimeoutMs, lastError, lastCode, thrown } = params
+  const { label, attempts, timeouts, attemptTimeoutMs, elapsedMs, lastError, lastCode, thrown } =
+    params
   const timedOut = timeouts > 0
+  const metodo = metodoHttpDaTransacao()
 
   Sentry.withScope((scope) => {
     scope.setTag("supabase.operation", retryGroupKey(label))
@@ -111,18 +133,29 @@ function reportExhaustedRetries(params: {
     // Sem o codigo, operações diferentes do mesmo label caem no mesmo issue e
     // escondem o PostgREST que realmente falhou.
     if (lastCode) scope.setTag("supabase.code", lastCode)
+    if (metodo) scope.setTag("http.method", metodo)
     scope.setContext("supabase_retry", {
       label,
       attempts,
       timeouts,
       attemptTimeoutMs,
+      // Quanto o chamador esperou de fato antes de degradar. Sem isto o proximo
+      // episodio volta a exigir aritmetica de tentativa x timeout para estimar
+      // o que o leitor sentiu.
+      elapsedMs: elapsedMs ?? null,
+      httpMethod: metodo,
       lastError: lastError ?? null,
       lastCode: lastCode ?? null,
     })
+    // Metodo desconhecido NAO entra no fingerprint: manter a chave estavel
+    // evita criar um issue orfao a cada chamada fora de request (cron, script).
     scope.setFingerprint(
-      lastCode
-        ? ["supabase-retry-exhausted", retryGroupKey(label), lastCode]
-        : ["supabase-retry-exhausted", retryGroupKey(label)]
+      [
+        "supabase-retry-exhausted",
+        retryGroupKey(label),
+        ...(lastCode ? [lastCode] : []),
+        ...(metodo ? [metodo] : []),
+      ]
     )
 
     if (thrown !== undefined) {
@@ -143,6 +176,7 @@ export async function withSupabaseRetry<T>(
   options: { attemptTimeoutMs?: number } = {}
 ): Promise<SupabaseRunResult<T>> {
   const attemptTimeoutMs = options.attemptTimeoutMs ?? SUPABASE_ATTEMPT_TIMEOUT_MS
+  const inicio = Date.now()
   let lastResult: SupabaseRunResult<T> | null = null
   let lastThrown: unknown = null
   let timeouts = 0
@@ -207,6 +241,7 @@ export async function withSupabaseRetry<T>(
       attempts: SUPABASE_RETRY_ATTEMPTS,
       timeouts,
       attemptTimeoutMs,
+      elapsedMs: Date.now() - inicio,
       lastError: lastResult.error?.message,
       lastCode: errorCode(lastResult.error),
     })
@@ -219,6 +254,7 @@ export async function withSupabaseRetry<T>(
     attempts: SUPABASE_RETRY_ATTEMPTS,
     timeouts,
     attemptTimeoutMs,
+    elapsedMs: Date.now() - inicio,
     lastError: thrown.message,
     thrown,
   })
