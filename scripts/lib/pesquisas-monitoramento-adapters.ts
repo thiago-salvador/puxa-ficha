@@ -3,6 +3,7 @@ import "server-only"
 import { createHash } from "node:crypto"
 
 import type { EvidenciaPesquisaCandidata } from "./pesquisas-monitoramento"
+import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 
 export interface SourceContractMonitoramento {
   id: string
@@ -41,6 +42,7 @@ export interface AdaptadorMonitoramento {
     observedAt: string
     source: SourceContractMonitoramento
     target: AlvoMonitoramento
+    registrySupplement?: ObservacaoPesqele
   }): EvidenciaPesquisaCandidata
 }
 
@@ -206,10 +208,10 @@ function extractSample(text: string): number {
 function extractMethod(text: string): string {
   if (/pontos? de fluxo/i.test(text)) return "entrevistas presenciais em pontos de fluxo"
   if (/entrevistas? presenciais/i.test(text)) return "entrevistas presenciais"
-  if (/telef[oô]nic|por telefone|URA/i.test(text)) return /digital/i.test(text)
+  if (/telef[oô]nic|por telefone|\bURA\b/i.test(text)) return /digit(?:al|ais)/i.test(text)
     ? "abordagens telefônicas e digitais"
     : "entrevistas por telefone"
-  if (/digital/i.test(text)) return "abordagem digital"
+  if (/digit(?:al|ais)/i.test(text)) return "abordagem digital"
   throw new Error("HTML inesperado: método ausente")
 }
 
@@ -257,12 +259,38 @@ function parseRealTimeResults(text: string): Array<{ raw_label: string; value_pe
   ])
 }
 
+export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_label: string; value_percent: number }> | null {
+  const safe = html.replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
+  const candidates: Array<Array<{ raw_label: string; value_percent: number }>> = []
+  for (const list of safe.matchAll(/<ul\b[^>]*>([\s\S]*?)<\/ul>/gi)) {
+    const context = stripExternalMarkup(safe.slice(Math.max(0, list.index - 2000), list.index)).slice(-900)
+    const turnMentions = [...context.matchAll(/(?:primeiro|segundo|1[oº]|2[oº])\s+turno/gi)]
+    const lastTurn = turnMentions.at(-1)?.[0] ?? ""
+    if (!/primeiro|1[oº]/i.test(lastTurn)) continue
+    const lines = [...list[1].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((match) => stripExternalMarkup(match[1]))
+    if (lines.filter((line) => /^[^:]+\([^)]*\)\s*:\s*\d/.test(line)).length < 2) continue
+    const results = lines.map((line) => {
+      const match = requireMatch(line, /^(.+?)\s*:\s*(\d+(?:[,.]\d+)?)%$/, "linha de resultado completa")
+      const value = normalizeNumber(match[2])
+      if (value < 0 || value > 100) throw new Error("HTML inesperado: percentual inválido")
+      return { raw_label: match[1].trim(), value_percent: value }
+    })
+    if (new Set(results.map((entry) => entry.raw_label)).size !== results.length) throw new Error("HTML inesperado: resultado duplicado")
+    const sum = results.reduce((total, entry) => total + entry.value_percent, 0)
+    if (Math.abs(sum - 100) > results.length * 0.5) throw new Error("HTML inesperado: cenário incompleto")
+    candidates.push(results)
+  }
+  if (candidates.length > 1) throw new Error("HTML inesperado: cenários de primeiro turno ambíguos")
+  return candidates[0] ?? null
+}
+
 function buildEvidence(input: {
   adapter: AdaptadorMonitoramento
   html: string
   observedAt: string
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
+  registrySupplement?: ObservacaoPesqele
   institutePattern: RegExp
   parseResults(text: string): Array<{ raw_label: string; value_percent: number }>
 }): EvidenciaPesquisaCandidata {
@@ -276,8 +304,29 @@ function buildEvidence(input: {
   const fieldwork = extractFieldwork(text, publicationDate)
   const sampleSize = extractSample(text)
   const margin = requireMatch(text, /margem de erro.{0,30}?(\d+(?:[,.]\d+)?|um|uma|dois|duas|tr[eê]s|quatro|cinco)\s+pontos?/i, "margem de erro")[1]
-  const confidence = requireMatch(text, /(?:intervalo|n[ií]vel|[ií]ndice) de confian[cç]a[^0-9]{0,30}(\d+(?:[,.]\d+)?)%/i, "confiança")[1]
-  const results = input.parseResults(text)
+  const supplement = input.registrySupplement
+  if (supplement) {
+    const registry = supplement.registry
+    const geographies = [input.target.geography, input.target.geography_code].map((value) => value.toLocaleLowerCase("pt-BR"))
+    if (registry.registration_id !== registration || !geographies.includes(registry.geography.toLocaleLowerCase("pt-BR"))
+      || !registry.office.toLocaleLowerCase("pt-BR").includes(input.target.office.toLocaleLowerCase("pt-BR"))
+      || registry.field_start !== fieldwork.start || registry.field_end !== fieldwork.end || registry.sample_size !== sampleSize
+      || registry.margin_error_pp !== normalizeMeasure(margin)
+      || !registry.institute.toLocaleLowerCase("pt-BR").includes(input.source.roles.institute.toLocaleLowerCase("pt-BR"))) {
+      throw new Error("PesqEle: metadados conflitantes com a publicação")
+    }
+  }
+  const publishedConfidence = text.match(/(?:intervalo|n[ií]vel|[ií]ndice) de confian[cç]a[^0-9]{0,30}(\d+(?:[,.]\d+)?)%/i)?.[1]
+  const confidence = publishedConfidence ? normalizeNumber(publishedConfidence) : supplement?.confidence_percent
+  if (confidence === undefined) throw new Error("HTML inesperado: confiança ausente")
+  if (supplement && confidence !== supplement.confidence_percent) throw new Error("PesqEle: confiança conflitante")
+  let method: string
+  try { method = extractMethod(text) } catch (error) {
+    if (!supplement) throw error
+    method = extractMethod(supplement.method)
+  }
+  const completeResults = extrairListaCompletaPrimeiroTurno(input.html)
+  const results = completeResults ?? input.parseResults(text)
   return {
     source_id: input.source.id,
     source_status: input.source.status,
@@ -300,12 +349,14 @@ function buildEvidence(input: {
     },
     sample: { size: sampleSize, population: input.target.population },
     margin_error_pp: normalizeMeasure(margin),
-    confidence_percent: normalizeNumber(confidence),
-    method: extractMethod(text),
+    confidence_percent: confidence,
+    method,
+    ...(completeResults ? { scenario_complete: true } : {}),
+    ...(supplement ? { registry_observation: { url: supplement.source_url, observed_at: supplement.observed_at, evidence_sha256: supplement.evidence_sha256 } } : {}),
     results: results.map((result) => ({
       ...result,
       candidate_slug: null,
-      match_status: "indeterminado" as const,
+      match_status: /^(Outros|Nulo\/Branco|Branco\/Nulo|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i.test(result.raw_label) ? "not_candidate" as const : "indeterminado" as const,
     })),
     observed_at: input.observedAt,
     evidence_sha256: createHash("sha256").update(input.html).digest("hex"),
@@ -380,6 +431,7 @@ export function parsePublicacaoMonitorada(input: {
   observedAt: string
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
+  registrySupplement?: ObservacaoPesqele
 }): EvidenciaPesquisaCandidata {
   return obterAdaptadorMonitoramento(input.source.id).parse(input)
 }

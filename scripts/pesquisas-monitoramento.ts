@@ -1,4 +1,6 @@
 import { resolve } from "node:path"
+import { mkdirSync, writeFileSync } from "node:fs"
+import { consultarRegistroPesqele, type ObservacaoPesqele } from "./lib/pesquisas-monitoramento-pesqele"
 
 import {
   avaliarEvidenciaAoVivo,
@@ -84,6 +86,7 @@ interface CapturaAoVivo {
   observedAt: string | null
   target: AlvoMonitoramento
   result: MonitoringResult
+  registrySupplement?: ObservacaoPesqele
 }
 
 function errorMessage(error: unknown): string {
@@ -111,6 +114,7 @@ function evidenceIsComplete(evidence: EvidenciaPesquisaCandidata, target: AlvoMo
 async function collectSource(
   client: ClienteHttpMonitoramento,
   target: AlvoMonitoramento,
+  registrySupplement?: ObservacaoPesqele,
 ): Promise<CapturaAoVivo> {
   const source = obterContratoFonte(target.source_id)
   try {
@@ -120,6 +124,7 @@ async function collectSource(
       target,
       html: response.body,
       observedAt: response.observedAt,
+      registrySupplement,
     })
     if (!evidenceIsComplete(evidence, target)) throw new Error("evidencia publica incompleta")
     console.log(`SOURCE_ADAPTER_OBSERVED: ${target.source_id} ${target.poll_id}`)
@@ -128,6 +133,7 @@ async function collectSource(
       html: response.body,
       observedAt: response.observedAt,
       target,
+      registrySupplement,
       result: resultadoFonteIndisponivel("tse_registry_pending"),
     }
   } catch (error) {
@@ -159,6 +165,7 @@ function reconcileCapture(capture: CapturaAoVivo, registry: RegistroTseMonitoram
       html: capture.html,
       observedAt: capture.observedAt,
       registry,
+      registrySupplement: capture.registrySupplement,
     }),
   }
 }
@@ -191,7 +198,8 @@ function buildTseClient(): ClienteHttpMonitoramento {
 function assertLiveCheck(args: Args, captures: CapturaAoVivo[]): void {
   if (!args.liveCheck) return
   const complete = captures.filter((capture) => (
-    capture.evidence &&
+    capture.evidence?.scenario_complete &&
+    capture.result.decision.reason !== "registry_conflict" &&
     capture.result.decision.reason !== "tse_registry_unavailable" &&
     capture.result.decision.reason !== "tse_registry_pending"
   ))
@@ -212,12 +220,31 @@ async function main(): Promise<void> {
   }
 
   const sourceClient = buildSourceClient(targets)
+  let registry: RegistroTseMonitoramento[] = []
+  const observations = new Map<string, ObservacaoPesqele>()
+  try {
+    registry = await loadTseRegistry(buildTseClient())
+  } catch (error) {
+    console.error(`TSE dataset indisponível: ${errorMessage(error)}; consultar registro público PesqEle`)
+  }
+  // Public registry pages also contain methodology and confidence absent from news reports.
+  for (const target of targets) {
+    try {
+      const observation = await consultarRegistroPesqele(target.registration_id)
+      observations.set(target.registration_id, observation)
+      if (!registry.some((entry) => entry.registration_id === target.registration_id)) registry.push(observation.registry)
+    } catch (error) {
+      console.error(`[pesqele:${target.registration_id}] ${errorMessage(error)}`)
+    }
+  }
+  mkdirSync(resolve(args.out), { recursive: true })
+  writeFileSync(resolve(args.out, "tse-observations.json"), `${JSON.stringify([...observations.values()], null, 2)}\n`)
   const captures: CapturaAoVivo[] = []
-  for (const target of targets) captures.push(await collectSource(sourceClient, target))
+  for (const target of targets) captures.push(await collectSource(sourceClient, target, observations.get(target.registration_id)))
 
   let reconciled = captures
   try {
-    const registry = await loadTseRegistry(buildTseClient())
+    if (registry.length === 0) throw new Error("nenhum registro TSE pôde ser consultado")
     reconciled = captures.map((capture) => reconcileCapture(capture, registry))
     console.log(`TSE_REGISTRY_OBSERVED: ${registry.length} registros`)
   } catch (error) {

@@ -10,6 +10,7 @@ import {
   type AlvoMonitoramento,
 } from "./pesquisas-monitoramento-adapters"
 import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
+import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 
 type ClassificacaoMonitoramento =
   | "novo"
@@ -44,11 +45,13 @@ export interface EvidenciaPesquisaCandidata {
   results: Array<{
     raw_label: string
     candidate_slug: string | null
-    match_status: "exact_alias" | "indeterminado"
+    match_status: "exact_alias" | "indeterminado" | "not_candidate"
     value_percent: number
   }>
   observed_at: string
   evidence_sha256: string
+  scenario_complete?: boolean
+  registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
 }
 
 export interface SourceContract {
@@ -257,6 +260,7 @@ function fingerprint(evidence: EvidenciaPesquisaCandidata): string {
   const stable: Partial<EvidenciaPesquisaCandidata> = { ...evidence }
   delete stable.observed_at
   delete stable.evidence_sha256
+  delete stable.registry_observation
   return createHash("sha256").update(JSON.stringify(stable)).digest("hex")
 }
 
@@ -310,13 +314,14 @@ function classify(input: {
   const resolvedEvidence: EvidenciaPesquisaCandidata = {
     ...input.evidence,
     results: input.evidence.results.map((result) => {
+      if (result.match_status === "not_candidate") return result
       const candidateSlug = input.aliases.get(result.raw_label)
       return candidateSlug
         ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
         : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
     }),
   }
-  if (resolvedEvidence.results.some((result) => result.match_status !== "exact_alias")) {
+  if (resolvedEvidence.results.some((result) => result.match_status === "indeterminado")) {
     return { decision: decision("identidade nao resolvida", false, "identity_unresolved"), evidence: resolvedEvidence, baseline: input.baseline }
   }
 
@@ -419,7 +424,7 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
     office: evidence.scenario.office,
     provenance: {
       result_url: evidence.url,
-      supporting_urls: [],
+      supporting_urls: evidence.registry_observation ? [evidence.registry_observation.url] : [],
       consulted_at: evidence.observed_at,
       capture: { format: "html", sha256: evidence.evidence_sha256, status: "indeterminado" },
     },
@@ -517,24 +522,17 @@ export function avaliarEvidenciaAoVivo(input: {
   html: string
   observedAt: string
   registry?: RegistroTseMonitoramento[]
+  registrySupplement?: ObservacaoPesqele
 }): ResultadoAvaliacao {
   const evidence = parsePublicacaoMonitorada({
     html: input.html,
     observedAt: input.observedAt,
     source: input.source,
     target: input.target,
+    registrySupplement: input.registrySupplement,
   })
-  const registry: RegistroTseMonitoramento[] = input.registry ?? [{
-    registration_id: input.target.registration_id,
-    office: input.target.office,
-    geography: input.target.geography,
-    field_start: evidence.fieldwork.start,
-    field_end: evidence.fieldwork.end,
-    sample_size: evidence.sample.size,
-    margin_error_pp: evidence.margin_error_pp,
-    institute: input.source.roles.institute,
-  }]
-  return classify({
+  const registry: RegistroTseMonitoramento[] = input.registry ?? []
+  const result = classify({
     source: input.source,
     evidence,
     registry,
@@ -542,6 +540,10 @@ export function avaliarEvidenciaAoVivo(input: {
     baseline: null,
     observedAt: input.observedAt,
   })
+  if (result.decision.eligible_for_human_review && !evidence.scenario_complete) {
+    return { ...result, decision: decision("conflitante", false, "scenario_incomplete") }
+  }
+  return result
 }
 
 export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {
