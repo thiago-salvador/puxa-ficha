@@ -85,6 +85,28 @@ test("referência literal prevalece", () => {
   )
 })
 
+test("limite total conta textos retidos, não evidências binárias descartadas", () => {
+  const { root, baseline } = fixture()
+  try {
+    const manifest = runtimeManifest(root)
+    const binary = Buffer.alloc(8 * 1024 * 1024)
+    for (let i = 0; i < 17; i++) writeFileSync(join(root, `evidence-${i}.bin`), binary)
+    git(root, ["add", "."])
+    const args = ["--verify-removals", "--baseline", baseline, "--runtime-references", manifest]
+    const accepted = runAudit(root, args)
+    assert.equal(accepted.status, 0, accepted.stderr)
+
+    const text = Buffer.alloc(8 * 1024 * 1024, "x")
+    for (let i = 0; i < 17; i++) writeFileSync(join(root, `evidence-${i}.bin`), text)
+    git(root, ["add", "."])
+    const rejected = runAudit(root, args)
+    assert.notEqual(rejected.status, 0)
+    assert.match(rejected.stderr, /fontes excedem limite total/)
+  } finally {
+    removeFixture(root)
+  }
+})
+
 test("manifesto runtime é autoridade sem depender da sintaxe geradora", () => {
   const result = classifyAsset({
     file: "example.jpg",

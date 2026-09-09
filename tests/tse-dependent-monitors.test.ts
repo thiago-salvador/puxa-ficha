@@ -20,7 +20,7 @@ function okPayload(url: string): Record<string, unknown> {
   if (url.includes("110002553937") || url.includes("110002554073")) {
     return {
       id,
-      descricaoSituacao: "Aguardando julgamento",
+      descricaoSituacao: url.includes("110002553937") ? "Indeferido" : "Aguardando julgamento",
       descricaoTotalizacao: "Concorrendo",
       arquivos: [],
     }
@@ -38,8 +38,8 @@ function response(payload: unknown, status = 200): Response {
 // Duas fichas desde 2026-09-06: Eduardo Paes (RJ), Vera Lúcia (CE) e Ben Mendes
 // (MG) saíram do monitor quando os pacotes oficiais trouxeram os programas e os
 // registros foram publicados.
-test("configura exatamente duas inscrições de Laudicério e dois programas sem SQ canônica", () => {
-  assert.equal(config.laudicerio.canonical_registration_sq, null)
+test("preserva as duas inscrições de Laudicério e identifica a canônica aprovada", () => {
+  assert.equal(config.laudicerio.canonical_registration_sq, "110002554073")
   assert.deepEqual(config.laudicerio.registrations.map((item) => item.sq_candidato), [
     "110002553937",
     "110002554073",
@@ -89,7 +89,27 @@ test("mudança de situação gera somente o alerta canônico de Laudicério", as
   })
   assert.equal(report.status, "review_required")
   assert.deepEqual(report.alerts.map((alert) => alert.message), ["julgamento Laudicério: revisar canônica"])
-  assert.equal(config.laudicerio.canonical_registration_sq, null)
+  assert.equal(config.laudicerio.canonical_registration_sq, "110002554073")
+})
+
+test("mudança no registro histórico de Laudicério também volta a alertar", async () => {
+  const report = await collectTseDependentMonitors(config, mkdtempSync(join(tmpdir(), "tse-historico-")), {
+    attempts: 1,
+    fetchImpl: async (input) => {
+      const url = String(input)
+      const payload = okPayload(url)
+      if (url.includes("110002553937")) payload.descricaoSituacao = "Deferido"
+      return response(payload)
+    },
+  })
+  assert.equal(report.status, "review_required")
+  assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002553937"])
+})
+
+test("recusa canônica fora das inscrições monitoradas", async () => {
+  const invalid = structuredClone(config)
+  invalid.laudicerio.canonical_registration_sq = "999999999999"
+  await assert.rejects(collectTseDependentMonitors(invalid, mkdtempSync(join(tmpdir(), "tse-canonica-"))), /contrato/)
 })
 
 test("codTipo 5 em qualquer uma das duas fichas gera alerta sem publicar nada", async () => {

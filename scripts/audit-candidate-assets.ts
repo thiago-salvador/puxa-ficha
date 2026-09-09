@@ -188,11 +188,13 @@ function loadTextSources(
     if (!entry) throw new Error(`entrada ausente no indice: ${file}`)
     assertRegularGitEntry(entry)
     const bytes = readRegularFile(root, file, MAX_TEXT_FILE_BYTES)
+    // Binary evidence is discarded, not retained in the text inventory budget.
+    // Per-file and tracked-file limits still bound every inspected file.
+    if (bytes.includes(0)) continue
     totalBytes += bytes.length
     if (totalBytes > MAX_TOTAL_TEXT_BYTES) {
       throw new Error(`fontes excedem limite total de ${MAX_TOTAL_TEXT_BYTES} bytes`)
     }
-    if (bytes.includes(0)) continue
     sources.push({ path: file, content: bytes.toString("utf8") })
   }
   return sources

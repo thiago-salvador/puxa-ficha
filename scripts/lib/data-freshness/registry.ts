@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { DESTAQUES_EXPECTED_PAIRS } from "../destaques-votacoes-provenance"
 
 import type { FreshnessSource, FreshnessStatus } from "./types"
 
@@ -146,7 +147,7 @@ function staleMemberIds(
         member.provenance_complete !== true ||
         !/^[a-f0-9]{64}$/.test(member.evidence_sha256 ?? "") ||
         (member.raw_payload_count ?? 0) < 1 ||
-        member.pair_count !== 154 ||
+        member.pair_count !== DESTAQUES_EXPECTED_PAIRS ||
         executionIds.length !== 2 ||
         new Set(executionIds).size !== 2
       )

@@ -74,7 +74,8 @@ snapshot_state="$(jq -r '
   | map(tostring)
   | join("|")
 ' <<< "$snapshot_json")"
-[[ "$snapshot_state" == "1|true|0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f|93|154|2|0|155" ]] || {
+# O recibo histórico de 154 pares permanece íntegro, mas não comprova o universo atual de 152.
+[[ "$snapshot_state" == "1|false|0f8dd668625c620f4fee22439c8c450c2f92edb18e6edd5e0d49faed9ea5751f|93|154|2|0|155" ]] || {
   echo "FAIL: snapshot strict inesperado $snapshot_state" >&2
   exit 1
 }
