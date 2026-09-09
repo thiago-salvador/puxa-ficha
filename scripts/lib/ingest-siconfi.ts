@@ -10,6 +10,12 @@ const CODIGO_IBGE: Record<string, number> = {
 }
 const BASE_URL = "https://apidatalake.tesouro.gov.br/ords/siconfi/tt"
 
+export function anosSiconfi(agora = new Date()): number[] {
+  const ultimoEncerrado = agora.getUTCFullYear() - 1
+  if (!Number.isInteger(ultimoEncerrado) || ultimoEncerrado < 2022) throw new Error("SICONFI: data de referência inválida")
+  return Array.from({ length: ultimoEncerrado - 2022 + 1 }, (_, index) => 2022 + index)
+}
+
 export interface SiconfiItem {
   exercicio: number; periodo: number; cod_ibge: number; uf: string
   esfera: string; co_poder?: string; anexo: string
@@ -83,9 +89,10 @@ export async function ingestSiconfi(
   options: { estados?: string[]; anos?: number[]; deps?: Partial<Dependencies> } = {},
 ): Promise<IngestResult[]> {
   const deps = { ...defaults, ...options.deps }
-  const anos = options.anos ?? [2022, 2023, 2024]
-  if (!anos.length || anos.some((ano) => ![2022, 2023, 2024].includes(ano))) {
-    throw new Error("SICONFI: informe exercícios suportados (2022, 2023, 2024)")
+  const encerrados = anosSiconfi()
+  const anos = options.anos ?? encerrados
+  if (!anos.length || anos.some((ano) => !encerrados.includes(ano))) {
+    throw new Error("SICONFI: informe exercícios suportados, de 2022 ao último ano encerrado")
   }
   const results: IngestResult[] = []
   for (const estado of options.estados ?? Object.keys(CODIGO_IBGE)) {

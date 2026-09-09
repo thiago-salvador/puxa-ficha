@@ -1,0 +1,3274 @@
+{
+  "schema_version": 1,
+  "mode": "read_only",
+  "project_ref": "wskpzsobvqwhnbsdsmok",
+  "checked_at": "2026-09-09T16:10:02.928Z",
+  "marker": "c8-reconciliacao:2026-09-09T16:10:02.928Z",
+  "privacy": "Somente projeção pública dos campos utilizados. Corpo integral contém documentos pessoais e não foi persistido; raw_response_sha256 corresponde aos bytes integrais recebidos.",
+  "constraints": "Nenhuma escrita remota; nenhum recibo emitido; nenhuma consulta nominal. Recibos propostos limitam fonte e período, não concluem ausência universal.",
+  "sources": [
+    {
+      "slug": "augusto-cury",
+      "candidato_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551547",
+      "checked_at": "2026-09-09T16:10:01.771Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "acb44a1d388e93086f38c8698fdb86cadc095e76be2f5c0f27ed5d3c2502c413",
+      "projection_sha256": "1380d76a32b65f9254cbf0bb9d854ce240a8fffaa462d20d51d0d29a9a41e675",
+      "projection": {
+        "id": 280002551547,
+        "nomeCompleto": "AUGUSTO JORGE CURY",
+        "cargo": "Presidente",
+        "ano": 2026,
+        "ufCandidatura": "BR",
+        "localCandidatura": "BRASIL",
+        "totalDeBens": 242281162.52,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 56,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "280002551547",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cadu-xavier",
+      "candidato_id": "afb87309-0aee-4ecc-9ac6-e8402902321a",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RN/20322002026/candidato/200002534001",
+      "checked_at": "2026-09-09T16:10:01.765Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "04477a1170311dc13a97e0f941624a87257b06e6288ffcb24441b261e52c3329",
+      "projection_sha256": "5668dfa29bd421df196a742e83c2648f6f380735ca15df4af294b7777d25b104",
+      "projection": {
+        "id": 200002534001,
+        "nomeCompleto": "CARLOS EDUARDO XAVIER",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "RN",
+        "localCandidatura": "RIO GRANDE DO NORTE",
+        "totalDeBens": 100000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "200002534001",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "camila-falcao",
+      "candidato_id": "d4f97034-9452-4517-88ba-afb29831adaa",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002537320",
+      "checked_at": "2026-09-09T16:10:01.784Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "f976348a5fecc0184e348fb377ab44b432d8b181c885fbe15248c40cc5bd74c0",
+      "projection_sha256": "e5d42eceb3200018e412fe43a48e2a5e1bfe77027937c7a8dec67a8840551329",
+      "projection": {
+        "id": 170002537320,
+        "nomeCompleto": "MARIA CAMILA DA SILVA FALCÃO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PE",
+        "localCandidatura": "PERNAMBUCO",
+        "totalDeBens": 85000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "170002537320",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "carlos-machado",
+      "candidato_id": "4415870d-5d02-426a-9d7c-f42091788cee",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002550913",
+      "checked_at": "2026-09-09T16:10:01.789Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "cb037383075240576edd27bd33aa4c64057218aa824f43ed3f625afd41d7c3ab",
+      "projection_sha256": "6e7401d8ec025e6c20a81a674856d5255d7e2eb47586e65ae145a57670c7acd5",
+      "projection": {
+        "id": 250002550913,
+        "nomeCompleto": "CARLOS ALBERTO MACHADO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "SP",
+        "localCandidatura": "SÃO PAULO",
+        "totalDeBens": 27000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "250002550913",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "250002227501",
+            "cargo": "Vice-prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "candidato_id": "86ffacf8-e5d4-4f9b-a808-0f0cb551d832",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002547415",
+      "checked_at": "2026-09-09T16:10:01.832Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "367e894c124b0b6e240848eb88e6aebc6572992258f8ee462bff7f5705d16ff9",
+      "projection_sha256": "54c2b37192b0bdd68d83214f4a9acce9c81c41e3996da8b313d24dabd144f28d",
+      "projection": {
+        "id": 260002547415,
+        "nomeCompleto": "JOSE HELTON SILVA MONTEIRO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "SE",
+        "localCandidatura": "SERGIPE",
+        "totalDeBens": 47000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "260002547415",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "elisson-ferreira",
+      "candidato_id": "07472c9c-5a4f-47b0-9000-d28fb031303f",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551298",
+      "checked_at": "2026-09-09T16:10:01.828Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "c9c52e8c06c3c57146c1cfe074ce181800be22297d85c8a881e19013e2d3cb57",
+      "projection_sha256": "e49c8c1ef769152e18ec1c7c973a95036df22f1f5900eadb09ff6c128ee035a6",
+      "projection": {
+        "id": 70002551298,
+        "nomeCompleto": "ELISSON FERREIRA FREIRE",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "DF",
+        "localCandidatura": "DISTRITO FEDERAL",
+        "totalDeBens": 251374,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 3,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "70002551298",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "eudo-raffael",
+      "candidato_id": "d0f03594-dad5-41e4-a0d4-6c2de53337f6",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/AC/20322002026/candidato/10002549500",
+      "checked_at": "2026-09-09T16:10:02.463Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "2adc9784125cfec33e1d40c7c1ddeed31728738bb4df65f60bc9d9beea1fc44b",
+      "projection_sha256": "c7eaeb376bc0a11c7b40a6c3eaa46aeffb0b6f6a60767fb980f169caf60f0e46",
+      "projection": {
+        "id": 10002549500,
+        "nomeCompleto": "EUDO RAFFAEL LIMA DA SILVA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "AC",
+        "localCandidatura": "ACRE",
+        "totalDeBens": 165000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "10002549500",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "francisco-jurity",
+      "candidato_id": "f7f53508-4b1c-4138-aca9-242d9653fb8e",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002548565",
+      "checked_at": "2026-09-09T16:10:01.839Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "c7b51d75caa70e71ae69c2a664b8b65c924cc36769a30b486371fda197f84381",
+      "projection_sha256": "d64695133b03526c7648cff28a50558401fd24564e51e79882bf60efdd8294fe",
+      "projection": {
+        "id": 180002548565,
+        "nomeCompleto": "FRANCISCO JOSÉ MARTINS JURITY",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 998500,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 6,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002548565",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2010,
+            "id": "180000000108",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Registro negado antes da eleição"
+          },
+          {
+            "nrAno": 2006,
+            "id": "10460",
+            "cargo": "1º Suplente Senador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "candidato_id": "4b079fd2-53ac-4b37-b735-3216d0817607",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002549970",
+      "checked_at": "2026-09-09T16:10:02.530Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "863f75db77666445f5b96b0822f11b74d861ca13036e6072d20802007b03a81d",
+      "projection_sha256": "0c76f6159a59d8b74bc81e7907f10efd74879e59088db14bb93b14beaac172de",
+      "projection": {
+        "id": 180002549970,
+        "nomeCompleto": "GISVALDO OLIVEIRA DA SILVA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 100000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002549970",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "huggo-leonardo",
+      "candidato_id": "91b1c8db-cec7-48aa-9619-c23c9a0e4583",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002540417",
+      "checked_at": "2026-09-09T16:10:02.508Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "b147dc8076ba9db16d898d3a055dfb66a9ab513fbd81b4679cdb91824a727edf",
+      "projection_sha256": "14056bc5a6f282b6094b39bb228a6eb2816d2527ea17d66188a20f8f2d89d02b",
+      "projection": {
+        "id": 60002540417,
+        "nomeCompleto": "HUGGO LEONARDO DE LIMA ANASTACIO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "CE",
+        "localCandidatura": "CEARÁ",
+        "totalDeBens": 256000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "60002540417",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "kiko-caputo",
+      "candidato_id": "80ed7da6-fe5d-4b68-85a3-440f5154b7d6",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002547775",
+      "checked_at": "2026-09-09T16:10:02.500Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "d5ef9a77bf75b8ebacca9f18a4c0aa9519a71099ca13ff4a77327ba55f114d2c",
+      "projection_sha256": "c3a6657c1a34d9bfe0b1b9b353231adbe4728adb06c6766c00f896dde1a9b448",
+      "projection": {
+        "id": 70002547775,
+        "nomeCompleto": "FRANCISCO QUEIROZ CAPUTO NETO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "DF",
+        "localCandidatura": "DISTRITO FEDERAL",
+        "totalDeBens": 47383036.13,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 25,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "70002547775",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lais-chaud",
+      "candidato_id": "05bc8f5b-1419-4fb6-a34b-6e06263bb8f1",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002550544",
+      "checked_at": "2026-09-09T16:10:02.510Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "1d53bc0d3fea12e0e1de526e1cd38d2d0130e3d1e6ba8c83a5cf41dd26cee014",
+      "projection_sha256": "d3721964e1eef5ef81d7be7943a1b40c3dd80cdfb6263c0ace56947c13945b8e",
+      "projection": {
+        "id": 240002550544,
+        "nomeCompleto": "LAÍS PAGANELLI CHAUD",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "SC",
+        "localCandidatura": "SANTA CATARINA",
+        "totalDeBens": 518.45,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "240002550544",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "luiz-franca",
+      "candidato_id": "ce9beb5d-be08-4204-99c9-e94f7276d3e7",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PR/20322002026/candidato/160002551353",
+      "checked_at": "2026-09-09T16:10:02.578Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "26b41ff281db196035a00b011d3449c1aec9118e73a7cb248df2c9567327543f",
+      "projection_sha256": "159173f46851f2641cc88a797f54e8602d68b582949f75fc44e2f6448c3b432d",
+      "projection": {
+        "id": 160002551353,
+        "nomeCompleto": "LUIZ FELIPE MARTINS FRANCA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PR",
+        "localCandidatura": "PARANÁ",
+        "totalDeBens": 144999.99,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 3,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "160002551353",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "candidato_id": "63ab5e8d-4255-431a-8eac-536ae13e876f",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002544985",
+      "checked_at": "2026-09-09T16:10:02.570Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "e18a8914c41af492db3871da06029a7593b6ecc79509d3628ff0985b930bf3b2",
+      "projection_sha256": "773c7518bc6871d0499cfd84b0120bf0ef81dabf8f418dfc24661466d34248d0",
+      "projection": {
+        "id": 110002544985,
+        "nomeCompleto": "NATASHA SLHESSARENKO FRAIFE BARRETO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MT",
+        "localCandidatura": "MATO GROSSO",
+        "totalDeBens": 7344667.74,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 23,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "110002544985",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "orleans-brandao",
+      "candidato_id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002543869",
+      "checked_at": "2026-09-09T16:10:02.563Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "89cdcf6db0e2ea11cd3993e795924cf987b12042deee59da54f8630df6de42f4",
+      "projection_sha256": "c81ca0e1681a8273a719583e62a0f4ab9d061446e86068f715b1ce4ed10f30d7",
+      "projection": {
+        "id": 100002543869,
+        "nomeCompleto": "CARLOS ORLEANS BRAIDE BRANDÃO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MA",
+        "localCandidatura": "MARANHÃO",
+        "totalDeBens": 2515192.39,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 9,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "100002543869",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "pedro-abib",
+      "candidato_id": "d4aa4311-0b4a-4adc-a338-b01e8118d6a9",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002551251",
+      "checked_at": "2026-09-09T16:10:02.590Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "b43feb35061006798d0d942918386fbe67f07243295254272300f23b05fd317d",
+      "projection_sha256": "a0c50ca8af7b7dd1ea5994ec31e072c8c42504aec22c18fa73b5d482f7e19d95",
+      "projection": {
+        "id": 220002551251,
+        "nomeCompleto": "PEDRO ABIB HECKTHEUER",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "RO",
+        "localCandidatura": "RONDÔNIA",
+        "totalDeBens": 2936485,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 6,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "220002551251",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rafaell-milas",
+      "candidato_id": "7bb3e87b-c808-48df-8ddd-fd10c9a460f1",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002543953",
+      "checked_at": "2026-09-09T16:10:02.631Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "49ada9b5703875275de465228f8ae7399f0c0dda2587b0d7f616e230ec432eab",
+      "projection_sha256": "ae86e7abbe66941476e97732ef2fe3681131360bc1c0484b121bf08548a49589",
+      "projection": {
+        "id": 110002543953,
+        "nomeCompleto": "RAFAELL MILAS DE OLIVEIRA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MT",
+        "localCandidatura": "MATO GROSSO",
+        "totalDeBens": 550000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "110002543953",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "renan-hallais",
+      "candidato_id": "1f0abb3a-c57b-462b-a538-15ed782276cb",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002540337",
+      "checked_at": "2026-09-09T16:10:02.627Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "4f6518e3977d639127629722860e83d5b10f09da1f799ddde4d6e60dc2772ade",
+      "projection_sha256": "69cf93daee6d44749551a2292f5b3129aecc0e9c1d142eb983678a1b9781250f",
+      "projection": {
+        "id": 170002540337,
+        "nomeCompleto": "RENAN LUCIO SANT ANNA HALLAIS",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PE",
+        "localCandidatura": "PERNAMBUCO",
+        "totalDeBens": 345182.87,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 29,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "170002540337",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "renan-santos",
+      "candidato_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002540694",
+      "checked_at": "2026-09-09T16:10:02.613Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "3765725c5ad36f0712b0528e4bbb0c8a92edc78d515078fd2b0285f82f595b17",
+      "projection_sha256": "e8878bb13c4ebef7854495c2360a7a3a7a874eac98996db151ee40e21e930be7",
+      "projection": {
+        "id": 280002540694,
+        "nomeCompleto": "RENAN ANTONIO FERREIRA DOS SANTOS",
+        "cargo": "Presidente",
+        "ano": 2026,
+        "ufCandidatura": "BR",
+        "localCandidatura": "BRASIL",
+        "totalDeBens": 795089,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 4,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "280002540694",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "renato-gomes",
+      "candidato_id": "0f65eafa-82d8-4ac8-8ef4-674e42d2d5d0",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002549681",
+      "checked_at": "2026-09-09T16:10:02.638Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "c8837c85d94458ea6707854ac11c748c81bb99e420b11dcd1a42450f865ace39",
+      "projection_sha256": "638fec08a06a3fddac0bcbd4811fdf312c1ad8c3b6ecb5e74ed205a045801a25",
+      "projection": {
+        "id": 120002549681,
+        "nomeCompleto": "RENATO WANDERLEY GOMES",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MS",
+        "localCandidatura": "MATO GROSSO DO SUL",
+        "totalDeBens": 922938.36,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 5,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "120002549681",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "candidato_id": "dd57b875-65c4-44bb-954b-bfac352d7ead",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551557",
+      "checked_at": "2026-09-09T16:10:02.678Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "e4c0a17dac1edc1adaf2286b02c15ee1c9b83f773d978a25bb8f5f88929221d5",
+      "projection_sha256": "994ae87d4675d3b7c8ca62054f0f23aa780edeb20ffac4db0a14534cad91a14d",
+      "projection": {
+        "id": 70002551557,
+        "nomeCompleto": "RICARDO GARCIA CAPPELLI",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "DF",
+        "localCandidatura": "DISTRITO FEDERAL",
+        "totalDeBens": 1226908.08,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 6,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "70002551557",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2008,
+            "id": "5159",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "candidato_id": "de4fbc20-461f-4043-944f-df5fa6210ae3",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002540204",
+      "checked_at": "2026-09-09T16:10:02.678Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "376fc6234a9a224be7b718769cd9624b9830ac011e6b58faf11d2a46a5828031",
+      "projection_sha256": "49313ba3b01d9ffd77963328db2a40c39c08c78c25ece40bbc89177fd5fa30a5",
+      "projection": {
+        "id": 150002540204,
+        "nomeCompleto": "YURI EZEQUIEL DE LIMA SILVA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PB",
+        "localCandidatura": "PARAÍBA",
+        "totalDeBens": 353.89,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "150002540204",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "150002023904",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "andre-luis",
+      "candidato_id": "b7a29b07-90d2-44c6-979d-d4d526321865",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002544076",
+      "checked_at": "2026-09-09T16:10:02.671Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "0c24c008c578912391c4f9c9a7d02b6b3de9c05c30ffea0e6e977cdd7eb3beee",
+      "projection_sha256": "9160c5f26e6f1a54f69ebea2fc0721b1badde4df62ad24c9bdafb0e0e0df5249",
+      "projection": {
+        "id": 100002544076,
+        "nomeCompleto": "ANDRÉ LUÍS CAETANO DOS SANTOS",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MA",
+        "localCandidatura": "MARANHÃO",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "100002544076",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ben-mendes",
+      "candidato_id": "1787f63a-1d2b-473f-a0bf-69f5d103a560",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544411",
+      "checked_at": "2026-09-09T16:10:02.676Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "9a6390775fa6a08f2e6b76b90f6b32e713f64abe718efbea5ed04cb65d4ab4b2",
+      "projection_sha256": "1379c795a4ba4765c858a51f935e0abd12b9b3639fc5512b248dceff70dc65ce",
+      "projection": {
+        "id": 130002544411,
+        "nomeCompleto": "BENONI BENJAMIN CARDOSO MENDES",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MG",
+        "localCandidatura": "MINAS GERAIS",
+        "totalDeBens": 80000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 3,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "130002544411",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "breno-barcelar",
+      "candidato_id": "2a636465-411c-4599-9d43-51aa80b78f3c",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/ES/20322002026/candidato/80002541012",
+      "checked_at": "2026-09-09T16:10:02.719Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "49a2d1c58d3860b94defdcc5a8ba6f8bf415af0b82de4a598af8327fd28c3256",
+      "projection_sha256": "9dbd39c03c83887ba373b3485c0a3bf6ce4d3f983bf39ef67e2ec8f32435baee",
+      "projection": {
+        "id": 80002541012,
+        "nomeCompleto": "BRENO AUGUSTO FAGUNDES BARCELOS",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "ES",
+        "localCandidatura": "ESPÍRITO SANTO",
+        "totalDeBens": 50001,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 3,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "80002541012",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "coronel-busnello",
+      "candidato_id": "23dc2553-0fd3-489f-9ac1-4ed50b8ec5e3",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002544120",
+      "checked_at": "2026-09-09T16:10:02.716Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "bfec74fa16486fbc28bc2aac2d3bd7b164a501de2f267af640bbe2811dbdbfde",
+      "projection_sha256": "28cf512e29322f86a8937384ce9e6835b0f078c8a0877cb7cd43fbc9046850fc",
+      "projection": {
+        "id": 190002544120,
+        "nomeCompleto": "JOÃO JACQUES SOARES BUSNELLO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "RJ",
+        "localCandidatura": "RIO DE JANEIRO",
+        "totalDeBens": 950000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "190002544120",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2022,
+            "id": "190001603420",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2018,
+            "id": "190000626280",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "edmilson-costa",
+      "candidato_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551975",
+      "checked_at": "2026-09-09T16:10:02.703Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "c3670b6333680edf885a2dd5dc19c1d9f59e14dc5050b55a2567b42fb2fb1049",
+      "projection_sha256": "ac2b0dbad2efd29bbcf6dc73a81b8637a70c7e21b38f81425b8dde0b9a837c14",
+      "projection": {
+        "id": 280002551975,
+        "nomeCompleto": "EDMILSON SILVA COSTA",
+        "cargo": "Presidente",
+        "ano": 2026,
+        "ufCandidatura": "BR",
+        "localCandidatura": "BRASIL",
+        "totalDeBens": 454485.68,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 4,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "280002551975",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2014,
+            "id": "250000002333",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "250000018941",
+            "cargo": "Vice-prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2010,
+            "id": "280000000018",
+            "cargo": "Vice-Presidente",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2008,
+            "id": "8882",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "candidato_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/AM/20322002026/candidato/40002535267",
+      "checked_at": "2026-09-09T16:10:02.723Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "0adae8498ca17cccc3d8772364faec15824d4024ab8d6cad9035fff2ebaa8bf8",
+      "projection_sha256": "64f0ca5b5449a7591b711bbb5a92ee71b92ecce4c5313c104a361f5322e2f0ba",
+      "projection": {
+        "id": 40002535267,
+        "nomeCompleto": "GILBERTO VASCONCELOS DA SILVA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "AM",
+        "localCandidatura": "AMAZONAS",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "40002535267",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "40001934755",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "40000686956",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2014,
+            "id": "40000000006",
+            "cargo": "Vice-governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "40000005563",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2010,
+            "id": "40000000279",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2008,
+            "id": "3235",
+            "cargo": "Vice-Prefeito",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2006,
+            "id": "10035",
+            "cargo": "1º Suplente Senador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2004,
+            "id": "866",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "candidato_id": "3824c464-5087-471c-b7ba-1f8d59f3c070",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002536575",
+      "checked_at": "2026-09-09T16:10:02.764Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "d643f08028287e67d92c28b35704eb91a81a68f410370cd1f70813da2746c3a0",
+      "projection_sha256": "9f3fb26e68e5c5975ff49a18bbc444ce370b1c93cda54b99c3a518e6c5e9537b",
+      "projection": {
+        "id": 170002536575,
+        "nomeCompleto": "GUILHERME FONSECA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PE",
+        "localCandidatura": "PERNAMBUCO",
+        "totalDeBens": 300000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "170002536575",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "gustavo-henrique",
+      "candidato_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002550421",
+      "checked_at": "2026-09-09T16:10:02.764Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "7408cdac6dbccf38f7f22d0a5cdb1a4cb2d73aeb209752eb0320d5b1297c6576",
+      "projection_sha256": "3771bc923ad9f8f1979bfade2f2a3eb718be8c5b20a466c8b76351833669edb1",
+      "projection": {
+        "id": 180002550421,
+        "nomeCompleto": "GUSTAVO HENRIQUE LEITE FEIJÓ",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 148000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002550421",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "180001952892",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2022,
+            "id": "180001643494",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "180000726521",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2016,
+            "id": "180000009933",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2014,
+            "id": "180000000014",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "180000006226",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2008,
+            "id": "8897",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Registro negado antes da eleição"
+          },
+          {
+            "nrAno": 2004,
+            "id": "262",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "candidato_id": "10874c20-5864-42f9-a83e-0610502381c6",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002550198",
+      "checked_at": "2026-09-09T16:10:02.764Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "9c34cbf2b60612a800185fadf3e9df4d53e198439612736ce2b6c5d2837e0147",
+      "projection_sha256": "b60a2413e05a75fccccc129a523b9b96750a4e6518ec017cd824bea0f5e9db59",
+      "projection": {
+        "id": 120002550198,
+        "nomeCompleto": "JEFERSON JOSE BEZERRA",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MS",
+        "localCandidatura": "MATO GROSSO DO SUL",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "120002550198",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "120002315556",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2022,
+            "id": "120001611531",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "120000850578",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2016,
+            "id": "120000001730",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "candidato_id": "baf8abd2-9386-48df-876e-1e8b16fa1e7f",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002541258",
+      "checked_at": "2026-09-09T16:10:02.764Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "f10e9549a5d76649e00bd2155440128b4184b696e58101858f13674411cbdc1b",
+      "projection_sha256": "c7ed0dae11f59d1f9d96e4c25eaecf9e1b605377cb43ae66baf5e87b3c139fed",
+      "projection": {
+        "id": 170002541258,
+        "nomeCompleto": "JEREMIAS COSMO SILVA DOS SANTOS",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PE",
+        "localCandidatura": "PERNAMBUCO",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "170002541258",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "170002143292",
+            "cargo": "Vice-prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "170000735134",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2018,
+            "id": "170000607399",
+            "cargo": "Deputado Estadual",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2008,
+            "id": "8895",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lourdes-melo",
+      "candidato_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002553722",
+      "checked_at": "2026-09-09T16:10:02.822Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "679f7916ca7c3f32510cf34f4e8332ad66fe2a2f62a636cec48896ed4855f489",
+      "projection_sha256": "6f422b52edf9c5c2a1446dccd2f06bc60b04430d80cb8847f9ed1fea9db18730",
+      "projection": {
+        "id": 180002553722,
+        "nomeCompleto": "MARIA DE LOURDES SOARES MELO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 450000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002553722",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "180002337603",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2022,
+            "id": "180001713460",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "180001237871",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2018,
+            "id": "180000626503",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2016,
+            "id": "180000008711",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2014,
+            "id": "180000000138",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "180000012118",
+            "cargo": "Vice-prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2010,
+            "id": "180000000312",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2008,
+            "id": "8738",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2006,
+            "id": "10000",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "lucia-santos",
+      "candidato_id": "af1bd42d-8ee5-4b53-9267-0a0114b74956",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544216",
+      "checked_at": "2026-09-09T16:10:02.815Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "f8db30229031a365ee50319beb577fc8eea4697f5f321b06acd94c6fe3edf6c7",
+      "projection_sha256": "de7c7e1b2a8240f65f98a82cd3cbf95f59edffb6aa8d7c32a6f4b1508c5a4bcc",
+      "projection": {
+        "id": 180002544216,
+        "nomeCompleto": "LÚCIA MARIA DE SOUSA AGUIAR DOS SANTOS",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 799134.68,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 8,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002544216",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2020,
+            "id": "180001057808",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2018,
+            "id": "180000604119",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "mauricio-coelho",
+      "candidato_id": "c7a28e0e-06d0-412b-98ee-b79a7a4354f9",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002553058",
+      "checked_at": "2026-09-09T16:10:02.801Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "e06e1408a9ddcc58eb8da2a888a648299aa3529c81be8d18e5f2bae5c4d9d291",
+      "projection_sha256": "105a8d0c907f3f47685b5cb3c68a7c2d4c24450f79c1435909b22d3a295bf0ba",
+      "projection": {
+        "id": 110002553058,
+        "nomeCompleto": "MAURICIO COELHO DE SOUZA JUNIOR",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MT",
+        "localCandidatura": "MATO GROSSO",
+        "totalDeBens": 2159005.73,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 4,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "110002553058",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "priscila-voigt",
+      "candidato_id": "25b8bb92-4c1e-43c0-a4eb-d3c65ac5867b",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RS/20322002026/candidato/210002533355",
+      "checked_at": "2026-09-09T16:10:02.811Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "ba7e4265cf8298d41f9720ad4d417d1223173ff7c3f1d7b1181c0b5f69d99a85",
+      "projection_sha256": "0ea55b885f9329f3e4286634ca11dfcf5ddd4ee87aa34808fb75bf18e6a4129d",
+      "projection": {
+        "id": 210002533355,
+        "nomeCompleto": "PRISCILA VOIGT SEVERIANO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "RS",
+        "localCandidatura": "RIO GRANDE DO SUL",
+        "totalDeBens": 1000,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 1,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "210002533355",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "210001945324",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2022,
+            "id": "210001597514",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "210000636284",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2016,
+            "id": "210000006967",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ralf-zimmer",
+      "candidato_id": "f758690b-3960-485d-83c0-5119ca839612",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002552157",
+      "checked_at": "2026-09-09T16:10:02.861Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "3d948092c6b7a518095bd009d388fb9aca66f590372983bb0ecf83ab62a3c40f",
+      "projection_sha256": "decd339466be656b72254133abff7d120ac4738bf9e4af11bc731b603870681a",
+      "projection": {
+        "id": 240002552157,
+        "nomeCompleto": "RALF GUIMARAES ZIMMER JUNIOR",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "SC",
+        "localCandidatura": "SANTA CATARINA",
+        "totalDeBens": 1426599.97,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 2,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "240002552157",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2022,
+            "id": "240001611148",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2018,
+            "id": "240000609638",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "ravenna-castro",
+      "candidato_id": "ae28abd5-e231-405a-938e-85e8c6d64d75",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002548388",
+      "checked_at": "2026-09-09T16:10:02.859Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "2e335ac69fb1e776527729ce01f99826e8663573110983265aeb35b8bbf9bdb5",
+      "projection_sha256": "1e344af539283a6a9745bec07328eba7bca79726d2bc6ffec335887b5c803383",
+      "projection": {
+        "id": 180002548388,
+        "nomeCompleto": "RAVENNA DE CASTRO LIMA AZEVEDO",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "PI",
+        "localCandidatura": "PIAUÍ",
+        "totalDeBens": 91600.52,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 6,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "180002548388",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "180001905550",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2022,
+            "id": "180001713732",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "180001238894",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2018,
+            "id": "180000608796",
+            "cargo": "Deputado Estadual",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "candidato_id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002552487",
+      "checked_at": "2026-09-09T16:10:02.843Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "f1635b9dd5231ed6a996be9e942c9bdf48cf40af5bf27033501dede3381fbfb3",
+      "projection_sha256": "4e983c8959d284f39094c30b8bde041d4836ac0f357cf8b27e93bfbe01a97e40",
+      "projection": {
+        "id": 280002552487,
+        "nomeCompleto": "RUI COSTA PIMENTA",
+        "cargo": "Presidente",
+        "ano": 2026,
+        "ufCandidatura": "BR",
+        "localCandidatura": "BRASIL",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "280002552487",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2014,
+            "id": "280000000081",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2010,
+            "id": "280000000007",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2006,
+            "id": "27",
+            "cargo": "Presidente",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "samuel-costa",
+      "candidato_id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002550927",
+      "checked_at": "2026-09-09T16:10:02.867Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "a15e4f0f8387c3ffc1d40c6d2b9c399dbab018100d692aca7e0dfd2f19ae3e1a",
+      "projection_sha256": "a06637bb16a8e55decbd720bfccf39fd95b1948f6021074dc0b41861992a69e1",
+      "projection": {
+        "id": 220002550927,
+        "nomeCompleto": "SAMUEL COSTA MENEZES",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "RO",
+        "localCandidatura": "RONDÔNIA",
+        "totalDeBens": 3631297.68,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 18,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "220002550927",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "220002330987",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2022,
+            "id": "220001612149",
+            "cargo": "Deputado Federal",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "220000685117",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2014,
+            "id": "220000000176",
+            "cargo": "Deputado Estadual",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2012,
+            "id": "220000000290",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "candidato_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002534190",
+      "checked_at": "2026-09-09T16:10:02.911Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "795be022682c2eb5d22ea80096b987cebf4edf99736dac1a521c4c3c5ea23f69",
+      "projection_sha256": "ac1455eff68e2f8200745fa3ca6b387c9ffb8afcf7f51deddd65e86298077784",
+      "projection": {
+        "id": 100002534190,
+        "nomeCompleto": "SAULO COSTA ARCANGELI",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MA",
+        "localCandidatura": "MARANHÃO",
+        "totalDeBens": 656409.64,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 6,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "100002534190",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2024,
+            "id": "100001936952",
+            "cargo": "Prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2022,
+            "id": "100001600010",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "100000718204",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2018,
+            "id": "100000602467",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2016,
+            "id": "100000021613",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2014,
+            "id": "100000000001",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "100000000125",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2010,
+            "id": "100000000270",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "serley-leal",
+      "candidato_id": "38149b1c-1a82-482f-bb46-a9c7fea3afa6",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002533729",
+      "checked_at": "2026-09-09T16:10:02.902Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "da10bf1eba018b348ac742079fd4c2e812a360eecf3de417a32cd2164e620d6f",
+      "projection_sha256": "4c93fbadcb731cf9f8ddfbb017a756a196505bd8cad5cdb6d0a8752aac6ce1bb",
+      "projection": {
+        "id": 60002533729,
+        "nomeCompleto": "SERLEY DE SOUZA LEAL",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "CE",
+        "localCandidatura": "CEARÁ",
+        "totalDeBens": 88094.69,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 4,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "60002533729",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2022,
+            "id": "60001634109",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2020,
+            "id": "60000717317",
+            "cargo": "Vice-prefeito",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2012,
+            "id": "60000015399",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "tulio-lopes",
+      "candidato_id": "a61bb9e4-2c0d-4848-8696-3fe26071fdbd",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544122",
+      "checked_at": "2026-09-09T16:10:02.917Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "f26b36c824c507eb3bbfa694fcc9ce12a6a31fdc53230c1c5eeb9e0590c2a622",
+      "projection_sha256": "fdbf11ad90a03b9ddf44a12ead28d82bcb709630fa743abe8d5205dbd27e9b76",
+      "projection": {
+        "id": 130002544122,
+        "nomeCompleto": "TULIO CESAR DIAS LOPES",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "MG",
+        "localCandidatura": "MINAS GERAIS",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "130002544122",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          },
+          {
+            "nrAno": 2018,
+            "id": "130000606639",
+            "cargo": "Senador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2016,
+            "id": "130000083665",
+            "cargo": "Vereador",
+            "situacaoTotalizacao": "Suplente"
+          },
+          {
+            "nrAno": 2014,
+            "id": "130000001766",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Não eleito"
+          },
+          {
+            "nrAno": 2006,
+            "id": "10100",
+            "cargo": "Deputado Estadual",
+            "situacaoTotalizacao": "Não eleito"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "witer-naves",
+      "candidato_id": "3d479acc-24f9-48b0-909d-604819191a1d",
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/TO/20322002026/candidato/270002539187",
+      "checked_at": "2026-09-09T16:10:02.911Z",
+      "http": 200,
+      "identity_exact": true,
+      "raw_response_sha256": "6a27329847cb917cbfc3da2c645ef4f5a1b4d09dbbdc2f1b0cacb04f1b902624",
+      "projection_sha256": "ba1990b82dde96ad21c92ff8da3bb1632fc42a7346e3cc750105c0bf8ec55af9",
+      "projection": {
+        "id": 270002539187,
+        "nomeCompleto": "WITER FONSECA NAVES",
+        "cargo": "Governador",
+        "ano": 2026,
+        "ufCandidatura": "TO",
+        "localCandidatura": "TOCANTINS",
+        "totalDeBens": 0,
+        "st_DIVULGA_BENS": true,
+        "quantidade_bens": 0,
+        "eleicoesAnteriores": [
+          {
+            "nrAno": 2026,
+            "id": "270002539187",
+            "cargo": "Governador",
+            "situacaoTotalizacao": "Concorrendo"
+          }
+        ]
+      }
+    }
+  ],
+  "eligible": [
+    {
+      "slug": "augusto-cury",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551547",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "augusto-cury",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "16e7c300-f336-4a87-9372-b4223ab5d7b9",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "cadu-xavier",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RN/20322002026/candidato/200002534001",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "cadu-xavier",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "5aa6b6b0-bdb9-49ab-8bd7-6776c35cb636",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "camila-falcao",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002537320",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "camila-falcao",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "b1d62271-b388-4d54-93d7-38a8f85a7f30",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "carlos-machado",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002550913",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "carlos-machado",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "8166a69a-9e53-4f34-9d29-7a5842a36292",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "carlos-machado",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002550913",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "carlos-machado",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; consulta nominal recusada por identidade insuficiente",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002547415",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "dr-helton-monteiro",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "b44ad85e-9751-47a0-b85e-f3ff51e737c8",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "elisson-ferreira",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551298",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "elisson-ferreira",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "4749425e-c070-4512-ab88-6e44014b7aee",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "eudo-raffael",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/AC/20322002026/candidato/10002549500",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "eudo-raffael",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "d00f6176-baab-4c12-8d3d-761093e95f49",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "francisco-jurity",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002548565",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "francisco-jurity",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "9c171ffb-bf6a-47ba-bca2-dafe16cafa5c",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002549970",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "gisvaldo-oliveira",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "d93ab2d0-5f87-4584-8d8c-80ccd694a056",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "huggo-leonardo",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002540417",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "huggo-leonardo",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "2a8df404-f92d-4588-bf40-a9e4fd097dfe",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "kiko-caputo",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002547775",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "kiko-caputo",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "b21fcb4e-0fc9-4a45-bd05-4f4e60c3e198",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "lais-chaud",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002550544",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "lais-chaud",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "ba23b655-9e95-4fa7-a8fa-a2705ab04fa5",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "luiz-franca",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PR/20322002026/candidato/160002551353",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "luiz-franca",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "6d45c4c3-d7a5-4244-b890-7038c29238ce",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002544985",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "natasha-slhessarenko",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "f8a8b2b6-f921-4d1c-835e-6c30dbdd137f",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "orleans-brandao",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002543869",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "orleans-brandao",
+        "resultado": "indeterminado",
+        "detalhe": "O registro TSE #NULO não autoriza atribuir bens ou declaração negativa a esta identidade; nenhum patrimônio do governador homônimo foi transferido.",
+        "executado_em": "2026-08-12T17:17:12+00:00",
+        "url": null
+      },
+      "persisted_row_id": "d81f0b4b-3fe2-47fc-93b1-c65640bfe0ea",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "pedro-abib",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002551251",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "pedro-abib",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "2d63ceab-87a0-41d6-99b6-d3b0362e0988",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "rafaell-milas",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002543953",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "rafaell-milas",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "5293a251-09ee-450b-9dd4-65a4d72490a7",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "renan-hallais",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002540337",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "renan-hallais",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "00531d48-d258-47eb-a257-e4f6b66c103b",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "renan-santos",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002540694",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "renan-santos",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "62fe7756-69c4-4883-a306-4f05e24d5d62",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "renato-gomes",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002549681",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "renato-gomes",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "7ecf662c-915c-4faf-97cc-1c6771f45e87",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "ricardo-cappelli",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551557",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "ricardo-cappelli",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "8c805b17-77ca-4c3c-bb73-46691c40581b",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "fonte": "destaques-patrimonio",
+      "resultado": "encontrado",
+      "volume": 1,
+      "ano": 2026,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002540204",
+      "baseline": {
+        "fonte": "destaques-patrimonio",
+        "alvo": "yuri-ezequiel",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; nenhum pacote foi atribuído a esta pessoa",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "persisted_row_id": "4fb6400b-4e49-452c-bd44-7bec7ec3a651",
+      "canonical_projection": {
+        "ano": 2026,
+        "estado": "publicado",
+        "valor_coincide": true,
+        "patrimonio_source_state": {
+          "tipo": "tem_conteudo"
+        },
+        "editorial_highlight_count_change": 0,
+        "card_source_url": null,
+        "note": "Declaração já publicada na aba própria; não cria destaque editorial. DTO canônico mantém fonte_url nula nas declarações publicadas; a URL oficial acompanha o recibo de fonte."
+      },
+      "detalhe": "Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "slug": "yuri-ezequiel",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002540204",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "yuri-ezequiel",
+        "resultado": "indeterminado",
+        "detalhe": "SQ_CANDIDATO ausente; consulta nominal recusada por identidade insuficiente",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "coronel-busnello",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002544120",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "coronel-busnello",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2018,
+        2022
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "gustavo-henrique",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002550421",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "gustavo-henrique",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2004,
+        2008,
+        2012,
+        2014,
+        2016,
+        2020,
+        2022,
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2004, 2008, 2012, 2014, 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "jeferson-bezerra",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002550198",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "jeferson-bezerra",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2016,
+        2020,
+        2022,
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "lucia-santos",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544216",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "lucia-santos",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2018,
+        2020
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2020. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "priscila-voigt",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RS/20322002026/candidato/210002533355",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "priscila-voigt",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2016,
+        2020,
+        2022,
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "ralf-zimmer",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002552157",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "ralf-zimmer",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2018,
+        2022
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "rui-costa-pimenta",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002552487",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "rui-costa-pimenta",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2006,
+        2010,
+        2014
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2006, 2010, 2014. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "samuel-costa",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002550927",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "samuel-costa",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2012,
+        2014,
+        2020,
+        2022,
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2012, 2014, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "saulo-arcangeli",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002534190",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "saulo-arcangeli",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip"
+      },
+      "anos_consultados": [
+        2010,
+        2012,
+        2014,
+        2016,
+        2018,
+        2020,
+        2022,
+        2024
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "serley-leal",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002533729",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "serley-leal",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2012,
+        2020,
+        2022
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2012, 2020, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "slug": "tulio-lopes",
+      "fonte": "destaques-trajetoria",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544122",
+      "baseline": {
+        "fonte": "destaques-trajetoria",
+        "alvo": "tulio-lopes",
+        "resultado": "indeterminado",
+        "detalhe": "SQ validado em coleta oficial já executada, mas o payload preservado não traz resultado eleitoral suficiente; ausência de mandato não foi inferida",
+        "executado_em": "2026-08-11T15:00:00+00:00",
+        "url": null
+      },
+      "anos_consultados": [
+        2006,
+        2014,
+        2016,
+        2018
+      ],
+      "detalhe": "TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2006, 2014, 2016, 2018. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    }
+  ],
+  "blocked": [
+    {
+      "slug": "augusto-cury",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "camila-falcao",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "dr-helton-monteiro",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "elisson-ferreira",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "eudo-raffael",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "francisco-jurity",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2010,
+        2006
+      ],
+      "estados_retornados": [
+        "Registro negado antes da eleição",
+        "Concorrendo"
+      ]
+    },
+    {
+      "slug": "gisvaldo-oliveira",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "huggo-leonardo",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "kiko-caputo",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "lais-chaud",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "luiz-franca",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "natasha-slhessarenko",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "pedro-abib",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "rafaell-milas",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "renan-hallais",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "renan-santos",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "renato-gomes",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "andre-luis",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "ben-mendes",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "breno-barcelar",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "edmilson-costa",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2014,
+        2012,
+        2010,
+        2008
+      ],
+      "estados_retornados": [
+        "Não eleito",
+        "Concorrendo"
+      ]
+    },
+    {
+      "slug": "gilberto-vasconcelos",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2024,
+        2020,
+        2014,
+        2012,
+        2010,
+        2008,
+        2006,
+        2004
+      ],
+      "estados_retornados": [
+        "Não eleito",
+        "Concorrendo"
+      ]
+    },
+    {
+      "slug": "guilherme-fonseca",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "jeremias-cosmo",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2024,
+        2020,
+        2018,
+        2008
+      ],
+      "estados_retornados": [
+        "Não eleito",
+        "Suplente",
+        "Concorrendo"
+      ]
+    },
+    {
+      "slug": "lourdes-melo",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2024,
+        2022,
+        2020,
+        2018,
+        2016,
+        2014,
+        2012,
+        2010,
+        2008,
+        2006
+      ],
+      "estados_retornados": [
+        "Não eleito",
+        "Concorrendo"
+      ]
+    },
+    {
+      "slug": "mauricio-coelho",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    },
+    {
+      "slug": "ravenna-castro",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Situação de pleito anterior inconclusiva ou mandato exige conferência; não converter em ausência",
+      "anos_retornados": [
+        2024,
+        2022,
+        2020,
+        2018
+      ],
+      "estados_retornados": [
+        "Concorrendo",
+        "Não eleito",
+        "Suplente"
+      ]
+    },
+    {
+      "slug": "witer-naves",
+      "fonte": "destaques-trajetoria",
+      "motivo": "Resposta atual sem pleitos anteriores; falta fonte histórica para concluir o recorte de trajetória",
+      "anos_retornados": [],
+      "estados_retornados": []
+    }
+  ],
+  "canonical_entries": [
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "augusto-cury",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002551547",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "cadu-xavier",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RN/20322002026/candidato/200002534001",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "camila-falcao",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002537320",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "carlos-machado",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002550913",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "carlos-machado",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002550913",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "dr-helton-monteiro",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002547415",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "elisson-ferreira",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551298",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "eudo-raffael",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/AC/20322002026/candidato/10002549500",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "francisco-jurity",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002548565",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "gisvaldo-oliveira",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002549970",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "huggo-leonardo",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002540417",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "kiko-caputo",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002547775",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "lais-chaud",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002550544",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "luiz-franca",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PR/20322002026/candidato/160002551353",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "natasha-slhessarenko",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002544985",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "orleans-brandao",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002543869",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "pedro-abib",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002551251",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "rafaell-milas",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002543953",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "renan-hallais",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PE/20322002026/candidato/170002540337",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "renan-santos",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002540694",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "renato-gomes",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002549681",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "ricardo-cappelli",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/DF/20322002026/candidato/70002551557",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-patrimonio",
+      "alvo": "yuri-ezequiel",
+      "escopo": "candidato",
+      "resultado": "encontrado",
+      "volume": 1,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002540204",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; Declaração de bens 2026 conferida no TSE por SQ exato, nome completo, cargo e UF; total coincide ao centavo com a linha publicada. Recorte exclusivo de 2026."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "yuri-ezequiel",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002540204",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "coronel-busnello",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002544120",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "gustavo-henrique",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002550421",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2004, 2008, 2012, 2014, 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "jeferson-bezerra",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MS/20322002026/candidato/120002550198",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "lucia-santos",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544216",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2020. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "priscila-voigt",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RS/20322002026/candidato/210002533355",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2016, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "ralf-zimmer",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SC/20322002026/candidato/240002552157",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2018, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "rui-costa-pimenta",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/BR/20322002026/candidato/280002552487",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2006, 2010, 2014. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "samuel-costa",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RO/20322002026/candidato/220002550927",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2012, 2014, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "saulo-arcangeli",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MA/20322002026/candidato/100002534190",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "serley-leal",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/CE/20322002026/candidato/60002533729",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2012, 2020, 2022. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    },
+    {
+      "fonte": "destaques-trajetoria",
+      "alvo": "tulio-lopes",
+      "escopo": "candidato",
+      "resultado": "sem_achado_no_escopo",
+      "volume": 0,
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MG/20322002026/candidato/130002544122",
+      "detalhe": "c8-reconciliacao:2026-09-09T16:10:02.928Z; TSE por SQ exato, nome completo, cargo e UF: nenhuma eleição direta confirmada nos pleitos retornados 2006, 2014, 2016, 2018. Suplência não exclui posse posterior; cargos de nomeação e pleitos não retornados não foram verificados. Nenhuma ausência absoluta de mandato é afirmada."
+    }
+  ],
+  "execution_contract": "Usar registrarColetaOuFalhar com canonical_entries após reler baseline, dados e coorte. Helper escolhe execucao local:PID ou gh:GITHUB_RUN_ID; o marcador único no detalhe delimita este lote. Não usar registrar-revisao-curadoria, que aceita somente processos/contradições. Não executar este plano sem gate do root.",
+  "rollback_plan": "Append-only em coleta_log. Antes do apply exigir zero linhas com o marcador único. Após aplicar, capturar IDs pelo marcador e conferir payload inteiro. Rollback remove somente esses IDs, exigindo mesmo marcador, execucao e payload; mantém todos os recibos anteriores e patrimônio/histórico intactos. Nada foi aplicado.",
+  "summary": {
+    "sources": 44,
+    "patrimonio_found": 22,
+    "trajetoria_scoped": 13,
+    "blocked": 28
+  },
+  "provenance": {
+    "confidence": "alta",
+    "source": "Leitura direta Supabase e TSE DivulgaCand por SQ exato em 2026-09-09T16:10:02.928Z",
+    "codex_stamp": "[codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]"
+  }
+}

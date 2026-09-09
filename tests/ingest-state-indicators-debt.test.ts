@@ -1,8 +1,8 @@
 import assert from "node:assert/strict"
 import test from "node:test"
 import ExcelJS from "exceljs"
-import { ingestSiconfi, interpretarSiconfi, type SiconfiItem } from "../scripts/lib/ingest-siconfi"
-import { ingestIdeb, interpretarPlanilhaIdeb } from "../scripts/lib/ingest-ideb"
+import { ingestSiconfi, interpretarSiconfi, anosSiconfi, type SiconfiItem } from "../scripts/lib/ingest-siconfi"
+import { ingestIdeb, interpretarPlanilhaIdeb, descobrirFonteIdeb, IDEB_RESULTADOS_URL } from "../scripts/lib/ingest-ideb"
 import { ingestAtlasViolencia, normalizarAtlasValor } from "../scripts/lib/ingest-atlas-violencia"
 
 const noSleep = async () => {}
@@ -27,6 +27,32 @@ const fiscalFetch = async (url: string) => {
   const anexo = new URL(url).searchParams.get("no_anexo")!
   return { items: anexo.startsWith("RGF") ? pessoal() : rreo(anexo), hasMore: false, offset: 0, limit: 5000 }
 }
+
+test("SICONFI inclui o último ano encerrado e admite recuperação explícita de 2025", async () => {
+  assert.deepEqual(anosSiconfi(new Date("2026-09-09T00:00:00Z")), [2022, 2023, 2024, 2025])
+  assert.deepEqual(anosSiconfi(new Date("2027-01-01T00:00:00Z")), [2022, 2023, 2024, 2025, 2026])
+  const [result] = await ingestSiconfi({ estados: ["SP"], anos: [2025], deps: {
+    fetchJson: async (url) => {
+      assert.equal(new URL(url).searchParams.get("an_exercicio"), "2025")
+      const response = await fiscalFetch(url)
+      return { ...response, items: response.items.map((row) => ({ ...row, exercicio: 2025 })) }
+    }, write: async (row) => { assert.equal(row.ano, 2025) }, sleep: noSleep,
+  } })
+  assert.equal(result.coleta_resultado, "encontrado"); assert.equal(result.rows_upserted, 4)
+  await assert.rejects(ingestSiconfi({ anos: [new Date().getUTCFullYear()] }), /último ano encerrado/)
+})
+
+test("SICONFI execução padrão consulta o último exercício encerrado, preservando 2022", async () => {
+  const requested = new Set<number>()
+  await ingestSiconfi({ estados: ["SP"], deps: {
+    fetchJson: async (url) => {
+      requested.add(Number(new URL(url).searchParams.get("an_exercicio")))
+      return { items: [], hasMore: false, offset: 0, limit: 5000 }
+    }, write: async () => { assert.fail("fonte vazia não deve escrever") }, sleep: noSleep,
+  } })
+  assert.equal(Math.min(...requested), 2022)
+  assert.equal(Math.max(...requested), new Date().getUTCFullYear() - 1)
+})
 
 test("SICONFI seleciona a coluna percentual e o limite declarado pelo ente", () => {
   const rows = interpretarSiconfi(pessoal(), "SP", 2024, "RGF-Anexo 01")
@@ -109,17 +135,89 @@ async function planilha(edit?: (sheet: ExcelJS.Worksheet) => void): Promise<Buff
   const wb = new ExcelJS.Workbook(); const sheet = wb.addWorksheet("UF e Regiões (EM)")
   sheet.getCell("A4").value = "Ensino Médio Regular"
   sheet.getCell("A9").value = "Região/\nUnidade da Federação"; sheet.getCell("B9").value = "Rede"
-  sheet.getRow(10).values = [null, null, "VL_OBSERVADO_2019", "VL_OBSERVADO_2021", "VL_OBSERVADO_2023", "VL_PROJECAO_2019", "VL_PROJECAO_2021"]
-  NOMES.forEach((nome, i) => { sheet.getRow(i + 11).values = [nome, "Estadual", 4, 4.1, 4.2, 4.5, 4.7] })
+  sheet.getRow(10).values = [null, null, "VL_OBSERVADO_2019", "VL_OBSERVADO_2021", "VL_OBSERVADO_2023", "VL_OBSERVADO_2025", "VL_PROJECAO_2019", "VL_PROJECAO_2021"]
+  NOMES.forEach((nome, i) => { sheet.getRow(i + 11).values = [nome, "Estadual", 4, 4.1, 4.2, 4.3, 4.5, 4.7] })
   edit?.(sheet)
   return Buffer.from(await wb.xlsx.writeBuffer())
 }
 
 test("IDEB lê 27 UFs da rede estadual e anos pelos cabeçalhos sem inventar meta 2023", async () => {
-  const rows = await interpretarPlanilhaIdeb(await planilha())
-  assert.equal(rows.length, 81); assert.equal(new Set(rows.map((r) => r.estado)).size, 27)
+  const rows = await interpretarPlanilhaIdeb(await planilha((sheet) => { sheet.mergeCells("A50:B50") }))
+  assert.equal(rows.length, 108); assert.equal(new Set(rows.map((r) => r.estado)).size, 27)
   assert.ok(rows.filter((r) => r.ano === 2023).every((r) => r.meta === null))
   assert.equal(rows.find((r) => r.estado === "RN")?.valor, 4)
+  assert.equal(Math.max(...rows.map((r) => r.ano)), 2025)
+  assert.ok(rows.filter((r) => r.ano === 2025).every((r) => r.meta === null))
+})
+
+test("IDEB descobre a edição mais recente em data-url e baixa só link estadual observado", async () => {
+  const visited: string[] = []
+  const url = "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip"
+  const fonte = await descobrirFonteIdeb(async (page) => {
+    visited.push(page)
+    return page === IDEB_RESULTADOS_URL + "/"
+      ? '<div data-url="' + IDEB_RESULTADOS_URL + '/2005-2023"></div><div data-url="' + IDEB_RESULTADOS_URL + '/2005-2025"></div>'
+      : '<a href="' + url + '">UFs</a><a href="https://example.com/arquivo.zip">Outro</a>'
+  })
+  assert.deepEqual(fonte, { fonteUrl: url, anoEdicao: 2025 })
+  assert.equal(visited[1], IDEB_RESULTADOS_URL + "/2005-2025")
+})
+
+test("IDEB em 2028 seleciona edição 2027 relativa sem recuar para 2025 absoluta", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2028-01-15T00:00:00Z") })
+  for (const relative of ["2005-2027", new URL(IDEB_RESULTADOS_URL).pathname + "/2005-2027"]) {
+    const visited: string[] = []
+    const fonte = await descobrirFonteIdeb(async (page) => {
+      visited.push(page)
+      return page === IDEB_RESULTADOS_URL + "/"
+        ? '<a href="' + IDEB_RESULTADOS_URL + '/2005-2025">Anterior</a><div data-url="' + relative + '"></div>'
+        : '<a href="//download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2027.zip">Atual</a>'
+    })
+    assert.equal(fonte.anoEdicao, 2027)
+    assert.equal(visited[1], IDEB_RESULTADOS_URL + "/2005-2027")
+    assert.equal(visited.length, 2)
+  }
+  await assert.rejects(descobrirFonteIdeb(async (page) => {
+    if (page === IDEB_RESULTADOS_URL + "/") return '<a href="' + IDEB_RESULTADOS_URL + '/2005-2025"></a><a href="2005-2027"></a>'
+    assert.equal(page, IDEB_RESULTADOS_URL + "/2005-2027")
+    throw new Error("edição 2027 indisponível")
+  }), /2027 indisponível/)
+})
+
+test("IDEB resolve ZIP relativo na origem oficial efetiva e recusa origem errada", async () => {
+  const fonte = await descobrirFonteIdeb(async (page) => page === IDEB_RESULTADOS_URL + "/"
+    ? '<div data-url="2005-2025"></div>'
+    : { url: "https://download.inep.gov.br/ideb/resultados/2005-2025",
+      html: '<a href="/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip">UFs</a>' })
+  assert.equal(fonte.fonteUrl, "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip")
+  await assert.rejects(descobrirFonteIdeb(async (page) => page === IDEB_RESULTADOS_URL + "/"
+    ? '<div data-url="2005-2025"></div>'
+    : '<a href="/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip">Origem gov.br, não download.inep.gov.br</a>'), /arquivo estadual/)
+})
+
+test("IDEB verifica response.url e recusa redirecionamento HTML externo ou fora do caminho", async (t) => {
+  let destination = "https://example.com/resultados/"
+  t.mock.method(globalThis, "fetch", async () => {
+    const response = new Response('<div data-url="' + IDEB_RESULTADOS_URL + '/2005-2025"></div>')
+    Object.defineProperty(response, "url", { value: destination })
+    return response
+  })
+  for (const url of ["https://example.com/resultados/", "https://www.gov.br/conta/login", "https://www.gov.br.evil.test/inep", "https://download.inep.gov.br/outro/"]) {
+    destination = url
+    await assert.rejects(descobrirFonteIdeb(), /destino HTML fora/)
+  }
+})
+
+test("IDEB rejeita edição antiga, arquivo de outro ano, edição futura e formato desconhecido", async () => {
+  for (const [edicao, arquivo] of [[2023, 2023], [2025, 2023], [2099, 2099]]) {
+    await assert.rejects(descobrirFonteIdeb(async (page) => page === IDEB_RESULTADOS_URL + "/"
+      ? '<div data-url="' + IDEB_RESULTADOS_URL + '/2005-' + edicao + '"></div>'
+      : '<a href="https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_' + arquivo + '.zip">UFs</a>'), /IDEB:/)
+  }
+  await assert.rejects(descobrirFonteIdeb(async () => "<p>Layout desconhecido</p>"), /edição verificável/)
+  await assert.rejects(interpretarPlanilhaIdeb(await planilha(), 2023), /edição antiga/)
+  await assert.rejects(interpretarPlanilhaIdeb(await planilha((sheet) => { sheet.getCell("F10").value = "VL_OBSERVADO_2023" })), /cabeçalho duplicado/)
+  await assert.rejects(interpretarPlanilhaIdeb(await planilha((sheet) => { sheet.getCell("F10").value = null })), /ano observado ausente: 2025/)
 })
 
 test("IDEB recusa cobertura incompleta, UF duplicada, valores ilegíveis e cabeçalho ausente", async () => {
@@ -135,10 +233,10 @@ test("IDEB mantém supressão como ausência, zero observado como zero e erro de
   const bytes = await planilha((s) => { s.getCell("C11").value = "**"; s.getCell("D11").value = 0 })
   const rows = await interpretarPlanilhaIdeb(bytes)
   assert.equal(rows[0].valor, null); assert.equal(rows[1].valor, 0)
-  const partial = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture" }), write: async () => {} })
+  const partial = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture", fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }), write: async () => {} })
   assert.equal(partial[0].rows_upserted, 26)
   assert.equal(partial[0].coleta_resultado, "indeterminado")
-  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture" }), write: async () => { throw new Error("write denied") } })
+  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture", fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }), write: async () => { throw new Error("write denied") } })
   assert.ok(results.every((r) => r.coleta_resultado === "erro" && r.rows_upserted === 0))
 })
 
@@ -150,25 +248,25 @@ test("IDEB indisponibilidade de download não vira lista vazia", async () => {
 test("IDEB todas as células suprimidas mantém indeterminado, nunca ausência confirmada", async () => {
   const bytes = await planilha((sheet) => {
     for (let row = 11; row <= 37; row++) {
-      for (const col of [3, 4, 5]) sheet.getRow(row).getCell(col).value = "**"
+      for (const col of [3, 4, 5, 6]) sheet.getRow(row).getCell(col).value = "**"
     }
   })
-  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture" }),
+  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture", fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }),
     write: async () => { assert.fail("dado suprimido não deve ser escrito") } })
   assert.ok(results.every((r) => r.coleta_resultado === "indeterminado" && r.rows_upserted === 0 && r.warnings?.length === 27))
 })
 
-test("IDEB publica todos os 81 valores com proveniência e conta somente escritas confirmadas", async () => {
+test("IDEB publica todos os 108 valores com proveniência e conta somente escritas confirmadas", async () => {
   const bytes = await planilha()
   let writes = 0
-  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture" }), write: async (row) => {
+  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture", fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }), write: async (row) => {
     assert.equal(row.metadata.rede, "Estadual")
     assert.equal(row.metadata.arquivo_sha256, "fixture")
     assert.equal(row.unidade, "indice")
     if (row.ano === 2023) assert.equal(row.metadata.meta, null)
     writes++
   } })
-  assert.equal(writes, 81)
+  assert.equal(writes, 108)
   assert.ok(results.every((r) => r.coleta_resultado === "encontrado" && r.rows_upserted === 27))
 })
 
