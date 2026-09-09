@@ -1,5 +1,5 @@
 import * as Sentry from "@sentry/nextjs"
-import { sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
+import { ambienteSentry, sentryHabilitadoNesteAmbiente } from "@/lib/sentry-env"
 import { redactSensitiveUrl, scrubSentryEvent } from "@/lib/sentry-scrub"
 
 const dsn = process.env.SENTRY_DSN?.trim() || process.env.NEXT_PUBLIC_SENTRY_DSN?.trim()
@@ -7,7 +7,7 @@ if (dsn && sentryHabilitadoNesteAmbiente()) {
   Sentry.init({
     dsn,
     tracesSampleRate: Number(process.env.SENTRY_TRACES_SAMPLE_RATE ?? "0.05"),
-    environment: process.env.VERCEL_ENV ?? process.env.NODE_ENV,
+    environment: ambienteSentry(),
     sendDefaultPii: false,
     beforeSend(event) {
       return scrubSentryEvent(event)
