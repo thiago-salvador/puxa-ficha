@@ -661,13 +661,14 @@ async function upsertPontoAtencao(
     return true
   }
 
-  const { data: rows } = await supabase
+  const { data: rows, error: selectError } = await supabase
     .from("pontos_atencao")
     .select("id, titulo, created_at")
     .eq("candidato_id", candidatoId)
     .eq("gerado_por", "automatico")
     .in("titulo", [titulo, oldTitulo])
     .order("created_at", { ascending: false })
+  if (selectError) throw new Error("Falha ao verificar ponto de atenção existente; persistência não confirmada")
 
   const existing = rows?.find((item) => item.titulo === titulo) ?? rows?.[0] ?? null
   const duplicateIds = (rows ?? [])

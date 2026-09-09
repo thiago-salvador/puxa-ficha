@@ -7,6 +7,7 @@ import { createHash } from "node:crypto"
 import ExcelJS from "exceljs"
 import { supabase } from "./supabase"
 import { FETCH_TIMEOUT_MS } from "./helpers"
+import { emDryRun, planejarEscrita } from "./dry-run"
 import type { IngestResult } from "./types"
 
 export const IDEB_RESULTADOS_URL = "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb/resultados"
@@ -163,8 +164,20 @@ export async function interpretarPlanilhaIdeb(bytes: Buffer, anoEdicao = IDEB_ED
 }
 
 async function gravar(row: IdebRow): Promise<void> {
+  const payload = { ...row, updated_at: new Date().toISOString() }
+  if (emDryRun()) {
+    planejarEscrita({
+      fonte: row.fonte,
+      tabela: "indicadores_estaduais",
+      operacao: "upsert",
+      alvo: "ideb_" + row.ano,
+      chave: { estado: row.estado, ano: row.ano, fonte: row.fonte, indicador: row.indicador },
+      valores: payload,
+    })
+    return
+  }
   const { error } = await supabase.from("indicadores_estaduais").upsert(
-    { ...row, updated_at: new Date().toISOString() }, { onConflict: "estado,ano,fonte,indicador" },
+    payload, { onConflict: "estado,ano,fonte,indicador" },
   )
   if (error) throw new Error("Upsert IDEB: " + error.message)
 }
@@ -185,12 +198,15 @@ export async function ingestIdeb(deps: {
   }))
   let results = criarResultados()
   let fonteUrl = IDEB_RESULTADOS_URL
+  let etapa = "descoberta/download"
+  let falhaFonte: string | undefined
   try {
     const download = await (deps.download ?? baixarPlanilhaIdeb)()
     const { bytes, sha256, anoEdicao } = download
     fonteUrl = download.fonteUrl
     anos = anosIdeb(anoEdicao)
     results = criarResultados()
+    etapa = "parse/validação da planilha"
     const values = await interpretarPlanilhaIdeb(bytes, anoEdicao)
     for (const item of values) {
       const result = results[anos.indexOf(item.ano)]
@@ -211,14 +227,17 @@ export async function ingestIdeb(deps: {
       }
     }
   } catch (error) {
-    for (const result of results) result.errors.push(error instanceof Error ? error.message : String(error))
+    const causa = error instanceof Error ? error.message : String(error)
+    falhaFonte = "Falha de " + etapa + ": " + causa
+    for (const result of results) result.errors.push(causa)
   }
   for (const result of results) {
     if (result.rows_upserted) result.tables_updated.push("indicadores_estaduais")
     result.coleta_resultado = result.errors.length ? "erro" : result.warnings!.length
       ? "indeterminado" : result.rows_upserted ? "encontrado" : "vazio_confirmado"
-    result.coleta_detalhe = result.rows_upserted + "/27 UFs gravadas da rede estadual; " +
-      result.warnings!.length + " valores não divulgados; fonte: " + fonteUrl
+    result.coleta_detalhe = falhaFonte ? falhaFonte + "; consulta não concluída; fonte: " + fonteUrl
+      : result.errors.length ? "Falha de persistência: " + result.errors.join("; ") + "; " + result.rows_upserted + "/27 UFs gravadas; fonte: " + fonteUrl
+        : result.rows_upserted + "/27 UFs gravadas da rede estadual; " + result.warnings!.length + " valores não divulgados; fonte: " + fonteUrl
     result.duration_ms = Date.now() - start
   }
   return results

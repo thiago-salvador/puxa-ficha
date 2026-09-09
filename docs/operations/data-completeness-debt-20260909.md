@@ -48,3 +48,9 @@ Depois do merge: executar somente as fontes reparadas pelo pipeline canônico, c
 ## Limite da superfície pública
 
 A API `/api/candidato-profile/tarcisio-gov-sp` entrega os indicadores estaduais após a coleta e a revalidação. Os cartões atuais de `/uf/sp` não incluem IDEB/SICONFI no conjunto de indicadores exibidos. Esta recuperação de dados não adiciona novos cartões nem ranking fiscal. A API também omite metadata: comparação de definição fiscal exige SQL, não apenas a resposta pública.
+
+## Disposição da revisão do PR 303
+
+Foram incorporadas as proteções para SICONFI totalmente vazio, detalhe de falha do IDEB, planejamento do dry-run dos indicadores e SELECT de pontos de atenção. O guard editorial de sanções continua recusando gravidade alta sem fonte; o teste verifica zero chamadas à tabela de pontos de atenção nesse caso.
+
+A sugestão de retirar os erros operacionais do stub de Transparência foi rejeitada: selecionar explicitamente uma coleta não implementada deve falhar e deixar a causa visível. O relatório continua classificando essa fonte manual como dívida técnica; não se altera a semântica da execução para obter um resultado verde.

@@ -4,6 +4,7 @@ import ExcelJS from "exceljs"
 import { ingestSiconfi, interpretarSiconfi, anosSiconfi, type SiconfiItem } from "../scripts/lib/ingest-siconfi"
 import { ingestIdeb, interpretarPlanilhaIdeb, descobrirFonteIdeb, IDEB_RESULTADOS_URL } from "../scripts/lib/ingest-ideb"
 import { ingestAtlasViolencia, normalizarAtlasValor } from "../scripts/lib/ingest-atlas-violencia"
+import { ativarDryRun, __resetarDryRunParaTeste, relatorioDryRun } from "../scripts/lib/dry-run"
 
 const noSleep = async () => {}
 function conta(cod: string, coluna: string, valor = 42.19, extra: Partial<SiconfiItem> = {}): SiconfiItem {
@@ -126,7 +127,9 @@ test("SICONFI não conta escrita recusada e não confunde falha de rede com vazi
   const [r] = await ingestSiconfi({ estados: ["SP"], anos: [2024], deps: {
     fetchJson: async () => ({ items: [], hasMore: false, offset: 0, limit: 5000 }), write: async () => { assert.fail("não escrever") }, sleep: noSleep,
   } })
-  assert.equal(r.coleta_resultado, "vazio_confirmado")
+  assert.equal(r.coleta_resultado, "indeterminado")
+  assert.equal(r.warnings?.length, 3)
+  assert.equal(r.rows_upserted, 0)
   await assert.rejects(ingestSiconfi({ anos: [] }), /exercícios suportados/)
 })
 
@@ -243,6 +246,16 @@ test("IDEB mantém supressão como ausência, zero observado como zero e erro de
 test("IDEB indisponibilidade de download não vira lista vazia", async () => {
   const results = await ingestIdeb({ download: async () => { throw new Error("TLS certificate") }, write: async () => { assert.fail("não escrever") } })
   assert.ok(results.every((r) => r.coleta_resultado === "erro" && r.errors[0] === "TLS certificate"))
+  assert.ok(results.every((r) => /Falha de descoberta\/download: TLS certificate/.test(r.coleta_detalhe ?? "")))
+  assert.ok(results.every((r) => !(r.coleta_detalhe ?? "").includes("0 valores não divulgados")))
+})
+
+test("IDEB falha de parse declara a etapa e a causa, sem aparência de consulta vazia", async () => {
+  const bytes = await planilha((sheet) => { sheet.getCell("F10").value = null })
+  const results = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture",
+    fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }),
+    write: async () => { assert.fail("não escrever fonte inválida") } })
+  assert.ok(results.every((r) => r.coleta_resultado === "erro" && /Falha de parse\/validação da planilha: IDEB: ano observado ausente: 2025/.test(r.coleta_detalhe ?? "")))
 })
 
 test("IDEB todas as células suprimidas mantém indeterminado, nunca ausência confirmada", async () => {
@@ -322,5 +335,41 @@ test("Atlas com UF faltante no ano mantém indeterminado; 27 UFs confirma encont
       : ids.slice(0, total).map((regiao_id) => ({ ...atlasItem(Number(url.split("/").at(-2))), regiao_id })),
       write: async () => {}, sleep: noSleep })
     assert.ok(results.slice(0, 3).every((r) => r.coleta_resultado === (total === 27 ? "encontrado" : "indeterminado")))
+  }
+})
+
+test("dry-run canônico dos três indicadores gera plano completo e não emite POST nem bloqueios", async (t) => {
+  __resetarDryRunParaTeste()
+  ativarDryRun()
+  t.after(() => __resetarDryRunParaTeste())
+  const metodos: string[] = []
+  t.mock.method(globalThis, "fetch", async (_input: unknown, init?: RequestInit) => {
+    metodos.push(init?.method ?? "GET")
+    throw new Error("Requisição de banco/rede inesperada")
+  })
+  const [siconfi] = await ingestSiconfi({ estados: ["SP"], anos: [2024], deps: { fetchJson: fiscalFetch, sleep: noSleep } })
+  assert.equal(siconfi.errors.length, 0)
+  const bytes = await planilha()
+  const ideb = await ingestIdeb({ download: async () => ({ bytes, sha256: "fixture",
+    fonteUrl: "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip", anoEdicao: 2025 }) })
+  assert.ok(ideb.every((r) => r.errors.length === 0))
+  const ids = [11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 35, 41, 42, 43, 50, 51, 52, 53]
+  const atlas = await ingestAtlasViolencia({ fetchJson: async (url) => url.includes("cms/api") ? catalogo
+    : url.endsWith("/20/3") ? ids.map((regiao_id) => ({ ...atlasItem(), regiao_id })) : [], sleep: noSleep })
+  assert.ok(atlas.every((r) => r.errors.length === 0))
+  const plano = relatorioDryRun()
+  assert.equal(plano.totalDeLinhasPlanejadas, 4 + 108 + 27)
+  assert.deepEqual(plano.bloqueios, [])
+  assert.deepEqual(metodos, [])
+  assert.equal(plano.escritas.filter((r) => r.fonte === "siconfi").length, 4)
+  assert.equal(plano.escritas.filter((r) => r.fonte === "inep_ideb").length, 108)
+  assert.equal(plano.escritas.filter((r) => r.fonte === "atlas_violencia").length, 27)
+  for (const escrita of plano.escritas) {
+    assert.equal(escrita.tabela, "indicadores_estaduais")
+    assert.equal(escrita.operacao, "upsert")
+    const row = escrita.valores!
+    assert.deepEqual(escrita.chave, { estado: row.estado, ano: row.ano, fonte: row.fonte, indicador: row.indicador })
+    assert.equal(typeof row.valor, "number")
+    assert.equal(escrita.alvo, escrita.fonte === "siconfi" ? "SP" : escrita.fonte === "inep_ideb" ? "ideb_" + row.ano : "serie_20")
   }
 })

@@ -1,6 +1,7 @@
 import { supabase } from "./supabase"
 import { fetchJSON, sleep } from "./helpers"
 import { log } from "./logger"
+import { emDryRun, planejarEscrita } from "./dry-run"
 import type { IngestResult } from "./types"
 
 const CODIGO_IBGE: Record<string, number> = {
@@ -77,8 +78,20 @@ export function interpretarSiconfi(items: SiconfiItem[], estado: string, ano: nu
 const defaults: Dependencies = {
   fetchJson: (url) => fetchJSON<SiconfiResponse>(url), sleep,
   write: async (row) => {
+    const payload = { ...row, valor_texto: null, updated_at: new Date().toISOString() }
+    if (emDryRun()) {
+      planejarEscrita({
+        fonte: row.fonte,
+        tabela: "indicadores_estaduais",
+        operacao: "upsert",
+        alvo: row.estado,
+        chave: { estado: row.estado, ano: row.ano, fonte: row.fonte, indicador: row.indicador },
+        valores: payload,
+      })
+      return
+    }
     const { error } = await supabase.from("indicadores_estaduais").upsert(
-      { ...row, valor_texto: null, updated_at: new Date().toISOString() },
+      payload,
       { onConflict: "estado,ano,fonte,indicador" },
     )
     if (error) throw new Error("Upsert " + row.estado + "/" + row.ano + "/" + row.indicador + ": " + error.message)
@@ -146,8 +159,8 @@ export async function ingestSiconfi(
       }
     }
     if (result.rows_upserted) result.tables_updated.push("indicadores_estaduais")
-    result.coleta_resultado = result.errors.length ? "erro" : result.rows_upserted
-      ? result.warnings!.length ? "indeterminado" : "encontrado" : "vazio_confirmado"
+    result.coleta_resultado = result.errors.length ? "erro" : result.warnings!.length
+      ? "indeterminado" : result.rows_upserted ? "encontrado" : "vazio_confirmado"
     result.coleta_detalhe = result.rows_upserted + " indicadores gravados; " + result.warnings!.length + " consultas vazias; " + result.errors.length + " erros; despesa total = empenhada acumulada; primário = acima da linha, definição anual em metadata"
     result.duration_ms = Date.now() - start
     results.push(result)

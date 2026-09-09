@@ -6,6 +6,7 @@ import test from "node:test"
 import { parseCSV, validarEsquemaIndividual } from "../scripts/lib/ingest-filiacao"
 import { resultadoTransparenciaPendente } from "../scripts/lib/ingest-transparencia"
 import { ingestTransparenciaSanctions } from "../scripts/lib/ingest-transparencia-sanctions"
+import { motivoRecusaDeFonte } from "../src/lib/public-attention-point"
 
 test("Portal sem implementação não declara sucesso nem ausência", () => {
   const result = resultadoTransparenciaPendente("teste")
@@ -51,6 +52,7 @@ async function runSanctions(scenario: Scenario) {
   const originalFetch = globalThis.fetch
   const writes: string[] = []
   let portalCalls = 0
+  let attentionPointCalls = 0
   // Synthetic fixture, never sent to a network endpoint.
   const cpf = "52998224725"
   globalThis.fetch = async (input, init) => {
@@ -81,12 +83,16 @@ async function runSanctions(scenario: Scenario) {
       writes.push(method)
       return scenario === "insert-error" ? reply({ message: "test insert failure" }, 400) : reply(null, 201)
     }
+    if (url.pathname === "/rest/v1/pontos_atencao") {
+      attentionPointCalls++
+      return reply({ message: "attention point access must remain unreachable" }, 400)
+    }
     throw new Error(`Unexpected test request: ${method} ${url.pathname}`)
   }
   try {
     const results = await ingestTransparenciaSanctions()
     assert.equal(results.length, 1)
-    return { result: results[0], writes, portalCalls }
+    return { result: results[0], writes, portalCalls, attentionPointCalls }
   } finally {
     globalThis.fetch = originalFetch
     for (const [key, value] of Object.entries(saved)) {
@@ -116,11 +122,17 @@ for (const scenario of ["insert-error", "select-error"] as const) {
 }
 
 test("entrypoint só anuncia a tabela que persistiu; guard editorial não vira escrita", async () => {
-  const { result, writes } = await runSanctions("found")
+  const { result, writes, attentionPointCalls } = await runSanctions("found")
   assert.equal(result.coleta_resultado, "encontrado")
   assert.equal(result.rows_upserted, 1)
   assert.deepEqual(result.tables_updated, ["sancoes_administrativas"])
   assert.deepEqual(writes, ["POST"])
+  assert.equal(attentionPointCalls, 0, "sem fonte, o guard deve impedir inclusive o SELECT de pontos_atencao")
+})
+
+test("sanção usa gravidade alta: fonte ausente bloqueia; média não tem esse bloqueio", () => {
+  assert.equal(motivoRecusaDeFonte("alta", undefined), "nenhuma fonte preenchida")
+  assert.equal(motivoRecusaDeFonte("media", undefined), null)
 })
 
 test("entrypoint mantém vazio confirmado quando os três cadastros respondem vazios", async () => {

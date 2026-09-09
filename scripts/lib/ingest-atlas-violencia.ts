@@ -1,5 +1,6 @@
 import { supabase } from "./supabase"
 import { fetchJSON, sleep } from "./helpers"
+import { emDryRun, planejarEscrita } from "./dry-run"
 import type { IngestResult } from "./types"
 
 const BASE_URL = "https://www.ipea.gov.br/dados-api"
@@ -46,8 +47,20 @@ export function normalizarAtlasValor(item: AtlasValor): { uf: string; ano: numbe
 const defaults: Dependencies = {
   fetchJson: (url) => fetchJSON<unknown>(url), sleep,
   write: async (row) => {
+    const payload = { ...row, valor_texto: null, updated_at: new Date().toISOString() }
+    if (emDryRun()) {
+      planejarEscrita({
+        fonte: row.fonte,
+        tabela: "indicadores_estaduais",
+        operacao: "upsert",
+        alvo: SERIES.find((serie) => serie.indicador === row.indicador)!.candidato,
+        chave: { estado: row.estado, ano: row.ano, fonte: row.fonte, indicador: row.indicador },
+        valores: payload,
+      })
+      return
+    }
     const { error } = await supabase.from("indicadores_estaduais").upsert(
-      { ...row, valor_texto: null, updated_at: new Date().toISOString() },
+      payload,
       { onConflict: "estado,ano,fonte,indicador" },
     )
     if (error) throw new Error("Upsert Atlas: " + error.message)
