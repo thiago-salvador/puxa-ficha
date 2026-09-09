@@ -100,6 +100,7 @@ function consolidateCommand(options: Map<string, string>): void {
   appendGithubOutput("change_count", result.diff.operations.length)
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, result.summary)
   console.log(`PESQUISAS_CONSOLIDATION_STATUS=${result.status}`)
+  if (result.status === "blocked") process.exitCode = 1
 }
 
 function applyCommand(options: Map<string, string>): void {

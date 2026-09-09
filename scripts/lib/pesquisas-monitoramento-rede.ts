@@ -176,6 +176,15 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
         throw new Error(`robots redirecionou em ${redigirUrlParaLog(robotsUrl)}`)
       }
       if (!pending.response.ok) {
+        await pending.response.body?.cancel()
+        // RFC 9309 2.3.1.3 permits access when robots is unavailable (4xx).
+        // Keep throttling/timeouts closed; this never overrides a content error.
+        if (pending.response.status >= 400 && pending.response.status < 500
+          && pending.response.status !== 408 && pending.response.status !== 429) {
+          logger(`robots indisponivel: HTTP ${pending.response.status}; origem aprovada sem regras robots`)
+          robotsByOrigin.set(url.origin, "")
+          return ""
+        }
         throw new Error(`robots indisponivel em ${redigirUrlParaLog(robotsUrl)}: HTTP ${pending.response.status}`)
       }
       const body = await readLimited(pending.response, "text")

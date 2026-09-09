@@ -159,13 +159,14 @@ function assertAdapterInput(
 }
 
 function extractFieldwork(text: string, publicationDate: string): { start: string; end: string } {
-  const weekdayDates = text.match(/in[ií]cio\s+do\s+levantamento[^0-9]{0,30}\((\d{1,2})\)[^.]{0,100}?acabou[^0-9]{0,30}\((\d{1,2})\)/i)
+  const weekdayDates = text.match(/\((\d{1,2})\),?\s+dia\s+do\s+in[ií]cio\s+do\s+levantamento\s+que\s+acabou[^0-9.]{0,30}\((\d{1,2})\)/i)
+    ?? text.match(/in[ií]cio\s+do\s+levantamento[^0-9]{0,30}\((\d{1,2})\)[^.]{0,100}?acabou[^0-9]{0,30}\((\d{1,2})\)/i)
   if (weekdayDates) {
     const prefix = publicationDate.slice(0, 8)
-    return {
+    return validateFieldwork({
       start: `${prefix}${weekdayDates[1].padStart(2, "0")}`,
       end: `${prefix}${weekdayDates[2].padStart(2, "0")}`,
-    }
+    }, publicationDate)
   }
   const sameMonth = requireFirstMatch(text, [
     /(?:campo|entrevistas?|ouvidos?|coleta)[^0-9]{0,80}(\d{1,2})\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i,
@@ -178,12 +179,26 @@ function extractFieldwork(text: string, publicationDate: string): { start: strin
   }
 }
 
+function validateFieldwork(fieldwork: { start: string; end: string }, publicationDate: string) {
+  for (const date of [fieldwork.start, fieldwork.end, publicationDate]) {
+    const parsed = new Date(`${date}T00:00:00Z`)
+    if (!Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0, 10) !== date) {
+      throw new Error("HTML inesperado: data de campo ou publicação inválida")
+    }
+  }
+  if (fieldwork.start > fieldwork.end || fieldwork.end > publicationDate) {
+    throw new Error("HTML inesperado: período de campo conflitante com publicação")
+  }
+  return fieldwork
+}
+
 function extractSample(text: string): number {
   const thousands = text.match(/(?:ouviu|ouvidos|entrevistou|entrevistados|foram ouvidos|amostra)[^0-9]{0,40}(\d+(?:[,.]\d+)?)\s+mil\s+(?:eleitores|pessoas|entrevistas|entrevistados)/i)
   if (thousands) return Math.round(normalizeNumber(thousands[1]) * 1000)
   const match = requireFirstMatch(text, [
     /(?:ouviu|ouvidos|entrevistou|entrevistados|foram ouvidos|amostra)[^0-9]{0,40}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+(?:eleitores|pessoas|entrevistas|entrevistados)/i,
     /(?:foram|total de)[^0-9]{0,20}(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+entrevistas/i,
+    /(?:pesquisa|levantamento)\s+foi\s+(?:realizad[oa]|feit[oa])[^.]{0,100}?\bcom\s+(?:as\s+entrevistas\s+de\s+)?(\d{1,3}(?:\.\d{3})+|\d{3,6})\s+eleitores/i,
   ], "amostra")
   return normalizeNumber(match[1])
 }
