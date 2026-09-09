@@ -85,6 +85,33 @@ test("família usa a evidência mais recente e registra aliases ausentes como d�
   assert.deepEqual(missing.missing_source_ids, ["camara-proposicoes", "destaques-votacoes"])
 })
 
+test("run parcial de fonte manual não apaga pendências vigentes de outros alvos", () => {
+  const source = loadFreshnessRegistry().find(item => item.source_id === "knowledge-enrichment")!
+  const result = aggregateSourceEvidence(source, source.collection_source_ids.map(source_id => ({
+    source_id, checked_at: "2026-09-09T12:00:00Z", execution_id: "partial",
+    debt_count: 0, error_count: 0, total_count: 1,
+    target_inventory: { debt_count: source_id === "wikipedia" ? 2 : 0, error_count: source_id === "instagram" ? 1 : 0, total_count: 4 },
+  })))
+  assert.equal(result.debt_count, 2)
+  assert.equal(result.error_count, 1)
+  assert.equal(result.total_count, 4 * source.collection_source_ids.length)
+  assert.ok(result.member_evidence?.every(item => item.assessment_scope === "latest_per_target"))
+  assert.equal(evaluateSourceFreshness(source, result, new Date("2026-09-09T12:30:00Z")).status, "technical_debt")
+})
+
+test("estoque resolvido não conserva erro de execução antigo e não altera contrato scheduled", () => {
+  const source = loadFreshnessRegistry().find(item => item.source_id === "filiacao")!
+  const evidence = { source_id: "filiacao", checked_at: "2026-09-09T12:00:00Z", source_error: "falha anterior", debt_count: 1, error_count: 1,
+    target_inventory: { debt_count: 0, error_count: 0, total_count: 3 } }
+  const result = aggregateSourceEvidence(source, [evidence])
+  assert.equal(result.source_error, null)
+  assert.equal(result.debt_count, 0)
+  assert.equal(result.error_count, 0)
+  const operational = aggregateSourceEvidence({ ...source, refresh_mode: "scheduled" }, [evidence])
+  assert.equal(operational.source_error, "falha anterior")
+  assert.equal(operational.error_count, 1)
+})
+
 test("modo strict avalia cada membro, expõe a data mais antiga e não mascara membro vencido", () => {
   const source = loadFreshnessRegistry().find((item) => item.source_id === "camara")
   assert.ok(source)

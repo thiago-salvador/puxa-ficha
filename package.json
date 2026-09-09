@@ -209,6 +209,7 @@
     "@tanstack/react-virtual": "^3.14.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "exceljs": "^4.4.0",
     "gsap": "^3.15.0",
     "html2canvas": "^1.4.1",
     "lucide-react": "^1.28.0",
@@ -245,6 +246,9 @@
     "yaml": "2.9.0"
   },
   "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    },
     "brace-expansion@5": "^5.0.9",
     "brace-expansion@1": "^1.1.18",
     "fast-uri@3": "^3.1.7",

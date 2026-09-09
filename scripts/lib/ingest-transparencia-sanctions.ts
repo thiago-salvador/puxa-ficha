@@ -512,7 +512,10 @@ function criarDepsHttp(headers: Record<string, string>): ColetaDeps {
         warn("transparencia-sanctions", `${endpoint.path}: resposta nao e lista`)
         return { ok: false, erro: `${endpoint.path}: resposta nao e lista` }
       } catch (err) {
-        const motivo = err instanceof Error ? err.message : String(err)
+        // fetchJSON inclui a URL no erro, inclusive o documento da consulta.
+        // Preservar só o status HTTP evita levar CPF para logs e recibos.
+        const status = (err instanceof Error ? err.message : String(err)).match(/HTTP\s+(\d{3})/i)?.[1]
+        const motivo = status ? `HTTP ${status}` : "falha de transporte ou leitura da resposta"
         warn("transparencia-sanctions", `${endpoint.path}: consulta falhou (${motivo})`)
         return { ok: false, erro: `${endpoint.path}: ${motivo}` }
       }
@@ -592,7 +595,8 @@ async function upsertSancao(
     ? base.eq("numero_processo", sancao.numeroProcesso)
     : base.is("numero_processo", null)
 
-  const { data: existentes } = await query.limit(1)
+  const { data: existentes, error: selectError } = await query.limit(1)
+  if (selectError) throw new Error("Falha ao verificar sanção existente; persistência não confirmada")
 
   const existente = existentes?.[0]
   if (existente) {
@@ -612,7 +616,7 @@ async function upsertPontoAtencao(
   tipo: SancaoTipo,
   descricao: string,
   slug: string
-): Promise<void> {
+): Promise<boolean> {
   const titulo = `Sanção administrativa ativa (${tipo})`
   const oldTitulo = `Sancao administrativa ativa (${tipo})`
 
@@ -637,7 +641,7 @@ async function upsertPontoAtencao(
   const recusa = motivoRecusaDeFonte(row.gravidade, undefined)
   if (recusa) {
     warn("transparencia-sanctions", `ponto de atencao nao gravado (${recusa}): ${titulo}`)
-    return
+    return false
   }
 
   // O guard de fonte acima fica ANTES do dry-run de proposito: um ponto de
@@ -654,16 +658,17 @@ async function upsertPontoAtencao(
       chave: { candidato_id: candidatoId, gerado_por: "automatico", titulo },
       valores: row,
     })
-    return
+    return true
   }
 
-  const { data: rows } = await supabase
+  const { data: rows, error: selectError } = await supabase
     .from("pontos_atencao")
     .select("id, titulo, created_at")
     .eq("candidato_id", candidatoId)
     .eq("gerado_por", "automatico")
     .in("titulo", [titulo, oldTitulo])
     .order("created_at", { ascending: false })
+  if (selectError) throw new Error("Falha ao verificar ponto de atenção existente; persistência não confirmada")
 
   const existing = rows?.find((item) => item.titulo === titulo) ?? rows?.[0] ?? null
   const duplicateIds = (rows ?? [])
@@ -671,14 +676,18 @@ async function upsertPontoAtencao(
     .map((item) => item.id)
 
   if (existing) {
-    await supabase.from("pontos_atencao").update(row).eq("id", existing.id)
+    const { error } = await supabase.from("pontos_atencao").update(row).eq("id", existing.id)
+    if (error) throw new Error("Falha ao persistir ponto de atenção")
     if (duplicateIds.length > 0) {
-      await supabase.from("pontos_atencao").delete().in("id", duplicateIds)
+      const { error } = await supabase.from("pontos_atencao").delete().in("id", duplicateIds)
+      if (error) throw new Error("Falha ao remover ponto de atenção duplicado")
     }
-    return
+    return true
   }
 
-  await supabase.from("pontos_atencao").insert(row)
+  const { error } = await supabase.from("pontos_atencao").insert(row)
+  if (error) throw new Error("Falha ao persistir ponto de atenção")
+  return true
 }
 
 export async function ingestTransparenciaSanctions(
@@ -793,8 +802,19 @@ export async function ingestTransparenciaSanctions(
       const tiposComSancaoAtiva: SancaoTipo[] = []
 
       for (const sancao of coleta.sancoes) {
-        const ok = await upsertSancao(candidatoId, sancao, cand.slug)
-        if (!ok) continue
+        let ok = false
+        try {
+          ok = await upsertSancao(candidatoId, sancao, cand.slug)
+        } catch {
+          // Mensagens externas podem conter o documento consultado. O recibo
+          // registra a etapa que falhou sem copiar dados de identificação.
+          result.errors.push(`${sancao.tipo}: falha ao verificar/persistir sanção conferida`)
+          continue
+        }
+        if (!ok) {
+          result.errors.push(`${sancao.tipo}: falha ao persistir sanção conferida`)
+          continue
+        }
         totalUpserted++
         if (sancao.ativo && !tiposComSancaoAtiva.includes(sancao.tipo)) {
           tiposComSancaoAtiva.push(sancao.tipo)
@@ -809,20 +829,22 @@ export async function ingestTransparenciaSanctions(
       if (tiposComSancaoAtiva.length > 0) {
         for (const tipo of tiposComSancaoAtiva) {
           const total = coleta.sancoes.filter((s) => s.tipo === tipo).length
-          await upsertPontoAtencao(
+          const gravouPonto = await upsertPontoAtencao(
             candidatoId,
             tipo,
             `${total} registro(s) do CPF deste candidato no cadastro ${tipo} do Portal da Transparencia`,
             cand.slug
           )
+          if (gravouPonto && !result.tables_updated.includes("pontos_atencao")) {
+            result.tables_updated.push("pontos_atencao")
+          }
         }
-        result.tables_updated.push("pontos_atencao")
         log(
           "transparencia-sanctions",
           `  ${cand.slug}: ${totalUpserted} sancao(oes) — ${tiposComSancaoAtiva.join(", ")}`
         )
       } else {
-        log("transparencia-sanctions", `  ${cand.slug}: sem sancoes nos cadastros`)
+        log("transparencia-sanctions", `  ${cand.slug}: ${totalUpserted} sanção(ões) persistida(s); desfecho depende da resposta dos cadastros`)
       }
 
       // O veredito de coleta, que e o que separa a ficha limpa da ficha nao
@@ -838,7 +860,10 @@ export async function ingestTransparenciaSanctions(
       const cadastrosIndeterminados = coleta.porCadastro.filter(
         (c) => c.resultado === "indeterminado"
       )
-      if (coleta.falhas.length > 0) {
+      if (result.errors.length > 0) {
+        result.coleta_resultado = "erro"
+        result.coleta_detalhe = "Sanções conferidas na fonte, mas a persistência falhou; ausência não confirmada"
+      } else if (coleta.falhas.length > 0) {
         result.coleta_resultado = "erro"
         result.coleta_detalhe =
           `cadastro(s) sem resposta, zero nao confirmado: ${coleta.falhas.join("; ")}`.slice(0, 500)
