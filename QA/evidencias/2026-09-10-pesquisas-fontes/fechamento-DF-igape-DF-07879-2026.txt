@@ -1,0 +1,35 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: DF
+Cargo: Governador
+Instituto: IGAPE / Instituto Gazeta de Pesquisas
+Registro TSE: DF-07879/2026
+Fonte lida: Metrópoles
+URL: https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138
+Leitura: 2026-09-10
+
+Ficha técnica confirmada na publicação:
+- Divulgação: 2026-09-06
+- Campo: 2026-08-31 a 2026-09-05
+- Amostra: 2.000 eleitores do Distrito Federal com 16 anos ou mais
+- Método: não informado na fonte lida
+- Margem de erro: 2,2 pontos percentuais
+- Nível de confiança: 95%
+- Contratante: TV Atual, afiliada da Record News
+
+Governador, estimulada, primeiro turno, base 2.000 eleitores:
+- Celina Leão: 36,5%
+- José Roberto Arruda: 20,7%
+- Leandro Grass: 13,8%
+- Paula Belmonte: 5,2%
+- Ricardo Cappelli: 4,7%
+- Kiko Caputo: 3,1%
+- Elisson Ferreira: 1,5%
+- Samara Mineiro: 1,5%
+- Professor Robson: 0,9%
+- Expedito Mendonça: 0,8%
+- Não sabe / não opinou: 11,3%
+
+Notas de integridade:
+- A lista acima contém todas as linhas do cenário de intenção de voto publicado pelo Metrópoles; os valores somam 100,0%.
+- A publicação individualiza Expedito Mendonça em 0,8%. O 0,4% encontrado em outra matéria da rodada refere-se a rejeição, não a intenção de voto, e não foi usado.
+- A matéria anterior do Jornal de Brasília que atribuía 0,4% a Expedito não corresponde a este quadro de intenção de voto completo; o fechamento usa a fonte com registro e ficha técnica coerentes.

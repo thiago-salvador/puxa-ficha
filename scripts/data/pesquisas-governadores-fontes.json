@@ -44,7 +44,10 @@
     "quaest-rs-nominal-20260910",
     "quaest-se-nominal-20260910",
     "quaest-pa-nominal-20260910",
-    "atlasintel-df-nominal-20260910"
+    "atlasintel-df-nominal-20260910",
+    "parana-pesquisas-ba-fechamento-20260910",
+    "igape-df-fechamento-20260910",
+    "doxa-pesquisa-ma-fechamento-20260910"
   ],
   "consulted_at": "2026-09-10T12:17:33.356Z",
   "status_values": [
@@ -3303,6 +3306,248 @@
       },
       "conditions": null,
       "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "parana-pesquisas-ba-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "S2R Comunicação Ltda. / Bahia Notícias",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-23",
+          "end": "2026-08-25"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 1400,
+        "method": "entrevistas pessoais, domiciliares e presenciais",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "BA-07628/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-07628/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:14:30.564563+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "1278b224000635bda5035c02a06d96de5195e968e545ed005005bcb47591a625",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ],
+          "note": "Método, campo, amostra, margem e confiança informados na fonte consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:14:30.564563+00:00"
+    },
+    {
+      "id": "igape-df-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IGAPE / Instituto Gazeta de Pesquisas",
+        "commissioner": "TV Atual, afiliada da Record News",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.metropoles.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-06",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          1
+        ],
+        "registration_id": "DF-07879/2026",
+        "result_url": "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-07879/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:14:30.564563+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "e1205c14dd0ef15b380adf41e54a633fa1d493e6d7c4d59095396b6436b6e38a",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:14:30.564563+00:00"
+    },
+    {
+      "id": "doxa-pesquisa-ma-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Doxa Pesquisa",
+        "commissioner": "H M Bogea e Cia Ltda. / Jornal Pequeno",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.pesquisasdoxa.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-01",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-10",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "MA-04033/2026",
+        "result_url": "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-04033/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:21:07.296347+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "ecfd0e9528c257f9ae1e245821fa4d55e8c9c02f28f2be6c454460097805a790",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:21:07.296347+00:00"
     }
   ]
 }

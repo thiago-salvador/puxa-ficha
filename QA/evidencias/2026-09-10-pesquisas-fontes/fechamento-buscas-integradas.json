@@ -1,0 +1,701 @@
+{
+  "reference_date": "2026-09-10",
+  "recorded_at": "2026-09-10T15:21:07.296347+00:00",
+  "attempts": [
+    {
+      "candidate_slug": "maria-bona",
+      "office": "governador",
+      "uf": "BA",
+      "step_id": "01_nome_estado",
+      "query": "\"Maria Bona\" pesquisa governador Bahia 2026",
+      "engine": "web.run search_query, filtro de recência de 3 dias",
+      "window_start": "2026-09-08",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+        "https://bpb.com.br/politica/pesquisa-real-time-big-data-bahia-2026-jeronimo-acm-neto/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A rodada Real Time Big Data de 09/09/2026 agrega Maria Bona, Ariel Capistrano e Aroldo Felix em 1%; não há percentual individual verificável.",
+      "poll_registration": "BA-01568/2026",
+      "poll_publication_date": "2026-09-09",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-BA.txt"
+    },
+    {
+      "candidate_slug": "maria-bona",
+      "office": "governador",
+      "uf": "BA",
+      "step_id": "01_nome_estado",
+      "query": "\"Maria Bona\" pesquisa governador Bahia 2026",
+      "engine": "web.run search_query, filtro de recência de 7 dias",
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "Na janela de 7 dias, a publicação recente localizada mantém Maria Bona em grupo de três candidatos; a rodada Atlas de 03/09 fica fora desta janela.",
+      "poll_registration": "BA-01568/2026",
+      "poll_publication_date": "2026-09-09",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-BA.txt"
+    },
+    {
+      "candidate_slug": "maria-bona",
+      "office": "governador",
+      "uf": "BA",
+      "step_id": "06_instituto_nome",
+      "query": "\"Maria Bona\" Atlas Bahia setembro 2026",
+      "engine": "web.run search_query",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+        "https://politicabahia.com/noticia/atlas-030926",
+        "https://www.atlasintel.org/poll/brazil-bahia-pesquisa-atlas-a-tarde-2026-09-03"
+      ],
+      "outcome": "metadata_conflict",
+      "reason": "A fonte regional atribui zero a Maria Bona, mas informa BR-07739/2026; UOL e Atlas identificam a rodada de governador como BA-08891/2026, e o quadro do UOL não traz Maria Bona. A rodada não foi usada.",
+      "poll_registration": null,
+      "poll_publication_date": "2026-09-03",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-BA-atlas-20260903.txt"
+    },
+    {
+      "candidate_slug": "maria-bona",
+      "office": "governador",
+      "uf": "BA",
+      "step_id": "07_registro_nome",
+      "query": "\"BA-08891/2026\"",
+      "engine": "web.run search_query",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://pimenta.blog.br/2026/09/03/na-bahia-atlasintel-a-tarde-mostra-empate-tecnico-entre-jeronimo-rodrigues-e-acm-neto/",
+        "https://www.atlasintel.org/poll/brazil-bahia-pesquisa-atlas-a-tarde-2026-09-03"
+      ],
+      "outcome": "metadata_conflict",
+      "reason": "O registro BA-08891/2026 foi confirmado para a rodada Atlas/A Tarde, mas as fontes coerentes com esse registro omitem Maria Bona; não há base para transportar o zero da página que informa BR-07739/2026.",
+      "poll_registration": "BA-08891/2026",
+      "poll_publication_date": "2026-09-03",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-BA-atlas-20260903.txt"
+    },
+    {
+      "candidate_slug": "maria-bona",
+      "office": "governador",
+      "uf": "BA",
+      "step_id": "10_pdf_original",
+      "query": "site:paranapesquisas.com.br/wp-content/uploads/2026/08/ \"BA-07628/2026\"",
+      "engine": "web.run search_query; abertura da página oficial e do PDF pelo link de download",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-da-bahia-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ba-07628-2026-agosto-2026/",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+      ],
+      "outcome": "individual_verified",
+      "reason": "O PDF oficial do Paraná Pesquisas confirma pessoa, cargo, UF, registro, ficha técnica e todos os cenários. Maria Bona tem 0,1% na espontânea e 0,5% nos dois cenários estimulados de primeiro turno.",
+      "poll_registration": "BA-07628/2026",
+      "poll_publication_date": "2026-08-27",
+      "scenario": "espontânea e dois cenários estimulados de primeiro turno",
+      "value_percent": 0.5,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-BA-parana-BA-07628-2026.txt"
+    },
+    {
+      "candidate_slug": "expedito-mendonca",
+      "office": "governador",
+      "uf": "DF",
+      "step_id": "01_nome_estado",
+      "query": "\"Expedito Mendonça\" pesquisa governador Distrito Federal 2026",
+      "engine": "web.run search_query, filtro de recência de 3 dias",
+      "window_start": "2026-09-08",
+      "window_end": "2026-09-10",
+      "source_urls": [],
+      "outcome": "no_relevant_result",
+      "reason": "Nenhuma pesquisa de intenção de voto divulgada entre 08/09 e 10/09 individualizou Expedito Mendonça; resultados antigos apareceram por data de rastreamento, mas foram rejeitados pela data de publicação.",
+      "poll_registration": null,
+      "poll_publication_date": null,
+      "scenario": null,
+      "value_percent": null,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": "expedito-mendonca",
+      "office": "governador",
+      "uf": "DF",
+      "step_id": "06_instituto_nome",
+      "query": "\"Expedito Mendonça\" IGAPE setembro 2026",
+      "engine": "web.run search_query",
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/",
+        "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+      ],
+      "outcome": "individual_verified",
+      "reason": "A busca encontrou uma matéria incompleta com 0,4% e, ao continuar, a publicação completa do Metrópoles: Expedito soma 0,8% na intenção de voto, com registro DF-07879/2026 e ficha técnica coerente.",
+      "poll_registration": "DF-07879/2026",
+      "poll_publication_date": "2026-09-06",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": 0.8,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-DF-igape-DF-07879-2026.txt"
+    },
+    {
+      "candidate_slug": "expedito-mendonca",
+      "office": "governador",
+      "uf": "DF",
+      "step_id": "07_registro_nome",
+      "query": "\"DF-07879/2026\" pesquisa IGAPE",
+      "engine": "web.run search_query",
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138",
+        "https://www.focodf.com.br/noticia/1588/brasilia/distrito-federal/celina-abre-quase-16-pontos-sobre-arruda-e-lidera-disputa-pelo-gdf.html"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Duas publicações identificam a mesma rodada, campo, amostra, margem, confiança, contratante e registro; o Metrópoles publica a lista nominal completa.",
+      "poll_registration": "DF-07879/2026",
+      "poll_publication_date": "2026-09-06",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": 0.8,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-DF-igape-DF-07879-2026.txt"
+    },
+    {
+      "candidate_slug": "expedito-mendonca",
+      "office": "governador",
+      "uf": "DF",
+      "step_id": "06_instituto_nome",
+      "query": "\"Expedito Mendonça\" Datafolha 2026",
+      "engine": "web.run search_query",
+      "window_start": "2026-01-01",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml",
+        "https://www.cnnbrasil.com.br/eleicoes/datafolha-celina-leao-e-arruda-empatam-na-disputa-pelo-governo-do-df/"
+      ],
+      "outcome": "historical_individual_verified",
+      "reason": "A rodada Datafolha de 21/08/2026 explicita que Expedito não pontuou, com registro DF-07561/2026; foi mantida como evidência histórica e não substitui a rodada recente IGAPE.",
+      "poll_registration": "DF-07561/2026",
+      "poll_publication_date": "2026-08-21",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": 0,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": "expedito-mendonca",
+      "office": "governador",
+      "uf": "DF",
+      "step_id": "10_pdf_original",
+      "query": "pesquisa governador Distrito Federal setembro 2026 filetype:pdf",
+      "engine": "web.run search_query",
+      "window_start": "2026-09-04",
+      "window_end": "2026-09-10",
+      "source_urls": [],
+      "outcome": "no_relevant_result",
+      "reason": "Nenhum PDF da rodada IGAPE DF-07879/2026 foi localizado. A recuperação continuou em publicações nominais até a ficha verificável do Metrópoles.",
+      "poll_registration": "DF-07879/2026",
+      "poll_publication_date": "2026-09-06",
+      "scenario": "primeiro turno estimulado",
+      "value_percent": null,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "01_nome_estado",
+      "query": "Pesquisa votos Maranhão Dimas Cassimiro governador 2026",
+      "engine": "web.run search_query recency=3",
+      "window_start": "2026-09-07",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A rodada estadual mais recente soma Dimas, Reginaldo e Saulo em Outros 1%; nenhuma parcela individual pode ser inferida.",
+      "poll_registration": "MA-02569/2026",
+      "poll_publication_date": "2026-09-10",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Reginaldo Lima\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=3",
+      "window_start": "2026-09-07",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/",
+        "https://janelobo.blogspot.com/2026/09/orleans-lidera-pesquisas-em-alto-alegre.html"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A rodada estadual disponível agrupa os três nomes. O resultado individual de 0,3% localizado em Barreirinhas tem abrangência municipal e foi descartado para a série estadual.",
+      "poll_registration": "MA-02569/2026",
+      "poll_publication_date": "2026-09-10",
+      "scenario": "1º turno estimulado, total da amostra estadual",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Saulo Arcangeli\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=3",
+      "window_start": "2026-09-07",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A rodada estadual mais recente soma Dimas, Reginaldo e Saulo em Outros 1%.",
+      "poll_registration": "MA-02569/2026",
+      "poll_publication_date": "2026-09-10",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Dimas Cassimiro\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=7",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/",
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "IPPI agrupa os três nomes em aproximadamente 1,6% dos votos válidos; Real Time Big Data os agrupa em 1% do total.",
+      "poll_registration": "MA-08868/2026; MA-02569/2026",
+      "poll_publication_date": "2026-09-04; 2026-09-10",
+      "scenario": "1º turno estimulado, denominadores distintos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Reginaldo Lima\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=7",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/",
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "As duas rodadas estaduais na janela de 7 dias agrupam o candidato com Dimas e Saulo.",
+      "poll_registration": "MA-08868/2026; MA-02569/2026",
+      "poll_publication_date": "2026-09-04; 2026-09-10",
+      "scenario": "1º turno estimulado, denominadores distintos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Saulo Arcangeli\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=7",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/",
+        "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "As duas rodadas estaduais na janela de 7 dias agrupam o candidato com Dimas e Reginaldo.",
+      "poll_registration": "MA-08868/2026; MA-02569/2026",
+      "poll_publication_date": "2026-09-04; 2026-09-10",
+      "scenario": "1º turno estimulado, denominadores distintos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Dimas Cassimiro\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=14",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/",
+        "https://vandovalrodrigues.com/inop-orleans-brandao-e-eduardo-braide-empatados-em-nova-pesquisa/"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Percentual nominal explícito em cenário estadual estimulado.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0.04,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Reginaldo Lima\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=14",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/",
+        "https://vandovalrodrigues.com/inop-orleans-brandao-e-eduardo-braide-empatados-em-nova-pesquisa/"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Percentual nominal explícito em cenário estadual estimulado.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0.08,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "03_nome_exato",
+      "query": "\"Saulo Arcangeli\" intenção de voto MA 2026",
+      "engine": "web.run search_query recency=14",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/",
+        "https://www.novaolindaagora.com/2026/09/pesquisa-inop-aponta-empate-tecnico.html"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Zero explícito: a fonte afirma que Saulo Arcangeli não pontuou.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "04_variantes",
+      "query": null,
+      "engine": "web.run",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [],
+      "outcome": "not_applicable",
+      "reason": "Os três nomes de urna já aparecem literalmente nas tabelas; nenhuma variante era necessária para provar pessoa, cargo e UF.",
+      "poll_registration": null,
+      "poll_publication_date": null,
+      "scenario": null,
+      "value_percent": null,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "05_outros_veiculos",
+      "query": "site:portaldosampaio.com.br IPPI Braide 53,7 1,6 Maranhão",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A fonte alternativa fornece a tabela de votos válidos completa, mas mantém os três candidatos somados em aproximadamente 1,6%.",
+      "poll_registration": "MA-08868/2026",
+      "poll_publication_date": "2026-09-04",
+      "scenario": "1º turno estimulado, votos válidos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "dimas-cassimiro",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "06_instituto_nome",
+      "query": "\"Dimas Cassimiro\" IPPI pesquisa Maranhão 1,6%",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "Busca nominal confirma que 1,6% é soma dos três nomes.",
+      "poll_registration": "MA-08868/2026",
+      "poll_publication_date": "2026-09-04",
+      "scenario": "1º turno estimulado, votos válidos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "reginaldo-lima",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "06_instituto_nome",
+      "query": "\"Reginaldo Lima\" INOP Maranhão 0,08%",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Resultado nominal localizado e lido.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0.08,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "06_instituto_nome",
+      "query": "\"Saulo Arcangeli\" \"não foi apontado\" pesquisa INOP Maranhão",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://www.novaolindaagora.com/2026/09/pesquisa-inop-aponta-empate-tecnico.html"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Zero nominal explícito localizado.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "07_registro_nome",
+      "query": "\"MA-08868/2026\" \"Saulo Arcangeli\"",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "A busca por registro e nome preserva o agrupamento; não individualiza Saulo.",
+      "poll_registration": "MA-08868/2026",
+      "poll_publication_date": "2026-09-04",
+      "scenario": "1º turno estimulado, votos válidos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "08_registro_sem_nome",
+      "query": "\"MA-08868/2026\" pesquisa",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://saoluisnoticia.com.br/eleicoes-2026-277/",
+        "https://espelhodomaranhao.com.br/justica-eleitoral-suspende-divulgacao-de-pesquisa-do-ippi-para-o-governo-do-maranhao-apos-apontar-falhas-no-registro/"
+      ],
+      "outcome": "grouped_only",
+      "reason": "Recuperou metadados e a sequência suspensão/liberação, sem tabela nominal individual.",
+      "poll_registration": "MA-08868/2026",
+      "poll_publication_date": "2026-09-04",
+      "scenario": "1º turno estimulado, votos válidos",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "09_tabela_completa",
+      "query": "INOP Maranhão agosto 2026 governador resultados completos",
+      "engine": "web.run search_query/open",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/",
+        "https://noticias.slz.br/alema/orleans-e-braide-seguem-empatados-mostra-pesquisa-inop-liberada-pela-justica-eleitoral/"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Tabela completa do estimulado localizada; a soma das linhas é 100,00%.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "10_pdf_original",
+      "query": "IPPI Maranhão setembro 2026 pesquisa filetype:pdf",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [],
+      "outcome": "no_relevant_result",
+      "reason": "Nenhum PDF original da rodada MA-08868/2026 foi localizado; a busca avançou para fontes alternativas e outra rodada.",
+      "poll_registration": "MA-08868/2026",
+      "poll_publication_date": "2026-09-04",
+      "scenario": null,
+      "value_percent": null,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "11_site_instituto",
+      "query": "site:tre-ma.jus.br \"MA-07572/2026\"",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [],
+      "outcome": "no_relevant_result",
+      "reason": "O domínio oficial não retornou a decisão posterior à negativa do plantão; o risco judicial permanece registrado.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": null,
+      "value_percent": null,
+      "evidence_path": null
+    },
+    {
+      "candidate_slug": "saulo-arcangeli",
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "12_zero_ou_agrupamento",
+      "query": "\"Saulo Arcangeli\" \"não foi apontado\" pesquisa INOP Maranhão",
+      "engine": "web.run search_query",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://www.novaolindaagora.com/2026/09/pesquisa-inop-aponta-empate-tecnico.html",
+        "https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm"
+      ],
+      "outcome": "individual_verified",
+      "reason": "Zero explícito localizado na INOP recente e na Quaest histórica; o zero não foi inferido de agrupamento.",
+      "poll_registration": "MA-07572/2026; MA-02558/2026",
+      "poll_publication_date": "2026-08-31; 2026-08-24",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": 0,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "13_outra_rodada",
+      "query": "pesquisa governador Maranhão setembro 2026 resultados completos",
+      "engine": "web.run search_query/open/click",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://depoisdas17.com.br/estados/ma/",
+        "https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/"
+      ],
+      "outcome": "individual_verified",
+      "reason": "A varredura de rodadas levou à INOP de 31/08, que individualiza os três candidatos dentro da janela de 14 dias.",
+      "poll_registration": "MA-07572/2026",
+      "poll_publication_date": "2026-08-31",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "14_historico_identificado",
+      "query": "\"Dimas Cassimiro\" intenção de voto MA 2026",
+      "engine": "web.run search_query/open/find",
+      "window_start": null,
+      "window_end": null,
+      "source_urls": [
+        "https://maranhaourgente.com.br/pesquisa-qualitativa-aponta-orleans-brandao-com-411-e-eduardo-braide-com-366-na-disputa-pelo-governo-do-maranhao/",
+        "https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm"
+      ],
+      "outcome": "historical_individual_verified",
+      "reason": "Qualitativa e Quaest foram mantidas explicitamente como históricas; não substituem a INOP recente.",
+      "poll_registration": "MA-08263/2026; MA-02558/2026",
+      "poll_publication_date": "2026-08-26; 2026-08-24",
+      "scenario": "1º turno estimulado, total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    },
+    {
+      "candidate_slug": null,
+      "office": "Governador",
+      "uf": "MA",
+      "step_id": "13_outra_rodada",
+      "query": "\"MA-04033/2026\" Doxa Maranhão Saulo Dimas Reginaldo",
+      "engine": "web.run search_query/open/click + leitura visual compartilhada das imagens oficiais",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "source_urls": [
+        "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+      ],
+      "outcome": "individual_verified",
+      "reason": "A leitura visual dos quadros oficiais individualizou os três candidatos e os totais dos três cenários fecharam em 100%.",
+      "poll_registration": "MA-04033/2026",
+      "poll_publication_date": "2026-09-10",
+      "scenario": "1º turno espontâneo, 1º turno estimulado e 2º turno; total da amostra",
+      "value_percent": null,
+      "evidence_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt"
+    }
+  ],
+  "notes": [
+    {
+      "scope": "BA Atlas/A Tarde 2026-09-03",
+      "reason": "Permanece a divergência entre BA-08891/2026 e BR-07739/2026 na fonte regional que atribui zero a Maria Bona. Essa rodada foi excluída; o fechamento usa BA-07628/2026 do Paraná Pesquisas."
+    },
+    {
+      "scope": "DF IGAPE DF-07879/2026",
+      "reason": "O método de coleta não foi informado nas fontes acessíveis; o campo method permanece null. Percentual, cenário, registro, campo, amostra, margem, confiança e contratante foram verificados."
+    },
+    {
+      "scope": "MA-07572/2026",
+      "issue": "Não foi localizada a decisão judicial oficial posterior à negativa do plantão em 31/08, embora várias fontes posteriores afirmem liberação e publiquem a mesma tabela.",
+      "impact": "Risco de procedência e status judicial; os percentuais nominais coincidem entre as fontes lidas."
+    },
+    {
+      "scope": "MA-07572/2026",
+      "issue": "Conflito de ficha técnica: fontes que reproduzem o registro informam 2.600 entrevistas de 19 a 26/08; uma matéria atribuída ao Marrapá informa 2.660 de 17 a 26/08.",
+      "impact": "Mantidos 2.600 e 19 a 26/08 como metadados principais; divergência não altera os percentuais publicados."
+    },
+    {
+      "scope": "MA-02569/2026 e MA-08868/2026",
+      "issue": "As duas rodadas estaduais mais recentes agrupam Dimas Cassimiro, Reginaldo Lima e Saulo Arcangeli.",
+      "impact": "Nenhum percentual individual deve ser atribuído nessas duas rodadas; a integração usa a Doxa MA-04033/2026, que individualiza os três nomes."
+    }
+  ]
+}

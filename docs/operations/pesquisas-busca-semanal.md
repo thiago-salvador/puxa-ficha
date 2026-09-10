@@ -28,6 +28,9 @@ uma verificação distinta das fontes previamente cadastradas.
    [estado] [nome do candidato]`, usando o nome de urna, o nome completo e
    variantes comprovadas. Combinar o nome com instituto, registro e data da
    rodada; consultar outros veículos e a tabela ou PDF original do instituto.
+   Quando os números estiverem em gráfico, imagem ou PDF, abrir e ler a tabela
+   visualmente. Ausência no texto extraído não significa ausência no relatório.
+   Preservar a URL da imagem ou a página do PDF com a transcrição conferida.
    Essa segunda busca inclui nomes em Outros, omitidos, com vínculo pendente
    ou apenas com resultado histórico. Um agrupamento na primeira matéria não
    encerra a busca. Registrar por candidato as consultas, fontes lidas e o
@@ -58,8 +61,8 @@ uma verificação distinta das fontes previamente cadastradas.
 A lista de buscas alternativas possui 14 caminhos ordenados: nome e estado;
 cargo e ano; nome exato; variantes comprovadas; outros veículos; instituto e
 nome; registro e nome; registro sem nome; tabela completa; PDF; site do instituto;
-zero ou agrupamento; outra rodada; histórico identificado. As seis pendências
-atuais têm cinco consultas concretas cada para iniciar a investigação.
+zero ou agrupamento; outra rodada; histórico identificado. Os seis nomes da fila
+inicial têm consultas concretas e o resultado da execução registrado no arquivo.
 
 Gerar a fila novamente a partir de todos os candidatos ativos em cada execução.
 Os seis nomes iniciais não são uma lista fechada. Registrar consulta, motor,

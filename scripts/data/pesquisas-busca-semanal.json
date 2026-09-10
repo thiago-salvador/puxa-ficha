@@ -25,13 +25,52 @@
   "nominal_search": {
     "fallback_playbook": "scripts/data/pesquisas-buscas-alternativas.json",
     "query_template": "Pesquisa votos [ESTADO] [NOME DO CANDIDATO]",
-    "triggers": ["sem_percentual_individual", "agrupado_em_outros", "identidade_pendente", "somente_resultado_historico"],
-    "fallbacks": ["nome_de_urna_e_nome_civil", "instituto_registro_data", "outra_reportagem", "tabela_ou_pdf_original"],
+    "triggers": [
+      "sem_percentual_individual",
+      "agrupado_em_outros",
+      "identidade_pendente",
+      "somente_resultado_historico"
+    ],
+    "fallbacks": [
+      "nome_de_urna_e_nome_civil",
+      "instituto_registro_data",
+      "outra_reportagem",
+      "tabela_ou_pdf_original"
+    ],
     "last_search_reference_date": "2026-09-10",
     "attempted_candidates": 31,
     "evidence": "QA/evidencias/2026-09-10-pesquisas-fontes/busca-nominal.json",
     "engine_used": "web.run",
-    "publication_verified": false
+    "publication_verified": false,
+    "fallback_run": {
+      "reference_date": "2026-09-10",
+      "completed_at": "2026-09-10T15:21:09.824851+00:00",
+      "status": "local_verified_pending_publication",
+      "targeted_candidates": 6,
+      "individual_results_recovered": 5,
+      "pending_candidates": [
+        "ruth-reis"
+      ],
+      "coverage_readback": {
+        "active_candidates": 206,
+        "with_individual_result": 205,
+        "within_14_days": 190,
+        "historical_only": 15,
+        "without_individual_result": 1,
+        "historical_candidates": ["adailton-furia", "expedito-netto", "hildon-chaves", "marcos-rogerio", "pedro-abib", "samuel-costa", "cesar-pontes", "bruno-pedreiro-do-pco", "gelson-merisio", "joao-rodrigues", "jorginho-mello", "lais-chaud", "marcelo-brigadeiro", "marcus-sodre", "ralf-zimmer"],
+        "note": "Leitura das fichas usando o cadastro ativo em 10/09/2026. A recuperação desta execução focalizou os seis nomes sem valor; os 15 históricos retornam à fila geral de busca recente."
+      },
+      "engines_used": [
+        "Google via Playwright",
+        "web.run"
+      ],
+      "evidence": [
+        "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-PA-buscas.json",
+        "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-buscas-integradas.json",
+        "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-fechamento-manifesto.json"
+      ],
+      "publication_verified": false
+    }
   },
   "geographies": [
     {
@@ -114,8 +153,10 @@
       "pending": [],
       "notes": [
         "Página aberta e corpo lido. O agrupamento de três candidaturas foi preservado como publicado; o cenário soma 100%.",
-        "A fonte informa que Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e somaram 1%; não divulga a fração individual de cada candidatura."
-      ]
+        "A fonte informa que Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e somaram 1%; não divulga a fração individual de cada candidatura.",
+        "Busca alternativa incorporou a rodada BA-07628/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
     },
     {
       "uf": "CE",
@@ -144,8 +185,10 @@
       "pending": [],
       "notes": [
         "Página da CNN Brasil lida; o corpo traz os dois cenários estimulados de primeiro turno, todos os nomes ou agrupamentos publicados e a metodologia.",
-        "Registro canônico DF-09600/2026 confirmado pelo Congresso em Foco; a CNN publicou BR-09600/2026, divergência preservada na evidência."
-      ]
+        "Registro canônico DF-09600/2026 confirmado pelo Congresso em Foco; a CNN publicou BR-09600/2026, divergência preservada na evidência.",
+        "Busca alternativa incorporou a rodada DF-07879/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
     },
     {
       "uf": "ES",
@@ -187,8 +230,10 @@
       "pending": [],
       "notes": [
         "Página aberta e corpo lido. O agrupamento indicado na nota da matéria foi preservado; o cenário soma 100%.",
-        "A matéria não informa o contratante, mantido como null. Saulo Arcangeli, Dimas Cassimiro e Reginaldo Lima aparecem apenas agrupados em 1%, sem frações individuais."
-      ]
+        "A matéria não informa o contratante, mantido como null. Saulo Arcangeli, Dimas Cassimiro e Reginaldo Lima aparecem apenas agrupados em 1%, sem frações individuais.",
+        "Busca alternativa incorporou a rodada MA-04033/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
     },
     {
       "uf": "MT",
@@ -249,10 +294,13 @@
       "registration": "PA-00206/2026",
       "poll_publication_date": "2026-09-08",
       "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PA.txt",
-      "pending": [],
+      "pending": [
+        "ruth-reis: sem percentual individual verificável; consultar novas rodadas. PA-00206/2026 testou José Moita e agrupou três nomes em 1%."
+      ],
       "notes": [
         "Página da CNN Brasil lida; o corpo traz o cenário estimulado completo e a metodologia. O agrupamento de José Moita, Well Macedo e Gal Leite em 1% foi preservado como publicado."
-      ]
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
     },
     {
       "uf": "PB",

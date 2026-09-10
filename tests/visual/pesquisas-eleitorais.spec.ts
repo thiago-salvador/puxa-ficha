@@ -6,6 +6,24 @@ const WITH_DATA_SLUG = "lula"
 const GOVERNOR_WITH_DATA_SLUG = "omar-aziz"
 const GOVERNOR_AC_SLUG = "alan-rick"
 
+test("buscas alternativas preenchem as cinco fichas recuperadas", async ({ page }, testInfo) => {
+  const cases = [
+    ["maria-bona", "Paraná Pesquisas", "0,5%"],
+    ["expedito-mendonca", "IGAPE", "0,8%"],
+    ["dimas-cassimiro", "Doxa", "0,4%"],
+    ["reginaldo-lima", "Doxa", "0,7%"],
+    ["saulo-arcangeli", "Doxa", "0,3%"],
+  ]
+  for (const [slug, institute, value] of cases) {
+    await page.goto(`/candidato/${slug}?tab=pesquisas`, { waitUntil: "networkidle" })
+    const tab = page.locator("[data-pf-pesquisas-tab]")
+    await expect(tab).toBeVisible()
+    await expect(tab).toContainText(institute)
+    await expect(tab).toContainText(value)
+    await tab.screenshot({ path: testInfo.outputPath(`${slug}.png`) })
+  }
+})
+
 async function expectStylesLoaded(element: Locator) {
   await expect
     .poll(

@@ -1,0 +1,61 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: BA
+Cargo: Governador
+Instituto: Paraná Pesquisas
+Registro TSE: BA-07628/2026
+Fonte primária: Paraná Pesquisas, PDF oficial de resultados
+URL do PDF: https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf
+Página oficial: https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-da-bahia-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ba-07628-2026-agosto-2026/
+Leitura: 2026-09-10
+
+Ficha técnica confirmada no PDF:
+- Divulgação: 2026-08-27
+- Campo: 2026-08-23 a 2026-08-25
+- Amostra: 1.400 eleitores em 62 municípios
+- Método: entrevistas pessoais, domiciliares e presenciais
+- Margem de erro: 2,7 pontos percentuais
+- Nível de confiança: 95%
+- Contratante: S2R Comunicação Ltda. / Bahia Notícias, confirmado pela publicação regional que reproduz a ficha da rodada
+- URL da publicação regional: https://glomes.com.br/parana-pesquisas-acm-neto-aparece-liderando-em-todos-os-cenarios/?b=18
+
+Governador, espontânea, base 1.400 eleitores:
+- Não sabe / não opinou: 31,5%
+- Ninguém / branco / nulo: 6,6%
+- ACM Neto: 34,4%
+- Jerônimo Rodrigues: 26,3%
+- Aroldo Felix: 0,1%
+- Estêvão: 0,1%
+- Maria Bona: 0,1%
+- Ronaldo Mansur: 0,1%
+- Outros nomes citados: 0,9%
+
+Governador, estimulada, cenário 1, base 1.400 eleitores:
+- Não sabe / não opinou: 4,0%
+- Nenhum / branco / nulo: 5,6%
+- ACM Neto: 48,6%
+- Jerônimo Rodrigues: 40,1%
+- Estêvão: 0,5%
+- Maria Bona: 0,5%
+- Ronaldo Mansur: 0,4%
+- Aroldo Felix: 0,2%
+
+Governador, estimulada, cenário 2, base 1.400 eleitores:
+- Não sabe / não opinou: 4,0%
+- Nenhum / branco / nulo: 5,6%
+- ACM Neto: 48,5%
+- Jerônimo Rodrigues: 40,1%
+- Ariel Capistrano: 0,6%
+- Maria Bona: 0,5%
+- Ronaldo Mansur: 0,4%
+- Aroldo Felix: 0,3%
+
+Governador, estimulada, cenário 3, segundo turno, base 1.400 eleitores:
+- Não sabe / não opinou: 3,7%
+- Nenhum / branco / nulo: 6,0%
+- ACM Neto: 49,3%
+- Jerônimo Rodrigues: 41,0%
+
+Notas de integridade:
+- Os quadros acima reproduzem todas as linhas dos quatro cenários gerais de intenção de voto para governador no PDF. Cruzamentos demográficos e perguntas de potencial eleitoral não são cenários adicionais de intenção de voto.
+- O PDF oficial confirma Maria Bona e BA-07628/2026 sem depender da rodada Atlas/A Tarde cujo registro estava divergente entre BA-08891/2026 e BR-07739/2026.
+- O fechamento nominal de Maria Bona usa uma rodada diferente da Atlas e preserva os dois valores publicados, 0,1% espontâneo e 0,5% estimulado.

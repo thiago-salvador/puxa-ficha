@@ -121,3 +121,12 @@ test("capturas nominais conferem com os catálogos e só vinculam identidades at
     }
   }
 })
+
+test("buscas alternativas recuperam os valores individuais sem transferir resultados entre candidatos", () => {
+  const maria = listarPesquisasGovernadorPorSlug("maria-bona", "BA")
+  assert.ok(maria.some((p) => p.id === "parana-pesquisas-ba-ba-07628-2026-fechamento" && p.resultado.valuePercent === 0.5))
+  assert.ok(!maria.some((p) => p.id === "atlasintel-ba-ba-08891-2026"))
+  const expedito = listarPesquisasGovernadorPorSlug("expedito-mendonca", "DF")
+  assert.ok(expedito.some((p) => p.id === "igape-df-df-07879-2026-fechamento" && p.resultado.valuePercent === 0.8))
+  assert.equal(listarPesquisasGovernadorPorSlug("ruth-reis", "PA").length, 0)
+})

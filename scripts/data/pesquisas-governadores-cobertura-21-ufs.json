@@ -72,11 +72,11 @@
   },
   "summary": {
     "published_ufs_in_scope": 27,
-    "published_profiles_in_scope": 187,
+    "published_profiles_in_scope": 192,
     "total_catalog_ufs": 27,
-    "total_catalog_profiles": 187,
+    "total_catalog_profiles": 192,
     "additional_published_ufs": 27,
-    "additional_published_profiles": 187
+    "additional_published_profiles": 192
   },
   "states": [
     {
@@ -145,20 +145,23 @@
     {
       "uf": "BA",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 6 identidade(s) comprovada(s) para Bahia.",
+      "reason": "Catálogo aprovado contém 4 rodada(s), 4 registro(s) e 7 identidade(s) comprovada(s) para Bahia.",
       "evidence_urls": [
         "https://exame.com/brasil/real-time-big-data-acm-neto-tem-44-e-jeronimo-42-no-1o-turno/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
         "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
-        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
+        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+        "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
       ],
       "registration_ids": [
         "BA-00277/2026",
         "BA-01568/2026",
+        "BA-07628/2026",
         "BA-08891/2026"
       ],
       "candidate_source_ids": [
         "atlasintel-ba-nominal-20260910",
+        "parana-pesquisas-ba-fechamento-20260910",
         "real-time-big-data-ba-revisao-20260910",
         "real-time-big-data-estaduais-2026"
       ]
@@ -187,21 +190,24 @@
     {
       "uf": "DF",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 10 identidade(s) comprovada(s) para Distrito Federal.",
+      "reason": "Catálogo aprovado contém 4 rodada(s), 4 registro(s) e 11 identidade(s) comprovada(s) para Distrito Federal.",
       "evidence_urls": [
         "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
         "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
-        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
+        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+        "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
       ],
       "registration_ids": [
         "DF-02018/2026",
         "DF-07561/2026",
+        "DF-07879/2026",
         "DF-09600/2026"
       ],
       "candidate_source_ids": [
         "atlasintel-df-nominal-20260910",
         "datafolha-folha-globo-estaduais-2026",
+        "igape-df-fechamento-20260910",
         "real-time-big-data-df-revisao-20260910"
       ]
     },
@@ -238,15 +244,18 @@
     {
       "uf": "MA",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 1 rodada(s), 1 registro(s) e 5 identidade(s) comprovada(s) para Maranhão.",
+      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 8 identidade(s) comprovada(s) para Maranhão.",
       "evidence_urls": [
         "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/",
-        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+        "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
       ],
       "registration_ids": [
-        "MA-02569/2026"
+        "MA-02569/2026",
+        "MA-04033/2026"
       ],
       "candidate_source_ids": [
+        "doxa-pesquisa-ma-fechamento-20260910",
         "real-time-big-data-ma-revisao-20260910"
       ]
     },

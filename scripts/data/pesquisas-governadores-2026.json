@@ -1065,6 +1065,22 @@
         {
           "raw_label": "Ariel Capistrano (DC)",
           "candidate_slug": "ariel-capistrano"
+        },
+        {
+          "raw_label": "Aroldo Felix",
+          "candidate_slug": "aroldo-felix"
+        },
+        {
+          "raw_label": "Estêvão",
+          "candidate_slug": "jose-estevao"
+        },
+        {
+          "raw_label": "Maria Bona",
+          "candidate_slug": "maria-bona"
+        },
+        {
+          "raw_label": "Ariel Capistrano",
+          "candidate_slug": "ariel-capistrano"
         }
       ],
       "pesquisas": [
@@ -1604,6 +1620,344 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 0.2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parana-pesquisas-ba-ba-07628-2026-fechamento",
+          "source_id": "parana-pesquisas-ba-fechamento-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Paraná Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "S2R Comunicação Ltda. / Bahia Notícias",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-23",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-25",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-27",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1400,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.7,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "entrevistas pessoais, domiciliares e presenciais",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "BA-07628/2026",
+              "status": "publicado"
+            },
+            "supporting_codes": [],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Bahia",
+            "code": "BA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_publica_instituto",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Rodada e tabela verificadas na fonte indicada. Vínculos restritos ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T15:14:30.564563+00:00",
+            "capture": {
+              "format": "text",
+              "sha256": "1278b224000635bda5035c02a06d96de5195e968e545ed005005bcb47591a625",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-1",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "Espontânea",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|espontanea|parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe / não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 31.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ninguém / branco / nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "ACM Neto",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 34.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 26.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Felix",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Estêvão",
+                  "candidate_slug": "jose-estevao",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Maria Bona",
+                  "candidate_slug": "maria-bona",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros nomes citados",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.9,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-2",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "Estimulada - Cenário 1",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|estimulada|parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-2|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe / não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum / branco / nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "ACM Neto",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 48.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 40.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Estêvão",
+                  "candidate_slug": "jose-estevao",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Maria Bona",
+                  "candidate_slug": "maria-bona",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Felix",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-3",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "Estimulada - Cenário 2",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|estimulada|parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-3|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe / não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum / branco / nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "ACM Neto",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 48.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 40.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ariel Capistrano",
+                  "candidate_slug": "ariel-capistrano",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Maria Bona",
+                  "candidate_slug": "maria-bona",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Felix",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-4",
+              "turn": 2,
+              "geography": "Bahia",
+              "label_raw": "Estimulada - Cenário 3 - ACM Neto x Jerônimo Rodrigues",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|2|estimulada|parana-pesquisas-ba-ba-07628-2026-fechamento-cenario-4|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe / não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum / branco / nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "ACM Neto",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 49.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 41.0,
                   "status": "publicado"
                 }
               ]
@@ -2243,6 +2597,30 @@
         {
           "raw_label": "Rico Pinheiro (PRTB)",
           "candidate_slug": "rico-pinheiro"
+        },
+        {
+          "raw_label": "Ricardo Cappelli",
+          "candidate_slug": "ricardo-cappelli"
+        },
+        {
+          "raw_label": "Kiko Caputo",
+          "candidate_slug": "kiko-caputo"
+        },
+        {
+          "raw_label": "Professor Robson",
+          "candidate_slug": "robson-raymundo"
+        },
+        {
+          "raw_label": "Expedito Mendonça",
+          "candidate_slug": "expedito-mendonca"
+        },
+        {
+          "raw_label": "Elisson Ferreira",
+          "candidate_slug": "elisson-ferreira"
+        },
+        {
+          "raw_label": "Samara Mineiro",
+          "candidate_slug": "samara-mineiro"
         }
       ],
       "pesquisas": [
@@ -2931,6 +3309,179 @@
               ]
             }
           ]
+        },
+        {
+          "id": "igape-df-df-07879-2026-fechamento",
+          "source_id": "igape-df-fechamento-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "IGAPE / Instituto Gazeta de Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Atual, afiliada da Record News",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-31",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-05",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-06",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 2000,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-07879/2026",
+              "status": "publicado"
+            },
+            "supporting_codes": [],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Rodada e tabela verificadas na fonte indicada. Vínculos restritos ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T15:14:30.564563+00:00",
+            "capture": {
+              "format": "text",
+              "sha256": "e1205c14dd0ef15b380adf41e54a633fa1d493e6d7c4d59095396b6436b6e38a",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "igape-df-df-07879-2026-fechamento-cenario-1",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "Estimulada - primeiro turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|estimulada|igape-df-df-07879-2026-fechamento-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 36.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "José Roberto Arruda",
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "value_percent": 20.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 13.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Paula Belmonte",
+                  "candidate_slug": "paula-belmonte",
+                  "match_status": "exact_alias",
+                  "value_percent": 5.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ricardo Cappelli",
+                  "candidate_slug": "ricardo-cappelli",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Kiko Caputo",
+                  "candidate_slug": "kiko-caputo",
+                  "match_status": "exact_alias",
+                  "value_percent": 3.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elisson Ferreira",
+                  "candidate_slug": "elisson-ferreira",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Samara Mineiro",
+                  "candidate_slug": "samara-mineiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Robson",
+                  "candidate_slug": "robson-raymundo",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Expedito Mendonça",
+                  "candidate_slug": "expedito-mendonca",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe / não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11.3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -3408,6 +3959,22 @@
         {
           "raw_label": "Roberto Rocha",
           "candidate_slug": "roberto-rocha"
+        },
+        {
+          "raw_label": "André Luís",
+          "candidate_slug": "andre-luis"
+        },
+        {
+          "raw_label": "Reginaldo Lima",
+          "candidate_slug": "reginaldo-lima"
+        },
+        {
+          "raw_label": "Saulo Arcangeli",
+          "candidate_slug": "saulo-arcangeli"
+        },
+        {
+          "raw_label": "Dimas Cassimiro",
+          "candidate_slug": "dimas-cassimiro"
         }
       ],
       "pesquisas": [
@@ -3558,6 +4125,296 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "doxa-pesquisa-ma-ma-04033-2026-fechamento",
+          "source_id": "doxa-pesquisa-ma-fechamento-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Doxa Pesquisa",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "H M Bogea e Cia Ltda. / Jornal Pequeno",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-01",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-05",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-10",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 2000,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "MA-04033/2026",
+              "status": "publicado"
+            },
+            "supporting_codes": [],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Maranhão",
+            "code": "MA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_publica_instituto",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Rodada e tabela verificadas na fonte indicada. Vínculos restritos ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T15:21:07.296347+00:00",
+            "capture": {
+              "format": "text",
+              "sha256": "ecfd0e9528c257f9ae1e245821fa4d55e8c9c02f28f2be6c454460097805a790",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-1",
+              "turn": 1,
+              "geography": "Maranhão",
+              "label_raw": "Espontâneo de 1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MA|1|espontanea|doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Orleans Brandão",
+                  "candidate_slug": "orleans-brandao",
+                  "match_status": "exact_alias",
+                  "value_percent": 39.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Eduardo Braide",
+                  "candidate_slug": "eduardo-braide",
+                  "match_status": "exact_alias",
+                  "value_percent": 36.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/indeciso",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 14.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Felipe Camarão",
+                  "candidate_slug": "felipe-camarao",
+                  "match_status": "exact_alias",
+                  "value_percent": 2.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Roberto Rocha",
+                  "candidate_slug": "roberto-rocha",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "André Luís",
+                  "candidate_slug": "andre-luis",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Reginaldo Lima",
+                  "candidate_slug": "reginaldo-lima",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Saulo Arcangeli",
+                  "candidate_slug": "saulo-arcangeli",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dimas Cassimiro",
+                  "candidate_slug": "dimas-cassimiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-2",
+              "turn": 1,
+              "geography": "Maranhão",
+              "label_raw": "Estimulado de 1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MA|1|estimulada|doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-2|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Orleans Brandão",
+                  "candidate_slug": "orleans-brandao",
+                  "match_status": "exact_alias",
+                  "value_percent": 42.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Eduardo Braide",
+                  "candidate_slug": "eduardo-braide",
+                  "match_status": "exact_alias",
+                  "value_percent": 37.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7.0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Felipe Camarão",
+                  "candidate_slug": "felipe-camarao",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/indeciso",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Roberto Rocha",
+                  "candidate_slug": "roberto-rocha",
+                  "match_status": "exact_alias",
+                  "value_percent": 3.0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "André Luís",
+                  "candidate_slug": "andre-luis",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Reginaldo Lima",
+                  "candidate_slug": "reginaldo-lima",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dimas Cassimiro",
+                  "candidate_slug": "dimas-cassimiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Saulo Arcangeli",
+                  "candidate_slug": "saulo-arcangeli",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-3",
+              "turn": 2,
+              "geography": "Maranhão",
+              "label_raw": "Segundo turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MA|2|estimulada|doxa-pesquisa-ma-ma-04033-2026-fechamento-cenario-3|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Orleans Brandão",
+                  "candidate_slug": "orleans-brandao",
+                  "match_status": "exact_alias",
+                  "value_percent": 43.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Eduardo Braide",
+                  "candidate_slug": "eduardo-braide",
+                  "match_status": "exact_alias",
+                  "value_percent": 39.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 13.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.7,
                   "status": "publicado"
                 }
               ]
