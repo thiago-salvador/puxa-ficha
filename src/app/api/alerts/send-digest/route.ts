@@ -17,6 +17,7 @@ import { logAlertsApiExit, logAlertsEvent } from "@/lib/alerts-log"
 import { resolveChainOrigin, validarOrigemEncadeamento } from "@/lib/cron-chain-origin"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { sendTransactionalEmail } from "@/lib/email"
+import { buildAbsoluteUrl } from "@/lib/metadata"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -80,6 +81,9 @@ interface CandidateChangeRow {
   candidato_id: string
   titulo: string
   descricao: string | null
+  tipo: string
+  registro_id: string | null
+  metadata: { url?: unknown; fonte?: unknown } | null
   created_at: string
 }
 
@@ -329,7 +333,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
 
       const { data: changeRows, error: changesError } = await supabase
         .from("candidate_changes")
-        .select("id, candidato_id, titulo, descricao, created_at")
+        .select("id, candidato_id, titulo, descricao, tipo, registro_id, metadata, created_at")
         .abortSignal(supabaseQueryTimeoutSignal())
         .in("candidato_id", candidateIds)
         .gt("created_at", windowStart)
@@ -389,7 +393,22 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         const allChanges = changesInWindow
           .filter((row) => row.candidato_id === candidateId)
           .reverse()
-          .map((row) => ({ title: row.titulo, description: row.descricao ?? null }))
+          .map((row) => {
+            const isNews = row.tipo === "noticia"
+            const newsId = isNews ? row.registro_id?.trim() : null
+            const candidatePath = `/candidato/${encodeURIComponent(candidate.slug)}`
+            const newsPath = newsId
+              ? `?tab=media&noticia=${encodeURIComponent(newsId)}#noticia-${encodeURIComponent(newsId)}`
+              : "?tab=media"
+            const sourceName = isNews && typeof row.metadata?.fonte === "string" ? row.metadata.fonte : null
+            return {
+              title: row.titulo,
+              description: row.descricao === sourceName ? null : (row.descricao ?? null),
+              href: buildAbsoluteUrl(`${candidatePath}${isNews ? newsPath : ""}`),
+              sourceUrl: isNews && typeof row.metadata?.url === "string" ? row.metadata.url : null,
+              sourceName,
+            }
+          })
         const changes = allChanges.slice(0, DIGEST_MAX_CHANGES_PER_CANDIDATE)
         const omitted = allChanges.length - changes.length
 

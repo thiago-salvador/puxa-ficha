@@ -364,6 +364,9 @@ export interface AlertDigestEmailCandidate {
   changes: Array<{
     title: string
     description?: string | null
+    href?: string | null
+    sourceUrl?: string | null
+    sourceName?: string | null
   }>
   /** Mudanças desta ficha que entraram no digest mas não são listadas uma a uma. */
   omitted?: number
@@ -371,6 +374,16 @@ export interface AlertDigestEmailCandidate {
 
 function omittedLabel(omitted: number): string {
   return omitted === 1 ? "e mais 1 atualização nesta ficha" : `e mais ${omitted} atualizações nesta ficha`
+}
+
+function safeDigestUrl(value: string | null | undefined): string | null {
+  if (!value) return null
+  try {
+    const url = new URL(value)
+    return url.protocol === "https:" && !url.username && !url.password ? url.href : null
+  } catch {
+    return null
+  }
 }
 
 export function buildAlertDigestEmail(input: {
@@ -385,9 +398,16 @@ export function buildAlertDigestEmail(input: {
 
   const textSections = input.items.flatMap((item) => [
     `${item.candidateName}: ${item.candidateMeta}`,
-    ...item.changes.map((change) =>
-      change.description ? `- ${change.title}: ${change.description}` : `- ${change.title}`,
-    ),
+    ...item.changes.flatMap((change) => {
+      const href = safeDigestUrl(change.href)
+      const sourceUrl = safeDigestUrl(change.sourceUrl)
+      return [
+        change.description ? `- ${change.title}: ${change.description}` : `- ${change.title}`,
+        ...(change.sourceName ? [`  Fonte: ${change.sourceName}`] : []),
+        ...(href ? [`  Abrir no Puxa Ficha: ${href}`] : []),
+        ...(sourceUrl ? [`  Ler no portal: ${sourceUrl}`] : []),
+      ]
+    }),
     ...(item.omitted ? [`- ${omittedLabel(item.omitted)}`] : []),
     "",
   ])
@@ -408,14 +428,24 @@ export function buildAlertDigestEmail(input: {
   const htmlItems = input.items
     .map((item) => {
       const mudancas = item.changes
-        .map(
-          (change, index) =>
-            `<li class="pf-text" style="margin:0 0 ${index === item.changes.length - 1 ? 0 : 12}px;padding-left:4px;font-family:${EMAIL_FONT_BODY};font-size:15px;line-height:21px;font-weight:bold;color:${EMAIL_COLORS.text}">${escapeHtml(change.title)}${
-              change.description
-                ? `<div class="pf-muted" style="margin-top:3px;font-family:${EMAIL_FONT_BODY};font-size:14px;line-height:21px;font-weight:normal;color:${EMAIL_COLORS.muted}">${escapeHtml(change.description)}</div>`
-                : ""
-            }</li>`,
-        )
+        .map((change, index) => {
+          const href = safeDigestUrl(change.href)
+          const sourceUrl = safeDigestUrl(change.sourceUrl)
+          const title = href
+            ? `<a href="${escapeHtml(href)}" class="pf-link" style="color:${EMAIL_COLORS.text};text-decoration:underline">${escapeHtml(change.title)}</a>`
+            : escapeHtml(change.title)
+          const source = change.sourceName
+            ? `<div class="pf-muted" style="margin-top:3px;font-size:13px;font-weight:normal;color:${EMAIL_COLORS.muted}">Fonte: ${escapeHtml(change.sourceName)}</div>`
+            : ""
+          const sourceLink = sourceUrl
+            ? `<div style="margin-top:6px;font-size:13px;font-weight:normal"><a href="${escapeHtml(sourceUrl)}" class="pf-link" style="color:${EMAIL_COLORS.text};text-decoration:underline">Ler no portal</a></div>`
+            : ""
+          return `<li class="pf-text" style="margin:0 0 ${index === item.changes.length - 1 ? 0 : 12}px;padding-left:4px;font-family:${EMAIL_FONT_BODY};font-size:15px;line-height:21px;font-weight:bold;color:${EMAIL_COLORS.text}">${title}${
+            change.description
+              ? `<div class="pf-muted" style="margin-top:3px;font-family:${EMAIL_FONT_BODY};font-size:14px;line-height:21px;font-weight:normal;color:${EMAIL_COLORS.muted}">${escapeHtml(change.description)}</div>`
+              : ""
+          }${source}${sourceLink}</li>`
+        })
         .join("")
       const omitidas = item.omitted
         ? `<li class="pf-muted" style="margin:12px 0 0;padding-left:4px;font-family:${EMAIL_FONT_BODY};font-size:14px;line-height:21px;color:${EMAIL_COLORS.muted}">${escapeHtml(omittedLabel(item.omitted))}</li>`
