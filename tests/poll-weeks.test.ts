@@ -10,6 +10,20 @@ function survey(date: string, institute: string, values = [30, 40, 10]) {
   return poll
 }
 
+test("default series prefers stimulated voting, preserves spontaneous scenarios and orders by actual fieldwork date", () => {
+  const stimulated = survey("2026-09-08", "A")
+  stimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulada|lista|total"
+  const spontaneous = survey("2026-09-10", "B")
+  spontaneous.scenario.comparabilityKey = "2026|Governador|SP|1|espontanea|lista|total"
+  spontaneous.scenario.resultados = spontaneous.scenario.resultados.slice(0, 2)
+  const latestStimulated = survey("2026-09-09", "C")
+  latestStimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulado|outra-lista|total"
+  const groups = groupWeeklyPollSeries([spontaneous, stimulated, latestStimulated])
+  assert.equal(groups[0].polls[0].id, latestStimulated.id)
+  assert.equal(groups.length, 3)
+  assert.equal(groupWeeklyPollSeries([spontaneous])[0].polls[0].id, spontaneous.id)
+})
+
 test("weekly means combine institutes and interview modes with equal survey weights", () => {
   const a = survey("2026-09-08", "A", [30, 40, 0])
   const b = survey("2026-09-08", "B", [40, 30, 10])

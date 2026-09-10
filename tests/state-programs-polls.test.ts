@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 import { test } from "node:test"
 import { stateProgramTheme } from "../src/lib/state-program-themes"
+import { groupWeeklyPollSeries } from "../src/lib/poll-weeks"
 import type { ProgramaGovernoManifestoPublico } from "../src/lib/programa-governo"
 
 const require = createRequire(import.meta.url)
@@ -10,6 +11,24 @@ require.cache[serverOnlyPath] = { id: serverOnlyPath, filename: serverOnlyPath, 
 const { loadStatePrograms } = require("../src/lib/state-programs") as typeof import("../src/lib/state-programs")
 const { loadStatePolls } = require("../src/lib/state-polls") as typeof import("../src/lib/state-polls")
 const { carregarPesquisasGovernadores } = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
+
+test("all 27 UF charts default to an available stimulated scenario and SP retains all seven named results", () => {
+  const catalogs = carregarPesquisasGovernadores()
+  assert.equal(catalogs.size, 27)
+  for (const [uf, catalog] of catalogs) {
+    const polls = loadStatePolls(uf, catalog).filter(p => p.scenario.turn === 1)
+    const stimulated = polls.filter(p => /^estimulad[ao]$/.test(p.scenario.comparabilityKey.split("|")[4]))
+    const groups = groupWeeklyPollSeries(polls)
+    if (stimulated.length) assert.match(groups[0].polls[0].scenario.comparabilityKey.split("|")[4], /^estimulad[ao]$/, uf)
+    if (uf === "SP") {
+      const rows = groups[0].weeks.at(-1)!.results
+      assert.equal(rows.length, 7)
+      assert.equal(rows.find(r => r.result.candidateSlug === "vivian-mendes")?.value, 0)
+      assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 42)
+      assert.equal(rows.find(r => r.result.candidateSlug === "haddad-gov-sp")?.value, 27)
+    }
+  }
+})
 
 test("approved program cannot cross candidate, UF, year or review boundaries", async () => {
   const candidate = { slug: "fixture", nome_urna: "Fixture", sqCandidato: "123" }
