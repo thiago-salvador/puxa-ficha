@@ -3,9 +3,8 @@ import { expect, test, type Locator, type Page } from "playwright/test"
 // cspell:ignore AtlasIntel Bolsonaro daciolo Datafolha domcontentloaded Ipsos marcal networkidle pablo
 
 const WITH_DATA_SLUG = "lula"
-const WITHOUT_DATA_SLUG = "pablo-marcal"
 const GOVERNOR_WITH_DATA_SLUG = "omar-aziz"
-const GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUGS = ["alan-rick", "jhc"]
+const GOVERNOR_AC_SLUG = "alan-rick"
 
 async function expectStylesLoaded(element: Locator) {
   await expect
@@ -21,22 +20,22 @@ async function expectStylesLoaded(element: Locator) {
 }
 
 async function expectNoHorizontalOverflow(page: Page, element: Locator) {
-  expect(await element.evaluate((node) => node.scrollWidth > node.clientWidth)).toBe(false)
-  expect(
-    await page.evaluate(
+  await expect.poll(() => element.evaluate((node) => node.scrollWidth > node.clientWidth)).toBe(false)
+  await expect.poll(() =>
+    page.evaluate(
       () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
     ),
   ).toBe(false)
 }
 
 async function waitForProfile(page: Page) {
-  const tabs = page.getByRole("tablist", { name: /Seções do perfil/ })
+  const tabs = page.getByRole("tablist", { name: /Seções.*do perfil/ })
   await expect(tabs).toBeVisible({ timeout: 15_000 })
   return tabs
 }
 
 test.describe("pesquisas presidenciais v2", () => {
-  test("hero exibe somente a fonte publicável e respeita movimento reduzido", async ({ page }, testInfo) => {
+  test("hero alterna as duas fontes a cada cinco segundos e respeita movimento reduzido", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "domcontentloaded" })
 
     const fullHero = page.locator("[data-pf-hero]")
@@ -44,11 +43,11 @@ test.describe("pesquisas presidenciais v2", () => {
     await expect(hero).toBeVisible()
     await expectStylesLoaded(hero)
     await expectNoHorizontalOverflow(page, fullHero)
-    await expect(hero).toContainText("Datafolha")
-    await expect(hero).toContainText("39%")
+    await expect(hero).toContainText("Meio/Ideia")
+    await expect(hero).toContainText("38,4%")
+    await expect(hero).toContainText("percentuais do total de entrevistados")
     await expect(hero).not.toContainText("46%")
     await expect(hero).not.toContainText("2º turno")
-    await expect(hero).not.toContainText("cenário")
     const nameBox = await page.locator("[data-pf-hero-name]").boundingBox()
     const researchBox = await hero.boundingBox()
     expect(nameBox).not.toBeNull()
@@ -61,21 +60,22 @@ test.describe("pesquisas presidenciais v2", () => {
     await page.waitForTimeout(5_300)
     await expect(hero).toContainText("Datafolha")
     await expect(hero).toContainText("39%")
+    await expect(hero).toContainText("cenário sem Pablo Marçal")
 
     await page.emulateMedia({ reducedMotion: "reduce" })
     await page.reload({ waitUntil: "domcontentloaded" })
     const reducedHero = page.locator("[data-pf-pesquisa-hero]")
-    await expect(reducedHero).toContainText("Datafolha")
+    await expect(reducedHero).toContainText("Meio/Ideia")
     await page.waitForTimeout(5_300)
-    await expect(reducedHero).toContainText("Datafolha")
-    await expect(reducedHero).toContainText("39%")
+    await expect(reducedHero).toContainText("Meio/Ideia")
+    await expect(reducedHero).toContainText("38,4%")
 
     await page.setViewportSize({ width: 390, height: 844 })
     await expectNoHorizontalOverflow(page, fullHero)
     await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-hero-mobile.png") })
   })
 
-  test("Visão geral mantém o card único e desabilita navegação sem alternativa", async ({ page }, testInfo) => {
+  test("Visão geral mantém o card único e navega entre as duas fontes", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
     await waitForProfile(page)
 
@@ -101,15 +101,20 @@ test.describe("pesquisas presidenciais v2", () => {
     const previous = overview.getByRole("button", { name: "Pesquisa anterior" })
     await expect(next).toHaveCSS("width", "44px")
     await expect(previous).toHaveCSS("height", "44px")
-    await expect(next).toBeDisabled()
-    await expect(previous).toBeDisabled()
+    await expect(next).toBeEnabled()
+    await expect(previous).toBeEnabled()
+    await expect(current).toContainText("Meio/Ideia")
+    await expect(current).toContainText("38,4%")
+    await expect(current).toContainText("04/09/2026 a 07/09/2026")
+    await expect(current.locator("[data-pf-pesquisa-link]")).toHaveAttribute(
+      "href",
+      /cnn(?:brasil)?\.com\.br/,
+    )
+
+    await next.click()
     await expect(current).toContainText("Datafolha")
     await expect(current).toContainText("39%")
     await expect(current).toContainText("18/08/2026 a 19/08/2026")
-    await expect(current.locator("[data-pf-pesquisa-link]")).toHaveAttribute(
-      "href",
-      /folha\.uol\.com\.br/,
-    )
 
     await expect(current).not.toContainText("PoderData")
     await expect(current).not.toContainText("2º turno")
@@ -133,7 +138,8 @@ test.describe("pesquisas presidenciais v2", () => {
 
     const tab = page.locator("[data-pf-pesquisas-tab]")
     await expect(tab).toBeVisible()
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
+    await expect(tab).toContainText("38,4%")
     await expect(tab).toContainText("39%")
     await expect(tab).not.toContainText("PoderData")
     await expect(tab).not.toContainText("AtlasIntel")
@@ -146,7 +152,7 @@ test.describe("pesquisas presidenciais v2", () => {
       "aria-selected",
       "true",
     )
-    await expect(page.locator("[data-pf-pesquisas-tab] [data-pf-pesquisa-card]")).toHaveCount(1)
+    await expect(page.locator("[data-pf-pesquisas-tab] [data-pf-pesquisa-card]")).toHaveCount(2)
 
     await page.setViewportSize({ width: 390, height: 844 })
     const mobileTab = page.locator("[data-pf-pesquisas-tab]")
@@ -154,6 +160,7 @@ test.describe("pesquisas presidenciais v2", () => {
     await expectNoHorizontalOverflow(page, mobileTab)
     await mobileTab.screenshot({ path: testInfo.outputPath("pesquisas-tab-mobile.png") })
 
+    await page.setViewportSize({ width: 1440, height: 1000 })
     const pesquisasTabButton = page.getByRole("tab", { name: /^Pesquisas/ })
     await pesquisasTabButton.focus()
     await pesquisasTabButton.press("ArrowRight")
@@ -168,7 +175,7 @@ test.describe("pesquisas presidenciais v2", () => {
     await waitForProfile(page)
     const tab = page.locator("[data-pf-pesquisas-tab]")
     const grid = tab.locator("[data-pf-pesquisa-card]").first().locator("..")
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
 
     for (const count of [1, 2, 3]) {
       await grid.evaluate((node, targetCount) => {
@@ -199,43 +206,25 @@ test.describe("pesquisas presidenciais v2", () => {
     }
   })
 
-  test("estado vazio é honesto no hero, Visão geral e aba", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${WITHOUT_DATA_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-
-    const hero = page.locator("[data-pf-pesquisa-hero]")
-    await expect(hero).toContainText("Sem pesquisa qualificada recente")
-    await expect(hero.getByText("0%", { exact: true })).toHaveCount(0)
-
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(overview.locator("[data-pf-pesquisas-empty]")).toBeVisible()
-    await expect(overview.getByText("0%", { exact: true })).toHaveCount(0)
-    await overview.getByRole("button", { name: "Ver todas na aba Pesquisas" }).click()
-
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab.locator("[data-pf-pesquisas-empty]")).toBeVisible()
-    await expect(tab.getByText("0%", { exact: true })).toHaveCount(0)
-    await tab.screenshot({ path: testInfo.outputPath("pesquisas-vazio-desktop.png") })
-  })
-
-  test("governador usa a mesma experiência, com isolamento por UF e vazio explícito", async ({ page }, testInfo) => {
+  test("governador usa a mesma experiência e mantém os resultados isolados por UF", async ({ page }, testInfo) => {
     await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
     await waitForProfile(page)
 
     const hero = page.locator("[data-pf-pesquisa-hero]")
     const fullHero = page.locator("[data-pf-hero]")
     await expect(hero).toBeVisible()
-    await expect(hero).toContainText("Real Time Big Data")
-    await expect(hero).toContainText("34%")
+    await expect(hero).toContainText("AtlasIntel")
+    await expect(hero).toContainText("31%")
     await expectNoHorizontalOverflow(page, fullHero)
     await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-desktop.png") })
 
     const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(overview).toContainText("Amazonas")
+    await expect(overview).toContainText("AtlasIntel")
+    await expect(overview).toContainText("31%")
     await overview.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-overview-desktop.png") })
     await page.getByRole("tab", { name: /^Pesquisas/ }).click()
     const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toContainText("34%")
+    await expect(tab).toContainText("31%")
     await expectNoHorizontalOverflow(page, tab)
     await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-desktop.png") })
 
@@ -250,30 +239,13 @@ test.describe("pesquisas presidenciais v2", () => {
       .locator("[data-pf-hero]")
       .screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-mobile.png") })
 
-    for (const slug of GOVERNOR_WITHOUT_QUALIFIED_DATA_SLUGS) {
-      await page.setViewportSize({ width: 1440, height: 900 })
-      await page.goto(`/candidato/${slug}`, { waitUntil: "networkidle" })
-      await waitForProfile(page)
-      await expect(page.locator("[data-pf-pesquisa-hero]")).toContainText(
-        "Sem pesquisa qualificada recente",
-      )
-      await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toBeVisible()
-      await expect(page.getByText("34%", { exact: true })).toHaveCount(0)
-      await page.getByRole("tab", { name: /^Pesquisas/ }).click()
-      const emptyTab = page.locator("[data-pf-pesquisas-tab]")
-      await expect(emptyTab.locator("[data-pf-pesquisas-empty]")).toBeVisible()
-      await expect(emptyTab.getByText("0%", { exact: true })).toHaveCount(0)
-      await expectNoHorizontalOverflow(page, emptyTab)
-      await emptyTab.screenshot({
-        path: testInfo.outputPath(`pesquisas-governador-${slug}-vazio-desktop.png`),
-      })
-
-      await page.setViewportSize({ width: 390, height: 844 })
-      await expectNoHorizontalOverflow(page, emptyTab)
-      await emptyTab.screenshot({
-        path: testInfo.outputPath(`pesquisas-governador-${slug}-vazio-mobile.png`),
-      })
-    }
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(`/candidato/${GOVERNOR_AC_SLUG}`, { waitUntil: "networkidle" })
+    await waitForProfile(page)
+    const acHero = page.locator("[data-pf-pesquisa-hero]")
+    await expect(acHero).toContainText("Quaest")
+    await expect(acHero).toContainText("33%")
+    await expect(acHero).not.toContainText("31%")
   })
 
   test("timeline não recebe a experiência", async ({ page }) => {

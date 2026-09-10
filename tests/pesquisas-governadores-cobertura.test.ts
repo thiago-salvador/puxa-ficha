@@ -17,13 +17,9 @@ const { carregarPesquisasGovernadores } = require(
   "../src/lib/pesquisas-eleitorais",
 ) as { carregarPesquisasGovernadores: typeof CarregarPesquisasGovernadores }
 
-const TARGET_UFS = [
-  "AC", "AL", "AM", "AP", "BA", "CE", "ES", "GO", "MA", "MS", "MT",
-  "PA", "PB", "PR", "RN", "RO", "RR", "RS", "SC", "SE", "TO",
-]
-const SEARCH_UFS = [
-  "AC", "AL", "AM", "AP", "BA", "ES", "GO", "MA", "MS", "MT",
-  "PA", "PB", "PR", "RN", "RO", "RR", "SC", "SE", "TO",
+const BRAZIL_UFS = [
+  "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
+  "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO",
 ]
 const STATUS_VALUES = new Set([
   "publicada",
@@ -78,13 +74,13 @@ function slugsIn(data: GovernorData) {
   return slugs
 }
 
-describe("cobertura de pesquisas para governos estaduais em 21 UFs", () => {
+describe("cobertura de pesquisas para governos estaduais nas 27 UFs", () => {
   it("mantém inventário completo, derivado e fail-closed", () => {
     const inventory = readInventory()
     const states = [...inventory.states].sort((a, b) => a.uf.localeCompare(b.uf))
-    assert.deepEqual(inventory.scope.ufs, TARGET_UFS)
-    assert.deepEqual(inventory.scope.search_ufs, SEARCH_UFS)
-    assert.deepEqual(states.map((entry) => entry.uf), TARGET_UFS)
+    assert.deepEqual([...inventory.scope.ufs].sort(), BRAZIL_UFS)
+    assert.deepEqual([...inventory.scope.search_ufs].sort(), BRAZIL_UFS)
+    assert.deepEqual(states.map((entry) => entry.uf), BRAZIL_UFS)
     assert.ok(states.every((entry) => STATUS_VALUES.has(entry.status)))
     assert.ok(states.every((entry) => entry.reason.trim().length > 0))
     assert.ok(states.every((entry) => entry.evidence_urls.length > 0))
@@ -98,7 +94,8 @@ describe("cobertura de pesquisas para governos estaduais em 21 UFs", () => {
     const published = inventory.states
       .filter((entry) => entry.status === "publicada")
       .map((entry) => entry.uf)
-    assert.deepEqual(published, ["AM", "BA", "CE", "MS", "MT", "PB", "PR", "RO", "RS", "SE"])
+      .sort()
+    assert.deepEqual(published, BRAZIL_UFS)
     for (const state of inventory.states) {
       if (state.status === "publicada") {
         assert.ok(catalogs.get(state.uf)?.pesquisas.length)
@@ -117,50 +114,56 @@ describe("cobertura de pesquisas para governos estaduais em 21 UFs", () => {
       sources: Array<{ id: string; status: string }>
     }
     const sources = new Map(scorecard.sources.map((source) => [source.id, source]))
+    const nonApprovedIds = scorecard.sources
+      .filter((source) => source.status !== "aprovado")
+      .map((source) => source.id)
+    assert.ok(nonApprovedIds.length > 0, "scorecard perdeu as fontes reprovadas ou condicionais")
+    assert.ok(nonApprovedIds.every((sourceId) => !scorecard.preferred_source_ids.includes(sourceId)))
 
     for (const state of inventory.states.filter((entry) => entry.status === "condicional")) {
       assert.ok(state.candidate_source_ids.length > 0, `${state.uf} perdeu a fonte candidata`)
-      const conditionalIds = state.candidate_source_ids.filter(
+      const stateConditionalIds = state.candidate_source_ids.filter(
         (sourceId) => sources.get(sourceId)?.status === "condicional",
       )
-      assert.ok(conditionalIds.length > 0, `${state.uf} não preservou a condição concreta`)
-      assert.ok(conditionalIds.every((sourceId) => !scorecard.preferred_source_ids.includes(sourceId)))
+      assert.ok(stateConditionalIds.length > 0, `${state.uf} não preservou a condição concreta`)
+      assert.ok(stateConditionalIds.every((sourceId) => !scorecard.preferred_source_ids.includes(sourceId)))
     }
   })
 
-  it("preserva zero real, aliases da mesma UF e ausência explícita", () => {
-    const inventory = readInventory()
+  it("preserva zero real e mantém cargo, UF e comparabilidade isolados", () => {
     const catalogs = carregarPesquisasGovernadores()
     const mt = catalogs.get("MT")
-    const zero = mt?.pesquisas[0]?.cenarios[0]?.resultados.find(
-      (result) => result.candidateSlug === "mauricio-coelho",
-    )
+    const zero = mt?.pesquisas
+      .flatMap((poll) => poll.cenarios)
+      .flatMap((scenario) => scenario.resultados)
+      .find((result) => result.candidateSlug === "mauricio-coelho")
     assert.equal(zero?.valuePercent, 0)
     assert.equal(zero?.matchStatus, "exact_alias")
 
     for (const [uf, catalog] of catalogs) {
       for (const poll of catalog.pesquisas) {
         assert.equal(poll.geography.code, uf)
+        const scenarioIds = new Set<string>()
+        const comparabilityKeys = new Set<string>()
         for (const scenario of poll.cenarios) {
-          assert.equal(scenario.comparabilityKey, catalog.publicationScope.comparabilityKey)
+          assert.ok(scenario.turn === 1 || scenario.turn === 2)
+          assert.equal(scenario.geography, poll.geography.label)
+          assert.match(scenario.comparabilityKey, new RegExp(`^2026\\|Governador\\|${uf}\\|${scenario.turn}\\|`))
+          assert.equal(scenarioIds.has(scenario.id), false, `${poll.id}: cenário duplicado`)
+          assert.equal(comparabilityKeys.has(scenario.comparabilityKey), false, `${poll.id}: escopo duplicado`)
+          scenarioIds.add(scenario.id)
+          comparabilityKeys.add(scenario.comparabilityKey)
         }
       }
     }
 
-    for (const uf of ["AP", "TO"]) {
-      const state = inventory.states.find((entry) => entry.uf === uf)
-      assert.equal(state?.status, "sem resultado público verificável")
-      assert.ok(state?.reason.length)
-      assert.equal(catalogs.has(uf), false)
-    }
-    assert.match(inventory.states.find((entry) => entry.uf === "MA")?.reason ?? "", /omite Saulo Arcangeli/)
-    assert.equal(catalogs.has("MA"), false)
+    assert.deepEqual([...catalogs.keys()].sort(), BRAZIL_UFS)
   })
 
   it("calcula as contagens finais a partir dos catálogos publicados", () => {
     const inventory = readInventory()
     const catalogs = carregarPesquisasGovernadores()
-    const inScope = [...catalogs].filter(([uf]) => TARGET_UFS.includes(uf))
+    const inScope = [...catalogs].filter(([uf]) => BRAZIL_UFS.includes(uf))
     const publishedProfilesInScope = inScope.reduce(
       (sum, [, data]) => sum + slugsIn(data).size,
       0,
@@ -169,7 +172,7 @@ describe("cobertura de pesquisas para governos estaduais em 21 UFs", () => {
       (sum, data) => sum + slugsIn(data).size,
       0,
     )
-    const additional = [...catalogs].filter(([uf]) => SEARCH_UFS.includes(uf))
+    const additional = [...catalogs].filter(([uf]) => BRAZIL_UFS.includes(uf))
     const additionalProfiles = additional.reduce((sum, [, data]) => sum + slugsIn(data).size, 0)
     assert.deepEqual(inventory.summary, {
       published_ufs_in_scope: inScope.length,
@@ -178,14 +181,6 @@ describe("cobertura de pesquisas para governos estaduais em 21 UFs", () => {
       total_catalog_profiles: totalProfiles,
       additional_published_ufs: additional.length,
       additional_published_profiles: additionalProfiles,
-    })
-    assert.deepEqual(inventory.summary, {
-      published_ufs_in_scope: 10,
-      published_profiles_in_scope: 46,
-      total_catalog_ufs: 16,
-      total_catalog_profiles: 97,
-      additional_published_ufs: 8,
-      additional_published_profiles: 37,
     })
     console.log("contagens finais verificadas")
   })

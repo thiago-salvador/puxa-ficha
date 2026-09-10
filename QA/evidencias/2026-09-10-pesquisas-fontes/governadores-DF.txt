@@ -1,0 +1,15 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: DF
+Fonte lida: CNN Brasil
+URL: https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria e pesquisa divulgadas em 09/09/2026. Pesquisa Real Time Big Data, campo de 04 a 08/09/2026, 1.600 entrevistas, margem de 2 pontos percentuais, confiança de 95%, contratada pelo próprio instituto, registro BR-09600/2026.
+
+Cenário estimulado de primeiro turno, com José Roberto Arruda:
+Celina Leão 35%; José Roberto Arruda 20%; Leandro Grass 20%; Paula Belmonte 7%; Cappelli 4%; Elisson, Kiko Caputo, Professor Robson, Professora Samara Mineiro, Rico Pinheiro e Expedito Mendonça somados 2%; branco/nulo 6%; não sabe/não respondeu 6%.
+
+Cenário estimulado de primeiro turno, sem José Roberto Arruda:
+Celina Leão 46%; Leandro Grass 23%; Paula Belmonte 10%; Cappelli 5%; os demais candidatos somados 2%; branco/nulo/não vai votar 7%; não sabe/não respondeu 7%.
+

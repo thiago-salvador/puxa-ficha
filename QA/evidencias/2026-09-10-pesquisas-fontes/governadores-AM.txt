@@ -1,0 +1,13 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: AM
+Fonte lida: Gazeta do Povo
+URL: https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria e pesquisa divulgadas em 04/09/2026. Pesquisa AtlasIntel, campo de 29/08 a 03/09/2026, 1.185 entrevistas, margem de 3 pontos percentuais, confiança de 95%, contratada pelo próprio instituto, registro AM-04939/2026.
+
+Cenário estimulado de primeiro turno:
+Omar Aziz 31%; Professora Maria do Carmo 27,4%; Roberto Cidade 18,8%; David Almeida 8,7%; Cabo Daciolo 6,3%; Isael Munduruku 1,2%; Gilberto Vasconcelos 0,1%; branco/nulo 2,5%; não sabe 3,9%.
+A soma publicada é 99,9% por arredondamento.
+

@@ -1,0 +1,12 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: AC
+Fonte lida: Gazeta do Povo
+URL: https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria publicada em 27/08/2026. Pesquisa Quaest, campo de 23 a 26/08/2026, 804 entrevistas, margem de 3 pontos percentuais, confiança de 95%, contratada por Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão, registro AC-09106/2026.
+
+Cenário estimulado de primeiro turno:
+Alan Rick 33%; Mailza Assis 24%; Tião Bocalom 15%; Thor Dantas 2%; Dr. Luisinho 1%; Eudo Raffael 0%; branco/nulo/não vai votar 8%; indecisos 17%.
+

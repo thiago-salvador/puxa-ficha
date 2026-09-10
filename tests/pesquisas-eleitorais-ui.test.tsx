@@ -35,10 +35,10 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisasLula} />)
 
     assert.match(html, /data-pf-pesquisa-hero=/)
-    assert.match(html, /Datafolha/)
-    assert.match(html, /39%/)
-    assert.match(html, /18\/08\/2026 a 19\/08\/2026/)
-    assert.doesNotMatch(html, /Pesquisa estimulada|cenário|2º turno|46%/i)
+    assert.match(html, /Meio\/Ideia/)
+    assert.match(html, /38,4%/)
+    assert.match(html, /04\/09\/2026 a 07\/09\/2026/)
+    assert.doesNotMatch(html, /2º turno|46%/i)
     assert.doesNotMatch(html, /aria-live/)
   })
 
@@ -58,22 +58,26 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     )
 
     assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
-    assert.match(html, /Datafolha/)
-    assert.match(html, /39%/)
-    assert.match(html, /Pesquisa estimulada, cenário sem Pablo Marçal/)
-    assert.match(html, /2\.058 entrevistas/)
-    assert.match(html, /2 pontos percentuais/)
+    assert.match(html, /Meio\/Ideia/)
+    assert.match(html, /38,4%/)
+    assert.match(html, /Primeiro turno estimulado, com Pablo Marçal/)
+    assert.match(html, /1\.500 entrevistas/)
+    assert.match(html, /2,5 pontos percentuais/)
     assert.match(html, /aria-label="Pesquisa anterior"/)
     assert.match(html, /aria-label="Próxima pesquisa"/)
     assert.equal((html.match(/size-11/g) ?? []).length, 2)
     assert.doesNotMatch(html, /41%|46%/)
   })
 
-  it("lista somente a fonte preferencial atualmente publicável na aba Pesquisas", () => {
+  it("lista as fontes revisadas na aba Pesquisas", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
 
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
+    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 2)
+    assert.match(html, /38,4%/)
+    assert.match(html, /Datafolha/)
     assert.match(html, /39%/)
+    assert.match(html, /percentuais do total de entrevistados/)
+    assert.match(html, /cenário sem Pablo Marçal/)
     assert.match(html, /1º turno/)
     assert.match(html, /Ver divulgação pública/)
     assert.match(html, /fotografia do período/)
@@ -127,9 +131,9 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     )
 
     assert.match(oldHtml, /Pesquisa antiga/)
-    assert.doesNotMatch(oldHtml, />39%<|>39%<!-- -->/)
+    assert.doesNotMatch(oldHtml, />38,4%<|>38,4%<!-- -->/)
     assert.match(errorHtml, /Resultado indisponível/)
-    assert.doesNotMatch(errorHtml, />39%<|>39%<!-- -->/)
+    assert.doesNotMatch(errorHtml, />38,4%<|>38,4%<!-- -->/)
     assert.match(zeroHtml, />0%<|>0%<!-- -->/)
   })
 
@@ -141,11 +145,13 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     )
     const tab = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisas} />)
 
-    assert.match(hero, /Datafolha/)
-    assert.match(hero, /45%/)
-    assert.match(overview, /São Paulo/)
+    assert.match(hero, /Quaest/)
+    assert.match(hero, /42%/)
+    assert.match(overview, /42%/)
+    assert.equal((tab.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisas.length)
+    assert.match(tab, /quaest-sp-revisao-20260910/)
     assert.match(tab, /datafolha-tarcisio-lidera-disputa/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-01806/2026")
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-00959/2026")
   })
 })
 

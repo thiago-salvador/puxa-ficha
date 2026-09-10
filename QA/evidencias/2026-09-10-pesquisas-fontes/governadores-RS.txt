@@ -1,0 +1,9 @@
+UF: RS
+Fonte lida: https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm
+Leitura: 2026-09-10
+Pesquisa: RealTime Big Data, divulgada em 2026-09-10; campo 2026-09-05 a 2026-09-09; 1.600 entrevistas por telefone e internet; margem 2 pp; confiança 95%; registro RS-05497/2026. Contratante não informado.
+1º turno estimulado: Luciano Zucco 36%; Juliana Brizola 35%; Gabriel Souza 22%; Marcelo Maranata 3%; Outros 1% (soma de Cesar Pontes, Priscila Voigt e Rejane de Oliveira); branco/nulo 2%; não sabe/não respondeu 1%.
+1º turno espontâneo: Juliana Brizola 18%; Luciano Zucco 18%; Gabriel Souza 9%; Marcelo Maranata 2%; Outros 2%; branco/nulo 7%; não sabe/não respondeu 44%.
+2º turno Zucco x Juliana: 44%; 44%; branco/nulo 7%; não sabe/não respondeu 5%.
+2º turno Zucco x Gabriel: 45%; 40%; branco/nulo 8%; não sabe/não respondeu 7%.
+2º turno Juliana x Gabriel: 45%; 39%; branco/nulo 8%; não sabe/não respondeu 8%.

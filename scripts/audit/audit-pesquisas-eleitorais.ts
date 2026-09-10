@@ -10,6 +10,10 @@ import { detectarAcessosRede } from "./lib/pesquisas-sem-rede"
 const ROOT = process.cwd()
 const LIB_PATH = resolve(ROOT, "src/lib/pesquisas-eleitorais.ts")
 const libSource = readFileSync(LIB_PATH, "utf8")
+const BRAZIL_UFS = [
+  "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
+  "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO",
+]
 
 function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message)
@@ -93,10 +97,9 @@ const statusValues = new Set([
   "sem resultado público verificável",
   "sem fonte qualificada",
 ])
-assert(coverage.scope.ufs.length === 21, "inventário estadual não cobre as 21 UFs")
-assert(coverage.scope.search_ufs.length === 19, "inventário da busca não cobre as 19 UFs")
-assert(!coverage.scope.search_ufs.includes("CE") && !coverage.scope.search_ufs.includes("RS"), "busca de 19 UFs incluiu cobertura anterior")
-assert(coverage.states.length === 21, "inventário estadual não tem 21 estados")
+assert(JSON.stringify([...coverage.scope.ufs].sort()) === JSON.stringify(BRAZIL_UFS), "inventário estadual não cobre exatamente as 27 UFs")
+assert(JSON.stringify([...coverage.scope.search_ufs].sort()) === JSON.stringify(BRAZIL_UFS), "inventário da busca não cobre exatamente as 27 UFs")
+assert(JSON.stringify(coverage.states.map((entry) => entry.uf).sort()) === JSON.stringify(BRAZIL_UFS), "inventário estadual não tem exatamente as 27 UFs")
 assert(
   coverage.states.every((entry) => statusValues.has(entry.status) && entry.reason.length > 0),
   "inventário estadual contém status ou razão inválida",

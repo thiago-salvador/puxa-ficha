@@ -1,0 +1,12 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: PA
+Fonte lida: CNN Brasil
+URL: https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria e pesquisa divulgadas em 08/09/2026. Pesquisa Real Time Big Data, campo de 03 a 07/09/2026, 1.600 entrevistas, margem de 2 pontos percentuais, confiança de 95%, feita com recursos próprios, registro PA-00206/2026.
+
+Cenário estimulado de primeiro turno:
+Hana Ghassan 37%; Dr. Daniel 35%; Araceli 5%; José Moita, Well Macedo e Gal Leite somados 1%; branco/nulo 8%; não sabe/não respondeu 14%.
+

@@ -1,5 +1,15 @@
 # Automações e ambientes
 
+## Busca de pesquisas eleitorais
+
+A automação Codex `pesquisas-de-voto-presidente-e-27-ufs` pesquisa presidente e
+as 27 UFs às segundas e quintas, às 9h de São Paulo, com o ambiente local
+disponível. O estado por abrangência fica em
+`scripts/data/pesquisas-busca-semanal.json`; o procedimento e as provas exigidas
+estão em [busca semanal](../docs/operations/pesquisas-busca-semanal.md).
+O monitor diário existente no GitHub verifica suas fontes cadastradas e tem
+função distinta desta descoberta jornalística.
+
 ## Ambientes
 
 | Ambiente | Uso | Regra |
