@@ -56,6 +56,35 @@ uma verificação distinta das fontes previamente cadastradas.
 
 ## Cursor e resultado
 
+### Publicação das atualizações verificadas
+
+Em 10/09/2026, Thiago autorizou aplicar os resultados no site e manter a lógica
+de atualização com novas pesquisas de fontes confiáveis. Essa autorização cobre
+commit, push, PR, merge e publicação das atualizações de pesquisas que passem
+pelas verificações do projeto. Não abrange mudanças em outras áreas do produto.
+
+Em cada execução, partir da versão atual de `origin/main` em checkout limpo e
+branch própria. Não reutilizar silenciosamente uma branch já mergeada nem
+incluir alterações locais de outra tarefa. Consultar os recibos locais em
+`QA/evidencias/2026-09-10-pesquisas-fontes/publicacao-20260910.json`, quando
+existirem, e a versão pública antes de interpretar status históricos.
+
+Depois de incorporar novidades e concluir a validação local, publicar a branch
+e criar ou atualizar a PR restrita às pesquisas. Exigir os checks obrigatórios
+no head atual e sincronização com a base antes do merge, sem ignorar proteção
+de branch. Capturar o deployment público anterior e verificar se há release em
+andamento para evitar promoção concorrente. Identificar na Vercel o deployment
+do SHA mergeado, testar a URL isolada e promover esse deployment quando a
+atribuição automática de domínio estiver desligada. Conferir o mesmo SHA em
+`/api/deployment-info` e os números nas fichas públicas antes de registrar
+`last_published_at`. O fluxo de smoke existente é `npm run release:smoke`.
+
+Se a busca não encontrar novidade, encerrar sem commit ou deployment. Se uma
+fonte, identidade, teste ou publicação falhar, manter a pendência e avisar o
+problema concreto; não marcar o site como atualizado. A execução ocorre duas
+vezes por semana e depende do Codex local disponível, portanto não representa
+atualização instantânea entre execuções.
+
 ### Sequência de buscas por candidato
 
 A lista de buscas alternativas possui 14 caminhos ordenados: nome e estado;
