@@ -18,6 +18,42 @@ const UNSUB = "https://puxaficha.com.br/alertas/acesso?manage=t&hash=cancelar-tu
 const DELETE = "https://puxaficha.com.br/alertas/acesso?manage=t&hash=deletar-dados"
 const VERIFY = "https://puxaficha.com.br/alertas/acesso?verify=v&manage=t"
 
+test("digest vincula título ao PF e oferece fonte em HTML e texto com escape seguro", () => {
+  const href = "https://puxaficha.com.br/candidato/teste?tab=media&noticia=123#noticia-123"
+  const sourceUrl = "https://portal.example/noticia?a=1&b=2"
+  const email = buildAlertDigestEmail({
+    items: [{
+      candidateName: "Teste",
+      candidateMeta: "UP · Presidente",
+      changes: [{ title: "Notícia <teste>", description: "Resumo & contexto", href, sourceUrl, sourceName: "Portal <exemplo>" }],
+    }],
+    manageUrl: MANAGE,
+    unsubscribeUrl: UNSUB,
+  })
+  assert.match(email.html, /href="https:\/\/puxaficha.com.br\/candidato\/teste\?tab=media&amp;noticia=123#noticia-123"[^>]*>Notícia &lt;teste&gt;<\/a>/)
+  assert.match(email.html, /href="https:\/\/portal.example\/noticia\?a=1&amp;b=2"[^>]*>Ler no portal<\/a>/)
+  assert.ok(email.html.includes("Fonte: Portal &lt;exemplo&gt;"))
+  assert.ok(email.text.includes(`Abrir no Puxa Ficha: ${href}`))
+  assert.ok(email.text.includes(`Ler no portal: ${sourceUrl}`))
+  assert.ok(email.text.includes("Fonte: Portal <exemplo>"))
+})
+
+test("digest rejeita URLs inseguras ou inválidas sem perder o título", () => {
+  for (const url of ["javascript:alert(1)", "data:text/html,test", "http://portal.example/noticia", "/relativo", "https://user:password@portal.example/noticia", 'https://portal.example/\" onmouseover=\"alert(1)']) {
+    const email = buildAlertDigestEmail({
+      items: [{ candidateName: "Teste", candidateMeta: "UP", changes: [{ title: "Título preservado", href: url, sourceUrl: url }] }],
+      manageUrl: MANAGE,
+      unsubscribeUrl: UNSUB,
+    })
+    assert.ok(email.html.includes("Título preservado"))
+    assert.ok(!email.html.includes('" onmouseover="'))
+    if (!url.startsWith('https://portal.example/')) {
+      assert.ok(!email.text.includes("Ler no portal:"))
+      assert.ok(!email.text.includes("Abrir no Puxa Ficha:"))
+    }
+  }
+})
+
 function digest(items = 1) {
   return buildAlertDigestEmail({
     items: Array.from({ length: items }, (_, i) => ({
