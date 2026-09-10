@@ -62,6 +62,9 @@ interface CandidateChangeRow {
   candidato_id: string
   titulo: string
   descricao: string | null
+  tipo?: string
+  registro_id?: string | null
+  metadata?: { url?: unknown; fonte?: unknown } | null
   created_at: string
 }
 
@@ -648,6 +651,9 @@ export class AlertsRouteFixture {
         candidato_id: change.candidato_id ?? "",
         titulo: change.titulo ?? "",
         descricao: change.descricao ?? null,
+        tipo: change.tipo ?? "ponto_atencao",
+        registro_id: change.registro_id ?? null,
+        metadata: change.metadata ?? null,
         created_at: change.created_at ?? new Date().toISOString(),
       } satisfies CandidateChangeRow
     }

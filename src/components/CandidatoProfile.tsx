@@ -865,8 +865,8 @@ export function CandidatoProfile({
 
             {/* MÍDIA TAB */}
             {activeTab === "media" && (
-              ficha.noticias && ficha.noticias.length > 0 ? (
-                <NewsSection noticias={ficha.noticias} />
+              (ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
+                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
               ) : (
                 <div data-pf-media-empty>
                   <SectionLabel>Mídia</SectionLabel>
