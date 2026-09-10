@@ -18,6 +18,12 @@ if (new URLSearchParams(location.search).has('partial')) {
   polls[0].scenario.resultados[2].valuePercent = null
 }
 
+if (new URLSearchParams(location.search).has('metadata')) {
+  polls = [polls.at(-1)!]
+  const poll = polls[0]
+  for (const field of [poll.instituto, poll.contratante, poll.publicationDate, poll.fieldwork.start, poll.fieldwork.end, poll.sample.size, poll.sample.population, poll.marginErrorPp, poll.confidencePercent, poll.method, poll.registration.code, poll.registration.url, poll.scenario.question]) field.status = 'indeterminado'
+}
+
 createRoot(document.getElementById("root")!).render(<main style={{ maxWidth: 1240, margin: "32px auto", padding: "0 24px" }}>
   <p style={{ marginBottom: 20 }}>Teste de interface com dados fictícios. Esta página não faz parte do site.</p>
   <StatePolls polls={polls} />

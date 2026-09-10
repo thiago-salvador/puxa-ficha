@@ -4,6 +4,21 @@ export type PollResult = StatePollScenario["scenario"]["resultados"][number]
 export type PollCandidate = { slug: string; nome_urna: string; foto_url?: string | null }
 export type PollSeries = { id: string; institute: string; label: string; polls: StatePollScenario[] }
 
+/** Clear unconfirmed metadata at the public-view boundary, preserving its status and the original record. */
+export function publicPollMetadata(poll: StatePollScenario): StatePollScenario {
+  const visible = <T,>(field: { value: T | null; status: StatePollScenario["state"] }) => ({ ...field, value: field.status === "publicado" ? field.value : null })
+  return {
+    ...poll,
+    instituto: visible(poll.instituto), contratante: visible(poll.contratante),
+    publicationDate: visible(poll.publicationDate),
+    fieldwork: { start: visible(poll.fieldwork.start), end: visible(poll.fieldwork.end) },
+    sample: { size: visible(poll.sample.size), population: visible(poll.sample.population) },
+    marginErrorPp: visible(poll.marginErrorPp), confidencePercent: visible(poll.confidencePercent), method: visible(poll.method),
+    registration: { code: visible(poll.registration.code), url: visible(poll.registration.url) },
+    scenario: { ...poll.scenario, question: visible(poll.scenario.question) },
+  }
+}
+
 export const pollKey = (poll: StatePollScenario) => `${poll.id}:${poll.scenario.id}`
 export const resultKey = (result: PollResult) => result.matchStatus === "exact_alias" && result.candidateSlug
   ? `candidate:${result.candidateSlug}`

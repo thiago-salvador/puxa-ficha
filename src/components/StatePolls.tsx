@@ -3,7 +3,7 @@
 import { useId, useMemo, useState } from "react"
 import { Info, SlidersHorizontal, TrendingUp } from "lucide-react"
 import type { StatePollScenario } from "@/lib/state-polls"
-import { type PollCandidate } from "@/lib/poll-series"
+import { publicPollMetadata, type PollCandidate } from "@/lib/poll-series"
 import { groupWeeklyPollSeries } from "@/lib/poll-weeks"
 import { PollTrendChart } from "./PollTrendChart"
 import styles from "./StatePolls.module.css"
@@ -17,10 +17,10 @@ export function StatePolls({ polls, unavailable = false, candidates = [] }: {
   const [seriesId, setSeriesId] = useState("")
   const [period, setPeriod] = useState("all")
   const [filtersExpanded, setFiltersExpanded] = useState(false)
-  const eligiblePolls = useMemo(() => polls.filter(poll => poll.sourceStatus === "aprovado" && poll.state === "publicado"), [polls])
+  const eligiblePolls = useMemo(() => polls.filter(poll => poll.sourceStatus === "aprovado" && poll.state === "publicado").map(publicPollMetadata), [polls])
   const institutes = [...new Set(eligiblePolls.filter(poll => poll.scenario.turn === turn).map(poll => poll.instituto.value ?? "Instituto não informado"))].sort()
   const activeInstitute = institutes.includes(institute) ? institute : "all"
-  const choices = useMemo(() => groupWeeklyPollSeries(eligiblePolls.filter(poll => poll.scenario.turn === turn && (activeInstitute === "all" || poll.instituto.value === activeInstitute))), [eligiblePolls, turn, activeInstitute])
+  const choices = useMemo(() => groupWeeklyPollSeries(eligiblePolls.filter(poll => poll.scenario.turn === turn && (activeInstitute === "all" || (poll.instituto.value ?? "Instituto não informado") === activeInstitute))), [eligiblePolls, turn, activeInstitute])
   const series = choices.find(group => group.id === seriesId) ?? choices[0]
   const months = [...new Set((series?.weeks ?? []).flatMap(week => week.date ? [week.date.slice(0, 7)] : []))].sort().reverse()
   const activePeriod = months.includes(period) ? period : "all"

@@ -1,7 +1,19 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { candidateObservations, fieldworkDate, groupPollSeries, observationSegments, publishedValue, resultKey, seriesCandidates } from "../src/lib/poll-series"
+import { candidateObservations, fieldworkDate, groupPollSeries, observationSegments, publicPollMetadata, publishedValue, resultKey, seriesCandidates } from "../src/lib/poll-series"
 import { fixturePoll, fixtureSeries } from "./fixtures/poll-series"
+
+test("public metadata hides unconfirmed retained values without mutating the source", () => {
+  const poll = fixturePoll("2026-09-07")
+  const fields = (row: typeof poll) => [row.instituto, row.contratante, row.publicationDate, row.fieldwork.start, row.fieldwork.end, row.sample.size, row.sample.population, row.marginErrorPp, row.confidencePercent, row.method, row.registration.code, row.registration.url, row.scenario.question]
+  assert.deepEqual(publicPollMetadata(poll), poll)
+  for (const field of fields(poll)) field.status = "indeterminado"
+  const visible = publicPollMetadata(poll)
+  assert.ok(fields(visible).every(field => field.value === null))
+  assert.ok(fields(poll).every(field => field.value !== null))
+  assert.deepEqual(visible.scenario.resultados, poll.scenario.resultados)
+  assert.deepEqual(visible.provenance, poll.provenance)
+})
 
 test("series isolate institute, scenario, method, population, turn, office, geography and year", () => {
   const first = fixturePoll("2026-07-01")
