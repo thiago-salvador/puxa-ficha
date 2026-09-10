@@ -240,7 +240,7 @@ export default async function Home() {
       </section>
 
       <Suspense fallback={<p role="status" className="mx-auto max-w-7xl px-5 py-12 text-sm text-muted-foreground md:px-12">Carregando programas e pesquisas...</p>}>
-        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna }) => ({ slug, nome_urna }))} unavailable={todosResumosResource.sourceStatus !== "live"} />
+        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={todosResumosResource.sourceStatus !== "live"} />
       </Suspense>
 
       <Suspense fallback={<HomeRecentUpdates />}>

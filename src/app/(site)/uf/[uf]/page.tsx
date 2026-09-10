@@ -276,7 +276,7 @@ export default async function UfHubPage({
         <SlashDivider />
         <StatePrograms programs={programsResource.data} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
-        <StatePolls polls={pollsResource.data} unavailable={pollsResource.unavailable} />
+        <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} />
         <SlashDivider />
         <section id="indicadores" className="scroll-mt-24 space-y-6">
           <div>
