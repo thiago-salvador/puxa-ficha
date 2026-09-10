@@ -1,0 +1,179 @@
+Fechamento nominal MA - Governador 2026
+Data de referência: 2026-09-10
+Motor efetivamente usado: web.run search_query/open/find. O Google via Playwright estava reservado por outra tarefa paralela e não foi usado nesta coleta.
+
+1) Real Time Big Data - rodada publicada em 10/09/2026, agrupamento
+URL: https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/
+Captura local preexistente lida: QA/evidencias/2026-09-10-pesquisas-fontes/governadores-MA.txt
+Trecho textual lido:
+Pesquisa eleitoral divulgada nesta quinta-feira (10) pelo Instituto Real Time Big Data sobre as intenções de voto para o Governo do Maranhão mostra que Eduardo Braide (PSD) tem 45% no 1º turno, enquanto Orleans Brandão (MDB) tem 32%.
+Eduardo Braide (PSD): 45%
+Orleans Brandão (MDB): 32%
+Felipe Camarão (PT): 11%
+Roberto Rocha (PRTB): 5%
+André Luis (Missão): 1%
+Outros: 1%*
+Nulo/branco: 2%
+Não sabe/não respondeu: 3%
+*Os candidatos Saulo Arcangeli (PSTU), Dimas Cassimiro (PCO) e Reginaldo Lima (PCB) somados atingiram 1% das intenções de voto.
+A pesquisa foi feita entre os dias 5 e 9 de setembro, com as entrevistas de 1.600 eleitores. A margem de erro é de dois pontos percentuais, para mais ou para menos, e o nível de confiança da pesquisa é de 95%. O levantamento está registrado no TSE com o número MA-02569/2026.
+Regra aplicada: não repartir o 1% agrupado entre os três candidatos.
+
+2) IPPI - rodada divulgada em 04/09/2026, agrupamento em votos válidos
+URL: https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/
+Trecho textual lido pelo índice web:
+Eduardo Braide (PSD): 53,7% dos votos válidos
+Orleans Brandão (MDB): 29,4% dos votos válidos
+Felipe Camarão (PT): 9,4% dos votos válidos
+Roberto Rocha (PRTB): 4,1% dos votos válidos
+André Luís (Missão): 1,8% dos votos válidos
+Reginaldo Lima + Dimas Cassimiro + Saulo Arcangeli: aproximadamente 1,6% dos votos válidos
+A pesquisa ouviu 1.500 eleitores entre 29 de agosto e 2 de setembro de 2026. Margem de erro de 2,5 pontos percentuais, confiança de 95%, registro MA-08868/2026. A base de votos válidos informada foi de 1.251 entrevistados.
+Regra aplicada: não atribuir 1,6% a cada candidato e não inferir frações individuais.
+Status judicial consultado: https://saoluisnoticia.com.br/eleicoes-2026-277/
+Em 06/09/2026, fonte regional informou que a liminar suspendeu a proibição e autorizou a divulgação imediata. A decisão era provisória e ainda seria analisada pelo plenário do TRE-MA.
+
+3) INOP - rodada divulgada em 31/08/2026, resultado individual recente na janela de 14 dias
+URL principal: https://blogdodanielsousa.com.br/pesquisa-inop-aponta-empate-tecnico-entre-braide-e-orleans-na-disputa-pelo-governo-do-maranhao/
+URL de confirmação: https://noticias.slz.br/alema/orleans-e-braide-seguem-empatados-mostra-pesquisa-inop-liberada-pela-justica-eleitoral/
+Registro: MA-07572/2026
+Campo: 19 a 26/08/2026
+Divulgação: 31/08/2026
+Instituto: INOP Previsão Pesquisas Serviços e Publicidades
+Contratante: Jornal Pequeno
+Amostra: 2.600 eleitores do Maranhão, 16 anos ou mais, áreas urbanas e rurais
+Método: entrevistas presenciais em domicílios e pontos de fluxo populacional
+Margem de erro: 3,02 pontos percentuais
+Nível de confiança: 95%
+Valor informado no registro: R$ 48 mil
+
+Cenário estimulado, 1º turno, total da amostra:
+Eduardo Braide: 42,54%
+Orleans Brandão: 42,08%
+Felipe Camarão: 5,42%
+Roberto Rocha: 3,88%
+André Luis: 0,15%
+Reginaldo Lima: 0,08%
+Dimas Cassimiro: 0,04%
+Saulo Arcangeli: 0% - a fonte diz explicitamente que não pontuou
+Nenhum dos nomes: 0,50%
+Não souberam/não opinaram: 5,31%
+
+Cenário espontâneo, 1º turno, total da amostra:
+Eduardo Braide: 31,35%
+Orleans Brandão: 31,12%
+Felipe Camarão: 3,42%
+Roberto Rocha: 1,81%
+André Luis: 0,08%
+Indecisos/não responderam: 32,23%
+
+Risco judicial preservado:
+- A suspensão inicial foi publicada em 28/08/2026.
+- Em 31/08/2026 às 12h22, uma fonte informou que a plantonista negou o pedido de liberação e remeteu o caso à relatora natural.
+- Ainda em 31/08/2026, várias fontes publicaram a tabela e afirmaram que a Justiça Eleitoral liberou os números.
+- Não foi localizada nesta coleta a decisão judicial oficial posterior que explique a sequência. Os percentuais estão confirmados por fontes lidas, mas o histórico processual deve permanecer como risco de procedência.
+- Há também conflito de ficha técnica: as fontes que dizem reproduzir o registro informam 2.600 entrevistas de 19 a 26/08; a matéria do Impacto Política, atribuída ao Marrapá, informa 2.660 entrevistas de 17 a 26/08. Mantidos 2.600 e 19 a 26/08 como metadados principais por coincidirem com o registro descrito antes da divulgação e com várias republicações, sem apagar a divergência.
+
+4) Instituto Qualitativa - rodada histórica divulgada em 26/08/2026
+URL: https://maranhaourgente.com.br/pesquisa-qualitativa-aponta-orleans-brandao-com-411-e-eduardo-braide-com-366-na-disputa-pelo-governo-do-maranhao/
+Registro: MA-08263/2026
+Campo: 19 a 25/08/2026
+Divulgação: 26/08/2026
+Instituto: Instituto Qualitativa
+Contratante: não informado na fonte lida
+Amostra: 900 eleitores em 50 municípios maranhenses
+Método: não informado na fonte lida
+Margem de erro: 3,27 pontos percentuais
+Nível de confiança: 95%
+
+Cenário estimulado, 1º turno, total da amostra:
+Orleans Brandão: 41,1%
+Eduardo Braide: 36,6%
+Felipe Camarão: 4,2%
+Roberto Rocha: 3,9%
+André Luís: 1,3%
+Saulo Arcangeli: 0,9%
+Reginaldo Lima: 0,4%
+Dimas Cassimiro: 0,1%
+Nenhum/branco/nulo: 4,0%
+Não souberam/não responderam: 7,5%
+
+5) Quaest/TV Mirante - rodada histórica divulgada em 24/08/2026
+URL: https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm
+Registro estadual: MA-02558/2026
+Campo: 20 a 23/08/2026
+Divulgação: 24/08/2026
+Instituto: Quaest
+Contratante: TV Mirante
+Amostra: 900 eleitores do Maranhão
+Método: entrevistas presenciais
+Margem de erro: 3 pontos percentuais
+Nível de confiança: 95%
+
+Cenário estimulado, 1º turno, total da amostra:
+Eduardo Braide: 44%
+Orleans Brandão: 25%
+Felipe Camarão: 6%
+Roberto Rocha: 3%
+André Luis: 1%
+Saulo Arcangeli: 0%
+Dimas Cassimiro: 0%
+Reginaldo Lima: 0%
+Indecisos: 17%
+Branco/nulo/não vai votar: 4%
+
+Cenário espontâneo, 1º turno, total da amostra:
+Eduardo Braide: 21%
+Orleans Brandão: 13%
+Felipe Camarão: 1%
+Outros: 0%
+Indecisos: 64%
+Branco/nulo/não vai votar: 1%
+
+Conclusão factual:
+- Dimas Cassimiro: 0,04% na INOP de 31/08/2026.
+- Reginaldo Lima: 0,08% na INOP de 31/08/2026.
+- Saulo Arcangeli: 0% explícito na INOP de 31/08/2026.
+- Real Time Big Data de 10/09 e IPPI de 04/09 continuam agrupados e não autorizam percentuais individuais.
+
+FONTE 6 — DOXA — MA-04033/2026 — divulgação observada em 10/09/2026
+URL: https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide
+Imagem do cenário estimulado: https://static.wixstatic.com/media/a5b5ec_aa9321f3c14f4c09b2bc2b13e1feeb2e~mv2.png/v1/fill/w_779,h_382,al_c,q_85,enc_avif,quality_auto/a5b5ec_aa9321f3c14f4c09b2bc2b13e1feeb2e~mv2.png
+Imagem do cenário espontâneo: https://static.wixstatic.com/media/a5b5ec_c1672464aa8e47c38843e69b25a9b06c~mv2.png/v1/fill/w_868,h_344,al_c,q_85,enc_avif,quality_auto/a5b5ec_c1672464aa8e47c38843e69b25a9b06c~mv2.png
+Trechos textuais acessíveis na página oficial Doxa:
+- Campo: 01 a 05/09/2026; 2.000 entrevistas em 90 municípios e todas as mesorregiões do Maranhão.
+- Registro TRE-MA: MA-04033/2026; margem de erro 2,2 p.p.; confiança 95%.
+- Contratante: H M BOGEA E CIA LTDA / JORNAL PEQUENO; executora: Doxa Pesquisa.
+
+Cenário espontâneo, 1º turno, total da amostra, leitura visual da imagem completa:
+Orleans Brandão: 39,6%
+Eduardo Braide: 36,3%
+Não sabe/indeciso: 14,8%
+Branco/nulo: 2,4%
+Felipe Camarão: 2,8%
+Roberto Rocha: 1,9%
+André Luís: 1,1%
+Reginaldo Lima: 0,6%
+Saulo Arcangeli: 0,3%
+Dimas Cassimiro: 0,2%
+
+Cenário estimulado, 1º turno, total da amostra, leitura visual da imagem completa:
+Orleans Brandão: 42,1%
+Eduardo Braide: 37,8%
+Branco/nulo: 7,0%
+Felipe Camarão: 4,4%
+Não sabe/indeciso: 3,2%
+Roberto Rocha: 3,0%
+André Luís: 1,1%
+Reginaldo Lima: 0,7%
+Dimas Cassimiro: 0,4%
+Saulo Arcangeli: 0,3%
+
+Simulação de segundo turno, total da amostra, texto oficial completo:
+Orleans Brandão: 43,3%
+Eduardo Braide: 39,1%
+Não sabe/não respondeu: 13,9%
+Branco/nulo: 3,7%
+
+Validação aritmética: os três cenários somam 100,0%.
+Status deste fechamento: individual_verified; leitura visual das imagens efetuada na sessão compartilhada e confrontada com as linhas textuais da página oficial.

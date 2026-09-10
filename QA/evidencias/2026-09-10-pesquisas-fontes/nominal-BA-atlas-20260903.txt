@@ -1,0 +1,32 @@
+Fonte principal: UOL
+URL: https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm
+Título: Atlas/A Tarde BA: ACM Neto e Jerônimo têm empate técnico nos dois turnos
+Matéria: 03/09/2026 07h00
+
+Trecho exato:
+Pesquisa Atlas/A Tarde divulgada hoje mostra ACM Neto (União Brasil) e Jerônimo Rodrigues (PT) tecnicamente empatados na disputa pelo Governo da Bahia, tanto no primeiro quanto no segundo turno.
+A Atlas/A Tarde ouviu 1.804 eleitores na Bahia por meio de recrutamento digital aleatório, entre os dias 28 de agosto e 2 de setembro. A margem de erro é de dois pontos percentuais para mais ou para menos, e o nível de confiança é de 95%. O levantamento foi registrado no TSE (Tribunal Superior Eleitoral) com o número BA-08891/2026.
+
+## 1º turno (estimulada) - cenário 1
+* ACM Neto (União Brasil): 49,1%
+* Jerônimo Rodrigues (PT): 47,9%
+* Ronaldo Mansur (PSOL): 1,2%
+* Voto branco/nulo: 1,6%
+* Não sei: 0,2%
+Aroldo Félix (UP) e Estêvão (DC) não pontuaram.
+
+## 1º turno (estimulada) - cenário 2
+* ACM Neto (União Brasil): 48,8%
+* Jerônimo Rodrigues (PT): 47,5%
+* Ronaldo Mansur (PSOL): 1,1%
+* Aroldo Félix (UP): 0,1%
+* Voto branco/nulo: 1,6%
+* Não sei: 0,9%
+Ariel Capistrano (DC) não pontuou.
+
+Fonte suplementar para Maria Bona: Política Bahia
+URL: https://politicabahia.com/noticia/atlas-030926
+Matéria: 03/09/2026 às 06:47
+Trecho exato: Na sequência aparecem Ronaldo Mansur (PSOL), com 1,1%, e Aroldo Félix (UP), com 0,1%. Ariel Capistrano (DC) e Maria Bona (PCO) não pontuaram. Brancos e nulos somam 1,6%, enquanto 0,9% dos entrevistados não souberam responder.
+Metodologia reproduzida na matéria: AtlasIntel/A Tarde ouviu 1.804 eleitores entre 28 de agosto e 2 de setembro de 2026; registro informado: BR-07739/2026.
+Incerteza: o UOL identifica a rodada de governador como BA-08891/2026; a fonte suplementar informa BR-07739/2026. Maria Bona não aparece nas linhas do quadro UOL; o zero vem apenas da fonte suplementar. Não promover sem resolver a divergência de registro/cenário.

@@ -1,0 +1,150 @@
+[
+  {
+    "uf": "BA",
+    "poll_id": "atlasintel-ba-ba-08891-2026",
+    "source_id": "atlasintel-ba-nominal-20260910",
+    "registration": "BA-08891/2026",
+    "publication_date": "2026-09-03",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-BA-atlas-20260903.txt",
+    "capture_sha256": "b4a354d2db3807e8c83eb732a32f4578a408ecd1330b408a979639004fdceaef",
+    "results_count": 18,
+    "linked_slugs": [
+      "acm-neto",
+      "ariel-capistrano",
+      "aroldo-felix",
+      "jeronimo",
+      "jose-estevao",
+      "ronaldo-mansur"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "CE",
+    "poll_id": "quaest-ce-ce-01149-2026",
+    "source_id": "quaest-ce-nominal-20260910",
+    "registration": "CE-01149/2026",
+    "publication_date": "2026-09-04",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-CE-quaest-20260904.txt",
+    "capture_sha256": "3fc9fe7b827ff2e00ba3eca3f8f6ab999ed120714bc8f9ae4c97534d569e765e",
+    "results_count": 10,
+    "linked_slugs": [
+      "ciro-gomes-gov-ce",
+      "danilo-soares",
+      "elmano-de-freitas",
+      "huggo-leonardo",
+      "ieri-braga",
+      "serley-leal",
+      "vera-lucia-ce",
+      "ze-batista"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "RS",
+    "poll_id": "atlasintel-rs-rs-00652-2026",
+    "source_id": "atlasintel-rs-nominal-20260910",
+    "registration": "RS-00652/2026",
+    "publication_date": "2026-09-03",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-RS-atlas-20260903.txt",
+    "capture_sha256": "bea2b3808d023a8d4f874bddc4d084a7e9e3f958fb66242d0be48f1d7bca71bb",
+    "results_count": 8,
+    "linked_slugs": [
+      "gabriel-souza",
+      "juliana-brizola",
+      "luciano-zucco",
+      "marcelo-maranata",
+      "priscila-voigt",
+      "rejane-oliveira"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "RS",
+    "poll_id": "quaest-rs-rs-06875-2026",
+    "source_id": "quaest-rs-nominal-20260910",
+    "registration": "RS-06875/2026",
+    "publication_date": "2026-08-25",
+    "historical_outside_14_days": true,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-RS-quaest-20260825.txt",
+    "capture_sha256": "71aaf3b6d77fa3f79d4f311250f2c45e2d5163acfac77da6e2af73e354379017",
+    "results_count": 9,
+    "linked_slugs": [
+      "cesar-pontes",
+      "gabriel-souza",
+      "juliana-brizola",
+      "luciano-zucco",
+      "marcelo-maranata",
+      "priscila-voigt",
+      "rejane-oliveira"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "SE",
+    "poll_id": "quaest-se-se-03536-2026",
+    "source_id": "quaest-se-nominal-20260910",
+    "registration": "SE-03536/2026",
+    "publication_date": "2026-08-27",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-SE-quaest-20260827.txt",
+    "capture_sha256": "40b6dc9eaaa3a3cfd55be3039708bccdca2ba54e13d36d15e4b03476ae98f4b7",
+    "results_count": 8,
+    "linked_slugs": [
+      "dr-helton-monteiro",
+      "emanuel-cacho",
+      "fabio-mitidieri",
+      "ricardo-marques",
+      "taty-cristina-de-jesus",
+      "valmir-de-francisquinho"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "PA",
+    "poll_id": "quaest-pa-pa-07718-2026-nominal",
+    "source_id": "quaest-pa-nominal-20260910",
+    "registration": "PA-07718/2026",
+    "publication_date": "2026-08-29",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-PA-quaest-20260910.txt",
+    "capture_sha256": "836473f2afe78d9c24a3d5abdee82acef966d9a2468762e4a451f33ac7f390f5",
+    "results_count": 17,
+    "linked_slugs": [
+      "araceli-lemos",
+      "dr-daniel",
+      "gal-leite",
+      "hana-ghassan",
+      "well-macedo"
+    ],
+    "unresolved_names": [
+      "José Moita (Democrata)"
+    ]
+  },
+  {
+    "uf": "DF",
+    "poll_id": "atlasintel-df-df-02018-2026-nominal",
+    "source_id": "atlasintel-df-nominal-20260910",
+    "registration": "DF-02018/2026",
+    "publication_date": "2026-09-03",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-DF-atlas-20260910.txt",
+    "capture_sha256": "04dfdb59d10f4db429f1b4fb95cb3986c583705a7935c485b2fad46b764d2bb1",
+    "results_count": 21,
+    "linked_slugs": [
+      "celina-leao",
+      "elisson-ferreira",
+      "jose-roberto-arruda",
+      "kiko-caputo",
+      "leandro-grass",
+      "paula-belmonte",
+      "ricardo-cappelli",
+      "rico-pinheiro",
+      "robson-raymundo",
+      "samara-mineiro"
+    ],
+    "unresolved_names": []
+  }
+]

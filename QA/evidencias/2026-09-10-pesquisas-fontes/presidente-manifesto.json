@@ -1,0 +1,150 @@
+{
+  "uf": "BR",
+  "poll_id": "meio-ideia-br-07935-2026",
+  "source_id": "meio-ideia-br-revisao-20260910",
+  "registration": "BR-07935/26",
+  "publication_date": "2026-09-09",
+  "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/BR.txt",
+  "capture_sha256": "86592b2a1a16b3848d85c608c7508d99b4a0b334b8adf952b191ee4c820abcbe",
+  "results_count": 15,
+  "linked_slugs": [
+    "lula",
+    "flavio-bolsonaro",
+    "augusto-cury",
+    "renan-santos",
+    "ronaldo-caiado",
+    "romeu-zema",
+    "pablo-marcal",
+    "samara-martins",
+    "rui-costa-pimenta",
+    "wilson-grassi-junior",
+    "hertz-dias",
+    "clariana-barao",
+    "edmilson-costa"
+  ],
+  "unresolved_names": [],
+  "scenarios": [
+    {
+      "id": "meio-ideia-br-07935-2026-primeiro-turno",
+      "turn": 1,
+      "geography": "Brasil",
+      "label_raw": "Primeiro turno estimulado, com Pablo Marçal; percentuais do total de entrevistados",
+      "question": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "comparability_key": "2026|Presidente|BR|1|estimulado|meio-ideia-lista-20260909|total",
+      "resultados": [
+        {
+          "raw_label": "Lula",
+          "candidate_slug": "lula",
+          "match_status": "exact_alias",
+          "value_percent": 38.4,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Flávio Bolsonaro",
+          "candidate_slug": "flavio-bolsonaro",
+          "match_status": "exact_alias",
+          "value_percent": 37.3,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Augusto Cury",
+          "candidate_slug": "augusto-cury",
+          "match_status": "exact_alias",
+          "value_percent": 6.6,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Renan Santos",
+          "candidate_slug": "renan-santos",
+          "match_status": "exact_alias",
+          "value_percent": 4,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Ronaldo Caiado",
+          "candidate_slug": "ronaldo-caiado",
+          "match_status": "exact_alias",
+          "value_percent": 4,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Romeu Zema",
+          "candidate_slug": "romeu-zema",
+          "match_status": "exact_alias",
+          "value_percent": 1.5,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Pablo Marçal",
+          "candidate_slug": "pablo-marcal",
+          "match_status": "exact_alias",
+          "value_percent": 1.5,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Samara Martins",
+          "candidate_slug": "samara-martins",
+          "match_status": "exact_alias",
+          "value_percent": 0.7,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Rui Costa Pimenta",
+          "candidate_slug": "rui-costa-pimenta",
+          "match_status": "exact_alias",
+          "value_percent": 0.4,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Veterinário Wilson Grassi",
+          "candidate_slug": "wilson-grassi-junior",
+          "match_status": "exact_alias",
+          "value_percent": 0.2,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Hertz Dias",
+          "candidate_slug": "hertz-dias",
+          "match_status": "exact_alias",
+          "value_percent": 0.1,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Clariana Barão",
+          "candidate_slug": "clariana-barao",
+          "match_status": "exact_alias",
+          "value_percent": 0.1,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Edmilson Costa",
+          "candidate_slug": "edmilson-costa",
+          "match_status": "exact_alias",
+          "value_percent": 0.1,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Ninguém/branco/nulo",
+          "candidate_slug": null,
+          "match_status": "not_candidate",
+          "value_percent": 2.5,
+          "status": "publicado"
+        },
+        {
+          "raw_label": "Não sabem",
+          "candidate_slug": null,
+          "match_status": "not_candidate",
+          "value_percent": 2.8,
+          "status": "publicado"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Registro no formato /26 preservado como impresso pela CNN.",
+    "Data de divulgação: 09/09/2026."
+  ]
+}

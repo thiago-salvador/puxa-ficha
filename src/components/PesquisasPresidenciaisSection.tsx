@@ -77,7 +77,7 @@ function EmptyResearchState({ className = "" }: { className?: string }) {
       className={className}
       eyebrow="Cobertura da pesquisa"
       title="Sem pesquisa qualificada recente para este candidato"
-      description="As fontes incluídas no piloto ainda não publicaram um resultado comparável para esta candidatura."
+      description="Ainda não há um percentual individual verificado para esta candidatura nas pesquisas incluídas."
     />
   )
 }
@@ -118,6 +118,7 @@ function PesquisaDetalhada({ pesquisa }: { pesquisa: PesquisaEleitoralDoCandidat
         {pesquisa.cenario.labelRaw}
       </p>
 
+      <p className="mt-2 text-[length:var(--text-caption)] text-muted-foreground">Divulgada em {formatarDataIso(pesquisa.publicationDate.value)}</p>
       <dl className="mt-5 grid min-w-0 grid-cols-1 gap-x-4 gap-y-3 border-t border-border/60 pt-4 text-[length:var(--text-caption)] sm:grid-cols-2">
         <div className="min-w-0">
           <dt className="font-bold uppercase tracking-[0.06em] text-muted-foreground">Período de campo</dt>
@@ -201,6 +202,7 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
           {resultadoLabel(pesquisa)}
         </p>
       </div>
+      <p className="mt-2 text-[length:var(--text-eyebrow)] leading-tight text-muted-foreground">{pesquisa.cenario.labelRaw}</p>
     </div>
   )
 }
@@ -335,7 +337,7 @@ export function PesquisasPresidenciaisOverview({
             Sem pesquisa qualificada recente para este candidato
           </p>
           <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-relaxed text-muted-foreground">
-            As fontes do piloto ainda não publicaram um resultado comparável para esta candidatura.
+            Ainda não há um percentual individual verificado para esta candidatura nas pesquisas incluídas.
           </p>
         </div>
       )}
@@ -355,7 +357,7 @@ export function PesquisasPresidenciaisTab({ pesquisas }: PesquisasProps) {
         <span id="pesquisas-tab-title">Pesquisas de intenção de voto</span>
       </SectionTitle>
       <p className="mt-3 max-w-3xl text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
-        Resultados das fontes qualificadas para este piloto. Cada número pertence ao cenário
+        Resultados das pesquisas verificadas. Cada número pertence ao cenário
         descrito pela própria pesquisa.
       </p>
 

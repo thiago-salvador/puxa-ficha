@@ -1,0 +1,29 @@
+CAPTURA TEXTUAL NOMINAL
+UF: DF
+Fonte lida: UOL
+URL: https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; linhas relevantes preservadas.
+
+Matéria divulgada em 03/09/2026. Pesquisa AtlasIntel, campo de 27/08 a 01/09/2026; 1.193 eleitores do Distrito Federal; coleta pela internet; margem de erro de 3 pontos percentuais; confiança de 95%; recursos próprios; registro DF-02018/2026.
+
+Cenário estimulado de primeiro turno:
+Celina Leão (PP) 30,7%; Leandro Grass (PT) 29%; José Roberto Arruda (PSD) 14,2%; Paula Belmonte (PSDB) 8,2%; Cappelli (PSB) 5,8%; Kiko Caputo (Novo) 4,3%; Professora Samara Mineiro (UP) 1,3%; Elisson (Agir) 0%; Professor Robson (PSTU) 0%; Rico Pinheiro (PRTB) 0%; branco/nulo 2,8%; não sei 3,6%.
+
+Segundo turno, Celina x Grass:
+Celina Leão 43,6%; Leandro Grass 41,1%; branco/nulo/não sei 15,3%.
+
+Segundo turno, Arruda x Celina:
+José Roberto Arruda 38,7%; Celina Leão 38%; branco/nulo/não sei 23,3%.
+
+Segundo turno, Arruda x Grass:
+Leandro Grass 38,2%; José Roberto Arruda 34,2%; branco/nulo/não sei 27,6%.
+
+Trechos nominais exatos:
+"Kiko Caputo (Novo): 4,3%."
+"Professora Samara Mineiro (UP): 1,3%."
+"Elisson (Agir): 0%."
+"Professor Robson (PSTU): 0%."
+"Rico Pinheiro (PRTB): 0%."
+
+Os zeros são explícitos na tabela do primeiro turno e permanecem zeros. A captura não converte categorias agregadas ou "não sei" em candidato.

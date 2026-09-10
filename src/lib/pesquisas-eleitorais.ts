@@ -402,6 +402,7 @@ interface FonteValidada {
   office: string | null
   geography: string | null
   rounds: number[] | null
+  reviewedRegistrationIds: string[] | null
 }
 
 function parseSources(raw: unknown): {
@@ -437,6 +438,9 @@ function parseSources(raw: unknown): {
       office: representative.office === undefined ? null : nullableText(representative.office, `fontes.sources[${index}].representative_poll.office`),
       geography: representative.geography === undefined ? null : nullableText(representative.geography, `fontes.sources[${index}].representative_poll.geography`),
       rounds,
+      reviewedRegistrationIds: source.reviewed_registration_ids === undefined ? null
+        : array(source.reviewed_registration_ids, `fontes.sources[${index}].reviewed_registration_ids`)
+          .map((id, i) => text(id, `fontes.sources[${index}].reviewed_registration_ids[${i}]`)),
     }
   })
   assertUnique(parsed.map((source) => source.id), "fontes.sources.id")
@@ -534,6 +538,10 @@ function parsePoll(
   const registration = {
     code: valueStatus(registrationRaw.code, `${path}.registration.code`, nullableText),
     url: valueStatus(registrationRaw.url, `${path}.registration.url`, (entry, entryPath) => url(entry, entryPath, true)),
+  }
+  if (source.reviewedRegistrationIds !== null &&
+      !source.reviewedRegistrationIds.includes(registration.code.value ?? "")) {
+    throw new ErroValidacaoPesquisasEleitorais([`${path}.registration não pertence às rodadas revisadas desta fonte`])
   }
   const provenanceRaw = object(raw.provenance, `${path}.provenance`)
   const captureRaw = object(provenanceRaw.capture, `${path}.provenance.capture`)
@@ -831,11 +839,7 @@ export function listarPesquisasPresidenciaisPorSlug(
   if (scope) {
     return selecionarPesquisasMaisRecentesComparaveis(catalogo, candidateSlug, scope)
   }
-  return selecionarPesquisasMaisRecentesComparaveis(
-    catalogo,
-    candidateSlug,
-    catalogo.publicationScope,
-  )
+  return listarRodadasRecentesDoCandidato(catalogo, candidateSlug)
 }
 
 export function listarPesquisasGovernadorPorSlug(
@@ -844,9 +848,49 @@ export function listarPesquisasGovernadorPorSlug(
 ): PesquisaEleitoralDoCandidato[] {
   const catalogo = carregarPesquisasGovernadores().get(geographyCode.toUpperCase())
   if (!catalogo) return []
-  return selecionarPesquisasMaisRecentesComparaveis(
-    catalogo,
-    candidateSlug,
-    catalogo.publicationScope,
-  )
+  return listarRodadasRecentesDoCandidato(catalogo, candidateSlug)
+}
+
+/** Cada cenário mantém seu rótulo e sua chave; a listagem não calcula tendências. */
+export function listarRodadasRecentesDoCandidato(
+  catalogo: CatalogoPesquisasEleitorais,
+  candidateSlug: string,
+): PesquisaEleitoralDoCandidato[] {
+  if (!candidateSlug) return []
+  const latest = new Map<string, PesquisaEleitoral[]>()
+  const eligible = (scenario: CenarioPesquisaEleitoral) =>
+    scenario.turn === catalogo.publicationScope.turn &&
+    ["estimulado", "estimulada"].includes(scenario.comparabilityKey.split("|")[4])
+  const compareRecency = (left: PesquisaEleitoral, right: PesquisaEleitoral) =>
+    (left.publicationDate.value ?? "").localeCompare(right.publicationDate.value ?? "") ||
+    (left.fieldwork.end.value ?? "").localeCompare(right.fieldwork.end.value ?? "")
+  for (const poll of catalogo.pesquisas) {
+    if (poll.office !== catalogo.publicationScope.office ||
+        poll.geography.code !== catalogo.publicationScope.geographyCode ||
+        poll.electionYear !== catalogo.publicationScope.electionYear ||
+        !poll.cenarios.some(eligible)) continue
+    const institute = (poll.instituto.value ?? poll.sourceId).toLocaleLowerCase("pt-BR")
+    const previous = latest.get(institute)
+    if (!previous || compareRecency(poll, previous[0]) > 0) {
+      latest.set(institute, [poll])
+    } else if (compareRecency(poll, previous[0]) === 0) {
+      // Sem horário de divulgação, rodadas empatadas são conservadas separadamente.
+      previous.push(poll)
+    }
+  }
+  return [...latest.values()].flat().flatMap((poll) => {
+    const { cenarios, ...metadata } = poll
+    return cenarios.flatMap((scenario) => {
+      if (!eligible(scenario)) return []
+      const resultado = scenario.resultados.find((result) =>
+        result.matchStatus === "exact_alias" && result.candidateSlug === candidateSlug)
+      if (!resultado) return []
+      const { resultados: _resultados, ...cenario } = scenario
+      void _resultados
+      return [{ ...metadata, cenario, resultado }]
+    })
+  }).sort((a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") ||
+    (b.fieldwork.end.value ?? "").localeCompare(a.fieldwork.end.value ?? "") ||
+    catalogo.preferredSourceIds.indexOf(a.sourceId) - catalogo.preferredSourceIds.indexOf(b.sourceId) ||
+    a.id.localeCompare(b.id) || a.cenario.id.localeCompare(b.cenario.id))
 }

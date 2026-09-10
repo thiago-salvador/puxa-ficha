@@ -1,6 +1,13 @@
 # Status atual
 
-Snapshot mais recente verificado em **06/09/2026**.
+Snapshot mais recente de pesquisas preparado em **10/09/2026**; publicação deste lote ainda não verificada.
+
+## Pesquisas: presidente e 27 UFs, 10/09/2026
+
+- Lote com uma rodada presidencial e 27 estaduais, recuperadas em veículos jornalísticos e preservadas com captura, registro e hash. Cenários, zeros, categorias e votos válidos permanecem separados.
+- As fichas selecionam a rodada elegível mais recente de cada instituto e só exibem vínculos exatos. Nome ausente no cadastro vigente ou em quarentena mantém o resultado bruto sem atribuição à ficha.
+- Busca no Codex agendada para segunda e quinta, às 9h de São Paulo, com cursor por abrangência e retomada de pendências. O ambiente local precisa estar disponível. Procedimento: [busca semanal](../docs/operations/pesquisas-busca-semanal.md).
+- Este snapshot descreve a preparação local; não comprova atualização pública. [confidence: alta, source: catálogos e manifesto QA/evidencias/2026-09-10-pesquisas-fontes, agendamento Codex verificado] [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]
 
 ## H12: histórico verificado, implementação 08/09/2026
 

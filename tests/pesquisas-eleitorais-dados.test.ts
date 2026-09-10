@@ -91,6 +91,7 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     assert.deepEqual(catalogo.preferredSourceIds, fontes.preferred_source_ids)
     assert.deepEqual(catalogo.pesquisas.map((poll) => poll.sourceId), [
       "datafolha-folha-globo-nacional-2026",
+      "meio-ideia-br-revisao-20260910",
     ])
     assert.strictEqual(carregarPesquisasEleitorais(), catalogo)
   })

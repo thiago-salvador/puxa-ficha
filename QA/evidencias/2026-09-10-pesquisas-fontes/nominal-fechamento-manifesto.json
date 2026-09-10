@@ -1,0 +1,69 @@
+[
+  {
+    "uf": "BA",
+    "poll_id": "parana-pesquisas-ba-ba-07628-2026-fechamento",
+    "source_id": "parana-pesquisas-ba-fechamento-20260910",
+    "registration": "BA-07628/2026",
+    "publication_date": "2026-08-27",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-BA-parana-BA-07628-2026.txt",
+    "capture_sha256": "1278b224000635bda5035c02a06d96de5195e968e545ed005005bcb47591a625",
+    "results_count": 29,
+    "linked_slugs": [
+      "acm-neto",
+      "ariel-capistrano",
+      "aroldo-felix",
+      "jeronimo",
+      "jose-estevao",
+      "maria-bona",
+      "ronaldo-mansur"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "DF",
+    "poll_id": "igape-df-df-07879-2026-fechamento",
+    "source_id": "igape-df-fechamento-20260910",
+    "registration": "DF-07879/2026",
+    "publication_date": "2026-09-06",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-DF-igape-DF-07879-2026.txt",
+    "capture_sha256": "e1205c14dd0ef15b380adf41e54a633fa1d493e6d7c4d59095396b6436b6e38a",
+    "results_count": 11,
+    "linked_slugs": [
+      "celina-leao",
+      "elisson-ferreira",
+      "expedito-mendonca",
+      "jose-roberto-arruda",
+      "kiko-caputo",
+      "leandro-grass",
+      "paula-belmonte",
+      "ricardo-cappelli",
+      "robson-raymundo",
+      "samara-mineiro"
+    ],
+    "unresolved_names": []
+  },
+  {
+    "uf": "MA",
+    "poll_id": "doxa-pesquisa-ma-ma-04033-2026-fechamento",
+    "source_id": "doxa-pesquisa-ma-fechamento-20260910",
+    "registration": "MA-04033/2026",
+    "publication_date": "2026-09-10",
+    "historical_outside_14_days": false,
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-MA-fontes.txt",
+    "capture_sha256": "ecfd0e9528c257f9ae1e245821fa4d55e8c9c02f28f2be6c454460097805a790",
+    "results_count": 24,
+    "linked_slugs": [
+      "andre-luis",
+      "dimas-cassimiro",
+      "eduardo-braide",
+      "felipe-camarao",
+      "orleans-brandao",
+      "reginaldo-lima",
+      "roberto-rocha",
+      "saulo-arcangeli"
+    ],
+    "unresolved_names": []
+  }
+]

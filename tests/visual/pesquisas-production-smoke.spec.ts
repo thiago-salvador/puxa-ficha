@@ -6,7 +6,7 @@ import {
 } from "../../scripts/vercel-automation-bypass"
 
 const EXPECTED_SHA = process.env.PF_EXPECTED_DEPLOY_SHA ?? ""
-const EMPTY_SLUG = process.env.PF_PESQUISAS_EMPTY_SLUG?.trim() || "alan-rick"
+const AC_SLUG = "alan-rick"
 
 type BrowserGuard = {
   browserErrors: string[]
@@ -122,17 +122,19 @@ test.beforeEach(async ({ context, baseURL }) => {
 })
 
 test.describe("smoke somente leitura de pesquisas em produção", () => {
-  test("Tarcísio mostra Datafolha e 45% nas três superfícies", async ({ page }, testInfo) => {
+  test("Tarcísio mostra a rodada estimulada mais recente e mantém Datafolha na listagem", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
     await page.goto("/candidato/tarcisio-gov-sp", { waitUntil: "domcontentloaded" })
     await waitForProfile(page)
 
     const hero = page.locator("[data-pf-pesquisa-hero]")
     const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(hero).toContainText("Datafolha")
-    await expect(hero).toContainText("45%")
-    await expect(overview).toContainText("Datafolha")
-    await expect(overview).toContainText("45%")
+    await expect(hero).toContainText("Quaest")
+    await expect(hero).toContainText("42%")
+    await expect(hero).toContainText("1º turno estimulado")
+    await expect(hero).not.toContainText("48%")
+    await expect(overview).toContainText("Quaest")
+    await expect(overview).toContainText("42%")
     await expectNoHorizontalOverflow(page, [page.locator("[data-pf-hero]"), overview])
     await expectBasicAccessibility(page, [
       "[data-pf-pesquisa-hero]",
@@ -146,8 +148,14 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
 
     await openPesquisasTab(page)
     const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toContainText("Datafolha")
-    await expect(tab).toContainText("45%")
+    const quaest = tab.locator('[data-pf-pesquisa-source="quaest-sp-revisao-20260910"]')
+    const datafolha = tab.locator('[data-pf-pesquisa-source="datafolha-folha-globo-estaduais-2026"]')
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
+    await expect(quaest).toContainText("42%")
+    await expect(quaest).toContainText("1º turno estimulado")
+    await expect(datafolha).toContainText("45%")
+    await expect(tab).not.toContainText("48%")
+    await expect(tab).not.toContainText("2º turno")
     await expectNoHorizontalOverflow(page, [tab])
     await expectBasicAccessibility(page, ["[data-pf-pesquisas-tab]"])
     await page.screenshot({
@@ -159,16 +167,19 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
     await expectReadOnlyAndClean(guard)
   })
 
-  test("Alan Rick mantém vazio explícito sem resultado de outra UF", async ({ page }, testInfo) => {
+  test("Alan Rick mostra Quaest 33% sem resultado de SP ou AM", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
-    await page.goto(`/candidato/${EMPTY_SLUG}`, { waitUntil: "domcontentloaded" })
+    await page.goto(`/candidato/${AC_SLUG}`, { waitUntil: "domcontentloaded" })
     await waitForProfile(page)
 
     const hero = page.locator("[data-pf-pesquisa-hero]")
     const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(hero).toContainText("Sem pesquisa qualificada recente")
-    await expect(overview.locator("[data-pf-pesquisas-empty]")).toBeVisible()
-    await expect(page.getByText("0%", { exact: true })).toHaveCount(0)
+    await expect(hero).toContainText("Quaest")
+    await expect(hero).toContainText("33%")
+    await expect(overview).toContainText("Quaest")
+    await expect(overview).toContainText("33%")
+    await expect(page.getByText("31%", { exact: true })).toHaveCount(0)
+    await expect(page.getByText("42%", { exact: true })).toHaveCount(0)
     await expect(page.getByText("45%", { exact: true })).toHaveCount(0)
     await expect(page.getByText("Datafolha", { exact: true })).toHaveCount(0)
     await expect(page.getByText("São Paulo", { exact: true })).toHaveCount(0)
@@ -185,8 +196,11 @@ test.describe("smoke somente leitura de pesquisas em produção", () => {
 
     await openPesquisasTab(page)
     const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab.locator("[data-pf-pesquisas-empty]")).toBeVisible()
-    await expect(tab.getByText("0%", { exact: true })).toHaveCount(0)
+    const quaest = tab.locator('[data-pf-pesquisa-source="quaest-ac-revisao-20260910"]')
+    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
+    await expect(quaest).toContainText("33%")
+    await expect(tab.getByText("31%", { exact: true })).toHaveCount(0)
+    await expect(tab.getByText("42%", { exact: true })).toHaveCount(0)
     await expect(tab.getByText("45%", { exact: true })).toHaveCount(0)
     await expect(tab.getByText("Datafolha", { exact: true })).toHaveCount(0)
     await expectNoHorizontalOverflow(page, [tab])

@@ -51,7 +51,7 @@ export function PatrimonioChart({ data }: { data: { id?: string; ano: number; va
   // numa linha; com 6 ou mais eleições numa coluna estreita, o gráfico rola na
   // horizontal dentro do próprio container em vez de quebrar os números no meio.
   return (
-    <div data-pf-patrimonio-chart className="-mx-2 flex items-end gap-2 overflow-x-auto px-2 pb-1 sm:gap-3">
+    <div data-pf-patrimonio-chart className="relative -mx-2 flex items-end gap-2 overflow-x-auto px-2 pb-1 sm:gap-3">
       {sorted.map((d, index) => {
         const pct = Math.max((d.valor / max) * 100, 8)
         return (
