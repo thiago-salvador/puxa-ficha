@@ -69,7 +69,16 @@ export function groupWeeklyPollSeries(polls: StatePollScenario[]): WeeklySeries[
   return [...groups].flatMap(([id, members]) => {
     const weeks = aggregatePollWeeks(members)
     return weeks.length ? [{ id, label: weeks.at(-1)!.polls.at(-1)!.scenario.labelRaw, polls: weeks.flatMap(week => week.polls), weeks }] : []
-  }).sort((a, b) => (b.weeks.at(-1)!.date ?? "").localeCompare(a.weeks.at(-1)!.date ?? "") || a.id.localeCompare(b.id))
+  }).sort((a, b) => {
+    // The initial view should show the prompted candidate list, not a sparse
+    // spontaneous scenario chosen accidentally by lexicographic ID order.
+    const stimulated = (series: WeeklySeries) => /^estimulad[ao]$/.test(series.polls[0].scenario.comparabilityKey.split("|")[4])
+    const latestFieldwork = (series: WeeklySeries) => series.polls.map(poll => fieldworkDate(poll) ?? "").sort().at(-1) ?? ""
+    const latestPublication = (series: WeeklySeries) => series.polls.map(poll => poll.publicationDate.status === "publicado" ? poll.publicationDate.value ?? "" : "").sort().at(-1) ?? ""
+    return Number(stimulated(b)) - Number(stimulated(a)) ||
+      latestFieldwork(b).localeCompare(latestFieldwork(a)) ||
+      latestPublication(b).localeCompare(latestPublication(a)) || a.id.localeCompare(b.id)
+  })
 }
 
 export const weekLabel = (week: PollWeek) => week.date ? `${formatPollDate(week.date, true)} a ${formatPollDate(week.end, true)}` : "Coleta sem data verificada"

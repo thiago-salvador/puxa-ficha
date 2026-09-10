@@ -2,6 +2,46 @@ import { expect, test } from "playwright/test"
 import AxeBuilder from "@axe-core/playwright"
 import { build } from "esbuild"
 
+test("presidency and all 27 UF charts expose every candidate in their default stimulated scenario", async ({ page }) => {
+  test.setTimeout(240_000)
+  const ufs = ["ac", "al", "ap", "am", "ba", "ce", "df", "es", "go", "ma", "mt", "ms", "mg", "pa", "pb", "pr", "pe", "pi", "rj", "rn", "rs", "ro", "rr", "sc", "sp", "se", "to"]
+  for (const path of ["/", ...ufs.map(uf => `/uf/${uf}`)]) {
+    await page.goto(`${path}#pesquisas`, { waitUntil: "domcontentloaded" })
+    const section = page.locator("[data-pf-polls]")
+    const scenario = section.getByRole("combobox", { name: "Cenário", exact: true })
+    await expect(scenario, path).toBeVisible()
+    const selection = JSON.parse(await scenario.inputValue()) as [number, string, string, number, string, string, string[]]
+    const options = await scenario.locator("option").evaluateAll(nodes => nodes.map(node => JSON.parse((node as HTMLOptionElement).value) as [number, string, string, number, string]))
+    if (options.some(option => /^estimulad[ao]$/.test(option[4].split("|")[4]))) expect(selection[4].split("|")[4], path).toMatch(/^estimulad[ao]$/)
+    await expect(section.getByRole("checkbox"), path).toHaveCount(selection[6].length)
+    for (const checkbox of await section.getByRole("checkbox").all()) await expect(checkbox, path).toBeChecked()
+  }
+})
+
+test("SP initially shows all seven stimulated candidates, including zero, and keeps spontaneous voting separate", async ({ page }, info) => {
+  await page.goto("/uf/sp#pesquisas", { waitUntil: "domcontentloaded" })
+  const section = page.locator("[data-pf-polls]")
+  const scenario = section.getByRole("combobox", { name: "Cenário", exact: true })
+  await expect(scenario.locator("option:checked")).toHaveText("1º turno estimulado")
+  await expect(section.getByRole("checkbox")).toHaveCount(7)
+  for (const [name, value] of [["Tarcísio de Freitas", 42], ["Fernando Haddad", 27], ["Policial Edjane", 1], ["Vera Lúcia", 1], ["Izadora Dias", 1], ["Carlos Machado", 1], ["Vivian Mendes", 0]] as const) {
+    await expect(section.getByRole("checkbox", { name: `${name} ${value}%`, exact: true })).toBeChecked()
+  }
+  await expect(section.locator("[data-pf-poll-endpoint]")).toHaveCount(7)
+  await section.screenshot({ path: info.outputPath("sp-stimulated-desktop.png") })
+  await scenario.selectOption({ label: "1º turno espontâneo" })
+  await expect(section.getByRole("checkbox")).toHaveCount(2)
+  await expect(section.getByRole("checkbox", { name: "Tarcísio 22%", exact: true })).toBeChecked()
+  await scenario.selectOption({ label: "1º turno estimulado" })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await expect(section.getByRole("checkbox")).toHaveCount(7)
+  for (const row of await section.locator("[data-pf-poll-candidate]").all()) await expect(row).toBeVisible()
+  await expect.poll(() => section.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true)
+  await section.screenshot({ path: info.outputPath("sp-stimulated-mobile.png") })
+  const accessibility = await new AxeBuilder({ page }).include("[data-pf-polls]").withTags(["wcag2a", "wcag2aa"]).analyze()
+  expect(accessibility.violations).toEqual([])
+})
+
 // Keep the fixed site header from obscuring element-only evidence captures.
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => {
