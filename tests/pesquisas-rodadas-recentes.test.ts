@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import test from "node:test"
+import type { listarRodadasRecentesDoCandidato as ListarRodadasRecentes } from "../src/lib/pesquisas-eleitorais"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
@@ -11,7 +12,9 @@ require.cache[serverOnlyPath] = {
 const {
   listarRodadasRecentesDoCandidato,
   parsePesquisasEleitoraisJson,
-} = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
+} = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais") & {
+  listarRodadasRecentesDoCandidato: typeof ListarRodadasRecentes
+}
 
 function fixture() {
   const catalogo = parsePesquisasEleitoraisJson(
