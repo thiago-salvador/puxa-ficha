@@ -1,0 +1,21 @@
+Fonte: UOL
+URL: https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm
+Título: Pesquisa para governo do Ceará: veja números atualizados
+Matéria: 09/09/2026 19h49
+
+Trecho exato:
+## Quaest, 4 de setembro
+A pesquisa Quaest mostra Ciro Gomes (PSDB) na liderança em todos os cenários de 1º turno. Elmano de Freitas (PT) aparece em segundo.
+
+## 1º turno - estimulada:
+* Ciro Gomes (PSDB): 45%
+* Elmano de Freitas (PT): 34%
+* Delegado Huggo (Missão): 1%
+* Indecisos: 12%
+* Branco/nulo/não vai votar: 8%
+Danilo Soares (Democrata), Vera Lúcia (Novo), Ieri Braga (PCO), Zé Batista (PSTU) e Serley Leal (UP) não pontuaram.
+
+Metadados exatos da matéria:
+Quaest: a pesquisa ouviu 900 eleitores no Ceará, por entrevistas, entre 31 de agosto e 3 de setembro; a margem de erro é de três pontos percentuais, com nível de confiança de 95%; a pesquisa foi encomendada pela TV Verdes Mares e registrada no TSE sob o número CE-01149/2026.
+
+Nota de interpretação: “não pontuaram” é zero explícito na matéria. A fonte não exibe cinco linhas numéricas separadas; o valor 0 deve ser mantido como evidência textual, sem inventar casas decimais.

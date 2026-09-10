@@ -1,0 +1,51 @@
+[
+  {
+    "uf": "PB",
+    "poll_id": "atlas-nominal-pb-pb-01118-2026",
+    "source_id": "atlas-pb-nominal-revisao-20260910",
+    "registration": "PB-01118/2026",
+    "publication_date": "2026-09-04",
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-PB-atlas.txt",
+    "capture_sha256": "2ffaf449d44a541dbd473071914aa6c385f232540cc880fc2a6df0473057326a",
+    "results_count": 8,
+    "linked_slugs": [
+      "camilo-duarte",
+      "cicero-lucena",
+      "efraim-filho",
+      "lucas-ribeiro",
+      "pedro-coutinho",
+      "yuri-ezequiel"
+    ],
+    "notes": [
+      "A matéria da CNN diz divulgação em 04/09. Há republicações que atribuem a mesma rodada a 03/09; preservar essa divergência, sem confundir data de notícia com campo.",
+      "Resultado de 1,8% na Anova encontrado em outra notícia é rejeição, não intenção de voto, e foi descartado para esta finalidade.",
+      "A ficha já possuía 1% de outra rodada, Real Time Big Data de 24/08; não transportar esse valor à rodada Anova de 08/09."
+    ]
+  },
+  {
+    "uf": "MS",
+    "poll_id": "ipr-nominal-ms-ms-07621-2026",
+    "source_id": "ipr-ms-nominal-revisao-20260910",
+    "registration": "MS-07621/2026",
+    "publication_date": "2026-08-27",
+    "capture_path": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-MS-ipr.txt",
+    "capture_sha256": "aa4b5a4803274cf1fafefbd3e16e0721f8ec8fc9fad70e39c5aa2d5773cbadda",
+    "results_count": 10,
+    "linked_slugs": [
+      "daniel-lemes",
+      "delcidio-amaral",
+      "eduardo-riedel",
+      "fabio-trad",
+      "jeferson-bezerra",
+      "joao-henrique-catan",
+      "lucien-rezende",
+      "renato-gomes"
+    ],
+    "notes": [
+      "Divulgação em 27/08, limite de 14 dias corridos em 10/09. A notícia de A Crítica em 09/09 recita esta rodada antiga; não é uma pesquisa nova de setembro.",
+      "Os valores publicados somam 100,01%, diferença de arredondamento preservada.",
+      "A fonte atribui PL a João Henrique Catan; o cadastro vigente aponta NOVO. O vínculo exige pessoa/cargo/UF comprovados, sem corrigir silenciosamente o texto da fonte.",
+      "Outra fonte lida, O Jacaré em 27/08, também informa Jeferson com 1% na Quaest MS-00793/2026, campo 21 a 24/08, divulgada em 25/08. Essa rodada é mais antiga que o limite de 14 dias para divulgação e deve manter a data explícita."
+    ]
+  }
+]

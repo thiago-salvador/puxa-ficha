@@ -1,0 +1,32 @@
+Atlas PB: Ribeiro tem 42,4% no 1º turno ao governo; Efraim Filho, 30,9% | CNN Brasil (https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/)
+citeturn202view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/","lineno":null}); Total lines: 211
+L17: # Atlas PB: Ribeiro tem 42,4% no 1º turno ao governo; Efraim Filho, 30,9%
+L18: ## Foram entrevistados 1.207 eleitores da Paraíba, entre os dias 28 de agosto e 2 de setembro; margem de erro é de 3 pontos percentuais, para mais ou para menos
+L19: 
+L20: cite14†Rafael Sotero , colaboração para a CNN Brasil, São Paulo 04/09/26 às 10:57 | Atualizado 04/09/26 às 10:57
+L21: 
+L22: cite15†Image†admin.cnnbrasil.com.br L23: 
+L24: Lucas Ribeiro (PP) e Efraim Filho (PL)  • Arte CNN/Foto 1: Reprodução | Foto 2: Jefferson Rudy/Agência Senado
+L25: 
+L26: [Input]
+L27: 
+L28: cite16†Image: Fórum Inter L29: 
+L30: Compartilhar matéria
+L31: Pesquisa AtlasIntel divulgada nesta sexta-feira (04) mostra o governador da Paraíba e candidato à reeleição, cite17†Lucas Ribeiro (PP), à frente na disputa ao Palácio dos Despachos.
+L32: 
+L33: No levantamento Ribeiro aparece com 42,4% das intenções de voto, seguido do candidato cite18†Efraim Filho (PL) que soma 30,9%.
+L34: 
+L35: Leia Mais
+L36: 
+L37:   * cite19†MPE contesta candidaturas no Rio por elos com tráfico, milícia e bicheiro L38: 
+L39:   * cite20†Lula traça roteiro de campanha e evitará estados com disputa por seu apoio L40:   * cite21†Quem são os candidatos ao governo da Paraíba em 2026 L41: 
+L42: Na sequência cite22†Cícero Lucena (MDB) pontua 19,8%, cite23†Yuri Ezequiel (UP) 0,5%, cite24†Camilo Duarte (PCO) 0,4% e cite25†Pedro Coutinho (DC) 0,3%. Do total de eleitores 3,8% disseram votar em branco ou nulo, enquanto 1,9% afirmaram não saber.
+L43: 
+L44: cite26†Image: hierarchy visualization†public.flourish.studio L45: ## Metodologia
+L46: 
+L47: A pesquisa AtlasIntel entrevistou 1.207 eleitores da Paraíba, entre os dias 28 de agosto e 2 de setembro. A margem de erro do levantamento é de 3 pontos percentuais, para mais ou para menos, com intervalo de confiança de 95%.
+L48: 
+L49: A pesquisa foi realizada com recursos do próprio instituto e está registrada no TSE (Tribunal Superior Eleitoral) sob o protocolo PB-01118/2026.
+L50: ## Confira a íntegra da pesquisa abaixocite27†iframe†docs.google.com L51: 
+
+

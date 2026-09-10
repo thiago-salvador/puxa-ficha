@@ -72,11 +72,11 @@
   },
   "summary": {
     "published_ufs_in_scope": 27,
-    "published_profiles_in_scope": 176,
+    "published_profiles_in_scope": 187,
     "total_catalog_ufs": 27,
-    "total_catalog_profiles": 176,
+    "total_catalog_profiles": 187,
     "additional_published_ufs": 27,
-    "additional_published_profiles": 176
+    "additional_published_profiles": 187
   },
   "states": [
     {
@@ -134,67 +134,73 @@
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/"
       ],
       "registration_ids": [
-        "AM-09965/2026",
-        "AM-04939/2026"
+        "AM-04939/2026",
+        "AM-09965/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "atlasintel-am-revisao-20260910"
+        "atlasintel-am-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
       "uf": "BA",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 5 identidade(s) comprovada(s) para Bahia.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 6 identidade(s) comprovada(s) para Bahia.",
       "evidence_urls": [
         "https://exame.com/brasil/real-time-big-data-acm-neto-tem-44-e-jeronimo-42-no-1o-turno/",
-        "https://noticias.uol.com.br/politica/ultimas-noticias/2026/08/11/pesquisa-realtime-big-data-mostra-empate-tecnico-entre-jeronimo-e-acm.amp.htm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+        "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
       ],
       "registration_ids": [
         "BA-00277/2026",
-        "BA-01568/2026"
+        "BA-01568/2026",
+        "BA-08891/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "real-time-big-data-ba-revisao-20260910"
+        "atlasintel-ba-nominal-20260910",
+        "real-time-big-data-ba-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
       "uf": "CE",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 6 identidade(s) comprovada(s) para Ceará.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 8 identidade(s) comprovada(s) para Ceará.",
       "evidence_urls": [
         "https://www1.folha.uol.com.br/poder/2026/08/datafolha-ciro-gomes-lidera-com-52-no-ceara-contra-33-de-elmano-de-freitas.shtml",
-        "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/18/integra-da-pesquisa-datafolha-ceara-e-divulgada-pelo-o-povo-.html",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/"
+        "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/",
+        "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm"
       ],
       "registration_ids": [
-        "CE-04292/2026",
-        "CE-03293/2026"
+        "CE-01149/2026",
+        "CE-03293/2026",
+        "CE-04292/2026"
       ],
       "candidate_source_ids": [
         "datafolha-folha-globo-estaduais-2026",
+        "quaest-ce-nominal-20260910",
         "real-time-big-data-ce-revisao-20260910"
       ]
     },
     {
       "uf": "DF",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 9 identidade(s) comprovada(s) para Distrito Federal.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 10 identidade(s) comprovada(s) para Distrito Federal.",
       "evidence_urls": [
         "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
         "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
-        "https://www.congressoemfoco.com.br/amp/noticia/122069/celina-leao-aparece-a-frente-em-todos-os-cenarios-para-o-governo-do-df"
+        "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
       ],
       "registration_ids": [
+        "DF-02018/2026",
         "DF-07561/2026",
         "DF-09600/2026"
       ],
       "candidate_source_ids": [
+        "atlasintel-df-nominal-20260910",
         "datafolha-folha-globo-estaduais-2026",
         "real-time-big-data-df-revisao-20260910"
       ]
@@ -250,35 +256,37 @@
       "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 5 identidade(s) comprovada(s) para Mato Grosso.",
       "evidence_urls": [
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-mato-grosso-agosto-2026/",
-        "https://www.reporternews.com.br/noticia/473565/Pesquisa_traz_WF_com_34%25__Pivetta_com_26%25_e_Natasha_com_13%25",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/"
       ],
       "registration_ids": [
-        "MT-04560/2026",
-        "MT-01505/2026"
+        "MT-01505/2026",
+        "MT-04560/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "parana-pesquisas-mt-revisao-20260910"
+        "parana-pesquisas-mt-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
       "uf": "MS",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 8 identidade(s) comprovada(s) para Mato Grosso do Sul.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 8 identidade(s) comprovada(s) para Mato Grosso do Sul.",
       "evidence_urls": [
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-mato-grosso-do-sul-agosto-2026/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/"
+        "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/",
+        "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/"
       ],
       "registration_ids": [
-        "MS-07706/2026",
-        "MS-02047/2026"
+        "MS-02047/2026",
+        "MS-07621/2026",
+        "MS-07706/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "atlasintel-ms-revisao-20260910"
+        "atlasintel-ms-revisao-20260910",
+        "ipr-ms-nominal-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
@@ -302,35 +310,40 @@
     {
       "uf": "PA",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 1 rodada(s), 1 registro(s) e 3 identidade(s) comprovada(s) para Pará.",
+      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 5 identidade(s) comprovada(s) para Pará.",
       "evidence_urls": [
         "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/",
-        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+        "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+        "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm"
       ],
       "registration_ids": [
-        "PA-00206/2026"
+        "PA-00206/2026",
+        "PA-07718/2026"
       ],
       "candidate_source_ids": [
+        "quaest-pa-nominal-20260910",
         "real-time-big-data-pa-revisao-20260910"
       ]
     },
     {
       "uf": "PB",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 6 identidade(s) comprovada(s) para Paraíba.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 6 identidade(s) comprovada(s) para Paraíba.",
       "evidence_urls": [
         "https://exame.com/brasil/real-time-big-data-ribeiro-abre-10-pontos-sobre-lucena-no-1o-turno-na-paraiba/",
-        "https://exame.com/brasil/real-time-big-data-azevedo-e-veneziano-lideram-corrida-ao-senado-na-paraiba-2/",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/"
+        "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos_validos-em-nova-pesquisa-para-governador/",
+        "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/"
       ],
       "registration_ids": [
-        "PB-07790/2026",
-        "PB-01471/2026"
+        "PB-01118/2026",
+        "PB-01471/2026",
+        "PB-07790/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "instituto-anova-pb-revisao-20260910"
+        "atlas-pb-nominal-revisao-20260910",
+        "instituto-anova-pb-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
@@ -343,12 +356,12 @@
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
       ],
       "registration_ids": [
-        "PR-09262/2026",
-        "PR-02179/2026"
+        "PR-02179/2026",
+        "PR-09262/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "irg-pesquisas-pr-revisao-20260910"
+        "irg-pesquisas-pr-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
@@ -361,8 +374,8 @@
         "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml"
       ],
       "registration_ids": [
-        "PE-01528/2026",
-        "PE-00285/2026"
+        "PE-00285/2026",
+        "PE-01528/2026"
       ],
       "candidate_source_ids": [
         "datafolha-folha-globo-estaduais-2026",
@@ -376,11 +389,11 @@
       "evidence_urls": [
         "https://www1.folha.uol.com.br/poder/2026/08/datafolha-rafael-fonteles-tem-56-das-intencoes-de-voto-no-piaui-e-venceria-no-1o-turno.shtml",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
+        "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos_validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
       ],
       "registration_ids": [
-        "PI-06656/2026",
-        "PI-05542/2026"
+        "PI-05542/2026",
+        "PI-06656/2026"
       ],
       "candidate_source_ids": [
         "datafolha-folha-globo-estaduais-2026",
@@ -397,8 +410,8 @@
         "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/"
       ],
       "registration_ids": [
-        "RJ-02945/2026",
-        "RJ-01671/2026"
+        "RJ-01671/2026",
+        "RJ-02945/2026"
       ],
       "candidate_source_ids": [
         "datafolha-folha-globo-estaduais-2026",
@@ -423,19 +436,23 @@
     {
       "uf": "RS",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 4 identidade(s) comprovada(s) para Rio Grande do Sul.",
+      "reason": "Catálogo aprovado contém 4 rodada(s), 4 registro(s) e 7 identidade(s) comprovada(s) para Rio Grande do Sul.",
       "evidence_urls": [
         "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/real-time-big-data-mostra-juliana-brizola-com-38-e-luciano-zucco-com-32-das-intencoes-de-voto-para-o-governo-do-rs-cmt8o9qxe00hk015gm9om5ee6.html",
-        "https://www.cnnbrasil.com.br/eleicoes/real-time-rs-juliana-lidera-1o-turno-e-empata-com-zucco-no-2o-ao-governo/",
-        "https://noticias.uol.com.br/eleicoes/2026/08/25/real-time-big-data-juliana-brizola-lidera-ao-governo-do-rs-com-38.ghtm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+        "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm",
+        "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/",
+        "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/"
       ],
       "registration_ids": [
-        "RS-09640/2026",
-        "RS-05497/2026"
+        "RS-00652/2026",
+        "RS-05497/2026",
+        "RS-06875/2026",
+        "RS-09640/2026"
       ],
       "candidate_source_ids": [
+        "atlasintel-rs-nominal-20260910",
+        "quaest-rs-nominal-20260910",
         "real-time-big-data-estaduais-2026",
         "real-time-big-data-rs-revisao-20260910"
       ]
@@ -454,8 +471,8 @@
         "RO-05711/2026"
       ],
       "candidate_source_ids": [
-        "real-time-big-data-estaduais-2026",
-        "quaest-ro-revisao-20260910"
+        "quaest-ro-revisao-20260910",
+        "real-time-big-data-estaduais-2026"
       ]
     },
     {
@@ -498,8 +515,8 @@
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/"
       ],
       "registration_ids": [
-        "SP-01806/2026",
-        "SP-00959/2026"
+        "SP-00959/2026",
+        "SP-01806/2026"
       ],
       "candidate_source_ids": [
         "datafolha-folha-globo-estaduais-2026",
@@ -509,18 +526,20 @@
     {
       "uf": "SE",
       "status": "publicada",
-      "reason": "Catálogo aprovado contém 2 rodada(s), 2 registro(s) e 4 identidade(s) comprovada(s) para Sergipe.",
+      "reason": "Catálogo aprovado contém 3 rodada(s), 3 registro(s) e 6 identidade(s) comprovada(s) para Sergipe.",
       "evidence_urls": [
         "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senado-sergipe-agosto-2026/",
-        "https://noticias.uol.com.br/eleicoes/2026/08/03/real-time-governador-sergipe.amp.htm",
         "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/"
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/",
+        "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml"
       ],
       "registration_ids": [
-        "SE-07327/2026",
-        "SE-05776/2026"
+        "SE-03536/2026",
+        "SE-05776/2026",
+        "SE-07327/2026"
       ],
       "candidate_source_ids": [
+        "quaest-se-nominal-20260910",
         "real-time-big-data-estaduais-2026",
         "real-time-big-data-se-revisao-20260910"
       ]

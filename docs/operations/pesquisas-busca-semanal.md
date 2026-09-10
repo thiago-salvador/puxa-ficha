@@ -23,6 +23,15 @@ uma verificação distinta das fontes previamente cadastradas.
    publicados. Preservar zeros, Outros, indecisos, brancos/nulos, agrupamentos e
    distinção entre votos válidos e totais. Não calcular percentuais individuais
    para nomes agrupados nem transformar omissão em zero.
+   Quando faltar percentual individual, pesquisar também `Pesquisa votos
+   [estado] [nome do candidato]`, usando o nome de urna, o nome completo e
+   variantes comprovadas. Combinar o nome com instituto, registro e data da
+   rodada; consultar outros veículos e a tabela ou PDF original do instituto.
+   Essa segunda busca inclui nomes em Outros, omitidos, com vínculo pendente
+   ou apenas com resultado histórico. Um agrupamento na primeira matéria não
+   encerra a busca. Registrar por candidato as consultas, fontes lidas e o
+   resultado da tentativa. Se só houver pesquisa anterior, manter sua data
+   explícita, sem atribuir o valor à rodada mais nova.
 6. Conferir divulgação, campo, amostra, margem, confiança, método, contratante
    quando informado e registro. Metadado ausente permanece indeterminado. Uma
    matéria nova sobre uma rodada antiga não é pesquisa nova.
@@ -56,6 +65,9 @@ ou ação necessária. Uma execução sem novidades não precisa produzir mensag
 
 - Todas as 28 abrangências têm busca e resultado ou pendência explícita.
 - Cada percentual publicado possui fonte lida e vínculo exato com a ficha.
+- Toda lacuna individual recebe busca por nome e estado, com tentativa e
+  resultado registrados; matéria que agrupa candidatos exige fonte alternativa
+  ou documento do instituto antes de concluir que o percentual não foi obtido.
 - Cenários diferentes continuam identificados; a listagem não calcula tendência.
 - A rodada recente substitui a antiga do mesmo instituto. A ausência de um nome
   na rodada recente não recupera silenciosamente seu percentual antigo.

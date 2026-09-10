@@ -1,0 +1,27 @@
+Fonte principal: Portal do Sampaio
+URL: https://portaldosampaio.com.br/pesquisa-ippi-mostra-braide-na-lideranca-com-537-dos-votos-validos-para-o-governo-do-maranhao/
+Data da matéria: 04/09/2026 • 19h16
+Título: Pesquisa IPPI mostra Braide na liderança com 53,7% dos votos válidos para o Governo do Maranhão
+
+Trecho exato da matéria:
+Nova pesquisa de intenção de voto divulgada nesta sexta-feira (4) pelo IPPI Pesquisas e Consultorias aponta Eduardo Braide (PSD) na liderança da disputa pelo Governo do Maranhão. Considerando apenas os votos válidos, Braide aparece com 53,7%.
+Na segunda colocação está Orleans Brandão (MDB), com 29,4%, seguido por Felipe Camarão (PT), que registra 9,4%. Roberto Rocha (PRTB) aparece com 4,1%, enquanto André Luís (Missão) tem 1,8%.
+Os demais candidatos — Reginaldo Lima, Dimas Cassimiro e Saulo Arcangeli — somam aproximadamente 1,6% dos votos válidos, segundo os dados apresentados pelo instituto.
+
+Ficha técnica exata da matéria:
+A pesquisa ouviu 1.500 eleitores entre os dias 29 de agosto e 2 de setembro de 2026. A margem de erro informada é de 2,5 pontos percentuais, com nível de confiança de 95%. O levantamento está registrado no TSE sob o número MA-08868/2026.
+Para o cálculo dos votos válidos apresentado, foram excluídos votos brancos, nulos e eleitores indecisos, resultando em uma base de 1.251 entrevistados.
+
+Resultado individualizado comprovado nesta fonte:
+- Votos válidos: Eduardo Braide 53,7%; Orleans Brandão 29,4%; Felipe Camarão 9,4%; Roberto Rocha 4,1%; André Luís 1,8%.
+- Reginaldo Lima, Dimas Cassimiro e Saulo Arcangeli aparecem somente no agrupamento “os demais candidatos”, que soma aproximadamente 1,6% dos votos válidos. O 1,6% não pode ser repartido entre os três.
+- A matéria não fornece percentual individual desses três nomes no cenário estimulado nem no recorte de votos válidos.
+
+Confronto preservado:
+Repórter Tempo, em https://reportertempo.com.br/ (âncora “Pesquisa IPPI mostra Braide liderando com 44,8% e Orleans em segundo com 24,5%”, datada de 07/09/2026), publicou “Reginaldo Lima (PCB), Dimas Cassimiro e Saulo Arcangeli (PSTU) com 1% cada” e repetiu “1% cada” nos votos válidos. Essa anotação entra em conflito com a publicação do Portal do Sampaio, que identifica os três como um único agrupamento de aproximadamente 1,6% dos votos válidos; por isso, os valores individuais permanecem nulos e o agrupamento é mantido.
+
+Incertezas:
+- A página do Portal do Sampaio retornou 404 na abertura direta durante a conferência, mas o resultado indexado preserva título, data, URL, trecho integral relevante e ficha técnica acima.
+- Há divergência de margem de erro entre as matérias: Portal do Sampaio informa 2,5 pontos percentuais; a ficha reproduzida pelo Repórter Tempo informa 2,2. Mantida a divergência para revisão, sem escolher uma margem silenciosamente.
+- O título e o corpo do Repórter Tempo usam IPPI; a ficha técnica dessa página contém o typo “IPPO”.
+- Status de integração: bloqueado por agrupamento conflitante; não usar esta rodada para individualizar Reginaldo Lima, Dimas Cassimiro ou Saulo Arcangeli.

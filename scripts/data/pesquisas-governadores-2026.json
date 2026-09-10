@@ -1053,6 +1053,18 @@
         {
           "raw_label": "Ronaldo Mansur (PSOL)",
           "candidate_slug": "ronaldo-mansur"
+        },
+        {
+          "raw_label": "ACM Neto (União Brasil)",
+          "candidate_slug": "acm-neto"
+        },
+        {
+          "raw_label": "Estêvão (DC)",
+          "candidate_slug": "jose-estevao"
+        },
+        {
+          "raw_label": "Ariel Capistrano (DC)",
+          "candidate_slug": "ariel-capistrano"
         }
       ],
       "pesquisas": [
@@ -1348,6 +1360,255 @@
               ]
             }
           ]
+        },
+        {
+          "id": "atlasintel-ba-ba-08891-2026",
+          "source_id": "atlasintel-ba-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "A Tarde",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-28",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-02",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-03",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "BA-08891/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Bahia",
+            "code": "BA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "b4a354d2db3807e8c83eb732a32f4578a408ecd1330b408a979639004fdceaef",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "atlasintel-ba-2026-09-03-cenario-1",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "1º turno, estimulada, cenário 1",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|estimulada|atlasintel-ba-2026-09-03-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto (União Brasil)",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 49.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 47.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur (PSOL)",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Félix (UP)",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Estêvão (DC)",
+                  "candidate_slug": "jose-estevao",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "atlasintel-ba-2026-09-03-cenario-2",
+              "turn": 1,
+              "geography": "Bahia",
+              "label_raw": "1º turno, estimulada, cenário 2",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|1|estimulada|atlasintel-ba-2026-09-03-cenario-2|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto (União Brasil)",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 48.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 47.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ronaldo Mansur (PSOL)",
+                  "candidate_slug": "ronaldo-mansur",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Aroldo Félix (UP)",
+                  "candidate_slug": "aroldo-felix",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ariel Capistrano (DC)",
+                  "candidate_slug": "ariel-capistrano",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.9,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "atlasintel-ba-2026-09-03-segundo-turno",
+              "turn": 2,
+              "geography": "Bahia",
+              "label_raw": "2º turno, estimulada",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|BA|2|estimulada|atlasintel-ba-2026-09-03-segundo-turno|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "ACM Neto (União Brasil)",
+                  "candidate_slug": "acm-neto",
+                  "match_status": "exact_alias",
+                  "value_percent": 49.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jerônimo Rodrigues (PT)",
+                  "candidate_slug": "jeronimo",
+                  "match_status": "exact_alias",
+                  "value_percent": 48.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1407,6 +1668,18 @@
         {
           "raw_label": "Zé Batista (PSTU)",
           "candidate_slug": "ze-batista"
+        },
+        {
+          "raw_label": "Danilo Soares (Democrata)",
+          "candidate_slug": "danilo-soares"
+        },
+        {
+          "raw_label": "Vera Lúcia (Novo)",
+          "candidate_slug": "vera-lucia-ce"
+        },
+        {
+          "raw_label": "Ieri Braga (PCO)",
+          "candidate_slug": "ieri-braga"
         }
       ],
       "pesquisas": [
@@ -1716,6 +1989,173 @@
               ]
             }
           ]
+        },
+        {
+          "id": "quaest-ce-ce-01149-2026",
+          "source_id": "quaest-ce-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Verdes Mares",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-31",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-03",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-04",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 900,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "CE-01149/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Ceará",
+            "code": "CE"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "3fc9fe7b827ff2e00ba3eca3f8f6ab999ed120714bc8f9ae4c97534d569e765e",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-ce-2026-09-04-cenario-1",
+              "turn": 1,
+              "geography": "Ceará",
+              "label_raw": "1º turno, estimulada",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|CE|1|estimulada|quaest-ce-2026-09-04-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Ciro Gomes (PSDB)",
+                  "candidate_slug": "ciro-gomes-gov-ce",
+                  "match_status": "exact_alias",
+                  "value_percent": 45,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elmano de Freitas (PT)",
+                  "candidate_slug": "elmano-de-freitas",
+                  "match_status": "exact_alias",
+                  "value_percent": 34,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delegado Huggo (Missão)",
+                  "candidate_slug": "huggo-leonardo",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Danilo Soares (Democrata)",
+                  "candidate_slug": "danilo-soares",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vera Lúcia (Novo)",
+                  "candidate_slug": "vera-lucia-ce",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ieri Braga (PCO)",
+                  "candidate_slug": "ieri-braga",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Zé Batista (PSTU)",
+                  "candidate_slug": "ze-batista",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Serley Leal (UP)",
+                  "candidate_slug": "serley-leal",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 12,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1795,6 +2235,14 @@
         {
           "raw_label": "Ricardo Cappelli (PSB)",
           "candidate_slug": "ricardo-cappelli"
+        },
+        {
+          "raw_label": "Cappelli (PSB)",
+          "candidate_slug": "ricardo-cappelli"
+        },
+        {
+          "raw_label": "Rico Pinheiro (PRTB)",
+          "candidate_slug": "rico-pinheiro"
         }
       ],
       "pesquisas": [
@@ -2191,6 +2639,293 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 7,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "atlasintel-df-df-02018-2026-nominal",
+          "source_id": "atlasintel-df-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "AtlasIntel, recursos próprios",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-27",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-01",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-03",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1193,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Distrito Federal",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "entrevista pela internet",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-02018/2026",
+              "status": "publicado"
+            },
+            "supporting_codes": [],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+            "supporting_urls": [
+              "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "capture_file": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-DF-atlas-20260910.txt",
+            "capture_sha256": "04dfdb59d10f4db429f1b4fb95cb3986c583705a7935c485b2fad46b764d2bb1",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "04dfdb59d10f4db429f1b4fb95cb3986c583705a7935c485b2fad46b764d2bb1",
+              "status": "publicado"
+            },
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF."
+          },
+          "cenarios": [
+            {
+              "id": "atlasintel-df-2026-09-03-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "1º turno estimulado",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|estimulado|lista-atlasintel-2026-09-03-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 30.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 29,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "José Roberto Arruda (PSD)",
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "value_percent": 14.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Paula Belmonte (PSDB)",
+                  "candidate_slug": "paula-belmonte",
+                  "match_status": "exact_alias",
+                  "value_percent": 8.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cappelli (PSB)",
+                  "candidate_slug": "ricardo-cappelli",
+                  "match_status": "exact_alias",
+                  "value_percent": 5.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Kiko Caputo (Novo)",
+                  "candidate_slug": "kiko-caputo",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Samara Mineiro (UP)",
+                  "candidate_slug": "samara-mineiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Elisson (Agir)",
+                  "candidate_slug": "elisson-ferreira",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Robson (PSTU)",
+                  "candidate_slug": "robson-raymundo",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rico Pinheiro (PRTB)",
+                  "candidate_slug": "rico-pinheiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.6,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "atlasintel-df-2026-09-03-segundo-turno-celina-grass",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "2º turno: Celina x Grass",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulado|celina-leao-vs-leandro-grass|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 43.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 41.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 15.3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "atlasintel-df-2026-09-03-segundo-turno-arruda-celina",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "2º turno: Arruda x Celina",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulado|jose-roberto-arruda-vs-celina-leao|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "José Roberto Arruda",
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "value_percent": 38.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Celina Leão",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 38,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 23.3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "atlasintel-df-2026-09-03-segundo-turno-arruda-grass",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "2º turno: Arruda x Grass",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulado|jose-roberto-arruda-vs-leandro-grass|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Leandro Grass",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 38.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "José Roberto Arruda",
+                  "candidate_slug": "jose-roberto-arruda",
+                  "match_status": "exact_alias",
+                  "value_percent": 34.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 27.6,
                   "status": "publicado"
                 }
               ]
@@ -3381,6 +4116,14 @@
         {
           "raw_label": "Renato Gomes",
           "candidate_slug": "renato-gomes"
+        },
+        {
+          "raw_label": "Delcídio do Amaral",
+          "candidate_slug": "delcidio-amaral"
+        },
+        {
+          "raw_label": "Jeferson Bezerra",
+          "candidate_slug": "jeferson-bezerra"
         }
       ],
       "pesquisas": [
@@ -3732,6 +4475,173 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 3.3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ipr-nominal-ms-ms-07621-2026",
+          "source_id": "ipr-ms-nominal-revisao-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Instituto de Pesquisa Resultado (IPR)",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Correio do Estado",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-19",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-23",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-27",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 784,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3.5,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "MS-07621/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Mato Grosso do Sul",
+            "code": "MS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "revisao_documentada_escopada",
+            "route_reason": "Resultados individuais recuperados por busca nominal e conferidos na divulgação jornalística; metadados ausentes permanecem indeterminados.",
+            "consulted_at": "2026-09-10T13:45:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "aa4b5a4803274cf1fafefbd3e16e0721f8ec8fc9fad70e39c5aa2d5773cbadda",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "ipr-nominal-ms-ms-07621-2026-estimulada",
+              "turn": 1,
+              "geography": "Mato Grosso do Sul",
+              "label_raw": "Primeiro turno estimulado, total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MS|1|estimulada|lista-ipr-2026-08-27|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Riedel",
+                  "candidate_slug": "eduardo-riedel",
+                  "match_status": "exact_alias",
+                  "value_percent": 44.77,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fábio Trad",
+                  "candidate_slug": "fabio-trad",
+                  "match_status": "exact_alias",
+                  "value_percent": 13.78,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delcídio do Amaral",
+                  "candidate_slug": "delcidio-amaral",
+                  "match_status": "exact_alias",
+                  "value_percent": 7.02,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Henrique Catan",
+                  "candidate_slug": "joao-henrique-catan",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.85,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Renato Gomes",
+                  "candidate_slug": "renato-gomes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2.68,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lucien Rezende",
+                  "candidate_slug": "lucien-rezende",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.91,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jeferson Bezerra",
+                  "candidate_slug": "jeferson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.89,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Daniel Lemes",
+                  "candidate_slug": "daniel-lemes",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.89,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9.44,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 13.78,
                   "status": "publicado"
                 }
               ]
@@ -4614,6 +5524,30 @@
         {
           "raw_label": "Hana Ghassan",
           "candidate_slug": "hana-ghassan"
+        },
+        {
+          "raw_label": "Dr. Daniel (Podemos)",
+          "candidate_slug": "dr-daniel"
+        },
+        {
+          "raw_label": "Hana Ghassan (MDB)",
+          "candidate_slug": "hana-ghassan"
+        },
+        {
+          "raw_label": "Gal Leite (UP)",
+          "candidate_slug": "gal-leite"
+        },
+        {
+          "raw_label": "Well Macedo (PSTU)",
+          "candidate_slug": "well-macedo"
+        },
+        {
+          "raw_label": "Dr. Daniel Santos (Podemos)",
+          "candidate_slug": "dr-daniel"
+        },
+        {
+          "raw_label": "Araceli (PSOL)",
+          "candidate_slug": "araceli-lemos"
         }
       ],
       "pesquisas": [
@@ -4755,6 +5689,253 @@
               ]
             }
           ]
+        },
+        {
+          "id": "quaest-pa-pa-07718-2026-nominal",
+          "source_id": "quaest-pa-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Liberal",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-25",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-28",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-29",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Pará com 16 anos ou mais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "presencial",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PA-07718/2026",
+              "status": "publicado"
+            },
+            "supporting_codes": [],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Pará",
+            "code": "PA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm",
+            "supporting_urls": [
+              "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm",
+              "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/08/29/quaest-dr-daniel-tem-28-e-hana-ghassan-registra-27-na-disputa-pelo-governo-do-para.htm",
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica_republicada",
+            "capture_file": "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-PA-quaest-20260910.txt",
+            "capture_sha256": "836473f2afe78d9c24a3d5abdee82acef966d9a2468762e4a451f33ac7f390f5",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "836473f2afe78d9c24a3d5abdee82acef966d9a2468762e4a451f33ac7f390f5",
+              "status": "publicado"
+            },
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF."
+          },
+          "cenarios": [
+            {
+              "id": "quaest-pa-2026-08-29-primeiro-turno-estimulado",
+              "turn": 1,
+              "geography": "Pará",
+              "label_raw": "1º turno estimulado",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|1|estimulado|lista-quaest-2026-08-29-cenario-1|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Dr. Daniel Santos (Podemos)",
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "value_percent": 28,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "value_percent": 27,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gal Leite (UP)",
+                  "candidate_slug": "gal-leite",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Well Macedo (PSTU)",
+                  "candidate_slug": "well-macedo",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Araceli (PSOL)",
+                  "candidate_slug": "araceli-lemos",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "José Moita (Democrata)",
+                  "candidate_slug": null,
+                  "match_status": "indeterminado",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 29,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-pa-2026-08-29-primeiro-turno-espontaneo",
+              "turn": 1,
+              "geography": "Pará",
+              "label_raw": "1º turno espontâneo",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|1|espontaneo|lista-quaest-2026-08-29-cenario-2|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Dr. Daniel Santos (Podemos)",
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "value_percent": 14,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "value_percent": 12,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 69,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-pa-2026-08-29-segundo-turno-daniel-hana",
+              "turn": 2,
+              "geography": "Pará",
+              "label_raw": "2º turno: Dr. Daniel x Hana",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|2|estimulado|dr-daniel-vs-hana-ghassan|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Dr. Daniel Santos (Podemos)",
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "value_percent": 36,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "value_percent": 36,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 20,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -4813,6 +5994,10 @@
         },
         {
           "raw_label": "Yuri Ezequiel (UP)",
+          "candidate_slug": "yuri-ezequiel"
+        },
+        {
+          "raw_label": "Yuri Ezequiel",
           "candidate_slug": "yuri-ezequiel"
         }
       ],
@@ -5159,6 +6344,159 @@
                   "candidate_slug": "camilo-duarte",
                   "match_status": "exact_alias",
                   "value_percent": 0.4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "atlas-nominal-pb-pb-01118-2026",
+          "source_id": "atlas-pb-nominal-revisao-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "AtlasIntel, recursos próprios",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-28",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-02",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-04",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1207,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "PB-01118/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Paraíba",
+            "code": "PB"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "revisao_documentada_escopada",
+            "route_reason": "Resultados individuais recuperados por busca nominal e conferidos na divulgação jornalística; metadados ausentes permanecem indeterminados.",
+            "consulted_at": "2026-09-10T13:45:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "2ffaf449d44a541dbd473071914aa6c385f232540cc880fc2a6df0473057326a",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "atlas-nominal-pb-pb-01118-2026-estimulada",
+              "turn": 1,
+              "geography": "Paraíba",
+              "label_raw": "Primeiro turno estimulado, total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PB|1|estimulada|lista-atlas-2026-09-04|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Lucas Ribeiro",
+                  "candidate_slug": "lucas-ribeiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 42.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Efraim Filho",
+                  "candidate_slug": "efraim-filho",
+                  "match_status": "exact_alias",
+                  "value_percent": 30.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cícero Lucena",
+                  "candidate_slug": "cicero-lucena",
+                  "match_status": "exact_alias",
+                  "value_percent": 19.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Yuri Ezequiel",
+                  "candidate_slug": "yuri-ezequiel",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Camilo Duarte",
+                  "candidate_slug": "camilo-duarte",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Pedro Coutinho",
+                  "candidate_slug": "pedro-coutinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.9,
                   "status": "publicado"
                 }
               ]
@@ -7473,6 +8811,22 @@
         {
           "raw_label": "Marcelo Maranata (PSDB)",
           "candidate_slug": "marcelo-maranata"
+        },
+        {
+          "raw_label": "Zucco (PL)",
+          "candidate_slug": "luciano-zucco"
+        },
+        {
+          "raw_label": "Priscila Voigt (UP)",
+          "candidate_slug": "priscila-voigt"
+        },
+        {
+          "raw_label": "Rejane de Oliveira (PSTU)",
+          "candidate_slug": "rejane-oliveira"
+        },
+        {
+          "raw_label": "Cesar Pontes (PCO)",
+          "candidate_slug": "cesar-pontes"
         }
       ],
       "pesquisas": [
@@ -7949,6 +9303,325 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "atlasintel-rs-rs-00652-2026",
+          "source_id": "atlasintel-rs-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "recursos próprios do instituto",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-27",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-01",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-03",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1783,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Rio Grande do Sul",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RS-00652/2026",
+              "status": "publicado"
+            },
+            "secondary_codes": [
+              {
+                "value": "BR-08582/2026",
+                "status": "publicado"
+              }
+            ],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Sul",
+            "code": "RS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "bea2b3808d023a8d4f874bddc4d084a7e9e3f958fb66242d0be48f1d7bca71bb",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "atlasintel-rs-2026-09-03-1-estimulado-total_entrevistados-1",
+              "turn": 1,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "1º turno",
+              "question": {
+                "value": "Em quem você votará nas próximas eleições para governador do Rio Grande do Sul?",
+                "status": "publicado"
+              },
+              "comparability_key": "2026|Governador|RS|1|estimulado|atlasintel-2026-09-03|total_entrevistados",
+              "resultados": [
+                {
+                  "raw_label": "Zucco (PL)",
+                  "candidate_slug": "luciano-zucco",
+                  "match_status": "exact_alias",
+                  "value_percent": 44.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Juliana Brizola (PDT)",
+                  "candidate_slug": "juliana-brizola",
+                  "match_status": "exact_alias",
+                  "value_percent": 37.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Souza (MDB)",
+                  "candidate_slug": "gabriel-souza",
+                  "match_status": "exact_alias",
+                  "value_percent": 10.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Marcelo Maranata (PSDB)",
+                  "candidate_slug": "marcelo-maranata",
+                  "match_status": "exact_alias",
+                  "value_percent": 2.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Priscila Voigt (UP)",
+                  "candidate_slug": "priscila-voigt",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rejane de Oliveira (PSTU)",
+                  "candidate_slug": "rejane-oliveira",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-rs-rs-06875-2026",
+          "source_id": "quaest-rs-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Genial/Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "RBS Participações S.A./Televisão Gaúcha S.A.",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-20",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-23",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-25",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 900,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Rio Grande do Sul",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "presencial",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RS-06875/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Sul",
+            "code": "RS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "71aaf3b6d77fa3f79d4f311250f2c45e2d5163acfac77da6e2af73e354379017",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-rs-2026-08-25-1-estimulado-total_entrevistados-1",
+              "turn": 1,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "1º turno estimulado",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RS|1|estimulado|quaest-2026-08-25|total_entrevistados",
+              "resultados": [
+                {
+                  "raw_label": "Luciano Zucco (PL)",
+                  "candidate_slug": "luciano-zucco",
+                  "match_status": "exact_alias",
+                  "value_percent": 26,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Juliana Brizola (PDT)",
+                  "candidate_slug": "juliana-brizola",
+                  "match_status": "exact_alias",
+                  "value_percent": 23,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Souza (MDB)",
+                  "candidate_slug": "gabriel-souza",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Marcelo Maranata (PSDB)",
+                  "candidate_slug": "marcelo-maranata",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Priscila Voigt (UP)",
+                  "candidate_slug": "priscila-voigt",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cesar Pontes (PCO)",
+                  "candidate_slug": "cesar-pontes",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rejane de Oliveira (PSTU)",
+                  "candidate_slug": "rejane-oliveira",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos/não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 27,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 12,
                   "status": "publicado"
                 }
               ]
@@ -9451,6 +11124,14 @@
         {
           "raw_label": "Valmir de Francisquinho (Republicanos)",
           "candidate_slug": "valmir-de-francisquinho"
+        },
+        {
+          "raw_label": "Dr. Helton (PSOL)",
+          "candidate_slug": "dr-helton-monteiro"
+        },
+        {
+          "raw_label": "Taty Cristina de Jesus (DC)",
+          "candidate_slug": "taty-cristina-de-jesus"
         }
       ],
       "pesquisas": [
@@ -9734,6 +11415,165 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-se-se-03536-2026",
+          "source_id": "quaest-se-nominal-20260910",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Genial/Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Sergipe",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-08-23",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-08-26",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-08-27",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de Sergipe",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "entrevistas domiciliares face a face",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "SE-03536/2026",
+              "status": "publicado"
+            },
+            "secondary_codes": [
+              {
+                "value": "BR-07281/2026",
+                "status": "publicado"
+              }
+            ],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Sergipe",
+            "code": "SE"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml",
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Resultados conferidos na divulgação identificada; identidades vinculadas somente ao cadastro ativo do mesmo cargo e UF.",
+            "consulted_at": "2026-09-10T13:50:00Z",
+            "capture": {
+              "format": "text",
+              "sha256": "40b6dc9eaaa3a3cfd55be3039708bccdca2ba54e13d36d15e4b03476ae98f4b7",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-se-2026-08-27-1-estimulado-total_entrevistados-1",
+              "turn": 1,
+              "geography": "Sergipe",
+              "label_raw": "1º turno",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|SE|1|estimulado|quaest-2026-08-27|total_entrevistados",
+              "resultados": [
+                {
+                  "raw_label": "Fábio Mitidieri (PSD)",
+                  "candidate_slug": "fabio-mitidieri",
+                  "match_status": "exact_alias",
+                  "value_percent": 40,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Valmir de Francisquinho (Republicanos)",
+                  "candidate_slug": "valmir-de-francisquinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 28,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ricardo Marques (PL)",
+                  "candidate_slug": "ricardo-marques",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Emanuel Cacho (PSDB)",
+                  "candidate_slug": "emanuel-cacho",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dr. Helton (PSOL)",
+                  "candidate_slug": "dr-helton-monteiro",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Taty Cristina de Jesus (DC)",
+                  "candidate_slug": "taty-cristina-de-jesus",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 17,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos/nulos/não pretendem votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7,
                   "status": "publicado"
                 }
               ]

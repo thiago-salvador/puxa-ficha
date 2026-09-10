@@ -22,6 +22,16 @@
     "status": "prepared",
     "publication_verified": false
   },
+  "nominal_search": {
+    "query_template": "Pesquisa votos [ESTADO] [NOME DO CANDIDATO]",
+    "triggers": ["sem_percentual_individual", "agrupado_em_outros", "identidade_pendente", "somente_resultado_historico"],
+    "fallbacks": ["nome_de_urna_e_nome_civil", "instituto_registro_data", "outra_reportagem", "tabela_ou_pdf_original"],
+    "last_search_reference_date": "2026-09-10",
+    "attempted_candidates": 31,
+    "evidence": "QA/evidencias/2026-09-10-pesquisas-fontes/busca-nominal.json",
+    "engine_used": "web.run",
+    "publication_verified": false
+  },
   "geographies": [
     {
       "uf": "BR",

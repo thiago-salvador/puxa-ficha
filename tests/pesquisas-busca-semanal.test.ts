@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { readFileSync } from "node:fs"
+import { readFileSync, readdirSync } from "node:fs"
 import { createRequire } from "node:module"
 import test from "node:test"
 
@@ -78,4 +78,46 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 31)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
+})
+
+test("busca nominal registra as tentativas e preserva a data de cada resultado recuperado", () => {
+  const search = JSON.parse(readFileSync(base + "busca-nominal.json", "utf8"))
+  assert.equal(search.candidates.length, 31)
+  const state = JSON.parse(readFileSync("scripts/data/pesquisas-busca-semanal.json", "utf8"))
+  assert.equal(state.nominal_search.attempted_candidates, search.candidates.length)
+  assert.ok(state.nominal_search.query_template.includes("[NOME DO CANDIDATO]"))
+  const yuri = listarPesquisasGovernadorPorSlug("yuri-ezequiel", "PB")
+  assert.ok(yuri.some((p) => p.id === "atlas-nominal-pb-pb-01118-2026" && p.resultado.valuePercent === 0.5))
+  assert.ok(!yuri.some((p) => p.id === "instituto-anova-pb-pb-01471-2026"))
+  const jeferson = listarPesquisasGovernadorPorSlug("jeferson-bezerra", "MS")
+  assert.ok(jeferson.some((p) => p.id === "ipr-nominal-ms-ms-07621-2026" && p.resultado.valuePercent === 0.89))
+  const cesar = listarPesquisasGovernadorPorSlug("cesar-pontes", "RS")
+  assert.ok(cesar.some((p) => p.id === "quaest-rs-rs-06875-2026" && p.resultado.valuePercent === 0))
+  assert.ok(!cesar.some((p) => p.id === "real-time-big-data-rs-rs-05497-2026"))
+  assert.ok(listarPesquisasGovernadorPorSlug("danilo-soares", "CE")
+    .some((p) => p.id === "quaest-ce-ce-01149-2026" && p.resultado.valuePercent === 0))
+  assert.ok(listarPesquisasGovernadorPorSlug("taty-cristina-de-jesus", "SE")
+    .some((p) => p.id === "quaest-se-se-03536-2026" && p.resultado.valuePercent === 1))
+})
+
+test("capturas nominais conferem com os catálogos e só vinculam identidades ativas do mesmo cargo e UF", () => {
+  const governors = carregarPesquisasGovernadores()
+  const roster = JSON.parse(readFileSync("data/candidate-roster-active-20260905.json", "utf8")).profiles
+  const files = readdirSync(base).filter((name) => /^nominal-.*-manifesto\.json$/.test(name))
+  assert.ok(files.length > 0)
+  for (const file of files) {
+    const rows: Evidence[] = JSON.parse(readFileSync(base + file, "utf8"))
+    for (const row of rows) {
+      assert.equal(createHash("sha256").update(readFileSync(row.capture_path)).digest("hex"), row.capture_sha256)
+      const poll = governors.get(row.uf)?.pesquisas.find((p) => p.id === row.poll_id)
+      assert.ok(poll, row.poll_id)
+      assert.equal(poll.provenance.capture.sha256, row.capture_sha256)
+      assert.equal(poll.cenarios.flatMap((s) => s.resultados).length, row.results_count)
+      for (const slug of row.linked_slugs) {
+        assert.ok(roster.some((r: { profile_slug: string; office: string; uf: string; publication_status: string }) =>
+          r.profile_slug === slug && r.office === "Governador" && r.uf === row.uf && r.publication_status === "active"))
+        assert.ok(listarPesquisasGovernadorPorSlug(slug, row.uf).some((p) => p.id === row.poll_id), `${slug}: ${row.poll_id}`)
+      }
+    }
+  }
 })
