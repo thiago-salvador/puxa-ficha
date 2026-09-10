@@ -1,0 +1,15 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-troca-coluna-temporal",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "BR-07561/2026", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/registration/code/value" },
+  "datas_escritas": { "colunas_disponiveis": ["2026-08-26", "2026-09-03"], "coluna_verificada": { "valor": "2026-09-03", "origem": "receipt proposal#/items/0/normalized_contract/cenarios/0/results_date" }, "coluna_selecionada": { "valor": "2026-08-26", "origem": "entrada.txt" } },
+  "modalidade": { "valor": "estimulada", "status": "pendente por coluna errada" },
+  "cargo": { "valor": "Presidente", "origem": "receipt proposal" },
+  "uf": { "valor": "BR", "origem": "receipt proposal" },
+  "turno": { "valor": 1, "origem": "entrada.txt" },
+  "perguntas": [],
+  "cenarios": [],
+  "proveniencia": ["/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json", "entrada.txt"],
+  "oraculo": { "veredito": "rejeitar", "motivo": "a coluna histórica 26/ago foi selecionada no lugar da coluna verificada 03/set; não aceitar troca silenciosa", "publicavel": false }
+}

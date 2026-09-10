@@ -147,7 +147,7 @@ test("CLI bloqueada falha apos gravar diagnostico e outputs, preservando upload 
   } finally { rmSync(root, { recursive: true, force: true }) }
 })
 
-test("CLI inalterada retorna zero sem operacoes", () => {
+test("CLI inalterada conserva zero operações, mas descoberta ausente bloqueia saúde global", () => {
   const root = mkdtempSync(resolve(tmpdir(), "pesquisas-s0-unchanged-"))
   try {
     const matrix = construirMatrizAgendada({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })
@@ -166,8 +166,9 @@ test("CLI inalterada retorna zero sem operacoes", () => {
     delete env.GITHUB_OUTPUT
     delete env.GITHUB_STEP_SUMMARY
     const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "input"), "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
-    assert.equal(result.status, 0, result.stderr)
-    assert.match(result.stdout, /PESQUISAS_CONSOLIDATION_STATUS=no_changes/)
+    assert.equal(result.status, 1, result.stderr)
+    assert.match(result.stdout, /PESQUISAS_CONSOLIDATION_STATUS=blocked/)
+    assert.equal(JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8")).operation_status, "no_changes")
     assert.deepEqual(JSON.parse(readFileSync(resolve(root, "out/diff.json"), "utf8")).operations, [])
   } finally { rmSync(root, { recursive: true, force: true }) }
 })
@@ -202,7 +203,8 @@ for (const mode of ["inalterado", "bloqueado", "item-incorreto", "matriz-ambigua
       delete env.GITHUB_OUTPUT
       delete env.GITHUB_STEP_SUMMARY
       const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", input, "--matrix", matrixPath, "--out", resolve(root, "out")], { encoding: "utf8", env })
-      assert.equal(result.status, mode === "inalterado" ? 0 : 1, result.stderr)
+      assert.equal(result.status, 1, result.stderr)
+      if (mode === "inalterado") assert.equal(JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8")).operation_status, "no_changes")
       const summary = readFileSync(resolve(root, "out/summary.md"), "utf8")
       if (mode === "inalterado" || mode === "bloqueado") {
         assert.match(summary, /Artefatos esperados: 1. Recebidos: 1/)

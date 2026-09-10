@@ -1,3 +1,4 @@
+import type { DocumentoRealTime } from "./pesquisas-monitoramento-realtime-pdf"
 import "server-only"
 
 import { createHash } from "node:crypto"
@@ -13,6 +14,7 @@ import { margemCompativelComRegistro, type RegistroTseMonitoramento } from "./pe
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
 import { carregarIdentidadesCuradas, resolverIdentidadeCurada } from "./pesquisas-monitoramento-identidades"
+import { resolverIdentidadeRevisada } from "./pesquisas-monitoramento-identidades-revisadas"
 
 type ClassificacaoMonitoramento =
   | "novo"
@@ -63,7 +65,7 @@ export interface EvidenciaPesquisaCandidata {
   registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
   result_document?: { url: string; observed_at: string; evidence_sha256: string; pages: number[] }
   result_notes?: string[]
-  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "curated_ballot_name_office_uf" | "same_publication_full_name"; source_url: string; source_sha256: string }>
+  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "curated_ballot_name_office_uf" | "same_publication_full_name" | "reviewed_documentary_bridge"; source_url: string; source_sha256: string }>
 }
 
 export interface SourceContract {
@@ -249,10 +251,11 @@ function enrichAliases(target: AlvoMonitoramento, evidence: EvidenciaPesquisaCan
     // Governors retain the stricter name+party requirement. Presidential ballot
     // names can be short, but must be explicit in the approved official record.
     if (target.office === "Governador" && !/\([^()]+\)$/.test(row.raw_label)) continue
-    const candidate = resolverIdentidadeCurada(row.raw_label, candidates, aliases)
+    const reviewed = resolverIdentidadeRevisada(target, row.raw_label, candidates)
+    const candidate = reviewed ?? resolverIdentidadeCurada(row.raw_label, candidates, aliases)
     if (!candidate) continue
     aliases.set(row.raw_label, candidate.slug)
-    observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: target.office === "Governador" ? "curated_name_party_office_uf" : "curated_ballot_name_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
+    observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: reviewed ? "reviewed_documentary_bridge" : target.office === "Governador" ? "curated_name_party_office_uf" : "curated_ballot_name_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
   }
   // A bare full name in a later scenario may refer to the unique, already
   // resolved name+party printed in this same publication. Never infer a surname.
@@ -577,7 +580,7 @@ export function avaliarEvidenciaAoVivo(input: {
   observedAt: string
   registry?: RegistroTseMonitoramento[]
   registrySupplement?: ObservacaoPesqele
-  resultDocument?: DocumentoPoderData
+  resultDocument?: DocumentoPoderData | DocumentoRealTime
 }): ResultadoAvaliacao {
   const evidence = parsePublicacaoMonitorada({
     html: input.html,

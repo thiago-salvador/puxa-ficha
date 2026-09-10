@@ -1,0 +1,40 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "datafolha-meta-conflito",
+  "fixture_kind": "source_excerpt",
+  "registro": { "id": "BR-04496/2026", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/registry_observation/registration_id", "status": "observado" },
+  "datas_escritas": {
+    "campo_inicio": { "valor": "2026-08-18", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/registry_observation/field_start" },
+    "campo_fim_publicacao": { "valor": "2026-08-19", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/date_comparison/publication_or_report/field_end" },
+    "campo_fim_registro": { "valor": "2026-08-20", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/date_comparison/pesqele/field_end" },
+    "publicacao": { "valor": "2026-08-21", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/registry_observation/publication_date" }
+  },
+  "modalidade": { "valor": null, "origem": "entrada.html title e og:title: 1º turno", "status": "pendente: o recorte não informa espontânea ou estimulada" },
+  "cargo": { "valor": "Presidente", "origem": "../L2/datafolha-br-04496-2026.dossier.json#/registry_observation/office" },
+  "uf": { "valor": "BR", "origem": "registro BRASIL" },
+  "turno": { "valor": 1, "origem": "entrada.html title e og:title" },
+  "perguntas": [],
+  "cenarios": [
+    {
+      "turno": 1,
+      "modalidade": null,
+      "pergunta": null,
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Lula", "percentual": 39, "categoria": "candidato", "origem": "entrada.html title" },
+        { "rotulo": "Flávio Bolsonaro", "percentual": 33, "categoria": "candidato", "origem": "entrada.html title" }
+      ],
+      "categorias": [],
+      "notas_agrupamento": [],
+      "completude": "incompleta"
+    }
+  ],
+  "oraculo": {
+    "veredito": "pendente",
+    "classificacao": "conflitante",
+    "motivo": "fim do campo 2026-08-19 na publicação versus 2026-08-20 no registro; preservar ambos",
+    "publicavel": false,
+    "nao_completar_por_complemento": true,
+    "nao_atribuir_identidade": true
+  },
+  "proveniencia": ["../L2/datafolha-br-04496-2026.dossier.json", "../L2/source-html/datafolha-br-04496-2026.html.txt"]
+}

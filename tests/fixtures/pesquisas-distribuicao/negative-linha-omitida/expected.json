@@ -1,0 +1,16 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-linha-omitida",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "RS-09640/2026", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/poll_id" },
+  "datas_escritas": { "campo_inicio": null, "campo_fim": null, "publicacao": null },
+  "modalidade": { "valor": null, "status": "não relevante para o controle" },
+  "cargo": { "valor": "Governador", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/office" },
+  "uf": { "valor": "RS", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": 1, "origem": "entrada.txt" },
+  "perguntas": [],
+  "cenarios": [ { "turno": 1, "modalidade": null, "pergunta": null, "resultados_explicitamente_publicados": [ { "rotulo": "Juliana Brizola (PDT)", "percentual": 38, "categoria": "candidato" }, { "rotulo": "Luciano Zucco (PL)", "percentual": 32, "categoria": "candidato" }, { "rotulo": "Gabriel Souza (MDB)", "percentual": 19, "categoria": "candidato" }, { "rotulo": "Outros", "percentual": 1, "categoria": "outros" }, { "rotulo": "Nulos/brancos", "percentual": 3, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 3, "categoria": "nao_sabe_nao_respondeu" } ], "categorias": ["outros", "branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "inválida" } ],
+  "resultados_proveniencia": "entrada.txt; lista integral no dossiê L2 RS#/rs_duels/results",
+  "proveniencia": [".artifacts/pesquisas-distribuicao/L2/real-time-big-data-rs-rs-09640-2026.dossier.json", "entrada.txt"],
+  "oraculo": { "veredito": "rejeitar", "motivo": "a linha publicada Marcelo Maranata (PSDB): 4% foi omitida; não completar por complemento nem aceitar soma coincidente", "linha_obrigatoria_ausente": { "rotulo": "Marcelo Maranata (PSDB)", "percentual": 4, "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/rs_duels/results/3" }, "publicavel": false }
+}

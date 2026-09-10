@@ -1,3 +1,4 @@
+import type { DocumentoRealTime } from "./pesquisas-monitoramento-realtime-pdf"
 import "server-only"
 
 import { createHash } from "node:crypto"
@@ -48,11 +49,20 @@ export interface AdaptadorMonitoramento {
     source: SourceContractMonitoramento
     target: AlvoMonitoramento
     registrySupplement?: ObservacaoPesqele
-    resultDocument?: DocumentoPoderData
+    resultDocument?: DocumentoPoderData | DocumentoRealTime
   }): EvidenciaPesquisaCandidata
 }
 
 const REGISTRY_URL = "https://pesqele-divulgacao.tse.jus.br/"
+
+/** Select only an unambiguous published registration; never select by order. */
+export function selecionarRegistroPublicado(ids: string[], office: string | null, uf: string | null): string | null {
+  const unique = [...new Set(ids)]
+  if (unique.length === 1) return unique[0]
+  if (office !== "Governador" || !uf || uf === "BR") return null
+  const state = unique.filter((id) => id.startsWith(`${uf}-`))
+  return state.length === 1 && unique.every((id) => id === state[0] || id.startsWith("BR-")) ? state[0] : null
+}
 
 const MONTHS: Record<string, string> = {
   jan: "01",
@@ -247,13 +257,14 @@ function extractMethod(text: string): string {
   throw new Error("HTML inesperado: método ausente")
 }
 
-function assertScope(text: string, target: AlvoMonitoramento): void {
+function assertScope(text: string, target: AlvoMonitoramento, documentTurn?: number): void {
   const officePattern = target.office === "Presidente" ? /presidente/i : /governador|governo/i
   if (!officePattern.test(text)) throw new Error("HTML inesperado: cargo ausente")
   const geographyMentioned = target.geography_code === "BR"
     ? /Brasil|nacional/i.test(text)
     : text.toLocaleLowerCase("pt-BR").includes(target.geography.toLocaleLowerCase("pt-BR"))
   if (!geographyMentioned) throw new Error("HTML inesperado: geografia ausente")
+  if (documentTurn === 1 && target.turn === 1) return
   const turn = requireMatch(text, /(?:1[oº°]|primeiro)\s+turno/i, "turno")
   if (!turn[0] || target.turn !== 1) throw new Error("HTML inesperado: turno conflitante")
 }
@@ -316,7 +327,7 @@ export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_lab
   return candidates[0] ?? null
 }
 
-const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não Sei|NS \/ NR|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
 
 /** Only explicit headings and complete lists establish a runoff scenario. */
 export function extrairCenariosSegundoTurno(html: string): Array<{
@@ -391,16 +402,18 @@ function buildEvidence(input: {
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
   registrySupplement?: ObservacaoPesqele
-  resultDocument?: DocumentoPoderData
+  resultDocument?: DocumentoPoderData | DocumentoRealTime
   institutePattern: RegExp
   parseResults(text: string): Array<{ raw_label: string; value_percent: number }>
 }): EvidenciaPesquisaCandidata {
   assertAdapterInput(input.adapter, input.source, input.target)
   const text = stripExternalMarkup(input.html)
   if (!input.institutePattern.test(text)) throw new Error("HTML inesperado: instituto ausente")
-  assertScope(text, input.target)
+  const realtimeDocument = input.resultDocument && "kind" in input.resultDocument && input.resultDocument.kind === "realtime_pdf" ? input.resultDocument : null
+  assertScope(text, input.target, realtimeDocument?.scenarios.find((scenario) => scenario.turn === 1 && scenario.mode === "estimulado")?.turn)
   const publicationDate = extractPublicationDate(input.html, text)
-  const registration = requireMatch(text, /\b(?:BR|[A-Z]{2})-\d{5}\/2026\b/, "registro")[0]
+  const registration = selecionarRegistroPublicado([...new Set(text.match(/\b[A-Z]{2}-\d{5}\/2026\b/g) ?? [])], input.target.office, input.target.geography_code)
+  if (!registration) throw new Error("HTML inesperado: registro ausente ou registros conflitantes no mesmo escopo")
   if (registration !== input.target.registration_id) throw new Error("HTML inesperado: registro conflitante")
   const fieldwork = extractFieldwork(text, publicationDate)
   const sampleSize = extractSample(text)
@@ -429,13 +442,16 @@ function buildEvidence(input: {
     method = extractMethod(supplement.method)
   }
   const document = input.resultDocument
-  if (document && (input.source.id !== "poderdata-aya-nacional-2026" || input.target.office !== "Presidente" || input.target.geography_code !== "BR"
+  const documentScopeMatches = realtimeDocument
+    ? input.source.id === "real-time-big-data-estaduais-2026" && input.target.office === realtimeDocument.office && input.target.geography_code === realtimeDocument.geography_code && publicationDate === realtimeDocument.publication_date
+    : input.source.id === "poderdata-aya-nacional-2026" && input.target.office === "Presidente" && input.target.geography_code === "BR"
+  if (document && (!documentScopeMatches
     || document.registration_id !== registration || document.fieldwork.start !== fieldwork.start || document.fieldwork.end !== fieldwork.end
     || document.sample_size !== sampleSize || document.margin_error_pp !== normalizeMeasure(margin) || document.confidence_percent !== confidence)) {
-    throw new Error("PoderData PDF: metadados conflitantes com a publicação")
+    throw new Error("Relatório PDF: metadados conflitantes com a publicação")
   }
-  const primaryDocumentScenario = document?.scenarios.find((scenario) => scenario.turn === 1)
-  const realTime = input.source.id === "real-time-big-data-estaduais-2026" ? extrairPublicacaoRealTime(input.html, stripExternalMarkup) : null
+  const primaryDocumentScenario = document?.scenarios.find((scenario) => scenario.turn === 1 && (!("mode" in scenario) || scenario.mode === "estimulado"))
+  const realTime = !realtimeDocument && input.source.id === "real-time-big-data-estaduais-2026" ? extrairPublicacaoRealTime(input.html, stripExternalMarkup) : null
   const primaryRealTime = realTime?.scenarios.find((scenario) => scenario.turn === 1 && scenario.mode === "estimulado")
   if (realTime && !primaryRealTime) throw new Error("Real Time: cenário estimulado ausente")
   const completeResults = primaryDocumentScenario?.results ?? primaryRealTime?.results ?? extrairListaCompletaPrimeiroTurno(input.html)
@@ -466,7 +482,7 @@ function buildEvidence(input: {
       geography: input.target.geography,
       geography_code: input.target.geography_code,
       turn: input.target.turn,
-      label: primaryRealTime?.label ?? input.target.scenario_label,
+      label: primaryRealTime?.label ?? (realtimeDocument ? primaryDocumentScenario?.label : null) ?? input.target.scenario_label,
       question: primaryDocumentScenario?.question ?? input.target.scenario_question,
     },
     sample: { size: sampleSize, population: input.target.population },
@@ -476,7 +492,7 @@ function buildEvidence(input: {
     ...(completeResults ? {
       scenario_complete: true,
       publication_complete: true,
-      ...(realTime?.notes.length ? { result_notes: realTime.notes } : {}),
+      ...(realtimeDocument ? { result_notes: realtimeDocument.scenarios.flatMap((scenario) => scenario.notes) } : realTime?.notes.length ? { result_notes: realTime.notes } : {}),
       additional_scenarios: additional.map((runoff) => ({
         scenario: {
           id: input.target.known_scenarios?.find((scenario) => scenario.turn === runoff.turn && (runoff.question ? scenario.question === runoff.question : scenario.label === runoff.label))?.id
@@ -569,7 +585,7 @@ export function parsePublicacaoMonitorada(input: {
   source: SourceContractMonitoramento
   target: AlvoMonitoramento
   registrySupplement?: ObservacaoPesqele
-  resultDocument?: DocumentoPoderData
+  resultDocument?: DocumentoPoderData | DocumentoRealTime
 }): EvidenciaPesquisaCandidata {
   return obterAdaptadorMonitoramento(input.source.id).parse(input)
 }

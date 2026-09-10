@@ -1,0 +1,15 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "realtime-html-missing-turn",
+  "fixture_kind": "source_excerpt",
+  "registro": { "id": "PR-09262/2026", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/registration_id", "status": "observado" },
+  "datas_escritas": { "campo_inicio": { "valor": "2026-08-13", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/field_start" }, "campo_fim": { "valor": "2026-08-17", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/field_end" }, "publicacao": { "valor": "2026-08-18", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/publication_date" } },
+  "modalidade": { "valor": null, "status": "pendente" },
+  "cargo": { "valor": "Governador", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/office", "status": "registro conjunto; Senado deve ser excluído" },
+  "uf": { "valor": "PR", "origem": "../L2/real-time-big-data-pr-pr-09262-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": null, "status": "pendente: diagnóstico L2 = turno ausente" },
+  "perguntas": [],
+  "cenarios": [],
+  "oraculo": { "veredito": "pendente", "classificacao": "extração incompleta", "motivo": "o recorte preserva a chamada e o registro, mas não fornece cenário, pergunta ou percentuais de resultado", "publicavel": false, "nao_completar_por_complemento": true, "nao_atribuir_identidade": true },
+  "proveniencia": ["../L2/real-time-big-data-pr-pr-09262-2026.dossier.json", "../L2/source-html/real-time-big-data-pr-pr-09262-2026.html.txt"]
+}

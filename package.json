@@ -58,6 +58,7 @@
     "test:pesquisas:monitoramento:rede": "node --conditions react-server --import tsx --test tests/pesquisas-monitoramento-rede.test.ts",
     "test:pesquisas:monitoramento:workflow": "node --conditions react-server --import tsx --test tests/pesquisas-monitoramento-workflow.test.ts",
     "test:pesquisas:atualizacao-agendada": "node --conditions react-server --import tsx --test tests/pesquisas-atualizacao-agendada.test.ts",
+    "test:pesquisas:integracao": "node --conditions react-server --import tsx --test tests/pesquisas-atualizacao-agendada.test.ts tests/pesquisas-consolidacao-parcial.test.ts tests/pesquisas-descoberta-registros.test.ts tests/pesquisas-extratores-distribuicao.test.ts tests/pesquisas-folha-dados.test.ts tests/pesquisas-integracao.test.ts tests/pesquisas-s0.test.ts tests/pesquisas-pesqele.test.ts tests/pesquisas-entrada.test.ts tests/pesquisas-poderdata-atual.test.ts tests/pesquisas-realtime-cenarios.test.ts tests/pesquisas-r2.test.ts",
     "audit:pesquisas:monitoramento": "node --conditions react-server --import tsx scripts/audit/audit-pesquisas-monitoramento.ts",
     "verify:pesquisas:monitoramento": "npm run test:pesquisas:monitoramento && npm run test:pesquisas:monitoramento:isolamento && npm run test:pesquisas:monitoramento:rede && npm run test:pesquisas:monitoramento:workflow && npm run audit:pesquisas:monitoramento",
     "audit:programas-governo": "node --conditions react-server --import tsx scripts/audit/audit-programas-governo.ts",

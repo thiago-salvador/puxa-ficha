@@ -1,0 +1,29 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "realtime-rs-conflitante",
+  "fixture_kind": "source_excerpt",
+  "registro": { "id": "RS-09640/2026", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/registration_id", "status": "observado" },
+  "datas_escritas": { "campo_inicio": { "valor": "2026-08-20", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/field_start" }, "campo_fim": { "valor": "2026-08-24", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/field_end" }, "publicacao": { "valor": "2026-08-25", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/publication_date" } },
+  "modalidade": { "valor": null, "status": "pendente: documento integral não nomeia a modalidade no dossiê" },
+  "cargo": { "valor": "Governador", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/office" },
+  "uf": { "valor": "RS", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": "1 e 2 em cenários separados", "origem": "entrada.html headings" },
+  "perguntas": [],
+  "cenarios": [
+    { "turno": 1, "modalidade": null, "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Juliana Brizola (PDT)", "percentual": 38, "categoria": "candidato" }, { "rotulo": "Luciano Zucco (PL)", "percentual": 32, "categoria": "candidato" }, { "rotulo": "Gabriel Souza (MDB)", "percentual": 19, "categoria": "candidato" }, { "rotulo": "Marcelo Maranata (PSDB)", "percentual": 4, "categoria": "candidato" }, { "rotulo": "Outros", "percentual": 1, "categoria": "outros" }, { "rotulo": "Nulos/brancos", "percentual": 3, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 3, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["outros", "branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa para a tabela preservada" },
+    { "turno": 2, "modalidade": "duelo", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Juliana Brizola", "percentual": 45, "categoria": "candidato" }, { "rotulo": "Luciano Zucco", "percentual": 41, "categoria": "candidato" }, { "rotulo": "Nulos/brancos", "percentual": 7, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 7, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa" },
+    { "turno": 2, "modalidade": "duelo", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Luciano Zucco", "percentual": 43, "categoria": "candidato" }, { "rotulo": "Gabriel Souza", "percentual": 38, "categoria": "candidato" }, { "rotulo": "Nulos/brancos", "percentual": 9, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 10, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa" },
+    { "turno": 2, "modalidade": "duelo", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Juliana Brizola", "percentual": 48, "categoria": "candidato" }, { "rotulo": "Gabriel Souza", "percentual": 35, "categoria": "candidato" }, { "rotulo": "Nulos/brancos", "percentual": 8, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 9, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa" }
+  ],
+  "resultados_proveniencia": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/rs_duels",
+  "oraculo": { "veredito": "pendente", "classificacao": "conflitante", "motivo": "título abreviado/conflitante no segundo turno; não descartar a tabela nem escolher nomes por título", "publicavel": false, "nao_completar_por_complemento": true, "nao_atribuir_identidade": true },
+  "proveniencia": ["../L2/real-time-big-data-rs-rs-09640-2026.dossier.json", "../L2/source-html/real-time-big-data-rs-rs-09640-2026.html.txt", "/private/tmp/pf-pesquisas-s0-remote-datas/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-rs/proposal.json"]
+}

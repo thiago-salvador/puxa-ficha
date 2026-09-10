@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 
 import { listarAlvosMonitoramento } from "../lib/pesquisas-monitoramento"
+import { resolverIdentidadeRevisada } from "../lib/pesquisas-monitoramento-identidades-revisadas"
 import type { AlvoMonitoramento } from "../lib/pesquisas-monitoramento-adapters"
 
 export const CATALOGOS_PERMITIDOS = [
@@ -127,6 +128,11 @@ export interface DocumentoDiffAgendado {
 
 export interface ResultadoConsolidacaoAgendada {
   status: "blocked" | "no_changes" | "ready"
+  operation_status: "blocked" | "no_changes" | "candidates"
+  global_alerts: string[]
+  poll_alerts: Array<{ poll_id: string; reason: string }>
+  coverage: { status: "partial" | "not_assessed"; alerts: string[] }
+  promotion: { authorized: false; human_review_required: true }
   alerts: string[]
   proposal: DocumentoPropostaAgendada
   diff: DocumentoDiffAgendado
@@ -220,17 +226,25 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
   if (!Number.isFinite(contract.sample?.size?.value) || contract.sample.size.value <= 0) missing.push("sample.size")
   if (!Number.isFinite(contract.margin_error_pp?.value)) missing.push("margin_error_pp")
   if (!Array.isArray(contract.cenarios) || contract.cenarios.length === 0) missing.push("cenarios")
+  const scenarioIds = new Set<string>()
   for (const scenario of contract.cenarios ?? []) {
+    if (scenarioIds.has(scenario.id)) missing.push("cenario.id duplicado")
+    scenarioIds.add(scenario.id)
     if (!isNonEmptyString(scenario.id)) missing.push("cenario.id")
     if (!Array.isArray(scenario.resultados) || scenario.resultados.length === 0) missing.push("cenario.resultados")
+    const labels = new Set<string>()
+    const candidates = new Set<string>()
     for (const result of scenario.resultados ?? []) {
+      if (labels.has(result.raw_label) || (result.candidate_slug !== null && candidates.has(result.candidate_slug))) missing.push("resultado duplicado")
+      labels.add(result.raw_label)
+      if (result.candidate_slug !== null) candidates.add(result.candidate_slug)
       if (!isNonEmptyString(result.raw_label)) missing.push("resultado.raw_label")
       const resolvedCandidate = result.match_status === "exact_alias" && isNonEmptyString(result.candidate_slug)
       const resolvedNonCandidate = result.match_status === "not_candidate" && result.candidate_slug === null
       if (!resolvedCandidate && !resolvedNonCandidate) {
         missing.push(`resultado.identidade:${result.raw_label ?? "desconhecido"}`)
       }
-      if (!Number.isFinite(result.value_percent)) missing.push(`resultado.valor:${result.raw_label ?? "desconhecido"}`)
+      if (!Number.isFinite(result.value_percent) || result.value_percent < 0 || result.value_percent > 100) missing.push(`resultado.valor:${result.raw_label ?? "desconhecido"}`)
     }
   }
   for (const alias of contract.identity_aliases ?? []) {
@@ -238,16 +252,36 @@ function requiredMetadata(contract: ContratoPesquisaAgendada | null): string[] {
     if (!scenario || alias.year !== 2026 || alias.office !== contract.office || alias.geography !== contract.geography.label || alias.turn !== scenario.turn
       || !scenario.resultados.some((row) => row.raw_label === alias.raw_label && row.candidate_slug === alias.candidate_slug && row.match_status === "exact_alias")
       || alias.proof?.raw_label !== alias.raw_label || alias.proof.candidate_slug !== alias.candidate_slug
-      || !["curated_name_party_office_uf", "curated_ballot_name_office_uf", "same_publication_full_name"].includes(alias.proof.basis)
+      || !["curated_name_party_office_uf", "curated_ballot_name_office_uf", "same_publication_full_name", "reviewed_documentary_bridge"].includes(alias.proof.basis)
       || !/^https:\/\//.test(alias.proof.source_url) || !/^[a-f0-9]{64}$/.test(alias.proof.source_sha256)) missing.push("identity_aliases.proof_or_scope")
     if (alias.proof?.basis === "same_publication_full_name" && alias.proof.source_url !== contract.provenance.result_url) missing.push("identity_aliases.publication_mismatch")
-    if (["curated_name_party_office_uf", "curated_ballot_name_office_uf"].includes(alias.proof?.basis) && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
+    if (["curated_name_party_office_uf", "curated_ballot_name_office_uf", "reviewed_documentary_bridge"].includes(alias.proof?.basis) && alias.proof.source_url !== `https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_${contract.geography.code}.zip`) missing.push("identity_aliases.geography_mismatch")
+    if (alias.proof?.basis === "reviewed_documentary_bridge") {
+      const candidate = resolverIdentidadeRevisada({ office: contract.office, source_id: contract.source_id, geography_code: contract.geography.code, registration_id: contract.registration.code.value }, alias.raw_label)
+      if (!candidate || candidate.slug !== alias.candidate_slug || candidate.hash !== alias.proof.source_sha256) missing.push("identity_aliases.unreviewed_bridge")
+    }
   }
   return [...new Set(missing)]
 }
 
 function pollIdFromItem(item: ItemPropostaAgendada): string {
   return item.id.endsWith("-live") ? item.id.slice(0, -5) : item.id
+}
+
+function completePublicationMatches(item: ItemPropostaAgendada): boolean {
+  const evidence = item.evidence
+  const contract = item.normalized_contract
+  if (!contract || evidence?.scenario_complete !== true || evidence.publication_complete !== true) return false
+  const observed = [{ scenario: evidence.scenario, results: evidence.results }, ...(evidence.additional_scenarios as UnknownObject[] ?? [])]
+  if (observed.length !== contract.cenarios.length) return false
+  return observed.every((entry, index) => {
+    if (index > 0 && entry.scenario_complete !== true) return false
+    const scenario = entry.scenario as UnknownObject | undefined
+    const normalized = contract.cenarios[index]
+    if (!scenario || !Array.isArray(entry.results)) return false
+    return scenario.id === normalized.id && scenario.turn === normalized.turn && scenario.geography === normalized.geography
+      && stable(entry.results.map((row) => resultComparable(row as ResultadoPesquisaAgendada))) === stable(normalized.resultados.map(resultComparable))
+  })
 }
 
 interface PesquisaLocalizadaAgendada {
@@ -438,21 +472,70 @@ function buildPrBody(operations: OperacaoCatalogoAgendada[], summary: string): s
   ].join("\n")
 }
 
-export function consolidarPropostasAgendadas(input: {
+interface EntradaConsolidacaoAgendada {
   matrix: ItemMatrizAgendada[]
   documents: DocumentoColetadoAgendado[]
   catalogs: CatalogosAgendados
   generatedAt?: string
-}): ResultadoConsolidacaoAgendada {
+  discovery?: { status: "partial" | "not_assessed"; alerts: string[] }
+}
+
+// Invalid envelopes cannot safely be attributed to an individual poll.
+export function consolidarPropostasAgendadas(input: EntradaConsolidacaoAgendada): ResultadoConsolidacaoAgendada {
+  try {
+    return consolidarLoteAgendado(input)
+  } catch (error) {
+    const alerts = [`quebra de contrato na consolidação: ${error instanceof Error ? error.message : String(error)}`]
+    return resultadoConsolidacao(input, [], [], alerts, [], [])
+  }
+}
+
+function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoConsolidacaoAgendada {
   const alerts: string[] = []
+  const globalAlerts = alerts
+  const pollAlerts: ResultadoConsolidacaoAgendada["poll_alerts"] = []
+  const blockPoll = (item: ItemPropostaAgendada, reason: string) => {
+    pollAlerts.push({ poll_id: pollIdFromItem(item), reason })
+  }
+  const allPolls = [input.catalogs.presidente, ...input.catalogs.governadores.datasets].flatMap((dataset) => {
+    if (!Array.isArray(dataset.pesquisas)) throw new Error("catálogo sem pesquisas")
+    return dataset.pesquisas
+  })
+  const catalogIds = new Set<string>()
+  const registrations = new Set<string>()
+  for (const poll of allPolls) {
+    if (!isNonEmptyString(poll.id) || !isNonEmptyString(poll.source_id) || !isNonEmptyString(poll.registration?.code?.value)
+      || !isNonEmptyString(poll.geography?.code) || !Array.isArray(poll.cenarios)) throw new Error("catálogo corrompido")
+    const registration = stable([poll.source_id, poll.office, poll.geography.code, poll.registration.code.value])
+    if (catalogIds.has(poll.id) || registrations.has(registration)) globalAlerts.push(`catálogo ambíguo: ${poll.id}`)
+    catalogIds.add(poll.id)
+    registrations.add(registration)
+  }
   const expectedKeys = new Set(input.matrix.map((item) => item.key))
+  if (expectedKeys.size !== input.matrix.length) globalAlerts.push("chave duplicada na matriz")
+  const matrixPolls = input.matrix.flatMap((entry) => entry.poll_ids)
+  if (new Set(matrixPolls).size !== matrixPolls.length) globalAlerts.push("pesquisa duplicada na matriz")
+  for (const entry of input.matrix) {
+    if (!isNonEmptyString(entry.key) || !isNonEmptyString(entry.source_id) || !isNonEmptyString(entry.uf)
+      || !Array.isArray(entry.poll_ids) || entry.poll_ids.some((id) => !isNonEmptyString(id))
+      || entry.new_poll_ids?.some((id) => !entry.poll_ids.includes(id))) throw new Error("matriz inválida")
+  }
   const receivedKeys = new Set(input.documents.map((item) => item.key))
   for (const key of expectedKeys) if (!receivedKeys.has(key)) alerts.push(`artefato ausente: ${key}`)
   for (const key of receivedKeys) if (!expectedKeys.has(key)) alerts.push(`artefato inesperado: ${key}`)
   if (receivedKeys.size !== input.documents.length) alerts.push("artefato duplicado na consolidação")
   for (const document of input.documents) {
+    if (document.proposal.schema_version !== "1.0.0" || !Array.isArray(document.proposal.items)) throw new Error(`artefato inválido: ${document.key}`)
     if (document.proposal.dry_run !== true || document.proposal.human_review_required !== true) {
       alerts.push(`artefato inseguro: ${document.key}`)
+    }
+    const manifest = input.matrix.find((entry) => entry.key === document.key)
+    for (const item of document.proposal.items) {
+      if (!isNonEmptyString(item.id) || typeof item.decision?.eligible_for_human_review !== "boolean"
+        || !isNonEmptyString(item.decision.classification) || !isNonEmptyString(item.decision.reason)) throw new Error(`item inválido: ${document.key}`)
+      if (!manifest?.poll_ids.some((id) => `${id}-live` === item.id)) globalAlerts.push(`item fora do artefato esperado: ${item.id}`)
+      const contract = item.normalized_contract
+      if (contract && (contract.source_id !== manifest?.source_id || contract.geography?.code !== manifest?.uf)) globalAlerts.push(`atribuição divergente: ${item.id}`)
     }
   }
 
@@ -467,13 +550,25 @@ export function consolidarPropostasAgendadas(input: {
   for (const item of items) {
     if (!item.decision.eligible_for_human_review) {
       if (item.decision.classification !== "inalterado") {
-        alerts.push(`${item.id}: ${item.decision.reason}`)
+        blockPoll(item, item.decision.reason)
       }
+      continue
+    }
+    if (!["novo", "alterado"].includes(item.decision.classification)) {
+      globalAlerts.push(`${item.id}: classificação incompatível com elegibilidade`)
       continue
     }
     const missing = requiredMetadata(item.normalized_contract)
     if (missing.length > 0) {
-      alerts.push(`${item.id}: metadado ausente (${missing.join(", ")})`)
+      blockPoll(item, `metadado ausente (${missing.join(", ")})`)
+      continue
+    }
+    if (!completePublicationMatches(item)) {
+      blockPoll(item, "pesquisa sem prova de cenário e publicação completos")
+      continue
+    }
+    if (item.normalized_contract?.source_status !== "aprovado") {
+      globalAlerts.push(`${item.id}: fonte sem autorização no contrato`)
       continue
     }
     const pollId = pollIdFromItem(item)
@@ -481,11 +576,16 @@ export function consolidarPropostasAgendadas(input: {
     if (!baseline || !item.normalized_contract) {
       const contract = item.normalized_contract
       const manifest = input.matrix.find((entry) => entry.new_poll_ids?.includes(pollId) && entry.source_id === contract?.source_id && entry.uf === contract?.geography.code)
-      if (!manifest || !contract || findPollMatches(input.catalogs, pollId).length || item.evidence?.scenario_complete !== true || item.evidence?.publication_complete !== true) { alerts.push(`${item.id}: inventário base ausente`); continue }
+      if (!manifest || !contract || findPollMatches(input.catalogs, pollId).length) { globalAlerts.push(`${item.id}: inventário base ausente ou ambíguo`); continue }
       try {
         const proposed = prepararPesquisaNova(input.catalogs, contract, pollId)
         operations.push({ kind: "insert", file: contract.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1], poll_id: pollId, geography_code: contract.geography.code, source_id: contract.source_id, registration_id: contract.registration.code.value, proposed, candidate_diff: candidateDiff({ ...proposed, cenarios: [] }, proposed) })
-      } catch (error) { alerts.push(`${item.id}: ${error instanceof Error ? error.message : String(error)}`) }
+      } catch (error) { globalAlerts.push(`${item.id}: ${error instanceof Error ? error.message : String(error)}`) }
+      continue
+    }
+    if (baseline.poll.source_id !== item.normalized_contract.source_id || baseline.poll.office !== item.normalized_contract.office
+      || baseline.poll.geography.code !== item.normalized_contract.geography.code || baseline.poll.registration.code.value !== item.normalized_contract.registration.code.value) {
+      globalAlerts.push(`${item.id}: identidade da pesquisa diverge do catálogo`)
       continue
     }
     if (stable(contractComparable(baseline.poll)) === stable(contractComparable(item.normalized_contract))) continue
@@ -500,10 +600,47 @@ export function consolidarPropostasAgendadas(input: {
     })
   }
 
-  const status: ResultadoConsolidacaoAgendada["status"] = alerts.length > 0
+  const operationRegistrations = new Set<string>()
+  const aliasCatalogs = structuredClone(input.catalogs)
+  const aliasesByGeography = new Map<string, UnknownObject>()
+  aliasesByGeography.set("BR", aliasCatalogs.presidente)
+  for (const dataset of aliasCatalogs.governadores.datasets) {
+    const geography = (dataset.publication_scope as UnknownObject | undefined)?.geography_code
+    if (typeof geography !== "string") continue
+    if (aliasesByGeography.has(geography)) globalAlerts.push(`dataset ambíguo: ${geography}`)
+    aliasesByGeography.set(geography, dataset)
+  }
+  for (const operation of operations) {
+    const key = stable([operation.source_id, operation.proposed.office, operation.geography_code, operation.registration_id])
+    if (operationRegistrations.has(key)) globalAlerts.push(`registro ambíguo nas operações: ${operation.registration_id}`)
+    operationRegistrations.add(key)
+    const aliases = aliasesByGeography.get(operation.geography_code) ?? { exact_aliases: [] }
+    aliasesByGeography.set(operation.geography_code, aliases)
+    try { applyDocumentedAliases(aliases, operation.proposed) }
+    catch (error) { globalAlerts.push(`aliases incompatíveis: ${error instanceof Error ? error.message : String(error)}`) }
+  }
+  return resultadoConsolidacao(input, items, operations, globalAlerts, pollAlerts, input.discovery?.alerts ?? [])
+}
+
+function resultadoConsolidacao(
+  input: EntradaConsolidacaoAgendada,
+  items: ItemPropostaAgendada[],
+  operations: OperacaoCatalogoAgendada[],
+  globalAlerts: string[],
+  pollAlerts: ResultadoConsolidacaoAgendada["poll_alerts"],
+  discoveryAlerts: string[],
+): ResultadoConsolidacaoAgendada {
+  const alerts = [...globalAlerts, ...pollAlerts.map((entry) => `${entry.poll_id}-live: ${entry.reason}`), ...discoveryAlerts]
+  const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
+    status: alerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
+    alerts: [...discoveryAlerts],
+  }
+  // Retain the legacy failure signal so existing CLI/workflow cannot promote a partial batch.
+  const status: ResultadoConsolidacaoAgendada["status"] = alerts.length > 0 || input.discovery?.status === "partial"
     ? "blocked"
     : operations.length > 0 ? "ready" : "no_changes"
-  const safeOperations = status === "ready" ? operations : []
+  const safeOperations = globalAlerts.length === 0 ? operations : []
+  const operationStatus = globalAlerts.length ? "blocked" : safeOperations.length ? "candidates" : "no_changes"
   const summary = buildSummary({
     status,
     alerts,
@@ -511,9 +648,14 @@ export function consolidarPropostasAgendadas(input: {
     received: input.documents.length,
     items,
     operations: safeOperations,
-  })
+  }) + `\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
     status,
+    operation_status: operationStatus,
+    global_alerts: globalAlerts,
+    poll_alerts: pollAlerts,
+    coverage,
+    promotion: { authorized: false, human_review_required: true },
     alerts,
     proposal: {
       schema_version: "1.0.0",
@@ -694,12 +836,14 @@ export interface DependenciasPromocaoAgendada {
 
 export async function executarPromocaoAgendada(input: {
   status: ResultadoConsolidacaoAgendada["status"]
+  promotion?: { authorized: boolean }
   date?: Date
 }, dependencies: DependenciasPromocaoAgendada): Promise<{
   status: "blocked" | "existing_draft" | "no_changes" | "draft_created"
   draftPrCount: number
 }> {
   if (input.status !== "ready") return { status: input.status === "blocked" ? "blocked" : "no_changes", draftPrCount: 0 }
+  if (input.promotion?.authorized !== true) return { status: "blocked", draftPrCount: 0 }
   if (await dependencies.existingDraft()) return { status: "existing_draft", draftPrCount: 0 }
   await dependencies.apply()
   if (!await dependencies.hasChanges()) return { status: "no_changes", draftPrCount: 0 }

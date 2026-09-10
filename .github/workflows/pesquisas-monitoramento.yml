@@ -64,7 +64,8 @@ jobs:
           npm run test:pesquisas:monitoramento
           npm run test:pesquisas:monitoramento:isolamento
           npm run test:pesquisas:monitoramento:rede
-          npm run test:pesquisas:atualizacao-agendada
+          npm run test:pesquisas:integracao
+          npm run check:scripts
 
       - name: Descobrir publicações além do catálogo
         id: discovery
@@ -128,7 +129,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Preparar leitura dos relatórios públicos em PDF
-        if: matrix.target.source_id == 'poderdata-aya-nacional-2026'
+        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && matrix.target.uf == 'PR')
         run: |
           sudo apt-get update -qq
           sudo apt-get install --no-install-recommends -y poppler-utils
@@ -174,6 +175,9 @@ jobs:
     outputs:
       status: ${{ steps.consolidar.outputs.status }}
       change_count: ${{ steps.consolidar.outputs.change_count }}
+      operation_status: ${{ steps.consolidar.outputs.operation_status }}
+      coverage_status: ${{ steps.consolidar.outputs.coverage_status }}
+      promotion_authorized: ${{ steps.consolidar.outputs.promotion_authorized }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -208,12 +212,20 @@ jobs:
             echo '{"include":[{"key":"manifest-missing","source_id":"missing","uf":"missing","poll_ids":["manifest-missing"]}]}' > reports/matrix/matrix.json
           fi
 
+      - name: Baixar diagnóstico independente de descoberta
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/discovery
+
       - name: Consolidar e falhar fechado
         id: consolidar
         run: |
           npm run pesquisas:atualizacao:consolidate -- \
             --matrix=reports/matrix/matrix.json \
             --input=reports/parts \
+            --discovery=reports/discovery/discovery.json \
             --out=reports/consolidated
 
       - name: Publicar resumo e proposta consolidada
@@ -232,6 +244,7 @@ jobs:
       - consolidar
     if: >-
       needs.consolidar.outputs.status == 'ready' &&
+      needs.consolidar.outputs.promotion_authorized == 'true' &&
       (needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' || needs.preparar-matriz.outputs.discovery_status == 'targets_ready_for_collection') &&
       vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
       github.ref == 'refs/heads/main' &&

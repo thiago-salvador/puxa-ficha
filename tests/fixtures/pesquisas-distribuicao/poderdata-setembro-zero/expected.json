@@ -1,0 +1,105 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "poderdata-setembro-zero",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "BR-07561/2026", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/evidence/registration/id", "status": "observado" },
+  "datas_escritas": {
+    "campo_inicio": { "valor": "2026-08-30", "origem": "entrada.txt ficha técnica" },
+    "campo_fim": { "valor": "2026-09-02", "origem": "entrada.txt ficha técnica" },
+    "publicacao": { "valor": "2026-09-03", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/evidence/publication_date" },
+    "coluna_resultado": { "valor": "03/set", "origem": "entrada.txt cabeçalho da tabela" }
+  },
+  "modalidade": { "valor": "estimulada", "origem": "pergunta com candidatos apresentados", "status": "observada" },
+  "cargo": { "valor": "Presidente", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/office" },
+  "uf": { "valor": "BR", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/geography/code" },
+  "turno": { "valor": "1 e 2 em cenários separados", "origem": "cabeçalhos e perguntas de entrada.txt" },
+  "perguntas": [
+    { "turno": 1, "texto": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?", "origem": "entrada.txt" },
+    { "turno": 2, "texto": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?", "origem": "entrada.txt" }
+  ],
+  "cenarios": [
+    {
+      "turno": 1,
+      "modalidade": "estimulada",
+      "pergunta": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?",
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Lula", "percentual": 37, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Flávio Bolsonaro", "percentual": 34, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Escritor Augusto Cury", "percentual": 10, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Renan Santos", "percentual": 3, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Ronaldo Caiado", "percentual": 2, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Pablo Marçal", "percentual": 2, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Hertz Dias", "percentual": 2, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Clariana Barão", "percentual": 1, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Zema", "percentual": 1, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Rui Costa Pimenta", "percentual": 1, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Edmilson Costa", "percentual": 1, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Samara", "percentual": 1, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Veterinário Wilson Grassi", "percentual": 0, "categoria": "candidato", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Branco/Nulo", "percentual": 5, "categoria": "branco_nulo", "origem": "entrada.txt coluna 03/set" },
+        { "rotulo": "Não sabe", "percentual": 2, "categoria": "nao_sabe_nao_respondeu", "origem": "entrada.txt coluna 03/set" }
+      ],
+      "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"],
+      "notas_agrupamento": [],
+      "completude": "completa para o recorte"
+    },
+    {
+      "turno": 2,
+      "modalidade": "estimulada",
+      "pergunta": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?",
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Flávio Bolsonaro", "percentual": 45, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Lula", "percentual": 44, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Branco/Nulo", "percentual": 8, "categoria": "branco_nulo", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Não sabe", "percentual": 3, "categoria": "nao_sabe_nao_respondeu", "origem": "entrada.txt cenário de 2º turno" }
+      ],
+      "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"],
+      "notas_agrupamento": [],
+      "completude": "completa para o recorte"
+    },
+    {
+      "turno": 2,
+      "modalidade": "estimulada",
+      "pergunta": "E se houver um 2º turno entre Renan Santos e Lula, em quem você votaria?",
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Renan Santos", "percentual": 39, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Lula", "percentual": 44, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Branco/Nulo", "percentual": 15, "categoria": "branco_nulo", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Não sabe", "percentual": 3, "categoria": "nao_sabe_nao_respondeu", "origem": "entrada.txt cenário de 2º turno" }
+      ],
+      "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"],
+      "notas_agrupamento": [],
+      "completude": "completa para o recorte"
+    },
+    {
+      "turno": 2,
+      "modalidade": "estimulada",
+      "pergunta": "E se houver um 2º turno entre Zema e Lula, em quem você votaria?",
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Romeu Zema", "percentual": 42, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Lula", "percentual": 44, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Branco/Nulo", "percentual": 12, "categoria": "branco_nulo", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Não sabe", "percentual": 2, "categoria": "nao_sabe_nao_respondeu", "origem": "entrada.txt cenário de 2º turno" }
+      ],
+      "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"],
+      "notas_agrupamento": [],
+      "completude": "completa para o recorte"
+    },
+    {
+      "turno": 2,
+      "modalidade": "estimulada",
+      "pergunta": "E se houver um 2º turno entre Ronaldo Caiado e Lula, em quem você votaria?",
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Ronaldo Caiado", "percentual": 42, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Lula", "percentual": 44, "categoria": "candidato", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Branco/Nulo", "percentual": 11, "categoria": "branco_nulo", "origem": "entrada.txt cenário de 2º turno" },
+        { "rotulo": "Não sabe", "percentual": 2, "categoria": "nao_sabe_nao_respondeu", "origem": "entrada.txt cenário de 2º turno" }
+      ],
+      "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"],
+      "notas_agrupamento": [],
+      "completude": "completa para o recorte"
+    }
+  ],
+  "oraculo": { "veredito": "pronto_para_I2", "classificacao": "fixture positiva", "motivo": "preserva 13 candidatos, candidato publicado com 0%, categorias e coluna datada sem completar percentuais", "publicavel": false, "nao_atribuir_identidade": true },
+  "proveniencia": ["/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json", "docs/operations/pesquisas-s0/ENTRADA-DE-NOVAS-PESQUISAS.md#L19", "entrada.txt"]
+}

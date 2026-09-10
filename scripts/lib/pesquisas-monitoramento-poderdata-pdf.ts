@@ -11,6 +11,7 @@ export interface CenarioDocumentoPoderData {
   page: number
   results_date?: string
   results: Array<{ raw_label: string; value_percent: number }>
+  history?: Array<{ date: string; results: Array<{ raw_label: string; value_percent: number }> }>
 }
 
 export interface DocumentoPoderData {
@@ -52,7 +53,7 @@ function columnDate(value: string): string | null {
 }
 
 /** Extract the dated table below each national voting-intention chart, never subgroup columns. */
-export function parseTextoPoderData(text: string, registrationId: string, publicationDate?: string): Omit<DocumentoPoderData, "url" | "observed_at" | "evidence_sha256"> {
+export function parseTextoPoderData(text: string, registrationId: string, publicationDate?: string, rawText?: string): Omit<DocumentoPoderData, "url" | "observed_at" | "evidence_sha256"> {
   const pages = text.split("\f")
   const resolverNomePresidencial = criarResolvedorPresidencial()
   const registrations = [...new Set(text.match(/\bBR-\d{5}\/2026\b/g) ?? [])]
@@ -72,7 +73,7 @@ export function parseTextoPoderData(text: string, registrationId: string, public
   }
   if (publicationDate && (!Number.isFinite(Date.parse(publicationDate)) || new Date(publicationDate).toISOString().slice(0, 10) !== publicationDate || publicationDate < fieldwork.end)) throw new Error("PoderData PDF: publicação inválida")
   const scenarios: CenarioDocumentoPoderData[] = []
-  const plots: string[] = []
+  const plots: Array<{ question: string; page: number; label: string; turn: 1 | 2 }> = []
   for (const [index, page] of pages.entries()) {
     const lines = page.trim().split(/\r?\n/)
     const turnMatch = lines[0]?.trim().match(/^Intenção de voto no ([12])º turno$/)
@@ -86,7 +87,12 @@ export function parseTextoPoderData(text: string, registrationId: string, public
       const tokens = line.trim().split(/\s+/)
       return tokens.length >= 2 && tokens.every((token) => columnDate(token))
     })
-    if (columnsIndex < 0) { plots.push(question); continue }
+    if (columnsIndex < 0) {
+      // August's bar chart has no printed table. Read its literal text objects
+      // independently of the sex cross-tab, which still must match below.
+      plots.push({ question, page: index + 1, label: lines[0].trim(), turn: Number(turnMatch[1]) as 1 | 2 })
+      continue
+    }
     const columns = columnsIndex >= 0 ? lines[columnsIndex].trim().split(/\s+/) : []
     const dates = columns.map((column) => columnDate(column)!)
     if (![fieldwork.end, publicationDate].includes(dates.at(-1)) || dates.some((value, index) => index > 0 && value <= dates[index - 1])) {
@@ -96,7 +102,7 @@ export function parseTextoPoderData(text: string, registrationId: string, public
     const footer = table.findIndex((line) => /Pesquisa realizada|Copyright/.test(line))
     if (footer < 0) throw new Error("PoderData PDF: limite da tabela ausente")
     const rows = table.slice(0, footer).filter((line) => line.trim())
-    if (!rows.length) { plots.push(question); continue }
+    if (!rows.length) { plots.push({ question, page: index + 1, label: lines[0].trim(), turn: Number(turnMatch[1]) as 1 | 2 }); continue }
     const results = rows.map((line) => {
       const match = line.trim().match(/^(.+?)\s{2,}([\d.,%\s]+)$/)
       const values = match?.[2].trim().split(/\s+/) ?? []
@@ -120,7 +126,15 @@ export function parseTextoPoderData(text: string, registrationId: string, public
     if (scenarios.some((scenario) => scenario.question === question)) throw new Error("PoderData PDF: cenário ambíguo")
     scenarios.push({ turn, label: lines[0].trim(), question, page: index + 1, results_date: dates.at(-1), results })
   }
-  if (plots.some((question) => !scenarios.some((scenario) => scenario.question === question))) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
+  for (const plot of plots) {
+    if (scenarios.some((scenario) => scenario.question === plot.question)) continue
+    const rawPage = rawText?.split("\f")[plot.page - 1]
+    if (plot.turn !== 1 || !rawPage) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
+    const chart = parseBarrasPoderData(rawPage, plot.question, plot.page)
+    if (![fieldwork.end, publicationDate].includes(chart.history.at(-1)!.date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
+    scenarios.push({ ...plot, results_date: chart.history.at(-1)!.date, results: chart.history.at(-1)!.results, history: chart.history })
+  }
+  scenarios.sort((a, b) => a.page - b.page)
   if (new Set(scenarios.map((scenario) => scenario.results_date)).size !== 1) throw new Error("PoderData PDF: datas de resultado divergentes entre cenários")
   if (scenarios.filter((scenario) => scenario.turn === 1).length !== 1 || !scenarios.some((scenario) => scenario.turn === 2)) {
     throw new Error("PoderData PDF: cenários nacionais incompletos")
@@ -146,12 +160,36 @@ export function parseTextoPoderData(text: string, registrationId: string, public
   return { registration_id: registrationId, fieldwork, sample_size: Number(sample[1].replaceAll(".", "")), margin_error_pp: Number(margin[1].replace(",", ".")), confidence_percent: Number(confidence[1]), scenarios }
 }
 
+/** Narrow text-object order observed in the two-series August bar chart.
+ * Never derive labels, counts or values from the independent Total table.
+ * `rawPage` must be pdftotext -raw output from the same PDF bytes as -layout.
+ */
+function parseBarrasPoderData(rawPage: string, question: string, page: number) {
+  const lines = rawPage.trim().split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
+  const title = lines.indexOf("Intenção de voto no 1º turno")
+  const endQuestion = lines.findIndex((line, index) => index > title && line.endsWith("?"))
+  if (title < 0 || endQuestion < 0 || lines.slice(title + 1, endQuestion + 1).join(" ") !== question || lines[endQuestion + 1] !== String(page)) throw new Error("PoderData PDF: ordem dos objetos do gráfico não reconhecida")
+  const body = lines.slice(endQuestion + 2)
+  const datesStart = body.findIndex((line) => columnDate(line))
+  const labelsStart = body.findIndex((line) => !/^\d+(?:[,.]\d+)?$/.test(line))
+  const dates = body.slice(datesStart).map(columnDate)
+  const labels = body.slice(labelsStart, datesStart)
+  const values = body.slice(0, labelsStart).map((value) => Number(value.replace(",", ".")))
+  if (datesStart < 0 || labelsStart < 0 || dates.length !== 2 || dates.some((date) => !date) || dates[0]! >= dates[1]!
+    || labels.length < 4 || new Set(labels).size !== labels.length || labels.some((label) => !/\p{L}/u.test(label))
+    || values.length !== labels.length * dates.length || values.some((value) => !Number.isFinite(value) || value < 0 || value > 100)) throw new Error("PoderData PDF: séries ou rótulos do gráfico incompletos")
+  const history = dates.map((date, index) => ({ date: date!, results: labels.map((raw_label, row) => ({ raw_label, value_percent: values[index * labels.length + row] })) }))
+  if (history.some(({ results }) => Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5)) throw new Error("PoderData PDF: série do gráfico incompleta")
+  return { history }
+}
+
 export function extrairDocumentoPoderData(input: { bytes: Uint8Array; url: string; observedAt: string; registrationId: string; publicationDate?: string }): DocumentoPoderData {
   if (input.bytes.length > 5_000_000 || Buffer.from(input.bytes).subarray(0, 5).toString() !== "%PDF-") throw new Error("PoderData: documento inválido ou acima do limite")
   // No shell, URL or filename from the source is executed. PDF bytes enter stdin.
   const text = execFileSync("pdftotext", ["-layout", "-", "-"], { input: input.bytes, encoding: "utf8", timeout: 20_000, maxBuffer: 2_000_000 })
+  const rawText = execFileSync("pdftotext", ["-raw", "-", "-"], { input: input.bytes, encoding: "utf8", timeout: 20_000, maxBuffer: 2_000_000 })
   return {
-    ...parseTextoPoderData(text, input.registrationId, input.publicationDate),
+    ...parseTextoPoderData(text, input.registrationId, input.publicationDate, rawText),
     url: input.url,
     observed_at: input.observedAt,
     evidence_sha256: createHash("sha256").update(input.bytes).digest("hex"),

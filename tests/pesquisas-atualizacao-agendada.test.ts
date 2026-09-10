@@ -56,7 +56,7 @@ const fixtureCases = readFileSync("tests/fixtures/pesquisas-atualizacao-agendada
 const baseline: ContratoPesquisaAgendada = {
   id: "pesquisa-sintetica-br-00001-2026",
   source_id: "fonte-sintetica",
-  source_status: "approved",
+  source_status: "aprovado",
   publishable_by_default: true,
   state: "aprovado",
   instituto: { value: "Instituto Sintético", status: "confirmado" },
@@ -150,6 +150,12 @@ function proposalDocument(item: ItemPropostaAgendada): DocumentoPropostaAgendada
 }
 
 function validItem(proposed = normalizedFromBaseline()): ItemPropostaAgendada {
+  // Each scenario needs independent complete evidence, matching the production contract.
+  const scenarios = proposed.cenarios.map((scenario) => ({
+    scenario_complete: true,
+    scenario: { id: scenario.id, turn: scenario.turn, geography: scenario.geography },
+    results: structuredClone(scenario.resultados),
+  }))
   return {
     id: `${baseline.id}-live`,
     decision: {
@@ -157,7 +163,8 @@ function validItem(proposed = normalizedFromBaseline()): ItemPropostaAgendada {
       eligible_for_human_review: true,
       reason: "approved_new_evidence",
     },
-    evidence: { registration: { id: proposed.registration?.code?.value ?? baseline.registration.code.value } },
+    evidence: { registration: { id: proposed.registration?.code?.value ?? baseline.registration.code.value },
+      publication_complete: true, ...scenarios[0], additional_scenarios: scenarios.slice(1) },
     normalized_contract: proposed,
   }
 }
@@ -277,7 +284,7 @@ test("artefato de matriz ausente bloqueia promoção", () => {
 
 test("mudança válida cria exatamente um draft depois do verify", async () => {
   const fake = promotionDependencies()
-  const result = await executarPromocaoTipado({ status: "ready", date: new Date("2026-08-26T12:00:00Z") }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready", promotion: { authorized: true }, date: new Date("2026-08-26T12:00:00Z") }, fake.dependencies)
   assert.equal(result.status, "draft_created")
   assert.equal(result.draftPrCount, 1)
   assert.deepEqual(fake.events, [
@@ -294,7 +301,7 @@ test("mudança válida cria exatamente um draft depois do verify", async () => {
 
 test("no-change não cria branch, push ou PR", async () => {
   const fake = promotionDependencies({ hasChanges: false })
-  const result = await executarPromocaoTipado({ status: "ready" }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready", promotion: { authorized: true } }, fake.dependencies)
   assert.equal(result.status, "no_changes")
   assert.equal(result.draftPrCount, 0)
   assert.deepEqual(fake.events, ["existing-draft", "apply", "has-changes"])
@@ -302,7 +309,7 @@ test("no-change não cria branch, push ou PR", async () => {
 
 test("draft existente impede qualquer alteração ou duplicação", async () => {
   const fake = promotionDependencies({ existingDraft: true })
-  const result = await executarPromocaoTipado({ status: "ready" }, fake.dependencies)
+  const result = await executarPromocaoTipado({ status: "ready", promotion: { authorized: true } }, fake.dependencies)
   assert.equal(result.status, "existing_draft")
   assert.equal(result.draftPrCount, 0)
   assert.deepEqual(fake.events, ["existing-draft"])
@@ -311,7 +318,7 @@ test("draft existente impede qualquer alteração ou duplicação", async () => 
 test("falha em verify impede branch, push e PR", async () => {
   const fake = promotionDependencies({ verifyFailure: true })
   await assert.rejects(
-    executarPromocaoTipado({ status: "ready" }, fake.dependencies),
+    executarPromocaoTipado({ status: "ready", promotion: { authorized: true } }, fake.dependencies),
     /verify failed/,
   )
   assert.deepEqual(fake.events, ["existing-draft", "apply", "has-changes", "verify"])
@@ -450,13 +457,13 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
     if (fixture.mode === "no_changes") {
       const result = consolidate(validItem())
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status, promotion: { authorized: true } }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "valid_change") {
       const proposed = normalizedFromBaseline()
       proposed.cenarios[0].resultados[0].value_percent += 1
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status, promotion: { authorized: true } }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "blocked") {
       const result = consolidate({
         ...validItem(),
@@ -469,7 +476,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
         normalized_contract: null,
       })
       actualStatus = result.status
-      actualDraftPrs = (await executarPromocaoTipado({ status: result.status }, promotionDependencies().dependencies)).draftPrCount
+      actualDraftPrs = (await executarPromocaoTipado({ status: result.status, promotion: { authorized: true } }, promotionDependencies().dependencies)).draftPrCount
     } else if (fixture.mode === "missing_metadata") {
       const proposed = normalizedFromBaseline()
       Reflect.deleteProperty(proposed, "registration")
@@ -481,7 +488,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
       await assert.rejects(
-        executarPromocaoTipado({ status: result.status }, promotionDependencies({ verifyFailure: true }).dependencies),
+        executarPromocaoTipado({ status: result.status, promotion: { authorized: true } }, promotionDependencies({ verifyFailure: true }).dependencies),
         /verify failed/,
       )
     } else if (fixture.mode === "existing_draft") {
@@ -490,7 +497,7 @@ test("golden set executa todos os casos e seus resultados declarados", async () 
       const result = consolidate(validItem(proposed))
       actualStatus = result.status
       actualDraftPrs = (await executarPromocaoTipado(
-        { status: result.status },
+        { status: result.status, promotion: { authorized: true } },
         promotionDependencies({ existingDraft: true }).dependencies,
       )).draftPrCount
     } else if (fixture.mode === "forbidden_file") {

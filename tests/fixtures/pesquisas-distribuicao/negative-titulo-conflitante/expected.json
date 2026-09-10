@@ -1,0 +1,16 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-titulo-conflitante",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "RS-09640/2026", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/poll_id" },
+  "datas_escritas": { "campo_inicio": null, "campo_fim": null, "publicacao": null },
+  "modalidade": { "valor": "duelo", "status": "conflitante" },
+  "cargo": { "valor": "Governador", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/office" },
+  "uf": { "valor": "RS", "origem": "../L2/real-time-big-data-rs-rs-09640-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": 2, "origem": "entrada.html" },
+  "perguntas": [],
+  "cenarios": [ { "turno": 2, "modalidade": "duelo", "pergunta": null, "resultados_explicitamente_publicados": [ { "rotulo": "Juliana Brizola", "percentual": 48, "categoria": "candidato" }, { "rotulo": "Gabriel Souza", "percentual": 35, "categoria": "candidato" }, { "rotulo": "Nulos/brancos", "percentual": 8, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/não respondeu", "percentual": 9, "categoria": "nao_sabe_nao_respondeu" } ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "incompleta por conflito de título" } ],
+  "resultados_proveniencia": "entrada.html bloco conflitante",
+  "proveniencia": [".artifacts/pesquisas-distribuicao/L2/real-time-big-data-rs-rs-09640-2026.dossier.json", "entrada.html"],
+  "oraculo": { "veredito": "rejeitar", "motivo": "o título nomeia Juliana x Zucco, mas o cenário e a tabela nomeiam Juliana x Gabriel; preservar o conflito e bloquear", "publicavel": false }
+}

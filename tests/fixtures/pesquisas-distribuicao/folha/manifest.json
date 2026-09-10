@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "method": "Public HTTP GET of links literally present in L2 article receipts; no remote script execution",
+  "records": [
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/Kqs5O/",
+      "observed_at": "2026-09-09T19:28:28.508373+00:00",
+      "status": 200,
+      "sha256": "513c97994a80b0b37f6d2ead7243875ffce287963882c0cd5e08af458ad95e3a",
+      "bytes": 28878,
+      "chart_id": "Kqs5O",
+      "raw_tsv": "Resposta estimulada e múltipla, em %\t19.ago.2026\nLula  (PT)\t39\nFlávio Bolsonaro  (PL)\t33\nRonaldo Caiado  (PSD)\t5\nRenan Santos  (Missão)\t4\nZema  (Novo)\t3\nEscritor Augusto Cury  (Avante)\t2\nSamara  (UP)\t1\nRui Costa Pimenta  (PCO)\t1\nEdmilson Costa  (PCB)\t1\nVeterinário Wilson Grassi  (Democrata)\t1\nClariana Barão  (DC)\t0\nHertz Dias  (PSTU)\t0\nEm branco/ Nulo/ Nenhum\t6\nNão sabem\t4"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/rn20B/",
+      "observed_at": "2026-09-09T19:28:32.593511+00:00",
+      "status": 200,
+      "sha256": "a04c64fbd7924d182e85bffe72a192b39cf32e2852a07e849cd5a0292f0c5482",
+      "bytes": 33175,
+      "chart_id": "rn20B",
+      "raw_tsv": "Resposta estimulada e única, em %\t11.jun.2025\t30.jul.2025\t4.dez.2025\t5.mar.2026\t9.abr.2026\t13.mai.2026\t21.mai.2026\t18.jun.2026\t23.jul.2026\t19.ago.2026\nLula (PT)\t47\t48\t51\t46\t45\t45\t47\t47\t48\t47\nFlávio Bolsonaro (PL)\t38\t37\t36\t43\t46\t45\t43\t43\t43\t43\nEm branco/nulo/nenhum\t14\t13\t12\t10\t8\t9\t9\t8\t9\t9\nNão sabem\t1\t1\t1\t1\t1\t1\t2\t1\t1\t2"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/yAPWC/",
+      "observed_at": "2026-09-09T19:28:38.445186+00:00",
+      "status": 200,
+      "sha256": "8f8757cbdfdd53fcc6bc45ec5ccad7e339a01d637ebb42e128ac5a98fcbc0f37",
+      "bytes": 28353,
+      "chart_id": "yAPWC",
+      "raw_tsv": "Resposta estimulada e única, em %\t20.ago.2026\nTarcísio de Freitas (Republicanos)\t45\nFernando Haddad (PT)\t27\nVera Lúcia (PSTU)\t4\nCarlos Machado (PCB)\t3\nPolicial Edjane (AGIR)\t3\nVivian Mendes (UP)\t2\nIzadora Dias (PCO)\t1\nEm branco/nulo/nenhum\t11\nNão sabem\t4"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/pu2wZ/",
+      "observed_at": "2026-09-09T19:28:44.491302+00:00",
+      "status": 200,
+      "sha256": "76da01913218984660530faf9f0151690b83d3c4b556117aea3f88e59164cda3",
+      "bytes": 33211,
+      "chart_id": "pu2wZ",
+      "raw_tsv": "Resposta espontânea e única, em %\t3.abr.2025\t5.mar.2026\t3.jul.2026\t20.ago.2026\nTarcísio de Freitas (Republicanos)\t22\t16\t21\t26\nFernando Haddad (PT)\t2\t2\t8\t13\nNo atual governador\t3\t5\t3\t2\nVota no PT/candidato do PT\t1\t1\t1\t1\nOutras respostas\t4\t5\t5\t2\nEm branco/nulo/nenhum\t8\t7\t8\t6\nNão sabem\t59\t60\t55\t50"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/Unswb/",
+      "observed_at": "2026-09-09T19:28:51.591483+00:00",
+      "status": 200,
+      "sha256": "6014846df18e946a4be87567f6231d6d30df0871caf01a07ffd732f7de3ff479",
+      "bytes": 27576,
+      "chart_id": "Unswb",
+      "raw_tsv": "Nome\tPercentual\nCiro Gomes (PSDB)\t52\nElmano de Freitas (PT)\t33\nPedro Brito (Novo)*\t1\nDelegado Huggo (Missão)\t1\nDanilo Soares (Democrata)\t1\nEm branco/nulo/nenhum\t7\nNão sabem\t4"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/iEuIx/",
+      "observed_at": "2026-09-09T19:28:56.301398+00:00",
+      "status": 200,
+      "sha256": "91eb67a841b483e45a752a4a2cbfc43282a419394cf0051a3a563c8e164da892",
+      "bytes": 32233,
+      "chart_id": "iEuIx",
+      "raw_tsv": "Data\tCiro Gomes (PSDB)\tElmano de Freitas (PT)\tEm branco/nulo/nenhum\tNão sabem\n18.mar\t56\t37\t6\t1\n12.ago\t55\t37\t5\t3"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/2axDg/",
+      "observed_at": "2026-09-09T19:29:02.259435+00:00",
+      "status": 200,
+      "sha256": "daac1440ecd8b1782587100e11a15a4dc901a4d93de80441f8c7aceb9007189b",
+      "bytes": 27885,
+      "chart_id": "2axDg",
+      "raw_tsv": "Celina Leão (PP)\t30\nArruda (PSD)\t28\nLeandro Grass (PT)\t11\nPaula Belmonte (PSDB)\t4\nCappelli (PSB)\t3\nKiko Caputo (NOVO)\t2\nProfessora Samara Mineiro (UP)\t2\nElisson (AGIR)\t1\nProfessor Robson (PSTU)\t1\nExpedito Mendonça (PCO)\t0\nEm branco/nulo/nenhum\t11\nIndecisos\t8"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/LZR8o/",
+      "observed_at": "2026-09-09T19:29:07.160166+00:00",
+      "status": 200,
+      "sha256": "532f9ddd1b91f20a5e8bb4c8c15d7a30f5f3e0334f33428f4a4c710a22634d22",
+      "bytes": 27997,
+      "chart_id": "LZR8o",
+      "raw_tsv": "Resposta espontânea e única, em %\t20.ago.2026\nCelina Leão (PP)\t21\nArruda (PSD)\t12\nLeandro Grass (PT)\t6\nPaula Belmonte (PSDB)\t1\nCappelli (PSB)\t1\nKiko Caputo (NOVO)\t1\nVota no PT/ candidado do PT\t1\nOutras respostas\t2\nEm branco/ nulo/ nenhum\t6\nIndecisos\t49"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/GJawM/",
+      "observed_at": "2026-09-09T19:29:12.541117+00:00",
+      "status": 200,
+      "sha256": "6adb2437b7056e19bf4cbd05f6ed1c4a616517a2e60e930137f50705d8cc20e2",
+      "bytes": 27991,
+      "chart_id": "GJawM",
+      "raw_tsv": "Celina Leão (PP)\t32\nArruda (PSD)\t30\nLeandro Grass (PT)\t19\nPaula Belmonte (PSDB)\t11\nCappelli (PSB)\t11\nKiko Caputo (NOVO)\t11\nExpedito Mendonça (PCO)\t8\nProfessor Robson (PSTU)\t7\nElisson (AGIR)\t7\nProfessora Samara Mineiro (UP)\t5\nVotaria em qualquer um/ não rejeita nenhum\t4\nRejeita todos/ não votaria em nenhum\t3\nNão sabem\t11"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/WyvXr/",
+      "observed_at": "2026-09-09T19:29:16.399175+00:00",
+      "status": 200,
+      "sha256": "38faf4099584c830185c3c0625f2453cf44f938eafa96a97aa2472cc2636f3f8",
+      "bytes": 27512,
+      "chart_id": "WyvXr",
+      "raw_tsv": "Rafael Fonteles (PT)\t56\nJoel Rodrigues (PP)\t21\nDra. Lúcia Santos (PSDB)\t2\nGeraldo Carvalho (PSTU)\t2\nLourdes Melo (PCO)\t1\nProfessor Gisvaldo (PSOL)\t1\nProfessor Jurity (DC)\t1\nElizeu Aguiar (Novo)\t1\nSantiago Belizário (UP)\t1\nRavenna da Inclusão (Democrata)\t0\nEm branco/nulo/nenhum\t10\nIndecisos\t5"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/lhfyt/",
+      "observed_at": "2026-09-09T19:29:20.588325+00:00",
+      "status": 200,
+      "sha256": "55bd06b7c2c7fb98f6421c1e07216be0bc691645e5a4ddfdb9bb87e39b7f26e6",
+      "bytes": 27782,
+      "chart_id": "lhfyt",
+      "raw_tsv": "Eduardo Paes (PSD)\t41\nDouglas Ruas (PL)\t19\nGarotinho (Republicanos)\t9\nCoronel Busnello (Missão)\t2\nCyro Garcia (PSTU)\t2\nWilliam Siri (PSOL)\t2\nAndré Marinho (Novo)\t2\nJuliete (UP)\t2\nLuan Monteiro (PCO)\t1\nEm branco/nulo/nenhum\t16\nIndecisos\t4"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/1wfOs/",
+      "observed_at": "2026-09-09T19:29:25.710793+00:00",
+      "status": 200,
+      "sha256": "f1ba964a48c16ec0aff9a4463c0a9315d052ba2a2a51d9b6bfb75486e5f8066c",
+      "bytes": 27983,
+      "chart_id": "1wfOs",
+      "raw_tsv": "Cleitinho Azevedo (Republicanos)\t32\nPatrus Ananias (PT)\t12\nAlexandre Kalil (PDT)\t12\nMateus Simões (PSD)\t4\nFlávio Roscoe (PL)\t4\nGabriel (MDB)\t4\nProfessor Túlio Lopes (PCB)\t2\nRafael Duda (PSTU)\t1\nBen Mendes (MISSÃO)\t1\nIndira Xavier (UP)\t1\nEm branco/nulo/nenhum\t14\nNão sabem\t13"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/tsHGm/",
+      "observed_at": "2026-09-09T19:29:29.673903+00:00",
+      "status": 200,
+      "sha256": "16f1afff3502ce6d97b2b6f86f5c1f66162459938f8e1954e601bd0c421986e4",
+      "bytes": 27876,
+      "chart_id": "tsHGm",
+      "raw_tsv": "Cleitinho Azevedo (Republicanos)\t15\nPatrus Ananias (PT)\t3\nAlexandre Kalil (PDT)\t3\nRomeu Zema (Novo)\t2\nMateus Simões (PSD)\t1\nOutras respostas\t6\nNão sabem\t64\nEm branco/nulo/nenhum\t6"
+    },
+    {
+      "url": "https://arte.folha.uol.com.br/graficos/VbIkx/",
+      "observed_at": "2026-09-09T19:29:33.897893+00:00",
+      "status": 200,
+      "sha256": "c9534c5c190f338ea50293b12e1c90b4c4df78f85cac22d03e16a42a1de30536",
+      "bytes": 27974,
+      "chart_id": "VbIkx",
+      "raw_tsv": "Patrus Ananias (PT)\t29\nAlexandre Kalil (PDT)\t23\nFlávio Roscoe (PL)\t17\nCleitinho Azevedo (Republicanos)\t14\nMateus Simões (PSD)\t14\nBen Mendes (Missão)\t13\nRafael Duda (PSTU)\t12\nGabriel (MDB)\t12\nHenrique Áreas (PCO)\t11\nIndira Xavier (UP)\t11\nProfessor Túlio Lopes (PCB)\t11\nVotaria em qualquer um/ não rejeita nenhum\t4\nRejeita todos/ não votaria em nenhum\t7\nNão sabem\t17"
+    }
+  ]
+}

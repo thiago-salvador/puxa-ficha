@@ -1,26 +1,51 @@
 import "server-only"
 
-interface CenarioRealTime {
+export interface CenarioRealTime {
   turn: 1 | 2
   label: string
   mode: "estimulado" | "espontaneo"
   results: Array<{ raw_label: string; value_percent: number }>
 }
 
+export interface LeituraRealTime {
+  scenarios: CenarioRealTime[]
+  notes: string[]
+  blockers: Array<{ code: "metadata_conflict" | "extraction_incomplete"; detail: string; scenario_index?: number }>
+}
+
+export interface OpcoesLeituraRealTime {
+  /** Independent source manifest can require a grouping note even when a
+   * reduced fixture has lost its asterisk. Never infer individual shares. */
+  groupingNotesRequired?: number[]
+}
+
 const CATEGORY = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
 
 /** Read complete published lists; a headline or valid-vote calculation is never a table. */
-export function extrairPublicacaoRealTime(html: string, plain: (html: string) => string): { scenarios: CenarioRealTime[]; notes: string[] } | null {
+export function extrairPublicacaoRealTime(html: string, plain: (html: string) => string, options: OpcoesLeituraRealTime = {}): { scenarios: CenarioRealTime[]; notes: string[] } | null {
+  const result = inspecionarPublicacaoRealTime(html, plain, options)
+  if (!result) return null
+  if (result.blockers.length) throw new Error(result.blockers[0].detail)
+  return { scenarios: result.scenarios, notes: result.notes }
+}
+
+/** Preserve complete lists and unresolved headings for review. This is not an
+ * eligibility API: callers must retain every blocker and reconcile metadata.
+ * The original strict entrypoint above continues to reject these conflicts.
+ */
+export function inspecionarPublicacaoRealTime(html: string, plain: (html: string) => string, options: OpcoesLeituraRealTime = {}): LeituraRealTime | null {
   const safe = html.replace(/<(script|style|template|noscript)\b[^>]*>[\s\S]*?<\/\1>/gi, " ")
   const scenarios: CenarioRealTime[] = []
   const notes: string[] = []
+  const blockers: LeituraRealTime["blockers"] = []
   let turn: 1 | 2 = 1
   let mode: CenarioRealTime["mode"] = "estimulado"
   let context = ""
   let heading = ""
   let runoffLevel = 0
   let runoffCount: number | null = null
-  let footnoteRequired = false
+  const footnoteRequired = new Set(options.groupingNotesRequired ?? [])
+  const scenarioNotes = new Map<number, string[]>()
   let inGovernorScope = true
   for (const block of safe.matchAll(/<(h[1-6]|p|ul)\b[^>]*>([\s\S]*?)<\/\1>/gi)) {
     const tag = block[1].toLowerCase()
@@ -47,7 +72,11 @@ export function extrairPublicacaoRealTime(html: string, plain: (html: string) =>
     if (tag === "p") {
       if (!inGovernorScope && /governador|governo/i.test(text) && !/senado|senador|deputad|vereador|prefeit/i.test(text)) inGovernorScope = true
       if (!inGovernorScope) continue
-      if (/^\*/.test(text)) notes.push(text)
+      if (/^\*/.test(text)) {
+        notes.push(text)
+        const index = scenarios.length - 1
+        scenarioNotes.set(index, [...(scenarioNotes.get(index) ?? []), text])
+      }
       if (turn === 1 && /espont[âa]ne[ao]/i.test(text) && !/estimulad[ao]/i.test(text)) mode = "espontaneo"
       if (turn === 1 && /estimulad[ao]/i.test(text) && !/espont[âa]ne[ao]/i.test(text)) mode = "estimulado"
       if (turn === 1 && /cenário|confira|veja o resultado|espont[âa]ne[ao]/i.test(text)) context = text
@@ -67,7 +96,7 @@ export function extrairPublicacaoRealTime(html: string, plain: (html: string) =>
     if (numerical.length !== lines.length) throw new Error("Real Time: lista contém linha sem percentual completo")
     const results = lines.map((line) => {
       const match = line.match(/^(.+?)\s*:\s*(\d+(?:[,.]\d+)?)\s*%(\*)?$/)!
-      if (match[3]) footnoteRequired = true
+      if (match[3]) footnoteRequired.add(scenarios.length)
       const value = Number(match[2].replace(",", "."))
       if (value < 0 || value > 100) throw new Error("Real Time: percentual inválido")
       return { raw_label: match[1].trim(), value_percent: value }
@@ -86,7 +115,7 @@ export function extrairPublicacaoRealTime(html: string, plain: (html: string) =>
         if (expected.length !== 2 || !names.every((name) => expected.some((value) => {
           const left = components(name), right = components(value)
           return left.name === right.name && (!left.party || !right.party || left.party === right.party)
-        }))) throw new Error("Real Time: nomes conflitantes no segundo turno")
+        }))) blockers.push({ code: "metadata_conflict", detail: `Real Time: nomes conflitantes no segundo turno: ${heading}; lista: ${names.join(" x ")}`, scenario_index: scenarios.length })
       }
     }
     const label = turn === 2 ? (/\s+x\s+/i.test(heading) ? heading : `${heading ? `${heading} · ` : ""}${names.join(" x ")}`) : `${mode === "espontaneo" ? "Primeiro turno espontâneo" : "Primeiro turno estimulado"}${context ? `: ${context}` : ""}`
@@ -95,10 +124,16 @@ export function extrairPublicacaoRealTime(html: string, plain: (html: string) =>
     heading = ""
   }
   if (!scenarios.length) return null
-  if (footnoteRequired && !notes.length) throw new Error("Real Time: nota de agrupamento ausente")
-  if (!scenarios.some((scenario) => scenario.turn === 1)) throw new Error("Real Time: primeiro turno ausente")
+  for (const index of footnoteRequired) {
+    const others = scenarios[index]?.results.find((row) => /^Outros$/i.test(row.raw_label))
+    if (!(scenarioNotes.get(index) ?? []).some((note) => {
+      const grouping = note.match(/(?:somad[oa]s?|somam|juntos|agrupad[oa]s?|outros)[^%]*?\b(\d+(?:[,.]\d+)?)\s*%/i)
+      return grouping && others && Number(grouping[1].replace(",", ".")) === others.value_percent
+    })) blockers.push({ code: "extraction_incomplete", detail: "Real Time: nota de agrupamento ausente ou conflitante", scenario_index: index })
+  }
+  if (!scenarios.some((scenario) => scenario.turn === 1)) blockers.push({ code: "extraction_incomplete", detail: "Real Time: primeiro turno ausente" })
   const runoffs = scenarios.filter((scenario) => scenario.turn === 2).length
-  if (runoffCount !== null && runoffCount !== runoffs) throw new Error("Real Time: quantidade de cenários divergente")
-  if (!runoffs && /(?:segundo|2[oº°])\s+turno/i.test(plain(safe))) throw new Error("Real Time: segundo turno sem captura completa")
-  return { scenarios, notes }
+  if (runoffCount !== null && runoffCount !== runoffs) blockers.push({ code: "extraction_incomplete", detail: "Real Time: quantidade de cenários divergente" })
+  if (!runoffs && /(?:segundo|2[oº°])\s+turno/i.test(plain(safe))) blockers.push({ code: "extraction_incomplete", detail: "Real Time: segundo turno sem captura completa" })
+  return { scenarios, notes, blockers }
 }

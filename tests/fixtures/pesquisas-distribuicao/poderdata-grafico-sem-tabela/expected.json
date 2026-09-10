@@ -1,0 +1,20 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "poderdata-grafico-sem-tabela",
+  "fixture_kind": "source_excerpt",
+  "registro": { "id": "BR-04974/2026", "origem": "../L2/poderdata-aya-nacional-br-04974-2026.dossier.json#/poll_id", "status": "identificador do alvo; registro oficial não observado no dossiê" },
+  "datas_escritas": { "campo_inicio": null, "campo_fim": null, "publicacao": null },
+  "modalidade": { "valor": "estimulada", "origem": "entrada.html title: 1º turno", "status": "observada, mas relatório integral ausente" },
+  "cargo": { "valor": "Presidente", "origem": "escopo do alvo PoderData nacional; dossiê não traz registro oficial" },
+  "uf": { "valor": "BR", "origem": "escopo do alvo nacional" },
+  "turno": { "valor": 1, "origem": "entrada.html title" },
+  "perguntas": [],
+  "cenarios": [
+    { "turno": 1, "modalidade": "estimulada", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Lula", "percentual": 38, "categoria": "candidato", "origem": "entrada.html title" },
+      { "rotulo": "Flávio", "percentual": 35, "categoria": "candidato", "origem": "entrada.html title" }
+    ], "categorias": [], "notas_agrupamento": [], "completude": "incompleta: gráfico sem tabela conciliada" }
+  ],
+  "oraculo": { "veredito": "pendente", "classificacao": "extração incompleta", "motivo": "gráfico sem tabela conciliada; não usar a chamada para fabricar a lista completa", "publicavel": false, "nao_completar_por_complemento": true, "nao_atribuir_identidade": true },
+  "proveniencia": ["../L2/poderdata-aya-nacional-br-04974-2026.dossier.json", "../L2/source-html/poderdata-aya-nacional-br-04974-2026.html.txt"]
+}
