@@ -1,0 +1,2 @@
+# Capturas mantêm os bytes verificados pelo SHA-256, inclusive espaços da fonte.
+*.txt -whitespace
