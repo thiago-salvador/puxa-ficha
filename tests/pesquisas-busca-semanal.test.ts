@@ -1,13 +1,20 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
 import { readFileSync } from "node:fs"
+import { createRequire } from "node:module"
 import test from "node:test"
-import {
+
+const require = createRequire(import.meta.url)
+const serverOnlyPath = require.resolve("server-only")
+require.cache[serverOnlyPath] = {
+  id: serverOnlyPath, filename: serverOnlyPath, loaded: true, exports: {},
+} as never
+const {
   carregarPesquisasEleitorais,
   carregarPesquisasGovernadores,
   listarPesquisasGovernadorPorSlug,
   listarPesquisasPresidenciaisPorSlug,
-} from "../src/lib/pesquisas-eleitorais"
+} = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
 
 const UFS = "AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO".split(" ")
 const base = "QA/evidencias/2026-09-10-pesquisas-fontes/"
