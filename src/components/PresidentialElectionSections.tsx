@@ -5,7 +5,7 @@ import { loadPresidentialPolls, loadPresidentialPrograms } from "@/lib/president
 import type { StateProgramCandidate } from "@/lib/state-programs"
 
 export async function PresidentialElectionSections({ candidates, unavailable = false }: {
-  candidates: StateProgramCandidate[]
+  candidates: (StateProgramCandidate & { foto_url?: string | null })[]
   unavailable?: boolean
 }) {
   const [programs, polls] = await Promise.all([
@@ -27,6 +27,6 @@ export async function PresidentialElectionSections({ candidates, unavailable = f
     <SlashDivider />
     <StatePrograms programs={programs.data} unavailable={unavailable || programs.unavailable} showContext={false} />
     <SlashDivider />
-    <StatePolls polls={polls.data} unavailable={polls.unavailable} />
+    <StatePolls polls={polls.data} candidates={candidates} unavailable={polls.unavailable} />
   </div>
 }

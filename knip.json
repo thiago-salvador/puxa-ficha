@@ -9,7 +9,8 @@
     "tests/**/*.test.{ts,tsx}",
     "tests/helpers/render-candidato-alerta-patrimonial.tsx",
     "tests/fixtures/visual/api.ts",
-    "tests/visual/**/*.spec.ts"
+    "tests/visual/**/*.spec.ts",
+    "tests/visual/fixtures/poll-evolution.tsx"
   ],
   "project": [
     "src/**/*.{ts,tsx}",
