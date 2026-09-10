@@ -8,7 +8,8 @@ uma verificação distinta das fontes previamente cadastradas.
 
 ## Em cada execução
 
-1. Conferir a branch, os catálogos e `scripts/data/pesquisas-busca-semanal.json`.
+1. Conferir a branch, os catálogos, `scripts/data/pesquisas-busca-semanal.json`
+   e a sequência obrigatória de `scripts/data/pesquisas-buscas-alternativas.json`.
 2. Buscar `pesquisa de voto presidente Brasil` e `pesquisa de voto governo
    [estado]` para cada uma das 27 UFs, incluindo o Distrito Federal.
 3. Procurar divulgações desde o último período concluído por UF, com dois dias
@@ -51,6 +52,27 @@ uma verificação distinta das fontes previamente cadastradas.
     significam fichas públicas atualizadas.
 
 ## Cursor e resultado
+
+### Sequência de buscas por candidato
+
+A lista de buscas alternativas possui 14 caminhos ordenados: nome e estado;
+cargo e ano; nome exato; variantes comprovadas; outros veículos; instituto e
+nome; registro e nome; registro sem nome; tabela completa; PDF; site do instituto;
+zero ou agrupamento; outra rodada; histórico identificado. As seis pendências
+atuais têm cinco consultas concretas cada para iniciar a investigação.
+
+Gerar a fila novamente a partir de todos os candidatos ativos em cada execução.
+Os seis nomes iniciais não são uma lista fechada. Registrar consulta, motor,
+janela, fontes, resultado e justificativa para cada caminho aplicável. Campos
+desconhecidos permitem somente um adiamento justificado, retomado quando forem
+descobertos. Consulta planejada não conta como consulta executada.
+
+Um caminho sem resultado leva ao próximo. Reutilizar a mesma captura e consulta
+entre candidatos, extraindo a tabela inteira uma única vez. As janelas de
+3, 7 e 14 dias e o histórico ficam distintos. A rotina só pode encerrar uma lacuna
+como resolvida com percentual individual confirmado; se os caminhos terminarem
+sem ele, a pendência permanece. Limite de ferramenta ou tempo significa busca
+incompleta. Nenhum desses estados permite anunciar todos os candidatos cobertos.
 
 O estado mantém BR e as 27 UFs. `last_search_completed_at` avança apenas quando a
 busca daquela abrangência terminou. Pendências ficam em `pending` e voltam a

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Sequência obrigatória de buscas alternativas para recuperar percentuais individuais, sem confundir busca esgotada com candidato coberto.",
+  "candidate_roster": "data/candidate-roster-active-20260905.json",
+  "roster_rule": "Usar o cadastro oficial vigente a cada execução: todos os candidatos ativos a Presidente e Governador, em BR e nas 27 UFs. A lista inicial de pendências abaixo não limita o universo.",
+  "engine_rule": "Usar Google quando disponível. Se indisponível, usar a busca web disponível e registrar o motor real. Não declarar busca no Google quando outro motor foi usado.",
+  "windows_days": [3, 7, 14],
+  "window_rule": "Começar no período desde o último cursor com a sobreposição existente; para lacunas individuais, executar os caminhos aplicáveis nas janelas de 3, 7 e 14 dias. A data de divulgação da pesquisa define a idade; a data da reportagem ou do índice não a substitui.",
+  "placeholders": {
+    "NOME": "Nome de urna comprovado do candidato",
+    "VARIANTE": "Nome civil ou alias documentado da mesma pessoa; não inventar variantes",
+    "CARGO": "governador ou presidente",
+    "LOCAL": "Nome completo do estado, Distrito Federal ou Brasil para presidente",
+    "UF": "Sigla da UF; BR para presidente",
+    "ANO": "Ano da eleição",
+    "INSTITUTO": "Instituto identificado em fonte encontrada",
+    "REGISTRO": "Registro publicado, preservando o original e a representação pesquisada",
+    "MES": "Mês da divulgação investigada",
+    "DOMINIO": "Um veículo confiável ou domínio oficial do instituto por consulta"
+  },
+  "steps": [
+    {"id": "01_nome_estado", "query": "Pesquisa votos [LOCAL] [NOME]", "when": "sempre"},
+    {"id": "02_cargo_ano", "query": "[NOME] pesquisa [CARGO] [LOCAL] [ANO]", "when": "sempre"},
+    {"id": "03_nome_exato", "query": "\"[NOME]\" intenção de voto [UF] [ANO]", "when": "sempre"},
+    {"id": "04_variantes", "query": "[VARIANTE] pesquisa [CARGO] [LOCAL] [ANO]", "when": "para cada variante comprovada distinta do nome já buscado"},
+    {"id": "05_outros_veiculos", "query": "site:[DOMINIO] \"[NOME]\" pesquisa [ANO]", "when": "percorrer veículos com cobertura nacional e regional; sem parar na primeira fonte bloqueada"},
+    {"id": "06_instituto_nome", "query": "\"[NOME]\" [INSTITUTO] [LOCAL] [ANO]", "when": "para cada instituto identificado nas buscas; não se limitar à primeira rodada"},
+    {"id": "07_registro_nome", "query": "\"[REGISTRO]\" \"[NOME]\"", "when": "quando houver registro publicado"},
+    {"id": "08_registro_sem_nome", "query": "\"[REGISTRO]\" pesquisa", "when": "quando houver registro; encontra páginas e tabelas que não indexam todos os nomes"},
+    {"id": "09_tabela_completa", "query": "[INSTITUTO] pesquisa [CARGO] [LOCAL] [MES] [ANO] resultados completos", "when": "quando instituto e período forem conhecidos"},
+    {"id": "10_pdf_original", "query": "[INSTITUTO] [LOCAL] [MES] [ANO] pesquisa filetype:pdf", "when": "quando instituto e período forem conhecidos; abrir tabela ou PDF e conferir o cenário completo"},
+    {"id": "11_site_instituto", "query": "site:[DOMINIO] [LOCAL] [MES] [ANO] [CARGO]", "when": "no domínio oficial verificado de cada instituto identificado"},
+    {"id": "12_zero_ou_agrupamento", "query": "\"[NOME]\" pesquisa (\"não pontuou\" OR \"não pontuaram\" OR \"0%\" OR \"outros\")", "when": "se não houver percentual individual; o resultado desta busca nunca transforma agrupamento ou omissão em zero"},
+    {"id": "13_outra_rodada", "query": "pesquisa [CARGO] [LOCAL] [MES] [ANO]", "when": "procurar outros institutos e repetir os caminhos 06 a 11 nas rodadas ainda não consultadas"},
+    {"id": "14_historico_identificado", "query": "\"[NOME]\" pesquisa [CARGO] [LOCAL] [ANO]", "when": "somente após esgotar a janela de 14 dias, retirar o filtro de data e identificar explicitamente eventual resultado histórico"}
+  ],
+  "publication_domains": ["g1.globo.com", "cnnbrasil.com.br", "noticias.uol.com.br", "www1.folha.uol.com.br", "estadao.com.br", "iclnoticias.com.br", "r7.com", "metropoles.com", "poder360.com.br"],
+  "domain_rule": "A lista é ponto de partida, não restrição. Acrescentar veículos regionais estabelecidos encontrados na busca e a fonte original. Não repetir a mesma reportagem republicada como confirmação independente.",
+  "execution_rules": [
+    "Gerar a fila a partir de todos os candidatos ativos e do resultado efetivamente selecionado nas fichas; incluir ausência, agrupamento, identidade pendente e resultado somente histórico.",
+    "Uma busca vazia ou página inacessível exige o próximo caminho aplicável. Uma matéria com Outros exige buscar a tabela original e outra rodada/instituto.",
+    "Parar a recuperação da lacuna quando houver percentual individual verificável, inclusive zero explícito, com fonte lida e identidade de pessoa/cargo/UF comprovada. A descoberta geral de novas rodadas continua para BR e as 27 UFs.",
+    "Campos desconhecidos como instituto ou registro tornam um caminho temporariamente inaplicável, com justificativa registrada. Ao descobrir o campo, retomar esse caminho.",
+    "Resultados de rejeição, avaliação de governo, projeção, outro cargo ou outro cenário não preenchem intenção de voto do candidato.",
+    "Reutilizar consultas e capturas idênticas entre candidatos da mesma rodada. Extrair todos os nomes de uma tabela lida, reduzindo consultas e tokens.",
+    "Deduplicar por consulta, motor e janela. Não repetir acesso bloqueado sem mudança; procurar outra fonte. Limite de tempo ou ferramenta gera pendência, nunca cobertura completa.",
+    "A ausência de resultado após todos os caminhos não prova inexistência de pesquisa. Registrar os caminhos tentados e manter a pendência para a próxima execução."
+  ],
+  "attempt_fields": ["candidate_slug", "office", "uf", "step_id", "query", "engine", "window_start", "window_end", "attempted_at", "source_urls", "outcome", "reason", "poll_registration", "poll_publication_date", "scenario", "value_percent", "evidence_path"],
+  "attempt_outcomes": ["individual_verified", "historical_individual_verified", "grouped_only", "no_relevant_result", "source_unavailable", "metadata_conflict", "identity_unresolved", "not_applicable", "not_executed"],
+  "closure_rules": {
+    "covered_recent": "Percentual individual confirmado em pesquisa da janela; mostrar a data e o cenário.",
+    "covered_historical": "Somente percentual histórico confirmado; manter necessidade de busca recente.",
+    "searched_unresolved": "Todos os caminhos aplicáveis registrados, sem percentual verificável; permanece pendente e volta à fila.",
+    "incomplete": "Há caminho aplicável não executado, bloqueio técnico ou limite de execução; não marcar busca esgotada.",
+    "all_candidates_complete": "Só declarar cobertura integral quando todos os candidatos ativos tiverem resultado individual confirmado, distinguindo recentes de históricos. Nunca preencher lacunas por inferência."
+  },
+  "initial_pending_candidates": [
+    {
+      "candidate_slug": "maria-bona", "uf": "BA", "name": "Maria Bona", "status": "not_executed",
+      "queries": ["Maria Bona pesquisa governador Bahia 2026", "\"Maria Bona\" Atlas Bahia setembro 2026", "\"BA-08891/2026\"", "Atlas A Tarde Bahia setembro 2026 filetype:pdf", "\"Maria Bona\" pesquisa Quaest Bahia 2026"],
+      "investigation": "Confirmar cenário e registro do zero localizado, ou encontrar outra rodada que individualize Maria Bona."
+    },
+    {
+      "candidate_slug": "expedito-mendonca", "uf": "DF", "name": "Expedito Mendonça", "status": "not_executed",
+      "queries": ["Expedito Mendonça pesquisa governador Distrito Federal 2026", "\"Expedito Mendonça\" IGAPE setembro 2026", "IGAPE pesquisa Distrito Federal setembro 2026 registro TSE", "\"Expedito Mendonça\" Datafolha 2026", "pesquisa governador Distrito Federal setembro 2026 filetype:pdf"],
+      "investigation": "Completar ficha técnica e registro do levantamento IGAPE ou recuperar resultado individual de outro instituto."
+    },
+    {
+      "candidate_slug": "dimas-cassimiro", "uf": "MA", "name": "Dimas Cassimiro", "status": "not_executed",
+      "queries": ["Dimas Cassimiro pesquisa governador Maranhão 2026", "\"Dimas Cassimiro\" IPPI pesquisa", "\"MA-08868/2026\"", "\"Dimas Cassimiro\" INOP Qualitativa pesquisa", "IPPI Maranhão setembro 2026 filetype:pdf"],
+      "investigation": "Obter tabela original ou outra rodada; o agrupamento IPPI não autoriza percentual por nome."
+    },
+    {
+      "candidate_slug": "reginaldo-lima", "uf": "MA", "name": "Reginaldo Lima", "status": "not_executed",
+      "queries": ["Reginaldo Lima pesquisa governador Maranhão 2026", "\"Reginaldo Lima\" INOP agosto setembro 2026", "\"Reginaldo Lima\" Qualitativa pesquisa", "\"Reginaldo Lima\" \"MA-08868/2026\"", "INOP Maranhão setembro 2026 filetype:pdf"],
+      "investigation": "Conferir resultados nominais em INOP/Qualitativa e separar datas antigas, totais e votos válidos."
+    },
+    {
+      "candidate_slug": "saulo-arcangeli", "uf": "MA", "name": "Saulo Arcangeli", "status": "not_executed",
+      "queries": ["Saulo Arcangeli pesquisa governador Maranhão 2026", "\"Saulo Arcangeli\" INOP setembro 2026", "\"Saulo Arcangeli\" Quaest pesquisa 2026", "\"Saulo Arcangeli\" Qualitativa pesquisa", "Quaest Maranhão agosto setembro 2026 filetype:pdf"],
+      "investigation": "Procurar percentual individual, incluindo zero explícito, em outra rodada sem repartir Outros."
+    },
+    {
+      "candidate_slug": "ruth-reis", "uf": "PA", "name": "Ruth Reis", "status": "not_executed",
+      "queries": ["Ruth Reis pesquisa governadora Pará 2026", "\"Ruth Reis\" Quaest Pará setembro 2026", "\"Ruth Reis\" Atlas pesquisa Pará", "\"Ruth Reis\" Real Time Big Data pesquisa", "pesquisa governador Pará setembro 2026 candidatos filetype:pdf"],
+      "investigation": "Procurar rodada que teste Ruth Reis nominalmente. Não transferir o percentual de Araceli para ela."
+    }
+  ],
+  "initial_status_note": "Esta é uma nova lista operacional de tentativas, ainda não executada integralmente. Buscas anteriores constam de QA/evidencias/2026-09-10-pesquisas-fontes/busca-nominal.json."
+}

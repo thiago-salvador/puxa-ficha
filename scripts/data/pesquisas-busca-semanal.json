@@ -23,6 +23,7 @@
     "publication_verified": false
   },
   "nominal_search": {
+    "fallback_playbook": "scripts/data/pesquisas-buscas-alternativas.json",
     "query_template": "Pesquisa votos [ESTADO] [NOME DO CANDIDATO]",
     "triggers": ["sem_percentual_individual", "agrupado_em_outros", "identidade_pendente", "somente_resultado_historico"],
     "fallbacks": ["nome_de_urna_e_nome_civil", "instituto_registro_data", "outra_reportagem", "tabela_ou_pdf_original"],
