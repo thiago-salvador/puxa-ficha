@@ -71,6 +71,10 @@ function matrixCommand(options: Map<string, string>): void {
 function findDocuments(inputDir: string, matrix: ItemMatrizAgendada[]): DocumentoColetadoAgendado[] {
   if (!existsSync(inputDir)) return []
   const documents: DocumentoColetadoAgendado[] = []
+  const discoveryReceipt = (dir: string): Pick<DocumentoColetadoAgendado, "discovery"> => {
+    const path = resolve(dir, "discovered-targets.json")
+    return existsSync(path) ? { discovery: JSON.parse(readFileSync(path, "utf8")) } : {}
+  }
   // download-artifact can flatten a single matching artifact into the input root.
   // Only a single expected source/UF can identify that document unambiguously.
   const flatProposalPath = resolve(inputDir, "proposal.json")
@@ -78,6 +82,7 @@ function findDocuments(inputDir: string, matrix: ItemMatrizAgendada[]): Document
     documents.push({
       key: matrix.length === 1 ? matrix[0].key : "unmapped-flat-artifact",
       proposal: JSON.parse(readFileSync(flatProposalPath, "utf8")) as DocumentoPropostaAgendada,
+      ...discoveryReceipt(inputDir),
     })
   }
   for (const entry of readdirSync(inputDir, { withFileTypes: true })) {
@@ -89,6 +94,7 @@ function findDocuments(inputDir: string, matrix: ItemMatrizAgendada[]): Document
     documents.push({
       key,
       proposal: JSON.parse(readFileSync(proposalPath, "utf8")) as DocumentoPropostaAgendada,
+      ...discoveryReceipt(resolve(inputDir, entry.name)),
     })
   }
   return documents.sort((left, right) => left.key.localeCompare(right.key))

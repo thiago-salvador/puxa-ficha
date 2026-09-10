@@ -7,6 +7,7 @@ import { resolve } from "node:path"
 import { listarAlvosMonitoramento } from "../lib/pesquisas-monitoramento"
 import { resolverIdentidadeRevisada } from "../lib/pesquisas-monitoramento-identidades-revisadas"
 import type { AlvoMonitoramento } from "../lib/pesquisas-monitoramento-adapters"
+import type { ObservacaoPesqele } from "../lib/pesquisas-monitoramento-pesqele"
 
 export const CATALOGOS_PERMITIDOS = [
   "scripts/data/pesquisas-presidencia-2026.json",
@@ -150,6 +151,41 @@ export interface CatalogosAgendados {
 export interface DocumentoColetadoAgendado {
   key: string
   proposal: DocumentoPropostaAgendada
+  discovery?: { targets: AlvoMonitoramento[]; registry: ObservacaoPesqele[] }
+}
+
+// A coleta pode validar registros que ficaram pendentes na descoberta inicial.
+// O recibo amplia somente o par fonte/UF já autorizado; os contratos continuam
+// sujeitos a todas as verificações da consolidação.
+function incorporarDescobertasColetadas(input: EntradaConsolidacaoAgendada): ItemMatrizAgendada[] {
+  const matrix = structuredClone(input.matrix)
+  const knownIds = new Set(listarAlvosMonitoramento().map((target) => target.poll_id))
+  for (const document of input.documents) {
+    if (!document.discovery) continue
+    const manifest = matrix.find((entry) => entry.key === document.key)
+    if (!manifest) continue
+    if (!Array.isArray(document.discovery.targets) || !Array.isArray(document.discovery.registry)) throw new Error("recibo de descoberta inválido")
+    for (const target of document.discovery.targets) {
+      if (manifest.poll_ids.includes(target.poll_id)) continue
+      const registry = document.discovery.registry.filter((entry) => entry.registry.registration_id === target.registration_id)
+      const observation = registry[0]
+      const contract = document.proposal.items.find((item) => item.id === `${target.poll_id}-live`)?.normalized_contract
+      if (target.source_id !== manifest.source_id || target.geography_code !== manifest.uf
+        || !isNonEmptyString(target.poll_id) || knownIds.has(target.poll_id)
+        || !target.registration_id?.startsWith(`${manifest.uf}-`)
+        || target.office !== (manifest.uf === "BR" ? "Presidente" : "Governador")
+        || (contract && (contract.registration.code.value !== target.registration_id || contract.office !== target.office))
+        || registry.length !== 1 || observation.registry.office !== target.office
+        || observation.source_url !== "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+        || !isNonEmptyString(observation.public_text)
+        || createHash("sha256").update(observation.public_text).digest("hex") !== observation.evidence_sha256) {
+        throw new Error(`recibo de descoberta divergente: ${target.poll_id}`)
+      }
+      manifest.poll_ids.push(target.poll_id)
+      manifest.new_poll_ids = [...(manifest.new_poll_ids ?? []), target.poll_id]
+    }
+  }
+  return matrix
 }
 
 function stable(value: unknown): string {
@@ -491,6 +527,7 @@ export function consolidarPropostasAgendadas(input: EntradaConsolidacaoAgendada)
 }
 
 function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoConsolidacaoAgendada {
+  input = { ...input, matrix: incorporarDescobertasColetadas(input) }
   const alerts: string[] = []
   const globalAlerts = alerts
   const pollAlerts: ResultadoConsolidacaoAgendada["poll_alerts"] = []

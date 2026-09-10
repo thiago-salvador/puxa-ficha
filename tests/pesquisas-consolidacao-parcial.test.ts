@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { createHash } from "node:crypto"
 import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { createRequire } from "node:module"
@@ -120,6 +121,44 @@ test("descoberta incompleta não apaga operação nem declara sucesso global", (
   assert.equal(result.status, "blocked")
   assert.equal(result.coverage.status, "partial")
   assert.match(result.summary, /matéria sem registro/)
+})
+
+function discoveredDuringCollection() {
+  const input = fixture()
+  const poll = input.catalogs.presidente.pesquisas.pop()!
+  input.matrix[0].poll_ids.pop()
+  const publicText = `Registro ${poll.registration.code.value}`
+  input.documents[0].discovery = {
+    targets: [{ poll_id: poll.id!, source_id: poll.source_id, geography_code: "BR", office: "Presidente", registration_id: poll.registration.code.value }] as never,
+    registry: [{ registry: { registration_id: poll.registration.code.value, office: "Presidente" },
+      source_url: "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+      public_text: publicText, evidence_sha256: createHash("sha256").update(publicText).digest("hex") }] as never,
+  }
+  return input
+}
+
+test("registro validado durante coleta conserva operação vizinha sem liberar pesquisa incompleta", () => {
+  const input = discoveredDuringCollection()
+  const original = structuredClone(input.matrix)
+  const result = consolidarPropostasAgendadas(input)
+  assert.deepEqual(result.global_alerts, [])
+  assert.equal(result.diff.operations.length, 1)
+  assert.equal(result.poll_alerts.length, 1)
+  assert.equal(result.promotion.authorized, false)
+  assert.deepEqual(input.matrix, original)
+})
+
+for (const mode of ["sem recibo", "fonte", "UF", "hash", "registro ausente"]) test(`descoberta durante coleta rejeita ${mode}`, () => {
+  const input = discoveredDuringCollection()
+  const receipt = input.documents[0].discovery!
+  if (mode === "sem recibo") delete input.documents[0].discovery
+  if (mode === "fonte") receipt.targets[0].source_id = "outra-fonte"
+  if (mode === "UF") receipt.targets[0].geography_code = "SP"
+  if (mode === "hash") receipt.registry[0].public_text += " adulterado"
+  if (mode === "registro ausente") receipt.registry = []
+  const result = consolidarPropostasAgendadas(input)
+  assert.equal(result.diff.operations.length, 0)
+  assert.ok(result.global_alerts.length)
 })
 
 test("lote integral válido preserva ready; inalterado preserva no_changes sem comprovar cobertura", async () => {
