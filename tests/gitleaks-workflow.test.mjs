@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 5)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 5)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 6)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 6)
   assert.match(config, /id\s*=\s*"generic-api-key"/)
 })
 
@@ -304,6 +304,7 @@ test("only exact known false positives at their exact paths are allowed", () => 
     "supabase/migrations/20260510183000_seed_projetos_lei_amelio_soldado_sapl_completo.sql",
     "supabase/rollback/20260811100000_votacoes_senado_chave_exata.rollback.sql",
     "supabase/migrations/20260905150000_corrigir_textos_julgamento.sql",
+    "docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO.md",
   ]
 
   try {
@@ -317,6 +318,29 @@ test("only exact known false positives at their exact paths are allowed", () => 
     )
   } finally {
     rmSync(directory, { recursive: true, force: true })
+  }
+})
+
+test("diagnostic hash exception rejects another path and another value", () => {
+  const relativePath = "docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO.md"
+  const line = read(relativePath).split("\n").find((value) => value.startsWith("- SHA-256 do resumo consolidado:"))
+  assert.ok(line)
+  const hash = line.match(/[a-f0-9]{64}/)?.[0]
+  assert.ok(hash)
+  for (const [file, contents] of [
+    ["wrong-path.md", line],
+    [relativePath, line.replace(hash, `${hash.slice(0, -1)}f`)],
+  ]) {
+    const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+    try {
+      writeFixture(directory, file, contents)
+      const result = scan(directory)
+      assert.ifError(result.error)
+      assert.equal(result.status, 17)
+      assert.ok(result.findings.some((finding) => finding.RuleID === "sumologic-access-token"))
+    } finally {
+      rmSync(directory, { recursive: true, force: true })
+    }
   }
 })
 

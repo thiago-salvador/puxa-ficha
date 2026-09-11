@@ -107,7 +107,7 @@ export function parseTextoPoderData(text: string, registrationId: string, public
       const match = line.trim().match(/^(.+?)\s{2,}([\d.,%\s]+)$/)
       const values = match?.[2].trim().split(/\s+/) ?? []
       if (!match || values.length !== columns.length || values.some((value) => !/^\d+(?:[,.]\d+)?%?$/.test(value))) throw new Error("PoderData PDF: linha de resultados incompleta")
-      const value = Number(values.at(-1)!.replace("%", "").replace(",", "."))
+      const value = Number(values.at(-1)!.replace(/%$/, "").replace(",", "."))
       if (value < 0 || value > 100) throw new Error("PoderData PDF: percentual inválido")
       return { raw_label: match[1].trim(), value_percent: value }
     })
@@ -145,7 +145,7 @@ export function parseTextoPoderData(text: string, registrationId: string, public
   if (!crossTab) throw new Error("PoderData PDF: total independente ausente")
   const crossRows = crossTab.split(/\r?\n/).flatMap((line) => {
     const row = line.trim().match(/^(.+?)\s{2,}(\d+(?:[,.]\d+)?%)\s+(\d+(?:[,.]\d+)?%)\s+(\d+(?:[,.]\d+)?%)$/)
-    return row && row[1] !== "Total" ? [{ raw_label: row[1], value_percent: Number(row[4].replace("%", "").replace(",", ".")) }] : []
+    return row && row[1] !== "Total" ? [{ raw_label: row[1], value_percent: Number(row[4].replace(/%$/, "").replace(",", ".")) }] : []
   })
   const primary = scenarios.find((scenario) => scenario.turn === 1)!
   const identity = (name: string) => resolverNomePresidencial(name) ?? `literal:${name}`

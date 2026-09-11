@@ -33,8 +33,9 @@ function dateKey(label: string): string {
 }
 
 function plain(text: string): string {
-  return text.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/\s+/g, " ").trim()
+  const entities: Record<string, string> = { "&nbsp;": " ", "&amp;": "&", "&quot;": '"', "&#39;": "'" }
+  return text.replace(/<[^>]*>/g, " ").replace(/&(?:nbsp|amp|quot|#39);/g, (entity) => entities[entity])
+    .replace(/\s+/g, " ").trim()
 }
 
 function fragments(html: string, className: string): string[] {

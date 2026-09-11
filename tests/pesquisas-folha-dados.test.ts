@@ -10,6 +10,11 @@ const html = (id: string) => readFileSync(new URL(`${id}.html`, dir), "utf8")
 const parse = (id: string) => extrairDadosEstaticosFolha(html(id))!
 const synthetic = (tsv: string) => `<span class="chart-title">Intenção de voto</span>\n<script>\ndata: ${JSON.stringify(tsv)}\n</script>`
 
+test("título preserva entidades codificadas duas vezes", () => {
+  const input = synthetic("Nome\tPercentual\nA\t60\nB\t40").replace("Intenção de voto", "&amp;quot; &amp;#39; &quot; &#39; &amp;")
+  assert.equal(extrairDadosEstaticosFolha(input)?.title, "&quot; &#39; \" ' &")
+})
+
 test("capturas preservam hash HTTP e todas as células TSV literais", () => {
   const manifest = JSON.parse(readFileSync(new URL("manifest.json", dir), "utf8"))
   for (const record of manifest.records) {

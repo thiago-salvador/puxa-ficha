@@ -41,3 +41,13 @@ id = "generic-api-key"
   regexTarget = "secret"
   regexes = ['''^2c3f7577-3ed9-44ff-9360-c1740191e043$''']
   paths = ['''^supabase/migrations/20260905150000_corrigir_textos_julgamento\.sql$''', '''^tests/gitleaks-workflow\.test\.mjs$''']
+
+[[rules]]
+id = "sumologic-access-token"
+
+  [[rules.allowlists]]
+  description = "SHA-256 do resumo de diagnóstico da coleta, não uma credencial"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^ae5aafb1651779d9252ee7d6b60b1db44c0490f09de40775e1b22aee142348de$''']
+  paths = ['''^docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO\.md$''']

@@ -39,8 +39,10 @@ export interface ObservacaoListagemPesquisas {
 }
 
 function plainText(html: string): string {
-  return html.replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ")
-    .replace(/&#(\d+);/g, (_, raw: string) => {
+  return html.replace(/<[^>]*>/g, " ")
+    .replace(/&(?:amp|nbsp|#(\d+));/g, (entity: string, raw: string | undefined) => {
+      if (entity === "&amp;") return "&"
+      if (entity === "&nbsp;") return " "
       const value = Number(raw)
       return value >= 0 && value <= 0x10ffff ? String.fromCodePoint(value) : " "
     }).replace(/\s+/g, " ").trim()

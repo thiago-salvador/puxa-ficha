@@ -7,6 +7,12 @@ import { criarClienteHttpMonitoramento } from "../scripts/lib/pesquisas-monitora
 const listing = LISTAGENS_PESQUISAS[0]
 const known = "https://noticias.r7.com/eleicoes/2026/pesquisa-anterior/"
 const fresh = "https://noticias.r7.com/eleicoes/2026/pesquisa-nova/"
+test("título decodifica entidades uma única vez", () => {
+  const title = "Real Time: governador &amp;#65; &#38;amp; &#65; &amp;nbsp;"
+  const links = extrairLinksDePesquisas(`<a href="${fresh}">${title}</a>`, listing, new Set())
+  assert.equal(links[0].title, "Real Time: governador &#65; &amp; A &nbsp;")
+})
+
 const html = `<a href="${known}">Real Time: governador do Amazonas lidera no primeiro turno</a>
 <a href="${fresh}?utm_source=feed#resultado">Real Time: candidata tem 40% para o Governo da Bahia</a>
 <a href="${fresh}">Real Time: candidata tem 40% para o Governo da Bahia</a>
