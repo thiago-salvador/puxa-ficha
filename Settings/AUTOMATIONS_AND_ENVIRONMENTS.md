@@ -145,6 +145,7 @@ nem em runtime de produção. Não autoriza aplicação de migrations.
 | `PF_VISUAL_FIXTURE_BUILD` | Build isolado com fixtures de dados para Playwright | Opcional; somente `1`, junto de `CI=true`, sem Vercel e com URL placeholder, habilita o alias de teste e a saída `.next-e2e`. Ausente mantém o build normal. Não configurar em produção. | Teste local ou CI |
 | `PF_PLAYWRIGHT_EDITORIAL_WEBSERVER` | Sobe servidor editorial local | Opcional; somente `1` ativa. | Teste local |
 | `PF_RUN_SEARCH_SMOKE`, `PF_EXPECT_PLACEHOLDER_DATA` | Seleção de cenários visuais | Opcionais; valores truthy esperados pelas specs ativam o cenário. | CI ou teste local |
+| `PESQUISAS_I1_RECEIPTS`, `PESQUISAS_I2_DOCUMENTS` | Replay de recibos e relatórios de pesquisas | Opcionais; caminhos locais dos recibos capturados e dos PDFs. O replay exige ambos e é omitido quando ausentes. Não configurar em produção. | Teste local |
 | `PF_EDITORIAL_FICHA_SLUG`, `PF_EDITORIAL_RELAX_SOBER`, `PF_EDITORIAL_REQUIRE_SELLOS` | Recorte e rigor das specs editoriais | Opcionais e restritas aos testes. | Teste local |
 | `PF_FIXTURE_SCENARIO`, `PF_FIXTURE_SHA` | Fixture do readback da Fase 4 | Opcionais; defaults `ok` e vazio. | Teste unitário |
 | `PF_ITEM11_MUTATE_VISIBLE_CONTENT` | Perturbação deliberada do fixture | Opcional e restrita ao grader de regressão. | Teste local |
