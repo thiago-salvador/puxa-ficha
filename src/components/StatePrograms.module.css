@@ -24,7 +24,7 @@
 .identity h4 { font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.25; text-transform: uppercase; overflow-wrap: anywhere; }
 .identity h4 a:hover { text-decoration: underline; text-underline-offset: .15em; }
 .partyLogo { display: flex; align-items: center; width: fit-content; margin-top: .375rem; }
-.runningMate { margin-top: .375rem; font-size: .8125rem; line-height: 1.5; color: var(--muted-foreground); overflow-wrap: anywhere; }
+.runningMate { margin-top: .375rem; font-size: .8125rem; font-weight: 700; line-height: 1.5; color: var(--muted-foreground); overflow-wrap: anywhere; }
 .content { min-width: 0; }
 .summaryText { font-size: 1rem; line-height: 1.65; overflow-wrap: anywhere; }
 .preview { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
