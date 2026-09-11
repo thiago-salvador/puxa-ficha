@@ -1,0 +1,16 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-zero-omitido",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "BR-07561/2026", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/registration/code/value" },
+  "datas_escritas": { "campo_inicio": { "valor": "2026-08-30", "origem": "receipt proposal" }, "campo_fim": { "valor": "2026-09-02", "origem": "receipt proposal" }, "publicacao": { "valor": "2026-09-03", "origem": "receipt proposal" } },
+  "modalidade": { "valor": "estimulada", "origem": "receipt proposal#/items/0/normalized_contract/cenarios/0" },
+  "cargo": { "valor": "Presidente", "origem": "receipt proposal" },
+  "uf": { "valor": "BR", "origem": "receipt proposal" },
+  "turno": { "valor": 1, "origem": "entrada.txt" },
+  "perguntas": [],
+  "cenarios": [ { "turno": 1, "modalidade": "estimulada", "pergunta": null, "resultados_explicitamente_publicados": [ { "rotulo": "Lula", "percentual": 37, "categoria": "candidato" }, { "rotulo": "Flávio Bolsonaro", "percentual": 34, "categoria": "candidato" }, { "rotulo": "Escritor Augusto Cury", "percentual": 10, "categoria": "candidato" }, { "rotulo": "Renan Santos", "percentual": 3, "categoria": "candidato" }, { "rotulo": "Ronaldo Caiado", "percentual": 2, "categoria": "candidato" }, { "rotulo": "Pablo Marçal", "percentual": 2, "categoria": "candidato" }, { "rotulo": "Hertz Dias", "percentual": 2, "categoria": "candidato" }, { "rotulo": "Clariana Barão", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Zema", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Rui Costa Pimenta", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Edmilson Costa", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Samara", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Branco/Nulo", "percentual": 5, "categoria": "branco_nulo" }, { "rotulo": "Não sabe", "percentual": 2, "categoria": "nao_sabe_nao_respondeu" } ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "inválida" } ],
+  "resultados_proveniencia": "entrada.txt; lista completa no /private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/cenarios/0/resultados",
+  "proveniencia": ["/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json", "entrada.txt"],
+  "oraculo": { "veredito": "rejeitar", "motivo": "o candidato publicado com 0% foi removido; zero explícito não é ausência e não pode ser reconstruído pelo complemento", "linha_obrigatoria_ausente": { "rotulo": "Veterinário Wilson Grassi", "percentual": 0, "categoria": "candidato", "origem": "/private/tmp/pf-pesquisas-s0-novas-presidente-v2/proposal.json#/items/0/normalized_contract/cenarios/0/resultados/12" }, "publicavel": false }
+}

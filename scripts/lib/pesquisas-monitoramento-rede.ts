@@ -3,6 +3,7 @@ import "server-only"
 export interface ClienteHttpMonitoramento {
   getText(url: string): Promise<{ body: string; observedAt: string; status: number }>
   getBytes(url: string): Promise<{ body: Uint8Array; observedAt: string; status: number }>
+  postForm(url: string, fields: Record<string, string>): Promise<{ body: string; observedAt: string; status: number }>
 }
 
 interface ClienteOptions {
@@ -16,6 +17,8 @@ interface ClienteOptions {
   now?: () => number
   sleep?: (milliseconds: number) => Promise<void>
   timeoutMs?: number
+  allowedFormUrls?: string[]
+  sessionCookieNames?: readonly string[]
 }
 
 interface RobotsRule {
@@ -105,6 +108,8 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
   const logger = options.logger ?? (() => undefined)
   const allowedOrigins = new Set(options.allowedOrigins)
   const robotsByOrigin = new Map<string, string>()
+  const sessionByOrigin = new Map<string, Map<string, string>>()
+  const allowedFormUrls = new Set(options.allowedFormUrls ?? [])
   let lastRequestAt = 0
 
   async function waitForRateLimit(): Promise<void> {
@@ -113,19 +118,34 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
     lastRequestAt = now()
   }
 
-  async function fetchOnce(url: string): Promise<{ response: Response; release: () => void }> {
+  async function fetchOnce(url: string, fields?: Record<string, string>): Promise<{ response: Response; release: () => void }> {
     await waitForRateLimit()
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), timeoutMs)
     try {
       const response = await fetchImpl(url, {
+        method: fields ? "POST" : "GET",
+        body: fields ? new URLSearchParams(fields) : undefined,
         headers: {
           accept: "text/html,text/plain,application/xhtml+xml;q=0.9,*/*;q=0.1",
           "user-agent": USER_AGENT,
+          ...(sessionByOrigin.has(new URL(url).origin) ? { cookie: [...sessionByOrigin.get(new URL(url).origin)!.values()].join("; ") } : {}),
+          ...(fields ? { "content-type": "application/x-www-form-urlencoded", "faces-request": "partial/ajax" } : {}),
         },
         redirect: "manual",
         signal: controller.signal,
       })
+      if (options.sessionCookieNames) {
+        for (const cookie of response.headers.getSetCookie()) {
+          const pair = cookie.split(";", 1)[0]
+          const name = pair.split("=", 1)[0]
+          if (!options.sessionCookieNames.includes(name)) continue
+          const origin = new URL(url).origin
+          const session = sessionByOrigin.get(origin) ?? new Map<string, string>()
+          session.set(name, pair)
+          sessionByOrigin.set(origin, session)
+        }
+      }
       return {
         response,
         release: () => clearTimeout(timeout),
@@ -162,7 +182,9 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
       reader.releaseLock()
     }
     const bytes = Buffer.concat(chunks.map((chunk) => Buffer.from(chunk)), total)
-    return mode === "text" ? new TextDecoder().decode(bytes) : new Uint8Array(bytes)
+    const encoding = /charset\s*=\s*["']?(?:iso-8859-1|windows-1252)/i.test(response.headers.get("content-type") ?? "")
+      ? "windows-1252" : "utf-8"
+    return mode === "text" ? new TextDecoder(encoding).decode(bytes) : new Uint8Array(bytes)
   }
 
   async function loadRobots(url: URL): Promise<string> {
@@ -176,6 +198,15 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
         throw new Error(`robots redirecionou em ${redigirUrlParaLog(robotsUrl)}`)
       }
       if (!pending.response.ok) {
+        await pending.response.body?.cancel()
+        // RFC 9309 2.3.1.3 permits access when robots is unavailable (4xx).
+        // Keep throttling/timeouts closed; this never overrides a content error.
+        if (pending.response.status >= 400 && pending.response.status < 500
+          && pending.response.status !== 408 && pending.response.status !== 429) {
+          logger(`robots indisponivel: HTTP ${pending.response.status}; origem aprovada sem regras robots`)
+          robotsByOrigin.set(url.origin, "")
+          return ""
+        }
         throw new Error(`robots indisponivel em ${redigirUrlParaLog(robotsUrl)}: HTTP ${pending.response.status}`)
       }
       const body = await readLimited(pending.response, "text")
@@ -196,16 +227,17 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
     }
   }
 
-  async function performRequest(rawUrl: string, mode: "text" | "bytes", attempt: number) {
+  async function performRequest(rawUrl: string, mode: "text" | "bytes", attempt: number, fields?: Record<string, string>) {
     let current = new URL(rawUrl)
     for (let redirect = 0; redirect <= maxRedirects; redirect += 1) {
       await validateDestination(current)
-      logger(`GET ${redigirUrlParaLog(current.toString())} tentativa ${attempt}/${maxAttempts}`)
-      const pending = await fetchOnce(current.toString())
+      logger(`${fields ? "POST" : "GET"} ${redigirUrlParaLog(current.toString())} tentativa ${attempt}/${maxAttempts}`)
+      const pending = await fetchOnce(current.toString(), fields)
       const response = pending.response
       if (response.status >= 300 && response.status < 400) {
         try {
           await response.body?.cancel()
+          if (fields) throw new Error("formulario nao pode redirecionar a requisicao HTTP")
           const location = response.headers.get("location")
           if (!location) throw new Error("redirecionamento sem Location")
           if (redirect === maxRedirects) throw new Error("limite de redirecionamentos excedido")
@@ -236,9 +268,9 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
     return error instanceof Error ? error : new Error("fonte indisponivel")
   }
 
-  async function requestAttempt(rawUrl: string, mode: "text" | "bytes", attempt: number) {
+  async function requestAttempt(rawUrl: string, mode: "text" | "bytes", attempt: number, fields?: Record<string, string>) {
     try {
-      const result = await performRequest(rawUrl, mode, attempt)
+      const result = await performRequest(rawUrl, mode, attempt, fields)
       if (result.body !== null) return { result, error: null, shouldRetry: false }
       const error = new Error(`HTTP ${result.status} em ${redigirUrlParaLog(rawUrl)}`)
       const shouldRetry = result.status === 408 || result.status === 429 || result.status >= 500
@@ -248,10 +280,10 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
     }
   }
 
-  async function request(rawUrl: string, mode: "text" | "bytes") {
+  async function request(rawUrl: string, mode: "text" | "bytes", fields?: Record<string, string>) {
     let lastError: unknown = null
     for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-      const outcome = await requestAttempt(rawUrl, mode, attempt)
+      const outcome = await requestAttempt(rawUrl, mode, attempt, fields)
       if (outcome.result) return outcome.result
       lastError = outcome.error
       if (!outcome.shouldRetry) break
@@ -260,6 +292,12 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
   }
 
   return {
+    async postForm(rawUrl, fields) {
+      if (!allowedFormUrls.has(rawUrl)) throw new Error("formulario fora da allowlist")
+      const response = await request(rawUrl, "text", fields)
+      if (typeof response.body !== "string") throw new Error("resposta textual inesperada")
+      return { ...response, body: response.body }
+    },
     async getText(rawUrl) {
       const response = await request(rawUrl, "text")
       if (typeof response.body !== "string") throw new Error("resposta textual inesperada")

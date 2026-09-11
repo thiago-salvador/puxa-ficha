@@ -1,0 +1,49 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "datafolha-html-missing-results",
+  "fixture_kind": "source_excerpt",
+  "registro": {
+    "id": "CE-04292/2026",
+    "origem": "../L2/datafolha-ce-ce-04292-2026.dossier.json#/registry_observation/registration_id",
+    "status": "observado"
+  },
+  "datas_escritas": {
+    "publicacao": { "valor": "2026-08-13", "origem": "../L2/source-html/datafolha-ce-ce-04292-2026.html.txt#L13" },
+    "campo_inicio": { "valor": "2026-08-10", "origem": "../L2/datafolha-ce-ce-04292-2026.dossier.json#/registry_observation/field_start" },
+    "campo_fim": { "valor": "2026-08-13", "origem": "../L2/datafolha-ce-ce-04292-2026.dossier.json#/registry_observation/field_end" }
+  },
+  "modalidade": { "valor": null, "status": "pendente: o recorte não traz cenário identificável" },
+  "cargo": { "valor": "Governador", "origem": "../L2/datafolha-ce-ce-04292-2026.dossier.json#/registry_observation/office", "status": "registro conjunto; Senado deve ser excluído" },
+  "uf": { "valor": "CE", "origem": "../L2/datafolha-ce-ce-04292-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": null, "status": "pendente: diagnóstico L2 = turno ausente" },
+  "perguntas": [],
+  "cenarios": [
+    {
+      "turno": null,
+      "modalidade": null,
+      "pergunta": null,
+      "resultados_explicitamente_publicados": [
+        { "rotulo": "Ciro Gomes", "percentual": 52, "categoria": "candidato", "origem": "entrada.html meta og:title" },
+        { "rotulo": "Elmano de Freitas", "percentual": 33, "categoria": "candidato", "origem": "entrada.html meta og:title" },
+        { "rotulo": "Pedro Brito (Novo)", "percentual": 1, "categoria": "candidato", "origem": "entrada.html meta description" },
+        { "rotulo": "Delegado Huggo (Missão)", "percentual": 1, "categoria": "candidato", "origem": "entrada.html meta description" },
+        { "rotulo": "Danilo Soares (Democrata)", "percentual": 1, "categoria": "candidato", "origem": "entrada.html meta description" }
+      ],
+      "categorias": [],
+      "notas_agrupamento": [],
+      "completude": "incompleta"
+    }
+  ],
+  "oraculo": {
+    "veredito": "pendente",
+    "classificacao": "extração incompleta",
+    "motivo": "HTML inesperado: turno ausente; o recorte preserva percentuais explícitos, mas não autoriza cenário completo",
+    "publicavel": false,
+    "nao_completar_por_complemento": true,
+    "nao_atribuir_identidade": true
+  },
+  "proveniencia": [
+    "../L2/datafolha-ce-ce-04292-2026.dossier.json",
+    "../L2/source-html/datafolha-ce-ce-04292-2026.html.txt"
+  ]
+}

@@ -1,3 +1,4 @@
+import type { DocumentoRealTime } from "./pesquisas-monitoramento-realtime-pdf"
 import "server-only"
 
 import { createHash } from "node:crypto"
@@ -9,7 +10,11 @@ import {
   parsePublicacaoMonitorada,
   type AlvoMonitoramento,
 } from "./pesquisas-monitoramento-adapters"
-import type { RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
+import { margemCompativelComRegistro, type RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
+import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
+import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
+import { carregarIdentidadesCuradas, resolverIdentidadeCurada, aliasSemEscopoEspecifico, type AliasCatalogado } from "./pesquisas-monitoramento-identidades"
+import { resolverIdentidadeRevisada } from "./pesquisas-monitoramento-identidades-revisadas"
 
 type ClassificacaoMonitoramento =
   | "novo"
@@ -19,6 +24,7 @@ type ClassificacaoMonitoramento =
   | "conflitante"
   | "fonte indisponivel"
   | "identidade nao resolvida"
+  | "extração incompleta"
 
 export interface EvidenciaPesquisaCandidata {
   source_id: string
@@ -44,11 +50,22 @@ export interface EvidenciaPesquisaCandidata {
   results: Array<{
     raw_label: string
     candidate_slug: string | null
-    match_status: "exact_alias" | "indeterminado"
+    match_status: "exact_alias" | "indeterminado" | "not_candidate"
     value_percent: number
   }>
   observed_at: string
   evidence_sha256: string
+  scenario_complete?: boolean
+  publication_complete?: boolean
+  additional_scenarios?: Array<{
+    scenario: EvidenciaPesquisaCandidata["scenario"]
+    results: EvidenciaPesquisaCandidata["results"]
+    scenario_complete: true
+  }>
+  registry_observation?: { url: string; observed_at: string; evidence_sha256: string }
+  result_document?: { url: string; observed_at: string; evidence_sha256: string; pages: number[] }
+  result_notes?: string[]
+  identity_observations?: Array<{ raw_label: string; candidate_slug: string; basis: "curated_name_party_office_uf" | "curated_ballot_name_office_uf" | "same_publication_full_name" | "reviewed_documentary_bridge"; source_url: string; source_sha256: string }>
 }
 
 export interface SourceContract {
@@ -90,6 +107,7 @@ interface ResultadoAvaliacao {
   decision: DecisaoMonitoramento
   evidence: EvidenciaPesquisaCandidata | null
   baseline: EvidenciaPesquisaCandidata | null
+  diagnostic?: { detail: string; source_url: string; source_observed_at: string | null; source_sha256: string | null }
 }
 
 const STALE_AFTER_DAYS = 45
@@ -153,6 +171,7 @@ function targetFromPoll(poll: CatalogPoll): AlvoMonitoramento {
     scenario_label: scenario.label_raw,
     scenario_question: scenario.question.value,
     population: poll.sample.population.value,
+    known_scenarios: poll.cenarios.map((scenario) => ({ id: scenario.id, turn: scenario.turn, label: scenario.label_raw, question: scenario.question.value })),
   }
 }
 
@@ -205,21 +224,51 @@ function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
     aliases.set(rawLabel, previous === undefined || previous === candidateSlug ? candidateSlug : null)
   }
   const president = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as {
-    exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
+    exact_aliases: AliasCatalogado[]
   }
   if (target.office === "Presidente") {
-    president.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+    president.exact_aliases.filter(aliasSemEscopoEspecifico).forEach((alias) => add(alias.raw_label, alias.candidate_slug))
     return aliases
   }
   const governors = JSON.parse(readFileSync("scripts/data/pesquisas-governadores-2026.json", "utf8")) as {
     datasets: Array<{
       publication_scope: { geography_code: string }
-      exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
+      exact_aliases: AliasCatalogado[]
     }>
   }
   const dataset = governors.datasets.find((candidate) => candidate.publication_scope.geography_code === target.geography_code)
-  if (!dataset) throw new Error(`aliases ausentes para ${target.geography_code}`)
-  dataset.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+  dataset?.exact_aliases.filter(aliasSemEscopoEspecifico).forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+  return aliases
+}
+
+/** Exact identity evidence already curated in this checkout; no fuzzy name matching. */
+function enrichAliases(target: AlvoMonitoramento, evidence: EvidenciaPesquisaCandidata, aliases: Map<string, string | null>): Map<string, string | null> {
+  const observations: NonNullable<EvidenciaPesquisaCandidata["identity_observations"]> = []
+  const allRows = [evidence, ...(evidence.additional_scenarios ?? [])].flatMap((scenario) => scenario.results)
+  const candidates = carregarIdentidadesCuradas(target.office, target.geography_code)
+  for (const row of allRows) {
+    if (aliases.has(row.raw_label) || row.match_status === "not_candidate") continue
+    // Governors retain the stricter name+party requirement. Presidential ballot
+    // names can be short, but must be explicit in the approved official record.
+    if (target.office === "Governador" && !/\([^()]+\)$/.test(row.raw_label)) continue
+    const reviewed = resolverIdentidadeRevisada(target, row.raw_label, candidates)
+    const candidate = reviewed ?? resolverIdentidadeCurada(row.raw_label, candidates, aliases)
+    if (!candidate) continue
+    aliases.set(row.raw_label, candidate.slug)
+    observations.push({ raw_label: row.raw_label, candidate_slug: candidate.slug, basis: reviewed ? "reviewed_documentary_bridge" : target.office === "Governador" ? "curated_name_party_office_uf" : "curated_ballot_name_office_uf", source_url: candidate.pacoteUrl, source_sha256: candidate.hash })
+  }
+  // A bare full name in a later scenario may refer to the unique, already
+  // resolved name+party printed in this same publication. Never infer a surname.
+  for (const row of allRows) {
+    if (aliases.has(row.raw_label) || row.match_status === "not_candidate" || /[()]/.test(row.raw_label)) continue
+    const matches = allRows.filter((other) => other.raw_label.replace(/\s+\([^()]+\)$/, "") === row.raw_label && /\([^()]+\)$/.test(other.raw_label))
+    const slugs = new Set(matches.map((other) => aliases.get(other.raw_label)))
+    if (slugs.size !== 1 || ![...slugs][0]) continue
+    const slug = [...slugs][0]!
+    aliases.set(row.raw_label, slug)
+    observations.push({ raw_label: row.raw_label, candidate_slug: slug, basis: "same_publication_full_name", source_url: evidence.url, source_sha256: evidence.evidence_sha256 })
+  }
+  if (observations.length) evidence.identity_observations = observations
   return aliases
 }
 
@@ -257,6 +306,9 @@ function fingerprint(evidence: EvidenciaPesquisaCandidata): string {
   const stable: Partial<EvidenciaPesquisaCandidata> = { ...evidence }
   delete stable.observed_at
   delete stable.evidence_sha256
+  delete stable.registry_observation
+  delete stable.identity_observations
+  if (stable.result_document) stable.result_document = { ...stable.result_document, observed_at: "" }
   return createHash("sha256").update(JSON.stringify(stable)).digest("hex")
 }
 
@@ -298,7 +350,7 @@ function classify(input: {
     registry.field_start !== input.evidence.fieldwork.start ||
     registry.field_end !== input.evidence.fieldwork.end ||
     registry.sample_size !== input.evidence.sample.size ||
-    (registry.margin_error_pp !== null && registry.margin_error_pp !== input.evidence.margin_error_pp) ||
+    !margemCompativelComRegistro(registry, input.evidence.margin_error_pp) ||
     !(
       registry.institute.toLocaleLowerCase("pt-BR").includes(input.evidence.institute.toLocaleLowerCase("pt-BR")) ||
       input.evidence.institute.toLocaleLowerCase("pt-BR").includes(registry.institute.toLocaleLowerCase("pt-BR"))
@@ -307,16 +359,21 @@ function classify(input: {
     return { decision: decision("conflitante", false, "registry_conflict"), evidence: input.evidence, baseline: input.baseline }
   }
 
+  const resolveResults = (results: EvidenciaPesquisaCandidata["results"]): EvidenciaPesquisaCandidata["results"] => results.map((result) => {
+    if (result.match_status === "not_candidate") return result
+    const candidateSlug = input.aliases.get(result.raw_label)
+    return candidateSlug
+      ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
+      : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
+  })
   const resolvedEvidence: EvidenciaPesquisaCandidata = {
     ...input.evidence,
-    results: input.evidence.results.map((result) => {
-      const candidateSlug = input.aliases.get(result.raw_label)
-      return candidateSlug
-        ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
-        : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
-    }),
+    results: resolveResults(input.evidence.results),
+    ...(input.evidence.additional_scenarios ? {
+      additional_scenarios: input.evidence.additional_scenarios.map((entry) => ({ ...entry, results: resolveResults(entry.results) })),
+    } : {}),
   }
-  if (resolvedEvidence.results.some((result) => result.match_status !== "exact_alias")) {
+  if ([resolvedEvidence, ...(resolvedEvidence.additional_scenarios ?? [])].some((entry) => entry.results.some((result) => result.match_status === "indeterminado"))) {
     return { decision: decision("identidade nao resolvida", false, "identity_unresolved"), evidence: resolvedEvidence, baseline: input.baseline }
   }
 
@@ -329,12 +386,10 @@ function classify(input: {
   }
   const resolvedBaseline: EvidenciaPesquisaCandidata = {
     ...input.baseline,
-    results: input.baseline.results.map((result) => {
-      const candidateSlug = input.aliases.get(result.raw_label)
-      return candidateSlug
-        ? { ...result, candidate_slug: candidateSlug, match_status: "exact_alias" as const }
-        : { ...result, candidate_slug: null, match_status: "indeterminado" as const }
-    }),
+    results: resolveResults(input.baseline.results),
+    ...(input.baseline.additional_scenarios ? {
+      additional_scenarios: input.baseline.additional_scenarios.map((entry) => ({ ...entry, results: resolveResults(entry.results) })),
+    } : {}),
   }
   if (fingerprint(resolvedBaseline) === fingerprint(resolvedEvidence)) {
     return { decision: decision("inalterado", false, "evidence_unchanged"), evidence: resolvedEvidence, baseline: resolvedBaseline }
@@ -417,21 +472,27 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
       code: evidence.scenario.geography_code,
     },
     office: evidence.scenario.office,
+    identity_aliases: [evidence, ...(evidence.additional_scenarios ?? [])].flatMap(({ scenario, results }) => results.flatMap((row) => {
+      const proof = evidence.identity_observations?.find((entry) => entry.raw_label === row.raw_label && entry.candidate_slug === row.candidate_slug)
+      return proof ? [{ raw_label: row.raw_label, candidate_slug: row.candidate_slug, year: 2026, office: scenario.office, geography: scenario.geography, turn: scenario.turn, scenario_id: scenario.id, proof }] : []
+    })),
     provenance: {
       result_url: evidence.url,
-      supporting_urls: [],
+      ...(evidence.result_notes?.length ? { result_notes: evidence.result_notes } : {}),
+      ...(evidence.registry_observation ? { registry_observation: evidence.registry_observation } : {}),
+      supporting_urls: [evidence.registry_observation?.url, evidence.result_document?.url].filter((url): url is string => Boolean(url)),
       consulted_at: evidence.observed_at,
-      capture: { format: "html", sha256: evidence.evidence_sha256, status: "indeterminado" },
+      capture: { format: evidence.result_document ? "html+pdf" : "html", sha256: evidence.evidence_sha256, ...(evidence.result_document ? { supporting_pdf_sha256: evidence.result_document.evidence_sha256 } : {}), status: "indeterminado" },
     },
-    cenarios: [{
-      id: evidence.scenario.id,
-      turn: evidence.scenario.turn,
-      geography: evidence.scenario.geography,
-      label_raw: evidence.scenario.label,
-      question: { value: evidence.scenario.question, status: "indeterminado" },
-      comparability_key: `2026|${evidence.scenario.office}|${evidence.scenario.geography_code}|${evidence.scenario.turn}|${evidence.scenario.id}`,
-      resultados: evidence.results.map((entry) => ({ ...entry, status: "indeterminado" })),
-    }],
+    cenarios: [evidence, ...(evidence.additional_scenarios ?? [])].map(({ scenario, results }) => ({
+      id: scenario.id,
+      turn: scenario.turn,
+      geography: scenario.geography,
+      label_raw: scenario.label,
+      question: { value: scenario.question, status: "indeterminado" },
+      comparability_key: `2026|${scenario.office}|${scenario.geography_code}|${scenario.turn}|${scenario.id}`,
+      resultados: results.map((entry) => ({ ...entry, status: "indeterminado" })),
+    })),
   }
 }
 
@@ -448,6 +509,7 @@ export function escreverRelatorios(results: Array<{ case_id: string; result: Res
       decision: result.decision,
       evidence: result.evidence,
       normalized_contract: normalizedContract(result),
+      ...(result.diagnostic ? { diagnostic: result.diagnostic } : {}),
     })),
   }
   const diff = {
@@ -517,31 +579,30 @@ export function avaliarEvidenciaAoVivo(input: {
   html: string
   observedAt: string
   registry?: RegistroTseMonitoramento[]
+  registrySupplement?: ObservacaoPesqele
+  resultDocument?: DocumentoPoderData | DocumentoRealTime
 }): ResultadoAvaliacao {
   const evidence = parsePublicacaoMonitorada({
     html: input.html,
     observedAt: input.observedAt,
     source: input.source,
     target: input.target,
+    registrySupplement: input.registrySupplement,
+    resultDocument: input.resultDocument,
   })
-  const registry: RegistroTseMonitoramento[] = input.registry ?? [{
-    registration_id: input.target.registration_id,
-    office: input.target.office,
-    geography: input.target.geography,
-    field_start: evidence.fieldwork.start,
-    field_end: evidence.fieldwork.end,
-    sample_size: evidence.sample.size,
-    margin_error_pp: evidence.margin_error_pp,
-    institute: input.source.roles.institute,
-  }]
-  return classify({
+  const registry: RegistroTseMonitoramento[] = input.registry ?? []
+  const result = classify({
     source: input.source,
     evidence,
     registry,
-    aliases: loadAliases(input.target),
+    aliases: enrichAliases(input.target, evidence, loadAliases(input.target)),
     baseline: null,
     observedAt: input.observedAt,
   })
+  if (result.decision.eligible_for_human_review && (!evidence.scenario_complete || !evidence.publication_complete)) {
+    return { ...result, decision: decision("conflitante", false, "scenario_incomplete") }
+  }
+  return result
 }
 
 export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {
@@ -549,6 +610,17 @@ export function resultadoFonteIndisponivel(reason: string): ResultadoAvaliacao {
     decision: decision("fonte indisponivel", false, reason),
     evidence: null,
     baseline: null,
+  }
+}
+
+export function resultadoFalhaColeta(input: { detail: string; source_url: string; source_observed_at: string | null; source_sha256: string | null }): ResultadoAvaliacao {
+  const conflict = /conflitant|divergente|duelo conflitante/i.test(input.detail)
+  const parsedSource = input.source_sha256 !== null
+  return {
+    decision: conflict ? decision("conflitante", false, "source_metadata_conflict")
+      : parsedSource ? decision("extração incompleta", false, "extraction_incomplete")
+        : decision("fonte indisponivel", false, /timeout/i.test(input.detail) ? "source_timeout" : "source_unavailable"),
+    evidence: null, baseline: null, diagnostic: input,
   }
 }
 

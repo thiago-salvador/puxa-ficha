@@ -1,0 +1,30 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "realtime-ms-multicenario",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "MS-07706/2026", "origem": "../L2/real-time-big-data-ms-ms-07706-2026.dossier.json#/registry_observation/registration_id", "status": "observado" },
+  "datas_escritas": {
+    "campo_inicio": { "valor": "2026-08-01", "origem": "../L2/real-time-big-data-ms-ms-07706-2026.dossier.json#/registry_observation/field_start" },
+    "campo_fim": { "valor": "2026-08-05", "origem": "../L2/real-time-big-data-ms-ms-07706-2026.dossier.json#/registry_observation/field_end" },
+    "publicacao": { "valor": "2026-08-06", "origem": "../L2/real-time-big-data-ms-ms-07706-2026.dossier.json#/registry_observation/publication_date" }
+  },
+  "modalidade": { "valor": "estimulada no cenário principal; espontânea preservada separadamente", "origem": "../L2 receipt proposal.json#/items/0/evidence/scenario e additional_scenarios" },
+  "cargo": { "valor": "Governador", "origem": "../L2 receipt proposal.json#/items/0/evidence/scenario/office" },
+  "uf": { "valor": "MS", "origem": "../L2 receipt proposal.json#/items/0/evidence/scenario/geography_code" },
+  "turno": { "valor": "1 e 2 em cenários separados", "origem": "../L2 receipt proposal.json#/items/0/evidence/scenario/turn e additional_scenarios/1/scenario/turn" },
+  "perguntas": [],
+  "cenarios": [
+    { "turno": 1, "modalidade": "espontanea", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Eduardo Riedel (PP)", "percentual": 24, "categoria": "candidato" }, { "rotulo": "Fábio Trad (PT)", "percentual": 10, "categoria": "candidato" }, { "rotulo": "João Henrique Catan (Novo)", "percentual": 4, "categoria": "candidato" }, { "rotulo": "Reinaldo Azambuja (PL)", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Outros", "percentual": 3, "categoria": "outros" }, { "rotulo": "Branco/Nulo", "percentual": 7, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/Não respondeu", "percentual": 51, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["outros", "branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa; identidade de Reinaldo pendente" },
+    { "turno": 1, "modalidade": "estimulada", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Eduardo Riedel (PP)", "percentual": 44, "categoria": "candidato" }, { "rotulo": "Fábio Trad (PT)", "percentual": 25, "categoria": "candidato" }, { "rotulo": "João Henrique Catan (Novo)", "percentual": 12, "categoria": "candidato" }, { "rotulo": "Lucien Rezende (PSOL)", "percentual": 3, "categoria": "candidato" }, { "rotulo": "Renato Gomes (DC)", "percentual": 3, "categoria": "candidato" }, { "rotulo": "Jefferson Bezerra (Agir)", "percentual": 1, "categoria": "candidato" }, { "rotulo": "Branco/Nulo", "percentual": 6, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/Não respondeu", "percentual": 6, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa; identidade de Renato pendente" },
+    { "turno": 2, "modalidade": "duelo", "pergunta": null, "resultados_explicitamente_publicados": [
+      { "rotulo": "Eduardo Riedel (PP)", "percentual": 54, "categoria": "candidato" }, { "rotulo": "Fábio Trad (PT)", "percentual": 32, "categoria": "candidato" }, { "rotulo": "Branco/Nulo", "percentual": 7, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/Não respondeu", "percentual": 7, "categoria": "nao_sabe_nao_respondeu" }
+    ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "completa" }
+  ],
+  "resultados_proveniencia": "receipt proposal.json do caso MS, nos caminhos evidence/results e evidence/additional_scenarios/*/results",
+  "oraculo": { "veredito": "pendente", "classificacao": "identidade nao resolvida", "motivo": "Renato Gomes e Reinaldo Azambuja permanecem sem correspondência aprovada; cenários e categorias devem ser preservados", "publicavel": false, "nao_completar_por_complemento": true, "nao_atribuir_identidade": true },
+  "proveniencia": ["../L2/real-time-big-data-ms-ms-07706-2026.dossier.json", "/private/tmp/pf-pesquisas-s0-remote-datas/pesquisas-monitoramento-part-real-time-big-data-estaduais-2026-ms/proposal.json"]
+}

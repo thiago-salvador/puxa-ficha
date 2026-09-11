@@ -45,6 +45,7 @@ jobs:
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
       expected: ${{ steps.matrix.outputs.expected }}
+      discovery_status: ${{ steps.discovery.outputs.status }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -63,7 +64,24 @@ jobs:
           npm run test:pesquisas:monitoramento
           npm run test:pesquisas:monitoramento:isolamento
           npm run test:pesquisas:monitoramento:rede
-          npm run test:pesquisas:atualizacao-agendada
+          npm run test:pesquisas:integracao
+          npm run check:scripts
+
+      - name: Descobrir publicações além do catálogo
+        id: discovery
+        continue-on-error: true
+        env:
+          monitor_source_id: ${{ inputs.source_id || 'all' }}
+        run: npm run monitor:pesquisas:descoberta -- --source "$monitor_source_id" --validate-targets --out reports/pesquisas-descoberta
+
+      - name: Publicar descoberta e lacunas de cobertura
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/pesquisas-descoberta/
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Calcular todas as fontes e UFs aprovadas
         id: matrix
@@ -74,6 +92,7 @@ jobs:
           npm run pesquisas:atualizacao:matrix -- \
             --source="$monitor_source_id" \
             --uf="$monitor_uf" \
+            --discovered-targets=reports/pesquisas-descoberta/discovered-targets.json \
             --out=reports/pesquisas-monitoramento/matrix.json
 
       - name: Publicar inventário da matriz
@@ -109,7 +128,20 @@ jobs:
       - name: Instalar dependências sem scripts de pacote
         run: npm ci --ignore-scripts
 
-      - name: Coletar em dry-run sem credencial de escrita
+      - name: Preparar leitura dos relatórios públicos em PDF
+        if: matrix.target.source_id == 'poderdata-aya-nacional-2026' || (matrix.target.source_id == 'real-time-big-data-estaduais-2026' && matrix.target.uf == 'PR')
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install --no-install-recommends -y poppler-utils
+          pdftotext -v
+
+      - name: Baixar descoberta validada
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/pesquisas-descoberta
+
+      - name: Conciliar catálogo e publicações descobertas
         env:
           monitor_source_id: ${{ matrix.target.source_id }}
           monitor_uf: ${{ matrix.target.uf }}
@@ -118,7 +150,8 @@ jobs:
           npm run monitor:pesquisas -- \
             --out="reports/pesquisas-monitoramento/$monitor_key" \
             --source="$monitor_source_id" \
-            --uf="$monitor_uf"
+            --uf="$monitor_uf" \
+            --discovery=reports/pesquisas-descoberta/discovery.json
 
       - name: Publicar artefato individual
         if: always()
@@ -142,6 +175,9 @@ jobs:
     outputs:
       status: ${{ steps.consolidar.outputs.status }}
       change_count: ${{ steps.consolidar.outputs.change_count }}
+      operation_status: ${{ steps.consolidar.outputs.operation_status }}
+      coverage_status: ${{ steps.consolidar.outputs.coverage_status }}
+      promotion_authorized: ${{ steps.consolidar.outputs.promotion_authorized }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -176,12 +212,20 @@ jobs:
             echo '{"include":[{"key":"manifest-missing","source_id":"missing","uf":"missing","poll_ids":["manifest-missing"]}]}' > reports/matrix/matrix.json
           fi
 
+      - name: Baixar diagnóstico independente de descoberta
+        continue-on-error: true
+        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: pesquisas-descoberta-${{ github.run_id }}
+          path: reports/discovery
+
       - name: Consolidar e falhar fechado
         id: consolidar
         run: |
           npm run pesquisas:atualizacao:consolidate -- \
             --matrix=reports/matrix/matrix.json \
             --input=reports/parts \
+            --discovery=reports/discovery/discovery.json \
             --out=reports/consolidated
 
       - name: Publicar resumo e proposta consolidada
@@ -195,9 +239,13 @@ jobs:
 
   promover:
     name: Preparar draft PR de dados
-    needs: consolidar
+    needs:
+      - preparar-matriz
+      - consolidar
     if: >-
       needs.consolidar.outputs.status == 'ready' &&
+      needs.consolidar.outputs.promotion_authorized == 'true' &&
+      (needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' || needs.preparar-matriz.outputs.discovery_status == 'targets_ready_for_collection') &&
       vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || inputs.create_draft_pr == true)

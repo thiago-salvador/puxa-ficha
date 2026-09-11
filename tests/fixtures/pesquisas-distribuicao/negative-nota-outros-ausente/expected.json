@@ -1,0 +1,16 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-nota-outros-ausente",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": null, "origem": "estrutura observada em tests/pesquisas-realtime-cenarios.test.ts; caso sintético sem registro" },
+  "datas_escritas": { "campo_inicio": null, "campo_fim": null, "publicacao": null },
+  "modalidade": { "valor": null, "origem": "entrada.html título", "status": "não informada no caso" },
+  "cargo": { "valor": "Governador", "origem": "entrada.html título" },
+  "uf": { "valor": null, "status": "não disponível" },
+  "turno": { "valor": 1, "origem": "entrada.html título" },
+  "perguntas": [],
+  "cenarios": [ { "turno": 1, "modalidade": null, "origem_resultados": "entrada.html lista sintética derivada", "pergunta": null, "resultados_explicitamente_publicados": [ { "rotulo": "Ana Silva (X)", "percentual": 50, "categoria": "candidato" }, { "rotulo": "Beto Souza (Y)", "percentual": 39, "categoria": "candidato" }, { "rotulo": "Outros", "percentual": 1, "categoria": "outros" }, { "rotulo": "Nulo/Branco", "percentual": 5, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/Não respondeu", "percentual": 5, "categoria": "nao_sabe_nao_respondeu" } ], "categorias": ["outros", "branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "incompleta" } ],
+  "resultados_proveniencia": "entrada.html lista sintética derivada",
+  "proveniencia": [".artifacts/pesquisas-distribuicao/L2/real-time-big-data-rs-rs-09640-2026.dossier.json", "tests/pesquisas-realtime-cenarios.test.ts#nota de Outros", "entrada.html"],
+  "oraculo": { "veredito": "rejeitar", "motivo": "Outros tem percentual explícito, mas falta a nota que explica o agrupamento; não distribuir 1% entre pessoas", "nota_agrupamento_obrigatoria": true, "publicavel": false }
+}

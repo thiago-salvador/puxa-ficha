@@ -1,0 +1,16 @@
+{
+  "schema_version": "puxa-ficha.pesquisas-distribuicao.expected/v1",
+  "fixture_id": "negative-mistura-senado-governador",
+  "fixture_kind": "synthetic_derived",
+  "registro": { "id": "SE-07327/2026", "origem": "../L2/real-time-big-data-se-se-07327-2026.dossier.json#/registry_observation/registration_id" },
+  "datas_escritas": { "campo_inicio": null, "campo_fim": null, "publicacao": null },
+  "modalidade": { "valor": null, "status": "não misturar entre cargos" },
+  "cargo": { "valor": "Governador", "origem": "controle deve selecionar apenas o bloco do cargo solicitado" },
+  "uf": { "valor": "SE", "origem": "../L2/real-time-big-data-se-se-07327-2026.dossier.json#/registry_observation/geography" },
+  "turno": { "valor": 1, "origem": "bloco Governador" },
+  "perguntas": [],
+  "cenarios": [ { "turno": 1, "modalidade": "estimulado", "pergunta": null, "resultados_explicitamente_publicados": [ { "rotulo": "Fábio Mitidieri (PSD)", "percentual": 43, "categoria": "candidato" }, { "rotulo": "Valmir de Francisquinho (Republicanos)", "percentual": 40, "categoria": "candidato" }, { "rotulo": "Branco/Nulo", "percentual": 4, "categoria": "branco_nulo" }, { "rotulo": "Não sabe/Não respondeu", "percentual": 4, "categoria": "nao_sabe_nao_respondeu" } ], "categorias": ["branco_nulo", "nao_sabe_nao_respondeu"], "notas_agrupamento": [], "completude": "válida somente para Governador" } ],
+  "resultados_proveniencia": "entrada.html bloco Governador; bloco Senado está explicitamente marcado como excluído",
+  "proveniencia": [".artifacts/pesquisas-distribuicao/L2/real-time-big-data-se-se-07327-2026.dossier.json", "entrada.html"],
+  "oraculo": { "veredito": "rejeitar_mistura", "motivo": "o bloco de Senado não pode entrar no cenário de Governador; não aceitar uma lista conjunta", "bloco_excluido": "Senado", "publicavel": false }
+}

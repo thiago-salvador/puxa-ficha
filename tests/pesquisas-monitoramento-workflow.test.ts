@@ -59,10 +59,21 @@ test("somente promoção tem escrita e exige autorização posterior", () => {
   assert.equal((workflow.match(/pull-requests:\s*write/g) ?? []).length, 1)
   assert.match(promote, /vars\.PESQUISAS_DRAFT_PR_ENABLED == 'true'/)
   assert.match(promote, /needs\.consolidar\.outputs\.status == 'ready'/)
+  assert.match(promote, /needs\.consolidar\.outputs\.promotion_authorized == 'true'/)
+  assert.match(job("consolidar", "promover"), /--discovery=reports\/discovery\/discovery.json/)
+  assert.match(promote, /needs\.preparar-matriz\.outputs\.discovery_status == 'no_new_urls_in_consulted_listings'/)
   assert.match(promote, /github\.ref == 'refs\/heads\/main'/)
   assert.match(promote, /inputs\.create_draft_pr == true/)
   assert.match(promote, /permissions:\n\s+contents:\s*write\n\s+pull-requests:\s*write/)
   assert.match(promote, /persist-credentials:\s*false/)
+})
+
+test("descoberta usa listagens independentes do catalogo e preserva diagnostico de cobertura", () => {
+  const prepare = job("preparar-matriz", "coletar")
+  assert.match(prepare, /monitor:pesquisas:descoberta/)
+  assert.match(prepare, /discovery_status:.*steps\.discovery\.outputs\.status/)
+  assert.match(prepare, /name: pesquisas-descoberta-/)
+  assert.match(prepare, /path: reports\/pesquisas-descoberta\//)
 })
 
 test("draft existente, no-change e verify falho impedem push e PR", () => {
