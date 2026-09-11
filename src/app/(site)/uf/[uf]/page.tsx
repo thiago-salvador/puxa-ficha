@@ -35,6 +35,7 @@ import { StateIndicatorComparison } from "@/components/StateIndicatorComparison"
 import { StatePrograms } from "@/components/StatePrograms"
 import { StatePolls } from "@/components/StatePolls"
 import { loadStatePrograms } from "@/lib/state-programs"
+import { loadProgramRunningMates } from "@/lib/program-running-mates"
 import { loadStatePolls } from "@/lib/state-polls"
 
 export async function generateStaticParams() {
@@ -111,8 +112,8 @@ export default async function UfHubPage({
   // central (src/lib/api.ts via sanitizePublicPartyFields); o mapping pontual
   // que existia aqui ate o Bloco 1 foi removido.
   const candidatos = resumos.map((r) => r.candidato)
-  const [programsResource, pollsResource] = await Promise.all([
-    loadStatePrograms(candidatos.map(({ slug, nome_urna }) => ({ slug, nome_urna })), uf)
+  const [programsResource, pollsResource, runningMates] = await Promise.all([
+    loadStatePrograms(candidatos.map(({ slug, nome_urna, partido_sigla }) => ({ slug, nome_urna, partido_sigla, uf: uf.toUpperCase() })), uf)
       .then(data => ({ data, unavailable: false }))
       .catch(() => {
         console.error("State programs could not be loaded")
@@ -124,6 +125,7 @@ export default async function UfHubPage({
         console.error("State polls could not be loaded")
         return { data: [], unavailable: true }
       }),
+    loadProgramRunningMates(candidatos.map(({ slug }) => slug), "Governador", uf),
   ])
 
   const sourceStatus = mergeSourceStatuses(
@@ -274,9 +276,9 @@ export default async function UfHubPage({
 
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
-        <StatePrograms programs={programsResource.data} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
+        <StatePrograms scopeTitle={`Governo de ${nome}`} programs={programsResource.data} runningMates={runningMates} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
-        <StatePolls polls={pollsResource.data} unavailable={pollsResource.unavailable} />
+        <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} />
         <SlashDivider />
         <section id="indicadores" className="scroll-mt-24 space-y-6">
           <div>

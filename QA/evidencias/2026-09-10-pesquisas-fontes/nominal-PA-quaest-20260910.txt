@@ -1,0 +1,25 @@
+CAPTURA TEXTUAL NOMINAL
+UF: PA
+Fonte lida: UOL
+URL: https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm
+Leitura via ferramenta web em: 2026-09-10
+Natureza: corpo textual acessível, com metodologia e todos os cenários de Governador preservados.
+
+Matéria publicada em 29/08/2026, atualizada em 29/08/2026. Pesquisa Quaest encomendada pela TV Liberal; campo presencial de 25 a 28/08/2026; 804 pessoas no Pará; margem de erro de 3 pontos percentuais; confiança de 95%; registro PA-07718/2026.
+
+1º turno, estimulada (quando é apresentada lista com nomes):
+Dr. Daniel Santos (Podemos) 28%; Hana Ghassan (MDB) 27%; Gal Leite (UP) 2%; Well Macedo (PSTU) 2%; Araceli (PSOL) 2%; José Moita (Democrata) 1%; indecisos 29%; branco/nulo/não vai votar 9%.
+
+1º turno, espontânea (quando não é apresentada lista com nomes):
+Dr. Daniel Santos (Podemos) 14%; Hana Ghassan (MDB) 12%; Outros 2%; indecisos 69%; branco/nulo/não vai votar 3%.
+
+2º turno:
+Dr. Daniel Santos (Podemos) 36%; Hana Ghassan (MDB) 36%; indecisos 20%; branco/nulo/não vai votar 8%.
+
+Trechos nominais exatos da tabela UOL:
+"Gal Leite (UP): 2%."
+"Well Macedo (PSTU): 2%."
+"Dr. Daniel Santos (Podemos): 28%."
+"Hana Ghassan (MDB): 27%."
+
+Os três cenários de Governador foram preservados. A categoria "Outros" permanece agrupada e não é convertida em candidato ou zero.

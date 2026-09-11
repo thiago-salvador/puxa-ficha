@@ -1,3 +1,4 @@
+import "./helpers/server-only"
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
 import { createHash } from "node:crypto"

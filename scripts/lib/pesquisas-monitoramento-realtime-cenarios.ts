@@ -80,9 +80,9 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
       if (turn === 1 && /espont[âa]ne[ao]/i.test(text) && !/estimulad[ao]/i.test(text)) mode = "espontaneo"
       if (turn === 1 && /estimulad[ao]/i.test(text) && !/espont[âa]ne[ao]/i.test(text)) mode = "estimulado"
       if (turn === 1 && /cenário|confira|veja o resultado|espont[âa]ne[ao]/i.test(text)) context = text
+      const count = text.match(/\b(\d+|um|dois|três|quatro|cinco|seis) cenários? de (?:segundo|2[oº°]) turno/i)?.[1]
+      if (count) runoffCount = /^\d+$/.test(count) ? Number(count) : ["", "um", "dois", "três", "quatro", "cinco", "seis"].indexOf(count.toLowerCase())
       if (turn === 2) {
-        const count = text.match(/\b(\d+|um|dois|três|quatro|cinco|seis) cenários? de (?:segundo|2[oº°]) turno/i)?.[1]
-        if (count) runoffCount = /^\d+$/.test(count) ? Number(count) : ["", "um", "dois", "três", "quatro", "cinco", "seis"].indexOf(count.toLowerCase())
         if (/^Cenário \d+:?$|\s+x\s+/i.test(text)) heading = text
       }
       continue

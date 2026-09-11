@@ -441,6 +441,11 @@ function publicNoticia(row: FichaCandidato["noticias"][number], index: number) {
   }
 }
 
+/** O link individual mantém o ID consultado, com a mesma limpeza da ficha. */
+export function toPublicNewsArticleDto(row: FichaCandidato["noticias"][number]) {
+  return { ...publicNoticia(row, 0), id: row.id }
+}
+
 function publicIndicador(row: NonNullable<FichaCandidato["indicadores_estaduais"]>[number], index: number) {
   return {
     id: compactPublicId("ind", row.id, index),

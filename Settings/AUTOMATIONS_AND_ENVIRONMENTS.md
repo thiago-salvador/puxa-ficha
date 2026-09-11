@@ -1,5 +1,15 @@
 # Automações e ambientes
 
+## Busca de pesquisas eleitorais
+
+A automação Codex `pesquisas-de-voto-presidente-e-27-ufs` pesquisa presidente e
+as 27 UFs às segundas e quintas, às 9h de São Paulo, com o ambiente local
+disponível. O estado por abrangência fica em
+`scripts/data/pesquisas-busca-semanal.json`; o procedimento e as provas exigidas
+estão em [busca semanal](../docs/operations/pesquisas-busca-semanal.md).
+O monitor diário existente no GitHub verifica suas fontes cadastradas e tem
+função distinta desta descoberta jornalística.
+
 ## Ambientes
 
 | Ambiente | Uso | Regra |
@@ -133,7 +143,6 @@ nem em runtime de produção. Não autoriza aplicação de migrations.
 | `PUXAFICHA_DEV_NO_KILL_PORT` | Proteção do servidor local contra encerramento do processo que ocupa a porta 3000 | Opcional; somente `1` impede `scripts/dev.sh` de encerrar o processo existente. Ausente, o script preserva o comportamento padrão de liberar a porta. | Desenvolvimento local |
 | `PF_BASE_URL`, `PF_QUIZ_OG_BASE_URL` | Base URL de Playwright e quiz OG | Opcionais; caem para loopback nas configs que suportam servidor local. | Teste local ou CI |
 | `PF_VISUAL_FIXTURE_BUILD` | Build isolado com fixtures de dados para Playwright | Opcional; somente `1`, junto de `CI=true`, sem Vercel e com URL placeholder, habilita o alias de teste e a saída `.next-e2e`. Ausente mantém o build normal. Não configurar em produção. | Teste local ou CI |
-| `PF_PESQUISAS_EMPTY_SLUG` | Controle negativo do smoke de pesquisas em produção | Opcional; ausência usa `ciro-gomes-gov-ce`. Restrita ao teste. | Teste local ou CI |
 | `PF_PLAYWRIGHT_EDITORIAL_WEBSERVER` | Sobe servidor editorial local | Opcional; somente `1` ativa. | Teste local |
 | `PF_RUN_SEARCH_SMOKE`, `PF_EXPECT_PLACEHOLDER_DATA` | Seleção de cenários visuais | Opcionais; valores truthy esperados pelas specs ativam o cenário. | CI ou teste local |
 | `PF_EDITORIAL_FICHA_SLUG`, `PF_EDITORIAL_RELAX_SOBER`, `PF_EDITORIAL_REQUIRE_SELLOS` | Recorte e rigor das specs editoriais | Opcionais e restritas aos testes. | Teste local |

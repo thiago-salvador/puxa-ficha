@@ -1,0 +1,12 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: TO
+Fonte lida: Gazeta do Povo
+URL: https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria e pesquisa divulgadas em 28/08/2026. Pesquisa Paraná Pesquisas, campo de 25 a 27/08/2026, 1.504 entrevistas, margem de 2,6 pontos percentuais, confiança de 95%, contratada pela Federação das Indústrias do Estado do Tocantins, registro TO-02900/2026.
+
+Cenário estimulado de primeiro turno:
+Professora Dorinha 37,3%; Vicentinho Júnior 35,5%; Laurez Moreira 7,6%; Ataídes de Oliveira 5,1%; Subtenente Luiz Carlos 1,6%; Du Pereira 1,2%; Prof. Witer Naves 0,2%; nenhum/branco/nulo 6,1%; não sabe/não opinou 5,4%.
+

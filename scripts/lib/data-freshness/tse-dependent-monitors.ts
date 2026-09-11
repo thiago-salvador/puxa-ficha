@@ -11,7 +11,7 @@ export interface TseDependentMonitorConfig {
   schema_version: 1
   laudicerio: {
     profile_slug: "laudicerio-aguiar"
-    canonical_registration_sq: null
+    canonical_registration_sq: string | null
     alert_message: "julgamento Laudicério: revisar canônica"
     registrations: Array<{
       sq_candidato: string
@@ -241,7 +241,9 @@ export async function collectTseDependentMonitors(
   report_sha256: string
 }> {
   if (config.schema_version !== 1
-    || config.laudicerio.canonical_registration_sq !== null
+    || (config.laudicerio.canonical_registration_sq !== null
+      && !config.laudicerio.registrations.some((registration) =>
+        registration.sq_candidato === config.laudicerio.canonical_registration_sq))
     || config.laudicerio.registrations.length !== 2
     || config.program_control?.expected_cod_tipo !== "5"
     // Dois desde 2026-09-06: Eduardo Paes (RJ), Vera Lúcia (CE) e Ben Mendes
@@ -284,6 +286,7 @@ export async function collectTseDependentMonitors(
         || descricaoTotalizacao !== registration.expected_descricao_totalizacao
       laudicerio.push({
         sq_candidato: registration.sq_candidato,
+        canonical: registration.sq_candidato === config.laudicerio.canonical_registration_sq,
         descricao_situacao: descricaoSituacao,
         descricao_totalizacao: descricaoTotalizacao,
         changed,

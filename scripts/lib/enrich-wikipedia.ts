@@ -123,6 +123,13 @@ interface WikiStructuredFallback {
   formacao: string | null
 }
 
+export interface EnrichWikipediaDependencies {
+  database: typeof supabase
+  loadCandidates: typeof loadCandidatosPublicos
+  fetchJson: typeof fetchJSON
+  wait: typeof sleep
+}
+
 export type WikiPageLookup =
   | { status: "encontrado"; photoUrl: string | null; wikidataId: string | null }
   | { status: "vazio_confirmado"; photoUrl: null; wikidataId: null }
@@ -183,10 +190,10 @@ export function interpretarWikiPagePayload(payload: unknown): WikiPageLookup {
       wikidataId: null,
     }
   }
-  if (wikidataCandidate !== undefined && typeof wikidataCandidate !== "string") {
+  if (wikidataCandidate !== undefined && (typeof wikidataCandidate !== "string" || !/^Q[1-9]\d*$/.test(wikidataCandidate))) {
     return {
       status: "erro",
-      erro: "payload Wikipedia invalido: wikibase_item nao textual",
+      erro: "payload Wikipedia invalido: wikibase_item nao e QID valido",
       photoUrl: null,
       wikidataId: null,
     }
@@ -212,9 +219,9 @@ export function finalizarResultadoWikipedia(
 }
 
 // Fetch article summary/biography via Wikipedia REST API
-async function fetchWikiSummary(title: string): Promise<string | null> {
+async function fetchWikiSummary(title: string, fetcher: typeof fetchJSON): Promise<string | null> {
   const url = `https://pt.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`
-  const data = await fetchJSON<unknown>(url, {
+  const data = await fetcher<unknown>(url, {
     "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)",
   })
   if (!isRecord(data)) throw new Error("payload de resumo Wikipedia invalido")
@@ -224,7 +231,7 @@ async function fetchWikiSummary(title: string): Promise<string | null> {
 }
 
 // Fetch social media links from Wikipedia external links
-async function fetchWikiSocialLinks(title: string): Promise<Record<string, string>> {
+async function fetchWikiSocialLinks(title: string, fetcher: typeof fetchJSON): Promise<Record<string, string>> {
   const params = new URLSearchParams({
     action: "query",
     titles: title,
@@ -234,7 +241,7 @@ async function fetchWikiSocialLinks(title: string): Promise<Record<string, strin
     origin: "*",
   })
 
-  const json = await fetchJSON<unknown>(`${WIKI_API}?${params}`)
+  const json = await fetcher<unknown>(`${WIKI_API}?${params}`)
   if (!isRecord(json) || !isRecord(json.query) || !isRecord(json.query.pages)) {
     throw new Error("payload de links Wikipedia invalido: query.pages ausente")
   }
@@ -418,7 +425,7 @@ function extractFormacaoFromSummary(summary: string | null): string | null {
   return null
 }
 
-async function fetchWikiWikitextStructured(title: string, summary: string | null): Promise<WikiStructuredFallback> {
+async function fetchWikiWikitextStructured(title: string, summary: string | null, fetcher: typeof fetchJSON): Promise<WikiStructuredFallback> {
   const params = new URLSearchParams({
     action: "query",
     prop: "revisions",
@@ -429,7 +436,7 @@ async function fetchWikiWikitextStructured(title: string, summary: string | null
     origin: "*",
   })
 
-  const json = await fetchJSON<unknown>(`${WIKI_API}?${params}`)
+  const json = await fetcher<unknown>(`${WIKI_API}?${params}`)
   if (!isRecord(json) || !isRecord(json.query) || !isRecord(json.query.pages)) {
     throw new Error("payload de wikitext Wikipedia invalido: query.pages ausente")
   }
@@ -492,7 +499,7 @@ function mergeFallbackUpdates(
 }
 
 // Fetch structured data from Wikidata via SPARQL
-async function fetchWikidataStructured(qid: string): Promise<{
+async function fetchWikidataStructured(qid: string, fetcher: typeof fetchJSON): Promise<{
   dataNascimento: string | null
   naturalidade: string | null
   formacao: string | null
@@ -508,7 +515,7 @@ async function fetchWikidataStructured(qid: string): Promise<{
   `
 
   const params = new URLSearchParams({ query: sparql, format: "json" })
-  const json = await fetchJSON<unknown>(`${WIKIDATA_SPARQL}?${params}`, {
+  const json = await fetcher<unknown>(`${WIKIDATA_SPARQL}?${params}`, {
     Accept: "application/sparql-results+json",
     "User-Agent": "PuxaFicha/1.0 (https://puxaficha.com.br; contact@puxaficha.com.br)",
   })
@@ -535,7 +542,7 @@ async function fetchWikidataStructured(qid: string): Promise<{
 }
 
 // Apply fallback data for candidates without Wikipedia pages
-async function applyFallback(slug: string, candidatoId: string, existing: Record<string, unknown>): Promise<number> {
+async function applyFallback(slug: string, candidatoId: string, existing: Record<string, unknown>, database: typeof supabase): Promise<number> {
   const fb = FALLBACK_DATA[slug]
   if (!fb) return 0
 
@@ -558,7 +565,7 @@ async function applyFallback(slug: string, candidatoId: string, existing: Record
   }
 
   updates.ultima_atualizacao = new Date().toISOString()
-  const { error: err } = await supabase.from("candidatos").update(updates).eq("id", candidatoId)
+  const { error: err } = await database.from("candidatos").update(updates).eq("id", candidatoId)
 
   if (err) {
     error("wikipedia", `  ${slug}: fallback erro: ${err.message}`)
@@ -570,8 +577,15 @@ async function applyFallback(slug: string, candidatoId: string, existing: Record
   return 1
 }
 
-export async function enrichWikipedia(): Promise<IngestResult[]> {
-  const candidatos = (await loadCandidatosPublicos()).filter((cand) => !filterSlugs || filterSlugs.has(cand.slug))
+export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependencies> = {}): Promise<IngestResult[]> {
+  const deps: EnrichWikipediaDependencies = {
+    database: supabase,
+    loadCandidates: loadCandidatosPublicos,
+    fetchJson: fetchJSON,
+    wait: sleep,
+    ...overrides,
+  }
+  const candidatos = (await deps.loadCandidates()).filter((cand) => !filterSlugs || filterSlugs.has(cand.slug))
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
@@ -590,7 +604,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     // Check current state of candidate in DB
     let existing: Record<string, unknown> | null = null
     try {
-      const consultaDb = await supabase
+      const consultaDb = await deps.database
         .from("candidatos")
         .select("id, foto_url, data_nascimento, naturalidade, formacao, formacao_instituicao, profissao_declarada, biografia, redes_sociais, wikidata_id")
         .eq("slug", cand.slug)
@@ -614,8 +628,16 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     if (wikiTitle) {
       log("wikipedia", `Processando ${cand.slug} → ${wikiTitle}`)
 
-      const pageLookup = await fetchWikiPage(wikiTitle)
-      await sleep(300)
+      let pageLookup = await fetchWikiPage(wikiTitle, deps.fetchJson)
+      await deps.wait(300)
+      if (pageLookup.status === "encontrado" && pageLookup.wikidataId && existing.wikidata_id && pageLookup.wikidataId !== existing.wikidata_id) {
+        pageLookup = {
+          status: "erro",
+          erro: `QID da Wikipedia diverge do wikidata_id existente; enriquecimento remoto recusado (${pageLookup.wikidataId} / ${existing.wikidata_id})`,
+          photoUrl: null,
+          wikidataId: null,
+        }
+      }
 
       const updates: Record<string, unknown> = {}
       let summary: string | null = null
@@ -644,11 +666,11 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
 
         if (!existing.biografia || !existing.data_nascimento || !existing.naturalidade || !existing.formacao || !existing.formacao_instituicao) {
           try {
-            summary = await fetchWikiSummary(wikiTitle)
+            summary = await fetchWikiSummary(wikiTitle, deps.fetchJson)
           } catch (err) {
             registrarErroColeta(result, err, "resumo Wikipedia")
           }
-          await sleep(300)
+          await deps.wait(300)
         }
 
         const needsStructured = !existing.data_nascimento || !existing.naturalidade || !existing.formacao || !existing.formacao_instituicao
@@ -657,11 +679,11 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
         if (wikidataId && needsStructured) {
           log("wikipedia", `  ${cand.slug}: buscando Wikidata ${wikidataId}`)
           try {
-            wd = await fetchWikidataStructured(wikidataId)
+            wd = await fetchWikidataStructured(wikidataId, deps.fetchJson)
           } catch (err) {
             registrarErroColeta(result, err, "dados estruturados Wikidata")
           }
-          await sleep(500)
+          await deps.wait(500)
         }
 
         if (needsStructured && (
@@ -671,11 +693,11 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           (!existing.formacao && !existing.formacao_instituicao && !wd.formacao)
         )) {
           try {
-            wikiStructured = await fetchWikiWikitextStructured(wikiTitle, summary)
+            wikiStructured = await fetchWikiWikitextStructured(wikiTitle, summary, deps.fetchJson)
           } catch (err) {
             registrarErroColeta(result, err, "wikitext Wikipedia")
           }
-          await sleep(300)
+          await deps.wait(300)
         }
 
         const dataNascimento = pickBestBirthDate(wd.dataNascimento, wikiStructured.dataNascimento)
@@ -703,7 +725,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
         const isEmpty = Object.keys(currentRedes).length === 0
         if (isEmpty || !currentRedes.instagram) {
           try {
-            const wikiSocials = await fetchWikiSocialLinks(wikiTitle)
+            const wikiSocials = await fetchWikiSocialLinks(wikiTitle, deps.fetchJson)
             if (Object.keys(wikiSocials).length > 0) {
               // Existing editorial data keeps priority over automatically found links.
               const merged: Record<string, unknown> = { ...wikiSocials }
@@ -716,7 +738,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
           } catch (err) {
             registrarErroColeta(result, err, "links externos Wikipedia")
           }
-          await sleep(300)
+          await deps.wait(300)
         }
       }
 
@@ -725,7 +747,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
       if (Object.keys(updates).length > 0) {
         updates.ultima_atualizacao = new Date().toISOString()
         try {
-          const { error: updateErr } = await supabase
+          const { error: updateErr } = await deps.database
             .from("candidatos")
             .update(updates)
             .eq("id", existing.id)
@@ -746,7 +768,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
       log("wikipedia", `${cand.slug}: sem Wikipedia, usando fallback`)
       detalheBase = "candidato sem wikipedia_title; fallback local aplicado sem consulta externa"
       try {
-        const updated = await applyFallback(cand.slug, existing.id as string, existing)
+        const updated = await applyFallback(cand.slug, existing.id as string, existing, deps.database)
         if (updated > 0) {
           result.tables_updated.push("candidatos")
           result.rows_upserted++
@@ -763,7 +785,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     // After all sources tried, check if candidate still has no foto_url.
     // Priority: 1) Wikipedia, 2) local fallback, 3) Câmara/Senado API, 4) Wikidata, 5) generated placeholder
     try {
-      const { data: afterUpdate, error: afterUpdateError } = await supabase
+      const { data: afterUpdate, error: afterUpdateError } = await deps.database
         .from("candidatos")
         .select("foto_url")
         .eq("id", existing.id)
@@ -780,7 +802,7 @@ export async function enrichWikipedia(): Promise<IngestResult[]> {
     finalizarResultadoWikipedia(result, desfechoBase, detalheBase)
     result.duration_ms = Date.now() - start
     results.push(result)
-    await sleep(500)
+    await deps.wait(500)
   }
 
   return results

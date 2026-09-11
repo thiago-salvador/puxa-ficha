@@ -32,7 +32,7 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
             provenance_complete: true,
             evidence_sha256: "a".repeat(64),
             raw_payload_count: 93,
-            pair_count: 154,
+            pair_count: 152,
             double_read_execution_ids: ["destaques-votacoes:run-a", "destaques-votacoes:run-b"],
           }
         : {
@@ -144,7 +144,12 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
         public_profiles: publicProfiles,
         collection_evidence: collectionEvidence.map((evidence) =>
           evidence.source_id === "filiacao"
-            ? { ...evidence, checked_at: "2020-01-01T00:00:00.000Z" }
+            ? {
+                ...evidence,
+                checked_at: "2020-01-01T00:00:00.000Z",
+                debt_count: 0,
+                target_inventory: { total_count: 23, error_count: 0, debt_count: 12 },
+              }
             : evidence,
         ),
       }),
@@ -173,6 +178,12 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
       strictDiff.freshness.find((item: { source_id: string }) => item.source_id === "filiacao")?.status,
       "technical_debt",
     );
+    const filiacaoInventory = strictDiff.freshness.find(
+      (item: { source_id: string }) => item.source_id === "filiacao",
+    );
+    assert.equal(filiacaoInventory.debt_count, 12);
+    assert.equal(filiacaoInventory.total_count, 23);
+    assert.equal(filiacaoInventory.member_evidence[0].assessment_scope, "latest_per_target");
 
     writeFileSync(
       published,

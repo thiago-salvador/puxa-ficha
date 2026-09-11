@@ -1,0 +1,515 @@
+{
+  "schema_version": "1.0.0",
+  "automation_id": "pesquisas-de-voto-presidente-e-27-ufs",
+  "schedule": {
+    "weekdays": [
+      "MO",
+      "TH"
+    ],
+    "local_time": "09:00",
+    "timezone": "America/Sao_Paulo"
+  },
+  "overlap_days": 2,
+  "initial_window_days": [
+    3,
+    7,
+    14
+  ],
+  "window_rule": "Data de referência menos N dias, inclusive; fonte mais antiga como fallback identificado.",
+  "current_run": {
+    "started_at": null,
+    "completed_at": null,
+    "status": "prepared",
+    "publication_verified": false
+  },
+  "nominal_search": {
+    "fallback_playbook": "scripts/data/pesquisas-buscas-alternativas.json",
+    "query_template": "Pesquisa votos [ESTADO] [NOME DO CANDIDATO]",
+    "triggers": [
+      "sem_percentual_individual",
+      "agrupado_em_outros",
+      "identidade_pendente",
+      "somente_resultado_historico"
+    ],
+    "fallbacks": [
+      "nome_de_urna_e_nome_civil",
+      "instituto_registro_data",
+      "outra_reportagem",
+      "tabela_ou_pdf_original"
+    ],
+    "last_search_reference_date": "2026-09-10",
+    "attempted_candidates": 31,
+    "evidence": "QA/evidencias/2026-09-10-pesquisas-fontes/busca-nominal.json",
+    "engine_used": "web.run",
+    "publication_verified": false,
+    "fallback_run": {
+      "reference_date": "2026-09-10",
+      "completed_at": "2026-09-10T15:21:09.824851+00:00",
+      "status": "local_verified_pending_publication",
+      "targeted_candidates": 6,
+      "individual_results_recovered": 5,
+      "pending_candidates": [
+        "ruth-reis"
+      ],
+      "coverage_readback": {
+        "active_candidates": 206,
+        "with_individual_result": 205,
+        "within_14_days": 190,
+        "historical_only": 15,
+        "without_individual_result": 1,
+        "historical_candidates": ["adailton-furia", "expedito-netto", "hildon-chaves", "marcos-rogerio", "pedro-abib", "samuel-costa", "cesar-pontes", "bruno-pedreiro-do-pco", "gelson-merisio", "joao-rodrigues", "jorginho-mello", "lais-chaud", "marcelo-brigadeiro", "marcus-sodre", "ralf-zimmer"],
+        "note": "Leitura das fichas usando o cadastro ativo em 10/09/2026. A recuperação desta execução focalizou os seis nomes sem valor; os 15 históricos retornam à fila geral de busca recente."
+      },
+      "engines_used": [
+        "Google via Playwright",
+        "web.run"
+      ],
+      "evidence": [
+        "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-PA-buscas.json",
+        "QA/evidencias/2026-09-10-pesquisas-fontes/fechamento-buscas-integradas.json",
+        "QA/evidencias/2026-09-10-pesquisas-fontes/nominal-fechamento-manifesto.json"
+      ],
+      "publication_verified": false
+    }
+  },
+  "geographies": [
+    {
+      "uf": "BR",
+      "query": "pesquisa de voto presidente Brasil",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "meio-ideia-br-07935-2026",
+      "registration": "BR-07935/26",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/BR.txt",
+      "pending": [],
+      "notes": []
+    },
+    {
+      "uf": "AC",
+      "query": "pesquisa de voto governo Acre",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-ac-ac-09106-2026",
+      "registration": "AC-09106/2026",
+      "poll_publication_date": "2026-08-27",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-AC.txt",
+      "pending": [],
+      "notes": [
+        "Página da Gazeta do Povo lida; o corpo traz a lista completa do cenário estimulado e a metodologia. O zero de Eudo Raffael foi preservado."
+      ]
+    },
+    {
+      "uf": "AL",
+      "query": "pesquisa de voto governo Alagoas",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "instituto-ranking-al-al-01751-2026",
+      "registration": "AL-01751/2026",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-AL.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O cenário total soma 100%; o cenário de votos válidos soma 100%."
+      ]
+    },
+    {
+      "uf": "AP",
+      "query": "pesquisa de voto governo Amapá",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-ap-ap-04000-2026",
+      "registration": "AP-04000/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-AP.txt",
+      "pending": [],
+      "notes": [
+        "Página da CNN Brasil lida; o corpo traz todos os nomes do cenário estimulado, incluindo dois candidatos com zero, e a metodologia. A matéria não informa o contratante."
+      ]
+    },
+    {
+      "uf": "AM",
+      "query": "pesquisa de voto governo Amazonas",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "atlasintel-am-am-04939-2026",
+      "registration": "AM-04939/2026",
+      "poll_publication_date": "2026-09-04",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-AM.txt",
+      "pending": [],
+      "notes": [
+        "Página da Gazeta do Povo lida; o corpo traz todos os resultados do cenário estimulado e a metodologia. A soma publicada é 99,9% por arredondamento."
+      ]
+    },
+    {
+      "uf": "BA",
+      "query": "pesquisa de voto governo Bahia",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-ba-ba-01568-2026",
+      "registration": "BA-01568/2026",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-BA.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O agrupamento de três candidaturas foi preservado como publicado; o cenário soma 100%.",
+        "A fonte informa que Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e somaram 1%; não divulga a fração individual de cada candidatura.",
+        "Busca alternativa incorporou a rodada BA-07628/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
+    },
+    {
+      "uf": "CE",
+      "query": "pesquisa de voto governo Ceará",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-ce-ce-03293-2026",
+      "registration": "CE-03293/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-CE.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O cenário soma 100%.",
+        "A matéria lida não informa o contratante; campo mantido como null. A categoria Outros não é desagregada."
+      ]
+    },
+    {
+      "uf": "DF",
+      "query": "pesquisa de voto governo Distrito Federal",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-df-df-09600-2026",
+      "registration": "DF-09600/2026",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-DF.txt",
+      "pending": [],
+      "notes": [
+        "Página da CNN Brasil lida; o corpo traz os dois cenários estimulados de primeiro turno, todos os nomes ou agrupamentos publicados e a metodologia.",
+        "Registro canônico DF-09600/2026 confirmado pelo Congresso em Foco; a CNN publicou BR-09600/2026, divergência preservada na evidência.",
+        "Busca alternativa incorporou a rodada DF-07879/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
+    },
+    {
+      "uf": "ES",
+      "query": "pesquisa de voto governo Espírito Santo",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-es-es-01967-2026",
+      "registration": "ES-01967/2026",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-ES.txt",
+      "pending": [],
+      "notes": [
+        "Método e contratante não foram informados na matéria lida."
+      ]
+    },
+    {
+      "uf": "GO",
+      "query": "pesquisa de voto governo Goiás",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "goias-pesquisas-go-go-06294-2026",
+      "registration": "GO-06294/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-GO.txt",
+      "pending": [],
+      "notes": [
+        "Página do Mais Goiás lida; o corpo traz todos os resultados do cenário estimulado e a metodologia."
+      ]
+    },
+    {
+      "uf": "MA",
+      "query": "pesquisa de voto governo Maranhão",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-ma-ma-02569-2026",
+      "registration": "MA-02569/2026",
+      "poll_publication_date": "2026-09-10",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-MA.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O agrupamento indicado na nota da matéria foi preservado; o cenário soma 100%.",
+        "A matéria não informa o contratante, mantido como null. Saulo Arcangeli, Dimas Cassimiro e Reginaldo Lima aparecem apenas agrupados em 1%, sem frações individuais.",
+        "Busca alternativa incorporou a rodada MA-04033/2026 para recuperar percentuais individuais; ver nominal-fechamento-manifesto.json."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
+    },
+    {
+      "uf": "MT",
+      "query": "pesquisa de voto governo Mato Grosso",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "parana-pesquisas-mt-mt-01505-2026",
+      "registration": "MT-01505/2026",
+      "poll_publication_date": "2026-09-09",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-MT.txt",
+      "pending": [
+        {
+          "kind": "candidate_identity",
+          "label": "Sargento Laudicério",
+          "status": "unresolved"
+        }
+      ],
+      "notes": [
+        "Método não informado na matéria. A fonte informa aplicação em 52 municípios.",
+        "Os percentuais publicados para o cenário espontâneo somam 108,9%; os valores foram preservados exatamente como aparecem na matéria, sem correção inferida.",
+        "O cenário espontâneo soma 108,9% na fonte; seus valores ficam null/status indeterminado no catálogo, com os números brutos preservados na captura."
+      ]
+    },
+    {
+      "uf": "MS",
+      "query": "pesquisa de voto governo Mato Grosso do Sul",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "atlasintel-ms-ms-02047-2026",
+      "registration": "MS-02047/2026",
+      "poll_publication_date": "2026-09-03",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-MS.txt",
+      "pending": [],
+      "notes": [
+        "Método não informado na matéria. A metodologia usa por engano 'Mato Grosso' em uma frase, mas título, registro MS, tópicos e contexto identificam Mato Grosso do Sul."
+      ]
+    },
+    {
+      "uf": "MG",
+      "query": "pesquisa de voto governo Minas Gerais",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-mg-mg-04716-2026",
+      "registration": "MG-04716/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-MG.txt",
+      "pending": [],
+      "notes": [
+        "A matéria também reúne AtlasIntel de 08/09; a Quaest foi selecionada como uma única pesquisa verificável para a ficha."
+      ]
+    },
+    {
+      "uf": "PA",
+      "query": "pesquisa de voto governo Pará",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-pa-pa-00206-2026",
+      "registration": "PA-00206/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PA.txt",
+      "pending": [
+        "ruth-reis: sem percentual individual verificável; consultar novas rodadas. PA-00206/2026 testou José Moita e agrupou três nomes em 1%."
+      ],
+      "notes": [
+        "Página da CNN Brasil lida; o corpo traz o cenário estimulado completo e a metodologia. O agrupamento de José Moita, Well Macedo e Gal Leite em 1% foi preservado como publicado."
+      ],
+      "last_nominal_search_completed_at": "2026-09-10T15:21:09.824851+00:00"
+    },
+    {
+      "uf": "PB",
+      "query": "pesquisa de voto governo Paraíba",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "instituto-anova-pb-pb-01471-2026",
+      "registration": "PB-01471/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PB.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O cenário total soma 100%; o cenário de votos válidos soma 100% após arredondamento publicado.",
+        "A matéria informa parceria do Instituto Anova com o PB Agora, mas não identifica explicitamente o contratante; campo mantido como null."
+      ]
+    },
+    {
+      "uf": "PR",
+      "query": "pesquisa de voto governo Paraná",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "irg-pesquisas-pr-pr-02179-2026",
+      "registration": "PR-02179/2026",
+      "poll_publication_date": "2026-09-04",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PR.txt",
+      "pending": [
+        {
+          "kind": "candidate_identity",
+          "label": "Alexandre Curi",
+          "status": "unresolved"
+        },
+        {
+          "kind": "candidate_identity",
+          "label": "Rafael Greca",
+          "status": "unresolved"
+        },
+        {
+          "kind": "candidate_identity",
+          "label": "Ratinho Junior",
+          "status": "unresolved"
+        }
+      ],
+      "notes": [
+        "Método não informado. A fonte deixou em branco o percentual de 'Outros nomes citados' no cenário espontâneo; o valor foi preservado como null."
+      ]
+    },
+    {
+      "uf": "PE",
+      "query": "pesquisa de voto governo Pernambuco",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-pe-pe-00285-2026",
+      "registration": "PE-00285/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PE.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. Zeros foram preservados para as quatro candidaturas que não pontuaram; o cenário soma 100%."
+      ]
+    },
+    {
+      "uf": "PI",
+      "query": "pesquisa de voto governo Piauí",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "instituto-amostragem-pi-pi-05542-2026",
+      "registration": "PI-05542/2026",
+      "poll_publication_date": "2026-09-04",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-PI.txt",
+      "pending": [],
+      "notes": [
+        "Página da matéria aberta e corpo lido; a cobertura publica a lista completa apenas em votos válidos.",
+        "A cobertura lida não publica o cenário sobre o total da amostra nem as categorias branco, nulo e indeciso. Nenhum percentual bruto foi inferido ou recalculado."
+      ]
+    },
+    {
+      "uf": "RJ",
+      "query": "pesquisa de voto governo Rio de Janeiro",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "parana-pesquisas-rj-rj-01671-2026",
+      "registration": "RJ-01671/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-RJ.txt",
+      "pending": [],
+      "notes": [
+        "Método não informado. A matéria publicou dois cenários estimulados de primeiro turno e não publicou cenário de segundo turno."
+      ]
+    },
+    {
+      "uf": "RN",
+      "query": "pesquisa de voto governo Rio Grande do Norte",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "instituto-exatus-rn-rn-03924-2026",
+      "registration": "RN-03924/2026",
+      "poll_publication_date": "2026-09-04",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-RN.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. Carlos Jararaca foi preservado com zero porque a matéria informa que não foi citado; o cenário soma 100%."
+      ]
+    },
+    {
+      "uf": "RS",
+      "query": "pesquisa de voto governo Rio Grande do Sul",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-rs-rs-05497-2026",
+      "registration": "RS-05497/2026",
+      "poll_publication_date": "2026-09-10",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-RS.txt",
+      "pending": [],
+      "notes": [
+        "Contratante não informado na matéria lida.",
+        "No cenário estimulado, a fonte agrupa Cesar Pontes, Priscila Voigt e Rejane de Oliveira em Outros = 1%; não atribui percentuais individuais."
+      ]
+    },
+    {
+      "uf": "RO",
+      "query": "pesquisa de voto governo Rondônia",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-ro-ro-05711-2026",
+      "registration": "RO-05711/2026",
+      "poll_publication_date": "2026-08-25",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-RO.txt",
+      "pending": [],
+      "notes": [
+        "Página da Gazeta do Povo lida; o corpo traz todos os resultados do cenário estimulado e a metodologia."
+      ]
+    },
+    {
+      "uf": "RR",
+      "query": "pesquisa de voto governo Roraima",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-rr-rr-04765-2026",
+      "registration": "RR-04765/2026",
+      "poll_publication_date": "2026-08-27",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-RR.txt",
+      "pending": [],
+      "notes": [
+        "Página de O POVO lida; o corpo traz todos os resultados do cenário estimulado, incluindo dois candidatos com zero, e a metodologia completa."
+      ]
+    },
+    {
+      "uf": "SC",
+      "query": "pesquisa de voto governo Santa Catarina",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-sc-sc-00517-2026",
+      "registration": "SC-00517/2026",
+      "poll_publication_date": "2026-08-24",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-SC.txt",
+      "pending": [],
+      "notes": [
+        "Fallback fora da janela de 14 dias. A matéria é de 28/08 e informa explicitamente que a pesquisa foi divulgada em 24/08.",
+        "Contratante não informado na matéria lida."
+      ]
+    },
+    {
+      "uf": "SP",
+      "query": "pesquisa de voto governo São Paulo",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "quaest-sp-sp-00959-2026",
+      "registration": "SP-00959/2026",
+      "poll_publication_date": "2026-09-08",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-SP.txt",
+      "pending": [],
+      "notes": [
+        "Método não informado na matéria lida."
+      ]
+    },
+    {
+      "uf": "SE",
+      "query": "pesquisa de voto governo Sergipe",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "real-time-big-data-se-se-05776-2026",
+      "registration": "SE-05776/2026",
+      "poll_publication_date": "2026-09-04",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-SE.txt",
+      "pending": [],
+      "notes": [
+        "Página aberta e corpo lido. O cenário soma 100%."
+      ]
+    },
+    {
+      "uf": "TO",
+      "query": "pesquisa de voto governo Tocantins",
+      "last_search_completed_at": "2026-09-10T12:18:28Z",
+      "last_published_at": null,
+      "selected_poll_id": "parana-pesquisas-to-to-02900-2026",
+      "registration": "TO-02900/2026",
+      "poll_publication_date": "2026-08-28",
+      "evidence_capture": "QA/evidencias/2026-09-10-pesquisas-fontes/governadores-TO.txt",
+      "pending": [
+        {
+          "kind": "candidate_identity",
+          "label": "Subtenente Luiz Carlos",
+          "status": "unresolved"
+        }
+      ],
+      "notes": [
+        "Página da Gazeta do Povo lida; o corpo traz todos os resultados do cenário estimulado e a metodologia.",
+        "Subtenente Luiz Carlos permanece sem slug: a candidatura não aparece no roster oficial de Governador do Tocantins."
+      ]
+    }
+  ]
+}

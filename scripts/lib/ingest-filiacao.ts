@@ -65,7 +65,7 @@ function findCSVs(dir: string): string[] {
   }
 }
 
-async function parseCSV(
+export async function parseCSV(
   filePath: string,
   onRow: (row: Record<string, string>) => void
 ): Promise<number> {
@@ -73,7 +73,10 @@ async function parseCSV(
   const parser = createReadStream(filePath, { encoding: "latin1" }).pipe(
     parse({
       delimiter: ";",
-      columns: true,
+      columns: (columns: string[]) => {
+        validarEsquemaIndividual(Object.fromEntries(columns.map((column) => [column, ""])))
+        return columns
+      },
       skip_empty_lines: true,
       relax_column_count: true,
       cast: (value) => value.trim(),
@@ -85,6 +88,7 @@ async function parseCSV(
     count++
   }
 
+  if (count === 0) throw new Error("Arquivo oficial de filiação sem registros; cobertura não confirmada")
   return count
 }
 
@@ -119,7 +123,7 @@ const COLUNAS_FILIACAO_INDIVIDUAL = [
   "DT_DESFILIACAO",
 ] as const
 
-function validarEsquemaIndividual(row: Record<string, string>): void {
+export function validarEsquemaIndividual(row: Record<string, string>): void {
   const ausentes = COLUNAS_FILIACAO_INDIVIDUAL.filter((coluna) => !(coluna in row))
   if (ausentes.length > 0) {
     throw new Error(

@@ -1,0 +1,14 @@
+CAPTURA TEXTUAL NOMINAL
+UF: DF
+Fonte lida: Jornal de Brasília
+URL: https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; linhas relevantes preservadas.
+
+Matéria na página: 09/09/2026 18h12. A matéria informa que a pesquisa IGAPE ouviu 2.000 eleitores entre 31/08 e 05/09/2026 e foi divulgada em 06/09/2026. Registro não informado na matéria lida.
+
+Trecho nominal exato:
+"No levantamento, Samara Mineiro e Expedito registram 0,4%, enquanto Elisson Ferreira e Professor Robson aparecem com 0,3%."
+
+Identidades citadas no corpo:
+Elisson Ferreira; Samara Mineiro; Professor Robson Raymundo da Silva; Rico Pinheiro. O texto não atribui percentual individual a Rico Pinheiro no trecho disponível; nenhum valor foi inferido.

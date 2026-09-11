@@ -1,3 +1,4 @@
+import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
 import { construirCoberturaDescoberta, descobrirPublicacoesPesquisas, LISTAGENS_PESQUISAS, type ObservacaoListagemPesquisas } from "../scripts/lib/pesquisas-monitoramento-descoberta"

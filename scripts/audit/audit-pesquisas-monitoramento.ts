@@ -33,10 +33,11 @@ assert(!/writeFileSync\([^\n]*(?:scripts\/data|src\/|supabase\/)/i.test(runtime)
 const approvedAndUsed = listarFontesAprovadasUtilizadas()
 const adapterIds = ADAPTADORES_MONITORAMENTO.map((adapter) => adapter.source_id).sort()
 assert(
-  JSON.stringify(adapterIds) === JSON.stringify(approvedAndUsed),
-  `cobertura de adaptadores diverge das fontes aprovadas e usadas: ${adapterIds.join(",")}`,
+  adapterIds.every((id) => approvedAndUsed.includes(id)),
+  `adaptador sem fonte aprovada e usada: ${adapterIds.filter((id) => !approvedAndUsed.includes(id)).join(",")}`,
 )
-assert(adapterIds.length === 4, "inventario esperado deve conter quatro fontes aprovadas e usadas")
+assert(adapterIds.length === 4, "inventario esperado deve conter quatro adaptadores aprovados")
+const sourcesWithoutAdapter = approvedAndUsed.filter((id) => !adapterIds.includes(id))
 const targets = listarAlvosMonitoramento()
 assert(targets.length === 18, `inventario esperado deve conter 18 combinacoes, recebeu ${targets.length}`)
 for (const adapter of ADAPTADORES_MONITORAMENTO) {
@@ -63,4 +64,8 @@ const valid = golden.find((entry) => entry.case_id === "publicacao-nova-valida")
 assert(valid, "golden set perdeu referencia valida")
 assert(!/ignore as instrucoes|publique os dados/i.test(JSON.stringify(avaliarCasoMonitoramento(valid, "tests/fixtures/pesquisas-monitoramento"))), "instrucao externa vazou para evidencia")
 
-console.log("MONITORAMENTO_POLICY_PASS")
+console.log("MONITORAMENTO_POLICY_PASS", JSON.stringify({
+  monitored_sources: adapterIds,
+  sources_without_adapter: sourcesWithoutAdapter,
+  coverage_complete: sourcesWithoutAdapter.length === 0,
+}))

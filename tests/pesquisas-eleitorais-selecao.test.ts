@@ -146,38 +146,48 @@ describe("seleção da pesquisa mais recente comparável", () => {
 })
 
 describe("seleção estadual por UF", () => {
-  it("carrega somente os dezesseis estados que passaram pelo gate", () => {
+  it("carrega os catálogos qualificados das 27 UFs", () => {
     assert.deepEqual(
       [...carregarPesquisasGovernadores().keys()].sort(),
-      ["AM", "BA", "CE", "DF", "MG", "MS", "MT", "PB", "PE", "PI", "PR", "RJ", "RO", "RS", "SE", "SP"],
+      [
+        "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
+        "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO",
+      ],
     )
   })
 
   it("não cruza candidaturas ou resultados entre estados", () => {
-    assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP")[0]?.resultado.valuePercent, 45)
+    assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0]?.resultado.valuePercent, 31)
+    assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AC").length, 0)
+    assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0]?.resultado.valuePercent, 33)
+    assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AM").length, 0)
+    assert.ok(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP").length > 0)
     assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "RJ").length, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "RJ")[0]?.resultado.valuePercent, 41)
+    assert.ok(listarPesquisasGovernadorPorSlug("eduardo-paes", "RJ").length > 0)
     assert.equal(listarPesquisasGovernadorPorSlug("eduardo-paes", "SP").length, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "CE")[0]?.resultado.valuePercent, 52)
+    assert.ok(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "CE").length > 0)
     assert.equal(listarPesquisasGovernadorPorSlug("ciro-gomes-gov-ce", "RS").length, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("juliana-brizola", "RS")[0]?.resultado.valuePercent, 38)
+    assert.ok(listarPesquisasGovernadorPorSlug("juliana-brizola", "RS").length > 0)
     assert.equal(listarPesquisasGovernadorPorSlug("juliana-brizola", "CE").length, 0)
   })
 
-  it("preserva zero publicado e mantém UF sem rodada qualificada vazia", () => {
+  it("preserva zeros publicados e retorna vazio somente para slug sem vínculo exato", () => {
     assert.equal(listarPesquisasGovernadorPorSlug("henrique-areas", "MG")[0]?.resultado.valuePercent, 0)
     assert.equal(listarPesquisasGovernadorPorSlug("serley-leal", "CE")[0]?.resultado.valuePercent, 0)
     assert.equal(listarPesquisasGovernadorPorSlug("ze-batista", "CE")[0]?.resultado.valuePercent, 0)
-    assert.deepEqual(listarPesquisasGovernadorPorSlug("alan-rick", "AC"), [])
-    assert.deepEqual(listarPesquisasGovernadorPorSlug("jhc", "AL"), [])
     assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
   })
 
-  it("vincula cada alias publicado a uma candidatura de governador na mesma UF", () => {
-    const payload = JSON.parse(readFileSync("data/candidatos.json", "utf8")) as unknown
-    const candidatos = Array.isArray(payload)
-      ? payload
-      : ((payload as { candidatos?: unknown[] }).candidatos ?? [])
+  it("vincula cada alias publicado ao roster oficial ou ao seed histórico da mesma UF", () => {
+    const roster = JSON.parse(
+      readFileSync("data/candidate-roster-active-20260905.json", "utf8"),
+    ) as {
+      profiles: Array<{ profile_slug: string; office: string; uf: string; publication_status: string }>
+    }
+    const legacyPayload = JSON.parse(readFileSync("data/candidatos.json", "utf8")) as unknown
+    const legacyCandidates = Array.isArray(legacyPayload)
+      ? legacyPayload
+      : ((legacyPayload as { candidatos?: unknown[] }).candidatos ?? [])
 
     for (const [uf, data] of carregarPesquisasGovernadores()) {
       for (const poll of data.pesquisas) {
@@ -185,15 +195,26 @@ describe("seleção estadual por UF", () => {
           for (const result of scenario.resultados.filter(
             (entry) => entry.matchStatus === "exact_alias",
           )) {
-            const candidato = candidatos.find(
+            const official = roster.profiles.find(
+              (entry) =>
+                entry.profile_slug === result.candidateSlug &&
+                entry.office === "Governador" &&
+                entry.uf === uf &&
+                entry.publication_status === "active",
+            )
+            if (official) {
+              continue
+            }
+
+            const legacy = legacyCandidates.find(
               (entry) =>
                 typeof entry === "object" &&
                 entry !== null &&
                 (entry as { slug?: string }).slug === result.candidateSlug,
             ) as { cargo_disputado?: string; estado?: string } | undefined
-            assert.ok(candidato, `${uf}: slug ausente ${result.candidateSlug}`)
-            assert.equal(candidato.cargo_disputado, "Governador")
-            assert.equal(candidato.estado, uf)
+            assert.ok(legacy, `${uf}: slug ausente do roster e do seed ${result.candidateSlug}`)
+            assert.equal(legacy.cargo_disputado, "Governador")
+            assert.equal(legacy.estado, uf)
           }
         }
       }

@@ -1,0 +1,57 @@
+Meio/Ideia: Lula tem 38,4% no 1º turno; Flávio, 37,3% | CNN Brasil (https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/)
+citeturn141view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/","lineno":null}); Total lines: 210
+L0:   * cite0†Pular para o conteúdo L1:   * cite1†Ao vivo L2:   * cite2†Política L3:   * cite3†Money L4:   * cite4†WW L5:   * cite5†Agro L6:   * cite6†Infra L7:   * cite7†IA L8:   * cite8†Esportes L9:   * cite9†Viagem & Gastronomia L10: 
+L11:   * cite2†Política L12:   * cite10†Eleições L13:   * cite11†Índice CNN L14:   * cite12†Candidatos L15:   * cite13†Monitor de Debates L16: 
+L17: # Meio/Ideia: Lula tem 38,4% no 1º turno; Flávio, 37,3%
+L18: ## Instituto ouviu 1.500 eleitores entre os dias 4 e 7 de setembro; margem de erro é de 2,5 pontos percentuais, para mais ou para menos
+L19: 
+L20: cite14†Douglas Porto , da CNN Brasil, São Paulo 09/09/26 às 07:00 | Atualizado 09/09/26 às 07:00
+L21: 
+L22: cite15†Image†admin.cnnbrasil.com.br L23: 
+L24: O presidente Luiz Inácio Lula da Silva à esquerda e o senador Flávio Bolsonaro à direita  • Reprodução/montagem CNN
+L25: 
+L26: [Input]
+L27: 
+L28: cite16†Image: Fórum Inter L29: 
+L30: Compartilhar matéria
+L31: O presidente cite17†Luiz Inácio Lula da Silva (PT) e cite18†Flávio Bolsonaro (PL) estão tecnicamente empatos no 1º turno, segundo pesquisa Meio/Ideia divulgada nesta quarta-feira (9).
+L32: 
+L33: Lula tem 38,4% e Flávio, 37,3%. Já cite19†Augusto Cury (Avante) aparece com 6,6%; cite20†Renan Santos (Missão), 4%; cite21†Ronaldo Caiado (PSD), 4%; cite22†Romeu Zema (Novo), 1,5%; cite23†Pablo Marçal (PRTB), 1,5%; e cite24†Samara Martins (UP), 0,7%.
+L34: cite25†Rui Costa Pimenta (PCO) surge com 0,4%; cite26†Veterinário Wilson Grassi (Democrata), 0,2%; cite27†Hertz Dias (PSTU), 0,1%; cite28†Clariana Barão (DC), 0,1%; e cite29†Edmilson Costa (PCB), 0,1%.
+L35: 
+L36: Leia Mais:
+L37: 
+L38:   * cite30†TSE acata ação contra Flávio por suposto abuso de poder econômico L39: 
+L40:   * cite31†Flávio pede ao TSE cassação da chapa de Lula por abuso de poder no Carnaval L41: 
+L42:   * cite32†Eleição será definida na semana anterior ao 2° turno, dizem especialistas L43: Os que votam em ninguém/branco/nulo são 2,5%. Os que não sabem, 2,8%.
+L44: 
+L45: cite33†Image: hierarchy visualization†public.flourish.studio L46: ## Metodologia
+L47: 
+L48: Foram ouvidos 1.500 eleitores, por telefone, entre os dias 4 e 7 de setembro. A margem de erro é de 2,5 pontos percentuais, para mais ou para menos. O nível de confiança é de 95%.
+L49: 
+L50: O levantamento, feito com recursos próprios, foi registrado no TSE (Tribunal Superior Eleitoral) sob o protocolo BR-07935/26.
+L51: 
+L52: Tópicos
+L53: 
+L54: cite34†Eleições 2026 cite35†Flávio Bolsonaro cite36†Luiz Inácio Lula da Silva (Lula) L55: 
+L56: ## Mais Lidas
+L57: 
+L58: ### cite37†Por que a lâmpada LED fica meio acesa mesmo com o interruptor desligado? L59: ### cite38†Dino determina recondução de Andrei Rodrigues ao comando da PF L60: 
+L61: ### cite39†Como garimpeiro encontrou em Serra Pelada, a Pepita Canaã, achada com 60,8 kg e remanescente de uma rocha maior de 150 kg, que hoje integra acervo nacional no Banco Central L62: 
+L63: ### cite40†Crianças encontradas nos EUA: megaoperação resgata 79 desaparecidos L64: ### cite41†“Esperar que tratem você bem por ser uma boa pessoa é como acreditar que um leão não atacará você por ser vegetariano”: entenda o significado da filosofia atribuída na internet a Bruce Lee L65: 
+L66: ## WebStories
+L67: 
+L68: ### cite42†Quem são os candidatos ao Senado por Sergipe em 2026†stories.cnnbrasil.com.br L69: 
+L70: ### cite43†Quem são os candidatos a senador pelo Piauí em 2026†stories.cnnbrasil.com.br L71: ### cite44†Entenda a crise no STF e o que pode acontecer a partir de agora†stories.cnnbrasil.com.br L72: 
+L73: cite45†Image: Logo CNN†admin.cnnbrasil.com.br L74: 
+L75: CNN Brasil.
+L76: Pense bem, pense CNN.cite1†CNN AO VIVO L77: 
+L78: CNN Nas Redes
+L79: 
+L80:   *   *   *   *   *   *   *   *   * Mais
+L81: 
+L82:   * cite46†Equipe CNN Brasil†conteudos.cnnbrasil.com.br L83:   * cite47†Grade de Programação†conteudos.cnnbrasil.com.br L84:   * cite48†Blogs L85:   * cite49†Colunas L86:   * cite50†Fórum CNN L87:   * cite51†Mapa do site L88:   * cite52†Distribuição do Sinal†hotsite.cnnbrasil.com.br L89:   * [Input]cite53†Editorias L90:     * cite1†Ao Vivo L91:     * cite2†Política L92:     * cite54†Nacional L93:     * cite55†Economia L94:     * cite56†Internacional L95:     * cite57†Pop L96:     * cite8†Esportes L97:     * cite7†Inteligência Artificial L98:     * cite58†Saúde L99:     * cite59†Tecnologia L100:     * cite9†Viagem & Gastronomia L101:     * cite60†Auto L102:     * cite61†Comportamento L103:     * cite62†Style L104:   * [Input]cite2†Política L105:     * cite63†Índice CNN L106:     * cite64†Governo Lula L107:     * cite65†Câmara dos Deputados L108:     * cite66†Senado Federal L109:     * cite67†Supremo Tribunal Federal L110:     * cite68†Políticas Públicas L111:   * [Input]cite54†Nacional L112:     * cite69†Educação L113:     * cite70†Segurança L114:     * cite71†Clima L115:     * cite72†Meio Ambiente L116:     * cite73†Auxílio Brasil L117:     * cite74†São Paulo L118:     * cite75†Rio de Janeiro L119:     * cite76†Minas Gerais L120:     * cite77†Brasília L121:   * [Input]cite55†Economia L122:     * cite78†Mercado L123:     * cite79†Investimentos L124:     * cite80†Banco Central L125:     * cite81†Bolsa de Valores L126:     * cite82†Imposto de Renda L127:     * cite83†Finanças Pessoais L128:     * cite84†Loterias L129:     * cite85†Sustentabilidade L130:   * [Input]cite56†Internacional L131:     * cite86†Guerra na Ucrânia L132:     * cite87†Guerra em Israel L133:     * cite88†Estados Unidos L134:     * cite89†Europa L135:     * cite90†Ásia L136:     * cite91†África L137:     * cite92†Oriente Médio L138:     * cite93†Rússia L139:     * cite94†China L140:   * [Input]cite57†Pop L141:     * cite95†BBB L142:     * cite96†Carnaval L143:     * cite97†Celebridades L144:     * cite98†Cinema L145:     * cite99†Música L146:     * cite100†Realities L147:     * cite101†Streaming L148:     * cite102†TV L149:   * [Input]cite8†Esportes L150:     * cite103†Agenda de Jogos L151:     * cite104†Tabela Brasileirão Série A L152:     * cite105†Tabela Brasileirão Série B L153:     * cite106†Tabela Eliminatórias 2026 L154:     * cite107†Copa Libertadores da América L155:     * cite108†Olimpíadas L156:     * cite109†Basquete L157:     * cite110†Vôlei L158:     * cite111†Automobilismo L159:     * cite112†Golfe L160:     * cite113†e-Sports L161:   * [Input]cite58†Saúde L162:     * cite114†Roberto Kalil - Sinais Vitais L163:     * cite115†Alimentação L164:     * cite116†Exercícios Físicos L165:     * cite117†Vacinação L166:     * cite118†Câncer L167:     * cite119†Drogas L168:     * cite120†Obesidade L169:   * [Input]cite59†Tecnologia L170:   * [Input]cite9†Viagem & Gastronomia L171:   * cite121†Sobre a CNN Brasil†conteudos.cnnbrasil.com.br L172:   * cite122†Aviso Legal e Política de Privacidade†conteudos.cnnbrasil.com.br L173:   * cite123†Termos de Uso†conteudos.cnnbrasil.com.br L174:   * cite124†Fale com a CNN†conteudos.cnnbrasil.com.br L175:   * cite125†Faça parte da Equipe CNN†cnnbrasil.gupy.io L176: 
+L177: © Cable News Network Brasil. Uma empresa NOVUS MÍDIA. Todos os direitos reservados.
+L178:   *   * cite2†Política L179:   * cite10†Eleições L180:   * cite56†Internacional L181:   * cite54†Nacional L182:   * cite5†Agro L183:   * cite6†Infra L184:   * cite8†Esportes L185:   * cite55†Economia L186:   * cite3†CNN Money L187:   * cite7†Inteligência Artificial L188:   * cite57†Pop L189:   * cite62†Style L190:   * cite61†Comportamento L191:   * cite58†Saúde L192:   * cite126†Ciência L193:   * cite59†Tecnologia L194:   * cite9†Viagem & Gastronomia L195:   * cite127†Review L196:   * cite60†Auto L197:   * cite128†Educação L198:   * cite129†CNN Talks L199:   * cite50†Fórum CNN L200:   * cite130†Blogs CNN L201:   * cite131†Colunas CNN L202:   * cite121†Sobre a CNN†conteudos.cnnbrasil.com.br L203:   * cite122†Política de Privacidade†conteudos.cnnbrasil.com.br L204:   * cite123†Termos de Uso†conteudos.cnnbrasil.com.br L205:   * cite124†Fale com a CNN†conteudos.cnnbrasil.com.br L206:   * cite52†Distribuição do Sinal†hotsite.cnnbrasil.com.br L207:   * cite125†Faça parte da Equipe CNN†cnnbrasil.gupy.io L208: 
+L209: Buscar[Input: Buscar]
+

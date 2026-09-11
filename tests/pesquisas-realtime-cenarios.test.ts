@@ -1,3 +1,4 @@
+import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs"
@@ -18,6 +19,9 @@ test("listas alternativas, espontânea e duelos numerados mantêm bases distinta
   assert.deepEqual(result.scenarios.map((scenario) => [scenario.turn, scenario.mode, scenario.results.length]), [[1, "estimulado", 4], [1, "estimulado", 5], [1, "espontaneo", 5], [2, "estimulado", 4]])
   assert.equal(result.scenarios[0].results[0].value_percent, 54)
   assert.throws(() => extrairPublicacaoRealTime(html.replace("Um cenário", "Dois cenários"), plain))
+  const countBeforeHeading = html.replace("<h3>Segundo turno</h3><p>Um cenário de segundo turno.</p>", "<p>Dois cenários de segundo turno.</p><h3>Segundo turno</h3>")
+  assert.throws(() => extrairPublicacaoRealTime(countBeforeHeading, plain), /quantidade de cenários divergente/)
+  assert.equal(extrairPublicacaoRealTime(countBeforeHeading.replace("Dois cenários", "Um cenário"), plain)?.scenarios.length, 4)
 })
 
 test("nota de Outros é preservada sem atribuir percentual individual aos nomes agrupados", () => {

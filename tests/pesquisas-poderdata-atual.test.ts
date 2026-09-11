@@ -1,3 +1,4 @@
+import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs"
@@ -56,6 +57,7 @@ test("pesquisa nova entra apenas com manifesto explícito e prova oficial; aplic
     const html = '<meta property="article:published_time" content="2026-09-03"><p>PoderData. Eleição para presidente do Brasil no primeiro turno. Pesquisa foi realizada de 30 de agosto a 2 de setembro de 2026 com 3.000 eleitores. Margem de erro de 1,8 pontos percentuais. Intervalo de confiança de 95%. Entrevistas por telefone. BR-07561/2026.</p>'
     const result = avaliarEvidenciaAoVivo({ target, source: obterContratoFonte(target.source_id), html, observedAt, registry: [registry], registrySupplement, resultDocument })
     assert.equal(result.decision.eligible_for_human_review, true)
+    assert.ok(result.evidence?.identity_observations?.some((entry) => entry.raw_label === "Pablo Marçal" && entry.basis === "curated_ballot_name_office_uf"), "alias de outro cenário exige prova documental própria")
     escreverRelatorios([{ case_id: `${target.poll_id}-live`, result }], directory)
     const proposal = JSON.parse(readFileSync(join(directory, "proposal.json"), "utf8"))
     const computed = construirMatrizAgendada({ sourceId: target.source_id, uf: "BR" }, [target])[0]

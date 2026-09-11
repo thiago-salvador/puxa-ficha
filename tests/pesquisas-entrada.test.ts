@@ -1,3 +1,4 @@
+import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
 import { validarEntradasDescobertas } from "../scripts/lib/pesquisas-monitoramento-entrada"

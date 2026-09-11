@@ -49,8 +49,9 @@
     "test:pesquisas:identidade": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-identidade.test.ts",
     "test:pesquisas:selecao": "node --conditions react-server --import tsx --test tests/pesquisas-eleitorais-selecao.test.ts",
     "test:pesquisas:ui": "node --import tsx --test tests/pesquisas-eleitorais-ui.test.tsx",
-    "test:pesquisas": "npm run test:pesquisas:dados && npm run test:pesquisas:identidade && npm run test:pesquisas:selecao && node --conditions react-server --import tsx --test tests/pesquisas-governadores-cobertura.test.ts && npm run test:pesquisas:ui && node --import tsx --test tests/pesquisas-eleitorais-audit.test.ts tests/pesquisas-eleitorais-golden.test.ts tests/candidato-profile-tabs.test.ts",
+    "test:pesquisas": "npm run test:pesquisas:dados && npm run test:pesquisas:identidade && npm run test:pesquisas:selecao && node --conditions react-server --import tsx --test tests/pesquisas-rodadas-recentes.test.ts tests/pesquisas-busca-semanal.test.ts && node --conditions react-server --import tsx --test tests/pesquisas-governadores-cobertura.test.ts && npm run test:pesquisas:ui && node --import tsx --test tests/pesquisas-eleitorais-audit.test.ts tests/pesquisas-eleitorais-golden.test.ts tests/candidato-profile-tabs.test.ts",
     "test:visual:pesquisas": "npm run build && playwright test -c tests/visual/pesquisas-eleitorais.playwright.config.ts",
+    "test:visual:poll-evolution": "playwright test -c tests/visual/poll-evolution.playwright.config.ts",
     "test:pesquisas:production-smoke": "playwright test -c tests/visual/pesquisas-production-smoke.playwright.config.ts && node -e \"console.log('production smoke passed')\"",
     "test:pesquisas:monitoramento": "node --conditions react-server --import tsx --test tests/pesquisas-monitoramento-golden.test.ts tests/pesquisas-monitoramento-tse.test.ts tests/pesquisas-s0.test.ts tests/pesquisas-pesqele.test.ts tests/pesquisas-descoberta.test.ts",
     "test:pesquisas:monitoramento:tse": "node --conditions react-server --import tsx --test tests/pesquisas-monitoramento-tse.test.ts",
@@ -211,6 +212,7 @@
     "@tanstack/react-virtual": "^3.14.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "exceljs": "^4.4.0",
     "gsap": "^3.15.0",
     "html2canvas": "^1.4.1",
     "lucide-react": "^1.28.0",
@@ -247,6 +249,9 @@
     "yaml": "2.9.0"
   },
   "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    },
     "brace-expansion@5": "^5.0.9",
     "brace-expansion@1": "^1.1.18",
     "fast-uri@3": "^3.1.7",

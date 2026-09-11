@@ -13,7 +13,7 @@ import {
 import { margemCompativelComRegistro, type RegistroTseMonitoramento } from "./pesquisas-monitoramento-tse"
 import type { ObservacaoPesqele } from "./pesquisas-monitoramento-pesqele"
 import type { DocumentoPoderData } from "./pesquisas-monitoramento-poderdata-pdf"
-import { carregarIdentidadesCuradas, resolverIdentidadeCurada } from "./pesquisas-monitoramento-identidades"
+import { carregarIdentidadesCuradas, resolverIdentidadeCurada, aliasSemEscopoEspecifico, type AliasCatalogado } from "./pesquisas-monitoramento-identidades"
 import { resolverIdentidadeRevisada } from "./pesquisas-monitoramento-identidades-revisadas"
 
 type ClassificacaoMonitoramento =
@@ -224,20 +224,20 @@ function loadAliases(target: AlvoMonitoramento): Map<string, string | null> {
     aliases.set(rawLabel, previous === undefined || previous === candidateSlug ? candidateSlug : null)
   }
   const president = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as {
-    exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
+    exact_aliases: AliasCatalogado[]
   }
   if (target.office === "Presidente") {
-    president.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+    president.exact_aliases.filter(aliasSemEscopoEspecifico).forEach((alias) => add(alias.raw_label, alias.candidate_slug))
     return aliases
   }
   const governors = JSON.parse(readFileSync("scripts/data/pesquisas-governadores-2026.json", "utf8")) as {
     datasets: Array<{
       publication_scope: { geography_code: string }
-      exact_aliases: Array<{ raw_label: string; candidate_slug: string }>
+      exact_aliases: AliasCatalogado[]
     }>
   }
   const dataset = governors.datasets.find((candidate) => candidate.publication_scope.geography_code === target.geography_code)
-  dataset?.exact_aliases.forEach((alias) => add(alias.raw_label, alias.candidate_slug))
+  dataset?.exact_aliases.filter(aliasSemEscopoEspecifico).forEach((alias) => add(alias.raw_label, alias.candidate_slug))
   return aliases
 }
 

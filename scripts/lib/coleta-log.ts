@@ -213,10 +213,24 @@ export async function registrarColeta(entrada: EntradaColeta): Promise<void> {
  * precisa falhar também, em vez de anunciar uma revisão que não deixou rastro.
  * Ingests continuam usando `registrarColeta(s)`, cujo contrato é nunca lançar.
  */
-export async function registrarColetaOuFalhar(entrada: EntradaColeta): Promise<void> {
-  const ids = await carregarCandidatoIds()
+export async function registrarColetaOuFalhar(
+  entrada: EntradaColeta,
+  database: Pick<typeof supabase, "from"> = supabase,
+): Promise<void> {
+  const ids = new Map<string, string>()
+  if ((entrada.escopo ?? escopoDaFonte(entrada.fonte)) === "candidato") {
+    // Revisão manual não pode herdar o cache tolerante da telemetria. A leitura
+    // por slug precisa ter sucesso nesta chamada, antes de qualquer INSERT.
+    const { data, error } = await database.from("candidatos")
+      .select("id, slug").eq("slug", entrada.alvo).single()
+    if (error) throw new Error("Não foi possível resolver candidato_id: " + error.message)
+    if (!data || typeof data.id !== "string" || !data.id.trim() || data.slug !== entrada.alvo) {
+      throw new Error("Candidato não encontrado para o recibo estrito")
+    }
+    ids.set(entrada.alvo, data.id)
+  }
   const linhas = montarLinhas([entrada], ids)
-  const { error } = await supabase.from("coleta_log").insert(linhas)
+  const { error } = await database.from("coleta_log").insert(linhas)
   if (error) throw new Error(error.message)
 }
 

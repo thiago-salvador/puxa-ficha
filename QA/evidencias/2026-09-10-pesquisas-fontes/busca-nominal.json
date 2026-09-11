@@ -1,0 +1,1423 @@
+{
+  "reference_date": "2026-09-10",
+  "search_engine": "web.run",
+  "scope": "Busca nominal de 26 candidatos sem resultado individual na rodada inicial e cinco identidades pendentes; resultados encontrados não equivalem a publicação.",
+  "candidates": [
+    {
+      "estado": "BA",
+      "nome": "Ariel Capistrano",
+      "consultas_realizadas": [
+        "Pesquisa votos Bahia Ariel Capistrano",
+        "Ariel Capistrano pesquisa governador Bahia instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel/A Tarde",
+          "registro": "BA-08891/2026",
+          "cenario": "Governador, 1º turno, estimulada, cenário 2",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Ariel Capistrano (DC) não pontuou.",
+          "motivo": null,
+          "notas": "UOL informa 1.804 entrevistas e margem de erro de 2 p.p."
+        },
+        {
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+          "data_pesquisa": "2026-09-04 a 2026-09-08",
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BA-01568/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e, somados, alcançaram 1%.",
+          "motivo": "agrupamento explícito; não individualizar",
+          "notas": "Pesquisa mais recente encontrada para BA; não converter o 1% somado."
+        }
+      ]
+    },
+    {
+      "estado": "BA",
+      "nome": "Aroldo Félix",
+      "consultas_realizadas": [
+        "Pesquisa votos Bahia Aroldo Félix",
+        "Aroldo Félix pesquisa governador Bahia instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel/A Tarde",
+          "registro": "BA-08891/2026",
+          "cenario": "Governador, 1º turno, estimulada, cenário 2",
+          "percentual_individual": 0.1,
+          "trecho_comprobatorio": "Aroldo Félix (UP): 0,1%.",
+          "motivo": null,
+          "notas": "UOL informa 1.804 entrevistas e margem de erro de 2 p.p."
+        },
+        {
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+          "data_pesquisa": "2026-09-04 a 2026-09-08",
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BA-01568/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e, somados, alcançaram 1%.",
+          "motivo": "agrupamento explícito; não individualizar",
+          "notas": "Pesquisa mais recente encontrada para BA; não converter o 1% somado."
+        }
+      ]
+    },
+    {
+      "estado": "BA",
+      "nome": "Maria Bona",
+      "consultas_realizadas": [
+        "Pesquisa votos Bahia Maria Bona",
+        "Maria Bona pesquisa governador Bahia instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://politicabahia.com/noticia/atlas-030926",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel/A Tarde",
+          "registro": "BR-07739/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Ariel Capistrano (DC) e Maria Bona (PCO) não pontuaram.",
+          "motivo": null,
+          "notas": "Matéria regional explicita zero; o UOL detalha cenários em que Maria não aparece na lista."
+        },
+        {
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+          "data_pesquisa": "2026-09-04 a 2026-09-08",
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BA-01568/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Ariel Capistrano, Aroldo Félix e Maria Bona não pontuaram individualmente e, somados, alcançaram 1%.",
+          "motivo": "agrupamento explícito; não individualizar",
+          "notas": "Pesquisa mais recente encontrada para BA; não converter o 1% somado."
+        }
+      ]
+    },
+    {
+      "estado": "CE",
+      "nome": "Danilo Soares",
+      "consultas_realizadas": [
+        "Pesquisa votos Ceará Danilo Soares",
+        "Danilo Soares pesquisa governador Ceará instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-31 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-09",
+          "instituto": "Datafolha/O Povo",
+          "registro": "BR-05635/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 1,
+          "trecho_comprobatorio": "Danilo Soares (Democrata): 1%.",
+          "motivo": null,
+          "notas": "1.204 entrevistas; margem de erro de 3 p.p."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-31 a 2026-09-03",
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-09",
+          "instituto": "Quaest/TV Verdes Mares",
+          "registro": "CE-01149/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Danilo Soares, Vera Lúcia, Ieri Braga, Zé Batista e Serley Leal não pontuaram.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria, distinto do 1% somado de Real Time."
+        }
+      ]
+    },
+    {
+      "estado": "CE",
+      "nome": "Ieri Braga",
+      "consultas_realizadas": [
+        "Pesquisa votos Ceará Ieri Braga",
+        "Ieri Braga pesquisa governador Ceará instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-09",
+          "instituto": "AtlasIntel/Focus",
+          "registro": "CE-02357/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Ieri Braga (PCO) e Zé Batista (PSTU) não pontuaram.",
+          "motivo": null,
+          "notas": "1.834 entrevistas; margem de erro de 2 p.p."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-31 a 2026-09-03",
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-09",
+          "instituto": "Quaest/TV Verdes Mares",
+          "registro": "CE-01149/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Danilo Soares, Vera Lúcia, Ieri Braga, Zé Batista e Serley Leal não pontuaram.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria."
+        }
+      ]
+    },
+    {
+      "estado": "CE",
+      "nome": "Serley Leal",
+      "consultas_realizadas": [
+        "Pesquisa votos Ceará Serley Leal",
+        "Serley Leal pesquisa governador Ceará instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-09",
+          "instituto": "AtlasIntel/Focus",
+          "registro": "CE-02357/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0.2,
+          "trecho_comprobatorio": "Serley Leal (UP): 0,2%.",
+          "motivo": null,
+          "notas": "1.834 entrevistas; margem de erro de 2 p.p."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-31 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-09",
+          "instituto": "Datafolha/O Povo",
+          "registro": "BR-05635/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 1,
+          "trecho_comprobatorio": "Serley Leal (UP): 1%.",
+          "motivo": null,
+          "notas": "1.204 entrevistas; margem de erro de 3 p.p."
+        }
+      ]
+    },
+    {
+      "estado": "CE",
+      "nome": "Zé Batista",
+      "consultas_realizadas": [
+        "Pesquisa votos Ceará Zé Batista",
+        "Zé Batista pesquisa governador Ceará instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-28 a 2026-09-02",
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-09",
+          "instituto": "AtlasIntel/Focus",
+          "registro": "CE-02357/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Ieri Braga (PCO) e Zé Batista (PSTU) não pontuaram.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria; não usar o resultado Datafolha como zero."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+          "data_pesquisa": "2026-08-31 a 2026-09-02",
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-09",
+          "instituto": "Datafolha/O Povo",
+          "registro": "BR-05635/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Zé Batista (PSTU): não atinge 1%.",
+          "motivo": "abaixo de 1%, sem percentual individual preciso",
+          "notas": "Não converter 'não atinge 1%' em 0."
+        }
+      ]
+    },
+    {
+      "estado": "MA",
+      "nome": "Dimas Cassimiro",
+      "consultas_realizadas": [
+        "Pesquisa votos Maranhão Dimas Cassimiro",
+        "Dimas Cassimiro pesquisa governador Maranhão instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://www.repasseinformativo.com.br/2026/09/pesquisa-ippi-mostra-braide-liderando-com-448-e-orleans-em-segundo-com-245/",
+          "data_pesquisa": "2026-08-29 a 2026-09-02",
+          "data_divulgacao": "2026-09-07",
+          "data_materia": "2026-09-07",
+          "instituto": "IPPI/Café Quente",
+          "registro": "MA-08868/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Reginaldo Lima, Dimas Cassimiro e Saulo Arcangeli: agrupamento, sem percentual individual confirmado.",
+          "motivo": "Revisão posterior: fonte alternativa publica agrupamento aproximado de 1,6% dos votos válidos para os três nomes; não há parcela individual confirmada.",
+          "notas": "A interpretação inicial de 1% para cada candidato foi rejeitada. Nenhum resultado desta rodada entrou nas fichas."
+        },
+        {
+          "url_lida": "https://maranhaourgente.com.br/pesquisa-qualitativa-aponta-orleans-brandao-com-411-e-eduardo-braide-com-366-na-disputa-pelo-governo-do-maranhao/",
+          "data_pesquisa": "2026-08-19 a 2026-08-25",
+          "data_divulgacao": "2026-08-26",
+          "data_materia": "2026-08-26",
+          "instituto": "Qualitativa",
+          "registro": "MA-08263/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0.1,
+          "trecho_comprobatorio": "Dimas Cassimiro tem 0,1%.",
+          "motivo": null,
+          "notas": "900 entrevistas em 50 municípios; margem de erro de 3,27 p.p."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm",
+          "data_pesquisa": "2026-08-20 a 2026-08-23",
+          "data_divulgacao": "2026-08-24",
+          "data_materia": "2026-08-24",
+          "instituto": "Quaest/TV Mirante",
+          "registro": "MA-02558/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Dimas Cassimiro (PCO): 0%.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria da UOL."
+        }
+      ]
+    },
+    {
+      "estado": "MA",
+      "nome": "Reginaldo Lima",
+      "consultas_realizadas": [
+        "Pesquisa votos Maranhão Reginaldo Lima",
+        "Reginaldo Lima pesquisa governador Maranhão instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://www.repasseinformativo.com.br/2026/09/pesquisa-ippi-mostra-braide-liderando-com-448-e-orleans-em-segundo-com-245/",
+          "data_pesquisa": "2026-08-29 a 2026-09-02",
+          "data_divulgacao": "2026-09-07",
+          "data_materia": "2026-09-07",
+          "instituto": "IPPI/Café Quente",
+          "registro": "MA-08868/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Reginaldo Lima, Dimas Cassimiro e Saulo Arcangeli: agrupamento, sem percentual individual confirmado.",
+          "motivo": "Revisão posterior: fonte alternativa publica agrupamento aproximado de 1,6% dos votos válidos para os três nomes; não há parcela individual confirmada.",
+          "notas": "A interpretação inicial de 1% para cada candidato foi rejeitada. Nenhum resultado desta rodada entrou nas fichas."
+        },
+        {
+          "url_lida": "https://maranhaourgente.com.br/pesquisa-qualitativa-aponta-orleans-brandao-com-411-e-eduardo-braide-com-366-na-disputa-pelo-governo-do-maranhao/",
+          "data_pesquisa": "2026-08-19 a 2026-08-25",
+          "data_divulgacao": "2026-08-26",
+          "data_materia": "2026-08-26",
+          "instituto": "Qualitativa",
+          "registro": "MA-08263/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0.4,
+          "trecho_comprobatorio": "Reginaldo Lima soma 0,4%.",
+          "motivo": null,
+          "notas": "900 entrevistas em 50 municípios; margem de erro de 3,27 p.p."
+        },
+        {
+          "url_lida": "https://www.maranhaonoar.com.br/orleans-brandao-aparece-em-empate-tecnico-para-o-governo-aponta-pesquisa-inop/",
+          "data_pesquisa": "2026-08-17 a 2026-08-26",
+          "data_divulgacao": "2026-08-31",
+          "data_materia": "2026-08-31",
+          "instituto": "INOP/Jornal Pequeno",
+          "registro": "MA-07572/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0.08,
+          "trecho_comprobatorio": "Reginaldo Lima (PCB), com 0,08%.",
+          "motivo": null,
+          "notas": "A matéria informa 2.660 entrevistas e margem de erro de 3,02 p.p."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm",
+          "data_pesquisa": "2026-08-20 a 2026-08-23",
+          "data_divulgacao": "2026-08-24",
+          "data_materia": "2026-08-24",
+          "instituto": "Quaest/TV Mirante",
+          "registro": "MA-02558/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Reginaldo Lima (PCB): 0%.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria da UOL."
+        }
+      ]
+    },
+    {
+      "estado": "MA",
+      "nome": "Saulo Arcangeli",
+      "consultas_realizadas": [
+        "Pesquisa votos Maranhão Saulo Arcangeli",
+        "Saulo Arcangeli pesquisa governador Maranhão instituto"
+      ],
+      "achados": [
+        {
+          "url_lida": "https://www.repasseinformativo.com.br/2026/09/pesquisa-ippi-mostra-braide-liderando-com-448-e-orleans-em-segundo-com-245/",
+          "data_pesquisa": "2026-08-29 a 2026-09-02",
+          "data_divulgacao": "2026-09-07",
+          "data_materia": "2026-09-07",
+          "instituto": "IPPI/Café Quente",
+          "registro": "MA-08868/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": null,
+          "trecho_comprobatorio": "Reginaldo Lima, Dimas Cassimiro e Saulo Arcangeli: agrupamento, sem percentual individual confirmado.",
+          "motivo": "Revisão posterior: fonte alternativa publica agrupamento aproximado de 1,6% dos votos válidos para os três nomes; não há parcela individual confirmada.",
+          "notas": "A interpretação inicial de 1% para cada candidato foi rejeitada. Nenhum resultado desta rodada entrou nas fichas."
+        },
+        {
+          "url_lida": "https://maranhaourgente.com.br/pesquisa-qualitativa-aponta-orleans-brandao-com-411-e-eduardo-braide-com-366-na-disputa-pelo-governo-do-maranhao/",
+          "data_pesquisa": "2026-08-19 a 2026-08-25",
+          "data_divulgacao": "2026-08-26",
+          "data_materia": "2026-08-26",
+          "instituto": "Qualitativa",
+          "registro": "MA-08263/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0.9,
+          "trecho_comprobatorio": "Saulo Arcangeli aparece com 0,9%.",
+          "motivo": null,
+          "notas": "900 entrevistas em 50 municípios; margem de erro de 3,27 p.p."
+        },
+        {
+          "url_lida": "https://www.maranhaonoar.com.br/orleans-brandao-aparece-em-empate-tecnico-para-o-governo-aponta-pesquisa-inop/",
+          "data_pesquisa": "2026-08-17 a 2026-08-26",
+          "data_divulgacao": "2026-08-31",
+          "data_materia": "2026-08-31",
+          "instituto": "INOP/Jornal Pequeno",
+          "registro": "MA-07572/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Saulo Arcangeli (PSTU) não foi apontado por nenhum dos entrevistados.",
+          "motivo": null,
+          "notas": "Zero explícito; matéria também registra citações abaixo de 1% em pergunta de expectativa, que não é intenção de voto."
+        },
+        {
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/08/24/quaest-ma-agosto.ghtm",
+          "data_pesquisa": "2026-08-20 a 2026-08-23",
+          "data_divulgacao": "2026-08-24",
+          "data_materia": "2026-08-24",
+          "instituto": "Quaest/TV Mirante",
+          "registro": "MA-02558/2026",
+          "cenario": "Governador, 1º turno, estimulada",
+          "percentual_individual": 0,
+          "trecho_comprobatorio": "Saulo Arcangeli (PSTU): 0%.",
+          "motivo": null,
+          "notas": "Zero explícito na matéria da UOL."
+        }
+      ]
+    },
+    {
+      "nome": "Gal Leite",
+      "uf": "PA",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos PA Gal Leite Quaest",
+          "url_lida": "https://www.oliberal.com/eleicoes/amp/eleicoes-2026-alem-de-hana-e-dr-daniel-vejam-como-outros-candidatos-pontuaram-na-pesquisa-quaest-1.1162832",
+          "data_pesquisa": {
+            "inicio": "2026-08-25",
+            "fim": "2026-08-28"
+          },
+          "data_divulgacao": "2026-08-29",
+          "data_materia": "2026-08-29",
+          "instituto": "Quaest",
+          "registro": [
+            "PA-07718/2026",
+            "BR-05309/2026"
+          ],
+          "cenario": "1º turno estimulado, Governo do Pará",
+          "percentual_individual": 2,
+          "trecho_curto_comprobatorio": "Gal Leite (UP), Well Macedo (PSTU) e Araceli Lemos (PSOL) aparecem com 2% cada.",
+          "motivo": null,
+          "notas_identidade": "Nome de urna Gal Leite, UP; o registro consultado trata o nome individualmente."
+        },
+        {
+          "consulta": "Pesquisa votos PA Gal Leite Real Time Big Data",
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/",
+          "data_pesquisa": {
+            "inicio": "2026-09-03",
+            "fim": "2026-09-07"
+          },
+          "data_divulgacao": "2026-09-08",
+          "data_materia": "2026-09-08",
+          "instituto": "Real Time Big Data",
+          "registro": "PA-00206/2026",
+          "cenario": "1º turno estimulado, Governo do Pará",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "José Moita, Well Macedo e Gal Leite somados atingem 1%.",
+          "motivo": "agrupamento publicado; não é possível atribuir parcela individual",
+          "notas_identidade": "Preservado como agrupamento, sem rateio."
+        }
+      ]
+    },
+    {
+      "nome": "Ruth Reis",
+      "uf": "PA",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos PA Ruth Reis",
+          "url_lida": "https://portalgurupi.com.br/disputa-acirrada-governo-para-empate-tecnico/",
+          "data_pesquisa": {
+            "inicio": "2026-08-26",
+            "fim": "2026-08-30"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "EPOL/Simetria",
+          "registro": "PA-05413/2026",
+          "cenario": "1º turno estimulado, Governo do Pará",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "José Moita aparece com 1%; foi substituído por Ruth Reis no final do último dia da coleta, e seu nome não foi testado.",
+          "motivo": "candidatura substituta após o campo; Ruth não foi apresentada aos entrevistados",
+          "notas_identidade": "Ruth Helena Ferreira Reis, Democrata; passou de vice a cabeça de chapa no fim de agosto."
+        },
+        {
+          "consulta": "Pesquisa votos PA Ruth Reis instituto registro TSE",
+          "url_lida": "https://www.meuvoto.org.br/disputa/governo-pa.html",
+          "data_pesquisa": null,
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Doxa (registro mais recente listado)",
+          "registro": "PA067302026",
+          "cenario": "registros de pesquisas da disputa; sem resultado individual publicado na página",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "O portal não divulga resultado de pesquisa; mostra o registro, e o resultado está no documento de cada instituto.",
+          "motivo": "resultado individual não fornecido na superfície consultada; não tratar ausência como zero",
+          "notas_identidade": "A página lista Ruth Reis como Governador/PA, Democrata, aguardando julgamento."
+        }
+      ]
+    },
+    {
+      "nome": "Well Macedo",
+      "uf": "PA",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos PA Well Macedo Quaest",
+          "url_lida": "https://www.oliberal.com/eleicoes/amp/eleicoes-2026-alem-de-hana-e-dr-daniel-vejam-como-outros-candidatos-pontuaram-na-pesquisa-quaest-1.1162832",
+          "data_pesquisa": {
+            "inicio": "2026-08-25",
+            "fim": "2026-08-28"
+          },
+          "data_divulgacao": "2026-08-29",
+          "data_materia": "2026-08-29",
+          "instituto": "Quaest",
+          "registro": [
+            "PA-07718/2026",
+            "BR-05309/2026"
+          ],
+          "cenario": "1º turno estimulado, Governo do Pará",
+          "percentual_individual": 2,
+          "trecho_curto_comprobatorio": "Gal Leite (UP), Well Macedo (PSTU) e Araceli Lemos (PSOL) aparecem com 2% cada.",
+          "motivo": null,
+          "notas_identidade": "Nome de urna Well Macedo, PSTU; a matéria o individualiza no cenário."
+        },
+        {
+          "consulta": "Pesquisa votos PA Well Macedo Real Time Big Data",
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/",
+          "data_pesquisa": {
+            "inicio": "2026-09-03",
+            "fim": "2026-09-07"
+          },
+          "data_divulgacao": "2026-09-08",
+          "data_materia": "2026-09-08",
+          "instituto": "Real Time Big Data",
+          "registro": "PA-00206/2026",
+          "cenario": "1º turno estimulado, Governo do Pará",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "José Moita, Well Macedo e Gal Leite somados atingem 1%.",
+          "motivo": "agrupamento publicado; não é possível atribuir parcela individual",
+          "notas_identidade": "Preservado como agrupamento, sem rateio."
+        }
+      ]
+    },
+    {
+      "nome": "Expedito Mendonça",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Expedito Mendonça Datafolha",
+          "url_lida": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-celina-leao-e-jose-roberto-arruda-empatam-na-disputa-pelo-governo-do-df.shtml",
+          "data_pesquisa": {
+            "inicio": "2026-08-18",
+            "fim": "2026-08-21"
+          },
+          "data_divulgacao": "2026-08-21",
+          "data_materia": "2026-08-21",
+          "instituto": "Datafolha",
+          "registro": [
+            "DF-07561/2026",
+            "BR-02094/2026"
+          ],
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Expedito Mendonça (PCO) não pontuou.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica o nome completo como Expedito Carneiro de Mendonça, PCO."
+        },
+        {
+          "consulta": "Pesquisa votos DF Expedito Mendonça Real Time Big Data",
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+          "data_pesquisa": {
+            "inicio": "2026-09-04",
+            "fim": "2026-09-08"
+          },
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BR-09600/2026",
+          "cenario": "1º turno estimulado, cenário com Arruda",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Elisson, Kiko Caputo, Professor Robson, Professora Samara Mineiro, Rico Pinheiro e Expedito Mendonça, somados, atingiram 2%.",
+          "motivo": "agrupamento publicado; não é possível atribuir parcela individual",
+          "notas_identidade": "Não converter o agrupamento em zero; o zero individual acima vem apenas do Datafolha."
+        },
+        {
+          "consulta": "Pesquisa votos DF Expedito Mendonça Igape",
+          "url_lida": "https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/",
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-05"
+          },
+          "data_divulgacao": "2026-09-06",
+          "data_materia": "2026-09-09",
+          "instituto": "IGAPE",
+          "registro": null,
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0.4,
+          "trecho_curto_comprobatorio": "Samara Mineiro e Expedito registram 0,4%; Elisson Ferreira e Professor Robson, 0,3%.",
+          "motivo": null,
+          "notas_identidade": "Fonte regional; o texto não exibe o número do registro na matéria lida."
+        }
+      ]
+    },
+    {
+      "nome": "Rico Pinheiro",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Rico Pinheiro AtlasIntel",
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "DF-02018/2026",
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Rico Pinheiro (PRTB): 0%.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica Alderico da Silva Pinheiro Filho, nome de urna Rico Pinheiro, PRTB."
+        },
+        {
+          "consulta": "Pesquisa votos DF Rico Pinheiro Real Time Big Data",
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+          "data_pesquisa": {
+            "inicio": "2026-09-04",
+            "fim": "2026-09-08"
+          },
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BR-09600/2026",
+          "cenario": "1º turno estimulado, cenário com Arruda",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Rico Pinheiro foi incluído no grupo de seis candidatos que, somados, atingiram 2%.",
+          "motivo": "agrupamento publicado; não é possível atribuir parcela individual",
+          "notas_identidade": "Preservado como agrupamento."
+        }
+      ]
+    },
+    {
+      "nome": "Subtenente Luiz Carlos",
+      "uf": "TO",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos TO Subtenente Luiz Carlos Paraná Pesquisas",
+          "url_lida": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/",
+          "data_pesquisa": {
+            "inicio": "2026-08-25",
+            "fim": "2026-08-27"
+          },
+          "data_divulgacao": "2026-08-28",
+          "data_materia": "2026-08-28",
+          "instituto": "Paraná Pesquisas",
+          "registro": "TO-02900/2026",
+          "cenario": "1º turno estimulado, Governo do Tocantins",
+          "percentual_individual": 1.6,
+          "trecho_curto_comprobatorio": "Subtenente Luiz Carlos (Democrata): 1,6%.",
+          "motivo": null,
+          "notas_identidade": "TO não aparece no roster de Governador atual do projeto; fonte de candidatura identifica Luiz Carlos Ferreira da Silva, Democrata, nº 35. TRE-TO noticiou indeferimento em 03/09/2026."
+        }
+      ]
+    },
+    {
+      "nome": "Sargento Laudicério",
+      "uf": "MT",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos MT Sargento Laudicério Paraná Pesquisas",
+          "url_lida": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/",
+          "data_pesquisa": {
+            "inicio": "2026-09-06",
+            "fim": "2026-09-08"
+          },
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Paraná Pesquisas",
+          "registro": "MT-01505/2026",
+          "cenario": "1º turno espontâneo, Governo de Mato Grosso",
+          "percentual_individual": 0.3,
+          "trecho_curto_comprobatorio": "Sargento Laudicério (Agir): 0,3%.",
+          "motivo": null,
+          "notas_identidade": "Duas inscrições ativas aparecem associadas ao mesmo nome, partido, cargo e UF no material do projeto; SQ deliberadamente não atribuído nesta busca."
+        },
+        {
+          "consulta": "Pesquisa votos MT Sargento Laudicério Paraná Pesquisas cenário estimulado",
+          "url_lida": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/",
+          "data_pesquisa": {
+            "inicio": "2026-09-06",
+            "fim": "2026-09-08"
+          },
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Paraná Pesquisas",
+          "registro": "MT-01505/2026",
+          "cenario": "1º turno estimulado, Governo de Mato Grosso",
+          "percentual_individual": 1.7,
+          "trecho_curto_comprobatorio": "Sargento Laudicério (Agir): 1,7%.",
+          "motivo": null,
+          "notas_identidade": "Nome completo encontrado nas fichas de candidatura: Laudicerio Aguiar Machado; Agir; Governador/MT. SQ não inferido."
+        }
+      ]
+    },
+    {
+      "nome": "Elisson",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Elisson Ferreira Igape",
+          "url_lida": "https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/",
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-05"
+          },
+          "data_divulgacao": "2026-09-06",
+          "data_materia": "2026-09-09",
+          "instituto": "IGAPE",
+          "registro": null,
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0.3,
+          "trecho_curto_comprobatorio": "Elisson Ferreira e Professor Robson aparecem com 0,3%.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica Elisson Ferreira Freire, Agir."
+        },
+        {
+          "consulta": "Pesquisa votos DF Elisson AtlasIntel",
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "DF-02018/2026",
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Elisson (Agir): 0%.",
+          "motivo": null,
+          "notas_identidade": "Zero explícito preservado; não é conversão de agrupamento."
+        }
+      ]
+    },
+    {
+      "nome": "Kiko Caputo",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Kiko Caputo AtlasIntel",
+          "url_lida": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-distrito-federal-setembro-2026/",
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "DF-02018/2026",
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 4.3,
+          "trecho_curto_comprobatorio": "Kiko Caputo (Novo): 4,3%.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica Francisco Queiroz Caputo Neto, nome de urna Kiko Caputo, Novo."
+        },
+        {
+          "consulta": "Pesquisa votos DF Kiko Caputo Real Time Big Data",
+          "url_lida": "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+          "data_pesquisa": {
+            "inicio": "2026-09-04",
+            "fim": "2026-09-08"
+          },
+          "data_divulgacao": "2026-09-09",
+          "data_materia": "2026-09-09",
+          "instituto": "Real Time Big Data",
+          "registro": "BR-09600/2026",
+          "cenario": "1º turno estimulado, cenário com Arruda",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Kiko Caputo foi incluído no grupo de seis candidatos que, somados, atingiram 2%.",
+          "motivo": "agrupamento publicado; não é possível atribuir parcela individual",
+          "notas_identidade": "Preservado como agrupamento; o 4,3% é o resultado individual mais recente encontrado."
+        }
+      ]
+    },
+    {
+      "nome": "Professor Robson",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Professor Robson Robson Raymundo Igape",
+          "url_lida": "https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/",
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-05"
+          },
+          "data_divulgacao": "2026-09-06",
+          "data_materia": "2026-09-09",
+          "instituto": "IGAPE",
+          "registro": null,
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0.3,
+          "trecho_curto_comprobatorio": "Elisson Ferreira e Professor Robson aparecem com 0,3%.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica Robson Raymundo da Silva, PSTU, nome de urna Professor Robson."
+        },
+        {
+          "consulta": "Pesquisa votos DF Professor Robson AtlasIntel",
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "DF-02018/2026",
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Professor Robson (PSTU): 0%.",
+          "motivo": null,
+          "notas_identidade": "Zero explícito preservado; não é conversão de agrupamento."
+        }
+      ]
+    },
+    {
+      "nome": "Professora Samara Mineiro",
+      "uf": "DF",
+      "cargo": "Governador",
+      "consultas": [
+        {
+          "consulta": "Pesquisa votos DF Professora Samara Mineiro Igape",
+          "url_lida": "https://jornaldebrasilia.com.br/brasilia/quatro-candidatos-alem-dos-lideres-aparecem-na-pesquisa-para-o-gdf/",
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-05"
+          },
+          "data_divulgacao": "2026-09-06",
+          "data_materia": "2026-09-09",
+          "instituto": "IGAPE",
+          "registro": null,
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 0.4,
+          "trecho_curto_comprobatorio": "Samara Mineiro e Expedito registram 0,4%.",
+          "motivo": null,
+          "notas_identidade": "TRE-DF identifica Samara Mineiro Oliveira, UP, nome de urna Professora Samara Mineiro."
+        },
+        {
+          "consulta": "Pesquisa votos DF Professora Samara Mineiro AtlasIntel",
+          "url_lida": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "DF-02018/2026",
+          "cenario": "1º turno estimulado, Governo do Distrito Federal",
+          "percentual_individual": 1.3,
+          "trecho_curto_comprobatorio": "Professora Samara Mineiro (UP): 1,3%.",
+          "motivo": null,
+          "notas_identidade": "Resultado anterior, mantido para comparação temporal."
+        }
+      ]
+    },
+    {
+      "nome": "Cesar Pontes",
+      "uf": "RS",
+      "consultas": [
+        "Pesquisa votos Cesar Pontes Rio Grande do Sul governador 2026 instituto",
+        "Cesar Pontes pesquisa governador RS 2026"
+      ],
+      "urls_lidas": [
+        "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/",
+        "https://www1.folha.uol.com.br/poder/2026/08/quaest-luciano-zucco-pl-e-juliana-brizola-pdt-mantem-empate-tecnico-no-1-e-2-turnos-no-rs.shtml",
+        "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-20",
+            "fim": "2026-08-23"
+          },
+          "data_divulgacao": "2026-08-25",
+          "data_materia": "2026-08-25",
+          "instituto": "Genial/Quaest",
+          "registro": "RS-06875/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Cesar Pontes (PCO) e Rejane de Oliveira (PSTU) não pontuaram.",
+          "motivo": null,
+          "notas_identidade": "A CNN lista o nome individualmente e publica 'não pontuaram'; o catálogo local não tem alias/candidate_slug para Cesar Pontes.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-09-05",
+            "fim": "2026-09-09"
+          },
+          "data_divulgacao": "2026-09-10",
+          "data_materia": "2026-09-10",
+          "instituto": "RealTime Big Data",
+          "registro": "RS-05497/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Outros 1% (soma de Cesar Pontes, Priscila Voigt e Rejane de Oliveira).",
+          "motivo": "A rodada mais recente agrupa os três nomes em Outros; não há percentual individual.",
+          "notas_identidade": "Trecho confirmado na captura local de QA; a abertura direta da URL UOL falhou nesta sessão. Falha de acesso não foi tratada como ausência.",
+          "fonte_acesso": "captura_local_QA"
+        }
+      ]
+    },
+    {
+      "nome": "Priscila Voigt",
+      "uf": "RS",
+      "consultas": [
+        "Pesquisa votos Priscila Voigt Rio Grande do Sul governador 2026 instituto",
+        "Priscila Voigt pesquisa governador RS 2026"
+      ],
+      "urls_lidas": [
+        "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/",
+        "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/",
+        "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "RS-00652/2026; BR-08582/2026",
+          "cenario": "1º turno, governador RS",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Priscila Voigt (UP): 0%.",
+          "motivo": null,
+          "notas_identidade": "Nome aparece individualmente como candidata ao governo RS; sem necessidade de inferência de chapa.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-20",
+            "fim": "2026-08-23"
+          },
+          "data_divulgacao": "2026-08-25",
+          "data_materia": "2026-08-25",
+          "instituto": "Genial/Quaest",
+          "registro": "RS-06875/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": 1,
+          "trecho_curto_comprobatorio": "Priscila Voigt (UP), 1%.",
+          "motivo": null,
+          "notas_identidade": "Nome individual e partido publicados pela CNN; confirmação mais recente do AtlasIntel foi 0%.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-09-05",
+            "fim": "2026-09-09"
+          },
+          "data_divulgacao": "2026-09-10",
+          "data_materia": "2026-09-10",
+          "instituto": "RealTime Big Data",
+          "registro": "RS-05497/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Outros 1% (soma de Cesar Pontes, Priscila Voigt e Rejane de Oliveira).",
+          "motivo": "A rodada mais recente agrupa os três nomes em Outros; não há percentual individual.",
+          "notas_identidade": "Trecho confirmado na captura local de QA; a abertura direta da URL UOL falhou nesta sessão.",
+          "fonte_acesso": "captura_local_QA"
+        }
+      ]
+    },
+    {
+      "nome": "Rejane de Oliveira",
+      "uf": "RS",
+      "consultas": [
+        "Pesquisa votos Rejane de Oliveira Rio Grande do Sul governador 2026 instituto",
+        "Rejane de Oliveira pesquisa governador RS 2026"
+      ],
+      "urls_lidas": [
+        "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/",
+        "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/",
+        "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-27",
+            "fim": "2026-09-01"
+          },
+          "data_divulgacao": "2026-09-03",
+          "data_materia": "2026-09-03",
+          "instituto": "AtlasIntel",
+          "registro": "RS-00652/2026; BR-08582/2026",
+          "cenario": "1º turno, governador RS",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Rejane de Oliveira (PSTU): 0%.",
+          "motivo": null,
+          "notas_identidade": "Nome aparece individualmente como candidata ao governo RS; sem necessidade de inferência de chapa.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-20",
+            "fim": "2026-08-23"
+          },
+          "data_divulgacao": "2026-08-25",
+          "data_materia": "2026-08-25",
+          "instituto": "Genial/Quaest",
+          "registro": "RS-06875/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": 0,
+          "trecho_curto_comprobatorio": "Cesar Pontes (PCO) e Rejane de Oliveira (PSTU) não pontuaram.",
+          "motivo": null,
+          "notas_identidade": "A CNN lista o nome individualmente e publica 'não pontuaram'; confirmação mais recente do AtlasIntel também é 0%.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-09-05",
+            "fim": "2026-09-09"
+          },
+          "data_divulgacao": "2026-09-10",
+          "data_materia": "2026-09-10",
+          "instituto": "RealTime Big Data",
+          "registro": "RS-05497/2026",
+          "cenario": "1º turno estimulado, governador RS",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Outros 1% (soma de Cesar Pontes, Priscila Voigt e Rejane de Oliveira).",
+          "motivo": "A rodada mais recente agrupa os três nomes em Outros; não há percentual individual.",
+          "notas_identidade": "Trecho confirmado na captura local de QA; a abertura direta da URL UOL falhou nesta sessão.",
+          "fonte_acesso": "captura_local_QA"
+        }
+      ]
+    },
+    {
+      "nome": "Dr. Helton",
+      "nome_referencia": "Helton Monteiro",
+      "uf": "SE",
+      "consultas": [
+        "Pesquisa votos Dr. Helton Sergipe governador 2026 instituto",
+        "Pesquisa votos Helton Monteiro Sergipe 2026",
+        "Dr. Helton pesquisa governador SE 2026"
+      ],
+      "urls_lidas": [
+        "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml",
+        "https://www.sergipeverdade.com.br/noticia/3079/aracaju/politica/pesquisa-ctas-aponta-vitoria-de-fabio-mitidieri-no-primeiro-turno.html"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-23",
+            "fim": "2026-08-26"
+          },
+          "data_divulgacao": "2026-08-27",
+          "data_materia": "2026-08-27",
+          "instituto": "Genial/Quaest",
+          "registro": "SE-03536/2026; BR-07281/2026",
+          "cenario": "1º turno, governador SE",
+          "percentual_individual": 1,
+          "trecho_curto_comprobatorio": "Marcaram 1% na pesquisa Emanuel Cacho, Dr. Helton (PSOL) e Taty Cristina de Jesus (DC).",
+          "motivo": null,
+          "notas_identidade": "A matéria usa 'Dr. Helton'; o catálogo local usa 'Dr. Helton Monteiro (PSOL)', tratado aqui como o mesmo nome apenas por essa ponte nominal explícita.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-17",
+            "fim": "2026-08-21"
+          },
+          "data_divulgacao": "2026-08-22",
+          "data_materia": "2026-08-22",
+          "instituto": "CTAS Consultoria & Pesquisa",
+          "registro": "SE-08432/2026",
+          "cenario": "1º turno estimulado, todos os entrevistados",
+          "percentual_individual": 0.55,
+          "trecho_curto_comprobatorio": "Dr. Helton com 0,55%.",
+          "motivo": null,
+          "notas_identidade": "A fonte publica o nome abreviado; o catálogo local registra Helton Monteiro.",
+          "fonte_acesso": "web"
+        }
+      ]
+    },
+    {
+      "nome": "Taty Cristina de Jesus",
+      "uf": "SE",
+      "consultas": [
+        "Pesquisa votos Taty Cristina de Jesus Sergipe governador 2026 instituto",
+        "Taty Cristina pesquisa governador SE 2026"
+      ],
+      "urls_lidas": [
+        "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml",
+        "https://www.agorasergipe.com.br/conteudo/politica/1o-pesquisa-inor-apos-inicio-oficial-da-campanha-traz-valmir-de-francisquinho-a-frente",
+        "https://www.sergipeverdade.com.br/noticia/3079/aracaju/politica/pesquisa-ctas-aponta-vitoria-de-fabio-mitidieri-no-primeiro-turno.html"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-23",
+            "fim": "2026-08-26"
+          },
+          "data_divulgacao": "2026-08-27",
+          "data_materia": "2026-08-27",
+          "instituto": "Genial/Quaest",
+          "registro": "SE-03536/2026; BR-07281/2026",
+          "cenario": "1º turno, governador SE",
+          "percentual_individual": 1,
+          "trecho_curto_comprobatorio": "Marcaram 1% na pesquisa Emanuel Cacho, Dr. Helton (PSOL) e Taty Cristina de Jesus (DC).",
+          "motivo": null,
+          "notas_identidade": "Nome completo e partido publicados individualmente.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-17",
+            "fim": "2026-08-21"
+          },
+          "data_divulgacao": "2026-08-22",
+          "data_materia": "2026-08-22",
+          "instituto": "CTAS Consultoria & Pesquisa",
+          "registro": "SE-08432/2026",
+          "cenario": "1º turno estimulado, todos os entrevistados",
+          "percentual_individual": 0.94,
+          "trecho_curto_comprobatorio": "Taty Cristina de Jesus com 0,94%.",
+          "motivo": null,
+          "notas_identidade": "Nome completo publicado individualmente.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-13",
+            "fim": "2026-08-16"
+          },
+          "data_divulgacao": "2026-08-21",
+          "data_materia": "2026-08-22",
+          "instituto": "INOR",
+          "registro": "04930/2026",
+          "cenario": "1º turno estimulado",
+          "percentual_individual": 0.37,
+          "trecho_curto_comprobatorio": "Taty Cristina de Jesus, com 0,37%.",
+          "motivo": null,
+          "notas_identidade": "Nome completo publicado individualmente.",
+          "fonte_acesso": "web"
+        }
+      ]
+    },
+    {
+      "nome": "Alexandre Curi",
+      "uf": "PR",
+      "consultas": [
+        "Pesquisa votos Alexandre Curi Paraná governador 2026 instituto",
+        "Alexandre Curi pesquisa governador PR 2026 IRG"
+      ],
+      "urls_lidas": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/",
+        "https://electiolab.com/candidato/alexandre-curi"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-03"
+          },
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-04",
+          "instituto": "IRG Pesquisas",
+          "registro": "PR-02179/2026",
+          "cenario": "1º turno espontâneo, governador PR",
+          "percentual_individual": 0.6,
+          "trecho_curto_comprobatorio": "Alexandre Curi (Republicanos): 0,6%.",
+          "motivo": null,
+          "notas_identidade": "A espontânea publica o nome individualmente, mas o catálogo Governador PR não possui candidate_slug para ele. Página eleitoral consultada o identifica como candidato ao Senado PR 2026; não forçar cargo de governador.",
+          "fonte_acesso": "web"
+        }
+      ]
+    },
+    {
+      "nome": "Rafael Greca",
+      "uf": "PR",
+      "consultas": [
+        "Pesquisa votos Rafael Greca Paraná governador 2026 instituto",
+        "Rafael Greca pesquisa governador PR 2026 IRG"
+      ],
+      "urls_lidas": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-03"
+          },
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-04",
+          "instituto": "IRG Pesquisas",
+          "registro": "PR-02179/2026",
+          "cenario": "1º turno espontâneo, governador PR",
+          "percentual_individual": 0.3,
+          "trecho_curto_comprobatorio": "Rafael Greca (MDB): 0,3%.",
+          "motivo": null,
+          "notas_identidade": "A espontânea publica o nome individualmente, mas o catálogo Governador PR não possui candidate_slug para ele.",
+          "fonte_acesso": "web"
+        },
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-03"
+          },
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-04",
+          "instituto": "IRG Pesquisas",
+          "registro": "PR-02179/2026",
+          "cenario": "1º turno estimulado com chapas, governador PR",
+          "percentual_individual": null,
+          "trecho_curto_comprobatorio": "Sandro Alex (PSD) e Rafael Greca (MDB): 27,0%.",
+          "motivo": "Percentual é da chapa completa; não atribuir 27% individualmente a Rafael Greca nem mapear o vice para titular.",
+          "notas_identidade": "Rafael Greca aparece como integrante/vice da chapa de Sandro Alex na matéria; o catálogo mapeia a chapa apenas para Sandro Alex.",
+          "fonte_acesso": "web"
+        }
+      ]
+    },
+    {
+      "nome": "Ratinho Junior",
+      "uf": "PR",
+      "consultas": [
+        "Pesquisa votos Ratinho Junior Paraná governador 2026 instituto",
+        "Ratinho Junior pesquisa governador PR 2026 IRG"
+      ],
+      "urls_lidas": [
+        "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/",
+        "https://jornalnoroeste.com/pagina/eleicoes/ratinho-junior-psd-tem-80-de-aprovacao-entre-os-paranaenses-e-permanece-entre-governadores-mais-bem-avaliados-do-brasil-aponta-real-time-big-data"
+      ],
+      "resultados": [
+        {
+          "data_pesquisa": {
+            "inicio": "2026-08-31",
+            "fim": "2026-09-03"
+          },
+          "data_divulgacao": "2026-09-04",
+          "data_materia": "2026-09-04",
+          "instituto": "IRG Pesquisas",
+          "registro": "PR-02179/2026",
+          "cenario": "1º turno espontâneo, governador PR",
+          "percentual_individual": 2.6,
+          "trecho_curto_comprobatorio": "Ratinho Junior (PSD): 2,6%.",
+          "motivo": null,
+          "notas_identidade": "Nome individual publicado na espontânea; o catálogo Governador PR não possui candidate_slug. A matéria de aprovação o identifica como governador em exercício; isso não prova candidatura ao cargo em 2026.",
+          "fonte_acesso": "web"
+        }
+      ]
+    },
+    {
+      "uf": "PB",
+      "candidate_slug": "yuri-ezequiel",
+      "name": "Yuri Ezequiel",
+      "queries": [
+        "Pesquisa votos Paraíba Yuri Ezequiel setembro 2026",
+        "Yuri Ezequiel Anova 8 setembro 2026 intenção"
+      ],
+      "status": "individual_result_found",
+      "institute": "AtlasIntel",
+      "article_date": "2026-09-04",
+      "reported_poll_publication_date": "2026-09-04",
+      "fieldwork": {
+        "start": "2026-08-28",
+        "end": "2026-09-02"
+      },
+      "registration": "PB-01118/2026",
+      "scenario": "Primeiro turno estimulado, total de entrevistados",
+      "value_percent": 0.5,
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/",
+      "evidence_excerpt": "Yuri Ezequiel (UP) 0,5%",
+      "sample": 1207,
+      "margin_error_pp": 3,
+      "confidence_percent": 95,
+      "commissioner": "AtlasIntel, recursos próprios",
+      "method": null,
+      "all_results": [
+        [
+          "Lucas Ribeiro",
+          42.4
+        ],
+        [
+          "Efraim Filho",
+          30.9
+        ],
+        [
+          "Cícero Lucena",
+          19.8
+        ],
+        [
+          "Yuri Ezequiel",
+          0.5
+        ],
+        [
+          "Camilo Duarte",
+          0.4
+        ],
+        [
+          "Pedro Coutinho",
+          0.3
+        ],
+        [
+          "Branco/nulo",
+          3.8
+        ],
+        [
+          "Não sabe",
+          1.9
+        ]
+      ],
+      "notes": [
+        "A matéria da CNN diz divulgação em 04/09. Há republicações que atribuem a mesma rodada a 03/09; preservar essa divergência, sem confundir data de notícia com campo.",
+        "Resultado de 1,8% na Anova encontrado em outra notícia é rejeição, não intenção de voto, e foi descartado para esta finalidade.",
+        "A ficha já possuía 1% de outra rodada, Real Time Big Data de 24/08; não transportar esse valor à rodada Anova de 08/09."
+      ]
+    },
+    {
+      "uf": "MS",
+      "candidate_slug": "jeferson-bezerra",
+      "name": "Jeferson Bezerra",
+      "queries": [
+        "Pesquisa votos Mato Grosso do Sul Jeferson Bezerra setembro 2026",
+        "Jeferson Bezerra pesquisa governador 2026 percentual",
+        "Jeferson Bezerra setembro pesquisa governo",
+        "Jeferson Bezerra IPR 2026 pesquisa"
+      ],
+      "status": "individual_result_found",
+      "institute": "Instituto de Pesquisa Resultado (IPR)",
+      "article_date": "2026-08-27",
+      "reported_poll_publication_date": "2026-08-27",
+      "fieldwork": {
+        "start": "2026-08-19",
+        "end": "2026-08-23"
+      },
+      "registration": "MS-07621/2026",
+      "scenario": "Primeiro turno estimulado, total de entrevistados",
+      "value_percent": 0.89,
+      "source_url": "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/",
+      "supporting_url": "https://acritica.net/eleicoes-2026/pesquisa-ipr-quaest-riedel-58-votos-validos-governo-ms/",
+      "evidence_excerpt": "Jeferson Bezerra (Agir) e Daniel Lemes (PCO), 0,89% cada.",
+      "sample": 784,
+      "margin_error_pp": 3.5,
+      "confidence_percent": 95,
+      "commissioner": "Correio do Estado",
+      "method": null,
+      "all_results": [
+        [
+          "Eduardo Riedel",
+          44.77
+        ],
+        [
+          "Fábio Trad",
+          13.78
+        ],
+        [
+          "Delcídio do Amaral",
+          7.02
+        ],
+        [
+          "João Henrique Catan",
+          4.85
+        ],
+        [
+          "Renato Gomes",
+          2.68
+        ],
+        [
+          "Lucien Rezende",
+          1.91
+        ],
+        [
+          "Jeferson Bezerra",
+          0.89
+        ],
+        [
+          "Daniel Lemes",
+          0.89
+        ],
+        [
+          "Branco/nulo",
+          9.44
+        ],
+        [
+          "Indecisos",
+          13.78
+        ]
+      ],
+      "notes": [
+        "Divulgação em 27/08, limite de 14 dias corridos em 10/09. A notícia de A Crítica em 09/09 recita esta rodada antiga; não é uma pesquisa nova de setembro.",
+        "Os valores publicados somam 100,01%, diferença de arredondamento preservada.",
+        "A fonte atribui PL a João Henrique Catan; o cadastro vigente aponta NOVO. O vínculo exige pessoa/cargo/UF comprovados, sem corrigir silenciosamente o texto da fonte.",
+        "Outra fonte lida, O Jacaré em 27/08, também informa Jeferson com 1% na Quaest MS-00793/2026, campo 21 a 24/08, divulgada em 25/08. Essa rodada é mais antiga que o limite de 14 dias para divulgação e deve manter a data explícita."
+      ]
+    }
+  ],
+  "review_note": "Buscas podem conter achados rejeitados ou pendentes; somente os manifestos nominal-*-manifesto.json documentam rodadas integradas. Datas antigas permanecem históricas."
+}

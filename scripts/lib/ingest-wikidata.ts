@@ -180,6 +180,9 @@ LIMIT 1
   const url = `${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`
   const resp = await fetcher<unknown>(url, HEADERS, 3, 20000)
   const bindings = validarRespostaSparql(resp)
+  if (bindings.some((binding) => binding.item?.value.split("/").pop() !== wikidataId)) {
+    throw new Error("Resposta SPARQL retornou QID diferente do solicitado; enriquecimento recusado")
+  }
   return bindings.length > 0 ? bindings[0] : null
 }
 

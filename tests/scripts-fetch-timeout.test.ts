@@ -87,7 +87,7 @@ describe("prazo nas chamadas de rede dos scripts", () => {
     const helpers = readFileSync(path.join(SCRIPTS, "lib/helpers.ts"), "utf-8")
     assert.match(helpers, /export const FETCH_TIMEOUT_MS = 15_000/)
     assert.match(helpers, /AbortController/)
-    assert.match(helpers, /signal: controller\.signal/)
+    assert.match(helpers, /AbortSignal\.any\(\[signal, controller\.signal\]\)/)
     assert.match(helpers, /retry-after/i)
   })
 

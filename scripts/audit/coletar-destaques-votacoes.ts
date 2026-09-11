@@ -8,6 +8,7 @@ import { gzipSync } from "node:zlib"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { dirname, join, relative, resolve } from "node:path"
 import { supabase, supabaseProjectRefParaAuditoria } from "../lib/supabase"
+import { normalizeDestaquesVote as normalizeVote } from "../lib/destaques-vote-normalization"
 import {
   buildDestaquesRunManifest,
   canonicalJson,
@@ -110,17 +111,6 @@ function normalizeCasa(value: string): "camara" | "senado" {
   if (normalized === "camara") return "camara"
   if (normalized === "senado") return "senado"
   throw new Error(`destaques-votacoes: casa inválida ${value}`)
-}
-
-function normalizeVote(value: unknown): string | null {
-  const normalized = String(value ?? "").normalize("NFD").replace(/\p{Diacritic}/gu, "").trim().toLowerCase()
-  if (normalized === "sim") return "sim"
-  if (normalized === "nao") return "não"
-  if (normalized === "abstencao") return "abstencao"
-  if (normalized === "obstrucao") return "obstrucao"
-  if (normalized === "ausente") return "ausente"
-  if (normalized === "artigo 17") return "artigo_17"
-  return null
 }
 
 function ensureArray(value: unknown): Array<Record<string, unknown>> {

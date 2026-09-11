@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { mkdtempSync, readFileSync, rmSync } from "node:fs"
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs"
 import { createRequire } from "node:module"
 import { tmpdir } from "node:os"
 import { join, resolve } from "node:path"
@@ -54,14 +54,32 @@ test("golden set cobre os modos de falha exigidos", () => {
   )
 })
 
-test("inventario calcula quatro adaptadores e 18 combinacoes aprovadas", () => {
-  assert.deepEqual(listarFontesAprovadasUtilizadas(), [
+test("inventario distingue fontes revisadas dos quatro adaptadores e 18 alvos monitorados", () => {
+  const publishedSources = listarFontesAprovadasUtilizadas()
+  const adapterSources = [
     "datafolha-folha-globo-estaduais-2026",
     "datafolha-folha-globo-nacional-2026",
     "poderdata-aya-nacional-2026",
     "real-time-big-data-estaduais-2026",
-  ])
-  assert.equal(listarAlvosMonitoramento().length, 18)
+  ]
+  const evidenceDir = "QA/evidencias/2026-09-10-pesquisas-fontes/"
+  const nominalSources = new Set<string>(readdirSync(evidenceDir)
+    .filter((file) => /^nominal-.*-manifesto\.json$/.test(file))
+    .flatMap((file) => (JSON.parse(readFileSync(evidenceDir + file, "utf8")) as { source_id: string }[])
+      .map((row) => row.source_id)))
+  assert.equal(publishedSources.length, 32 + nominalSources.size)
+  for (const sourceId of [
+    ...adapterSources,
+    ...nominalSources,
+    "atlasintel-am-revisao-20260910",
+    "meio-ideia-br-revisao-20260910",
+    "quaest-sp-revisao-20260910",
+  ]) {
+    assert.ok(publishedSources.includes(sourceId), `fonte publicada ausente: ${sourceId}`)
+  }
+  const targets = listarAlvosMonitoramento()
+  assert.equal(targets.length, 18)
+  assert.deepEqual([...new Set(targets.map((target) => target.source_id))], adapterSources)
   assert.equal(listarAlvosMonitoramento({ sourceId: "datafolha-folha-globo-estaduais-2026" }).length, 7)
   assert.equal(listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026" }).length, 9)
   assert.equal(listarAlvosMonitoramento({ uf: "CE" }).length, 1)

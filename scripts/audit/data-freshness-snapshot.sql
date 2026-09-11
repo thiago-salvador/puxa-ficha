@@ -48,6 +48,16 @@ WITH candidacies AS (
       format('legacy:%s:%s:%s', executado_em, escopo, alvo)
     ) AS execution_id
   FROM public.coleta_log_ultima
+), target_inventory AS (
+  -- O último run pode cobrir somente um alvo. Manter o estoque de recibos
+  -- vigentes separado do resultado operacional daquela execução.
+  SELECT fonte, jsonb_build_object(
+    'total_count', count(*),
+    'error_count', count(*) FILTER (WHERE resultado = 'erro'),
+    'debt_count', count(*) FILTER (WHERE resultado = 'indeterminado')
+  ) AS item
+  FROM collection_rows
+  GROUP BY fonte
 ), evidence AS (
   SELECT jsonb_build_object(
     'source_id', log.fonte,
@@ -62,6 +72,7 @@ WITH candidacies AS (
     'debt_count', count(*) FILTER (WHERE log.resultado = 'indeterminado'),
     'total_count', count(*),
     'execution_id', log.execution_id
+    ,'target_inventory', (SELECT inventory.item FROM target_inventory inventory WHERE inventory.fonte = log.fonte)
     ,'provenance_contract_version', CASE
       WHEN log.fonte = 'destaques-votacoes' THEN max(
         CASE WHEN log.detalhe LIKE 'provenance_v1:%'
@@ -74,7 +85,7 @@ WITH candidacies AS (
     ,'provenance_complete', CASE
       WHEN log.fonte = 'destaques-votacoes' THEN
         count(*) FILTER (WHERE log.escopo = 'global' AND log.detalhe LIKE 'provenance_v1:%') = 1
-        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 154
+        AND count(*) FILTER (WHERE log.escopo = 'candidato' AND log.detalhe LIKE 'provenance_v1:%') = 152
         AND count(*) FILTER (WHERE log.resultado NOT IN ('encontrado', 'sem_achado_no_escopo')) = 0
       ELSE NULL
     END

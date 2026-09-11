@@ -1,0 +1,27 @@
+{
+  "reference_date": "2026-09-10",
+  "office": "Governador",
+  "uf": "DF",
+  "official_source": "https://www.tre-df.jus.br/comunicacao/noticias/2026/Agosto/df-encerra-registro-de-candidaturas-para-as-eleicoes-2026-com-640-pedidos",
+  "poll_source": "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138",
+  "roster": "data/candidate-roster-active-20260905.json",
+  "identities": [
+    {
+      "raw_label": "Elisson Ferreira",
+      "candidate_slug": "elisson-ferreira",
+      "official_ballot_name": "ELISSON",
+      "official_civil_name": "Elisson Ferreira Freire",
+      "party": "AGIR",
+      "canonical_registration_sq": "70002551298"
+    },
+    {
+      "raw_label": "Samara Mineiro",
+      "candidate_slug": "samara-mineiro",
+      "official_ballot_name": "PROFESSORA SAMARA MINEIRO",
+      "official_civil_name": "Samara Mineiro Oliveira",
+      "party": "UP",
+      "canonical_registration_sq": "70002537111"
+    }
+  ],
+  "decision": "Nomes abreviados da tabela nominal conferidos com nomes civis e de urna na relação do TRE-DF, mesmo partido, cargo e UF, e cadastro ativo. Não aplicar o alias a outro cargo ou UF. A divergência Pinheiro no parágrafo da matéria não foi adotada; a própria lista nominal publica Mineiro."
+}

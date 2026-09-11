@@ -13,6 +13,22 @@ interface IdentidadeCurada {
 
 const exact = (value: string) => value.normalize("NFC").trim().toLocaleUpperCase("pt-BR")
 
+export interface AliasCatalogado {
+  raw_label: string
+  candidate_slug: string
+  year?: number
+  office?: string
+  geography?: string
+  turn?: number
+  scenario_id?: string
+}
+
+// A scoped alias is not identity evidence for a different, newly found scenario.
+// These labels must be resolved again against the curated documentary source.
+export function aliasSemEscopoEspecifico(alias: AliasCatalogado): boolean {
+  return [alias.year, alias.office, alias.geography, alias.turn, alias.scenario_id].every((value) => value === undefined)
+}
+
 /** Only identities with approved, scoped documentary provenance in this checkout. */
 export function carregarIdentidadesCuradas(office: string, uf: string): IdentidadeCurada[] {
   if (!["Presidente", "Governador"].includes(office)) return []
@@ -50,9 +66,9 @@ export function resolverIdentidadeCurada(label: string, candidates: IdentidadeCu
 }
 
 export function criarResolvedorPresidencial(): (label: string) => string | null {
-  const catalog = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as { exact_aliases: Array<{ raw_label: string; candidate_slug: string }> }
+  const catalog = JSON.parse(readFileSync("scripts/data/pesquisas-presidencia-2026.json", "utf8")) as { exact_aliases: AliasCatalogado[] }
   const aliases = new Map<string, string | null>()
-  for (const row of catalog.exact_aliases) aliases.set(row.raw_label, aliases.has(row.raw_label) && aliases.get(row.raw_label) !== row.candidate_slug ? null : row.candidate_slug)
+  for (const row of catalog.exact_aliases.filter(aliasSemEscopoEspecifico)) aliases.set(row.raw_label, aliases.has(row.raw_label) && aliases.get(row.raw_label) !== row.candidate_slug ? null : row.candidate_slug)
   const candidates = carregarIdentidadesCuradas("Presidente", "BR")
   return (label) => aliases.has(label) ? aliases.get(label) ?? null : resolverIdentidadeCurada(label, candidates, aliases)?.slug ?? null
 }

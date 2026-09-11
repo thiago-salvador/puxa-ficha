@@ -56,7 +56,7 @@ test("gráfico de patrimônio: rótulos numa linha, largura mínima por barra e 
   const data = [2006, 2010, 2014, 2018, 2022, 2026].map((ano, index) => ({ id: `p${index}`, ano, valor: 820_600 * (index + 1) }))
   const html = renderToStaticMarkup(<PatrimonioChart data={data} />)
   assert.match(html, /data-pf-patrimonio-chart/)
-  assert.match(html, /class="-mx-2 flex items-end gap-2 overflow-x-auto px-2/, "rolagem interna com 8px de folga para o rótulo da primeira barra não ser cortado")
+  assert.match(html, /class="relative -mx-2 flex items-end gap-2 overflow-x-auto px-2/, "rolagem interna posicionada, com 8px de folga para o rótulo e o texto sr-only não serem cortados")
   assert.equal(html.split('class="flex min-w-[64px] flex-1 flex-col').length - 1, 6)
   assert.equal(html.split("whitespace-nowrap").length - 1, 12, "valor e ano de cada barra em whitespace-nowrap")
   assert.match(html, /style="height:120px"/, "a coluna de fundo continua com 120px")

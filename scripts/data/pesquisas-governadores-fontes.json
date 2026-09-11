@@ -7,10 +7,49 @@
     "purpose": "fontes aprovadas para pesquisas estaduais nas fichas de candidatos a governador"
   },
   "preferred_source_ids": [
+    "atlas-pb-nominal-revisao-20260910",
+    "ipr-ms-nominal-revisao-20260910",
     "datafolha-folha-globo-estaduais-2026",
-    "real-time-big-data-estaduais-2026"
+    "real-time-big-data-estaduais-2026",
+    "quaest-ac-revisao-20260910",
+    "real-time-big-data-ap-revisao-20260910",
+    "atlasintel-am-revisao-20260910",
+    "real-time-big-data-pa-revisao-20260910",
+    "quaest-ro-revisao-20260910",
+    "quaest-rr-revisao-20260910",
+    "parana-pesquisas-to-revisao-20260910",
+    "goias-pesquisas-go-revisao-20260910",
+    "real-time-big-data-df-revisao-20260910",
+    "instituto-ranking-al-revisao-20260910",
+    "real-time-big-data-ba-revisao-20260910",
+    "real-time-big-data-ce-revisao-20260910",
+    "real-time-big-data-ma-revisao-20260910",
+    "instituto-anova-pb-revisao-20260910",
+    "quaest-pe-revisao-20260910",
+    "instituto-amostragem-pi-revisao-20260910",
+    "instituto-exatus-rn-revisao-20260910",
+    "real-time-big-data-se-revisao-20260910",
+    "real-time-big-data-es-revisao-20260910",
+    "quaest-mg-revisao-20260910",
+    "parana-pesquisas-rj-revisao-20260910",
+    "quaest-sp-revisao-20260910",
+    "irg-pesquisas-pr-revisao-20260910",
+    "quaest-sc-revisao-20260910",
+    "real-time-big-data-rs-revisao-20260910",
+    "atlasintel-ms-revisao-20260910",
+    "parana-pesquisas-mt-revisao-20260910",
+    "atlasintel-ba-nominal-20260910",
+    "quaest-ce-nominal-20260910",
+    "atlasintel-rs-nominal-20260910",
+    "quaest-rs-nominal-20260910",
+    "quaest-se-nominal-20260910",
+    "quaest-pa-nominal-20260910",
+    "atlasintel-df-nominal-20260910",
+    "parana-pesquisas-ba-fechamento-20260910",
+    "igape-df-fechamento-20260910",
+    "doxa-pesquisa-ma-fechamento-20260910"
   ],
-  "consulted_at": "2026-08-26T07:50:00-03:00",
+  "consulted_at": "2026-09-10T12:17:33.356Z",
   "status_values": [
     "aprovado",
     "condicional",
@@ -24,8 +63,8 @@
     "publication_stability": "Existe URL permanente para a rodada."
   },
   "status_rule": {
-    "aprovado": "Todos os critérios duros estão verdadeiros.",
-    "condicional": "Há lacuna que exige revisão humana antes da publicação.",
+    "aprovado": "Todos os critérios duros estão verdadeiros, ou a rodada está restrita a reviewed_registration_ids e possui revisão documentada com captura verificável.",
+    "condicional": "Há lacuna que exige revisão humana antes da publicação; revisão escopada só vale para registros explicitamente listados.",
     "excluído": "Há incompatibilidade semântica ou falta de atualidade."
   },
   "official_registry": {
@@ -191,7 +230,7 @@
         "margin_of_error_pp": 2,
         "confidence_level_pct": 95,
         "office": "Governador",
-      "geography": null,
+        "geography": null,
         "rounds": [
           1,
           2
@@ -314,7 +353,10 @@
         "dissemination_partner": null
       },
       "representative_poll": {
-        "field_period": { "start": "2026-07-28", "end": "2026-08-02" },
+        "field_period": {
+          "start": "2026-07-28",
+          "end": "2026-08-02"
+        },
         "published_at": "2026-08-03",
         "sample_size": 997,
         "method": "recrutamento digital aleatório Atlas RDR",
@@ -322,7 +364,9 @@
         "confidence_level_pct": 95,
         "office": "Governador",
         "geography": null,
-        "rounds": [1],
+        "rounds": [
+          1
+        ],
         "registration_id": "AC-07815/2026",
         "result_url": "https://atlasintel.org/poll/brazil-acre-pesquisa-atlas-ac-24-horas-2026-08-03",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
@@ -364,6 +408,3146 @@
         "Não publicar até existir prova pública de correção da rodada ou revisão manual formal registrada no scorecard."
       ],
       "consulted_at": "2026-08-26T07:50:00-03:00"
+    },
+    {
+      "id": "atlasintel-am-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-29",
+          "end": "2026-09-03"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1185,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amazonas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AM-04939/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AM-04939/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "c9c452468237c30f9547655471bc3258a8d0ecbdafa97ee3ebbb939e570c6ecf",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-governador-amazonas-setembro-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "atlasintel-ms-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel (recursos próprios)",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-27",
+          "end": "2026-09-01"
+        },
+        "published_at": "2026-09-03",
+        "sample_size": 1204,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "MS-02047/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-02047/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "d10f1011fc1d04c6d4a7eabfcfdf63da7343ef79a9ec73883101fc246c8526d4",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-riedel-lidera-disputa-ao-governo-do-ms-em-1o-e-2o-turno/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "goias-pesquisas-go-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Goiás Pesquisas",
+        "commissioner": "Mais Goiás",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.maisgoias.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-04"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1250,
+        "method": null,
+        "margin_of_error_pp": 2.77,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-06294/2026",
+        "result_url": "https://www.maisgoias.com.br/politica/goias-pesquisas-mais-goias-daniel-lidera-com-426-marconi-tem-173-e-wilder-134/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-06294/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "ee5794d0d07dca1bb8e31d85e3c65a7f9b1358d1f7eaa37c73c443a1d0ed48fe",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/politica/goias-pesquisas-mais-goias-daniel-lidera-com-426-marconi-tem-173-e-wilder-134/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/politica/goias-pesquisas-mais-goias-daniel-lidera-com-426-marconi-tem-173-e-wilder-134/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/politica/goias-pesquisas-mais-goias-daniel-lidera-com-426-marconi-tem-173-e-wilder-134/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.maisgoias.com.br/politica/goias-pesquisas-mais-goias-daniel-lidera-com-426-marconi-tem-173-e-wilder-134/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "instituto-amostragem-pi-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Amostragem",
+        "commissioner": "Sistema Timon de Radiodifusão / TV Meio Norte",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Meio News",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-29",
+          "end": "2026-09-02"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1137,
+        "method": null,
+        "margin_of_error_pp": 2.85,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Piauí",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PI-05542/2026",
+        "result_url": "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PI-05542/2026",
+        "BR-04775/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "a6c844e623335fce1d759056b8bb24d669f1b34388c4759b077b9a2df7bda2bb",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.meionews.com/politica/eleicoes-2026/nova-pesquisa-amostragem-rafael-fonteles-chega-a-73-48-dos-votos-validos-e-abre-mais-de-52-pontos-sobre-joel-rodrigues-574369"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "instituto-anova-pb-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Anova",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Paraíba Já",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraíba",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PB-01471/2026",
+        "result_url": "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PB-01471/2026",
+        "BR-02714/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "3f149513292f9cef4e14fe7c4e9cc2c64ff7044d197b2dba24bbbf09f1429796",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paraibaja.com.br/lucas-ribeiro-chega-a-58-dos-votos-validos-em-nova-pesquisa-para-governador/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "instituto-exatus-rn-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Exatus",
+        "commissioner": "Grupo Agora RN",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Agora RN",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-03"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1500,
+        "method": null,
+        "margin_of_error_pp": 2.53,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-03924/2026",
+        "result_url": "https://agorarn.com.br/politica/allyson-lideranca-cadu-avanca-alvaro-recua-pesquisa-exatus/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-03924/2026",
+        "BR-03775/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "c6e8c3f6f81c4296812f9c98e19a1b926d41bcc2d23b11a9760e9eeb2f456959",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/allyson-lideranca-cadu-avanca-alvaro-recua-pesquisa-exatus/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/allyson-lideranca-cadu-avanca-alvaro-recua-pesquisa-exatus/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/allyson-lideranca-cadu-avanca-alvaro-recua-pesquisa-exatus/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://agorarn.com.br/politica/allyson-lideranca-cadu-avanca-alvaro-recua-pesquisa-exatus/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "instituto-ranking-al-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Ranking",
+        "commissioner": "CadaMinuto",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "CadaMinuto",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1200,
+        "method": null,
+        "margin_of_error_pp": 2.83,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AL-01751/2026",
+        "result_url": "https://www.cadaminuto.com.br/noticia/2026/09/09/ranking-cadaminuto-jhc-lidera-e-venceria-disputa-pelo-governo-de-al-no-primeiro-turno",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AL-01751/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "bb550c6fab23b3d115b9c9e69b3e3594f1898a2d70c773a73923ab5c15c6f587",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cadaminuto.com.br/noticia/2026/09/09/ranking-cadaminuto-jhc-lidera-e-venceria-disputa-pelo-governo-de-al-no-primeiro-turno"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cadaminuto.com.br/noticia/2026/09/09/ranking-cadaminuto-jhc-lidera-e-venceria-disputa-pelo-governo-de-al-no-primeiro-turno"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cadaminuto.com.br/noticia/2026/09/09/ranking-cadaminuto-jhc-lidera-e-venceria-disputa-pelo-governo-de-al-no-primeiro-turno"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cadaminuto.com.br/noticia/2026/09/09/ranking-cadaminuto-jhc-lidera-e-venceria-disputa-pelo-governo-de-al-no-primeiro-turno"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "irg-pesquisas-pr-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IRG Pesquisas",
+        "commissioner": "TV Independência Ltda.",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-03"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1200,
+        "method": null,
+        "margin_of_error_pp": 2.83,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraná",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "PR-02179/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PR-02179/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "23c810a23d30a5bcc6ebaf8884ddce6c27828f181956f3a8fabccb4568a524e4",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/irg-pesquisas-governador-parana-setembro-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "parana-pesquisas-mt-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Sedek Serviços, Tecnologia & Informação Ltda.",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-06",
+          "end": "2026-09-08"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1352,
+        "method": null,
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "MT-01505/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MT-01505/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "853f3118cddb32725877ff7f5a71cf5d7c2693a35d973cf4b6cc6af427a6d679",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senado-mato-grosso-setembro-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "parana-pesquisas-rj-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Paraná Pesquisas (recursos próprios)",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-05",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio de Janeiro",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RJ-01671/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RJ-01671/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "6dc773658e2979c612ef13d7af7738d10fa75077f87ff9d31dc107598d57da67",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-no-rj-paes-lidera-cenarios-de-1o-turno/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "parana-pesquisas-to-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Federação das Indústrias do Estado do Tocantins (Fieto)",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-25",
+          "end": "2026-08-27"
+        },
+        "published_at": "2026-08-28",
+        "sample_size": 1504,
+        "method": null,
+        "margin_of_error_pp": 2.6,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          1
+        ],
+        "registration_id": "TO-02900/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-02900/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "ee7e476350a9ae6cf733652cff438cd0235769f11f071cd4c22a2c5a92c837e2",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-senador-tocantins-agosto-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-ac-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-23",
+          "end": "2026-08-26"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Acre",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AC-09106/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AC-09106/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "c1d6a959cf76bfa84bf9a50961eb82eb2a5c1e518e2963c21b6f6e0ea007e7b0",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-acre-agosto-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-mg-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1506,
+        "method": "entrevistas presenciais",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Minas Gerais",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "MG-04716/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/08/pesquisa-governador-de-mg-veja-o-que-dizem-ultimos-numeros.amp.htm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MG-04716/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "bccc97ccec62ddc259e48f60787bcf6c48548d957bdc8a4c8f75030be48bfd30",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/08/pesquisa-governador-de-mg-veja-o-que-dizem-ultimos-numeros.amp.htm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/08/pesquisa-governador-de-mg-veja-o-que-dizem-ultimos-numeros.amp.htm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/08/pesquisa-governador-de-mg-veja-o-que-dizem-ultimos-numeros.amp.htm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/08/pesquisa-governador-de-mg-veja-o-que-dizem-ultimos-numeros.amp.htm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-pe-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Folha de S.Paulo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1302,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-00285/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-00285/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "8400c1cd0a9b3d5eb28c11ff89b267ef21594783b3b362fad502ef1a99c707dc",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/09/quaest-raquel-lyra-tem-43-e-joao-campos-37-em-pernambuco.shtml"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-ro-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-21",
+          "end": "2026-08-24"
+        },
+        "published_at": "2026-08-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-05711/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-05711/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "678e6b3afab1bc71caa7695feb850ca49f383888c0f1b82079790feef3e00c33",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-rr-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas Ltda. / Rede Amazônica Rádio e Televisão",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.opovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-23",
+          "end": "2026-08-26"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Roraima",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RR-04765/2026",
+        "result_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/27/pesquisa-quaest-roraima-mostra-ampla-vantagem-de-arthur-henrique.html",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RR-04765/2026",
+        "BR-07015/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "0ffa452cb4cf62f9ae38574261205be2662b15d49cb46e6215ff32e48cb96682",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/27/pesquisa-quaest-roraima-mostra-ampla-vantagem-de-arthur-henrique.html"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/27/pesquisa-quaest-roraima-mostra-ampla-vantagem-de-arthur-henrique.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/27/pesquisa-quaest-roraima-mostra-ampla-vantagem-de-arthur-henrique.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/27/pesquisa-quaest-roraima-mostra-ampla-vantagem-de-arthur-henrique.html"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-sc-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-20",
+          "end": "2026-08-23"
+        },
+        "published_at": "2026-08-24",
+        "sample_size": 804,
+        "method": "entrevistas presenciais",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Santa Catarina",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "SC-00517/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/08/28/pesquisa-eleitoral-santa-catarina-veja-levantamento-para-governador.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SC-00517/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "ca13200e56a16070fb4c71e7e656c736227cbd2b11a774a653a9b1563294fc14",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/28/pesquisa-eleitoral-santa-catarina-veja-levantamento-para-governador.ghtm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/28/pesquisa-eleitoral-santa-catarina-veja-levantamento-para-governador.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/28/pesquisa-eleitoral-santa-catarina-veja-levantamento-para-governador.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/28/pesquisa-eleitoral-santa-catarina-veja-levantamento-para-governador.ghtm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "quaest-sp-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo Comunicação e Participações S/A",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1800,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "São Paulo",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "SP-00959/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SP-00959/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "7cc1817b1ec396d4bc94031e82375913afbad4e9c242bfefed5da2e5063babb2",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-sao-paulo-setembro-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-ap-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-04000/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-dr-furlan-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-amapa/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-04000/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "30be9fb79d848f6c5968acaeea034d1e230081b0575438e8d31fb20002eb898b",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-dr-furlan-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-amapa/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-dr-furlan-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-amapa/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-dr-furlan-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-amapa/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-dr-furlan-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-amapa/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-ba-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "CNN Brasil",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-08"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-01568/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-01568/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "d1fdf704696e64d7938dc3f2c675ff95939de2e2e96d439cc00782e56c70cc5a",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-jeronimo-e-acm-neto-empatam-no-1o-e-2o-turnos-ao-governo-da-ba/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-ce-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "R7",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "CE-03293/2026",
+        "result_url": "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "CE-03293/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "977d5038b329210217051710fe4e275cfc5d5e0d9afe591ccc69c69bace068fd",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/brasilia/governo-do-ceara-elmano-de-freitas-tem-46-e-ciro-gomes-43-no-primeiro-turno-08092026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-df-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-08"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          1
+        ],
+        "registration_id": "DF-09600/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-09600/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "a22460bde393ddb85cb64e3386220242f11d80c69017e3c5792294536a3f3895",
+        "supporting_capture_sha256": "43aec2a089ecb22b471b5c6111415ae06d1b3ac72edb610316447b0168044678",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+            "https://www.congressoemfoco.com.br/amp/noticia/122069/celina-leao-aparece-a-frente-em-todos-os-cenarios-para-o-governo-do-df"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+            "https://www.congressoemfoco.com.br/amp/noticia/122069/celina-leao-aparece-a-frente-em-todos-os-cenarios-para-o-governo-do-df"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+            "https://www.congressoemfoco.com.br/amp/noticia/122069/celina-leao-aparece-a-frente-em-todos-os-cenarios-para-o-governo-do-df"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-leao-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-df/",
+            "https://www.congressoemfoco.com.br/amp/noticia/122069/celina-leao-aparece-a-frente-em-todos-os-cenarios-para-o-governo-do-df"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-es-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-08"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "ES-01967/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-08236/2026",
+        "ES-01967/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "8a3fddfd1588ff6853e95efd529e15b1a5d7b8bb2852ee10ab09fab401ff2cac",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-ma-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "R7",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-05",
+          "end": "2026-09-09"
+        },
+        "published_at": "2026-09-10",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MA-02569/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-02569/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "8ebc7305ea666f9f13ad510c7f6168deb5cd36c4e187817ce756df5909b3f8b5",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-eduardo-braide-tem-45-e-orleans-brandao-32-no-1-turno-para-o-governo-do-ma-10092026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-pa-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-03",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-08",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PA-00206/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PA-00206/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "b49e36c5098c93499bd6ab063857ad4b8fe8ecd24b762e8667efa4d3e2a2bc2c",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-hana-e-dr-daniel-empatam-em-1o-e-2o-turno-pelo-governo-do-pa/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-rs-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-05",
+          "end": "2026-09-09"
+        },
+        "published_at": "2026-09-10",
+        "sample_size": 1600,
+        "method": "telefone e internet",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "RS-05497/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RS-05497/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "4ae2e94e3c2e39b4d8a3fe2b93b839a44ab66e74fe2ba8fa9e00b696d5aab6b3",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/10/realtime-big-data-rs-juliana-brizola-e-zucco-tem-empate-no-1-e-2-turno.ghtm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "real-time-big-data-se-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "Gazeta do Povo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-03"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Sergipe",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SE-05776/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SE-05776/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:17:33.356Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "8321d9b68628c62a8b2031d40e98ef3deccf220296614a482ee249e350909065",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-senador-sergipe-setembro-2026/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T12:17:33.356Z"
+    },
+    {
+      "id": "atlas-pb-nominal-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-28",
+          "end": "2026-09-02"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 1207,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraíba",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PB-01118/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PB-01118/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:45:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "2ffaf449d44a541dbd473071914aa6c385f232540cc880fc2a6df0473057326a",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-pb-ribeiro-tem-424-no-1o-turno-ao-governo-efraim-filho-309/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:45:00Z"
+    },
+    {
+      "id": "ipr-ms-nominal-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto de Pesquisa Resultado (IPR)",
+        "commissioner": "Correio do Estado",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "investigams.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-19",
+          "end": "2026-08-23"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 784,
+        "method": null,
+        "margin_of_error_pp": 3.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MS-07621/2026",
+        "result_url": "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-07621/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:45:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "aa4b5a4803274cf1fafefbd3e16e0721f8ec8fc9fad70e39c5aa2d5773cbadda",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://investigams.com.br/2026/08/27/pesquisa-ipr-riedel-lidera-seguido-por-fabio-trad-e-delcidio-do-amaral/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:45:00Z"
+    },
+    {
+      "id": "atlasintel-ba-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "A Tarde",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-28",
+          "end": "2026-09-02"
+        },
+        "published_at": "2026-09-03",
+        "sample_size": 1804,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "BA-08891/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-08891/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "b4a354d2db3807e8c83eb732a32f4578a408ecd1330b408a979639004fdceaef",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasa-tarde-ba-acm-neto-e-jeronimo-tem-empate-tecnico-nos-dois-turnos.amp.htm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "quaest-ce-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Verdes Mares",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-03"
+        },
+        "published_at": "2026-09-04",
+        "sample_size": 900,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Ceará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "CE-01149/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "CE-01149/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "3fc9fe7b827ff2e00ba3eca3f8f6ab999ed120714bc8f9ae4c97534d569e765e",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/09/pesquisa-para-governo-do-ceara-veja-numeros-atualizados.ghtm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "atlasintel-rs-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "recursos próprios do instituto",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.poder360.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-27",
+          "end": "2026-09-01"
+        },
+        "published_at": "2026-09-03",
+        "sample_size": 1783,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RS-00652/2026",
+        "result_url": "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RS-00652/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "bea2b3808d023a8d4f874bddc4d084a7e9e3f958fb66242d0be48f1d7bca71bb",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.poder360.com.br/poder-eleicoes/zucco-lidera-corrida-pelo-governo-do-rs-com-443-diz-pesquisa/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "quaest-rs-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Genial/Quaest",
+        "commissioner": "RBS Participações S.A./Televisão Gaúcha S.A.",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-20",
+          "end": "2026-08-23"
+        },
+        "published_at": "2026-08-25",
+        "sample_size": 900,
+        "method": "presencial",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RS-06875/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RS-06875/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "71aaf3b6d77fa3f79d4f311250f2c45e2d5163acfac77da6e2af73e354379017",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/"
+          ],
+          "note": "Método e ficha técnica preservados na divulgação consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-zucco-tem-26-e-juliana-23-no-1o-turno-ao-governo-do-rs/"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "quaest-se-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Genial/Quaest",
+        "commissioner": "TV Sergipe",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www1.folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-23",
+          "end": "2026-08-26"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 804,
+        "method": "entrevistas domiciliares face a face",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Sergipe",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SE-03536/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SE-03536/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "40b6dc9eaaa3a3cfd55be3039708bccdca2ba54e13d36d15e4b03476ae98f4b7",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml"
+          ],
+          "note": "Método e ficha técnica preservados na divulgação consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/08/quaest-fabio-mitidieri-lidera-disputa-em-sergipe-com-40-e-valmir-de-francisquinho-tem-28.shtml"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "quaest-pa-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Liberal",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-25",
+          "end": "2026-08-28"
+        },
+        "published_at": "2026-08-29",
+        "sample_size": 804,
+        "method": "presencial",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pará",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "PA-07718/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PA-07718/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "836473f2afe78d9c24a3d5abdee82acef966d9a2468762e4a451f33ac7f390f5",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm"
+          ],
+          "note": "Método e ficha técnica preservados na divulgação consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/08/29/quaest-pa-governo-e-senado.amp.htm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "atlasintel-df-nominal-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel, recursos próprios",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-27",
+          "end": "2026-09-01"
+        },
+        "published_at": "2026-09-03",
+        "sample_size": 1193,
+        "method": "entrevista pela internet",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "DF-02018/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-02018/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T13:50:00Z",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "04dfdb59d10f4db429f1b4fb95cb3986c583705a7935c485b2fad46b764d2bb1",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
+          ],
+          "note": "Método e ficha técnica preservados na divulgação consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/03/atlasintel-df-celina-grass-arruda.ghtm"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T13:50:00Z"
+    },
+    {
+      "id": "parana-pesquisas-ba-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "S2R Comunicação Ltda. / Bahia Notícias",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-23",
+          "end": "2026-08-25"
+        },
+        "published_at": "2026-08-27",
+        "sample_size": 1400,
+        "method": "entrevistas pessoais, domiciliares e presenciais",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "BA-07628/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-07628/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:14:30.564563+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "1278b224000635bda5035c02a06d96de5195e968e545ed005005bcb47591a625",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ],
+          "note": "Método, campo, amostra, margem e confiança informados na fonte consultada."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/08/BA_Ago26-1.pdf"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:14:30.564563+00:00"
+    },
+    {
+      "id": "igape-df-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "IGAPE / Instituto Gazeta de Pesquisas",
+        "commissioner": "TV Atual, afiliada da Record News",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.metropoles.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-08-31",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-06",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          1
+        ],
+        "registration_id": "DF-07879/2026",
+        "result_url": "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-07879/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:14:30.564563+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "e1205c14dd0ef15b380adf41e54a633fa1d493e6d7c4d59095396b6436b6e38a",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/distrito-federal/igape-celina-lidera-com-365-arruda-tem-207-e-grass-soma-138"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:14:30.564563+00:00"
+    },
+    {
+      "id": "doxa-pesquisa-ma-fechamento-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Doxa Pesquisa",
+        "commissioner": "H M Bogea e Cia Ltda. / Jornal Pequeno",
+        "official_registry": "TSE/PesqEle",
+        "publication_vehicle": "www.pesquisasdoxa.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-01",
+          "end": "2026-09-05"
+        },
+        "published_at": "2026-09-10",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1,
+          2
+        ],
+        "registration_id": "MA-04033/2026",
+        "result_url": "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-04033/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T15:21:07.296347+00:00",
+        "reviewer": "Codex",
+        "basis": "Revisão restrita aos resultados, metadados disponíveis e captura textual da rodada indicada.",
+        "capture_sha256": "ecfd0e9528c257f9ae1e245821fa4d55e8c9c02f28f2be6c454460097805a790",
+        "scope": "Somente os registros listados; não aprova outras rodadas do instituto."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Critério não verificado; a aprovação decorre exclusivamente da revisão documentada desta rodada e captura."
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.pesquisasdoxa.com/post/eleicoes-2026-pesquisa-doxa-aponta-disputa-acirrada-entre-orleans-brandao-e-eduardo-braide"
+          ]
+        }
+      },
+      "historical_accuracy": {
+        "status": "nao_medido",
+        "evidence_urls": [],
+        "note": "A revisão escopada desta rodada não mede acurácia histórica do instituto."
+      },
+      "conditions": null,
+      "consulted_at": "2026-09-10T15:21:07.296347+00:00"
     }
   ]
 }

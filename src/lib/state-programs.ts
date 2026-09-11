@@ -1,7 +1,7 @@
 import { getProgramaGovernoManifesto } from "@/lib/programa-governo-server"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
 
-export type StateProgramCandidate = { slug: string; nome_urna: string; sqCandidato?: string }
+export type StateProgramCandidate = { slug: string; nome_urna: string; sqCandidato?: string; partido_sigla?: string | null; uf?: string | null }
 export type StateProgram = StateProgramCandidate & { manifesto: ProgramaGovernoManifestoPublico | null }
 
 function approvedStateProgram(manifesto: ProgramaGovernoManifestoPublico | null, candidate: StateProgramCandidate, uf: string) {

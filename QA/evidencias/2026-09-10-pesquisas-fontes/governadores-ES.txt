@@ -1,0 +1,6 @@
+UF: ES
+Fonte lida: https://www.cnnbrasil.com.br/eleicoes/real-time-ferraco-lidera-cenarios-de-1o-e-2o-turnos-ao-governo-do-es/
+Leitura: 2026-09-10
+Pesquisa: Real Time Big Data, divulgada em 2026-09-09; campo 2026-09-04 a 2026-09-08; 1.600 entrevistas; margem 2 pp; confiança 95%; registros BR-08236/2026 e ES-01967/2026. Método e contratante não informados na matéria.
+1º turno estimulado: Ricardo Ferraço 43%; Lorenzo Pazolini 33%; Helder Salomão 13%; Breno Barcelos 2%; Rafael Demuner 0%; branco/nulo 6%; não sabe/não respondeu 3%.
+2º turno Ferraço x Pazolini: Ricardo Ferraço 49%; Lorenzo Pazolini 38%; branco/nulo 8%; não sabe/não respondeu 5%.

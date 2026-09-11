@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "reference_date": "2026-09-10",
+  "recorded_at": "2026-09-10 15:08:09 UTC",
+  "recorded_at_note": "Horário de consolidação após as buscas; os horários individuais não foram registrados.",
+  "candidate_slug": "ruth-reis",
+  "uf": "PA",
+  "status": "searched_unresolved",
+  "value_percent": null,
+  "attempts": [
+    {
+      "id": "PA-01",
+      "step_id": "01_nome_estado",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa Pará setembro 2026",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20Par%C3%A1%20setembro%202026",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\\nResultados da Web\\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\\n\\nGazeta do Povo\\nhttps://www.gazetadopovo.com.br › 2026 › governador\\nhá 18 horas — Veja quem é Ruth Reis, número 35 do DEMOCRATA, candidata a Governadora pelo Pará em 2026. Confira vice, situação, propostas e bens ...\\nNão inclui: setembro ‎| Precisa incluir: setembro\\nNesta quinta-feira (10), o Bora Cidade recebe Ruth Reis ...\\n\\nInstagram · rbatvoficial\\n3 marcações \\\"Gostei\\\" · há 2 horas\\nNesta quinta-feira (10), o Bora Cidade recebe Ruth Reis (Democrata) para mais uma entrevista da série especial com os candidatos ao Governo ...\\nveja como foi o dia dos candidatos ao governo do Pará - G1\\n\\nG1\\nhttps://g1.globo.com › 2026 › noticia › 2026/09/09 › e...\\nhá 17 horas — Confira as atividades de campanha de Araceli Lemos; Daniel Santos; Ga"
+    },
+    {
+      "id": "PA-02",
+      "step_id": "06_instituto_nome",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" Doxa pesquisa",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20Doxa%20pesquisa",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\\nResultados da Web\\nPesquisas eleitorais para a eleição estadual de 2026 no ...\\n\\nWikipedia\\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\\nWell Macêdo (PSTU), Gal Leite (UP), Ruth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37%, 35%, 5%, <1%, <1%, <1%, —, 22%. Indexa, 31 ...\\nPrimeira pesquisa eleitoral registrada no Pará para ...\\n\\nBelém.com.br\\nhttps://belem.com.br › Brasil › Eleições 2026\\n3 de fev. de 2026 — A Doxa publicou sua primeira pesquisa oficial ... Democrata troca candidatura ao governo do Pará; Ruth Reis assume como cabeça de chapa.\\n🎓 Defesa de dissertação de mestrado | PPGS/UFF É com ...\\n\\nInstagram · ppgsuff\\nMais de 50 marcações \\\"Gostei\\\" · há 2 semanas\\n... pesquisa é orientada pela professora Christina Vital da Cunha e ... Ruth Reis e teve como exa"
+    },
+    {
+      "id": "PA-03",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:cnnbrasil.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Acnnbrasil.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\\nResultados da Web\\nQuem são os candidatos ao governo do Pará em 2026\\n\\nCNN Brasil\\nhttps://www.cnnbrasil.com.br › Stories\\n31 de ago. de 2026 — Sua candidatura é isolada. A vice é Ruth Reis, também do Democrata. Moita tem histórico eleitoral que inclui disputas em outros estados. Em 2012 ...\\nLinks do rodapé\\nBrasil\\nVila Mariana, São Paulo - SP - Do seu endereço IP\\n - Atualizar local\\nAjuda\\nEnviar feedback\\nPrivacidade\\nTermos\",\"links\":[{\"title\":\"Quem são os candidatos ao governo do Pará em 2026\\n\\nCNN Brasil\\nhttps://www.cnnbrasil.com.br › Stories\",\"url\":\"https://www.google.com/goto?url=CAESkAEB6zswFTcnabrKiJtsG1-J8_o8fIn-Yml2UNzyn7hk-qJOnuSw4NqaLtHqv3wcPEjEy6JGMbf3fzZSFbs8yNifetC29AgHbwnBDptMnJXOSAq7m67KOVIJvQwiiB6CfklT9RprWv257uNeftgHlYdp1Uyf8MkFX_4e5lKr4viP4upgfEOxDzPSHU-Gmq4bz14\"}]}"
+    },
+    {
+      "id": "PA-04",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:g1.globo.com",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Ag1.globo.com",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\\nResultados da Web\\nRuth Reis | Candidata a Governadora no Pará nas eleições ...\\n\\nG1\\nhttps://g1.globo.com › politica › eleicoes › governador\\nPará - Governador Ruth reis. Dados do candidato. 07/09/2026 • Atualizado há 1 dia. Dados fornecidos pelo TSE Informar um erro. Ruth Reis. DEMOCRATA35.\\nDemocrata muda chapa e lança Ruth Reis como candidata ao ...\\n\\nG1\\nhttps://g1.globo.com › eleicoes › noticia › 2026/08/31\\n31 de ago. de 2026 — O partido Democrata (Democrata) anunciou uma mudança na chapa para a disputa pelo governo do Pará nas eleições de 2026. Ruth Reis, que era ...\\nJosé Moita declara R$ 2,5 milhões em bens ao TSE - G1 - Globo\\n\\nG1\\nhttps://g1.globo.com › eleicoes › noticia › 2026/08/14\\n14 de ago. de 2026 — O candidato do Democrata ao Governo do Pará, José Moita, declarou R$ 2,5 milhões em bens à Just"
+    },
+    {
+      "id": "PA-05",
+      "step_id": "13_outra_rodada",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" Indexa pesquisa",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20Indexa%20pesquisa",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nMapeamento de pesquisas que dialogam com Donna Haraway ...\n\nPortal de Periódicos UFFS\nhttps://periodicos.uffs.edu.br › intuitio › article › view\nAutores. Ruth Reis de Oliveira Universidade Federal do Amazonas - UFAM https://orcid.org/0009-0008-7809-7574; Elrismar Auxiliadora Gomes Oliveira ...\nruth reis\n\nGoogle Scholar\nhttps://scholar.google.com › citations\nruth reis. Professor da Universidade Federal do Espírito Santo. Verified email ... Teoria & Pesquisa: Revista de Ciência Política 32 (1), 1-23, 2023. 4 ...\nRuth Reis\n\nORCID\nhttps://orcid.org › ...\nContributors: Ruth Reis; Jacobsen, Daniel R. Show more detail. Source: Self-asserted source. Ruth Reis. Comunicação e ciência na era covid-19. Intercom ...\nAinda invisíveis? Panorama dos estudos sobre mulher ...\n\nUFRGS\nhttps://seer.ufrgs.br › index.php"
+    },
+    {
+      "id": "PA-06",
+      "step_id": "12_zero_ou_agrupamento",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa \"1%\"",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20%221%25%22",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRUTH REIS — Governador PA — Dossiê Eleitoral\n\ndatadubaintel.com\nhttps://datadubaintel.com › ruth-reis-140002554434\nhá 4 dias — RUTH REIS, candidatura a Governador por PA em 2026. Perfil declarado ao TSE, trajetória eleitoral e plano de governo.\nCORRIDA ELEITORAL NO PARÁ Pesquisa divulgada ...\n\nInstagram · cidade091\nMais de 460 marcações \"Gostei\" · há 1 dia\nRuth Reis, que também representa o democrata. No cenário de segundo turno, a pesquisa testou o confronto direto entre Hana Ghassan e Daniel ...\nPesquisa EPOL/Simetria aponta empate técnico entre ...\n\nEstado do Pará Online\nhttps://estadodoparaonline.com › pesquisa-epol-simetria...\nhá 7 dias — José Moita, que aparece com 1% no levantamento, foi substituído por Ruth Reis no final do último dia da coleta e, portanto, o nome dela não foi ...\nReal Time"
+    },
+    {
+      "id": "PA-07",
+      "step_id": "10_pdf_original",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa filetype:pdf",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20filetype%3Apdf",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nContribuições dos estudos de discurso na análise da ...\n\nPortal de Periódicos UFJF\nhttps://periodicos.ufjf.br › article › download\nPDF\n13 de dez. de 2024 — E-mail: ruth.reis@ufes.br. 2 Professora do Programa de Pós-Graduação em Comunicação e Territorialidades da Universidade Federal do Espírito ...\nPerfil Público de Ruth Reis\n\niscte-iul.pt\nhttps://ciencia.iscte-iul.pt › authors › pdf\nPDF\nBrasil de 2016. In Ruth Reis &amp; Daniela Zanetti (Ed.), Pesquisas em Comunicação: Desafios do presente · nas mediações digitais. Vitória, ES: Edufes. 1.\nREPRESENTAÇÃO FEMININA NA CENA ...\n\nTeoria & Pesquisa Revista de Ciência Política\nhttps://www.teoriaepesquisa.ufscar.br › download\nPDF\nde KM Belisário · 2023 · Citado por 4 — Contribuições dos autores: Katia Belisário (UnB) e Ruth Reis (UFES) são respectivamente "
+    },
+    {
+      "id": "PA-08",
+      "step_id": "13_outra_rodada",
+      "engine": "Google",
+      "query": "Indexa Pará setembro 2026 pesquisa governador",
+      "search_url": "https://www.google.com/search?q=Indexa%20Par%C3%A1%20setembro%202026%20pesquisa%20governador",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nIndexa divulga pesquisa para governo e Senado no Pará\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › eleicoes › 2026 › i...\nhá 6 dias — Veja o que o Instituto Indexa mostra a respeito da disputa no Pará em agosto nas Eleições 2026. Saiba mais na Gazeta do Povo.\nIndexa: Dr. Daniel tem 38% no 1º turno para governo do ...\n\nR7\nhttps://noticias.r7.com › Brasília › Eleições › 2026\nhá 6 dias — Pesquisa eleitoral divulgada nesta sexta-feira (4) pelo instituto Indexa Pesquisas sobre as intenções de voto para o governo do Pará mostra ...\nReal Time Big Data: pesquisa para governo e Senado no ...\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › eleicoes › 2026 › r...\nhá 2 dias — Na disputa pelo governo estadual, Hana Ghassan (MDB) lidera numericamente o cenário estimulado de primeiro turno com 37% das inte"
+    },
+    {
+      "id": "PA-09",
+      "step_id": "02_cargo_ano",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa governador Pará after:2026-09-07 before:2026-09-11",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20governador%20Par%C3%A1%20after%3A2026-09-07%20before%3A2026-09-11",
+      "window_start": "2026-09-07",
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › governador › ruth-...\nhá 18 horas — Veja quem é Ruth Reis, número 35 do DEMOCRATA, candidata a Governadora pelo Pará em 2026. Confira vice, situação, propostas e bens declarados.\nRuth Reis 35 para governadora em Pará em 2026. Veja ...\n\nO TEMPO\nhttps://www.otempo.com.br › ... › Pará › Governador\nhá 1 dia — Ruth Reis (DEMOCRATA, 35) é candidata a governadora do Pará em 2026. Propostas, bens declarados e trajetória. Dados do TSE.\nveja como foi o dia dos candidatos ao governo do Pará - G1\n\nG1\nhttps://g1.globo.com › eleicoes › noticia › 2026/09/09\nhá 17 horas — Confira as atividades de campanha de Araceli Lemos; Daniel Santos; Gal Leite; Hana Ghassan; Ruth Reis e Well Macêdo.\nCORRIDA ELEITORAL NO PAR"
+    },
+    {
+      "id": "PA-10",
+      "step_id": "02_cargo_ano",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa governador Pará after:2026-09-03 before:2026-09-11",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20governador%20Par%C3%A1%20after%3A2026-09-03%20before%3A2026-09-11",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › governador › ruth-...\nhá 18 horas — Veja quem é Ruth Reis, número 35 do DEMOCRATA, candidata a Governadora pelo Pará em 2026. Confira vice, situação, propostas e bens declarados.\nRuth Reis 35 para governadora em Pará em 2026. Veja ...\n\nO TEMPO\nhttps://www.otempo.com.br › ... › Pará › Governador\nhá 1 dia — Ruth Reis (DEMOCRATA, 35) é candidata a governadora do Pará em 2026. Propostas, bens declarados e trajetória. Dados do TSE.\nRuth Reis | Candidata a Governadora no Pará nas eleições ...\n\nG1\nhttps://g1.globo.com › politica › eleicoes › governador\nhá 4 dias — Pará - Governador Ruth reis. Dados do candidato. 07/09/2026 • Atualizado há 1 dia. Dados fornecidos pelo TSE Informar um erro. Ruth Reis. DE"
+    },
+    {
+      "id": "PA-11",
+      "step_id": "02_cargo_ano",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa governador Pará after:2026-08-27 before:2026-09-11",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20governador%20Par%C3%A1%20after%3A2026-08-27%20before%3A2026-09-11",
+      "window_start": "2026-08-27",
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › governador › ruth-...\nhá 18 horas — Veja quem é Ruth Reis, número 35 do DEMOCRATA, candidata a Governadora pelo Pará em 2026. Confira vice, situação, propostas e bens declarados.\nRuth Reis | Candidata a Governadora no Pará nas eleições ...\n\nG1\nhttps://g1.globo.com › politica › eleicoes › governador\nhá 4 dias — Pará - Governador Ruth reis. Dados do candidato. 07/09/2026 • Atualizado há 1 dia. Dados fornecidos pelo TSE Informar um erro. Ruth Reis. DEMOCRATA35. Profissão ...\nRuth Reis 35 para governadora em Pará em 2026. Veja ...\n\nO TEMPO\nhttps://www.otempo.com.br › ... › Pará › Governador\nhá 1 dia — Ruth Reis (DEMOCRATA, 35) é candidata a governadora do Pará em 2026. Propostas, bens declarados e t"
+    },
+    {
+      "id": "PA-12",
+      "step_id": "04_variantes",
+      "engine": "Google",
+      "query": "\"Ruth Helena Ferreira Reis\" pesquisa governador Pará",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Helena%20Ferreira%20Reis%22%20pesquisa%20governador%20Par%C3%A1",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › governador › ruth-...\nhá 18 horas — Nasceu em Belém (PA). Ruth Helena Ferreira Reis tem 58 anos de idade, declarou ao TSE ser casado(a), tem o grau de instrução superior completo e ...\nRuth Reis 35 para governadora em Pará em 2026. Veja ...\n\nO TEMPO\nhttps://www.otempo.com.br › ... › Pará › Governador\nhá 1 dia — Última atualização: 09/09/2026, 08:56 Fonte: Dados TSE. Foto do candidato Ruth Reis 35. Ruth Reis. Ruth Helena Ferreira Reis.\nRuth Reis: veja número e partido nas Eleições 2026\n\nEstadão\nhttps://www.estadao.com.br › ... › Pará › Governador\nConheça Ruth Reis, candidata a governador por Pará nas Eleições 2026 ... Ruth Helena Ferreira Reis. Nº do Partido. 35 / DEMOCRATA. Coligação: partido .."
+    },
+    {
+      "id": "PA-13",
+      "step_id": "12_zero_ou_agrupamento",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" \"não pontuou\" OR \"não pontuaram\" OR \"0%\" pesquisa Pará",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20%22n%C3%A3o%20pontuou%22%20OR%20%22n%C3%A3o%20pontuaram%22%20OR%20%220%25%22%20pesquisa%20Par%C3%A1",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nCORRIDA ELEITORAL NO PARÁ Pesquisa divulgada ...\n\nInstagram · cidade091\nMais de 460 marcações \"Gostei\" · há 1 dia\n... Ruth Reis, que também representa o democrata. No cenário de segundo turno, a pesquisa testou o confronto direto entre Hana Ghassan e Daniel ...\nPesquisas eleitorais para a eleição estadual de 2026 no ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\nRuth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37%, 35 ... ↑ Orleans Santos (REDE) foi mencionado na pesquisa, mas não pontuou.\nEleições 2026: saiba quem são os candidatos a vice na ...\n\nO Liberal\nhttps://www.oliberal.com › politica › eleições-2026-saib...\nhá 2 dias — Márcia Carvalho, do Democrata, é candidata a vice-governadora na chapa de Ruth Reis, também do Democrata. Até o fech"
+    },
+    {
+      "id": "PA-14",
+      "step_id": "08_registro_sem_nome",
+      "engine": "Google",
+      "query": "\"PA-06730/2026\" pesquisa",
+      "search_url": "https://www.google.com/search?q=%22PA-06730%2F2026%22%20pesquisa",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"PA-06730/2026\" pesquisa.\nResultados para PA-06730/2026 pesquisa (sem aspas):\nResultados da Web\nCâmara Municipal de Guarujá - Documentos - Pesquisa\n\nCâmara Municipal de Guarujá\nhttps://siscam.camaraguaruja.sp.gov.br › Documentos\nProtocolo: 06730/2026. Situação: Despachada. Autoria: Edmar Lima dos Santos. Assunto: Solicita do Executivo que determine à Secretaria competente, providências ...\nDados da Licitação\n\njau.sp.gov.br\nhttps://www.jau.sp.gov.br › licitacao › contratao-direta-...\n22 de jul. de 2026 — Número: 06730/2026 · Objeto: CONTRATAÇÃO DIRETA: CONTRATAÇÃO DE SERVIÇOS FUNERÁRIOS, COM FORNECIMENTO DE URNA PADRÃO, PARA ATENDER A FAMÍLIA EM ...\nDocumentos - Pesquisa - Câmara Municipal de São Roque\n\nCâmara Municipal de São Roque\nhttp://efw.camarasaoroque.sp.gov.br › Sino.Siave › P"
+    },
+    {
+      "id": "PA-15",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:noticias.uol.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Anoticias.uol.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nConsumo de notícias aumentou durante pandemia, revela ...\n\nUOL Notícias\nhttps://noticias.uol.com.br › agencia-brasil › 2020/06/21\n21 de jun. de 2020 — Segundo a professora Daniela Zanetti, uma das autoras da pesquisa, assinada com Ruth Reis, a preferência pelos formatos televisivo e online ...\nVeja lista dos candidatos ao Senado pelo Pará em 2026\n\nUOL Notícias\nhttps://noticias.uol.com.br › eleicoes › 2026/09/07 › veja...\nhá 3 dias — 1º Suplente: Ruth Reis - 355 - DEMOCRATA - Renúncia 1º Suplente: Olinto Cei - 355 - DEMOCRATA - Aguardando Julgamento 2º Suplente: Nelson ...\nVeja lista dos candidatos a governador do Pará em 2026\n\nUOL Notícias\nhttps://noticias.uol.com.br › eleicoes › 2026/09/07 › veja...\nhá 3 dias — Ruth Reis - 35 - DEMOCRATA - Aguardando Julgamento Vice: Ruth Reis - 35 - DEMOCRATA - R"
+    },
+    {
+      "id": "PA-16",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:estadao.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Aestadao.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRuth Reis: veja número e partido nas Eleições 2026\n\nEstadão\nhttps://www.estadao.com.br › ... › Pará › Governador\nFoto de Ruth Reis, candidato a Governador - Estadão Fonte: TSE. Ruth Reis. 35DEMOCRATAGovernadorPAVice Marcia Carvalho. Aguardando Julgamento. Perfil do ...\nCandidatos a Governador de Pará em 2026\n\nEstadão\nhttps://www.estadao.com.br › ... › Candidatos › Pará\nRuth Reis. PA, governador, DEMOCRATA 35, DEMOCRATA, Partido Isolado, Perfil completo. Well Macedo. PA, governador, PSTU 16, PSTU, Partido Isolado, Perfil ...\nAmericano pode ser expulso\n\nEstadão\nhttps://www.estadao.com.br › E+\n3 de jun. de 2009 — A descoberta do laboratório foi em março em inspeção no hotel Rio Negro Lodge, de Marsteller e sua mulher, a brasileira Ruth Reis. Foram ...\nImagens\nRuth Reis: veja número e partido nas Eleiç"
+    },
+    {
+      "id": "PA-17",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:iclnoticias.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Aiclnoticias.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"Ruth Reis\" pesquisa site:iclnoticias.com.br.\nResultados para Ruth Reis pesquisa site:iclnoticias.com.br (sem aspas):\n\nSua pesquisa - Ruth Reis pesquisa site:iclnoticias.com.br - não encontrou nenhum documento correspondente.\n\nSugestões:\n\nConfirme que todas as palavras estão com a grafia correta.\nTente palavras-chave diferentes.\nTente palavras-chave mais genéricas.\nTente usar menos palavras-chave.\nLinks do rodapé\nBrasil\nVila Mariana, São Paulo - SP - Do seu endereço IP\n - Atualizar local\nAjuda\nEnviar feedback\nPrivacidade\nTermos"
+    },
+    {
+      "id": "PA-18",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:poder360.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Apoder360.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"Ruth Reis\" pesquisa site:poder360.com.br.\nResultados para Ruth Reis pesquisa site:poder360.com.br (sem aspas):\nResultados da Web\nLeia a lista de mais de 1.000 economistas que apoiam Lula\n\nPoder360\nhttps://www.poder360.com.br › eleicoes › leia-a-lista-d...\n14 de jun. de 2022 — Iniciativa da Associação Brasileira de Economistas pela Democracia têm nomes como Bresser-Pereira, Luiz Gonzaga Belluzzo e Otaviano Canuto.\njuízes com salários acima do teto no Estado de São Paulo\n\nPoder360\nhttps://graficos.poder360.com.br › ...\njuízes com salários acima do teto no Estado de São Paulo ; Ana Maria Fontes, Juiz de Direito de Entrância Final, 1ª Vara Cível Da Comarca De Batatais ; Ana Paula ...\nFoi publicada em 19/6/2026 a edição extra nº ...\n\nPoder360\nhttps://static.poder360.com.br › uploads › 20"
+    },
+    {
+      "id": "PA-19",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:metropoles.com",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Ametropoles.com",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"Ruth Reis\" pesquisa site:metropoles.com.\nResultados para Ruth Reis pesquisa site:metropoles.com (sem aspas):\nResultados da Web\nDa parapsicologia ao negacionismo: quem é Bia Kicis, ...\n\nMetrópoles\nhttps://www.metropoles.com › Brasil\n6 de fev. de 2021 — Deputada bolsonarista que fez fama no impeachment tenta vencer as resistências e acusações de extremismo para assumir comando da CCJ.\nMãe de Marília Mendonça entra no velório da filha amparada\n\nMetrópoles\nhttps://www.metropoles.com › Celebridades\n6 de nov. de 2021 — Ruth Moreira se aproximou do caixão da filha, apoiada por dois homens. Marília foi vítima de um acidente aéreo, nessa sexta-feira.\nApós 10 anos, detalhes do acidente que deixou rastro de ...\n\nMetrópoles\nhttps://www.metropoles.com › Brasil\n25 de set. de 2016 — O desastre aér"
+    },
+    {
+      "id": "PA-20",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:noticias.r7.com",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Anoticias.r7.com",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"Ruth Reis\" pesquisa site:noticias.r7.com.\nResultados para Ruth Reis pesquisa site:noticias.r7.com (sem aspas):\nResultados da Web\nDistúrbios do sono a partir dos 50 anos podem ser os ...\n\nR7\nhttps://noticias.r7.com › Saúde\n22 de jul. de 2022 — Pesquisa recente mostra que danos no cérebro associados à idade podem alterar ondas cerebrais específicas do sono, que retém a memória de ...\nFome insaciável em crianças pode ser indício de síndrome ...\n\nR7\nhttps://noticias.r7.com › Saúde\n26 de mai. de 2019 — Síndrome de Prader-Willi afeta 1 em cada 15 mil, sendo a causa genética mais comum da obesidade mórbida infantil; caminhada no domingo faz ...\nMostra recria pela 1ª vez em tamanho real anexo onde ...\n\nR7\nhttps://noticias.r7.com › Internacional\n1 de mar. de 2025 — A exposição continua a rel"
+    },
+    {
+      "id": "PA-21",
+      "step_id": "07_registro_nome",
+      "engine": "Google",
+      "query": "\"PA-00206/2026\" \"Ruth Reis\"",
+      "search_url": "https://www.google.com/search?q=%22PA-00206%2F2026%22%20%22Ruth%20Reis%22",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nHana Ghassan lidera numericamente 1º e 2º turnos no Pará\n\nBelém.com.br\nhttps://belem.com.br › Brasil › Eleições 2026\nhá 2 dias — O levantamento foi realizado com recursos próprios do Real Time Big Data e está registrado na Justiça Eleitoral sob o protocolo PA-00206/2026.\nReal Time Big Data: Hana Ghassan lidera nos dois turnos ...\n\nCidade 091\nhttps://cidade091.com.br › noticias › real-time-big-data-...\nhá 2 dias — O estudo foi contratado pelo próprio instituto e registrado no Tribunal Superior Eleitoral (TSE) sob o número PA-00206/2026. ... Ruth Reis, que ...\nZECA PIRÃO AMPLIA ATUAÇÃO EM BELÉM E MANTÉM ...\n\nFacebook · Outeiro News\nMais de 60 reações · há 2 horas\nRuth Reis. 3️⃣5️⃣✅️ para Governadora. 45m. Eduardo Silva HE. Me ... O levantamento está registrado no TSE sob o protocolo PA-00206/2026.\nIm"
+    },
+    {
+      "id": "PA-22",
+      "step_id": "08_registro_sem_nome",
+      "engine": "Google",
+      "query": "\"PA-00206/2026\" pesquisa",
+      "search_url": "https://www.google.com/search?q=%22PA-00206%2F2026%22%20pesquisa",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nGhassan e Dr. Daniel empatam em 1º e 2º turnos no PA ...\n\nPoder360\nhttps://www.poder360.com.br › poder-eleicoes-2026\nhá 2 dias — Pesquisa Real Time Big Data, divulgada nesta 3ª feira (8.set ... Foi registrada no Tribunal Superior Eleitoral sob o número PA-00206/2026.\nReal Time: Hana e Dr. Daniel empatam em 1º e 2º turno ...\n\nCNN Brasil\nhttps://www.cnnbrasil.com.br › Eleições\nhá 2 dias — Pesquisa ouviu 1.600 eleitores paraenses entre 3 e 7 de setembro ... PA-00206/2026. CNN Brasil. Siga a CNN Brasil no Google e receba as ...\nReal Time Big Data: pesquisa para governo e Senado no ...\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › eleicoes › real-time...\nhá 2 dias — Margem de erro: 2 pontos percentuais. Registro no TSE sob o nº PA-00206/2026. Por que a Gazeta do Povo publica pesquisas eleitorais. A "
+    },
+    {
+      "id": "PA-23",
+      "step_id": "10_pdf_original",
+      "engine": "Google",
+      "query": "Real Time Big Data Pará setembro 2026 resultados completos filetype:pdf",
+      "search_url": "https://www.google.com/search?q=Real%20Time%20Big%20Data%20Par%C3%A1%20setembro%202026%20resultados%20completos%20filetype%3Apdf",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nPará - PA-00206-2026 Set26\n\nReal Time Big Data\nhttps://realtimebigdata.com.br › uploads › 2026/09\nPDF\n26 de set. de 2026 — EM OUTUBRO TEREMOS ELEIÇÕES PARA O CARGO DE SENADOR DA REPÚBLICA. NESTA ELEIÇÃO TEMOS A. POSSIBILIDADE DE ESCOLHER ATÉ DOIS CANDIDATOS PARA ...\npesquisa presidencial brasil\n\nPoder360\nhttps://static.poder360.com.br › uploads › 2026/09\nPDF\n1 de set. de 2026 — OS CANDIDATOS CLARIANA BARÃO (DC) / RUI. COSTA PIMENTA (PCO) / SAMARA (UP) /. EDMILSON COSTA (PCB) / HERTZ DIAS (PSTU) E.\n80 páginas\nCeará - BR-05643-2026 Set26\n\nReal Time Big Data\nhttps://realtimebigdata.com.br › uploads › 2026/09\nPDF\n26 de set. de 2026 — 1.600 ENTREVISTAS. UNIVERSO: ELEITORES DO ESTADO DO CEARÁ. MARGEM DE ERRO: +/- 2.0 P.P.. ÍNDICE DE CONFIANÇA: 95%.\nTrês meses para a eleição: 2026 em perspectiva histórica"
+    },
+    {
+      "id": "PA-24",
+      "step_id": "10_pdf_original",
+      "engine": "Google",
+      "query": "Quaest Pará setembro 2026 pesquisa filetype:pdf",
+      "search_url": "https://www.google.com/search?q=Quaest%20Par%C3%A1%20setembro%202026%20pesquisa%20filetype%3Apdf",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nEleições em tempos de incerteza\n\nSciELO Brasil\nhttps://www.scielo.br › ...\nPDF\nde GP Silva · 2026 — QUAEST. Pesquisa Genial Investimento – Pesquisa eleitoral para Presidente. 21ª roda- da - slide 125; Acesso em: 28 jan. 2026. RENNÓ, L. Bolsonarismo e as ...\nTarcísio lidera disputa contra Haddad em SP, aponta Quaest\n\nGazeta de São Paulo\nhttps://flip.gazetasp.com.br › uploads › 2026/07\nPDF\n1.385.915 R$ 45,33 por saca outubro, 2026. Milho - Revenda ton. 48.182. R$ 48,66 por saca setembro, 2026. Soja - Revenda ton. 3.428. R$ 84,55 por saca outubro, ...\nQUEM VENCE 2026?\n\nREVISTA CENARIUM\nhttps://revistacenarium.com.br › 2026/02 › Revis...\nPDF\nO Brasil chega a 2026 sob uma disputa marcada menos por projetos estrutura- dos de país e mais pela reorganização de narrativas políticas em um ambiente de.\ncapítu"
+    },
+    {
+      "id": "PA-25",
+      "step_id": "09_tabela_completa",
+      "engine": "Google",
+      "query": "Doxa Pará setembro 2026 pesquisa resultados completos",
+      "search_url": "https://www.google.com/search?q=Doxa%20Par%C3%A1%20setembro%202026%20pesquisa%20resultados%20completos",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nEleições2026 - Pesquisa Doxa\n\npesquisasdoxa.com\nhttps://www.pesquisasdoxa.com › blog › categories › el...\nPesquisa registrada sob o nº PA-01962/2026 no T.R.E ouviu 2.000 eleitores em todas as seis mesorregiões do estado entre 18 e 23 de agosto.\nNão inclui: setembro ‎completos\nDoxa Pesquisa\n\npesquisasdoxa.com\nhttps://www.pesquisasdoxa.com\nInstituto de Pesquisa Política e de Mercado mais conceituado do Norte, com mais de 20 anos no mercado.\nNão inclui: setembro ‎completos\nCENÁRIO PARA DEPUTADO FEDERAL NO PARÁ: DISPUTA ...\n\npesquisasdoxa.com\nhttps://www.pesquisasdoxa.com › post › cenario-para-d...\n5 de jun. de 2026 — A corrida eleitoral para deputado federal no estado do Pará começa a desenhar seus primeiros contornos, mas o cenário ainda é de elevada ...\nNão inclui: setembro ‎| Precisa incluir: setem"
+    },
+    {
+      "id": "PA-26",
+      "step_id": "13_outra_rodada",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa Veritá Pará",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20Verit%C3%A1%20Par%C3%A1",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nPesquisas eleitorais para a eleição estadual de 2026 no ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\nWell Macêdo (PSTU), Gal Leite (UP), Ruth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37%, 35%, 5%, <1%, <1%, <1%, —, 22%. Indexa, 31 ...\nVideo\n\nFacebook · Dilzzan Santana\nMais de 950 reações · há 1 semana\n35 Ruth Reis para Governadora. 6d. Profile photo of Romulo. Romulo ... PESQUISA PARA O GOVERNO DO PARÁ Pesquisa do Instituto Veritá...\n⚖️ A Justiça Eleitoral deu a resposta aos rumores que ...\n\nInstagram · portaltucupi\nMais de 150 marcações \"Gostei\" · há 2 semanas\nAo seu lado, a candidata a vice, Ruth Reis, também do Democrata, declarou R$ 1,2 milhão à Justiça Eleitoral. Confira todos os detalhes ...\nConfira a agenda dos candidatos ao gover"
+    },
+    {
+      "id": "PA-27",
+      "step_id": "05_outros_veiculos",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:www1.folha.uol.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Awww1.folha.uol.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nFolha de S.Paulo - Cotidiano - Mortes - 26/10/2013\n\nFolha de S.Paulo\nhttps://www1.folha.uol.com.br › fsp › 135843-mortes\nRUTH REIS DEBELIAN - Hoje, às 18h, na igreja Assunção de N. Sra., al. Lorena, 665-A, Jd. Paulista. TEREZINHA MARANGON - Hoje, às 12h, na igreja Imaculada ...\nFolha de S.Paulo - Cotidiano - Mortes - 25/10/2013\n\nFolha de S.Paulo\nhttps://www1.folha.uol.com.br › fsp › 135646-mortes\nRUTH REIS DEBELIAN - Amanhã, às 18h, na igreja Assunção de N. Sra., al. Lorena, 665-A, Jd. Paulista. TEREZINHA MARANGON - Amanhã, às 12h, na igreja ...\nLinks do rodapé\nBrasil\nVila Mariana, São Paulo - SP - Do seu endereço IP\n - Atualizar local\nAjuda\nEnviar feedback\nPrivacidade\nTermos"
+    },
+    {
+      "id": "PA-28",
+      "step_id": "02_cargo_ano",
+      "engine": "Google",
+      "query": "Ruth Reis pesquisa governadora Pará 2026",
+      "search_url": "https://www.google.com/search?q=Ruth%20Reis%20pesquisa%20governadora%20Par%C3%A1%202026",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nExibindo resultados para Ruth Reis pesquisa governador Pará 2026\nEm vez disso, pesquisar por Ruth Reis pesquisa governadora Pará 2026\n\nResultados da Web\nRuth Reis 35 (DEMOCRATA) - Candidatos - Gazeta do Povo\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › 2026 › governador\nhá 18 horas — Veja quem é Ruth Reis, número 35 do DEMOCRATA, candidata a Governadora pelo Pará em 2026. Confira vice, situação, propostas e bens ...\nRuth Reis 35 para governadora em Pará em 2026. Veja ...\n\nO TEMPO\nhttps://www.otempo.com.br › ... › Pará › Governador\nhá 1 dia — Ruth Reis (DEMOCRATA, 35) é candidata a governadora do Pará em 2026. Propostas, bens declarados e trajetória. Dados do TSE.\nRuth Reis | Candidata a Governadora no Pará nas eleições ...\n\nG1\nhttps://g1.globo.com › eleicoes › 2026 › governador\nhá 4 dias — Ferramenta do g1 que "
+    },
+    {
+      "id": "PA-29",
+      "step_id": "06_instituto_nome",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" Quaest Pará setembro 2026",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20Quaest%20Par%C3%A1%20setembro%202026",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nveja como foi o dia dos candidatos ao governo do Pará - G1\n\nG1\nhttps://g1.globo.com › 2026 › noticia › 2026/09/09 › e...\nhá 17 horas — Confira as atividades de campanha de Araceli Lemos; Daniel Santos; Gal Leite; Hana Ghassan; Ruth Reis e Well Macêdo.\nPesquisas eleitorais para a eleição estadual de 2026 no ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\nRuth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37%, 35%, 5%, <1%, <1%, <1%, —, 22%. Indexa, 31 de agosto a 2 de setembro ...\nveja como foi o dia dos candidatos ao governo do Pará | G1\n\nG1\nhttps://g1.globo.com › 2026 › noticia › 2026/09/08 › e...\nhá 2 dias — Confira as atividades de campanha de Araceli Lemos; Daniel Santos; Gal Leite; Hana Ghassan; Ruth Reis e Well Macêdo.\nQuem é José Moita, c"
+    },
+    {
+      "id": "PA-30",
+      "step_id": "06_instituto_nome",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" Atlas pesquisa Pará",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20Atlas%20pesquisa%20Par%C3%A1",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nRUTH REIS - candidato a Governador no Pará\n\nBlog Anderson Souza\nhttps://blogandersonsouza.com.br › 2026/09/07 › eleic...\nhá 3 dias — ... RUTH REIS. Governador · Pará · Eleições 2026. RUTH REIS. 35 DEMOCRATA 1º turno. Situação do registro Aguardando julgamento Cadastrado.\nCORRIDA ELEITORAL NO PARÁ Pesquisa divulgada ...\n\nInstagram · cidade091\nMais de 460 marcações \"Gostei\" · há 1 dia\n... Ruth Reis, que também representa o democrata. No cenário de segundo turno, a pesquisa testou o confronto direto entre Hana Ghassan e Daniel ...\nPesquisas eleitorais para a eleição estadual de 2026 no ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\nWell Macêdo (PSTU), Gal Leite (UP), Ruth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37%, 35%, 5%, <1%, <1%, <1%, —"
+    },
+    {
+      "id": "PA-31",
+      "step_id": "06_instituto_nome",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" Real Time Big Data pesquisa",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20Real%20Time%20Big%20Data%20pesquisa",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nReal Time Big Data: Hana Ghassan lidera nos dois turnos ...\n\nCidade 091\nhttps://cidade091.com.br › noticias › real-time-big-data-...\nhá 2 dias — Ruth Reis, que também representa o democrata. Votos em branco ou nulo totalizam 8% da amostra. Eleitores que não souberam ou preferiram não ...\nCandidatos a Vice-Governador no Pará nas Eleições 2026\n\nGazeta do Povo\nhttps://www.gazetadopovo.com.br › ... › Candidatos › PA\nRUTH REIS. Inapto. RUTH REIS. SEU ALEX. WELL MACEDO. Inapto. WELL MACEDO. Veja também candidatos a. PresidenteVice-Presidente · < Voltar e escolher outra ...\nCORRIDA ELEITORAL NO PARÁ Pesquisa divulgada ...\n\nInstagram · cidade091\nMais de 460 marcações \"Gostei\" · há 1 dia\n... Ruth Reis, que também representa o democrata. No cenário de segundo turno, a pesquisa testou o confronto direto entre"
+    },
+    {
+      "id": "PA-32",
+      "step_id": "10_pdf_original",
+      "engine": "Google",
+      "query": "pesquisa governador Pará setembro 2026 candidatos filetype:pdf",
+      "search_url": "https://www.google.com/search?q=pesquisa%20governador%20Par%C3%A1%20setembro%202026%20candidatos%20filetype%3Apdf",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nPará - PA-00206-2026 Set26\n\nPoder360\nhttps://static.poder360.com.br › uploads › 2026/09\nPDF\nhá 3 dias — ... GOVERNADOR DO PARÁ FOSSE HOJE, EM. QUEM O (A) SENHOR (A) VOTARIA SE OS NOMES FOSSEM ESTES? OS CANDIDATOS JOSÉ MOITA (DEMOCRATA) /. WELL MACEDO ...\n20 páginas\nLEVANTAMENTO DE PESQUISAS PARA GOVERNADOR\n\nPoder360\nhttps://static.poder360.com.br › uploads › 2026/09\nPDF\n1 de set. de 2026 — Para elencar as pesquisas eleitorais nos Estados, o Drive fez buscas no banco de dados do TSE, em jornais locais e na internet em geral. Foi.\nlevantamento de pesquisas para governador - set.2026\n\nPoder360\nhttps://static.poder360.com.br › uploads › 2026/09\nPDF\nhá 6 dias — Para elencar as pesquisas eleitorais nos Estados, o Drive fez buscas no banco de dados do TSE, em jornais locais e na internet em geral. Foi.\n2 "
+    },
+    {
+      "id": "PA-33",
+      "step_id": "11_site_instituto",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa site:realtimebigdata.com.br",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20site%3Arealtimebigdata.com.br",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nNenhum resultado encontrado para \"Ruth Reis\" pesquisa site:realtimebigdata.com.br.\nResultados para Ruth Reis pesquisa site:realtimebigdata.com.br (sem aspas):\n\nSua pesquisa - Ruth Reis pesquisa site:realtimebigdata.com.br - não encontrou nenhum documento correspondente.\n\nSugestões:\n\nConfirme que todas as palavras estão com a grafia correta.\nTente palavras-chave diferentes.\nTente palavras-chave mais genéricas.\nTente usar menos palavras-chave.\nLinks do rodapé\nBrasil\nVila Mariana, São Paulo - SP - Do seu endereço IP\n - Atualizar local\nAjuda\nEnviar feedback\nPrivacidade\nTermos"
+    },
+    {
+      "id": "PA-34",
+      "step_id": "14_historico_identificado",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" pesquisa governo Pará before:2026-08-27",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20pesquisa%20governo%20Par%C3%A1%20before%3A2026-08-27",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nResultados da Web\nFicheiro:2026 RUTH REIS CANDIDATO VICE ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Ficheiro:2026_RUTH_...\n14 de ago. de 2026 — Ficheiro:2026 RUTH REIS CANDIDATO VICE-GOVERNADOR PA TSE (140002551358).jpg · Índice · Descrição do ficheiro · Licenciamento ...\nRuth Reis 355 - Candidata a 1º suplente do PA ...\n\nND Mais\nhttps://ndmais.com.br › eleicoes › candidatos › 355-rut...\n17 de ago. de 2026 — Ruth Reis · Ficha do candidato · Trajetória política · Chapa e coligação · Patrimônio declarado · Outros candidatos ao 1º Suplente do Pará.\nJosé Moita declara R$ 2,5 milhões em bens ao TSE - G1 - Globo\n\nG1\nhttps://g1.globo.com › eleicoes › noticia › 2026/08/14\n14 de ago. de 2026 — O candidato do Democrata ao Governo do Pará, José Moita, declarou R$ 2,5 milhões em bens à Justiça Eleitoral. Candidata a vice,"
+    },
+    {
+      "id": "PA-35",
+      "step_id": "03_nome_exato",
+      "engine": "Google",
+      "query": "\"Ruth Reis\" \"intenção de voto\" PA 2026",
+      "search_url": "https://www.google.com/search?q=%22Ruth%20Reis%22%20%22inten%C3%A7%C3%A3o%20de%20voto%22%20PA%202026",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\n\nVocê quis dizer: \"Ruth Reis\" \"intenção de voto\" PARA 2026\n\nResultados da Web\nVeja como foi o dia dos candidatos ao governo do Pará - G1\n\nG1\nhttps://g1.globo.com › pa › 2026 › noticia › 2026/08/31\n... Ruth Reis e Well Macêdo. Por g1 Pará — Belém. 31/08/2026 20h05 Atualizado há uma semana. Quaest: Veja a intenção de voto para o governo do Pará.\nPesquisas eleitorais para a eleição estadual de 2026 no ...\n\nWikipedia\nhttps://pt.wikipedia.org › wiki › Pesquisas_eleitorais_pa...\n... intenção de voto para a eleição para governador e senador em 2026. Os ... Ruth Reis (Democrata). Real Time Big Data, 3 a 7 de setembro, 1 600, 2,0, —, 37 ...\nCORRIDA ELEITORAL NO PARÁ Pesquisa divulgada ...\n\nInstagram · cidade091\nMais de 460 marcações \"Gostei\" · há 1 dia\n... Ruth Reis, que também representa o democrata. No cenário de ... Neste"
+    },
+    {
+      "id": "PA-36",
+      "step_id": "04_variantes",
+      "engine": "Google",
+      "query": "\"Dra. Ruth Reis\" pesquisa Pará 2026",
+      "search_url": "https://www.google.com/search?q=%22Dra.%20Ruth%20Reis%22%20pesquisa%20Par%C3%A1%202026",
+      "window_start": null,
+      "window_end": "2026-09-10",
+      "outcome": "no_relevant_result",
+      "note": "Não recuperado resultado individual verificável de Ruth Reis. Pistas pertinentes foram verificadas nas fontes consolidadas; resumo de buscador não valida percentual.",
+      "result_preview": "Resultados da pesquisa\nVisão geral criada por IA\nDra. Ruth Reis é candidata ao Governo do Pará nas eleições de 2026 pelo Partido Democrata. \nInstagram\n·Cidade 091\n +1\nContexto da Candidatura\nSubstituição: Assumiu a cabeça da chapa ao Governo do Estado em agosto de 2026, após a impugnação/afastamento do candidato anterior, José Moita, por questões ligadas ao domicílio eleitoral. \nInstagram\n·oliberal.com\n +1\nPlano de Governo: Mantém as diretrizes da coligação registradas sob o plano \"Pará de Todos Nós: Desenvolvimento, Inclusão, Sustentabilidade e Governança\". \nPropostas Principais: Destaca ações para a saúde pública, como ampliação do atendimento em áreas distantes, uso de telesaúde e fila única de agendamento via celular. \nInstagram\n·Cidade 091\nDados Biográficos\nNome completo: Ruth Helena Ferreira Reis\nIdade e naturalidade: 58 anos, nasci"
+    }
+  ],
+  "verified_sources": [
+    {
+      "url": "https://static.poder360.com.br/uploads/2026/09/pesquisa-realtime-para.pdf",
+      "original_url": "https://realtimebigdata.com.br/wp-content/uploads/2026/09/Para-PA-00206-2026-Set26.pdf",
+      "registration": "PA-00206/2026",
+      "publication_date": "2026-09-08",
+      "pages": [
+        1,
+        2,
+        7
+      ],
+      "finding": "A tabela estimulada traz Hana 37, Dr. Daniel 35, Araceli 5, Outros 1, Nulo/Branco 8 e NS/NR 14. A nota identifica José Moita, Well Macedo e Gal Leite como componentes de Outros. Ruth Reis não é identificada na tabela.",
+      "access": "PDF original recusou acesso direto (HTTP 406); cópia do relatório no Poder360 aberta e lida."
+    },
+    {
+      "url": "https://estadodoparaonline.com/pesquisa-epol-simetria-aponta-empate-tecnico-entre-hana-ghassan-e-dr-daniel-na-disputa-pelo-governo-do-para/",
+      "registration": "PA-05413/2026",
+      "publication_date": "2026-09-03",
+      "finding": "A matéria informa explicitamente que Ruth substituiu José Moita ao final do último dia de campo e que o nome dela não foi testado. O percentual de Moita não pertence a Ruth."
+    },
+    {
+      "url": "https://cidade091.com.br/noticias/real-time-big-data-hana-ghassan-lidera-nos-dois-turnos-contra-daniel-santos-na-corrida-eleitoral-no-para",
+      "registration": "PA-00206/2026",
+      "publication_date": "2026-09-08",
+      "finding": "A matéria cita Ruth como substituta de José Moita, sem percentual individual; os três nomes antigos somam 1%."
+    },
+    {
+      "url": "https://noticias.r7.com/eleicoes/2026/indexa-dr-daniel-tem-38-no-1-turno-para-governo-do-para-e-hana-ghassan-357-05092026/",
+      "registration": "PA-05178/2026",
+      "publication_date": "2026-09-04",
+      "finding": "A tabela Indexa individualiza José Moita em 0,1%; não autoriza atribuir o valor a Ruth."
+    },
+    {
+      "url": "https://www.pesquisasdoxa.com/post/eleicao-para-o-governo-do-para-hana-aparece-na-frente-37-2-dr-daniel-31-3",
+      "registration": "PA-01962/2026",
+      "publication_date": "2026-08-27",
+      "finding": "Consulta ao site do instituto: reportagem anterior à substituição, sem resultado individual de Ruth no texto consultado."
+    },
+    {
+      "url": "https://estadodoparaonline.com/raio-x-eleitoral-conheca-as-propostas-aliados-e-trajetoria-de-ruth-reis/",
+      "publication_date": "2026-09-04",
+      "finding": "Confirma o nome civil Ruth Helena Ferreira Reis e a substituição de José Lucivaldo Moita, anunciada em 30/08."
+    }
+  ],
+  "rejected_leads": [
+    {
+      "source": "DailyJournal e Wikipédia",
+      "reason": "Trechos de busca sugerem percentual sob o nome atual, mas o relatório original testou José Moita. Não são prova de medição individual de Ruth."
+    },
+    {
+      "registration": "PA-06730/2026",
+      "reason": "Pista em agregador sem tabela verificável recuperada; não incorporada."
+    }
+  ],
+  "closure_note": "A sequência nominal, aliases, veículos, institutos, registros, tabelas, PDFs, fonte oficial, zero/agrupamento e histórico foi aplicada. A pesquisa permanece pendente de evidência individual; isso não demonstra inexistência universal de levantamento.",
+  "next_run": "Repetir os caminhos para novas publicações e tabelas que nomeiem Ruth Reis; não transferir resultados de José Moita, Araceli ou Outros."
+}

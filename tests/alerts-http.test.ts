@@ -1261,6 +1261,58 @@ describe("alerts HTTP routes", () => {
       assert.equal(subscriber?.last_digest_sent_at, NOW.toISOString())
     })
 
+    it("links news by registro_id, keeps media fallback and routes other updates to the profile", async () => {
+      const fixture = baseDigestFixture()
+      fixture.setTable("candidate_changes", [
+        {
+          id: "change-id-is-not-the-news-id",
+          candidato_id: "cand_lula",
+          titulo: "Notícia com resumo",
+          descricao: "Explicação da notícia.",
+          tipo: "noticia",
+          registro_id: "news-123",
+          metadata: { fonte: "Portal Exemplo", url: "https://portal.example/noticia?a=1&b=2" },
+          created_at: "2026-04-10T12:00:00.000Z",
+        },
+        {
+          id: "change-without-news-id",
+          candidato_id: "cand_lula",
+          titulo: "Notícia antiga",
+          descricao: null,
+          tipo: "noticia",
+          registro_id: null,
+          metadata: { fonte: "Outro Portal", url: "javascript:alert(1)" },
+          created_at: "2026-04-10T12:01:00.000Z",
+        },
+        {
+          id: "change-patrimonio",
+          candidato_id: "cand_lula",
+          titulo: "Patrimônio atualizado",
+          descricao: null,
+          tipo: "patrimonio",
+          registro_id: "patrimonio-123",
+          metadata: { url: "https://portal.example/not-the-news" },
+          created_at: "2026-04-10T12:02:00.000Z",
+        },
+      ])
+      const handler = createSendDigestHandler(createDeps(fixture))
+      const response = await handler(buildDigestRequest(fixture))
+      assert.equal(response.status, 200)
+      assert.equal(fixture.emails.length, 1)
+      const { html, text } = fixture.emails[0]!
+      assert.ok(text)
+      assert.match(html, /href="https:\/\/puxaficha.com.br\/candidato\/lula\?tab=media&amp;noticia=news-123#noticia-news-123"[^>]*>Notícia com resumo<\/a>/)
+      assert.match(html, /href="https:\/\/puxaficha.com.br\/candidato\/lula\?tab=media"[^>]*>Notícia antiga<\/a>/)
+      assert.match(html, /href="https:\/\/puxaficha.com.br\/candidato\/lula"[^>]*>Patrimônio atualizado<\/a>/)
+      assert.ok(text.includes("?tab=media&noticia=news-123#noticia-news-123"))
+      assert.ok(text.includes("Fonte: Portal Exemplo"))
+      assert.ok(text.includes("Ler no portal: https://portal.example/noticia?a=1&b=2"))
+      assert.ok(!html.includes("javascript:"))
+      assert.ok(!text.includes("change-id-is-not-the-news-id"))
+      assert.ok(!text.includes("not-the-news"))
+      assert.equal(fixture.getTable("notification_log")[0]?.change_ids?.length, 3)
+    })
+
     it("marks notification_log as failed when the email provider throws", async () => {
       const fixture = baseDigestFixture()
       fixture.setTable("candidate_changes", [

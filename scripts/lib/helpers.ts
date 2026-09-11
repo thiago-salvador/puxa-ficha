@@ -42,8 +42,20 @@ export function loadCandidatos(): CandidatoConfig[] {
   return todos.filter((c) => escopo.has(c.slug))
 }
 
-export async function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms))
+export async function sleep(ms: number, signal?: AbortSignal): Promise<void> {
+  signal?.throwIfAborted()
+  return new Promise((resolve, reject) => {
+    const onAbort = () => {
+      clearTimeout(timer)
+      signal?.removeEventListener("abort", onAbort)
+      reject(signal?.reason)
+    }
+    const timer = setTimeout(() => {
+      signal?.removeEventListener("abort", onAbort)
+      resolve()
+    }, ms)
+    signal?.addEventListener("abort", onAbort, { once: true })
+  })
 }
 
 /**
@@ -96,6 +108,8 @@ export interface FetchRelogio {
 const RELOGIO_REAL: FetchRelogio = { now: () => Date.now(), sleep, random: Math.random }
 
 export interface FetchJSONOptions {
+  /** Deadline/cancellation owned by the caller; never retried after abort. */
+  signal?: AbortSignal
   /**
    * Teto de tempo da chamada inteira, esperas incluidas. Default: a soma dos
    * prazos das tentativas (`retries * timeoutMs`), que e o pior caso que o
@@ -125,11 +139,12 @@ async function tentarFetchJSON<T>(
   timeoutMs: number,
   tentativa: number,
   relogio: FetchRelogio,
+  signal?: AbortSignal,
 ): Promise<Tentativa<T>> {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeoutMs)
   try {
-    const res = await fetch(url, { headers, signal: controller.signal })
+    const res = await fetch(url, { headers, signal: signal ? AbortSignal.any([signal, controller.signal]) : controller.signal })
     if (res.status === 429) {
       const retryAfter = parseRetryAfterMs(res.headers.get("retry-after"))
       return {
@@ -148,6 +163,7 @@ async function tentarFetchJSON<T>(
     }
     return { ok: true, valor: (await res.json()) as T }
   } catch (err) {
+    signal?.throwIfAborted()
     if (err instanceof Error && err.name === "AbortError") {
       return { ok: false, erro: new Error(`Timeout (${timeoutMs}ms): ${url}`), retentavel: true }
     }
@@ -171,7 +187,9 @@ export async function fetchJSON<T>(
   let ultimoErro: Error = new Error(`Nenhuma tentativa executada: ${url}`)
 
   for (let tentativa = 0; tentativa < retries; tentativa++) {
-    const desfecho = await tentarFetchJSON<T>(url, headers, timeoutMs, tentativa, relogio)
+    options.signal?.throwIfAborted()
+    const desfecho = await tentarFetchJSON<T>(url, headers, timeoutMs, tentativa, relogio, options.signal)
+    options.signal?.throwIfAborted()
     if (desfecho.ok) return desfecho.valor
 
     ultimoErro = desfecho.erro
@@ -180,7 +198,8 @@ export async function fetchJSON<T>(
 
     const espera = desfecho.esperaMs ?? proximaEsperaMs(tentativa, relogio.random)
     if (relogio.now() + espera > prazoFinal) break
-    await relogio.sleep(espera)
+    if (options.signal && !options.relogio) await sleep(espera, options.signal)
+    else await relogio.sleep(espera)
   }
 
   throw ultimoErro

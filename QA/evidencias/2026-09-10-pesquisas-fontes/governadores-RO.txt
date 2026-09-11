@@ -1,0 +1,12 @@
+CAPTURA TEXTUAL ESTRUTURADA
+UF: RO
+Fonte lida: Gazeta do Povo
+URL: https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governo-senado-rondonia-agosto-2026/
+Leitura via ferramenta web em: 2026-09-10
+Natureza: transcrição factual estruturada do corpo renderizado; não é hash do HTML original.
+
+Matéria e pesquisa divulgadas em 25/08/2026. Pesquisa Quaest, campo de 21 a 24/08/2026, 804 entrevistas, margem de 3 pontos percentuais, confiança de 95%, contratada por Rádio TV do Amazonas / Rede Amazônica Rádio e Televisão, registro RO-05711/2026.
+
+Cenário estimulado de primeiro turno:
+Marcos Rogério 24%; Adailton Fúria 21%; Hildon Chaves 10%; Expedito Netto 10%; Samuel Costa 2%; Pedro Abib 1%; nulo/branco/não vai votar 10%; indecisos 22%.
+

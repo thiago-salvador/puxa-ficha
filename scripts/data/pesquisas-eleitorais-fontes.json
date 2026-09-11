@@ -10,9 +10,10 @@
   "preferred_source_ids": [
     "datafolha-folha-globo-nacional-2026",
     "atlasintel-bloomberg-nacional-2026",
-    "ipsos-ipec-nacional-2026"
+    "ipsos-ipec-nacional-2026",
+    "meio-ideia-br-revisao-20260910"
   ],
-  "consulted_at": "2026-08-24T19:07:12-03:00",
+  "consulted_at": "2026-09-10T12:02:09Z",
   "status_values": [
     "aprovado",
     "condicional",
@@ -26,7 +27,7 @@
     "publication_stability": "Existe arquivo, landing page ou URL permanente com rodadas identificáveis."
   },
   "status_rule": {
-    "aprovado": "Os quatro critérios duros estão verdadeiros e há política ou trilha pública específica de correções. Aprovação significa qualificação operacional para o piloto, não ranking absoluto de confiabilidade.",
+    "aprovado": "Os quatro critérios duros estão verdadeiros e há política ou trilha pública específica de correções. Aprovação significa qualificação operacional para o piloto, não ranking absoluto de confiabilidade. Rodadas com revisão documentada podem ser aprovadas individualmente em reviewed_registration_ids, sem estender a aprovação a outros registros.",
     "condicional": "Há uma lacuna que exige revisão manual antes de incluir uma rodada.",
     "excluído": "Há incompatibilidade semântica ou falta de atualidade para o piloto."
   },
@@ -86,7 +87,10 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1, 2],
+        "rounds": [
+          1,
+          2
+        ],
         "registration_id": "BR-06591/2026",
         "result_url": "https://quaest.com.br/pesquisa-genial-quaest-recuperacao-de-flavio-bolsonaro/",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
@@ -171,7 +175,10 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1, 2],
+        "rounds": [
+          1,
+          2
+        ],
         "registration_id": "BR-07845/2026",
         "result_url": "https://www.poder360.com.br/poderdata/leia-os-resultados-da-pesquisa-poderdata-aya-para-presidente/",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
@@ -255,7 +262,10 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1, 2],
+        "rounds": [
+          1,
+          2
+        ],
         "registration_id": "BR-04496/2026",
         "result_url": "https://www1.folha.uol.com.br/poder/2026/08/datafolha-lula-marca-39-no-1o-turno-e-flavio-bolsonaro-tem-33.shtml",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
@@ -338,7 +348,10 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1, 2],
+        "rounds": [
+          1,
+          2
+        ],
         "registration_id": "BR-08602/2026",
         "result_url": "https://cdn.atlasintel.org/498dd172-4381-4192-977c-c4af9787434f.pdf",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
@@ -424,7 +437,10 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1, 2],
+        "rounds": [
+          1,
+          2
+        ],
         "registration_id": "BR-00873/2026",
         "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/03/Nacional_Mar26-3.pdf",
         "registry_url": "https://pesqele-divulgacao.tse.jus.br/"
@@ -509,7 +525,9 @@
         "confidence_level_pct": 95,
         "office": "presidente",
         "geography": "Brasil",
-        "rounds": [1],
+        "rounds": [
+          1
+        ],
         "registration_id": null,
         "result_url": "https://www.ipsos.com/pt-br/lula-lidera-hoje-todos-os-cenarios-testados-para-eleicoes-de-2026",
         "registry_url": null
@@ -601,6 +619,79 @@
         "note": "Não é instituto e não produz uma rodada primária comparável."
       },
       "consulted_at": "2026-08-23T22:29:25-03:00"
+    },
+    {
+      "id": "meio-ideia-br-revisao-20260910",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Meio/Ideia",
+        "commissioner": "Recursos próprios",
+        "official_registry": "TSE/PesqEle (registro informado pelo veículo)",
+        "publication_vehicle": "CNN Brasil",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-04",
+          "end": "2026-09-07"
+        },
+        "published_at": "2026-09-09",
+        "sample_size": 1500,
+        "method": "Entrevistas por telefone",
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-07935/26",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-07935/26"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-10T12:02:09Z",
+        "reviewer": "Codex",
+        "basis": "Revisão dos resultados e metodologia da rodada, conforme pedido de inclusão nas fichas com fontes jornalísticas de 10/09/2026.",
+        "capture_sha256": "86592b2a1a16b3848d85c608c7508d99b4a0b334b8adf952b191ee4c820abcbe",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/meio-ideia-lula-tem-384-no-1o-turno-flavio-373/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política específica não examinada. Inclusão por revisão documentada e restrita a esta rodada, não por alegação de política de correções."
+        }
+      },
+      "consulted_at": "2026-09-10T12:02:09Z"
     }
   ],
   "media_fallback_policy": {
