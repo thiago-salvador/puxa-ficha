@@ -465,7 +465,7 @@ async function main(): Promise<number> {
       }
     }
 
-    if (presidentialPaths?.length === 13) {
+    if (presidentialPaths?.length === 12) {
       for (const path of presidentialPaths) {
         await collect(
           `perfil${path}`,
