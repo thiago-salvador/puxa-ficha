@@ -99,8 +99,24 @@ export function comparePublicProfileStatuses(
 ) {
   const judgment = (value: string | null) => normalize(value).replace(" em prazo recursal ou com recurso", " com recurso");
   const bySlug = new Map(published.map((profile) => [normalize(profile.slug), profile]));
+  const identityKey = (row: OfficialCandidacy) => JSON.stringify([
+    normalize(row.profile_slug), normalize(row.office), normalize(row.uf),
+  ]);
+  const activeCounts = new Map<string, number>();
+  for (const row of official) {
+    if (classifyOfficialCandidacy(row) === "active") {
+      const key = identityKey(row);
+      activeCounts.set(key, (activeCounts.get(key) ?? 0) + 1);
+    }
+  }
   return official.flatMap((row) => {
     const profile = row.profile_slug ? bySlug.get(normalize(row.profile_slug)) : undefined;
+    // Uma inscrição terminal anterior não descreve a ficha da única inscrição
+    // ativa atual da mesma identidade. Duplicadas e desconhecidas seguem no gate.
+    if (profile && classifyOfficialCandidacy(row) === "terminal" &&
+        activeCounts.get(identityKey(row)) === 1 &&
+        normalize(profile.office) === normalize(row.office) &&
+        normalize(profile.uf) === normalize(row.uf)) return [];
     if (!profile || (judgment(profile.situacao_candidatura) === judgment(row.status) &&
         row.is_candidato_inapto !== true && row.substituido !== true)) return [];
     return [{

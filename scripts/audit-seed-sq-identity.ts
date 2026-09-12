@@ -146,6 +146,34 @@ export function avaliarIdentidade(
   return melhor
 }
 
+export async function baixarZipComRetry(
+  url: string,
+  zipPath: string,
+  options: { fetcher?: typeof fetch; sleep?: (ms: number) => Promise<void> } = {},
+): Promise<boolean> {
+  const fetcher = options.fetcher ?? fetch
+  const sleep = options.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)))
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetcher(url, { signal: AbortSignal.timeout(120_000) })
+      if (!response.ok || !response.body) {
+        await response.body?.cancel()
+        if (response.status === 429 || response.status >= 500) throw new Error(`HTTP ${response.status}`)
+        rmSync(zipPath, { force: true })
+        return false
+      }
+      await pipeline(Readable.fromWeb(response.body as never), createWriteStream(zipPath))
+      return true
+    } catch (error) {
+      // Um timeout também pode acontecer durante o corpo: nunca reaproveitar ZIP parcial.
+      rmSync(zipPath, { force: true })
+      if (attempt === 3) throw error
+      await sleep(attempt * 1_000)
+    }
+  }
+  return false
+}
+
 async function baixarPacote(ano: string): Promise<string | null> {
   mkdirSync(CACHE_DIR, { recursive: true })
   const dirAno = resolve(CACHE_DIR, ano)
@@ -155,12 +183,10 @@ async function baixarPacote(ano: string): Promise<string | null> {
   const zipPath = resolve(CACHE_DIR, `consulta_cand_${ano}.zip`)
 
   process.stderr.write(`  baixando ${ano}...\n`)
-  const resposta = await fetch(url, { signal: AbortSignal.timeout(120_000) })
-  if (!resposta.ok || !resposta.body) {
-    process.stderr.write(`  ${ano}: HTTP ${resposta.status}, pulando\n`)
+  if (!await baixarZipComRetry(url, zipPath)) {
+    process.stderr.write(`  ${ano}: pacote indisponível, pulando\n`)
     return null
   }
-  await pipeline(Readable.fromWeb(resposta.body as never), createWriteStream(zipPath))
 
   mkdirSync(dirAno, { recursive: true })
   execFileSync("unzip", ["-o", "-q", zipPath, `consulta_cand_${ano}_*.csv`, "-d", dirAno], { stdio: "pipe" })

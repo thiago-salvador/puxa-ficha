@@ -12,7 +12,7 @@ import {
   ELECTION_ID_2026,
   type DivulgaCandReceipt,
 } from "../scripts/lib/data-freshness/divulgacand-current";
-import { classifyOfficialCandidacy, comparePublicProfileStatuses } from "../src/lib/candidate-publication-integrity";
+import { classifyOfficialCandidacy, comparePublicProfileStatuses, reconcilePublicRoster } from "../src/lib/candidate-publication-integrity";
 import { compareCandidacies } from "../scripts/lib/data-freshness/candidaturas";
 import type { CandidacyRecord } from "../scripts/lib/data-freshness/types";
 
@@ -321,6 +321,22 @@ test("compara julgamento publicado normalizado e detecta mudança mesmo entre si
   const published = { slug: "teste", office: "Governador" as const, uf: "TO", situacao_candidatura: "indeferido com recurso" };
   assert.equal(comparePublicProfileStatuses([row], [published]).length, 0);
   assert.equal(comparePublicProfileStatuses([{ ...row, status: "Deferido" }], [published]).length, 1);
+});
+
+test("Laudicério: inscrição terminal anterior não substitui julgamento da única inscrição ativa", () => {
+  const active = { ...directFixture().current[0], sq_candidato: "110002554073", profile_slug: "laudicerio",
+    uf: "MT", status: "Aguardando julgamento", is_candidato_inapto: false, substituido: false };
+  const terminal = { ...active, sq_candidato: "110002553937", status: "Indeferido", is_candidato_inapto: true };
+  const profile = { slug: "laudicerio", office: "Governador" as const, uf: "MT", situacao_candidatura: "aguardando julgamento" };
+  assert.deepEqual(comparePublicProfileStatuses([terminal, active], [profile]), []);
+  assert.equal(comparePublicProfileStatuses([terminal, { ...active, status: "Deferido" }], [profile])[0].sq_candidato, active.sq_candidato);
+  assert.equal(comparePublicProfileStatuses([terminal], [profile]).length, 1);
+  assert.equal(comparePublicProfileStatuses([terminal, { ...active, uf: "TO" }], [profile]).length, 1);
+  const duplicate = { ...active, sq_candidato: "110002554074" };
+  assert.equal(reconcilePublicRoster([terminal, active, duplicate], [profile]).status, "review_required");
+  assert.equal(comparePublicProfileStatuses([terminal, active, duplicate], [profile]).length, 1);
+  const unknown = { ...terminal, is_candidato_inapto: false, status: "Desconhecido" };
+  assert.equal(comparePublicProfileStatuses([unknown, active], [profile]).length, 1);
 });
 
 test("coleta detalhes de todas 27 UFs e BR com concorrência limitada e recibos", async () => {
