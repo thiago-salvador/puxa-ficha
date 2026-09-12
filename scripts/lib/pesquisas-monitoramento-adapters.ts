@@ -176,7 +176,18 @@ function assertAdapterInput(
   }
 }
 
-function extractFieldwork(text: string, publicationDate: string): { start: string; end: string } {
+export function extractFieldwork(text: string, publicationDate: string): { start: string; end: string } {
+  // A ficha técnica explícita prevalece sobre referências a pesquisas antigas
+  // no fim da página, inclusive quando estas atravessam dois meses.
+  const collected = [...text.matchAll(/\bdados\s+foram\s+coletados\s+(?:de|entre)\s+(\d{1,2})(?:\s+de\s+([a-zçã]+))?\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/gi)]
+    .map((match) => {
+      const year = match[5] ?? publicationDate.slice(0, 4)
+      return validateFieldwork({ start: isoDate(match[1], match[2] ?? match[4], year), end: isoDate(match[3], match[4], year) }, publicationDate)
+    })
+  if (collected.length) {
+    if (new Set(collected.map((fieldwork) => JSON.stringify(fieldwork))).size !== 1) throw new Error("HTML inesperado: datas de coleta explícitas conflitantes")
+    return collected[0]
+  }
   const crossMonth = text.match(/(\d{1,2})\s+de\s+([a-zçã]+)\s+(?:a|e)\s+(\d{1,2})\s+de\s+([a-zçã]+)(?:\s+de\s+(20\d{2}))?/i)
   if (crossMonth) {
     const year = crossMonth[5] ?? publicationDate.slice(0, 4)

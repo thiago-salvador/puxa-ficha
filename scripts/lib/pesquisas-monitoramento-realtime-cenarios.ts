@@ -38,6 +38,7 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
   const scenarios: CenarioRealTime[] = []
   const notes: string[] = []
   const blockers: LeituraRealTime["blockers"] = []
+  const runoffHeadings: Array<{ heading: string; names: string[]; index: number }> = []
   let turn: 1 | 2 = 1
   let mode: CenarioRealTime["mode"] = "estimulado"
   let context = ""
@@ -107,15 +108,7 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
     if (turn === 2) {
       if (names.length !== 2) throw new Error("Real Time: segundo turno exige dois candidatos")
       if (/\s+x\s+/i.test(heading)) {
-        const expected = heading.split(/\s+x\s+/i).map((name) => name.trim())
-        const components = (value: string) => {
-          const match = value.match(/^(.+?)\s+\(([^()]+)\)$/)
-          return { name: match?.[1] ?? value, party: match?.[2]?.toLocaleUpperCase("pt-BR") }
-        }
-        if (expected.length !== 2 || !names.every((name) => expected.some((value) => {
-          const left = components(name), right = components(value)
-          return left.name === right.name && (!left.party || !right.party || left.party === right.party)
-        }))) blockers.push({ code: "metadata_conflict", detail: `Real Time: nomes conflitantes no segundo turno: ${heading}; lista: ${names.join(" x ")}`, scenario_index: scenarios.length })
+        runoffHeadings.push({ heading, names, index: scenarios.length })
       }
     }
     const label = turn === 2 ? (/\s+x\s+/i.test(heading) ? heading : `${heading ? `${heading} · ` : ""}${names.join(" x ")}`) : `${mode === "espontaneo" ? "Primeiro turno espontâneo" : "Primeiro turno estimulado"}${context ? `: ${context}` : ""}`
@@ -124,6 +117,31 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
     heading = ""
   }
   if (!scenarios.length) return null
+  // Segundo passe: considerar listas posteriores e preservar o partido conhecido
+  // mesmo quando a lista do duelo o omite. Não resolve identidade fora da fonte.
+  const normalized = (value: string) => value.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("pt-BR").replace(/\s+/g, " ").trim()
+  const components = (value: string) => {
+    const match = value.match(/^(.+?)\s+\(([^()]+)\)$/)
+    return { name: normalized(match?.[1] ?? value), party: match?.[2]?.toLocaleUpperCase("pt-BR") }
+  }
+  const sourceNames = new Map<string, Set<string>>()
+  for (const name of scenarios.flatMap((scenario) => scenario.results.map((row) => row.raw_label)).filter((name) => !CATEGORY.test(name))) {
+    const part = components(name)
+    const parties = sourceNames.get(part.name) ?? new Set<string>()
+    if (part.party) parties.add(part.party)
+    sourceNames.set(part.name, parties)
+  }
+  for (const { heading, names, index } of runoffHeadings) {
+    const expected = heading.split(/\s+x\s+/i).map(components)
+    const headingMatches = expected.map(({ name: short }) => [...sourceNames.keys()].filter((full) => full === short || full.startsWith(`${short} `) || full.endsWith(` ${short}`)))
+    if (expected.length !== 2 || headingMatches.some((matches) => matches.length !== 1) || new Set(headingMatches.flat()).size !== 2 ||
+        !names.every((name) => expected.some((part, index) => {
+          const actual = components(name)
+          const parties = sourceNames.get(actual.name)!
+          return actual.name === headingMatches[index]?.[0] && parties.size <= 1 &&
+            (!part.party || parties.size === 0 || parties.has(part.party))
+        }))) blockers.push({ code: "metadata_conflict", detail: `Real Time: nomes conflitantes no segundo turno: ${heading}; lista: ${names.join(" x ")}`, scenario_index: index })
+  }
   for (const index of footnoteRequired) {
     const others = scenarios[index]?.results.find((row) => /^Outros$/i.test(row.raw_label))
     if (!(scenarioNotes.get(index) ?? []).some((note) => {
