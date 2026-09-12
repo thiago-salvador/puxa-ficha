@@ -184,12 +184,29 @@ export function construirCoberturaDescoberta(input: {
   }})
 }
 
+/** Daily monitoring revisits 30 inclusive days; explicit dates support backfills. */
+export function resolverPeriodoRegistros(input: { from?: string; to?: string; now?: Date } = {}) {
+  const dateTo = input.to ?? (input.now ?? new Date()).toISOString().slice(0, 10)
+  const validate = (date: string) => {
+    if (!/^2026-\d{2}-\d{2}$/.test(date) || new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date) throw new Error("PesqEle: período inválido")
+  }
+  validate(dateTo)
+  const start = new Date(Date.parse(`${dateTo}T00:00:00Z`) - 29 * 86_400_000).toISOString().slice(0, 10)
+  const dateFrom = input.from ?? (start < "2026-01-01" ? "2026-01-01" : start)
+  validate(dateFrom)
+  if (dateFrom > dateTo) throw new Error("PesqEle: período invertido")
+  return { mode: input.from || input.to ? "explicit_dates" as const : "rolling_30_days" as const,
+    date_from: dateFrom, date_to: dateTo, annual_inventory_proven: false as const }
+}
+
 /** The search window is registration time, never fieldwork or publication time. */
 export async function executarDescobertaIntegrada(input: {
   targets: AlvoMonitoramento[]; sourceId: string; validateTargets: boolean
   dateFrom: string; dateTo: string; budget?: OrcamentoDescoberta
 }, dependencies = { discover: descobrirPublicacoesPesquisas, inventory: descobrirRegistrosPesqele, intake: validarEntradasDescobertas }) {
-  const budget = input.budget ?? criarOrcamentoDescoberta()
+  // The 2026-09-12 full-scope replay used 107 requests/30 MB for only 11 UFs.
+  // Allow the 28 registry scopes plus intake within the workflow's 10 minutes.
+  const budget = input.budget ?? criarOrcamentoDescoberta({ maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 360_000 })
   const observations = await dependencies.discover({ knownUrls: new Set(input.targets.map((target) => target.url)), sourceId: input.sourceId, budget })
   const inventory = await dependencies.inventory({ dateFrom: input.dateFrom, dateTo: input.dateTo, budget })
   const intake = input.validateTargets ? await dependencies.intake({ observations, knownTargets: input.targets, sourceId: input.sourceId, inventory, budget }) : null

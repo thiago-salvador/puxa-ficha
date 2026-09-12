@@ -146,6 +146,34 @@ export function avaliarIdentidade(
   return melhor
 }
 
+export async function baixarZipComRetry(
+  url: string,
+  zipPath: string,
+  options: { fetcher?: typeof fetch; sleep?: (ms: number) => Promise<void> } = {},
+): Promise<boolean> {
+  const fetcher = options.fetcher ?? fetch
+  const sleep = options.sleep ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms)))
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetcher(url, { signal: AbortSignal.timeout(120_000) })
+      if (!response.ok || !response.body) {
+        await response.body?.cancel()
+        if (response.status === 429 || response.status >= 500) throw new Error(`HTTP ${response.status}`)
+        rmSync(zipPath, { force: true })
+        return false
+      }
+      await pipeline(Readable.fromWeb(response.body as never), createWriteStream(zipPath))
+      return true
+    } catch (error) {
+      // Um timeout também pode acontecer durante o corpo: nunca reaproveitar ZIP parcial.
+      rmSync(zipPath, { force: true })
+      if (attempt === 3) throw error
+      await sleep(attempt * 1_000)
+    }
+  }
+  return false
+}
+
 async function baixarPacote(ano: string): Promise<string | null> {
   mkdirSync(CACHE_DIR, { recursive: true })
   const dirAno = resolve(CACHE_DIR, ano)
@@ -155,12 +183,10 @@ async function baixarPacote(ano: string): Promise<string | null> {
   const zipPath = resolve(CACHE_DIR, `consulta_cand_${ano}.zip`)
 
   process.stderr.write(`  baixando ${ano}...\n`)
-  const resposta = await fetch(url, { signal: AbortSignal.timeout(120_000) })
-  if (!resposta.ok || !resposta.body) {
-    process.stderr.write(`  ${ano}: HTTP ${resposta.status}, pulando\n`)
+  if (!await baixarZipComRetry(url, zipPath)) {
+    process.stderr.write(`  ${ano}: pacote indisponível, pulando\n`)
     return null
   }
-  await pipeline(Readable.fromWeb(resposta.body as never), createWriteStream(zipPath))
 
   mkdirSync(dirAno, { recursive: true })
   execFileSync("unzip", ["-o", "-q", zipPath, `consulta_cand_${ano}_*.csv`, "-d", dirAno], { stdio: "pipe" })
@@ -238,6 +264,39 @@ export interface ObservacaoNascimento {
   nascimento: string
   nome: string
   uf: string
+}
+
+export interface ExcecaoNascimento {
+  slug: string
+  ano: number
+  reason: string
+  birthdate_evidence?: {
+    cpf_equal: boolean
+    title_equal: boolean
+    observations: ObservacaoNascimento[]
+  }
+}
+
+/** Exceções documentadas novas só valem para os SQs, datas e identidades revisados. */
+export function excecoesNascimentoVerificadas(entries: readonly ExcecaoNascimento[], observed: Map<string, ObservacaoNascimento[]>): Set<string> {
+  const accepted = new Set<string>()
+  for (const entry of entries) {
+    if (entry.reason !== "tse-birthdate-typo") continue
+    const evidence = entry.birthdate_evidence
+    if (evidence) {
+      if (evidence.cpf_equal !== true || evidence.title_equal !== true || evidence.observations.length < 2 ||
+          !evidence.observations.some((row) => row.ano === String(entry.ano))) continue
+      const rows = observed.get(entry.slug) ?? []
+      if (!evidence.observations.every((expected) => {
+        const matchingYear = rows.filter((row) => row.ano === expected.ano)
+        return matchingYear.length === 1 && matchingYear[0].sq === expected.sq &&
+          matchingYear[0].nascimento === expected.nascimento && matchingYear[0].uf === expected.uf &&
+          normalizar(matchingYear[0].nome) === normalizar(expected.nome)
+      })) continue
+    }
+    accepted.add(`${entry.slug}:${entry.ano}`)
+  }
+  return accepted
 }
 
 export interface InconsistenciaNascimento {
@@ -485,14 +544,12 @@ export async function main() {
   // Cruzamento de data de nascimento entre anos. Roda sobre TODOS os pares,
   // inclusive os que a comparacao por nome aprovou, que e exatamente onde o
   // homonimo se esconde.
-  const isentosNascimento = new Set<string>()
+  let isentosNascimento = new Set<string>()
   try {
     const excecoes = JSON.parse(
       readFileSync(resolve(process.cwd(), "data/sq-exceptions.json"), "utf-8")
-    ) as { entries?: Array<{ slug: string; ano: number; reason: string }> }
-    for (const e of excecoes.entries ?? []) {
-      if (e.reason === "tse-birthdate-typo") isentosNascimento.add(`${e.slug}:${e.ano}`)
-    }
+    ) as { entries?: ExcecaoNascimento[] }
+    isentosNascimento = excecoesNascimentoVerificadas(excecoes.entries ?? [], nascimentosPorSlug)
   } catch {
     // Sem arquivo de excecao o gate fica mais rigoroso, nunca mais frouxo.
   }

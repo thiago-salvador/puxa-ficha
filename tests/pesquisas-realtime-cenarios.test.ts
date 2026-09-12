@@ -47,6 +47,17 @@ test("duelo aceita nome completo com partido só no título e rejeita partido di
   assert.throws(() => extrairPublicacaoRealTime(first + runoff.replace("Ana Silva: 55%", "Ana Silva (Z): 55%"), plain), /nomes conflitantes/)
 })
 
+test("RS: títulos abreviados resolvem somente nomes inequívocos das listas da mesma publicação", () => {
+  const first = `<h1>Primeiro turno</h1>${list([["Juliana Brizola (PDT)", 38], ["Luciano Zucco (PL)", 32], ["Gabriel Souza (MDB)", 19], ["Marcelo Maranata (PSDB)", 4], ["Outros", 1], ["Nulos/brancos", 3], ["Não sabe/não respondeu", 3]])}`
+  const runoff = `<h2>Segundo turno</h2><p>Três cenários de segundo turno.</p><h3>Juliana x Zucco</h3>${list([["Juliana Brizola", 45], ["Luciano Zucco", 41], ["Nulos/brancos", 7], ["Não sabe/não respondeu", 7]])}<h3>Zucco x Gabriel</h3>${list([["Luciano Zucco", 43], ["Gabriel Souza", 38], ["Nulos/brancos", 9], ["Não sabe/não respondeu", 10]])}<h3>Juliana x Gabriel</h3>${list([["Juliana Brizola", 48], ["Gabriel Souza", 35], ["Nulos/brancos", 8], ["Não sabe/não respondeu", 9]])}`
+  assert.equal(extrairPublicacaoRealTime(first + runoff, plain)?.scenarios.length, 4)
+  assert.throws(() => extrairPublicacaoRealTime((first + runoff).replace("Marcelo Maranata", "Juliana Silva"), plain), /nomes conflitantes/)
+  assert.throws(() => extrairPublicacaoRealTime((first + runoff).replace("Juliana x Zucco", "Juliana x Juliana"), plain), /nomes conflitantes/)
+  assert.throws(() => extrairPublicacaoRealTime((first + runoff).replace("Juliana x Zucco", "Juliana (PT) x Zucco").replace("Juliana Brizola: 45", "Juliana Brizola (PDT): 45"), plain), /nomes conflitantes/)
+  assert.throws(() => extrairPublicacaoRealTime((first + runoff).replace("Juliana x Zucco", "Juliana (PT) x Zucco"), plain), /nomes conflitantes/)
+  assert.throws(() => extrairPublicacaoRealTime((first + runoff).replace("<h3>Juliana x Gabriel</h3>", "<h3>Juliana Silva x Gabriel</h3>").replace("Juliana Brizola: 48", "Juliana Silva: 48"), plain), /nomes conflitantes/)
+})
+
 test("matéria conjunta separa modalidade, espaço antes de percentual e segundo turno estadual do Senado", () => {
   const html = `<h1>Pesquisa para governo e Senado</h1><h2>Pesquisa para governador de Sergipe</h2><p>Pesquisa espontânea e cenário estimulado.</p><h3>Liderança no cenário espontâneo</h3>${list([["Ana Silva (X)", 50], ["Beto Souza (Y)", 40], ...categories])}<h3>Resultados do cenário estimulado</h3>${list([["Ana Silva (X)", 55], ["Beto Souza (Y)", 35], ...categories])}<h2>Segundo turno para governador de Sergipe</h2><p>Um cenário de segundo turno.</p><h3>Ana Silva x Beto Souza</h3>${list([["Ana Silva (X)", 60], ["Beto Souza (Y)", 30], ...categories]).replace("60%", "60 %")}<h2>Pesquisa para o Senado</h2>${list([["Senador (X)", 80], ["Outro senador (Y)", 10], ...categories])}`
   const scenarios = extrairPublicacaoRealTime(html, plain)!.scenarios

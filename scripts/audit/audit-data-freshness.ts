@@ -8,6 +8,7 @@ import { resolve } from "node:path";
 
 import {
   analyzeProfileAdmission,
+  comparePublicProfileStatuses,
   reconcilePublicRoster,
   validateActiveProfileCrosswalk,
   type ActiveProfileCrosswalkEntry,
@@ -15,7 +16,7 @@ import {
   type ProfileAdmissionInput,
   type PublicCandidateSummary,
 } from "../../src/lib/candidate-publication-integrity";
-import { compareCandidacies } from "../lib/data-freshness/candidaturas";
+import { compareCandidacies, reviewedSubstitutedViceSqs } from "../lib/data-freshness/candidaturas";
 import {
   collectCurrentOfficialCandidacies,
   collectCurrentStatusEvidence,
@@ -181,9 +182,8 @@ interface ViceResolutionsFile {
 }
 
 /**
- * SQ das vices que o DivulgaCandContas marca como substituídas (situacaoVice 3).
- * O pacote consolidado do TSE mantém as duas alternativas com a mesma situação,
- * então essa prova só existe nos artefatos versionados data/divulgacand-vices-*.json.
+ * Substituições explicitamente revisadas nos recibos versionados.
+ * situacaoVice 3 prova inaptidão; isoladamente não prova substituição.
  */
 function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): string[] {
   let entries: string[];
@@ -203,12 +203,7 @@ function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): strin
     if (parsed.metadata?.election_id && parsed.metadata.election_id !== ELECTION_ID_2026) {
       throw new Error(`${name}: resoluções de vice pertencem a outra eleição`);
     }
-    for (const resolution of parsed.resolutions ?? []) {
-      if (resolution.replaced_vice_sq) sqs.add(resolution.replaced_vice_sq);
-      for (const vice of resolution.vices ?? []) {
-        if (vice.situacao_vice === 3 && vice.sq_candidato) sqs.add(vice.sq_candidato);
-      }
-    }
+    for (const sq of reviewedSubstitutedViceSqs(parsed.resolutions ?? [])) sqs.add(sq);
   }
   return [...sqs];
 }
@@ -275,6 +270,7 @@ function summaryMarkdown(input: {
   stalePublic?: number;
   missingPublic?: number;
   duplicateMappings?: number;
+  publicProfileStatusChanges?: ReturnType<typeof comparePublicProfileStatuses>;
   incompleteProfiles?: number;
   sourceError?: string;
 }): string {
@@ -284,6 +280,11 @@ function summaryMarkdown(input: {
   const freshness = Object.entries(input.freshnessCounts)
     .map(([key, value]) => `| ${key} | ${value} |`)
     .join("\n");
+  const statusChanges = input.publicProfileStatusChanges ?? [];
+  const cell = (value: string | null) => (value ?? "sem informação").replace(/\\/g, "\\\\").replace(/\|/g, "\\|").replace(/[\r\n]+/g, " ");
+  const statusRows = statusChanges.map((row) =>
+    `| ${cell(row.slug)} | ${row.sq_candidato} | ${cell(row.published_status)} | ${cell(row.official_status)} | ${row.official_state} | ${row.is_candidato_inapto ?? "não verificado"} | ${row.substituido ?? "não verificado"} |`,
+  ).join("\n");
   return (
     `# Auditoria de atualização dos dados\n\n` +
     `- Gerada em: ${input.generatedAt}\n` +
@@ -297,11 +298,18 @@ function summaryMarkdown(input: {
         `- Ativos ausentes: ${input.missingPublic ?? 0}\n` +
         `- Publicados terminais ou obsoletos: ${input.stalePublic ?? 0}\n` +
         `- Identidades oficiais duplicadas: ${input.duplicateMappings ?? 0}\n` +
+        `- Situações de fichas divergentes do TSE: ${statusChanges.length}\n` +
         `- Fichas abaixo do gate de admissão: ${input.incompleteProfiles ?? 0}\n`) +
     (input.sourceError ? `- Erro da fonte: ${input.sourceError}\n` : "") +
     `\n## Diferenças de candidaturas\n\n| Classificação | Total |\n|---|---:|\n${changes}\n` +
+    (statusChanges.length > 0
+      ? `\n## Situações publicadas divergentes do TSE\n\n${statusChanges.length} divergência(s) entre fichas publicadas e inscrições oficiais atuais.\n\n| Ficha | SQ candidato | Publicado | TSE | Estado | Inapto | Substituído |\n|---|---|---|---|---|---|---|\n${statusRows}\n`
+      : "") +
     ((input.changeCounts.substituted ?? 0) > 0
       ? `\n- \`substituted\` é informativo: vice substituído conforme DivulgaCandContas, com a vice vigente já publicada. Não leva a auditoria a review_required.\n`
+      : "") +
+    ((input.changeCounts.inactive_vice ?? 0) > 0
+      ? `\n- \`inactive_vice\` é informativo: ausência de vice inapto comprovado no detalhe atual do DivulgaCandContas. Não comprova substituição ou aptidão de outra vice.\n`
       : "") +
     `\n## Atualidade por fonte\n\n| Estado | Total |\n|---|---:|\n${freshness}\n` +
     `\n${recommendationsMarkdown(input.recommendations)}`
@@ -535,6 +543,7 @@ async function main(): Promise<void> {
     publicProfiles.map(({ slug, office, uf }) => ({ slug, office, uf })),
     activeProfileCrosswalk.profiles,
   );
+  const publicProfileStatusChanges = comparePublicProfileStatuses(currentOfficialWithProfiles, publicProfiles);
   const profileAdmission = {
     snapshot_present: Array.isArray(published.public_profiles),
     profiles: publicProfiles.map(analyzeProfileAdmission),
@@ -571,6 +580,7 @@ async function main(): Promise<void> {
   const overall =
     comparison.status === "review_required" ||
     publicationIntegrity.status === "review_required" ||
+    publicProfileStatusChanges.length > 0 ||
     !profileAdmission.snapshot_present ||
     incompleteProfiles.length > 0 ||
     sourceNeedsReview
@@ -580,6 +590,12 @@ async function main(): Promise<void> {
     comparison,
     freshness,
     registry,
+  });
+  if (publicProfileStatusChanges.length > 0) recommendations.push({
+    code: "public_profile_status_change", priority: "high",
+    title: "Situação publicada diverge do detalhe oficial",
+    action: "Reconciliar o julgamento e a aptidão de cada ficha com a evidência oficial atual, preservando a trilha da correção.",
+    evidence: publicProfileStatusChanges.map((row) => `${row.slug}: ${row.published_status ?? "sem situação"} -> ${row.official_status ?? "sem situação"}; ${row.official_state}`),
   });
 
   writeJson(resolve(options.out, "source.json"), source);
@@ -597,6 +613,7 @@ async function main(): Promise<void> {
     strict: options.strict,
     candidacies: comparison,
     publication_integrity: publicationIntegrity,
+    public_profile_status_changes: publicProfileStatusChanges,
     profile_admission: profileAdmission,
     freshness,
   });
@@ -618,6 +635,7 @@ async function main(): Promise<void> {
         publicationIntegrity.duplicate_active_mappings,
       ).length,
       incompleteProfiles: incompleteProfiles.length,
+      publicProfileStatusChanges,
     }),
   );
 

@@ -12,13 +12,69 @@
  * le e pior do que nao ter auditor.
  */
 import assert from "node:assert/strict"
+import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { describe, it } from "node:test"
 
 import {
   avaliarIdentidade,
+  baixarZipComRetry,
   compararNomes,
   type RegistroTSE,
 } from "../scripts/audit-seed-sq-identity"
+
+describe("download do pacote TSE", () => {
+  it("recupera timeout e falha no corpo sem conservar bytes parciais", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "sq-download-"))
+    const file = join(dir, "pacote.zip")
+    let calls = 0
+    const delays: number[] = []
+    const fetcher: typeof fetch = async () => {
+      calls++
+      if (calls === 1) throw new DOMException("timeout", "TimeoutError")
+      if (calls === 2) return new Response(new ReadableStream({
+        start(controller) { controller.enqueue(new TextEncoder().encode("parcial")) },
+        pull(controller) { controller.error(new Error("conexão interrompida")) },
+      }))
+      return new Response("pacote completo")
+    }
+    try {
+      assert.equal(await baixarZipComRetry("https://example.test/pacote.zip", file, { fetcher, sleep: async (ms) => { delays.push(ms) } }), true)
+      assert.equal(calls, 3)
+      assert.deepEqual(delays, [1_000, 2_000])
+      assert.equal(readFileSync(file, "utf8"), "pacote completo")
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("esgota três tentativas e mantém falha sem arquivo de cache", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "sq-download-"))
+    const file = join(dir, "pacote.zip")
+    let calls = 0
+    try {
+      await assert.rejects(baixarZipComRetry("https://example.test/pacote.zip", file, {
+        fetcher: async () => { calls++; return new Response("temporário", { status: 503 }) },
+        sleep: async () => {},
+      }), /HTTP 503/)
+      assert.equal(calls, 3)
+      assert.equal(existsSync(file), false)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+
+  it("não repete HTTP 404", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "sq-download-"))
+    const file = join(dir, "pacote.zip")
+    let calls = 0
+    try {
+      assert.equal(await baixarZipComRetry("https://example.test/pacote.zip", file, {
+        fetcher: async () => { calls++; return new Response(null, { status: 404 }) },
+        sleep: async () => { assert.fail("não deve repetir") },
+      }), false)
+      assert.equal(calls, 1)
+      assert.equal(existsSync(file), false)
+    } finally { rmSync(dir, { recursive: true, force: true }) }
+  })
+})
 
 // `nascimento` fica vazio de proposito: estes casos exercitam a heuristica de
 // NOME (`avaliarIdentidade` / `compararNomes`), que nao le a data. O

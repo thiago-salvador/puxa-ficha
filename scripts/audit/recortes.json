@@ -12,6 +12,13 @@
   ],
   "recortes": [
     {
+      "nome": "chapas-rr-vice-inapto-20260912",
+      "desde": "20260912160100",
+      "ate": "20260912160100",
+      "allowlist": "scripts/audit/allowlist-chapas-rr-vice-inapto-20260912.json",
+      "divida": null
+    },
+    {
       "nome": "verified-history-rpc-20260908",
       "desde": "20260908160000",
       "ate": "20260908160000",

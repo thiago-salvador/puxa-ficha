@@ -59,14 +59,19 @@ test("gráficos vinculados à matéria conservam células ausentes; URL externa 
   assert.deepEqual(result.data.rows.map((row) => row.values[0].value_percent), [0, null])
 })
 
-test("RS persiste cenários e todos os conflitos sem autorizar o adaptador", async () => {
+test("RS resolve títulos abreviados, preserva listas e exige reconciliação antes de promover", async () => {
   const html = readFileSync("tests/fixtures/pesquisas-distribuicao/realtime-rs-conflitante/entrada.html", "utf8")
   const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "RS" })[0]
   const [result] = await coletarComplementos({ target, html, observedAt: "2026-09-09T00:00:00Z" })
-  assert.equal(result.status, "blocked")
+  assert.equal(result.status, "extracted_unreconciled")
   assert.ok(result.data && "blockers" in result.data)
-  assert.equal(result.data.blockers.length, 3)
+  assert.equal(result.data.blockers.length, 0)
   assert.equal(result.data.scenarios.flatMap((scenario) => scenario.results).length, 19)
+  const [conflicting] = await coletarComplementos({ target, html: html.replace("Juliana x Zucco", "Juliana (PT) x Zucco"), observedAt: "2026-09-09T00:00:00Z" })
+  assert.equal(conflicting.status, "blocked")
+  assert.ok(conflicting.data && "blockers" in conflicting.data)
+  assert.equal(conflicting.data.blockers.length, 1)
+  assert.equal(conflicting.data.scenarios.flatMap((scenario) => scenario.results).length, 19)
 })
 
 test("PDF PR exige URL, formato e tamanho e concilia metadados no adaptador compartilhado", () => {

@@ -56,6 +56,11 @@ const CHANGE_GUIDANCE: Record<CandidacyChangeKind, ChangeGuidance> = {
     action: "Informativo, sem ação corretiva: o catálogo já publica a vice vigente e o registro substituído permanece no pacote consolidado do TSE. Manter a resolução versionada como evidência.",
     priority: "medium",
   },
+  inactive_vice: {
+    title: "Vice inapto mantido no pacote do TSE",
+    action: "Informativo: não incluir como vice vigente. Preservar o detalhe oficial que comprova a inaptidão e conferir separadamente a situação de qualquer outra vice publicada.",
+    priority: "medium",
+  },
 }
 
 function compact(value: string): string {

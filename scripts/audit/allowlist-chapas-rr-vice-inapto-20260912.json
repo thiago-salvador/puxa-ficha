@@ -1,0 +1,16 @@
+{
+  "versao": "2026-09-12",
+  "fonte": "Recibo TSE de 12/09/2026; DivulgaCandContas confirmou situacaoVice 3 para JOTA RODRIGUES na chapa RR.",
+  "motivo": "Atualização única da situação oficial do vice na linha identificada pela chave da chapa. A escrita preserva todas as colunas alheias e registra a proveniência no campo JSONB.",
+  "coorte": [],
+  "fora_por_construcao": { "slugs": [] },
+  "referencias": [
+    {
+      "tabela": "chapas_2026",
+      "ref": "chapas-rr-vice-inapto-20260912",
+      "campos": ["vice_situacao_divulgacand"],
+      "max_registros": 1
+    }
+  ],
+  "entries": []
+}

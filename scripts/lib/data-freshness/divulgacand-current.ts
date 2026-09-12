@@ -217,19 +217,64 @@ export async function collectCurrentOfficialCandidacies(
     );
   }
 
-  return { records, sources, receipts };
+  // A lista pode manter julgamento antigo. Verificar cada titular no detalhe,
+  // inclusive terminais, com concorrência limitada e sem persistir PII.
+  const detailed: CurrentCandidacy[] = new Array(records.length);
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(4, records.length) }, async () => {
+    while (next < records.length) {
+      const index = next++;
+      const row = records[index];
+      const url = `${DIVULGACAND_BASE}/buscar/2026/${row.uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${row.sq_candidato}`;
+      const raw = await fetchJsonWithRetry(url, fetchImpl, 3, receipts);
+      detailed[index] = sanitizeCandidateDetail(raw, row);
+    }
+  }));
+  sources.push(...detailed.map((row) => `${DIVULGACAND_BASE}/buscar/2026/${row.uf ?? "BR"}/${ELECTION_ID_2026}/candidato/${row.sq_candidato}`));
+  return { records: detailed, sources, receipts };
 }
 
 const normalized = (value: unknown) =>
   stripAccents(String(value ?? "")).replace(/\s+/g, " ").trim().toUpperCase();
 
 interface CandidateDetail extends RawCandidate {
+  descricaoTotalizacao?: string;
   isCandidatoInapto?: boolean;
   st_SUBSTITUIDO?: boolean;
   ufCandidatura?: string;
   eleicao?: { id?: string | number; ano?: number };
   cargo?: { codigo?: number; nome?: string };
   vices?: Array<RawVice & { sg_PARTIDO?: string }>;
+}
+
+export function sanitizeCandidateDetail(payload: unknown, row: CurrentCandidacy): CurrentCandidacy & {
+  list_status: string | null;
+  vices: Array<OfficialVice & { party: string | null }>;
+} {
+  if (!payload || typeof payload !== "object" || Array.isArray(payload))
+    throw new Error(`DivulgaCand detalhe inválido para SQ ${row.sq_candidato}`);
+  const raw = payload as CandidateDetail;
+  if (String(raw.id) !== row.sq_candidato ||
+      normalized(raw.nomeUrna) !== normalized(row.name) ||
+      normalized(raw.partido?.sigla) !== normalized(row.party) ||
+      normalized(raw.ufCandidatura) !== (row.uf ?? "BR") ||
+      String(raw.eleicao?.id) !== ELECTION_ID_2026 || raw.eleicao?.ano !== 2026 ||
+      raw.cargo?.codigo !== (row.office === "Governador" ? 3 : 1) ||
+      typeof raw.isCandidatoInapto !== "boolean" || typeof raw.st_SUBSTITUIDO !== "boolean")
+    throw new Error(`DivulgaCand identidade ou flags do detalhe inválidas para SQ ${row.sq_candidato}`);
+  return {
+    ...row,
+    list_status: row.status,
+    status: nonEmpty(raw.descricaoSituacao, "situação do detalhe"),
+    is_candidato_inapto: raw.isCandidatoInapto,
+    substituido: raw.st_SUBSTITUIDO,
+    totalizacao: typeof raw.descricaoTotalizacao === "string" ? raw.descricaoTotalizacao.trim() || null : null,
+    vices: sanitizeVices(raw).map((vice) => ({
+      ...vice,
+      party: raw.vices?.find((entry) => String(entry.sq_CANDIDATO) === vice.sq_candidato)?.sg_PARTIDO?.trim() || null,
+    })),
+    checked_at: raw.dataUltimaAtualizacao?.trim() || null,
+  };
 }
 
 /** A ausência no pacote não basta: lista e dois detalhes oficiais devem concordar. */
@@ -273,7 +318,9 @@ export async function collectDirectCandidaciesMissingFromCdn(
         String(raw.eleicao?.id) !== ELECTION_ID_2026 || raw.eleicao?.ano !== 2026 ||
         raw.cargo?.codigo !== officeCode ||
         raw.isCandidatoInapto !== false || raw.st_SUBSTITUIDO !== false ||
-        classifyOfficialCandidacy({ status: raw.descricaoSituacao ?? null }) !== "active") {
+        classifyOfficialCandidacy({ status: raw.descricaoSituacao ?? null,
+          is_candidato_inapto: raw.isCandidatoInapto, substituido: raw.st_SUBSTITUIDO,
+          totalizacao: raw.descricaoTotalizacao }) !== "active") {
       throw new Error(`DivulgaCand detalhe divergente ou não ativo para SQ ${sq}`);
     }
   }

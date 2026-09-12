@@ -65,12 +65,12 @@ test("MS mantém as 19 respostas L3 em espontânea, estimulada e duelo sem resol
   assert.ok(result.scenarios.every((s) => s.results.every((r) => !Object.hasOwn(r, "candidate_id"))))
 })
 
-test("RS conserva 19 respostas L3 e títulos conflitantes; entrada estrita continua bloqueada", () => {
+test("RS conserva 19 respostas L3 e resolve títulos abreviados com as listas completas", () => {
   const html = fixture("realtime-rs-conflitante")
   const result = inspecionarPublicacaoRealTime(html, plain)!
   assert.deepEqual(result.scenarios.map((s) => s.results), literal(oracle("realtime-rs-conflitante")))
-  assert.equal(result.blockers.filter((b) => b.code === "metadata_conflict").length, 3)
-  assert.throws(() => extrairPublicacaoRealTime(html, plain), /nomes conflitantes/)
+  assert.equal(result.blockers.filter((b) => b.code === "metadata_conflict").length, 0)
+  assert.equal(extrairPublicacaoRealTime(html, plain)?.scenarios.length, 4)
 })
 
 test("Real Time: controles L3 não aprovam mistura de cargos, título conflitante, nota ausente ou manchete", () => {

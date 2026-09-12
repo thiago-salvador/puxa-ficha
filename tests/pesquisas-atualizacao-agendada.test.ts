@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { createHash } from "node:crypto"
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { tmpdir } from "node:os"
@@ -10,6 +11,7 @@ import type {
   CatalogosAgendados,
   ContratoPesquisaAgendada,
   DependenciasPromocaoAgendada,
+  DocumentoColetadoAgendado,
   DocumentoPropostaAgendada,
   executarPromocaoAgendada as ExecutarPromocaoAgendadaExport,
   ItemPropostaAgendada,
@@ -214,6 +216,64 @@ test("nenhuma mudança produz no_changes e nenhuma operação", () => {
   assert.equal(result.diff.operations.length, 0)
   assert.match(result.summary, /Status: no_changes/)
 })
+
+function consolidateDiscoveredOffice(office: string) {
+  const pollId = "pesquisa-sintetica-mg-01611-2026"
+  const key = "fonte-sintetica-mg"
+  const publicText = `Registro sintético MG-01611/2026. Cargo(s): ${office}`
+  const registryUrl = "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+  const document: DocumentoColetadoAgendado = {
+    key,
+    proposal: proposalDocument({
+      id: `${pollId}-live`,
+      decision: { classification: "conflitante", eligible_for_human_review: false, reason: "source_metadata_conflict" },
+      evidence: null,
+      normalized_contract: null,
+    }),
+    discovery: {
+      targets: [{
+        poll_id: pollId, source_id: "fonte-sintetica", url: "https://example.test/mg",
+        registration_id: "MG-01611/2026", registry_url: registryUrl, office: "Governador",
+        geography: "Minas Gerais", geography_code: "MG", turn: 1,
+        scenario_id: "cenario-mg", scenario_label: "Primeiro turno", scenario_question: null, population: "eleitores",
+      }],
+      registry: [{
+        registry: {
+          registration_id: "MG-01611/2026", office, geography: "Minas Gerais",
+          field_start: "2026-09-08", field_end: "2026-09-11", sample_size: 1000,
+          margin_error_pp: 2, institute: "Instituto Sintético",
+        },
+        confidence_percent: 95, method: "Entrevistas presenciais", publication_date: "2026-09-12",
+        source_url: registryUrl, observed_at: "2026-09-12T13:41:00.000Z", public_text: publicText,
+        evidence_sha256: createHash("sha256").update(publicText).digest("hex"),
+      }],
+    },
+  }
+  return consolidarPropostasAgendadas({
+    matrix: [{ key, source_id: "fonte-sintetica", uf: "MG", poll_ids: [] }],
+    documents: [document], catalogs,
+  })
+}
+
+test("recibo multicargo válido preserva conflito da pesquisa sem bloquear o contrato global", () => {
+  const result = consolidateDiscoveredOffice("Governador, Senador")
+  assert.deepEqual(result.global_alerts, [])
+  assert.deepEqual(result.poll_alerts, [{ poll_id: "pesquisa-sintetica-mg-01611-2026", reason: "source_metadata_conflict" }])
+  assert.equal(result.status, "blocked")
+  assert.equal(result.operation_status, "no_changes")
+  assert.equal(result.promotion.authorized, false)
+  assert.deepEqual(result.diff.operations, [])
+})
+
+for (const office of ["Senador", "Vice-Governador, Senador"]) {
+  test(`recibo com cargo incompatível (${office}) continua bloqueado globalmente`, () => {
+    const result = consolidateDiscoveredOffice(office)
+    assert.match(result.global_alerts[0], /recibo de descoberta divergente/)
+    assert.equal(result.operation_status, "blocked")
+    assert.equal(result.promotion.authorized, false)
+    assert.deepEqual(result.diff.operations, [])
+  })
+}
 
 test("mudança válida produz uma operação allowlisted e diff por candidato", () => {
   const proposed = normalizedFromBaseline()
