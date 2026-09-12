@@ -128,7 +128,7 @@ export interface DocumentoDiffAgendado {
 }
 
 export type ExecutionAlert = {
-  code: "discovery_source_failure" | "artifact_missing" | "artifact_invalid" | "matrix_invalid" | "unknown"
+  code: "discovery_source_failure" | "poll_source_failure" | "artifact_missing" | "artifact_invalid" | "matrix_invalid" | "unknown"
   message: string
 }
 
@@ -677,7 +677,22 @@ function resultadoConsolidacao(
   executionAlerts: ExecutionAlert[] = [],
 ): ResultadoConsolidacaoAgendada {
   const alerts = [...globalAlerts, ...pollAlerts.map((entry) => `${entry.poll_id}-live: ${entry.reason}`), ...discoveryAlerts]
-  const executionStatus = executionAlerts.length ? "failed" : "complete"
+  const derivedExecutionAlerts = [...executionAlerts]
+  const addExecution = (code: ExecutionAlert["code"], message: string) => {
+    if (!derivedExecutionAlerts.some((alert) => alert.code === code && alert.message === message)) derivedExecutionAlerts.push({ code, message })
+  }
+  // These are envelope/catalog/matrix invariants. They cannot be explained by
+  // a legitimate editorial gap and must fail the scheduled execution.
+  for (const message of globalAlerts) addExecution("matrix_invalid", message)
+  // A blocked poll is normally curation. Only transport/source failures are
+  // operational failures; extraction and identity gaps remain visible below.
+  for (const alert of pollAlerts) {
+    if (/^(source_timeout|source_unavailable|tse_registry_unavailable|source_failure|unknown)(?:$|[: ])/.test(alert.reason)) {
+      addExecution("poll_source_failure", `${alert.poll_id}: ${alert.reason}`)
+    }
+  }
+  if (input.discovery?.status === "source_failure") addExecution("discovery_source_failure", "descoberta reportou falha de fonte")
+  const executionStatus = derivedExecutionAlerts.length ? "failed" : "complete"
   const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
     status: alerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
     alerts: [...discoveryAlerts],
@@ -698,7 +713,7 @@ function resultadoConsolidacao(
   }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${executionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
     execution_status: executionStatus,
-    execution_alerts: executionAlerts,
+    execution_alerts: derivedExecutionAlerts,
     status,
     operation_status: operationStatus,
     global_alerts: globalAlerts,

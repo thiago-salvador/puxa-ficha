@@ -109,7 +109,7 @@ function consolidateCommand(options: Map<string, string>): void {
   const discoveryPath = options.get("--discovery")
   const discoveryAlerts: string[] = []
   const executionAlerts: import("./model").ExecutionAlert[] = []
-  let discoveryStatus: "partial" | "source_failure" = "partial"
+  let discoveryStatus: "partial" | "not_assessed" | "source_failure" = "partial"
   let coverage = construirCoberturaDescoberta({ observations: [], targets: [] })
   try {
     if (!discoveryPath) throw new Error("manifesto de descoberta ausente")
@@ -123,9 +123,21 @@ function consolidateCommand(options: Map<string, string>): void {
     coverage = discovery.coverage
     if (discovery.status === "source_failure") executionAlerts.push({ code: "discovery_source_failure", message: "descoberta reportou falha de fonte" })
     for (const row of discovery.coverage) {
-      if (row.registry_query_status !== "observed" || row.registry_query_exhausted !== true) discoveryAlerts.push(`${row.geography_code}: consulta de registros incompleta`)
-      for (const error of row.errors ?? []) discoveryAlerts.push(`${row.geography_code}: ${error}`)
-      for (const exception of row.discovery_exceptions ?? []) discoveryAlerts.push(`${row.geography_code}: ${exception.reason}`)
+      if (row.registry_query_status !== "observed" || row.registry_query_exhausted !== true) {
+        const message = `${row.geography_code}: consulta de registros incompleta`
+        discoveryAlerts.push(message)
+        executionAlerts.push({ code: "discovery_source_failure", message })
+      }
+      for (const error of row.errors ?? []) {
+        const message = `${row.geography_code}: ${error}`
+        discoveryAlerts.push(message)
+        executionAlerts.push({ code: "discovery_source_failure", message })
+      }
+      for (const exception of row.discovery_exceptions ?? []) {
+        const message = `${row.geography_code}: ${exception.reason}`
+        discoveryAlerts.push(message)
+        executionAlerts.push({ code: "discovery_source_failure", message })
+      }
     }
     discoveryAlerts.push(`Descoberta ${discovery.status}: inventário de resultados e atualidade não comprovados`)
   } catch (error) {

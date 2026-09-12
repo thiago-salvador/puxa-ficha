@@ -271,3 +271,22 @@ test("curadoria parcial não derruba saúde operacional, mas falha operacional c
   assert.equal(failed.execution_status, "failed")
   assert.equal(failed.execution_alerts[0]?.code, "discovery_source_failure")
 })
+
+test("deriva falhas operacionais de invariantes e fontes, sem transformar curadoria em transporte", () => {
+  const structural = fixture()
+  structural.documents[0].proposal.items[0].id = "fora-da-matriz-live"
+  const structuralResult = consolidarPropostasAgendadas(structural)
+  assert.equal(structuralResult.execution_status, "failed")
+  assert.ok(structuralResult.execution_alerts.some((alert) => alert.code === "matrix_invalid"))
+
+  const source = fixture()
+  source.documents[0].proposal.items[1].decision = { classification: "incompleto", eligible_for_human_review: false, reason: "source_timeout" }
+  const sourceResult = consolidarPropostasAgendadas(source)
+  assert.equal(sourceResult.status, "blocked")
+  assert.equal(sourceResult.execution_status, "failed")
+  assert.ok(sourceResult.execution_alerts.some((alert) => alert.code === "poll_source_failure"))
+
+  const directSourceFailure = consolidarPropostasAgendadas({ ...fixture(), discovery: { status: "source_failure", alerts: [] } })
+  assert.equal(directSourceFailure.execution_status, "failed")
+  assert.ok(directSourceFailure.execution_alerts.some((alert) => alert.code === "discovery_source_failure"))
+})
