@@ -8,6 +8,28 @@ set -euo pipefail
 [[ "$(git rev-parse HEAD)" == "$PF_EXPECTED_SHA" ]] || { echo 'FAIL: checkout divergiu' >&2; exit 2; }
 [[ -z "$(git status --porcelain=v1 --untracked-files=normal)" ]] || { echo 'FAIL: checkout sujo' >&2; exit 2; }
 [[ "$(git ls-remote https://github.com/thiago-salvador/puxa-ficha.git refs/heads/main | cut -f1)" == "$PF_EXPECTED_SHA" ]] || { echo 'FAIL: SHA nao e topo remoto de main' >&2; exit 2; }
+
+# Validate the target Supabase project before configuring libpq. The secret URI is never echoed.
+database_ref="$(
+  node <<'NODE'
+const raw = process.env.PF_DATABASE_URL ?? ""
+let url
+try { url = new URL(raw) } catch { process.exit(2) }
+if (!/^(?:postgres|postgresql):$/.test(url.protocol) || url.search || url.hash || url.pathname !== "/postgres") process.exit(2)
+const host = url.hostname.match(/^db\.([a-z0-9]+)\.supabase\.co$/)?.[1]
+let decodedUser
+try { decodedUser = decodeURIComponent(url.username) } catch { process.exit(2) }
+const user = decodedUser.match(/^postgres\.([a-z0-9]+)$/)?.[1]
+const pooler = /(?:^|\.)pooler\.supabase\.com$/.test(url.hostname)
+if ((host && url.port !== "5432") || (pooler && !["5432", "6543"].includes(url.port))) process.exit(2)
+if (host && user && host !== user) process.exit(3)
+if (!host && !(pooler && user)) process.exit(4)
+process.stdout.write(host ?? user)
+NODE
+)" || { echo 'FAIL: URL Supabase invalida ou projeto nao identificavel' >&2; exit 2; }
+[[ "$database_ref" == "wskpzsobvqwhnbsdsmok" ]] || { echo 'FAIL: banco nao e producao' >&2; exit 2; }
+unset PGHOST PGHOSTADDR PGPORT PGUSER PGPASSWORD PGDATABASE PGPASSFILE PGOPTIONS
+unset PGSERVICE PGSERVICEFILE PGREQUIRESSL PGSSLROOTCERT PGSSLCERT PGSSLKEY PGSSLCRL PGSSLCRLDIR
 mode="${1:-dry-run}"
 case "$mode" in apply|dry-run|verify) ;; *) echo 'FAIL: modo inválido' >&2; exit 2 ;; esac
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"; cd "$ROOT"

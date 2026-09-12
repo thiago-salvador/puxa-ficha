@@ -14,6 +14,7 @@ const lit = (text: string) => `'${text.replaceAll("'", "''")}'`
 const encoded = (text: string) => `convert_from(decode(${lit(Buffer.from(text).toString("base64"))}, 'base64'), 'UTF8')`
 
 export function renderChapasPublicGrantsTransaction(mode: "apply" | "dry-run" | "verify", sha: string, root = process.cwd()) {
+  if (!["apply", "dry-run", "verify"].includes(mode)) throw new Error("Invalid mode")
   if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error("Invalid expected SHA")
   const read = (p: string) => readFileSync(resolve(root, p), "utf8")
   const raw = read(`supabase/migrations/${VERSION}_${NAME}.sql`)
