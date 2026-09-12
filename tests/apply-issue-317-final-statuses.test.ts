@@ -18,7 +18,7 @@ test("plan validation rejects tampered identity, source and patch fields", () =>
   const base = { version: 1, project: "wskpzsobvqwhnbsdsmok", source: SOURCE, entries: TARGETS.map((t) => ({ slug: t.slug, id: t.id, source: SOURCE[t.slug], before: { id: t.id, slug: t.slug, sq_candidato_2026: t.sq, estado: t.uf, publicavel: true, status: "candidato" }, patch: { situacao_candidatura: "deferido" } })) } as unknown as Plan
   for (const mutate of [
     (p: Plan) => { p.entries[0].id = "tampered" },
-    (p: Plan) => { p.entries[0].source.raw_sha256 = "0".repeat(64) },
+    (p: Plan) => { Object.defineProperty(p.entries[0].source, "raw_sha256", { value: "0".repeat(64) }) },
     (p: Plan) => { p.entries[0].patch.publicavel = false },
   ]) assert.throws(() => { const copy = structuredClone(base); mutate(copy); validatePlan(copy) })
 })
