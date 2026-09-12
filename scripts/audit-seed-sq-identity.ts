@@ -266,6 +266,39 @@ export interface ObservacaoNascimento {
   uf: string
 }
 
+export interface ExcecaoNascimento {
+  slug: string
+  ano: number
+  reason: string
+  birthdate_evidence?: {
+    cpf_equal: boolean
+    title_equal: boolean
+    observations: ObservacaoNascimento[]
+  }
+}
+
+/** Exceções documentadas novas só valem para os SQs, datas e identidades revisados. */
+export function excecoesNascimentoVerificadas(entries: readonly ExcecaoNascimento[], observed: Map<string, ObservacaoNascimento[]>): Set<string> {
+  const accepted = new Set<string>()
+  for (const entry of entries) {
+    if (entry.reason !== "tse-birthdate-typo") continue
+    const evidence = entry.birthdate_evidence
+    if (evidence) {
+      if (evidence.cpf_equal !== true || evidence.title_equal !== true || evidence.observations.length < 2 ||
+          !evidence.observations.some((row) => row.ano === String(entry.ano))) continue
+      const rows = observed.get(entry.slug) ?? []
+      if (!evidence.observations.every((expected) => {
+        const matchingYear = rows.filter((row) => row.ano === expected.ano)
+        return matchingYear.length === 1 && matchingYear[0].sq === expected.sq &&
+          matchingYear[0].nascimento === expected.nascimento && matchingYear[0].uf === expected.uf &&
+          normalizar(matchingYear[0].nome) === normalizar(expected.nome)
+      })) continue
+    }
+    accepted.add(`${entry.slug}:${entry.ano}`)
+  }
+  return accepted
+}
+
 export interface InconsistenciaNascimento {
   slug: string
   /** A data de maior frequencia entre os anos; e a ancora presumida. */
@@ -511,14 +544,12 @@ export async function main() {
   // Cruzamento de data de nascimento entre anos. Roda sobre TODOS os pares,
   // inclusive os que a comparacao por nome aprovou, que e exatamente onde o
   // homonimo se esconde.
-  const isentosNascimento = new Set<string>()
+  let isentosNascimento = new Set<string>()
   try {
     const excecoes = JSON.parse(
       readFileSync(resolve(process.cwd(), "data/sq-exceptions.json"), "utf-8")
-    ) as { entries?: Array<{ slug: string; ano: number; reason: string }> }
-    for (const e of excecoes.entries ?? []) {
-      if (e.reason === "tse-birthdate-typo") isentosNascimento.add(`${e.slug}:${e.ano}`)
-    }
+    ) as { entries?: ExcecaoNascimento[] }
+    isentosNascimento = excecoesNascimentoVerificadas(excecoes.entries ?? [], nascimentosPorSlug)
   } catch {
     // Sem arquivo de excecao o gate fica mais rigoroso, nunca mais frouxo.
   }
