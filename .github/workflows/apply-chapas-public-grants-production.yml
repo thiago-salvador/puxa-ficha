@@ -1,0 +1,27 @@
+name: Publicar grants da view pública de chapas
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha: { required: true, type: string }
+      mode: { required: true, type: choice, default: dry-run, options: [dry-run, apply, verify] }
+permissions: { contents: read }
+jobs:
+  apply:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with: { ref: '${{ inputs.expected_sha }}', persist-credentials: false }
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - uses: ./.github/actions/install-postgresql-client-17
+      - name: Provar PG17 ACL, view e rollback
+        run: bash scripts/audit/provar-chapas-public-grants-pg17.sh
+      - name: Executar driver ACL main-only
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PF_EXPECTED_SHA: ${{ inputs.expected_sha }}
+          GITHUB_REF: ${{ github.ref }}
+        run: bash scripts/audit/apply-chapas-public-grants-production.sh '${{ inputs.mode }}'

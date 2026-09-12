@@ -30,7 +30,7 @@ export function renderChapasPublicGrantsTransaction(mode: "apply" | "dry-run" | 
   const sql = [applied ? "BEGIN READ ONLY;" : "BEGIN;", "SET LOCAL standard_conforming_strings = on;"]
   if (!applied) sql.push("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));", "LOCK TABLE supabase_migrations.schema_migrations IN SHARE ROW EXCLUSIVE MODE;", ledger, transactionBody(raw), `INSERT INTO supabase_migrations.schema_migrations(version,statements,name,created_by,idempotency_key,rollback) VALUES (${lit(VERSION)}, ARRAY[${encoded(raw)}], ${lit(NAME)}, ${lit(AUTHOR + sha)}, ${lit(hash)}, ARRAY[${encoded(rollback)}]);`)
   else sql.push(ledger)
-  sql.push(transactionBody(readback), `DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(VERSION)} AND idempotency_key=${lit(hash)}) <> 1 THEN RAISE EXCEPTION 'chapas grants: ledger readback mismatch'; END IF; END $proof$;`, mode === "apply" ? "COMMIT;" : "ROLLBACK;")
+  sql.push(transactionBody(readback), `DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(VERSION)} AND name=${lit(NAME)} AND idempotency_key=${lit(hash)} AND created_by=${lit(AUTHOR + sha)} AND statements=ARRAY[${encoded(raw)}] AND rollback=ARRAY[${encoded(rollback)}]) <> 1 THEN RAISE EXCEPTION 'chapas grants: ledger provenance mismatch'; END IF; END $proof$;`, mode === "apply" ? "COMMIT;" : "ROLLBACK;")
   return `${sql.join("\n")}\n`
 }
 
