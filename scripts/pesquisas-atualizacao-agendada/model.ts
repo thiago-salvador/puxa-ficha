@@ -132,6 +132,8 @@ export type ExecutionAlert = {
   message: string
 }
 
+const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
+
 export interface ResultadoConsolidacaoAgendada {
   execution_status: "complete" | "failed"
   execution_alerts: ExecutionAlert[]
@@ -689,6 +691,8 @@ function resultadoConsolidacao(
   for (const alert of pollAlerts) {
     if (/^(source_timeout|source_unavailable|tse_registry_unavailable|source_failure|unknown)(?:$|[: ])/.test(alert.reason)) {
       addExecution("poll_source_failure", `${alert.poll_id}: ${alert.reason}`)
+    } else if (!CURATION_REASON.test(alert.reason)) {
+      addExecution("unknown", `${alert.poll_id}: razão operacional não reconhecida`)
     }
   }
   if (input.discovery?.status === "source_failure") addExecution("discovery_source_failure", "descoberta reportou falha de fonte")
@@ -710,7 +714,7 @@ function resultadoConsolidacao(
     received: input.documents.length,
     items,
     operations: safeOperations,
-  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${executionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
+  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${derivedExecutionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
     execution_status: executionStatus,
     execution_alerts: derivedExecutionAlerts,

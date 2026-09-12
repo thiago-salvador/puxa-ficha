@@ -289,4 +289,10 @@ test("deriva falhas operacionais de invariantes e fontes, sem transformar curado
   const directSourceFailure = consolidarPropostasAgendadas({ ...fixture(), discovery: { status: "source_failure", alerts: [] } })
   assert.equal(directSourceFailure.execution_status, "failed")
   assert.ok(directSourceFailure.execution_alerts.some((alert) => alert.code === "discovery_source_failure"))
+
+  const unknown = fixture()
+  unknown.documents[0].proposal.items[1].decision = { classification: "incompleto", eligible_for_human_review: false, reason: "novo_status_desconhecido" }
+  const unknownResult = consolidarPropostasAgendadas(unknown)
+  assert.equal(unknownResult.execution_status, "failed")
+  assert.match(unknownResult.summary, /alertas operacionais: 1/)
 })
