@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-12T15:36:51.132Z",
+  "updated_at": "2026-09-12T19:31:00.978Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -5921,6 +5921,140 @@
         "audio_sha256": "6e6068c4fb0377d08d46155ed476f14dedf4b55d1d87c8bc5fec159f6a5e058b",
         "speaker_context": "Introdução do vídeo em 00:05–00:35 anuncia Adriano Funileiro do PCO e pergunta sobre educação. Aos 00:38 o apresentador anuncia candidato na tela e lhe passa a palavra. Frame203 mostra uma pessoa respondendo com identidade visual do Ciclo/Eleições2026 e intérprete. Não há nome escrito no frame203, por isso o vínculo depende também da introdução e dos metadados.",
         "reviewed_context": true
+      }
+    },
+    {
+      "id": "88fd24c8cd6a48864598af3269c251aab7de885cc5d8e90014af8c9144987720",
+      "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+      "candidate_slug": "victor-assis",
+      "candidate_name": "Victor Assis",
+      "office": "Governador",
+      "uf": "PE",
+      "quote_text": "Temos uma crise política cada vez maior",
+      "context": "Temos uma crise política cada vez maior",
+      "event_context": "Pergunta do apresentador ao comandante Robinson Farinazzo na edição Análise Internacional nº 274, sobre a crise política na Ucrânia, em programa transmitido pelo Diário Causa Operária em 20/08/2026.",
+      "event_type": "debate",
+      "occurred_on": "2026-08-20",
+      "publisher": "Diário Causa Operária (jornal do PCO)",
+      "article_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+      "article_title": "Rui Costa Pimenta analisa a crescente tensão entre Turquia e ‘Israel’",
+      "article_published_at": "2026-08-21T00:00:37-03:00",
+      "observed_at": "2026-09-12T18:37:24Z",
+      "source_sha256": "6e0dcdf2feb11d278df76d14466cc2234fb8cffebd71642a9559c7749a81eba6",
+      "attribution": "source_context_review",
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
+        "start_seconds": 369,
+        "end_seconds": 399,
+        "media_published_at": "2026-08-20T15:59:41.000Z",
+        "engine": "Whisper tiny/base/small locais, comparados à legenda automática VTT do YouTube; faixa 251-2 Portuguese (BR) original; sem identificação por rosto/voz biométrica e sem escuta humana declarada.",
+        "transcript_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
+        "verification_sha256": "5de537e3bdc70c02f9d9aa1705b1c72f1da62499ac98e67eed46b8d16991f0af",
+        "audio_sha256": "e15e656fa222d48d5bc49e8324388bb7d826e629b3e9c25102c0fc56516807d5",
+        "speaker_context": "A VTT registra o apresentador anunciando Pedro Bulamac, Pedro saudando “Vittor” e a retomada imediata da pergunta pelo apresentador. A identificação civil como Victor Assis é apoiada pelo crédito recorrente do DCO em edição de 07/08; não se usou rosto ou voz biométrica.",
+        "reviewed_context": true,
+        "timestamp_range": "00:06:09-00:06:39"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
+        "date_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
+        "fetched_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=w3CAsXoCxwM",
+          "channel_id": "UCvhnOzbSDblzftMPLe8D4-A",
+          "broadcast_on": "2026-08-20",
+          "release_timestamp": 1787241581,
+          "metadata_sha256": "a73656adfe4d9f9bb8fb39dc7f10b31706d0e16b6757a6fefad6c254f21584fd",
+          "captions_sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514",
+          "frame_sha256": "87868ca817b425cb15c3825574be072f2e91c6ef68d233a2914b67809618baed",
+          "frame_at_seconds": 375.5,
+          "article_event_excerpt": "O presidente nacional do Partido da Causa Operária (PCO), Rui Costa Pimenta, analisou nessa quinta-feira (20) a crise internacional, com destaque para a instabilidade no Oriente Médio, a guerra na Ucrânia e a deterioração dos regimes políticos na América Latina. No Análise Internacional , transmitido pelo Diário Causa Operária em conjunto com o canal Arte da Guerra, ele também tratou do bloqueio contra Cuba, do acordo entre o Tribunal Superior Eleitoral (TSE) e a OpenAI e da operação da Polícia Filial contra o PCO.",
+          "quote_excerpt": "Temos uma crise política cada vez maior",
+          "reviewed_live_on_air": true
+        },
+        "supporting_sources": [
+          {
+            "url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/20/porta-a-porta-entrevistas-e-sabatina-como-foi-o-5o-dia-de-campanha-dos-candidatos-ao-governo-de-pernambuco.ghtml",
+            "sha256": "0fe3deae279b0cb2236636924b361b19dde0694c42276a0674821b506f580a46",
+            "excerpts": [
+              "Victor Assis (PCO) O candidato participou, à tarde, de um programa do canal do YouTube “Diário Causa Operária”, junto ao presidente nacional do PCO, Rui Costa Pimenta.",
+              "Nesta quinta-feira (20), cinco dos oito candidatos ao governo de Pernambuco realizaram atos públicos de campanha. Entre as atividades, estavam entrevistas, porta a porta, sabatina e presença em eventos."
+            ],
+            "source_format": "web_text"
+          },
+          {
+            "url": "https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/",
+            "sha256": "3af16691440f234a7fa11cdf138eb0bae083cbee8cea0ed86963e4a4570ad54d",
+            "excerpts": [
+              "Transmitido todas as quintas-feiras, às 12h30, pelo canal do Diário Causa Operária no YouTube, em parceria com o canal Arte da Guerra, o programa também contou com a participação do comandante Robinson Farinazzo e foi apresentado por João Jorge Pimenta e Victor Assis."
+            ],
+            "source_format": "web_text"
+          }
+        ]
+      },
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      }
+    },
+    {
+      "id": "ff509d99a4e0e3e21ba9d0750e3986d3e93f814b9219a9c4167c9bb3ebe13fbc",
+      "candidate_id": "51e9be3d-bd06-45e5-828d-48160265925f",
+      "candidate_slug": "carlos-jararaca",
+      "candidate_name": "Carlos Jararaca",
+      "office": "Governador",
+      "uf": "RN",
+      "quote_text": "O estado hoje é um estado sucateado.",
+      "context": "O estado hoje é um estado sucateado.",
+      "event_context": "Entrevista no Podcast Ponto de Vista, da Rádio Avivar Evangélica, com o candidato ao governo do Rio Grande do Norte Carlos Jararaca; o apresentador faz a pergunta e Carlos responde sobre o estado.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-08-26",
+      "publisher": "Rádio Avivar Evangélica",
+      "article_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+      "article_title": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+      "article_published_at": "2026-08-26T22:02:02Z",
+      "observed_at": "2026-09-12T19:15:55.485907Z",
+      "source_sha256": "3683f639c2750f0d9352aa07df46d777d0ffdeae4d2839c549e17b372a399bd5",
+      "attribution": "source_context_review",
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+        "start_seconds": 351,
+        "end_seconds": 381,
+        "media_published_at": "2026-08-26T22:02:02Z",
+        "engine": "YouTube pt captions plus local Whisper small pt; base unavailable in shared cache; no biometric identification.",
+        "transcript_sha256": "f0f8b1206545f58c8eae56f62ecba4da5ba4e500567694a63dfb6b29fd8c195e",
+        "verification_sha256": "42b21fa96f53067409828d8046760c03a1474d5efa7c9707eacb961b8ffd20bb",
+        "audio_sha256": "c42adc7c23ceb1b40329a1dc1406f1427a8b97435a2e1df4a4e3133342bd221d",
+        "speaker_context": "Host identifies the guest as Carlos Jararaca at 00:01:40.720–00:01:44.190. In the selected clip, the answer continues after the host question and includes the quoted sentence.",
+        "reviewed_context": true,
+        "timestamp_range": "00:05:51-00:06:21"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+        "date_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+        "fetched_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+          "channel_id": "UC7tAzgqhKfATez70VwbAboQ",
+          "broadcast_on": "2026-08-26",
+          "release_timestamp": 1787781722,
+          "metadata_sha256": "3683f639c2750f0d9352aa07df46d777d0ffdeae4d2839c549e17b372a399bd5",
+          "captions_sha256": "f0f8b1206545f58c8eae56f62ecba4da5ba4e500567694a63dfb6b29fd8c195e",
+          "frame_sha256": "131349df6039c6d580ff8e677606e732e677e6093594da215ac6ccd6ed508a5e",
+          "frame_at_seconds": 369,
+          "article_event_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+          "quote_excerpt": "O estado hoje é um estado sucateado.",
+          "reviewed_live_on_air": true
+        },
+        "supporting_sources": []
+      },
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
       }
     }
   ]

@@ -1,22 +1,24 @@
 {
   "schema_version": "independent-attribution-review-compact-v1",
-  "reviewed_at": "2026-09-12 15:41:34 UTC",
-  "catalog_sha256": "01c262c9780f0deef4b4025ec300a0ee43f35d06959dcc8b86f94752d8bbf046",
+  "reviewed_at": "2026-09-12 19:32:55 UTC",
+  "catalog_sha256": "aba3f3aec2ad3df5f941e1891c2a63709dc6374244321a00d9c0a27ddef08000",
   "roster_sha256": "79618f11ada3c504d306f4145aab7c8c1b91e82bd170ebc8e20df9264d29e4fc",
   "scope": {
-    "new_quotes": 199,
+    "new_quotes": 201,
     "written_quotes": 194,
-    "automatic_transcripts": 5,
+    "automatic_transcripts": 7,
     "roster_candidates": 208,
     "legacy_quotes_separate": 9,
     "coverage_search_reopened": true,
-    "coverage_remaining": 9,
-    "incrementally_reviewed_quotes": 2,
-    "previously_reviewed_quotes_preserved": 197
+    "coverage_remaining": 7,
+    "incrementally_reviewed_quotes": 1,
+    "previously_reviewed_quotes_preserved": 200,
+    "public_roster_current": 207,
+    "public_candidates_with_quotes": 200
   },
   "global_status": "pass",
   "totals": {
-    "pass": 199,
+    "pass": 201,
     "fail": 0,
     "blocked": 0
   },
@@ -26,33 +28,36 @@
     "blocked": 0
   },
   "criteria": [
-    "Todos os 199 registros, sem amostragem: revisão anterior dos 197 preservada e revisão incremental das 2 inclusões. IDs, slugs, nomes, cargos e UFs contra o cadastro de 208.",
+    "Todos os 200 registros: os 199 objetos de revisão anteriores foram preservados e a inclusão de Victor recebeu revisão incremental de identidade, autoria, data, literalidade e importação.",
     "Recuperação de originais, frase literal e autoria no contexto da fonte, incluindo fonte partidária expressamente rotulada.",
     "Fala em contexto de candidatura entre 16/08 e 12/09/2026; data do evento distinta da publicação; intervalos preservados.",
-    "5 transcrições automáticas: integridade, concordância textual, origem da mídia, metadados, áudio não silencioso, duração e quadros de contexto; 4 revisadas anteriormente e 1 nesta adição.",
+    "6 transcrições automáticas: 5 revisões anteriores preservadas; Victor foi verificado em áudio original português, legenda temporalmente recortada, Whisper small, metadados e quadro de contexto.",
     "9 aspas legadas da Band verificadas na revisão anterior e preservadas separadamente, sem elevar cobertura de candidatos."
   ],
   "limitations": [
     "Valida a atribuição pelas fontes; não valida a verdade das afirmações citadas.",
-    "Cinco transcrições permanecem automáticas. Não houve audição humana independente.",
+    "Sete transcrições permanecem automáticas. Não houve audição humana independente.",
     "Intervalos preservados; publicação isolada não virou data do evento.",
     "Danilo: fonte primária partidária identificada como Diário Causa Operária (jornal do PCO); não representa apuração independente.",
     "Adriano: fonte principal MetalTV (SMC), veículo sindical identificado; data da realização na descrição do produtor corroborada pelo relato retrospectivo da UFPR. A data não foi aplicada à entrevista anterior da CBN.",
-    "Os 197 registros e as 9 aspas legadas herdam a prova da revisão anterior. Nesta etapa foram verificados os 2 acréscimos e a preservação integral dos registros anteriores, sem nova coleta das 197 fontes.",
+    "Os 200 registros anteriores e as 9 aspas legadas preservam integralmente seus objetos e provas. A revisão incremental mais recente verifica Carlos Jararaca; a revisão de Victor Assis e as etapas anteriores estão preservadas no histórico.",
     "Este arquivo compacto não contém textos integrais nem contextos reproduzidos; provas locais indicadas permanecem em reports/falas-monitoramento.",
     "Sem alteração em catálogo, aplicação, banco, Git ou estado remoto pelo validador nesta revisão incremental.",
-    "Pass significa atribuição confirmada pelos critérios declarados, sem reconhecimento biométrico nem validação da veracidade do conteúdo."
+    "Pass significa atribuição confirmada pelos critérios declarados, sem reconhecimento biométrico nem validação da veracidade do conteúdo.",
+    "Sete candidatos continuam sem pacote elegível; a pesquisa adicional não demonstra inexistência de falas. Jairo tem fala atribuída e transcrita, mas a data efetiva permanece inconclusiva."
   ],
   "transcript_cli": {
     "commands": [
       "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-tayna.json",
       "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-videos.json",
       "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-marcos.json",
-      "/opt/homebrew/opt/node@24/bin/node --conditions react-server --import tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/fechamento-11-datas/transcricao-adriano-final.json"
+      "/opt/homebrew/opt/node@24/bin/node --conditions react-server --import tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/fechamento-11-datas/transcricao-adriano-final.json",
+      "/opt/homebrew/opt/node@24/bin/node --conditions react-server --import tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/transcricoes-videos-manifest.json",
+      "/opt/homebrew/opt/node@24/bin/node --conditions react-server --import tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/transcricoes-videos-manifest.json"
     ],
-    "verified": 5,
+    "verified": 7,
     "written": false,
-    "note": "Integridade, PCM não silencioso, duração, metadados e concordância textual verificados. Quadros persistidos de Rosi, Luisinho e Marcos abertos. Nenhuma escuta humana independente ou identificação biométrica alegada. Adição de Adriano validada em execução sem escrita; resultados anteriores preservados."
+    "note": "Integridade, PCM não silencioso, duração, metadados e concordância textual verificados. Quadros persistidos de Rosi, Luisinho e Marcos abertos. Nenhuma escuta humana independente ou identificação biométrica alegada. Adição de Adriano validada em execução sem escrita; resultados anteriores preservados. Victor e Carlos foram validados pelo CLI real, depois incorporados com backup e preservação exata dos registros anteriores. CLI não substitui a revisão factual independente."
   },
   "live_replay": {
     "verified": 2,
@@ -4295,6 +4300,140 @@
         "Frame inspecionado; nenhuma alegação de escuta humana ou reconhecimento biométrico.",
         "Data comprovada para alternativa SMC; a entrevista anterior da CBN não recebeu essa data."
       ]
+    },
+    {
+      "quote_id": "88fd24c8cd6a48864598af3269c251aab7de885cc5d8e90014af8c9144987720",
+      "candidate_slug": "victor-assis",
+      "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+      "status": "pass",
+      "source_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+      "source_type": "jornalismo partidário identificado, Diário Causa Operária (PCO)",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass",
+        "automatic_transcript_agreement": "pass",
+        "technical_import_gate": "pass"
+      },
+      "occurred_on": "2026-08-20",
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-victor-validacao.json",
+          "sha256": "64640176e996abd321a95501100cd391768b2ee839f5119652c02c70cf0502ae"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/transcricoes-videos-manifest.json",
+          "sha256": "1632e9ad5eb287ef0e544f182a4af9761e8db165fa04b502da1a9baac5140384"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/vtt-range-369-399-receipt.json",
+          "sha256": "5ff537c0278a2e093e9bf39598c795b3e95c6a2fea451214b8f6e2a2f19c9f1b"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-pco/dco-original-20260821.html",
+          "sha256": "6e0dcdf2feb11d278df76d14466cc2234fb8cffebd71642a9559c7749a81eba6"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/quote-00m06s09-00m06s39.wav",
+          "sha256": "e15e656fa222d48d5bc49e8324388bb7d826e629b3e9c25102c0fc56516807d5"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/w3CAsXoCxwM.quote-369-399.pt.vtt",
+          "sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/whisper-small-pt-original.vtt",
+          "sha256": "5de537e3bdc70c02f9d9aa1705b1c72f1da62499ac98e67eed46b8d16991f0af"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/yt-dlp-metadata.json",
+          "sha256": "a73656adfe4d9f9bb8fb39dc7f10b31706d0e16b6757a6fefad6c254f21584fd"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/frame-00m06s15.jpg",
+          "sha256": "87868ca817b425cb15c3825574be072f2e91c6ef68d233a2914b67809618baed"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/g1-20260820-original.html",
+          "sha256": "0fe3deae279b0cb2236636924b361b19dde0694c42276a0674821b506f580a46"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-pco/dco-original-20260807.html",
+          "sha256": "3af16691440f234a7fa11cdf138eb0bae083cbee8cea0ed86963e4a4570ad54d"
+        }
+      ],
+      "limitations": [
+        "Atribuição contextual revisada independentemente: G1 registra a participação, DCO credita o apresentador e a transmissão o identifica verbalmente pelo primeiro nome; sem biometria.",
+        "Trecho em debate de análise internacional sobre a Ucrânia, apresentado pelo candidato; não é debate eleitoral entre candidatos.",
+        "Áudio original português do YouTube, formato 251-2, comparado à legenda e ao Whisper small; tiny/base também concordam. A faixa dublada inicialmente extraída foi descartada e preservada como diagnóstico.",
+        "Nenhuma alegação de escuta humana. O recorte automático contém sete palavras e aponta para a mídia com minutagem."
+      ]
+    },
+    {
+      "quote_id": "ff509d99a4e0e3e21ba9d0750e3986d3e93f814b9219a9c4167c9bb3ebe13fbc",
+      "candidate_slug": "carlos-jararaca",
+      "candidate_id": "51e9be3d-bd06-45e5-828d-48160265925f",
+      "status": "pass",
+      "source_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+      "source_type": "Entrevista jornalística em rádio, Podcast Ponto de Vista / Rádio Avivar Evangélica",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass",
+        "automatic_transcript_agreement": "pass",
+        "technical_import_gate": "pass"
+      },
+      "occurred_on": "2026-08-26",
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/transcricoes-videos-manifest.json",
+          "sha256": "0a9a3bfd4a870f64c5efffd3b466926717ff2f48abeb1ff899c41c2f7b054b8b"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-sete-carlos-validacao.json",
+          "sha256": "896965e3e9af2dc56e74ff7821c73e143f5509a7457db0ece1b400eed8b214ef"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI.info.json",
+          "sha256": "3683f639c2750f0d9352aa07df46d777d0ffdeae4d2839c549e17b372a399bd5"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI-351-381.wav",
+          "sha256": "c42adc7c23ceb1b40329a1dc1406f1427a8b97435a2e1df4a4e3133342bd221d"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI.quote-351-381.pt.vtt",
+          "sha256": "f0f8b1206545f58c8eae56f62ecba4da5ba4e500567694a63dfb6b29fd8c195e"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI-351-381-small.vtt",
+          "sha256": "42b21fa96f53067409828d8046760c03a1474d5efa7c9707eacb961b8ffd20bb"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI-frame-369s.jpg",
+          "sha256": "131349df6039c6d580ff8e677606e732e677e6093594da215ac6ccd6ed508a5e"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI.pt-orig.vtt",
+          "sha256": "c3ab7cfa0ccc92685bd64de5d3407e04f7cc8d7dae74d9661f8343d8c2f6cf70"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-oito-radios-nordeste/carlos-5qKR3B6rQnI-provenance.json",
+          "sha256": "26f03190f2bba453ba2470c87120e4baa7ecfa0c6ac8144845dc641ce7b275aa"
+        }
+      ],
+      "limitations": [
+        "Atribuição textual revisada independentemente: título e canal originais, apresentação nominal do candidato pelo entrevistador e continuidade da resposta. Sem biometria.",
+        "Data da transmissão ao vivo em 26/08/2026 comprovada pelo release_timestamp, distinta do upload em 27/08.",
+        "Legenda original em português comparada ao Whisper small executado localmente, inclusive em revisão independente. Sem alegação de escuta humana.",
+        "Formato 251 identificado como português pelo YouTube; o contêiner mantém tag eng. Essa divergência foi preservada no recibo, sem retagging.",
+        "O frame mostra logos da rádio e do programa, sem identificação nominal. A autoria depende da apresentação verbal transcrita e do contexto.",
+        "Recorte anterior começava após o início da frase; substituído por 351–381 segundos, com VTT bruto e hashes preservados."
+      ]
     }
   ],
   "legacy_quotes": [
@@ -4546,6 +4685,22 @@
           "evidence": "validarCatalogo exige recorded_video para MetalTV (SMC) e The Papo. Reprodução fresca com transcription, recorded_video e apoio removidos foi rejeitada."
         }
       ]
+    },
+    {
+      "reviewed_at": "2026-09-12 15:41:34 UTC",
+      "document_sha256": "1b7194e9ac5abe4367e169a46bcf897817a00ad1ef485fd06401aeb6d66271d8",
+      "catalog_sha256": "01c262c9780f0deef4b4025ec300a0ee43f35d06959dcc8b86f94752d8bbf046",
+      "quotes": 199,
+      "legacy_quotes_separate": 9,
+      "status": "pass"
+    },
+    {
+      "reviewed_at": "2026-09-12 18:48:22 UTC",
+      "document_sha256": "afa556d12a0d1ab3dd0a819ae89c518ea126822a0d041e45f85898558419b3fc",
+      "catalog_sha256": "e15d9cfa96b9106f97e5d0a29ca2ff3a4b505a572ef45fc2225af251f96c2125",
+      "quotes": 200,
+      "legacy_quotes_separate": 9,
+      "status": "pass"
     }
   ],
   "log_provenance": "[confidence: alta para fatos e testes executados, source: originais e artefatos identificados] [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]"
