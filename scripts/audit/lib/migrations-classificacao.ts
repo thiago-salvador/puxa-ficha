@@ -442,8 +442,8 @@ export const MEDICAO_REPLAY = Object.freeze({
   // zero falhas; dump ddb423c409d8a280eacf7c867bbdbe01cfd7b51c3dd15c9049f958c8da691c5d.
   // 08/09/2026: H12 define estado privado, RPC e view pública; schema-gate PG17
   // mediu 102 migrations limpas e zero falhas.
-  // Situação da vice: PG17 local mediu 103 aplicadas, zero falhas em 12/09/2026.
-  schemaReplayTamanho: 103,
+  // Situação da vice + ACL aditiva: PG17/CI mediu 104 aplicadas, zero falhas.
+  schemaReplayTamanho: 104,
   // 80 -> 81 em 17/08/2026: a 20260817053000 e classe schema (ALTER TABLE mais
   // indice) e entra no replay de schema. Medido pelo --schema-gate no CI, que
   // reportou 'aplicadas limpo: 81, puladas: 334, falhas: 0'.
