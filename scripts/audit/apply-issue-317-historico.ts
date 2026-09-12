@@ -6,8 +6,10 @@ import { escreverAuditado } from "../lib/escrita-auditada";
 import { supabase, supabaseProjectRefParaAuditoria } from "../lib/supabase";
 import { escreverPrivado } from "../lib/tse-julgamento-2026";
 import { hash, PROJECT } from "./apply-issue-317-tse";
+import { descricaoJulgamentoParaTexto } from "../lib/tse-julgamento-texto";
 
-export const APPROVED_HISTORY_PLAN = "449dad9d174c20a39c858b31a8b85e154e95656229a0545c6e9b340947296f8b";
+// O plano anterior continua como evidência; seu hash não autoriza novas escritas.
+export const APPROVED_HISTORY_PLAN = "f294b9379e98f015ee0c401f254c6fa11a3880fd00301ea9006ff8a223811b89";
 interface HistoryBefore { id: string; candidato_id: string; slug: string; sq_candidato_2026: string; situacao_candidatura: string; periodo_inicio: number; observacoes: string }
 interface HistoryEntry { before: HistoryBefore; after: string }
 interface HistoryPlan { project: string; entries: HistoryEntry[] }
@@ -15,6 +17,7 @@ export function validateHistoryPlan(raw: string, project: string): HistoryPlan {
   if (project !== PROJECT || hash(raw) !== APPROVED_HISTORY_PLAN) throw new Error("Projeto/plano de histórico não revisado");
   const plan = JSON.parse(raw) as HistoryPlan;
   if (plan.project !== PROJECT || plan.entries.length !== 31 || new Set(plan.entries.map((e) => e.before.id)).size !== 31) throw new Error("Coorte de histórico divergiu");
+  if (plan.entries.some((entry) => !entry.after.endsWith(`Na consulta ao TSE de 12 de setembro de 2026, o registro estava ${descricaoJulgamentoParaTexto(entry.before.situacao_candidatura)}.`))) throw new Error("Descrição oficial do histórico divergiu");
   return plan;
 }
 export function validateHistoryState(entry: HistoryEntry, current: Record<string, unknown>, candidate: Record<string, unknown>): "pending" | "applied" {

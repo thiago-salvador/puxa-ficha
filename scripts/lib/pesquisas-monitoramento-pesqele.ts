@@ -336,7 +336,7 @@ export async function descobrirRegistrosPesqele(input: {
           break
         } catch (error) {
           const reason = error instanceof Error ? error.message : String(error)
-          if (attempt === 0 && /sessão expirada/.test(reason)) { result.session_restarts++; continue }
+          if (attempt === 0 && (/sessão expirada/.test(reason) || reason.startsWith("timeout ao consultar "))) { result.session_restarts++; continue }
           result.errors.push(reason)
           result.status = result.pages.length ? "partial" : "failed"
           windows.length = 0

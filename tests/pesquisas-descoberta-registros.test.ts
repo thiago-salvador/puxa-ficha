@@ -208,6 +208,48 @@ test("segunda expiração encerra tentativa e preserva prova parcial", async () 
   assert.equal(fixture.calls.filter(call => call.fields.has("formPesquisa")).length, 4)
 })
 
+for (const persistent of [false, true]) {
+  test(`timeout de sessão tem somente uma repetição fresca: persistente=${persistent}`, async () => {
+    let sessions = 0
+    let posts = 0
+    const budget = criarOrcamentoDescoberta({ fetchImpl: async (url, init) => {
+      if (String(url).endsWith("robots.txt")) return new Response("")
+      if (init?.method !== "POST") {
+        sessions++
+        return new Response(form, { headers: { "set-cookie": `JSESSIONID=session-${sessions}; Secure` } })
+      }
+      posts++
+      assert.equal(new Headers(init.headers).get("cookie"), `JSESSIONID=session-${sessions}`)
+      if (persistent || posts === 1) throw new DOMException("timed out", "AbortError")
+      return new Response(page("BR", 0, 1))
+    } })
+    const result = await descobrirRegistrosPesqele({ dateFrom: parserInput.dateFrom, dateTo: parserInput.dateTo, geographies: ["BR"], budget })
+    assert.equal(sessions, 2)
+    assert.equal(posts, 2)
+    assert.equal(result.geographies[0].session_restarts, 1)
+    assert.equal(result.geographies[0].query_exhausted, !persistent)
+    assert.equal(result.geographies[0].status, persistent ? "failed" : "observed")
+    if (persistent) assert.match(result.geographies[0].errors.join(" "), /timeout ao consultar/)
+    else assert.deepEqual(result.geographies[0].errors, [])
+  })
+}
+
+for (const failure of ["403", "layout", "period"] as const) {
+  test(`falha ${failure} não reinicia sessão`, async () => {
+    let sessions = 0
+    const budget = criarOrcamentoDescoberta({ fetchImpl: async (url, init) => {
+      if (String(url).endsWith("robots.txt")) return new Response("")
+      if (init?.method !== "POST") { sessions++; return new Response(failure === "layout" ? "unknown" : form) }
+      return failure === "403" ? new Response("denied", { status: 403 }) : new Response(page("BR", 0, 1).replaceAll("28/08/2026", "29/08/2026"))
+    } })
+    const result = await descobrirRegistrosPesqele({ dateFrom: parserInput.dateFrom, dateTo: parserInput.dateTo, geographies: ["BR"], budget })
+    assert.equal(sessions, 1)
+    assert.equal(result.geographies[0].session_restarts, 0)
+    assert.equal(result.geographies[0].status, "failed")
+    assert.equal(result.geographies[0].query_exhausted, false)
+  })
+}
+
 test("limites incluem robots, corpo, tempo e concorrência", async () => {
   let calls = 0
   const requests = criarOrcamentoDescoberta({ maxRequests: 1, fetchImpl: async () => { calls++; return new Response("") } })

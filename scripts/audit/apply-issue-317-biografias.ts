@@ -7,6 +7,7 @@ import { escreverAuditado } from "../lib/escrita-auditada";
 import { supabase, supabaseProjectRefParaAuditoria } from "../lib/supabase";
 import { escreverPrivado } from "../lib/tse-julgamento-2026";
 import { hash, PROJECT } from "./apply-issue-317-tse";
+import { descricaoJulgamentoParaTexto } from "../lib/tse-julgamento-texto";
 
 export const BIO_TARGETS = [
   ["augusto-cury", "5a4d76d2-6243-41b9-88b2-e94c68383e52", "280002551547", "à Presidência da República", "deferido"],
@@ -33,7 +34,7 @@ export function repairBiography(row: BioRow): string {
   if (!target || row.id !== target[1] || row.sq_candidato_2026 !== target[2] || row.publicavel !== true || row.situacao_candidatura !== target[4]) throw new Error(`Identidade/situação fora do recorte: ${row.slug}`);
   if (typeof row.biografia !== "string") throw new Error(`Biografia ausente: ${row.slug}`);
   const before = oldSentence(target[3]);
-  const after = `Na consulta ao TSE de 12 de setembro de 2026, o registro estava ${target[4]}.`;
+  const after = `Na consulta ao TSE de 12 de setembro de 2026, o registro estava ${descricaoJulgamentoParaTexto(target[4])}.`;
   const count = row.biografia.split(before).length - 1;
   if (count === 0 && row.biografia.split(after).length === 2) return row.biografia;
   if (count !== 1 || row.biografia.includes(after)) throw new Error(`Frase genérica ausente ou ambígua: ${row.slug}`);

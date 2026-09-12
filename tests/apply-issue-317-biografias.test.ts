@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { applyBiographies, BIO_TARGETS, oldSentence, planBiographies, repairBiography, type BioRow, type BioStore } from "../scripts/audit/apply-issue-317-biografias";
 import { hash, PROJECT } from "../scripts/audit/apply-issue-317-tse";
+import { descricaoJulgamentoParaTexto } from "../scripts/lib/tse-julgamento-texto";
 
 const fixture = (): BioRow[] => BIO_TARGETS.map(([slug, id, sq, office, status]) => ({
   id, slug, sq_candidato_2026: sq, situacao_candidatura: status, publicavel: true,
@@ -9,7 +10,7 @@ const fixture = (): BioRow[] => BIO_TARGETS.map(([slug, id, sq, office, status])
 }));
 test("troca somente frase genérica e preserva bytes antes/depois nas 14 fichas", () => {
   for (const row of fixture()) {
-    assert.equal(repairBiography(row), `Texto anterior, com acentuação.\n\nNa consulta ao TSE de 12 de setembro de 2026, o registro estava ${row.situacao_candidatura}.\nTexto posterior: preservar 100%.`);
+    assert.equal(repairBiography(row), `Texto anterior, com acentuação.\n\nNa consulta ao TSE de 12 de setembro de 2026, o registro estava ${descricaoJulgamentoParaTexto(row.situacao_candidatura)}.\nTexto posterior: preservar 100%.`);
   }
 });
 test("frase histórica, duplicada, identidade errada e coorte externa são bloqueadas", () => {
