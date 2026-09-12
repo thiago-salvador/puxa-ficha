@@ -705,7 +705,7 @@ const CHAPA_2026_PUBLIC_SELECT =
   "vinculo_titular_status,tse_situacao_codigo,titular_candidato_id,titular_slug," +
   "titular_nome_completo,titular_nome_urna,titular_partido_sigla,vice_candidato_id," +
   "vice_slug,vice_nome_completo,vice_nome_urna,vice_partido_sigla,fonte_url," +
-  "fonte_sha256,snapshot_em"
+  "fonte_sha256,snapshot_em,titular_sq_candidato,vice_sq_candidato,vice_situacao_divulgacand"
 
 export function isMissingChapa2026ViewError(
   error: { code?: string; message?: string } | null | undefined,
