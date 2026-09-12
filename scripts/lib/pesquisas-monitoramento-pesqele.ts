@@ -28,7 +28,7 @@ export function criarOrcamentoDescoberta(options: {
     if (usage.requests >= limits.maxRequests) throw new Error("descoberta: limite de chamadas")
     if (usage.bytes >= limits.maxBytes) throw new Error("descoberta: limite de bytes")
   }
-  const boundedFetch: typeof fetch = async (url, init) => {
+  const boundedAttempt: typeof fetch = async (url, init) => {
     check()
     const robotsKey = (!init?.method || init.method === "GET") && new URL(String(url)).pathname === "/robots.txt" ? String(url) : null
     const cachedRobots = robotsKey ? robotsResponses.get(robotsKey) : undefined
@@ -65,6 +65,18 @@ export function criarOrcamentoDescoberta(options: {
       }
       return buffered
     } finally { active = false }
+  }
+  const boundedFetch: typeof fetch = async (url, init) => {
+    const robots = (!init?.method || init.method === "GET") && new URL(String(url)).pathname === "/robots.txt"
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const response = await boundedAttempt(url, init)
+      if (!robots || response.status < 500 || response.status > 599 || attempt === 2) return response
+      await response.body?.cancel()
+      // Each retry goes through the same request/byte/time limits. A final 5xx
+      // reaches the policy validator and cannot authorize the content request.
+      await new Promise((resolve) => setTimeout(resolve, 250 * 2 ** attempt))
+    }
+    throw new Error("descoberta: tentativas de robots esgotadas")
   }
   return {
     limits, usage, check,
@@ -236,7 +248,7 @@ export function parsePaginaRegistrosPesqele(html: string, input: {
     const expectedGeo = input.geography === "BR" ? "BRASIL" : getEstadoNome(input.geography)?.toLocaleUpperCase("pt-BR")
     if (![input.geography, expectedGeo].includes(cells[4].toLocaleUpperCase("pt-BR"))) throw new Error("PesqEle: filtro de UF não confirmado pela resposta")
     const date = isoDate(cells[3])
-    if (date < input.dateFrom || date > input.dateTo) throw new Error("PesqEle: filtro de período não confirmado pela resposta")
+    if (date < input.dateFrom || date > input.dateTo) throw new Error(`PesqEle: filtro de período não confirmado pela resposta (${date} fora de ${input.dateFrom} a ${input.dateTo})`)
     const text = cells.slice(0, 5).join(" | ")
     return { registration_id: cells[0], election: cells[1], institute: cells[2], registered_at: date, geography: cells[4], geography_code: input.geography,
       source_url: SEARCH_URL, observed_at: input.observedAt, evidence_sha256: createHash("sha256").update(text).digest("hex"), public_text: text }

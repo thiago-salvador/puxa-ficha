@@ -1,7 +1,7 @@
 import { appendFileSync, mkdirSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { listarAlvosMonitoramento } from "./lib/pesquisas-monitoramento"
-import { executarDescobertaIntegrada } from "./lib/pesquisas-monitoramento-descoberta"
+import { executarDescobertaIntegrada, resolverPeriodoRegistros } from "./lib/pesquisas-monitoramento-descoberta"
 
 async function main() {
   const args = process.argv.slice(2)
@@ -15,16 +15,16 @@ async function main() {
   const output = resolve(options.get("--out") ?? "reports/pesquisas-descoberta")
   const sourceId = options.get("--source") ?? "all"
   const targets = listarAlvosMonitoramento()
-  const today = new Date().toISOString().slice(0, 10)
-  const dateTo = options.get("--registry-to") ?? today
-  const dateFrom = options.get("--registry-from") ?? "2026-01-01"
-  const payload = await executarDescobertaIntegrada({ targets, sourceId, validateTargets, dateFrom, dateTo })
+  const period = resolverPeriodoRegistros({ from: options.get("--registry-from"), to: options.get("--registry-to") })
+  const dateFrom = period.date_from
+  const dateTo = period.date_to
+  const payload = { ...await executarDescobertaIntegrada({ targets, sourceId, validateTargets, dateFrom, dateTo }), registry_scope: period }
   const { observations, coverage, intake } = payload
   mkdirSync(output, { recursive: true })
   if (intake) writeFileSync(resolve(output, "discovered-targets.json"), `${JSON.stringify(intake, null, 2)}\n`)
   writeFileSync(resolve(output, "discovery.json"), `${JSON.stringify(payload, null, 2)}\n`)
   writeFileSync(resolve(output, "registry-inventory.json"), `${JSON.stringify(payload.inventory, null, 2)}\n`)
-  const summary = ["# Descoberta de pesquisas", "", `Estado: ${payload.status}. Fila: ${payload.queue_status}. Cobertura inventariada: ${coverage.length} geografias. Período de registro: ${dateFrom} a ${dateTo}.`, "", ...observations.map((observation) => `- ${observation.id}: ${observation.status}; ${observation.links.length} links candidatos.`), "", "A lista ainda não comprova atualização dos dados nem ausência de pesquisas.", ""].join("\n")
+  const summary = ["# Descoberta de pesquisas", "", `Estado: ${payload.status}. Fila: ${payload.queue_status}. Cobertura inventariada: ${coverage.length} geografias. Período de registro: ${dateFrom} a ${dateTo}.`, `Escopo: ${period.mode === "rolling_30_days" ? "monitoramento dos últimos 30 dias" : "datas explicitamente solicitadas"}; esta consulta não comprova o inventário anual.`, "", ...observations.map((observation) => `- ${observation.id}: ${observation.status}; ${observation.links.length} links candidatos.`), "", "A lista ainda não comprova atualização dos dados nem ausência de pesquisas.", ""].join("\n")
   writeFileSync(resolve(output, "summary.md"), summary)
   if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `status=${payload.status}\n`)
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary)

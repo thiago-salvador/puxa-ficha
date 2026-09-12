@@ -1,7 +1,7 @@
 import "./helpers/server-only"
 import assert from "node:assert/strict"
 import test from "node:test"
-import { construirCoberturaDescoberta, descobrirPublicacoesPesquisas, LISTAGENS_PESQUISAS, type ObservacaoListagemPesquisas } from "../scripts/lib/pesquisas-monitoramento-descoberta"
+import { construirCoberturaDescoberta, descobrirPublicacoesPesquisas, executarDescobertaIntegrada, resolverPeriodoRegistros, LISTAGENS_PESQUISAS, type ObservacaoListagemPesquisas } from "../scripts/lib/pesquisas-monitoramento-descoberta"
 import { validarEntradasDescobertas } from "../scripts/lib/pesquisas-monitoramento-entrada"
 import { criarOrcamentoDescoberta, descobrirRegistrosPesqele, GEOGRAFIAS_DESCOBERTA, parsePaginaRegistrosPesqele, PESQELE_ORIGIN, type ObservacaoPesqele } from "../scripts/lib/pesquisas-monitoramento-pesqele"
 import type { ClienteHttpMonitoramento } from "../scripts/lib/pesquisas-monitoramento-rede"
@@ -16,6 +16,15 @@ function page(uf = "BR", offset = 0, total = 3, ids?: string[]) {
   return `<partial-response><update id="formPesquisa:tabelaPesquisas"><![CDATA[${rows}${offset === 0 ? `<script>paginator:{rows:2,rowCount:${total},page:0}</script>` : ""}]]></update><update id="javax.faces.ViewState"><![CDATA[PRIVATE-UPDATED]]></update></partial-response>`
 }
 const parserInput = { geography: "BR", dateFrom: "2026-08-28", dateTo: "2026-08-28", offset: 0, observedAt: stamp }
+
+test("janela diária tem 30 dias inclusivos e backfill explícito preserva suas datas", () => {
+  assert.deepEqual(resolverPeriodoRegistros({ now: new Date("2026-09-12T22:30:00Z") }), { mode: "rolling_30_days", date_from: "2026-08-14", date_to: "2026-09-12", annual_inventory_proven: false })
+  assert.deepEqual(resolverPeriodoRegistros({ from: "2026-01-01", to: "2026-09-12" }), { mode: "explicit_dates", date_from: "2026-01-01", date_to: "2026-09-12", annual_inventory_proven: false })
+  assert.equal(resolverPeriodoRegistros({ now: new Date("2026-01-05T00:00:00Z") }).date_from, "2026-01-01")
+  assert.equal(resolverPeriodoRegistros({ to: "2026-06-30" }).date_from, "2026-06-01")
+  assert.throws(() => resolverPeriodoRegistros({ from: "2026-09-13", to: "2026-09-12" }), /invertido/)
+  assert.throws(() => resolverPeriodoRegistros({ to: "2026-02-30" }), /inválido/)
+})
 function simulated(options: { expire?: boolean; alwaysExpire?: boolean; failedUf?: string; total?: number; duplicate?: boolean } = {}) {
   const calls: Array<{ url: string; fields: URLSearchParams; cookie: string | null }> = []
   let expired = false
@@ -49,6 +58,23 @@ test("parser reconhece tabela, valida filtros e não confunde formulário com co
   assert.doesNotMatch(JSON.stringify(first), /PRIVATE|ViewState|cookie/)
   for (const bad of [form, page("AM"), page().replaceAll("28/08/2026", "29/08/2026"), page().replace('data-ri="0"', 'data-ri="10"')]) assert.throws(() => parsePaginaRegistrosPesqele(bad, parserInput))
   assert.throws(() => parsePaginaRegistrosPesqele("<html>nada</html>", parserInput))
+})
+
+test("descoberta integrada propaga orçamento finito dimensionado às três etapas", async () => {
+  const seen: unknown[] = []
+  const result = await executarDescobertaIntegrada({ targets: [], sourceId: "all", validateTargets: true, dateFrom: "2026-01-01", dateTo: "2026-09-12" }, {
+    discover: async (input) => { seen.push(input.budget); return [] },
+    inventory: async (input) => {
+      seen.push(input.budget)
+      return { schema_version: "pesquisas-registros-v1", election: "Eleições Gerais 2026", date_from: input.dateFrom, date_to: input.dateTo, budget: input.budget!.snapshot(), geographies: [] }
+    },
+    intake: async (input) => { seen.push(input.budget); return { targets: [], entries: [], registry: [] } },
+  })
+  assert.equal(seen.length, 3)
+  assert.ok(seen.every((budget) => budget === seen[0]))
+  assert.deepEqual(result.budget.limits, { maxRequests: 400, maxBytes: 120_000_000, maxDurationMs: 360_000, concurrency: 1 })
+  assert.equal(result.status, "partial")
+  assert.equal(result.publication_authorized, false)
 })
 
 test("vazio só é reconhecido em tabela explícita e nunca comprova ausência", () => {
@@ -125,6 +151,33 @@ test("falha robots não entra no cache como autorização", async () => {
   let calls = 0
   const budget = criarOrcamentoDescoberta({ fetchImpl: async () => { calls++; return new Response("unavailable", { status: 500 }) } })
   for (let i = 0; i < 2; i++) await assert.rejects(budget.client([PESQELE_ORIGIN], true).getText(`${PESQELE_ORIGIN}/app/pesquisa/listar.xhtml`), /robots indisponivel.*500/)
+  assert.equal(calls, 6, "cada cliente faz no máximo três tentativas; nenhuma busca conteúdo")
+})
+
+test("robots 500 transitório exige política válida antes do conteúdo e conta tentativas", async () => {
+  let robots = 0
+  let pages = 0
+  const budget = criarOrcamentoDescoberta({ fetchImpl: async (url) => {
+    if (String(url).endsWith("robots.txt")) return ++robots < 3 ? new Response("unavailable", { status: 500 }) : new Response("User-agent: *\nAllow: /")
+    assert.equal(robots, 3)
+    pages++
+    return new Response("public")
+  } })
+  await budget.client([PESQELE_ORIGIN]).getText(`${PESQELE_ORIGIN}/public`)
+  await budget.client([PESQELE_ORIGIN]).getText(`${PESQELE_ORIGIN}/public`)
+  assert.equal(robots, 3)
+  assert.equal(pages, 2)
+  assert.equal(budget.usage.requests, 5)
+})
+
+test("tentativas de robots respeitam orçamento e nunca alcançam conteúdo após esgotar", async () => {
+  let calls = 0
+  const budget = criarOrcamentoDescoberta({ maxRequests: 2, fetchImpl: async (url) => {
+    assert.match(String(url), /robots\.txt$/)
+    calls++
+    return new Response("unavailable", { status: 500 })
+  } })
+  await assert.rejects(budget.client([PESQELE_ORIGIN]).getText(`${PESQELE_ORIGIN}/public`), /limite de chamadas/)
   assert.equal(calls, 2)
 })
 
