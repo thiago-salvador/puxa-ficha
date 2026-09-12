@@ -13,6 +13,10 @@ export interface OfficialCandidacy {
   uf: string | null;
   name: string;
   status: string | null;
+  /** Flags preservadas somente quando verificadas no detalhe oficial. */
+  is_candidato_inapto?: boolean;
+  substituido?: boolean;
+  totalizacao?: string | null;
 }
 
 export interface PublicCandidateSummary {
@@ -59,6 +63,8 @@ const ACTIVE_OFFICIAL_STATUSES = new Set([
   "aguardando julgamento",
   "deferido",
   "deferido com recurso",
+  "deferido em prazo recursal ou com recurso",
+  "indeferido com recurso",
   "indeferido em prazo recursal ou com recurso",
 ]);
 
@@ -72,12 +78,40 @@ const TERMINAL_OFFICIAL_STATUSES = new Set([
 ]);
 
 export function classifyOfficialCandidacy(
-  candidacy: Pick<OfficialCandidacy, "status">,
+  candidacy: Pick<OfficialCandidacy, "status" | "is_candidato_inapto" | "substituido" | "totalizacao">,
 ): OfficialCandidacyState {
+  if (candidacy.is_candidato_inapto === true || candidacy.substituido === true)
+    return "terminal";
   const status = normalize(candidacy.status);
+  // Indeferimento não implica exclusão: totalização pode ainda dizer Concorrendo.
+  if (status === "indeferido" && candidacy.is_candidato_inapto === false)
+    return candidacy.substituido === false && normalize(candidacy.totalizacao) === "concorrendo"
+      ? "active" : "review_required";
   if (ACTIVE_OFFICIAL_STATUSES.has(status)) return "active";
   if (TERMINAL_OFFICIAL_STATUSES.has(status)) return "terminal";
   return "review_required";
+}
+
+/** Compara a situação exibida da ficha, separada do código preservado no CDN. */
+export function comparePublicProfileStatuses(
+  official: readonly OfficialCandidacy[],
+  published: readonly (PublicCandidateSummary & { situacao_candidatura: string | null })[],
+) {
+  const judgment = (value: string | null) => normalize(value).replace(" em prazo recursal ou com recurso", " com recurso");
+  const bySlug = new Map(published.map((profile) => [normalize(profile.slug), profile]));
+  return official.flatMap((row) => {
+    const profile = row.profile_slug ? bySlug.get(normalize(row.profile_slug)) : undefined;
+    if (!profile || (judgment(profile.situacao_candidatura) === judgment(row.status) &&
+        row.is_candidato_inapto !== true && row.substituido !== true)) return [];
+    return [{
+      slug: profile.slug, sq_candidato: row.sq_candidato, office: row.office, uf: row.uf,
+      published_status: profile.situacao_candidatura, official_status: row.status,
+      official_state: classifyOfficialCandidacy(row),
+      is_candidato_inapto: row.is_candidato_inapto ?? null,
+      substituido: row.substituido ?? null,
+      totalizacao: row.totalizacao ?? null,
+    }];
+  });
 }
 
 export function reconcilePublicRoster(
