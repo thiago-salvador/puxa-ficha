@@ -2,6 +2,8 @@ import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
 import { test } from "node:test"
 import { CANAIS_AO_VIVO_APROVADOS, exportarTextoLegendaVtt, lerEvidenciaVideo } from "../scripts/lib/falas-evidencia-video"
+import { CANAL_METAL_TV, FONTE_UFPR, PUBLISHER_METAL_TV, URL_METAL_TV, validarEstruturaVideoGravado } from "../scripts/lib/falas-video-gravado"
+import type { FalaCandidato } from "../src/lib/falas-candidatos"
 
 const url = "https://www.youtube.com/watch?v=rl_NCDHTsH4"
 const channelId: keyof typeof CANAIS_AO_VIVO_APROVADOS = "UCn6Moj1CU0yJi-xZpsKDaZg"
@@ -79,4 +81,100 @@ test("substitui entidades Unicode fora do intervalo sem lançar erro", () => {
 test("texto VTT alterado não coincide com a frase editorial comparada", () => {
   const altered = `WEBVTT\n\n00:00:01.000 --> 00:00:03.000\nSe, de fato, o governo quisesse mudar, ele poderia sim\n`
   assert.notEqual(exportarTextoLegendaVtt(altered), "Se, de fato, o governo quisesse fazer, ele poderia sim")
+})
+
+test("aceita vídeo gravado do MetalTV com data explícita da realização", () => {
+  const url = URL_METAL_TV
+  const description = "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08)."
+  const quote: FalaCandidato = {
+    id: "metal-tv-adriano",
+    candidate_id: "30bca027-016e-4db1-a065-2081a62d71de",
+    candidate_slug: "adriano-funileiro",
+    candidate_name: "Adriano Funileiro",
+    office: "Governador",
+    uf: "PR",
+    quote_text: "PCO, por exemplo, é pelo fim do vestibular.",
+    context: "Educação",
+    event_context: "Ciclo de Entrevistas do SMC",
+    event_type: "sabatina",
+    occurred_on: "2026-08-31",
+    publisher: PUBLISHER_METAL_TV,
+    article_url: url,
+    article_title: "Ciclo de Entrevistas do SMC (Governo do Estado): Adriano Funileiro(PCO) - Tema: Educação",
+    article_published_at: "2026-09-02T15:20:05.000Z",
+    observed_at: "2026-09-12T00:00:00.000Z",
+    source_sha256: "a".repeat(64),
+    attribution: "explicit_name_same_paragraph",
+    transcription: {
+      kind: "automatic",
+      media_url: url,
+      start_seconds: 195,
+      end_seconds: 215,
+      media_published_at: "2026-09-02T15:20:05.000Z",
+      engine: "fixture",
+      transcript_sha256: "b".repeat(64),
+      verification_sha256: "c".repeat(64),
+      audio_sha256: "d".repeat(64),
+      speaker_context: "Adriano Funileiro identificado no episódio",
+      reviewed_context: true,
+    },
+    review_evidence: {
+      identity_excerpt: description,
+      date_excerpt: description,
+      fetched_url: url,
+      method: "codex_source_review",
+      recorded_video: {
+        url,
+        channel_id: CANAL_METAL_TV,
+        published_at: "2026-09-02T15:20:05.000Z",
+        metadata_sha256: "e".repeat(64),
+        frame_sha256: "f".repeat(64),
+        frame_at_seconds: 203,
+        description_excerpt: description,
+        publisher_identity_url: FONTE_UFPR,
+        date_basis: "explicit_recording_date",
+        recorded_on: "2026-08-31",
+        reviewed_context: true,
+      },
+      supporting_sources: [{
+        url: FONTE_UFPR,
+        sha256: "1".repeat(64),
+        excerpts: ["Teixeira esteve presente nesta segunda-feira (31), de modo remoto, na sabatina mediada pelo sindicato dos metalúrgicos de Curitiba."],
+      }],
+    },
+  }
+
+  assert.doesNotThrow(() => validarEstruturaVideoGravado(quote))
+  assert.throws(() => validarEstruturaVideoGravado({
+    ...quote,
+    occurred_on: "2026-09-02",
+  }), /Vídeo gravado sem intervalo ou canal comprovado/)
+  assert.throws(() => validarEstruturaVideoGravado({
+    ...quote,
+    review_evidence: {
+      ...quote.review_evidence!,
+      recorded_video: {
+        ...quote.review_evidence!.recorded_video!,
+        description_excerpt: description.replace("31/08", "30/08"),
+      },
+    },
+  }), /Vídeo gravado sem intervalo ou canal comprovado/)
+  assert.throws(() => validarEstruturaVideoGravado({
+    ...quote,
+    occurred_on: "2026-09-01",
+    review_evidence: {
+      ...quote.review_evidence!,
+      date_excerpt: description.replace("31/08", "01/09"),
+      recorded_video: {
+        ...quote.review_evidence!.recorded_video!,
+        description_excerpt: description.replace("31/08", "01/09"),
+        date_basis: "explicit_recording_date",
+        recorded_on: "2026-09-01",
+      },
+    },
+  }), /Vídeo gravado sem intervalo ou canal comprovado/)
+  assert.throws(() => validarEstruturaVideoGravado({
+    ...quote,
+    candidate_id: "candidate-other",
+  }), /Vídeo gravado sem intervalo ou canal comprovado/)
 })

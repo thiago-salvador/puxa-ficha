@@ -53,8 +53,11 @@ export interface FalaCandidato {
       url: string; channel_id: string; published_at: string
       metadata_sha256: string; frame_sha256: string; frame_at_seconds: number
       description_excerpt: string; publisher_identity_url: string
-      date_basis: "publication_week_description"; reviewed_context: true
-    }
+      reviewed_context: true
+    } & (
+      { date_basis: "publication_week_description"; recorded_on?: never }
+      | { date_basis: "explicit_recording_date"; recorded_on: string }
+    )
     date_range_proof?: { anchor_url: string; anchor_excerpt: string; relationship_excerpt: string; anchor_published_at: string; publication_timestamp: string }
     supporting_sources?: Array<{ url: string; sha256: string; excerpts: string[]; source_format?: "web_text" }>
   }

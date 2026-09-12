@@ -73,6 +73,20 @@ describe("falas recentes com fonte", () => {
     assert.equal(urlAprovada("http://agenciabrasil.ebc.com.br/a", source), null)
     assert.equal(urlAprovada("https://user@agenciabrasil.ebc.com.br/a", source), null)
   })
+  it("restringe a fonte partidária à matéria revisada sem ampliar a aprovação ao domínio", () => {
+    const restricted = SOURCES.find((entry) => entry.id === "dco-danilo-campanha")!
+    const approved = restricted.origin + restricted.articlePath
+    assert.equal(urlAprovada(approved, restricted), approved)
+    assert.equal(urlAprovada(approved + "?utm_source=teste#trecho", restricted), approved)
+    assert.equal(urlAprovada(restricted.origin + "/2026/outra-materia/", restricted), null)
+    assert.equal(urlAprovada(approved + "?outro=1", restricted), null)
+  })
+  it("não permite que canais gravados dispensem a prova do episódio no catálogo", () => {
+    for (const publisher of ["The Papo com André Silva", "MetalTV (SMC)"]) {
+      const quote = { ...extract().quotes[0], publisher }
+      assert.throws(() => validarCatalogo({ ...empty, quotes: [quote] }), /Canal exige evidência do episódio gravado/)
+    }
+  })
   it("deduplica duas matérias e replay sem alterar a primeira evidência", () => {
     const quote = extract().quotes[0]
     const a = consolidarFalas(empty, [quote, { ...quote, article_url: url + "-segunda-fonte" }], now)
