@@ -41,6 +41,7 @@ const eslintConfig = [
       ".vercel/**",
       "out/**",
       "output/**",
+      "reports/falas-monitoramento/**",
       "build/**",
       ".tmp/**",
       "next-env.d.ts",
