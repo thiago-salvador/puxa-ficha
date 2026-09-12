@@ -249,3 +249,50 @@ test("replay 34360285171: cinco candidatas, 19 exceções e parser público em c
   assert.equal(consolidarPropostasAgendadas({ matrix, documents, catalogs: readback }).diff.operations.length, 0)
   console.log(`I1 replay: ${temp}; parser público validou cinco pesquisas candidatas; 19 exceções preservadas.`)
 })
+
+test("curadoria parcial não derruba saúde operacional, mas falha operacional continua fail-closed", () => {
+  const input = fixture()
+  const partial = consolidarPropostasAgendadas({
+    ...input,
+    discovery: { status: "partial", alerts: ["inventário anual não comprovado"] },
+  })
+  assert.equal(partial.status, "blocked")
+  assert.equal(partial.operation_status, "candidates")
+  assert.equal(partial.execution_status, "complete")
+  assert.deepEqual(partial.execution_alerts, [])
+  assert.match(partial.summary, /Execução operacional: complete/)
+
+  const failed = consolidarPropostasAgendadas({
+    ...input,
+    discovery: { status: "partial", alerts: [] },
+    executionAlerts: [{ code: "discovery_source_failure", message: "HTTP 403 sem fallback" }],
+  })
+  assert.equal(failed.status, "blocked")
+  assert.equal(failed.execution_status, "failed")
+  assert.equal(failed.execution_alerts[0]?.code, "discovery_source_failure")
+})
+
+test("deriva falhas operacionais de invariantes e fontes, sem transformar curadoria em transporte", () => {
+  const structural = fixture()
+  structural.documents[0].proposal.items[0].id = "fora-da-matriz-live"
+  const structuralResult = consolidarPropostasAgendadas(structural)
+  assert.equal(structuralResult.execution_status, "failed")
+  assert.ok(structuralResult.execution_alerts.some((alert) => alert.code === "matrix_invalid"))
+
+  const source = fixture()
+  source.documents[0].proposal.items[1].decision = { classification: "incompleto", eligible_for_human_review: false, reason: "source_timeout" }
+  const sourceResult = consolidarPropostasAgendadas(source)
+  assert.equal(sourceResult.status, "blocked")
+  assert.equal(sourceResult.execution_status, "failed")
+  assert.ok(sourceResult.execution_alerts.some((alert) => alert.code === "poll_source_failure"))
+
+  const directSourceFailure = consolidarPropostasAgendadas({ ...fixture(), discovery: { status: "source_failure", alerts: [] } })
+  assert.equal(directSourceFailure.execution_status, "failed")
+  assert.ok(directSourceFailure.execution_alerts.some((alert) => alert.code === "discovery_source_failure"))
+
+  const unknown = fixture()
+  unknown.documents[0].proposal.items[1].decision = { classification: "incompleto", eligible_for_human_review: false, reason: "novo_status_desconhecido" }
+  const unknownResult = consolidarPropostasAgendadas(unknown)
+  assert.equal(unknownResult.execution_status, "failed")
+  assert.match(unknownResult.summary, /alertas operacionais: 1/)
+})

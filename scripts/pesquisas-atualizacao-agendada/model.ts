@@ -127,7 +127,16 @@ export interface DocumentoDiffAgendado {
   operations: OperacaoCatalogoAgendada[]
 }
 
+export type ExecutionAlert = {
+  code: "discovery_source_failure" | "poll_source_failure" | "artifact_missing" | "artifact_invalid" | "matrix_invalid" | "unknown"
+  message: string
+}
+
+const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
+
 export interface ResultadoConsolidacaoAgendada {
+  execution_status: "complete" | "failed"
+  execution_alerts: ExecutionAlert[]
   status: "blocked" | "no_changes" | "ready"
   operation_status: "blocked" | "no_changes" | "candidates"
   global_alerts: string[]
@@ -513,7 +522,8 @@ interface EntradaConsolidacaoAgendada {
   documents: DocumentoColetadoAgendado[]
   catalogs: CatalogosAgendados
   generatedAt?: string
-  discovery?: { status: "partial" | "not_assessed"; alerts: string[] }
+  discovery?: { status: "partial" | "not_assessed" | "source_failure"; alerts: string[] }
+  executionAlerts?: ExecutionAlert[]
 }
 
 // Invalid envelopes cannot safely be attributed to an individual poll.
@@ -522,7 +532,7 @@ export function consolidarPropostasAgendadas(input: EntradaConsolidacaoAgendada)
     return consolidarLoteAgendado(input)
   } catch (error) {
     const alerts = [`quebra de contrato na consolidação: ${error instanceof Error ? error.message : String(error)}`]
-    return resultadoConsolidacao(input, [], [], alerts, [], [])
+    return resultadoConsolidacao(input, [], [], alerts, [], [], [{ code: "artifact_invalid", message: alerts[0] }])
   }
 }
 
@@ -656,7 +666,7 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
     try { applyDocumentedAliases(aliases, operation.proposed) }
     catch (error) { globalAlerts.push(`aliases incompatíveis: ${error instanceof Error ? error.message : String(error)}`) }
   }
-  return resultadoConsolidacao(input, items, operations, globalAlerts, pollAlerts, input.discovery?.alerts ?? [])
+  return resultadoConsolidacao(input, items, operations, globalAlerts, pollAlerts, input.discovery?.alerts ?? [], input.executionAlerts ?? [])
 }
 
 function resultadoConsolidacao(
@@ -666,8 +676,27 @@ function resultadoConsolidacao(
   globalAlerts: string[],
   pollAlerts: ResultadoConsolidacaoAgendada["poll_alerts"],
   discoveryAlerts: string[],
+  executionAlerts: ExecutionAlert[] = [],
 ): ResultadoConsolidacaoAgendada {
   const alerts = [...globalAlerts, ...pollAlerts.map((entry) => `${entry.poll_id}-live: ${entry.reason}`), ...discoveryAlerts]
+  const derivedExecutionAlerts = [...executionAlerts]
+  const addExecution = (code: ExecutionAlert["code"], message: string) => {
+    if (!derivedExecutionAlerts.some((alert) => alert.code === code && alert.message === message)) derivedExecutionAlerts.push({ code, message })
+  }
+  // These are envelope/catalog/matrix invariants. They cannot be explained by
+  // a legitimate editorial gap and must fail the scheduled execution.
+  for (const message of globalAlerts) addExecution("matrix_invalid", message)
+  // A blocked poll is normally curation. Only transport/source failures are
+  // operational failures; extraction and identity gaps remain visible below.
+  for (const alert of pollAlerts) {
+    if (/^(source_timeout|source_unavailable|tse_registry_unavailable|source_failure|unknown)(?:$|[: ])/.test(alert.reason)) {
+      addExecution("poll_source_failure", `${alert.poll_id}: ${alert.reason}`)
+    } else if (!CURATION_REASON.test(alert.reason)) {
+      addExecution("unknown", `${alert.poll_id}: razão operacional não reconhecida`)
+    }
+  }
+  if (input.discovery?.status === "source_failure") addExecution("discovery_source_failure", "descoberta reportou falha de fonte")
+  const executionStatus = derivedExecutionAlerts.length ? "failed" : "complete"
   const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
     status: alerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
     alerts: [...discoveryAlerts],
@@ -685,8 +714,10 @@ function resultadoConsolidacao(
     received: input.documents.length,
     items,
     operations: safeOperations,
-  }) + `\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
+  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${derivedExecutionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
+    execution_status: executionStatus,
+    execution_alerts: derivedExecutionAlerts,
     status,
     operation_status: operationStatus,
     global_alerts: globalAlerts,
