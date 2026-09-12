@@ -1,0 +1,4364 @@
+{
+  "schema_version": "independent-attribution-review-compact-v1",
+  "reviewed_at": "2026-09-12T03:36:30.674853+00:00",
+  "catalog_sha256": "a9a997a5802773cb7643636439ecce9bb1ff2360fbb64ffa832b6187ef42fa30",
+  "roster_sha256": "79618f11ada3c504d306f4145aab7c8c1b91e82bd170ebc8e20df9264d29e4fc",
+  "scope": {
+    "new_quotes": 197,
+    "written_quotes": 193,
+    "automatic_transcripts": 4,
+    "roster_candidates": 208,
+    "legacy_quotes_separate": 9,
+    "coverage_search_reopened": false
+  },
+  "global_status": "pass",
+  "totals": {
+    "pass": 197,
+    "fail": 0,
+    "blocked": 0
+  },
+  "legacy_totals": {
+    "pass": 9,
+    "fail": 0,
+    "blocked": 0
+  },
+  "criteria": [
+    "Todos os 197 registros, sem amostragem; IDs, slugs, nomes, cargos e UFs contra cadastro208.",
+    "Recuperação de originais, frase literal e autor no contexto; títulos nominativos, seções e respostas de entrevista.",
+    "Fala em contexto de candidatura desde16/08/2026; data do evento distinta da publicação; intervalos preservados.",
+    "4 transcrições automáticas: integridade e concordância textual, origem da mídia, metadata, áudio não silencioso, duração e quadros de contexto.",
+    "9 aspas legadas da Band verificadas separadamente, sem elevar cobertura de candidatos."
+  ],
+  "limitations": [
+    "Valida a atribuição pelas fontes; não valida a verdade das afirmações citadas.",
+    "Quatro transcrições permanecem automáticas. Não houve audição humana.",
+    "Intervalos preservados; publicação isolada não virou data do evento.",
+    "Sem mudança em catálogo, aplicação, banco, Git ou estado remoto pelo validador.",
+    "Arquivo compacto não contém textos integrais nem contextos reproduzidos. Provas detalhadas e arquivos citados permanecem no acervo local reports/falas-monitoramento/validacao-autoria.",
+    "Pass significa atribuição confirmada pelas fontes e critérios declarados, não escuta humana nem validação da veracidade das afirmações citadas."
+  ],
+  "transcript_cli": {
+    "commands": [
+      "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-tayna.json",
+      "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-videos.json",
+      "node_modules/.bin/tsx scripts/falas-validar-transcricoes.ts reports/falas-monitoramento/research/transcricoes-marcos.json"
+    ],
+    "verified": 4,
+    "written": false,
+    "note": "Integridade, PCM não silencioso, duração, metadados e concordância textual verificados. Quadros persistidos de Rosi, Luisinho e Marcos abertos. Nenhuma escuta humana independente ou identificação biométrica alegada."
+  },
+  "live_replay": {
+    "verified": 2,
+    "catalog_matches_current_files": true,
+    "path": "reports/falas-monitoramento/validacao-autoria/live-replay-result.json",
+    "sha256": "e026b12301c400f1fca9a79781e11c9a8b581430240c7d4c8e6037527d540023"
+  },
+  "quotes": [
+    {
+      "quote_id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
+      "candidate_slug": "jorginho-mello",
+      "candidate_id": "d62ecbf0-98ab-41f9-8684-f3c7bd46251a",
+      "status": "pass",
+      "source_url": "https://www.4oito.com.br/noticia/sabatina-da-som-maior-jorginho-promete-extensao-da-via-rapida-e-novos-investimentos-no-sul-88753",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b.html",
+          "sha256": "4d43aa688550cca7ae8a7615f5cca8ac7626ddfba40ba0724b65efe693f78457"
+        }
+      ]
+    },
+    {
+      "quote_id": "034cb2097560b00c7cb20cec9ea41d97d6436e69aa5362144ee4ef332eb430e3",
+      "candidate_slug": "lais-chaud",
+      "candidate_id": "05bc8f5b-1419-4fb6-a34b-6e06263bb8f1",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/lais-chaud-abre-serie-de-entrevistas-da-tvbv-com-candidatos-ao-governo-de-sc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/034cb2097560b00c7cb20cec9ea41d97d6436e69aa5362144ee4ef332eb430e3.html",
+          "sha256": "8f4dbaf39fe312833bc82fb0558a6c75272a8140338c9cf37013a36cc4540d50"
+        }
+      ]
+    },
+    {
+      "quote_id": "04967ec3814abde9a436c11ed28137fbab3e9dc1d3fa8d6a3ec51b0ade63f9ec",
+      "candidate_slug": "marcus-sodre",
+      "candidate_id": "5e05e0d3-a64a-41b9-9f9a-bd160f43cec2",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/professor-marcus-sodre-e-entrevistado-pela-tvbv-em-serie-com-candidatos-ao-governo-de-sc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/04967ec3814abde9a436c11ed28137fbab3e9dc1d3fa8d6a3ec51b0ade63f9ec.html",
+          "sha256": "ca8795a7caa3408e0a98c0ce754ffa90da929a7b920630c95a7a52aa5757af45"
+        }
+      ]
+    },
+    {
+      "quote_id": "06b8b7f9ee9231cbac8b2b1d1c78804ff345d8d018450272d1e11e4d6476e798",
+      "candidate_slug": "wilson-grassi-junior",
+      "candidate_id": "a0917c03-3569-46d5-9ce9-14969f64b866",
+      "status": "pass",
+      "source_url": "https://www.terra.com.br/noticias/brasil/politica/grassi-promete-correr-42-km-em-volta-do-tse-todos-os-dias-em-protesto-a-decisao-de-toffoli,8d7af4451e1c503eb04b1fa9d5ce681f0ksmrfvf.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/06b8b7f9ee9231cbac8b2b1d1c78804ff345d8d018450272d1e11e4d6476e798.html",
+          "sha256": "672b205f1a898925732b75f9659414a7710cb915b5354222211aa6d435ad76f8"
+        }
+      ]
+    },
+    {
+      "quote_id": "073621cb80a393c4dae0a74e860b68879ccbfaef9ff0b0fbbf1bfa122313b2a9",
+      "candidate_slug": "cleitinho",
+      "candidate_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-entrevista-cleitinho-azevedo-candidato-ao-governo-de-mg-assista/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/073621cb80a393c4dae0a74e860b68879ccbfaef9ff0b0fbbf1bfa122313b2a9.html",
+          "sha256": "5b0c62a3ed5a42e864c10c9030321891a0f1dfb3083ecec46fc0b9cb52f563ae"
+        }
+      ]
+    },
+    {
+      "quote_id": "085ba98442e53de610f9fc2fb2464e015637c86319a8d14209d77a6c49788c5c",
+      "candidate_slug": "du-pereira",
+      "candidate_id": "4b14917d-cee3-43ad-a175-bac1b37fb7d2",
+      "status": "pass",
+      "source_url": "https://clebertoledo.com.br/politica/ataides-ataca-velha-politica-du-pereira-pede-renovacao-witer-cobra-emprego-e-luiz-carlos-critica-impostos-e-avanco-de-faccoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/witer.web.json",
+          "sha256": "ef52fbec61aa3b5dba77d27eaf39ef9cd50a0dc9ae31ba26f90291f4faa3471e"
+        }
+      ]
+    },
+    {
+      "quote_id": "09d505c611cb2e3f7843002e9e240c4e02090a966760d700dc82d07fe683d47d",
+      "candidate_slug": "ricardo-marques",
+      "candidate_id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
+      "status": "pass",
+      "source_url": "https://fanf1.com.br/2026/09/01/ricardo-responde-a-especulacoes-sobre-campanha-nao-ter-tracionado-e-afirma-se-teve-um-erro-foi-um-erro-estrategico-de-quem-estava-a-frente/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/09d505c611cb2e3f7843002e9e240c4e02090a966760d700dc82d07fe683d47d.html",
+          "sha256": "4810b744776d71cc118c2ab787d5b3c565e02c9b7b2790096d7d77405ed4e038"
+        }
+      ]
+    },
+    {
+      "quote_id": "0b8b9dc0b4f2a69cae8a8df44db054b05fb6ab14898ccb7ff6a9a56161ae60ae",
+      "candidate_slug": "joel-rodrigues",
+      "candidate_id": "63de6cc4-aebc-49f6-88ab-25c93dde0a58",
+      "status": "pass",
+      "source_url": "https://www.meionews.com/politica/eleicoes-2026/joel-rodrigues-evita-declarar-voto-para-presidente-trabalho-com-quem-for-eleito-574058",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/0b8b9dc0b4f2a69cae8a8df44db054b05fb6ab14898ccb7ff6a9a56161ae60ae.html",
+          "sha256": "8a4052a22214067b2dcd7415ec02676cfb8aea71527cb5109d3f9a560cda6bc6"
+        }
+      ]
+    },
+    {
+      "quote_id": "0c01fff0ec7053f5dab79dd26bee0832ca2092875c008558c54e2ca1871c6807",
+      "candidate_slug": "daniel-lemes",
+      "candidate_id": "50b7b4a3-1cf0-43ac-83af-eec9d2a04ebc",
+      "status": "pass",
+      "source_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ms-primeira-pagina.web.json",
+          "sha256": "f2002598cbc09272fca4531ef31f135d0768a5989f001dae92da8f608cf87f2e"
+        }
+      ]
+    },
+    {
+      "quote_id": "10138b83cf62003085e6ab18037496e51b1f816f81181f3ba7a9951a3081a8b4",
+      "candidate_slug": "ben-mendes",
+      "candidate_id": "1787f63a-1d2b-473f-a0bf-69f5d103a560",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/minas-gerais/mg-gabriel-diz-que-ben-mendes-tem-fixacao-nele-e-provoca-se-assuma",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/metropoles-ben-2026-09-03.web.json",
+          "sha256": "781ccaa9254f75630cd31087bad00fb44e686f167089d82f4d6931890619ab2e"
+        }
+      ]
+    },
+    {
+      "quote_id": "1221fcf3b1f138364674cb9c0580f989f7e06bd14c6db016992db50b8060a79c",
+      "candidate_slug": "dario-barbosa",
+      "candidate_id": "2c7f19b6-4f91-420a-83ec-866c83a9e027",
+      "status": "pass",
+      "source_url": "https://blogdodiogenes.com.br/noticia/dario-barbosa-defende-novos-concursos-e-desmilitarizacao-da-seguranca-publica",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/dario.web.json",
+          "sha256": "558baef2413545e77b6935328a78eecfe4489d8359a5b41c236dcd579f4692b4"
+        }
+      ]
+    },
+    {
+      "quote_id": "126fb311ba8b5fa274a200ecfc04d158e87b2e41f56e242007babc8722397dc8",
+      "candidate_slug": "otaviano-pivetta",
+      "candidate_id": "a8a86164-4000-4bbe-ac11-c02b90955ea5",
+      "status": "pass",
+      "source_url": "https://www.tvunica.com.br/politica/pivetta-defende-prevencao-e-oportunidades-para-enfrentar-a-violencia-em-mt/7425",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/otaviano.web.json",
+          "sha256": "cd4a08cf1acfc79066d872c384ec1fe7ec26400058ebb224e7f8795d31352074"
+        }
+      ]
+    },
+    {
+      "quote_id": "12b71967663a52989a29cd3571f5adb8b7ec3659100a994f86dc88bc480a0b49",
+      "candidate_slug": "roberto-cidade",
+      "candidate_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+      "status": "pass",
+      "source_url": "https://www.portalmarcossantos.com.br/2026/09/10/cada-um-responde-e-defende-o-seu-cpf-diz-roberto-cidade-sobre-wilson-lima-em-entrevista-ao-g6/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/12b71967663a52989a29cd3571f5adb8b7ec3659100a994f86dc88bc480a0b49.html",
+          "sha256": "1e46a020e76f5781e22d9a156df52dca0934149937afa6b93e6e5fe48e1ed44e"
+        }
+      ]
+    },
+    {
+      "quote_id": "1371acff7d319a2a8d4973946455b5be474fd5cf94b68357b492d910a9c7f744",
+      "candidate_slug": "eduardo-riedel",
+      "candidate_id": "27f37162-6a32-4e9b-8f41-f30a9e569384",
+      "status": "pass",
+      "source_url": "https://acritica.net/entrevistas/eduardo-riedel-entrevista-reeleicao-governo-ms-2026/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/acritica-riedel-2026-08-25.web.json",
+          "sha256": "1547bfcaed813e9f2d1bd17e75223e74f809ee18f887aeda4657f557601c2e63"
+        }
+      ]
+    },
+    {
+      "quote_id": "15b5373c00772fbd14985cf869e72526a44e4932c15e2d0a307dd4a7f379e108",
+      "candidate_slug": "rejane-oliveira",
+      "candidate_id": "db4e22f8-ce30-4fcd-8799-a73be255d23a",
+      "status": "pass",
+      "source_url": "https://portalarauto.com.br/02-09-2026/candidatos-do-pstu-a-presidencia-e-ao-governo-do-estado-cumprem-agenda-em-santa-cruz/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/15b5373c00772fbd14985cf869e72526a44e4932c15e2d0a307dd4a7f379e108.html",
+          "sha256": "0c0dc34be5acdfbbb217b8d9f911008917c3875bcf872dc2d24e9157bd469a4e"
+        }
+      ]
+    },
+    {
+      "quote_id": "18ec79ad5c68e9e7a78da5908a2dae6e2fcab5ae92857fe00ce88813a2ab3579",
+      "candidate_slug": "alvaro-dias-rn",
+      "candidate_id": "c89aaf3b-a9a7-4a95-856a-5b65df38cc80",
+      "status": "pass",
+      "source_url": "https://blogcarlossantos.com.br/alvaro-diz-que-perda-de-prefeitos-para-allyson-nao-e-importante/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/18ec79ad5c68e9e7a78da5908a2dae6e2fcab5ae92857fe00ce88813a2ab3579.html",
+          "sha256": "8dff7376af88b2696064aeaff9244a0aab2111b3dd40fa491c94cc14aacc5258"
+        }
+      ]
+    },
+    {
+      "quote_id": "1a851325a3912a7ad9f3bcba8f55409b7eeb008e7274d157650d2c512b1b214a",
+      "candidate_slug": "flavio-roscoe",
+      "candidate_id": "4a883517-cf35-49d1-9a80-26857f27687c",
+      "status": "pass",
+      "source_url": "https://www.itatiaia.com.br/politica/eleicoes/principal-gargalo-de-minas-sao-as-estradas-afirma-flavio-roscoe-em-entrevista-a-cnn/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/flavio-itatiaia.web.json",
+          "sha256": "51bfbe16516d6d2ffff3a1a84e1d1af0df7a310e1db586b92b73c8f949d3facd"
+        }
+      ]
+    },
+    {
+      "quote_id": "1b74d14554cb90d137bfdd1f3345a28acd7009b64b9b004865dfd9016405bcf5",
+      "candidate_slug": "vera-lucia-ce",
+      "candidate_id": "2ba79079-e5a4-4275-8cb8-9419bf8db9aa",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/08/31/candidata-diz-que-mulheres-tem-culpa-por-baixa-presenca-na-politica.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/1b74d14554cb90d137bfdd1f3345a28acd7009b64b9b004865dfd9016405bcf5.html",
+          "sha256": "34b8d6aa8f694c55cec7d38d45788df7707c8c5337009828e7a217bab37cc850"
+        }
+      ]
+    },
+    {
+      "quote_id": "1d44c1bb9bb5038d8c6d00651a8c4b0a8e69b0818ef9ae53d9f87b05b672b377",
+      "candidate_slug": "eudo-raffael",
+      "candidate_id": "d0f03594-dad5-41e4-a0d4-6c2de53337f6",
+      "status": "pass",
+      "source_url": "https://contilnetnoticias.com.br/politica/eudo-promete-estado-forte-e-diz-que-acre-precisa-deixar-de-ser-celeiro-da-corrupcao-nacional/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/1d44c1bb9bb5038d8c6d00651a8c4b0a8e69b0818ef9ae53d9f87b05b672b377.html",
+          "sha256": "e1df7d89f5b96e5f6efb8bd4548854bc54cc3035088e9965a645e7112c11ce84"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-b8fa7bda2aebac860c05.html",
+          "sha256": "43b13cb4019422e285bb89da9fbd55aa4c9eab905ad433552188e8835306ed28"
+        }
+      ]
+    },
+    {
+      "quote_id": "1dc32fb5852d77c520ebe935c7939f469dc309699af683fa9a19ec19d4bda7ad",
+      "candidate_slug": "professora-dorinha",
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "status": "pass",
+      "source_url": "https://diariotocantinense.com.br/2026/09/08/exclusivo-dt-dorinha-relembra-quase-10-anos-a-frente-da-educacao-destaca-fundeb-e-promete-revisar-carreira-dos-professores-no-tocantins/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/completa-norte-pres/professora-dorinha.web.json",
+          "sha256": "0a5eb2b2603ae4477e2256dd0591432a3d353db1a6390d9e034db425be530557"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-ec5ca4cae0126dcf978e.html",
+          "sha256": "373f3d3e566b2e56019b10e54926855a8a154c16baa56f56e934602d25ff3434"
+        }
+      ]
+    },
+    {
+      "quote_id": "20d2d7918f795b3c525be25dfe25bdf508adec1e3bb963d76139ab5836707b45",
+      "candidate_slug": "ralf-zimmer",
+      "candidate_id": "f758690b-3960-485d-83c0-5119ca839612",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/ralf-zimmer-participa-da-sabatina-da-tvbv-com-candidatos-ao-governo-de-sc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/20d2d7918f795b3c525be25dfe25bdf508adec1e3bb963d76139ab5836707b45.html",
+          "sha256": "590d1932cc0e7528774be893f9f66150c2a24b45822c7d309c6096e7a04e4c4d"
+        }
+      ]
+    },
+    {
+      "quote_id": "254f567a624a7c40f929aec6fdf269bcbe38fd625cdd8ea13220a40a772eac41",
+      "candidate_slug": "juliana-brizola",
+      "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+      "status": "pass",
+      "source_url": "https://portalarauto.com.br/05-09-2026/politica-vem-servindo-a-interesses-de-muito-poucos-e-tem-que-servir-as-pessoas-diz-juliana-brizola-na-regiao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/254f567a624a7c40f929aec6fdf269bcbe38fd625cdd8ea13220a40a772eac41.html",
+          "sha256": "b0c1a7f65f841004860386e228d8ba0e1f20c4efddb5d924d4f4909400d32fa8"
+        }
+      ]
+    },
+    {
+      "quote_id": "258e5dc57bad8226e22a7fd722297903515b044222b4d601db61fdedce029bf6",
+      "candidate_slug": "danilo-soares",
+      "candidate_id": "cdc3d787-524a-4207-87a6-a31b878620d0",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/01/candidato-a-governador-do-ceara-danilo-soares-se-diz-de-centro.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/258e5dc57bad8226e22a7fd722297903515b044222b4d601db61fdedce029bf6.html",
+          "sha256": "1bea1ca0d7ca3e65acd126298b5c10cb718af16e4eeb298ba3b88a5b66db3e84"
+        }
+      ]
+    },
+    {
+      "quote_id": "25d41aa1caf0f16fba5c43dc7a52455c04f276d831f68e497db8aa2204aedf60",
+      "candidate_slug": "ravenna-castro",
+      "candidate_id": "ae28abd5-e231-405a-938e-85e8c6d64d75",
+      "status": "pass",
+      "source_url": "https://www.gp1.com.br/eleicoes-2026/noticia/2026/9/9/justica-eleitoral-invalida-chapa-do-democrata-ao-governo-do-piaui-631035.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/25d41aa1caf0f16fba5c43dc7a52455c04f276d831f68e497db8aa2204aedf60.html",
+          "sha256": "d89223405c5bdf637c1b66798bc5be95771778d8347e7b434310f2f0c269be3a"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-de01845ae0d36ad7d0c8.html",
+          "sha256": "e266dd5f6744b8aa8a00dc4d1ea04a2a929de9f67aed296fcdb981e5de2b6110"
+        }
+      ]
+    },
+    {
+      "quote_id": "272f92bd4df24e7ccd8c7ab319b308871e7e357d4a407d7f976577ed80e1c603",
+      "candidate_slug": "joao-henrique-catan",
+      "candidate_id": "29dbd8e2-6ebb-4261-bf53-be3b4df63718",
+      "status": "pass",
+      "source_url": "https://acritica.net/entrevistas/joao-henrique-catan-propostas-governo-ms-saude-educacao-infraestrutura/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/acritica-catan-2026-08-31.web.json",
+          "sha256": "ac5afc95069be6244b1b6befe8bdf56fd5d66f7e2d6c029e3c9c41ddf4e57108"
+        }
+      ]
+    },
+    {
+      "quote_id": "2805d974aeff7863f9769409edb482bde2cb8bfeb347dde5db30e7df783ffa2b",
+      "candidate_slug": "arinalda-do-mlb",
+      "candidate_id": "a0d7bc78-cde7-49b1-a006-8d8dcf5449ce",
+      "status": "pass",
+      "source_url": "https://agorarn.com.br/politica/sem-teto-candidata-a-governadora-propoe-que-predios-abandonados-virem-moradias/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2805d974aeff7863f9769409edb482bde2cb8bfeb347dde5db30e7df783ffa2b.html",
+          "sha256": "16a8f8143fa4f9958ae2119099f0f56bf1aa1de1eff094ff3607773024c3ef19"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/arinalda-rl_NCDHTsH4.info.json",
+          "sha256": "efea2c21ce9cbdf61f3031592d6628113a81b6df7eb8e2b9e6b3000f43eee835"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/arinalda-rl_NCDHTsH4.pt.vtt",
+          "sha256": "83b99087078c0a983259c1480e8016485fe768caa389e0ccbf19b0ff5d38ba78"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/arinalda-rl_NCDHTsH4-2103.jpg",
+          "sha256": "f9c49d994365bba4b3a291c5c8cc4c7eb97ec248e495d59e37499fe460598a24"
+        }
+      ]
+    },
+    {
+      "quote_id": "2832766cbabb1912f31b4d2f12e274a21e878435af1cc152a8fb50aaa17c4dee",
+      "candidate_slug": "isael-munduruku",
+      "candidate_id": "242f6bbf-cc71-4fe5-84d5-3142eb88448a",
+      "status": "pass",
+      "source_url": "https://diariodacapital.com/materias/isael-munduruku-aposta-em-movimentos-sociais-para-disputar-governo-do-amazonas/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2832766cbabb1912f31b4d2f12e274a21e878435af1cc152a8fb50aaa17c4dee.html",
+          "sha256": "8943e48f3f8b46ae663f75d77f7ee5c95564b1d9c31f206f3910c3159f81b604"
+        }
+      ]
+    },
+    {
+      "quote_id": "28797023b3a57aa627ecf5e529fd8757f8641f2a6d391d1cb0f3393da11bef06",
+      "candidate_slug": "vicentinho-junior",
+      "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "status": "pass",
+      "source_url": "https://tocantins.jornalopcao.com.br/bastidores/apos-reacao-de-adversarios-sobre-debate-aliados-de-vicentinho-garantem-que-ele-ira-nos-proximos-597648/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/vicentinho-opcao.web.json",
+          "sha256": "0e5de9d2ce14983465fb3e44320c1ce3e9d1175596a355c23b01f8f2c4a107f3"
+        }
+      ]
+    },
+    {
+      "quote_id": "28b6d360102ca8905ba193ada6d8ed8531350d9dd0ca49e9f90d642560cef157",
+      "candidate_slug": "romeu-zema",
+      "candidate_id": "032c77e4-7b2f-4076-a942-186da9f8c62b",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/zema-diz-a-cnn-que-trabalhadores-de-app-devem-ser-formalizados-por-mei/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/28b6d360102ca8905ba193ada6d8ed8531350d9dd0ca49e9f90d642560cef157.html",
+          "sha256": "c0c695d8246eb272bb063c1d1d95ac98aca496032e97b40c0db52197c0765843"
+        }
+      ]
+    },
+    {
+      "quote_id": "2924ba5b798dae7e91bbc8b986c9d5fc7dc61995adc5c1e48dc947a40fb88479",
+      "candidate_slug": "cabo-daciolo",
+      "candidate_id": "b1104f0b-80fb-4082-8356-dfb374e20028",
+      "status": "pass",
+      "source_url": "https://amazonas1.com.br/destino-do-emprestimo-de-r-14-bilhao-ao-governo-do-am-e-questionado-por-candidato/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/persistencia-parent-daciolo.web.json",
+          "sha256": "46280f597b5ea21ac111cd2e0d96351f77d05bf925658f088117d3767fc62dcb"
+        }
+      ]
+    },
+    {
+      "quote_id": "2a575d4ebffcddbddbd4b6775bd4e644b14f7230290a5504014b630165de06a9",
+      "candidate_slug": "robson-raymundo",
+      "candidate_id": "4164ed87-4b75-4f33-9edb-8f12c38086e5",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/distrito-federal/professor-robson-quer-incluir-salario-de-governador-ao-orcamento-do-df",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/persistencia-parent-robson.web.json",
+          "sha256": "d012aa5be772ba086233cb13857a8d484834d2053cf1bf7fb29445dd9f67b20a"
+        }
+      ]
+    },
+    {
+      "quote_id": "2b07da5c328e5f8ef32b9c24dda7cdeddea8d0e01d1816a7f2f5eb521ffaa2dd",
+      "candidate_slug": "clecio-luis",
+      "candidate_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+      "status": "pass",
+      "source_url": "https://selesnafes.com/2026/08/com-vice-economista-clecio-encerra-1a-semana-de-campanha-explorando-empregos-e-o-petroleo/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2b07da5c328e5f8ef32b9c24dda7cdeddea8d0e01d1816a7f2f5eb521ffaa2dd.html",
+          "sha256": "fea55ebf3adb7e5135e99d47139d557e7f6e30063f67f4b9cb8c44bdc5b055c1"
+        }
+      ]
+    },
+    {
+      "quote_id": "2c7f92657426e6bd99b1345f2e3e5495504c635ff2069d8d72d52043e12ed86b",
+      "candidate_slug": "omar-aziz",
+      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "status": "pass",
+      "source_url": "https://www.portalmarcossantos.com.br/2026/09/09/omar-defende-policia-nas-ruas-com-respaldo-para-combater-o-crime/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2c7f92657426e6bd99b1345f2e3e5495504c635ff2069d8d72d52043e12ed86b.html",
+          "sha256": "7e2c7dc43b5e37d5d978edb38d905a93f01ecbc0d7a6adcc0d446fdefd913f76"
+        }
+      ]
+    },
+    {
+      "quote_id": "2db54ab2fc34540c7025ae469296367bbbdb5fbc496430b85921b663bd502276",
+      "candidate_slug": "andre-luis",
+      "candidate_id": "b7a29b07-90d2-44c6-979d-d4d526321865",
+      "status": "pass",
+      "source_url": "https://imirante.com/noticias/sao-luis/amp/2026/09/03/ipolitica-debate-imirante-3-candidatos-expoem-planos-ao-governo",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/andre.web.json",
+          "sha256": "937ada664820ea316948a36624a753bef56f02307504da999bd7a58c91ec6d75"
+        }
+      ]
+    },
+    {
+      "quote_id": "2edc1676e718f560d8ee5763db01d2440bf092622bffe88cae9d067e97599ef0",
+      "candidate_slug": "vera-lucia",
+      "candidate_id": "4e667335-32ef-4015-8ca8-c219eff2a9d6",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/eleicoes/2026/noticia/2026/09/05/candidata-do-pstu-ao-governo-de-sp-vera-lucia-defende-fim-das-escolas-civico-militares-em-entrevista.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2edc1676e718f560d8ee5763db01d2440bf092622bffe88cae9d067e97599ef0.html",
+          "sha256": "91ed790c2978955670c95ff072c7065ac4c272393d0c43818103a93f909b1b7f"
+        }
+      ]
+    },
+    {
+      "quote_id": "308a880fe6db50928e52b935ef3c953da8f2b0b923300a29b50342f0d858d8c6",
+      "candidate_slug": "hana-ghassan",
+      "candidate_id": "13c6d8ac-fee3-49f7-b1cf-c1a80c69fcea",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/09/hana-ghassan-promete-ampliar-saneamento-e-cobrar-metas-de-concessionaria-de-agua-no-para.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/308a880fe6db50928e52b935ef3c953da8f2b0b923300a29b50342f0d858d8c6.html",
+          "sha256": "27eae5ece684ba677946690b1f3a45ce7d31c7557add54be8bec50ed2dabfc5f"
+        }
+      ]
+    },
+    {
+      "quote_id": "31831fd902eb2be2a0c70f43e4898471e3636dffc2ec4a535ed1ce4316ded759",
+      "candidate_slug": "huggo-leonardo",
+      "candidate_id": "91b1c8db-cec7-48aa-9619-c23c9a0e4583",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/09/delegado-huggo-elogia-aceno-de-ciro-a-renan-santos-e-diz-querer-tirar-elmano-do-poder.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/31831fd902eb2be2a0c70f43e4898471e3636dffc2ec4a535ed1ce4316ded759.html",
+          "sha256": "acab1334b3745e4e891e028f2ad896c3bf66a1a9311662235367f6c09254414c"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/huggo-alias-web.json",
+          "sha256": "c50c76db86f3f1e1de59810045674bfe29c690e8aaef717a6cddd3c41c2ed796"
+        }
+      ]
+    },
+    {
+      "quote_id": "3305b94ab2953931c61bda75f4756d622cf4c0a15f264bd41cea73da99b764ed",
+      "candidate_slug": "ciro-gomes-gov-ce",
+      "candidate_id": "2df15aa1-0bd3-4bab-89bf-13d780645e54",
+      "status": "pass",
+      "source_url": "https://diariodonordeste.verdesmares.com.br/pontopoder/ciro-e-elmano-travam-embate-por-regionalizacao-da-saude-e-tratamento-de-cancer-no-debate-pontopoder-1.3790481",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/3305b94ab2953931c61bda75f4756d622cf4c0a15f264bd41cea73da99b764ed.html",
+          "sha256": "881edecafbac42ff87456a76eaf5ff8940572efb726b0e9c7dd3733ff385d6b6"
+        }
+      ]
+    },
+    {
+      "quote_id": "34b9a777f2c022ddcc2725c704e60c046d8a6b6ed1358db243889b1e5e01f1f9",
+      "candidate_slug": "patrus-ananias",
+      "candidate_id": "123bd693-5482-4f0c-8ff3-40617acadba9",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-entrevista-patrus-ananias-candidato-ao-governo-de-mg-assista/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/cnn-patrus-2026-08-26.web.json",
+          "sha256": "4ad0b38532e2d2d115b7c1af13a6fce4e9a798a922eb43c7ff6b0edbb8580385"
+        }
+      ]
+    },
+    {
+      "quote_id": "3519a85f87c5159aa21e5d71d130ddded87b87dfed3fc11cf51d7cefeb357fce",
+      "candidate_slug": "camila-falcao",
+      "candidate_id": "d4f97034-9452-4517-88ba-afb29831adaa",
+      "status": "pass",
+      "source_url": "https://blognossavoz.com.br/camila-falcao-propoe-investimento-de-10-do-pib-estadual-na-educacao-e-governo-mediante-criacao-de-conselhos-populares/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/3519a85f87c5159aa21e5d71d130ddded87b87dfed3fc11cf51d7cefeb357fce.html",
+          "sha256": "bc19c1cec516d1ef2389334c75bcca517c36460b6c98165a01122ccc64cd859e"
+        }
+      ]
+    },
+    {
+      "quote_id": "372802938b800a06130ddfe67e116baea7802c2b2af399ba30c586b949acb0c6",
+      "candidate_slug": "orleans-brandao",
+      "candidate_id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
+      "status": "pass",
+      "source_url": "https://www.suacidade.com/eleicoes/politica/eleicoes-2026-candidato-orleans-brandao-afirma-que-acusacoes-contra-sua-familia",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/orleans.web.json",
+          "sha256": "1012c8fd8b508f53862c53efc8563de8f419dd679e6b3a9f7208213b5665737a"
+        }
+      ]
+    },
+    {
+      "quote_id": "37e9ab9e75a441c01b454991f02934ca8b984e54f859b879b1bb97e3ac53d884",
+      "candidate_slug": "ricardo-ferraco",
+      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "status": "pass",
+      "source_url": "https://www.agazeta.com.br/eleicoes-2026/continuidade-nao-e-continuismo-diz-ricardo-sobre-seguir-gestao-de-casagrande-0826",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/37e9ab9e75a441c01b454991f02934ca8b984e54f859b879b1bb97e3ac53d884.html",
+          "sha256": "d76c66d7b8d277c8d63d8a04e6326d2e66b6ad8c5b78e995c43e4a57d2ecf363"
+        }
+      ]
+    },
+    {
+      "quote_id": "38ea24f1b4f7c9e07058f415823563e75f04af3e9dd615832281b8b81ad1068e",
+      "candidate_slug": "rafael-duda",
+      "candidate_id": "1eb75804-f098-4956-a1df-fd18d16c5f1d",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/mg/minas-gerais/eleicoes/2026/noticia/2026/08/27/rafael-duda-defende-valorizacao-dos-profissionais-da-saude-e-realizacao-de-concursos-publicos-em-mg.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/38ea24f1b4f7c9e07058f415823563e75f04af3e9dd615832281b8b81ad1068e.html",
+          "sha256": "a08d4fb0248a99914f563ef0b693746c417a971da0d260d2c74d914d3ace8cc9"
+        }
+      ]
+    },
+    {
+      "quote_id": "3918a2e74fc165c6881a7c34b05b63dc41bb385867b0d9f30d94ba9644bc9942",
+      "candidate_slug": "joao-rodrigues",
+      "candidate_id": "a5fa816e-9e3b-40ae-8679-71568bed63da",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/joao-rodrigues-fecha-rodada-de-entrevistas-da-tvbv-com-candidatos-ao-governo-de-sc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/3918a2e74fc165c6881a7c34b05b63dc41bb385867b0d9f30d94ba9644bc9942.html",
+          "sha256": "11229030a49a1a81393d8da1858aa86e446747c01fdb4c18ecd5ce88069fa912"
+        }
+      ]
+    },
+    {
+      "quote_id": "3b0febc548ba04209a8c53fd384d00313c1b9c9487a79568b479a1b1b864f633",
+      "candidate_slug": "ricardo-cappelli",
+      "candidate_id": "dd57b875-65c4-44bb-954b-bfac352d7ead",
+      "status": "pass",
+      "source_url": "https://jornaldebrasilia.com.br/brasilia/jbr-entrevista/ricardo-cappelli-e-o-primeiro-sabatinado-do-ibr-eleicoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/3b0febc548ba04209a8c53fd384d00313c1b9c9487a79568b479a1b1b864f633.html",
+          "sha256": "e07f5c11e5305447202509927e71506b250eadbbe9d09fc18db77322e78f357f"
+        }
+      ]
+    },
+    {
+      "quote_id": "3cc3cf1e347b71e656d520077a80b127849508633971bce4ffe090978a1e7508",
+      "candidate_slug": "elizeu-aguiar",
+      "candidate_id": "914d9904-1c6a-47f9-a25f-017138dc1cef",
+      "status": "pass",
+      "source_url": "https://a10mais.com/blogs/eleicoes-2026/a-tv-antena-10-elizeu-aguiar-novo-defende-acoes-de-prevencao-a-criminalidade-e-criacao-de-avenida-no-litoral-para-impulsionar-turismo-45118.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/elizeu.web.json",
+          "sha256": "c6c013c7e6bbc7a6068c17771e52cb686e7fefe623431845d24e4172b290e172"
+        }
+      ]
+    },
+    {
+      "quote_id": "3f721a1d74fe20b94b00727b93345e686bae93fbb7c6d7ac5b03ee72c6a40275",
+      "candidate_slug": "edmilson-costa",
+      "candidate_id": "c7785d1d-b34a-4a0b-b9f2-127584b52d0c",
+      "status": "pass",
+      "source_url": "https://monitormercantil.com.br/conversa-com-edmilson-costa-candidato-a-presidencia-pelo-pcb/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/3f721a1d74fe20b94b00727b93345e686bae93fbb7c6d7ac5b03ee72c6a40275.html",
+          "sha256": "e8c41d77818829c64768f6312a2ed2cea28e1ee49c8e6ea8d2abd2addff6c7b8"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-52defad31ff903efbcb9.html",
+          "sha256": "23522cc9b18b5a95191577188cc0076723703a50ef96c3fbcb60ae8f1a79c68d"
+        }
+      ]
+    },
+    {
+      "quote_id": "3f90d6003fedb40620d4fb844d4bc8a73b2dc9bb42c955c1578dfc78a2171af0",
+      "candidate_slug": "witer-naves",
+      "candidate_id": "3d479acc-24f9-48b0-909d-604819191a1d",
+      "status": "pass",
+      "source_url": "https://clebertoledo.com.br/politica/ataides-ataca-velha-politica-du-pereira-pede-renovacao-witer-cobra-emprego-e-luiz-carlos-critica-impostos-e-avanco-de-faccoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/witer.web.json",
+          "sha256": "ef52fbec61aa3b5dba77d27eaf39ef9cd50a0dc9ae31ba26f90291f4faa3471e"
+        }
+      ]
+    },
+    {
+      "quote_id": "4378e18fd2dae0739cb4a72822687676e5dd36bb3c199236f0490a7d0dbff898",
+      "candidate_slug": "marcelo-brigadeiro",
+      "candidate_id": "e1e7801e-ba65-4175-b9e3-e614e09905d0",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/marcelo-brigadeiro-e-entrevistado-pela-tvbv-na-serie-com-candidatos-ao-governo-de-sc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/marcelo-tvbv.web.json",
+          "sha256": "32c7a2272db4aca243fa3df9c346fd305f3c1a59cf2438f6a59d6ce0a41b474d"
+        }
+      ]
+    },
+    {
+      "quote_id": "446866573b5375674da3de80e332754e59bb251ae9300e239167023e6f170e84",
+      "candidate_slug": "laudicerio-aguiar",
+      "candidate_id": "9f4c6003-20a5-486e-9c7a-90d48d4cdcd0",
+      "status": "pass",
+      "source_url": "https://www.gazetadigital.com.br/editorias/eleicoes-2026/ao-vivo-laudicerio-diz-que-estudou-adversarios-e-promete-focar-em-seguranca-e-na-saude/858118",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste/evidence/laudicerio-gazeta-digital.web.json",
+          "sha256": "99514a900f70eb8a065859108964164d18feebf4dddb0638caa2ed5488e157c0"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste/evidence/laudicerio-folha-identity.web.json",
+          "sha256": "fac91f4cb4f6055f16b3fe69a09a596168b66ac692c4aa3dd39229621c07b185"
+        }
+      ]
+    },
+    {
+      "quote_id": "4c8b76999d07bb8814fb3c48ca6eae0452066ee2cec30a1d7521dcce1dedb717",
+      "candidate_slug": "carlos-machado",
+      "candidate_id": "4415870d-5d02-426a-9d7c-f42091788cee",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/eleicoes/2026/noticia/2026/09/07/candidato-do-pcb-ao-governo-de-sp-carlos-machado-quer-desmilitarizar-a-policia-e-reestatizar-a-sabesp.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/4c8b76999d07bb8814fb3c48ca6eae0452066ee2cec30a1d7521dcce1dedb717.html",
+          "sha256": "5936d62afe0b8e45f595765db477d90ecb6456a249ab98f1f31be2d48dab4c2a"
+        }
+      ]
+    },
+    {
+      "quote_id": "4dfdb9cb83fac4161b78179a5501f0a995150a5c72690fd27f79dcc6c208feae",
+      "candidate_slug": "dr-furlan",
+      "candidate_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
+      "status": "pass",
+      "source_url": "https://www.diariodoamapa.com.br/cadernos/politica/furlan-assume-compromisso-de-construir-ponte-com-para/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/4dfdb9cb83fac4161b78179a5501f0a995150a5c72690fd27f79dcc6c208feae.html",
+          "sha256": "d50f11fddc2fe2e2d5d07cd54fcab807a8e3944a227a6036a0947bf4605215be"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/persistencia-furlan-alias.web.json",
+          "sha256": "521f5ab5bb1ae8687f23f0958ffc14c5e1bc3ad8d79eb7dd23264479d2d29131"
+        }
+      ]
+    },
+    {
+      "quote_id": "5016e186f083bfb5ccc43826c960f4bdcc972501269215c4211ded0a7dc5ad29",
+      "candidate_slug": "eduardo-braide",
+      "candidate_id": "3c885bab-cc3e-4fcf-aa1a-7b9c0ebf38e9",
+      "status": "pass",
+      "source_url": "https://www.gazetacarajas.com/noticia/querem-se-manter-no-poder-braide-sobe-o-tom-contra-orleans-e-carlos-brandao",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/braide-gazeta.web.json",
+          "sha256": "95982a646c128c12eeffef1c6ab9c63505f2e382e14f6d62b1e8eadab9e27666"
+        }
+      ]
+    },
+    {
+      "quote_id": "50a7ecef1268557e8a7c883c259bdfbc008d79193cca50d4324758ae1e0d8ae1",
+      "candidate_slug": "gilberto-vasconcelos",
+      "candidate_id": "5dc271fa-9171-484c-a8b3-f366fed10d10",
+      "status": "pass",
+      "source_url": "https://opoder.ncnews.com.br/2026/08/16/gilberto-vasconcelos-abre-campanha-com-panfletagem-na-zona-leste-de-manaus/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/50a7ecef1268557e8a7c883c259bdfbc008d79193cca50d4324758ae1e0d8ae1.html",
+          "sha256": "587fe9503f667e9c320326936f6435e3e99f5f2d5cc3ac37e830d49cc977d13d"
+        }
+      ]
+    },
+    {
+      "quote_id": "5163d3df6f7b4f2bd7c61557d729193d6832dd474041ce8fa1541a2a73bc89ba",
+      "candidate_slug": "gustavo-henrique",
+      "candidate_id": "f793ff5b-678f-4684-97b7-ce0eaf08c0c3",
+      "status": "pass",
+      "source_url": "https://conectapiaui.com.br/noticia/politica/tv-cidade-verde-promove-debate-com-candidatos-ao-governo-do-piaui-21924.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/5163d3df6f7b4f2bd7c61557d729193d6832dd474041ce8fa1541a2a73bc89ba.html",
+          "sha256": "0d24996ec0c5215a2d93f1f2339e20e6524107e5487aa633b07c5b8cb5a6e96c"
+        }
+      ]
+    },
+    {
+      "quote_id": "520747448c690750f177f1fb2e1dda62dee3f3a8228ee3b6f55bc5ae46b5b534",
+      "candidate_slug": "francisco-jurity",
+      "candidate_id": "f7f53508-4b1c-4138-aca9-242d9653fb8e",
+      "status": "pass",
+      "source_url": "https://www.gp1.com.br/eleicoes-2026/amp/noticia/2026/8/28/professor-jurity-propoe-ferrovia-de-r-45-bilhoes-ligando-bom-jesus-ao-litoral-do-piaui-630136.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/jurity-gp1.web.json",
+          "sha256": "e010d6cb96e92777d60ae3c14d606812cb400ce9da8b948263d78f6ec6498443"
+        },
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/jurity-identidade-gazeta.web.json",
+          "sha256": "ded2d81b012bff08faf1c9c45f87e3c2b79890c4975a8fa5ceff9cd027bfce17"
+        }
+      ]
+    },
+    {
+      "quote_id": "53e6d4e7b9d414429a09755e8ac38c88998287dc0d43400b947556c052885144",
+      "candidate_slug": "emanuel-cacho",
+      "candidate_id": "327ae8c2-292b-4677-a333-c46fe19ae2ec",
+      "status": "pass",
+      "source_url": "https://fanf1.com.br/2026/08/31/cacho-diz-que-igua-e-uma-empresa-feia-e-defende-mudanca-na-concessao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/campanha-identidades/emanuel-cacho.web.json",
+          "sha256": "f60911fa058d36e84c2dc4cf7f2e7472621bb56d6fbcb0fdd7dea57b07d34823"
+        }
+      ]
+    },
+    {
+      "quote_id": "55e88a16bebe28e4ea05ebf868fe4bfd1ebf149a712ed0d6332542c0d7d7ba8d",
+      "candidate_slug": "luiz-franca",
+      "candidate_id": "ce9beb5d-be08-4204-99c9-e94f7276d3e7",
+      "status": "pass",
+      "source_url": "https://www.bemparana.com.br/eleicoes-2026/a-gente-esta-lascado-luiz-franca-promete-reescrever-constituicao-e-ataca-moro/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/luiz-franca.web.json",
+          "sha256": "1728001754bc74337f3f007905586099c33977d9220743c6b4582918393b1199"
+        }
+      ]
+    },
+    {
+      "quote_id": "55ee31fc29c1f3d4ed0da3db3926c47c7745c1fa61c5d330043769ea656eadc3",
+      "candidate_slug": "juliete-pantoja",
+      "candidate_id": "0ef8b4e2-ef3d-4f6a-b284-3f4648c1386b",
+      "status": "pass",
+      "source_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7300655-juliete-pantoja-defende-desmilitarizacao-da-policia-e-reestatizacao-da-cedae.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/55ee31fc29c1f3d4ed0da3db3926c47c7745c1fa61c5d330043769ea656eadc3.html",
+          "sha256": "057eab51b1b0e045043883747df3e15cace498fa3ba6d1e462c8838c423a8ab1"
+        }
+      ]
+    },
+    {
+      "quote_id": "56056d9be1087ba2e7396e523313d64eb483518ac84c2fb87b753645f940f508",
+      "candidate_slug": "lula",
+      "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+      "status": "pass",
+      "source_url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/09/10/no-meu-governo-nao-tem-essa-de-ficar-discutindo-ajuste-fiscal-faco-ajuste-na-pratica-diz-lula.htm",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/lula-web.json",
+          "sha256": "b125bfcd468a2eb67e600e77423b41563e9a17981102bd812037f940495440ac"
+        }
+      ]
+    },
+    {
+      "quote_id": "58a1c039efb99e7dfb469e50666ac43c6a4fbfe06198d84a5ad9c471f20c2f82",
+      "candidate_slug": "well-macedo",
+      "candidate_id": "fc3bec40-5a82-4794-aacf-86fc618751b4",
+      "status": "pass",
+      "source_url": "https://estadodoparaonline.com/veja-como-foi-a-entrevista-de-well-macedo-candidata-do-pstu-ao-governo-do-para-na-tvc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/58a1c039efb99e7dfb469e50666ac43c6a4fbfe06198d84a5ad9c471f20c2f82.html",
+          "sha256": "f2dbab2777ee9521a38b7b37c442994b504c074ab6671ba198e6d74403fe7a64"
+        }
+      ]
+    },
+    {
+      "quote_id": "58c4f8e8cf42ec1785f0a349cb7fc679f3e821f3df29692f9ae02f242b6afed3",
+      "candidate_slug": "felipe-camarao",
+      "candidate_id": "0c0e1b6a-cfa6-4da7-82ab-a8ea90b55200",
+      "status": "pass",
+      "source_url": "https://imirante.com/noticias/sao-luis/2026/09/03/ipolitica-debate-imirante-3-candidatos-expoem-planos-ao-governo",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/58c4f8e8cf42ec1785f0a349cb7fc679f3e821f3df29692f9ae02f242b6afed3.html",
+          "sha256": "0c2c7043881401bcf5cac042ebc4fc9261714bb0b1513760dbc0434fd0532750"
+        }
+      ]
+    },
+    {
+      "quote_id": "5a30a241eeaa8b50aacadf84c17233a63e106cc1c416f125c12e4755c5f2d041",
+      "candidate_slug": "aroldo-felix",
+      "candidate_id": "bf6deed4-4d99-4e45-8e2a-fca877960e35",
+      "status": "pass",
+      "source_url": "https://www.portalsalvadorfm.com.br/politica/sabatina-salvador-fm-aroldo-felix-defende-aumento-do-salario-minimo-e-investimentos-na-saude-e-educacao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/aroldo.web.json",
+          "sha256": "2139af1efab662b047d5462472967704b6feaff8b793d87f8d71c6bdf1e5b464"
+        }
+      ]
+    },
+    {
+      "quote_id": "5ae01de676d6659430d594286857fe96178971c8c7c1e6c448a237aa30913b24",
+      "candidate_slug": "samara-mineiro",
+      "candidate_id": "551e8eff-c129-4692-926e-4fd6d7bafff4",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/distrito-federal/candidata-ao-gdf-samara-mineiro-promete-acabar-com-iges",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/5ae01de676d6659430d594286857fe96178971c8c7c1e6c448a237aa30913b24.html",
+          "sha256": "f40754612383e2839d9d5ce44a762b6b201cf33d7a57813025ff3a6f8d538fd8"
+        }
+      ]
+    },
+    {
+      "quote_id": "5b711d67228768e019cdb4dbbb718ffef68cbfd2316ffd45f6ed024a542fb114",
+      "candidate_slug": "jhc",
+      "candidate_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+      "status": "pass",
+      "source_url": "https://www.bnewsalagoas.com.br/noticias/politica/jhc-propoe-dez-policlinicas-e-criacao-do-banco-da-mulher-empreendedora.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/5b711d67228768e019cdb4dbbb718ffef68cbfd2316ffd45f6ed024a542fb114.html",
+          "sha256": "144a94f5adf4a451a5235d209d207a73d0834f6199559fb65e4c48232374d566"
+        }
+      ]
+    },
+    {
+      "quote_id": "5d3d442874df0717ffb6e8583ca19945803ca4ca3cf6ff7d9c4567e59a729c89",
+      "candidate_slug": "raquel-lyra",
+      "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
+      "status": "pass",
+      "source_url": "https://jc.uol.com.br/politica/2026/09/07/e-claro-que-eu-nao-lidero-o-gabinete-do-odio-diz-raquel-lyra-em-sabatina.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/5d3d442874df0717ffb6e8583ca19945803ca4ca3cf6ff7d9c4567e59a729c89.html",
+          "sha256": "687f54a710030e5af8e1821b0d421efd33cdd1f4ca71a73ad17c6e517fa73515"
+        }
+      ]
+    },
+    {
+      "quote_id": "5d86edf28b4a602fbff98c9096f7c012ad9534328e043ca5a45b4daea09ed6fd",
+      "candidate_slug": "rafael-fonteles",
+      "candidate_id": "57b743d5-db7b-4048-862d-9378a9fff366",
+      "status": "pass",
+      "source_url": "https://www.meionews.com/politica/eleicoes-2026/somos-o-time-mais-preparado-afirma-rafael-fonteles-ao-apresentar-avancos-e-propostas-em-sabatina-573959",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/5d86edf28b4a602fbff98c9096f7c012ad9534328e043ca5a45b4daea09ed6fd.html",
+          "sha256": "7a4ec41ab36306bc1e3dbda1077a6dfb788f04fff99dbec6d345e9702141ae12"
+        }
+      ]
+    },
+    {
+      "quote_id": "60cec4cc25afedda549677a0480a54a408269c8aeb414862085a244fb780ddb8",
+      "candidate_slug": "lucas-ribeiro",
+      "candidate_id": "b8ad0e9c-eb0f-4b37-bdf9-840c5d167016",
+      "status": "pass",
+      "source_url": "https://poderparaiba.com.br/lucas-ribeiro-sabatinas-criticas-efraim-gestao-eleicoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/60cec4cc25afedda549677a0480a54a408269c8aeb414862085a244fb780ddb8.html",
+          "sha256": "335bb48bde74bb3edfa65250a6830ec7f4d1fa65b6f905c23ed41e96d2a7fe76"
+        }
+      ]
+    },
+    {
+      "quote_id": "6300735e12b18c3ff5a49f7ebb74347a479e46d117c6d0502f41e2b353d5433c",
+      "candidate_slug": "sandro-alex",
+      "candidate_id": "00b971a6-5f12-4fa3-961f-5806abfd6fb0",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-brasil-entrevista-sandro-alex-candidato-ao-governo-do-parana/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6300735e12b18c3ff5a49f7ebb74347a479e46d117c6d0502f41e2b353d5433c.html",
+          "sha256": "7e4bd104434a257890f020ae62d4b225686da62f928c6aaba3607d04bf77dda7"
+        }
+      ]
+    },
+    {
+      "quote_id": "6343d00768f69bc90f6083e76d1d2d0253e1b969c1b01f830d899da5f3c3dce6",
+      "candidate_slug": "pablo-marcal",
+      "candidate_id": "6149187f-70b5-4441-8b2a-6022d165959d",
+      "status": "pass",
+      "source_url": "https://www1.folha.uol.com.br/poder/2026/08/pablo-marcal-diz-que-quer-ir-a-debates-e-que-nao-criara-problema-para-flavio-bolsonaro.shtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/completa-norte-pres/pablo-marcal.web.json",
+          "sha256": "19743e905eec3de536637acc4bbb788740b1e1f154326adeafd92eec61e7654f"
+        }
+      ]
+    },
+    {
+      "quote_id": "63a4ea0d9fb8c265af485bbc0f2d994c3bc709c80b79e5bbac96c4b477f03adf",
+      "candidate_slug": "luciana-amorim",
+      "candidate_id": "6f0ad3bd-c9a2-4b7f-b672-8fbe87bc61cc",
+      "status": "pass",
+      "source_url": "https://aredacao.com.br/candidata-ao-governo-de-goias-luciana-amorim-defende-desmilitarizacao-da-pm-e-de-colegios-estaduais/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste-2/evidence/luciana-amorim.web.json",
+          "sha256": "bb2934fa5ff1112342177c1a4b154bbf96fdb197ec89d893190cb21c975a1e91"
+        }
+      ]
+    },
+    {
+      "quote_id": "64b7e2e9db636c293d7e54c011644820beff47708558df7760b786f711f216fb",
+      "candidate_slug": "indira-xavier",
+      "candidate_id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
+      "status": "pass",
+      "source_url": "https://www.em.com.br/politica/2026/09/7495460-candidatos-ao-governo-de-minas-usam-7-de-setembro-para-fazer-campanha.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/64b7e2e9db636c293d7e54c011644820beff47708558df7760b786f711f216fb.html",
+          "sha256": "eeea168bd92abca9c6dc9b14132ab13e5f43dcaa87c34c1869fae28672524c6c"
+        }
+      ]
+    },
+    {
+      "quote_id": "653c303082e579127b9e873cee1dcb4a7fba5b3c21954b180a7df174f9a286bf",
+      "candidate_slug": "rafaell-milas",
+      "candidate_id": "7bb3e87b-c808-48df-8ddd-fd10c9a460f1",
+      "status": "pass",
+      "source_url": "https://www.fatosdematogrosso.com.br/politica/debate-ao-governo-de-mt-tem-mais-acusacao-de-passado-do-que-proposta/15476",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/rafaell-milas.web.json",
+          "sha256": "1bfa937f868c39e1efc0bcd0cfaba7e9fa4d8644af12d3be8650f2ebb58b4156"
+        }
+      ]
+    },
+    {
+      "quote_id": "66c8d2d1daee03b1f40344993daece059affcdb8d807ca96b2734b19fa1b32c0",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_id": "781b5abb-aa49-46a7-bc17-c38f16706ed0",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/nunca-vi-em-campo-de-guerra-policial-com-camera-diz-caiado-a-cnn/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/66c8d2d1daee03b1f40344993daece059affcdb8d807ca96b2734b19fa1b32c0.html",
+          "sha256": "daece6ec046217af9f5e290bb3d513fa1396e6f2b38fafca875981e9ed11b1f0"
+        }
+      ]
+    },
+    {
+      "quote_id": "67cec659a22d142d24f7628c5ca43bb1a3b647eacd40a09ade67df6a5da0489c",
+      "candidate_slug": "alexandre-kalil",
+      "candidate_id": "18d872c1-3e51-4856-9a93-2ca53b35d78f",
+      "status": "pass",
+      "source_url": "https://www.itatiaia.com.br/politica/eleicoes/xingamentos-e-ameaca-de-agressao-a-briga-entre-kalil-e-gabriel-durante-debate-da-band/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/67cec659a22d142d24f7628c5ca43bb1a3b647eacd40a09ade67df6a5da0489c.html",
+          "sha256": "04e85b28c685f201932c010424c0dcaf764a182c8291977cc91e3ac0f8bbe7eb"
+        }
+      ]
+    },
+    {
+      "quote_id": "67fc9da03ec23a87aea559ed969a0830c7f5f8f222783fcb8c90e444123c9daf",
+      "candidate_slug": "luciano-zucco",
+      "candidate_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-zucco-diz-que-nao-ha-interesse-nenhum-em-privatizacao-do-banrisul/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/67fc9da03ec23a87aea559ed969a0830c7f5f8f222783fcb8c90e444123c9daf.html",
+          "sha256": "64f69d72ae7d73277b38dd7cc549c43cb8ffa84d5c659a82e54372c695c4f344"
+        }
+      ]
+    },
+    {
+      "quote_id": "680ebf41d467f2a537c7250c4aaecf44c40afc9e0d7ba72ebef7545f3390c4b3",
+      "candidate_slug": "rafael-demuner",
+      "candidate_id": "18647b7b-471f-4e10-998e-6a4e5fbe3efb",
+      "status": "pass",
+      "source_url": "https://www.agazeta.com.br/es/politica/crise-no-stf-o-que-dizem-os-candidatos-ao-governo-do-es-0926",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/680ebf41d467f2a537c7250c4aaecf44c40afc9e0d7ba72ebef7545f3390c4b3.html",
+          "sha256": "669228995e713bc0b4ddc8b1c86a026e372db014af0aeb54669b9397e92a7f47"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-3b917695f1516688ef0e.html",
+          "sha256": "669228995e713bc0b4ddc8b1c86a026e372db014af0aeb54669b9397e92a7f47"
+        }
+      ]
+    },
+    {
+      "quote_id": "68c39b4d2198b49ca60624e36f2db61becb3cc2189d7f8652915da1693595d32",
+      "candidate_slug": "william-siri",
+      "candidate_id": "de8dc3ea-6427-4b02-babe-a1925547e135",
+      "status": "pass",
+      "source_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7300047-candidatos-passam-por-sabatinas-e-focam-em-seguranca-publica.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/68c39b4d2198b49ca60624e36f2db61becb3cc2189d7f8652915da1693595d32.html",
+          "sha256": "a6aebf974346f382ff04ec4437517eb22338ea5cb8ae7e6d05d31a1374792282"
+        }
+      ]
+    },
+    {
+      "quote_id": "68de558ca54103577429ba4b29fa55b94382ce39418850aafeb1a15095b6eb09",
+      "candidate_slug": "alysson-bezerra",
+      "candidate_id": "71129af6-3c6d-4b0a-9030-b97984fc1e0b",
+      "status": "pass",
+      "source_url": "https://mossorohoje.com.br/noticias/57140-allyson-bezerra-mostra-propostas-e-expoe-processos-dos-adversarios-alvaro-e-cadu",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/68de558ca54103577429ba4b29fa55b94382ce39418850aafeb1a15095b6eb09.html",
+          "sha256": "376bf965462e1b676c4d4e3d6ebb253e4e6f7bc0701c2c60e7cefba5ae4f1130"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-d9d12bcb463e64d9a818.html",
+          "sha256": "4d5ed69d489320d784ca01e97a03d797225d54cc34d9061e44d0461124aaf697"
+        }
+      ]
+    },
+    {
+      "quote_id": "6914cfd4f01ed2320ea83aa6254b9b7e7ed749afa7bca9e50830a6e25a21ffdd",
+      "candidate_slug": "mateus-simoes",
+      "candidate_id": "6e37f628-6335-4009-8e49-80aa421650a0",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/nao-acredito-em-ruptura-completa-com-gestao-de-zema-diz-simoes-a-cnn/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/cnn-mateus-2026-08-20.web.json",
+          "sha256": "4f9fefaeac6ae3ad1a177736dccb27d3edb52210d869c120e3f9325c515333a8"
+        }
+      ]
+    },
+    {
+      "quote_id": "6a071385b99fe0630d887298dd3a5d8c667216f129d5b7105214f25ff832ed74",
+      "candidate_slug": "douglas-ruas",
+      "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-ruas-cita-relacao-institucional-com-castro-e-territorios-retomados/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6a071385b99fe0630d887298dd3a5d8c667216f129d5b7105214f25ff832ed74.html",
+          "sha256": "16cad308760b0cb5514a580385c1ed1a88da9c9650fb5cd2b0aa25488c7584be"
+        }
+      ]
+    },
+    {
+      "quote_id": "6a91e40a1c179d7b02ce5532594b5773010e3e619a302a158e292e7cdc3461a6",
+      "candidate_slug": "ariel-capistrano",
+      "candidate_id": "8e51c741-2a90-4e7e-9945-08045bdc8a59",
+      "status": "pass",
+      "source_url": "https://www.portalsalvadorfm.com.br/politica/sabatina-salvador-fm-ariel-capistrano-promete-priorizar-emprego-para-jovens-e-critica-situacao-da-educacao-e-do-transporte-na-bahia/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6a91e40a1c179d7b02ce5532594b5773010e3e619a302a158e292e7cdc3461a6.html",
+          "sha256": "df5063c0443e835b67d1be6b2e696bc1d6f0c78d2b599f5fc848471e6fb8139e"
+        }
+      ]
+    },
+    {
+      "quote_id": "6c82ba8194d91075f562ed7b0bfc5499dfd0daf03b8b69369e11d6281e44be34",
+      "candidate_slug": "fabio-mitidieri",
+      "candidate_id": "a6ef9480-a8a3-459f-b545-a52bfe1224b1",
+      "status": "pass",
+      "source_url": "https://fanf1.com.br/2026/09/04/fabio-mitidieri-apresenta-investimentos-na-saude-e-projeta-acoes-para-os-proximos-anos-e-uma-prioridade-da-nossa-gestao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6c82ba8194d91075f562ed7b0bfc5499dfd0daf03b8b69369e11d6281e44be34.html",
+          "sha256": "8b8edb87041cc8141fa46e944cde720840dcb8e78f7404dfe8cfaf25906b1731"
+        }
+      ]
+    },
+    {
+      "quote_id": "6d350a3e29bf92545b4663a62188b5459edc9a3a85e0cfa7db6be0a25a6de582",
+      "candidate_slug": "roberio-paulino",
+      "candidate_id": "7ee50d01-a46b-4a98-8fcb-fe3936659022",
+      "status": "pass",
+      "source_url": "https://www.blogdodiogenes.com.br/noticia/roberio-paulino-propoe-acabar-com-o-analfabetismo-em-dois-anos",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/roberio.web.json",
+          "sha256": "e499995096c42ce3103fb3e887948a17c20d1622c8188eab187493ad2665695f"
+        }
+      ]
+    },
+    {
+      "quote_id": "6e87e9599e433fa91901a7e3ba7959e3a17b88d738652b2438070db74f3a654b",
+      "candidate_slug": "requiao-filho",
+      "candidate_id": "36ec7b14-9da3-4324-820d-6318ce535d01",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-entrevista-requiao-filho-candidato-ao-governo-do-pr/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6e87e9599e433fa91901a7e3ba7959e3a17b88d738652b2438070db74f3a654b.html",
+          "sha256": "c68fcd3f213458e89dcf09bcb34d37b2735ad2ad111226fab2fcaff685c96621"
+        }
+      ]
+    },
+    {
+      "quote_id": "6f50289b92ecda579d7f6f04f7cc0aad509ed315b0b0235018f8345fd6d1f7cc",
+      "candidate_slug": "cesar-pontes",
+      "candidate_id": "c0d3eab9-ea20-4ec0-a910-580c944040dc",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/rs/rio-grande-do-sul/eleicoes/2026/noticia/2026/09/10/eleicoes-2026-no-rs-cesar-pontes-diz-educacao-nao-deve-ser-transformado-em-negocio-que-vise-lucro.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/6f50289b92ecda579d7f6f04f7cc0aad509ed315b0b0235018f8345fd6d1f7cc.html",
+          "sha256": "9ce9a6d0dc84b408fe765f78102d778d079cb350aa775615f57359df4ca5fc28"
+        }
+      ]
+    },
+    {
+      "quote_id": "71454cd26a707b1eae5874283e4fd11c62f1dba56692463f02d8e0db802ca623",
+      "candidate_slug": "eduardo-paes",
+      "candidate_id": "242af65c-dae1-447c-b4b0-c26095f7384d",
+      "status": "pass",
+      "source_url": "https://sbtnews.sbt.com.br/noticia/eleicoes/paes-promete-unificar-comando-da-seguranca-no-rio",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/71454cd26a707b1eae5874283e4fd11c62f1dba56692463f02d8e0db802ca623.html",
+          "sha256": "416b3383bdf5b508acc136085e2c1ad1e4bf044ac08cb69582e4b37c68738379"
+        }
+      ]
+    },
+    {
+      "quote_id": "71c80c726f21d45b72279f76ecf50a67ad774df7decc0f9a47c1f8ff78e98151",
+      "candidate_slug": "ivan-moraes",
+      "candidate_id": "8a59da03-a2ad-4385-9516-eb738f970df0",
+      "status": "pass",
+      "source_url": "https://tribunaonline.com.br/pernambuco/eleicoes2026/ivan-moraes-detalha-propostas-para-governo-de-pernambuco-em-sabatina-da-tribuna-330208",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/71c80c726f21d45b72279f76ecf50a67ad774df7decc0f9a47c1f8ff78e98151.html",
+          "sha256": "f011e9d8716d1aca5d1bdb17f532495d98e310c5b3c057660c18e741b43f77ae"
+        }
+      ]
+    },
+    {
+      "quote_id": "71d03a7039b2825aa48402aee2f0e20dd4583eb186cd82e9df57ef51a10ae7a2",
+      "candidate_slug": "policial-edjane",
+      "candidate_id": "851a0be1-4c2b-4d95-b483-4c67a51860d8",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/eleicoes/2026/noticia/2026/09/04/candidata-do-agir-ao-governo-de-sp-edjane-lima-defende-seguranca-e-valorizacao-de-policiais-em-entrevista.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/71d03a7039b2825aa48402aee2f0e20dd4583eb186cd82e9df57ef51a10ae7a2.html",
+          "sha256": "83568e9c22944cddc04eb304a2d02c1f81c2a5914f05c48a502f6d9ddd6a95ad"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/edjane-identidade.web.json",
+          "sha256": "7ac5c43d1b9f80b5c5db35f2ac61dc3fec1e6b21c66214eedf3decff62ad66cd"
+        }
+      ]
+    },
+    {
+      "quote_id": "739c6b66e766516332949f150b8daf46b9ce5803001d342976eaad9b81955d05",
+      "candidate_slug": "pazolini",
+      "candidate_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+      "status": "pass",
+      "source_url": "https://www.agazeta.com.br/eleicoes-2026/pazolini-afirma-que-flavio-bolsonaro-tem-mostrado-um-debate-nacional-muito-equilibrado-0926",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/739c6b66e766516332949f150b8daf46b9ce5803001d342976eaad9b81955d05.html",
+          "sha256": "453cccbcb602aad006210b72e41b88721304efb3b9e09dba630574d3c16a3d65"
+        }
+      ]
+    },
+    {
+      "quote_id": "739e4128814372fa18bee2bb51e7dcd6c38a990e89e702b9b63077166047a7e0",
+      "candidate_slug": "priscila-voigt",
+      "candidate_id": "25b8bb92-4c1e-43c0-a4eb-d3c65ac5867b",
+      "status": "pass",
+      "source_url": "https://ocorreio.com.br/entrevista-priscila-voigt-propoe-auditoria-da-divida-reestatizacoes-e-ampliacao-do-servico-publico-no-rs/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/739e4128814372fa18bee2bb51e7dcd6c38a990e89e702b9b63077166047a7e0.html",
+          "sha256": "bc871a548232d48bcc9db84e3404f543aa9b2f64604a697786533cc4419795fb"
+        }
+      ]
+    },
+    {
+      "quote_id": "74577c9a3099b9f3c06234af0cc7401fd995323c3ba6e8c68b93f8e0ddcbfb47",
+      "candidate_slug": "serley-leal",
+      "candidate_id": "38149b1c-1a82-482f-bb46-a9c7fea3afa6",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/03/serley-leal-propoe-100-mil-frentes-de-trabalho.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/74577c9a3099b9f3c06234af0cc7401fd995323c3ba6e8c68b93f8e0ddcbfb47.html",
+          "sha256": "9e1683db1b4bb5ba3b3c862e01a10c16cef58fe172f4f7ad8e6b51855c58f774"
+        }
+      ]
+    },
+    {
+      "quote_id": "74a5f7b0fd23f7c0fc2bea8f1cded796826f56260d8bf399bd7f8ac62e4b7334",
+      "candidate_slug": "paula-belmonte",
+      "candidate_id": "17472d91-6cfc-453d-8481-4fac47d07f36",
+      "status": "pass",
+      "source_url": "https://www.correiobraziliense.com.br/cidades-df/2026/09/7496479-quando-eu-voltar-vou-construir-o-hospital-que-voce-nao-soube-diz-arruda-para-celina-leao.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/74a5f7b0fd23f7c0fc2bea8f1cded796826f56260d8bf399bd7f8ac62e4b7334.html",
+          "sha256": "93f91bca801976cd93be84b9639e4aa7fefd420bcdc39d3537f1bd2e2bf63b90"
+        }
+      ]
+    },
+    {
+      "quote_id": "7529e08727838f4289091b34353697a06f02b7cfa6da2ab6dec92971cfad5cf2",
+      "candidate_slug": "marcelo-maranata",
+      "candidate_id": "59582609-1f9b-4363-9e36-08fd6d07b6c4",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-entrevista-marcelo-marananta/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/7529e08727838f4289091b34353697a06f02b7cfa6da2ab6dec92971cfad5cf2.html",
+          "sha256": "a786115d3618afce25aa55984b8313ac4d3e1224b4a656493166530e73bd695d"
+        }
+      ]
+    },
+    {
+      "quote_id": "7579d64d35d052a2302b0433cb1a1dd04d4f4f5aecad91f386ae56e10ff0d72c",
+      "candidate_slug": "pedro-coutinho",
+      "candidate_id": "2b7f22b1-87f6-4e55-a6c2-3f2ab37d08e5",
+      "status": "pass",
+      "source_url": "https://www.clickpb.com.br/eleicoes/pedro-coutinho-proposta-crime.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/7579d64d35d052a2302b0433cb1a1dd04d4f4f5aecad91f386ae56e10ff0d72c.html",
+          "sha256": "169e646fe5e86dde11cf6ae9f6395713ff30887061caf881f075ee700627ce8e"
+        }
+      ]
+    },
+    {
+      "quote_id": "7588e5c61cb27ce27159e18de29dd0902150a0bb2347570e647778fb21e329aa",
+      "candidate_slug": "roberto-rocha",
+      "candidate_id": "9cd97304-c1bf-4b54-8834-46770be3c5f1",
+      "status": "pass",
+      "source_url": "https://imirante.com/noticias/sao-luis/2026/08/20/ipolitica-sabatina-roberto-rocha-defende-privatizacao-da-caema",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/roberto-imirante.web.json",
+          "sha256": "5ada04a681c8dcec15c5a43382d95468b6f8a223e7ce18f0b7969bb4f13f11ca"
+        }
+      ]
+    },
+    {
+      "quote_id": "75a3f3aee95f0f7f05febefc4d14d7a3281bfb2ae8bd8726cface4059356f3a1",
+      "candidate_slug": "jeronimo",
+      "candidate_id": "db711ee0-fcfa-47f7-85d2-a3686956cf06",
+      "status": "pass",
+      "source_url": "https://www.politicalivre.com.br/2026/09/jeronimo-defende-atuacao-das-instituicoes-e-preciso-que-a-justica-se-debruce-e-apure-cada-fato",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/75a3f3aee95f0f7f05febefc4d14d7a3281bfb2ae8bd8726cface4059356f3a1.html",
+          "sha256": "4b02ccd144ed86a25834a2b29c32926f5167a34eff6ee59632031e72269b3146"
+        }
+      ]
+    },
+    {
+      "quote_id": "766a45ccea7d46f143b57e2d4e1f91956d88f58cd9f2710efcdf2b18af05cf02",
+      "candidate_slug": "delcidio-amaral",
+      "candidate_id": "3c94a516-0481-45a5-a13e-ab082885cf65",
+      "status": "pass",
+      "source_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ms-primeira-pagina.web.json",
+          "sha256": "f2002598cbc09272fca4531ef31f135d0768a5989f001dae92da8f608cf87f2e"
+        }
+      ]
+    },
+    {
+      "quote_id": "76c15c6b392ca1763c135fbdaa44afdcad80af82b1cd6e3615c19989bfcf923e",
+      "candidate_slug": "sergio-moro-gov-pr",
+      "candidate_id": "6025cfb5-d1a7-4ad0-baa7-c131b381e8fa",
+      "status": "pass",
+      "source_url": "https://jovempan.com.br/politica/moro-diz-que-cobranca-sobre-ida-a-debates-e-indevida-minha-estrategia-do-momento/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/76c15c6b392ca1763c135fbdaa44afdcad80af82b1cd6e3615c19989bfcf923e.html",
+          "sha256": "ecbaf86131d6ba8de24a2f8f09628d86be9e1c079bbb1f8b3cc7b1482554999d"
+        }
+      ]
+    },
+    {
+      "quote_id": "771df0a72a9975324284775edf1285754b012621fd84c7ae1c4fb530919a99cc",
+      "candidate_slug": "gal-leite",
+      "candidate_id": "aff6b39f-3513-4597-985f-54c431ac8bfc",
+      "status": "pass",
+      "source_url": "https://estadodoparaonline.com/saiba-como-foi-a-entrevista-de-gal-leite-candidata-da-up-ao-governo-do-para-para-a-tvc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/771df0a72a9975324284775edf1285754b012621fd84c7ae1c4fb530919a99cc.html",
+          "sha256": "354446e79bc6ecd7e6121d23e1f4e0b6e020d3301943e4eb75a97c00dcfb7b23"
+        }
+      ]
+    },
+    {
+      "quote_id": "79b6e95dee3d4f7496be4ce5527da45e93d7df55357bb566fb37f5f56456c05e",
+      "candidate_slug": "soldado-sampaio",
+      "candidate_id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
+      "status": "pass",
+      "source_url": "https://portal.roraimaemfoco.com/politica/resultados-em-100-dias-comprovam-seu-compromisso-para-governar-roraima-diz-soldado-sampaio",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/79b6e95dee3d4f7496be4ce5527da45e93d7df55357bb566fb37f5f56456c05e.html",
+          "sha256": "0209c65157cda380fdf5e13662fc4255e5ec72a428c6bdcbc20a3e4cecc42097"
+        }
+      ]
+    },
+    {
+      "quote_id": "7aea09b1ff18cd2cfee4a469c6011532c1438009d9b8c0d5816b1cbac5ac45a8",
+      "candidate_slug": "clariana-barao",
+      "candidate_id": "d1486424-4a7f-4ff1-af06-1665ebe99a31",
+      "status": "pass",
+      "source_url": "https://www.correiobraziliense.com.br/politica/2026/08/7487088-clariana-barao-promete-politicas-para-idosos-e-defende-combate-a-corrupcao.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/clariana.web.json",
+          "sha256": "0fcd1f870a54fe12ca5bf384615a43ff2d941bbf47c95f2467871bcd2e97c72a"
+        }
+      ]
+    },
+    {
+      "quote_id": "7bf9c989b93b408fdd4563a78d92f35571937a10a6c9e373b3d10c91703d0d74",
+      "candidate_slug": "expedito-netto",
+      "candidate_id": "5b63badb-bf2b-4535-bead-b1e85ad6c609",
+      "status": "pass",
+      "source_url": "https://informarondonia.com.br/2026/09/02/debate-da-rema-tv-expoe-virtudes-fragilidades-e-diferencas-entre-os-candidatos-ao-governo-de-rondonia/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/7bf9c989b93b408fdd4563a78d92f35571937a10a6c9e373b3d10c91703d0d74.html",
+          "sha256": "326f8976d328b8c135530cb4416729a4e865e80613d71761f1fc49ada5c9ffe6"
+        }
+      ]
+    },
+    {
+      "quote_id": "7dfeb4b9c47f7e903c925379cd6b52a1aafd7efffb990ce086f29c72aa931e5f",
+      "candidate_slug": "yuri-ezequiel",
+      "candidate_id": "de4fbc20-461f-4043-944f-df5fa6210ae3",
+      "status": "pass",
+      "source_url": "https://podeconversar.com.br/2026/09/06/yuri-ezequiel-defende-reindustrializacao-servicos-publicos-e-manutencao-da-cagepa-durante-entrevista-ao-pode-conversar/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/7dfeb4b9c47f7e903c925379cd6b52a1aafd7efffb990ce086f29c72aa931e5f.html",
+          "sha256": "64fb4f4e3ee9c61b0d9c360248cad490b2ac80045a500bc58efbd63631f1b03e"
+        }
+      ]
+    },
+    {
+      "quote_id": "7e0820a70507396cf341760e56b39199e321c8f5037342347343e260feb6ae29",
+      "candidate_slug": "lucien-rezende",
+      "candidate_id": "9f8bdf27-8e4e-4f67-ae08-1519fc941412",
+      "status": "pass",
+      "source_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ms-primeira-pagina.web.json",
+          "sha256": "f2002598cbc09272fca4531ef31f135d0768a5989f001dae92da8f608cf87f2e"
+        }
+      ]
+    },
+    {
+      "quote_id": "7f065a1c41e20e1704ab1d495e65f53cbd50292d4bd1b07390e23fc8a54b3eaa",
+      "candidate_slug": "luis-cesar-bueno",
+      "candidate_id": "a342036a-c436-400a-bd14-edefacad8d75",
+      "status": "pass",
+      "source_url": "https://tvsdnoticias.com.br/luis-cesar-bueno-defende-apoio-de-lula-e-promete-priorizar-saude-em-entrevista-a-tv-serra-dourada/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/7f065a1c41e20e1704ab1d495e65f53cbd50292d4bd1b07390e23fc8a54b3eaa.html",
+          "sha256": "3911400ef1b510da93c2a157aa42ed6d15893296dbf9858397f5638f054b762f"
+        }
+      ]
+    },
+    {
+      "quote_id": "818ba8cd8513c9e0b1772141e80d19128ff1d0e3075e19d316c756a753027df3",
+      "candidate_slug": "rui-costa-pimenta",
+      "candidate_id": "1eec3569-c202-4f16-a60a-d67125c51f95",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/colunas/grande-angular/comunista-candidato-a-presidencia-diz-nao-confiar-nas-urnas-inauditavel",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/818ba8cd8513c9e0b1772141e80d19128ff1d0e3075e19d316c756a753027df3.html",
+          "sha256": "ac95ff024edb0cd69f24dd9758749d59a2b272d15c169d07bf54284d9500710e"
+        }
+      ]
+    },
+    {
+      "quote_id": "844562217d47bc2ce20754d5f53c1fb2ea445e54dfd9574c515009a362735e8a",
+      "candidate_slug": "thor-dantas",
+      "candidate_id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
+      "status": "pass",
+      "source_url": "https://portalacre.com.br/2026/08/thor-dantas-e-o-terceiro-candidato-ao-governo-a-participar-da-sabatina-do-portal-acre/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/844562217d47bc2ce20754d5f53c1fb2ea445e54dfd9574c515009a362735e8a.html",
+          "sha256": "9167faf393c0e7e813a2e19e9175ccc58305c1624b996e170bb28a4342db2be7"
+        }
+      ]
+    },
+    {
+      "quote_id": "8564276367a6e1d7d8d67fd8ee588b89697654725af65adde6347e6bb75a0cfe",
+      "candidate_slug": "celina-leao",
+      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "status": "pass",
+      "source_url": "https://jornaldebrasilia.com.br/jbr-tv/celina-leao-e-a-segunda-sabatinada-no-jbr-eleicoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/8564276367a6e1d7d8d67fd8ee588b89697654725af65adde6347e6bb75a0cfe.html",
+          "sha256": "683b8b4c4b691c4745c10f1fbe65ca2c8343075aa6599e1b2a7ca2c5d75cd0c0"
+        }
+      ]
+    },
+    {
+      "quote_id": "858a7750ddcf37a8a0f36d40b339e4a22b86e080a91fc9a8b33e35cd9cb28fc8",
+      "candidate_slug": "cyro-garcia",
+      "candidate_id": "6991016f-b50a-4984-b60a-40521bcdf6ee",
+      "status": "pass",
+      "source_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7300687-cyro-garcia-defende-fim-das-oss-na-saude-e-estatizacao-de-hospitais-privados.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/858a7750ddcf37a8a0f36d40b339e4a22b86e080a91fc9a8b33e35cd9cb28fc8.html",
+          "sha256": "aec1447f69d2d10c440c3ec33d38a203aca412c9bfc3d8310121db8154dc4db9"
+        }
+      ]
+    },
+    {
+      "quote_id": "85ff39cfa9abcb8abfd153c97f91968eafabda62ec54cd0038b827e8f933acb9",
+      "candidate_slug": "samara-martins",
+      "candidate_id": "b3988a51-2776-4172-a73b-e326365b0c04",
+      "status": "pass",
+      "source_url": "https://www.correiobraziliense.com.br/politica/2026/09/7496193-samara-martins-propoe-aumento-de-100-do-salario-minimo.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/85ff39cfa9abcb8abfd153c97f91968eafabda62ec54cd0038b827e8f933acb9.html",
+          "sha256": "fbe8456cc91b0fb7e0fdb8ff65e7c4d02e1511ed4689ce5f71c1a03042e09079"
+        }
+      ]
+    },
+    {
+      "quote_id": "86bb149195eec1ee73c23cdbd461426488dea8315c3dc0a663a0f20ff354568f",
+      "candidate_slug": "fabio-trad",
+      "candidate_id": "e10f4186-0132-48f3-be4c-5397642eecd4",
+      "status": "pass",
+      "source_url": "https://www.msagoraurgentenews.com.br/noticia/2927/campo-grande/politica/em-sabatina-fabio-trad-apresenta-propostas-para-o-agro-inovacao-conflitos-fundiarios-e-gestao-publica.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/86bb149195eec1ee73c23cdbd461426488dea8315c3dc0a663a0f20ff354568f.html",
+          "sha256": "02596a3e1fb86708ba837a1cb37b5e4f4b75b6091c73f3d1d0555228e979ca8a"
+        }
+      ]
+    },
+    {
+      "quote_id": "8740e8411b0e704712c58c863b102ec4d086d0d593d46f99859414b056b24f0c",
+      "candidate_slug": "leandro-grass",
+      "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+      "status": "pass",
+      "source_url": "https://www.correiodamanha.com.br/politica/2026/09/318150-leandro-grass-promete-fortalecer-educacao-e-ampliar-escolas-integrais-no-df.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/8740e8411b0e704712c58c863b102ec4d086d0d593d46f99859414b056b24f0c.html",
+          "sha256": "cf1837baf700bb0cd1dd742b691d92df25623334d2908dec5f9def108c96cef9"
+        }
+      ]
+    },
+    {
+      "quote_id": "880360e838ec1e48f1c47ee71d2f406a035b94172ea5b5da29c4ac16ad0d33b2",
+      "candidate_slug": "bruno-pedreiro-do-pco",
+      "candidate_id": "e836a676-5cb5-40d2-90a5-0251cf20977a",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/bruno-dias-do-pco-apresenta-propostas-para-santa-catarina-em-entrevista-a-tvbv/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/880360e838ec1e48f1c47ee71d2f406a035b94172ea5b5da29c4ac16ad0d33b2.html",
+          "sha256": "c8f79e78d4954441ac2014503a24acf87a149a651ef966c4983edd646ad0aa9e"
+        }
+      ]
+    },
+    {
+      "quote_id": "8adcc0da1d6f487d5e8d9f9161147961a801cd5155e3c3a1d4138b7b784290dc",
+      "candidate_slug": "gabriel-souza",
+      "candidate_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-gabriel-ve-dialogo-do-rs-com-qualquer-um-que-seja-o-presidente/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/8adcc0da1d6f487d5e8d9f9161147961a801cd5155e3c3a1d4138b7b784290dc.html",
+          "sha256": "a2f8ad788d78e960060d8c59d1770135d03c8f964348f765ee14641cda049473"
+        }
+      ]
+    },
+    {
+      "quote_id": "8af218b929442f66d6eaa184088d27cad83a886d15c81febf86689fcb3dd1420",
+      "candidate_slug": "expedito-mendonca",
+      "candidate_id": "4f302760-52e7-461e-9a65-43d1aaa657df",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/distrito-federal/expedito-mendonca-propoe-seguranca-local-a-exemplo-de-xerifes-dos-eua",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste-2/evidence/expedito-mendonca.web.json",
+          "sha256": "80c88418351860a8ef66d2da4bc3155641e8a8cd9508c55320c3a0b91516982a"
+        }
+      ]
+    },
+    {
+      "quote_id": "8eec23dba58ede211c9979f0ccd2fb67de1b39068527cd47ce62e95065c72a97",
+      "candidate_slug": "taty-cristina-de-jesus",
+      "candidate_id": "80a16418-3fee-414f-8fed-f06b4a952748",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/se/sergipe/eleicoes/2026/noticia/2026/09/02/eleicoes-2026-taty-cristina-de-jesus-diz-que-pretende-trazer-novas-empresas-para-o-estado.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/8eec23dba58ede211c9979f0ccd2fb67de1b39068527cd47ce62e95065c72a97.html",
+          "sha256": "50f4128dded0f449166790689381fe8c189880c08b51c95b9f7b5e7f3446fa3e"
+        }
+      ]
+    },
+    {
+      "quote_id": "8f795be9eae4bb9769556e64e459d74ab3850c1dbfbd59a9461e22887361109f",
+      "candidate_slug": "coronel-busnello",
+      "candidate_id": "23dc2553-0fd3-489f-9ac1-4ed50b8ec5e3",
+      "status": "pass",
+      "source_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7299910-coronel-busnello-detalha-plano-de-governo-em-sabatina-de-o-dia-e-fecomercio-rj.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/8f795be9eae4bb9769556e64e459d74ab3850c1dbfbd59a9461e22887361109f.html",
+          "sha256": "01c68a52da1ae3ec40a5cf4f9905b2aed165bbff468d1785958c0dca764d44f1"
+        }
+      ]
+    },
+    {
+      "quote_id": "90110bd061eb1153e9cab13e8a7ae89fe2f43b05aabe5f1c2c220c7aebfd2051",
+      "candidate_slug": "acm-neto",
+      "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+      "status": "pass",
+      "source_url": "https://classepolitica.com.br/noticia/eu-nao-sou-um-desconhecido-eu-nao-sou-uma-aventura-diz-acm-neto-ao-pedir-voto-para-governador",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/90110bd061eb1153e9cab13e8a7ae89fe2f43b05aabe5f1c2c220c7aebfd2051.html",
+          "sha256": "bc9484c5d4b1925e83b4bb9185343a7e528d408b4b0b57b288ed6780370366a5"
+        }
+      ]
+    },
+    {
+      "quote_id": "90174e40aa9591d200f54a271d12811eb0ce56f412d2f0607d25b232b7021724",
+      "candidate_slug": "helder-salomao",
+      "candidate_id": "270a8b55-145a-400f-b371-38809653eea8",
+      "status": "pass",
+      "source_url": "https://www.agazeta.com.br/es/politica/faco-propostas-para-mudar-a-vida-das-pessoas-e-nao-para-ganhar-votos-diz-helder-0926",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/90174e40aa9591d200f54a271d12811eb0ce56f412d2f0607d25b232b7021724.html",
+          "sha256": "cea0e150f958a03bb2cd2aeacafd372ca5630abf7d29ce7d39c53124c48efc34"
+        }
+      ]
+    },
+    {
+      "quote_id": "904f0760ab9eb36cd42964610397880f696a8352f699db675959aa8599e228de",
+      "candidate_slug": "augusto-cury",
+      "candidate_id": "5a4d76d2-6243-41b9-88b2-e94c68383e52",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cury-condenacoes-do-8-1-foram-exageradas-e-nao-houve-golpe-materializado/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/904f0760ab9eb36cd42964610397880f696a8352f699db675959aa8599e228de.html",
+          "sha256": "1e7d5e8db43e0442f463d574dcbb06311f1b810717785db91b29f5dcd47c1caf"
+        }
+      ]
+    },
+    {
+      "quote_id": "907cbfd3be648002627d088d6861775b18b52baad95cfc2e81da31813b252c64",
+      "candidate_slug": "siqueira-campos-jr",
+      "candidate_id": "1d5c69c3-4a4e-4f8f-9796-aa2248775e80",
+      "status": "pass",
+      "source_url": "https://tocantins.jornalopcao.com.br/noticias/siqueira-junior-diz-que-quer-voltar-a-epoca-de-ouro-da-familia-e-promete-resgatar-legado-do-pai-598970/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/siqueira-original.html",
+          "sha256": "9f66f1b619a6d45048c9238a0ff2684754a3ce625aed351e9ac629732e439a1b"
+        }
+      ]
+    },
+    {
+      "quote_id": "9248843e9754c0ceeefa3a07fa45d86223f0e61f9c3aa80741d8d17cfd3d967b",
+      "candidate_slug": "hertz-dias",
+      "candidate_id": "79b84a18-1a4e-4123-a831-8aefda253dc6",
+      "status": "pass",
+      "source_url": "https://fanf1.com.br/2026/09/04/candidato-do-pstu-a-presidencia-hertz-dias-propoe-taxacao-de-bilionarios-e-defende-reestatizacao-de-setores-estrategicos/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/9248843e9754c0ceeefa3a07fa45d86223f0e61f9c3aa80741d8d17cfd3d967b.html",
+          "sha256": "56cf880ac303199b45732dd0719ed74aa3f7a041fa0c108d80a3b4a049124450"
+        }
+      ]
+    },
+    {
+      "quote_id": "926ecf4c938880f29ce84db06fa36f6d657949c0794c03129595c16844d71407",
+      "candidate_slug": "elmano-de-freitas",
+      "candidate_id": "f126204e-1f28-4200-9468-9144eddbb6e4",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/economia/2026/09/04/aerotropolis-elmano-nega-ilegalidade-em-obra-de-rs-1-bilhao.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/926ecf4c938880f29ce84db06fa36f6d657949c0794c03129595c16844d71407.html",
+          "sha256": "728373d31d1ce9fb9442cdf6b858aa219024641cdc567e1f74b9fe9a05251bd8"
+        }
+      ]
+    },
+    {
+      "quote_id": "92a741618b05a497d13cc8c85da75444e5c4812b682bb012712b92e12dc43dcb",
+      "candidate_slug": "andre-marinho",
+      "candidate_id": "bf363655-dae8-4ef1-a654-ba8ce45fcdfc",
+      "status": "pass",
+      "source_url": "https://sbtnews.sbt.com.br/noticia/politica/andre-marinho-promete-ruptura-no-governo-do-rio",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/92a741618b05a497d13cc8c85da75444e5c4812b682bb012712b92e12dc43dcb.html",
+          "sha256": "64d24907422b3b6c1daf25d34209255b5513b2670e2f0537c6b2663d0bf1b661"
+        }
+      ]
+    },
+    {
+      "quote_id": "94fdffdb633075fa7cf2358a365475d1ee256791380359ba7facec4d5531a9d9",
+      "candidate_slug": "geraldo-carvalho",
+      "candidate_id": "e2648b98-f9a9-4487-9fdd-49609ac520d6",
+      "status": "pass",
+      "source_url": "https://conectapiaui.com.br/noticia/politica/tv-cidade-verde-promove-debate-com-candidatos-ao-governo-do-piaui-21924.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/94fdffdb633075fa7cf2358a365475d1ee256791380359ba7facec4d5531a9d9.html",
+          "sha256": "5ea890f092d5dcec3dd7c3c4be3ef1d3d9aeeb9c8b41cba0506247588182eab5"
+        }
+      ]
+    },
+    {
+      "quote_id": "9a60a3ae1b419b5eda95395a36c04958e0717c85b0a53dca8c06042d557656b1",
+      "candidate_slug": "camilo-duarte",
+      "candidate_id": "4bbfe1e0-c79b-45b6-bf3f-96be1bc6432f",
+      "status": "pass",
+      "source_url": "https://portalmidia.net/forca-policial-serve-somente-para-oprimir-nao-para-defender-a-populacao-diz-camilo-duarte-em-sabatina/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/camilo.web.json",
+          "sha256": "5bcc470ca3bc0c636da7564c91997fe377193d58dd14d73fcc0010ee39a725f2"
+        }
+      ]
+    },
+    {
+      "quote_id": "9af77d3285f0b8227174a29d746ca1083404ffefb2cfe45f07dafce6d8aacfdf",
+      "candidate_slug": "garotinho",
+      "candidate_id": "5e5ea2d1-1fa8-43f2-880f-14227c54423a",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-garotinho-propoe-bope-2-0-com-5-mil-policiais-em-comunidades/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/9af77d3285f0b8227174a29d746ca1083404ffefb2cfe45f07dafce6d8aacfdf.html",
+          "sha256": "0889086cb3cef9710d0999e5c467c48b6946c0490a36aa96c1ee2db734ddef76"
+        }
+      ]
+    },
+    {
+      "quote_id": "9b54c78752f6cf35310f2e11385192008a2a15370ae33d675467f02c53532658",
+      "candidate_slug": "jose-estevao",
+      "candidate_id": "1a7a43e6-a160-432d-99bd-08e33fb8162f",
+      "status": "pass",
+      "source_url": "https://atarde.com.br/eleicoes/jose-estevao-recorre-ao-tse-para-disputar-governo-da-bahia-1399554",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/jose.web.json",
+          "sha256": "e0c9193f940dc61b24d1fb1cda65a03eb5ac843057d5a039e14853a547098ed7"
+        }
+      ]
+    },
+    {
+      "quote_id": "9c39d8021c5aad257352605dd7c307092c69454b57d8ecb00887070af8aacc06",
+      "candidate_slug": "renan-hallais",
+      "candidate_id": "1f0abb3a-c57b-462b-a538-15ed782276cb",
+      "status": "pass",
+      "source_url": "https://blognossavoz.com.br/renan-hallais-faz-projecoes-a-longo-prazo-e-diz-que-quer-pernambuco-entre-os-estados-mais-ricos-do-brasil-em-30-anos/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/9c39d8021c5aad257352605dd7c307092c69454b57d8ecb00887070af8aacc06.html",
+          "sha256": "024ad4bf6073367e66e0cc5d52d9387fa8fc46e0e43f9fa6e2d990bfc6a8a6b6"
+        }
+      ]
+    },
+    {
+      "quote_id": "9fec4b3f8dbd17bb911dcf65a4643fddac95255250ec9955d9d0890b040e47e2",
+      "candidate_slug": "rico-pinheiro",
+      "candidate_id": "4b8485ab-cbe3-4c58-99be-3dfc05d39c5d",
+      "status": "pass",
+      "source_url": "https://www.correiobraziliense.com.br/cidades-df/2026/09/7493504-candidatos-reagem-a-pesquisa-e-tracam-planos-para-conquistar-o-eleitor.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/9fec4b3f8dbd17bb911dcf65a4643fddac95255250ec9955d9d0890b040e47e2.html",
+          "sha256": "b907af692f90b96efd6f21b1691149c0e10dce4738cd505f162480f56e8a4d82"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-14353733702a2733b009.html",
+          "sha256": "b907af692f90b96efd6f21b1691149c0e10dce4738cd505f162480f56e8a4d82"
+        }
+      ]
+    },
+    {
+      "quote_id": "a27fa7fa35217ff82bd66b9b54f157634107b561033e674e853fa86b8c343c20",
+      "candidate_slug": "guilherme-fonseca",
+      "candidate_id": "3824c464-5087-471c-b7ba-1f8d59f3c070",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/09/04/guilherme-fonseca-promete-estatizar-o-sistema-de-transporte-e-implementar-tarifa-zero.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/a27fa7fa35217ff82bd66b9b54f157634107b561033e674e853fa86b8c343c20.html",
+          "sha256": "a927b6d8b57e059e03d1361fcb2244886e092d58c9cf053d609fa9614e74662d"
+        }
+      ]
+    },
+    {
+      "quote_id": "a48d797554c368b27c4ff15d0b3b4f086eb5a6450705bda4c79711eed90a9c2f",
+      "candidate_slug": "mauricio-coelho",
+      "candidate_id": "c7a28e0e-06d0-412b-98ee-b79a7a4354f9",
+      "status": "pass",
+      "source_url": "https://www.gazetadigital.com.br/editorias/eleicoes-2026/candidato-denuncia-ameaca-de-marido-de-medica-apos-pergunta/858131",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/a48d797554c368b27c4ff15d0b3b4f086eb5a6450705bda4c79711eed90a9c2f.html",
+          "sha256": "088a51908dadc8a548b5c63a0d01c46fecd6b89eb94916694dce746c964401f2"
+        }
+      ]
+    },
+    {
+      "quote_id": "a4f0c5070a5ef82b5ccd2caf2bc9d7dd4aad8adda84b4c922dd5bd568bd7c67a",
+      "candidate_slug": "natasha-slhessarenko",
+      "candidate_id": "63ab5e8d-4255-431a-8eac-536ae13e876f",
+      "status": "pass",
+      "source_url": "https://www.vgnoticias.com.br/politica/natasha-rebate-galvan-e-diz-ser-surreal-negar-a-existencia-de-feminicidios/150854",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/natasha-slhessarenko.web.json",
+          "sha256": "080fc32d9f803cc201ae44b91edb5802d4a1a31e0f663168cea5304e813bb049"
+        }
+      ]
+    },
+    {
+      "quote_id": "a7aaf8e7f6235382e7b6687a63d36de716e70fabfb4fec858859346131350658",
+      "candidate_slug": "cadu-xavier",
+      "candidate_id": "afb87309-0aee-4ecc-9ac6-e8402902321a",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/09/09/eleicoes-2026-veja-como-foi-o-dia-dos-candidatos-ao-governo-do-rio-grande-do-norte-nesta-quarta-feira.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/a7aaf8e7f6235382e7b6687a63d36de716e70fabfb4fec858859346131350658.html",
+          "sha256": "78e3251b33146c30dfdfd86fafa157459edf489423faf224d4cf4bb21cf378f0"
+        }
+      ]
+    },
+    {
+      "quote_id": "a89d8216668c53122ea21fa04131036f7cf3502d62bbd0a5b998eb5afe18a4df",
+      "candidate_slug": "alan-rick",
+      "candidate_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+      "status": "pass",
+      "source_url": "https://portalacre.com.br/2026/08/alan-rick-abre-serie-de-sabatinas-do-portal-acre-e-apresenta-propostas-para-o-governo-do-estado/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/a89d8216668c53122ea21fa04131036f7cf3502d62bbd0a5b998eb5afe18a4df.html",
+          "sha256": "16909eb05f0dd7e7d69edafffed4a0418844a7cfe116bbd1ef88dcb2f0f8b618"
+        }
+      ]
+    },
+    {
+      "quote_id": "a8efd72ad06f08d5244d4f7336c2b9dcbaba406f98f7177f4215fd3783375ac8",
+      "candidate_slug": "lourdes-melo",
+      "candidate_id": "f5de5375-7258-4164-9f89-45ee8ee442d6",
+      "status": "pass",
+      "source_url": "https://conectapiaui.com.br/blog/painel-politico/lourdes-melo-defende-fim-do-enem-e-transporte-publico-gratuito-para-estudantes-32156.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste/evidence/lourdes-conecta-piaui.web.json",
+          "sha256": "37f97034e8f38bb0863fe816e1df8ac5ae8250091761b4a43921c8020fd372bd"
+        }
+      ]
+    },
+    {
+      "quote_id": "aa08e2ad53e24112d3494b71425510306827c4d3d9f8266ef516ebeaab848884",
+      "candidate_slug": "jeferson-bezerra",
+      "candidate_id": "10874c20-5864-42f9-a83e-0610502381c6",
+      "status": "pass",
+      "source_url": "https://horanoticias.com.br/candidato-ao-governo-jeferson-bezerra-aponta-valorizacao-salarial-e-dialogo-sindical-como-focos-de-gestao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/aa08e2ad53e24112d3494b71425510306827c4d3d9f8266ef516ebeaab848884.html",
+          "sha256": "c2f725964735c43aab1e8b9ccb5bd263bd2b038badcee7cf64847f9ae5c9b3dd"
+        }
+      ]
+    },
+    {
+      "quote_id": "aa135ef6160cc0ff4561dbb24a69d00485ef356c2997008c6a39d00aaf024bd1",
+      "candidate_slug": "marconi-perillo",
+      "candidate_id": "95fc116b-4c1e-4332-9c52-948bc1775a57",
+      "status": "pass",
+      "source_url": "https://www.maisgoias.com.br/blogs/poder-em-jogo/na-sabatina-do-mais-goias-marconi-critica-governo-atual-promete-concursos-e-diz-que-quer-colocar-as-coisas-no-lugar/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/marconi.web.json",
+          "sha256": "542a44bec6f85e650531808a748f51d55437f758d697e55de70afb343c408541"
+        }
+      ]
+    },
+    {
+      "quote_id": "ab5b9920ede5ee12997b90e3ca53b9cbee92edce9de21639812265373e853e17",
+      "candidate_slug": "renato-gomes",
+      "candidate_id": "0f65eafa-82d8-4ac8-8ef4-674e42d2d5d0",
+      "status": "pass",
+      "source_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ms-primeira-pagina.web.json",
+          "sha256": "f2002598cbc09272fca4531ef31f135d0768a5989f001dae92da8f608cf87f2e"
+        }
+      ]
+    },
+    {
+      "quote_id": "abde2bc99af427b1f3a62cb9beb26e03db74e04658e0b944d03c49419a0b9037",
+      "candidate_slug": "david-almeida",
+      "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+      "status": "pass",
+      "source_url": "https://www.portalmarcossantos.com.br/2026/09/01/em-entrevista-ao-g6-david-almeida-diz-que-disputa-esta-equilibrada/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/abde2bc99af427b1f3a62cb9beb26e03db74e04658e0b944d03c49419a0b9037.html",
+          "sha256": "5a3dff7e6a58a22b6ce0ec4a57b32de279af9938a7acd48f78d7a7c5affbfb11"
+        }
+      ]
+    },
+    {
+      "quote_id": "ade62da9931a50656d7e93b68366652fe94a21e20497715d65b88139027fec3c",
+      "candidate_slug": "araceli-lemos",
+      "candidate_id": "68a1eec9-75c1-4dca-a68c-7a4e64033c9b",
+      "status": "pass",
+      "source_url": "https://estadodoparaonline.com/saiba-como-foi-a-entrevista-de-araceli-lemos-para-a-tvc-para/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/ade62da9931a50656d7e93b68366652fe94a21e20497715d65b88139027fec3c.html",
+          "sha256": "6b6feeb03d0b9daa035ee10a9cc7bfb3b895eb5e0bf364ba3801b9d0d9f585e0"
+        }
+      ]
+    },
+    {
+      "quote_id": "ae49ad13cfd17d9ac3492a811de54da2db43357c241bac374cee0067115cead3",
+      "candidate_slug": "mailza-assis",
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "status": "pass",
+      "source_url": "https://agazetadoacre.com/2026/09/noticias/politica/mailza-diz-que-saida-de-familias-do-acre-em-busca-de-emprego-e-real-e-promete-medidas-para-reter-trabalhadores/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/ae49ad13cfd17d9ac3492a811de54da2db43357c241bac374cee0067115cead3.html",
+          "sha256": "e5149203d7358297bc88817d0458731d1b7ddc5c973d1ee134d82e69b2b33201"
+        }
+      ]
+    },
+    {
+      "quote_id": "ae72cf6454134b7d342f3b2fff181f1a5936a09a81a0094e8604a44a1a413c76",
+      "candidate_slug": "haddad-gov-sp",
+      "candidate_id": "0d0d87d3-46af-4e07-ae2e-e7255c30f3c2",
+      "status": "pass",
+      "source_url": "https://www1.folha.uol.com.br/poder/2026/09/haddad-diz-que-designacao-de-pcc-como-terrorista-pelos-eua-e-uma-questao-menor.shtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/ae72cf6454134b7d342f3b2fff181f1a5936a09a81a0094e8604a44a1a413c76.html",
+          "sha256": "5bc9766dc64999ec4a1ab6beb55c95a6d5eb15cc2fd3df1765331a34c2ef4634"
+        }
+      ]
+    },
+    {
+      "quote_id": "b07bdbf56134ad4b925d486c99d90ec2fa3e03c2b5cfab429fdaec7aaa205469",
+      "candidate_slug": "wilder-morais",
+      "candidate_id": "af18411e-e979-4a30-9a1c-c64927b50442",
+      "status": "pass",
+      "source_url": "https://www.maisgoias.com.br/politica/na-sabatina-do-mais-goias-wilder-preve-vitoria-no-1o-turno-e-promete-zerar-fila-de-cirurgias/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/wilder.web.json",
+          "sha256": "16340fa8bf2e3e5db6fed0d52318b5f6e7ae618688ef4653768badc5ff56392e"
+        }
+      ]
+    },
+    {
+      "quote_id": "b0d00b8277952707cefe0d1555347a59d65da85e59632811b73dd17ff808cd2d",
+      "candidate_slug": "jose-roberto-arruda",
+      "candidate_id": "d9cf9c6b-c6f9-4561-ab0f-138d2086c5ce",
+      "status": "pass",
+      "source_url": "https://jornaldebrasilia.com.br/jbr-tv/jose-roberto-arruda-e-o-terceiro-sabatinado-pelo-jbr-eleicoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/b0d00b8277952707cefe0d1555347a59d65da85e59632811b73dd17ff808cd2d.html",
+          "sha256": "d9c0b1d77daaa4865376be186cb294ec1a1e37ae72d20d5a7bbc88061f9f3567"
+        }
+      ]
+    },
+    {
+      "quote_id": "b16d8f062e4f1b25d3ac529ec98e9713c2698fdd7ceae381b93652de7c17388d",
+      "candidate_slug": "ronaldo-mansur",
+      "candidate_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "status": "pass",
+      "source_url": "https://www.bnews.com.br/amp/noticias/politica/sabatina-bnews-mansur-alfineta-rowena-e-diz-que-indicacao-politica-deve-ser-banida-das-escolhas-dos-diretores-escolares.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ronaldo.web.json",
+          "sha256": "3f965183d37b62a7dc3e9fcc4b616e51ac657f4c1a481da2c5c0b9d1f2466551"
+        }
+      ]
+    },
+    {
+      "quote_id": "b4c16895a3ae035456b37f29c1e010d4bc7ec7e4aa7f04b57dd1ed6d3e212dfe",
+      "candidate_slug": "henrique-areas",
+      "candidate_id": "f383d692-5872-444d-b107-794c00182bad",
+      "status": "pass",
+      "source_url": "https://www.otempo.com.br/eleicoes/2026/governadores/2026/9/4/henrique-areas-defende-o-fim-dos-vestibulares-e-o-livre-acesso-as-universidades-publicas",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/b4c16895a3ae035456b37f29c1e010d4bc7ec7e4aa7f04b57dd1ed6d3e212dfe.html",
+          "sha256": "c81332521ebeac58d0249b0ba830dd2180129d026d82e34ac8f9c21c797a65e1"
+        }
+      ]
+    },
+    {
+      "quote_id": "b5638afc7218f61a167017e48e2bc7336bd6f86b6ae183b42b1b386b20909c23",
+      "candidate_slug": "gabriel-azevedo",
+      "candidate_id": "2081565f-e38d-4246-81d6-4f28979e8136",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/cnn-entrevista-gabriel-azevedo-candidato-ao-governo-de-mg-assista/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/cnn-gabriel-2026-08-24.web.json",
+          "sha256": "fb66c4ae360db5ea01ff9fd68980ab26dc47533e7f78ff52812ea750a6860323"
+        }
+      ]
+    },
+    {
+      "quote_id": "b5f873c0294162573eb4649ab9a89603d553298732e0efb84855548654ce4645",
+      "candidate_slug": "arthur-henrique",
+      "candidate_id": "049a5051-e7c9-4729-8853-14753d2993e1",
+      "status": "pass",
+      "source_url": "https://www.folhabv.com.br/politica/arthur-agenda/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/b5f873c0294162573eb4649ab9a89603d553298732e0efb84855548654ce4645.html",
+          "sha256": "1f10eaf190539718461faa8d593dc3fa61d9665e234cdf132b5f8a2aa5dd121d"
+        }
+      ]
+    },
+    {
+      "quote_id": "b8f4f8dba4989352c98246a407c626385f90691dc8a9f08cf92a407ee8a310f4",
+      "candidate_slug": "marcio-jambo",
+      "candidate_id": "dce76719-f325-4467-b677-c54412bc6e24",
+      "status": "pass",
+      "source_url": "https://www.gazetaweb.com/noticias/eleicoes/marcio-jambo-defende-enxugamento-da-maquina-publica-concursos-e-criacao-de-banco-estadual-933444",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/b8f4f8dba4989352c98246a407c626385f90691dc8a9f08cf92a407ee8a310f4.html",
+          "sha256": "9651d36561968e2cc17aaf0a9d491c3d9340b8568fe43200250bd52c396e25a3"
+        }
+      ]
+    },
+    {
+      "quote_id": "bb89470408d67117232283691c73098f75c682fe8c64acea2ee79d0621e6352f",
+      "candidate_slug": "saulo-arcangeli",
+      "candidate_id": "968f8c87-8d8b-4248-9cee-4aee7929f4d9",
+      "status": "pass",
+      "source_url": "https://imirante.com/noticias/sao-luis/amp/2026/09/03/ipolitica-debate-imirante-3-candidatos-expoem-planos-ao-governo",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/andre.web.json",
+          "sha256": "937ada664820ea316948a36624a753bef56f02307504da999bd7a58c91ec6d75"
+        }
+      ]
+    },
+    {
+      "quote_id": "bc45a6ae4c1717de23f61295e60bb632dd023d0c11792a39637de9f4b0ff8243",
+      "candidate_slug": "marcos-rogerio",
+      "candidate_id": "a9ce3c0b-9fa4-4e28-9c2e-809b1fa5e639",
+      "status": "pass",
+      "source_url": "https://informarondonia.com.br/2026/09/02/debate-da-rema-tv-expoe-virtudes-fragilidades-e-diferencas-entre-os-candidatos-ao-governo-de-rondonia/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/bc45a6ae4c1717de23f61295e60bb632dd023d0c11792a39637de9f4b0ff8243.html",
+          "sha256": "a52c9e7d368075630bba843b73bd4bb263507cf674ce43829e0abe55df7938e2"
+        }
+      ]
+    },
+    {
+      "quote_id": "beef2cc6bc451ef6bba8d8fa90250372f910ebc601d6cd7cfc059e5439124b3b",
+      "candidate_slug": "hildon-chaves",
+      "candidate_id": "5a325c79-3414-4d70-8926-673e91cbd578",
+      "status": "pass",
+      "source_url": "https://newsrondonia.com.br/politica/2026/08/19/hildon-cobra-seriedade-dos-adversarios-no-primeiro-debate-da-band/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/persistencia-parent-hildon.web.json",
+          "sha256": "7ca4c8a37928295829bb06ecc94d6af0982c5d788c5f510af36921d82d6b2444"
+        }
+      ]
+    },
+    {
+      "quote_id": "bf044f5213915e8af92cf3031a270e2468eeeee526bdaf92928cc42213e23d9f",
+      "candidate_slug": "laurez-moreira",
+      "candidate_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+      "status": "pass",
+      "source_url": "https://diariotocantinense.com.br/2026/08/21/exclusivo-ao-dt-laurez-moreira-visita-sede-do-diario-tocantinense-e-apresenta-propostas-para-governar-o-tocantins/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/bf044f5213915e8af92cf3031a270e2468eeeee526bdaf92928cc42213e23d9f.html",
+          "sha256": "6d022c046abfd96e0bb6d1fa1ce06710735c26a3777068171e325978213ab058"
+        }
+      ]
+    },
+    {
+      "quote_id": "bf2b695f87c22e36f8fb6e9eb0763c4224f1205b30fd6570e700120a00f04942",
+      "candidate_slug": "luan-monteiro",
+      "candidate_id": "8acf0237-f485-4193-9a72-874f2c2790d1",
+      "status": "pass",
+      "source_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7301025-luan-monteiro-defende-fim-da-policia-armamento-da-populacao-e-estatizacao-dos-servicos-publicos.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/bf2b695f87c22e36f8fb6e9eb0763c4224f1205b30fd6570e700120a00f04942.html",
+          "sha256": "d4148c88f84ad5dec9a0d8daa1be1e5586f8b18e145ac3dbfa48a68ce741229f"
+        }
+      ]
+    },
+    {
+      "quote_id": "bf7be7bdd9934f753e70133bf54dd4dc6d9dd5fb3918a13444472c19224d6e28",
+      "candidate_slug": "dr-daniel",
+      "candidate_id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/pa/para/eleicoes/2026/noticia/2026/09/09/daniel-santos-propoe-zerar-ipva-para-motoristas-de-aplicativo-e-taxistas-no-para.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/bf7be7bdd9934f753e70133bf54dd4dc6d9dd5fb3918a13444472c19224d6e28.html",
+          "sha256": "37ae1d53a8400ee9aac01d3dc7a9d43629081c5c8c589f45cdd82052f8a88349"
+        }
+      ]
+    },
+    {
+      "quote_id": "bfbdb60a75ca13a09ee4a2986866c8fede7e3c6f2251178d2549ea15848b8a29",
+      "candidate_slug": "ruth-reis",
+      "candidate_id": "1411b8f9-0a20-4454-ae7f-1ae98cf195e4",
+      "status": "pass",
+      "source_url": "https://estadodoparaonline.com/ruth-reis-apresenta-propostas-e-expoe-visao-sobre-o-para-em-entrevista-a-tvc/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/bfbdb60a75ca13a09ee4a2986866c8fede7e3c6f2251178d2549ea15848b8a29.html",
+          "sha256": "2f09a1eed32a30bc2671fe84c4ac0197cc44b4377503d752119014d24166ba06"
+        }
+      ]
+    },
+    {
+      "quote_id": "c472cdbfdcfe04dd5598ce4c094043f67dee6b162beb00ffaa7d2c6bb2ceeb63",
+      "candidate_slug": "santiago-belizario",
+      "candidate_id": "8871eb1a-3c89-4c09-8147-45c5903e6ceb",
+      "status": "pass",
+      "source_url": "https://www.gp1.com.br/politica/noticia/2026/8/27/santiago-belizario-defende-reestruturacao-das-policias-militar-e-civil-do-piaui-630071.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/c472cdbfdcfe04dd5598ce4c094043f67dee6b162beb00ffaa7d2c6bb2ceeb63.html",
+          "sha256": "0d8dee1250d740b09bd9b68641b3cdcad3416060554d127174a8bdc8318c1599"
+        }
+      ]
+    },
+    {
+      "quote_id": "c6b4fb0499577d140030a3aa3ac384c1d169f7ad583f759b79116cbe7e2a05be",
+      "candidate_slug": "tulio-lopes",
+      "candidate_id": "a61bb9e4-2c0d-4848-8696-3fe26071fdbd",
+      "status": "pass",
+      "source_url": "https://www.em.com.br/politica/2026/09/7495460-candidatos-ao-governo-de-minas-usam-7-de-setembro-para-fazer-campanha.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/c6b4fb0499577d140030a3aa3ac384c1d169f7ad583f759b79116cbe7e2a05be.html",
+          "sha256": "eeea168bd92abca9c6dc9b14132ab13e5f43dcaa87c34c1869fae28672524c6c"
+        }
+      ]
+    },
+    {
+      "quote_id": "c7cf00272978fc9eaba38461bf6c3b424880aac6f10f131778310db21cf7abd9",
+      "candidate_slug": "farah-mesquita",
+      "candidate_id": "a797aa96-5acd-492b-af83-89b5d1f21cba",
+      "status": "pass",
+      "source_url": "https://www.folhabv.com.br/politica/faradilson-mesquita-defende-mineracao-producao-agricola-e-reducao-da-maquina-publica-em-propostas-ao-governo/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/c7cf00272978fc9eaba38461bf6c3b424880aac6f10f131778310db21cf7abd9.html",
+          "sha256": "557f48f8042678cc6c314ba4c533fda2ccafc6c49674ac0cf2e2eec8a47c5032"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-8b40f40e751e7f4e4106.html",
+          "sha256": "0a116bcf08cb3ac445654066cab96e97f5bb10bfd1434182c4e404410e5e7130"
+        }
+      ]
+    },
+    {
+      "quote_id": "c81a8aafc9bc8c83fa9b430bdbc2983fdd17dc1442161c0ca478de61c473ed7d",
+      "candidate_slug": "samuel-costa",
+      "candidate_id": "f4e5e4bd-7934-4d04-8534-9a60fac53edd",
+      "status": "pass",
+      "source_url": "https://informarondonia.com.br/2026/09/02/samuel-costa-defende-taxacao-da-soja-e-promete-rever-privilegios-durante-debate-da-rema-tv/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/c81a8aafc9bc8c83fa9b430bdbc2983fdd17dc1442161c0ca478de61c473ed7d.html",
+          "sha256": "3bfcd508fd6435cdd210586442f80d1e99e9387398b5b39e291360af064534c9"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-15099d21778d06a761f5.html",
+          "sha256": "77f9e9539ce7e4ee7695d2b45023b0844242ec08168d51676eabf20812fb427a"
+        }
+      ]
+    },
+    {
+      "quote_id": "cca47497285edece6e69a25e5d4d0154e74b16a592e170f2bb059a4fdad479f7",
+      "candidate_slug": "adailton-furia",
+      "candidate_id": "e9cf3bd3-4ab9-4928-b652-558c5e8d8ce4",
+      "status": "pass",
+      "source_url": "https://www.rondoniagora.com/eleicoes/furia-acusa-samuel-de-estar-ganhando-para-atacar-sua-candidatura",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/cca47497285edece6e69a25e5d4d0154e74b16a592e170f2bb059a4fdad479f7.html",
+          "sha256": "20bc8fee63199e06bc7d58ae147d1d9dca23560c76a6d5845f9d5f3a5d9c8ea0"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-15099d21778d06a761f5.html",
+          "sha256": "77f9e9539ce7e4ee7695d2b45023b0844242ec08168d51676eabf20812fb427a"
+        }
+      ]
+    },
+    {
+      "quote_id": "cd31a5b6e9d98ce90f9c35b943b0c9c823c23144e29bd66f71b534ba01ac5112",
+      "candidate_slug": "alexandre-salomao",
+      "candidate_id": "0620a093-7d56-4def-ba68-dc8cb1309984",
+      "status": "pass",
+      "source_url": "https://www.bemparana.com.br/eleicoes-2026/alexandre-salomao-promete-mais-dialogo-no-parana-e-critica-moro-decepcao/amp/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/alexandre-salomao.web.json",
+          "sha256": "da5260e98e5624e9f68b7aa9d6826d172ddf2e76f05e616324ae1f29a918d681"
+        }
+      ]
+    },
+    {
+      "quote_id": "cd4c5260cc7e6da367afb78f18a9bd8c88a79903d7ff0a1198496f0c2574753f",
+      "candidate_slug": "renan-santos",
+      "candidate_id": "4cbc3b25-075a-4d87-89bd-58d1e0b2a5f2",
+      "status": "pass",
+      "source_url": "https://www.cnnbrasil.com.br/eleicoes/a-cnn-renan-pede-fim-de-cotas-raciais-injustas-e-atendem-classe-media/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/cd4c5260cc7e6da367afb78f18a9bd8c88a79903d7ff0a1198496f0c2574753f.html",
+          "sha256": "a373cb84495eac292504837f10e5ad5633c16813d550dcb441b2edc8bcb22c3b"
+        }
+      ]
+    },
+    {
+      "quote_id": "cd4c5b001f97cf918f79a5ae4a93150780d42b182c30e42018f054e2e8329255",
+      "candidate_slug": "pedro-abib",
+      "candidate_id": "d4aa4311-0b4a-4adc-a338-b01e8118d6a9",
+      "status": "pass",
+      "source_url": "https://newsrondonia.com.br/eleioes-2026/2026/08/26/pedro-abib-defende-educacao-inovacao-e-agroindustrializacao-em-candidatura-ao-governo-de-rondonia/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-parent/pedro-abib.web.json",
+          "sha256": "feac7ee86b7a87184b08ea1af40f31b92239353d36c4fb70b885867f742f2c4f"
+        }
+      ]
+    },
+    {
+      "quote_id": "ce3b35e5720d586a236508fef9ba194453f0d112c5a3888985c1fa761661cb98",
+      "candidate_slug": "ieri-braga",
+      "candidate_id": "45fd563d-c846-440b-b382-3d8b51a432e5",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/10/candidato-a-governador-e-contra-prisoes-de-bolsonaro-e-lula.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ieri-opovo.web.json",
+          "sha256": "dcb16dac7171e8cc9c927bbb879fcf293aa0da4adcd867209ad971e13d38a047"
+        }
+      ]
+    },
+    {
+      "quote_id": "cf659ff9b9a9ba143b530188e99ddba5b69df217802851b0bd80653e4fa1c50e",
+      "candidate_slug": "rodrigo-bolsonaro",
+      "candidate_id": "ee2d43ed-ac10-4d22-8acd-f4d210e42c77",
+      "status": "pass",
+      "source_url": "https://pontanegranews.com.br/2026/09/02/rodrigo-de-bolsonaro-promete-aumento-de-20-para-policiais-no-rn/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/cf659ff9b9a9ba143b530188e99ddba5b69df217802851b0bd80653e4fa1c50e.html",
+          "sha256": "801c2e0a34f4c3ff350444ed734f4d65b1a7bb78190fa339267c350e3e3dc106"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/rodrigo-agora-alias.web.json",
+          "sha256": "0ba486337d072be4a8a2d03f65be97cd9f02d959eb9fa407a2a6316cb2193d9f"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/rodrigo-bolsonaro-_y-XXXQJsXU.info.json",
+          "sha256": "a0e8e8de7387ff836a557cbbb7d62cdf5e9f0ce0b8a512d8125cf9d10e59342d"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/rodrigo-bolsonaro-_y-XXXQJsXU.pt.vtt",
+          "sha256": "09539084f52d0eb08ba14cb05d653980b31511080df72ad523e7b3513e3c8e37"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/recuperacao-frames/rodrigo-bolsonaro-_y-XXXQJsXU-2378.jpg",
+          "sha256": "09e6e97229e8d1f2956047e82343b254549e95e34d6ca34471eeca7808e8330d"
+        }
+      ]
+    },
+    {
+      "quote_id": "d02d43f9dab85291b245f972c64ff39acb2ead1aa4e7413e9c6df5400a6092fc",
+      "candidate_slug": "lucia-santos",
+      "candidate_id": "af1bd42d-8ee5-4b53-9267-0a0114b74956",
+      "status": "pass",
+      "source_url": "https://conectapiaui.com.br/noticia/politica/tv-cidade-verde-promove-debate-com-candidatos-ao-governo-do-piaui-21924.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d02d43f9dab85291b245f972c64ff39acb2ead1aa4e7413e9c6df5400a6092fc.html",
+          "sha256": "16b2e3b324593b883967f4d2ce487768a91d11cc109be13eae1d6641ac8ad8c2"
+        }
+      ]
+    },
+    {
+      "quote_id": "d0601506de09fa4563700d59fefd41e63561624b5d7f5204e0588ccf577bdc48",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "status": "pass",
+      "source_url": "https://portalacre.com.br/2026/08/corrupto-comigo-e-fora-diz-tiao-bocalom-durante-sabatina-do-portal-acre/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d0601506de09fa4563700d59fefd41e63561624b5d7f5204e0588ccf577bdc48.html",
+          "sha256": "997dd28eb2861f725ca68be4b538e9ac94d71edb9c1adfc3f916cc4120945d62"
+        }
+      ]
+    },
+    {
+      "quote_id": "d34125417bed2732b36af1007b195f2d0b45c33f8c3a63c1b96e4281fcae1c9a",
+      "candidate_slug": "vivian-mendes",
+      "candidate_id": "9cd65a2b-334c-421c-b527-55984a28857c",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/2026/08/26/vivian-mendes-candidata-ao-governo-de-sp-promete-priorizar-combate-a-violencia-contra-mulheres.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d34125417bed2732b36af1007b195f2d0b45c33f8c3a63c1b96e4281fcae1c9a.html",
+          "sha256": "cc59d84978bf12e2a6f454707a62b63adea6c37a5b57c386d5727bc7827903f1"
+        }
+      ]
+    },
+    {
+      "quote_id": "d395c96ff9c38fc194c188c919ff19cbc34414e895e5f462879492b4df436daf",
+      "candidate_slug": "cicero-lucena",
+      "candidate_id": "76a6620b-1fd4-46df-806f-5101bd660f7f",
+      "status": "pass",
+      "source_url": "https://paraibaja.com.br/em-sabatina-cicero-lucena-promete-remedio-em-casa-nos-223-municipios/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d395c96ff9c38fc194c188c919ff19cbc34414e895e5f462879492b4df436daf.html",
+          "sha256": "b3725a4e1be43c33e93ea46a96b7e1d9622e446b04381b3bb08be05224efce61"
+        }
+      ]
+    },
+    {
+      "quote_id": "d43e89aa677904b26a7223e67b37bd500a0363155bd4962c5c0eb22018b7f099",
+      "candidate_slug": "kiko-caputo",
+      "candidate_id": "80ed7da6-fe5d-4b68-85a3-440f5154b7d6",
+      "status": "pass",
+      "source_url": "https://jornaldebrasilia.com.br/jbr-tv/kiko-caputo-e-o-ultimo-sabatinado-do-jbr-eleicoes/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d43e89aa677904b26a7223e67b37bd500a0363155bd4962c5c0eb22018b7f099.html",
+          "sha256": "17fb68b515640e0155e71da8a8b7864fe18b376a4ea31580b54ac1deb12f161e"
+        }
+      ]
+    },
+    {
+      "quote_id": "d4d48875b457885492079207f96e944d80736810055c16277cb7471b7339b48b",
+      "candidate_slug": "izadora-dias",
+      "candidate_id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+      "status": "pass",
+      "source_url": "https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/2026/08/26/izadora-dias-candidata-ao-governo-de-sp-defende-reducao-da-jornada-de-trabalho-e-reestatizacao-de-servicos-publicos.ghtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/d4d48875b457885492079207f96e944d80736810055c16277cb7471b7339b48b.html",
+          "sha256": "2c9edeb5a4e18aaec6218fa26168901502df52c35814dfe10e2f866ff434bfb7"
+        }
+      ]
+    },
+    {
+      "quote_id": "d611a4437a2dfde52b2d203ed9ed80cab89bb3cfeca5a2a44e4d9bbda535f5bf",
+      "candidate_slug": "daniel-vilela",
+      "candidate_id": "d80384f6-147b-40ef-8fa5-ae0b2be5a1f5",
+      "status": "pass",
+      "source_url": "https://www.maisgoias.com.br/blogs/poder-em-jogo/em-sabatina-no-mais-goias-daniel-vilela-rebate-cameras-em-fardas-e-descarta-privatizar-saneago/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/daniel.web.json",
+          "sha256": "e81dae58bf2df13077c5aadae7825fb1d39ee73b8fe133dc593bc82861770570"
+        }
+      ]
+    },
+    {
+      "quote_id": "d76abaff3d2686a01d26b24d1c049349e22566246eaa7230700a0cfe6313da6c",
+      "candidate_slug": "elisson-ferreira",
+      "candidate_id": "07472c9c-5a4f-47b0-9000-d28fb031303f",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/distrito-federal/candidato-ao-gdf-elisson-ferreira-quer-reduzir-numero-de-secretarias",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/elisson-metropoles.web.json",
+          "sha256": "fe426ad184d8acdfa314641742ff476b4ddca43ae1024f55f882234fb8bf7a25"
+        }
+      ]
+    },
+    {
+      "quote_id": "dcef92b3efc80cb493303b1760c1aee0f15dbe4ba800489aa5fbfe1361024f01",
+      "candidate_slug": "samuel-de-mattos",
+      "candidate_id": "5688777a-2b9c-436a-b83b-96cf06760060",
+      "status": "pass",
+      "source_url": "https://www.bemparana.com.br/eleicoes-2026/samuel-de-mattos-promete-expropriacoes-conselhos-populares-e-socialismo-de-verdade/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/bemparana-samuel-2026-08-20.web.json",
+          "sha256": "fc16427e659429543837cef98316e9fec224e32b995c3fa0991a8055bc6ec985"
+        }
+      ]
+    },
+    {
+      "quote_id": "de6613ed8268ab18449a05da82c42e071722b14eb14972006cd868f3adc48a56",
+      "candidate_slug": "lenilda-luna",
+      "candidate_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
+      "status": "pass",
+      "source_url": "https://oalagoano.com.br/noticias/2026/09/04/20902-o-que-me-despertou-primeiro-foi-o-senso-de-justica-diz-lenilda-luna-sobre-inicio-da-trajetoria-politica",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/lenilda-oal.web.json",
+          "sha256": "2d2b93b1c550cca6eb456fa079112839b63836a97d6a2d1a994dc8df164ef56d"
+        }
+      ]
+    },
+    {
+      "quote_id": "e02acf4b784b7c1d94d17efa31bc6e0b750a48ee74a71500939b16ffd1a89bb0",
+      "candidate_slug": "wellington-fagundes",
+      "candidate_id": "febc4a12-c352-448a-99dc-671c77e8d57d",
+      "status": "pass",
+      "source_url": "https://www.gazetadigital.com.br/editorias/eleicoes-2026/fagundes-se-compara-a-jesus-que-sofreu-para-salvar-o-povo-e-destaca-candidato-de-aluguel/858135",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/e02acf4b784b7c1d94d17efa31bc6e0b750a48ee74a71500939b16ffd1a89bb0.html",
+          "sha256": "1522b877e093ec45c1425f26481bb28db86a55c0611e568f146565e879be2ef5"
+        }
+      ]
+    },
+    {
+      "quote_id": "e2175b88a7b45d0a8d14a5334fb9413c4616aef791dfb1cdcc165432a494c9b3",
+      "candidate_slug": "dr-helton-monteiro",
+      "candidate_id": "86ffacf8-e5d4-4f9b-a808-0f0cb551d832",
+      "status": "pass",
+      "source_url": "https://inovenoticias.com.br/helton-monteiro-abre-rodada-de-entrevistas-do-inove-noticias-e-defende-gestao-publica-para-saude-e-servicos-essenciais/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/e2175b88a7b45d0a8d14a5334fb9413c4616aef791dfb1cdcc165432a494c9b3.html",
+          "sha256": "08de4437150dafa46ef672fef3a242a5787ca55ac9c8c35c61b5b67e32bd3983"
+        }
+      ]
+    },
+    {
+      "quote_id": "e78ed4739c77de66df32fe2aaa38bfc6c26d0af5bd6f770070076352061c1a13",
+      "candidate_slug": "gelson-merisio",
+      "candidate_id": "85bcd355-89c2-464d-bfce-620fe8631285",
+      "status": "pass",
+      "source_url": "https://www.tvbv.com.br/gelson-merisio-apresenta-propostas-para-sc-em-entrevista-ao-band-cidade/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/e78ed4739c77de66df32fe2aaa38bfc6c26d0af5bd6f770070076352061c1a13.html",
+          "sha256": "b1c5ea1643f68d4a413aab838f50d82cb12fb10abcd4a1aabc9dc38776614662"
+        }
+      ]
+    },
+    {
+      "quote_id": "e7ce7b6afd908c68280c5adb68629e23d03f99a8943a6817472cfa6255e9856b",
+      "candidate_slug": "ze-batista",
+      "candidate_id": "21641505-703a-4227-b32f-d9995337dc49",
+      "status": "pass",
+      "source_url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/02/candidato-do-pstu-no-ceara-defende-taxacao-de-bilionarios.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/e7ce7b6afd908c68280c5adb68629e23d03f99a8943a6817472cfa6255e9856b.html",
+          "sha256": "aa047f47db7f3b642050103c34fe9a688da34c3dc899f966b2d1d6766900902f"
+        }
+      ]
+    },
+    {
+      "quote_id": "e99b88e74bd43c5d55f96a5bdd4af7fbe47453ce9d0ef11dbc04d6e271931d82",
+      "candidate_slug": "breno-barcelar",
+      "candidate_id": "2a636465-411c-4599-9d43-51aa80b78f3c",
+      "status": "pass",
+      "source_url": "https://aquinoticias.com/2026/09/breno-quer-auxilio-temporario-para-mulheres-vitimas-de-violencia-domestica/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-reparos-finais-nordeste/evidence/breno-barcelos-aquinoticias.web.json",
+          "sha256": "a9f494401428963c624e9808d0c4c0a9b80819db3640be1baf479665af9b76c1"
+        }
+      ]
+    },
+    {
+      "quote_id": "eb36061f935def086231954fdb72d30db9bf86551e7aee16656d2e1c5cc1ae67",
+      "candidate_slug": "renan-filho",
+      "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+      "status": "pass",
+      "source_url": "https://www.br104.com.br/alagoas/eleicoes-2026/renan-filho-propostas-sabatina-tv-gazeta-governo-alagoas/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/eb36061f935def086231954fdb72d30db9bf86551e7aee16656d2e1c5cc1ae67.html",
+          "sha256": "54eaca36852949e08353b4062de6983b3aa8b0a7eca47f50491584f1136a0c90"
+        }
+      ]
+    },
+    {
+      "quote_id": "edd216c85aa2e8f5659c34349e2f49b14ae76e213a3186b5756e07dcef0df202",
+      "candidate_slug": "gisvaldo-oliveira",
+      "candidate_id": "4b079fd2-53ac-4b37-b735-3216d0817607",
+      "status": "pass",
+      "source_url": "https://www.gp1.com.br/eleicoes-2026/noticia/2026/8/27/gisvaldo-oliveira-critica-escolas-de-tempo-integral-e-chama-modelo-de-enclausuramento-630059.html",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/gisvaldo-gp1.web.json",
+          "sha256": "8caf2ba4f43c7eeecc3ae2db7fc9fd8248bd4b3fa252cefdaae564333f3a116c"
+        }
+      ]
+    },
+    {
+      "quote_id": "eddb9f9dc9844613d24139425fc86d879c9eca324899e5f265c2ac7f544c8b2c",
+      "candidate_slug": "maria-do-carmo",
+      "candidate_id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+      "status": "pass",
+      "source_url": "https://diariodacapital.com/materias/maria-do-carmo-defende-experiencia-na-iniciativa-privada-e-promete-enxugar-gastos-se-eleita-governadora/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/eddb9f9dc9844613d24139425fc86d879c9eca324899e5f265c2ac7f544c8b2c.html",
+          "sha256": "2b1474fcdc9fbf9b5c42576cfe9c8865c62d0344b162dba15667ebb5a4ecf65b"
+        }
+      ]
+    },
+    {
+      "quote_id": "f2a23bff1636d493e11cf259f0f24aaf98a6a7bea9cd1f43b4b17011c0222da2",
+      "candidate_slug": "flavio-bolsonaro",
+      "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+      "status": "pass",
+      "source_url": "https://www1.folha.uol.com.br/poder/2026/08/flavio-bolsonaro-evita-dizer-como-votara-sobre-6x1-e-diz-que-trabalhador-deve-ter-liberdade.shtml",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/f2a23bff1636d493e11cf259f0f24aaf98a6a7bea9cd1f43b4b17011c0222da2.html",
+          "sha256": "c9e9fc6a21e0aaa66837fcf3467983bff71be715258ee1894625e4a0144c2564"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-b56c14b6584b3d252889.html",
+          "sha256": "d6ede7f1d77d69013b01554dc02c37be7c065e79e9119cacac74d7b027309d4a"
+        }
+      ]
+    },
+    {
+      "quote_id": "f55d1115af2c0138213b359099d20ae71e5cccd5ba1d66aa7683d21350039634",
+      "candidate_slug": "reginaldo-lima",
+      "candidate_id": "88f9e312-8c96-436d-a5c0-2463152e1e21",
+      "status": "pass",
+      "source_url": "https://www.suacidade.com/eleicoes/politica/eleicoes-2026-candidato-reginaldo-lima-afirma-trabalhador-tem-que-votar-em",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-nordeste-2/evidence/reginaldo-lima.web.json",
+          "sha256": "3cd7c71b46d5c27a48b843399b4532a000d32245846a6fe1015656b48b9a6675"
+        }
+      ]
+    },
+    {
+      "quote_id": "f586f42c1efe2d751289dda424985d2ae08afe77695612d40e5fc24a34558704",
+      "candidate_slug": "ataides-oliveira",
+      "candidate_id": "131fa6ef-ec83-40fc-8cb8-d01c79dd30cd",
+      "status": "pass",
+      "source_url": "https://t1noticias.com.br/politica/ataides-crava-reeleicao-de-lula-e-critica-personagens-da-politica-tocantinense/143194",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/ataides.web.json",
+          "sha256": "5a245e4a3e629e866be7682b4360885be552fd99e1dbba158678bc031112a0a7"
+        }
+      ]
+    },
+    {
+      "quote_id": "f72150184a5e267955e20d42f7c0bc2267738ce3c635eb68fe11221b80a477b7",
+      "candidate_slug": "efraim-filho",
+      "candidate_id": "8bef8b10-5c52-4e34-bf65-7af2ccc6caae",
+      "status": "pass",
+      "source_url": "https://portalpopnoticias.com.br/2026/08/18/sabatina-na-pop-efraim-morais-apresenta-planos-de-governo-para-areas-estrategicas/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/f72150184a5e267955e20d42f7c0bc2267738ce3c635eb68fe11221b80a477b7.html",
+          "sha256": "c2c0254fbb18767325662096954484d7363dab1b54ea158e544ed44c52d90917"
+        }
+      ]
+    },
+    {
+      "quote_id": "f8104257519baface3cf308ddfb7b7cf7ca03f19468d2f2d927c1f2dd6be2c98",
+      "candidate_slug": "joao-campos",
+      "candidate_id": "cc2dbc88-aae0-4c75-a112-bcc6bfc3189b",
+      "status": "pass",
+      "source_url": "https://tribunaonline.com.br/pernambuco/eleicoes2026/joao-campos-e-sabatinado-na-tv-tribuna-e-detalha-planos-330292",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/f8104257519baface3cf308ddfb7b7cf7ca03f19468d2f2d927c1f2dd6be2c98.html",
+          "sha256": "cb0f01bad1ada604555c98354f7460086e59fc92f6809c2208b2b56c6496e5db"
+        }
+      ]
+    },
+    {
+      "quote_id": "f99052f4c57de459d11d95e0a5f292d5ad912c3d98cf3a2b940fdbde93ea482f",
+      "candidate_slug": "valmir-de-francisquinho",
+      "candidate_id": "8e6f8d4c-7981-499e-b03b-5778e1db704d",
+      "status": "pass",
+      "source_url": "https://fanf1.com.br/2026/09/02/nao-nos-intimidamos-porque-temos-deus-e-o-povo-de-sergipe-afirma-valmir-de-francisquinho-ao-retornar-a-aracaju/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/review/web-inputs/valmir.web.json",
+          "sha256": "ce606eea8c2fa18950dac4d6fc4e58402db5dfd01fe315f3db6c4eb74cc151e2"
+        }
+      ]
+    },
+    {
+      "quote_id": "faf78a0cb732ffbe041991a701a0968d4561894d7e1b466c11299c0364a8bde9",
+      "candidate_slug": "tarcisio-gov-sp",
+      "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+      "status": "pass",
+      "source_url": "https://www.metropoles.com/sao-paulo/tarcisio-desvios-policia",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/retomada-sudeste/metropoles-tarcisio-2026-08-18.web.json",
+          "sha256": "dbba5771cde408e5bf35db5edd0e2cb90dd80bccacdc34657b17b4b59b6ab53d"
+        }
+      ]
+    },
+    {
+      "quote_id": "0901066220a31d891de9a990c8d605a1f175e615a200cbc7f3d72da0f6bd31dc",
+      "candidate_slug": "tayna-miessa",
+      "candidate_id": "62addad9-47ab-4362-bbe1-917f7e70c646",
+      "status": "pass",
+      "source_url": "https://bandnewsfmcuritiba.com/bandnews-curitiba-entrevista-tayna-miessa-candidata-ao-governo-confira/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/completar15-sul/tayna-miessa/bandnews-2026-09-03.original.html",
+          "sha256": "1e8c3fb1f87ef64f6635da40e271d0fcf3bac561143143463d6378c4603a705e"
+        },
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/support-c8f32af79c02f66e2572.html",
+          "sha256": "404cf4b83fe035ce716cef11f281e3da5f2b2e02fec8b6c70986da00ba0e1888"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-sul/tayna-miessa/quote-0-9.5.wav",
+          "sha256": "41255bf7beed86b3fc9407e1c7ed7c18c7ac57654094c569faa1135af8e73b48"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-sul/tayna-miessa/quote-primary.txt",
+          "sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-sul/tayna-miessa/quote-verification.txt",
+          "sha256": "ef8d4946544225cf740f95cd51d6731ffb3fd24b73a98485421f267d5a083808"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-sul/tayna-miessa/ufpr-2026-09-09.original.html",
+          "sha256": "6243fc57629f1b8ff5d042683abcd2a8f0c2037d33cea38a12ef0989f5b8acb4"
+        }
+      ]
+    },
+    {
+      "quote_id": "eaf5ebcece955eff996231ca66bffafdd48f82ca1b50252d4a0fd86adbb8c024",
+      "candidate_slug": "rosi-aires",
+      "candidate_id": "d334a750-1693-46c9-bdee-de3b3c455a05",
+      "status": "pass",
+      "source_url": "https://www.monteroraimafm.com.br/noticia/rosi-aires-participa-nesta-quinta-feira-de-entrevista-ao-vivo-na-radio-monte-roraima-fm",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/completa-norte-pres/rosi-aires-monteroraima-agenda.web.json",
+          "sha256": "09026849a44f185dec5297c3b4aaea29ad849e91e416633cd613c104d693b540"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-norte/rosi/monte-rosi-0309.html",
+          "sha256": "8eb2386227e6c686f6c5f7d6ef432d9de00b1cfd706ea6c858685533ab94beca"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-norte/rosi/rosi-UQ0DzWNauhg-1495-1530.wav",
+          "sha256": "2c40c6ec109c0aa73f565d4f479e68e697e80c1fb62a4cb0330a85bf811f5ce9"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-norte/rosi/selected-primary.txt",
+          "sha256": "2e06b25811d531fbc77a75b679202b2a4753393173c0a96079cfeac4749fc24a"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-norte/rosi/selected-verification.txt",
+          "sha256": "9a0498bdca163f1a00db1bcac26cb310db3aacdef7e3098c0bbcfe91a6af5daf"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/persistencia-rosi-presenca/yt-dlp-metadata.json",
+          "sha256": "3a85645bc44cd822fe47492ba5054db3bcc008fb471b8dff385ea387f7eb9e75"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-norte/rosi/frame-1520.jpg",
+          "sha256": "4a80621f71ec8fadaa110c462ef490c8fd1fa3f2ffc246b65653d1dbd64d75d7"
+        }
+      ]
+    },
+    {
+      "quote_id": "2a76ce5ddf132eed5931a00a574398010ad8afa38ef6f5f35553c84e214550d1",
+      "candidate_slug": "dr-luisinho",
+      "candidate_id": "c9c117e4-ea81-433d-b8c0-a01c8d831bae",
+      "status": "pass",
+      "source_url": "https://oriobranco.net/professor-dr-luisinho-e-daniela-paiva-detalham-propostas-para-o-governo-do-acre-no-programa-o-x-da-questao/",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/2a76ce5ddf132eed5931a00a574398010ad8afa38ef6f5f35553c84e214550d1.html",
+          "sha256": "533ddfd1a2d7dc46293c7e200adbfbebd3e196602bd53f6f510c9840fada9867"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/article.original.html",
+          "sha256": "533ddfd1a2d7dc46293c7e200adbfbebd3e196602bd53f6f510c9840fada9867"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/quote-1147-1171.wav",
+          "sha256": "abc40f2214105c11c7deda7c393dd167abb4d43714c4c1908cc51c0202229c5f"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/selected-primary.txt",
+          "sha256": "04f43779ad54c903b5e0d07fbd434c3eb2883da37cf7ca9ad75556ace1e112c3"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/selected-verification.txt",
+          "sha256": "e9a5968a498938c234ec96659029d290ecc54e7c1358403e8537de317410c68f"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/8gF0bQhUfi4.info.json",
+          "sha256": "7de1cade3a824824588f97ace567bb54e261ff82baef7c39b12d2e1605070466"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/completar15-parent-luisinho/frame-1156.jpg",
+          "sha256": "7d7f16e6c4f8f73a39a35b0a5afbac15f277afbca3608de254197e6a5857e039"
+        }
+      ]
+    },
+    {
+      "quote_id": "ed5e8cda450445b6ce4be7a951ac199d48d48904d112e677811a3b012c86d3c5",
+      "candidate_slug": "marcos-reategui",
+      "candidate_id": "672dc346-45fe-4cee-8386-9645e6a5d2b7",
+      "status": "pass",
+      "source_url": "https://www.youtube.com/watch?v=ZpJhiwE0qr0",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/ZpJhiwE0qr0.youtube.html",
+          "sha256": "af1691cbcaff15e54ac9bd7d0d112f87f4f5dcf712b88b99281f52735a18a57b"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/selesnafes-the-papo-identidade.html",
+          "sha256": "8c997a68ea2bf5c6be54d8489074ec21c6000f2f267fc773269c63562e04c2a1"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/ZpJhiwE0qr0.clip-004100-004150.wav",
+          "sha256": "1868b2bdd0ba09eaa3238679c745f3c3abad7dea1742d225ffb9842d440b571a"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/ZpJhiwE0qr0.clip-004100-004150.asr.txt",
+          "sha256": "50c0c75fc053105a0ec4fa4f1d12c77d6205763440ca2fbbaa9d2c57f135e1c4"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/ZpJhiwE0qr0.clip-004118.vtt-quote.txt",
+          "sha256": "a6a1cf95a6a2e6b34d8cabfd3895df4fbe63458f4dc75a685a7e314dad250f1a"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/retomada-recuperacao/ZpJhiwE0qr0.info.json",
+          "sha256": "01ec01fb8070c23cab74c8d6b7d7a65947901b01c0a57879c6b8ff105689350e"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/datas-papo/ZpJhiwE0qr0.frame-004118.jpg",
+          "sha256": "2d7241c5780c987ce8d3c42a024cb68ab6a56fd2fd633b204fc731ee70b7fd31"
+        }
+      ]
+    }
+  ],
+  "legacy_quotes": [
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:seguranca-publica",
+      "candidate_slug": "augusto-cury",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:educacao",
+      "candidate_slug": "augusto-cury",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:augusto-cury:economia",
+      "candidate_slug": "augusto-cury",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:seguranca-publica",
+      "candidate_slug": "renan-santos",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:educacao",
+      "candidate_slug": "renan-santos",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:renan-santos:economia",
+      "candidate_slug": "renan-santos",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:seguranca-publica",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:educacao",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    },
+    {
+      "quote_id": "br_presidente_2026_1t_band_2026_08_23:ronaldo-caiado:economia",
+      "candidate_slug": "ronaldo-caiado",
+      "candidate_id": null,
+      "status": "pass",
+      "source_url": "https://www.band.com.br/politica/eleicoes/2026/band-faz-1-debate-presidencial-veja-como-ele-foi-por-aspas-dos-candidatos-202608240052",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass"
+      },
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/validacao-autoria/legacy-band.html",
+          "sha256": "9dd852bba8d2dc8890c5c49ae859bbbb6d29a4719ddeb252733de279f9904f19"
+        }
+      ]
+    }
+  ]
+}

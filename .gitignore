@@ -84,3 +84,6 @@ supabase/.branches/
 # Cache local de pesquisa web (Firecrawl)
 .firecrawl/
 .playwright-cli/
+
+# HTML externo do monitoramento não pode entrar na descoberta de classes do Tailwind.
+/reports/falas-monitoramento/

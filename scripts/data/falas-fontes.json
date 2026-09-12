@@ -1,0 +1,776 @@
+{
+  "version": 1,
+  "criteria": "Redações identificáveis, cobertura jornalística própria, autoria e data na matéria, URL original e distinção entre notícia e opinião. A inclusão não endossa afirmações dos candidatos.",
+  "sources": [
+    {
+      "id": "the-papo",
+      "publisher": "The Papo com André Silva",
+      "origin": "https://www.youtube.com",
+      "listing": "/channel/UCtmjIizIEQ7ifU9TYVkcgUg",
+      "articlePath": "/watch"
+    },
+    {
+      "id": "o-rio-branco",
+      "publisher": "O Rio Branco",
+      "origin": "https://oriobranco.net",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "monte-roraima",
+      "publisher": "Rádio Monte Roraima FM",
+      "origin": "https://www.monteroraimafm.com.br",
+      "listing": "/noticia/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "bandnews-curitiba",
+      "publisher": "BandNews FM Curitiba",
+      "origin": "https://bandnewsfmcuritiba.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "jornal-comunicacao-ufpr",
+      "publisher": "Jornal Comunicação UFPR",
+      "origin": "https://jornalcomunicacao.ufpr.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "cbn-curitiba",
+      "publisher": "CBN Curitiba",
+      "origin": "https://cbncuritiba.com.br",
+      "listing": "/materias/",
+      "articlePath": "/materias/"
+    },
+    {
+      "id": "amazonas1",
+      "publisher": "Portal AM1",
+      "origin": "https://amazonas1.com.br",
+      "listing": "/cenario/",
+      "articlePath": "/"
+    },
+    {
+      "id": "monitor-mercantil",
+      "publisher": "Monitor Mercantil",
+      "origin": "https://monitormercantil.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "mossoro-hoje",
+      "publisher": "Mossoró Hoje",
+      "origin": "https://mossorohoje.com.br",
+      "listing": "/noticias/",
+      "articlePath": "/noticias/"
+    },
+    {
+      "id": "carlos-santos",
+      "publisher": "Blog Carlos Santos",
+      "origin": "https://blogcarlossantos.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "news-rondonia",
+      "publisher": "News Rondônia",
+      "origin": "https://newsrondonia.com.br",
+      "listing": "/eleioes-2026/",
+      "articlePath": "/"
+    },
+    {
+      "id": "pode-conversar",
+      "publisher": "Pode Conversar",
+      "origin": "https://podeconversar.com.br",
+      "listing": "/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "aqui-noticias",
+      "publisher": "Aqui Notícias",
+      "origin": "https://aquinoticias.com",
+      "listing": "/politica/",
+      "articlePath": "/"
+    },
+    {
+      "id": "a-tarde",
+      "publisher": "A TARDE",
+      "origin": "https://atarde.com.br",
+      "listing": "/eleicoes",
+      "articlePath": "/eleicoes/"
+    },
+    {
+      "id": "diogenes-direto",
+      "publisher": "Blog do Diógenes",
+      "origin": "https://blogdodiogenes.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "vgn",
+      "publisher": "VGN",
+      "origin": "https://www.vgnoticias.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "a-redacao",
+      "publisher": "A Redação",
+      "origin": "https://aredacao.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "fatos-mt",
+      "publisher": "Fatos de Mato Grosso",
+      "origin": "https://www.fatosdematogrosso.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "diario-capital",
+      "publisher": "Diário da Capital",
+      "origin": "https://diariodacapital.com",
+      "listing": "/materias/",
+      "articlePath": "/materias/"
+    },
+    {
+      "id": "primeira-pagina",
+      "publisher": "Primeira Página / Morena FM",
+      "origin": "https://primeirapagina.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "pop-noticias",
+      "publisher": "Pop Notícias / Rádio Pop",
+      "origin": "https://portalpopnoticias.com.br",
+      "listing": "/politica/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "opcao-tocantins",
+      "publisher": "Jornal Opção Tocantins",
+      "origin": "https://tocantins.jornalopcao.com.br",
+      "listing": "/politica/",
+      "articlePath": "/"
+    },
+    {
+      "id": "gazeta-carajas",
+      "publisher": "Gazeta Carajás",
+      "origin": "https://www.gazetacarajas.com",
+      "listing": "/noticias",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "gazeta-do-povo",
+      "publisher": "Gazeta do Povo",
+      "origin": "https://www.gazetadopovo.com.br",
+      "listing": "/eleicoes/",
+      "articlePath": "/eleicoes/"
+    },
+    {
+      "id": "inove-noticias",
+      "publisher": "Inove Notícias / Cultura FM",
+      "origin": "https://inovenoticias.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "o-alagoano",
+      "publisher": "O Alagoano",
+      "origin": "https://oalagoano.com.br",
+      "listing": "/noticias",
+      "articlePath": "/noticias/"
+    },
+    {
+      "id": "a10mais",
+      "publisher": "A10+ / TV Antena 10",
+      "origin": "https://a10mais.com",
+      "listing": "/blogs/eleicoes-2026",
+      "articlePath": "/blogs/eleicoes-2026/"
+    },
+    {
+      "id": "diogenes",
+      "publisher": "Blog do Diógenes",
+      "origin": "https://www.blogdodiogenes.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "t1-noticias",
+      "publisher": "T1 Notícias",
+      "origin": "https://t1noticias.com.br",
+      "listing": "/politica",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "cleber-toledo",
+      "publisher": "Coluna do CT",
+      "origin": "https://clebertoledo.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "sua-cidade",
+      "publisher": "SuaCidade / TV Cidade",
+      "origin": "https://www.suacidade.com",
+      "listing": "/eleicoes",
+      "articlePath": "/eleicoes/"
+    },
+    {
+      "id": "o-imparcial",
+      "publisher": "O Imparcial",
+      "origin": "https://oimparcial.com.br",
+      "listing": "/noticias/",
+      "articlePath": "/noticias/"
+    },
+    {
+      "id": "ms-agora",
+      "publisher": "MS Agora Urgente News",
+      "origin": "https://www.msagoraurgentenews.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "a-critica-ms",
+      "publisher": "A Crítica",
+      "origin": "https://acritica.net",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "bem-parana",
+      "publisher": "Bem Paraná",
+      "origin": "https://www.bemparana.com.br",
+      "listing": "/eleicoes-2026/",
+      "articlePath": "/eleicoes-2026/"
+    },
+    {
+      "id": "imirante",
+      "publisher": "Imirante",
+      "origin": "https://imirante.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "band-piaui",
+      "publisher": "Band Piauí",
+      "origin": "https://bandpiaui.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "portal-midia",
+      "publisher": "Portal Mídia",
+      "origin": "https://portalmidia.net",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "paraiba-ja",
+      "publisher": "Paraíba Já",
+      "origin": "https://paraibaja.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "gp1",
+      "publisher": "GP1",
+      "origin": "https://www.gp1.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "salvador-fm",
+      "publisher": "Portal Salvador FM",
+      "origin": "https://www.portalsalvadorfm.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "sergipe-em-foco",
+      "publisher": "Sergipe em Foco",
+      "origin": "https://sergipeemfoco.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "nossa-voz",
+      "publisher": "Blog Nossa Voz",
+      "origin": "https://blognossavoz.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "bnews",
+      "publisher": "BNEWS",
+      "origin": "https://www.bnews.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "gazetaweb",
+      "publisher": "GazetaWeb",
+      "origin": "https://www.gazetaweb.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "conecta-piaui",
+      "publisher": "Conecta Piauí",
+      "origin": "https://conectapiaui.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "folha-bv",
+      "publisher": "Folha BV",
+      "origin": "https://www.folhabv.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "portal-acre",
+      "publisher": "Portal Acre",
+      "origin": "https://portalacre.com.br",
+      "listing": "/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "metropoles",
+      "publisher": "Metrópoles",
+      "origin": "https://www.metropoles.com",
+      "listing": "/brasil/politica-brasil",
+      "articlePath": "/"
+    },
+    {
+      "id": "roraima-em-foco",
+      "publisher": "Portal Roraima em Foco",
+      "origin": "https://portal.roraimaemfoco.com",
+      "listing": "/politica",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "gazeta-do-acre",
+      "publisher": "A Gazeta do Acre",
+      "origin": "https://agazetadoacre.com",
+      "listing": "/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "diario-tocantinense",
+      "publisher": "Diário Tocantinense",
+      "origin": "https://diariotocantinense.com.br",
+      "listing": "/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "agencia-brasil",
+      "publisher": "Agência Brasil",
+      "origin": "https://agenciabrasil.ebc.com.br",
+      "listing": "/politica",
+      "articlePath": "/politica/noticia/"
+    },
+    {
+      "id": "g1",
+      "publisher": "g1",
+      "origin": "https://g1.globo.com",
+      "listing": "/politica/eleicoes/2026/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "cnn",
+      "publisher": "CNN Brasil",
+      "origin": "https://www.cnnbrasil.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "folha",
+      "publisher": "Folha de S.Paulo",
+      "origin": "https://www1.folha.uol.com.br",
+      "listing": "/poder/",
+      "articlePath": "/poder/"
+    },
+    {
+      "id": "estadao",
+      "publisher": "Estadão",
+      "origin": "https://www.estadao.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "band",
+      "publisher": "Band",
+      "origin": "https://www.band.com.br",
+      "listing": "/politica",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "poder360",
+      "publisher": "Poder360",
+      "origin": "https://www.poder360.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "correio",
+      "publisher": "Correio Braziliense",
+      "origin": "https://www.correiobraziliense.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "itatiaia",
+      "publisher": "Itatiaia",
+      "origin": "https://www.itatiaia.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "diario-nordeste",
+      "publisher": "Diário do Nordeste",
+      "origin": "https://diariodonordeste.verdesmares.com.br",
+      "listing": "/pontopoder",
+      "articlePath": "/pontopoder/"
+    },
+    {
+      "id": "bahia-noticias",
+      "publisher": "Bahia Notícias",
+      "origin": "https://www.bahianoticias.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "a-critica",
+      "publisher": "A Crítica",
+      "origin": "https://www.acritica.com",
+      "listing": "/politica",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "fan",
+      "publisher": "Fan F1 / Jornal da Fan",
+      "origin": "https://fanf1.com.br",
+      "listing": "/",
+      "articlePath": "/2026/"
+    },
+    {
+      "id": "terra",
+      "publisher": "Terra",
+      "origin": "https://www.terra.com.br",
+      "listing": "/noticias/brasil/politica/",
+      "articlePath": "/noticias/"
+    },
+    {
+      "id": "bol",
+      "publisher": "BOL / UOL",
+      "origin": "https://www.bol.uol.com.br",
+      "listing": "/noticias/",
+      "articlePath": "/noticias/"
+    },
+    {
+      "id": "o-dia",
+      "publisher": "O Dia",
+      "origin": "https://odia.ig.com.br",
+      "listing": "/rio-de-janeiro",
+      "articlePath": "/rio-de-janeiro/"
+    },
+    {
+      "id": "sbt-news",
+      "publisher": "SBT News",
+      "origin": "https://sbtnews.sbt.com.br",
+      "listing": "/noticia/eleicoes",
+      "articlePath": "/noticia/"
+    },
+    {
+      "id": "a-gazeta",
+      "publisher": "A Gazeta",
+      "origin": "https://www.agazeta.com.br",
+      "listing": "/eleicoes-2026",
+      "articlePath": "/"
+    },
+    {
+      "id": "estado-minas",
+      "publisher": "Estado de Minas",
+      "origin": "https://www.em.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "uol",
+      "publisher": "UOL",
+      "origin": "https://noticias.uol.com.br",
+      "listing": "/eleicoes/2026/",
+      "articlePath": "/"
+    },
+    {
+      "id": "jovem-pan",
+      "publisher": "Jovem Pan",
+      "origin": "https://jovempan.com.br",
+      "listing": "/noticias/politica",
+      "articlePath": "/"
+    },
+    {
+      "id": "tvbv",
+      "publisher": "TVBV",
+      "origin": "https://www.tvbv.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "4oito",
+      "publisher": "4oito",
+      "origin": "https://www.4oito.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "mais-goias",
+      "publisher": "Mais Goiás",
+      "origin": "https://www.maisgoias.com.br",
+      "listing": "/politica/",
+      "articlePath": "/"
+    },
+    {
+      "id": "tv-sd",
+      "publisher": "TVSD Notícias",
+      "origin": "https://tvsdnoticias.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "gazeta-digital",
+      "publisher": "Gazeta Digital",
+      "origin": "https://www.gazetadigital.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "tv-unica",
+      "publisher": "TV Única",
+      "origin": "https://www.tvunica.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "hora-noticias",
+      "publisher": "Hora Notícias",
+      "origin": "https://horanoticias.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "correio-manha",
+      "publisher": "Correio da Manhã",
+      "origin": "https://www.correiodamanha.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "jornal-brasilia",
+      "publisher": "Jornal de Brasília",
+      "origin": "https://jornaldebrasilia.com.br",
+      "listing": "/politica-e-poder/",
+      "articlePath": "/"
+    },
+    {
+      "id": "arauto",
+      "publisher": "Portal Arauto",
+      "origin": "https://portalarauto.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "jc",
+      "publisher": "Jornal do Commercio",
+      "origin": "https://jc.uol.com.br",
+      "listing": "/politica",
+      "articlePath": "/"
+    },
+    {
+      "id": "classe-politica",
+      "publisher": "Classe Política",
+      "origin": "https://classepolitica.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "o-povo",
+      "publisher": "O POVO",
+      "origin": "https://www.opovo.com.br",
+      "listing": "/noticias/politica/",
+      "articlePath": "/"
+    },
+    {
+      "id": "meio-news",
+      "publisher": "Meio News",
+      "origin": "https://www.meionews.com",
+      "listing": "/politica",
+      "articlePath": "/"
+    },
+    {
+      "id": "br104",
+      "publisher": "BR104",
+      "origin": "https://www.br104.com.br",
+      "listing": "/politica/",
+      "articlePath": "/"
+    },
+    {
+      "id": "tribuna",
+      "publisher": "Tribuna Online",
+      "origin": "https://tribunaonline.com.br",
+      "listing": "/politica",
+      "articlePath": "/"
+    },
+    {
+      "id": "clickpb",
+      "publisher": "ClickPB",
+      "origin": "https://www.clickpb.com.br",
+      "listing": "/politica",
+      "articlePath": "/"
+    },
+    {
+      "id": "poder-paraiba",
+      "publisher": "Poder Paraíba",
+      "origin": "https://poderparaiba.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "bnews-alagoas",
+      "publisher": "BNews Alagoas",
+      "origin": "https://bnewsalagoas.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "bnews-alagoas-www",
+      "publisher": "BNews Alagoas",
+      "origin": "https://www.bnewsalagoas.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "politica-livre",
+      "publisher": "Política Livre",
+      "origin": "https://www.politicalivre.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "record",
+      "publisher": "Record",
+      "origin": "https://record.r7.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "estado-para",
+      "publisher": "Estado do Pará Online",
+      "origin": "https://estadodoparaonline.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "informa-rondonia",
+      "publisher": "Informa Rondônia",
+      "origin": "https://informarondonia.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "rondoniagora-amp",
+      "publisher": "Rondoniagora",
+      "origin": "https://amp.rondoniagora.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "rondoniagora",
+      "publisher": "Rondoniagora",
+      "origin": "https://www.rondoniagora.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "marcos-santos",
+      "publisher": "Portal do Marcos Santos",
+      "origin": "https://www.portalmarcossantos.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "o-poder",
+      "publisher": "O Poder",
+      "origin": "https://opoder.ncnews.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "selesnafes",
+      "publisher": "SelesNafes.com",
+      "origin": "https://selesnafes.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "contilnet",
+      "publisher": "ContilNet Notícias",
+      "origin": "https://contilnetnoticias.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "ac24horas",
+      "publisher": "ac24horas",
+      "origin": "https://ac24horas.com",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "diario-amapa",
+      "publisher": "Diário do Amapá",
+      "origin": "https://www.diariodoamapa.com.br",
+      "listing": "/cadernos/politica/",
+      "articlePath": "/cadernos/"
+    },
+    {
+      "id": "agora-rn",
+      "publisher": "Agora RN",
+      "origin": "https://agorarn.com.br",
+      "listing": "/politica/",
+      "articlePath": "/politica/"
+    },
+    {
+      "id": "o-correio",
+      "publisher": "O Correio",
+      "origin": "https://ocorreio.com.br",
+      "listing": "/",
+      "articlePath": "/"
+    },
+    {
+      "id": "o-tempo",
+      "publisher": "O TEMPO",
+      "origin": "https://www.otempo.com.br",
+      "listing": "/eleicoes/2026",
+      "articlePath": "/eleicoes/"
+    },
+    {
+      "id": "tribuna-do-norte",
+      "publisher": "Tribuna do Norte",
+      "origin": "https://tribunadonorte.com.br",
+      "listing": "/tn-nas-eleicoes-2026/",
+      "articlePath": "/tn-nas-eleicoes-2026/"
+    },
+    {
+      "id": "ponta-negra-news",
+      "publisher": "Ponta Negra News",
+      "origin": "https://pontanegranews.com.br",
+      "listing": "/",
+      "articlePath": "/2026/"
+    }
+  ]
+}

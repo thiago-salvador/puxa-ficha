@@ -234,6 +234,7 @@ Os one-offs históricos continuam versionados no diretório. Conferir o inventá
 | `data-freshness-audit.yml` | 11:37 UTC diária e manual | `audit:data-freshness --strict` sobre fonte oficial, candidaturas e SLA; publica o relatório como artefato. |
 | `refresh-destaques-votacoes.yml` | Segunda, 12:17 UTC e manual | Duas leituras oficiais de proveniência, comparação de hashes e artefato, sem escrita no banco (`PF_DRY_RUN=1`). |
 | `pesquisas-monitoramento.yml` | 10:17 UTC diária e manual | Coleta e verificação das pesquisas eleitorais da matriz aprovada (`verify:pesquisas`). |
+| `falas-monitoramento.yml` | Segunda e quinta, 11:17 UTC; manual | Coleta falas na imprensa nos últimos 14 dias, guarda evidências e pendências. Proposta de PR depende de `FALAS_DRAFT_PR_ENABLED=true`; sem merge ou escrita no banco. |
 | `link-check-fontes.yml` | Segunda, 09:00 UTC e manual | Verificar links das fontes publicadas. |
 | `alerts-nightly.yml` | 03:17 UTC diária e manual | Pipeline de alertas ponta a ponta em ambiente local, sem envio real de email. |
 | `cron-watchdog.yml` | 08:00 UTC diária, manual e evento de issue | Sonda os workflows agendados do GitHub; na Vercel, `runtime-smoke` ao vivo e `/api/internal/cron-freshness` somente leitura. `news/refresh`, `send-digest` e `published-consistency` têm limite de 36h; `revalidate-public-cache`, 1h. Os dois últimos gravam recibo privado após sucesso e ausência de recibo também gera issue. Sonda ainda o drift quando `main` está à frente da produção há mais de 24h. |

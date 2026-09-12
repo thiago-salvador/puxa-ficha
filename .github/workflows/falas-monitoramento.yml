@@ -1,0 +1,97 @@
+name: Falas de candidatos na imprensa
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Segunda e quinta, 08:17 em São Paulo (UTC-3).
+    - cron: "17 11 * * 1,4"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: falas-monitoramento
+  cancel-in-progress: false
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      change_count: ${{ steps.collect.outputs.change_count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run test:falas && npm run check:scripts
+      - name: Descobrir e verificar falas dos últimos 14 dias
+        id: collect
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY || secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+        run: npm run monitor:falas
+      - name: Guardar relatório, pendências e evidências
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        with:
+          name: falas-${{ github.run_id }}
+          path: reports/falas-monitoramento/
+          if-no-files-found: error
+          retention-days: 30
+
+  propor:
+    needs: coletar
+    if: >-
+      needs.coletar.outputs.change_count != '' &&
+      needs.coletar.outputs.change_count != '0' &&
+      vars.FALAS_DRAFT_PR_ENABLED == 'true' &&
+      github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        with:
+          name: falas-${{ github.run_id }}
+          path: reports/falas-monitoramento
+      - name: Preparar uma proposta para revisão humana
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          drafts="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq '.[] | select(.head.ref | startswith("codex/falas-refresh-")) | .number')"
+          if [ -n "$drafts" ]; then
+            echo "Proposta anterior ainda aberta; evidências desta rodada estão no artefato." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          cp reports/falas-monitoramento/proposal.json scripts/data/falas-candidatos.json
+          npm run test:falas
+          npm run typecheck
+          git diff --exit-code -- . ':!scripts/data/falas-candidatos.json'
+          if git diff --quiet -- scripts/data/falas-candidatos.json; then exit 0; fi
+          branch="codex/falas-refresh-$GITHUB_RUN_ID"
+          git config user.name "Thiago Salvador"
+          git config user.email "contato.thiagosalvador@gmail.com"
+          git switch -c "$branch"
+          git add scripts/data/falas-candidatos.json
+          git commit -m "data: atualizar falas verificadas na imprensa"
+          gh auth setup-git
+          git push origin "HEAD:refs/heads/$branch"
+          gh pr create --draft --base main --head "$branch" \
+            --title "data: falas recentes de candidatos" \
+            --body-file docs/operations/falas-pr-template.md
