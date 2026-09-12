@@ -221,10 +221,10 @@ async function checkHome(context: BrowserContext): Promise<string[]> {
     const heading = page.getByRole("heading", { name: "Presidenciáveis", exact: true })
     await heading.waitFor({ state: "visible" })
     const gridSection = heading.locator("xpath=ancestor::section[1]/following-sibling::section[1]")
-    const paths = await waitForCandidatePaths(gridSection, 13)
+    const paths = await waitForCandidatePaths(gridSection, 12)
     const failures: string[] = []
-    if (paths.length !== 13) failures.push(`grade presidencial tem ${paths.length} fichas, esperado 13`)
-    if (!paths.includes("/candidato/pablo-marcal")) failures.push("pablo-marcal ausente da grade presidencial")
+    if (paths.length !== 12) failures.push(`grade presidencial tem ${paths.length} fichas, esperado 12 conforme TSE em 12/09/2026`)
+    if (paths.includes("/candidato/pablo-marcal")) failures.push("pablo-marcal inapto ainda aparece na grade presidencial")
 
     // Vocabulário 16/08 vale para TEXTO VISÍVEL. O HTML cru carrega o payload
     // RSC com o token de máquina `status:"pre-candidato"` (valor legado do
@@ -387,12 +387,12 @@ async function checkGlobalSearch(context: BrowserContext): Promise<string> {
   return withPage(context, "/", async (page) => {
     await page.getByRole("button", { name: "Abrir busca rápida" }).first().click()
     const input = page.getByRole("combobox", { name: "Buscar no site" })
-    await input.fill("pablo marcal")
-    const target = page.getByRole("option").filter({ hasText: /Pablo Marçal/i }).first()
+    await input.fill("augusto cury")
+    const target = page.getByRole("option").filter({ hasText: /Augusto Cury/i }).first()
     await target.waitFor({ state: "visible" })
     await target.click()
-    await page.waitForURL(/\/candidato\/pablo-marcal\/?$/)
-    return "/candidato/pablo-marcal"
+    await page.waitForURL(/\/candidato\/augusto-cury\/?$/)
+    return "/candidato/augusto-cury"
   })
 }
 
@@ -450,7 +450,7 @@ async function main(): Promise<number> {
     const presidentialPaths = await collect(
       "home",
       () => checkHome(context),
-      (paths) => `cards=${paths.length} pre_candidato=0 ui_avatars=0 pablo_marcal=1`,
+      (paths) => `cards=${paths.length} pre_candidato=0 ui_avatars=0 pablo_marcal=0`,
     )
 
     const governorPaths = new Set<string>()
@@ -520,8 +520,8 @@ async function main(): Promise<number> {
 
     const socialCardPaths = presidentialPaths
       ? [
-          "/candidato/pablo-marcal",
-          ...presidentialPaths.filter((path) => path !== "/candidato/pablo-marcal").slice(0, 2),
+          "/candidato/augusto-cury",
+          ...presidentialPaths.filter((path) => path !== "/candidato/augusto-cury").slice(0, 2),
         ]
       : []
     if (socialCardPaths.length === 3) {
