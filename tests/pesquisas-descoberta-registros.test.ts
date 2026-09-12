@@ -95,6 +95,55 @@ test("duplicatas e teto de 50 mantêm inventário parcial", async () => {
   }
 })
 
+test("teto de 50 subdivide datas sem sobreposição e reutiliza robots entre sessões", async () => {
+  const ranges: string[][] = []
+  let robotsCalls = 0
+  const budget = criarOrcamentoDescoberta({ fetchImpl: async (url, init) => {
+    if (String(url).endsWith("robots.txt")) { robotsCalls++; return new Response("") }
+    if (init?.method !== "POST") return new Response(form)
+    const fields = new URLSearchParams(String(init.body))
+    const from = fields.get("formPesquisa:dateA")!
+    const to = fields.get("formPesquisa:dateB")!
+    const offset = Number(fields.get("formPesquisa:tabelaPesquisas_first") ?? 0)
+    if (!offset) ranges.push([from, to])
+    if (from !== to) return new Response(page("BR", 0, 50))
+    if (from === "28/08/2026") return new Response(page("BR", offset, 3))
+    return new Response(page("BR", 0, 1, ["BR-00004/2026"]).replaceAll("28/08/2026", "29/08/2026"))
+  } })
+  const result = await descobrirRegistrosPesqele({ dateFrom: "2026-08-28", dateTo: "2026-08-29", geographies: ["BR"], budget })
+  const br = result.geographies[0]
+  assert.equal(robotsCalls, 1)
+  assert.deepEqual(ranges, [["28/08/2026", "29/08/2026"], ["28/08/2026", "28/08/2026"], ["29/08/2026", "29/08/2026"]])
+  assert.equal(br.status, "observed")
+  assert.equal(br.query_exhausted, true)
+  assert.equal(br.records.length, 4)
+  assert.equal(br.absence_of_poll_confirmed, false)
+  assert.deepEqual(br.errors, [])
+})
+
+test("falha robots não entra no cache como autorização", async () => {
+  let calls = 0
+  const budget = criarOrcamentoDescoberta({ fetchImpl: async () => { calls++; return new Response("unavailable", { status: 500 }) } })
+  for (let i = 0; i < 2; i++) await assert.rejects(budget.client([PESQELE_ORIGIN], true).getText(`${PESQELE_ORIGIN}/app/pesquisa/listar.xhtml`), /robots indisponivel.*500/)
+  assert.equal(calls, 2)
+})
+
+test("subdivisão não declara completo se registros do intervalo pai desaparecerem", async () => {
+  const budget = criarOrcamentoDescoberta({ fetchImpl: async (url, init) => {
+    if (String(url).endsWith("robots.txt")) return new Response("")
+    if (init?.method !== "POST") return new Response(form)
+    const fields = new URLSearchParams(String(init.body))
+    return fields.get("formPesquisa:dateA") !== fields.get("formPesquisa:dateB")
+      ? new Response(page("BR", 0, 50))
+      : new Response('<tr class="ui-datatable-empty-message"><td>Nenhum registro encontrado</td></tr>')
+  } })
+  const result = await descobrirRegistrosPesqele({ dateFrom: "2026-08-28", dateTo: "2026-08-29", geographies: ["BR"], budget })
+  assert.equal(result.geographies[0].status, "partial")
+  assert.equal(result.geographies[0].query_exhausted, false)
+  assert.equal(result.geographies[0].records.length, 2)
+  assert.match(result.geographies[0].errors.join(" "), /ausente após subdivisão/)
+})
+
 test("segunda expiração encerra tentativa e preserva prova parcial", async () => {
   const fixture = simulated({ alwaysExpire: true })
   const result = await descobrirRegistrosPesqele({ dateFrom: parserInput.dateFrom, dateTo: parserInput.dateTo, geographies: ["BR"], budget: fixture.budget })

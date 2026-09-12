@@ -19,6 +19,9 @@ export function criarOrcamentoDescoberta(options: {
   for (const [name, value] of Object.entries(limits)) if (!Number.isSafeInteger(value) || value <= 0) throw new Error(`limite inválido: ${name}`)
   const start = Date.now()
   const usage = { requests: 0, bytes: 0 }
+  // A fresh JSF session must not refetch the same successful robots policy.
+  // Cache only within this bounded run; failures are never cached as permission.
+  const robotsResponses = new Map<string, Response>()
   let active = false
   function check() {
     if (Date.now() - start >= limits.maxDurationMs) throw new Error("descoberta: limite de tempo")
@@ -27,6 +30,9 @@ export function criarOrcamentoDescoberta(options: {
   }
   const boundedFetch: typeof fetch = async (url, init) => {
     check()
+    const robotsKey = (!init?.method || init.method === "GET") && new URL(String(url)).pathname === "/robots.txt" ? String(url) : null
+    const cachedRobots = robotsKey ? robotsResponses.get(robotsKey) : undefined
+    if (cachedRobots) return cachedRobots.clone()
     if (active) throw new Error("descoberta: limite de concorrência")
     active = true
     usage.requests++
@@ -51,7 +57,13 @@ export function criarOrcamentoDescoberta(options: {
           chunks.push(chunk.value)
         }
       } finally { await reader?.cancel(); reader?.releaseLock() }
-      return new Response(response.body ? Buffer.concat(chunks) : null, { status: response.status, statusText: response.statusText, headers: response.headers })
+      const buffered = new Response(response.body ? Buffer.concat(chunks) : null, { status: response.status, statusText: response.statusText, headers: response.headers })
+      if (robotsKey && response.ok) {
+        const policy = buffered.clone()
+        policy.headers.delete("set-cookie")
+        robotsResponses.set(robotsKey, policy)
+      }
+      return buffered
     } finally { active = false }
   }
   return {
@@ -233,7 +245,7 @@ export function parsePaginaRegistrosPesqele(html: string, input: {
     source_url: SEARCH_URL, observed_at: input.observedAt, evidence_sha256: createHash("sha256").update(records.map((record) => record.public_text).join("\n")).digest("hex"), records }
 }
 
-/** Sequential sessions, bounded pagination and one fresh-session retry per UF. */
+/** Sequential sessions and bounded pagination; saturated windows are split by date. */
 export async function descobrirRegistrosPesqele(input: {
   dateFrom: string; dateTo: string; geographies?: string[]; maxPagesPerGeography?: number; budget?: OrcamentoDescoberta
 }): Promise<InventarioRegistrosPesqele> {
@@ -251,53 +263,79 @@ export async function descobrirRegistrosPesqele(input: {
   for (const geography of requested) {
     const result = geographies.find((item) => item.geography_code === geography)!
     const records = new Map<string, RegistroDescobertoPesqele>()
-    for (let attempt = 0; attempt < 2; attempt++) {
-      const client = budget.client([PESQELE_ORIGIN], true)
-      try {
-        const initial = await client.getText(SEARCH_URL)
-        const form = requiredMatch(initial.body, /<form id="formPesquisa"[\s\S]*?<\/form>/, "formulário")[0]
-        const ufSelect = requiredMatch(form, /<select[^>]*name="(formPesquisa:filtroUF_input)"[^>]*>([\s\S]*?)<\/select>/, "UF")[2]
-        if (![...ufSelect.matchAll(/<option value="([^"]+)"/g)].some((m) => m[1] === geography)) throw new Error("PesqEle: UF ausente no formulário")
-        const dates = [...form.matchAll(/<span[^>]*class="ui-calendar"[^>]*><input[^>]*name="([^"]+)"/g)].map((m) => m[1])
-        if (dates.length !== 2 || !publicText(form).includes("Período de registro")) throw new Error("PesqEle: filtro de período ausente/layout alterado")
-        const fields: Record<string, string> = { "javax.faces.partial.ajax": "true", "javax.faces.source": "formPesquisa:idBtnPesquisar", "javax.faces.partial.execute": "@all", "javax.faces.partial.render": "formPesquisa", "formPesquisa:idBtnPesquisar": "formPesquisa:idBtnPesquisar", formPesquisa: "formPesquisa", formPesquisa_SUBMIT: "1", "formPesquisa:eleicoes_input": electionValue(form), "formPesquisa:filtroUF_input": geography,
-          [dates[0]]: input.dateFrom.split("-").reverse().join("/"), [dates[1]]: input.dateTo.split("-").reverse().join("/"), "javax.faces.ViewState": viewState(form) }
-        let offset = 0
-        let total: number | undefined
-        let pageSize: number | undefined
-        let currentPages = 0
-        while (currentPages < maxPages) {
-          const response = await client.postForm(SEARCH_URL, fields)
-          const page = parsePaginaRegistrosPesqele(response.body, { geography, dateFrom: input.dateFrom, dateTo: input.dateTo, offset, observedAt: response.observedAt, total, pageSize })
-          if (total !== undefined && page.total_reported !== total) throw new Error("PesqEle: total mudou durante paginação")
-          result.pages.push(page)
-          for (const record of page.records) {
-            const previous = records.get(record.registration_id)
-            if (previous && previous.evidence_sha256 !== record.evidence_sha256) result.errors.push(`registro mudou durante coleta: ${record.registration_id}`)
-            records.set(record.registration_id, record)
+    const windows = [{ from: input.dateFrom, to: input.dateTo }]
+    const completedRecords = new Set<string>()
+    let completedWindows = 0
+    let queriedWindows = 0
+    while (windows.length && queriedWindows < 63) {
+      const window = windows.shift()!
+      queriedWindows++
+      const windowRecords = new Map<string, RegistroDescobertoPesqele>()
+      for (let attempt = 0; attempt < 2; attempt++) {
+        const client = budget.client([PESQELE_ORIGIN], true)
+        try {
+          const initial = await client.getText(SEARCH_URL)
+          const form = requiredMatch(initial.body, /<form id="formPesquisa"[\s\S]*?<\/form>/, "formulário")[0]
+          const ufSelect = requiredMatch(form, /<select[^>]*name="(formPesquisa:filtroUF_input)"[^>]*>([\s\S]*?)<\/select>/, "UF")[2]
+          if (![...ufSelect.matchAll(/<option value="([^"]+)"/g)].some((m) => m[1] === geography)) throw new Error("PesqEle: UF ausente no formulário")
+          const dates = [...form.matchAll(/<span[^>]*class="ui-calendar"[^>]*><input[^>]*name="([^"]+)"/g)].map((m) => m[1])
+          if (dates.length !== 2 || !publicText(form).includes("Período de registro")) throw new Error("PesqEle: filtro de período ausente/layout alterado")
+          const fields: Record<string, string> = { "javax.faces.partial.ajax": "true", "javax.faces.source": "formPesquisa:idBtnPesquisar", "javax.faces.partial.execute": "@all", "javax.faces.partial.render": "formPesquisa", "formPesquisa:idBtnPesquisar": "formPesquisa:idBtnPesquisar", formPesquisa: "formPesquisa", formPesquisa_SUBMIT: "1", "formPesquisa:eleicoes_input": electionValue(form), "formPesquisa:filtroUF_input": geography,
+            [dates[0]]: window.from.split("-").reverse().join("/"), [dates[1]]: window.to.split("-").reverse().join("/"), "javax.faces.ViewState": viewState(form) }
+          let offset = 0
+          let total: number | undefined
+          let pageSize: number | undefined
+          let currentPages = 0
+          while (currentPages < maxPages) {
+            const response = await client.postForm(SEARCH_URL, fields)
+            const page = parsePaginaRegistrosPesqele(response.body, { geography, dateFrom: window.from, dateTo: window.to, offset, observedAt: response.observedAt, total, pageSize })
+            if (total !== undefined && page.total_reported !== total) throw new Error("PesqEle: total mudou durante paginação")
+            result.pages.push(page)
+            for (const record of page.records) {
+              const previous = records.get(record.registration_id)
+              if (previous && previous.evidence_sha256 !== record.evidence_sha256) result.errors.push(`registro mudou durante coleta: ${record.registration_id}`)
+              records.set(record.registration_id, record)
+              windowRecords.set(record.registration_id, record)
+            }
+            currentPages++
+            total = page.total_reported; pageSize = page.page_size
+            offset += page.row_count
+            // Do not spend four more pages on an already truncated date range.
+            if (total === 50 && window.from < window.to) break
+            if (offset >= total) break
+            Object.assign(fields, { "javax.faces.source": "formPesquisa:tabelaPesquisas", "javax.faces.partial.execute": "formPesquisa:tabelaPesquisas", "javax.faces.partial.render": "formPesquisa:tabelaPesquisas",
+              "formPesquisa:tabelaPesquisas_pagination": "true", "formPesquisa:tabelaPesquisas_first": String(offset), "formPesquisa:tabelaPesquisas_rows": String(pageSize), "formPesquisa:tabelaPesquisas_encodeFeature": "true", "javax.faces.ViewState": viewState(response.body) })
+            delete fields["formPesquisa:idBtnPesquisar"]
           }
-          currentPages++
-          total = page.total_reported; pageSize = page.page_size
-          offset += page.row_count
-          if (offset >= total) break
-          Object.assign(fields, { "javax.faces.source": "formPesquisa:tabelaPesquisas", "javax.faces.partial.execute": "formPesquisa:tabelaPesquisas", "javax.faces.partial.render": "formPesquisa:tabelaPesquisas",
-            "formPesquisa:tabelaPesquisas_pagination": "true", "formPesquisa:tabelaPesquisas_first": String(offset), "formPesquisa:tabelaPesquisas_rows": String(pageSize), "formPesquisa:tabelaPesquisas_encodeFeature": "true", "javax.faces.ViewState": viewState(response.body) })
-          delete fields["formPesquisa:idBtnPesquisar"]
+          if (total === 50 && window.from < window.to) {
+            const fromMs = Date.parse(`${window.from}T00:00:00Z`)
+            const days = Math.round((Date.parse(`${window.to}T00:00:00Z`) - fromMs) / 86_400_000)
+            const middleMs = fromMs + Math.floor(days / 2) * 86_400_000
+            windows.push({ from: window.from, to: new Date(middleMs).toISOString().slice(0, 10) }, { from: new Date(middleMs + 86_400_000).toISOString().slice(0, 10), to: window.to })
+            break
+          }
+          if (total === 50) result.errors.push("teto público de 50 registros atingido em um único dia; inventário não esgotado")
+          if (offset < total!) result.errors.push("limite de páginas; paginação não esgotada")
+          if (windowRecords.size !== total) result.errors.push("contagem única difere do total informado; duplicação ou alteração da lista")
+          if (offset === total) {
+            completedWindows++
+            for (const id of windowRecords.keys()) completedRecords.add(id)
+          }
+          break
+        } catch (error) {
+          const reason = error instanceof Error ? error.message : String(error)
+          if (attempt === 0 && /sessão expirada/.test(reason)) { result.session_restarts++; continue }
+          result.errors.push(reason)
+          result.status = result.pages.length ? "partial" : "failed"
+          windows.length = 0
+          break
         }
-        if (total === 50) result.errors.push("teto público de 50 registros atingido; reduzir período")
-        if (offset < total!) result.errors.push("limite de páginas; paginação não esgotada")
-        if (records.size !== total) result.errors.push("contagem única difere do total informado; duplicação ou alteração da lista")
-        result.query_exhausted = result.errors.length === 0 && offset === total
-        result.status = result.query_exhausted ? "observed" : "partial"
-        break
-      } catch (error) {
-        const reason = error instanceof Error ? error.message : String(error)
-        if (attempt === 0 && /sessão expirada/.test(reason)) { result.session_restarts++; continue }
-        result.errors.push(reason)
-        result.status = result.pages.length ? "partial" : "failed"
-        break
       }
     }
+    if (windows.length) result.errors.push("limite de 63 intervalos por UF; inventário não esgotado")
+    if (result.errors.length === 0 && [...records.keys()].some((id) => !completedRecords.has(id))) result.errors.push("registro do intervalo original ausente após subdivisão; lista mudou durante coleta")
+    result.query_exhausted = result.errors.length === 0 && completedWindows > 0 && windows.length === 0
+    result.status = result.query_exhausted ? "observed" : result.pages.length ? "partial" : "failed"
     result.records = [...records.values()].sort((a, b) => a.registration_id.localeCompare(b.registration_id))
   }
   return { schema_version: "pesquisas-registros-v1", election: "Eleições Gerais 2026", date_from: input.dateFrom, date_to: input.dateTo, geographies, budget: budget.snapshot() }
