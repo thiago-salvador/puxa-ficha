@@ -18,7 +18,7 @@ jobs:
       - run: npm ci
       - uses: ./.github/actions/install-postgresql-client-17
       - name: Provar PG17 ACL, view e rollback
-        run: bash scripts/audit/provar-chapas-public-grants-pg17.sh
+        run: bash scripts/audit/provar-vice-status-pg17.sh
       - name: Executar driver ACL main-only
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
