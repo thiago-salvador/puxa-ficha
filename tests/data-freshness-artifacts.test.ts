@@ -153,6 +153,9 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.equal(judgmentDiff.public_profile_status_changes.length, 1);
     assert.equal(judgmentDiff.status, "review_required");
     assert.match(readFileSync(join(judgmentOut, "summary.md"), "utf8"), /Situações de fichas divergentes do TSE: 1/);
+    const judgmentSummary = readFileSync(join(judgmentOut, "summary.md"), "utf8");
+    assert.match(judgmentSummary, /## Situações publicadas divergentes do TSE/);
+    assert.ok(judgmentSummary.includes(`| ${currentRecords[0].profile_slug} | ${currentRecords[0].sq_candidato} | deferido | Aguardando julgamento | active |`));
     writeFileSync(currentOfficial, JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }));
 
     writeFileSync(
