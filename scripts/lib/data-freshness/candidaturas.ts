@@ -60,11 +60,15 @@ export function hasUnknownCdnStatus(record: CandidacyRecord): boolean {
 }
 
 export interface CompareCandidaciesOptions {
-  currentOfficial?: readonly (OfficialCandidacy & { party?: string })[]
+  currentOfficial?: readonly (OfficialCandidacy & {
+    party?: string
+    vices?: readonly { sq_candidato: string; name: string; situacao_vice: number; party: string | null }[]
+  })[]
   currentStatusEvidence?: readonly CandidacyRecord[]
   /**
-   * SQ_CANDIDATO das vices que o DivulgaCandContas marca como substituídas
-   * (situacaoVice 3). O pacote consolidado consulta_cand_2026.zip mantém as
+   * SQ_CANDIDATO das vices com substituição comprovada em recibo revisado.
+   * situacaoVice 3 significa inaptidão e não basta para provar substituição.
+   * O pacote consolidado consulta_cand_2026.zip mantém as
    * duas alternativas com a mesma situação, então a substituição só é
    * comprovável por esse registro externo versionado.
    */
@@ -73,7 +77,43 @@ export interface CompareCandidaciesOptions {
 
 // Mudanças informativas entram no relatório e nas contagens, mas não levam a
 // auditoria a review_required: elas descrevem um estado já conferido.
-const INFORMATIVE_KINDS = new Set<CandidacyChangeKind>(["substituted"])
+const INFORMATIVE_KINDS = new Set<CandidacyChangeKind>(["substituted", "inactive_vice"])
+
+/** Inaptidão isolada não identifica quem substituiu a vice. */
+export function reviewedSubstitutedViceSqs(resolutions: readonly {
+  replaced_vice_sq?: string
+  vices?: readonly { sq_candidato?: string; situacao_vice?: number }[]
+}[]): string[] {
+  return resolutions.flatMap((resolution) => resolution.replaced_vice_sq ? [resolution.replaced_vice_sq] : [])
+}
+
+function isVerifiedInactiveVice(
+  vice: CandidacyRecord,
+  official: readonly CandidacyRecord[],
+  publishedBySq: ReadonlyMap<string, CandidacyRecord>,
+  current: CompareCandidaciesOptions["currentOfficial"],
+): boolean {
+  if (!vice.cargo.startsWith("VICE ") || !hasUnknownCdnStatus(vice) || !vice.sq_coligacao.trim() ||
+    official.filter((row) => row.sq_candidato === vice.sq_candidato).length !== 1) return false
+  const titularOffice = vice.cargo === "VICE GOVERNADOR" ? "GOVERNADOR" : "PRESIDENTE"
+  const titulares = official.filter((row) => row.cargo === titularOffice && row.uf === vice.uf &&
+    row.sq_coligacao === vice.sq_coligacao)
+  if (titulares.length !== 1) return false
+  const titular = titulares[0]
+  const publishedTitular = publishedBySq.get(titular.sq_candidato)
+  if (!publishedTitular || !sameIdentity(titular, publishedTitular) ||
+      publishedTitular.sq_coligacao !== titular.sq_coligacao) return false
+  const details = current?.filter((row) => row.sq_candidato === titular.sq_candidato &&
+    normalized(row.name) === normalized(titular.nome_urna) && normalized(row.party ?? null) === normalized(titular.partido_sigla) &&
+    normalized(row.office) === titularOffice && row.uf === titular.uf &&
+    typeof row.is_candidato_inapto === "boolean" && typeof row.substituido === "boolean") ?? []
+  if (details.length !== 1) return false
+  const matches = details[0].vices?.filter((row) => row.sq_candidato === vice.sq_candidato) ?? []
+  // situacaoVice belongs to DivulgaCand's vice domain, not CD_SITUACAO_CANDIDATURA.
+  return matches.length === 1 && matches[0].situacao_vice === 3 &&
+    normalized(matches[0].name) === normalized(vice.nome_urna) &&
+    Boolean(matches[0].party) && normalized(matches[0].party) === normalized(vice.partido_sigla)
+}
 
 export function compareCandidacies(
   officialInput: CandidacyRecord[],
@@ -98,6 +138,9 @@ export function compareCandidacies(
   }
   const publishedBySlot = new Map(published.map((record) => [candidacySlot(record), record]))
   const changes: CandidacyChange[] = []
+  const inactiveViceSqs = new Set(official.filter((row) =>
+    !substitutedViceSqs.has(row.sq_candidato) &&
+    isVerifiedInactiveVice(row, official, publishedBySq, options.currentOfficial)).map((row) => row.sq_candidato))
   const replacedOfficial = new Set<string>()
   const replacedPublished = new Set<string>()
 
@@ -108,6 +151,7 @@ export function compareCandidacies(
       publishedRecord.sq_candidato &&
       publishedRecord.sq_candidato !== officialRecord.sq_candidato &&
       !publishedBySq.has(officialRecord.sq_candidato)
+      && !inactiveViceSqs.has(officialRecord.sq_candidato)
     ) {
       replacedOfficial.add(officialRecord.sq_candidato)
       replacedPublished.add(publishedRecord.sq_candidato)
@@ -135,7 +179,15 @@ export function compareCandidacies(
           (candidate) => candidate.sq_candidato !== officialRecord.sq_candidato,
         )
         const publishedSlotRecord = publishedBySlot.get(slot)
-        if (
+        if (inactiveViceSqs.has(officialRecord.sq_candidato)) {
+          addChange(changes, {
+            kind: "inactive_vice",
+            slot,
+            official: officialRecord,
+            published: null,
+            detail: `${officialRecord.nome_urna} consta como vice inapto no detalhe atual do DivulgaCandContas; sua ausência não exige inclusão nem comprova substituição ou aptidão de outra vice`,
+          })
+        } else if (
           substitutedViceSqs.has(officialRecord.sq_candidato) &&
           vigente &&
           publishedSlotRecord &&
@@ -243,6 +295,7 @@ export function compareCandidacies(
     "identity_mismatch",
     "missing_profile",
     "substituted",
+    "inactive_vice",
   ]
   const counts = Object.fromEntries(
     kinds.map((kind) => [kind, changes.filter((change) => change.kind === kind).length]),

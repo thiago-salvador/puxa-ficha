@@ -16,7 +16,7 @@ import {
   type ProfileAdmissionInput,
   type PublicCandidateSummary,
 } from "../../src/lib/candidate-publication-integrity";
-import { compareCandidacies } from "../lib/data-freshness/candidaturas";
+import { compareCandidacies, reviewedSubstitutedViceSqs } from "../lib/data-freshness/candidaturas";
 import {
   collectCurrentOfficialCandidacies,
   collectCurrentStatusEvidence,
@@ -182,9 +182,8 @@ interface ViceResolutionsFile {
 }
 
 /**
- * SQ das vices que o DivulgaCandContas marca como substituídas (situacaoVice 3).
- * O pacote consolidado do TSE mantém as duas alternativas com a mesma situação,
- * então essa prova só existe nos artefatos versionados data/divulgacand-vices-*.json.
+ * Substituições explicitamente revisadas nos recibos versionados.
+ * situacaoVice 3 prova inaptidão; isoladamente não prova substituição.
  */
 function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): string[] {
   let entries: string[];
@@ -204,12 +203,7 @@ function readSubstitutedViceSqs(dataDir = resolve(process.cwd(), "data")): strin
     if (parsed.metadata?.election_id && parsed.metadata.election_id !== ELECTION_ID_2026) {
       throw new Error(`${name}: resoluções de vice pertencem a outra eleição`);
     }
-    for (const resolution of parsed.resolutions ?? []) {
-      if (resolution.replaced_vice_sq) sqs.add(resolution.replaced_vice_sq);
-      for (const vice of resolution.vices ?? []) {
-        if (vice.situacao_vice === 3 && vice.sq_candidato) sqs.add(vice.sq_candidato);
-      }
-    }
+    for (const sq of reviewedSubstitutedViceSqs(parsed.resolutions ?? [])) sqs.add(sq);
   }
   return [...sqs];
 }
@@ -313,6 +307,9 @@ function summaryMarkdown(input: {
       : "") +
     ((input.changeCounts.substituted ?? 0) > 0
       ? `\n- \`substituted\` é informativo: vice substituído conforme DivulgaCandContas, com a vice vigente já publicada. Não leva a auditoria a review_required.\n`
+      : "") +
+    ((input.changeCounts.inactive_vice ?? 0) > 0
+      ? `\n- \`inactive_vice\` é informativo: ausência de vice inapto comprovado no detalhe atual do DivulgaCandContas. Não comprova substituição ou aptidão de outra vice.\n`
       : "") +
     `\n## Atualidade por fonte\n\n| Estado | Total |\n|---|---:|\n${freshness}\n` +
     `\n${recommendationsMarkdown(input.recommendations)}`

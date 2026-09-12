@@ -5,7 +5,7 @@ import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
 
-import { compareCandidacies } from "../scripts/lib/data-freshness/candidaturas"
+import { compareCandidacies, reviewedSubstitutedViceSqs } from "../scripts/lib/data-freshness/candidaturas"
 import { parseOfficialCandidaciesZip } from "../scripts/lib/data-freshness/tse-source"
 import type { CandidacyRecord, RelevantOffice } from "../scripts/lib/data-freshness/types"
 
@@ -57,6 +57,7 @@ test("classifica inclusão, remoção, substituição, situação, identidade e 
     identity_mismatch: 1,
     missing_profile: 1,
     substituted: 0,
+    inactive_vice: 0,
   })
   assert.equal(result.status, "review_required")
 })
@@ -137,6 +138,65 @@ test("ficha própria é obrigatória para titular, mas não para vice", () => {
   assert.equal(result.counts.missing_profile, 1)
   assert.equal(result.changes.find((change) => change.kind === "missing_profile")?.official?.cargo, "GOVERNADOR")
 })
+
+function inactiveViceFixture() {
+  const shared = { uf: "RR", sq_coligacao: "230001801451", partido_sigla: "PCO", situacao_descricao: "#NE" }
+  const titular = record("230002553857", "GOVERNADOR", { ...shared, nome_urna: "CLÉBIO GENUÍNO" })
+  const gregorio = record("230002553858", "VICE GOVERNADOR", { ...shared, nome_urna: "GREGÓRIO PEREIRA", perfil_slug: null })
+  const jota = record("230002554442", "VICE GOVERNADOR", { ...shared, nome_urna: "JOTA RODRIGUES", perfil_slug: null })
+  const current = [{
+    sq_candidato: titular.sq_candidato, profile_slug: "clebio-genuino", name: titular.nome_urna, party: titular.partido_sigla,
+    uf: "RR", office: "Governador" as const, status: "Indeferido em prazo recursal ou com recurso",
+    is_candidato_inapto: false, substituido: false,
+    vices: [gregorio, jota].map((row) => ({ sq_candidato: row.sq_candidato, name: row.nome_urna, party: row.partido_sigla, situacao_vice: 3 })),
+  }]
+  return { official: [titular, gregorio, jota], published: [titular, jota], current }
+}
+
+test("código de vice inapto não inventa substituição no recibo legado", () => {
+  const vices = [{ sq_candidato: "230002553858", situacao_vice: 3 }]
+  assert.deepEqual(reviewedSubstitutedViceSqs([{ vices }]), [])
+  assert.deepEqual(reviewedSubstitutedViceSqs([{ replaced_vice_sq: "100002544074", vices }]), ["100002544074"])
+})
+
+test("vice inapto ausente é informativo sem inventar substituição ou aptidão da outra vice", () => {
+  const fixture = inactiveViceFixture()
+  const result = compareCandidacies(fixture.official, fixture.published, undefined, { currentOfficial: fixture.current })
+  assert.equal(result.status, "ok")
+  assert.equal(result.counts.inactive_vice, 1)
+  assert.equal(result.counts.inclusion, 0)
+  assert.equal(result.counts.substituted, 0)
+  assert.equal(result.counts.replacement, 0)
+  assert.equal(result.changes[0].published, null)
+  assert.match(result.changes[0].detail, /não exige inclusão nem comprova substituição ou aptidão/)
+})
+
+const invalidInactiveProofs: Array<[string, (fixture: ReturnType<typeof inactiveViceFixture>) => void]> = [
+  ["sem detalhe atual", (fixture) => { fixture.current = [] }],
+  ["vice ativa", (fixture) => { fixture.current[0].vices[0].situacao_vice = 1 }],
+  ["situação desconhecida", (fixture) => { fixture.current[0].vices[0].situacao_vice = 0 }],
+  ["nome divergente", (fixture) => { fixture.current[0].vices[0].name = "OUTRA PESSOA" }],
+  ["partido divergente", (fixture) => { fixture.current[0].vices[0].party = "OUTRO" }],
+  ["SQ divergente", (fixture) => { fixture.current[0].vices[0].sq_candidato = "999" }],
+  ["UF divergente", (fixture) => { fixture.current[0].uf = "SP" }],
+  ["titular divergente", (fixture) => { fixture.current[0].sq_candidato = "999" }],
+  ["chapa divergente", (fixture) => { fixture.official[1].sq_coligacao = "outra" }],
+  ["coligação ausente", (fixture) => { for (const row of fixture.official) row.sq_coligacao = "" }],
+  ["detalhe duplicado", (fixture) => { fixture.current.push(structuredClone(fixture.current[0])) }],
+  ["vice duplicada", (fixture) => { fixture.current[0].vices.push(structuredClone(fixture.current[0].vices[0])) }],
+  ["sem flags de detalhe", (fixture) => { Reflect.deleteProperty(fixture.current[0], "is_candidato_inapto") }],
+  ["CDN com situação explícita divergente", (fixture) => { fixture.official[1].situacao_codigo = "2"; fixture.official[1].situacao_descricao = "DEFERIDO" }],
+]
+for (const [reason, invalidate] of invalidInactiveProofs) {
+  test(`vice ausente continua bloqueante quando ${reason}`, () => {
+    const fixture = inactiveViceFixture()
+    invalidate(fixture)
+    const result = compareCandidacies(fixture.official, fixture.published, undefined, { currentOfficial: fixture.current })
+    assert.equal(result.counts.inactive_vice, 0)
+    assert.equal(result.status, "review_required")
+    assert.equal(result.counts.inclusion, 1)
+  })
+}
 
 test("parser do ZIP oficial limita o universo aos quatro cargos e ao primeiro turno", async () => {
   const work = mkdtempSync(join(tmpdir(), "tse-source-test-"))

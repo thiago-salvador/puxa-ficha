@@ -52,6 +52,9 @@ export type CandidacyChangeKind =
   // Informativo: vice substituída comprovada no DivulgaCandContas, com o
   // catálogo já publicando a vice vigente. Não bloqueia a auditoria.
   | "substituted"
+  // Vice ausente cuja inaptidão foi vinculada à chapa no detalhe oficial atual.
+  // Não implica substituição nem aptidão de outra vice publicada.
+  | "inactive_vice"
 
 export interface CandidacyChange {
   kind: CandidacyChangeKind
