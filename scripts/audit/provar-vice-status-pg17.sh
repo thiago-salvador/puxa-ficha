@@ -41,6 +41,12 @@ if [[ "$(dump_schema)" != "$schema_before" ]]; then echo 'FAIL: dry-run mudou sc
 compose apply | q -q
 compose verify | q -q
 compose apply | expect_sql_error 'vice-status: ledger or digest drift'
+# Production-state ACL regression: the two vice migrations are already in the ledger.
+node --import tsx scripts/audit/apply-chapas-public-grants.ts apply "$SHA" | q -q
+node --import tsx scripts/audit/apply-chapas-public-grants.ts verify "$SHA" | q -q
+q -q < supabase/rollback/20260912160200_grant_chapas_publico_columns.rollback.sql
+if [[ "$(q -Atqc "select count(*) from supabase_migrations.schema_migrations where version in ('20260912160000','20260912160100')")" != 2 ]]; then echo 'FAIL: ACL rollback removed prior ledger entries' >&2; exit 1; fi
+echo 'PASS PG17: ACL driver forward/readback/rollback preserves vice ledger'
 for key in domain situacao_vice status titular_sq_candidato vice_sq_candidato vice_nome_urna vice_partido_sigla uf source_url source_sha256 checked_at; do
   reject "UPDATE public.chapas_2026 SET vice_situacao_divulgacand=vice_situacao_divulgacand-'$key';" 'violates check constraint "chapas_2026_vice_situacao_divulgacand_check"'
 done
