@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-12T18:46:21.745Z",
+  "updated_at": "2026-09-12T19:31:00.978Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -5993,6 +5993,64 @@
             "source_format": "web_text"
           }
         ]
+      },
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      }
+    },
+    {
+      "id": "ff509d99a4e0e3e21ba9d0750e3986d3e93f814b9219a9c4167c9bb3ebe13fbc",
+      "candidate_id": "51e9be3d-bd06-45e5-828d-48160265925f",
+      "candidate_slug": "carlos-jararaca",
+      "candidate_name": "Carlos Jararaca",
+      "office": "Governador",
+      "uf": "RN",
+      "quote_text": "O estado hoje é um estado sucateado.",
+      "context": "O estado hoje é um estado sucateado.",
+      "event_context": "Entrevista no Podcast Ponto de Vista, da Rádio Avivar Evangélica, com o candidato ao governo do Rio Grande do Norte Carlos Jararaca; o apresentador faz a pergunta e Carlos responde sobre o estado.",
+      "event_type": "entrevista",
+      "occurred_on": "2026-08-26",
+      "publisher": "Rádio Avivar Evangélica",
+      "article_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+      "article_title": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+      "article_published_at": "2026-08-26T22:02:02Z",
+      "observed_at": "2026-09-12T19:15:55.485907Z",
+      "source_sha256": "3683f639c2750f0d9352aa07df46d777d0ffdeae4d2839c549e17b372a399bd5",
+      "attribution": "source_context_review",
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+        "start_seconds": 351,
+        "end_seconds": 381,
+        "media_published_at": "2026-08-26T22:02:02Z",
+        "engine": "YouTube pt captions plus local Whisper small pt; base unavailable in shared cache; no biometric identification.",
+        "transcript_sha256": "f0f8b1206545f58c8eae56f62ecba4da5ba4e500567694a63dfb6b29fd8c195e",
+        "verification_sha256": "42b21fa96f53067409828d8046760c03a1474d5efa7c9707eacb961b8ffd20bb",
+        "audio_sha256": "c42adc7c23ceb1b40329a1dc1406f1427a8b97435a2e1df4a4e3133342bd221d",
+        "speaker_context": "Host identifies the guest as Carlos Jararaca at 00:01:40.720–00:01:44.190. In the selected clip, the answer continues after the host question and includes the quoted sentence.",
+        "reviewed_context": true,
+        "timestamp_range": "00:05:51-00:06:21"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+        "date_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+        "fetched_url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+        "method": "codex_source_review",
+        "live_video": {
+          "url": "https://www.youtube.com/watch?v=5qKR3B6rQnI",
+          "channel_id": "UC7tAzgqhKfATez70VwbAboQ",
+          "broadcast_on": "2026-08-26",
+          "release_timestamp": 1787781722,
+          "metadata_sha256": "3683f639c2750f0d9352aa07df46d777d0ffdeae4d2839c549e17b372a399bd5",
+          "captions_sha256": "f0f8b1206545f58c8eae56f62ecba4da5ba4e500567694a63dfb6b29fd8c195e",
+          "frame_sha256": "131349df6039c6d580ff8e677606e732e677e6093594da215ac6ccd6ed508a5e",
+          "frame_at_seconds": 369,
+          "article_event_excerpt": "Podcast Ponto de Vista - Convidado: Carlos Jararaca",
+          "quote_excerpt": "O estado hoje é um estado sucateado.",
+          "reviewed_live_on_air": true
+        },
+        "supporting_sources": []
       },
       "collection_scope": {
         "mode": "initial_backfill",

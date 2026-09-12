@@ -4,6 +4,7 @@ import { test } from "node:test"
 import type { FalaCandidato } from "../src/lib/falas-candidatos"
 import { sha256, type CandidatoFalas } from "../scripts/lib/falas-monitoramento"
 import { medirAudioPcm, verificarTranscricao, type PacoteTranscricao } from "../scripts/lib/falas-transcricao"
+import { CANAL_AVIVAR } from "../scripts/lib/falas-evidencia-video"
 import { CANAL_THE_PAPO, FONTE_THE_PAPO, intervaloSemanaPublicacao, lerPlayerYoutube } from "../scripts/lib/falas-video-gravado"
 
 const hashBytes = (value: Buffer) => createHash("sha256").update(value).digest("hex")
@@ -72,6 +73,55 @@ test("rejeita WAV truncado ou com duração diferente do trecho", () => {
   assert.throws(() => medirAudioPcm(wav().subarray(0, 200)), /truncado/)
   const f = fixture(); f.quote.transcription!.end_seconds = 20
   assert.throws(() => verificarTranscricao(f.quote, f.candidate, f.evidence), /duração/)
+})
+
+function carlosAvivarFixture() {
+  const candidate: CandidatoFalas = {
+    id: "51e9be3d-bd06-45e5-828d-48160265925f", slug: "carlos-jararaca",
+    nome_urna: "Carlos Jararaca", nome_completo: "Carlos Alberto de Almeida Cavalcante",
+    estado: "RN", cargo_disputado: "Governador",
+  }
+  const url = "https://www.youtube.com/watch?v=5qKR3B6rQnI"
+  const title = "Podcast Ponto de Vista - Convidado: Carlos Jararaca"
+  const metadata = JSON.stringify({
+    id: "5qKR3B6rQnI", webpage_url: url, channel_id: CANAL_AVIVAR, channel: "Rádio Avivar Evangélica",
+    uploader: "Rádio Avivar Evangélica", uploader_url: "https://www.youtube.com/@webradioavivar", title,
+    was_live: true, live_status: "was_live", duration: 4269, release_timestamp: 1787781722,
+  })
+  const transcript = `WEBVTT\n\n00:00:00.000 --> 00:00:01.000\nO estado hoje é\n\n00:00:01.000 --> 00:00:02.000\nO estado hoje é um<c> estado sucateado.</c>\n`
+  const verification = `WEBVTT\n\n00:00:00.000 --> 00:00:02.000\no Estado hoje é um Estado sucateado.\n`
+  const audio = wav()
+  const quoteText = "O estado hoje é um estado sucateado."
+  const quote: FalaCandidato = {
+    id: sha256(`${candidate.id}:2026-08-26:o estado hoje e um estado sucateado`), candidate_id: candidate.id,
+    candidate_slug: candidate.slug, candidate_name: candidate.nome_urna, office: candidate.cargo_disputado, uf: candidate.estado,
+    quote_text: quoteText, context: quoteText,
+    event_context: "Entrevista no Podcast Ponto de Vista, da Rádio Avivar Evangélica, com Carlos Jararaca.", event_type: "entrevista", occurred_on: "2026-08-26",
+    publisher: "Rádio Avivar Evangélica", article_url: url, article_title: title,
+    article_published_at: "2026-08-26T22:02:02Z", observed_at: "2026-09-12T19:15:55.485907Z",
+    source_sha256: sha256(metadata), attribution: "source_context_review",
+    collection_scope: { mode: "initial_backfill", from: "2026-08-16" },
+    transcription: { kind: "automatic", media_url: url, start_seconds: 0, end_seconds: 1,
+      media_published_at: "2026-08-26T22:02:02Z", engine: "YouTube pt captions plus local Whisper small pt",
+      transcript_sha256: sha256(transcript), verification_sha256: sha256(verification), audio_sha256: hashBytes(audio),
+      speaker_context: "A legenda identifica Carlos Jararaca como candidato e o trecho selecionado contém a resposta.", reviewed_context: true },
+    review_evidence: { identity_excerpt: title, date_excerpt: title, fetched_url: url, method: "codex_source_review",
+      live_video: { url, channel_id: CANAL_AVIVAR, broadcast_on: "2026-08-26", release_timestamp: 1787781722,
+        metadata_sha256: sha256(metadata), captions_sha256: sha256(transcript), frame_sha256: hashBytes(Buffer.from("frame")),
+        frame_at_seconds: 0.5, article_event_excerpt: title, quote_excerpt: quoteText, reviewed_live_on_air: true } },
+  }
+  return { candidate, quote, evidence: { article: metadata, audio, transcript, verification, metadata, frame: Buffer.from("frame") } satisfies PacoteTranscricao }
+}
+
+test("aceita o episódio Avivar allowlisted e une cues VTT com tags inline", () => {
+  const f = carlosAvivarFixture()
+  assert.doesNotThrow(() => verificarTranscricao(f.quote, f.candidate, f.evidence))
+})
+
+test("não abre o caminho JSON do episódio Avivar para outro candidato", () => {
+  const f = carlosAvivarFixture()
+  f.candidate = { ...f.candidate, id: "outro-candidato", slug: "outro-candidato", nome_urna: "Outro Candidato", nome_completo: "Outro Candidato" }
+  assert.throws(() => verificarTranscricao(f.quote, f.candidate, f.evidence), /Identidade da transcrição divergente|Autoria não identificada|Página original/)
 })
 
 function liveFixture(channelOnly = false) {

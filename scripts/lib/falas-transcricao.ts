@@ -1,14 +1,24 @@
 import { createHash } from "node:crypto"
 import { load } from "cheerio"
 import type { FalaCandidato } from "../../src/lib/falas-candidatos"
-import { CANAIS_AO_VIVO_APROVADOS, vinculoLiveVideoRevisado, urlVideoAprovada } from "./falas-evidencia-video"
+import { CANAIS_AO_VIVO_APROVADOS, CANAL_AVIVAR, exportarTextoLegendaVtt, vinculoLiveVideoRevisado, urlVideoAprovada } from "./falas-evidencia-video"
 import { verificarVideoGravado } from "./falas-video-gravado"
 import { SOURCES, dataEvento, sha256, urlAprovada, validarCatalogo, type CandidatoFalas } from "./falas-monitoramento"
 
 const plain = (s: string) => s.normalize("NFC").replace(/\s+/g, " ").trim()
-const words = (s: string) => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim()
+/** YouTube VTT cues contain inline <c> tags and repeated rolling captions.
+ * Compare their exported text so a phrase split at a cue boundary remains
+ * literal while markup and overlap do not create false negatives. */
+const words = (s: string) => {
+  const text = /\d{2}:\d{2}:\d{2}(?:\.\d{3})?\s+-->\s+\d{2}:\d{2}:\d{2}/.test(s)
+    ? exportarTextoLegendaVtt(s) : s
+  return text.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim()
+}
 const digest = (b: Buffer) => createHash("sha256").update(b).digest("hex")
 const containsExcerpt = (text: string, excerpt: string) => plain(text).includes(plain(excerpt)) || words(text).includes(words(excerpt))
+const CARLOS_AVIVAR_ID = "51e9be3d-bd06-45e5-828d-48160265925f"
+const CARLOS_AVIVAR_SLUG = "carlos-jararaca"
+const CARLOS_AVIVAR_DATE = "2026-08-26"
 
 /** G1 renders the reviewed identity as an intertitle h2 followed by the
  * candidate's paragraph in a later content column. Cheerio repairs the
@@ -87,13 +97,27 @@ export function verificarTranscricao(quote: FalaCandidato, candidate: CandidatoF
   if (t.speaker_context.length < 30 || !t.engine.trim()) fail("Contexto do falante ou mecanismo ausente")
   const source = SOURCES.find(s => s.publisher === quote.publisher && urlAprovada(quote.article_url, s) === quote.article_url)
   if (!source) fail("Veículo da transcrição não aprovado")
+  const live = quote.review_evidence?.live_video
+  // This JSON path is closed to the reviewed Carlos episode. Other YouTube
+  // sources still require their original HTML article evidence.
+  const isCarlosAvivarEpisode = source.id === "radio-avivar" && live?.channel_id === CANAL_AVIVAR
+    && live.url === quote.article_url && quote.candidate_id === CARLOS_AVIVAR_ID
+    && quote.candidate_slug === CARLOS_AVIVAR_SLUG && quote.occurred_on === CARLOS_AVIVAR_DATE
+  const avivarMetadata = isCarlosAvivarEpisode ? (() => {
+    try {
+      const value: unknown = JSON.parse(evidence.article)
+      return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : null
+    } catch { return null }
+  })() : null
   if (quote.review_evidence?.recorded_video) {
     verificarVideoGravado(quote, candidate, evidence)
     validarCatalogo({ schema_version: "falas-v1", updated_at: quote.observed_at, quotes: [quote] })
     return
   }
   const $ = load(evidence.article)
-  const canonical = $("link[rel=canonical]").attr("href") ?? $("meta[property='og:url']").attr("content")
+  const canonical = avivarMetadata && typeof avivarMetadata.webpage_url === "string"
+    ? avivarMetadata.webpage_url
+    : $("link[rel=canonical]").attr("href") ?? $("meta[property='og:url']").attr("content")
   if (!canonical || urlAprovada(canonical, source) !== quote.article_url) fail("Página original da transcrição divergente")
   const published = $("meta[property='article:published_time']").attr("content")
   const structuredDates = $("script[type='application/ld+json']").toArray().flatMap(el => {
@@ -107,9 +131,11 @@ export function verificarTranscricao(quote: FalaCandidato, candidate: CandidatoF
     const match = /^(\d{2})\/(\d{2})\/(\d{4})(?:\s|$)/.exec(s)
     return match ? [`${match[3]}-${match[2]}-${match[1]}`] : []
   })
-  const publicationVerified = published ? Date.parse(published) === Date.parse(quote.article_published_at)
-    : structuredDates.some(d => Date.parse(d) === Date.parse(quote.article_published_at))
-      || (/^\d{4}-\d{2}-\d{2}$/.test(quote.article_published_at) && datedTimes.includes(quote.article_published_at))
+  const publicationVerified = avivarMetadata && typeof avivarMetadata.release_timestamp === "number"
+    ? Date.parse(quote.article_published_at) === avivarMetadata.release_timestamp * 1000
+    : published ? Date.parse(published) === Date.parse(quote.article_published_at)
+      : structuredDates.some(d => Date.parse(d) === Date.parse(quote.article_published_at))
+        || (/^\d{4}-\d{2}-\d{2}$/.test(quote.article_published_at) && datedTimes.includes(quote.article_published_at))
   if (!publicationVerified) fail("Publicação da página sem evidência")
   $("script,style,nav,aside,template,noscript").remove()
   const body = plain($.text())
@@ -135,7 +161,6 @@ export function verificarTranscricao(quote: FalaCandidato, candidate: CandidatoF
   if (/pré[ -]?candidat|pre[ -]?candidat/iu.test(identity + " " + quote.event_context)) fail("Contexto anterior à candidatura oficial")
   const media = new URL(t.media_url)
   if (media.protocol !== "https:" || media.username || media.password) fail("URL de mídia inválida")
-  const live = quote.review_evidence?.live_video
   if (live) {
     if (!evidence.metadata || !evidence.frame) fail("Evidência da transmissão ausente")
     const m = JSON.parse(evidence.metadata) as Record<string, unknown>
@@ -147,6 +172,8 @@ export function verificarTranscricao(quote: FalaCandidato, candidate: CandidatoF
       && dataEvento(identity, quote.article_published_at) === quote.occurred_on
     if (!channel || !urlVideoAprovada(live.channel_id, live.url) || channel.source_origin !== source.origin || m.channel_id !== live.channel_id
       || m.webpage_url !== t.media_url || live.url !== t.media_url || m.was_live !== true || m.live_status !== "was_live"
+      || (avivarMetadata && (m.title !== quote.article_title || m.channel !== source.publisher || m.uploader !== source.publisher
+        || m.uploader_url !== "https://www.youtube.com/@webradioavivar"))
       || typeof m.id !== "string" || t.media_url !== `https://www.youtube.com/watch?v=${m.id}`
       || (!linkedEpisode && !linkedNamedBroadcast) || m.release_timestamp !== live.release_timestamp
       || typeof m.duration !== "number" || t.end_seconds > m.duration

@@ -26,6 +26,8 @@ export interface VinculoLiveVideoRevisado {
   event_date_markers: readonly string[]
 }
 
+export const CANAL_AVIVAR = "UC7tAzgqhKfATez70VwbAboQ"
+
 export const CANAIS_AO_VIVO_APROVADOS = {
   "UCsVYJNopaXURKDSF4x_ZNtQ": { publisher: "O Rio Branco", source_origin: "https://oriobranco.net" },
   "UCic6Oio9KDhXYeyjl0XPetA": { publisher: "Rádio Monte Roraima FM", source_origin: "https://www.monteroraimafm.com.br" },
@@ -33,6 +35,10 @@ export const CANAIS_AO_VIVO_APROVADOS = {
   "UCvhnOzbSDblzftMPLe8D4-A": {
     publisher: "Diário Causa Operária (jornal do PCO)", source_origin: "https://causaoperaria.org.br",
     approvedVideoUrls: ["https://www.youtube.com/watch?v=w3CAsXoCxwM"],
+  },
+  [CANAL_AVIVAR]: {
+    publisher: "Rádio Avivar Evangélica", source_origin: "https://www.youtube.com",
+    approvedVideoUrls: ["https://www.youtube.com/watch?v=5qKR3B6rQnI"],
   },
 } as const satisfies Record<string, CanalAoVivoAprovado>
 

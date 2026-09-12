@@ -10,6 +10,14 @@
       "articlePath": "/watch"
     },
     {
+      "id": "radio-avivar",
+      "approvedArticleUrls": ["https://www.youtube.com/watch?v=5qKR3B6rQnI"],
+      "publisher": "Rádio Avivar Evangélica",
+      "origin": "https://www.youtube.com",
+      "listing": "/channel/UC7tAzgqhKfATez70VwbAboQ",
+      "articlePath": "/watch"
+    },
+    {
       "id": "o-rio-branco",
       "publisher": "O Rio Branco",
       "origin": "https://oriobranco.net",
