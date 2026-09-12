@@ -268,6 +268,49 @@ test("fonte complementar precisa conter os trechos que comprovam nome e data", (
   assert.ok(verificarRevisao({ candidate, finding: dateFinding, html: dateHtml, now, supporting: new Map([[url, "<p>Ana Silva concedeu a entrevista nesta terça-feira (8).</p>"]]) }).quote)
 })
 
+test("alias comprovado não identifica outro nome que apenas contém suas letras", () => {
+  const url = "https://www.cnnbrasil.com.br/politica/perfil-ana/"
+  const proof = { alias: "Ana", canonical_name: "Ana Silva", uf: "SP", article_url: url, identity_excerpt: "Ana Silva", alias_party_excerpt: "conhecida como Ana", uf_excerpt: "Governo de São Paulo" }
+  const supporting = new Map([[url, "<p>Ana Silva, conhecida como Ana, disputa o Governo de São Paulo.</p>"]])
+  const check = (name: string) => verificarRevisao({ candidate,
+    finding: { ...finding, evidence: { ...finding.evidence, identity_excerpt: `A candidata ${name}`, identity_alias_evidence: [proof] } },
+    html: html.replace("A candidata Ana Silva", `A candidata ${name}`), supporting, now })
+  assert.equal(check("Mariana").reason, "identity_does_not_match_candidate")
+  assert.equal(check("Anabela").reason, "identity_does_not_match_candidate")
+  assert.ok(check("Ána").quote)
+})
+
+test("prova do alias exige nome canônico e apelido como palavras inteiras", () => {
+  const url = "https://www.cnnbrasil.com.br/politica/perfil-ana/"
+  const proof = { alias: "Delegada Ana", canonical_name: "Ana Silva", uf: "SP", article_url: url, identity_excerpt: "Ana Silva", alias_party_excerpt: "conhecida como Delegada Ana", uf_excerpt: "Governo de São Paulo" }
+  for (const [changedProof, source] of [
+    [{ ...proof, identity_excerpt: "Mariana Silva" }, "<p>Mariana Silva, conhecida como Delegada Ana, disputa o Governo de São Paulo.</p>"],
+    [{ ...proof, alias_party_excerpt: "conhecida como Delegada Anabela" }, "<p>Ana Silva, conhecida como Delegada Anabela, disputa o Governo de São Paulo.</p>"],
+  ] as const) {
+    const result = verificarRevisao({ candidate, now,
+      finding: { ...finding, evidence: { ...finding.evidence, identity_excerpt: "Delegada Ana", identity_alias_evidence: [changedProof] } },
+      html: html.replace("A candidata Ana Silva", "A candidata Delegada Ana"), supporting: new Map([[url, source]]) })
+    assert.equal(result.reason, "identity_does_not_match_candidate")
+  }
+})
+
+test("fonte da data exige o nome ou alias como sequência inteira de palavras", () => {
+  const profileUrl = "https://www.cnnbrasil.com.br/politica/perfil-ana/"
+  const dateUrl = "https://www.cnnbrasil.com.br/politica/agenda-ana/"
+  const proof = { alias: "Delegada Ana", canonical_name: "Ana Silva", uf: "SP", article_url: profileUrl, identity_excerpt: "Ana Silva", alias_party_excerpt: "Delegada Ana", uf_excerpt: "Governo de São Paulo" }
+  const dateExcerpt = "concedeu entrevista nesta terça-feira (8)"
+  const dated = { ...finding, evidence: { ...finding.evidence, identity_alias_evidence: [proof],
+    event_date_source: { article_url: dateUrl, article_published_at: finding.article_published_at, date_excerpt: dateExcerpt } } }
+  const check = (name: string) => verificarRevisao({ candidate, finding: dated, html, now, supporting: new Map([
+    [profileUrl, "<p>Ana Silva, conhecida como Delegada Ana, disputa o Governo de São Paulo.</p>"],
+    [dateUrl, `<p>${name} ${dateExcerpt}.</p>`],
+  ]) })
+  assert.equal(check("Mariana Silva").reason, "event_source_identity_not_verified")
+  assert.equal(check("Delegada Anabela").reason, "event_source_identity_not_verified")
+  assert.ok(check("Ana Silva").quote)
+  assert.ok(check("Delegada Ána").quote)
+})
+
 test("fonte da data pode usar alias comprovado mesmo quando a matéria usa o nome completo", async () => {
   const profileUrl = "https://www.cnnbrasil.com.br/politica/perfil-ana/"
   const dateUrl = "https://www.cnnbrasil.com.br/politica/agenda-ana/"

@@ -59,10 +59,16 @@ function dateInSaoPaulo(timestamp: number): string {
   return `${values.year}-${values.month}-${values.day}`
 }
 
+function decodeCodePoint(value: number): string {
+  return Number.isInteger(value) && value >= 0 && value <= 0x10ffff && !(value >= 0xd800 && value <= 0xdfff)
+    ? String.fromCodePoint(value)
+    : "\uFFFD"
+}
+
 function decodeVttEntities(value: string): string {
   return value
-    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => String.fromCodePoint(Number.parseInt(hex, 16)))
-    .replace(/&#(\d+);/g, (_, decimal: string) => String.fromCodePoint(Number.parseInt(decimal, 10)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => decodeCodePoint(Number.parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, decimal: string) => decodeCodePoint(Number.parseInt(decimal, 10)))
     .replace(/&(?:amp|gt|lt|quot|apos|nbsp);/gi, entity => ({
       "&amp;": "&", "&gt;": ">", "&lt;": "<", "&quot;": '"', "&apos;": "'", "&nbsp;": " ",
     }[entity.toLowerCase()] ?? entity))

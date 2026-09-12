@@ -22,8 +22,10 @@ export function conteudoSerializadoClickPb(html: string, url: string): { body: s
   let offset = 0
   while (offset < bytes.length) {
     if (bytes[offset] === 10) { offset++; continue }
-    // Anonymous preload hints do not contain article data or reference IDs.
-    if (bytes.subarray(offset, offset + 3).toString() === ":HL") {
+    // Preload hints do not contain article data or reference IDs, whether or
+    // not the stream assigns them a label.
+    const prefix = bytes.subarray(offset, offset + 80).toString("utf8")
+    if (/^(?:[a-f0-9]+)?:H/.test(prefix)) {
       const end = bytes.indexOf(10, offset)
       if (end < 0) return null
       offset = end + 1

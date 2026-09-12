@@ -26,7 +26,7 @@ export interface PendenciasEconomicasInput {
 }
 
 export interface RosterCandidate {
-  id?: string
+  id: string
   slug: string
   nome_urna?: string
   nome_completo?: string
@@ -139,10 +139,11 @@ function validarRoster(input: unknown): RosterCandidate[] {
   return input.map((raw, index) => {
     if (!raw || typeof raw !== "object") throw new Error(`Candidato ${index + 1} ausente no roster`)
     const candidate = raw as RosterCandidate
+    const id = stringNaoVazia(candidate.id, `ID do roster na posição ${index + 1}`)
     const slug = stringNaoVazia(candidate.slug, `Slug do roster na posição ${index + 1}`)
     if (seen.has(slug)) throw new Error(`Candidato duplicado no roster: ${slug}`)
     seen.add(slug)
-    return { ...candidate, slug }
+    return { ...candidate, id, slug }
   })
 }
 
@@ -204,7 +205,7 @@ function consultasExecutadas(consolidated: ConsolidatedSearchesInput, receipts?:
 function catalogCovered(catalog: CatalogInput, candidate: RosterCandidate): boolean {
   return catalog.quotes.some((quote) => {
     if (quote.candidate_slug !== candidate.slug) return false
-    return !quote.candidate_id || !candidate.id || quote.candidate_id === candidate.id
+    return quote.candidate_id === candidate.id
   })
 }
 

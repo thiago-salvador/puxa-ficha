@@ -109,6 +109,14 @@ describe("falas recentes com fonte", () => {
     assert.throws(() => validarCatalogo({ ...catalog, quotes: [{ ...catalog.quotes[0], quote_text: "Outro texto" }] }))
     assert.throws(() => validarCatalogo({ ...catalog, quotes: [catalog.quotes[0], catalog.quotes[0]] }))
   })
+  it("rejeita transcrição sem contexto do falante ou com apenas espaços", () => {
+    const catalog = JSON.parse(readFileSync("scripts/data/falas-candidatos.json", "utf8")) as CatalogoFalas
+    const quote = catalog.quotes.find(q => q.transcription)!
+    for (const speaker_context of [undefined, "", " ".repeat(40)]) {
+      assert.throws(() => validarCatalogo({ ...catalog, quotes: [{ ...quote, transcription: { ...quote.transcription!, speaker_context } }] } as CatalogoFalas))
+    }
+  })
+
   it("descobre links novos e paginação apenas dentro da fonte", () => {
     const discovered = descobrirLinks(`<a href="${url}?utm_source=test">Entrevista com Ana Exemplo</a><a href="https://evil.example">Debate</a><a href="/politica?page=1" rel="next">Próxima</a>`, source, [candidate])
     assert.deepEqual(discovered.urls, [url])

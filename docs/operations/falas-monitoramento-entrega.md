@@ -16,7 +16,7 @@ O Luna executa consultas e extrações mecânicas. A revisão de identidade, aut
 
 O resultado individual da revisão independente está em [falas-validacao-autoria.json](falas-validacao-autoria.json). O registro inclui o hash do catálogo revisado, a fonte e os critérios por aspa. Os arquivos originais completos permanecem no diretório local de evidências, fora do Git.
 
-A verificação técnica passou com 5.275 testes aprovados, 16 ignorados e nenhuma falha, além dos 98 testes específicos de falas. A cobertura foi de 58,01% das linhas, 58,02% das instruções, 80,28% das ramificações e 85,13% das funções, acima dos limites do projeto. Também passaram tipos, lint, ortografia da interface, contrato de ambiente, análise de scripts, código sem uso, auditoria de dependências e build.
+A verificação técnica passou com 5.287 testes aprovados, 16 ignorados e nenhuma falha, além dos 110 testes específicos de falas. Na validação inicial, a cobertura foi de 58,01% das linhas, 58,02% das instruções, 80,28% das ramificações e 85,13% das funções, acima dos limites do projeto. Também passaram tipos, lint, ortografia da interface, contrato de ambiente, análise de scripts, código sem uso, auditoria de dependências e build.
 
 A verificação visual passou em quatro casos de desktop e celular, com dois casos redundantes ignorados. Foram conferidos controles, troca automática, preferência por movimento reduzido, acessibilidade e ausência de largura excedente. A prévia das quatro transcrições também foi inspecionada. A ficha completa com dados remotos e o site público não foram validados nesta entrega.
 

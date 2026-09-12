@@ -77,7 +77,7 @@ A proposta, os recibos, a cobertura e a prévia navegável ficam em `reports/fal
 
 A data de upload sozinha continua insuficiente. O código recusa canal divergente, agenda futura, intervalo encurtado, transmissão tratada como gravação e divergência entre página e metadados. A referência de identidade do veículo pode ser anterior à campanha; ela comprova apenas quem produz o programa. O período da fala permanece inteiramente dentro da campanha.
 
-O checkout atual é `/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha-falas`. Use caminhos absolutos para alterações e esse diretório explicitamente nos comandos. A pasta anterior em `/private/tmp` não é destino de persistência.
+Execute os comandos a partir da raiz do repositório. Os caminhos de dados e artefatos descritos aqui são relativos a essa raiz. Não use diretórios temporários como destino de persistência.
 
 ## Rodadas econômicas para perfis ainda vazios
 

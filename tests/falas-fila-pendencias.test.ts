@@ -29,6 +29,13 @@ describe("fila econômica de pendências de falas", () => {
     assert.deepEqual(fila.candidates.map((item) => item.candidate_slug), ["bia"])
   })
 
+  it("não aceita cobertura por slug sem identidade completa", () => {
+    for (const quote of [{ candidate_slug: "ana" }, { candidate_id: "outra", candidate_slug: "ana" }]) {
+      assert.equal(gerarFilaPendenciasEconomica(base([task("ana", [])], { quotes: [quote] })).candidates.length, 1)
+    }
+    assert.throws(() => gerarFilaPendenciasEconomica({ ...base([task("ana", [])]), roster: [{ slug: "ana" }] as RosterCandidate[] }), /ID do roster/)
+  })
+
   it("deduplica histórico executado e consultas entre candidatos", () => {
     const fila = gerarFilaPendenciasEconomica(base(
       [task("ana", ["consulta já feita", "consulta compartilhada"]), task("bia", ["consulta compartilhada", "consulta nova"])],

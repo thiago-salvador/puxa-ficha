@@ -21,7 +21,7 @@
     "monitor:falas": "node --conditions react-server --import tsx scripts/falas-monitoramento.ts",
     "plan:falas": "node --conditions react-server --import tsx scripts/falas-plano-busca.ts",
     "plan:falas:pendencias": "node --conditions react-server --import tsx scripts/falas-fila-pendencias.ts",
-    "test:falas": "node --conditions react-server --import tsx --test tests/falas-monitoramento.test.ts tests/falas-descoberta.test.ts tests/falas-revisao.test.ts tests/falas-backfill.test.ts tests/falas-plano-busca.test.ts tests/falas-video.test.ts tests/falas-transcricao.test.ts tests/falas-fila-pendencias.test.ts",
+    "test:falas": "node --conditions react-server --import tsx --test tests/falas-*.test.ts",
     "review:falas": "node --conditions react-server --import tsx scripts/falas-importar-revisao.ts",
     "check:runtime": "node scripts/check-node-runtime.mjs",
     "predev": "npm run check:runtime",

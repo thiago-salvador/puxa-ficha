@@ -27,6 +27,11 @@ export interface AchadoRevisado {
 const plain = (value: string) => value.normalize("NFC").replace(/\s+/g, " ").trim()
 const normalizeId = (value: string) => value.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()
 
+const containsName = (text: string, name: string) => {
+  const normalizedName = normalizeId(name)
+  return normalizedName.length > 0 && ` ${normalizeId(text)} `.includes(` ${normalizedName} `)
+}
+
 /** Reject explicit contradictions around this quotation. This is a narrow
  * guard, not a replacement for the contextual source review between paragraphs.
  * Mask whole quoted passages so names/dates mentioned by the speaker cannot
@@ -139,9 +144,9 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
   const identityNormalized = normalizeId(identity)
   const directIdentity = names.some((name) => ` ${identityNormalized} `.includes(` ${name} `) || (identityNormalized.split(" ").length >= 2 && name.startsWith(identityNormalized + " ")))
   const verifiedAliases = finding.evidence.identity_alias_evidence?.filter((proof) => proof.uf === candidate.estado && names.includes(normalizeId(proof.canonical_name))
-    && normalizeId(proof.identity_excerpt).includes(normalizeId(proof.canonical_name)) && normalizeId(proof.alias_party_excerpt).includes(normalizeId(proof.alias))
+    && containsName(proof.identity_excerpt, proof.canonical_name) && containsName(proof.alias_party_excerpt, proof.alias)
     && supportingText(proof.article_url, [proof.identity_excerpt, proof.alias_party_excerpt, proof.uf_excerpt])) ?? []
-  const verifiedAlias = verifiedAliases.find((proof) => identityNormalized.includes(normalizeId(proof.alias)))
+  const verifiedAlias = verifiedAliases.find((proof) => containsName(identity, proof.alias))
   if (!directIdentity && !verifiedAlias) return pending("identity_does_not_match_candidate")
   let liveVideo: NonNullable<FalaCandidato["review_evidence"]>["live_video"]
   const liveProof = finding.evidence.event_live_video
@@ -184,7 +189,7 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
     if (dateEvidence.length < 8 || !dateBody?.includes(dateEvidence)) return pending("event_date_excerpt_not_in_source")
     if (/^[^\d]{0,80}\b(?:\d{1,2}[/.]\d{2}[/.]\d{4}|\d{1,2} de [\p{L}]+ de \d{4})\s*(?:[-–]|às)?\s*\d{1,2}(?::|h)\d{2}/iu.test(dateEvidence)
       && !/entrevista|sabatina|debate|ocorre|realizad/i.test(dateEvidence)) return pending("publication_timestamp_is_not_event_date")
-    if (dateUrl && ![...names, ...verifiedAliases.map((proof) => normalizeId(proof.alias))].some((name) => normalizeId(dateBody).includes(name))) return pending("event_source_identity_not_verified")
+    if (dateUrl && ![...names, ...verifiedAliases.map((proof) => normalizeId(proof.alias))].some((name) => containsName(dateBody, name))) return pending("event_source_identity_not_verified")
     if (/divulgad|exibid|republicad/i.test(dateEvidence)) return pending("broadcast_date_needs_event_corroboration")
     if (/marcad[oa]|agendad[oa]|será|participará|ocorrerá|acontecerá|previst[oa]/i.test(dateEvidence)) return pending("planned_event_is_not_speech_date")
     if (dataEvento(dateEvidence, rangeProof?.anchor_published_at ?? dateSource?.article_published_at ?? finding.article_published_at, Boolean(rangeProof)) !== period.from) return pending("event_date_not_resolved")

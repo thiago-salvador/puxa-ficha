@@ -25,6 +25,10 @@ describe("plano determinístico de busca de falas", () => {
     assert.deepEqual(calcularJanelasBusca(now, "recorrente").map((window) => window.id), ["14d"])
   })
 
+  it("rejeita primeira carga antes do início da campanha", () => {
+    assert.throws(() => calcularJanelasBusca(new Date("2026-08-15T12:00:00Z"), "primeira_carga"), /Janela de busca começa no futuro/)
+  })
+
   it("limita a recorrência no início da campanha e oferece termos alternativos", () => {
     assert.equal(calcularJanelasBusca(new Date("2026-08-20T12:00:00Z"), "recorrente")[0].start, "2026-08-16")
     const plan = gerarPlanoBuscaFalas({ mode: "primeira_carga", now, roster: [candidate("a", "ana")] })

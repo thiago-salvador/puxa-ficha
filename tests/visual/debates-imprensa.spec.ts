@@ -11,9 +11,11 @@ test.describe("box de aspas jornalísticas", () => {
     const card = page.locator("[data-pf-debates-card]")
     await expect(card).toBeVisible()
     await expect(card.locator("blockquote")).toBeVisible()
-    const initialId = await card.getAttribute("data-pf-debate-quote-id")
+    await expect(card).toHaveAttribute("data-pf-debate-quote-id", /\S+/)
+    const initialId = (await card.getAttribute("data-pf-debate-quote-id"))!
+    expect(initialId).toBeTruthy()
     await card.getByRole("button", { name: "Próxima citação" }).click()
-    await expect(card).not.toHaveAttribute("data-pf-debate-quote-id", initialId ?? "")
+    await expect(card).not.toHaveAttribute("data-pf-debate-quote-id", initialId)
     await card.getByRole("button", { name: "Pausar rotação das citações" }).click()
     await expect(card.getByRole("button", { name: "Retomar rotação das citações" })).toBeVisible()
 
@@ -38,16 +40,20 @@ test.describe("box de aspas jornalísticas", () => {
   test("rotaciona automaticamente em dez segundos", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop", "prova temporal única evita duplicar espera")
     const card = page.locator("[data-pf-debates-card]")
-    const initialId = await card.getAttribute("data-pf-debate-quote-id")
-    await expect(card).not.toHaveAttribute("data-pf-debate-quote-id", initialId ?? "", { timeout: 12_000 })
+    await expect(card).toHaveAttribute("data-pf-debate-quote-id", /\S+/)
+    const initialId = (await card.getAttribute("data-pf-debate-quote-id"))!
+    expect(initialId).toBeTruthy()
+    await expect(card).not.toHaveAttribute("data-pf-debate-quote-id", initialId, { timeout: 12_000 })
   })
 
   test("não rotaciona sozinho com movimento reduzido", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "desktop", "prova temporal única evita duplicar espera")
     await page.emulateMedia({ reducedMotion: "reduce" })
     const card = page.locator("[data-pf-debates-card]")
-    const initialId = await card.getAttribute("data-pf-debate-quote-id")
+    await expect(card).toHaveAttribute("data-pf-debate-quote-id", /\S+/)
+    const initialId = (await card.getAttribute("data-pf-debate-quote-id"))!
+    expect(initialId).toBeTruthy()
     await page.waitForTimeout(10_500)
-    await expect(card).toHaveAttribute("data-pf-debate-quote-id", initialId ?? "")
+    await expect(card).toHaveAttribute("data-pf-debate-quote-id", initialId)
   })
 })

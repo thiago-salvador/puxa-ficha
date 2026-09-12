@@ -224,7 +224,7 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
     if (q.publisher === "The Papo com André Silva" && !recorded) throw new Error("Canal exige evidência do episódio gravado")
     const publicationBound = transcript?.media_published_at ?? q.article_published_at
     if (transcript && (transcript.kind !== "automatic" || transcript.reviewed_context !== true
-      || !transcript.engine?.trim() || transcript.speaker_context?.length < 30
+      || !transcript.engine?.trim() || typeof transcript.speaker_context !== "string" || transcript.speaker_context.trim().length < 30
       || !Number.isFinite(transcript.start_seconds) || !Number.isFinite(transcript.end_seconds)
       || transcript.start_seconds < 0 || transcript.end_seconds <= transcript.start_seconds || transcript.end_seconds - transcript.start_seconds > 90
       || ![transcript.audio_sha256, transcript.transcript_sha256, transcript.verification_sha256].every(hash => /^[a-f0-9]{64}$/.test(hash))

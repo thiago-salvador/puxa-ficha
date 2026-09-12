@@ -71,6 +71,11 @@ test("converte VTT, remove tags e deduplica sobreposição das cues", () => {
   assert.equal(exportarTextoLegendaVtt(vtt), "Se, de fato, o governo quisesse fazer, ele poderia sim, teria condições de fazer moradia > pública & segurança")
 })
 
+test("substitui entidades Unicode fora do intervalo sem lançar erro", () => {
+  const vtt = `WEBVTT\n\n00:00:01.000 --> 00:00:02.000\nA &#x110000; B &#55296; C`
+  assert.equal(exportarTextoLegendaVtt(vtt), "A � B � C")
+})
+
 test("texto VTT alterado não coincide com a frase editorial comparada", () => {
   const altered = `WEBVTT\n\n00:00:01.000 --> 00:00:03.000\nSe, de fato, o governo quisesse mudar, ele poderia sim\n`
   assert.notEqual(exportarTextoLegendaVtt(altered), "Se, de fato, o governo quisesse fazer, ele poderia sim")
