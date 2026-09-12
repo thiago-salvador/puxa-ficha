@@ -127,7 +127,14 @@ export interface DocumentoDiffAgendado {
   operations: OperacaoCatalogoAgendada[]
 }
 
+export type ExecutionAlert = {
+  code: "discovery_source_failure" | "artifact_missing" | "artifact_invalid" | "matrix_invalid" | "unknown"
+  message: string
+}
+
 export interface ResultadoConsolidacaoAgendada {
+  execution_status: "complete" | "failed"
+  execution_alerts: ExecutionAlert[]
   status: "blocked" | "no_changes" | "ready"
   operation_status: "blocked" | "no_changes" | "candidates"
   global_alerts: string[]
@@ -513,7 +520,8 @@ interface EntradaConsolidacaoAgendada {
   documents: DocumentoColetadoAgendado[]
   catalogs: CatalogosAgendados
   generatedAt?: string
-  discovery?: { status: "partial" | "not_assessed"; alerts: string[] }
+  discovery?: { status: "partial" | "not_assessed" | "source_failure"; alerts: string[] }
+  executionAlerts?: ExecutionAlert[]
 }
 
 // Invalid envelopes cannot safely be attributed to an individual poll.
@@ -522,7 +530,7 @@ export function consolidarPropostasAgendadas(input: EntradaConsolidacaoAgendada)
     return consolidarLoteAgendado(input)
   } catch (error) {
     const alerts = [`quebra de contrato na consolidação: ${error instanceof Error ? error.message : String(error)}`]
-    return resultadoConsolidacao(input, [], [], alerts, [], [])
+    return resultadoConsolidacao(input, [], [], alerts, [], [], [{ code: "artifact_invalid", message: alerts[0] }])
   }
 }
 
@@ -656,7 +664,7 @@ function consolidarLoteAgendado(input: EntradaConsolidacaoAgendada): ResultadoCo
     try { applyDocumentedAliases(aliases, operation.proposed) }
     catch (error) { globalAlerts.push(`aliases incompatíveis: ${error instanceof Error ? error.message : String(error)}`) }
   }
-  return resultadoConsolidacao(input, items, operations, globalAlerts, pollAlerts, input.discovery?.alerts ?? [])
+  return resultadoConsolidacao(input, items, operations, globalAlerts, pollAlerts, input.discovery?.alerts ?? [], input.executionAlerts ?? [])
 }
 
 function resultadoConsolidacao(
@@ -666,8 +674,10 @@ function resultadoConsolidacao(
   globalAlerts: string[],
   pollAlerts: ResultadoConsolidacaoAgendada["poll_alerts"],
   discoveryAlerts: string[],
+  executionAlerts: ExecutionAlert[] = [],
 ): ResultadoConsolidacaoAgendada {
   const alerts = [...globalAlerts, ...pollAlerts.map((entry) => `${entry.poll_id}-live: ${entry.reason}`), ...discoveryAlerts]
+  const executionStatus = executionAlerts.length ? "failed" : "complete"
   const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
     status: alerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
     alerts: [...discoveryAlerts],
@@ -685,8 +695,10 @@ function resultadoConsolidacao(
     received: input.documents.length,
     items,
     operations: safeOperations,
-  }) + `\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
+  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${executionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
+    execution_status: executionStatus,
+    execution_alerts: executionAlerts,
     status,
     operation_status: operationStatus,
     global_alerts: globalAlerts,

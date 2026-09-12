@@ -249,3 +249,25 @@ test("replay 34360285171: cinco candidatas, 19 exceções e parser público em c
   assert.equal(consolidarPropostasAgendadas({ matrix, documents, catalogs: readback }).diff.operations.length, 0)
   console.log(`I1 replay: ${temp}; parser público validou cinco pesquisas candidatas; 19 exceções preservadas.`)
 })
+
+test("curadoria parcial não derruba saúde operacional, mas falha operacional continua fail-closed", () => {
+  const input = fixture()
+  const partial = consolidarPropostasAgendadas({
+    ...input,
+    discovery: { status: "partial", alerts: ["inventário anual não comprovado"] },
+  })
+  assert.equal(partial.status, "blocked")
+  assert.equal(partial.operation_status, "candidates")
+  assert.equal(partial.execution_status, "complete")
+  assert.deepEqual(partial.execution_alerts, [])
+  assert.match(partial.summary, /Execução operacional: complete/)
+
+  const failed = consolidarPropostasAgendadas({
+    ...input,
+    discovery: { status: "partial", alerts: [] },
+    executionAlerts: [{ code: "discovery_source_failure", message: "HTTP 403 sem fallback" }],
+  })
+  assert.equal(failed.status, "blocked")
+  assert.equal(failed.execution_status, "failed")
+  assert.equal(failed.execution_alerts[0]?.code, "discovery_source_failure")
+})

@@ -108,6 +108,8 @@ function consolidateCommand(options: Map<string, string>): void {
   }
   const discoveryPath = options.get("--discovery")
   const discoveryAlerts: string[] = []
+  const executionAlerts: import("./model").ExecutionAlert[] = []
+  let discoveryStatus: "partial" | "source_failure" = "partial"
   let coverage = construirCoberturaDescoberta({ observations: [], targets: [] })
   try {
     if (!discoveryPath) throw new Error("manifesto de descoberta ausente")
@@ -116,7 +118,10 @@ function consolidateCommand(options: Map<string, string>): void {
       || new Set(discovery.coverage.map((row: { geography_code: string }) => row.geography_code)).size !== 28
       || GEOGRAFIAS_DESCOBERTA.some((geo) => !discovery.coverage.some((row: { geography_code: string }) => row.geography_code === geo))
       || discovery.coverage.some((row: Record<string, unknown>) => row.schema_version !== "pesquisas-cobertura-v1" || ![row.registration_ids_found, row.publications_located, row.errors, row.discovery_exceptions].every(Array.isArray))) throw new Error("cobertura deve conter BR e 27 UFs sem duplicação e com schema válido")
+    if (!["partial", "not_assessed", "source_failure"].includes(discovery.status)) throw new Error("status de descoberta inválido")
+    discoveryStatus = discovery.status
     coverage = discovery.coverage
+    if (discovery.status === "source_failure") executionAlerts.push({ code: "discovery_source_failure", message: "descoberta reportou falha de fonte" })
     for (const row of discovery.coverage) {
       if (row.registry_query_status !== "observed" || row.registry_query_exhausted !== true) discoveryAlerts.push(`${row.geography_code}: consulta de registros incompleta`)
       for (const error of row.errors ?? []) discoveryAlerts.push(`${row.geography_code}: ${error}`)
@@ -124,13 +129,21 @@ function consolidateCommand(options: Map<string, string>): void {
     }
     discoveryAlerts.push(`Descoberta ${discovery.status}: inventário de resultados e atualidade não comprovados`)
   } catch (error) {
+    discoveryStatus = "source_failure"
+    executionAlerts.push({ code: "artifact_invalid", message: "manifesto de descoberta ausente ou inválido" })
     discoveryAlerts.push(`Descoberta indisponível: ${error instanceof Error ? error.message : String(error)}`)
   }
+  const documents = findDocuments(inputDir, matrixPayload.include)
+  const expectedKeys = new Set(matrixPayload.include.map((entry) => entry.key))
+  const receivedKeys = new Set(documents.map((document) => document.key))
+  for (const key of expectedKeys) if (!receivedKeys.has(key)) executionAlerts.push({ code: "artifact_missing", message: `artefato ausente para ${key}` })
   const result = consolidarPropostasAgendadas({
     matrix: matrixPayload.include,
-    documents: findDocuments(inputDir, matrixPayload.include),
+    documents,
     catalogs: carregarCatalogosAgendados(),
-    discovery: { status: "partial", alerts: [...new Set(discoveryAlerts)] },
+    discovery: { status: discoveryStatus, alerts: [...new Set(discoveryAlerts)] },
+    executionAlerts,
+
   })
   // Only the current, atomically validated contracts can advance result status.
   coverage = coverage.map((row) => {
@@ -154,19 +167,21 @@ function consolidateCommand(options: Map<string, string>): void {
   mkdirSync(outputDir, { recursive: true })
   writeJson(resolve(outputDir, "proposal.json"), result.proposal)
   writeJson(resolve(outputDir, "diff.json"), result.diff)
-  writeJson(resolve(outputDir, "status.json"), { status: result.status, operation_status: result.operation_status,
+  writeJson(resolve(outputDir, "status.json"), { execution_status: result.execution_status, execution_alerts: result.execution_alerts, status: result.status, operation_status: result.operation_status,
     coverage: result.coverage, promotion: result.promotion, global_alerts: result.global_alerts, poll_alerts: result.poll_alerts })
   writeJson(resolve(outputDir, "coverage.json"), coverage)
   writeFileSync(resolve(outputDir, "summary.md"), result.summary)
   writeFileSync(resolve(outputDir, "pr-body.md"), `${result.prBody}\n`)
   appendGithubOutput("status", result.status)
+  appendGithubOutput("execution_status", result.execution_status)
+  appendGithubOutput("execution_alert_count", result.execution_alerts.length)
   appendGithubOutput("change_count", result.diff.operations.length)
   appendGithubOutput("operation_status", result.operation_status)
   appendGithubOutput("coverage_status", result.coverage.status)
   appendGithubOutput("promotion_authorized", String(result.promotion.authorized))
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, result.summary)
   console.log(`PESQUISAS_CONSOLIDATION_STATUS=${result.status}`)
-  if (result.status === "blocked") process.exitCode = 1
+  if (result.execution_status === "failed") process.exitCode = 1
 }
 
 function applyCommand(options: Map<string, string>): void {
