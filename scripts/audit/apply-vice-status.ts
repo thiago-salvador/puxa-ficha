@@ -9,7 +9,6 @@ export const VICE_STATUS_PREDECESSOR = "20260908160000"
 export const VICE_STATUS_MIGRATIONS = [
   { version: "20260912160000", name: "chapas_vice_situacao_divulgacand" },
   { version: "20260912160100", name: "chapas_rr_vice_inapto" },
-  { version: "20260912160200", name: "grant_chapas_publico_columns" },
 ] as const
 const AUTHOR = "Thiago Salvador <contato.thiagosalvador@gmail.com> via vice-status:"
 const digest = (text: string) => `sha256:${createHash("sha256").update(text).digest("hex")}`
