@@ -77,7 +77,39 @@ jobs:
           cache: "npm"
       - run: npm ci
       - name: Health check remoto (falha em mismatch, not_found ou error)
+        id: ids_gate
         run: npm run audit:ids-cohort:gate
+      - name: Diagnosticar conectividade do runner após falha dos IDs
+        if: failure() && steps.ids_gate.outcome == 'failure'
+        timeout-minutes: 2
+        run: |
+          node --input-type=module <<'NODE'
+          import { lookup } from 'node:dns/promises';
+          const urls = [
+            'https://dadosabertos.camara.leg.br/api/v2/deputados/139289',
+            'https://legis.senado.leg.br/dadosabertos/senador/4981',
+          ];
+          await Promise.all(urls.map(async (url) => {
+            const host = new URL(url).hostname;
+            try { console.log(JSON.stringify({ host, dns: await lookup(host, { all: true }) })); }
+            catch (error) { console.log(JSON.stringify({ host, dns_error: error.code ?? error.name })); }
+            const started = Date.now();
+            try {
+              const response = await fetch(url, { headers: { Accept: 'application/json' }, signal: AbortSignal.timeout(10000) });
+              await response.arrayBuffer();
+              console.log(JSON.stringify({ host, transport: 'node', http_status: response.status, elapsed_ms: Date.now() - started }));
+            } catch (error) {
+              console.log(JSON.stringify({ host, transport: 'node', error: error.name, cause: error.cause?.code, elapsed_ms: Date.now() - started }));
+            }
+          }));
+          NODE
+          for url in \
+            'https://dadosabertos.camara.leg.br/api/v2/deputados/139289' \
+            'https://legis.senado.leg.br/dadosabertos/senador/4981'; do
+            curl --ipv4 --silent --show-error --connect-timeout 5 --max-time 10 \
+              --output /dev/null --write-out 'curl_ipv4 %{url_effective} http=%{http_code} remote_ip=%{remote_ip} seconds=%{time_total}\n' \
+              --header 'Accept: application/json' "$url" || true
+          done
 
   public-surface:
     name: Superfície pública (exposição de documento + segurança)
