@@ -406,8 +406,8 @@ describe("classificador puro (#136)", () => {
     // Nome de urna de Danilo medido no PG17: 363 + mesmas 105 = 468 arquivos.
     // Fonte direta medida no PG17: 365 + mesmas 105 = 470 arquivos.
     // H12 medido no gate local PG17: 366 aplicadas + mesmas 105 = 471.
-    // Situação da vice: PG17 medido, 368 aplicadas + mesmas 105 falhas = 473.
-    assert.equal(manifesto.aplicadas_esperadas, 368)
+    // Situação da vice + ACL aditiva: PG17 medido, 369 aplicadas + mesmas 105 falhas = 474.
+    assert.equal(manifesto.aplicadas_esperadas, 369)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
