@@ -562,6 +562,21 @@ export interface Chapa2026 {
   vice_nome_completo: string;
   vice_nome_urna: string;
   vice_partido_sigla: string;
+  titular_sq_candidato?: string | null;
+  vice_sq_candidato?: string | null;
+  vice_situacao_divulgacand?: {
+    domain: "divulgacand_vices";
+    situacao_vice: number;
+    status: string;
+    titular_sq_candidato: string;
+    vice_sq_candidato: string;
+    vice_nome_urna: string;
+    vice_partido_sigla: string;
+    uf: string;
+    source_url: string;
+    source_sha256: string;
+    checked_at: string;
+  } | null;
   fonte_url: string;
   fonte_sha256: string;
   snapshot_em: string;

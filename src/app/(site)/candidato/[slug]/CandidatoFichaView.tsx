@@ -7,6 +7,7 @@ import {
   mergeSourceStatuses,
 } from "@/lib/api"
 import { SITE_ORIGIN } from "@/lib/metadata"
+import { verifiedViceStatus } from "@/lib/vice-official-status"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { SectionDivider } from "@/components/SectionHeader"
 import { Footer } from "@/components/Footer"
@@ -180,6 +181,7 @@ export async function CandidatoFichaView({
     ? heroMetaParts.join(" · ")
     : "Dados pessoais ainda não coletados"
   const chapaViceEhAtual = ficha.chapa_2026?.vice_slug === slug
+  const viceOfficialStatus = ficha.chapa_2026 ? verifiedViceStatus(ficha.chapa_2026) : null
 
   const schema =
     seoSubpath === "timeline"
@@ -391,6 +393,10 @@ export async function CandidatoFichaView({
                 ) : (
                   `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
                 )}
+                {viceOfficialStatus && <> (<a href={viceOfficialStatus.source_url} target="_blank" rel="noopener noreferrer"
+                  className="underline underline-offset-4" title={`Fonte consultada em ${viceOfficialStatus.checked_at.slice(0, 10)}`}>
+                  {viceOfficialStatus.label}
+                </a>)</>}
               </p>
             )}
 

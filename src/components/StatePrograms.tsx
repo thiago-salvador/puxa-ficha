@@ -4,6 +4,7 @@ import { useId, useState } from "react"
 import { ArrowUpRight, ChevronDown, FileText, Info, List } from "lucide-react"
 import Link from "next/link"
 import type { StateProgram } from "@/lib/state-programs"
+import type { ProgramRunningMate } from "@/lib/vice-official-status"
 import type { ProgramaGovernoManifestoPublico, ProgramaGovernoResumo } from "@/lib/programa-governo"
 import { STATE_PROGRAM_CORE_THEMES, stateProgramTheme } from "@/lib/state-program-themes"
 import { IndicadorFonteTag } from "./IndicadorFonteTag"
@@ -55,7 +56,7 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
   unavailable?: boolean
   showContext?: boolean
   scopeTitle?: string
-  runningMates?: Record<string, string>
+  runningMates?: Record<string, ProgramRunningMate>
 }) {
   const [view, setView] = useState<"summary" | "themes">("summary")
   const [theme, setTheme] = useState("seguranca")
@@ -120,10 +121,13 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
         const items = manifesto?.resumo?.temas.filter(t => stateProgramTheme(t).id === theme) ?? []
         const party = p.partido_sigla ?? manifesto?.fonte.partido
         const hasPartyLogo = party && getPartyLogoUrl(party)
+        const runningMate = runningMates[p.slug]
         return <article key={`${p.slug}-${view}`} className={styles.program} aria-labelledby={`program-${p.slug}-title`}>
           <header className={styles.identity}>
             <h4 id={`program-${p.slug}-title`}><Link href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
-            <p className={styles.runningMate}>Vice: {runningMates[p.slug] ?? "informação indisponível"}</p>
+            <p className={styles.runningMate}>Vice: {typeof runningMate === "object"
+              ? <>{runningMate.name} (<a href={runningMate.source_url} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
+              : runningMate ?? "informação indisponível"}</p>
             {hasPartyLogo ? <span className={styles.partyLogo} role="img" aria-label={`Partido ${party}`}>
               <PartyLogoMark sigla={party} className="h-8 w-12 rounded-none border-0 p-0 shadow-none sm:h-8 sm:w-12 sm:rounded-none sm:p-0" />
             </span> : <span className="sr-only">{party ? `Partido ${party}. Logo indisponível.` : "Partido indisponível."}</span>}
