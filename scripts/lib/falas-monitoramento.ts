@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto"
 import { load } from "cheerio"
 import { conteudoSerializadoClickPb } from "./falas-conteudo-serializado"
-import { CANAIS_AO_VIVO_APROVADOS } from "./falas-evidencia-video"
+import { CANAIS_AO_VIVO_APROVADOS, urlVideoAprovada } from "./falas-evidencia-video"
 import { validarEstruturaVideoGravado } from "./falas-video-gravado"
 import sourcesConfig from "../data/falas-fontes.json"
 import { periodoDaFala, chaveDataFala, type CatalogoFalas, type FalaCandidato } from "../../src/lib/falas-candidatos"
@@ -235,11 +235,12 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
     const rangeProof = q.review_evidence?.date_range_proof
     const live = q.review_evidence?.live_video
     if (live && (q.occurred_between || q.attribution !== "source_context_review" || live.reviewed_live_on_air !== true
-      || !Object.hasOwn(CANAIS_AO_VIVO_APROVADOS, live.channel_id) || !/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(live.url)
+      || !Object.hasOwn(CANAIS_AO_VIVO_APROVADOS, live.channel_id) || !urlVideoAprovada(live.channel_id, live.url) || !/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(live.url)
       || !Number.isInteger(live.release_timestamp) || live.release_timestamp <= 0 || live.release_timestamp * 1000 > Date.parse(publicationBound)
       || new Intl.DateTimeFormat("en-CA", { timeZone: "America/Sao_Paulo" }).format(new Date(live.release_timestamp * 1000)) !== live.broadcast_on
       || live.broadcast_on !== q.occurred_on || ![live.metadata_sha256, live.captions_sha256, live.frame_sha256].every(hash => /^[a-f0-9]{64}$/.test(hash))
-      || !Number.isFinite(live.frame_at_seconds) || live.frame_at_seconds < 0 || live.article_event_excerpt !== q.review_evidence?.date_excerpt
+      || !Number.isFinite(live.frame_at_seconds) || live.frame_at_seconds < 0
+      || live.article_event_excerpt !== q.review_evidence?.date_excerpt
       || live.quote_excerpt.split(/\s+/).length < 6 || !normalizar(q.quote_text).includes(normalizar(live.quote_excerpt)))) throw new Error("Data ao vivo sem evidência vinculada")
     if (!period || (q.occurred_between && !recorded && (!rangeProof || q.attribution !== "source_context_review"
       || rangeProof.relationship_excerpt.length < 20

@@ -3,7 +3,7 @@ import { INITIAL_SEARCH_START, SOURCES, dataEvento, naJanela, naJanelaInicial, s
 import { periodoDaFala, chaveDataFala, type FalaCandidato } from "../../src/lib/falas-candidatos"
 import { lerEvidenciaWeb, type EvidenciaWeb } from "./falas-evidencia-web"
 import { conteudoSerializadoClickPb } from "./falas-conteudo-serializado"
-import { CANAIS_AO_VIVO_APROVADOS, lerEvidenciaVideo, exportarTextoLegendaVtt as textoLegendaVtt } from "./falas-evidencia-video"
+import { CANAIS_AO_VIVO_APROVADOS, lerEvidenciaVideo, exportarTextoLegendaVtt as textoLegendaVtt, urlVideoAprovada } from "./falas-evidencia-video"
 
 export interface VideoDeApoio { metadata: string; captions: string; frame_sha256: string; frame_at_seconds: number }
 
@@ -156,7 +156,7 @@ export function verificarRevisao(input: { candidate: CandidatoFalas; finding: Ac
     // the separately verified newspaper quotation; captions are only a match.
     const channel = CANAIS_AO_VIVO_APROVADOS[liveProof.channel_id as keyof typeof CANAIS_AO_VIVO_APROVADOS]
     const support = input.liveVideos?.get(liveProof.url)
-    if (!channel || !support || rangeProof || dateUrl || liveProof.reviewed_live_on_air !== true
+    if (!channel || !urlVideoAprovada(liveProof.channel_id, liveProof.url) || !support || rangeProof || dateUrl || liveProof.reviewed_live_on_air !== true
       || !Number.isFinite(support.frame_at_seconds) || support.frame_at_seconds < 0
       || !/^[a-f0-9]{64}$/.test(liveProof.frame_sha256) || liveProof.frame_sha256 !== support.frame_sha256)
       return pending("live_video_evidence_missing")

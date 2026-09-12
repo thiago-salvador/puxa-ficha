@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
 import { test } from "node:test"
-import { CANAIS_AO_VIVO_APROVADOS, exportarTextoLegendaVtt, lerEvidenciaVideo } from "../scripts/lib/falas-evidencia-video"
+import { CANAIS_AO_VIVO_APROVADOS, exportarTextoLegendaVtt, lerEvidenciaVideo, urlVideoAprovada } from "../scripts/lib/falas-evidencia-video"
 import { CANAL_METAL_TV, FONTE_UFPR, PUBLISHER_METAL_TV, URL_METAL_TV, validarEstruturaVideoGravado } from "../scripts/lib/falas-video-gravado"
 import type { FalaCandidato } from "../src/lib/falas-candidatos"
 
@@ -33,6 +33,23 @@ test("aceita metadata real mínimo da transmissão da Arinalda em 08/09", () => 
   assert.equal(result.broadcast_on, "2026-09-08")
   assert.equal(result.release_timestamp, 1788884722)
   assert.equal(result.raw_sha256, createHash("sha256").update(raw, "utf8").digest("hex"))
+})
+
+test("permite somente o episódio DCO explicitamente allowlisted", () => {
+  const dcoChannel = "UCvhnOzbSDblzftMPLe8D4-A"
+  const dcoUrl = "https://www.youtube.com/watch?v=w3CAsXoCxwM"
+  const raw = JSON.stringify({
+    id: "w3CAsXoCxwM", webpage_url: dcoUrl, channel_id: dcoChannel,
+    title: "Análise Internacional nº 274 - 20/08/2026", description: "Diário Causa Operária",
+    was_live: true, live_status: "was_live", release_timestamp: 1787241581,
+  })
+  assert.equal(CANAIS_AO_VIVO_APROVADOS[dcoChannel].publisher, "Diário Causa Operária (jornal do PCO)")
+  assert.equal(urlVideoAprovada(dcoChannel, dcoUrl), true)
+  assert.equal(lerEvidenciaVideo(raw, dcoUrl, dcoChannel, now).broadcast_on, "2026-08-20")
+  const other = "https://www.youtube.com/watch?v=abcdefghijk"
+  assert.equal(urlVideoAprovada(dcoChannel, other), false)
+  assert.throws(() => lerEvidenciaVideo(raw.replaceAll(dcoUrl, other).replaceAll("w3CAsXoCxwM", "abcdefghijk"), other, dcoChannel, now), /vídeo não aprovado/)
+  assert.equal(urlVideoAprovada("UCoutroCanal", dcoUrl), false)
 })
 
 test("rejeita transmissão não concluída ou marcada como não live", () => {

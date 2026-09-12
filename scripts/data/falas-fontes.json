@@ -10,6 +10,14 @@
       "articlePath": "/watch"
     },
     {
+      "id": "radio-avivar",
+      "approvedArticleUrls": ["https://www.youtube.com/watch?v=5qKR3B6rQnI"],
+      "publisher": "Rádio Avivar Evangélica",
+      "origin": "https://www.youtube.com",
+      "listing": "/channel/UC7tAzgqhKfATez70VwbAboQ",
+      "articlePath": "/watch"
+    },
+    {
       "id": "o-rio-branco",
       "publisher": "O Rio Branco",
       "origin": "https://oriobranco.net",
@@ -774,7 +782,11 @@
     },
     {
       "id": "dco-danilo-campanha",
-      "approvedArticleUrls": ["https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/"],
+      "approvedArticleUrls": [
+        "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+        "https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/",
+        "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/"
+      ],
       "publisher": "Diário Causa Operária (jornal do PCO)",
       "origin": "https://causaoperaria.org.br",
       "listing": "/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",

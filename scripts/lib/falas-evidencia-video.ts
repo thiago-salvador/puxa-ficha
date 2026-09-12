@@ -10,11 +10,64 @@ export type EvidenciaVideo = {
   raw_sha256: string
 }
 
+export interface CanalAoVivoAprovado {
+  publisher: string
+  source_origin: string
+  approvedVideoUrls?: readonly string[]
+}
+
+export interface VinculoLiveVideoRevisado {
+  candidate_id: string
+  candidate_slug: string
+  episode_url: string
+  occurred_on: string
+  identity_support_url: string
+  identity_publisher_marker: string
+  event_date_markers: readonly string[]
+}
+
+export const CANAL_AVIVAR = "UC7tAzgqhKfATez70VwbAboQ"
+
 export const CANAIS_AO_VIVO_APROVADOS = {
   "UCsVYJNopaXURKDSF4x_ZNtQ": { publisher: "O Rio Branco", source_origin: "https://oriobranco.net" },
   "UCic6Oio9KDhXYeyjl0XPetA": { publisher: "Rádio Monte Roraima FM", source_origin: "https://www.monteroraimafm.com.br" },
   "UCn6Moj1CU0yJi-xZpsKDaZg": { publisher: "TV Ponta Negra", source_origin: "https://pontanegranews.com.br" },
-} as const
+  "UCvhnOzbSDblzftMPLe8D4-A": {
+    publisher: "Diário Causa Operária (jornal do PCO)", source_origin: "https://causaoperaria.org.br",
+    approvedVideoUrls: ["https://www.youtube.com/watch?v=w3CAsXoCxwM"],
+  },
+  [CANAL_AVIVAR]: {
+    publisher: "Rádio Avivar Evangélica", source_origin: "https://www.youtube.com",
+    approvedVideoUrls: ["https://www.youtube.com/watch?v=5qKR3B6rQnI"],
+  },
+} as const satisfies Record<string, CanalAoVivoAprovado>
+
+/** Reviewed cross-source identity bridge. Keep this closed: it is a factual
+ * mapping for a reviewed package, not a generic candidate or date heuristic. */
+export const VINCULOS_LIVE_VIDEO_REVISADOS = {
+  "victor-assis": {
+    candidate_id: "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+    candidate_slug: "victor-assis",
+    episode_url: "https://www.youtube.com/watch?v=w3CAsXoCxwM",
+    occurred_on: "2026-08-20",
+    identity_support_url: "https://g1.globo.com/pe/pernambuco/eleicoes/2026/noticia/2026/08/20/porta-a-porta-entrevistas-e-sabatina-como-foi-o-5o-dia-de-campanha-dos-candidatos-ao-governo-de-pernambuco.ghtml",
+    identity_publisher_marker: "Diário Causa Operária",
+    event_date_markers: ["20/08/2026", "20 de agosto de 2026", "20/08"],
+  },
+} as const satisfies Record<string, VinculoLiveVideoRevisado>
+
+export function vinculoLiveVideoRevisado(input: { candidate_id: string; candidate_slug: string; occurred_on: string; episode_url: string; identity_support_url: string }): VinculoLiveVideoRevisado | null {
+  const link = VINCULOS_LIVE_VIDEO_REVISADOS[input.candidate_slug as keyof typeof VINCULOS_LIVE_VIDEO_REVISADOS]
+  return link && link.candidate_id === input.candidate_id && link.candidate_slug === input.candidate_slug
+    && link.occurred_on === input.occurred_on && link.episode_url === input.episode_url && link.identity_support_url === input.identity_support_url
+    ? link : null
+}
+
+export function urlVideoAprovada(channelId: string, url: string): boolean {
+  const channel = CANAIS_AO_VIVO_APROVADOS[channelId as keyof typeof CANAIS_AO_VIVO_APROVADOS]
+  if (!channel) return false
+  return !("approvedVideoUrls" in channel) || (channel.approvedVideoUrls as readonly string[]).includes(url)
+}
 
 type VideoMetadata = {
   id?: unknown
@@ -167,6 +220,7 @@ export function lerEvidenciaVideo(
   if (!urlMatch || urlMatch[1] !== metadata.id) rejeitar("URL não é o watch URL canônico")
   if (typeof expectedUrl !== "string" || !CANONICAL_VIDEO_URL.test(expectedUrl)) rejeitar("expectedUrl não é canônico")
   if (typeof metadata.channel_id !== "string" || metadata.channel_id !== expectedChannelId) rejeitar("canal divergente")
+  if (!urlVideoAprovada(expectedChannelId, expectedUrl)) rejeitar("vídeo não aprovado para o canal")
   if (metadata.was_live !== true || metadata.live_status !== "was_live") rejeitar("transmissão ao vivo não confirmada")
 
   const releaseTimestamp = metadata.release_timestamp
