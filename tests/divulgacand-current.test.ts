@@ -4,12 +4,15 @@ import test from "node:test";
 import {
   collectCurrentOfficialCandidacies,
   sanitizeCandidateList,
+  sanitizeCandidateDetail,
+  BRAZIL_UFS,
   sanitizeVices,
   collectDirectCandidaciesMissingFromCdn,
   DIVULGACAND_BASE,
   ELECTION_ID_2026,
   type DivulgaCandReceipt,
 } from "../scripts/lib/data-freshness/divulgacand-current";
+import { classifyOfficialCandidacy, comparePublicProfileStatuses } from "../src/lib/candidate-publication-integrity";
 import { compareCandidacies } from "../scripts/lib/data-freshness/candidaturas";
 import type { CandidacyRecord } from "../scripts/lib/data-freshness/types";
 
@@ -283,4 +286,79 @@ test("CDN alcança a candidatura direta sem perder mudança de situação com c�
   cdn.situacao_codigo = "2";
   cdn.situacao_descricao = "Deferido";
   assert.equal(compareCandidacies([cdn], [published], new Date().toISOString()).counts.status_change, 1);
+});
+
+test("detalhe atual prevalece sobre lista antiga e flag inapta impede admissão", () => {
+  const fixture = directFixture();
+  fixture.titular.descricaoSituacao = "Indeferido";
+  fixture.titular.isCandidatoInapto = true;
+  const current = sanitizeCandidateDetail(fixture.titular, fixture.current[0]);
+  assert.equal(current.list_status, "Aguardando julgamento");
+  assert.equal(current.status, "Indeferido");
+  assert.equal(classifyOfficialCandidacy(current), "terminal");
+  assert.deepEqual(current.vices.map((vice) => [vice.sq_candidato, vice.situacao_vice, vice.party]), [
+    ["270002546369", 3, "DEMOCRATA"], ["270002554376", 1, "DEMOCRATA"],
+  ]);
+  assert.doesNotMatch(JSON.stringify(current), /PRIVATE_MARKER|cpf|emails/);
+  const changes = comparePublicProfileStatuses([{ ...current, profile_slug: "teste" }], [{
+    slug: "teste", office: "Governador", uf: "TO", situacao_candidatura: "aguardando julgamento",
+  }]);
+  assert.equal(changes.length, 1);
+  assert.equal(changes[0].official_state, "terminal");
+});
+
+test("indeferido concorrendo com flags aptas permanece ativo; situação desconhecida não ganha admissão", () => {
+  const fixture = directFixture();
+  const current = sanitizeCandidateDetail({ ...fixture.titular, descricaoSituacao: "Indeferido", descricaoTotalizacao: "Concorrendo" }, fixture.current[0]);
+  assert.equal(classifyOfficialCandidacy(current), "active");
+  assert.equal(classifyOfficialCandidacy({ ...current, totalizacao: null }), "review_required");
+  assert.equal(classifyOfficialCandidacy({ ...current, is_candidato_inapto: true }), "terminal");
+  assert.equal(classifyOfficialCandidacy({ ...current, substituido: true }), "terminal");
+});
+
+test("compara julgamento publicado normalizado e detecta mudança mesmo entre situações ativas", () => {
+  const row = { ...directFixture().current[0], profile_slug: "teste", status: "Indeferido em prazo recursal ou com recurso" };
+  const published = { slug: "teste", office: "Governador" as const, uf: "TO", situacao_candidatura: "indeferido com recurso" };
+  assert.equal(comparePublicProfileStatuses([row], [published]).length, 0);
+  assert.equal(comparePublicProfileStatuses([{ ...row, status: "Deferido" }], [published]).length, 1);
+});
+
+test("coleta detalhes de todas 27 UFs e BR com concorrência limitada e recibos", async () => {
+  let running = 0;
+  let maximum = 0;
+  const details: string[] = [];
+  const scopes = [...BRAZIL_UFS, "BR"];
+  const fakeFetch = async (input: string | URL | Request) => {
+    const url = String(input);
+    const scope = scopes.find((uf) => url.includes(`/2026/${uf}/`))!;
+    const id = String(scopes.indexOf(scope) + 1);
+    const common = { id, nomeUrna: "TESTE", descricaoSituacao: "Deferido", partido: { sigla: "TESTE" } };
+    if (url.includes("/listar/")) return new Response(JSON.stringify([common]));
+    running++;
+    maximum = Math.max(maximum, running);
+    details.push(scope);
+    await new Promise((resolve) => setTimeout(resolve, 1));
+    running--;
+    return new Response(JSON.stringify({ ...common, ufCandidatura: scope,
+      eleicao: { id: ELECTION_ID_2026, ano: 2026 }, cargo: { codigo: scope === "BR" ? 1 : 3 },
+      isCandidatoInapto: scope === "BR", st_SUBSTITUIDO: false, cpf: "PRIVATE_MARKER",
+    }));
+  };
+  const result = await collectCurrentOfficialCandidacies(fakeFetch);
+  assert.equal(result.records.length, 28);
+  assert.deepEqual(details.sort(), scopes.sort());
+  assert.equal(maximum, 4);
+  assert.equal(result.receipts.length, 56);
+  assert.ok(result.receipts.every((receipt) => receipt.http_status === 200 && /^[a-f0-9]{64}$/.test(receipt.sha256 ?? "")));
+  assert.equal(classifyOfficialCandidacy(result.records.at(-1)!), "terminal");
+  assert.doesNotMatch(JSON.stringify(result), /PRIVATE_MARKER|cpf/);
+});
+
+test("detalhe rejeita identidade divergente e flags ausentes sem retornar PII", () => {
+  const fixture = directFixture();
+  for (const patch of [{ id: 999 }, { nomeUrna: "OUTRO" }, { partido: { sigla: "OUTRO" } },
+    { ufCandidatura: "SP" }, { eleicao: { id: 2022, ano: 2022 } }, { cargo: { codigo: 4 } },
+    { isCandidatoInapto: undefined }, { st_SUBSTITUIDO: undefined }]) {
+    assert.throws(() => sanitizeCandidateDetail({ ...fixture.titular, ...patch }, fixture.current[0]), /identidade ou flags/);
+  }
 });

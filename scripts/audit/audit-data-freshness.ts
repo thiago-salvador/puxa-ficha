@@ -8,6 +8,7 @@ import { resolve } from "node:path";
 
 import {
   analyzeProfileAdmission,
+  comparePublicProfileStatuses,
   reconcilePublicRoster,
   validateActiveProfileCrosswalk,
   type ActiveProfileCrosswalkEntry,
@@ -275,6 +276,7 @@ function summaryMarkdown(input: {
   stalePublic?: number;
   missingPublic?: number;
   duplicateMappings?: number;
+  publicProfileStatusChanges?: number;
   incompleteProfiles?: number;
   sourceError?: string;
 }): string {
@@ -297,6 +299,7 @@ function summaryMarkdown(input: {
         `- Ativos ausentes: ${input.missingPublic ?? 0}\n` +
         `- Publicados terminais ou obsoletos: ${input.stalePublic ?? 0}\n` +
         `- Identidades oficiais duplicadas: ${input.duplicateMappings ?? 0}\n` +
+        `- Situações de fichas divergentes do TSE: ${input.publicProfileStatusChanges ?? 0}\n` +
         `- Fichas abaixo do gate de admissão: ${input.incompleteProfiles ?? 0}\n`) +
     (input.sourceError ? `- Erro da fonte: ${input.sourceError}\n` : "") +
     `\n## Diferenças de candidaturas\n\n| Classificação | Total |\n|---|---:|\n${changes}\n` +
@@ -535,6 +538,7 @@ async function main(): Promise<void> {
     publicProfiles.map(({ slug, office, uf }) => ({ slug, office, uf })),
     activeProfileCrosswalk.profiles,
   );
+  const publicProfileStatusChanges = comparePublicProfileStatuses(currentOfficialWithProfiles, publicProfiles);
   const profileAdmission = {
     snapshot_present: Array.isArray(published.public_profiles),
     profiles: publicProfiles.map(analyzeProfileAdmission),
@@ -571,6 +575,7 @@ async function main(): Promise<void> {
   const overall =
     comparison.status === "review_required" ||
     publicationIntegrity.status === "review_required" ||
+    publicProfileStatusChanges.length > 0 ||
     !profileAdmission.snapshot_present ||
     incompleteProfiles.length > 0 ||
     sourceNeedsReview
@@ -580,6 +585,12 @@ async function main(): Promise<void> {
     comparison,
     freshness,
     registry,
+  });
+  if (publicProfileStatusChanges.length > 0) recommendations.push({
+    code: "public_profile_status_change", priority: "high",
+    title: "Situação publicada diverge do detalhe oficial",
+    action: "Reconciliar o julgamento e a aptidão de cada ficha com a evidência oficial atual, preservando a trilha da correção.",
+    evidence: publicProfileStatusChanges.map((row) => `${row.slug}: ${row.published_status ?? "sem situação"} -> ${row.official_status ?? "sem situação"}; ${row.official_state}`),
   });
 
   writeJson(resolve(options.out, "source.json"), source);
@@ -597,6 +608,7 @@ async function main(): Promise<void> {
     strict: options.strict,
     candidacies: comparison,
     publication_integrity: publicationIntegrity,
+    public_profile_status_changes: publicProfileStatusChanges,
     profile_admission: profileAdmission,
     freshness,
   });
@@ -618,6 +630,7 @@ async function main(): Promise<void> {
         publicationIntegrity.duplicate_active_mappings,
       ).length,
       incompleteProfiles: incompleteProfiles.length,
+      publicProfileStatusChanges: publicProfileStatusChanges.length,
     }),
   );
 
