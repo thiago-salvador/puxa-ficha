@@ -80,6 +80,9 @@ describe("falas recentes com fonte", () => {
     assert.equal(urlAprovada(approved + "?utm_source=teste#trecho", restricted), approved)
     assert.equal(urlAprovada(restricted.origin + "/2026/outra-materia/", restricted), null)
     assert.equal(urlAprovada(approved + "?outro=1", restricted), null)
+    assert.equal(urlAprovada("https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/", restricted), "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/")
+    assert.equal(urlAprovada("https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/", restricted), "https://causaoperaria.org.br/2026/rui-pimenta-e-uma-guerra-da-otan-contra-a-russia/")
+    assert.equal(urlAprovada("https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/?x=1", restricted), null)
   })
   it("não permite que canais gravados dispensem a prova do episódio no catálogo", () => {
     for (const publisher of ["The Papo com André Silva", "MetalTV (SMC)"]) {

@@ -1,22 +1,22 @@
 {
   "schema_version": "independent-attribution-review-compact-v1",
-  "reviewed_at": "2026-09-12 15:41:34 UTC",
-  "catalog_sha256": "01c262c9780f0deef4b4025ec300a0ee43f35d06959dcc8b86f94752d8bbf046",
+  "reviewed_at": "2026-09-12 18:48:22 UTC",
+  "catalog_sha256": "e15d9cfa96b9106f97e5d0a29ca2ff3a4b505a572ef45fc2225af251f96c2125",
   "roster_sha256": "79618f11ada3c504d306f4145aab7c8c1b91e82bd170ebc8e20df9264d29e4fc",
   "scope": {
-    "new_quotes": 199,
+    "new_quotes": 200,
     "written_quotes": 194,
-    "automatic_transcripts": 5,
+    "automatic_transcripts": 6,
     "roster_candidates": 208,
     "legacy_quotes_separate": 9,
     "coverage_search_reopened": true,
-    "coverage_remaining": 9,
-    "incrementally_reviewed_quotes": 2,
-    "previously_reviewed_quotes_preserved": 197
+    "coverage_remaining": 8,
+    "incrementally_reviewed_quotes": 1,
+    "previously_reviewed_quotes_preserved": 199
   },
   "global_status": "pass",
   "totals": {
-    "pass": 199,
+    "pass": 200,
     "fail": 0,
     "blocked": 0
   },
@@ -26,10 +26,10 @@
     "blocked": 0
   },
   "criteria": [
-    "Todos os 199 registros, sem amostragem: revisão anterior dos 197 preservada e revisão incremental das 2 inclusões. IDs, slugs, nomes, cargos e UFs contra o cadastro de 208.",
+    "Todos os 200 registros: os 199 objetos de revisão anteriores foram preservados e a inclusão de Victor recebeu revisão incremental de identidade, autoria, data, literalidade e importação.",
     "Recuperação de originais, frase literal e autoria no contexto da fonte, incluindo fonte partidária expressamente rotulada.",
     "Fala em contexto de candidatura entre 16/08 e 12/09/2026; data do evento distinta da publicação; intervalos preservados.",
-    "5 transcrições automáticas: integridade, concordância textual, origem da mídia, metadados, áudio não silencioso, duração e quadros de contexto; 4 revisadas anteriormente e 1 nesta adição.",
+    "6 transcrições automáticas: 5 revisões anteriores preservadas; Victor foi verificado em áudio original português, legenda temporalmente recortada, Whisper small, metadados e quadro de contexto.",
     "9 aspas legadas da Band verificadas na revisão anterior e preservadas separadamente, sem elevar cobertura de candidatos."
   ],
   "limitations": [
@@ -41,7 +41,8 @@
     "Os 197 registros e as 9 aspas legadas herdam a prova da revisão anterior. Nesta etapa foram verificados os 2 acréscimos e a preservação integral dos registros anteriores, sem nova coleta das 197 fontes.",
     "Este arquivo compacto não contém textos integrais nem contextos reproduzidos; provas locais indicadas permanecem em reports/falas-monitoramento.",
     "Sem alteração em catálogo, aplicação, banco, Git ou estado remoto pelo validador nesta revisão incremental.",
-    "Pass significa atribuição confirmada pelos critérios declarados, sem reconhecimento biométrico nem validação da veracidade do conteúdo."
+    "Pass significa atribuição confirmada pelos critérios declarados, sem reconhecimento biométrico nem validação da veracidade do conteúdo.",
+    "Oito candidatos continuam sem pacote elegível; a pesquisa adicional não demonstra inexistência de falas. Jairo tem fala atribuída e transcrita, mas data efetiva ainda não confirmada."
   ],
   "transcript_cli": {
     "commands": [
@@ -4295,6 +4296,76 @@
         "Frame inspecionado; nenhuma alegação de escuta humana ou reconhecimento biométrico.",
         "Data comprovada para alternativa SMC; a entrevista anterior da CBN não recebeu essa data."
       ]
+    },
+    {
+      "quote_id": "88fd24c8cd6a48864598af3269c251aab7de885cc5d8e90014af8c9144987720",
+      "candidate_slug": "victor-assis",
+      "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
+      "status": "pass",
+      "source_url": "https://causaoperaria.org.br/2026/rui-costa-pimenta-analisa-a-crescente-tensao-entre-turquia-e-israel/",
+      "source_type": "jornalismo partidário identificado, Diário Causa Operária (PCO)",
+      "checks": {
+        "roster_identity": "pass",
+        "literal_quote": "pass",
+        "speaker_attribution": "pass",
+        "event_period": "pass",
+        "candidate_context": "pass",
+        "automatic_transcript_agreement": "pass",
+        "technical_import_gate": "pass"
+      },
+      "occurred_on": "2026-08-20",
+      "proofs": [
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-victor-validacao.json",
+          "sha256": "64640176e996abd321a95501100cd391768b2ee839f5119652c02c70cf0502ae"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/transcricoes-videos-manifest.json",
+          "sha256": "1632e9ad5eb287ef0e544f182a4af9761e8db165fa04b502da1a9baac5140384"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/vtt-range-369-399-receipt.json",
+          "sha256": "5ff537c0278a2e093e9bf39598c795b3e95c6a2fea451214b8f6e2a2f19c9f1b"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-pco/dco-original-20260821.html",
+          "sha256": "6e0dcdf2feb11d278df76d14466cc2234fb8cffebd71642a9559c7749a81eba6"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/quote-00m06s09-00m06s39.wav",
+          "sha256": "e15e656fa222d48d5bc49e8324388bb7d826e629b3e9c25102c0fc56516807d5"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/w3CAsXoCxwM.quote-369-399.pt.vtt",
+          "sha256": "a4a5954ec4f88802420080305c203f09068639e6a7a9fd2ec80fc80dc19bc514"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/whisper-small-pt-original.vtt",
+          "sha256": "5de537e3bdc70c02f9d9aa1705b1c72f1da62499ac98e67eed46b8d16991f0af"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/yt-dlp-metadata.json",
+          "sha256": "a73656adfe4d9f9bb8fb39dc7f10b31706d0e16b6757a6fefad6c254f21584fd"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/frame-00m06s15.jpg",
+          "sha256": "87868ca817b425cb15c3825574be072f2e91c6ef68d233a2914b67809618baed"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-nordeste/victor-w3CAsXoCxwM/g1-20260820-original.html",
+          "sha256": "0fe3deae279b0cb2236636924b361b19dde0694c42276a0674821b506f580a46"
+        },
+        {
+          "path": "reports/falas-monitoramento/research/reabertura-nove-pco/dco-original-20260807.html",
+          "sha256": "3af16691440f234a7fa11cdf138eb0bae083cbee8cea0ed86963e4a4570ad54d"
+        }
+      ],
+      "limitations": [
+        "Atribuição contextual revisada independentemente: G1 registra a participação, DCO credita o apresentador e a transmissão o identifica verbalmente pelo primeiro nome; sem biometria.",
+        "Trecho em debate de análise internacional sobre a Ucrânia, apresentado pelo candidato; não é debate eleitoral entre candidatos.",
+        "Áudio original português do YouTube, formato 251-2, comparado à legenda e ao Whisper small; tiny/base também concordam. A faixa dublada inicialmente extraída foi descartada e preservada como diagnóstico.",
+        "Nenhuma alegação de escuta humana. O recorte automático contém sete palavras e aponta para a mídia com minutagem."
+      ]
     }
   ],
   "legacy_quotes": [
@@ -4546,6 +4617,14 @@
           "evidence": "validarCatalogo exige recorded_video para MetalTV (SMC) e The Papo. Reprodução fresca com transcription, recorded_video e apoio removidos foi rejeitada."
         }
       ]
+    },
+    {
+      "reviewed_at": "2026-09-12 15:41:34 UTC",
+      "document_sha256": "1b7194e9ac5abe4367e169a46bcf897817a00ad1ef485fd06401aeb6d66271d8",
+      "catalog_sha256": "01c262c9780f0deef4b4025ec300a0ee43f35d06959dcc8b86f94752d8bbf046",
+      "quotes": 199,
+      "legacy_quotes_separate": 9,
+      "status": "pass"
     }
   ],
   "log_provenance": "[confidence: alta para fatos e testes executados, source: originais e artefatos identificados] [codex-stamp: log feito pelo Codex; Claude deve ignorar se nao for util ou incorporar se fizer sentido]"
