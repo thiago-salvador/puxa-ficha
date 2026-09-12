@@ -29,6 +29,7 @@ export function urlAprovada(raw: string, source: FonteFalas): string | null {
     if (url.origin !== source.origin || url.protocol !== "https:" || url.username || url.password) return null
     url.hash = ""
     for (const key of [...url.searchParams.keys()]) if (/^(utm_|fbclid|gclid)/i.test(key)) url.searchParams.delete(key)
+    if (source.approvedArticleUrls && !source.approvedArticleUrls.includes(url.href)) return null
     return url.href
   } catch { return null }
 }
@@ -221,7 +222,7 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
     const transcript = q.transcription
     const recorded = q.review_evidence?.recorded_video
     if (recorded) validarEstruturaVideoGravado(q)
-    if (q.publisher === "The Papo com André Silva" && !recorded) throw new Error("Canal exige evidência do episódio gravado")
+    if (["The Papo com André Silva", "MetalTV (SMC)"].includes(q.publisher) && !recorded) throw new Error("Canal exige evidência do episódio gravado")
     const publicationBound = transcript?.media_published_at ?? q.article_published_at
     if (transcript && (transcript.kind !== "automatic" || transcript.reviewed_context !== true
       || !transcript.engine?.trim() || typeof transcript.speaker_context !== "string" || transcript.speaker_context.trim().length < 30

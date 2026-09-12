@@ -771,6 +771,21 @@
       "origin": "https://pontanegranews.com.br",
       "listing": "/",
       "articlePath": "/2026/"
+    },
+    {
+      "id": "dco-danilo-campanha",
+      "approvedArticleUrls": ["https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/"],
+      "publisher": "Diário Causa Operária (jornal do PCO)",
+      "origin": "https://causaoperaria.org.br",
+      "listing": "/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+      "articlePath": "/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/"
+    },
+    {
+      "id": "metaltv-smc",
+      "publisher": "MetalTV (SMC)",
+      "origin": "https://www.youtube.com",
+      "listing": "/channel/UC2FHzKYg93IRVFAqF7pO3Xg",
+      "articlePath": "/watch"
     }
   ]
 }

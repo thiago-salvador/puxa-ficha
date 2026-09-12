@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-12T02:12:41.255Z",
+  "updated_at": "2026-09-12T15:36:51.132Z",
   "quotes": [
     {
       "id": "00c8f1873899039478dd4a8f3e86452d4e3e3c020b05a042d133191ce8a6b32b",
@@ -5811,6 +5811,115 @@
         "verification_sha256": "a6a1cf95a6a2e6b34d8cabfd3895df4fbe63458f4dc75a685a7e314dad250f1a",
         "audio_sha256": "1868b2bdd0ba09eaa3238679c745f3c3abad7dea1742d225ffb9842d440b571a",
         "speaker_context": "O episódio e sua descrição identificam Marcos Reátegui como candidato ao governo. No quadro em 41:18, ele responde à pergunta de André Silva sobre juventude, trabalho e qualificação.",
+        "reviewed_context": true
+      }
+    },
+    {
+      "id": "da00f9b294349172ac348988355317b2dfe0d4b3b7c29579effdf21f720bddd3",
+      "candidate_id": "ce3b18ad-dcc9-4275-b831-66ee24422714",
+      "candidate_slug": "danilo-pinheiro",
+      "candidate_name": "Danilo da Silva",
+      "office": "Governador",
+      "uf": "GO",
+      "quote_text": "É uma luta diária de panfletagem, militância, informação política",
+      "context": "A campanha, ressaltou, faz parte da atividade desenvolvida pelo partido durante todo o ano. “É uma luta diária de panfletagem, militância, informação política”, declarou.",
+      "event_context": "Declaração durante ato de campanha em Brasília, publicada pelo jornal do próprio PCO.. O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-08-22",
+      "publisher": "Diário Causa Operária (jornal do PCO)",
+      "article_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+      "article_title": "Danilo Pinheiro: ‘PCO não teme o Mossad, o STF nem a Polícia Federal’",
+      "article_published_at": "2026-08-24",
+      "observed_at": "2026-09-12T15:18:15.811Z",
+      "source_sha256": "d8109f509065a949c6c6c8dd664e0dca86cee85a83d8b8d45d460ddafe2b97f4",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "identity_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "date_excerpt": "O candidato do Partido da Causa Operária (PCO) ao governo de Goiás, Danilo Pinheiro, denunciou a perseguição política contra o partido durante o ato de lançamento das candidaturas realizado neste sábado (22), em Brasília.",
+        "fetched_url": "https://causaoperaria.org.br/2026/danilo-pinheiro-pco-nao-teme-o-mossad-o-stf-nem-a-policia-federal/",
+        "method": "codex_source_review",
+        "source_format": "web_text",
+        "supporting_sources": [
+          {
+            "url": "https://www.gazetadopovo.com.br/eleicoes/2026/candidatos/go/governador/danilo-pinheiro-pco-29/",
+            "sha256": "89355be88441a81b851fdd0483892bb9d2bdb170b5563c459ff6c994dcc15c3b",
+            "excerpts": [
+              "Danilo Pinheiro Evangelista da Silva tem 43 anos de idade, declarou ao TSE ser casado(a), tem o grau de instrução ensino médio completo e sua ocupação anterior é \"técnico de eletricidade, eletrônica e telecomunicações\".",
+              "Danilo Pinheiro Evangelista da Silva",
+              "Danilo da Silva (número de urna 29) é candidato a Governador em GOIÁS nas Eleições 2026 pelo PARTIDO DA CAUSA OPERÁRIA. Nasceu em São Luís (MA)."
+            ],
+            "source_format": "web_text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "644fb2051ae7ae5a6ec4514f70ce2dccb3559b36412b9a3d18974cf9b5f43b65",
+      "candidate_id": "30bca027-016e-4db1-a065-2081a62d71de",
+      "candidate_slug": "adriano-funileiro",
+      "candidate_name": "Adriano Funileiro",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "PCO, por exemplo, é pelo fim do vestibular.",
+      "context": "PCO, por exemplo, é pelo fim do vestibular.",
+      "event_context": "Na sabatina do Sindicato dos Metalúrgicos da Grande Curitiba, responde à pergunta sobre valorização dos profissionais da educação e defende o fim do vestibular.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-08-31",
+      "publisher": "MetalTV (SMC)",
+      "article_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+      "article_title": "Ciclo de Entrevistas do SMC (Governo do Estado): Adriano Funileiro(PCO) - Tema: Educação",
+      "article_published_at": "2026-09-02T15:20:05.000Z",
+      "observed_at": "2026-09-12T15:22:57.209Z",
+      "source_sha256": "ec9d0fbf2dee99db08518a1ab50726576176636413b610af99b4b81be627871b",
+      "attribution": "source_context_review",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "review_evidence": {
+        "identity_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+        "date_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+        "fetched_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+        "method": "codex_source_review",
+        "supporting_sources": [
+          {
+            "url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
+            "sha256": "cde551f78c32548c44c4da20c64c3203efa35b858c44a757a3626ebfc4f7348f",
+            "excerpts": [
+              "Teixeira esteve presente nesta segunda-feira (31), de modo remoto, na sabatina mediada pelo sindicato dos metalúrgicos de Curitiba."
+            ]
+          }
+        ],
+        "recorded_video": {
+          "url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+          "channel_id": "UC2FHzKYg93IRVFAqF7pO3Xg",
+          "published_at": "2026-09-02T15:20:05.000Z",
+          "metadata_sha256": "a194ef9e778687d02425e8ae5bf1210baa01976ddea5064d117a3239ecd35eff",
+          "frame_sha256": "7705348e10cf5e03e1e85913a20a6b4fff0c5fb6acdb3922d9459857c0f85ae6",
+          "frame_at_seconds": 203,
+          "description_excerpt": "Confira a fala do candidato ao Governo do Estado, Adriano Funileiro (PCO), sobre o tema Educação, no Ciclo de Entrevistas do SMC, realizado nesta segunda(31/08).",
+          "publisher_identity_url": "https://jornalcomunicacao.ufpr.br/confira-como-foi-a-semana-dos-candidatos-ao-governo-do-parana/",
+          "date_basis": "explicit_recording_date",
+          "reviewed_context": true,
+          "recorded_on": "2026-08-31"
+        }
+      },
+      "transcription": {
+        "kind": "automatic",
+        "media_url": "https://www.youtube.com/watch?v=vqKvJUvXAIU",
+        "start_seconds": 195,
+        "end_seconds": 215,
+        "media_published_at": "2026-09-02T15:20:05.000Z",
+        "engine": "Whisper large-v3-turbo local comparado à legenda automática do YouTube; sem escuta humana.",
+        "transcript_sha256": "d53563dc2d46a200746e91f6889df800fbd35d1f84fcf5d30f1ee6123ec88ac3",
+        "verification_sha256": "7030ce1831c7f5b2e1626e6b6045266cb73371331b209831530ccc75f81ad44c",
+        "audio_sha256": "6e6068c4fb0377d08d46155ed476f14dedf4b55d1d87c8bc5fec159f6a5e058b",
+        "speaker_context": "Introdução do vídeo em 00:05–00:35 anuncia Adriano Funileiro do PCO e pergunta sobre educação. Aos 00:38 o apresentador anuncia candidato na tela e lhe passa a palavra. Frame203 mostra uma pessoa respondendo com identidade visual do Ciclo/Eleições2026 e intérprete. Não há nome escrito no frame203, por isso o vínculo depende também da introdução e dos metadados.",
         "reviewed_context": true
       }
     }
