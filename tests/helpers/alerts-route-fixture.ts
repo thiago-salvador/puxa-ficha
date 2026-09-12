@@ -64,7 +64,7 @@ interface CandidateChangeRow {
   descricao: string | null
   tipo?: string
   registro_id?: string | null
-  metadata?: { url?: unknown; fonte?: unknown } | null
+  metadata?: { url?: unknown; fonte?: unknown; data_publicacao?: unknown } | null
   created_at: string
 }
 

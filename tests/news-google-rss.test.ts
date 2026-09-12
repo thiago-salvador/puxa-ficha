@@ -6,8 +6,6 @@ import {
   parseGoogleNewsRss,
 } from "../src/lib/news/google-news"
 
-const FIXED_NOW = () => new Date("2026-06-03T12:00:00.000Z")
-
 describe("buildGoogleNewsSearchUrl", () => {
   it("quotes the nome de urna and appends the cargo", () => {
     const url = buildGoogleNewsSearchUrl("Lula", "Presidente")
@@ -48,7 +46,7 @@ describe("parseGoogleNewsRss", () => {
       </item>
     </channel></rss>`
 
-    const { items, discardedUrls } = parseGoogleNewsRss(xml, FIXED_NOW)
+    const { items, discardedUrls } = parseGoogleNewsRss(xml)
 
     assert.equal(discardedUrls, 0)
     assert.equal(items.length, 2)
@@ -58,8 +56,8 @@ describe("parseGoogleNewsRss", () => {
       url: "https://g1.globo.com/noticia-1",
       data_publicacao: new Date("Mon, 02 Jun 2026 10:00:00 GMT").toISOString(),
     })
-    // Sem pubDate: usa o `now` injetado (deterministico no teste)
-    assert.equal(items[1].data_publicacao, "2026-06-03T12:00:00.000Z")
+    // Sem pubDate: não inventar uma publicação recente usando a coleta.
+    assert.equal(items[1].data_publicacao, null)
     assert.equal(items[1].fonte, "")
   })
 
@@ -69,7 +67,7 @@ describe("parseGoogleNewsRss", () => {
       <item><title>Segura</title><link>https://secure.example/y</link></item>
     </channel></rss>`
 
-    const { items, discardedUrls } = parseGoogleNewsRss(xml, FIXED_NOW)
+    const { items, discardedUrls } = parseGoogleNewsRss(xml)
 
     assert.equal(discardedUrls, 1)
     assert.equal(items.length, 1)
@@ -77,14 +75,14 @@ describe("parseGoogleNewsRss", () => {
   })
 
   it("returns nothing for an empty or itemless feed", () => {
-    assert.deepEqual(parseGoogleNewsRss("", FIXED_NOW), { items: [], discardedUrls: 0 })
-    assert.deepEqual(parseGoogleNewsRss("<rss><channel></channel></rss>", FIXED_NOW), {
+    assert.deepEqual(parseGoogleNewsRss(""), { items: [], discardedUrls: 0 })
+    assert.deepEqual(parseGoogleNewsRss("<rss><channel></channel></rss>"), {
       items: [],
       discardedUrls: 0,
     })
   })
 
-  it("uses the deterministic fallback when pubDate is malformed", () => {
+  it("preserva data desconhecida quando pubDate é inválida", () => {
     const xml = `<rss><channel>
       <item>
         <title>Data inválida</title>
@@ -93,8 +91,8 @@ describe("parseGoogleNewsRss", () => {
       </item>
     </channel></rss>`
 
-    const { items } = parseGoogleNewsRss(xml, FIXED_NOW)
+    const { items } = parseGoogleNewsRss(xml)
     assert.equal(items.length, 1)
-    assert.equal(items[0].data_publicacao, "2026-06-03T12:00:00.000Z")
+    assert.equal(items[0].data_publicacao, null)
   })
 })

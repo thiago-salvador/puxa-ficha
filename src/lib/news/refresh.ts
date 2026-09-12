@@ -33,7 +33,7 @@ export interface NoticiaRow {
   titulo: string
   fonte: string
   url: string
-  data_publicacao: string
+  data_publicacao: string | null
 }
 
 /**
@@ -163,7 +163,7 @@ export async function refreshCandidatosNews(
       }
 
       const xml = await res.text()
-      const { items } = parseGoogleNewsRss(xml, deps.now)
+      const { items } = parseGoogleNewsRss(xml)
 
       // Guard de relevancia (auditoria 2026-07-24, etapa 1C): so grava item
       // cujo titulo cita o candidato. O que sobra e cobertura coletiva do

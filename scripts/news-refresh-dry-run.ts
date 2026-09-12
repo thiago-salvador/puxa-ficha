@@ -111,7 +111,7 @@ async function main() {
   }
   for (const captura of capturas) {
     for (const row of captura.rows) {
-      log("news-dry-run", `  ${captura.slug} <- [${row.data_publicacao.slice(0, 10)}] ${row.titulo}`)
+      log("news-dry-run", `  ${captura.slug} <- [${row.data_publicacao?.slice(0, 10) ?? "data desconhecida"}] ${row.titulo}`)
     }
   }
   log(
