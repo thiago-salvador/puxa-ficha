@@ -137,6 +137,44 @@ test("auditoria sempre gera source, universe, diff e summary coerentes", () => {
     assert.match(summary, /Próximas ações recomendadas/);
     assert.match(summary, /Nenhuma ação corretiva necessária/);
 
+    const judgmentOut = join(work, "judgment-out");
+    writeFileSync(currentOfficial, JSON.stringify({ metadata: { checked_at: now },
+      records: currentRecords.map((record, index) => index === 0
+        ? { ...record, status: "Aguardando julgamento" } : record),
+    }));
+    const judgmentResult = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-data-freshness.ts",
+      `--published=${published}`, "--official-snapshot=data/chapas-2026-tse-20260815.json",
+      `--current-official-snapshot=${currentOfficial}`, `--out=${judgmentOut}`, `--now=${now}`,
+    ], { encoding: "utf8" });
+    assert.equal(judgmentResult.status, 1, judgmentResult.stderr);
+    const judgmentDiff = JSON.parse(readFileSync(join(judgmentOut, "diff.json"), "utf8"));
+    assert.equal(judgmentDiff.candidacies.status, "ok");
+    assert.equal(judgmentDiff.publication_integrity.status, "ok");
+    assert.equal(judgmentDiff.public_profile_status_changes.length, 1);
+    assert.equal(judgmentDiff.status, "review_required");
+    assert.match(readFileSync(join(judgmentOut, "summary.md"), "utf8"), /Situações de fichas divergentes do TSE: 1/);
+    const judgmentSummary = readFileSync(join(judgmentOut, "summary.md"), "utf8");
+    assert.match(judgmentSummary, /## Situações publicadas divergentes do TSE/);
+    assert.ok(judgmentSummary.includes(`| ${currentRecords[0].profile_slug} | ${currentRecords[0].sq_candidato} | deferido | Aguardando julgamento | active |`));
+
+    const markdownOut = join(work, "markdown-out");
+    writeFileSync(published, JSON.stringify({
+      records,
+      public_profiles: publicProfiles.map((profile, index) => index === 0
+        ? { ...profile, situacao_candidatura: "deferido\\|primeiro\r\nsegundo|terceiro\\fim" } : profile),
+      collection_evidence: collectionEvidence,
+    }));
+    const markdownResult = spawnSync(process.execPath, ["--import", "tsx", "scripts/audit/audit-data-freshness.ts",
+      `--published=${published}`, "--official-snapshot=data/chapas-2026-tse-20260815.json",
+      `--current-official-snapshot=${currentOfficial}`, `--out=${markdownOut}`, `--now=${now}`,
+    ], { encoding: "utf8" });
+    assert.equal(markdownResult.status, 1, markdownResult.stderr);
+    const markdownSummary = readFileSync(join(markdownOut, "summary.md"), "utf8");
+    const markdownRow = markdownSummary.split("\n").find((line) => line.startsWith(`| ${currentRecords[0].profile_slug} |`));
+    assert.ok(markdownRow?.includes(String.raw`| deferido\\\|primeiro segundo\|terceiro\\fim | Aguardando julgamento | active |`));
+    writeFileSync(published, JSON.stringify({ records, public_profiles: publicProfiles, collection_evidence: collectionEvidence }));
+    writeFileSync(currentOfficial, JSON.stringify({ metadata: { checked_at: now }, records: currentRecords }));
+
     writeFileSync(
       published,
       JSON.stringify({

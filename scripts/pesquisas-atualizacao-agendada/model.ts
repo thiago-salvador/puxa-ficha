@@ -175,7 +175,7 @@ function incorporarDescobertasColetadas(input: EntradaConsolidacaoAgendada): Ite
         || !target.registration_id?.startsWith(`${manifest.uf}-`)
         || target.office !== (manifest.uf === "BR" ? "Presidente" : "Governador")
         || (contract && (contract.registration.code.value !== target.registration_id || contract.office !== target.office))
-        || registry.length !== 1 || observation.registry.office !== target.office
+        || registry.length !== 1 || !observation.registry.office.split(",").some((office) => office.trim() === target.office)
         || observation.source_url !== "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
         || !isNonEmptyString(observation.public_text)
         || createHash("sha256").update(observation.public_text).digest("hex") !== observation.evidence_sha256) {

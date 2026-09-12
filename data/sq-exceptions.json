@@ -2,6 +2,44 @@
   "$schema": "Exceções conhecidas de SQ_CANDIDATO. O audit-historical-sq-coverage.ts consome este arquivo para distinguir gap real de limitação confirmada.",
   "entries": [
     {
+      "slug": "dr-furlan",
+      "ano": 2010,
+      "reason": "tse-birthdate-typo",
+      "detail": "Divergência histórica documentada, sem troca de pessoa: SQ 30000000614 (consulta_cand_2010_AP) informa 08/07/1973; SQ 30002530014 (consulta_cand_2026_AP) informa 09/07/1973. CPF e título eleitoral válidos são idênticos entre as duas linhas, comparados localmente sem publicá-los. O cadastro público já usa a data corrente de 2026; nenhum SQ ou dado do banco deve mudar. A exceção não determina qual registro histórico foi digitado incorretamente e só vale para as observações exatas abaixo.",
+      "confirmed": "2026-09-12",
+      "birthdate_evidence": {
+        "cpf_equal": true,
+        "title_equal": true,
+        "observations": [
+          { "ano": "2010", "sq": "30000000614", "nascimento": "08/07/1973", "nome": "ANTÔNIO PAULO DE OLIVEIRA FURLAN", "uf": "AP" },
+          { "ano": "2026", "sq": "30002530014", "nascimento": "09/07/1973", "nome": "ANTONIO PAULO DE OLIVEIRA FURLAN", "uf": "AP" }
+        ],
+        "sources": [
+          { "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip", "sha256": "761c8eb2683b0ccdfab535dc92452384bcfc95b1ca7dba9579081ea352281328", "csv": "consulta_cand_2010_AP.csv", "csv_sha256": "595c92e06667df8e7bb6cb0c0bafa00347c63f14285d0bf8386eec7c57333758" },
+          { "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip", "sha256": "342852c06b645fa90f4bc767153b497995ead648542d04059ccf14fb745c25d8", "csv": "consulta_cand_2026_AP.csv", "csv_sha256": "4cea9fa786ab9d407e65f58948ebb7f9e052d18f40d782c376097e1e51f74f51" }
+        ]
+      }
+    },
+    {
+      "slug": "rico-pinheiro",
+      "ano": 2010,
+      "reason": "tse-birthdate-typo",
+      "detail": "Divergência histórica documentada, sem troca de pessoa: SQ 30000000611 (consulta_cand_2010_AP) informa 15/02/1980; SQ 70002553982 (consulta_cand_2026_DF) informa 16/02/1980. CPF e título eleitoral válidos são idênticos entre as duas linhas, comparados localmente sem publicá-los. O cadastro público já usa a data corrente de 2026; nenhum SQ ou dado do banco deve mudar. A âncora 2010 exibida pelo auditor era desempate de frequência, não prova de data canônica. A exceção não determina qual registro histórico foi digitado incorretamente e só vale para as observações exatas abaixo.",
+      "confirmed": "2026-09-12",
+      "birthdate_evidence": {
+        "cpf_equal": true,
+        "title_equal": true,
+        "observations": [
+          { "ano": "2010", "sq": "30000000611", "nascimento": "15/02/1980", "nome": "ALDERICO DA SILVA PINHEIRO FILHO", "uf": "AP" },
+          { "ano": "2026", "sq": "70002553982", "nascimento": "16/02/1980", "nome": "ALDERICO DA SILVA PINHEIRO FILHO", "uf": "DF" }
+        ],
+        "sources": [
+          { "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2010.zip", "sha256": "761c8eb2683b0ccdfab535dc92452384bcfc95b1ca7dba9579081ea352281328", "csv": "consulta_cand_2010_AP.csv", "csv_sha256": "595c92e06667df8e7bb6cb0c0bafa00347c63f14285d0bf8386eec7c57333758" },
+          { "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip", "sha256": "342852c06b645fa90f4bc767153b497995ead648542d04059ccf14fb745c25d8", "csv": "consulta_cand_2026_DF.csv", "csv_sha256": "61725274a15ad88010a039dc91790ad4305c80f104fa90ed16aec7bb1391c00c" }
+        ]
+      }
+    },
+    {
       "slug": "wanderlei-barbosa",
       "ano": 2018,
       "reason": "no-receita-at-source",
