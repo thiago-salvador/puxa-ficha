@@ -287,7 +287,7 @@ function summaryMarkdown(input: {
     .map(([key, value]) => `| ${key} | ${value} |`)
     .join("\n");
   const statusChanges = input.publicProfileStatusChanges ?? [];
-  const cell = (value: string | null) => (value ?? "sem informação").replace(/\|/g, "\\|").replace(/[\r\n]+/g, " ");
+  const cell = (value: string | null) => (value ?? "sem informação").replace(/\\/g, "\\\\").replace(/\|/g, "\\|").replace(/[\r\n]+/g, " ");
   const statusRows = statusChanges.map((row) =>
     `| ${cell(row.slug)} | ${row.sq_candidato} | ${cell(row.published_status)} | ${cell(row.official_status)} | ${row.official_state} | ${row.is_candidato_inapto ?? "não verificado"} | ${row.substituido ?? "não verificado"} |`,
   ).join("\n");
