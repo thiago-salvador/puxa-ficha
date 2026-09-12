@@ -1271,7 +1271,7 @@ describe("alerts HTTP routes", () => {
           descricao: "Explicação da notícia.",
           tipo: "noticia",
           registro_id: "news-123",
-          metadata: { fonte: "Portal Exemplo", url: "https://portal.example/noticia?a=1&b=2" },
+          metadata: { fonte: "Portal Exemplo", url: "https://portal.example/noticia?a=1&b=2", data_publicacao: "2026-04-10T11:00:00.000Z" },
           created_at: "2026-04-10T12:00:00.000Z",
         },
         {
@@ -1281,7 +1281,7 @@ describe("alerts HTTP routes", () => {
           descricao: null,
           tipo: "noticia",
           registro_id: null,
-          metadata: { fonte: "Outro Portal", url: "javascript:alert(1)" },
+          metadata: { fonte: "Outro Portal", url: "javascript:alert(1)", data_publicacao: "2026-04-10T11:00:00.000Z" },
           created_at: "2026-04-10T12:01:00.000Z",
         },
         {
@@ -1311,6 +1311,59 @@ describe("alerts HTTP routes", () => {
       assert.ok(!text.includes("change-id-is-not-the-news-id"))
       assert.ok(!text.includes("not-the-news"))
       assert.equal(fixture.getTable("notification_log")[0]?.change_ids?.length, 3)
+    })
+
+    it("envia apenas notícias publicadas nas últimas 24h, mesmo com coleta recente e envio atrasado", async () => {
+      const fixture = baseDigestFixture()
+      fixture.getTable("alert_subscribers")[0]!.last_digest_sent_at = "2026-04-08T10:00:00.000Z"
+      const dates = [
+        "2026-04-09T14:59:59.999Z", // antiga, coletada hoje
+        null, "inválida", undefined, 123,
+        "2026-04-10T15:00:00.001Z", // futura
+        "2026-04-09T12:00:00-03:00", // exatamente 24h
+        "2026-04-10T15:00:00.000Z", // agora
+      ]
+      fixture.setTable("candidate_changes", dates.map((date, i) => ({
+        id: `news-${i}`, candidato_id: "cand_lula", titulo: `Notícia ${i}`,
+        descricao: null, tipo: "noticia", registro_id: `article-${i}`,
+        metadata: { data_publicacao: date }, created_at: "2026-04-10T12:00:00.000Z",
+      })))
+      const response = await createSendDigestHandler(createDeps(fixture))(buildDigestRequest(fixture))
+      assert.equal(response.status, 200)
+      assert.equal(fixture.emails.length, 1)
+      assert.deepEqual(fixture.getTable("notification_log")[0]?.change_ids, ["news-6", "news-7"])
+      for (let i = 0; i < 6; i++) {
+        assert.ok(!fixture.emails[0]!.html.includes(`Notícia ${i}`))
+        assert.ok(!fixture.emails[0]!.text?.includes(`Notícia ${i}`))
+      }
+    })
+
+    it("não envia e-mail quando só existem notícias antigas", async () => {
+      const fixture = baseDigestFixture()
+      fixture.setTable("candidate_changes", [{
+        id: "old", candidato_id: "cand_lula", titulo: "Antiga", descricao: null,
+        tipo: "noticia", metadata: { data_publicacao: "2026-04-01T12:00:00Z" },
+        created_at: "2026-04-10T12:00:00.000Z",
+      }])
+      const response = await createSendDigestHandler(createDeps(fixture))(buildDigestRequest(fixture))
+      assert.equal(response.status, 200)
+      assert.equal(fixture.emails.length, 0)
+      assert.equal(fixture.getTable("notification_log").length, 0)
+    })
+
+    it("notícias antigas não ocupam o limite e escondem notícias recentes", async () => {
+      const fixture = baseDigestFixture()
+      fixture.setTable("candidate_changes", Array.from({ length: 206 }, (_, i) => ({
+        id: `news-${String(i).padStart(3, "0")}`, candidato_id: "cand_lula", titulo: `Notícia ${i}`,
+        descricao: null, tipo: "noticia",
+        metadata: { data_publicacao: i < 205 ? "2026-04-01T12:00:00Z" : NOW.toISOString() },
+        created_at: "2026-04-10T12:00:00.000Z",
+      })))
+      const response = await createSendDigestHandler(createDeps(fixture))(buildDigestRequest(fixture))
+      assert.equal(response.status, 200)
+      assert.deepEqual(fixture.getTable("notification_log")[0]?.change_ids, ["news-205"])
+      assert.match(fixture.emails[0]?.text ?? "", /Notícia 205/)
+      assert.doesNotMatch(fixture.emails[0]?.text ?? "", /e mais/)
     })
 
     it("marks notification_log as failed when the email provider throws", async () => {
@@ -1344,6 +1397,25 @@ describe("alerts HTTP routes", () => {
       assert.equal(body.failed, 1)
       assert.equal(logRow?.status, "failed")
       assert.equal(logRow?.error_message, "resend down")
+    })
+
+    it("descarta notícias que envelheceram na fila entre dois dias", async () => {
+      const fixture = baseDigestFixture()
+      fixture.setTable("candidate_changes", Array.from({ length: 205 }, (_, i) => ({
+        id: `news-${String(i).padStart(3, "0")}`, candidato_id: "cand_lula", titulo: `Notícia ${i}`,
+        descricao: null, tipo: "noticia",
+        metadata: { data_publicacao: "2026-04-10T12:00:00.000Z" },
+        created_at: new Date(Date.parse("2026-04-10T12:00:00.000Z") + i * 1000).toISOString(),
+      })))
+      const first = await createSendDigestHandler(createDeps(fixture))(buildDigestRequest(fixture))
+      assert.equal(first.status, 200)
+      assert.equal(fixture.getTable("notification_log")[0]?.change_ids?.length, 200)
+      const tomorrow = new Date(NOW.getTime() + 24 * 60 * 60 * 1000)
+      const second = await createSendDigestHandler(createDeps(fixture, tomorrow))(buildDigestRequest(fixture))
+      assert.equal(second.status, 200)
+      assert.equal((await readJson<{ sent: number }>(second)).sent, 0)
+      assert.equal(fixture.emails.length, 1)
+      assert.equal(fixture.getTable("notification_log").length, 1)
     })
 
     /**

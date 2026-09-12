@@ -33,6 +33,7 @@ const CHAIN_FETCH_ATTEMPTS = 2
 const CHAIN_FETCH_RETRY_DELAY_MS = 3000
 const CHAIN_FETCH_TIMEOUT_MS = 15_000
 const DIGEST_TIME_ZONE = "America/Sao_Paulo"
+const NEWS_MAX_AGE_MS = 24 * 60 * 60 * 1000
 // Teto de mudanças por digest e por assinante. A consulta pede uma linha a
 // mais para saber se a janela ficou truncada; nesse caso a janela do assinante
 // avança só até o `created_at` da última mudança enviada, e o excedente sai no
@@ -83,7 +84,7 @@ interface CandidateChangeRow {
   descricao: string | null
   tipo: string
   registro_id: string | null
-  metadata: { url?: unknown; fonte?: unknown } | null
+  metadata: { url?: unknown; fonte?: unknown; data_publicacao?: unknown } | null
   created_at: string
 }
 
@@ -331,16 +332,43 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
       const candidateMap = new Map((candidateRows ?? []).map((row) => [row.id, row]))
       const windowStart = subscriber.last_digest_sent_at || subscriber.verified_at || subscriber.created_at
 
-      const { data: changeRows, error: changesError } = await supabase
-        .from("candidate_changes")
-        .select("id, candidato_id, titulo, descricao, tipo, registro_id, metadata, created_at")
-        .abortSignal(supabaseQueryTimeoutSignal())
-        .in("candidato_id", candidateIds)
-        .gt("created_at", windowStart)
-        .lte("created_at", runStartedAt)
-        .order("created_at", { ascending: true })
-        .order("id", { ascending: true })
-        .limit(DIGEST_MAX_CHANGES + 1)
+      // created_at é a coleta, não a publicação. O trigger preserva a data
+      // original em metadata; notícias sem data válida não podem virar recentes.
+      // Filtrar antes do teto exige paginar: um lote de notícias antigas não
+      // pode esconder uma notícia recente na página seguinte.
+      const changeRows: CandidateChangeRow[] = []
+      let changesError: DatabaseWriteError = null
+      let changesCursor: DigestKeysetCursor | null = null
+      const publicationEnd = Date.parse(runStartedAt)
+      const publicationStart = publicationEnd - NEWS_MAX_AGE_MS
+      while (changeRows.length <= DIGEST_MAX_CHANGES) {
+        const query = supabase
+          .from("candidate_changes")
+          .select("id, candidato_id, titulo, descricao, tipo, registro_id, metadata, created_at")
+          .abortSignal(supabaseQueryTimeoutSignal())
+          .in("candidato_id", candidateIds)
+          .gt("created_at", windowStart)
+          .lte("created_at", runStartedAt)
+        const { data, error } = await (changesCursor ? query.or(buildDigestKeysetFilter(changesCursor)) : query)
+          .order("created_at", { ascending: true })
+          .order("id", { ascending: true })
+          .limit(DIGEST_MAX_CHANGES + 1)
+        if (error) {
+          changesError = error
+          break
+        }
+        const page = (data ?? []) as CandidateChangeRow[]
+        changeRows.push(...page.filter((row) => {
+          if (row.tipo !== "noticia") return true
+          const publishedAt = typeof row.metadata?.data_publicacao === "string"
+            ? Date.parse(row.metadata.data_publicacao)
+            : NaN
+          return Number.isFinite(publishedAt) && publishedAt >= publicationStart && publishedAt <= publicationEnd
+        }))
+        const last = page.at(-1)
+        if (page.length <= DIGEST_MAX_CHANGES || !last) break
+        changesCursor = { createdAt: last.created_at, id: last.id }
+      }
 
       if (changesError) {
         deps.logAlertsEvent({
@@ -598,7 +626,7 @@ export function createSendDigestHandler(deps: SendDigestDeps = defaultSendDigest
         deps.logAlertsEvent({
           route: "send-digest",
           event: "digest_email_sent",
-          detail: { subscriberId: subscriber.id, changeCount: (changeRows as CandidateChangeRow[]).length },
+          detail: { subscriberId: subscriber.id, changeCount: changesInWindow.length },
         })
         sent += 1
       } catch (error) {

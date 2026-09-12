@@ -13,7 +13,7 @@ interface GoogleNewsItem {
   titulo: string
   fonte: string
   url: string
-  data_publicacao: string
+  data_publicacao: string | null
 }
 
 export interface ParsedGoogleNews {
@@ -45,10 +45,10 @@ export function normalizeNewsUrl(url: string): string | null {
 
 /**
  * Parse do XML do RSS via regex sobre <item>...</item>. Mantem somente itens
- * com titulo + link https. `now` e injetavel para testes deterministicos
- * (fallback de data_publicacao quando o item nao traz pubDate).
+ * com titulo + link https. Data ausente ou inválida permanece desconhecida;
+ * usar o instante da coleta faria notícias antigas parecerem recém-publicadas.
  */
-export function parseGoogleNewsRss(xml: string, now: () => Date = () => new Date()): ParsedGoogleNews {
+export function parseGoogleNewsRss(xml: string): ParsedGoogleNews {
   const items: GoogleNewsItem[] = []
   let discardedUrls = 0
   const itemRegex = /<item>([\s\S]*?)<\/item>/g
@@ -75,13 +75,13 @@ export function parseGoogleNewsRss(xml: string, now: () => Date = () => new Date
       const publishedAt =
         parsedPublishedAt && !Number.isNaN(parsedPublishedAt.getTime())
           ? parsedPublishedAt
-          : now()
+          : null
 
       items.push({
         titulo: title,
         fonte: source || "",
         url: safeUrl,
-        data_publicacao: publishedAt.toISOString(),
+        data_publicacao: publishedAt?.toISOString() ?? null,
       })
     }
   }
