@@ -38,7 +38,7 @@ test.describe("Busca rápida (caminho real)", () => {
     const input = page.getByRole("combobox", { name: "Buscar no site" })
     await expect(input).toBeVisible()
     await input.fill("Lula")
-    const target = page.getByRole("option").filter({ hasText: /Lula/i }).first()
+    const target = page.getByRole("listbox", { name: "Resultados da busca" }).getByRole("option").filter({ hasText: /Lula/i }).first()
     await expect(target).toBeVisible({ timeout: 15_000 })
     await target.click()
     await expect(page).toHaveURL(/\/candidato\/lula\/?$/)
