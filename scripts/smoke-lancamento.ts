@@ -388,7 +388,7 @@ async function checkGlobalSearch(context: BrowserContext): Promise<string> {
     await page.getByRole("button", { name: "Abrir busca rápida" }).first().click()
     const input = page.getByRole("combobox", { name: "Buscar no site" })
     await input.fill("augusto cury")
-    const target = page.getByRole("option").filter({ hasText: /Augusto Cury/i }).first()
+    const target = page.getByRole("listbox", { name: "Resultados da busca" }).getByRole("option").filter({ hasText: /Augusto Cury/i }).first()
     await target.waitFor({ state: "visible" })
     await target.click()
     await page.waitForURL(/\/candidato\/augusto-cury\/?$/)
