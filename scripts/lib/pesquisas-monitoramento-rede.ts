@@ -6,6 +6,13 @@ export interface ClienteHttpMonitoramento {
   postForm(url: string, fields: Record<string, string>): Promise<{ body: string; observedAt: string; status: number }>
 }
 
+class RobotsHttpUnavailableError extends Error {
+  constructor(public readonly status: number, url: string) {
+    super(`robots indisponivel em ${redigirUrlParaLog(url)}: HTTP ${status}`)
+    this.name = "RobotsHttpUnavailableError"
+  }
+}
+
 interface ClienteOptions {
   allowedOrigins: string[]
   fetchImpl?: typeof fetch
@@ -93,7 +100,10 @@ export function redigirUrlParaLog(raw: string): string {
 
 function retryable(error: unknown): boolean {
   if (error instanceof DOMException && error.name === "AbortError") return true
-  return error instanceof Error && /timeout|network|fetch failed|ECONNRESET|ETIMEDOUT/i.test(error.message)
+  return error instanceof Error && (
+    /timeout|network|fetch failed|ECONNRESET|ETIMEDOUT/i.test(error.message)
+    || error instanceof RobotsHttpUnavailableError
+  )
 }
 
 export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteHttpMonitoramento {
@@ -206,6 +216,9 @@ export function criarClienteHttpMonitoramento(options: ClienteOptions): ClienteH
           logger(`robots indisponivel: HTTP ${pending.response.status}; origem aprovada sem regras robots`)
           robotsByOrigin.set(url.origin, "")
           return ""
+        }
+        if (pending.response.status >= 500 && pending.response.status < 600) {
+          throw new RobotsHttpUnavailableError(pending.response.status, robotsUrl)
         }
         throw new Error(`robots indisponivel em ${redigirUrlParaLog(robotsUrl)}: HTTP ${pending.response.status}`)
       }

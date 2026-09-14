@@ -42,6 +42,68 @@ test("cliente limita retries e falha fechado em timeout", async () => {
   assert.equal(calls, 4, "uma consulta robots mais tres tentativas da pagina")
 })
 
+test("cliente repete robots 5xx e continua quando a politica depois fica disponivel", async () => {
+  let robotCalls = 0
+  let pageCalls = 0
+  const client = criarClienteHttpMonitoramento({
+    allowedOrigins: ["https://approved.example"], maxAttempts: 3, minIntervalMs: 0,
+    sleep: async () => undefined,
+    fetchImpl: async (input) => {
+      if (String(input).endsWith("/robots.txt")) {
+        robotCalls++
+        return new Response("", { status: robotCalls === 1 ? 500 : 404 })
+      }
+      pageCalls++
+      return new Response("public")
+    },
+  })
+  assert.equal((await client.getText("https://approved.example/poll")).body, "public")
+  assert.equal(robotCalls, 2)
+  assert.equal(pageCalls, 1)
+})
+
+test("cliente continua bloqueado quando robots permanece em 5xx", async () => {
+  let robotCalls = 0
+  let pageCalls = 0
+  const client = criarClienteHttpMonitoramento({
+    allowedOrigins: ["https://approved.example"], maxAttempts: 3, minIntervalMs: 0,
+    sleep: async () => undefined,
+    fetchImpl: async (input) => {
+      if (String(input).endsWith("/robots.txt")) {
+        robotCalls++
+        return new Response("", { status: 500 })
+      }
+      pageCalls++
+      return new Response("public")
+    },
+  })
+  await assert.rejects(client.getText("https://approved.example/poll"), /robots indisponivel.*HTTP 500/)
+  assert.equal(robotCalls, 3)
+  assert.equal(pageCalls, 0)
+})
+
+test("cliente bloqueia rota depois que robots fica disponivel após retry", async () => {
+  let robotCalls = 0
+  let pageCalls = 0
+  const client = criarClienteHttpMonitoramento({
+    allowedOrigins: ["https://approved.example"], maxAttempts: 3, minIntervalMs: 0,
+    sleep: async () => undefined,
+    fetchImpl: async (input) => {
+      if (String(input).endsWith("/robots.txt")) {
+        robotCalls++
+        return robotCalls === 1
+          ? new Response("", { status: 500 })
+          : new Response("User-agent: *\nDisallow: /private", { status: 200 })
+      }
+      pageCalls++
+      return new Response("private")
+    },
+  })
+  await assert.rejects(client.getText("https://approved.example/private/report"), /robots bloqueia/)
+  assert.equal(robotCalls, 2)
+  assert.equal(pageCalls, 0)
+})
+
 test("origem fora da allowlist nem chega ao fetch", async () => {
   let calls = 0
   const client = criarClienteHttpMonitoramento({
