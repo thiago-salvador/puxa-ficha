@@ -20,7 +20,7 @@ function okPayload(url: string): Record<string, unknown> {
   if (url.includes("110002553937") || url.includes("110002554073")) {
     return {
       id,
-      descricaoSituacao: url.includes("110002553937") ? "Indeferido" : "Aguardando julgamento",
+      descricaoSituacao: url.includes("110002553937") ? "Indeferido" : "Indeferido em prazo recursal ou com recurso",
       descricaoTotalizacao: "Concorrendo",
       arquivos: [],
     }
@@ -90,6 +90,22 @@ test("mudança de situação gera somente o alerta canônico de Laudicério", as
   assert.equal(report.status, "review_required")
   assert.deepEqual(report.alerts.map((alert) => alert.message), ["julgamento Laudicério: revisar canônica"])
   assert.equal(config.laudicerio.canonical_registration_sq, "110002554073")
+})
+
+test("baseline anterior de situação continua gerando alerta canônico", async () => {
+  const out = mkdtempSync(join(tmpdir(), "tse-dependent-laudicerio-baseline-"))
+  const report = await collectTseDependentMonitors(config, out, {
+    attempts: 1,
+    fetchImpl: async (input) => {
+      const url = String(input)
+      const payload = okPayload(url)
+      if (url.includes("110002554073")) payload.descricaoSituacao = "Aguardando julgamento"
+      return response(payload)
+    },
+  })
+  assert.equal(report.status, "review_required")
+  assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002554073"])
+  assert.equal(report.alerts[0]?.details.actual_descricao_situacao, "Aguardando julgamento")
 })
 
 test("mudança no registro histórico de Laudicério também volta a alertar", async () => {
