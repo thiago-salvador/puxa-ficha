@@ -8,6 +8,7 @@ const allowedExact = new Set([
   "Settings/AUTOMATIONS_AND_ENVIRONMENTS.md",
   "package.json",
   "scripts/audit/verify-pesquisas-atualizacao-agendada-scope.mjs",
+  "scripts/smoke-lancamento.ts",
   "tests/pesquisas-atualizacao-agendada.test.ts",
   "tests/programa-governo-models.test.ts",
   "tests/pesquisas-consolidacao-parcial.test.ts",
