@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { STATE_INDICATOR_FONTES_DOC } from "@/lib/state-indicator-fonte"
 import { SlashDivider } from "./SlashDivider"
+import { SocialPlatformIcon } from "./SocialPlatformIcon"
 
 export function Footer() {
   return (
@@ -86,7 +87,43 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
                   >
+                    <SocialPlatformIcon platform="instagram" className="mr-2 size-4" />
                     Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/salvadorthiago/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <SocialPlatformIcon platform="linkedin" className="mr-2 size-4" />
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/xdosalvador"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X de Thiago Salvador"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <SocialPlatformIcon platform="twitter" className="mr-2 size-4" />
+                    @xdosalvador
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/thiago-salvador"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub de Thiago Salvador"
+                    className="inline-flex min-h-11 items-center text-[length:var(--text-body-sm)] font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <SocialPlatformIcon platform="github" className="mr-2 size-4" />
+                    GitHub
                   </a>
                 </li>
                 <li>
