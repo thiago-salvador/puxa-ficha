@@ -1,7 +1,6 @@
 name: Monitoramento de pesquisas eleitorais
 
-# Cron diário às 10:17 UTC. A promoção continua bloqueada até a autorização
-# explícita via PESQUISAS_DRAFT_PR_ENABLED.
+# Cron diário às 10:17 UTC. Cada operação validada pode ser publicada na rodada.
 on:
   workflow_dispatch:
     inputs:
@@ -20,11 +19,11 @@ on:
         description: "Uma UF, BR para Presidente ou all"
         required: true
         default: "all"
-      create_draft_pr:
-        description: "Criar draft PR se tudo passar; exige autorização explícita"
+      publish:
+        description: "Publicar operações validadas e promover a produção"
         required: true
         type: boolean
-        default: false
+        default: true
   schedule:
     - cron: "17 10 * * *"
 
@@ -239,19 +238,16 @@ jobs:
           retention-days: 14
 
   promover:
-    name: Preparar draft PR de dados
+    name: Publicar pesquisas validadas
     needs:
       - preparar-matriz
       - consolidar
     if: >-
-      needs.consolidar.outputs.status == 'ready' &&
-      needs.consolidar.outputs.promotion_authorized == 'true' &&
-      (needs.preparar-matriz.outputs.discovery_status == 'no_new_urls_in_consulted_listings' || needs.preparar-matriz.outputs.discovery_status == 'targets_ready_for_collection') &&
-      vars.PESQUISAS_DRAFT_PR_ENABLED == 'true' &&
+      (needs.consolidar.outputs.promotion_authorized == 'true' || needs.consolidar.outputs.operation_status == 'no_changes') &&
       github.ref == 'refs/heads/main' &&
-      (github.event_name == 'schedule' || inputs.create_draft_pr == true)
+      (github.event_name == 'schedule' || inputs.publish == true)
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     permissions:
       contents: write
       pull-requests: write
@@ -269,95 +265,24 @@ jobs:
       - name: Instalar dependências sem scripts de pacote
         run: npm ci --ignore-scripts
 
+      - name: Instalar Chrome para os checks de publicação
+        run: npx playwright install --with-deps chromium chrome
+
       - name: Baixar proposta consolidada
         uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
         with:
           name: pesquisas-monitoramento-consolidado-${{ github.run_id }}
           path: reports/consolidated
 
-      - name: Impedir duplicação de draft
-        id: draft
+      - name: Publicar somente após validação independente
         env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          draft_numbers="$(mktemp)"
-          if ! gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" \
-            --jq '.[] | select(.draft and (.head.ref | startswith("automation/pesquisas-refresh-"))) | .number' \
-            > "$draft_numbers"; then
-            echo "Falha ao consultar drafts existentes. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
-          count="$(wc -l < "$draft_numbers" | tr -d ' ')"
-          case "$count" in
-            ''|*[!0-9]*)
-              echo "Contagem de drafts inválida. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
-              exit 1
-              ;;
-          esac
-          if [ "$count" -gt 0 ]; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
-            echo "Draft de atualização já aberto. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "exists=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Aplicar somente catálogos permitidos
-        if: steps.draft.outputs.exists == 'false'
-        id: apply
-        run: |
-          npm run pesquisas:atualizacao:apply -- --diff=reports/consolidated/diff.json
-          if git diff --quiet -- scripts/data/pesquisas-presidencia-2026.json scripts/data/pesquisas-governadores-2026.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "Nenhuma mudança material após comparar os catálogos. Sem branch ou PR." >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Verificar pesquisas antes de qualquer push
-        if: steps.apply.outputs.changed == 'true'
-        run: npm run verify:pesquisas
-
-      - name: Criar branch, commit e push sem force
-        if: steps.apply.outputs.changed == 'true'
-        id: push
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          branch="automation/pesquisas-refresh-$(date -u +%F)"
-          if ! remote_refs="$(git ls-remote --heads origin "$branch")"; then
-            echo "Falha ao consultar a branch remota $branch. Rodada bloqueada." >> "$GITHUB_STEP_SUMMARY"
-            exit 1
-          fi
-          if [ -n "$remote_refs" ]; then
-            echo "Branch remota $branch já existe. Rodada encerrada sem sobrescrever." >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          git config user.name "Thiago Salvador"
-          git config user.email "contato.thiagosalvador@gmail.com"
-          git switch -c "$branch"
-          git add scripts/data/pesquisas-presidencia-2026.json scripts/data/pesquisas-governadores-2026.json
-          git commit -m "data: atualizar pesquisas eleitorais em $(date -u +%F)"
-          gh auth setup-git
-          git push origin "HEAD:refs/heads/$branch"
-          echo "branch=$branch" >> "$GITHUB_OUTPUT"
-
-      - name: Abrir exatamente um draft PR
-        if: steps.push.outputs.branch != ''
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr create \
-            --draft \
-            --base main \
-            --head "${{ steps.push.outputs.branch }}" \
-            --title "data: atualização diária de pesquisas $(date -u +%F)" \
-            --body-file reports/consolidated/pr-body.md
-
-      - name: Registrar draft preparado
-        if: steps.push.outputs.branch != ''
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh pr view "${{ steps.push.outputs.branch }}" --json url --jq '.url' >> "$GITHUB_STEP_SUMMARY"
+          MERGE_QUEUE_GH_TOKEN: ${{ secrets.MERGE_QUEUE_GH_TOKEN }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+          POLL_REPOSITORY: ${{ github.repository }}
+          POLL_BASE_SHA: ${{ github.sha }}
+          POLL_RUN_ID: ${{ github.run_id }}
+          POLL_AUTHOR_LOGIN: thiago-salvador
+        run: node scripts/pesquisas-atualizacao-agendada/publicar.mjs

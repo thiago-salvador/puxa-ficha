@@ -1,274 +1,223 @@
+import { readFileSync } from "node:fs"
+import { resolve } from "node:path"
 import { expect, test, type Locator, type Page } from "playwright/test"
 
-// cspell:ignore AtlasIntel Bolsonaro daciolo Datafolha domcontentloaded Ipsos marcal networkidle pablo
+type CatalogPoll = {
+  state: string
+  source_status: string
+  instituto?: { value?: string }
+  geography?: { code?: string }
+  fieldwork?: { end?: { value?: string } }
+  registration?: { code?: { value?: string } }
+  cenarios?: Array<{
+    turn: number
+    comparability_key?: string
+    resultados?: Array<{ raw_label?: string; candidate_slug?: string; value_percent?: number }>
+  }>
+}
 
-const WITH_DATA_SLUG = "lula"
-const GOVERNOR_WITH_DATA_SLUG = "omar-aziz"
-const GOVERNOR_AC_SLUG = "alan-rick"
+const presidentialCatalog = (JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/pesquisas-presidencia-2026.json"), "utf8")) as { pesquisas: CatalogPoll[] }).pesquisas
+const governorCatalog = (JSON.parse(readFileSync(resolve(process.cwd(), "scripts/data/pesquisas-governadores-2026.json"), "utf8")) as { datasets: Array<{ pesquisas: CatalogPoll[] }> }).datasets.flatMap(dataset => dataset.pesquisas)
+const publishedPoderData = presidentialCatalog
+  .filter(poll => poll.state === "publicado" && poll.source_status === "aprovado" && poll.instituto?.value === "PoderData")
+  .filter(poll => poll.fieldwork?.end?.value && poll.registration?.code?.value)
+  .filter(poll => poll.cenarios?.some(scenario => scenario.turn === 1 && /^estimulad[ao]$/.test(scenario.comparability_key?.split("|")[4] ?? "")))
+  .map(poll => ({ end: poll.fieldwork!.end!.value!, registration: poll.registration!.code!.value! }))
+  .sort((left, right) => left.end.localeCompare(right.end))
+const latestPublishedPa = governorCatalog
+  .filter(poll => poll.state === "publicado" && poll.source_status === "aprovado" && poll.geography?.code === "PA")
+  .filter(poll => poll.cenarios?.some(scenario => scenario.turn === 1 && /^estimulad[ao]$/.test(scenario.comparability_key?.split("|")[4] ?? "")))
+  .filter(poll => poll.fieldwork?.end?.value && poll.registration?.code?.value)
+  .sort((left, right) => left.fieldwork!.end!.value!.localeCompare(right.fieldwork!.end!.value!))
+  .at(-1)
+if (!latestPublishedPa) throw new Error("catálogo de governadores não contém pesquisa publicada para PA")
+const latestPaFirstTurn = latestPublishedPa.cenarios?.find(scenario => scenario.turn === 1 && /^estimulad[ao]$/.test(scenario.comparability_key?.split("|")[4] ?? ""))
+if (!latestPaFirstTurn) throw new Error("pesquisa PA mais recente não contém cenário de primeiro turno")
 
-test("buscas alternativas preenchem as cinco fichas recuperadas", async ({ page }, testInfo) => {
-  const cases = [
-    ["maria-bona", "Paraná Pesquisas", "0,5%"],
-    ["expedito-mendonca", "IGAPE", "0,8%"],
-    ["dimas-cassimiro", "Doxa", "0,4%"],
-    ["reginaldo-lima", "Doxa", "0,7%"],
-    ["saulo-arcangeli", "Doxa", "0,3%"],
-  ]
-  for (const [slug, institute, value] of cases) {
-    await page.goto(`/candidato/${slug}?tab=pesquisas`, { waitUntil: "networkidle" })
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toBeVisible()
-    await expect(tab).toContainText(institute)
-    await expect(tab).toContainText(value)
-    await tab.screenshot({ path: testInfo.outputPath(`${slug}.png`) })
+async function openPolls(page: Page, path = "/") {
+  await page.goto(`${path}#pesquisas`, { waitUntil: "domcontentloaded" })
+  const section = page.locator("[data-pf-polls]")
+  await expect(section).toBeVisible()
+  await expect(section.getByRole("heading", { name: "A evolução da disputa" })).toBeVisible()
+  return section
+}
+
+async function optionValues(select: Locator) {
+  return select.locator("option").evaluateAll(options => options.map(option => (option as HTMLOptionElement).value))
+}
+
+async function selectSeriesWithAtLeastTwoWeeks(section: Locator) {
+  const scenario = section.getByRole("combobox", { name: "Cenário", exact: true })
+  for (const value of await optionValues(scenario)) {
+    await scenario.selectOption(value)
+    const points = section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')
+    if (await points.count() > 1) return true
   }
-})
+  return false
+}
 
-async function expectStylesLoaded(element: Locator) {
-  await expect
-    .poll(
-      () =>
-        element.evaluate((node) => {
-          const style = getComputedStyle(node)
-          return style.fontFamily.toLowerCase().includes("inter") && style.display !== "none"
-        }),
-      { message: "o stylesheet e a fonte pública devem estar aplicados antes da prova visual" },
-    )
-    .toBe(true)
+async function findWeekWithTitle(section: Locator, title: RegExp) {
+  const scenario = section.getByRole("combobox", { name: "Cenário", exact: true })
+  for (const value of await optionValues(scenario)) {
+    await scenario.selectOption(value)
+    const points = section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')
+    for (let index = 0; index < await points.count(); index += 1) {
+      const close = section.getByRole("button", { name: "Fechar detalhes do ponto" })
+      if (await close.isVisible().catch(() => false)) await close.click()
+      await points.nth(index).click()
+      const heading = section.locator("[data-pf-week-source] > p > strong")
+      await expect(heading).toBeVisible()
+      if (title.test((await heading.textContent()) ?? "")) return { scenario, points, heading }
+    }
+  }
+  return null
 }
 
 async function expectNoHorizontalOverflow(page: Page, element: Locator) {
-  await expect.poll(() => element.evaluate((node) => node.scrollWidth > node.clientWidth)).toBe(false)
-  await expect.poll(() =>
-    page.evaluate(
-      () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
-    ),
-  ).toBe(false)
+  await expect.poll(() => element.evaluate(node => node.scrollWidth <= node.clientWidth)).toBe(true)
+  await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true)
 }
 
-async function waitForProfile(page: Page) {
-  const tabs = page.getByRole("tablist", { name: /Seções.*do perfil/ })
-  await expect(tabs).toBeVisible({ timeout: 15_000 })
-  return tabs
-}
+test("catálogo público publica a primeira pesquisa e expõe o contrato da média semanal", async ({ page }) => {
+  test.setTimeout(90_000)
+  const section = await openPolls(page)
+  await expect(section.getByRole("combobox", { name: "Turno", exact: true })).toHaveValue("1")
+  await expect(section.getByRole("combobox", { name: "Instituto", exact: true })).toBeVisible()
+  await expect(section.getByRole("combobox", { name: "Período", exact: true })).toBeVisible()
 
-test.describe("pesquisas presidenciais v2", () => {
-  test("hero alterna as duas fontes a cada cinco segundos e respeita movimento reduzido", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "domcontentloaded" })
+  await findWeekWithTitle(section, /^1 pesquisa na semana$/)
+  await expect(section.locator("[data-pf-week-source]")).toContainText("1 pesquisa na semana")
+  await expect(section.locator("[data-pf-week-source] [data-pf-poll-source]")).toHaveCount(1)
+  await expect(section.locator("[data-pf-poll-details]")).toHaveCount(1)
+  await expect(section.getByRole("link", { name: "Fonte da pesquisa" })).toHaveAttribute("href", /^https?:\/\//)
 
-    const fullHero = page.locator("[data-pf-hero]")
-    const hero = page.locator("[data-pf-pesquisa-hero]")
-    await expect(hero).toBeVisible()
-    await expectStylesLoaded(hero)
-    await expectNoHorizontalOverflow(page, fullHero)
-    await expect(hero).toContainText("Meio/Ideia")
-    await expect(hero).toContainText("38,4%")
-    await expect(hero).toContainText("percentuais do total de entrevistados")
-    await expect(hero).not.toContainText("46%")
-    await expect(hero).not.toContainText("2º turno")
-    const nameBox = await page.locator("[data-pf-hero-name]").boundingBox()
-    const researchBox = await hero.boundingBox()
-    expect(nameBox).not.toBeNull()
-    expect(researchBox).not.toBeNull()
-    const horizontalGap = researchBox!.x - (nameBox!.x + nameBox!.width)
-    expect(horizontalGap).toBeGreaterThanOrEqual(12)
-    expect(horizontalGap).toBeLessThanOrEqual(32)
-    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-hero-desktop.png") })
-
-    await page.waitForTimeout(5_300)
-    await expect(hero).toContainText("Datafolha")
-    await expect(hero).toContainText("39%")
-    await expect(hero).toContainText("cenário sem Pablo Marçal")
-
-    await page.emulateMedia({ reducedMotion: "reduce" })
-    await page.reload({ waitUntil: "domcontentloaded" })
-    const reducedHero = page.locator("[data-pf-pesquisa-hero]")
-    await expect(reducedHero).toContainText("Meio/Ideia")
-    await page.waitForTimeout(5_300)
-    await expect(reducedHero).toContainText("Meio/Ideia")
-    await expect(reducedHero).toContainText("38,4%")
-
-    await page.setViewportSize({ width: 390, height: 844 })
-    await expectNoHorizontalOverflow(page, fullHero)
-    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-hero-mobile.png") })
-  })
-
-  test("Visão geral mantém o card único e navega entre as duas fontes", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(overview).toBeVisible()
-    await overview.scrollIntoViewIfNeeded()
-    await expectStylesLoaded(overview)
-    await expect(overview.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
-    await expect(overview).toHaveAttribute("data-pf-overview-grid-card", "")
-
-    const gridLayout = await page.locator("[data-pf-profile-overview-grid]").evaluate((grid) => {
-      const cards = Array.from(grid.children)
-        .map((card) => card.getBoundingClientRect())
-        .filter((rect) => rect.width > 0 && rect.height > 0)
-      return cards.slice(0, 2).map((rect) => ({ width: rect.width, top: rect.top }))
-    })
-    expect(gridLayout).toHaveLength(2)
-    expect(Math.abs(gridLayout[0].width - gridLayout[1].width)).toBeLessThanOrEqual(1)
-    expect(Math.abs(gridLayout[0].top - gridLayout[1].top)).toBeLessThanOrEqual(1)
-
-    const current = overview.locator("[data-pf-pesquisa-overview-current]")
-    const next = overview.getByRole("button", { name: "Próxima pesquisa" })
-    const previous = overview.getByRole("button", { name: "Pesquisa anterior" })
-    await expect(next).toHaveCSS("width", "44px")
-    await expect(previous).toHaveCSS("height", "44px")
-    await expect(next).toBeEnabled()
-    await expect(previous).toBeEnabled()
-    await expect(current).toContainText("Meio/Ideia")
-    await expect(current).toContainText("38,4%")
-    await expect(current).toContainText("04/09/2026 a 07/09/2026")
-    await expect(current.locator("[data-pf-pesquisa-link]")).toHaveAttribute(
-      "href",
-      /cnn(?:brasil)?\.com\.br/,
-    )
-
-    await next.click()
-    await expect(current).toContainText("Datafolha")
-    await expect(current).toContainText("39%")
-    await expect(current).toContainText("18/08/2026 a 19/08/2026")
-
-    await expect(current).not.toContainText("PoderData")
-    await expect(current).not.toContainText("2º turno")
-    await expect(overview.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
-
-    const overviewGrid = page.locator("[data-pf-profile-overview-grid]")
-    await overviewGrid.screenshot({ path: testInfo.outputPath("pesquisas-overview-desktop.png") })
-
-    await page.setViewportSize({ width: 390, height: 844 })
-    await expectNoHorizontalOverflow(page, overview)
-    await overview.screenshot({ path: testInfo.outputPath("pesquisas-overview-mobile.png") })
-  })
-
-  test("aba abre por link e query, lista somente fontes publicáveis e funciona no mobile", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await overview.getByRole("button", { name: "Ver todas na aba Pesquisas" }).click()
-    await expect(page).toHaveURL(/\?tab=pesquisas/)
-
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toBeVisible()
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
-    await expect(tab).toContainText("38,4%")
-    await expect(tab).toContainText("39%")
-    await expect(tab).not.toContainText("PoderData")
-    await expect(tab).not.toContainText("AtlasIntel")
-    await expect(tab).not.toContainText("Ipsos-Ipec")
-    await expect(tab).not.toContainText("2º turno")
-
-    await page.goto(`/candidato/${WITH_DATA_SLUG}?tab=pesquisas`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-    await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toHaveAttribute(
-      "aria-selected",
-      "true",
-    )
-    await expect(page.locator("[data-pf-pesquisas-tab] [data-pf-pesquisa-card]")).toHaveCount(2)
-
-    await page.setViewportSize({ width: 390, height: 844 })
-    const mobileTab = page.locator("[data-pf-pesquisas-tab]")
-    await expectStylesLoaded(mobileTab)
-    await expectNoHorizontalOverflow(page, mobileTab)
-    await mobileTab.screenshot({ path: testInfo.outputPath("pesquisas-tab-mobile.png") })
-
-    await page.setViewportSize({ width: 1440, height: 1000 })
-    const pesquisasTabButton = page.getByRole("tab", { name: /^Pesquisas/ })
-    await pesquisasTabButton.focus()
-    await pesquisasTabButton.press("ArrowRight")
-    const programaTabButton = page.getByRole("tab", { name: /^Programa/ })
-    await expect(programaTabButton).toBeFocused()
-    await programaTabButton.press("ArrowRight")
-    await expect(page.getByRole("tab", { name: /^Mídia/ })).toBeFocused()
-  })
-
-  test("grade permanece íntegra com uma, duas e três fontes", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${WITH_DATA_SLUG}?tab=pesquisas`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    const grid = tab.locator("[data-pf-pesquisa-card]").first().locator("..")
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
-
-    for (const count of [1, 2, 3]) {
-      await grid.evaluate((node, targetCount) => {
-        const cards = Array.from(node.querySelectorAll<HTMLElement>("[data-pf-pesquisa-card]"))
-        while (cards.length > 1) cards.pop()?.remove()
-        const source = cards[0]
-        if (!source) throw new Error("card base ausente")
-        const labels = ["Fonte de teste 2", "Fonte de teste 3"]
-        for (let index = 1; index < targetCount; index += 1) {
-          const clone = source.cloneNode(true) as HTMLElement
-          clone.dataset.pfPesquisaSource = `fixture-layout-${index + 1}`
-          const headerLabel = clone.querySelector<HTMLElement>("div > div > p")
-          if (headerLabel) headerLabel.textContent = labels[index - 1]
-          const instituteTerm = Array.from(clone.querySelectorAll("dt")).find(
-            (term) => term.textContent === "Instituto",
-          )
-          const metadataLabel = instituteTerm?.parentElement?.querySelector("dd")
-          if (metadataLabel) metadataLabel.textContent = labels[index - 1]
-          node.appendChild(clone)
-          cards.push(clone)
-        }
-      }, count)
-
-      await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(count)
-      await expect(tab.locator("[data-pf-pesquisas-empty]")).toHaveCount(0)
-      await expectNoHorizontalOverflow(page, tab)
-      await tab.screenshot({ path: testInfo.outputPath(`pesquisas-tab-${count}-fontes.png`) })
-    }
-  })
-
-  test("governador usa a mesma experiência e mantém os resultados isolados por UF", async ({ page }, testInfo) => {
-    await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-
-    const hero = page.locator("[data-pf-pesquisa-hero]")
-    const fullHero = page.locator("[data-pf-hero]")
-    await expect(hero).toBeVisible()
-    await expect(hero).toContainText("AtlasIntel")
-    await expect(hero).toContainText("31%")
-    await expectNoHorizontalOverflow(page, fullHero)
-    await fullHero.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-desktop.png") })
-
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(overview).toContainText("AtlasIntel")
-    await expect(overview).toContainText("31%")
-    await overview.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-overview-desktop.png") })
-    await page.getByRole("tab", { name: /^Pesquisas/ }).click()
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    await expect(tab).toContainText("31%")
-    await expectNoHorizontalOverflow(page, tab)
-    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-desktop.png") })
-
-    await page.setViewportSize({ width: 390, height: 844 })
-    await expectNoHorizontalOverflow(page, tab)
-    await tab.screenshot({ path: testInfo.outputPath("pesquisas-governador-am-mobile.png") })
-
-    await page.goto(`/candidato/${GOVERNOR_WITH_DATA_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-    await expectNoHorizontalOverflow(page, page.locator("[data-pf-hero]"))
-    await page
-      .locator("[data-pf-hero]")
-      .screenshot({ path: testInfo.outputPath("pesquisas-governador-am-hero-mobile.png") })
-
-    await page.setViewportSize({ width: 1440, height: 900 })
-    await page.goto(`/candidato/${GOVERNOR_AC_SLUG}`, { waitUntil: "networkidle" })
-    await waitForProfile(page)
-    const acHero = page.locator("[data-pf-pesquisa-hero]")
-    await expect(acHero).toContainText("Quaest")
-    await expect(acHero).toContainText("33%")
-    await expect(acHero).not.toContainText("31%")
-  })
-
-  test("timeline não recebe a experiência", async ({ page }) => {
-    await page.goto(`/candidato/${WITH_DATA_SLUG}/timeline`, { waitUntil: "networkidle" })
-    await expect(page.locator("[data-pf-pesquisa-hero]")).toHaveCount(0)
-    await expect(page.getByRole("tab", { name: /^Pesquisas/ })).toHaveCount(0)
-  })
+  const average = await findWeekWithTitle(section, /^Média de [2-9]\d* pesquisas$/)
+  if (average) {
+    await expect(section.locator("[data-pf-week-source]")).toContainText("Média simples, com o mesmo peso para cada pesquisa")
+    const members = section.locator("[data-pf-week-member]")
+    expect(await members.count()).toBeGreaterThanOrEqual(2)
+    await expect(section.locator("[data-pf-week-source] a")).toHaveCount(await members.count())
+    await members.first().locator("summary").click()
+    await expect(members.first().locator("[data-pf-poll-details]")).toBeVisible()
+  } else {
+    await expect(section.getByText("Como calculamos a média", { exact: true })).toBeVisible()
+  }
 })
+
+test("navegação mobile percorre as semanas e mantém o catálogo sem overflow", async ({ page }) => {
+  test.setTimeout(60_000)
+  const section = await openPolls(page)
+  const hasMultipleWeeks = await selectSeriesWithAtLeastTwoWeeks(section)
+  const points = section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')
+  const weekCount = await points.count()
+
+  await page.setViewportSize({ width: 390, height: 844 })
+  if (hasMultipleWeeks) {
+    expect(weekCount).toBeGreaterThan(1)
+    const mobile = section.locator("[data-pf-mobile-research]")
+    await expect(mobile).toBeVisible()
+    await expect(mobile).toContainText(`de ${weekCount}`)
+    const previous = section.getByRole("button", { name: "Anterior", exact: true })
+    const next = section.getByRole("button", { name: "Próxima", exact: true })
+    await expect(previous).toBeEnabled()
+    await expect(next).toBeDisabled()
+    const latest = await mobile.innerText()
+    await previous.click()
+    await expect.poll(() => mobile.innerText()).not.toBe(latest)
+    await expect(next).toBeEnabled()
+    await next.click()
+    await expect.poll(() => mobile.innerText()).toBe(latest)
+  } else {
+    expect(weekCount).toBe(1)
+    await expect(section.locator('[data-pf-poll-trend]')).toHaveAttribute("data-single-poll", "true")
+    await expect(section.locator("[data-pf-mobile-research]")).toHaveCount(0)
+    await expect(section.locator("[data-pf-week-source] > p > strong")).toHaveText("1 pesquisa na semana")
+  }
+  await expect(section.locator("[data-pf-poll-candidate]")).not.toHaveCount(0)
+  await expectNoHorizontalOverflow(page, section)
+})
+
+test("superfície estadual usa a mesma evolução sem misturar resultados presidenciais", async ({ page }) => {
+  const section = await openPolls(page, "/uf/am")
+  await expect(section.getByRole("combobox", { name: "Cenário", exact: true })).toBeVisible()
+  await expect(section.locator("[data-pf-poll-trend]")).toBeVisible()
+  await expect(section).not.toContainText("Lula")
+  await expect(section).toContainText("Omar")
+  await page.setViewportSize({ width: 390, height: 844 })
+  await expectNoHorizontalOverflow(page, section)
+})
+
+test("Pará expõe a nova pesquisa publicada na semana imediatamente", async ({ page }) => {
+  const section = await openPolls(page, "/uf/pa")
+  const source = section.locator("[data-pf-week-source]")
+  const heading = source.locator(":scope > p > strong")
+  await expect(heading).toHaveText(/^(1 pesquisa na semana|Média de [2-9]\d* pesquisas)$/)
+  await expect(source).toContainText(formatDateForSource(latestPublishedPa.fieldwork!.end!.value!))
+  await expect(source).toContainText(latestPublishedPa.instituto!.value!)
+  await openTechnicalDetails(section)
+  const original = section.locator("[data-pf-poll-details]").filter({ hasText: latestPublishedPa.registration!.code!.value! })
+  await expect(original).toHaveCount(1)
+  for (const result of latestPaFirstTurn.resultados ?? []) {
+    if (!result.raw_label || result.value_percent === undefined) continue
+    if (!result.candidate_slug) continue
+    const rows = (await heading.textContent()) === "1 pesquisa na semana"
+      ? section.locator("[data-pf-poll-candidate]")
+      : original.locator("li")
+    await expect(rows.filter({ hasText: result.raw_label.split(" (")[0] })).toContainText(`${result.value_percent.toLocaleString("pt-BR")}%`)
+  }
+  await expect(section).toContainText(latestPublishedPa.registration!.code!.value!)
+})
+
+test("catálogo presidencial navega as pesquisas PoderData publicadas e expõe cada registro", async ({ page }) => {
+  test.setTimeout(90_000)
+  const section = await openPolls(page)
+  expect(publishedPoderData.length).toBeGreaterThanOrEqual(3)
+  const institute = section.getByRole("combobox", { name: "Instituto", exact: true })
+  await institute.selectOption({ label: "PoderData" })
+  const scenario = section.getByRole("combobox", { name: "Cenário", exact: true })
+  for (const poll of publishedPoderData) {
+    let found = false
+    for (const value of await optionValues(scenario)) {
+      await scenario.selectOption(value)
+      const close = section.getByRole("button", { name: "Fechar detalhes do ponto" })
+      if (await close.isVisible()) await close.click()
+      const point = section.locator(`[data-pf-poll-trend] button[aria-label*="semana ${formatDateForAria(weekMonday(poll.end))}"]`)
+      if (await point.count() === 0) continue
+      await point.click()
+      await expect(section.getByRole("region", { name: "Pesquisa selecionada" })).toContainText("PoderData")
+      await close.click()
+      await openTechnicalDetails(section)
+      const record = section.locator("[data-pf-poll-details]").filter({ hasText: poll.registration })
+      if (await record.count() === 0) continue
+      await expect(record).toBeVisible()
+      await expect(record.getByRole("link", { name: "Ler pesquisa ou matéria" })).toHaveAttribute("href", /^https:\/\//)
+      found = true
+      break
+    }
+    expect(found, `registro publicado ausente do gráfico: ${poll.registration}`).toBe(true)
+  }
+})
+
+async function openTechnicalDetails(section: Locator) {
+  for (const member of await section.locator("[data-pf-week-member]").all()) {
+    if (await member.getAttribute("open") === null) await member.locator(":scope > summary").click()
+  }
+  for (const summary of await section.getByText("Ficha técnica e fonte", { exact: true }).all()) {
+    if (await summary.locator("..").getAttribute("open") === null) await summary.click()
+  }
+}
+
+function weekMonday(isoDate: string) {
+  const date = new Date(`${isoDate}T12:00:00Z`)
+  date.setUTCDate(date.getUTCDate() - ((date.getUTCDay() + 6) % 7))
+  return date.toISOString().slice(0, 10)
+}
+
+function formatDateForAria(isoDate: string) {
+  const [year, month, day] = isoDate.split("-").map(Number)
+  return `${String(day).padStart(2, "0")}/${String(month).padStart(2, "0")}/${year}`
+}
+
+function formatDateForSource(isoDate: string) {
+  return formatDateForAria(isoDate)
+}

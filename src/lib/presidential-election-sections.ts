@@ -23,7 +23,8 @@ export function loadPresidentialPolls(catalog: CatalogoPesquisasEleitorais = car
     scope.electionYear !== 2026 || scope.office !== "Presidente" || scope.geographyCode !== "BR" ||
     !scope.comparabilityKey.startsWith(`2026|Presidente|BR|${scope.turn}|`)) return []
   return catalog.pesquisas.flatMap(({ cenarios, ...poll }) => {
-    if (poll.sourceStatus !== "aprovado" || !catalog.preferredSourceIds.includes(poll.sourceId) ||
+    if (poll.sourceStatus !== "aprovado" ||
+      (!catalog.preferredSourceIds.includes(poll.sourceId) && poll.state !== "publicado") ||
       poll.electionYear !== 2026 || poll.office !== "Presidente" || poll.geography.code !== "BR") return []
     return cenarios.filter(scenario => (scenario.turn === 1 || scenario.turn === 2) &&
       scenario.geography === poll.geography.label &&

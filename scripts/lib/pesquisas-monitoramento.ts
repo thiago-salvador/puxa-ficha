@@ -490,10 +490,33 @@ function normalizedContract(result: ResultadoAvaliacao): Record<string, unknown>
       geography: scenario.geography,
       label_raw: scenario.label,
       question: { value: scenario.question, status: "indeterminado" },
-      comparability_key: `2026|${scenario.office}|${scenario.geography_code}|${scenario.turn}|${scenario.id}`,
+      comparability_key: comparabilityKey(evidence, scenario, results),
       resultados: results.map((entry) => ({ ...entry, status: "indeterminado" })),
     })),
   }
+}
+
+function comparabilityKey(
+  evidence: EvidenciaPesquisaCandidata,
+  scenario: EvidenciaPesquisaCandidata["scenario"],
+  results: EvidenciaPesquisaCandidata["results"],
+): string {
+  const description = `${scenario.label} ${scenario.question ?? ""}`.normalize("NFD").replace(/\p{M}/gu, "").toLocaleLowerCase("pt-BR")
+  const candidates = results.filter((result) => result.match_status === "exact_alias" && result.candidate_slug).map((result) => result.candidate_slug!).sort()
+  const completeCandidateSet = candidates.length === 2 && !results.some((result) => result.match_status === "indeterminado")
+  const mode = /espontan/.test(description)
+    ? "espontaneo"
+    : /estimulad|lista de candidatos|candidatos que vou falar/.test(description)
+      ? "estimulada"
+      : scenario.turn === 2 && completeCandidateSet && (/\s+x\s+/.test(scenario.label) || /segundo turno entre|em quem voce votaria/.test(description))
+        ? "estimulada"
+        : "desconhecida"
+  const hasUnresolvedCandidate = results.some((result) => result.match_status === "indeterminado")
+  const candidateSeed = mode === "desconhecida" || hasUnresolvedCandidate || candidates.length === 0
+    ? `${evidence.registration.id}|${scenario.id}|${results.map((result) => result.raw_label).join("|")}`
+    : [...new Set(candidates)].join("|")
+  const candidateHash = createHash("sha256").update(candidateSeed).digest("hex")
+  return `2026|${scenario.office}|${scenario.geography_code}|${scenario.turn}|${mode}|${candidateHash}|total_amostra`
 }
 
 export function escreverRelatorios(results: Array<{ case_id: string; result: ResultadoAvaliacao }>, outputDir: string): void {

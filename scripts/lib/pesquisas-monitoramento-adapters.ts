@@ -258,13 +258,35 @@ function extractSample(text: string): number {
   return normalizeNumber(match[1])
 }
 
-function extractMethod(text: string): string {
-  if (/pontos? de fluxo/i.test(text)) return "entrevistas presenciais em pontos de fluxo"
-  if (/entrevistas? presenciais/i.test(text)) return "entrevistas presenciais"
-  if (/telef[oô]nic|por telefone|\bURA\b/i.test(text)) return /digit(?:al|ais)/i.test(text)
-    ? "abordagens telefônicas e digitais"
-    : "entrevistas por telefone"
-  if (/digit(?:al|ais)/i.test(text)) return "abordagem digital"
+function normalizeMethodEvidence(text: string): string | null {
+  const normalized = text.replace(/\s+/g, " ").trim()
+  if (/pontos? de fluxo/i.test(normalized)) return "entrevistas presenciais em pontos de fluxo"
+  if (/entrevistas? presenciais/i.test(normalized)) return "entrevistas presenciais"
+  const telephone = /telef[oô]nic|por telefone|\bURA\b|ligações? automatizadas?/i.test(normalized)
+  const digital = /digit(?:al|ais)|internet/i.test(normalized)
+  const collectionCue = /(?:entrevist|ouvid|liga[cç][aã]o|abordagens?|coleta|aplica[cç][aã]o|\bURA\b|telefone)/i
+  const mixedCue = /(?:entrevist|ouvid|liga[cç][aã]o|abordagens?|coleta|aplica[cç][aã]o)[^.!?]{0,160}(?:telef[oô]nic|telefone|\bURA\b)[^.!?]{0,160}(?:digit(?:al|ais)|internet)|(?:digit(?:al|ais)|internet)[^.!?]{0,160}(?:telef[oô]nic|telefone|\bURA\b)[^.!?]{0,160}(?:entrevist|ouvid|liga[cç][aã]o|abordagens?|coleta|aplica[cç][aã]o)/i
+  if (telephone && digital && mixedCue.test(normalized)) return "abordagens telefônicas e digitais"
+  if (telephone && collectionCue.test(normalized)) return "entrevistas por telefone"
+  if (digital && /(?:abordagens?|entrevist|coleta|aplica[cç][aã]o)[^.!?]{0,160}(?:digit(?:al|ais)|internet)|(?:digit(?:al|ais)|internet)[^.!?]{0,160}(?:abordagens?|entrevist|coleta|aplica[cç][aã]o)/i.test(normalized)) return "abordagem digital"
+  return null
+}
+
+function extractMethod(text: string, registeredMethod?: string): string {
+  // PesqEle's methodology is the authoritative method when available. Its
+  // complete field is evidence, while unrelated article chrome is ignored.
+  if (registeredMethod) {
+    const registered = normalizeMethodEvidence(registeredMethod)
+    if (registered) return registered
+  }
+
+  // Article text is a fallback. Keep each candidate to one sentence and
+  // require a collection/interview cue; broad page text is not evidence.
+  const clauses = text.split(/[.!?]+/).filter((clause) => /(?:metodologia|m[eé]todo|entrevist|ouvid|liga[cç][aã]o|abordagens?|presencial|URA|telefone|digital|internet)/i.test(clause))
+  for (const clause of clauses) {
+    const method = normalizeMethodEvidence(clause)
+    if (method) return method
+  }
   throw new Error("HTML inesperado: método ausente")
 }
 
@@ -338,7 +360,7 @@ export function extrairListaCompletaPrimeiroTurno(html: string): Array<{ raw_lab
   return candidates[0] ?? null
 }
 
-const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não Sei|NS \/ NR|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+const NON_CANDIDATE = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não Sei|NS\s*\/\s*NR|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
 
 /** Only explicit headings and complete lists establish a runoff scenario. */
 export function extrairCenariosSegundoTurno(html: string): Array<{
@@ -356,7 +378,7 @@ export function extrairCenariosSegundoTurno(html: string): Array<{
     const text = stripExternalMarkup(block[2])
     if (tag.startsWith("h")) {
       const level = Number(tag[1])
-      if (/^Cenários? de (?:segundo|2[oº]) turno$/i.test(text)) {
+      if (/^(?:Cenários? de )?(?:segundo|2[oº]) turno$/i.test(text)) {
         inRunoffs = true
         sectionLevel = level
         label = ""
@@ -447,11 +469,7 @@ function buildEvidence(input: {
   const confidence = publishedConfidence ? normalizeNumber(publishedConfidence) : supplement?.confidence_percent
   if (confidence === undefined) throw new Error("HTML inesperado: confiança ausente")
   if (supplement && confidence !== supplement.confidence_percent) throw new Error("PesqEle: confiança conflitante")
-  let method: string
-  try { method = extractMethod(text) } catch (error) {
-    if (!supplement) throw error
-    method = extractMethod(supplement.method)
-  }
+  const method = extractMethod(text, supplement?.method)
   const document = input.resultDocument
   const documentScopeMatches = realtimeDocument
     ? input.source.id === "real-time-big-data-estaduais-2026" && input.target.office === realtimeDocument.office && input.target.geography_code === realtimeDocument.geography_code && publicationDate === realtimeDocument.publication_date

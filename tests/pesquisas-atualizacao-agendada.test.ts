@@ -37,6 +37,7 @@ const {
   executarPromocaoAgendada,
   validarDocumentoDiffAgendado,
 } = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
+const { listarAlvosMonitoramento } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
 
 const catalogosPermitidosTipados: CatalogosPermitidosExportType = CATALOGOS_PERMITIDOS
 const executarPromocaoTipado: ExecutarPromocaoAgendadaExportType = executarPromocaoAgendada
@@ -201,13 +202,15 @@ function promotionDependencies(input: {
   }
 }
 
-test("matriz calculada contém exatamente os 18 alvos aprovados", () => {
+test("matriz calculada reconcilia todos os alvos aprovados sem limitar novas pesquisas", () => {
   const all = construirMatrizAgendada()
   const allFromWorkflowInput = construirMatrizAgendada({ sourceId: "all", uf: "all" })
-  assert.equal(all.length, 18)
-  assert.equal(allFromWorkflowInput.length, 18)
-  assert.equal(new Set(all.map((item) => `${item.source_id}|${item.uf}`)).size, 18)
-  assert.deepEqual([...all].sort((left, right) => left.key.localeCompare(right.key)).map((item) => item.key).sort(), all.map((item) => item.key).sort())
+  const targets = listarAlvosMonitoramento()
+  const expectedPairs = [...new Set(targets.map(target => `${target.source_id}|${target.geography_code}`))].sort()
+  assert.ok(expectedPairs.length > 0)
+  assert.deepEqual(allFromWorkflowInput, all)
+  assert.deepEqual(all.map(item => `${item.source_id}|${item.uf}`).sort(), expectedPairs)
+  assert.deepEqual(all.flatMap(item => item.poll_ids).sort(), targets.map(target => target.poll_id).sort())
 })
 
 test("nenhuma mudança produz no_changes e nenhuma operação", () => {
@@ -288,7 +291,8 @@ test("mudança válida produz uma operação allowlisted e diff por candidato", 
   assert.match(result.prBody, /## Fontes/)
   assert.match(result.prBody, /## Registros TSE/)
   assert.match(result.prBody, /## Diff por candidato/)
-  assert.match(result.prBody, /## Revisão humana obrigatória/)
+  assert.match(result.prBody, /## Política de publicação/)
+  assert.match(result.summary, /Autorização de promoção: true/)
 })
 
 test("diff por candidato preserva o cenário quando o mesmo slug aparece mais de uma vez", () => {

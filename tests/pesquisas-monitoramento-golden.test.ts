@@ -24,12 +24,34 @@ const {
   listarAlvosMonitoramento,
   listarFontesAprovadasUtilizadas,
 } = require("../scripts/lib/pesquisas-monitoramento") as typeof import("../scripts/lib/pesquisas-monitoramento")
+const { construirMatrizAgendada } = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
 
 const FIXTURES = resolve("tests/fixtures/pesquisas-monitoramento")
 const cases = readFileSync("tests/fixtures/pesquisas-monitoramento-golden.jsonl", "utf8")
   .trim()
   .split(/\r?\n/)
   .map((line) => JSON.parse(line) as CasoGoldenMonitoramento)
+
+const BASELINE_COVERAGE_PAIRS = [
+  "datafolha-folha-globo-estaduais-2026|CE",
+  "datafolha-folha-globo-estaduais-2026|DF",
+  "datafolha-folha-globo-estaduais-2026|MG",
+  "datafolha-folha-globo-estaduais-2026|PE",
+  "datafolha-folha-globo-estaduais-2026|PI",
+  "datafolha-folha-globo-estaduais-2026|RJ",
+  "datafolha-folha-globo-estaduais-2026|SP",
+  "datafolha-folha-globo-nacional-2026|BR",
+  "poderdata-aya-nacional-2026|BR",
+  "real-time-big-data-estaduais-2026|AM",
+  "real-time-big-data-estaduais-2026|BA",
+  "real-time-big-data-estaduais-2026|MS",
+  "real-time-big-data-estaduais-2026|MT",
+  "real-time-big-data-estaduais-2026|PB",
+  "real-time-big-data-estaduais-2026|PR",
+  "real-time-big-data-estaduais-2026|RO",
+  "real-time-big-data-estaduais-2026|RS",
+  "real-time-big-data-estaduais-2026|SE",
+] as const
 
 test("golden set cobre os modos de falha exigidos", () => {
   assert.deepEqual(
@@ -54,7 +76,7 @@ test("golden set cobre os modos de falha exigidos", () => {
   )
 })
 
-test("inventario distingue fontes revisadas dos quatro adaptadores e 18 alvos monitorados", () => {
+test("inventario preserva a cobertura base e reconcilia todos os alvos do catálogo", () => {
   const publishedSources = listarFontesAprovadasUtilizadas()
   const adapterSources = [
     "datafolha-folha-globo-estaduais-2026",
@@ -78,12 +100,23 @@ test("inventario distingue fontes revisadas dos quatro adaptadores e 18 alvos mo
     assert.ok(publishedSources.includes(sourceId), `fonte publicada ausente: ${sourceId}`)
   }
   const targets = listarAlvosMonitoramento()
-  assert.equal(targets.length, 18)
+  const coveragePairs = new Set(targets.map((target) => `${target.source_id}|${target.geography_code}`))
+  for (const pair of BASELINE_COVERAGE_PAIRS) {
+    assert.ok(coveragePairs.has(pair), `par de cobertura base ausente: ${pair}`)
+  }
   assert.deepEqual([...new Set(targets.map((target) => target.source_id))], adapterSources)
-  assert.equal(listarAlvosMonitoramento({ sourceId: "datafolha-folha-globo-estaduais-2026" }).length, 7)
-  assert.equal(listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026" }).length, 9)
-  assert.equal(listarAlvosMonitoramento({ uf: "CE" }).length, 1)
-  assert.equal(listarAlvosMonitoramento({ uf: "BR" }).length, 2)
+  assert.ok(targets.every((target) => adapterSources.includes(target.source_id as typeof adapterSources[number])))
+  assert.equal(new Set(targets.map((target) => target.poll_id)).size, targets.length)
+  assert.equal(new Set(targets.map((target) => target.registration_id)).size, targets.length)
+  const matrix = construirMatrizAgendada()
+  assert.deepEqual(
+    matrix.flatMap((entry) => entry.poll_ids).sort(),
+    targets.map((target) => target.poll_id).sort(),
+  )
+  assert.deepEqual(
+    matrix.map((entry) => `${entry.source_id}|${entry.uf}`).sort(),
+    [...coveragePairs].sort(),
+  )
   assert.throws(() => listarAlvosMonitoramento({ sourceId: "quaest-genial-nacional-2026" }), /sem adaptador aprovado/)
 })
 

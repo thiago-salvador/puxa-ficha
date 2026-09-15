@@ -1,18 +1,19 @@
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs"
+import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { createRequire } from "node:module"
 import { resolve } from "node:path"
 import test from "node:test"
 import type { ContratoPesquisaAgendada, DocumentoColetadoAgendado, ItemMatrizAgendada, ItemPropostaAgendada } from "../scripts/pesquisas-atualizacao-agendada/model"
+import { groupWeeklyPollSeries } from "../src/lib/poll-weeks"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
 require.cache[serverOnlyPath] = { id: serverOnlyPath, filename: serverOnlyPath, loaded: true, exports: {} } as never
 const {
   aplicarOperacoesAgendadas, carregarCatalogosAgendados, CATALOGOS_PERMITIDOS,
-  consolidarPropostasAgendadas, executarPromocaoAgendada,
+  consolidarPropostasAgendadas, executarPromocaoAgendada, validarAutorizacaoPublicacaoAgendada,
 } = require("../scripts/pesquisas-atualizacao-agendada/model") as typeof import("../scripts/pesquisas-atualizacao-agendada/model")
 const { parsePesquisasEleitoraisJson } = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
 
@@ -58,19 +59,32 @@ function temporaryCatalogs(catalogs: ReturnType<typeof carregarCatalogosAgendado
   return path
 }
 
-test("lote misto conserva operação inteira e bloqueio local, sem promover", async () => {
+function promotionDependencies() {
+  return {
+    async existingDraft() { return false },
+    async apply() {},
+    async hasChanges() { return true },
+    async verify() {},
+    async createBranch() {},
+    async commit() {},
+    async push() {},
+    async createDraftPr() {},
+  }
+}
+
+test("lote misto promove operação válida e conserva bloqueio local", async () => {
   const input = fixture()
   const result = consolidarPropostasAgendadas(input)
-  assert.equal(result.status, "blocked")
+  assert.equal(result.status, "ready")
   assert.equal(result.operation_status, "candidates")
   assert.equal(result.diff.operations.length, 1)
   assert.deepEqual(result.diff.operations[0].proposed.cenarios, input.documents[0].proposal.items[0].normalized_contract!.cenarios)
   assert.equal(result.poll_alerts.length, 1)
   assert.match(result.summary, /identity_unresolved/)
   assert.equal(result.coverage.status, "partial")
-  assert.equal(result.promotion.authorized, false)
-  const never = async () => { assert.fail("promoção não pode ser chamada") }
-  assert.equal((await executarPromocaoAgendada(result, { existingDraft: never, apply: never, hasChanges: never, verify: never, createBranch: never, commit: never, push: never, createDraftPr: never })).status, "blocked")
+  assert.equal(result.promotion.authorized, true)
+  assert.equal(result.promotion.human_review_required, false)
+  assert.equal((await executarPromocaoAgendada(result, promotionDependencies())).status, "draft_created")
 })
 
 const globalFailures: Array<[string, (input: ReturnType<typeof fixture>) => void]> = [
@@ -118,8 +132,9 @@ test("descoberta incompleta não apaga operação nem declara sucesso global", (
   input.matrix[0].poll_ids.pop()
   const result = consolidarPropostasAgendadas({ ...input, discovery: { status: "partial", alerts: ["matéria sem registro identificável"] } })
   assert.equal(result.diff.operations.length, 1)
-  assert.equal(result.status, "blocked")
+  assert.equal(result.status, "ready")
   assert.equal(result.coverage.status, "partial")
+  assert.equal(result.promotion.authorized, true)
   assert.match(result.summary, /matéria sem registro/)
 })
 
@@ -144,7 +159,7 @@ test("registro validado durante coleta conserva operação vizinha sem liberar p
   assert.deepEqual(result.global_alerts, [])
   assert.equal(result.diff.operations.length, 1)
   assert.equal(result.poll_alerts.length, 1)
-  assert.equal(result.promotion.authorized, false)
+  assert.equal(result.promotion.authorized, true)
   assert.deepEqual(input.matrix, original)
 })
 
@@ -168,14 +183,50 @@ test("lote integral válido preserva ready; inalterado preserva no_changes sem c
   const ready = consolidarPropostasAgendadas(input)
   assert.equal(ready.status, "ready")
   assert.equal(ready.coverage.status, "not_assessed")
-  assert.equal(ready.promotion.authorized, false)
-  const never = async () => { assert.fail("ready sem autorização não pode iniciar promoção") }
-  assert.equal((await executarPromocaoAgendada(ready, { existingDraft: never, apply: never, hasChanges: never, verify: never, createBranch: never, commit: never, push: never, createDraftPr: never })).status, "blocked")
+  assert.equal(ready.promotion.authorized, true)
+  assert.equal((await executarPromocaoAgendada(ready, promotionDependencies())).status, "draft_created")
   input.documents[0].proposal.items[0] = eligible(input.catalogs.presidente.pesquisas[0])
   const unchanged = consolidarPropostasAgendadas(input)
   assert.equal(unchanged.status, "no_changes")
   assert.equal(unchanged.operation_status, "no_changes")
   assert.equal(unchanged.diff.operations.length, 0)
+})
+
+test("publicação atomizada grava estados publicados e entra na série semanal carregada", () => {
+  const catalogs = carregarCatalogosAgendados()
+  const poll = structuredClone(catalogs.presidente.pesquisas[0])
+  const proposed = structuredClone(poll)
+  proposed.sample.size.value += 1
+  const input = {
+    catalogs,
+    matrix: [{ key: "single-poll", source_id: poll.source_id, uf: poll.geography.code, poll_ids: [poll.id!] }],
+    documents: [{ key: "single-poll", proposal: { schema_version: "1.0.0", dry_run: true, human_review_required: true, generated_at: "2026-09-09T00:00:00Z", items: [eligible(proposed)] } }],
+  } satisfies Parameters<typeof consolidarPropostasAgendadas>[0]
+  const result = consolidarPropostasAgendadas(input)
+  assert.equal(result.status, "ready")
+  validarAutorizacaoPublicacaoAgendada({ status: result, proposal: result.proposal, diff: result.diff })
+  const tampered = structuredClone(result.diff)
+  tampered.operations[0].proposed.cenarios[0].resultados[0].value_percent += 20
+  assert.throws(() => validarAutorizacaoPublicacaoAgendada({ status: result, proposal: result.proposal, diff: tampered }), /operação sem evidência completa/)
+  const tamperedRegistration = structuredClone(result.diff)
+  tamperedRegistration.operations[0].proposed.registration.code.value = "BR-99999/2026"
+  assert.throws(() => validarAutorizacaoPublicacaoAgendada({ status: result, proposal: result.proposal, diff: tamperedRegistration }), /operação sem evidência completa/)
+  const temp = temporaryCatalogs(catalogs)
+  try {
+    aplicarOperacoesAgendadas(result.diff.operations, temp, { publish: true, attestation: { status: result, proposal: result.proposal, diff: result.diff } })
+    const readback = carregarCatalogosAgendados(temp)
+    const sources = readFileSync("scripts/data/pesquisas-eleitorais-fontes.json", "utf8")
+    const parsed = parsePesquisasEleitoraisJson(JSON.stringify(readback.presidente), sources)
+    const published = parsed.pesquisas.find((entry) => entry.id === poll.id)
+    assert.ok(published)
+    assert.equal(published.state, "publicado")
+    assert.equal(published.sample.size.status, "publicado")
+    assert.equal(published.cenarios[0].resultados[0].status, "publicado")
+    const statePolls = parsed.pesquisas.flatMap(({ cenarios, ...entry }) => cenarios.map((scenario) => ({ ...entry, scenario })))
+    assert.ok(groupWeeklyPollSeries(statePolls).some((series) => series.polls.some((entry) => entry.id === poll.id)))
+  } finally {
+    rmSync(temp, { recursive: true, force: true })
+  }
 })
 
 test("reexecução e retificação são idempotentes; histórico independente permanece intacto", () => {
@@ -215,8 +266,8 @@ test("replay 34360285171: cinco candidatas, 19 exceções e parser público em c
   assert.equal(result.diff.operations.length, 5)
   assert.equal(result.poll_alerts.length, 19)
   assert.deepEqual(result.diff.operations.map((op) => `${op.poll_id}-live`).sort(), result.proposal.items.filter((item) => item.decision.eligible_for_human_review).map((item) => item.id).sort())
-  assert.equal(result.status, "blocked")
-  assert.equal(result.promotion.authorized, false)
+  assert.equal(result.status, "ready")
+  assert.equal(result.promotion.authorized, true)
   const temp = temporaryCatalogs(catalogs)
   aplicarOperacoesAgendadas(result.diff.operations, temp)
   const readback = carregarCatalogosAgendados(temp)
@@ -256,7 +307,7 @@ test("curadoria parcial não derruba saúde operacional, mas falha operacional c
     ...input,
     discovery: { status: "partial", alerts: ["inventário anual não comprovado"] },
   })
-  assert.equal(partial.status, "blocked")
+  assert.equal(partial.status, "ready")
   assert.equal(partial.operation_status, "candidates")
   assert.equal(partial.execution_status, "complete")
   assert.deepEqual(partial.execution_alerts, [])
@@ -267,7 +318,7 @@ test("curadoria parcial não derruba saúde operacional, mas falha operacional c
     discovery: { status: "partial", alerts: [] },
     executionAlerts: [{ code: "discovery_source_failure", message: "HTTP 403 sem fallback" }],
   })
-  assert.equal(failed.status, "blocked")
+  assert.equal(failed.status, "ready")
   assert.equal(failed.execution_status, "failed")
   assert.equal(failed.execution_alerts[0]?.code, "discovery_source_failure")
 })
@@ -282,9 +333,16 @@ test("deriva falhas operacionais de invariantes e fontes, sem transformar curado
   const source = fixture()
   source.documents[0].proposal.items[1].decision = { classification: "incompleto", eligible_for_human_review: false, reason: "source_timeout" }
   const sourceResult = consolidarPropostasAgendadas(source)
-  assert.equal(sourceResult.status, "blocked")
+  assert.equal(sourceResult.status, "ready")
   assert.equal(sourceResult.execution_status, "failed")
+  assert.equal(sourceResult.diff.operations.length, 1)
   assert.ok(sourceResult.execution_alerts.some((alert) => alert.code === "poll_source_failure"))
+
+  const receiptFailure = fixture()
+  const receiptResult = consolidarPropostasAgendadas({ ...receiptFailure, executionAlerts: [{ code: "artifact_invalid", message: `${receiptFailure.catalogs.presidente.pesquisas[0].id}: recibo source-html ausente` }] })
+  assert.equal(receiptResult.status, "blocked")
+  assert.equal(receiptResult.promotion.authorized, false)
+  assert.deepEqual(receiptResult.diff.operations, [])
 
   const directSourceFailure = consolidarPropostasAgendadas({ ...fixture(), discovery: { status: "source_failure", alerts: [] } })
   assert.equal(directSourceFailure.execution_status, "failed")

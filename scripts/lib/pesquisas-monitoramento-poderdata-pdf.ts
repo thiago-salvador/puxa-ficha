@@ -79,9 +79,9 @@ export function parseTextoPoderData(text: string, registrationId: string, public
     const turnMatch = lines[0]?.trim().match(/^Intenção de voto no ([12])º turno$/)
     if (!turnMatch) continue
     // Cross-tab pages have a demographic label rather than the survey question.
-    const questionStart = lines.findIndex((line) => /^\s*(?:Em outubro teremos eleição para presidente|E se houver um 2º turno entre)/.test(line))
+    const questionStart = lines.findIndex((line) => /^\s*(?:\d+\.\s*)?(?:Em outubro teremos eleição para presidente|E se houver um 2º turno entre)/.test(line))
     if (questionStart < 0) continue
-    const question = lines.slice(questionStart, questionStart + 4).join(" ").replace(/\s+/g, " ").match(/^.*?\?/)?.[0]?.trim()
+    const question = lines.slice(questionStart, questionStart + 4).join(" ").replace(/\s+/g, " ").match(/^.*?\?/)?.[0]?.trim().replace(/^\d+\.\s*/, "")
     if (!question) throw new Error("PoderData PDF: pergunta incompleta")
     const columnsIndex = lines.findIndex((line) => {
       const tokens = line.trim().split(/\s+/)
@@ -129,10 +129,16 @@ export function parseTextoPoderData(text: string, registrationId: string, public
   for (const plot of plots) {
     if (scenarios.some((scenario) => scenario.question === plot.question)) continue
     const rawPage = rawText?.split("\f")[plot.page - 1]
-    if (plot.turn !== 1 || !rawPage) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
-    const chart = parseBarrasPoderData(rawPage, plot.question, plot.page)
-    if (![fieldwork.end, publicationDate].includes(chart.history.at(-1)!.date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
-    scenarios.push({ ...plot, results_date: chart.history.at(-1)!.date, results: chart.history.at(-1)!.results, history: chart.history })
+    if (!rawPage) throw new Error("PoderData PDF: gráfico sem tabela conciliada")
+    if (plot.turn === 1) {
+      const chart = parseBarrasPoderData(rawPage, plot.question, plot.page)
+      if (![fieldwork.end, publicationDate].includes(chart.history.at(-1)!.date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
+      scenarios.push({ ...plot, results_date: chart.history.at(-1)!.date, results: chart.history.at(-1)!.results, history: chart.history })
+    } else {
+      const chart = parseBarraSegundoTurnoPoderData(rawPage, plot.question, plot.page, resolverNomePresidencial)
+      if (![fieldwork.end, publicationDate].includes(chart.results_date)) throw new Error("PoderData PDF: coluna de resultados não corresponde ao campo atual")
+      scenarios.push({ ...plot, results_date: chart.results_date, results: chart.results })
+    }
   }
   scenarios.sort((a, b) => a.page - b.page)
   if (new Set(scenarios.map((scenario) => scenario.results_date)).size !== 1) throw new Error("PoderData PDF: datas de resultado divergentes entre cenários")
@@ -181,6 +187,47 @@ function parseBarrasPoderData(rawPage: string, question: string, page: number) {
   const history = dates.map((date, index) => ({ date: date!, results: labels.map((raw_label, row) => ({ raw_label, value_percent: values[index * labels.length + row] })) }))
   if (history.some(({ results }) => Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5)) throw new Error("PoderData PDF: série do gráfico incompleta")
   return { history }
+}
+
+function parseBarraSegundoTurnoPoderData(
+  rawPage: string,
+  question: string,
+  page: number,
+  resolverNomePresidencial: (name: string) => string | null,
+) {
+  const lines = rawPage.trim().split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
+  const title = lines.indexOf("Intenção de voto no 2º turno")
+  const endQuestion = lines.findIndex((line, index) => index > title && line.endsWith("?"))
+  const rawQuestion = lines.slice(title + 1, endQuestion + 1).join(" ").replace(/^\d+\.\s*/, "")
+  if (title < 0 || endQuestion < 0 || rawQuestion !== question || lines[endQuestion + 1] !== String(page)) {
+    throw new Error("PoderData PDF: ordem dos objetos do gráfico não reconhecida")
+  }
+  const body = lines.slice(endQuestion + 2)
+  const dateIndex = body.findIndex((line) => columnDate(line))
+  if (dateIndex < 1) throw new Error("PoderData PDF: data do gráfico ausente")
+  const labelsStart = body.findIndex((line) => !/^\d+(?:[,.]\d+)?$/.test(line))
+  const values = body.slice(0, labelsStart).map((value) => Number(value.replace(",", ".")))
+  const labels = body.slice(labelsStart, dateIndex)
+  if (labelsStart < 1 || labelsStart >= dateIndex || values.length < 4 || values.some((value) => !Number.isFinite(value) || value < 0 || value > 100)
+    || labels.length !== values.length || labels.some((label) => !/\p{L}/u.test(label))) {
+    throw new Error("PoderData PDF: série do gráfico incompleta")
+  }
+  const results = labels.map((raw_label, index) => ({ raw_label, value_percent: values[index] }))
+  if (Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5
+    || new Set(results.map((row) => row.raw_label)).size !== results.length) {
+    throw new Error("PoderData PDF: cenário incompleto ou duplicado")
+  }
+  const names = question.match(/entre (.+?) e (.+?), em quem você votaria\?/i)?.slice(1)
+  const candidates = results.filter((row) => !/^(Branco\/Nulo|Não sabe)$/i.test(row.raw_label))
+  const identity = (name: string) => resolverNomePresidencial(name) ?? `literal:${name}`
+  if (!names || candidates.length !== 2 || new Set(names.map(identity)).size !== 2
+    || !candidates.every((row) => names.map(identity).includes(identity(row.raw_label)))) {
+    throw new Error("PoderData PDF: duelo conflitante")
+  }
+  if (!results.some((row) => row.raw_label === "Branco/Nulo") || !results.some((row) => row.raw_label === "Não sabe")) {
+    throw new Error("PoderData PDF: categorias de resposta ausentes")
+  }
+  return { results_date: columnDate(body[dateIndex])!, results }
 }
 
 export function extrairDocumentoPoderData(input: { bytes: Uint8Array; url: string; observedAt: string; registrationId: string; publicationDate?: string }): DocumentoPoderData {

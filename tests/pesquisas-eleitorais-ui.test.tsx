@@ -30,15 +30,36 @@ const {
 
 const pesquisasLula = listarPesquisasPresidenciaisPorSlug("lula")
 
+function firstLula() {
+  const pesquisa = pesquisasLula[0]
+  assert.ok(pesquisa)
+  return pesquisa
+}
+
+function percent(value: number | null) {
+  assert.ok(value !== null)
+  return `${value.toLocaleString("pt-BR", { maximumFractionDigits: 2 })}%`
+}
+
+function date(value: string | null) {
+  assert.ok(value)
+  return value.split("-").reverse().join("/")
+}
+
+function period(pesquisa: ReturnType<typeof firstLula>) {
+  return `${date(pesquisa.fieldwork.start.value)} a ${date(pesquisa.fieldwork.end.value)}`
+}
+
 describe("experiência v2 de pesquisas presidenciais", () => {
   it("mantém o hero mínimo e restrito ao primeiro turno", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisasLula} />)
+    const pesquisa = firstLula()
 
     assert.match(html, /data-pf-pesquisa-hero=/)
-    assert.match(html, /Meio\/Ideia/)
-    assert.match(html, /38,4%/)
-    assert.match(html, /04\/09\/2026 a 07\/09\/2026/)
-    assert.doesNotMatch(html, /2º turno|46%/i)
+    assert.ok(html.includes(pesquisa.instituto.value!))
+    assert.ok(html.includes(percent(pesquisa.resultado.valuePercent)))
+    assert.ok(html.includes(period(pesquisa)))
+    assert.doesNotMatch(html, /2º turno/i)
     assert.doesNotMatch(html, /aria-live/)
   })
 
@@ -56,32 +77,37 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const html = renderToStaticMarkup(
       <PesquisasPresidenciaisOverview pesquisas={pesquisasLula} onOpenTab={() => {}} />,
     )
+    const pesquisa = firstLula()
 
     assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 1)
-    assert.match(html, /Meio\/Ideia/)
-    assert.match(html, /38,4%/)
-    assert.match(html, /Primeiro turno estimulado, com Pablo Marçal/)
-    assert.match(html, /1\.500 entrevistas/)
-    assert.match(html, /2,5 pontos percentuais/)
+    assert.ok(html.includes(pesquisa.instituto.value!))
+    assert.ok(html.includes(percent(pesquisa.resultado.valuePercent)))
+    assert.ok(html.includes(pesquisa.cenario.labelRaw))
+    assert.ok(html.includes(`${pesquisa.sample.size.value!.toLocaleString("pt-BR")} entrevistas`))
+    assert.ok(html.includes(`${pesquisa.marginErrorPp.value!.toLocaleString("pt-BR", { maximumFractionDigits: 2 })} pontos percentuais`))
     assert.match(html, /aria-label="Pesquisa anterior"/)
     assert.match(html, /aria-label="Próxima pesquisa"/)
     assert.equal((html.match(/size-11/g) ?? []).length, 2)
-    assert.doesNotMatch(html, /41%|46%/)
+    assert.doesNotMatch(html, /2º turno/)
   })
 
   it("lista as fontes revisadas na aba Pesquisas", () => {
     const html = renderToStaticMarkup(<PesquisasPresidenciaisTab pesquisas={pesquisasLula} />)
+    const current = firstLula()
+    const datafolha = pesquisasLula.find((pesquisa) => pesquisa.sourceId === "datafolha-folha-globo-nacional-2026")
+    assert.ok(datafolha)
 
-    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, 2)
-    assert.match(html, /38,4%/)
-    assert.match(html, /Datafolha/)
-    assert.match(html, /39%/)
+    assert.equal((html.match(/data-pf-pesquisa-card=/g) ?? []).length, pesquisasLula.length)
+    assert.ok(html.includes(current.instituto.value!))
+    assert.ok(html.includes(percent(current.resultado.valuePercent)))
+    assert.ok(html.includes(datafolha.instituto.value!))
+    assert.ok(html.includes(percent(datafolha.resultado.valuePercent)))
     assert.match(html, /percentuais do total de entrevistados/)
     assert.match(html, /cenário sem Pablo Marçal/)
     assert.match(html, /1º turno/)
     assert.match(html, /Ver divulgação pública/)
     assert.match(html, /fotografia do período/)
-    assert.doesNotMatch(html, /PoderData|AtlasIntel|Ipsos-Ipec|41%|46%|2º turno/)
+    assert.doesNotMatch(html, /AtlasIntel|Ipsos-Ipec|2º turno/)
     assert.doesNotMatch(html.toLowerCase(), /média|ranking|empate|lidera/)
   })
 

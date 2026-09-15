@@ -706,7 +706,8 @@ export function parsePesquisasEleitoraisJson(
     preferredSourceIds,
     aliases,
     pesquisas: polls
-      .filter(({ source }) => source.status === "aprovado" && preferredSourceIds.includes(source.id))
+      .filter(({ source, poll }) => source.status === "aprovado" &&
+        (preferredSourceIds.includes(source.id) || poll.state === "publicado"))
       .map(({ poll }) => poll),
   }
 }

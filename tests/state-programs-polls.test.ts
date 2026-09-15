@@ -62,3 +62,15 @@ test("state polls preserve every scenario result and reject wrong scope and unap
   const rejected = { ...catalog, pesquisas: catalog.pesquisas.map(p => ({ ...p, sourceStatus: "excluído" as const })) }
   assert.deepEqual(loadStatePolls(uf, rejected), [])
 })
+
+test("published approved state polls remain visible outside the preferred source set", () => {
+  const entry = [...carregarPesquisasGovernadores()].find(([, catalog]) => catalog.pesquisas.length > 0)
+  assert.ok(entry, "canonical catalog must provide a fixture")
+  const [uf, catalog] = entry
+  const poll = structuredClone(catalog.pesquisas[0])
+  const preferredSourceIds = catalog.preferredSourceIds.filter((sourceId) => sourceId !== poll.sourceId)
+  const published = { ...catalog, preferredSourceIds, pesquisas: [poll] }
+  assert.ok(loadStatePolls(uf, published).length > 0)
+  assert.deepEqual(loadStatePolls(uf, { ...published, pesquisas: [{ ...poll, state: "indeterminado" }] }), [])
+  assert.deepEqual(loadStatePolls(uf, { ...published, pesquisas: [{ ...poll, sourceStatus: "condicional" }] }), [])
+})

@@ -132,7 +132,7 @@ export type ExecutionAlert = {
   message: string
 }
 
-const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
+const CURATION_REASON = /^(?:approved_new_evidence|extraction_incomplete|identity_unresolved|evidence_stale|source_metadata_conflict|metadata_incomplete|metadado ausente \(.+\)|pesquisa sem prova de cenário e publicação completos)$/
 
 export interface ResultadoConsolidacaoAgendada {
   execution_status: "complete" | "failed"
@@ -142,7 +142,7 @@ export interface ResultadoConsolidacaoAgendada {
   global_alerts: string[]
   poll_alerts: Array<{ poll_id: string; reason: string }>
   coverage: { status: "partial" | "not_assessed"; alerts: string[] }
-  promotion: { authorized: false; human_review_required: true }
+  promotion: { authorized: boolean; human_review_required: boolean }
   alerts: string[]
   proposal: DocumentoPropostaAgendada
   diff: DocumentoDiffAgendado
@@ -505,15 +505,12 @@ function buildPrBody(operations: OperacaoCatalogoAgendada[], summary: string): s
     "",
     summary.trim(),
     "",
-    "## Revisão humana obrigatória",
+    "## Política de publicação",
     "",
-    "- conferir cada URL pública e registro TSE;",
-    "- revisar identidade e percentuais por candidato;",
-    "- decidir os campos e estados que podem sair de `indeterminado`;",
-    "- rodar `npm run verify:pesquisas` após qualquer ajuste;",
-    "- não mergear enquanto houver dúvida, alerta ou metadado incompleto.",
-    "",
-    "Este PR é draft. A automação não faz merge nem publica em produção.",
+    "- cada operação abaixo passou pelos gates de identidade, cenário, metadado, proveniência e registro;",
+    "- operações atomizadas podem ser promovidas imediatamente conforme a política vigente;",
+    "- pesquisas bloqueadas permanecem fora deste diff e aparecem nos alertas do resumo;",
+    "- rodar `npm run verify:pesquisas` antes de qualquer alteração adicional;",
   ].join("\n")
 }
 
@@ -524,6 +521,80 @@ interface EntradaConsolidacaoAgendada {
   generatedAt?: string
   discovery?: { status: "partial" | "not_assessed" | "source_failure"; alerts: string[] }
   executionAlerts?: ExecutionAlert[]
+}
+
+function publicarCampo<T>(field: StatusValue<T>): StatusValue<T> {
+  return field.value === null ? { ...field, status: "indeterminado" } : { ...field, status: "publicado" }
+}
+
+/** Mark a contract public only after the consolidation gates have passed. */
+function publicarContrato(contract: ContratoPesquisaAgendada): ContratoPesquisaAgendada {
+  return {
+    ...contract,
+    state: "publicado",
+    instituto: publicarCampo(contract.instituto),
+    contratante: contract.contratante ? publicarCampo(contract.contratante) : contract.contratante,
+    fieldwork: { start: publicarCampo(contract.fieldwork.start), end: publicarCampo(contract.fieldwork.end) },
+    publication_date: publicarCampo(contract.publication_date),
+    sample: { size: publicarCampo(contract.sample.size), population: publicarCampo(contract.sample.population) },
+    margin_error_pp: publicarCampo(contract.margin_error_pp),
+    confidence_percent: publicarCampo(contract.confidence_percent),
+    method: publicarCampo(contract.method),
+    registration: { code: publicarCampo(contract.registration.code), url: publicarCampo(contract.registration.url) },
+    provenance: {
+      ...contract.provenance,
+      route_reason: "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+      capture: { ...contract.provenance.capture, status: "publicado" },
+    },
+    cenarios: contract.cenarios.map((scenario) => ({
+      ...scenario,
+      question: publicarCampo(scenario.question),
+      resultados: scenario.resultados.map((result) => ({ ...result, status: "publicado" })),
+    })),
+  }
+}
+
+export function validarAutorizacaoPublicacaoAgendada(input: {
+  status: unknown
+  proposal: unknown
+  diff: DocumentoDiffAgendado
+}): void {
+  if (!input.status || typeof input.status !== "object" || Array.isArray(input.status)) throw new Error("status de publicação inválido")
+  const status = input.status as UnknownObject
+  const promotion = status.promotion
+  if (status.status !== "ready" || status.operation_status !== "candidates"
+    || !promotion || typeof promotion !== "object" || Array.isArray(promotion)
+    || (promotion as UnknownObject).authorized !== true || (promotion as UnknownObject).human_review_required !== false) {
+    throw new Error("status não autoriza publicação")
+  }
+  if (!Array.isArray(status.global_alerts) || status.global_alerts.length > 0) throw new Error("bloqueio global impede publicação")
+  if (!Array.isArray(status.execution_alerts) || (status.execution_alerts as Array<{ code?: unknown }>).some((alert) => alert.code === "matrix_invalid")) {
+    throw new Error("status operacional não atesta integridade da matriz")
+  }
+  if (!input.proposal || typeof input.proposal !== "object" || Array.isArray(input.proposal)) throw new Error("proposta de publicação inválida")
+  const proposal = input.proposal as Partial<DocumentoPropostaAgendada>
+  if (proposal.schema_version !== "1.0.0" || proposal.dry_run !== true || proposal.human_review_required !== false || !Array.isArray(proposal.items)) {
+    throw new Error("proposta não atesta publicação atomizada")
+  }
+  const proposalIds = new Set<string>()
+  for (const item of proposal.items) {
+    if (!item || proposalIds.has(item.id)) throw new Error(`proposta contém item duplicado: ${item?.id ?? "desconhecido"}`)
+    proposalIds.add(item.id)
+  }
+  const operationIds = new Set<string>()
+  const executionAlerts = Array.isArray(status.execution_alerts) ? status.execution_alerts as Array<{ code?: unknown; message?: unknown }> : []
+  const blocked = Array.isArray(status.poll_alerts) ? status.poll_alerts as Array<{ poll_id?: unknown }> : []
+  for (const operation of input.diff.operations) {
+    if (operationIds.has(operation.poll_id)) throw new Error(`operação duplicada: ${operation.poll_id}`)
+    operationIds.add(operation.poll_id)
+    const item = proposal.items.find((candidate) => candidate.id === `${operation.poll_id}-live`)
+    if (!item || item.decision?.eligible_for_human_review !== true || !item.normalized_contract || !completePublicationMatches(item)
+      || blocked.some((alert) => alert.poll_id === operation.poll_id)
+      || stable(contractComparable(operation.proposed)) !== stable(contractComparable(item.normalized_contract))
+      || executionAlerts.some((alert) => (alert.code === "poll_source_failure" || alert.code === "artifact_invalid")
+        && typeof alert.message === "string" && alert.message.startsWith(`${operation.poll_id}:`))) throw new Error(`operação sem evidência completa: ${operation.poll_id}`)
+  }
+  if (input.diff.operations.length === 0) throw new Error("não há operações para publicar")
 }
 
 // Invalid envelopes cannot safely be attributed to an individual poll.
@@ -697,16 +768,36 @@ function resultadoConsolidacao(
   }
   if (input.discovery?.status === "source_failure") addExecution("discovery_source_failure", "descoberta reportou falha de fonte")
   const executionStatus = derivedExecutionAlerts.length ? "failed" : "complete"
+
+  // Receipt and source failures are attached to one poll whenever possible.
+  // Keep that poll out of the automatic diff while allowing independent,
+  // atomically validated polls to advance in the same batch.
+  const failedPollIds = new Set<string>()
+  for (const alert of derivedExecutionAlerts) {
+    if (alert.code !== "poll_source_failure" && alert.code !== "artifact_invalid") continue
+    const pollId = alert.message.match(/^([^:]+):/)?.[1]
+    if (pollId) failedPollIds.add(pollId.replace(/-live$/, ""))
+  }
+  const safeOperations = globalAlerts.length === 0
+    ? operations.filter((operation) => !failedPollIds.has(operation.poll_id))
+    : []
+  const executionAlertMessages = derivedExecutionAlerts.map((alert) => `${alert.code}: ${alert.message}`)
   const coverage: ResultadoConsolidacaoAgendada["coverage"] = {
-    status: alerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
+    status: alerts.length || derivedExecutionAlerts.length || input.discovery?.status === "partial" ? "partial" : "not_assessed",
     alerts: [...discoveryAlerts],
   }
-  // Retain the legacy failure signal so existing CLI/workflow cannot promote a partial batch.
-  const status: ResultadoConsolidacaoAgendada["status"] = alerts.length > 0 || input.discovery?.status === "partial"
+  // Coverage and individual curation alerts describe what was not found. They
+  // do not block an independent operation that passed every safety gate.
+  const status: ResultadoConsolidacaoAgendada["status"] = globalAlerts.length > 0
     ? "blocked"
-    : operations.length > 0 ? "ready" : "no_changes"
-  const safeOperations = globalAlerts.length === 0 ? operations : []
+    : safeOperations.length > 0
+      ? "ready"
+      : alerts.length > 0 || derivedExecutionAlerts.length > 0
+        ? "blocked"
+        : "no_changes"
   const operationStatus = globalAlerts.length ? "blocked" : safeOperations.length ? "candidates" : "no_changes"
+  const promotionAuthorized = safeOperations.length > 0 && globalAlerts.length === 0
+  const humanReviewRequired = !promotionAuthorized
   const summary = buildSummary({
     status,
     alerts,
@@ -714,7 +805,7 @@ function resultadoConsolidacao(
     received: input.documents.length,
     items,
     operations: safeOperations,
-  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${derivedExecutionAlerts.length}.\nElegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: false. Revisão humana obrigatória.\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
+  }) + `\nExecução operacional: ${executionStatus}; alertas operacionais: ${derivedExecutionAlerts.length}.\n${executionAlertMessages.length ? `Alertas operacionais detalhados: ${executionAlertMessages.join(" | ")}.\n` : ""}Elegibilidade de operações: ${operationStatus}.\nCobertura: ${coverage.status}; completude de BR + 27 UFs não comprovada.\nAutorização de promoção: ${promotionAuthorized}. ${humanReviewRequired ? "Revisão humana obrigatória." : "Revisão humana não obrigatória para operações atomizadas válidas."}\nBloqueios globais: ${globalAlerts.length}. Pesquisas bloqueadas: ${pollAlerts.length}.\n`
   return {
     execution_status: executionStatus,
     execution_alerts: derivedExecutionAlerts,
@@ -723,12 +814,12 @@ function resultadoConsolidacao(
     global_alerts: globalAlerts,
     poll_alerts: pollAlerts,
     coverage,
-    promotion: { authorized: false, human_review_required: true },
+    promotion: { authorized: promotionAuthorized, human_review_required: humanReviewRequired },
     alerts,
     proposal: {
       schema_version: "1.0.0",
       dry_run: true,
-      human_review_required: true,
+      human_review_required: humanReviewRequired,
       generated_at: input.generatedAt ?? new Date().toISOString(),
       items,
     },
@@ -824,7 +915,16 @@ function applyDocumentedAliases(dataset: UnknownObject, proposed: ContratoPesqui
 export function aplicarOperacoesAgendadas(
   operations: OperacaoCatalogoAgendada[],
   baseDir = process.cwd(),
+  options: {
+    publish?: boolean
+    attestation?: { status: unknown; proposal: unknown; diff: DocumentoDiffAgendado }
+  } = {},
 ): string[] {
+  if (options.publish) {
+    if (!options.attestation) throw new Error("publicação exige atestado de status e proposta")
+    validarAutorizacaoPublicacaoAgendada(options.attestation)
+    if (stable(options.attestation.diff.operations) !== stable(operations)) throw new Error("atestado não corresponde às operações")
+  }
   const catalogs = carregarCatalogosAgendados(baseDir)
   const touched = new Set<string>()
   const expectedReadback = new Map<string, ContratoPesquisaAgendada>()
@@ -833,7 +933,9 @@ export function aplicarOperacoesAgendadas(
     if (!CATALOGOS_PERMITIDOS.includes(operation.file)) throw new Error(`arquivo fora da allowlist: ${operation.file}`)
     const matches = findPollMatches(catalogs, operation.poll_id)
     if (operation.kind === "insert" && matches.length === 0) {
-      const replacement = prepararPesquisaNova(catalogs, operation.proposed, operation.poll_id)
+      const replacement = options.publish
+        ? publicarContrato(prepararPesquisaNova(catalogs, operation.proposed, operation.poll_id))
+        : prepararPesquisaNova(catalogs, operation.proposed, operation.poll_id)
       const expectedFile = replacement.office === "Presidente" ? CATALOGOS_PERMITIDOS[0] : CATALOGOS_PERMITIDOS[1]
       if (operation.file !== expectedFile || replacement.geography.code !== operation.geography_code || replacement.source_id !== operation.source_id || replacement.registration.code.value !== operation.registration_id) throw new Error("escopo da inserção divergente")
       if (expectedFile === CATALOGOS_PERMITIDOS[0]) {
@@ -857,7 +959,9 @@ export function aplicarOperacoesAgendadas(
     const located = matches[0]
     if (located.file !== operation.file) throw new Error(`arquivo divergente para pesquisa: ${operation.poll_id}`)
     if (located.poll.geography.code !== operation.geography_code) throw new Error(`geografia divergente para pesquisa: ${operation.poll_id}`)
-    const replacement = mergeProposedPoll(located.poll, operation.proposed)
+    const replacement = options.publish
+      ? publicarContrato(mergeProposedPoll(located.poll, operation.proposed))
+      : mergeProposedPoll(located.poll, operation.proposed)
     if (operation.file === CATALOGOS_PERMITIDOS[0]) {
       applyDocumentedAliases(catalogs.presidente, operation.proposed)
       const index = catalogs.presidente.pesquisas.findIndex((poll) => poll.id === operation.poll_id)

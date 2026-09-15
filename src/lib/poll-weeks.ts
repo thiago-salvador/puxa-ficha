@@ -13,12 +13,58 @@ export function weekStart(date: string) {
   return new Date(time - ((new Date(time).getUTCDay() + 6) % 7) * DAY).toISOString().slice(0, 10)
 }
 
-/** Keep the catalog's scenario contract, electorate and candidate set. Institute and interview mode may vary. */
+function normalizeDimension(value: string): string {
+  return value.normalize("NFD").replace(/\p{Diacritic}/gu, "").trim().replace(/\s+/g, " ").toLocaleLowerCase("pt-BR")
+}
+
+function comparabilityMode(poll: StatePollScenario): "estimulada" | "espontanea" | null {
+  const parts = poll.scenario.comparabilityKey.split("|").map(part => part.trim())
+  if (parts.length < 5) return null
+  const [year, office, geography, turn, rawMode] = parts
+  if (year !== String(poll.electionYear) || normalizeDimension(office) !== normalizeDimension(poll.office)
+    || geography.toLocaleUpperCase("pt-BR") !== poll.geography.code.toLocaleUpperCase("pt-BR") || turn !== String(poll.scenario.turn)) return null
+  const mode = normalizeDimension(rawMode)
+  if (mode !== "estimulada" && mode !== "estimulado" && mode !== "espontanea" && mode !== "espontaneo") return null
+  return mode.startsWith("estimul") ? "estimulada" : "espontanea"
+}
+
+function comparabilityDimensions(poll: StatePollScenario): {
+  mode: "estimulada" | "espontanea"
+  universe: "total_amostra" | "votos_validos"
+} | null {
+  const parts = poll.scenario.comparabilityKey.split("|").map(part => part.trim())
+  if (parts.length !== 7) return null
+  const mode = comparabilityMode(poll)
+  if (!mode) return null
+  const [, , , , , , rawUniverse] = parts
+  const universe = normalizeDimension(rawUniverse)
+  if (universe !== "total_amostra" && universe !== "votos_validos") return null
+  return { mode, universe }
+}
+
+/** Keep factual comparability dimensions; list IDs and poll IDs never define a series. */
 function weeklySeriesKey(poll: StatePollScenario) {
+  const dimensions = comparabilityDimensions(poll)
   const population = poll.sample.population
-  const candidates = poll.scenario.resultados.filter(result => result.matchStatus === "exact_alias" && result.candidateSlug).map(resultKey).sort()
-  const verified = population.status === "publicado" && population.value?.trim() && poll.method.status === "publicado" && poll.method.value && poll.instituto.status === "publicado" && poll.instituto.value && candidates.length > 0 && !poll.scenario.resultados.some(result => result.matchStatus === "indeterminado")
-  return JSON.stringify([poll.electionYear, poll.office, poll.geography.code, poll.scenario.turn, poll.scenario.comparabilityKey, population.value?.trim().toLocaleLowerCase("pt-BR"), candidates, verified ? null : pollKey(poll)])
+  const candidates = poll.scenario.resultados
+    .filter(result => result.matchStatus === "exact_alias" && result.candidateSlug)
+    .map(resultKey)
+    .sort()
+  const metadataVerified = population.status === "publicado" && Boolean(population.value?.trim())
+    && poll.method.status === "publicado" && Boolean(poll.method.value?.trim())
+    && poll.instituto.status === "publicado" && Boolean(poll.instituto.value?.trim())
+    && candidates.length > 0 && !poll.scenario.resultados.some(result => result.matchStatus === "indeterminado")
+  if (!dimensions || !metadataVerified) return JSON.stringify(["isolated", pollKey(poll)])
+  return JSON.stringify([
+    poll.electionYear,
+    normalizeDimension(poll.office),
+    poll.geography.code.toLocaleUpperCase("pt-BR"),
+    poll.scenario.turn,
+    dimensions.mode,
+    dimensions.universe,
+    candidates,
+    normalizeDimension(population.value!),
+  ])
 }
 
 function surveyIdentity(poll: StatePollScenario) {
@@ -72,7 +118,7 @@ export function groupWeeklyPollSeries(polls: StatePollScenario[]): WeeklySeries[
   }).sort((a, b) => {
     // The initial view should show the prompted candidate list, not a sparse
     // spontaneous scenario chosen accidentally by lexicographic ID order.
-    const stimulated = (series: WeeklySeries) => /^estimulad[ao]$/.test(series.polls[0].scenario.comparabilityKey.split("|")[4])
+    const stimulated = (series: WeeklySeries) => comparabilityMode(series.polls[0]) === "estimulada"
     const latestFieldwork = (series: WeeklySeries) => series.polls.map(poll => fieldworkDate(poll) ?? "").sort().at(-1) ?? ""
     const latestPublication = (series: WeeklySeries) => series.polls.map(poll => poll.publicationDate.status === "publicado" ? poll.publicationDate.value ?? "" : "").sort().at(-1) ?? ""
     return Number(stimulated(b)) - Number(stimulated(a)) ||

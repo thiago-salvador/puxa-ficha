@@ -41,9 +41,16 @@ test("presidential polls preserve scenario outcomes and require exact approved n
   }
   assert.deepEqual(rows.map(r => r.publicationDate.value), [...rows.map(r => r.publicationDate.value)].sort((a,b) => (b ?? "").localeCompare(a ?? "")))
   assert.deepEqual(loadPresidentialPolls({ ...catalog, publicationScope: { ...catalog.publicationScope, geographyCode: "SP" } }), [])
-  for (const patch of [{ office: "Governador" }, { sourceStatus: "excluído" as const }, { sourceId: "unapproved-source" }, { geography: { ...catalog.pesquisas[0].geography, code: "SP" } }]) {
+  for (const patch of [{ office: "Governador" }, { sourceStatus: "excluído" as const }, { sourceId: "unapproved-source", state: "indeterminado" as const }, { geography: { ...catalog.pesquisas[0].geography, code: "SP" } }]) {
     assert.deepEqual(loadPresidentialPolls({ ...catalog, pesquisas: catalog.pesquisas.map(p => ({ ...p, ...patch })) }), [])
   }
+  const publishedNonPreferred = rows.filter(row => row.sourceId === "poderdata-aya-nacional-2026").map(row => row.id)
+  assert.deepEqual([...new Set(publishedNonPreferred)].sort(), [
+    "poderdata-aya-nacional-br-04914-2026",
+    "poderdata-aya-nacional-br-04974-2026",
+    "poderdata-aya-nacional-br-07561-2026",
+    "poderdata-br-07845-2026",
+  ])
   assert.deepEqual(loadPresidentialPolls({ ...catalog, pesquisas: catalog.pesquisas.map(p => ({ ...p, cenarios: p.cenarios.map(s => ({ ...s, comparabilityKey: "2026|Governador|SP|1|different" })) })) }), [])
   const poll = catalog.pesquisas[0]
   const secondTurn = { ...poll.cenarios[0], id: "fixture-second-turn", turn: 2 as const, comparabilityKey: "2026|Presidente|BR|2|fixture" }

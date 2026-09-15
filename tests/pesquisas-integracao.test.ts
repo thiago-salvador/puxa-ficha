@@ -90,7 +90,7 @@ test("PDF PR exige URL, formato e tamanho e concilia metadados no adaptador comp
   assert.throws(() => parsePublicacaoMonitorada({ target, source: obterContratoFonte(target.source_id), html, observedAt: document.observed_at, resultDocument: { ...document, sample_size: 1601 } }), /metadados conflitantes/)
 })
 
-test("CLI grava operações parciais e descoberta ausente, mas sai com falha e promoção falsa", () => {
+test("CLI bloqueia operação sem recibo mesmo com descoberta ausente", () => {
   const root = mkdtempSync(resolve(tmpdir(), "pf-i4-cli-"))
   try {
     const poll = structuredClone(carregarCatalogosAgendados().presidente.pesquisas[0])
@@ -102,11 +102,11 @@ test("CLI grava operações parciais e descoberta ausente, mas sai com falha e p
     const result = spawnSync(process.execPath, ["--conditions", "react-server", "--import", "tsx", "scripts/pesquisas-atualizacao-agendada/cli.ts", "consolidate", "--input", resolve(root, "parts"), "--matrix", resolve(root, "matrix.json"), "--out", resolve(root, "out")], { encoding: "utf8", env: { ...process.env, GITHUB_OUTPUT: resolve(root, "outputs"), GITHUB_STEP_SUMMARY: resolve(root, "summary") } })
     assert.equal(result.status, 1, result.stderr)
     const status = JSON.parse(readFileSync(resolve(root, "out/status.json"), "utf8"))
-    assert.equal(status.operation_status, "candidates")
+    assert.equal(status.operation_status, "no_changes")
     assert.equal(status.coverage.status, "partial")
     assert.equal(status.promotion.authorized, false)
     assert.match(status.coverage.alerts.join(" "), /manifesto de descoberta ausente/)
-    assert.equal(JSON.parse(readFileSync(resolve(root, "out/diff.json"), "utf8")).operations.length, 1)
+    assert.equal(JSON.parse(readFileSync(resolve(root, "out/diff.json"), "utf8")).operations.length, 0)
     assert.match(readFileSync(resolve(root, "outputs"), "utf8"), /promotion_authorized=false/)
   } finally { rmSync(root, { recursive: true, force: true }) }
 })

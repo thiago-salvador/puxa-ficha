@@ -35,7 +35,7 @@
     "comparability_key": "2026|Presidente|BR|1|estimulado|lista-oficial-sem-marcal"
   },
   "consulted_at": "2026-09-10T12:02:09Z",
-  "exact_aliases_version": "2026-09-10.1",
+  "exact_aliases_version": "monitor-2026-d59d795a503c6cc0",
   "exact_aliases": [
     {
       "raw_label": "Lula",
@@ -225,6 +225,249 @@
       "geography": "Brasil",
       "turn": 1,
       "scenario_id": "meio-ideia-br-07935-2026-primeiro-turno"
+    },
+    {
+      "raw_label": "Escritor Augusto Cury",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Pablo Marçal",
+      "candidate_slug": "pablo-marcal",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Hertz Dias",
+      "candidate_slug": "hertz-dias",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Clariana Barão",
+      "candidate_slug": "clariana-barao",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Zema",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Rui Costa Pimenta",
+      "candidate_slug": "rui-costa-pimenta",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Edmilson Costa",
+      "candidate_slug": "edmilson-costa",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Samara",
+      "candidate_slug": "samara-martins",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Veterinário Wilson Grassi",
+      "candidate_slug": "wilson-grassi-junior",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t"
+    },
+    {
+      "raw_label": "Escritor Augusto Cury",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Pablo Marçal",
+      "candidate_slug": "pablo-marcal",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Hertz Dias",
+      "candidate_slug": "hertz-dias",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Clariana Barão",
+      "candidate_slug": "clariana-barao",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Zema",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Rui Costa Pimenta",
+      "candidate_slug": "rui-costa-pimenta",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Edmilson Costa",
+      "candidate_slug": "edmilson-costa",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Samara",
+      "candidate_slug": "samara-martins",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Veterinário Wilson Grassi",
+      "candidate_slug": "wilson-grassi-junior",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t"
+    },
+    {
+      "raw_label": "Escritor Augusto Cury",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Pablo Marçal",
+      "candidate_slug": "pablo-marcal",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Zema",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Hertz Dias",
+      "candidate_slug": "hertz-dias",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Samara",
+      "candidate_slug": "samara-martins",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Edmilson Costa",
+      "candidate_slug": "edmilson-costa",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Clariana Barão",
+      "candidate_slug": "clariana-barao",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Rui Costa Pimenta",
+      "candidate_slug": "rui-costa-pimenta",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
+    },
+    {
+      "raw_label": "Veterinário Wilson Grassi",
+      "candidate_slug": "wilson-grassi-junior",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t"
     }
   ],
   "alias_scope": {
@@ -1232,6 +1475,1522 @@
           ]
         }
       ]
+    },
+    {
+      "source_id": "poderdata-aya-nacional-2026",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "PoderData",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-08-30",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-09-02",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-09-03",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 3000,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 1.8,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "entrevistas por telefone",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-07561/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "identity_aliases": [
+        {
+          "raw_label": "Escritor Augusto Cury",
+          "candidate_slug": "augusto-cury",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Escritor Augusto Cury",
+            "candidate_slug": "augusto-cury",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38"
+          }
+        },
+        {
+          "raw_label": "Pablo Marçal",
+          "candidate_slug": "pablo-marcal",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Pablo Marçal",
+            "candidate_slug": "pablo-marcal",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d"
+          }
+        },
+        {
+          "raw_label": "Hertz Dias",
+          "candidate_slug": "hertz-dias",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Hertz Dias",
+            "candidate_slug": "hertz-dias",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468"
+          }
+        },
+        {
+          "raw_label": "Clariana Barão",
+          "candidate_slug": "clariana-barao",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Clariana Barão",
+            "candidate_slug": "clariana-barao",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68"
+          }
+        },
+        {
+          "raw_label": "Zema",
+          "candidate_slug": "romeu-zema",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Zema",
+            "candidate_slug": "romeu-zema",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e"
+          }
+        },
+        {
+          "raw_label": "Rui Costa Pimenta",
+          "candidate_slug": "rui-costa-pimenta",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Rui Costa Pimenta",
+            "candidate_slug": "rui-costa-pimenta",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9"
+          }
+        },
+        {
+          "raw_label": "Edmilson Costa",
+          "candidate_slug": "edmilson-costa",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Edmilson Costa",
+            "candidate_slug": "edmilson-costa",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff"
+          }
+        },
+        {
+          "raw_label": "Samara",
+          "candidate_slug": "samara-martins",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Samara",
+            "candidate_slug": "samara-martins",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6"
+          }
+        },
+        {
+          "raw_label": "Veterinário Wilson Grassi",
+          "candidate_slug": "wilson-grassi-junior",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "proof": {
+            "raw_label": "Veterinário Wilson Grassi",
+            "candidate_slug": "wilson-grassi-junior",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904"
+          }
+        }
+      ],
+      "provenance": {
+        "result_url": "https://www.poder360.com.br/poderdata/flavio-tem-45-e-lula-registra-44-no-2o-turno-diz-poderdata-aya/",
+        "registry_observation": {
+          "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "observed_at": "2026-09-15T15:12:57.696Z",
+          "evidence_sha256": "249ad9d7b3f1109801706c9ef9efeeb304351ef94ee4c611de4b49390209e159"
+        },
+        "supporting_urls": [
+          "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-2set26.pdf"
+        ],
+        "consulted_at": "2026-09-15T15:13:32.488Z",
+        "capture": {
+          "format": "html+pdf",
+          "sha256": "62d6b753433316689f66814aebbeb492cdf6afeab12664bd185a0520f7ffb24c",
+          "supporting_pdf_sha256": "0bcf8591a5ff3e840fa3bbcb4f0cb63a4f37c78087f7c428103783af3448e965",
+          "status": "publicado"
+        },
+        "source_kind": "instituto_e_veiculo_com_resultado_primario",
+        "route_class": "direta_automatizavel",
+        "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+      },
+      "cenarios": [
+        {
+          "id": "poderdata-aya-nacional-br-07561-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 1º turno",
+          "question": {
+            "value": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|bc0f1e9655d354dfba98eb68b170a56762117e4b57aa1bd700aed22f6fe76262|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula",
+              "value_percent": 37,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 34,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Escritor Augusto Cury",
+              "value_percent": 10,
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos",
+              "value_percent": 3,
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado",
+              "value_percent": 2,
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Pablo Marçal",
+              "value_percent": 2,
+              "candidate_slug": "pablo-marcal",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Hertz Dias",
+              "value_percent": 2,
+              "candidate_slug": "hertz-dias",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Clariana Barão",
+              "value_percent": 1,
+              "candidate_slug": "clariana-barao",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Zema",
+              "value_percent": 1,
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Rui Costa Pimenta",
+              "value_percent": 1,
+              "candidate_slug": "rui-costa-pimenta",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Edmilson Costa",
+              "value_percent": 1,
+              "candidate_slug": "edmilson-costa",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Samara",
+              "value_percent": 1,
+              "candidate_slug": "samara-martins",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Veterinário Wilson Grassi",
+              "value_percent": 0,
+              "candidate_slug": "wilson-grassi-junior",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 5,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-07561-2026-2t-2d930f33f9410614",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|afc306ef4bd1605514b44af40d4278f7b60a428b3487377fde3fc58ef1ddccdc|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 45,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 8,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 3,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-07561-2026-2t-0d8b50d99b12afe8",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Renan Santos e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|f1137259ac3d4f1d167eb01cf18a999e2ea3cf1059c6058fd5fcf7ec7d406c8c|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Renan Santos",
+              "value_percent": 39,
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 15,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 3,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-07561-2026-2t-c8eccee293e08411",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Zema e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|d25c8839953a12b91cce7c1da6fc3300bb8e2f8ebdb437602c95783d3b6504cc|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Romeu Zema",
+              "value_percent": 42,
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 12,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-07561-2026-2t-ba99c4ca271457e5",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Ronaldo Caiado e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|fc42f94548679e2075b2e2155c199fad94082b78c17df61c0b689ff927845066|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Ronaldo Caiado",
+              "value_percent": 42,
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 11,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        }
+      ],
+      "id": "poderdata-aya-nacional-br-07561-2026",
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      }
+    },
+    {
+      "source_id": "poderdata-aya-nacional-2026",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "PoderData",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-09-06",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-09-09",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-09-10",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 3000,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 1.8,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "entrevistas por telefone",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-04914/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "identity_aliases": [
+        {
+          "raw_label": "Escritor Augusto Cury",
+          "candidate_slug": "augusto-cury",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Escritor Augusto Cury",
+            "candidate_slug": "augusto-cury",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38"
+          }
+        },
+        {
+          "raw_label": "Pablo Marçal",
+          "candidate_slug": "pablo-marcal",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Pablo Marçal",
+            "candidate_slug": "pablo-marcal",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d"
+          }
+        },
+        {
+          "raw_label": "Hertz Dias",
+          "candidate_slug": "hertz-dias",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Hertz Dias",
+            "candidate_slug": "hertz-dias",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468"
+          }
+        },
+        {
+          "raw_label": "Clariana Barão",
+          "candidate_slug": "clariana-barao",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Clariana Barão",
+            "candidate_slug": "clariana-barao",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68"
+          }
+        },
+        {
+          "raw_label": "Zema",
+          "candidate_slug": "romeu-zema",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Zema",
+            "candidate_slug": "romeu-zema",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e"
+          }
+        },
+        {
+          "raw_label": "Rui Costa Pimenta",
+          "candidate_slug": "rui-costa-pimenta",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Rui Costa Pimenta",
+            "candidate_slug": "rui-costa-pimenta",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9"
+          }
+        },
+        {
+          "raw_label": "Edmilson Costa",
+          "candidate_slug": "edmilson-costa",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Edmilson Costa",
+            "candidate_slug": "edmilson-costa",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff"
+          }
+        },
+        {
+          "raw_label": "Samara",
+          "candidate_slug": "samara-martins",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Samara",
+            "candidate_slug": "samara-martins",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6"
+          }
+        },
+        {
+          "raw_label": "Veterinário Wilson Grassi",
+          "candidate_slug": "wilson-grassi-junior",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "proof": {
+            "raw_label": "Veterinário Wilson Grassi",
+            "candidate_slug": "wilson-grassi-junior",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904"
+          }
+        }
+      ],
+      "provenance": {
+        "result_url": "https://www.poder360.com.br/poderdata/flavio-tem-47-e-lula-45-no-2o-turno-diz-poderdata-aya/",
+        "registry_observation": {
+          "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "observed_at": "2026-09-15T15:13:06.921Z",
+          "evidence_sha256": "47025bb19a739b21b1fb3171fb960e18be3fa4378cd266684fad9846a3d7772f"
+        },
+        "supporting_urls": [
+          "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "https://static.poder360.com.br/uploads/2026/09/Relatorio-PoderData-Eleitoral-9set26-1.pdf"
+        ],
+        "consulted_at": "2026-09-15T15:13:33.973Z",
+        "capture": {
+          "format": "html+pdf",
+          "sha256": "86c7a42ea0da86e9f91298ab28596cc899296d2c04926a71128f392b52e8f350",
+          "supporting_pdf_sha256": "d75c2f8cc01fb158cd043c633a70002627c47169a0d8b3fa15c77f43afa88470",
+          "status": "publicado"
+        },
+        "source_kind": "instituto_e_veiculo_com_resultado_primario",
+        "route_class": "direta_automatizavel",
+        "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+      },
+      "cenarios": [
+        {
+          "id": "poderdata-aya-nacional-br-04914-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 1º turno",
+          "question": {
+            "value": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|bc0f1e9655d354dfba98eb68b170a56762117e4b57aa1bd700aed22f6fe76262|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula",
+              "value_percent": 38,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 36,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Escritor Augusto Cury",
+              "value_percent": 10,
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos",
+              "value_percent": 3,
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado",
+              "value_percent": 2,
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Pablo Marçal",
+              "value_percent": 2,
+              "candidate_slug": "pablo-marcal",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Hertz Dias",
+              "value_percent": 1,
+              "candidate_slug": "hertz-dias",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Clariana Barão",
+              "value_percent": 0,
+              "candidate_slug": "clariana-barao",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Zema",
+              "value_percent": 1,
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Rui Costa Pimenta",
+              "value_percent": 1,
+              "candidate_slug": "rui-costa-pimenta",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Edmilson Costa",
+              "value_percent": 1,
+              "candidate_slug": "edmilson-costa",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Samara",
+              "value_percent": 0,
+              "candidate_slug": "samara-martins",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Veterinário Wilson Grassi",
+              "value_percent": 0,
+              "candidate_slug": "wilson-grassi-junior",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 3,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 1,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04914-2026-2t-2d930f33f9410614",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|afc306ef4bd1605514b44af40d4278f7b60a428b3487377fde3fc58ef1ddccdc|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 47,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 45,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 6,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04914-2026-2t-2262ce75a2ba1c97",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Lula e Augusto Cury, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|8d9cd6c796d63d00d9b74e2ce2730c48ceb765d2d770750bad6ca163a8c1cda0|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Augusto Cury",
+              "value_percent": 44,
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 43,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 11,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04914-2026-2t-e9e8ecb4de63a835",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Flávio Bolsonaro e Augusto Cury, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|ed723d8a5479a5a9ab2245412d20ca4a6f5934b71c04a2ade6775d66f1db14ee|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 43,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Augusto Cury",
+              "value_percent": 36,
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 20,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        }
+      ],
+      "id": "poderdata-aya-nacional-br-04914-2026",
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      }
+    },
+    {
+      "source_id": "poderdata-aya-nacional-2026",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "PoderData",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-08-23",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-08-26",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-08-27",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2400,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "entrevistas por telefone",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-04974/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "identity_aliases": [
+        {
+          "raw_label": "Escritor Augusto Cury",
+          "candidate_slug": "augusto-cury",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Escritor Augusto Cury",
+            "candidate_slug": "augusto-cury",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38"
+          }
+        },
+        {
+          "raw_label": "Pablo Marçal",
+          "candidate_slug": "pablo-marcal",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Pablo Marçal",
+            "candidate_slug": "pablo-marcal",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d"
+          }
+        },
+        {
+          "raw_label": "Zema",
+          "candidate_slug": "romeu-zema",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Zema",
+            "candidate_slug": "romeu-zema",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e"
+          }
+        },
+        {
+          "raw_label": "Hertz Dias",
+          "candidate_slug": "hertz-dias",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Hertz Dias",
+            "candidate_slug": "hertz-dias",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468"
+          }
+        },
+        {
+          "raw_label": "Samara",
+          "candidate_slug": "samara-martins",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Samara",
+            "candidate_slug": "samara-martins",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6"
+          }
+        },
+        {
+          "raw_label": "Edmilson Costa",
+          "candidate_slug": "edmilson-costa",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Edmilson Costa",
+            "candidate_slug": "edmilson-costa",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff"
+          }
+        },
+        {
+          "raw_label": "Clariana Barão",
+          "candidate_slug": "clariana-barao",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Clariana Barão",
+            "candidate_slug": "clariana-barao",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68"
+          }
+        },
+        {
+          "raw_label": "Rui Costa Pimenta",
+          "candidate_slug": "rui-costa-pimenta",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Rui Costa Pimenta",
+            "candidate_slug": "rui-costa-pimenta",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9"
+          }
+        },
+        {
+          "raw_label": "Veterinário Wilson Grassi",
+          "candidate_slug": "wilson-grassi-junior",
+          "year": 2026,
+          "office": "Presidente",
+          "geography": "Brasil",
+          "turn": 1,
+          "scenario_id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "proof": {
+            "raw_label": "Veterinário Wilson Grassi",
+            "candidate_slug": "wilson-grassi-junior",
+            "basis": "curated_ballot_name_office_uf",
+            "source_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+            "source_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904"
+          }
+        }
+      ],
+      "provenance": {
+        "result_url": "https://www.poder360.com.br/poderdata/lula-tem-45-contra-44-de-flavio-no-2o-turno-diz-poderdata-aya/",
+        "registry_observation": {
+          "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "observed_at": "2026-09-15T15:13:11.775Z",
+          "evidence_sha256": "82df24e6c1b49d20076579797543553ab1259d423e1e0a5ffef2d4da653c9cb1"
+        },
+        "supporting_urls": [
+          "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "https://static.poder360.com.br/uploads/2026/08/Relatorio-PoderData-Eleitoral-26ago26-1.pdf"
+        ],
+        "consulted_at": "2026-09-15T15:13:35.341Z",
+        "capture": {
+          "format": "html+pdf",
+          "sha256": "1143132dfa181e4822cf89de5219039e7eee1333c2b580a3c2204ebaa4254ab2",
+          "supporting_pdf_sha256": "7982a3c72335f82619004623139f04f871828aaf93ac8ecaa84d174c1fb2205c",
+          "status": "publicado"
+        },
+        "source_kind": "instituto_e_veiculo_com_resultado_primario",
+        "route_class": "direta_automatizavel",
+        "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+      },
+      "cenarios": [
+        {
+          "id": "poderdata-aya-nacional-br-04974-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 1º turno",
+          "question": {
+            "value": "Em outubro teremos eleição para presidente do Brasil. Se a eleição fosse hoje, em qual dos candidatos que vou falar em ordem alfabética você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|bc0f1e9655d354dfba98eb68b170a56762117e4b57aa1bd700aed22f6fe76262|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula",
+              "value_percent": 38,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 35,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos",
+              "value_percent": 4,
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado",
+              "value_percent": 4,
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Escritor Augusto Cury",
+              "value_percent": 4,
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Pablo Marçal",
+              "value_percent": 3,
+              "candidate_slug": "pablo-marcal",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Zema",
+              "value_percent": 2,
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Hertz Dias",
+              "value_percent": 2,
+              "candidate_slug": "hertz-dias",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Samara",
+              "value_percent": 1,
+              "candidate_slug": "samara-martins",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Edmilson Costa",
+              "value_percent": 1,
+              "candidate_slug": "edmilson-costa",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Clariana Barão",
+              "value_percent": 0,
+              "candidate_slug": "clariana-barao",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Rui Costa Pimenta",
+              "value_percent": 0,
+              "candidate_slug": "rui-costa-pimenta",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Veterinário Wilson Grassi",
+              "value_percent": 0,
+              "candidate_slug": "wilson-grassi-junior",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 5,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04974-2026-2t-2d930f33f9410614",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Flávio Bolsonaro e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|afc306ef4bd1605514b44af40d4278f7b60a428b3487377fde3fc58ef1ddccdc|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "value_percent": 44,
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 45,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 9,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04974-2026-2t-0d8b50d99b12afe8",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Renan Santos e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|f1137259ac3d4f1d167eb01cf18a999e2ea3cf1059c6058fd5fcf7ec7d406c8c|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Renan Santos",
+              "value_percent": 37,
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 16,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 3,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04974-2026-2t-c8eccee293e08411",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Zema e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|d25c8839953a12b91cce7c1da6fc3300bb8e2f8ebdb437602c95783d3b6504cc|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Romeu Zema",
+              "value_percent": 43,
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 44,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 10,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "poderdata-aya-nacional-br-04974-2026-2t-ba99c4ca271457e5",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto no 2º turno",
+          "question": {
+            "value": "E se houver um 2º turno entre Ronaldo Caiado e Lula, em quem você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|fc42f94548679e2075b2e2155c199fad94082b78c17df61c0b689ff927845066|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Ronaldo Caiado",
+              "value_percent": 44,
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "value_percent": 43,
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo",
+              "value_percent": 10,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe",
+              "value_percent": 2,
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "status": "publicado"
+            }
+          ]
+        }
+      ],
+      "id": "poderdata-aya-nacional-br-04974-2026",
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      }
     }
   ]
 }
