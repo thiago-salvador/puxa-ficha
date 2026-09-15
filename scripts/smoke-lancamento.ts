@@ -25,6 +25,9 @@ const BASE_URL = releaseBaseUrl(process.env.PF_BASE_URL ?? "https://puxaficha.co
 const NAVIGATION_TIMEOUT_MS = 60_000
 const ACTION_TIMEOUT_MS = 20_000
 const SOCIAL_CARD_MIN_BYTES = 80 * 1024
+// O registro TSE 280002554479 tornou Leonardo Avalanche o titular da chapa
+// presidencial do PRTB no snapshot de 15/09/2026. Pablo continua bloqueado.
+const EXPECTED_PRESIDENTIAL_COUNT = 13
 
 export const BRAZIL_UFS = [
   "AC",
@@ -221,9 +224,9 @@ async function checkHome(context: BrowserContext): Promise<string[]> {
     const heading = page.getByRole("heading", { name: "Presidenciáveis", exact: true })
     await heading.waitFor({ state: "visible" })
     const gridSection = heading.locator("xpath=ancestor::section[1]/following-sibling::section[1]")
-    const paths = await waitForCandidatePaths(gridSection, 12)
+    const paths = await waitForCandidatePaths(gridSection, EXPECTED_PRESIDENTIAL_COUNT)
     const failures: string[] = []
-    if (paths.length !== 12) failures.push(`grade presidencial tem ${paths.length} fichas, esperado 12 conforme TSE em 12/09/2026`)
+    if (paths.length !== EXPECTED_PRESIDENTIAL_COUNT) failures.push(`grade presidencial tem ${paths.length} fichas, esperado ${EXPECTED_PRESIDENTIAL_COUNT} conforme registro TSE atualizado em 15/09/2026`)
     if (paths.includes("/candidato/pablo-marcal")) failures.push("pablo-marcal inapto ainda aparece na grade presidencial")
 
     // Vocabulário 16/08 vale para TEXTO VISÍVEL. O HTML cru carrega o payload
@@ -465,7 +468,7 @@ async function main(): Promise<number> {
       }
     }
 
-    if (presidentialPaths?.length === 12) {
+    if (presidentialPaths?.length === EXPECTED_PRESIDENTIAL_COUNT) {
       for (const path of presidentialPaths) {
         await collect(
           `perfil${path}`,
