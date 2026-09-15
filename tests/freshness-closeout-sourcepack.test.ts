@@ -26,10 +26,10 @@ function detail(id: string) {
   }
 }
 
-function officialCsvZip(transform: (csv: string) => string = (csv) => csv) {
+function officialCsvZip(transform: (csv: string) => string = (csv) => csv, selectedSqs = ["140002554434", "140002551357", "140002554426", "130002544411", "270002546368", "140002551358"]) {
   const dir = mkdtempSync(join(tmpdir(), "pf-sourcepack-csv-fixture-"))
   try {
-    const sqs = ["140002554434", "140002551357", "140002554426", "130002544411", "270002546368", "140002551358", "999"]
+    const sqs = [...selectedSqs, "999"]
     const csv = "SQ_CANDIDATO;NR_TURNO;DS_GENERO;DS_ESTADO_CIVIL;DS_COR_RACA;SQ_COLIGACAO;CD_ELEICAO;TP_AGREMIACAO;NR_CPF_CANDIDATO;NM_EMAIL\n"
       + sqs.map((sq) => `${sq};1;FEMININO;SOLTEIRO(A);PARDA;140002300010;20322002026;PARTIDO ISOLADO;12345678900;private@example.invalid`).join("\n")
     writeFileSync(join(dir, "consulta_cand_2026_BRASIL.csv"), transform(csv))
@@ -178,4 +178,66 @@ test("fetch limitado recusa endpoint externo, redirects, Content-Length excessiv
   await assert.rejects(fetchBounded(url, 20, 1000, async () => new Response(null, { status: 302, headers: { location: "https://example.invalid" } })), /redirect/)
   await assert.rejects(fetchBounded(url, 20, 1000, async () => new Response("abc", { headers: { "content-length": "21" } })), /limite/)
   await assert.rejects(fetchBounded(url, 20, 1000, async () => new Response("a".repeat(21))), /limite/)
+})
+
+test("escopo parametrizado valida SQ, UF, slug, limites e duplicações", async () => {
+  const { parseCandidateSpec } = await collector()
+  assert.deepEqual(parseCandidateSpec("280002554479:BR:leonardo-avalanche,280002554490:BR:silvia,200002554482:RN:godeiro-linharess"), [
+    { sq: "280002554479", uf: "BR", label: "leonardo-avalanche" },
+    { sq: "280002554490", uf: "BR", label: "silvia" },
+    { sq: "200002554482", uf: "RN", label: "godeiro-linharess" },
+  ])
+  for (const invalid of [
+    "280002554479:BR:leonardo avalanche",
+    "280002554479:XX:leonardo-avalanche",
+    "280002554479:BR:leonardo-avalanche,280002554479:BR:outro",
+    "280002554479:BR:leonardo-avalanche,200002554482:RN:leonardo-avalanche",
+    "280002554479:BR",
+    " ",
+  ]) assert.throws(() => parseCandidateSpec(invalid), /escopo|SQ|UF|slug|duplicado|inválido/)
+  assert.deepEqual(parseCandidateSpec(undefined).map((candidate) => candidate.sq), ["140002554434", "140002551357", "140002554426", "130002544411", "270002546368", "140002551358"])
+})
+
+test("escopo customizado coleta apenas detalhes allowlisted e deixa pacote incompleto explícito", async () => {
+  const { collectFreshnessCloseoutSourcepack, parseCandidateSpec } = await collector()
+  const scope = parseCandidateSpec("280002554479:BR:leonardo-avalanche,280002554490:BR:silvia,200002554482:RN:godeiro-linharess")
+  const out = mkdtempSync(join(tmpdir(), "pf-custom-sourcepack-"))
+  const candidateZip = officialCsvZip((csv) => csv, scope.map((candidate) => candidate.sq))
+  const calls: string[] = []
+  const report = await collectFreshnessCloseoutSourcepack(out, {
+    candidates: scope,
+    includeProgramArtifacts: false,
+    fetchImpl: async (input) => {
+      const url = String(input); calls.push(url)
+      if (url.endsWith("consulta_cand_2026.zip")) return new Response(candidateZip)
+      return new Response(JSON.stringify(detail(url.split("/").at(-1)!)))
+    },
+  })
+  assert.equal(report.candidates.length, 3)
+  assert.deepEqual(report.candidate_scope, scope)
+  assert.equal(report.official_csv?.complete, true)
+  assert.equal(report.official_csv?.records.length, 3)
+  assert.equal(calls.length, 4)
+  assert.ok(calls.every((url) => !url.includes("proposta_governo") && !url.endsWith(".pdf")))
+  assert.doesNotMatch(readFileSync(join(out, "sourcepack.json"), "utf8"), /12345678900|privado@example|11999999999|Rua privada|LEAK/i)
+})
+
+test("falha HTTP ou identidade não promove candidato e ainda grava artifact diagnóstico", async () => {
+  const { collectFreshnessCloseoutSourcepack, parseCandidateSpec } = await collector()
+  const scope = parseCandidateSpec("280002554479:BR:leonardo-avalanche,200002554482:RN:godeiro-linharess")
+  const out = mkdtempSync(join(tmpdir(), "pf-failclosed-sourcepack-"))
+  const report = await collectFreshnessCloseoutSourcepack(out, {
+    candidates: scope,
+    includeProgramArtifacts: false,
+    fetchImpl: async (input) => {
+      const url = String(input)
+      if (url.endsWith("consulta_cand_2026.zip")) return new Response(officialCsvZip((csv) => csv, scope.map((candidate) => candidate.sq)))
+      if (url.endsWith("280002554479")) return new Response("upstream unavailable", { status: 503 })
+      return new Response(JSON.stringify(detail("999")))
+    },
+  })
+  assert.equal(report.candidates.length, 0)
+  assert.deepEqual(report.errors.map((error) => [error.diagnostic.code, error.diagnostic.status]), [["HTTP_ERROR", 503], ["IDENTITY_MISMATCH", null]])
+  assert.ok(existsSync(join(out, "sourcepack.json")))
+  assert.doesNotMatch(readFileSync(join(out, "sourcepack.json"), "utf8"), /upstream unavailable|private@example|12345678900/)
 })

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "37 11 * * *"
   workflow_dispatch:
+    inputs:
+      sourcepack_candidates:
+        description: "Escopo opcional SQ:UF:slug separado por vírgulas para o sourcepack TSE"
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -81,6 +86,38 @@ jobs:
           set -euo pipefail
           echo "::error::A auditoria exige revisão. Consulte summary.md e diff.json no artefato." >&2
           exit 1
+
+  coletar-sourcepack:
+    name: Coletar sourcepack TSE sob demanda
+    if: inputs.sourcepack_candidates != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - name: Executar sourcepack parametrizado
+        env:
+          SOURCEPACK_CANDIDATES: ${{ inputs.sourcepack_candidates }}
+          SOURCEPACK_OUTPUT_DIR: reports/data-freshness/sourcepack
+        run: |
+          set -euo pipefail
+          node --import tsx scripts/audit/collect-freshness-closeout-sourcepack.ts
+      - name: Preservar sourcepack e diagnóstico
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v6.0.0
+        with:
+          name: data-freshness-sourcepack-${{ github.run_id }}
+          path: reports/data-freshness/sourcepack/
+          if-no-files-found: error
+          retention-days: 30
 
   notificar:
     name: Criar ou encerrar alerta acionável
