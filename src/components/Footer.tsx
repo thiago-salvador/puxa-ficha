@@ -1,3 +1,4 @@
+// cspell:words xdosalvador
 import Link from "next/link"
 import { STATE_INDICATOR_FONTES_DOC } from "@/lib/state-indicator-fonte"
 import { SlashDivider } from "./SlashDivider"
