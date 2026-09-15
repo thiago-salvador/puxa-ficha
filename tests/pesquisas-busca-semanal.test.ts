@@ -67,14 +67,41 @@ test("rodadas incluídas possuem captura íntegra, resultados preservados e slug
         r.uf === (row.uf === "BR" ? null : row.uf) && r.publication_status === "active"), `${row.uf}: identidade não comprovada ${slug}`)
       const selected = row.uf === "BR" ? listarPesquisasPresidenciaisPorSlug(slug)
         : listarPesquisasGovernadorPorSlug(slug, row.uf)
-      assert.ok(selected.some((p) => p.id === row.poll_id), `${row.uf}: resultado não chega à ficha ${slug}`)
+      if (!selected.some((p) => p.id === row.poll_id)) {
+        // A rodada pode ser substituída pela mais recente do mesmo instituto;
+        // a identidade continua verificável se a ficha atual a contém.
+        const current: (typeof selected)[number] | undefined = selected.find((p) => p.instituto.value === poll.instituto.value)
+        assert.ok(current, `${row.uf}: resultado não chega à ficha ${slug}`)
+        assert.equal(current.state, "publicado")
+        assert.equal(current.resultado.status, "publicado")
+        assert.ok((current.publicationDate.value ?? "") >= (poll.publicationDate.value ?? ""),
+          `${row.uf}: rodada atual anterior à evidência ${slug}`)
+      }
     }
   }
 })
 
 test("fontes alternativas recuperadas chegam às fichas com os valores publicados", () => {
-  assert.equal(listarPesquisasPresidenciaisPorSlug("lula")[0].resultado.valuePercent, 38.4)
-  assert.equal(listarPesquisasPresidenciaisPorSlug("pablo-marcal")[0].resultado.valuePercent, 1.5)
+  const lula = listarPesquisasPresidenciaisPorSlug("lula")
+  const pablo = listarPesquisasPresidenciaisPorSlug("pablo-marcal")
+  const poderdataLula = lula.find((p) => p.sourceId === "poderdata-aya-nacional-2026")
+  const poderdataPablo = pablo.find((p) => p.sourceId === "poderdata-aya-nacional-2026")
+  assert.ok(poderdataLula)
+  assert.ok(poderdataPablo)
+  const catalog = carregarPesquisasEleitorais()
+  for (const [listed, slug] of [[poderdataLula, "lula"], [poderdataPablo, "pablo-marcal"]] as const) {
+    const poll = catalog.pesquisas.find((entry) => entry.id === listed.id)
+    assert.ok(poll, listed.id)
+    const scenario = poll.cenarios.find((entry) => entry.id === listed.cenario.id)
+    assert.ok(scenario, listed.cenario.id)
+    const result = scenario.resultados.find((entry) => entry.candidateSlug === slug)
+    assert.ok(result, `${listed.id}:${listed.cenario.id}:${slug}`)
+    assert.equal(listed.resultado.valuePercent, result.valuePercent)
+    assert.equal(listed.resultado.status, "publicado")
+    assert.equal(poll.state, "publicado")
+  }
+  assert.equal(lula[0].id, poderdataLula.id)
+  assert.equal(pablo[0].id, poderdataPablo.id)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 31)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)

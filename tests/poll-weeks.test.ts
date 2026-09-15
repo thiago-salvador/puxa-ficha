@@ -7,20 +7,27 @@ function survey(date: string, institute: string, values = [30, 40, 10]) {
   const poll = fixturePoll(date, values)
   poll.id = `${institute}-${date}`
   poll.instituto.value = institute
+  poll.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|teste-abc|total_amostra"
   return poll
 }
 
 test("default series prefers stimulated voting, preserves spontaneous scenarios and orders by actual fieldwork date", () => {
   const stimulated = survey("2026-09-08", "A")
-  stimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulada|lista|total"
   const spontaneous = survey("2026-09-10", "B")
-  spontaneous.scenario.comparabilityKey = "2026|Governador|SP|1|espontanea|lista|total"
-  spontaneous.scenario.resultados = spontaneous.scenario.resultados.slice(0, 2)
   const latestStimulated = survey("2026-09-09", "C")
-  latestStimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulado|outra-lista|total"
+  for (const poll of [stimulated, spontaneous, latestStimulated]) {
+    poll.office = "Governador"
+    poll.geography = { ...poll.geography, type: "estadual", label: "São Paulo", code: "SP" }
+    poll.scenario.geography = "São Paulo"
+  }
+  stimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulada|lista|total_amostra"
+  spontaneous.scenario.comparabilityKey = "2026|Governador|SP|1|espontanea|lista|total_amostra"
+  spontaneous.scenario.resultados = spontaneous.scenario.resultados.slice(0, 2)
+  latestStimulated.scenario.comparabilityKey = "2026|Governador|SP|1|estimulado|outra-lista|total_amostra"
   const groups = groupWeeklyPollSeries([spontaneous, stimulated, latestStimulated])
-  assert.equal(groups[0].polls[0].id, latestStimulated.id)
-  assert.equal(groups.length, 3)
+  assert.equal(groups.length, 2)
+  assert.equal(groups[0].weeks[0].polls.length, 2)
+  assert.deepEqual(groups[0].weeks[0].polls.map(poll => poll.id), [stimulated.id, latestStimulated.id])
   assert.equal(groupWeeklyPollSeries([spontaneous])[0].polls[0].id, spontaneous.id)
 })
 
@@ -38,6 +45,20 @@ test("weekly means combine institutes and interview modes with equal survey weig
   assert.deepEqual(week.results.map(item => item.value).sort((a, b) => a! - b!), [5, 35, 35])
   assert.equal(weekTitle(week), "Média de 2 pesquisas")
   assert.equal(week.polls[0].provenance.resultUrl, a.provenance.resultUrl)
+})
+
+test("different poll, source and list keys with the same dimensions form one weekly mean", () => {
+  const a = survey("2026-09-08", "A", [20, 40, 10])
+  const b = survey("2026-09-10", "B", [40, 20, 30])
+  a.provenance.resultUrl = "https://example.org/source-a"
+  b.provenance.resultUrl = "https://example.org/source-b"
+  a.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulado|lista-a|total_amostra"
+  b.scenario.comparabilityKey = "2026|Presidente|BR|1|estimulada|lista-b|total_amostra"
+  const groups = groupWeeklyPollSeries([a, b])
+  assert.equal(groups.length, 1)
+  assert.equal(groups[0].weeks.length, 1)
+  assert.equal(groups[0].weeks[0].polls.length, 2)
+  assert.deepEqual(groups[0].weeks[0].results.map(item => item.value).sort((x, y) => x! - y!), [20, 30, 30])
 })
 
 test("calendar weeks have non-overlapping Monday/Sunday and year/month boundaries", () => {
@@ -85,6 +106,13 @@ test("different scenarios, candidate lists, electorates and unknown metadata rem
   variants[3].sample.population.status = "indeterminado"
   variants[4].scenario.turn = 2
   for (const variant of variants) assert.equal(groupWeeklyPollSeries([a, variant]).length, 2)
+})
+
+test("unknown or malformed mode isolates the poll by its own key", () => {
+  const a = survey("2026-09-08", "A")
+  const malformed = survey("2026-09-10", "B")
+  malformed.scenario.comparabilityKey = "2026|Presidente|BR|1|indefinido|lista|total_amostra"
+  assert.equal(groupWeeklyPollSeries([a, malformed]).length, 2)
 })
 
 test("unapproved/old surveys are excluded and undated surveys do not join dated weeks", () => {

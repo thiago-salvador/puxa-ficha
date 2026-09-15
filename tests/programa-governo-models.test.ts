@@ -515,7 +515,9 @@ test("runner de modelo nasce em cwd temporário vazio, sem segredos do host, e o
     assert.equal(filtrado[chavePf], "chega-ao-runner")
     assert.equal(filtrado.PATH, process.env.PATH)
 
-    const script = "process.stdout.write(JSON.stringify({ cwd: process.cwd(), env: Object.keys(process.env), files: require('fs').readdirSync('.') }))"
+    // Drain the runner's input before exiting, as the model CLI does. Without
+    // this handshake a fast child can close stdin before the parent writes.
+    const script = "process.stdin.resume(); process.stdin.on('end', () => process.stdout.write(JSON.stringify({ cwd: process.cwd(), env: Object.keys(process.env), files: require('fs').readdirSync('.') })))"
     const result = await runProgramaGovernoModelProcess(process.execPath, ["-e", script], "", 20_000)
     const info = JSON.parse(result.stdout) as { cwd: string; env: string[]; files: string[] }
     // O diretório já foi removido quando o processo encerra; compara pelo

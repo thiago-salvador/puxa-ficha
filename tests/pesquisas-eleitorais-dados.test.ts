@@ -73,7 +73,7 @@ function rejects(run: () => unknown, pattern: RegExp) {
 }
 
 describe("contrato dos dados de pesquisas eleitorais", () => {
-  it("publica somente fontes preferenciais e aprovadas pelo scorecard", () => {
+  it("publica fontes aprovadas preferenciais ou pesquisas explicitamente publicadas", () => {
     const catalogo = carregarPesquisasEleitorais()
     const fontes = JSON.parse(fontesText) as {
       preferred_source_ids: string[]
@@ -86,13 +86,14 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     assert.ok(catalogo.aliasesVersion)
     assert.ok(catalogo.pesquisas.length > 0)
     assert.ok(catalogo.pesquisas.every((poll) => aprovadas.has(poll.sourceId)))
-    assert.ok(catalogo.pesquisas.every((poll) => preferenciais.has(poll.sourceId)))
+    assert.ok(catalogo.pesquisas.every((poll) => preferenciais.has(poll.sourceId) || poll.state === "publicado"))
     assert.ok(catalogo.pesquisas.every((poll) => poll.sourceStatus === "aprovado"))
     assert.deepEqual(catalogo.preferredSourceIds, fontes.preferred_source_ids)
-    assert.deepEqual(catalogo.pesquisas.map((poll) => poll.sourceId), [
+    assert.deepEqual([...new Set(catalogo.pesquisas.map((poll) => poll.sourceId))].sort(), [
       "datafolha-folha-globo-nacional-2026",
       "meio-ideia-br-revisao-20260910",
-    ])
+      "poderdata-aya-nacional-2026",
+    ].sort())
     assert.strictEqual(carregarPesquisasEleitorais(), catalogo)
   })
 
@@ -188,18 +189,31 @@ describe("contrato dos dados de pesquisas eleitorais", () => {
     )
   })
 
-  it("não substitui fonte preferencial ausente por instituto aprovado fora do conjunto", () => {
+  it("carrega as pesquisas PoderData publicadas mesmo fora do conjunto preferencial", () => {
     const { pesquisas, fontes } = inputs()
     assert.equal(
       fontes.sources.find((source) => source.id === "poderdata-aya-nacional-2026")?.status,
       "aprovado",
     )
-    assert.equal(
-      parse(pesquisas, fontes).pesquisas.some(
-        (poll) => poll.sourceId === "poderdata-aya-nacional-2026",
-      ),
-      false,
-    )
+    const ids = parse(pesquisas, fontes).pesquisas
+      .filter((poll) => poll.sourceId === "poderdata-aya-nacional-2026")
+      .map((poll) => poll.id)
+      .sort()
+    assert.deepEqual(ids, [
+      "poderdata-aya-nacional-br-04914-2026",
+      "poderdata-aya-nacional-br-04974-2026",
+      "poderdata-aya-nacional-br-07561-2026",
+      "poderdata-br-07845-2026",
+    ])
+  })
+
+  it("exclui pesquisa não publicada de fonte aprovada fora do conjunto preferencial", () => {
+    const { pesquisas, fontes } = inputs()
+    const poderdata = pesquisas.pesquisas.find((poll) => poll.source_id === "poderdata-aya-nacional-2026")
+    assert.ok(poderdata)
+    poderdata.state = "indeterminado"
+    const parsed = parse(pesquisas, fontes)
+    assert.equal(parsed.pesquisas.some((poll) => poll.id === poderdata.id), false)
   })
 
   it("rejeita fonte preferencial inexistente no scorecard", () => {

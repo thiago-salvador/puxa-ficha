@@ -173,17 +173,15 @@ function structurePass(check: StructureCase["check"]): boolean {
     }
     case "polling-smoke-contract":
       return (
-        smokeSpecText.includes('"/candidato/tarcisio-gov-sp"') &&
-        smokeSpecText.includes('"alan-rick"') &&
-        smokeSpecText.includes('toContainText("Quaest")') &&
-        smokeSpecText.includes('toContainText("42%")') &&
-        smokeSpecText.includes('data-pf-pesquisa-source="datafolha-folha-globo-estaduais-2026"') &&
-        smokeSpecText.includes('toContainText("45%")') &&
-        smokeSpecText.includes('toContainText("33%")') &&
-        smokeSpecText.includes('toHaveCount(2)') &&
-        smokeSpecText.includes('toHaveCount(1)') &&
-        smokeSpecText.includes('not.toContainText("48%")') &&
-        smokeSpecText.includes('getByText("31%", { exact: true })') &&
+        smokeSpecText.includes('openPublicPolls(page, "/")') &&
+        smokeSpecText.includes('openPublicPolls(page, "/uf/am")') &&
+        smokeSpecText.includes('data-pf-poll-trend') &&
+        smokeSpecText.includes('data-pf-week-source') &&
+        smokeSpecText.includes('data-pf-mobile-research') &&
+        smokeSpecText.includes('1 pesquisa na semana') &&
+        smokeSpecText.includes('Média de [2-9]') &&
+        smokeSpecText.includes('toContainText("Omar")') &&
+        smokeSpecText.includes('not.toContainText("Lula")') &&
         smokeConfigText.includes('viewport: { width: 1440, height: 1000 }') &&
         smokeConfigText.includes('viewport: { width: 390, height: 844 }') &&
         smokeConfigText.includes('"https://puxaficha.com.br"') &&

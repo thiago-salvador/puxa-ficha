@@ -19,7 +19,7 @@ export interface OpcoesLeituraRealTime {
   groupingNotesRequired?: number[]
 }
 
-const CATEGORY = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\/NR\))?)$/i
+const CATEGORY = /^(Outros|Nulos?\/Brancos?|Brancos?\/Nulos?|Não sabe|Não sabe\/Não respondeu(?: \(NS\s*\/\s*NR\))?|NS\s*\/\s*NR)$/i
 
 /** Read complete published lists; a headline or valid-vote calculation is never a table. */
 export function extrairPublicacaoRealTime(html: string, plain: (html: string) => string, options: OpcoesLeituraRealTime = {}): { scenarios: CenarioRealTime[]; notes: string[] } | null {
@@ -103,7 +103,7 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
       return { raw_label: match[1].trim(), value_percent: value }
     })
     if (new Set(results.map((row) => row.raw_label)).size !== results.length || Math.abs(results.reduce((sum, row) => sum + row.value_percent, 0) - 100) > results.length * 0.5) throw new Error("Real Time: lista incompleta ou duplicada")
-    if (!results.some((row) => /^(Nulos?\/brancos?|Brancos?\/nulos?)$/i.test(row.raw_label)) || !results.some((row) => /^Não sabe/i.test(row.raw_label))) throw new Error("Real Time: categorias de resposta ausentes")
+    if (!results.some((row) => /^(Nulos?\/brancos?|Brancos?\/nulos?)$/i.test(row.raw_label)) || !results.some((row) => /^(?:Não sabe|NS\s*\/\s*NR)/i.test(row.raw_label))) throw new Error("Real Time: categorias de resposta ausentes")
     const names = results.filter((row) => !CATEGORY.test(row.raw_label)).map((row) => row.raw_label)
     if (turn === 2) {
       if (names.length !== 2) throw new Error("Real Time: segundo turno exige dois candidatos")
@@ -153,5 +153,8 @@ export function inspecionarPublicacaoRealTime(html: string, plain: (html: string
   const runoffs = scenarios.filter((scenario) => scenario.turn === 2).length
   if (runoffCount !== null && runoffCount !== runoffs) blockers.push({ code: "extraction_incomplete", detail: "Real Time: quantidade de cenários divergente" })
   if (!runoffs && /(?:segundo|2[oº°])\s+turno/i.test(plain(safe))) blockers.push({ code: "extraction_incomplete", detail: "Real Time: segundo turno sem captura completa" })
+  const spontaneousMentioned = /espont[âa]ne[ao]/i.test(plain(safe))
+  const spontaneousCaptured = scenarios.some((scenario) => scenario.turn === 1 && scenario.mode === "espontaneo")
+  if (spontaneousMentioned && !spontaneousCaptured) blockers.push({ code: "extraction_incomplete", detail: "Real Time: pesquisa espontânea mencionada sem lista completa" })
   return { scenarios, notes, blockers }
 }

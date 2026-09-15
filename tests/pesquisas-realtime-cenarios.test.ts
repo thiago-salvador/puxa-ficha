@@ -4,7 +4,7 @@ import test from "node:test"
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { extrairPublicacaoRealTime } from "../scripts/lib/pesquisas-monitoramento-realtime-cenarios"
+import { extrairPublicacaoRealTime, inspecionarPublicacaoRealTime } from "../scripts/lib/pesquisas-monitoramento-realtime-cenarios"
 import { avaliarEvidenciaAoVivo, escreverRelatorios, listarAlvosMonitoramento, obterContratoFonte } from "../scripts/lib/pesquisas-monitoramento"
 import { aplicarOperacoesAgendadas, carregarCatalogosAgendados, consolidarPropostasAgendadas } from "../scripts/pesquisas-atualizacao-agendada/model"
 import { parsePesquisasEleitoraisJson } from "../src/lib/pesquisas-eleitorais"
@@ -63,6 +63,14 @@ test("matéria conjunta separa modalidade, espaço antes de percentual e segundo
   const scenarios = extrairPublicacaoRealTime(html, plain)!.scenarios
   assert.deepEqual(scenarios.map(({ turn, mode }) => [turn, mode]), [[1, "espontaneo"], [1, "estimulado"], [2, "estimulado"]])
   assert.equal(scenarios[2].results[0].value_percent, 60)
+})
+
+test("PE aceita título de segundo turno em h3 e mantém espontânea parcial bloqueada", () => {
+  const html = `<h1>Pesquisa para governador</h1><h2>Estimulada</h2>${list([["João Campos (PSB)", 44], ["Raquel Lyra (PSD)", 43], ["Renan Hallais (PL)", 4], ["Ivan Moraes (PSOL)", 1], ["Outros", 1], ["Nulo/Branco", 4], ["NS/NR", 3]])}<p>Na pesquisa espontânea, João Campos e Raquel Lyra aparecem com 25% cada.</p><h3>Segundo turno</h3><p>João Campos x Raquel Lyra</p>${list([["João Campos", 44], ["Raquel Lyra", 44], ["Nulo/Branco", 6], ["Não sabe/Não respondeu", 6]])}`
+  const inspection = inspecionarPublicacaoRealTime(html, plain)!
+  assert.deepEqual(inspection.scenarios.at(-1)?.results.map((row) => [row.raw_label, row.value_percent]), [["João Campos", 44], ["Raquel Lyra", 44], ["Nulo/Branco", 6], ["Não sabe/Não respondeu", 6]])
+  assert.ok(inspection.blockers.some((blocker) => blocker.detail.includes("espontânea")))
+  assert.throws(() => extrairPublicacaoRealTime(html, plain), /espontânea/)
 })
 
 test("UF nova recebe pesquisa e aliases completos em cópia, com readback pelo parser público", () => {

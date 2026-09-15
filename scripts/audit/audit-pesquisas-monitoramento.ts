@@ -39,7 +39,11 @@ assert(
 assert(adapterIds.length === 4, "inventario esperado deve conter quatro adaptadores aprovados")
 const sourcesWithoutAdapter = approvedAndUsed.filter((id) => !adapterIds.includes(id))
 const targets = listarAlvosMonitoramento()
-assert(targets.length === 18, `inventario esperado deve conter 18 combinacoes, recebeu ${targets.length}`)
+const targetIds = targets.map((target) => target.poll_id)
+const registrations = targets.map((target) => target.registration_id)
+assert(new Set(targetIds).size === targetIds.length, "inventario possui poll_id duplicado")
+assert(new Set(registrations).size === registrations.length, "inventario possui registro duplicado")
+assert(targets.every((target) => adapterIds.includes(target.source_id)), "inventario possui alvo sem adaptador aprovado")
 for (const adapter of ADAPTADORES_MONITORAMENTO) {
   const source = obterContratoFonte(adapter.source_id)
   assert(source.status === "aprovado", `adaptador configurado para fonte nao aprovada: ${source.id}`)

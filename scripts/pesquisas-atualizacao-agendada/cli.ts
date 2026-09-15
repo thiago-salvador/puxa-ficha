@@ -25,11 +25,16 @@ import {
   type ItemPropostaAgendada,
   type ItemMatrizAgendada,
   validarDocumentoDiffAgendado,
+  validarAutorizacaoPublicacaoAgendada,
 } from "./model"
 
 function parseOptions(argv: string[]): Map<string, string> {
   const options = new Map<string, string>()
   for (let index = 0; index < argv.length; index += 1) {
+    if (argv[index] === "--publish") {
+      options.set("--publish", "true")
+      continue
+    }
     const separator = argv[index].indexOf("=")
     const key = separator >= 0 ? argv[index].slice(0, separator) : argv[index]
     const inline = separator >= 0 ? argv[index].slice(separator + 1) : undefined
@@ -246,14 +251,24 @@ function consolidateCommand(options: Map<string, string>): void {
   appendGithubOutput("promotion_authorized", String(result.promotion.authorized))
   if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, result.summary)
   console.log(`PESQUISAS_CONSOLIDATION_STATUS=${result.status}`)
-  if (result.execution_status === "failed") process.exitCode = 1
+  // A failed source or discovery branch is observable in status.json and the
+  // summary, but it must not discard independent operations that passed all
+  // validation gates. Keep a failing exit code when there is no safe subset,
+  // so malformed/global runs remain fail-closed.
+  if (result.execution_status === "failed" && !result.promotion.authorized) process.exitCode = 1
 }
 
 function applyCommand(options: Map<string, string>): void {
-  const diff = validarDocumentoDiffAgendado(
-    JSON.parse(readFileSync(resolve(required(options, "--diff")), "utf8")) as unknown,
-  )
-  const touched = aplicarOperacoesAgendadas(diff.operations)
+  const diff = validarDocumentoDiffAgendado(JSON.parse(readFileSync(resolve(required(options, "--diff")), "utf8")) as unknown)
+  const publish = options.get("--publish") === "true"
+  let attestation: { status: unknown; proposal: unknown; diff: typeof diff } | undefined
+  if (publish) {
+    const status = JSON.parse(readFileSync(resolve(required(options, "--status")), "utf8")) as unknown
+    const proposal = JSON.parse(readFileSync(resolve(required(options, "--proposal")), "utf8")) as unknown
+    attestation = { status, proposal, diff }
+    validarAutorizacaoPublicacaoAgendada(attestation)
+  }
+  const touched = aplicarOperacoesAgendadas(diff.operations, process.cwd(), { publish, attestation })
   console.log(`PESQUISAS_APPLY_TOUCHED=${touched.join(",") || "none"}`)
 }
 

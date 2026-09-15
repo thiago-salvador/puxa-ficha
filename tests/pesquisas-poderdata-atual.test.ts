@@ -28,6 +28,18 @@ test("setembro preserva 13 candidatos, zero publicado e identidades documentadas
   for (const label of ["Wilson", "Bolsonaro", "Samara (PT)", "Cury", "Candidato inexistente"]) assert.equal(resolverNomePresidencial(label), null)
 })
 
+test("BR-04914 extrai os três duelos publicados no PDF real, inclusive gráficos numerados", () => {
+  const layout = readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/poderdata-br04914.layout.txt", "utf8")
+  const raw = readFileSync("tests/fixtures/pesquisas-distribuicao/documentos/poderdata-br04914.raw.txt", "utf8")
+  const result = parseTextoPoderData(layout, "BR-04914/2026", "2026-09-10", raw)
+  assert.deepEqual(result.scenarios.map((scenario) => [scenario.turn, scenario.page]), [[1, 7], [2, 16], [2, 17], [2, 18]])
+  assert.deepEqual(result.scenarios.slice(1).map((scenario) => scenario.results.map((row) => [row.raw_label, row.value_percent])), [
+    [["Flávio Bolsonaro", 47], ["Lula", 45], ["Branco/Nulo", 6], ["Não sabe", 2]],
+    [["Augusto Cury", 44], ["Lula", 43], ["Branco/Nulo", 11], ["Não sabe", 2]],
+    [["Flávio Bolsonaro", 43], ["Augusto Cury", 36], ["Branco/Nulo", 20], ["Não sabe", 2]],
+  ])
+})
+
 test("setembro rejeita zero omitido, coluna antiga, Total divergente e gráfico sem tabela", () => {
   for (const text of [fixture.replace("Veterinário Wilson Grassi   0%   0%   0%\n", ""), fixture.replaceAll("3.set", "2.set"), fixture.replace("Samara Martins   0%   0%   1%", "Samara Martins   0%   0%   2%"), fixture.replace(question, question.replace("candidatos", "outros candidatos")), fixture.replace("Romeu Zema   43   42", "Ronaldo Caiado   43   42")]) {
     assert.throws(() => parseTextoPoderData(text, "BR-07561/2026", "2026-09-03"))
@@ -49,14 +61,17 @@ test("pesquisa nova entra apenas com manifesto explícito e prova oficial; aplic
     mkdirSync(join(directory, "scripts/data"), { recursive: true })
     for (const name of ["pesquisas-presidencia-2026.json", "pesquisas-governadores-2026.json"]) writeFileSync(join(directory, "scripts/data", name), readFileSync(`scripts/data/${name}`))
     const original = listarAlvosMonitoramento({ sourceId: "poderdata-aya-nacional-2026" })[0]
-    const target = { ...original, poll_id: "poderdata-aya-nacional-br-07561-2026", registration_id: "BR-07561/2026", scenario_id: "poderdata-aya-nacional-br-07561-2026-1t", known_scenarios: [] }
+    const syntheticRegistration = "BR-99999/2026"
+    const target = { ...original, poll_id: "poderdata-aya-nacional-br-99999-2026", registration_id: syntheticRegistration, scenario_id: "poderdata-aya-nacional-br-99999-2026-1t", known_scenarios: [] }
+    const syntheticFixture = fixture.replaceAll("BR-07561/2026", syntheticRegistration)
     const observedAt = "2026-09-09T12:00:00Z"
     const registry = { registration_id: target.registration_id, office: "Presidente", geography: "BRASIL", field_start: "2026-08-30", field_end: "2026-09-02", sample_size: 3000, margin_error_pp: 2, margin_error_qualifier: "maximum_planned" as const, institute: "PoderData" }
     const registrySupplement = { registry, confidence_percent: 95, method: "telefone", publication_date: "2026-09-03", source_url: "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml", observed_at: observedAt, evidence_sha256: "a".repeat(64), public_text: "Ficha técnica" }
-    const resultDocument = { ...parseTextoPoderData(fixture, target.registration_id, "2026-09-03"), url: "https://static.poder360.com.br/uploads/2026/09/Relatorio-2set26.pdf", observed_at: observedAt, evidence_sha256: "b".repeat(64) }
-    const html = '<meta property="article:published_time" content="2026-09-03"><p>PoderData. Eleição para presidente do Brasil no primeiro turno. Pesquisa foi realizada de 30 de agosto a 2 de setembro de 2026 com 3.000 eleitores. Margem de erro de 1,8 pontos percentuais. Intervalo de confiança de 95%. Entrevistas por telefone. BR-07561/2026.</p>'
+    const resultDocument = { ...parseTextoPoderData(syntheticFixture, target.registration_id, "2026-09-03"), url: "https://static.poder360.com.br/uploads/2026/09/Relatorio-2set26.pdf", observed_at: observedAt, evidence_sha256: "b".repeat(64) }
+    const html = `<meta property="article:published_time" content="2026-09-03"><p>PoderData. Eleição para presidente do Brasil no primeiro turno. Pesquisa foi realizada de 30 de agosto a 2 de setembro de 2026 com 3.000 eleitores. Margem de erro de 1,8 pontos percentuais. Intervalo de confiança de 95%. Entrevistas por telefone. A pesquisa teve parceria da maior banca digital. ${syntheticRegistration}.</p>`
     const result = avaliarEvidenciaAoVivo({ target, source: obterContratoFonte(target.source_id), html, observedAt, registry: [registry], registrySupplement, resultDocument })
     assert.equal(result.decision.eligible_for_human_review, true)
+    assert.equal(result.evidence?.method, "entrevistas por telefone")
     assert.ok(result.evidence?.identity_observations?.some((entry) => entry.raw_label === "Pablo Marçal" && entry.basis === "curated_ballot_name_office_uf"), "alias de outro cenário exige prova documental própria")
     escreverRelatorios([{ case_id: `${target.poll_id}-live`, result }], directory)
     const proposal = JSON.parse(readFileSync(join(directory, "proposal.json"), "utf8"))

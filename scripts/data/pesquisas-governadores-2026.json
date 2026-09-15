@@ -634,7 +634,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "2026-09-10.AM",
+      "exact_aliases_version": "monitor-2026-c1cb8043f462f74a",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -679,6 +679,15 @@
         {
           "raw_label": "Roberto Cidade (União Brasil)",
           "candidate_slug": "roberto-cidade"
+        },
+        {
+          "raw_label": "Cabo Daciolo (Mobiliza)",
+          "candidate_slug": "cabo-daciolo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-am-2026-08-26-primeiro-turno-estimulado"
         }
       ],
       "pesquisas": [
@@ -729,7 +738,7 @@
             "status": "publicado"
           },
           "method": {
-            "value": "Abordagens telefônicas e digitais com questionário estruturado",
+            "value": "abordagens telefônicas e digitais",
             "status": "publicado"
           },
           "registration": {
@@ -755,12 +764,17 @@
             ],
             "source_kind": "divulgacao_jornalistica_publica",
             "route_class": "direta_automatizavel",
-            "route_reason": "O resultado público reúne percentuais e ficha técnica; o método e o registro foram conferidos separadamente no PesqEle.",
-            "consulted_at": "2026-08-26T07:50:00-03:00",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+            "consulted_at": "2026-09-15T15:13:01.870Z",
             "capture": {
               "format": "html",
-              "sha256": "859eedaaa55f624d0566d1be4e78ea5d1c3218fa56d612419634e1624d102def",
+              "sha256": "45c0928dced5a5bf5078d6538fa373d541f090170724ebb3f2f3a3dfa2553c3a",
               "status": "publicado"
+            },
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-15T15:12:59.740Z",
+              "evidence_sha256": "68c75767c0701faddbf28b692b327025e458bc9edef489d32d10a2682c62fc51"
             }
           },
           "cenarios": [
@@ -768,7 +782,7 @@
               "id": "real-time-big-data-am-2026-08-26-primeiro-turno-estimulado",
               "turn": 1,
               "geography": "Amazonas",
-              "label_raw": "Pesquisa estimulada para o Governo do Amazonas",
+              "label_raw": "Primeiro turno estimulado: Os números são referentes ao cenário estimulado, quando uma lista de candidatos é apresentada aos entrevistados. Veja o resultado:",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -777,58 +791,304 @@
               "resultados": [
                 {
                   "raw_label": "Omar Aziz (PSD)",
+                  "value_percent": 34,
                   "candidate_slug": "omar-aziz",
                   "match_status": "exact_alias",
-                  "value_percent": 34,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Roberto Cidade (União Brasil)",
+                  "value_percent": 22,
                   "candidate_slug": "roberto-cidade",
                   "match_status": "exact_alias",
-                  "value_percent": 22,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Professora Maria do Carmo (PL)",
+                  "value_percent": 21,
                   "candidate_slug": "maria-do-carmo",
                   "match_status": "exact_alias",
-                  "value_percent": 21,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "David Almeida (Avante)",
+                  "value_percent": 14,
                   "candidate_slug": "david-almeida",
                   "match_status": "exact_alias",
-                  "value_percent": 14,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Cabo Daciolo (Mobiliza)",
-                  "candidate_slug": null,
-                  "match_status": "indeterminado",
                   "value_percent": 4,
+                  "candidate_slug": "cabo-daciolo",
+                  "match_status": "exact_alias",
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Outros",
+                  "value_percent": 1,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 1,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Nulo/Branco",
+                  "value_percent": 2,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 2,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 2,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 2,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-4e37d3e8606e2294",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Roberto Cidade x Professora Maria do Carmo",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|39f40783872de89756d54a974561c41f96ab7e5c7467684347d58ea1b3c24188|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Roberto Cidade",
+                  "value_percent": 38,
+                  "candidate_slug": "roberto-cidade",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Maria do Carmo",
+                  "value_percent": 36,
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 11,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 15,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-1fd948c318f63d09",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Omar Aziz x Roberto Cidade",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|baf970c35daac54cda4a3101a4d3c47a02bbcbb4fdfb0f858878e73aadf61f50|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Omar Aziz",
+                  "value_percent": 42,
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Roberto Cidade",
+                  "value_percent": 41,
+                  "candidate_slug": "roberto-cidade",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-bef985eedbce0b9c",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Professora Maria do Carmo x Omar Aziz",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|aa9b0ac39e88cdf2797c89685da38f879618078ded92193542e576467450110d|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Professora Maria do Carmo",
+                  "value_percent": 43,
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Omar Aziz",
+                  "value_percent": 42,
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-6545c64c0997d19b",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Professora Maria do Carmo x David Almeida",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|7eeb204f4b83c12d3cb6339e1b96479ea5700a2fa82f7452eaccf5386bba2fbf|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Professora Maria do Carmo",
+                  "value_percent": 45,
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "David Almeida",
+                  "value_percent": 33,
+                  "candidate_slug": "david-almeida",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 12,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 10,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-945cbfd0f8ec223a",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Omar Aziz x David Almeida",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|598aae9986b51784375643439d2d65329539958a75430a933850b022ea06cc68|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Omar Aziz",
+                  "value_percent": 42,
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "David Almeida",
+                  "value_percent": 35,
+                  "candidate_slug": "david-almeida",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 14,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-am-am-09965-2026-2t-0586fe139dc7295f",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Roberto Cidade x David Almeida",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|01816f76312c27e14e4d3c0bb305f1cfae37273ad0cb435675a2c741f2f40036|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Roberto Cidade",
+                  "value_percent": 44,
+                  "candidate_slug": "roberto-cidade",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "David Almeida",
+                  "value_percent": 34,
+                  "candidate_slug": "david-almeida",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "value_percent": 11,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu (NS/NR)",
+                  "value_percent": 11,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 }
               ]
@@ -1798,7 +2058,7 @@
                   "raw_label": "Não sabe / não opinou",
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 4.0,
+                  "value_percent": 4,
                   "status": "publicado"
                 },
                 {
@@ -1867,7 +2127,7 @@
                   "raw_label": "Não sabe / não opinou",
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 4.0,
+                  "value_percent": 4,
                   "status": "publicado"
                 },
                 {
@@ -1943,7 +2203,7 @@
                   "raw_label": "Nenhum / branco / nulo",
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 6.0,
+                  "value_percent": 6,
                   "status": "publicado"
                 },
                 {
@@ -1957,7 +2217,7 @@
                   "raw_label": "Jerônimo Rodrigues",
                   "candidate_slug": "jeronimo",
                   "match_status": "exact_alias",
-                  "value_percent": 41.0,
+                  "value_percent": 41,
                   "status": "publicado"
                 }
               ]
@@ -4324,7 +4584,7 @@
                   "raw_label": "Branco/nulo",
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 7.0,
+                  "value_percent": 7,
                   "status": "publicado"
                 },
                 {
@@ -4345,7 +4605,7 @@
                   "raw_label": "Roberto Rocha",
                   "candidate_slug": "roberto-rocha",
                   "match_status": "exact_alias",
-                  "value_percent": 3.0,
+                  "value_percent": 3,
                   "status": "publicado"
                 },
                 {
@@ -6793,6 +7053,195 @@
               ]
             }
           ]
+        },
+        {
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-10",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-14",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-15",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "abordagens telefônicas e digitais",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PA-00415/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Pará",
+            "code": "PA"
+          },
+          "office": "Governador",
+          "identity_aliases": [],
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-hana-ghassan-tem-40-e-dr-daniel-35-no-1-turno-para-o-governo-do-para-15092026/",
+            "result_notes": [
+              "*Os candidatos José Moita (Democrata), Well Macedo (PSTU) e Gal Leite (UP) somados atingiram 1% das intenções de voto."
+            ],
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-15T15:13:54.681Z",
+              "evidence_sha256": "92b5ceb77da40751b3aa502232913eabff4bdc7bf11faebb4d7726b0b6a6aa48"
+            },
+            "supporting_urls": [
+              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+            ],
+            "consulted_at": "2026-09-15T15:13:56.805Z",
+            "capture": {
+              "format": "html",
+              "sha256": "3949a7b1b5223e147ba60a1bbd3611ffc14bc9ffe6bdbda9f82e2b2a45d1cc08",
+              "status": "publicado"
+            },
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "direta_automatizavel",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados."
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-estaduais-pa-00415-2026-1t",
+              "turn": 1,
+              "geography": "Pará",
+              "label_raw": "Primeiro turno estimulado: Os números são referentes ao cenário estimulado, quando uma lista de candidatos é apresentada aos entrevistados. Veja o resultado:",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|1|estimulada|652f755cbf8432367f964fbdb08ec90b294ed4882459216266b05ee4e234920f|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "value_percent": 40,
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dr. Daniel (Podemos)",
+                  "value_percent": 35,
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Araceli (PSOL)",
+                  "value_percent": 3,
+                  "candidate_slug": "araceli-lemos",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "value_percent": 1,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 13,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-estaduais-pa-00415-2026-2t-8687b19c87c2294d",
+              "turn": 2,
+              "geography": "Pará",
+              "label_raw": "Hana Ghassan x Dr. Daniel",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|2|estimulada|3dabc5f5ee4de0e4bcf9040903a1eca5fb23314228aa32dc25e0088b59775d30|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "value_percent": 42,
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dr. Daniel (Podemos)",
+                  "value_percent": 36,
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 13,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            }
+          ],
+          "id": "real-time-big-data-estaduais-pa-00415-2026",
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          }
         }
       ]
     },
@@ -9734,7 +10183,7 @@
             "status": "publicado"
           },
           "method": {
-            "value": "Abordagens telefônicas e digitais com questionário estruturado",
+            "value": "abordagens telefônicas e digitais",
             "status": "publicado"
           },
           "registration": {
@@ -9762,12 +10211,17 @@
             ],
             "source_kind": "divulgacao_jornalistica_publica",
             "route_class": "direta_automatizavel",
-            "route_reason": "O resultado público reúne percentuais e ficha técnica. O registro oficial é conferido separadamente no PesqEle.",
-            "consulted_at": "2026-08-25T22:30:00-03:00",
+            "route_reason": "Publicação capturada, conciliada com o registro público PesqEle e aprovada pelos gates atomizados.",
+            "consulted_at": "2026-09-15T15:15:14.895Z",
             "capture": {
               "format": "html",
-              "sha256": "aae9eae4bd3e2178aec338c86c33173918fa10c915c9456b5ef5ab1beb946693",
+              "sha256": "99a9d4d565f024b83963349ff7d7453503ac452eaf481dfdf18aef5ff14f61c9",
               "status": "publicado"
+            },
+            "registry_observation": {
+              "url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "observed_at": "2026-09-15T15:15:13.570Z",
+              "evidence_sha256": "3dce370bd151cdf0f01a6eee84f8819408c4ee63be17a971767922b94174b0a0"
             }
           },
           "cenarios": [
@@ -9775,7 +10229,7 @@
               "id": "real-time-big-data-rs-2026-08-25-primeiro-turno-estimulado",
               "turn": 1,
               "geography": "Rio Grande do Sul",
-              "label_raw": "Pesquisa estimulada para o Governo de Rio Grande do Sul",
+              "label_raw": "Primeiro turno estimulado",
               "question": {
                 "value": null,
                 "status": "indeterminado"
@@ -9784,51 +10238,174 @@
               "resultados": [
                 {
                   "raw_label": "Juliana Brizola (PDT)",
+                  "value_percent": 38,
                   "candidate_slug": "juliana-brizola",
                   "match_status": "exact_alias",
-                  "value_percent": 38,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Luciano Zucco (PL)",
+                  "value_percent": 32,
                   "candidate_slug": "luciano-zucco",
                   "match_status": "exact_alias",
-                  "value_percent": 32,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Gabriel Souza (MDB)",
+                  "value_percent": 19,
                   "candidate_slug": "gabriel-souza",
                   "match_status": "exact_alias",
-                  "value_percent": 19,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Marcelo Maranata (PSDB)",
+                  "value_percent": 4,
                   "candidate_slug": "marcelo-maranata",
                   "match_status": "exact_alias",
-                  "value_percent": 4,
                   "status": "publicado"
                 },
                 {
                   "raw_label": "Outros",
-                  "candidate_slug": null,
-                  "match_status": "not_candidate",
                   "value_percent": 1,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Nulo ou branco",
+                  "raw_label": "Nulos/brancos",
+                  "value_percent": 3,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 3,
                   "status": "publicado"
                 },
                 {
-                  "raw_label": "Não sabe ou não respondeu",
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 3,
                   "candidate_slug": null,
                   "match_status": "not_candidate",
-                  "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-rs-rs-09640-2026-2t-e8b517d78bfa4beb",
+              "turn": 2,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "Juliana x Zucco",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RS|2|estimulada|83bfafad822e96294b885143dcea1df8d8d4ff0bb5dbe7f1d76c9758d4f7e0d9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Juliana Brizola",
+                  "value_percent": 45,
+                  "candidate_slug": "juliana-brizola",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Luciano Zucco",
+                  "value_percent": 41,
+                  "candidate_slug": "luciano-zucco",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulos/brancos",
+                  "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 7,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-rs-rs-09640-2026-2t-b7fdc40b894a8adb",
+              "turn": 2,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "Zucco x Gabriel",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RS|2|estimulada|b23fc8ba61d4b13a0f8135fbaae51138bb6952a83e1431b4700069152f615740|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Luciano Zucco",
+                  "value_percent": 43,
+                  "candidate_slug": "luciano-zucco",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Souza",
+                  "value_percent": 38,
+                  "candidate_slug": "gabriel-souza",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulos/brancos",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 10,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "real-time-big-data-rs-rs-09640-2026-2t-0add86926f199d6b",
+              "turn": 2,
+              "geography": "Rio Grande do Sul",
+              "label_raw": "Juliana x Gabriel",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RS|2|estimulada|b7871b8e655a17137afeb855d0df30e412960a10d6ef665482442ae2da9c12f4|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Juliana Brizola",
+                  "value_percent": 48,
+                  "candidate_slug": "juliana-brizola",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Souza",
+                  "value_percent": 35,
+                  "candidate_slug": "gabriel-souza",
+                  "match_status": "exact_alias",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulos/brancos",
+                  "value_percent": 8,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "value_percent": 9,
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
                   "status": "publicado"
                 }
               ]

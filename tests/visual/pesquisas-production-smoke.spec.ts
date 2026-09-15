@@ -6,7 +6,6 @@ import {
 } from "../../scripts/vercel-automation-bypass"
 
 const EXPECTED_SHA = process.env.PF_EXPECTED_DEPLOY_SHA ?? ""
-const AC_SLUG = "alan-rick"
 
 type BrowserGuard = {
   browserErrors: string[]
@@ -44,31 +43,6 @@ async function installReadOnlyBrowserGuard(page: Page): Promise<BrowserGuard> {
   return { browserErrors }
 }
 
-async function waitForProfile(page: Page) {
-  await expect(page.getByRole("navigation", { name: /Seções do perfil/ })).toBeVisible({
-    timeout: 20_000,
-  })
-  await page.waitForLoadState("networkidle")
-  await page
-    .waitForFunction(
-      () =>
-        Array.from(document.querySelectorAll(".hero-fade, .stagger-item, .section-reveal")).every(
-          (element) => getComputedStyle(element).opacity === "1",
-        ),
-      undefined,
-      { timeout: 10_000 },
-    )
-    .catch(() => undefined)
-}
-
-async function openPesquisasTab(page: Page) {
-  const tab = page.locator(
-    '[role="tab"][aria-controls="profile-panel-pesquisas"]:visible',
-  )
-  await expect(tab).toHaveCount(1)
-  await tab.click()
-}
-
 async function expectNoHorizontalOverflow(page: Page, regions: Locator[]) {
   const documentOverflows = await page.evaluate(
     () => document.documentElement.scrollWidth > document.documentElement.clientWidth,
@@ -98,6 +72,38 @@ async function expectReadOnlyAndClean(guard: BrowserGuard) {
   expect(guard.browserErrors, `erros do navegador:\n${guard.browserErrors.join("\n")}`).toEqual([])
 }
 
+async function openPublicPolls(page: Page, path: string) {
+  await page.goto(`${path}#pesquisas`, { waitUntil: "domcontentloaded" })
+  const section = page.locator("[data-pf-polls]")
+  await expect(section).toBeVisible()
+  await expect(section.getByRole("heading", { name: "A evolução da disputa" })).toBeVisible()
+  await expect(section.locator("[data-pf-poll-trend]")).toBeVisible()
+  await expect(section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')).not.toHaveCount(0)
+  await expect(section.locator("[data-pf-week-source] > p > strong")).toHaveText(
+    /^(1 pesquisa na semana|Média de [2-9]\d* pesquisas)$/,
+  )
+  await expect(section.locator("[data-pf-week-source] a")).not.toHaveCount(0)
+  return section
+}
+
+async function expectMobileWeekNavigation(section: Locator) {
+  const points = section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')
+  if (await points.count() < 2) return
+
+  const mobile = section.locator("[data-pf-mobile-research]")
+  await expect(mobile).toBeVisible()
+  const previous = section.getByRole("button", { name: "Anterior", exact: true })
+  const next = section.getByRole("button", { name: "Próxima", exact: true })
+  await expect(previous).toBeEnabled()
+  await expect(next).toBeDisabled()
+  const latest = await mobile.innerText()
+  await previous.click()
+  await expect.poll(() => mobile.innerText()).not.toBe(latest)
+  await expect(next).toBeEnabled()
+  await next.click()
+  await expect.poll(() => mobile.innerText()).toBe(latest)
+}
+
 test.beforeAll(async ({ request }) => {
   expect(EXPECTED_SHA, "defina PF_EXPECTED_DEPLOY_SHA com o SHA de produção esperado").toMatch(
     /^[0-9a-f]{40}$/,
@@ -122,95 +128,39 @@ test.beforeEach(async ({ context, baseURL }) => {
 })
 
 test.describe("smoke somente leitura de pesquisas em produção", () => {
-  test("Tarcísio mostra a rodada estimulada mais recente e mantém Datafolha na listagem", async ({ page }, testInfo) => {
+  test("catálogo presidencial publica a semana e mantém a prova de produção", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
-    await page.goto("/candidato/tarcisio-gov-sp", { waitUntil: "domcontentloaded" })
-    await waitForProfile(page)
-
-    const hero = page.locator("[data-pf-pesquisa-hero]")
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(hero).toContainText("Quaest")
-    await expect(hero).toContainText("42%")
-    await expect(hero).toContainText("1º turno estimulado")
-    await expect(hero).not.toContainText("48%")
-    await expect(overview).toContainText("Quaest")
-    await expect(overview).toContainText("42%")
-    await expectNoHorizontalOverflow(page, [page.locator("[data-pf-hero]"), overview])
-    await expectBasicAccessibility(page, [
-      "[data-pf-pesquisa-hero]",
-      "[data-pf-pesquisas-overview]",
-    ])
+    const section = await openPublicPolls(page, "/")
+    await expect(section.getByRole("combobox", { name: "Turno", exact: true })).toHaveValue("1")
+    await expect(section.getByRole("combobox", { name: "Instituto", exact: true })).toBeVisible()
+    await expect(section.getByRole("link", { name: /Fonte da pesquisa|Fonte:/ }).first()).toHaveAttribute(
+      "href",
+      /^https:\/\//,
+    )
+    await expectNoHorizontalOverflow(page, [section])
+    await expectBasicAccessibility(page, ["[data-pf-polls]"])
+    if ((page.viewportSize()?.width ?? 1440) <= 640) await expectMobileWeekNavigation(section)
     await page.screenshot({
-      path: testInfo.outputPath(`tarcisio-${testInfo.project.name}-visao-geral.png`),
+      path: testInfo.outputPath(`presidencia-${testInfo.project.name}.png`),
       fullPage: true,
       animations: "disabled",
     })
-
-    await openPesquisasTab(page)
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    const quaest = tab.locator('[data-pf-pesquisa-source="quaest-sp-revisao-20260910"]')
-    const datafolha = tab.locator('[data-pf-pesquisa-source="datafolha-folha-globo-estaduais-2026"]')
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(2)
-    await expect(quaest).toContainText("42%")
-    await expect(quaest).toContainText("1º turno estimulado")
-    await expect(datafolha).toContainText("45%")
-    await expect(tab).not.toContainText("48%")
-    await expect(tab).not.toContainText("2º turno")
-    await expectNoHorizontalOverflow(page, [tab])
-    await expectBasicAccessibility(page, ["[data-pf-pesquisas-tab]"])
-    await page.screenshot({
-      path: testInfo.outputPath(`tarcisio-${testInfo.project.name}-pesquisas.png`),
-      fullPage: true,
-      animations: "disabled",
-    })
-
     await expectReadOnlyAndClean(guard)
   })
 
-  test("Alan Rick mostra Quaest 33% sem resultado de SP ou AM", async ({ page }, testInfo) => {
+  test("superfície do Amazonas mantém pesquisas isoladas por UF", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
-    await page.goto(`/candidato/${AC_SLUG}`, { waitUntil: "domcontentloaded" })
-    await waitForProfile(page)
-
-    const hero = page.locator("[data-pf-pesquisa-hero]")
-    const overview = page.locator("[data-pf-pesquisas-overview]")
-    await expect(hero).toContainText("Quaest")
-    await expect(hero).toContainText("33%")
-    await expect(overview).toContainText("Quaest")
-    await expect(overview).toContainText("33%")
-    await expect(page.getByText("31%", { exact: true })).toHaveCount(0)
-    await expect(page.getByText("42%", { exact: true })).toHaveCount(0)
-    await expect(page.getByText("45%", { exact: true })).toHaveCount(0)
-    await expect(page.getByText("Datafolha", { exact: true })).toHaveCount(0)
-    await expect(page.getByText("São Paulo", { exact: true })).toHaveCount(0)
-    await expectNoHorizontalOverflow(page, [page.locator("[data-pf-hero]"), overview])
-    await expectBasicAccessibility(page, [
-      "[data-pf-pesquisa-hero]",
-      "[data-pf-pesquisas-overview]",
-    ])
+    const section = await openPublicPolls(page, "/uf/am")
+    await expect(section).not.toContainText("Lula")
+    await expect(section).toContainText("Omar")
+    await expect(section.getByRole("combobox", { name: "Cenário", exact: true })).toBeVisible()
+    await expectNoHorizontalOverflow(page, [section])
+    await expectBasicAccessibility(page, ["[data-pf-polls]"])
     await page.screenshot({
-      path: testInfo.outputPath(`alan-rick-${testInfo.project.name}-visao-geral.png`),
+      path: testInfo.outputPath(`amazonas-${testInfo.project.name}.png`),
       fullPage: true,
       animations: "disabled",
     })
-
-    await openPesquisasTab(page)
-    const tab = page.locator("[data-pf-pesquisas-tab]")
-    const quaest = tab.locator('[data-pf-pesquisa-source="quaest-ac-revisao-20260910"]')
-    await expect(tab.locator("[data-pf-pesquisa-card]")).toHaveCount(1)
-    await expect(quaest).toContainText("33%")
-    await expect(tab.getByText("31%", { exact: true })).toHaveCount(0)
-    await expect(tab.getByText("42%", { exact: true })).toHaveCount(0)
-    await expect(tab.getByText("45%", { exact: true })).toHaveCount(0)
-    await expect(tab.getByText("Datafolha", { exact: true })).toHaveCount(0)
-    await expectNoHorizontalOverflow(page, [tab])
-    await expectBasicAccessibility(page, ["[data-pf-pesquisas-tab]"])
-    await page.screenshot({
-      path: testInfo.outputPath(`alan-rick-${testInfo.project.name}-pesquisas.png`),
-      fullPage: true,
-      animations: "disabled",
-    })
-
     await expectReadOnlyAndClean(guard)
   })
 })
