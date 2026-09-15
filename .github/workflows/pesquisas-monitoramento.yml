@@ -266,7 +266,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Instalar Chrome para os checks de publicação
-        run: npx playwright install --with-deps chromium chrome
+        run: npx playwright install --with-deps chromium chrome webkit
 
       - name: Baixar proposta consolidada
         uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0

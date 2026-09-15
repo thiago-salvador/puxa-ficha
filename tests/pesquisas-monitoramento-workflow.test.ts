@@ -65,7 +65,7 @@ test("publicação concentra os segredos e exige operação validada", () => {
 test("promoção segue escopo, autor, merge condicionado ao SHA e prova pública", () => {
   const promote = job("promover")
   assert.match(promote, /timeout-minutes:\s*40/)
-  assert.match(promote, /npx playwright install --with-deps chromium chrome/)
+  assert.match(promote, /npx playwright install --with-deps chromium chrome webkit/)
   assert.match(workflow, /contents:\s*write\n\s+pull-requests:\s*write/)
   const helper = readFileSync("scripts/pesquisas-atualizacao-agendada/publicar.mjs", "utf8")
   assert.match(helper, /POLL_BRANCH_PREFIX = "codex\/pesquisas-refresh-"/)
