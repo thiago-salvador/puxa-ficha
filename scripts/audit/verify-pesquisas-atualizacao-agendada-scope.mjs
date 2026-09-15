@@ -5,6 +5,7 @@ const allowedExact = new Set([
   ".github/workflows/pesquisas-monitoramento.yml",
   "GATES.md",
   "docs/operations/pesquisas-monitoramento-automatizado-eval.md",
+  "Settings/AUTOMATIONS_AND_ENVIRONMENTS.md",
   "package.json",
   "scripts/audit/verify-pesquisas-atualizacao-agendada-scope.mjs",
   "tests/pesquisas-atualizacao-agendada.test.ts",

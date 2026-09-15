@@ -172,6 +172,7 @@ mascarar o ambiente real.
 | `RAW_SOURCES`, `INCREMENTAL`, `REVALIDAR`, `MANIFESTO` | Ingestão e patrimônio | Variáveis internas derivadas dos inputs ou paths do job. | GitHub workflow |
 | `DISPATCH_REF`, `DISPATCH_SHA`, `DISPATCH_ENVIRONMENT`, `DISPATCH_GIT_SHA`, `DISPATCH_PROJECT`, `EXPECTED_SHA`, `OWNER_PR`, `PRODUCTION_URL`, `TRUSTED_SHA`, `CANDIDATE_DEPLOYMENT_ID`, `CANDIDATE_DEPLOYMENT_URL`, `PREVIOUS_DEPLOYMENT_ID`, `PREVIOUS_DEPLOYMENT_SHA`, `PREVIOUS_DEPLOYMENT_URL`, `INCIDENT_LABEL`, `JOB_STATUS`, `ROLLBACK_OUTCOME`, `VERIFY_OUTCOME` | Estado da fila serial, promoção e rollback | Variáveis efêmeras do job; valores vêm de inputs, outputs e recursos remotos previamente validados. | GitHub workflow |
 | `WATCHED_HEAD_SHA`, `WATCHED_RUN_ID`, `WATCHED_RUN_URL`, `WATCHED_RUN_CONCLUSION` | Payload do watchdog da fila | Variáveis efêmeras recebidas do workflow observado. | GitHub workflow |
+| `POLL_REPOSITORY`, `POLL_BASE_SHA`, `POLL_RUN_ID`, `POLL_AUTHOR_LOGIN` | Identidade e controle de concorrência da publicação validada de pesquisas | Fornecidas pelo workflow: repositório atual, SHA atual de `main`, ID do run e login fixo `thiago-salvador`. Não há fallback para outro repositório, commit, run ou autor; ausência ou formato inesperado aborta antes de qualquer mutação. | GitHub workflow |
 
 ### Contrato de Reply-To integrado por PF-24
 
