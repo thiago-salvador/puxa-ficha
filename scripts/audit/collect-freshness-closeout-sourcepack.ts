@@ -11,7 +11,8 @@ import { TSE_CANDIDACY_URL } from "../lib/data-freshness/tse-source"
 import { parseCSV } from "../lib/parse-csv-local"
 
 type FetchLike = (input: string | URL | Request, init?: RequestInit) => Promise<Response>
-const CANDIDATES = [
+export type SourcepackCandidate = { sq: string; uf: string; label: string }
+export const DEFAULT_CANDIDATES = [
   { sq: "140002554434", uf: "PA", label: "ruth-reis" },
   { sq: "140002551357", uf: "PA", label: "jose-moita" },
   { sq: "140002554426", uf: "PA", label: "marcia-carvalho" },
@@ -19,12 +20,14 @@ const CANDIDATES = [
   { sq: "270002546368", uf: "TO", label: "subtenente-luiz-carlos" },
   { sq: "140002551358", uf: "PA", label: "ruth-reis-vice-anterior" },
 ] as const
+const CANDIDATE_SPECS_MAX = 32
+const VALID_UFS = new Set(["AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS", "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO", "BR"])
 const ZIP_URL = "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_MG.zip"
-const DETAIL_URLS = new Set(CANDIDATES.map(({ sq, uf }) => `${DIVULGACAND_BASE}/buscar/2026/${uf}/${ELECTION_ID_2026}/candidato/${sq}`))
+const DETAIL_URLS = new Set(DEFAULT_CANDIDATES.map(({ sq, uf }) => `${DIVULGACAND_BASE}/buscar/2026/${uf}/${ELECTION_ID_2026}/candidato/${sq}`))
 const SHA = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex")
 const DIAGNOSTIC_PHASES = new Set(["initialize", "detail_fetch", "detail_json", "detail_identity", "vice_parse", "binary_fetch", "binary_validate", "binary_write", "csv_fetch", "csv_validate", "csv_zip", "csv_parse", "csv_scope", "report_write", "sourcepack"])
 const DIAGNOSTIC_NAMES = new Set(["Error", "TypeError", "SyntaxError", "RangeError", "AbortError", "TimeoutError", "CsvError"])
-const DIAGNOSTIC_CODES = new Set(["ENOENT", "EACCES", "ENOSPC", "ENOBUFS", "ETIMEDOUT", "ECONNRESET", "ECONNREFUSED", "ENOTFOUND", "EAI_AGAIN", "UND_ERR_CONNECT_TIMEOUT", "UND_ERR_HEADERS_TIMEOUT", "UND_ERR_BODY_TIMEOUT", "ERR_STREAM_PREMATURE_CLOSE", "HTTP_ERROR", "INVALID_FORMAT", "IDENTITY_MISMATCH", "INVALID_VICE", "SIZE_LIMIT", "REDIRECT_BLOCKED", "URL_NOT_ALLOWED", "CSV_MEMBERS_INVALID", "CSV_CONFLICT", "CSV_INCOMPLETE", "CSV_INVALID_CLOSING_QUOTE", "CSV_QUOTE_NOT_CLOSED"])
+const DIAGNOSTIC_CODES = new Set(["ENOENT", "EACCES", "ENOSPC", "ENOBUFS", "ETIMEDOUT", "ECONNRESET", "ECONNREFUSED", "ENOTFOUND", "EAI_AGAIN", "UND_ERR_CONNECT_TIMEOUT", "UND_ERR_HEADERS_TIMEOUT", "UND_ERR_BODY_TIMEOUT", "ERR_STREAM_PREMATURE_CLOSE", "HTTP_ERROR", "INVALID_FORMAT", "IDENTITY_MISMATCH", "INVALID_VICE", "SIZE_LIMIT", "REDIRECT_BLOCKED", "URL_NOT_ALLOWED", "CSV_MEMBERS_INVALID", "CSV_CONFLICT", "CSV_INCOMPLETE", "CSV_INVALID_CLOSING_QUOTE", "CSV_QUOTE_NOT_CLOSED", "INVALID_CANDIDATE_SCOPE"])
 const DIAGNOSTIC_SIGNALS = new Set(["SIGTERM", "SIGKILL", "SIGINT", "SIGABRT"])
 
 // Read data properties only: neither error getters nor message/cause.message are evaluated.
@@ -61,6 +64,26 @@ class SafeSourcepackError extends Error {
 }
 
 function failure(code: string, message: string, status?: number) { return Object.assign(new Error(message), { code, status }) }
+
+export function parseCandidateSpec(raw: string | undefined): SourcepackCandidate[] {
+  if (raw === undefined || raw === "") return [...DEFAULT_CANDIDATES]
+  if (raw.length > 4096 || raw.trim() === "") throw failure("INVALID_CANDIDATE_SCOPE", "escopo de candidaturas vazio ou grande demais")
+  const seenSq = new Set<string>()
+  const seenSlug = new Set<string>()
+  const candidates = raw.split(",").map((part) => {
+    const fields = part.split(":")
+    if (fields.length !== 3) throw failure("INVALID_CANDIDATE_SCOPE", "escopo deve usar SQ:UF:slug")
+    const [sq, uf, label] = fields
+    if (!/^\d{1,15}$/.test(sq) || !VALID_UFS.has(uf) || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(label)) {
+      throw failure("INVALID_CANDIDATE_SCOPE", "SQ, UF ou slug inválido")
+    }
+    if (seenSq.has(sq) || seenSlug.has(label)) throw failure("INVALID_CANDIDATE_SCOPE", "SQ ou slug duplicado")
+    seenSq.add(sq); seenSlug.add(label)
+    return { sq, uf, label }
+  })
+  if (!candidates.length || candidates.length > CANDIDATE_SPECS_MAX) throw failure("INVALID_CANDIDATE_SCOPE", "quantidade de candidaturas inválida")
+  return candidates
+}
 
 function object(value: unknown): Record<string, unknown> {
   return value && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : {}
@@ -104,14 +127,14 @@ const CSV_FIELDS = [
   "DS_GENERO", "DS_ESTADO_CIVIL", "DS_COR_RACA", "CD_SITUACAO_CANDIDATURA", "DS_SITUACAO_CANDIDATURA",
   "CD_SITUACAO_CANDIDATO", "DS_SITUACAO_CANDIDATO", "DS_SITUACAO_CANDIDATO_PLEITO", "DS_SIT_TOT_TURNO",
 ] as const
-const CANDIDATE_SQS = new Set<string>(CANDIDATES.map((candidate) => candidate.sq))
+const CANDIDATE_SQS = new Set<string>(DEFAULT_CANDIDATES.map((candidate) => candidate.sq))
 
-export function sanitizeCandidateCsvRow(row: Record<string, string>): Record<string, string | null> | null {
-  if (!CANDIDATE_SQS.has(row.SQ_CANDIDATO) || row.NR_TURNO !== "1") return null
+export function sanitizeCandidateCsvRow(row: Record<string, string>, allowedSqs: ReadonlySet<string> = CANDIDATE_SQS): Record<string, string | null> | null {
+  if (!allowedSqs.has(row.SQ_CANDIDATO) || row.NR_TURNO !== "1") return null
   return Object.fromEntries(CSV_FIELDS.map((key) => [key, /^SQ_|^CD_|^NR_|^ANO_/.test(key) ? String(code(row[key]) ?? "") || null : text(row[key])]))
 }
 
-export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: string) => void = () => {}) {
+export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: string) => void = () => {}, candidates: readonly SourcepackCandidate[] = DEFAULT_CANDIDATES) {
   onPhase("csv_validate")
   if (bytes[0] !== 0x50 || bytes[1] !== 0x4b) throw failure("INVALID_FORMAT", "pacote de candidaturas inválido")
   const privateDir = mkdtempSync(join(tmpdir(), "pf-private-candidacy-sourcepack-"))
@@ -126,6 +149,7 @@ export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: stri
     const selected = brasil.length ? brasil : entries
     if (!selected.length || selected.length > 3) throw failure("CSV_MEMBERS_INVALID", "CSV canônico ausente ou ambíguo")
     const records = new Map<string, Record<string, string | null>>()
+    const allowedSqs = new Set(candidates.map((candidate) => candidate.sq))
     const members: Array<{ member: string; raw_sha256: string; bytes: number }> = []
     for (const entry of selected) {
       onPhase("csv_zip")
@@ -135,7 +159,7 @@ export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: stri
       writeFileSync(csvPath, csv, { mode: 0o600 })
       onPhase("csv_parse")
       await parseCSV(csvPath, (row) => {
-        const safe = sanitizeCandidateCsvRow(row)
+        const safe = sanitizeCandidateCsvRow(row, allowedSqs)
         if (!safe) return
         const sq = safe.SQ_CANDIDATO!
         const previous = records.get(sq)
@@ -143,10 +167,10 @@ export async function parseCandidatePackage(bytes: Buffer, onPhase: (phase: stri
         records.set(sq, safe)
       })
     }
-    const missingSqs = CANDIDATES.filter((candidate) => !records.has(candidate.sq)).map((candidate) => candidate.sq)
+    const missingSqs = candidates.filter((candidate) => !records.has(candidate.sq)).map((candidate) => candidate.sq)
     return {
       members, complete: missingSqs.length === 0, missing_sqs: missingSqs,
-      records: CANDIDATES.flatMap((candidate) => records.has(candidate.sq) ? [records.get(candidate.sq)!] : []),
+      records: candidates.flatMap((candidate) => records.has(candidate.sq) ? [records.get(candidate.sq)!] : []),
     }
   } finally { rmSync(privateDir, { recursive: true, force: true }) }
 }
@@ -206,8 +230,8 @@ export function sanitizeDetail(payload: unknown, expectedSq: string) {
   }
 }
 
-export async function fetchBounded(url: string, maxBytes: number, timeoutMs: number, fetchImpl: FetchLike = fetch) {
-  if (!DETAIL_URLS.has(url) && url !== ZIP_URL && url !== TSE_CANDIDACY_URL && safeProgramUrl(url) !== url) throw failure("URL_NOT_ALLOWED", "URL fora da allowlist")
+export async function fetchBounded(url: string, maxBytes: number, timeoutMs: number, fetchImpl: FetchLike = fetch, allowedDetailUrls: ReadonlySet<string> = DETAIL_URLS) {
+  if (!allowedDetailUrls.has(url) && url !== ZIP_URL && url !== TSE_CANDIDACY_URL && safeProgramUrl(url) !== url) throw failure("URL_NOT_ALLOWED", "URL fora da allowlist")
   const response = await fetchImpl(url, {
     redirect: "manual", signal: AbortSignal.timeout(timeoutMs),
     headers: { accept: "application/json, application/pdf, application/zip", referer: "https://divulgacandcontas.tse.jus.br/divulga/", "user-agent": "PuxaFichaDataFreshness/1.0" },
@@ -237,9 +261,11 @@ type Receipt = {
   artifact_path: string | null;
 }
 
-export async function collectFreshnessCloseoutSourcepack(outputDir: string, options: { fetchImpl?: FetchLike; now?: () => Date } = {}) {
+export async function collectFreshnessCloseoutSourcepack(outputDir: string, options: { fetchImpl?: FetchLike; now?: () => Date; candidates?: readonly SourcepackCandidate[]; includeProgramArtifacts?: boolean } = {}) {
   const fetchImpl = options.fetchImpl ?? fetch
   const now = options.now ?? (() => new Date())
+  const candidatesScope = options.candidates ?? DEFAULT_CANDIDATES
+  const detailUrls = new Set(candidatesScope.map(({ sq, uf }) => `${DIVULGACAND_BASE}/buscar/2026/${uf}/${ELECTION_ID_2026}/candidato/${sq}`))
   try { mkdirSync(outputDir, { recursive: true }) } catch (error) { throw new SafeSourcepackError(sanitizeSourcepackDiagnostic("initialize", error)) }
   const receipts: Receipt[] = []
   const candidates: Array<ReturnType<typeof sanitizeDetail> & { source: string; label: string }> = []
@@ -254,7 +280,7 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
     receipts.push(receipt)
     return receipt
   }
-  for (const candidate of CANDIDATES) {
+  for (const candidate of candidatesScope) {
     let phase = "detail_fetch"
     let diagnostic: ReturnType<typeof sanitizeSourcepackDiagnostic> | undefined
     try {
@@ -263,7 +289,7 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
         phase = "detail_fetch"
         try {
         const url = String(input)
-        const result = await fetchBounded(url, 2 * 1024 * 1024, 20_000, fetchImpl)
+        const result = await fetchBounded(url, 2 * 1024 * 1024, 20_000, fetchImpl, detailUrls)
         record(url, result)
         if (result.response.ok) {
           phase = "detail_json"
@@ -287,7 +313,7 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
     try {
       let receipt: Receipt | undefined
       const bytes = await fetchTseProgramaBytes(url, { fetchBytes: async (officialUrl) => {
-        const result = await fetchBounded(officialUrl, kind === "pdf" ? 64 * 1024 * 1024 : 256 * 1024 * 1024, 120_000, fetchImpl)
+        const result = await fetchBounded(officialUrl, kind === "pdf" ? 64 * 1024 * 1024 : 256 * 1024 * 1024, 120_000, fetchImpl, detailUrls)
         receipt = record(officialUrl, result)
         if (!result.response.ok) throw failure("HTTP_ERROR", "HTTP não aprovado", result.response.status)
         return result.bytes
@@ -303,19 +329,20 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
     } catch (error) { errors.push({ target: url, reason: "arquivo indisponível, inválido ou acima do limite; nenhum corpo de erro persistido", diagnostic: sanitizeSourcepackDiagnostic(phase, error) }); return false }
   }
   const file = candidates.find((candidate) => candidate.id === "130002544411")?.arquivos[0]
-  const directPdf = file?.url ? await binary(file.url, "ben-mendes-130017139584.pdf", "pdf") : false
-  if (!directPdf) await binary(ZIP_URL, "proposta_governo_2026_MG.zip", "zip")
+  const includeProgramArtifacts = options.includeProgramArtifacts ?? true
+  const directPdf = includeProgramArtifacts && file?.url ? await binary(file.url, "ben-mendes-130017139584.pdf", "pdf") : false
+  if (includeProgramArtifacts && !directPdf) await binary(ZIP_URL, "proposta_governo_2026_MG.zip", "zip")
   let officialCsv: Awaited<ReturnType<typeof parseCandidatePackage>> | null = null
   let csvPhase = "csv_fetch"
   try {
-    const result = await fetchBounded(TSE_CANDIDACY_URL, 128 * 1024 * 1024, 120_000, fetchImpl)
+    const result = await fetchBounded(TSE_CANDIDACY_URL, 128 * 1024 * 1024, 120_000, fetchImpl, detailUrls)
     record(TSE_CANDIDACY_URL, result)
     if (!result.response.ok) throw failure("HTTP_ERROR", "HTTP não aprovado", result.response.status)
-    officialCsv = await parseCandidatePackage(result.bytes, (phase) => { csvPhase = phase })
+    officialCsv = await parseCandidatePackage(result.bytes, (phase) => { csvPhase = phase }, candidatesScope)
     if (!officialCsv.complete) errors.push({ target: TSE_CANDIDACY_URL, reason: `pacote consultado ainda não contém SQs: ${officialCsv.missing_sqs.join(",")}; recorte existente preservado, sem inferir situação da pessoa`, diagnostic: sanitizeSourcepackDiagnostic("csv_scope", failure("CSV_INCOMPLETE", "recorte parcial")) })
   } catch (error) { errors.push({ target: TSE_CANDIDACY_URL, reason: "CSV indisponível, inválido, incompleto ou acima do limite; nenhum dado bruto persistido no artefato", diagnostic: sanitizeSourcepackDiagnostic(csvPhase, error) }) }
   const report = {
-    schema_version: 1, generated_at: now().toISOString(), scope: "freshness-closeout-readonly",
+    schema_version: 1, generated_at: now().toISOString(), scope: "freshness-closeout-readonly", candidate_scope: candidatesScope,
     privacy: "allowlisted candidate fields only; original JSON bytes hashed but never persisted",
     direct_pdf_metadata_url: file?.url ?? null, candidates, official_csv: officialCsv, receipts, errors,
   }
@@ -324,8 +351,15 @@ export async function collectFreshnessCloseoutSourcepack(outputDir: string, opti
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const outputDir = resolve("reports/freshness-closeout-sourcepack")
-  collectFreshnessCloseoutSourcepack(outputDir).then((report) => {
+  const outputDir = resolve(process.env.SOURCEPACK_OUTPUT_DIR || "reports/freshness-closeout-sourcepack")
+  const rawScope = process.env.SOURCEPACK_CANDIDATES
+  let candidates: SourcepackCandidate[]
+  try { candidates = parseCandidateSpec(rawScope) } catch (error) {
+    console.error(JSON.stringify({ error: "sourcepack_failed", diagnostic: sanitizeSourcepackDiagnostic("sourcepack", error) }))
+    process.exitCode = 1
+    candidates = []
+  }
+  if (candidates.length) collectFreshnessCloseoutSourcepack(outputDir, { candidates, includeProgramArtifacts: rawScope === undefined || rawScope === "" }).then((report) => {
     console.log(JSON.stringify({ outputDir, candidates: report.candidates.length, receipts: report.receipts.length, errors: report.errors.length }))
     if (report.errors.length) process.exitCode = 1
   }).catch((error: unknown) => {
