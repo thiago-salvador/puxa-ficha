@@ -207,13 +207,13 @@ function gerarSql(bensPorSq: Map<string, BemLido[]>): string {
       valor: bem.valor,
     }))
     const json = JSON.stringify(bens).replace(/'/g, "''")
-    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=2026-08-15_16:35_BRT campos=candidato_id,ano_eleicao,valor_total,bens,fonte
-INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, valor_total, bens, fonte)
-SELECT c.id, 2026, ${centavosParaSql(candidato.totalCentavos)}, '${json}'::jsonb, ${sqlLiteral(fontePatrimonio(candidato))}
+    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=2026-08-15_16:35_BRT campos=candidato_id,ano_eleicao,sq_candidato,uf_candidatura,ano_arquivo,valor_total,bens,fonte
+INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, sq_candidato, uf_candidatura, ano_arquivo, valor_total, bens, fonte)
+SELECT c.id, 2026, ${sqlLiteral(candidato.sq)}, 'AC', 2026, ${centavosParaSql(candidato.totalCentavos)}, '${json}'::jsonb, ${sqlLiteral(fontePatrimonio(candidato))}
 FROM public.candidatos c
 WHERE c.slug = ${sqlLiteral(candidato.slug)}
   AND (SELECT COUNT(*) FROM public.candidatos WHERE slug IN (${slugs})) = ${coorte.length}
-ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO UPDATE
 SET valor_total = EXCLUDED.valor_total,
     bens = EXCLUDED.bens,
     fonte = EXCLUDED.fonte
@@ -260,6 +260,19 @@ BEGIN
   IF n_contradicoes <> 0 THEN
     RAISE EXCEPTION 'P-AC-POS-REGISTRO: patrimônio e ausência oficial coexistem em % célula(s)', n_contradicoes;
   END IF;
+
+  -- Desde 20260915220000 a chave é (candidato_id, ano_eleicao, sq_candidato):
+  -- linha anterior sem SQ viraria duplicata do upsert por contexto.
+  IF EXISTS (
+    SELECT 1
+    FROM public.patrimonio legado
+    JOIN public.candidatos c ON c.id = legado.candidato_id
+    WHERE c.slug IN (${slugs})
+      AND legado.ano_eleicao IN (2020, 2026)
+      AND legado.sq_candidato IS NULL
+  ) THEN
+    RAISE EXCEPTION 'P-AC-POS-REGISTRO: patrimonio legado sem SQ na coorte; reconciliar via ingest-tse antes do upsert por contexto';
+  END IF;
 END $$;
 
 ${insertsPatrimonio}
@@ -275,7 +288,7 @@ WHERE c.slug = 'dr-luisinho'
   AND NOT EXISTS (
     SELECT 1 FROM public.patrimonio p WHERE p.candidato_id = c.id AND p.ano_eleicao = 2026
   )
-ON CONFLICT (candidato_id, ano_eleicao) DO NOTHING;
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO NOTHING;
 
 -- @write tabela=patrimonio_ausencia_oficial slug=dr-luisinho ano=2020 snapshot=2026-08-16 campos=candidato_id,ano_eleicao,sq_candidato,fonte_url,verificado_em,detalhe
 INSERT INTO public.patrimonio_ausencia_oficial
@@ -288,7 +301,7 @@ WHERE c.slug = 'dr-luisinho'
   AND NOT EXISTS (
     SELECT 1 FROM public.patrimonio p WHERE p.candidato_id = c.id AND p.ano_eleicao = 2020
   )
-ON CONFLICT (candidato_id, ano_eleicao) DO NOTHING;
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO NOTHING;
 
 DO $$
 DECLARE

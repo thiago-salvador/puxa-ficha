@@ -160,8 +160,16 @@ describe("P-PATRIMONIO-NACIONAL carga positiva", () => {
       zipSha256: "a".repeat(64),
     })
 
-    assert.match(sql, /INSERT INTO public\.patrimonio AS p/)
-    assert.match(sql, /ON CONFLICT \(candidato_id, ano_eleicao\) DO UPDATE/)
+    assert.match(
+      sql,
+      /INSERT INTO public\.patrimonio AS p \(candidato_id, ano_eleicao, sq_candidato, uf_candidatura, ano_arquivo, valor_total, bens, fonte\)/,
+    )
+    assert.match(sql, /ON CONFLICT \(candidato_id, ano_eleicao, sq_candidato\) DO UPDATE/)
+    assert.doesNotMatch(sql, /ON CONFLICT \(candidato_id, ano_eleicao\) /)
+    assert.match(sql, /SELECT c\.id, 2026, '101', 'SP', 2026, 100\.00,/, "SQ e UF do contexto TSE entram na linha")
+    const guarda = sql.indexOf("legado sem SQ")
+    assert.ok(guarda > 0, "legado sem SQ precisa falhar fechado em vez de duplicar")
+    assert.ok(guarda < sql.indexOf("INSERT INTO public.patrimonio"), "guarda roda antes do upsert")
     assert.match(
       sql,
       /SELECT COUNT\(\*\)\s+FROM public\.candidatos[\s\S]+?\) = 1/,

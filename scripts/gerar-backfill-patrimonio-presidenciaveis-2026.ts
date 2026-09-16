@@ -281,16 +281,16 @@ function gerarSql(bensPorSq: Map<string, BemLido[]>): string {
     const bensJson = JSON.stringify(bens).replace(/'/g, "''");
     const total = centavosParaSql(candidato.totalCentavos);
 
-    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=${SNAPSHOT.replaceAll(" ", "_")} campos=candidato_id,ano_eleicao,valor_total,bens,fonte
-INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, valor_total, bens, fonte)
-SELECT c.id, 2026, ${total}, '${bensJson}'::jsonb, ${sqlLiteral(fonteDaLinha(candidato))}
+    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=${SNAPSHOT.replaceAll(" ", "_")} campos=candidato_id,ano_eleicao,sq_candidato,ano_arquivo,valor_total,bens,fonte
+INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, sq_candidato, ano_arquivo, valor_total, bens, fonte)
+SELECT c.id, 2026, ${sqlLiteral(candidato.sq)}, 2026, ${total}, '${bensJson}'::jsonb, ${sqlLiteral(fonteDaLinha(candidato))}
 FROM public.candidatos c
 WHERE c.slug = ${sqlLiteral(candidato.slug)}
   AND (
     SELECT COUNT(*) FROM public.candidatos
     WHERE slug IN (${slugs})
   ) = ${COM_BENS.length}
-ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO UPDATE
 SET valor_total = EXCLUDED.valor_total,
     bens = EXCLUDED.bens,
     fonte = EXCLUDED.fonte
@@ -325,6 +325,19 @@ BEGIN
   IF n_coorte NOT IN (0, ${COM_BENS.length})
      AND to_regclass('supabase_migrations.schema_migrations') IS NOT NULL THEN
     RAISE EXCEPTION 'P-PATRIMONIO-2026: coorte parcial em banco com ledger, esperados ${COM_BENS.length} candidatos, encontrados %', n_coorte;
+  END IF;
+
+  -- Desde 20260915220000 a chave é (candidato_id, ano_eleicao, sq_candidato):
+  -- linha anterior sem SQ viraria duplicata do upsert por contexto.
+  IF EXISTS (
+    SELECT 1
+    FROM public.patrimonio legado
+    JOIN public.candidatos c ON c.id = legado.candidato_id
+    WHERE c.slug IN (${slugs})
+      AND legado.ano_eleicao = 2026
+      AND legado.sq_candidato IS NULL
+  ) THEN
+    RAISE EXCEPTION 'P-PATRIMONIO-2026: patrimonio legado sem SQ na coorte; reconciliar via ingest-tse antes do upsert por contexto';
   END IF;
 END $$;
 

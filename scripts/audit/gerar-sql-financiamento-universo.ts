@@ -184,9 +184,8 @@ SELECT
 FROM pf_financiamento_alvos a
 JOIN public.candidatos c ON c.slug = a.slug
 WHERE a.resultado IN ('ausencia_oficial', 'erro')
-ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE SET
-  sq_candidato = EXCLUDED.sq_candidato,
-  uf_candidatura = EXCLUDED.uf_candidatura,
+-- Chave de contexto TSE desde 20260915210000.
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato, uf_candidatura) DO UPDATE SET
   resultado = EXCLUDED.resultado,
   fonte_url = EXCLUDED.fonte_url,
   verificado_em = EXCLUDED.verificado_em,

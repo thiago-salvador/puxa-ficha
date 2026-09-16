@@ -4,6 +4,7 @@ import { tmpdir } from "node:os"
 import { basename, join } from "node:path"
 import { spawnSync } from "node:child_process"
 import test from "node:test"
+import { parse } from "yaml"
 
 const root = process.cwd()
 const runnerPath = join(root, "scripts/audit/apply-senado-2026-release.sh")
@@ -195,6 +196,36 @@ test("workflow manual não aceita versões ou comandos arbitrários", () => {
   assert.match(workflow, /apply-senado-2026-release\.sh/)
   assert.doesNotMatch(workflow, /inputs:\s*[\s\S]*versions:/)
   assert.doesNotMatch(workflow, /supabase db push/)
+})
+
+test("workflow expõe o segredo do banco só aos passos que o usam", () => {
+  type Step = { name?: string; run?: string; uses?: string; env?: Record<string, string> }
+  const parsed = parse(readFileSync(workflowPath, "utf8")) as {
+    env?: Record<string, string>
+    jobs: { apply: { env?: Record<string, string>; steps: Step[] } }
+  }
+  const job = parsed.jobs.apply
+  const secretRef = "${{ secrets.SUPABASE_DB_URL }}"
+
+  assert.equal(parsed.env?.PF_DATABASE_URL, undefined, "segredo no env do workflow")
+  assert.equal(job.env?.PF_DATABASE_URL, undefined, "segredo no env do job alcança npm ci e actions de terceiros")
+
+  const withSecret = job.steps.filter((step) =>
+    Object.values(step.env ?? {}).some((value) => String(value).includes("secrets.SUPABASE_DB_URL")),
+  )
+  assert.deepEqual(
+    withSecret.map((step) => step.name),
+    ["Validar ref e input", "Aplicar conjunto fechado"],
+  )
+  for (const step of withSecret) {
+    assert.equal(step.env?.PF_DATABASE_URL, secretRef)
+    assert.equal(step.uses, undefined, "segredo não pode ir para action de terceiros")
+  }
+
+  const install = job.steps.find((step) => /\bnpm ci\b/.test(step.run ?? ""))
+  assert.ok(install, "passo de instalação ausente")
+  assert.match(install.run ?? "", /npm ci --ignore-scripts/)
+  assert.equal(install.env?.PF_DATABASE_URL, undefined)
 })
 
 test("PG17: aplica, recusa reaplicação, reverte com recusa de perda e reaplica", {

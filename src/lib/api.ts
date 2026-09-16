@@ -6,6 +6,7 @@ import { collectQuizVotacaoTitulos, QUIZ_PERGUNTAS } from "@/data/quiz/perguntas
 import { buildFinanciamentoContexto, buildFinanciamentoDoacaoPerfil, type QuizFinanciamentoDoacaoPerfil } from "@/lib/quiz-financiamento"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient, getAppSupabaseUrl } from "./supabase"
 import { isSupabaseNoRowError } from "./supabase-errors"
+import { selectWithPreMigrationColumns } from "./supabase-pre-migration-select"
 import { resolveReleaseVerifyCacheBypassToken } from "./production-env"
 import { unstableCacheWithSingleFlight } from "./cache-single-flight"
 import { normalizeVotoFromApi } from "@/lib/quiz-scoring"
@@ -88,6 +89,16 @@ const CANDIDATO_COLUMNS = "id, nome_completo, nome_urna, slug, data_nascimento, 
 const CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO = CANDIDATO_COLUMNS.replace(/, formacao_instituicao$/, "")
 const CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT = CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO.replace(/, foto_credito$/, "")
 const CANDIDATO_COLUMNS_LEGACY = CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT.replace(/, verificacao_campos$/, "")
+
+const PATRIMONIO_AUSENCIA_OFICIAL_COLUMNS =
+  "ano_eleicao, ano_arquivo, sq_candidato, uf_candidatura, cargo_candidatura, data_eleicao, tipo_eleicao, fonte_url, verificado_em, detalhe"
+/** Conjunto lido em origin/main (93455ebc), antes de 20260915220000. */
+const PATRIMONIO_AUSENCIA_OFICIAL_COLUMNS_PRE_MIGRATION = "ano_eleicao, fonte_url, verificado_em"
+const FINANCIAMENTO_VERIFICACOES_PUBLICO_COLUMNS =
+  "ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, resultado, fonte_url, verificado_em, detalhe"
+/** Conjunto lido em origin/main (93455ebc), antes de 20260915210000. */
+const FINANCIAMENTO_VERIFICACOES_PUBLICO_COLUMNS_PRE_MIGRATION =
+  "ano_eleicao, resultado, fonte_url, verificado_em, detalhe"
 
 function isMissingOptionalCandidateColumnError(error: { message?: string } | null | undefined): boolean {
   return /foto_credito|verificacao_campos|column .* does not exist/i.test(error?.message ?? "")
@@ -1673,11 +1684,21 @@ async function getCandidatoBySlugFromRelationResource(
 
   // Ausências oficiais de patrimônio por eleição. Falha de leitura não pode
   // virar lista vazia: isso publicaria uma série incompleta como se fosse fato.
-  const { data: patrimonioAusenciasData, error: patrimonioAusenciasError } = await supabase
-    .from("patrimonio_ausencia_oficial")
-    .select("ano_eleicao, ano_arquivo, sq_candidato, uf_candidatura, cargo_candidatura, data_eleicao, tipo_eleicao, fonte_url, verificado_em, detalhe")
-    .in("candidato_id", personLevelIds)
-    .order("ano_eleicao", { ascending: false })
+  // Antes da migration 20260915220000 as colunas de contexto não existem (42703);
+  // o retry usa exatamente o conjunto de colunas já publicado em origin/main.
+  const { data: patrimonioAusenciasData, error: patrimonioAusenciasError } =
+    await selectWithPreMigrationColumns<Record<string, unknown>>(
+      "patrimonio_ausencia_oficial",
+      PATRIMONIO_AUSENCIA_OFICIAL_COLUMNS,
+      PATRIMONIO_AUSENCIA_OFICIAL_COLUMNS_PRE_MIGRATION,
+      (columns) =>
+        supabase
+          .from("patrimonio_ausencia_oficial")
+          .select(columns)
+          .in("candidato_id", personLevelIds)
+          .order("ano_eleicao", { ascending: false })
+          .overrideTypes<Record<string, unknown>[], { merge: false }>(),
+    )
   if (patrimonioAusenciasError) throw patrimonioAusenciasError
   const patrimonioAusenciasOficiais = (patrimonioAusenciasData ??
     []) as unknown as PatrimonioAusenciaOficial[]
@@ -1692,12 +1713,20 @@ async function getCandidatoBySlugFromRelationResource(
     const financiamentoVerificacoesClient = shouldUseServiceRole
       ? supabase
       : createServiceRoleSupabaseClient({ cacheMode: "no-store" })
+    // Antes da migration 20260915210000 a view não expõe o contexto TSE (42703).
     const { data: financiamentoVerificacoesData, error: financiamentoVerificacoesError } =
-      await financiamentoVerificacoesClient
-        .from("financiamento_verificacoes_publico")
-        .select("ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura, resultado, fonte_url, verificado_em, detalhe")
-        .in("candidato_id", personLevelIds)
-        .order("ano_eleicao", { ascending: false })
+      await selectWithPreMigrationColumns<Record<string, unknown>>(
+        "financiamento_verificacoes_publico",
+        FINANCIAMENTO_VERIFICACOES_PUBLICO_COLUMNS,
+        FINANCIAMENTO_VERIFICACOES_PUBLICO_COLUMNS_PRE_MIGRATION,
+        (columns) =>
+          financiamentoVerificacoesClient
+            .from("financiamento_verificacoes_publico")
+            .select(columns)
+            .in("candidato_id", personLevelIds)
+            .order("ano_eleicao", { ascending: false })
+            .overrideTypes<Record<string, unknown>[], { merge: false }>(),
+      )
     if (financiamentoVerificacoesError) throw financiamentoVerificacoesError
     financiamentoVerificacoes = (financiamentoVerificacoesData ??
       []) as unknown as FinanciamentoVerificacaoPublica[]

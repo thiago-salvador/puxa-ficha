@@ -20,14 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     environment: production
+    # PF_DATABASE_URL fica no env de cada passo que o usa, nunca no job: assim
+    # o segredo não alcança npm ci nem as actions de terceiros.
     env:
-      PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
       PF_EXPECTED_SHA: ${{ github.event.inputs.expected_sha }}
     steps:
       - name: Validar ref e input
         env:
           DISPATCH_SHA: ${{ github.sha }}
           DISPATCH_REF: ${{ github.ref }}
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
           set -euo pipefail
           test "$DISPATCH_REF" = "refs/heads/main"
@@ -48,7 +50,11 @@ jobs:
       - uses: ./.github/actions/install-postgresql-client-17
         timeout-minutes: 12
 
-      - run: npm ci
+      # O runner usa só node embutido, python3 da stdlib e psql: nenhum
+      # script de instalação é necessário.
+      - run: npm ci --ignore-scripts
 
       - name: Aplicar conjunto fechado
+        env:
+          PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: bash scripts/audit/apply-senado-2026-release.sh

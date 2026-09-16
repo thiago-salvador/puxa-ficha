@@ -37,6 +37,7 @@ import { financiamentoReceitaDedupKey } from "./financiamento-receita-dedup"
 import { downloadToFile } from "./download-to-file"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
 import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
+import { assertTseContextSchemaReady, pendingContextMigrationError } from "./tse-context-schema"
 import {
   findPatrimonioIdentityReceipt,
   patrimonioAbsencePublicDetail,
@@ -1590,7 +1591,7 @@ async function processFinanciamento(
       const { error: verificationError } = await supabase
         .from("financiamento_verificacoes")
         .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
-      if (verificationError) throw verificationError
+      if (verificationError) throw pendingContextMigrationError(verificationError, "financiamento_verificacoes") ?? verificationError
     }
     results.push({
       source: "tse",
@@ -1650,7 +1651,7 @@ async function planFinanciamentoYearError(
       const { error: verificationError } = await supabase
         .from("financiamento_verificacoes")
         .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
-      if (verificationError) throw verificationError
+      if (verificationError) throw pendingContextMigrationError(verificationError, "financiamento_verificacoes") ?? verificationError
     }
   }
 }
@@ -1711,7 +1712,7 @@ async function planFinanciamentoCandidatesYearError(
     const { error: verificationError } = await supabase
       .from("financiamento_verificacoes")
       .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
-    if (verificationError) throw verificationError
+    if (verificationError) throw pendingContextMigrationError(verificationError, "financiamento_verificacoes") ?? verificationError
   }
 }
 
@@ -1779,6 +1780,14 @@ export async function ingestTSE(
 ): Promise<IngestResult[]> {
   const candidatos = await loadCandidatosParaTse(options.cohort)
   const allResults: IngestResult[] = []
+  if (!options.dryRun) {
+    // Falha antes de baixar ZIP ou gravar: sem as migrations de contexto o
+    // banco só responderia 42P10/coluna inexistente no meio da carga.
+    await assertTseContextSchemaReady(supabase, {
+      patrimonio: !options.skipPatrimonio,
+      financiamento: !options.skipFinanciamento && !options.observationOnly,
+    })
+  }
 
   mkdirSync(DATA_DIR, { recursive: true })
   if (KEEP_TSE_DOWNLOADS) {
