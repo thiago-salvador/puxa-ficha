@@ -8,6 +8,10 @@ import { anosDePleitoDisputado, type LinhaDeTrajetoriaParaPleito } from "../../s
 import { PATRIMONIO_ANO_INICIAL_APLICAVEL } from "../../src/lib/public-profile-dto"
 import { resolveEstadoUf } from "../../src/lib/br-uf"
 
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+
 const CORE_FIELDS = [
   "partido_sigla",
   "situacao_candidatura",
@@ -154,12 +158,12 @@ function hasPublishedTseIdentity(slug: string, envelope: ProfileEnvelope): boole
       scope.includes(`UF=${structuredUf}`) &&
       scope.includes(`cargo=${structuredCargo}`) &&
       scope.includes(`data_geracao=${structuredGeneratedAt}`)
-    const legacyEvidence = new RegExp(`_${uf}\\.csv\\b`, "i").test(scope)
+    const legacyEvidence = new RegExp(`_${escapeRegExp(uf)}\\.csv\\b`, "i").test(scope)
     return officialHost &&
       url.includes(`consulta_cand_${year}`) &&
       (!hasStructuredReceipt ? legacyEvidence : structuredEvidence) &&
       cargoConsistent &&
-      new RegExp(`\\bSQ(?:[_ ]?CANDIDATO)?\\b[^\\d]*${sq}\\b`, "i").test(scope)
+      new RegExp(`\\bSQ(?:[_ ]?CANDIDATO)?\\b[^\\d]*${escapeRegExp(sq)}\\b`, "i").test(scope)
   })
 }
 
