@@ -4957,5 +4957,19 @@
         "2026": "280002548139"
       }
     }
+  },
+  {
+    "slug": "tse-2026-110002553706",
+    "nome_completo": "BENIVAL ALVES DA SILVA",
+    "nome_urna": "BENY GODOY",
+    "cargo_disputado": "Senador",
+    "estado": "MT",
+    "ids": {
+      "camara": null,
+      "senado": null,
+      "tse_sq_candidato": {
+        "2026": "110002553706"
+      }
+    }
   }
 ]

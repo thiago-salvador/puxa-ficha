@@ -274,19 +274,26 @@ export async function ingestWikidata(
       let detalhe = "sem wikidata_id e sem wikipedia_title: nenhuma consulta remota foi executada"
       if (dbCand?.wikidata_id) {
         aplicavel = true
+        result.coleta_url = SPARQL_ENDPOINT
         log("wikidata", `  ${cand.slug}: query por ID (${dbCand.wikidata_id})`)
         binding = await queryWikidataById(dbCand.wikidata_id, deps.fetchJson)
-        detalhe = binding ? "1 binding retornado pelo Wikidata" : "consulta SPARQL valida sem bindings"
+        detalhe = binding
+          ? `1 binding retornado pelo Wikidata; qid=${dbCand.wikidata_id}; escopo=candidato`
+          : `consulta SPARQL valida sem bindings; qid=${dbCand.wikidata_id}; escopo=candidato`
       } else if (cand.wikipedia_title) {
+        result.coleta_url = "https://pt.wikipedia.org/w/api.php"
         const qid = await getWikidataIdFromWikipedia(cand.wikipedia_title, deps.fetchJson)
         if (qid) {
           aplicavel = true
           log("wikidata", `  ${cand.slug}: QID via Wikipedia: ${qid}`)
+          result.coleta_url = SPARQL_ENDPOINT
           binding = await queryWikidataById(qid, deps.fetchJson)
-          detalhe = binding ? "1 binding retornado pelo Wikidata via QID da Wikipedia" : "consulta SPARQL valida sem bindings"
+          detalhe = binding
+            ? `1 binding retornado pelo Wikidata via QID da Wikipedia; qid=${qid}; titulo=${cand.wikipedia_title}; escopo=candidato`
+            : `consulta SPARQL valida sem bindings; qid=${qid}; titulo=${cand.wikipedia_title}; escopo=candidato`
         } else {
           warn("wikidata", `  ${cand.slug}: Wikipedia page sem wikidata_id`)
-          detalhe = "Wikipedia respondeu sem QID; nenhuma consulta SPARQL Wikidata foi executada"
+          detalhe = `Wikipedia respondeu sem QID, nenhuma consulta SPARQL foi executada; titulo=${cand.wikipedia_title}; escopo=candidato`
         }
       } else {
         warn("wikidata", `  ${cand.slug}: sem wikidata_id e sem wikipedia_title, pulando`)

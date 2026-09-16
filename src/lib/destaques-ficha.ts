@@ -268,6 +268,7 @@ export function motivoNaoPromoverMandato(linha: HistoricoPolitico): MotivoNaoPro
  */
 const ROTULO_DE_PROVENIENCIA: Record<string, string> = {
   tse: "TSE",
+  senado: "Senado Federal",
   wikidata: "Wikidata",
   manual: "curadoria manual",
   misto: "fontes combinadas",
@@ -350,12 +351,15 @@ export function montarDestaquesDaFicha({
   const sancoesVigentes = sancoes.filter((s) => sancaoVigente(s, hoje))
   const sancoesExpiradas = sancoes.filter((s) => !sancaoVigente(s, hoje))
   const mandatos = historico.filter((linha) => motivoNaoPromoverMandato(linha) === null)
-  const valorPorAno = new Map(patrimonio.map((p) => [p.ano_eleicao, p.valor_total]))
+  const valoresPorAno = new Map<number, number[]>()
+  for (const row of patrimonio) {
+    valoresPorAno.set(row.ano_eleicao, [...(valoresPorAno.get(row.ano_eleicao) ?? []), row.valor_total])
+  }
   const patrimonioPublicado: DestaquePatrimonio[] = patrimonioEleicoes
     .filter((p) => p.estado === "publicado")
     .map((p) => ({
       ano: p.ano,
-      valorTotal: valorPorAno.get(p.ano) ?? null,
+      valorTotal: valoresPorAno.get(p.ano)?.length === 1 ? valoresPorAno.get(p.ano)![0] : null,
       fonteUrl: p.fonte_url,
     }))
   /**

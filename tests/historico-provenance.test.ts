@@ -20,6 +20,13 @@ test("resolveHistoricoRowProvenance: coluna prevalece sobre observacoes", () => 
     }),
     "wikidata",
   )
+  assert.equal(
+    resolveHistoricoRowProvenance({
+      observacoes: "Mandato com Exercicios datados",
+      proveniencia: "senado",
+    }),
+    "senado",
+  )
 })
 
 test("resolveHistoricoRowProvenance: NULL coluna usa inferencia", () => {

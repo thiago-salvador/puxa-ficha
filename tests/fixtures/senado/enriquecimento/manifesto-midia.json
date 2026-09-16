@@ -1,0 +1,36 @@
+{
+  "schema_version": "senado-paridade-news-manifest-v1",
+  "generated_at": "2026-09-14T12:00:00.000Z",
+  "identity": {
+    "sq_candidato": "9001",
+    "uf": "SP",
+    "nome_completo": "PESSOA SINTETICA DE TESTE",
+    "ano_eleicao": 2026
+  },
+  "selected_media": [
+    {
+      "source_id": "midia-sintetica-1",
+      "title": "Nota sintética 1 sobre PESSOA TESTE",
+      "url": "https://example.com/noticia-sintetica-1",
+      "source": "Veículo Sintético",
+      "published_at": "2026-08-01T12:00:00+00:00",
+      "identity_evidence": "Fixture: título cita o nome de urna sintético."
+    },
+    {
+      "source_id": "midia-sintetica-2",
+      "title": "Nota sintética 2 sobre PESSOA TESTE",
+      "url": "https://example.com/noticia-sintetica-2",
+      "source": "Veículo Sintético",
+      "published_at": "2026-08-02T12:00:00+00:00",
+      "identity_evidence": "Fixture: título cita o nome de urna sintético."
+    },
+    {
+      "source_id": "midia-sintetica-3",
+      "title": "Nota sintética 3 sobre PESSOA TESTE",
+      "url": "https://example.com/noticia-sintetica-3",
+      "source": "Veículo Sintético",
+      "published_at": "2026-08-03T12:00:00+00:00",
+      "identity_evidence": "Fixture: título cita o nome de urna sintético."
+    }
+  ]
+}

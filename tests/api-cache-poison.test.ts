@@ -361,6 +361,8 @@ describe("fail-soft legítimo continua cacheável", () => {
               pontos_atencao: [{ titulo: "a" }, { titulo: "b" }],
             },
           ]),
+        // Série de patrimônio do aviso F3 (patrimonio_atipico) responde vazia.
+        patrimonio: () => okJson([]),
       },
       failResponse
     )

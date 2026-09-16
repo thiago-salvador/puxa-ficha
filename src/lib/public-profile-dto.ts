@@ -11,6 +11,10 @@ import type {
   PontoAtencao,
   SancaoAdministrativa,
   VotoCandidato,
+  TransparenciaFamiliaPublico,
+  TransparenciaFamiliaVerificacao,
+  TransparenciaRegistroPublico,
+  GastoParlamentar,
 } from "@/lib/types"
 import {
   buildCargoDisputadoProvenienceNote,
@@ -111,6 +115,12 @@ function publicPatrimonio(row: Patrimonio, index: number) {
     id: compactPublicId("pat", row.id, index),
     ano_eleicao: row.ano_eleicao,
     valor_total: row.valor_total,
+    ano_arquivo: row.ano_arquivo ?? null,
+    sq_candidato: row.sq_candidato ?? null,
+    uf_candidatura: row.uf_candidatura ?? null,
+    cargo_candidatura: row.cargo_candidatura ?? null,
+    data_eleicao: row.data_eleicao ?? null,
+    tipo_eleicao: row.tipo_eleicao ?? null,
     bens: (row.bens ?? []).map((bem) => ({
       tipo: sanitizePublicText(bem.tipo),
       descricao: replaceInternalEditorialJargon(bem.descricao ?? ""),
@@ -125,6 +135,21 @@ export type { PatrimonioEleicaoEstado, PatrimonioEleicaoPublico } from "@/lib/ty
 export const PATRIMONIO_ANO_INICIAL_APLICAVEL = 2006
 
 /**
+ * Explica o vazio técnico dos layouts TSE sem transformá-lo em declaração de
+ * ausência patrimonial. Só o padrão confirmado com ST_DECLARAR_BENS=N é
+ * convertido; conflitos com S e detalhes já humanos permanecem visíveis.
+ */
+export function humanizarDetalheAusenciaPatrimonio(detalhe: string | null | undefined): string | null {
+  if (!detalhe) return detalhe ?? null
+  if (/ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*S\b/i.test(detalhe)) return detalhe
+  const declaracaoNegativa = /ST[_\s]?DECLARAR[_\s]?BENS\s*[=:]\s*N\b/i.test(detalhe)
+  const identidade = /SQ[_\s]?CANDIDATO/i.test(detalhe)
+  const semBem = /(?:não|nao|sem|nenhum)[^.;,]*(?:bem(?:es)?|bens|patrim[oô]nio)/i.test(detalhe)
+  if (!declaracaoNegativa || !identidade || !semBem) return detalhe
+  return "Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência de patrimônio nem de declaração."
+}
+
+/**
  * Estado de patrimônio por eleição aplicável (>= 2006). A ficha não pode
  * ocultar o ano em que o candidato disputou eleição sem dado: ou o bem está
  * publicado, ou a ausência foi confirmada no pacote oficial do TSE, ou a
@@ -132,11 +157,26 @@ export const PATRIMONIO_ANO_INICIAL_APLICAVEL = 2006
  * silencioso.
  */
 export function buildPatrimonioEleicoes(
-  patrimonio: ReadonlyArray<{ ano_eleicao: number }>,
+  patrimonio: ReadonlyArray<{
+    ano_eleicao: number
+    ano_arquivo?: number | null
+    sq_candidato?: string | null
+    uf_candidatura?: string | null
+    cargo_candidatura?: string | null
+    data_eleicao?: string | null
+    tipo_eleicao?: string | null
+  }>,
   ausenciasOficiais: ReadonlyArray<{
     ano_eleicao: number
+    ano_arquivo?: number | null
+    sq_candidato?: string | null
+    uf_candidatura?: string | null
+    cargo_candidatura?: string | null
+    data_eleicao?: string | null
+    tipo_eleicao?: string | null
     fonte_url?: string | null
     verificado_em?: string | null
+    detalhe?: string | null
   }>,
   historico: ReadonlyArray<{
     periodo_inicio?: number | null
@@ -161,22 +201,72 @@ export function buildPatrimonioEleicoes(
     anos.add(ano)
   }
 
-  const anosPublicados = new Set(patrimonio.map((row) => row.ano_eleicao))
-  const ausenciaPorAno = new Map(ausenciasOficiais.map((ausencia) => [ausencia.ano_eleicao, ausencia]))
+  const patrimonioPorAno = new Map<number, typeof patrimonio>()
+  const ausenciaPorAno = new Map<number, typeof ausenciasOficiais>()
+  for (const row of patrimonio) {
+    patrimonioPorAno.set(row.ano_eleicao, [...(patrimonioPorAno.get(row.ano_eleicao) ?? []), row])
+  }
+  for (const row of ausenciasOficiais) {
+    ausenciaPorAno.set(row.ano_eleicao, [...(ausenciaPorAno.get(row.ano_eleicao) ?? []), row])
+  }
 
   return [...anos]
     .sort((a, b) => b - a)
     .map((ano) => {
-      if (anosPublicados.has(ano)) {
-        return { ano, estado: "publicado", fonte_url: null, verificado_em: null }
+      const publicados = patrimonioPorAno.get(ano) ?? []
+      const ausencias = ausenciaPorAno.get(ano) ?? []
+      const contextos = [
+        ...publicados.map((row) => ({
+          estado: "publicado" as const,
+          ano_eleicao: ano,
+          ano_arquivo: row.ano_arquivo ?? null,
+          sq_candidato: row.sq_candidato ?? null,
+          uf_candidatura: row.uf_candidatura ?? null,
+          cargo_candidatura: row.cargo_candidatura ?? null,
+          data_eleicao: row.data_eleicao ?? null,
+          tipo_eleicao: row.tipo_eleicao ?? null,
+          fonte_url: null,
+          verificado_em: null,
+        })),
+        ...ausencias.map((row) => ({
+          estado: "vazio_confirmado" as const,
+          ano_eleicao: ano,
+          ano_arquivo: row.ano_arquivo ?? null,
+          sq_candidato: row.sq_candidato ?? null,
+          uf_candidatura: row.uf_candidatura ?? null,
+          cargo_candidatura: row.cargo_candidatura ?? null,
+          data_eleicao: row.data_eleicao ?? null,
+          tipo_eleicao: row.tipo_eleicao ?? null,
+          fonte_url: row.fonte_url ?? null,
+          verificado_em: row.verificado_em ?? null,
+          ...(row.detalhe ? { detalhe: humanizarDetalheAusenciaPatrimonio(row.detalhe) } : {}),
+        })),
+      ]
+      const contextosExplicitos = contextos.some((row) =>
+        row.sq_candidato != null ||
+        row.ano_arquivo != null ||
+        row.cargo_candidatura != null ||
+        row.data_eleicao != null ||
+        row.tipo_eleicao != null,
+      )
+      if (publicados.length > 0) {
+        return {
+          ano,
+          estado: "publicado",
+          fonte_url: null,
+          verificado_em: null,
+          ...(contextosExplicitos ? { contextos } : {}),
+        }
       }
-      const ausencia = ausenciaPorAno.get(ano)
-      if (ausencia) {
+      if (ausencias.length > 0) {
+        const ausencia = ausencias.length === 1 ? ausencias[0] : null
         return {
           ano,
           estado: "vazio_confirmado",
-          fonte_url: ausencia.fonte_url ?? null,
-          verificado_em: ausencia.verificado_em ?? null,
+          fonte_url: ausencia?.fonte_url ?? null,
+          verificado_em: ausencia?.verificado_em ?? null,
+          ...(ausencia?.detalhe ? { detalhe: ausencia.detalhe } : {}),
+          ...(contextosExplicitos ? { contextos } : {}),
         }
       }
       return { ano, estado: "nao_coletado", fonte_url: null, verificado_em: null }
@@ -217,7 +307,13 @@ export function resolvePatrimonioEleicoes(
   },
 ): PatrimonioEleicaoPublico[] {
   const composta = ficha.patrimonio_eleicoes
-  if (Array.isArray(composta)) return composta.filter(ehPatrimonioEleicaoPublico)
+  if (Array.isArray(composta)) {
+    return composta.filter(ehPatrimonioEleicaoPublico).map((row) =>
+      row.detalhe
+        ? { ...row, detalhe: humanizarDetalheAusenciaPatrimonio(row.detalhe) }
+        : row,
+    )
+  }
   return buildPatrimonioEleicoes(
     ficha.patrimonio ?? [],
     ficha.patrimonio_ausencias_oficiais ?? [],
@@ -229,6 +325,7 @@ function publicFinanciamento(row: Financiamento, index: number) {
   return {
     id: compactPublicId("fin", row.id, index),
     ano_eleicao: row.ano_eleicao,
+    cargo_candidatura: row.cargo_candidatura ?? null,
     total_arrecadado: row.total_arrecadado,
     total_fundo_partidario: row.total_fundo_partidario,
     total_fundo_eleitoral: row.total_fundo_eleitoral,
@@ -341,7 +438,8 @@ function publicLegislacaoMandatoExecutivo(row: LegislacaoMandatoExecutivo, index
 }
 
 /**
- * Linhas de cota da Câmara não são exibíveis enquanto a base de agregação não estiver fechada.
+ * Linhas de cota da Câmara só são exibíveis quando a própria linha carrega o
+ * controle independente do snapshot que a produziu.
  *
  * Em 17/08 tentamos recalcular essas linhas da fonte oficial e o controle positivo falhou:
  * o recibo de 16/08 registra `jhc 2019` com 355 documentos e R$ 351.517,43, e o
@@ -355,14 +453,37 @@ function publicLegislacaoMandatoExecutivo(row: LegislacaoMandatoExecutivo, index
  * que a própria ficha cita é pior do que não mostrar: a regra do projeto proíbe exibir valor
  * sem fonte rastreável, e não proíbe omitir a seção. Nenhuma linha foi apagada do banco.
  *
- * Para reativar: fechar a definição de "gasto do ano" (líquido, documento ou líquido de glosa),
- * pinar o snapshot anual com sha256, recalcular filtrando por `ideCadastro`/`nuDeputadoId` e
- * validar contra um controle positivo que reproduza ao centavo. Plano em
- * `entregas/COTA-CAMARA/PLANO-POS-LANCAMENTO.md`.
+ * Linhas legadas continuam bloqueadas. Uma nova linha só pode ser reativada
+ * quando carrega a definição de "gasto do ano" (líquido, documento ou líquido
+ * de glosa), o hash do snapshot anual e um controle positivo que reproduza o
+ * resultado ao centavo.
  */
-export function gastoParlamentarExibivel(fonte: string | null | undefined): boolean {
+function linhaCamaraComSnapshotValidado(detalhamento: unknown): boolean {
+  if (!detalhamento || typeof detalhamento !== "object" || Array.isArray(detalhamento)) return false
+  const provenance = (detalhamento as Record<string, unknown>).proveniencia
+  if (!provenance || typeof provenance !== "object" || Array.isArray(provenance)) return false
+  const p = provenance as Record<string, unknown>
+  const url = typeof p.fonte_url === "string" ? p.fonte_url : ""
+  const hash = typeof p.consulta_snapshot_sha256 === "string" ? p.consulta_snapshot_sha256 : ""
+  const id = p.id_camara
+  const pages = p.consulta_paginas
+  return p.controle_independente === true &&
+    /^https:\/\/dadosabertos\.camara\.leg\.br\/api\/v2\/deputados\/\d+\/despesas$/.test(url) &&
+    /^[0-9a-f]{64}$/i.test(hash) &&
+    Number.isInteger(id) && Number(id) > 0 &&
+    Number.isInteger(pages) && Number(pages) > 0
+}
+
+export function gastoParlamentarExibivel(
+  fonte: string | null | undefined,
+  detalhamento?: unknown,
+): boolean {
   const f = (fonte ?? "").toLowerCase()
-  return !(f.includes("camara") || f.includes("câmara"))
+  // O coletor individual da Transparência é materializado para auditoria e
+  // recibos, mas suas famílias (cartões, viagens e contratos) não são cota
+  // parlamentar e não podem aparecer como total financeiro parlamentar.
+  if (f.includes("camara") || f.includes("câmara")) return linhaCamaraComSnapshotValidado(detalhamento)
+  return !f.includes("portal da transparência")
 }
 
 function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][number], index: number) {
@@ -370,7 +491,9 @@ function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][n
   const detalhamento = Array.isArray(detalhamentoBruto)
     ? detalhamentoBruto
     : detalhamentoBruto && typeof detalhamentoBruto === "object"
-      ? Object.entries(detalhamentoBruto).map(([categoria, valor]) => ({ categoria, valor }))
+      ? Array.isArray((detalhamentoBruto as Record<string, unknown>).categorias)
+        ? (detalhamentoBruto as Record<string, unknown>).categorias as unknown[]
+        : Object.entries(detalhamentoBruto).map(([categoria, valor]) => ({ categoria, valor }))
       : []
 
   return {
@@ -412,6 +535,81 @@ function publicGastosExecutivo(row: NonNullable<FichaCandidato["gastos_executivo
     fonte: row.fonte,
     coletado_em: row.coletado_em,
   }
+}
+
+export function numberFromPublicValue(value: unknown): number | null {
+  if (typeof value === "number" && Number.isFinite(value)) return value
+  if (typeof value !== "string") return null
+  const raw = value.trim().replace(/[^0-9,.-]/g, "")
+  if (!raw) return null
+  const normalized = raw.includes(",")
+    ? raw.replace(/\./g, "").replace(",", ".")
+    : /^\d{1,3}(?:\.\d{3})+$/.test(raw) ? raw.replace(/\./g, "") : raw
+  const parsed = Number(normalized)
+  return Number.isFinite(parsed) ? parsed : null
+}
+
+function publicTransparenciaRegistro(familia: string, row: Record<string, unknown>): TransparenciaRegistroPublico {
+  const objectName = (key: string, nested: string): string | null => {
+    const value = row[key]
+    if (!value || typeof value !== "object") return null
+    const nestedValue = (value as Record<string, unknown>)[nested]
+    return typeof nestedValue === "string" ? maskDocumentLikeSequences(nestedValue) : null
+  }
+  const isViagem = familia === "viagens"
+  const isContrato = familia === "contratos"
+  const dateKeys = isViagem ? ["dataInicioAfastamento"] : isContrato ? ["dataAssinatura", "dataInicioVigencia", "dataPublicacao"] : ["dataTransacao"]
+  const valueKeys = isViagem ? ["valorTotalViagem"] : isContrato ? ["valorContrato", "valorGlobal", "valor"] : ["valorTransacao"]
+  const dateKey = dateKeys.find((key) => typeof row[key] === "string")
+  const valueKey = valueKeys.find((key) => row[key] !== null && row[key] !== undefined)
+  const date = dateKey
+    ? String(row[dateKey])
+    : null
+  const end = isViagem && typeof row.dataFimAfastamento === "string" ? row.dataFimAfastamento : null
+  const value = valueKey ? row[valueKey] : null
+  const orgao = objectName(isViagem ? "orgao" : isContrato ? "contratante" : "unidadeGestora", "nome") ?? objectName("orgao", "nome")
+  const unidade = objectName("unidadeGestora", "nome")
+  const contractObject = typeof row.objeto === "string" ? maskDocumentLikeSequences(row.objeto) : null
+  return {
+    id: typeof row.id === "string" || typeof row.id === "number" ? row.id : null,
+    data: date,
+    data_fim: end,
+    valor: numberFromPublicValue(value),
+    orgao,
+    unidade,
+    categoria: typeof row.tipoViagem === "string" ? maskDocumentLikeSequences(row.tipoViagem) : typeof row.tipoCartao === "object" && row.tipoCartao !== null && typeof (row.tipoCartao as Record<string, unknown>).descricao === "string" ? maskDocumentLikeSequences(String((row.tipoCartao as Record<string, unknown>).descricao)) : typeof row.tipoContrato === "string" ? maskDocumentLikeSequences(row.tipoContrato) : null,
+    descricao: isViagem ? objectName("viagem", "motivo") : isContrato ? contractObject : objectName("estabelecimento", "nome"),
+  }
+}
+
+export function publicTransparencia(
+  gastos: readonly GastoParlamentar[],
+  verificacoes: readonly TransparenciaFamiliaVerificacao[] = [],
+): TransparenciaFamiliaPublico[] {
+  const grouped = new Map<string, TransparenciaRegistroPublico[]>()
+  for (const row of gastos) {
+    const detail = row.detalhamento as unknown
+    if (!detail || typeof detail !== "object" || Array.isArray(detail)) continue
+    const familia = (detail as Record<string, unknown>).transparencia_familia
+    const registros = (detail as Record<string, unknown>).registros
+    if ((familia !== "cartoes" && familia !== "viagens" && familia !== "contratos") || !Array.isArray(registros)) continue
+    const current = grouped.get(familia) ?? []
+    current.push(...registros.filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === "object" && !Array.isArray(item)).map((item) => publicTransparenciaRegistro(familia, item)))
+    grouped.set(familia, current)
+  }
+  return verificacoes.map((verification) => ({
+    ...verification,
+    // Paginação terminal + endpoint + data provam o recorte consultado. Isso
+    // não transforma a consulta em cobertura histórica/global da fonte.
+    cobertura: verification.endpoint && verification.paginas > 0 && verification.executado_em
+      ? verification.resultado === "vazio_confirmado"
+        ? "vazio_escopo_verificado" as const
+        : verification.resultado === "encontrado"
+          ? "dados_presentes_escopo_verificado" as const
+          : "dados_presentes_cobertura_nao_verificada" as const
+      : "dados_presentes_cobertura_nao_verificada" as const,
+    registros: grouped.get(verification.familia) ?? [],
+  }))
 }
 
 function publicSancao(row: SancaoAdministrativa, index: number) {
@@ -527,6 +725,11 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     chapa_2026: ficha.chapa_2026 ?? null,
     biografia: ficha.biografia == null ? null : replaceInternalEditorialJargon(ficha.biografia),
     foto_url: ficha.foto_url,
+    // O crédito da foto é uma parte da proveniência pública da imagem. Manter
+    // o objeto no DTO permite que consumidores da API exibam a mesma origem
+    // que a ficha server-renderizada, inclusive para fontes primárias que não
+    // são TSE ou Wikimedia Commons.
+    foto_credito: ficha.foto_credito ?? null,
     site_campanha: ficha.site_campanha,
     redes_sociais: publicSocialLinks(ficha.redes_sociais),
     // Fontes passam pela MESMA limpeza: a varredura achou 65 entradas em 63
@@ -575,8 +778,9 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     legislacao_mandato_executivo_truncados:
       ficha.legislacao_mandato_executivo_truncados ?? false,
     gastos_parlamentares: (ficha.gastos_parlamentares ?? [])
-      .filter((row) => gastoParlamentarExibivel(row.fonte))
+      .filter((row) => gastoParlamentarExibivel(row.fonte, row.detalhamento))
       .map(publicGastosParlamentares),
+    transparencia: publicTransparencia(ficha.gastos_parlamentares ?? [], ficha.transparencia ?? []),
     gastos_executivo: (ficha.gastos_executivo ?? []).map(publicGastosExecutivo),
     sancoes_administrativas: (ficha.sancoes_administrativas ?? []).map(publicSancao),
     noticias: (ficha.noticias ?? []).map(publicNoticia),
@@ -595,6 +799,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     // podem ter a mesma cara nem no JSON.
     sancoes_verificacao: ficha.sancoes_verificacao ?? null,
     processos_verificacao: ficha.processos_verificacao ?? null,
+    filiacao_verificacao: ficha.filiacao_verificacao ?? null,
+    tcu_verificacao: ficha.tcu_verificacao ?? null,
     trajetoria_verificacao: ficha.trajetoria_verificacao ?? null,
     patrimonio_verificacao: ficha.patrimonio_verificacao ?? null,
     votacoes_verificacao: ficha.votacoes_verificacao ?? null,

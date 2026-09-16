@@ -1,4 +1,7 @@
 import { supabase } from "./supabase"
+import { createHash } from "node:crypto"
+import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs"
+import { dirname, resolve } from "node:path"
 import {
   GASTOS_RECENT_ANOS,
   hasFullVotacaoIdCoverage,
@@ -32,26 +35,172 @@ interface CamaraResponse<T> {
   links: { rel: string; href: string }[]
 }
 
-function camaraFetchJSON<T>(url: string): Promise<T> {
-  return fetchJSON<T>(url, undefined, CAMARA_FETCH_RETRIES, CAMARA_FETCH_TIMEOUT_MS)
+function camaraFetchJSON<T>(url: string, options: Parameters<typeof fetchJSON<T>>[4] = {}): Promise<T> {
+  return fetchJSON<T>(url, undefined, CAMARA_FETCH_RETRIES, CAMARA_FETCH_TIMEOUT_MS, options)
 }
 
-async function fetchPaginated<T>(baseUrl: string, params: Record<string, string> = {}): Promise<T[]> {
+type CamaraPageCapture = { page: number; url: string; body: string }
+
+type CamaraExpensePageReceipt = {
+  page: number
+  status: 200
+  url: string
+  fetched_at: string
+  bytes: number
+  sha256: string
+  body_path: string
+}
+
+type CamaraExpenseSnapshot = {
+  id_camara: number
+  ano: number
+  id_legislatura: number
+  fonte_url: string
+  consulta_paginas: number
+  consulta_snapshot_sha256: string
+  fetched_at: string
+  pages: CamaraExpensePageReceipt[]
+  controle_independente: boolean
+  valor_liquido_fonte_cents: number
+  valor_documento_fonte_cents: number
+  valor_glosa_fonte_cents: number
+  direct_total_cents: number
+  grouped_total_cents: number
+}
+
+async function fetchPaginated<T>(
+  baseUrl: string,
+  params: Record<string, string> = {},
+  onPage?: (capture: CamaraPageCapture) => void | Promise<void>,
+): Promise<T[]> {
   const all: T[] = []
   let page = 1
 
   while (true) {
     const searchParams = new URLSearchParams({ ...params, itens: "100", pagina: String(page) })
     const url = `${baseUrl}?${searchParams}`
-    const json = await camaraFetchJSON<CamaraResponse<T[]>>(url)
-    if (!json.dados || json.dados.length === 0) break
-    all.push(...json.dados)
-    if (json.dados.length < 100) break
+    let body = ""
+    const json = await camaraFetchJSON<CamaraResponse<T[]>>(url, {
+      onResponseBody: (raw) => {
+        body = raw
+      },
+    })
+    await onPage?.({ page, url, body })
+    const dados = requireCamaraArray(json, url)
+    if (dados.length === 0) break
+    all.push(...dados)
+    if (dados.length < 100) break
     page++
     await sleep(1000)
   }
 
   return all
+}
+
+export function requireCamaraArray<T>(json: CamaraResponse<T[]>, url: string): T[] {
+  if (!Array.isArray(json.dados)) {
+    throw new Error(`Resposta inválida da API Câmara: dados não é uma lista (${url})`)
+  }
+  return json.dados
+}
+
+export function applyCamaraExpenseSourceFilter<T>(query: { eq(column: string, value: unknown): T }): T {
+  return query.eq("fonte", "Camara")
+}
+
+function sha256(value: string): string {
+  return createHash("sha256").update(value, "utf8").digest("hex")
+}
+
+function writeCamaraExpensePageSnapshot(
+  snapshotDir: string,
+  idCamara: number,
+  ano: number,
+  capture: CamaraPageCapture,
+): CamaraExpensePageReceipt {
+  const bodyPath = resolve(snapshotDir, String(idCamara), String(ano), `pagina-${capture.page}.json`)
+  mkdirSync(dirname(bodyPath), { recursive: true })
+  writeFileSync(bodyPath, capture.body, "utf8")
+  return {
+    page: capture.page,
+    status: 200,
+    url: capture.url,
+    fetched_at: new Date().toISOString(),
+    bytes: Buffer.byteLength(capture.body, "utf8"),
+    sha256: sha256(capture.body),
+    body_path: bodyPath,
+  }
+}
+
+export function readCamaraExpenseSnapshot(
+  snapshotDir: string,
+  idCamara: number,
+  ano: number,
+  idLegislatura: number,
+): { despesas: Record<string, unknown>[]; pages: CamaraExpensePageReceipt[] } | null {
+  const manifestPath = resolve(snapshotDir, String(idCamara), String(ano), "manifest.json")
+  let pages: CamaraExpensePageReceipt[]
+  if (existsSync(manifestPath)) {
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as CamaraExpenseSnapshot
+    if (manifest.id_camara !== idCamara || manifest.ano !== ano || manifest.id_legislatura !== idLegislatura) {
+      throw new Error(`Snapshot Câmara fora do escopo: ${manifestPath}`)
+    }
+    if (!Array.isArray(manifest.pages) || manifest.pages.length === 0) {
+      throw new Error(`Snapshot Câmara sem páginas: ${manifestPath}`)
+    }
+    pages = manifest.pages
+  } else {
+    const yearDir = dirname(manifestPath)
+    if (!existsSync(yearDir)) return null
+    const pageFiles = readdirSync(yearDir)
+      .filter((name) => /^pagina-\d+\.json$/.test(name))
+      .sort((a, b) => Number(a.match(/\d+/)?.[0]) - Number(b.match(/\d+/)?.[0]))
+    if (pageFiles.length === 0) return null
+    pages = pageFiles.map((name) => {
+      const bodyPath = resolve(yearDir, name)
+      const body = readFileSync(bodyPath, "utf8")
+      const page = Number(name.match(/\d+/)?.[0])
+      return {
+        page,
+        status: 200,
+        url: `${API}/deputados/${idCamara}/despesas?ano=${ano}&idLegislatura=${idLegislatura}&itens=100&pagina=${page}`,
+        fetched_at: statSync(bodyPath).mtime.toISOString(),
+        bytes: Buffer.byteLength(body, "utf8"),
+        sha256: sha256(body),
+        body_path: bodyPath,
+      }
+    })
+  }
+  const despesas: Record<string, unknown>[] = []
+  for (const [index, page] of pages.entries()) {
+    const url = new URL(page.url)
+    if (page.page !== index + 1 || url.origin !== "https://dadosabertos.camara.leg.br" ||
+      url.pathname !== `/api/v2/deputados/${idCamara}/despesas` ||
+      url.searchParams.get("ano") !== String(ano) ||
+      url.searchParams.get("idLegislatura") !== String(idLegislatura) ||
+      url.searchParams.get("pagina") !== String(page.page)) {
+      throw new Error(`Página Câmara fora do escopo ou sequência: ${page.body_path}`)
+    }
+    const body = readFileSync(page.body_path, "utf8")
+    if (sha256(body) !== page.sha256 || Buffer.byteLength(body, "utf8") !== page.bytes) {
+      throw new Error(`Snapshot Câmara diverge do hash: ${page.body_path}`)
+    }
+    const json = JSON.parse(body) as CamaraResponse<Record<string, unknown>[]>
+    const dados = requireCamaraArray(json, page.url)
+    const hasNext = Array.isArray(json.links) && json.links.some((link) => link.rel === "next")
+    // Uma interrupção pode deixar páginas íntegras, mas sem o final da consulta.
+    // Nunca promover esse cache parcial a um snapshot completo.
+    if (index === pages.length - 1 && (hasNext || dados.length >= 100)) return null
+    despesas.push(...dados)
+  }
+  if (existsSync(manifestPath)) {
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as CamaraExpenseSnapshot
+    const snapshotHash = sha256(pages.map((page) => page.sha256).join("\n"))
+    if (snapshotHash !== manifest.consulta_snapshot_sha256) {
+      throw new Error(`Manifesto Câmara diverge das páginas: ${manifestPath}`)
+    }
+  }
+  return { despesas, pages }
 }
 
 /**
@@ -174,29 +323,97 @@ async function ingestPerfil(
   log("camara", `  ${slug}: perfil atualizado`)
 }
 
-async function ingestGastos(idCamara: number, candidatoId: string, slug: string): Promise<number> {
+async function ingestGastos(
+  idCamara: number,
+  candidatoId: string,
+  slug: string,
+  expenseSnapshotDir?: string,
+  expenseSnapshotCacheOnly = false,
+): Promise<number> {
   // Fetch expenses from 2019 onwards (current + previous legislature)
   // Note: API returns 504 for older years on ex-deputies
-  const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025]
+  const anos = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
   let totalRows = 0
 
   for (const ano of anos) {
-    const despesas = await fetchPaginated<Record<string, unknown>>(
+    const idLegislatura = ano <= 2022 ? 56 : 57
+    const cached = expenseSnapshotDir
+      ? readCamaraExpenseSnapshot(expenseSnapshotDir, idCamara, ano, idLegislatura)
+      : null
+    if (expenseSnapshotCacheOnly && !cached) {
+      throw new Error(`Snapshot Câmara ausente em modo cache-only: ${idCamara}/${ano}`)
+    }
+    const pageReceipts: CamaraExpensePageReceipt[] = cached?.pages ?? []
+    const despesas = cached?.despesas ?? await fetchPaginated<Record<string, unknown>>(
       `${API}/deputados/${idCamara}/despesas`,
-      { ano: String(ano) }
+      {
+        ano: String(ano),
+        // A API retorna um vazio enganoso quando a legislatura não é informada.
+        // O catálogo oficial fixa 56 em 2019-2022 e 57 em 2023-2026.
+        idLegislatura: String(idLegislatura),
+      },
+      expenseSnapshotDir
+        ? (capture) => {
+            pageReceipts.push(writeCamaraExpensePageSnapshot(expenseSnapshotDir, idCamara, ano, capture))
+          }
+        : undefined,
     )
 
-    if (despesas.length === 0) continue
+    if (despesas.length === 0) {
+      if (expenseSnapshotDir) {
+        const snapshotHash = sha256(pageReceipts.map((page) => page.sha256).join("\n"))
+        const emptySnapshot: CamaraExpenseSnapshot = {
+          id_camara: idCamara,
+          ano,
+          id_legislatura: idLegislatura,
+          fonte_url: `${API}/deputados/${idCamara}/despesas`,
+          consulta_paginas: pageReceipts.length,
+          consulta_snapshot_sha256: snapshotHash,
+          fetched_at: pageReceipts.at(-1)?.fetched_at ?? new Date().toISOString(),
+          pages: pageReceipts,
+          controle_independente: pageReceipts.length > 0,
+          valor_liquido_fonte_cents: 0,
+          valor_documento_fonte_cents: 0,
+          valor_glosa_fonte_cents: 0,
+          direct_total_cents: 0,
+          grouped_total_cents: 0,
+        }
+        const manifestPath = resolve(expenseSnapshotDir, String(idCamara), String(ano), "manifest.json")
+        writeFileSync(manifestPath, `${JSON.stringify(emptySnapshot, null, 2)}\n`, "utf8")
+      }
+      continue
+    }
 
     const porCategoria: Record<string, number> = {}
     let totalGasto = 0
     const todosGastos: { categoria: string; valor: number; fornecedor: string }[] = []
+    let valorDocumentoFonte = 0
+    let valorGlosaFonte = 0
 
     for (const d of despesas) {
-      const valor = Number(d.valorDocumento) || 0
+      const valorLiquidoRaw = d.valorLiquido
+      if (
+        valorLiquidoRaw === null ||
+        valorLiquidoRaw === undefined ||
+        (typeof valorLiquidoRaw === "string" && valorLiquidoRaw.trim() === "")
+      ) {
+        throw new Error(`Resposta Câmara sem valorLiquido: ${idCamara}/${ano}`)
+      }
+      const valorLiquido = Number(valorLiquidoRaw)
+      if (!Number.isFinite(valorLiquido)) {
+        throw new Error(`Resposta Câmara sem valorLiquido numérico: ${idCamara}/${ano}`)
+      }
+      const valorDocumento = Number(d.valorDocumento)
+      const valorGlosa = Number(d.valorGlosa)
+      if (!Number.isFinite(valorDocumento) || !Number.isFinite(valorGlosa)) {
+        throw new Error(`Resposta Câmara sem valorDocumento/valorGlosa numéricos: ${idCamara}/${ano}`)
+      }
+      const valor = valorLiquido
       const categoria = String(d.tipoDespesa || "Outros")
       const fornecedor = String(d.nomeFornecedor || "")
       totalGasto += valor
+      valorDocumentoFonte += valorDocumento
+      valorGlosaFonte += valorGlosa
       porCategoria[categoria] = (porCategoria[categoria] || 0) + valor
       todosGastos.push({ categoria, valor, fornecedor })
     }
@@ -215,12 +432,41 @@ async function ingestGastos(idCamara: number, candidatoId: string, slug: string)
         fornecedor: g.fornecedor,
       }))
 
-    const { data: existing } = await supabase
+    const directTotalCents = despesas.reduce((sum, d) => sum + Math.round(Number(d.valorLiquido) * 100), 0)
+    const valorDocumentoFonteCents = Math.round(valorDocumentoFonte * 100)
+    const valorGlosaFonteCents = Math.round(valorGlosaFonte * 100)
+    const groupedTotalCents = Object.values(porCategoria).reduce((sum, value) => sum + Math.round(value * 100), 0)
+    const controleIndependente = directTotalCents === groupedTotalCents && pageReceipts.length > 0
+    const fonteUrl = `${API}/deputados/${idCamara}/despesas`
+    const snapshotHash = sha256(pageReceipts.map((page) => page.sha256).join("\n"))
+    const fetchedAt = pageReceipts.at(-1)?.fetched_at ?? new Date().toISOString()
+    const snapshot: CamaraExpenseSnapshot = {
+      id_camara: idCamara,
+      ano,
+      id_legislatura: idLegislatura,
+      fonte_url: fonteUrl,
+      consulta_paginas: pageReceipts.length,
+      consulta_snapshot_sha256: snapshotHash,
+      fetched_at: fetchedAt,
+      pages: pageReceipts,
+      controle_independente: controleIndependente,
+      valor_liquido_fonte_cents: directTotalCents,
+      valor_documento_fonte_cents: valorDocumentoFonteCents,
+      valor_glosa_fonte_cents: valorGlosaFonteCents,
+      direct_total_cents: directTotalCents,
+      grouped_total_cents: groupedTotalCents,
+    }
+    if (expenseSnapshotDir) {
+      const manifestPath = resolve(expenseSnapshotDir, String(idCamara), String(ano), "manifest.json")
+      writeFileSync(manifestPath, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8")
+    }
+
+    const expenseLookup = supabase
       .from("gastos_parlamentares")
       .select("id")
       .eq("candidato_id", candidatoId)
       .eq("ano", ano)
-      .single()
+    const { data: existing } = await applyCamaraExpenseSourceFilter(expenseLookup).single()
 
     assertSemReplacementChar(
       JSON.stringify({ detalhamento, gastosDestaque }),
@@ -231,7 +477,25 @@ async function ingestGastos(idCamara: number, candidatoId: string, slug: string)
       candidato_id: candidatoId,
       ano,
       total_gasto: Math.round(totalGasto * 100) / 100,
-      detalhamento,
+      detalhamento: expenseSnapshotDir
+        ? {
+            categorias: detalhamento,
+            proveniencia: {
+              controle_independente: controleIndependente,
+              fonte_url: fonteUrl,
+              consulta_snapshot_sha256: snapshotHash,
+              id_camara: idCamara,
+              consulta_paginas: pageReceipts.length,
+              ano_consulta: ano,
+              id_legislatura: idLegislatura,
+              valor_liquido_fonte: Math.round(totalGasto * 100) / 100,
+              valor_documento_fonte: Math.round(valorDocumentoFonte * 100) / 100,
+              valor_glosa_fonte: Math.round(valorGlosaFonte * 100) / 100,
+              direct_total_cents: directTotalCents,
+              grouped_total_cents: groupedTotalCents,
+            },
+          }
+        : detalhamento,
       gastos_destaque: gastosDestaque,
       fonte: "Camara",
     }
@@ -745,6 +1009,7 @@ async function ingestProjetos(
  */
 async function registrarCardinalidadeProposicoes(
   slug: string,
+  idCamara: number,
   outcome: ProjetosIngestOutcome
 ): Promise<void> {
   const detalhe =
@@ -752,6 +1017,7 @@ async function registrarCardinalidadeProposicoes(
     `persistido=${outcome.persistido} recusados=${outcome.falhou} ` +
     `readback=${outcome.readback ?? "?"} ` +
     `projeto_lei=${outcome.projetosLei} outras=${outcome.outrasProposicoes}`
+  const url = `${API}/proposicoes?idDeputadoAutor=${encodeURIComponent(String(idCamara))}&ordem=DESC&ordenarPor=id`
 
   if (outcome.declarado == null) {
     await registrarColeta({
@@ -759,6 +1025,7 @@ async function registrarCardinalidadeProposicoes(
       alvo: slug,
       resultado: "indeterminado",
       detalhe: `cardinalidade nao declarada pela fonte; ${detalhe}`,
+      url,
     })
     return
   }
@@ -769,11 +1036,23 @@ async function registrarCardinalidadeProposicoes(
     resultado: outcome.declarado > 0 ? "encontrado" : "vazio_confirmado",
     volume: outcome.declarado,
     detalhe,
+    url,
   })
 }
 
 export type IngestCamaraOptions = {
   targetSlugs?: string[]
+  candidateRows?: readonly { slug: string; nome_completo: string; nome_urna: string; estado?: string; ids: { camara: number | null } }[]
+  /** Recoleta somente o acervo autoral, sem perfil, gastos ou votos. */
+  onlyProjects?: boolean
+  /** Rerun focal de perfil e gastos, preservando votos e projetos já lidos. */
+  onlyProfileAndGastos?: boolean
+  /** Diretório local para payloads brutos e recibos anuais da Câmara. */
+  expenseSnapshotDir?: string
+  /** Recoleta apenas despesas, sem perfil, votos ou proposições. */
+  onlyGastos?: boolean
+  /** Impede rede: exige snapshots locais íntegros para todos os anos. */
+  expenseSnapshotCacheOnly?: boolean
   /** Recoleta explícita de acervo congelado. Exigida com escopo na CLI. */
   forceFrozen?: boolean
   /** Override scoped do wall clock por candidato. */
@@ -853,7 +1132,8 @@ async function hasGastosRecentComplete(candidatoId: string): Promise<boolean> {
 export async function ingestCamara(options?: IngestCamaraOptions | string[]): Promise<IngestResult[]> {
   const opts: IngestCamaraOptions = Array.isArray(options) ? { targetSlugs: options } : (options ?? {})
   const selectedSlugs = opts.targetSlugs != null ? new Set(opts.targetSlugs) : null
-  const skipValidated = Boolean(opts.skipValidated ?? opts.skipIfCamaraVotesComplete)
+  const profileAndGastosOnly = Boolean(opts.onlyProfileAndGastos)
+  const skipValidated = Boolean(opts.skipValidated ?? opts.skipIfCamaraVotesComplete ?? profileAndGastosOnly)
   const candidateTimeoutMs = opts.candidateTimeoutMs ?? CANDIDATO_WALL_MS
 
   let requiredCamaraVotacaoIds: string[] = []
@@ -866,7 +1146,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     )
   }
 
-  const candidatos = (await loadCandidatosPublicos()).filter((cand) =>
+  const candidatos = (opts.candidateRows ? [...opts.candidateRows] : await loadCandidatosPublicos()).filter((cand) =>
     selectedSlugs ? selectedSlugs.has(cand.slug) : true
   )
   const verificacaoPorSlug = await loadVerificacaoCampos(candidatos.map((cand) => cand.slug))
@@ -903,11 +1183,35 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
       continue
     }
 
+    if (opts.onlyProjects) {
+      const declarado = await fetchDeclaredProposicaoCount(cand.ids.camara!)
+      const projetos = await ingestProjetos(cand.ids.camara!, candidatoId, cand.slug, declarado)
+      if (projetos.persistido > 0) result.tables_updated.push("projetos_lei")
+      result.rows_upserted = projetos.persistido
+      if (projetos.falhou > 0) {
+        result.errors.push(
+          `projetos_lei: ${projetos.falhou} de ${projetos.tentado} upserts recusados (${projetos.primeiroErro})`,
+        )
+      }
+      if (projetos.readback != null && projetos.declarado != null && projetos.readback < projetos.declarado) {
+        result.errors.push(`projetos_lei truncado: fonte declarou ${projetos.declarado}, banco tem ${projetos.readback}`)
+      }
+      await registrarCardinalidadeProposicoes(cand.slug, cand.ids.camara!, projetos)
+      result.duration_ms = Date.now() - start
+      results.push(result)
+      continue
+    }
+
     let skipVotes = false
     let skipGastos = false
     let skipProjetos = false
+    const gastosOnly = Boolean(opts.onlyGastos)
+    if (profileAndGastosOnly || gastosOnly) {
+      skipVotes = true
+      skipProjetos = true
+    }
     let declaradoProjetos: number | null = null
-    if (skipValidated) {
+    if (skipValidated && !profileAndGastosOnly) {
       skipVotes = await hasFullCamaraVoteCoverage(candidatoId, requiredCamaraVotacaoIds)
       skipGastos = await hasGastosRecentComplete(candidatoId)
 
@@ -938,6 +1242,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
         })
       }
     }
+    if (profileAndGastosOnly || gastosOnly) skipGastos = false
 
     const fullSkip = skipValidated && skipVotes && skipGastos && skipProjetos
     if (fullSkip) {
@@ -982,21 +1287,31 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
       candidatoTimeoutId = setTimeout(() => resolve("timeout"), candidateTimeoutMs)
     })
 
+    let gastosColetados = 0
     const candidatoWork = (async () => {
-      await ingestPerfil(
-        cand.ids.camara!,
-        candidatoId,
-        cand.slug,
-        cand.nome_completo,
-        cand.nome_urna,
-        cand.estado
-      )
-      result.tables_updated.push("candidatos")
-      result.rows_upserted++
-      await sleep(300)
+      if (!gastosOnly) {
+        await ingestPerfil(
+          cand.ids.camara!,
+          candidatoId,
+          cand.slug,
+          cand.nome_completo,
+          cand.nome_urna,
+          cand.estado
+        )
+        result.tables_updated.push("candidatos")
+        result.rows_upserted++
+        await sleep(300)
+      }
 
       if (!skipGastos) {
-        const gastoRows = await ingestGastos(cand.ids.camara!, candidatoId, cand.slug)
+        const gastoRows = await ingestGastos(
+          cand.ids.camara!,
+          candidatoId,
+          cand.slug,
+          opts.expenseSnapshotDir,
+          opts.expenseSnapshotCacheOnly,
+        )
+        gastosColetados = gastoRows
         if (gastoRows > 0) result.tables_updated.push("gastos_parlamentares")
         result.rows_upserted += gastoRows
         await sleep(300)
@@ -1040,7 +1355,7 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
           )
         }
 
-        await registrarCardinalidadeProposicoes(cand.slug, projetos)
+        await registrarCardinalidadeProposicoes(cand.slug, cand.ids.camara!, projetos)
       }
 
       return "done" as const
@@ -1061,6 +1376,12 @@ export async function ingestCamara(options?: IngestCamaraOptions | string[]): Pr
     }
 
     result.duration_ms = Date.now() - start
+    if (profileAndGastosOnly || gastosOnly) {
+      result.coleta_volume = gastosColetados
+      result.coleta_resultado = result.errors.length > 0 ? "erro" : result.coleta_volume > 0 ? "encontrado" : "vazio_confirmado"
+      result.coleta_detalhe = `escopo=perfil e gastos da Câmara; perfil_url=${API}/deputados/${cand.ids.camara}; gastos_url=${API}/deputados/${cand.ids.camara}/despesas; votos e projetos preservados do acervo existente; linhas_gastos=${result.coleta_volume}`
+      result.coleta_url = `${API}/deputados/${cand.ids.camara}`
+    }
     log("camara", `  ${cand.slug}: ${result.rows_upserted} rows, ${result.errors.length} errors, ${result.duration_ms}ms`)
     results.push(result)
   }

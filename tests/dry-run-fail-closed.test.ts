@@ -331,10 +331,24 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
    * requisição recebida. Zero escrita deixa de ser inferência sobre o proxy e
    * vira observação na borda da rede: nenhum POST, PATCH, PUT ou DELETE chega.
    *
-   * O caminho exercitado é o de credencial do Portal ausente, que é justamente
-   * o que ANTES escrevia: `registrarColetas` fazia um INSERT em `coleta_log`
-   * com uma linha de erro por candidato público. Em dry-run essa telemetria
-   * vira relatório.
+   * O caminho exercitado é o de credencial do Portal ausente. Isto já foi um
+   * retorno imediato (`return []` antes de tocar em qualquer candidato), que é
+   * justamente o que ANTES escrevia: `registrarColetas` fazia um INSERT em
+   * `coleta_log` com uma linha de erro por candidato público, e em dry-run
+   * essa telemetria virava relatório.
+   *
+   * Isso mudou de propósito: sem `TRANSPARENCIA_API_KEY` o coletor agora cai
+   * para `criarDepsExportacaoPublica()` (exportação oficial em ZIP/CSV do
+   * Portal, ver o cabeçalho de `carregarExportacaoPublica`), então a ausência
+   * de chave deixou de ser um `return []` imediato. O candidato deste fixture
+   * não tem CPF no roster local (só `slug`/`nome_completo`), e o guard de CPF
+   * de `coletarSancoesDoCandidato` barra ANTES de qualquer requisição ao
+   * Portal — a mesma garantia de zero escrita, só que pelo guard de
+   * pré-requisito em vez do guard de credencial. A escrita de `coleta_log`
+   * pelo resultado (`skipped`/`erro`) é responsabilidade de quem chama
+   * `runIngestTask` (`registrarColetaDeResultados`, em `ingest-all.ts`), fora
+   * do escopo deste entrypoint; a garantia de dry-run desse insert está coberta
+   * por "registrarColetas vira linha de relatório, não insert" acima.
    */
   it("ingestTransparenciaSanctions() em dry-run não emite nenhuma requisição de escrita", async () => {
     ativarDryRun()
@@ -377,21 +391,32 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
       )
       const resultados = await ingestTransparenciaSanctions()
 
-      // O entrypoint retornou pelo caminho sem credencial, sem lançar.
-      assert.deepEqual(resultados, [])
+      // O entrypoint não lançou, e o único candidato do roster foi barrado
+      // pelo guard de CPF antes de qualquer requisição ao Portal.
+      assert.deepEqual(resultados, [
+        {
+          source: "transparencia-sanctions",
+          candidato: "cabo-daciolo",
+          tables_updated: [],
+          rows_upserted: 0,
+          errors: [],
+          duration_ms: resultados[0]?.duration_ms,
+          skipped: true,
+          skip_reason: "sem CPF",
+          coleta_resultado: "erro",
+          coleta_detalhe: "sem CPF: nenhum cadastro foi consultado",
+        },
+      ])
 
       // A borda da rede viu SOMENTE leitura.
       assert.ok(metodos.length > 0, "o roster de produção deve ter sido lido")
       const escritas = metodos.filter((m) => !m.startsWith("GET ") && !m.startsWith("HEAD "))
       assert.deepEqual(escritas, [], `métodos de escrita chegaram ao servidor: ${escritas}`)
 
-      // E a telemetria virou relatório, não INSERT: uma linha de erro por
-      // candidato público, dizendo por quê.
+      // Sem CPF, o guard barra antes do Portal e antes de qualquer plano de
+      // escrita: nada foi planejado e nada foi bloqueado.
       const relatorio = relatorioDryRun()
-      assert.equal(relatorio.resultados.length, 1)
-      assert.equal(relatorio.resultados[0].alvo, "cabo-daciolo")
-      assert.equal(relatorio.resultados[0].resultado, "erro")
-      assert.match(relatorio.resultados[0].detalhe ?? "", /TRANSPARENCIA_API_KEY ausente/)
+      assert.deepEqual(relatorio.resultados, [])
       assert.deepEqual(relatorio.bloqueios, [])
     } finally {
       server.close()
@@ -402,6 +427,179 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
       else delete process.env.SUPABASE_SERVICE_ROLE_KEY
       if (envOriginal.transparencia !== undefined)
         process.env.TRANSPARENCIA_API_KEY = envOriginal.transparencia
+    }
+  })
+
+  /**
+   * Cobertura do caminho de fallback por ausência de `TRANSPARENCIA_API_KEY`
+   * que o teste "zero requisição de escrita" acima NÃO exercita: lá o
+   * candidato não tem CPF no roster, então o guard de CPF barra antes de
+   * `criarDepsExportacaoPublica()` sequer ser chamado. Aqui o candidato TEM
+   * CPF, então o coletor de fato cai na exportação oficial pública
+   * (`carregarExportacaoPublica`), lê um ZIP/CSV com uma linha que não bate
+   * com o CPF consultado, e mesmo assim precisa fechar sem nenhuma escrita e
+   * com um relatório de telemetria gravado (dry-run planeja o resultado por
+   * cadastro).
+   */
+  it("sem TRANSPARENCIA_API_KEY, com CPF: exportação pública roda e ainda assim não escreve", async () => {
+    ativarDryRun()
+
+    const { createServer } = await import("node:http")
+    const { default: JSZip } = await import("jszip")
+    const metodosDb: string[] = []
+    const rotasExportacao: string[] = []
+
+    // CPF com dígitos verificadores válidos, exclusivo deste teste, e
+    // DIFERENTE de qualquer CPF nas linhas do CSV servido abaixo.
+    const CPF_FIXTURE = "11144477735"
+    const CPF_LINHA_CSV = "52998224725"
+    const SLUG = "exportacao-publica-fixture"
+    const DATA_EXPORT = "20260101"
+
+    const db = createServer((req, res) => {
+      metodosDb.push(`${req.method} ${req.url?.split("?")[0]}`)
+      res.setHeader("content-type", "application/json")
+      if (req.url?.includes("candidatos_publico")) {
+        const offset = Number(new URL(req.url, "http://localhost").searchParams.get("offset") ?? 0)
+        res.end(JSON.stringify(offset > 0 ? [] : [{ slug: SLUG, nome_completo: "Fulano Exportacao Publica" }]))
+        return
+      }
+      if (req.url?.includes("/candidatos")) {
+        const linha = {
+          id: "id-fixture-export",
+          cpf: CPF_FIXTURE,
+          slug: SLUG,
+          nome_completo: "Fulano Exportacao Publica",
+        }
+        const querObjeto = (req.headers.accept ?? "").includes("pgrst.object")
+        res.end(JSON.stringify(querObjeto ? linha : [linha]))
+        return
+      }
+      res.end(JSON.stringify([]))
+    })
+
+    async function zipCsv(csv: string): Promise<Buffer> {
+      const zip = new JSZip()
+      // `carregarExportacaoPublica` decodifica o CSV como windows-1252 (o
+      // charset real do ZIP oficial do Portal). `Buffer.from(csv, "latin1")`
+      // grava os acentos do cabeçalho (Ç, Ã, Ó, É) nos mesmos bytes que
+      // windows-1252 usa para eles; gravar como UTF-8 mangla o cabeçalho na
+      // decodificação e o parser rejeitaria com "cabeçalho incompatível".
+      zip.file("dados.csv", Buffer.from(csv, "latin1"))
+      return zip.generateAsync({ type: "nodebuffer" })
+    }
+
+    const csvCeisCnep =
+      "CÓDIGO DA SANÇÃO;CPF OU CNPJ DO SANCIONADO;NOME DO SANCIONADO\n" +
+      `1;${CPF_LINHA_CSV};Outra Pessoa Sancionada\n`
+    const csvCeaf =
+      "CÓDIGO DA SANÇÃO;CPF OU CNPJ DO SANCIONADO;NÚMERO DO DOCUMENTO;NOME DO SANCIONADO\n" +
+      `2;${CPF_LINHA_CSV};PORTARIA-1;Outra Pessoa Expulsa\n`
+
+    const exportacao = createServer(async (req, res) => {
+      const rota = req.url?.split("?")[0] ?? ""
+      rotasExportacao.push(`${req.method} ${rota}`)
+      if (rota === `/ceis/${DATA_EXPORT}` || rota === `/cnep/${DATA_EXPORT}`) {
+        res.setHeader("content-type", "application/zip")
+        res.end(await zipCsv(csvCeisCnep))
+        return
+      }
+      if (rota === `/ceaf/${DATA_EXPORT}`) {
+        res.setHeader("content-type", "application/zip")
+        res.end(await zipCsv(csvCeaf))
+        return
+      }
+      res.statusCode = 404
+      res.end("not found")
+    })
+
+    await new Promise<void>((r) => db.listen(0, "127.0.0.1", r))
+    await new Promise<void>((r) => exportacao.listen(0, "127.0.0.1", r))
+    const portaDb = (db.address() as { port: number }).port
+    const portaExportacao = (exportacao.address() as { port: number }).port
+
+    const env = {
+      url: process.env.SUPABASE_URL,
+      key: process.env.SUPABASE_SERVICE_ROLE_KEY,
+      chave: process.env.TRANSPARENCIA_API_KEY,
+      base: process.env.PF_TRANSPARENCIA_EXPORT_BASE,
+      data: process.env.PF_TRANSPARENCIA_EXPORT_DATE,
+    }
+    process.env.SUPABASE_URL = `http://127.0.0.1:${portaDb}`
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "chave-falsa-de-teste"
+    delete process.env.TRANSPARENCIA_API_KEY
+    process.env.PF_TRANSPARENCIA_EXPORT_BASE = `http://127.0.0.1:${portaExportacao}`
+    process.env.PF_TRANSPARENCIA_EXPORT_DATE = DATA_EXPORT
+
+    const { __resetSupabaseParaTeste } = await import("../scripts/lib/supabase")
+    __resetSupabaseParaTeste()
+
+    try {
+      // Import fresco: a base de exportação e a chave são lidas na carga do
+      // módulo.
+      const mod = await import(
+        `../scripts/lib/ingest-transparencia-sanctions?export-publico=${portaExportacao}`
+      )
+      const resultados = (await mod.ingestTransparenciaSanctions()) as Array<{
+        candidato: string
+        coleta_resultado?: string
+        rows_upserted: number
+        tables_updated: string[]
+      }>
+
+      // 1. O caminho de exportação pública foi de fato percorrido: os três
+      //    cadastros foram baixados via ZIP, não via API com chave.
+      assert.deepEqual(
+        rotasExportacao.sort(),
+        [`GET /ceaf/${DATA_EXPORT}`, `GET /ceis/${DATA_EXPORT}`, `GET /cnep/${DATA_EXPORT}`],
+      )
+      assert.equal(resultados.length, 1)
+      assert.equal(resultados[0].candidato, SLUG)
+      // Nenhuma linha do CSV bate com o CPF consultado, e a cobertura de
+      // identidade da exportação é completa (CPFs de 11 dígitos em todas as
+      // linhas): o desfecho é vazio_confirmado, não indeterminado.
+      assert.equal(resultados[0].coleta_resultado, "vazio_confirmado")
+      assert.equal(resultados[0].rows_upserted, 0)
+      assert.deepEqual(resultados[0].tables_updated, [])
+
+      // 2. Nenhuma escrita chegou ao PostgREST.
+      const escritas = metodosDb.filter((m) => !m.startsWith("GET ") && !m.startsWith("HEAD "))
+      assert.deepEqual(escritas, [], `métodos de escrita chegaram ao PostgREST: ${escritas}`)
+
+      // 3. A telemetria de dry-run registrou o resultado por cadastro (os três
+      //    endpoints), sem nenhum bloqueio.
+      const relatorio = relatorioDryRun()
+      assert.deepEqual(relatorio.bloqueios, [], "nenhum caminho de escrita fora do plano")
+      const porFonte = Object.fromEntries(
+        relatorio.resultados
+          .filter((r) => r.alvo === SLUG)
+          .map((r) => [r.fonte, r.resultado]),
+      )
+      assert.deepEqual(porFonte, {
+        "transparencia-sanctions:CEIS": "vazio_confirmado",
+        "transparencia-sanctions:CNEP": "vazio_confirmado",
+        "transparencia-sanctions:CEAF": "vazio_confirmado",
+      })
+      // Nenhuma sanção conferida: nenhuma escrita foi planejada em
+      // sancoes_administrativas para este candidato.
+      assert.equal(
+        relatorio.escritas.filter((e) => e.tabela === "sancoes_administrativas" && e.alvo === SLUG).length,
+        0,
+      )
+    } finally {
+      db.close()
+      exportacao.close()
+      __resetSupabaseParaTeste()
+      for (const [chave, valor] of [
+        ["SUPABASE_URL", env.url],
+        ["SUPABASE_SERVICE_ROLE_KEY", env.key],
+        ["TRANSPARENCIA_API_KEY", env.chave],
+        ["PF_TRANSPARENCIA_EXPORT_BASE", env.base],
+        ["PF_TRANSPARENCIA_EXPORT_DATE", env.data],
+      ] as const) {
+        if (valor !== undefined) process.env[chave] = valor
+        else delete process.env[chave]
+      }
     }
   })
 
@@ -456,6 +654,15 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
       rotasPortal.push(`${req.method} ${rota}`)
       res.setHeader("content-type", "application/json")
       if (rota.endsWith("/ceis")) {
+        // A paginação lê até a página terminal vazia (`buscarTodasPaginas`);
+        // sem essa distinção por `pagina`, a página 2 devolveria o mesmo
+        // registro da página 1 e o coletor acusaria "página repetida" em vez
+        // de fechar a paginação como o Portal de verdade faz.
+        const pagina = Number(new URL(req.url ?? "", "http://localhost").searchParams.get("pagina") ?? "1")
+        if (pagina > 1) {
+          res.end(JSON.stringify([]))
+          return
+        }
         res.end(
           JSON.stringify([
             {
@@ -508,7 +715,14 @@ describe("dry-run: entrypoint real, zero requisição de escrita", () => {
 
       // 1. O caminho positivo foi mesmo percorrido: os três cadastros foram
       //    consultados e o coletor declarou achado.
-      assert.deepEqual(rotasPortal.sort(), ["GET /ceaf", "GET /ceis", "GET /cnep"])
+      //
+      // `/ceis` aparece duas vezes de propósito: `buscarTodasPaginas` só fecha
+      // a paginação numa página terminal vazia (ver o cabeçalho da função), e
+      // isso exige uma segunda requisição de confirmação depois da página com
+      // o achado. Não é falha de dedupe; é o contrato de paginação sendo
+      // exercido pelo caminho positivo, e o fixture do Portal simula a página
+      // 2 vazia (`pagina > 1`) para fechar a leitura.
+      assert.deepEqual(rotasPortal.sort(), ["GET /ceaf", "GET /ceis", "GET /ceis", "GET /cnep"])
       assert.equal(resultados.length, 1)
       assert.equal(resultados[0].candidato, SLUG)
       assert.equal(resultados[0].coleta_resultado, "encontrado")

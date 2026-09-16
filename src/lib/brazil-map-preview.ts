@@ -48,15 +48,3 @@ export function buildIndicadoresPorEstadoForMap(
   }
   return out
 }
-
-export function buildGovernadorCountByUf(
-  candidatos: { estado: string | null }[]
-): Record<string, number> {
-  const counts: Record<string, number> = {}
-  for (const c of candidatos) {
-    if (!c.estado) continue
-    const k = c.estado.trim().toUpperCase()
-    counts[k] = (counts[k] ?? 0) + 1
-  }
-  return counts
-}

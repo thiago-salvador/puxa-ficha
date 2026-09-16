@@ -76,6 +76,11 @@ export interface TSEResolver {
   ambiguousSlugs: string[]
 }
 
+export interface TSEResolverOptions {
+  /** Validação adicional por ciclo, ligada a uma identidade histórica curada. */
+  validatePreloadedRow?: (candidate: CandidatoConfig, row: Record<string, string>) => boolean
+}
+
 interface CandidatoDBRow {
   slug: string
   cpf: string | null
@@ -203,7 +208,8 @@ function getCandidateMatches(
 
 export async function createTSEResolver(
   candidatos: CandidatoConfig[],
-  ano: number
+  ano: number,
+  options: TSEResolverOptions = {},
 ): Promise<TSEResolver> {
   // Guarda a UF declarada junto com o slug: ate 2008, SQ_CANDIDATO nao e chave
   // global no TSE, e sim sequencial POR UF (valores curtos como "10354"). Sem
@@ -286,7 +292,7 @@ export async function createTSEResolver(
             row,
             candidato.ids.tse_uf_candidatura?.[String(ano)]
           )
-          if (validation.ok) {
+          if (validation.ok && (!options.validatePreloadedRow || options.validatePreloadedRow(candidato, row))) {
             return { slug: candidato.slug, method: "sq-preloaded" }
           }
           // Fail-closed: um SQ configurado mas incompatível não pode cair para

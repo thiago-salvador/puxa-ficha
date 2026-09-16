@@ -19,6 +19,9 @@ import {
   pesquisarCandidato,
   prioridade,
   processarComDoisWorkers,
+  validarCacheDjen,
+  validarRespostaDatajud,
+  validarRespostaDjen,
 } from "../scripts/curadoria-processos-lote"
 
 type Snapshot = Parameters<typeof prioridade>[0]
@@ -50,6 +53,47 @@ function candidato(overrides: Partial<Candidato> = {}): Candidato {
 }
 
 describe("curadoria de processos em lote", () => {
+  it("rejeita resposta DJEN com schema HTTP inválido em vez de assumir vazio", () => {
+    assert.throws(() => validarRespostaDjen({ count: "0", items: [] }), /count inteiro nao-negativo/)
+    assert.throws(() => validarRespostaDjen({ count: 0 }), /items array esperado/)
+    assert.throws(() => validarRespostaDjen({ count: 1, items: [{}] }), /item.id inteiro esperado/)
+    assert.doesNotThrow(() => validarRespostaDjen({ count: 1, items: [{ id: 1, destinatarios: null }] }))
+  })
+
+  it("rejeita cache DJEN sem recibo completo e sem data real", () => {
+    assert.throws(() => validarCacheDjen({ count: 0, items: [] }), /schema_version/)
+    assert.throws(() => validarCacheDjen({
+      schema_version: 2, url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Teste&pagina=1", query_nome: "Teste",
+      consultado_em: "2026-09-15T00:00:00Z", total: 1, itens: [], paginas: 1, completo: true,
+    }), /truncado/)
+    assert.throws(() => validarCacheDjen({
+      schema_version: 2, url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Outro&pagina=1", query_nome: "Outro",
+      consultado_em: "2026-09-15T00:00:00Z", total: 0, itens: [], paginas: 1, completo: true,
+    }, "Teste"), /nome da consulta divergente/)
+  })
+
+  it("rejeita paginação DJEN incompleta antes de classificar vazio", () => {
+    assert.throws(() => validarCacheDjen({
+      schema_version: 2, url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Teste&pagina=1", query_nome: "Teste",
+      consultado_em: "2026-09-15T00:00:00Z", total: 2, itens: [{ id: 1, destinatarios: [] }], paginas: 1, completo: true,
+    }), /truncado/)
+  })
+
+  it("aceita vazio DJEN somente quando a resposta e o cache sao completos", () => {
+    const resposta = validarRespostaDjen({ count: 0, items: [] })
+    assert.deepEqual(resposta, { count: 0, items: [] })
+    const cache = validarCacheDjen({
+      schema_version: 2, url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Teste&pagina=1", query_nome: "Teste",
+      consultado_em: "2026-09-15T00:00:00Z", total: 0, itens: [], paginas: 1, completo: true,
+    })
+    assert.equal(cache.completo, true)
+  })
+
+  it("rejeita resposta DataJud HTML/schema inválido em vez de assumir zero", () => {
+    assert.throws(() => validarRespostaDatajud("<html>indisponível</html>"), /objeto esperado/)
+    assert.throws(() => validarRespostaDatajud({ hits: {} }), /hits\.hits array esperado/)
+  })
+
   it("aceita lote único e faixa inclusiva de lotes", () => {
     assert.deepEqual(lotesSolicitados(["--lote=4"]), [4])
     assert.deepEqual(lotesSolicitados(["--lotes=1-10"]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
@@ -122,9 +166,14 @@ describe("curadoria de processos em lote", () => {
           buscas += 1
           assert.equal(nome, "Carlos da Silva Teste")
           return {
-            url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?nomeParte=Carlos%20da%20Silva%20Teste",
+            schema_version: 2,
+            url: "https://comunicaapi.pje.jus.br/api/v1/comunicacao?itensPorPagina=1000&nomeParte=Carlos%20da%20Silva%20Teste&pagina=1",
+            query_nome: nome,
+            consultado_em: "2026-09-15T00:00:00Z",
             total: 0,
             itens: [],
+            paginas: 1,
+            completo: true,
           }
         },
       },

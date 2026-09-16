@@ -1,6 +1,7 @@
 import type { CandidatoConfig } from "./types"
 import { readFileSync } from "node:fs"
 import { resolve } from "node:path"
+import { getExplicitCohort } from "./cohort-context"
 
 export { normalizeForMatch } from "./normalize-for-match"
 export { parseCSV } from "./parse-csv-local"
@@ -25,6 +26,9 @@ function parseSlugScope(): Set<string> | null {
 }
 
 export function loadCandidatos(): CandidatoConfig[] {
+  const explicit = getExplicitCohort()
+  if (explicit) return [...explicit]
+
   const path = resolve(process.cwd(), "data/candidatos.json")
   const todos: CandidatoConfig[] = JSON.parse(readFileSync(path, "utf-8"))
 
@@ -122,6 +126,8 @@ export interface FetchJSONOptions {
    */
   budgetMs?: number
   relogio?: FetchRelogio
+  /** Recebe o corpo JSON bruto somente depois de uma resposta válida. */
+  onResponseBody?: (body: string) => void | Promise<void>
 }
 
 /** 4xx que nao seja 408 ou 429 e resposta determinista: repetir so queima o orcamento. */
@@ -130,7 +136,7 @@ function statusRetentavel(status: number): boolean {
 }
 
 type Tentativa<T> =
-  | { ok: true; valor: T }
+  | { ok: true; valor: T; corpo?: string }
   | { ok: false; erro: Error; retentavel: boolean; esperaMs?: number }
 
 async function tentarFetchJSON<T>(
@@ -161,7 +167,8 @@ async function tentarFetchJSON<T>(
         retentavel: statusRetentavel(res.status),
       }
     }
-    return { ok: true, valor: (await res.json()) as T }
+    const corpo = await res.text()
+    return { ok: true, valor: JSON.parse(corpo) as T, corpo }
   } catch (err) {
     signal?.throwIfAborted()
     if (err instanceof Error && err.name === "AbortError") {
@@ -190,7 +197,10 @@ export async function fetchJSON<T>(
     options.signal?.throwIfAborted()
     const desfecho = await tentarFetchJSON<T>(url, headers, timeoutMs, tentativa, relogio, options.signal)
     options.signal?.throwIfAborted()
-    if (desfecho.ok) return desfecho.valor
+    if (desfecho.ok) {
+      if (options.onResponseBody && desfecho.corpo !== undefined) await options.onResponseBody(desfecho.corpo)
+      return desfecho.valor
+    }
 
     ultimoErro = desfecho.erro
     if (!desfecho.retentavel) break

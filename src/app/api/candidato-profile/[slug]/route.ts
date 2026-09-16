@@ -17,11 +17,14 @@ export const dynamic = "force-dynamic"
 /**
  * Rate limit acrescentado em 18/08/2026, vespera do lancamento.
  *
- * Auditoria daquele dia: das rotas publicas de leitura, `candidato-slugs`
- * (revalidate 300) e `search-index` sao absorvidas pela CDN e medidas com
- * `x-vercel-cache: HIT`, ou seja, nao geram invocacao por request. Esta aqui e
- * `force-dynamic` e nao tinha limite nenhum, entao cada request batia na
- * funcao. Com 207 fichas publicadas, varrer a base inteira custava 207
+ * Auditoria daquele dia: das rotas publicas de leitura, `candidato-slugs` e
+ * `search-index` sao absorvidas pela CDN e medidas com `x-vercel-cache: HIT`,
+ * ou seja, nao geram invocacao por request. Politica atual (2026-09-16): as
+ * duas sao funcoes dinamicas que respondem com cache publico curto de CDN
+ * (`s-maxage`) quando saudaveis e `no-store` quando degradadas, vazias ou com
+ * erro; resposta `no-store` volta a invocar a funcao. Esta aqui e
+ * `force-dynamic`, responde `private, no-store` e nao tinha limite nenhum,
+ * entao cada request batia na funcao. Com 207 fichas publicadas, varrer a base inteira custava 207
  * invocacoes e nada segurava a repeticao disso em loop.
  *
  * O objetivo NAO e esconder dado: o conteudo e publico por projeto e existe

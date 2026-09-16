@@ -1,0 +1,15 @@
+{
+  "schema_version": "senado-reviewed-biography-v1",
+  "scope": "fixture",
+  "identity": {
+    "sq_candidato_2026": "9001",
+    "slug": "tse-2026-9001",
+    "uf": "SP"
+  },
+  "biografia": "Pessoa fictícia usada somente em teste de contrato do enriquecimento Senado; nenhum fato aqui descreve candidatura real.",
+  "source_ids": [
+    "tse-consulta-cand-2026",
+    "fonte-oficial-biografia-a",
+    "fonte-oficial-biografia-b"
+  ]
+}

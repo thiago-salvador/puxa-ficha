@@ -2,6 +2,9 @@ import assert from "node:assert"
 import { test, describe } from "node:test"
 import { METHODOLOGY_SOURCES } from "@/data/methodology-sources"
 import { readFileSync } from "fs"
+import { createElement } from "react"
+import { renderToStaticMarkup } from "react-dom/server"
+import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 
 describe("Metodologia pública contract", () => {
   describe("src/data/methodology-sources.ts", () => {
@@ -283,18 +286,31 @@ describe("Metodologia pública contract", () => {
   })
 
   describe("src/components/PublicDataSourcesNote.tsx", () => {
-    test("os dois variants exibem link conservador de fontes e metodologia", () => {
-      const content = readFileSync("src/components/PublicDataSourcesNote.tsx", "utf-8")
-      assert.match(content, /Fontes consultadas e metodologia/, "deve exibir Fontes consultadas e metodologia")
-      assert.doesNotMatch(content, /Lista completa de fontes/, "não deve prometer lista completa de fontes")
+    const variants = [
+      { variant: "presidencia" },
+      { variant: "governadores" },
+      { variant: "parlamentares", senadoEnabled: false },
+      { variant: "parlamentares", senadoEnabled: true },
+    ] as const
+
+    function render(props: (typeof variants)[number]): string {
+      return renderToStaticMarkup(createElement(PublicDataSourcesNote, props))
+    }
+
+    test("todos os variants exibem link conservador de fontes e metodologia", () => {
+      for (const props of variants) {
+        const html = render(props)
+        assert.match(html, /Fontes consultadas e metodologia/, `${JSON.stringify(props)} deve exibir o link`)
+        assert.doesNotMatch(html, /Lista completa de fontes/, "não deve prometer lista completa de fontes")
+      }
     })
 
     test("o link de fontes consultadas deve apontar para /metodologia, não /sobre", () => {
-      const content = readFileSync("src/components/PublicDataSourcesNote.tsx", "utf-8")
-      const sobreCount = (content.match(/href="\/sobre"/g) || []).length
-      const metodologiaCount = (content.match(/href="\/metodologia"/g) || []).length
-      assert.strictEqual(sobreCount, 0, "não deve apontar para /sobre")
-      assert.strictEqual(metodologiaCount, 2, "deve apontar para /metodologia nos dois variants")
+      for (const props of variants) {
+        const html = render(props)
+        assert.strictEqual((html.match(/href="\/sobre"/g) || []).length, 0, "não deve apontar para /sobre")
+        assert.strictEqual((html.match(/href="\/metodologia"/g) || []).length, 1, `${JSON.stringify(props)} deve apontar para /metodologia`)
+      }
     })
   })
 

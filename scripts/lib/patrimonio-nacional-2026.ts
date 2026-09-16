@@ -290,9 +290,9 @@ export function gerarMigrationSql(
     }))
     const bensJson = JSON.stringify(bens).replace(/'/g, "''")
     const fonte = fonteDaLinha(candidato, metadata)
-    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=${metadata.snapshot.replaceAll(" ", "_")} campos=candidato_id,ano_eleicao,valor_total,bens,fonte
-INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, valor_total, bens, fonte)
-SELECT c.id, 2026, ${centavosParaSql(candidato.totalCentavos)}, '${bensJson}'::jsonb, ${sqlLiteral(fonte)}
+    return `-- @write tabela=patrimonio slug=${candidato.slug} ano=2026 snapshot=${metadata.snapshot.replaceAll(" ", "_")} campos=candidato_id,ano_eleicao,sq_candidato,uf_candidatura,ano_arquivo,valor_total,bens,fonte
+INSERT INTO public.patrimonio AS p (candidato_id, ano_eleicao, sq_candidato, uf_candidatura, ano_arquivo, valor_total, bens, fonte)
+SELECT c.id, 2026, ${sqlLiteral(candidato.sq)}, ${candidato.uf ? sqlLiteral(candidato.uf) : "NULL"}, 2026, ${centavosParaSql(candidato.totalCentavos)}, '${bensJson}'::jsonb, ${sqlLiteral(fonte)}
 FROM public.candidatos c
 WHERE c.slug = ${sqlLiteral(candidato.slug)}
   AND c.publicavel = true
@@ -306,7 +306,7 @@ WHERE c.slug = ${sqlLiteral(candidato.slug)}
       AND coorte.publicavel = true
       AND coorte.status <> 'removido'
   ) = ${candidatos.length}
-ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO UPDATE
 SET valor_total = EXCLUDED.valor_total,
     bens = EXCLUDED.bens,
     fonte = EXCLUDED.fonte
@@ -341,6 +341,23 @@ BEGIN
   IF n_coorte NOT IN (0, ${candidatos.length})
      AND to_regclass('supabase_migrations.schema_migrations') IS NOT NULL THEN
     RAISE EXCEPTION 'P-PATRIMONIO-NACIONAL: coorte parcial em banco com ledger, esperados ${candidatos.length} candidatos, encontrados %', n_coorte;
+  END IF;
+END $$;
+
+-- Desde 20260915220000 a chave é (candidato_id, ano_eleicao, sq_candidato).
+-- Linha anterior sem SQ não casa com o upsert por contexto e viraria duplicata;
+-- a reconciliação com CAS fica com scripts/lib/ingest-tse.ts.
+DO $$
+BEGIN
+  IF EXISTS (
+    SELECT 1
+    FROM public.patrimonio legado
+    JOIN public.candidatos c ON c.id = legado.candidato_id
+    WHERE c.slug IN (${slugs})
+      AND legado.ano_eleicao = 2026
+      AND legado.sq_candidato IS NULL
+  ) THEN
+    RAISE EXCEPTION 'P-PATRIMONIO-NACIONAL: patrimonio legado sem SQ na coorte 2026; reconciliar via ingest-tse antes do upsert por contexto';
   END IF;
 END $$;
 

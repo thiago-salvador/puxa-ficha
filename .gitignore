@@ -7,6 +7,8 @@
 
 # cache do auditor de SQ do TSE (pacotes anuais, dezenas de MB)
 /.tse-audit-cache
+# cache de respostas do Portal da Transparência (PF_TRANSPARENCIA_CACHE_DIR)
+/.transparencia-cache
 
 # testing / coverage
 /coverage
@@ -87,3 +89,9 @@ supabase/.branches/
 
 # HTML externo do monitoramento não pode entrar na descoberta de classes do Tailwind.
 /reports/falas-monitoramento/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# Artefatos locais de auditoria/curadoria — regeneráveis, não commitados.
+.artifacts/

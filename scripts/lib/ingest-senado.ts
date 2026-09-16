@@ -7,6 +7,7 @@ import { log, warn, error } from "./logger"
 import type { IngestResult } from "./types"
 import { stripAccents } from "../../src/lib/strip-accents"
 import { curateSenadoEmenta } from "./senado-ementa-curation"
+import { deriveSenadoMandatoEvidence } from "./senado-mandato-evidence"
 
 const API = "https://legis.senado.leg.br/dadosabertos"
 const HEADERS = { Accept: "application/json" }
@@ -151,7 +152,15 @@ async function ingestPerfil(
   log("senado", `  ${slug}: perfil atualizado`)
 }
 
-async function ingestMandatos(codigo: number, candidatoId: string, slug: string, context: CandidateContext = defaultContext()): Promise<number> {
+interface MandatosOutcome {
+  persistidos: number
+  elegiveis: number
+  pendentes: number
+  url: string
+}
+
+async function ingestMandatos(codigo: number, candidatoId: string, slug: string, context: CandidateContext = defaultContext()): Promise<MandatosOutcome> {
+  const url = `${API}/senador/${codigo}/mandatos.json`
   const json = await fetchJSON<Record<string, unknown>>(`${API}/senador/${codigo}/mandatos.json`, HEADERS, undefined, undefined, { signal: context.signal })
   const mandatos = ensureArray(
     dig(json, "MandatoParlamentar", "Parlamentar", "Mandatos", "Mandato") as Record<string, unknown>[]
@@ -159,67 +168,63 @@ async function ingestMandatos(codigo: number, candidatoId: string, slug: string,
 
   if (mandatos.length === 0) {
     log("senado", `  ${slug}: sem mandatos`)
-    return 0
+    return { persistidos: 0, elegiveis: 0, pendentes: 0, url }
   }
 
   let count = 0
+  let elegiveis = 0
+  let pendentes = 0
   for (const m of mandatos) {
     context.signal.throwIfAborted()
-    const primeiraLeg = m.PrimeiraLegislaturaDoMandato as Record<string, unknown> | undefined
-    const segundaLeg = m.SegundaLegislaturaDoMandato as Record<string, unknown> | undefined
-
-    const inicio = primeiraLeg?.DataInicio
-      ? new Date(String(primeiraLeg.DataInicio)).getFullYear()
-      : null
-    const fim = segundaLeg?.DataFim
-      ? new Date(String(segundaLeg.DataFim)).getFullYear()
-      : primeiraLeg?.DataFim
-        ? new Date(String(primeiraLeg.DataFim)).getFullYear()
-        : null
-
+    const evidence = deriveSenadoMandatoEvidence(m)
+    if (!evidence.elegivel || evidence.periodos.length === 0) {
+      pendentes++
+      continue
+    }
     const uf = String(m.UfParlamentar || "")
+    for (const periodo of evidence.periodos) {
+      elegiveis++
+      const { data: existingRows, error: existingError } = await supabase
+        .from("historico_politico")
+        .select("id,periodo_inicio,periodo_fim,partido,eleito_por,proveniencia,tipo_evento")
+        .eq("candidato_id", candidatoId)
+        .eq("cargo", "Senador")
+        .abortSignal(context.signal)
+      if (existingError) throw new Error(`historico_politico: ${existingError.message}`)
 
-    const partidos = ensureArray(
-      dig(m, "Exercicios", "Exercicio") as Record<string, unknown>[]
-    )
-    const partido = partidos.length > 0
-      ? String((partidos[0] as Record<string, unknown>).SiglaPartido || "")
-      : ""
+      const candidates = (existingRows ?? []).filter((row) => row.periodo_inicio === periodo.inicio)
+      if (candidates.length > 1) {
+        pendentes++
+        continue
+      }
+      const existing = candidates[0] ?? null
+      // A curated or independently sourced row is outside this producer's
+      // authority. Only legacy NULL rows may receive the Senate provenance.
+      if (existing && existing.proveniencia != null && existing.proveniencia !== "senado") continue
 
-    const descricaoParticipacao = String(m.DescricaoParticipacao || "Titular")
-    const eleitoPor = descricaoParticipacao.toLowerCase().includes("suplent")
-      ? "suplencia"
-      : "voto direto"
+      const row = {
+        candidato_id: candidatoId,
+        cargo: "Senador",
+        periodo_inicio: periodo.inicio,
+        periodo_fim: periodo.fim,
+        partido: evidence.partido ?? existing?.partido ?? "",
+        estado: uf,
+        eleito_por: evidence.eleitoPor ?? existing?.eleito_por ?? null,
+        tipo_evento: "mandato",
+        proveniencia: "senado",
+      }
 
-    const { data: existing } = await supabase
-      .from("historico_politico")
-      .select("id")
-      .eq("candidato_id", candidatoId)
-      .eq("cargo", "Senador")
-      .eq("periodo_inicio", inicio)
-      .abortSignal(context.signal)
-      .single()
-
-    const row = {
-      candidato_id: candidatoId,
-      cargo: "Senador",
-      periodo_inicio: inicio,
-      periodo_fim: fim,
-      partido,
-      estado: uf,
-      eleito_por: eleitoPor,
+      if (existing) {
+        await persist(supabase.from("historico_politico").update(row).eq("id", existing.id).abortSignal(context.signal), "historico_politico", context)
+      } else {
+        await persist(supabase.from("historico_politico").insert(row).abortSignal(context.signal), "historico_politico", context)
+      }
+      count++
     }
-
-    if (existing) {
-      await persist(supabase.from("historico_politico").update(row).eq("id", existing.id).abortSignal(context.signal), "historico_politico", context)
-    } else {
-      await persist(supabase.from("historico_politico").insert(row).abortSignal(context.signal), "historico_politico", context)
-    }
-    count++
   }
 
-  log("senado", `  ${slug}: ${count} mandatos`)
-  return count
+  log("senado", `  ${slug}: ${count} mandatos com Exercicios datados; ${pendentes} pendentes sem prova contínua`)
+  return { persistidos: count, elegiveis, pendentes, url }
 }
 
 export interface PortasDeVotosSenado {
@@ -578,7 +583,11 @@ export async function ingestSenado(options?: IngestSenadoOptions | string[]): Pr
           )
           await sleep(500, signal)
 
-          await ingestMandatos(cand.ids.senado!, candidatoId, cand.slug, context)
+          const mandatos = await ingestMandatos(cand.ids.senado!, candidatoId, cand.slug, context)
+          result.coleta_url = mandatos.url
+          result.coleta_volume = mandatos.elegiveis
+          if (mandatos.elegiveis > 0) result.coleta_resultado = "encontrado"
+          result.coleta_detalhe = `escopo=mandatos; intervalos de Exercicios com DataInicio explícita=${mandatos.elegiveis}; pendentes sem DataInicio/ambiguidade=${mandatos.pendentes}; legislatura isolada não prova exercício pessoal`
           await sleep(500, signal)
 
           const votos = await ingestVotos(cand.ids.senado!, candidatoId, cand.slug, context)

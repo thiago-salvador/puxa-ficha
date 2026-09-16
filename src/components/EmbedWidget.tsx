@@ -11,6 +11,7 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { formatCargoDisputadoPublicLabel, formatDestaquesLabel } from "@/lib/ui-labels"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import { patrimonioMaisRecenteSemEscolhaArbitraria } from "@/lib/patrimonio-contexto"
 
 function MetaLine({ ficha }: { ficha: FichaCandidato }) {
   const parts = [
@@ -66,14 +67,14 @@ function buildPatrimonioEmbedSub(
   const maisRecente = eleicoesSemDado[0]
   if (!maisRecente) return undefined
   return maisRecente.estado === "vazio_confirmado"
-    ? `${maisRecente.ano}: sem bens declarados ao TSE`
+    ? `${maisRecente.ano}: nenhum registro de bens localizado no arquivo do TSE`
     : `${maisRecente.ano}: coleta de bens ainda não realizada`
 }
 
 export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
   const patrimonio = ficha.patrimonio ?? []
-  const patrimonioSorted = [...patrimonio].sort((a, b) => a.ano_eleicao - b.ano_eleicao)
-  const latestPatrimonio = patrimonioSorted.at(-1) ?? null
+  const latestPatrimonioContexto = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
+  const latestPatrimonio = latestPatrimonioContexto.patrimonio
   const patrimonioEleicoes = resolvePatrimonioEleicoes(ficha)
   const patrimonioEleicoesSemDado = patrimonioEleicoes.filter(
     (eleicao) => eleicao.estado !== "publicado",
@@ -113,8 +114,14 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
       <div className="px-4 py-1">
         <StatRow
           label="Patrimônio declarado"
-          value={latestPatrimonio ? <FormattedNumber value={latestPatrimonio.valor_total} /> : patrimonioWithoutValueLabel(patrimonioEleicoes)}
-          sub={buildPatrimonioEmbedSub(latestPatrimonio, patrimonioEleicoesSemDado)}
+          value={latestPatrimonio
+            ? <FormattedNumber value={latestPatrimonio.valor_total} />
+            : latestPatrimonioContexto.quantidade > 1
+              ? `${latestPatrimonioContexto.quantidade} declarações`
+              : patrimonioWithoutValueLabel(patrimonioEleicoes)}
+          sub={latestPatrimonioContexto.quantidade > 1
+            ? `Candidaturas distintas em ${latestPatrimonioContexto.ano}`
+            : buildPatrimonioEmbedSub(latestPatrimonio, patrimonioEleicoesSemDado)}
         />
         <StatRow
           label="Processos"

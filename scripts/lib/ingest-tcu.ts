@@ -2,8 +2,9 @@ import { supabase } from "./supabase"
 import { loadCandidatosPublicos } from "./helpers-db"
 import { sleep } from "./helpers"
 import { log, warn } from "./logger"
-import type { IngestResult } from "./types"
+import type { CandidatoConfig, IngestResult } from "./types"
 import { motivoRecusaDeFonte } from "../../src/lib/public-attention-point"
+import { namesLookCompatible } from "./name-match"
 
 const TCU_INABILITADOS_URL =
   "https://certidoes.apps.tcu.gov.br/api/publico/responsaveis-inabilitados"
@@ -12,7 +13,7 @@ function stripCPF(cpf: string): string {
   return cpf.replace(/[.\-]/g, "")
 }
 
-interface TCUInabilitado {
+export interface TCUInabilitado {
   nome?: string
   numeroRegistro?: string
   dataAcordao?: string
@@ -22,7 +23,7 @@ interface TCUInabilitado {
   linkAcompanhamentoProcesso?: string
 }
 
-interface TCUCadirreg {
+export interface TCUCadirreg {
   nome?: string
   cpf?: string
   numeroAcordaoFormatado?: string
@@ -36,6 +37,12 @@ interface FonteTCU {
   titulo: string
   url: string
   data: string
+}
+
+type RegistroComFonteTCU = {
+  linkAcompanhamentoProcesso?: string
+  linkDeliberacoesProcesso?: string
+  numeroProcessoFormatado?: string
 }
 
 const HOSTS_PUBLICOS_TCU = new Set(["contas.tcu.gov.br", "conecta-tcu.apps.tcu.gov.br"])
@@ -56,7 +63,7 @@ const HOSTS_PUBLICOS_TCU = new Set(["contas.tcu.gov.br", "conecta-tcu.apps.tcu.g
  * curadoria (ver `montarLinhaPontoAtencaoTCU`), não adivinhá-la.
  */
 export function fontePublicaTCU(
-  registro: Pick<TCUInabilitado, "linkAcompanhamentoProcesso" | "linkDeliberacoesProcesso">,
+  registro: RegistroComFonteTCU,
   titulo: string,
   data = new Date(),
 ): FonteTCU[] {
@@ -67,10 +74,25 @@ export function fontePublicaTCU(
     try {
       const url = new URL(raw)
       const segmentos = url.pathname.split("/").filter(Boolean)
+      const processo = registro.numeroProcessoFormatado?.match(/^(\d+)\.(\d{3})\/(\d{4})-(\d)$/)
+      const isAcompanhamentoProcesso =
+        url.hostname === "contas.tcu.gov.br" && url.pathname === "/etcu/AcompanharProcesso"
+      if (isAcompanhamentoProcesso) {
+        const params = [...url.searchParams.entries()]
+        const exactKeys = params.length === 3 && new Set(params.map(([key]) => key)).size === 3 && ["p1", "p2", "p3"].every((key) => url.searchParams.has(key))
+        const exactProcess =
+          processo &&
+          url.searchParams.get("p1") === processo[1] + processo[2] &&
+          url.searchParams.get("p2") === processo[3] &&
+          url.searchParams.get("p3") === processo[4]
+        if (url.protocol !== "https:" || !processo || !exactKeys || !exactProcess || url.username || url.password) continue
+        return [{ titulo, url: url.toString(), data: data.toISOString().slice(0, 10) }]
+      }
       if (
         url.protocol !== "https:" ||
         !HOSTS_PUBLICOS_TCU.has(url.hostname) ||
         segmentos.length < 2 ||
+        !segmentos.some((segmento) => /\d/.test(segmento)) ||
         url.username ||
         url.password ||
         url.search
@@ -84,6 +106,52 @@ export function fontePublicaTCU(
   }
 
   return []
+}
+
+function campoTexto(registro: Record<string, unknown>, campo: string): string {
+  const valor = registro[campo]
+  return typeof valor === "string" ? valor.trim() : ""
+}
+
+/** Valida a forma mínima de cada registro antes de tratar a resposta como positiva. */
+export function validarRegistrosTCU<T extends TCUInabilitado | TCUCadirreg>(
+  payload: unknown,
+): T[] | null {
+  if (!Array.isArray(payload)) return null
+  for (const item of payload) {
+    if (typeof item !== "object" || item === null) return null
+    const registro = item as Record<string, unknown>
+    const nome = campoTexto(registro, "nome")
+    const temRegistro = ["numeroRegistro", "numeroProcessoFormatado", "codigoProcesso"]
+      .some((campo) => typeof registro[campo] === "string" && campoTexto(registro, campo) !== "" || typeof registro[campo] === "number" && Number.isFinite(registro[campo]))
+    if (!nome || !temRegistro) return null
+  }
+  return payload as T[]
+}
+
+/** Liga cada item positivo ao candidato consultado sem expor o CPF. */
+export function registroTCUIdentidadeCompativel(
+  registro: Pick<TCUInabilitado | TCUCadirreg, "nome">,
+  nomesEsperados: readonly string[],
+): boolean {
+  return typeof registro.nome === "string" && namesLookCompatible([...nomesEsperados], [registro.nome])
+}
+
+function descricaoRegistroTCU(registro: TCUInabilitado | TCUCadirreg, indice: number): string {
+  const campos = [
+    ["Acórdão", registro.numeroAcordaoFormatado],
+    ["Processo", "numeroProcessoFormatado" in registro ? registro.numeroProcessoFormatado : undefined],
+    ["Data do acórdão", "dataAcordao" in registro ? registro.dataAcordao : undefined],
+    ["Fim da sanção", "dataFinalSancao" in registro ? registro.dataFinalSancao : undefined],
+    ["Trânsito em julgado", "dataTransitoEmJulgado" in registro ? registro.dataTransitoEmJulgado : undefined],
+  ]
+    .filter(([, valor]) => typeof valor === "string" && valor.trim() !== "")
+    .map(([rotulo, valor]) => `${rotulo}: ${valor}`)
+  return `Registro ${indice + 1}${campos.length > 0 ? ` (${campos.join(" | ")})` : ""}`
+}
+
+export function descreverRegistrosTCU(registros: readonly (TCUInabilitado | TCUCadirreg)[]): string {
+  return registros.map(descricaoRegistroTCU).join("; ")
 }
 
 // Retorno null = fonte indisponível (HTTP != 200, payload inválido, rede).
@@ -100,8 +168,7 @@ export async function fetchTCUInabilitados(
     })
     if (!res.ok) return null
     const data = await res.json()
-    if (!Array.isArray(data)) return null
-    return data as TCUInabilitado[]
+    return validarRegistrosTCU<TCUInabilitado>(data)
   } catch {
     return null
   }
@@ -125,8 +192,7 @@ export async function fetchTCUCadirreg(
     })
     if (!res.ok) return null
     const data = await res.json()
-    if (!Array.isArray(data)) return null
-    return data as TCUCadirreg[]
+    return validarRegistrosTCU<TCUCadirreg>(data)
   } catch {
     return null
   }
@@ -227,10 +293,26 @@ export function montarLinhaPontoAtencaoTCU(
     typeof existente.descricao === "string" && existente.descricao.trim() !== ""
       ? existente.descricao
       : null
+  // Texto já verificado é curadoria editorial: novas respostas da API não
+  // podem contaminar nem duplicar essa alegação. Para linhas automáticas ainda
+  // não verificadas, a evidência nova pode ser anexada idempotentemente.
+  const marcadoresDeEvidencia = [...descricao.matchAll(/(?:Acórdão|Processo|Data do acórdão|Fim da sanção|Trânsito em julgado):\s*([^|)]+)/g)]
+    .map(([, valor]) => valor.trim())
+    .filter(Boolean)
+  const evidenciaJaPresente = Boolean(
+    descricaoExistente &&
+    marcadoresDeEvidencia.length > 0 &&
+    marcadoresDeEvidencia.every((valor) => descricaoExistente.includes(valor)),
+  )
+  const descricaoComEvidencia = existente.verificado === true || evidenciaJaPresente
+    ? descricaoExistente ?? descricao
+    : descricaoExistente && descricao && !descricaoExistente.includes(descricao)
+      ? `${descricaoExistente}\n\n${descricao}`
+      : descricaoExistente ?? descricao
 
   return {
     ...row,
-    descricao: descricaoExistente ?? descricao,
+    descricao: descricaoComEvidencia,
     verificado: existente.verificado === true,
     fontes: unirFontesPorUrl(existente.fontes, fontes),
   }
@@ -285,8 +367,18 @@ async function upsertPontoAtencao(
   return true
 }
 
-export async function ingestTCU(): Promise<IngestResult[]> {
-  const candidatos = await loadCandidatosPublicos()
+export type IngestTCUOptions = {
+  targetSlugs?: readonly string[]
+  fetchImpl?: typeof fetch
+  /** Coorte pública materializada do banco, para não depender do seed histórico. */
+  candidateRows?: readonly Pick<CandidatoConfig, "slug" | "nome_completo" | "nome_urna">[]
+}
+
+export async function ingestTCU(options: IngestTCUOptions = {}): Promise<IngestResult[]> {
+  const selectedSlugs = options.targetSlugs ? new Set(options.targetSlugs) : null
+  const fetchImpl = options.fetchImpl ?? fetch
+  const candidatos = (options.candidateRows ? [...options.candidateRows] : await loadCandidatosPublicos())
+    .filter((cand) => !selectedSlugs || selectedSlugs.has(cand.slug))
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
@@ -327,8 +419,8 @@ export async function ingestTCU(): Promise<IngestResult[]> {
       const candidatoId = dbCand.id
 
       const [inabilitados, cadirreg] = await Promise.all([
-        fetchTCUInabilitados(cpfLimpo),
-        fetchTCUCadirreg(cpfLimpo),
+        fetchTCUInabilitados(cpfLimpo, fetchImpl),
+        fetchTCUCadirreg(cpfLimpo, fetchImpl),
       ])
 
       // Fonte indisponível não é ausência de sanção: sem resposta 200 da fonte,
@@ -339,6 +431,16 @@ export async function ingestTCU(): Promise<IngestResult[]> {
           cadirreg === null ? "TCU CADIRREG (certidoes)" : null,
         ].filter(Boolean)
         result.errors.push(`Fonte indisponivel, flags nao atualizadas: ${fontesMortas.join(", ")}`)
+        result.duration_ms = Date.now() - start
+        results.push(result)
+        continue
+      }
+
+      const nomesEsperados = [cand.nome_completo, cand.nome_urna].filter(Boolean)
+      const registrosInabilitadosValidos = inabilitados.every((registro) => registroTCUIdentidadeCompativel(registro, nomesEsperados))
+      const registrosCadirregValidos = cadirreg.every((registro) => registroTCUIdentidadeCompativel(registro, nomesEsperados))
+      if (!registrosInabilitadosValidos || !registrosCadirregValidos) {
+        result.errors.push("Resposta TCU positiva sem identidade compatível com o candidato consultado; flags e processos preservados")
         result.duration_ms = Date.now() - start
         results.push(result)
         continue
@@ -363,15 +465,8 @@ export async function ingestTCU(): Promise<IngestResult[]> {
       }
 
       if (tcuInabilitado) {
-        const primeiro = inabilitados[0]
-        const fontes = fontePublicaTCU(primeiro, "TCU — processo de inabilitação")
-        const descricao = [
-          primeiro.numeroAcordaoFormatado ? `Acórdão: ${primeiro.numeroAcordaoFormatado}` : null,
-          primeiro.dataAcordao ? `Data do acórdão: ${primeiro.dataAcordao}` : null,
-          primeiro.dataFinalSancao ? `Fim da sanção: ${primeiro.dataFinalSancao}` : null,
-        ]
-          .filter(Boolean)
-          .join(" | ")
+        const fontes = inabilitados.flatMap((registro) => fontePublicaTCU(registro, "TCU — processo de inabilitação"))
+        const descricao = descreverRegistrosTCU(inabilitados)
 
         const gravado = await upsertPontoAtencao(
           candidatoId,
@@ -392,15 +487,8 @@ export async function ingestTCU(): Promise<IngestResult[]> {
       }
 
       if (tcuContasIrregulares) {
-        const primeiro = cadirreg[0]
-        const fontes = fontePublicaTCU(primeiro, "TCU — processo com contas julgadas irregulares")
-        const descricao = [
-          primeiro.numeroAcordaoFormatado ? `Acórdão: ${primeiro.numeroAcordaoFormatado}` : null,
-          primeiro.numeroProcessoFormatado ? `Processo: ${primeiro.numeroProcessoFormatado}` : null,
-          primeiro.dataTransitoEmJulgado ? `Trânsito em julgado: ${primeiro.dataTransitoEmJulgado}` : null,
-        ]
-          .filter(Boolean)
-          .join(" | ")
+        const fontes = cadirreg.flatMap((registro) => fontePublicaTCU(registro, "TCU — processo com contas julgadas irregulares"))
+        const descricao = descreverRegistrosTCU(cadirreg)
 
         const gravado = await upsertPontoAtencao(
           candidatoId,
@@ -423,6 +511,17 @@ export async function ingestTCU(): Promise<IngestResult[]> {
       if (!tcuInabilitado && !tcuContasIrregulares) {
         log("tcu", `  ${cand.slug}: sem irregularidades no TCU`)
       }
+      result.coleta_volume = inabilitados.length + cadirreg.length
+      result.coleta_resultado = result.errors.length > 0
+        ? "erro"
+        : result.coleta_volume > 0 ? "encontrado" : "vazio_confirmado"
+      result.coleta_detalhe = [
+        "escopo=TCU Plataforma de Certidões; consultas oficiais inabilitados e contas irregulares",
+        `inabilitados_itens=${inabilitados.length}`,
+        `cadirreg_itens=${cadirreg.length}`,
+        "identidade=nome retornado compatível com nome civil/urna; CPF consultado não persistido",
+        ...(result.errors.length > 0 ? [`erros=${result.errors.join(" | ")}`] : []),
+      ].join("; ")
     } catch (err) {
       result.errors.push(err instanceof Error ? err.message : String(err))
     }

@@ -79,7 +79,7 @@ describe("normalizarCpfTse: o risco oposto, lixo curto não vira CPF", () => {
   })
 
   it("marcadores do CSV do TSE não viram CPF", () => {
-    for (const marcador of ["#NULO#", "NAO DIVULGAVEL", "-1", null, undefined]) {
+    for (const marcador of ["#NULO#", "#NULO", "#NE", "NAO DIVULGAVEL", "-1", "-4", null, undefined]) {
       assert.equal(normalizarCpfTse(marcador), "")
     }
   })

@@ -25,6 +25,15 @@ async function bancoFake(
     const offset = Number(url.searchParams.get("offset") ?? 0)
     chamadas.push({ method: req.method!, path: url.pathname, select: url.searchParams.get("select"), offset })
     res.setHeader("content-type", "application/json")
+    if (url.pathname === "/rest/v1/candidatos") {
+      // Lookup nominal do coletor. Sem CPF, a coleta fecha em `erro` antes de
+      // qualquer consulta externa, o que mantém o teste sem rede.
+      const slug = url.searchParams.get("slug")?.replace(/^eq\./, "")
+      const linha = linhas.find((item) => item.slug === slug)
+      res.statusCode = linha ? 200 : 406
+      res.end(JSON.stringify(linha ? { id: `id-${linha.slug}`, cpf: null, slug: linha.slug, nome_completo: linha.nome_completo } : { message: "sem linha" }))
+      return
+    }
     if (url.pathname !== "/rest/v1/candidatos_publico") {
       res.statusCode = 500
       res.end(JSON.stringify({ message: "rota inesperada" }))
@@ -131,9 +140,18 @@ test("runner e coletor reutilizam a mesma coorte para PF_INGEST_SLUGS fora do se
     })
     assert.equal(code, 0, out)
     assert.match(out, /"total": 1/)
-    assert.match(out, /"alvo": "fora-do-seed"/)
+    // Sem chave, o coletor passou a usar as exportações oficiais públicas; o
+    // candidato da coorte chega ao coletor e ao relatório por candidato.
+    assert.match(out, /Processando fora-do-seed/)
+    assert.match(out, /"slug": "fora-do-seed"/)
+    assert.match(out, /sem CPF: nenhum cadastro foi consultado/, "fixture sem CPF não pode acionar consulta externa")
     assert.match(out, /TRANSPARENCIA_API_KEY ausente/)
-    assert.equal(db.chamadas.length, 2, "uma leitura paginada, sem recarregar coorte no coletor")
+    assert.match(out, /"escritas": \[\]/)
+    const leiturasDaCoorte = db.chamadas.filter((c) => c.path === "/rest/v1/candidatos_publico")
+    assert.equal(leiturasDaCoorte.length, 2, "uma leitura paginada, sem recarregar coorte no coletor")
+    const lookups = db.chamadas.filter((c) => c.path === "/rest/v1/candidatos")
+    assert.equal(lookups.length, 1, "o coletor consulta só o candidato da coorte recebida")
+    assert.equal(db.chamadas.length, leiturasDaCoorte.length + lookups.length)
     assert.ok(db.chamadas.every((c) => c.method === "GET"))
   } finally { await db.close() }
 })

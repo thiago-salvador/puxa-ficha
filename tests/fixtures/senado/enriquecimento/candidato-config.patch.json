@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "slug": "tse-2026-9001",
+  "nome_completo": "PESSOA SINTETICA DE TESTE",
+  "nome_urna": "PESSOA TESTE",
+  "cargo_disputado": "Senador",
+  "estado": "SP",
+  "ids": {
+    "camara": null,
+    "senado": null,
+    "tse_sq_candidato": {
+      "2002": "7002",
+      "2008": "7008",
+      "2018": "7018",
+      "2026": "9001"
+    },
+    "tse_uf_candidatura": {
+      "2002": "SP",
+      "2008": "SP",
+      "2018": "SP",
+      "2026": "SP"
+    }
+  },
+  "source_artifact": "historico-tse-publico.json"
+}

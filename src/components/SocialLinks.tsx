@@ -1,5 +1,6 @@
 import { Globe } from "lucide-react"
 import { safeHref } from "@/lib/utils"
+import { valorSocialReservado } from "@/lib/social-profile-url"
 
 const SOCIAL_ICONS: Record<string, { label: string; urlPrefix: string }> = {
   instagram: { label: "Instagram", urlPrefix: "https://instagram.com/" },
@@ -59,7 +60,37 @@ export function SocialLinks({
   const safeWiki = wikiUrl.startsWith("http") ? safeHref(wikiUrl) : null
 
   const entries = Object.entries(redes).filter(([k, v]) => v && k !== "wikipedia")
-  if (entries.length === 0 && !site && !safeWiki) return null
+  const links = entries.flatMap(([platform, rawHandle]) => {
+    const info = SOCIAL_ICONS[platform]
+    if (!info) return []
+    // redes_sociais pode guardar instagram como objeto { username, url }
+    const handle: string =
+      typeof rawHandle === "object" && rawHandle !== null
+        ? (rawHandle as { url?: string; username?: string }).url ??
+          (rawHandle as { username?: string }).username ??
+          ""
+        : String(rawHandle)
+    if (!handle) return []
+    // Defesa para dado já gravado pelo extrator antigo: "channel", "watch",
+    // "p", "intent" viravam `youtube.com/@channel`, um 404 com cara de perfil.
+    if (valorSocialReservado(platform, handle)) return []
+    const rawUrl = COM_ESQUEMA.test(handle) ? handle : `${info.urlPrefix}${handle}`
+    const url = safeHref(rawUrl)
+    if (!url) return []
+    // O @ exibido sai em minuscula: handle de rede social nao diferencia caixa,
+    // e "@ORLEANSBRANDAOMA" gritando no chip e so o import do TSE vazando.
+    // A barra final da URL do TSE ("/FULANO/") virava "@fulano/" no chip.
+    let arroba = handle
+      .replace(ESQUEMA_E_HOST, "")
+      .replace(/^@/, "")
+      .replace(/\/+$/, "")
+      .toLowerCase()
+    // Canal do YouTube guardado como URL /c/, /user/ ou /channel/: o chip mostra
+    // só o nome ou ID, sem o prefixo de caminho.
+    if (platform === "youtube") arroba = arroba.replace(/^(?:c|user|channel)\//, "")
+    return [{ platform, url, arroba }]
+  })
+  if (links.length === 0 && !site && !safeWiki) return null
 
   return (
     <div className="flex flex-wrap gap-2">
@@ -85,40 +116,17 @@ export function SocialLinks({
           Wikipedia
         </a>
       )}
-      {entries.map(([platform, rawHandle]) => {
-        const info = SOCIAL_ICONS[platform]
-        if (!info) return null
-        // redes_sociais pode guardar instagram como objeto { username, url }
-        const handle: string =
-          typeof rawHandle === "object" && rawHandle !== null
-            ? (rawHandle as { url?: string; username?: string }).url ??
-              (rawHandle as { username?: string }).username ??
-              ""
-            : String(rawHandle)
-        if (!handle) return null
-        const rawUrl = COM_ESQUEMA.test(handle) ? handle : `${info.urlPrefix}${handle}`
-        const url = safeHref(rawUrl)
-        if (!url) return null
-        // O @ exibido sai em minuscula: handle de rede social nao diferencia caixa,
-        // e "@ORLEANSBRANDAOMA" gritando no chip e so o import do TSE vazando.
-        // A barra final da URL do TSE ("/FULANO/") virava "@fulano/" no chip.
-        const arroba = handle
-          .replace(ESQUEMA_E_HOST, "")
-          .replace(/^@/, "")
-          .replace(/\/+$/, "")
-          .toLowerCase()
-        return (
-          <a
-            key={platform}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-secondary"
-          >
-            @{arroba}
-          </a>
-        )
-      })}
+      {links.map(({ platform, url, arroba }) => (
+        <a
+          key={platform}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-secondary"
+        >
+          @{arroba}
+        </a>
+      ))}
     </div>
   )
 }

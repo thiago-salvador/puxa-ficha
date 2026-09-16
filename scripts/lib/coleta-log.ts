@@ -99,6 +99,7 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   tcu: "candidato",
   filiacao: "candidato",
   "ceaps-senado": "candidato",
+  "gastos-executivo": "candidato",
   jarbas: "candidato",
   wikipedia: "candidato",
   "wiki-historico": "candidato",
@@ -119,6 +120,7 @@ export const FONTES: Readonly<Record<string, EscopoColeta>> = Object.freeze({
   // última tentativa real do ingest do TSE (perfil/patrimônio/financiamento)
   // com um desfecho que só fala do CPF.
   "tse-cpf": "candidato",
+  "senado-cohort": "candidato",
 
   // Cardinalidade do acervo autoral que a Camara declara para o candidato
   // (issue #138). Fonte propria pelo mesmo motivo de `tse-cpf`: o `camara` do
@@ -150,7 +152,7 @@ export function escopoDaFonte(fonte: string): EscopoColeta {
  * rodadas na mesma máquina. Resolvido uma vez por processo de propósito: o valor
  * precisa ser o mesmo em todas as linhas da mesma rodada.
  */
-const EXECUCAO: string = process.env.GITHUB_RUN_ID
+export const EXECUCAO: string = process.env.GITHUB_RUN_ID
   ? `gh:${process.env.GITHUB_RUN_ID}`
   : `local:${process.pid}`
 
@@ -359,6 +361,7 @@ export function entradaDeResultado(resultado: IngestResult): EntradaColeta | nul
           ? (resultado.coleta_volume ?? resultado.rows_upserted)
           : 0,
       detalhe: resultado.coleta_detalhe,
+      url: resultado.coleta_url,
     }
   }
 

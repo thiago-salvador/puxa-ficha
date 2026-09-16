@@ -171,6 +171,19 @@ BEGIN
   ) THEN
     RAISE EXCEPTION 'A2: bens nao fecham com o total';
   END IF;
+  -- Desde 20260915220000 a chave e (candidato_id, ano_eleicao, sq_candidato):
+  -- linha anterior sem SQ viraria duplicata do upsert por contexto.
+  IF EXISTS (
+    SELECT 1
+    FROM _pf_patrimonio_reconciliado d
+    JOIN public.candidatos c ON c.slug = d.slug
+    JOIN public.patrimonio legado
+      ON legado.candidato_id = c.id
+     AND legado.ano_eleicao = d.ano_eleicao
+     AND legado.sq_candidato IS NULL
+  ) THEN
+    RAISE EXCEPTION 'A2: patrimonio legado sem SQ; reconciliar via ingest-tse antes do upsert por contexto';
+  END IF;
 END
 $guard$;
 
@@ -197,13 +210,13 @@ ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE SET
   categorias_origem = EXCLUDED.categorias_origem,
   fonte = EXCLUDED.fonte;
 
--- @write tabela=patrimonio ref=A2-reconciliacao-20260807 campos=valor_total,bens,fonte
-INSERT INTO public.patrimonio (candidato_id, ano_eleicao, valor_total, bens, fonte)
-SELECT c.id, d.ano_eleicao, d.valor_total, d.bens, 'TSE DivulgaCandContas'
+-- @write tabela=patrimonio ref=A2-reconciliacao-20260807 campos=sq_candidato,valor_total,bens,fonte
+INSERT INTO public.patrimonio (candidato_id, ano_eleicao, sq_candidato, valor_total, bens, fonte)
+SELECT c.id, d.ano_eleicao, d.sq_candidato, d.valor_total, d.bens, 'TSE DivulgaCandContas'
 FROM _pf_patrimonio_reconciliado d
 JOIN public.candidatos c ON c.slug = d.slug
 WHERE 'A2-reconciliacao-20260807' = 'A2-reconciliacao-20260807'
-ON CONFLICT (candidato_id, ano_eleicao) DO UPDATE SET
+ON CONFLICT (candidato_id, ano_eleicao, sq_candidato) DO UPDATE SET
   valor_total = EXCLUDED.valor_total,
   bens = EXCLUDED.bens,
   fonte = EXCLUDED.fonte;

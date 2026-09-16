@@ -11,8 +11,8 @@ import { gastoParlamentarExibivel } from "../src/lib/public-profile-dto"
  * mesmo `ideCadastro`. Das 13 linhas de 2019 no banco, nenhuma reproduz por nenhuma das três
  * bases de agregação plausíveis, e o banco é sempre maior.
  *
- * Estes testes existem para que ninguém reabra a exibição por engano, e para que os rótulos
- * reais que existem em produção continuem cobertos quando alguém acrescentar um novo.
+ * Estes testes mantêm as linhas legadas bloqueadas e só reabrem uma linha quando o
+ * snapshot oficial e seu controle independente estão presentes.
  */
 describe("cota parlamentar: o que pode ir ao ar", () => {
   test("bloqueia todos os rótulos de origem Câmara que existem em produção", () => {
@@ -44,6 +44,32 @@ describe("cota parlamentar: o que pode ir ao ar", () => {
     for (const fonte of senado) {
       assert.equal(gastoParlamentarExibivel(fonte), true, `deveria exibir: ${fonte}`)
     }
+  })
+
+  test("mantém consultas individuais da Transparência fora do total parlamentar", () => {
+    for (const fonte of [
+      "Portal da Transparência — cartões por portador",
+      "Portal da Transparência — viagens por CPF",
+      "Portal da Transparência — contratos por CPF",
+    ]) {
+      assert.equal(gastoParlamentarExibivel(fonte), false)
+    }
+  })
+
+  test("libera somente linha Câmara com snapshot e controle independente", () => {
+    const valid = {
+      categorias: [],
+      proveniencia: {
+        controle_independente: true,
+        fonte_url: "https://dadosabertos.camara.leg.br/api/v2/deputados/123/despesas",
+        id_camara: 123,
+        consulta_paginas: 2,
+        consulta_snapshot_sha256: "a".repeat(64),
+      },
+    }
+    assert.equal(gastoParlamentarExibivel("Cota Parlamentar/Camara dadosabertos", valid), true)
+    assert.equal(gastoParlamentarExibivel("Cota Parlamentar/Camara dadosabertos", { ...valid, proveniencia: { ...valid.proveniencia, controle_independente: false } }), false)
+    assert.equal(gastoParlamentarExibivel("Cota Parlamentar/Camara dadosabertos", { ...valid, proveniencia: { ...valid.proveniencia, fonte_url: "https://example.test/despesas" } }), false)
   })
 
   test("linha sem fonte declarada continua exibível, porque o bloqueio é nominal", () => {

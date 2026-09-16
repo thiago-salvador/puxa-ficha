@@ -226,6 +226,10 @@ export async function enrichWikiHistorico(): Promise<IngestResult[]> {
       continue
     }
 
+    // Proveniência mínima por execução: a consulta de categorias usa esta
+    // API, com o título atual e o escopo nominal do candidato no detalhe.
+    result.coleta_url = WIKI_API
+
     // Get candidate ID from DB
     let dbCand: { id: string; partido_sigla?: string | null } | null = null
     try {
@@ -277,6 +281,8 @@ export async function enrichWikiHistorico(): Promise<IngestResult[]> {
     }
 
     const cargos = finalizarCategoriasWikiHistorico(result, resposta.categories)
+
+    result.coleta_detalhe = `${result.coleta_detalhe ?? ""}; titulo=${wikiTitle}; escopo=candidato`.slice(0, 500)
 
     log("wiki-historico", `${cand.slug}: ${cargos.length} cargos encontrados via categorias`)
 

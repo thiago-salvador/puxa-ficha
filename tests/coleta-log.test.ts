@@ -55,6 +55,19 @@ describe("entradaDeResultado nao inventa veredito", () => {
     assert.equal(entrada.detalhe, "4 cadastros vazios")
   })
 
+  it("preserva a URL efetivamente consultada no recibo compartilhado", () => {
+    const entrada = entradaDeResultado(
+      resultado({
+        coleta_resultado: "encontrado",
+        coleta_volume: 1,
+        coleta_url: "https://query.wikidata.org/sparql",
+        coleta_detalhe: "qid=Q123; escopo=candidato",
+      }),
+    )
+    assert.ok(entrada)
+    assert.equal(entrada.url, "https://query.wikidata.org/sparql")
+  })
+
   it("skipped SEM desfecho declarado nao vira linha nenhuma", () => {
     // O skipped da Camara em modo incremental significa "o dado ja estava
     // coberto". Gravar isso sobrescreveria, em coleta_log_ultima, a ultima
@@ -277,6 +290,9 @@ describe("FONTES cobre todo source declarado pelos ingests", () => {
       // saber o denominador (issue #138). O regex acima procura literal de
       // IngestResult, entao ela nao aparece em `declarados` por construcao.
       "camara-proposicoes",
+      // O coletor executivo é um entrypoint dedicado em scripts/, fora de
+      // scripts/lib; ainda assim sua fonte precisa permanecer no mapa.
+      "gastos-executivo",
     ])
     const orfas = Object.keys(FONTES).filter(
       (f) => !declarados.has(f) && !excecoes.has(f),

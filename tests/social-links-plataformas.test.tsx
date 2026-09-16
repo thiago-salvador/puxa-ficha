@@ -68,11 +68,10 @@ test("SocialLinks ignora plataforma desconhecida em vez de quebrar a ficha", () 
     createElement(SocialLinks, { redes: { orkut: "alguem" } }),
   )
 
-  // Nenhum link sai, e o handle nunca vaza como texto solto. O container vazio
-  // fica: `entries.length` conta a chave desconhecida antes de o map descartar,
-  // entao o early return nao dispara. E cosmetico, mas fica documentado aqui
-  // para nao ser confundido com o dado tendo sido renderizado.
+  // Nenhum link sai, e o handle nunca vaza como texto solto. Os links agora sao
+  // filtrados antes do early return, entao sem link renderizavel nao sobra nem o
+  // container vazio.
   assert.doesNotMatch(html, /<a /)
   assert.doesNotMatch(html, /alguem/)
-  assert.equal(html, '<div class="flex flex-wrap gap-2"></div>')
+  assert.equal(html, "")
 })

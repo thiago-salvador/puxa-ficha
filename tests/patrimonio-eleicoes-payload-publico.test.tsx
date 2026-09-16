@@ -25,6 +25,7 @@ import { processosOverviewDisplay } from "@/lib/processos-display"
 import { formatCompact } from "@/lib/utils"
 import {
   buildPatrimonioEleicoes,
+  humanizarDetalheAusenciaPatrimonio,
   resolvePatrimonioEleicoes,
   toPublicCandidatoProfileDto,
 } from "@/lib/public-profile-dto"
@@ -185,7 +186,7 @@ test("Rui Costa Pimenta (item 16): a ausência conferida de 2014 sobrevive ao pa
     "vazio_confirmado",
     "2014 tem ausência conferida no TSE e não pode virar pendência de coleta",
   )
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"))
+  assert.ok(html.includes("Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2014 consultado"))
   assert.ok(html.includes("Verificado em 07/08/2026"), "a data da verificação chega ao DOM")
   assert.ok(html.includes(`href="${fonteBemCandidato(2014)}"`), "a fonte oficial chega ao DOM")
   assert.ok(
@@ -280,7 +281,7 @@ test("ficha sem nenhum patrimônio publicado ainda mostra a ausência conferida,
     "vazio_confirmado",
     "gatear a seção em patrimonio.length > 0 sumia com a ausência que sabemos provar",
   )
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2020"))
+  assert.ok(html.includes("Nenhum registro de bens localizado no arquivo do TSE em 2020"))
   assert.ok(html.includes(`href="${fonteBemCandidato(2020)}"`))
   assert.ok(html.includes("Verificado em 07/08/2026"))
 })
@@ -381,11 +382,26 @@ test("X10: ausência patrimonial confirmada preserva fonte e ano entre DTO, fich
   const embed = renderToStaticMarkup(<EmbedWidget ficha={dto} />)
   assert.equal(estadoNoDom(profile, 2022), "vazio_confirmado")
   assert.ok(profile.includes(`href="${fonteBemCandidato(2022)}"`))
-  assert.ok(embed.includes("2022: sem bens declarados ao TSE"))
-  assert.ok(embed.includes("Sem bens declarados ao TSE em 2022"))
-  assert.ok(profile.includes('data-pf-overview-patrimonio="Sem bens declarados ao TSE em 2022"'))
+  assert.ok(embed.includes("2022: nenhum registro de bens localizado no arquivo do TSE"))
+  assert.ok(embed.includes("Nenhum registro de bens localizado no arquivo do TSE em 2022"))
+  assert.ok(profile.includes('data-pf-overview-patrimonio="Nenhum registro de bens localizado no arquivo do TSE em 2022"'))
   assert.ok(!embed.includes("Ainda não verificado"))
   assert.ok(!embed.includes("coleta de bens ainda não realizada"))
+})
+
+test("X10: traduz detalhe técnico ST_DECLARAR_BENS=N sem afirmar ausência patrimonial", () => {
+  const detalhe = "Identidade confirmada por SQ_CANDIDATO, ano e UF; consulta_cand registra ST_DECLARAR_BENS=N e o pacote oficial completo não traz bens para a candidatura."
+  const humano = humanizarDetalheAusenciaPatrimonio(detalhe)
+  assert.equal(
+    humano,
+    "Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial consultado. Isso não comprova ausência de patrimônio nem de declaração.",
+  )
+  assert.doesNotMatch(humano, /SQ_CANDIDATO|ST_DECLARAR_BENS/i)
+})
+
+test("X10: preserva conflito ST_DECLARAR_BENS=S no detalhe patrimonial", () => {
+  const detalhe = "ST_DECLARAR_BENS=S no cadastro complementar, mas o arquivo consultado não traz bens."
+  assert.equal(humanizarDetalheAusenciaPatrimonio(detalhe), detalhe)
 })
 
 test("X10: zero verificado, fonte ausente e fonte falha não se confundem após DTO", () => {

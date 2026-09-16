@@ -10,3 +10,14 @@ export function isSupabaseNoRowError(error: unknown): boolean {
   if (error == null || typeof error !== "object") return false
   return (error as { code?: unknown }).code === "PGRST116"
 }
+
+/**
+ * `42703` (undefined_column): a consulta pediu coluna que o schema remoto ainda
+ * não tem. Acontece quando o código é promovido antes da migration que cria a
+ * coluna; só leituras com conjunto de colunas pré-migration conhecido podem
+ * tratar esse código como recuperável.
+ */
+export function isSupabaseUndefinedColumnError(error: unknown): boolean {
+  if (error == null || typeof error !== "object") return false
+  return (error as { code?: unknown }).code === "42703"
+}

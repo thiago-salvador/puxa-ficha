@@ -87,16 +87,16 @@ export function getPatrimonioEmptyState(
 
   if (hasHistorico) {
     return {
-      title: "Nenhum patrimônio declarado no TSE",
+      title: "Nenhum registro de patrimônio localizado no arquivo do TSE",
       description:
-        "A fonte oficial foi conferida em todos os pleitos aplicáveis e não registra bens declarados.",
+        "A fonte oficial foi conferida nos pleitos aplicáveis e não trouxe registros no recorte consultado. Isso não comprova ausência de patrimônio nem de declaração.",
       type: "notable" as const,
     }
   }
   return {
-    title: "Sem bens declarados ao TSE",
+    title: "Nenhum registro de patrimônio localizado no arquivo do TSE",
     description:
-      "A fonte oficial foi conferida em todos os pleitos aplicáveis e não registra declaração de bens.",
+      "A fonte oficial foi conferida nos pleitos aplicáveis e não trouxe registros no recorte consultado. Isso não comprova ausência de patrimônio nem de declaração.",
     type: "neutral" as const,
   }
 }

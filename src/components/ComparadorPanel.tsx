@@ -98,11 +98,11 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const hubScope = useMemo(() => {
-    const m = pathname.match(/^\/uf\/([a-z]{2})\/?$/i)
+    const m = pathname.match(/^\/uf\/([a-z]{2})(?:\/senado)?\/?$/i)
     if (!m) return null
     const uf = m[1].toUpperCase()
     if (!VALID_UF_SIGLA.has(uf)) return null
-    return { cargo: "Governador", uf }
+    return { cargo: pathname.toLowerCase().includes("/senado") ? "Senador" : "Governador", uf }
   }, [pathname])
   const [selectedIds, setSelectedIds] = useState<string[]>(() =>
     resolveInitialSelectedIds(candidatos, initialSelectedSlugs)
@@ -578,7 +578,9 @@ export function ComparadorPanel({ candidatos, initialSelectedSlugs, initialEixo 
               <table className="w-full min-w-[36rem]">
                 <thead>
                   <tr>
-                    <th className="w-32 pb-4 text-left text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground" />
+                    <th className="w-32 pb-4 text-left text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                      <span className="sr-only">Candidato</span>
+                    </th>
                     {selectedCandidatos.map((candidato) => (
                       <th
                         key={candidato.id}

@@ -9,3 +9,14 @@ test("namesLookCompatible centraliza a heurística conservadora dos ingests", ()
   assert.equal(namesLookCompatible(["Ana Paula"], ["Carlos Alberto"]), false)
   assert.equal(namesLookCompatible([], ["Nome remoto"]), true)
 })
+
+test("aceita apóstrofo como fronteira de token em nome equivalente", () => {
+  assert.equal(
+    namesLookCompatible(["MANUELA PINTO VIEIRA D ÁVILA", "MANUELA D ÁVILA"], ["MANUELA PINTO VIEIRA D'ÁVILA", "MANUELA D'ÁVILA"]),
+    true,
+  )
+})
+
+test("normalizar apóstrofo não transforma nomes distintos em equivalentes", () => {
+  assert.equal(namesLookCompatible(["MANUELA D ÁVILA"], ["MARIA D'ÁVILA"]), false)
+})

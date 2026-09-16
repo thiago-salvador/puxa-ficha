@@ -1,0 +1,115 @@
+{
+  "schema_version": "senado-acervo-federal-receipts-v1",
+  "generated_at": "2026-09-14T12:00:00Z",
+  "identity": {
+    "sq_candidato": "9001",
+    "uf": "SP",
+    "nome_completo": "PESSOA SINTETICA DE TESTE"
+  },
+  "receipts": [
+    {
+      "source": "camara",
+      "source_ids": [
+        "camara-registro-sintetico-a",
+        "camara-registro-sintetico-b"
+      ],
+      "resultado": "nao_aplicavel",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "urls": [
+        "https://example.org/acervo/camara/a",
+        "https://example.org/acervo/camara/b"
+      ],
+      "escopo": "registro nominal sintético do acervo camara",
+      "detalhe": "Fixture: nenhuma ocorrência nominal nas buscas sintéticas.",
+      "readback": {
+        "registry_source_ids": [
+          "camara-registro-sintetico-a",
+          "camara-registro-sintetico-b"
+        ],
+        "identity_search_terms": [
+          "PESSOA SINTETICA DE TESTE",
+          "PESSOA TESTE"
+        ],
+        "persisted": false
+      }
+    },
+    {
+      "source": "senado",
+      "source_ids": [
+        "senado-registro-sintetico-a",
+        "senado-registro-sintetico-b"
+      ],
+      "resultado": "nao_aplicavel",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "urls": [
+        "https://example.org/acervo/senado/a",
+        "https://example.org/acervo/senado/b"
+      ],
+      "escopo": "registro nominal sintético do acervo senado",
+      "detalhe": "Fixture: nenhuma ocorrência nominal nas buscas sintéticas.",
+      "readback": {
+        "registry_source_ids": [
+          "senado-registro-sintetico-a",
+          "senado-registro-sintetico-b"
+        ],
+        "identity_search_terms": [
+          "PESSOA SINTETICA DE TESTE",
+          "PESSOA TESTE"
+        ],
+        "persisted": false
+      }
+    },
+    {
+      "source": "ceaps-senado",
+      "source_ids": [
+        "ceaps-senado-registro-sintetico-a",
+        "ceaps-senado-registro-sintetico-b"
+      ],
+      "resultado": "nao_aplicavel",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "urls": [
+        "https://example.org/acervo/ceaps-senado/a",
+        "https://example.org/acervo/ceaps-senado/b"
+      ],
+      "escopo": "registro nominal sintético do acervo ceaps-senado",
+      "detalhe": "Fixture: nenhuma ocorrência nominal nas buscas sintéticas.",
+      "readback": {
+        "registry_source_ids": [
+          "ceaps-senado-registro-sintetico-a",
+          "ceaps-senado-registro-sintetico-b"
+        ],
+        "identity_search_terms": [
+          "PESSOA SINTETICA DE TESTE",
+          "PESSOA TESTE"
+        ],
+        "persisted": false
+      }
+    },
+    {
+      "source": "jarbas",
+      "source_ids": [
+        "jarbas-registro-sintetico-a",
+        "jarbas-registro-sintetico-b"
+      ],
+      "resultado": "nao_aplicavel",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "urls": [
+        "https://example.org/acervo/jarbas/a",
+        "https://example.org/acervo/jarbas/b"
+      ],
+      "escopo": "registro nominal sintético do acervo jarbas",
+      "detalhe": "Fixture: nenhuma ocorrência nominal nas buscas sintéticas.",
+      "readback": {
+        "registry_source_ids": [
+          "jarbas-registro-sintetico-a",
+          "jarbas-registro-sintetico-b"
+        ],
+        "identity_search_terms": [
+          "PESSOA SINTETICA DE TESTE",
+          "PESSOA TESTE"
+        ],
+        "persisted": false
+      }
+    }
+  ]
+}

@@ -1,3 +1,15 @@
+export interface HistoricalCandidateIdentity {
+  sq_candidato: string
+  uf: string
+  sg_ue?: string
+  cargo_codigo?: string
+  cargo?: string
+  numero?: string
+  nome?: string
+  nome_urna?: string
+  cpf_match?: boolean
+}
+
 export interface CandidatoConfig {
   slug: string
   nome_completo: string
@@ -18,6 +30,13 @@ export interface CandidatoConfig {
     tse_sq_candidato: Record<string, string>
     tse_uf_candidatura?: Record<string, string>
   }
+  /**
+   * Metadados da linha histórica já reconciliada com a âncora da candidatura.
+   * É contexto de execução, não uma coluna do cadastro público: SQ curto dos
+   * ciclos antigos só pode ser usado junto com a unidade eleitoral ou com a
+   * prova CPF por linha.
+   */
+  historical_identity_by_year?: Record<string, HistoricalCandidateIdentity>
 }
 
 export interface IngestResult {
@@ -45,8 +64,10 @@ export interface IngestResult {
    * Declarar `vazio_confirmado` aqui e a unica forma de afirmar que um zero e
    * real. Ver o comentario da migration 20260804160000.
    */
-  coleta_resultado?: "encontrado" | "vazio_confirmado" | "nao_aplicavel" | "erro" | "indeterminado"
+  coleta_resultado?: "encontrado" | "vazio_confirmado" | "sem_achado_no_escopo" | "nao_aplicavel" | "erro" | "indeterminado"
   /** Registros confirmados na fonte, quando isso difere das linhas gravadas localmente. */
   coleta_volume?: number
   coleta_detalhe?: string
+  /** URL efetivamente consultada, preservada no recibo compartilhado. */
+  coleta_url?: string
 }

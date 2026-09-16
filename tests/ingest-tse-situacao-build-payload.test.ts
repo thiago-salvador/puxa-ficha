@@ -142,6 +142,47 @@ test("buildIngestPayload: pleito corrente exige julgamento explicito mesmo com i
   assert.equal(jaCerto.payload.situacao_candidatura, undefined, "valor igual nao gera escrita")
 })
 
+test("buildIngestPayload: julgamento TSE deferido promove lifecycle pre-candidato para candidato", () => {
+  const { payload, blockedReasons } = buildIngestPayload(
+    {
+      ...BASE_MATCHED,
+      ano: 2026,
+      situacao: "#NE",
+      julgamento: {
+        sq: BASE_MATCHED.sq_candidato,
+        codigo: "2",
+        descricao: "DEFERIDO",
+      },
+    },
+    snapshot({ status: "pre-candidato" }),
+    2026,
+  )
+
+  assert.equal(payload.situacao_candidatura, "deferido")
+  assert.equal(payload.status, "candidato")
+  assert.deepEqual(blockedReasons, [])
+})
+
+test("buildIngestPayload: julgamento deferido nao rebaixa lifecycle removido ou desistente", () => {
+  const info = {
+    ...BASE_MATCHED,
+    ano: 2026,
+    situacao: "#NE",
+    julgamento: {
+      sq: BASE_MATCHED.sq_candidato,
+      codigo: "2",
+      descricao: "DEFERIDO",
+    },
+  }
+
+  for (const status of ["removido", "desistente"]) {
+    const { payload, blockedReasons } = buildIngestPayload(info, snapshot({ status }), 2026)
+    assert.equal(payload.situacao_candidatura, "deferido")
+    assert.equal(payload.status, undefined)
+    assert.deepEqual(blockedReasons, [])
+  }
+})
+
 test("buildIngestPayload: codigo fora do vocabulario (APTO, DEFERIDO) nunca vira texto livre; bloqueia", () => {
   const apto = buildIngestPayload({ ...BASE_MATCHED, ano: 2026, situacao: "APTO" }, snapshot(), 2026)
   assert.equal(apto.payload.situacao_candidatura, undefined)

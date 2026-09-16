@@ -6,6 +6,7 @@ import {
   normalizeCandidateSlug,
   normalizeOpaqueToken,
 } from "@/lib/alerts-shared"
+import { shouldExposeCargo } from "@/lib/senado-feature"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
@@ -87,11 +88,12 @@ export function createAlertsServiceRoleClient() {
 
 export async function findPublicCandidateBySlug(
   slug: string,
+  client?: ReturnType<typeof createAlertsServiceRoleClient>,
 ): Promise<AlertPublicCandidate | null> {
   const normalized = normalizeCandidateSlug(slug)
   if (!normalized) return null
 
-  const supabase = createAlertsServiceRoleClient()
+  const supabase = client ?? createAlertsServiceRoleClient()
   const { data, error } = await supabase
     .from("candidatos_publico")
     .select("id, slug, nome_urna, partido_sigla, cargo_disputado")
@@ -100,7 +102,18 @@ export async function findPublicCandidateBySlug(
     .maybeSingle()
 
   if (error || !data) return null
+  // Com a flag do Senado desligada, candidatura ao Senado não existe para
+  // seguir, alternar ou abrir acesso por alerta.
+  if (!shouldExposeCargo((data as AlertPublicCandidate).cargo_disputado)) return null
   return data as AlertPublicCandidate
+}
+
+/** Remove candidaturas cujo cargo a flag não expõe (Senador com SENADO_ENABLED
+ * desligada). Serve para listas de candidaturas seguidas, como digest e /me. */
+export function filterAlertCandidatesByExposedCargo<
+  T extends { cargo_disputado: string | null | undefined },
+>(rows: readonly T[], env?: Record<string, string | undefined>): T[] {
+  return rows.filter((row) => shouldExposeCargo(row.cargo_disputado, env))
 }
 
 export async function findSubscriberByEmailHash(

@@ -138,6 +138,13 @@ test.describe("Busca rápida palette", () => {
     await page.goto("/")
     await page.waitForLoadState("networkidle")
 
+    // Abaixo de `sm` (640px), a alternância grade/lista fica dentro do painel de filtros.
+    if ((page.viewportSize()?.width ?? 1440) < 640) {
+      const filtersButton = page.getByRole("button", { name: "Filtros", exact: true })
+      await filtersButton.click()
+      await expect(filtersButton).toHaveAttribute("aria-expanded", "true")
+    }
+
     const gridBtn = page.getByRole("button", { name: /visualizar em grade/i })
     const listBtn = page.getByRole("button", { name: /visualizar em lista/i })
     await expect(gridBtn).toBeVisible({ timeout: 15_000 })
@@ -158,6 +165,73 @@ test.describe("Busca rápida palette", () => {
     // Switch back to grid
     await gridBtn.click()
     await expect(gridBtn).toHaveAttribute("aria-pressed", "true")
+  })
+
+  test("mobile candidate toolbar keeps secondary controls behind filters", async ({ page }) => {
+    // Uma navegação só: a home com dados placeholder leva ~16s para renderizar,
+    // e duas cargas estourariam o timeout de 30s do teste. A troca de largura
+    // reaplica o layout responsivo sem recarregar; 320px vem antes porque a
+    // ordenação escolhida em 390px continua ativa na mesma página.
+    await page.setViewportSize({ width: 320, height: 844 })
+    await page.goto("/")
+    await page.waitForLoadState("networkidle")
+
+    for (const width of [320, 390]) {
+      await page.setViewportSize({ width, height: 844 })
+
+      const localSearch = page.locator(
+        'input[aria-label="Buscar candidatos por nome, partido ou estado"]',
+      )
+      const filtersButton = page.getByRole("button", { name: "Filtros", exact: true })
+      await expect(localSearch).toBeVisible({ timeout: 15_000 })
+      await expect(filtersButton).toBeVisible()
+      await expect(filtersButton).toHaveAttribute("aria-expanded", "false")
+      await expect(
+        page.locator('main button[aria-label="Abrir busca rápida"]'),
+      ).toBeHidden()
+
+      const filtersId = await filtersButton.getAttribute("aria-controls")
+      expect(filtersId).toBeTruthy()
+      const filtersControl = page.locator(`button[aria-controls="${filtersId}"]`)
+      const filtersPanel = page.locator(`[id="${filtersId}"]`)
+      await filtersControl.click()
+      await expect(filtersControl).toHaveAttribute("aria-expanded", "true")
+      await expect(filtersPanel).toBeVisible()
+      await expect(
+        filtersPanel.getByRole("combobox", { name: /filtrar por partido/i }),
+      ).toBeVisible()
+      await expect(
+        filtersPanel.getByRole("button", { name: /visualizar em grade/i }),
+      ).toBeVisible()
+
+      if (width === 390) {
+        await filtersPanel
+          .getByRole("button", { name: /ordenar candidatos/i })
+          .click()
+        await page
+          .getByRole("menuitemradio", { name: "Patrimônio: maior para menor" })
+          .click()
+        await expect(filtersControl).toContainText("1")
+        await expect(
+          filtersPanel.getByRole("button", { name: "Limpar filtros" }),
+        ).toBeVisible()
+
+        // Collapsing the panel keeps the selected sort for the next opening.
+        await filtersControl.click()
+        await expect(filtersPanel).toBeHidden()
+        await filtersControl.click()
+        await expect(
+          filtersPanel.getByRole("button", { name: /ordenar candidatos: patrimônio/i }),
+        ).toBeVisible()
+      }
+
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+      ).toBe(true)
+
+      await filtersControl.click()
+      await expect(filtersPanel).toBeHidden()
+    }
   })
 })
 

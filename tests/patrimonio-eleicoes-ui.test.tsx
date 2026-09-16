@@ -153,7 +153,7 @@ test("MoneyTabSection exibe vazio_confirmado com texto neutro, fonte oficial e d
   assert.ok(html.includes("Eleições sem dado publicado"))
   assert.ok(html.includes('data-pf-patrimonio-eleicao="2014"'))
   assert.ok(html.includes('data-pf-patrimonio-eleicao-estado="vazio_confirmado"'))
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"))
+  assert.ok(html.includes("Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2014 consultado"))
   assert.ok(html.includes("Verificado em 07/08/2026"), "verificado_em em formato curto pt-BR")
   assert.ok(html.includes(`href="${FONTE_BEM_CANDIDATO_2014}"`), "fonte_url vira link")
   assert.ok(html.includes("Fonte oficial"))
@@ -189,10 +189,10 @@ test("MoneyTabSection lista eleições sem dado mesmo sem nenhum patrimônio pub
   })
 
   // Empty state existente permanece.
-  assert.ok(html.includes("Nenhum patrimônio declarado no TSE"))
+  assert.ok(html.includes("Nenhum registro de patrimônio localizado no arquivo do TSE"))
   // Eleição deixa de ser invisível.
   assert.ok(html.includes("Eleições sem dado publicado"))
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"))
+  assert.ok(html.includes("Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2014 consultado"))
   assert.ok(html.includes("Verificado em 07/08/2026"))
   assert.ok(html.includes(`href="${FONTE_BEM_CANDIDATO_2014}"`))
 })
@@ -206,9 +206,9 @@ test("MoneyTabSection cobre o caminho com financiamento e sem patrimônio public
 
   assert.ok(html.includes("De onde vem o dinheiro"))
   assert.ok(
-    html.includes("A fonte oficial foi conferida em todos os pleitos aplicáveis e não registra declaração de bens."),
+    html.includes("A fonte oficial foi conferida nos pleitos aplicáveis e não trouxe registros no recorte consultado."),
   )
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"))
+  assert.ok(html.includes("Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2014 consultado"))
 })
 
 test("MoneyTabSection ordena eleições sem dado da mais recente para a mais antiga", () => {
@@ -258,7 +258,7 @@ test("ProfileOverview mostra teaser de patrimônio com estado explícito quando 
   assert.ok(html.includes('data-pf-patrimonio-eleicoes-sem-dado="1"'))
   assert.ok(html.includes('data-pf-patrimonio-eleicao-estado="vazio_confirmado"'))
   assert.ok(html.includes("2014"))
-  assert.ok(html.includes("Sem bens declarados ao TSE"))
+  assert.ok(html.includes("Nenhum registro localizado no arquivo do TSE"))
   assert.ok(html.includes("Eleições disputadas sem dado de patrimônio publicado"))
 })
 
@@ -274,7 +274,7 @@ test("ProfileOverview exibe pendência nao_coletada no teaser sem insinuar ausê
 
   assert.ok(html.includes('data-pf-patrimonio-eleicao-estado="nao_coletado"'))
   assert.ok(html.includes("Ainda não coletado"))
-  assert.ok(!html.includes("Sem bens declarados ao TSE"))
+  assert.ok(!html.includes("Nenhum registro localizado no arquivo do TSE"))
 })
 
 /**
@@ -339,8 +339,8 @@ test("EmbedWidget explicita vazio confirmado quando não há patrimônio publica
 
   const html = renderToStaticMarkup(<EmbedWidget ficha={ficha} />)
 
-  assert.ok(html.includes("Sem bens declarados ao TSE em 2014"), "ausência oficial preservada no indicador")
-  assert.ok(html.includes("2014: sem bens declarados ao TSE"), "eleição não fica invisível no embed")
+  assert.ok(html.includes("2014: nenhum registro de bens localizado no arquivo do TSE"), "ausência oficial preservada no indicador")
+  assert.ok(html.includes("2014: nenhum registro de bens localizado no arquivo do TSE"), "eleição não fica invisível no embed")
 })
 
 test("EmbedWidget explicita coleta pendente para eleição TSE sem dado nem confirmação", () => {

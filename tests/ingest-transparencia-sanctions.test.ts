@@ -3,13 +3,39 @@ import test from "node:test"
 
 import {
   coletarSancoesDoCandidato,
+  buscarTodasPaginas,
   conferirDocumento,
   cpfEhValido,
   normalizarRegistros,
+  normalizarLinhaExportacaoSancao,
   parseDataBR,
   type ColetaDeps,
   type SancaoTipo,
 } from "../scripts/lib/ingest-transparencia-sanctions"
+
+test("paginação só fecha quando encontra página terminal vazia", async () => {
+  const chamadas: number[] = []
+  const resultado = await buscarTodasPaginas<{ id: number }>(async (pagina) => {
+    chamadas.push(pagina)
+    return pagina === 1 ? [{ id: 1 }] : pagina === 2 ? [{ id: 2 }] : []
+  })
+  assert.deepEqual(resultado, {
+    ok: true,
+    registros: [{ id: 1 }, { id: 2 }],
+    paginasConsultadas: 3,
+  })
+  assert.deepEqual(chamadas, [1, 2, 3])
+})
+
+test("paginação repetida ou payload inválido nunca vira ausência", async () => {
+  const repetida = await buscarTodasPaginas(async () => [{ id: 1 }])
+  assert.equal(repetida.ok, false)
+  if (!repetida.ok) assert.match(repetida.erro, /repetida/)
+
+  const inválida = await buscarTodasPaginas(async () => ({ erro: "indisponível" }))
+  assert.equal(inválida.ok, false)
+  if (!inválida.ok) assert.match(inválida.erro, /não é lista/)
+})
 
 // Regressao do falso positivo em massa de 2026-08-04.
 //
@@ -273,6 +299,26 @@ test("CEAF do proprio candidato (mascara + nome batendo) e aceito", () => {
   assert.equal(aceitas[0].descricao, "Demissão")
   assert.equal(aceitas[0].dataInicio, "2021-07-21")
   assert.equal(aceitas[0].numeroProcesso, "08620.153919/2015-02")
+})
+
+test("CEAF exportado com máscaras válidas fecha ausência quando nenhum segmento visível casa", async () => {
+  const coleta = await coletarSancoesDoCandidato(
+    "52998224725",
+    "Pessoa de Teste",
+    { buscar: async () => ({
+      ok: true,
+      registros: [normalizarLinhaExportacaoSancao("CEAF", {
+        "CÓDIGO DA SANÇÃO": "1",
+        "CPF OU CNPJ DO SANCIONADO": "***.111.222-**",
+        "NÚMERO DO DOCUMENTO": "Portaria nº 123",
+        "NOME DO SANCIONADO": "Outra Pessoa",
+      })],
+      escopo: "exportacao_completa",
+      coberturaIdentidade: "parcial",
+      identidadeMascaradaVerificavel: true,
+    }) },
+  )
+  assert.equal(coleta.porCadastro[0]?.resultado, "vazio_confirmado")
 })
 
 test("sanção com data de fim no passado entra como inativa", () => {

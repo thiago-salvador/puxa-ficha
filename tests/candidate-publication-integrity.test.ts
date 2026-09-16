@@ -34,6 +34,14 @@ test("classifica situação oficial sem transformar recurso em inaptidão", () =
     classifyOfficialCandidacy({ ...well, status: "Situação nova do TSE" }),
     "review_required",
   );
+  assert.equal(
+    classifyOfficialCandidacy({ ...well, status: "indeferido com recurso" }),
+    "active",
+  );
+  assert.equal(
+    classifyOfficialCandidacy({ ...well, status: "indeferido" }),
+    "terminal",
+  );
 });
 
 test("reconcilia o conjunto público inteiro e não mascara stale com cardinalidade igual", () => {
@@ -162,6 +170,19 @@ test("mesmo slug em cargo ou UF divergente não aprova a reconciliação", () =>
   assert.equal(report.identity_mismatches.length, 1);
   assert.equal(report.missing_public.length, 1);
   assert.equal(report.stale_public.length, 1);
+});
+
+test("Senado exige cargo e UF coerentes na reconciliação pública", () => {
+  const senate = [{
+    sq_candidato: "40002531447",
+    profile_slug: "eduardo-braga",
+    office: "Senador" as const,
+    uf: "AM",
+    name: "EDUARDO BRAGA",
+    status: "Deferido",
+  }];
+  assert.equal(reconcilePublicRoster(senate, [{ slug: "eduardo-braga", office: "Senador", uf: "AM" }]).status, "ok");
+  assert.equal(reconcilePublicRoster(senate, [{ slug: "eduardo-braga", office: "Senador", uf: "PA" }]).status, "review_required");
 });
 
 test("reconciliação normaliza caixa e acentos nas chaves de identidade", () => {

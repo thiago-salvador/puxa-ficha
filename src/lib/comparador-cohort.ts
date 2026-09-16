@@ -63,7 +63,9 @@ export function resolveComparadorCohort(
   // Restringe por UF apenas quando TODOS os slugs desse cargo declaram estado e
   // e o mesmo. Se um deles nao tem estado, restringir sumiria com ele da lista.
   const estado =
-    cargo === "Governador" && ufsDistintas.size === 1 && ufs.length === mesmoCargo.length
+    (cargo === "Governador" || cargo === "Senador") &&
+    ufsDistintas.size === 1 &&
+    ufs.length === mesmoCargo.length
       ? [...ufsDistintas][0]
       : undefined
 

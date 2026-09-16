@@ -16,6 +16,7 @@ import {
 } from "@/lib/api"
 import { computeStateRanking } from "@/lib/state-ranking"
 import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
+import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
 import { STATE_INDICATOR_CONFIG } from "@/lib/state-indicator-metadata"
 import { CandidatoGrid } from "@/components/CandidatoGrid"
 const ComparadorPanel = lazy(() =>
@@ -37,6 +38,7 @@ import { StatePolls } from "@/components/StatePolls"
 import { loadStatePrograms } from "@/lib/state-programs"
 import { loadProgramRunningMates } from "@/lib/program-running-mates"
 import { loadStatePolls } from "@/lib/state-polls"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 export async function generateStaticParams() {
   return getEstadoUFs().map((uf) => ({ uf }))
@@ -141,14 +143,8 @@ export default async function UfHubPage({
     allIndicadoresResource.sourceMessage
   )
 
-  const processos: Record<string, number> = {}
-  const processSortCounts: Record<string, number | null> = {}
-  const patrimonios: Record<string, number | null> = {}
-  for (const r of resumos) {
-    processos[r.candidato.slug] = r.processos
-    processSortCounts[r.candidato.slug] = r.processos_ordenacao ?? null
-    patrimonios[r.candidato.slug] = r.patrimonio
-  }
+  const { processos, processSortCounts, patrimonios, patrimoniosAtipicos } =
+    buildCandidatoGridMaps(resumos)
 
   const { totalCandidatos, totalPatrimonio, totalProcessos } =
     getHomeHeroMetrics(resumos, resumosResource.sourceStatus)
@@ -221,6 +217,7 @@ export default async function UfHubPage({
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
         <nav aria-label="Seções do estado" className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-3 text-sm font-semibold">
           <a href="#candidatos" className="inline-flex min-h-11 items-center">Candidaturas</a>
+          {isSenadoEnabled() && <Link href={`/uf/${uf}/senado`} className="inline-flex min-h-11 items-center">Senado</Link>}
           <a href="#programas" className="inline-flex min-h-11 items-center">Programas por tema</a>
           <a href="#pesquisas" className="inline-flex min-h-11 items-center">Pesquisas</a>
           <a href="#indicadores" className="inline-flex min-h-11 items-center">O estado</a>
@@ -253,6 +250,7 @@ export default async function UfHubPage({
               processos={processos}
               processSortCounts={processSortCounts}
               patrimonios={patrimonios}
+              patrimoniosAtipicos={patrimoniosAtipicos}
             />
           </section>
         </>

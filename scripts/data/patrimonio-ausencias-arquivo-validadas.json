@@ -1,0 +1,671 @@
+{
+  "schema_version": "patrimonio-file-absence-receipts-v1",
+  "generated_at": "2026-09-15T23:01:24.722Z",
+  "scope": "17 contextos nominais cuja identidade foi validada no consulta_cand e cujo SQ não tem linha no bem_candidato oficial íntegro",
+  "policy": "A ausência vale somente para o arquivo oficial consultado e não comprova ausência de patrimônio pessoal nem de declaração em outra fonte.",
+  "receipts": [
+    {
+      "slug": "tse-2026-110002553701",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "110001643691",
+      "uf": "MT",
+      "cargo": "DEPUTADO FEDERAL",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "NELSON CARLOS FERREIRA JUNIOR",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_MT.csv",
+          "rows_scanned": 525,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_MT.csv",
+          "rows_scanned": 2616,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-120002534952",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "120000851737",
+      "uf": "MS",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "DANIEL RODRIGUES JUNIOR",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_MS.csv",
+          "rows_scanned": 8697,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_MS.csv",
+          "rows_scanned": 18207,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-130002552186",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "130000871761",
+      "uf": "MG",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "CARLOS MAGNO DE MOURA SOARES",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_MG.csv",
+          "rows_scanned": 81805,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_MG.csv",
+          "rows_scanned": 163066,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-130002552311",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "130001713406",
+      "uf": "MG",
+      "cargo": "VICE-GOVERNADOR",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "SEBASTIÃO DE OLIVEIRA PESSOA",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_MG.csv",
+          "rows_scanned": 2562,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_MG.csv",
+          "rows_scanned": 8548,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-140002545671",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "140000762703",
+      "uf": "PA",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "GIZELLE SOARES DE FREITAS",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_PA.csv",
+          "rows_scanned": 23663,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_PA.csv",
+          "rows_scanned": 30725,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-140002553952",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "140001153343",
+      "uf": "PA",
+      "cargo": "PREFEITO",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "LÍVIA MARIA ARAÚJO NORONHA DE OLIVEIRA",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_PA.csv",
+          "rows_scanned": 23663,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_PA.csv",
+          "rows_scanned": 30725,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-150002548968",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "150001636464",
+      "uf": "PB",
+      "cargo": "GOVERNADOR",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "FÁBIO RODRIGUES DE OLIVEIRA",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_PB.csv",
+          "rows_scanned": 756,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_PB.csv",
+          "rows_scanned": 1827,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-170002537418",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "170001025090",
+      "uf": "PE",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "JOSÉ MARIANO DE MACEDO",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_PE.csv",
+          "rows_scanned": 21149,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_PE.csv",
+          "rows_scanned": 21201,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-180002549936",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "180000844477",
+      "uf": "PI",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "ANTÔNIO JOSÉ DE FREITAS LIRA",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_PI.csv",
+          "rows_scanned": 10706,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_PI.csv",
+          "rows_scanned": 18199,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-180002550979",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "180001230504",
+      "uf": "PI",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "FRANCINALDO SILVA LEÃO",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_PI.csv",
+          "rows_scanned": 10706,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_PI.csv",
+          "rows_scanned": 18199,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-200002542484",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "200000760052",
+      "uf": "RN",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "LUCIANA LIMA DA SILVA",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_RN.csv",
+          "rows_scanned": 10583,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_RN.csv",
+          "rows_scanned": 15544,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-200002542484",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "200001652756",
+      "uf": "RN",
+      "cargo": "DEPUTADO ESTADUAL",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "LUCIANA LIMA DA SILVA",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_RN.csv",
+          "rows_scanned": 557,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_RN.csv",
+          "rows_scanned": 2161,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-20002552524",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "20001188177",
+      "uf": "AL",
+      "cargo": "VEREADOR",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "JOSÉ MARIEDSON DA SILVA",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_AL.csv",
+          "rows_scanned": 7606,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_AL.csv",
+          "rows_scanned": 8029,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-230002549361",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "230001610813",
+      "uf": "RR",
+      "cargo": "SENADOR",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "BARTOLOMEU DA SILVA TOMAZ",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_RR.csv",
+          "rows_scanned": 620,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_RR.csv",
+          "rows_scanned": 1325,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-250002541365",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "250001611413",
+      "uf": "SP",
+      "cargo": "DEPUTADO FEDERAL",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "WELLER PEREIRA GONÇALVES",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_SP.csv",
+          "rows_scanned": 3659,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_SP.csv",
+          "rows_scanned": 13931,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-50002553643",
+      "source_year": 2020,
+      "effective_year": 2020,
+      "sq_candidato": "50001218933",
+      "uf": "BA",
+      "cargo": "VICE-PREFEITO",
+      "election_date": "15/11/2020",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "MARCELO MILLET DE OLIVEIRA",
+      "consulta_package_sha256": "8079b01adfa406ebe38ff1617abc835f0f5f8d09d18032c410fee04427baea26",
+      "bens_package_sha256": "04353565306af1a894811520d8b9c73ea50730bd271dee25b1d1407e2ef8ba74",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2020_BA.csv",
+          "rows_scanned": 41619,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2020_BRASIL.csv",
+          "rows_scanned": 558804,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2020_BA.csv",
+          "rows_scanned": 60792,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2020_BRASIL.csv",
+          "rows_scanned": 1015279,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    },
+    {
+      "slug": "tse-2026-70002536445",
+      "source_year": 2022,
+      "effective_year": 2022,
+      "sq_candidato": "70001611376",
+      "uf": "DF",
+      "cargo": "VICE-GOVERNADOR",
+      "election_date": "02/10/2022",
+      "election_type": "ELEIÇÃO ORDINÁRIA",
+      "candidate_name": "EDUARDO RENNÓ ZANATA",
+      "consulta_package_sha256": "787c59266f13d8b7d022210513aa22543fcce69b09922c1ffa578b8f8e05931a",
+      "bens_package_sha256": "f4c606bb18e72cb15d5c34b0107879785693cec0be081009f4efa72ae57866d8",
+      "identity_members": [
+        {
+          "member": "consulta_cand_2022_DF.csv",
+          "rows_scanned": 896,
+          "matched_rows": 1
+        },
+        {
+          "member": "consulta_cand_2022_BRASIL.csv",
+          "rows_scanned": 29322,
+          "matched_rows": 1
+        }
+      ],
+      "asset_members": [
+        {
+          "member": "bem_candidato_2022_DF.csv",
+          "rows_scanned": 2711,
+          "matched_rows": 0
+        },
+        {
+          "member": "bem_candidato_2022_BRASIL.csv",
+          "rows_scanned": 92559,
+          "matched_rows": 0
+        }
+      ],
+      "asset_matched_rows": 0,
+      "verified_at": "2026-09-15T23:01:24.722Z"
+    }
+  ]
+}

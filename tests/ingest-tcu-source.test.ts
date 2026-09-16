@@ -5,6 +5,10 @@ import {
   fetchTCUCadirreg,
   fetchTCUInabilitados,
   fontePublicaTCU,
+  registroTCUIdentidadeCompativel,
+  descreverRegistrosTCU,
+  montarLinhaPontoAtencaoTCU,
+  validarRegistrosTCU,
 } from "../scripts/lib/ingest-tcu"
 
 test("TCU consulta inabilitados na Plataforma de Certidões por POST", async () => {
@@ -36,6 +40,18 @@ test("TCU não converte payload inválido em lista vazia", async () => {
     })
 
   assert.equal(await fetchTCUInabilitados("00000000000", fetchImpl), null)
+})
+
+test("TCU recusa item positivo sem esquema mínimo", () => {
+  assert.equal(validarRegistrosTCU([{ nome: "Pessoa sem processo" }]), null)
+  assert.equal(validarRegistrosTCU([{ numeroRegistro: "123" }]), null)
+  assert.equal(validarRegistrosTCU([{ nome: "Pessoa", numeroRegistro: "123" }])?.length, 1)
+})
+
+test("TCU recusa identidade positiva divergente do candidato consultado", () => {
+  const registro = { nome: "Maria de Outra Silva", numeroProcessoFormatado: "123/2026" }
+  assert.equal(registroTCUIdentidadeCompativel(registro, ["João da Silva", "João Silva"]), false)
+  assert.equal(registroTCUIdentidadeCompativel({ ...registro, nome: "João da Silva" }, ["João da Silva"]), true)
 })
 
 test("TCU consulta contas irregulares na Plataforma de Certidões por POST", async () => {
@@ -76,6 +92,25 @@ test("TCU publica somente link oficial de processo sem CPF", () => {
   assert.equal(JSON.stringify(fontes).includes("00000000000"), false)
 })
 
+test("TCU aceita acompanhamento com p1/p2/p3 do processo e recusa query adulterada", () => {
+  const registro = { numeroProcessoFormatado: "250.384/1997-3", linkAcompanhamentoProcesso: "https://contas.tcu.gov.br/etcu/AcompanharProcesso?p1=250384&p2=1997&p3=3" }
+  assert.equal(fontePublicaTCU(registro, "TCU — processo").length, 1)
+  assert.deepEqual(
+    fontePublicaTCU(
+      { ...registro, linkAcompanhamentoProcesso: `${registro.linkAcompanhamentoProcesso}&cpf=00000000000` },
+      "TCU — processo",
+    ),
+    [],
+  )
+  assert.deepEqual(
+    fontePublicaTCU(
+      { ...registro, linkAcompanhamentoProcesso: "https://contas.tcu.gov.br/etcu/AcompanharProcesso?p1=250384&p2=1997&p3=4" },
+      "TCU — processo",
+    ),
+    [],
+  )
+})
+
 test("TCU recusa host externo e raiz genérica como evidência", () => {
   assert.deepEqual(
     fontePublicaTCU(
@@ -93,9 +128,40 @@ test("TCU recusa host externo e raiz genérica como evidência", () => {
   )
   assert.deepEqual(
     fontePublicaTCU(
+      { linkAcompanhamentoProcesso: "https://contas.tcu.gov.br/etcu/AcompanharProcesso" },
+      "TCU — processo",
+    ),
+    [],
+  )
+  assert.deepEqual(
+    fontePublicaTCU(
       { linkAcompanhamentoProcesso: "https://conecta-tcu.apps.tcu.gov.br/tvp/42733993?cpf=00000000000" },
       "TCU — processo",
     ),
     [],
   )
+})
+
+test("TCU preserva todos os itens no ponto agregador", () => {
+  const registros = Array.from({ length: 5 }, (_, index) => ({
+    nome: "Pessoa",
+    numeroProcessoFormatado: `PROC-${index + 1}`,
+    numeroRegistro: "identificador-pessoal-nao-publicar",
+  }))
+  const descricao = descreverRegistrosTCU(registros)
+  assert.equal((descricao.match(/Registro \d/g) ?? []).length, 5)
+  assert.match(descricao, /PROC-1/)
+  assert.match(descricao, /PROC-5/)
+  assert.doesNotMatch(descricao, /Registro:/)
+  assert.doesNotMatch(descricao, /identificador-pessoal/)
+  const linha = montarLinhaPontoAtencaoTCU(
+    "candidato-1",
+    "Contas irregulares no TCU",
+    descricao,
+    [],
+    { id: "ponto-1", descricao: "Texto curado", fontes: [], verificado: false },
+  )
+  assert.match(linha.descricao, /Texto curado/)
+  assert.match(linha.descricao, /PROC-1/)
+  assert.match(linha.descricao, /PROC-5/)
 })

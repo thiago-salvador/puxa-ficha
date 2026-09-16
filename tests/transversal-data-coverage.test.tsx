@@ -33,6 +33,6 @@ test("coverage shows receipt scope and date without a candidate score or invente
 
 test("missing patrimônio value preserves the latest election state without extending old absence", () => {
   const confirmed = { ano: 2022, estado: "vazio_confirmado" as const, fonte_url: null, verificado_em: "2026-09-08" }
-  assert.equal(patrimonioWithoutValueLabel([confirmed]), "Sem bens declarados ao TSE em 2022")
+  assert.equal(patrimonioWithoutValueLabel([confirmed]), "Nenhum registro de bens localizado no arquivo do TSE em 2022")
   assert.equal(patrimonioWithoutValueLabel([confirmed, { ...confirmed, ano: 2026, estado: "nao_coletado" }]), "Ainda não verificado")
 })

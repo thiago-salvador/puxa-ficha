@@ -115,8 +115,10 @@ function formatFinanciamentoPleitoPublicLabel(
 }
 
 export function formatFinanciamentoPleitoPublicLabelForRow(
-  fin: Pick<Financiamento, "ano_eleicao">,
+  fin: Pick<Financiamento, "ano_eleicao" | "cargo_candidatura">,
   historico: HistoricoPolitico[] | null | undefined,
 ): string {
+  const cargo = fin.cargo_candidatura?.trim()
+  if (cargo) return `${fin.ano_eleicao} - ${cargo}`
   return formatFinanciamentoPleitoPublicLabel(fin.ano_eleicao, historico)
 }

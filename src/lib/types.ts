@@ -161,6 +161,13 @@ export interface Patrimonio {
   ano_eleicao: number;
   valor_total: number;
   bens: BemDeclarado[];
+  /** Ano/ciclo do arquivo oficial; pode diferir do pleito suplementar. */
+  ano_arquivo?: number | null;
+  sq_candidato?: string | null;
+  uf_candidatura?: string | null;
+  cargo_candidatura?: string | null;
+  data_eleicao?: string | null;
+  tipo_eleicao?: string | null;
 }
 
 export interface BemDeclarado {
@@ -178,6 +185,13 @@ export interface PatrimonioAusenciaOficial {
   ano_eleicao: number;
   fonte_url: string | null;
   verificado_em: string | null;
+  detalhe?: string | null;
+  ano_arquivo?: number | null;
+  sq_candidato?: string | null;
+  uf_candidatura?: string | null;
+  cargo_candidatura?: string | null;
+  data_eleicao?: string | null;
+  tipo_eleicao?: string | null;
 }
 
 // --- Financiamento ---
@@ -185,6 +199,8 @@ export interface Financiamento {
   id: string;
   candidato_id: string;
   ano_eleicao: number;
+  /** Cargo oficial do contexto SQ/pleito quando o mesmo ano tem mais de uma candidatura. */
+  cargo_candidatura?: string | null;
   total_arrecadado: number;
   total_fundo_partidario: number;
   total_fundo_eleitoral: number;
@@ -354,6 +370,37 @@ export interface GastoParlamentar {
   fonte?: string | null;
 }
 
+export type TransparenciaFamiliaPublica = "cartoes" | "viagens" | "contratos"
+
+export interface TransparenciaRegistroPublico {
+  id: string | number | null
+  data: string | null
+  data_fim?: string | null
+  valor: number | null
+  orgao: string | null
+  unidade: string | null
+  categoria: string | null
+  descricao: string | null
+}
+
+export interface TransparenciaFamiliaVerificacao {
+  familia: TransparenciaFamiliaPublica
+  resultado: ColetaResultado
+  volume: number
+  paginas: number
+  endpoint: string | null
+  fonte: string
+  executado_em: string | null
+}
+
+export interface TransparenciaFamiliaPublico extends TransparenciaFamiliaVerificacao {
+  cobertura:
+    | "dados_presentes_escopo_verificado"
+    | "dados_presentes_cobertura_nao_verificada"
+    | "vazio_escopo_verificado"
+  registros: TransparenciaRegistroPublico[]
+}
+
 // --- Gastos da estrutura de governo ---
 export interface GastoExecutivo {
   id: string;
@@ -406,7 +453,7 @@ export interface SancaoAdministrativa {
  * `public.coleta_log` (migration 20260804160000). A ausência de linha é o sexto
  * estado, "nunca verificado", e se lê pela negativa.
  */
-type ColetaResultado =
+export type ColetaResultado =
   | 'encontrado'
   | 'vazio_confirmado'
   | 'nao_aplicavel'
@@ -435,10 +482,43 @@ export interface SancoesVerificacao {
   detalhe?: string | null;
   /** URL representativa da tentativa, quando a fonte possui uma só. */
   url?: string | null;
+  /** Escopo público da verificação, quando a fonte o declara. */
+  escopo?: string | null;
+  /** Fontes que compõem uma conclusão agregada, sem publicar dados operacionais. */
+  evidence_sources?: string[];
+  /** URLs das fontes que compõem uma conclusão agregada. */
+  source_urls?: string[];
 }
 
 /** Último desfecho da busca editorial de processos para a ficha. */
 export type ProcessosVerificacao = SancoesVerificacao;
+
+/** Recibo específico da consulta TCU. Não reutiliza a curadoria judicial. */
+export type TCUVerificacaoEstado =
+  | "encontrado_em_revisao"
+  | "vazio_verificado"
+  | "pendente"
+
+export interface TCUVerificacao {
+  fonte: "tcu";
+  resultado: ColetaResultado;
+  estado: TCUVerificacaoEstado;
+  executado_em: string;
+  volume: number | null;
+  detalhe: string | null;
+  url: string | null;
+  /** Escopo público da consulta, separado da curadoria editorial. */
+  escopo?: string | null;
+  /** Consultas efetivamente registradas no recibo, com o cadastro que trouxe o resultado. */
+  fontes?: TCUConsultaFonte[];
+}
+
+export interface TCUConsultaFonte {
+  cadastro: "responsaveis_inabilitados" | "responsaveis_contas_irregulares";
+  url: string;
+  resultado: "encontrado" | "vazio_confirmado" | "pendente";
+  volume: number | null;
+}
 
 // --- Indicadores Estaduais ---
 export interface IndicadorEstadual {
@@ -498,10 +578,12 @@ type SectionFreshnessStatus =
   | "current"
   | "historical"
   | "stale"
-  | "missing";
+  | "missing"
+  | "not_applicable";
 
 export type SectionFreshnessKey =
   | "perfil_atual"
+  | "filiacao"
   | "historico_politico"
   | "mudancas_partido"
   | "patrimonio"
@@ -519,6 +601,12 @@ export interface SectionFreshnessInfo {
   referenceDate: string | null;
   referenceYear: number | null;
   sourceLabel?: string | null;
+  /** Escopo público que a fonte efetivamente verificou. */
+  scope?: string | null;
+  /** Fontes exigidas para uma conclusão agregada de não aplicabilidade. */
+  evidence_sources?: string[];
+  /** URLs das consultas que sustentam uma conclusão agregada. */
+  source_urls?: string[];
   message: string;
 }
 
@@ -539,6 +627,22 @@ export interface PatrimonioEleicaoPublico {
   estado: PatrimonioEleicaoEstado;
   fonte_url: string | null;
   verificado_em: string | null;
+  detalhe?: string | null;
+  contextos?: PatrimonioContextoPublico[];
+}
+
+export interface PatrimonioContextoPublico {
+  estado: Exclude<PatrimonioEleicaoEstado, "nao_coletado">;
+  ano_eleicao: number;
+  ano_arquivo: number | null;
+  sq_candidato: string | null;
+  uf_candidatura: string | null;
+  cargo_candidatura: string | null;
+  data_eleicao: string | null;
+  tipo_eleicao: string | null;
+  fonte_url: string | null;
+  verificado_em: string | null;
+  detalhe?: string | null;
 }
 
 export interface Chapa2026 {
@@ -634,6 +738,7 @@ export interface FichaCandidato extends Candidato {
   /** Indica que o cliente deve buscar o inventário completo do Executivo sob demanda. */
   legislacao_mandato_executivo_truncados?: boolean;
   gastos_parlamentares: GastoParlamentar[];
+  transparencia?: TransparenciaFamiliaPublico[];
   gastos_executivo?: GastoExecutivo[];
   sancoes_administrativas: SancaoAdministrativa[];
   /**
@@ -643,11 +748,15 @@ export interface FichaCandidato extends Candidato {
    * degrada para o mesmo estado neutro em vez de inventar limpeza).
    */
   sancoes_verificacao?: SancoesVerificacao | null;
+  /** Proveniência da consulta nominal de filiação partidária. */
+  filiacao_verificacao?: SancoesVerificacao | null;
   /**
    * Proveniência do vazio judicial. Distingue vazio confirmado, busca
    * inconclusiva, erro, ocorrência em revisão e ausência de tentativa.
    */
   processos_verificacao?: ProcessosVerificacao | null;
+  /** Proveniência específica da consulta TCU, separada da curadoria judicial. */
+  tcu_verificacao?: TCUVerificacao | null;
   /** Auditoria do recorte publicável de mandatos na aba Destaques. */
   trajetoria_verificacao?: SancoesVerificacao | null;
   /** Auditoria da cobertura de patrimônio na aba Destaques. */

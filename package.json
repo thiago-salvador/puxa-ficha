@@ -112,6 +112,7 @@
     "test:a11y": "playwright test tests/visual/a11y.spec.ts",
     "test:visual": "playwright test",
     "test:playwright:launch": "playwright test -c playwright.launch.config.ts",
+    "test:playwright:senado": "playwright test -c tests/visual/senado.playwright.config.ts",
     "test:search-smoke": "PF_BASE_URL=${PF_BASE_URL:-https://puxaficha.com.br} PF_RUN_SEARCH_SMOKE=1 playwright test tests/visual/search-smoke.spec.ts --project=desktop",
     "release:prove-deployment": "node scripts/merge-queue/deployment-proof.mjs",
     "release:smoke": "node scripts/merge-queue/run-release-smokes.mjs",
@@ -224,6 +225,7 @@
     "next": "^16.3.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "saxes": "^5.0.1",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
@@ -243,6 +245,7 @@
     "eslint-config-next": "^16.3.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "fallow": "^3.25.0",
+    "jszip": "^3.10.2",
     "knip": "^6.35.1",
     "playwright": "^1.63.0",
     "postcss": "^8.5.28",

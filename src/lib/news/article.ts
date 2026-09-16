@@ -3,6 +3,7 @@ import { createServerSupabaseClient } from "@/lib/supabase"
 import { newsRetentionCutoffIso } from "@/lib/operational-retention"
 import { splitNewsByDenylist } from "@/lib/news/denylist"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
+import { shouldExposeCargo } from "@/lib/senado-feature"
 import type { NoticiaCandidato } from "@/lib/types"
 
 /** Leitura pontual para links de e-mail que saíram da prévia de 20 notícias. */
@@ -12,12 +13,14 @@ export async function getPublicNewsArticle(
   client = createServerSupabaseClient({ cacheMode: "no-store" }),
 ): Promise<NoticiaCandidato | null> {
   const candidate = await client.from("candidatos_publico")
-    .select("id, slug, nome_urna, nome_completo")
+    .select("id, slug, nome_urna, nome_completo, cargo_disputado")
     .eq("slug", slug)
     .abortSignal(AbortSignal.timeout(8_000))
     .maybeSingle()
   if (candidate.error) throw new Error("Falha ao consultar candidato")
   if (!candidate.data) return null
+  // Flag do Senado desligada: a notícia de candidatura ao Senado responde como inexistente.
+  if (!shouldExposeCargo(candidate.data.cargo_disputado)) return null
 
   const result = await client.from("noticias_candidato")
     .select("id, candidato_id, titulo, fonte, url, data_publicacao, snippet")

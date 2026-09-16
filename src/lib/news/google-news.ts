@@ -43,6 +43,30 @@ export function normalizeNewsUrl(url: string): string | null {
   }
 }
 
+/** Resposta 2xx só é RSS confirmável quando traz a estrutura esperada. */
+export function isValidGoogleNewsRss(xml: string): boolean {
+  if (!/<rss(?:\s|>)/i.test(xml) || !/<channel(?:\s|>)/i.test(xml)) return false
+  let root: string | null = null
+  let channel = false
+  let depth = 0
+  let failed = false
+  const parser = new SaxesParser({ xmlns: false })
+  parser.on("opentag", (tag) => {
+    depth += 1
+    const name = tag.name.toLowerCase()
+    if (depth === 1) root = name
+    if (depth === 2 && name === "channel") channel = true
+  })
+  parser.on("closetag", () => { depth -= 1 })
+  parser.on("error", () => { failed = true })
+  try {
+    parser.write(xml).close()
+  } catch {
+    failed = true
+  }
+  return !failed && root === "rss" && channel && depth === 0
+}
+
 /**
  * Parse do XML do RSS via regex sobre <item>...</item>. Mantem somente itens
  * com titulo + link https. Data ausente ou inválida permanece desconhecida;
@@ -88,3 +112,4 @@ export function parseGoogleNewsRss(xml: string): ParsedGoogleNews {
 
   return { items, discardedUrls }
 }
+import { SaxesParser } from "saxes"

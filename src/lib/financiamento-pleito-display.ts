@@ -9,7 +9,7 @@
 
 /** Subtítulo explicando a fonte e o desencontro com o cargo atual da ficha. */
 export function financiamentoPleitoSubtitulo(): string {
-  return "Dados da prestação de contas eleitoral no TSE para essa eleição. Não indica o cargo disputado na coorte atual do perfil."
+  return "Dados da prestação de contas apresentada ao TSE para esta candidatura e eleição."
 }
 
 /** Uma linha para tooltips, notas de rodapé ou metadados compactos. */

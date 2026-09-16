@@ -1,8 +1,287 @@
 import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
-import type { Candidato, Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, MudancaPartido, Patrimonio, ProjetoLei, SancoesVerificacao, SectionFreshnessInfo, SectionFreshnessKey, VotoCandidato } from "./types"
+import type { Candidato, Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, MudancaPartido, Patrimonio, PatrimonioEleicaoPublico, ProjetoLei, SancoesVerificacao, SectionFreshnessInfo, SectionFreshnessKey, VotoCandidato } from "./types"
+import { FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE, type FinanciamentoEleicaoPublico } from "./financiamento-eleicoes"
 import { isHistoricoCandidaturaRow } from "@/lib/historico-tipo-evento"
 import { CHAVE_AGREGADO_CURADO, ROTULO_FONTE_TSE, candidataDeColeta, resolverFrescorTsePerfil, resolverUltimaVerificacaoDoPerfil } from "@/lib/verificacao-campos"
 import { formatDate } from "@/lib/utils"
+
+/** Fontes que precisam confirmar a ausência de mandato federal parlamentar. */
+export const FEDERAL_ACERVO_SOURCES = ["camara", "senado", "ceaps-senado", "jarbas"] as const
+export type FederalAcervoSource = (typeof FEDERAL_ACERVO_SOURCES)[number]
+
+export interface FederalAcervoReceipt {
+  fonte: FederalAcervoSource
+  resultado: SancoesVerificacao["resultado"]
+  executado_em: string
+  /** Data em que a fonte oficial foi consultada, distinta da persistência do recibo. */
+  verificado_em?: string | null
+  detalhe?: string | null
+  escopo?: string | null
+  source_ids?: string[]
+  source_urls?: string[]
+  url?: string | null
+}
+
+export type FederalAcervoReceipts = Partial<Record<FederalAcervoSource, FederalAcervoReceipt | null>>
+
+/** Remove referências internas de aplicação antes de formar a copy pública. */
+export function sanitizeFiliacaoDetail(value: string | null | undefined): string | null {
+  if (typeof value !== "string" || !value.trim()) return null
+  const sanitized = value
+    .replace(/\s+artifact=\S+/gi, "")
+    .replace(/\s+xml_sha256=[a-f0-9]{64}/gi, "")
+    .replace(/\bem (\d{4})-(\d{2})-(\d{2})(?:T[^.\s]+(?:\.\d+)?Z)?/i, (_match, year, month, day) => `em ${day}/${month}/${year}`)
+    .replace(/\s+Resultado indeterminado\.(?=\s*Resultado inconclusivo)/i, "")
+    .trim()
+  return sanitized || null
+}
+
+/** Recibo temporal da série Jarbas, aplicável somente a gastos parlamentares. */
+export interface FederalExpenseTemporalApplicability {
+  status: "not_applicable"
+  source: "jarbas"
+  verifiedAt: string
+  referenceYear: number
+  sourceLabel: string
+  scope: string
+  evidence_sources: string[]
+  source_urls: string[]
+  message: string
+}
+
+const FEDERAL_EXPENSE_TEMPORAL_SOURCE_IDS = [
+  "camara-parliamentarian-registry-all-legislatures",
+  "camara-parliamentarian-registry-scope-control",
+] as const
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return Boolean(value && typeof value === "object" && !Array.isArray(value))
+}
+
+/** Só aceita o recibo nominal com prova explícita da série anual 2009-2026. */
+function resolveFederalExpenseTemporalNotApplicable(
+  value: unknown,
+): SectionFreshnessInfo | null {
+  if (!isRecord(value) || value.status !== "not_applicable" || value.source !== "jarbas") return null
+  const verifiedAt = typeof value.verifiedAt === "string" && parseDate(value.verifiedAt) ? value.verifiedAt : null
+  const scope = typeof value.scope === "string" ? value.scope.trim() : ""
+  const sourceLabel = typeof value.sourceLabel === "string" ? value.sourceLabel.trim() : ""
+  const message = typeof value.message === "string" ? value.message.trim() : ""
+  const referenceYear = value.referenceYear
+  const evidenceSources = Array.isArray(value.evidence_sources) ? value.evidence_sources : []
+  const sourceUrls = Array.isArray(value.source_urls) ? value.source_urls : []
+  const validUrls = sourceUrls.every((item) => {
+    if (typeof item !== "string") return false
+    try {
+      const url = new URL(item)
+      return url.protocol === "https:" && (url.hostname === "camara.leg.br" || url.hostname.endsWith(".camara.leg.br"))
+    } catch {
+      return false
+    }
+  })
+  if (!verifiedAt || referenceYear !== 2026 || !/despesas Jarbas/i.test(scope) || !/série anual 2009-2026/i.test(scope) || !/identidade nominal/i.test(scope) || !sourceLabel || !message || !/não altera camara/i.test(message) || evidenceSources.length !== FEDERAL_EXPENSE_TEMPORAL_SOURCE_IDS.length || !FEDERAL_EXPENSE_TEMPORAL_SOURCE_IDS.every((source) => evidenceSources.includes(source)) || sourceUrls.length !== evidenceSources.length || !validUrls) return null
+  return {
+    key: "gastos_parlamentares",
+    label: "Gastos parlamentares",
+    status: "not_applicable",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear,
+    sourceLabel,
+    scope,
+    evidence_sources: [...evidenceSources] as string[],
+    source_urls: [...sourceUrls] as string[],
+    message: "Despesas da Câmara: recorte consultado de 2009 a 2026; este candidato está fora desse período.",
+  }
+}
+
+/** Recibo do único recorte executivo atualmente implementado no produto. */
+export interface ExecutiveScopeReceipt {
+  fonte: "gastos-executivo"
+  resultado: SancoesVerificacao["resultado"]
+  executado_em: string
+  detalhe?: string | null
+  escopo?: string | null
+  evidence_sources?: string[]
+  source_urls?: string[]
+  url?: string | null
+}
+
+const EXECUTIVE_SCOPE_SOURCE_IDS = [
+  "executive-collector-binding-lula-20101",
+  "executive-cohort-identity-check",
+] as const
+
+function validExecutiveScopeReceipt(receipt: ExecutiveScopeReceipt | null | undefined): receipt is ExecutiveScopeReceipt {
+  const sourceUrls = receipt?.source_urls ?? (receipt?.url ? [receipt.url] : [])
+  return Boolean(
+    receipt &&
+      receipt.fonte === "gastos-executivo" &&
+      receipt.resultado === "nao_aplicavel" &&
+      typeof receipt.executado_em === "string" &&
+      parseDate(receipt.executado_em) &&
+      typeof receipt.detalhe === "string" &&
+      receipt.detalhe.includes("Presidência da República") &&
+      typeof receipt.escopo === "string" &&
+      receipt.escopo.includes("01/2023") &&
+      receipt.escopo.includes("coorte nominal") &&
+      (receipt.evidence_sources ?? []).includes(EXECUTIVE_SCOPE_SOURCE_IDS[0]) &&
+      (receipt.evidence_sources ?? []).includes(EXECUTIVE_SCOPE_SOURCE_IDS[1]) &&
+      sourceUrls.length > 0 &&
+      sourceUrls.every((rawUrl) => {
+        try {
+          const parsed = new URL(rawUrl)
+          return parsed.protocol === "https:" &&
+            !parsed.search &&
+            (parsed.hostname === "api.portaldatransparencia.gov.br" || parsed.hostname === "portaldatransparencia.gov.br")
+        } catch {
+          return false
+        }
+      }),
+  )
+}
+
+function resolveExecutiveSectionNotApplicable(
+  receipt: ExecutiveScopeReceipt | null | undefined,
+): SectionFreshnessInfo | null {
+  if (!validExecutiveScopeReceipt(receipt)) return null
+  const verifiedAt = receipt.executado_em
+  const sourceUrls = [...new Set(receipt.source_urls ?? (receipt.url ? [receipt.url] : []))]
+  return {
+    key: "gastos_executivo",
+    label: "Gastos da estrutura de governo",
+    status: "not_applicable",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: new Date(verifiedAt).getUTCFullYear(),
+    sourceLabel: "Portal da Transparência, CPGF Presidência da República",
+    scope: receipt.escopo ?? null,
+    evidence_sources: [...(receipt.evidence_sources ?? [])],
+    source_urls: sourceUrls,
+    message: "Esta seção cobre despesas com cartões de pagamento da Presidência da República desde janeiro de 2023. Este candidato está fora desse recorte.",
+  }
+}
+
+const FEDERAL_SECTION_REQUIREMENTS: Readonly<Record<
+  "projetos_lei" | "votos_candidato" | "gastos_parlamentares",
+  readonly FederalAcervoSource[]
+>> = Object.freeze({
+  projetos_lei: ["camara", "senado"],
+  votos_candidato: ["camara", "senado"],
+  gastos_parlamentares: FEDERAL_ACERVO_SOURCES,
+})
+
+const FEDERAL_SOURCE_LABELS: Readonly<Record<FederalAcervoSource, string>> = Object.freeze({
+  camara: "Câmara dos Deputados",
+  senado: "Senado Federal",
+  "ceaps-senado": "CEAPS",
+  jarbas: "Jarbas",
+})
+
+function validFederalReceipt(
+  source: FederalAcervoSource,
+  receipt: FederalAcervoReceipt | null | undefined,
+): receipt is FederalAcervoReceipt {
+  const sourceIds = receipt?.source_ids ?? []
+  const sourceUrls = receipt?.source_urls ?? []
+  const registrySource = source === "camara" || source === "jarbas"
+    ? "camara-parliamentarian-registry-all-legislatures"
+    : "senado-parliamentarian-registry-all-legislatures"
+  const scopeSource = source === "camara" || source === "jarbas"
+    ? "camara-parliamentarian-registry-scope-control"
+    : "senado-parliamentarian-registry-scope-control"
+  return Boolean(
+    receipt &&
+      receipt.fonte === source &&
+      receipt.resultado === "nao_aplicavel" &&
+      typeof receipt.executado_em === "string" &&
+      receipt.executado_em.trim() &&
+      parseDate(receipt.executado_em) &&
+      (!receipt.verificado_em || parseDate(receipt.verificado_em)) &&
+      typeof receipt.detalhe === "string" &&
+      receipt.detalhe.trim() &&
+      typeof receipt.escopo === "string" &&
+      receipt.escopo.trim() &&
+      sourceIds.length > 0 &&
+      new Set(sourceIds).size === sourceIds.length &&
+      sourceIds.includes(registrySource) &&
+      sourceIds.includes(scopeSource) &&
+      sourceUrls.length === sourceIds.length &&
+      sourceUrls.every((rawUrl) => {
+        try {
+          const parsed = new URL(rawUrl)
+          const allowedHost = source === "camara" || source === "jarbas"
+            ? parsed.hostname === "camara.leg.br" || parsed.hostname.endsWith(".camara.leg.br")
+            : parsed.hostname === "senado.leg.br" || parsed.hostname.endsWith(".senado.leg.br")
+          return parsed.protocol === "https:" && allowedHost
+        } catch {
+          return false
+        }
+      }),
+  )
+}
+
+function receiptVerifiedAt(receipt: FederalAcervoReceipt): string {
+  return receipt.verificado_em ?? receipt.executado_em
+}
+
+/**
+ * Converte recibos completos em uma conclusão de seção. A função é deliberadamente
+ * fechada: qualquer fonte ausente, estado diferente ou recibo sem escopo mantém
+ * a seção como pendente. Dados positivos são tratados pelo chamador antes desta
+ * conclusão e sempre têm precedência.
+ */
+function resolveFederalSectionNotApplicable(
+  section: "projetos_lei" | "votos_candidato" | "gastos_parlamentares",
+  receipts: FederalAcervoReceipts | null | undefined,
+): SectionFreshnessInfo | null {
+  const required = FEDERAL_SECTION_REQUIREMENTS[section]
+  if (!required.every((source) => validFederalReceipt(source, receipts?.[source]))) return null
+
+  const verified = required
+    .map((source) => receipts![source]!)
+    .sort((a, b) => Date.parse(receiptVerifiedAt(a)) - Date.parse(receiptVerifiedAt(b)))
+  const verifiedAt = receiptVerifiedAt(verified[0])
+  const scope = [...new Set(required.map((source) => receipts![source]!.escopo!.trim()))].join(" | ")
+  const evidenceSources = required.map((source) => source)
+  const sourceUrls = [...new Set(required.flatMap((source) => receipts![source]!.source_urls ?? []))]
+  return {
+    key: section,
+    label:
+      section === "projetos_lei"
+        ? "Projetos de lei"
+        : section === "votos_candidato"
+          ? "Votações"
+          : "Gastos parlamentares",
+    status: "not_applicable",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: new Date(verifiedAt).getUTCFullYear(),
+    sourceLabel: required.map((source) => FEDERAL_SOURCE_LABELS[source]).join("; "),
+    scope,
+    evidence_sources: evidenceSources,
+    source_urls: sourceUrls,
+    message: "Não se aplica: não há mandato federal parlamentar no recorte verificado.",
+  }
+}
+
+/** Recibo agregado usado pela aba de destaques, sem criar registros de votos. */
+export function resolveFederalVotacoesNotApplicable(
+  receipts: FederalAcervoReceipts | null | undefined,
+): SancoesVerificacao | null {
+  const freshness = resolveFederalSectionNotApplicable("votos_candidato", receipts)
+  if (!freshness || !freshness.verifiedAt) return null
+  return {
+    resultado: "nao_aplicavel",
+    executado_em: freshness.verifiedAt,
+    fonte: freshness.sourceLabel ?? "Câmara dos Deputados; Senado Federal",
+    detalhe: freshness.message,
+    escopo: freshness.scope,
+    evidence_sources: freshness.evidence_sources,
+    source_urls: freshness.source_urls,
+    url: null,
+  }
+}
 /**
  * Fase de curadoria. O DEFAULT E SEGURO: qualquer coisa que nao seja
  * explicitamente `hardening` conta como fase de lançamento, ou seja, o selo de
@@ -68,6 +347,232 @@ function buildFreshnessInfo(
   }
 }
 
+function validSourceUrl(value: string | null | undefined): string | null {
+  if (!value) return null
+  try {
+    const url = new URL(value)
+    return url.protocol === "https:" ? value : null
+  } catch {
+    return null
+  }
+}
+
+function uniqueSourceUrls(values: ReadonlyArray<string | null | undefined>): string[] {
+  return [...new Set(values.map(validSourceUrl).filter((value): value is string => Boolean(value)))]
+}
+
+function seriesReferenceDate(values: ReadonlyArray<string | null | undefined>): string | null {
+  const dated = values
+    .map((value) => ({ raw: value, date: parseDate(value) }))
+    .filter((item): item is { raw: string; date: Date } => Boolean(item.raw && item.date))
+    .sort((a, b) => a.date.getTime() - b.date.getTime())
+  return dated.at(-1)?.raw ?? null
+}
+
+function seriesScope(label: string, years: ReadonlyArray<number>): string {
+  const uniqueYears = [...new Set(years)].sort((a, b) => b - a)
+  return uniqueYears.length > 0
+    ? `${label}; eleições representadas: ${uniqueYears.join(", ")}`
+    : label
+}
+
+function buildPatrimonioSeriesFreshness(
+  series: ReadonlyArray<PatrimonioEleicaoPublico> | null | undefined,
+): SectionFreshnessInfo | null {
+  if (!series || series.length === 0) return null
+
+  const rowsWithAllContextsProven = series.filter((row) => {
+    if (row.estado !== "vazio_confirmado") return false
+    const contexts = row.contextos ?? []
+    if (contexts.length > 0) {
+      return contexts.every((context) =>
+        context.estado === "vazio_confirmado" &&
+        context.ano_eleicao === row.ano &&
+        Boolean(validSourceUrl(context.fonte_url)) &&
+        Boolean(parseDate(context.verificado_em)),
+      )
+    }
+    return Boolean(validSourceUrl(row.fonte_url)) && Boolean(parseDate(row.verificado_em))
+  })
+  const evidence = rowsWithAllContextsProven.flatMap((row) => {
+    const contexts = row.contextos ?? []
+    return contexts.length > 0
+      ? contexts.map((context) => ({
+          ano: context.ano_eleicao,
+          fonte_url: context.fonte_url,
+          verificado_em: context.verificado_em,
+        }))
+      : [{ ano: row.ano, fonte_url: row.fonte_url, verificado_em: row.verificado_em }]
+  })
+  const hasUncollected = series.some((row) => row.estado === "nao_coletado")
+  const hasUnprovenEmpty = series.some((row) =>
+    row.estado === "vazio_confirmado" && !rowsWithAllContextsProven.includes(row),
+  )
+  if (evidence.length === 0) return null
+
+  const verifiedAt = seriesReferenceDate(evidence.map((row) => row.verificado_em))
+  const sourceUrls = uniqueSourceUrls(evidence.map((row) => row.fonte_url))
+  if (!verifiedAt || sourceUrls.length === 0) return null
+  const years = [...new Set(evidence.map((row) => row.ano))]
+  const uncollectedYears = series.filter((row) => row.estado === "nao_coletado").map((row) => row.ano)
+  const suffix = uncollectedYears.length > 0
+    ? ` Há ${uncollectedYears.length} eleição(ões) da série ainda não coletada(s): ${uncollectedYears.sort((a, b) => b - a).join(", ")}.`
+    : ""
+  return {
+    key: "patrimonio",
+    label: "Patrimônio",
+    status: hasUncollected || hasUnprovenEmpty ? "stale" : "historical",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: Math.max(...years),
+    sourceLabel: "TSE",
+    scope: seriesScope("Série de patrimônio por eleição no arquivo oficial consultado", years),
+    source_urls: sourceUrls,
+    message: `Nenhum registro de bens nos arquivos consultados para ${years.sort((a, b) => b - a).join(", ")}.${suffix}${hasUnprovenEmpty ? " Há contexto patrimonial vazio sem prova completa." : ""}`,
+  }
+}
+
+function buildFinanciamentoSeriesFreshness(
+  series: ReadonlyArray<FinanciamentoEleicaoPublico> | null | undefined,
+): SectionFreshnessInfo | null {
+  if (!series || series.length === 0) return null
+  const verifiable = series.filter((row) =>
+    row.estado !== "nao_coletado" &&
+    row.estado !== "pleito_futuro" &&
+    Boolean(validSourceUrl(row.fonte_url)) &&
+    Boolean(parseDate(row.verificado_em)),
+  )
+  if (verifiable.length === 0) return null
+  const hasError = verifiable.some((row) => row.estado === "erro")
+  const verifiedAt = seriesReferenceDate(verifiable.map((row) => row.verificado_em))
+  const sourceUrls = uniqueSourceUrls(verifiable.map((row) => row.fonte_url))
+  if (!verifiedAt || sourceUrls.length === 0) return null
+  const years = [...new Set(verifiable.map((row) => row.ano))]
+  const consultedYears = [...new Set(verifiable
+    .filter((row) => row.estado !== "fora_da_serie_oficial")
+    .map((row) => row.ano))]
+  const outsideSeriesYears = [...new Set(verifiable
+    .filter((row) => row.estado === "fora_da_serie_oficial")
+    .map((row) => row.ano))]
+  const absenceYears = verifiable
+    .filter((row) => row.estado === "ausencia_oficial")
+    .map((row) => row.ano)
+  const zeroYears = verifiable
+    .filter((row) => row.estado === "zero_declarado")
+    .map((row) => row.ano)
+  const uncollectedYears = series.filter((row) => row.estado === "nao_coletado").map((row) => row.ano)
+  const suffix = uncollectedYears.length > 0
+    ? ` Há ${uncollectedYears.length} eleição(ões) da série ainda não coletada(s): ${uncollectedYears.sort((a, b) => b - a).join(", ")}.`
+    : ""
+  const absenceMessage = absenceYears.length > 0
+    ? ` Ausência de receita confirmada no arquivo para: ${[...new Set(absenceYears)].sort((a, b) => b - a).join(", ")}.`
+    : ""
+  const zeroMessage = zeroYears.length > 0
+    ? ` Zero declarado na prestação consultada para: ${[...new Set(zeroYears)].sort((a, b) => b - a).join(", ")}.`
+    : ""
+  const consultedMessage = consultedYears.length > 0
+    ? `Série de financiamento consultada no arquivo oficial para ${consultedYears.sort((a, b) => b - a).join(", ")}.`
+    : `A série digital de prestação de contas do TSE consultada começa em ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}.`
+  const outsideSeriesMessage = outsideSeriesYears.length > 0
+    ? ` Anos eleitorais anteriores ao início dessa série digital: ${outsideSeriesYears.sort((a, b) => b - a).join(", ")}. Isso não comprova inexistência de documentos em outros acervos oficiais.`
+    : ""
+  const scope = consultedYears.length > 0
+    ? seriesScope("Série de financiamento por eleição no arquivo oficial consultado", consultedYears)
+    : `Série digital de financiamento do TSE; início do recorte consultado: ${FINANCIAMENTO_ANO_INICIAL_DA_SERIE_TSE}`
+  const outsideSeriesScope = outsideSeriesYears.length > 0
+    ? `; eleições anteriores ao recorte da série digital: ${outsideSeriesYears.sort((a, b) => b - a).join(", ")}; sem conclusão sobre outros acervos oficiais`
+    : ""
+  return {
+    key: "financiamento",
+    label: "Financiamento",
+    status: hasError ? "stale" : "historical",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: Math.max(...years),
+    sourceLabel: "TSE",
+    scope: `${scope}${outsideSeriesScope}`,
+    source_urls: sourceUrls,
+    message: `${consultedMessage}${outsideSeriesMessage}${absenceMessage}${zeroMessage}${suffix}${hasError ? " Há tentativa com erro que exige revisão." : ""}`,
+  }
+}
+
+function filiacaoAttemptFreshness(
+  key: "filiacao" | "mudancas_partido",
+  verification: SancoesVerificacao | null | undefined,
+): SectionFreshnessInfo | null {
+  if (!verification) return null
+  const rawDate = typeof verification.executado_em === "string" ? verification.executado_em : null
+  const verifiedAt = parseDate(rawDate) ? rawDate : null
+  const sourceUrls = uniqueSourceUrls([...(verification.source_urls ?? []), verification.url])
+  const detailBase = sanitizeFiliacaoDetail(verification.detalhe) || "Consulta FILIA registrada, mas o resultado permanece indeterminado."
+  const scope = verification.escopo?.trim() || null
+  const individualNotCompleted = /consulta individual\s+(?:não|nao)\s+(?:conclu[ií]da|executada|executável|executavel)|individual_query_executed\s*[:=]\s*false/i.test(`${detailBase} ${scope ?? ""}`)
+  const detail = verification.resultado === "indeterminado" && !individualNotCompleted && !/inconclusiv/i.test(detailBase)
+    ? /Resultado indeterminado\.\s*$/i.test(detailBase)
+      ? `${detailBase.replace(/\s*Resultado indeterminado\.\s*$/i, "").trim()} Resultado indeterminado e inconclusivo no escopo consultado.`
+      : `${detailBase} Resultado inconclusivo no escopo consultado.`
+    : detailBase
+  const unresolved = individualNotCompleted || verification.resultado === "indeterminado" || verification.resultado === "erro"
+  const hasGoogleNewsSource = sourceUrls.some((sourceUrl) => {
+    try {
+      const parsed = new URL(sourceUrl)
+      return parsed.protocol === "https:" && (parsed.hostname === "news.google.com" || parsed.hostname.endsWith(".news.google.com"))
+    } catch {
+      return false
+    }
+  })
+  return {
+    key,
+    label: key === "filiacao" ? "Filiação partidária" : "Histórico partidário",
+    status: individualNotCompleted || !verifiedAt || sourceUrls.length === 0
+      ? "missing"
+      : unresolved
+        ? "stale"
+        : "historical",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: verifiedAt ? new Date(verifiedAt).getUTCFullYear() : null,
+    sourceLabel: hasGoogleNewsSource ? "Google Notícias" : "TSE / FILIA",
+    scope,
+    source_urls: sourceUrls,
+    message: detail,
+  }
+}
+
+function federalSectionAttemptFreshness(
+  key: "projetos_lei" | "votos_candidato" | "gastos_parlamentares",
+  verification: SancoesVerificacao | null | undefined,
+): SectionFreshnessInfo | null {
+  if (!verification || verification.resultado === "nao_aplicavel") return null
+  const verifiedAt = typeof verification.executado_em === "string" && parseDate(verification.executado_em)
+    ? verification.executado_em
+    : null
+  const detail = verification.detalhe?.trim() ?? ""
+  const sourceUrls = uniqueSourceUrls([...(verification.source_urls ?? []), verification.url])
+  if (!verifiedAt || !detail || sourceUrls.length === 0) return null
+  const labels = {
+    projetos_lei: "Projetos de lei",
+    votos_candidato: "Votações",
+    gastos_parlamentares: "Gastos parlamentares",
+  } as const
+  const unresolved = verification.resultado === "indeterminado" ||
+    verification.resultado === "erro" ||
+    verification.resultado === "sem_achado_no_escopo"
+  return {
+    key,
+    label: labels[key],
+    status: unresolved ? "stale" : "historical",
+    verifiedAt,
+    referenceDate: verifiedAt,
+    referenceYear: new Date(verifiedAt).getUTCFullYear(),
+    sourceLabel: verification.fonte ?? "Acervo legislativo oficial",
+    scope: verification.escopo ?? null,
+    evidence_sources: verification.evidence_sources,
+    source_urls: sourceUrls,
+    message: detail,
+  }
+}
+
 function rotuloFreshnessProjetos(data: {
   projetos: ProjetoLei[]
   projetosTotal?: number
@@ -91,6 +596,9 @@ export function buildSectionFreshness(
     mudancas: MudancaPartido[]
     patrimonio: Patrimonio[]
     financiamento: Financiamento[]
+    /** Série pública por eleição, já composta com estado e prova do TSE. */
+    patrimonioEleicoes?: ReadonlyArray<PatrimonioEleicaoPublico> | null
+    financiamentoEleicoes?: ReadonlyArray<FinanciamentoEleicaoPublico> | null
     votos: VotoCandidato[]
     projetos: ProjetoLei[]
     /** Total real do acervo; `projetos` pode ser só a prévia de 25. */
@@ -110,7 +618,14 @@ export function buildSectionFreshness(
      * ficha com verificacao de agosto na mesma pagina.
      */
     sancoesVerificacao?: SancoesVerificacao | null
+    filiacaoVerificacao?: SancoesVerificacao | null
     processosVerificacao?: SancoesVerificacao | null
+    projetosVerificacao?: SancoesVerificacao | null
+    votacoesVerificacao?: SancoesVerificacao | null
+    gastosParlamentaresVerificacao?: SancoesVerificacao | null
+    federalAcervoReceipts?: FederalAcervoReceipts | null
+    gastosParlamentaresAplicabilidade?: unknown
+    gastosExecutivoVerificacao?: ExecutiveScopeReceipt | null
   }
 ): Partial<Record<SectionFreshnessKey, SectionFreshnessInfo>> {
   const fieldVerification = candidato.verificacao_campos ?? {}
@@ -228,6 +743,28 @@ export function buildSectionFreshness(
     .sort()
     .at(-1) ?? null
   const latestVoteDate = parseDate(latestVoteDateString)
+  const federalProjectsNotApplicable = resolveFederalSectionNotApplicable(
+    "projetos_lei",
+    data.federalAcervoReceipts,
+  )
+  const federalVotesNotApplicable = resolveFederalSectionNotApplicable(
+    "votos_candidato",
+    data.federalAcervoReceipts,
+  )
+  const federalExpensesNotApplicable = resolveFederalSectionNotApplicable(
+    "gastos_parlamentares",
+    data.federalAcervoReceipts,
+  )
+  const federalExpensesTemporalNotApplicable = resolveFederalExpenseTemporalNotApplicable(
+    data.gastosParlamentaresAplicabilidade,
+  )
+  const patrimonioSeriesFreshness = buildPatrimonioSeriesFreshness(data.patrimonioEleicoes)
+  const financiamentoSeriesFreshness = buildFinanciamentoSeriesFreshness(data.financiamentoEleicoes)
+  const filiacaoVerificationFreshness = filiacaoAttemptFreshness("filiacao", data.filiacaoVerificacao)
+  const mudancasFromFiliacaoFreshness = filiacaoAttemptFreshness("mudancas_partido", data.filiacaoVerificacao)
+  const projetosAttemptFreshness = federalSectionAttemptFreshness("projetos_lei", data.projetosVerificacao)
+  const votacoesAttemptFreshness = federalSectionAttemptFreshness("votos_candidato", data.votacoesVerificacao)
+  const gastosParlamentaresAttemptFreshness = federalSectionAttemptFreshness("gastos_parlamentares", data.gastosParlamentaresVerificacao)
 
   return {
     perfil_atual: profileVerification
@@ -249,6 +786,12 @@ export function buildSectionFreshness(
           "missing",
           "Sem data confiável de atualização do perfil atual."
         ),
+    filiacao: filiacaoVerificationFreshness ?? buildFreshnessInfo(
+        "filiacao",
+        "Filiação partidária",
+        "missing",
+        "Filiação partidária ainda não consultada.",
+      ),
     historico_politico:
       latestHistoricoYear != null
         ? buildFreshnessInfo(
@@ -283,7 +826,7 @@ export function buildSectionFreshness(
             null,
             "Histórico partidário"
           )
-        : buildFreshnessInfo(
+        : mudancasFromFiliacaoFreshness ?? buildFreshnessInfo(
             "mudancas_partido",
             "Histórico partidário",
             "missing",
@@ -301,7 +844,7 @@ export function buildSectionFreshness(
             null,
             "TSE"
           )
-        : buildFreshnessInfo(
+        : patrimonioSeriesFreshness ?? buildFreshnessInfo(
             "patrimonio",
             "Patrimônio",
             "missing",
@@ -319,14 +862,14 @@ export function buildSectionFreshness(
             null,
             "TSE"
           )
-        : buildFreshnessInfo(
+        : financiamentoSeriesFreshness ?? buildFreshnessInfo(
             "financiamento",
             "Financiamento",
             "missing",
             "Sem financiamento estruturado."
           ),
     projetos_lei:
-      latestProjetoYear != null
+      data.projetos.length > 0
         ? buildFreshnessInfo(
             "projetos_lei",
             // Acervo misto não pode se anunciar como projeto de lei (issue
@@ -335,20 +878,22 @@ export function buildSectionFreshness(
             // prévia quando ela é o acervo todo; senão, rótulo neutro.
             rotuloFreshnessProjetos(data),
             "historical",
-            `Proposição mais recente disponível: ${latestProjetoYear}.`,
+            latestProjetoYear != null
+              ? `Proposição mais recente disponível: ${latestProjetoYear}.`
+              : "Há proposições estruturadas no acervo.",
             null,
             latestProjetoYear,
             null,
             "API legislativa"
           )
-        : buildFreshnessInfo(
+        : federalProjectsNotApplicable ?? projetosAttemptFreshness ?? buildFreshnessInfo(
             "projetos_lei",
             "Projetos de lei",
             "missing",
             "Sem projetos de lei estruturados."
           ),
     votos_candidato:
-      latestVoteDate && latestVoteDateString
+      data.votos.length > 0
         ? buildFreshnessInfo(
             "votos_candidato",
             "Votações",
@@ -356,36 +901,40 @@ export function buildSectionFreshness(
             // `votacoes_chave.data_votacao` é coluna DATE. Exibir a string crua
             // mantém este selo igual ao que a lista de votos já renderiza; passar
             // pelo Date recuaria o dia em America/Sao_Paulo.
-            `Votação mais recente registrada em ${formatDate(latestVoteDateString)}.`,
-            latestVoteDate.toISOString(),
-            latestVoteDate.getUTCFullYear(),
+            latestVoteDate && latestVoteDateString
+              ? `Votação mais recente registrada em ${formatDate(latestVoteDateString)}.`
+              : "Há votações estruturadas no acervo.",
+            latestVoteDate?.toISOString() ?? null,
+            latestVoteDate?.getUTCFullYear() ?? null,
             null,
             "API legislativa"
           )
-        : buildFreshnessInfo(
+        : federalVotesNotApplicable ?? votacoesAttemptFreshness ?? buildFreshnessInfo(
             "votos_candidato",
             "Votações",
             "missing",
             "Sem histórico estruturado de votações."
           ),
     gastos_parlamentares:
-      latestGastoYear != null
+      data.gastos.length > 0
         ? buildFreshnessInfo(
             "gastos_parlamentares",
             "Gastos parlamentares",
             "historical",
-            `Dados disponíveis até ${latestGastoYear}.`,
+            latestGastoYear != null
+              ? `Dados disponíveis até ${latestGastoYear}.`
+              : "Há gastos parlamentares estruturados no acervo.",
             null,
             latestGastoYear,
             null,
             "Gastos parlamentares"
           )
-        : buildFreshnessInfo(
-            "gastos_parlamentares",
-            "Gastos parlamentares",
-            "missing",
-            "Sem gastos parlamentares estruturados."
-          ),
+        : federalExpensesTemporalNotApplicable ?? federalExpensesNotApplicable ?? gastosParlamentaresAttemptFreshness ?? buildFreshnessInfo(
+          "gastos_parlamentares",
+          "Gastos parlamentares",
+          "missing",
+          "Sem gastos parlamentares estruturados."
+        ),
     gastos_executivo:
       latestGastoExecutivo && latestGastoExecutivoColeta && latestGastoExecutivoColetaDate
         ? buildFreshnessInfo(
@@ -400,11 +949,11 @@ export function buildSectionFreshness(
             latestGastoExecutivoColeta.coletado_em,
             "Portal da Transparência",
           )
-        : buildFreshnessInfo(
-            "gastos_executivo",
-            "Gastos da estrutura de governo",
-            "missing",
-            "Sem totais institucionais estruturados.",
-          ),
+        : resolveExecutiveSectionNotApplicable(data.gastosExecutivoVerificacao) ?? buildFreshnessInfo(
+          "gastos_executivo",
+          "Gastos da estrutura de governo",
+          "missing",
+          "Sem totais institucionais estruturados.",
+        ),
   }
 }

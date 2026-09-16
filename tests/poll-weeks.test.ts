@@ -115,6 +115,32 @@ test("unknown or malformed mode isolates the poll by its own key", () => {
   assert.equal(groupWeeklyPollSeries([a, malformed]).length, 2)
 })
 
+test("Senado agrupa proveniências distintas e separa pergunta ou base incompatível", () => {
+  const first = survey("2026-09-08", "A")
+  first.office = "Senador"
+  first.geography = { type: "estadual", label: "São Paulo", code: "SP" }
+  first.scenario.geography = "São Paulo"
+  first.scenario.comparabilityKey = "2026|Senador|SP|1|primeiro-voto|lista-2026|eleitores"
+  first.scenario.question.value = "Em quem você votaria para senador?"
+
+  const comparable = structuredClone(first)
+  comparable.id = "B-2026-09-08"
+  comparable.instituto.value = "B"
+  comparable.provenance.resultUrl = "https://example.org/pesquisa/outra-fonte"
+  comparable.scenario.question.value = "  Em quem voce votaria para senador?  "
+  assert.equal(groupWeeklyPollSeries([first, comparable]).length, 1)
+
+  const differentQuestion = structuredClone(comparable)
+  differentQuestion.id = "C-2026-09-08"
+  differentQuestion.scenario.question.value = "Em quem você votaria como primeira escolha para senador?"
+  assert.equal(groupWeeklyPollSeries([first, differentQuestion]).length, 2)
+
+  const differentDenominator = structuredClone(comparable)
+  differentDenominator.id = "D-2026-09-08"
+  differentDenominator.sample.population.value = "Votos válidos"
+  assert.equal(groupWeeklyPollSeries([first, differentDenominator]).length, 2)
+})
+
 test("unapproved/old surveys are excluded and undated surveys do not join dated weeks", () => {
   const a = survey("2026-09-08", "A")
   const old = survey("2026-09-10", "B")

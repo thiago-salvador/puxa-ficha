@@ -24,6 +24,10 @@ test("fixtures SSR são opt-in de CI, isoladas do build de produção e vedadas 
   assert.match(readFileSync(".vercelignore", "utf8"), /^\.next-e2e$/m)
 })
 
+test("fixture build aceita marcador VERCEL=0 usado no checkout local", () => {
+  assert.doesNotThrow(() => visualFixtureBuildConfig({ CI: "true", VERCEL: "0", VERCEL_ENV: "local", PF_VISUAL_FIXTURE_BUILD: "1" }))
+})
+
 test("busca em interactions tem fixture local e não depende de produção", () => {
   const source = readFileSync("tests/visual/interactions.spec.ts", "utf8")
   assert.equal(/page\.route\("\*\*\/api\/search-index"/.test(source), true)

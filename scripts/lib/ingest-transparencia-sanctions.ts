@@ -1,4 +1,9 @@
+import { createHash } from "node:crypto"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { resolve } from "node:path"
 import { somenteDigitos, cpfEhValido } from "./cpf"
+import JSZip from "jszip"
+import { parse as parseCsvSync } from "csv-parse/sync"
 import { supabase } from "./supabase"
 import {
   exigirCoortePublicaMinima,
@@ -7,7 +12,6 @@ import {
 } from "./candidatos-publicos-minimos"
 import { fetchJSON, sleep, normalizeForMatch } from "./helpers"
 import { log, warn } from "./logger"
-import { registrarColetas } from "./coleta-log"
 import { emDryRun, planejarEscrita, planejarResultado } from "./dry-run"
 import type { IngestResult } from "./types"
 import { motivoRecusaDeFonte } from "../../src/lib/public-attention-point"
@@ -363,11 +367,69 @@ export function normalizarRegistros(
  * distinguir.
  */
 export type RespostaCadastro<T = unknown> =
-  | { ok: true; registros: T[] }
+  | {
+      ok: true
+      registros: T[]
+      /** Quantas páginas foram lidas até a página terminal vazia. */
+      paginasConsultadas?: number
+      escopo?: "consulta_filtrada" | "exportacao_completa"
+      coberturaIdentidade?: "completa" | "parcial"
+      /** Todas as linhas têm máscara CPF válida, permitindo fechar negativo
+       * quando nenhum segmento visível coincide com o CPF consultado. */
+      identidadeMascaradaVerificavel?: boolean
+    }
   | { ok: false; erro: string }
+
+export type ResultadoPaginas<T> =
+  | { ok: true; registros: T[]; paginasConsultadas: number }
+  | { ok: false; erro: string }
+
+/**
+ * Lê uma consulta paginada até a página terminal vazia.
+ *
+ * A API do Portal não entrega um total confiável no corpo. Portanto um único
+ * resultado positivo não prova que a primeira página é o conjunto completo.
+ * Repetição da mesma página e limite de segurança são falhas, nunca ausência.
+ */
+export async function buscarTodasPaginas<T>(
+  buscarPagina: (pagina: number) => Promise<unknown>,
+  limitePaginas = 100,
+): Promise<ResultadoPaginas<T>> {
+  const registros: T[] = []
+  const fingerprints = new Set<string>()
+
+  for (let pagina = 1; pagina <= limitePaginas; pagina++) {
+    let payload: unknown
+    try {
+      payload = await buscarPagina(pagina)
+    } catch (err) {
+      // Preserva o motivo original (inclusive o status HTTP que
+      // `criarDepsHttp` já embute na mensagem): engolir aqui faz o recibo
+      // mentir sobre POR QUE a página falhou, e o teste de recibo confere
+      // isso.
+      const detalhe = err instanceof Error ? err.message : String(err)
+      return { ok: false, erro: `falha ao consultar página ${pagina} (${detalhe})` }
+    }
+    if (!Array.isArray(payload)) {
+      return { ok: false, erro: `resposta da página ${pagina} não é lista` }
+    }
+    if (payload.length === 0) {
+      return { ok: true, registros, paginasConsultadas: pagina }
+    }
+    const fingerprint = createHash("sha256").update(JSON.stringify(payload)).digest("hex")
+    if (fingerprints.has(fingerprint)) {
+      return { ok: false, erro: `página ${pagina} repetida; paginação não interpretável` }
+    }
+    fingerprints.add(fingerprint)
+    registros.push(...(payload as T[]))
+  }
+
+  return { ok: false, erro: `limite de ${limitePaginas} páginas atingido` }
+}
 
 export interface ColetaDeps {
   buscar(endpoint: EndpointSancao, documento: string): Promise<RespostaCadastro>
+  origem?(endpoint: EndpointSancao): string
 }
 
 /**
@@ -484,13 +546,23 @@ export async function coletarSancoesDoCandidato(
     // tem homonimo de mascara no cadastro" de "filtro foi ignorado e a resposta
     // nao fala deste CPF". Vazio confirmado exige consulta cuja resposta se
     // consegue interpretar; esta nao e.
+    const mascaraSemPossivelMatch = resposta.identidadeMascaradaVerificavel
+      && !descartados.some((motivo) => motivo.includes("CPF mascarado bateu"))
     porCadastro.push({
       tipo: endpoint.tipo,
-      resultado: aceitas.length > 0 ? "encontrado" : "indeterminado",
+      resultado: aceitas.length > 0
+        ? "encontrado"
+        : resposta.escopo === "exportacao_completa" && (resposta.coberturaIdentidade === "completa" || mascaraSemPossivelMatch)
+        ? "vazio_confirmado"
+        : "indeterminado",
       volume: aceitas.length,
       detalhe:
         aceitas.length > 0
-          ? undefined
+          ? `${aceitas.length} registro(s) conferido(s); páginas=${resposta.paginasConsultadas ?? 1}`
+          : resposta.escopo === "exportacao_completa" && (resposta.coberturaIdentidade === "completa" || mascaraSemPossivelMatch)
+          ? `exportação integral do cadastro sem linha que case com o CPF consultado`
+          : resposta.escopo === "exportacao_completa"
+          ? `exportação integral com linhas sem documento interpretável; ausência não confirmada`
           : `${registros.length} registro(s) devolvido(s), nenhum casou com o CPF consultado; ` +
             `resposta indistinguivel de filtro ignorado (incidente 2026-08-04)`,
     })
@@ -500,26 +572,233 @@ export async function coletarSancoesDoCandidato(
 }
 
 function criarDepsHttp(headers: Record<string, string>): ColetaDeps {
+  const cacheDir = process.env.PF_TRANSPARENCIA_SANCTIONS_CACHE_DIR?.trim()
+  if (cacheDir) mkdirSync(resolve(cacheDir), { recursive: true })
+  const cache = new Map<string, Promise<RespostaCadastro>>()
+  const hash = (value: string) => createHash("sha256").update(value).digest("hex")
   return {
     async buscar(endpoint, documento) {
-      try {
-        const url = `${API}/${endpoint.path}?${endpoint.paramDocumento}=${encodeURIComponent(documento)}&pagina=1`
-        const data = await fetchJSON<unknown[]>(url, headers)
-        if (Array.isArray(data)) return { ok: true, registros: data }
-        // Corpo fora do contrato nao e cadastro vazio: e resposta que nao
-        // sabemos ler. Vai como falha, e nao como lista vazia, para que a
-        // resposta ilegivel nunca passe por "candidato limpo".
-        warn("transparencia-sanctions", `${endpoint.path}: resposta nao e lista`)
-        return { ok: false, erro: `${endpoint.path}: resposta nao e lista` }
-      } catch (err) {
-        // fetchJSON inclui a URL no erro, inclusive o documento da consulta.
-        // Preservar só o status HTTP evita levar CPF para logs e recibos.
-        const status = (err instanceof Error ? err.message : String(err)).match(/HTTP\s+(\d{3})/i)?.[1]
-        const motivo = status ? `HTTP ${status}` : "falha de transporte ou leitura da resposta"
-        warn("transparencia-sanctions", `${endpoint.path}: consulta falhou (${motivo})`)
-        return { ok: false, erro: `${endpoint.path}: ${motivo}` }
-      }
+      const requestBase = `${endpoint.path}:${endpoint.paramDocumento}:${somenteDigitos(documento)}`
+      const requestHash = hash(requestBase)
+      const cacheKey = `${requestBase}:all-pages`
+      const prior = cache.get(cacheKey)
+      if (prior) return prior
+      const pending = (async (): Promise<RespostaCadastro> => {
+        const buscarPagina = async (pagina: number): Promise<unknown> => {
+          // Mantém o nome do arquivo legado para a página 1, permitindo
+          // reaproveitar as 930 respostas já coletadas. Páginas seguintes têm
+          // chave própria e nunca se confundem com a primeira.
+          const paginaHash = pagina === 1 ? requestHash : hash(`${requestBase}:pagina=${pagina}`)
+          const cacheFile = cacheDir ? resolve(cacheDir, `${paginaHash}.json`) : null
+          if (cacheFile && existsSync(cacheFile)) {
+            try {
+              const cached = JSON.parse(readFileSync(cacheFile, "utf8")) as {
+                schema_version?: unknown
+                endpoint?: unknown
+                request_sha256?: unknown
+                pagina?: unknown
+                payload?: unknown
+              }
+              const hashValido = cached.request_sha256 === paginaHash || (pagina === 1 && cached.request_sha256 === requestHash)
+              const paginaValida = cached.pagina === undefined ? pagina === 1 : cached.pagina === pagina
+              if (
+                cached.schema_version === "transparencia-sanctions-response-cache-v1" &&
+                cached.endpoint === endpoint.path &&
+                hashValido &&
+                paginaValida &&
+                Array.isArray(cached.payload)
+              ) return cached.payload
+            } catch {
+              // Cache inválido é descartado silenciosamente; a fonte será consultada.
+            }
+          }
+          const url = `${API}/${endpoint.path}?${endpoint.paramDocumento}=${encodeURIComponent(documento)}&pagina=${pagina}`
+          try {
+            const data = await fetchJSON<unknown>(url, headers)
+            if (!Array.isArray(data)) throw new Error("resposta nao e lista")
+            if (cacheFile) {
+              writeFileSync(cacheFile, JSON.stringify({
+                schema_version: "transparencia-sanctions-response-cache-v1",
+                endpoint: endpoint.path,
+                request_sha256: paginaHash,
+                pagina,
+                payload: data,
+              }) + "\n")
+            }
+            return data
+          } catch (err) {
+            const status = (err instanceof Error ? err.message : String(err)).match(/HTTP\s+(\d{3})/i)?.[1]
+            const motivo = status ? `HTTP ${status}` : "falha de transporte ou leitura da resposta"
+            warn("transparencia-sanctions", `${endpoint.path}: página ${pagina} falhou (${motivo})`)
+            throw new Error(`${endpoint.path}: ${motivo}`)
+          }
+        }
+
+        const paginas = await buscarTodasPaginas<unknown>(buscarPagina)
+        if (!paginas.ok) return paginas
+        return { ok: true, registros: paginas.registros, paginasConsultadas: paginas.paginasConsultadas }
+      })()
+      cache.set(cacheKey, pending)
+      return pending
     },
+  }
+}
+
+/**
+ * Base das exportações públicas em ZIP/CSV (caminho sem `TRANSPARENCIA_API_KEY`).
+ *
+ * Sobrescritível por `PF_TRANSPARENCIA_EXPORT_BASE`, no mesmo espírito de
+ * `PF_TRANSPARENCIA_API_BASE`: sem a costura, o caminho de fallback por
+ * ausência de chave só era exercitável pelo guard de CPF, que nunca chega em
+ * `carregarExportacaoPublica` nem em `normalizarLinhaExportacaoSancao`.
+ */
+const PUBLIC_EXPORT_BASE =
+  process.env.PF_TRANSPARENCIA_EXPORT_BASE ?? "https://portaldatransparencia.gov.br/download-de-dados"
+
+function valorExportacao(row: Record<string, string>, ...names: string[]): string {
+  for (const name of names) {
+    const value = row[name]
+    if (typeof value === "string" && value.trim()) return value.trim()
+  }
+  return ""
+}
+
+const COLUNAS_EXPORTACAO = {
+  CEIS: ["CÓDIGO DA SANÇÃO", "CPF OU CNPJ DO SANCIONADO", "NOME DO SANCIONADO"],
+  CNEP: ["CÓDIGO DA SANÇÃO", "CPF OU CNPJ DO SANCIONADO", "NOME DO SANCIONADO"],
+  // O CEAF possui as duas colunas. `NÚMERO DO DOCUMENTO` identifica a
+  // portaria/ato expulsivo e não é um CPF. A coluna de identidade é a de
+  // CPF/CNPJ, publicada mascarada para pessoas físicas.
+  CEAF: ["CÓDIGO DA SANÇÃO", "CPF OU CNPJ DO SANCIONADO", "NÚMERO DO DOCUMENTO", "NOME DO SANCIONADO"],
+} as const
+
+function cpfMascaradoExportacao(value: string | undefined): boolean {
+  return /^\*\*\*\.\d{3}\.\d{3}-\*\*$/.test((value ?? "").trim())
+}
+
+/** Parseia somente o layout oficial esperado, recusando HTML e cabeçalho parcial. */
+export function parseExportacaoSancoesCsv(tipo: SancaoTipo, csv: string): Record<string, string>[] {
+  const rows = parseCsvSync(csv, {
+    delimiter: ";",
+    columns: true,
+    bom: true,
+    skip_empty_lines: true,
+    // Linha truncada ou com coluna extra invalida a cobertura do ZIP inteiro;
+    // não deixe um CPF presente em uma linha irregular passar como consulta
+    // completa.
+    relax_column_count: false,
+    relax_quotes: true,
+    trim: true,
+  }) as Record<string, string>[]
+  if (rows.length === 0) throw new Error(`${tipo}: exportação oficial sem registros`)
+  const headers = Object.keys(rows[0] ?? {})
+  const missing = COLUNAS_EXPORTACAO[tipo].filter((column) => !headers.includes(column))
+  if (missing.length > 0) throw new Error(`${tipo}: cabeçalho incompatível; ausentes ${missing.join(", ")}`)
+  return rows
+}
+
+/**
+ * Converte uma linha do ZIP aberto do Portal para o mesmo contrato da API.
+ * O documento continua sendo conferido por `normalizarRegistros`; esta função
+ * apenas adapta o transporte, sem atribuir a linha por nome.
+ */
+export function normalizarLinhaExportacaoSancao(tipo: SancaoTipo, row: Record<string, string>): Record<string, unknown> {
+  const codigo = valorExportacao(row, "CÓDIGO DA SANÇÃO", "CODIGO DA SANÇÃO")
+  const documento = valorExportacao(row, "CPF OU CNPJ DO SANCIONADO")
+  const nome = valorExportacao(row, "NOME DO SANCIONADO", "NOME INFORMADO PELO ÓRGÃO SANCIONADOR")
+  const categoria = valorExportacao(row, "CATEGORIA DA SANÇÃO", "CATEGORIA DA SANCAO")
+  const fundamentacao = valorExportacao(row, "FUNDAMENTAÇÃO LEGAL", "FUNDAMENTACAO LEGAL")
+  if (tipo === "CEAF") {
+    return {
+      id: codigo || undefined,
+      dataPublicacao: valorExportacao(row, "DATA PUBLICAÇÃO", "DATA PUBLICACAO"),
+      punicao: {
+        cpfPunidoFormatado: documento || null,
+        nomePunido: nome || null,
+        processo: valorExportacao(row, "NÚMERO DO PROCESSO", "NUMERO DO PROCESSO") || null,
+      },
+      tipoPunicao: { descricao: categoria || null },
+      orgaoLotacao: { nome: valorExportacao(row, "ÓRGÃO DE LOTAÇÃO", "ORGAO DE LOTACAO") || null },
+      fundamentacao: fundamentacao ? [{ descricao: fundamentacao }] : [],
+    }
+  }
+  return {
+    id: codigo || undefined,
+    dataInicioSancao: valorExportacao(row, "DATA INÍCIO SANÇÃO", "DATA INICIO SANCAO") || null,
+    dataFimSancao: valorExportacao(row, "DATA FINAL SANÇÃO", "DATA FINAL SANCAO") || null,
+    tipoSancao: { descricaoResumida: categoria || null },
+    orgaoSancionador: { nome: valorExportacao(row, "ÓRGÃO SANCIONADOR", "ORGAO SANCIONADOR") || null },
+    sancionado: { codigoFormatado: documento || null, nome: nome || null },
+    fundamentacao: fundamentacao ? [{ descricao: fundamentacao }] : [],
+    numeroProcesso: valorExportacao(row, "NÚMERO DO PROCESSO", "NUMERO DO PROCESSO") || null,
+  }
+}
+
+async function descobrirDataExportacao(tipo: SancaoTipo): Promise<string> {
+  const forced = process.env.PF_TRANSPARENCIA_EXPORT_DATE?.trim()
+  if (forced && /^\d{8}$/.test(forced)) return forced
+  const path = tipo.toLowerCase()
+  const response = await fetch(`${PUBLIC_EXPORT_BASE}/${path}`, {
+    headers: { Accept: "text/html", "user-agent": "PuxaFichaDataFreshness/1.0" },
+    signal: AbortSignal.timeout(30_000),
+  })
+  if (!response.ok) throw new Error(`${tipo}: listagem de exportação HTTP ${response.status}`)
+  const body = await response.text()
+  const dates = [...body.matchAll(/"ano"\s*:\s*"(\d{4})"\s*,\s*"mes"\s*:\s*"(\d{2})"\s*,\s*"dia"\s*:\s*"(\d{2})"/g)]
+    .map((match) => `${match[1]}${match[2]}${match[3]}`)
+  const latest = dates.sort().at(-1)
+  if (!latest) throw new Error(`${tipo}: listagem oficial sem data de exportação`)
+  return latest
+}
+
+async function carregarExportacaoPublica(endpoint: EndpointSancao): Promise<RespostaCadastro> {
+  try {
+    const date = await descobrirDataExportacao(endpoint.tipo)
+    const url = `${PUBLIC_EXPORT_BASE}/${endpoint.path}/${date}`
+    const response = await fetch(url, {
+      headers: { Accept: "application/zip", "user-agent": "PuxaFichaDataFreshness/1.0" },
+      signal: AbortSignal.timeout(120_000),
+    })
+    if (!response.ok) return { ok: false, erro: `${endpoint.tipo}: exportação oficial HTTP ${response.status}` }
+    const archive = await JSZip.loadAsync(await response.arrayBuffer())
+    const members = Object.values(archive.files).filter((entry) => /\.(csv|txt)$/i.test(entry.name) && !entry.dir)
+    if (members.length !== 1) return { ok: false, erro: `${endpoint.tipo}: ZIP oficial deve conter exatamente um CSV` }
+    const member = members[0]!
+    const bytes = await member.async("uint8array")
+    const csv = new TextDecoder("windows-1252").decode(bytes)
+    const rows = parseExportacaoSancoesCsv(endpoint.tipo, csv)
+    // A portaria/ato em `NÚMERO DO DOCUMENTO` não identifica a pessoa. O
+    // vínculo sempre usa a coluna nominal de CPF/CNPJ, inclusive no CEAF.
+    const documentColumn = "CPF OU CNPJ DO SANCIONADO"
+    const invalidIdentityRows = rows.filter((row) => {
+      const digits = somenteDigitos(row[documentColumn] ?? "")
+      return !((digits.length === 11 || digits.length === 14) && !String(row[documentColumn] ?? "").includes("#"))
+    }).length
+    return {
+      ok: true,
+      registros: rows.map((row) => normalizarLinhaExportacaoSancao(endpoint.tipo, row)),
+      escopo: "exportacao_completa",
+      coberturaIdentidade: invalidIdentityRows === 0 ? "completa" : "parcial",
+      identidadeMascaradaVerificavel: endpoint.tipo === "CEAF" && rows.every((row) => cpfMascaradoExportacao(row[documentColumn])),
+    }
+  } catch (err) {
+    const detail = err instanceof Error ? err.message : String(err)
+    return { ok: false, erro: `${endpoint.tipo}: falha ao ler exportação oficial (${detail.slice(0, 120)})` }
+  }
+}
+
+function criarDepsExportacaoPublica(): ColetaDeps {
+  const cache = new Map<SancaoTipo, Promise<RespostaCadastro>>()
+  return {
+    buscar(endpoint) {
+      let result = cache.get(endpoint.tipo)
+      if (!result) {
+        result = carregarExportacaoPublica(endpoint)
+        cache.set(endpoint.tipo, result)
+      }
+      return result
+    },
+    origem: (endpoint) => `${PUBLIC_EXPORT_BASE}/${endpoint.path}`,
   }
 }
 
@@ -696,33 +975,10 @@ export async function ingestTransparenciaSanctions(
   const candidatos = coorte ?? await loadCandidatosPublicosMinimos()
   exigirCoortePublicaMinima(candidatos)
   const apiKey = process.env.TRANSPARENCIA_API_KEY
-  if (!apiKey) {
-    warn("transparencia-sanctions", "TRANSPARENCIA_API_KEY nao definida, pulando")
-
-    // ESTE e o caminho que produziu 194 de 194 fichas com sancoes vazias,
-    // incluindo politicos com cinco mandatos. Voltar aqui sem escrever nada era
-    // indistinguivel, para quem le o banco depois, de ter consultado os
-    // cadastros e nao ter achado nada. Uma linha de `erro` por candidato torna
-    // a diferenca legivel: a ficha continua vazia, mas o relatorio passa a
-    // dizer POR QUE esta vazia, e da para ver que falta credencial em vez de
-    // concluir que 194 politicos tem ficha limpa.
-    // Mesmo roster do caminho feliz (`loadCandidatosPublicosMinimos`), e nao o seed
-    // inteiro: o log tem que registrar tentativa exatamente de quem o pipeline
-    // teria consultado. Gravar `erro` para quem nunca seria coletado inventaria
-    // 77 lacunas que ninguem tem intencao de fechar.
-    await registrarColetas(
-      candidatos.map((cand) => ({
-        fonte: "transparencia-sanctions",
-        alvo: cand.slug,
-        resultado: "erro" as const,
-        detalhe: "TRANSPARENCIA_API_KEY ausente: nenhum cadastro foi consultado",
-      }))
-    )
-    return []
-  }
-
-  const headers = { "chave-api-dados": apiKey, Accept: "application/json" }
-  const deps = criarDepsHttp(headers)
+  const deps = apiKey
+    ? criarDepsHttp({ "chave-api-dados": apiKey, Accept: "application/json" })
+    : criarDepsExportacaoPublica()
+  if (!apiKey) warn("transparencia-sanctions", "TRANSPARENCIA_API_KEY nao definida; usando exportações oficiais públicas")
   const results: IngestResult[] = []
 
   for (const cand of candidatos) {
@@ -776,8 +1032,19 @@ export async function ingestTransparenciaSanctions(
         continue
       }
 
-      for (const descarte of coleta.descartes) {
+      // A URL de recibo não leva o CPF. O detalhe lista as três rotas
+      // efetivamente consultadas e seus desfechos por cadastro.
+      const fontesConsultadas = ENDPOINTS.map((endpoint) => `${endpoint.tipo}=${API}/${endpoint.path}`).join(", ")
+      result.coleta_url = API
+
+      for (const descarte of coleta.descartes.slice(0, 3)) {
         warn("transparencia-sanctions", `  ${cand.slug}: registro descartado — ${descarte}`)
+      }
+      if (coleta.descartes.length > 3) {
+        warn(
+          "transparencia-sanctions",
+          `  ${cand.slug}: ${coleta.descartes.length - 3} demais registros descartados após conferência CPF`,
+        )
       }
 
       // Desfecho POR CADASTRO no relatorio de dry-run. `registrarColetas` grava
@@ -790,7 +1057,8 @@ export async function ingestTransparenciaSanctions(
             fonte: `transparencia-sanctions:${cadastro.tipo}`,
             alvo: cand.slug,
             resultado: cadastro.resultado,
-            origem: `${API}/${ENDPOINTS.find((e) => e.tipo === cadastro.tipo)?.path}`,
+            origem: deps.origem?.(ENDPOINTS.find((e) => e.tipo === cadastro.tipo)!)
+              ?? `${API}/${ENDPOINTS.find((e) => e.tipo === cadastro.tipo)?.path}`,
             consultadoEm: new Date().toISOString(),
             detalhe: cadastro.detalhe ?? `${cadastro.volume} registro(s) conferido(s)`,
           })
@@ -860,13 +1128,17 @@ export async function ingestTransparenciaSanctions(
       const cadastrosIndeterminados = coleta.porCadastro.filter(
         (c) => c.resultado === "indeterminado"
       )
+      const resumoCadastros = coleta.porCadastro
+        .map((cadastro) => `${cadastro.tipo}:${cadastro.resultado}:${cadastro.volume}${cadastro.detalhe ? ` (${cadastro.detalhe})` : ""}`)
+        .join(", ")
+      result.coleta_volume = coleta.sancoes.length
       if (result.errors.length > 0) {
         result.coleta_resultado = "erro"
-        result.coleta_detalhe = "Sanções conferidas na fonte, mas a persistência falhou; ausência não confirmada"
+        result.coleta_detalhe = `escopo=cadastros individuais; fontes=${fontesConsultadas}; resultados=${resumoCadastros}; persistência falhou, ausência não confirmada`
       } else if (coleta.falhas.length > 0) {
         result.coleta_resultado = "erro"
         result.coleta_detalhe =
-          `cadastro(s) sem resposta, zero nao confirmado: ${coleta.falhas.join("; ")}`.slice(0, 500)
+          `escopo=cadastros individuais; fontes=${fontesConsultadas}; resultados=${resumoCadastros}; cadastro(s) sem resposta, zero não confirmado`.slice(0, 500)
         warn(
           "transparencia-sanctions",
           `  ${cand.slug}: ${coleta.falhas.length} cadastro(s) sem resposta, zero nao confirmado`
@@ -880,19 +1152,17 @@ export async function ingestTransparenciaSanctions(
         // se perde (esta em rows_upserted e nas tabelas); o que esta linha diz
         // e que a consulta NAO terminou interpretavel.
         result.coleta_resultado = "indeterminado"
-        result.coleta_detalhe = cadastrosIndeterminados
-          .map((c) => `${c.tipo}: ${c.detalhe ?? "resposta nao interpretavel"}`)
-          .join("; ")
-          .slice(0, 500)
+        result.coleta_detalhe = `escopo=cadastros individuais; fontes=${fontesConsultadas}; resultados=${resumoCadastros}; resposta não interpretável, zero não confirmado`.slice(0, 500)
         warn(
           "transparencia-sanctions",
           `  ${cand.slug}: ${cadastrosIndeterminados.length} cadastro(s) com resposta nao interpretavel, zero nao confirmado`
         )
       } else if (totalUpserted > 0) {
         result.coleta_resultado = "encontrado"
+        result.coleta_detalhe = `escopo=cadastros individuais; fontes=${fontesConsultadas}; resultados=${resumoCadastros}`
       } else {
         result.coleta_resultado = "vazio_confirmado"
-        result.coleta_detalhe = `${ENDPOINTS.map((e) => e.tipo).join(", ")} responderam sem registro para o CPF`
+        result.coleta_detalhe = `escopo=cadastros individuais; fontes=${fontesConsultadas}; resultados=${resumoCadastros}`
       }
     } catch (err) {
       result.errors.push(err instanceof Error ? err.message : String(err))
@@ -900,7 +1170,8 @@ export async function ingestTransparenciaSanctions(
 
     result.duration_ms = Date.now() - start
     results.push(result)
-    await sleep(1500)
+    const pausaMs = Number(process.env.PF_TRANSPARENCIA_SANCTIONS_PAUSE_MS ?? 1500)
+    await sleep(Number.isFinite(pausaMs) ? Math.max(0, pausaMs) : 1500)
   }
 
   return results

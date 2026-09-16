@@ -40,6 +40,9 @@ function dedupeBensForDisplay(bens: BemDeclarado[] | null | undefined): BemDecla
 }
 
 function patrimonioIdentityKey(row: Patrimonio): string {
+  if (row.sq_candidato?.trim()) {
+    return `${row.ano_eleicao}|sq:${row.sq_candidato.trim()}|${normalizeTextKey(row.uf_candidatura)}`
+  }
   return `${row.ano_eleicao}|${roundCurrency(row.valor_total)}`
 }
 

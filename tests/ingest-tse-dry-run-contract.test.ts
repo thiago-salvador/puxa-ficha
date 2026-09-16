@@ -1,22 +1,99 @@
 import assert from "node:assert/strict"
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import { test } from "node:test"
+import JSZip from "jszip"
+import { createClient } from "@supabase/supabase-js"
 import {
+  extractZip,
+  decidePatrimonioLegacyReconciliation,
   financiamentoSourceFileUf,
   hasOfficialCandidateComplementaryPackage,
+  hasConfiguredElectionContext,
   hasOfficialPatrimonioPackage,
+  historicalPreloadedRowMatches,
   isDoadorOriginarioReceiptSource,
   patrimonioDeclarationObservation,
   recordPatrimonioDeclarationObservation,
   sanitizeTseLegacyAssetText,
   selectPatrimonioAbsenceCandidates,
+  selectCanonicalFinanciamentoSourceFiles,
   validarCoberturaPacotePatrimonio,
   validarCoberturaPacoteReceitas,
 } from "../scripts/lib/ingest-tse"
+import type { CandidatoConfig } from "../scripts/lib/types"
 
 const source = readFileSync("scripts/lib/ingest-tse.ts", "utf8")
+
+async function writeZip(path: string, entries: Record<string, string>): Promise<Buffer> {
+  const archive = new JSZip()
+  for (const [name, contents] of Object.entries(entries)) archive.file(name, contents)
+  const buffer = await archive.generateAsync({ type: "nodebuffer", compression: "STORE" })
+  writeFileSync(path, buffer)
+  return buffer
+}
+
+test("extractZip seleciona consulta por UF e fallback legado sem extrair comitê", async () => {
+  const root = mkdtempSync(join(tmpdir(), "pf-tse-extract-"))
+  try {
+    const consultaZip = join(root, "consulta.zip")
+    await writeZip(consultaZip, {
+      "consulta_cand_2008_SP.csv": "SQ_CANDIDATO;SG_UF\n52985;SP\n",
+      "consulta_cand_2008_BRASIL.csv": "nao deve ser necessário\n",
+      "comite_2008.csv": "nao deve ser extraído\n",
+    })
+    const consultaDir = join(root, "consulta")
+    mkdirSync(consultaDir)
+    writeFileSync(join(consultaDir, "resíduo-stale.csv"), "stale")
+    extractZip(consultaZip, consultaDir, ["SP"])
+    assert.equal(existsSync(join(consultaDir, "consulta_cand_2008_SP.csv")), true)
+    assert.equal(existsSync(join(consultaDir, "resíduo-stale.csv")), false)
+    assert.equal(existsSync(join(consultaDir, "comite_2008.csv")), false)
+
+    const receitaZip = join(root, "receita.zip")
+    await writeZip(receitaZip, {
+      "ReceitaCandidato.csv": "NO_CAND;VR_RECEITA\nELIANA;10\n",
+      "ComitePartidario.csv": "não é receita individual\n",
+    })
+    const receitaDir = join(root, "receita")
+    extractZip(receitaZip, receitaDir, ["SP"])
+    assert.equal(existsSync(join(receitaDir, "ReceitaCandidato.csv")), true)
+    assert.equal(existsSync(join(receitaDir, "ComitePartidario.csv")), false)
+  } finally {
+    rmSync(root, { recursive: true, force: true })
+  }
+})
+
+test("extractZip rejeita ZIP truncado e CRC inválido antes de qualquer ausência", async () => {
+  const root = mkdtempSync(join(tmpdir(), "pf-tse-integrity-"))
+  try {
+    const validZip = join(root, "valid.zip")
+    const bytes = await writeZip(validZip, {
+      "consulta_cand_2020_SP.csv": "CRC_PAYLOAD_UNTOUCHED\n",
+    })
+
+    const truncatedZip = join(root, "truncated.zip")
+    writeFileSync(truncatedZip, bytes.subarray(0, Math.max(1, bytes.length - 20)))
+    assert.throws(
+      () => extractZip(truncatedZip, join(root, "truncated"), ["SP"]),
+      /Command failed|End-of-central-directory|unexpected end|zipfile corrupt/i,
+    )
+
+    const corruptedZip = join(root, "corrupted.zip")
+    const corrupted = Buffer.from(bytes)
+    const payloadOffset = corrupted.indexOf(Buffer.from("CRC_PAYLOAD_UNTOUCHED"))
+    assert.ok(payloadOffset >= 0, "fixture deve conter payload sem compressão")
+    corrupted[payloadOffset] ^= 0x01
+    writeFileSync(corruptedZip, corrupted)
+    assert.throws(
+      () => extractZip(corruptedZip, join(root, "corrupted"), ["SP"]),
+      /Command failed|bad CRC|CRC error|checksum/i,
+    )
+  } finally {
+    rmSync(root, { recursive: true, force: true })
+  }
+})
 const candidatos = JSON.parse(readFileSync("data/candidatos.json", "utf8")) as Array<{
   slug: string
   ids: { tse_sq_candidato: Record<string, string> }
@@ -53,11 +130,49 @@ test("TSE ingest inclui 2002 a 2008 e valida toda identidade por SQ, ano e UF", 
   assert.match(source, /uf_candidatura: data\.uf/)
   assert.match(source, /tse_uf_candidatura/)
   assert.match(source, /match\.method === "sq-preloaded"/)
-  assert.match(source, /historicalCandidateRowMatches\(row, candidato\)/)
+  assert.match(source, /historicalPreloadedRowMatches\(candidato, row, ano\)/)
   assert.match(source, /table: "financiamento_verificacoes"/)
   assert.match(source, /successfulReceitasZips === receitasUrls\.length/)
   assert.match(source, /const resultado = confirmOfficialAbsence/)
   assert.match(source, /resultado: "erro"/)
+})
+
+test("identidade histórica valida unidade/cargo/número e preserva coorte sem metadado novo", () => {
+  const row = {
+    NM_CANDIDATO: "ELIANA LUCIA FERREIRA COSTA",
+    NM_URNA_CANDIDATO: "DRA ELIANA",
+    SG_UF: "SP",
+    SG_UE: "70750",
+    CD_CARGO: "11",
+    NR_CAND: "16",
+  }
+  const candidate: CandidatoConfig = {
+    slug: "historico-teste",
+    nome_completo: "ELIANA LUCIA FERREIRA",
+    nome_urna: "DRA ELIANA FERREIRA",
+    cargo_disputado: "Senador",
+    estado: "SP",
+    ids: { camara: null, senado: null, tse_sq_candidato: { "2004": "171" } },
+    historical_identity_by_year: {
+      "2004": {
+        sq_candidato: "171",
+        uf: "SP",
+        sg_ue: "70750",
+        cargo_codigo: "11",
+        numero: "16",
+        nome: "ELIANA LUCIA FERREIRA COSTA",
+        nome_urna: "DRA ELIANA",
+      },
+    },
+  }
+  assert.equal(historicalPreloadedRowMatches(candidate, row, 2004), true)
+  assert.equal(historicalPreloadedRowMatches(candidate, { ...row, SG_UE: "3550308" }, 2004), false)
+  assert.equal(historicalPreloadedRowMatches(candidate, { ...row, CD_CARGO: "1" }, 2004), false)
+  assert.equal(historicalPreloadedRowMatches({ ...candidate, historical_identity_by_year: undefined }, {
+    ...row,
+    NM_CANDIDATO: "ELIANA LUCIA FERREIRA",
+    NM_URNA_CANDIDATO: "DRA ELIANA FERREIRA",
+  }, 2004), true)
 })
 
 test("patrimonio só exige download nos anos publicados pelo TSE", () => {
@@ -141,7 +256,7 @@ test("ambiguidades históricas usam o registro final comprovado no TSE", () => {
 test("reingestão só republica linha antes em quarentena com SQ curado e observado", () => {
   assert.match(source, /publicacaoAutorizada: selection\.observed && selection\.method === "sq-preloaded"/)
   assert.match(source, /data\.publicacaoAutorizada[\s\S]{0,120}despublicado_em: null/)
-  assert.match(source, /publicationAuthorizedSlugs\.has\(slug\)[\s\S]{0,120}despublicado_em: null/)
+  assert.match(source, /identity\.publicacaoAutorizada[\s\S]{0,120}despublicado_em: null/)
 })
 
 test("falha ou pacote parcial persiste erro por candidatura e nunca ausencia", () => {
@@ -156,9 +271,9 @@ test("falha ou pacote parcial persiste erro por candidatura e nunca ausencia", (
   assert.match(source, /resultado === "ausencia_oficial"\s*\?\s*"vazio_confirmado"\s*:\s*"erro"/)
   assert.match(source, /nenhum ZIP de receitas baixado[\s\S]*planFinanciamentoYearError\(/)
   assert.match(source, /const receitasPacoteDir = resolve\(receitasDir, String\(i\)\)/)
-  assert.match(source, /execFileSync\("unzip", \["-C", "-o", zipPath/)
+  assert.match(source, /execFileSync\("unzip", \["-o", zipPath, \.\.\.names, "-d", extractDir\]/)
   assert.match(source, /throw new Error\(`Ficheiros de receitas de candidatos nao encontrados/)
-  assert.match(source, /const dedupKey = `\$\{ano\}:\$\{identidadeDaLinha\.uf\}:\$\{sq\}:\$\{sqReceita\}`/)
+  assert.match(source, /const dedupKey = financiamentoReceitaDedupKey\(row, \{[\s\S]*?sqCandidato: sq,[\s\S]*?\}\)/)
   assert.match(source, /if \(lookupError\) throw lookupError/)
   assert.match(source, /if \(writeError\) throw writeError/)
   assert.match(source, /staleVerificationError/)
@@ -201,6 +316,31 @@ test("UF da candidatura e inferida de arquivos nacionais e estaduais em todos os
   assert.equal(financiamentoSourceFileUf("/tmp/receitas_candidatos.csv", ["RJ"]), undefined)
 })
 
+test("receitas escolhem o snapshot BRASIL inteiro antes das partições UF", () => {
+  assert.deepEqual(
+    selectCanonicalFinanciamentoSourceFiles([
+      "/tmp/receitas_candidatos_2012_MA.txt",
+      "/tmp/receitas_candidatos_2012_brasil.txt",
+      "/tmp/receitas_candidatos_2012_GO.txt",
+    ], 2012),
+    ["/tmp/receitas_candidatos_2012_brasil.txt"],
+  )
+  assert.deepEqual(
+    selectCanonicalFinanciamentoSourceFiles([
+      "/tmp/2010/BR/ReceitasCandidatos.txt",
+      "/tmp/2010/MA/ReceitasCandidatos.txt",
+    ], 2010),
+    ["/tmp/2010/BR/ReceitasCandidatos.txt", "/tmp/2010/MA/ReceitasCandidatos.txt"],
+  )
+  assert.deepEqual(
+    selectCanonicalFinanciamentoSourceFiles([
+      "/tmp/receitas_candidatos_2012_MA.txt",
+      "/tmp/receitas_candidatos_2012_GO.txt",
+    ], 2012),
+    ["/tmp/receitas_candidatos_2012_MA.txt", "/tmp/receitas_candidatos_2012_GO.txt"],
+  )
+})
+
 test("pacote 2018 ignora a cadeia auxiliar de doador originario", () => {
   assert.equal(isDoadorOriginarioReceiptSource("receitas_candidatos_2018_BRASIL.csv"), false)
   assert.equal(
@@ -224,16 +364,18 @@ test("patrimônio registra ausência oficial somente para identidade resolvida s
       { slug: "com-bens", sqCandidato: "1", uf: "PA", declarouBens: "S" },
       { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
       { slug: "sem-prova-de-ausencia", sqCandidato: "3", uf: "PA" },
+      { slug: "recibo-arquivo-vazio", sqCandidato: "5", uf: "RR", fileAbsenceReceipt: { verified: true } as never },
       { slug: "fora-do-recorte", sqCandidato: "4", uf: "SP", declarouBens: "N" },
     ],
     new Set(["com-bens"]),
-    new Set(["com-bens", "sem-bens", "sem-prova-de-ausencia"]),
+    new Set(["com-bens", "sem-bens", "sem-prova-de-ausencia", "recibo-arquivo-vazio"]),
   )
   assert.deepEqual(selected, [
+    { slug: "recibo-arquivo-vazio", sqCandidato: "5", uf: "RR", fileAbsenceReceipt: { verified: true } },
     { slug: "sem-bens", sqCandidato: "2", uf: "PA", declarouBens: "N" },
   ])
   assert.match(source, /table: "patrimonio_ausencia_oficial"/)
-  assert.match(source, /ST_DECLARAR_BENS=N/)
+  assert.match(source, /patrimonioAbsencePublicDetail/)
   assert.match(source, /existingAbsence/)
   assert.match(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.insert\(row\)/)
   assert.doesNotMatch(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,120}\.upsert\(row/)
@@ -241,14 +383,88 @@ test("patrimônio registra ausência oficial somente para identidade resolvida s
   assert.match(source, /staleAbsenceError/)
 })
 
+test("patrimônio persiste, lê e remove ausência pelo contexto SQ sem agregar candidaturas", () => {
+  assert.match(source, /slug: `\$\{cand\.slug\}\|\$\{identity\.sqCandidato\}\|/)
+  assert.match(source, /ano_eleicao: identity\.effectiveYear[\s\S]{0,100}ano_arquivo: identity\.sourceYear/)
+  assert.match(source, /\.from\("patrimonio"\)[\s\S]{0,220}\.eq\("ano_eleicao", identity\.effectiveYear\)[\s\S]{0,100}\.eq\("sq_candidato", identity\.sqCandidato\)/)
+  assert.match(source, /\.from\("patrimonio_ausencia_oficial"\)[\s\S]{0,220}\.eq\("ano_eleicao", identity\.effectiveYear\)[\s\S]{0,100}\.eq\("sq_candidato", identity\.sqCandidato\)/)
+})
+
 test("identidade e erro de patrimônio fecham o ingest sem falso verde", () => {
   assert.match(source, /method: "sq-preloaded"[\s\S]{0,160}observed: false[\s\S]{0,80}declarouBens: undefined/)
   assert.match(source, /if \(!existing\.observed\) \{[\s\S]{0,320}observed: true/)
   assert.match(source, /const declarouBens = row\.ST_DECLARAR_BENS/)
-  assert.match(source, /\.filter\(\(identity\) => identity\.declarouBens === "N"\)/)
+  assert.match(source, /identity\.declarouBens === "N" \|\| Boolean\(identity\.fileAbsenceReceipt\)/)
   assert.match(source, /Erro patrimonio \$\{ano\}:[\s\S]{0,100}throw err/)
   assert.match(source, /Patrimonio \$\{ano\}: download do pacote oficial falhou/)
   assert.match(source, /const requiredUFs = \[[\s\S]{0,180}sqMap\.values\(\)/)
+})
+
+test("allowlist financeira não inventa pleito sem SQ ou identidade histórica", () => {
+  const benyLike: CandidatoConfig = {
+    slug: "beny-like",
+    nome_completo: "BENIVAL ALVES DA SILVA",
+    nome_urna: "BENY GODOY",
+    cargo_disputado: "Senador",
+    estado: "MT",
+    ids: { camara: null, senado: null, tse_sq_candidato: { "2026": "110002553706" } },
+  }
+  assert.equal(hasConfiguredElectionContext(benyLike, 2002), false)
+  assert.equal(hasConfiguredElectionContext(benyLike, 2026), true)
+  assert.equal(hasConfiguredElectionContext({
+    ...benyLike,
+    historical_identity_by_year: { "2014": { sq_candidato: "", cargo: "Deputado Estadual", uf: "MT" } },
+  }, 2014), true)
+  assert.match(source, /A allowlist restringe quem pode ser escrito, mas não prova/)
+  assert.match(source, /if \(!hasConfiguredElectionContext\(candidato, ano\)\) continue/)
+})
+
+test("patrimônio reconcilia legado somente quando há um contexto e conteúdo idêntico", () => {
+  const bens = [{ tipo: "Aplicação", descricao: "Conta", valor: 100 }]
+  assert.deepEqual(decidePatrimonioLegacyReconciliation({
+    contextCount: 1,
+    legacyRows: [],
+    valorTotal: 100,
+    bens,
+  }), { action: "insert" })
+  assert.deepEqual(decidePatrimonioLegacyReconciliation({
+    contextCount: 1,
+    legacyRows: [{ id: "legacy-1", valor_total: "100", bens: [{ valor: 100, descricao: "Conta", tipo: "Aplicação" }] }],
+    valorTotal: 100,
+    bens,
+  }), { action: "update_legacy", id: "legacy-1", expectedTotal: 100, expectedBens: [{ valor: 100, descricao: "Conta", tipo: "Aplicação" }] })
+  assert.match(decidePatrimonioLegacyReconciliation({
+    contextCount: 2,
+    legacyRows: [{ id: "legacy-1", valor_total: 100, bens }],
+    valorTotal: 100,
+    bens,
+  }).action, /block/)
+  assert.match(decidePatrimonioLegacyReconciliation({
+    contextCount: 1,
+    legacyRows: [{ id: "legacy-1", valor_total: 90, bens }],
+    valorTotal: 100,
+    bens,
+  }).action, /block/)
+  assert.match(source, /CAS do legado sem SQ não alterou linha/)
+  assert.match(source, /\.eq\("bens", JSON\.stringify\(decision\.expectedBens\)\)/)
+  assert.match(source, /ausência legada sem SQ não pode ser escolhida entre múltiplos contextos/)
+})
+
+test("PostgREST serializa a igualdade JSONB do CAS sem object coercion", async () => {
+  let requestedUrl = ""
+  const client = createClient("http://127.0.0.1:54321", "test-key", {
+    global: {
+      fetch: async (input) => {
+        requestedUrl = String(input)
+        return new Response("[]", { status: 200, headers: { "content-type": "application/json" } })
+      },
+    },
+  })
+  const bens = [{ tipo: "Aplicação", descricao: "Conta", valor: 100 }]
+  await client.from("patrimonio").update({ fonte: "TSE" }).eq("bens", JSON.stringify(bens)).select("id")
+  const decoded = decodeURIComponent(requestedUrl)
+  assert.match(decoded, /bens=eq\.\[\{"tipo":"Aplicação","descricao":"Conta","valor":100\}\]/)
+  assert.doesNotMatch(decoded, /\[object Object\]/)
 })
 
 test("ausência de patrimônio exige pacote nacional ou todas as UFs esperadas", () => {

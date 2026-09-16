@@ -3,9 +3,21 @@ import { mkdtemp, writeFile, rm } from "node:fs/promises"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
-import { parseCSV, validarEsquemaIndividual } from "../scripts/lib/ingest-filiacao"
+import {
+  COLUNAS_FILIACAO_AGREGADA,
+  classificarEsquemaFiliacao,
+  FiliacaoSchemaError,
+  parseCSV,
+  validarEsquemaIndividual,
+} from "../scripts/lib/ingest-filiacao"
 import { resultadoTransparenciaPendente } from "../scripts/lib/ingest-transparencia"
-import { ingestTransparenciaSanctions } from "../scripts/lib/ingest-transparencia-sanctions"
+import {
+  ingestTransparenciaSanctions,
+  normalizarLinhaExportacaoSancao,
+  normalizarRegistros,
+  parseExportacaoSancoesCsv,
+  coletarSancoesDoCandidato,
+} from "../scripts/lib/ingest-transparencia-sanctions"
 import { motivoRecusaDeFonte } from "../src/lib/public-attention-point"
 
 test("Portal sem implementação não declara sucesso nem ausência", () => {
@@ -18,7 +30,17 @@ test("Portal sem implementação não declara sucesso nem ausência", () => {
 })
 
 test("perfil agregado oficial é recusado como filiação individual", () => {
-  assert.throws(() => validarEsquemaIndividual({ SG_PARTIDO: "", QT_FILIADO: "" }), /NM_ELEITOR/)
+  assert.equal(classificarEsquemaFiliacao(COLUNAS_FILIACAO_AGREGADA), "agregada")
+  assert.throws(
+    () => validarEsquemaIndividual(Object.fromEntries(COLUNAS_FILIACAO_AGREGADA.map((column) => [column, ""]))),
+    (error: unknown) => {
+      assert.ok(error instanceof FiliacaoSchemaError)
+      assert.equal(error.schema, "agregada")
+      assert.deepEqual(error.headers, COLUNAS_FILIACAO_AGREGADA)
+      assert.match(error.message, /recurso agregado do TSE/)
+      return true
+    },
+  )
 })
 
 test("CSV vazio ou com apenas cabeçalho incompatível não confirma cobertura", async () => {
@@ -28,12 +50,78 @@ test("CSV vazio ou com apenas cabeçalho incompatível não confirma cobertura",
       const file = join(dir, "source.csv")
       await writeFile(file, content)
       let consumed = 0
-      await assert.rejects(parseCSV(file, () => { consumed++ }), /sem registros|colunas ausentes/)
+      await assert.rejects(parseCSV(file, () => { consumed++ }), /sem registros|colunas ausentes|cabeçalho observado/)
       assert.equal(consumed, 0)
     }
   } finally {
     await rm(dir, { recursive: true, force: true })
   }
+})
+
+test("exportação pública de sanções preserva o vínculo por CPF e recusa linha de outro documento", () => {
+  const row = {
+    "CÓDIGO DA SANÇÃO": "ceis-1",
+    "CPF OU CNPJ DO SANCIONADO": "529.982.247-25",
+    "NOME DO SANCIONADO": "Pessoa de Teste",
+    "CATEGORIA DA SANÇÃO": "Sanção de teste",
+    "DATA INÍCIO SANÇÃO": "01/01/2026",
+    "DATA FINAL SANÇÃO": "31/12/2026",
+    "ÓRGÃO SANCIONADOR": "Órgão de teste",
+    "NÚMERO DO PROCESSO": "processo-1",
+    "FUNDAMENTAÇÃO LEGAL": "Lei de teste",
+  }
+  const mapped = normalizarLinhaExportacaoSancao("CEIS", row)
+  const accepted = normalizarRegistros("CEIS", [mapped], { cpf: "52998224725", nome: "Pessoa de Teste" }, new Date("2026-06-01"))
+  assert.equal(accepted.aceitas.length, 1)
+  assert.equal(accepted.aceitas[0]?.conferencia, "exato")
+  const other = normalizarRegistros("CEIS", [normalizarLinhaExportacaoSancao("CEIS", {
+    ...row,
+    "CPF OU CNPJ DO SANCIONADO": "111.111.111-11",
+  })], { cpf: "52998224725", nome: "Pessoa de Teste" })
+  assert.equal(other.aceitas.length, 0)
+  assert.match(other.descartes[0] ?? "", /documento.*CPF/)
+})
+
+test("exportação pública recusa HTML/cabeçalho parcial e mantém CPF mascarado indeterminado", async () => {
+  assert.throws(
+    () => parseExportacaoSancoesCsv("CEIS", "<html>desafio</html>"),
+    /cabeçalho incompatível|sem registros/,
+  )
+  assert.throws(
+    () => parseExportacaoSancoesCsv("CEAF", '"CÓDIGO DA SANÇÃO";"CPF OU CNPJ DO SANCIONADO";"NOME DO SANCIONADO"\n"1";"***.247.25*-**";"Pessoa"'),
+    /NÚMERO DO DOCUMENTO/,
+  )
+  assert.throws(
+    () => parseExportacaoSancoesCsv("CEIS", '"CÓDIGO DA SANÇÃO";"CPF OU CNPJ DO SANCIONADO";"NOME DO SANCIONADO"\n"1";"52998224725"'),
+    /Invalid Record Length|columns|record/i,
+  )
+  const ceaf = normalizarLinhaExportacaoSancao("CEAF", {
+    "CÓDIGO DA SANÇÃO": "1",
+    "CPF OU CNPJ DO SANCIONADO": "***.982.247-**",
+    "NÚMERO DO DOCUMENTO": "Portaria nº 123",
+    "NOME DO SANCIONADO": "Pessoa de Teste",
+  })
+  assert.equal((ceaf.punicao as { cpfPunidoFormatado: string }).cpfPunidoFormatado, "***.982.247-**")
+  const latin1 = new TextDecoder("windows-1252").decode(Uint8Array.from(Buffer.from(
+    '"CÓDIGO DA SANÇÃO";"CPF OU CNPJ DO SANCIONADO";"NOME DO SANCIONADO";"ÓRGÃO SANCIONADOR"\n"1";"***.247.25*-**";"Pessoa de Teste";"Órgão"',
+    "latin1",
+  )))
+  assert.equal(parseExportacaoSancoesCsv("CEIS", latin1).length, 1)
+  const coleta = await coletarSancoesDoCandidato(
+    "52998224725",
+    "Pessoa de Teste",
+    { buscar: async () => ({
+      ok: true,
+      registros: [normalizarLinhaExportacaoSancao("CEIS", {
+        "CÓDIGO DA SANÇÃO": "1",
+        "CPF OU CNPJ DO SANCIONADO": "***.247.25*-**",
+        "NOME DO SANCIONADO": "Pessoa de Teste",
+      })],
+      escopo: "exportacao_completa",
+      coberturaIdentidade: "parcial",
+    }) },
+  )
+  assert.equal(coleta.porCadastro[0]?.resultado, "indeterminado")
 })
 
 type Scenario = "missing-cpf" | "insert-error" | "select-error" | "http-error" | "found" | "empty"
@@ -72,6 +160,13 @@ async function runSanctions(scenario: Scenario) {
     if (/^\/api-de-dados\/(ceis|cnep|ceaf)$/.test(url.pathname)) {
       portalCalls++
       if (scenario === "http-error") return reply({ message: `HTTP 401: ${cpf}` }, 401)
+      // `buscarTodasPaginas` só fecha a paginação numa página terminal vazia,
+      // então uma página 1 com achado sempre gera uma segunda requisição de
+      // confirmação. Sem distinguir `pagina` aqui, essa página 2 devolveria o
+      // mesmo registro e o coletor acusaria "página repetida" em vez de
+      // "encontrado".
+      const pagina = Number(url.searchParams.get("pagina") ?? "1")
+      if (pagina > 1) return reply([])
       return reply(scenario !== "empty" && url.pathname.endsWith("/ceis") ? [{
         id: 1, pessoa: { cpfFormatado: cpf, nome: "Pessoa de Teste" },
         numeroProcesso: "processo-teste", tipoSancao: { descricaoResumida: "Sanção de teste" },
@@ -112,7 +207,8 @@ test("entrypoint sem CPF faz zero consulta ao Portal e zero persistência", asyn
 for (const scenario of ["insert-error", "select-error"] as const) {
   test(`entrypoint ${scenario} não transforma sanção encontrada em vazio`, async () => {
     const { result, writes, portalCalls } = await runSanctions(scenario)
-    assert.equal(portalCalls, 3)
+    // 4, não 3: CEIS acha na página 1 e a paginação confirma o fim na 2ª.
+    assert.equal(portalCalls, 4)
     assert.equal(result.coleta_resultado, "erro")
     assert.ok(result.errors.length > 0)
     assert.equal(result.rows_upserted, 0)

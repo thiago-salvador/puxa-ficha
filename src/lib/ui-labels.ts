@@ -260,13 +260,13 @@ const tokenLabels = {
   // conferida sem bens; nao_coletado é coleta pendente, nunca ausência presumida.
   patrimonioEleicaoEstado: {
     publicado: "Patrimônio publicado",
-    vazio_confirmado: "Sem bens declarados ao TSE",
+    vazio_confirmado: "Nenhum registro localizado no arquivo do TSE",
     nao_coletado: "Ainda não coletado",
   },
   financiamentoEleicaoEstado: {
     publicado: "Financiamento publicado",
     zero_declarado: "Zero declarado",
-    ausencia_oficial: "Ausência oficial confirmada",
+    ausencia_oficial: "Nenhum registro no arquivo consultado",
     erro: "Verificação com erro",
     fora_da_serie_oficial: "Fora da série publicada pelo TSE",
     pleito_futuro: "Prestação ainda não devida",

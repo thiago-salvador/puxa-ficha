@@ -375,12 +375,12 @@ function ProjetoLeiList({
           {composicaoTexto}
         </p>
       )}
-      {items.length > 0 && freshness && (
+      {(items.length > 0 || freshness?.status === "not_applicable") && freshness && (
         <div className="mt-4">
           <DataFreshnessNotice info={freshness} />
         </div>
       )}
-      {items.length === 0 && showEmptyState && (
+      {items.length === 0 && showEmptyState && freshness?.status !== "not_applicable" && (
         <EmptyState
           {...getLegislacaoEmptyState(hasLegislativeHistory)}
           suggestLabel={suggestion?.label}
@@ -726,7 +726,7 @@ export function LegislationTabSection({
       )}
 
       <TabsContent value="todas" data-pf-legislation-content="todas" className="space-y-12">
-        {!hasAnyLegislation && (
+        {!hasAnyLegislation && freshness?.status !== "not_applicable" && (
           <EmptyState
             {...getLegislacaoEmptyState(hasLegislativeHistory)}
             suggestLabel={suggestion?.label}

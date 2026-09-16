@@ -1,0 +1,26 @@
+{
+  "schema_version": "senado-curated-profile-fields-v1",
+  "generated_at": "2026-09-14T12:00:00Z",
+  "identity": {
+    "sq_candidato": "9001",
+    "uf": "SP",
+    "nome_completo": "PESSOA SINTETICA DE TESTE"
+  },
+  "source_receipts": [
+    {
+      "source_id": "fonte-formacao-sintetica",
+      "url": "https://example.org/formacao-sintetica",
+      "checked_at": "2026-09-14T12:00:00Z",
+      "identity_evidence": "Fixture: página sintética cita o nome de urna."
+    }
+  ],
+  "fields": {
+    "formacao_instituicao": {
+      "value": "Instituição Fictícia de Ensino Superior",
+      "source_ids": [
+        "fonte-formacao-sintetica"
+      ],
+      "qualification": "descrição declaratória da fonte; não afirma diploma conferido"
+    }
+  }
+}

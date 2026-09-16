@@ -3,6 +3,7 @@ import { FETCH_TIMEOUT_MS, sleep } from "./helpers"
 import { supabase } from "./supabase"
 import { log, warn } from "./logger"
 import type { IngestResult } from "./types"
+import candidateSitesTse from "../../src/data/candidate-sites-tse-2026.json"
 
 const IG_APP_ID = process.env.INSTAGRAM_APP_ID?.trim() || null
 let warnedMissingInstagramAppId = false
@@ -26,6 +27,35 @@ interface RedesSociais {
   twitter?: string
   facebook?: string
   site_oficial?: string
+}
+
+type TSEInstagramEvidence = {
+  sourceUrl: string
+  sourceSha256: string
+  matchedBySq: boolean
+  usernames: string[]
+  urls: string[]
+}
+
+function declaredTseInstagram(cand: { ids?: { tse_sq_candidato?: Record<string, string> | null } }): TSEInstagramEvidence {
+  const source = candidateSitesTse.source
+  const sq = cand.ids?.tse_sq_candidato?.["2026"]?.trim()
+  const entry = sq
+    ? Object.values(candidateSitesTse.candidates).find((candidate) => candidate.sq_candidato === sq)
+    : undefined
+  const urls = (entry?.sites ?? [])
+    .map((site) => site.url)
+    .filter((url): url is string => typeof url === "string" && /instagram\.com/i.test(url))
+  const usernames = [...new Set(urls
+    .map((url) => normalizeInstagramCandidate(url))
+    .filter((username): username is string => Boolean(username)))]
+  return {
+    sourceUrl: source.resource_url,
+    sourceSha256: source.resource_sha256,
+    matchedBySq: Boolean(entry),
+    usernames,
+    urls,
+  }
 }
 
 const RESERVED_INSTAGRAM_PATHS = new Set([
@@ -206,24 +236,41 @@ export async function enrichInstagram(overrides: Partial<EnrichInstagramDependen
       if (!dbCand) throw new Error("Leitura de redes sociais não retornou o candidato")
 
       const redes = (dbCand?.redes_sociais as RedesSociais) ?? {}
+      const tseEvidence = declaredTseInstagram(cand)
+      const existingUsername = normalizeInstagramUsername(redes.instagram)
 
-      if (!redes.instagram) {
-        log("instagram", `  ${cand.slug}: sem username do Instagram, pulando`)
-        result.skipped = true
-        result.skip_reason = "perfil sem Instagram declarado"
-        result.coleta_resultado = "nao_aplicavel"
-        result.coleta_detalhe = "Perfil sem Instagram declarado; nenhuma consulta externa foi executada."
+      // O snapshot TSE é uma âncora oficial por SQ, mas uma candidatura pode
+      // declarar mais de um perfil. Nesse caso a fonte prova aplicabilidade e
+      // preserva todos os links, sem escolher um perfil arbitrariamente.
+      if (!existingUsername && tseEvidence.usernames.length > 1) {
+        result.coleta_url = tseEvidence.sourceUrl
+        result.coleta_resultado = "indeterminado"
+        result.coleta_detalhe = `Snapshot TSE 2026 (${tseEvidence.sourceSha256.slice(0, 12)}) casado por SQ e declarou ${tseEvidence.usernames.length} perfis Instagram; identidade ambígua para consulta individual; nenhum perfil escolhido.`
         result.duration_ms = Date.now() - start
         results.push(result)
         continue
       }
 
-      const username = normalizeInstagramUsername(redes.instagram)
+      const username = existingUsername ?? (tseEvidence.usernames.length === 1 ? tseEvidence.usernames[0] : null)
 
       if (!username) {
-        warn("instagram", `  ${cand.slug}: identidade de Instagram inválida ou ambígua; nenhuma consulta executada`)
+        log("instagram", `  ${cand.slug}: nenhum perfil Instagram confirmado no escopo TSE; sem inferir ausência`)
+        result.coleta_url = tseEvidence.matchedBySq ? tseEvidence.sourceUrl : undefined
         result.coleta_resultado = "indeterminado"
-        result.coleta_detalhe = "Identidade de Instagram inválida ou ambígua; nenhuma consulta externa ou escrita foi executada."
+        result.coleta_detalhe = redes.instagram && !existingUsername
+          ? "Identidade de Instagram inválida ou ambígua; nenhuma consulta externa ou escrita foi executada."
+          : tseEvidence.matchedBySq
+          ? `Snapshot TSE 2026 (${tseEvidence.sourceSha256.slice(0, 12)}) casado por SQ sem URL Instagram válida; isso não prova inexistência de perfil e nenhuma busca nominal foi executada.`
+          : "Não há âncora TSE por SQ no snapshot local; ausência de username não prova inexistência e nenhuma busca nominal foi executada."
+        result.duration_ms = Date.now() - start
+        results.push(result)
+        continue
+      }
+
+      if (existingUsername && tseEvidence.usernames.length === 1 && existingUsername !== tseEvidence.usernames[0]) {
+        result.coleta_url = tseEvidence.sourceUrl
+        result.coleta_resultado = "indeterminado"
+        result.coleta_detalhe = `Username já curado diverge do único perfil declarado no snapshot TSE 2026 (${tseEvidence.sourceSha256.slice(0, 12)}); consulta recusada até reconciliação de identidade.`
         result.duration_ms = Date.now() - start
         results.push(result)
         continue
@@ -231,16 +278,17 @@ export async function enrichInstagram(overrides: Partial<EnrichInstagramDependen
 
       log("instagram", `  ${cand.slug}: buscando followers de @${username}`)
 
+      result.coleta_url = `https://instagram.com/${username}`
       const observation = await fetchInstagramFollowers(username, deps.fetcher, deps.appId)
       const followers = observation.count
       const limitation = observation.reasons.join("; ")
 
       const currentUsername = typeof redes.instagram === "string"
         ? redes.instagram
-        : redes.instagram.username
+        : redes.instagram?.username
       const currentUrl = typeof redes.instagram === "string"
         ? redes.instagram
-        : redes.instagram.url
+        : redes.instagram?.url
       const normalizedUrl = `https://instagram.com/${username}`
       const needsNormalization = currentUsername !== username || currentUrl !== normalizedUrl
 
@@ -256,7 +304,7 @@ export async function enrichInstagram(overrides: Partial<EnrichInstagramDependen
         ...(typeof redes.instagram === "object" ? redes.instagram : {}),
         username,
         url: normalizedUrl,
-        followers: followers ?? (typeof redes.instagram === "string" ? null : redes.instagram.followers ?? null),
+        followers: followers ?? (typeof redes.instagram === "string" ? null : redes.instagram?.followers ?? null),
       }
 
       const redesAtualizado: RedesSociais = {

@@ -67,6 +67,10 @@ import {
 import { buildCandidateSiteLinks } from "@/lib/candidate-sites"
 import { validarDataDeVerificacao } from "@/lib/verificacao-campos"
 import { CandidateSitesCard } from "./CandidateSitesCard"
+import {
+  patrimonioMaisRecenteSemEscolhaArbitraria,
+  patrimonioPorAnoSemAmbiguidade,
+} from "@/lib/patrimonio-contexto"
 
 /* ─── Pure helpers ──────────────────────────────────── */
 
@@ -77,17 +81,20 @@ type PatrimonioSummary = {
   latest: Patrimonio | null
   earliest: Patrimonio | null
   growthPct: number | null
+  latestYear: number | null
+  latestCount: number
 }
 
 function getPatrimonioSummary(patrimonio: Patrimonio[]): PatrimonioSummary {
-  const sorted = [...patrimonio].sort((a, b) => a.ano_eleicao - b.ano_eleicao)
-  const latest = sorted.at(-1) ?? null
+  const sorted = patrimonioPorAnoSemAmbiguidade(patrimonio)
+  const latestContext = patrimonioMaisRecenteSemEscolhaArbitraria(patrimonio)
+  const latest = latestContext.patrimonio
   const earliest = sorted.length > 1 ? sorted[0] : null
   const growthPct =
     latest && earliest && earliest.valor_total > 0
       ? ((latest.valor_total - earliest.valor_total) / earliest.valor_total) * 100
       : null
-  return { sorted, latest, earliest, growthPct }
+  return { sorted, latest, earliest, growthPct, latestYear: latestContext.ano, latestCount: latestContext.quantidade }
 }
 
 function getLatestFinancing(financiamento: Financiamento[]): Financiamento | null {
@@ -313,8 +320,25 @@ function PatrimonioTeaser({
   eleicoes: PatrimonioEleicaoPublico[]
   onNavigate: () => void
 }) {
-  const { latest, earliest, growthPct } = summary
+  const { latest, earliest, growthPct, latestYear, latestCount } = summary
   if (!latest) {
+    if (latestYear != null && latestCount > 1) {
+      return (
+        <TeaserCard
+          title="Patrimônio declarado"
+          linkLabel="DETALHES"
+          onNavigate={onNavigate}
+          moneyCardKind="patrimonio"
+        >
+          <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
+            {latestCount} declarações
+          </p>
+          <p className="mt-2 text-[length:var(--text-caption)] font-medium leading-snug text-muted-foreground">
+            Candidaturas distintas em {latestYear}. Os valores são exibidos separadamente nos detalhes.
+          </p>
+        </TeaserCard>
+      )
+    }
     // Sem patrimônio publicado: a eleição ainda assim existe e não pode sumir
     // da visão geral (ausência não é ficha limpa nem ano oculto).
     const semDado = eleicoes
@@ -396,9 +420,9 @@ function PatrimonioTeaser({
         )}
       </div>
       <PatrimonioChart
-        data={patrimonio.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
+        data={summary.sorted.map((p) => ({ id: p.id, ano: p.ano_eleicao, valor: p.valor_total }))}
       />
-      <PatrimonioEvolucaoAlerta patrimonio={patrimonio} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
+      <PatrimonioEvolucaoAlerta patrimonio={summary.sorted} className="mt-4 rounded-[12px] px-3 py-3 sm:px-3" />
     </TeaserCard>
   )
 }

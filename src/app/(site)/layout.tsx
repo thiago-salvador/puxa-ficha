@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar"
 import { GlobalSearchProvider } from "@/components/GlobalSearchProvider"
 import DevToolsInit from "@/components/DevToolsInit"
 import { OfflineFallback } from "@/components/OfflineFallback"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 export const metadata: Metadata = {
   title: "Puxa Ficha | Candidatos mapeados 2026",
@@ -56,6 +57,7 @@ export default async function SiteLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const senadoEnabled = isSenadoEnabled()
   return (
     <>
       <a
@@ -65,8 +67,8 @@ export default async function SiteLayout({
         Ir para o conteúdo
       </a>
       {process.env.NODE_ENV === "development" && <DevToolsInit />}
-      <GlobalSearchProvider>
-        <Navbar />
+      <GlobalSearchProvider senadoEnabled={senadoEnabled}>
+        <Navbar senadoEnabled={senadoEnabled} />
         <main id="main-content" tabIndex={-1}>
           {children}
         </main>

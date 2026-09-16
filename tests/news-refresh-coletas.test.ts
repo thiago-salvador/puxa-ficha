@@ -182,6 +182,18 @@ describe("refreshCandidatosNews: rastro de coleta por candidato", () => {
 })
 
 describe("refreshCandidatosNews: o prazo tem que cobrir a leitura do corpo", () => {
+  it("RSS truncado vira erro explícito, nunca vazio confirmado", async () => {
+    const { deps } = makeDeps({
+      fetchImpl: (async () => new Response("<rss><channel><item><title>Registro interrompido</channel>", { status: 200 })) as unknown as typeof fetch,
+    })
+
+    const summary = await refreshCandidatosNews([CAND_A], deps)
+
+    assert.deepEqual(summary.errors, [{ slug: "cand-a", error: "RSS inválido" }])
+    assert.equal(summary.coletas[0].resultado, "erro")
+    assert.equal(summary.coletas[0].volume, 0)
+  })
+
   it(
     "fonte que manda cabeçalho e não termina o corpo vira erro de timeout, não invocação pendurada",
     { timeout: 5000 },

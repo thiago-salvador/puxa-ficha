@@ -29,6 +29,24 @@ describe("CandidatePhotoCredit", () => {
     assert.match(html, /Foto: Divulgação\/TSE\./)
   })
 
+  it("renderiza crédito de fonte primária com origem fora dos rótulos legados", () => {
+    const html = renderToStaticMarkup(
+      <CandidatePhotoCredit
+        credit={{
+          origem: "fonte primária de campanha",
+          descricao: "Opinião Socialista/PSTU; matéria de 28/07/2026",
+          fonte_url: "https://opiniaosocialista.com.br/content/images/2026/07/Dra-Eliana.webp",
+        }}
+        variant="footer"
+      />,
+    )
+
+    assert.match(html, /data-pf-photo-credit="source"/)
+    assert.match(html, /Opinião Socialista\/PSTU; matéria de 28\/07\/2026/)
+    assert.match(html, /href="https:\/\/opiniaosocialista\.com\.br\/content\/images\/2026\/07\/Dra-Eliana\.webp"/)
+    assert.match(html, />Fonte da foto<\/a>/)
+  })
+
   it("não renderiza placeholder quando o crédito é nulo", () => {
     assert.equal(renderToStaticMarkup(<CandidatePhotoCredit credit={null} />), "")
   })

@@ -95,7 +95,8 @@ test("jarbas: candidato sem ID da Camara e nao aplicavel, nao indeterminado", ()
   declararJarbasNaoAplicavel(resultado)
 
   assert.equal(resultado.coleta_resultado, "nao_aplicavel")
-  assert.match(resultado.coleta_detalhe ?? "", /sem ID da Camara/)
+  assert.match(resultado.coleta_detalhe ?? "", /sem ID da Câmara/)
+  assert.match(resultado.coleta_detalhe ?? "", /legislaturas 38-52/)
 })
 
 test("jarbas: lista vazia passa e nao inventa reembolso", () => {
@@ -217,7 +218,7 @@ test("ceaps oficial: filtra senador e ano no conjunto anual", () => {
     [
       { codSenador: 456, ano: 2026, tipoDespesa: "Passagens", fornecedor: "A", data: "2026-02-01", valorReembolsado: 100.5 },
       { codSenador: 999, ano: 2026, tipoDespesa: "Passagens", fornecedor: "B", data: "2026-02-02", valorReembolsado: 9000 },
-      { codSenador: 456, ano: 2025, tipoDespesa: "Passagens", fornecedor: "C", data: "2025-02-03", valorReembolsado: 8000 },
+      { codSenador: 999, ano: 2026, tipoDespesa: "Passagens", fornecedor: "C", data: "2026-02-03", valorReembolsado: 8000 },
       { codSenador: "456", ano: "2026", tipoDespesa: "Aluguel", fornecedor: "D", data: "2026-02-04", valorReembolsado: "200,25" },
     ],
     456,
@@ -229,7 +230,55 @@ test("ceaps oficial: filtra senador e ano no conjunto anual", () => {
   assert.equal(dados?.total, 300.75)
   assert.equal(dados?.porCategoria.PASSAGENS, 100.5)
   assert.equal(dados?.porCategoria.ALUGUEL, 200.25)
-  assert.deepEqual(dados?.anosDescartados, ["2025"])
+  assert.deepEqual(dados?.anosDescartados, [])
+})
+
+test("ceaps oficial: payload nao lista e erro, nao vazio confirmado", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    { erro: "indisponivel" } as unknown as never,
+    456,
+    2026,
+  )
+  assert.equal(conferencia.ok, false)
+  assert.match(!conferencia.ok ? conferencia.motivo : "", /nao e uma lista/)
+})
+
+test("ceaps oficial: itens nulos ou sem schema sao erro, nao ausencia", () => {
+  for (const payload of [[null], [{}]]) {
+    const conferencia = agregarDespesasCeapsOficial(payload as never, 456, 2026)
+    assert.equal(conferencia.ok, false)
+    assert.match(!conferencia.ok ? conferencia.motivo : "", /registro CEAPS invalido|sem codSenador|fora do ano solicitado/)
+  }
+})
+
+test("ceaps oficial: lote de outro ano e erro mesmo sem o senador alvo", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [{ codSenador: 999, ano: 2025, tipoDespesa: "Passagens", valorReembolsado: 5000 }],
+    456,
+    2026,
+  )
+  assert.equal(conferencia.ok, false)
+  assert.match(!conferencia.ok ? conferencia.motivo : "", /fora do ano solicitado 2026/)
+})
+
+test("ceaps oficial: valor inválido não vira zero", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [{ codSenador: 456, ano: 2026, tipoDespesa: "Passagens", valorReembolsado: "R$ 10,00" }],
+    456,
+    2026,
+  )
+  assert.equal(conferencia.ok, false)
+  assert.match(!conferencia.ok ? conferencia.motivo : "", /valorReembolsado invalido/)
+})
+
+test("ceaps oficial: registros do senador em ano errado sao erro, nao ausencia", () => {
+  const conferencia = agregarDespesasCeapsOficial(
+    [{ codSenador: 456, ano: 2018, tipoDespesa: "Passagens", valorReembolsado: 5000 }],
+    456,
+    2019,
+  )
+  assert.equal(conferencia.ok, false)
+  assert.match(!conferencia.ok ? conferencia.motivo : "", /sem registros do ano 2019|fora do ano solicitado 2019/)
 })
 
 test("ceaps oficial: ausencia do senador no conjunto nao vira gasto de outra pessoa", () => {

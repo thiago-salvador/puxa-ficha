@@ -62,7 +62,6 @@ const URL_BENS_2008 =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2008.zip"
 const URL_BENS_2018 =
   "https://cdn.tse.jus.br/estatistica/sead/odsele/bem_candidato/bem_candidato_2018.zip"
-const FRASE_AUSENCIA = "não traz registros para este candidato"
 
 describe("migration do patrimonio 2006/2008 do cabo-daciolo", () => {
   test("cada ano vai para a tabela que corresponde ao que a fonte diz", () => {
@@ -290,7 +289,7 @@ describe("contrato de exibicao dos dois anos", () => {
     assert.ok(html.includes('data-pf-patrimonio-eleicao="2008"'))
     assert.ok(html.includes('data-pf-patrimonio-eleicao-estado="vazio_confirmado"'))
     assert.ok(
-      html.includes(`Sem bens declarados ao TSE em 2008. A fonte oficial de bens desta eleição foi conferida e ${FRASE_AUSENCIA}`),
+      html.includes(`Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2008 consultado.`),
       "a frase de ausencia so e verdadeira em 2008, e ela precisa estar la",
     )
     assert.ok(html.includes(URL_BENS_2008), "a ausencia sem fonte oficial e afirmacao sem endereco")
@@ -315,7 +314,7 @@ describe("contrato de exibicao dos dois anos", () => {
     const htmlErrado = renderMoneyTab(eleicoesErradas, semODe2006)
 
     assert.ok(
-      htmlErrado.includes(`Sem bens declarados ao TSE em 2006. A fonte oficial de bens desta eleição foi conferida e ${FRASE_AUSENCIA}`),
+      htmlErrado.includes(`Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de 2006 consultado.`),
       "e esta e a frase falsa: o pacote bem_candidato_2006 TRAZ um registro para o SQ 12132 em RJ",
     )
     assert.ok(

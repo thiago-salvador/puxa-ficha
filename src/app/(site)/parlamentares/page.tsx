@@ -1,49 +1,78 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { SectionLabel, SectionTitle, SectionDivider } from "@/components/SectionHeader"
+import Link from "next/link"
+import { SlashDivider } from "@/components/SlashDivider"
+import { BrazilMap } from "@/components/BrazilMap"
 import { Footer } from "@/components/Footer"
+import { JsonLd } from "@/components/JsonLd"
+import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { buildTwitterMetadata } from "@/lib/metadata"
+import { getCandidatoCountByEstadoResource, getIndicadoresAllEstadosResource } from "@/lib/api"
+import { buildIndicadoresPorEstadoForMap } from "@/lib/brazil-map-preview"
+import { isSenadoEnabled } from "@/lib/senado-feature"
 
 const title = "Parlamentares | Puxa Ficha"
-const description =
-  "O Puxa Ficha ainda não possui páginas individuais para candidatos a deputado estadual, deputado federal e senador. Por que isso acontece, e como ajudar a garantir essas fichas."
+const senadoDescription =
+  "Consulte candidatos ao Senado por estado e acompanhe a ampliação da cobertura parlamentar do Puxa Ficha."
+const closedDescription = "Acompanhe a ampliação da cobertura parlamentar do Puxa Ficha."
 
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: {
-    canonical: "/parlamentares",
-  },
-  openGraph: {
-    title,
-    description,
-    url: "https://puxaficha.com.br/parlamentares",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Parlamentares | Puxa Ficha",
-      },
-    ],
-  },
-  twitter: buildTwitterMetadata({
-    title,
-    description,
-    image: "/opengraph-image",
-  }),
+/** Com a flag do Senado desligada, nem metadata nem JSON-LD anunciam o Senado. */
+function resolveDescription(senateEnabled: boolean): string {
+  return senateEnabled ? senadoDescription : closedDescription
 }
 
-const prose =
-  "text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]"
-const listClass =
-  "list-disc space-y-1.5 pl-5 text-[length:var(--text-body)] font-medium leading-relaxed text-foreground sm:text-[length:var(--text-body-lg)]"
-const linkClass =
-  "font-bold text-foreground underline decoration-foreground/20 underline-offset-2 hover:decoration-foreground/60"
+export function generateMetadata(): Metadata {
+  const description = resolveDescription(isSenadoEnabled())
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: "/parlamentares",
+    },
+    openGraph: {
+      title,
+      description,
+      url: "https://puxaficha.com.br/parlamentares",
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: "Parlamentares | Puxa Ficha",
+        },
+      ],
+    },
+    twitter: buildTwitterMetadata({
+      title,
+      description,
+      image: "/opengraph-image",
+    }),
+  }
+}
 
-export default function ParlamentaresPage() {
+export default async function ParlamentaresPage() {
+  const senateEnabled = isSenadoEnabled()
+  const description = resolveDescription(senateEnabled)
+  // Flag desligada: o mapa não aparece, então nada de consultar senadores.
+  // O mapa só precisa da contagem por UF; a lista completa de senadores passava
+  // de 2 MB e não cabia no Data Cache do Next.
+  const [indRes, countRes] = senateEnabled
+    ? await Promise.all([getIndicadoresAllEstadosResource(), getCandidatoCountByEstadoResource("Senador")])
+    : [null, null]
+  const indicadoresPorEstado = indRes ? buildIndicadoresPorEstadoForMap(indRes.data) : {}
+  const candidatosPorEstado = countRes ? countRes.data : {}
+
   return (
     <div className="min-h-screen bg-background">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: senateEnabled ? "Senadores por estado" : "Parlamentares",
+          url: "https://puxaficha.com.br/parlamentares",
+          description,
+        }}
+      />
       <section className="relative overflow-hidden bg-black">
         <div className="absolute inset-0 opacity-40" aria-hidden="true">
           <Image
@@ -63,142 +92,49 @@ export default function ParlamentaresPage() {
             className="mt-2 font-heading uppercase leading-[0.85] text-white"
             style={{ fontSize: "clamp(36px, 8vw, 80px)" }}
           >
-            Deputados e senadores
+            Senadores
           </h1>
         </div>
       </section>
 
-      <div className="pt-8 sm:pt-12">
-        <SectionDivider />
-      </div>
-
-      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <SectionLabel>01 Fichas</SectionLabel>
-        <SectionTitle>Precisamos da sua ajuda para garantir essas fichas</SectionTitle>
-        <div className={`mt-6 max-w-2xl space-y-5 sm:mt-8 ${prose}`}>
-          <p>
-            O Puxa Ficha ainda não possui páginas individuais para candidatos a deputado estadual,
-            deputado federal e senador.
-          </p>
-          <p>
-            Não é porque essas candidaturas sejam menos importantes. É justamente o contrário: são
-            os parlamentares que criam leis, aprovam o orçamento, fiscalizam governos e tomam
-            decisões que afetam diretamente a vida da população.
-          </p>
-          <p>
-            O desafio é a escala. Somados, esses três cargos reúnem{" "}
-            <strong>19.031 registros de candidatura</strong>:
-          </p>
-          <ul className={listClass}>
-            <li>
-              <strong>11.090</strong> para deputado estadual;
-            </li>
-            <li>
-              <strong>7.627</strong> para deputado federal;
-            </li>
-            <li>
-              <strong>314</strong> para senador.
-            </li>
-          </ul>
-          <p className="text-muted-foreground">
-            <em>Fonte: Agência Senado.</em>
-          </p>
-          <p>Para cada ficha, precisamos localizar, cruzar e verificar informações como:</p>
-          <ul className={listClass}>
-            <li>patrimônio declarado;</li>
-            <li>histórico eleitoral e partidário;</li>
-            <li>mandatos anteriores e votações;</li>
-            <li>processos judiciais;</li>
-            <li>sanções e contas rejeitadas;</li>
-            <li>doações e gastos de campanha;</li>
-            <li>mudanças de partido;</li>
-            <li>fontes oficiais que comprovem cada informação.</li>
-          </ul>
-          <p>
-            Não basta gerar mais de 19 mil páginas automaticamente. É preciso distinguir pessoas com
-            nomes semelhantes, conferir documentos, identificar dados desatualizados e evitar que
-            uma informação seja atribuída ao candidato errado.
-          </p>
-          <p>
-            <strong>Informação política errada também desinforma.</strong>
-          </p>
-          <p>
-            Por isso, preferimos explicar com transparência que essas fichas ainda não estão
-            prontas, em vez de publicar uma base incompleta ou pouco confiável.
-          </p>
-        </div>
-      </section>
-
-      <SectionDivider />
-
-      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <SectionLabel>02 Este é um projeto colaborativo</SectionLabel>
-        <SectionTitle>Ajude com tempo, conhecimento ou recursos</SectionTitle>
-        <div className={`mt-6 max-w-2xl space-y-5 sm:mt-8 ${prose}`}>
-          <p>Existem algumas maneiras de contribuir com o Puxa Ficha.</p>
-          <p>
-            Desenvolvedores, profissionais de dados, pesquisadores, jornalistas e qualquer pessoa
-            disposta a ajudar a tornar informações públicas mais acessíveis podem contribuir com:
-          </p>
-          <ul className={listClass}>
-            <li>desenvolvimento e manutenção da plataforma;</li>
-            <li>coleta, tratamento e cruzamento de dados;</li>
-            <li>automações e integrações com fontes públicas;</li>
-            <li>checagem de informações;</li>
-            <li>verificação de documentos e fontes;</li>
-            <li>identificação de erros ou dados desatualizados;</li>
-            <li>pesquisa sobre candidatos;</li>
-            <li>documentação da metodologia;</li>
-            <li>revisão, design, comunicação e acessibilidade.</li>
-          </ul>
-          <p>
-            Não é necessário ser especialista. Parte do trabalho envolve tarefas como conferir se
-            uma fonte realmente corresponde ao candidato certo, revisar informações, localizar
-            documentos públicos e reportar inconsistências.
-          </p>
-          <p>
-            Toda contribuição precisa seguir uma metodologia comum e passar por revisão antes de ser
-            publicada. O objetivo não é apenas produzir mais fichas, mas produzir fichas que possam
-            ser verificadas por qualquer pessoa.
-          </p>
-          <p>
-            Para chegar às candidaturas parlamentares, precisamos ampliar nossa capacidade de
-            pesquisa, desenvolvimento, revisão e infraestrutura.
-          </p>
-        </div>
-      </section>
-
-      <SectionDivider />
-
-      <section className="mx-auto max-w-7xl px-5 py-8 sm:py-12 md:px-12 lg:py-16">
-        <SectionLabel>03 Apoio financeiro</SectionLabel>
-        <SectionTitle>Apoie financeiramente</SectionTitle>
-        <div className={`mt-6 max-w-2xl space-y-5 sm:mt-8 ${prose}`}>
-          <p>
-            As contribuições ajudam a pagar servidores, banco de dados, processamento, ferramentas
-            de pesquisa e os custos necessários para manter as informações disponíveis e atualizadas
-            até a eleição.
-          </p>
-          <p>
-            <a
-              href="https://apoia.se/puxaficha"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={linkClass}
+      <section className="mx-auto max-w-7xl px-5 pt-7 sm:pt-16 md:px-12 lg:pt-20">
+        <nav aria-label="Categorias parlamentares">
+          <div className="section-reveal flex min-w-0 items-end justify-between gap-4 overflow-x-auto pb-px sm:overflow-visible">
+            <h2 className="shrink-0 font-heading uppercase leading-[0.95] text-foreground sm:text-[clamp(22px,5vw,48px)]">
+              <Link
+                href="#senadores"
+                aria-current="page"
+                className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-foreground px-1 text-center text-[clamp(16px,5vw,20px)] sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
+              >
+                Senadores
+              </Link>
+            </h2>
+            <Link
+              href="/parlamentares/deputados"
+              className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-transparent px-1 text-center font-heading text-[clamp(16px,5vw,20px)] uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
             >
-              Apoie o Puxa Ficha no APOIA.se
-            </a>
+              Deputados
+            </Link>
+          </div>
+        </nav>
+        <SlashDivider className="mt-4 mb-6 sm:mt-8 sm:mb-10" />
+      </section>
+
+      <section id="senadores" className="mx-auto max-w-7xl px-5 py-6 sm:py-12 md:px-12">
+        {senateEnabled ? (
+          <BrazilMap
+            indicadoresPorEstado={indicadoresPorEstado}
+            candidatosPorEstado={candidatosPorEstado}
+            stateRouteSuffix="/senado"
+            candidateOfficeLabel="senador"
+          />
+        ) : (
+          <p className="rounded-xl border border-border p-5 text-sm text-muted-foreground">
+            A cobertura de senadores está em preparação.
           </p>
-          <p>
-            O Puxa Ficha é gratuito, não exige cadastro e não possui anúncios. Quanto mais pessoas
-            participarem, maior poderá ser a cobertura das eleições de 2026.
-          </p>
-          <p>
-            <strong>
-              Antes de votar, puxe a ficha. Ajude a garantir que isso também seja possível para
-              deputados e senadores.
-            </strong>
-          </p>
+        )}
+        <div className="mt-10 max-w-3xl">
+          <PublicDataSourcesNote variant="parlamentares" senadoEnabled={senateEnabled} />
         </div>
       </section>
 

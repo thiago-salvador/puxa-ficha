@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 6)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 6)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 8)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 8)
   assert.match(config, /id\s*=\s*"generic-api-key"/)
 })
 
@@ -305,6 +305,8 @@ test("only exact known false positives at their exact paths are allowed", () => 
     "supabase/rollback/20260811100000_votacoes_senado_chave_exata.rollback.sql",
     "supabase/migrations/20260905150000_corrigir_textos_julgamento.sql",
     "docs/operations/pesquisas-s0/DIAGNOSTICO-REMOTO.md",
+    "scripts/lib/senado-ementa-curation.ts",
+    "tests/fixtures/senado-ementa-curation-proofs.json",
   ]
 
   try {
@@ -379,6 +381,22 @@ test("the public event UUID remains detected outside its migration", () => {
     assert.ifError(result.error)
     assert.equal(result.status, 17)
     assert.ok(result.findings.some((finding) => finding.RuleID === "generic-api-key"))
+  } finally {
+    rmSync(directory, { recursive: true, force: true })
+  }
+})
+
+test("a Senate ementa hash remains detected outside the curation files", () => {
+  const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+  const publicHash = ["0cac2ef3", "2a23a08e", "d9bae5d8", "364458b2", "a0bcdf1c", "8565bcd4", "51c34f01", "79bb7d48"].join("")
+
+  try {
+    writeFixture(directory, "scripts/lib/other-curation.ts", `const guard = { apiSha256: "${publicHash}" }\n`)
+    const result = scan(directory)
+    assert.ifError(result.error)
+    assert.equal(result.status, 17, "the allowed hash must fail outside its exact path")
+    assert.ok(result.findings.some((finding) => finding.RuleID === "generic-api-key"))
+    assert.equal(`${result.output}${result.report}`.includes(publicHash), false)
   } finally {
     rmSync(directory, { recursive: true, force: true })
   }

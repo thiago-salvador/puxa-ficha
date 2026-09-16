@@ -11,7 +11,7 @@ import { MetaBadge } from "./MetaBadge"
 import { NoticePanel } from "./NoticePanel"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { formatDate, formatBRL, safeHref } from "@/lib/utils"
-import type { Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, Patrimonio, SectionFreshnessInfo } from "@/lib/types"
+import type { Financiamento, GastoExecutivo, GastoParlamentar, HistoricoPolitico, Patrimonio, PatrimonioContextoPublico, SectionFreshnessInfo, TransparenciaFamiliaPublico } from "@/lib/types"
 import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { PatrimonioEvolucaoAlerta } from "./PatrimonioEvolucaoAlerta"
@@ -24,6 +24,7 @@ import { sanitizePublicText } from "@/lib/public-text"
 import { buildFinancingComposition } from "@/lib/financiamento-display"
 import { formatarStatusSigilo, groupGastosExecutivoPorOrgao, rotuloFonteGastosExecutivo, rotuloUnidadeGestora, type GastoExecutivoOrgaoResumo, type SigiloStatus } from "@/lib/gastos-executivo-display"
 import type { SuggestAction } from "./candidato-profile-section-types"
+import { patrimonioContextoLabel, patrimonioPorAnoSemAmbiguidade } from "@/lib/patrimonio-contexto"
 
 const GASTOS_ESTRUTURA_GOVERNO_ANCHOR_ID = "gastos-estrutura-governo"
 
@@ -321,33 +322,50 @@ const FINANCING_COLORS: Record<FinancingBreakdownKey, string> = FINANCING_COLOR_
  * oficial conferida e a data da verificação; nao_coletado exibe a pendência
  * sem insinuar que o candidato não tinha bens.
  */
-function PatrimonioEleicaoSemDadoRow({ eleicao }: { eleicao: PatrimonioEleicaoPublico }) {
-  const fonteHref = safeHref(eleicao.fonte_url)
-  const verificadoEm = eleicao.verificado_em ? formatDate(eleicao.verificado_em) : null
+function PatrimonioEleicaoSemDadoRow({
+  eleicao,
+  contexto,
+}: {
+  eleicao: PatrimonioEleicaoPublico
+  contexto?: PatrimonioContextoPublico
+}) {
+  const fonteHref = safeHref(contexto?.fonte_url ?? eleicao.fonte_url)
+  const verificadoEmRaw = contexto?.verificado_em ?? eleicao.verificado_em
+  const verificadoEm = verificadoEmRaw ? formatDate(verificadoEmRaw) : null
+  const detalhe = contexto?.detalhe ?? eleicao.detalhe
+  const estado = contexto?.estado ?? eleicao.estado
 
   return (
     <div
       data-pf-patrimonio-eleicao={eleicao.ano}
-      data-pf-patrimonio-eleicao-estado={eleicao.estado}
+      data-pf-patrimonio-eleicao-estado={estado}
+      data-pf-patrimonio-contexto={contexto?.sq_candidato ?? undefined}
       data-pf-money-card="patrimonio"
       data-pf-money-card-year={eleicao.ano}
-      data-pf-money-card-state={eleicao.estado}
+      data-pf-money-card-state={estado}
       className="rounded-[12px] border border-border/60 bg-card px-4 py-3"
     >
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-          {eleicao.ano}
+          {contexto
+            ? patrimonioContextoLabel({
+                ano_eleicao: eleicao.ano,
+                cargo_candidatura: contexto.cargo_candidatura,
+                tipo_eleicao: contexto.tipo_eleicao,
+              })
+            : eleicao.ano}
         </span>
-        <MetaBadge tone={eleicao.estado === "vazio_confirmado" ? "neutral" : "muted"}>
-          {formatPatrimonioEleicaoEstadoLabel(eleicao.estado)}
+        <MetaBadge tone={estado === "vazio_confirmado" ? "neutral" : "muted"}>
+          {formatPatrimonioEleicaoEstadoLabel(estado)}
         </MetaBadge>
       </div>
       <p className="mt-1.5 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
-        {eleicao.estado === "vazio_confirmado"
-          ? `Sem bens declarados ao TSE em ${eleicao.ano}. A fonte oficial de bens desta eleição foi conferida e não traz registros para este candidato.`
+        {estado === "vazio_confirmado"
+          ? detalhe ??
+            `Nenhum registro de bens foi localizado para esta candidatura no arquivo oficial de ${eleicao.ano} consultado. Isso não comprova ausência de patrimônio nem de declaração.`
           : `A coleta de bens da eleição de ${eleicao.ano} ainda não foi realizada. A ausência de dados aqui não significa ausência de bens.`}
       </p>
-      {eleicao.estado === "vazio_confirmado" && (verificadoEm || fonteHref) && (
+      {estado === "vazio_confirmado" && (verificadoEm || fonteHref) && (
         <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[length:var(--text-caption)] font-semibold text-muted-foreground">
           {verificadoEm && <span>Verificado em {verificadoEm}</span>}
           {fonteHref && (
@@ -385,7 +403,7 @@ function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
     >
       <div className="min-w-0 flex-1">
         <p className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground sm:text-[15px]">
-          {patrimonio.ano_eleicao}
+          {patrimonioContextoLabel(patrimonio)}
         </p>
         <p className="mt-0.5 text-[length:var(--text-caption)] font-semibold leading-snug text-muted-foreground sm:text-[length:var(--text-body-sm)]">
           Total declarado ao TSE. Esta declaração não traz detalhamento de bens.
@@ -408,10 +426,20 @@ function PatrimonioValorCard({ patrimonio }: { patrimonio: Patrimonio }) {
 function FinanciamentoEleicaoSemDadoRow({ eleicao }: { eleicao: FinanciamentoEleicaoPublico }) {
   const fonteHref = safeHref(eleicao.fonte_url)
   const verificadoEm = eleicao.verificado_em ? formatDate(eleicao.verificado_em) : null
+  const contexto = eleicao.cargo_candidatura?.trim()
+    ? ` - ${eleicao.cargo_candidatura.trim()}`
+    : ""
+  // `data-pf-financiamento-eleicao` continua sendo só o ano: testes de
+  // superfície e readbacks leem o atributo como número. A candidatura (SQ/UF)
+  // vai em atributo próprio, presente apenas quando o pleito tem contexto.
+  const candidaturaKey = eleicao.sq_candidato || eleicao.uf_candidatura
+    ? `${eleicao.sq_candidato ?? ""}|${eleicao.uf_candidatura ?? ""}`
+    : undefined
 
   return (
     <div
       data-pf-financiamento-eleicao={eleicao.ano}
+      data-pf-financiamento-contexto={candidaturaKey}
       data-pf-financiamento-eleicao-estado={eleicao.estado}
       data-pf-money-card="financiamento"
       data-pf-money-card-year={eleicao.ano}
@@ -420,7 +448,7 @@ function FinanciamentoEleicaoSemDadoRow({ eleicao }: { eleicao: FinanciamentoEle
     >
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-[length:var(--text-body)] font-bold tabular-nums text-foreground">
-          {eleicao.ano}
+          {eleicao.ano}{contexto}
         </span>
         <MetaBadge
           tone={
@@ -471,7 +499,10 @@ function FinanciamentoEleicoesSemDado({
       </p>
       <div className="mt-2 space-y-3">
         {eleicoes.map((eleicao) => (
-          <FinanciamentoEleicaoSemDadoRow key={eleicao.ano} eleicao={eleicao} />
+          <FinanciamentoEleicaoSemDadoRow
+            key={`${eleicao.ano}|${eleicao.sq_candidato ?? ""}|${eleicao.uf_candidatura ?? ""}`}
+            eleicao={eleicao}
+          />
         ))}
       </div>
     </div>
@@ -483,9 +514,19 @@ function PatrimonioEleicoesSemDado({
 }: {
   eleicoes: PatrimonioEleicaoPublico[]
 }) {
-  const semDadoPublicado = eleicoes
-    .filter((eleicao) => eleicao.estado !== "publicado")
-    .sort((a, b) => b.ano - a.ano)
+  const semDadoPublicado: Array<{
+    eleicao: PatrimonioEleicaoPublico
+    contexto?: PatrimonioContextoPublico
+  }> = eleicoes.flatMap<{
+    eleicao: PatrimonioEleicaoPublico
+    contexto?: PatrimonioContextoPublico
+  }>((eleicao) => {
+    const contextos = (eleicao.contextos ?? []).filter(
+      (contexto) => contexto.estado === "vazio_confirmado",
+    )
+    if (contextos.length > 0) return contextos.map((contexto) => ({ eleicao, contexto }))
+    return eleicao.estado !== "publicado" ? [{ eleicao, contexto: undefined }] : []
+  }).sort((a, b) => b.eleicao.ano - a.eleicao.ano)
   if (semDadoPublicado.length === 0) return null
 
   return (
@@ -494,8 +535,12 @@ function PatrimonioEleicoesSemDado({
         Eleições sem dado publicado
       </p>
       <div className="mt-2 space-y-3">
-        {semDadoPublicado.map((eleicao) => (
-          <PatrimonioEleicaoSemDadoRow key={eleicao.ano} eleicao={eleicao} />
+        {semDadoPublicado.map(({ eleicao, contexto }) => (
+          <PatrimonioEleicaoSemDadoRow
+            key={`${eleicao.ano}|${contexto?.sq_candidato ?? "sem-contexto"}`}
+            eleicao={eleicao}
+            contexto={contexto}
+          />
         ))}
       </div>
     </div>
@@ -509,6 +554,7 @@ interface MoneyTabSectionProps {
   /** Bruto (API); usado só para rótulos de pleito em financiamento, não para `cargo_disputado` atual. */
   historico: HistoricoPolitico[]
   gastos: GastoParlamentar[]
+  transparencia?: TransparenciaFamiliaPublico[]
   gastosExecutivo?: GastoExecutivo[]
   historicoLength: number
   suggestion: SuggestAction | null
@@ -536,6 +582,7 @@ export function MoneyTabSection({
   financiamentoEleicoes,
   historico,
   gastos,
+  transparencia = [],
   gastosExecutivo = [],
   historicoLength,
   suggestion,
@@ -552,8 +599,17 @@ export function MoneyTabSection({
    * (`patrimonio.length === 0`) é que carregam a lista.
    */
   const patrimonioEleicoesSemDado = (patrimonioEleicoes ?? []).filter(
-    (eleicao) => eleicao.estado !== "publicado",
+    (eleicao) => eleicao.estado !== "publicado" || eleicao.contextos?.some((contexto) => contexto.estado === "vazio_confirmado"),
   )
+  const patrimonioSerieAnual = patrimonioPorAnoSemAmbiguidade(patrimonio)
+  const patrimonioContagemPorAno = patrimonio.reduce((acc, row) => {
+    acc.set(row.ano_eleicao, (acc.get(row.ano_eleicao) ?? 0) + 1)
+    return acc
+  }, new Map<number, number>())
+  const patrimonioAnosComMultiplasDeclaracoes = [...patrimonioContagemPorAno]
+    .filter(([, quantidade]) => quantidade > 1)
+    .map(([ano]) => ano)
+    .sort((a, b) => b - a)
   /**
    * Estado por pleito para financiamento. Diferente de patrimônio, esta série
    * pode ser composta aqui: os dois insumos (`financiamento` e `historico`)
@@ -577,11 +633,20 @@ export function MoneyTabSection({
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.patrimonio} />
           </div>
-          <PatrimonioEvolucaoAlerta patrimonio={patrimonio} className="mt-4" />
-          {patrimonio.length > 1 && (
+          <PatrimonioEvolucaoAlerta patrimonio={patrimonioSerieAnual} className="mt-4" />
+          {patrimonioAnosComMultiplasDeclaracoes.length > 0 && (
+            <NoticePanel
+              data-pf-patrimonio-contextos-separados={patrimonioAnosComMultiplasDeclaracoes.join(",")}
+              className="mt-4"
+              tone="neutral"
+              eyebrow="Declarações por candidatura"
+              description={`O gráfico não combina candidaturas distintas em ${patrimonioAnosComMultiplasDeclaracoes.join(", ")}. Esses anos estão detalhados separadamente nos cartões abaixo.`}
+            />
+          )}
+          {patrimonioSerieAnual.length > 1 && (
             <div className="mt-6">
               <PatrimonioChart
-                data={patrimonio.map((item) => ({
+                data={patrimonioSerieAnual.map((item) => ({
                   id: item.id,
                   ano: item.ano_eleicao,
                   valor: item.valor_total,
@@ -611,7 +676,7 @@ export function MoneyTabSection({
                     <PatrimonioValorCard patrimonio={item} />
                   ) : (
                     <ExpandableCard
-                      title={`${item.ano_eleicao}`}
+                      title={patrimonioContextoLabel(item)}
                       valor={formatBRL(item.valor_total)}
                       defaultOpen={
                         index === 0 ||
@@ -834,14 +899,14 @@ export function MoneyTabSection({
         financiamentoEleicoesSemDado.length === 0 &&
         patrimonio.length > 0 && <EmptyState {...getFinanciamentoEmptyState()} />}
 
-      {gastos.length > 0 && (
+      {(gastos.length > 0 || freshness?.gastos_parlamentares?.status === "not_applicable") && (
         <div>
           <SectionLabel>Gastos parlamentares</SectionLabel>
           <SectionTitle>Uso da cota parlamentar (<GlossaryTerm term="CEAP" />)</SectionTitle>
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.gastos_parlamentares} />
           </div>
-          <div className="mt-6 space-y-4">
+          {gastos.length > 0 && <div className="mt-6 space-y-4">
             {[...gastos].sort((a, b) => b.ano - a.ano).map((gasto) => (
               <div
                 key={gasto.id}
@@ -893,8 +958,58 @@ export function MoneyTabSection({
               </ExpandableCard>
               </div>
             ))}
-          </div>
+          </div>}
         </div>
+      )}
+
+      {transparencia.length > 0 && (
+        <section data-pf-transparencia>
+          <SectionLabel>Portal da Transparência</SectionLabel>
+          <SectionTitle>Registros por família de consulta</SectionTitle>
+          <p className="mt-3 text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
+            Os registros abaixo pertencem a consultas públicas distintas. Eles não compõem a cota parlamentar nem um total pessoal; a presença de dados também não comprova cobertura completa.
+          </p>
+          <div className="mt-6 space-y-4">
+            {transparencia.map((familia) => {
+              const label = familia.familia === "cartoes" ? "Cartões por portador" : familia.familia === "viagens" ? "Viagens por CPF" : "Contratos por CPF/CNPJ"
+              const estado = familia.resultado === "encontrado"
+                ? `${familia.volume} registro(s); escopo consultado verificado`
+                : familia.resultado === "vazio_confirmado"
+                  ? "Nenhum registro retornado neste escopo"
+                  : "Consulta inconclusiva"
+              return (
+                <div key={familia.familia} className="rounded-[20px] border border-border/70 bg-card p-5 sm:p-6" data-pf-transparencia-familia={familia.familia}>
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <p className="font-bold text-foreground">{label}</p>
+                    <MetaBadge tone={familia.resultado === "encontrado" ? "caution" : "neutral"}>{estado}</MetaBadge>
+                  </div>
+                  {familia.registros.length > 0 && (
+                    <div className="mt-4 overflow-x-auto">
+                      <table className="w-full min-w-[600px] text-left text-[length:var(--text-caption)]">
+                        <thead className="border-b border-border/60 text-muted-foreground"><tr><th className="pb-2 pr-3">Data</th><th className="pb-2 pr-3">Órgão</th><th className="pb-2 pr-3">Categoria</th><th className="pb-2 text-right">Valor</th></tr></thead>
+                        <tbody>
+                          {familia.registros.map((registro, index) => (
+                            <tr key={`${familia.familia}-${registro.id ?? index}`} className="border-b border-border/40 last:border-0">
+                              <td className="py-2 pr-3 text-foreground">{registro.data ?? "Data não informada"}{registro.data_fim ? ` a ${registro.data_fim}` : ""}</td>
+                              <td className="py-2 pr-3 text-muted-foreground">{registro.orgao ?? registro.unidade ?? "Não informado"}</td>
+                              <td className="py-2 pr-3 text-muted-foreground">{registro.categoria ?? registro.descricao ?? "Não informado"}</td>
+                              <td className="py-2 text-right font-semibold text-foreground">{registro.valor == null ? "Valor não informado" : formatBRL(registro.valor)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+                  {familia.registros.length === 0 && familia.resultado === "encontrado" && <p className="mt-3 text-[length:var(--text-body-sm)] text-muted-foreground">Dados encontrados, mas sem registro público materializado nesta ficha.</p>}
+                  <p className="mt-3 text-[length:var(--text-caption)] font-medium text-muted-foreground">
+                    Consulta realizada em {familia.executado_em ? formatDate(familia.executado_em) : "data não informada"}; páginas 1 a {familia.paginas}; escopo: {familia.endpoint ?? "não informado"}.
+                  </p>
+                  {familia.endpoint && <TrackedExternalSourceLink area="ficha-transparencia" href={familia.endpoint} className="mt-4 inline-flex text-[length:var(--text-caption)]">Fonte consultada <ExternalLink className="ml-1 h-3 w-3" /></TrackedExternalSourceLink>}
+                </div>
+              )
+            })}
+          </div>
+        </section>
       )}
 
       {gastosExecutivoPorOrgao.length > 0 && (

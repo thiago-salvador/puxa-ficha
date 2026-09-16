@@ -9,6 +9,8 @@
     "tests/**/*.test.{ts,tsx}",
     "tests/helpers/render-candidato-alerta-patrimonial.tsx",
     "tests/fixtures/visual/api.ts",
+    "tests/fixtures/visual/senado-polls.ts",
+    "tests/fixtures/visual/senado-running-mates.ts",
     "tests/visual/**/*.spec.ts",
     "tests/visual/fixtures/poll-evolution.tsx"
   ],

@@ -121,3 +121,49 @@ test("HTML e JSON malformado não viram ausência confirmada", async () => {
   assert.equal(result.count, null)
   assert.match(result.reasons.join(";"), /JSON inválido/)
 })
+
+test("usa link Instagram declarado pelo TSE quando o cadastro ainda não tem username", async () => {
+  const writes: Record<string, unknown>[] = []
+  let fetchCalls = 0
+  const [result] = await enrichInstagram({
+    loadCandidates: async () => [{
+      slug: "tse-2026-10002536710", nome_urna: "Teste", nome_completo: "Teste", estado: "AC",
+      cargo_disputado: "Senador", ids: { camara: null, senado: null, tse_sq_candidato: { "2026": "10002536710" } },
+    }],
+    resolveCandidateId: async () => "candidate-id",
+    database: { from: () => ({
+      select: () => ({ eq: () => ({ single: async () => ({ data: { redes_sociais: {} }, error: null }) }) }),
+      update: (payload: Record<string, unknown>) => { writes.push(payload); return { eq: async () => ({ error: null }) } },
+    }) } as unknown as EnrichInstagramDependencies["database"],
+    fetcher: async () => { fetchCalls++; return Response.json({ graphql: { user: { username: "dr.junior_feitosa", edge_followed_by: { count: 12 } } } }) },
+    appId: null,
+    wait: async () => {},
+  })
+  assert.equal(fetchCalls, 1)
+  assert.equal(result.coleta_resultado, "encontrado")
+  assert.deepEqual(writes, [{ redes_sociais: { instagram: { username: "dr.junior_feitosa", url: "https://instagram.com/dr.junior_feitosa", followers: 12 } } }])
+})
+
+test("não escolhe um de vários links TSE e não trata falta de username como N/A", async () => {
+  const writes: Record<string, unknown>[] = []
+  let fetchCalls = 0
+  const [result] = await enrichInstagram({
+    loadCandidates: async () => [{
+      slug: "tse-2026-40002535391", nome_urna: "Teste", nome_completo: "Teste", estado: "AM",
+      cargo_disputado: "Senador", ids: { camara: null, senado: null, tse_sq_candidato: { "2026": "40002535391" } },
+    }],
+    resolveCandidateId: async () => "candidate-id",
+    database: { from: () => ({
+      select: () => ({ eq: () => ({ single: async () => ({ data: { redes_sociais: {} }, error: null }) }) }),
+      update: (payload: Record<string, unknown>) => { writes.push(payload); return { eq: async () => ({ error: null }) } },
+    }) } as unknown as EnrichInstagramDependencies["database"],
+    fetcher: async () => { fetchCalls++; return Response.json({}) },
+    appId: null,
+    wait: async () => {},
+  })
+  assert.equal(fetchCalls, 0)
+  assert.equal(result.coleta_resultado, "indeterminado")
+  assert.match(result.coleta_detalhe ?? "", /2 perfis Instagram/)
+  assert.equal(result.skipped, undefined)
+  assert.deepEqual(writes, [])
+})

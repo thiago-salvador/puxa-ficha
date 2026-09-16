@@ -2,6 +2,7 @@ import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 import {
   createAlertsServiceRoleClient,
+  filterAlertCandidatesByExposedCargo,
   findSubscriberByManageToken,
   maskAlertEmail,
   normalizeOpaqueToken,
@@ -46,20 +47,33 @@ async function checkAlertsMeRateLimit(req: NextRequest): Promise<NextResponse | 
   return null
 }
 
-async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextResponse> {
+interface AlertsMeDeps {
+  createAlertsServiceRoleClient: typeof createAlertsServiceRoleClient
+  findSubscriberByManageToken: typeof findSubscriberByManageToken
+}
+
+const defaultAlertsMeDeps: AlertsMeDeps = {
+  createAlertsServiceRoleClient,
+  findSubscriberByManageToken,
+}
+
+async function handleAlertsMe(
+  manageTokenRaw: string | null,
+  deps: AlertsMeDeps,
+): Promise<NextResponse> {
   const manageToken = normalizeOpaqueToken(manageTokenRaw ?? "")
   if (!manageToken) {
     logAlertsApiExit("me", 400, "missing_manage_token")
     return jsonNoStore({ error: "Invalid manage token" }, { status: 400 })
   }
 
-  const subscriber = await findSubscriberByManageToken(manageToken)
+  const subscriber = await deps.findSubscriberByManageToken(manageToken)
   if (!subscriber) {
     logAlertsApiExit("me", 403, "subscriber_not_found")
     return jsonNoStore({ error: "Invalid manage token" }, { status: 403 })
   }
 
-  const supabase = createAlertsServiceRoleClient()
+  const supabase = deps.createAlertsServiceRoleClient()
   const { data: subscriptions, error: subscriptionsError } = await supabase
     .from("alert_subscriptions")
     .select("candidato_id")
@@ -92,7 +106,10 @@ async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextRespon
       return jsonNoStore({ error: "Could not load candidate details" }, { status: 503 })
     }
 
-    candidates = (rows ?? []).sort((a, b) => a.nome_urna.localeCompare(b.nome_urna, "pt-BR"))
+    // Senador com SENADO_ENABLED desligada não aparece na gestão de alertas.
+    candidates = filterAlertCandidatesByExposedCargo(rows ?? []).sort((a, b) =>
+      a.nome_urna.localeCompare(b.nome_urna, "pt-BR"),
+    )
   }
 
   logAlertsApiExit("me", 200, "ok", { subscriptionCount: candidates.length })
@@ -109,45 +126,58 @@ async function handleAlertsMe(manageTokenRaw: string | null): Promise<NextRespon
 }
 
 /** Preferir POST com corpo JSON — evita token em query string (logs de proxy, Referer). */
-export async function POST(req: NextRequest) {
-  const limited = await checkAlertsMeRateLimit(req)
-  if (limited) return limited
+function createAlertsMePostHandler(deps: AlertsMeDeps) {
+  return async function POST(req: NextRequest) {
+    const limited = await checkAlertsMeRateLimit(req)
+    if (limited) return limited
 
-  let body: unknown
-  try {
-    body = await readJsonBodyWithLimit(req)
-  } catch (error) {
-    if (isRequestBodyTooLargeError(error)) {
-      logAlertsApiExit("me", 413, "body_too_large")
-      return jsonNoStore({ error: "Payload too large" }, { status: 413 })
+    let body: unknown
+    try {
+      body = await readJsonBodyWithLimit(req)
+    } catch (error) {
+      if (isRequestBodyTooLargeError(error)) {
+        logAlertsApiExit("me", 413, "body_too_large")
+        return jsonNoStore({ error: "Payload too large" }, { status: 413 })
+      }
+      logAlertsApiExit("me", 400, "invalid_json")
+      return jsonNoStore({ error: "Invalid JSON" }, { status: 400 })
     }
-    logAlertsApiExit("me", 400, "invalid_json")
-    return jsonNoStore({ error: "Invalid JSON" }, { status: 400 })
-  }
 
-  const token = resolveAlertManageToken([
-    alertBodyStringField(body, "manageToken"),
-    readAlertManageTokenCookie(req),
-  ])
-  return handleAlertsMe(token)
+    const token = resolveAlertManageToken([
+      alertBodyStringField(body, "manageToken"),
+      readAlertManageTokenCookie(req),
+    ])
+    return handleAlertsMe(token, deps)
+  }
 }
 
 /** Alternativa para ferramentas: `Authorization: Bearer <manageToken>`. Query `?token=` não é suportada. */
-export async function GET(req: NextRequest) {
-  const limited = await checkAlertsMeRateLimit(req)
-  if (limited) return limited
+function createAlertsMeGetHandler(deps: AlertsMeDeps) {
+  return async function GET(req: NextRequest) {
+    const limited = await checkAlertsMeRateLimit(req)
+    if (limited) return limited
 
-  const auth = req.headers.get("authorization")?.trim()
-  const bearer = auth?.toLowerCase().startsWith("bearer ") ? auth.slice(7).trim() : null
-  const token = resolveAlertManageToken([bearer, readAlertManageTokenCookie(req)])
-  if (token) {
-    return handleAlertsMe(token)
+    const auth = req.headers.get("authorization")?.trim()
+    const bearer = auth?.toLowerCase().startsWith("bearer ") ? auth.slice(7).trim() : null
+    const token = resolveAlertManageToken([bearer, readAlertManageTokenCookie(req)])
+    if (token) {
+      return handleAlertsMe(token, deps)
+    }
+
+    // Visitantes sem cookie de gestão: resposta anónima (evita 400 + warn em cada vista de ficha).
+    return jsonNoStore({
+      ok: false,
+      anonymous: true,
+      subscriptions: [],
+    })
   }
-
-  // Visitantes sem cookie de gestão: resposta anónima (evita 400 + warn em cada vista de ficha).
-  return jsonNoStore({
-    ok: false,
-    anonymous: true,
-    subscriptions: [],
-  })
 }
+
+/** Handlers com dependências injetáveis, para testes sem banco. */
+export function createAlertsMeHandlers(deps: AlertsMeDeps = defaultAlertsMeDeps) {
+  return { GET: createAlertsMeGetHandler(deps), POST: createAlertsMePostHandler(deps) }
+}
+
+const defaultAlertsMeHandlers = createAlertsMeHandlers()
+export const POST = defaultAlertsMeHandlers.POST
+export const GET = defaultAlertsMeHandlers.GET

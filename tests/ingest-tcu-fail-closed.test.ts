@@ -19,7 +19,7 @@ describe("ingest TCU fail-closed", () => {
     assert.match(source, /Promise<TCUInabilitado\[\] \| null>/)
     assert.match(source, /Promise<TCUCadirreg\[\] \| null>/)
     assert.match(source, /if \(!res\.ok\) return null/g)
-    assert.match(source, /if \(!Array\.isArray\(data\)\) return null/g)
+    assert.match(source, /validarRegistrosTCU(?:<[^>]+>)?\(data\)/g)
     assert.match(source, /if \(inabilitados === null \|\| cadirreg === null\)/)
     assert.match(source, /flags nao atualizadas/)
     assert.match(source, /results\.push\(result\)\s+continue/)

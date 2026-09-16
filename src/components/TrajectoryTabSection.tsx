@@ -44,9 +44,11 @@ export function TrajectoryTabSection({
 }: TrajectoryTabSectionProps) {
   const historicoOrdenado = prepareHistoricoPoliticoPublicDisplayList(historico)
   const mudancasEfetivas = countPartySwitches(mudancas)
-  const currentPartyLabel = [partidoAtualSigla, partidoAtualNome]
+  const currentPartyValues = [partidoAtualSigla, partidoAtualNome]
     .filter((value): value is string => Boolean(value) && !isUncertainParty(value))
-    .join(" · ")
+  const currentPartyLabel = currentPartyValues.length === 2 && currentPartyValues[0] === currentPartyValues[1]
+    ? currentPartyValues[0]
+    : currentPartyValues.join(" · ")
   const currentPartyTokens = [partidoAtualSigla, partidoAtualNome]
     .map(normalizePartySigla)
     .filter(Boolean)
@@ -59,6 +61,9 @@ export function TrajectoryTabSection({
     )
   ).sort((a, b) => a - b)
   const shouldShowPartySection = mudancas.length > 0 || Boolean(currentPartyLabel)
+  const partyAttemptInconclusive = freshness?.mudancas_partido?.status === "stale" &&
+    freshness.mudancas_partido.sourceLabel === "Google Notícias" &&
+    /inconclusiv/i.test(freshness.mudancas_partido.message)
   // Phase 0 containment: block sections with structural contradictions until
   // editorial curation lands.
   const partyTimelineBlocked = hasSameYearPartyReversal(mudancas)
@@ -179,7 +184,9 @@ export function TrajectoryTabSection({
           <SectionLabel>Histórico partidário</SectionLabel>
           <SectionTitle>
             {mudancasEfetivas === 0
-              ? "Partidos confirmados"
+              ? partyAttemptInconclusive
+                ? "Partido declarado na candidatura"
+                : "Partidos confirmados"
               : mudancasEfetivas === 1
                 ? "1 troca de partido"
                 : `${mudancasEfetivas} trocas de partido`}
@@ -216,13 +223,17 @@ export function TrajectoryTabSection({
               </div>
             </>
           ) : (
-            <div className="mt-6 flex items-baseline gap-4 py-3 sm:gap-6 sm:py-4">
+            <>
+              <div className="mt-4">
+                <DataFreshnessNotice info={freshness?.mudancas_partido} />
+              </div>
+              <div className="mt-6 flex items-baseline gap-4 py-3 sm:gap-6 sm:py-4">
               <span className="w-[50px] shrink-0 text-[length:var(--text-caption)] font-bold text-foreground sm:w-[60px] sm:text-[length:var(--text-body-sm)]">
                 Atual
               </span>
               <div>
                 <p className="text-[length:var(--text-body)] font-bold text-foreground sm:text-[15px]">
-                  Filiação atual: {currentPartyLabel}
+                  {partyAttemptInconclusive ? "Partido declarado na candidatura" : "Filiação atual"}: {currentPartyLabel}
                 </p>
                 <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
                   Sem trocas de partido registradas na base.
@@ -231,7 +242,8 @@ export function TrajectoryTabSection({
                     : ""}
                 </p>
               </div>
-            </div>
+              </div>
+            </>
           )}
         </div>
       )}

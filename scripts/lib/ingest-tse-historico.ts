@@ -19,6 +19,7 @@ import { sanitizeTemplateText } from "./ptbr-sanitize"
 import { sanitizePublicText } from "@/lib/public-text"
 import { canonicalizeEstadoForStorage } from "@/lib/br-uf"
 import { downloadToFile } from "./download-to-file"
+import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse-historico")
 // Eleicoes gerais (federais/estaduais): anos pares divisíveis por 4 (exceto 2000s)
@@ -88,6 +89,38 @@ export function buildTseHistoricoObservacoes(resultado: string, ano: number, ele
   return sanitizePublicText(sanitizeTemplateText(eleito
     ? `${resultado} (TSE ${ano})`
     : `Candidatura: ${resultado} (TSE ${ano})`))
+}
+
+/**
+ * O resultado do TSE prova uma candidatura e seu desfecho eleitoral. Ele não
+ * prova posse, exercício ou duração do mandato. A linha eleitoral permanece
+ * datada pelo ano do pleito e nunca abre um período até o presente.
+ */
+export function buildTseHistoricoEvento(ano: number): {
+  tipo_evento: "candidatura"
+  periodo_fim: number
+} {
+  return { tipo_evento: "candidatura", periodo_fim: ano }
+}
+
+/** Linhas curadas ou sem proveniência não podem ser sobrescritas pelo reingest TSE. */
+export function shouldUpdateTseHistoricoRow(existingProveniencia: string | null | undefined): boolean {
+  return existingProveniencia === "tse"
+}
+
+export function resolveTseHistoricoElectionYear(
+  row: { ANO_ELEICAO?: string; DT_ELEICAO?: string; NM_TIPO_ELEICAO?: string },
+  sourceYear: number,
+): number {
+  return resolveEffectiveElectionContext({
+    ano_eleicao: row.ANO_ELEICAO || sourceYear,
+    dt_eleicao: row.DT_ELEICAO,
+    nm_tipo_eleicao: row.NM_TIPO_ELEICAO,
+  }).effectiveYear
+}
+
+export function tseHistoricoCandidacyKey(slug: string, cargo: string, electionYear: number): string {
+  return `${slug}|${electionYear}|${cargo}`
 }
 
 interface CandidacyRecord {
@@ -185,7 +218,8 @@ async function processAno(
   const resolver = await createTSEResolver(candidatos, ano)
 
   // Coleta todas as candidaturas encontradas neste ano
-  // Usa Map para deduplicar por slug+cargo, preferindo resultado definitivo (turno 2)
+  // Usa Map para deduplicar por slug+ano efetivo+cargo, preferindo resultado definitivo (turno 2).
+  // O ano do ZIP continua sendo o ciclo de origem; eleições suplementares são publicadas pela data real.
   const bestRecord = new Map<string, CandidacyRecord>()
 
   for (const csvPath of csvPaths) {
@@ -197,7 +231,8 @@ async function processAno(
       const cargo = normalizeCargo(row.DS_CARGO || "")
       if (!cargo) return
 
-      const dedupeKey = `${match.slug}|${cargo}`
+      const effectiveYear = resolveTseHistoricoElectionYear(row, ano)
+      const dedupeKey = tseHistoricoCandidacyKey(match.slug, cargo, effectiveYear)
       const turno = parseInt(row.NR_TURNO || "1", 10)
       const partido = normalizePartySigla(row.SG_PARTIDO || "")
       const estado = canonicalizeEstadoForStorage(row.SG_UF) ?? ""
@@ -205,7 +240,7 @@ async function processAno(
 
       const candidate: CandidacyRecord = {
         slug: match.slug,
-        ano,
+        ano: effectiveYear,
         cargo,
         partido,
         estado,
@@ -354,7 +389,7 @@ export async function ingestTSEHistorico(): Promise<IngestResult[]> {
         // Upsert por (candidato, cargo canônico, ano) — evita Presidente vs Presidente da República duplicado
         const { data: existingRows, error: existingError } = await supabase
           .from("historico_politico")
-          .select("id, observacoes, periodo_fim")
+          .select("id, observacoes, periodo_fim, tipo_evento, proveniencia")
           .eq("candidato_id", candidatoId)
           .eq("cargo_canonico", cargoCanonico)
           .eq("periodo_inicio", record.ano)
@@ -371,7 +406,7 @@ export async function ingestTSEHistorico(): Promise<IngestResult[]> {
         if (!existing) {
           const { data: legacyRows, error: legacyError } = await supabase
             .from("historico_politico")
-            .select("id, observacoes, periodo_fim")
+            .select("id, observacoes, periodo_fim, tipo_evento, proveniencia")
             .eq("candidato_id", candidatoId)
             .eq("cargo", record.cargo)
             .eq("periodo_inicio", record.ano)
@@ -400,13 +435,14 @@ export async function ingestTSEHistorico(): Promise<IngestResult[]> {
         // revisada ou curada a mao, e reescrever esses campos a cada re-ingest
         // desfaria decisao humana em silencio, que e o mesmo defeito do
         // guard-rail, invertido. O marcador so vale no insert.
+        const eventoTse = buildTseHistoricoEvento(record.ano)
         const row = {
           candidato_id: candidatoId,
           cargo: record.cargo,
           cargo_canonico: cargoCanonico,
-          tipo_evento: record.eleito ? "mandato" : "candidatura",
+          tipo_evento: eventoTse.tipo_evento,
           periodo_inicio: record.ano,
-          periodo_fim: record.eleito ? null : record.ano,
+          periodo_fim: eventoTse.periodo_fim,
           partido: record.partido,
           estado: record.estado || cand.estado || null,
           eleito_por: eleitoPor,
@@ -414,14 +450,17 @@ export async function ingestTSEHistorico(): Promise<IngestResult[]> {
           proveniencia: "tse" as const,
         }
 
+        if (existing && !shouldUpdateTseHistoricoRow(existing.proveniencia)) {
+          log("tse-historico", `  ${cand.slug}: linha histórica existente preservada (${record.cargo} ${record.ano}; proveniência curada/ausente)`)
+          continue
+        }
+
         if (existing) {
           const updateRow = {
             ...row,
-            // Nao reverter mandato ja fechado: para eleito, `row.periodo_fim` e null,
-            // e um re-ingest cego apagava o periodo_fim que o backfill (ou curadoria)
-            // preencheu, reintroduzindo os "cargos sobrepostos" de 2026-04-10
-            // (review 2026-06-09). COALESCE preserva o valor existente.
-            periodo_fim: row.periodo_fim ?? existing.periodo_fim ?? null,
+            // Não apaga um fim já materializado em uma linha TSE existente;
+            // linhas abertas recebem o ano do pleito.
+            periodo_fim: existing.periodo_fim ?? row.periodo_fim,
           }
           const { error: updateErr } = await supabase
             .from("historico_politico")

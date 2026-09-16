@@ -65,6 +65,10 @@ interface CandidatoBanco {
   estado: string | null
   partido_sigla: string | null
   biografia: string | null
+  /** SQ read back from the local candidate snapshot; it is identity evidence, not a seed gate. */
+  sq_candidato_2026?: string | null
+  /** Used only in-memory for identity-context matching; never persisted in receipts. */
+  cpf?: string | null
 }
 
 interface SeedCandidato {
@@ -76,7 +80,7 @@ interface SeedCandidato {
   }
 }
 
-interface Comunicacao {
+export interface Comunicacao {
   id: number
   data_disponibilizacao?: string
   siglaTribunal?: string
@@ -519,20 +523,22 @@ async function confirmarIdentidade(
 ): Promise<Record<string, unknown>> {
   const override = IDENTIDADE_OVERRIDES[c.slug]
   if (override) return { status: override.status ?? "confirmada", ...override }
-  if (seed) {
-    const tse = identidadesTse.get(c.slug)
-    if (tse) {
-      const ufTse = typeof tse.uf === "string" ? normalizar(tse.uf) : ""
-      const ufAtual = normalizar(c.estado)
-      if (ufTse && ufAtual && ufTse !== ufAtual) {
-        return {
-          status: "bloqueada",
-          motivo: `identidade TSE localizada em ${ufTse}, mas a ficha atual esta em ${ufAtual}; falta ponte oficial entre as UFs`,
-          url: tse.url,
-        }
+  // A locally read back SQ is already a confirmed identity anchor. It must not
+  // depend on the historical seed being present in data/candidatos.json.
+  const tseLocal = identidadesTse.get(c.slug)
+  if (tseLocal) {
+    const ufTse = typeof tseLocal.uf === "string" ? normalizar(tseLocal.uf) : ""
+    const ufAtual = normalizar(c.estado)
+    if (ufTse && ufAtual && ufTse !== ufAtual) {
+      return {
+        status: "bloqueada",
+        motivo: `identidade TSE localizada em ${ufTse}, mas a ficha atual esta em ${ufAtual}; falta ponte oficial entre as UFs`,
+        url: tseLocal.url,
       }
-      return tse
     }
+    return tseLocal
+  }
+  if (seed) {
     if (seed.ids?.senado) return {
       status: "confirmada", metodo: "senado-id-oficial",
       url: `https://www25.senado.leg.br/web/senadores/senador/-/perfil/${seed.ids.senado}`,
@@ -552,33 +558,111 @@ async function confirmarIdentidade(
   }
 }
 
-async function buscarDjen(nome: string, cache: string): Promise<{ url: string; total: number; itens: Comunicacao[]; tetoAtingido?: boolean }> {
+export interface ResultadoDjen {
+  schema_version: 2
+  url: string
+  query_nome: string
+  consultado_em: string
+  total: number
+  itens: Comunicacao[]
+  paginas: number
+  completo: true
+  tetoAtingido?: boolean
+}
+
+function sanitizarCpfEmTexto(texto: string): string {
+  return texto.replace(/(\bCPF(?:\s*N(?:[ºo°])?)?\s*[:=-]?\s*)(\d{3}[.\s-]?\d{3}[.\s-]?\d{3}[.\s-]?\d{2})\b/gi, "$1[cpf omitido]")
+}
+
+function sanitizarComunicacoes(itens: Comunicacao[]): Comunicacao[] {
+  return itens.map((item) => ({ ...item, texto: typeof item.texto === "string" ? sanitizarCpfEmTexto(item.texto) : item.texto }))
+}
+
+function periodoConsultaDjen(consultadoEm: string): string {
+  return `acervo publico consultado em ${consultadoEm}`
+}
+
+export function validarRespostaDjen(resposta: unknown, nomeEsperado?: string): { count: number; items: Comunicacao[] } {
+  if (!resposta || typeof resposta !== "object") throw new Error("DJEN resposta invalida: objeto esperado")
+  const registro = resposta as Record<string, unknown>
+  if (!Number.isInteger(registro.count) || Number(registro.count) < 0) {
+    throw new Error("DJEN resposta invalida: count inteiro nao-negativo esperado")
+  }
+  if (!Array.isArray(registro.items)) throw new Error("DJEN resposta invalida: items array esperado")
+  for (const item of registro.items) {
+    if (!item || typeof item !== "object") throw new Error("DJEN resposta invalida: item objeto esperado")
+    const comunicacao = item as Record<string, unknown>
+    if (!Number.isInteger(comunicacao.id)) throw new Error("DJEN resposta invalida: item.id inteiro esperado")
+    if (comunicacao.destinatarios !== null && comunicacao.destinatarios !== undefined && !Array.isArray(comunicacao.destinatarios)) throw new Error("DJEN resposta invalida: item.destinatarios array ou null esperado")
+  }
+  if (nomeEsperado && typeof registro.query_nome === "string" && normalizar(registro.query_nome) !== normalizar(nomeEsperado)) {
+    throw new Error("DJEN resposta invalida: nome da consulta divergente")
+  }
+  return { count: Number(registro.count), items: registro.items as Comunicacao[] }
+}
+
+export function validarCacheDjen(cache: unknown, nomeEsperado?: string): ResultadoDjen {
+  if (!cache || typeof cache !== "object") throw new Error("DJEN cache invalido: objeto esperado")
+  const registro = cache as Record<string, unknown>
+  if (registro.schema_version !== 2) throw new Error("DJEN cache invalido: schema_version")
+  if (typeof registro.url !== "string" || registro.url.length === 0) throw new Error("DJEN cache invalido: url")
+  let url: URL
+  try { url = new URL(registro.url) } catch { throw new Error("DJEN cache invalido: url malformada") }
+  if (url.origin !== DJEN || url.pathname !== "/api/v1/comunicacao" || url.searchParams.get("itensPorPagina") !== "1000") throw new Error("DJEN cache invalido: endpoint/query")
+  if (typeof registro.query_nome !== "string" || registro.query_nome.length === 0) throw new Error("DJEN cache invalido: query_nome")
+  if (normalizar(url.searchParams.get("nomeParte")) !== normalizar(registro.query_nome)) throw new Error("DJEN cache invalido: nomeParte divergente")
+  if (nomeEsperado && normalizar(registro.query_nome) !== normalizar(nomeEsperado)) throw new Error("DJEN cache invalido: nome da consulta divergente")
+  if (typeof registro.consultado_em !== "string" || Number.isNaN(Date.parse(registro.consultado_em))) throw new Error("DJEN cache invalido: consultado_em")
+  if (!Number.isInteger(registro.total) || Number(registro.total) < 0) throw new Error("DJEN cache invalido: total")
+  if (!Array.isArray(registro.itens)) throw new Error("DJEN cache invalido: itens")
+  if (!Number.isInteger(registro.paginas) || Number(registro.paginas) < 1) throw new Error("DJEN cache invalido: paginas")
+  if (registro.completo !== true) throw new Error("DJEN cache invalido: completo=false")
+  const itensValidados = validarRespostaDjen({ count: registro.total, items: registro.itens })
+  if (itensValidados.items.length !== Number(registro.total)) throw new Error(`DJEN cache truncado: ${itensValidados.items.length}/${registro.total}`)
+  return registro as unknown as ResultadoDjen
+}
+
+async function buscarDjen(nome: string, cache: string): Promise<ResultadoDjen> {
   const itensPorPagina = 1_000
   const base = `${DJEN}/api/v1/comunicacao?itensPorPagina=${itensPorPagina}&nomeParte=${encodeURIComponent(nome)}`
   const cacheDir = join(cache, "djen")
   const cachePath = join(cacheDir, `${Buffer.from(normalizar(nome)).toString("base64url")}.json`)
   if (existsSync(cachePath)) {
-    return JSON.parse(readFileSync(cachePath, "utf8")) as { url: string; total: number; itens: Comunicacao[]; tetoAtingido?: boolean }
+    return validarCacheDjen(JSON.parse(readFileSync(cachePath, "utf8")), nome)
   }
   const itens: Comunicacao[] = []
   let pagina = 1
   let total = 0
+  let paginas = 0
   do {
-    const resposta = await fetchJson<{ count: number; items: Comunicacao[] }>(`${base}&pagina=${pagina}`)
-    total = resposta.count ?? 0
+    const resposta = validarRespostaDjen(await fetchJson<unknown>(`${base}&pagina=${pagina}`), nome)
+    if (paginas > 0 && resposta.count !== total) throw new Error(`DJEN count inconsistente: ${resposta.count}/${total}`)
+    total = resposta.count
     if (total > 10_000) {
       throw new Error(`DJEN excede limite paginavel: ${total} comunicacoes para o nome consultado`)
     }
-    itens.push(...(resposta.items ?? []))
+    if (resposta.items.length === 0 && itens.length < total) throw new Error(`DJEN truncado: pagina ${pagina} vazia antes de ${itens.length}/${total}`)
+    itens.push(...resposta.items)
+    paginas = pagina
     pagina += 1
   } while (itens.length < total && pagina <= Math.ceil(total / itensPorPagina) + 1 && pagina <= 11)
   if (itens.length < total) throw new Error(`DJEN truncado: ${itens.length}/${total}`)
-  const resposta = { url: `${base}&pagina=1`, total, itens, tetoAtingido: total >= 10_000 }
+  const resposta: ResultadoDjen = {
+    schema_version: 2,
+    url: `${base}&pagina=1`,
+    query_nome: nome,
+    consultado_em: new Date().toISOString(),
+    total,
+    itens: sanitizarComunicacoes(itens),
+    paginas: Math.max(1, paginas),
+    completo: true,
+    tetoAtingido: total >= 10_000,
+  }
   mkdirSync(cacheDir, { recursive: true })
   const temp = `${cachePath}.tmp-${process.pid}`
   writeFileSync(temp, `${JSON.stringify(resposta)}\n`, { encoding: "utf8", mode: 0o600 })
   renameSync(temp, cachePath)
-  return resposta
+  return validarCacheDjen(resposta, nome)
 }
 
 let filaDjen: Promise<void> = Promise.resolve()
@@ -586,7 +670,7 @@ let filaDjen: Promise<void> = Promise.resolve()
 async function buscarDjenSerializado(
   nome: string,
   cache: string,
-): Promise<{ url: string; total: number; itens: Comunicacao[]; tetoAtingido?: boolean }> {
+): Promise<ResultadoDjen> {
   const anterior = filaDjen
   let liberar: () => void = () => undefined
   filaDjen = new Promise<void>((resolve) => { liberar = resolve })
@@ -616,12 +700,7 @@ export function contextoPolitico(
   for (const pos of posicoes) {
     const janela = t.slice(Math.max(0, pos - 700), pos + nome.length + 700)
     const identidadeProxima = t.slice(Math.max(0, pos - 220), pos + nome.length + 220)
-    const cpfRegex = cpf.length === 11
-      ? cpf.split("").join("[.\\s-]{0,3}")
-      : "(?!)"
-    const cpfCompativel = new RegExp(
-      `(?:${nomeRegex}.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b|\\bCPF(?:\\s+N)?\\s+${cpfRegex}.{0,100}${nomeRegex})`,
-    ).test(identidadeProxima)
+    const cpfCompativel = cpfCompativelNoTexto(identidadeProxima, nomeCompleto, cpf)
     const cargoDepois = new RegExp(`\\b${nomeRegex}\\b(?:\\s+(?:ATUAL|ENTAO|EX|SR|SRA)){0,3}\\s+${CARGO_POLITICO}\\b`).test(identidadeProxima)
     const cargoAntesDireto = new RegExp(`\\b${CARGO_POLITICO}\\s+(?:DO|DA|DE)?\\s*${nomeRegex}\\b`).test(identidadeProxima)
     const cargoAntesComLocal = new RegExp(
@@ -637,7 +716,19 @@ export function contextoPolitico(
   return null
 }
 
-async function chaveDatajud(): Promise<string> {
+export function cpfCompativelNoTexto(texto: string, nomeCompleto: string, cpf: string): boolean {
+  const nome = normalizar(nomeCompleto)
+  const cpfNormalizado = cpf.replace(/\D/g, "")
+  if (cpfNormalizado.length !== 11 || !nome) return false
+  const nomeRegex = escaparRegex(nome)
+  const cpfRegex = cpfNormalizado.split("").join("[.\\s-]{0,3}")
+  return new RegExp(
+    `(?:${nomeRegex}.{0,100}\\bCPF(?:\\s+N)?\\s+${cpfRegex}\\b|\\bCPF(?:\\s+N)?\\s+${cpfRegex}.{0,100}${nomeRegex})`,
+    "i",
+  ).test(texto)
+}
+
+export async function chaveDatajud(): Promise<string> {
   const texto = await (await fetch("https://datajud-wiki.cnj.jus.br/api-publica/acesso/", { signal: AbortSignal.timeout(30_000) })).text()
   const semHtml = texto.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/\s+/g, " ")
   const match = semHtml.match(/Authorization:\s*APIKey\s+([A-Za-z0-9+/_=-]{20,})/)
@@ -664,7 +755,7 @@ async function conferirDatajudLote(
     for (let inicio = 0; inicio < itens.length; inicio += 50) {
       const bloco = itens.slice(inicio, inicio + 50)
       try {
-        const resposta = await fetchJson<{ hits?: { hits?: Array<{ _source?: Record<string, unknown> }> } }>(url, {
+        const resposta = validarRespostaDatajud(await fetchJson<unknown>(url, {
           method: "POST",
           headers: { Authorization: `APIKey ${chave}`, "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -676,7 +767,7 @@ async function conferirDatajudLote(
               },
             },
           }),
-        }, 1, 15_000)
+        }, 1, 15_000))
         const fontes = new Map(
           (resposta.hits?.hits ?? [])
             .map((hit) => hit._source)
@@ -701,6 +792,15 @@ async function conferirDatajudLote(
     }
   }
   return resultado
+}
+
+export function validarRespostaDatajud(resposta: unknown): { hits: { hits: Array<{ _source?: Record<string, unknown> }> } } {
+  if (!resposta || typeof resposta !== "object") throw new Error("DataJud resposta invalida: objeto esperado")
+  const registro = resposta as Record<string, unknown>
+  if (!registro.hits || typeof registro.hits !== "object") throw new Error("DataJud resposta invalida: hits ausente")
+  const hits = registro.hits as Record<string, unknown>
+  if (!Array.isArray(hits.hits)) throw new Error("DataJud resposta invalida: hits.hits array esperado")
+  return { hits: { hits: hits.hits as Array<{ _source?: Record<string, unknown> }> } }
 }
 
 export function chaveConferenciaDatajud(tribunal: string, numero: string): string {
@@ -818,20 +918,24 @@ export async function pesquisarCandidato(
     const djen = await buscar(nomeConsulta, cache)
     const nome = normalizar(nomeConsulta)
     const exatos = djen.itens.filter((item) => (item.destinatarios ?? []).some((d) => normalizar(d.nome) === nome))
+    const semDestinatarios = djen.itens.filter((item) =>
+      !Array.isArray(item.destinatarios) && normalizar(item.texto ?? "").includes(nome),
+    )
     if (identidade.status !== "confirmada") {
       const tetoAtingido = djen.tetoAtingido === true || djen.total >= 10_000
       return {
         ...baseConfirmada,
         identidade,
         busca: {
-          fonte: "DJEN/PJe-CNJ", url: djen.url, periodo: "acervo disponivel ate 2026-08-05",
-          termos: "nome completo exato; resultado nao atribuivel sem segundo identificador oficial",
+          fonte: "DJEN/PJe-CNJ", url: djen.url, consultado_em: djen.consultado_em, periodo: periodoConsultaDjen(djen.consultado_em),
+          termos: "nome completo exato (parametro nomeParte); cargo/UF/nome de urna no texto para atribuicao local",
           total_api: djen.total, ocorrencias_nome_exato: exatos.length,
-          ocorrencias_ambiguas: exatos.length,
+          ocorrencias_ambiguas: exatos.length + semDestinatarios.length,
+          ocorrencias_sem_destinatarios: semDestinatarios.length,
           teto_publico_atingido: tetoAtingido,
           tribunais_consultados: tribunais,
         },
-        ocorrencias_ambiguas: exatos.map((item) => ({
+        ocorrencias_ambiguas: [...exatos, ...semDestinatarios].map((item) => ({
           numero_cnj: item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`,
           tribunal: item.siglaTribunal ?? null,
           motivo: "nome exato sem segundo identificador oficial; identidade da ficha bloqueada",
@@ -845,6 +949,14 @@ export async function pesquisarCandidato(
     const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null }>()
     const descartados = new Map<string, Record<string, unknown>>()
     const ambiguos = new Map<string, Record<string, unknown>>()
+    for (const item of semDestinatarios) {
+      const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
+      ambiguos.set(numero, {
+        numero_cnj: numero,
+        tribunal: item.siglaTribunal ?? null,
+        motivo: "comunicacao sem destinatarios estruturados; identidade nao atribuida automaticamente",
+      })
+    }
     for (const item of exatos) {
       const numero = item.numeroprocessocommascara || item.numero_processo || `comunicacao-${item.id}`
       const contexto = contextoPolitico(c, snap, item.texto ?? "", nomeConsulta, identidade)
@@ -877,10 +989,11 @@ export async function pesquisarCandidato(
     return {
       ...baseConfirmada, identidade,
       busca: {
-        fonte: "DJEN/PJe-CNJ", url: djen.url, periodo: "acervo disponivel ate 2026-08-05",
-        termos: `nome completo exato + cargo + UF + partido + trajetoria`,
+        fonte: "DJEN/PJe-CNJ", url: djen.url, consultado_em: djen.consultado_em, periodo: periodoConsultaDjen(djen.consultado_em),
+        termos: "nome completo exato (parametro nomeParte); cargo/UF/nome de urna no texto para atribuicao local; partido/trajetoria nao sao filtros da consulta",
         total_api: djen.total, ocorrencias_nome_exato: exatos.length,
         ocorrencias_ambiguas: ambiguosPendentes.size,
+        ocorrencias_sem_destinatarios: semDestinatarios.length,
         teto_publico_atingido: tetoAtingido,
         tribunais_consultados: tribunais,
       },
@@ -897,7 +1010,8 @@ export async function pesquisarCandidato(
       busca: {
         fonte: "DJEN/PJe-CNJ",
         url: `${DJEN}/api/v1/comunicacao?itensPorPagina=100&nomeParte=${encodeURIComponent(nomeConsulta)}&pagina=1`,
-        periodo: "acervo disponivel ate 2026-08-05",
+        consultado_em: new Date().toISOString(),
+        periodo: "consulta DJEN falhou antes de obter acervo; data registrada no recibo",
         termos: "nome completo exato + cargo + UF + partido + trajetoria",
         tribunais_consultados: tribunais,
         erro: erro instanceof Error ? erro.message : String(erro),
