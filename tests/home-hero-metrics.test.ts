@@ -49,6 +49,24 @@ describe("home hero global metrics", () => {
     )
   })
 
+  it("counts senators only when SENADO_ENABLED is on", () => {
+    const resumos = [
+      resumo("Presidente", 100, 1),
+      resumo("Governador", 40, 2),
+      resumo("Senador", 10, 4),
+      resumo("Senador", null, 0),
+    ]
+    assert.deepEqual(
+      getHomeHeroMetrics(resumos, "live", { SENADO_ENABLED: "true" }),
+      { totalCandidatos: 4, totalPatrimonio: 150, totalProcessos: 7 }
+    )
+    assert.deepEqual(getHomeHeroMetrics(resumos, "live", {}), {
+      totalCandidatos: 2,
+      totalPatrimonio: 140,
+      totalProcessos: 3,
+    })
+  })
+
   it("keeps the known roster count but does not publish partial zeros", () => {
     assert.deepEqual(
       getHomeHeroMetrics(
