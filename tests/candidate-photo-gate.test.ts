@@ -8,6 +8,7 @@ import {
   isBelowSlot,
   MIN_HEIGHT,
   MIN_WIDTH,
+  TSE_OFFICIAL_FILE_PATTERN,
   TSE_OFFICIAL_MANIFEST_PATH,
   type BaselineEntry,
   type PhotoInfo,
@@ -33,7 +34,7 @@ describe("gate de resolução de fotos de candidato", () => {
     const result = auditPhotos(photos, baseline, tseManifest)
     assert.deepEqual(result.violations, [])
     assert.equal(
-      baseline.some((entry) => /^tse-2026-/.test(entry.file)),
+      baseline.some((entry) => TSE_OFFICIAL_FILE_PATTERN.test(entry.file)),
       false,
       "fotos oficiais do TSE não entram na baseline legada"
     )

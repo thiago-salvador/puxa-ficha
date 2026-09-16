@@ -42,6 +42,12 @@
     "sha256": "485ae8dfc0717a5ecef1caa4c1968fd360661cd56b849726fd85e268d02baadb"
   },
   {
+    "file": "enilton-rodrigues-foto.jpg",
+    "width": 599,
+    "height": 626,
+    "sha256": "d751b6964760df7073d3ea15924b06075f0c74566da611e1bf97e8f58fd2f12a"
+  },
+  {
     "file": "francisco-dias.jpg",
     "width": 640,
     "height": 480,
@@ -160,5 +166,545 @@
     "width": 984,
     "height": 649,
     "sha256": "e737a98363fabb9ae9b4b8a372fbb2cbecd71f8b85d16eefc08b3debc6456b3f"
+  },
+  {
+    "file": "tse-2026-100002536212-foto.jpg",
+    "width": 900,
+    "height": 601,
+    "sha256": "d92e85491bd594da93eee0ec6352a5b7259ae0dd7355ea0cb5359a608a4080b7"
+  },
+  {
+    "file": "tse-2026-100002549014-foto.jpg",
+    "width": 984,
+    "height": 668,
+    "sha256": "2dee59e0ec775f350f38d130c9cacffa4d522e85d249470ec43d955cf573fa3f"
+  },
+  {
+    "file": "tse-2026-100002550418-foto.jpg",
+    "width": 457,
+    "height": 671,
+    "sha256": "df76beb811e9d58594e38d5631e214b762e7e7727c23ff5eacc4ccea6f9edb4e"
+  },
+  {
+    "file": "tse-2026-100002553336-foto.jpg",
+    "width": 1024,
+    "height": 682,
+    "sha256": "1c45b3d90a0add0156162d904ceb303c7a129993c2244ee4309d8a1ae09c4cdd"
+  },
+  {
+    "file": "tse-2026-110002540403-foto.jpg",
+    "width": 984,
+    "height": 656,
+    "sha256": "e1f2e7614e8842bcac8cedfa0255fbae6b83ffbb8f64ae67be90f36296de16ec"
+  },
+  {
+    "file": "tse-2026-110002544986-foto.jpg",
+    "width": 565,
+    "height": 600,
+    "sha256": "93de0fd125307f158808e3335f438c63a0990808e42b72958ea6964e20bdac8a"
+  },
+  {
+    "file": "tse-2026-110002553701-foto.jpg",
+    "width": 335,
+    "height": 597,
+    "sha256": "05895a5e2848715976bd1da0e798186099efd52310ac817c16e1d519544d8005"
+  },
+  {
+    "file": "tse-2026-110002553706-foto.jpg",
+    "width": 559,
+    "height": 359,
+    "sha256": "42824cbb8d7278e7f02d1bd82a555772069abefc65cf96fb1330286e05167d93"
+  },
+  {
+    "file": "tse-2026-120002532721-foto.jpg",
+    "width": 739,
+    "height": 415,
+    "sha256": "ee91f6900d674e828ba6da172c6f0f3b76744ae599ebb0b73485788a7c4b368a"
+  },
+  {
+    "file": "tse-2026-120002534952-foto.jpg",
+    "width": 602,
+    "height": 456,
+    "sha256": "a34b54ba6ce68a75ee54e8d13e230a14310103fccd1841b1c04c9a11d71edf92"
+  },
+  {
+    "file": "tse-2026-120002551909-foto.jpg",
+    "width": 984,
+    "height": 656,
+    "sha256": "50c95df25efedfed3c47286f5c92837d658037cf4fc9327a1d387451a37ceae5"
+  },
+  {
+    "file": "tse-2026-120002552183-foto.jpg",
+    "width": 1200,
+    "height": 674,
+    "sha256": "5ab0500138e3ed7369f2b494e71a7e3954b69713cbe0c5bde83dd31e90aa3023"
+  },
+  {
+    "file": "tse-2026-120002552196-foto.jpg",
+    "width": 480,
+    "height": 640,
+    "sha256": "b6f96b23ceee3cc0affcd16d4d335fb9349e94f1851bc1c4189ae1b23b198685"
+  },
+  {
+    "file": "tse-2026-130002551930-foto.jpg",
+    "width": 984,
+    "height": 656,
+    "sha256": "2e43da4b6d149db498670d893d9c93dfd7c5f068d6acff43e632ed82484df93b"
+  },
+  {
+    "file": "tse-2026-130002552299-foto.jpg",
+    "width": 984,
+    "height": 552,
+    "sha256": "b7dcbda1915ec1607ca3f41133b8d55e6c1049c7847968d0335e65027f4ff9ff"
+  },
+  {
+    "file": "tse-2026-130002552311-foto.jpg",
+    "width": 984,
+    "height": 554,
+    "sha256": "35dd83a1e8f6157c5b9ba4f785a7bf3a156449e434158415610bb570f4725b59"
+  },
+  {
+    "file": "tse-2026-140002553852-foto.jpg",
+    "width": 678,
+    "height": 452,
+    "sha256": "e7ea919f575b71f4d3c113831379f540b378a1489fc27cbdc1bbf4912b14228d"
+  },
+  {
+    "file": "tse-2026-140002553952-foto.jpg",
+    "width": 447,
+    "height": 447,
+    "sha256": "5a05dc0d6e11d146a5d0989e1fcfa78b18f9feccfd37aa4e8bce1f0d1047fcc1"
+  },
+  {
+    "file": "tse-2026-150002544135-foto.jpg",
+    "width": 1200,
+    "height": 717,
+    "sha256": "ec001469a8e5da7027709b068711ff07a171c16ad281b9fb9e9d0359c1048002"
+  },
+  {
+    "file": "tse-2026-150002544909-foto.jpg",
+    "width": 421,
+    "height": 475,
+    "sha256": "064df6d8f486cd7227a47ecaf4a8983c2f68a6a9f191265d720bad61f50eb700"
+  },
+  {
+    "file": "tse-2026-150002548971-foto.jpg",
+    "width": 686,
+    "height": 487,
+    "sha256": "589cdf391864411d8cadd739aa93037f7eb1fef848f20678123e8b489621fb8f"
+  },
+  {
+    "file": "tse-2026-150002552607-foto.jpg",
+    "width": 984,
+    "height": 738,
+    "sha256": "4182a920d50e865a8252ac92cb3c66a64c2b43c1b639afde53b9b53bbad4bbff"
+  },
+  {
+    "file": "tse-2026-160002547661-foto.jpg",
+    "width": 651,
+    "height": 372,
+    "sha256": "aadd57c5cd14b66b005c4e6c87b0987aeb99aa0ff4fca09c0cef68fbb659e696"
+  },
+  {
+    "file": "tse-2026-160002551043-foto.jpg",
+    "width": 418,
+    "height": 284,
+    "sha256": "e2b7e99e9b3f0a80be711b24f6a6a53bd43d4cb1c1bc73ef00b462e6c61fe838"
+  },
+  {
+    "file": "tse-2026-160002551121-foto.jpg",
+    "width": 720,
+    "height": 720,
+    "sha256": "a558699acf02f214e78c52e6f79dc452af092de8032c2c1dc50fcc2edbe53878"
+  },
+  {
+    "file": "tse-2026-160002552563-foto.jpg",
+    "width": 480,
+    "height": 640,
+    "sha256": "a7655aa7636be2a0689ccdf56463c368c390d4fb094ec0809c89f25abffe9e83"
+  },
+  {
+    "file": "tse-2026-170002537334-foto.jpg",
+    "width": 768,
+    "height": 485,
+    "sha256": "eb4f20845fbab76d926b6c0b66c755c48b51a1b1345f8010b49627720f6f6220"
+  },
+  {
+    "file": "tse-2026-170002537335-foto.jpg",
+    "width": 984,
+    "height": 741,
+    "sha256": "28717cd637cd0e72f7759b3bd247514617ffbf1e0b5c2b1f52a444780049c98f"
+  },
+  {
+    "file": "tse-2026-170002552943-foto.jpg",
+    "width": 984,
+    "height": 649,
+    "sha256": "83d44e82a067c83ad6515bb08065567d3959dfaea7ed2702d3a92a62a2ed0881"
+  },
+  {
+    "file": "tse-2026-180002537340-foto.jpg",
+    "width": 617,
+    "height": 324,
+    "sha256": "8df70b8f29927ab047ef762d59e8c85a83cd097ab52a8477d53bf844bc6b24a4"
+  },
+  {
+    "file": "tse-2026-180002544457-foto.jpg",
+    "width": 510,
+    "height": 380,
+    "sha256": "467729207f5609c5a1c00e889aa2bf9f5be14d3221b318f7eaef5676b0e9b319"
+  },
+  {
+    "file": "tse-2026-180002544459-foto.jpg",
+    "width": 500,
+    "height": 509,
+    "sha256": "62afb7dfd02a17495bcb2f28842501e1a05fd31b3b6f2b3534919d0820f623ea"
+  },
+  {
+    "file": "tse-2026-180002547863-foto.jpg",
+    "width": 700,
+    "height": 429,
+    "sha256": "bdda8537eb3e8cccb9c0d1fb974519641b55108304aae6c273b1a3c9655e27bb"
+  },
+  {
+    "file": "tse-2026-180002548157-foto.jpg",
+    "width": 275,
+    "height": 183,
+    "sha256": "b1bd30154c37f2b963596ceaf516bafb0000743d45a57de59cd248a0bb17994f"
+  },
+  {
+    "file": "tse-2026-180002548568-foto.jpg",
+    "width": 678,
+    "height": 452,
+    "sha256": "aeb34ce16f2c12b7144db336ad88ddad05c1f90476606b1efbbc17c0e73beb1a"
+  },
+  {
+    "file": "tse-2026-180002549933-foto.jpg",
+    "width": 651,
+    "height": 471,
+    "sha256": "b2e66f42dc6955b4cf5a332c5a3a8f24e4451aab3fcf874c70802b4072badbb0"
+  },
+  {
+    "file": "tse-2026-180002549936-foto.jpg",
+    "width": 400,
+    "height": 500,
+    "sha256": "79d4540014e0520c558effafb8e41b2f5ddaa688a155ddebd79d792854a581de"
+  },
+  {
+    "file": "tse-2026-180002550977-foto.jpg",
+    "width": 555,
+    "height": 360,
+    "sha256": "447fad1014986bc59ac65ee34fdd2e970c63777e83a08ceb447c14923cf79ddb"
+  },
+  {
+    "file": "tse-2026-180002550979-foto.jpg",
+    "width": 984,
+    "height": 552,
+    "sha256": "0def527456d18353977dfc3aee49d3f004e9a8f49c13c5db6cc8a94937dd32a8"
+  },
+  {
+    "file": "tse-2026-190002539827-foto.jpg",
+    "width": 860,
+    "height": 573,
+    "sha256": "dc446324a3101f54ce2d2eb69a35343dbe1ce33e0c6f1e103f153af74b7aedbc"
+  },
+  {
+    "file": "tse-2026-190002543961-foto.jpg",
+    "width": 626,
+    "height": 490,
+    "sha256": "ad1646bf783713e47b139e2eeef9b38f111c3f9f10b7c2086c792a3344517f58"
+  },
+  {
+    "file": "tse-2026-190002548590-foto.jpg",
+    "width": 1200,
+    "height": 675,
+    "sha256": "16011cde19bc2cf35eb73aaeb97122b10394d7d7cca9b95c0ed7a5de5cc6a02a"
+  },
+  {
+    "file": "tse-2026-190002552083-foto.jpg",
+    "width": 682,
+    "height": 384,
+    "sha256": "5f3ebd68c366c04a13f0a01c9c05fdb2c8e33a3a412684f164cdeb36ecc297b0"
+  },
+  {
+    "file": "tse-2026-190002552521-foto.jpg",
+    "width": 554,
+    "height": 554,
+    "sha256": "a801585d13d48b345d7a509610934f69dd58e087064ea9721d33e9c7db372e41"
+  },
+  {
+    "file": "tse-2026-200002534447-foto.jpg",
+    "width": 703,
+    "height": 436,
+    "sha256": "2d44fe1868572e305e947d2c14de88d525b6362fab054864c73d3954c4df435e"
+  },
+  {
+    "file": "tse-2026-200002535511-foto.jpg",
+    "width": 984,
+    "height": 674,
+    "sha256": "c26cae12dfd96ff2090e34bc0a8942bd24661c0c9728bccdab26a51479f139c4"
+  },
+  {
+    "file": "tse-2026-200002549133-foto.jpg",
+    "width": 720,
+    "height": 720,
+    "sha256": "3ec9296428eca4c42bee9362cc7494e590b5746feb57a8f3e4a7b56e58304404"
+  },
+  {
+    "file": "tse-2026-20002540197-foto.jpg",
+    "width": 984,
+    "height": 553,
+    "sha256": "7b2b904ad9e6c9e16a5937a067aea4b6ed4d3a5d6c590e5f1571826c885321f0"
+  },
+  {
+    "file": "tse-2026-20002552524-foto.jpg",
+    "width": 401,
+    "height": 555,
+    "sha256": "e88776854e85ffb981e3364a62dda10704b411bb5a9442748e65d56ad03a30a9"
+  },
+  {
+    "file": "tse-2026-210002533434-foto.jpg",
+    "width": 679,
+    "height": 452,
+    "sha256": "57824655d5f7357da268e7d39daae2d0feb79918eab888b01b5efc9e76b805f3"
+  },
+  {
+    "file": "tse-2026-210002533435-foto.jpg",
+    "width": 1200,
+    "height": 730,
+    "sha256": "94e3d89f892b3ac2b3fe9bbe208c4cd8bc42f394d1595a07d86a9f23d92d89c5"
+  },
+  {
+    "file": "tse-2026-210002538465-foto.jpg",
+    "width": 554,
+    "height": 554,
+    "sha256": "562b624e5ec742cd622e9db13f91187f6458c7123662104de474215563a297b3"
+  },
+  {
+    "file": "tse-2026-210002544698-foto.jpg",
+    "width": 901,
+    "height": 471,
+    "sha256": "456a1d7e6084dc9c47f757e06714805270f0c25caeede586892fa1042293ef1b"
+  },
+  {
+    "file": "tse-2026-210002544699-foto.jpg",
+    "width": 679,
+    "height": 452,
+    "sha256": "b429fd82b3b68adb1aab931cd2d2aa1176fdcaba4521e26379ce0cbf555cac47"
+  },
+  {
+    "file": "tse-2026-210002552599-foto.jpg",
+    "width": 640,
+    "height": 360,
+    "sha256": "5c5528333c32c07e13e09dc6749d57d2101946de7e775bc24c50905418553f19"
+  },
+  {
+    "file": "tse-2026-220002539771-foto.jpg",
+    "width": 1000,
+    "height": 666,
+    "sha256": "3f1280f13fad926f26af481a15524969b6ba10e7277dc6619d294677826e43de"
+  },
+  {
+    "file": "tse-2026-220002541944-foto.jpg",
+    "width": 504,
+    "height": 396,
+    "sha256": "e60fd1cc963089231849c3d87f1e5b00672869daf22506c4e77428436f653765"
+  },
+  {
+    "file": "tse-2026-230002534804-foto.jpg",
+    "width": 354,
+    "height": 472,
+    "sha256": "036d03d9804f4c6d60309e9e811c97d1dd93e767fb75708efa6813edf6446b55"
+  },
+  {
+    "file": "tse-2026-230002550787-foto.jpg",
+    "width": 678,
+    "height": 452,
+    "sha256": "9bc387d343c86c3bf45bfd7f2f6a019f8c34aa772d8fc537a8f85653a73f71ba"
+  },
+  {
+    "file": "tse-2026-230002553010-foto.jpg",
+    "width": 984,
+    "height": 554,
+    "sha256": "5d6e64232978eba863f6c0ae354de944a5cae0933c56e9e6cca43ba8f3967940"
+  },
+  {
+    "file": "tse-2026-240002537632-foto.jpg",
+    "width": 600,
+    "height": 337,
+    "sha256": "8c178cd4a38a3b9bcaa5d3b87d0768443b0bdbed3263e75768547281d710d2a7"
+  },
+  {
+    "file": "tse-2026-240002544094-foto.jpg",
+    "width": 736,
+    "height": 417,
+    "sha256": "de88a7c3d20effba1f39d0297950bd0c6af2856195866f25578e93cb7101acc1"
+  },
+  {
+    "file": "tse-2026-240002550218-foto.jpg",
+    "width": 848,
+    "height": 477,
+    "sha256": "18825c6af69862e2b2d4ff86a78aa7b86e4bb61c01f977479c4839bd38fc5a0d"
+  },
+  {
+    "file": "tse-2026-240002551377-foto.jpg",
+    "width": 1300,
+    "height": 731,
+    "sha256": "670be140fcf8fe9253550e108077e27b58bddaef6da1c32f237130070c1a0c7e"
+  },
+  {
+    "file": "tse-2026-250002544673-foto.jpg",
+    "width": 708,
+    "height": 433,
+    "sha256": "406a908908d7d210625b6a233f9ac0600e8857a9e651ade4eb48931e7f37e71f"
+  },
+  {
+    "file": "tse-2026-250002552955-foto.jpg",
+    "width": 674,
+    "height": 342,
+    "sha256": "0f25b8963deab70159f5b60d66533e9b70a5114ffe21a3c04193b168affb0701"
+  },
+  {
+    "file": "tse-2026-250002554075-foto.jpg",
+    "width": 418,
+    "height": 235,
+    "sha256": "cbb343933471be286feb34b64261333e47da4f6295f46576a08a319ce0165237"
+  },
+  {
+    "file": "tse-2026-260002545677-foto.jpg",
+    "width": 700,
+    "height": 438,
+    "sha256": "d227fa0f8c2edfa5a580cfa65fc0ed64d48fb7350c047ec4c54289de2e05f217"
+  },
+  {
+    "file": "tse-2026-260002549130-foto.jpg",
+    "width": 400,
+    "height": 400,
+    "sha256": "dc5e1e7cf064154197bc5c2e3c12cf99a771925f1ede6a379dbe93562a97507d"
+  },
+  {
+    "file": "tse-2026-260002551366-foto.jpg",
+    "width": 1194,
+    "height": 668,
+    "sha256": "59094a8b8be0c4520889eeb20acec93c89a1c376b77426dadcbdd79d31044679"
+  },
+  {
+    "file": "tse-2026-270002539141-foto.jpg",
+    "width": 984,
+    "height": 681,
+    "sha256": "4ef8a2b3b9cae92db79f7519c5bc04be0916460ced8dbd77ec862b9ac9f6dfad"
+  },
+  {
+    "file": "tse-2026-270002552968-foto.jpg",
+    "width": 984,
+    "height": 681,
+    "sha256": "c9064595e83acda6e791a61ada981ffbc38f6a83a00cff430a07c71674c789d1"
+  },
+  {
+    "file": "tse-2026-30002551381-foto.jpg",
+    "width": 1119,
+    "height": 630,
+    "sha256": "7c4bcced3a3507e90bfba9b94dda98040b78332d9566d74d9eeebf0d79c11e6a"
+  },
+  {
+    "file": "tse-2026-30002551382-foto.jpg",
+    "width": 501,
+    "height": 399,
+    "sha256": "c4f2314da011d1457abdc59b7c2f9db47c0bf4f567d8be5333d1c45a75340b58"
+  },
+  {
+    "file": "tse-2026-40002550806-foto.jpg",
+    "width": 800,
+    "height": 500,
+    "sha256": "d0af970a3ea2314c39ffa81d56171295a46aeb03421f29fa07f23e11bce41e26"
+  },
+  {
+    "file": "tse-2026-40002551281-foto.jpg",
+    "width": 984,
+    "height": 615,
+    "sha256": "c342ec58549df76ea59fb0229983bc2bd6956dee13ebe203836845f99643b810"
+  },
+  {
+    "file": "tse-2026-40002551283-foto.jpg",
+    "width": 984,
+    "height": 554,
+    "sha256": "e83a15d787a867f398d1b1544207e8d46cecba659b9cc228d0784f700609c3e4"
+  },
+  {
+    "file": "tse-2026-50002534769-foto.jpg",
+    "width": 600,
+    "height": 420,
+    "sha256": "35e20a240b006af85d3c00d005a9cda3145f93c263f087358a3d1ce706aa6061"
+  },
+  {
+    "file": "tse-2026-60002533959-foto.jpg",
+    "width": 768,
+    "height": 725,
+    "sha256": "afcc56ce96006460441a431cc9f67029ef9e378d6a8168cdbca6901739c0ad45"
+  },
+  {
+    "file": "tse-2026-60002550748-foto.jpg",
+    "width": 600,
+    "height": 338,
+    "sha256": "45ce6121f2acf2e296f0485f43e3f2e6d1e14d9279d3e1bc7e7b98123d4d1437"
+  },
+  {
+    "file": "tse-2026-60002551397-foto.jpg",
+    "width": 554,
+    "height": 554,
+    "sha256": "281f0637346f556b2322b3377b921d6893d808779e26cb68816ecaafefc4c2cc"
+  },
+  {
+    "file": "tse-2026-70002537112-foto.jpg",
+    "width": 768,
+    "height": 512,
+    "sha256": "aaf8ff144939bcbf377893b7f79a9f32eff75d059eb1dd36b7a61e14994fb97d"
+  },
+  {
+    "file": "tse-2026-70002548624-foto.jpg",
+    "width": 591,
+    "height": 443,
+    "sha256": "ccd6e86eaf636bd07ba4cb6f87afd9921ec7eced959f8b1263510b437de0c012"
+  },
+  {
+    "file": "tse-2026-70002552582-foto.jpg",
+    "width": 394,
+    "height": 507,
+    "sha256": "4651597be44276de4d6ca6769c60ae50031eac19be81a9db8b7a3967f0adcd06"
+  },
+  {
+    "file": "tse-2026-70002553296-foto.jpg",
+    "width": 550,
+    "height": 637,
+    "sha256": "a7a79af94c4c5692f3dd3c817376eac24ac5ce89d75cfe8e9a2e23162622b295"
+  },
+  {
+    "file": "tse-2026-80002542401-foto.jpg",
+    "width": 950,
+    "height": 553,
+    "sha256": "3663d7d4ec3ef09759f13006e28404ed99f62c1ec589e164bb750d33a2089ab2"
+  },
+  {
+    "file": "tse-2026-80002549404-foto.jpg",
+    "width": 1024,
+    "height": 682,
+    "sha256": "c6549b2ceaded60c6e543487413790bf989a04312431f19c4d37d857305b0b13"
+  },
+  {
+    "file": "tse-2026-80002553269-foto.jpg",
+    "width": 636,
+    "height": 482,
+    "sha256": "2844bace052068174a3fa7647d2e867936a637dec8c42fd45aa5222999b02a3d"
+  },
+  {
+    "file": "tse-2026-90002543560-foto.jpg",
+    "width": 365,
+    "height": 547,
+    "sha256": "9c3d9ddfce9afff56c533f92d6ec0beb955c7216c00db8357a57f546063f2914"
+  },
+  {
+    "file": "tse-2026-90002545244-foto.jpg",
+    "width": 984,
+    "height": 616,
+    "sha256": "d687ecb70155a2649fcccdf70e90c8578705a0c6cae81cca16b36df9c7846a06"
   }
 ]
