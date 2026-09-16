@@ -12,6 +12,7 @@ import {
   validateDeployment,
   validatePublicationEnvironment,
   validatePullRequest,
+  promoteProduction,
   runPublicationStages,
   updateBranchRequest,
 } from "../scripts/pesquisas-atualizacao-agendada/publicar.mjs"
@@ -102,6 +103,34 @@ test("deployment exige SHA exato, produção READY e URL Vercel HTTPS", () => {
   assert.throws(() => deploymentReadyForPromotion({ ...deployment, readyState: "ERROR" }, sha), /falhou/)
   assert.throws(() => validateDeployment({ ...deployment, sha: "b".repeat(40) }, sha), /não corresponde/)
   assert.throws(() => validateDeployment({ ...deployment, url: "http://poll-preview.vercel.app/" }, sha), /URL/)
+})
+
+test("promoção mantém bypass só no staged e limpa segredo nos checks públicos", async () => {
+  const smokeEnvs = []
+  const proofs = []
+  const staged = { id: "dpl_staged", sha, target: "production", readyState: "READY", url: "https://poll-preview.vercel.app/" }
+  const vercel = {
+    deploymentForSha: async () => staged,
+    promote: async (id) => assert.equal(id, staged.id),
+    currentProductionForDomain: async () => ({ id: "dpl_public", sha }),
+  }
+  const env = {
+    POLL_REPOSITORY: "thiago-salvador/puxa-ficha",
+    VERCEL_AUTOMATION_BYPASS_SECRET: "inherited-secret",
+  }
+
+  await promoteProduction(sha, env, Date.now() + 1_000, {
+    vercel,
+    ghApi: async () => ({ sha }),
+    runReleaseSmokes: async ({ env: smokeEnv }) => smokeEnvs.push(smokeEnv),
+    proveDeployment: async (proof) => proofs.push(proof),
+  })
+
+  assert.deepEqual(smokeEnvs.map((smokeEnv) => smokeEnv.VERCEL_AUTOMATION_BYPASS_SECRET), ["inherited-secret", ""])
+  assert.equal(smokeEnvs[0].PF_BASE_URL, staged.url)
+  assert.equal(smokeEnvs[1].PF_BASE_URL, "https://puxaficha.com.br")
+  assert.equal(proofs.length, 1)
+  assert.equal(proofs[0].bypassSecret, "")
 })
 
 test("publicação falha fechado sem token, SHA, autor ou repositório válidos", () => {
