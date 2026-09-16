@@ -407,7 +407,9 @@ describe("classificador puro (#136)", () => {
     // Fonte direta medida no PG17: 365 + mesmas 105 = 470 arquivos.
     // H12 medido no gate local PG17: 366 aplicadas + mesmas 105 = 471.
     // Situação da vice + ACL aditiva: PG17 medido, 369 aplicadas + mesmas 105 falhas = 474.
-    assert.equal(manifesto.aplicadas_esperadas, 369)
+    // Release do Senado: seis migrations de DDL pura sem falha nova, medidas
+    // pelo --gate local PG17: 375 + 105 = 480.
+    assert.equal(manifesto.aplicadas_esperadas, 375)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
