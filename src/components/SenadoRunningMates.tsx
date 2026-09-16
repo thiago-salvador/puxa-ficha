@@ -1,6 +1,6 @@
 import type { SenadoRunningMate, SenadoRunningMateAbsence } from "@/lib/senado-running-mates"
 
-/** Resultado de `loadSenadoRunningMates`, serializável do servidor para a ficha. */
+/** Resultado de `loadSenadoRunningMates`, enviado do servidor para a ficha. */
 export interface SenadoRunningMatesPayload {
   data: Record<string, SenadoRunningMate[]>
   absence: Record<string, SenadoRunningMateAbsence>
