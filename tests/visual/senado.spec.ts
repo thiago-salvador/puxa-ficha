@@ -32,6 +32,8 @@ test.describe("superfície local do Senado", () => {
     await page.goto("/candidato/fixture-senado-alfa", { waitUntil: "domcontentloaded" })
     await expect(page.getByRole("heading", { name: "Fixture Senadora Alfa", exact: true })).toBeVisible()
     await expect(page.locator("[data-pf-senado-suplentes]")).toBeVisible()
+    // Card de suplentes vive na grade da visão geral, antes do bloco de alertas.
+    await expect(page.locator("[data-pf-profile-overview-grid] [data-pf-senado-suplentes]")).toHaveCount(1)
     await expect(page.getByText("Fixture Suplente Alfa 1", { exact: true })).toBeVisible()
     await expect(page.getByText("Fixture Suplente Alfa 2", { exact: true })).toBeVisible()
   })

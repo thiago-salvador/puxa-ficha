@@ -8,6 +8,7 @@ import {
 } from "@/lib/trajetoria-public-display"
 import { DeferredCandidatoProfileClient } from "@/components/DeferredCandidatoProfileClient"
 import type { ProgramaGovernoManifestoPublico } from "@/lib/programa-governo"
+import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
 
 export function DeferredCandidatoProfile({
   ficha,
@@ -15,12 +16,14 @@ export function DeferredCandidatoProfile({
   pesquisasEnabled = false,
   pesquisas = [],
   programaGoverno = null,
+  senadoRunningMates = null,
 }: {
   ficha: FichaCandidato
   initialTab?: CandidatoProfileTabId
   pesquisasEnabled?: boolean
   pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
+  senadoRunningMates?: SenadoRunningMatesPayload | null
 }) {
   const historico = ficha.historico ?? []
   const mudancas = ficha.mudancas_partido ?? []
@@ -57,6 +60,7 @@ export function DeferredCandidatoProfile({
         pesquisasEnabled={pesquisasEnabled}
         pesquisas={pesquisas}
         programaGoverno={programaGoverno}
+        senadoRunningMates={senadoRunningMates}
         overview={{
           processos: ficha.total_processos ?? 0,
           processosVerificacao: ficha.processos_verificacao,
