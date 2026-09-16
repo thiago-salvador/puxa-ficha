@@ -310,22 +310,25 @@ async function mergePullRequest({ repository, env, pr, baseSha, deadline }) {
   return merged.merge_commit_sha
 }
 
-async function promoteProduction(sha, env, deadline) {
-  const vercel = new VercelAdapter({ token: env.VERCEL_TOKEN, teamId: env.VERCEL_TEAM_ID ?? env.VERCEL_ORG_ID, projectId: env.VERCEL_PROJECT_ID })
+export async function promoteProduction(sha, env, deadline, dependencies = {}) {
+  const vercel = dependencies.vercel ?? new VercelAdapter({ token: env.VERCEL_TOKEN, teamId: env.VERCEL_TEAM_ID ?? env.VERCEL_ORG_ID, projectId: env.VERCEL_PROJECT_ID })
+  const smokeRunner = dependencies.runReleaseSmokes ?? runReleaseSmokes
+  const proofRunner = dependencies.proveDeployment ?? proveDeployment
+  const githubApi = dependencies.ghApi ?? ghApi
   const staged = await pollUntil("deployment Vercel de produção", deadline, async () => {
     const deployment = await vercel.deploymentForSha(sha, { target: "production" })
     return deploymentReadyForPromotion(deployment, sha) || null
   })
-  await runReleaseSmokes({ env: { PF_BASE_URL: staged.url, PF_EXPECTED_DEPLOY_SHA: sha, VERCEL_AUTOMATION_BYPASS_SECRET: env.VERCEL_AUTOMATION_BYPASS_SECRET } })
-  const currentBase = (await ghApi(`repos/${env.POLL_REPOSITORY}/commits/main`, env)).sha
+  await smokeRunner({ env: { PF_BASE_URL: staged.url, PF_EXPECTED_DEPLOY_SHA: sha, VERCEL_AUTOMATION_BYPASS_SECRET: env.VERCEL_AUTOMATION_BYPASS_SECRET } })
+  const currentBase = (await githubApi(`repos/${env.POLL_REPOSITORY}/commits/main`, env)).sha
   if (currentBase !== sha) throw new Error("main mudou depois dos smokes; promoção abortada com segurança")
   await vercel.promote(staged.id)
   const current = await pollUntil("promoção Vercel", deadline, async () => {
     const deployment = await vercel.currentProductionForDomain("puxaficha.com.br")
     return deployment.sha === sha ? deployment : null
   })
-  await proveDeployment({ baseUrl: "https://puxaficha.com.br", expectedSha: sha, bypassSecret: env.VERCEL_AUTOMATION_BYPASS_SECRET })
-  await runReleaseSmokes({ env: { PF_BASE_URL: "https://puxaficha.com.br", PF_EXPECTED_DEPLOY_SHA: sha, VERCEL_AUTOMATION_BYPASS_SECRET: env.VERCEL_AUTOMATION_BYPASS_SECRET } })
+  await proofRunner({ baseUrl: "https://puxaficha.com.br", expectedSha: sha, bypassSecret: "" })
+  await smokeRunner({ env: { PF_BASE_URL: "https://puxaficha.com.br", PF_EXPECTED_DEPLOY_SHA: sha, VERCEL_AUTOMATION_BYPASS_SECRET: "" } })
   return current
 }
 
@@ -350,7 +353,7 @@ export async function publishValidatedPolls(input = {}) {
         validatePullRequest(candidate, { repository })
         await validatePrCatalogContent(repository, candidate, env, baseSha)
         try {
-          await proveDeployment({ baseUrl: "https://puxaficha.com.br", expectedSha: baseSha, bypassSecret: env.VERCEL_AUTOMATION_BYPASS_SECRET })
+          await proveDeployment({ baseUrl: "https://puxaficha.com.br", expectedSha: baseSha, bypassSecret: "" })
         } catch {
           await promoteProduction(baseSha, env, deadline)
         }

@@ -83,6 +83,11 @@ async function openPublicPolls(page: Page, path: string) {
     /^(1 pesquisa na semana|Média de [2-9]\d* pesquisas)$/,
   )
   await expect(section.locator("[data-pf-week-source] a")).not.toHaveCount(0)
+  const filters = section.getByRole("button", { name: "Filtros de pesquisa", exact: true })
+  if (await filters.isVisible()) {
+    await filters.click()
+    await expect(filters).toHaveAttribute("aria-expanded", "true")
+  }
   return section
 }
 
