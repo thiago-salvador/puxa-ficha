@@ -56,6 +56,20 @@
     "negative_claims_allowed_when_stale": false
   },
   {
+    "source_id": "senado-cohort",
+    "label": "TSE: onboarding manual de coorte Senado",
+    "authority_url": "https://dadosabertos.tse.jus.br/dataset/candidatos-2026",
+    "methodology_source_ids": ["tse"],
+    "collection_source_ids": ["senado-cohort"],
+    "cadence": "on_demand",
+    "max_age_hours": null,
+    "refresh_mode": "manual",
+    "evidence_type": "versioned_file",
+    "evidence_ref": "scripts/ingest-cohort.ts",
+    "stale_policy": "review_required",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
     "source_id": "transparencia",
     "label": "Portal da Transparência",
     "authority_url": "https://portaldatransparencia.gov.br",
@@ -80,6 +94,20 @@
     "refresh_mode": "manual",
     "evidence_type": "coleta_log",
     "evidence_ref": "coleta_log_ultima:transparencia-sanctions",
+    "stale_policy": "suppress_negative_claims",
+    "negative_claims_allowed_when_stale": false
+  },
+  {
+    "source_id": "gastos-executivo",
+    "label": "Portal da Transparência: gastos do Executivo (CPGF/UG)",
+    "authority_url": "https://portaldatransparencia.gov.br",
+    "methodology_source_ids": ["transparencia"],
+    "collection_source_ids": ["gastos-executivo"],
+    "cadence": "on_demand",
+    "max_age_hours": 2160,
+    "refresh_mode": "manual",
+    "evidence_type": "coleta_log",
+    "evidence_ref": "coleta_log_ultima:gastos-executivo",
     "stale_policy": "suppress_negative_claims",
     "negative_claims_allowed_when_stale": false
   },

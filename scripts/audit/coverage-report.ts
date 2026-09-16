@@ -299,10 +299,10 @@ export function lerSnapshot(path: string, slugs?: Set<string>): CandidatoCoverag
         patrimonioAusenciasOficiais: anosValidos(patrimonioAusenciasOficiais),
         financiamentoAnosComReceitaPositiva: anosValidos(financiamentoAnosComReceitaPositiva),
         financiamentoVerificacoes: Array.isArray(financiamentoVerificacoes)
-          ? financiamentoVerificacoes.filter((item): item is { ano_eleicao: number; resultado: "ausencia_oficial" | "nao_coletado" | "erro" } => {
+          ? financiamentoVerificacoes.filter((item): item is { ano_eleicao: number; resultado: "ausencia_oficial" | "nao_coletado" | "erro" | "nao_aplicavel" } => {
               if (typeof item !== "object" || item === null) return false
               const row = item as Record<string, unknown>
-              return Number.isInteger(row.ano_eleicao) && ["ausencia_oficial", "nao_coletado", "erro"].includes(String(row.resultado))
+              return Number.isInteger(row.ano_eleicao) && ["ausencia_oficial", "nao_coletado", "erro", "nao_aplicavel"].includes(String(row.resultado))
             })
           : [],
         posicoesTemasSemDeclaracao: stringsValidas(posicoesTemasSemDeclaracao),

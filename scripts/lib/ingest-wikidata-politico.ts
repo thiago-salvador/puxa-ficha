@@ -511,6 +511,7 @@ export async function ingestWikidataPolitico(
         continue
       }
 
+      result.coleta_url = SPARQL_ENDPOINT
       const partySource = await fetchPartyMemberships(dbCandidate.wikidata_id, deps.fetchJson)
       await deps.wait(250)
       const officeSource = await fetchOffices(dbCandidate.wikidata_id, deps.fetchJson)
@@ -543,7 +544,7 @@ export async function ingestWikidataPolitico(
       finalizarColeta(result, {
         aplicavel: true,
         volumeFonte: sourceRows,
-        detalhe: `${partySource.sourceRows} binding(s) de filiacao e ${officeSource.sourceRows} binding(s) de cargo retornados pela fonte`,
+        detalhe: `${partySource.sourceRows} binding(s) de filiacao e ${officeSource.sourceRows} binding(s) de cargo retornados pela fonte; qid=${dbCandidate.wikidata_id}; escopo=candidato`,
       })
       log(
         "wikidata-politico",

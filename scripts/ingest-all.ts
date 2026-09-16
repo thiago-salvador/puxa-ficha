@@ -30,6 +30,8 @@ import {
   parseErroMaxFracao,
 } from "./lib/pipeline-tolerancia-erros"
 import type { IngestResult } from "./lib/types"
+import { fileURLToPath } from "node:url"
+import { resolve } from "node:path"
 
 const VALID_SOURCES = [
   // Ordem correta: tse-situacao primeiro (CPF), depois APIs federais, depois enriquecimento
@@ -42,7 +44,7 @@ const VALID_SOURCES = [
 
 type IngestSource = (typeof VALID_SOURCES)[number]
 
-type IngestTask = {
+export type IngestTask = {
   source: IngestSource
   heading: string
   failureLabel: string
@@ -75,7 +77,7 @@ function parseSources(input: string[]): IngestSource[] {
   return selected as IngestSource[]
 }
 
-const INGEST_TASKS: IngestTask[] = [
+export const INGEST_TASKS: IngestTask[] = [
   {
     source: "tse-situacao",
     heading: "--- TSE Situacao da Candidatura + CPF ---",
@@ -235,7 +237,7 @@ const INGEST_TASKS: IngestTask[] = [
  * antes de montar resultado nenhum (o caso da credencial ausente em
  * ingest-transparencia-sanctions e ingest-transparencia).
  */
-async function runIngestTask(task: IngestTask, allResults: IngestResult[]): Promise<boolean> {
+export async function runIngestTask(task: IngestTask, allResults: IngestResult[], registerResults: typeof registrarColetaDeResultados = registrarColetaDeResultados): Promise<boolean> {
   log("pipeline", task.heading)
 
   try {
@@ -243,7 +245,7 @@ async function runIngestTask(task: IngestTask, allResults: IngestResult[]): Prom
     const results = await task.run()
     if (results) {
       allResults.push(...results)
-      await registrarColetaDeResultados(results)
+      if (results.length > 0) await registerResults(results)
     }
     return true
   } catch (err) {
@@ -345,4 +347,9 @@ async function main() {
   }
 }
 
-main()
+// Importado pelo runner de coorte para reutilizar o registro de tarefas e o
+// único ponto de escrita em coleta_log. A execução CLI continua acontecendo
+// apenas quando este arquivo é o entrypoint.
+if (process.argv[1] && resolve(process.argv[1]) === resolve(fileURLToPath(import.meta.url))) {
+  main()
+}

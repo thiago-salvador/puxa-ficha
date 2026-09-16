@@ -152,7 +152,7 @@ interface HistoricoEvento {
 
 interface FinanciamentoVerificacaoCoverage {
   ano_eleicao: number
-  resultado: "ausencia_oficial" | "nao_coletado" | "erro"
+  resultado: "ausencia_oficial" | "nao_coletado" | "erro" | "nao_aplicavel"
 }
 
 type FotoOrigem = "local" | "tse" | "wikimedia" | "oficial" | "terceiro"

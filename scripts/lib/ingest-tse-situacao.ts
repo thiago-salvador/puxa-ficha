@@ -157,6 +157,8 @@ interface IngestTSESituacaoOptions {
 export interface CandidateSnapshot {
   cpf: string | null
   situacao_candidatura: string | null
+  /** Estado editorial da ficha, mantido separado da situacao do pleito. */
+  status?: string | null
   naturalidade: string | null
   data_nascimento: string | null
   formacao: string | null
@@ -325,8 +327,20 @@ export function buildIngestPayload(
       const mapeado = mapearJulgamento(info.julgamento)
       if (!mapeado.ok) {
         blockedReasons.push(mapeado.bloqueio)
-      } else if (before?.situacao_candidatura !== mapeado.valor) {
-        payload.situacao_candidatura = mapeado.valor
+      } else {
+        if (before?.situacao_candidatura !== mapeado.valor) {
+          payload.situacao_candidatura = mapeado.valor
+        }
+
+        // O julgamento oficial do TSE tambem prova que a ficha deixou de ser
+        // uma mera pre-candidatura.  Atualize o lifecycle somente para um
+        // estado ainda provisório, preservando remocao/desistencia curadas.
+        // O guard de ano + SQ acima continua sendo a ancora de identidade.
+        const statusAtual = before?.status?.trim() || ""
+        const julgamentoDeferido = mapeado.valor === "deferido" || mapeado.valor === "deferido com recurso"
+        if (julgamentoDeferido && (statusAtual === "" || statusAtual === "pre-candidato")) {
+          payload.status = "candidato"
+        }
       }
     } else {
       // Ausência da fonte não prova pendência e nunca rebaixa um julgamento.
@@ -618,7 +632,7 @@ export async function ingestTSESituacao(
       // Fetch current DB values to avoid overwriting manually curated data
       const { data: dbCand, error: snapshotError } = await supabase
         .from("candidatos")
-        .select("cpf, situacao_candidatura, naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
+        .select("cpf, situacao_candidatura, status, naturalidade, data_nascimento, formacao, profissao_declarada, genero, estado_civil, cor_raca, email_campanha")
         .eq("id", candidatoId)
         .single()
       if (snapshotError) throw snapshotError
@@ -628,6 +642,7 @@ export async function ingestTSESituacao(
         ? {
             cpf: dbCand.cpf ?? null,
             situacao_candidatura: dbCand.situacao_candidatura ?? null,
+            status: dbCand.status ?? null,
             naturalidade: dbCand.naturalidade ?? null,
             data_nascimento: dbCand.data_nascimento ?? null,
             formacao: dbCand.formacao ?? null,

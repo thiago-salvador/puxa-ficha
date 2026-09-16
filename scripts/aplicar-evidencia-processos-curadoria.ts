@@ -560,6 +560,10 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
   )
   const resultado = resultadoDaClassificacao(candidato.classificacao)
 
+  if (candidato.busca.consultado_em !== undefined && candidato.busca.completo !== true) {
+    falhar(`${caminho}.busca.completo`, "true obrigatório para recibo DJEN novo")
+  }
+
   if (candidato.classificacao === "vazio_confirmado") {
     const tetoDeclarado = candidato.busca.teto_publico_atingido
     if (tetoDeclarado !== undefined && typeof tetoDeclarado !== "boolean") {
@@ -571,6 +575,17 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
     }
     if (tetoDeclarado === true || Number(totalApi ?? 0) >= 10_000) {
       falhar(`${caminho}.classificacao`, "vazio_confirmado proibido quando a busca atinge o teto publico")
+    }
+    // vazio_confirmado é uma alegação negativa pública ("nada encontrado").
+    // Ocorrência ambígua registrada significa que uma coincidência de nome
+    // ainda não teve identidade resolvida (ex.: "nome exato sem segundo
+    // identificador"): publicar vazio_confirmado nesse estado seria afirmar
+    // ausência enquanto uma correspondência não descartada permanece aberta.
+    // Reclassificar como bloqueado/encontrado preserva o registro da
+    // ocorrência (serializado em `detalhe` via ocorrencias_ambiguas) sem
+    // fazer a alegação negativa antes da hora.
+    if ((candidato.ocorrencias_ambiguas ?? []).length > 0) {
+      falhar(`${caminho}.classificacao`, "vazio_confirmado exige ausência de ocorrências ambíguas")
     }
   }
 

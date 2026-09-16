@@ -58,9 +58,13 @@ const REGISTRY_URL = "https://pesqele-divulgacao.tse.jus.br/"
 /** Select only an unambiguous published registration; never select by order. */
 export function selecionarRegistroPublicado(ids: string[], office: string | null, uf: string | null): string | null {
   const unique = [...new Set(ids)]
-  if (unique.length === 1) return unique[0]
-  if (office !== "Governador" || !uf || uf === "BR") return null
-  const state = unique.filter((id) => id.startsWith(`${uf}-`))
+  const normalizedUf = uf?.toUpperCase() ?? null
+  if (unique.length === 1) {
+    if (office === "Senador" && (!normalizedUf || normalizedUf === "BR" || !unique[0].startsWith(`${normalizedUf}-`))) return null
+    return unique[0]
+  }
+  if ((office !== "Governador" && office !== "Senador") || !normalizedUf || normalizedUf === "BR") return null
+  const state = unique.filter((id) => id.startsWith(`${normalizedUf}-`))
   return state.length === 1 && unique.every((id) => id === state[0] || id.startsWith("BR-")) ? state[0] : null
 }
 
@@ -291,8 +295,15 @@ function extractMethod(text: string, registeredMethod?: string): string {
 }
 
 function assertScope(text: string, target: AlvoMonitoramento, documentTurn?: number): void {
-  const officePattern = target.office === "Presidente" ? /presidente/i : /governador|governo/i
+  const officePattern = target.office === "Presidente"
+    ? /presidente/i
+    : target.office === "Senador"
+      ? /senado|senador/i
+      : /governador|governo/i
   if (!officePattern.test(text)) throw new Error("HTML inesperado: cargo ausente")
+  if (target.office === "Senador" && /(?:segundo|2[oº°])\s+turno/i.test(text)) {
+    throw new Error("HTML inesperado: Senado não possui segundo turno")
+  }
   const geographyMentioned = target.geography_code === "BR"
     ? /Brasil|nacional/i.test(text)
     : text.toLocaleLowerCase("pt-BR").includes(target.geography.toLocaleLowerCase("pt-BR"))

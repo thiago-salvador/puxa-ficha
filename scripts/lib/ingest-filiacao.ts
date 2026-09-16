@@ -123,13 +123,78 @@ const COLUNAS_FILIACAO_INDIVIDUAL = [
   "DT_DESFILIACAO",
 ] as const
 
-export function validarEsquemaIndividual(row: Record<string, string>): void {
-  const ausentes = COLUNAS_FILIACAO_INDIVIDUAL.filter((coluna) => !(coluna in row))
-  if (ausentes.length > 0) {
-    throw new Error(
-      `Arquivo oficial nao contem filiacao individual; colunas ausentes: ${ausentes.join(", ")}`,
-    )
+/**
+ * O recurso publicado pelo TSE com este nome e um perfil estatistico
+ * agregado. Ele nao contem eleitor, CPF, data de filiacao ou situacao
+ * individual e, portanto, nao pode ser usado para atribuir uma linha a um
+ * candidato. Mantemos o esquema aqui para que a recusa seja auditavel e nao
+ * pareca um arquivo corrompido.
+ */
+export const COLUNAS_FILIACAO_AGREGADA = [
+  "DT_GERACAO",
+  "HH_GERACAO",
+  "NR_ANO_MES",
+  "NR_PARTIDO",
+  "SG_PARTIDO",
+  "NM_PARTIDO",
+  "SG_UF",
+  "CD_MUNICIPIO",
+  "NM_MUNICIPIO",
+  "NR_ZONA",
+  "CD_GENERO",
+  "DS_GENERO",
+  "CD_FAIXA_ETARIA",
+  "DS_FAIXA_ETARIA",
+  "CD_ESTADO_CIVIL",
+  "DS_ESTADO_CIVIL",
+  "CD_GRAU_INSTRUCAO",
+  "DS_GRAU_INSTRUCAO",
+  "CD_OBJETO_OCUPACAO",
+  "NM_OCUPACAO",
+  "CD_RACA_COR",
+  "DS_RACA_COR",
+  "CD_IDENTIDADE_GENERO",
+  "DS_IDENTIDADE_GENERO",
+  "CD_QUILOMBOLA",
+  "DS_QUILOMBOLA",
+  "CD_INTERPRETE_LIBRAS",
+  "DS_INTERPRETE_LIBRAS",
+  "QT_FILIADO",
+] as const
+
+export type FiliacaoSchema = "individual" | "agregada" | "desconhecida"
+
+function normalizarCabecalho(value: string): string {
+  return value.replace(/^\uFEFF/, "").trim().replace(/^"|"$/g, "")
+}
+
+export function classificarEsquemaFiliacao(columns: readonly string[]): FiliacaoSchema {
+  const observed = new Set(columns.map(normalizarCabecalho))
+  if (COLUNAS_FILIACAO_INDIVIDUAL.every((column) => observed.has(column))) return "individual"
+  if (COLUNAS_FILIACAO_AGREGADA.every((column) => observed.has(column))) return "agregada"
+  return "desconhecida"
+}
+
+export class FiliacaoSchemaError extends Error {
+  readonly schema: FiliacaoSchema
+  readonly headers: string[]
+
+  constructor(schema: FiliacaoSchema, headers: readonly string[]) {
+    const normalizedHeaders = headers.map(normalizarCabecalho)
+    const missing = COLUNAS_FILIACAO_INDIVIDUAL.filter((column) => !normalizedHeaders.includes(column))
+    const detail = schema === "agregada"
+      ? `recurso agregado do TSE (cabeçalho observado: ${normalizedHeaders.join(",")})`
+      : `colunas ausentes: ${missing.join(", ")}`
+    super(`Arquivo oficial nao contem filiacao individual; ${detail}`)
+    this.name = "FiliacaoSchemaError"
+    this.schema = schema
+    this.headers = normalizedHeaders
   }
+}
+
+export function validarEsquemaIndividual(row: Record<string, string>): void {
+  const schema = classificarEsquemaFiliacao(Object.keys(row))
+  if (schema !== "individual") throw new FiliacaoSchemaError(schema, Object.keys(row))
 }
 
 interface TimelineEntry {

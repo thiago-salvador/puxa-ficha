@@ -1,11 +1,12 @@
-import { mkdirSync, readdirSync, rmSync, type Dirent } from "fs"
+import { createReadStream, mkdirSync, readdirSync, rmSync, type Dirent } from "fs"
+import { createHash } from "crypto"
 import { resolve, sep } from "path"
 import { execFileSync } from "child_process"
 import { supabase } from "./supabase"
-import { loadCandidatosPublicos, resolveCandidatoId } from "./helpers-db"
-import { parseCSV, sleep } from "./helpers"
+import { loadCandidatosCohortNaoPublica, loadCandidatosPublicos, resolveCandidatoId, type ExplicitCohortSelection } from "./helpers-db"
+import { loadCandidatos, parseCSV, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
-import type { IngestResult, CandidatoConfig } from "./types"
+import type { HistoricalCandidateIdentity, IngestResult, CandidatoConfig } from "./types"
 import {
   createTSEResolver,
   getResolveMethodPriority,
@@ -22,6 +23,7 @@ import {
 import { maskDocumentLikeSequences } from "../../src/lib/public-profile-dto"
 import { sanitizePublicTextOrThrow } from "../../src/lib/public-text"
 import { dedupeTsePatrimonioRows } from "../../src/lib/tse-patrimonio-dedupe"
+import { stripAccents } from "../../src/lib/strip-accents"
 import { carregarBloqueios } from "./identidade-bloqueada"
 import { financiamentoReceitasZipUrls } from "./tse-financiamento-receitas-urls"
 import {
@@ -31,14 +33,30 @@ import {
   normalizeFinanciamentoReceitaRow,
   resolveLegacyReceiptSqIdentity,
 } from "./financiamento-receita-legacy-row"
+import { financiamentoReceitaDedupKey } from "./financiamento-receita-dedup"
 import { downloadToFile } from "./download-to-file"
 import { observeVerifiedCandidateChange } from "./verified-candidate-changes"
+import { resolveEffectiveElectionContext } from "./tse-effective-election-year"
+import {
+  findPatrimonioIdentityReceipt,
+  patrimonioAbsencePublicDetail,
+  validatesPatrimonioFileAbsence,
+  type PatrimonioFileAbsenceReceipt,
+} from "./patrimonio-ausencia-receipts"
 
 const DATA_DIR = resolve(process.cwd(), "data/tse")
 export const DEFAULT_TSE_ANOS = [
   2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024,
 ]
+/** 2026 é um recorte explícito do lote Senado; não entra no default histórico. */
+const SUPPORTED_TSE_ANOS = new Set([...DEFAULT_TSE_ANOS, 2026])
 const KEEP_TSE_DOWNLOADS = process.env.PF_KEEP_TSE_DOWNLOADS === "1"
+
+async function sha256File(path: string): Promise<string> {
+  const hash = createHash("sha256")
+  for await (const chunk of createReadStream(path)) hash.update(chunk as Buffer)
+  return hash.digest("hex")
+}
 
 /**
  * O portal oficial do TSE só publica declarações de bens a partir de 2006.
@@ -63,7 +81,7 @@ export function parseTseYearsEnv(value: string | undefined): number[] {
   }
 
   const years = rawYears.map((year) => Number(year))
-  if (years.some((year) => !Number.isInteger(year) || !DEFAULT_TSE_ANOS.includes(year))) {
+  if (years.some((year) => !Number.isInteger(year) || !SUPPORTED_TSE_ANOS.has(year))) {
     throw new Error(`PF_TSE_ANOS contem ano invalido: ${value}`)
   }
   if (new Set(years).size !== years.length) {
@@ -92,13 +110,14 @@ export function sanitizeTseLegacyAssetText(value: string, context: string): stri
   return sanitizePublicTextOrThrow(normalized, context)
 }
 
+/** UFs estaduais necessárias para Governador e Senado; Presidente usa BR. */
 function getGovernorUFs(candidatos: CandidatoConfig[], slugAllowlist?: Set<string> | null): string[] {
   return [
     ...new Set(
       candidatos
         .filter(
           (candidato) =>
-            candidato.cargo_disputado === "Governador" &&
+            (candidato.cargo_disputado === "Governador" || candidato.cargo_disputado === "Senador") &&
             candidato.estado &&
             (!slugAllowlist || slugAllowlist.has(candidato.slug))
         )
@@ -117,6 +136,28 @@ function parseBRL(value: string, context: string): number {
   return parsed
 }
 
+type FinanciamentoOrigemCategoria =
+  | "fundo_partidario"
+  | "fundo_eleitoral"
+  | "pessoa_fisica"
+  | "recursos_proprios"
+  | "outros"
+
+/**
+ * Classifica a origem declarada pelo TSE depois da normalização de layouts.
+ * Os arquivos legados usam plural e acentos (por exemplo, "pessoas físicas"
+ * e "recursos próprios"); comparar somente o singular ASCII transforma essas
+ * linhas em "outros" e perde a composição, embora o total permaneça correto.
+ */
+export function classifyFinanciamentoOrigem(value: string): FinanciamentoOrigemCategoria {
+  const normalized = stripAccents(value).toUpperCase()
+  if (normalized.includes("FUNDO PARTID")) return "fundo_partidario"
+  if (normalized.includes("FUNDO ESPECIAL") || normalized.includes("FEFC")) return "fundo_eleitoral"
+  if (/PESSOAS?\s+FISIC/.test(normalized)) return "pessoa_fisica"
+  if (/RECURSOS?\s+PROPRIOS?/.test(normalized)) return "recursos_proprios"
+  return "outros"
+}
+
 async function downloadFile(url: string, dest: string): Promise<boolean> {
   return downloadToFile(url, dest, {
     onCacheHit: (path) => log("tse", `  Cache hit: ${path}`),
@@ -126,19 +167,37 @@ async function downloadFile(url: string, dest: string): Promise<boolean> {
   })
 }
 
-function extractZip(zipPath: string, extractDir: string, extraPatterns?: string[]) {
+export function extractZip(zipPath: string, extractDir: string, extraPatterns?: string[]) {
+  // Extraction is a completeness boundary: a stale or partially removed
+  // directory must never be mistaken for a successful package.
+  rmSync(extractDir, { recursive: true, force: true })
+  log("tse", `  Cleanup: ${extractDir}`)
   mkdirSync(extractDir, { recursive: true })
-  // Extract BR/BRASIL files (national-level candidates) + any extra patterns (e.g. UF files for governors)
-  const patterns = ["*_BR*", "*_BRASIL*", ...(extraPatterns || []).map((p) => `*_${p}*`)]
-  try {
-    execFileSync("unzip", ["-C", "-o", zipPath, ...patterns, "-d", extractDir], { stdio: "pipe" })
-  } catch {
-    // `unzip` exits non-zero when one optional glob has no match even if the
-    // requested BR/UF files were extracted. Preserve that bounded extraction.
-    if (readdirSync(extractDir).length > 0) return
-    // Fallback: extract everything if pattern match fails (some ZIPs have different naming)
-    execFileSync("unzip", ["-C", "-o", zipPath, "-d", extractDir], { stdio: "pipe" })
-  }
+  const listing = execFileSync("unzip", ["-Z1", zipPath], { stdio: ["ignore", "pipe", "pipe"] }).toString("latin1")
+  const members = listing.split(/\r?\n/).filter(Boolean)
+  const requestedUfs = (extraPatterns ?? []).map((value) => value.trim().toLowerCase()).filter(Boolean)
+  const hasPartition = (lower: string, token: string): boolean =>
+    lower.includes(`_${token}.`) || lower.includes(`_${token}_`) || lower.includes(`/${token}/`)
+  const selected = members.filter((member) => {
+    const lower = member.toLowerCase()
+    if (!/\.(csv|txt)$/.test(lower)) return false
+    if (hasPartition(lower, "br") || hasPartition(lower, "brasil")) return true
+    return requestedUfs.some((uf) => hasPartition(lower, uf))
+  })
+  const candidateFallback = members.filter((member) => {
+    const lower = member.toLowerCase()
+    return lower.endsWith(".csv") && (
+      /consulta_cand(?:_complementar)?/.test(lower) ||
+      /receita[c_]?candidato|receitas[_-]candidatos/.test(lower) ||
+      /bem[_-]candidato/.test(lower)
+    )
+  })
+  const names = selected.length > 0 ? selected : candidateFallback
+  if (names.length === 0) throw new Error(`ZIP TSE sem arquivo de candidatura extraível: ${zipPath}`)
+  // Passing concrete member names avoids optional glob failures and prevents
+  // malformed committee filenames from being touched. unzip still validates
+  // each selected member's CRC and exits non-zero on truncation.
+  execFileSync("unzip", ["-o", zipPath, ...names, "-d", extractDir], { stdio: "pipe" })
 }
 
 function cleanupDir(dir: string) {
@@ -225,6 +284,22 @@ export function financiamentoSourceFileUf(path: string, governorUFs: string[]): 
   return undefined
 }
 
+/**
+ * Quando o pacote oferece um consolidado nacional, ele é o snapshot canônico
+ * para receitas. As partições estaduais só entram como fallback quando não há
+ * membro BR/BRASIL; nunca se somam os dois snapshots.
+ */
+export function selectCanonicalFinanciamentoSourceFiles(paths: string[], ano?: number): string[] {
+  const unique = [...new Set(paths)]
+  // A adoção nacional comprovada nesta rodada é específica do fechamento
+  // 2012. Em 2010, por exemplo, `candidato/BR/` é uma partição presidencial,
+  // não um consolidado que possa substituir as UFs.
+  if (ano !== 2012) return unique
+  const brasil = unique.filter((path) => /(?:^|[\\/])receitas_candidatos_2012_brasil\.(?:csv|txt)$/i.test(path))
+  if (brasil.length > 1) throw new Error("mais de um consolidado BRASIL 2012 no pacote")
+  return brasil.length === 1 ? brasil : unique
+}
+
 export function validarCoberturaPacoteReceitas(
   ano: number,
   extractDir: string,
@@ -259,7 +334,14 @@ type SqCandidateIdentity = {
   candidato: CandidatoConfig
   sqCandidato: string
   uf?: string
+  historicalIdentity?: HistoricalCandidateIdentity
   declarouBens?: string
+  sourceYear: number
+  effectiveYear: number
+  electionDate: string | null
+  electionType: string | null
+  cargo: string | null
+  fileAbsenceReceipt?: PatrimonioFileAbsenceReceipt
   /**
    * A identidade foi reencontrada no pacote oficial pelo SQ curado do seed.
    * Somente esse nível autoriza retirar uma quarentena antiga ao reingerir.
@@ -268,16 +350,71 @@ type SqCandidateIdentity = {
 }
 
 export function selectPatrimonioAbsenceCandidates(
-  identities: Array<{ slug: string; sqCandidato: string; uf?: string; declarouBens?: string }>,
+  identities: Array<{
+    slug: string
+    sqCandidato: string
+    uf?: string
+    declarouBens?: string
+    sourceYear?: number
+    effectiveYear?: number
+    electionDate?: string | null
+    electionType?: string | null
+    cargo?: string | null
+    fileAbsenceReceipt?: PatrimonioFileAbsenceReceipt
+  }>,
   slugsWithPatrimonio: ReadonlySet<string>,
   slugAllowlist: ReadonlySet<string> | null = null,
 ) {
-  const bySlug = new Map(identities.map((identity) => [identity.slug, identity]))
-  return [...bySlug.values()]
-    .filter((identity) => !slugsWithPatrimonio.has(identity.slug))
-    .filter((identity) => identity.declarouBens === "N")
+  const byContext = new Map(identities.map((identity) => [
+    `${identity.slug}|${identity.sqCandidato}|${identity.uf ?? ""}`,
+    identity,
+  ]))
+  return [...byContext.values()]
+    .filter((identity) =>
+      !slugsWithPatrimonio.has(identity.slug) &&
+      !slugsWithPatrimonio.has(`${identity.slug}|${identity.sqCandidato}|${identity.uf ?? ""}`),
+    )
+    .filter((identity) => identity.declarouBens === "N" || Boolean(identity.fileAbsenceReceipt))
     .filter((identity) => !slugAllowlist || slugAllowlist.has(identity.slug))
     .sort((a, b) => a.slug.localeCompare(b.slug))
+}
+
+type LegacyPatrimonioRow = { id: string; valor_total: number | string | null; bens: unknown }
+export type PatrimonioLegacyDecision =
+  | { action: "insert" }
+  | { action: "update_legacy"; id: string; expectedTotal: number; expectedBens: unknown }
+  | { action: "block"; reason: string }
+
+function stableJson(value: unknown): string {
+  if (Array.isArray(value)) return `[${value.map(stableJson).join(",")}]`
+  if (value && typeof value === "object") {
+    return `{${Object.entries(value as Record<string, unknown>)
+      .sort(([left], [right]) => left.localeCompare(right))
+      .map(([key, item]) => `${JSON.stringify(key)}:${stableJson(item)}`)
+      .join(",")}}`
+  }
+  return JSON.stringify(value) ?? "undefined"
+}
+
+export function decidePatrimonioLegacyReconciliation(input: {
+  contextCount: number
+  legacyRows: LegacyPatrimonioRow[]
+  valorTotal: number
+  bens: unknown
+}): PatrimonioLegacyDecision {
+  if (input.legacyRows.length === 0) return { action: "insert" }
+  if (input.contextCount !== 1) {
+    return { action: "block", reason: "legado sem SQ coexistiria com múltiplos contextos nominais" }
+  }
+  if (input.legacyRows.length !== 1) {
+    return { action: "block", reason: `esperado um legado sem SQ, encontrados ${input.legacyRows.length}` }
+  }
+  const legacy = input.legacyRows[0]
+  const legacyTotal = Number(legacy.valor_total)
+  if (!Number.isFinite(legacyTotal) || legacyTotal !== input.valorTotal || stableJson(legacy.bens) !== stableJson(input.bens)) {
+    return { action: "block", reason: "legado sem SQ diverge do total ou dos itens do contexto nominal" }
+  }
+  return { action: "update_legacy", id: legacy.id, expectedTotal: legacyTotal, expectedBens: legacy.bens }
 }
 
 export function validarCoberturaPacotePatrimonio(
@@ -325,6 +462,68 @@ export function patrimonioDeclarationObservation(
     identityKey: financiamentoReceitaIdentityKey({ sqCandidato, ano, uf }),
     status,
   }
+}
+
+/**
+ * SQ dos ciclos antigos não é global. Quando existe uma identidade histórica
+ * reconciliada, a linha precisa repetir a unidade eleitoral, cargo e número
+ * registrados no manifesto; o nome histórico permite aliases como COSTA sem
+ * abrir um fallback nominal. Sem essa identidade por linha, o SQ é recusado.
+ */
+function historicalIdentityFromValidatedRow(
+  candidato: CandidatoConfig,
+  row: Record<string, string>,
+  ano: number,
+  sqCandidato: string,
+  uf: string,
+): HistoricalCandidateIdentity | undefined {
+  if (ano >= 2010) return candidato.historical_identity_by_year?.[String(ano)]
+  const configured = candidato.historical_identity_by_year?.[String(ano)]
+  const sgUe = (row.SG_UE || row.SG_UE_SUP || row.SG_UE_SUPERIOR || "").trim()
+  const cargoCodigo = (row.CD_CARGO || row.CD_CARGO_CANDIDATO || "").trim()
+  const cargo = (row.DS_CARGO || "").trim()
+  const numero = (row.NR_CAND || row.NR_CANDIDATO || row.NR_CANDIDATO_DIG || "").trim()
+  const nome = (row.NM_CANDIDATO || row.NOME_CANDIDATO || row.NO_CAND || "").trim()
+  const nomeUrna = (row.NM_URNA_CANDIDATO || row.NOME_URNA || "").trim()
+  return {
+    ...configured,
+    sq_candidato: sqCandidato,
+    uf,
+    ...(sgUe ? { sg_ue: sgUe } : {}),
+    ...(cargoCodigo ? { cargo_codigo: cargoCodigo } : {}),
+    ...(cargo ? { cargo } : {}),
+    ...(numero ? { numero } : {}),
+    ...(nome ? { nome } : {}),
+    ...(nomeUrna ? { nome_urna: nomeUrna } : {}),
+  }
+}
+
+export function historicalPreloadedRowMatches(
+  candidato: CandidatoConfig,
+  row: Record<string, string>,
+  ano: number,
+): boolean {
+  if (ano >= 2010) return true
+  const historical = candidato.historical_identity_by_year?.[String(ano)]
+  // Existing cohorts may lack the new historical context, but retain the
+  // previous exact-name guard. Apply the stricter SG_UE/cargo/número/alias
+  // contract only when a historical identity was explicitly reconciled.
+  if (!historical) return historicalCandidateRowMatches(row, candidato)
+  if (!historicalCandidateRowMatches(row, {
+    nome_completo: candidato.nome_completo,
+    nome_urna: candidato.nome_urna,
+    ...(historical.nome ? { nome_completo_alternativos: [historical.nome] } : {}),
+    ...(historical.nome_urna ? { nome_urna_alternativos: [historical.nome_urna] } : {}),
+  })) return false
+  const rowSgUe = (row.SG_UE || row.SG_UE_SUP || row.SG_UE_SUPERIOR || "").trim().toUpperCase()
+  const rowCargoCode = (row.CD_CARGO || row.CD_CARGO_CANDIDATO || "").trim().toUpperCase()
+  const rowCargoLabel = (row.DS_CARGO || "").trim().toUpperCase()
+  const rowNumero = (row.NR_CAND || row.NR_CANDIDATO || row.NR_CANDIDATO_DIG || "").trim()
+  if (!historical.sg_ue || rowSgUe !== historical.sg_ue.trim().toUpperCase()) return false
+  if (historical.cargo_codigo && rowCargoCode && rowCargoCode !== historical.cargo_codigo.trim().toUpperCase()) return false
+  if (historical.cargo_codigo && !rowCargoCode && (!historical.cargo || rowCargoLabel !== historical.cargo.trim().toUpperCase())) return false
+  if (historical.numero && rowNumero !== historical.numero.trim()) return false
+  return true
 }
 
 type PatrimonioDeclarationStatus = "S" | "N"
@@ -426,9 +625,28 @@ async function buildSQMap(
       observed: boolean
       uf?: string
       declarouBens?: string
+      historicalIdentity?: HistoricalCandidateIdentity
+      sourceYear: number
+      effectiveYear: number
+      electionDate: string | null
+      electionType: string | null
+      cargo: string | null
+      fileAbsenceReceipt?: PatrimonioFileAbsenceReceipt
     }
   >()
   const callerAmbiguousPriority = new Map<string, number>()
+  const receiptSelections = new Map<string, {
+    candidato: CandidatoConfig
+    sq: string
+    uf: string
+    sourceYear: number
+    effectiveYear: number
+    electionDate: string | null
+    electionType: string | null
+    cargo: string | null
+    fileAbsenceReceipt: PatrimonioFileAbsenceReceipt
+  }>()
+  const consultaPackageSha256 = await sha256File(candZip)
   const patrimonioDeclarations = await loadPatrimonioDeclarationObservations(ano, governorUFs)
 
   // O SQ curado continua disponível para coletar linhas reais. Ele não prova
@@ -448,6 +666,12 @@ async function buildSQMap(
       observed: false,
       uf: configuredUf || undefined,
       declarouBens: undefined,
+      historicalIdentity: candidato.historical_identity_by_year?.[String(ano)],
+      sourceYear: ano,
+      effectiveYear: ano,
+      electionDate: null,
+      electionType: null,
+      cargo: candidato.historical_identity_by_year?.[String(ano)]?.cargo ?? null,
     })
   }
 
@@ -467,6 +691,39 @@ async function buildSQMap(
       if (!sq) return
       const uf = candidateUfFromTseRow(row)
 
+      const election = resolveEffectiveElectionContext({
+        ano_eleicao: ano,
+        dt_eleicao: row.DT_ELEICAO,
+        nm_tipo_eleicao: row.NM_TIPO_ELEICAO,
+      })
+      const electionType = row.NM_TIPO_ELEICAO?.trim() || null
+      const cargo = row.DS_CARGO?.trim() || null
+      if (uf && cargo) {
+        const receipt = findPatrimonioIdentityReceipt({
+          sourceYear: ano,
+          consultaPackageSha256,
+          sqCandidato: sq,
+          uf,
+          cargo,
+          electionDate: election.electionDate,
+          electionType,
+        })
+        const receiptCandidate = receipt ? candidatosBySlug.get(receipt.slug) : undefined
+        if (receipt && receiptCandidate) {
+          receiptSelections.set(receipt.slug, {
+            candidato: receiptCandidate,
+            sq,
+            uf,
+            sourceYear: election.sourceYear,
+            effectiveYear: election.effectiveYear,
+            electionDate: election.electionDate,
+            electionType,
+            cargo,
+            fileAbsenceReceipt: receipt,
+          })
+        }
+      }
+
       const match = resolver.resolveRow(row)
       if (!match) return
       if (shouldSkipWeakMatch(match.method)) return
@@ -474,15 +731,16 @@ async function buildSQMap(
       const candidato = candidatosBySlug.get(match.slug)
       if (!candidato) return
       const configuredUf = candidato.ids.tse_uf_candidatura?.[String(ano)]?.trim().toUpperCase()
+      const effectiveUf = uf ?? configuredUf
       const declarouBens = row.ST_DECLARAR_BENS?.trim().toUpperCase() || undefined
       if (
         ano < 2010 &&
         match.method === "sq-preloaded" &&
-        !historicalCandidateRowMatches(row, candidato)
+        !historicalPreloadedRowMatches(candidato, row, ano)
       ) {
         return
       }
-      if (configuredUf && configuredUf !== uf) return
+      if (!effectiveUf || (configuredUf && uf && configuredUf !== uf)) return
 
       const priority = getResolveMethodPriority(match.method)
       const existing = selectedBySlug.get(match.slug)
@@ -493,8 +751,14 @@ async function buildSQMap(
           method: match.method,
           priority,
           observed: true,
-          uf,
+          uf: effectiveUf,
           declarouBens,
+          historicalIdentity: historicalIdentityFromValidatedRow(candidato, row, ano, sq, effectiveUf),
+          sourceYear: election.sourceYear,
+          effectiveYear: election.effectiveYear,
+          electionDate: election.electionDate,
+          electionType,
+          cargo,
         })
         return
       }
@@ -510,8 +774,14 @@ async function buildSQMap(
           method: match.method,
           priority,
           observed: true,
-          uf,
+          uf: effectiveUf,
           declarouBens,
+          historicalIdentity: historicalIdentityFromValidatedRow(candidato, row, ano, sq, effectiveUf),
+          sourceYear: election.sourceYear,
+          effectiveYear: election.effectiveYear,
+          electionDate: election.electionDate,
+          electionType,
+          cargo,
         })
         callerAmbiguousPriority.delete(match.slug)
         return
@@ -524,16 +794,34 @@ async function buildSQMap(
           method: match.method,
           priority,
           observed: true,
-          uf,
+          uf: effectiveUf,
           declarouBens,
+          historicalIdentity: historicalIdentityFromValidatedRow(candidato, row, ano, sq, effectiveUf),
+          sourceYear: election.sourceYear,
+          effectiveYear: election.effectiveYear,
+          electionDate: election.electionDate,
+          electionType,
+          cargo,
         })
         callerAmbiguousPriority.delete(match.slug)
         return
       }
 
       if (existing.sq === sq) {
-        if (!existing.uf && uf) existing.uf = uf
+        const rowIdentity = historicalIdentityFromValidatedRow(candidato, row, ano, sq, effectiveUf)
+        const existingIdentity = existing.historicalIdentity
+        const contextConflict = ["sg_ue", "cargo_codigo", "numero"].some((field) => {
+          const left = existingIdentity?.[field as keyof HistoricalCandidateIdentity]
+          const right = rowIdentity?.[field as keyof HistoricalCandidateIdentity]
+          return typeof left === "string" && typeof right === "string" && left.trim().toUpperCase() !== right.trim().toUpperCase()
+        })
+        if (contextConflict) {
+          callerAmbiguousPriority.set(match.slug, priority)
+          return
+        }
+        if (!existing.uf && effectiveUf) existing.uf = effectiveUf
         if (!existing.declarouBens && declarouBens) existing.declarouBens = declarouBens
+        if (!existing.historicalIdentity && rowIdentity) existing.historicalIdentity = rowIdentity
         return
       }
 
@@ -552,6 +840,22 @@ async function buildSQMap(
     )
   }
 
+  // O recibo é nominal, ligado aos hashes dos pacotes e à linha exata de
+  // consulta_cand. Ele resolve somente os 17 contextos auditados; em especial,
+  // impede que a candidatura suplementar 2026 de Bartô substitua seu pleito
+  // ordinário de senador em 2022.
+  for (const [slug, receiptSelection] of receiptSelections) {
+    selectedBySlug.set(slug, {
+      ...receiptSelection,
+      method: "sq-preloaded",
+      priority: getResolveMethodPriority("sq-preloaded"),
+      observed: true,
+      declarouBens: undefined,
+      historicalIdentity: undefined,
+    })
+    callerAmbiguousPriority.delete(slug)
+  }
+
   const sqMap = new Map<string, SqCandidateIdentity>()
   let preloaded = 0
   let resolved = 0
@@ -566,6 +870,7 @@ async function buildSQMap(
       candidato: selection.candidato,
       sqCandidato: selection.sq,
       uf: selection.uf,
+      historicalIdentity: selection.historicalIdentity ?? selection.candidato.historical_identity_by_year?.[String(ano)],
       publicacaoAutorizada: selection.observed && selection.method === "sq-preloaded",
       declarouBens: selection.observed
         ? patrimonioDeclarations.observations.get(
@@ -576,6 +881,12 @@ async function buildSQMap(
             }),
           ) ?? selection.declarouBens
         : undefined,
+      sourceYear: selection.sourceYear,
+      effectiveYear: selection.effectiveYear,
+      electionDate: selection.electionDate,
+      electionType: selection.electionType,
+      cargo: selection.cargo ?? selection.historicalIdentity?.cargo ?? null,
+      fileAbsenceReceipt: selection.fileAbsenceReceipt,
     }
     if (selection.uf) {
       sqMap.set(
@@ -605,6 +916,7 @@ async function processPatrimonio(
   slugAllowlist: Set<string> | null,
   options: Pick<IngestTseOptions, "dryRun" | "onPlannedRow" | "observationOnly" | "onObservation">,
   sourceUrl: string,
+  bensPackageSha256: string,
 ): Promise<IngestResult[]> {
   const brPaths = findCSVs(extractDir, "_BR").concat(findCSVs(extractDir, "_BRASIL"))
   const requiredUFs = [
@@ -626,6 +938,8 @@ async function processPatrimonio(
 
   const parsedRows: Array<{
     slug: string
+    candidateSlug: string
+    identity: SqCandidateIdentity
     sourceKey: string
     ordem: string
     tipo: string
@@ -638,9 +952,10 @@ async function processPatrimonio(
     await parseCSV(csvPath, (row) => {
       const sq = (row.SQ_CANDIDATO || "").trim()
       const uf = candidateUfFromTseRow(row)
-      const cand = uf
-        ? sqMap.get(financiamentoReceitaIdentityKey({ sqCandidato: sq, ano, uf }))?.candidato
+      const identity = uf
+        ? sqMap.get(financiamentoReceitaIdentityKey({ sqCandidato: sq, ano, uf }))
         : undefined
+      const cand = identity?.candidato
       if (!cand) return
       if (slugAllowlist && !slugAllowlist.has(cand.slug)) return
 
@@ -650,7 +965,9 @@ async function processPatrimonio(
       )
 
       parsedRows.push({
-        slug: cand.slug,
+        slug: `${cand.slug}|${identity.sqCandidato}|${identity.uf ?? ""}`,
+        candidateSlug: cand.slug,
+        identity,
         sourceKey: csvPath,
         ordem: row.NR_ORDEM_BEM_CANDIDATO || "",
         tipo: sanitizeTseLegacyAssetText(
@@ -674,9 +991,19 @@ async function processPatrimonio(
     )
   }
 
-  const aggregated = new Map<string, { bens: { tipo: string; descricao: string; valor: number }[]; total: number }>()
+  const aggregated = new Map<string, {
+    candidateSlug: string
+    identity: SqCandidateIdentity
+    bens: { tipo: string; descricao: string; valor: number }[]
+    total: number
+  }>()
   for (const item of dedupedRows) {
-    const existing = aggregated.get(item.slug) ?? { bens: [], total: 0 }
+    const existing = aggregated.get(item.slug) ?? {
+      candidateSlug: item.candidateSlug,
+      identity: item.identity,
+      bens: [],
+      total: 0,
+    }
     existing.bens.push({
       tipo: item.tipo,
       descricao: item.descricao,
@@ -686,32 +1013,42 @@ async function processPatrimonio(
     aggregated.set(item.slug, existing)
   }
 
+  const contextCounts = new Map<string, number>()
+  for (const data of aggregated.values()) {
+    const key = `${data.candidateSlug}|${data.identity.effectiveYear}`
+    contextCounts.set(key, (contextCounts.get(key) ?? 0) + 1)
+  }
+
   const results: IngestResult[] = []
-  const publicationAuthorizedSlugs = new Set(
-    [...sqMap.values()]
-      .filter((identity) => identity.publicacaoAutorizada)
-      .map((identity) => identity.candidato.slug),
-  )
-  for (const [slug, data] of aggregated) {
+  for (const data of aggregated.values()) {
+    const slug = data.candidateSlug
+    const identity = data.identity
     const candidatoId = await resolveCandidatoId(slug)
     if (!candidatoId) continue
 
     const row = {
       candidato_id: candidatoId,
-      ano_eleicao: ano,
+      ano_eleicao: identity.effectiveYear,
+      ano_arquivo: identity.sourceYear,
+      sq_candidato: identity.sqCandidato,
+      uf_candidatura: identity.uf ?? null,
+      cargo_candidatura: identity.cargo,
+      data_eleicao: identity.electionDate
+        ? identity.electionDate.split("/").reverse().join("-")
+        : null,
+      tipo_eleicao: identity.electionType,
       valor_total: Math.round(data.total * 100) / 100,
       bens: data.bens,
       fonte: "TSE",
-      ...(publicationAuthorizedSlugs.has(slug)
+      ...(identity.publicacaoAutorizada
         ? { despublicado_em: null, despublicacao_motivo: null }
         : {}),
     }
 
     const observeWealth = async () => {
-      const identity = [...sqMap.values()].find((item) => item.candidato.slug === slug && item.publicacaoAutorizada)
-      if (!identity) return
+      if (!identity.publicacaoAutorizada) return
       const outcome = await observeVerifiedCandidateChange({
-        candidateId: candidatoId, field: "patrimonio", year: ano,
+        candidateId: candidatoId, field: "patrimonio", year: identity.effectiveYear,
         value: String(row.valor_total), sq: identity.sqCandidato, uf: identity.uf ?? "",
         sourceUrl, identityVerified: identity.publicacaoAutorizada,
         dryRun: options.dryRun, observationOnly: options.observationOnly,
@@ -719,7 +1056,11 @@ async function processPatrimonio(
         rpc: (name, args) => supabase.rpc(name, args),
         confirmPersisted: async () => {
           const { data: persisted, error: readError } = await supabase.from("patrimonio")
-            .select("valor_total, despublicado_em").eq("candidato_id", candidatoId).eq("ano_eleicao", ano).maybeSingle()
+            .select("valor_total, despublicado_em")
+            .eq("candidato_id", candidatoId)
+            .eq("ano_eleicao", identity.effectiveYear)
+            .eq("sq_candidato", identity.sqCandidato)
+            .maybeSingle()
           if (readError) throw readError
           return persisted != null && persisted.despublicado_em == null && persisted.valor_total != null && Number(persisted.valor_total) === row.valor_total
         },
@@ -747,7 +1088,8 @@ async function processPatrimonio(
         .from("patrimonio")
         .select("id")
         .eq("candidato_id", candidatoId)
-        .eq("ano_eleicao", ano)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .eq("sq_candidato", identity.sqCandidato)
         .maybeSingle()
       if (existingError) throw existingError
 
@@ -758,8 +1100,36 @@ async function processPatrimonio(
           .eq("id", existing.id)
         if (updateError) throw updateError
       } else {
-        const { error: insertError } = await supabase.from("patrimonio").insert(row)
-        if (insertError) throw insertError
+        const { data: legacyRows, error: legacyError } = await supabase
+          .from("patrimonio")
+          .select("id,valor_total,bens")
+          .eq("candidato_id", candidatoId)
+          .eq("ano_eleicao", identity.effectiveYear)
+          .is("sq_candidato", null)
+        if (legacyError) throw legacyError
+        const decision = decidePatrimonioLegacyReconciliation({
+          contextCount: contextCounts.get(`${slug}|${identity.effectiveYear}`) ?? 0,
+          legacyRows: (legacyRows ?? []) as LegacyPatrimonioRow[],
+          valorTotal: row.valor_total,
+          bens: row.bens,
+        })
+        if (decision.action === "block") throw new Error(`${slug}/${identity.effectiveYear}: ${decision.reason}`)
+        if (decision.action === "update_legacy") {
+          const { data: reconciled, error: reconcileError } = await supabase
+            .from("patrimonio")
+            .update(row)
+            .eq("id", decision.id)
+            .is("sq_candidato", null)
+            .eq("valor_total", decision.expectedTotal)
+            .eq("bens", JSON.stringify(decision.expectedBens))
+            .select("id")
+            .maybeSingle()
+          if (reconcileError) throw reconcileError
+          if (!reconciled) throw new Error(`${slug}/${identity.effectiveYear}: CAS do legado sem SQ não alterou linha`)
+        } else {
+          const { error: insertError } = await supabase.from("patrimonio").insert(row)
+          if (insertError) throw insertError
+        }
       }
 
       // Só retire uma ausência anterior depois que o patrimônio real estiver
@@ -769,12 +1139,13 @@ async function processPatrimonio(
         .from("patrimonio_ausencia_oficial")
         .delete()
         .eq("candidato_id", candidatoId)
-        .eq("ano_eleicao", ano)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .eq("sq_candidato", identity.sqCandidato)
       if (staleAbsenceError) throw staleAbsenceError
       await observeWealth()
     }
 
-    log("tse", `  ${slug}: patrimonio ${ano} — R$ ${Math.round(data.total).toLocaleString()} (${data.bens.length} bens)`)
+    log("tse", `  ${slug}: patrimonio ${identity.effectiveYear} (${identity.sqCandidato}) — R$ ${Math.round(data.total).toLocaleString()} (${data.bens.length} bens)`)
     results.push({
       source: "tse",
       candidato: slug,
@@ -792,25 +1163,52 @@ async function processPatrimonio(
       sqCandidato: identity.sqCandidato,
       uf: identity.uf,
       declarouBens: identity.declarouBens,
+      sourceYear: identity.sourceYear,
+      effectiveYear: identity.effectiveYear,
+      electionDate: identity.electionDate,
+      electionType: identity.electionType,
+      cargo: identity.cargo,
+      fileAbsenceReceipt: validatesPatrimonioFileAbsence(identity.fileAbsenceReceipt, bensPackageSha256)
+        ? identity.fileAbsenceReceipt
+        : undefined,
     })),
-    new Set(aggregated.keys()),
+    new Set([...aggregated.values()].map((data) =>
+      `${data.candidateSlug}|${data.identity.sqCandidato}|${data.identity.uf ?? ""}`,
+    )),
     slugAllowlist,
   )
   const verifiedAt = new Date().toISOString()
   const execution = process.env.GITHUB_RUN_ID
     ? `github-actions:${process.env.GITHUB_RUN_ID}`
     : "ingest-tse"
+  const absenceContextCounts = new Map<string, number>()
+  for (const identity of absenceCandidates) {
+    const key = `${identity.slug}|${identity.effectiveYear ?? ano}`
+    absenceContextCounts.set(key, (absenceContextCounts.get(key) ?? 0) + 1)
+  }
 
   for (const identity of absenceCandidates) {
     const candidatoId = await resolveCandidatoId(identity.slug)
     if (!candidatoId) continue
     const row = {
       candidato_id: candidatoId,
-      ano_eleicao: ano,
+      ano_eleicao: identity.effectiveYear ?? ano,
+      ano_arquivo: identity.sourceYear ?? ano,
       sq_candidato: identity.sqCandidato,
+      uf_candidatura: identity.uf ?? null,
+      cargo_candidatura: identity.cargo,
+      data_eleicao: identity.electionDate
+        ? identity.electionDate.split("/").reverse().join("-")
+        : null,
+      tipo_eleicao: identity.electionType,
       fonte_url: sourceUrl,
       verificado_em: verifiedAt,
-      detalhe: "Identidade confirmada por SQ_CANDIDATO, ano e UF; consulta_cand registra ST_DECLARAR_BENS=N e o pacote oficial completo não traz bens para a candidatura.",
+      detalhe: patrimonioAbsencePublicDetail({
+        cargo: identity.cargo,
+        uf: identity.uf,
+        effectiveYear: identity.effectiveYear ?? ano,
+        declarouBens: identity.declarouBens,
+      }),
       execucao: execution,
     }
 
@@ -821,24 +1219,60 @@ async function processPatrimonio(
         .from("patrimonio")
         .select("id")
         .eq("candidato_id", candidatoId)
-        .eq("ano_eleicao", ano)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .eq("sq_candidato", identity.sqCandidato)
         .maybeSingle()
       if (existingPatrimonioError) throw existingPatrimonioError
       if (existingPatrimonio) continue
+
+      const { data: legacyPatrimonio, error: legacyPatrimonioError } = await supabase
+        .from("patrimonio")
+        .select("id")
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .is("sq_candidato", null)
+      if (legacyPatrimonioError) throw legacyPatrimonioError
+      if ((legacyPatrimonio ?? []).length > 0) {
+        throw new Error(`${identity.slug}/${identity.effectiveYear}: patrimônio legado sem SQ impede registrar ausência para um contexto nominal`)
+      }
 
       const { data: existingAbsence, error: existingAbsenceError } = await supabase
         .from("patrimonio_ausencia_oficial")
         .select("id")
         .eq("candidato_id", candidatoId)
-        .eq("ano_eleicao", ano)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .eq("sq_candidato", identity.sqCandidato)
         .maybeSingle()
       if (existingAbsenceError) throw existingAbsenceError
       if (existingAbsence) continue
 
-      const { error: absenceError } = await supabase
+      const { data: legacyAbsences, error: legacyAbsencesError } = await supabase
         .from("patrimonio_ausencia_oficial")
-        .insert(row)
-      if (absenceError) throw absenceError
+        .select("id")
+        .eq("candidato_id", candidatoId)
+        .eq("ano_eleicao", identity.effectiveYear)
+        .is("sq_candidato", null)
+      if (legacyAbsencesError) throw legacyAbsencesError
+      if ((legacyAbsences ?? []).length > 0) {
+        const contextCount = absenceContextCounts.get(`${identity.slug}|${identity.effectiveYear}`) ?? 0
+        if (contextCount !== 1 || legacyAbsences!.length !== 1) {
+          throw new Error(`${identity.slug}/${identity.effectiveYear}: ausência legada sem SQ não pode ser escolhida entre múltiplos contextos`)
+        }
+        const { data: reconciled, error: reconcileError } = await supabase
+          .from("patrimonio_ausencia_oficial")
+          .update(row)
+          .eq("id", legacyAbsences![0].id)
+          .is("sq_candidato", null)
+          .select("id")
+          .maybeSingle()
+        if (reconcileError) throw reconcileError
+        if (!reconciled) throw new Error(`${identity.slug}/${identity.effectiveYear}: CAS da ausência legada sem SQ não alterou linha`)
+      } else {
+        const { error: absenceError } = await supabase
+          .from("patrimonio_ausencia_oficial")
+          .insert(row)
+        if (absenceError) throw absenceError
+      }
     }
 
     results.push({
@@ -902,7 +1336,7 @@ async function processFinanciamento(
             .concat(findCSVs(extractDir, "receitas_candidatos"))
             .concat(findCSVs(extractDir, "receita_candidato"))
             .concat(findCSVs(extractDir, "receitascandidatos"))
-  const uniquePaths = csvPaths.filter((v, i, a) => a.indexOf(v) === i)
+  const uniquePaths = selectCanonicalFinanciamentoSourceFiles(csvPaths, ano)
 
   if (uniquePaths.length === 0) {
     throw new Error(`Ficheiros de receitas de candidatos nao encontrados para ${ano}`)
@@ -921,6 +1355,7 @@ async function processFinanciamento(
   interface FinData {
     sqCandidato: string
     uf: string | null
+    cargoCandidatura: string | null
     publicacaoAutorizada: boolean
     total: number
     fundo_partidario: number
@@ -931,8 +1366,9 @@ async function processFinanciamento(
   }
 
   const aggregated = new Map<string, FinData>()
-  // Dedup: mesma receita pode aparecer em CSV _BR e _UF; SQ_RECEITA e unico por linha TSE.
-  const seenReceipts = new Set<string>()
+  // Dedup: cópia exata entre CSV _BR/_UF cai pelo fingerprint semântico;
+  // itens distintos com o mesmo SQ_RECEITA permanecem separados.
+  const seenReceiptKeys = new Set<string>()
   const legacyIdentityTargetsByUf = new Map<string, SqCandidateIdentity[]>()
   for (const identity of sqMap.values()) {
     const uf = identity.uf?.trim().toUpperCase()
@@ -950,11 +1386,12 @@ async function processFinanciamento(
     const ufFromPath = financiamentoSourceFileUf(csvPath, governorUFs)
     await parseCSV(csvPath, (raw) => {
       const row = normalizeFinanciamentoReceitaRow(raw)
-      if (!row.SG_UF_CANDIDATURA && ufFromPath) row.SG_UF_CANDIDATURA = ufFromPath
+      if (!row.SG_UF_CANDIDATURA && ufFromPath && ufFromPath !== "BR") row.SG_UF_CANDIDATURA = ufFromPath
       if (!row.SQ_CANDIDATO?.trim()) {
-        const legacyTargets = legacyIdentityTargetsByUf.get(
-          row.SG_UF_CANDIDATURA?.trim().toUpperCase() ?? "",
-        ) ?? []
+        const rowUf = row.SG_UF_CANDIDATURA?.trim().toUpperCase() ?? ""
+        const legacyTargets = rowUf
+          ? (legacyIdentityTargetsByUf.get(rowUf) ?? [])
+          : [...sqMap.values()]
         const legacyIdentity = resolveLegacyReceiptSqIdentity(row, ano, legacyTargets)
         if (!legacyIdentity) return
         row.SQ_CANDIDATO = legacyIdentity.sqCandidato
@@ -968,16 +1405,19 @@ async function processFinanciamento(
       financiamentoReceitaIdentity(row, ano, identidade.uf)
       const candidato = identidade.candidato
 
-      const sqReceita = (row.SQ_RECEITA || "").trim()
-      if (sqReceita) {
-        const dedupKey = `${ano}:${identidadeDaLinha.uf}:${sq}:${sqReceita}`
-        if (seenReceipts.has(dedupKey)) return
-        seenReceipts.add(dedupKey)
-      }
+      const dedupKey = financiamentoReceitaDedupKey(row, {
+        ano,
+        uf: identidadeDaLinha.uf,
+        sqCandidato: sq,
+      })
+      if (dedupKey && seenReceiptKeys.has(dedupKey)) return
+      if (dedupKey) seenReceiptKeys.add(dedupKey)
 
-      const existing = aggregated.get(candidato.slug) ?? {
+      const aggregateKey = `${candidato.slug}|${identidade.sqCandidato}|${(identidade.uf ?? "").toUpperCase()}`
+      const existing = aggregated.get(aggregateKey) ?? {
         sqCandidato: identidade.sqCandidato,
         uf: identidade.uf ?? null,
+        cargoCandidatura: identidade.historicalIdentity?.cargo?.trim() || null,
         publicacaoAutorizada: identidade.publicacaoAutorizada,
         total: 0,
         fundo_partidario: 0,
@@ -991,23 +1431,24 @@ async function processFinanciamento(
         row.VR_RECEITA || "0",
         `financiamento ${ano} ${candidato.slug}`
       )
-      const origem = (row.DS_ORIGEM_RECEITA || "").toUpperCase()
+      const origem = [row.DS_FONTE_RECEITA, row.DS_ORIGEM_RECEITA].filter(Boolean).join(" — ")
+      const origemCategoria = classifyFinanciamentoOrigem(origem)
 
       existing.total += valor
 
-      if (origem.includes("FUNDO PARTID")) existing.fundo_partidario += valor
-      else if (origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")) existing.fundo_eleitoral += valor
-      else if (origem.includes("PESSOA F")) existing.pessoa_fisica += valor
-      else if (origem.includes("RECURSO") && origem.includes("PROPRIO")) existing.recursos_proprios += valor
+      if (origemCategoria === "fundo_partidario") existing.fundo_partidario += valor
+      else if (origemCategoria === "fundo_eleitoral") existing.fundo_eleitoral += valor
+      else if (origemCategoria === "pessoa_fisica") existing.pessoa_fisica += valor
+      else if (origemCategoria === "recursos_proprios") existing.recursos_proprios += valor
 
       const nomeDoador = row.NM_DOADOR || row.NM_DOADOR_RFB || ""
-      const tipoDoadorInicial: FinData["doadores"][number]["tipo"] = origem.includes("PESSOA F")
+      const tipoDoadorInicial: FinData["doadores"][number]["tipo"] = origemCategoria === "pessoa_fisica"
         ? "PF"
-        : origem.includes("FUNDO PARTID")
+        : origemCategoria === "fundo_partidario"
           ? "fundo_partidario"
-          : origem.includes("FUNDO ESPECIAL") || origem.includes("FEFC")
+          : origemCategoria === "fundo_eleitoral"
             ? "fundo_eleitoral"
-            : origem.includes("PROPRIO")
+            : origemCategoria === "recursos_proprios"
               ? "recursos_proprios"
               : "PJ"
 
@@ -1030,12 +1471,13 @@ async function processFinanciamento(
 
       existing.doadores.push(doador)
 
-      aggregated.set(candidato.slug, existing)
+      aggregated.set(aggregateKey, existing)
     })
   }
 
   const results: IngestResult[] = []
-  for (const [slug, data] of aggregated) {
+  for (const [aggregateKey, data] of aggregated) {
+    const slug = aggregateKey.split("|", 1)[0]!
     if (slugAllowlist && !slugAllowlist.has(slug)) continue
     const candidatoId = await resolveCandidatoId(slug)
     if (!candidatoId) continue
@@ -1048,6 +1490,7 @@ async function processFinanciamento(
       ano_eleicao: ano,
       sq_candidato: data.sqCandidato,
       uf_candidatura: data.uf,
+      ...(data.cargoCandidatura ? { cargo_candidatura: data.cargoCandidatura } : {}),
       total_arrecadado: Math.round(data.total * 100) / 100,
       total_fundo_partidario: Math.round(data.fundo_partidario * 100) / 100,
       total_fundo_eleitoral: Math.round(data.fundo_eleitoral * 100) / 100,
@@ -1075,6 +1518,8 @@ async function processFinanciamento(
         .delete()
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
+        .eq("sq_candidato", data.sqCandidato)
+        .eq("uf_candidatura", data.uf)
       if (staleVerificationError) throw staleVerificationError
 
       const { data: existing, error: lookupError } = await supabase
@@ -1082,6 +1527,8 @@ async function processFinanciamento(
         .select("id")
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
+        .eq("sq_candidato", data.sqCandidato)
+        .eq("uf_candidatura", data.uf)
         .maybeSingle()
       if (lookupError) throw lookupError
 
@@ -1103,10 +1550,9 @@ async function processFinanciamento(
     })
   }
 
-  const identitiesBySlug = new Map<string, SqCandidateIdentity>()
-  for (const identity of sqMap.values()) identitiesBySlug.set(identity.candidato.slug, identity)
-  for (const [slug, identity] of identitiesBySlug) {
-    if (aggregated.has(slug)) continue
+  for (const identity of sqMap.values()) {
+    const slug = identity.candidato.slug
+    if ([...aggregated.keys()].some((key) => key.startsWith(`${slug}|`))) continue
     if (slugAllowlist && !slugAllowlist.has(slug)) continue
     const candidatoId = await resolveCandidatoId(slug)
     if (!candidatoId) continue
@@ -1119,6 +1565,7 @@ async function processFinanciamento(
       ano_eleicao: ano,
       sq_candidato: identity.sqCandidato,
       uf_candidatura: identity.uf ?? null,
+      cargo_candidatura: identity.historicalIdentity?.cargo?.trim() || null,
       resultado,
       fonte_url: sourceUrl,
       verificado_em: "2026-08-10T00:00:00.000Z",
@@ -1134,13 +1581,15 @@ async function processFinanciamento(
         .select("id")
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
+        .eq("sq_candidato", identity.sqCandidato)
+        .eq("uf_candidatura", identity.uf)
         .maybeSingle()
       if (existingFinanceError) throw existingFinanceError
       if (existingFinance) continue
 
       const { error: verificationError } = await supabase
         .from("financiamento_verificacoes")
-        .upsert(row, { onConflict: "candidato_id,ano_eleicao" })
+        .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
       if (verificationError) throw verificationError
     }
     results.push({
@@ -1167,9 +1616,8 @@ async function planFinanciamentoYearError(
   sourceUrl: string,
   message: string,
 ): Promise<void> {
-  const identitiesBySlug = new Map<string, SqCandidateIdentity>()
-  for (const identity of sqMap.values()) identitiesBySlug.set(identity.candidato.slug, identity)
-  for (const [slug, identity] of identitiesBySlug) {
+  for (const identity of sqMap.values()) {
+    const slug = identity.candidato.slug
     if (slugAllowlist && !slugAllowlist.has(slug)) continue
     const candidatoId = await resolveCandidatoId(slug)
     if (!candidatoId) continue
@@ -1178,6 +1626,7 @@ async function planFinanciamentoYearError(
       ano_eleicao: ano,
       sq_candidato: identity.sqCandidato,
       uf_candidatura: identity.uf ?? null,
+      cargo_candidatura: identity.historicalIdentity?.cargo?.trim() || null,
       resultado: "erro",
       fonte_url: sourceUrl,
       verificado_em: "2026-08-10T00:00:00.000Z",
@@ -1192,16 +1641,25 @@ async function planFinanciamentoYearError(
         .select("id")
         .eq("candidato_id", candidatoId)
         .eq("ano_eleicao", ano)
+        .eq("sq_candidato", identity.sqCandidato)
+        .eq("uf_candidatura", identity.uf)
         .maybeSingle()
       if (existingFinanceError) throw existingFinanceError
       if (existingFinance) continue
 
       const { error: verificationError } = await supabase
         .from("financiamento_verificacoes")
-        .upsert(row, { onConflict: "candidato_id,ano_eleicao" })
+        .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
       if (verificationError) throw verificationError
     }
   }
+}
+
+export function hasConfiguredElectionContext(candidato: CandidatoConfig, ano: number): boolean {
+  return Boolean(
+    candidato.ids.tse_sq_candidato?.[String(ano)]?.trim() ||
+    candidato.historical_identity_by_year?.[String(ano)],
+  )
 }
 
 async function planFinanciamentoCandidatesYearError(
@@ -1216,7 +1674,11 @@ async function planFinanciamentoCandidatesYearError(
   for (const candidato of candidatos) {
     if (mappedSlugs.has(candidato.slug)) continue
     const configuredSq = candidato.ids.tse_sq_candidato?.[String(ano)]?.trim() || null
-    if (slugAllowlist ? !slugAllowlist.has(candidato.slug) : !configuredSq) continue
+    if (slugAllowlist && !slugAllowlist.has(candidato.slug)) continue
+    // A allowlist restringe quem pode ser escrito, mas não prova que a pessoa
+    // disputou aquele ano. Sem SQ ou identidade histórica configurada, um erro
+    // de coleta criaria um pleito inexistente na ficha.
+    if (!hasConfiguredElectionContext(candidato, ano)) continue
     const candidatoId = await resolveCandidatoId(candidato.slug)
     if (!candidatoId) continue
     const row = {
@@ -1225,6 +1687,7 @@ async function planFinanciamentoCandidatesYearError(
       sq_candidato: configuredSq,
       uf_candidatura:
         candidato.ids.tse_uf_candidatura?.[String(ano)]?.trim().toUpperCase() || null,
+      cargo_candidatura: candidato.historical_identity_by_year?.[String(ano)]?.cargo?.trim() || null,
       resultado: "erro",
       fonte_url: sourceUrl,
       verificado_em: "2026-08-10T00:00:00.000Z",
@@ -1240,12 +1703,14 @@ async function planFinanciamentoCandidatesYearError(
       .select("id")
       .eq("candidato_id", candidatoId)
       .eq("ano_eleicao", ano)
+      .eq("sq_candidato", configuredSq)
+      .eq("uf_candidatura", row.uf_candidatura)
       .maybeSingle()
     if (existingFinanceError) throw existingFinanceError
     if (existingFinance) continue
     const { error: verificationError } = await supabase
       .from("financiamento_verificacoes")
-      .upsert(row, { onConflict: "candidato_id,ano_eleicao" })
+      .upsert(row, { onConflict: "candidato_id,ano_eleicao,sq_candidato,uf_candidatura" })
     if (verificationError) throw verificationError
   }
 }
@@ -1287,13 +1752,32 @@ export type IngestTseOptions = {
   dryRun?: boolean
   /** Recebe cada linha normalizada quando `dryRun` está ativo. */
   onPlannedRow?: (entry: PlannedTseRow) => void
+  /** Coorte explícita não publicada, consumida pelo mesmo fluxo TSE após onboarding. */
+  cohort?: ExplicitCohortSelection
+}
+
+async function loadCandidatosParaTse(cohort?: ExplicitCohortSelection): Promise<CandidatoConfig[]> {
+  if (!cohort) return loadCandidatosPublicos()
+  const rows = await loadCandidatosCohortNaoPublica(cohort)
+  const seedBySlug = new Map(loadCandidatos().map((candidate) => [candidate.slug, candidate]))
+  return rows.map((row): CandidatoConfig => {
+    const seed = seedBySlug.get(row.slug)
+    return seed ?? {
+      slug: row.slug,
+      nome_completo: row.nome_completo ?? row.slug,
+      nome_urna: row.nome_urna ?? row.slug,
+      cargo_disputado: "Senador",
+      ...(row.estado ? { estado: row.estado } : {}),
+      ids: { camara: null, senado: null, tse_sq_candidato: { "2026": row.sq_candidato_2026! } },
+    }
+  })
 }
 
 export async function ingestTSE(
   anos: number[] = [...DEFAULT_TSE_ANOS],
   options: IngestTseOptions = {}
 ): Promise<IngestResult[]> {
-  const candidatos = await loadCandidatosPublicos()
+  const candidatos = await loadCandidatosParaTse(options.cohort)
   const allResults: IngestResult[] = []
 
   mkdirSync(DATA_DIR, { recursive: true })
@@ -1313,7 +1797,9 @@ export async function ingestTSE(
       ...(options.financiamentoSlugAllowlist ?? []),
     ])
     const governorUFs = getGovernorUFs(candidatos, targetSlugs.size > 0 ? targetSlugs : null)
-    const resolver = await createTSEResolver(candidatos, ano)
+    const resolver = await createTSEResolver(candidatos, ano, {
+      validatePreloadedRow: (candidate, row) => historicalPreloadedRowMatches(candidate, row, ano),
+    })
 
     let sqMap = new Map<string, SqCandidateIdentity>()
     let identitySourceError: string | null = null
@@ -1364,6 +1850,7 @@ export async function ingestTSE(
             options.patrimonioSlugAllowlist ?? null,
             options,
             bensUrl,
+            await sha256File(bensZip),
           )
           allResults.push(...patrimonioResults)
         } catch (err) {

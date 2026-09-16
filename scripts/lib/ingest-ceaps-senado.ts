@@ -162,9 +162,14 @@ function parseValor(v: string | undefined): number {
   return parseFloat(v.replace(/\./g, "").replace(",", ".")) || 0
 }
 
-function parseValorOficial(v: number | string | undefined): number {
-  if (typeof v === "number") return Number.isFinite(v) ? v : 0
-  return parseValor(v)
+function parseValorOficial(v: number | string | undefined): number | null {
+  if (typeof v === "number") return Number.isFinite(v) ? v : null
+  if (typeof v !== "string" || v.trim() === "") return null
+
+  const normalized = v.includes(",") ? v.replace(/\./g, "").replace(",", ".") : v
+  if (!/^-?\d+(?:\.\d+)?$/.test(normalized.trim())) return null
+  const parsed = Number(normalized)
+  return Number.isFinite(parsed) ? parsed : null
 }
 
 /**
@@ -177,23 +182,57 @@ export function agregarDespesasCeapsOficial(
   senadoId: number,
   ano: number,
 ): ConferenciaDespesas {
-  if (!Array.isArray(payload)) return { ok: true, dados: null }
+  // Uma resposta que nao e uma lista nao permite distinguir erro de rota de
+  // ausencia de despesas. Nunca a trate como vazio confirmado.
+  if (!Array.isArray(payload)) {
+    return { ok: false, motivo: "resposta CEAPS nao e uma lista de despesas" }
+  }
+
+  // O endpoint anual devolve a lista inteira do ano. Validar o lote antes de
+  // filtrar pelo senador impede [null], [{}] ou registros de outro ano de
+  // parecerem ausencia legitima do alvo.
+  for (const [index, despesa] of payload.entries()) {
+    if (!despesa || typeof despesa !== "object" || Array.isArray(despesa)) {
+      return { ok: false, motivo: `registro CEAPS invalido na posicao ${index}` }
+    }
+    const anoRetornado = String(despesa.ano ?? "").trim()
+    if (!/^\d{4}$/.test(anoRetornado) || Number(anoRetornado) !== ano) {
+      return {
+        ok: false,
+        motivo: `resposta CEAPS fora do ano solicitado ${ano}: registro ${index} informa ${anoRetornado || "sem ano"}`,
+      }
+    }
+    if (String(despesa.codSenador ?? "").trim() === "") {
+      return { ok: false, motivo: `registro CEAPS sem codSenador na posicao ${index}` }
+    }
+    if (parseValorOficial(despesa.valorReembolsado) === null) {
+      return { ok: false, motivo: `registro CEAPS com valorReembolsado invalido na posicao ${index}` }
+    }
+  }
 
   const porCategoria: GastoPorCategoria = {}
   const allDespesas: GastoDestaque[] = []
   const anosDescartados: string[] = []
+  const registrosDoSenador = payload.filter((despesa) =>
+    despesa !== null &&
+    typeof despesa === "object" &&
+    String(despesa.codSenador ?? "").trim() === String(senadoId),
+  )
+  let registrosDoAno = 0
   let total = 0
 
-  for (const despesa of payload) {
-    if (String(despesa.codSenador ?? "").trim() !== String(senadoId)) continue
-
+  for (const despesa of registrosDoSenador) {
     const anoRetornado = String(despesa.ano ?? "").trim()
     if (anoRetornado !== String(ano)) {
       anosDescartados.push(anoRetornado || "sem ano")
       continue
     }
+    registrosDoAno++
 
     const valor = parseValorOficial(despesa.valorReembolsado)
+    if (valor === null) {
+      return { ok: false, motivo: "registro CEAPS com valorReembolsado invalido" }
+    }
     if (valor <= 0) continue
 
     const categoria = (despesa.tipoDespesa || "OUTROS").trim().toUpperCase()
@@ -205,6 +244,16 @@ export function agregarDespesasCeapsOficial(
       valor,
       data: despesa.data ?? null,
     })
+  }
+
+  // A API respondeu por este senador, mas somente com outro ano (ou sem
+  // ano). Isso e uma resposta inconclusiva, nunca evidencia de vazio no ano
+  // pedido.
+  if (registrosDoSenador.length > 0 && registrosDoAno === 0) {
+    return {
+      ok: false,
+      motivo: `resposta CEAPS sem registros do ano ${ano}; anos retornados: ${[...new Set(anosDescartados)].join(", ") || "nenhum"}`,
+    }
   }
 
   if (total === 0) return { ok: true, dados: null }

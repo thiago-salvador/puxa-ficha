@@ -47,6 +47,13 @@
           "required": ["cargo_disputado"]
         },
         "then": { "required": ["estado"], "properties": { "estado": { "type": "string", "minLength": 1 } } }
+      },
+      {
+        "if": {
+          "properties": { "cargo_disputado": { "const": "Senador" } },
+          "required": ["cargo_disputado"]
+        },
+        "then": { "required": ["estado"], "properties": { "estado": { "type": "string", "pattern": "^[A-Z]{2}$" } } }
       }
     ]
   }

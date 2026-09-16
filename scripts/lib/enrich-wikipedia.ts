@@ -4,6 +4,7 @@ import { fetchJSON, sleep } from "./helpers"
 import { log, warn, error } from "./logger"
 import { finalizarColeta, registrarErroColeta } from "./coleta-resultado"
 import type { IngestResult } from "./types"
+import { extrairPerfilSocial, type RedeSocialComPerfil } from "../../src/lib/social-profile-url"
 
 const args = process.argv.slice(2)
 const slugArgs = args
@@ -256,34 +257,28 @@ async function fetchWikiSocialLinks(title: string, fetcher: typeof fetchJSON): P
     return link
   })
 
+  return extrairRedesSociaisDeLinks(links)
+}
+
+const REDES_EXTRAIDAS_DA_WIKIPEDIA: readonly RedeSocialComPerfil[] = ["instagram", "twitter", "facebook", "youtube", "tiktok"]
+
+/**
+ * Classifica extlinks pelo hostname real (não por substring, que aceitaria
+ * evil.com/instagram.com/) e só grava perfil de verdade: vídeo, post, status,
+ * compartilhamento e página genérica viram `null` no parser compartilhado em
+ * `src/lib/social-profile-url.ts`. Fica o primeiro perfil válido de cada rede.
+ */
+export function extrairRedesSociaisDeLinks(links: readonly string[]): Record<string, string> {
   const socials: Record<string, string> = {}
-    // Classifica pelo hostname real do link, não por substring (que aceitaria
-    // um domínio trapaceiro como evil.com/instagram.com/).
-    const hostMatches = (host: string, domain: string) =>
-      host === domain || host.endsWith(`.${domain}`)
   for (const link of links) {
-      let host: string
-      try {
-        host = new URL(link).hostname.toLowerCase()
-      } catch {
-        continue
+    for (const rede of REDES_EXTRAIDAS_DA_WIKIPEDIA) {
+      if (socials[rede]) continue
+      const perfil = extrairPerfilSocial(rede, link)
+      if (perfil) {
+        socials[rede] = perfil
+        break
       }
-      if (hostMatches(host, "instagram.com")) {
-        const match = link.match(/instagram\.com\/([^/?]+)/)
-        if (match) socials.instagram = match[1]
-      } else if (hostMatches(host, "twitter.com") || hostMatches(host, "x.com")) {
-        const match = link.match(/(?:twitter|x)\.com\/([^/?]+)/)
-        if (match && match[1] !== "intent" && match[1] !== "share") socials.twitter = match[1]
-      } else if (hostMatches(host, "facebook.com")) {
-        const match = link.match(/facebook\.com\/([^/?]+)/)
-        if (match && match[1] !== "sharer") socials.facebook = match[1]
-      } else if (hostMatches(host, "youtube.com")) {
-        const match = link.match(/youtube\.com\/@?([^/?]+)/)
-        if (match) socials.youtube = match[1]
-      } else if (hostMatches(host, "tiktok.com")) {
-        const match = link.match(/tiktok\.com\/@?([^/?]+)/)
-        if (match) socials.tiktok = match[1]
-      }
+    }
   }
   return socials
 }
@@ -606,7 +601,7 @@ export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependen
     try {
       const consultaDb = await deps.database
         .from("candidatos")
-        .select("id, foto_url, data_nascimento, naturalidade, formacao, formacao_instituicao, profissao_declarada, biografia, redes_sociais, wikidata_id")
+        .select("id, foto_url, foto_credito, data_nascimento, naturalidade, formacao, formacao_instituicao, profissao_declarada, biografia, redes_sociais, wikidata_id")
         .eq("slug", cand.slug)
         .single()
 
@@ -623,6 +618,10 @@ export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependen
     }
 
     const wikiTitle = cand.wikipedia_title?.trim()
+
+    // A URL de fonte fica no recibo compartilhado quando existe título
+    // confirmado; o detalhe abaixo preserva título e escopo para auditoria.
+    if (wikiTitle) result.coleta_url = `https://pt.wikipedia.org/wiki/${encodeURIComponent(wikiTitle.replace(/ /g, "_"))}`
 
     // --- Path A: Wikipedia + Wikidata ---
     if (wikiTitle) {
@@ -659,6 +658,19 @@ export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependen
 
         if (photoUrl) {
           updates.foto_url = photoUrl
+          const photoCredit = isRecord(existing.foto_credito) ? existing.foto_credito : null
+          const photoOrigin = typeof photoCredit?.origem === "string" ? photoCredit.origem : null
+          if (/^https?:\/\/(?:thumb\.)?(?:upload\.)?wikimedia\.org\//i.test(photoUrl) && (!photoCredit || photoOrigin === "tse")) {
+            // The thumbnail endpoint proves the image URL, but does not carry
+            // author or license metadata. Preserve an explicit Commons origin
+            // and source page so a stale TSE credit cannot survive a Wiki photo
+            // update; a later imageinfo reconciliation can fill author/license.
+            updates.foto_credito = {
+              origem: "wikimedia_commons",
+              descricao: "Imagem vinculada ao verbete Wikipedia; autoria e licença pendentes de imageinfo Commons",
+              fonte_url: result.coleta_url ?? null,
+            }
+          }
           log("wikipedia", `  ${cand.slug}: foto OK`)
         } else {
           warn("wikipedia", `  ${cand.slug}: sem foto na Wikipedia`)
@@ -799,7 +811,11 @@ export async function enrichWikipedia(overrides: Partial<EnrichWikipediaDependen
       registrarErroColeta(result, err, "verificacao/escrita de foto no banco")
     }
 
-    finalizarResultadoWikipedia(result, desfechoBase, detalheBase)
+    finalizarResultadoWikipedia(
+      result,
+      desfechoBase,
+      `${detalheBase}; titulo=${wikiTitle ?? ""}; escopo=candidato`.slice(0, 500),
+    )
     result.duration_ms = Date.now() - start
     results.push(result)
     await deps.wait(500)

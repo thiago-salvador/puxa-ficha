@@ -6,6 +6,7 @@ import type { IngestResult } from "./types"
 import { archiveFonteReferences } from "./archive-url"
 
 const JARBAS_BASE = "https://jarbas.serenata.ai/api/chamber_of_deputies/reimbursement"
+const JARBAS_TIMEOUT_MS = Number(process.env.PF_JARBAS_TIMEOUT_MS ?? FETCH_TIMEOUT_MS)
 
 interface JarbasReimbursement {
   document_id: number
@@ -47,6 +48,15 @@ export type ConferenciaReembolsos =
   | { ok: true; reembolsos: JarbasReimbursement[] }
   | { ok: false; motivo: string }
 
+/**
+ * O ID da Câmara é a identidade que o Jarbas aceita como filtro. Antes de
+ * declarar a fonte inaplicável, o roster precisa ter sido confrontado com os
+ * diretórios oficiais consultados nesta coorte. O escopo fica explícito no
+ * recibo para que um zero sem identidade não pareça uma consulta Jarbas.
+ */
+export const JARBAS_IDENTITY_DIRECTORY_SCOPE =
+  "diretório Câmara atual e listas oficiais das legislaturas 38-52; reconciliação nominal com UF e detalhe civil/DOB no snapshot 2026-09-15"
+
 export function conferirReembolsos(
   registros: JarbasReimbursement[] | undefined | null,
   applicantIdEsperado: number
@@ -69,7 +79,7 @@ export function conferirReembolsos(
 
 export function declararJarbasNaoAplicavel(result: IngestResult): void {
   result.coleta_resultado = "nao_aplicavel"
-  result.coleta_detalhe = "sem ID da Camara: fonte nao aplicavel ao candidato"
+  result.coleta_detalhe = `sem ID da Câmara após consulta do escopo de identidade (${JARBAS_IDENTITY_DIRECTORY_SCOPE}); nenhuma consulta Jarbas foi executada`
 }
 
 function formatValor(values: number[]): number {
@@ -123,6 +133,10 @@ export async function ingestJarbas(): Promise<IngestResult[]> {
       }
 
       const url = `${JARBAS_BASE}/?applicant_id=${cand.ids.camara}&limit=100&suspicions=true`
+      // A URL do filtro é a prova de qual identidade foi consultada. O
+      // identificador aqui é da Câmara, nunca CPF, e pode ser exposto no
+      // recibo mesmo quando a fonte falha por transporte.
+      result.coleta_url = url
       let jarbasData: JarbasResponse
 
       try {
@@ -134,7 +148,7 @@ export async function ingestJarbas(): Promise<IngestResult[]> {
             Accept: "application/json",
             "User-Agent": "PuxaFicha/1.0 (puxaficha.com.br)",
           },
-          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+          signal: AbortSignal.timeout(JARBAS_TIMEOUT_MS),
         })
 
         if (res.status === 404) {
